@@ -183,18 +183,32 @@ function parseTooltip(html) {
 // Wowhead Forever only knows items someone has seen in Forever; high-level
 // Classic items the level-30 beta never streamed are missing there. For those
 // we fall back to Wowhead Classic and mark numbers: 'classic'.
+// Wowhead keeps adding Forever items: a "not found" answer is asked again after
+// a week (dates in _missing.json, as file dates don't survive the Actions cache).
+const MISSING_DAYS = 7;
 async function tooltips(ids) {
   const result = {};
   const rawById = {};
   let fetched = 0;
+  const today = new Date().toISOString().slice(0, 10);
+  const missingFile = env => path.join(cacheDir, env === 'forever' ? 'wowhead' : 'wowhead-classic', '_missing.json');
+  const missing = {};
+  ['forever', 'classic'].forEach(env => { missing[env] = fs.existsSync(missingFile(env)) ? JSON.parse(fs.readFileSync(missingFile(env), 'utf8')) : {}; });
   async function get(env, id) {
     const full = path.join(cacheDir, env === 'forever' ? 'wowhead' : 'wowhead-classic', 'item-' + id + '.json');
-    if (fs.existsSync(full)) return fs.readFileSync(full, 'utf8');
+    if (fs.existsSync(full)) {
+      const raw = fs.readFileSync(full, 'utf8');
+      const since = missing[env][id];
+      const stale = raw.includes('"error"') && (!since || (Date.parse(today) - Date.parse(since)) / 864e5 >= MISSING_DAYS);
+      if (OFFLINE || !stale) return raw;
+    }
     if (OFFLINE) return null;
     const res = await fetch('https://nether.wowhead.com/' + env + '/tooltip/item/' + id, { headers: UA });
     const raw = await res.text();
     fs.mkdirSync(path.dirname(full), { recursive: true });
     fs.writeFileSync(full, raw);
+    if (raw.includes('"error"')) missing[env][id] = today; else delete missing[env][id];
+    fs.writeFileSync(missingFile(env), JSON.stringify(missing[env]));
     fetched++;
     if (fetched % 100 === 0) console.log('  tooltips: ' + fetched + ' descargados…');
     await sleep(250); // polite: ~4 requests per second
