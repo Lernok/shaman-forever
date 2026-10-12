@@ -1,0 +1,69 @@
+# Daily data sync: pulls the latest Forever build, talents, QuestieDB and
+# foreverchanges.pro, rebuilds the site data and, if anything real changed,
+# opens (or updates) one pull request with the change report to review.
+# Nothing reaches the live site until that pull request is merged.
+name: Sync de datos
+
+on:
+  schedule:
+    - cron: '0 9 * * *'   # every day, 06:00 in Argentina
+  workflow_dispatch:       # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Downloads are cached between runs (client tables per build, Wowhead
+      # tooltips, foreverchanges pages, which expire after a week), so each
+      # run only fetches what's new.
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: sync-cache-${{ github.run_id }}
+          restore-keys: sync-cache-
+
+      - name: Sync
+        run: node scripts/sync.js
+
+      # meta.json and the report change on every run (sync date); only open a
+      # pull request when the data itself changed.
+      - name: Open or update the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain -- . ':!data/meta.json' ':!data/meta.js' ':!reports')" ]; then
+            echo "Sin cambios en los datos."
+            exit 0
+          fi
+          report=$(ls -t reports/*.md | head -1)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B sync/auto
+          git add -A
+          git commit -q -m "Sync de datos $(date -u +%F)"
+          git push -f origin sync/auto
+          {
+            echo "Sync automático del $(date -u +%F). Revisá el reporte y los cambios en la pestaña *Files changed*; al hacer *Merge*, el sitio se actualiza solo."
+            echo
+            cat "$report"
+          } > pr-body.md
+          if gh pr view sync/auto --json state -q .state 2>/dev/null | grep -q OPEN; then
+            gh pr edit sync/auto --title "Sync de datos $(date -u +%F)" --body-file pr-body.md
+          else
+            gh pr create --head sync/auto --base main --title "Sync de datos $(date -u +%F)" --body-file pr-body.md
+          fi

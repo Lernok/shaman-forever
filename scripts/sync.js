@@ -280,11 +280,16 @@ function diffItems(prev, next) {
   // Item sources: QuestieDB's Forever files (refreshed daily) and zone names
   // from the client. Needed first: QuestieDB also tells which streamed items exist.
   const day = new Date().toISOString().slice(0, 10);
-  for (const f of ['foreverItemDB', 'foreverNpcDB', 'foreverQuestDB']) {
-    const text = await cached('questiedb-raw/' + day + '/' + f + '.lua', 'https://raw.githubusercontent.com/Questie/QuestieDB/master/data/Forever/' + f + '.lua');
+  // Classic's NPC file fills in locations the Forever one lacks yet.
+  for (const f of ['foreverItemDB', 'foreverNpcDB', 'foreverQuestDB', 'classicNpcDB']) {
+    const dir = f.startsWith('classic') ? 'Classic' : 'Forever';
+    const text = await cached('questiedb-raw/' + day + '/' + f + '.lua', 'https://raw.githubusercontent.com/Questie/QuestieDB/master/data/' + dir + '/' + f + '.lua');
     fs.mkdirSync(path.join(cacheDir, 'questiedb'), { recursive: true });
     fs.writeFileSync(path.join(cacheDir, 'questiedb', f + '.lua'), text);
   }
+  // Keep only today's raw copies.
+  fs.readdirSync(path.join(cacheDir, 'questiedb-raw')).filter(d => d !== day)
+    .forEach(d => fs.rmSync(path.join(cacheDir, 'questiedb-raw', d), { recursive: true, force: true }));
   await table('AreaTable', build);
   const questieLevels = new Map();
   const { parseLua } = require('./lib/questie');

@@ -21,13 +21,27 @@ const BASE = 'https://foreverchanges.pro';
 const UA = { 'User-Agent': 'shaman-forever-site (fan reference site; item sources, cited)' };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+// Pages are refetched after a week: a weapon with no known quest yet, or a quest
+// the site later corrects, gets picked up. The fetch date of each page lives in
+// _fetched.json (file dates don't survive the GitHub Actions cache).
+const MAX_AGE_DAYS = 7;
+const fetchedFile = path.join(cacheDir, '_fetched.json');
+const fetchedOn = fs.existsSync(fetchedFile) ? JSON.parse(fs.readFileSync(fetchedFile, 'utf8')) : {};
+const today = new Date().toISOString().slice(0, 10);
+const ageDays = d => (Date.parse(today) - Date.parse(d)) / 864e5;
+
 async function page(kind, id) {
-  const file = path.join(cacheDir, kind + (id ? '-' + id : '') + '.html');
-  if (fs.existsSync(file)) return fs.readFileSync(file, 'utf8');
+  const name = kind + (id ? '-' + id : '') + '.html';
+  const file = path.join(cacheDir, name);
+  if (fs.existsSync(file) && fetchedOn[name] && ageDays(fetchedOn[name]) < MAX_AGE_DAYS) return fs.readFileSync(file, 'utf8');
   const res = await fetch(BASE + '/' + kind + (id ? '/' + id : ''), { headers: UA });
+  // Keep the cached copy if the site is down.
+  if (!res.ok && fs.existsSync(file)) return fs.readFileSync(file, 'utf8');
   const html = res.ok ? await res.text() : '';
   fs.mkdirSync(cacheDir, { recursive: true });
   fs.writeFileSync(file, html);
+  fetchedOn[name] = today;
+  fs.writeFileSync(fetchedFile, JSON.stringify(fetchedOn));
   await sleep(1000);
   return html;
 }
@@ -102,9 +116,14 @@ function dungeonLevels(html) {
     if (s) quests[q] = { quest: s.quest, level: s.level, requiredLevel: s.requiredLevel, zone: s.zone, dungeon: s.dungeon, bands: s.bands, ref: s.ref };
   }
   const dungeons = dungeonLevels(await page('dungeon-quests'));
-  fs.writeFileSync(path.join(root, 'data/item-sources-fc.json'), JSON.stringify({
+  // The date only moves when the data does, so a daily sync with nothing new
+  // leaves the file untouched.
+  const outFile = path.join(root, 'data/item-sources-fc.json');
+  const prev = fs.existsSync(outFile) ? JSON.parse(fs.readFileSync(outFile, 'utf8')) : {};
+  const same = JSON.stringify([prev.items, prev.quests, prev.dungeons]) === JSON.stringify([out, quests, dungeons]);
+  fs.writeFileSync(outFile, JSON.stringify({
     _readme: 'Fuentes de misión de armas nuevas de Forever (items) y datos de Forever de las misiones de Classic que dan armas (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json, que tiene prioridad.',
-    source: BASE, fetched: new Date().toISOString().slice(0, 10), items: out, quests,
+    source: BASE, fetched: same && prev.fetched ? prev.fetched : today, items: out, quests,
     dungeons, dungeonsRef: BASE + '/dungeon-quests'
   }, null, 1) + '\n');
   console.log('Armas nuevas: ' + targets.length + ' · con misión encontrada: ' + found +
