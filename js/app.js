@@ -76,8 +76,11 @@
     return html;
   }
 
+  // The tooltip floats on <body> (position: fixed): inside the sticky talent
+  // panel it was trapped in the panel's stacking context and the guide column
+  // painted over it.
   function closeTooltip() {
-    const existing = document.querySelector('.talent .tooltip');
+    const existing = document.querySelector('.talent-tip');
     if (existing) existing.remove();
     const openEl = document.querySelector('.talent.open');
     if (openEl) openEl.classList.remove('open');
@@ -103,11 +106,30 @@
     }
 
     const tip = document.createElement('div');
-    tip.className = 'tooltip';
+    tip.className = 'tooltip talent-tip';
     tip.innerHTML = html;
-    talentEl.appendChild(tip);
+    document.body.appendChild(tip);
+    placeBeside(tip, talentEl);
     talentEl.classList.add('open');
     openTooltipTalent = id;
+  }
+
+  // Right of the anchor if it fits, otherwise left, otherwise below; always on screen.
+  function placeBeside(tip, anchor) {
+    const r = anchor.getBoundingClientRect();
+    const w = tip.offsetWidth;
+    const h = tip.offsetHeight;
+    const margin = 8;
+    let left = r.right + 10;
+    let top = r.top;
+    if (left + w > window.innerWidth - margin) left = r.left - w - 10;
+    if (left < margin) {
+      left = Math.min(Math.max(margin, r.left), window.innerWidth - w - margin);
+      top = r.bottom + 8;
+    }
+    top = Math.max(margin, Math.min(top, window.innerHeight - h - margin));
+    tip.style.left = left + 'px';
+    tip.style.top = top + 'px';
   }
 
   function renderChanges(changes) {
@@ -384,8 +406,11 @@
   });
 
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('.talent')) closeTooltip();
+    if (!e.target.closest('.talent') && !e.target.closest('.talent-tip')) closeTooltip();
   });
+  // A fixed tooltip would drift away from its talent on scroll/resize: close it.
+  window.addEventListener('scroll', closeTooltip, { passive: true });
+  window.addEventListener('resize', closeTooltip);
 
   // Language switch: re-render the current tab in place (hash and scroll stay).
   document.getElementById('langToggle').addEventListener('click', () => window.I18N.toggle());

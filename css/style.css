@@ -178,8 +178,7 @@ main#app {
   box-shadow: 0 8px 24px rgba(0,0,0,.5);
   z-index: 20;
 }
-.talent.edge-right .tooltip { left: auto; right: 0; }
-.talent.edge-bottom .tooltip { top: auto; bottom: calc(100% + 8px); }
+.talent-tip { position: fixed; z-index: 60; max-height: calc(100vh - 16px); overflow-y: auto; }
 @media (max-width: 420px) {
   .tooltip { width: min(280px, calc(100vw - 48px)); }
 }
