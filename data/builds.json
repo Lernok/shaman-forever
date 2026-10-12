@@ -4,12 +4,21 @@
     {
       "id": "ele-leveling-30",
       "spec": "Elemental",
-      "name": "Leveling solo",
-      "case": "Leveling",
+      "name": {
+        "es": "Leveling solo",
+        "en": "Solo leveling"
+      },
+      "case": {
+        "es": "Leveling",
+        "en": "Leveling"
+      },
       "level": 30,
       "origin": "guia",
       "confidence": "community-untested",
-      "note": "El build de leveling de la guía, ajustado a 21 puntos (la versión original sumaba 22): Reverberation queda en 1/5. Lightning Overload como punto final.",
+      "note": {
+        "es": "El build de leveling de la guía, ajustado a 21 puntos (la versión original sumaba 22): Reverberation queda en 1/5. Lightning Overload como punto final.",
+        "en": "The guide's leveling build, trimmed to 21 points (the original added up to 22): Reverberation stays at 1/5. Lightning Overload as the last point."
+      },
       "points": {
         "Elemental": {
           "Convection": 5,
@@ -27,12 +36,21 @@
     {
       "id": "ele-leveling-30-earthbound",
       "spec": "Elemental",
-      "name": "Leveling solo (control)",
-      "case": "Leveling",
+      "name": {
+        "es": "Leveling solo (control)",
+        "en": "Solo leveling (control)"
+      },
+      "case": {
+        "es": "Leveling",
+        "en": "Leveling"
+      },
       "level": 30,
       "origin": "guia",
       "confidence": "community-untested",
-      "note": "Variante que menciona la guía: Earthbound en vez del primer punto de Lightning Overload, para tener un root instantáneo al levear solo.",
+      "note": {
+        "es": "Variante que menciona la guía: Earthbound en vez del primer punto de Lightning Overload, para tener un root instantáneo al levear solo.",
+        "en": "Variant mentioned by the guide: Earthbound instead of Lightning Overload's first point, for an instant root while leveling solo."
+      },
       "points": {
         "Elemental": {
           "Convection": 5,
@@ -50,12 +68,21 @@
     {
       "id": "enh-leveling-30",
       "spec": "Enhancement",
-      "name": "Leveling solo",
-      "case": "Leveling",
+      "name": {
+        "es": "Leveling solo",
+        "en": "Solo leveling"
+      },
+      "case": {
+        "es": "Leveling",
+        "en": "Leveling"
+      },
       "level": 30,
       "origin": "guia",
       "confidence": "community-untested",
-      "note": "El build de leveling de la guía tal cual (21 puntos). Improved Ghost Wolf ayuda a moverse entre quests.",
+      "note": {
+        "es": "El build de leveling de la guía tal cual (21 puntos). Improved Ghost Wolf ayuda a moverse entre quests.",
+        "en": "The guide's leveling build as is (21 points). Improved Ghost Wolf helps getting around between quests."
+      },
       "points": {
         "Enhancement": {
           "Thundering Strikes": 5,
@@ -73,12 +100,21 @@
     {
       "id": "resto-30",
       "spec": "Restoration",
-      "name": "Healer de mazmorras",
-      "case": "Grupo",
+      "name": {
+        "es": "Healer de mazmorras",
+        "en": "Dungeon healer"
+      },
+      "case": {
+        "es": "Grupo",
+        "en": "Group"
+      },
       "level": 30,
       "origin": "guia",
       "confidence": "community-untested",
-      "note": "El build de la guía ajustado a 21 puntos (la versión original sumaba 23): Tidal Focus queda en 3/5 en vez de 5/5. Llega a Mana Tide Totem y Nature's Swiftness.",
+      "note": {
+        "es": "El build de la guía ajustado a 21 puntos (la versión original sumaba 23): Tidal Focus queda en 3/5 en vez de 5/5. Llega a Mana Tide Totem y Nature's Swiftness.",
+        "en": "The guide's build trimmed to 21 points (the original added up to 23): Tidal Focus stays at 3/5 instead of 5/5. Reaches Mana Tide Totem and Nature's Swiftness."
+      },
       "points": {
         "Restoration": {
           "Improved Healing Wave": 5,
@@ -94,10 +130,19 @@
     },
     {
       "id": "tf-ele-leveling-30",
-      "name": "Leveling (orden de la comunidad)",
-      "case": "Leveling",
+      "name": {
+        "es": "Leveling (orden de la comunidad)",
+        "en": "Leveling (community order)"
+      },
+      "case": {
+        "es": "Leveling",
+        "en": "Leveling"
+      },
       "level": 30,
-      "note": "Los primeros 21 puntos del orden más común entre 18.887 builds de leveo Elemental planeados en talentsforever.com (18 sep – 6 oct 2026). En cada tramo de 10 niveles coincide entre el 13% y el 73% de los builds que llegan ahí (73% en 30-39). Es lo que la gente planea, no algo probado en juego.",
+      "note": {
+        "es": "Los primeros 21 puntos del orden más común entre 18.887 builds de leveo Elemental planeados en talentsforever.com (18 sep – 6 oct 2026). En cada tramo de 10 niveles coincide entre el 13% y el 73% de los builds que llegan ahí (73% en 30-39). Es lo que la gente planea, no algo probado en juego.",
+        "en": "The first 21 points of the most common order among 18,887 Elemental leveling builds planned on talentsforever.com (Sep 18 – Oct 6, 2026). In each 10-level bracket, 13% to 73% of the builds that get there agree (73% at 30-39). It's what people plan, not something tested in game."
+      },
       "points": {
         "Elemental": {
           "Convection": 5,
@@ -231,10 +276,19 @@
     },
     {
       "id": "tf-ele-leveling-60",
-      "name": "Leveling 10→60 (comunidad)",
-      "case": "Leveling",
+      "name": {
+        "es": "Leveling 10→60 (comunidad)",
+        "en": "Leveling 10→60 (community)"
+      },
+      "case": {
+        "es": "Leveling",
+        "en": "Leveling"
+      },
       "level": 60,
-      "note": "El mismo orden hasta el 60 (proyección: la beta está capada en 30). Lava Burst a los 45; después Totemic Focus, Ancestral Knowledge y Tidal Focus como relleno. Cambiá el nivel para ver cómo queda el build en cada punto del leveo.",
+      "note": {
+        "es": "El mismo orden hasta el 60 (proyección: la beta está capada en 30). Lava Burst a los 45; después Totemic Focus, Ancestral Knowledge y Tidal Focus como relleno. Cambiá el nivel para ver cómo queda el build en cada punto del leveo.",
+        "en": "The same order up to 60 (a projection: the beta is capped at 30). Lava Burst at 45; then Totemic Focus, Ancestral Knowledge and Tidal Focus as filler. Change the level to see the build at each point of the leveling."
+      },
       "points": {
         "Elemental": {
           "Convection": 5,
@@ -379,10 +433,19 @@
     },
     {
       "id": "tf-enh-leveling-30",
-      "name": "Leveling (orden de la comunidad)",
-      "case": "Leveling",
+      "name": {
+        "es": "Leveling (orden de la comunidad)",
+        "en": "Leveling (community order)"
+      },
+      "case": {
+        "es": "Leveling",
+        "en": "Leveling"
+      },
       "level": 30,
-      "note": "Los primeros 21 puntos del orden más común entre 55.884 builds de leveo Enhancement planeados en talentsforever.com (18 sep – 6 oct 2026). En cada tramo coincide entre el 10% y el 43% de los builds que llegan ahí: hay mucha variación después del 30. Es lo que la gente planea, no algo probado en juego.",
+      "note": {
+        "es": "Los primeros 21 puntos del orden más común entre 55.884 builds de leveo Enhancement planeados en talentsforever.com (18 sep – 6 oct 2026). En cada tramo coincide entre el 10% y el 43% de los builds que llegan ahí: hay mucha variación después del 30. Es lo que la gente planea, no algo probado en juego.",
+        "en": "The first 21 points of the most common order among 55,884 Enhancement leveling builds planned on talentsforever.com (Sep 18 – Oct 6, 2026). In each bracket, 10% to 43% of the builds that get there agree: there's a lot of variation past 30. It's what people plan, not something tested in game."
+      },
       "points": {
         "Enhancement": {
           "Thundering Strikes": 5,
@@ -537,10 +600,19 @@
     },
     {
       "id": "tf-enh-leveling-60",
-      "name": "Leveling 10→60 (comunidad)",
-      "case": "Leveling",
+      "name": {
+        "es": "Leveling 10→60 (comunidad)",
+        "en": "Leveling 10→60 (community)"
+      },
+      "case": {
+        "es": "Leveling",
+        "en": "Leveling"
+      },
       "level": 60,
-      "note": "El mismo orden hasta el 60 (proyección: la beta está capada en 30). Rage of the Farseer a los 46; el resto va a Concussion y Elemental Devastation (Earth Shock y crit) y al final a Resto. Cambiá el nivel para ver cómo queda el build en cada punto del leveo.",
+      "note": {
+        "es": "El mismo orden hasta el 60 (proyección: la beta está capada en 30). Rage of the Farseer a los 46; el resto va a Concussion y Elemental Devastation (Earth Shock y crit) y al final a Resto. Cambiá el nivel para ver cómo queda el build en cada punto del leveo.",
+        "en": "The same order up to 60 (a projection: the beta is capped at 30). Rage of the Farseer at 46; the rest goes to Concussion and Elemental Devastation (Earth Shock and crit) and finally to Resto. Change the level to see the build at each point of the leveling."
+      },
       "points": {
         "Enhancement": {
           "Thundering Strikes": 5,
@@ -708,10 +780,19 @@
     },
     {
       "id": "tf-resto-leveling-30",
-      "name": "Leveling (orden de la comunidad)",
-      "case": "Leveling",
+      "name": {
+        "es": "Leveling (orden de la comunidad)",
+        "en": "Leveling (community order)"
+      },
+      "case": {
+        "es": "Leveling",
+        "en": "Leveling"
+      },
       "level": 30,
-      "note": "Los primeros 21 puntos del orden más común entre 17.675 builds de leveo Restoration planeados en talentsforever.com (18 sep – 6 oct 2026). En cada tramo coincide entre el 5% y el 43% de los builds que llegan ahí. Es lo que la gente planea, no algo probado en juego.",
+      "note": {
+        "es": "Los primeros 21 puntos del orden más común entre 17.675 builds de leveo Restoration planeados en talentsforever.com (18 sep – 6 oct 2026). En cada tramo coincide entre el 5% y el 43% de los builds que llegan ahí. Es lo que la gente planea, no algo probado en juego.",
+        "en": "The first 21 points of the most common order among 17,675 Restoration leveling builds planned on talentsforever.com (Sep 18 – Oct 6, 2026). In each bracket, 5% to 43% of the builds that get there agree. It's what people plan, not something tested in game."
+      },
       "points": {
         "Restoration": {
           "Improved Healing Wave": 5,
@@ -837,10 +918,19 @@
     },
     {
       "id": "tf-resto-leveling-60",
-      "name": "Leveling 10→60 (comunidad)",
-      "case": "Leveling",
+      "name": {
+        "es": "Leveling 10→60 (comunidad)",
+        "en": "Leveling 10→60 (community)"
+      },
+      "case": {
+        "es": "Leveling",
+        "en": "Leveling"
+      },
       "level": 60,
-      "note": "El mismo orden hasta el 60 (proyección: la beta está capada en 30). Riptide a los 50; los últimos 10 puntos van a Ancestral Knowledge y Thundering Strikes. Cambiá el nivel para ver cómo queda el build en cada punto del leveo.",
+      "note": {
+        "es": "El mismo orden hasta el 60 (proyección: la beta está capada en 30). Riptide a los 50; los últimos 10 puntos van a Ancestral Knowledge y Thundering Strikes. Cambiá el nivel para ver cómo queda el build en cada punto del leveo.",
+        "en": "The same order up to 60 (a projection: the beta is capped at 30). Riptide at 50; the last 10 points go to Ancestral Knowledge and Thundering Strikes. Change the level to see the build at each point of the leveling."
+      },
       "points": {
         "Restoration": {
           "Improved Healing Wave": 5,
@@ -977,61 +1067,106 @@
     {
       "id": "tf-pop-enh-1",
       "spec": "Enhancement",
-      "name": "Más popular #1: 18/33/0",
-      "case": "Popular",
+      "name": {
+        "es": "Más popular #1: 18/33/0",
+        "en": "Most popular #1: 18/33/0"
+      },
+      "case": {
+        "es": "Popular",
+        "en": "Popular"
+      },
       "level": 60,
       "origin": "talentsforever",
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
-      "note": "#1 de Shaman en talentsforever.com (1.197 aperturas, 152 guardados). Los 18 de Elemental van a Concussion, Reverberation, Call of Flame, Elemental Devastation e Improved Fire Nova: Earth Shock y shocks más seguidos. Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
+      "note": {
+        "es": "#1 de Shaman en talentsforever.com (1.197 aperturas, 152 guardados). Los 18 de Elemental van a Concussion, Reverberation, Call of Flame, Elemental Devastation e Improved Fire Nova: Earth Shock y shocks más seguidos. Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
+        "en": "#1 Shaman build on talentsforever.com (1,197 opens, 152 saves). The 18 Elemental points go to Concussion, Reverberation, Call of Flame, Elemental Devastation and Improved Fire Nova: Earth Shock and more frequent shocks. Ranking of 41+ point builds since the Sep 24 patch (build 70009); it's what people build, not something tested."
+      },
       "code": "050533002-052032031005112251-"
     },
     {
       "id": "tf-pop-enh-3",
       "spec": "Enhancement",
-      "name": "Más popular #3: 8/33/10",
-      "case": "Popular",
+      "name": {
+        "es": "Más popular #3: 8/33/10",
+        "en": "Most popular #3: 8/33/10"
+      },
+      "case": {
+        "es": "Popular",
+        "en": "Popular"
+      },
       "level": 60,
       "origin": "talentsforever",
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
-      "note": "#3 (689 aperturas, 132 guardados). Mismo Enhancement que el #1, con solo Concussion y Elemental Devastation en Elemental y 10 puntos de maná en Resto (Totemic Focus y Tidal Focus, que además da hit). Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
+      "note": {
+        "es": "#3 (689 aperturas, 132 guardados). Mismo Enhancement que el #1, con solo Concussion y Elemental Devastation en Elemental y 10 puntos de maná en Resto (Totemic Focus y Tidal Focus, que además da hit). Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
+        "en": "#3 (689 opens, 132 saves). Same Enhancement as #1, with only Concussion and Elemental Devastation in Elemental and 10 mana points in Resto (Totemic Focus and Tidal Focus, which also gives hit). Ranking of 41+ point builds since the Sep 24 patch (build 70009); it's what people build, not something tested."
+      },
       "code": "050003-052032031005112251-05005"
     },
     {
       "id": "tf-pop-enh-5",
       "spec": "Enhancement",
-      "name": "Más popular #5: 18/33/0 (Alacrity)",
-      "case": "Popular",
+      "name": {
+        "es": "Más popular #5: 18/33/0 (Alacrity)",
+        "en": "Most popular #5: 18/33/0 (Alacrity)"
+      },
+      "case": {
+        "es": "Popular",
+        "en": "Popular"
+      },
       "level": 60,
       "origin": "talentsforever",
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
-      "note": "#5 (397 aperturas, 89 guardados). Variante del #1 que en Elemental va a Elemental Focus, Elemental Alacrity y Call of Thunder en vez de Reverberation. Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
+      "note": {
+        "es": "#5 (397 aperturas, 89 guardados). Variante del #1 que en Elemental va a Elemental Focus, Elemental Alacrity y Call of Thunder en vez de Reverberation. Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
+        "en": "#5 (397 opens, 89 saves). A variant of #1 that goes to Elemental Focus, Elemental Alacrity and Call of Thunder in Elemental instead of Reverberation. Ranking of 41+ point builds since the Sep 24 patch (build 70009); it's what people build, not something tested."
+      },
       "code": "05003313201-052032031005112251-"
     },
     {
       "id": "tf-pop-ele-4",
       "spec": "Elemental",
-      "name": "Más popular: 38/13/0",
-      "case": "Popular",
+      "name": {
+        "es": "Más popular: 38/13/0",
+        "en": "Most popular: 38/13/0"
+      },
+      "case": {
+        "es": "Popular",
+        "en": "Popular"
+      },
       "level": 60,
       "origin": "talentsforever",
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
-      "note": "#4 de Shaman y el primero de Elemental (1.109 aperturas, 138 guardados). Elemental completo hasta Lava Burst con Earthbound, y 13 en Enhancement por crit (Thundering Strikes), Intelecto (Ancestral Knowledge), Ghost Wolf y Shamanistic Focus. Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
+      "note": {
+        "es": "#4 de Shaman y el primero de Elemental (1.109 aperturas, 138 guardados). Elemental completo hasta Lava Burst con Earthbound, y 13 en Enhancement por crit (Thundering Strikes), Intelecto (Ancestral Knowledge), Ghost Wolf y Shamanistic Focus. Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
+        "en": "#4 Shaman build and the top Elemental one (1,109 opens, 138 saves). Full Elemental down to Lava Burst with Earthbound, and 13 in Enhancement for crit (Thundering Strikes), Intellect (Ancestral Knowledge), Ghost Wolf and Shamanistic Focus. Ranking of 41+ point builds since the Sep 24 patch (build 70009); it's what people build, not something tested."
+      },
       "code": "5505301303123151-055002001-"
     },
     {
       "id": "tf-pop-resto-2",
       "spec": "Restoration",
-      "name": "Más popular: 0/10/41",
-      "case": "Popular",
+      "name": {
+        "es": "Más popular: 0/10/41",
+        "en": "Most popular: 0/10/41"
+      },
+      "case": {
+        "es": "Popular",
+        "en": "Popular"
+      },
       "level": 60,
       "origin": "talentsforever",
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
-      "note": "#2 de Shaman y el primero de Resto (1.373 aperturas, 242 guardados). Restoration hasta Riptide y Purification, más Thundering Strikes y Ancestral Knowledge en Enhancement. Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
+      "note": {
+        "es": "#2 de Shaman y el primero de Resto (1.373 aperturas, 242 guardados). Restoration hasta Riptide y Purification, más Thundering Strikes y Ancestral Knowledge en Enhancement. Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
+        "en": "#2 Shaman build and the top Resto one (1,373 opens, 242 saves). Restoration down to Riptide and Purification, plus Thundering Strikes and Ancestral Knowledge in Enhancement. Ranking of 41+ point builds since the Sep 24 patch (build 70009); it's what people build, not something tested."
+      },
       "code": "-055-5030503315513151"
     }
   ]

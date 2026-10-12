@@ -12,6 +12,34 @@ const read = rel => JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
 const write = (rel, globalName, data) =>
   fs.writeFileSync(path.join(root, rel), 'window.' + globalName + ' = ' + JSON.stringify(data) + ';\n');
 
+// Every prose field we write ourselves must be { es, en } with both filled in.
+// Game names (talents, spells, races, stats) stay in English and are plain strings.
+const PROSE_KEYS = new Set(['note', 'fact', 'detail', 'change', 'summary', 'role', 'caveat', 'name', 'case', 'event', 'date',
+  'rationale', 'status', 'statement', 'baseline', 'recommendation', 'rank', 'classic', 'forever']);
+const PROSE_LISTS = new Set(['level30', 'level60', 'priority', 'keyTalents']);
+const langErrors = [];
+function checkLang(v, where, key) {
+  if (typeof v === 'string') {
+    if (PROSE_KEYS.has(key)) langErrors.push(where + ': texto sin traducir (debe ser { es, en })');
+    return;
+  }
+  if (Array.isArray(v)) {
+    v.forEach((x, i) => {
+      if (PROSE_LISTS.has(key) && typeof x === 'string') langErrors.push(where + '[' + i + ']: texto sin traducir');
+      else checkLang(x, where + '[' + i + ']', key);
+    });
+    return;
+  }
+  if (!v || typeof v !== 'object') return;
+  if ('es' in v || 'en' in v) {
+    ['es', 'en'].forEach(l => {
+      if (typeof v[l] !== 'string' || !v[l].trim()) langErrors.push(where + ': falta "' + l + '"');
+    });
+    return;
+  }
+  for (const k in v) checkLang(v[k], where + '.' + k, k);
+}
+
 const shaman = read('data/shaman.json');
 write('data/shaman.js', 'SHAMAN_DATA', shaman);
 
@@ -20,6 +48,12 @@ const guides = {};
   const g = read('data/guides/' + f + '.json');
   guides[g.spec || 'Overview'] = g;
 });
+Object.keys(guides).forEach(k => checkLang(guides[k], 'guides/' + k, ''));
+read('data/builds.json').builds.forEach(b => checkLang(b, 'builds/' + b.id, ''));
+if (langErrors.length) {
+  console.error(langErrors.join('\n') + '\n\nTextos sin los dos idiomas: no se generó nada.');
+  process.exit(1);
+}
 write('data/guides.js', 'GUIDE_DATA', guides);
 
 const trees = shaman.talents.trees;

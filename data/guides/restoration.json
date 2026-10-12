@@ -1,35 +1,71 @@
 {
   "spec": "Restoration",
-  "role": "Healer",
-  "summary": "Healer híbrido de totems y curas directas. Riptide (fila 7, nivel 40) es cura directa más HoT y deja tu próximo Chain Heal sobre ese objetivo 25% más fuerte. Las curas casi no bajaron frente a Classic (Healing Wave −7%), así que es el spec menos tocado por el recorte de daño.",
+  "role": {
+    "es": "Healer",
+    "en": "Healer"
+  },
+  "summary": {
+    "es": "Healer híbrido de totems y curas directas. Riptide (fila 7, nivel 40) es cura directa más HoT y deja tu próximo Chain Heal sobre ese objetivo 25% más fuerte. Las curas casi no bajaron frente a Classic (Healing Wave −7%), así que es el spec menos tocado por el recorte de daño.",
+    "en": "Totem and direct-heal hybrid healer. Riptide (row 7, level 40) is a direct heal plus HoT and makes your next Chain Heal on that target 25% stronger. Heals barely dropped compared to Classic (Healing Wave −7%), so it's the spec least touched by the damage cut."
+  },
   "mechanicalChanges": [
     {
-      "change": "Riptide es el nuevo final del árbol",
-      "detail": "Instantáneo, 6 s de CD: cura, agrega un HoT de 15 s y sube 25% los Chain Heal que lances directo sobre ese objetivo. Según las notas de Blizzard puede critear. Fila 7 (nivel 40), rangos 2 y 3 a los 50 y 60.",
+      "change": {
+        "es": "Riptide es el nuevo final del árbol",
+        "en": "Riptide is the new bottom of the tree"
+      },
+      "detail": {
+        "es": "Instantáneo, 6 s de CD: cura, agrega un HoT de 15 s y sube 25% los Chain Heal que lances directo sobre ese objetivo. Según las notas de Blizzard puede critear. Fila 7 (nivel 40), rangos 2 y 3 a los 50 y 60.",
+        "en": "Instant, 6 sec cooldown: heals, adds a 15 sec HoT and raises the Chain Heals you cast directly on that target by 25%. Per Blizzard's notes it can crit. Row 7 (level 40), ranks 2 and 3 at 50 and 60."
+      },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
     },
     {
-      "change": "Water Shield es un talento (fila 3)",
-      "detail": "3 globos: cuando te pegan o una cura tuya critea, recuperás 2% de tu maná máximo (un globo cada pocos segundos). Dura 10 min. Desde la build 70291 no tiene cooldown. Solo un escudo elemental a la vez; ningún entrenador lo vende.",
+      "change": {
+        "es": "Water Shield es un talento (fila 3)",
+        "en": "Water Shield is a talent (row 3)"
+      },
+      "detail": {
+        "es": "3 globos: cuando te pegan o una cura tuya critea, recuperás 2% de tu maná máximo (un globo cada pocos segundos). Dura 10 min. Desde la build 70291 no tiene cooldown. Solo un escudo elemental a la vez; ningún entrenador lo vende.",
+        "en": "3 globes: when you're hit or one of your heals crits, you regain 2% of your maximum mana (one globe every few seconds). Lasts 10 min. Since build 70291 it has no cooldown. Only one elemental shield at a time; no trainer sells it."
+      },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
     },
     {
-      "change": "Mindfulness y Healing Way",
-      "detail": "Mindfulness (nuevo, fila 2): a 3/3, 50% de tu regeneración de maná sigue mientras casteás; en Classic el Shaman no tenía nada así. Healing Way ahora da +25% plano a Healing Wave desde la primera (antes acumulaba 6% hasta 3 veces).",
+      "change": {
+        "es": "Mindfulness y Healing Way",
+        "en": "Mindfulness and Healing Way"
+      },
+      "detail": {
+        "es": "Mindfulness (nuevo, fila 2): a 3/3, 50% de tu regeneración de maná sigue mientras casteás; en Classic el Shaman no tenía nada así. Healing Way ahora da +25% plano a Healing Wave desde la primera (antes acumulaba 6% hasta 3 veces).",
+        "en": "Mindfulness (new, row 2): at 3/3, 50% of your mana regeneration continues while casting; Classic Shamans had nothing like it. Healing Way now gives a flat +25% to Healing Wave from the first one (it used to stack 6% up to 3 times)."
+      },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
     },
     {
-      "change": "Mana Tide Totem sube a la fila 4 (nivel 25)",
-      "detail": "Antes estaba al final del árbol (nivel 40). Llega a 30 yardas; el rango 1 da 88 de maná cada 3 s (antes 170) y el rango 3 sigue en 290.",
+      "change": {
+        "es": "Mana Tide Totem sube a la fila 4 (nivel 25)",
+        "en": "Mana Tide Totem moves up to row 4 (level 25)"
+      },
+      "detail": {
+        "es": "Antes estaba al final del árbol (nivel 40). Llega a 30 yardas; el rango 1 da 88 de maná cada 3 s (antes 170) y el rango 3 sigue en 290.",
+        "en": "It used to be at the bottom of the tree (level 40). Reaches 30 yards; rank 1 gives 88 mana every 3 sec (was 170) and rank 3 stays at 290."
+      },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
     },
     {
-      "change": "El hit sale de Tidal Focus",
-      "detail": "Nature's Guidance ya no existe: el único hit del árbol es Tidal Focus (5% a 5/5, fila 2). Tidal Mastery ya no da crítico a Lightning Bolt ni a Chain Lightning. Healing Focus llega al mismo 70% en 3 rangos (antes 5).",
+      "change": {
+        "es": "El hit sale de Tidal Focus",
+        "en": "Hit comes from Tidal Focus"
+      },
+      "detail": {
+        "es": "Nature's Guidance ya no existe: el único hit del árbol es Tidal Focus (5% a 5/5, fila 2). Tidal Mastery ya no da crítico a Lightning Bolt ni a Chain Lightning. Healing Focus llega al mismo 70% en 3 rangos (antes 5).",
+        "en": "Nature's Guidance is gone: the only hit in the tree is Tidal Focus (5% at 5/5, row 2). Tidal Mastery no longer adds crit to Lightning Bolt or Chain Lightning. Healing Focus reaches the same 70% in 3 ranks (was 5)."
+      },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
     }
@@ -43,43 +79,88 @@
       "Stamina"
     ],
     "confidence": "classic-assumed",
-    "rationale": "El poder de curación mejora cada cura, el Intelecto sostiene el pool de maná y Mindfulness hace que el Espíritu rinda mientras casteás. Tené suficiente Stamina para que un golpe suelto no te interrumpa una cura.",
+    "rationale": {
+      "es": "El poder de curación mejora cada cura, el Intelecto sostiene el pool de maná y Mindfulness hace que el Espíritu rinda mientras casteás. Tené suficiente Stamina para que un golpe suelto no te interrumpa una cura.",
+      "en": "Healing power improves every heal, Intellect sustains the mana pool, and Mindfulness makes Spirit pay off while casting. Keep enough Stamina that a stray hit doesn't interrupt a heal."
+    },
     "source": "https://classicwowforever.com/class-guides/shaman/restoration/",
     "forever": {
-      "note": "Específico de Forever: las curas bajaron poco (Healing Wave −7%, Chain Heal −17%) y los rangos bajos de Healing Wave escalan más con spell power que en Classic. Con Mindfulness 3/3 y Water Shield, la regeneración vale más que en Classic.",
+      "note": {
+        "es": "Específico de Forever: las curas bajaron poco (Healing Wave −7%, Chain Heal −17%) y los rangos bajos de Healing Wave escalan más con spell power que en Classic. Con Mindfulness 3/3 y Water Shield, la regeneración vale más que en Classic.",
+        "en": "Forever-specific: heals barely dropped (Healing Wave −7%, Chain Heal −17%) and low Healing Wave ranks scale more with spell power than in Classic. With Mindfulness 3/3 and Water Shield, regeneration is worth more than in Classic."
+      },
       "confidence": "client-data"
     }
   },
   "rotation": {
     "priority": [
-      "Water Shield mientras curás, y un Mana Spring Totem útil desde el nivel 26.",
-      "Healing Wave cuando hay tiempo para el casteo largo; Lesser Healing Wave si esperar ese casteo pone en riesgo al objetivo.",
-      "Healing Stream para daño de grupo constante; Tremor o un totem de limpieza cuando los efectos del enemigo lo justifiquen.",
-      "Desde el 25, Mana Tide donde el grupo pueda quedarse en rango. Al 30, guardá Nature's Swiftness para una cura urgente o para curar en movimiento.",
-      "Al 40, Riptide al tanque y después Chain Heal directo sobre él."
+      {
+        "es": "Water Shield mientras curás, y un Mana Spring Totem útil desde el nivel 26.",
+        "en": "Water Shield while healing, and a useful Mana Spring Totem from level 26."
+      },
+      {
+        "es": "Healing Wave cuando hay tiempo para el casteo largo; Lesser Healing Wave si esperar ese casteo pone en riesgo al objetivo.",
+        "en": "Healing Wave when there's time for the long cast; Lesser Healing Wave if waiting for that cast puts the target at risk."
+      },
+      {
+        "es": "Healing Stream para daño de grupo constante; Tremor o un totem de limpieza cuando los efectos del enemigo lo justifiquen.",
+        "en": "Healing Stream for steady group damage; Tremor or a cleansing totem when the enemy's effects call for it."
+      },
+      {
+        "es": "Desde el 25, Mana Tide donde el grupo pueda quedarse en rango. Al 30, guardá Nature's Swiftness para una cura urgente o para curar en movimiento.",
+        "en": "From 25, Mana Tide where the group can stay in range. At 30, save Nature's Swiftness for an urgent heal or for healing on the move."
+      },
+      {
+        "es": "Al 40, Riptide al tanque y después Chain Heal directo sobre él.",
+        "en": "At 40, Riptide the tank and then Chain Heal directly on them."
+      }
     ],
     "confidence": "classic-assumed",
     "source": "https://classicwowforever.com/class-guides/shaman/restoration/"
   },
   "gearingNotes": [
     {
-      "note": "Los críticos de curación pueden consumir globos de Water Shield: revisalo en pulls largos y renovalo.",
+      "note": {
+        "es": "Los críticos de curación pueden consumir globos de Water Shield: revisalo en pulls largos y renovalo.",
+        "en": "Healing crits can consume Water Shield globes: check it during long pulls and refresh it."
+      },
       "confidence": "classic-assumed"
     },
     {
-      "note": "Enchant Bracer - Minor Healing Power: +8 de curación en muñecas, permanente.",
+      "note": {
+        "es": "Enchant Bracer - Minor Healing Power: +8 de curación en muñecas, permanente.",
+        "en": "Enchant Bracer - Minor Healing Power: +8 healing on bracers, permanent."
+      },
       "confidence": "client-data"
     }
   ],
   "keyTalents": [
-    "Riptide (fila 7) — cura + HoT, y Chain Heal 25% más fuerte sobre ese objetivo",
-    "Nature's Swiftness — tu próximo hechizo de Nature de menos de 10 s sale instantáneo",
-    "Water Shield — 2% de maná por globo al recibir golpes o critear curas",
-    "Mana Tide Totem — maná para el grupo, ya en la fila 4",
-    "Mindfulness — 50% de regen de maná mientras casteás a 3/3"
+    {
+      "es": "Riptide (fila 7) — cura + HoT, y Chain Heal 25% más fuerte sobre ese objetivo",
+      "en": "Riptide (row 7) — heal + HoT, and a 25% stronger Chain Heal on that target"
+    },
+    {
+      "es": "Nature's Swiftness — tu próximo hechizo de Nature de menos de 10 s sale instantáneo",
+      "en": "Nature's Swiftness — your next Nature spell under 10 sec becomes instant"
+    },
+    {
+      "es": "Water Shield — 2% de maná por globo al recibir golpes o critear curas",
+      "en": "Water Shield — 2% mana per globe when you're hit or your heals crit"
+    },
+    {
+      "es": "Mana Tide Totem — maná para el grupo, ya en la fila 4",
+      "en": "Mana Tide Totem — mana for the group, now on row 4"
+    },
+    {
+      "es": "Mindfulness — 50% de regen de maná mientras casteás a 3/3",
+      "en": "Mindfulness — 50% mana regen while casting at 3/3"
+    }
   ],
   "recommendedBuild": {
-    "note": "El build 'Healer de mazmorras' sigue la mejor estimación de la comunidad, que aclara explícitamente que no se probó en juego. En talentsforever.com el build de Resto más armado a 60 es 0/10/41."
+    "note": {
+      "es": "El build 'Healer de mazmorras' sigue la mejor estimación de la comunidad, que aclara explícitamente que no se probó en juego. En talentsforever.com el build de Resto más armado a 60 es 0/10/41.",
+      "en": "The 'Dungeon healer' build follows the community's best guess, which explicitly says it hasn't been tested in game. On talentsforever.com the most built Resto level-60 build is 0/10/41."
+    }
   },
   "sources": [
     "https://www.wowhead.com/forever/guide/classes/shaman/restoration/level-30-healer-overview",
@@ -88,5 +169,8 @@
     "https://talentsforever.com (CC BY 4.0) — data/shaman.json",
     "https://talentsforever.com/shaman/changes"
   ],
-  "caveat": "Beta de Forever, cap en nivel 30 (oct 2026). Casi todo lo de rotación y prioridad de stats viene etiquetado como 'asumido de Classic' por su propia fuente (classicwowforever.com): significa que nada en el cliente beta contradice el comportamiento de Classic Era, no que esté confirmado. Tomalo como punto de partida, no como verdad cerrada."
+  "caveat": {
+    "es": "Beta de Forever, cap en nivel 30 (oct 2026). Casi todo lo de rotación y prioridad de stats viene etiquetado como 'asumido de Classic' por su propia fuente (classicwowforever.com): significa que nada en el cliente beta contradice el comportamiento de Classic Era, no que esté confirmado. Tomalo como punto de partida, no como verdad cerrada.",
+    "en": "Forever beta, level 30 cap (Oct 2026). Almost all rotation and stat priority content is labeled 'assumed from Classic' by its own source (classicwowforever.com): it means nothing in the beta client contradicts Classic Era behavior, not that it's confirmed. Treat it as a starting point, not settled fact."
+  }
 }
