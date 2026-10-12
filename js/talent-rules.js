@@ -132,10 +132,36 @@
     return ranks;
   }
 
+  // A leveling order is a list of [fromLevel, toLevel, tree, talent, rankAfter]
+  // steps, one point per level. Returns the points it places, in order, as
+  // { level, tree, talent, rank } (rank = the talent's rank after that point).
+  function orderPoints(order) {
+    const out = [];
+    order.forEach(([from, to, tree, talent, rankAfter]) => {
+      const n = to - from + 1;
+      for (let i = 0; i < n; i++) {
+        out.push({ level: from + i, tree, talent, rank: rankAfter - n + 1 + i });
+      }
+    });
+    return out;
+  }
+
+  // The build an order has reached by a given level (one point per level).
+  function ranksAtLevel(order, level) {
+    const ranks = {};
+    orderPoints(order).forEach(p => {
+      if (p.level > level) return;
+      ranks[p.tree] = ranks[p.tree] || {};
+      ranks[p.tree][p.talent] = p.rank;
+    });
+    return ranks;
+  }
+
   const api = {
     POINTS_PER_ROW, MIN_LEVEL, MAX_LEVEL, MAX_POINTS, MAX_TALENTED,
     pointsForLevel, levelForPoints, rankOf, treePoints, totalPoints, rowGate,
-    lockReason, validate, withRank, canAdd, canRemove, encode, decode
+    lockReason, validate, withRank, canAdd, canRemove, encode, decode,
+    orderPoints, ranksAtLevel
   };
 
   if (typeof module !== 'undefined' && module.exports) module.exports = api;

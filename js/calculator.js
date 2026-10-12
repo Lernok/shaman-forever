@@ -10,10 +10,11 @@
   const DEFAULT_LEVEL = 30; // beta level cap as of 2026-10
   const ORIGIN_LABEL = {
     guia: 'Basado en la guía',
+    talentsforever: 'Comunidad · talentsforever.com',
     ejemplo: 'Ejemplo armado acá'
   };
 
-  let state = null; // { level, talented, ranks, buildId }
+  let state = null; // { level, talented, ranks, buildId, orderBuild }
   let ui = null;
   let container = null;
   let tipEl = null;
@@ -41,6 +42,11 @@
     return builds().find(b => b.level === state.level && R.encode(b.points, trees()) === code) || null;
   }
 
+  // The example build whose leveling order is being followed, if any.
+  function orderBuild() {
+    return state.orderBuild ? builds().find(b => b.id === state.orderBuild) || null : null;
+  }
+
   function split(ranks) {
     return trees().map(t => R.treePoints(ranks, t)).join('/');
   }
@@ -52,7 +58,8 @@
     const specs = ['Elemental', 'Enhancement', 'Restoration'];
     let html = '<div class="panel"><h3>Builds de ejemplo</h3>' +
       '<p class="note-text">Elegí uno para cargarlo en los árboles y modificarlo. Ninguno está probado en juego todavía; ' +
-      'los de nivel 60 son proyecciones porque la beta está capada en 30. Todos asumen Talented 0/5 (21 puntos al 30).</p>' +
+      'los de nivel 60 son proyecciones porque la beta está capada en 30. Todos asumen Talented 0/5 (21 puntos al 30). ' +
+      'Los que traen orden de leveo se pueden recorrer cambiando el nivel.</p>' +
       '<div class="build-columns">';
     specs.forEach(spec => {
       html += '<div class="build-col" style="--spec-color:' + ui.specColors[spec] + '">' +
@@ -60,7 +67,8 @@
       builds().filter(b => b.spec === spec).forEach(b => {
         html += '<button class="build-card' + (active && active.id === b.id ? ' active' : '') + '" data-build="' + b.id + '">' +
           '<span class="bc-name">' + b.name + '</span>' +
-          '<span class="bc-meta">' + b.case + ' · nivel ' + b.level + ' · ' + split(b.points) + '</span>' +
+          '<span class="bc-meta">' + b.case + ' · nivel ' + b.level + ' · ' + split(b.points) +
+            (b.order ? ' · con orden' : '') + '</span>' +
           '</button>';
       });
       html += '</div>';
@@ -95,16 +103,37 @@
     if (errors.length) {
       html += '<div class="caveat calc-errors">' + errors.join('<br>') + '</div>';
     }
-    const active = matchingBuild();
+    const following = orderBuild();
+    const active = matchingBuild() || following;
     if (active) {
       html += '<div class="build-note" style="--spec-color:' + ui.specColors[active.spec] + '">' +
         '<b>' + active.spec + ' — ' + active.name + '</b> ' + ui.badge(active.confidence) +
-        ' <span class="origin">' + ORIGIN_LABEL[active.origin] + '</span>' +
+        ' <span class="origin">' + (active.source
+          ? '<a href="' + active.source + '" target="_blank" rel="noopener">' + ORIGIN_LABEL[active.origin] + '</a>'
+          : ORIGIN_LABEL[active.origin]) + '</span>' +
+        (following && state.level !== following.level ? ' <span class="origin">· siguiendo su orden al nivel ' + state.level + '</span>' : '') +
         '<p>' + active.note + '</p></div>';
+      if (following) html += renderOrder(following);
     } else if (state.buildId) {
       html += '<div class="build-note dim"><p>Modificado a partir de un build de ejemplo.</p></div>';
     }
     return html;
+  }
+
+  // Level-by-level list of an order, with the steps already reached lit up.
+  function renderOrder(b) {
+    let html = '<details class="order-panel" open><summary>Orden de leveo (' + b.order.length + ' pasos)</summary><ol>';
+    b.order.forEach(([from, to, treeName, talent, rank]) => {
+      const tree = trees().find(t => t.name === treeName);
+      const t = tree.talents.find(x => x.name === talent);
+      const reached = to <= state.level ? ' reached' : from <= state.level ? ' partial' : '';
+      html += '<li class="order-step' + reached + '" style="--spec-color:' + ui.specColors[treeName] + '">' +
+        '<span class="os-lv">' + (from === to ? 'Nv ' + from : 'Nv ' + from + '–' + to) + '</span>' +
+        '<img src="' + ui.iconUrl(t.icon) + '" alt="">' +
+        '<span class="os-name">' + talent + '</span>' +
+        '<span class="os-rank">' + rank + '/' + t.max + '</span></li>';
+    });
+    return html + '</ol></details>';
   }
 
   function renderTree(tree) {
@@ -212,6 +241,7 @@
       : R.canRemove(state.ranks, trees(), tree, talent);
     if (!ok) return false;
     state.ranks = R.withRank(state.ranks, tree, talent, rank + delta);
+    state.orderBuild = null;
     commit();
     return true;
   }
@@ -231,13 +261,17 @@
     container.querySelectorAll('.build-card').forEach(btn => {
       btn.addEventListener('click', () => {
         const b = builds().find(x => x.id === btn.dataset.build);
-        state = { level: b.level, talented: state.talented, ranks: JSON.parse(JSON.stringify(b.points)), buildId: b.id };
+        state = { level: b.level, talented: state.talented, ranks: JSON.parse(JSON.stringify(b.points)), buildId: b.id,
+          orderBuild: b.order ? b.id : null };
         commit();
       });
     });
 
     container.querySelector('#calcLevel').addEventListener('change', e => {
       state.level = Number(e.target.value);
+      // Following a leveling order: show where that order is at the new level.
+      const following = orderBuild();
+      if (following) state.ranks = R.ranksAtLevel(following.order, state.level);
       commit();
     });
 
@@ -247,7 +281,7 @@
     });
 
     container.querySelector('#calcReset').addEventListener('click', () => {
-      state = { level: state.level, talented: state.talented, ranks: {}, buildId: null };
+      state = { level: state.level, talented: state.talented, ranks: {}, buildId: null, orderBuild: null };
       commit();
     });
 
@@ -304,9 +338,9 @@
         document.body.appendChild(tipEl);
       }
       const parsed = parseRoute(parts);
-      state = { level: parsed.level, talented: parsed.talented, ranks: parsed.ranks, buildId: null };
+      state = { level: parsed.level, talented: parsed.talented, ranks: parsed.ranks, buildId: null, orderBuild: null };
       const b = matchingBuild();
-      if (b) state.buildId = b.id;
+      if (b) { state.buildId = b.id; state.orderBuild = b.order ? b.id : null; }
       window.Calculator.lastHash = routeHash();
       renderAll();
     },
