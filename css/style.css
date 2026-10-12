@@ -608,3 +608,6 @@ table.cmp tr:last-child td { border-bottom: none; }
   line-height: 1.5;
   color: var(--text);
 }
+
+/* ---------- Language toggle ---------- */
+.lang-toggle { margin-left: auto; align-self: flex-start; }

@@ -8,12 +8,14 @@
     Spellbook: '#9b7fd1'
   };
 
+  const t = (key, vars) => window.I18N.t(key, vars);
+
   const CONFIDENCE = {
-    'tested': { label: 'Probado en juego', cls: 'conf-tested' },
-    'client-data': { label: 'Dato del cliente beta', cls: 'conf-client' },
-    'classic-assumed': { label: 'Asumido de Classic Era', cls: 'conf-classic' },
-    'community-untested': { label: 'Comunidad, sin confirmar', cls: 'conf-untested' },
-    'official': { label: 'Anuncio de Blizzard', cls: 'conf-official' }
+    'tested': 'conf-tested',
+    'client-data': 'conf-client',
+    'classic-assumed': 'conf-classic',
+    'community-untested': 'conf-untested',
+    'official': 'conf-official'
   };
 
   // 'large' is 56x56: shown at 48px it's downscaled (sharp) instead of the
@@ -43,8 +45,8 @@
 
   function badge(confidence) {
     if (!confidence) return '';
-    const c = CONFIDENCE[confidence] || { label: confidence, cls: 'conf-untested' };
-    return '<span class="badge ' + c.cls + '">' + c.label + '</span>';
+    const cls = CONFIDENCE[confidence] || 'conf-untested';
+    return '<span class="badge ' + cls + '">' + t('conf.' + confidence) + '</span>';
   }
 
   function renderTalentTree(tree) {
@@ -53,8 +55,8 @@
     const cellMap = {};
     tree.talents.forEach(t => { cellMap[t.row + '_' + t.col] = t; });
 
-    let html = '<div class="tree-wrap"><div class="tree-title">Árbol de ' + tree.name + '</div>' +
-      '<div class="tree-hint">Click en un talento para ver rangos y cambios vs. Classic Era.</div>';
+    let html = '<div class="tree-wrap"><div class="tree-title">' + t('tree.title', { tree: tree.name }) + '</div>' +
+      '<div class="tree-hint">' + t('tree.hint') + '</div>';
     html += '<div class="talent-tree" style="background-image:' + treeBg(tree) + '">';
     for (let r = 1; r <= rows; r++) {
       for (let c = 1; c <= cols; c++) {
@@ -88,16 +90,16 @@
     closeTooltip();
 
     const [, r, c] = id.split('_');
-    const t = tree.talents.find(x => x.row === Number(r) && x.col === Number(c));
-    if (!t) return;
+    const tal = tree.talents.find(x => x.row === Number(r) && x.col === Number(c));
+    if (!tal) return;
 
-    let html = '<div class="t-name">' + t.name + (t.max > 1 ? ' (' + t.max + ' rangos)' : '') + '</div>';
-    t.desc.forEach((d, i) => {
-      html += '<div class="t-rank"><b>Rango ' + (i + 1) + ':</b> ' + d + '</div>';
+    let html = '<div class="t-name">' + tal.name + (tal.max > 1 ? ' (' + t('tree.ranks', { n: tal.max }) + ')' : '') + '</div>';
+    tal.desc.forEach((d, i) => {
+      html += '<div class="t-rank"><b>' + t('tree.rank', { n: i + 1 }) + ':</b> ' + d + '</div>';
     });
-    if (t.classic && t.classic.status) {
-      html += '<div class="t-classic">Classic Era: <b>' + t.classic.status + '</b>' +
-              (t.classic.text ? ' — "' + t.classic.text + '"' : '') + '</div>';
+    if (tal.classic && tal.classic.status) {
+      html += '<div class="t-classic">Classic Era: <b>' + tal.classic.status + '</b>' +
+              (tal.classic.text ? ' — "' + tal.classic.text + '"' : '') + '</div>';
     }
 
     const tip = document.createElement('div');
@@ -115,7 +117,7 @@
       html += '<div class="change-card">' +
                 '<div class="title">⚠ ' + c.change + ' ' + badge(c.confidence) + '</div>' +
                 '<div class="detail">' + c.detail + '</div>' +
-                (c.source ? '<a class="src" href="' + c.source + '" target="_blank" rel="noopener">fuente</a>' : '') +
+                (c.source ? '<a class="src" href="' + c.source + '" target="_blank" rel="noopener">' + t('common.source') + '</a>' : '') +
               '</div>';
     });
     html += '</div>';
@@ -143,7 +145,7 @@
   }
 
   function renderSources(sources) {
-    return '<div class="sources"><b>Fuentes:</b><ul>' + sources.map(s => {
+    return '<div class="sources"><b>' + t('common.sources') + '</b><ul>' + sources.map(s => {
       const m = s.match(/^(https?:\/\/[^\s]+)(.*)$/);
       if (!m) return '<li>' + s + '</li>';
       // Host plus path, so several pages of one site stay distinguishable.
@@ -155,7 +157,7 @@
 
   function renderGuide(guide) {
     let html = '<div class="panel">';
-    html += '<h3>Prioridad de stats ' + badge(guide.statPriority.confidence) + '</h3>';
+    html += '<h3>' + t('guide.stats') + ' ' + badge(guide.statPriority.confidence) + '</h3>';
     html += renderStatChips(guide.statPriority.list);
     if (guide.statPriority.rationale) {
       html += '<p class="note-text">' + guide.statPriority.rationale + '</p>';
@@ -164,7 +166,7 @@
       html += '<div class="forever-note">' + guide.statPriority.forever.note + ' ' + badge(guide.statPriority.forever.confidence) + '</div>';
     }
     if (guide.statPriority.alsoReported) {
-      html += '<div class="sub-label">También reportado ' + badge(guide.statPriority.alsoReported.confidence) + '</div>';
+      html += '<div class="sub-label">' + t('guide.alsoReported') + ' ' + badge(guide.statPriority.alsoReported.confidence) + '</div>';
       html += renderStatChips(guide.statPriority.alsoReported.list);
       if (guide.statPriority.alsoReported.note) {
         html += '<p class="note-text">' + guide.statPriority.alsoReported.note + '</p>';
@@ -173,13 +175,13 @@
     html += '</div>';
 
     html += '<div class="panel" style="margin-top:16px">';
-    html += '<h3>Rotación ' + badge(guide.rotation.confidence) + '</h3>';
+    html += '<h3>' + t('guide.rotation') + ' ' + badge(guide.rotation.confidence) + '</h3>';
     const rot = guide.rotation;
-    const labels = { level20: 'Nivel 20', level30: 'Nivel 30', level60: 'Nivel 60', priority: 'Prioridad' };
+    const labels = { level20: t('guide.level20'), level30: t('guide.level30'), level60: t('guide.level60'), priority: t('guide.priority') };
     Object.keys(rot).forEach(key => {
       if (key === 'confidence' || key === 'source' || key === 'level60Confidence') return;
       if (key === 'totems') {
-        html += '<div class="sub-label">Totems clave</div>' + renderList(rot[key], false);
+        html += '<div class="sub-label">' + t('guide.keyTotems') + '</div>' + renderList(rot[key], false);
       } else if (labels[key]) {
         const extraBadge = key === 'level60' && rot.level60Confidence ? ' ' + badge(rot.level60Confidence) : '';
         html += '<div class="sub-label">' + labels[key] + extraBadge + '</div>' + renderList(rot[key], true);
@@ -188,20 +190,20 @@
     html += '</div>';
 
     if (guide.gearingNotes) {
-      html += '<div class="panel" style="margin-top:16px"><h3>Equipo</h3>' + renderNoteList(guide.gearingNotes) + '</div>';
+      html += '<div class="panel" style="margin-top:16px"><h3>' + t('guide.gear') + '</h3>' + renderNoteList(guide.gearingNotes) + '</div>';
     }
 
     if (guide.keyTalents) {
-      html += '<div class="panel" style="margin-top:16px"><h3>Talentos clave</h3>' + renderList(guide.keyTalents, false) + '</div>';
+      html += '<div class="panel" style="margin-top:16px"><h3>' + t('guide.keyTalents') + '</h3>' + renderList(guide.keyTalents, false) + '</div>';
     }
 
-    const specBuilds = (window.BUILD_DATA || []).filter(b => b.spec === guide.spec);
+    const specBuilds = window.I18N.localize(window.BUILD_DATA || []).filter(b => b.spec === guide.spec);
     if (specBuilds.length) {
-      html += '<div class="panel" style="margin-top:16px"><h3>Builds de ejemplo</h3><ul class="plain build-links">';
+      html += '<div class="panel" style="margin-top:16px"><h3>' + t('guide.builds') + '</h3><ul class="plain build-links">';
       specBuilds.forEach(b => {
         const split = window.SHAMAN_DATA.talents.trees.map(t => window.TalentRules.treePoints(b.points, t)).join('/');
         html += '<li><a href="' + window.Calculator.linkFor(b) + '">' + b.name + '</a> ' + badge(b.confidence) +
-          '<span class="bl-meta">' + b.case + ' · nivel ' + b.level + ' · ' + split + '</span>' +
+          '<span class="bl-meta">' + b.case + ' · ' + t('common.level') + ' ' + b.level + ' · ' + split + '</span>' +
           '<span class="bl-note">' + b.note + '</span></li>';
       });
       html += '</ul>';
@@ -224,22 +226,22 @@
     return '<span class="pct ' + (p < 0 ? 'down' : p > 0 ? 'up' : '') + '">' + (p > 0 ? '+' : '') + p + '%</span>';
   }
 
-  function renderTotems(t) {
-    let html = '<div class="panel" style="margin-top:16px"><h3>Totems e imbues</h3>' + renderNotes(t.notes) +
-      '<div class="sub-label">Totems con números nuevos (rango máximo) ' + badge(t.confidence) + '</div>' +
-      '<div class="table-wrap"><table class="cmp"><thead><tr><th>Totem</th><th>Classic</th><th>Forever</th><th></th></tr></thead><tbody>';
-    t.changed.forEach(c => {
+  function renderTotems(tot) {
+    let html = '<div class="panel" style="margin-top:16px"><h3>' + t('ov.totems') + '</h3>' + renderNotes(tot.notes) +
+      '<div class="sub-label">' + t('ov.totemsChanged') + ' ' + badge(tot.confidence) + '</div>' +
+      '<div class="table-wrap"><table class="cmp"><thead><tr><th>' + t('ov.colTotem') + '</th><th>Classic</th><th>Forever</th><th></th></tr></thead><tbody>';
+    tot.changed.forEach(c => {
       html += '<tr><td>' + c.totem + ' <span class="dim">' + c.rank + '</span></td><td class="dim">' + c.classic + '</td>' +
         '<td>' + c.forever + '</td><td>' + pctLabel(c.pct) + '</td></tr>';
     });
     return html + '</tbody></table></div>' +
-      '<p class="note-text dim">Además duran 5 min y llegan a 30 yd. Mana Spring, Stoneskin, Windwall, los de resistencia, Tremor y los de limpieza solo ganaron duración y alcance.</p></div>';
+      '<p class="note-text dim">' + t('ov.totemsMore') + '</p></div>';
   }
 
   // Top-rank tooltip numbers, worked out live from the spellbook data.
   function renderDamage(dm) {
-    let html = '<div class="panel" style="margin-top:16px"><h3>Daño y curación vs Classic ' + badge('client-data') + '</h3>' +
-      '<p class="note-text">Número del tooltip en el rango máximo, sin spell power ni talentos. La barra es cuánto queda del valor de Classic.</p>' +
+    let html = '<div class="panel" style="margin-top:16px"><h3>' + t('ov.damage') + ' ' + badge('client-data') + '</h3>' +
+      '<p class="note-text">' + t('ov.damageIntro') + '</p>' +
       '<div class="dmg-list">';
     dm.spells.forEach(([name, rank]) => {
       const c = window.Spellbook.compare(name, rank);
@@ -254,14 +256,14 @@
 
   function renderRaces(r) {
     const racials = window.SHAMAN_DATA.racials;
-    let html = '<div class="panel" style="margin-top:16px"><h3>Razas ' + badge(r.confidence) + '</h3>' +
+    let html = '<div class="panel" style="margin-top:16px"><h3>' + t('ov.races') + ' ' + badge(r.confidence) + '</h3>' +
       '<p class="note-text">' + r.note + '</p><div class="race-grid">';
     ['Horde', 'Alliance'].forEach(faction => {
       (racials[faction] || []).filter(x => x.classes.includes('Shaman')).forEach(race => {
         const isNew = r.newToShaman.includes(race.race);
         html += '<div class="race-card ' + faction.toLowerCase() + '">' +
           '<div class="rc-head"><img src="' + iconUrl(race.icon) + '" alt=""><b>' + race.race + '</b>' +
-          '<span class="rc-faction">' + faction + (isNew ? ' · nueva para Shaman' : '') + '</span></div><ul>' +
+          '<span class="rc-faction">' + faction + (isNew ? ' · ' + t('ov.newToShaman') : '') + '</span></div><ul>' +
           race.abilities.map(([name, text, icon]) =>
             '<li><img src="' + iconUrl(icon) + '" alt=""><div><b>' + name + '</b><span>' + text + '</span></div></li>').join('') +
           '</ul></div>';
@@ -273,22 +275,22 @@
   function renderOverview(guide) {
     const color = SPEC_COLORS.Overview;
     let html = '<div class="spec-summary" style="--spec-color:' + color + '">' +
-      '<div class="role">Resumen de la clase</div>' +
-      '<h2>Shaman — notas generales</h2>' +
-      '<p>Lo que aplica a los 3 specs: estado de la beta, totems, daño frente a Classic, razas y profesiones.</p>' +
+      '<div class="role">' + t('ov.role') + '</div>' +
+      '<h2>' + t('ov.title') + '</h2>' +
+      '<p>' + t('ov.intro') + '</p>' +
       '</div>';
 
     html += '<div class="grid-2">';
-    html += '<div class="panel"><h3>Notas de la clase</h3>' + renderNotes(guide.classNotes) + '</div>';
+    html += '<div class="panel"><h3>' + t('ov.classNotes') + '</h3>' + renderNotes(guide.classNotes) + '</div>';
 
     html += '<div>';
-    html += '<div class="panel"><h3>Calendario</h3><ul class="plain timeline">' + guide.timeline.map(t =>
+    html += '<div class="panel"><h3>' + t('ov.calendar') + '</h3><ul class="plain timeline">' + guide.timeline.map(t =>
       '<li><span class="tl-date">' + t.date + '</span><span>' + t.event + ' ' + badge(t.confidence) + '</span></li>'
     ).join('') + '</ul></div>';
-    html += '<div class="panel" style="margin-top:16px;--spec-color:' + color + '"><h3>Profesiones ' + badge(guide.professions.confidence) + '</h3>' +
-      '<p class="note-text"><b>Estado:</b> ' + guide.professions.status + '</p>' +
+    html += '<div class="panel" style="margin-top:16px;--spec-color:' + color + '"><h3>' + t('ov.professions') + ' ' + badge(guide.professions.confidence) + '</h3>' +
+      '<p class="note-text"><b>' + t('ov.status') + '</b> ' + guide.professions.status + '</p>' +
       '<p class="note-text">' + guide.professions.statement + '</p>' +
-      '<div class="sub-label">Baseline</div>' +
+      '<div class="sub-label">' + t('ov.baseline') + '</div>' +
       '<p class="note-text">' + guide.professions.baseline + '</p>' +
       '<div class="caveat" style="margin-top:10px">' + guide.professions.recommendation + '</div>' +
       '</div>';
@@ -308,7 +310,7 @@
   function render(spec) {
     closeTooltip();
     window.Calculator.hide();
-    const guide = window.GUIDE_DATA[spec];
+    const guide = window.I18N.localize(window.GUIDE_DATA[spec]);
     const color = SPEC_COLORS[spec];
     document.documentElement.style.setProperty('--spec-color', color);
 
@@ -342,8 +344,8 @@
 
     html += '<div class="grid-2 spec-layout">';
     html += '<div class="panel sticky" style="--spec-color:' + color + '">' +
-              '<h3>Talentos</h3>' + renderTalentTree(tree) +
-              '<a class="calc-link" href="#Calculadora">Abrir la calculadora →</a>' +
+              '<h3>' + t('tree.talents') + '</h3>' + renderTalentTree(tree) +
+              '<a class="calc-link" href="#Calculadora">' + t('tree.openCalc') + '</a>' +
             '</div>';
     html += '<div style="--spec-color:' + color + '">' + renderGuide(guide) + '</div>';
     html += '</div>';
@@ -385,5 +387,14 @@
     if (!e.target.closest('.talent')) closeTooltip();
   });
 
+  // Language switch: re-render the current tab in place (hash and scroll stay).
+  document.getElementById('langToggle').addEventListener('click', () => window.I18N.toggle());
+  window.I18N.onChange(() => {
+    const y = window.scrollY;
+    render(currentSpec);
+    window.scrollTo(0, y);
+  });
+
+  window.I18N.apply();
   selectSpec(currentSpec);
 })();

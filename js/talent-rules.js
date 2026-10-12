@@ -11,6 +11,33 @@
   const MAX_POINTS = 51;
   const MAX_TALENTED = 5;
 
+  // Messages in both site languages; node scripts keep the default (es).
+  const MSG = {
+    es: {
+      row: (need, tree, have) => 'Requiere ' + need + ' puntos en ' + tree + ' (llevás ' + have + ')',
+      req: (name, max) => 'Requiere ' + name + ' al máximo (' + max + '/' + max + ')',
+      unknownTree: tree => 'Árbol desconocido: ' + tree,
+      unknownTalent: (tree, name) => 'Talento desconocido en ' + tree + ': ' + name,
+      rankRange: (name, rank, max) => name + ': rango ' + rank + ' fuera de 0-' + max,
+      overBudget: (total, level, talented, budget) => total + ' puntos gastados, pero al nivel ' + level +
+        (talented ? ' con Talented ' + talented + '/5' : '') + ' hay ' + budget
+    },
+    en: {
+      row: (need, tree, have) => 'Requires ' + need + ' points in ' + tree + ' (you have ' + have + ')',
+      req: (name, max) => 'Requires ' + name + ' at max rank (' + max + '/' + max + ')',
+      unknownTree: tree => 'Unknown tree: ' + tree,
+      unknownTalent: (tree, name) => 'Unknown talent in ' + tree + ': ' + name,
+      rankRange: (name, rank, max) => name + ': rank ' + rank + ' outside 0-' + max,
+      overBudget: (total, level, talented, budget) => total + ' points spent, but level ' + level +
+        (talented ? ' with Talented ' + talented + '/5' : '') + ' only has ' + budget
+    }
+  };
+  let msg = MSG.es;
+
+  function setLang(lang) {
+    msg = MSG[lang] || MSG.es;
+  }
+
   // talented = rank of the Legacy perk "Talented" (each rank = points one level earlier)
   function pointsForLevel(level, talented) {
     return Math.min(MAX_POINTS, Math.max(0, level - (MIN_LEVEL - 1) + (talented || 0)));
@@ -48,12 +75,12 @@
   function lockReason(ranks, tree, talent) {
     const above = pointsAboveRow(ranks, tree, talent.row);
     if (above < rowGate(talent.row)) {
-      return 'Requiere ' + rowGate(talent.row) + ' puntos en ' + tree.name + ' (llevás ' + above + ')';
+      return msg.row(rowGate(talent.row), tree.name, above);
     }
     if (talent.req) {
       const req = tree.talents.find(t => t.name === talent.req);
       if (req && rankOf(ranks, tree, req.name) < req.max) {
-        return 'Requiere ' + req.name + ' al máximo (' + req.max + '/' + req.max + ')';
+        return msg.req(req.name, req.max);
       }
     }
     return null;
@@ -64,13 +91,13 @@
     const errors = [];
     Object.keys(ranks).forEach(treeName => {
       const tree = trees.find(t => t.name === treeName);
-      if (!tree) { errors.push('Árbol desconocido: ' + treeName); return; }
+      if (!tree) { errors.push(msg.unknownTree(treeName)); return; }
       Object.keys(ranks[treeName]).forEach(name => {
         const talent = tree.talents.find(t => t.name === name);
         const rank = ranks[treeName][name];
-        if (!talent) { errors.push('Talento desconocido en ' + treeName + ': ' + name); return; }
+        if (!talent) { errors.push(msg.unknownTalent(treeName, name)); return; }
         if (!Number.isInteger(rank) || rank < 0 || rank > talent.max) {
-          errors.push(name + ': rango ' + rank + ' fuera de 0-' + talent.max);
+          errors.push(msg.rankRange(name, rank, talent.max));
           return;
         }
         if (rank > 0) {
@@ -81,8 +108,7 @@
     });
     const total = totalPoints(ranks, trees);
     if (level != null && total > pointsForLevel(level, talented)) {
-      errors.push(total + ' puntos gastados, pero al nivel ' + level +
-        (talented ? ' con Talented ' + talented + '/5' : '') + ' hay ' + pointsForLevel(level, talented));
+      errors.push(msg.overBudget(total, level, talented, pointsForLevel(level, talented)));
     }
     return errors;
   }
@@ -161,7 +187,7 @@
     POINTS_PER_ROW, MIN_LEVEL, MAX_LEVEL, MAX_POINTS, MAX_TALENTED,
     pointsForLevel, levelForPoints, rankOf, treePoints, totalPoints, rowGate,
     lockReason, validate, withRank, canAdd, canRemove, encode, decode,
-    orderPoints, ranksAtLevel
+    orderPoints, ranksAtLevel, setLang
   };
 
   if (typeof module !== 'undefined' && module.exports) module.exports = api;

@@ -15,32 +15,27 @@
       <span class="brand-icon">⚡</span>
       <div>
         <h1>Shaman <span class="accent">: Forever</span></h1>
-        <p class="tagline">Talentos, rotación y gearing para Enhancement, Elemental y Restoration — WoW: Forever (beta)</p>
+        <p class="tagline" data-i18n="site.tagline">Talentos, rotación y gearing para Enhancement, Elemental y Restoration — WoW: Forever (beta)</p>
       </div>
+      <button class="btn lang-toggle" id="langToggle" type="button">English</button>
     </div>
     <nav class="spec-tabs" id="specTabs">
-      <button class="spec-tab" data-spec="Overview">Overview</button>
+      <button class="spec-tab" data-spec="Overview" data-i18n="tab.Overview">Resumen</button>
       <button class="spec-tab" data-spec="Elemental">Elemental</button>
       <button class="spec-tab" data-spec="Enhancement">Enhancement</button>
       <button class="spec-tab" data-spec="Restoration">Restoration</button>
-      <button class="spec-tab" data-spec="Calculadora">Calculadora</button>
-      <button class="spec-tab" data-spec="Spellbook">Spellbook</button>
+      <button class="spec-tab" data-spec="Calculadora" data-i18n="tab.Calculadora">Calculadora</button>
+      <button class="spec-tab" data-spec="Spellbook" data-i18n="tab.Spellbook">Spellbook</button>
     </nav>
   </header>
 
   <main id="app"></main>
 
   <footer class="site-footer">
-    <p>
-      Datos de talentos/spellbook: <a href="https://talentsforever.com" target="_blank" rel="noopener">talentsforever.com</a>
-      (CC BY 4.0, leído del cliente beta de WoW: Forever). Guías cruzadas con
-      <a href="https://www.wowhead.com/forever" target="_blank" rel="noopener">Wowhead Forever</a> e
-      <a href="https://www.icy-veins.com/wow-forever" target="_blank" rel="noopener">Icy Veins</a>.
-      Iconos: <a href="https://wow.zamimg.com" target="_blank" rel="noopener">wow.zamimg.com</a>.
-      Proyecto fan-made, sin afiliación con Blizzard. Datos de beta — pueden cambiar con hotfixes.
-    </p>
+    <p data-i18n-html="site.footer"></p>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="data/shaman.js"></script>
   <script src="data/guides.js"></script>
   <script src="data/builds.js"></script>

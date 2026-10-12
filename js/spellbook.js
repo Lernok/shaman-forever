@@ -8,10 +8,11 @@
   let query = '';
   const chosenRank = {}; // spell name -> rank label picked in its selector
 
+  const t = (key, vars) => window.I18N.t(key, vars);
   const STATUS = {
-    new: { label: 'Nuevo', plural: 'Nuevos', cls: 'st-new' },
-    changed: { label: 'Cambiado', plural: 'Cambiados', cls: 'st-changed' },
-    same: { label: 'Igual', plural: 'Iguales', cls: 'st-same' }
+    new: { label: 'sb.new', plural: 'sb.newPl', cls: 'st-new' },
+    changed: { label: 'sb.changed', plural: 'sb.changedPl', cls: 'st-changed' },
+    same: { label: 'sb.same', plural: 'sb.samePl', cls: 'st-same' }
   };
 
   function data() { return window.SHAMAN_DATA; }
@@ -66,9 +67,9 @@
       '<div class="sp-head">' +
         '<img class="sp-icon" src="' + ui.iconUrl(s.icon) + '" alt="" loading="lazy">' +
         '<div class="sp-title"><b>' + s.name + '</b>' +
-          '<span class="sp-meta">' + (s.levels.length ? 'Nivel ' + s.levels.join(', ') : '') +
-          (s.fromTalent ? ' · viene con su talento' : '') + '</span></div>' +
-        '<span class="sp-status">' + st.label + '</span>' +
+          '<span class="sp-meta">' + (s.levels.length ? t('sb.levels', { list: s.levels.join(', ') }) : '') +
+          (s.fromTalent ? ' · ' + t('sb.fromTalent') : '') + '</span></div>' +
+        '<span class="sp-status">' + t(st.label) + '</span>' +
       '</div>';
     if (s.ranks.length > 1) {
       html += '<select class="sp-rank" data-spell="' + s.name + '">' +
@@ -98,15 +99,13 @@
     const all = tabs.flatMap(t => t.spells);
     const count = k => all.filter(s => s.status === k).length;
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Spellbook + '">' +
-      '<div class="role">Spellbook</div><h2>Hechizos del Shaman, Forever vs Classic</h2>' +
-      '<p>Cada hechizo de entrenador hasta el 60 con todos sus rangos, leído del cliente beta (build ' + data().spellbook.build + '). ' +
-      'El porcentaje compara el número principal del tooltip (el punto medio del rango de daño o curación) contra el de Classic en el mismo rango; ' +
-      'no incluye spell power ni talentos.</p></div>';
+      '<div class="role">Spellbook</div><h2>' + t('sb.title') + '</h2>' +
+      '<p>' + t('sb.intro', { build: data().spellbook.build }) + '</p></div>';
     html += '<div class="sb-toolbar">' +
       ['all', 'new', 'changed', 'same'].map(k =>
         '<button class="btn sb-filter' + (filter === k ? ' active' : '') + '" data-filter="' + k + '">' +
-        (k === 'all' ? 'Todos (' + all.length + ')' : STATUS[k].plural + ' (' + count(k) + ')') + '</button>').join('') +
-      '<input class="sb-search" type="search" placeholder="Buscar hechizo…" value="' + query.replace(/"/g, '&quot;') + '">' +
+        (k === 'all' ? t('sb.all', { n: all.length }) : t(STATUS[k].plural, { n: count(k) })) + '</button>').join('') +
+      '<input class="sb-search" type="search" placeholder="' + t('sb.search') + '" value="' + query.replace(/"/g, '&quot;') + '">' +
       '</div>';
     tabs.forEach(tab => {
       const list = tab.spells.filter(matches);
@@ -116,9 +115,9 @@
     });
     const gone = data().spellbook.gone || [];
     if (gone.length && (filter === 'all')) {
-      html += '<p class="note-text dim">Ya no están en el cliente: ' + gone.join(', ') + '.</p>';
+      html += '<p class="note-text dim">' + t('sb.gone', { list: gone.join(', ') }) + '</p>';
     }
-    html += ui.renderSources(['https://talentsforever.com (CC BY 4.0) — data/shaman.json, spellbook y spell_desc']);
+    html += ui.renderSources(['https://talentsforever.com (CC BY 4.0) — data/shaman.json, ' + t('sb.source')]);
     container.innerHTML = html;
     bind();
   }
