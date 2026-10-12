@@ -1,5 +1,6 @@
 // Talent calculator tab: all three trees side by side, example builds from
-// data/builds.json, and the build kept in location.hash (#Calculadora/<level>/<code>)
+// data/builds.json, and the build kept in location.hash
+// (#Calculadora/<level>/<code>/<Talented rank>)
 // so it can be shared or bookmarked.
 (function () {
   const R = window.TalentRules;
@@ -11,7 +12,7 @@
     ejemplo: 'Ejemplo armado acá'
   };
 
-  let state = null; // { level, ranks, buildId }
+  let state = null; // { level, talented, ranks, buildId }
   let ui = null;
   let container = null;
   let tipEl = null;
@@ -20,13 +21,16 @@
   function builds() { return window.BUILD_DATA || []; }
 
   function routeHash() {
-    return '#Calculadora/' + state.level + '/' + R.encode(state.ranks, trees());
+    return '#Calculadora/' + state.level + '/' + R.encode(state.ranks, trees()) +
+      (state.talented ? '/' + state.talented : '');
   }
 
   function parseRoute(parts) {
     const level = Number(parts[0]);
+    const talented = Number(parts[2]);
     return {
-      level: level >= R.MIN_LEVEL && level <= R.MAX_LEVEL ? level : DEFAULT_LEVEL,
+      level: level >= 1 && level <= R.MAX_LEVEL ? level : DEFAULT_LEVEL,
+      talented: talented >= 0 && talented <= R.MAX_TALENTED ? Math.floor(talented) : 0,
       ranks: R.decode(parts[1] || '', trees())
     };
   }
@@ -47,7 +51,7 @@
     const specs = ['Elemental', 'Enhancement', 'Restoration'];
     let html = '<div class="panel"><h3>Builds de ejemplo</h3>' +
       '<p class="note-text">Elegí uno para cargarlo en los árboles y modificarlo. Ninguno está probado en juego todavía; ' +
-      'los de nivel 60 son proyecciones porque la beta está capada en 30.</p>' +
+      'los de nivel 60 son proyecciones porque la beta está capada en 30. Todos asumen Talented 0/5 (21 puntos al 30).</p>' +
       '<div class="build-columns">';
     specs.forEach(spec => {
       html += '<div class="build-col" style="--spec-color:' + ui.specColors[spec] + '">' +
@@ -66,17 +70,23 @@
 
   function renderToolbar() {
     const used = R.totalPoints(state.ranks, trees());
-    const budget = R.pointsForLevel(state.level);
-    const errors = R.validate(state.ranks, trees(), state.level);
+    const budget = R.pointsForLevel(state.level, state.talented);
+    const errors = R.validate(state.ranks, trees(), state.level, state.talented);
     let options = '';
-    for (let l = R.MIN_LEVEL; l <= R.MAX_LEVEL; l++) {
+    for (let l = R.MIN_LEVEL - R.MAX_TALENTED; l <= R.MAX_LEVEL; l++) {
       options += '<option value="' + l + '"' + (l === state.level ? ' selected' : '') + '>' + l + '</option>';
+    }
+    let talentedOptions = '';
+    for (let r = 0; r <= R.MAX_TALENTED; r++) {
+      talentedOptions += '<option value="' + r + '"' + (r === state.talented ? ' selected' : '') + '>' + r + '/' + R.MAX_TALENTED + '</option>';
     }
     let html = '<div class="calc-toolbar">' +
       '<label class="calc-level">Nivel <select id="calcLevel">' + options + '</select></label>' +
+      '<label class="calc-level" title="Perk de Legacy (cuenta): cada rango adelanta un nivel el primer punto de talento. Tope: 51 puntos.">' +
+        'Legacy: Talented <select id="calcTalented">' + talentedOptions + '</select></label>' +
       '<div class="calc-stat"><b>' + used + '</b> / ' + budget + ' puntos</div>' +
       '<div class="calc-stat">Reparto <b>' + split(state.ranks) + '</b></div>' +
-      '<div class="calc-stat">Nivel necesario <b>' + R.levelForPoints(used) + '</b></div>' +
+      '<div class="calc-stat">Nivel necesario <b>' + (used ? R.levelForPoints(used, state.talented) : '—') + '</b></div>' +
       '<div class="calc-actions">' +
         '<button class="btn" id="calcCopy">Copiar link</button>' +
         '<button class="btn" id="calcReset">Reiniciar</button>' +
@@ -134,7 +144,8 @@
       '<div class="role">Talentos</div><h2>Calculadora de talentos</h2>' +
       '<p>Click en un talento para sumar un punto; click derecho, Shift+click o el botón − para sacarlo. ' +
       'Las filas se abren cada 5 puntos en el árbol, y una flecha indica que el talento de arriba tiene que estar al máximo. ' +
-      'Un punto por nivel desde el 10 (21 al 30, 51 al 60). Reglas y datos: talentsforever.com, leídos del cliente beta.</p></div>';
+      'Un punto por nivel desde el 10 (21 al 30, 51 al 60); el perk de Legacy <b>Talented</b> adelanta hasta 5 niveles el primer punto ' +
+      '(26 al 30 con 5/5), con tope de 51. Reglas y datos: talentsforever.com, leídos del cliente beta.</p></div>';
     html += renderBuildPicker();
     html += '<div class="panel calc-panel">' + renderToolbar() +
       '<div class="calc-trees">' + trees().map(renderTree).join('') + '</div></div>';
@@ -176,7 +187,7 @@
   function change(tree, talent, delta) {
     const rank = R.rankOf(state.ranks, tree, talent.name);
     const ok = delta > 0
-      ? R.canAdd(state.ranks, trees(), tree, talent, state.level)
+      ? R.canAdd(state.ranks, trees(), tree, talent, state.level, state.talented)
       : R.canRemove(state.ranks, trees(), tree, talent);
     if (!ok) return false;
     state.ranks = R.withRank(state.ranks, tree, talent, rank + delta);
@@ -199,7 +210,7 @@
     container.querySelectorAll('.build-card').forEach(btn => {
       btn.addEventListener('click', () => {
         const b = builds().find(x => x.id === btn.dataset.build);
-        state = { level: b.level, ranks: JSON.parse(JSON.stringify(b.points)), buildId: b.id };
+        state = { level: b.level, talented: state.talented, ranks: JSON.parse(JSON.stringify(b.points)), buildId: b.id };
         commit();
       });
     });
@@ -209,8 +220,13 @@
       commit();
     });
 
+    container.querySelector('#calcTalented').addEventListener('change', e => {
+      state.talented = Number(e.target.value);
+      commit();
+    });
+
     container.querySelector('#calcReset').addEventListener('click', () => {
-      state = { level: state.level, ranks: {}, buildId: null };
+      state = { level: state.level, talented: state.talented, ranks: {}, buildId: null };
       commit();
     });
 
@@ -267,7 +283,7 @@
         document.body.appendChild(tipEl);
       }
       const parsed = parseRoute(parts);
-      state = { level: parsed.level, ranks: parsed.ranks, buildId: null };
+      state = { level: parsed.level, talented: parsed.talented, ranks: parsed.ranks, buildId: null };
       const b = matchingBuild();
       if (b) state.buildId = b.id;
       window.Calculator.lastHash = routeHash();

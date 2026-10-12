@@ -1,18 +1,23 @@
 // Talent point rules shared by the in-page calculator and scripts/build-data.js.
-// Rules per talentsforever.com (read from the beta client): one point per level
-// from 10 (51 at 60), a row opens every 5 points spent in the rows above it, and
-// a talent with `req` needs that talent maxed first.
+// Rules per talentsforever.com (read from the beta client, mirrored from its
+// calc.js): one point per level from 10, never more than 51; the account-wide
+// Legacy perk "Talented" (0-5) starts the points up to 5 levels earlier. A row
+// opens once the rows above it hold (row - 1) * 5 points, and a talent with
+// `req` needs that talent maxed first.
 (function (root) {
   const POINTS_PER_ROW = 5;
   const MIN_LEVEL = 10;
   const MAX_LEVEL = 60;
+  const MAX_POINTS = 51;
+  const MAX_TALENTED = 5;
 
-  function pointsForLevel(level) {
-    return Math.max(0, level - MIN_LEVEL + 1);
+  // talented = rank of the Legacy perk "Talented" (each rank = points one level earlier)
+  function pointsForLevel(level, talented) {
+    return Math.min(MAX_POINTS, Math.max(0, level - (MIN_LEVEL - 1) + (talented || 0)));
   }
 
-  function levelForPoints(points) {
-    return points === 0 ? MIN_LEVEL : MIN_LEVEL - 1 + points;
+  function levelForPoints(points, talented) {
+    return Math.max(1, points + (MIN_LEVEL - 1) - (talented || 0));
   }
 
   // ranks: { [treeName]: { [talentName]: rank } }
@@ -55,7 +60,7 @@
   }
 
   // Every rule violation in a build, as readable strings. Empty array = valid.
-  function validate(ranks, trees, level) {
+  function validate(ranks, trees, level, talented) {
     const errors = [];
     Object.keys(ranks).forEach(treeName => {
       const tree = trees.find(t => t.name === treeName);
@@ -75,8 +80,9 @@
       });
     });
     const total = totalPoints(ranks, trees);
-    if (level != null && total > pointsForLevel(level)) {
-      errors.push(total + ' puntos gastados, pero al nivel ' + level + ' hay ' + pointsForLevel(level));
+    if (level != null && total > pointsForLevel(level, talented)) {
+      errors.push(total + ' puntos gastados, pero al nivel ' + level +
+        (talented ? ' con Talented ' + talented + '/5' : '') + ' hay ' + pointsForLevel(level, talented));
     }
     return errors;
   }
@@ -89,9 +95,9 @@
     return next;
   }
 
-  function canAdd(ranks, trees, tree, talent, level) {
+  function canAdd(ranks, trees, tree, talent, level, talented) {
     if (rankOf(ranks, tree, talent.name) >= talent.max) return false;
-    if (totalPoints(ranks, trees) >= pointsForLevel(level)) return false;
+    if (totalPoints(ranks, trees) >= pointsForLevel(level, talented)) return false;
     return lockReason(ranks, tree, talent) === null;
   }
 
@@ -127,7 +133,7 @@
   }
 
   const api = {
-    POINTS_PER_ROW, MIN_LEVEL, MAX_LEVEL,
+    POINTS_PER_ROW, MIN_LEVEL, MAX_LEVEL, MAX_POINTS, MAX_TALENTED,
     pointsForLevel, levelForPoints, rankOf, treePoints, totalPoints, rowGate,
     lockReason, validate, withRank, canAdd, canRemove, encode, decode
   };
