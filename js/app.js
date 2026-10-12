@@ -17,7 +17,8 @@
 
   const app = document.getElementById('app');
   const tabs = Array.from(document.querySelectorAll('.spec-tab'));
-  let currentSpec = 'Elemental';
+  const SPECS = tabs.map(t => t.dataset.spec);
+  let currentSpec = SPECS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'Overview';
   let openTooltipTalent = null;
 
   function iconUrl(icon) {
@@ -40,7 +41,8 @@
     const cellMap = {};
     tree.talents.forEach(t => { cellMap[t.row + '_' + t.col] = t; });
 
-    let html = '<div class="tree-wrap"><div class="tree-title">' + tree.name + ' tree</div>';
+    let html = '<div class="tree-wrap"><div class="tree-title">' + tree.name + ' tree</div>' +
+      '<div class="tree-hint">Click en un talento para ver rangos y cambios vs. Classic Era.</div>';
     html += '<div class="talent-tree">';
     for (let r = 1; r <= rows; r++) {
       for (let c = 1; c <= cols; c++) {
@@ -49,7 +51,8 @@
           html += '<div class="talent empty"></div>';
         } else {
           const id = tree.name + '_' + r + '_' + c;
-          html += '<div class="talent" data-id="' + id + '" style="background-image:url(' + iconUrl(t.icon) + ')">' +
+          const edge = (c >= 3 ? ' edge-right' : '') + (r >= rows - 1 ? ' edge-bottom' : '');
+          html += '<div class="talent' + edge + '" data-id="' + id + '" title="' + t.name + '" style="background-image:url(' + iconUrl(t.icon) + ')">' +
                    '<span class="rank-badge">' + t.max + '</span>' +
                    '</div>';
         }
@@ -127,6 +130,15 @@
     ).join('') + '</ul>';
   }
 
+  function renderSources(sources) {
+    return '<div class="sources"><b>Fuentes:</b><ul>' + sources.map(s => {
+      const m = s.match(/^(https?:\/\/[^\s]+)(.*)$/);
+      if (!m) return '<li>' + s + '</li>';
+      const host = m[1].replace(/^https?:\/\/(www\.)?/, '').split('/')[0];
+      return '<li><a href="' + m[1] + '" target="_blank" rel="noopener" title="' + m[1] + '">' + host + '</a>' + m[2] + '</li>';
+    }).join('') + '</ul></div>';
+  }
+
   function renderGuide(guide) {
     let html = '<div class="panel">';
     html += '<h3>Stat priority ' + badge(guide.statPriority.confidence) + '</h3>';
@@ -181,9 +193,7 @@
       html += '</div>';
     }
 
-    html += '<div class="sources"><b>Fuentes:</b><br>' +
-      guide.sources.map(s => s.startsWith('http') ? '<a href="' + s + '" target="_blank" rel="noopener">' + s + '</a>' : s).join('<br>') +
-      '</div>';
+    html += renderSources(guide.sources);
     html += '<div class="caveat">' + guide.caveat + '</div>';
 
     return html;
@@ -224,9 +234,7 @@
 
     html += '</div>';
 
-    html += '<div class="sources" style="margin-top:16px"><b>Fuentes:</b><br>' +
-      guide.sources.map(s => '<a href="' + s + '" target="_blank" rel="noopener">' + s + '</a>').join('<br>') +
-      '</div>';
+    html += renderSources(guide.sources);
     html += '<div class="caveat">' + guide.caveat + '</div>';
 
     return html;
@@ -254,8 +262,8 @@
 
     html += renderChanges(guide.mechanicalChanges);
 
-    html += '<div class="grid-2">';
-    html += '<div class="panel" style="--spec-color:' + color + '">' +
+    html += '<div class="grid-2 spec-layout">';
+    html += '<div class="panel sticky" style="--spec-color:' + color + '">' +
               '<h3>Talentos</h3>' + renderTalentTree(tree) +
             '</div>';
     html += '<div style="--spec-color:' + color + '">' + renderGuide(guide) + '</div>';
@@ -273,22 +281,26 @@
     });
   }
 
+  function selectSpec(spec) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.spec === spec));
+    const tab = tabs.find(t => t.dataset.spec === spec);
+    tab.style.setProperty('--spec-color', SPEC_COLORS[spec]);
+    currentSpec = spec;
+    render(spec);
+  }
+
   tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      tab.style.setProperty('--spec-color', SPEC_COLORS[tab.dataset.spec]);
-      currentSpec = tab.dataset.spec;
-      render(currentSpec);
-    });
+    tab.addEventListener('click', () => { location.hash = tab.dataset.spec; });
+  });
+
+  window.addEventListener('hashchange', () => {
+    const spec = location.hash.slice(1);
+    if (SPECS.includes(spec) && spec !== currentSpec) selectSpec(spec);
   });
 
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.talent')) closeTooltip();
   });
 
-  const defaultTab = tabs.find(t => t.dataset.spec === currentSpec);
-  defaultTab.classList.add('active');
-  defaultTab.style.setProperty('--spec-color', SPEC_COLORS[currentSpec]);
-  render(currentSpec);
+  selectSpec(currentSpec);
 })();

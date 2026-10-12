@@ -14,7 +14,8 @@
 
 * { box-sizing: border-box; }
 
-html, body {
+html { background: var(--bg); }
+body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
@@ -104,8 +105,13 @@ main#app {
   gap: 18px;
   align-items: start;
 }
+/* Spec pages: the tree is ~250px wide, so give the rest to the guide column. */
+.grid-2.spec-layout { grid-template-columns: 290px 1fr; }
+/* Talent tree stays in view while scrolling the (much longer) guide column. */
+.panel.sticky { position: sticky; top: 16px; }
 @media (max-width: 760px) {
-  .grid-2 { grid-template-columns: 1fr; }
+  .grid-2, .grid-2.spec-layout { grid-template-columns: 1fr; }
+  .panel.sticky { position: static; }
 }
 
 .panel {
@@ -122,10 +128,7 @@ main#app {
   color: var(--gold);
 }
 
-.tree-wrap {
-  overflow-x: auto;
-  padding-bottom: 6px;
-}
+.tree-wrap { padding-bottom: 6px; }
 .talent-tree {
   display: grid;
   grid-template-columns: repeat(4, 56px);
@@ -171,12 +174,18 @@ main#app {
   box-shadow: 0 8px 24px rgba(0,0,0,.5);
   z-index: 20;
 }
+.talent.edge-right .tooltip { left: auto; right: 0; }
+.talent.edge-bottom .tooltip { top: auto; bottom: calc(100% + 8px); }
+@media (max-width: 420px) {
+  .tooltip { width: min(280px, calc(100vw - 48px)); }
+}
 .tooltip .t-name { color: var(--text); font-weight: 700; font-size: 13.5px; margin-bottom: 4px; }
 .tooltip .t-rank { margin-bottom: 4px; }
 .tooltip .t-rank b { color: var(--gold); }
 .tooltip .t-classic { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); font-size: 11.5px; color: #8b8d97; }
 
 .tree-title { font-weight: 700; margin-bottom: 8px; color: var(--text); }
+.tree-hint { font-size: 11.5px; color: #8b8d97; margin: -4px 0 10px; }
 
 ul.plain { list-style: none; margin: 0; padding: 0; }
 ul.plain li {
@@ -233,6 +242,8 @@ ul.plain.ordered li::before {
 
 .sources { margin-top: 14px; font-size: 11.5px; color: #71737d; }
 .sources a { color: #8ea7bd; }
+.sources ul { margin: 4px 0 0; padding-left: 16px; }
+.sources li { margin: 2px 0; }
 
 .caveat {
   margin-top: 14px;
