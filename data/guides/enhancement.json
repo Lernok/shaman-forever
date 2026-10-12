@@ -38,10 +38,8 @@
     { "note": "Forever's item files store stat types and weights, not final amounts yet — treat specific gear numbers as provisional.", "confidence": "client-data" }
   ],
   "recommendedBuild": {
-    "leveling21pt": "5/5 Thundering Strikes, 3/3 Mental Dexterity, 2/2 Improved Ghost Wolf, 1/1 Shamanistic Focus, 3/3 Elemental Weapons, 1/3 Improved Lightning Shield, 1/1 Stormstrike, 4/5 Flurry, 1/2 Improved Stormstrike",
-    "leveling21ptConfidence": "community-untested",
     "level60Capstones": ["Maelstrom Weapon (5/5)", "Rage of the Farseer (1/1)"],
-    "note": "Point order above is the community's best guess (explicitly \"haven't been tested in game\" per classicwowforever.com) — not a confirmed optimal path. Builds observed across sources skew heavily into the Enhancement tree (commonly 11/33/0-shaped at level 60) to pick up Stormstrike, Flurry, Maelstrom Weapon and Rage of the Farseer."
+    "note": "The \"Leveling solo\" example build follows the community's best guess (explicitly \"haven't been tested in game\" per classicwowforever.com) — not a confirmed optimal path. Builds observed across sources skew heavily into the Enhancement tree (commonly 11/33/0-shaped at level 60) to pick up Stormstrike, Flurry, Maelstrom Weapon and Rage of the Farseer."
   },
   "sources": [
     "https://www.wowhead.com/forever/guide/classes/shaman/enhancement/level-30-dps-overview",

@@ -3,7 +3,8 @@
     Overview: '#c8aa6e',
     Elemental: '#e0742c',
     Enhancement: '#8a5a2b',
-    Restoration: '#3fa9f5'
+    Restoration: '#3fa9f5',
+    Calculadora: '#c8aa6e'
   };
 
   const CONFIDENCE = {
@@ -18,7 +19,9 @@
   const app = document.getElementById('app');
   const tabs = Array.from(document.querySelectorAll('.spec-tab'));
   const SPECS = tabs.map(t => t.dataset.spec);
-  let currentSpec = SPECS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'Overview';
+  // Hash is "#<Tab>" or, for the calculator, "#Calculadora/<level>/<build code>".
+  function hashParts() { return location.hash.slice(1).split('/'); }
+  let currentSpec = SPECS.includes(hashParts()[0]) ? hashParts()[0] : 'Overview';
   let openTooltipTalent = null;
 
   function iconUrl(icon) {
@@ -63,7 +66,7 @@
   }
 
   function closeTooltip() {
-    const existing = document.querySelector('.tooltip');
+    const existing = document.querySelector('.talent .tooltip');
     if (existing) existing.remove();
     const openEl = document.querySelector('.talent.open');
     if (openEl) openEl.classList.remove('open');
@@ -178,18 +181,18 @@
       html += '<div class="panel" style="margin-top:16px"><h3>Talentos clave</h3>' + renderList(guide.keyTalents, false) + '</div>';
     }
 
-    if (guide.recommendedBuild) {
+    const specBuilds = (window.BUILD_DATA || []).filter(b => b.spec === guide.spec);
+    if (specBuilds.length) {
+      html += '<div class="panel" style="margin-top:16px"><h3>Builds de ejemplo</h3><ul class="plain build-links">';
+      specBuilds.forEach(b => {
+        const split = window.SHAMAN_DATA.talents.trees.map(t => window.TalentRules.treePoints(b.points, t)).join('/');
+        html += '<li><a href="' + window.Calculator.linkFor(b) + '">' + b.name + '</a> ' + badge(b.confidence) +
+          '<span class="bl-meta">' + b.case + ' · nivel ' + b.level + ' · ' + split + '</span>' +
+          '<span class="bl-note">' + b.note + '</span></li>';
+      });
+      html += '</ul>';
       const rb = guide.recommendedBuild;
-      html += '<div class="panel" style="margin-top:16px"><h3>Build recomendado</h3>';
-      if (rb.leveling21pt) {
-        html += '<div class="sub-label">Leveling, 21 puntos ' + badge(rb.leveling21ptConfidence) + '</div><p class="note-text">' + rb.leveling21pt + '</p>';
-      }
-      if (rb.level60Capstones) {
-        html += '<div class="sub-label">Capstones nivel 60</div>' + renderList(rb.level60Capstones, false);
-      }
-      if (rb.note) {
-        html += '<p class="note-text dim">' + rb.note + '</p>';
-      }
+      if (rb && rb.note) html += '<p class="note-text dim">' + rb.note + '</p>';
       html += '</div>';
     }
 
@@ -242,9 +245,16 @@
 
   function render(spec) {
     closeTooltip();
+    window.Calculator.hide();
     const guide = window.GUIDE_DATA[spec];
     const color = SPEC_COLORS[spec];
     document.documentElement.style.setProperty('--spec-color', color);
+
+    if (spec === 'Calculadora') {
+      window.Calculator.render(app, hashParts().slice(1), { badge, iconUrl, specColors: SPEC_COLORS });
+      app.style.setProperty('--spec-color', color);
+      return;
+    }
 
     if (spec === 'Overview') {
       app.innerHTML = renderOverview(guide);
@@ -265,6 +275,7 @@
     html += '<div class="grid-2 spec-layout">';
     html += '<div class="panel sticky" style="--spec-color:' + color + '">' +
               '<h3>Talentos</h3>' + renderTalentTree(tree) +
+              '<a class="calc-link" href="#Calculadora">Abrir la calculadora →</a>' +
             '</div>';
     html += '<div style="--spec-color:' + color + '">' + renderGuide(guide) + '</div>';
     html += '</div>';
@@ -290,12 +301,16 @@
   }
 
   tabs.forEach(tab => {
-    tab.addEventListener('click', () => { location.hash = tab.dataset.spec; });
+    tab.addEventListener('click', () => {
+      const spec = tab.dataset.spec;
+      // Coming back to the calculator restores the build you left there.
+      location.hash = spec === 'Calculadora' && window.Calculator.lastHash ? window.Calculator.lastHash : spec;
+    });
   });
 
   window.addEventListener('hashchange', () => {
-    const spec = location.hash.slice(1);
-    if (SPECS.includes(spec) && spec !== currentSpec) selectSpec(spec);
+    const spec = hashParts()[0];
+    if (SPECS.includes(spec) && (spec !== currentSpec || spec === 'Calculadora')) selectSpec(spec);
   });
 
   document.addEventListener('click', (e) => {
