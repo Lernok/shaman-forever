@@ -7,11 +7,19 @@
   let tipEl = null;
   const state = { spec: 'Enhancement', faction: 'horde', random: false, unknown: false, raids: false, pvp: false };
 
-  const SPEC_KINDS = {
-    Enhancement: ['2H Axe', '2H Mace'],
-    Elemental: ['Staff'],
-    Restoration: ['Staff']
+  // Enhancement ranks by weapon DPS. Casters can't: weapon DPS barely matters
+  // to them, and stat weights for Forever aren't known. Forever computes item
+  // stats from item-level budgets, so among weapons that carry caster stats we
+  // rank by item level instead of inventing weights.
+  const has = (w, keys) => keys.some(k => (w.stats && w.stats[k]) || (w.bonus && w.bonus[k]));
+  const ONE_HAND = ['1H Mace', '1H Axe', 'Dagger', 'Fist'];
+  const SPECS = {
+    Enhancement: { kinds: ['2H Axe', '2H Mace'], fits: () => true, value: w => w.dps, metric: 'dps' },
+    Elemental: { kinds: ['Staff'].concat(ONE_HAND), fits: w => has(w, ['intellect', 'spellPower']), value: w => w.ilvl, metric: 'ilvl' },
+    Restoration: { kinds: ['Staff'].concat(ONE_HAND), fits: w => has(w, ['intellect', 'spirit', 'healing', 'spellPower']), value: w => w.ilvl, metric: 'ilvl' }
   };
+  const spec = () => SPECS[state.spec];
+  const valueOf = w => spec().value(w) || 0;
   // Source groups: three validated categorical slots + neutral gray, each
   // with its own marker shape so identity never rests on color alone.
   const GROUPS = {
@@ -45,9 +53,9 @@
   }
 
   function candidates() {
-    const kinds = SPEC_KINDS[state.spec];
+    const s = spec();
     return weapons()
-      .filter(w => kinds.includes(w.kind) && w.dps)
+      .filter(w => s.kinds.includes(w.kind) && s.fits(w) && valueOf(w) > 0)
       .map(w => Object.assign({}, w, { usable: usableSources(w) }))
       .filter(w => w.usable.length)
       .map(w => Object.assign(w, { group: groupOf(w.usable) }));
@@ -59,7 +67,7 @@
     const steps = [];
     let current = null;
     for (let lv = 1; lv <= 60; lv++) {
-      list.forEach(w => { if (w.obtain <= lv && (!current || w.dps > current.dps)) current = w; });
+      list.forEach(w => { if (w.obtain <= lv && (!current || valueOf(w) > valueOf(current))) current = w; });
       best[lv] = current;
       if (current && (!steps.length || steps[steps.length - 1].weapon !== current)) steps.push({ level: lv, weapon: current });
     }
@@ -95,6 +103,15 @@
 
   function qualityClass(q) { return 'q' + q; }
 
+  // Main number of a weapon for the current spec, with the other one below.
+  function metricCell(w) {
+    const dps = window.I18N.num(w.dps.toFixed(1));
+    const speed = window.I18N.num(String(w.speed)) + ' s';
+    return spec().metric === 'dps'
+      ? dps + '<span class="wp-sub">' + speed + '</span>'
+      : w.ilvl + '<span class="wp-sub">' + dps + ' DPS</span>';
+  }
+
   // ---------- chart ----------
 
   function marker(shape, x, y, r, color, extra) {
@@ -106,8 +123,8 @@
 
   function renderChart(list, prog) {
     const W = 760, H = 340, m = { l: 46, r: 16, t: 16, b: 36 };
-    const maxDps = Math.max(10, ...list.map(w => w.dps));
-    const yMax = Math.ceil(maxDps / 10) * 10;
+    const maxValue = Math.max(10, ...list.map(valueOf));
+    const yMax = Math.ceil(maxValue / 10) * 10;
     const x = lv => m.l + (lv - 1) / 59 * (W - m.l - m.r);
     const y = v => H - m.b - v / yMax * (H - m.t - m.b);
     let svg = '<svg class="wp-chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + t('wp.chartLabel') + '">';
@@ -120,7 +137,7 @@
       svg += '<text x="' + x(lv) + '" y="' + (H - m.b + 18) + '" class="tick" text-anchor="middle">' + lv + '</text>';
     });
     svg += '<text x="' + (W - m.r) + '" y="' + (H - 4) + '" class="axis-title" text-anchor="end">' + t('wp.axisLevel') + '</text>';
-    svg += '<text x="' + 4 + '" y="' + 12 + '" class="axis-title">' + t('wp.axisDps') + '</text>';
+    svg += '<text x="' + 4 + '" y="' + 12 + '" class="axis-title">' + t('wp.axis.' + spec().metric) + '</text>';
     // Beta cap.
     svg += '<line x1="' + x(BETA_CAP) + '" x2="' + x(BETA_CAP) + '" y1="' + m.t + '" y2="' + (H - m.b) + '" class="cap"/>' +
       '<text x="' + (x(BETA_CAP) + 4) + '" y="' + (m.t + 10) + '" class="cap-label">' + t('wp.betaCap') + '</text>';
@@ -132,15 +149,15 @@
     for (let lv = 1; lv <= 60; lv++) {
       const w = prog.best[lv];
       if (!w) continue;
-      const px = x(lv), py = y(w.dps);
-      d += (d ? 'L' + px + ' ' + (prog.best[lv - 1] ? y(prog.best[lv - 1].dps) : py) + 'L' : 'M') + px + ' ' + py;
+      const px = x(lv), py = y(valueOf(w));
+      d += (d ? 'L' + px + ' ' + (prog.best[lv - 1] ? y(valueOf(prog.best[lv - 1])) : py) + 'L' : 'M') + px + ' ' + py;
     }
     if (d) svg += '<path d="' + d + '" class="best-line"/>';
     // Every candidate as a marker; upgrades a bit larger.
     const upgrades = new Set(prog.steps.map(s => s.weapon.id));
     list.forEach(w => {
       const g = GROUPS[w.group];
-      svg += marker(g.shape, x(Math.max(1, w.obtain)), y(w.dps), upgrades.has(w.id) ? 6 : 4, g.color,
+      svg += marker(g.shape, x(Math.max(1, w.obtain)), y(valueOf(w)), upgrades.has(w.id) ? 6 : 4, g.color,
         'class="wp-dot' + (upgrades.has(w.id) ? ' up' : '') + '" data-id="' + w.id + '"');
     });
     svg += '</svg>';
@@ -163,7 +180,7 @@
         (w.numbers === 'classic' ? ' <span class="wp-classic-nums" title="' + t('wp.classicNumbersTitle') + '">' + t('wp.classicNumbers') + '</span>' : '') +
         '<span class="wp-sub">' + w.kind + ' · ' + t('common.level') + ' ' + w.req +
           (w.obtain > w.req ? ' · ' + t('wp.obtainFrom', { level: w.obtain }) : '') + (w.bind === 'pickup' ? ' · BoP' : '') + '</span></td>' +
-      '<td class="num">' + window.I18N.num(w.dps.toFixed(1)) + '<span class="wp-sub">' + window.I18N.num(String(w.speed)) + ' s</span></td>' +
+      '<td class="num">' + metricCell(w) + '</td>' +
       '<td>' + (statsText(w) || '—') + '</td>' +
       '<td>' + w.usable.map(s => sourceText(s) + ' ' + ui.badge(s.confidence)).join('<br>') + '</td>' +
       '</tr>';
@@ -173,7 +190,7 @@
     const list = candidates();
     const prog = progression(list);
     const chart = renderChart(list, prog);
-    const specs = Object.keys(SPEC_KINDS);
+    const specs = Object.keys(SPECS);
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Armas + '">' +
       '<div class="role">' + t('wp.role') + '</div><h2>' + t('wp.title') + '</h2><p>' + t('wp.intro') + '</p>' +
       '<p class="note-text dim">' + t('wp.dataNote', { build: window.WEAPON_DATA.build }) + '</p></div>';
@@ -185,16 +202,21 @@
       '<label class="chk" title="' + t('wp.showRaidsTitle') + '"><input type="checkbox" id="wpRaids"' + (state.raids ? ' checked' : '') + '> ' + t('wp.showRaids') + '</label>' +
       '<label class="chk"><input type="checkbox" id="wpPvp"' + (state.pvp ? ' checked' : '') + '> ' + t('wp.showPvp') + '</label>' +
       '</div>';
-    if (state.spec !== 'Enhancement') html += '<div class="caveat">' + t('wp.casterNote') + '</div>';
+    if (spec().metric === 'ilvl') html += '<div class="caveat">' + t('wp.casterNote') + '</div>';
     html += '<div class="panel wp-chart-panel">' + legend() + '<div class="wp-chart-wrap">' + chart.svg + '</div></div>';
+    const guide = window.I18N.localize(window.GUIDE_DATA[state.spec] || {});
+    if (guide.gearTargets) {
+      html += '<div class="panel" style="margin-top:16px"><h3>' + t('wp.targets') + '</h3><ul class="plain">' +
+        guide.gearTargets.map(g => '<li>' + g.note + ' ' + ui.badge(g.confidence) + '</li>').join('') + '</ul></div>';
+    }
 
     html += '<div class="panel" style="margin-top:16px"><h3>' + t('wp.steps', { n: prog.steps.length }) + '</h3>' +
-      '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.colFrom') + '</th><th>' + t('wp.colWeapon') + '</th><th>DPS</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.colSource') + '</th></tr></thead><tbody>' +
+      '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.colFrom') + '</th><th>' + t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.colSource') + '</th></tr></thead><tbody>' +
       prog.steps.map(s => weaponRow(s.weapon, s.level)).join('') + '</tbody></table></div></div>';
 
-    const all = list.slice().sort((a, b) => a.obtain - b.obtain || b.dps - a.dps);
+    const all = list.slice().sort((a, b) => a.obtain - b.obtain || valueOf(b) - valueOf(a));
     html += '<details class="panel wp-all" style="margin-top:16px"><summary>' + t('wp.allWeapons', { n: all.length }) + '</summary>' +
-      '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.colWeapon') + '</th><th>DPS</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.colSource') + '</th></tr></thead><tbody>' +
+      '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.colSource') + '</th></tr></thead><tbody>' +
       all.map(w => weaponRow(w)).join('') + '</tbody></table></div></details>';
     html += '<p class="note-text dim">' + t('wp.sourcesNote') + '</p>';
     html += ui.renderSources([
@@ -222,7 +244,8 @@
   function weaponTip(w, levelLine) {
     return (levelLine ? '<div class="t-cost">' + levelLine + '</div>' : '') +
       '<div class="t-name ' + qualityClass(w.quality) + '">' + w.name + '</div>' +
-      '<div class="t-cost">' + w.kind + ' · ' + t('common.level') + ' ' + w.req + ' · ' + window.I18N.num(w.dps.toFixed(1)) + ' DPS · ' + window.I18N.num(String(w.speed)) + ' s</div>' +
+      '<div class="t-cost">' + w.kind + ' · ' + t('common.level') + ' ' + w.req + ' · ' + t('wp.ilvl') + ' ' + w.ilvl + ' · ' +
+        window.I18N.num(w.dps.toFixed(1)) + ' DPS · ' + window.I18N.num(String(w.speed)) + ' s</div>' +
       (statsText(w) ? '<div class="t-rank">' + statsText(w) + '</div>' : '') +
       w.usable.map(s => '<div class="t-rank">' + sourceText(s) + '</div>').join('');
   }

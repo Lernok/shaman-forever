@@ -194,5 +194,42 @@
       "es": "Rage of the Farseer (fila 7) — +30% de velocidad de ataque por 25 s",
       "en": "Rage of the Farseer (row 7) — +30% attack speed for 25 sec"
     }
+  ],
+  "gearTargets": [
+    {
+      "note": {
+        "es": "Arma: el DPS más alto que consigas, y lenta (3,3 a 3,8 s). Stormstrike y Windfury pegan por golpe, así que cada golpe grande rinde más; un arma rápida con un poco más de DPS no compensa.",
+        "en": "Weapon: the highest DPS you can get, and slow (3.3 to 3.8 sec). Stormstrike and Windfury hit per swing, so each big hit pays more; a fast weapon with slightly more DPS doesn't make up for it."
+      },
+      "confidence": "community-untested"
+    },
+    {
+      "note": {
+        "es": "Después del arma: Fuerza (poder de ataque) y Agilidad (golpe crítico, que mantiene Flurry activo).",
+        "en": "After the weapon: Strength (attack power) and Agility (critical strike, which keeps Flurry up)."
+      },
+      "confidence": "classic-assumed"
+    },
+    {
+      "note": {
+        "es": "El Intelecto vale más que en Classic: con Mental Dexterity 3/3 cada punto da 1 de poder de ataque, Ancestral Knowledge lo sube 10% y Mental Quickness pasa hasta 30% a poder con hechizos para Earth Shock y Lightning Bolt.",
+        "en": "Intellect is worth more than in Classic: with Mental Dexterity 3/3 each point gives 1 attack power, Ancestral Knowledge raises it 10% and Mental Quickness turns up to 30% into spell power for Earth Shock and Lightning Bolt."
+      },
+      "confidence": "client-data"
+    },
+    {
+      "note": {
+        "es": "Varias armas a dos manos nuevas de Forever traen Fuerza + poder con hechizos (Charged Mithril Battleaxe, Thorium Greatmace, Stormcarver): Blizzard está pensando el equipo de Enhancement con algo de poder con hechizos.",
+        "en": "Several new Forever two-handers carry Strength + spell power (Charged Mithril Battleaxe, Thorium Greatmace, Stormcarver): Blizzard is itemizing Enhancement with some spell power."
+      },
+      "confidence": "client-data"
+    },
+    {
+      "note": {
+        "es": "Sin números objetivo todavía: no hay un cap de índice de golpe confirmado ni pesos de stats medidos en Forever.",
+        "en": "No target numbers yet: there is no confirmed hit cap and no measured stat weights in Forever."
+      },
+      "confidence": "community-untested"
+    }
   ]
 }

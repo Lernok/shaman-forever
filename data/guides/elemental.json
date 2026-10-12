@@ -228,5 +228,28 @@
   "caveat": {
     "es": "Beta de Forever, cap en nivel 30 (oct 2026). Casi todo lo de rotación y prioridad de stats viene etiquetado como 'asumido de Classic' por su propia fuente (classicwowforever.com): significa que nada en el cliente beta contradice el comportamiento de Classic Era, no que esté confirmado. Tomalo como punto de partida, no como verdad cerrada.",
     "en": "Forever beta, level 30 cap (Oct 2026). Almost all rotation and stat priority content is labeled 'assumed from Classic' by its own source (classicwowforever.com): it means nothing in the beta client contradicts Classic Era behavior, not that it's confirmed. Treat it as a starting point, not settled fact."
-  }
+  },
+  "gearTargets": [
+    {
+      "note": {
+        "es": "Poder con hechizos primero, después Intelecto y golpe crítico. En Forever el poder con hechizos viene del equipo desde el nivel 10, empezando por el arma: priorizá un arma con poder con hechizos.",
+        "en": "Spell power first, then Intellect and critical strike. In Forever spell power comes from gear from level 10, starting with the weapon: prioritize a weapon with spell power."
+      },
+      "confidence": "official"
+    },
+    {
+      "note": {
+        "es": "Arma: un staff, o un arma de una mano con escudo u off-hand. Enchanting craftea staves BoP para casters (Glimmering Staff al 25, Radiant Staff al 45, con Intelecto).",
+        "en": "Weapon: a staff, or a one-hander with a shield or off-hand. Enchanting crafts BoP caster staves (Glimmering Staff at 25, Radiant Staff at 45, with Intellect)."
+      },
+      "confidence": "client-data"
+    },
+    {
+      "note": {
+        "es": "El índice de golpe y la celeridad suben de valor en contenido de banda; al 30 importan poco.",
+        "en": "Hit and haste gain value in raid content; at 30 they matter little."
+      },
+      "confidence": "community-untested"
+    }
+  ]
 }
