@@ -1,0 +1,44 @@
+{
+  "spec": "Enhancement",
+  "role": "Melee DPS",
+  "summary": "Melee hybrid built around Stormstrike windows, weapon-imbue uptime and Flurry/Maelstrom Weapon procs. Forever's biggest change for the spec: Enhancement is built around a single Two-Handed weapon instead of Classic's dual-wield, reshaping weapon imbue and stat choices.",
+  "mechanicalChanges": [
+    {
+      "change": "Two-Handed weapons only",
+      "detail": "Enhancement no longer dual-wields in Forever; the spec is balanced around one 2H weapon. This changes weapon imbue choice (one slot instead of two) and melee stat scaling vs. Classic Era.",
+      "source": "https://www.wowhead.com/forever/news/enhancement-only-uses-2-handed-weapons-in-wow-forever-enhancement-shaman-383200"
+    },
+    {
+      "change": "Level 30 weapon questline",
+      "detail": "A Shaman-only quest at level 30 rewards a powerful early 2H weapon (fist weapon or 2H mace options reported).",
+      "source": "https://www.wowhead.com/forever/news/unlock-powerful-weapons-with-level-30-shaman-quest-in-wow-forever-383290"
+    }
+  ],
+  "statPriority": {
+    "leveling": ["Strength", "Agility", "Attack Power", "Stamina", "Hit/Crit as secondary"],
+    "notes": "Strength scales attack power directly; Agility adds crit/dodge/AP. Hit and Crit matter but don't out-prioritize primary melee stats at low level."
+  },
+  "rotation": {
+    "level30": [
+      "Stormstrike on cooldown (8 sec) — build the whole rotation around this timer",
+      "Earth Shock as the instant filler right after Stormstrike",
+      "Flame Shock / Fire Nova for AoE and sustained damage on totem pulls",
+      "Lightning Bolt as mana-efficient ranged filler when melee isn't possible",
+      "Keep weapon imbue (Windfury/Rockbiter/Flametongue) active at all times"
+    ],
+    "totems": ["Strength of Earth Totem", "Searing Totem", "Mana Spring Totem"]
+  },
+  "recommendedBuild": {
+    "pointsAtLevel30Example": "5/5 Thundering Strikes, 1/5 Ancestral Knowledge, 3/3 Mental Dexterity, 2/2 Improved Ghost Wolf, 3/3 Elemental Weapons, 1/1 Shamanistic Focus, 4/5 Flurry, 1/1 Stormstrike, 1/2 Improved Stormstrike",
+    "level60Capstones": ["Maelstrom Weapon (5/5)", "Rage of the Farseer (1/1)"],
+    "note": "Builds observed across community sources skew heavily into the Enhancement tree (commonly 11/33/0-shaped at level 60) to pick up Stormstrike, Flurry, Maelstrom Weapon and Rage of the Farseer."
+  },
+  "sources": [
+    "https://www.wowhead.com/forever/guide/classes/shaman/enhancement/level-30-dps-overview",
+    "https://www.wowhead.com/forever/guide/classes/shaman/enhancement/dps-abilities",
+    "https://www.icy-veins.com/wow-forever/enhancement-shaman-melee-dps-pve-guide",
+    "https://wowforevertalents.com/shaman/builds/enhancement-11-33-0-0c2de0/",
+    "https://talentsforever.com (CC BY 4.0) — data/shaman.json"
+  ],
+  "caveat": "Forever is in beta; numbers and talent effects can change with hotfixes. Cross-check against data/shaman.json (talentsforever.com export) before publishing hard numbers."
+}

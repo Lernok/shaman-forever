@@ -1,0 +1,46 @@
+{
+  "spec": "Restoration",
+  "role": "Healer",
+  "summary": "Totem and direct-heal hybrid healer. Riptide (new level-60 capstone) is a direct heal plus HoT that also buffs your next Chain Heal on that target, tying single-target and raid healing together.",
+  "mechanicalChanges": [
+    {
+      "change": "Totems last 5 minutes",
+      "detail": "Most lasting totems (incl. healing ones) now last 5 min instead of Classic's 2 min; Mana Spring and Healing Stream specifically were 1 min in Classic. Short-duration totems (Searing, Magma, Stoneclaw, Earthbind, Grounding, Mana Tide) keep their original short timers.",
+      "source": "data/shaman.json: class_abilities"
+    },
+    {
+      "change": "Call of the Elements / Ancestors / Spirits",
+      "detail": "New multi-totem drop spells: each drops up to four totems from its own totem bar set in a single 3 sec cast (Elements at 20, Ancestors at 30, Spirits at 40).",
+      "source": "data/shaman.json: class_abilities"
+    }
+  ],
+  "statPriority": {
+    "primary": ["Healing Power", "Intellect", "MP5", "Spirit", "Critical Strike"],
+    "level30Dungeons": ["Healing Power", "Intellect", "Spirit", "Critical Strike", "Stamina"],
+    "notes": "Throughput stats (Healing Power, Crit) are generally favored over pure mana-sustain stats at leveling/dungeon pace since encounters are short."
+  },
+  "rotation": {
+    "priority": [
+      "Keep beneficial totems up for the group",
+      "Maintain Water Shield on yourself",
+      "Maintain Riptide on the tank / sustained-damage targets",
+      "Use Mana Tide Totem when safe to drop (out of combat or in a lull)",
+      "Nature's Swiftness + Healing Wave/Chain Heal for instant emergency heals",
+      "Chain Heal for AoE/raid healing, prioritizing targets that already have Riptide",
+      "Healing Wave / Lesser Healing Wave (downranked when appropriate) for single-target efficiency"
+    ]
+  },
+  "keyTalents": [
+    "Riptide (7/2 capstone) — direct heal + HoT, sets up a stronger Chain Heal",
+    "Nature's Swiftness — instant cast on next Nature spell under 10 sec cast time",
+    "Water Shield — passive mana return, replaces Classic's reliance on Mana Spring alone",
+    "Mana Tide Totem — burst mana restoration for the group",
+    "Ancestral Healing — armor buff on your target after a healing crit"
+  ],
+  "sources": [
+    "https://www.wowhead.com/forever/guide/classes/shaman/restoration/level-30-healer-overview",
+    "https://www.icy-veins.com/wow-forever/restoration-shaman-healer-pve-guide",
+    "https://talentsforever.com (CC BY 4.0) — data/shaman.json"
+  ],
+  "caveat": "Forever is in beta; numbers and talent effects can change with hotfixes. Cross-check against data/shaman.json before publishing hard numbers."
+}
