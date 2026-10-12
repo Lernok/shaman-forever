@@ -1,56 +1,92 @@
 {
   "spec": "Restoration",
   "role": "Healer",
-  "summary": "Totem and direct-heal hybrid healer. Riptide (new level-60 capstone) is a direct heal plus HoT that also buffs your next Chain Heal on that target, tying single-target and raid healing together.",
+  "summary": "Healer híbrido de totems y curas directas. Riptide (fila 7, nivel 40) es cura directa más HoT y deja tu próximo Chain Heal sobre ese objetivo 25% más fuerte. Las curas casi no bajaron frente a Classic (Healing Wave −7%), así que es el spec menos tocado por el recorte de daño.",
   "mechanicalChanges": [
     {
-      "change": "Totems last 5 minutes",
-      "detail": "Most lasting totems (incl. healing ones) now last 5 min instead of Classic's 2 min; Mana Spring and Healing Stream specifically were 1 min in Classic. Short-duration totems (Searing, Magma, Stoneclaw, Earthbind, Grounding, Mana Tide) keep their original short timers.",
+      "change": "Riptide es el nuevo final del árbol",
+      "detail": "Instantáneo, 6 s de CD: cura, agrega un HoT de 15 s y sube 25% los Chain Heal que lances directo sobre ese objetivo. Según las notas de Blizzard puede critear. Fila 7 (nivel 40), rangos 2 y 3 a los 50 y 60.",
       "confidence": "client-data",
-      "source": "data/shaman.json: class_abilities"
+      "source": "https://talentsforever.com/shaman/changes"
     },
     {
-      "change": "Call of the Elements / Ancestors / Spirits",
-      "detail": "New multi-totem drop spells: each drops up to four totems from its own totem bar set in a single 3 sec cast (Elements at 20, Ancestors at 30, Spirits at 40).",
+      "change": "Water Shield es un talento (fila 3)",
+      "detail": "3 globos: cuando te pegan o una cura tuya critea, recuperás 2% de tu maná máximo (un globo cada pocos segundos). Dura 10 min. Desde la build 70291 no tiene cooldown. Solo un escudo elemental a la vez; ningún entrenador lo vende.",
       "confidence": "client-data",
-      "source": "data/shaman.json: class_abilities"
+      "source": "https://talentsforever.com/shaman/changes"
+    },
+    {
+      "change": "Mindfulness y Healing Way",
+      "detail": "Mindfulness (nuevo, fila 2): a 3/3, 50% de tu regeneración de maná sigue mientras casteás; en Classic el Shaman no tenía nada así. Healing Way ahora da +25% plano a Healing Wave desde la primera (antes acumulaba 6% hasta 3 veces).",
+      "confidence": "client-data",
+      "source": "https://talentsforever.com/shaman/changes"
+    },
+    {
+      "change": "Mana Tide Totem sube a la fila 4 (nivel 25)",
+      "detail": "Antes estaba al final del árbol (nivel 40). Llega a 30 yardas; el rango 1 da 88 de maná cada 3 s (antes 170) y el rango 3 sigue en 290.",
+      "confidence": "client-data",
+      "source": "https://talentsforever.com/shaman/changes"
+    },
+    {
+      "change": "El hit sale de Tidal Focus",
+      "detail": "Nature's Guidance ya no existe: el único hit del árbol es Tidal Focus (5% a 5/5, fila 2). Tidal Mastery ya no da crítico a Lightning Bolt ni a Chain Lightning. Healing Focus llega al mismo 70% en 3 rangos (antes 5).",
+      "confidence": "client-data",
+      "source": "https://talentsforever.com/shaman/changes"
     }
   ],
   "statPriority": {
-    "list": ["Healing Power", "Intellect", "Spirit", "Mana Regeneration (MP5)", "Stamina"],
+    "list": [
+      "Healing Power",
+      "Intellect",
+      "Spirit",
+      "Mana Regeneration (MP5)",
+      "Stamina"
+    ],
     "confidence": "classic-assumed",
-    "rationale": "Healing Power improves the result, Intellect funds the mana pool, and Mindfulness gives Spirit value during casts. Keep enough Stamina to survive a stray hit that interrupts/pushes back a heal.",
-    "source": "https://classicwowforever.com/class-guides/shaman/restoration/"
+    "rationale": "El poder de curación mejora cada cura, el Intelecto sostiene el pool de maná y Mindfulness hace que el Espíritu rinda mientras casteás. Tené suficiente Stamina para que un golpe suelto no te interrumpa una cura.",
+    "source": "https://classicwowforever.com/class-guides/shaman/restoration/",
+    "forever": {
+      "note": "Específico de Forever: las curas bajaron poco (Healing Wave −7%, Chain Heal −17%) y los rangos bajos de Healing Wave escalan más con spell power que en Classic. Con Mindfulness 3/3 y Water Shield, la regeneración vale más que en Classic.",
+      "confidence": "client-data"
+    }
   },
   "rotation": {
     "priority": [
-      "Use Water Shield while healing, and place a useful Mana Spring Totem from level 26 on.",
-      "Start Healing Wave when there's time for the larger cast; use Lesser Healing Wave when waiting for that cast would leave the target at risk.",
-      "Use Healing Stream for recurring group damage, and pick Tremor or a cleansing totem when the enemy's effects make it useful.",
-      "At 25, use Mana Tide where group members can stay in range. At 30, reserve Nature's Swiftness for an urgent Nature heal or a heal-while-moving."
+      "Water Shield mientras curás, y un Mana Spring Totem útil desde el nivel 26.",
+      "Healing Wave cuando hay tiempo para el casteo largo; Lesser Healing Wave si esperar ese casteo pone en riesgo al objetivo.",
+      "Healing Stream para daño de grupo constante; Tremor o un totem de limpieza cuando los efectos del enemigo lo justifiquen.",
+      "Desde el 25, Mana Tide donde el grupo pueda quedarse en rango. Al 30, guardá Nature's Swiftness para una cura urgente o para curar en movimiento.",
+      "Al 40, Riptide al tanque y después Chain Heal directo sobre él."
     ],
     "confidence": "classic-assumed",
     "source": "https://classicwowforever.com/class-guides/shaman/restoration/"
   },
   "gearingNotes": [
-    { "note": "Critical heals can consume Water Shield globes — check the shield during long pulls and account for refreshing it.", "confidence": "classic-assumed" },
-    { "note": "Enchant Bracer - Minor Healing Power: +8 healing on bracers, permanently.", "confidence": "client-data" }
+    {
+      "note": "Los críticos de curación pueden consumir globos de Water Shield: revisalo en pulls largos y renovalo.",
+      "confidence": "classic-assumed"
+    },
+    {
+      "note": "Enchant Bracer - Minor Healing Power: +8 de curación en muñecas, permanente.",
+      "confidence": "client-data"
+    }
   ],
   "keyTalents": [
-    "Riptide (7/2 capstone) — direct heal + HoT, sets up a stronger Chain Heal",
-    "Nature's Swiftness — instant cast on next Nature spell under 10 sec cast time",
-    "Water Shield — passive mana return, replaces Classic's reliance on Mana Spring alone",
-    "Mana Tide Totem — burst mana restoration for the group",
-    "Ancestral Healing — armor buff on your target after a healing crit"
+    "Riptide (fila 7) — cura + HoT, y Chain Heal 25% más fuerte sobre ese objetivo",
+    "Nature's Swiftness — tu próximo hechizo de Nature de menos de 10 s sale instantáneo",
+    "Water Shield — 2% de maná por globo al recibir golpes o critear curas",
+    "Mana Tide Totem — maná para el grupo, ya en la fila 4",
+    "Mindfulness — 50% de regen de maná mientras casteás a 3/3"
   ],
   "recommendedBuild": {
-    "note": "The \"Healer de mazmorras\" example build follows the community's best guess (explicitly \"haven't been tested in game\"), not confirmed optimal."
+    "note": "El build 'Healer de mazmorras' sigue la mejor estimación de la comunidad, que aclara explícitamente que no se probó en juego. En talentsforever.com el build de Resto más armado a 60 es 0/10/41."
   },
   "sources": [
     "https://www.wowhead.com/forever/guide/classes/shaman/restoration/level-30-healer-overview",
     "https://www.icy-veins.com/wow-forever/restoration-shaman-healer-pve-guide",
     "https://classicwowforever.com/class-guides/shaman/restoration/",
-    "https://talentsforever.com (CC BY 4.0) — data/shaman.json"
+    "https://talentsforever.com (CC BY 4.0) — data/shaman.json",
+    "https://talentsforever.com/shaman/changes"
   ],
-  "caveat": "Forever beta, level cap 30 as of 2026-10. Most rotation/stat-priority claims are explicitly labeled 'classic-assumed' by their own source (classicwowforever.com) — meaning nothing in the beta client contradicts Classic Era behavior, not that it's been confirmed. Treat as a strong starting point, not settled fact."
+  "caveat": "Beta de Forever, cap en nivel 30 (oct 2026). Casi todo lo de rotación y prioridad de stats viene etiquetado como 'asumido de Classic' por su propia fuente (classicwowforever.com): significa que nada en el cliente beta contradice el comportamiento de Classic Era, no que esté confirmado. Tomalo como punto de partida, no como verdad cerrada."
 }

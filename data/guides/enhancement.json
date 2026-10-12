@@ -1,52 +1,108 @@
 {
   "spec": "Enhancement",
-  "role": "Melee DPS",
-  "summary": "Melee hybrid built around Stormstrike windows, weapon-imbue uptime and Flurry/Maelstrom Weapon procs. Forever's biggest change for the spec: Enhancement is built around a single Two-Handed weapon instead of Classic's dual-wield, reshaping weapon imbue and stat choices.",
+  "role": "DPS cuerpo a cuerpo",
+  "summary": "Híbrido melee construido alrededor de Stormstrike, los imbues de arma y los procs de Flurry y Maelstrom Weapon, con un arma a dos manos. En Forever el Intelecto se vuelve poder de ataque y spell power por talentos, y Stormstrike vuelve cada 8 s. Es el spec más elegido: 55–60% de los builds de Shaman en talentsforever.com.",
   "mechanicalChanges": [
     {
-      "change": "Two-Handed weapons only",
-      "detail": "Enhancement no longer dual-wields in Forever; the spec is balanced around one 2H weapon. This changes weapon imbue choice (one slot instead of two) and melee stat scaling vs. Classic Era.",
-      "confidence": "client-data",
+      "change": "Armas a dos manos de base; dual wield sin confirmar",
+      "detail": "Hachas y mazas a dos manos vienen de base (por eso desapareció el talento Two-Handed Axes and Maces). En Classic Era el Shaman nunca tuvo dual wield, y en el cliente beta tampoco hay hechizo, talento ni entrenador que lo enseñe. Wowhead reporta que el spec está pensado para un arma a dos manos.",
+      "confidence": "official",
       "source": "https://www.wowhead.com/forever/news/enhancement-only-uses-2-handed-weapons-in-wow-forever-enhancement-shaman-383200"
     },
     {
-      "change": "Level 30 weapon questline",
-      "detail": "A Shaman-only quest at level 30 rewards a powerful early 2H weapon (fist weapon or 2H mace options reported).",
+      "change": "Stormstrike: el 20% es tuyo y vuelve cada 8 s",
+      "detail": "Sube 20% el daño de tu próximo Lightning Bolt, Chain Lightning o Earth Shock contra ese objetivo (en Classic, las siguientes 2 fuentes de Nature de cualquiera). 125 de maná y 8 s de CD (antes 20 s). Está en la fila 4 (nivel 25), aunque el hechizo en los archivos todavía dice nivel 40; no se probó cuál manda.",
+      "confidence": "client-data",
+      "source": "https://talentsforever.com/shaman/changes"
+    },
+    {
+      "change": "El Intelecto se vuelve poder",
+      "detail": "Mental Dexterity (3/3) da poder de ataque igual al 100% de tu Intelecto y abre Flurry. Mental Quickness (2/2) da spell power y curación hasta 30% de tu Intelecto. Ancestral Knowledge ahora es +10% de Intelecto (en Classic era maná).",
+      "confidence": "client-data",
+      "source": "https://talentsforever.com/shaman/changes"
+    },
+    {
+      "change": "Maelstrom Weapon (fila 6)",
+      "detail": "Tus golpes cuerpo a cuerpo acumulan hasta 5 cargas; cada carga baja 20% (a 5/5) el casteo y el maná de tu próximo Lightning Bolt. Solo Lightning Bolt, duran 30 s, y la chance por golpe no está en los archivos.",
+      "confidence": "client-data",
+      "source": "https://talentsforever.com/shaman/changes"
+    },
+    {
+      "change": "Flurry, Rage of the Farseer y Spirit Weapons",
+      "detail": "Flurry da 25% de velocidad de ataque (antes 30%). Rage of the Farseer (fila 7): +30% de velocidad de ataque por 25 s, 3 min de CD, y desde el 24 sep ya no afecta hechizos. Spirit Weapons: chance de parry y control de amenaza (−30% sin Rockbiter, más amenaza con Rockbiter).",
+      "confidence": "client-data",
+      "source": "https://talentsforever.com/shaman/changes"
+    },
+    {
+      "change": "Quest de arma al nivel 30",
+      "detail": "Una quest exclusiva de Shaman al nivel 30 da un arma a dos manos fuerte para la etapa temprana (se reportan opciones de arma de puño o maza a dos manos).",
       "confidence": "client-data",
       "source": "https://www.wowhead.com/forever/news/unlock-powerful-weapons-with-level-30-shaman-quest-in-wow-forever-383290"
     }
   ],
   "statPriority": {
-    "list": ["Weapon Damage", "Strength", "Critical Strike", "Intellect", "Agility"],
+    "list": [
+      "Weapon Damage",
+      "Strength",
+      "Critical Strike",
+      "Intellect",
+      "Agility"
+    ],
     "confidence": "classic-assumed",
-    "rationale": "Mental Dexterity gives Intellect an attack-power role, and you still need mana for Shocks and emergency healing. No beta client data contradicts Classic's stat behavior for melee.",
-    "source": "https://classicwowforever.com/class-guides/shaman/enhancement/"
+    "rationale": "Mental Dexterity le da al Intelecto un rol de poder de ataque, y además necesitás maná para shocks y curas de emergencia. La fuente no ve nada en el cliente que contradiga los stats de melee de Classic.",
+    "source": "https://classicwowforever.com/class-guides/shaman/enhancement/",
+    "forever": {
+      "note": "Específico de Forever: con Mental Dexterity 3/3 cada punto de Intelecto es 1 de poder de ataque, Ancestral Knowledge lo sube 10% y Mental Quickness convierte hasta 30% en spell power para Earth Shock y Lightning Bolt. El Intelecto probablemente vale más de lo que dice esta lista (sacada de Classic), pero nadie lo midió.",
+      "confidence": "client-data"
+    }
   },
   "rotation": {
     "level30": [
-      "Apply the weapon imbue suited to the pull and keep Lightning Shield active. Rockbiter's threat behavior matters when a tank is holding the target.",
-      "At 25, use Stormstrike and follow with a supported Nature spell when useful. Keep Earth Shock available for its interrupt rather than spending it only for damage.",
-      "Use Flame Shock and Searing Totem for a target that survives repeated ticks.",
-      "At 30, compare Windfury Weapon against the imbue you're already using."
+      "Poné el imbue que convenga para el pull y mantené Lightning Shield. La amenaza extra de Rockbiter importa si hay un tanque sosteniendo al objetivo.",
+      "Desde el 25, Stormstrike y después un hechizo de Nature que lo aproveche. Guardá Earth Shock para interrumpir en vez de gastarlo solo por daño.",
+      "Flame Shock y Searing Totem en objetivos que aguanten varios ticks.",
+      "Al 30, compará Windfury Weapon contra el imbue que ya venías usando. Ojo: Windfury Weapon en la mano principal anula para vos el Windfury Totem."
     ],
     "confidence": "classic-assumed",
-    "totems": ["Strength of Earth Totem", "Searing Totem", "Mana Spring Totem"],
+    "totems": [
+      "Strength of Earth Totem",
+      "Searing Totem",
+      "Mana Spring Totem"
+    ],
     "source": "https://classicwowforever.com/class-guides/shaman/enhancement/"
   },
   "gearingNotes": [
-    { "note": "Windfury is a proc — gear around the full sustained fight, not the single biggest extra-attack roll.", "confidence": "classic-assumed" },
-    { "note": "Forever's item files store stat types and weights, not final amounts yet — treat specific gear numbers as provisional.", "confidence": "client-data" }
+    {
+      "note": "Windfury es un proc: armá el equipo para la pelea completa, no para el golpe extra más grande.",
+      "confidence": "classic-assumed"
+    },
+    {
+      "note": "Los archivos de ítems de Forever guardan tipos y pesos de stats, todavía no los valores finales: tomá cualquier número de gear como provisorio.",
+      "confidence": "client-data"
+    },
+    {
+      "note": "Los imbues duran 60 minutos (antes 5).",
+      "confidence": "client-data"
+    }
   ],
   "recommendedBuild": {
-    "level60Capstones": ["Maelstrom Weapon (5/5)", "Rage of the Farseer (1/1)"],
-    "note": "The \"Leveling solo\" example build follows the community's best guess (explicitly \"haven't been tested in game\" per classicwowforever.com) — not a confirmed optimal path. Builds observed across sources skew heavily into the Enhancement tree (commonly 11/33/0-shaped at level 60) to pick up Stormstrike, Flurry, Maelstrom Weapon and Rage of the Farseer."
+    "note": "El build 'Leveling solo' sigue la mejor estimación de la comunidad según classicwowforever.com, que aclara explícitamente que no se probó en juego. En talentsforever.com el build más armado a 60 es 18/33/0: casi todo en Enhancement hasta Rage of the Farseer, y Elemental para Concussion y Elemental Devastation."
   },
   "sources": [
     "https://www.wowhead.com/forever/guide/classes/shaman/enhancement/level-30-dps-overview",
     "https://www.icy-veins.com/wow-forever/enhancement-shaman-melee-dps-pve-guide",
     "https://classicwowforever.com/class-guides/shaman/enhancement/",
     "https://wowforevertalents.com/shaman/builds/enhancement-11-33-0-0c2de0/",
-    "https://talentsforever.com (CC BY 4.0) — data/shaman.json"
+    "https://talentsforever.com (CC BY 4.0) — data/shaman.json",
+    "https://talentsforever.com/shaman/changes",
+    "https://talentsforever.com/shaman/builds"
   ],
-  "caveat": "Forever beta, level cap 30 as of 2026-10. Most rotation/stat-priority claims are explicitly labeled 'classic-assumed' by their own source (classicwowforever.com) — meaning nothing in the beta client contradicts Classic Era behavior, not that it's been confirmed. Treat as a strong starting point, not settled fact."
+  "caveat": "Beta de Forever, cap en nivel 30 (oct 2026). Casi todo lo de rotación y prioridad de stats viene etiquetado como 'asumido de Classic' por su propia fuente (classicwowforever.com): significa que nada en el cliente beta contradice el comportamiento de Classic Era, no que esté confirmado. Tomalo como punto de partida, no como verdad cerrada.",
+  "keyTalents": [
+    "Stormstrike (fila 4, nivel 25) — +20% a tu próximo Lightning Bolt, Chain Lightning o Earth Shock, cada 8 s",
+    "Mental Dexterity — 100% de tu Intelecto como poder de ataque; abre Flurry",
+    "Maelstrom Weapon — hasta 20% menos casteo y maná por carga para Lightning Bolt",
+    "Improved Stormstrike — 50% de regen de maná al castear por 15 s tras Stormstrike, y Stormstrike se resetea al esquivar o parar",
+    "Rage of the Farseer (fila 7) — +30% de velocidad de ataque por 25 s"
+  ]
 }

@@ -53,7 +53,7 @@
     const cellMap = {};
     tree.talents.forEach(t => { cellMap[t.row + '_' + t.col] = t; });
 
-    let html = '<div class="tree-wrap"><div class="tree-title">' + tree.name + ' tree</div>' +
+    let html = '<div class="tree-wrap"><div class="tree-title">Árbol de ' + tree.name + '</div>' +
       '<div class="tree-hint">Click en un talento para ver rangos y cambios vs. Classic Era.</div>';
     html += '<div class="talent-tree" style="background-image:' + treeBg(tree) + '">';
     for (let r = 1; r <= rows; r++) {
@@ -155,10 +155,13 @@
 
   function renderGuide(guide) {
     let html = '<div class="panel">';
-    html += '<h3>Stat priority ' + badge(guide.statPriority.confidence) + '</h3>';
+    html += '<h3>Prioridad de stats ' + badge(guide.statPriority.confidence) + '</h3>';
     html += renderStatChips(guide.statPriority.list);
     if (guide.statPriority.rationale) {
       html += '<p class="note-text">' + guide.statPriority.rationale + '</p>';
+    }
+    if (guide.statPriority.forever) {
+      html += '<div class="forever-note">' + guide.statPriority.forever.note + ' ' + badge(guide.statPriority.forever.confidence) + '</div>';
     }
     if (guide.statPriority.alsoReported) {
       html += '<div class="sub-label">También reportado ' + badge(guide.statPriority.alsoReported.confidence) + '</div>';
@@ -185,7 +188,7 @@
     html += '</div>';
 
     if (guide.gearingNotes) {
-      html += '<div class="panel" style="margin-top:16px"><h3>Gearing</h3>' + renderNoteList(guide.gearingNotes) + '</div>';
+      html += '<div class="panel" style="margin-top:16px"><h3>Equipo</h3>' + renderNoteList(guide.gearingNotes) + '</div>';
     }
 
     if (guide.keyTalents) {
@@ -270,13 +273,13 @@
   function renderOverview(guide) {
     const color = SPEC_COLORS.Overview;
     let html = '<div class="spec-summary" style="--spec-color:' + color + '">' +
-      '<div class="role">Class overview</div>' +
+      '<div class="role">Resumen de la clase</div>' +
       '<h2>Shaman — notas generales</h2>' +
       '<p>Lo que aplica a los 3 specs: estado de la beta, totems, daño frente a Classic, razas y profesiones.</p>' +
       '</div>';
 
     html += '<div class="grid-2">';
-    html += '<div class="panel"><h3>Class notes</h3>' + renderNotes(guide.classNotes) + '</div>';
+    html += '<div class="panel"><h3>Notas de la clase</h3>' + renderNotes(guide.classNotes) + '</div>';
 
     html += '<div>';
     html += '<div class="panel"><h3>Calendario</h3><ul class="plain timeline">' + guide.timeline.map(t =>

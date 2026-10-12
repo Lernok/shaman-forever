@@ -1,73 +1,124 @@
 {
   "spec": "Elemental",
-  "role": "Ranged DPS / Caster",
-  "summary": "Flame Shock + Lava Burst caster spec. Lava Burst is a guaranteed critical strike against a target with Flame Shock applied, so the rotation is built around keeping Flame Shock active.",
+  "role": "DPS a distancia / caster",
+  "summary": "Caster de Flame Shock + Lava Burst. Lava Burst hace 20% más de daño si tu Flame Shock está en el objetivo, así que la rotación gira en mantener Flame Shock activo. Ojo: en Forever el daño base de los hechizos bajó mucho frente a Classic (Lightning Bolt −56% en su rango máximo) porque el spell power ahora viene del equipo desde el nivel 10.",
   "mechanicalChanges": [
     {
-      "change": "Lightning Bolt / Chain Lightning cast time reduced",
-      "detail": "Ranks 4-10 of Lightning Bolt cast in 2.5 sec (down from Classic's 3 sec); Chain Lightning rank 1 is a 2 sec cast with a 6 sec cooldown.",
+      "change": "Lava Burst reemplaza a Elemental Mastery",
+      "detail": "Fila 7 (nivel 40), pide Lightning Overload 3/3. Bolt de fuego de 2,5 s y 10 s de CD que hace 20% más con tu Flame Shock puesto. Rangos 2 y 3 en el entrenador a los 50 y 60. Elemental Mastery (el crítico garantizado) ya no existe.",
+      "confidence": "client-data",
+      "source": "https://talentsforever.com/shaman/changes"
+    },
+    {
+      "change": "Lightning Bolt y Chain Lightning castean más rápido",
+      "detail": "Lightning Bolt rangos 4–10 castea en 2,5 s (Classic: 3 s); los rangos 1–3 no cambiaron. Chain Lightning rango 1 es de 2 s con 6 s de CD.",
       "confidence": "client-data",
       "source": "data/shaman.json: class_abilities"
     },
     {
-      "change": "Fire Nova is now a spell, not a totem",
-      "detail": "30 yd range, instant cast, 10 sec cooldown; blasts everything within 10 yd of your Fire totem.",
+      "change": "Elemental Alacrity (ex Lightning Mastery) sube a la fila 3",
+      "detail": "A 3/3 saca 0,5 s a Lightning Bolt, Chain Lightning y Lava Burst: un Lightning Bolt de 2 s ya cerca del nivel 25. En Classic estaba en la fila 6 (nivel 35).",
       "confidence": "client-data",
-      "source": "data/shaman.json: class_abilities"
+      "source": "https://talentsforever.com/shaman/changes"
     },
     {
-      "change": "Totemic Projection / Totemic Recall",
-      "detail": "New utility: relocate your totems up to 30 yd away, or recall them instantly.",
+      "change": "Lightning Overload es nuevo (fila 5)",
+      "detail": "Chance de que Lightning Bolt o Chain Lightning lancen una copia gratis a la mitad de daño y sin amenaza. El tooltip y el hechizo no coinciden en la chance, y no se sabe si Lava Burst puede hacer overload.",
+      "confidence": "client-data",
+      "source": "https://talentsforever.com/shaman/changes"
+    },
+    {
+      "change": "Earthbound: Earthbind enraíza",
+      "detail": "Talento nuevo de 1 punto (fila 5): Earthbind Totem inmoviliza 5 s a lo que tenga cerca al caer. El root se aplica del lado del servidor y nadie lo probó todavía.",
+      "confidence": "client-data",
+      "source": "https://talentsforever.com/shaman/changes"
+    },
+    {
+      "change": "Cambios en el resto del árbol",
+      "detail": "Call of Thunder: 1 punto por 3% (antes 5 puntos por 6%), ahora fila 4. Elemental Fury: 5 puntos en la fila 6 (antes 1 en la 5), mismo 100%. Concussion ya solo afecta Earth Shock de los shocks. Call of Flame suma 15% a totems de fuego, Flame Shock, Fire Nova y Lava Burst.",
+      "confidence": "client-data",
+      "source": "https://talentsforever.com/shaman/changes"
+    },
+    {
+      "change": "Fire Nova es un hechizo, no un totem",
+      "detail": "30 yd de alcance, instantáneo, 10 s de CD; explota alrededor de tu totem de fuego, con el mismo daño que tenía el totem y sin la espera de 4 s.",
       "confidence": "client-data",
       "source": "data/shaman.json: class_abilities"
     }
   ],
   "statPriority": {
-    "list": ["Spell Power", "Intellect", "Critical Strike", "Spirit", "Stamina"],
+    "list": [
+      "Spell Power",
+      "Intellect",
+      "Critical Strike",
+      "Spirit",
+      "Stamina"
+    ],
     "confidence": "classic-assumed",
-    "rationale": "Spell Power improves direct casts, while Intellect funds your opener and enough mana to heal yourself. Nothing in the beta client contradicts Classic's caster stat behavior.",
+    "rationale": "El spell power mejora cada casteo, y el Intelecto paga el maná para abrir y para curarte. La fuente no ve nada en el cliente beta que contradiga cómo funcionaban los stats de caster en Classic.",
     "source": "https://classicwowforever.com/class-guides/shaman/elemental/",
     "alsoReported": {
-      "list": ["Spell Power", "Hit", "Haste", "Intellect", "Critical Strike"],
+      "list": [
+        "Spell Power",
+        "Hit",
+        "Haste",
+        "Intellect",
+        "Critical Strike"
+      ],
       "confidence": "community-untested",
-      "note": "Icy Veins-style sources weight Hit/Haste higher for raid-pace content; treat as a later-game variant once gear/hit caps matter more than they do at level 30."
+      "note": "Fuentes estilo Icy Veins le dan más peso a Hit/Haste para contenido de raid. Tomalo como variante de nivel alto, cuando el gear y el cap de hit importen más que al 30."
+    },
+    "forever": {
+      "note": "Específico de Forever: el daño base bajó y Blizzard puso spell power en el equipo desde el nivel 10, empezando por las armas. El spell power del arma pesa más que en Classic. Además Lightning Bolt (rangos 4–10) escala menos, 71,4% contra 85,7%.",
+      "confidence": "official"
     }
   },
   "rotation": {
     "level30": [
-      "Start from range with Lightning Bolt and place Earthbind where it creates another cast window.",
-      "Use Flame Shock and Searing Totem on a target that will live long enough for repeated damage.",
-      "Use Earth Shock for interrupt or direct hit, and Frost Shock on a moving target when slow matters.",
-      "Continue Lightning Bolt on single target; use Fire Nova for packs."
+      "Abrí de lejos con Lightning Bolt y poné Earthbind donde te dé otra ventana de casteo.",
+      "Flame Shock y Searing Totem en objetivos que vivan lo suficiente para los ticks.",
+      "Earth Shock para interrumpir o como golpe directo, y Frost Shock si el objetivo se mueve y el slow importa.",
+      "Seguí con Lightning Bolt en un solo objetivo; Fire Nova para grupos."
     ],
     "confidence": "classic-assumed",
     "level60": [
-      "Flame Shock first, and refresh before it drops (Lava Burst deals 20% more to a target with Flame Shock up).",
-      "Lava Burst on cooldown as your hardest hitting spell.",
-      "Lightning Bolt as filler between Flame Shock/Lava Burst (Lightning Overload can trigger a free extra bolt)."
+      "Flame Shock primero y renovalo antes de que se caiga: Lava Burst hace 20% más con él puesto.",
+      "Lava Burst cada vez que salga del cooldown.",
+      "Lightning Bolt de relleno entre Flame Shock y Lava Burst (Lightning Overload puede lanzar uno extra gratis)."
     ],
     "level60Confidence": "community-untested",
     "source": "https://classicwowforever.com/class-guides/shaman/elemental/"
   },
   "gearingNotes": [
-    { "note": "Consumables: Minor Arcane Elixir (+5 spell damage), Lesser Spellblasting Potion (+11 spell damage).", "confidence": "client-data" },
-    { "note": "Enchants: Minor Wizard Oil (+8 spell damage/healing), Enchant Bracer - Minor Intellect (+3 Intellect).", "confidence": "client-data" }
+    {
+      "note": "Consumibles: Minor Arcane Elixir (+5 de daño de hechizos) y Lesser Spellblasting Potion (+11).",
+      "confidence": "client-data"
+    },
+    {
+      "note": "Encantamientos: Minor Wizard Oil (+8 de daño y curación) y Enchant Bracer - Minor Intellect (+3 Intelecto).",
+      "confidence": "client-data"
+    },
+    {
+      "note": "Priorizá un arma con spell power: es de donde sale el spell power desde el nivel 10.",
+      "confidence": "official"
+    }
   ],
   "keyTalents": [
-    "Lava Burst (7/2 capstone) — guaranteed crit vs. Flame Shock target",
-    "Elemental Devastation — offensive spell crits refresh your melee/ranged crit chance",
-    "Lightning Overload — chance for a free second Lightning Bolt/Chain Lightning",
-    "Call of Flame — buffs Fire totems, Flame Shock, Fire Nova and Searing Totem damage",
-    "Elemental Alacrity — reduces cast time of Lightning Bolt, Chain Lightning, Lava Burst"
+    "Lava Burst (fila 7) — 20% más de daño con tu Flame Shock en el objetivo",
+    "Lightning Overload — chance de un Lightning Bolt/Chain Lightning extra gratis, a la mitad de daño",
+    "Elemental Alacrity — −0,5 s a Lightning Bolt, Chain Lightning y Lava Burst, ya en la fila 3",
+    "Call of Flame — +15% a totems de fuego, Flame Shock, Fire Nova y Lava Burst",
+    "Elemental Devastation — tus críticos de hechizo dan +9% de crítico cuerpo a cuerpo por 10 s (más útil para Enhancement)"
   ],
   "recommendedBuild": {
-    "note": "Alternative at 30: Earthbound instead of Lightning Overload's first point, for an instant root when soloing. Dipping into Restoration for Mindfulness + Mana Tide Totem is reported as strong for sustain in long fights — note Mana Tide sits on row 4 in Forever (needs 15 Restoration points), so at level 30 (21 points, or 26 with the Legacy perk Talented 5/5) it leaves only 5-10 points for Elemental — realistically a higher-level option."
+    "note": "Alternativa al 30: Earthbound en vez del primer punto de Lightning Overload, para tener un root instantáneo al levear solo. Se reporta que bajar a Restoration por Mindfulness + Mana Tide Totem rinde en peleas largas, pero Mana Tide está en la fila 4 (15 puntos en Resto): al 30 te deja solo 5–10 puntos en Elemental, así que en la práctica es para más nivel."
   },
   "sources": [
     "https://www.wowhead.com/forever/guide/classes/shaman/elemental/level-30-dps-overview",
     "https://www.icy-veins.com/wow/elemental-shaman-pve-dps-stat-priority",
     "https://classicwowforever.com/class-guides/shaman/elemental/",
-    "https://talentsforever.com (CC BY 4.0) — data/shaman.json"
+    "https://talentsforever.com (CC BY 4.0) — data/shaman.json",
+    "https://talentsforever.com/shaman/changes"
   ],
-  "caveat": "Forever beta, level cap 30 as of 2026-10. Most rotation/stat-priority claims are explicitly labeled 'classic-assumed' by their own source (classicwowforever.com) — meaning nothing in the beta client contradicts Classic Era behavior, not that it's been confirmed. Treat as a strong starting point, not settled fact."
+  "caveat": "Beta de Forever, cap en nivel 30 (oct 2026). Casi todo lo de rotación y prioridad de stats viene etiquetado como 'asumido de Classic' por su propia fuente (classicwowforever.com): significa que nada en el cliente beta contradice el comportamiento de Classic Era, no que esté confirmado. Tomalo como punto de partida, no como verdad cerrada."
 }

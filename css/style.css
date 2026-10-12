@@ -598,3 +598,13 @@ table.cmp tr:last-child td { border-bottom: none; }
 .race-card li { display: flex; gap: 8px; padding: 5px 0; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-dim); line-height: 1.4; }
 .race-card li img { width: 24px; height: 24px; border-radius: 4px; flex: none; }
 .race-card li b { display: block; color: var(--text); font-size: 12.5px; }
+.forever-note {
+  margin: 10px 0 4px;
+  padding: 8px 10px;
+  border-left: 3px solid var(--spec-color, var(--gold));
+  background: var(--bg-panel-2);
+  border-radius: 4px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text);
+}
