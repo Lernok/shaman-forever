@@ -43,7 +43,6 @@
   upgradeHash();
   let currentPage = PAGES.includes(hashParts()[0]) ? hashParts()[0] : 'Guia';
   let currentHash = location.hash;
-  let openTooltipTalent = null;
 
   function iconUrl(icon) {
     return ICON_BASE + (icon || 'inv_misc_questionmark') + '.jpg';
@@ -53,98 +52,10 @@
     return 'linear-gradient(rgba(12,13,16,.55), rgba(12,13,16,.82)), url(' + TREE_BG_BASE + tree.bg + '.jpg)';
   }
 
-  function findTree(spec) {
-    return window.SHAMAN_DATA.talents.trees.find(t => t.name === spec);
-  }
-
   function badge(confidence) {
     if (!confidence) return '';
     const cls = CONFIDENCE[confidence] || 'conf-untested';
     return '<span class="badge ' + cls + '">' + t('conf.' + confidence) + '</span>';
-  }
-
-  function renderTalentTree(tree) {
-    const rows = Math.max(...tree.talents.map(t => t.row));
-    const cols = 4;
-    const cellMap = {};
-    tree.talents.forEach(t => { cellMap[t.row + '_' + t.col] = t; });
-
-    let html = '<div class="tree-wrap"><div class="tree-title">' + t('tree.title', { tree: tree.name }) + '</div>' +
-      '<div class="tree-hint">' + t('tree.hint') + '</div>';
-    html += '<div class="talent-tree" style="background-image:' + treeBg(tree) + '">';
-    for (let r = 1; r <= rows; r++) {
-      for (let c = 1; c <= cols; c++) {
-        const t = cellMap[r + '_' + c];
-        if (!t) {
-          html += '<div class="talent empty"></div>';
-        } else {
-          const id = tree.name + '_' + r + '_' + c;
-          const edge = (c >= 3 ? ' edge-right' : '') + (r >= rows - 1 ? ' edge-bottom' : '');
-          html += '<div class="talent' + edge + '" data-id="' + id + '" title="' + t.name + '" style="background-image:url(' + iconUrl(t.icon) + ')">' +
-                   '<span class="rank-badge">' + t.max + '</span>' +
-                   '</div>';
-        }
-      }
-    }
-    html += '</div></div>';
-    return html;
-  }
-
-  // The tooltip floats on <body> (position: fixed): inside the sticky talent
-  // panel it was trapped in the panel's stacking context and the guide column
-  // painted over it.
-  function closeTooltip() {
-    const existing = document.querySelector('.talent-tip');
-    if (existing) existing.remove();
-    const openEl = document.querySelector('.talent.open');
-    if (openEl) openEl.classList.remove('open');
-    openTooltipTalent = null;
-  }
-
-  function toggleTooltip(talentEl, tree) {
-    const id = talentEl.dataset.id;
-    if (openTooltipTalent === id) { closeTooltip(); return; }
-    closeTooltip();
-
-    const [, r, c] = id.split('_');
-    const tal = tree.talents.find(x => x.row === Number(r) && x.col === Number(c));
-    if (!tal) return;
-
-    let html = '<div class="t-name">' + tal.name + (tal.max > 1 ? ' (' + t('tree.ranks', { n: tal.max }) + ')' : '') + '</div>';
-    tal.desc.forEach((d, i) => {
-      html += '<div class="t-rank"><b>' + t('tree.rank', { n: i + 1 }) + ':</b> ' + I18N.client(d) + '</div>';
-    });
-    if (tal.classic && tal.classic.status) {
-      html += '<div class="t-classic">' + t('classic.label') + ': <b>' + t('classic.' + tal.classic.status) + '</b>' +
-              (tal.classic.text ? ' — "' + I18N.client(tal.classic.text) + '"' : '') + '</div>';
-    }
-    html += I18N.original(tal.desc.concat(tal.classic && tal.classic.text ? ['Classic: ' + tal.classic.text] : []));
-
-    const tip = document.createElement('div');
-    tip.className = 'tooltip talent-tip';
-    tip.innerHTML = html;
-    document.body.appendChild(tip);
-    placeBeside(tip, talentEl);
-    talentEl.classList.add('open');
-    openTooltipTalent = id;
-  }
-
-  // Right of the anchor if it fits, otherwise left, otherwise below; always on screen.
-  function placeBeside(tip, anchor) {
-    const r = anchor.getBoundingClientRect();
-    const w = tip.offsetWidth;
-    const h = tip.offsetHeight;
-    const margin = 8;
-    let left = r.right + 10;
-    let top = r.top;
-    if (left + w > window.innerWidth - margin) left = r.left - w - 10;
-    if (left < margin) {
-      left = Math.min(Math.max(margin, r.left), window.innerWidth - w - margin);
-      top = r.bottom + 8;
-    }
-    top = Math.max(margin, Math.min(top, window.innerHeight - h - margin));
-    tip.style.left = left + 'px';
-    tip.style.top = top + 'px';
   }
 
   // Collapsed by default: the titles say what changed, the cards say how.
@@ -183,39 +94,22 @@
     ).join('') + '</ul>';
   }
 
-  function renderSources(sources) {
-    return '<div class="sources"><b>' + t('common.sources') + '</b><ul>' + sources.map(s => {
+  // Folded at the bottom of each page, with the page's caveat if it has one.
+  function renderSources(sources, caveat) {
+    return '<details class="sources"><summary>' + t('common.sourcesN', { n: sources.length }) + '</summary><ul>' + sources.map(s => {
       const m = s.match(/^(https?:\/\/[^\s]+)(.*)$/);
       if (!m) return '<li>' + s + '</li>';
       // Host plus path, so several pages of one site stay distinguishable.
       let label = m[1].replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
       if (label.length > 60) label = label.slice(0, 57) + '…';
       return '<li><a href="' + m[1] + '" target="_blank" rel="noopener" title="' + m[1] + '">' + label + '</a>' + m[2] + '</li>';
-    }).join('') + '</ul></div>';
+    }).join('') + '</ul>' + (caveat ? '<p class="sources-caveat">' + caveat + '</p>' : '') + '</details>';
   }
 
   function renderGuide(guide) {
-    let html = '<div class="panel">';
-    html += '<h3>' + t('guide.stats') + ' ' + badge(guide.statPriority.confidence) + '</h3>';
-    html += renderStatChips(guide.statPriority.list);
-    if (guide.statPriority.rationale) {
-      html += '<p class="note-text">' + guide.statPriority.rationale + '</p>';
-    }
-    if (guide.statPriority.forever) {
-      html += '<div class="forever-note">' + guide.statPriority.forever.note + ' ' + badge(guide.statPriority.forever.confidence) + '</div>';
-    }
-    if (guide.statPriority.alsoReported) {
-      html += '<div class="sub-label">' + t('guide.alsoReported') + ' ' + badge(guide.statPriority.alsoReported.confidence) + '</div>';
-      html += renderStatChips(guide.statPriority.alsoReported.list);
-      if (guide.statPriority.alsoReported.note) {
-        html += '<p class="note-text">' + guide.statPriority.alsoReported.note + '</p>';
-      }
-    }
-    html += '</div>';
-
-    html += '<div class="panel" style="margin-top:16px">';
-    html += '<h3>' + t('guide.rotation') + ' ' + badge(guide.rotation.confidence) + '</h3>';
     const rot = guide.rotation;
+    let html = '<div class="panel">';
+    html += '<h3>' + t('guide.rotation') + ' ' + badge(rot.confidence) + '</h3>';
     const labels = { level20: t('guide.level20'), level30: t('guide.level30'), level60: t('guide.level60'), priority: t('guide.priority') };
     Object.keys(rot).forEach(key => {
       if (key === 'confidence' || key === 'source' || key === 'level60Confidence') return;
@@ -228,32 +122,48 @@
     });
     html += '</div>';
 
-    if (guide.gearingNotes) {
-      html += '<div class="panel" style="margin-top:16px"><h3>' + t('guide.gear') + '</h3>' + renderNoteList(guide.gearingNotes) + '</div>';
+    // What to look for: the priority, why, and the gear notes, in one place.
+    const sp = guide.statPriority;
+    html += '<div class="panel" style="margin-top:16px">';
+    // The priority itself is in the glance column next to it.
+    html += '<h3>' + t('guide.statsGear') + ' ' + badge(sp.confidence) + '</h3>';
+    if (sp.rationale) html += '<p class="note-text">' + sp.rationale + '</p>';
+    if (sp.forever) html += '<div class="forever-note">' + sp.forever.note + ' ' + badge(sp.forever.confidence) + '</div>';
+    if (sp.alsoReported) {
+      html += '<div class="sub-label">' + t('guide.alsoReported') + ' ' + badge(sp.alsoReported.confidence) + '</div>' + renderStatChips(sp.alsoReported.list);
+      if (sp.alsoReported.note) html += '<p class="note-text">' + sp.alsoReported.note + '</p>';
     }
+    const gear = (guide.gearTargets || []).concat(guide.gearingNotes || []);
+    if (gear.length) html += '<div class="sub-label">' + t('guide.gearNotes') + '</div>' + renderNoteList(gear);
+    html += '<p class="note-text dim">' + t('guide.toWeapons') + '</p>';
+    html += '</div>';
+    return html;
+  }
 
+  // Left column of the guide: the short version, with links to the full pages.
+  function renderGlance(guide, spec) {
+    let html = '<h3>' + t('guide.glance') + '</h3>';
+    html += '<div class="sub-label">' + t('guide.stats') + '</div>' + renderStatChips(guide.statPriority.list);
+    const best = window.Weapons && window.Weapons.bestSafe(30);
+    if (best) {
+      html += '<div class="sub-label">' + t('guide.weaponAt', { level: 30 }) + '</div>' +
+        '<div class="glance-weapon"><a class="q' + best.quality + '" href="#Equipo">' + best.name + '</a>' +
+        '<span class="wp-sub">' + best.value + ' · ' + t('guide.weaponFrom', { level: best.obtain }) + ' · ' + best.source + '</span></div>';
+    }
     if (guide.keyTalents) {
-      html += '<div class="panel" style="margin-top:16px"><h3>' + t('guide.keyTalents') + '</h3>' + renderList(guide.keyTalents, false) + '</div>';
+      // Name only; what each does is in the changes above and in the calculator.
+      html += '<div class="sub-label">' + t('guide.keyTalents') + '</div><div class="stat-row">' + guide.keyTalents.map(k => {
+        const [name, what] = k.split(' — ');
+        return '<span class="stat-chip" title="' + (what || '').replace(/"/g, '&quot;') + '">' + name.replace(/ \(.*\)$/, '') + '</span>';
+      }).join('') + '</div>';
     }
-
-    const specBuilds = window.I18N.localize(window.BUILD_DATA || []).filter(b => b.spec === guide.spec);
-    if (specBuilds.length) {
-      html += '<div class="panel" style="margin-top:16px"><h3>' + t('guide.builds') + '</h3><ul class="plain build-links">';
-      specBuilds.forEach(b => {
-        const split = window.SHAMAN_DATA.talents.trees.map(t => window.TalentRules.treePoints(b.points, t)).join('/');
-        html += '<li><a href="' + window.Calculator.linkFor(b) + '">' + b.name + '</a> ' + badge(b.confidence) +
-          '<span class="bl-meta">' + b.case + ' · ' + t('common.level') + ' ' + b.level + ' · ' + split + '</span>' +
-          '<span class="bl-note">' + b.note + '</span></li>';
-      });
-      html += '</ul>';
-      const rb = guide.recommendedBuild;
-      if (rb && rb.note) html += '<p class="note-text dim">' + rb.note + '</p>';
-      html += '</div>';
+    const build = window.I18N.localize(window.BUILD_DATA || []).find(b => b.spec === spec);
+    if (build) {
+      html += '<div class="sub-label">' + t('guide.build') + '</div>' +
+        '<a href="' + window.Calculator.linkFor(build) + '">' + build.name + '</a> ' + badge(build.confidence) +
+        '<span class="wp-sub">' + t('common.level') + ' ' + build.level + ' · ' + window.SHAMAN_DATA.talents.trees.map(tr => window.TalentRules.treePoints(build.points, tr)).join('/') + '</span>';
     }
-
-    html += renderSources(guide.sources);
-    html += '<div class="caveat">' + guide.caveat + '</div>';
-
+    html += '<div class="glance-links"><a href="#Talentos">' + t('guide.toTalents') + '</a><a href="#Equipo">' + t('guide.toGear') + '</a></div>';
     return html;
   }
 
@@ -322,9 +232,10 @@
       '<p>' + t('ov.intro') + '</p>' +
       '</div>';
     html += Site.sectionTabs('Clase', CLASS_SECTIONS, section, k => t('cl.sec.' + k));
-    if (section === 'totems') return html + renderTotems(guide.totems) + renderSources(guide.sources);
-    if (section === 'dano') return html + renderDamage(guide.damage) + renderSources(guide.sources);
-    if (section === 'razas') return html + renderRaces(guide.races) + renderSources(guide.sources);
+    const foot = renderSources(guide.sources, guide.caveat);
+    if (section === 'totems') return html + renderTotems(guide.totems).replace('margin-top:16px', 'margin-top:0') + foot;
+    if (section === 'dano') return html + renderDamage(guide.damage).replace('margin-top:16px', 'margin-top:0') + foot;
+    if (section === 'razas') return html + renderRaces(guide.races).replace('margin-top:16px', 'margin-top:0') + foot;
 
     html += '<div class="grid-2">';
     html += '<div class="panel"><h3>' + t('ov.classNotes') + '</h3>' + renderNotes(guide.classNotes) + '</div>';
@@ -333,24 +244,14 @@
     html += '<div class="panel"><h3>' + t('ov.calendar') + '</h3><ul class="plain timeline">' + guide.timeline.map(t =>
       '<li><span class="tl-date">' + t.date + '</span><span>' + t.event + ' ' + badge(t.confidence) + '</span></li>'
     ).join('') + '</ul></div>';
-    html += '<div class="panel" style="margin-top:16px;--spec-color:' + color + '"><h3>' + t('ov.professions') + ' ' + badge(guide.professions.confidence) + '</h3>' +
-      '<p class="note-text"><b>' + t('ov.status') + '</b> ' + guide.professions.status + '</p>' +
-      '<p class="note-text">' + guide.professions.statement + '</p>' +
-      '<div class="sub-label">' + t('ov.baseline') + '</div>' +
-      '<p class="note-text">' + guide.professions.baseline + '</p>' +
-      '<div class="caveat" style="margin-top:10px">' + guide.professions.recommendation + '</div>' +
-      '</div>';
     html += '</div>';
     html += '</div>';
 
-    html += renderSources(guide.sources);
-    html += '<div class="caveat">' + guide.caveat + '</div>';
-
+    html += foot;
     return html;
   }
 
   function render(page) {
-    closeTooltip();
     window.Calculator.hide();
     if (window.Weapons) window.Weapons.hide();
     const spec = Site.spec;
@@ -369,8 +270,6 @@
 
     const guide = window.I18N.localize(window.GUIDE_DATA[spec]);
 
-    const tree = findTree(spec);
-
     let html = '<div class="spec-summary" style="--spec-color:' + color + '">' +
       '<div class="role">' + guide.role + '</div>' +
       '<h2>' + spec + '</h2>' +
@@ -380,22 +279,11 @@
     html += renderChanges(guide.mechanicalChanges, spec);
 
     html += '<div class="grid-2 spec-layout">';
-    html += '<div class="panel sticky" style="--spec-color:' + color + '">' +
-              '<h3>' + t('tree.talents') + '</h3>' + renderTalentTree(tree) +
-              '<a class="calc-link" href="#Talentos">' + t('tree.openCalc') + '</a>' +
-            '</div>';
-    html += '<div style="--spec-color:' + color + '">' + renderGuide(guide) + '</div>';
+    html += '<aside class="panel sticky glance">' + renderGlance(guide, spec) + '</aside>';
+    html += '<div>' + renderGuide(guide) + '</div>';
     html += '</div>';
-
+    html += renderSources(guide.sources, guide.caveat);
     app.innerHTML = html;
-
-    document.querySelectorAll('.talent').forEach(el => {
-      if (el.classList.contains('empty')) return;
-      el.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleTooltip(el, tree);
-      });
-    });
   }
 
   function selectPage(page) {
@@ -449,22 +337,6 @@
       if (before != null && after) window.scrollBy(0, after.getBoundingClientRect().top - before);
     }
   });
-
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.talent') && !e.target.closest('.talent-tip')) closeTooltip();
-  });
-  // The tooltip is fixed-position: follow its talent on scroll/resize, and
-  // close it once the talent leaves the screen.
-  function followTooltip() {
-    const tip = document.querySelector('.talent-tip');
-    const anchor = document.querySelector('.talent.open');
-    if (!tip || !anchor) return;
-    const r = anchor.getBoundingClientRect();
-    if (r.bottom < 0 || r.top > window.innerHeight) { closeTooltip(); return; }
-    placeBeside(tip, anchor);
-  }
-  window.addEventListener('scroll', followTooltip, { passive: true });
-  window.addEventListener('resize', followTooltip);
 
   // Language switch: re-render the current tab in place (hash and scroll stay).
   document.getElementById('langToggle').addEventListener('click', () => window.I18N.toggle());

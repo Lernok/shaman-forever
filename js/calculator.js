@@ -52,23 +52,21 @@
   function renderBuildPicker() {
     const active = matchingBuild();
     // The chosen spec's builds; the trees stay all three (hybrids exist).
-    const specs = [window.Site.spec];
     let html = '<div class="panel"><h3>' + t('calc.examples') + '</h3>' +
       '<p class="note-text">' + t('calc.examplesIntro') + '</p>' +
-      '<div class="build-columns">';
-    specs.forEach(spec => {
-      html += '<div class="build-col" style="--spec-color:' + ui.specColors[spec] + '">' +
-        '<div class="build-col-title">' + spec + '</div>';
-      builds().filter(b => b.spec === spec).forEach(b => {
-        html += '<button class="build-card' + (active && active.id === b.id ? ' active' : '') + '" data-build="' + b.id + '">' +
-          '<span class="bc-name">' + b.name + '</span>' +
-          '<span class="bc-meta">' + b.case + ' · ' + t('common.level') + ' ' + b.level + ' · ' + split(b.points) +
-            (b.order ? ' · ' + t('calc.withOrder') : '') + '</span>' +
-          '</button>';
-      });
-      html += '</div>';
+      '<div class="build-grid" style="--spec-color:' + ui.specColors[window.Site.spec] + '">';
+    builds().filter(b => b.spec === window.Site.spec).forEach(b => {
+      html += '<button class="build-card' + (active && active.id === b.id ? ' active' : '') + '" data-build="' + b.id + '">' +
+        '<span class="bc-name">' + b.name + '</span>' +
+        '<span class="bc-meta">' + b.case + ' · ' + t('common.level') + ' ' + b.level + ' · ' + split(b.points) +
+          (b.order ? ' · ' + t('calc.withOrder') : '') + '</span>' +
+        '</button>';
     });
-    html += '</div></div>';
+    html += '</div>';
+    // Alternatives and caveats for this spec's builds (from its guide).
+    const guide = window.I18N.localize(window.GUIDE_DATA[window.Site.spec] || {});
+    if (guide.recommendedBuild && guide.recommendedBuild.note) html += '<p class="note-text dim">' + guide.recommendedBuild.note + '</p>';
+    html += '</div>';
     return html;
   }
 

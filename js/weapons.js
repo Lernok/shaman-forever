@@ -7,7 +7,7 @@
   let tipEl = null;
   const state = { random: false, unknown: false, raids: false, pvp: false, path: 'safe' };
   const Site = window.Site;
-  const SECTIONS = ['progresion', 'dungeon', 'objetivo', 'todas'];
+  const SECTIONS = ['progresion', 'dungeon', 'todas'];
 
   // Enhancement ranks by weapon DPS. Casters can't: weapon DPS barely matters
   // to them, and stat weights for Forever aren't known. Forever computes item
@@ -258,16 +258,15 @@
     const prog = paths[state.path];
     const section = Site.section('Equipo', SECTIONS);
     const chart = section === 'progresion' ? renderChart(list, paths) : null;
-    const guide = window.I18N.localize(window.GUIDE_DATA[Site.spec] || {});
     const dq = dungeonQuests(list);
     const all = list.slice().sort((a, b) => a.obtain - b.obtain || valueOf(b) - valueOf(a));
-    const counts = { progresion: prog.steps.length, dungeon: dq.n, objetivo: null, todas: all.length };
+    const counts = { progresion: prog.steps.length, dungeon: dq.n, todas: all.length };
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Armas + '">' +
       '<div class="role">' + t('wp.role') + ' · ' + Site.spec + ' · ' + t('wp.faction.' + Site.faction) + '</div><h2>' + t('wp.title') + '</h2><p>' + t('wp.intro') + '</p>' +
       '<p class="note-text dim">' + t('wp.dataNote', { build: window.WEAPON_DATA.build }) + '</p></div>';
     html += Site.sectionTabs('Equipo', SECTIONS, section, k => t('wp.sec.' + k) + (counts[k] != null ? ' <span class="n">' + counts[k] + '</span>' : ''));
     // The source toggles change every list, so they sit above all sections.
-    if (section !== 'objetivo') html += '<div class="wp-controls">' +
+    html += '<div class="wp-controls">' +
       '<span class="ctl-label">' + t('wp.addSources') + '</span>' +
       '<label class="chk"><input type="checkbox" id="wpRandom"' + (state.random ? ' checked' : '') + '> ' + t('wp.showRandom') + '</label>' +
       '<label class="chk"><input type="checkbox" id="wpUnknown"' + (state.unknown ? ' checked' : '') + '> ' + t('wp.showUnknown') + '</label>' +
@@ -276,7 +275,6 @@
       '</div>';
     if (section === 'progresion') html += progressionSection(list, paths, prog, chart);
     if (section === 'dungeon') html += dq.html;
-    if (section === 'objetivo') html += targetsSection(guide);
     if (section === 'todas') html += allSection(all);
     html += '<p class="note-text dim">' + t('wp.sourcesNote') + '</p>';
     html += ui.renderSources([
@@ -299,12 +297,6 @@
       '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.colFrom') + '</th><th>' + t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.colSource') + '</th></tr></thead><tbody>' +
       prog.steps.map(s => weaponRow(s.weapon, s.level)).join('') + '</tbody></table></div></div>';
     return html;
-  }
-
-  function targetsSection(guide) {
-    if (!guide.gearTargets) return '';
-    return '<div class="panel"><h3>' + t('wp.targets') + '</h3><ul class="plain">' +
-      guide.gearTargets.map(g => '<li>' + g.note + ' ' + ui.badge(g.confidence) + '</li>').join('') + '</ul></div>';
   }
 
   function allSection(all) {
@@ -384,6 +376,16 @@
       if (!window.WEAPON_DATA) { container.innerHTML = '<div class="caveat">' + t('wp.noData') + '</div>'; return; }
       renderAll();
     },
-    hide: hideTip
+    hide: hideTip,
+    // Best guaranteed weapon at a level for the header's spec and faction,
+    // with the default source toggles (the guide's "at a glance" card).
+    bestSafe(level) {
+      if (!window.WEAPON_DATA) return null;
+      const w = progression(candidates().filter(isSafe)).best[level];
+      if (!w) return null;
+      const s = w.usable.find(x => SAFE.includes(x.type)) || w.usable[0];
+      const value = spec().metric === 'dps' ? window.I18N.num(w.dps.toFixed(1)) + ' DPS' : t('wp.ilvl') + ' ' + w.ilvl;
+      return { name: w.name, quality: w.quality, obtain: w.obtain, value, source: sourceText(s) };
+    }
   };
 })();

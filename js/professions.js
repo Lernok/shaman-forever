@@ -135,8 +135,7 @@
     if (section === 'subir') html += '<div class="panel"><h3>' + t('pr.leveling') + '</h3><ul class="plain">' +
       g.leveling.map(l => '<li><a href="' + l.url + '" target="_blank" rel="noopener">' + l.site + '</a> — ' + l.note + '</li>').join('') + '</ul></div>';
 
-    html += ui.renderSources(g.sources);
-    html += '<div class="caveat">' + g.caveat + '</div>';
+    html += ui.renderSources(g.sources, g.caveat);
     container.innerHTML = html;
     bind();
   }

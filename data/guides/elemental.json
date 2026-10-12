@@ -181,13 +181,6 @@
         "en": "Enchants: Minor Wizard Oil (+8 damage and healing) and Enchant Bracer - Minor Intellect (+3 Intellect)."
       },
       "confidence": "client-data"
-    },
-    {
-      "note": {
-        "es": "Priorizá un arma con poder con hechizos: es de donde sale ese stat desde el nivel 10.",
-        "en": "Prioritize a weapon with spell power: that's where spell power comes from from level 10."
-      },
-      "confidence": "official"
     }
   ],
   "keyTalents": [
@@ -232,24 +225,10 @@
   "gearTargets": [
     {
       "note": {
-        "es": "Poder con hechizos primero, después Intelecto y golpe crítico. En Forever el poder con hechizos viene del equipo desde el nivel 10, empezando por el arma: priorizá un arma con poder con hechizos.",
-        "en": "Spell power first, then Intellect and critical strike. In Forever spell power comes from gear from level 10, starting with the weapon: prioritize a weapon with spell power."
-      },
-      "confidence": "official"
-    },
-    {
-      "note": {
         "es": "Arma: un staff, o un arma de una mano con escudo u off-hand. Enchanting craftea staves BoP para casters (Glimmering Staff al 25, Radiant Staff al 45, con Intelecto).",
         "en": "Weapon: a staff, or a one-hander with a shield or off-hand. Enchanting crafts BoP caster staves (Glimmering Staff at 25, Radiant Staff at 45, with Intellect)."
       },
       "confidence": "client-data"
-    },
-    {
-      "note": {
-        "es": "El índice de golpe y la celeridad suben de valor en contenido de banda; al 30 importan poco.",
-        "en": "Hit and haste gain value in raid content; at 30 they matter little."
-      },
-      "confidence": "community-untested"
     }
   ]
 }

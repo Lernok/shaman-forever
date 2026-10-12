@@ -131,8 +131,9 @@
     tabs.forEach(tab => {
       const list = tab.spells.filter(matches);
       if (!list.length || (!query && tab.name !== section)) return;
-      html += '<h3 class="sb-tab" style="--spec-color:' + ui.specColors[tab.name] + '">' + tab.name + ' <span>' + list.length + '</span></h3>' +
-        '<div class="spell-grid">' + list.map(renderSpell).join('') + '</div>';
+      // The tab's name only when a search shows all three.
+      if (query) html += '<h3 class="sb-tab" style="--spec-color:' + ui.specColors[tab.name] + '">' + tab.name + ' <span>' + list.length + '</span></h3>';
+      html += '<div class="spell-grid">' + list.map(renderSpell).join('') + '</div>';
     });
     const gone = data().spellbook.gone || [];
     if (gone.length && (filter === 'all')) {
