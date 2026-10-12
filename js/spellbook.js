@@ -115,7 +115,7 @@
     const count = k => all.filter(s => s.status === k).length;
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Spellbook + '">' +
       '<div class="role">Spellbook</div><h2>' + t('sb.title') + '</h2>' +
-      '<p>' + t('sb.intro', { build: data().spellbook.build }) + '</p></div>';
+      '<p>' + t('sb.intro') + '</p></div>';
     html += '<div class="sb-toolbar">' +
       ['all', 'new', 'changed', 'same'].map(k =>
         '<button class="btn sb-filter' + (filter === k ? ' active' : '') + '" data-filter="' + k + '">' +
@@ -139,7 +139,7 @@
     if (gone.length && (filter === 'all')) {
       html += '<p class="note-text dim">' + t('sb.gone', { list: gone.join(', ') }) + '</p>';
     }
-    html += ui.renderSources(['https://talentsforever.com (CC BY 4.0) — data/shaman.json, ' + t('sb.source')]);
+    html += ui.renderSources(['https://talentsforever.com (CC BY 4.0) — data/shaman.json, ' + t('sb.source')], t('sb.how', { build: data().spellbook.build }));
     container.innerHTML = html;
     bind();
   }

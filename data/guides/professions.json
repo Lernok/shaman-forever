@@ -1,59 +1,94 @@
 {
   "spec": "Professions",
   "intro": {
-    "es": "En Forever las profesiones son mucho más que en Classic: hay más de 800 recetas nuevas, y Leatherworking, Tailoring y Blacksmithing tienen sets raros que se ligan al recogerlos (BoP) en casi todos los rangos de nivel. Para un Shaman, eso las vuelve parte de la progresión de equipo mientras subís de nivel, no solo una forma de hacer oro. Abajo: qué combinación conviene por spec y por qué, los sistemas nuevos y, por profesión, todo lo que podés craftear y usar.",
-    "en": "In Forever, professions are much more than in Classic: there are over 800 new recipes, and Leatherworking, Tailoring and Blacksmithing have rare bind-on-pickup (BoP) sets in nearly every level bracket. For a Shaman that makes them part of your gear progression while leveling, not just a way to make gold. Below: which pair suits each spec and why, the new systems, and per profession everything you can craft and use."
+    "es": "En Forever las profesiones son mucho más que en Classic: hay más de 800 recetas nuevas, y Leatherworking, Tailoring y Blacksmithing tienen sets raros que se ligan al recogerlos (BoP) en casi todos los rangos de nivel. Para un Shaman, eso las vuelve parte de la progresión de equipo mientras subís de nivel, no solo una forma de hacer oro.",
+    "en": "In Forever, professions are much more than in Classic: there are over 800 new recipes, and Leatherworking, Tailoring and Blacksmithing have rare bind-on-pickup (BoP) sets in nearly every level bracket. For a Shaman that makes them part of your gear progression while leveling, not just a way to make gold."
   },
   "pairs": [
     {
-      "specs": ["Enhancement"],
+      "specs": [
+        "Enhancement"
+      ],
       "pair": "Leatherworking + Skinning",
-      "when": { "es": "Subiendo de nivel (1–40)", "en": "Leveling (1–40)" },
+      "when": {
+        "es": "Subiendo de nivel (1–40)",
+        "en": "Leveling (1–40)"
+      },
       "why": {
         "es": "Leatherworking tiene sets raros BoP de cuero con Fuerza y Agilidad en casi todos los rangos: Brawler's y Defender's (12–25), Warden's, Skulker's y Prowler's (30–50). Los patrones salen 30 a 90 de Merchant's Favor. El Shaman usa cuero hasta el 40, así que los sets de malla de Blacksmithing todavía no le sirven. Skinning abastece el cuero y su objeto de campamento, Camp Chair, da +2% de crítico al grupo. The Forever Era cuenta 5 piezas de Leatherworking en el mejor equipo de Enhancement al 20 y 6 al 30.",
         "en": "Leatherworking has rare BoP leather sets with Strength and Agility in nearly every bracket: Brawler's and Defender's (12–25), Warden's, Skulker's and Prowler's (30–50). Patterns cost 30 to 90 Merchant's Favor. Shamans wear leather until 40, so Blacksmithing's mail sets are no use yet. Skinning supplies the leather and its camp object, Camp Chair, gives the group +2% crit. The Forever Era counts 5 Leatherworking pieces in Enhancement's best level-20 gear and 6 at 30."
       }
     },
     {
-      "specs": ["Enhancement"],
+      "specs": [
+        "Enhancement"
+      ],
       "pair": "Blacksmithing + Mining",
-      "when": { "es": "Opcional desde el 40", "en": "Optional from 40" },
+      "when": {
+        "es": "Opcional desde el 40",
+        "en": "Optional from 40"
+      },
       "why": {
         "es": "Blacksmithing hace hachas y mazas a dos manos con Fuerza + poder con hechizos. Pero la mayoría se liga al equiparse (BoE) y se puede comprar: Charged Mithril Battleaxe (43), Stormcarver (58, planos con Timbermaw Hold en Revered) y Forest Defender's Axe (60, épica). Solo Thorium Greatmace (50, planos por 90 de Favor) es BoP y exige ser herrero. Mining aporta Lodestone al campamento (+12 a +90 de poder de ataque cuerpo a cuerpo). Cambiar de profesión a mitad del leveo cuesta caro: la recomendación por defecto sigue siendo Leatherworking + Skinning.",
         "en": "Blacksmithing makes two-handed axes and maces with Strength + spell power. But most bind on equip (BoE) and can be bought: Charged Mithril Battleaxe (43), Stormcarver (58, plans from Timbermaw Hold at Revered) and Forest Defender's Axe (60, epic). Only Thorium Greatmace (50, plans for 90 Favor) is BoP and requires being a blacksmith. Mining adds Lodestone to camp (+12 to +90 melee attack power). Switching professions mid-leveling is expensive: Leatherworking + Skinning stays the default."
       }
     },
     {
-      "specs": ["Elemental", "Restoration"],
+      "specs": [
+        "Elemental",
+        "Restoration"
+      ],
       "pair": "Leatherworking + Skinning",
-      "when": { "es": "Subiendo de nivel y en adelante", "en": "Leveling and beyond" },
+      "when": {
+        "es": "Subiendo de nivel y en adelante",
+        "en": "Leveling and beyond"
+      },
       "why": {
         "es": "Los sets de caster de Leatherworking cubren todo el leveo: Stormrider's, Totemic, Trapper's y Wisdom's (12–25), y Skycaller's y Mender's (30–50, de cuero y después de malla). Todos BoP, con patrones por Merchant's Favor. classicwowforever lo marca como la mejor combinación para Elemental.",
         "en": "Leatherworking's caster sets cover all of leveling: Stormrider's, Totemic, Trapper's and Wisdom's (12–25), then Skycaller's and Mender's (30–50, leather then mail). All BoP, with patterns for Merchant's Favor. classicwowforever rates it the best pair for Elemental."
       }
     },
     {
-      "specs": ["Elemental", "Restoration"],
+      "specs": [
+        "Elemental",
+        "Restoration"
+      ],
       "pair": "Tailoring + Enchanting",
-      "when": { "es": "Alternativa de caster", "en": "Caster alternative" },
+      "when": {
+        "es": "Alternativa de caster",
+        "en": "Caster alternative"
+      },
       "why": {
         "es": "Enchanting craftea las mejores armas de caster tempranas, y son BoP, así que solo las usa el que las hace: Glimmering Staff (25, Intelecto y +34 de poder con hechizos), Soulstaff (25, Espíritu), Radiant Staff (45, +56) y Dreamstaff (45). Las fórmulas cuestan 45 de Favor. Además hace los totems de reliquia (Polished Driftwood Icon al 20). Tailoring tiene sets de tela BoP de caster en cada rango (Flame, Pearly, Shining… 12–25; Fiery, Golden, Radiant… 30–50). El Shaman puede usar tela, pero pierde armadura frente al cuero.",
         "en": "Enchanting crafts the best early caster weapons, and they're BoP, so only the maker uses them: Glimmering Staff (25, Intellect and +34 spell power), Soulstaff (25, Spirit), Radiant Staff (45, +56) and Dreamstaff (45). Formulas cost 45 Favor. It also makes relic totems (Polished Driftwood Icon at 20). Tailoring has BoP caster cloth sets in every bracket (Flame, Pearly, Shining… 12–25; Fiery, Golden, Radiant… 30–50). Shamans can wear cloth but give up armor compared to leather."
       }
     },
     {
-      "specs": ["Restoration", "Elemental"],
+      "specs": [
+        "Restoration",
+        "Elemental"
+      ],
       "pair": "Herbalism + Alchemy",
-      "when": { "es": "Para oro y consumibles", "en": "For gold and consumables" },
+      "when": {
+        "es": "Para oro y consumibles",
+        "en": "For gold and consumables"
+      },
       "why": {
         "es": "No da equipo, pero sí consumibles y dos buffs de campamento para casters: Mana Well (Alchemy, maná cada 5 s) e Incense Candle (Herbalism, Intelecto). Ojo: en Forever las pociones de curación pasaron a First Aid; Alchemy ya no las hace.",
         "en": "No gear, but consumables and two caster camp buffs: Mana Well (Alchemy, mana every 5 sec) and Incense Candle (Herbalism, Intellect). Note: in Forever healing potions moved to First Aid; Alchemy no longer makes them."
       }
     },
     {
-      "specs": ["Enhancement", "Elemental", "Restoration"],
+      "specs": [
+        "Enhancement",
+        "Elemental",
+        "Restoration"
+      ],
       "pair": "Engineering + Mining",
-      "when": { "es": "Utilidad y PvP", "en": "Utility and PvP" },
+      "when": {
+        "es": "Utilidad y PvP",
+        "en": "Utility and PvP"
+      },
       "why": {
         "es": "Engineering hace poco equipo para Shaman: unos 50 ítems usables y solo 5 raros BoP. Su valor está en la utilidad (bombas, dispositivos, Repair Bot) y en PvP. Mining suma Lodestone al campamento. Es una elección por estilo de juego, no por progresión de equipo.",
         "en": "Engineering makes little Shaman gear: about 50 usable items and only 5 rare BoP ones. Its value is utility (bombs, devices, Repair Bot) and PvP. Mining adds Lodestone to camp. It's a playstyle pick, not a gear-progression one."
@@ -66,40 +101,91 @@
   },
   "systems": [
     {
-      "title": { "es": "Rangos y niveles", "en": "Ranks and levels" },
-      "fact": { "es": "Apprentice desde nivel 5 (tope 75), Journeyman desde nivel 10 y skill 50 (tope 150), Expert desde nivel 20 y skill 125 (tope 225), Artisan desde nivel 35 y skill 200 (tope 300). Cada zona inicial tiene un objeto de quest que enseña una profesión de recolección.", "en": "Apprentice from level 5 (cap 75), Journeyman from level 10 and skill 50 (cap 150), Expert from level 20 and skill 125 (cap 225), Artisan from level 35 and skill 200 (cap 300). Each starting zone has a quest item that teaches a gathering profession." },
+      "title": {
+        "es": "Rangos y niveles",
+        "en": "Ranks and levels"
+      },
+      "fact": {
+        "es": "Apprentice desde nivel 5 (tope 75), Journeyman desde nivel 10 y skill 50 (tope 150), Expert desde nivel 20 y skill 125 (tope 225), Artisan desde nivel 35 y skill 200 (tope 300). Cada zona inicial tiene un objeto de quest que enseña una profesión de recolección.",
+        "en": "Apprentice from level 5 (cap 75), Journeyman from level 10 and skill 50 (cap 150), Expert from level 20 and skill 125 (cap 225), Artisan from level 35 and skill 200 (cap 300). Each starting zone has a quest item that teaches a gathering profession."
+      },
       "confidence": "client-data",
       "source": "https://www.icy-veins.com/wow-forever/professions-overview"
     },
     {
-      "title": { "es": "Merchant's Favor", "en": "Merchant's Favor" },
-      "fact": { "es": "Moneda nueva, por personaje. Se gana llenando Waylaid Crates (cajas que caen en el mundo o se compran en la subasta): 5 a 30 de Favor por caja según rango, desde el nivel 10. Los Craftsman's Writs dan reputación, no Favor. Con Favor se compran patrones (30 sin reputación, 60 en Friendly, 90 a 120 en Honored, más para Engineering y Enchanting). Vendedores: Azeroth Commerce Authority en Three Corners (Redridge, Alianza) y Durotar Supply and Logistics al oeste de Crossroads (Barrens, Horda); venden lo mismo.", "en": "New per-character currency. Earned by filling Waylaid Crates (world drops or bought on the Auction House): 5 to 30 Favor per crate by rank, from level 10. Craftsman's Writs give reputation, not Favor. Favor buys patterns (30 with no reputation, 60 at Friendly, 90 to 120 at Honored, more for Engineering and Enchanting). Vendors: Azeroth Commerce Authority at Three Corners (Redridge, Alliance) and Durotar Supply and Logistics west of Crossroads (Barrens, Horde); same stock." },
+      "title": {
+        "es": "Merchant's Favor",
+        "en": "Merchant's Favor"
+      },
+      "fact": {
+        "es": "Moneda nueva, por personaje. Se gana llenando Waylaid Crates (cajas que caen en el mundo o se compran en la subasta): 5 a 30 de Favor por caja según rango, desde el nivel 10. Los Craftsman's Writs dan reputación, no Favor. Con Favor se compran patrones (30 sin reputación, 60 en Friendly, 90 a 120 en Honored, más para Engineering y Enchanting). Vendedores: Azeroth Commerce Authority en Three Corners (Redridge, Alianza) y Durotar Supply and Logistics al oeste de Crossroads (Barrens, Horda); venden lo mismo.",
+        "en": "New per-character currency. Earned by filling Waylaid Crates (world drops or bought on the Auction House): 5 to 30 Favor per crate by rank, from level 10. Craftsman's Writs give reputation, not Favor. Favor buys patterns (30 with no reputation, 60 at Friendly, 90 to 120 at Honored, more for Engineering and Enchanting). Vendors: Azeroth Commerce Authority at Three Corners (Redridge, Alliance) and Durotar Supply and Logistics west of Crossroads (Barrens, Horde); same stock."
+      },
       "confidence": "client-data",
       "source": "https://www.wow-professions.com/forever/merchants-favor-durotar-supply-azeroth-commerce"
     },
     {
-      "title": { "es": "Campamento", "en": "Camping" },
-      "fact": { "es": "Cooking arma la fogata (Basic: 3 objetos; Journeyman: 5; Expert: 10) y cada profesión aporta un objeto con un buff de 1 hora para quien descansa cerca, aunque no tenga esa profesión. Los objetos comparten 1 hora de reutilización. Para Shaman sirven sobre todo: Camp Chair (Skinning, +2% de crítico), Lodestone (Mining, poder de ataque), Mana Well (Alchemy, maná), Incense Candle (Herbalism, Intelecto), Fish Bowl (Fishing, +8% a todos los atributos). Sharpening Wheel (Blacksmithing, Fuerza) se pisa con Strength of Earth Totem.", "en": "Cooking builds the fire (Basic: 3 objects; Journeyman: 5; Expert: 10) and each profession adds an object with a 1-hour buff for anyone resting nearby, even without that profession. Objects share a 1-hour cooldown. Most useful for Shaman: Camp Chair (Skinning, +2% crit), Lodestone (Mining, attack power), Mana Well (Alchemy, mana), Incense Candle (Herbalism, Intellect), Fish Bowl (Fishing, +8% all attributes). Sharpening Wheel (Blacksmithing, Strength) overlaps with Strength of Earth Totem." },
+      "title": {
+        "es": "Campamento",
+        "en": "Camping"
+      },
+      "fact": {
+        "es": "Cooking arma la fogata (Basic: 3 objetos; Journeyman: 5; Expert: 10) y cada profesión aporta un objeto con un buff de 1 hora para quien descansa cerca, aunque no tenga esa profesión. Los objetos comparten 1 hora de reutilización. Para Shaman sirven sobre todo: Camp Chair (Skinning, +2% de crítico), Lodestone (Mining, poder de ataque), Mana Well (Alchemy, maná), Incense Candle (Herbalism, Intelecto), Fish Bowl (Fishing, +8% a todos los atributos). Sharpening Wheel (Blacksmithing, Fuerza) se pisa con Strength of Earth Totem.",
+        "en": "Cooking builds the fire (Basic: 3 objects; Journeyman: 5; Expert: 10) and each profession adds an object with a 1-hour buff for anyone resting nearby, even without that profession. Objects share a 1-hour cooldown. Most useful for Shaman: Camp Chair (Skinning, +2% crit), Lodestone (Mining, attack power), Mana Well (Alchemy, mana), Incense Candle (Herbalism, Intellect), Fish Bowl (Fishing, +8% all attributes). Sharpening Wheel (Blacksmithing, Strength) overlaps with Strength of Earth Totem."
+      },
       "confidence": "client-data",
       "source": "https://classicwowforever.com/professions/camping/"
     },
     {
-      "title": { "es": "Puntos de Legacy", "en": "Legacy points" },
-      "fact": { "es": "Cada profesión de crafteo (Alchemy, Blacksmithing, Enchanting, Engineering, Leatherworking, Tailoring) da 1 punto de Legacy a toda la cuenta a 150, 225 y 300 de skill: hasta 18 puntos. Subir profesiones distintas en distintos personajes suma para todos. Hay perks de profesión como Working Overtime (+4% de chance de subir skill por rango) o Bountiful Harvest (más materiales escasos al recolectar).", "en": "Each crafting profession (Alchemy, Blacksmithing, Enchanting, Engineering, Leatherworking, Tailoring) gives the whole account 1 Legacy point at 150, 225 and 300 skill: up to 18 points. Leveling different professions on different characters adds up for all. There are profession perks such as Working Overtime (+4% skill-up chance per rank) or Bountiful Harvest (more scarce materials when gathering)." },
+      "title": {
+        "es": "Puntos de Legacy",
+        "en": "Legacy points"
+      },
+      "fact": {
+        "es": "Cada profesión de crafteo (Alchemy, Blacksmithing, Enchanting, Engineering, Leatherworking, Tailoring) da 1 punto de Legacy a toda la cuenta a 150, 225 y 300 de skill: hasta 18 puntos. Subir profesiones distintas en distintos personajes suma para todos. Hay perks de profesión como Working Overtime (+4% de chance de subir skill por rango) o Bountiful Harvest (más materiales escasos al recolectar).",
+        "en": "Each crafting profession (Alchemy, Blacksmithing, Enchanting, Engineering, Leatherworking, Tailoring) gives the whole account 1 Legacy point at 150, 225 and 300 skill: up to 18 points. Leveling different professions on different characters adds up for all. There are profession perks such as Working Overtime (+4% skill-up chance per rank) or Bountiful Harvest (more scarce materials when gathering)."
+      },
       "confidence": "client-data",
       "source": "https://classicwowforever.com/professions/legacy-perks/"
     },
     {
-      "title": { "es": "Patrones por personaje", "en": "Patterns per character" },
-      "fact": { "es": "La mayoría de los patrones nuevos se ligan al recogerlos y el Favor es por personaje: cada personaje compra los suyos. Los sets BoP solo los usa quien los craftea.", "en": "Most new patterns bind on pickup and Favor is per character: each character buys its own. BoP sets can only be used by whoever crafts them." },
+      "title": {
+        "es": "Patrones por personaje",
+        "en": "Patterns per character"
+      },
+      "fact": {
+        "es": "La mayoría de los patrones nuevos se ligan al recogerlos y el Favor es por personaje: cada personaje compra los suyos. Los sets BoP solo los usa quien los craftea.",
+        "en": "Most new patterns bind on pickup and Favor is per character: each character buys its own. BoP sets can only be used by whoever crafts them."
+      },
       "confidence": "client-data",
       "source": "https://www.wow-professions.com/forever/merchants-favor-durotar-supply-azeroth-commerce"
     }
   ],
   "leveling": [
-    { "site": "wow-professions.com", "url": "https://www.wow-professions.com/forever", "note": { "es": "Guías 1–300 por profesión, la ruta más barata y dónde están los entrenadores. Probadas hasta el tope de la beta; lo de arriba del 30 sin probar.", "en": "1–300 guides per profession, the cheapest route and trainer locations. Tested up to the beta cap; above 30 untested." } },
-    { "site": "classicwowforever.com", "url": "https://classicwowforever.com/professions/", "note": { "es": "Guías de leveo paso a paso y la lista completa de recetas con cómo se aprende cada una.", "en": "Step-by-step leveling guides and the full recipe list with how each one is learned." } },
-    { "site": "endgametools.com", "url": "https://endgametools.com/en/wow-forever/leveling", "note": { "es": "Planificador 1–300 con cantidad de pasos y de crafteos por profesión.", "en": "1–300 planner with step and craft counts per profession." } }
+    {
+      "site": "wow-professions.com",
+      "url": "https://www.wow-professions.com/forever",
+      "note": {
+        "es": "Guías 1–300 por profesión, la ruta más barata y dónde están los entrenadores. Probadas hasta el tope de la beta; lo de arriba del 30 sin probar.",
+        "en": "1–300 guides per profession, the cheapest route and trainer locations. Tested up to the beta cap; above 30 untested."
+      }
+    },
+    {
+      "site": "classicwowforever.com",
+      "url": "https://classicwowforever.com/professions/",
+      "note": {
+        "es": "Guías de leveo paso a paso y la lista completa de recetas con cómo se aprende cada una.",
+        "en": "Step-by-step leveling guides and the full recipe list with how each one is learned."
+      }
+    },
+    {
+      "site": "endgametools.com",
+      "url": "https://endgametools.com/en/wow-forever/leveling",
+      "note": {
+        "es": "Planificador 1–300 con cantidad de pasos y de crafteos por profesión.",
+        "en": "1–300 planner with step and craft counts per profession."
+      }
+    }
   ],
   "sources": [
     "https://classicwowforever.com/professions/",

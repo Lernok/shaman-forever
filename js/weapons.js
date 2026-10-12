@@ -262,8 +262,7 @@
     const all = list.slice().sort((a, b) => a.obtain - b.obtain || valueOf(b) - valueOf(a));
     const counts = { progresion: prog.steps.length, dungeon: dq.n, todas: all.length };
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Armas + '">' +
-      '<div class="role">' + t('wp.role') + ' · ' + Site.spec + ' · ' + t('wp.faction.' + Site.faction) + '</div><h2>' + t('wp.title') + '</h2><p>' + t('wp.intro') + '</p>' +
-      '<p class="note-text dim">' + t('wp.dataNote', { build: window.WEAPON_DATA.build }) + '</p></div>';
+      '<div class="role">' + t('wp.role') + ' · ' + Site.spec + ' · ' + t('wp.faction.' + Site.faction) + '</div><h2>' + t('wp.title') + '</h2><p>' + t('wp.intro') + '</p></div>';
     html += Site.sectionTabs('Equipo', SECTIONS, section, k => t('wp.sec.' + k) + (counts[k] != null ? ' <span class="n">' + counts[k] + '</span>' : ''));
     // The source toggles change every list, so they sit above all sections.
     html += '<div class="wp-controls">' +
@@ -276,13 +275,13 @@
     if (section === 'progresion') html += progressionSection(list, paths, prog, chart);
     if (section === 'dungeon') html += dq.html;
     if (section === 'todas') html += allSection(all);
-    html += '<p class="note-text dim">' + t('wp.sourcesNote') + '</p>';
+    const notes = [t('wp.chartHow'), spec().metric === 'ilvl' ? t('wp.casterHow') : '', t('wp.dataNote', { build: window.WEAPON_DATA.build }), t('wp.sourcesNote')];
     html += ui.renderSources([
       'https://wago.tools — ' + t('wp.srcWago'),
       'https://www.wowhead.com/forever — ' + t('wp.srcWowhead'),
       'https://github.com/Questie/QuestieDB — ' + t('wp.srcQuestie'),
       'https://foreverchanges.pro — ' + t('wp.srcFc')
-    ]);
+    ], notes.filter(Boolean).join('</p><p class="sources-caveat">'));
     container.innerHTML = html;
     bind(list, paths, section === 'progresion' ? chart : null);
   }

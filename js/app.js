@@ -52,10 +52,20 @@
     return 'linear-gradient(rgba(12,13,16,.55), rgba(12,13,16,.82)), url(' + TREE_BG_BASE + tree.bg + '.jpg)';
   }
 
+  // A colored dot; what it means shows on hover or focus, and in the legend.
   function badge(confidence) {
     if (!confidence) return '';
     const cls = CONFIDENCE[confidence] || 'conf-untested';
-    return '<span class="badge ' + cls + '">' + t('conf.' + confidence) + '</span>';
+    const label = t('conf.' + confidence);
+    return '<span class="conf-dot ' + cls + '" tabindex="0" role="img" aria-label="' + label + '" data-label="' + label + '"></span>';
+  }
+
+  // Footer: the five dots once, with their names.
+  function renderLegend() {
+    const el = document.getElementById('confLegend');
+    if (!el) return;
+    el.innerHTML = t('conf.legend') + ' ' + Object.keys(CONFIDENCE).map(k =>
+      '<span class="conf-key">' + badge(k) + t('conf.' + k) + '</span>').join('');
   }
 
   // Collapsed by default: the titles say what changed, the cards say how.
@@ -343,11 +353,13 @@
   window.I18N.onChange(() => {
     const y = window.scrollY;
     renderPickers();
+    renderLegend();
     render(currentPage);
     window.scrollTo(0, y);
   });
 
   window.I18N.apply();
+  renderLegend();
   renderPickers();
   selectPage(currentPage);
 })();

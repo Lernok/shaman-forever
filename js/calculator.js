@@ -189,6 +189,7 @@
     html += renderBuildPicker();
     html += '<div class="panel calc-panel">' + renderToolbar() +
       '<div class="calc-trees">' + trees().map(renderTree).join('') + '</div></div>';
+    html += ui.renderSources(['https://talentsforever.com (CC BY 4.0) — ' + t('calc.srcTf')], t('calc.rules'));
     container.innerHTML = html;
     bind();
   }
