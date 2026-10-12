@@ -4,7 +4,8 @@
     Elemental: '#e0742c',
     Enhancement: '#8a5a2b',
     Restoration: '#3fa9f5',
-    Calculadora: '#c8aa6e'
+    Calculadora: '#c8aa6e',
+    Spellbook: '#9b7fd1'
   };
 
   const CONFIDENCE = {
@@ -256,6 +257,12 @@
     const guide = window.GUIDE_DATA[spec];
     const color = SPEC_COLORS[spec];
     document.documentElement.style.setProperty('--spec-color', color);
+
+    if (spec === 'Spellbook') {
+      window.Spellbook.render(app, { iconUrl, renderSources, specColors: SPEC_COLORS });
+      app.style.setProperty('--spec-color', color);
+      return;
+    }
 
     if (spec === 'Calculadora') {
       window.Calculator.render(app, hashParts().slice(1), { badge, iconUrl, treeBg, specColors: SPEC_COLORS });
