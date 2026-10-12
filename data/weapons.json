@@ -1984,6 +1984,13 @@
      "level": 7,
      "requiredLevel": 1,
      "zone": "Elwynn Forest",
+     "bands": {
+      "red": 1,
+      "orange": 3,
+      "yellow": 5,
+      "green": 10,
+      "grey": 13
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/91777"
@@ -2168,6 +2175,13 @@
      "level": 7,
      "requiredLevel": 1,
      "zone": "Elwynn Forest",
+     "bands": {
+      "red": 1,
+      "orange": 3,
+      "yellow": 5,
+      "green": 10,
+      "grey": 13
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/91777"
@@ -2208,6 +2222,13 @@
      "level": 7,
      "requiredLevel": 1,
      "zone": "Elwynn Forest",
+     "bands": {
+      "red": 1,
+      "orange": 3,
+      "yellow": 5,
+      "green": 10,
+      "grey": 13
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/91777"
@@ -2654,6 +2675,12 @@
      "level": 9,
      "requiredLevel": 5,
      "zone": "Zephras Isle",
+     "bands": {
+      "orange": 5,
+      "yellow": 7,
+      "green": 12,
+      "grey": 15
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92703"
@@ -2690,6 +2717,12 @@
      "level": 9,
      "requiredLevel": 5,
      "zone": "Zephras Isle",
+     "bands": {
+      "orange": 5,
+      "yellow": 7,
+      "green": 12,
+      "grey": 15
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92703"
@@ -2732,6 +2765,13 @@
      "zone": "Teldrassil",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 4,
+      "orange": 5,
+      "yellow": 7,
+      "green": 12,
+      "grey": 15
+     },
      "ref": "https://foreverchanges.pro/quest/483"
     }
    ]
@@ -2766,6 +2806,12 @@
      "level": 9,
      "requiredLevel": 5,
      "zone": "Zephras Isle",
+     "bands": {
+      "orange": 5,
+      "yellow": 7,
+      "green": 12,
+      "grey": 15
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92703"
@@ -2800,6 +2846,12 @@
      "level": 9,
      "requiredLevel": 5,
      "zone": "Zephras Isle",
+     "bands": {
+      "orange": 5,
+      "yellow": 7,
+      "green": 12,
+      "grey": 15
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92683"
@@ -3328,6 +3380,13 @@
      "level": 11,
      "requiredLevel": 6,
      "zone": "Zephras Isle",
+     "bands": {
+      "red": 6,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92880"
@@ -3364,6 +3423,12 @@
      "level": 11,
      "requiredLevel": 7,
      "zone": "Paladin",
+     "bands": {
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/91285"
@@ -3403,6 +3468,13 @@
      "zone": "Elwynn Forest",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 5,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "ref": "https://foreverchanges.pro/quest/176"
     }
    ]
@@ -3438,6 +3510,13 @@
      "level": 11,
      "requiredLevel": 6,
      "zone": "Zephras Isle",
+     "bands": {
+      "red": 6,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92880"
@@ -3546,6 +3625,12 @@
      "level": 11,
      "requiredLevel": 7,
      "zone": "Paladin",
+     "bands": {
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/91285"
@@ -3584,6 +3669,12 @@
      "zone": "Dun Morogh",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "orange": 8,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "ref": "https://foreverchanges.pro/quest/417"
     }
    ]
@@ -3620,6 +3711,12 @@
      "zone": "Dun Morogh",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "orange": 8,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "ref": "https://foreverchanges.pro/quest/417"
     }
    ]
@@ -3654,6 +3751,13 @@
      "level": 11,
      "requiredLevel": 6,
      "zone": "Zephras Isle",
+     "bands": {
+      "red": 6,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92880"
@@ -3690,6 +3794,13 @@
      "level": 11,
      "requiredLevel": 4,
      "zone": "Mulgore",
+     "bands": {
+      "red": 4,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/76240"
@@ -3730,6 +3841,12 @@
      "level": 11,
      "requiredLevel": 7,
      "zone": "Durotar",
+     "bands": {
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97282"
@@ -3766,6 +3883,13 @@
      "level": 11,
      "requiredLevel": 4,
      "zone": "Mulgore",
+     "bands": {
+      "red": 4,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/76240"
@@ -4106,6 +4230,13 @@
      "zone": "Dun Morogh",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 6,
+      "orange": 8,
+      "yellow": 10,
+      "green": 15,
+      "grey": 18
+     },
      "ref": "https://foreverchanges.pro/quest/314"
     }
    ]
@@ -4142,6 +4273,13 @@
      "zone": "Mulgore",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 5,
+      "orange": 8,
+      "yellow": 10,
+      "green": 15,
+      "grey": 18
+     },
      "ref": "https://foreverchanges.pro/quest/765"
     }
    ]
@@ -4178,6 +4316,13 @@
      "zone": "Teldrassil",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 4,
+      "orange": 8,
+      "yellow": 10,
+      "green": 15,
+      "grey": 18
+     },
      "ref": "https://foreverchanges.pro/quest/486"
     }
    ]
@@ -4214,6 +4359,13 @@
      "zone": "Mulgore",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 6,
+      "orange": 8,
+      "yellow": 10,
+      "green": 15,
+      "grey": 18
+     },
      "ref": "https://foreverchanges.pro/quest/770"
     }
    ]
@@ -4250,6 +4402,13 @@
      "zone": "Mulgore",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 5,
+      "orange": 8,
+      "yellow": 10,
+      "green": 15,
+      "grey": 18
+     },
      "ref": "https://foreverchanges.pro/quest/765"
     }
    ]
@@ -4284,6 +4443,11 @@
      "level": 12,
      "requiredLevel": 10,
      "zone": "Durotar",
+     "bands": {
+      "yellow": 10,
+      "green": 15,
+      "grey": 18
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/99052"
@@ -4322,6 +4486,13 @@
      "zone": "Durotar",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 4,
+      "orange": 8,
+      "yellow": 10,
+      "green": 15,
+      "grey": 18
+     },
      "ref": "https://foreverchanges.pro/quest/827"
     }
    ]
@@ -4358,6 +4529,13 @@
      "zone": "Durotar",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 4,
+      "orange": 8,
+      "yellow": 10,
+      "green": 15,
+      "grey": 18
+     },
      "ref": "https://foreverchanges.pro/quest/827"
     }
    ]
@@ -4392,6 +4570,13 @@
      "level": 12,
      "requiredLevel": 4,
      "zone": "Teldrassil",
+     "bands": {
+      "red": 4,
+      "orange": 8,
+      "yellow": 10,
+      "green": 15,
+      "grey": 18
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98403"
@@ -4434,7 +4619,168 @@
      "zone": "Teldrassil",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 4,
+      "orange": 8,
+      "yellow": 10,
+      "green": 15,
+      "grey": 18
+     },
      "ref": "https://foreverchanges.pro/quest/486"
+    }
+   ]
+  },
+  {
+   "id": 15424,
+   "name": "Axe of Orgrimmar",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 0,
+   "obtain": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 16.06,
+   "speed": 3.3,
+   "dmgMin": 42,
+   "dmgMax": 64,
+   "stats": {
+    "stamina": 6,
+    "spirit": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hidden Enemies",
+     "questId": 5730,
+     "level": 16,
+     "requiredLevel": 9,
+     "zone": "Orgrimmar",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 9,
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
+     "ref": "https://foreverchanges.pro/quest/5730",
+     "dungeonZone": "Ragefire Chasm",
+     "dungeonLevels": [
+      13,
+      18
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 13
+    }
+   ]
+  },
+  {
+   "id": 279895,
+   "name": "Ironforge Greathammer",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 0,
+   "obtain": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 15.97,
+   "speed": 3.1,
+   "dmgMin": 39,
+   "dmgMax": 60,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "chance": [
+    "Chance on hit: Blasts a target for 42 Fire damage."
+   ],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Old Ironforge Incursion",
+     "questId": 96393,
+     "level": 16,
+     "requiredLevel": 9,
+     "zone": "The Hall of Thanes",
+     "dungeon": true,
+     "bands": {
+      "red": 9,
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96393",
+     "dungeonLevels": [
+      13,
+      18
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 13
+    }
+   ]
+  },
+  {
+   "id": 15445,
+   "name": "Hammer of Orgrimmar",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 0,
+   "obtain": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 12.41,
+   "speed": 2.9,
+   "dmgMin": 25,
+   "dmgMax": 47,
+   "stats": {
+    "strength": 3,
+    "spirit": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hidden Enemies",
+     "questId": 5730,
+     "level": 16,
+     "requiredLevel": 9,
+     "zone": "Orgrimmar",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 9,
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
+     "ref": "https://foreverchanges.pro/quest/5730",
+     "dungeonZone": "Ragefire Chasm",
+     "dungeonLevels": [
+      13,
+      18
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 13
     }
    ]
   },
@@ -4666,6 +5012,62 @@
    ]
   },
   {
+   "id": 15444,
+   "name": "Staff of Orgrimmar",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 11.82,
+   "speed": 3.3,
+   "dmgMin": 31,
+   "dmgMax": 47,
+   "stats": {
+    "agility": 6,
+    "intellect": 6
+   },
+   "bonus": {
+    "spellPower": 18
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hidden Enemies",
+     "questId": 5730,
+     "level": 16,
+     "requiredLevel": 9,
+     "zone": "Orgrimmar",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 9,
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
+     "ref": "https://foreverchanges.pro/quest/5730",
+     "dungeonZone": "Ragefire Chasm",
+     "dungeonLevels": [
+      13,
+      18
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 13
+    }
+   ]
+  },
+  {
    "id": 4777,
    "name": "Ironwood Maul",
    "kind": "2H Mace",
@@ -4809,6 +5211,13 @@
      "zone": "Tirisfal Glades",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 7,
+      "orange": 9,
+      "yellow": 11,
+      "green": 16,
+      "grey": 19
+     },
      "ref": "https://foreverchanges.pro/quest/408"
     }
    ]
@@ -4873,6 +5282,13 @@
      "level": 13,
      "requiredLevel": 6,
      "zone": "Tirisfal Glades",
+     "bands": {
+      "red": 6,
+      "orange": 9,
+      "yellow": 11,
+      "green": 16,
+      "grey": 19
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/99156"
@@ -4974,6 +5390,59 @@
    ]
   },
   {
+   "id": 15443,
+   "name": "Kris of Orgrimmar",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 0,
+   "obtain": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 8,
+   "speed": 1.5,
+   "dmgMin": 8,
+   "dmgMax": 16,
+   "stats": {
+    "stamina": 4
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hidden Enemies",
+     "questId": 5730,
+     "level": 16,
+     "requiredLevel": 9,
+     "zone": "Orgrimmar",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 9,
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
+     "ref": "https://foreverchanges.pro/quest/5730",
+     "dungeonZone": "Ragefire Chasm",
+     "dungeonLevels": [
+      13,
+      18
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 13
+    }
+   ]
+  },
+  {
    "id": 271095,
    "name": "Fang of Magmatus",
    "kind": "Dagger",
@@ -5043,6 +5512,13 @@
      "zone": "Tirisfal Glades",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 7,
+      "orange": 9,
+      "yellow": 11,
+      "green": 16,
+      "grey": 19
+     },
      "ref": "https://foreverchanges.pro/quest/408"
     }
    ]
@@ -5078,6 +5554,12 @@
      "level": 13,
      "requiredLevel": 10,
      "zone": "Tirisfal Glades",
+     "bands": {
+      "orange": 10,
+      "yellow": 11,
+      "green": 16,
+      "grey": 19
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98545"
@@ -5119,6 +5601,12 @@
      "level": 13,
      "requiredLevel": 10,
      "zone": "Tirisfal Glades",
+     "bands": {
+      "orange": 10,
+      "yellow": 11,
+      "green": 16,
+      "grey": 19
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98545"
@@ -5437,6 +5925,13 @@
      "zone": "The Barrens",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 9,
+      "orange": 10,
+      "yellow": 12,
+      "green": 17,
+      "grey": 21
+     },
      "ref": "https://foreverchanges.pro/quest/855"
     }
    ]
@@ -5478,6 +5973,11 @@
      "zone": "Darkshore",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 12,
+      "green": 17,
+      "grey": 21
+     },
      "ref": "https://foreverchanges.pro/quest/4813"
     }
    ]
@@ -5514,6 +6014,13 @@
      "zone": "The Barrens",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 9,
+      "orange": 10,
+      "yellow": 12,
+      "green": 17,
+      "grey": 21
+     },
      "ref": "https://foreverchanges.pro/quest/855"
     }
    ]
@@ -5550,7 +6057,65 @@
      "zone": "Darkshore",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 12,
+      "green": 17,
+      "grey": 21
+     },
      "ref": "https://foreverchanges.pro/quest/4813"
+    }
+   ]
+  },
+  {
+   "id": 251533,
+   "name": "Forsaken Greataxe",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 0,
+   "obtain": 15,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 20.5,
+   "speed": 3,
+   "dmgMin": 49,
+   "dmgMax": 74,
+   "stats": {
+    "strength": 8,
+    "stamina": 4
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Wrath of Rath'mael",
+     "questId": 92422,
+     "level": 22,
+     "requiredLevel": 15,
+     "zone": "Ruins of Lordaeron",
+     "dungeon": true,
+     "bands": {
+      "red": 15,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92422",
+     "dungeonLevels": [
+      15,
+      20
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 15
     }
    ]
   },
@@ -5613,6 +6178,61 @@
      "type": "unknown",
      "faction": "both",
      "confidence": "community-untested"
+    }
+   ]
+  },
+  {
+   "id": 251534,
+   "name": "Gnarled Necromancer's Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 15,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 15.18,
+   "speed": 2.8,
+   "dmgMin": 34,
+   "dmgMax": 51,
+   "stats": {
+    "spirit": 10
+   },
+   "bonus": {
+    "spellPower": 26
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 26.",
+    "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Wrath of Rath'mael",
+     "questId": 92422,
+     "level": 22,
+     "requiredLevel": 15,
+     "zone": "Ruins of Lordaeron",
+     "dungeon": true,
+     "bands": {
+      "red": 15,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92422",
+     "dungeonLevels": [
+      15,
+      20
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 15
     }
    ]
   },
@@ -5769,6 +6389,13 @@
      "zone": "Silverpine Forest",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 9,
+      "orange": 11,
+      "yellow": 13,
+      "green": 18,
+      "grey": 22
+     },
      "ref": "https://foreverchanges.pro/quest/99"
     }
    ]
@@ -5905,7 +6532,66 @@
      "zone": "Silverpine Forest",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 9,
+      "orange": 11,
+      "yellow": 13,
+      "green": 18,
+      "grey": 22
+     },
      "ref": "https://foreverchanges.pro/quest/99"
+    }
+   ]
+  },
+  {
+   "id": 279874,
+   "name": "The Stitcher",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 15,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 8.13,
+   "speed": 2.4,
+   "dmgMin": 13,
+   "dmgMax": 26,
+   "stats": {
+    "stamina": 3
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increases healing done by up to 30 and damage done by up to 10 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Light's Justice",
+     "questId": 92421,
+     "level": 22,
+     "requiredLevel": 15,
+     "zone": "Ruins of Lordaeron",
+     "dungeon": true,
+     "bands": {
+      "red": 15,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92421",
+     "dungeonLevels": [
+      15,
+      20
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 15
     }
    ]
   },
@@ -5945,6 +6631,13 @@
      "zone": "The Barrens",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 10,
+      "orange": 11,
+      "yellow": 13,
+      "green": 18,
+      "grey": 22
+     },
      "ref": "https://foreverchanges.pro/quest/853"
     }
    ]
@@ -6081,82 +6774,6 @@
      "type": "unknown",
      "faction": "both",
      "confidence": "community-untested"
-    }
-   ]
-  },
-  {
-   "id": 15424,
-   "name": "Axe of Orgrimmar",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 0,
-   "obtain": 16,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 16.06,
-   "speed": 3.3,
-   "dmgMin": 42,
-   "dmgMax": 64,
-   "stats": {
-    "stamina": 6,
-    "spirit": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hidden Enemies",
-     "questId": 5730,
-     "level": 16,
-     "requiredLevel": 9,
-     "zone": "Orgrimmar",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "ref": "https://foreverchanges.pro/quest/5730",
-     "dungeonZone": "Ragefire Chasm"
-    }
-   ]
-  },
-  {
-   "id": 279895,
-   "name": "Ironforge Greathammer",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 0,
-   "obtain": 16,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 15.97,
-   "speed": 3.1,
-   "dmgMin": 39,
-   "dmgMax": 60,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [
-    "Chance on hit: Blasts a target for 42 Fire damage."
-   ],
-   "era": "new",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Old Ironforge Incursion",
-     "questId": 96393,
-     "level": 16,
-     "requiredLevel": 9,
-     "zone": "The Hall of Thanes",
-     "dungeon": true,
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96393"
     }
    ]
   },
@@ -6421,88 +7038,6 @@
    ]
   },
   {
-   "id": 15445,
-   "name": "Hammer of Orgrimmar",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 0,
-   "obtain": 16,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 12.41,
-   "speed": 2.9,
-   "dmgMin": 25,
-   "dmgMax": 47,
-   "stats": {
-    "strength": 3,
-    "spirit": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hidden Enemies",
-     "questId": 5730,
-     "level": 16,
-     "requiredLevel": 9,
-     "zone": "Orgrimmar",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "ref": "https://foreverchanges.pro/quest/5730",
-     "dungeonZone": "Ragefire Chasm"
-    }
-   ]
-  },
-  {
-   "id": 15444,
-   "name": "Staff of Orgrimmar",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 16,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 11.82,
-   "speed": 3.3,
-   "dmgMin": 31,
-   "dmgMax": 47,
-   "stats": {
-    "agility": 6,
-    "intellect": 6
-   },
-   "bonus": {
-    "spellPower": 18
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hidden Enemies",
-     "questId": 5730,
-     "level": 16,
-     "requiredLevel": 9,
-     "zone": "Orgrimmar",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "ref": "https://foreverchanges.pro/quest/5730",
-     "dungeonZone": "Ragefire Chasm"
-    }
-   ]
-  },
-  {
    "id": 4568,
    "name": "Grunt Axe",
    "kind": "1H Axe",
@@ -6732,47 +7267,14 @@
      "zone": "The Barrens",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 10,
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
      "ref": "https://foreverchanges.pro/quest/902"
-    }
-   ]
-  },
-  {
-   "id": 15443,
-   "name": "Kris of Orgrimmar",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 0,
-   "obtain": 16,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 8,
-   "speed": 1.5,
-   "dmgMin": 8,
-   "dmgMax": 16,
-   "stats": {
-    "stamina": 4
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hidden Enemies",
-     "questId": 5730,
-     "level": 16,
-     "requiredLevel": 9,
-     "zone": "Orgrimmar",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "ref": "https://foreverchanges.pro/quest/5730",
-     "dungeonZone": "Ragefire Chasm"
     }
    ]
   },
@@ -6806,9 +7308,66 @@
      "level": 16,
      "requiredLevel": 12,
      "zone": "Loch Modan",
+     "bands": {
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/86758"
+    }
+   ]
+  },
+  {
+   "id": 270018,
+   "name": "Hammerbone",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 0,
+   "obtain": 17,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 20.44,
+   "speed": 3.4,
+   "dmgMin": 55,
+   "dmgMax": 84,
+   "stats": {
+    "strength": 7,
+    "spirit": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Leaders of the Fang",
+     "questId": 914,
+     "level": 22,
+     "requiredLevel": 10,
+     "zone": "Wailing Caverns",
+     "dungeon": true,
+     "bands": {
+      "red": 10,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/914",
+     "dungeonLevels": [
+      17,
+      24
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 17
     }
    ]
   },
@@ -6840,6 +7399,116 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed"
+    }
+   ]
+  },
+  {
+   "id": 2042,
+   "name": "Staff of Westfall",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 17,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 15.17,
+   "speed": 3,
+   "dmgMin": 36,
+   "dmgMax": 55,
+   "stats": {
+    "intellect": 5,
+    "spirit": 6
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increases healing done by up to 48 and damage done by up to 16 for all magical spells and effects.",
+    "Equip: Movement speed increased by 2% in Elwynn Forest, Westfall, Redridge Mountains, and the Deadmines."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Defias Brotherhood",
+     "questId": 166,
+     "level": 22,
+     "requiredLevel": 14,
+     "zone": "The Deadmines",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 14,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
+     "ref": "https://foreverchanges.pro/quest/166",
+     "dungeonLevels": [
+      17,
+      26
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 17
+    }
+   ]
+  },
+  {
+   "id": 6505,
+   "name": "Crescent Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 17,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 15.17,
+   "speed": 2.9,
+   "dmgMin": 35,
+   "dmgMax": 53,
+   "stats": {
+    "agility": 7,
+    "stamina": 7,
+    "intellect": 7
+   },
+   "bonus": {
+    "spellPower": 26
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 26."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Leaders of the Fang",
+     "questId": 914,
+     "level": 22,
+     "requiredLevel": 10,
+     "zone": "Wailing Caverns",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 10,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
+     "ref": "https://foreverchanges.pro/quest/914",
+     "dungeonLevels": [
+      17,
+      24
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 17
     }
    ]
   },
@@ -7022,6 +7691,56 @@
    ]
   },
   {
+   "id": 1893,
+   "name": "Miner's Revenge",
+   "kind": "2H Axe",
+   "quality": 2,
+   "req": 0,
+   "obtain": 17,
+   "ilvl": 20,
+   "bind": "pickup",
+   "dps": 13,
+   "speed": 3.5,
+   "dmgMin": 36,
+   "dmgMax": 55,
+   "stats": {
+    "spirit": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Oh Brother. . .",
+     "questId": 167,
+     "level": 20,
+     "requiredLevel": 15,
+     "zone": "The Deadmines",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 15,
+      "orange": 16,
+      "yellow": 18,
+      "green": 23,
+      "grey": 27
+     },
+     "ref": "https://foreverchanges.pro/quest/167",
+     "dungeonLevels": [
+      17,
+      26
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 17
+    }
+   ]
+  },
+  {
    "id": 6094,
    "name": "Piercing Axe",
    "kind": "2H Axe",
@@ -7054,7 +7773,19 @@
      "faction": "alliance",
      "confidence": "classic-assumed",
      "dungeon": true,
-     "ref": "https://foreverchanges.pro/quest/214"
+     "bands": {
+      "orange": 14,
+      "yellow": 15,
+      "green": 20,
+      "grey": 24
+     },
+     "ref": "https://foreverchanges.pro/quest/214",
+     "dungeonLevels": [
+      17,
+      26
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 17
     }
    ]
   },
@@ -7089,6 +7820,13 @@
      "level": 17,
      "requiredLevel": 10,
      "zone": "Loch Modan",
+     "bands": {
+      "red": 10,
+      "orange": 13,
+      "yellow": 15,
+      "green": 20,
+      "grey": 24
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/86585"
@@ -7219,7 +7957,19 @@
      "faction": "alliance",
      "confidence": "classic-assumed",
      "dungeon": true,
-     "ref": "https://foreverchanges.pro/quest/214"
+     "bands": {
+      "orange": 14,
+      "yellow": 15,
+      "green": 20,
+      "grey": 24
+     },
+     "ref": "https://foreverchanges.pro/quest/214",
+     "dungeonLevels": [
+      17,
+      26
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 17
     }
    ]
   },
@@ -7286,6 +8036,13 @@
      "level": 17,
      "requiredLevel": 10,
      "zone": "Loch Modan",
+     "bands": {
+      "red": 10,
+      "orange": 13,
+      "yellow": 15,
+      "green": 20,
+      "grey": 24
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/86585"
@@ -7324,6 +8081,13 @@
      "zone": "Westfall",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 9,
+      "orange": 13,
+      "yellow": 15,
+      "green": 20,
+      "grey": 24
+     },
      "ref": "https://foreverchanges.pro/quest/14"
     }
    ]
@@ -7363,9 +8127,21 @@
      "requiredLevel": 14,
      "zone": "The Deadmines",
      "dungeon": true,
+     "bands": {
+      "orange": 14,
+      "yellow": 15,
+      "green": 20,
+      "grey": 24
+     },
      "faction": "alliance",
      "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/214"
+     "ref": "https://foreverchanges.pro/quest/214",
+     "dungeonLevels": [
+      17,
+      26
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 17
     }
    ]
   },
@@ -8097,6 +8873,13 @@
      "zone": "Silverpine Forest",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 12,
+      "orange": 14,
+      "yellow": 16,
+      "green": 21,
+      "grey": 25
+     },
      "ref": "https://foreverchanges.pro/quest/491"
     }
    ]
@@ -8133,6 +8916,13 @@
      "zone": "Loch Modan",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 13,
+      "orange": 14,
+      "yellow": 16,
+      "green": 21,
+      "grey": 25
+     },
      "ref": "https://foreverchanges.pro/quest/297"
     }
    ]
@@ -8172,6 +8962,12 @@
      "level": 18,
      "requiredLevel": 14,
      "zone": "The Barrens",
+     "bands": {
+      "orange": 14,
+      "yellow": 16,
+      "green": 21,
+      "grey": 25
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/95508"
@@ -9035,6 +9831,13 @@
      "zone": "The Barrens",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 12,
+      "orange": 16,
+      "yellow": 18,
+      "green": 23,
+      "grey": 27
+     },
      "ref": "https://foreverchanges.pro/quest/876"
     }
    ]
@@ -9071,44 +9874,13 @@
      "zone": "Loch Modan",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "orange": 16,
+      "yellow": 18,
+      "green": 23,
+      "grey": 27
+     },
      "ref": "https://foreverchanges.pro/quest/283"
-    }
-   ]
-  },
-  {
-   "id": 1893,
-   "name": "Miner's Revenge",
-   "kind": "2H Axe",
-   "quality": 2,
-   "req": 0,
-   "obtain": 20,
-   "ilvl": 20,
-   "bind": "pickup",
-   "dps": 13,
-   "speed": 3.5,
-   "dmgMin": 36,
-   "dmgMax": 55,
-   "stats": {
-    "spirit": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Oh Brother. . .",
-     "questId": 167,
-     "level": 20,
-     "requiredLevel": 15,
-     "zone": "The Deadmines",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "ref": "https://foreverchanges.pro/quest/167"
     }
    ]
   },
@@ -9429,6 +10201,12 @@
      "zone": "Loch Modan",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "orange": 16,
+      "yellow": 18,
+      "green": 23,
+      "grey": 27
+     },
      "ref": "https://foreverchanges.pro/quest/283"
     }
    ]
@@ -9466,6 +10244,13 @@
      "zone": "Darkshore",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 12,
+      "orange": 16,
+      "yellow": 18,
+      "green": 23,
+      "grey": 27
+     },
      "ref": "https://foreverchanges.pro/quest/951"
     }
    ]
@@ -9502,6 +10287,13 @@
      "zone": "The Barrens",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 12,
+      "orange": 16,
+      "yellow": 18,
+      "green": 23,
+      "grey": 27
+     },
      "ref": "https://foreverchanges.pro/quest/876"
     }
    ]
@@ -9542,6 +10334,13 @@
      "zone": "The Barrens",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 10,
+      "orange": 16,
+      "yellow": 18,
+      "green": 23,
+      "grey": 27
+     },
      "ref": "https://foreverchanges.pro/quest/913"
     }
    ]
@@ -9789,6 +10588,13 @@
      "level": 21,
      "requiredLevel": 15,
      "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97003"
@@ -9800,6 +10606,13 @@
      "level": 21,
      "requiredLevel": 15,
      "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97005"
@@ -10032,6 +10845,13 @@
      "zone": "Stonetalon Mountains",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
      "ref": "https://foreverchanges.pro/quest/6284"
     }
    ]
@@ -10071,6 +10891,13 @@
      "level": 21,
      "requiredLevel": 15,
      "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97003"
@@ -10082,6 +10909,13 @@
      "level": 21,
      "requiredLevel": 15,
      "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97005"
@@ -10123,84 +10957,6 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed"
-    }
-   ]
-  },
-  {
-   "id": 251533,
-   "name": "Forsaken Greataxe",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 0,
-   "obtain": 22,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 20.5,
-   "speed": 3,
-   "dmgMin": 49,
-   "dmgMax": 74,
-   "stats": {
-    "strength": 8,
-    "stamina": 4
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Wrath of Rath'mael",
-     "questId": 92422,
-     "level": 22,
-     "requiredLevel": 15,
-     "zone": "Ruins of Lordaeron",
-     "dungeon": true,
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92422"
-    }
-   ]
-  },
-  {
-   "id": 270018,
-   "name": "Hammerbone",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 0,
-   "obtain": 22,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 20.44,
-   "speed": 3.4,
-   "dmgMin": 55,
-   "dmgMax": 84,
-   "stats": {
-    "strength": 7,
-    "spirit": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Leaders of the Fang",
-     "questId": 914,
-     "level": 22,
-     "requiredLevel": 10,
-     "zone": "Wailing Caverns",
-     "dungeon": true,
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/914"
     }
    ]
   },
@@ -10466,132 +11222,6 @@
    ]
   },
   {
-   "id": 251534,
-   "name": "Gnarled Necromancer's Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 22,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 15.18,
-   "speed": 2.8,
-   "dmgMin": 34,
-   "dmgMax": 51,
-   "stats": {
-    "spirit": 10
-   },
-   "bonus": {
-    "spellPower": 26
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 26.",
-    "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Wrath of Rath'mael",
-     "questId": 92422,
-     "level": 22,
-     "requiredLevel": 15,
-     "zone": "Ruins of Lordaeron",
-     "dungeon": true,
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92422"
-    }
-   ]
-  },
-  {
-   "id": 2042,
-   "name": "Staff of Westfall",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 22,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 15.17,
-   "speed": 3,
-   "dmgMin": 36,
-   "dmgMax": 55,
-   "stats": {
-    "intellect": 5,
-    "spirit": 6
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increases healing done by up to 48 and damage done by up to 16 for all magical spells and effects.",
-    "Equip: Movement speed increased by 2% in Elwynn Forest, Westfall, Redridge Mountains, and the Deadmines."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Defias Brotherhood",
-     "questId": 166,
-     "level": 22,
-     "requiredLevel": 14,
-     "zone": "The Deadmines",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "ref": "https://foreverchanges.pro/quest/166"
-    }
-   ]
-  },
-  {
-   "id": 6505,
-   "name": "Crescent Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 22,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 15.17,
-   "speed": 2.9,
-   "dmgMin": 35,
-   "dmgMax": 53,
-   "stats": {
-    "agility": 7,
-    "stamina": 7,
-    "intellect": 7
-   },
-   "bonus": {
-    "spellPower": 26
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 26."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Leaders of the Fang",
-     "questId": 914,
-     "level": 22,
-     "requiredLevel": 10,
-     "zone": "Wailing Caverns",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "ref": "https://foreverchanges.pro/quest/914"
-    }
-   ]
-  },
-  {
    "id": 5752,
    "name": "Wyvern Tailspike",
    "kind": "Dagger",
@@ -10710,6 +11340,13 @@
      "requiredLevel": 15,
      "zone": "Undercity",
      "dungeon": true,
+     "bands": {
+      "red": 15,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92401"
@@ -10752,46 +11389,14 @@
      "zone": "Silverpine Forest",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 10,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
      "ref": "https://foreverchanges.pro/quest/480"
-    }
-   ]
-  },
-  {
-   "id": 279874,
-   "name": "The Stitcher",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 22,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 8.13,
-   "speed": 2.4,
-   "dmgMin": 13,
-   "dmgMax": 26,
-   "stats": {
-    "stamina": 3
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increases healing done by up to 30 and damage done by up to 10 for all magical spells and effects."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Light's Justice",
-     "questId": 92421,
-     "level": 22,
-     "requiredLevel": 15,
-     "zone": "Ruins of Lordaeron",
-     "dungeon": true,
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92421"
     }
    ]
   },
@@ -10994,6 +11599,13 @@
      "level": 23,
      "requiredLevel": 18,
      "zone": "The Barrens",
+     "bands": {
+      "red": 18,
+      "orange": 19,
+      "yellow": 21,
+      "green": 26,
+      "grey": 31
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97250"
@@ -11429,6 +12041,13 @@
      "level": 23,
      "requiredLevel": 18,
      "zone": "The Barrens",
+     "bands": {
+      "red": 18,
+      "orange": 19,
+      "yellow": 21,
+      "green": 26,
+      "grey": 31
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97250"
@@ -11467,6 +12086,58 @@
      ],
      "faction": "both",
      "confidence": "classic-assumed"
+    }
+   ]
+  },
+  {
+   "id": 1264,
+   "name": "Headbasher",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 0,
+   "obtain": 24,
+   "ilvl": 29,
+   "bind": "pickup",
+   "dps": 23.7,
+   "speed": 2.3,
+   "dmgMin": 43,
+   "dmgMax": 66,
+   "stats": {
+    "strength": 9,
+    "stamina": 5,
+    "intellect": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Fury Runs Deep",
+     "questId": 378,
+     "level": 27,
+     "requiredLevel": 22,
+     "zone": "The Stockade",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 22,
+      "orange": 23,
+      "yellow": 25,
+      "green": 30,
+      "grey": 35
+     },
+     "ref": "https://foreverchanges.pro/quest/378",
+     "dungeonLevels": [
+      24,
+      32
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 24
     }
    ]
   },
@@ -11557,6 +12228,57 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed"
+    }
+   ]
+  },
+  {
+   "id": 270027,
+   "name": "Ursine Hammer",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 24,
+   "ilvl": 27,
+   "bind": "pickup",
+   "dps": 18.44,
+   "speed": 3.2,
+   "dmgMin": 47,
+   "dmgMax": 71,
+   "stats": {
+    "agility": 5,
+    "intellect": 5,
+    "spirit": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "What Comes Around...",
+     "questId": 386,
+     "level": 25,
+     "requiredLevel": 22,
+     "zone": "The Stockade",
+     "dungeon": true,
+     "bands": {
+      "orange": 22,
+      "yellow": 23,
+      "green": 28,
+      "grey": 33
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/386",
+     "dungeonLevels": [
+      24,
+      32
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 24
     }
    ]
   },
@@ -11741,6 +12463,13 @@
      "zone": "The Barrens",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 17,
+      "orange": 20,
+      "yellow": 22,
+      "green": 27,
+      "grey": 32
+     },
      "ref": "https://foreverchanges.pro/quest/893"
     }
    ]
@@ -11899,6 +12628,60 @@
    ]
   },
   {
+   "id": 1317,
+   "name": "Hardened Root Staff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 0,
+   "obtain": 24,
+   "ilvl": 27,
+   "bind": "pickup",
+   "dps": 13.64,
+   "speed": 3.3,
+   "dmgMin": 36,
+   "dmgMax": 54,
+   "stats": {
+    "strength": 1,
+    "spirit": 9
+   },
+   "bonus": {
+    "spellPower": 20
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 20."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "What Comes Around...",
+     "questId": 386,
+     "level": 25,
+     "requiredLevel": 22,
+     "zone": "The Stockade",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "orange": 22,
+      "yellow": 23,
+      "green": 28,
+      "grey": 33
+     },
+     "ref": "https://foreverchanges.pro/quest/386",
+     "dungeonLevels": [
+      24,
+      32
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 24
+    }
+   ]
+  },
+  {
    "id": 5626,
    "name": "Skullchipper",
    "kind": "2H Axe",
@@ -11931,6 +12714,13 @@
      "zone": "Darkshore",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 15,
+      "orange": 20,
+      "yellow": 22,
+      "green": 27,
+      "grey": 32
+     },
      "ref": "https://foreverchanges.pro/quest/943"
     }
    ]
@@ -12011,6 +12801,12 @@
      "zone": "Ashenvale",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "orange": 20,
+      "yellow": 22,
+      "green": 27,
+      "grey": 32
+     },
      "ref": "https://foreverchanges.pro/quest/6544"
     }
    ]
@@ -12051,6 +12847,13 @@
      "zone": "Darkshore",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 13,
+      "orange": 20,
+      "yellow": 22,
+      "green": 27,
+      "grey": 32
+     },
      "ref": "https://foreverchanges.pro/quest/973"
     }
    ]
@@ -12087,6 +12890,13 @@
      "zone": "Darkshore",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 15,
+      "orange": 20,
+      "yellow": 22,
+      "green": 27,
+      "grey": 32
+     },
      "ref": "https://foreverchanges.pro/quest/943"
     }
    ]
@@ -12315,45 +13125,6 @@
    ]
   },
   {
-   "id": 270027,
-   "name": "Ursine Hammer",
-   "kind": "2H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 25,
-   "ilvl": 27,
-   "bind": "pickup",
-   "dps": 18.44,
-   "speed": 3.2,
-   "dmgMin": 47,
-   "dmgMax": 71,
-   "stats": {
-    "agility": 5,
-    "intellect": 5,
-    "spirit": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "What Comes Around...",
-     "questId": 386,
-     "level": 25,
-     "requiredLevel": 22,
-     "zone": "The Stockade",
-     "dungeon": true,
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/386"
-    }
-   ]
-  },
-  {
    "id": 249392,
    "name": "Glimmering Staff",
    "kind": "Staff",
@@ -12462,6 +13233,13 @@
      "zone": "Redridge Mountains",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 18,
+      "orange": 21,
+      "yellow": 23,
+      "green": 28,
+      "grey": 33
+     },
      "ref": "https://foreverchanges.pro/quest/19"
     }
    ]
@@ -12528,48 +13306,6 @@
    ]
   },
   {
-   "id": 1317,
-   "name": "Hardened Root Staff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 0,
-   "obtain": 25,
-   "ilvl": 27,
-   "bind": "pickup",
-   "dps": 13.64,
-   "speed": 3.3,
-   "dmgMin": 36,
-   "dmgMax": 54,
-   "stats": {
-    "strength": 1,
-    "spirit": 9
-   },
-   "bonus": {
-    "spellPower": 20
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 20."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "What Comes Around...",
-     "questId": 386,
-     "level": 25,
-     "requiredLevel": 22,
-     "zone": "The Stockade",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "ref": "https://foreverchanges.pro/quest/386"
-    }
-   ]
-  },
-  {
    "id": 2950,
    "name": "Icicle Rod",
    "kind": "Staff",
@@ -12606,6 +13342,13 @@
      "zone": "Wetlands",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 20,
+      "orange": 21,
+      "yellow": 23,
+      "green": 28,
+      "grey": 33
+     },
      "ref": "https://foreverchanges.pro/quest/286"
     }
    ]
@@ -12644,9 +13387,95 @@
      "level": 25,
      "requiredLevel": 20,
      "zone": "Stormwind City",
+     "bands": {
+      "red": 20,
+      "orange": 21,
+      "yellow": 23,
+      "green": 28,
+      "grey": 33
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98191"
+    }
+   ]
+  },
+  {
+   "id": 271766,
+   "name": "Heavehammer",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 0,
+   "obtain": 26,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 27.73,
+   "speed": 3.3,
+   "dmgMin": 73,
+   "dmgMax": 110,
+   "stats": {
+    "armor": 60
+   },
+   "bonus": {
+    "attackPower": 32
+   },
+   "equip": [
+    "Equip: +32 Attack Power."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Earthen Echo",
+     "questId": 98823,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98823",
+     "dungeonLevels": [
+      26,
+      31
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 26
+    },
+    {
+     "type": "quest",
+     "quest": "Prehistoric Prism",
+     "questId": 98824,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98824",
+     "dungeonLevels": [
+      26,
+      31
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 26
     }
    ]
   },
@@ -12713,6 +13542,56 @@
    ]
   },
   {
+   "id": 271667,
+   "name": "Ironwood Destroyer",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 26,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 22.21,
+   "speed": 3.4,
+   "dmgMin": 60,
+   "dmgMax": 91,
+   "stats": {},
+   "bonus": {},
+   "equip": [
+    "Equip: Increases damage done by Nature spells and effects by up to 19."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Horrors in the Highland",
+     "questId": 95646,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95646",
+     "dungeonLevels": [
+      26,
+      31
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 26
+    }
+   ]
+  },
+  {
    "id": 12249,
    "name": "Merciless Axe",
    "kind": "2H Axe",
@@ -12774,6 +13653,83 @@
      "faction": "horde",
      "pvp": false,
      "confidence": "classic-assumed"
+    }
+   ]
+  },
+  {
+   "id": 271767,
+   "name": "Healer's Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 26,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 20.77,
+   "speed": 2.6,
+   "dmgMin": 43,
+   "dmgMax": 65,
+   "stats": {
+    "stamina": 12
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increases healing done by up to 67 and damage done by up to 22 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Earthen Echo",
+     "questId": 98823,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98823",
+     "dungeonLevels": [
+      26,
+      31
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 26
+    },
+    {
+     "type": "quest",
+     "quest": "Prehistoric Prism",
+     "questId": 98824,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98824",
+     "dungeonLevels": [
+      26,
+      31
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 26
     }
    ]
   },
@@ -12873,6 +13829,60 @@
      "type": "unknown",
      "faction": "both",
      "confidence": "community-untested"
+    }
+   ]
+  },
+  {
+   "id": 280805,
+   "name": "Serrated Raptor Claw",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 26,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 17.19,
+   "speed": 1.6,
+   "dmgMin": 19,
+   "dmgMax": 36,
+   "stats": {
+    "agility": 3
+   },
+   "bonus": {
+    "attackPower": 6
+   },
+   "equip": [
+    "Equip: +6 Attack Power."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Changing Tastes",
+     "questId": 95697,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95697",
+     "dungeonLevels": [
+      26,
+      31
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 26
     }
    ]
   },
@@ -13003,6 +14013,60 @@
    ]
   },
   {
+   "id": 271664,
+   "name": "Hornbeam Heft",
+   "kind": "1H Axe",
+   "quality": 2,
+   "req": 0,
+   "obtain": 26,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 11.46,
+   "speed": 2.4,
+   "dmgMin": 19,
+   "dmgMax": 36,
+   "stats": {
+    "strength": 6
+   },
+   "bonus": {
+    "spellPower": 26
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 26."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Horrors in the Highland",
+     "questId": 95646,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95646",
+     "dungeonLevels": [
+      26,
+      31
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 26
+    }
+   ]
+  },
+  {
    "id": 7753,
    "name": "Bloodspiller",
    "kind": "2H Axe",
@@ -13034,45 +14098,6 @@
      ],
      "faction": "both",
      "confidence": "classic-assumed"
-    }
-   ]
-  },
-  {
-   "id": 1264,
-   "name": "Headbasher",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 0,
-   "obtain": 27,
-   "ilvl": 29,
-   "bind": "pickup",
-   "dps": 23.7,
-   "speed": 2.3,
-   "dmgMin": 43,
-   "dmgMax": 66,
-   "stats": {
-    "strength": 9,
-    "stamina": 5,
-    "intellect": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Fury Runs Deep",
-     "questId": 378,
-     "level": 27,
-     "requiredLevel": 22,
-     "zone": "The Stockade",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "ref": "https://foreverchanges.pro/quest/378"
     }
    ]
   },
@@ -13265,6 +14290,110 @@
      "faction": "alliance",
      "pvp": false,
      "confidence": "classic-assumed"
+    }
+   ]
+  },
+  {
+   "id": 279844,
+   "name": "Striking Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 28,
+   "ilvl": 36,
+   "bind": "pickup",
+   "dps": 31.29,
+   "speed": 3.1,
+   "dmgMin": 77,
+   "dmgMax": 117,
+   "stats": {
+    "strength": 9,
+    "stamina": 6,
+    "intellect": 14
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Heart of Disruption (Horde)",
+     "questId": 96984,
+     "level": 33,
+     "requiredLevel": 24,
+     "zone": "City of Dalaran",
+     "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 29,
+      "yellow": 31,
+      "green": 36,
+      "grey": 42
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96984",
+     "dungeonLevels": [
+      28,
+      33
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 28
+    }
+   ]
+  },
+  {
+   "id": 279841,
+   "name": "Defender of Dalaran",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 0,
+   "obtain": 28,
+   "ilvl": 36,
+   "bind": "pickup",
+   "dps": 31.21,
+   "speed": 3.3,
+   "dmgMin": 82,
+   "dmgMax": 124,
+   "stats": {
+    "strength": 9,
+    "stamina": 13,
+    "intellect": 9
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Heart of Disruption (Alliance)",
+     "questId": 92458,
+     "level": 33,
+     "requiredLevel": 24,
+     "zone": "City of Dalaran",
+     "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 29,
+      "yellow": 31,
+      "green": 36,
+      "grey": 42
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92458",
+     "dungeonLevels": [
+      28,
+      33
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 28
     }
    ]
   },
@@ -13728,6 +14857,12 @@
      "zone": "Thousand Needles",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "orange": 24,
+      "yellow": 26,
+      "green": 31,
+      "grey": 36
+     },
      "ref": "https://foreverchanges.pro/quest/5088"
     }
    ]
@@ -14241,6 +15376,56 @@
    ]
   },
   {
+   "id": 9604,
+   "name": "Mechanic's Pipehammer",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 29,
+   "ilvl": 32,
+   "bind": "pickup",
+   "dps": 21.61,
+   "speed": 2.8,
+   "dmgMin": 48,
+   "dmgMax": 73,
+   "stats": {
+    "intellect": 12
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Data Rescue",
+     "questId": 2930,
+     "level": 30,
+     "requiredLevel": 25,
+     "zone": "Gnomeregan",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 25,
+      "orange": 26,
+      "yellow": 28,
+      "green": 33,
+      "grey": 38
+     },
+     "ref": "https://foreverchanges.pro/quest/2930",
+     "dungeonLevels": [
+      29,
+      38
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 29
+    }
+   ]
+  },
+  {
    "id": 6689,
    "name": "Wind Spirit Staff",
    "kind": "Staff",
@@ -14397,6 +15582,58 @@
      "faction": "both",
      "pvp": false,
      "confidence": "classic-assumed"
+    }
+   ]
+  },
+  {
+   "id": 9608,
+   "name": "Shoni's Disarming Tool",
+   "kind": "1H Axe",
+   "quality": 2,
+   "req": 0,
+   "obtain": 29,
+   "ilvl": 32,
+   "bind": "pickup",
+   "dps": 16.58,
+   "speed": 1.9,
+   "dmgMin": 22,
+   "dmgMax": 41,
+   "stats": {
+    "spirit": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [
+    "Chance on hit: Disarm target's weapon for 5 sec."
+   ],
+   "era": "classic",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Gyrodrillmatic Excavationators",
+     "questId": 2928,
+     "level": 30,
+     "requiredLevel": 20,
+     "zone": "Gnomeregan",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 20,
+      "orange": 26,
+      "yellow": 28,
+      "green": 33,
+      "grey": 38
+     },
+     "ref": "https://foreverchanges.pro/quest/2928",
+     "dungeonLevels": [
+      29,
+      38
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "early": 29
     }
    ]
   },
@@ -14585,43 +15822,6 @@
    ]
   },
   {
-   "id": 9604,
-   "name": "Mechanic's Pipehammer",
-   "kind": "2H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 30,
-   "ilvl": 32,
-   "bind": "pickup",
-   "dps": 21.61,
-   "speed": 2.8,
-   "dmgMin": 48,
-   "dmgMax": 73,
-   "stats": {
-    "intellect": 12
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Data Rescue",
-     "questId": 2930,
-     "level": 30,
-     "requiredLevel": 25,
-     "zone": "Gnomeregan",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "ref": "https://foreverchanges.pro/quest/2930"
-    }
-   ]
-  },
-  {
    "id": 5815,
    "name": "Glacial Stone",
    "kind": "2H Mace",
@@ -14653,6 +15853,13 @@
      "zone": "Ashenvale",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 18,
+      "orange": 26,
+      "yellow": 28,
+      "green": 33,
+      "grey": 38
+     },
      "ref": "https://foreverchanges.pro/quest/1046"
     }
    ]
@@ -14692,45 +15899,6 @@
    ]
   },
   {
-   "id": 9608,
-   "name": "Shoni's Disarming Tool",
-   "kind": "1H Axe",
-   "quality": 2,
-   "req": 0,
-   "obtain": 30,
-   "ilvl": 32,
-   "bind": "pickup",
-   "dps": 16.58,
-   "speed": 1.9,
-   "dmgMin": 22,
-   "dmgMax": 41,
-   "stats": {
-    "spirit": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [
-    "Chance on hit: Disarm target's weapon for 5 sec."
-   ],
-   "era": "classic",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Gyrodrillmatic Excavationators",
-     "questId": 2928,
-     "level": 30,
-     "requiredLevel": 20,
-     "zone": "Gnomeregan",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "ref": "https://foreverchanges.pro/quest/2928"
-    }
-   ]
-  },
-  {
    "id": 17046,
    "name": "Gutterblade",
    "kind": "1H Axe",
@@ -14763,6 +15931,13 @@
      "zone": "Ashenvale",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 18,
+      "orange": 26,
+      "yellow": 28,
+      "green": 33,
+      "grey": 38
+     },
      "ref": "https://foreverchanges.pro/quest/1046"
     }
    ]
@@ -14922,59 +16097,6 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed"
-    }
-   ]
-  },
-  {
-   "id": 271766,
-   "name": "Heavehammer",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 0,
-   "obtain": 31,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 27.73,
-   "speed": 3.3,
-   "dmgMin": 73,
-   "dmgMax": 110,
-   "stats": {
-    "armor": 60
-   },
-   "bonus": {
-    "attackPower": 32
-   },
-   "equip": [
-    "Equip: +32 Attack Power."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Earthen Echo",
-     "questId": 98823,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98823"
-    },
-    {
-     "type": "quest",
-     "quest": "Prehistoric Prism",
-     "questId": 98824,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98824"
     }
    ]
   },
@@ -15139,94 +16261,6 @@
    ]
   },
   {
-   "id": 271667,
-   "name": "Ironwood Destroyer",
-   "kind": "2H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 31,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 22.21,
-   "speed": 3.4,
-   "dmgMin": 60,
-   "dmgMax": 91,
-   "stats": {},
-   "bonus": {},
-   "equip": [
-    "Equip: Increases damage done by Nature spells and effects by up to 19."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Horrors in the Highland",
-     "questId": 95646,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/95646"
-    }
-   ]
-  },
-  {
-   "id": 271767,
-   "name": "Healer's Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 31,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 20.77,
-   "speed": 2.6,
-   "dmgMin": 43,
-   "dmgMax": 65,
-   "stats": {
-    "stamina": 12
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increases healing done by up to 67 and damage done by up to 22 for all magical spells and effects."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Earthen Echo",
-     "questId": 98823,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98823"
-    },
-    {
-     "type": "quest",
-     "quest": "Prehistoric Prism",
-     "questId": 98824,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98824"
-    }
-   ]
-  },
-  {
    "id": 15243,
    "name": "Deadly Kris",
    "kind": "Dagger",
@@ -15286,88 +16320,6 @@
      "grey": 205,
      "faction": "both",
      "confidence": "client-data"
-    }
-   ]
-  },
-  {
-   "id": 280805,
-   "name": "Serrated Raptor Claw",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 31,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 17.19,
-   "speed": 1.6,
-   "dmgMin": 19,
-   "dmgMax": 36,
-   "stats": {
-    "agility": 3
-   },
-   "bonus": {
-    "attackPower": 6
-   },
-   "equip": [
-    "Equip: +6 Attack Power."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Changing Tastes",
-     "questId": 95697,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/95697"
-    }
-   ]
-  },
-  {
-   "id": 271664,
-   "name": "Hornbeam Heft",
-   "kind": "1H Axe",
-   "quality": 2,
-   "req": 0,
-   "obtain": 31,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 11.46,
-   "speed": 2.4,
-   "dmgMin": 19,
-   "dmgMax": 36,
-   "stats": {
-    "strength": 6
-   },
-   "bonus": {
-    "spellPower": 26
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 26."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Horrors in the Highland",
-     "questId": 95646,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/95646"
     }
    ]
   },
@@ -15682,6 +16634,13 @@
      "level": 32,
      "requiredLevel": 24,
      "zone": "Ashenvale",
+     "bands": {
+      "red": 24,
+      "orange": 28,
+      "yellow": 30,
+      "green": 35,
+      "grey": 41
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/1012"
@@ -15834,6 +16793,13 @@
      "zone": "Hillsbrad Foothills",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 25,
+      "orange": 28,
+      "yellow": 30,
+      "green": 35,
+      "grey": 41
+     },
      "ref": "https://foreverchanges.pro/quest/562"
     }
    ]
@@ -15870,6 +16836,13 @@
      "zone": "Wetlands",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 23,
+      "orange": 28,
+      "yellow": 30,
+      "green": 35,
+      "grey": 41
+     },
      "ref": "https://foreverchanges.pro/quest/474"
     }
    ]
@@ -15905,6 +16878,13 @@
      "level": 32,
      "requiredLevel": 24,
      "zone": "Ashenvale",
+     "bands": {
+      "red": 24,
+      "orange": 28,
+      "yellow": 30,
+      "green": 35,
+      "grey": 41
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/1012"
@@ -15971,84 +16951,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed"
-    }
-   ]
-  },
-  {
-   "id": 279844,
-   "name": "Striking Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 33,
-   "ilvl": 36,
-   "bind": "pickup",
-   "dps": 31.29,
-   "speed": 3.1,
-   "dmgMin": 77,
-   "dmgMax": 117,
-   "stats": {
-    "strength": 9,
-    "stamina": 6,
-    "intellect": 14
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Heart of Disruption (Horde)",
-     "questId": 96984,
-     "level": 33,
-     "requiredLevel": 24,
-     "zone": "City of Dalaran",
-     "dungeon": true,
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96984"
-    }
-   ]
-  },
-  {
-   "id": 279841,
-   "name": "Defender of Dalaran",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 0,
-   "obtain": 33,
-   "ilvl": 36,
-   "bind": "pickup",
-   "dps": 31.21,
-   "speed": 3.3,
-   "dmgMin": 82,
-   "dmgMax": 124,
-   "stats": {
-    "strength": 9,
-    "stamina": 13,
-    "intellect": 9
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Heart of Disruption (Alliance)",
-     "questId": 92458,
-     "level": 33,
-     "requiredLevel": 24,
-     "zone": "City of Dalaran",
-     "dungeon": true,
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92458"
     }
    ]
   },
@@ -16372,6 +17274,13 @@
      "level": 33,
      "requiredLevel": 28,
      "zone": "Desolace",
+     "bands": {
+      "red": 28,
+      "orange": 29,
+      "yellow": 31,
+      "green": 36,
+      "grey": 42
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97265"
@@ -16685,6 +17594,13 @@
      "level": 34,
      "requiredLevel": 24,
      "zone": "Wetlands",
+     "bands": {
+      "red": 24,
+      "orange": 30,
+      "yellow": 32,
+      "green": 37,
+      "grey": 43
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98297"
@@ -16726,6 +17642,13 @@
      "level": 34,
      "requiredLevel": 24,
      "zone": "Wetlands",
+     "bands": {
+      "red": 24,
+      "orange": 30,
+      "yellow": 32,
+      "green": 37,
+      "grey": 43
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98297"
@@ -16765,6 +17688,12 @@
      "zone": "Stranglethorn Vale",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "orange": 30,
+      "yellow": 32,
+      "green": 37,
+      "grey": 43
+     },
      "ref": "https://foreverchanges.pro/quest/204"
     }
    ]
@@ -17139,6 +18068,11 @@
      "zone": "Badlands",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 35,
+      "green": 38,
+      "grey": 44
+     },
      "ref": "https://foreverchanges.pro/quest/719"
     }
    ]
@@ -17175,6 +18109,13 @@
      "zone": "Duskwood",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 22,
+      "orange": 31,
+      "yellow": 33,
+      "green": 38,
+      "grey": 44
+     },
      "ref": "https://foreverchanges.pro/quest/98"
     }
    ]
@@ -17211,6 +18152,13 @@
      "zone": "Thousand Needles",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 28,
+      "orange": 31,
+      "yellow": 33,
+      "green": 38,
+      "grey": 44
+     },
      "ref": "https://foreverchanges.pro/quest/1184"
     }
    ]
@@ -17346,6 +18294,13 @@
      "faction": "horde",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 25,
+      "orange": 32,
+      "yellow": 34,
+      "green": 39,
+      "grey": 46
+     },
      "ref": "https://foreverchanges.pro/quest/1394",
      "dungeonZone": "Scarlet Monastery"
     }
@@ -17389,6 +18344,13 @@
      "faction": "horde",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 28,
+      "orange": 32,
+      "yellow": 34,
+      "green": 39,
+      "grey": 46
+     },
      "ref": "https://foreverchanges.pro/quest/6521"
     }
    ]
@@ -17756,6 +18718,13 @@
      "zone": "Stranglethorn Vale",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 30,
+      "orange": 33,
+      "yellow": 35,
+      "green": 40,
+      "grey": 47
+     },
      "ref": "https://foreverchanges.pro/quest/328"
     }
    ]
@@ -18296,6 +19265,12 @@
      "level": 38,
      "requiredLevel": 35,
      "zone": "Desolace",
+     "bands": {
+      "orange": 35,
+      "yellow": 36,
+      "green": 41,
+      "grey": 48
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93045"
@@ -18733,6 +19708,13 @@
      "faction": "alliance",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 34,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "ref": "https://foreverchanges.pro/quest/1053"
     }
    ]
@@ -18865,6 +19847,13 @@
      "faction": "alliance",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 35,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "ref": "https://foreverchanges.pro/quest/2240"
     }
    ]
@@ -19158,6 +20147,13 @@
      "zone": "Arathi Highlands",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 35,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "ref": "https://foreverchanges.pro/quest/666"
     }
    ]
@@ -19195,6 +20191,13 @@
      "zone": "Arathi Highlands",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "ref": "https://foreverchanges.pro/quest/679"
     }
    ]
@@ -19232,6 +20235,13 @@
      "faction": "alliance",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 34,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "ref": "https://foreverchanges.pro/quest/1053"
     }
    ]
@@ -19267,6 +20277,13 @@
      "level": 40,
      "requiredLevel": 30,
      "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/202"
@@ -19369,6 +20386,13 @@
      "zone": "Arathi Highlands",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "ref": "https://foreverchanges.pro/quest/679"
     }
    ]
@@ -19405,6 +20429,13 @@
      "zone": "Arathi Highlands",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 35,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "ref": "https://foreverchanges.pro/quest/662"
     }
    ]
@@ -19479,6 +20510,13 @@
      "level": 40,
      "requiredLevel": 30,
      "zone": "Shaman",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/96016"
@@ -19518,6 +20556,13 @@
      "level": 40,
      "requiredLevel": 30,
      "zone": "Shaman",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/96016"
@@ -19558,6 +20603,13 @@
      "level": 40,
      "requiredLevel": 30,
      "zone": "Arathi Highlands",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/679"
@@ -19598,6 +20650,13 @@
      "level": 40,
      "requiredLevel": 30,
      "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/202"
@@ -19786,6 +20845,13 @@
      "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 30,
+      "orange": 37,
+      "yellow": 39,
+      "green": 44,
+      "grey": 52
+     },
      "ref": "https://foreverchanges.pro/quest/600"
     }
    ]
@@ -19922,6 +20988,13 @@
      "level": 41,
      "requiredLevel": 35,
      "zone": "Shen'dralas",
+     "bands": {
+      "red": 35,
+      "orange": 37,
+      "yellow": 39,
+      "green": 44,
+      "grey": 52
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92873"
@@ -20031,6 +21104,13 @@
      "level": 42,
      "requiredLevel": 35,
      "zone": "Desolace",
+     "bands": {
+      "red": 35,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93128"
@@ -20069,6 +21149,13 @@
      "zone": "Duskwood",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 37,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
      "ref": "https://foreverchanges.pro/quest/1383"
     }
    ]
@@ -20235,6 +21322,13 @@
      "zone": "Badlands",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 30,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
      "ref": "https://foreverchanges.pro/quest/739"
     }
    ]
@@ -20271,6 +21365,13 @@
      "level": 42,
      "requiredLevel": 35,
      "zone": "Desolace",
+     "bands": {
+      "red": 35,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93128"
@@ -20436,6 +21537,13 @@
      "level": 42,
      "requiredLevel": 35,
      "zone": "Desolace",
+     "bands": {
+      "red": 35,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93196"
@@ -20545,6 +21653,13 @@
      "level": 42,
      "requiredLevel": 35,
      "zone": "Desolace",
+     "bands": {
+      "red": 35,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93196"
@@ -20713,6 +21828,13 @@
      "zone": "Swamp of Sorrows",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 35,
+      "orange": 39,
+      "yellow": 41,
+      "green": 46,
+      "grey": 54
+     },
      "ref": "https://foreverchanges.pro/quest/1427"
     }
    ]
@@ -20749,6 +21871,13 @@
      "zone": "Swamp of Sorrows",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 35,
+      "orange": 39,
+      "yellow": 41,
+      "green": 46,
+      "grey": 54
+     },
      "ref": "https://foreverchanges.pro/quest/1427"
     }
    ]
@@ -20929,6 +22058,13 @@
      "zone": "Swamp of Sorrows",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 35,
+      "orange": 39,
+      "yellow": 41,
+      "green": 46,
+      "grey": 54
+     },
      "ref": "https://foreverchanges.pro/quest/1427"
     }
    ]
@@ -21636,6 +22772,13 @@
      "zone": "Dustwallow Marsh",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 38,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
      "ref": "https://foreverchanges.pro/quest/1173"
     }
    ]
@@ -21773,6 +22916,13 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
      "ref": "https://foreverchanges.pro/quest/2846"
     }
    ]
@@ -21843,6 +22993,13 @@
      "zone": "Feralas",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 40,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
      "ref": "https://foreverchanges.pro/quest/4266"
     }
    ]
@@ -21884,6 +23041,13 @@
      "zone": "Feralas",
      "faction": "alliance",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 40,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
      "ref": "https://foreverchanges.pro/quest/4266"
     }
    ]
@@ -21925,6 +23089,13 @@
      "zone": "Stranglethorn Vale",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 30,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
      "ref": "https://foreverchanges.pro/quest/592"
     }
    ]
@@ -22789,6 +23960,13 @@
      "zone": "Tanaris",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 43,
+      "orange": 44,
+      "yellow": 46,
+      "green": 51,
+      "grey": 60
+     },
      "ref": "https://foreverchanges.pro/quest/3161"
     }
    ]
@@ -23462,6 +24640,13 @@
      "zone": "Feralas",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 40,
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
      "ref": "https://foreverchanges.pro/quest/3129"
     }
    ]
@@ -23852,6 +25037,13 @@
      "zone": "Feralas",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 40,
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
      "ref": "https://foreverchanges.pro/quest/3129"
     }
    ]
@@ -23888,6 +25080,13 @@
      "zone": "Feralas",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 40,
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
      "ref": "https://foreverchanges.pro/quest/3129"
     }
    ]
@@ -23929,6 +25128,13 @@
      "zone": "Feralas",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 40,
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
      "ref": "https://foreverchanges.pro/quest/3129"
     }
    ]
@@ -24412,6 +25618,13 @@
      "faction": "horde",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 45,
+      "orange": 47,
+      "yellow": 49,
+      "green": 54,
+      "grey": 60
+     },
      "ref": "https://foreverchanges.pro/quest/7064"
     },
     {
@@ -24424,6 +25637,13 @@
      "faction": "alliance",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 45,
+      "orange": 47,
+      "yellow": 49,
+      "green": 54,
+      "grey": 60
+     },
      "ref": "https://foreverchanges.pro/quest/7065"
     }
    ]
@@ -24461,6 +25681,13 @@
      "faction": "alliance",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 47,
+      "yellow": 49,
+      "green": 54,
+      "grey": 60
+     },
      "ref": "https://foreverchanges.pro/quest/2994",
      "dungeonZone": "Zul'Farrak"
     }
@@ -24580,6 +25807,10 @@
      "faction": "horde",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "yellow": 50,
+      "green": 55
+     },
      "ref": "https://foreverchanges.pro/quest/8413"
     }
    ]
@@ -24622,6 +25853,10 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "yellow": 50,
+      "green": 55
+     },
      "ref": "https://foreverchanges.pro/quest/9053"
     }
    ]
@@ -24963,6 +26198,10 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "yellow": 50,
+      "green": 55
+     },
      "ref": "https://foreverchanges.pro/quest/8253"
     }
    ]
@@ -25039,6 +26278,10 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "yellow": 50,
+      "green": 55
+     },
      "ref": "https://foreverchanges.pro/quest/8422"
     }
    ]
@@ -25076,6 +26319,11 @@
      "zone": "Orgrimmar",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "orange": 48,
+      "yellow": 50,
+      "green": 55
+     },
      "ref": "https://foreverchanges.pro/quest/4300"
     }
    ]
@@ -25112,6 +26360,12 @@
      "zone": "Searing Gorge",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 40,
+      "orange": 48,
+      "yellow": 50,
+      "green": 55
+     },
      "ref": "https://foreverchanges.pro/quest/3463"
     }
    ]
@@ -25470,6 +26724,12 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
      "ref": "https://foreverchanges.pro/quest/3528"
     }
    ]
@@ -25937,6 +27197,11 @@
      "zone": "Winterspring",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
      "ref": "https://foreverchanges.pro/quest/4810"
     }
    ]
@@ -25978,6 +27243,11 @@
      "zone": "Winterspring",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
      "ref": "https://foreverchanges.pro/quest/4810"
     }
    ]
@@ -26245,6 +27515,12 @@
      "faction": "alliance",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
      "ref": "https://foreverchanges.pro/quest/4126"
     },
     {
@@ -26257,6 +27533,12 @@
      "faction": "horde",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
      "ref": "https://foreverchanges.pro/quest/4134"
     }
    ]
@@ -26391,6 +27673,12 @@
      "zone": "Un'Goro Crater",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
      "ref": "https://foreverchanges.pro/quest/4301"
     }
    ]
@@ -26750,6 +28038,12 @@
      "faction": "alliance",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
      "ref": "https://foreverchanges.pro/quest/4126"
     },
     {
@@ -26762,6 +28056,12 @@
      "faction": "horde",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
      "ref": "https://foreverchanges.pro/quest/4134"
     }
    ]
@@ -26838,6 +28138,12 @@
      "zone": "Un'Goro Crater",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
      "ref": "https://foreverchanges.pro/quest/4301"
     }
    ]
@@ -27562,6 +28868,12 @@
      "zone": "Orgrimmar",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 44,
+      "orange": 52,
+      "yellow": 54,
+      "green": 59
+     },
      "ref": "https://foreverchanges.pro/quest/3507"
     }
    ]
@@ -28362,6 +29674,11 @@
      "faction": "alliance",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
      "ref": "https://foreverchanges.pro/quest/7488"
     },
     {
@@ -28374,6 +29691,11 @@
      "faction": "horde",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
      "ref": "https://foreverchanges.pro/quest/7489"
     }
    ]
@@ -28439,6 +29761,12 @@
      "zone": "Felwood",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 49,
+      "orange": 53,
+      "yellow": 55,
+      "green": 60
+     },
      "ref": "https://foreverchanges.pro/quest/5385"
     }
    ]
@@ -29623,6 +30951,11 @@
      "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 45,
+      "orange": 54,
+      "yellow": 56
+     },
      "ref": "https://foreverchanges.pro/quest/3625"
     }
    ]
@@ -30302,6 +31635,11 @@
      "faction": "alliance",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 50,
+      "orange": 54,
+      "yellow": 56
+     },
      "ref": "https://foreverchanges.pro/quest/4322"
     }
    ]
@@ -30400,6 +31738,11 @@
      "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 45,
+      "orange": 54,
+      "yellow": 56
+     },
      "ref": "https://foreverchanges.pro/quest/3625"
     }
    ]
@@ -30568,6 +31911,11 @@
      "zone": "Silithus",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 54,
+      "orange": 55,
+      "yellow": 57
+     },
      "ref": "https://foreverchanges.pro/quest/8283",
      "raid": true
     }
@@ -32331,6 +33679,9 @@
      "zone": "Silithus",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 60
+     },
      "ref": "https://foreverchanges.pro/quest/8573",
      "raid": true
     }
@@ -32895,6 +34246,9 @@
      "zone": "Ahn'Qiraj",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 60
+     },
      "ref": "https://foreverchanges.pro/quest/8790",
      "raid": true
     }
@@ -32938,6 +34292,9 @@
      "zone": "Ahn'Qiraj",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 60
+     },
      "ref": "https://foreverchanges.pro/quest/8789",
      "raid": true
     }
@@ -32981,6 +34338,9 @@
      "zone": "Ahn'Qiraj",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 60
+     },
      "ref": "https://foreverchanges.pro/quest/8789",
      "raid": true
     }
@@ -33661,6 +35021,9 @@
      "zone": "Ahn'Qiraj",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 60
+     },
      "ref": "https://foreverchanges.pro/quest/8790",
      "raid": true
     }
@@ -33701,6 +35064,9 @@
      "zone": "Ahn'Qiraj",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 60
+     },
      "ref": "https://foreverchanges.pro/quest/8790",
      "raid": true
     }
@@ -33881,6 +35247,9 @@
      "zone": "Silithus",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 60
+     },
      "ref": "https://foreverchanges.pro/quest/8745",
      "raid": true
     }
@@ -34314,6 +35683,9 @@
      "zone": "Silithus",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 60
+     },
      "ref": "https://foreverchanges.pro/quest/9023",
      "raid": true
     }
@@ -34510,6 +35882,11 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 52,
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/5944",
      "dungeonZone": "Stratholme"
     }
@@ -34552,6 +35929,10 @@
      "faction": "alliance",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/7462"
     },
     {
@@ -34564,6 +35945,10 @@
      "faction": "horde",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/7877"
     }
    ]
@@ -34639,6 +36024,11 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/5265",
      "dungeonZone": "Stratholme"
     }
@@ -34907,6 +36297,10 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "orange": 57,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/4771"
     }
    ]
@@ -36433,6 +37827,9 @@
      "zone": "Silithus",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 60
+     },
      "ref": "https://foreverchanges.pro/quest/9023",
      "raid": true
     }
@@ -36974,6 +38371,11 @@
      "zone": "Alterac Valley",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 51,
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/8271"
     },
     {
@@ -36985,6 +38387,11 @@
      "zone": "Alterac Valley",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 51,
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/8272"
     }
    ]
@@ -37059,6 +38466,10 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "orange": 57,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/5466"
     }
    ]
@@ -37467,6 +38878,10 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "dungeon": true,
+     "bands": {
+      "orange": 57,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/4771"
     }
    ]
@@ -37541,6 +38956,9 @@
      "zone": "Silithus",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 60
+     },
      "ref": "https://foreverchanges.pro/quest/8745",
      "raid": true
     }
@@ -37578,6 +38996,9 @@
      "zone": "Silithus",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/8308",
      "raid": true
     }
@@ -37615,6 +39036,10 @@
      "zone": "Eastern Plaguelands",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/6136"
     }
    ]
@@ -37653,6 +39078,10 @@
      "zone": "Eastern Plaguelands",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/6136"
     }
    ]
@@ -37694,6 +39123,9 @@
      "zone": "Silithus",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/8306",
      "raid": true
     }
@@ -37734,6 +39166,11 @@
      "zone": "Winterspring",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 53,
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/5056"
     }
    ]
@@ -37775,6 +39212,10 @@
      "zone": "Eastern Plaguelands",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/6136"
     }
    ]
@@ -38036,6 +39477,11 @@
      "zone": "Eastern Plaguelands",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/9221"
     },
     {
@@ -38047,6 +39493,11 @@
      "zone": "Eastern Plaguelands",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/9223"
     },
     {
@@ -38058,6 +39509,11 @@
      "zone": "Eastern Plaguelands",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/9226"
     },
     {
@@ -38069,6 +39525,11 @@
      "zone": "Eastern Plaguelands",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
      "ref": "https://foreverchanges.pro/quest/9227"
     }
    ]
@@ -38109,6 +39570,9 @@
      "zone": "Silithus",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 60
+     },
      "ref": "https://foreverchanges.pro/quest/9023",
      "raid": true
     }
@@ -38148,6 +39612,9 @@
      "zone": "Silithus",
      "faction": "both",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 60
+     },
      "ref": "https://foreverchanges.pro/quest/9023",
      "raid": true
     }
@@ -38191,6 +39658,9 @@
      "zone": "Ahn'Qiraj",
      "faction": "horde",
      "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 60
+     },
      "ref": "https://foreverchanges.pro/quest/8706",
      "raid": true
     }

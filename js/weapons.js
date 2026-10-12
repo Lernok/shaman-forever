@@ -92,7 +92,8 @@
       case 'quest': {
         const from = s.requiredLevel && s.level && s.requiredLevel < s.level ? t('wp.src.from', { level: s.requiredLevel }) : '';
         return t(s.dungeon ? 'wp.src.dquest' : 'wp.src.quest', { quest: s.quest, level: s.level || '?', from: from }) +
-          ((s.dungeonZone || s.zone) ? ' · ' + (s.dungeonZone || s.zone) : '') + (s.faction !== 'both' ? ' · ' + t('wp.faction.' + s.faction) : '');
+          ((s.dungeonZone || s.zone) ? ' · ' + (s.dungeonZone || s.zone) : '') + (s.dungeonLevels ? ' ' + s.dungeonLevels.join('–') : '') +
+          (s.faction !== 'both' ? ' · ' + t('wp.faction.' + s.faction) : '');
       }
       case 'vendor': return t('wp.src.vendor', { npc: s.npc, zone: s.zone || '?' });
       case 'unrecorded': return t('wp.src.unrecorded');
@@ -196,7 +197,7 @@
       '<td><a class="' + qualityClass(w.quality) + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' + w.name + '</a>' +
         (w.era === 'new' ? ' <span class="wp-new">' + t('wp.newInForever') + '</span>' : '') +
         (w.numbers === 'classic' ? ' <span class="wp-classic-nums" title="' + t('wp.classicNumbersTitle') + '">' + t('wp.classicNumbers') + '</span>' : '') +
-        '<span class="wp-sub">' + w.kind + ' · ' + t('common.level') + ' ' + w.req +
+        '<span class="wp-sub">' + w.kind + ' · ' + reqText(w) +
           (w.obtain > w.req ? ' · ' + t('wp.obtainFrom', { level: w.obtain }) : '') + (w.bind === 'pickup' ? ' · BoP' : '') + '</span></td>' +
       '<td class="num">' + metricCell(w) + '</td>' +
       '<td>' + (statsText(w) || '—') + '</td>' +
@@ -204,12 +205,18 @@
       '</tr>';
   }
 
+  // Level to equip it: quest rewards usually have none.
+  function reqText(w) {
+    return w.req > 1 ? t('common.level') + ' ' + w.req : t('wp.noReq');
+  }
+
   // Dungeon quest rewards for this spec and faction, each against the best
-  // other weapon you could have at the quest's level.
+  // other weapon you could have at the level you can first get it.
   function dungeonQuests(list) {
     const rows = [];
+    const at = (w, s) => s.early || s.level || w.obtain;
     list.forEach(w => w.usable.forEach(s => { if (s.type === 'quest' && s.dungeon) rows.push({ w, s }); }));
-    rows.sort((a, b) => (a.s.level || 0) - (b.s.level || 0) || valueOf(b.w) - valueOf(a.w));
+    rows.sort((a, b) => at(a.w, a.s) - at(b.w, b.s) || valueOf(b.w) - valueOf(a.w));
     let html = '<div class="panel" style="margin-top:16px"><h3>' + t('wp.dq.title', { n: rows.length }) + '</h3>' +
       '<p class="note-text">' + t('wp.dq.intro') + '</p>';
     if (!rows.length) return html + '<p class="dim">' + t('wp.dq.none') + '</p></div>';
@@ -217,7 +224,7 @@
     html += '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.dq.colQuest') + '</th><th>' + t('wp.dq.colLevels') + '</th><th>' +
       t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.dq.colAlt') + '</th></tr></thead><tbody>' +
       rows.map(({ w, s }) => {
-        const lv = s.level || w.obtain;
+        const lv = at(w, s);
         // Best other weapon at the quest's level: one you get for sure, and the best drop.
         const before = list.filter(o => o.id !== w.id && o.obtain <= lv).sort((a, b) => valueOf(b) - valueOf(a));
         // Other dungeon quests left out: the point is how much they beat the usual path.
@@ -229,7 +236,10 @@
           ? '<span class="wp-sub">' + t('wp.dq.drop', { name: drop.name, value: num(valueOf(drop)), source: sourceText(drop.usable[0]) }) + '</span>' : '';
         return '<tr><td>' + (s.ref ? '<a href="' + s.ref + '" target="_blank" rel="noopener">' + s.quest + '</a>' : s.quest) +
             '<span class="wp-sub">' + (s.dungeonZone || s.zone || '') + (s.faction !== 'both' ? ' · ' + t('wp.faction.' + s.faction) : '') + '</span></td>' +
-          '<td class="num">' + (s.requiredLevel && s.requiredLevel < lv ? s.requiredLevel + '–' : '') + lv + '</td>' +
+          '<td class="wp-when"><b>' + t('wp.dq.getAt', { level: lv }) + '</b>' +
+            '<span class="wp-sub">' + t('wp.dq.questLv', { min: s.requiredLevel || '?', level: s.level || '?' }) + '</span>' +
+            (s.dungeonLevels ? '<span class="wp-sub">' + t('wp.dq.dungeonLv', { range: s.dungeonLevels.join('–') }) + '</span>' : '') +
+            '<span class="wp-sub">' + reqText(w) + '</span></td>' +
           '<td><a class="' + qualityClass(w.quality) + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' + w.name + '</a>' +
             (w.era === 'new' ? ' <span class="wp-new">' + t('wp.newInForever') + '</span>' : '') + '<span class="wp-sub">' + w.kind + '</span></td>' +
           '<td class="num">' + metricCell(w) + '</td>' +
@@ -305,7 +315,7 @@
   function weaponTip(w, levelLine) {
     return (levelLine ? '<div class="t-cost">' + levelLine + '</div>' : '') +
       '<div class="t-name ' + qualityClass(w.quality) + '">' + w.name + '</div>' +
-      '<div class="t-cost">' + w.kind + ' · ' + t('common.level') + ' ' + w.req + ' · ' + t('wp.ilvl') + ' ' + w.ilvl + ' · ' +
+      '<div class="t-cost">' + w.kind + ' · ' + reqText(w) + ' · ' + t('wp.ilvl') + ' ' + w.ilvl + ' · ' +
         window.I18N.num(w.dps.toFixed(1)) + ' DPS · ' + window.I18N.num(String(w.speed)) + ' s</div>' +
       (statsText(w) ? '<div class="t-rank">' + statsText(w) + '</div>' : '') +
       w.usable.map(s => '<div class="t-rank">' + sourceText(s) + '</div>').join('');

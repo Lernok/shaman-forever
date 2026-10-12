@@ -62,7 +62,12 @@ function classify(item) {
 const readItems = f => (fs.existsSync(path.join(root, f)) ? JSON.parse(fs.readFileSync(path.join(root, f), 'utf8')).items : {});
 const manual = readItems('data/item-sources.json');
 const fetched = readItems('data/item-sources-fc.json');
-const fcQuests = (fs.existsSync(path.join(root, 'data/item-sources-fc.json')) && JSON.parse(fs.readFileSync(path.join(root, 'data/item-sources-fc.json'), 'utf8')).quests) || {};
+const fc = fs.existsSync(path.join(root, 'data/item-sources-fc.json')) ? JSON.parse(fs.readFileSync(path.join(root, 'data/item-sources-fc.json'), 'utf8')) : {};
+const fcQuests = fc.quests || {};
+// Dungeon level ranges ("Ruins of Lordaeron": [15, 20]), matched without "The ".
+const bare = z => (z || '').replace(/^The /, '').toLowerCase();
+const dungeonRange = {};
+Object.entries(fc.dungeons || {}).forEach(([z, r]) => { dungeonRange[bare(z)] = r; });
 function sourcesOf(item) {
   const auto = classify(item);
   const rec = manual[item.id] || fetched[item.id];
@@ -71,7 +76,7 @@ function sourcesOf(item) {
   auto.forEach(s => {
     const fq = s.type === 'quest' && fcQuests[s.questId];
     if (!fq) return;
-    Object.assign(s, { level: fq.level, requiredLevel: fq.requiredLevel || s.requiredLevel, zone: fq.zone, dungeon: fq.dungeon, ref: fq.ref });
+    Object.assign(s, { level: fq.level, requiredLevel: fq.requiredLevel || s.requiredLevel, zone: fq.zone, dungeon: fq.dungeon, bands: fq.bands, ref: fq.ref });
   });
   // Dungeon quests: worth calling out, their rewards are often the best of their level.
   // Also chains with a step in a dungeon (Hidden Enemies: handed in at Orgrimmar,
@@ -82,9 +87,15 @@ function sourcesOf(item) {
     const zonesOf = [s.zone || ''].concat(s.questId ? Q.chainZones(s.questId) : []);
     const raid = zonesOf.find(z => RAID.test(z));
     if (raid) { s.raid = true; s.dungeon = undefined; if (raid !== s.zone) s.dungeonZone = raid; return; }
-    if (s.dungeon || INSTANCE.test(s.zone || '')) { s.dungeon = true; return; }
-    const inside = zonesOf.slice(1).find(z => INSTANCE.test(z));
-    if (inside) { s.dungeon = true; s.dungeonZone = inside; }
+    if (s.dungeon || INSTANCE.test(s.zone || '')) s.dungeon = true;
+    else {
+      const inside = zonesOf.slice(1).find(z => INSTANCE.test(z));
+      if (inside) { s.dungeon = true; s.dungeonZone = inside; }
+    }
+    if (s.dungeon) {
+      const r = dungeonRange[bare(s.dungeonZone || s.zone)];
+      if (r) { s.dungeonLevels = r; s.dungeonRef = fc.dungeonsRef; }
+    }
   });
   if (!extra.length) return auto;
   return extra.concat(auto.filter(s => s.type !== 'unknown'));
@@ -92,9 +103,17 @@ function sourcesOf(item) {
 
 // The level you can realistically get it: a quest reward is placed at the
 // quest's own level (not the minimum to accept it), e.g. an item that requires
-// level 1 but comes from a level-30 quest.
+// level 1 but comes from a level-30 quest. A dungeon quest is done in a group
+// as soon as the dungeon is doable: the higher of the quest's minimum level and
+// the bottom of the dungeon's range (Forsaken Greataxe: quest 22, from 15,
+// Ruins of Lordaeron 15-20, no level to equip it, so 15). Quest rewards often
+// have no level requirement, so they're equipped right away.
+function questLevel(s) {
+  if (s.dungeon && s.dungeonLevels) return Math.max(s.requiredLevel || 0, s.dungeonLevels[0]);
+  return s.level || s.requiredLevel;
+}
 function obtainLevel(item, sources) {
-  const fromQuest = sources.filter(s => s.type === 'quest' && (s.level || s.requiredLevel)).map(s => s.level || s.requiredLevel);
+  const fromQuest = sources.filter(s => s.type === 'quest' && (s.level || s.requiredLevel)).map(questLevel);
   return Math.max(item.req || 0, fromQuest.length ? Math.min(...fromQuest) : 0);
 }
 
@@ -103,6 +122,7 @@ const weapons = Object.values(items)
   .filter(i => WEAPON_KINDS.includes(i.kind) && i.dps)
   .map(i => {
     const sources = sourcesOf(i);
+    sources.forEach(s => { if (s.type === 'quest' && s.dungeon && s.dungeonLevels) s.early = Math.max(i.req || 0, questLevel(s)); });
     return {
       id: i.id, name: i.name, kind: i.kind, quality: i.quality, req: i.req, obtain: obtainLevel(i, sources), ilvl: i.ilvl, bind: i.bind,
       dps: i.dps, speed: i.speed, dmgMin: i.dmgMin, dmgMax: i.dmgMax,

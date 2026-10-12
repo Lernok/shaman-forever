@@ -1,8 +1,9 @@
 // Quest sources for weapons that are new in Forever, which QuestieDB doesn't
 // list yet (e.g. new dungeon quest rewards like The Wrath of Rath'mael in Ruins
 // of Lordaeron). Read from foreverchanges.pro: the item page links the quest
-// that rewards it, the quest page gives its level, minimum level, zone, faction
-// and whether it is a dungeon quest.
+// that rewards it, the quest page gives its level, minimum level, zone, faction,
+// colour thresholds and whether it is a dungeon quest; /dungeon-quests gives
+// each dungeon's level range.
 //
 // Its terms allow links and short quotes but not republishing the compiled data
 // wholesale, so we keep only these facts for the weapons we show, cite every
@@ -21,9 +22,9 @@ const UA = { 'User-Agent': 'shaman-forever-site (fan reference site; item source
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function page(kind, id) {
-  const file = path.join(cacheDir, kind + '-' + id + '.html');
+  const file = path.join(cacheDir, kind + (id ? '-' + id : '') + '.html');
   if (fs.existsSync(file)) return fs.readFileSync(file, 'utf8');
-  const res = await fetch(BASE + '/' + kind + '/' + id, { headers: UA });
+  const res = await fetch(BASE + '/' + kind + (id ? '/' + id : ''), { headers: UA });
   const html = res.ok ? await res.text() : '';
   fs.mkdirSync(cacheDir, { recursive: true });
   fs.writeFileSync(file, html);
@@ -48,10 +49,27 @@ function parseQuest(id, html) {
     requiredLevel: from ? Number(from[1]) : null,
     zone: t[3],
     dungeon: /level \d+ dungeon quest/.test(d) || undefined,
+    bands: bands(html),
     faction: !f ? 'both' : f[1] === 'the Horde' ? 'horde' : f[1] === 'the Alliance' ? 'alliance' : 'both',
     confidence: 'community-untested',
     ref: BASE + '/quest/' + id
   };
+}
+
+// Quest colour thresholds: the level it turns red (available), orange, yellow,
+// green and grey for you. <span class="qp-band-red" …>15</span>…
+function bands(html) {
+  const out = {};
+  for (const m of html.matchAll(/class="qp-band-(red|orange|yellow|green|grey)"[^>]*>(\d+)</g)) out[m[1]] = Number(m[2]);
+  return Object.keys(out).length ? out : undefined;
+}
+
+// Level range foreverchanges gives each dungeon on /dungeon-quests:
+// <a href="#dg-ruins-of-lordaeron">Ruins of Lordaeron</a>… aria-label="Levels 15 to 20"
+function dungeonLevels(html) {
+  const out = {};
+  for (const m of html.matchAll(/<a href="#dg-[^"]*">([^<]*)<\/a>.{0,400}?aria-label="Levels (\d+) to (\d+)"/g)) out[decode(m[1])] = [Number(m[2]), Number(m[3])];
+  return out;
 }
 
 (async () => {
@@ -81,12 +99,14 @@ function parseQuest(id, html) {
     (Q.sources(w.id) || []).forEach(s => { if (s.type === 'quest') classicQuestIds.add(s.id); }));
   for (const q of classicQuestIds) {
     const s = parseQuest(q, await page('quest', q));
-    if (s) quests[q] = { quest: s.quest, level: s.level, requiredLevel: s.requiredLevel, zone: s.zone, dungeon: s.dungeon, ref: s.ref };
+    if (s) quests[q] = { quest: s.quest, level: s.level, requiredLevel: s.requiredLevel, zone: s.zone, dungeon: s.dungeon, bands: s.bands, ref: s.ref };
   }
+  const dungeons = dungeonLevels(await page('dungeon-quests'));
   fs.writeFileSync(path.join(root, 'data/item-sources-fc.json'), JSON.stringify({
     _readme: 'Fuentes de misión de armas nuevas de Forever (items) y datos de Forever de las misiones de Classic que dan armas (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json, que tiene prioridad.',
-    source: BASE, fetched: new Date().toISOString().slice(0, 10), items: out, quests
+    source: BASE, fetched: new Date().toISOString().slice(0, 10), items: out, quests,
+    dungeons, dungeonsRef: BASE + '/dungeon-quests'
   }, null, 1) + '\n');
   console.log('Armas nuevas: ' + targets.length + ' · con misión encontrada: ' + found +
-    ' · misiones de Classic: ' + Object.keys(quests).length + '/' + classicQuestIds.size + ' (de dungeon: ' + Object.values(quests).filter(q => q.dungeon).length + ')');
+    ' · misiones de Classic: ' + Object.keys(quests).length + '/' + classicQuestIds.size + ' (de dungeon: ' + Object.values(quests).filter(q => q.dungeon).length + ') · dungeons con rango de nivel: ' + Object.keys(dungeons).length);
 })().catch(e => { console.error(e.message); process.exit(1); });

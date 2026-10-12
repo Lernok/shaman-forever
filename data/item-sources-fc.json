@@ -1,7 +1,7 @@
 {
  "_readme": "Fuentes de misión de armas nuevas de Forever (items) y datos de Forever de las misiones de Classic que dan armas (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json, que tiene prioridad.",
  "source": "https://foreverchanges.pro",
- "fetched": "2026-10-11",
+ "fetched": "2026-10-12",
  "items": {
   "246164": {
    "name": "Skullthumper",
@@ -13,6 +13,12 @@
      "level": 11,
      "requiredLevel": 7,
      "zone": "Paladin",
+     "bands": {
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/91285"
@@ -29,6 +35,12 @@
      "level": 11,
      "requiredLevel": 7,
      "zone": "Paladin",
+     "bands": {
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/91285"
@@ -45,6 +57,13 @@
      "level": 7,
      "requiredLevel": 1,
      "zone": "Elwynn Forest",
+     "bands": {
+      "red": 1,
+      "orange": 3,
+      "yellow": 5,
+      "green": 10,
+      "grey": 13
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/91777"
@@ -61,6 +80,13 @@
      "level": 7,
      "requiredLevel": 1,
      "zone": "Elwynn Forest",
+     "bands": {
+      "red": 1,
+      "orange": 3,
+      "yellow": 5,
+      "green": 10,
+      "grey": 13
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/91777"
@@ -77,6 +103,13 @@
      "level": 7,
      "requiredLevel": 1,
      "zone": "Elwynn Forest",
+     "bands": {
+      "red": 1,
+      "orange": 3,
+      "yellow": 5,
+      "green": 10,
+      "grey": 13
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/91777"
@@ -94,6 +127,13 @@
      "requiredLevel": 15,
      "zone": "Undercity",
      "dungeon": true,
+     "bands": {
+      "red": 15,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92401"
@@ -111,6 +151,13 @@
      "requiredLevel": 15,
      "zone": "Ruins of Lordaeron",
      "dungeon": true,
+     "bands": {
+      "red": 15,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92422"
@@ -128,6 +175,13 @@
      "requiredLevel": 15,
      "zone": "Ruins of Lordaeron",
      "dungeon": true,
+     "bands": {
+      "red": 15,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92422"
@@ -144,6 +198,13 @@
      "level": 11,
      "requiredLevel": 6,
      "zone": "Zephras Isle",
+     "bands": {
+      "red": 6,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92880"
@@ -160,6 +221,13 @@
      "level": 11,
      "requiredLevel": 6,
      "zone": "Zephras Isle",
+     "bands": {
+      "red": 6,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92880"
@@ -176,6 +244,13 @@
      "level": 11,
      "requiredLevel": 6,
      "zone": "Zephras Isle",
+     "bands": {
+      "red": 6,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92880"
@@ -192,6 +267,12 @@
      "level": 9,
      "requiredLevel": 5,
      "zone": "Zephras Isle",
+     "bands": {
+      "orange": 5,
+      "yellow": 7,
+      "green": 12,
+      "grey": 15
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92703"
@@ -208,6 +289,12 @@
      "level": 9,
      "requiredLevel": 5,
      "zone": "Zephras Isle",
+     "bands": {
+      "orange": 5,
+      "yellow": 7,
+      "green": 12,
+      "grey": 15
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92703"
@@ -224,6 +311,12 @@
      "level": 9,
      "requiredLevel": 5,
      "zone": "Zephras Isle",
+     "bands": {
+      "orange": 5,
+      "yellow": 7,
+      "green": 12,
+      "grey": 15
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92703"
@@ -240,6 +333,12 @@
      "level": 9,
      "requiredLevel": 5,
      "zone": "Zephras Isle",
+     "bands": {
+      "orange": 5,
+      "yellow": 7,
+      "green": 12,
+      "grey": 15
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92683"
@@ -256,6 +355,12 @@
      "level": 18,
      "requiredLevel": 14,
      "zone": "The Barrens",
+     "bands": {
+      "orange": 14,
+      "yellow": 16,
+      "green": 21,
+      "grey": 25
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/95508"
@@ -273,6 +378,12 @@
      "requiredLevel": 14,
      "zone": "The Deadmines",
      "dungeon": true,
+     "bands": {
+      "orange": 14,
+      "yellow": 15,
+      "green": 20,
+      "grey": 24
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/214"
@@ -290,6 +401,13 @@
      "requiredLevel": 10,
      "zone": "Wailing Caverns",
      "dungeon": true,
+     "bands": {
+      "red": 10,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/914"
@@ -307,6 +425,12 @@
      "requiredLevel": 22,
      "zone": "The Stockade",
      "dungeon": true,
+     "bands": {
+      "orange": 22,
+      "yellow": 23,
+      "green": 28,
+      "grey": 33
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/386"
@@ -323,6 +447,13 @@
      "level": 32,
      "requiredLevel": 24,
      "zone": "Ashenvale",
+     "bands": {
+      "red": 24,
+      "orange": 28,
+      "yellow": 30,
+      "green": 35,
+      "grey": 41
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/1012"
@@ -339,6 +470,13 @@
      "level": 32,
      "requiredLevel": 24,
      "zone": "Ashenvale",
+     "bands": {
+      "red": 24,
+      "orange": 28,
+      "yellow": 30,
+      "green": 35,
+      "grey": 41
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/1012"
@@ -355,6 +493,13 @@
      "level": 40,
      "requiredLevel": 30,
      "zone": "Arathi Highlands",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/679"
@@ -371,6 +516,13 @@
      "level": 40,
      "requiredLevel": 30,
      "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/202"
@@ -387,6 +539,13 @@
      "level": 40,
      "requiredLevel": 30,
      "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/202"
@@ -404,6 +563,13 @@
      "requiredLevel": 24,
      "zone": "Excavation Site: Wetlands",
      "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/95646"
@@ -421,6 +587,13 @@
      "requiredLevel": 24,
      "zone": "Excavation Site: Wetlands",
      "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/95646"
@@ -438,6 +611,13 @@
      "requiredLevel": 24,
      "zone": "Excavation Site: Wetlands",
      "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98823"
@@ -450,6 +630,13 @@
      "requiredLevel": 24,
      "zone": "Excavation Site: Wetlands",
      "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98824"
@@ -467,6 +654,13 @@
      "requiredLevel": 24,
      "zone": "Excavation Site: Wetlands",
      "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98823"
@@ -479,6 +673,13 @@
      "requiredLevel": 24,
      "zone": "Excavation Site: Wetlands",
      "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98824"
@@ -495,6 +696,13 @@
      "level": 41,
      "requiredLevel": 35,
      "zone": "Shen'dralas",
+     "bands": {
+      "red": 35,
+      "orange": 37,
+      "yellow": 39,
+      "green": 44,
+      "grey": 52
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92873"
@@ -511,6 +719,12 @@
      "level": 38,
      "requiredLevel": 35,
      "zone": "Desolace",
+     "bands": {
+      "orange": 35,
+      "yellow": 36,
+      "green": 41,
+      "grey": 48
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93045"
@@ -527,6 +741,13 @@
      "level": 42,
      "requiredLevel": 35,
      "zone": "Desolace",
+     "bands": {
+      "red": 35,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93128"
@@ -543,6 +764,13 @@
      "level": 42,
      "requiredLevel": 35,
      "zone": "Desolace",
+     "bands": {
+      "red": 35,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93128"
@@ -559,6 +787,13 @@
      "level": 42,
      "requiredLevel": 35,
      "zone": "Desolace",
+     "bands": {
+      "red": 35,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93196"
@@ -575,6 +810,13 @@
      "level": 42,
      "requiredLevel": 35,
      "zone": "Desolace",
+     "bands": {
+      "red": 35,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93196"
@@ -591,6 +833,13 @@
      "level": 21,
      "requiredLevel": 15,
      "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97003"
@@ -602,6 +851,13 @@
      "level": 21,
      "requiredLevel": 15,
      "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97005"
@@ -618,6 +874,13 @@
      "level": 21,
      "requiredLevel": 15,
      "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97003"
@@ -629,6 +892,13 @@
      "level": 21,
      "requiredLevel": 15,
      "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97005"
@@ -645,6 +915,12 @@
      "level": 13,
      "requiredLevel": 10,
      "zone": "Tirisfal Glades",
+     "bands": {
+      "orange": 10,
+      "yellow": 11,
+      "green": 16,
+      "grey": 19
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98545"
@@ -661,6 +937,13 @@
      "level": 23,
      "requiredLevel": 18,
      "zone": "The Barrens",
+     "bands": {
+      "red": 18,
+      "orange": 19,
+      "yellow": 21,
+      "green": 26,
+      "grey": 31
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97250"
@@ -677,6 +960,13 @@
      "level": 23,
      "requiredLevel": 18,
      "zone": "The Barrens",
+     "bands": {
+      "red": 18,
+      "orange": 19,
+      "yellow": 21,
+      "green": 26,
+      "grey": 31
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97250"
@@ -693,6 +983,13 @@
      "level": 33,
      "requiredLevel": 28,
      "zone": "Desolace",
+     "bands": {
+      "red": 28,
+      "orange": 29,
+      "yellow": 31,
+      "green": 36,
+      "grey": 42
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97265"
@@ -709,6 +1006,13 @@
      "level": 11,
      "requiredLevel": 4,
      "zone": "Mulgore",
+     "bands": {
+      "red": 4,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/76240"
@@ -725,6 +1029,13 @@
      "level": 11,
      "requiredLevel": 4,
      "zone": "Mulgore",
+     "bands": {
+      "red": 4,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/76240"
@@ -742,6 +1053,13 @@
      "requiredLevel": 24,
      "zone": "City of Dalaran",
      "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 29,
+      "yellow": 31,
+      "green": 36,
+      "grey": 42
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92458"
@@ -759,6 +1077,13 @@
      "requiredLevel": 24,
      "zone": "City of Dalaran",
      "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 29,
+      "yellow": 31,
+      "green": 36,
+      "grey": 42
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/96984"
@@ -776,6 +1101,13 @@
      "requiredLevel": 15,
      "zone": "Ruins of Lordaeron",
      "dungeon": true,
+     "bands": {
+      "red": 15,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92421"
@@ -793,6 +1125,13 @@
      "requiredLevel": 9,
      "zone": "The Hall of Thanes",
      "dungeon": true,
+     "bands": {
+      "red": 9,
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/96393"
@@ -809,6 +1148,13 @@
      "level": 40,
      "requiredLevel": 30,
      "zone": "Shaman",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/96016"
@@ -825,6 +1171,13 @@
      "level": 40,
      "requiredLevel": 30,
      "zone": "Shaman",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/96016"
@@ -841,6 +1194,13 @@
      "level": 40,
      "requiredLevel": 30,
      "zone": "Shaman",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/96016"
@@ -858,6 +1218,13 @@
      "requiredLevel": 24,
      "zone": "Excavation Site: Wetlands",
      "dungeon": true,
+     "bands": {
+      "red": 24,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/95697"
@@ -874,6 +1241,13 @@
      "level": 17,
      "requiredLevel": 10,
      "zone": "Loch Modan",
+     "bands": {
+      "red": 10,
+      "orange": 13,
+      "yellow": 15,
+      "green": 20,
+      "grey": 24
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/86585"
@@ -890,6 +1264,13 @@
      "level": 17,
      "requiredLevel": 10,
      "zone": "Loch Modan",
+     "bands": {
+      "red": 10,
+      "orange": 13,
+      "yellow": 15,
+      "green": 20,
+      "grey": 24
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/86585"
@@ -906,6 +1287,12 @@
      "level": 16,
      "requiredLevel": 12,
      "zone": "Loch Modan",
+     "bands": {
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/86758"
@@ -922,6 +1309,12 @@
      "level": 11,
      "requiredLevel": 7,
      "zone": "Durotar",
+     "bands": {
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97282"
@@ -938,6 +1331,13 @@
      "level": 25,
      "requiredLevel": 20,
      "zone": "Stormwind City",
+     "bands": {
+      "red": 20,
+      "orange": 21,
+      "yellow": 23,
+      "green": 28,
+      "grey": 33
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98191"
@@ -954,6 +1354,13 @@
      "level": 34,
      "requiredLevel": 24,
      "zone": "Wetlands",
+     "bands": {
+      "red": 24,
+      "orange": 30,
+      "yellow": 32,
+      "green": 37,
+      "grey": 43
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98297"
@@ -970,6 +1377,13 @@
      "level": 34,
      "requiredLevel": 24,
      "zone": "Wetlands",
+     "bands": {
+      "red": 24,
+      "orange": 30,
+      "yellow": 32,
+      "green": 37,
+      "grey": 43
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98297"
@@ -986,6 +1400,12 @@
      "level": 13,
      "requiredLevel": 10,
      "zone": "Tirisfal Glades",
+     "bands": {
+      "orange": 10,
+      "yellow": 11,
+      "green": 16,
+      "grey": 19
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98545"
@@ -1002,6 +1422,13 @@
      "level": 12,
      "requiredLevel": 4,
      "zone": "Teldrassil",
+     "bands": {
+      "red": 4,
+      "orange": 8,
+      "yellow": 10,
+      "green": 15,
+      "grey": 18
+     },
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98403"
@@ -1018,6 +1445,11 @@
      "level": 12,
      "requiredLevel": 10,
      "zone": "Durotar",
+     "bands": {
+      "yellow": 10,
+      "green": 15,
+      "grey": 18
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/99052"
@@ -1034,6 +1466,13 @@
      "level": 13,
      "requiredLevel": 6,
      "zone": "Tirisfal Glades",
+     "bands": {
+      "red": 6,
+      "orange": 9,
+      "yellow": 11,
+      "green": 16,
+      "grey": 19
+     },
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/99156"
@@ -1047,6 +1486,13 @@
    "level": 17,
    "requiredLevel": 9,
    "zone": "Westfall",
+   "bands": {
+    "red": 9,
+    "orange": 13,
+    "yellow": 15,
+    "green": 20,
+    "grey": 24
+   },
    "ref": "https://foreverchanges.pro/quest/14"
   },
   "19": {
@@ -1054,6 +1500,13 @@
    "level": 25,
    "requiredLevel": 18,
    "zone": "Redridge Mountains",
+   "bands": {
+    "red": 18,
+    "orange": 21,
+    "yellow": 23,
+    "green": 28,
+    "grey": 33
+   },
    "ref": "https://foreverchanges.pro/quest/19"
   },
   "98": {
@@ -1061,6 +1514,13 @@
    "level": 35,
    "requiredLevel": 22,
    "zone": "Duskwood",
+   "bands": {
+    "red": 22,
+    "orange": 31,
+    "yellow": 33,
+    "green": 38,
+    "grey": 44
+   },
    "ref": "https://foreverchanges.pro/quest/98"
   },
   "99": {
@@ -1068,6 +1528,13 @@
    "level": 15,
    "requiredLevel": null,
    "zone": "Silverpine Forest",
+   "bands": {
+    "red": 9,
+    "orange": 11,
+    "yellow": 13,
+    "green": 18,
+    "grey": 22
+   },
    "ref": "https://foreverchanges.pro/quest/99"
   },
   "166": {
@@ -1076,6 +1543,13 @@
    "requiredLevel": 14,
    "zone": "The Deadmines",
    "dungeon": true,
+   "bands": {
+    "red": 14,
+    "orange": 18,
+    "yellow": 20,
+    "green": 25,
+    "grey": 29
+   },
    "ref": "https://foreverchanges.pro/quest/166"
   },
   "167": {
@@ -1083,6 +1557,13 @@
    "level": 20,
    "requiredLevel": 15,
    "zone": "The Deadmines",
+   "bands": {
+    "red": 15,
+    "orange": 16,
+    "yellow": 18,
+    "green": 23,
+    "grey": 27
+   },
    "ref": "https://foreverchanges.pro/quest/167"
   },
   "176": {
@@ -1090,6 +1571,13 @@
    "level": 11,
    "requiredLevel": 5,
    "zone": "Elwynn Forest",
+   "bands": {
+    "red": 5,
+    "orange": 7,
+    "yellow": 9,
+    "green": 14,
+    "grey": 17
+   },
    "ref": "https://foreverchanges.pro/quest/176"
   },
   "204": {
@@ -1097,6 +1585,12 @@
    "level": 34,
    "requiredLevel": 30,
    "zone": "Stranglethorn Vale",
+   "bands": {
+    "orange": 30,
+    "yellow": 32,
+    "green": 37,
+    "grey": 43
+   },
    "ref": "https://foreverchanges.pro/quest/204"
   },
   "214": {
@@ -1105,6 +1599,12 @@
    "requiredLevel": 14,
    "zone": "The Deadmines",
    "dungeon": true,
+   "bands": {
+    "orange": 14,
+    "yellow": 15,
+    "green": 20,
+    "grey": 24
+   },
    "ref": "https://foreverchanges.pro/quest/214"
   },
   "283": {
@@ -1112,6 +1612,12 @@
    "level": 20,
    "requiredLevel": 16,
    "zone": "Loch Modan",
+   "bands": {
+    "orange": 16,
+    "yellow": 18,
+    "green": 23,
+    "grey": 27
+   },
    "ref": "https://foreverchanges.pro/quest/283"
   },
   "286": {
@@ -1119,6 +1625,13 @@
    "level": 25,
    "requiredLevel": 20,
    "zone": "Wetlands",
+   "bands": {
+    "red": 20,
+    "orange": 21,
+    "yellow": 23,
+    "green": 28,
+    "grey": 33
+   },
    "ref": "https://foreverchanges.pro/quest/286"
   },
   "297": {
@@ -1126,6 +1639,13 @@
    "level": 18,
    "requiredLevel": 13,
    "zone": "Loch Modan",
+   "bands": {
+    "red": 13,
+    "orange": 14,
+    "yellow": 16,
+    "green": 21,
+    "grey": 25
+   },
    "ref": "https://foreverchanges.pro/quest/297"
   },
   "314": {
@@ -1133,6 +1653,13 @@
    "level": 12,
    "requiredLevel": 6,
    "zone": "Dun Morogh",
+   "bands": {
+    "red": 6,
+    "orange": 8,
+    "yellow": 10,
+    "green": 15,
+    "grey": 18
+   },
    "ref": "https://foreverchanges.pro/quest/314"
   },
   "328": {
@@ -1140,6 +1667,13 @@
    "level": 37,
    "requiredLevel": 30,
    "zone": "Stranglethorn Vale",
+   "bands": {
+    "red": 30,
+    "orange": 33,
+    "yellow": 35,
+    "green": 40,
+    "grey": 47
+   },
    "ref": "https://foreverchanges.pro/quest/328"
   },
   "378": {
@@ -1148,6 +1682,13 @@
    "requiredLevel": null,
    "zone": "The Stockade",
    "dungeon": true,
+   "bands": {
+    "red": 22,
+    "orange": 23,
+    "yellow": 25,
+    "green": 30,
+    "grey": 35
+   },
    "ref": "https://foreverchanges.pro/quest/378"
   },
   "386": {
@@ -1156,6 +1697,12 @@
    "requiredLevel": 22,
    "zone": "The Stockade",
    "dungeon": true,
+   "bands": {
+    "orange": 22,
+    "yellow": 23,
+    "green": 28,
+    "grey": 33
+   },
    "ref": "https://foreverchanges.pro/quest/386"
   },
   "408": {
@@ -1163,6 +1710,13 @@
    "level": 13,
    "requiredLevel": 7,
    "zone": "Tirisfal Glades",
+   "bands": {
+    "red": 7,
+    "orange": 9,
+    "yellow": 11,
+    "green": 16,
+    "grey": 19
+   },
    "ref": "https://foreverchanges.pro/quest/408"
   },
   "417": {
@@ -1170,6 +1724,12 @@
    "level": 11,
    "requiredLevel": 8,
    "zone": "Dun Morogh",
+   "bands": {
+    "orange": 8,
+    "yellow": 9,
+    "green": 14,
+    "grey": 17
+   },
    "ref": "https://foreverchanges.pro/quest/417"
   },
   "474": {
@@ -1177,6 +1737,13 @@
    "level": 32,
    "requiredLevel": 23,
    "zone": "Wetlands",
+   "bands": {
+    "red": 23,
+    "orange": 28,
+    "yellow": 30,
+    "green": 35,
+    "grey": 41
+   },
    "ref": "https://foreverchanges.pro/quest/474"
   },
   "480": {
@@ -1184,6 +1751,13 @@
    "level": 22,
    "requiredLevel": 10,
    "zone": "Silverpine Forest",
+   "bands": {
+    "red": 10,
+    "orange": 18,
+    "yellow": 20,
+    "green": 25,
+    "grey": 29
+   },
    "ref": "https://foreverchanges.pro/quest/480"
   },
   "483": {
@@ -1191,6 +1765,13 @@
    "level": 9,
    "requiredLevel": 4,
    "zone": "Teldrassil",
+   "bands": {
+    "red": 4,
+    "orange": 5,
+    "yellow": 7,
+    "green": 12,
+    "grey": 15
+   },
    "ref": "https://foreverchanges.pro/quest/483"
   },
   "486": {
@@ -1198,6 +1779,13 @@
    "level": 12,
    "requiredLevel": 4,
    "zone": "Teldrassil",
+   "bands": {
+    "red": 4,
+    "orange": 8,
+    "yellow": 10,
+    "green": 15,
+    "grey": 18
+   },
    "ref": "https://foreverchanges.pro/quest/486"
   },
   "491": {
@@ -1205,6 +1793,13 @@
    "level": 18,
    "requiredLevel": 12,
    "zone": "Silverpine Forest",
+   "bands": {
+    "red": 12,
+    "orange": 14,
+    "yellow": 16,
+    "green": 21,
+    "grey": 25
+   },
    "ref": "https://foreverchanges.pro/quest/491"
   },
   "562": {
@@ -1212,6 +1807,13 @@
    "level": 32,
    "requiredLevel": 25,
    "zone": "Hillsbrad Foothills",
+   "bands": {
+    "red": 25,
+    "orange": 28,
+    "yellow": 30,
+    "green": 35,
+    "grey": 41
+   },
    "ref": "https://foreverchanges.pro/quest/562"
   },
   "592": {
@@ -1219,6 +1821,13 @@
    "level": 46,
    "requiredLevel": 30,
    "zone": "Stranglethorn Vale",
+   "bands": {
+    "red": 30,
+    "orange": 42,
+    "yellow": 44,
+    "green": 49,
+    "grey": 58
+   },
    "ref": "https://foreverchanges.pro/quest/592"
   },
   "600": {
@@ -1226,6 +1835,13 @@
    "level": 41,
    "requiredLevel": 30,
    "zone": "Stranglethorn Vale",
+   "bands": {
+    "red": 30,
+    "orange": 37,
+    "yellow": 39,
+    "green": 44,
+    "grey": 52
+   },
    "ref": "https://foreverchanges.pro/quest/600"
   },
   "662": {
@@ -1233,6 +1849,13 @@
    "level": 40,
    "requiredLevel": 35,
    "zone": "Arathi Highlands",
+   "bands": {
+    "red": 35,
+    "orange": 36,
+    "yellow": 38,
+    "green": 43,
+    "grey": 51
+   },
    "ref": "https://foreverchanges.pro/quest/662"
   },
   "666": {
@@ -1240,6 +1863,13 @@
    "level": 40,
    "requiredLevel": 35,
    "zone": "Arathi Highlands",
+   "bands": {
+    "red": 35,
+    "orange": 36,
+    "yellow": 38,
+    "green": 43,
+    "grey": 51
+   },
    "ref": "https://foreverchanges.pro/quest/666"
   },
   "679": {
@@ -1247,6 +1877,13 @@
    "level": 40,
    "requiredLevel": 30,
    "zone": "Arathi Highlands",
+   "bands": {
+    "red": 30,
+    "orange": 36,
+    "yellow": 38,
+    "green": 43,
+    "grey": 51
+   },
    "ref": "https://foreverchanges.pro/quest/679"
   },
   "719": {
@@ -1254,6 +1891,11 @@
    "level": 35,
    "requiredLevel": 35,
    "zone": "Badlands",
+   "bands": {
+    "yellow": 35,
+    "green": 38,
+    "grey": 44
+   },
    "ref": "https://foreverchanges.pro/quest/719"
   },
   "739": {
@@ -1261,6 +1903,13 @@
    "level": 42,
    "requiredLevel": 30,
    "zone": "Badlands",
+   "bands": {
+    "red": 30,
+    "orange": 38,
+    "yellow": 40,
+    "green": 45,
+    "grey": 53
+   },
    "ref": "https://foreverchanges.pro/quest/739"
   },
   "765": {
@@ -1268,6 +1917,13 @@
    "level": 12,
    "requiredLevel": 5,
    "zone": "Mulgore",
+   "bands": {
+    "red": 5,
+    "orange": 8,
+    "yellow": 10,
+    "green": 15,
+    "grey": 18
+   },
    "ref": "https://foreverchanges.pro/quest/765"
   },
   "770": {
@@ -1275,6 +1931,13 @@
    "level": 12,
    "requiredLevel": 6,
    "zone": "Mulgore",
+   "bands": {
+    "red": 6,
+    "orange": 8,
+    "yellow": 10,
+    "green": 15,
+    "grey": 18
+   },
    "ref": "https://foreverchanges.pro/quest/770"
   },
   "827": {
@@ -1282,6 +1945,13 @@
    "level": 12,
    "requiredLevel": 4,
    "zone": "Durotar",
+   "bands": {
+    "red": 4,
+    "orange": 8,
+    "yellow": 10,
+    "green": 15,
+    "grey": 18
+   },
    "ref": "https://foreverchanges.pro/quest/827"
   },
   "853": {
@@ -1289,6 +1959,13 @@
    "level": 15,
    "requiredLevel": 10,
    "zone": "The Barrens",
+   "bands": {
+    "red": 10,
+    "orange": 11,
+    "yellow": 13,
+    "green": 18,
+    "grey": 22
+   },
    "ref": "https://foreverchanges.pro/quest/853"
   },
   "855": {
@@ -1296,6 +1973,13 @@
    "level": 14,
    "requiredLevel": 9,
    "zone": "The Barrens",
+   "bands": {
+    "red": 9,
+    "orange": 10,
+    "yellow": 12,
+    "green": 17,
+    "grey": 21
+   },
    "ref": "https://foreverchanges.pro/quest/855"
   },
   "876": {
@@ -1303,6 +1987,13 @@
    "level": 20,
    "requiredLevel": 12,
    "zone": "The Barrens",
+   "bands": {
+    "red": 12,
+    "orange": 16,
+    "yellow": 18,
+    "green": 23,
+    "grey": 27
+   },
    "ref": "https://foreverchanges.pro/quest/876"
   },
   "893": {
@@ -1310,6 +2001,13 @@
    "level": 24,
    "requiredLevel": 17,
    "zone": "The Barrens",
+   "bands": {
+    "red": 17,
+    "orange": 20,
+    "yellow": 22,
+    "green": 27,
+    "grey": 32
+   },
    "ref": "https://foreverchanges.pro/quest/893"
   },
   "902": {
@@ -1317,6 +2015,13 @@
    "level": 16,
    "requiredLevel": 10,
    "zone": "The Barrens",
+   "bands": {
+    "red": 10,
+    "orange": 12,
+    "yellow": 14,
+    "green": 19,
+    "grey": 23
+   },
    "ref": "https://foreverchanges.pro/quest/902"
   },
   "913": {
@@ -1324,6 +2029,13 @@
    "level": 20,
    "requiredLevel": 10,
    "zone": "The Barrens",
+   "bands": {
+    "red": 10,
+    "orange": 16,
+    "yellow": 18,
+    "green": 23,
+    "grey": 27
+   },
    "ref": "https://foreverchanges.pro/quest/913"
   },
   "914": {
@@ -1332,6 +2044,13 @@
    "requiredLevel": 10,
    "zone": "Wailing Caverns",
    "dungeon": true,
+   "bands": {
+    "red": 10,
+    "orange": 18,
+    "yellow": 20,
+    "green": 25,
+    "grey": 29
+   },
    "ref": "https://foreverchanges.pro/quest/914"
   },
   "943": {
@@ -1339,6 +2058,13 @@
    "level": 24,
    "requiredLevel": 15,
    "zone": "Darkshore",
+   "bands": {
+    "red": 15,
+    "orange": 20,
+    "yellow": 22,
+    "green": 27,
+    "grey": 32
+   },
    "ref": "https://foreverchanges.pro/quest/943"
   },
   "951": {
@@ -1346,6 +2072,13 @@
    "level": 20,
    "requiredLevel": 12,
    "zone": "Darkshore",
+   "bands": {
+    "red": 12,
+    "orange": 16,
+    "yellow": 18,
+    "green": 23,
+    "grey": 27
+   },
    "ref": "https://foreverchanges.pro/quest/951"
   },
   "973": {
@@ -1353,6 +2086,13 @@
    "level": 24,
    "requiredLevel": 13,
    "zone": "Darkshore",
+   "bands": {
+    "red": 13,
+    "orange": 20,
+    "yellow": 22,
+    "green": 27,
+    "grey": 32
+   },
    "ref": "https://foreverchanges.pro/quest/973"
   },
   "1046": {
@@ -1360,6 +2100,13 @@
    "level": 30,
    "requiredLevel": 18,
    "zone": "Ashenvale",
+   "bands": {
+    "red": 18,
+    "orange": 26,
+    "yellow": 28,
+    "green": 33,
+    "grey": 38
+   },
    "ref": "https://foreverchanges.pro/quest/1046"
   },
   "1053": {
@@ -1368,6 +2115,13 @@
    "requiredLevel": 34,
    "zone": "Scarlet Monastery",
    "dungeon": true,
+   "bands": {
+    "red": 34,
+    "orange": 36,
+    "yellow": 38,
+    "green": 43,
+    "grey": 51
+   },
    "ref": "https://foreverchanges.pro/quest/1053"
   },
   "1173": {
@@ -1375,6 +2129,13 @@
    "level": 45,
    "requiredLevel": 38,
    "zone": "Dustwallow Marsh",
+   "bands": {
+    "red": 38,
+    "orange": 41,
+    "yellow": 43,
+    "green": 48,
+    "grey": 57
+   },
    "ref": "https://foreverchanges.pro/quest/1173"
   },
   "1184": {
@@ -1382,6 +2143,13 @@
    "level": 35,
    "requiredLevel": 28,
    "zone": "Thousand Needles",
+   "bands": {
+    "red": 28,
+    "orange": 31,
+    "yellow": 33,
+    "green": 38,
+    "grey": 44
+   },
    "ref": "https://foreverchanges.pro/quest/1184"
   },
   "1383": {
@@ -1389,6 +2157,13 @@
    "level": 42,
    "requiredLevel": 37,
    "zone": "Duskwood",
+   "bands": {
+    "red": 37,
+    "orange": 38,
+    "yellow": 40,
+    "green": 45,
+    "grey": 53
+   },
    "ref": "https://foreverchanges.pro/quest/1383"
   },
   "1394": {
@@ -1396,6 +2171,13 @@
    "level": 36,
    "requiredLevel": 25,
    "zone": "Thousand Needles",
+   "bands": {
+    "red": 25,
+    "orange": 32,
+    "yellow": 34,
+    "green": 39,
+    "grey": 46
+   },
    "ref": "https://foreverchanges.pro/quest/1394"
   },
   "1427": {
@@ -1403,6 +2185,13 @@
    "level": 43,
    "requiredLevel": 35,
    "zone": "Swamp of Sorrows",
+   "bands": {
+    "red": 35,
+    "orange": 39,
+    "yellow": 41,
+    "green": 46,
+    "grey": 54
+   },
    "ref": "https://foreverchanges.pro/quest/1427"
   },
   "2240": {
@@ -1411,6 +2200,13 @@
    "requiredLevel": 35,
    "zone": "Uldaman",
    "dungeon": true,
+   "bands": {
+    "red": 35,
+    "orange": 36,
+    "yellow": 38,
+    "green": 43,
+    "grey": 51
+   },
    "ref": "https://foreverchanges.pro/quest/2240"
   },
   "2846": {
@@ -1419,6 +2215,13 @@
    "requiredLevel": 40,
    "zone": "Zul'Farrak",
    "dungeon": true,
+   "bands": {
+    "red": 40,
+    "orange": 42,
+    "yellow": 44,
+    "green": 49,
+    "grey": 58
+   },
    "ref": "https://foreverchanges.pro/quest/2846"
   },
   "2928": {
@@ -1427,6 +2230,13 @@
    "requiredLevel": 20,
    "zone": "Gnomeregan",
    "dungeon": true,
+   "bands": {
+    "red": 20,
+    "orange": 26,
+    "yellow": 28,
+    "green": 33,
+    "grey": 38
+   },
    "ref": "https://foreverchanges.pro/quest/2928"
   },
   "2930": {
@@ -1435,6 +2245,13 @@
    "requiredLevel": 25,
    "zone": "Gnomeregan",
    "dungeon": true,
+   "bands": {
+    "red": 25,
+    "orange": 26,
+    "yellow": 28,
+    "green": 33,
+    "grey": 38
+   },
    "ref": "https://foreverchanges.pro/quest/2930"
   },
   "2994": {
@@ -1442,6 +2259,13 @@
    "level": 51,
    "requiredLevel": 40,
    "zone": "The Hinterlands",
+   "bands": {
+    "red": 40,
+    "orange": 47,
+    "yellow": 49,
+    "green": 54,
+    "grey": 60
+   },
    "ref": "https://foreverchanges.pro/quest/2994"
   },
   "3129": {
@@ -1449,6 +2273,13 @@
    "level": 50,
    "requiredLevel": 40,
    "zone": "Feralas",
+   "bands": {
+    "red": 40,
+    "orange": 46,
+    "yellow": 48,
+    "green": 53,
+    "grey": 60
+   },
    "ref": "https://foreverchanges.pro/quest/3129"
   },
   "3161": {
@@ -1456,6 +2287,13 @@
    "level": 48,
    "requiredLevel": 43,
    "zone": "Tanaris",
+   "bands": {
+    "red": 43,
+    "orange": 44,
+    "yellow": 46,
+    "green": 51,
+    "grey": 60
+   },
    "ref": "https://foreverchanges.pro/quest/3161"
   },
   "3463": {
@@ -1463,6 +2301,12 @@
    "level": 52,
    "requiredLevel": 40,
    "zone": "Searing Gorge",
+   "bands": {
+    "red": 40,
+    "orange": 48,
+    "yellow": 50,
+    "green": 55
+   },
    "ref": "https://foreverchanges.pro/quest/3463"
   },
   "3507": {
@@ -1470,6 +2314,12 @@
    "level": 56,
    "requiredLevel": 44,
    "zone": "Orgrimmar",
+   "bands": {
+    "red": 44,
+    "orange": 52,
+    "yellow": 54,
+    "green": 59
+   },
    "ref": "https://foreverchanges.pro/quest/3507"
   },
   "3528": {
@@ -1478,6 +2328,12 @@
    "requiredLevel": 40,
    "zone": "Sunken Temple",
    "dungeon": true,
+   "bands": {
+    "red": 40,
+    "orange": 49,
+    "yellow": 51,
+    "green": 56
+   },
    "ref": "https://foreverchanges.pro/quest/3528"
   },
   "3625": {
@@ -1485,6 +2341,11 @@
    "level": 58,
    "requiredLevel": 45,
    "zone": "Stranglethorn Vale",
+   "bands": {
+    "red": 45,
+    "orange": 54,
+    "yellow": 56
+   },
    "ref": "https://foreverchanges.pro/quest/3625"
   },
   "4126": {
@@ -1493,6 +2354,12 @@
    "requiredLevel": 50,
    "zone": "Blackrock Depths",
    "dungeon": true,
+   "bands": {
+    "red": 50,
+    "orange": 51,
+    "yellow": 53,
+    "green": 58
+   },
    "ref": "https://foreverchanges.pro/quest/4126"
   },
   "4134": {
@@ -1501,6 +2368,12 @@
    "requiredLevel": 50,
    "zone": "Blackrock Depths",
    "dungeon": true,
+   "bands": {
+    "red": 50,
+    "orange": 51,
+    "yellow": 53,
+    "green": 58
+   },
    "ref": "https://foreverchanges.pro/quest/4134"
   },
   "4266": {
@@ -1508,6 +2381,13 @@
    "level": 46,
    "requiredLevel": 40,
    "zone": "Feralas",
+   "bands": {
+    "red": 40,
+    "orange": 42,
+    "yellow": 44,
+    "green": 49,
+    "grey": 58
+   },
    "ref": "https://foreverchanges.pro/quest/4266"
   },
   "4300": {
@@ -1515,6 +2395,11 @@
    "level": 52,
    "requiredLevel": 48,
    "zone": "Orgrimmar",
+   "bands": {
+    "orange": 48,
+    "yellow": 50,
+    "green": 55
+   },
    "ref": "https://foreverchanges.pro/quest/4300"
   },
   "4301": {
@@ -1522,6 +2407,12 @@
    "level": 55,
    "requiredLevel": 50,
    "zone": "Un'Goro Crater",
+   "bands": {
+    "red": 50,
+    "orange": 51,
+    "yellow": 53,
+    "green": 58
+   },
    "ref": "https://foreverchanges.pro/quest/4301"
   },
   "4322": {
@@ -1530,6 +2421,11 @@
    "requiredLevel": 50,
    "zone": "Blackrock Depths",
    "dungeon": true,
+   "bands": {
+    "red": 50,
+    "orange": 54,
+    "yellow": 56
+   },
    "ref": "https://foreverchanges.pro/quest/4322"
   },
   "4771": {
@@ -1538,6 +2434,10 @@
    "requiredLevel": 57,
    "zone": "Scholomance",
    "dungeon": true,
+   "bands": {
+    "orange": 57,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/4771"
   },
   "4810": {
@@ -1545,6 +2445,11 @@
    "level": 54,
    "requiredLevel": 50,
    "zone": "Winterspring",
+   "bands": {
+    "orange": 50,
+    "yellow": 52,
+    "green": 57
+   },
    "ref": "https://foreverchanges.pro/quest/4810"
   },
   "4813": {
@@ -1552,6 +2457,11 @@
    "level": 14,
    "requiredLevel": 12,
    "zone": "Darkshore",
+   "bands": {
+    "yellow": 12,
+    "green": 17,
+    "grey": 21
+   },
    "ref": "https://foreverchanges.pro/quest/4813"
   },
   "5056": {
@@ -1559,6 +2469,11 @@
    "level": 60,
    "requiredLevel": 53,
    "zone": "Winterspring",
+   "bands": {
+    "red": 53,
+    "orange": 56,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/5056"
   },
   "5088": {
@@ -1566,6 +2481,12 @@
    "level": 28,
    "requiredLevel": 24,
    "zone": "Thousand Needles",
+   "bands": {
+    "orange": 24,
+    "yellow": 26,
+    "green": 31,
+    "grey": 36
+   },
    "ref": "https://foreverchanges.pro/quest/5088"
   },
   "5265": {
@@ -1573,6 +2494,11 @@
    "level": 60,
    "requiredLevel": 55,
    "zone": "Eastern Plaguelands",
+   "bands": {
+    "red": 55,
+    "orange": 56,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/5265"
   },
   "5385": {
@@ -1580,6 +2506,12 @@
    "level": 57,
    "requiredLevel": 49,
    "zone": "Felwood",
+   "bands": {
+    "red": 49,
+    "orange": 53,
+    "yellow": 55,
+    "green": 60
+   },
    "ref": "https://foreverchanges.pro/quest/5385"
   },
   "5466": {
@@ -1588,6 +2520,10 @@
    "requiredLevel": null,
    "zone": "Scholomance",
    "dungeon": true,
+   "bands": {
+    "orange": 57,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/5466"
   },
   "5730": {
@@ -1595,6 +2531,13 @@
    "level": 16,
    "requiredLevel": 9,
    "zone": "Orgrimmar",
+   "bands": {
+    "red": 9,
+    "orange": 12,
+    "yellow": 14,
+    "green": 19,
+    "grey": 23
+   },
    "ref": "https://foreverchanges.pro/quest/5730"
   },
   "5944": {
@@ -1602,6 +2545,11 @@
    "level": 60,
    "requiredLevel": 52,
    "zone": "Western Plaguelands",
+   "bands": {
+    "red": 52,
+    "orange": 56,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/5944"
   },
   "6136": {
@@ -1609,6 +2557,10 @@
    "level": 60,
    "requiredLevel": 56,
    "zone": "Eastern Plaguelands",
+   "bands": {
+    "orange": 56,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/6136"
   },
   "6284": {
@@ -1616,6 +2568,13 @@
    "level": 21,
    "requiredLevel": 15,
    "zone": "Stonetalon Mountains",
+   "bands": {
+    "red": 15,
+    "orange": 17,
+    "yellow": 19,
+    "green": 24,
+    "grey": 28
+   },
    "ref": "https://foreverchanges.pro/quest/6284"
   },
   "6521": {
@@ -1624,6 +2583,13 @@
    "requiredLevel": 28,
    "zone": "Razorfen Downs",
    "dungeon": true,
+   "bands": {
+    "red": 28,
+    "orange": 32,
+    "yellow": 34,
+    "green": 39,
+    "grey": 46
+   },
    "ref": "https://foreverchanges.pro/quest/6521"
   },
   "6544": {
@@ -1631,6 +2597,12 @@
    "level": 24,
    "requiredLevel": 20,
    "zone": "Ashenvale",
+   "bands": {
+    "orange": 20,
+    "yellow": 22,
+    "green": 27,
+    "grey": 32
+   },
    "ref": "https://foreverchanges.pro/quest/6544"
   },
   "7064": {
@@ -1639,6 +2611,13 @@
    "requiredLevel": 45,
    "zone": "Maraudon",
    "dungeon": true,
+   "bands": {
+    "red": 45,
+    "orange": 47,
+    "yellow": 49,
+    "green": 54,
+    "grey": 60
+   },
    "ref": "https://foreverchanges.pro/quest/7064"
   },
   "7065": {
@@ -1647,6 +2626,13 @@
    "requiredLevel": 45,
    "zone": "Maraudon",
    "dungeon": true,
+   "bands": {
+    "red": 45,
+    "orange": 47,
+    "yellow": 49,
+    "green": 54,
+    "grey": 60
+   },
    "ref": "https://foreverchanges.pro/quest/7065"
   },
   "7462": {
@@ -1655,6 +2641,10 @@
    "requiredLevel": 56,
    "zone": "Dire Maul",
    "dungeon": true,
+   "bands": {
+    "orange": 56,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/7462"
   },
   "7488": {
@@ -1663,6 +2653,11 @@
    "requiredLevel": 54,
    "zone": "Dire Maul",
    "dungeon": true,
+   "bands": {
+    "orange": 54,
+    "yellow": 55,
+    "green": 60
+   },
    "ref": "https://foreverchanges.pro/quest/7488"
   },
   "7489": {
@@ -1671,6 +2666,11 @@
    "requiredLevel": 54,
    "zone": "Dire Maul",
    "dungeon": true,
+   "bands": {
+    "orange": 54,
+    "yellow": 55,
+    "green": 60
+   },
    "ref": "https://foreverchanges.pro/quest/7489"
   },
   "7877": {
@@ -1679,6 +2679,10 @@
    "requiredLevel": 56,
    "zone": "Dire Maul",
    "dungeon": true,
+   "bands": {
+    "orange": 56,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/7877"
   },
   "8253": {
@@ -1687,6 +2691,10 @@
    "requiredLevel": 50,
    "zone": "Mage",
    "dungeon": true,
+   "bands": {
+    "yellow": 50,
+    "green": 55
+   },
    "ref": "https://foreverchanges.pro/quest/8253"
   },
   "8271": {
@@ -1694,6 +2702,11 @@
    "level": 60,
    "requiredLevel": 51,
    "zone": "Alterac Valley",
+   "bands": {
+    "red": 51,
+    "orange": 56,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/8271"
   },
   "8272": {
@@ -1701,6 +2714,11 @@
    "level": 60,
    "requiredLevel": 51,
    "zone": "Alterac Valley",
+   "bands": {
+    "red": 51,
+    "orange": 56,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/8272"
   },
   "8283": {
@@ -1708,6 +2726,11 @@
    "level": 59,
    "requiredLevel": 54,
    "zone": "Silithus",
+   "bands": {
+    "red": 54,
+    "orange": 55,
+    "yellow": 57
+   },
    "ref": "https://foreverchanges.pro/quest/8283"
   },
   "8306": {
@@ -1715,6 +2738,9 @@
    "level": 60,
    "requiredLevel": null,
    "zone": "Silithus",
+   "bands": {
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/8306"
   },
   "8308": {
@@ -1722,6 +2748,9 @@
    "level": 60,
    "requiredLevel": 58,
    "zone": "Silithus",
+   "bands": {
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/8308"
   },
   "8413": {
@@ -1730,6 +2759,10 @@
    "requiredLevel": 50,
    "zone": "Shaman",
    "dungeon": true,
+   "bands": {
+    "yellow": 50,
+    "green": 55
+   },
    "ref": "https://foreverchanges.pro/quest/8413"
   },
   "8422": {
@@ -1738,6 +2771,10 @@
    "requiredLevel": 50,
    "zone": "Warlock",
    "dungeon": true,
+   "bands": {
+    "yellow": 50,
+    "green": 55
+   },
    "ref": "https://foreverchanges.pro/quest/8422"
   },
   "8573": {
@@ -1745,6 +2782,9 @@
    "level": 60,
    "requiredLevel": null,
    "zone": "Silithus",
+   "bands": {
+    "yellow": 60
+   },
    "ref": "https://foreverchanges.pro/quest/8573"
   },
   "8706": {
@@ -1752,6 +2792,9 @@
    "level": 60,
    "requiredLevel": 60,
    "zone": "Ahn'Qiraj",
+   "bands": {
+    "yellow": 60
+   },
    "ref": "https://foreverchanges.pro/quest/8706"
   },
   "8745": {
@@ -1759,6 +2802,9 @@
    "level": 60,
    "requiredLevel": 60,
    "zone": "Silithus",
+   "bands": {
+    "yellow": 60
+   },
    "ref": "https://foreverchanges.pro/quest/8745"
   },
   "8789": {
@@ -1766,6 +2812,9 @@
    "level": 60,
    "requiredLevel": 60,
    "zone": "Ahn'Qiraj",
+   "bands": {
+    "yellow": 60
+   },
    "ref": "https://foreverchanges.pro/quest/8789"
   },
   "8790": {
@@ -1773,6 +2822,9 @@
    "level": 60,
    "requiredLevel": 60,
    "zone": "Ahn'Qiraj",
+   "bands": {
+    "yellow": 60
+   },
    "ref": "https://foreverchanges.pro/quest/8790"
   },
   "9023": {
@@ -1780,6 +2832,9 @@
    "level": 60,
    "requiredLevel": 60,
    "zone": "Silithus",
+   "bands": {
+    "yellow": 60
+   },
    "ref": "https://foreverchanges.pro/quest/9023"
   },
   "9053": {
@@ -1788,6 +2843,10 @@
    "requiredLevel": 50,
    "zone": "Druid",
    "dungeon": true,
+   "bands": {
+    "yellow": 50,
+    "green": 55
+   },
    "ref": "https://foreverchanges.pro/quest/9053"
   },
   "9221": {
@@ -1795,6 +2854,11 @@
    "level": 60,
    "requiredLevel": 55,
    "zone": "Eastern Plaguelands",
+   "bands": {
+    "red": 55,
+    "orange": 56,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/9221"
   },
   "9223": {
@@ -1802,6 +2866,11 @@
    "level": 60,
    "requiredLevel": 55,
    "zone": "Eastern Plaguelands",
+   "bands": {
+    "red": 55,
+    "orange": 56,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/9223"
   },
   "9226": {
@@ -1809,6 +2878,11 @@
    "level": 60,
    "requiredLevel": 55,
    "zone": "Eastern Plaguelands",
+   "bands": {
+    "red": 55,
+    "orange": 56,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/9226"
   },
   "9227": {
@@ -1816,7 +2890,63 @@
    "level": 60,
    "requiredLevel": 55,
    "zone": "Eastern Plaguelands",
+   "bands": {
+    "red": 55,
+    "orange": 56,
+    "yellow": 58
+   },
    "ref": "https://foreverchanges.pro/quest/9227"
   }
- }
+ },
+ "dungeons": {
+  "Ragefire Chasm": [
+   13,
+   18
+  ],
+  "Hall of Thanes": [
+   13,
+   18
+  ],
+  "Ruins of Lordaeron": [
+   15,
+   20
+  ],
+  "Wailing Caverns": [
+   17,
+   24
+  ],
+  "The Deadmines": [
+   17,
+   26
+  ],
+  "Shadowfang Keep": [
+   22,
+   30
+  ],
+  "Blackfathom Deeps": [
+   24,
+   32
+  ],
+  "The Stockade": [
+   24,
+   32
+  ],
+  "Excavation Site: Wetlands": [
+   26,
+   31
+  ],
+  "City of Dalaran": [
+   28,
+   33
+  ],
+  "Gnomeregan": [
+   29,
+   38
+  ],
+  "Razorfen Kraul": [
+   29,
+   38
+  ]
+ },
+ "dungeonsRef": "https://foreverchanges.pro/dungeon-quests"
 }
