@@ -14,7 +14,10 @@
     'community-untested': { label: 'Comunidad, sin confirmar', cls: 'conf-untested' }
   };
 
-  const ICON_BASE = 'https://wow.zamimg.com/images/wow/icons/medium/';
+  // 'large' is 56x56: shown at 48px it's downscaled (sharp) instead of the
+  // 36x36 'medium' being blown up (blurry). Tree art is Classic's, same CDN.
+  const ICON_BASE = 'https://wow.zamimg.com/images/wow/icons/large/';
+  const TREE_BG_BASE = 'https://wow.zamimg.com/images/wow/talents/backgrounds/classic/';
 
   const app = document.getElementById('app');
   const tabs = Array.from(document.querySelectorAll('.spec-tab'));
@@ -26,6 +29,10 @@
 
   function iconUrl(icon) {
     return ICON_BASE + (icon || 'inv_misc_questionmark') + '.jpg';
+  }
+
+  function treeBg(tree) {
+    return 'linear-gradient(rgba(12,13,16,.55), rgba(12,13,16,.82)), url(' + TREE_BG_BASE + tree.bg + '.jpg)';
   }
 
   function findTree(spec) {
@@ -46,7 +53,7 @@
 
     let html = '<div class="tree-wrap"><div class="tree-title">' + tree.name + ' tree</div>' +
       '<div class="tree-hint">Click en un talento para ver rangos y cambios vs. Classic Era.</div>';
-    html += '<div class="talent-tree">';
+    html += '<div class="talent-tree" style="background-image:' + treeBg(tree) + '">';
     for (let r = 1; r <= rows; r++) {
       for (let c = 1; c <= cols; c++) {
         const t = cellMap[r + '_' + c];
@@ -251,7 +258,7 @@
     document.documentElement.style.setProperty('--spec-color', color);
 
     if (spec === 'Calculadora') {
-      window.Calculator.render(app, hashParts().slice(1), { badge, iconUrl, specColors: SPEC_COLORS });
+      window.Calculator.render(app, hashParts().slice(1), { badge, iconUrl, treeBg, specColors: SPEC_COLORS });
       app.style.setProperty('--spec-color', color);
       return;
     }

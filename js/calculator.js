@@ -4,8 +4,9 @@
 // so it can be shared or bookmarked.
 (function () {
   const R = window.TalentRules;
-  const CELL = 56;
-  const GAP = 10;
+  const CELL = 48;
+  const GAP = 14;
+  const GRID_W = 4 * CELL + 3 * GAP;
   const DEFAULT_LEVEL = 30; // beta level cap as of 2026-10
   const ORIGIN_LABEL = {
     guia: 'Basado en la guía',
@@ -109,9 +110,29 @@
   function renderTree(tree) {
     const rows = Math.max(...tree.talents.map(t => t.row));
     const pts = R.treePoints(state.ranks, tree);
-    let html = '<div class="calc-tree" style="--spec-color:' + ui.specColors[tree.name] + '">' +
-      '<div class="calc-tree-head"><span>' + tree.name + '</span><b>' + pts + '</b></div>' +
-      '<div class="calc-grid" style="height:' + (rows * CELL + (rows - 1) * GAP) + 'px">';
+    // First row whose gate isn't met yet, judged by points in the rows above it.
+    let nextGate = null;
+    for (let r = 2; r <= rows; r++) {
+      if (R.treePoints(state.ranks, { name: tree.name, talents: tree.talents.filter(t => t.row < r) }) < R.rowGate(r)) {
+        nextGate = R.rowGate(r);
+        break;
+      }
+    }
+    let html = '<div class="calc-tree" style="--spec-color:' + ui.specColors[tree.name] + ';background-image:' + ui.treeBg(tree) + '">' +
+      '<div class="calc-tree-head">' +
+        '<img class="tree-icon" src="' + ui.iconUrl(tree.icon) + '" alt="">' +
+        '<div class="th-text"><span>' + tree.name + '</span>' +
+          '<small>' + (nextGate ? 'próxima fila a los ' + nextGate : 'todas las filas abiertas') + '</small></div>' +
+        '<b>' + pts + '</b></div>' +
+      '<div class="calc-grid" style="width:' + GRID_W + 'px;height:' + (rows * CELL + (rows - 1) * GAP) + 'px">';
+
+    // Row gate markers: a dashed line above each row with the points it needs.
+    for (let r = 2; r <= rows; r++) {
+      const above = R.treePoints(state.ranks, { name: tree.name, talents: tree.talents.filter(t => t.row < r) });
+      const top = (r - 1) * (CELL + GAP) - GAP / 2;
+      html += '<div class="row-gate' + (above >= R.rowGate(r) ? ' met' : '') + '" style="top:' + top + 'px">' +
+        '<span>' + R.rowGate(r) + '</span></div>';
+    }
 
     // Prerequisite arrows sit behind the icons; every req in the data is in the same column.
     tree.talents.filter(t => t.req).forEach(t => {
