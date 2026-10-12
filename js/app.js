@@ -8,7 +8,8 @@
     Spellbook: '#9b7fd1'
   };
 
-  const t = (key, vars) => window.I18N.t(key, vars);
+  const I18N = window.I18N;
+  const t = (key, vars) => I18N.t(key, vars);
 
   const CONFIDENCE = {
     'tested': 'conf-tested',
@@ -98,12 +99,13 @@
 
     let html = '<div class="t-name">' + tal.name + (tal.max > 1 ? ' (' + t('tree.ranks', { n: tal.max }) + ')' : '') + '</div>';
     tal.desc.forEach((d, i) => {
-      html += '<div class="t-rank"><b>' + t('tree.rank', { n: i + 1 }) + ':</b> ' + d + '</div>';
+      html += '<div class="t-rank"><b>' + t('tree.rank', { n: i + 1 }) + ':</b> ' + I18N.client(d) + '</div>';
     });
     if (tal.classic && tal.classic.status) {
-      html += '<div class="t-classic">Classic Era: <b>' + tal.classic.status + '</b>' +
-              (tal.classic.text ? ' — "' + tal.classic.text + '"' : '') + '</div>';
+      html += '<div class="t-classic">' + t('classic.label') + ': <b>' + t('classic.' + tal.classic.status) + '</b>' +
+              (tal.classic.text ? ' — "' + I18N.client(tal.classic.text) + '"' : '') + '</div>';
     }
+    html += I18N.original(tal.desc.concat(tal.classic && tal.classic.text ? ['Classic: ' + tal.classic.text] : []));
 
     const tip = document.createElement('div');
     tip.className = 'tooltip talent-tip';
@@ -149,7 +151,7 @@
   function renderStatChips(list) {
     if (!list) return '';
     return '<div class="stat-row">' + list.map((s, i) =>
-      '<span class="stat-chip"><span class="n">' + (i + 1) + '</span>' + s + '</span>'
+      '<span class="stat-chip"><span class="n">' + (i + 1) + '</span>' + I18N.term(s) + '</span>'
     ).join('') + '</div>';
   }
 
@@ -271,7 +273,7 @@
       const left = Math.max(0, Math.min(100, 100 + c.pct));
       html += '<div class="dmg-row"><div class="dmg-name">' + name + ' <span class="dim">' + rank.replace('Rank ', 'R') + '</span></div>' +
         '<div class="dmg-bar"><span style="width:' + left + '%"></span></div>' +
-        '<div class="dmg-nums"><span class="dim">' + c.then + '</span> → ' + c.now + ' ' + pctLabel(c.pct) + '</div></div>';
+        '<div class="dmg-nums"><span class="dim">' + I18N.range(c.then) + '</span> → ' + I18N.range(c.now) + ' ' + pctLabel(c.pct) + '</div></div>';
     });
     return html + '</div>' + renderNotes(dm.notes) + '</div>';
   }
@@ -287,8 +289,8 @@
           '<div class="rc-head"><img src="' + iconUrl(race.icon) + '" alt=""><b>' + race.race + '</b>' +
           '<span class="rc-faction">' + faction + (isNew ? ' · ' + t('ov.newToShaman') : '') + '</span></div><ul>' +
           race.abilities.map(([name, text, icon]) =>
-            '<li><img src="' + iconUrl(icon) + '" alt=""><div><b>' + name + '</b><span>' + text + '</span></div></li>').join('') +
-          '</ul></div>';
+            '<li><img src="' + iconUrl(icon) + '" alt=""><div><b>' + name + '</b><span>' + I18N.client(text) + '</span></div></li>').join('') +
+          '</ul>' + I18N.original(race.abilities.map(([name, text]) => '<b>' + name + ':</b> ' + text)) + '</div>';
       });
     });
     return html + '</div></div>';
@@ -408,9 +410,18 @@
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.talent') && !e.target.closest('.talent-tip')) closeTooltip();
   });
-  // A fixed tooltip would drift away from its talent on scroll/resize: close it.
-  window.addEventListener('scroll', closeTooltip, { passive: true });
-  window.addEventListener('resize', closeTooltip);
+  // The tooltip is fixed-position: follow its talent on scroll/resize, and
+  // close it once the talent leaves the screen.
+  function followTooltip() {
+    const tip = document.querySelector('.talent-tip');
+    const anchor = document.querySelector('.talent.open');
+    if (!tip || !anchor) return;
+    const r = anchor.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > window.innerHeight) { closeTooltip(); return; }
+    placeBeside(tip, anchor);
+  }
+  window.addEventListener('scroll', followTooltip, { passive: true });
+  window.addEventListener('resize', followTooltip);
 
   // Language switch: re-render the current tab in place (hash and scroll stay).
   document.getElementById('langToggle').addEventListener('click', () => window.I18N.toggle());

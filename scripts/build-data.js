@@ -56,6 +56,47 @@ if (langErrors.length) {
 }
 write('data/guides.js', 'GUIDE_DATA', guides);
 
+// ---------- client text templates (GLOSARIO.md, section 4) ----------
+// Every text that comes from the game client must have a Spanish template; a
+// template must use each number of the English text exactly once ({0}, {1}…)
+// and must not contain digits of its own, so no number can be lost or invented.
+const NUM = /\d+(?:[.,]\d+)*/g;
+const clientTemplates = read('data/i18n/client-es.json').templates;
+const clientErrors = [];
+const clientTexts = new Map();
+const addClient = (text, where) => { if (text && !clientTexts.has(text)) clientTexts.set(text, where); };
+shaman.talents.trees.forEach(tree => tree.talents.forEach(t => {
+  t.desc.forEach(d => addClient(d, 'talent ' + t.name));
+  if (t.classic && t.classic.text) addClient(t.classic.text, 'talent ' + t.name + ' (Classic)');
+  if (t.cost) t.cost.split(' | ').forEach(c => addClient(c, 'talent ' + t.name + ' (costo)'));
+}));
+Object.entries(shaman.spell_desc).forEach(([key, v]) => {
+  addClient(v.d, key);
+  addClient(v.cd, key + ' (Classic)');
+  [...(v.l || []), ...(v.cl || [])].flat().forEach(c => addClient(c, key + ' (costo)'));
+});
+Object.values(shaman.racials).flat().filter(r => r.classes.includes('Shaman'))
+  .forEach(r => r.abilities.forEach(a => addClient(a[1], 'racial ' + a[0])));
+const usedTemplates = new Set();
+clientTexts.forEach((where, text) => {
+  const skeleton = text.replace(NUM, '#');
+  const tpl = clientTemplates[skeleton];
+  if (tpl == null) { clientErrors.push(where + ': falta plantilla para "' + skeleton + '"'); return; }
+  usedTemplates.add(skeleton);
+  const n = (text.match(NUM) || []).length;
+  const idx = (tpl.match(/\{(\d+)\}/g) || []).map(m => Number(m.slice(1, -1)));
+  const ok = idx.length === n && new Set(idx).size === n && idx.every(i => i < n);
+  if (!ok) clientErrors.push(where + ': la plantilla usa {' + idx.join(',') + '} pero el texto tiene ' + n + ' números');
+  if (/\d/.test(tpl.replace(/\{\d+\}/g, ''))) clientErrors.push(where + ': la plantilla tiene dígitos propios');
+});
+Object.keys(clientTemplates).filter(k => !usedTemplates.has(k))
+  .forEach(k => clientErrors.push('plantilla sin uso (¿cambió el texto del cliente?): "' + k + '"'));
+if (clientErrors.length) {
+  console.error(clientErrors.join('\n') + '\n\nTextos del cliente sin plantilla válida: no se generó nada.');
+  process.exit(1);
+}
+write('data/client-es.js', 'CLIENT_ES', clientTemplates);
+
 const trees = shaman.talents.trees;
 const { builds } = read('data/builds.json');
 let failed = false;

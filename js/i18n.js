@@ -103,7 +103,20 @@
       'sb.levels': 'Nivel {list}',
       'sb.fromTalent': 'viene con su talento',
       'sb.gone': 'Ya no están en el cliente: {list}.',
-      'sb.source': 'spellbook y spell_desc'
+      'sb.source': 'spellbook y spell_desc',
+      'sb.coef': 'Poder con hechizos',
+      'sb.direct': 'directo',
+      'sb.perTick': 'por tick',
+      'sb.heal': 'curación',
+      'sb.rank': 'Rango {n}',
+
+      'classic.label': 'Classic Era',
+      'classic.new': 'nuevo',
+      'classic.changed': 'cambiado',
+      'classic.moved': 'movido',
+      'classic.same': 'igual',
+      'orig.show': 'ver original',
+      'orig.title': 'Texto del cliente en inglés'
     },
     en: {
       'site.tagline': 'Talents, rotation and gearing for Enhancement, Elemental and Restoration — WoW: Forever (beta)',
@@ -202,7 +215,20 @@
       'sb.levels': 'Level {list}',
       'sb.fromTalent': 'comes with its talent',
       'sb.gone': 'No longer in the client: {list}.',
-      'sb.source': 'spellbook and spell_desc'
+      'sb.source': 'spellbook and spell_desc',
+      'sb.coef': 'Spell power',
+      'sb.direct': 'direct',
+      'sb.perTick': 'per tick',
+      'sb.heal': 'heal',
+      'sb.rank': 'Rank {n}',
+
+      'classic.label': 'Classic Era',
+      'classic.new': 'new',
+      'classic.changed': 'changed',
+      'classic.moved': 'moved',
+      'classic.same': 'same',
+      'orig.show': 'show original',
+      'orig.title': 'Client text in English'
     }
   };
 
@@ -272,9 +298,61 @@
     if (btn) { btn.textContent = t('lang.switch'); btn.title = t('lang.switchTitle'); }
   }
 
+  // ---------- game client text (GLOSARIO.md, section 4) ----------
+  const NUM = /\d+(?:[.,]\d+)*/g;
+
+  // 2.5 -> 2,5 and 1,508 -> 1.508 in Spanish; English keeps the client's format.
+  function num(s) {
+    return lang === 'es' ? String(s).replace(/[.,]/g, c => (c === '.' ? ',' : '.')) : String(s);
+  }
+
+  // Tooltip text from the client, through its Spanish template when in Spanish.
+  // Templates are keyed by the English text with every number replaced by #.
+  function client(text) {
+    if (!text || lang !== 'es' || !window.CLIENT_ES) return text;
+    const tpl = window.CLIENT_ES[text.replace(NUM, '#')];
+    if (tpl == null) return text;
+    const nums = text.match(NUM) || [];
+    return tpl.replace(/\{(\d+)\}/g, (m, i) => num(nums[Number(i)]));
+  }
+
+  // "428 to 476" style ranges.
+  function range(s) {
+    return lang === 'es' && s ? num(s).replace(' to ', ' a ') : s;
+  }
+
+  // Stat names in the priority lists are mechanics vocabulary, not proper nouns.
+  const TERMS_ES = {
+    'Spell Power': 'Poder con hechizos',
+    'Attack Power': 'Poder de ataque',
+    'Healing Power': 'Poder de curación',
+    'Intellect': 'Intelecto',
+    'Spirit': 'Espíritu',
+    'Stamina': 'Aguante',
+    'Strength': 'Fuerza',
+    'Agility': 'Agilidad',
+    'Critical Strike': 'Golpe crítico',
+    'Hit': 'Índice de golpe',
+    'Haste': 'Celeridad',
+    'Weapon Damage': 'Daño del arma',
+    'Mana Regeneration (MP5)': 'Regeneración de maná (MP5)'
+  };
+  function term(name) {
+    return lang === 'es' && TERMS_ES[name] ? TERMS_ES[name] : name;
+  }
+
+  // Collapsed block with the client's exact English text, shown under any
+  // translated tooltip so the source is one click away. Empty in English.
+  function original(texts) {
+    const list = texts.filter(Boolean);
+    if (lang !== 'es' || !list.length) return '';
+    return '<details class="orig"><summary title="' + t('orig.title') + '">' + t('orig.show') + '</summary>' +
+      list.map(x => '<div>' + x + '</div>').join('') + '</details>';
+  }
+
   window.I18N = {
     get lang() { return lang; },
-    t, localize, setLang, apply,
+    t, localize, setLang, apply, client, num, range, term, original,
     onChange(fn) { listeners.push(fn); },
     toggle() { setLang(lang === 'es' ? 'en' : 'es'); }
   };

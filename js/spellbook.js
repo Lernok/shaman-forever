@@ -54,8 +54,22 @@
     return Math.round((now / then - 1) * 100);
   }
 
+  // "71.4% of spell power (direct)" -> "71,4% (directo)" in Spanish.
+  function coef(s) {
+    const I = window.I18N;
+    return I.num(s.replace(/ of spell power/g, ''))
+      .replace('(direct)', '(' + t('sb.direct') + ')')
+      .replace('(per tick)', '(' + t('sb.perTick') + ')')
+      .replace('(heal)', '(' + t('sb.heal') + ')');
+  }
+
+  function rankLabel(r) {
+    const m = /^Rank (\d+)$/.exec(r);
+    return m ? t('sb.rank', { n: m[1] }) : r;
+  }
+
   function lines(l) {
-    return (l || []).map(row => row.filter(Boolean).join(' · ')).filter(Boolean).join(' · ');
+    return (l || []).map(row => row.filter(Boolean).map(c => window.I18N.client(c)).join(' · ')).filter(Boolean).join(' · ');
   }
 
   function renderSpell(s) {
@@ -73,17 +87,18 @@
       '</div>';
     if (s.ranks.length > 1) {
       html += '<select class="sp-rank" data-spell="' + s.name + '">' +
-        s.ranks.map(r => '<option' + (r === rank ? ' selected' : '') + '>' + r + '</option>').join('') + '</select>';
+        s.ranks.map(r => '<option value="' + r + '"' + (r === rank ? ' selected' : '') + '>' + rankLabel(r) + '</option>').join('') + '</select>';
     }
     html += '<div class="sp-cost">' + lines(d.l) + '</div>' +
-      '<p class="sp-text">' + (d.d || '') + '</p>';
-    if (d.co) html += '<div class="sp-coef">Spell power: <b>' + d.co.replace(' of spell power', '') + '</b>' +
-      (d.cc && d.cc !== d.co ? ' <span class="was">(Classic: ' + d.cc.replace(' of spell power', '') + ')</span>' : '') + '</div>';
+      '<p class="sp-text">' + window.I18N.client(d.d || '') + '</p>';
+    if (d.co) html += '<div class="sp-coef">' + t('sb.coef') + ': <b>' + coef(d.co) + '</b>' +
+      (d.cc && d.cc !== d.co ? ' <span class="was">(Classic: ' + coef(d.cc) + ')</span>' : '') + '</div>';
     if (d.cs === 'changed' && d.cd) {
       html += '<details class="sp-classic"><summary>Classic' +
         (pct != null ? ' <span class="pct ' + (pct < 0 ? 'down' : pct > 0 ? 'up' : '') + '">' + (pct > 0 ? '+' : '') + pct + '%</span>' : '') +
-        '</summary><div class="sp-cost">' + lines(d.cl) + '</div><p class="sp-text">' + d.cd + '</p></details>';
+        '</summary><div class="sp-cost">' + lines(d.cl) + '</div><p class="sp-text">' + window.I18N.client(d.cd) + '</p></details>';
     }
+    html += window.I18N.original([d.d, d.cs === 'changed' && d.cd ? 'Classic: ' + d.cd : '']);
     html += '</div>';
     return html;
   }

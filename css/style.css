@@ -610,3 +610,9 @@ table.cmp tr:last-child td { border-bottom: none; }
 
 /* ---------- Language toggle ---------- */
 .lang-toggle { margin-left: auto; align-self: flex-start; }
+
+/* ---------- "ver original" under translated client text ---------- */
+details.orig { margin-top: 8px; font-size: 11px; color: #8b8d97; }
+details.orig summary { cursor: pointer; color: #8ea7bd; }
+details.orig div { margin-top: 4px; line-height: 1.45; font-style: italic; }
+.calc-tip details.orig { display: none; }

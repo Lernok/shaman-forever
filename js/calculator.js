@@ -201,14 +201,16 @@
     const tal = tree.talents.find(x => x.name === el.dataset.talent);
     const rank = R.rankOf(state.ranks, tree, tal.name);
     let html = '<div class="t-name">' + tal.name + ' <span class="t-rankno">' + rank + '/' + tal.max + '</span></div>';
-    if (rank > 0) html += '<div class="t-rank"><b>' + t('calc.current') + ':</b> ' + tal.desc[rank - 1] + '</div>';
-    if (rank < tal.max) html += '<div class="t-rank"><b>' + (rank === 0 ? t('tree.rank', { n: 1 }) : t('calc.next')) + ':</b> ' + tal.desc[rank] + '</div>';
-    if (tal.cost) html += '<div class="t-cost">' + tal.cost + '</div>';
+    const I = window.I18N;
+    if (rank > 0) html += '<div class="t-rank"><b>' + t('calc.current') + ':</b> ' + I.client(tal.desc[rank - 1]) + '</div>';
+    if (rank < tal.max) html += '<div class="t-rank"><b>' + (rank === 0 ? t('tree.rank', { n: 1 }) : t('calc.next')) + ':</b> ' + I.client(tal.desc[rank]) + '</div>';
+    if (tal.cost) html += '<div class="t-cost">' + tal.cost.split(' | ').map(I.client).join(' · ') + '</div>';
     const why = R.lockReason(state.ranks, tree, tal);
     if (why && rank < tal.max) html += '<div class="t-lock">' + why + '</div>';
     if (tal.classic && tal.classic.status) {
-      html += '<div class="t-classic">Classic Era: <b>' + tal.classic.status + '</b></div>';
+      html += '<div class="t-classic">' + t('classic.label') + ': <b>' + t('classic.' + tal.classic.status) + '</b></div>';
     }
+    html += I.original([rank > 0 ? tal.desc[rank - 1] : '', rank < tal.max ? tal.desc[rank] : '', tal.cost]);
     tipEl.innerHTML = html;
     tipEl.style.display = 'block';
     const r = el.getBoundingClientRect();
