@@ -16324,37 +16324,6 @@
    ]
   },
   {
-   "id": 6327,
-   "name": "The Pacifier",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 32,
-   "obtain": 32,
-   "ilvl": 37,
-   "bind": "equip",
-   "dps": 32.5,
-   "speed": 4,
-   "dmgMin": 104,
-   "dmgMax": 156,
-   "stats": {
-    "strength": 18,
-    "stamina": 7
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed"
-    }
-   ]
-  },
-  {
    "id": 12251,
    "name": "Big Stick",
    "kind": "Staff",
@@ -18160,6 +18129,37 @@
       "grey": 44
      },
      "ref": "https://foreverchanges.pro/quest/1184"
+    }
+   ]
+  },
+  {
+   "id": 6327,
+   "name": "The Pacifier",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 36,
+   "obtain": 36,
+   "ilvl": 41,
+   "bind": "equip",
+   "dps": 36.63,
+   "speed": 4,
+   "dmgMin": 117,
+   "dmgMax": 176,
+   "stats": {
+    "strength": 20,
+    "stamina": 8
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed"
     }
    ]
   },
@@ -22268,6 +22268,39 @@
      ],
      "faction": "both",
      "confidence": "classic-assumed"
+    }
+   ]
+  },
+  {
+   "id": 274432,
+   "name": "Stone Keeper Spire",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 44,
+   "obtain": 44,
+   "ilvl": 49,
+   "bind": "pickup",
+   "dps": 31.72,
+   "speed": 3.2,
+   "dmgMin": 81,
+   "dmgMax": 122,
+   "stats": {
+    "stamina": 19,
+    "armor": 180
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increases healing done by up to 105 and damage done by up to 35 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested"
     }
    ]
   },
