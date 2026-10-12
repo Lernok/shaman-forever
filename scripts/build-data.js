@@ -62,7 +62,7 @@ properNouns = [
 ].filter((n, i, a) => n && a.indexOf(n) === i).sort((a, b) => b.length - a.length);
 
 const guides = {};
-['enhancement', 'elemental', 'restoration', 'overview'].forEach(f => {
+['enhancement', 'elemental', 'restoration', 'overview', 'professions'].forEach(f => {
   const g = read('data/guides/' + f + '.json');
   guides[g.spec || 'Overview'] = g;
 });
@@ -177,6 +177,10 @@ const outputs = ['data/shaman.js', 'data/guides.js', 'data/builds.js', 'data/cli
 if (fs.existsSync(path.join(root, 'data/items.json'))) {
   write('data/items.js', 'ITEM_DATA', read('data/items.json'));
   outputs.push('data/items.js');
+}
+if (fs.existsSync(path.join(root, 'data/professions.json'))) {
+  write('data/professions.js', 'PROFESSION_DATA', read('data/professions.json'));
+  outputs.push('data/professions.js');
 }
 if (fs.existsSync(path.join(root, 'data/weapons.json'))) {
   write('data/weapons.js', 'WEAPON_DATA', read('data/weapons.json'));

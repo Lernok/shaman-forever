@@ -6,7 +6,8 @@
     Restoration: '#3fa9f5',
     Calculadora: '#c8aa6e',
     Spellbook: '#9b7fd1',
-    Armas: '#c8aa6e'
+    Armas: '#c8aa6e',
+    Profesiones: '#c8aa6e'
   };
 
   const I18N = window.I18N;
@@ -339,6 +340,12 @@
     const guide = window.I18N.localize(window.GUIDE_DATA[spec]);
     const color = SPEC_COLORS[spec];
     document.documentElement.style.setProperty('--spec-color', color);
+
+    if (spec === 'Profesiones') {
+      window.Professions.render(app, { badge, renderSources, specColors: SPEC_COLORS });
+      app.style.setProperty('--spec-color', color);
+      return;
+    }
 
     if (spec === 'Armas') {
       window.Weapons.render(app, { badge, renderSources, specColors: SPEC_COLORS });

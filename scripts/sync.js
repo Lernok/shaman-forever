@@ -333,5 +333,7 @@ function diffItems(prev, next) {
   // Weapon sources, then regenerate bundles; build-data also runs every
   // validator (rules, translations, builds).
   execFileSync(process.execPath, [path.join(__dirname, 'build-weapons.js')], { stdio: 'inherit' });
+  // Recipe sources come from scripts/fetch-recipes.js (run it to refresh them).
+  execFileSync(process.execPath, [path.join(__dirname, 'build-professions.js')], { stdio: 'inherit' });
   execFileSync(process.execPath, [path.join(__dirname, 'build-data.js')], { stdio: 'inherit' });
 })().catch(e => { console.error(e.message); process.exit(1); });
