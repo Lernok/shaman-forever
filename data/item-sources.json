@@ -1,0 +1,35 @@
+{
+  "_readme": "Fuentes de ítems que no están en QuestieDB (sobre todo ítems nuevos de Forever), cargadas a mano a partir de reportes. Cada fuente lleva confidence y ref (de dónde sale el dato). obtainLevel = nivel desde el que se puede conseguir, cuando es mayor que el nivel requerido del ítem. scripts/build-weapons.js las suma a las fuentes automáticas.",
+  "items": {
+    "280604": {
+      "name": "Rage of the Storm",
+      "sources": [
+        {
+          "type": "quest",
+          "quest": "The Tempest's Weapons",
+          "questId": 96016,
+          "level": 30,
+          "requiredLevel": 30,
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://expcarry.com/wow-forever-enhancement-shaman-guide"
+        }
+      ]
+    },
+    "280696": {
+      "name": "Elementalist's Guard",
+      "sources": [
+        {
+          "type": "quest",
+          "quest": "The Tempest's Weapons",
+          "questId": 96016,
+          "level": 30,
+          "requiredLevel": 30,
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://expcarry.com/wow-forever-enhancement-shaman-guide"
+        }
+      ]
+    }
+  }
+}

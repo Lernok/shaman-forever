@@ -5,7 +5,8 @@
     Enhancement: '#8a5a2b',
     Restoration: '#3fa9f5',
     Calculadora: '#c8aa6e',
-    Spellbook: '#9b7fd1'
+    Spellbook: '#9b7fd1',
+    Armas: '#c8aa6e'
   };
 
   const I18N = window.I18N;
@@ -334,9 +335,16 @@
   function render(spec) {
     closeTooltip();
     window.Calculator.hide();
+    if (window.Weapons) window.Weapons.hide();
     const guide = window.I18N.localize(window.GUIDE_DATA[spec]);
     const color = SPEC_COLORS[spec];
     document.documentElement.style.setProperty('--spec-color', color);
+
+    if (spec === 'Armas') {
+      window.Weapons.render(app, { badge, renderSources, specColors: SPEC_COLORS });
+      app.style.setProperty('--spec-color', color);
+      return;
+    }
 
     if (spec === 'Spellbook') {
       window.Spellbook.render(app, { iconUrl, renderSources, specColors: SPEC_COLORS });

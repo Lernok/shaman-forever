@@ -171,4 +171,19 @@ if (failed) {
   process.exit(1);
 }
 write('data/builds.js', 'BUILD_DATA', builds);
-console.log('OK: data/shaman.js, data/guides.js, data/builds.js');
+
+// Items and sync metadata come from scripts/sync.js; the site works without them.
+const outputs = ['data/shaman.js', 'data/guides.js', 'data/builds.js', 'data/client-es.js'];
+if (fs.existsSync(path.join(root, 'data/items.json'))) {
+  write('data/items.js', 'ITEM_DATA', read('data/items.json'));
+  outputs.push('data/items.js');
+}
+if (fs.existsSync(path.join(root, 'data/weapons.json'))) {
+  write('data/weapons.js', 'WEAPON_DATA', read('data/weapons.json'));
+  outputs.push('data/weapons.js');
+}
+if (fs.existsSync(path.join(root, 'data/meta.json'))) {
+  write('data/meta.js', 'SITE_META', read('data/meta.json'));
+  outputs.push('data/meta.js');
+}
+console.log('OK: ' + outputs.join(', '));
