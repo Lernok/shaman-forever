@@ -195,7 +195,21 @@
       'wp.showRaids': 'Incluir raids de Classic',
       'wp.showPvp': 'Incluir recompensas de rango PvP',
       'wp.showRaidsTitle': 'Forever tiene su propia lista de raids (Barrow Deeps, Hyjal Summit, Onyxia…), así que las fuentes de raids de Classic son las más dudosas.',
-      'wp.classicNumbersTitle': 'Forever todavía no publicó este ítem (la beta está topada en 30): daño y stats son los de Classic y pueden cambiar.'
+      'wp.classicNumbersTitle': 'Forever todavía no publicó este ítem (la beta está topada en 30): daño y stats son los de Classic y pueden cambiar.',
+      'wp.src.dquest': 'Quest de dungeon: {quest} (nivel {level}{from})',
+      'wp.src.from': ', desde {level}',
+      'wp.safeOnly': 'Solo fuentes seguras (sin drops)',
+      'wp.safeOnlyTitle': 'Deja quests, crafteos y vendedores: armas que conseguís seguro, sin depender de que caigan.',
+      'wp.dq.title': 'Recompensas de quests de dungeon ({n})',
+      'wp.dq.intro': 'Son recompensas seguras: hacés la quest en el dungeon y el arma es tuya, sin depender del drop. Muchas superan a todo lo que hay a su nivel. El gráfico las ubica en el nivel de la quest, pero se pueden hacer desde el nivel mínimo, en grupo.',
+      'wp.dq.none': 'No hay quests de dungeon registradas con armas para este spec y facción.',
+      'wp.dq.colQuest': 'Quest',
+      'wp.dq.colLevels': 'Niveles',
+      'wp.dq.colAlt': 'Mejor alternativa segura a ese nivel',
+      'wp.dq.drop': 'Drop: {name} · {value} ({source}), si te cae',
+      'wp.dq.better': 'mejor',
+      'wp.dq.worse': 'peor',
+      'wp.srcFc': 'qué quest da cada arma nueva de Forever, y nivel y zona de cada quest en Forever'
     },
     en: {
       'site.tagline': 'Talents, rotation and gearing for Enhancement, Elemental and Restoration — WoW: Forever (beta)',
@@ -386,7 +400,21 @@
       'wp.showRaids': 'Include Classic raids',
       'wp.showPvp': 'Include PvP rank rewards',
       'wp.showRaidsTitle': 'Forever has its own raid lineup (Barrow Deeps, Hyjal Summit, Onyxia…), so Classic raid sources are the least certain.',
-      'wp.classicNumbersTitle': 'Forever has not published this item yet (the beta is capped at 30): damage and stats are Classic\'s and may change.'
+      'wp.classicNumbersTitle': 'Forever has not published this item yet (the beta is capped at 30): damage and stats are Classic\'s and may change.',
+      'wp.src.dquest': 'Dungeon quest: {quest} (level {level}{from})',
+      'wp.src.from': ', from {level}',
+      'wp.safeOnly': 'Guaranteed sources only (no drops)',
+      'wp.safeOnlyTitle': 'Keeps quests, crafts and vendors: weapons you get for sure, without relying on a drop.',
+      'wp.dq.title': 'Dungeon quest rewards ({n})',
+      'wp.dq.intro': 'These are guaranteed rewards: do the quest in the dungeon and the weapon is yours, no drop luck involved. Many beat everything else at their level. The chart places them at the quest\'s level, but they can be done from the minimum level, in a group.',
+      'wp.dq.none': 'No recorded dungeon quests with weapons for this spec and faction.',
+      'wp.dq.colQuest': 'Quest',
+      'wp.dq.colLevels': 'Levels',
+      'wp.dq.colAlt': 'Best guaranteed alternative at that level',
+      'wp.dq.drop': 'Drop: {name} · {value} ({source}), if it drops',
+      'wp.dq.better': 'better',
+      'wp.dq.worse': 'worse',
+      'wp.srcFc': 'which quest rewards each new Forever weapon, and each quest\'s level and zone in Forever'
     }
   };
 
@@ -487,6 +515,7 @@
     'Intellect': 'Intelecto',
     'Spirit': 'Espíritu',
     'Stamina': 'Aguante',
+    'Armor': 'Armadura',
     'Strength': 'Fuerza',
     'Agility': 'Agilidad',
     'Critical Strike': 'Golpe crítico',

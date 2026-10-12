@@ -5,7 +5,7 @@
   let ui = null;
   let container = null;
   let tipEl = null;
-  const state = { spec: 'Enhancement', faction: 'horde', random: false, unknown: false, raids: false, pvp: false };
+  const state = { spec: 'Enhancement', faction: 'horde', random: false, unknown: false, raids: false, pvp: false, safe: false };
 
   // Enhancement ranks by weapon DPS. Casters can't: weapon DPS barely matters
   // to them, and stat weights for Forever aren't known. Forever computes item
@@ -40,6 +40,7 @@
       if ((s.type === 'unknown' || s.type === 'unrecorded') && !state.unknown) return false;
       if (s.raid && !state.raids) return false;
       if (s.pvp && !state.pvp) return false;
+      if (state.safe && !['crafted', 'quest', 'vendor'].includes(s.type)) return false;
       return true;
     });
   }
@@ -83,7 +84,11 @@
       case 'boss': return t('wp.src.boss', { npc: s.npc, zone: s.zone || '?' });
       case 'drop': return t('wp.src.drop', { npc: s.npc, zone: s.zone || '?' });
       case 'trash': return t('wp.src.trash', { zones: (s.zones || []).join(', ') || '?', n: s.count });
-      case 'quest': return t('wp.src.quest', { quest: s.quest, level: s.level || '?' }) + (s.faction !== 'both' ? ' · ' + t('wp.faction.' + s.faction) : '');
+      case 'quest': {
+        const from = s.requiredLevel && s.level && s.requiredLevel < s.level ? t('wp.src.from', { level: s.requiredLevel }) : '';
+        return t(s.dungeon ? 'wp.src.dquest' : 'wp.src.quest', { quest: s.quest, level: s.level || '?', from: from }) +
+          ((s.dungeonZone || s.zone) ? ' · ' + (s.dungeonZone || s.zone) : '') + (s.faction !== 'both' ? ' · ' + t('wp.faction.' + s.faction) : '');
+      }
       case 'vendor': return t('wp.src.vendor', { npc: s.npc, zone: s.zone || '?' });
       case 'unrecorded': return t('wp.src.unrecorded');
       default: return t('wp.src.unknown');
@@ -186,6 +191,42 @@
       '</tr>';
   }
 
+  // Dungeon quest rewards for this spec and faction, each against the best
+  // other weapon you could have at the quest's level.
+  function dungeonQuests(list) {
+    const rows = [];
+    list.forEach(w => w.usable.forEach(s => { if (s.type === 'quest' && s.dungeon) rows.push({ w, s }); }));
+    rows.sort((a, b) => (a.s.level || 0) - (b.s.level || 0) || valueOf(b.w) - valueOf(a.w));
+    let html = '<div class="panel" style="margin-top:16px"><h3>' + t('wp.dq.title', { n: rows.length }) + '</h3>' +
+      '<p class="note-text">' + t('wp.dq.intro') + '</p>';
+    if (!rows.length) return html + '<p class="dim">' + t('wp.dq.none') + '</p></div>';
+    const num = v => spec().metric === 'dps' ? window.I18N.num(v.toFixed(1)) : String(v);
+    html += '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.dq.colQuest') + '</th><th>' + t('wp.dq.colLevels') + '</th><th>' +
+      t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.dq.colAlt') + '</th></tr></thead><tbody>' +
+      rows.map(({ w, s }) => {
+        const lv = s.level || w.obtain;
+        // Best other weapon at the quest's level: one you get for sure, and the best drop.
+        const before = list.filter(o => o.id !== w.id && o.obtain <= lv).sort((a, b) => valueOf(b) - valueOf(a));
+        // Other dungeon quests left out: the point is how much they beat the usual path.
+        const safeOf = o => o.usable.find(x => ['crafted', 'quest', 'vendor'].includes(x.type) && !x.dungeon);
+        const alt = before.find(safeOf);
+        const drop = before.find(o => o.usable.every(x => ['boss', 'drop', 'trash'].includes(x.type)));
+        const diff = alt ? valueOf(w) - valueOf(alt) : null;
+        const dropLine = drop && (!alt || valueOf(drop) > valueOf(alt))
+          ? '<span class="wp-sub">' + t('wp.dq.drop', { name: drop.name, value: num(valueOf(drop)), source: sourceText(drop.usable[0]) }) + '</span>' : '';
+        return '<tr><td>' + (s.ref ? '<a href="' + s.ref + '" target="_blank" rel="noopener">' + s.quest + '</a>' : s.quest) +
+            '<span class="wp-sub">' + (s.dungeonZone || s.zone || '') + (s.faction !== 'both' ? ' · ' + t('wp.faction.' + s.faction) : '') + '</span></td>' +
+          '<td class="num">' + (s.requiredLevel && s.requiredLevel < lv ? s.requiredLevel + '–' : '') + lv + '</td>' +
+          '<td><a class="' + qualityClass(w.quality) + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' + w.name + '</a>' +
+            (w.era === 'new' ? ' <span class="wp-new">' + t('wp.newInForever') + '</span>' : '') + '<span class="wp-sub">' + w.kind + '</span></td>' +
+          '<td class="num">' + metricCell(w) + '</td>' +
+          '<td>' + (statsText(w) || '—') + '</td>' +
+          '<td>' + (alt ? alt.name + ' · ' + num(valueOf(alt)) +
+            '<span class="wp-sub">' + (diff >= 0 ? '+' : '−') + num(Math.abs(diff)) + ' ' + t(diff >= 0 ? 'wp.dq.better' : 'wp.dq.worse') + ' · ' + sourceText(safeOf(alt)) + '</span>' : '—') + dropLine + '</td></tr>';
+      }).join('') + '</tbody></table></div></div>';
+    return html;
+  }
+
   function renderAll() {
     const list = candidates();
     const prog = progression(list);
@@ -201,6 +242,7 @@
       '<label class="chk"><input type="checkbox" id="wpUnknown"' + (state.unknown ? ' checked' : '') + '> ' + t('wp.showUnknown') + '</label>' +
       '<label class="chk" title="' + t('wp.showRaidsTitle') + '"><input type="checkbox" id="wpRaids"' + (state.raids ? ' checked' : '') + '> ' + t('wp.showRaids') + '</label>' +
       '<label class="chk"><input type="checkbox" id="wpPvp"' + (state.pvp ? ' checked' : '') + '> ' + t('wp.showPvp') + '</label>' +
+      '<label class="chk" title="' + t('wp.safeOnlyTitle') + '"><input type="checkbox" id="wpSafe"' + (state.safe ? ' checked' : '') + '> ' + t('wp.safeOnly') + '</label>' +
       '</div>';
     if (spec().metric === 'ilvl') html += '<div class="caveat">' + t('wp.casterNote') + '</div>';
     html += '<div class="panel wp-chart-panel">' + legend() + '<div class="wp-chart-wrap">' + chart.svg + '</div></div>';
@@ -209,6 +251,8 @@
       html += '<div class="panel" style="margin-top:16px"><h3>' + t('wp.targets') + '</h3><ul class="plain">' +
         guide.gearTargets.map(g => '<li>' + g.note + ' ' + ui.badge(g.confidence) + '</li>').join('') + '</ul></div>';
     }
+
+    html += dungeonQuests(list);
 
     html += '<div class="panel" style="margin-top:16px"><h3>' + t('wp.steps', { n: prog.steps.length }) + '</h3>' +
       '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.colFrom') + '</th><th>' + t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.colSource') + '</th></tr></thead><tbody>' +
@@ -222,7 +266,8 @@
     html += ui.renderSources([
       'https://wago.tools — ' + t('wp.srcWago'),
       'https://www.wowhead.com/forever — ' + t('wp.srcWowhead'),
-      'https://github.com/Questie/QuestieDB — ' + t('wp.srcQuestie')
+      'https://github.com/Questie/QuestieDB — ' + t('wp.srcQuestie'),
+      'https://foreverchanges.pro — ' + t('wp.srcFc')
     ]);
     container.innerHTML = html;
     bind(list, prog, chart);
@@ -257,6 +302,7 @@
     container.querySelector('#wpUnknown').addEventListener('change', e => { state.unknown = e.target.checked; renderAll(); });
     container.querySelector('#wpRaids').addEventListener('change', e => { state.raids = e.target.checked; renderAll(); });
     container.querySelector('#wpPvp').addEventListener('change', e => { state.pvp = e.target.checked; renderAll(); });
+    container.querySelector('#wpSafe').addEventListener('change', e => { state.safe = e.target.checked; renderAll(); });
 
     const svg = container.querySelector('.wp-chart');
     const cross = svg.querySelector('.crosshair');

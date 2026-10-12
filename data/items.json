@@ -47229,30 +47229,6 @@
    "bonus": {},
    "numbers": "classic"
   },
-  "236759": {
-   "id": 236759,
-   "name": "[TMP] Furbolg Ritual Stave",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 0,
-   "ilvl": 50,
-   "bind": "pickup",
-   "raceMask": -1,
-   "era": "new",
-   "dmgMin": 115,
-   "dmgMax": 173,
-   "speed": 3.7,
-   "dps": 38.92,
-   "stats": {
-    "stamina": 7,
-    "intellect": 18
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "bonus": {},
-   "numbers": "forever"
-  },
   "236871": {
    "id": 236871,
    "name": "Creepy Censor Sensors",
@@ -51105,6 +51081,60 @@
    "use": [],
    "chance": [],
    "bonus": {},
+   "numbers": "forever"
+  },
+  "251533": {
+   "id": 251533,
+   "name": "Forsaken Greataxe",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 0,
+   "ilvl": 24,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 49,
+   "dmgMax": 74,
+   "speed": 3,
+   "dps": 20.5,
+   "stats": {
+    "strength": 8,
+    "stamina": 4
+   },
+   "equip": [
+    "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "251534": {
+   "id": 251534,
+   "name": "Gnarled Necromancer's Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "ilvl": 24,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 34,
+   "dmgMax": 51,
+   "speed": 2.8,
+   "dps": 15.18,
+   "stats": {
+    "spirit": 10
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 26.",
+    "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 26
+   },
    "numbers": "forever"
   },
   "251960": {
@@ -60393,6 +60423,81 @@
    "bonus": {},
    "numbers": "forever"
   },
+  "263935": {
+   "id": 263935,
+   "name": "Elunar Longstaff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 10,
+   "ilvl": 15,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 25,
+   "dmgMax": 38,
+   "speed": 3.1,
+   "dps": 10.16,
+   "stats": {
+    "strength": 3,
+    "agility": 3
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "263936": {
+   "id": 263936,
+   "name": "Windforged Shortblade",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 10,
+   "ilvl": 15,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 12,
+   "dmgMax": 22,
+   "speed": 2.2,
+   "dps": 7.73,
+   "stats": {},
+   "equip": [
+    "Equip: +2 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 2
+   },
+   "numbers": "forever"
+  },
+  "263937": {
+   "id": 263937,
+   "name": "Skyseeker's Greatstaff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 10,
+   "ilvl": 15,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 12,
+   "dmgMax": 18,
+   "speed": 2,
+   "dps": 7.5,
+   "stats": {
+    "intellect": 3,
+    "spirit": 3
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
   "269716": {
    "id": 269716,
    "name": "Keen Skinning Knife",
@@ -60419,6 +60524,82 @@
    "bonus": {
     "spellPower": 12
    },
+   "numbers": "forever"
+  },
+  "270005": {
+   "id": 270005,
+   "name": "Monastic Hammer",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 19,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 9,
+   "dmgMax": 18,
+   "speed": 2.1,
+   "dps": 6.43,
+   "stats": {
+    "intellect": 2
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 12
+   },
+   "numbers": "forever"
+  },
+  "270018": {
+   "id": 270018,
+   "name": "Hammerbone",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 0,
+   "ilvl": 24,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 55,
+   "dmgMax": 84,
+   "speed": 3.4,
+   "dps": 20.44,
+   "stats": {
+    "strength": 7,
+    "spirit": 10
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "270027": {
+   "id": 270027,
+   "name": "Ursine Hammer",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 27,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 47,
+   "dmgMax": 71,
+   "speed": 3.2,
+   "dps": 18.44,
+   "stats": {
+    "agility": 5,
+    "intellect": 5,
+    "spirit": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
    "numbers": "forever"
   },
   "270048": {
@@ -60572,6 +60753,30 @@
    "bonus": {},
    "numbers": "forever"
   },
+  "270078": {
+   "id": 270078,
+   "name": "Guardian Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "ilvl": 42,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 71,
+   "dmgMax": 108,
+   "speed": 2.4,
+   "dps": 37.29,
+   "stats": {
+    "agility": 16,
+    "stamina": 16
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
   "270088": {
    "id": 270088,
    "name": "Thane's Hammer",
@@ -60645,6 +60850,54 @@
    },
    "numbers": "forever"
   },
+  "270228": {
+   "id": 270228,
+   "name": "Golemheart Stave",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 30,
+   "dmgMax": 46,
+   "speed": 3.2,
+   "dps": 11.88,
+   "stats": {},
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 18
+   },
+   "numbers": "forever"
+  },
+  "270256": {
+   "id": 270256,
+   "name": "Durgen's Crescent Axe",
+   "kind": "1H Axe",
+   "quality": 3,
+   "req": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 20,
+   "dmgMax": 39,
+   "speed": 2.4,
+   "dps": 12.29,
+   "stats": {
+    "strength": 4
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
   "270270": {
    "id": 270270,
    "name": "Scale of the Tidebender",
@@ -60660,6 +60913,174 @@
    "stats": {},
    "equip": [],
    "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "271095": {
+   "id": 271095,
+   "name": "Fang of Magmatus",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 9,
+   "dmgMax": 18,
+   "speed": 1.7,
+   "dps": 7.94,
+   "stats": {
+    "intellect": 4
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 18
+   },
+   "numbers": "forever"
+  },
+  "271203": {
+   "id": 271203,
+   "name": "Segmented Spider Leg",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 15,
+   "ilvl": 20,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 50,
+   "dmgMax": 76,
+   "speed": 3.6,
+   "dps": 17.5,
+   "stats": {
+    "agility": 9,
+    "spirit": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "271204": {
+   "id": 271204,
+   "name": "Meathook Slicer",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 15,
+   "ilvl": 20,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 17,
+   "dmgMax": 32,
+   "speed": 1.8,
+   "dps": 13.61,
+   "stats": {
+    "stamina": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "271213": {
+   "id": 271213,
+   "name": "Mirror of Rath'mael",
+   "kind": "Shield",
+   "quality": 3,
+   "req": 19,
+   "ilvl": 24,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 547,
+   "block": 11,
+   "stats": {
+    "strength": 5
+   },
+   "equip": [
+    "Equip: Increases your chance to Block attacks with a shield by 1.0%."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "271215": {
+   "id": 271215,
+   "name": "Coldspire Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 19,
+   "ilvl": 24,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 43,
+   "dmgMax": 66,
+   "speed": 3.6,
+   "dps": 15.14,
+   "stats": {},
+   "equip": [
+    "Equip: Increases damage done by Frost spells and effects by up to 32."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "271216": {
+   "id": 271216,
+   "name": "Scepter of the Abandoned",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 17,
+   "ilvl": 22,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 17,
+   "dmgMax": 33,
+   "speed": 2.6,
+   "dps": 9.62,
+   "stats": {},
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 24."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 24
+   },
+   "numbers": "forever"
+  },
+  "271217": {
+   "id": 271217,
+   "name": "Corpse Chopper",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 16,
+   "ilvl": 21,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 52,
+   "dmgMax": 79,
+   "speed": 3.6,
+   "dps": 18.19,
+   "stats": {},
+   "equip": [],
+   "use": [
+    "Use: Chop nearby Humanoid or Undead corpse in two, restoring 150 Health, 150 Mana, and 15 Rage."
+   ],
    "chance": [],
    "bonus": {},
    "numbers": "forever"
@@ -60971,6 +61392,838 @@
    "use": [],
    "chance": [],
    "bonus": {},
+   "numbers": "forever"
+  },
+  "271924": {
+   "id": 271924,
+   "name": "Rebels' Rugged Reaper",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 58,
+   "ilvl": 63,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 133,
+   "dmgMax": 201,
+   "speed": 3.1,
+   "dps": 53.87,
+   "stats": {
+    "strength": 33,
+    "stamina": 8
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "271925": {
+   "id": 271925,
+   "name": "Rebels' Rugged Reaper",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 48,
+   "ilvl": 53,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 113,
+   "dmgMax": 171,
+   "speed": 3.1,
+   "dps": 45.81,
+   "stats": {
+    "strength": 27,
+    "stamina": 7
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "271926": {
+   "id": 271926,
+   "name": "Rebels' Rugged Reaper",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 38,
+   "ilvl": 43,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 94,
+   "dmgMax": 142,
+   "speed": 3.1,
+   "dps": 38.06,
+   "stats": {
+    "strength": 22,
+    "stamina": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "271927": {
+   "id": 271927,
+   "name": "Rebels' Rugged Reaper",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 69,
+   "dmgMax": 104,
+   "speed": 3.1,
+   "dps": 27.9,
+   "stats": {
+    "strength": 16,
+    "stamina": 4
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "271928": {
+   "id": 271928,
+   "name": "Clever Expeditionary's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 58,
+   "ilvl": 63,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 27,
+   "dmgMax": 50,
+   "speed": 1.4,
+   "dps": 27.5,
+   "stats": {
+    "stamina": 8,
+    "intellect": 11,
+    "spirit": 5
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 72."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 72
+   },
+   "numbers": "forever"
+  },
+  "271929": {
+   "id": 271929,
+   "name": "Clever Expeditionary's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 48,
+   "ilvl": 53,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 23,
+   "dmgMax": 43,
+   "speed": 1.4,
+   "dps": 23.57,
+   "stats": {
+    "stamina": 7,
+    "intellect": 10,
+    "spirit": 4
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 60."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 60
+   },
+   "numbers": "forever"
+  },
+  "271930": {
+   "id": 271930,
+   "name": "Clever Expeditionary's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 38,
+   "ilvl": 43,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 19,
+   "dmgMax": 36,
+   "speed": 1.4,
+   "dps": 19.64,
+   "stats": {
+    "stamina": 5,
+    "intellect": 8,
+    "spirit": 3
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 48."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 48
+   },
+   "numbers": "forever"
+  },
+  "271931": {
+   "id": 271931,
+   "name": "Clever Expeditionary's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 14,
+   "dmgMax": 26,
+   "speed": 1.4,
+   "dps": 14.29,
+   "stats": {
+    "stamina": 4,
+    "intellect": 6,
+    "spirit": 3
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 36."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 36
+   },
+   "numbers": "forever"
+  },
+  "271932": {
+   "id": 271932,
+   "name": "Insurgent's Manifesto",
+   "kind": "Off-hand",
+   "quality": 3,
+   "req": 58,
+   "ilvl": 63,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 17,
+    "intellect": 7
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 8
+   },
+   "numbers": "forever"
+  },
+  "271933": {
+   "id": 271933,
+   "name": "Insurgent's Manifesto",
+   "kind": "Off-hand",
+   "quality": 3,
+   "req": 48,
+   "ilvl": 53,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 14,
+    "intellect": 6
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 5."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 5
+   },
+   "numbers": "forever"
+  },
+  "271934": {
+   "id": 271934,
+   "name": "Insurgent's Manifesto",
+   "kind": "Off-hand",
+   "quality": 3,
+   "req": 38,
+   "ilvl": 43,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 12,
+    "intellect": 5
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 4."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 4
+   },
+   "numbers": "forever"
+  },
+  "271935": {
+   "id": 271935,
+   "name": "Insurgent's Manifesto",
+   "kind": "Off-hand",
+   "quality": 3,
+   "req": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 8,
+    "intellect": 4
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 2."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 2
+   },
+   "numbers": "forever"
+  },
+  "271936": {
+   "id": 271936,
+   "name": "Guerrilla's Jagged Mace",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 58,
+   "ilvl": 63,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 81,
+   "dmgMax": 151,
+   "speed": 2.8,
+   "dps": 41.43,
+   "stats": {
+    "stamina": 13
+   },
+   "equip": [
+    "Equip: +11 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 11
+   },
+   "numbers": "forever"
+  },
+  "271937": {
+   "id": 271937,
+   "name": "Guerrilla's Jagged Mace",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 48,
+   "ilvl": 53,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 69,
+   "dmgMax": 128,
+   "speed": 2.8,
+   "dps": 35.18,
+   "stats": {
+    "stamina": 11
+   },
+   "equip": [
+    "Equip: +9 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 9
+   },
+   "numbers": "forever"
+  },
+  "271938": {
+   "id": 271938,
+   "name": "Guerrilla's Jagged Mace",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 38,
+   "ilvl": 43,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 57,
+   "dmgMax": 107,
+   "speed": 2.8,
+   "dps": 29.29,
+   "stats": {
+    "stamina": 8
+   },
+   "equip": [
+    "Equip: +7 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 7
+   },
+   "numbers": "forever"
+  },
+  "271939": {
+   "id": 271939,
+   "name": "Guerrilla's Jagged Mace",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 42,
+   "dmgMax": 78,
+   "speed": 2.8,
+   "dps": 21.43,
+   "stats": {
+    "stamina": 7
+   },
+   "equip": [
+    "Equip: +6 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 6
+   },
+   "numbers": "forever"
+  },
+  "272079": {
+   "id": 272079,
+   "name": "Darkspear Raider's Reaper",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 58,
+   "ilvl": 63,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 133,
+   "dmgMax": 201,
+   "speed": 3.1,
+   "dps": 53.87,
+   "stats": {
+    "strength": 33,
+    "stamina": 8
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "272080": {
+   "id": 272080,
+   "name": "Darkspear Raider's Reaper",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 48,
+   "ilvl": 53,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 113,
+   "dmgMax": 171,
+   "speed": 3.1,
+   "dps": 45.81,
+   "stats": {
+    "strength": 27,
+    "stamina": 7
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "272081": {
+   "id": 272081,
+   "name": "Darkspear Raider's Reaper",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 38,
+   "ilvl": 43,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 94,
+   "dmgMax": 142,
+   "speed": 3.1,
+   "dps": 38.06,
+   "stats": {
+    "strength": 22,
+    "stamina": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "272082": {
+   "id": 272082,
+   "name": "Darkspear Raider's Reaper",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 69,
+   "dmgMax": 104,
+   "speed": 3.1,
+   "dps": 27.9,
+   "stats": {
+    "strength": 16,
+    "stamina": 4
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "272083": {
+   "id": 272083,
+   "name": "Darkspear Insurgent's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 58,
+   "ilvl": 63,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 27,
+   "dmgMax": 50,
+   "speed": 1.4,
+   "dps": 27.5,
+   "stats": {
+    "stamina": 8,
+    "intellect": 11,
+    "spirit": 5
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 72."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 72
+   },
+   "numbers": "forever"
+  },
+  "272084": {
+   "id": 272084,
+   "name": "Darkspear Insurgent's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 48,
+   "ilvl": 53,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 23,
+   "dmgMax": 43,
+   "speed": 1.4,
+   "dps": 23.57,
+   "stats": {
+    "stamina": 7,
+    "intellect": 10,
+    "spirit": 4
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 60."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 60
+   },
+   "numbers": "forever"
+  },
+  "272085": {
+   "id": 272085,
+   "name": "Darkspear Insurgent's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 38,
+   "ilvl": 43,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 19,
+   "dmgMax": 36,
+   "speed": 1.4,
+   "dps": 19.64,
+   "stats": {
+    "stamina": 5,
+    "intellect": 8,
+    "spirit": 3
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 48."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 48
+   },
+   "numbers": "forever"
+  },
+  "272086": {
+   "id": 272086,
+   "name": "Darkspear Insurgent's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 14,
+   "dmgMax": 26,
+   "speed": 1.4,
+   "dps": 14.29,
+   "stats": {
+    "stamina": 4,
+    "intellect": 6,
+    "spirit": 3
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 36."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 36
+   },
+   "numbers": "forever"
+  },
+  "272087": {
+   "id": 272087,
+   "name": "Tome of the Darkspear Prophecy",
+   "kind": "Off-hand",
+   "quality": 3,
+   "req": 58,
+   "ilvl": 63,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 17,
+    "intellect": 7
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 8
+   },
+   "numbers": "forever"
+  },
+  "272088": {
+   "id": 272088,
+   "name": "Tome of the Darkspear Prophecy",
+   "kind": "Off-hand",
+   "quality": 3,
+   "req": 48,
+   "ilvl": 53,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 14,
+    "intellect": 6
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 5."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 5
+   },
+   "numbers": "forever"
+  },
+  "272089": {
+   "id": 272089,
+   "name": "Tome of the Darkspear Prophecy",
+   "kind": "Off-hand",
+   "quality": 3,
+   "req": 38,
+   "ilvl": 43,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 12,
+    "intellect": 5
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 4."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 4
+   },
+   "numbers": "forever"
+  },
+  "272090": {
+   "id": 272090,
+   "name": "Tome of the Darkspear Prophecy",
+   "kind": "Off-hand",
+   "quality": 3,
+   "req": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 8,
+    "intellect": 4
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 2."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 2
+   },
+   "numbers": "forever"
+  },
+  "272091": {
+   "id": 272091,
+   "name": "Darkspear Skirmisher's Bludgeon",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 58,
+   "ilvl": 63,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 81,
+   "dmgMax": 151,
+   "speed": 2.8,
+   "dps": 41.43,
+   "stats": {
+    "stamina": 13
+   },
+   "equip": [
+    "Equip: +11 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 11
+   },
+   "numbers": "forever"
+  },
+  "272092": {
+   "id": 272092,
+   "name": "Darkspear Skirmisher's Bludgeon",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 48,
+   "ilvl": 53,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 69,
+   "dmgMax": 128,
+   "speed": 2.8,
+   "dps": 35.18,
+   "stats": {
+    "stamina": 11
+   },
+   "equip": [
+    "Equip: +9 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 9
+   },
+   "numbers": "forever"
+  },
+  "272093": {
+   "id": 272093,
+   "name": "Darkspear Skirmisher's Bludgeon",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 38,
+   "ilvl": 43,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 57,
+   "dmgMax": 107,
+   "speed": 2.8,
+   "dps": 29.29,
+   "stats": {
+    "stamina": 8
+   },
+   "equip": [
+    "Equip: +7 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 7
+   },
+   "numbers": "forever"
+  },
+  "272094": {
+   "id": 272094,
+   "name": "Darkspear Skirmisher's Bludgeon",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 42,
+   "dmgMax": 78,
+   "speed": 2.8,
+   "dps": 21.43,
+   "stats": {
+    "stamina": 7
+   },
+   "equip": [
+    "Equip: +6 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 6
+   },
    "numbers": "forever"
   },
   "272181": {
@@ -61761,6 +63014,411 @@
    },
    "numbers": "forever"
   },
+  "272996": {
+   "id": 272996,
+   "name": "Trogg Scepter",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 13,
+   "dmgMax": 26,
+   "speed": 2.4,
+   "dps": 8.13,
+   "stats": {
+    "spirit": 4
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "272998": {
+   "id": 272998,
+   "name": "Bone Knuckles",
+   "kind": "Fist",
+   "quality": 3,
+   "req": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 17,
+   "dmgMax": 32,
+   "speed": 2,
+   "dps": 12.25,
+   "stats": {},
+   "equip": [
+    "Equip: +6 Attack Power.",
+    "Equip: +6 Attack Power against Beasts."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 6
+   },
+   "numbers": "forever"
+  },
+  "273003": {
+   "id": 273003,
+   "name": "Searing Dagger",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 9,
+   "dmgMax": 17,
+   "speed": 1.6,
+   "dps": 8.13,
+   "stats": {
+    "spirit": 4
+   },
+   "equip": [
+    "Equip: Harmful spell casts sear the target for 7 Fire damage. (10ms cooldown)"
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "273027": {
+   "id": 273027,
+   "name": "Raptor's Gaze",
+   "kind": "Off-hand",
+   "quality": 3,
+   "req": 26,
+   "ilvl": 31,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 4,
+    "intellect": 4
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 8
+   },
+   "numbers": "forever"
+  },
+  "273040": {
+   "id": 273040,
+   "name": "Spine of the Devourer",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 59,
+   "dmgMax": 90,
+   "speed": 3.6,
+   "dps": 20.69,
+   "stats": {
+    "stamina": 14
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 36."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 36
+   },
+   "numbers": "forever"
+  },
+  "273046": {
+   "id": 273046,
+   "name": "Guardian's Dualblade",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 78,
+   "dmgMax": 117,
+   "speed": 3.5,
+   "dps": 27.86,
+   "stats": {},
+   "equip": [
+    "Equip: When damaged, has a chance to grant you 1080 armor for 12 sec. (Proc chance: 33%, 1m cooldown)"
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "273052": {
+   "id": 273052,
+   "name": "Ponderous Orb",
+   "kind": "Off-hand",
+   "quality": 3,
+   "req": 30,
+   "ilvl": 35,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "intellect": 2,
+    "spirit": 8
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "273053": {
+   "id": 273053,
+   "name": "Tendonscraper Dagger",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 16,
+   "dmgMax": 30,
+   "speed": 1.6,
+   "dps": 14.38,
+   "stats": {
+    "stamina": 5
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 36."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 36
+   },
+   "numbers": "forever"
+  },
+  "273055": {
+   "id": 273055,
+   "name": "Bonepile Gaze",
+   "kind": "Shield",
+   "quality": 3,
+   "req": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 718,
+   "block": 15,
+   "stats": {
+    "strength": 5,
+    "stamina": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "273137": {
+   "id": 273137,
+   "name": "Skum's Bucket",
+   "kind": "Off-hand",
+   "quality": 3,
+   "req": 17,
+   "ilvl": 22,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 3
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 10 and damage done by up to 3 for all magical spells and effects."
+   ],
+   "use": [
+    "Use: Restores 803 mana over 24 sec. Must remain seated while drinking. (10 Min Cooldown)"
+   ],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "273297": {
+   "id": 273297,
+   "name": "Goblin Hammer",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 18,
+   "ilvl": 23,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 21,
+   "dmgMax": 40,
+   "speed": 2,
+   "dps": 15.25,
+   "stats": {
+    "stamina": 4,
+    "armor": 20
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "273456": {
+   "id": 273456,
+   "name": "Cell Keeper's Claws",
+   "kind": "Fist",
+   "quality": 3,
+   "req": 17,
+   "ilvl": 22,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 25,
+   "dmgMax": 48,
+   "speed": 2.5,
+   "dps": 14.6,
+   "stats": {
+    "agility": 2
+   },
+   "equip": [
+    "Equip: +6 Attack Power.",
+    "Equip: +6 Attack Power against Humanoids."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 6
+   },
+   "numbers": "forever"
+  },
+  "273809": {
+   "id": 273809,
+   "name": "Hamhock's Cleaver",
+   "kind": "1H Axe",
+   "quality": 3,
+   "req": 25,
+   "ilvl": 30,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 29,
+   "dmgMax": 54,
+   "speed": 2.2,
+   "dps": 18.86,
+   "stats": {
+    "strength": 4
+   },
+   "equip": [
+    "Equip: +8 Attack Power.",
+    "Equip: +9 Attack Power against Humanoids."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 8
+   },
+   "numbers": "forever"
+  },
+  "273811": {
+   "id": 273811,
+   "name": "Repurposed Rack",
+   "kind": "Shield",
+   "quality": 3,
+   "req": 25,
+   "ilvl": 30,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 661,
+   "block": 14,
+   "stats": {
+    "strength": 6
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 7."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 7
+   },
+   "numbers": "forever"
+  },
+  "273817": {
+   "id": 273817,
+   "name": "Graverobber's Shovel",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 23,
+   "ilvl": 28,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 68,
+   "dmgMax": 102,
+   "speed": 3.7,
+   "dps": 22.97,
+   "stats": {
+    "stamina": 10
+   },
+   "equip": [
+    "Equip: +12 Attack Power, doubled against Undead targets."
+   ],
+   "use": [
+    "Use: Dig up a grave. Usable at Raven Hill Cemetery and Scarlet Monastery Graveyard. (2 Min Cooldown)"
+   ],
+   "chance": [],
+   "bonus": {
+    "attackPower": 12
+   },
+   "numbers": "forever"
+  },
+  "273841": {
+   "id": 273841,
+   "name": "Twilight Maul",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 23,
+   "ilvl": 28,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 60,
+   "dmgMax": 91,
+   "speed": 3.3,
+   "dps": 22.88,
+   "stats": {},
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+   ],
+   "use": [],
+   "chance": [
+    "Chance on hit: Blasts a target for 70 Nature damage."
+   ],
+   "bonus": {
+    "spellPower": 12
+   },
+   "numbers": "forever"
+  },
   "273932": {
    "id": 273932,
    "name": "Spiritcaller Leggings",
@@ -61953,6 +63611,181 @@
    "bonus": {},
    "numbers": "forever"
   },
+  "274043": {
+   "id": 274043,
+   "name": "Irradiated Shield",
+   "kind": "Shield",
+   "quality": 3,
+   "req": 29,
+   "ilvl": 34,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 738,
+   "block": 16,
+   "stats": {
+    "spirit": 9
+   },
+   "equip": [
+    "Equip: Increases damage done by Nature spells and effects by up to 14."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "274158": {
+   "id": 274158,
+   "name": "Death Prophet Spine",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 26,
+   "ilvl": 31,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 42,
+   "dmgMax": 64,
+   "speed": 2.8,
+   "dps": 18.93,
+   "stats": {
+    "stamina": 11
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 34."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 34
+   },
+   "numbers": "forever"
+  },
+  "274265": {
+   "id": 274265,
+   "name": "Brush Cutter",
+   "kind": "1H Axe",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 58,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 67,
+   "dmgMax": 126,
+   "speed": 2.8,
+   "dps": 34.46,
+   "stats": {
+    "stamina": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [
+    "Chance on hit: Assault the target with a dangerous toxin, dealing 50 to 76 Nature damage. Deals 3 times as much damage to Plants."
+   ],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "274270": {
+   "id": 274270,
+   "name": "Weed Whacker",
+   "kind": "2H Axe",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 58,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 111,
+   "dmgMax": 168,
+   "speed": 3.1,
+   "dps": 45,
+   "stats": {
+    "strength": 12
+   },
+   "equip": [],
+   "use": [],
+   "chance": [
+    "Chance on hit: Assault the target with a dangerous toxin, dealing 100 to 152 Nature damage. Deals 3 times as much damage to Plants."
+   ],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "274271": {
+   "id": 274271,
+   "name": "Deadhead Blade",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 58,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 43,
+   "dmgMax": 81,
+   "speed": 1.8,
+   "dps": 34.44,
+   "stats": {
+    "agility": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [
+    "Chance on hit: Assault the target with a dangerous toxin, dealing 50 to 76 Nature damage. Deals 3 times as much damage to Plants."
+   ],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "274290": {
+   "id": 274290,
+   "name": "Painwalker Buckler",
+   "kind": "Shield",
+   "quality": 3,
+   "req": 29,
+   "ilvl": 34,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 738,
+   "block": 16,
+   "stats": {
+    "stamina": 6
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 13 and damage done by up to 5 for all magical spells and effects.",
+    "Equip: 17% chance when struck in combat to gain 12 mana per 5 sec for 10 sec. (Proc chance: 17%)"
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "274381": {
+   "id": 274381,
+   "name": "Coldbringer Spine",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 38,
+   "ilvl": 43,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 63,
+   "dmgMax": 95,
+   "speed": 2.8,
+   "dps": 28.21,
+   "stats": {
+    "spirit": 20
+   },
+   "equip": [
+    "Equip: Improves your chance to hit by 1.0%.",
+    "Equip: Increases damage done by Frost spells and effects by up to 59."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
   "274383": {
    "id": 274383,
    "name": "Kanai's Knife",
@@ -62049,6 +63882,132 @@
    "chance": [],
    "bonus": {
     "spellPower": 66
+   },
+   "numbers": "forever"
+  },
+  "274430": {
+   "id": 274430,
+   "name": "Rock Sentinel Slicer",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 39,
+   "ilvl": 44,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 64,
+   "dmgMax": 97,
+   "speed": 2.8,
+   "dps": 28.75,
+   "stats": {
+    "intellect": 12
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 94 and damage done by up to 31 for all magical spells and effects.",
+    "Equip: While in combat, your healing spells have a chance to grant an ally 300 armor for 10 sec."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "274485": {
+   "id": 274485,
+   "name": "Axe of Lingering Dread",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 39,
+   "ilvl": 44,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 93,
+   "dmgMax": 140,
+   "speed": 3,
+   "dps": 38.83,
+   "stats": {},
+   "equip": [
+    "Equip: Increases your chance to Dodge an attack by 1.0%.",
+    "Equip: Increases your chance to Parry an attack by 1.0%."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "274647": {
+   "id": 274647,
+   "name": "Farraki Kris",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 42,
+   "ilvl": 47,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 23,
+   "dmgMax": 44,
+   "speed": 1.6,
+   "dps": 20.94,
+   "stats": {},
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 54.",
+    "Equip: Chance on harmful spell cast to afflict the target with a draining ritual, leeching 19 health every 2 sec for 6 sec. (100ms cooldown)"
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 54
+   },
+   "numbers": "forever"
+  },
+  "274652": {
+   "id": 274652,
+   "name": "Wall of Water",
+   "kind": "Shield",
+   "quality": 3,
+   "req": 43,
+   "ilvl": 48,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 1676,
+   "block": 27,
+   "stats": {},
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 14."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 14
+   },
+   "numbers": "forever"
+  },
+  "274658": {
+   "id": 274658,
+   "name": "Dune Hacker",
+   "kind": "1H Axe",
+   "quality": 3,
+   "req": 42,
+   "ilvl": 47,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 34,
+   "dmgMax": 63,
+   "speed": 2.3,
+   "dps": 21.09,
+   "stats": {
+    "stamina": 10
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 54."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 54
    },
    "numbers": "forever"
   },
@@ -62195,6 +64154,77 @@
    "bonus": {},
    "numbers": "forever"
   },
+  "274952": {
+   "id": 274952,
+   "name": "Jom-jom's Gabbar",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 43,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 33,
+   "dmgMax": 62,
+   "speed": 1.9,
+   "dps": 25,
+   "stats": {},
+   "equip": [],
+   "use": [],
+   "chance": [
+    "Chance on hit: Launch a boulder, dealing 98 Physical damage."
+   ],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "275011": {
+   "id": 275011,
+   "name": "Thud Hammer",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 46,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 99,
+   "dmgMax": 150,
+   "speed": 3.5,
+   "dps": 35.57,
+   "stats": {
+    "strength": 13,
+    "stamina": 13
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "275025": {
+   "id": 275025,
+   "name": "Dunston's Ogre Duster",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 0,
+   "ilvl": 44,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 54,
+   "dmgMax": 101,
+   "speed": 2.6,
+   "dps": 29.81,
+   "stats": {
+    "strength": 10,
+    "stamina": 4
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
   "275049": {
    "id": 275049,
    "name": "Farholde Bastion",
@@ -62232,6 +64262,28 @@
    "stats": {
     "strength": 9,
     "stamina": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "275290": {
+   "id": 275290,
+   "name": "Stormforged Protector",
+   "kind": "Shield",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 14,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 311,
+   "block": 5,
+   "stats": {
+    "strength": 1,
+    "stamina": 1
    },
    "equip": [],
    "use": [],
@@ -63043,6 +65095,29 @@
    },
    "numbers": "forever"
   },
+  "275864": {
+   "id": 275864,
+   "name": "Putridus Wall",
+   "kind": "Shield",
+   "quality": 3,
+   "req": 45,
+   "ilvl": 50,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 1739,
+   "block": 29,
+   "stats": {
+    "stamina": 10
+   },
+   "equip": [
+    "Equip: Increased Defense +5."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
   "276273": {
    "id": 276273,
    "name": "Empty Fish Bucket",
@@ -63130,6 +65205,29 @@
    "bonus": {
     "attackPower": 10
    },
+   "numbers": "forever"
+  },
+  "276419": {
+   "id": 276419,
+   "name": "Lightcrest Hammer",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 55,
+   "ilvl": 60,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 66,
+   "dmgMax": 123,
+   "speed": 2.4,
+   "dps": 39.38,
+   "stats": {},
+   "equip": [],
+   "use": [],
+   "chance": [
+    "Chance on hit: Smites a target for 105 Holy damage. Deals 2 times as much damage to Undead."
+   ],
+   "bonus": {},
    "numbers": "forever"
   },
   "276538": {
@@ -66105,6 +68203,167 @@
    "bonus": {},
    "numbers": "forever"
   },
+  "279838": {
+   "id": 279838,
+   "name": "Arcane Infused Rod",
+   "kind": "Off-hand",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 36,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {},
+   "equip": [
+    "Equip: Increases damage done by Arcane spells and effects by up to 11."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "279841": {
+   "id": 279841,
+   "name": "Defender of Dalaran",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 0,
+   "ilvl": 36,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 82,
+   "dmgMax": 124,
+   "speed": 3.3,
+   "dps": 31.21,
+   "stats": {
+    "strength": 9,
+    "stamina": 13,
+    "intellect": 9
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "279844": {
+   "id": 279844,
+   "name": "Striking Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "ilvl": 36,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 77,
+   "dmgMax": 117,
+   "speed": 3.1,
+   "dps": 31.29,
+   "stats": {
+    "strength": 9,
+    "stamina": 6,
+    "intellect": 14
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "279874": {
+   "id": 279874,
+   "name": "The Stitcher",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 24,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 13,
+   "dmgMax": 26,
+   "speed": 2.4,
+   "dps": 8.13,
+   "stats": {
+    "stamina": 3
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 30 and damage done by up to 10 for all magical spells and effects."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "279895": {
+   "id": 279895,
+   "name": "Ironforge Greathammer",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 0,
+   "ilvl": 18,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 39,
+   "dmgMax": 60,
+   "speed": 3.1,
+   "dps": 15.97,
+   "stats": {},
+   "equip": [],
+   "use": [],
+   "chance": [
+    "Chance on hit: Blasts a target for 42 Fire damage."
+   ],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "279898": {
+   "id": 279898,
+   "name": "Dwarven Tome",
+   "kind": "Off-hand",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 17,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "spirit": 1
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 3."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 3
+   },
+   "numbers": "forever"
+  },
+  "280304": {
+   "id": 280304,
+   "name": "Invisible Dagger",
+   "kind": "Dagger",
+   "quality": 4,
+   "req": 0,
+   "ilvl": 1,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 9,
+   "dmgMax": 18,
+   "speed": 2,
+   "dps": 6.75,
+   "stats": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
   "280306": {
    "id": 280306,
    "name": "Whimsical Waistwrap",
@@ -66355,6 +68614,33 @@
    "use": [],
    "chance": [],
    "bonus": {},
+   "numbers": "forever"
+  },
+  "280805": {
+   "id": 280805,
+   "name": "Serrated Raptor Claw",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 33,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 19,
+   "dmgMax": 36,
+   "speed": 1.6,
+   "dps": 17.19,
+   "stats": {
+    "agility": 3
+   },
+   "equip": [
+    "Equip: +6 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 6
+   },
    "numbers": "forever"
   },
   "281020": {
@@ -66727,6 +69013,54 @@
    "bonus": {},
    "numbers": "forever"
   },
+  "281648": {
+   "id": 281648,
+   "name": "Gul'gash's Greathammer",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 44,
+   "ilvl": 49,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 123,
+   "dmgMax": 185,
+   "speed": 3.6,
+   "dps": 42.78,
+   "stats": {
+    "strength": 19
+   },
+   "equip": [
+    "Equip: Increases damage done by magical spells and effects by up to 21."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "281665": {
+   "id": 281665,
+   "name": "Twilight Forgehammer",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 41,
+   "ilvl": 46,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 54,
+   "dmgMax": 101,
+   "speed": 2.5,
+   "dps": 31,
+   "stats": {},
+   "equip": [],
+   "use": [],
+   "chance": [
+    "Chance on hit: Blast the target with the fires of a forge, inflicting 51 Fire damage."
+   ],
+   "bonus": {},
+   "numbers": "forever"
+  },
   "281720": {
    "id": 281720,
    "name": "Restored Chopper",
@@ -66889,6 +69223,108 @@
    "bonus": {},
    "numbers": "forever"
   },
+  "281750": {
+   "id": 281750,
+   "name": "Murloc Oracle's Dagger",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 32,
+   "ilvl": 37,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 16,
+   "dmgMax": 31,
+   "speed": 1.8,
+   "dps": 13.06,
+   "stats": {
+    "stamina": 3,
+    "spirit": 5
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 56 and damage done by up to 18 for all magical spells and effects."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "282007": {
+   "id": 282007,
+   "name": "Emerald Watcher's Dreamstaff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 44,
+   "ilvl": 49,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 76,
+   "dmgMax": 114,
+   "speed": 3,
+   "dps": 31.67,
+   "stats": {
+    "intellect": 19,
+    "spirit": 19
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 56."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 56
+   },
+   "numbers": "forever"
+  },
+  "282010": {
+   "id": 282010,
+   "name": "Tusk of Grunter",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 47,
+   "ilvl": 52,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 37,
+   "dmgMax": 69,
+   "speed": 1.7,
+   "dps": 31.18,
+   "stats": {
+    "strength": 7,
+    "agility": 4
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "282023": {
+   "id": 282023,
+   "name": "Clack's Claw",
+   "kind": "Fist",
+   "quality": 2,
+   "req": 50,
+   "ilvl": 55,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 57,
+   "dmgMax": 107,
+   "speed": 2.5,
+   "dps": 32.8,
+   "stats": {
+    "strength": 8,
+    "spirit": 4
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
   "282064": {
    "id": 282064,
    "name": "Tim's Lost Rib",
@@ -66913,6 +69349,52 @@
    "bonus": {},
    "numbers": "forever"
   },
+  "282070": {
+   "id": 282070,
+   "name": "Gruklash's Basher",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 56,
+   "ilvl": 61,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 136,
+   "dmgMax": 205,
+   "speed": 3.6,
+   "dps": 47.36,
+   "stats": {
+    "strength": 18,
+    "stamina": 13,
+    "spirit": 11
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "282088": {
+   "id": 282088,
+   "name": "Heart of Smoldar",
+   "kind": "Off-hand",
+   "quality": 2,
+   "req": 47,
+   "ilvl": 52,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 8
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 16 and damage done by up to 5 for all magical spells and effects."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
   "282284": {
    "id": 282284,
    "name": "Webwood Slicer",
@@ -66929,6 +69411,1051 @@
    "dps": 5.29,
    "stats": {
     "agility": 1
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "282551": {
+   "id": 282551,
+   "name": "Golem Fist",
+   "kind": "Fist",
+   "quality": 2,
+   "req": 33,
+   "ilvl": 38,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 34,
+   "dmgMax": 64,
+   "speed": 2.4,
+   "dps": 20.42,
+   "stats": {},
+   "equip": [],
+   "use": [],
+   "chance": [
+    "Chance on hit: Smash the target for 85 damage."
+   ],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "282555": {
+   "id": 282555,
+   "name": "Shadowforge Shield",
+   "kind": "Shield",
+   "quality": 2,
+   "req": 37,
+   "ilvl": 42,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 1148,
+   "block": 18,
+   "stats": {
+    "stamina": 7
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 8
+   },
+   "numbers": "forever"
+  },
+  "282639": {
+   "id": 282639,
+   "name": "Emogg's \"Crusher\"",
+   "kind": "1H Axe",
+   "quality": 3,
+   "req": 16,
+   "ilvl": 21,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 25,
+   "dmgMax": 48,
+   "speed": 2.6,
+   "dps": 14.04,
+   "stats": {
+    "strength": 4,
+    "stamina": 2
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "282654": {
+   "id": 282654,
+   "name": "Gnawed Bone",
+   "kind": "Off-hand",
+   "quality": 2,
+   "req": 21,
+   "ilvl": 26,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 3,
+    "spirit": 3
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "282702": {
+   "id": 282702,
+   "name": "Molok's Masher",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 36,
+   "ilvl": 41,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 89,
+   "dmgMax": 134,
+   "speed": 3.7,
+   "dps": 30.14,
+   "stats": {
+    "stamina": 17
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "282703": {
+   "id": 282703,
+   "name": "Needletooth's Needletooth",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 32,
+   "ilvl": 37,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 23,
+   "dmgMax": 44,
+   "speed": 1.7,
+   "dps": 19.71,
+   "stats": {},
+   "equip": [],
+   "use": [],
+   "chance": [
+    "Chance on hit: Puncture the target, inflicting 21 Physical damage."
+   ],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "282706": {
+   "id": 282706,
+   "name": "Rotting Meat",
+   "kind": "Off-hand",
+   "quality": 3,
+   "req": 39,
+   "ilvl": 44,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 12
+   },
+   "equip": [
+    "Equip: Increases damage done by magical spells and effects by up to 8."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "282721": {
+   "id": 282721,
+   "name": "Gnoll Shaman's Staff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 25,
+   "ilvl": 30,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 58,
+   "dmgMax": 88,
+   "speed": 3.6,
+   "dps": 20.28,
+   "stats": {
+    "strength": 7
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "283254": {
+   "id": 283254,
+   "name": "Heart of Alterac",
+   "kind": "Off-hand",
+   "quality": 2,
+   "req": 34,
+   "ilvl": 39,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 7,
+    "intellect": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "283462": {
+   "id": 283462,
+   "name": "Bayne's Bite",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 7,
+   "ilvl": 12,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 7,
+   "dmgMax": 14,
+   "speed": 1.6,
+   "dps": 6.56,
+   "stats": {
+    "strength": 1
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "284063": {
+   "id": 284063,
+   "name": "Witherbark Hatecleaver",
+   "kind": "2H Axe",
+   "quality": 2,
+   "req": 40,
+   "ilvl": 45,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 102,
+   "dmgMax": 154,
+   "speed": 3.7,
+   "dps": 34.59,
+   "stats": {
+    "strength": 13
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 15."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 15
+   },
+   "numbers": "forever"
+  },
+  "284166": {
+   "id": 284166,
+   "name": "Gnarlpine War Staff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 8,
+   "ilvl": 13,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 23,
+   "dmgMax": 36,
+   "speed": 3.3,
+   "dps": 8.94,
+   "stats": {
+    "strength": 3
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "284173": {
+   "id": 284173,
+   "name": "Impcaster's Staff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 11,
+   "ilvl": 16,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 16,
+   "dmgMax": 24,
+   "speed": 2.5,
+   "dps": 8,
+   "stats": {
+    "spirit": 4
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 8
+   },
+   "numbers": "forever"
+  },
+  "284174": {
+   "id": 284174,
+   "name": "Serrated Shadowclaw",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 10,
+   "ilvl": 15,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 9,
+   "dmgMax": 17,
+   "speed": 1.7,
+   "dps": 7.65,
+   "stats": {
+    "agility": 1
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "284177": {
+   "id": 284177,
+   "name": "Sinslayer's Smasher",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 13,
+   "ilvl": 18,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 16,
+   "dmgMax": 31,
+   "speed": 2.6,
+   "dps": 9.04,
+   "stats": {
+    "strength": 2
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "284228": {
+   "id": 284228,
+   "name": "Vial of Vile Liquid",
+   "kind": "Off-hand",
+   "quality": 2,
+   "req": 51,
+   "ilvl": 56,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "intellect": 13
+   },
+   "equip": [
+    "Equip: Improves your chance to get a critical strike by 0.5%."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "284230": {
+   "id": 284230,
+   "name": "Rage Paw",
+   "kind": "Fist",
+   "quality": 2,
+   "req": 48,
+   "ilvl": 53,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 57,
+   "dmgMax": 107,
+   "speed": 2.6,
+   "dps": 31.54,
+   "stats": {
+    "strength": 9
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "284257": {
+   "id": 284257,
+   "name": "Icesworn Decapitator",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 54,
+   "ilvl": 59,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 145,
+   "dmgMax": 219,
+   "speed": 3.6,
+   "dps": 50.56,
+   "stats": {
+    "strength": 17,
+    "stamina": 18
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 13."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 13
+   },
+   "numbers": "forever"
+  },
+  "284286": {
+   "id": 284286,
+   "name": "Battleguard Captain's Sticker",
+   "kind": "2H Axe",
+   "quality": 2,
+   "req": 8,
+   "ilvl": 13,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 26,
+   "dmgMax": 40,
+   "speed": 3.7,
+   "dps": 8.92,
+   "stats": {
+    "strength": 3
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "284287": {
+   "id": 284287,
+   "name": "Felweaver's Staff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 8,
+   "ilvl": 13,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 13,
+   "dmgMax": 21,
+   "speed": 2.6,
+   "dps": 6.54,
+   "stats": {
+    "intellect": 3
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 6."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 6
+   },
+   "numbers": "forever"
+  },
+  "284321": {
+   "id": 284321,
+   "name": "Centaur Raider's Axe",
+   "kind": "1H Axe",
+   "quality": 2,
+   "req": 6,
+   "ilvl": 11,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 10,
+   "dmgMax": 19,
+   "speed": 2.4,
+   "dps": 6.04,
+   "stats": {
+    "agility": 1
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "284322": {
+   "id": 284322,
+   "name": "Invading Marine's Shield",
+   "kind": "Shield",
+   "quality": 2,
+   "req": 6,
+   "ilvl": 11,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 207,
+   "block": 4,
+   "stats": {
+    "spirit": 1
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "284386": {
+   "id": 284386,
+   "name": "Whipfang's Skinsearer",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 19,
+   "ilvl": 24,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 18,
+   "dmgMax": 35,
+   "speed": 1.7,
+   "dps": 15.59,
+   "stats": {},
+   "equip": [],
+   "use": [],
+   "chance": [
+    "Chance on hit: Sear your target's flesh, dealing 67 to 101 Fire damage."
+   ],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "284459": {
+   "id": 284459,
+   "name": "Dendweller's Hammer",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 26,
+   "ilvl": 31,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 67,
+   "dmgMax": 102,
+   "speed": 3.3,
+   "dps": 25.61,
+   "stats": {
+    "stamina": 12,
+    "armor": 100
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "284668": {
+   "id": 284668,
+   "name": "Apothecary's Concoction",
+   "kind": "Off-hand",
+   "quality": 2,
+   "req": 19,
+   "ilvl": 24,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "284700": {
+   "id": 284700,
+   "name": "Den Guardian's Crusher",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 22,
+   "ilvl": 27,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 42,
+   "dmgMax": 64,
+   "speed": 2.9,
+   "dps": 18.28,
+   "stats": {},
+   "equip": [
+    "Equip: +20 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 20
+   },
+   "numbers": "forever"
+  },
+  "284704": {
+   "id": 284704,
+   "name": "Frostbitten Staff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 19,
+   "ilvl": 24,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 30,
+   "dmgMax": 46,
+   "speed": 2.4,
+   "dps": 15.83,
+   "stats": {
+    "spirit": 6
+   },
+   "equip": [
+    "Equip: Increases damage done by Frost spells and effects by up to 7."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "284717": {
+   "id": 284717,
+   "name": "Royal Satyr Slicer",
+   "kind": "1H Axe",
+   "quality": 2,
+   "req": 30,
+   "ilvl": 35,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 29,
+   "dmgMax": 55,
+   "speed": 2.3,
+   "dps": 18.26,
+   "stats": {
+    "spirit": 3
+   },
+   "equip": [
+    "Equip: +9 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 9
+   },
+   "numbers": "forever"
+  },
+  "285043": {
+   "id": 285043,
+   "name": "Snarling Fang",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 42,
+   "ilvl": 47,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 35,
+   "dmgMax": 66,
+   "speed": 1.8,
+   "dps": 28.06,
+   "stats": {
+    "stamina": 6
+   },
+   "equip": [
+    "Equip: +9 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 9
+   },
+   "numbers": "forever"
+  },
+  "285102": {
+   "id": 285102,
+   "name": "Darkmist Dirk",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 37,
+   "ilvl": 42,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 27,
+   "dmgMax": 50,
+   "speed": 1.6,
+   "dps": 24.06,
+   "stats": {
+    "stamina": 5
+   },
+   "equip": [
+    "Equip: +8 Attack Power."
+   ],
+   "use": [],
+   "chance": [
+    "Chance on hit: Your attacks have a high chance to poison the target for 8 Nature damage every 3 sec for 9 sec."
+   ],
+   "bonus": {
+    "attackPower": 8
+   },
+   "numbers": "forever"
+  },
+  "285192": {
+   "id": 285192,
+   "name": "Kobold Firestarter",
+   "kind": "Off-hand",
+   "quality": 2,
+   "req": 25,
+   "ilvl": 30,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 4
+   },
+   "equip": [
+    "Equip: Increases damage done by Fire spells and effects by up to 6."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "285212": {
+   "id": 285212,
+   "name": "Foulmountain Family Hammer",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 24,
+   "ilvl": 29,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 23,
+   "dmgMax": 44,
+   "speed": 2.2,
+   "dps": 15.23,
+   "stats": {
+    "stamina": 2
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 4."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 4
+   },
+   "numbers": "forever"
+  },
+  "285236": {
+   "id": 285236,
+   "name": "Worn Ranger's Dagger",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 3,
+   "ilvl": 8,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 5,
+   "dmgMax": 10,
+   "speed": 1.7,
+   "dps": 4.41,
+   "stats": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "285238": {
+   "id": 285238,
+   "name": "Chipped Spellstaff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 3,
+   "ilvl": 8,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 9,
+   "dmgMax": 14,
+   "speed": 2.8,
+   "dps": 4.11,
+   "stats": {
+    "stamina": 1
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 2."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 2
+   },
+   "numbers": "forever"
+  },
+  "285328": {
+   "id": 285328,
+   "name": "Taurenbane's Family Cleaver",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 23,
+   "ilvl": 28,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 62,
+   "dmgMax": 94,
+   "speed": 3.4,
+   "dps": 22.94,
+   "stats": {
+    "stamina": 9
+   },
+   "equip": [
+    "Equip: +32 Attack Power against Humanoids."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 32
+   },
+   "numbers": "forever"
+  },
+  "285344": {
+   "id": 285344,
+   "name": "Guard Captain's Barrier",
+   "kind": "Shield",
+   "quality": 3,
+   "req": 24,
+   "ilvl": 29,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 642,
+   "block": 13,
+   "stats": {
+    "strength": 6
+   },
+   "equip": [
+    "Equip: Increased Defense +4."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "285348": {
+   "id": 285348,
+   "name": "Alliance Outrunner Healing Rod",
+   "kind": "Off-hand",
+   "quality": 3,
+   "req": 21,
+   "ilvl": 26,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {},
+   "equip": [
+    "Equip: Increases healing done by up to 12 and damage done by up to 4 for all magical spells and effects."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "285350": {
+   "id": 285350,
+   "name": "Alliance Outrunner Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 21,
+   "ilvl": 26,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 32,
+   "dmgMax": 49,
+   "speed": 2.5,
+   "dps": 16.2,
+   "stats": {
+    "stamina": 9,
+    "spirit": 9
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 28."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 28
+   },
+   "numbers": "forever"
+  },
+  "286534": {
+   "id": 286534,
+   "name": "Silithid Piercer",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 21,
+   "ilvl": 26,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 15,
+   "dmgMax": 28,
+   "speed": 1.6,
+   "dps": 13.44,
+   "stats": {
+    "agility": 3
+   },
+   "equip": [
+    "Equip: +5 Attack Power against Beasts."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 5
+   },
+   "numbers": "forever"
+  },
+  "286537": {
+   "id": 286537,
+   "name": "Thunderstomp's Horn",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 21,
+   "ilvl": 26,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 19,
+   "dmgMax": 37,
+   "speed": 2.1,
+   "dps": 13.33,
+   "stats": {},
+   "equip": [],
+   "use": [],
+   "chance": [
+    "Chance on hit: Thunderstomp nearby enemies, inflicting 23 Nature damage."
+   ],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "286541": {
+   "id": 286541,
+   "name": "Bael'dun Tankard",
+   "kind": "Off-hand",
+   "quality": 2,
+   "req": 22,
+   "ilvl": 27,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "stats": {
+    "stamina": 3,
+    "spirit": 4
+   },
+   "equip": [],
+   "use": [
+    "Use: Restores 1293 mana over 27 sec.  Must remain seated while drinking. (10 Min Cooldown)"
+   ],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "286730": {
+   "id": 286730,
+   "name": "Pristine Orcish Dagger",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 12,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 10,
+   "dmgMax": 20,
+   "speed": 2.4,
+   "dps": 6.25,
+   "stats": {
+    "agility": 1
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "286742": {
+   "id": 286742,
+   "name": "Riptear's Cleaver",
+   "kind": "2H Axe",
+   "quality": 2,
+   "req": 0,
+   "ilvl": 13,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 23,
+   "dmgMax": 36,
+   "speed": 3.3,
+   "dps": 8.94,
+   "stats": {
+    "strength": 3
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "forever"
+  },
+  "286754": {
+   "id": 286754,
+   "name": "Ukta's Conduit",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 7,
+   "ilvl": 12,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 19,
+   "dmgMax": 36,
+   "speed": 3.3,
+   "dps": 8.33,
+   "stats": {
+    "stamina": 2
    },
    "equip": [],
    "use": [],

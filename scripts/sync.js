@@ -90,7 +90,10 @@ async function itemTables(build, eraBuild, questieLevels) {
       const cls = Number(s.AllowableClass);
       if (cls > 0 && !(cls & SHAMAN_BIT)) return;
       if (Number(s.OverallQualityID) < 2 || Number(s.RequiredLevel) > 60) return;
-    } else if (!(questieLevels.get(Number(id)) <= 60) && !extra) return;
+    // Without an ItemSparse row: keep Classic items QuestieDB lists for Forever,
+    // and items new to Forever (not in Classic Era), e.g. new dungeon quest
+    // rewards QuestieDB doesn't have yet. Wowhead decides later if they exist.
+    } else if (!(questieLevels.get(Number(id)) <= 60) && eraRow && !extra) return;
     out[id] = Object.assign(out[id] || {
       id: Number(id),
       name: s ? s.Display_lang : null,
@@ -139,6 +142,8 @@ function fillFromTooltip(item, json) {
   if (item.bind == null) item.bind = /Binds when picked up/.test(html) ? 'pickup' : /Binds when equipped/.test(html) ? 'equip' : null;
   const classes = html.replace(/<[^>]+>/g, '').match(/Classes: ([A-Za-z ,]+)/);
   if (classes && !/Shaman/.test(classes[1])) return false;
+  // A few recipes sit in the weapon rows of the client's Item table.
+  if (/^(Pattern|Plans|Schematic|Formula|Recipe): |^\[TMP\]/.test(item.name)) return false;
   return item.quality >= 2 && item.req <= 60;
 }
 
@@ -331,7 +336,9 @@ function diffItems(prev, next) {
   console.log('Talentos/hechizos con cambios: ' + talentLines.length + ' · ítems con cambios: ' + itemLines.length);
 
   // Weapon sources, then regenerate bundles; build-data also runs every
-  // validator (rules, translations, builds).
+  // validator (rules, translations, builds). Quest sources of new weapons come
+  // from foreverchanges.pro (cached per page, so only new items are fetched).
+  if (!OFFLINE) execFileSync(process.execPath, [path.join(__dirname, 'fetch-item-sources.js')], { stdio: 'inherit' });
   execFileSync(process.execPath, [path.join(__dirname, 'build-weapons.js')], { stdio: 'inherit' });
   // Recipe sources come from scripts/fetch-recipes.js (run it to refresh them).
   execFileSync(process.execPath, [path.join(__dirname, 'build-professions.js')], { stdio: 'inherit' });

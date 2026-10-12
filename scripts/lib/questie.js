@@ -145,7 +145,26 @@ function open(cacheDir, zoneNames) {
     return out;
   }
 
-  return { sources };
+  // Zones of a quest and of every quest before it in its chain (questKeys:
+  // preQuestGroup = 12, preQuestSingle = 13, zoneOrSort = 17). A reward handed
+  // in at a city can come from a chain whose earlier step is in a dungeon.
+  function chainZones(questId) {
+    const seen = new Set();
+    const zonesFound = [];
+    const walk = id => {
+      if (seen.has(id)) return;
+      seen.add(id);
+      const q = get(quests, id);
+      if (!q) return;
+      const z = q[16] > 0 ? zone(q[16]) : null;
+      if (z) zonesFound.push(z);
+      (q[11] || []).concat(q[12] || []).forEach(walk);
+    };
+    walk(questId);
+    return zonesFound;
+  }
+
+  return { sources, chainZones };
 }
 
 module.exports = { open, parseLua };

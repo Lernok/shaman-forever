@@ -21,7 +21,7 @@ if (fs.existsSync(areaFile)) parseCSV(fs.readFileSync(areaFile, 'utf8')).forEach
 const Q = questie.open(cacheDir, zones);
 
 // Dungeons and raids get their own tag so drops read as "boss in X".
-const INSTANCE = /Deadmines|Wailing Caverns|Shadowfang Keep|Blackfathom|Stockade|Gnomeregan|Razorfen|Scarlet Monastery|Uldaman|Zul'Farrak|Maraudon|Sunken Temple|Temple of Atal|Blackrock Depths|Blackrock Spire|Dire Maul|Scholomance|Stratholme|Ragefire|Molten Core|Onyxia|Blackwing|Zul'Gurub|Ahn'Qiraj|Naxxramas|Barrow Deeps|Hyjal/i;
+const INSTANCE = /Ruins of Lordaeron|Deadmines|Wailing Caverns|Shadowfang Keep|Blackfathom|Stockade|Gnomeregan|Razorfen|Scarlet Monastery|Uldaman|Zul'Farrak|Maraudon|Sunken Temple|Temple of Atal|Blackrock Depths|Blackrock Spire|Dire Maul|Scholomance|Stratholme|Ragefire|Molten Core|Onyxia|Blackwing|Zul'Gurub|Ahn'Qiraj|Naxxramas|Barrow Deeps|Hyjal/i;
 // Raids (and raid-like summons). Forever has its own raid lineup (Barrow Deeps,
 // Hyjal Summit, Onyxia...), so Classic raid sources are the least certain.
 const RAID = /Molten Core|Onyxia|Blackwing|Zul'Gurub|Ahn'Qiraj|Naxxramas|Barrow Deeps|Hyjal|Silithus/i;
@@ -42,7 +42,7 @@ function classify(item) {
   }
   src.filter(s => s.type === 'quest').forEach(q => out.push({ type: 'quest', quest: q.name || ('#' + q.id), questId: q.id, level: q.level, requiredLevel: q.requiredLevel, zone: q.zone, faction: q.faction || 'both', confidence: 'classic-assumed' }));
   // PvP rank rewards: sold in the rank halls, or named after a PvP rank.
-  const pvp = /^(High Warlord|Grand Marshal|Premier|Warlord|Marshal|General|Champion|Blood Guard|Knight-Lieutenant|Legionnaire|Stone Guard|Lieutenant Commander)'s /.test(item.name);
+  const pvp = /^(Premier )?(High Warlord|Grand Marshal|Premier|Warlord|Marshal|General|Champion|Blood Guard|Knight-Lieutenant|Legionnaire|Stone Guard|Lieutenant Commander)'s /.test(item.name);
   src.filter(s => s.type === 'vendor').forEach(v => out.push({ type: 'vendor', npc: v.name, zone: v.zone, faction: v.faction,
     pvp: pvp || /Champions' Hall|Hall of Legends/.test(v.zone || ''), confidence: 'classic-assumed' }));
   // No recorded source: a Classic item is usually a world or rare-mob drop
@@ -50,18 +50,38 @@ function classify(item) {
   // item is simply unknown until someone reports it.
   if (!out.length) {
     out.push(item.era === 'new'
-      ? { type: 'unknown', faction: 'both', confidence: 'community-untested' }
+      ? { type: 'unknown', faction: 'both', pvp: pvp || undefined, confidence: 'community-untested' }
       : { type: 'unrecorded', faction: 'both', confidence: 'classic-assumed' });
   }
   return out;
 }
 
-// Hand-recorded sources (data/item-sources.json) replace an "unknown" and add
-// to the automatic ones.
-const manual = JSON.parse(fs.readFileSync(path.join(root, 'data/item-sources.json'), 'utf8')).items;
+// Recorded sources replace an "unknown" and add to the automatic ones: by hand
+// (data/item-sources.json) first, else from foreverchanges.pro
+// (data/item-sources-fc.json, scripts/fetch-item-sources.js).
+const readItems = f => (fs.existsSync(path.join(root, f)) ? JSON.parse(fs.readFileSync(path.join(root, f), 'utf8')).items : {});
+const manual = readItems('data/item-sources.json');
+const fetched = readItems('data/item-sources-fc.json');
+const fcQuests = (fs.existsSync(path.join(root, 'data/item-sources-fc.json')) && JSON.parse(fs.readFileSync(path.join(root, 'data/item-sources-fc.json'), 'utf8')).quests) || {};
 function sourcesOf(item) {
   const auto = classify(item);
-  const extra = (manual[item.id] && manual[item.id].sources) || [];
+  const rec = manual[item.id] || fetched[item.id];
+  const extra = (rec && rec.sources) || [];
+  // Classic quests: Forever's level and zone when foreverchanges.pro has them.
+  auto.forEach(s => {
+    const fq = s.type === 'quest' && fcQuests[s.questId];
+    if (!fq) return;
+    Object.assign(s, { level: fq.level, requiredLevel: fq.requiredLevel || s.requiredLevel, zone: fq.zone, dungeon: fq.dungeon, ref: fq.ref });
+  });
+  // Dungeon quests: worth calling out, their rewards are often the best of their level.
+  // Also chains with a step in a dungeon (Hidden Enemies: handed in at Orgrimmar,
+  // Bazzalan and Jergosh are in Ragefire Chasm).
+  auto.concat(extra).forEach(s => {
+    if (s.type !== 'quest') return;
+    if (s.dungeon || INSTANCE.test(s.zone || '')) { s.dungeon = true; return; }
+    const inside = s.questId && Q.chainZones(s.questId).find(z => INSTANCE.test(z) && !RAID.test(z));
+    if (inside) { s.dungeon = true; s.dungeonZone = inside; }
+  });
   if (!extra.length) return auto;
   return extra.concat(auto.filter(s => s.type !== 'unknown'));
 }

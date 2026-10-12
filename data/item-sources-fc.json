@@ -1,0 +1,1822 @@
+{
+ "_readme": "Fuentes de misión de armas nuevas de Forever (items) y datos de Forever de las misiones de Classic que dan armas (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json, que tiene prioridad.",
+ "source": "https://foreverchanges.pro",
+ "fetched": "2026-10-11",
+ "items": {
+  "246164": {
+   "name": "Skullthumper",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Murlocs at the Gates",
+     "questId": 91285,
+     "level": 11,
+     "requiredLevel": 7,
+     "zone": "Paladin",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91285"
+    }
+   ]
+  },
+  "246165": {
+   "name": "Driftwood Smasher",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Murlocs at the Gates",
+     "questId": 91285,
+     "level": 11,
+     "requiredLevel": 7,
+     "zone": "Paladin",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91285"
+    }
+   ]
+  },
+  "248005": {
+   "name": "Northshire Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Rare Books",
+     "questId": 91777,
+     "level": 7,
+     "requiredLevel": 1,
+     "zone": "Elwynn Forest",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91777"
+    }
+   ]
+  },
+  "248007": {
+   "name": "Militia Shortblade",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Rare Books",
+     "questId": 91777,
+     "level": 7,
+     "requiredLevel": 1,
+     "zone": "Elwynn Forest",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91777"
+    }
+   ]
+  },
+  "248008": {
+   "name": "Apprentice's Spellstaff",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Rare Books",
+     "questId": 91777,
+     "level": 7,
+     "requiredLevel": 1,
+     "zone": "Elwynn Forest",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91777"
+    }
+   ]
+  },
+  "251485": {
+   "name": "Edward's Knife",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Frightened Request",
+     "questId": 92401,
+     "level": 22,
+     "requiredLevel": 15,
+     "zone": "Undercity",
+     "dungeon": true,
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92401"
+    }
+   ]
+  },
+  "251533": {
+   "name": "Forsaken Greataxe",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Wrath of Rath'mael",
+     "questId": 92422,
+     "level": 22,
+     "requiredLevel": 15,
+     "zone": "Ruins of Lordaeron",
+     "dungeon": true,
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92422"
+    }
+   ]
+  },
+  "251534": {
+   "name": "Gnarled Necromancer's Staff",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Wrath of Rath'mael",
+     "questId": 92422,
+     "level": 22,
+     "requiredLevel": 15,
+     "zone": "Ruins of Lordaeron",
+     "dungeon": true,
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92422"
+    }
+   ]
+  },
+  "257343": {
+   "name": "Balanced Quarterstaff",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Return to Valanaar",
+     "questId": 92880,
+     "level": 11,
+     "requiredLevel": 6,
+     "zone": "Zephras Isle",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92880"
+    }
+   ]
+  },
+  "257345": {
+   "name": "Honed Greathammer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Return to Valanaar",
+     "questId": 92880,
+     "level": 11,
+     "requiredLevel": 6,
+     "zone": "Zephras Isle",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92880"
+    }
+   ]
+  },
+  "257346": {
+   "name": "Quickblade's Dagger",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Return to Valanaar",
+     "questId": 92880,
+     "level": 11,
+     "requiredLevel": 6,
+     "zone": "Zephras Isle",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92880"
+    }
+   ]
+  },
+  "263312": {
+   "name": "Planting Shovel",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Deliver the News",
+     "questId": 92703,
+     "level": 9,
+     "requiredLevel": 5,
+     "zone": "Zephras Isle",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92703"
+    }
+   ]
+  },
+  "263313": {
+   "name": "Trusty Wrench",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Deliver the News",
+     "questId": 92703,
+     "level": 9,
+     "requiredLevel": 5,
+     "zone": "Zephras Isle",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92703"
+    }
+   ]
+  },
+  "263314": {
+   "name": "Roofing Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Deliver the News",
+     "questId": 92703,
+     "level": 9,
+     "requiredLevel": 5,
+     "zone": "Zephras Isle",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92703"
+    }
+   ]
+  },
+  "263329": {
+   "name": "Flutterfly Swatter",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Flutterfly Dust",
+     "questId": 92683,
+     "level": 9,
+     "requiredLevel": 5,
+     "zone": "Zephras Isle",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92683"
+    }
+   ]
+  },
+  "269716": {
+   "name": "Keen Skinning Knife",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Unwelcome Guests",
+     "questId": 95508,
+     "level": 18,
+     "requiredLevel": 14,
+     "zone": "The Barrens",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95508"
+    }
+   ]
+  },
+  "270005": {
+   "name": "Monastic Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Red Silk Bandanas",
+     "questId": 214,
+     "level": 17,
+     "requiredLevel": 14,
+     "zone": "The Deadmines",
+     "dungeon": true,
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/214"
+    }
+   ]
+  },
+  "270018": {
+   "name": "Hammerbone",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Leaders of the Fang",
+     "questId": 914,
+     "level": 22,
+     "requiredLevel": 10,
+     "zone": "Wailing Caverns",
+     "dungeon": true,
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/914"
+    }
+   ]
+  },
+  "270027": {
+   "name": "Ursine Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "What Comes Around...",
+     "questId": 386,
+     "level": 25,
+     "requiredLevel": 22,
+     "zone": "The Stockade",
+     "dungeon": true,
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/386"
+    }
+   ]
+  },
+  "270048": {
+   "name": "Uthil's Cudgel",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Insane Druids",
+     "questId": 1012,
+     "level": 32,
+     "requiredLevel": 24,
+     "zone": "Ashenvale",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/1012"
+    }
+   ]
+  },
+  "270049": {
+   "name": "Mavoris's Warstaff",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Insane Druids",
+     "questId": 1012,
+     "level": 32,
+     "requiredLevel": 24,
+     "zone": "Ashenvale",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/1012"
+    }
+   ]
+  },
+  "270069": {
+   "name": "Mindslicer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Call to Arms",
+     "questId": 679,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Arathi Highlands",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/679"
+    }
+   ]
+  },
+  "270070": {
+   "name": "Madman's Blade",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Colonel Kurzen",
+     "questId": 202,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Stranglethorn Vale",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/202"
+    }
+   ]
+  },
+  "270071": {
+   "name": "Dark Hearted Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Colonel Kurzen",
+     "questId": 202,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Stranglethorn Vale",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/202"
+    }
+   ]
+  },
+  "271664": {
+   "name": "Hornbeam Heft",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Horrors in the Highland",
+     "questId": 95646,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95646"
+    }
+   ]
+  },
+  "271667": {
+   "name": "Ironwood Destroyer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Horrors in the Highland",
+     "questId": 95646,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95646"
+    }
+   ]
+  },
+  "271766": {
+   "name": "Heavehammer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Earthen Echo",
+     "questId": 98823,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98823"
+    },
+    {
+     "type": "quest",
+     "quest": "Prehistoric Prism",
+     "questId": 98824,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98824"
+    }
+   ]
+  },
+  "271767": {
+   "name": "Healer's Staff",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Earthen Echo",
+     "questId": 98823,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98823"
+    },
+    {
+     "type": "quest",
+     "quest": "Prehistoric Prism",
+     "questId": 98824,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98824"
+    }
+   ]
+  },
+  "271797": {
+   "name": "Staff of Revelations",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Proof of Concept",
+     "questId": 92873,
+     "level": 41,
+     "requiredLevel": 35,
+     "zone": "Shen'dralas",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92873"
+    }
+   ]
+  },
+  "271799": {
+   "name": "Desert Crawler's Claw",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Test Your Theory",
+     "questId": 93045,
+     "level": 38,
+     "requiredLevel": 35,
+     "zone": "Desolace",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93045"
+    }
+   ]
+  },
+  "271801": {
+   "name": "Abandoned Ferocity",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Khan Jehn",
+     "questId": 93128,
+     "level": 42,
+     "requiredLevel": 35,
+     "zone": "Desolace",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93128"
+    }
+   ]
+  },
+  "271802": {
+   "name": "Bludgeon of Betrayed Virtues",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Khan Jehn",
+     "questId": 93128,
+     "level": 42,
+     "requiredLevel": 35,
+     "zone": "Desolace",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93128"
+    }
+   ]
+  },
+  "271803": {
+   "name": "Greatstaff of the Necrokhans",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Khan Jehn",
+     "questId": 93196,
+     "level": 42,
+     "requiredLevel": 35,
+     "zone": "Desolace",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93196"
+    }
+   ]
+  },
+  "271804": {
+   "name": "Soulsplatter Mace",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Khan Jehn",
+     "questId": 93196,
+     "level": 42,
+     "requiredLevel": 35,
+     "zone": "Desolace",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93196"
+    }
+   ]
+  },
+  "276887": {
+   "name": "Big Bad Basher",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Chol'aruk the Ravener (Horde)",
+     "questId": 97003,
+     "level": 21,
+     "requiredLevel": 15,
+     "zone": "The Barrens",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97003"
+    },
+    {
+     "type": "quest",
+     "quest": "Chol'aruk the Ravener (Alliance)",
+     "questId": 97005,
+     "level": 21,
+     "requiredLevel": 15,
+     "zone": "The Barrens",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97005"
+    }
+   ]
+  },
+  "276888": {
+   "name": "Quilboar Toothpick",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Chol'aruk the Ravener (Horde)",
+     "questId": 97003,
+     "level": 21,
+     "requiredLevel": 15,
+     "zone": "The Barrens",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97003"
+    },
+    {
+     "type": "quest",
+     "quest": "Chol'aruk the Ravener (Alliance)",
+     "questId": 97005,
+     "level": 21,
+     "requiredLevel": 15,
+     "zone": "The Barrens",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97005"
+    }
+   ]
+  },
+  "277247": {
+   "name": "Mug of Muddled Memories",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Leonid's Letter",
+     "questId": 98545,
+     "level": 13,
+     "requiredLevel": 10,
+     "zone": "Tirisfal Glades",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98545"
+    }
+   ]
+  },
+  "277286": {
+   "name": "Encroacher's Claim",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Wrongly Blamed, Justly Corrected",
+     "questId": 97250,
+     "level": 23,
+     "requiredLevel": 18,
+     "zone": "The Barrens",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97250"
+    }
+   ]
+  },
+  "277288": {
+   "name": "Pathfinder's Clearway",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Wrongly Blamed, Justly Corrected",
+     "questId": 97250,
+     "level": 23,
+     "requiredLevel": 18,
+     "zone": "The Barrens",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97250"
+    }
+   ]
+  },
+  "277515": {
+   "name": "Dagger of Deals",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hate the Hatefury",
+     "questId": 97265,
+     "level": 33,
+     "requiredLevel": 28,
+     "zone": "Desolace",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97265"
+    }
+   ]
+  },
+  "277988": {
+   "name": "Hoof-Holstered Blade",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Stalk With The Earthmother",
+     "questId": 76240,
+     "level": 11,
+     "requiredLevel": 4,
+     "zone": "Mulgore",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/76240"
+    }
+   ]
+  },
+  "278002": {
+   "name": "Valley Cosh",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Stalk With The Earthmother",
+     "questId": 76240,
+     "level": 11,
+     "requiredLevel": 4,
+     "zone": "Mulgore",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/76240"
+    }
+   ]
+  },
+  "279841": {
+   "name": "Defender of Dalaran",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Heart of Disruption (Alliance)",
+     "questId": 92458,
+     "level": 33,
+     "requiredLevel": 24,
+     "zone": "City of Dalaran",
+     "dungeon": true,
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92458"
+    }
+   ]
+  },
+  "279844": {
+   "name": "Striking Staff",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Heart of Disruption (Horde)",
+     "questId": 96984,
+     "level": 33,
+     "requiredLevel": 24,
+     "zone": "City of Dalaran",
+     "dungeon": true,
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96984"
+    }
+   ]
+  },
+  "279874": {
+   "name": "The Stitcher",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Light's Justice",
+     "questId": 92421,
+     "level": 22,
+     "requiredLevel": 15,
+     "zone": "Ruins of Lordaeron",
+     "dungeon": true,
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92421"
+    }
+   ]
+  },
+  "279895": {
+   "name": "Ironforge Greathammer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Old Ironforge Incursion",
+     "questId": 96393,
+     "level": 16,
+     "requiredLevel": 9,
+     "zone": "The Hall of Thanes",
+     "dungeon": true,
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96393"
+    }
+   ]
+  },
+  "280604": {
+   "name": "Rage of the Storm",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Tempest's Weapons",
+     "questId": 96016,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Shaman",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96016"
+    }
+   ]
+  },
+  "280605": {
+   "name": "Tidebringer's Claw",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Tempest's Weapons",
+     "questId": 96016,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Shaman",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96016"
+    }
+   ]
+  },
+  "280607": {
+   "name": "Lightning's Grasp",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Tempest's Weapons",
+     "questId": 96016,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Shaman",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96016"
+    }
+   ]
+  },
+  "280805": {
+   "name": "Serrated Raptor Claw",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Changing Tastes",
+     "questId": 95697,
+     "level": 31,
+     "requiredLevel": 24,
+     "zone": "Excavation Site: Wetlands",
+     "dungeon": true,
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95697"
+    }
+   ]
+  },
+  "281253": {
+   "name": "Mountaineer's Greataxe",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Banner of the Fallen",
+     "questId": 86585,
+     "level": 17,
+     "requiredLevel": 10,
+     "zone": "Loch Modan",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/86585"
+    }
+   ]
+  },
+  "281254": {
+   "name": "Invader's Mace",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Banner of the Fallen",
+     "questId": 86585,
+     "level": 17,
+     "requiredLevel": 10,
+     "zone": "Loch Modan",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/86585"
+    }
+   ]
+  },
+  "281257": {
+   "name": "Daggerfang's Daggerfang",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Twisting the Knife",
+     "questId": 86758,
+     "level": 16,
+     "requiredLevel": 12,
+     "zone": "Loch Modan",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/86758"
+    }
+   ]
+  },
+  "281274": {
+   "name": "Makeshift Stormcaller",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Stormy Potential",
+     "questId": 97282,
+     "level": 11,
+     "requiredLevel": 7,
+     "zone": "Durotar",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97282"
+    }
+   ]
+  },
+  "281297": {
+   "name": "Royal Dagger",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Friend of the Family (part 2)",
+     "questId": 98191,
+     "level": 25,
+     "requiredLevel": 20,
+     "zone": "Stormwind City",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98191"
+    }
+   ]
+  },
+  "281312": {
+   "name": "Fallen Dragon's Scepter",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Stopping the Cycle",
+     "questId": 98297,
+     "level": 34,
+     "requiredLevel": 24,
+     "zone": "Wetlands",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98297"
+    }
+   ]
+  },
+  "281314": {
+   "name": "Subdued Dragon's Fang",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Stopping the Cycle",
+     "questId": 98297,
+     "level": 34,
+     "requiredLevel": 24,
+     "zone": "Wetlands",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98297"
+    }
+   ]
+  },
+  "282064": {
+   "name": "Tim's Lost Rib",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Leonid's Letter",
+     "questId": 98545,
+     "level": 13,
+     "requiredLevel": 10,
+     "zone": "Tirisfal Glades",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98545"
+    }
+   ]
+  },
+  "282284": {
+   "name": "Webwood Slicer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Twisted Hatred",
+     "questId": 98403,
+     "level": 12,
+     "requiredLevel": 4,
+     "zone": "Teldrassil",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98403"
+    }
+   ]
+  },
+  "286730": {
+   "name": "Pristine Orcish Dagger",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Threat from Below",
+     "questId": 99052,
+     "level": 12,
+     "requiredLevel": 10,
+     "zone": "Durotar",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/99052"
+    }
+   ]
+  },
+  "286742": {
+   "name": "Riptear's Cleaver",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Rear Guard Patrol",
+     "questId": 99156,
+     "level": 13,
+     "requiredLevel": 6,
+     "zone": "Tirisfal Glades",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/99156"
+    }
+   ]
+  }
+ },
+ "quests": {
+  "14": {
+   "quest": "The People's Militia",
+   "level": 17,
+   "requiredLevel": 9,
+   "zone": "Westfall",
+   "ref": "https://foreverchanges.pro/quest/14"
+  },
+  "19": {
+   "quest": "Tharil'zun",
+   "level": 25,
+   "requiredLevel": 18,
+   "zone": "Redridge Mountains",
+   "ref": "https://foreverchanges.pro/quest/19"
+  },
+  "98": {
+   "quest": "The Legend of Stalvan",
+   "level": 35,
+   "requiredLevel": 22,
+   "zone": "Duskwood",
+   "ref": "https://foreverchanges.pro/quest/98"
+  },
+  "99": {
+   "quest": "Arugal's Folly (part 3)",
+   "level": 15,
+   "requiredLevel": null,
+   "zone": "Silverpine Forest",
+   "ref": "https://foreverchanges.pro/quest/99"
+  },
+  "166": {
+   "quest": "The Defias Brotherhood",
+   "level": 22,
+   "requiredLevel": 14,
+   "zone": "The Deadmines",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/166"
+  },
+  "167": {
+   "quest": "Oh Brother...",
+   "level": 20,
+   "requiredLevel": 15,
+   "zone": "The Deadmines",
+   "ref": "https://foreverchanges.pro/quest/167"
+  },
+  "176": {
+   "quest": "WANTED: \"Hogger\"",
+   "level": 11,
+   "requiredLevel": 5,
+   "zone": "Elwynn Forest",
+   "ref": "https://foreverchanges.pro/quest/176"
+  },
+  "204": {
+   "quest": "Bad Medicine",
+   "level": 34,
+   "requiredLevel": 30,
+   "zone": "Stranglethorn Vale",
+   "ref": "https://foreverchanges.pro/quest/204"
+  },
+  "214": {
+   "quest": "Red Silk Bandanas",
+   "level": 17,
+   "requiredLevel": 14,
+   "zone": "The Deadmines",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/214"
+  },
+  "283": {
+   "quest": "A Dark Threat Looms",
+   "level": 20,
+   "requiredLevel": 16,
+   "zone": "Loch Modan",
+   "ref": "https://foreverchanges.pro/quest/283"
+  },
+  "286": {
+   "quest": "Return the Statuette (given by Half-buried Barrel)",
+   "level": 25,
+   "requiredLevel": 20,
+   "zone": "Wetlands",
+   "ref": "https://foreverchanges.pro/quest/286"
+  },
+  "297": {
+   "quest": "Gathering Idols",
+   "level": 18,
+   "requiredLevel": 13,
+   "zone": "Loch Modan",
+   "ref": "https://foreverchanges.pro/quest/297"
+  },
+  "314": {
+   "quest": "Protecting the Herd",
+   "level": 12,
+   "requiredLevel": 6,
+   "zone": "Dun Morogh",
+   "ref": "https://foreverchanges.pro/quest/314"
+  },
+  "328": {
+   "quest": "The Hidden Key",
+   "level": 37,
+   "requiredLevel": 30,
+   "zone": "Stranglethorn Vale",
+   "ref": "https://foreverchanges.pro/quest/328"
+  },
+  "378": {
+   "quest": "The Fury Runs Deep",
+   "level": 27,
+   "requiredLevel": null,
+   "zone": "The Stockade",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/378"
+  },
+  "386": {
+   "quest": "What Comes Around...",
+   "level": 25,
+   "requiredLevel": 22,
+   "zone": "The Stockade",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/386"
+  },
+  "408": {
+   "quest": "The Family Crypt",
+   "level": 13,
+   "requiredLevel": 7,
+   "zone": "Tirisfal Glades",
+   "ref": "https://foreverchanges.pro/quest/408"
+  },
+  "417": {
+   "quest": "A Pilot's Revenge",
+   "level": 11,
+   "requiredLevel": 8,
+   "zone": "Dun Morogh",
+   "ref": "https://foreverchanges.pro/quest/417"
+  },
+  "474": {
+   "quest": "Defeat Nek'rosh",
+   "level": 32,
+   "requiredLevel": 23,
+   "zone": "Wetlands",
+   "ref": "https://foreverchanges.pro/quest/474"
+  },
+  "480": {
+   "quest": "The Weaver",
+   "level": 22,
+   "requiredLevel": 10,
+   "zone": "Silverpine Forest",
+   "ref": "https://foreverchanges.pro/quest/480"
+  },
+  "483": {
+   "quest": "The Relics of Wakening",
+   "level": 9,
+   "requiredLevel": 4,
+   "zone": "Teldrassil",
+   "ref": "https://foreverchanges.pro/quest/483"
+  },
+  "486": {
+   "quest": "Ursal the Mauler",
+   "level": 12,
+   "requiredLevel": 4,
+   "zone": "Teldrassil",
+   "ref": "https://foreverchanges.pro/quest/486"
+  },
+  "491": {
+   "quest": "Wand to Bethor",
+   "level": 18,
+   "requiredLevel": 12,
+   "zone": "Silverpine Forest",
+   "ref": "https://foreverchanges.pro/quest/491"
+  },
+  "562": {
+   "quest": "Stormwind Ho!",
+   "level": 32,
+   "requiredLevel": 25,
+   "zone": "Hillsbrad Foothills",
+   "ref": "https://foreverchanges.pro/quest/562"
+  },
+  "592": {
+   "quest": "Saving Yenniku",
+   "level": 46,
+   "requiredLevel": 30,
+   "zone": "Stranglethorn Vale",
+   "ref": "https://foreverchanges.pro/quest/592"
+  },
+  "600": {
+   "quest": "Venture Company Mining",
+   "level": 41,
+   "requiredLevel": 30,
+   "zone": "Stranglethorn Vale",
+   "ref": "https://foreverchanges.pro/quest/600"
+  },
+  "662": {
+   "quest": "Deep Sea Salvage",
+   "level": 40,
+   "requiredLevel": 35,
+   "zone": "Arathi Highlands",
+   "ref": "https://foreverchanges.pro/quest/662"
+  },
+  "666": {
+   "quest": "Sunken Treasure (part 2)",
+   "level": 40,
+   "requiredLevel": 35,
+   "zone": "Arathi Highlands",
+   "ref": "https://foreverchanges.pro/quest/666"
+  },
+  "679": {
+   "quest": "Call to Arms",
+   "level": 40,
+   "requiredLevel": 30,
+   "zone": "Arathi Highlands",
+   "ref": "https://foreverchanges.pro/quest/679"
+  },
+  "719": {
+   "quest": "A Dwarf and His Tools",
+   "level": 35,
+   "requiredLevel": 35,
+   "zone": "Badlands",
+   "ref": "https://foreverchanges.pro/quest/719"
+  },
+  "739": {
+   "quest": "Murdaloc",
+   "level": 42,
+   "requiredLevel": 30,
+   "zone": "Badlands",
+   "ref": "https://foreverchanges.pro/quest/739"
+  },
+  "765": {
+   "quest": "Supervisor Fizsprocket",
+   "level": 12,
+   "requiredLevel": 5,
+   "zone": "Mulgore",
+   "ref": "https://foreverchanges.pro/quest/765"
+  },
+  "770": {
+   "quest": "The Demon Scarred Cloak",
+   "level": 12,
+   "requiredLevel": 6,
+   "zone": "Mulgore",
+   "ref": "https://foreverchanges.pro/quest/770"
+  },
+  "827": {
+   "quest": "Skull Rock",
+   "level": 12,
+   "requiredLevel": 4,
+   "zone": "Durotar",
+   "ref": "https://foreverchanges.pro/quest/827"
+  },
+  "853": {
+   "quest": "Apothecary Zamah",
+   "level": 15,
+   "requiredLevel": 10,
+   "zone": "The Barrens",
+   "ref": "https://foreverchanges.pro/quest/853"
+  },
+  "855": {
+   "quest": "Centaur Bracers",
+   "level": 14,
+   "requiredLevel": 9,
+   "zone": "The Barrens",
+   "ref": "https://foreverchanges.pro/quest/855"
+  },
+  "876": {
+   "quest": "Serena Bloodfeather",
+   "level": 20,
+   "requiredLevel": 12,
+   "zone": "The Barrens",
+   "ref": "https://foreverchanges.pro/quest/876"
+  },
+  "893": {
+   "quest": "Weapons of Choice",
+   "level": 24,
+   "requiredLevel": 17,
+   "zone": "The Barrens",
+   "ref": "https://foreverchanges.pro/quest/893"
+  },
+  "902": {
+   "quest": "Samophlange",
+   "level": 16,
+   "requiredLevel": 10,
+   "zone": "The Barrens",
+   "ref": "https://foreverchanges.pro/quest/902"
+  },
+  "913": {
+   "quest": "Cry of the Thunderhawk",
+   "level": 20,
+   "requiredLevel": 10,
+   "zone": "The Barrens",
+   "ref": "https://foreverchanges.pro/quest/913"
+  },
+  "914": {
+   "quest": "Leaders of the Fang",
+   "level": 22,
+   "requiredLevel": 10,
+   "zone": "Wailing Caverns",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/914"
+  },
+  "943": {
+   "quest": "The Absent Minded Prospector",
+   "level": 24,
+   "requiredLevel": 15,
+   "zone": "Darkshore",
+   "ref": "https://foreverchanges.pro/quest/943"
+  },
+  "951": {
+   "quest": "Mathystra Relics",
+   "level": 20,
+   "requiredLevel": 12,
+   "zone": "Darkshore",
+   "ref": "https://foreverchanges.pro/quest/951"
+  },
+  "973": {
+   "quest": "The Tower of Althalaxx",
+   "level": 24,
+   "requiredLevel": 13,
+   "zone": "Darkshore",
+   "ref": "https://foreverchanges.pro/quest/973"
+  },
+  "1046": {
+   "quest": "Raene's Cleansing (part 11)",
+   "level": 30,
+   "requiredLevel": 18,
+   "zone": "Ashenvale",
+   "ref": "https://foreverchanges.pro/quest/1046"
+  },
+  "1053": {
+   "quest": "In the Name of the Light",
+   "level": 40,
+   "requiredLevel": 34,
+   "zone": "Scarlet Monastery",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/1053"
+  },
+  "1173": {
+   "quest": "Challenge Overlord Mok'Morokk",
+   "level": 45,
+   "requiredLevel": 38,
+   "zone": "Dustwallow Marsh",
+   "ref": "https://foreverchanges.pro/quest/1173"
+  },
+  "1184": {
+   "quest": "Parts of the Swarm (given by Korran)",
+   "level": 35,
+   "requiredLevel": 28,
+   "zone": "Thousand Needles",
+   "ref": "https://foreverchanges.pro/quest/1184"
+  },
+  "1383": {
+   "quest": "Nothing But The Truth (part 2)",
+   "level": 42,
+   "requiredLevel": 37,
+   "zone": "Duskwood",
+   "ref": "https://foreverchanges.pro/quest/1383"
+  },
+  "1394": {
+   "quest": "Final Passage",
+   "level": 36,
+   "requiredLevel": 25,
+   "zone": "Thousand Needles",
+   "ref": "https://foreverchanges.pro/quest/1394"
+  },
+  "1427": {
+   "quest": "Threat From the Sea (part 2)",
+   "level": 43,
+   "requiredLevel": 35,
+   "zone": "Swamp of Sorrows",
+   "ref": "https://foreverchanges.pro/quest/1427"
+  },
+  "2240": {
+   "quest": "The Hidden Chamber",
+   "level": 40,
+   "requiredLevel": 35,
+   "zone": "Uldaman",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/2240"
+  },
+  "2846": {
+   "quest": "Tiara of the Deep",
+   "level": 46,
+   "requiredLevel": 40,
+   "zone": "Zul'Farrak",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/2846"
+  },
+  "2928": {
+   "quest": "Gyrodrillmatic Excavationators",
+   "level": 30,
+   "requiredLevel": 20,
+   "zone": "Gnomeregan",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/2928"
+  },
+  "2930": {
+   "quest": "Data Rescue",
+   "level": 30,
+   "requiredLevel": 25,
+   "zone": "Gnomeregan",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/2930"
+  },
+  "2994": {
+   "quest": "Saving Sharpbeak",
+   "level": 51,
+   "requiredLevel": 40,
+   "zone": "The Hinterlands",
+   "ref": "https://foreverchanges.pro/quest/2994"
+  },
+  "3129": {
+   "quest": "Weapons of Spirit",
+   "level": 50,
+   "requiredLevel": 40,
+   "zone": "Feralas",
+   "ref": "https://foreverchanges.pro/quest/3129"
+  },
+  "3161": {
+   "quest": "Gahz'ridian",
+   "level": 48,
+   "requiredLevel": 43,
+   "zone": "Tanaris",
+   "ref": "https://foreverchanges.pro/quest/3161"
+  },
+  "3463": {
+   "quest": "Set Them Ablaze!",
+   "level": 52,
+   "requiredLevel": 40,
+   "zone": "Searing Gorge",
+   "ref": "https://foreverchanges.pro/quest/3463"
+  },
+  "3507": {
+   "quest": "Betrayed (given by Ag'tor Bloodfist)",
+   "level": 56,
+   "requiredLevel": 44,
+   "zone": "Orgrimmar",
+   "ref": "https://foreverchanges.pro/quest/3507"
+  },
+  "3528": {
+   "quest": "The God Hakkar",
+   "level": 53,
+   "requiredLevel": 40,
+   "zone": "Sunken Temple",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/3528"
+  },
+  "3625": {
+   "quest": "Enchanted Azsharite Fel Weaponry",
+   "level": 58,
+   "requiredLevel": 45,
+   "zone": "Stranglethorn Vale",
+   "ref": "https://foreverchanges.pro/quest/3625"
+  },
+  "4126": {
+   "quest": "Hurley Blackbreath",
+   "level": 55,
+   "requiredLevel": 50,
+   "zone": "Blackrock Depths",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/4126"
+  },
+  "4134": {
+   "quest": "Lost Thunderbrew Recipe",
+   "level": 55,
+   "requiredLevel": 50,
+   "zone": "Blackrock Depths",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/4134"
+  },
+  "4266": {
+   "quest": "A Hero's Welcome",
+   "level": 46,
+   "requiredLevel": 40,
+   "zone": "Feralas",
+   "ref": "https://foreverchanges.pro/quest/4266"
+  },
+  "4300": {
+   "quest": "Bone-Bladed Weapons",
+   "level": 52,
+   "requiredLevel": 48,
+   "zone": "Orgrimmar",
+   "ref": "https://foreverchanges.pro/quest/4300"
+  },
+  "4301": {
+   "quest": "The Mighty U'cha",
+   "level": 55,
+   "requiredLevel": 50,
+   "zone": "Un'Goro Crater",
+   "ref": "https://foreverchanges.pro/quest/4301"
+  },
+  "4322": {
+   "quest": "Jail Break!",
+   "level": 58,
+   "requiredLevel": 50,
+   "zone": "Blackrock Depths",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/4322"
+  },
+  "4771": {
+   "quest": "Dawn's Gambit",
+   "level": 60,
+   "requiredLevel": 57,
+   "zone": "Scholomance",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/4771"
+  },
+  "4810": {
+   "quest": "Return to Tinkee",
+   "level": 54,
+   "requiredLevel": 50,
+   "zone": "Winterspring",
+   "ref": "https://foreverchanges.pro/quest/4810"
+  },
+  "4813": {
+   "quest": "The Fragments Within",
+   "level": 14,
+   "requiredLevel": 12,
+   "zone": "Darkshore",
+   "ref": "https://foreverchanges.pro/quest/4813"
+  },
+  "5056": {
+   "quest": "Shy-Rotam",
+   "level": 60,
+   "requiredLevel": 53,
+   "zone": "Winterspring",
+   "ref": "https://foreverchanges.pro/quest/5056"
+  },
+  "5088": {
+   "quest": "Arikara",
+   "level": 28,
+   "requiredLevel": 24,
+   "zone": "Thousand Needles",
+   "ref": "https://foreverchanges.pro/quest/5088"
+  },
+  "5265": {
+   "quest": "The Argent Hold",
+   "level": 60,
+   "requiredLevel": 55,
+   "zone": "Eastern Plaguelands",
+   "ref": "https://foreverchanges.pro/quest/5265"
+  },
+  "5385": {
+   "quest": "The Remains of Trey Lightforge",
+   "level": 57,
+   "requiredLevel": 49,
+   "zone": "Felwood",
+   "ref": "https://foreverchanges.pro/quest/5385"
+  },
+  "5466": {
+   "quest": "The Lich, Ras Frostwhisper",
+   "level": 60,
+   "requiredLevel": null,
+   "zone": "Scholomance",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/5466"
+  },
+  "5730": {
+   "quest": "Hidden Enemies",
+   "level": 16,
+   "requiredLevel": 9,
+   "zone": "Orgrimmar",
+   "ref": "https://foreverchanges.pro/quest/5730"
+  },
+  "5944": {
+   "quest": "In Dreams",
+   "level": 60,
+   "requiredLevel": 52,
+   "zone": "Western Plaguelands",
+   "ref": "https://foreverchanges.pro/quest/5944"
+  },
+  "6136": {
+   "quest": "The Corpulent One",
+   "level": 60,
+   "requiredLevel": 56,
+   "zone": "Eastern Plaguelands",
+   "ref": "https://foreverchanges.pro/quest/6136"
+  },
+  "6284": {
+   "quest": "Arachnophobia",
+   "level": 21,
+   "requiredLevel": 15,
+   "zone": "Stonetalon Mountains",
+   "ref": "https://foreverchanges.pro/quest/6284"
+  },
+  "6521": {
+   "quest": "An Unholy Alliance (given by Varimathras)",
+   "level": 36,
+   "requiredLevel": 28,
+   "zone": "Razorfen Downs",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/6521"
+  },
+  "6544": {
+   "quest": "Torek's Assault",
+   "level": 24,
+   "requiredLevel": 20,
+   "zone": "Ashenvale",
+   "ref": "https://foreverchanges.pro/quest/6544"
+  },
+  "7064": {
+   "quest": "Corruption of Earth and Seed (Horde)",
+   "level": 51,
+   "requiredLevel": 45,
+   "zone": "Maraudon",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/7064"
+  },
+  "7065": {
+   "quest": "Corruption of Earth and Seed (Alliance)",
+   "level": 51,
+   "requiredLevel": 45,
+   "zone": "Maraudon",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/7065"
+  },
+  "7462": {
+   "quest": "The Treasure of the Shen'dralar (Alliance)",
+   "level": 60,
+   "requiredLevel": 56,
+   "zone": "Dire Maul",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/7462"
+  },
+  "7488": {
+   "quest": "Lethtendris's Web (Alliance)",
+   "level": 57,
+   "requiredLevel": 54,
+   "zone": "Dire Maul",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/7488"
+  },
+  "7489": {
+   "quest": "Lethtendris's Web (Horde)",
+   "level": 57,
+   "requiredLevel": 54,
+   "zone": "Dire Maul",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/7489"
+  },
+  "7877": {
+   "quest": "The Treasure of the Shen'dralar (Horde)",
+   "level": 60,
+   "requiredLevel": 56,
+   "zone": "Dire Maul",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/7877"
+  },
+  "8253": {
+   "quest": "Destroy Morphaz",
+   "level": 52,
+   "requiredLevel": 50,
+   "zone": "Mage",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/8253"
+  },
+  "8271": {
+   "quest": "Hero of the Stormpike",
+   "level": 60,
+   "requiredLevel": 51,
+   "zone": "Alterac Valley",
+   "ref": "https://foreverchanges.pro/quest/8271"
+  },
+  "8272": {
+   "quest": "Hero of the Frostwolf",
+   "level": 60,
+   "requiredLevel": 51,
+   "zone": "Alterac Valley",
+   "ref": "https://foreverchanges.pro/quest/8272"
+  },
+  "8283": {
+   "quest": "Wanted - Deathclasp, Terror of the Sands",
+   "level": 59,
+   "requiredLevel": 54,
+   "zone": "Silithus",
+   "ref": "https://foreverchanges.pro/quest/8283"
+  },
+  "8306": {
+   "quest": "Into The Maw of Madness",
+   "level": 60,
+   "requiredLevel": null,
+   "zone": "Silithus",
+   "ref": "https://foreverchanges.pro/quest/8306"
+  },
+  "8308": {
+   "quest": "Brann Bronzebeard's Lost Letter",
+   "level": 60,
+   "requiredLevel": 58,
+   "zone": "Silithus",
+   "ref": "https://foreverchanges.pro/quest/8308"
+  },
+  "8413": {
+   "quest": "Da Voodoo",
+   "level": 52,
+   "requiredLevel": 50,
+   "zone": "Shaman",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/8413"
+  },
+  "8422": {
+   "quest": "Trolls of a Feather",
+   "level": 52,
+   "requiredLevel": 50,
+   "zone": "Warlock",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/8422"
+  },
+  "8573": {
+   "quest": "Champion's Battlegear",
+   "level": 60,
+   "requiredLevel": null,
+   "zone": "Silithus",
+   "ref": "https://foreverchanges.pro/quest/8573"
+  },
+  "8706": {
+   "quest": "Hammer of the Gathering Storm",
+   "level": 60,
+   "requiredLevel": 60,
+   "zone": "Ahn'Qiraj",
+   "ref": "https://foreverchanges.pro/quest/8706"
+  },
+  "8745": {
+   "quest": "Treasure of the Timeless One",
+   "level": 60,
+   "requiredLevel": 60,
+   "zone": "Silithus",
+   "ref": "https://foreverchanges.pro/quest/8745"
+  },
+  "8789": {
+   "quest": "Imperial Qiraji Armaments",
+   "level": 60,
+   "requiredLevel": 60,
+   "zone": "Ahn'Qiraj",
+   "ref": "https://foreverchanges.pro/quest/8789"
+  },
+  "8790": {
+   "quest": "Imperial Qiraji Regalia",
+   "level": 60,
+   "requiredLevel": 60,
+   "zone": "Ahn'Qiraj",
+   "ref": "https://foreverchanges.pro/quest/8790"
+  },
+  "9023": {
+   "quest": "The Perfect Poison",
+   "level": 60,
+   "requiredLevel": 60,
+   "zone": "Silithus",
+   "ref": "https://foreverchanges.pro/quest/9023"
+  },
+  "9053": {
+   "quest": "A Better Ingredient",
+   "level": 52,
+   "requiredLevel": 50,
+   "zone": "Druid",
+   "dungeon": true,
+   "ref": "https://foreverchanges.pro/quest/9053"
+  },
+  "9221": {
+   "quest": "Superior Armaments of Battle - Friend of the Dawn",
+   "level": 60,
+   "requiredLevel": 55,
+   "zone": "Eastern Plaguelands",
+   "ref": "https://foreverchanges.pro/quest/9221"
+  },
+  "9223": {
+   "quest": "Superior Armaments of Battle - Honored Amongst the Dawn",
+   "level": 60,
+   "requiredLevel": 55,
+   "zone": "Eastern Plaguelands",
+   "ref": "https://foreverchanges.pro/quest/9223"
+  },
+  "9226": {
+   "quest": "Superior Armaments of Battle - Revered Amongst the Dawn",
+   "level": 60,
+   "requiredLevel": 55,
+   "zone": "Eastern Plaguelands",
+   "ref": "https://foreverchanges.pro/quest/9226"
+  },
+  "9227": {
+   "quest": "Superior Armaments of Battle - Exalted Amongst the Dawn",
+   "level": 60,
+   "requiredLevel": 55,
+   "zone": "Eastern Plaguelands",
+   "ref": "https://foreverchanges.pro/quest/9227"
+  }
+ }
+}

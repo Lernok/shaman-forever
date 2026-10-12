@@ -9,7 +9,7 @@ node scripts/test-rules.js        # después de tocar js/talent-rules.js
 ```
 
 `sync.js` baja talentos (talentsforever.com), tablas del cliente (wago.tools), números de ítems (Wowhead) y fuentes
-(QuestieDB), escribe `reports/changes-<desde>-to-<hasta>.md` y corre todos los validadores. Si cambió un tooltip del
+(QuestieDB; para armas nuevas de Forever, foreverchanges.pro vía `scripts/fetch-item-sources.js`), escribe `reports/changes-<desde>-to-<hasta>.md` y corre todos los validadores. Si cambió un tooltip del
 cliente, falla y dice qué plantilla de `data/i18n/client-es.json` traducir.
 
 ## Posibilidades (no decididas)
@@ -20,6 +20,6 @@ cliente, falla y dice qué plantilla de `data/i18n/client-es.json` traducir.
 ## Pendientes
 
 - BiS / equipo completo por fase: esperar a que haya ítems post-30 confirmados (la beta está topada en 30).
-- Fuentes de armas nuevas de Forever que no se craftean: cargarlas en `data/item-sources.json` a medida que la comunidad las reporte.
+- Fuentes de armas nuevas de Forever que no se craftean: las quests se leen solas de foreverchanges.pro (`data/item-sources-fc.json`); drops y correcciones van a mano en `data/item-sources.json`, que tiene prioridad.
 - Verificar en juego las fuentes "asumidas de Classic" de las armas a medida que se pueda (la beta llega hasta 30).
 - Profesiones: completar las fuentes de recetas que classicwowforever todavía marca como desconocidas.
