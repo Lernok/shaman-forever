@@ -1,0 +1,34 @@
+{
+  "classNotes": [
+    { "fact": "Nivel máximo actual de la beta: 30.", "confidence": "client-data" },
+    { "fact": "Progresión de armadura: Cuero hasta nivel 40, luego Malla.", "confidence": "client-data" },
+    { "fact": "Recurso: Mana (sin cambios vs Classic Era).", "confidence": "client-data" },
+    { "fact": "9 spells nuevos o reescritos en el spellbook del Shaman.", "confidence": "client-data" },
+    { "fact": "No existe una especialización de tank para Shaman.", "confidence": "client-data" },
+    { "fact": "Costo de entrenador hasta nivel 60 ronda los 194g (precio heredado de Classic).", "confidence": "classic-assumed" }
+  ],
+  "professions": {
+    "status": "Sin recomendación confirmada por spec todavía.",
+    "statement": "\"Nothing we've seen from Forever points to a best Shaman crafting pair for spell damage, melee, healing or tanking\" — ni siquiera las fuentes más rigurosas de la comunidad confirman combos BiS por spec en este momento. Las páginas que sí dan recomendaciones específicas por spec (Leatherworking+Alchemy para Elemental, etc.) están reciclando consejos genéricos de Classic Era, no datos confirmados de Forever.",
+    "baseline": "Leatherworking + Skinning es la recomendación de base: Leatherworking craftea gear de Shaman BoP (tenés que craftearlo vos mismo para usarlo), lo cual es un patrón fuerte sin importar el spec.",
+    "confidence": "community-untested",
+    "recommendation": "No te cases con una profesión todavía. Esperar a que se confirmen recetas reales antes de decidir."
+  },
+  "races": {
+    "note": "5 razas disponibles para Shaman al día de hoy en la beta. Dwarf es nueva para Shaman en Alliance.",
+    "confidence": "client-data",
+    "highlight": {
+      "race": "Dwarf (nueva para Shaman, Alliance)",
+      "traits": [
+        "Stoneform: reduce daño físico y remueve venenos/bleeds",
+        "Mace Specialization: +1% crit con mazas",
+        "Big Game Hunter: +5% de daño a Beasts"
+      ]
+    }
+  },
+  "sources": [
+    "https://classicwowforever.com/class-guides/shaman/",
+    "https://classicwowforever.com/sources/"
+  ],
+  "caveat": "classicwowforever.com distingue explícitamente entre dato probado en juego, dato del cliente beta, comportamiento asumido de Classic Era, y reporte de comunidad sin confirmar. Todo lo de esta página está etiquetado con ese mismo criterio (campo confidence) — beta, puede cambiar."
+}

@@ -6,32 +6,53 @@
     {
       "change": "Lightning Bolt / Chain Lightning cast time reduced",
       "detail": "Ranks 4-10 of Lightning Bolt cast in 2.5 sec (down from Classic's 3 sec); Chain Lightning rank 1 is a 2 sec cast with a 6 sec cooldown.",
+      "confidence": "client-data",
       "source": "data/shaman.json: class_abilities"
     },
     {
       "change": "Fire Nova is now a spell, not a totem",
       "detail": "30 yd range, instant cast, 10 sec cooldown; blasts everything within 10 yd of your Fire totem.",
+      "confidence": "client-data",
       "source": "data/shaman.json: class_abilities"
     },
     {
       "change": "Totemic Projection / Totemic Recall",
       "detail": "New utility: relocate your totems up to 30 yd away, or recall them instantly.",
+      "confidence": "client-data",
       "source": "data/shaman.json: class_abilities"
     }
   ],
   "statPriority": {
-    "leveling": ["Spell Power", "Hit", "Haste", "Intellect", "Critical Strike"],
-    "raidDps": ["Spell Power (primary)", "Hit (until cap)", "Crit (15-20% ideal)", "MP5 (once Spirit is capped)", "Intellect (mana pool)"],
-    "notes": "Spell Power is weighted above Hit for Forever's leveling/dungeon content since most targets are near your own level; Hit becomes more important as content tightens around raid-level mob levels."
+    "list": ["Spell Power", "Intellect", "Critical Strike", "Spirit", "Stamina"],
+    "confidence": "classic-assumed",
+    "rationale": "Spell Power improves direct casts, while Intellect funds your opener and enough mana to heal yourself. Nothing in the beta client contradicts Classic's caster stat behavior.",
+    "source": "https://classicwowforever.com/class-guides/shaman/elemental/",
+    "alsoReported": {
+      "list": ["Spell Power", "Hit", "Haste", "Intellect", "Critical Strike"],
+      "confidence": "community-untested",
+      "note": "Icy Veins-style sources weight Hit/Haste higher for raid-pace content; treat as a later-game variant once gear/hit caps matter more than they do at level 30."
+    }
   },
   "rotation": {
-    "level20": ["Keep Flame Shock active on the target at all times", "Lightning Bolt as filler"],
+    "level30": [
+      "Start from range with Lightning Bolt and place Earthbind where it creates another cast window.",
+      "Use Flame Shock and Searing Totem on a target that will live long enough for repeated damage.",
+      "Use Earth Shock for interrupt or direct hit, and Frost Shock on a moving target when slow matters.",
+      "Continue Lightning Bolt on single target; use Fire Nova for packs."
+    ],
+    "confidence": "classic-assumed",
     "level60": [
-      "Flame Shock first, and refresh before it drops (Lava Burst deals 20% more to a target with Flame Shock up)",
-      "Lava Burst on cooldown as your hardest hitting spell",
-      "Lightning Bolt as filler between Flame Shock/Lava Burst (Lightning Overload can trigger a free extra bolt)"
-    ]
+      "Flame Shock first, and refresh before it drops (Lava Burst deals 20% more to a target with Flame Shock up).",
+      "Lava Burst on cooldown as your hardest hitting spell.",
+      "Lightning Bolt as filler between Flame Shock/Lava Burst (Lightning Overload can trigger a free extra bolt)."
+    ],
+    "level60Confidence": "community-untested",
+    "source": "https://classicwowforever.com/class-guides/shaman/elemental/"
   },
+  "gearingNotes": [
+    { "note": "Consumables: Minor Arcane Elixir (+5 spell damage), Lesser Spellblasting Potion (+11 spell damage).", "confidence": "client-data" },
+    { "note": "Enchants: Minor Wizard Oil (+8 spell damage/healing), Enchant Bracer - Minor Intellect (+3 Intellect).", "confidence": "client-data" }
+  ],
   "keyTalents": [
     "Lava Burst (7/2 capstone) — guaranteed crit vs. Flame Shock target",
     "Elemental Devastation — offensive spell crits refresh your melee/ranged crit chance",
@@ -39,10 +60,16 @@
     "Call of Flame — buffs Fire totems, Flame Shock, Fire Nova and Searing Totem damage",
     "Elemental Alacrity — reduces cast time of Lightning Bolt, Chain Lightning, Lava Burst"
   ],
+  "recommendedBuild": {
+    "leveling21pt": "5/5 Convection, 3/3 Call of Flame, 2/5 Reverberation, 1/1 Elemental Focus, 3/3 Elemental Alacrity, 2/5 Concussion, 1/1 Call of Thunder, 3/3 Eye of the Storm, 1/5 Concussion (final point), 1/3 Lightning Overload",
+    "leveling21ptConfidence": "community-untested",
+    "note": "Alternative at 30: Earthbound instead of Lightning Overload's first point, for an instant root when soloing. Dipping into Restoration for Mindfulness + the relocated (row 3) Mana Tide Totem is reported as strong for sustain in long fights."
+  },
   "sources": [
     "https://www.wowhead.com/forever/guide/classes/shaman/elemental/level-30-dps-overview",
     "https://www.icy-veins.com/wow/elemental-shaman-pve-dps-stat-priority",
+    "https://classicwowforever.com/class-guides/shaman/elemental/",
     "https://talentsforever.com (CC BY 4.0) — data/shaman.json"
   ],
-  "caveat": "Forever is in beta; numbers and talent effects can change with hotfixes. Cross-check against data/shaman.json before publishing hard numbers."
+  "caveat": "Forever beta, level cap 30 as of 2026-10. Most rotation/stat-priority claims are explicitly labeled 'classic-assumed' by their own source (classicwowforever.com) — meaning nothing in the beta client contradicts Classic Era behavior, not that it's been confirmed. Treat as a strong starting point, not settled fact."
 }

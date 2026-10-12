@@ -6,30 +6,36 @@
     {
       "change": "Totems last 5 minutes",
       "detail": "Most lasting totems (incl. healing ones) now last 5 min instead of Classic's 2 min; Mana Spring and Healing Stream specifically were 1 min in Classic. Short-duration totems (Searing, Magma, Stoneclaw, Earthbind, Grounding, Mana Tide) keep their original short timers.",
+      "confidence": "client-data",
       "source": "data/shaman.json: class_abilities"
     },
     {
       "change": "Call of the Elements / Ancestors / Spirits",
       "detail": "New multi-totem drop spells: each drops up to four totems from its own totem bar set in a single 3 sec cast (Elements at 20, Ancestors at 30, Spirits at 40).",
+      "confidence": "client-data",
       "source": "data/shaman.json: class_abilities"
     }
   ],
   "statPriority": {
-    "primary": ["Healing Power", "Intellect", "MP5", "Spirit", "Critical Strike"],
-    "level30Dungeons": ["Healing Power", "Intellect", "Spirit", "Critical Strike", "Stamina"],
-    "notes": "Throughput stats (Healing Power, Crit) are generally favored over pure mana-sustain stats at leveling/dungeon pace since encounters are short."
+    "list": ["Healing Power", "Intellect", "Spirit", "Mana Regeneration (MP5)", "Stamina"],
+    "confidence": "classic-assumed",
+    "rationale": "Healing Power improves the result, Intellect funds the mana pool, and Mindfulness gives Spirit value during casts. Keep enough Stamina to survive a stray hit that interrupts/pushes back a heal.",
+    "source": "https://classicwowforever.com/class-guides/shaman/restoration/"
   },
   "rotation": {
     "priority": [
-      "Keep beneficial totems up for the group",
-      "Maintain Water Shield on yourself",
-      "Maintain Riptide on the tank / sustained-damage targets",
-      "Use Mana Tide Totem when safe to drop (out of combat or in a lull)",
-      "Nature's Swiftness + Healing Wave/Chain Heal for instant emergency heals",
-      "Chain Heal for AoE/raid healing, prioritizing targets that already have Riptide",
-      "Healing Wave / Lesser Healing Wave (downranked when appropriate) for single-target efficiency"
-    ]
+      "Use Water Shield while healing, and place a useful Mana Spring Totem from level 26 on.",
+      "Start Healing Wave when there's time for the larger cast; use Lesser Healing Wave when waiting for that cast would leave the target at risk.",
+      "Use Healing Stream for recurring group damage, and pick Tremor or a cleansing totem when the enemy's effects make it useful.",
+      "At 25, use Mana Tide where group members can stay in range. At 30, reserve Nature's Swiftness for an urgent Nature heal or a heal-while-moving."
+    ],
+    "confidence": "classic-assumed",
+    "source": "https://classicwowforever.com/class-guides/shaman/restoration/"
   },
+  "gearingNotes": [
+    { "note": "Critical heals can consume Water Shield globes — check the shield during long pulls and account for refreshing it.", "confidence": "classic-assumed" },
+    { "note": "Enchant Bracer - Minor Healing Power: +8 healing on bracers, permanently.", "confidence": "client-data" }
+  ],
   "keyTalents": [
     "Riptide (7/2 capstone) — direct heal + HoT, sets up a stronger Chain Heal",
     "Nature's Swiftness — instant cast on next Nature spell under 10 sec cast time",
@@ -37,10 +43,16 @@
     "Mana Tide Totem — burst mana restoration for the group",
     "Ancestral Healing — armor buff on your target after a healing crit"
   ],
+  "recommendedBuild": {
+    "leveling21pt": "5/5 Improved Healing Wave, 3/3 Mindfulness, 2/5 Tidal Focus, 1/1 Water Shield, 3/3 Healing Focus, 3/5 Tidal Focus (complete), 1/1 Mana Tide Totem, 4/5 Tidal Mastery, 1/1 Nature's Swiftness",
+    "leveling21ptConfidence": "community-untested",
+    "note": "Point order is the community's best guess (explicitly \"haven't been tested in game\"), not confirmed optimal."
+  },
   "sources": [
     "https://www.wowhead.com/forever/guide/classes/shaman/restoration/level-30-healer-overview",
     "https://www.icy-veins.com/wow-forever/restoration-shaman-healer-pve-guide",
+    "https://classicwowforever.com/class-guides/shaman/restoration/",
     "https://talentsforever.com (CC BY 4.0) — data/shaman.json"
   ],
-  "caveat": "Forever is in beta; numbers and talent effects can change with hotfixes. Cross-check against data/shaman.json before publishing hard numbers."
+  "caveat": "Forever beta, level cap 30 as of 2026-10. Most rotation/stat-priority claims are explicitly labeled 'classic-assumed' by their own source (classicwowforever.com) — meaning nothing in the beta client contradicts Classic Era behavior, not that it's been confirmed. Treat as a strong starting point, not settled fact."
 }

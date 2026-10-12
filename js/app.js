@@ -1,8 +1,16 @@
 (function () {
   const SPEC_COLORS = {
+    Overview: '#c8aa6e',
     Elemental: '#e0742c',
     Enhancement: '#8a5a2b',
     Restoration: '#3fa9f5'
+  };
+
+  const CONFIDENCE = {
+    'tested': { label: 'Probado en juego', cls: 'conf-tested' },
+    'client-data': { label: 'Dato del cliente beta', cls: 'conf-client' },
+    'classic-assumed': { label: 'Asumido de Classic Era', cls: 'conf-classic' },
+    'community-untested': { label: 'Comunidad, sin confirmar', cls: 'conf-untested' }
   };
 
   const ICON_BASE = 'https://wow.zamimg.com/images/wow/icons/medium/';
@@ -20,7 +28,13 @@
     return window.SHAMAN_DATA.talents.trees.find(t => t.name === spec);
   }
 
-  function renderTalentTree(tree, specColor) {
+  function badge(confidence) {
+    if (!confidence) return '';
+    const c = CONFIDENCE[confidence] || { label: confidence, cls: 'conf-untested' };
+    return '<span class="badge ' + c.cls + '">' + c.label + '</span>';
+  }
+
+  function renderTalentTree(tree) {
     const rows = Math.max(...tree.talents.map(t => t.row));
     const cols = 4;
     const cellMap = {};
@@ -84,7 +98,7 @@
     let html = '<div class="changes">';
     changes.forEach(c => {
       html += '<div class="change-card">' +
-                '<div class="title">⚠ ' + c.change + '</div>' +
+                '<div class="title">⚠ ' + c.change + ' ' + badge(c.confidence) + '</div>' +
                 '<div class="detail">' + c.detail + '</div>' +
                 (c.source ? '<a class="src" href="' + c.source + '" target="_blank" rel="noopener">fuente</a>' : '') +
               '</div>';
@@ -106,54 +120,63 @@
       items.map(i => '<li>' + i + '</li>').join('') + '</ul>';
   }
 
-  function renderGuide(guide, spec) {
+  function renderNoteList(items) {
+    if (!items) return '';
+    return '<ul class="plain">' + items.map(i =>
+      '<li>' + i.note + ' ' + badge(i.confidence) + '</li>'
+    ).join('') + '</ul>';
+  }
+
+  function renderGuide(guide) {
     let html = '<div class="panel">';
-    html += '<h3>Stat priority</h3>';
-    if (guide.statPriority.leveling) {
-      html += '<div class="sub-label">Leveling / dungeons</div>' + renderStatChips(guide.statPriority.leveling);
+    html += '<h3>Stat priority ' + badge(guide.statPriority.confidence) + '</h3>';
+    html += renderStatChips(guide.statPriority.list);
+    if (guide.statPriority.rationale) {
+      html += '<p class="note-text">' + guide.statPriority.rationale + '</p>';
     }
-    if (guide.statPriority.raidDps) {
-      html += '<div class="sub-label">Raid DPS</div>' + renderStatChips(guide.statPriority.raidDps);
-    }
-    if (guide.statPriority.primary) {
-      html += renderStatChips(guide.statPriority.primary);
-    }
-    if (guide.statPriority.level30Dungeons) {
-      html += '<div class="sub-label">Level 30 dungeons</div>' + renderStatChips(guide.statPriority.level30Dungeons);
-    }
-    if (guide.statPriority.notes) {
-      html += '<p style="color:var(--text-dim);font-size:12.5px;line-height:1.5;margin-top:6px">' + guide.statPriority.notes + '</p>';
+    if (guide.statPriority.alsoReported) {
+      html += '<div class="sub-label">También reportado ' + badge(guide.statPriority.alsoReported.confidence) + '</div>';
+      html += renderStatChips(guide.statPriority.alsoReported.list);
+      if (guide.statPriority.alsoReported.note) {
+        html += '<p class="note-text">' + guide.statPriority.alsoReported.note + '</p>';
+      }
     }
     html += '</div>';
 
     html += '<div class="panel" style="margin-top:16px">';
-    html += '<h3>Rotación</h3>';
+    html += '<h3>Rotación ' + badge(guide.rotation.confidence) + '</h3>';
     const rot = guide.rotation;
+    const labels = { level20: 'Nivel 20', level30: 'Nivel 30', level60: 'Nivel 60', priority: 'Prioridad' };
     Object.keys(rot).forEach(key => {
+      if (key === 'confidence' || key === 'source' || key === 'level60Confidence') return;
       if (key === 'totems') {
         html += '<div class="sub-label">Totems clave</div>' + renderList(rot[key], false);
-      } else {
-        const labels = { level20: 'Nivel 20', level30: 'Nivel 30', level60: 'Nivel 60', priority: 'Prioridad' };
-        const label = labels[key] || key;
-        html += '<div class="sub-label">' + label + '</div>' + renderList(rot[key], true);
+      } else if (labels[key]) {
+        const extraBadge = key === 'level60' && rot.level60Confidence ? ' ' + badge(rot.level60Confidence) : '';
+        html += '<div class="sub-label">' + labels[key] + extraBadge + '</div>' + renderList(rot[key], true);
       }
     });
     html += '</div>';
+
+    if (guide.gearingNotes) {
+      html += '<div class="panel" style="margin-top:16px"><h3>Gearing</h3>' + renderNoteList(guide.gearingNotes) + '</div>';
+    }
 
     if (guide.keyTalents) {
       html += '<div class="panel" style="margin-top:16px"><h3>Talentos clave</h3>' + renderList(guide.keyTalents, false) + '</div>';
     }
 
     if (guide.recommendedBuild) {
+      const rb = guide.recommendedBuild;
       html += '<div class="panel" style="margin-top:16px"><h3>Build recomendado</h3>';
-      if (guide.recommendedBuild.pointsAtLevel30Example) {
-        html += '<div class="sub-label">Nivel 30 (ejemplo)</div><p style="font-size:12.5px;color:var(--text-dim);line-height:1.5">' + guide.recommendedBuild.pointsAtLevel30Example + '</p>';
+      if (rb.leveling21pt) {
+        html += '<div class="sub-label">Leveling, 21 puntos ' + badge(rb.leveling21ptConfidence) + '</div><p class="note-text">' + rb.leveling21pt + '</p>';
       }
-      if (guide.recommendedBuild.level60Capstones) {
-        html += '<div class="sub-label">Capstones nivel 60</div>' + renderList(guide.recommendedBuild.level60Capstones, false);
+      if (rb.level60Capstones) {
+        html += '<div class="sub-label">Capstones nivel 60</div>' + renderList(rb.level60Capstones, false);
       }
-      if (guide.recommendedBuild.note) {
-        html += '<p style="font-size:12px;color:#8b8d97;margin-top:6px">' + guide.recommendedBuild.note + '</p>';
+      if (rb.note) {
+        html += '<p class="note-text dim">' + rb.note + '</p>';
       }
       html += '</div>';
     }
@@ -166,12 +189,62 @@
     return html;
   }
 
+  function renderOverview(guide) {
+    const color = SPEC_COLORS.Overview;
+    let html = '<div class="spec-summary" style="--spec-color:' + color + '">' +
+      '<div class="role">Class overview</div>' +
+      '<h2>Shaman — notas generales</h2>' +
+      '<p>Lo que aplica a los 3 specs: estado de la beta, profesiones y razas.</p>' +
+      '</div>';
+
+    html += '<div class="grid-2">';
+
+    html += '<div>';
+    html += '<div class="panel"><h3>Class notes</h3>' +
+      '<ul class="plain">' + guide.classNotes.map(n =>
+        '<li>' + n.fact + ' ' + badge(n.confidence) + '</li>'
+      ).join('') + '</ul></div>';
+
+    html += '<div class="panel" style="margin-top:16px"><h3>Razas ' + badge(guide.races.confidence) + '</h3>' +
+      '<p class="note-text">' + guide.races.note + '</p>';
+    if (guide.races.highlight) {
+      html += '<div class="sub-label">' + guide.races.highlight.race + '</div>' +
+        renderList(guide.races.highlight.traits, false);
+    }
+    html += '</div>';
+    html += '</div>';
+
+    html += '<div class="panel" style="--spec-color:' + color + '"><h3>Profesiones ' + badge(guide.professions.confidence) + '</h3>' +
+      '<p class="note-text"><b>Estado:</b> ' + guide.professions.status + '</p>' +
+      '<p class="note-text">' + guide.professions.statement + '</p>' +
+      '<div class="sub-label">Baseline</div>' +
+      '<p class="note-text">' + guide.professions.baseline + '</p>' +
+      '<div class="caveat" style="margin-top:10px">' + guide.professions.recommendation + '</div>' +
+      '</div>';
+
+    html += '</div>';
+
+    html += '<div class="sources" style="margin-top:16px"><b>Fuentes:</b><br>' +
+      guide.sources.map(s => '<a href="' + s + '" target="_blank" rel="noopener">' + s + '</a>').join('<br>') +
+      '</div>';
+    html += '<div class="caveat">' + guide.caveat + '</div>';
+
+    return html;
+  }
+
   function render(spec) {
     closeTooltip();
-    const tree = findTree(spec);
     const guide = window.GUIDE_DATA[spec];
     const color = SPEC_COLORS[spec];
     document.documentElement.style.setProperty('--spec-color', color);
+
+    if (spec === 'Overview') {
+      app.innerHTML = renderOverview(guide);
+      app.style.setProperty('--spec-color', color);
+      return;
+    }
+
+    const tree = findTree(spec);
 
     let html = '<div class="spec-summary" style="--spec-color:' + color + '">' +
       '<div class="role">' + guide.role + '</div>' +
@@ -183,9 +256,9 @@
 
     html += '<div class="grid-2">';
     html += '<div class="panel" style="--spec-color:' + color + '">' +
-              '<h3>Talentos</h3>' + renderTalentTree(tree, color) +
+              '<h3>Talentos</h3>' + renderTalentTree(tree) +
             '</div>';
-    html += '<div style="--spec-color:' + color + '">' + renderGuide(guide, spec) + '</div>';
+    html += '<div style="--spec-color:' + color + '">' + renderGuide(guide) + '</div>';
     html += '</div>';
 
     app.innerHTML = html;
