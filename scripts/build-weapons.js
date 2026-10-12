@@ -78,8 +78,12 @@ function sourcesOf(item) {
   // Bazzalan and Jergosh are in Ragefire Chasm).
   auto.concat(extra).forEach(s => {
     if (s.type !== 'quest') return;
+    // Raid quests (Ahn'Qiraj, Naxxramas…) follow the raids toggle, not dungeons.
+    const zonesOf = [s.zone || ''].concat(s.questId ? Q.chainZones(s.questId) : []);
+    const raid = zonesOf.find(z => RAID.test(z));
+    if (raid) { s.raid = true; s.dungeon = undefined; if (raid !== s.zone) s.dungeonZone = raid; return; }
     if (s.dungeon || INSTANCE.test(s.zone || '')) { s.dungeon = true; return; }
-    const inside = s.questId && Q.chainZones(s.questId).find(z => INSTANCE.test(z) && !RAID.test(z));
+    const inside = zonesOf.slice(1).find(z => INSTANCE.test(z));
     if (inside) { s.dungeon = true; s.dungeonZone = inside; }
   });
   if (!extra.length) return auto;

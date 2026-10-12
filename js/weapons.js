@@ -5,7 +5,7 @@
   let ui = null;
   let container = null;
   let tipEl = null;
-  const state = { spec: 'Enhancement', faction: 'horde', random: false, unknown: false, raids: false, pvp: false, safe: false };
+  const state = { spec: 'Enhancement', faction: 'horde', random: false, unknown: false, raids: false, pvp: false, path: 'safe' };
 
   // Enhancement ranks by weapon DPS. Casters can't: weapon DPS barely matters
   // to them, and stat weights for Forever aren't known. Forever computes item
@@ -25,6 +25,7 @@
   const GROUPS = {
     crafted: { color: '#3987e5', shape: 'square' },
     target: { color: '#d95926', shape: 'circle' },
+    dquest: { color: '#199e70', shape: 'triangle' },
     questvendor: { color: '#199e70', shape: 'diamond' },
     other: { color: '#8b8d97', shape: 'circle' }
   };
@@ -40,7 +41,6 @@
       if ((s.type === 'unknown' || s.type === 'unrecorded') && !state.unknown) return false;
       if (s.raid && !state.raids) return false;
       if (s.pvp && !state.pvp) return false;
-      if (state.safe && !['crafted', 'quest', 'vendor'].includes(s.type)) return false;
       return true;
     });
   }
@@ -48,6 +48,7 @@
   function groupOf(sources) {
     const types = sources.map(s => s.type);
     if (types.includes('crafted')) return 'crafted';
+    if (sources.some(s => s.type === 'quest' && s.dungeon)) return 'dquest';
     if (types.includes('boss') || types.includes('drop')) return 'target';
     if (types.includes('quest') || types.includes('vendor')) return 'questvendor';
     return 'other';
@@ -61,6 +62,10 @@
       .filter(w => w.usable.length)
       .map(w => Object.assign(w, { group: groupOf(w.usable) }));
   }
+
+  // Guaranteed: you get it for sure (quest, craft, vendor), no drop luck.
+  const SAFE = ['crafted', 'quest', 'vendor'];
+  const isSafe = w => w.usable.some(s => SAFE.includes(s.type));
 
   // Best weapon at each level 1..60, and the levels where it changes.
   function progression(list) {
@@ -122,12 +127,13 @@
   function marker(shape, x, y, r, color, extra) {
     const attrs = ' fill="' + color + '" stroke="var(--bg-panel)" stroke-width="2" ' + (extra || '');
     if (shape === 'square') return '<rect x="' + (x - r) + '" y="' + (y - r) + '" width="' + (2 * r) + '" height="' + (2 * r) + '" rx="1.5"' + attrs + '/>';
+    if (shape === 'triangle') return '<path d="M' + x + ' ' + (y - r - 1.5) + 'L' + (x + r + 1.5) + ' ' + (y + r) + 'L' + (x - r - 1.5) + ' ' + (y + r) + 'Z"' + attrs + '/>';
     if (shape === 'diamond') return '<path d="M' + x + ' ' + (y - r - 1) + 'L' + (x + r + 1) + ' ' + y + 'L' + x + ' ' + (y + r + 1) + 'L' + (x - r - 1) + ' ' + y + 'Z"' + attrs + '/>';
     return '<circle cx="' + x + '" cy="' + y + '" r="' + r + '"' + attrs + '/>';
   }
 
-  function renderChart(list, prog) {
-    const W = 760, H = 340, m = { l: 46, r: 16, t: 16, b: 36 };
+  function renderChart(list, paths) {
+    const W = 760, H = 350, m = { l: 46, r: 16, t: 26, b: 36 };
     const maxValue = Math.max(10, ...list.map(valueOf));
     const yMax = Math.ceil(maxValue / 10) * 10;
     const x = lv => m.l + (lv - 1) / 59 * (W - m.l - m.r);
@@ -149,17 +155,23 @@
     // Hover zone and crosshair sit under the markers, so dots keep their own tooltips.
     svg += '<rect class="hover-zone" x="' + m.l + '" y="' + m.t + '" width="' + (W - m.l - m.r) + '" height="' + (H - m.t - m.b) + '"/>' +
       '<line class="crosshair" y1="' + m.t + '" y2="' + (H - m.b) + '" x1="-10" x2="-10"/>';
-    // Best-available step line.
-    let d = '';
-    for (let lv = 1; lv <= 60; lv++) {
-      const w = prog.best[lv];
-      if (!w) continue;
-      const px = x(lv), py = y(valueOf(w));
-      d += (d ? 'L' + px + ' ' + (prog.best[lv - 1] ? y(valueOf(prog.best[lv - 1])) : py) + 'L' : 'M') + px + ' ' + py;
-    }
-    if (d) svg += '<path d="' + d + '" class="best-line"/>';
-    // Every candidate as a marker; upgrades a bit larger.
-    const upgrades = new Set(prog.steps.map(s => s.weapon.id));
+    // Best-available step lines: with drops (dashed, under) and guaranteed (solid).
+    const stepPath = prog => {
+      let d = '';
+      for (let lv = 1; lv <= 60; lv++) {
+        const w = prog.best[lv];
+        if (!w) continue;
+        const px = x(lv), py = y(valueOf(w));
+        d += (d ? 'L' + px + ' ' + (prog.best[lv - 1] ? y(valueOf(prog.best[lv - 1])) : py) + 'L' : 'M') + px + ' ' + py;
+      }
+      return d;
+    };
+    const dAll = stepPath(paths.all);
+    const dSafe = stepPath(paths.safe);
+    if (dAll) svg += '<path d="' + dAll + '" class="best-line drops"/>';
+    if (dSafe) svg += '<path d="' + dSafe + '" class="best-line"/>';
+    // Every candidate as a marker; upgrades on either line a bit larger.
+    const upgrades = new Set(paths.all.steps.concat(paths.safe.steps).map(s => s.weapon.id));
     list.forEach(w => {
       const g = GROUPS[w.group];
       svg += marker(g.shape, x(Math.max(1, w.obtain)), y(valueOf(w)), upgrades.has(w.id) ? 6 : 4, g.color,
@@ -170,9 +182,10 @@
   }
 
   function legend() {
-    return '<div class="wp-legend">' + ['crafted', 'target', 'questvendor', 'other'].map(k =>
+    return '<div class="wp-legend">' + ['crafted', 'dquest', 'questvendor', 'target', 'other'].map(k =>
       '<span><svg width="14" height="14" viewBox="0 0 14 14">' + marker(GROUPS[k].shape, 7, 7, 4.5, GROUPS[k].color) + '</svg>' + t('wp.group.' + k) + '</span>'
-    ).join('') + '<span><svg width="22" height="14"><line x1="1" x2="21" y1="7" y2="7" class="best-line"/></svg>' + t('wp.bestLine') + '</span></div>';
+    ).join('') + '<span><svg width="22" height="14"><line x1="1" x2="21" y1="7" y2="7" class="best-line"/></svg>' + t('wp.bestSafe') + '</span>' +
+      '<span><svg width="22" height="14"><line x1="1" x2="21" y1="7" y2="7" class="best-line drops"/></svg>' + t('wp.bestAll') + '</span></div>';
   }
 
   // ---------- page ----------
@@ -229,8 +242,9 @@
 
   function renderAll() {
     const list = candidates();
-    const prog = progression(list);
-    const chart = renderChart(list, prog);
+    const paths = { safe: progression(list.filter(isSafe)), all: progression(list) };
+    const prog = paths[state.path];
+    const chart = renderChart(list, paths);
     const specs = Object.keys(SPECS);
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Armas + '">' +
       '<div class="role">' + t('wp.role') + '</div><h2>' + t('wp.title') + '</h2><p>' + t('wp.intro') + '</p>' +
@@ -238,25 +252,27 @@
     html += '<div class="wp-controls">' +
       '<div class="seg">' + specs.map(s => '<button class="btn' + (state.spec === s ? ' active' : '') + '" data-spec="' + s + '">' + s + '</button>').join('') + '</div>' +
       '<div class="seg">' + ['horde', 'alliance'].map(f => '<button class="btn' + (state.faction === f ? ' active' : '') + '" data-faction="' + f + '">' + t('wp.faction.' + f) + '</button>').join('') + '</div>' +
+      '<span class="ctl-label">' + t('wp.addSources') + '</span>' +
       '<label class="chk"><input type="checkbox" id="wpRandom"' + (state.random ? ' checked' : '') + '> ' + t('wp.showRandom') + '</label>' +
       '<label class="chk"><input type="checkbox" id="wpUnknown"' + (state.unknown ? ' checked' : '') + '> ' + t('wp.showUnknown') + '</label>' +
       '<label class="chk" title="' + t('wp.showRaidsTitle') + '"><input type="checkbox" id="wpRaids"' + (state.raids ? ' checked' : '') + '> ' + t('wp.showRaids') + '</label>' +
       '<label class="chk"><input type="checkbox" id="wpPvp"' + (state.pvp ? ' checked' : '') + '> ' + t('wp.showPvp') + '</label>' +
-      '<label class="chk" title="' + t('wp.safeOnlyTitle') + '"><input type="checkbox" id="wpSafe"' + (state.safe ? ' checked' : '') + '> ' + t('wp.safeOnly') + '</label>' +
       '</div>';
     if (spec().metric === 'ilvl') html += '<div class="caveat">' + t('wp.casterNote') + '</div>';
     html += '<div class="panel wp-chart-panel">' + legend() + '<div class="wp-chart-wrap">' + chart.svg + '</div></div>';
+    html += '<div class="panel" style="margin-top:16px"><h3>' + t('wp.steps', { n: prog.steps.length }) + '</h3>' +
+      '<div class="wp-path">' + ['safe', 'all'].map(p => '<button class="btn' + (state.path === p ? ' active' : '') + '" data-path="' + p + '">' + t('wp.path.' + p) + '</button>').join('') + '</div>' +
+      '<p class="note-text dim">' + t('wp.pathNote.' + state.path) + '</p>' +
+      '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.colFrom') + '</th><th>' + t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.colSource') + '</th></tr></thead><tbody>' +
+      prog.steps.map(s => weaponRow(s.weapon, s.level)).join('') + '</tbody></table></div></div>';
+
+    html += dungeonQuests(list);
+
     const guide = window.I18N.localize(window.GUIDE_DATA[state.spec] || {});
     if (guide.gearTargets) {
       html += '<div class="panel" style="margin-top:16px"><h3>' + t('wp.targets') + '</h3><ul class="plain">' +
         guide.gearTargets.map(g => '<li>' + g.note + ' ' + ui.badge(g.confidence) + '</li>').join('') + '</ul></div>';
     }
-
-    html += dungeonQuests(list);
-
-    html += '<div class="panel" style="margin-top:16px"><h3>' + t('wp.steps', { n: prog.steps.length }) + '</h3>' +
-      '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.colFrom') + '</th><th>' + t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.colSource') + '</th></tr></thead><tbody>' +
-      prog.steps.map(s => weaponRow(s.weapon, s.level)).join('') + '</tbody></table></div></div>';
 
     const all = list.slice().sort((a, b) => a.obtain - b.obtain || valueOf(b) - valueOf(a));
     html += '<details class="panel wp-all" style="margin-top:16px"><summary>' + t('wp.allWeapons', { n: all.length }) + '</summary>' +
@@ -270,7 +286,7 @@
       'https://foreverchanges.pro — ' + t('wp.srcFc')
     ]);
     container.innerHTML = html;
-    bind(list, prog, chart);
+    bind(list, paths, chart);
   }
 
   // ---------- interaction ----------
@@ -295,14 +311,14 @@
       w.usable.map(s => '<div class="t-rank">' + sourceText(s) + '</div>').join('');
   }
 
-  function bind(list, prog, chart) {
+  function bind(list, paths, chart) {
     container.querySelectorAll('[data-spec]').forEach(b => b.addEventListener('click', () => { state.spec = b.dataset.spec; renderAll(); }));
     container.querySelectorAll('[data-faction]').forEach(b => b.addEventListener('click', () => { state.faction = b.dataset.faction; renderAll(); }));
     container.querySelector('#wpRandom').addEventListener('change', e => { state.random = e.target.checked; renderAll(); });
     container.querySelector('#wpUnknown').addEventListener('change', e => { state.unknown = e.target.checked; renderAll(); });
     container.querySelector('#wpRaids').addEventListener('change', e => { state.raids = e.target.checked; renderAll(); });
     container.querySelector('#wpPvp').addEventListener('change', e => { state.pvp = e.target.checked; renderAll(); });
-    container.querySelector('#wpSafe').addEventListener('change', e => { state.safe = e.target.checked; renderAll(); });
+    container.querySelectorAll('[data-path]').forEach(b => b.addEventListener('click', () => { state.path = b.dataset.path; renderAll(); }));
 
     const svg = container.querySelector('.wp-chart');
     const cross = svg.querySelector('.crosshair');
@@ -320,8 +336,12 @@
       const lv = Math.min(60, Math.max(1, Math.round(1 + (sx - chart.m.l) / (chart.W - chart.m.l - chart.m.r) * 59)));
       cross.setAttribute('x1', chart.x(lv));
       cross.setAttribute('x2', chart.x(lv));
-      const w = prog.best[lv];
-      if (w) showTip(weaponTip(w, t('wp.atLevel', { level: lv })), e.clientX, e.clientY);
+      // Guaranteed best, plus the best drop when it's higher.
+      const safe = paths.safe.best[lv];
+      const any = paths.all.best[lv];
+      let html = safe ? weaponTip(safe, t('wp.atLevelSafe', { level: lv })) : '';
+      if (any && any !== safe) html += (html ? '<hr class="t-sep">' : '') + weaponTip(any, t('wp.atLevelAll', { level: lv }));
+      if (html) showTip(html, e.clientX, e.clientY);
       else hideTip();
     });
     zone.addEventListener('mouseleave', () => { cross.setAttribute('x1', -10); cross.setAttribute('x2', -10); hideTip(); });
