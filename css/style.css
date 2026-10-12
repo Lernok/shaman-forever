@@ -567,3 +567,34 @@ ul.build-links li a { font-weight: 600; }
 .order-step.reached .os-rank { color: var(--gold); }
 .order-step.partial { background: rgba(255,255,255,.04); }
 .build-note .origin a { color: inherit; }
+
+/* ---------- Overview: timeline, totems, damage, races ---------- */
+.badge.conf-official { background: rgba(155,127,209,.15); color: #b9a2ea; border: 1px solid rgba(155,127,209,.45); }
+.dim { color: #8b8d97; }
+ul.timeline li { display: flex; gap: 12px; }
+.tl-date { flex: none; width: 82px; color: var(--gold); font-weight: 600; font-size: 12.5px; }
+.table-wrap { overflow-x: auto; }
+table.cmp { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+table.cmp th { text-align: left; font-weight: 600; color: var(--text-dim); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; padding: 4px 8px; border-bottom: 1px solid var(--border); }
+table.cmp td { padding: 6px 8px; border-bottom: 1px solid var(--border); color: var(--text); }
+table.cmp tr:last-child td { border-bottom: none; }
+.dmg-list { display: grid; gap: 6px; margin: 10px 0 6px; }
+.dmg-row { display: grid; grid-template-columns: 190px 1fr 240px; gap: 12px; align-items: center; font-size: 12.5px; }
+.dmg-name { color: var(--text); }
+.dmg-bar { height: 8px; background: rgba(255,255,255,.06); border-radius: 4px; overflow: hidden; }
+.dmg-bar span { display: block; height: 100%; background: linear-gradient(90deg, #6d5bd0, #b9a2ea); border-radius: 4px; }
+.dmg-nums { font-variant-numeric: tabular-nums; }
+@media (max-width: 760px) {
+  .dmg-row { grid-template-columns: 1fr; gap: 3px; margin-bottom: 6px; }
+}
+.race-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; margin-top: 10px; }
+.race-card { background: var(--bg-panel-2); border: 1px solid var(--border); border-top: 3px solid #a33; border-radius: 8px; padding: 10px 12px; }
+.race-card.alliance { border-top-color: #3a6fd8; }
+.rc-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.rc-head img { width: 32px; height: 32px; border-radius: 50%; border: 1px solid #000; }
+.rc-head b { color: var(--text); font-size: 14px; }
+.rc-faction { margin-left: auto; font-size: 11px; color: var(--text-dim); }
+.race-card ul { list-style: none; margin: 0; padding: 0; }
+.race-card li { display: flex; gap: 8px; padding: 5px 0; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-dim); line-height: 1.4; }
+.race-card li img { width: 24px; height: 24px; border-radius: 4px; flex: none; }
+.race-card li b { display: block; color: var(--text); font-size: 12.5px; }

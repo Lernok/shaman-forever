@@ -1,11 +1,45 @@
 {
   "classNotes": [
-    { "fact": "Nivel máximo actual de la beta: 30.", "confidence": "client-data" },
-    { "fact": "Progresión de armadura: Cuero hasta nivel 40, luego Malla.", "confidence": "client-data" },
-    { "fact": "Recurso: Mana (sin cambios vs Classic Era).", "confidence": "client-data" },
-    { "fact": "9 spells nuevos o reescritos en el spellbook del Shaman.", "confidence": "client-data" },
-    { "fact": "No existe una especialización de tank para Shaman.", "confidence": "client-data" },
-    { "fact": "Costo de entrenador hasta nivel 60 ronda los 194g (precio heredado de Classic).", "confidence": "classic-assumed" }
+    {
+      "fact": "La beta está capada en nivel 30 (21 puntos de talento) desde la build 70170 del 1 oct 2026. Los árboles cuentan hasta el 60 (51 puntos).",
+      "confidence": "official"
+    },
+    {
+      "fact": "Progresión de armadura: Cuero hasta nivel 40, luego Malla.",
+      "confidence": "client-data"
+    },
+    {
+      "fact": "Recurso: Mana (sin cambios vs Classic Era).",
+      "confidence": "client-data"
+    },
+    {
+      "fact": "Talentos: 50 (Classic tenía 46). 12 nuevos, 30 cambiados, 3 movidos y 5 iguales; 8 talentos de Classic ya no existen.",
+      "confidence": "client-data"
+    },
+    {
+      "fact": "Spellbook: 10 hechizos nuevos, 9 reworkeados y 22 con números nuevos respecto de Classic. Todo en el tab Spellbook.",
+      "confidence": "client-data"
+    },
+    {
+      "fact": "Ningún árbol es de tanque, pero Enhancement tiene piezas: Spirit Weapons (parry y +30% de amenaza con Rockbiter activo), Anticipation (+6% dodge) y Toughness (+10% Stamina). Shield Specialization ya no existe.",
+      "confidence": "client-data"
+    },
+    {
+      "fact": "Dual wield: ningún hechizo, talento ni entrenador lo enseña en el cliente beta, y nadie reportó haberlo probado. No está descartado, solo sin confirmar.",
+      "confidence": "client-data"
+    },
+    {
+      "fact": "Hachas y mazas a dos manos ahora vienen de base (por eso desapareció el talento Two-Handed Axes and Maces).",
+      "confidence": "official"
+    },
+    {
+      "fact": "Dual spec se desbloquea al nivel 40 (inalcanzable en la beta). El respec se hace en el entrenador de clase de una ciudad grande, e incluye los talentos de Legacy.",
+      "confidence": "official"
+    },
+    {
+      "fact": "Costo de entrenador hasta nivel 60 ronda los 194g (precio heredado de Classic).",
+      "confidence": "classic-assumed"
+    }
   ],
   "professions": {
     "status": "Sin recomendación confirmada por spec todavía.",
@@ -15,20 +49,178 @@
     "recommendation": "No te cases con una profesión todavía. Esperar a que se confirmen recetas reales antes de decidir."
   },
   "races": {
-    "note": "5 razas disponibles para Shaman al día de hoy en la beta. Dwarf es nueva para Shaman en Alliance.",
+    "note": "5 razas pueden ser Shaman. Dos son nuevas para la clase: Dwarf (la única opción Alliance) y Skyborne (Windshaper), una raza Horde nueva en WoW: Forever que se entrena con Shenthul en Orgrimmar. Racials leídos del cliente beta.",
     "confidence": "client-data",
-    "highlight": {
-      "race": "Dwarf (nueva para Shaman, Alliance)",
-      "traits": [
-        "Stoneform: reduce daño físico y remueve venenos/bleeds",
-        "Mace Specialization: +1% crit con mazas",
-        "Big Game Hunter: +5% de daño a Beasts"
-      ]
-    }
+    "newToShaman": [
+      "Dwarf",
+      "Skyborne (Windshaper)"
+    ]
   },
   "sources": [
+    "https://talentsforever.com/shaman/changes",
+    "https://talentsforever.com/launch",
+    "https://talentsforever.com/shaman/questions",
     "https://classicwowforever.com/class-guides/shaman/",
-    "https://classicwowforever.com/sources/"
+    "https://classicwowforever.com/sources/",
+    "https://talentsforever.com (CC BY 4.0) — data/shaman.json"
   ],
-  "caveat": "classicwowforever.com distingue explícitamente entre dato probado en juego, dato del cliente beta, comportamiento asumido de Classic Era, y reporte de comunidad sin confirmar. Todo lo de esta página está etiquetado con ese mismo criterio (campo confidence) — beta, puede cambiar."
+  "caveat": "classicwowforever.com distingue explícitamente entre dato probado en juego, dato del cliente beta, comportamiento asumido de Classic Era, y reporte de comunidad sin confirmar. Todo lo de esta página está etiquetado con ese mismo criterio (campo confidence) — beta, puede cambiar.",
+  "timeline": [
+    {
+      "date": "17 sep 2026",
+      "event": "Abre la beta.",
+      "confidence": "official"
+    },
+    {
+      "date": "24 sep 2026",
+      "event": "Build 70009: 10 cambios a Shaman. Elemental Fury y Elemental Alacrity cambian de fila, Rage of the Farseer deja de afectar hechizos, y las notas dicen que Riptide puede critear y que Windfury, Grace of Air y Tranquil Air ya no se apilan.",
+      "confidence": "official"
+    },
+    {
+      "date": "1 oct 2026",
+      "event": "Build 70170: cap a nivel 30. Un cambio a Shaman: Disease Cleansing Totem pasa de 2 a 5 minutos.",
+      "confidence": "client-data"
+    },
+    {
+      "date": "8 oct 2026",
+      "event": "Build 70291: Water Shield pierde su cooldown de 15 s, Lightning Bolt rango 1 baja a 14–16, y Mana Tide Totem pasa a nivel 25 en los archivos.",
+      "confidence": "client-data"
+    },
+    {
+      "date": "21 oct 2026",
+      "event": "Termina la beta.",
+      "confidence": "official"
+    },
+    {
+      "date": "4 nov 2026",
+      "event": "Lanzamiento global de WoW: Forever, 15:00 PST (23:00 UTC).",
+      "confidence": "official"
+    }
+  ],
+  "totems": {
+    "notes": [
+      {
+        "fact": "La mayoría de los totems dura 5 minutos (antes 2; Healing Stream y Mana Spring, 1) y los de grupo llegan a 30 yardas, que es lo que daba Totemic Mastery (ese talento ya no existe).",
+        "confidence": "client-data"
+      },
+      {
+        "fact": "Mantienen su duración de Classic: Earthbind, Grounding, Stoneclaw, Searing, Magma, Mana Tide y Sentry.",
+        "confidence": "client-data"
+      },
+      {
+        "fact": "Siguen haciendo falta los cuatro ítems de totem: cada totem pide el de su elemento (Tools: Earth/Fire/Water/Air Totem).",
+        "confidence": "client-data"
+      },
+      {
+        "fact": "Call of the Elements (nivel 20, 3 s de casteo) baja hasta 4 totems de tu Totem Bar de una. Call of the Ancestors (30) y Call of the Spirits (40) son un 2º y 3er set guardado.",
+        "confidence": "client-data"
+      },
+      {
+        "fact": "Totemic Recall (20) levanta tus totems y te devuelve 25% del maná de cada uno. Totemic Projection (22) los mueve hasta 30 yardas.",
+        "confidence": "client-data"
+      },
+      {
+        "fact": "Fire Nova ahora es un hechizo (nivel 12, instantáneo, 10 s de CD) que explota alrededor de tu totem de fuego. Fire Nova Totem ya no existe.",
+        "confidence": "client-data"
+      },
+      {
+        "fact": "Windfury, Grace of Air y Tranquil Air ya no se apilan entre sí, ni siquiera de dos Shamans distintos. Flametongue Totem no se apila con Flametongue Weapon ni con Windfury Totem.",
+        "confidence": "official"
+      },
+      {
+        "fact": "Los imbues de arma duran 60 minutos (eran 5). Windfury o Flametongue Weapon en la mano principal anulan, solo para vos, el totem del mismo nombre.",
+        "confidence": "client-data"
+      }
+    ],
+    "changed": [
+      {
+        "totem": "Strength of Earth Totem",
+        "rank": "Rango 5",
+        "classic": "+77 Fuerza",
+        "forever": "+53 Fuerza",
+        "pct": -31
+      },
+      {
+        "totem": "Grace of Air Totem",
+        "rank": "Rango 3",
+        "classic": "+77 Agilidad",
+        "forever": "+89 Agilidad",
+        "pct": 16
+      },
+      {
+        "totem": "Windfury Totem",
+        "rank": "Rango 3",
+        "classic": "+315 AP, cualquier golpe",
+        "forever": "+246 AP, solo mano principal",
+        "pct": -22
+      },
+      {
+        "totem": "Flametongue Totem",
+        "rank": "Rango 4",
+        "classic": "15,8–48,7 de fuego",
+        "forever": "17–55 de fuego",
+        "pct": 12
+      },
+      {
+        "totem": "Healing Stream Totem",
+        "rank": "Rango 5",
+        "classic": "14 cada 2 s",
+        "forever": "11 cada 2 s",
+        "pct": -21
+      }
+    ],
+    "confidence": "client-data",
+    "source": "https://talentsforever.com/shaman/changes"
+  },
+  "damage": {
+    "spells": [
+      [
+        "Lightning Bolt",
+        "Rank 10"
+      ],
+      [
+        "Chain Lightning",
+        "Rank 4"
+      ],
+      [
+        "Earth Shock",
+        "Rank 7"
+      ],
+      [
+        "Frost Shock",
+        "Rank 4"
+      ],
+      [
+        "Healing Wave",
+        "Rank 10"
+      ],
+      [
+        "Lesser Healing Wave",
+        "Rank 6"
+      ],
+      [
+        "Chain Heal",
+        "Rank 3"
+      ]
+    ],
+    "notes": [
+      {
+        "fact": "Por qué: Blizzard puso spell power en el equipo desde el nivel 10, empezando por las armas, y bajó el daño base de los hechizos en lo que suelen dar los verdes de quest (WoW: Forever Podcast, ep. 2).",
+        "confidence": "official"
+      },
+      {
+        "fact": "Lightning Bolt (rangos 4–10) pasó de 85,7% a 71,4% de coeficiente y Chain Lightning de 71,4% a ~57%. En cambio los rangos bajos ganaron coeficiente: Lightning Bolt 1–3, Healing Wave 1–4 y Earth Shock 1–3 escalan más con spell power que en Classic.",
+        "confidence": "client-data"
+      },
+      {
+        "fact": "Las curas casi no bajaron (Healing Wave −7%), así que Restoration es el spec menos afectado por el cambio.",
+        "confidence": "client-data"
+      },
+      {
+        "fact": "Si algo más (gear, talentos, buffs) compensa la diferencia en juego, todavía nadie lo midió.",
+        "confidence": "community-untested"
+      }
+    ],
+    "source": "https://talentsforever.com/shaman/changes"
+  }
 }

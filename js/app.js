@@ -12,7 +12,8 @@
     'tested': { label: 'Probado en juego', cls: 'conf-tested' },
     'client-data': { label: 'Dato del cliente beta', cls: 'conf-client' },
     'classic-assumed': { label: 'Asumido de Classic Era', cls: 'conf-classic' },
-    'community-untested': { label: 'Comunidad, sin confirmar', cls: 'conf-untested' }
+    'community-untested': { label: 'Comunidad, sin confirmar', cls: 'conf-untested' },
+    'official': { label: 'Anuncio de Blizzard', cls: 'conf-official' }
   };
 
   // 'large' is 56x56: shown at 48px it's downscaled (sharp) instead of the
@@ -145,8 +146,10 @@
     return '<div class="sources"><b>Fuentes:</b><ul>' + sources.map(s => {
       const m = s.match(/^(https?:\/\/[^\s]+)(.*)$/);
       if (!m) return '<li>' + s + '</li>';
-      const host = m[1].replace(/^https?:\/\/(www\.)?/, '').split('/')[0];
-      return '<li><a href="' + m[1] + '" target="_blank" rel="noopener" title="' + m[1] + '">' + host + '</a>' + m[2] + '</li>';
+      // Host plus path, so several pages of one site stay distinguishable.
+      let label = m[1].replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+      if (label.length > 60) label = label.slice(0, 57) + '…';
+      return '<li><a href="' + m[1] + '" target="_blank" rel="noopener" title="' + m[1] + '">' + label + '</a>' + m[2] + '</li>';
     }).join('') + '</ul></div>';
   }
 
@@ -210,40 +213,88 @@
     return html;
   }
 
+  function renderNotes(notes) {
+    return '<ul class="plain">' + notes.map(n => '<li>' + n.fact + ' ' + badge(n.confidence) + '</li>').join('') + '</ul>';
+  }
+
+  function pctLabel(p) {
+    return '<span class="pct ' + (p < 0 ? 'down' : p > 0 ? 'up' : '') + '">' + (p > 0 ? '+' : '') + p + '%</span>';
+  }
+
+  function renderTotems(t) {
+    let html = '<div class="panel" style="margin-top:16px"><h3>Totems e imbues</h3>' + renderNotes(t.notes) +
+      '<div class="sub-label">Totems con números nuevos (rango máximo) ' + badge(t.confidence) + '</div>' +
+      '<div class="table-wrap"><table class="cmp"><thead><tr><th>Totem</th><th>Classic</th><th>Forever</th><th></th></tr></thead><tbody>';
+    t.changed.forEach(c => {
+      html += '<tr><td>' + c.totem + ' <span class="dim">' + c.rank + '</span></td><td class="dim">' + c.classic + '</td>' +
+        '<td>' + c.forever + '</td><td>' + pctLabel(c.pct) + '</td></tr>';
+    });
+    return html + '</tbody></table></div>' +
+      '<p class="note-text dim">Además duran 5 min y llegan a 30 yd. Mana Spring, Stoneskin, Windwall, los de resistencia, Tremor y los de limpieza solo ganaron duración y alcance.</p></div>';
+  }
+
+  // Top-rank tooltip numbers, worked out live from the spellbook data.
+  function renderDamage(dm) {
+    let html = '<div class="panel" style="margin-top:16px"><h3>Daño y curación vs Classic ' + badge('client-data') + '</h3>' +
+      '<p class="note-text">Número del tooltip en el rango máximo, sin spell power ni talentos. La barra es cuánto queda del valor de Classic.</p>' +
+      '<div class="dmg-list">';
+    dm.spells.forEach(([name, rank]) => {
+      const c = window.Spellbook.compare(name, rank);
+      if (!c || c.pct == null) return;
+      const left = Math.max(0, Math.min(100, 100 + c.pct));
+      html += '<div class="dmg-row"><div class="dmg-name">' + name + ' <span class="dim">' + rank.replace('Rank ', 'R') + '</span></div>' +
+        '<div class="dmg-bar"><span style="width:' + left + '%"></span></div>' +
+        '<div class="dmg-nums"><span class="dim">' + c.then + '</span> → ' + c.now + ' ' + pctLabel(c.pct) + '</div></div>';
+    });
+    return html + '</div>' + renderNotes(dm.notes) + '</div>';
+  }
+
+  function renderRaces(r) {
+    const racials = window.SHAMAN_DATA.racials;
+    let html = '<div class="panel" style="margin-top:16px"><h3>Razas ' + badge(r.confidence) + '</h3>' +
+      '<p class="note-text">' + r.note + '</p><div class="race-grid">';
+    ['Horde', 'Alliance'].forEach(faction => {
+      (racials[faction] || []).filter(x => x.classes.includes('Shaman')).forEach(race => {
+        const isNew = r.newToShaman.includes(race.race);
+        html += '<div class="race-card ' + faction.toLowerCase() + '">' +
+          '<div class="rc-head"><img src="' + iconUrl(race.icon) + '" alt=""><b>' + race.race + '</b>' +
+          '<span class="rc-faction">' + faction + (isNew ? ' · nueva para Shaman' : '') + '</span></div><ul>' +
+          race.abilities.map(([name, text, icon]) =>
+            '<li><img src="' + iconUrl(icon) + '" alt=""><div><b>' + name + '</b><span>' + text + '</span></div></li>').join('') +
+          '</ul></div>';
+      });
+    });
+    return html + '</div></div>';
+  }
+
   function renderOverview(guide) {
     const color = SPEC_COLORS.Overview;
     let html = '<div class="spec-summary" style="--spec-color:' + color + '">' +
       '<div class="role">Class overview</div>' +
       '<h2>Shaman — notas generales</h2>' +
-      '<p>Lo que aplica a los 3 specs: estado de la beta, profesiones y razas.</p>' +
+      '<p>Lo que aplica a los 3 specs: estado de la beta, totems, daño frente a Classic, razas y profesiones.</p>' +
       '</div>';
 
     html += '<div class="grid-2">';
+    html += '<div class="panel"><h3>Class notes</h3>' + renderNotes(guide.classNotes) + '</div>';
 
     html += '<div>';
-    html += '<div class="panel"><h3>Class notes</h3>' +
-      '<ul class="plain">' + guide.classNotes.map(n =>
-        '<li>' + n.fact + ' ' + badge(n.confidence) + '</li>'
-      ).join('') + '</ul></div>';
-
-    html += '<div class="panel" style="margin-top:16px"><h3>Razas ' + badge(guide.races.confidence) + '</h3>' +
-      '<p class="note-text">' + guide.races.note + '</p>';
-    if (guide.races.highlight) {
-      html += '<div class="sub-label">' + guide.races.highlight.race + '</div>' +
-        renderList(guide.races.highlight.traits, false);
-    }
-    html += '</div>';
-    html += '</div>';
-
-    html += '<div class="panel" style="--spec-color:' + color + '"><h3>Profesiones ' + badge(guide.professions.confidence) + '</h3>' +
+    html += '<div class="panel"><h3>Calendario</h3><ul class="plain timeline">' + guide.timeline.map(t =>
+      '<li><span class="tl-date">' + t.date + '</span><span>' + t.event + ' ' + badge(t.confidence) + '</span></li>'
+    ).join('') + '</ul></div>';
+    html += '<div class="panel" style="margin-top:16px;--spec-color:' + color + '"><h3>Profesiones ' + badge(guide.professions.confidence) + '</h3>' +
       '<p class="note-text"><b>Estado:</b> ' + guide.professions.status + '</p>' +
       '<p class="note-text">' + guide.professions.statement + '</p>' +
       '<div class="sub-label">Baseline</div>' +
       '<p class="note-text">' + guide.professions.baseline + '</p>' +
       '<div class="caveat" style="margin-top:10px">' + guide.professions.recommendation + '</div>' +
       '</div>';
-
     html += '</div>';
+    html += '</div>';
+
+    html += renderTotems(guide.totems);
+    html += renderDamage(guide.damage);
+    html += renderRaces(guide.races);
 
     html += renderSources(guide.sources);
     html += '<div class="caveat">' + guide.caveat + '</div>';

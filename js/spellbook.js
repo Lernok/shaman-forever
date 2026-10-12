@@ -144,6 +144,13 @@
   }
 
   window.Spellbook = {
+    // Tooltip numbers for one rank, Forever vs Classic: { now, then, pct, d }.
+    compare(name, rank) {
+      const d = desc(name, rank);
+      if (!d) return null;
+      const range = text => (text && (text.match(/(\d[\d,]*)\s+to\s+(\d[\d,]*)/) || [])[0]) || null;
+      return { now: range(d.d), then: range(d.cd), pct: pctChange(d), d };
+    },
     render(target, uiHelpers) {
       container = target;
       ui = uiHelpers;
