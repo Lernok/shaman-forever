@@ -15,7 +15,7 @@
         "en": "Riptide is the new bottom of the tree"
       },
       "detail": {
-        "es": "Instantáneo, 6 s de CD: cura, agrega un HoT de 15 s y sube 25% los Chain Heal que lances directo sobre ese objetivo. Según las notas de Blizzard puede critear. Fila 7 (nivel 40), rangos 2 y 3 a los 50 y 60.",
+        "es": "Instantáneo, 6 s de CD: cura, agrega un HoT de 15 s y sube 25% los Chain Heal que lances directo sobre ese objetivo. Según las notas de Blizzard puede ser crítico. Fila 7 (nivel 40), rangos 2 y 3 a los 50 y 60.",
         "en": "Instant, 6 sec cooldown: heals, adds a 15 sec HoT and raises the Chain Heals you cast directly on that target by 25%. Per Blizzard's notes it can crit. Row 7 (level 40), ranks 2 and 3 at 50 and 60."
       },
       "confidence": "client-data",
@@ -27,7 +27,7 @@
         "en": "Water Shield is a talent (row 3)"
       },
       "detail": {
-        "es": "3 globos: cuando te pegan o una cura tuya critea, recuperás 2% de tu maná máximo (un globo cada pocos segundos). Dura 10 min. Desde la build 70291 no tiene cooldown. Solo un escudo elemental a la vez; ningún entrenador lo vende.",
+        "es": "3 globos: cuando te pegan o una cura tuya es crítica, recuperás 2% de tu maná máximo (un globo cada pocos segundos). Dura 10 min. Desde la build 70291 no tiene tiempo de reutilización. Solo un escudo elemental a la vez; ningún entrenador lo vende.",
         "en": "3 globes: when you're hit or one of your heals crits, you regain 2% of your maximum mana (one globe every few seconds). Lasts 10 min. Since build 70291 it has no cooldown. Only one elemental shield at a time; no trainer sells it."
       },
       "confidence": "client-data",
@@ -39,7 +39,7 @@
         "en": "Mindfulness and Healing Way"
       },
       "detail": {
-        "es": "Mindfulness (nuevo, fila 2): a 3/3, 50% de tu regeneración de maná sigue mientras casteás; en Classic el Shaman no tenía nada así. Healing Way ahora da +25% plano a Healing Wave desde la primera (antes acumulaba 6% hasta 3 veces).",
+        "es": "Mindfulness (nuevo, fila 2): a 3/3, 50% de tu regeneración de maná sigue mientras lanzás hechizos; en Classic el Shaman no tenía nada así. Healing Way ahora da +25% plano a Healing Wave desde la primera (antes acumulaba 6% hasta 3 veces).",
         "en": "Mindfulness (new, row 2): at 3/3, 50% of your mana regeneration continues while casting; Classic Shamans had nothing like it. Healing Way now gives a flat +25% to Healing Wave from the first one (it used to stack 6% up to 3 times)."
       },
       "confidence": "client-data",
@@ -51,7 +51,7 @@
         "en": "Mana Tide Totem moves up to row 4 (level 25)"
       },
       "detail": {
-        "es": "Antes estaba al final del árbol (nivel 40). Llega a 30 yardas; el rango 1 da 88 de maná cada 3 s (antes 170) y el rango 3 sigue en 290.",
+        "es": "Antes estaba al final del árbol (nivel 40). Llega a 30 m; el rango 1 da 88 de maná cada 3 s (antes 170) y el rango 3 sigue en 290.",
         "en": "It used to be at the bottom of the tree (level 40). Reaches 30 yards; rank 1 gives 88 mana every 3 sec (was 170) and rank 3 stays at 290."
       },
       "confidence": "client-data",
@@ -59,11 +59,11 @@
     },
     {
       "change": {
-        "es": "El hit sale de Tidal Focus",
+        "es": "El índice de golpe sale de Tidal Focus",
         "en": "Hit comes from Tidal Focus"
       },
       "detail": {
-        "es": "Nature's Guidance ya no existe: el único hit del árbol es Tidal Focus (5% a 5/5, fila 2). Tidal Mastery ya no da crítico a Lightning Bolt ni a Chain Lightning. Healing Focus llega al mismo 70% en 3 rangos (antes 5).",
+        "es": "Nature's Guidance ya no existe: el único índice de golpe del árbol es Tidal Focus (5% a 5/5, fila 2). Tidal Mastery ya no da crítico a Lightning Bolt ni a Chain Lightning. Healing Focus llega al mismo 70% en 3 rangos (antes 5).",
         "en": "Nature's Guidance is gone: the only hit in the tree is Tidal Focus (5% at 5/5, row 2). Tidal Mastery no longer adds crit to Lightning Bolt or Chain Lightning. Healing Focus reaches the same 70% in 3 ranks (was 5)."
       },
       "confidence": "client-data",
@@ -80,13 +80,13 @@
     ],
     "confidence": "classic-assumed",
     "rationale": {
-      "es": "El poder de curación mejora cada cura, el Intelecto sostiene el pool de maná y Mindfulness hace que el Espíritu rinda mientras casteás. Tené suficiente Stamina para que un golpe suelto no te interrumpa una cura.",
+      "es": "El poder de curación mejora cada cura, el Intelecto sostiene la reserva de maná y Mindfulness hace que el Espíritu rinda mientras lanzás hechizos. Tené suficiente Aguante para que un golpe suelto no te interrumpa una cura.",
       "en": "Healing power improves every heal, Intellect sustains the mana pool, and Mindfulness makes Spirit pay off while casting. Keep enough Stamina that a stray hit doesn't interrupt a heal."
     },
     "source": "https://classicwowforever.com/class-guides/shaman/restoration/",
     "forever": {
       "note": {
-        "es": "Específico de Forever: las curas bajaron poco (Healing Wave −7%, Chain Heal −17%) y los rangos bajos de Healing Wave escalan más con spell power que en Classic. Con Mindfulness 3/3 y Water Shield, la regeneración vale más que en Classic.",
+        "es": "Específico de Forever: las curas bajaron poco (Healing Wave −7%, Chain Heal −17%) y los rangos bajos de Healing Wave escalan más con poder con hechizos que en Classic. Con Mindfulness 3/3 y Water Shield, la regeneración vale más que en Classic.",
         "en": "Forever-specific: heals barely dropped (Healing Wave −7%, Chain Heal −17%) and low Healing Wave ranks scale more with spell power than in Classic. With Mindfulness 3/3 and Water Shield, regeneration is worth more than in Classic."
       },
       "confidence": "client-data"
@@ -99,7 +99,7 @@
         "en": "Water Shield while healing, and a useful Mana Spring Totem from level 26."
       },
       {
-        "es": "Healing Wave cuando hay tiempo para el casteo largo; Lesser Healing Wave si esperar ese casteo pone en riesgo al objetivo.",
+        "es": "Healing Wave cuando hay tiempo para el lanzamiento largo; Lesser Healing Wave si esperar ese lanzamiento pone en riesgo al objetivo.",
         "en": "Healing Wave when there's time for the long cast; Lesser Healing Wave if waiting for that cast puts the target at risk."
       },
       {
@@ -140,11 +140,11 @@
       "en": "Riptide (row 7) — heal + HoT, and a 25% stronger Chain Heal on that target"
     },
     {
-      "es": "Nature's Swiftness — tu próximo hechizo de Nature de menos de 10 s sale instantáneo",
+      "es": "Nature's Swiftness — tu próximo hechizo de Naturaleza de menos de 10 s sale instantáneo",
       "en": "Nature's Swiftness — your next Nature spell under 10 sec becomes instant"
     },
     {
-      "es": "Water Shield — 2% de maná por globo al recibir golpes o critear curas",
+      "es": "Water Shield — 2% de maná por globo al recibir golpes o con curas críticas",
       "en": "Water Shield — 2% mana per globe when you're hit or your heals crit"
     },
     {
@@ -152,7 +152,7 @@
       "en": "Mana Tide Totem — mana for the group, now on row 4"
     },
     {
-      "es": "Mindfulness — 50% de regen de maná mientras casteás a 3/3",
+      "es": "Mindfulness — 50% de regeneración de maná mientras lanzás hechizos, a 3/3",
       "en": "Mindfulness — 50% mana regen while casting at 3/3"
     }
   ],

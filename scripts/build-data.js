@@ -18,6 +18,17 @@ const PROSE_KEYS = new Set(['note', 'fact', 'detail', 'change', 'summary', 'role
   'rationale', 'status', 'statement', 'baseline', 'recommendation', 'rank', 'classic', 'forever']);
 const PROSE_LISTS = new Set(['level30', 'level60', 'priority', 'keyTalents']);
 const langErrors = [];
+// GLOSARIO.md: English words that must not appear in Spanish prose (game proper
+// nouns are stripped first, so "Nature's Swiftness" or "Spirit Weapons" are fine).
+// "caster" is allowed jargon; text inside double quotes is a literal citation.
+const SPANGLISH = /\b(spell power|cast(?!er)\w*|critea\w*|melee|root|slow|parry|dodge|hit|haste|stamina|yardas|yd|regen|cooldown|pool|resete\w*|capad[oa]s?|reworke\w*)\b/i;
+let properNouns = [];
+function checkSpanish(text, where) {
+  let stripped = text.replace(/"[^"]*"|“[^”]*”/g, ' ');
+  properNouns.forEach(n => { stripped = stripped.split(n).join(' '); });
+  const m = stripped.match(SPANGLISH);
+  if (m) langErrors.push(where + ': "' + m[0] + '" en el texto en español (ver GLOSARIO.md)');
+}
 function checkLang(v, where, key) {
   if (typeof v === 'string') {
     if (PROSE_KEYS.has(key)) langErrors.push(where + ': texto sin traducir (debe ser { es, en })');
@@ -35,6 +46,7 @@ function checkLang(v, where, key) {
     ['es', 'en'].forEach(l => {
       if (typeof v[l] !== 'string' || !v[l].trim()) langErrors.push(where + ': falta "' + l + '"');
     });
+    if (typeof v.es === 'string') checkSpanish(v.es, where);
     return;
   }
   for (const k in v) checkLang(v[k], where + '.' + k, k);
@@ -42,6 +54,12 @@ function checkLang(v, where, key) {
 
 const shaman = read('data/shaman.json');
 write('data/shaman.js', 'SHAMAN_DATA', shaman);
+// Longest first, so "Nature's Swiftness" is removed before a shorter name inside it.
+properNouns = [
+  ...shaman.talents.trees.flatMap(t => t.talents.map(x => x.name).concat((t.removed || []).map(x => x.name))),
+  ...Object.keys(shaman.spell_desc).map(k => k.split('|')[1]),
+  ...Object.values(shaman.racials).flat().flatMap(r => [r.race].concat(r.abilities.map(a => a[0])))
+].filter((n, i, a) => n && a.indexOf(n) === i).sort((a, b) => b.length - a.length);
 
 const guides = {};
 ['enhancement', 'elemental', 'restoration', 'overview'].forEach(f => {

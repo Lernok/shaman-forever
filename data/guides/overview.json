@@ -2,7 +2,7 @@
   "classNotes": [
     {
       "fact": {
-        "es": "La beta está capada en nivel 30 (21 puntos de talento) desde la build 70170 del 1 oct 2026. Los árboles cuentan hasta el 60 (51 puntos).",
+        "es": "La beta tiene tope en nivel 30 (21 puntos de talento) desde la build 70170 del 1 oct 2026. Los árboles cuentan hasta el 60 (51 puntos).",
         "en": "The beta has been capped at level 30 (21 talent points) since build 70170 on Oct 1, 2026. The trees count up to level 60 (51 points)."
       },
       "confidence": "official"
@@ -30,14 +30,14 @@
     },
     {
       "fact": {
-        "es": "Spellbook: 10 hechizos nuevos, 9 reworkeados y 22 con números nuevos respecto de Classic. Todo en el tab Spellbook.",
+        "es": "Spellbook: 10 hechizos nuevos, 9 rehechos y 22 con números nuevos respecto de Classic. Todo en el tab Spellbook.",
         "en": "Spellbook: 10 new spells, 9 reworked and 22 with new numbers compared to Classic. All of it in the Spellbook tab."
       },
       "confidence": "client-data"
     },
     {
       "fact": {
-        "es": "Ningún árbol es de tanque, pero Enhancement tiene piezas: Spirit Weapons (parry y +30% de amenaza con Rockbiter activo), Anticipation (+6% dodge) y Toughness (+10% Stamina). Shield Specialization ya no existe.",
+        "es": "Ningún árbol es de tanque, pero Enhancement tiene piezas: Spirit Weapons (parada y +30% de amenaza con Rockbiter activo), Anticipation (+6% de esquiva) y Toughness (+10% de Aguante). Shield Specialization ya no existe.",
         "en": "No tree is a tank tree, but Enhancement has the pieces: Spirit Weapons (parry and +30% threat with Rockbiter active), Anticipation (+6% dodge) and Toughness (+10% Stamina). Shield Specialization is gone."
       },
       "confidence": "client-data"
@@ -131,7 +131,7 @@
         "en": "Sep 24, 2026"
       },
       "event": {
-        "es": "Build 70009: 10 cambios a Shaman. Elemental Fury y Elemental Alacrity cambian de fila, Rage of the Farseer deja de afectar hechizos, y las notas dicen que Riptide puede critear y que Windfury, Grace of Air y Tranquil Air ya no se apilan.",
+        "es": "Build 70009: 10 cambios a Shaman. Elemental Fury y Elemental Alacrity cambian de fila, Rage of the Farseer deja de afectar hechizos, y las notas dicen que Riptide puede ser crítico y que Windfury, Grace of Air y Tranquil Air ya no se apilan.",
         "en": "Build 70009: 10 Shaman changes. Elemental Fury and Elemental Alacrity swap rows, Rage of the Farseer stops affecting spells, and the notes say Riptide can crit and that Windfury, Grace of Air and Tranquil Air no longer stack."
       },
       "confidence": "official"
@@ -153,7 +153,7 @@
         "en": "Oct 8, 2026"
       },
       "event": {
-        "es": "Build 70291: Water Shield pierde su cooldown de 15 s, Lightning Bolt rango 1 baja a 14–16, y Mana Tide Totem pasa a nivel 25 en los archivos.",
+        "es": "Build 70291: Water Shield pierde su reutilización de 15 s, Lightning Bolt rango 1 baja a 14–16, y Mana Tide Totem pasa a nivel 25 en los archivos.",
         "en": "Build 70291: Water Shield loses its 15 sec cooldown, Lightning Bolt rank 1 drops to 14–16, and Mana Tide Totem moves to level 25 in the files."
       },
       "confidence": "client-data"
@@ -185,7 +185,7 @@
     "notes": [
       {
         "fact": {
-          "es": "La mayoría de los totems dura 5 minutos (antes 2; Healing Stream y Mana Spring, 1) y los de grupo llegan a 30 yardas, que es lo que daba Totemic Mastery (ese talento ya no existe).",
+          "es": "La mayoría de los totems dura 5 minutos (antes 2; Healing Stream y Mana Spring, 1) y los de grupo llegan a 30 m, que es lo que daba Totemic Mastery (ese talento ya no existe).",
           "en": "Most totems last 5 minutes (was 2; Healing Stream and Mana Spring, 1) and party totems reach 30 yards, which is what Totemic Mastery used to give (that talent is gone)."
         },
         "confidence": "client-data"
@@ -206,14 +206,14 @@
       },
       {
         "fact": {
-          "es": "Call of the Elements (nivel 20, 3 s de casteo) baja hasta 4 totems de tu Totem Bar de una. Call of the Ancestors (30) y Call of the Spirits (40) son un 2º y 3er set guardado.",
+          "es": "Call of the Elements (nivel 20, 3 s de lanzamiento) baja hasta 4 totems de tu barra de totems de una. Call of the Ancestors (30) y Call of the Spirits (40) son un 2º y 3er set guardado.",
           "en": "Call of the Elements (level 20, 3 sec cast) drops up to 4 totems from your Totem Bar at once. Call of the Ancestors (30) and Call of the Spirits (40) are a 2nd and 3rd saved set."
         },
         "confidence": "client-data"
       },
       {
         "fact": {
-          "es": "Totemic Recall (20) levanta tus totems y te devuelve 25% del maná de cada uno. Totemic Projection (22) los mueve hasta 30 yardas.",
+          "es": "Totemic Recall (20) levanta tus totems y te devuelve 25% del maná de cada uno. Totemic Projection (22) los mueve hasta 30 m.",
           "en": "Totemic Recall (20) picks your totems back up and returns 25% of each one's mana. Totemic Projection (22) moves them up to 30 yards."
         },
         "confidence": "client-data"
@@ -359,14 +359,14 @@
     "notes": [
       {
         "fact": {
-          "es": "Por qué: Blizzard puso spell power en el equipo desde el nivel 10, empezando por las armas, y bajó el daño base de los hechizos en lo que suelen dar los verdes de quest (WoW: Forever Podcast, ep. 2).",
+          "es": "Por qué: Blizzard puso poder con hechizos en el equipo desde el nivel 10, empezando por las armas, y bajó el daño base de los hechizos en lo que suelen dar los verdes de quest (WoW: Forever Podcast, ep. 2).",
           "en": "Why: Blizzard put spell power on gear from level 10, starting with weapons, and lowered spells' base damage by what typical questing greens give (WoW: Forever Podcast, ep. 2)."
         },
         "confidence": "official"
       },
       {
         "fact": {
-          "es": "Lightning Bolt (rangos 4–10) pasó de 85,7% a 71,4% de coeficiente y Chain Lightning de 71,4% a ~57%. En cambio los rangos bajos ganaron coeficiente: Lightning Bolt 1–3, Healing Wave 1–4 y Earth Shock 1–3 escalan más con spell power que en Classic.",
+          "es": "Lightning Bolt (rangos 4–10) pasó de 85,7% a 71,4% de coeficiente y Chain Lightning de 71,4% a ~57%. En cambio los rangos bajos ganaron coeficiente: Lightning Bolt 1–3, Healing Wave 1–4 y Earth Shock 1–3 escalan más con poder con hechizos que en Classic.",
           "en": "Lightning Bolt (ranks 4–10) went from an 85.7% to a 71.4% coefficient and Chain Lightning from 71.4% to ~57%. Low ranks, on the other hand, gained coefficient: Lightning Bolt 1–3, Healing Wave 1–4 and Earth Shock 1–3 scale more with spell power than in Classic."
         },
         "confidence": "client-data"

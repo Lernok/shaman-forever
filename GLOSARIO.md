@@ -11,7 +11,12 @@ specs (Elemental, Enhancement, Restoration) y la clase (Shaman). Ejemplo: "tus h
 ## 2. Jerga de jugador: igual en los dos idiomas
 
 Lista cerrada. No se traduce ni se explica:
-DPS, tank, healer, build, leveling, proc, buff, CD, BiS, AoE, pull, HoT, crit (como sustantivo corto), respec, dual spec, gear.
+DPS, tank, healer, caster, build, leveling (y "leveo"), spec, proc, buff, CD, BiS, AoE, pull, HoT, tick, imbue, crit (como sustantivo corto),
+stats, cap, tooltip, respec, dual spec, gear. "Chance" se usa porque es español válido en Latinoamérica.
+
+No van en español (usar el término de la sección 3): spell power, casteo/castear, critear, melee, root, slow, parry, dodge,
+Hit/Haste, Stamina, yardas/yd, regen, cooldown (usar "reutilización" o CD), pool, resetear, "capada", "reworkeado". `scripts/build-data.js` rechaza estas palabras en los
+textos en español (después de quitar los nombres propios del juego).
 
 ## 3. Vocabulario de mecánicas: se traduce siempre, con estos términos
 

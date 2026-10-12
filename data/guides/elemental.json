@@ -5,7 +5,7 @@
     "en": "Ranged DPS / caster"
   },
   "summary": {
-    "es": "Caster de Flame Shock + Lava Burst. Lava Burst hace 20% más de daño si tu Flame Shock está en el objetivo, así que la rotación gira en mantener Flame Shock activo. Ojo: en Forever el daño base de los hechizos bajó mucho frente a Classic (Lightning Bolt −56% en su rango máximo) porque el spell power ahora viene del equipo desde el nivel 10.",
+    "es": "Caster de Flame Shock + Lava Burst. Lava Burst hace 20% más de daño si tu Flame Shock está en el objetivo, así que la rotación gira en mantener Flame Shock activo. Ojo: en Forever el daño base de los hechizos bajó mucho frente a Classic (Lightning Bolt −56% en su rango máximo) porque el poder con hechizos ahora viene del equipo desde el nivel 10.",
     "en": "Flame Shock + Lava Burst caster. Lava Burst deals 20% more damage if your Flame Shock is on the target, so the rotation revolves around keeping Flame Shock up. Note: in Forever, spells' base damage dropped a lot compared to Classic (Lightning Bolt −56% at its top rank) because spell power now comes from gear from level 10."
   },
   "mechanicalChanges": [
@@ -23,11 +23,11 @@
     },
     {
       "change": {
-        "es": "Lightning Bolt y Chain Lightning castean más rápido",
+        "es": "Lightning Bolt y Chain Lightning se lanzan más rápido",
         "en": "Lightning Bolt and Chain Lightning cast faster"
       },
       "detail": {
-        "es": "Lightning Bolt rangos 4–10 castea en 2,5 s (Classic: 3 s); los rangos 1–3 no cambiaron. Chain Lightning rango 1 es de 2 s con 6 s de CD.",
+        "es": "Lightning Bolt rangos 4–10 se lanza en 2,5 s (Classic: 3 s); los rangos 1–3 no cambiaron. Chain Lightning rango 1 es de 2 s con 6 s de CD.",
         "en": "Lightning Bolt ranks 4–10 cast in 2.5 sec (Classic: 3 sec); ranks 1–3 are unchanged. Chain Lightning rank 1 is a 2 sec cast with a 6 sec cooldown."
       },
       "confidence": "client-data",
@@ -51,7 +51,7 @@
         "en": "Lightning Overload is new (row 5)"
       },
       "detail": {
-        "es": "Chance de que Lightning Bolt o Chain Lightning lancen una copia gratis a la mitad de daño y sin amenaza. El tooltip y el hechizo no coinciden en la chance, y no se sabe si Lava Burst puede hacer overload.",
+        "es": "Chance de que Lightning Bolt o Chain Lightning lancen una copia gratis a la mitad de daño y sin amenaza. El tooltip y el hechizo no coinciden en la chance, y no se sabe si Lava Burst también puede activarlo.",
         "en": "A chance for Lightning Bolt or Chain Lightning to cast a free copy at half damage and no threat. The tooltip and the spell disagree on the chance, and it's unknown whether Lava Burst can overload."
       },
       "confidence": "client-data",
@@ -63,7 +63,7 @@
         "en": "Earthbound: Earthbind roots"
       },
       "detail": {
-        "es": "Talento nuevo de 1 punto (fila 5): Earthbind Totem inmoviliza 5 s a lo que tenga cerca al caer. El root se aplica del lado del servidor y nadie lo probó todavía.",
+        "es": "Talento nuevo de 1 punto (fila 5): Earthbind Totem inmoviliza 5 s a lo que tenga cerca al caer. La inmovilización se aplica del lado del servidor y nadie lo probó todavía.",
         "en": "New 1-point talent (row 5): Earthbind Totem immobilizes nearby targets for 5 sec when it drops. The root is applied server-side and nobody has tested it yet."
       },
       "confidence": "client-data",
@@ -87,7 +87,7 @@
         "en": "Fire Nova is a spell, not a totem"
       },
       "detail": {
-        "es": "30 yd de alcance, instantáneo, 10 s de CD; explota alrededor de tu totem de fuego, con el mismo daño que tenía el totem y sin la espera de 4 s.",
+        "es": "30 m de alcance, instantáneo, 10 s de CD; explota alrededor de tu totem de fuego, con el mismo daño que tenía el totem y sin la espera de 4 s.",
         "en": "30 yd range, instant, 10 sec cooldown; blasts around your Fire totem, for the same damage the totem had and without the 4 sec fuse."
       },
       "confidence": "client-data",
@@ -104,7 +104,7 @@
     ],
     "confidence": "classic-assumed",
     "rationale": {
-      "es": "El spell power mejora cada casteo, y el Intelecto paga el maná para abrir y para curarte. La fuente no ve nada en el cliente beta que contradiga cómo funcionaban los stats de caster en Classic.",
+      "es": "El poder con hechizos mejora cada lanzamiento, y el Intelecto paga el maná para abrir y para curarte. La fuente no ve nada en el cliente beta que contradiga cómo funcionaban los stats de caster en Classic.",
       "en": "Spell power improves every cast, and Intellect pays for the mana to open and to heal yourself. The source sees nothing in the beta client contradicting how caster stats worked in Classic."
     },
     "source": "https://classicwowforever.com/class-guides/shaman/elemental/",
@@ -118,13 +118,13 @@
       ],
       "confidence": "community-untested",
       "note": {
-        "es": "Fuentes estilo Icy Veins le dan más peso a Hit/Haste para contenido de raid. Tomalo como variante de nivel alto, cuando el gear y el cap de hit importen más que al 30.",
+        "es": "Fuentes estilo Icy Veins le dan más peso al índice de golpe y la celeridad para contenido de banda. Tomalo como variante de nivel alto, cuando el gear y el cap de índice de golpe importen más que al 30.",
         "en": "Icy Veins-style sources weight Hit/Haste higher for raid content. Treat it as a high-level variant, for when gear and the hit cap matter more than at 30."
       }
     },
     "forever": {
       "note": {
-        "es": "Específico de Forever: el daño base bajó y Blizzard puso spell power en el equipo desde el nivel 10, empezando por las armas. El spell power del arma pesa más que en Classic. Además Lightning Bolt (rangos 4–10) escala menos, 71,4% contra 85,7%.",
+        "es": "Específico de Forever: el daño base bajó y Blizzard puso poder con hechizos en el equipo desde el nivel 10, empezando por las armas. El poder con hechizos del arma pesa más que en Classic. Además Lightning Bolt (rangos 4–10) escala menos, 71,4% contra 85,7%.",
         "en": "Forever-specific: base damage dropped and Blizzard put spell power on gear from level 10, starting with weapons. Weapon spell power matters more than in Classic. Lightning Bolt (ranks 4–10) also scales less, 71.4% against 85.7%."
       },
       "confidence": "official"
@@ -133,7 +133,7 @@
   "rotation": {
     "level30": [
       {
-        "es": "Abrí de lejos con Lightning Bolt y poné Earthbind donde te dé otra ventana de casteo.",
+        "es": "Abrí de lejos con Lightning Bolt y poné Earthbind donde te dé otra ventana de lanzamiento.",
         "en": "Open from range with Lightning Bolt and drop Earthbind where it buys you another cast window."
       },
       {
@@ -141,7 +141,7 @@
         "en": "Flame Shock and Searing Totem on targets that live long enough for the ticks."
       },
       {
-        "es": "Earth Shock para interrumpir o como golpe directo, y Frost Shock si el objetivo se mueve y el slow importa.",
+        "es": "Earth Shock para interrumpir o como golpe directo, y Frost Shock si el objetivo se mueve y la ralentización importa.",
         "en": "Earth Shock to interrupt or as a direct hit, and Frost Shock when the target moves and the slow matters."
       },
       {
@@ -156,7 +156,7 @@
         "en": "Flame Shock first, and refresh it before it drops: Lava Burst deals 20% more with it up."
       },
       {
-        "es": "Lava Burst cada vez que salga del cooldown.",
+        "es": "Lava Burst cada vez que salga de CD.",
         "en": "Lava Burst whenever it comes off cooldown."
       },
       {
@@ -184,7 +184,7 @@
     },
     {
       "note": {
-        "es": "Priorizá un arma con spell power: es de donde sale el spell power desde el nivel 10.",
+        "es": "Priorizá un arma con poder con hechizos: es de donde sale ese stat desde el nivel 10.",
         "en": "Prioritize a weapon with spell power: that's where spell power comes from from level 10."
       },
       "confidence": "official"
@@ -214,7 +214,7 @@
   ],
   "recommendedBuild": {
     "note": {
-      "es": "Alternativa al 30: Earthbound en vez del primer punto de Lightning Overload, para tener un root instantáneo al levear solo. Se reporta que bajar a Restoration por Mindfulness + Mana Tide Totem rinde en peleas largas, pero Mana Tide está en la fila 4 (15 puntos en Resto): al 30 te deja solo 5–10 puntos en Elemental, así que en la práctica es para más nivel.",
+      "es": "Alternativa al 30: Earthbound en vez del primer punto de Lightning Overload, para tener una inmovilización instantánea al subir de nivel solo. Se reporta que bajar a Restoration por Mindfulness + Mana Tide Totem rinde en peleas largas, pero Mana Tide está en la fila 4 (15 puntos en Resto): al 30 te deja solo 5–10 puntos en Elemental, así que en la práctica es para más nivel.",
       "en": "Alternative at 30: Earthbound instead of Lightning Overload's first point, for an instant root while leveling solo. Dipping into Restoration for Mindfulness + Mana Tide Totem is reported to pay off in long fights, but Mana Tide sits on row 4 (15 points in Resto): at 30 it leaves only 5–10 points for Elemental, so in practice it's a higher-level option."
     }
   },

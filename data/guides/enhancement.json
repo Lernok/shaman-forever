@@ -5,7 +5,7 @@
     "en": "Melee DPS"
   },
   "summary": {
-    "es": "Híbrido melee construido alrededor de Stormstrike, los imbues de arma y los procs de Flurry y Maelstrom Weapon, con un arma a dos manos. En Forever el Intelecto se vuelve poder de ataque y spell power por talentos, y Stormstrike vuelve cada 8 s. Es el spec más elegido: 55–60% de los builds de Shaman en talentsforever.com.",
+    "es": "Híbrido cuerpo a cuerpo construido alrededor de Stormstrike, los imbues de arma y los procs de Flurry y Maelstrom Weapon, con un arma a dos manos. En Forever el Intelecto se vuelve poder de ataque y poder con hechizos por talentos, y Stormstrike vuelve cada 8 s. Es el spec más elegido: 55–60% de los builds de Shaman en talentsforever.com.",
     "en": "Melee hybrid built around Stormstrike, weapon imbues and Flurry and Maelstrom Weapon procs, with a two-handed weapon. In Forever, Intellect turns into attack power and spell power through talents, and Stormstrike comes back every 8 sec. It's the most picked spec: 55–60% of Shaman builds on talentsforever.com."
   },
   "mechanicalChanges": [
@@ -27,7 +27,7 @@
         "en": "Stormstrike: the 20% is yours and it's back every 8 sec"
       },
       "detail": {
-        "es": "Sube 20% el daño de tu próximo Lightning Bolt, Chain Lightning o Earth Shock contra ese objetivo (en Classic, las siguientes 2 fuentes de Nature de cualquiera). 125 de maná y 8 s de CD (antes 20 s). Está en la fila 4 (nivel 25), aunque el hechizo en los archivos todavía dice nivel 40; no se probó cuál manda.",
+        "es": "Sube 20% el daño de tu próximo Lightning Bolt, Chain Lightning o Earth Shock contra ese objetivo (en Classic, las siguientes 2 fuentes de daño de Naturaleza de cualquiera). 125 de maná y 8 s de CD (antes 20 s). Está en la fila 4 (nivel 25), aunque el hechizo en los archivos todavía dice nivel 40; no se probó cuál manda.",
         "en": "Raises the damage of your next Lightning Bolt, Chain Lightning or Earth Shock against that target by 20% (in Classic, the next 2 Nature damage sources from anyone). 125 mana and an 8 sec cooldown (was 20 sec). It sits on row 4 (level 25), although the spell in the files still says level 40; which one wins hasn't been tested."
       },
       "confidence": "client-data",
@@ -39,7 +39,7 @@
         "en": "Intellect becomes power"
       },
       "detail": {
-        "es": "Mental Dexterity (3/3) da poder de ataque igual al 100% de tu Intelecto y abre Flurry. Mental Quickness (2/2) da spell power y curación hasta 30% de tu Intelecto. Ancestral Knowledge ahora es +10% de Intelecto (en Classic era maná).",
+        "es": "Mental Dexterity (3/3) da poder de ataque igual al 100% de tu Intelecto y abre Flurry. Mental Quickness (2/2) da poder con hechizos y curación hasta 30% de tu Intelecto. Ancestral Knowledge ahora es +10% de Intelecto (en Classic era maná).",
         "en": "Mental Dexterity (3/3) gives attack power equal to 100% of your Intellect and opens Flurry. Mental Quickness (2/2) gives spell damage and healing up to 30% of your Intellect. Ancestral Knowledge is now +10% Intellect (in Classic it was mana)."
       },
       "confidence": "client-data",
@@ -51,7 +51,7 @@
         "en": "Maelstrom Weapon (row 6)"
       },
       "detail": {
-        "es": "Tus golpes cuerpo a cuerpo acumulan hasta 5 cargas; cada carga baja 20% (a 5/5) el casteo y el maná de tu próximo Lightning Bolt. Solo Lightning Bolt, duran 30 s, y la chance por golpe no está en los archivos.",
+        "es": "Tus golpes cuerpo a cuerpo acumulan hasta 5 cargas; cada carga baja 20% (a 5/5) el tiempo de lanzamiento y el maná de tu próximo Lightning Bolt. Solo Lightning Bolt, duran 30 s, y la chance por golpe no está en los archivos.",
         "en": "Your melee hits build up to 5 stacks; each stack cuts 20% (at 5/5) off the cast time and mana of your next Lightning Bolt. Lightning Bolt only, stacks last 30 sec, and the chance per hit isn't in the files."
       },
       "confidence": "client-data",
@@ -63,7 +63,7 @@
         "en": "Flurry, Rage of the Farseer and Spirit Weapons"
       },
       "detail": {
-        "es": "Flurry da 25% de velocidad de ataque (antes 30%). Rage of the Farseer (fila 7): +30% de velocidad de ataque por 25 s, 3 min de CD, y desde el 24 sep ya no afecta hechizos. Spirit Weapons: chance de parry y control de amenaza (−30% sin Rockbiter, más amenaza con Rockbiter).",
+        "es": "Flurry da 25% de velocidad de ataque (antes 30%). Rage of the Farseer (fila 7): +30% de velocidad de ataque por 25 s, 3 min de CD, y desde el 24 sep ya no afecta hechizos. Spirit Weapons: chance de parar y control de amenaza (−30% sin Rockbiter, más amenaza con Rockbiter).",
         "en": "Flurry gives 25% attack speed (was 30%). Rage of the Farseer (row 7): +30% attack speed for 25 sec, 3 min cooldown, and since Sep 24 it no longer affects spells. Spirit Weapons: a chance to parry and a threat switch (−30% without Rockbiter, more threat with Rockbiter)."
       },
       "confidence": "client-data",
@@ -92,13 +92,13 @@
     ],
     "confidence": "classic-assumed",
     "rationale": {
-      "es": "Mental Dexterity le da al Intelecto un rol de poder de ataque, y además necesitás maná para shocks y curas de emergencia. La fuente no ve nada en el cliente que contradiga los stats de melee de Classic.",
+      "es": "Mental Dexterity le da al Intelecto un rol de poder de ataque, y además necesitás maná para shocks y curas de emergencia. La fuente no ve nada en el cliente que contradiga los stats cuerpo a cuerpo de Classic.",
       "en": "Mental Dexterity gives Intellect an attack-power role, and you still need mana for shocks and emergency heals. The source sees nothing in the client contradicting Classic's melee stats."
     },
     "source": "https://classicwowforever.com/class-guides/shaman/enhancement/",
     "forever": {
       "note": {
-        "es": "Específico de Forever: con Mental Dexterity 3/3 cada punto de Intelecto es 1 de poder de ataque, Ancestral Knowledge lo sube 10% y Mental Quickness convierte hasta 30% en spell power para Earth Shock y Lightning Bolt. El Intelecto probablemente vale más de lo que dice esta lista (sacada de Classic), pero nadie lo midió.",
+        "es": "Específico de Forever: con Mental Dexterity 3/3 cada punto de Intelecto es 1 de poder de ataque, Ancestral Knowledge lo sube 10% y Mental Quickness convierte hasta 30% en poder con hechizos para Earth Shock y Lightning Bolt. El Intelecto probablemente vale más de lo que dice esta lista (sacada de Classic), pero nadie lo midió.",
         "en": "Forever-specific: with Mental Dexterity 3/3 each point of Intellect is 1 attack power, Ancestral Knowledge raises it 10%, and Mental Quickness turns up to 30% into spell power for Earth Shock and Lightning Bolt. Intellect is probably worth more than this list (taken from Classic) says, but nobody has measured it."
       },
       "confidence": "client-data"
@@ -111,7 +111,7 @@
         "en": "Use the imbue that suits the pull and keep Lightning Shield up. Rockbiter's extra threat matters when a tank is holding the target."
       },
       {
-        "es": "Desde el 25, Stormstrike y después un hechizo de Nature que lo aproveche. Guardá Earth Shock para interrumpir en vez de gastarlo solo por daño.",
+        "es": "Desde el 25, Stormstrike y después un hechizo de Naturaleza que lo aproveche. Guardá Earth Shock para interrumpir en vez de gastarlo solo por daño.",
         "en": "From 25, Stormstrike and then a Nature spell that benefits from it. Save Earth Shock for interrupts instead of spending it only on damage."
       },
       {
@@ -183,11 +183,11 @@
       "en": "Mental Dexterity — 100% of your Intellect as attack power; opens Flurry"
     },
     {
-      "es": "Maelstrom Weapon — hasta 20% menos casteo y maná por carga para Lightning Bolt",
+      "es": "Maelstrom Weapon — hasta 20% menos tiempo de lanzamiento y maná por carga para Lightning Bolt",
       "en": "Maelstrom Weapon — up to 20% less cast time and mana per stack for Lightning Bolt"
     },
     {
-      "es": "Improved Stormstrike — 50% de regen de maná al castear por 15 s tras Stormstrike, y Stormstrike se resetea al esquivar o parar",
+      "es": "Improved Stormstrike — 50% de regeneración de maná al lanzar hechizos por 15 s tras Stormstrike, y Stormstrike se reinicia al esquivar o parar",
       "en": "Improved Stormstrike — 50% mana regen while casting for 15 sec after Stormstrike, and Stormstrike resets when you dodge or parry"
     },
     {
