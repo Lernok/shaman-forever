@@ -5,7 +5,9 @@
   let ui = null;
   let container = null;
   let tipEl = null;
-  const state = { spec: 'Enhancement', faction: 'horde', random: false, unknown: false, raids: false, pvp: false, path: 'safe' };
+  const state = { random: false, unknown: false, raids: false, pvp: false, path: 'safe' };
+  const Site = window.Site;
+  const SECTIONS = ['progresion', 'dungeon', 'objetivo', 'todas'];
 
   // Enhancement ranks by weapon DPS. Casters can't: weapon DPS barely matters
   // to them, and stat weights for Forever aren't known. Forever computes item
@@ -18,7 +20,7 @@
     Elemental: { kinds: ['Staff'].concat(ONE_HAND), fits: w => has(w, ['intellect', 'spellPower']), value: w => w.ilvl, metric: 'ilvl' },
     Restoration: { kinds: ['Staff'].concat(ONE_HAND), fits: w => has(w, ['intellect', 'spirit', 'healing', 'spellPower']), value: w => w.ilvl, metric: 'ilvl' }
   };
-  const spec = () => SPECS[state.spec];
+  const spec = () => SPECS[Site.spec];
   const valueOf = w => spec().value(w) || 0;
   // Source groups: three validated categorical slots + neutral gray, each
   // with its own marker shape so identity never rests on color alone.
@@ -36,7 +38,7 @@
   // Sources usable by the chosen faction, honoring the toggles.
   function usableSources(w) {
     return w.sources.filter(s => {
-      if (s.faction !== 'both' && s.faction !== state.faction) return false;
+      if (s.faction !== 'both' && s.faction !== Site.faction) return false;
       if (s.type === 'trash' && !state.random) return false;
       if ((s.type === 'unknown' || s.type === 'unrecorded') && !state.unknown) return false;
       if (s.raid && !state.raids) return false;
@@ -217,9 +219,9 @@
     const at = (w, s) => s.early || s.level || w.obtain;
     list.forEach(w => w.usable.forEach(s => { if (s.type === 'quest' && s.dungeon) rows.push({ w, s }); }));
     rows.sort((a, b) => at(a.w, a.s) - at(b.w, b.s) || valueOf(b.w) - valueOf(a.w));
-    let html = '<div class="panel" style="margin-top:16px"><h3>' + t('wp.dq.title', { n: rows.length }) + '</h3>' +
+    let html = '<div class="panel"><h3>' + t('wp.dq.title', { n: rows.length }) + '</h3>' +
       '<p class="note-text">' + t('wp.dq.intro') + '</p>';
-    if (!rows.length) return html + '<p class="dim">' + t('wp.dq.none') + '</p></div>';
+    if (!rows.length) return { n: 0, html: html + '<p class="dim">' + t('wp.dq.none') + '</p></div>' };
     const num = v => spec().metric === 'dps' ? window.I18N.num(v.toFixed(1)) : String(v);
     html += '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.dq.colQuest') + '</th><th>' + t('wp.dq.colLevels') + '</th><th>' +
       t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.dq.colAlt') + '</th></tr></thead><tbody>' +
@@ -247,47 +249,35 @@
           '<td>' + (alt ? alt.name + ' · ' + num(valueOf(alt)) +
             '<span class="wp-sub">' + (diff >= 0 ? '+' : '−') + num(Math.abs(diff)) + ' ' + t(diff >= 0 ? 'wp.dq.better' : 'wp.dq.worse') + ' · ' + sourceText(safeOf(alt)) + '</span>' : '—') + dropLine + '</td></tr>';
       }).join('') + '</tbody></table></div></div>';
-    return html;
+    return { n: rows.length, html };
   }
 
   function renderAll() {
     const list = candidates();
     const paths = { safe: progression(list.filter(isSafe)), all: progression(list) };
     const prog = paths[state.path];
-    const chart = renderChart(list, paths);
-    const specs = Object.keys(SPECS);
+    const section = Site.section('Equipo', SECTIONS);
+    const chart = section === 'progresion' ? renderChart(list, paths) : null;
+    const guide = window.I18N.localize(window.GUIDE_DATA[Site.spec] || {});
+    const dq = dungeonQuests(list);
+    const all = list.slice().sort((a, b) => a.obtain - b.obtain || valueOf(b) - valueOf(a));
+    const counts = { progresion: prog.steps.length, dungeon: dq.n, objetivo: null, todas: all.length };
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Armas + '">' +
-      '<div class="role">' + t('wp.role') + '</div><h2>' + t('wp.title') + '</h2><p>' + t('wp.intro') + '</p>' +
+      '<div class="role">' + t('wp.role') + ' · ' + Site.spec + ' · ' + t('wp.faction.' + Site.faction) + '</div><h2>' + t('wp.title') + '</h2><p>' + t('wp.intro') + '</p>' +
       '<p class="note-text dim">' + t('wp.dataNote', { build: window.WEAPON_DATA.build }) + '</p></div>';
-    html += '<div class="wp-controls">' +
-      '<div class="seg">' + specs.map(s => '<button class="btn' + (state.spec === s ? ' active' : '') + '" data-spec="' + s + '">' + s + '</button>').join('') + '</div>' +
-      '<div class="seg">' + ['horde', 'alliance'].map(f => '<button class="btn' + (state.faction === f ? ' active' : '') + '" data-faction="' + f + '">' + t('wp.faction.' + f) + '</button>').join('') + '</div>' +
+    html += Site.sectionTabs('Equipo', SECTIONS, section, k => t('wp.sec.' + k) + (counts[k] != null ? ' <span class="n">' + counts[k] + '</span>' : ''));
+    // The source toggles change every list, so they sit above all sections.
+    if (section !== 'objetivo') html += '<div class="wp-controls">' +
       '<span class="ctl-label">' + t('wp.addSources') + '</span>' +
       '<label class="chk"><input type="checkbox" id="wpRandom"' + (state.random ? ' checked' : '') + '> ' + t('wp.showRandom') + '</label>' +
       '<label class="chk"><input type="checkbox" id="wpUnknown"' + (state.unknown ? ' checked' : '') + '> ' + t('wp.showUnknown') + '</label>' +
       '<label class="chk" title="' + t('wp.showRaidsTitle') + '"><input type="checkbox" id="wpRaids"' + (state.raids ? ' checked' : '') + '> ' + t('wp.showRaids') + '</label>' +
       '<label class="chk"><input type="checkbox" id="wpPvp"' + (state.pvp ? ' checked' : '') + '> ' + t('wp.showPvp') + '</label>' +
       '</div>';
-    if (spec().metric === 'ilvl') html += '<div class="caveat">' + t('wp.casterNote') + '</div>';
-    html += '<div class="panel wp-chart-panel">' + legend() + '<div class="wp-chart-wrap">' + chart.svg + '</div></div>';
-    html += '<div class="panel" style="margin-top:16px"><h3>' + t('wp.steps', { n: prog.steps.length }) + '</h3>' +
-      '<div class="wp-path">' + ['safe', 'all'].map(p => '<button class="btn' + (state.path === p ? ' active' : '') + '" data-path="' + p + '">' + t('wp.path.' + p) + '</button>').join('') + '</div>' +
-      '<p class="note-text dim">' + t('wp.pathNote.' + state.path) + '</p>' +
-      '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.colFrom') + '</th><th>' + t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.colSource') + '</th></tr></thead><tbody>' +
-      prog.steps.map(s => weaponRow(s.weapon, s.level)).join('') + '</tbody></table></div></div>';
-
-    html += dungeonQuests(list);
-
-    const guide = window.I18N.localize(window.GUIDE_DATA[state.spec] || {});
-    if (guide.gearTargets) {
-      html += '<div class="panel" style="margin-top:16px"><h3>' + t('wp.targets') + '</h3><ul class="plain">' +
-        guide.gearTargets.map(g => '<li>' + g.note + ' ' + ui.badge(g.confidence) + '</li>').join('') + '</ul></div>';
-    }
-
-    const all = list.slice().sort((a, b) => a.obtain - b.obtain || valueOf(b) - valueOf(a));
-    html += '<details class="panel wp-all" style="margin-top:16px"><summary>' + t('wp.allWeapons', { n: all.length }) + '</summary>' +
-      '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.colSource') + '</th></tr></thead><tbody>' +
-      all.map(w => weaponRow(w)).join('') + '</tbody></table></div></details>';
+    if (section === 'progresion') html += progressionSection(list, paths, prog, chart);
+    if (section === 'dungeon') html += dq.html;
+    if (section === 'objetivo') html += targetsSection(guide);
+    if (section === 'todas') html += allSection(all);
     html += '<p class="note-text dim">' + t('wp.sourcesNote') + '</p>';
     html += ui.renderSources([
       'https://wago.tools — ' + t('wp.srcWago'),
@@ -296,7 +286,31 @@
       'https://foreverchanges.pro — ' + t('wp.srcFc')
     ]);
     container.innerHTML = html;
-    bind(list, paths, chart);
+    bind(list, paths, section === 'progresion' ? chart : null);
+  }
+
+  function progressionSection(list, paths, prog, chart) {
+    let html = '';
+    if (spec().metric === 'ilvl') html += '<div class="caveat">' + t('wp.casterNote') + '</div>';
+    html += '<div class="panel wp-chart-panel">' + legend() + '<div class="wp-chart-wrap">' + chart.svg + '</div></div>';
+    html += '<div class="panel" style="margin-top:16px"><h3>' + t('wp.steps', { n: prog.steps.length }) + '</h3>' +
+      '<div class="wp-path">' + ['safe', 'all'].map(p => '<button class="btn' + (state.path === p ? ' active' : '') + '" data-path="' + p + '">' + t('wp.path.' + p) + '</button>').join('') + '</div>' +
+      '<p class="note-text dim">' + t('wp.pathNote.' + state.path) + '</p>' +
+      '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.colFrom') + '</th><th>' + t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.colSource') + '</th></tr></thead><tbody>' +
+      prog.steps.map(s => weaponRow(s.weapon, s.level)).join('') + '</tbody></table></div></div>';
+    return html;
+  }
+
+  function targetsSection(guide) {
+    if (!guide.gearTargets) return '';
+    return '<div class="panel"><h3>' + t('wp.targets') + '</h3><ul class="plain">' +
+      guide.gearTargets.map(g => '<li>' + g.note + ' ' + ui.badge(g.confidence) + '</li>').join('') + '</ul></div>';
+  }
+
+  function allSection(all) {
+    return '<div class="panel"><h3>' + t('wp.allWeapons', { n: all.length }) + '</h3>' +
+      '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.colSource') + '</th></tr></thead><tbody>' +
+      all.map(w => weaponRow(w)).join('') + '</tbody></table></div></div>';
   }
 
   // ---------- interaction ----------
@@ -322,14 +336,14 @@
   }
 
   function bind(list, paths, chart) {
-    container.querySelectorAll('[data-spec]').forEach(b => b.addEventListener('click', () => { state.spec = b.dataset.spec; renderAll(); }));
-    container.querySelectorAll('[data-faction]').forEach(b => b.addEventListener('click', () => { state.faction = b.dataset.faction; renderAll(); }));
-    container.querySelector('#wpRandom').addEventListener('change', e => { state.random = e.target.checked; renderAll(); });
-    container.querySelector('#wpUnknown').addEventListener('change', e => { state.unknown = e.target.checked; renderAll(); });
-    container.querySelector('#wpRaids').addEventListener('change', e => { state.raids = e.target.checked; renderAll(); });
-    container.querySelector('#wpPvp').addEventListener('change', e => { state.pvp = e.target.checked; renderAll(); });
+    const on = (sel, fn) => { const el = container.querySelector(sel); if (el) el.addEventListener('change', fn); };
+    on('#wpRandom', e => { state.random = e.target.checked; renderAll(); });
+    on('#wpUnknown', e => { state.unknown = e.target.checked; renderAll(); });
+    on('#wpRaids', e => { state.raids = e.target.checked; renderAll(); });
+    on('#wpPvp', e => { state.pvp = e.target.checked; renderAll(); });
     container.querySelectorAll('[data-path]').forEach(b => b.addEventListener('click', () => { state.path = b.dataset.path; renderAll(); }));
 
+    if (!chart) return;
     const svg = container.querySelector('.wp-chart');
     const cross = svg.querySelector('.crosshair');
     const byId = new Map(list.map(w => [String(w.id), w]));

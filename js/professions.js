@@ -6,9 +6,15 @@
   const t = (key, vars) => window.I18N.t(key, vars);
   let ui = null;
   let container = null;
-  const state = { spec: 'all', profession: 'Leatherworking', role: 'all', rareOnly: true };
+  // role: null follows the spec picked in the header (Enhancement melee, the rest caster).
+  const state = { profession: 'Leatherworking', role: null, range: 'beta', rareOnly: true };
+  const Site = window.Site;
+  const SECTIONS = ['pares', 'sistemas', 'crafteo', 'subir'];
   const PROFESSIONS = ['Leatherworking', 'Blacksmithing', 'Tailoring', 'Enchanting', 'Engineering'];
   const ROLES = ['all', 'melee', 'caster'];
+  // Level ranges, the beta's cap first: a whole profession is 300+ rows.
+  const RANGES = { beta: [1, 30], mid: [31, 45], high: [46, 60], all: [1, 60] };
+  const role = () => state.role || (Site.spec === 'Enhancement' ? 'melee' : 'caster');
 
   // classicwowforever's "how to learn" lines are formulaic; translate the
   // fixed parts and keep names (vendors, factions, zones) as they are.
@@ -58,8 +64,8 @@
     const data = window.PROFESSION_DATA && window.PROFESSION_DATA.professions[state.profession];
     return (data || []).filter(i => {
       if (state.rareOnly && i.quality < 3) return false;
-      if (state.role === 'melee' && !(i.role === 'melee' || i.role === 'hybrid')) return false;
-      if (state.role === 'caster' && !(i.role === 'caster' || i.role === 'hybrid')) return false;
+      if (role() === 'melee' && !(i.role === 'melee' || i.role === 'hybrid')) return false;
+      if (role() === 'caster' && !(i.role === 'caster' || i.role === 'hybrid')) return false;
       return true;
     });
   }
@@ -71,10 +77,14 @@
   }
 
   function renderItems() {
-    const list = itemsFor();
+    const forRole = itemsFor();
+    const inRange = (i, r) => i.req >= RANGES[r][0] && i.req <= RANGES[r][1];
+    const list = forRole.filter(i => inRange(i, state.range));
     let html = '<div class="pr-filters">' +
       '<div class="seg">' + PROFESSIONS.map(p => '<button class="btn' + (state.profession === p ? ' active' : '') + '" data-prof="' + p + '">' + p + '</button>').join('') + '</div>' +
-      '<div class="seg">' + ROLES.map(r => '<button class="btn' + (state.role === r ? ' active' : '') + '" data-role="' + r + '">' + t('pr.role.' + r) + '</button>').join('') + '</div>' +
+      '<div class="seg">' + ROLES.map(r => '<button class="btn' + (role() === r ? ' active' : '') + '" data-role="' + r + '">' + t('pr.role.' + r) + '</button>').join('') + '</div>' +
+      '<div class="seg">' + Object.keys(RANGES).map(r => '<button class="btn' + (state.range === r ? ' active' : '') + '" data-range="' + r + '">' +
+        t('pr.range.' + r) + ' <span class="dim">' + forRole.filter(i => inRange(i, r)).length + '</span></button>').join('') + '</div>' +
       '<label class="chk"><input type="checkbox" id="prRare"' + (state.rareOnly ? ' checked' : '') + '> ' + t('pr.rareOnly') + '</label>' +
       '</div>';
     if (!list.length) return html + '<p class="note-text">' + t('pr.none') + '</p>';
@@ -100,27 +110,29 @@
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Profesiones + '">' +
       '<div class="role">' + t('pr.role') + '</div><h2>' + t('pr.title') + '</h2><p>' + g.intro + '</p></div>';
 
-    // Recommended pairs, filtered by spec.
-    const specs = ['all', 'Enhancement', 'Elemental', 'Restoration'];
-    html += '<div class="panel"><h3>' + t('pr.pairs') + '</h3>' +
-      '<div class="seg pr-specs">' + specs.map(s => '<button class="btn' + (state.spec === s ? ' active' : '') + '" data-spec-filter="' + s + '">' + (s === 'all' ? t('pr.allSpecs') : s) + '</button>').join('') + '</div>' +
-      '<div class="pr-pairs">' + g.pairs.filter(p => state.spec === 'all' || p.specs.includes(state.spec)).map(p =>
+    const section = Site.section('Profesiones', SECTIONS);
+    const label = { pares: 'pr.pairs', sistemas: 'pr.systems', crafteo: 'pr.items', subir: 'pr.leveling' };
+    html += Site.sectionTabs('Profesiones', SECTIONS, section, k => t(label[k]));
+
+    // Recommended pairs for the chosen spec.
+    if (section === 'pares') html += '<div class="panel"><h3>' + t('pr.pairs') + ' · ' + Site.spec + '</h3>' +
+      '<div class="pr-pairs">' + g.pairs.filter(p => p.specs.includes(Site.spec)).map(p =>
         '<div class="pr-pair"><div class="pr-pair-head"><b>' + p.pair + '</b><span class="pr-when">' + p.when + '</span></div>' +
         '<div class="pr-pair-specs">' + p.specs.map(s => '<span style="--spec-color:' + ui.specColors[s] + '">' + s + '</span>').join('') + '</div>' +
         '<p>' + p.why + '</p></div>').join('') + '</div>' +
       '<p class="note-text dim">' + g.pairsNote + '</p></div>';
 
     // New systems.
-    html += '<div class="panel" style="margin-top:16px"><h3>' + t('pr.systems') + '</h3><ul class="plain">' +
+    if (section === 'sistemas') html += '<div class="panel"><h3>' + t('pr.systems') + '</h3><ul class="plain">' +
       g.systems.map(s => '<li><b>' + s.title + '.</b> ' + s.fact + ' ' + ui.badge(s.confidence) +
         ' <a class="src" href="' + s.source + '" target="_blank" rel="noopener">' + t('common.source') + '</a></li>').join('') + '</ul></div>';
 
     // Crafted items per profession.
-    html += '<div class="panel" style="margin-top:16px"><h3>' + t('pr.items') + '</h3>' +
+    if (section === 'crafteo') html += '<div class="panel"><h3>' + t('pr.items') + '</h3>' +
       '<p class="note-text">' + t('pr.itemsIntro') + '</p><div id="prItems">' + renderItems() + '</div></div>';
 
     // How to level them.
-    html += '<div class="panel" style="margin-top:16px"><h3>' + t('pr.leveling') + '</h3><ul class="plain">' +
+    if (section === 'subir') html += '<div class="panel"><h3>' + t('pr.leveling') + '</h3><ul class="plain">' +
       g.leveling.map(l => '<li><a href="' + l.url + '" target="_blank" rel="noopener">' + l.site + '</a> — ' + l.note + '</li>').join('') + '</ul></div>';
 
     html += ui.renderSources(g.sources);
@@ -130,8 +142,7 @@
   }
 
   function bind() {
-    container.querySelectorAll('[data-spec-filter]').forEach(b => b.addEventListener('click', () => { state.spec = b.dataset.specFilter; renderAll(); }));
-    bindItems();
+    if (container.querySelector('#prItems')) bindItems();
   }
 
   // The items block re-renders on its own so the page doesn't jump.
@@ -140,6 +151,7 @@
     const rerender = () => { box.innerHTML = renderItems(); bindItems(); };
     box.querySelectorAll('[data-prof]').forEach(b => b.addEventListener('click', () => { state.profession = b.dataset.prof; rerender(); }));
     box.querySelectorAll('[data-role]').forEach(b => b.addEventListener('click', () => { state.role = b.dataset.role; rerender(); }));
+    box.querySelectorAll('[data-range]').forEach(b => b.addEventListener('click', () => { state.range = b.dataset.range; rerender(); }));
     box.querySelector('#prRare').addEventListener('change', e => { state.rareOnly = e.target.checked; rerender(); });
   }
 

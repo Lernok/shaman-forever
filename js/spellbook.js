@@ -122,9 +122,15 @@
         (k === 'all' ? t('sb.all', { n: all.length }) : t(STATUS[k].plural, { n: count(k) })) + '</button>').join('') +
       '<input class="sb-search" type="search" placeholder="' + t('sb.search') + '" value="' + query.replace(/"/g, '&quot;') + '">' +
       '</div>';
+    // One spellbook tab at a time (the chosen spec's first); a search looks in all three.
+    const names = tabs.map(x => x.name);
+    const ordered = [window.Site.spec].concat(names.filter(n => n !== window.Site.spec));
+    const section = window.Site.section('Hechizos', ordered);
+    html += window.Site.sectionTabs('Hechizos', ordered, section, n =>
+      n + ' <span class="n">' + tabs.find(x => x.name === n).spells.filter(matches).length + '</span>');
     tabs.forEach(tab => {
       const list = tab.spells.filter(matches);
-      if (!list.length) return;
+      if (!list.length || (!query && tab.name !== section)) return;
       html += '<h3 class="sb-tab" style="--spec-color:' + ui.specColors[tab.name] + '">' + tab.name + ' <span>' + list.length + '</span></h3>' +
         '<div class="spell-grid">' + list.map(renderSpell).join('') + '</div>';
     });

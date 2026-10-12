@@ -1,6 +1,6 @@
 // Talent calculator tab: all three trees side by side, example builds from
 // data/builds.json, and the build kept in location.hash
-// (#Calculadora/<level>/<code>/<Talented rank>)
+// (#Talentos/<level>/<code>/<Talented rank>)
 // so it can be shared or bookmarked.
 (function () {
   const R = window.TalentRules;
@@ -19,7 +19,7 @@
   function builds() { return window.I18N.localize(window.BUILD_DATA || []); }
 
   function routeHash() {
-    return '#Calculadora/' + state.level + '/' + R.encode(state.ranks, trees()) +
+    return '#Talentos/' + state.level + '/' + R.encode(state.ranks, trees()) +
       (state.talented ? '/' + state.talented : '');
   }
 
@@ -51,7 +51,8 @@
 
   function renderBuildPicker() {
     const active = matchingBuild();
-    const specs = ['Elemental', 'Enhancement', 'Restoration'];
+    // The chosen spec's builds; the trees stay all three (hybrids exist).
+    const specs = [window.Site.spec];
     let html = '<div class="panel"><h3>' + t('calc.examples') + '</h3>' +
       '<p class="note-text">' + t('calc.examplesIntro') + '</p>' +
       '<div class="build-columns">';
@@ -320,7 +321,7 @@
   }
 
   window.Calculator = {
-    // parts: hash segments after "Calculadora" ([level, code])
+    // parts: hash segments after "Talentos" ([level, code])
     render(target, parts, uiHelpers) {
       container = target;
       ui = uiHelpers;
@@ -341,7 +342,7 @@
     lastHash: null,
     // Hash for opening a given example build, used by the spec pages.
     linkFor(build) {
-      return '#Calculadora/' + build.level + '/' + R.encode(build.points, trees());
+      return '#Talentos/' + build.level + '/' + R.encode(build.points, trees());
     }
   };
 })();

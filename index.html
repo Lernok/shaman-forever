@@ -19,15 +19,18 @@
       </div>
       <button class="btn lang-toggle" id="langToggle" type="button">English</button>
     </div>
+    <!-- Picked once: every page shows this spec and faction. -->
+    <div class="picker">
+      <div class="seg spec-pick" id="specPick"></div>
+      <div class="seg faction-pick" id="factionPick"></div>
+    </div>
     <nav class="spec-tabs" id="specTabs">
-      <button class="spec-tab" data-spec="Overview" data-i18n="tab.Overview">Resumen</button>
-      <button class="spec-tab" data-spec="Elemental">Elemental</button>
-      <button class="spec-tab" data-spec="Enhancement">Enhancement</button>
-      <button class="spec-tab" data-spec="Restoration">Restoration</button>
-      <button class="spec-tab" data-spec="Calculadora" data-i18n="tab.Calculadora">Calculadora</button>
-      <button class="spec-tab" data-spec="Armas" data-i18n="tab.Armas">Armas</button>
+      <button class="spec-tab" data-spec="Guia" data-i18n="tab.Guia">Guía</button>
+      <button class="spec-tab" data-spec="Talentos" data-i18n="tab.Talentos">Talentos</button>
+      <button class="spec-tab" data-spec="Equipo" data-i18n="tab.Equipo">Equipo</button>
       <button class="spec-tab" data-spec="Profesiones" data-i18n="tab.Profesiones">Profesiones</button>
-      <button class="spec-tab" data-spec="Spellbook" data-i18n="tab.Spellbook">Spellbook</button>
+      <button class="spec-tab" data-spec="Hechizos" data-i18n="tab.Hechizos">Hechizos</button>
+      <button class="spec-tab" data-spec="Clase" data-i18n="tab.Clase">Clase</button>
     </nav>
   </header>
 
@@ -39,6 +42,7 @@
 
   <script src="data/client-es.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/site.js"></script>
   <script src="data/shaman.js"></script>
   <script src="data/guides.js"></script>
   <script src="data/builds.js"></script>

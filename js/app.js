@@ -1,16 +1,15 @@
 (function () {
   const SPEC_COLORS = {
-    Overview: '#c8aa6e',
     Elemental: '#e0742c',
-    Enhancement: '#8a5a2b',
+    Enhancement: '#b07a42',
     Restoration: '#3fa9f5',
-    Calculadora: '#c8aa6e',
-    Spellbook: '#9b7fd1',
-    Armas: '#c8aa6e',
-    Profesiones: '#c8aa6e'
+    Clase: '#c8aa6e'
   };
+  // Talent tree icons stand for each spec in the header.
+  const SPEC_ICONS = { Enhancement: 'spell_nature_lightningshield', Elemental: 'spell_nature_lightning', Restoration: 'spell_nature_magicimmunity' };
 
   const I18N = window.I18N;
+  const Site = window.Site;
   const t = (key, vars) => I18N.t(key, vars);
 
   const CONFIDENCE = {
@@ -28,10 +27,22 @@
 
   const app = document.getElementById('app');
   const tabs = Array.from(document.querySelectorAll('.spec-tab'));
-  const SPECS = tabs.map(t => t.dataset.spec);
-  // Hash is "#<Tab>" or, for the calculator, "#Calculadora/<level>/<build code>".
+  const PAGES = tabs.map(t => t.dataset.spec);
+  // Hash is "#<Page>", "#<Page>/<section>" or, for the calculator,
+  // "#Talentos/<level>/<build code>".
   function hashParts() { return location.hash.slice(1).split('/'); }
-  let currentSpec = SPECS.includes(hashParts()[0]) ? hashParts()[0] : 'Overview';
+  // Links from before the pages were regrouped (one tab per spec, etc.).
+  const LEGACY = { Overview: 'Clase', Calculadora: 'Talentos', Armas: 'Equipo', Spellbook: 'Hechizos' };
+  function upgradeHash() {
+    const parts = hashParts();
+    if (Site.SPECS.includes(parts[0])) { Site.set('spec', parts[0]); parts.splice(0, 1, 'Guia'); }
+    else if (LEGACY[parts[0]]) parts[0] = LEGACY[parts[0]];
+    else return;
+    history.replaceState(null, '', '#' + parts.join('/'));
+  }
+  upgradeHash();
+  let currentPage = PAGES.includes(hashParts()[0]) ? hashParts()[0] : 'Guia';
+  let currentHash = location.hash;
   let openTooltipTalent = null;
 
   function iconUrl(icon) {
@@ -136,9 +147,11 @@
     tip.style.top = top + 'px';
   }
 
-  function renderChanges(changes) {
+  // Collapsed by default: the titles say what changed, the cards say how.
+  function renderChanges(changes, spec) {
     if (!changes || !changes.length) return '';
-    let html = '<div class="changes">';
+    let html = '<details class="changes-box"><summary><b>' + t('guide.changes', { spec: spec, n: changes.length }) + '</b>' +
+      '<span class="changes-titles">' + changes.map(c => c.change).join(' · ') + '</span></summary><div class="changes">';
     changes.forEach(c => {
       html += '<div class="change-card">' +
                 '<div class="title">⚠ ' + c.change + ' ' + badge(c.confidence) + '</div>' +
@@ -146,7 +159,7 @@
                 (c.source ? '<a class="src" href="' + c.source + '" target="_blank" rel="noopener">' + t('common.source') + '</a>' : '') +
               '</div>';
     });
-    html += '</div>';
+    html += '</div></details>';
     return html;
   }
 
@@ -284,7 +297,7 @@
     const racials = window.SHAMAN_DATA.racials;
     let html = '<div class="panel" style="margin-top:16px"><h3>' + t('ov.races') + ' ' + badge(r.confidence) + '</h3>' +
       '<p class="note-text">' + r.note + '</p><div class="race-grid">';
-    ['Horde', 'Alliance'].forEach(faction => {
+    [Site.faction === 'horde' ? 'Horde' : 'Alliance'].forEach(faction => {
       (racials[faction] || []).filter(x => x.classes.includes('Shaman')).forEach(race => {
         const isNew = r.newToShaman.includes(race.race);
         html += '<div class="race-card ' + faction.toLowerCase() + '">' +
@@ -298,13 +311,20 @@
     return html + '</div></div>';
   }
 
-  function renderOverview(guide) {
-    const color = SPEC_COLORS.Overview;
+  // Class page: what applies to every spec, one section at a time.
+  const CLASS_SECTIONS = ['notas', 'totems', 'dano', 'razas'];
+  function renderClass(guide) {
+    const color = SPEC_COLORS.Clase;
+    const section = Site.section('Clase', CLASS_SECTIONS);
     let html = '<div class="spec-summary" style="--spec-color:' + color + '">' +
       '<div class="role">' + t('ov.role') + '</div>' +
       '<h2>' + t('ov.title') + '</h2>' +
       '<p>' + t('ov.intro') + '</p>' +
       '</div>';
+    html += Site.sectionTabs('Clase', CLASS_SECTIONS, section, k => t('cl.sec.' + k));
+    if (section === 'totems') return html + renderTotems(guide.totems) + renderSources(guide.sources);
+    if (section === 'dano') return html + renderDamage(guide.damage) + renderSources(guide.sources);
+    if (section === 'razas') return html + renderRaces(guide.races) + renderSources(guide.sources);
 
     html += '<div class="grid-2">';
     html += '<div class="panel"><h3>' + t('ov.classNotes') + '</h3>' + renderNotes(guide.classNotes) + '</div>';
@@ -323,53 +343,31 @@
     html += '</div>';
     html += '</div>';
 
-    html += renderTotems(guide.totems);
-    html += renderDamage(guide.damage);
-    html += renderRaces(guide.races);
-
     html += renderSources(guide.sources);
     html += '<div class="caveat">' + guide.caveat + '</div>';
 
     return html;
   }
 
-  function render(spec) {
+  function render(page) {
     closeTooltip();
     window.Calculator.hide();
     if (window.Weapons) window.Weapons.hide();
-    const guide = window.I18N.localize(window.GUIDE_DATA[spec]);
-    const color = SPEC_COLORS[spec];
+    const spec = Site.spec;
+    // Every page but the class one is about the chosen spec, and wears its color.
+    const color = page === 'Clase' ? SPEC_COLORS.Clase : SPEC_COLORS[spec];
+    const specColors = Object.assign({}, SPEC_COLORS, { Calculadora: color, Armas: color, Profesiones: color, Spellbook: color });
     document.documentElement.style.setProperty('--spec-color', color);
+    app.style.setProperty('--spec-color', color);
+    const helpers = { badge, iconUrl, treeBg, renderSources, specColors };
 
-    if (spec === 'Profesiones') {
-      window.Professions.render(app, { badge, renderSources, specColors: SPEC_COLORS });
-      app.style.setProperty('--spec-color', color);
-      return;
-    }
+    if (page === 'Profesiones') return window.Professions.render(app, helpers);
+    if (page === 'Equipo') return window.Weapons.render(app, helpers);
+    if (page === 'Hechizos') return window.Spellbook.render(app, helpers);
+    if (page === 'Talentos') return window.Calculator.render(app, hashParts().slice(1), helpers);
+    if (page === 'Clase') { app.innerHTML = renderClass(window.I18N.localize(window.GUIDE_DATA.Overview)); return; }
 
-    if (spec === 'Armas') {
-      window.Weapons.render(app, { badge, renderSources, specColors: SPEC_COLORS });
-      app.style.setProperty('--spec-color', color);
-      return;
-    }
-
-    if (spec === 'Spellbook') {
-      window.Spellbook.render(app, { iconUrl, renderSources, specColors: SPEC_COLORS });
-      app.style.setProperty('--spec-color', color);
-      return;
-    }
-
-    if (spec === 'Calculadora') {
-      window.Calculator.render(app, hashParts().slice(1), { badge, iconUrl, treeBg, specColors: SPEC_COLORS });
-      app.style.setProperty('--spec-color', color);
-      return;
-    }
-
-    if (spec === 'Overview') {
-      app.innerHTML = renderOverview(guide);
-      app.style.setProperty('--spec-color', color);
-      return;
-    }
+    const guide = window.I18N.localize(window.GUIDE_DATA[spec]);
 
     const tree = findTree(spec);
 
@@ -379,18 +377,17 @@
       '<p>' + guide.summary + '</p>' +
       '</div>';
 
-    html += renderChanges(guide.mechanicalChanges);
+    html += renderChanges(guide.mechanicalChanges, spec);
 
     html += '<div class="grid-2 spec-layout">';
     html += '<div class="panel sticky" style="--spec-color:' + color + '">' +
               '<h3>' + t('tree.talents') + '</h3>' + renderTalentTree(tree) +
-              '<a class="calc-link" href="#Calculadora">' + t('tree.openCalc') + '</a>' +
+              '<a class="calc-link" href="#Talentos">' + t('tree.openCalc') + '</a>' +
             '</div>';
     html += '<div style="--spec-color:' + color + '">' + renderGuide(guide) + '</div>';
     html += '</div>';
 
     app.innerHTML = html;
-    app.style.setProperty('--spec-color', color);
 
     document.querySelectorAll('.talent').forEach(el => {
       if (el.classList.contains('empty')) return;
@@ -401,25 +398,56 @@
     });
   }
 
-  function selectSpec(spec) {
-    tabs.forEach(t => t.classList.toggle('active', t.dataset.spec === spec));
-    const tab = tabs.find(t => t.dataset.spec === spec);
-    tab.style.setProperty('--spec-color', SPEC_COLORS[spec]);
-    currentSpec = spec;
-    render(spec);
+  function selectPage(page) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.spec === page));
+    currentPage = page;
+    currentHash = location.hash;
+    render(page);
   }
+
+  // Header: spec and faction pickers.
+  function renderPickers() {
+    document.getElementById('specPick').innerHTML = Site.SPECS.map(s =>
+      '<button class="btn' + (Site.spec === s ? ' active' : '') + '" data-pick-spec="' + s + '" style="--spec-color:' + SPEC_COLORS[s] + '">' +
+      '<img src="' + iconUrl(SPEC_ICONS[s]) + '" alt="">' + s + '</button>').join('');
+    document.getElementById('factionPick').innerHTML = Site.FACTIONS.map(f =>
+      '<button class="btn' + (Site.faction === f ? ' active' : '') + '" data-pick-faction="' + f + '">' + t('wp.faction.' + f) + '</button>').join('');
+  }
+  document.querySelector('.picker').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    if (b.dataset.pickSpec) Site.set('spec', b.dataset.pickSpec);
+    if (b.dataset.pickFaction) Site.set('faction', b.dataset.pickFaction);
+  });
+  Site.onChange(() => {
+    renderPickers();
+    const y = window.scrollY;
+    render(currentPage);
+    window.scrollTo(0, y);
+  });
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      const spec = tab.dataset.spec;
+      const page = tab.dataset.spec;
       // Coming back to the calculator restores the build you left there.
-      location.hash = spec === 'Calculadora' && window.Calculator.lastHash ? window.Calculator.lastHash : spec;
+      location.hash = page === 'Talentos' && window.Calculator.lastHash ? window.Calculator.lastHash : page;
     });
   });
 
   window.addEventListener('hashchange', () => {
-    const spec = hashParts()[0];
-    if (SPECS.includes(spec) && (spec !== currentSpec || spec === 'Calculadora')) selectSpec(spec);
+    upgradeHash();
+    const page = hashParts()[0];
+    if (!PAGES.includes(page)) return;
+    if (page !== currentPage || page === 'Talentos') { selectPage(page); return; }
+    // Same page, another section: keep the section strip where it was.
+    if (location.hash !== currentHash) {
+      const strip = app.querySelector('.subtabs');
+      const before = strip ? strip.getBoundingClientRect().top : null;
+      currentHash = location.hash;
+      render(page);
+      const after = app.querySelector('.subtabs');
+      if (before != null && after) window.scrollBy(0, after.getBoundingClientRect().top - before);
+    }
   });
 
   document.addEventListener('click', (e) => {
@@ -442,10 +470,12 @@
   document.getElementById('langToggle').addEventListener('click', () => window.I18N.toggle());
   window.I18N.onChange(() => {
     const y = window.scrollY;
-    render(currentSpec);
+    renderPickers();
+    render(currentPage);
     window.scrollTo(0, y);
   });
 
   window.I18N.apply();
-  selectSpec(currentSpec);
+  renderPickers();
+  selectPage(currentPage);
 })();
