@@ -107,5 +107,32 @@
     }
   };
 
-  window.UI = { icon, treeArt, tip, statsText, bindText, itemIcon, itemCard, itemLink, store };
+  // ---------- page pieces ----------
+
+  // How sure a fact is: a colored dot; its name shows on hover or focus.
+  const CONFIDENCE = { 'tested': 'conf-tested', 'client-data': 'conf-client', 'classic-assumed': 'conf-classic', 'community-untested': 'conf-untested', 'official': 'conf-official' };
+  function badge(confidence) {
+    if (!confidence) return '';
+    const label = t('conf.' + confidence);
+    return '<span class="conf-dot ' + (CONFIDENCE[confidence] || 'conf-untested') + '" tabindex="0" role="img" aria-label="' + label + '" data-label="' + label + '"></span>';
+  }
+
+  // Page banner: kicker, title and one line over the spec's talent tree art.
+  const pageHead = (kicker, title, intro) => '<div class="spec-summary"><div class="role">' + kicker + '</div><h2>' + title + '</h2>' +
+    (intro ? '<p>' + intro + '</p>' : '') + '</div>';
+
+  // Folded at the bottom of each page, with the page's caveat if it has one.
+  function renderSources(sources, caveat) {
+    return '<details class="sources"><summary>' + t('common.sourcesN', { n: sources.length }) + '</summary><ul>' + sources.map(s => {
+      const m = s.match(/^(https?:\/\/[^\s]+)(.*)$/);
+      if (!m) return '<li>' + s + '</li>';
+      // Host plus path, so several pages of one site stay distinguishable.
+      let label = m[1].replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+      if (label.length > 60) label = label.slice(0, 57) + '…';
+      return '<li><a href="' + m[1] + '" target="_blank" rel="noopener" title="' + m[1] + '">' + label + '</a>' + m[2] + '</li>';
+    }).join('') + '</ul>' + (caveat ? '<p class="sources-caveat">' + caveat + '</p>' : '') + '</details>';
+  }
+
+  window.UI = { icon, treeArt, tip, statsText, bindText, itemIcon, itemCard, itemLink, store,
+    badge, pageHead, renderSources, CONFIDENCE_KEYS: Object.keys(CONFIDENCE) };
 })();

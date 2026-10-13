@@ -9,6 +9,10 @@
   const Site = {
     SPECS,
     FACTIONS,
+    COLORS: { Elemental: '#e0742c', Enhancement: '#b07a42', Restoration: '#3fa9f5', Clase: '#c8aa6e' },
+    // Talent tree icons stand for each spec.
+    SPEC_ICONS: { Enhancement: 'spell_nature_lightningshield', Elemental: 'spell_nature_lightning', Restoration: 'spell_nature_magicimmunity' },
+    CLASS_ICON: 'classicon_shaman',
     spec: load('spec', SPECS, 'Enhancement'),
     faction: load('faction', FACTIONS, 'horde'),
 
