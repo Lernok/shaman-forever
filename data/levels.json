@@ -139,10 +139,10 @@
    "faction": "alliance",
    "instance": "Deadmines",
    "hardest": {
-    "id": 598,
-    "name": "Defias Miner",
+    "id": 634,
+    "name": "Defias Overseer",
     "level": 18,
-    "rank": "normal",
+    "rank": "elite",
     "from": "wowhead"
    },
    "steps": 8
@@ -355,11 +355,12 @@
    "faction": "alliance",
    "instance": null,
    "hardest": {
-    "id": 2371,
-    "name": "Daggerspine Siren",
+    "id": null,
+    "name": null,
     "level": 32,
     "rank": "normal",
-    "from": "wowhead"
+    "from": "step-level",
+    "step": 561
    },
    "steps": 5
   },
@@ -679,8 +680,8 @@
    "faction": "alliance",
    "instance": null,
    "hardest": {
-    "id": 3977,
-    "name": "High Inquisitor Whitemane",
+    "id": 3976,
+    "name": "Scarlet Commander Mograine",
     "level": 42,
     "rank": "elite",
     "from": "wowhead"
@@ -723,11 +724,12 @@
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": 1081,
-    "name": "Mire Lord",
+    "id": null,
+    "name": null,
     "level": 42,
     "rank": "normal",
-    "from": "wowhead"
+    "from": "step-level",
+    "step": 1372
    },
    "steps": 2
   },
@@ -840,10 +842,10 @@
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": 5276,
-    "name": "Sprite Dragon",
+    "id": 5358,
+    "name": "Cliff Giant",
     "level": 50,
-    "rank": "normal",
+    "rank": "elite",
     "from": "wowhead",
     "step": 3128
    },
@@ -893,12 +895,12 @@
    "faction": null,
    "instance": null,
    "hardest": {
-    "id": 8612,
-    "name": "Screecher Spirit",
+    "id": null,
+    "name": null,
     "level": 50,
     "rank": "normal",
-    "from": "wowhead",
-    "step": 3520
+    "from": "step-level",
+    "step": 4787
    },
    "steps": 4
   },
@@ -1124,8 +1126,8 @@
    "faction": "horde",
    "instance": "Ragefire Chasm",
    "hardest": {
-    "id": 11519,
-    "name": "Bazzalan",
+    "id": 11518,
+    "name": "Jergosh the Invoker",
     "level": 16,
     "rank": "elite",
     "from": "wowhead",
@@ -1232,8 +1234,8 @@
    "faction": "alliance",
    "instance": null,
    "hardest": {
-    "id": 11496,
-    "name": "Immol'thar",
+    "id": 11486,
+    "name": "Prince Tortheldrin",
     "level": 61,
     "rank": "elite",
     "from": "wowhead",
@@ -1275,29 +1277,14 @@
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": 11496,
-    "name": "Immol'thar",
+    "id": 11486,
+    "name": "Prince Tortheldrin",
     "level": 61,
     "rank": "elite",
     "from": "wowhead",
     "step": 7461
    },
    "steps": 2
-  },
-  "8253": {
-   "classes": null,
-   "minLevel": null,
-   "faction": null,
-   "instance": null,
-   "hardest": {
-    "id": 6199,
-    "name": "Blood Elf Reclaimer",
-    "level": 53,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 8251
-   },
-   "steps": 4
   },
   "8271": {
    "classes": null,
@@ -1380,21 +1367,6 @@
    },
    "steps": 3
   },
-  "8422": {
-   "classes": null,
-   "minLevel": null,
-   "faction": null,
-   "instance": null,
-   "hardest": {
-    "id": 417,
-    "name": "Felhunter",
-    "level": 60,
-    "rank": "normal",
-    "from": "questie",
-    "step": 8419
-   },
-   "steps": 4
-  },
   "8573": {
    "classes": null,
    "minLevel": null,
@@ -1423,12 +1395,12 @@
    "faction": null,
    "instance": null,
    "hardest": {
-    "id": 15571,
-    "name": "Maws",
+    "id": 11583,
+    "name": "Nefarian",
     "level": 63,
     "rank": "boss",
     "from": "questie",
-    "step": 8729
+    "step": 8730
    },
    "steps": 17
   },
@@ -1473,21 +1445,6 @@
     "from": "questie"
    },
    "steps": 1
-  },
-  "9053": {
-   "classes": null,
-   "minLevel": null,
-   "faction": null,
-   "instance": null,
-   "hardest": {
-    "id": 6553,
-    "name": "Gorishi Reaver",
-    "level": 53,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 9052
-   },
-   "steps": 4
   },
   "9221": {
    "classes": null,
@@ -1581,7 +1538,13 @@
    "minLevel": null,
    "faction": null,
    "instance": null,
-   "hardest": null,
+   "hardest": {
+    "id": 250283,
+    "name": "Vile Fin Attacker",
+    "level": 11,
+    "rank": "normal",
+    "from": "wowhead"
+   },
    "steps": 1
   },
   "91777": {
@@ -1648,8 +1611,8 @@
    "faction": null,
    "instance": null,
    "hardest": {
-    "id": 252800,
-    "name": "Aamelia Windfield",
+    "id": 252448,
+    "name": "Alvarion Windfield",
     "level": 10,
     "rank": "normal",
     "from": "wowhead",
@@ -1663,12 +1626,12 @@
    "faction": null,
    "instance": null,
    "hardest": {
-    "id": 252800,
-    "name": "Aamelia Windfield",
+    "id": 252448,
+    "name": "Alvarion Windfield",
     "level": 10,
     "rank": "normal",
     "from": "wowhead",
-    "step": 92693
+    "step": 92679
    },
    "steps": 7
   },
@@ -1686,12 +1649,12 @@
    "faction": "conflict",
    "instance": null,
    "hardest": {
-    "id": 254596,
-    "name": "Al'Aketh Healer",
+    "id": 252666,
+    "name": "Commander Belguilos",
     "level": 10,
     "rank": "normal",
     "from": "wowhead",
-    "step": 92642
+    "step": 92645
    },
    "steps": 12
   },
@@ -1753,8 +1716,8 @@
    "faction": "horde",
    "instance": "Excavation Site: Wetlands",
    "hardest": {
-    "id": 260800,
-    "name": "Thicket Lurker",
+    "id": 260325,
+    "name": "Shadetooth",
     "level": 30,
     "rank": "elite",
     "from": "dungeon-range"
@@ -1840,7 +1803,13 @@
    "minLevel": null,
    "faction": null,
    "instance": null,
-   "hardest": null,
+   "hardest": {
+    "id": 4674,
+    "name": "Hatefury Shadowstalker",
+    "level": 33,
+    "rank": "normal",
+    "from": "wowhead"
+   },
    "steps": 1
   },
   "97282": {
@@ -2016,12 +1985,6 @@
    "level": 32,
    "rank": "normal",
    "from": "wowhead"
-  },
-  "417": {
-   "name": "Felhunter",
-   "level": 60,
-   "rank": "normal",
-   "from": "questie"
   },
   "435": {
    "name": "Blackrock Champion",
@@ -3445,6 +3408,36 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "4670": {
+   "name": "Hatefury Rogue",
+   "level": 32,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4671": {
+   "name": "Hatefury Trickster",
+   "level": 32,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4672": {
+   "name": "Hatefury Felsworn",
+   "level": 32,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4674": {
+   "name": "Hatefury Shadowstalker",
+   "level": 33,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4675": {
+   "name": "Hatefury Hellcaller",
+   "level": 33,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "4686": {
    "name": "Deepstrider Giant",
    "level": 39,
@@ -3565,12 +3558,6 @@
    "rank": "elite",
    "from": "wowhead"
   },
-  "5719": {
-   "name": "Morphaz",
-   "level": 52,
-   "rank": "elite",
-   "from": "wowhead"
-  },
   "5775": {
    "name": "Verdan the Everliving",
    "level": 21,
@@ -3649,12 +3636,6 @@
    "rank": "elite",
    "from": "wowhead"
   },
-  "6011": {
-   "name": "Felguard Sentry",
-   "level": 55,
-   "rank": "normal",
-   "from": "wowhead"
-  },
   "6140": {
    "name": "Hetaera",
    "level": 55,
@@ -3667,12 +3648,6 @@
    "rank": "elite",
    "from": "wowhead"
   },
-  "6195": {
-   "name": "Spitelash Siren",
-   "level": 52,
-   "rank": "normal",
-   "from": "wowhead"
-  },
   "6198": {
    "name": "Blood Elf Surveyor",
    "level": 52,
@@ -3681,18 +3656,6 @@
   },
   "6199": {
    "name": "Blood Elf Reclaimer",
-   "level": 53,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "6200": {
-   "name": "Legashi Satyr",
-   "level": 52,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "6201": {
-   "name": "Legashi Rogue",
    "level": 53,
    "rank": "normal",
    "from": "wowhead"
@@ -3799,30 +3762,6 @@
    "rank": "normal",
    "from": "wowhead"
   },
-  "6551": {
-   "name": "Gorishi Wasp",
-   "level": 52,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "6552": {
-   "name": "Gorishi Worker",
-   "level": 52,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "6553": {
-   "name": "Gorishi Reaver",
-   "level": 53,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "6554": {
-   "name": "Gorishi Stinger",
-   "level": 53,
-   "rank": "normal",
-   "from": "wowhead"
-  },
   "7017": {
    "name": "Lord Sinslayer",
    "level": 16,
@@ -3833,30 +3772,6 @@
    "name": "Viscous Fallout",
    "level": 30,
    "rank": "elite",
-   "from": "wowhead"
-  },
-  "7092": {
-   "name": "Tainted Ooze",
-   "level": 52,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "7138": {
-   "name": "Irontree Wanderer",
-   "level": 53,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "7139": {
-   "name": "Irontree Stomper",
-   "level": 53,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "7149": {
-   "name": "Withered Protector",
-   "level": 56,
-   "rank": "normal",
    "from": "wowhead"
   },
   "7228": {
@@ -3977,12 +3892,6 @@
    "name": "Magus Rimtori",
    "level": 55,
    "rank": "normal",
-   "from": "wowhead"
-  },
-  "8580": {
-   "name": "Atal'alarion",
-   "level": 50,
-   "rank": "elite",
    "from": "wowhead"
   },
   "8612": {
@@ -4855,6 +4764,18 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "250282": {
+   "name": "Vile Fin Seer",
+   "level": 10,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "250283": {
+   "name": "Vile Fin Attacker",
+   "level": 11,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "250657": {
    "name": "Rath'mael",
    "level": null,
@@ -4956,6 +4877,12 @@
    "level": null,
    "rank": "elite",
    "from": null
+  },
+  "268622": {
+   "name": "Encroaching Soldier",
+   "level": 23,
+   "rank": "normal",
+   "from": "wowhead"
   },
   "268623": {
    "name": "Outraged Pillager",

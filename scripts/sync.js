@@ -15,56 +15,38 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const { parseCSV } = require('./lib/csv');
+const { root, rel, readJSON, writeJSON } = require('./lib/files');
+const http = require('./lib/http');
+const wowhead = require('./lib/wowhead');
 
-const root = path.join(__dirname, '..');
-const cacheDir = path.join(root, '.cache');
+const cacheDir = http.cacheDir;
 const args = process.argv.slice(2);
-const OFFLINE = args.includes('--offline');
-const UA = { 'User-Agent': 'shaman-forever-site (fan reference site; data sync)' };
+const OFFLINE = http.OFFLINE;
 
-const rel = p => path.join(root, p);
-const readJSON = (p, fallback) => (fs.existsSync(rel(p)) ? JSON.parse(fs.readFileSync(rel(p), 'utf8')) : fallback);
-const writeJSON = (p, v) => { fs.mkdirSync(path.dirname(rel(p)), { recursive: true }); fs.writeFileSync(rel(p), JSON.stringify(v, null, 1) + '\n'); };
-const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-async function cached(file, url) {
-  const full = path.join(cacheDir, file);
-  if (fs.existsSync(full)) return fs.readFileSync(full, 'utf8');
-  if (OFFLINE) throw new Error('offline and not cached: ' + file);
-  const res = await fetch(url, { headers: UA });
-  if (!res.ok) throw new Error(res.status + ' ' + url);
-  const text = await res.text();
-  // A site down for maintenance can answer 200 with an HTML page: never cache that as data.
-  if (/\.json$/.test(file)) JSON.parse(text);
-  fs.mkdirSync(path.dirname(full), { recursive: true });
-  fs.writeFileSync(full, text);
-  return text;
-}
-
-// The newest builds on wago.tools; null when it doesn't answer (a few tries),
-// so the sync goes on with the builds it already has in data/meta.json.
+// The newest builds on wago.tools (re-read hourly); when it doesn't answer,
+// the last list it gave, else the builds already in data/meta.json.
 async function latestBuilds() {
-  if (OFFLINE) return null;
-  let all = null;
-  for (let i = 0; i < 3 && !all; i++) {
-    try {
-      const res = await fetch('https://wago.tools/api/builds', { headers: UA });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      all = await res.json();
-    } catch (e) {
-      console.log('wago.tools/api/builds no respondió (' + e.message + ')' + (i < 2 ? ', reintento…' : ''));
-      if (i < 2) await sleep(20000);
-    }
-  }
-  if (!all) { console.log('Sigo con los builds de data/meta.json.'); return null; }
+  const all = await http.get('https://wago.tools/api/builds', { cache: 'wago/_builds.json', maxAgeDays: 1 / 24, json: true });
+  if (!all) { console.log('wago.tools no respondió: sigo con los builds de data/meta.json.'); return null; }
   const pick = (product, prefix) => (all[product] || [])
     .filter(b => b.version.startsWith(prefix))
     .sort((a, b) => b.created_at.localeCompare(a.created_at))[0];
   return { forever: pick('wow_classic_beta', '1.60.'), era: pick('wow_classic_era', '1.15.') };
 }
 
-const table = async (name, build) =>
-  parseCSV(await cached('wago/' + build + '/' + name + '.csv', 'https://wago.tools/db2/' + name + '/csv?build=' + build));
+// A client table of one build (never changes, so it's kept for good). When
+// wago.tools is down, AllTheThings keeps copies of some Forever tables.
+const isCSV = t => /^[\w"]+,/.test(t) && !/<html/i.test(t.slice(0, 500));
+async function table(name, build) {
+  const cache = 'wago/' + build + '/' + name + '.csv';
+  let text = await http.get('https://wago.tools/db2/' + name + '/csv?build=' + build, { cache, valid: isCSV });
+  if (text == null) {
+    text = await http.get('https://raw.githubusercontent.com/ATTWoWAddon/AllTheThings/master/.contrib/.db/forever/.config/.wago/' + name + '.' + build + '.csv', { cache, valid: isCSV });
+    if (text != null) console.log('  ' + name + ': copia de AllTheThings (wago.tools no respondió)');
+  }
+  if (text == null) throw new Error('sin la tabla ' + name + ' del build ' + build + ' (wago.tools caído y sin copia)');
+  return parseCSV(text);
+}
 
 // ---------- items ----------
 
@@ -197,47 +179,21 @@ function parseTooltip(html) {
 // Wowhead Forever only knows items someone has seen in Forever; high-level
 // Classic items the level-30 beta never streamed are missing there. For those
 // we fall back to Wowhead Classic and mark numbers: 'classic'.
-// Wowhead keeps adding Forever items: a "not found" answer is asked again after
-// a week (dates in _missing.json, as file dates don't survive the Actions cache).
-const MISSING_DAYS = 7;
 async function tooltips(ids) {
   const result = {};
   const rawById = {};
-  let fetched = 0;
-  const today = new Date().toISOString().slice(0, 10);
-  const missingFile = env => path.join(cacheDir, env === 'forever' ? 'wowhead' : 'wowhead-classic', '_missing.json');
-  const missing = {};
-  ['forever', 'classic'].forEach(env => { missing[env] = fs.existsSync(missingFile(env)) ? JSON.parse(fs.readFileSync(missingFile(env), 'utf8')) : {}; });
-  async function get(env, id) {
-    const full = path.join(cacheDir, env === 'forever' ? 'wowhead' : 'wowhead-classic', 'item-' + id + '.json');
-    if (fs.existsSync(full)) {
-      const raw = fs.readFileSync(full, 'utf8');
-      const since = missing[env][id];
-      const stale = raw.includes('"error"') && (!since || (Date.parse(today) - Date.parse(since)) / 864e5 >= MISSING_DAYS);
-      if (OFFLINE || !stale) return raw;
-    }
-    if (OFFLINE) return null;
-    const res = await fetch('https://nether.wowhead.com/' + env + '/tooltip/item/' + id, { headers: UA });
-    const raw = await res.text();
-    fs.mkdirSync(path.dirname(full), { recursive: true });
-    fs.writeFileSync(full, raw);
-    if (raw.includes('"error"')) missing[env][id] = today; else delete missing[env][id];
-    fs.writeFileSync(missingFile(env), JSON.stringify(missing[env]));
-    fetched++;
-    if (fetched % 100 === 0) console.log('  tooltips: ' + fetched + ' descargados…');
-    await sleep(250); // polite: ~4 requests per second
-    return raw;
-  }
   const parse = raw => { try { const j = JSON.parse(raw); return j.tooltip ? j : null; } catch (e) { return null; } };
+  let done = 0;
   for (const id of ids) {
-    let j = parse(await get('forever', id));
+    let j = parse(await wowhead.item('forever', id));
     let numbers = 'forever';
-    if (!j) { j = parse(await get('classic', id)); numbers = 'classic'; }
+    if (!j) { j = parse(await wowhead.item('classic', id)); numbers = 'classic'; }
+    if (++done % 500 === 0) console.log('  tooltips: ' + done + '/' + ids.length);
     if (!j) continue;
     result[id] = Object.assign(parseTooltip(j.tooltip), { numbers, icon: j.icon || null });
     rawById[id] = j;
   }
-  return { result, raw: rawById, fetched };
+  return { result, raw: rawById };
 }
 
 // ---------- change report ----------
@@ -300,24 +256,22 @@ function diffItems(prev, next) {
 
   // Talents / spellbook / racials from talentsforever.com.
   const prevShaman = readJSON('data/shaman.json', null);
-  const tfText = await cached('talentsforever/shaman-' + new Date().toISOString().slice(0, 10) + '.json', 'https://talentsforever.com/export/shaman.json');
+  const tfText = await http.get('https://talentsforever.com/export/shaman.json', { cache: 'talentsforever/shaman.json', maxAgeDays: 0.5, valid: wowhead.isJSON });
+  if (tfText == null) throw new Error('sin datos de talentsforever.com');
   const shaman = JSON.parse(tfText);
   const talentLines = diffTalents(prevShaman, shaman);
-  fs.writeFileSync(rel('data/shaman.json'), tfText); // as published, not reformatted
+  require('./lib/files').writeText('data/shaman.json', tfText); // as published, not reformatted
 
   // Item sources: QuestieDB's Forever files (refreshed daily) and zone names
   // from the client. Needed first: QuestieDB also tells which streamed items exist.
-  const day = new Date().toISOString().slice(0, 10);
-  // Classic's NPC file fills in locations the Forever one lacks yet.
+  // Classic's NPC file fills in locations the Forever one lacks yet. Re-read
+  // twice a day; scripts/lib/questie.js reads them from .cache/questiedb/.
   for (const f of ['foreverItemDB', 'foreverNpcDB', 'foreverQuestDB', 'classicNpcDB']) {
     const dir = f.startsWith('classic') ? 'Classic' : 'Forever';
-    const text = await cached('questiedb-raw/' + day + '/' + f + '.lua', 'https://raw.githubusercontent.com/Questie/QuestieDB/master/data/' + dir + '/' + f + '.lua');
-    fs.mkdirSync(path.join(cacheDir, 'questiedb'), { recursive: true });
-    fs.writeFileSync(path.join(cacheDir, 'questiedb', f + '.lua'), text);
+    const text = await http.get('https://raw.githubusercontent.com/Questie/QuestieDB/master/data/' + dir + '/' + f + '.lua',
+      { cache: 'questiedb/' + f + '.lua', maxAgeDays: 0.5, valid: t => t.includes('QuestieDB') });
+    if (text == null) throw new Error('sin QuestieDB ' + f);
   }
-  // Keep only today's raw copies.
-  fs.readdirSync(path.join(cacheDir, 'questiedb-raw')).filter(d => d !== day)
-    .forEach(d => fs.rmSync(path.join(cacheDir, 'questiedb-raw', d), { recursive: true, force: true }));
   await table('AreaTable', build);
   const questieLevels = new Map();
   const { parseLua } = require('./lib/questie');
@@ -333,7 +287,7 @@ function diffItems(prev, next) {
   const items = await itemTables(build, eraBuild, questieLevels);
   let ids = Object.keys(items).map(Number).sort((a, b) => a - b);
   console.log('Candidatos: ' + ids.length + ' (trayendo números de Wowhead, con caché)');
-  const { result, raw, fetched } = await tooltips(ids);
+  const { result, raw } = await tooltips(ids);
   ids.forEach(id => {
     if (!raw[id] || !fillFromTooltip(items[id], raw[id])) { delete items[id]; return; }
     Object.assign(items[id], result[id]);
@@ -374,19 +328,19 @@ function diffItems(prev, next) {
   }
   fs.mkdirSync(rel('reports'), { recursive: true });
   fs.writeFileSync(rel(reportFile), report);
-  console.log('Tooltips nuevos descargados: ' + fetched + '. Reporte: ' + reportFile);
+  console.log('Reporte: ' + reportFile);
   console.log('Talentos/hechizos con cambios: ' + talentLines.length + ' · ítems con cambios: ' + itemLines.length);
 
-  // Weapon sources, then regenerate bundles; build-data also runs every
-  // validator (rules, translations, builds). Quest sources of new weapons come
-  // from foreverchanges.pro (cached per page, so only new items are fetched).
-  if (!OFFLINE) execFileSync(process.execPath, [path.join(__dirname, 'fetch-item-sources.js')], { stdio: 'inherit' });
-  execFileSync(process.execPath, [path.join(__dirname, 'build-weapons.js')], { stdio: 'inherit' });
-  // How hard each weapon quest really is (who you have to kill), then place
-  // the weapons again with it.
-  execFileSync(process.execPath, [path.join(__dirname, 'fetch-levels.js')].concat(OFFLINE ? ['--offline'] : []), { stdio: 'inherit' });
-  execFileSync(process.execPath, [path.join(__dirname, 'build-weapons.js')], { stdio: 'inherit' });
+  // Then: weapon quest sources (foreverchanges.pro), how hard each weapon quest
+  // really is (fetch-levels), and every build step once, offline from here on.
+  // build-data also runs every validator (rules, translations, builds).
+  const env = Object.assign({}, process.env, OFFLINE ? { SYNC_OFFLINE: '1' } : {});
+  const step = name => execFileSync(process.execPath, [path.join(__dirname, name)], { stdio: 'inherit', env });
+  step('fetch-item-sources.js');
+  step('fetch-levels.js');
+  step('build-weapons.js');
   // Recipe sources come from scripts/fetch-recipes.js (run it to refresh them).
-  execFileSync(process.execPath, [path.join(__dirname, 'build-professions.js')], { stdio: 'inherit' });
-  execFileSync(process.execPath, [path.join(__dirname, 'build-data.js')], { stdio: 'inherit' });
+  step('build-professions.js');
+  step('build-data.js');
+  console.log('Descargas del sync: ' + (http.summary() || 'ninguna'));
 })().catch(e => { console.error(e.message); process.exit(1); });

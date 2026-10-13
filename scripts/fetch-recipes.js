@@ -6,14 +6,9 @@
 //   node scripts/fetch-recipes.js          (pages cached in .cache/cwf/, 1 req/s)
 //
 // Writes data/recipes.json: { profession: { recipeName: { slot, ilvl, skill:[orange,yellow,green,grey], source, isNew } } }
-const fs = require('fs');
-const path = require('path');
-
-const root = path.join(__dirname, '..');
-const cacheDir = path.join(root, '.cache', 'cwf');
+const { readJSON, writeJSON } = require('./lib/files');
+const http = require('./lib/http');
 const PROFESSIONS = ['leatherworking', 'blacksmithing', 'tailoring', 'enchanting', 'engineering', 'alchemy'];
-const UA = { 'User-Agent': 'shaman-forever-site (fan reference site; recipe sources, cited)' };
-const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 function toText(html) {
   return html
@@ -45,18 +40,12 @@ function parsePage(lines) {
   return out;
 }
 
-async function page(prof, n) {
-  const file = path.join(cacheDir, prof + '-' + n + '.html');
-  if (fs.existsSync(file)) return fs.readFileSync(file, 'utf8');
-  const url = 'https://classicwowforever.com/professions/' + prof + '/recipes/' + (n > 1 ? '?page=' + n : '');
-  const res = await fetch(url, { headers: UA });
-  if (!res.ok) throw new Error(res.status + ' ' + url);
-  const html = await res.text();
-  fs.mkdirSync(cacheDir, { recursive: true });
-  fs.writeFileSync(file, html);
-  await sleep(1000);
-  return html;
-}
+// Kept for a month: recipe lists change slowly (pass --offline to rebuild from cache).
+const page = (prof, n) => http.get('https://classicwowforever.com/professions/' + prof + '/recipes/' + (n > 1 ? '?page=' + n : ''),
+  { cache: 'cwf/' + prof + '-' + n + '.html', maxAgeDays: 30, valid: t => /<html/i.test(t) }).then(t => {
+  if (t == null) throw new Error('sin la página ' + n + ' de ' + prof);
+  return t;
+});
 
 (async () => {
   const result = {};
@@ -71,5 +60,8 @@ async function page(prof, n) {
     }
     console.log(prof + ': ' + Object.keys(result[prof]).length + ' recetas (' + total + ' páginas)');
   }
-  fs.writeFileSync(path.join(root, 'data/recipes.json'), JSON.stringify({ source: 'https://classicwowforever.com/professions/', fetched: new Date().toISOString().slice(0, 10), professions: result }, null, 1) + '\n');
+  // The date only moves when the recipes do.
+  const prev = readJSON('data/recipes.json', {});
+  const same = JSON.stringify(prev.professions) === JSON.stringify(result);
+  writeJSON('data/recipes.json', { source: 'https://classicwowforever.com/professions/', fetched: same && prev.fetched ? prev.fetched : new Date().toISOString().slice(0, 10), professions: result });
 })().catch(e => { console.error(e.message); process.exit(1); });

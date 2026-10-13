@@ -1,0 +1,3 @@
+# Datos en conflicto
+
+Ninguno.

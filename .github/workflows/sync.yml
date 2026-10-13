@@ -28,9 +28,8 @@ jobs:
         with:
           node-version: 22
 
-      # Downloads are cached between runs (client tables per build, Wowhead
-      # tooltips, foreverchanges pages, which expire after a week), so each
-      # run only fetches what's new.
+      # Downloads are cached between runs (scripts/lib/http.js keeps each one
+      # with its date and max age), so each run only fetches what's new or due.
       - uses: actions/cache@v4
         with:
           path: .cache
@@ -52,7 +51,7 @@ jobs:
             echo "Sin cambios en los datos."
             exit 0
           fi
-          report=$(ls -t reports/*.md | head -1)
+          report=$(ls -t reports/changes-*.md | head -1)
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B sync/auto
@@ -63,6 +62,8 @@ jobs:
             echo "Sync automático del $(date -u +%F). Revisá el reporte y los cambios en la pestaña *Files changed*; al hacer *Merge*, el sitio se actualiza solo."
             echo
             cat "$report"
+            # Hand-reported facts that disagree with the automatic sources.
+            if ! grep -q '^Ninguno' reports/conflicts.md 2>/dev/null; then echo; cat reports/conflicts.md; fi
           } > pr-body.md
           if gh pr view sync/auto --json state -q .state 2>/dev/null | grep -q OPEN; then
             gh pr edit sync/auto --title "Sync de datos $(date -u +%F)" --body-file pr-body.md

@@ -194,3 +194,6 @@ if (fs.existsSync(path.join(root, 'data/meta.json'))) {
   outputs.push('data/meta.js');
 }
 console.log('OK: ' + outputs.join(', '));
+
+// Generated data must pass its checks (exits with an error otherwise).
+require('./check-data');

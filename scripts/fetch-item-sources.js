@@ -12,39 +12,18 @@
 //   node scripts/fetch-item-sources.js     (then node scripts/build-weapons.js)
 //
 // Writes data/item-sources-fc.json: { items: { id: { name, sources: [...] } } }
-const fs = require('fs');
-const path = require('path');
 
-const root = path.join(__dirname, '..');
-const cacheDir = path.join(root, '.cache', 'foreverchanges');
+const { readJSON, writeJSON } = require('./lib/files');
+const http = require('./lib/http');
+
 const BASE = 'https://foreverchanges.pro';
-const UA = { 'User-Agent': 'shaman-forever-site (fan reference site; item sources, cited)' };
-const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-// Pages are refetched after a week: a weapon with no known quest yet, or a quest
-// the site later corrects, gets picked up. The fetch date of each page lives in
-// _fetched.json (file dates don't survive the GitHub Actions cache).
-const MAX_AGE_DAYS = 7;
-const fetchedFile = path.join(cacheDir, '_fetched.json');
-const fetchedOn = fs.existsSync(fetchedFile) ? JSON.parse(fs.readFileSync(fetchedFile, 'utf8')) : {};
 const today = new Date().toISOString().slice(0, 10);
-const ageDays = d => (Date.parse(today) - Date.parse(d)) / 864e5;
 
-async function page(kind, id) {
-  const name = kind + (id ? '-' + id : '') + '.html';
-  const file = path.join(cacheDir, name);
-  if (fs.existsSync(file) && fetchedOn[name] && ageDays(fetchedOn[name]) < MAX_AGE_DAYS) return fs.readFileSync(file, 'utf8');
-  const res = await fetch(BASE + '/' + kind + (id ? '/' + id : ''), { headers: UA });
-  // Keep the cached copy if the site is down.
-  if (!res.ok && fs.existsSync(file)) return fs.readFileSync(file, 'utf8');
-  const html = res.ok ? await res.text() : '';
-  fs.mkdirSync(cacheDir, { recursive: true });
-  fs.writeFileSync(file, html);
-  fetchedOn[name] = today;
-  fs.writeFileSync(fetchedFile, JSON.stringify(fetchedOn));
-  await sleep(1000);
-  return html;
-}
+// Pages are asked again after a week: a weapon with no known quest yet, or a
+// quest the site later corrects, gets picked up (lib/http.js keeps the dates).
+const page = (kind, id) => http.get(BASE + '/' + kind + (id ? '/' + id : ''), {
+  cache: 'foreverchanges/' + kind + (id ? '-' + id : '') + '.html', maxAgeDays: 7, valid: t => /<html/i.test(t)
+}).then(t => t || '');
 
 const decode = s => s.replace(/&#x27;|&#39;/g, "'").replace(/&amp;/g, '&').replace(/&quot;/g, '"');
 const meta = html => decode((html.match(/<meta name="description" content="([^"]*)/) || [])[1] || '');
@@ -89,7 +68,7 @@ function dungeonLevels(html) {
 }
 
 (async () => {
-  const { items } = JSON.parse(fs.readFileSync(path.join(root, 'data/items.json'), 'utf8'));
+  const { items } = readJSON('data/items.json');
   const WEAPON_KINDS = ['2H Axe', '2H Mace', 'Staff', '1H Axe', '1H Mace', 'Dagger', 'Fist'];
   const targets = Object.values(items).filter(w => w.era === 'new' && WEAPON_KINDS.includes(w.kind));
   const out = {};
@@ -108,7 +87,7 @@ function dungeonLevels(html) {
   // zone and whether they're dungeon quests (QuestieDB files Hidden Enemies
   // under Orgrimmar, where it's handed in, not Ragefire Chasm).
   const questie = require('./lib/questie');
-  const Q = questie.open(path.join(root, '.cache'), {});
+  const Q = questie.open(http.cacheDir, {});
   const quests = {};
   const classicQuestIds = new Set();
   Object.values(items).filter(w => w.era !== 'new' && WEAPON_KINDS.includes(w.kind)).forEach(w =>
@@ -120,14 +99,13 @@ function dungeonLevels(html) {
   const dungeons = dungeonLevels(await page('dungeon-quests'));
   // The date only moves when the data does, so a daily sync with nothing new
   // leaves the file untouched.
-  const outFile = path.join(root, 'data/item-sources-fc.json');
-  const prev = fs.existsSync(outFile) ? JSON.parse(fs.readFileSync(outFile, 'utf8')) : {};
+  const prev = readJSON('data/item-sources-fc.json', {});
   const same = JSON.stringify([prev.items, prev.quests, prev.dungeons]) === JSON.stringify([out, quests, dungeons]);
-  fs.writeFileSync(outFile, JSON.stringify({
-    _readme: 'Fuentes de misión de armas nuevas de Forever (items) y datos de Forever de las misiones de Classic que dan armas (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json, que tiene prioridad.',
+  writeJSON('data/item-sources-fc.json', {
+    _readme: 'Fuentes de misión de armas nuevas de Forever (items) y datos de Forever de las misiones de Classic que dan armas (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json.',
     source: BASE, fetched: same && prev.fetched ? prev.fetched : today, items: out, quests,
     dungeons, dungeonsRef: BASE + '/dungeon-quests'
-  }, null, 1) + '\n');
+  });
   console.log('Armas nuevas: ' + targets.length + ' · con misión encontrada: ' + found +
     ' · misiones de Classic: ' + Object.keys(quests).length + '/' + classicQuestIds.size + ' (de dungeon: ' + Object.values(quests).filter(q => q.dungeon).length + ') · dungeons con rango de nivel: ' + Object.keys(dungeons).length);
 })().catch(e => { console.error(e.message); process.exit(1); });
