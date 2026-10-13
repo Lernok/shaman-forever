@@ -7,6 +7,7 @@
   let filter = 'all';
   let query = '';
   const chosenRank = {}; // spell name -> rank label picked in its selector
+  const opened = new Set(); // spells whose card is expanded
 
   const t = (key, vars) => window.I18N.t(key, vars);
   const STATUS = {
@@ -77,20 +78,25 @@
     const d = desc(s.name, rank) || {};
     const st = STATUS[s.status];
     const pct = d.cs === 'changed' ? pctChange(d) : null;
-    let html = '<div class="spell-card ' + st.cls + '">' +
-      '<div class="sp-head">' +
+    const open = opened.has(s.name);
+    let html = '<div class="spell-card ' + st.cls + (open ? ' open' : '') + '">' +
+      '<button class="sp-head" type="button" data-toggle="' + s.name.replace(/"/g, '&quot;') + '" aria-expanded="' + open + '">' +
         '<img class="sp-icon" src="' + ui.iconUrl(s.icon) + '" alt="" loading="lazy">' +
-        '<div class="sp-title"><b>' + s.name + '</b>' +
+        '<span class="sp-title"><b>' + s.name + '</b>' +
           '<span class="sp-meta">' + (s.levels.length ? t('sb.levels', { list: s.levels.join(', ') }) : '') +
-          (s.fromTalent ? ' · ' + t('sb.fromTalent') : '') + '</span></div>' +
-        '<span class="sp-status">' + t(st.label) + '</span>' +
-      '</div>';
+          (s.fromTalent ? ' · ' + t('sb.fromTalent') : '') + '</span></span>' +
+        '<span class="sp-badges"><span class="sp-status">' + t(st.label) + '</span>' +
+          (pct != null ? '<span class="pct-pill ' + (pct < 0 ? 'down' : pct > 0 ? 'up' : '') + '">' + (pct > 0 ? '+' : '') + pct + '%</span>' : '') + '</span>' +
+        '<span class="sp-chevron">' + (open ? '–' : '+') + '</span>' +
+      '</button>';
+    html += '<p class="sp-text sp-short">' + window.I18N.client(d.d || '') + '</p>';
+    if (!open) return html + '</div>';
+    html += '<div class="sp-extra">';
     if (s.ranks.length > 1) {
       html += '<select class="sp-rank" data-spell="' + s.name + '">' +
         s.ranks.map(r => '<option value="' + r + '"' + (r === rank ? ' selected' : '') + '>' + rankLabel(r) + '</option>').join('') + '</select>';
     }
-    html += '<div class="sp-cost">' + lines(d.l) + '</div>' +
-      '<p class="sp-text">' + window.I18N.client(d.d || '') + '</p>';
+    html += '<div class="sp-cost">' + lines(d.l) + '</div>';
     if (d.co) html += '<div class="sp-coef">' + t('sb.coef') + ': <b>' + coef(d.co) + '</b>' +
       (d.cc && d.cc !== d.co ? ' <span class="was">(Classic: ' + coef(d.cc) + ')</span>' : '') + '</div>';
     if (d.cs === 'changed' && d.cd) {
@@ -99,7 +105,7 @@
         '</summary><div class="sp-cost">' + lines(d.cl) + '</div><p class="sp-text">' + window.I18N.client(d.cd) + '</p></details>';
     }
     html += window.I18N.original([d.d, d.cs === 'changed' && d.cd ? 'Classic: ' + d.cd : '']);
-    html += '</div>';
+    html += '</div></div>';
     return html;
   }
 
@@ -158,6 +164,11 @@
       again.focus();
       again.setSelectionRange(pos, pos);
     });
+    container.querySelectorAll('[data-toggle]').forEach(b => b.addEventListener('click', () => {
+      const name = b.dataset.toggle;
+      if (opened.has(name)) opened.delete(name); else opened.add(name);
+      renderAll();
+    }));
     container.querySelectorAll('.sp-rank').forEach(sel => sel.addEventListener('change', () => {
       chosenRank[sel.dataset.spell] = sel.value;
       renderAll();
