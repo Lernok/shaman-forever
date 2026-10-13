@@ -34,15 +34,29 @@ async function cached(file, url) {
   const res = await fetch(url, { headers: UA });
   if (!res.ok) throw new Error(res.status + ' ' + url);
   const text = await res.text();
+  // A site down for maintenance can answer 200 with an HTML page: never cache that as data.
+  if (/\.json$/.test(file)) JSON.parse(text);
   fs.mkdirSync(path.dirname(full), { recursive: true });
   fs.writeFileSync(full, text);
   return text;
 }
 
+// The newest builds on wago.tools; null when it doesn't answer (a few tries),
+// so the sync goes on with the builds it already has in data/meta.json.
 async function latestBuilds() {
   if (OFFLINE) return null;
-  const res = await fetch('https://wago.tools/api/builds', { headers: UA });
-  const all = await res.json();
+  let all = null;
+  for (let i = 0; i < 3 && !all; i++) {
+    try {
+      const res = await fetch('https://wago.tools/api/builds', { headers: UA });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      all = await res.json();
+    } catch (e) {
+      console.log('wago.tools/api/builds no respondió (' + e.message + ')' + (i < 2 ? ', reintento…' : ''));
+      if (i < 2) await sleep(20000);
+    }
+  }
+  if (!all) { console.log('Sigo con los builds de data/meta.json.'); return null; }
   const pick = (product, prefix) => (all[product] || [])
     .filter(b => b.version.startsWith(prefix))
     .sort((a, b) => b.created_at.localeCompare(a.created_at))[0];
