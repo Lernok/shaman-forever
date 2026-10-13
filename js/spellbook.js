@@ -6,6 +6,7 @@
   let container = null;
   let filter = 'all';
   let query = '';
+  let newOnly = false; // By level: only first ranks
   const chosenRank = {}; // spell name -> rank label picked in its selector
   const opened = new Set(); // spells whose card is expanded
 
@@ -83,7 +84,7 @@
       '<button class="sp-head" type="button" data-toggle="' + s.name.replace(/"/g, '&quot;') + '" aria-expanded="' + open + '">' +
         '<img class="sp-icon" src="' + ui.iconUrl(s.icon) + '" alt="" loading="lazy">' +
         '<span class="sp-title"><b>' + s.name + '</b>' +
-          '<span class="sp-meta">' + (s.levels.length ? t('sb.levels', { list: s.levels.join(', ') }) : '') +
+          '<span class="sp-meta">' + (s.levels.length ? t('sb.learnAt', { level: s.levels[0] }) : '') +
           (s.fromTalent ? ' · ' + t('sb.fromTalent') : '') + '</span></span>' +
         '<span class="sp-badges"><span class="sp-status">' + t(st.label) + '</span>' +
           (pct != null ? '<span class="pct-pill ' + (pct < 0 ? 'down' : pct > 0 ? 'up' : '') + '">' + (pct > 0 ? '+' : '') + pct + '%</span>' : '') + '</span>' +
@@ -94,7 +95,7 @@
     html += '<div class="sp-extra">';
     if (s.ranks.length > 1) {
       html += '<select class="sp-rank" data-spell="' + s.name + '">' +
-        s.ranks.map(r => '<option value="' + r + '"' + (r === rank ? ' selected' : '') + '>' + rankLabel(r) + '</option>').join('') + '</select>';
+        s.ranks.map((r, i) => '<option value="' + r + '"' + (r === rank ? ' selected' : '') + '>' + rankLabel(r) + (s.levels[i] ? ' · ' + t('sb.atLevel', { level: s.levels[i] }) : '') + '</option>').join('') + '</select>';
     }
     html += '<div class="sp-cost">' + lines(d.l) + '</div>';
     if (d.co) html += '<div class="sp-coef">' + t('sb.coef') + ': <b>' + coef(d.co) + '</b>' +
@@ -115,6 +116,32 @@
     return true;
   }
 
+  // Every level from 1 to 60 with the spells and ranks you learn at it.
+  function byLevel(tabs) {
+    const at = {};
+    const fromTalents = [];
+    tabs.forEach(tab => tab.spells.filter(matches).forEach(sp => {
+      if (!sp.levels.length) { fromTalents.push(sp); return; }
+      sp.levels.forEach((lv, i) => {
+        if (newOnly && i > 0) return;
+        (at[lv] = at[lv] || []).push({ sp, rank: i + 1, total: sp.levels.length, tab: tab.name });
+      });
+    }));
+    let html = '<div class="lv-toolbar"><label class="chk chip-toggle"><input type="checkbox" id="sbNewOnly"' + (newOnly ? ' checked' : '') + '> ' + t('sb.newOnly') + '</label>' +
+      '<span class="dim">' + t('sb.byLevelIntro') + '</span></div><div class="lv-timeline">';
+    Object.keys(at).map(Number).sort((a, b) => a - b).forEach(lv => {
+      const list = at[lv].sort((a, b) => (a.rank === 1 ? 0 : 1) - (b.rank === 1 ? 0 : 1) || a.sp.name.localeCompare(b.sp.name));
+      html += '<div class="lv-row' + (lv > 30 ? ' post-cap' : '') + '"><div class="lv-num">' + lv + '</div><div class="lv-spells">' +
+        list.map(e => '<span class="lv-spell' + (e.rank === 1 ? ' first' : '') + '" data-ref="' + e.sp.name + '" style="--tab-color:' + ui.specColors[e.tab] + '">' +
+          '<img src="' + ui.iconUrl(e.sp.icon) + '" alt="" loading="lazy"><span><b>' + e.sp.name + '</b><small>' +
+          (e.rank === 1 ? t('sb.newSpell') : t('sb.rankOf', { n: e.rank, total: e.total })) + '</small></span></span>').join('') +
+        '</div></div>';
+    });
+    html += '</div>';
+    if (fromTalents.length) html += '<p class="note-text dim">' + t('sb.talentSpells', { list: fromTalents.map(x => x.name).join(', ') }) + '</p>';
+    return html;
+  }
+
   function renderAll() {
     const tabs = spells();
     const all = tabs.flatMap(t => t.spells);
@@ -130,10 +157,17 @@
       '</div>';
     // One spellbook tab at a time (the chosen spec's first); a search looks in all three.
     const names = tabs.map(x => x.name);
-    const ordered = [window.Site.spec].concat(names.filter(n => n !== window.Site.spec));
+    const ordered = [window.Site.spec].concat(names.filter(n => n !== window.Site.spec)).concat('nivel');
     const section = window.Site.section('Hechizos', ordered);
-    html += window.Site.sectionTabs('Hechizos', ordered, section, n =>
+    html += window.Site.sectionTabs('Hechizos', ordered, section, n => n === 'nivel' ? t('sb.byLevel') :
       n + ' <span class="n">' + tabs.find(x => x.name === n).spells.filter(matches).length + '</span>');
+    if (section === 'nivel' && !query) {
+      html += byLevel(tabs);
+      html += ui.renderSources(['https://talentsforever.com (CC BY 4.0) — data/shaman.json, ' + t('sb.source')], t('sb.how', { build: data().spellbook.build }));
+      container.innerHTML = html;
+      bind();
+      return;
+    }
     tabs.forEach(tab => {
       const list = tab.spells.filter(matches);
       if (!list.length || (!query && tab.name !== section)) return;
@@ -155,6 +189,8 @@
       filter = b.dataset.filter;
       renderAll();
     }));
+    const only = container.querySelector('#sbNewOnly');
+    if (only) only.addEventListener('change', () => { newOnly = only.checked; renderAll(); });
     const search = container.querySelector('.sb-search');
     search.addEventListener('input', () => {
       query = search.value.trim().toLowerCase();

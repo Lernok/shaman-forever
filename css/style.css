@@ -1067,3 +1067,18 @@ details.more summary { cursor: pointer; font-size: 12.5px; color: var(--accent);
 .ref-tip { pointer-events: none; }
 .ref-tip .t-name { color: var(--gold); }
 .ref-learn { color: var(--good) !important; margin-top: 6px; }
+
+/* ---------- Spells by level ---------- */
+.lv-toolbar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-bottom: 12px; font-size: 12.5px; }
+.lv-timeline { position: relative; display: flex; flex-direction: column; gap: 6px; }
+.lv-row { display: grid; grid-template-columns: 54px 1fr; gap: 12px; align-items: start; }
+.lv-row.post-cap { opacity: .7; }
+.lv-num { text-align: center; font-size: 18px; font-weight: 800; color: var(--spec-color); background: var(--bg-panel); border: 1px solid var(--border); border-radius: 10px; padding: 8px 0; }
+.lv-spells { display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 0; }
+.lv-spell { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-panel); border: 1px solid var(--border); border-left: 3px solid var(--tab-color, var(--border)); border-radius: 8px; padding: 4px 10px 4px 4px; }
+.lv-spell img { width: 30px; height: 30px; border-radius: 6px; border: 1px solid #000; }
+.lv-spell span { display: flex; flex-direction: column; line-height: 1.2; }
+.lv-spell b { font-size: 13px; }
+.lv-spell small { font-size: 11px; color: var(--text-dim); }
+.lv-spell.first { background: color-mix(in srgb, var(--good) 10%, var(--bg-panel)); border-color: color-mix(in srgb, var(--good) 45%, var(--border)); border-left-color: var(--tab-color); }
+.lv-spell.first small { color: var(--good); font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
