@@ -97,7 +97,14 @@
       '<span class="gp-slot">' + (star ? '<span class="gp-star" title="' + t('gp.starTitle') + '">★</span>' : '') + slotName(st.pick.slot) + '</span>' +
       '<div class="gp-main">' + UI.itemLink(i) + '<span class="wp-sub">' + sourceText(st.pick) +
       (st.pick.access === 'quest' ? ' · <span class="gp-off-tag">' + t('gp.offRoute') + '</span>' : '') + '</span>' +
-      (st.alt || state.detail ? '<span class="gp-why">' + why(st) + '</span>' : '') + '</div></div>';
+      (st.alt || state.detail ? '<span class="gp-why">' + why(st) + '</span>' : '') + reportLink(st) + '</div></div>';
+  }
+
+  // "Wrong piece?": opens the feedback form with this step filled in.
+  function reportLink(st) {
+    if (!state.detail) return '';
+    const href = Site.feedbackLink(t('fb.kind.piece'), st.level + ' ' + st.pick.slot + ' ' + st.pick.item.name + ' #' + st.pick.item.id + ' (' + st.pick.access + ')');
+    return href ? '<a class="gp-report" href="' + href + '" target="_blank" rel="noopener">' + t('fb.wrongPiece') + '</a>' : '';
   }
 
   // Brackets of ten levels; you look at one at a time.

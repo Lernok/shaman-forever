@@ -32,12 +32,30 @@
   const iconUrl = icon => UI.icon(icon);
   const treeBg = tree => 'linear-gradient(rgba(12,13,16,.55), rgba(12,13,16,.82)), url(' + UI.treeArt(tree.bg) + ')';
 
-  // Footer: the five dots once, with their names.
+  // Footer: the five dots once, with their names, and the feedback link.
   function renderLegend() {
     const el = document.getElementById('confLegend');
     if (!el) return;
     el.innerHTML = t('conf.legend') + ' ' + UI.CONFIDENCE_KEYS.map(k =>
       '<span class="conf-key">' + UI.badge(k) + t('conf.' + k) + '</span>').join('');
+    const fb = document.getElementById('feedbackLink');
+    const href = Site.feedbackLink(t('fb.kind.idea'));
+    if (fb) fb.innerHTML = href ? '<a class="btn feedback-btn" href="' + href + '" target="_blank" rel="noopener">' + t('fb.button') + '</a><span class="dim">' + t('fb.note') + '</span>' : '';
+  }
+
+  // Anonymous visit counter: one count per page shown (the hash names it).
+  function countVisit(page) {
+    if (!Site.GOATCOUNTER) return;
+    const count = () => window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path: '/' + page, title: page });
+    if (!window.goatcounter) {
+      window.goatcounter = { no_onload: true };
+      const sc = document.createElement('script');
+      sc.async = true;
+      sc.src = 'https://gc.zgo.at/count.js';
+      sc.dataset.goatcounter = 'https://' + Site.GOATCOUNTER + '.goatcounter.com/count';
+      sc.onload = count;
+      document.head.appendChild(sc);
+    } else count();
   }
 
   // ---------- pages ----------
@@ -80,6 +98,7 @@
     currentPage = page;
     currentHash = location.hash;
     render(page);
+    countVisit(page);
   }
 
   // Header: your Shaman in one chip; it opens the setup.

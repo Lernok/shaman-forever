@@ -1236,3 +1236,8 @@ details.wp-all[open] > summary { margin-bottom: 10px; }
 .lv-row.lv-next { background: color-mix(in srgb, var(--spec-color) 7%, transparent); border-radius: 8px; }
 .setup-level { background: var(--bg-panel-2); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font: inherit; }
 .gp-off-tag { color: #d9a441; }
+.feedback { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 0 0 10px; }
+.feedback:empty { display: none; }
+.feedback-btn { text-decoration: none; border-color: var(--accent); color: var(--text); }
+.gp-report { font-size: 11px; color: var(--text-dim); align-self: flex-start; }
+.gp-report:hover { color: var(--accent); }

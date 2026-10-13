@@ -8,6 +8,12 @@
   const listeners = [];
 
   const Site = {
+    // Feedback goes to a Google Form (answers land in its sheet, not an inbox).
+    // url: the form's "viewform" link; fields: entry ids from its prefilled
+    // link, so a report arrives with what the person was looking at.
+    FEEDBACK: { url: '', fields: { kind: '', context: '' } },
+    // Anonymous visit counter (goatcounter.com, no cookies): the site's code.
+    GOATCOUNTER: '',
     SPECS,
     FACTIONS,
     COLORS: { Elemental: '#e0742c', Enhancement: '#b07a42', Restoration: '#3fa9f5', Clase: '#c8aa6e' },
@@ -50,6 +56,19 @@
       listeners.forEach(fn => fn('setup'));
     },
     onChange(fn) { listeners.push(fn); },
+
+    // Where the feedback form opens: prefilled with the kind of report and
+    // the context (page, your Shaman, an item); null while there's no form.
+    feedbackLink(kind, extra) {
+      const F = Site.FEEDBACK;
+      if (!F.url) return null;
+      const profs = window.UI.store.get('profs', []).join('+') || '-';
+      const context = [location.hash || '#Inicio', Site.race + ' ' + Site.spec + ' (' + Site.faction + ')', profs, 'lvl ' + window.UI.store.get('level', 1), extra || ''].filter(Boolean).join(' | ');
+      const q = [];
+      if (F.fields.kind && kind) q.push(F.fields.kind + '=' + encodeURIComponent(kind));
+      if (F.fields.context) q.push(F.fields.context + '=' + encodeURIComponent(context));
+      return F.url + (F.url.includes('?') ? '&' : '?') + 'usp=pp_url' + (q.length ? '&' + q.join('&') : '');
+    },
 
     // Current section of a page: the hash's second part if it's one of
     // `sections`, else the first section.

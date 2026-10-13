@@ -57,12 +57,13 @@
   }
 
   const LAUNCH = new Date('2026-11-04T23:00:00Z');
+  const BETA_END = new Date('2026-10-22T07:00:00Z');
   function renderHome() {
     const days = Math.ceil((LAUNCH - new Date()) / 86400000);
     const launch = days > 0 ? t('home.launchIn', { n: days }) : days === 0 ? t('home.launchToday') : t('home.launched');
     let html = '<section class="home-hero"><div class="home-hero-text"><div class="role">' + t('home.kicker') + '</div>' +
       '<h2>' + t('home.title') + '</h2><p>' + t('home.tagline') + '</p></div>' +
-      '<div class="countdown"><b>' + launch + '</b><span>' + t('home.launchDate') + '</span><span class="dim">' + t('home.betaEnds') + '</span></div></section>';
+      '<div class="countdown"><b>' + launch + '</b><span>' + t('home.launchDate') + '</span>' + (new Date() < BETA_END ? '<span class="dim">' + t('home.betaEnds') + '</span>' : '') + '</div></section>';
 
     if (UI.store.get('setupDone', false)) html += meCard();
     else html += specCards();
