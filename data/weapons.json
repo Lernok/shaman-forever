@@ -1922,7 +1922,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 6,
+     "asap": 9,
      "rec": 11,
      "basis": {
       "name": "Harvest Golem",
@@ -1969,7 +1969,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 6,
+     "asap": 9,
      "rec": 11,
      "basis": {
       "name": "Tunnel Rat Forager",
@@ -1990,7 +1990,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 6,
+     "asap": 9,
      "rec": 11,
      "basis": {
       "name": "Tunnel Rat Kobold",
@@ -2212,9 +2212,10 @@
       "level": 10,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 7
      },
-     "asap": 1,
+     "asap": 5,
      "rec": 7
     }
    ]
@@ -2428,9 +2429,10 @@
       "level": 10,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 7
      },
-     "asap": 1,
+     "asap": 5,
      "rec": 7
     }
    ]
@@ -2485,9 +2487,10 @@
       "level": 10,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 7
      },
-     "asap": 1,
+     "asap": 5,
      "rec": 7
     }
    ]
@@ -3004,9 +3007,11 @@
       "level": 10,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 92693,
+      "steps": 7
      },
-     "asap": 5,
+     "asap": 7,
      "rec": 9
     }
    ]
@@ -3056,9 +3061,11 @@
       "level": 10,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 92693,
+      "steps": 7
      },
-     "asap": 5,
+     "asap": 7,
      "rec": 9
     }
    ]
@@ -3109,11 +3116,16 @@
      },
      "ref": "https://foreverchanges.pro/quest/483",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 6,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 476,
+      "steps": 3
      },
      "asap": 4,
-     "rec": 8
+     "rec": 5
     }
    ]
   },
@@ -3162,9 +3174,11 @@
       "level": 10,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 92693,
+      "steps": 7
      },
-     "asap": 5,
+     "asap": 7,
      "rec": 9
     }
    ]
@@ -3212,9 +3226,11 @@
       "level": 10,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 92679,
+      "steps": 2
      },
-     "asap": 5,
+     "asap": 7,
      "rec": 9
     }
    ]
@@ -3286,7 +3302,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 10,
+     "asap": 17,
      "rec": 19,
      "basis": {
       "name": "Strider Clutchmother",
@@ -3813,9 +3829,11 @@
       "level": 10,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 92642,
+      "steps": 12
      },
-     "asap": 6,
+     "asap": 7,
      "rec": 9
     }
    ]
@@ -3916,9 +3934,10 @@
       "level": 11,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 4
      },
-     "asap": 5,
+     "asap": 6,
      "rec": 8
     }
    ]
@@ -3970,9 +3989,11 @@
       "level": 10,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 92642,
+      "steps": 12
      },
-     "asap": 6,
+     "asap": 7,
      "rec": 9
     }
    ]
@@ -4053,7 +4074,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 11,
+     "asap": 12,
      "rec": 14,
      "basis": {
       "name": "Defias Magician",
@@ -4157,7 +4178,8 @@
       "level": 11,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 2
      },
      "asap": 8,
      "rec": 10
@@ -4209,7 +4231,8 @@
       "level": 11,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 2
      },
      "asap": 8,
      "rec": 10
@@ -4262,9 +4285,11 @@
       "level": 10,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 92642,
+      "steps": 12
      },
-     "asap": 6,
+     "asap": 7,
      "rec": 9
     }
    ]
@@ -4368,9 +4393,11 @@
       "level": 12,
       "rank": "rare",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 97281,
+      "steps": 2
      },
-     "asap": 7,
+     "asap": 9,
      "rec": 11
     }
    ]
@@ -4803,7 +4830,8 @@
       "level": 11,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 6,
      "rec": 8
@@ -4856,9 +4884,10 @@
       "level": 12,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 3
      },
-     "asap": 5,
+     "asap": 9,
      "rec": 11
     }
    ]
@@ -4909,9 +4938,10 @@
       "level": 12,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 4
      },
-     "asap": 4,
+     "asap": 9,
      "rec": 11
     }
    ]
@@ -5012,9 +5042,10 @@
       "level": 12,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 3
      },
-     "asap": 5,
+     "asap": 9,
      "rec": 11
     }
    ]
@@ -5063,7 +5094,8 @@
       "level": 11,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 4
      },
      "asap": 10,
      "rec": 10
@@ -5112,14 +5144,16 @@
      },
      "ref": "https://foreverchanges.pro/quest/827",
      "basis": {
-      "name": "Fizzle Darkstorm",
-      "level": 12,
+      "name": null,
+      "level": 30,
       "rank": "normal",
-      "from": "wowhead",
-      "group": false
+      "from": "step-level",
+      "group": false,
+      "step": 2,
+      "steps": 9
      },
-     "asap": 4,
-     "rec": 11
+     "asap": 12,
+     "rec": 12
     }
    ]
   },
@@ -5165,14 +5199,16 @@
      },
      "ref": "https://foreverchanges.pro/quest/827",
      "basis": {
-      "name": "Fizzle Darkstorm",
-      "level": 12,
+      "name": null,
+      "level": 30,
       "rank": "normal",
-      "from": "wowhead",
-      "group": false
+      "from": "step-level",
+      "group": false,
+      "step": 2,
+      "steps": 9
      },
-     "asap": 4,
-     "rec": 11
+     "asap": 12,
+     "rec": 12
     }
    ]
   },
@@ -5222,9 +5258,10 @@
       "level": 12,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 2
      },
-     "asap": 4,
+     "asap": 7,
      "rec": 9
     }
    ]
@@ -5279,9 +5316,10 @@
       "level": 12,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 4
      },
-     "asap": 4,
+     "asap": 9,
      "rec": 11
     }
    ]
@@ -5341,7 +5379,9 @@
       "level": 16,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 5728,
+      "steps": 5
      },
      "asap": 13,
      "rec": 13
@@ -5401,7 +5441,8 @@
       "level": 17,
       "rank": "elite",
       "from": "dungeon-range",
-      "group": true
+      "group": true,
+      "steps": 2
      },
      "asap": 13,
      "rec": 14
@@ -5463,7 +5504,9 @@
       "level": 16,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 5728,
+      "steps": 5
      },
      "asap": 13,
      "rec": 13
@@ -5574,7 +5617,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 13,
+     "asap": 14,
      "rec": 16,
      "basis": {
       "name": "Goblin Engineer",
@@ -5793,7 +5836,9 @@
       "level": 16,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 5728,
+      "steps": 5
      },
      "asap": 13,
      "rec": 13
@@ -5911,7 +5956,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 13,
+     "asap": 14,
      "rec": 16,
      "basis": {
       "name": "Mo'grosh Enforcer",
@@ -5932,7 +5977,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 13,
+     "asap": 14,
      "rec": 16,
      "basis": {
       "name": "Emogg the Crusher",
@@ -5990,9 +6035,10 @@
       "level": 13,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 3
      },
-     "asap": 7,
+     "asap": 10,
      "rec": 12
     }
    ]
@@ -6239,7 +6285,9 @@
       "level": 16,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 5728,
+      "steps": 5
      },
      "asap": 13,
      "rec": 13
@@ -6333,9 +6381,10 @@
       "level": 13,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 3
      },
-     "asap": 7,
+     "asap": 10,
      "rec": 12
     }
    ]
@@ -6804,9 +6853,10 @@
       "level": 16,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 1
      },
-     "asap": 9,
+     "asap": 13,
      "rec": 14
     }
    ]
@@ -6856,8 +6906,13 @@
      },
      "ref": "https://foreverchanges.pro/quest/4813",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 14,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 4812,
+      "steps": 3
      },
      "asap": 12,
      "rec": 13
@@ -6910,9 +6965,10 @@
       "level": 16,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 1
      },
-     "asap": 9,
+     "asap": 13,
      "rec": 14
     }
    ]
@@ -6957,8 +7013,13 @@
      },
      "ref": "https://foreverchanges.pro/quest/4813",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 14,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 4812,
+      "steps": 3
      },
      "asap": 12,
      "rec": 13
@@ -7021,7 +7082,8 @@
       "level": 19,
       "rank": "elite",
       "from": "dungeon-range",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 15,
      "rec": 16
@@ -7154,7 +7216,8 @@
       "level": 19,
       "rank": "elite",
       "from": "dungeon-range",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 15,
      "rec": 16
@@ -7340,9 +7403,10 @@
       "level": 15,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 5
      },
-     "asap": 9,
+     "asap": 10,
      "rec": 12
     }
    ]
@@ -7510,9 +7574,10 @@
       "level": 15,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 5
      },
-     "asap": 9,
+     "asap": 10,
      "rec": 12
     }
    ]
@@ -7622,10 +7687,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/853",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 15,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 848,
+      "steps": 2
      },
-     "asap": 10,
+     "asap": 12,
      "rec": 14
     }
    ]
@@ -8363,9 +8433,11 @@
       "level": 16,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 901,
+      "steps": 4
      },
-     "asap": 10,
+     "asap": 13,
      "rec": 15
     }
    ]
@@ -8415,7 +8487,8 @@
       "level": 15,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 1
      },
      "asap": 12,
      "rec": 14
@@ -8476,7 +8549,8 @@
       "level": 21,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 7
      },
      "asap": 17,
      "rec": 18
@@ -8574,7 +8648,8 @@
       "level": 21,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 7
      },
      "asap": 17,
      "rec": 18
@@ -8640,7 +8715,8 @@
       "level": 21,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 7
      },
      "asap": 17,
      "rec": 18
@@ -8909,7 +8985,8 @@
       "level": 20,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 17,
      "rec": 17
@@ -8968,7 +9045,8 @@
       "level": 18,
       "rank": "normal",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 8
      },
      "asap": 17,
      "rec": 17
@@ -9022,9 +9100,10 @@
       "level": 17,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 1
      },
-     "asap": 10,
+     "asap": 14,
      "rec": 16
     }
    ]
@@ -9181,7 +9260,8 @@
       "level": 18,
       "rank": "normal",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 8
      },
      "asap": 17,
      "rec": 17
@@ -9270,9 +9350,10 @@
       "level": 17,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 1
      },
-     "asap": 10,
+     "asap": 14,
      "rec": 16
     }
    ]
@@ -9323,9 +9404,10 @@
       "level": 18,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 3
      },
-     "asap": 9,
+     "asap": 15,
      "rec": 17
     }
    ]
@@ -9386,7 +9468,8 @@
       "level": 18,
       "rank": "normal",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 8
      },
      "asap": 17,
      "rec": 17
@@ -10226,10 +10309,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/491",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 18,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 461,
+      "steps": 3
      },
-     "asap": 12,
+     "asap": 15,
      "rec": 17
     }
    ]
@@ -10280,9 +10368,10 @@
       "level": 20,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 2
      },
-     "asap": 13,
+     "asap": 17,
      "rec": 18
     }
    ]
@@ -11314,9 +11403,10 @@
       "level": 20,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 3
      },
-     "asap": 12,
+     "asap": 17,
      "rec": 19
     }
    ]
@@ -11366,7 +11456,9 @@
       "level": 20,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 278,
+      "steps": 7
      },
      "asap": 16,
      "rec": 17
@@ -11730,7 +11822,9 @@
       "level": 20,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 278,
+      "steps": 7
      },
      "asap": 16,
      "rec": 17
@@ -11780,11 +11874,16 @@
      },
      "ref": "https://foreverchanges.pro/quest/951",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 17,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 950,
+      "steps": 6
      },
-     "asap": 12,
-     "rec": 19
+     "asap": 14,
+     "rec": 16
     }
    ]
   },
@@ -11834,9 +11933,10 @@
       "level": 20,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 3
      },
-     "asap": 12,
+     "asap": 17,
      "rec": 19
     }
    ]
@@ -11891,9 +11991,10 @@
       "level": 24,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 7
      },
-     "asap": 10,
+     "asap": 20,
      "rec": 20
     }
    ]
@@ -12488,9 +12589,10 @@
       "level": 21,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
-     "asap": 15,
+     "asap": 16,
      "rec": 18
     }
    ]
@@ -13109,9 +13211,10 @@
       "level": 22,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 6
      },
-     "asap": 10,
+     "asap": 19,
      "rec": 21
     }
    ]
@@ -13346,7 +13449,8 @@
       "level": 23,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 18,
      "rec": 20
@@ -13866,7 +13970,8 @@
       "level": 23,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 18,
      "rec": 20
@@ -13966,9 +14071,11 @@
       "level": 31,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 303,
+      "steps": 2
      },
-     "asap": 24,
+     "asap": 26,
      "rec": 27
     }
    ]
@@ -14126,7 +14233,8 @@
       "level": 24,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 24,
      "rec": 24
@@ -14356,9 +14464,10 @@
       "level": 25,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 1
      },
-     "asap": 17,
+     "asap": 22,
      "rec": 24
     }
    ]
@@ -14591,7 +14700,8 @@
       "level": 24,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 24,
      "rec": 24
@@ -14645,9 +14755,10 @@
       "level": 27,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 6
      },
-     "asap": 15,
+     "asap": 24,
      "rec": 24
     }
    ]
@@ -14798,9 +14909,10 @@
       "level": 24,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 5
      },
-     "asap": 13,
+     "asap": 21,
      "rec": 23
     }
    ]
@@ -14851,9 +14963,10 @@
       "level": 27,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 6
      },
-     "asap": 15,
+     "asap": 24,
      "rec": 24
     }
    ]
@@ -15231,9 +15344,11 @@
       "level": 25,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 20,
+      "steps": 2
      },
-     "asap": 18,
+     "asap": 22,
      "rec": 24
     }
    ]
@@ -15352,14 +15467,16 @@
      },
      "ref": "https://foreverchanges.pro/quest/286",
      "basis": {
-      "name": "Gobbler",
-      "level": 22,
+      "name": null,
+      "level": 25,
       "rank": "normal",
-      "from": "wowhead",
-      "group": false
+      "from": "step-level",
+      "group": false,
+      "step": 285,
+      "steps": 5
      },
-     "asap": 20,
-     "rec": 21
+     "asap": 22,
+     "rec": 24
     }
    ]
   },
@@ -15409,10 +15526,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98191",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 25,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 286,
+      "steps": 7
      },
-     "asap": 20,
+     "asap": 22,
      "rec": 24
     }
    ]
@@ -15470,14 +15592,16 @@
      "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
      "early": 26,
      "basis": {
-      "name": "Relic Guardian",
-      "level": 30,
-      "rank": "elite",
-      "from": "dungeon-range",
-      "group": true
+      "name": null,
+      "level": 31,
+      "rank": "normal",
+      "from": "step-level",
+      "group": true,
+      "step": 95664,
+      "steps": 2
      },
      "asap": 26,
-     "rec": 27
+     "rec": 28
     },
     {
      "type": "quest",
@@ -15504,14 +15628,16 @@
      "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
      "early": 26,
      "basis": {
-      "name": "Relic Guardian",
-      "level": 30,
-      "rank": "elite",
-      "from": "dungeon-range",
-      "group": true
+      "name": null,
+      "level": 31,
+      "rank": "normal",
+      "from": "step-level",
+      "group": true,
+      "step": 95810,
+      "steps": 2
      },
      "asap": 26,
-     "rec": 27
+     "rec": 28
     }
    ]
   },
@@ -15636,7 +15762,8 @@
       "level": 28,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 26,
      "rec": 26
@@ -15770,14 +15897,16 @@
      "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
      "early": 26,
      "basis": {
-      "name": "Relic Guardian",
-      "level": 30,
-      "rank": "elite",
-      "from": "dungeon-range",
-      "group": true
+      "name": null,
+      "level": 31,
+      "rank": "normal",
+      "from": "step-level",
+      "group": true,
+      "step": 95664,
+      "steps": 2
      },
      "asap": 26,
-     "rec": 27
+     "rec": 28
     },
     {
      "type": "quest",
@@ -15804,14 +15933,16 @@
      "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
      "early": 26,
      "basis": {
-      "name": "Relic Guardian",
-      "level": 30,
-      "rank": "elite",
-      "from": "dungeon-range",
-      "group": true
+      "name": null,
+      "level": 31,
+      "rank": "normal",
+      "from": "step-level",
+      "group": true,
+      "step": 95810,
+      "steps": 2
      },
      "asap": 26,
-     "rec": 27
+     "rec": 28
     }
    ]
   },
@@ -15980,7 +16111,8 @@
       "level": 30,
       "rank": "elite",
       "from": "dungeon-range",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 26,
      "rec": 27
@@ -16182,7 +16314,8 @@
       "level": 28,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 26,
      "rec": 26
@@ -16517,9 +16650,11 @@
       "level": 35,
       "rank": "normal",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 545,
+      "steps": 5
      },
-     "asap": 28,
+     "asap": 30,
      "rec": 32
     }
    ]
@@ -16579,7 +16714,8 @@
       "level": 32,
       "rank": "elite",
       "from": "dungeon-range",
-      "group": true
+      "group": true,
+      "steps": 2
      },
      "asap": 28,
      "rec": 29
@@ -17098,7 +17234,8 @@
       "level": 28,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 4
      },
      "asap": 24,
      "rec": 25
@@ -17744,11 +17881,16 @@
      "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
      "early": 29,
      "basis": {
-      "from": "dungeon-range",
-      "group": true
+      "name": null,
+      "level": 28,
+      "rank": "normal",
+      "from": "step-level",
+      "group": true,
+      "step": 2931,
+      "steps": 2
      },
      "asap": 29,
-     "rec": 30
+     "rec": 29
     }
    ]
   },
@@ -18001,52 +18143,8 @@
       "level": 40,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
-     },
-     "asap": 29,
-     "rec": 30
-    }
-   ]
-  },
-  {
-   "id": 280604,
-   "name": "Rage of the Storm",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 1,
-   "obtain": 30,
-   "ilvl": 40,
-   "bind": "pickup",
-   "dps": 35.61,
-   "speed": 3.3,
-   "dmgMin": 94,
-   "dmgMax": 141,
-   "stats": {
-    "stamina": 15,
-    "intellect": 12
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increases the damage dealt by your Stormstrike ability by 10%."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_mace_42",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Tempest's Weapons",
-     "questId": 96016,
-     "level": 30,
-     "requiredLevel": 30,
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://expcarry.com/wow-forever-enhancement-shaman-guide",
-     "basis": {
-      "from": "quest-level",
-      "group": false
+      "group": true,
+      "steps": 1
      },
      "asap": 30,
      "rec": 30
@@ -18281,9 +18379,11 @@
       "level": 30,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 1045,
+      "steps": 7
      },
-     "asap": 18,
+     "asap": 27,
      "rec": 29
     }
    ]
@@ -18372,9 +18472,11 @@
       "level": 30,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 1045,
+      "steps": 7
      },
-     "asap": 18,
+     "asap": 27,
      "rec": 29
     }
    ]
@@ -18469,7 +18571,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 30,
+     "asap": 36,
      "rec": 38,
      "basis": {
       "name": "Dark Iron Ambassador",
@@ -19146,9 +19248,10 @@
       "level": 32,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 3
      },
-     "asap": 24,
+     "asap": 29,
      "rec": 31
     }
    ]
@@ -19325,9 +19428,10 @@
       "level": 32,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 5
      },
-     "asap": 25,
+     "asap": 29,
      "rec": 31
     }
    ]
@@ -19378,9 +19482,10 @@
       "level": 32,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 6
      },
-     "asap": 23,
+     "asap": 27,
      "rec": 29
     }
    ]
@@ -19432,9 +19537,10 @@
       "level": 32,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 3
      },
-     "asap": 24,
+     "asap": 29,
      "rec": 31
     }
    ]
@@ -20030,7 +20136,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 34,
+     "asap": 35,
      "rec": 37,
      "basis": {
       "name": "Crushridge Warmonger",
@@ -20238,9 +20344,10 @@
       "level": 34,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 2
      },
-     "asap": 24,
+     "asap": 29,
      "rec": 31
     }
    ]
@@ -20296,9 +20403,10 @@
       "level": 34,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 2
      },
-     "asap": 24,
+     "asap": 29,
      "rec": 31
     }
    ]
@@ -20349,9 +20457,10 @@
       "level": 37,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 1
      },
-     "asap": 30,
+     "asap": 34,
      "rec": 34
     }
    ]
@@ -20776,7 +20885,8 @@
       "level": 39,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 1
      },
      "asap": 35,
      "rec": 35
@@ -20829,9 +20939,10 @@
       "level": 32,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 7
      },
-     "asap": 22,
+     "asap": 29,
      "rec": 31
     }
    ]
@@ -20882,9 +20993,11 @@
       "level": 36,
       "rank": "rare",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 1148,
+      "steps": 2
      },
-     "asap": 28,
+     "asap": 33,
      "rec": 35
     }
    ]
@@ -21074,11 +21187,16 @@
      "ref": "https://foreverchanges.pro/quest/1394",
      "dungeonZone": "Scarlet Monastery",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 36,
+      "rank": "normal",
+      "from": "step-level",
+      "group": true,
+      "step": 1160,
+      "steps": 7
      },
-     "asap": 25,
-     "rec": 35
+     "asap": 31,
+     "rec": 33
     }
    ]
   },
@@ -21134,9 +21252,10 @@
       "level": 36,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 2
      },
-     "asap": 28,
+     "asap": 31,
      "rec": 33
     }
    ]
@@ -21568,11 +21687,16 @@
      },
      "ref": "https://foreverchanges.pro/quest/328",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 35,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 200,
+      "steps": 3
      },
-     "asap": 30,
-     "rec": 36
+     "asap": 32,
+     "rec": 34
     }
    ]
   },
@@ -22681,9 +22805,10 @@
       "level": 42,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 3
      },
-     "asap": 34,
+     "asap": 37,
      "rec": 39
     }
    ]
@@ -22718,6 +22843,89 @@
      "confidence": "classic-assumed",
      "asap": 40,
      "rec": 40
+    }
+   ]
+  },
+  {
+   "id": 280604,
+   "name": "Rage of the Storm",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 1,
+   "obtain": 40,
+   "ilvl": 40,
+   "bind": "pickup",
+   "dps": 35.61,
+   "speed": 3.3,
+   "dmgMin": 94,
+   "dmgMax": 141,
+   "stats": {
+    "stamina": 15,
+    "intellect": 12
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increases the damage dealt by your Stormstrike ability by 10%."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_mace_42",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Tempest's Weapons",
+     "questId": 96016,
+     "level": 40,
+     "requiredLevel": 30,
+     "faction": "alliance",
+     "chain": [
+      94789,
+      96264,
+      79358,
+      96135
+     ],
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=96016",
+     "basis": {
+      "name": null,
+      "level": 40,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 96135,
+      "steps": 5
+     },
+     "asap": 37,
+     "rec": 39
+    },
+    {
+     "type": "quest",
+     "quest": "The Tempest's Weapons",
+     "questId": 79442,
+     "level": 40,
+     "requiredLevel": 30,
+     "faction": "horde",
+     "chain": [
+      94789,
+      96264,
+      79358,
+      96135
+     ],
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=79442",
+     "basis": {
+      "name": null,
+      "level": 40,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 96135,
+      "steps": 5
+     },
+     "asap": 37,
+     "rec": 39
     }
    ]
   },
@@ -22835,11 +23043,16 @@
      },
      "ref": "https://foreverchanges.pro/quest/2240",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 40,
+      "rank": "normal",
+      "from": "step-level",
+      "group": true,
+      "step": 2398,
+      "steps": 2
      },
      "asap": 35,
-     "rec": 39
+     "rec": 37
     }
    ]
   },
@@ -23170,7 +23383,9 @@
       "level": 38,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 665,
+      "steps": 2
      },
      "asap": 35,
      "rec": 37
@@ -23224,9 +23439,10 @@
       "level": 40,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 4
      },
-     "asap": 30,
+     "asap": 35,
      "rec": 37
     }
    ]
@@ -23278,9 +23494,10 @@
       "level": 42,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 3
      },
-     "asap": 34,
+     "asap": 37,
      "rec": 39
     }
    ]
@@ -23332,9 +23549,10 @@
       "level": 40,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 4
      },
-     "asap": 30,
+     "asap": 35,
      "rec": 37
     }
    ]
@@ -23455,9 +23673,10 @@
       "level": 40,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 4
      },
-     "asap": 30,
+     "asap": 35,
      "rec": 37
     }
    ]
@@ -23504,11 +23723,16 @@
      },
      "ref": "https://foreverchanges.pro/quest/662",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 35,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 663,
+      "steps": 2
      },
      "asap": 35,
-     "rec": 39
+     "rec": 35
     }
    ]
   },
@@ -23597,10 +23821,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/96016",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 40,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 96135,
+      "steps": 5
      },
-     "asap": 30,
+     "asap": 37,
      "rec": 39
     }
    ]
@@ -23650,10 +23879,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/96016",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 40,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 96135,
+      "steps": 5
      },
-     "asap": 30,
+     "asap": 37,
      "rec": 39
     }
    ]
@@ -23708,9 +23942,10 @@
       "level": 40,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 4
      },
-     "asap": 30,
+     "asap": 35,
      "rec": 37
     }
    ]
@@ -23765,9 +24000,10 @@
       "level": 40,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 4
      },
-     "asap": 30,
+     "asap": 35,
      "rec": 37
     }
    ]
@@ -23983,9 +24219,10 @@
       "level": 42,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 2
      },
-     "asap": 30,
+     "asap": 39,
      "rec": 41
     }
    ]
@@ -24284,7 +24521,8 @@
       "level": 37,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 1
      },
      "asap": 35,
      "rec": 36
@@ -24337,9 +24575,10 @@
       "level": 42,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 2
      },
-     "asap": 37,
+     "asap": 39,
      "rec": 41
     }
    ]
@@ -24532,9 +24771,10 @@
       "level": 42,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 3
      },
-     "asap": 30,
+     "asap": 39,
      "rec": 41
     }
    ]
@@ -24587,7 +24827,8 @@
       "level": 37,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 1
      },
      "asap": 35,
      "rec": 36
@@ -25098,13 +25339,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/1427",
      "basis": {
-      "name": "Marsh Flesheater",
-      "level": 44,
+      "name": null,
+      "level": 45,
       "rank": "normal",
-      "from": "wowhead",
-      "group": false
+      "from": "step-level",
+      "group": false,
+      "step": 1422,
+      "steps": 5
      },
-     "asap": 35,
+     "asap": 42,
      "rec": 43
     }
    ]
@@ -25151,13 +25394,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/1427",
      "basis": {
-      "name": "Marsh Flesheater",
-      "level": 44,
+      "name": null,
+      "level": 45,
       "rank": "normal",
-      "from": "wowhead",
-      "group": false
+      "from": "step-level",
+      "group": false,
+      "step": 1422,
+      "steps": 5
      },
-     "asap": 35,
+     "asap": 42,
      "rec": 43
     }
    ]
@@ -25376,13 +25621,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/1427",
      "basis": {
-      "name": "Marsh Flesheater",
-      "level": 44,
+      "name": null,
+      "level": 45,
       "rank": "normal",
-      "from": "wowhead",
-      "group": false
+      "from": "step-level",
+      "group": false,
+      "step": 1422,
+      "steps": 5
      },
-     "asap": 35,
+     "asap": 42,
      "rec": 43
     }
    ]
@@ -26244,14 +26491,16 @@
      },
      "ref": "https://foreverchanges.pro/quest/1173",
      "basis": {
-      "name": "Searing Whelp",
-      "level": 43,
+      "name": null,
+      "level": 45,
       "rank": "normal",
-      "from": "wowhead",
-      "group": false
+      "from": "step-level",
+      "group": false,
+      "step": 1172,
+      "steps": 5
      },
-     "asap": 38,
-     "rec": 42
+     "asap": 42,
+     "rec": 44
     }
    ]
   },
@@ -26411,9 +26660,10 @@
       "level": 46,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
-     "asap": 40,
+     "asap": 41,
      "rec": 43
     }
    ]
@@ -26497,10 +26747,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/4266",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 46,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 4265,
+      "steps": 7
      },
-     "asap": 40,
+     "asap": 43,
      "rec": 45
     }
    ]
@@ -26552,10 +26807,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/4266",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 46,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 4265,
+      "steps": 7
      },
-     "asap": 40,
+     "asap": 43,
      "rec": 45
     }
    ]
@@ -26611,9 +26871,11 @@
       "level": 47,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 591,
+      "steps": 8
      },
-     "asap": 30,
+     "asap": 42,
      "rec": 44
     }
    ]
@@ -28367,9 +28629,11 @@
       "level": 50,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 3128,
+      "steps": 8
      },
-     "asap": 40,
+     "asap": 47,
      "rec": 49
     }
    ]
@@ -28823,9 +29087,11 @@
       "level": 50,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 3128,
+      "steps": 8
      },
-     "asap": 40,
+     "asap": 47,
      "rec": 49
     }
    ]
@@ -28876,9 +29142,11 @@
       "level": 50,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 3128,
+      "steps": 8
      },
-     "asap": 40,
+     "asap": 47,
      "rec": 49
     }
    ]
@@ -28934,9 +29202,11 @@
       "level": 50,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 3128,
+      "steps": 8
      },
-     "asap": 40,
+     "asap": 47,
      "rec": 49
     }
    ]
@@ -29136,7 +29406,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 51,
+     "asap": 52,
      "rec": 54,
      "basis": {
       "name": "General Angerforge",
@@ -29523,9 +29793,10 @@
       "level": 51,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
-     "asap": 45,
+     "asap": 46,
      "rec": 48
     },
     {
@@ -29551,9 +29822,10 @@
       "level": 51,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
-     "asap": 45,
+     "asap": 46,
      "rec": 48
     }
    ]
@@ -29602,14 +29874,16 @@
      "ref": "https://foreverchanges.pro/quest/2994",
      "dungeonZone": "Zul'Farrak",
      "basis": {
-      "name": "Nekrum Gutchewer",
-      "level": 46,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
+      "name": null,
+      "level": 48,
+      "rank": "normal",
+      "from": "step-level",
+      "group": true,
+      "step": 2989,
+      "steps": 7
      },
-     "asap": 40,
-     "rec": 43
+     "asap": 43,
+     "rec": 45
     }
    ]
   },
@@ -29752,9 +30026,11 @@
       "level": 56,
       "rank": "normal",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 8412,
+      "steps": 3
      },
-     "asap": 50,
+     "asap": 51,
      "rec": 52
     }
    ]
@@ -29808,7 +30084,9 @@
       "level": 53,
       "rank": "normal",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 9052,
+      "steps": 4
      },
      "asap": 50,
      "rec": 50
@@ -30239,7 +30517,9 @@
       "level": 53,
       "rank": "normal",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 8251,
+      "steps": 4
      },
      "asap": 50,
      "rec": 50
@@ -30332,9 +30612,11 @@
       "level": 60,
       "rank": "normal",
       "from": "questie",
-      "group": true
+      "group": true,
+      "step": 8419,
+      "steps": 4
      },
-     "asap": 50,
+     "asap": 52,
      "rec": 52
     }
    ]
@@ -30384,7 +30666,8 @@
       "level": 51,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 1
      },
      "asap": 48,
      "rec": 50
@@ -30436,9 +30719,11 @@
       "level": 51,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 3452,
+      "steps": 7
      },
-     "asap": 40,
+     "asap": 46,
      "rec": 48
     }
    ]
@@ -30877,9 +31162,11 @@
       "level": 50,
       "rank": "normal",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 3520,
+      "steps": 4
      },
-     "asap": 40,
+     "asap": 45,
      "rec": 47
     }
    ]
@@ -31128,7 +31415,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 54,
+     "asap": 56,
      "rec": 58,
      "basis": {
       "name": "Rattlegore",
@@ -31253,7 +31540,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 54,
+     "asap": 55,
      "rec": 57,
      "basis": {
       "name": "Stonespine",
@@ -31451,9 +31738,11 @@
       "level": 59,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 4809,
+      "steps": 4
      },
-     "asap": 50,
+     "asap": 54,
      "rec": 54
     }
    ]
@@ -31507,9 +31796,11 @@
       "level": 59,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 4809,
+      "steps": 4
      },
-     "asap": 50,
+     "asap": 54,
      "rec": 54
     }
    ]
@@ -31583,7 +31874,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 55,
+     "asap": 56,
      "rec": 58,
      "basis": {
       "name": "Ramstein the Gorger",
@@ -31840,7 +32131,8 @@
       "level": 55,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 2
      },
      "asap": 50,
      "rec": 52
@@ -31867,7 +32159,8 @@
       "level": 55,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 2
      },
      "asap": 50,
      "rec": 52
@@ -32034,9 +32327,10 @@
       "level": 55,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 2
      },
-     "asap": 50,
+     "asap": 52,
      "rec": 54
     }
    ]
@@ -32355,7 +32649,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 55,
+     "asap": 56,
      "rec": 58,
      "basis": {
       "name": "Goraluk Anvilcrack",
@@ -32484,7 +32778,8 @@
       "level": 55,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 2
      },
      "asap": 50,
      "rec": 52
@@ -32511,7 +32806,8 @@
       "level": 55,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 2
      },
      "asap": 50,
      "rec": 52
@@ -32614,9 +32910,10 @@
       "level": 55,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 2
      },
-     "asap": 50,
+     "asap": 52,
      "rec": 54
     }
    ]
@@ -33392,7 +33689,7 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 56,
+     "asap": 57,
      "rec": 59,
      "basis": {
       "name": "Gnashjaw",
@@ -33527,9 +33824,11 @@
       "level": 55,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 3506,
+      "steps": 4
      },
-     "asap": 44,
+     "asap": 52,
      "rec": 54
     }
    ]
@@ -34517,7 +34816,8 @@
       "level": 57,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 2
      },
      "asap": 54,
      "rec": 54
@@ -34543,7 +34843,8 @@
       "level": 57,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 2
      },
      "asap": 54,
      "rec": 54
@@ -34627,9 +34928,11 @@
       "level": 56,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "step": 5204,
+      "steps": 4
      },
-     "asap": 49,
+     "asap": 53,
      "rec": 55
     }
    ]
@@ -35961,9 +36264,10 @@
       "level": 60,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 7
      },
-     "asap": 45,
+     "asap": 57,
      "rec": 58
     }
    ]
@@ -36740,14 +37044,16 @@
      },
      "ref": "https://foreverchanges.pro/quest/4322",
      "basis": {
-      "name": "General Angerforge",
-      "level": 57,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
+      "name": null,
+      "level": 58,
+      "rank": "normal",
+      "from": "step-level",
+      "group": true,
+      "step": 4264,
+      "steps": 7
      },
-     "asap": 50,
-     "rec": 54
+     "asap": 53,
+     "rec": 55
     }
    ]
   },
@@ -36863,9 +37169,10 @@
       "level": 60,
       "rank": "normal",
       "from": "wowhead",
-      "group": false
+      "group": false,
+      "steps": 7
      },
-     "asap": 45,
+     "asap": 57,
      "rec": 58
     }
    ]
@@ -37059,7 +37366,8 @@
       "level": 59,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 54,
      "rec": 56
@@ -39727,7 +40035,8 @@
       "level": 60,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60
@@ -39783,7 +40092,8 @@
       "level": 60,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60
@@ -39839,7 +40149,8 @@
       "level": 60,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60
@@ -40591,7 +40902,8 @@
       "level": 60,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60
@@ -40644,7 +40956,8 @@
       "level": 60,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60
@@ -40857,7 +41170,9 @@
       "level": 63,
       "rank": "boss",
       "from": "questie",
-      "group": true
+      "group": true,
+      "step": 8729,
+      "steps": 17
      },
      "asap": 60,
      "rec": 60
@@ -41352,7 +41667,8 @@
       "level": 63,
       "rank": "boss",
       "from": "questie",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60
@@ -41595,14 +41911,16 @@
      "ref": "https://foreverchanges.pro/quest/5944",
      "dungeonZone": "Stratholme",
      "basis": {
-      "name": "Mercutio Filthgorger",
-      "level": 57,
+      "name": null,
+      "level": 60,
       "rank": "normal",
-      "from": "wowhead",
-      "group": true
+      "from": "step-level",
+      "group": true,
+      "step": 5862,
+      "steps": 7
      },
-     "asap": 52,
-     "rec": 54
+     "asap": 55,
+     "rec": 57
     }
    ]
   },
@@ -41654,7 +41972,9 @@
       "level": 61,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 7461,
+      "steps": 2
      },
      "asap": 56,
      "rec": 58
@@ -41679,7 +41999,9 @@
       "level": 61,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 7461,
+      "steps": 2
      },
      "asap": 56,
      "rec": 58
@@ -41773,9 +42095,11 @@
       "level": 62,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "step": 5263,
+      "steps": 5
      },
-     "asap": 55,
+     "asap": 57,
      "rec": 59
     }
    ]
@@ -42100,7 +42424,8 @@
       "level": 60,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 7
      },
      "asap": 57,
      "rec": 57
@@ -43851,7 +44176,8 @@
       "level": 63,
       "rank": "boss",
       "from": "questie",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60
@@ -44485,9 +44811,11 @@
       "level": 62,
       "rank": "boss",
       "from": "questie",
-      "group": true
+      "group": true,
+      "step": 7141,
+      "steps": 2
      },
-     "asap": 51,
+     "asap": 57,
      "rec": 59
     },
     {
@@ -44510,9 +44838,11 @@
       "level": 62,
       "rank": "boss",
       "from": "questie",
-      "group": true
+      "group": true,
+      "step": 7142,
+      "steps": 2
      },
-     "asap": 51,
+     "asap": 57,
      "rec": 59
     }
    ]
@@ -44601,7 +44931,8 @@
       "level": 62,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 7
      },
      "asap": 57,
      "rec": 59
@@ -45080,7 +45411,8 @@
       "level": 60,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 7
      },
      "asap": 57,
      "rec": 57
@@ -45171,7 +45503,9 @@
       "level": 63,
       "rank": "boss",
       "from": "questie",
-      "group": true
+      "group": true,
+      "step": 8729,
+      "steps": 17
      },
      "asap": 60,
      "rec": 60
@@ -45268,7 +45602,8 @@
       "level": 61,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 56,
      "rec": 58
@@ -45320,7 +45655,8 @@
       "level": 61,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 56,
      "rec": 58
@@ -45375,7 +45711,8 @@
       "level": 62,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 2
      },
      "asap": 58,
      "rec": 59
@@ -45429,9 +45766,10 @@
       "level": 60,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 3
      },
-     "asap": 53,
+     "asap": 55,
      "rec": 57
     }
    ]
@@ -45484,7 +45822,8 @@
       "level": 61,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 56,
      "rec": 58
@@ -45895,7 +46234,8 @@
       "level": 63,
       "rank": "boss",
       "from": "questie",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60
@@ -45947,7 +46287,8 @@
       "level": 63,
       "rank": "boss",
       "from": "questie",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60
@@ -46003,7 +46344,8 @@
       "level": 63,
       "rank": "boss",
       "from": "questie",
-      "group": true
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60

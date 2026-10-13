@@ -18,6 +18,15 @@
   };
 
   function data() { return window.SHAMAN_DATA; }
+
+  // Level of each rank, from its tooltip ("Learned at level 30"); the export's
+  // level list leaves out spells with a single rank (Astral Recall, Ghost Wolf…).
+  function levelsOf(name) {
+    const ranks = [];
+    data().spellbook.tabs.forEach(tab => tab.spells.forEach(([n, r]) => { if (n === name && !ranks.includes(r)) ranks.push(r); }));
+    const fromDesc = ranks.map(r => Number(((data().spell_desc['Shaman|' + name + '|' + r] || {}).lv || '').replace(/\D+/g, '')) || null);
+    return fromDesc.every(Boolean) ? fromDesc : data().spellbook.levels[name] || [];
+  }
   function desc(name, rank) { return data().spell_desc['Shaman|' + name + '|' + rank] || null; }
 
   // One entry per spell: its ranks in book order, levels, icon, overall status.
@@ -33,7 +42,7 @@
     });
     byTab.forEach(tab => tab.spells.forEach(s => {
       s.icon = sb.icons[s.name];
-      s.levels = sb.levels[s.name] || [];
+      s.levels = levelsOf(s.name);
       s.fromTalent = sb.talents.includes(s.name);
       const states = s.ranks.map(r => (desc(s.name, r) || {}).cs);
       s.status = states.includes('new') ? 'new' : states.includes('changed') ? 'changed' : 'same';
@@ -122,6 +131,10 @@
     const fromTalents = [];
     tabs.forEach(tab => tab.spells.filter(matches).forEach(sp => {
       if (!sp.levels.length) { fromTalents.push(sp); return; }
+      if (sp.fromTalent) {
+        (at[sp.levels[0]] = at[sp.levels[0]] || []).push({ sp, rank: 1, total: 1, tab: tab.name, talent: true });
+        return;
+      }
       sp.levels.forEach((lv, i) => {
         if (newOnly && i > 0) return;
         (at[lv] = at[lv] || []).push({ sp, rank: i + 1, total: sp.levels.length, tab: tab.name });
@@ -132,9 +145,9 @@
     Object.keys(at).map(Number).sort((a, b) => a - b).forEach(lv => {
       const list = at[lv].sort((a, b) => (a.rank === 1 ? 0 : 1) - (b.rank === 1 ? 0 : 1) || a.sp.name.localeCompare(b.sp.name));
       html += '<div class="lv-row' + (lv > 30 ? ' post-cap' : '') + '"><div class="lv-num">' + lv + '</div><div class="lv-spells">' +
-        list.map(e => '<span class="lv-spell' + (e.rank === 1 ? ' first' : '') + '" data-ref="' + e.sp.name + '" style="--tab-color:' + ui.specColors[e.tab] + '">' +
+        list.map(e => '<span class="lv-spell' + (e.talent ? ' talent' : e.rank === 1 ? ' first' : '') + '" data-ref="' + e.sp.name + '" style="--tab-color:' + ui.specColors[e.tab] + '">' +
           '<img src="' + ui.iconUrl(e.sp.icon) + '" alt="" loading="lazy"><span><b>' + e.sp.name + '</b><small>' +
-          (e.rank === 1 ? t('sb.newSpell') : t('sb.rankOf', { n: e.rank, total: e.total })) + '</small></span></span>').join('') +
+          (e.talent ? t('sb.talentSpell') : e.rank === 1 ? t('sb.newSpell') : t('sb.rankOf', { n: e.rank, total: e.total })) + '</small></span></span>').join('') +
         '</div></div>';
     });
     html += '</div>';
@@ -213,6 +226,7 @@
 
   window.Spellbook = {
     // Tooltip numbers for one rank, Forever vs Classic: { now, then, pct, d }.
+    levelsOf,
     compare(name, rank) {
       const d = desc(name, rank);
       if (!d) return null;

@@ -131,10 +131,13 @@ function placeSource(item, s) {
     const asap = Math.max(req, s.dungeon && s.dungeonLevels ? questLevel(s) : (s.requiredLevel || s.level || 0));
     const L = levels.quests[s.questId];
     let rec;
+    let early = asap;
     if (L && L.hardest && L.hardest.level) {
       const group = s.dungeon || GROUP_RANKS.includes(L.hardest.rank);
       rec = L.hardest.level - (group ? 3 : 1);
-      s.basis = { name: L.hardest.name, level: L.hardest.level, rank: L.hardest.rank, from: L.hardest.from, group };
+      // Earliest is still bounded by what you fight: 3 below a normal target, 5 below a group one.
+      early = Math.max(asap, L.hardest.level - (group ? 5 : 3));
+      s.basis = { name: L.hardest.name, level: L.hardest.level, rank: L.hardest.rank, from: L.hardest.from, group, step: L.hardest.step, steps: L.steps };
     } else if (s.dungeon && s.dungeonLevels) {
       rec = s.dungeonLevels[1] - 1 - 3;
       s.basis = { from: 'dungeon-range', group: true };
@@ -144,13 +147,14 @@ function placeSource(item, s) {
     }
     rec = Math.max(rec, s.requiredLevel || 0, req);
     if (s.level) rec = Math.min(rec, Math.max(s.level, req));
-    s.asap = asap;
-    s.rec = Math.max(rec, asap);
+    if (s.level) early = Math.min(early, Math.max(s.level, req));
+    s.asap = early;
+    s.rec = Math.max(rec, early);
   } else if (s.type === 'boss' || s.type === 'drop') {
     const n = s.npcId && levels.npcs[s.npcId];
     const lv = (n && n.level) || Number(String(s.level || '').split('-').pop()) || null;
     const group = s.type === 'boss' || GROUP_RANKS.includes((n && n.rank) || s.rank);
-    s.asap = req;
+    s.asap = lv ? Math.max(req, lv - (group ? 5 : 3)) : req;
     s.rec = lv ? Math.max(req, lv - (group ? 3 : 1)) : req;
     if (lv) s.basis = { name: s.npc, level: lv, rank: (n && n.rank) || s.rank, from: n && n.from ? n.from : 'questie', group };
   } else {

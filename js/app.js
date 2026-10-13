@@ -129,7 +129,7 @@
     sd.talents.trees.forEach(tr => { const x = tr.talents.find(y => y.name === name); if (x) tal = { tree: tr.name, x }; });
     const ranks = [];
     sd.spellbook.tabs.forEach(tab => tab.spells.forEach(([n, r]) => { if (n === name && !ranks.includes(r)) ranks.push(r); }));
-    const levels = sd.spellbook.levels[name] || [];
+    const levels = window.Spellbook ? window.Spellbook.levelsOf(name) : sd.spellbook.levels[name] || [];
     const top = ranks[ranks.length - 1];
     const d = top ? sd.spell_desc['Shaman|' + name + '|' + top] || {} : {};
     const lines = l => (l || []).map(row => row.filter(Boolean).map(C).join(' · ')).filter(Boolean).join(' · ');

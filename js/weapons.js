@@ -224,6 +224,8 @@
     if (b.name && b.level) why = t('wp.why.target', { name: b.name, level: b.level }) + (b.from === 'dungeon-range' ? ' ' + t('wp.why.estimate') : '') + (b.group ? ' · ' + t('wp.why.group') : '');
     else if (b.from === 'dungeon-range') why = t('wp.why.range');
     else if (b.from === 'quest-level') why = t('wp.why.questLevel');
+    else if (b.from === 'step-level') why = t('wp.why.step', { level: b.level });
+    if (b.steps > 1) why += (why ? ' · ' : '') + t('wp.why.chain', { n: b.steps });
     const lead = src.asap != null && src.asap !== src.rec ? t('wp.why.fromRec', { asap: src.asap, rec: src.rec }) : t('wp.why.at', { rec: src.rec });
     return lead + (why ? ' — ' + why : '');
   }

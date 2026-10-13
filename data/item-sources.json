@@ -1,5 +1,5 @@
 {
-  "_readme": "Fuentes de ítems que no están en QuestieDB (sobre todo ítems nuevos de Forever), cargadas a mano a partir de reportes. Cada fuente lleva confidence y ref (de dónde sale el dato). obtainLevel = nivel desde el que se puede conseguir, cuando es mayor que el nivel requerido del ítem. scripts/build-weapons.js las suma a las fuentes automáticas.",
+  "_readme": "Fuentes de ítems que no están en QuestieDB (sobre todo ítems nuevos de Forever), cargadas a mano a partir de reportes. Cada fuente lleva confidence y ref (de dónde sale el dato). obtainLevel = nivel desde el que se puede conseguir, cuando es mayor que el nivel requerido del ítem. scripts/build-weapons.js las suma a las fuentes automáticas. chain = quests before it (ids), when no database records the chain yet; scripts/fetch-levels.js looks at what each step sends you to kill.",
   "items": {
     "280604": {
       "name": "Rage of the Storm",
@@ -8,11 +8,33 @@
           "type": "quest",
           "quest": "The Tempest's Weapons",
           "questId": 96016,
-          "level": 30,
+          "level": 40,
           "requiredLevel": 30,
-          "faction": "both",
+          "faction": "alliance",
+          "chain": [
+            94789,
+            96264,
+            79358,
+            96135
+          ],
           "confidence": "community-untested",
-          "ref": "https://expcarry.com/wow-forever-enhancement-shaman-guide"
+          "ref": "https://www.wowhead.com/forever/quest=96016"
+        },
+        {
+          "type": "quest",
+          "quest": "The Tempest's Weapons",
+          "questId": 79442,
+          "level": 40,
+          "requiredLevel": 30,
+          "faction": "horde",
+          "chain": [
+            94789,
+            96264,
+            79358,
+            96135
+          ],
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/quest=79442"
         }
       ]
     },
@@ -23,11 +45,33 @@
           "type": "quest",
           "quest": "The Tempest's Weapons",
           "questId": 96016,
-          "level": 30,
+          "level": 40,
           "requiredLevel": 30,
-          "faction": "both",
+          "faction": "alliance",
+          "chain": [
+            94789,
+            96264,
+            79358,
+            96135
+          ],
           "confidence": "community-untested",
-          "ref": "https://expcarry.com/wow-forever-enhancement-shaman-guide"
+          "ref": "https://www.wowhead.com/forever/quest=96016"
+        },
+        {
+          "type": "quest",
+          "quest": "The Tempest's Weapons",
+          "questId": 79442,
+          "level": 40,
+          "requiredLevel": 30,
+          "faction": "horde",
+          "chain": [
+            94789,
+            96264,
+            79358,
+            96135
+          ],
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/quest=79442"
         }
       ]
     }

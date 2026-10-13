@@ -15,7 +15,8 @@
     "level": 18,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 3
   },
   "19": {
    "minLevel": 18,
@@ -25,8 +26,10 @@
     "name": "Blackrock Champion",
     "level": 25,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 20
+   },
+   "steps": 2
   },
   "98": {
    "minLevel": null,
@@ -37,7 +40,8 @@
     "level": 32,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 7
   },
   "99": {
    "minLevel": null,
@@ -48,7 +52,8 @@
     "level": 15,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 5
   },
   "166": {
    "minLevel": 14,
@@ -59,7 +64,8 @@
     "level": 21,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 7
   },
   "167": {
    "minLevel": 15,
@@ -70,7 +76,8 @@
     "level": 20,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "176": {
    "minLevel": 5,
@@ -81,7 +88,8 @@
     "level": 11,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 4
   },
   "202": {
    "minLevel": 30,
@@ -92,7 +100,8 @@
     "level": 40,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 4
   },
   "204": {
    "minLevel": 30,
@@ -103,7 +112,8 @@
     "level": 37,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "214": {
    "minLevel": 14,
@@ -114,7 +124,8 @@
     "level": 18,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 8
   },
   "283": {
    "minLevel": 16,
@@ -124,19 +135,23 @@
     "name": "Mo'grosh Brute",
     "level": 20,
     "rank": "elite",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 278
+   },
+   "steps": 7
   },
   "286": {
    "minLevel": 20,
    "instance": null,
    "hardest": {
-    "id": 1259,
-    "name": "Gobbler",
-    "level": 22,
+    "id": null,
+    "name": null,
+    "level": 25,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "step-level",
+    "step": 285
+   },
+   "steps": 5
   },
   "297": {
    "minLevel": 13,
@@ -147,7 +162,8 @@
     "level": 20,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 2
   },
   "314": {
    "minLevel": 6,
@@ -158,12 +174,21 @@
     "level": 11,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "328": {
    "minLevel": 30,
    "instance": null,
-   "hardest": null
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 35,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 200
+   },
+   "steps": 3
   },
   "378": {
    "minLevel": 25,
@@ -173,8 +198,10 @@
     "name": "Dark Iron Demolitionist",
     "level": 31,
     "rank": "elite",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 303
+   },
+   "steps": 2
   },
   "386": {
    "minLevel": 22,
@@ -185,7 +212,8 @@
     "level": 24,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "408": {
    "minLevel": null,
@@ -196,7 +224,8 @@
     "level": 13,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 3
   },
   "417": {
    "minLevel": 8,
@@ -207,7 +236,8 @@
     "level": 11,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 2
   },
   "474": {
    "minLevel": 23,
@@ -218,7 +248,8 @@
     "level": 32,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 6
   },
   "480": {
    "minLevel": null,
@@ -229,12 +260,21 @@
     "level": 22,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 6
   },
   "483": {
    "minLevel": 4,
    "instance": null,
-   "hardest": null
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 6,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 476
+   },
+   "steps": 3
   },
   "486": {
    "minLevel": 4,
@@ -245,12 +285,21 @@
     "level": 12,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 4
   },
   "491": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 18,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 461
+   },
+   "steps": 3
   },
   "562": {
    "minLevel": null,
@@ -261,7 +310,8 @@
     "level": 32,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 5
   },
   "592": {
    "minLevel": 30,
@@ -271,8 +321,10 @@
     "name": "Mai'Zoth",
     "level": 47,
     "rank": "elite",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 591
+   },
+   "steps": 8
   },
   "600": {
    "minLevel": 30,
@@ -283,12 +335,21 @@
     "level": 42,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 2
   },
   "662": {
    "minLevel": 35,
    "instance": null,
-   "hardest": null
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 35,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 663
+   },
+   "steps": 2
   },
   "666": {
    "minLevel": 35,
@@ -298,8 +359,10 @@
     "name": "Professor Phizzlethorpe",
     "level": 38,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 665
+   },
+   "steps": 2
   },
   "679": {
    "minLevel": 30,
@@ -310,7 +373,8 @@
     "level": 40,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 4
   },
   "719": {
    "minLevel": 35,
@@ -321,7 +385,8 @@
     "level": 39,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "739": {
    "minLevel": 30,
@@ -332,7 +397,8 @@
     "level": 42,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 3
   },
   "765": {
    "minLevel": 5,
@@ -343,28 +409,40 @@
     "level": 12,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 3
   },
   "770": {
    "minLevel": 6,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "827": {
    "minLevel": 4,
    "instance": null,
    "hardest": {
-    "id": 3203,
-    "name": "Fizzle Darkstorm",
-    "level": 12,
+    "id": null,
+    "name": null,
+    "level": 30,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "step-level",
+    "step": 2
+   },
+   "steps": 9
   },
   "853": {
    "minLevel": 10,
    "instance": null,
-   "hardest": null
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 15,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 848
+   },
+   "steps": 2
   },
   "855": {
    "minLevel": 9,
@@ -375,7 +453,8 @@
     "level": 16,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "876": {
    "minLevel": 12,
@@ -386,7 +465,8 @@
     "level": 20,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 3
   },
   "893": {
    "minLevel": 17,
@@ -397,7 +477,8 @@
     "level": 25,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "902": {
    "minLevel": 10,
@@ -407,8 +488,10 @@
     "name": "Tinkerer Sniggles",
     "level": 16,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 901
+   },
+   "steps": 4
   },
   "913": {
    "minLevel": 10,
@@ -419,7 +502,8 @@
     "level": 24,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 7
   },
   "914": {
    "minLevel": 10,
@@ -430,7 +514,8 @@
     "level": 21,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 7
   },
   "943": {
    "minLevel": 15,
@@ -441,12 +526,21 @@
     "level": 27,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 6
   },
   "951": {
    "minLevel": 12,
    "instance": null,
-   "hardest": null
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 17,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 950
+   },
+   "steps": 6
   },
   "973": {
    "minLevel": null,
@@ -457,7 +551,8 @@
     "level": 24,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 5
   },
   "1012": {
    "minLevel": null,
@@ -468,7 +563,8 @@
     "level": 32,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 3
   },
   "1046": {
    "minLevel": null,
@@ -478,8 +574,10 @@
     "name": "Ran Bloodtooth",
     "level": 30,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 1045
+   },
+   "steps": 7
   },
   "1053": {
    "minLevel": null,
@@ -490,18 +588,21 @@
     "level": 42,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 3
   },
   "1173": {
    "minLevel": null,
    "instance": null,
    "hardest": {
-    "id": 4324,
-    "name": "Searing Whelp",
-    "level": 43,
+    "id": null,
+    "name": null,
+    "level": 45,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "step-level",
+    "step": 1172
+   },
+   "steps": 5
   },
   "1184": {
    "minLevel": null,
@@ -511,8 +612,10 @@
     "name": "Silithid Ravager",
     "level": 36,
     "rank": "rare",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 1148
+   },
+   "steps": 2
   },
   "1383": {
    "minLevel": null,
@@ -523,28 +626,47 @@
     "level": 42,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 2
   },
   "1394": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 36,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 1160
+   },
+   "steps": 7
   },
   "1427": {
    "minLevel": null,
    "instance": null,
    "hardest": {
-    "id": 751,
-    "name": "Marsh Flesheater",
-    "level": 44,
+    "id": null,
+    "name": null,
+    "level": 45,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "step-level",
+    "step": 1422
+   },
+   "steps": 5
   },
   "2240": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 40,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 2398
+   },
+   "steps": 2
   },
   "2846": {
    "minLevel": null,
@@ -555,7 +677,8 @@
     "level": 46,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "2928": {
    "minLevel": 20,
@@ -566,23 +689,34 @@
     "level": 40,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "2930": {
    "minLevel": 25,
    "instance": "Gnomeregan",
-   "hardest": null
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 28,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 2931
+   },
+   "steps": 2
   },
   "2994": {
    "minLevel": null,
    "instance": null,
    "hardest": {
-    "id": 7796,
-    "name": "Nekrum Gutchewer",
-    "level": 46,
-    "rank": "elite",
-    "from": "wowhead"
-   }
+    "id": null,
+    "name": null,
+    "level": 48,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 2989
+   },
+   "steps": 7
   },
   "3129": {
    "minLevel": null,
@@ -592,13 +726,16 @@
     "name": "Sprite Dragon",
     "level": 50,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 3128
+   },
+   "steps": 8
   },
   "3161": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "3463": {
    "minLevel": null,
@@ -608,8 +745,10 @@
     "name": "Twilight Idolater",
     "level": 51,
     "rank": "elite",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 3452
+   },
+   "steps": 7
   },
   "3507": {
    "minLevel": null,
@@ -619,8 +758,10 @@
     "name": "Magus Rimtori",
     "level": 55,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 3506
+   },
+   "steps": 4
   },
   "3528": {
    "minLevel": null,
@@ -630,8 +771,10 @@
     "name": "Screecher Spirit",
     "level": 50,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 3520
+   },
+   "steps": 4
   },
   "3625": {
    "minLevel": 45,
@@ -642,7 +785,8 @@
     "level": 60,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 7
   },
   "4126": {
    "minLevel": null,
@@ -653,7 +797,8 @@
     "level": 55,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 2
   },
   "4134": {
    "minLevel": null,
@@ -664,12 +809,21 @@
     "level": 55,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 2
   },
   "4266": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 46,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 4265
+   },
+   "steps": 7
   },
   "4300": {
    "minLevel": null,
@@ -680,7 +834,8 @@
     "level": 51,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "4301": {
    "minLevel": null,
@@ -691,18 +846,21 @@
     "level": 55,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 2
   },
   "4322": {
    "minLevel": null,
    "instance": null,
    "hardest": {
-    "id": 9033,
-    "name": "General Angerforge",
-    "level": 57,
-    "rank": "elite",
-    "from": "wowhead"
-   }
+    "id": null,
+    "name": null,
+    "level": 58,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 4264
+   },
+   "steps": 7
   },
   "4771": {
    "minLevel": null,
@@ -713,7 +871,8 @@
     "level": 60,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 7
   },
   "4810": {
    "minLevel": null,
@@ -723,13 +882,23 @@
     "name": "Chillwind Ravager",
     "level": 59,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 4809
+   },
+   "steps": 4
   },
   "4813": {
    "minLevel": 12,
    "instance": null,
-   "hardest": null
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 14,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 4812
+   },
+   "steps": 3
   },
   "5056": {
    "minLevel": null,
@@ -740,7 +909,8 @@
     "level": 60,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 3
   },
   "5088": {
    "minLevel": null,
@@ -751,7 +921,8 @@
     "level": 28,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 4
   },
   "5265": {
    "minLevel": null,
@@ -761,8 +932,10 @@
     "name": "Baron Rivendare",
     "level": 62,
     "rank": "elite",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 5263
+   },
+   "steps": 5
   },
   "5385": {
    "minLevel": null,
@@ -772,8 +945,10 @@
     "name": "Rakaiah",
     "level": 56,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 5204
+   },
+   "steps": 4
   },
   "5466": {
    "minLevel": null,
@@ -784,7 +959,8 @@
     "level": 62,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 7
   },
   "5730": {
    "minLevel": 9,
@@ -794,19 +970,23 @@
     "name": "Bazzalan",
     "level": 16,
     "rank": "elite",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 5728
+   },
+   "steps": 5
   },
   "5944": {
    "minLevel": null,
    "instance": null,
    "hardest": {
-    "id": 11886,
-    "name": "Mercutio Filthgorger",
-    "level": 57,
+    "id": null,
+    "name": null,
+    "level": 60,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "step-level",
+    "step": 5862
+   },
+   "steps": 7
   },
   "6136": {
    "minLevel": null,
@@ -817,7 +997,8 @@
     "level": 61,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "6284": {
    "minLevel": null,
@@ -828,7 +1009,8 @@
     "level": 21,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "6521": {
    "minLevel": null,
@@ -839,12 +1021,14 @@
     "level": 36,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 2
   },
   "6544": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "7064": {
    "minLevel": null,
@@ -855,7 +1039,8 @@
     "level": 51,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "7065": {
    "minLevel": null,
@@ -866,7 +1051,8 @@
     "level": 51,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "7462": {
    "minLevel": null,
@@ -876,8 +1062,10 @@
     "name": "Immol'thar",
     "level": 61,
     "rank": "elite",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 7461
+   },
+   "steps": 2
   },
   "7488": {
    "minLevel": null,
@@ -888,7 +1076,8 @@
     "level": 57,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 2
   },
   "7489": {
    "minLevel": null,
@@ -899,7 +1088,8 @@
     "level": 57,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 2
   },
   "7877": {
    "minLevel": null,
@@ -909,8 +1099,10 @@
     "name": "Immol'thar",
     "level": 61,
     "rank": "elite",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 7461
+   },
+   "steps": 2
   },
   "8253": {
    "minLevel": null,
@@ -920,8 +1112,10 @@
     "name": "Blood Elf Reclaimer",
     "level": 53,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 8251
+   },
+   "steps": 4
   },
   "8271": {
    "minLevel": null,
@@ -931,8 +1125,10 @@
     "name": "Drek'Thar",
     "level": 62,
     "rank": "boss",
-    "from": "questie"
-   }
+    "from": "questie",
+    "step": 7141
+   },
+   "steps": 2
   },
   "8272": {
    "minLevel": null,
@@ -942,8 +1138,10 @@
     "name": "Vanndar Stormpike",
     "level": 62,
     "rank": "boss",
-    "from": "questie"
-   }
+    "from": "questie",
+    "step": 7142
+   },
+   "steps": 2
   },
   "8283": {
    "minLevel": null,
@@ -954,7 +1152,8 @@
     "level": 59,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "8306": {
    "minLevel": null,
@@ -965,12 +1164,14 @@
     "level": 62,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 2
   },
   "8308": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "8413": {
    "minLevel": null,
@@ -980,8 +1181,10 @@
     "name": "Diseased Grizzly",
     "level": 56,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 8412
+   },
+   "steps": 3
   },
   "8422": {
    "minLevel": null,
@@ -991,13 +1194,16 @@
     "name": "Felhunter",
     "level": 60,
     "rank": "normal",
-    "from": "questie"
-   }
+    "from": "questie",
+    "step": 8419
+   },
+   "steps": 4
   },
   "8573": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "8706": {
    "minLevel": null,
@@ -1008,7 +1214,8 @@
     "level": 63,
     "rank": "boss",
     "from": "questie"
-   }
+   },
+   "steps": 1
   },
   "8745": {
    "minLevel": null,
@@ -1018,8 +1225,10 @@
     "name": "Maws",
     "level": 63,
     "rank": "boss",
-    "from": "questie"
-   }
+    "from": "questie",
+    "step": 8729
+   },
+   "steps": 17
   },
   "8789": {
    "minLevel": null,
@@ -1030,7 +1239,8 @@
     "level": 60,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "8790": {
    "minLevel": null,
@@ -1041,7 +1251,8 @@
     "level": 60,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "9023": {
    "minLevel": null,
@@ -1052,7 +1263,8 @@
     "level": 63,
     "rank": "boss",
     "from": "questie"
-   }
+   },
+   "steps": 1
   },
   "9053": {
    "minLevel": null,
@@ -1062,33 +1274,53 @@
     "name": "Gorishi Reaver",
     "level": 53,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 9052
+   },
+   "steps": 4
   },
   "9221": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "9223": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "9226": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "9227": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "76240": {
    "minLevel": 4,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
+  },
+  "79442": {
+   "minLevel": null,
+   "instance": null,
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 40,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 96135
+   },
+   "steps": 5
   },
   "86585": {
    "minLevel": null,
@@ -1099,7 +1331,8 @@
     "level": 17,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "86758": {
    "minLevel": 12,
@@ -1110,12 +1343,14 @@
     "level": 15,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "91285": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "91777": {
    "minLevel": null,
@@ -1126,17 +1361,20 @@
     "level": 10,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 7
   },
   "92401": {
    "minLevel": 15,
    "instance": "Ruins of Lordaeron",
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "92421": {
    "minLevel": 15,
    "instance": "Ruins of Lordaeron",
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "92422": {
    "minLevel": 15,
@@ -1147,7 +1385,8 @@
     "level": 19,
     "rank": "elite",
     "from": "dungeon-range"
-   }
+   },
+   "steps": 1
   },
   "92458": {
    "minLevel": 24,
@@ -1158,7 +1397,8 @@
     "level": 32,
     "rank": "elite",
     "from": "dungeon-range"
-   }
+   },
+   "steps": 2
   },
   "92683": {
    "minLevel": 5,
@@ -1168,8 +1408,10 @@
     "name": "Aamelia Windfield",
     "level": 10,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 92679
+   },
+   "steps": 2
   },
   "92703": {
    "minLevel": 5,
@@ -1179,13 +1421,16 @@
     "name": "Aamelia Windfield",
     "level": 10,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 92693
+   },
+   "steps": 7
   },
   "92873": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "92880": {
    "minLevel": 6,
@@ -1195,13 +1440,16 @@
     "name": "Al'Aketh Healer",
     "level": 10,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 92642
+   },
+   "steps": 12
   },
   "93045": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "93128": {
    "minLevel": null,
@@ -1212,17 +1460,20 @@
     "level": 37,
     "rank": "normal",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "93196": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "95508": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "95646": {
    "minLevel": 24,
@@ -1233,7 +1484,8 @@
     "level": 28,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "95697": {
    "minLevel": 24,
@@ -1244,12 +1496,21 @@
     "level": 30,
     "rank": "elite",
     "from": "dungeon-range"
-   }
+   },
+   "steps": 1
   },
   "96016": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 40,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 96135
+   },
+   "steps": 5
   },
   "96393": {
    "minLevel": 9,
@@ -1260,7 +1521,8 @@
     "level": 17,
     "rank": "elite",
     "from": "dungeon-range"
-   }
+   },
+   "steps": 2
   },
   "96984": {
    "minLevel": 24,
@@ -1270,18 +1532,22 @@
     "name": "Dalaran Summoner",
     "level": 35,
     "rank": "normal",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 545
+   },
+   "steps": 5
   },
   "97003": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "97005": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "97250": {
    "minLevel": null,
@@ -1292,12 +1558,14 @@
     "level": 23,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 1
   },
   "97265": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "97282": {
    "minLevel": 7,
@@ -1307,13 +1575,23 @@
     "name": "Dustwind Eggtender",
     "level": 12,
     "rank": "rare",
-    "from": "wowhead"
-   }
+    "from": "wowhead",
+    "step": 97281
+   },
+   "steps": 2
   },
   "98191": {
    "minLevel": 20,
    "instance": null,
-   "hardest": null
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 25,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 286
+   },
+   "steps": 7
   },
   "98297": {
    "minLevel": 24,
@@ -1324,7 +1602,8 @@
     "level": 34,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 2
   },
   "98403": {
    "minLevel": 4,
@@ -1335,34 +1614,40 @@
     "level": 12,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 2
   },
   "98545": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   },
   "98823": {
    "minLevel": 24,
    "instance": "Excavation Site: Wetlands",
    "hardest": {
-    "id": 260326,
-    "name": "Relic Guardian",
-    "level": 30,
-    "rank": "elite",
-    "from": "dungeon-range"
-   }
+    "id": null,
+    "name": null,
+    "level": 31,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 95664
+   },
+   "steps": 2
   },
   "98824": {
    "minLevel": 24,
    "instance": "Excavation Site: Wetlands",
    "hardest": {
-    "id": 260326,
-    "name": "Relic Guardian",
-    "level": 30,
-    "rank": "elite",
-    "from": "dungeon-range"
-   }
+    "id": null,
+    "name": null,
+    "level": 31,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 95810
+   },
+   "steps": 2
   },
   "99052": {
    "minLevel": 10,
@@ -1373,12 +1658,14 @@
     "level": 11,
     "rank": "elite",
     "from": "wowhead"
-   }
+   },
+   "steps": 4
   },
   "99156": {
    "minLevel": null,
    "instance": null,
-   "hardest": null
+   "hardest": null,
+   "steps": 1
   }
  },
  "npcs": {

@@ -170,27 +170,32 @@ async function wowheadTargets(questId) {
   fs.mkdirSync(qtDir, { recursive: true });
   const file = path.join(qtDir, questId + '.json');
   let rec = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
-  if (!OFFLINE && (!rec || Date.now() - rec.at > 7 * DAY)) {
+  if (!OFFLINE && (!rec || rec.v !== 2 || Date.now() - rec.at > 7 * DAY)) {
     try {
       const res = await fetch('https://nether.wowhead.com/forever/tooltip/quest/' + questId, { headers: UA });
       const j = res.ok ? await res.json() : null;
       const html = (j && j.tooltip) || '';
       const req = html.split('Requirements:')[1] || '';
       const names = (req.match(/- ([^<]+)/g) || []).map(x => x.slice(2).replace(/ x\d+$/, '').trim()).filter(Boolean);
+      // "Defeat Charlga Razorflank in Razorfen Kraul", "Kill Rath'mael…".
+      const text = html.replace(/<[^>]+>/g, ' ');
+      const verb = text.match(/\b(?:Defeat|Kill|Slay|Destroy|Vanquish)\s+([A-Z][\w'’-]*(?:\s+(?:the\s+)?[A-Z][\w'’-]*)*)/g) || [];
+      verb.forEach(v => names.push(v.replace(/^\w+\s+/, '')));
+      const level = Number((text.match(/Level (\d+)/) || [])[1]) || null;
       const ids = [];
-      for (const name of names.slice(0, 4)) {
+      for (const name of [...new Set(names)].slice(0, 5)) {
         await sleep(250);
         const sr = await fetch('https://www.wowhead.com/forever/search/suggestions-template?q=' + encodeURIComponent(name), { headers: UA });
         const sj = sr.ok ? await sr.json() : { results: [] };
         const hit = (sj.results || []).find(r => r.type === 1 && r.name === name);
         if (hit) ids.push(hit.id);
       }
-      rec = { at: Date.now(), names, ids };
+      rec = { at: Date.now(), names, ids, level, v: 2 };
       fs.writeFileSync(file, JSON.stringify(rec));
       await sleep(250);
     } catch (e) { /* keep what we had */ }
   }
-  return (rec && rec.ids) || [];
+  return { ids: (rec && rec.ids) || [], level: (rec && rec.level) || null };
 }
 
 // ---------- main ----------
@@ -204,6 +209,8 @@ async function wowheadTargets(questId) {
   console.log('AllTheThings: ' + Object.keys(att).length + ' quests de Forever leídas.');
 
   const weapons = read('data/weapons.json').weapons;
+  const chainHint = {};
+  weapons.forEach(w => w.sources.forEach(s => { if (s.type === 'quest' && s.questId && s.chain) chainHint[s.questId] = s.chain; }));
   const questIds = new Set();
   const bossIds = new Set();
   weapons.forEach(w => w.sources.forEach(s => {
@@ -221,8 +228,8 @@ async function wowheadTargets(questId) {
       const q = Q.quest(qid);
       const a = att[qid];
       const creatures = (q && q.creatures.length ? q.creatures : (a ? a.creatures : []));
-      out.push({ id: qid, creatures, instance: (a && a.instance) || null });
-      const pre = (q && q.pre.length ? q.pre : []).concat(a ? a.pre : []);
+      out.push({ id: qid, creatures, instance: (a && a.instance) || null, level: q ? q.level : null });
+      const pre = (q && q.pre.length ? q.pre : []).concat(a ? a.pre : []).concat(depth === 0 && chainHint[qid] ? chainHint[qid] : []);
       [...new Set(pre)].forEach(p => walk(p, depth + 1));
     };
     walk(id, 0);
@@ -248,7 +255,12 @@ async function wowheadTargets(questId) {
   let withTargets = 0;
   for (const id of questIds) {
     const chain = steps(id);
-    if (!chain.some(st => st.creatures.length)) chain[0].creatures = await wowheadTargets(id);
+    for (const st of chain) {
+      if (st.creatures.length) continue;
+      const wh = await wowheadTargets(st.id);
+      st.creatures = wh.ids;
+      st.level = st.level || wh.level;
+    }
     const targets = [];
     for (const st of chain) for (const c of st.creatures.slice(0, 8)) {
       const n = await level(c);
@@ -262,13 +274,17 @@ async function wowheadTargets(questId) {
         tg.from = 'dungeon-range';
       }
     });
+    chain.forEach(st => {
+      if (st.id !== id && !st.creatures.length && st.level) targets.push({ id: null, step: st.id, name: null, level: st.level, rank: 'normal', from: 'step-level' });
+    });
     const known = targets.filter(tg => tg.level != null);
     if (known.length) withTargets++;
     const hardest = known.sort((a, b) => b.level - a.level)[0] || null;
     quests[id] = {
       minLevel: (att[id] && att[id].minLevel) || null,
       instance: inst || null,
-      hardest: hardest && { id: hardest.id, name: hardest.name, level: hardest.level, rank: hardest.rank, from: hardest.from }
+      hardest: hardest && { id: hardest.id, name: hardest.name, level: hardest.level, rank: hardest.rank, from: hardest.from, step: hardest.step !== id ? hardest.step : undefined },
+      steps: chain.length
     };
   }
   for (const id of bossIds) await level(id);

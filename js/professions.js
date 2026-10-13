@@ -130,6 +130,7 @@
       '<div class="pr-pairs">' + g.pairs.filter(p => p.specs.includes(Site.spec)).map(p =>
         '<div class="pr-pair"><div class="pr-pair-icons">' + p.pair.split(' + ').map(x => profIcon(x, 'pp-icon')).join('<span class="pp-plus">+</span>') + '</div>' +
         '<div class="pr-pair-head"><b>' + p.pair + '</b><span class="pr-when">' + p.when + '</span></div>' +
+        (p.tldr ? '<p class="pr-tldr"><b>TL;DR</b> ' + p.tldr + '</p>' : '') +
         '<div class="pr-pair-specs">' + p.specs.map(s => '<span style="--spec-color:' + ui.specColors[s] + '">' + s + '</span>').join('') + '</div>' +
         '<p>' + p.why + '</p></div>').join('') + '</div>' +
       '<p class="note-text dim">' + g.pairsNote + '</p></div>';
