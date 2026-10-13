@@ -42,7 +42,14 @@
 
   // ---------- pages ----------
 
+  // After drawing: the section strip scrolls to the open section (it scrolls sideways on phones).
   function render(page) {
+    draw(page);
+    const active = app.querySelector('.subtab.active');
+    if (active) active.parentElement.scrollLeft = active.offsetLeft - 16;
+  }
+
+  function draw(page) {
     UI.tip.hide();
     const spec = Site.spec;
     // Every page but the class and news ones is about the chosen spec, and wears its color and art.

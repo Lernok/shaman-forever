@@ -1031,3 +1031,32 @@ details.more summary { cursor: pointer; font-size: 12.5px; color: var(--accent);
 
 .pr-pair .pr-tldr { color: var(--text); background: color-mix(in srgb, var(--spec-color) 12%, transparent); border-left: 3px solid var(--spec-color); border-radius: 4px; padding: 6px 10px; margin: 8px 0 4px; }
 .pr-tldr b { color: var(--gold); font-size: 11px; letter-spacing: .06em; margin-right: 4px; }
+
+/* ---------- Professions: food and first aid ---------- */
+.food-row { display: grid; grid-template-columns: 150px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--border); }
+.food-row:first-of-type { border-top: 0; }
+.food-stat { display: flex; align-items: center; gap: 8px; }
+.food-stat img { width: 28px; height: 28px; border-radius: 6px; border: 1px solid #000; }
+.food-steps { display: flex; flex-wrap: wrap; gap: 8px; }
+.food-step { background: var(--bg-panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; display: flex; flex-direction: column; gap: 4px; min-width: 150px; }
+.food-step.post-cap { opacity: .65; }
+.fs-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.fs-lv { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .05em; }
+.fs-head b { color: var(--good); }
+.food-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; cursor: help; }
+.food-chip img { width: 18px; height: 18px; border-radius: 4px; border: 1px solid #000; }
+.aid-list { display: flex; flex-direction: column; }
+.aid-row { display: grid; grid-template-columns: minmax(200px, 1fr) 1.2fr 200px; gap: 10px; align-items: center; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,.04); font-size: 12.5px; }
+.aid-val { color: var(--text-dim); }
+@media (max-width: 700px) {
+  .food-row { grid-template-columns: 1fr; }
+  .aid-row { grid-template-columns: 1fr auto; }
+  .aid-val { grid-column: 1 / -1; }
+}
+
+/* Section strip on phones: one row that scrolls sideways (it stays stuck under the menu). */
+@media (max-width: 720px) {
+  .subtabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .subtabs::-webkit-scrollbar { display: none; }
+  .subtab { flex: none; white-space: nowrap; }
+}

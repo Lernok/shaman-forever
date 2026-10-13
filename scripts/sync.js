@@ -341,6 +341,7 @@ function diffItems(prev, next) {
   step('build-weapons.js');
   // Recipe sources come from scripts/fetch-recipes.js (run it to refresh them).
   step('build-professions.js');
+  step('build-consumables.js');
   step('build-data.js');
   console.log('Descargas del sync: ' + (http.summary() || 'ninguna'));
 })().catch(e => { console.error(e.message); process.exit(1); });

@@ -181,6 +181,10 @@ if (fs.existsSync(path.join(root, 'data/items.json'))) {
   write('data/items.js', 'ITEM_DATA', read('data/items.json'));
   outputs.push('data/items.js');
 }
+if (fs.existsSync(path.join(root, 'data/consumables.json'))) {
+  write('data/consumables.js', 'CONSUMABLE_DATA', read('data/consumables.json'));
+  outputs.push('data/consumables.js');
+}
 if (fs.existsSync(path.join(root, 'data/professions.json'))) {
   write('data/professions.js', 'PROFESSION_DATA', read('data/professions.json'));
   outputs.push('data/professions.js');
