@@ -64,7 +64,14 @@ Hecho (commits locales, sin pushear):
 - **Fase 3 (motor + página)**: `js/gear-plan.js` (valor = ilvl × parte útil de stats con pesos declarados; totems/abalorios por texto del efecto; acceso ruta > dungeon > entrenador > Favor (2 por cada 10 niveles) > jefe; duración ponderada; mínimo de niveles por tipo) y `js/gear-path.js` = sección **Equipo › Tu camino** (primera). `build-data` genera `data/gear.js` recortado.
 - `data/items.js` ya no se genera (nadie lo leía).
 
-En curso / falta:
-- El primer sync con toda la armadura (~8900 tooltips de Wowhead, ~2 h, luego foreverchanges a 1/s). El proceso que corría arrancó con un sync.js anterior: **después correr `node scripts/build-gear.js && node scripts/build-zones.js && node scripts/build-data.js`** (o un sync completo `--offline`). Revisar `gear.json` (slots, conteos), tamaño de `data/gear.js`, y el camino con datos reales (afinar pesos/umbrales).
-- Barrido en navegador (specs × facciones × razas × idiomas, móvil), y que la Guía muestre la raza elegida.
-- **Fase 4** (Profesiones y Cocina+Pesca) sin empezar.
+Sesión 3 (después):
+- Sync completo con red hecho (7755 ítems; 6700 piezas de armadura; 681 quests de equipo con nivel). Ítems de prueba/placeholder ("TEST", "DNT", "Monster - …") excluidos en `sync.js`. El changelog agrupa altas/bajas grandes en una línea.
+- Ajustes del camino con datos reales: intendentes de BG y oficiales de honor = vendedores PvP; quests de evento (sin nivel ni zona) y zonas de inicio de otras razas fuera; mínimo 40% de stats útiles; anillos/abalorios sin repetir; el arma es un slot más del plan (Enh por DPS).
+- **Fase 4 hecha**: Cocina y Pesca = un camino de subida con solo recetas de pescado (zonas de tu ruta primero, comida para tu spec, +5% XP de Forever); Profesiones › Tu plan = solo lo que entra en tu camino (crafteos y 1–2 recetas de Favor por tramo con costo); se quitó "Por profesión".
+- Barrido en navegador: 3 specs × 2 facciones × razas × 2 idiomas × 16 páginas sin errores ni textos rotos; móvil (375 px) sin scroll horizontal.
+- `data/gear.js` pesa ~1,3 MB (weapons.js ~0,6 MB).
+
+Falta / ideas:
+- **Nada está pusheado**: revisar con el usuario y subir (los commits 2cec2ca/b3402ff de la versión anterior de Profesiones quedan en la historia, rehechos encima).
+- Afinar con el usuario: pesos de stats, umbrales (UPGRADE 5%, MIN_LEVELS, MIN_FIT 0.4), zonas que propone la ruta.
+- Totems/abalorios: casi sin datos útiles por debajo de 60 (los "Icon" nuevos de Forever no traen efecto).

@@ -147,6 +147,8 @@ function fillFromTooltip(item, json) {
   if (classes && !/Shaman/.test(classes[1])) return false;
   // A few recipes sit in the weapon rows of the client's Item table.
   if (/^(Pattern|Plans|Schematic|Formula|Recipe): |^\[TMP\]/.test(item.name)) return false;
+  // Developer test items, placeholders and NPC-only models.
+  if (/\bTEST\b|\bTest\b|^\[?DNT\]?\b|^Template Item$|Placeholder$|^Monster - /.test(item.name)) return false;
   return item.quality >= 2 && item.req <= 60;
 }
 
@@ -239,18 +241,21 @@ function diffItems(prev, next) {
   const lines = [];
   if (!prev) return lines;
   const NUMS = ['req', 'ilvl', 'quality', 'dmgMin', 'dmgMax', 'speed', 'armor'];
-  // A big batch of new items (the sync started covering more gear) is one line.
+  // A big batch of new or removed items (the sync started covering more gear,
+  // or stopped taking test items) is one line.
   const added = Object.values(next).filter(x => !prev[x.id]);
-  if (added.length > 50) lines.push('- ' + added.length + ' ítems nuevos en los datos (' + [...new Set(added.map(x => x.kind))].join(', ') + ')');
+  if (added.length > 10) lines.push('- ' + added.length + ' ítems nuevos en los datos (' + [...new Set(added.map(x => x.kind))].join(', ') + ')');
   Object.values(next).forEach(x => {
     const o = prev[x.id];
-    if (!o) { if (added.length <= 50) lines.push('- Ítem nuevo: **' + x.name + '** (' + x.kind + ', nivel ' + x.req + ') #' + x.id); return; }
+    if (!o) { if (added.length <= 10) lines.push('- Ítem nuevo: **' + x.name + '** (' + x.kind + ', nivel ' + x.req + ') #' + x.id); return; }
     const what = NUMS.filter(f => o[f] !== x[f]).map(f => f + ' ' + o[f] + ' → ' + x[f]);
     if (JSON.stringify(o.stats || {}) !== JSON.stringify(x.stats || {})) what.push('stats ' + JSON.stringify(o.stats || {}) + ' → ' + JSON.stringify(x.stats || {}));
     if (JSON.stringify(o.equip || []) !== JSON.stringify(x.equip || [])) what.push('efectos cambiados');
     if (what.length) lines.push('- **' + x.name + '** #' + x.id + ': ' + what.join('; '));
   });
-  Object.values(prev).forEach(o => { if (!next[o.id]) lines.push('- Ítem eliminado: **' + o.name + '** #' + o.id); });
+  const removed = Object.values(prev).filter(o => !next[o.id]);
+  if (removed.length > 10) lines.push('- ' + removed.length + ' ítems quitados de los datos');
+  else removed.forEach(o => lines.push('- Ítem eliminado: **' + o.name + '** #' + o.id));
   return lines;
 }
 

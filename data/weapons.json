@@ -9784,7 +9784,7 @@
      "npc": "Kelm Hargunth",
      "zone": "The Barrens",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 18,
      "rec": 18
@@ -9821,7 +9821,7 @@
      "npc": "Illiyana Moonblaze",
      "zone": "Ashenvale",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 18,
      "rec": 18
@@ -9892,7 +9892,7 @@
      "npc": "Kelm Hargunth",
      "zone": "The Barrens",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 18,
      "rec": 18
@@ -9929,7 +9929,7 @@
      "npc": "Illiyana Moonblaze",
      "zone": "Ashenvale",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 18,
      "rec": 18
@@ -15197,37 +15197,6 @@
    ]
   },
   {
-   "id": 3895,
-   "name": "TEST Legendary",
-   "kind": "1H Axe",
-   "quality": 5,
-   "req": 25,
-   "obtain": 25,
-   "ilvl": 30,
-   "bind": null,
-   "dps": 23.5,
-   "speed": 1,
-   "dmgMin": 16,
-   "dmgMax": 31,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 25,
-     "rec": 25
-    }
-   ]
-  },
-  {
    "id": 3210,
    "name": "Brutal War Axe",
    "kind": "2H Axe",
@@ -16706,7 +16675,7 @@
      "npc": "Kelm Hargunth",
      "zone": "The Barrens",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 28,
      "rec": 28
@@ -16743,7 +16712,7 @@
      "npc": "Illiyana Moonblaze",
      "zone": "Ashenvale",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 28,
      "rec": 28
@@ -17059,7 +17028,7 @@
      "npc": "Kelm Hargunth",
      "zone": "The Barrens",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 28,
      "rec": 28
@@ -17096,7 +17065,7 @@
      "npc": "Illiyana Moonblaze",
      "zone": "Ashenvale",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 28,
      "rec": 28
@@ -22445,7 +22414,7 @@
      "npc": "Kelm Hargunth",
      "zone": "The Barrens",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 38,
      "rec": 38
@@ -22482,7 +22451,7 @@
      "npc": "Illiyana Moonblaze",
      "zone": "Ashenvale",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 38,
      "rec": 38
@@ -22736,7 +22705,7 @@
      "npc": "Kelm Hargunth",
      "zone": "The Barrens",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 38,
      "rec": 38
@@ -22773,7 +22742,7 @@
      "npc": "Illiyana Moonblaze",
      "zone": "Ashenvale",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 38,
      "rec": 38
@@ -27759,7 +27728,7 @@
      "npc": "Kelm Hargunth",
      "zone": "The Barrens",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 48,
      "rec": 48
@@ -27796,7 +27765,7 @@
      "npc": "Illiyana Moonblaze",
      "zone": "Ashenvale",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 48,
      "rec": 48
@@ -28247,7 +28216,7 @@
      "npc": "Kelm Hargunth",
      "zone": "The Barrens",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 48,
      "rec": 48
@@ -28284,7 +28253,7 @@
      "npc": "Illiyana Moonblaze",
      "zone": "Ashenvale",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 48,
      "rec": 48
@@ -29154,39 +29123,6 @@
    "era": "classic",
    "numbers": "forever",
    "icon": "inv_weapon_shortblade_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 50,
-     "rec": 50
-    }
-   ]
-  },
-  {
-   "id": 231887,
-   "name": "Test Dagger",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 50,
-   "obtain": 50,
-   "ilvl": 55,
-   "bind": "pickup",
-   "dps": 36.5,
-   "speed": 2,
-   "dmgMin": 51,
-   "dmgMax": 95,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [
-    "Chance on hit: Wounds the target causing them to bleed for 100 damage over 30 sec."
-   ],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_drink_10",
    "raceMask": -1,
    "sources": [
     {
@@ -34702,68 +34638,6 @@
    ]
   },
   {
-   "id": 19199,
-   "name": "3500 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 54,
-   "speed": 3.5,
-   "dmgMin": 151,
-   "dmgMax": 227,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19194,
-   "name": "2900 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.97,
-   "speed": 2.9,
-   "dmgMin": 125,
-   "dmgMax": 188,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
    "id": 19566,
    "name": "Advisor's Gnarled Staff",
    "kind": "Staff",
@@ -34793,7 +34667,7 @@
      "npc": "Kelm Hargunth",
      "zone": "The Barrens",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 58,
      "rec": 58
@@ -34830,131 +34704,7 @@
      "npc": "Illiyana Moonblaze",
      "zone": "Ashenvale",
      "faction": "alliance",
-     "pvp": false,
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19197,
-   "name": "3300 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.94,
-   "speed": 3.3,
-   "dmgMin": 142,
-   "dmgMax": 214,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19201,
-   "name": "3700 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.92,
-   "speed": 3.7,
-   "dmgMin": 159,
-   "dmgMax": 240,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19187,
-   "name": "3200 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.91,
-   "speed": 3.2,
-   "dmgMin": 138,
-   "dmgMax": 207,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19189,
-   "name": "2300 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.91,
-   "speed": 2.3,
-   "dmgMin": 99,
-   "dmgMax": 149,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 58,
      "rec": 58
@@ -34990,68 +34740,6 @@
    "era": "classic",
    "numbers": "classic",
    "icon": "inv_staff_32",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19186,
-   "name": "2700 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.89,
-   "speed": 2.7,
-   "dmgMin": 116,
-   "dmgMax": 175,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19200,
-   "name": "3600 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.89,
-   "speed": 3.6,
-   "dmgMin": 155,
-   "dmgMax": 233,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
    "raceMask": -1,
    "sources": [
     {
@@ -35102,37 +34790,6 @@
      },
      "faction": "both",
      "confidence": "client-data",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19196,
-   "name": "3100 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.87,
-   "speed": 3.1,
-   "dmgMin": 133,
-   "dmgMax": 201,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
      "asap": 58,
      "rec": 58
     }
@@ -35201,37 +34858,6 @@
      "type": "unknown",
      "faction": "both",
      "confidence": "community-untested",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19192,
-   "name": "2600 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.85,
-   "speed": 2.6,
-   "dmgMin": 112,
-   "dmgMax": 168,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
      "asap": 58,
      "rec": 58
     }
@@ -35359,37 +34985,6 @@
    ]
   },
   {
-   "id": 19195,
-   "name": "3000 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.83,
-   "speed": 3,
-   "dmgMin": 129,
-   "dmgMax": 194,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
    "id": 12784,
    "name": "Arcanite Reaper",
    "kind": "2H Axe",
@@ -35468,223 +35063,6 @@
      },
      "faction": "both",
      "confidence": "client-data",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19184,
-   "name": "3800 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.82,
-   "speed": 3.8,
-   "dmgMin": 163,
-   "dmgMax": 246,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19198,
-   "name": "3400 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.82,
-   "speed": 3.4,
-   "dmgMin": 146,
-   "dmgMax": 220,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19185,
-   "name": "2100 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.81,
-   "speed": 2.1,
-   "dmgMin": 90,
-   "dmgMax": 136,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19191,
-   "name": "2500 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.8,
-   "speed": 2.5,
-   "dmgMin": 107,
-   "dmgMax": 162,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19190,
-   "name": "2400 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.75,
-   "speed": 2.4,
-   "dmgMin": 103,
-   "dmgMax": 155,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19193,
-   "name": "2800 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.75,
-   "speed": 2.8,
-   "dmgMin": 120,
-   "dmgMax": 181,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19188,
-   "name": "2200 Test 2h Axe 63 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 53.64,
-   "speed": 2.2,
-   "dmgMin": 94,
-   "dmgMax": 142,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
      "asap": 58,
      "rec": 58
     }
@@ -35788,68 +35166,6 @@
       "from": "wowhead",
       "group": true
      }
-    }
-   ]
-  },
-  {
-   "id": 19809,
-   "name": "2500 Test 2h Axe 60 blue",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 60,
-   "bind": null,
-   "dps": 51.2,
-   "speed": 2.5,
-   "dmgMin": 102,
-   "dmgMax": 154,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19811,
-   "name": "2500 Test 2h Axe 60 blue (bear)",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 60,
-   "bind": null,
-   "dps": 51.2,
-   "speed": 2.5,
-   "dmgMin": 102,
-   "dmgMax": 154,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
     }
    ]
   },
@@ -36160,37 +35476,6 @@
    ]
   },
   {
-   "id": 19314,
-   "name": "2000 Test Dagger 63 blue",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 41.5,
-   "speed": 2,
-   "dmgMin": 58,
-   "dmgMax": 108,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_weapon_shortblade_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
    "id": 250618,
    "name": "Bagh Nakh",
    "kind": "Fist",
@@ -36260,7 +35545,7 @@
      "npc": "Kelm Hargunth",
      "zone": "The Barrens",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 58,
      "rec": 58
@@ -36297,7 +35582,7 @@
      "npc": "Illiyana Moonblaze",
      "zone": "Ashenvale",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 58,
      "rec": 58
@@ -36373,37 +35658,6 @@
      "type": "unknown",
      "faction": "both",
      "confidence": "community-untested",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19622,
-   "name": "1800 Test Dagger 63 blue",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 41.39,
-   "speed": 1.8,
-   "dmgMin": 52,
-   "dmgMax": 97,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_weapon_shortblade_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
      "asap": 58,
      "rec": 58
     }
@@ -36563,37 +35817,6 @@
      },
      "faction": "both",
      "confidence": "client-data",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 19313,
-   "name": "1300 Test Dagger 63 blue",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": null,
-   "dps": 41.15,
-   "speed": 1.3,
-   "dmgMin": 37,
-   "dmgMax": 70,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_weapon_shortblade_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
      "asap": 58,
      "rec": 58
     }
@@ -36843,42 +36066,6 @@
    ]
   },
   {
-   "id": 22391,
-   "name": "Monster - Staff, Lord Valthalak",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": "pickup",
-   "dps": 40,
-   "speed": 2.1,
-   "dmgMin": 67,
-   "dmgMax": 101,
-   "stats": {},
-   "bonus": {
-    "spellPower": 72
-   },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1.0%.",
-    "Equip: Increases damage and healing done by magical spells and effects by up to 72."
-   ],
-   "chance": [],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "inv_staff_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
    "id": 18048,
    "name": "Mastersmith's Hammer",
    "kind": "1H Mace",
@@ -36926,37 +36113,6 @@
       "from": "wowhead",
       "group": true
      }
-    }
-   ]
-  },
-  {
-   "id": 19810,
-   "name": "1000 Test dagger 60 blue",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 60,
-   "bind": null,
-   "dps": 39,
-   "speed": 1,
-   "dmgMin": 27,
-   "dmgMax": 51,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_weapon_shortblade_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
     }
    ]
   },
@@ -38524,37 +37680,6 @@
    ]
   },
   {
-   "id": 19662,
-   "name": "3500 Test 2h Axe 80 purple",
-   "kind": "2H Axe",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 80,
-   "bind": null,
-   "dps": 80.43,
-   "speed": 3.5,
-   "dmgMin": 225,
-   "dmgMax": 338,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
    "id": 17182,
    "name": "Sulfuras, Hand of Ragnaros",
    "kind": "2H Mace",
@@ -38567,44 +37692,6 @@
    "speed": 3.7,
    "dmgMin": 223,
    "dmgMax": 372,
-   "stats": {
-    "strength": 12,
-    "stamina": 12
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Deals 5 Fire damage to anyone who strikes you with a melee attack."
-   ],
-   "chance": [
-    "Chance on hit: Hurls a fiery ball that causes 273 to 333 Fire damage and an additional 75 damage over 10 sec."
-   ],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "inv_hammer_unique_sulfuras",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 19158,
-   "name": "TEST Sulfuras, Hand of Ragnaros",
-   "kind": "2H Mace",
-   "quality": 5,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 80,
-   "bind": "pickup",
-   "dps": 80.17,
-   "speed": 3,
-   "dmgMin": 192,
-   "dmgMax": 289,
    "stats": {
     "strength": 12,
     "stamina": 12
@@ -39359,44 +38446,6 @@
    ]
   },
   {
-   "id": 18881,
-   "name": "TEST Ragnaros Hammer",
-   "kind": "2H Mace",
-   "quality": 5,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 80,
-   "bind": "pickup",
-   "dps": 70.17,
-   "speed": 3,
-   "dmgMin": 162,
-   "dmgMax": 259,
-   "stats": {
-    "strength": 12,
-    "stamina": 12
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Deals 5 Fire damage to anyone who strikes you with a melee attack."
-   ],
-   "chance": [
-    "Chance on hit: Hurls a fiery ball that causes 273 to 333 Fire damage and an additional 75 damage over 10 sec."
-   ],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "inv_hammer_unique_sulfuras",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
    "id": 21856,
    "name": "Neretzek, The Blood Drinker",
    "kind": "2H Axe",
@@ -39676,37 +38725,6 @@
      "zones": [
       "Blackwing Lair"
      ],
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 19455,
-   "name": "3500 Test 2h Axe 70 purple",
-   "kind": "2H Axe",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 70,
-   "bind": null,
-   "dps": 67,
-   "speed": 3.5,
-   "dmgMin": 187,
-   "dmgMax": 282,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 60,
@@ -40622,7 +39640,7 @@
      "npc": "Gaelden Hammersmith",
      "zone": "Alterac Valley",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -40632,7 +39650,7 @@
      "npc": "Thanthaldis Snowgleam",
      "zone": "Alterac Mountains",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -40642,7 +39660,7 @@
      "npc": "Grunnda Wolfheart",
      "zone": "Alterac Valley",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -40652,7 +39670,7 @@
      "npc": "Jekyll Flandring",
      "zone": "Alterac Mountains",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -42504,86 +41522,6 @@
    ]
   },
   {
-   "id": 20370,
-   "name": "Test Staff 90 epic",
-   "kind": "Staff",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 90,
-   "bind": "equip",
-   "dps": 56.17,
-   "speed": 2.4,
-   "dmgMin": 88,
-   "dmgMax": 182,
-   "stats": {
-    "strength": 37,
-    "agility": 16,
-    "stamina": 15
-   },
-   "bonus": {
-    "attackPower": 574
-   },
-   "equip": [
-    "Equip: Increases your chance to Dodge an attack by 2.0%.",
-    "Equip: +574 Attack Power in Cat, Bear, and Dire Bear forms only."
-   ],
-   "chance": [],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "inv_staff_29",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 20372,
-   "name": "Test Staff 77 epic",
-   "kind": "Staff",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 77,
-   "bind": "equip",
-   "dps": 56.04,
-   "speed": 2.4,
-   "dmgMin": 98,
-   "dmgMax": 171,
-   "stats": {
-    "strength": 22,
-    "agility": 21,
-    "stamina": 21
-   },
-   "bonus": {
-    "attackPower": 280
-   },
-   "equip": [
-    "Equip: Increases your chance to Dodge an attack by 2.0%.",
-    "Equip: +280 Attack Power in Cat, Bear, and Dire Bear forms only."
-   ],
-   "chance": [],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "inv_staff_29",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
    "id": 22348,
    "name": "Doomulus Prime",
    "kind": "2H Mace",
@@ -44053,7 +42991,7 @@
      "npc": "Gaelden Hammersmith",
      "zone": "Alterac Valley",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -44063,7 +43001,7 @@
      "npc": "Thanthaldis Snowgleam",
      "zone": "Alterac Mountains",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -44073,7 +43011,7 @@
      "npc": "Grunnda Wolfheart",
      "zone": "Alterac Valley",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -44083,7 +43021,7 @@
      "npc": "Jekyll Flandring",
      "zone": "Alterac Mountains",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -44216,7 +43154,7 @@
      "npc": "Samuel Hawke",
      "zone": "Arathi Highlands",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -44259,7 +43197,7 @@
      "npc": "Rutherford Twing",
      "zone": "Arathi Highlands",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -44733,7 +43671,7 @@
      "npc": "Grunnda Wolfheart",
      "zone": "Alterac Valley",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -44743,7 +43681,7 @@
      "npc": "Jekyll Flandring",
      "zone": "Alterac Mountains",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -44779,7 +43717,7 @@
      "npc": "Gaelden Hammersmith",
      "zone": "Alterac Valley",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -44789,7 +43727,7 @@
      "npc": "Thanthaldis Snowgleam",
      "zone": "Alterac Mountains",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -44848,7 +43786,7 @@
      "npc": "Grunnda Wolfheart",
      "zone": "Alterac Valley",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -44858,7 +43796,7 @@
      "npc": "Jekyll Flandring",
      "zone": "Alterac Mountains",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -44896,7 +43834,7 @@
      "npc": "Gaelden Hammersmith",
      "zone": "Alterac Valley",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -44906,7 +43844,7 @@
      "npc": "Thanthaldis Snowgleam",
      "zone": "Alterac Mountains",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -45648,7 +44586,7 @@
      "npc": "Grunnda Wolfheart",
      "zone": "Alterac Valley",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -45658,7 +44596,7 @@
      "npc": "Jekyll Flandring",
      "zone": "Alterac Mountains",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -45698,7 +44636,7 @@
      "npc": "Gaelden Hammersmith",
      "zone": "Alterac Valley",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -45708,7 +44646,7 @@
      "npc": "Thanthaldis Snowgleam",
      "zone": "Alterac Mountains",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -46022,43 +44960,6 @@
    ]
   },
   {
-   "id": 18800,
-   "name": "TEST 1H Amberseal Keeper",
-   "kind": "1H Mace",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 67,
-   "bind": "pickup",
-   "dps": 38.8,
-   "speed": 2.5,
-   "dmgMin": 60,
-   "dmgMax": 134,
-   "stats": {
-    "intellect": 20
-   },
-   "bonus": {
-    "spellPower": 57
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 57."
-   ],
-   "chance": [],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "inv_staff_goldfeathered_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
    "id": 21523,
    "name": "Fang of Korialstrasz",
    "kind": "Dagger",
@@ -46303,7 +45204,7 @@
      "npc": "Samuel Hawke",
      "zone": "Arathi Highlands",
      "faction": "alliance",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
@@ -46345,7 +45246,7 @@
      "npc": "Rutherford Twing",
      "zone": "Arathi Highlands",
      "faction": "horde",
-     "pvp": false,
+     "pvp": true,
      "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60

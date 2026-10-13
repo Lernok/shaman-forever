@@ -66,7 +66,7 @@
   const EFFECT = {
     Enhancement: /Stormstrike|Windfury|Flametongue|Rockbiter|Earth Shock|Flame Shock|Frost Shock|Lightning Shield|Attack Power|melee|weapon damage|attack speed/i,
     Elemental: /Lightning Bolt|Chain Lightning|Earth Shock|Flame Shock|Frost Shock|Searing Totem|Magma Totem|Fire Nova|spell damage|damage done by (magical )?spells|spell critical|Nature damage|Fire damage/i,
-    Restoration: /Healing Wave|Lesser Healing Wave|Chain Heal|Healing Stream|Mana Spring|Earth Shield|healing|mana/i
+    Restoration: /Healing Wave|Chain Heal|Healing Stream|Mana Spring|Earth Shield|healing|[Mm]ana regeneration|mana per 5|[Rr]egain .*mana/i
   };
   function effectFit(item, spec) {
     const text = (item.equip || []).concat(item.use || []).join(' ');
