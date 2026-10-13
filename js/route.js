@@ -9,6 +9,14 @@
   const isStart = name => !!(Z.zones[name] || {}).start;
   // Starting zones are left after this level (the next zones begin around 10-12).
   const START_TOP = 12;
+  // The continent each race starts on (Skyborne leave Zephras Isle for
+  // Orgrimmar). The zones that follow the starting ones (bands from 12 down)
+  // count only on your own continent: an Orc levels in the Barrens, not in
+  // Silverpine Forest, the Forsaken's next zone.
+  const HOME = { Orc: 'Kalimdor', Troll: 'Kalimdor', Tauren: 'Kalimdor', 'Skyborne (Windshaper)': 'Kalimdor', Dwarf: 'Eastern Kingdoms' };
+  const FOLLOW_UP = 12;
+  // Dungeons deep in one faction's land: the other faction doesn't go there.
+  const DUNGEON_SIDE = { 'Ragefire Chasm': 'horde', 'The Deadmines': 'alliance', 'The Stockade': 'alliance', 'The Hall of Thanes': 'alliance', 'Hall of Thanes': 'alliance' };
 
   const Route = {
     // Zones of your route around level `lvl`, best fit first (the band's middle
@@ -19,6 +27,7 @@
         const b = z[faction];
         if (!b) return false;
         if (isStart(name)) return mine.includes(name) && lvl <= Math.max(b[1], START_TOP);
+        if (race && HOME[race] && z.continent && z.continent !== HOME[race] && b[0] <= FOLLOW_UP) return false;
         return lvl >= b[0] && lvl <= b[1];
       }).map(([name, z]) => ({ name, levels: z[faction], from: z.from }))
         .sort((a, b) => Math.abs((a.levels[0] + a.levels[1]) / 2 - lvl) - Math.abs((b.levels[0] + b.levels[1]) / 2 - lvl));
@@ -43,8 +52,9 @@
     },
 
     // A zone you'd go to: unknown zones (cities, dungeons) count; a zone only
-    // the other faction quests in doesn't.
+    // the other faction quests in, or a dungeon in its land, doesn't.
     reachable(zone, faction) {
+      if (DUNGEON_SIDE[zone]) return DUNGEON_SIDE[zone] === faction;
       const z = Z.zones[zone];
       return !z || !!z[faction];
     },

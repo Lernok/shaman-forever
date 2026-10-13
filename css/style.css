@@ -1235,3 +1235,4 @@ details.wp-all[open] > summary { margin-bottom: 10px; }
 .lv-row.lv-next .lv-num { color: var(--spec-color); font-weight: 800; }
 .lv-row.lv-next { background: color-mix(in srgb, var(--spec-color) 7%, transparent); border-radius: 8px; }
 .setup-level { background: var(--bg-panel-2); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font: inherit; }
+.gp-off-tag { color: #d9a441; }

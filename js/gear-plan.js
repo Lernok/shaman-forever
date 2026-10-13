@@ -43,7 +43,7 @@
   const MAIL_AT = 40; // Shamans learn Mail at 40
   const UPGRADE = 1.05; // a piece must be 5% better to count as an upgrade
   const MIN_FIT = 0.4; // at least 40% of a piece's stats must be ones your spec uses
-  const MIN_LEVELS = { class: 0, route: 0, dquest: 3, quest: 3, crafted: 4, favor: 6, vendor: 4, boss: 3 };
+  const MIN_LEVELS = { class: 0, route: 0, dquest: 3, quest: 5, crafted: 4, favor: 6, vendor: 4, boss: 3 };
   const FAVOR_PER_BRACKET = 2;
   const TIER = { class: 1, route: 1, dquest: 2, quest: 3, crafted: 4, favor: 5, vendor: 6, boss: 7 };
   // Quest "zones" that aren't places: class quests, and ones you can't plan
@@ -107,7 +107,8 @@
   // How you'd get a piece, as the best access you have; null if you can't.
   // opts: { spec, faction, race, profs (crafting professions; null = any),
   //   drops, route(zone, level), away(zone): zones you never go to,
-  //   reach(zone): false for zones only the other faction quests in }
+  //   reach(zone): false for zones only the other faction quests in and
+  //   dungeons in its land }
   function access(item, s, opts) {
     if (s.faction && s.faction !== 'both' && s.faction !== opts.faction) return null;
     if (s.raid || s.pvp) return null;
@@ -130,7 +131,7 @@
     }
     // Vendors deep in the other faction's land don't count.
     if (s.type === 'vendor') return opts.reach && !opts.reach(s.zone) ? null : 'vendor';
-    if ((s.type === 'boss' || s.type === 'drop') && opts.drops) return 'boss';
+    if ((s.type === 'boss' || s.type === 'drop') && opts.drops) return opts.reach && !opts.reach(s.zone) ? null : 'boss';
     return null;
   }
 

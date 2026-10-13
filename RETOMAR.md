@@ -94,6 +94,11 @@ Sesión 6 (rediseño pedido por el usuario: menos pestañas, menos redundancia, 
 - `build-data.js` versiona scripts/CSS en index.html (`?v=hash`) para que tras un deploy nunca se mezcle HTML nuevo con JS viejo.
 - Decisiones del usuario: un tramo a la vez; plegar detalle (no interruptor simple/avanzado); selector en primera visita + etiqueta.
 
+Sesión 6b (feedback del usuario sobre Tu camino):
+- Ruta: las zonas que siguen a las de inicio (banda desde ≤12) solo en el continente de tu raza (`HOME` en route.js): Orco/Trol/Tauren/Skyborne = Kalimdor (sin Silverpine), Enano = Reinos del Este.
+- Dungeons en tierra de la otra facción (`DUNGEON_SIDE`: Deadmines, Stockade, Hall of Thanes = Alianza; Ragefire = Horda) no cuentan sus drops ni vendedores (Tu camino y Armas).
+- Quests fuera de ruta: mínimo 5 niveles de duración, y se ven como "fuera de tu ruta".
+
 Falta / ideas:
 - Esperar feedback. Textos "tope de la beta"/"nivel 30" a revisar el 4-nov (lanzamiento).
 - Afinar con el usuario: pesos de stats, umbrales (UPGRADE 5%, MIN_LEVELS, MIN_FIT 0.4), zonas que propone la ruta.

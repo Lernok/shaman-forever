@@ -95,7 +95,8 @@
     const star = st.pick.access === 'route' || st.alt;
     return '<div class="gp-step' + (st.alt ? ' gp-alt' : '') + (cls ? ' ' + cls : '') + '"><span class="gp-lv">' + st.level + '</span>' +
       '<span class="gp-slot">' + (star ? '<span class="gp-star" title="' + t('gp.starTitle') + '">★</span>' : '') + slotName(st.pick.slot) + '</span>' +
-      '<div class="gp-main">' + UI.itemLink(i) + '<span class="wp-sub">' + sourceText(st.pick) + '</span>' +
+      '<div class="gp-main">' + UI.itemLink(i) + '<span class="wp-sub">' + sourceText(st.pick) +
+      (st.pick.access === 'quest' ? ' · <span class="gp-off-tag">' + t('gp.offRoute') + '</span>' : '') + '</span>' +
       (st.alt || state.detail ? '<span class="gp-why">' + why(st) + '</span>' : '') + '</div></div>';
   }
 

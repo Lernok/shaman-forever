@@ -55,8 +55,10 @@
       return state.ah && w.bind !== 'pickup' ? Object.assign({}, s, { viaAH: true }) : null;
     }).filter(Boolean).filter(s => {
       if (s.faction !== 'both' && s.faction !== Site.faction) return false;
-      // Another race's starting zone: you never quest there.
+      // Another race's starting zone: you never quest there. A dungeon or a
+      // vendor in the other faction's land: you never go there.
       if (s.type === 'quest' && window.Route && window.Route.otherStart(s.zone, Site.faction, race())) return false;
+      if (['boss', 'drop', 'vendor'].includes(s.type) && window.Route && !window.Route.reachable(s.zone, Site.faction)) return false;
       if (s.type === 'trash' && !state.random) return false;
       if ((s.type === 'unknown' || s.type === 'unrecorded') && !state.unknown) return false;
       if (s.raid && !state.raids) return false;
