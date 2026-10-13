@@ -237,6 +237,20 @@ if (fs.existsSync(path.join(root, 'data/meta.json'))) {
   write('data/meta.js', 'SITE_META', read('data/meta.json'));
   outputs.push('data/meta.js');
 }
+// index.html asks for each script and stylesheet with a version made from its
+// contents: after a deploy, browsers (and GitHub Pages' 10-minute cache)
+// never mix a new page with an old script.
+{
+  const crypto = require('crypto');
+  const file = path.join(root, 'index.html');
+  const html = fs.readFileSync(file, 'utf8');
+  const versioned = html.replace(/((?:src|href)="((?:js|data|css)\/[^"?]+))(\?v=[0-9a-f]+)?"/g, (m, attr, rel) => {
+    const f = path.join(root, rel);
+    if (!fs.existsSync(f)) return m;
+    return attr + '?v=' + crypto.createHash('sha1').update(fs.readFileSync(f)).digest('hex').slice(0, 8) + '"';
+  });
+  if (versioned !== html) fs.writeFileSync(file, versioned);
+}
 console.log('OK: ' + outputs.join(', '));
 
 // Generated data must pass its checks (exits with an error otherwise).

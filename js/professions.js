@@ -135,11 +135,6 @@
 
   // ---------- sections ----------
 
-  function pickerHtml(selected, max) {
-    return '<div class="prof-picker">' + PRIMARY.map(p => '<button class="btn prof-btn' + (selected.includes(p) ? ' active' : '') + '" data-pick-prof="' + p + '">' +
-      profIcon(p, 'pb-icon') + p + '</button>').join('') + '</div>' + (max ? '<p class="note-text dim">' + t('pr.plan.pickHint') + '</p>' : '');
-  }
-
   function pairCard(p, withButton) {
     return '<div class="pr-pair"><div class="pr-pair-icons">' + p.pair.split(' + ').map(x => profIcon(x, 'pp-icon')).join('<span class="pp-plus">+</span>') + '</div>' +
       '<div class="pr-pair-head"><b>' + p.pair + '</b><span class="pr-when">' + p.when + '</span></div>' +
@@ -159,7 +154,9 @@
   // camino, weapon included), by bracket.
   function renderPlan(g) {
     const mine = myProfs();
-    let html = '<div class="panel"><h3>' + t('pr.plan.pick') + '</h3>' + pickerHtml(mine, true) + '</div>';
+    // Your professions come from your Shaman (the setup screen).
+    let html = '<div class="gp-for"><span>' + t('pr.plan.yours') + ' <b>' + (mine.length ? mine.join(' + ') : t('setup.noProfsShort')) + '</b></span>' +
+      '<button class="btn" data-open-setup>' + t('home.change') + '</button></div>';
     if (mine.length < 2) {
       html += '<p class="note-text" style="margin-top:16px">' + t('pr.plan.none', { spec: Site.spec }) + '</p><div class="pr-pairs">' +
         g.pairs.filter(p => p.specs.includes(Site.spec)).map(p => pairCard(p, true)).join('') + '</div>';
@@ -307,14 +304,8 @@
     UI.tip.bind(container, '[data-item]', a => (all.has(a.dataset.item) ? UI.itemCard(all.get(a.dataset.item), [t('common.level') + ' ' + all.get(a.dataset.item).req, learnText(all.get(a.dataset.item).learn.text)]) : null));
     const food = new Map(consumables().items.map(i => [String(i.id), i]));
     UI.tip.bind(container, '[data-food]', a => (food.has(a.dataset.food) ? foodCard(food.get(a.dataset.food)) : null));
-    // Picking professions: two on the plan (shared with Gear), one on a profession's page.
-    container.querySelectorAll('[data-pick-prof]').forEach(b => b.addEventListener('click', () => {
-      const p = b.dataset.pickProf;
-      const mine = myProfs();
-      UI.store.set('profs', mine.includes(p) ? mine.filter(x => x !== p) : mine.concat(p).slice(-2));
-      renderAll();
-    }));
-    container.querySelectorAll('[data-use-pair]').forEach(b => b.addEventListener('click', () => { UI.store.set('profs', b.dataset.usePair.split(' + ')); renderAll(); }));
+    container.querySelectorAll('[data-use-pair]').forEach(b => b.addEventListener('click', () => { UI.store.set('profs', b.dataset.usePair.split(' + ')); Site.setMany({}); }));
+    container.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
   }
 
   window.Professions = {

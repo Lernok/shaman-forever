@@ -39,6 +39,16 @@
       }
       listeners.forEach(fn => fn(key, value));
     },
+    // Several choices at once (the setup screen): one re-render, which also
+    // picks up the professions it stored.
+    setMany(values) {
+      Object.entries(values).forEach(([k, v]) => { Site[k] = v; window.UI.store.set(k, v); });
+      if (Site.validRace(Site.race, Site.faction) !== Site.race) {
+        Site.race = 'any';
+        window.UI.store.set('race', 'any');
+      }
+      listeners.forEach(fn => fn('setup'));
+    },
     onChange(fn) { listeners.push(fn); },
 
     // Current section of a page: the hash's second part if it's one of

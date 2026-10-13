@@ -87,6 +87,14 @@ Sesión 5 (pulido, subido `b71c868`):
 Falta / ideas:
 - Totems: lista completa (en Forever casi no hay antes del 60; los "Icon" del cliente no tienen fuente ni efecto). Panel "Totems antes del 60" en Tu camino; efecto de tu spec 0.8, utilidad 0.4, de otra spec 0.2; Favor nunca en un totem que no es de tu spec.
 - gear.js 1,3 MB -> 0,7 MB (82 KB comprimido): solo piezas que alguna spec usa y los campos que lee la página; verificado que los planes son idénticos en 210 combinaciones (script de comparación en el scratchpad: cmpplan.js).
-- Esperar feedback del usuario. Ideas no hechas: encabezado más compacto en celular; textos "tope de la beta"/"nivel 30" a revisar el 4-nov (lanzamiento).
+Sesión 6 (rediseño pedido por el usuario: menos pestañas, menos redundancia, entrega más clara):
+- **Armá tu Shaman** (`js/setup.js`): en la primera visita, raza (define facción), spec, profesiones y nivel (opcional). El encabezado es una etiqueta que reabre el selector (`Site.setMany`). Inicio = "Tu Shaman" con accesos a guía, talentos, camino y profesiones.
+- **Equipo** en 2 pestañas: *Tu camino* = un tramo de 10 niveles a la vez (el de tu nivel), quests de tu ruta con ★, alternativas gratis adentro, "Ver por qué" a pedido, totems plegados; *Armas* = gráfico + mejores por tramo + todas las armas plegadas (se fueron Progresión, Quests de dungeon y Todas como pestañas; links viejos redirigen a Armas). Profesiones solo desde el perfil (sin profesiones = sin crafteos propios, también en Armas).
+- Hechizos › Por nivel resalta tus próximos 10 niveles. Profesiones › Tu plan usa las profesiones del perfil.
+- `build-data.js` versiona scripts/CSS en index.html (`?v=hash`) para que tras un deploy nunca se mezcle HTML nuevo con JS viejo.
+- Decisiones del usuario: un tramo a la vez; plegar detalle (no interruptor simple/avanzado); selector en primera visita + etiqueta.
+
+Falta / ideas:
+- Esperar feedback. Textos "tope de la beta"/"nivel 30" a revisar el 4-nov (lanzamiento).
 - Afinar con el usuario: pesos de stats, umbrales (UPGRADE 5%, MIN_LEVELS, MIN_FIT 0.4), zonas que propone la ruta.
 - Totems/abalorios: casi sin datos útiles por debajo de 60 (los "Icon" nuevos de Forever no traen efecto).

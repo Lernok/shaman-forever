@@ -1,13 +1,14 @@
 // Equipo › Tu camino: the gear path for your spec, faction, race and
-// professions (js/gear-plan.js), as "don't miss" quests per zone of your route
-// and the pieces to get in each 10-level bracket, each with why.
+// professions (js/gear-plan.js), one 10-level bracket at a time (your level
+// picks it): the zones of your route and the pieces in level order, quests of
+// those zones starred, why each one on demand.
 (function () {
   const t = (key, vars) => window.I18N.t(key, vars);
   const UI = window.UI;
   const Site = window.Site;
   const PROFS = ['Blacksmithing', 'Leatherworking', 'Tailoring', 'Engineering', 'Enchanting', 'Alchemy'];
-  const PROF_ICONS = { Blacksmithing: 'trade_blacksmithing', Leatherworking: 'trade_leatherworking', Tailoring: 'trade_tailoring', Engineering: 'trade_engineering', Enchanting: 'trade_engraving', Alchemy: 'trade_alchemy' };
-  const state = { drops: UI.store.get('gpDrops', false) };
+  const level = Math.min(60, Math.max(1, Number(UI.store.get('level', 1)) || 1));
+  const state = { drops: UI.store.get('gpDrops', false), detail: UI.store.get('gpDetail', false), level, bracket: Math.min(5, Math.floor((level - 1) / 10)) };
 
   // Armor and weapons: the weapon is one more slot of the plan.
   const gear = () => ((window.GEAR_DATA && window.GEAR_DATA.gear) || []).concat((window.WEAPON_DATA && window.WEAPON_DATA.weapons) || []);
@@ -81,68 +82,70 @@
     const used = new Set(plan.slots.Relic.steps.map(st => st.pick.item.id));
     const list = totems();
     if (!list.length) return '';
-    return '<div class="panel" style="margin-top:16px"><h3>' + t('gp.totems') + '</h3><p class="note-text dim">' + t('gp.totemsNote') + '</p>' +
+    return '<details class="panel gp-more"><summary>' + t('gp.totems') + '</summary><p class="note-text dim">' + t('gp.totemsNote') + '</p>' +
       list.map(i => '<div class="gp-step' + (used.has(i.id) ? '' : ' gp-off') + '"><span class="gp-lv">' + totemLevel(i) + '</span>' +
         '<span class="gp-slot">' + (used.has(i.id) ? t('gp.inPath') : '') + '</span><div class="gp-main">' + UI.itemLink(i) +
-        '<span class="wp-sub">' + totemSource(i) + '</span><span class="gp-why">' + window.I18N.client(i.equip[0]) + '</span></div></div>').join('') + '</div>';
+        '<span class="wp-sub">' + totemSource(i) + '</span><span class="gp-why">' + window.I18N.client(i.equip[0]) + '</span></div></div>').join('') + '</details>';
   }
 
-  function stepRow(st) {
+  // One row: level, slot, the piece and where it comes from; why, on demand.
+  // A star marks a quest of a zone of your route (the old "don't miss").
+  function stepRow(st, cls) {
     const i = st.pick.item;
-    return '<div class="gp-step' + (st.alt ? ' gp-alt' : '') + '"><span class="gp-lv">' + st.level + '</span>' +
-      '<span class="gp-slot">' + slotName(st.pick.slot) + '</span>' +
+    const star = st.pick.access === 'route' || st.alt;
+    return '<div class="gp-step' + (st.alt ? ' gp-alt' : '') + (cls ? ' ' + cls : '') + '"><span class="gp-lv">' + st.level + '</span>' +
+      '<span class="gp-slot">' + (star ? '<span class="gp-star" title="' + t('gp.starTitle') + '">★</span>' : '') + slotName(st.pick.slot) + '</span>' +
       '<div class="gp-main">' + UI.itemLink(i) + '<span class="wp-sub">' + sourceText(st.pick) + '</span>' +
-      '<span class="gp-why">' + why(st) + '</span></div></div>';
+      (st.alt || state.detail ? '<span class="gp-why">' + why(st) + '</span>' : '') + '</div></div>';
   }
 
-  // Zones of the route, in the order you reach them.
-  function routeStrip() {
-    const seen = [];
-    window.Route.brackets(Site.faction, race()).forEach(b => b.zones.forEach(z => { if (!seen.includes(z)) seen.push(z); }));
-    return seen;
-  }
+  // Brackets of ten levels; you look at one at a time.
+  const BRACKETS = [[1, 10], [11, 20], [21, 30], [31, 40], [41, 50], [51, 60]];
+  const bracketOf = lvl => Math.min(5, Math.floor((Math.max(1, lvl) - 1) / 10));
 
   function render(container, ui, tabsHtml, onChange) {
+    // The level may have changed in the setup screen.
+    const stored = Math.min(60, Math.max(1, Number(UI.store.get('level', 1)) || 1));
+    if (stored !== state.level) { state.level = stored; state.bracket = bracketOf(stored); }
     if (!window.GEAR_DATA) { container.innerHTML = tabsHtml + '<div class="caveat">' + t('gp.noData') + '</div>'; return; }
     const { plan, profs, picked } = compute();
-    const raceLabel = race() ? t('race.' + race()) : t('race.any');
+    const raceLabel = race() ? t('race.' + race()) : t('wp.faction.' + Site.faction);
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Armas + '">' +
-      '<div class="role">' + t('wp.role') + ' · ' + Site.spec + ' · ' + t('wp.faction.' + Site.faction) + ' · ' + raceLabel + '</div>' +
+      '<div class="role">' + t('wp.role') + ' · ' + raceLabel + ' · ' + Site.spec + '</div>' +
       '<h2>' + t('gp.title') + '</h2><p>' + t('gp.intro') + '</p></div>';
     html += tabsHtml;
-    html += '<div class="wp-controls"><span class="ctl-label">' + t('wp.profs.label') + '</span>' +
-      PROFS.map(p => '<button class="btn prof-btn' + (profs.includes(p) ? ' active' : '') + '" data-gp-prof="' + p + '" title="' + p + '">' +
-        '<img class="pb-icon" src="' + UI.icon(PROF_ICONS[p]) + '" alt="">' + p + '</button>').join('') +
-      '<span class="dim prof-hint">' + (!picked.length ? t('gp.profsNone') : !profs.length ? t('gp.profsGatherOnly') : '') + '</span></div>' +
-      '<div class="wp-controls"><label class="chk chip-toggle" title="' + t('gp.dropsTitle') + '"><input type="checkbox" id="gpDrops"' + (state.drops ? ' checked' : '') + '> ' + t('gp.drops') + '</label></div>';
 
-    // Steps of every slot, by bracket.
+    // For whom: your Shaman (change it in the setup) and the drops toggle.
+    html += '<div class="gp-for"><span>' + t('gp.for', { who: raceLabel + ' · ' + Site.spec, profs: picked.length ? picked.join(' + ') : t('setup.noProfsShort') }) +
+      (!picked.length ? ' <span class="dim">' + t('gp.profsNone') + '</span>' : !profs.length ? ' <span class="dim">' + t('gp.profsGatherOnly') + '</span>' : '') + '</span>' +
+      '<button class="btn" data-open-setup>' + t('home.change') + '</button>' +
+      '<label class="chk chip-toggle" title="' + t('gp.dropsTitle') + '"><input type="checkbox" id="gpDrops"' + (state.drops ? ' checked' : '') + '> ' + t('gp.drops') + '</label></div>';
+
+    // Your level picks the bracket; the bracket strip jumps to another one.
+    const br = state.bracket;
+    const [lo, hi] = BRACKETS[br];
+    html += '<div class="gp-levelbar"><label class="gp-level">' + t('gp.level') + ' <select id="gpLevel">' +
+      Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === state.level ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label>' +
+      '<div class="seg gp-brackets">' + BRACKETS.map(([a, z], k) => '<button class="btn' + (k === br ? ' active' : '') + '" data-bracket="' + k + '">' + a + '–' + z + '</button>').join('') + '</div></div>';
+
+    // The bracket: its zones, then every piece in level order, route quests
+    // starred and free alternatives to crafts in between.
     const steps = [];
     Object.values(plan.slots).forEach(p => p.steps.forEach(st => steps.push(st)));
-    steps.sort((a, b) => a.level - b.level || window.GearPlan.SLOTS.indexOf(a.pick.slot) - window.GearPlan.SLOTS.indexOf(b.pick.slot));
-
-    // Don't miss: route quests per zone, zones in route order.
-    const order = routeStrip();
-    const zones = Object.keys(plan.dontMiss).sort((a, b) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99));
-    html += '<div class="panel"><h3>' + t('gp.dontMiss') + '</h3><p class="note-text dim">' + t('gp.dontMissNote') + '</p>';
-    html += zones.length ? '<div class="gp-zones">' + zones.map(z => {
-      const band = (window.Route.data.zones[z] || {})[Site.faction];
-      return '<div class="gp-zone"><div class="gp-zone-head"><b>' + z + '</b>' + (band ? '<span class="dim">' + band[0] + '–' + band[1] + '</span>' : '') + '</div>' +
-        plan.dontMiss[z].map(stepRow).join('') + '</div>';
-    }).join('') + '</div>' : '<p class="dim">' + t('gp.none') + '</p>';
-    html += '</div>';
+    const alts = Object.values(plan.dontMiss).flat().filter(st => st.alt);
+    const order = (a, b) => a.level - b.level || window.GearPlan.SLOTS.indexOf(a.pick.slot) - window.GearPlan.SLOTS.indexOf(b.pick.slot);
+    const here = steps.concat(alts).filter(st => st.level >= lo && st.level <= hi).sort(order);
+    const routeZones = [...new Set(window.Route.brackets(Site.faction, race()).filter(b => b.to >= lo && b.from <= hi).flatMap(b => b.zones))];
+    const mine = state.level >= lo && state.level <= hi;
+    html += '<div class="panel gp-bracket-panel"><div class="gp-br-head"><b>' + t('gp.levels', { lo, hi }) + '</b>' +
+      (routeZones.length ? '<span class="dim">' + t('gp.zones', { list: routeZones.join(', ') }) + '</span>' : '') + '</div>' +
+      (here.length ? here.map(st => stepRow(st, mine && st.level < state.level ? 'gp-done' : '')).join('') : '<p class="dim">' + t('gp.nothing') + '</p>') +
+      '<div class="gp-br-foot"><span class="dim"><span class="gp-star">★</span> ' + t('gp.starTitle') + '</span>' +
+      '<button class="btn" data-detail>' + t(state.detail ? 'gp.hideWhy' : 'gp.showWhy') + '</button></div>' +
+      '<div class="gp-br-nav">' + (br > 0 ? '<button class="btn" data-bracket="' + (br - 1) + '">← ' + BRACKETS[br - 1].join('–') + '</button>' : '<span></span>') +
+      (br < 5 ? '<button class="btn" data-bracket="' + (br + 1) + '">' + BRACKETS[br + 1].join('–') + ' →</button>' : '') + '</div></div>';
 
     html += totemPanel(plan);
-    html += '<div class="panel" style="margin-top:16px"><h3>' + t('gp.byBracket') + '</h3>';
-    for (let lo = 1; lo <= 60; lo += 10) {
-      const hi = lo + 9;
-      const here = steps.filter(st => st.level >= lo && st.level <= hi);
-      const routeZones = [...new Set(window.Route.brackets(Site.faction, race()).filter(b => b.to >= lo && b.from <= hi).flatMap(b => b.zones))];
-      html += '<div class="gp-bracket"><div class="br-head"><b>' + lo + '–' + Math.min(hi, 60) + '</b><span class="dim">' + routeZones.join(', ') + '</span></div>' +
-        (here.length ? here.map(stepRow).join('') : '<p class="dim">' + t('gp.nothing') + '</p>') + '</div>';
-    }
-    html += '</div>';
-
     html += ui.renderSources([
       'https://github.com/Questie/QuestieDB — ' + t('gp.srcQuestie'),
       'https://github.com/ATTWoWAddon/AllTheThings — ' + t('gp.srcAtt'),
@@ -152,14 +155,23 @@
     ], t('gp.how', { upgrade: Math.round((window.GearPlan.UPGRADE - 1) * 100), favor: window.GearPlan.FAVOR_PER_BRACKET }));
     container.innerHTML = html;
 
-    container.querySelectorAll('[data-gp-prof]').forEach(b => b.addEventListener('click', () => {
-      const p = b.dataset.gpProf;
-      UI.store.set('profs', picked.includes(p) ? picked.filter(x => x !== p) : picked.concat(p).slice(-2));
-      onChange();
-    }));
+    container.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
     const drops = container.querySelector('#gpDrops');
     if (drops) drops.addEventListener('change', e => { state.drops = e.target.checked; UI.store.set('gpDrops', state.drops); onChange(); });
-    const byId = new Map(Object.values(plan.dontMiss).flat().concat(steps).map(st => [String(st.pick.item.id), st]));
+    container.querySelector('#gpLevel').addEventListener('change', e => {
+      state.level = Number(e.target.value);
+      state.bracket = bracketOf(state.level);
+      UI.store.set('level', state.level);
+      onChange();
+    });
+    container.querySelectorAll('[data-bracket]').forEach(b => b.addEventListener('click', () => {
+      state.bracket = Number(b.dataset.bracket);
+      onChange();
+      const head = container.querySelector('.gp-levelbar');
+      if (b.closest('.gp-br-nav') && head) head.scrollIntoView({ block: 'nearest' });
+    }));
+    container.querySelector('[data-detail]').addEventListener('click', () => { state.detail = !state.detail; UI.store.set('gpDetail', state.detail); onChange(); });
+    const byId = new Map(steps.concat(alts).map(st => [String(st.pick.item.id), st]));
     const totemById = new Map(totems().map(i => [String(i.id), i]));
     UI.tip.bind(container, '[data-item]', a => {
       const st = byId.get(a.dataset.item);

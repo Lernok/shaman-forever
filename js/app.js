@@ -82,26 +82,13 @@
     render(page);
   }
 
-  // Header: spec, faction and race pickers.
+  // Header: your Shaman in one chip; it opens the setup.
+  const chip = document.getElementById('profileChip');
   function renderPickers() {
-    document.getElementById('specPick').innerHTML = Site.SPECS.map(s =>
-      '<button class="btn' + (Site.spec === s ? ' active' : '') + '" data-pick-spec="' + s + '" style="--spec-color:' + SPEC_COLORS[s] + '" title="' + s + '">' +
-      '<img src="' + iconUrl(SPEC_ICONS[s]) + '" alt=""><span>' + s + '</span></button>').join('');
-    document.getElementById('factionPick').innerHTML = Site.FACTIONS.map(f =>
-      '<button class="btn ' + f + (Site.faction === f ? ' active' : '') + '" data-pick-faction="' + f + '">' + t('wp.faction.' + f) + '</button>').join('');
-    // Races of the chosen faction, and "any" (everything, as if none was picked).
-    document.getElementById('racePick').innerHTML = Site.races(Site.faction).map(r =>
-      '<button class="btn' + (Site.race === r.race ? ' active' : '') + '" data-pick-race="' + r.race + '" title="' + t('race.' + r.race) + '">' +
-      '<img src="' + iconUrl(r.icon) + '" alt=""><span>' + t('race.' + r.race) + '</span></button>').join('') +
-      '<button class="btn any' + (Site.race === 'any' ? ' active' : '') + '" data-pick-race="any" title="' + t('race.anyTitle') + '"><span>' + t('race.any') + '</span></button>';
+    chip.innerHTML = window.Setup.chipHtml();
+    chip.title = t('setup.change');
   }
-  document.querySelector('.picker').addEventListener('click', e => {
-    const b = e.target.closest('button');
-    if (!b) return;
-    if (b.dataset.pickSpec) Site.set('spec', b.dataset.pickSpec);
-    if (b.dataset.pickFaction) Site.set('faction', b.dataset.pickFaction);
-    if (b.dataset.pickRace) Site.set('race', b.dataset.pickRace);
-  });
+  chip.addEventListener('click', () => window.Setup.open());
   // A race remembered from another faction (or one Forever removed) reads as "any".
   Site.race = Site.validRace(Site.race, Site.faction);
   Site.onChange(() => {
@@ -150,4 +137,6 @@
   renderLegend();
   renderPickers();
   selectPage(currentPage);
+  // First visit: build your Shaman before anything else.
+  if (!UI.store.get('setupDone', false)) window.Setup.open();
 })();
