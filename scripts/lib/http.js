@@ -59,6 +59,7 @@ const JSON_OK = text => { try { JSON.parse(text); return true; } catch (e) { ret
  *               "not found" from Wowhead is asked again sooner)
  *   json        parse and return JSON (and require a JSON answer)
  *   valid       (text) => bool, extra check before caching
+ *   allowEmpty  an empty answer is a valid one (e.g. an empty source file)
  * Returns the text (or parsed JSON), or null when there's no good copy.
  */
 async function get(url, opts) {
@@ -66,7 +67,10 @@ async function get(url, opts) {
   const file = path.join(cacheDir, o.cache);
   const host = new URL(url).host;
   const idx = loadIndex();
-  const have = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null;
+  const ok = text => text != null && (o.allowEmpty || text.trim()) && (!o.json || JSON_OK(text)) && (!o.valid || o.valid(text));
+  // A cached copy must pass the same checks (an old format or a broken file is fetched again).
+  let have = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null;
+  if (have != null && !ok(have)) have = null;
   const out = text => (text == null ? null : o.json ? JSON.parse(text) : text);
   if (have != null) {
     // Files cached before the index existed count as fetched today.
@@ -76,7 +80,6 @@ async function get(url, opts) {
     if (OFFLINE || maxAge == null || age < maxAge) { count(host, 'cached'); return out(have); }
   }
   if (OFFLINE) { count(host, 'failed'); return null; }
-  const ok = text => text && text.trim() && (!o.json || JSON_OK(text)) && (!o.valid || o.valid(text));
   for (let attempt = 0; attempt < 3; attempt++) {
     await pace(host);
     try {

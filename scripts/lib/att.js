@@ -18,7 +18,7 @@ async function files() {
   const out = [];
   for (const f of list) {
     const text = await http.get('https://raw.githubusercontent.com/' + REPO + '/master/' + f.path.split('/').map(encodeURIComponent).join('/'),
-      { cache: 'att/' + f.sha + '.lua' });
+      { cache: 'att/' + f.sha + '.lua', allowEmpty: true });
     if (text != null) out.push({ path: f.path, text });
   }
   http.prune('att', new Set(list.map(f => f.sha + '.lua').concat('_tree.json')));
