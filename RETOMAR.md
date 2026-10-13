@@ -55,3 +55,8 @@ Leer esto entero antes de seguir. Al usuario le encantó el plan; arrancar por l
 - Escribir scripts de parche con la herramienta Write (no heredoc de bash: se come las barras invertidas).
 - Repo en LF (`.gitattributes`). Verificar refactors con snapshot de `data/` + diff, y barrido de todas las páginas × specs × facciones × idiomas en el navegador.
 - Fuentes y sus reglas: ver `ARQUITECTURA.md` y la memoria `reference_wow_forever_data_sources.md`.
+
+## Avance 2026-10-13 (sesión 2)
+- Conteo de candidatos de armadura (Cloth/Leather/Mail en todos los slots + capa + Neck/Ring/Trinket, verde+, nivel ≤ 60, filtro de clase): **~6960** (2699 con ItemSparse, 4265 sin ItemSparse: Wowhead decide si existen). Ya están 968 (crafteadas); quedan **~5950 tooltips nuevos** de Wowhead (el primer sync va a tardar bastante; después, caché).
+- `lib/weapon-sources.js` `classify()` ya es genérico (sirve para cualquier ítem); lo atado a armas está en `fetch-item-sources.js` (WEAPON_KINDS), `fetch-levels.js` (`isWeapon`) y `build-weapons.js`.
+- Próximo paso: en `sync.js` `itemTables()` agregar toda la armadura (con campo `slot` desde InventoryType) y correr el sync con red.
