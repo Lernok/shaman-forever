@@ -7,6 +7,13 @@
   };
   // Talent tree icons stand for each spec in the header.
   const SPEC_ICONS = { Enhancement: 'spell_nature_lightningshield', Elemental: 'spell_nature_lightning', Restoration: 'spell_nature_magicimmunity' };
+  const CLASS_ICON = 'classicon_shaman';
+  // Icons for the guide's summary tiles.
+  const STAT_ICONS = {
+    'Weapon Damage': 'inv_axe_09', 'Strength': 'spell_nature_strength', 'Spell Power': 'spell_holy_powerinfusion',
+    'Healing Power': 'spell_nature_healingwavegreater', 'Intellect': 'spell_holy_magicalsentry'
+  };
+  const WEAPON_ICONS = { '2H Axe': 'inv_axe_09', '1H Axe': 'inv_axe_01', '2H Mace': 'inv_mace_04', '1H Mace': 'inv_mace_01', 'Staff': 'inv_staff_08', 'Dagger': 'inv_weapon_shortblade_05', 'Fist': 'inv_gauntlets_04' };
 
   const I18N = window.I18N;
   const Site = window.Site;
@@ -23,6 +30,7 @@
   // 'large' is 56x56: shown at 48px it's downscaled (sharp) instead of the
   // 36x36 'medium' being blown up (blurry). Tree art is Classic's, same CDN.
   const ICON_BASE = 'https://wow.zamimg.com/images/wow/icons/large/';
+  const ICON_SMALL = 'https://wow.zamimg.com/images/wow/icons/medium/';
   const TREE_BG_BASE = 'https://wow.zamimg.com/images/wow/talents/backgrounds/classic/';
 
   const app = document.getElementById('app');
@@ -47,9 +55,65 @@
   function iconUrl(icon) {
     return ICON_BASE + (icon || 'inv_misc_questionmark') + '.jpg';
   }
+  function smallIcon(icon) {
+    return ICON_SMALL + (icon || 'inv_misc_questionmark') + '.jpg';
+  }
 
   function treeBg(tree) {
     return 'linear-gradient(rgba(12,13,16,.55), rgba(12,13,16,.82)), url(' + TREE_BG_BASE + tree.bg + '.jpg)';
+  }
+
+  // ---------- spell and talent names get their icon ----------
+
+  let refs = null;
+  function refIndex() {
+    if (refs) return refs;
+    const map = new Map();
+    const sd = window.SHAMAN_DATA;
+    sd.talents.trees.forEach(tr => tr.talents.forEach(x => map.set(x.name, x.icon)));
+    Object.keys(sd.spellbook.icons).forEach(n => map.set(n, sd.spellbook.icons[n]));
+    const names = Array.from(map.keys()).filter(n => n.length > 4).sort((a, b) => b.length - a.length);
+    const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    refs = { map, re: new RegExp('\\b(' + names.map(esc).join('|') + ')\\b', 'g') };
+    return refs;
+  }
+  function iconFor(name) { return refIndex().map.get(name); }
+  function firstRef(text) {
+    const m = String(text).match(refIndex().re);
+    return m ? iconFor(m[0]) : null;
+  }
+
+  // Wraps known names in text nodes with a small icon (once per name per node).
+  const NO_REFS = 'a, h2, h3, .spell-ref, .no-refs, .conf-dot, select, button';
+  function decorate(root) {
+    const { re } = refIndex();
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: n => (n.parentElement.closest(NO_REFS) || !n.nodeValue.trim() ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT)
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node => {
+      const text = node.nodeValue;
+      re.lastIndex = 0;
+      if (!re.test(text)) return;
+      re.lastIndex = 0;
+      const seen = new Set();
+      const frag = document.createDocumentFragment();
+      let last = 0, m;
+      while ((m = re.exec(text))) {
+        if (seen.has(m[0])) continue;
+        seen.add(m[0]);
+        frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+        const span = document.createElement('span');
+        span.className = 'spell-ref';
+        span.innerHTML = '<img src="' + smallIcon(iconFor(m[0])) + '" alt="" loading="lazy">';
+        span.appendChild(document.createTextNode(m[0]));
+        frag.appendChild(span);
+        last = m.index + m[0].length;
+      }
+      frag.appendChild(document.createTextNode(text.slice(last)));
+      node.parentNode.replaceChild(frag, node);
+    });
   }
 
   // A colored dot; what it means shows on hover or focus, and in the legend.
@@ -68,20 +132,24 @@
       '<span class="conf-key">' + badge(k) + t('conf.' + k) + '</span>').join('');
   }
 
-  // Collapsed by default: the titles say what changed, the cards say how.
+  // Page banner: kicker, title and one line over the spec's talent tree art.
+  function pageHead(kicker, title, intro) {
+    return '<div class="spec-summary"><div class="role">' + kicker + '</div><h2>' + title + '</h2>' +
+      (intro ? '<p>' + intro + '</p>' : '') + '</div>';
+  }
+
+  // One card per change: the title shows, the detail opens on click.
   function renderChanges(changes, spec) {
     if (!changes || !changes.length) return '';
-    let html = '<details class="changes-box"><summary><b>' + t('guide.changes', { spec: spec, n: changes.length }) + '</b>' +
-      '<span class="changes-titles">' + changes.map(c => c.change).join(' · ') + '</span></summary><div class="changes">';
-    changes.forEach(c => {
-      html += '<div class="change-card">' +
-                '<div class="title">⚠ ' + c.change + ' ' + badge(c.confidence) + '</div>' +
-                '<div class="detail">' + c.detail + '</div>' +
-                (c.source ? '<a class="src" href="' + c.source + '" target="_blank" rel="noopener">' + t('common.source') + '</a>' : '') +
-              '</div>';
-    });
-    html += '</div></details>';
-    return html;
+    return '<section class="block"><h3 class="block-title">' + t('guide.changesTitle') + ' <span class="count">' + changes.length + '</span></h3>' +
+      '<div class="change-grid">' + changes.map(c =>
+        '<details class="change-card"><summary class="no-refs">' +
+          '<img class="cc-icon" src="' + iconUrl(firstRef(c.change) || SPEC_ICONS[spec]) + '" alt="" loading="lazy">' +
+          '<span class="cc-title">' + c.change + '</span>' + badge(c.confidence) +
+        '</summary><div class="detail">' + c.detail +
+          (c.source ? ' <a class="src" href="' + c.source + '" target="_blank" rel="noopener">' + t('common.source') + '</a>' : '') +
+        '</div></details>').join('') +
+      '</div></section>';
   }
 
   function renderStatChips(list) {
@@ -89,6 +157,13 @@
     return '<div class="stat-row">' + list.map((s, i) =>
       '<span class="stat-chip"><span class="n">' + (i + 1) + '</span>' + I18N.term(s) + '</span>'
     ).join('') + '</div>';
+  }
+
+  // Priority as bars that shrink down the list.
+  function renderStatBars(list) {
+    return '<ol class="stat-bars">' + list.map((s, i) =>
+      '<li><span class="sb-n">' + (i + 1) + '</span><span class="sb-name">' + I18N.term(s) + '</span>' +
+      '<span class="sb-bar"><span style="width:' + Math.max(18, 100 - i * 18) + '%"></span></span></li>').join('') + '</ol>';
   }
 
   function renderList(items, ordered) {
@@ -116,27 +191,69 @@
     }).join('') + '</ul>' + (caveat ? '<p class="sources-caveat">' + caveat + '</p>' : '') + '</details>';
   }
 
-  function renderGuide(guide) {
-    const rot = guide.rotation;
-    let html = '<div class="panel">';
-    html += '<h3>' + t('guide.rotation') + ' ' + badge(rot.confidence) + '</h3>';
+  // ---------- guide ----------
+
+  function tile(icon, label, value, sub, href) {
+    const tag = href ? 'a' : 'div';
+    return '<' + tag + ' class="tile"' + (href ? ' href="' + href + '"' : '') + '>' +
+      '<img src="' + iconUrl(icon) + '" alt="" loading="lazy">' +
+      '<div class="tile-text"><span class="tile-label">' + label + '</span><span class="tile-value">' + value + '</span>' +
+      (sub ? '<span class="tile-sub">' + sub + '</span>' : '') + '</div></' + tag + '>';
+  }
+
+  // The short version, right under the banner.
+  function renderTiles(guide, spec) {
+    const list = guide.statPriority.list;
+    let html = '<div class="tiles">';
+    html += tile(SPEC_ICONS[spec], t('tile.role'), guide.role, spec);
+    const best = window.Weapons && window.Weapons.bestSafe(30);
+    if (best) {
+      html += tile(WEAPON_ICONS[best.kind], t('tile.weapon', { level: 30 }), '<span class="q' + best.quality + '">' + best.name + '</span>',
+        best.value + ' · ' + best.source, '#Equipo');
+    }
+    const build = window.I18N.localize(window.BUILD_DATA || []).find(b => b.spec === spec);
+    if (build) {
+      const pts = window.SHAMAN_DATA.talents.trees.map(tr => window.TalentRules.treePoints(build.points, tr));
+      const capstone = guide.keyTalents && iconFor(guide.keyTalents[0].split(' — ')[0].replace(/ (.*)$/, ''));
+      html += tile(capstone || SPEC_ICONS[spec], t('tile.build'), build.name, t('common.level') + ' ' + build.level + ' · ' + pts.join('/'), window.Calculator.linkFor(build));
+    }
+    html += tile(STAT_ICONS[list[0]] || 'spell_holy_magicalsentry', t('tile.stat'), I18N.term(list[0]),
+      t('tile.then', { list: list.slice(1, 4).map(I18N.term).join(', ') }));
+    return html + '</div>';
+  }
+
+  // Key talents: icon, name, what it does.
+  function renderKeyTalents(guide) {
+    if (!guide.keyTalents) return '';
+    return '<div class="panel"><h3>' + t('guide.keyTalents') + '</h3><ul class="key-talents">' + guide.keyTalents.map(k => {
+      const [full, what] = k.split(' — ');
+      const name = full.replace(/ \(.*\)$/, '');
+      const where = (full.match(/ \((.*)\)$/) || [])[1];
+      return '<li class="no-refs"><img src="' + iconUrl(iconFor(name)) + '" alt="" loading="lazy"><div><b>' + name + '</b>' +
+        (where ? ' <span class="dim">' + where + '</span>' : '') + (what ? '<span class="kt-what">' + what + '</span>' : '') + '</div></li>';
+    }).join('') + '</ul></div>';
+  }
+
+  function renderRotation(rot, spec) {
+    let html = '<div class="panel"><h3>' + t('guide.rotation') + ' ' + badge(rot.confidence) + '</h3>';
     const labels = { level20: t('guide.level20'), level30: t('guide.level30'), level60: t('guide.level60'), priority: t('guide.priority') };
     Object.keys(rot).forEach(key => {
-      if (key === 'confidence' || key === 'source' || key === 'level60Confidence') return;
-      if (key === 'totems') {
-        html += '<div class="sub-label">' + t('guide.keyTotems') + '</div>' + renderList(rot[key], false);
-      } else if (labels[key]) {
-        const extraBadge = key === 'level60' && rot.level60Confidence ? ' ' + badge(rot.level60Confidence) : '';
-        html += '<div class="sub-label">' + labels[key] + extraBadge + '</div>' + renderList(rot[key], true);
-      }
+      if (!labels[key]) return;
+      const extraBadge = key === 'level60' && rot.level60Confidence ? ' ' + badge(rot.level60Confidence) : '';
+      html += '<div class="sub-label">' + labels[key] + extraBadge + '</div><ol class="steps">' +
+        rot[key].map(s => '<li><span class="step-icon" style="background-image:url(' + iconUrl(firstRef(s) || SPEC_ICONS[spec]) + ')"></span><div>' + s + '</div></li>').join('') + '</ol>';
     });
-    html += '</div>';
+    if (rot.totems) {
+      html += '<div class="sub-label">' + t('guide.keyTotems') + '</div><div class="totem-row no-refs">' + rot.totems.map(n =>
+        '<span class="totem-tile"><img src="' + iconUrl(iconFor(n)) + '" alt="" loading="lazy">' + n + '</span>').join('') + '</div>';
+    }
+    return html + '</div>';
+  }
 
-    // What to look for: the priority, why, and the gear notes, in one place.
+  // What to look for: why the priority is what it is, and the gear notes.
+  function renderStatsGear(guide) {
     const sp = guide.statPriority;
-    html += '<div class="panel" style="margin-top:16px">';
-    // The priority itself is in the glance column next to it.
-    html += '<h3>' + t('guide.statsGear') + ' ' + badge(sp.confidence) + '</h3>';
+    let html = '<div class="panel"><h3>' + t('guide.statsGear') + ' ' + badge(sp.confidence) + '</h3>';
     if (sp.rationale) html += '<p class="note-text">' + sp.rationale + '</p>';
     if (sp.forever) html += '<div class="forever-note">' + sp.forever.note + ' ' + badge(sp.forever.confidence) + '</div>';
     if (sp.alsoReported) {
@@ -146,39 +263,36 @@
     const gear = (guide.gearTargets || []).concat(guide.gearingNotes || []);
     if (gear.length) html += '<div class="sub-label">' + t('guide.gearNotes') + '</div>' + renderNoteList(gear);
     html += '<p class="note-text dim">' + t('guide.toWeapons') + '</p>';
+    return html + '</div>';
+  }
+
+  function renderGuidePage(spec) {
+    const guide = window.I18N.localize(window.GUIDE_DATA[spec]);
+    let html = pageHead(guide.role, spec, guide.summary);
+    html += renderTiles(guide, spec);
+    html += renderChanges(guide.mechanicalChanges, spec);
+    html += '<div class="guide-cols">';
+    html += '<div class="col">' + '<div class="panel"><h3>' + t('guide.stats') + ' ' + badge(guide.statPriority.confidence) + '</h3>' +
+      renderStatBars(guide.statPriority.list) + '</div>' + renderKeyTalents(guide) + '</div>';
+    html += '<div class="col">' + renderRotation(guide.rotation, spec) + renderStatsGear(guide) + '</div>';
     html += '</div>';
+    html += renderSources(guide.sources, guide.caveat);
     return html;
   }
 
-  // Left column of the guide: the short version, with links to the full pages.
-  function renderGlance(guide, spec) {
-    let html = '<h3>' + t('guide.glance') + '</h3>';
-    html += '<div class="sub-label">' + t('guide.stats') + '</div>' + renderStatChips(guide.statPriority.list);
-    const best = window.Weapons && window.Weapons.bestSafe(30);
-    if (best) {
-      html += '<div class="sub-label">' + t('guide.weaponAt', { level: 30 }) + '</div>' +
-        '<div class="glance-weapon"><a class="q' + best.quality + '" href="#Equipo">' + best.name + '</a>' +
-        '<span class="wp-sub">' + best.value + ' · ' + t('guide.weaponFrom', { level: best.obtain }) + ' · ' + best.source + '</span></div>';
-    }
-    if (guide.keyTalents) {
-      // Name only; what each does is in the changes above and in the calculator.
-      html += '<div class="sub-label">' + t('guide.keyTalents') + '</div><div class="stat-row">' + guide.keyTalents.map(k => {
-        const [name, what] = k.split(' — ');
-        return '<span class="stat-chip" title="' + (what || '').replace(/"/g, '&quot;') + '">' + name.replace(/ \(.*\)$/, '') + '</span>';
-      }).join('') + '</div>';
-    }
-    const build = window.I18N.localize(window.BUILD_DATA || []).find(b => b.spec === spec);
-    if (build) {
-      html += '<div class="sub-label">' + t('guide.build') + '</div>' +
-        '<a href="' + window.Calculator.linkFor(build) + '">' + build.name + '</a> ' + badge(build.confidence) +
-        '<span class="wp-sub">' + t('common.level') + ' ' + build.level + ' · ' + window.SHAMAN_DATA.talents.trees.map(tr => window.TalentRules.treePoints(build.points, tr)).join('/') + '</span>';
-    }
-    html += '<div class="glance-links"><a href="#Talentos">' + t('guide.toTalents') + '</a><a href="#Equipo">' + t('guide.toGear') + '</a></div>';
-    return html;
-  }
+  // ---------- class page ----------
 
   function renderNotes(notes) {
     return '<ul class="plain">' + notes.map(n => '<li>' + n.fact + ' ' + badge(n.confidence) + '</li>').join('') + '</ul>';
+  }
+
+  // Notes as cards, with the icon of the first spell or talent they name.
+  function renderNoteCards(notes) {
+    return '<div class="note-grid">' + notes.map(n => {
+      const icon = firstRef(n.fact);
+      return '<div class="note-card' + (icon ? '' : ' plain-note') + '">' + (icon ? '<img src="' + iconUrl(icon) + '" alt="" loading="lazy">' : '') +
+        '<div>' + n.fact + ' ' + badge(n.confidence) + '</div></div>';
+    }).join('') + '</div>';
   }
 
   function pctLabel(p) {
@@ -186,11 +300,10 @@
   }
 
   function renderTotems(tot) {
-    let html = '<div class="panel" style="margin-top:16px"><h3>' + t('ov.totems') + '</h3>' + renderNotes(tot.notes) +
-      '<div class="sub-label">' + t('ov.totemsChanged') + ' ' + badge(tot.confidence) + '</div>' +
+    let html = renderNoteCards(tot.notes) + '<div class="panel" style="margin-top:16px"><h3>' + t('ov.totemsChanged') + ' ' + badge(tot.confidence) + '</h3>' +
       '<div class="table-wrap"><table class="cmp"><thead><tr><th>' + t('ov.colTotem') + '</th><th>Classic</th><th>Forever</th><th></th></tr></thead><tbody>';
     tot.changed.forEach(c => {
-      html += '<tr><td>' + c.totem + ' <span class="dim">' + c.rank + '</span></td><td class="dim">' + c.classic + '</td>' +
+      html += '<tr><td class="no-refs"><span class="spell-ref"><img src="' + smallIcon(iconFor(c.totem)) + '" alt="">' + c.totem + '</span> <span class="dim">' + c.rank + '</span></td><td class="dim">' + c.classic + '</td>' +
         '<td>' + c.forever + '</td><td>' + pctLabel(c.pct) + '</td></tr>';
     });
     return html + '</tbody></table></div>' +
@@ -199,14 +312,14 @@
 
   // Top-rank tooltip numbers, worked out live from the spellbook data.
   function renderDamage(dm) {
-    let html = '<div class="panel" style="margin-top:16px"><h3>' + t('ov.damage') + ' ' + badge('client-data') + '</h3>' +
+    let html = '<div class="panel"><h3>' + t('ov.damage') + ' ' + badge('client-data') + '</h3>' +
       '<p class="note-text">' + t('ov.damageIntro') + '</p>' +
       '<div class="dmg-list">';
     dm.spells.forEach(([name, rank]) => {
       const c = window.Spellbook.compare(name, rank);
       if (!c || c.pct == null) return;
       const left = Math.max(0, Math.min(100, 100 + c.pct));
-      html += '<div class="dmg-row"><div class="dmg-name">' + name + ' <span class="dim">' + rank.replace('Rank ', 'R') + '</span></div>' +
+      html += '<div class="dmg-row"><div class="dmg-name no-refs"><img src="' + smallIcon(iconFor(name)) + '" alt="">' + name + ' <span class="dim">' + rank.replace('Rank ', 'R') + '</span></div>' +
         '<div class="dmg-bar"><span style="width:' + left + '%"></span></div>' +
         '<div class="dmg-nums"><span class="dim">' + I18N.range(c.then) + '</span> → ' + I18N.range(c.now) + ' ' + pctLabel(c.pct) + '</div></div>';
     });
@@ -215,8 +328,8 @@
 
   function renderRaces(r) {
     const racials = window.SHAMAN_DATA.racials;
-    let html = '<div class="panel" style="margin-top:16px"><h3>' + t('ov.races') + ' ' + badge(r.confidence) + '</h3>' +
-      '<p class="note-text">' + r.note + '</p><div class="race-grid">';
+    let html = '<div class="panel"><h3>' + t('ov.races') + ' ' + badge(r.confidence) + '</h3>' +
+      '<p class="note-text">' + r.note + '</p><div class="race-grid no-refs">';
     [Site.faction === 'horde' ? 'Horde' : 'Alliance'].forEach(faction => {
       (racials[faction] || []).filter(x => x.classes.includes('Shaman')).forEach(race => {
         const isNew = r.newToShaman.includes(race.race);
@@ -234,66 +347,103 @@
   // Class page: what applies to every spec, one section at a time.
   const CLASS_SECTIONS = ['notas', 'totems', 'dano', 'razas'];
   function renderClass(guide) {
-    const color = SPEC_COLORS.Clase;
     const section = Site.section('Clase', CLASS_SECTIONS);
-    let html = '<div class="spec-summary" style="--spec-color:' + color + '">' +
-      '<div class="role">' + t('ov.role') + '</div>' +
-      '<h2>' + t('ov.title') + '</h2>' +
-      '<p>' + t('ov.intro') + '</p>' +
-      '</div>';
+    let html = pageHead(t('ov.role'), t('ov.title'), t('ov.intro'));
     html += Site.sectionTabs('Clase', CLASS_SECTIONS, section, k => t('cl.sec.' + k));
-    const foot = renderSources(guide.sources, guide.caveat);
-    if (section === 'totems') return html + renderTotems(guide.totems).replace('margin-top:16px', 'margin-top:0') + foot;
-    if (section === 'dano') return html + renderDamage(guide.damage).replace('margin-top:16px', 'margin-top:0') + foot;
-    if (section === 'razas') return html + renderRaces(guide.races).replace('margin-top:16px', 'margin-top:0') + foot;
+    if (section === 'totems') html += renderTotems(guide.totems);
+    else if (section === 'dano') html += renderDamage(guide.damage);
+    else if (section === 'razas') html += renderRaces(guide.races);
+    else html += renderNoteCards(guide.classNotes);
+    return html + renderSources(guide.sources, guide.caveat);
+  }
 
-    html += '<div class="grid-2">';
-    html += '<div class="panel"><h3>' + t('ov.classNotes') + '</h3>' + renderNotes(guide.classNotes) + '</div>';
+  // ---------- news page ----------
 
-    html += '<div>';
-    html += '<div class="panel"><h3>' + t('ov.calendar') + '</h3><ul class="plain timeline">' + guide.timeline.map(t =>
-      '<li><span class="tl-date">' + t.date + '</span><span>' + t.event + ' ' + badge(t.confidence) + '</span></li>'
-    ).join('') + '</ul></div>';
+  // "- **Name** #123: what" lines from the sync log.
+  function changeLine(line) {
+    return line.replace(/^- /, '')
+      .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
+      .replace(/#(\d{3,})/, '<a href="https://www.wowhead.com/forever/item=$1" target="_blank" rel="noopener">#$1</a>');
+  }
+
+  function changeList(title, lines) {
+    if (!lines.length) return '';
+    const shown = 8;
+    return '<div class="sub-label">' + title + ' (' + lines.length + ')</div><ul class="plain change-lines">' +
+      lines.slice(0, shown).map(l => '<li>' + changeLine(l) + '</li>').join('') + '</ul>' +
+      (lines.length > shown ? '<details class="more"><summary>' + t('news.more', { n: lines.length - shown }) + '</summary><ul class="plain change-lines">' +
+        lines.slice(shown).map(l => '<li>' + changeLine(l) + '</li>').join('') + '</ul></details>' : '');
+  }
+
+  function niceDate(iso) {
+    const d = new Date(iso + 'T12:00:00Z');
+    return d.toLocaleDateString(I18N.lang === 'en' ? 'en-US' : 'es-AR', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  function renderNews() {
+    const news = window.NEWS_DATA || { site: [], data: [] };
+    let html = pageHead(t('news.title'), t('news.title'), t('news.intro'));
+    html += '<div class="news-cols">';
+
+    // Calendar: past events dimmed, a "today" marker between past and future.
+    const raw = window.GUIDE_DATA.Overview.timeline;
+    const today = new Date();
+    let marked = false;
+    html += '<div class="panel"><h3>' + t('news.calendar') + '</h3><ol class="cal">';
+    raw.forEach(e => {
+      const when = new Date(e.date.en);
+      const past = !isNaN(when) && when < today;
+      if (!past && !marked) { marked = true; html += '<li class="cal-today"><span>' + t('news.today') + '</span></li>'; }
+      html += '<li class="' + (past ? 'past' : 'future') + '"><span class="cal-date">' + I18N.localize(e.date) + '</span>' +
+        '<span class="cal-event">' + I18N.localize(e.event) + ' ' + badge(e.confidence) + '</span></li>';
+    });
+    html += '</ol></div>';
+
+    html += '<div class="col">';
+    html += '<div class="panel"><h3>' + t('news.data') + '</h3><p class="note-text dim">' + t('news.dataIntro') +
+      (window.SITE_META ? ' ' + t('news.lastSync', { date: niceDate(window.SITE_META.syncedAt) }) : '') + '</p>';
+    if (!news.data.length) html += '<p class="note-text">' + t('news.dataEmpty') + '</p>';
+    news.data.forEach(e => {
+      html += '<div class="news-entry"><div class="news-date">' + niceDate(e.date) + ' <span class="dim">· build ' + e.build + '</span></div>' +
+        changeList(t('news.talents'), e.talents) + changeList(t('news.items'), e.items) + '</div>';
+    });
     html += '</div>';
-    html += '</div>';
 
-    html += foot;
+    html += '<div class="panel"><h3>' + t('news.site') + '</h3>';
+    I18N.localize(news.site).forEach(e => {
+      html += '<div class="news-entry"><div class="news-date">' + niceDate(e.day) + '</div><b class="news-title">' + e.title + '</b>' +
+        '<ul class="plain">' + e.items.map(i => '<li>' + i + '</li>').join('') + '</ul></div>';
+    });
+    html += '</div></div></div>';
     return html;
   }
+
+  // ---------- pages ----------
 
   function render(page) {
     window.Calculator.hide();
     if (window.Weapons) window.Weapons.hide();
     const spec = Site.spec;
-    // Every page but the class one is about the chosen spec, and wears its color.
-    const color = page === 'Clase' ? SPEC_COLORS.Clase : SPEC_COLORS[spec];
+    // Every page but the class and news ones is about the chosen spec, and wears its color and art.
+    const general = page === 'Clase' || page === 'Novedades';
+    const color = general ? SPEC_COLORS.Clase : SPEC_COLORS[spec];
     const specColors = Object.assign({}, SPEC_COLORS, { Calculadora: color, Armas: color, Profesiones: color, Spellbook: color });
-    document.documentElement.style.setProperty('--spec-color', color);
+    const tree = window.SHAMAN_DATA.talents.trees.find(tr => tr.name === spec);
+    const root = document.documentElement.style;
+    root.setProperty('--spec-color', color);
+    root.setProperty('--hero-bg', 'url(' + TREE_BG_BASE + tree.bg + '.jpg)');
+    root.setProperty('--hero-icon', 'url(' + iconUrl(general ? CLASS_ICON : SPEC_ICONS[spec]) + ')');
     app.style.setProperty('--spec-color', color);
+    document.body.dataset.page = page;
     const helpers = { badge, iconUrl, treeBg, renderSources, specColors };
 
     if (page === 'Profesiones') return window.Professions.render(app, helpers);
     if (page === 'Equipo') return window.Weapons.render(app, helpers);
     if (page === 'Hechizos') return window.Spellbook.render(app, helpers);
     if (page === 'Talentos') return window.Calculator.render(app, hashParts().slice(1), helpers);
-    if (page === 'Clase') { app.innerHTML = renderClass(window.I18N.localize(window.GUIDE_DATA.Overview)); return; }
-
-    const guide = window.I18N.localize(window.GUIDE_DATA[spec]);
-
-    let html = '<div class="spec-summary" style="--spec-color:' + color + '">' +
-      '<div class="role">' + guide.role + '</div>' +
-      '<h2>' + spec + '</h2>' +
-      '<p>' + guide.summary + '</p>' +
-      '</div>';
-
-    html += renderChanges(guide.mechanicalChanges, spec);
-
-    html += '<div class="grid-2 spec-layout">';
-    html += '<aside class="panel sticky glance">' + renderGlance(guide, spec) + '</aside>';
-    html += '<div>' + renderGuide(guide) + '</div>';
-    html += '</div>';
-    html += renderSources(guide.sources, guide.caveat);
-    app.innerHTML = html;
+    if (page === 'Novedades') { app.innerHTML = renderNews(); return; }
+    app.innerHTML = page === 'Clase' ? renderClass(window.I18N.localize(window.GUIDE_DATA.Overview)) : renderGuidePage(spec);
+    decorate(app);
   }
 
   function selectPage(page) {
@@ -306,10 +456,10 @@
   // Header: spec and faction pickers.
   function renderPickers() {
     document.getElementById('specPick').innerHTML = Site.SPECS.map(s =>
-      '<button class="btn' + (Site.spec === s ? ' active' : '') + '" data-pick-spec="' + s + '" style="--spec-color:' + SPEC_COLORS[s] + '">' +
-      '<img src="' + iconUrl(SPEC_ICONS[s]) + '" alt="">' + s + '</button>').join('');
+      '<button class="btn' + (Site.spec === s ? ' active' : '') + '" data-pick-spec="' + s + '" style="--spec-color:' + SPEC_COLORS[s] + '" title="' + s + '">' +
+      '<img src="' + iconUrl(SPEC_ICONS[s]) + '" alt=""><span>' + s + '</span></button>').join('');
     document.getElementById('factionPick').innerHTML = Site.FACTIONS.map(f =>
-      '<button class="btn' + (Site.faction === f ? ' active' : '') + '" data-pick-faction="' + f + '">' + t('wp.faction.' + f) + '</button>').join('');
+      '<button class="btn ' + f + (Site.faction === f ? ' active' : '') + '" data-pick-faction="' + f + '">' + t('wp.faction.' + f) + '</button>').join('');
   }
   document.querySelector('.picker').addEventListener('click', e => {
     const b = e.target.closest('button');
@@ -336,7 +486,8 @@
     upgradeHash();
     const page = hashParts()[0];
     if (!PAGES.includes(page)) return;
-    if (page !== currentPage || page === 'Talentos') { selectPage(page); return; }
+    if (page !== currentPage) { selectPage(page); window.scrollTo(0, 0); return; }
+    if (page === 'Talentos') { selectPage(page); return; }
     // Same page, another section: keep the section strip where it was.
     if (location.hash !== currentHash) {
       const strip = app.querySelector('.subtabs');

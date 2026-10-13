@@ -6,33 +6,36 @@
 <!-- The site is already dark: keep Dark Reader-style extensions from repainting it. -->
 <meta name="color-scheme" content="dark">
 <meta name="darkreader-lock">
-<title>Shaman: Forever — Enh / Ele / Resto</title>
+<title>Shaman: Forever</title>
+<link rel="icon" href="https://wow.zamimg.com/images/wow/icons/medium/classicon_shaman.jpg">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="top">
-    <div class="brand">
-      <span class="brand-icon">⚡</span>
-      <div>
-        <h1>Shaman <span class="accent">: Forever</span></h1>
-        <p class="tagline" data-i18n="site.tagline">Talentos, rotación y gearing para Enhancement, Elemental y Restoration — WoW: Forever (beta)</p>
+    <div class="top-inner">
+      <a class="brand" href="#Guia" aria-label="Shaman: Forever">
+        <span class="brand-icon"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_shaman.jpg" alt=""></span>
+        <span class="brand-name"><b>Shaman</b><span class="accent">Forever</span></span>
+      </a>
+      <!-- Picked once: every page shows this spec and faction. -->
+      <div class="picker">
+        <div class="seg spec-pick" id="specPick"></div>
+        <div class="seg faction-pick" id="factionPick"></div>
+        <button class="btn lang-toggle" id="langToggle" type="button">English</button>
       </div>
-      <button class="btn lang-toggle" id="langToggle" type="button">English</button>
     </div>
-    <!-- Picked once: every page shows this spec and faction. -->
-    <div class="picker">
-      <div class="seg spec-pick" id="specPick"></div>
-      <div class="seg faction-pick" id="factionPick"></div>
-    </div>
-    <nav class="spec-tabs" id="specTabs">
-      <button class="spec-tab" data-spec="Guia" data-i18n="tab.Guia">Guía</button>
-      <button class="spec-tab" data-spec="Talentos" data-i18n="tab.Talentos">Talentos</button>
-      <button class="spec-tab" data-spec="Equipo" data-i18n="tab.Equipo">Equipo</button>
-      <button class="spec-tab" data-spec="Profesiones" data-i18n="tab.Profesiones">Profesiones</button>
-      <button class="spec-tab" data-spec="Hechizos" data-i18n="tab.Hechizos">Hechizos</button>
-      <button class="spec-tab" data-spec="Clase" data-i18n="tab.Clase">Clase</button>
-    </nav>
   </header>
+  <nav class="mainnav">
+    <div class="nav-inner" id="specTabs">
+      <button class="spec-tab" data-spec="Guia"><img src="https://wow.zamimg.com/images/wow/icons/medium/inv_misc_book_09.jpg" alt=""><span data-i18n="tab.Guia">Guía</span></button>
+      <button class="spec-tab" data-spec="Talentos"><img src="https://wow.zamimg.com/images/wow/icons/medium/spell_nature_unleashedrage.jpg" alt=""><span data-i18n="tab.Talentos">Talentos</span></button>
+      <button class="spec-tab" data-spec="Equipo"><img src="https://wow.zamimg.com/images/wow/icons/medium/inv_axe_09.jpg" alt=""><span data-i18n="tab.Equipo">Equipo</span></button>
+      <button class="spec-tab" data-spec="Profesiones"><img src="https://wow.zamimg.com/images/wow/icons/medium/trade_blacksmithing.jpg" alt=""><span data-i18n="tab.Profesiones">Profesiones</span></button>
+      <button class="spec-tab" data-spec="Hechizos"><img src="https://wow.zamimg.com/images/wow/icons/medium/spell_nature_chainlightning.jpg" alt=""><span data-i18n="tab.Hechizos">Hechizos</span></button>
+      <button class="spec-tab" data-spec="Clase"><img src="https://wow.zamimg.com/images/wow/icons/medium/spell_nature_bloodlust.jpg" alt=""><span data-i18n="tab.Clase">Clase</span></button>
+      <button class="spec-tab" data-spec="Novedades"><img src="https://wow.zamimg.com/images/wow/icons/medium/inv_scroll_03.jpg" alt=""><span data-i18n="tab.Novedades">Novedades</span></button>
+    </div>
+  </nav>
 
   <main id="app"></main>
 
@@ -46,6 +49,7 @@
   <script src="js/site.js"></script>
   <script src="data/shaman.js"></script>
   <script src="data/guides.js"></script>
+  <script src="data/news.js"></script>
   <script src="data/builds.js"></script>
   <script src="js/talent-rules.js"></script>
   <script src="js/calculator.js"></script>

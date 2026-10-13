@@ -384,7 +384,7 @@
       if (!w) return null;
       const s = w.usable.find(x => SAFE.includes(x.type)) || w.usable[0];
       const value = spec().metric === 'dps' ? window.I18N.num(w.dps.toFixed(1)) + ' DPS' : t('wp.ilvl') + ' ' + w.ilvl;
-      return { name: w.name, quality: w.quality, obtain: w.obtain, value, source: sourceText(s) };
+      return { id: w.id, name: w.name, kind: w.kind, quality: w.quality, obtain: w.obtain, value, source: sourceText(s) };
     }
   };
 })();

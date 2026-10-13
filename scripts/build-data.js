@@ -67,12 +67,15 @@ const guides = {};
   guides[g.spec || 'Overview'] = g;
 });
 Object.keys(guides).forEach(k => checkLang(guides[k], 'guides/' + k, ''));
+const news = read('data/news.json');
+news.site.forEach((e, i) => checkLang(e, 'news/' + i, ''));
 read('data/builds.json').builds.forEach(b => checkLang(b, 'builds/' + b.id, ''));
 if (langErrors.length) {
   console.error(langErrors.join('\n') + '\n\nTextos sin los dos idiomas: no se generó nada.');
   process.exit(1);
 }
 write('data/guides.js', 'GUIDE_DATA', guides);
+write('data/news.js', 'NEWS_DATA', { site: news.site, data: read('data/changelog.json').entries });
 
 // ---------- client text templates (GLOSARIO.md, section 4) ----------
 // Every text that comes from the game client must have a Spanish template; a
@@ -173,7 +176,7 @@ if (failed) {
 write('data/builds.js', 'BUILD_DATA', builds);
 
 // Items and sync metadata come from scripts/sync.js; the site works without them.
-const outputs = ['data/shaman.js', 'data/guides.js', 'data/builds.js', 'data/client-es.js'];
+const outputs = ['data/shaman.js', 'data/guides.js', 'data/news.js', 'data/builds.js', 'data/client-es.js'];
 if (fs.existsSync(path.join(root, 'data/items.json'))) {
   write('data/items.js', 'ITEM_DATA', read('data/items.json'));
   outputs.push('data/items.js');

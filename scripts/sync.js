@@ -363,6 +363,15 @@ function diffItems(prev, next) {
     ''
   ].join('\n');
   const reportFile = 'reports/changes-' + from + '-to-' + build + '.md';
+  if (talentLines.length || itemLines.length) {
+    const log = readJSON('data/changelog.json', { entries: [] });
+    const today = log.entries[0] && log.entries[0].date === meta.syncedAt ? log.entries.shift() : { date: meta.syncedAt, talents: [], items: [] };
+    today.build = build;
+    today.talents = today.talents.concat(talentLines.filter(l => !today.talents.includes(l)));
+    today.items = today.items.concat(itemLines.filter(l => !today.items.includes(l)));
+    log.entries = [today].concat(log.entries).slice(0, 90);
+    writeJSON('data/changelog.json', log);
+  }
   fs.mkdirSync(rel('reports'), { recursive: true });
   fs.writeFileSync(rel(reportFile), report);
   console.log('Tooltips nuevos descargados: ' + fetched + '. Reporte: ' + reportFile);
