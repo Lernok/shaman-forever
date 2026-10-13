@@ -37,7 +37,7 @@ Object.values(items).filter(i => i.crafted).forEach(i => {
   out[prof].push({
     id: i.id, name: i.name, kind: i.kind, quality: i.quality, req: i.req, ilvl: i.ilvl, bind: i.bind,
     stats: i.stats || {}, bonus: i.bonus || {}, armor: i.armor || null, dps: i.dps || null, speed: i.speed || null,
-    era: i.era, numbers: i.numbers || 'forever',
+    era: i.era, numbers: i.numbers || 'forever', icon: i.icon || null, equip: i.equip || [],
     role: has(i, CASTER) && has(i, MELEE) ? 'hybrid' : has(i, CASTER) ? 'caster' : has(i, MELEE) ? 'melee' : 'other',
     // Shamans train Mail at 40.
     mailFrom40: i.kind === 'Mail' && i.req < 40,

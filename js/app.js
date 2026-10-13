@@ -423,6 +423,7 @@
   function render(page) {
     window.Calculator.hide();
     if (window.Weapons) window.Weapons.hide();
+    if (window.Professions) window.Professions.hide();
     const spec = Site.spec;
     // Every page but the class and news ones is about the chosen spec, and wears its color and art.
     const general = page === 'Clase' || page === 'Novedades';
