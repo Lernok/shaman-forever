@@ -43,6 +43,7 @@
 
   // Why it's on the path: how you get it and how long it lasts.
   function why(st) {
+    if (st.alt) return t('gp.why.alt', { name: st.alt.item.name });
     const parts = [t('gp.why.' + st.pick.access)];
     parts.push(st.until > 60 ? t('gp.lastsTo60') : t(st.lasts === 1 ? 'gp.lasts1' : 'gp.lasts', { n: st.lasts, until: st.until }));
     if (st.replaces) parts.push(t('gp.replaces', { name: st.replaces.item.name }));
@@ -53,7 +54,7 @@
 
   function stepRow(st) {
     const i = st.pick.item;
-    return '<div class="gp-step"><span class="gp-lv">' + st.level + '</span>' +
+    return '<div class="gp-step' + (st.alt ? ' gp-alt' : '') + '"><span class="gp-lv">' + st.level + '</span>' +
       '<span class="gp-slot">' + slotName(st.pick.slot) + '</span>' +
       '<div class="gp-main">' + UI.itemLink(i) + '<span class="wp-sub">' + sourceText(st.pick) + '</span>' +
       '<span class="gp-why">' + why(st) + '</span></div></div>';
@@ -122,7 +123,7 @@
     }));
     const drops = container.querySelector('#gpDrops');
     if (drops) drops.addEventListener('change', e => { state.drops = e.target.checked; UI.store.set('gpDrops', state.drops); onChange(); });
-    const byId = new Map(steps.map(st => [String(st.pick.item.id), st]));
+    const byId = new Map(Object.values(plan.dontMiss).flat().concat(steps).map(st => [String(st.pick.item.id), st]));
     UI.tip.bind(container, '[data-item]', a => {
       const st = byId.get(a.dataset.item);
       return st ? UI.itemCard(st.pick.item, [sourceText(st.pick), why(st)]) : null;

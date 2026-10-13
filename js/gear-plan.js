@@ -200,6 +200,20 @@
       const z = st.pick.source.zone || '?';
       (dontMiss[z] = dontMiss[z] || []).push(st);
     }));
+    // A route quest beaten only by a craft stays there as the alternative: your
+    // skill or materials may not be there in time, and the quest is free.
+    if (!opts.noAlt && (!opts.profs || opts.profs.length)) {
+      const plain = plan(gear, Object.assign({}, opts, { profs: [], noAlt: true }));
+      SLOTS.forEach(s => plain.slots[s].steps.filter(st => st.pick.access === 'route').forEach(st => {
+        const mine = slots[s].steps;
+        if (mine.some(m => m.pick.item.id === st.pick.item.id)) return;
+        const held = mine.filter(m => m.level <= st.level).slice(-(COUNT[s] || 1));
+        const craft = held.find(m => ['crafted', 'favor'].includes(m.pick.access));
+        if (!craft) return;
+        const z = st.pick.source.zone || '?';
+        (dontMiss[z] = dontMiss[z] || []).push(Object.assign({}, st, { alt: craft.pick, replaces: null }));
+      }));
+    }
     Object.values(dontMiss).forEach(l => l.sort((a, b) => a.level - b.level));
     return { slots, dontMiss, favor: [...favor], candidates: all.length };
   }
