@@ -77,7 +77,8 @@
   }
 
   // How you'd get a piece, as the best access you have; null if you can't.
-  // opts: { spec, faction, race, profs, drops, route(zone, level) }
+  // opts: { spec, faction, race, profs (crafting professions; null = any),
+  //   drops, route(zone, level) }
   function access(item, s, opts) {
     if (s.faction !== 'both' && s.faction !== opts.faction) return null;
     if (s.raid || s.pvp) return null;
@@ -86,7 +87,7 @@
       return opts.route(s.zone, s.rec) ? 'route' : 'quest';
     }
     if (s.type === 'crafted') {
-      if (opts.profs.length && !opts.profs.includes(s.profession)) return null;
+      if (opts.profs && !opts.profs.includes(s.profession)) return null;
       const learn = s.learn || {};
       if (learn.type === 'favor') return 'favor';
       return learn.type === 'trainer' ? 'crafted' : null;

@@ -13,12 +13,15 @@
   const race = () => (Site.race === 'any' ? null : Site.race);
 
   function compute() {
-    const profs = UI.store.get('profs', []).filter(p => PROFS.includes(p));
+    // Your professions (shared with the Professions page, gathering ones too):
+    // crafts count only from your crafting ones; none picked = any craft.
+    const picked = UI.store.get('profs', []);
+    const profs = picked.filter(p => PROFS.includes(p));
     const opts = {
-      spec: Site.spec, faction: Site.faction, race: race(), profs, drops: state.drops,
+      spec: Site.spec, faction: Site.faction, race: race(), profs: picked.length ? profs : null, drops: state.drops,
       route: (zone, lvl) => window.Route.onRoute(zone, lvl, Site.faction, race())
     };
-    return { plan: window.GearPlan.plan(gear(), opts), profs };
+    return { plan: window.GearPlan.plan(gear(), opts), profs, picked };
   }
 
   // Where it comes from, in one line.
@@ -63,7 +66,7 @@
 
   function render(container, ui, tabsHtml, onChange) {
     if (!window.GEAR_DATA) { container.innerHTML = tabsHtml + '<div class="caveat">' + t('gp.noData') + '</div>'; return; }
-    const { plan, profs } = compute();
+    const { plan, profs, picked } = compute();
     const raceLabel = race() ? t('race.' + race()) : t('race.any');
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Armas + '">' +
       '<div class="role">' + t('wp.role') + ' · ' + Site.spec + ' · ' + t('wp.faction.' + Site.faction) + ' · ' + raceLabel + '</div>' +
@@ -72,7 +75,7 @@
     html += '<div class="wp-controls"><span class="ctl-label">' + t('wp.profs.label') + '</span>' +
       PROFS.map(p => '<button class="btn prof-btn' + (profs.includes(p) ? ' active' : '') + '" data-gp-prof="' + p + '" title="' + p + '">' +
         '<img class="pb-icon" src="' + UI.icon(PROF_ICONS[p]) + '" alt="">' + p + '</button>').join('') +
-      '<span class="dim prof-hint">' + (profs.length ? '' : t('gp.profsNone')) + '</span></div>' +
+      '<span class="dim prof-hint">' + (!picked.length ? t('gp.profsNone') : !profs.length ? t('gp.profsGatherOnly') : '') + '</span></div>' +
       '<div class="wp-controls"><label class="chk chip-toggle" title="' + t('gp.dropsTitle') + '"><input type="checkbox" id="gpDrops"' + (state.drops ? ' checked' : '') + '> ' + t('gp.drops') + '</label></div>';
 
     // Steps of every slot, by bracket.
@@ -112,7 +115,7 @@
 
     container.querySelectorAll('[data-gp-prof]').forEach(b => b.addEventListener('click', () => {
       const p = b.dataset.gpProf;
-      UI.store.set('profs', profs.includes(p) ? profs.filter(x => x !== p) : profs.concat(p).slice(-2));
+      UI.store.set('profs', picked.includes(p) ? picked.filter(x => x !== p) : picked.concat(p).slice(-2));
       onChange();
     }));
     const drops = container.querySelector('#gpDrops');
@@ -124,5 +127,6 @@
     });
   }
 
-  window.GearPath = { render };
+  // The Professions page shows the crafted part of the same path.
+  window.GearPath = { render, compute, sourceText, why, slotName };
 })();

@@ -456,6 +456,14 @@
       if (!window.WEAPON_DATA) { container.innerHTML = '<div class="caveat">' + t('wp.noData') + '</div>'; return; }
       renderAll();
     },
+    // Guaranteed weapon path with your professions: [{ level, weapon, until }]
+    // (the Professions page picks the crafted ones).
+    steps() {
+      if (!window.WEAPON_DATA) return [];
+      state.profs = stored('profs', []);
+      const p = progression(candidates().filter(isSafe)).steps;
+      return p.map((s, i) => ({ level: s.level, weapon: s.weapon, until: p[i + 1] ? p[i + 1].level : 61 }));
+    },
     // Best guaranteed weapon at a level for the header's spec and faction,
     // with the default source toggles (the guide's "at a glance" card).
     bestSafe(level) {

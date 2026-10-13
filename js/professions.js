@@ -1,8 +1,9 @@
 // Professions page, built around the player's plan:
-//   plan        your two professions (shared with the Gear page) and, every 10
-//               levels, what to craft, eat, fish and bandage with; your camp
-//   profesion   one profession: TL;DR for your spec, its camp object, what it
-//               crafts by level, how to level it
+//   plan        your two professions (shared with the Gear page), their camp
+//               objects and, every 10 levels, only what's worth crafting: the
+//               crafted pieces of your gear path (js/gear-plan.js), your 1-2
+//               Merchant's Favor recipes with their cost, a crafted weapon
+//               when it's the best you can have
 //   cocina      cooking and fishing together, fish recipes only: the skill-up
 //               path, where to fish (zones of your route first), fish food for your spec
 //   auxilios    first aid: a bandage per level bracket, potions, cures
@@ -15,8 +16,7 @@
   const UI = window.UI;
   let ui = null;
   let container = null;
-  const state = { profession: null, rareOnly: true };
-  const SECTIONS = ['plan', 'profesion', 'cocina', 'auxilios', 'sistemas'];
+  const SECTIONS = ['plan', 'cocina', 'auxilios', 'sistemas'];
   const CRAFTING = ['Leatherworking', 'Blacksmithing', 'Tailoring', 'Enchanting', 'Engineering', 'Alchemy'];
   const GATHERING = ['Skinning', 'Mining', 'Herbalism'];
   const PRIMARY = ['Leatherworking', 'Skinning', 'Blacksmithing', 'Mining', 'Tailoring', 'Enchanting', 'Engineering', 'Herbalism', 'Alchemy'];
@@ -33,23 +33,12 @@
   const BETA_CAP = 30;
   // The new systems, in the order of data/guides/professions.json.
   const SYSTEM_ICONS = ['inv_misc_book_09', 'inv_misc_coin_02', 'inv_misc_bag_10', 'spell_holy_wordfortitude', 'inv_scroll_03'];
-  // Stats worth eating for, per spec (first = most important).
-  const SPEC_FOOD = {
-    Enhancement: ['strength', 'agility', 'attackPower', 'crit'],
-    Elemental: ['spellDamage', 'intellect', 'crit'],
-    Restoration: ['healing', 'intellect', 'spirit']
-  };
-  const STAT_ICONS = { strength: 'spell_nature_strength', agility: 'ability_rogue_sprint', attackPower: 'ability_warrior_battleshout',
-    spellDamage: 'spell_fire_flamebolt', intellect: 'spell_holy_magicalsentry', healing: 'spell_nature_healingwavegreater', spirit: 'spell_holy_divinespirit',
-    crit: 'ability_criticalstrike', stamina: 'spell_nature_unyeildingstamina', fishing: 'trade_fishing', other: 'inv_misc_food_15' };
   // The bandage for each bracket follows the cloth its enemies drop.
   const BANDAGES = [['Linen Bandage', 'Heavy Linen Bandage'], ['Wool Bandage', 'Heavy Wool Bandage'], ['Silk Bandage', 'Heavy Silk Bandage'],
     ['Mageweave Bandage', 'Heavy Mageweave Bandage'], ['Runecloth Bandage', 'Heavy Runecloth Bandage'], ['Heavy Runecloth Bandage', 'Dense Runecloth Bandage']];
 
   const profIcon = (p, cls) => '<img class="' + (cls || 'prof-icon') + '" src="' + UI.icon(PROF_ICONS[p]) + '" alt="" loading="lazy">';
   const myProfs = () => UI.store.get('profs', []).filter(p => PRIMARY.includes(p));
-  const roleOf = () => (Site.spec === 'Enhancement' ? 'melee' : 'caster');
-  const fitsSpec = i => i.role === roleOf() || i.role === 'hybrid';
   const consumables = () => (window.CONSUMABLE_DATA || { items: [], fish: {} });
   const guide = () => window.I18N.localize(window.GUIDE_DATA.Professions);
   const bracketHead = ([lo, hi]) => '<div class="br-title"><b>' + t('pr.levels', { lo, hi }) + '</b>' + (lo > BETA_CAP ? '<span class="dim">' + t('pr.postCap') + '</span>' : '') + '</div>';
@@ -147,29 +136,8 @@
 
   // ---------- picks ----------
 
-  // The best food for a stat you can eat by level `hi` (and whether it's new in the bracket).
-  function bestFood(stat, lo, hi) {
-    const list = consumables().items.filter(f => f.profession === 'Cooking' && f.buff && f.buff.stat === stat && f.req <= hi);
-    if (!list.length) return null;
-    const top = Math.max(...list.map(f => f.buff.amount));
-    const foods = list.filter(f => f.buff.amount === top).sort((a, b) => b.req - a.req);
-    return { stat, amount: top, foods, isNew: foods.some(f => f.req >= lo) };
-  }
 
-  // Fish the given foods need, with where to catch them.
-  function fishFor(foods) {
-    const fish = consumables().fish || {};
-    const out = new Map();
-    foods.forEach(f => (f.reagents || []).forEach(r => { if (fish[r.id]) out.set(r.id, Object.assign({ id: r.id }, fish[r.id])); }));
-    return [...out.values()];
-  }
 
-  // Crafted gear from a profession for your spec, by level.
-  function crafted(prof, lo, hi) {
-    const list = ((window.PROFESSION_DATA || {}).professions || {})[prof] || [];
-    return list.filter(i => i.req >= lo && i.req <= hi && fitsSpec(i) && (!state.rareOnly || i.quality >= 3))
-      .sort((a, b) => b.quality - a.quality || (b.bind === 'pickup') - (a.bind === 'pickup') || b.ilvl - a.ilvl);
-  }
 
   // ---------- sections ----------
 
@@ -193,6 +161,8 @@
       '<span class="camp-effect">' + window.I18N.localize(c.effect) + '</span><span class="dim camp-up">' + c.upgrades + '</span></div></div>';
   }
 
+  // What's worth crafting: the crafted pieces of your gear path (Equipo › Tu
+  // camino) and the crafted weapon when it's the best you can have, by bracket.
   function renderPlan(g) {
     const mine = myProfs();
     let html = '<div class="panel"><h3>' + t('pr.plan.pick') + '</h3>' + pickerHtml(mine, true) + '</div>';
@@ -201,65 +171,47 @@
         g.pairs.filter(p => p.specs.includes(Site.spec)).map(p => pairCard(p, true)).join('') + '</div>';
       if (!mine.length) return html;
     }
-    // Your camp: your professions' objects, and the ones everyone has.
-    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.plan.camp') + '</h3><div class="camp-grid">' +
-      mine.concat(['Cooking', 'Fishing', 'First Aid']).map(campCard).join('') + '</div>';
+    html += '<div class="camp-grid" style="margin-top:16px">' + mine.map(campCard).join('') + '</div>';
+    mine.filter(p => GATHERING.includes(p)).forEach(p => { html += '<p class="note-text">' + profIcon(p, 'pk-icon') + ' ' + t('pr.prof.gather', { list: FEEDS[p].join(', ') }) + '</p>'; });
     const makers = mine.filter(p => CRAFTING.includes(p));
-    const stats = SPEC_FOOD[Site.spec].slice(0, 2);
-    const aid = consumables().items.filter(f => f.profession === 'First Aid');
-    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.plan.title', { spec: Site.spec, profs: mine.join(' + ') }) + '</h3><div class="plan-list">';
-    BRACKETS.forEach(([lo, hi], bi) => {
-      let rows = '';
-      makers.forEach(p => {
-        const list = crafted(p, lo, hi);
-        rows += '<div class="plan-row"><span class="plan-k">' + profIcon(p, 'pk-icon') + t('pr.plan.craft') + '</span><div class="plan-v">' +
-          (list.length ? list.slice(0, 4).map(i => UI.itemLink(i)).join('') +
-            (list.length > 4 ? '<a class="plan-more" href="#Profesiones/profesion" data-show-prof="' + p + '">' + t('pr.plan.more', { n: list.length - 4, prof: p }) + '</a>' : '')
-            : '<span class="dim">' + t('pr.plan.nothing') + '</span>') + '</div></div>';
-      });
-      const foods = stats.map(s => bestFood(s, lo, hi)).filter(Boolean);
-      if (foods.length) {
-        rows += '<div class="plan-row"><span class="plan-k">' + profIcon('Cooking', 'pk-icon') + t('pr.plan.eat') + '</span><div class="plan-v">' +
-          foods.map(b => '<span class="plan-food"><b>+' + b.amount + (b.stat === 'crit' ? '%' : '') + ' ' + t('pr.stat.' + b.stat) + '</b> ' + b.foods.slice(0, 2).map(foodLink).join('') + '</span>').join('') + '</div></div>';
-        const fish = fishFor(foods.flatMap(b => b.foods.slice(0, 2)));
-        if (fish.length) rows += '<div class="plan-row"><span class="plan-k">' + profIcon('Fishing', 'pk-icon') + t('pr.plan.fish') + '</span><div class="plan-v">' +
-          fish.map(f => '<span class="plan-fish"><b>' + f.name + '</b> <span class="dim">' + fishWhere(f) + '</span></span>').join('') + '</div></div>';
-      }
-      const band = BANDAGES[bi].map(n => aid.find(f => f.name === n)).filter(Boolean);
-      if (band.length) rows += '<div class="plan-row"><span class="plan-k">' + profIcon('First Aid', 'pk-icon') + t('pr.plan.bandage') + '</span><div class="plan-v">' +
-        band.map(foodLink).join('') + '</div></div>';
-      html += '<div class="plan-bracket' + (lo > BETA_CAP ? ' post-cap' : '') + '">' + bracketHead([lo, hi]) + rows + '</div>';
+    if (!makers.length) return html + '<p class="note-text">' + t('pr.plan.gatherOnly') + '</p>' + guidesHtml(g);
+
+    const GP = window.GearPath;
+    const { plan } = GP.compute();
+    const steps = [];
+    Object.values(plan.slots).forEach(p => p.steps.forEach(st => { if (['crafted', 'favor'].includes(st.pick.access)) steps.push(st); }));
+    steps.sort((x, y) => x.level - y.level);
+    const weapons = window.Weapons.steps().filter(s => s.weapon.via && s.weapon.via.type === 'crafted' && !s.weapon.via.viaAH);
+    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.plan.title', { spec: Site.spec, profs: makers.join(' + ') }) + '</h3>' +
+      '<p class="note-text dim">' + t('pr.plan.worth') + '</p><div class="plan-list">';
+    BRACKETS.forEach(([lo, hi]) => {
+      const here = steps.filter(st => st.level >= lo && st.level <= hi);
+      const arms = weapons.filter(s => s.level >= lo && s.level <= hi);
+      const favor = here.filter(st => st.pick.access === 'favor');
+      let rows = arms.map(s => '<div class="gp-step"><span class="gp-lv">' + s.level + '</span><span class="gp-slot">' + t('pr.plan.weapon') + '</span>' +
+        '<div class="gp-main">' + UI.itemLink(s.weapon) + '<span class="wp-sub">' + s.weapon.via.profession + ' · ' + t('pr.plan.skill', { n: s.weapon.via.yellow }) + '</span>' +
+        '<span class="gp-why">' + (s.until > 60 ? t('gp.lastsTo60') : t('gp.lasts', { n: s.until - s.level, until: s.until })) + '</span></div></div>').join('');
+      rows += here.filter(st => st.pick.access === 'crafted').map(st => craftRow(st)).join('');
+      if (favor.length) rows += '<div class="plan-favor"><b>' + t('pr.plan.favor', { n: favor.length }) + '</b>' + favor.map(st => craftRow(st)).join('') + '</div>';
+      html += '<div class="plan-bracket' + (lo > BETA_CAP ? ' post-cap' : '') + '">' + bracketHead([lo, hi]) +
+        (rows || '<p class="dim">' + t('pr.plan.nothingWorth') + '</p>') + '</div>';
     });
-    html += '</div><p class="note-text dim">' + t('pr.plan.note') + '</p>';
-    return html;
+    html += '</div><p class="note-text dim">' + t('pr.plan.note2') + '</p>';
+    return html + guidesHtml(g);
   }
 
-  function renderProfession(g) {
-    const prof = state.profession || myProfs().find(p => CRAFTING.includes(p)) || 'Leatherworking';
-    let html = '<div class="panel">' + pickerHtml([prof], false) + '</div>';
-    const pair = g.pairs.find(p => p.specs.includes(Site.spec) && p.pair.split(' + ').includes(prof)) || g.pairs.find(p => p.pair.split(' + ').includes(prof));
-    html += '<div class="prof-head">' + profIcon(prof, 'ph-icon') + '<div><h2>' + prof + '</h2>' +
-      (pair && pair.tldr ? '<p class="pr-tldr"><b>TL;DR</b> ' + pair.tldr + '</p>' : '') + '</div></div>';
-    html += '<div class="camp-grid">' + campCard(prof) + '</div>';
-    if (GATHERING.includes(prof)) {
-      html += '<p class="note-text">' + t('pr.prof.gather', { list: FEEDS[prof].join(', ') }) + '</p>';
-    } else {
-      html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.prof.crafts', { spec: Site.spec }) + '</h3>' +
-        '<label class="chk chip-toggle"><input type="checkbox" id="prRare"' + (state.rareOnly ? ' checked' : '') + '> ' + t('pr.rareOnly') + '</label>';
-      let any = false;
-      BRACKETS.forEach(b => {
-        const list = crafted(prof, b[0], b[1]);
-        if (!list.length) return;
-        any = true;
-        html += '<div class="plan-bracket' + (b[0] > BETA_CAP ? ' post-cap' : '') + '">' + bracketHead(b) + '<div class="craft-grid">' + list.map(i =>
-          '<div class="craft-card">' + UI.itemLink(i) + '<span class="wp-sub">' + t('common.level') + ' ' + i.req + ' · ' + i.kind + UI.bindText(i.bind) +
-          (UI.statsText(i) ? ' · ' + UI.statsText(i) : '') + '</span>' + (i.mailFrom40 ? '<span class="pr-warn wp-sub">' + t('pr.mail40') + '</span>' : '') + '</div>').join('') + '</div></div>';
-      });
-      if (!any) html += '<p class="note-text">' + t('pr.none') + '</p>';
-    }
-    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.prof.guides') + '</h3><div class="link-grid">' +
+  function craftRow(st) {
+    const GP = window.GearPath;
+    const s = st.pick.source;
+    return '<div class="gp-step"><span class="gp-lv">' + st.level + '</span><span class="gp-slot">' + GP.slotName(st.pick.slot) + '</span>' +
+      '<div class="gp-main">' + UI.itemLink(st.pick.item) + '<span class="wp-sub">' + s.profession + ' · ' + t('pr.plan.skill', { n: s.yellow }) +
+      (st.pick.access === 'favor' ? ' · ' + t('pr.plan.favorCost', { n: (s.learn || {}).favor || '?' }) : '') + '</span>' +
+      '<span class="gp-why">' + GP.why(st) + '</span></div></div>';
+  }
+
+  function guidesHtml(g) {
+    return '<h3 class="block-title" style="margin-top:22px">' + t('pr.prof.guides') + '</h3><div class="link-grid">' +
       g.leveling.map(l => '<a class="link-card" href="' + l.url + '" target="_blank" rel="noopener"><b>' + l.site + ' ↗</b><span>' + l.note + '</span></a>').join('') + '</div>';
-    return html;
   }
 
   // ---------- cooking and fishing ----------
@@ -398,7 +350,6 @@
     let html = '<div class="spec-summary"><div class="role">' + t('pr.role') + '</div><h2>' + t('pr.title') + '</h2><p>' + g.intro + '</p></div>';
     html += Site.sectionTabs('Profesiones', SECTIONS, section, k => t('pr.sec.' + k));
     if (section === 'plan') html += renderPlan(g);
-    if (section === 'profesion') html += renderProfession(g);
     if (section === 'cocina') html += renderCooking(g);
     if (section === 'auxilios') html += renderFirstAid(g);
     if (section === 'sistemas') html += renderSystems(g);
@@ -416,15 +367,11 @@
     // Picking professions: two on the plan (shared with Gear), one on a profession's page.
     container.querySelectorAll('[data-pick-prof]').forEach(b => b.addEventListener('click', () => {
       const p = b.dataset.pickProf;
-      if (section === 'profesion') { state.profession = p; renderAll(); return; }
       const mine = myProfs();
       UI.store.set('profs', mine.includes(p) ? mine.filter(x => x !== p) : mine.concat(p).slice(-2));
       renderAll();
     }));
     container.querySelectorAll('[data-use-pair]').forEach(b => b.addEventListener('click', () => { UI.store.set('profs', b.dataset.usePair.split(' + ')); renderAll(); }));
-    container.querySelectorAll('[data-show-prof]').forEach(a => a.addEventListener('click', () => { state.profession = a.dataset.showProf; }));
-    const rare = container.querySelector('#prRare');
-    if (rare) rare.addEventListener('change', () => { state.rareOnly = rare.checked; renderAll(); });
   }
 
   window.Professions = {
