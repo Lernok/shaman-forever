@@ -13,6 +13,7 @@ Sitio estático (GitHub Pages): `index.html` carga los datos como variables glob
 | 3 | `fetch-levels.js` | QuestieDB, AllTheThings, Wowhead (NPCs y quests) | `levels.json` |
 | 4 | `build-weapons.js` | lo anterior + `item-sources.json` (a mano) | `weapons.json`, `reports/conflicts.md` |
 | 5 | `build-professions.js` | `items.json` + `recipes.json` | `professions.json` |
+| 5b | `build-consumables.js` | tablas del cliente (recetas de Cocina y Primeros Auxilios), Wowhead (efecto y materiales), AllTheThings (dónde pescar), QuestieDB (de dónde sale la receta) | `consumables.json` |
 | 6 | `build-data.js` | todo lo anterior + `data/guides/*.json`, `builds.json`, `news.json` | `data/*.js`; corre los validadores y `check-data.js` |
 
 `fetch-recipes.js` (recetas de classicwowforever.com) se corre a mano; sus páginas duran un mes en caché.
@@ -57,7 +58,7 @@ Si una fuente no responde, se usa la última copia buena. Si Wowhead no responde
 | `guide.js` | Guía y Clase |
 | `talent-rules.js`, `calculator.js` | reglas y calculadora de talentos |
 | `weapons.js` | Equipo |
-| `professions.js` | Profesiones |
+| `professions.js` | Profesiones: tu plan por tramos (las profesiones elegidas se comparten con Equipo), por profesión, cocina y pesca, primeros auxilios, sistemas. Objetos de campamento en `data/camp.json` (a mano, citado) |
 | `spellbook.js` | Hechizos |
 | `news.js`, `home.js` | Novedades y portada |
 | `app.js` | ruteo (`#Página/sección`), encabezado, leyenda |

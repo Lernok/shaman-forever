@@ -12,6 +12,7 @@ const { readJSON, writeJSON } = require('./lib/files');
 const http = require('./lib/http');
 const wowhead = require('./lib/wowhead');
 const questie = require('./lib/questie');
+const att = require('./lib/att');
 const fs = require('fs');
 const path = require('path');
 
@@ -93,16 +94,23 @@ function parseUse(text) {
         : s.type === 'drop' ? { type: 'drop', npc: s.name, zone: s.zone } : s.type === 'quest' ? { type: 'quest', quest: s.name, zone: s.zone } : null).filter(Boolean);
       learn = { type: 'recipe', item: Number(recipe), sources: src.slice(0, 3) };
     }
+    const reagents = a.SkillLine === '185' ? await wowhead.reagents(a.Spell) : [];
     out.push(Object.assign({
-      id: Number(itemId), name: j.name, icon: j.icon || null, quality: j.quality, profession: SKILLS[a.SkillLine],
+      id: Number(itemId), reagents, name: j.name, icon: j.icon || null, quality: j.quality, profession: SKILLS[a.SkillLine],
       skill: [Number(a.MinSkillLineRank) || 1, Number(a.TrivialSkillLineRankLow) || null, Number(a.TrivialSkillLineRankHigh) || null],
       learn
     }, info));
   }
   out.sort((x, y) => x.profession.localeCompare(y.profession) || x.req - y.req || x.skill[0] - y.skill[0] || x.name.localeCompare(y.name));
-  writeJSON('data/consumables.json', { build, items: out });
+  // Where to catch the fish the recipes use (AllTheThings).
+  const fishAll = att.fishing(await att.files());
+  const used = new Set(out.flatMap(x => (x.reagents || []).map(r => String(r.id))));
+  const fish = {};
+  Object.entries(fishAll).forEach(([id, f]) => { if (used.has(id)) fish[id] = f; });
+  writeJSON('data/consumables.json', { build, fishSource: 'https://github.com/ATTWoWAddon/AllTheThings (MIT)', items: out, fish });
   const n = p => out.filter(x => x.profession === p).length;
   const fed = out.filter(x => x.buff);
+  console.log('Peces para cocinar con lugar conocido: ' + Object.keys(fish).length);
   console.log('Consumibles: cocina ' + n('Cooking') + ' (con Well Fed: ' + fed.length + ', sin clasificar: ' + fed.filter(x => x.buff.stat === 'other').length + ') · primeros auxilios ' + n('First Aid'));
   console.log('Descargas: ' + (http.summary() || 'ninguna'));
 })().catch(e => { console.error(e.stack || e.message); process.exit(1); });

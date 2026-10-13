@@ -1,29 +1,60 @@
-// Professions tab: which pair suits each spec and why, the new Forever systems
-// (Merchant's Favor, camping, Legacy points) and, per profession, every crafted
-// item a Shaman can use with how its recipe is learned.
-// Data: data/guides/professions.json (content) + data/professions.js (items).
+// Professions page, built around the player's plan:
+//   plan        your two professions (shared with the Gear page) and, every 10
+//               levels, what to craft, eat, fish and bandage with; your camp
+//   profesion   one profession: TL;DR for your spec, its camp object, what it
+//               crafts by level, how to level it
+//   cocina      cooking and fishing together, by level: food for your spec,
+//               what it needs, where to fish it
+//   auxilios    first aid: a bandage per level bracket, potions, cures
+//   sistemas    Forever's systems (Merchant's Favor, camping, Legacy…)
+// Data: data/guides/professions.json (content), data/professions.js (crafted
+// gear), data/consumables.js (food, first aid, fish), data/camp.js.
 (function () {
   const t = (key, vars) => window.I18N.t(key, vars);
+  const Site = window.Site;
+  const UI = window.UI;
   let ui = null;
   let container = null;
-  // role: null follows the spec picked in the header (Enhancement melee, the rest caster).
-  const state = { profession: 'Leatherworking', role: null, range: 'beta', rareOnly: true };
-  const Site = window.Site;
-  const SECTIONS = ['pares', 'sistemas', 'crafteo', 'secundarias', 'subir'];
-  const PROFESSIONS = ['Leatherworking', 'Blacksmithing', 'Tailoring', 'Enchanting', 'Engineering'];
-  const ROLES = ['all', 'melee', 'caster'];
-  // Level ranges, the beta's cap first: a whole profession is 300+ rows.
-  const RANGES = { beta: [1, 30], mid: [31, 45], high: [46, 60], all: [1, 60] };
-  const role = () => state.role || (Site.spec === 'Enhancement' ? 'melee' : 'caster');
-  const UI = window.UI;
+  const state = { profession: null, rareOnly: true };
+  const SECTIONS = ['plan', 'profesion', 'cocina', 'auxilios', 'sistemas'];
+  const CRAFTING = ['Leatherworking', 'Blacksmithing', 'Tailoring', 'Enchanting', 'Engineering', 'Alchemy'];
+  const GATHERING = ['Skinning', 'Mining', 'Herbalism'];
+  const PRIMARY = ['Leatherworking', 'Skinning', 'Blacksmithing', 'Mining', 'Tailoring', 'Enchanting', 'Engineering', 'Herbalism', 'Alchemy'];
+  // Which crafting profession a gathering one supplies.
+  const FEEDS = { Skinning: ['Leatherworking'], Mining: ['Blacksmithing', 'Engineering'], Herbalism: ['Alchemy'] };
   const PROF_ICONS = {
     Leatherworking: 'trade_leatherworking', Blacksmithing: 'trade_blacksmithing', Tailoring: 'trade_tailoring',
     Enchanting: 'trade_engraving', Engineering: 'trade_engineering', Skinning: 'inv_misc_pelt_wolf_01',
-    Mining: 'trade_mining', Herbalism: 'spell_nature_naturetouchgrow', Alchemy: 'trade_alchemy'
+    Mining: 'trade_mining', Herbalism: 'spell_nature_naturetouchgrow', Alchemy: 'trade_alchemy',
+    Cooking: 'inv_misc_food_15', Fishing: 'trade_fishing', 'First Aid': 'spell_holy_sealofsacrifice'
   };
+  // Every 10 levels; the beta is capped at 30.
+  const BRACKETS = [[1, 9], [10, 19], [20, 29], [30, 39], [40, 49], [50, 60]];
+  const BETA_CAP = 30;
   // The new systems, in the order of data/guides/professions.json.
   const SYSTEM_ICONS = ['inv_misc_book_09', 'inv_misc_coin_02', 'inv_misc_bag_10', 'spell_holy_wordfortitude', 'inv_scroll_03'];
+  // Stats worth eating for, per spec (first = most important).
+  const SPEC_FOOD = {
+    Enhancement: ['strength', 'agility', 'attackPower', 'crit'],
+    Elemental: ['spellDamage', 'intellect', 'crit'],
+    Restoration: ['healing', 'intellect', 'spirit']
+  };
+  const STAT_ICONS = { strength: 'spell_nature_strength', agility: 'ability_rogue_sprint', attackPower: 'ability_warrior_battleshout',
+    spellDamage: 'spell_fire_flamebolt', intellect: 'spell_holy_magicalsentry', healing: 'spell_nature_healingwavegreater', spirit: 'spell_holy_divinespirit',
+    crit: 'ability_criticalstrike', stamina: 'spell_nature_unyeildingstamina', fishing: 'trade_fishing', other: 'inv_misc_food_15' };
+  // The bandage for each bracket follows the cloth its enemies drop.
+  const BANDAGES = [['Linen Bandage', 'Heavy Linen Bandage'], ['Wool Bandage', 'Heavy Wool Bandage'], ['Silk Bandage', 'Heavy Silk Bandage'],
+    ['Mageweave Bandage', 'Heavy Mageweave Bandage'], ['Runecloth Bandage', 'Heavy Runecloth Bandage'], ['Heavy Runecloth Bandage', 'Dense Runecloth Bandage']];
+
   const profIcon = (p, cls) => '<img class="' + (cls || 'prof-icon') + '" src="' + UI.icon(PROF_ICONS[p]) + '" alt="" loading="lazy">';
+  const myProfs = () => UI.store.get('profs', []).filter(p => PRIMARY.includes(p));
+  const roleOf = () => (Site.spec === 'Enhancement' ? 'melee' : 'caster');
+  const fitsSpec = i => i.role === roleOf() || i.role === 'hybrid';
+  const consumables = () => (window.CONSUMABLE_DATA || { items: [], fish: {} });
+  const guide = () => window.I18N.localize(window.GUIDE_DATA.Professions);
+  const bracketHead = ([lo, hi]) => '<div class="br-title"><b>' + t('pr.levels', { lo, hi }) + '</b>' + (lo > BETA_CAP ? '<span class="dim">' + t('pr.postCap') + '</span>' : '') + '</div>';
+
+  // ---------- text helpers ----------
 
   // classicwowforever's "how to learn" lines are formulaic; translate the
   // fixed parts and keep names (vendors, factions, zones) as they are.
@@ -51,116 +82,6 @@
       .replace(/, (Friendly|Honored|Revered|Exalted)/, (m, r) => ', ' + REP[r]);
   }
 
-  const statsText = i => UI.statsText(i);
-
-  function kindText(i) {
-    if (i.dps) return i.kind + ' · ' + window.I18N.num(i.dps.toFixed(1)) + ' DPS';
-    return i.kind + (i.armor ? ' · ' + i.armor + ' ' + t('pr.armor') : '');
-  }
-
-  function itemsFor() {
-    const data = window.PROFESSION_DATA && window.PROFESSION_DATA.professions[state.profession];
-    return (data || []).filter(i => {
-      if (state.rareOnly && i.quality < 3) return false;
-      if (role() === 'melee' && !(i.role === 'melee' || i.role === 'hybrid')) return false;
-      if (role() === 'caster' && !(i.role === 'caster' || i.role === 'hybrid')) return false;
-      return true;
-    });
-  }
-
-  function bracket(level) {
-    if (level < 10) return '1–9';
-    const lo = Math.floor(level / 10) * 10;
-    return lo + '–' + (lo + 9 > 60 ? 60 : lo + 9);
-  }
-
-  function renderItems() {
-    const forRole = itemsFor();
-    const inRange = (i, r) => i.req >= RANGES[r][0] && i.req <= RANGES[r][1];
-    const list = forRole.filter(i => inRange(i, state.range));
-    let html = '<div class="pr-filters">' +
-      '<div class="seg">' + PROFESSIONS.map(p => '<button class="btn prof-btn' + (state.profession === p ? ' active' : '') + '" data-prof="' + p + '">' + profIcon(p, 'pb-icon') + p + '</button>').join('') + '</div>' +
-      '<div class="seg">' + ROLES.map(r => '<button class="btn' + (role() === r ? ' active' : '') + '" data-role="' + r + '">' + t('pr.role.' + r) + '</button>').join('') + '</div>' +
-      '<div class="seg">' + Object.keys(RANGES).map(r => '<button class="btn' + (state.range === r ? ' active' : '') + '" data-range="' + r + '">' +
-        t('pr.range.' + r) + ' <span class="dim">' + forRole.filter(i => inRange(i, r)).length + '</span></button>').join('') + '</div>' +
-      '<label class="chk chip-toggle"><input type="checkbox" id="prRare"' + (state.rareOnly ? ' checked' : '') + '> ' + t('pr.rareOnly') + '</label>' +
-      '</div>';
-    if (!list.length) return html + '<p class="note-text">' + t('pr.none') + '</p>';
-    html += '<p class="note-text dim">' + t('pr.count', { n: list.length }) + '</p>';
-    let current = null;
-    html += '<div class="table-wrap"><table class="cmp pr-table"><thead><tr><th>' + t('pr.colLevel') + '</th><th>' + t('pr.colItem') + '</th><th>' + t('wp.colStats') + '</th><th>' + t('pr.colLearn') + '</th></tr></thead><tbody>';
-    list.forEach(i => {
-      const b = bracket(i.req);
-      if (b !== current) { current = b; html += '<tr class="pr-bracket"><td colspan="4">' + t('pr.bracket', { range: b }) + '</td></tr>'; }
-      html += '<tr><td class="num">' + i.req + '</td>' +
-        '<td>' + UI.itemLink(i) +
-          (i.isNew ? ' <span class="wp-new">' + t('wp.newInForever') + '</span>' : '') +
-          '<span class="wp-sub">' + kindText(i) + (i.bind === 'pickup' ? ' · BoP' : i.bind === 'equip' ? ' · BoE' : '') +
-          (i.mailFrom40 ? ' · <span class="pr-warn">' + t('pr.mail40') + '</span>' : '') + '</span></td>' +
-        '<td>' + (statsText(i) || '—') + '</td>' +
-        '<td>' + learnText(i.learn.text) + '<span class="wp-sub">' + t('pr.skill', { orange: i.skill[0], grey: i.skill[3] }) + '</span></td></tr>';
-    });
-    return html + '</tbody></table></div>';
-  }
-
-  function renderAll() {
-    const g = window.I18N.localize(window.GUIDE_DATA.Professions);
-    let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Profesiones + '">' +
-      '<div class="role">' + t('pr.role') + '</div><h2>' + t('pr.title') + '</h2><p>' + g.intro + '</p></div>';
-
-    const section = Site.section('Profesiones', SECTIONS);
-    const label = { pares: 'pr.pairs', sistemas: 'pr.systems', crafteo: 'pr.items', secundarias: 'pr.secondary', subir: 'pr.leveling' };
-    html += Site.sectionTabs('Profesiones', SECTIONS, section, k => t(label[k]));
-
-    // Recommended pairs for the chosen spec.
-    if (section === 'pares') html += '<div class="panel"><h3>' + t('pr.pairs') + ' · ' + Site.spec + '</h3>' +
-      '<div class="pr-pairs">' + g.pairs.filter(p => p.specs.includes(Site.spec)).map(p =>
-        '<div class="pr-pair"><div class="pr-pair-icons">' + p.pair.split(' + ').map(x => profIcon(x, 'pp-icon')).join('<span class="pp-plus">+</span>') + '</div>' +
-        '<div class="pr-pair-head"><b>' + p.pair + '</b><span class="pr-when">' + p.when + '</span></div>' +
-        (p.tldr ? '<p class="pr-tldr"><b>TL;DR</b> ' + p.tldr + '</p>' : '') +
-        '<div class="pr-pair-specs">' + p.specs.map(s => '<span style="--spec-color:' + ui.specColors[s] + '">' + s + '</span>').join('') + '</div>' +
-        '<p>' + p.why + '</p></div>').join('') + '</div>' +
-      '<p class="note-text dim">' + g.pairsNote + '</p></div>';
-
-    // New systems.
-    if (section === 'sistemas') html += '<div class="note-grid">' +
-      g.systems.map((s, i) => '<div class="note-card"><img src="' + UI.icon(SYSTEM_ICONS[i] || 'inv_misc_note_01') + '" alt="" loading="lazy"><div>' +
-        '<b class="nc-title">' + s.title + ' ' + ui.badge(s.confidence) + '</b>' + s.fact +
-        ' <a class="src" href="' + s.source + '" target="_blank" rel="noopener">' + t('common.source') + '</a></div></div>').join('') + '</div>';
-
-    // Crafted items per profession.
-    if (section === 'crafteo') html += '<div class="panel"><h3>' + t('pr.items') + '</h3>' +
-      '<p class="note-text">' + t('pr.itemsIntro') + '</p><div id="prItems">' + renderItems() + '</div></div>';
-
-    if (section === 'secundarias') html += renderSecondary(g.secondary);
-
-    // How to level them.
-    if (section === 'subir') html += '<div class="link-grid">' +
-      g.leveling.map(l => '<a class="link-card" href="' + l.url + '" target="_blank" rel="noopener"><b>' + l.site + ' ↗</b><span>' + l.note + '</span></a>').join('') + '</div>';
-
-    html += ui.renderSources(g.sources, g.caveat);
-    container.innerHTML = html;
-    bind();
-  }
-
-  function bind() {
-    if (container.querySelector('#prItems')) bindItems();
-    const food = new Map(((window.CONSUMABLE_DATA || {}).items || []).map(i => [String(i.id), i]));
-    UI.tip.bind(container, '[data-food]', a => (food.has(a.dataset.food) ? foodCard(food.get(a.dataset.food)) : null));
-  }
-
-  // ---------- cooking, fishing, first aid ----------
-
-  // Stats worth eating for, per spec (first = most important).
-  const SPEC_FOOD = {
-    Enhancement: ['strength', 'agility', 'attackPower', 'crit'],
-    Elemental: ['spellDamage', 'intellect', 'crit'],
-    Restoration: ['healing', 'intellect', 'spirit']
-  };
-  const STAT_ICONS = { strength: 'spell_nature_strength', agility: 'ability_rogue_sprint', attackPower: 'ability_warrior_battleshout',
-    spellDamage: 'spell_fire_flamebolt', intellect: 'spell_holy_magicalsentry', healing: 'spell_nature_healingwavegreater', spirit: 'spell_holy_divinespirit',
-    crit: 'ability_criticalstrike', stamina: 'spell_nature_unyeildingstamina', fishing: 'trade_fishing', other: 'inv_misc_food_15' };
-
   function learnLine(f) {
     const L = f.learn || {};
     if (L.type !== 'recipe') return t('pr.learn.' + (L.type || 'unknown'));
@@ -170,7 +91,7 @@
     return t('pr.learn.recipe') + ': ' + where + ((L.sources || []).length > 1 ? ' …' : '');
   }
 
-  // What it does, in the site's language: built from the client text's numbers.
+  // What a consumable does, in the site's language: built from the client text's numbers.
   function useText(f) {
     const I = window.I18N;
     if (I.lang !== 'es') return f.use;
@@ -190,32 +111,31 @@
     return parts.length ? parts.join('. ') + '.' : u;
   }
 
-  // Hover card: what it does and how to learn it.
+  // The client gives the skill range where a recipe still raises your skill (yellow to grey).
+  const skillRange = f => (f.skill[1] ? t('pr.skillRange', { low: f.skill[1], high: f.skill[2] }) : '');
+
   function foodCard(f) {
     const I = window.I18N;
     return '<div class="it-head"><img class="it-icon qb' + f.quality + '" src="' + UI.icon(f.icon) + '" alt=""><div><div class="t-name q' + (f.quality || 1) + '">' + f.name + '</div>' +
       '<div class="t-cost">' + f.profession + (f.skill[1] ? ' · ' + skillRange(f) : '') + (f.req > 1 ? ' · ' + t('pr.atLevel', { n: f.req }) : '') + '</div></div></div>' +
-      '<div class="t-rank">' + useText(f) + '</div>' + (I.lang === 'es' ? I.original([f.use]) : '') + '<hr class="t-sep"><div class="t-rank">' + learnLine(f) + '</div>';
+      '<div class="t-rank">' + useText(f) + '</div>' + (I.lang === 'es' ? I.original([f.use]) : '') +
+      ((f.reagents || []).length ? '<div class="t-cost">' + t('pr.cook.needs') + ': ' + f.reagents.map(r => r.name + (r.count > 1 ? ' ×' + r.count : '')).join(', ') + '</div>' : '') +
+      '<hr class="t-sep"><div class="t-rank">' + learnLine(f) + '</div>';
   }
-
-  // The client gives the skill range where a recipe still raises your skill (yellow to grey).
-  const skillRange = f => (f.skill[1] ? t('pr.skillRange', { low: f.skill[1], high: f.skill[2] }) : '');
 
   const foodLink = f => '<span class="food-chip" data-food="' + f.id + '"><img src="' + UI.icon(f.icon, 'medium') + '" alt="" loading="lazy">' + f.name + '</span>';
 
-  // One row per stat: the best amount at each level it changes, with its foods.
-  function statRow(items, stat) {
-    const list = items.filter(f => f.buff && f.buff.stat === stat);
-    if (!list.length) return '';
-    const byLevel = new Map();
-    list.forEach(f => { const k = f.req; if (!byLevel.has(k) || byLevel.get(k).amount < f.buff.amount) byLevel.set(k, { amount: f.buff.amount, foods: [] }); });
-    list.forEach(f => { const b = byLevel.get(f.req); if (b.amount === f.buff.amount) b.foods.push(f); });
-    let best = 0;
-    const steps = [...byLevel.entries()].sort((a, b) => a[0] - b[0]).filter(([, b]) => { if (b.amount <= best) return false; best = b.amount; return true; });
-    const unit = stat === 'crit' ? '%' : '';
-    return '<div class="food-row"><div class="food-stat"><img src="' + UI.icon(STAT_ICONS[stat]) + '" alt=""><b>' + t('pr.stat.' + stat) + '</b></div><div class="food-steps">' +
-      steps.map(([lv, b]) => '<div class="food-step' + (lv > 30 ? ' post-cap' : '') + '"><div class="fs-head"><span class="fs-lv">' + t('pr.atLevel', { n: lv }) + '</span><b>+' + b.amount + unit + '</b></div>' +
-        b.foods.slice(0, 3).map(foodLink).join('') + '</div>').join('') + '</div></div>';
+  // "inland waters and waterways" -> Spanish, plus the first zones.
+  function fishWhere(fish) {
+    let w = fish.where || '';
+    if (window.I18N.lang === 'es') {
+      w = w.replace(/^Schools can be found (in|on) /, 'Bancos de peces en ').replace(/^Can be (?:caught|found) (?:in|on) /, 'Se pesca en ')
+        .replace(/inland waters and waterways/, 'aguas interiores y ríos').replace(/the seaside/, 'la costa').replace(/open water in the given zones/, 'aguas abiertas de estas zonas')
+        .replace(/during night time.*$/, 'de noche').replace(/during day time.*$/, 'de día').replace(/ This fish have a .*$/, '');
+    }
+    w = w.replace(/\.$/, '');
+    const zones = (fish.zones || []).slice(0, 3).join(', ') + ((fish.zones || []).length > 3 ? '…' : '');
+    return w + (zones ? (w ? ': ' : '') + zones : '');
   }
 
   function factCards(list) {
@@ -223,43 +143,203 @@
       ' <a class="src" href="' + f.source + '" target="_blank" rel="noopener">' + t('common.source') + '</a></div></div>').join('') + '</div>';
   }
 
-  function renderSecondary(sec) {
-    const data = (window.CONSUMABLE_DATA || {}).items || [];
-    const cook = data.filter(f => f.profession === 'Cooking');
-    const aid = data.filter(f => f.profession === 'First Aid');
-    let html = '<p class="note-text">' + sec.intro + '</p>';
-    html += '<div class="panel"><h3>' + t('pr.food', { spec: Site.spec }) + '</h3><p class="note-text dim">' + t('pr.foodIntro') + '</p>' +
-      SPEC_FOOD[Site.spec].map(s => statRow(cook, s)).join('') + '</div>';
-    html += '<div class="panel" style="margin-top:16px"><h3>' + t('pr.foodAll') + '</h3>' + ['stamina', 'fishing'].map(s => statRow(cook, s)).join('') + '</div>';
-    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.cooking') + '</h3>' + factCards(sec.cooking);
-    // First aid: bandages by skill, potions by level, cures.
-    const group = (title, list, line) => list.length ? '<div class="sub-label">' + title + '</div><div class="aid-list">' + list.map(f =>
-      '<div class="aid-row">' + foodLink(f) + '<span class="aid-val">' + line(f) + '</span><span class="dim">' + skillRange(f) + '</span></div>').join('') + '</div>' : '';
-    const bandages = aid.filter(f => /Bandage/.test(f.name)).sort((a, b) => (a.skill[1] || 0) - (b.skill[1] || 0));
-    const potions = aid.filter(f => /Healing Potion/.test(f.name)).sort((a, b) => a.req - b.req);
-    const cures = aid.filter(f => /Anti-Venom|Poultice|Tourniquet/.test(f.name)).sort((a, b) => (a.skill[1] || 0) - (b.skill[1] || 0));
-    const num = h => Array.isArray(h) ? h.join('–') : h;
-    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.firstAid') + '</h3>' + factCards(sec.firstAid) +
-      '<div class="panel" style="margin-top:12px">' +
-      group(t('pr.bandages'), bandages, f => t('pr.heals', { n: num(f.health) })) +
-      group(t('pr.potions'), potions, f => t('pr.heals', { n: num(f.health) }) + ' · ' + t('pr.atLevel', { n: f.req })) +
-      group(t('pr.cures'), cures, f => useText(f).replace(/\s*\(.*$/, '').replace(/\..*$/, '')) + '</div>';
-    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.fishing') + '</h3>' + factCards(sec.fishing);
+  // ---------- picks ----------
+
+  // The best food for a stat you can eat by level `hi` (and whether it's new in the bracket).
+  function bestFood(stat, lo, hi) {
+    const list = consumables().items.filter(f => f.profession === 'Cooking' && f.buff && f.buff.stat === stat && f.req <= hi);
+    if (!list.length) return null;
+    const top = Math.max(...list.map(f => f.buff.amount));
+    const foods = list.filter(f => f.buff.amount === top).sort((a, b) => b.req - a.req);
+    return { stat, amount: top, foods, isNew: foods.some(f => f.req >= lo) };
+  }
+
+  // Fish the given foods need, with where to catch them.
+  function fishFor(foods) {
+    const fish = consumables().fish || {};
+    const out = new Map();
+    foods.forEach(f => (f.reagents || []).forEach(r => { if (fish[r.id]) out.set(r.id, Object.assign({ id: r.id }, fish[r.id])); }));
+    return [...out.values()];
+  }
+
+  // Crafted gear from a profession for your spec, by level.
+  function crafted(prof, lo, hi) {
+    const list = ((window.PROFESSION_DATA || {}).professions || {})[prof] || [];
+    return list.filter(i => i.req >= lo && i.req <= hi && fitsSpec(i) && (!state.rareOnly || i.quality >= 3))
+      .sort((a, b) => b.quality - a.quality || (b.bind === 'pickup') - (a.bind === 'pickup') || b.ilvl - a.ilvl);
+  }
+
+  // ---------- sections ----------
+
+  function pickerHtml(selected, max) {
+    return '<div class="prof-picker">' + PRIMARY.map(p => '<button class="btn prof-btn' + (selected.includes(p) ? ' active' : '') + '" data-pick-prof="' + p + '">' +
+      profIcon(p, 'pb-icon') + p + '</button>').join('') + '</div>' + (max ? '<p class="note-text dim">' + t('pr.plan.pickHint') + '</p>' : '');
+  }
+
+  function pairCard(p, withButton) {
+    return '<div class="pr-pair"><div class="pr-pair-icons">' + p.pair.split(' + ').map(x => profIcon(x, 'pp-icon')).join('<span class="pp-plus">+</span>') + '</div>' +
+      '<div class="pr-pair-head"><b>' + p.pair + '</b><span class="pr-when">' + p.when + '</span></div>' +
+      (p.tldr ? '<p class="pr-tldr"><b>TL;DR</b> ' + p.tldr + '</p>' : '') +
+      (withButton ? '<button class="btn pr-use" data-use-pair="' + p.pair + '">' + t('pr.plan.use') + '</button>' : '') +
+      '<details class="pr-why"><summary>' + t('pr.why') + '</summary><p>' + p.why + '</p></details></div>';
+  }
+
+  function campCard(prof) {
+    const c = ((window.CAMP_DATA || {}).objects || {})[prof];
+    if (!c) return '';
+    return '<div class="camp-card"><img src="' + UI.icon(c.icon) + '" alt="" loading="lazy"><div><b>' + c.object + '</b> <span class="dim">· ' + prof + '</span>' +
+      '<span class="camp-effect">' + window.I18N.localize(c.effect) + '</span><span class="dim camp-up">' + c.upgrades + '</span></div></div>';
+  }
+
+  function renderPlan(g) {
+    const mine = myProfs();
+    let html = '<div class="panel"><h3>' + t('pr.plan.pick') + '</h3>' + pickerHtml(mine, true) + '</div>';
+    if (mine.length < 2) {
+      html += '<p class="note-text" style="margin-top:16px">' + t('pr.plan.none', { spec: Site.spec }) + '</p><div class="pr-pairs">' +
+        g.pairs.filter(p => p.specs.includes(Site.spec)).map(p => pairCard(p, true)).join('') + '</div>';
+      if (!mine.length) return html;
+    }
+    // Your camp: your professions' objects, and the ones everyone has.
+    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.plan.camp') + '</h3><div class="camp-grid">' +
+      mine.concat(['Cooking', 'Fishing', 'First Aid']).map(campCard).join('') + '</div>';
+    const makers = mine.filter(p => CRAFTING.includes(p));
+    const stats = SPEC_FOOD[Site.spec].slice(0, 2);
+    const aid = consumables().items.filter(f => f.profession === 'First Aid');
+    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.plan.title', { spec: Site.spec, profs: mine.join(' + ') }) + '</h3><div class="plan-list">';
+    BRACKETS.forEach(([lo, hi], bi) => {
+      let rows = '';
+      makers.forEach(p => {
+        const list = crafted(p, lo, hi);
+        rows += '<div class="plan-row"><span class="plan-k">' + profIcon(p, 'pk-icon') + t('pr.plan.craft') + '</span><div class="plan-v">' +
+          (list.length ? list.slice(0, 4).map(i => UI.itemLink(i)).join('') +
+            (list.length > 4 ? '<a class="plan-more" href="#Profesiones/profesion" data-show-prof="' + p + '">' + t('pr.plan.more', { n: list.length - 4, prof: p }) + '</a>' : '')
+            : '<span class="dim">' + t('pr.plan.nothing') + '</span>') + '</div></div>';
+      });
+      const foods = stats.map(s => bestFood(s, lo, hi)).filter(Boolean);
+      if (foods.length) {
+        rows += '<div class="plan-row"><span class="plan-k">' + profIcon('Cooking', 'pk-icon') + t('pr.plan.eat') + '</span><div class="plan-v">' +
+          foods.map(b => '<span class="plan-food"><b>+' + b.amount + (b.stat === 'crit' ? '%' : '') + ' ' + t('pr.stat.' + b.stat) + '</b> ' + b.foods.slice(0, 2).map(foodLink).join('') + '</span>').join('') + '</div></div>';
+        const fish = fishFor(foods.flatMap(b => b.foods.slice(0, 2)));
+        if (fish.length) rows += '<div class="plan-row"><span class="plan-k">' + profIcon('Fishing', 'pk-icon') + t('pr.plan.fish') + '</span><div class="plan-v">' +
+          fish.map(f => '<span class="plan-fish"><b>' + f.name + '</b> <span class="dim">' + fishWhere(f) + '</span></span>').join('') + '</div></div>';
+      }
+      const band = BANDAGES[bi].map(n => aid.find(f => f.name === n)).filter(Boolean);
+      if (band.length) rows += '<div class="plan-row"><span class="plan-k">' + profIcon('First Aid', 'pk-icon') + t('pr.plan.bandage') + '</span><div class="plan-v">' +
+        band.map(foodLink).join('') + '</div></div>';
+      html += '<div class="plan-bracket' + (lo > BETA_CAP ? ' post-cap' : '') + '">' + bracketHead([lo, hi]) + rows + '</div>';
+    });
+    html += '</div><p class="note-text dim">' + t('pr.plan.note') + '</p>';
     return html;
   }
 
-  // The items block re-renders on its own so the page doesn't jump.
-  function bindItems() {
-    const box = container.querySelector('#prItems');
-    const rerender = () => { box.innerHTML = renderItems(); bindItems(); };
-    box.querySelectorAll('[data-prof]').forEach(b => b.addEventListener('click', () => { state.profession = b.dataset.prof; rerender(); }));
-    box.querySelectorAll('[data-role]').forEach(b => b.addEventListener('click', () => { state.role = b.dataset.role; rerender(); }));
-    box.querySelectorAll('[data-range]').forEach(b => b.addEventListener('click', () => { state.range = b.dataset.range; rerender(); }));
-    box.querySelector('#prRare').addEventListener('change', e => { state.rareOnly = e.target.checked; rerender(); });
-    const byId = new Map(itemsFor().map(i => [String(i.id), i]));
-    UI.tip.bind(box, '[data-item]', a => byId.has(a.dataset.item) ? UI.itemCard(byId.get(a.dataset.item), [t('common.level') + ' ' + byId.get(a.dataset.item).req, learnText(byId.get(a.dataset.item).learn.text)]) : null);
+  function renderProfession(g) {
+    const prof = state.profession || myProfs().find(p => CRAFTING.includes(p)) || 'Leatherworking';
+    let html = '<div class="panel">' + pickerHtml([prof], false) + '</div>';
+    const pair = g.pairs.find(p => p.specs.includes(Site.spec) && p.pair.split(' + ').includes(prof)) || g.pairs.find(p => p.pair.split(' + ').includes(prof));
+    html += '<div class="prof-head">' + profIcon(prof, 'ph-icon') + '<div><h2>' + prof + '</h2>' +
+      (pair && pair.tldr ? '<p class="pr-tldr"><b>TL;DR</b> ' + pair.tldr + '</p>' : '') + '</div></div>';
+    html += '<div class="camp-grid">' + campCard(prof) + '</div>';
+    if (GATHERING.includes(prof)) {
+      html += '<p class="note-text">' + t('pr.prof.gather', { list: FEEDS[prof].join(', ') }) + '</p>';
+    } else {
+      html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.prof.crafts', { spec: Site.spec }) + '</h3>' +
+        '<label class="chk chip-toggle"><input type="checkbox" id="prRare"' + (state.rareOnly ? ' checked' : '') + '> ' + t('pr.rareOnly') + '</label>';
+      let any = false;
+      BRACKETS.forEach(b => {
+        const list = crafted(prof, b[0], b[1]);
+        if (!list.length) return;
+        any = true;
+        html += '<div class="plan-bracket' + (b[0] > BETA_CAP ? ' post-cap' : '') + '">' + bracketHead(b) + '<div class="craft-grid">' + list.map(i =>
+          '<div class="craft-card">' + UI.itemLink(i) + '<span class="wp-sub">' + t('common.level') + ' ' + i.req + ' · ' + i.kind + UI.bindText(i.bind) +
+          (UI.statsText(i) ? ' · ' + UI.statsText(i) : '') + '</span>' + (i.mailFrom40 ? '<span class="pr-warn wp-sub">' + t('pr.mail40') + '</span>' : '') + '</div>').join('') + '</div></div>';
+      });
+      if (!any) html += '<p class="note-text">' + t('pr.none') + '</p>';
+    }
+    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.prof.guides') + '</h3><div class="link-grid">' +
+      g.leveling.map(l => '<a class="link-card" href="' + l.url + '" target="_blank" rel="noopener"><b>' + l.site + ' ↗</b><span>' + l.note + '</span></a>').join('') + '</div>';
+    return html;
   }
 
+  function renderCooking(g) {
+    const sec = g.secondary;
+    let html = '<p class="note-text">' + t('pr.cook.intro', { spec: Site.spec }) + '</p><div class="camp-grid">' + campCard('Cooking') + campCard('Fishing') + '</div><div class="plan-list">';
+    BRACKETS.forEach(([lo, hi]) => {
+      const foods = SPEC_FOOD[Site.spec].concat('stamina').map(s => bestFood(s, lo, hi)).filter(Boolean);
+      const rows = foods.map(b => {
+        const f = b.foods[0];
+        const fish = fishFor([f]);
+        return '<div class="cook-row' + (b.isNew ? '' : ' same') + '"><span class="cook-stat"><img src="' + UI.icon(STAT_ICONS[b.stat], 'medium') + '" alt=""><b>+' + b.amount + (b.stat === 'crit' ? '%' : '') + '</b> ' + t('pr.stat.' + b.stat) + '</span>' +
+          '<span>' + b.foods.slice(0, 2).map(foodLink).join(' ') + '</span>' +
+          '<span class="dim">' + ((f.reagents || []).map(r => r.name).join(', ')) + '</span>' +
+          '<span class="dim">' + (fish.length ? fishWhere(fish[0]) : skillRange(f)) + '</span></div>';
+      }).join('');
+      html += '<div class="plan-bracket' + (lo > BETA_CAP ? ' post-cap' : '') + '">' + bracketHead([lo, hi]) +
+        '<div class="cook-row cook-head"><span>' + t('pr.cook.colStat') + '</span><span>' + t('pr.cook.colFood') + '</span><span>' + t('pr.cook.needs') + '</span><span>' + t('pr.cook.colWhere') + '</span></div>' + rows + '</div>';
+    });
+    html += '</div><details class="pr-facts"><summary>' + t('pr.cook.facts') + '</summary>' + factCards(sec.cooking.concat(sec.fishing)) + '</details>';
+    return html;
+  }
+
+  function renderFirstAid(g) {
+    const aid = consumables().items.filter(f => f.profession === 'First Aid');
+    const num = h => (Array.isArray(h) ? h.join('–') : h);
+    let html = '<p class="note-text">' + t('pr.aid.intro') + '</p><div class="camp-grid">' + campCard('First Aid') + '</div><div class="plan-list">';
+    BRACKETS.forEach(([lo, hi], bi) => {
+      const band = BANDAGES[bi].map(n => aid.find(f => f.name === n)).filter(Boolean);
+      const pots = aid.filter(f => /Healing Potion/.test(f.name) && f.req <= hi).sort((a, b) => b.req - a.req).slice(0, 1);
+      html += '<div class="plan-bracket' + (lo > BETA_CAP ? ' post-cap' : '') + '">' + bracketHead([lo, hi]) +
+        band.concat(pots).map(f => '<div class="aid-row">' + foodLink(f) + '<span class="aid-val">' + t('pr.heals', { n: num(f.health) }) + '</span><span class="dim">' + skillRange(f) + '</span></div>').join('') + '</div>';
+    });
+    const cures = aid.filter(f => /Anti-Venom|Poultice|Tourniquet/.test(f.name)).sort((a, b) => (a.skill[1] || 0) - (b.skill[1] || 0));
+    html += '</div><div class="panel" style="margin-top:16px"><h3>' + t('pr.cures') + '</h3>' + cures.map(f =>
+      '<div class="aid-row">' + foodLink(f) + '<span class="aid-val">' + useText(f).replace(/\s*\(.*$/, '').replace(/\..*$/, '') + '</span><span class="dim">' + skillRange(f) + '</span></div>').join('') + '</div>';
+    html += '<details class="pr-facts"><summary>' + t('pr.cook.facts') + '</summary>' + factCards(g.secondary.firstAid) + '</details>';
+    return html;
+  }
+
+  function renderSystems(g) {
+    return '<div class="note-grid">' + g.systems.map((s, i) => '<div class="note-card"><img src="' + UI.icon(SYSTEM_ICONS[i] || 'inv_misc_note_01') + '" alt="" loading="lazy"><div>' +
+      '<b class="nc-title">' + s.title + ' ' + ui.badge(s.confidence) + '</b>' + s.fact +
+      ' <a class="src" href="' + s.source + '" target="_blank" rel="noopener">' + t('common.source') + '</a></div></div>').join('') + '</div>' +
+      '<h3 class="block-title" style="margin-top:22px">' + t('pr.sys.camp') + '</h3><div class="camp-grid">' +
+      PRIMARY.concat(['Cooking', 'Fishing', 'First Aid']).map(campCard).join('') + '</div>' +
+      '<p class="note-text dim">' + t('pr.sys.campNote') + ' <a class="src" href="' + (window.CAMP_DATA || {}).source + '" target="_blank" rel="noopener">' + t('common.source') + '</a></p>';
+  }
+
+  function renderAll() {
+    const g = guide();
+    const section = Site.section('Profesiones', SECTIONS);
+    let html = '<div class="spec-summary"><div class="role">' + t('pr.role') + '</div><h2>' + t('pr.title') + '</h2><p>' + g.intro + '</p></div>';
+    html += Site.sectionTabs('Profesiones', SECTIONS, section, k => t('pr.sec.' + k));
+    if (section === 'plan') html += renderPlan(g);
+    if (section === 'profesion') html += renderProfession(g);
+    if (section === 'cocina') html += renderCooking(g);
+    if (section === 'auxilios') html += renderFirstAid(g);
+    if (section === 'sistemas') html += renderSystems(g);
+    html += ui.renderSources(g.sources, g.caveat);
+    container.innerHTML = html;
+    bind(section);
+  }
+
+  function bind(section) {
+    const all = new Map();
+    Object.values(((window.PROFESSION_DATA || {}).professions) || {}).forEach(list => list.forEach(i => all.set(String(i.id), i)));
+    UI.tip.bind(container, '[data-item]', a => (all.has(a.dataset.item) ? UI.itemCard(all.get(a.dataset.item), [t('common.level') + ' ' + all.get(a.dataset.item).req, learnText(all.get(a.dataset.item).learn.text)]) : null));
+    const food = new Map(consumables().items.map(i => [String(i.id), i]));
+    UI.tip.bind(container, '[data-food]', a => (food.has(a.dataset.food) ? foodCard(food.get(a.dataset.food)) : null));
+    // Picking professions: two on the plan (shared with Gear), one on a profession's page.
+    container.querySelectorAll('[data-pick-prof]').forEach(b => b.addEventListener('click', () => {
+      const p = b.dataset.pickProf;
+      if (section === 'profesion') { state.profession = p; renderAll(); return; }
+      const mine = myProfs();
+      UI.store.set('profs', mine.includes(p) ? mine.filter(x => x !== p) : mine.concat(p).slice(-2));
+      renderAll();
+    }));
+    container.querySelectorAll('[data-use-pair]').forEach(b => b.addEventListener('click', () => { UI.store.set('profs', b.dataset.usePair.split(' + ')); renderAll(); }));
+    container.querySelectorAll('[data-show-prof]').forEach(a => a.addEventListener('click', () => { state.profession = a.dataset.showProf; }));
+    const rare = container.querySelector('#prRare');
+    if (rare) rare.addEventListener('change', () => { state.rareOnly = rare.checked; renderAll(); });
+  }
 
   window.Professions = {
     render(target, uiHelpers) {

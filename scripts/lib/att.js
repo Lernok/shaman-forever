@@ -32,7 +32,12 @@ function block(text, i) {
     const c = text[j];
     if (c === '{') depth++;
     else if (c === '}' && --depth === 0) return text.slice(i, j + 1);
-    else if (c === '-' && text[j + 1] === '-') { const nl = text.indexOf('\n', j); if (nl < 0) break; j = nl; }
+    else if (c === '-' && text[j + 1] === '-') {
+      // Block comment --[[ … ]] or line comment.
+      const end = text.startsWith('[[', j + 2) ? text.indexOf(']]', j + 4) + 1 : text.indexOf('\n', j);
+      if (end <= 0) break;
+      j = end;
+    }
     else if (c === '"') { const end = text.indexOf('"', j + 1); if (end < 0) break; j = end; }
   }
   return text.slice(i);
@@ -84,4 +89,26 @@ function parse(fileList) {
   return { quests };
 }
 
-module.exports = { files, parse };
+// Fish from the Fishing block of the Craftables module:
+// { itemId: { name, where, zones } } ("Can be caught in inland waters…", MAP.LOCH_MODAN…).
+const MAP_NAME = k => k.toLowerCase().split('_').map(w => (['of', 'the'].includes(w) ? w : w.charAt(0).toUpperCase() + w.slice(1))).join(' ').replace(/^the /, 'The ');
+function fishing(fileList) {
+  const out = {};
+  for (const f of fileList) {
+    const at = f.text.indexOf('prof(FISHING, {');
+    if (at < 0) continue;
+    const body = block(f.text, f.text.indexOf('{', at));
+    const re = /\bi\((\d+), \{\s*--\s*([^\n]+)/g;
+    let m;
+    while ((m = re.exec(body))) {
+      const b = block(body, body.indexOf('{', m.index));
+      const where = (b.match(/description = "([^"]*)"/) || [])[1];
+      const maps = (b.match(/maps_disp = (\{[^}]*\}|MAP\.\w+)/) || [])[1] || '';
+      if (!where && !maps) continue;
+      out[m[1]] = { name: m[2].trim(), where: where || null, zones: (maps.match(/MAP\.(\w+)/g) || []).map(x => MAP_NAME(x.slice(4))) };
+    }
+  }
+  return out;
+}
+
+module.exports = { files, parse, fishing };

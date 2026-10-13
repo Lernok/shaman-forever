@@ -181,6 +181,11 @@ if (fs.existsSync(path.join(root, 'data/items.json'))) {
   write('data/items.js', 'ITEM_DATA', read('data/items.json'));
   outputs.push('data/items.js');
 }
+// Camp object of each profession (hand-curated, cited).
+const camp = read('data/camp.json');
+Object.keys(camp.objects).forEach(k => checkLang(camp.objects[k], 'camp/' + k, ''));
+write('data/camp.js', 'CAMP_DATA', camp);
+outputs.push('data/camp.js');
 if (fs.existsSync(path.join(root, 'data/consumables.json'))) {
   write('data/consumables.js', 'CONSUMABLE_DATA', read('data/consumables.json'));
   outputs.push('data/consumables.js');

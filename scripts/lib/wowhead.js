@@ -56,4 +56,13 @@ async function questTargets(id) {
   return { ids, level: Number((text.match(/Level (\d+)/) || [])[1]) || null };
 }
 
-module.exports = { item, npc, npcId, questTargets, isJSON };
+// A recipe spell's reagents: [{ id, name, count }].
+async function reagents(spellId) {
+  const j = await http.get('https://nether.wowhead.com/forever/tooltip/spell/' + spellId, { cache: 'wowhead/spell-' + spellId + '.json', json: true, maxAgeDays: 30 });
+  const html = (j && j.tooltip) || '';
+  const part = (html.split('Reagents:')[1] || '').split('</div>')[0];
+  return [...part.matchAll(/<a href="\/forever\/item=(\d+)[^"]*">([^<]+)<\/a>(?:\s*(?:&nbsp;)?\((\d+)\))?/g)]
+    .map(m => ({ id: Number(m[1]), name: m[2], count: m[3] ? Number(m[3]) : 1 }));
+}
+
+module.exports = { item, npc, npcId, questTargets, reagents, isJSON };
