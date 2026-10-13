@@ -2,8 +2,7 @@
 //   plan        your two professions (shared with the Gear page), their camp
 //               objects and, every 10 levels, only what's worth crafting: the
 //               crafted pieces of your gear path (js/gear-plan.js), your 1-2
-//               Merchant's Favor recipes with their cost, a crafted weapon
-//               when it's the best you can have
+//               Merchant's Favor recipes with their cost
 //   cocina      cooking and fishing together, fish recipes only: the skill-up
 //               path, where to fish (zones of your route first), fish food for your spec
 //   auxilios    first aid: a bandage per level bracket, potions, cures
@@ -162,7 +161,7 @@
   }
 
   // What's worth crafting: the crafted pieces of your gear path (Equipo › Tu
-  // camino) and the crafted weapon when it's the best you can have, by bracket.
+  // camino, weapon included), by bracket.
   function renderPlan(g) {
     const mine = myProfs();
     let html = '<div class="panel"><h3>' + t('pr.plan.pick') + '</h3>' + pickerHtml(mine, true) + '</div>';
@@ -181,17 +180,12 @@
     const steps = [];
     Object.values(plan.slots).forEach(p => p.steps.forEach(st => { if (['crafted', 'favor'].includes(st.pick.access)) steps.push(st); }));
     steps.sort((x, y) => x.level - y.level);
-    const weapons = window.Weapons.steps().filter(s => s.weapon.via && s.weapon.via.type === 'crafted' && !s.weapon.via.viaAH);
     html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.plan.title', { spec: Site.spec, profs: makers.join(' + ') }) + '</h3>' +
       '<p class="note-text dim">' + t('pr.plan.worth') + '</p><div class="plan-list">';
     BRACKETS.forEach(([lo, hi]) => {
       const here = steps.filter(st => st.level >= lo && st.level <= hi);
-      const arms = weapons.filter(s => s.level >= lo && s.level <= hi);
       const favor = here.filter(st => st.pick.access === 'favor');
-      let rows = arms.map(s => '<div class="gp-step"><span class="gp-lv">' + s.level + '</span><span class="gp-slot">' + t('pr.plan.weapon') + '</span>' +
-        '<div class="gp-main">' + UI.itemLink(s.weapon) + '<span class="wp-sub">' + s.weapon.via.profession + ' · ' + t('pr.plan.skill', { n: s.weapon.via.yellow }) + '</span>' +
-        '<span class="gp-why">' + (s.until > 60 ? t('gp.lastsTo60') : t('gp.lasts', { n: s.until - s.level, until: s.until })) + '</span></div></div>').join('');
-      rows += here.filter(st => st.pick.access === 'crafted').map(st => craftRow(st)).join('');
+      let rows = here.filter(st => st.pick.access === 'crafted').map(st => craftRow(st)).join('');
       if (favor.length) rows += '<div class="plan-favor"><b>' + t('pr.plan.favor', { n: favor.length }) + '</b>' + favor.map(st => craftRow(st)).join('') + '</div>';
       html += '<div class="plan-bracket' + (lo > BETA_CAP ? ' post-cap' : '') + '">' + bracketHead([lo, hi]) +
         (rows || '<p class="dim">' + t('pr.plan.nothingWorth') + '</p>') + '</div>';

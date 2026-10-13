@@ -198,9 +198,11 @@
     let html = '<div class="panel"><h3>' + t('ov.races') + ' ' + badge(r.confidence) + '</h3>' +
       '<p class="note-text">' + r.note + '</p><div class="race-grid no-refs">';
     [Site.faction === 'horde' ? 'Horde' : 'Alliance'].forEach(faction => {
-      (racials[faction] || []).filter(x => x.classes.includes('Shaman')).forEach(race => {
+      // Your race (header picker) first and highlighted.
+      const mine = x => (x.race === Site.race ? 0 : 1);
+      (racials[faction] || []).filter(x => x.classes.includes('Shaman')).sort((a, b) => mine(a) - mine(b)).forEach(race => {
         const isNew = r.newToShaman.includes(race.race);
-        html += '<div class="race-card ' + faction.toLowerCase() + '">' +
+        html += '<div class="race-card ' + faction.toLowerCase() + (race.race === Site.race ? ' mine' : '') + '">' +
           '<div class="rc-head"><img src="' + iconUrl(race.icon) + '" alt=""><b>' + race.race + '</b>' +
           '<span class="rc-faction">' + faction + (isNew ? ' · ' + t('ov.newToShaman') : '') + '</span></div><ul>' +
           race.abilities.map(([name, text, icon]) =>

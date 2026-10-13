@@ -9,7 +9,8 @@
   const PROF_ICONS = { Blacksmithing: 'trade_blacksmithing', Leatherworking: 'trade_leatherworking', Tailoring: 'trade_tailoring', Engineering: 'trade_engineering', Enchanting: 'trade_engraving', Alchemy: 'trade_alchemy' };
   const state = { drops: UI.store.get('gpDrops', false) };
 
-  const gear = () => (window.GEAR_DATA && window.GEAR_DATA.gear) || [];
+  // Armor and weapons: the weapon is one more slot of the plan.
+  const gear = () => ((window.GEAR_DATA && window.GEAR_DATA.gear) || []).concat((window.WEAPON_DATA && window.WEAPON_DATA.weapons) || []);
   const race = () => (Site.race === 'any' ? null : Site.race);
 
   function compute() {
@@ -42,7 +43,7 @@
   // Why it's on the path: how you get it and how long it lasts.
   function why(st) {
     const parts = [t('gp.why.' + st.pick.access)];
-    parts.push(st.until > 60 ? t('gp.lastsTo60') : t('gp.lasts', { n: st.lasts, until: st.until }));
+    parts.push(st.until > 60 ? t('gp.lastsTo60') : t(st.lasts === 1 ? 'gp.lasts1' : 'gp.lasts', { n: st.lasts, until: st.until }));
     if (st.replaces) parts.push(t('gp.replaces', { name: st.replaces.item.name }));
     return parts.join(' · ');
   }

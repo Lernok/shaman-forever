@@ -1,6 +1,7 @@
 // Your gear path, slot by slot: which piece to get at each level and why, for
 // your spec, faction, race (its leveling route, js/route.js) and professions.
-// Data: data/gear.js (scripts/build-gear.js). Pure functions: the Equipo page
+// Data: data/gear.js (scripts/build-gear.js) and data/weapons.js (the weapon
+// slot). Pure functions: the Equipo page
 // draws the result; scripts can run it in Node too.
 //
 // How a piece is judged (an approximation, said on the page):
@@ -25,10 +26,18 @@
     Restoration: { healing: 1, spellPower: 1, intellect: 0.75, mp5: 1, spirit: 0.5, stamina: 0.25 }
   };
   // Slots of the path; two rings and two trinkets.
-  const SLOTS = ['Head', 'Neck', 'Shoulder', 'Back', 'Chest', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet', 'Finger', 'Trinket', 'Off Hand', 'Relic'];
+  const SLOTS = ['Weapon', 'Head', 'Neck', 'Shoulder', 'Back', 'Chest', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet', 'Finger', 'Trinket', 'Off Hand', 'Relic'];
   const COUNT = { Finger: 2, Trinket: 2 };
   // Off hand: a shield or a held item; Enhancement wields a two-hander.
   const OFF_HAND = ['Shield', 'Held In Off-hand'];
+  // Weapons each spec uses (as on Equipo › Progresión): Enhancement a
+  // two-hander, judged by its DPS; casters a staff or a one-hander, by stats.
+  const WEAPON_KINDS = {
+    Enhancement: ['2H Axe', '2H Mace'],
+    Elemental: ['Staff', '1H Mace', '1H Axe', 'Dagger', 'Fist'],
+    Restoration: ['Staff', '1H Mace', '1H Axe', 'Dagger', 'Fist']
+  };
+  const isWeapon = item => item.dps != null && item.speed != null;
   const MAIL_AT = 40; // Shamans learn Mail at 40
   const UPGRADE = 1.05; // a piece must be 5% better to count as an upgrade
   const MIN_LEVELS = { route: 0, dquest: 3, quest: 3, crafted: 4, favor: 6, vendor: 4, boss: 3 };
@@ -65,6 +74,10 @@
 
   // Worth of a piece to a spec (0 = useless to it).
   function value(item, spec) {
+    if (isWeapon(item)) {
+      if (!WEAPON_KINDS[spec].includes(item.kind)) return 0;
+      if (spec === 'Enhancement') return item.dps || 0;
+    }
     let f = fit(item, spec) || (['Relic', 'Trinket'].includes(item.slot) ? effectFit(item, spec) : 0);
     if (!f) return 0;
     if (item.kind === 'Cloth' && spec === 'Enhancement') f *= 0.85;
@@ -72,6 +85,7 @@
   }
 
   function slotOf(item) {
+    if (isWeapon(item)) return 'Weapon';
     if (OFF_HAND.includes(item.slot)) return 'Off Hand';
     return SLOTS.includes(item.slot) ? item.slot : null;
   }
