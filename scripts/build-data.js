@@ -175,12 +175,9 @@ if (failed) {
 }
 write('data/builds.js', 'BUILD_DATA', builds);
 
-// Items and sync metadata come from scripts/sync.js; the site works without them.
+// Sync outputs (scripts/sync.js); the site works without them. data/items.json
+// is only an input of the build steps (the pages read what they build).
 const outputs = ['data/shaman.js', 'data/guides.js', 'data/news.js', 'data/builds.js', 'data/client-es.js'];
-if (fs.existsSync(path.join(root, 'data/items.json'))) {
-  write('data/items.js', 'ITEM_DATA', read('data/items.json'));
-  outputs.push('data/items.js');
-}
 // Camp object of each profession (hand-curated, cited).
 const camp = read('data/camp.json');
 Object.keys(camp.objects).forEach(k => checkLang(camp.objects[k], 'camp/' + k, ''));
@@ -197,6 +194,10 @@ if (fs.existsSync(path.join(root, 'data/professions.json'))) {
 if (fs.existsSync(path.join(root, 'data/weapons.json'))) {
   write('data/weapons.js', 'WEAPON_DATA', read('data/weapons.json'));
   outputs.push('data/weapons.js');
+}
+if (fs.existsSync(path.join(root, 'data/zones.json'))) {
+  write('data/zones.js', 'ZONE_DATA', read('data/zones.json'));
+  outputs.push('data/zones.js');
 }
 if (fs.existsSync(path.join(root, 'data/meta.json'))) {
   write('data/meta.js', 'SITE_META', read('data/meta.json'));

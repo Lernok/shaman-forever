@@ -58,9 +58,14 @@ const SHAMAN_BIT = 64;
 const COMPARE = ['ItemLevel', 'RequiredLevel', 'ItemDelay', 'OverallQualityID', 'Bonding',
   ...Array.from({ length: 10 }, (_, i) => 'StatModifier_bonusStat_' + i)];
 
+// Where an item is worn (client InventoryType). Shirts and tabards aren't gear.
+const SLOT = { 1: 'Head', 2: 'Neck', 3: 'Shoulder', 5: 'Chest', 20: 'Chest', 6: 'Waist', 7: 'Legs', 8: 'Feet', 9: 'Wrist',
+  10: 'Hands', 11: 'Finger', 12: 'Trinket', 16: 'Back', 13: 'One-Hand', 21: 'Main Hand', 22: 'Off Hand', 17: 'Two-Hand',
+  14: 'Shield', 23: 'Held In Off-hand', 28: 'Relic' };
+
 function kindOf(item) {
   if (item.ClassID === '2' && WEAPON[item.SubclassID]) return WEAPON[item.SubclassID];
-  if (item.ClassID === '4' && ARMOR[item.SubclassID]) return ARMOR[item.SubclassID];
+  if (item.ClassID === '4' && ARMOR[item.SubclassID]) return SLOT[item.InventoryType] ? ARMOR[item.SubclassID] : null;
   if (item.ClassID === '4' && item.InventoryType === '23') return 'Off-hand';
   if (item.ClassID === '4' && ['2', '11', '12'].includes(item.InventoryType)) return { 2: 'Neck', 11: 'Ring', 12: 'Trinket' }[item.InventoryType];
   return null;
@@ -94,6 +99,7 @@ async function itemTables(build, eraBuild, questieLevels) {
       id: Number(id),
       name: s ? s.Display_lang : null,
       kind,
+      slot: SLOT[(items.get(id) || {}).InventoryType] || null,
       quality: s ? Number(s.OverallQualityID) : null,
       req: s ? Number(s.RequiredLevel) : null,
       ilvl: s ? Number(s.ItemLevel) : null,
@@ -105,10 +111,11 @@ async function itemTables(build, eraBuild, questieLevels) {
     }, extra || {});
   };
 
-  // Every weapon, shield, off-hand and totem a Shaman can use.
+  // Every weapon and every piece of armor a Shaman can use (cloth, leather,
+  // mail, shields, off-hands, totems, cloaks, necks, rings, trinkets).
   for (const it of itemRows) {
     const kind = kindOf(it);
-    if (kind && (it.ClassID === '2' || ['Shield', 'Off-hand', 'Totem'].includes(kind))) add(it.ID, kind);
+    if (kind) add(it.ID, kind);
   }
 
   // Crafted gear a Shaman can use: recipe spell -> created item.
@@ -232,9 +239,12 @@ function diffItems(prev, next) {
   const lines = [];
   if (!prev) return lines;
   const NUMS = ['req', 'ilvl', 'quality', 'dmgMin', 'dmgMax', 'speed', 'armor'];
+  // A big batch of new items (the sync started covering more gear) is one line.
+  const added = Object.values(next).filter(x => !prev[x.id]);
+  if (added.length > 50) lines.push('- ' + added.length + ' ítems nuevos en los datos (' + [...new Set(added.map(x => x.kind))].join(', ') + ')');
   Object.values(next).forEach(x => {
     const o = prev[x.id];
-    if (!o) { lines.push('- Ítem nuevo: **' + x.name + '** (' + x.kind + ', nivel ' + x.req + ') #' + x.id); return; }
+    if (!o) { if (added.length <= 50) lines.push('- Ítem nuevo: **' + x.name + '** (' + x.kind + ', nivel ' + x.req + ') #' + x.id); return; }
     const what = NUMS.filter(f => o[f] !== x[f]).map(f => f + ' ' + o[f] + ' → ' + x[f]);
     if (JSON.stringify(o.stats || {}) !== JSON.stringify(x.stats || {})) what.push('stats ' + JSON.stringify(o.stats || {}) + ' → ' + JSON.stringify(x.stats || {}));
     if (JSON.stringify(o.equip || []) !== JSON.stringify(x.equip || [])) what.push('efectos cambiados');
@@ -331,7 +341,7 @@ function diffItems(prev, next) {
   console.log('Reporte: ' + reportFile);
   console.log('Talentos/hechizos con cambios: ' + talentLines.length + ' · ítems con cambios: ' + itemLines.length);
 
-  // Then: weapon quest sources (foreverchanges.pro), how hard each weapon quest
+  // Then: gear quest sources (foreverchanges.pro), how hard each gear quest
   // really is (fetch-levels), and every build step once, offline from here on.
   // build-data also runs every validator (rules, translations, builds).
   const env = Object.assign({}, process.env, OFFLINE ? { SYNC_OFFLINE: '1' } : {});
@@ -339,6 +349,8 @@ function diffItems(prev, next) {
   step('fetch-item-sources.js');
   step('fetch-levels.js');
   step('build-weapons.js');
+  step('build-gear.js');
+  step('build-zones.js');
   // Recipe sources come from scripts/fetch-recipes.js (run it to refresh them).
   step('build-professions.js');
   step('build-consumables.js');

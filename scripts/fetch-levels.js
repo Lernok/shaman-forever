@@ -1,6 +1,6 @@
-// How hard each weapon quest (and boss drop) really is, from who you have to
-// kill along its whole chain, so a reward is placed at the level you can
-// actually get it (scripts/build-weapons.js applies it).
+// How hard each gear quest (weapons and armor) and boss drop really is, from
+// who you have to kill along its whole chain, so a reward is placed at the
+// level you can actually get it (build-weapons.js and build-gear.js apply it).
 //
 //   node scripts/fetch-levels.js [--offline]
 //
@@ -14,20 +14,20 @@ const { readJSON, writeJSON } = require('./lib/files');
 const http = require('./lib/http');
 const att = require('./lib/att');
 const wowhead = require('./lib/wowhead');
-const weaponSources = require('./lib/weapon-sources');
+const itemSources = require('./lib/item-sources');
 
 (async () => {
   const { build, items } = readJSON('data/items.json');
-  const S = weaponSources.open(http.cacheDir, build);
+  const S = itemSources.open(http.cacheDir, build);
   const Q = S.questie;
   const A = att.parse(await att.files()).quests;
   console.log('AllTheThings: ' + Object.keys(A).length + ' quests de Forever leídas.');
 
-  // What to look up: every weapon quest and boss, straight from the sources.
+  // What to look up: every gear quest and boss, straight from the sources.
   const questIds = new Set();
   const bossIds = new Set();
   const chainHint = {};
-  Object.values(items).filter(weaponSources.isWeapon).forEach(i => S.sourcesOf(i).forEach(s => {
+  Object.values(items).filter(i => itemSources.isWeapon(i) || itemSources.isGear(i)).forEach(i => S.sourcesOf(i).forEach(s => {
     if (s.type === 'quest' && s.questId) { questIds.add(s.questId); if (s.chain) chainHint[s.questId] = s.chain; }
     if ((s.type === 'boss' || s.type === 'drop') && s.npcId) bossIds.add(s.npcId);
   }));
@@ -107,12 +107,12 @@ const weaponSources = require('./lib/weapon-sources');
   for (const id of [...bossIds].sort((a, b) => a - b)) await npc(id);
 
   writeJSON('data/levels.json', {
-    _readme: 'Written by scripts/fetch-levels.js: hardest target of each weapon quest (its chain included) and NPC levels. Used by build-weapons.js for the recommended level.',
+    _readme: 'Written by scripts/fetch-levels.js: hardest target of each gear quest (its chain included) and NPC levels. Used by build-weapons.js and build-gear.js for the recommended level.',
     sources: ['https://github.com/Questie/QuestieDB', 'https://github.com/ATTWoWAddon/AllTheThings (MIT)', 'https://www.wowhead.com/forever'],
     quests, npcs
   });
   const known = Object.values(quests).filter(q => q.hardest).length;
   const est = Object.values(quests).filter(q => q.hardest && q.hardest.from === 'dungeon-range').length;
-  console.log('Niveles: ' + questIds.size + ' quests de armas, ' + known + ' con objetivo de nivel conocido (' + est + ' estimados por el rango del dungeon) · ' + Object.keys(npcs).length + ' NPCs.');
+  console.log('Niveles: ' + questIds.size + ' quests de equipo, ' + known + ' con objetivo de nivel conocido (' + est + ' estimados por el rango del dungeon) · ' + Object.keys(npcs).length + ' NPCs.');
   console.log('Descargas: ' + http.summary());
 })().catch(e => { console.error(e.stack || e.message); process.exit(1); });

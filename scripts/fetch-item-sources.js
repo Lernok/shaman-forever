@@ -1,15 +1,15 @@
-// Quest sources for weapons that are new in Forever, which QuestieDB doesn't
-// list yet (e.g. new dungeon quest rewards like The Wrath of Rath'mael in Ruins
-// of Lordaeron). Read from foreverchanges.pro: the item page links the quest
-// that rewards it, the quest page gives its level, minimum level, zone, faction,
-// colour thresholds and whether it is a dungeon quest; /dungeon-quests gives
-// each dungeon's level range.
+// Quest sources for gear (weapons and armor) new in Forever, which QuestieDB
+// doesn't list yet (e.g. new dungeon quest rewards like The Wrath of
+// Rath'mael in Ruins of Lordaeron). Read from foreverchanges.pro: the item
+// page links the quest that rewards it, the quest page gives its level,
+// minimum level, zone, faction, colour thresholds and whether it is a dungeon
+// quest; /dungeon-quests gives each dungeon's level range.
 //
 // Its terms allow links and short quotes but not republishing the compiled data
-// wholesale, so we keep only these facts for the weapons we show, cite every
+// wholesale, so we keep only these facts for the items we show, cite every
 // one (ref), and fetch politely (1 request/s, cached in .cache/foreverchanges/).
 //
-//   node scripts/fetch-item-sources.js     (then node scripts/build-weapons.js)
+//   node scripts/fetch-item-sources.js     (then build-weapons.js / build-gear.js)
 //
 // Writes data/item-sources-fc.json: { items: { id: { name, sources: [...] } } }
 
@@ -19,7 +19,7 @@ const http = require('./lib/http');
 const BASE = 'https://foreverchanges.pro';
 const today = new Date().toISOString().slice(0, 10);
 
-// Pages are asked again after a week: a weapon with no known quest yet, or a
+// Pages are asked again after a week: an item with no known quest yet, or a
 // quest the site later corrects, gets picked up (lib/http.js keeps the dates).
 const page = (kind, id) => http.get(BASE + '/' + kind + (id ? '/' + id : ''), {
   cache: 'foreverchanges/' + kind + (id ? '-' + id : '') + '.html', maxAgeDays: 7, valid: t => /<html/i.test(t)
@@ -69,8 +69,8 @@ function dungeonLevels(html) {
 
 (async () => {
   const { items } = readJSON('data/items.json');
-  const WEAPON_KINDS = ['2H Axe', '2H Mace', 'Staff', '1H Axe', '1H Mace', 'Dagger', 'Fist'];
-  const targets = Object.values(items).filter(w => w.era === 'new' && WEAPON_KINDS.includes(w.kind));
+  // Crafted items come from the client's recipe tables, not quests.
+  const targets = Object.values(items).filter(w => w.era === 'new' && !w.crafted);
   const out = {};
   let found = 0;
   for (const w of targets) {
@@ -83,14 +83,14 @@ function dungeonLevels(html) {
     }
     if (sources.length) { out[w.id] = { name: w.name, sources }; found++; }
   }
-  // Classic quests that reward a weapon (from QuestieDB): their Forever level,
+  // Classic quests that reward gear (from QuestieDB): their Forever level,
   // zone and whether they're dungeon quests (QuestieDB files Hidden Enemies
   // under Orgrimmar, where it's handed in, not Ragefire Chasm).
   const questie = require('./lib/questie');
   const Q = questie.open(http.cacheDir, {});
   const quests = {};
   const classicQuestIds = new Set();
-  Object.values(items).filter(w => w.era !== 'new' && WEAPON_KINDS.includes(w.kind)).forEach(w =>
+  Object.values(items).filter(w => w.era !== 'new').forEach(w =>
     (Q.sources(w.id) || []).forEach(s => { if (s.type === 'quest') classicQuestIds.add(s.id); }));
   for (const q of classicQuestIds) {
     const s = parseQuest(q, await page('quest', q));
@@ -102,10 +102,10 @@ function dungeonLevels(html) {
   const prev = readJSON('data/item-sources-fc.json', {});
   const same = JSON.stringify([prev.items, prev.quests, prev.dungeons]) === JSON.stringify([out, quests, dungeons]);
   writeJSON('data/item-sources-fc.json', {
-    _readme: 'Fuentes de misión de armas nuevas de Forever (items) y datos de Forever de las misiones de Classic que dan armas (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json.',
+    _readme: 'Fuentes de misión del equipo nuevo de Forever (items) y datos de Forever de las misiones de Classic que dan equipo (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json.',
     source: BASE, fetched: same && prev.fetched ? prev.fetched : today, items: out, quests,
     dungeons, dungeonsRef: BASE + '/dungeon-quests'
   });
-  console.log('Armas nuevas: ' + targets.length + ' · con misión encontrada: ' + found +
+  console.log('Equipo nuevo: ' + targets.length + ' · con misión encontrada: ' + found +
     ' · misiones de Classic: ' + Object.keys(quests).length + '/' + classicQuestIds.size + ' (de dungeon: ' + Object.values(quests).filter(q => q.dungeon).length + ') · dungeons con rango de nivel: ' + Object.keys(dungeons).length);
 })().catch(e => { console.error(e.message); process.exit(1); });

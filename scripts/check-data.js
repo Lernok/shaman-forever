@@ -10,10 +10,11 @@ const fail = (where, msg) => errors.push(where + ': ' + msg);
 const FACTIONS = ['both', 'horde', 'alliance'];
 const TYPES = ['crafted', 'boss', 'drop', 'trash', 'quest', 'vendor', 'unknown', 'unrecorded'];
 const weapons = readJSON('data/weapons.json', { weapons: [] }).weapons;
+const gear = readJSON('data/gear.json', { gear: [] }).gear;
 const ids = new Set();
-weapons.forEach(w => {
+weapons.concat(gear).forEach(w => {
   const at = w.name + ' #' + w.id;
-  if (ids.has(w.id)) fail(at, 'repetida');
+  if (ids.has(w.id)) fail(at, 'repetido');
   ids.add(w.id);
   if (!w.icon) fail(at, 'sin ícono');
   if (!w.sources.length) fail(at, 'sin fuentes');
@@ -42,4 +43,4 @@ if (errors.length) {
   console.error('Datos inválidos (' + errors.length + '):\n' + errors.slice(0, 40).map(e => '  - ' + e).join('\n'));
   process.exit(1);
 }
-console.log('Datos verificados: ' + weapons.length + ' armas, ' + Object.keys(levels.quests).length + ' quests con nivel.');
+console.log('Datos verificados: ' + weapons.length + ' armas, ' + gear.length + ' piezas de equipo, ' + Object.keys(levels.quests).length + ' quests con nivel.');

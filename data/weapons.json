@@ -2213,6 +2213,9 @@
      "profession": "Blacksmithing",
      "yellow": 65,
      "grey": 105,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 6,
@@ -2745,6 +2748,9 @@
      "profession": "Blacksmithing",
      "yellow": 70,
      "grey": 110,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 8,
@@ -4357,6 +4363,9 @@
      "profession": "Blacksmithing",
      "yellow": 80,
      "grey": 120,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 11,
@@ -5263,6 +5272,9 @@
      "profession": "Blacksmithing",
      "yellow": 85,
      "grey": 125,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 12,
@@ -7444,6 +7456,9 @@
      "profession": "Blacksmithing",
      "yellow": 110,
      "grey": 140,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 15,
@@ -8271,6 +8286,9 @@
      "profession": "Blacksmithing",
      "yellow": 110,
      "grey": 140,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 16,
@@ -9043,6 +9061,9 @@
      "profession": "Blacksmithing",
      "yellow": 115,
      "grey": 145,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 17,
@@ -10524,6 +10545,9 @@
      "profession": "Blacksmithing",
      "yellow": 120,
      "grey": 150,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 18,
@@ -10561,6 +10585,9 @@
      "profession": "Blacksmithing",
      "yellow": 115,
      "grey": 145,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 18,
@@ -11501,6 +11528,10 @@
      "profession": "Blacksmithing",
      "yellow": 155,
      "grey": 185,
+     "learn": {
+      "type": "trainer",
+      "learnAt": 125
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 20,
@@ -11873,6 +11904,9 @@
      "profession": "Blacksmithing",
      "yellow": 135,
      "grey": 165,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 20,
@@ -12009,6 +12043,9 @@
      "profession": "Blacksmithing",
      "yellow": 130,
      "grey": 160,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 20,
@@ -13033,6 +13070,9 @@
      "profession": "Blacksmithing",
      "yellow": 140,
      "grey": 170,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 22,
@@ -14044,6 +14084,9 @@
      "profession": "Blacksmithing",
      "yellow": 145,
      "grey": 175,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 23,
@@ -15486,6 +15529,10 @@
      "profession": "Enchanting",
      "yellow": 140,
      "grey": 180,
+     "learn": {
+      "type": "favor",
+      "favor": 45
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 25,
@@ -15527,6 +15574,10 @@
      "profession": "Enchanting",
      "yellow": 140,
      "grey": 180,
+     "learn": {
+      "type": "favor",
+      "favor": 45
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 25,
@@ -15594,6 +15645,9 @@
      "profession": "Blacksmithing",
      "yellow": 150,
      "grey": 180,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 25,
@@ -15942,6 +15996,9 @@
      "profession": "Blacksmithing",
      "yellow": 155,
      "grey": 180,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 26,
@@ -16044,6 +16101,9 @@
      "profession": "Blacksmithing",
      "yellow": 155,
      "grey": 180,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 26,
@@ -17773,6 +17833,9 @@
      "profession": "Blacksmithing",
      "yellow": 170,
      "grey": 195,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 29,
@@ -19089,6 +19152,9 @@
      "profession": "Blacksmithing",
      "yellow": 180,
      "grey": 205,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 31,
@@ -19409,6 +19475,9 @@
      "profession": "Blacksmithing",
      "yellow": 185,
      "grey": 210,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 32,
@@ -20015,6 +20084,9 @@
      "profession": "Blacksmithing",
      "yellow": 190,
      "grey": 215,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 33,
@@ -20053,6 +20125,9 @@
      "profession": "Blacksmithing",
      "yellow": 190,
      "grey": 215,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 33,
@@ -20685,6 +20760,9 @@
      "profession": "Blacksmithing",
      "yellow": 190,
      "grey": 215,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 34,
@@ -20962,6 +21040,9 @@
      "profession": "Blacksmithing",
      "yellow": 200,
      "grey": 225,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 35,
@@ -21444,6 +21525,9 @@
      "profession": "Blacksmithing",
      "yellow": 200,
      "grey": 220,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 36,
@@ -22027,6 +22111,9 @@
      "profession": "Blacksmithing",
      "yellow": 210,
      "grey": 235,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 37,
@@ -22535,6 +22622,9 @@
      "profession": "Blacksmithing",
      "yellow": 210,
      "grey": 230,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 38,
@@ -23424,6 +23514,9 @@
      "profession": "Blacksmithing",
      "yellow": 220,
      "grey": 245,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 39,
@@ -24156,6 +24249,9 @@
      "profession": "Blacksmithing",
      "yellow": 215,
      "grey": 235,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 40,
@@ -24671,6 +24767,9 @@
      "profession": "Blacksmithing",
      "yellow": 230,
      "grey": 255,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 41,
@@ -24904,6 +25003,9 @@
      "profession": "Blacksmithing",
      "yellow": 235,
      "grey": 260,
+     "learn": {
+      "type": "trainer"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 42,
@@ -25042,6 +25144,9 @@
      "profession": "Blacksmithing",
      "yellow": 230,
      "grey": 250,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 42,
@@ -25371,6 +25476,9 @@
      "profession": "Blacksmithing",
      "yellow": 235,
      "grey": 255,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 43,
@@ -26148,6 +26256,9 @@
      "profession": "Blacksmithing",
      "yellow": 245,
      "grey": 270,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 44,
@@ -26629,6 +26740,10 @@
      "profession": "Enchanting",
      "yellow": 225,
      "grey": 265,
+     "learn": {
+      "type": "favor",
+      "favor": 120
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 45,
@@ -26668,6 +26783,10 @@
      "profession": "Enchanting",
      "yellow": 225,
      "grey": 265,
+     "learn": {
+      "type": "favor",
+      "favor": 120
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 45,
@@ -27012,6 +27131,9 @@
      "profession": "Blacksmithing",
      "yellow": 255,
      "grey": 280,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 46,
@@ -28550,6 +28672,9 @@
      "profession": "Blacksmithing",
      "yellow": 270,
      "grey": 295,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 49,
@@ -28619,6 +28744,9 @@
      "profession": "Blacksmithing",
      "yellow": 270,
      "grey": 295,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 49,
@@ -28950,6 +29078,9 @@
      "profession": "Blacksmithing",
      "yellow": 260,
      "grey": 280,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 50,
@@ -28990,6 +29121,10 @@
      "profession": "Blacksmithing",
      "yellow": 270,
      "grey": 290,
+     "learn": {
+      "type": "favor",
+      "favor": 90
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 50,
@@ -29096,6 +29231,10 @@
      "profession": "Blacksmithing",
      "yellow": 270,
      "grey": 290,
+     "learn": {
+      "type": "favor",
+      "favor": 90
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 50,
@@ -29132,6 +29271,9 @@
      "profession": "Blacksmithing",
      "yellow": 275,
      "grey": 300,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 50,
@@ -29393,6 +29535,9 @@
      "profession": "Blacksmithing",
      "yellow": 275,
      "grey": 300,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 50,
@@ -29532,6 +29677,9 @@
      "profession": "Blacksmithing",
      "yellow": 280,
      "grey": 305,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 51,
@@ -29690,6 +29838,9 @@
      "profession": "Blacksmithing",
      "yellow": 280,
      "grey": 305,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 51,
@@ -30071,6 +30222,9 @@
      "profession": "Blacksmithing",
      "yellow": 270,
      "grey": 290,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 52,
@@ -30328,6 +30482,9 @@
      "profession": "Blacksmithing",
      "yellow": 285,
      "grey": 310,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 52,
@@ -30720,6 +30877,9 @@
      "profession": "Blacksmithing",
      "yellow": 285,
      "grey": 310,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 52,
@@ -30940,6 +31100,9 @@
      "profession": "Blacksmithing",
      "yellow": 290,
      "grey": 315,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 53,
@@ -31521,6 +31684,9 @@
      "profession": "Blacksmithing",
      "yellow": 290,
      "grey": 310,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 54,
@@ -31817,6 +31983,9 @@
      "profession": "Blacksmithing",
      "yellow": 305,
      "grey": 330,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 55,
@@ -32088,6 +32257,9 @@
      "profession": "Blacksmithing",
      "yellow": 325,
      "grey": 350,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 55,
@@ -33838,6 +34010,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 57,
@@ -34922,6 +35097,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "reputation"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 58,
@@ -35244,6 +35422,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 58,
@@ -35282,6 +35463,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 58,
@@ -35932,6 +36116,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 58,
@@ -36033,6 +36220,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "reputation"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 58,
@@ -36284,6 +36474,9 @@
      "profession": "Blacksmithing",
      "yellow": 310,
      "grey": 335,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 58,
@@ -36322,6 +36515,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 58,
@@ -36362,6 +36558,9 @@
      "profession": "Blacksmithing",
      "yellow": 295,
      "grey": 315,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 58,
@@ -38925,6 +39124,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -38999,6 +39201,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -39314,6 +39519,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -39423,6 +39631,9 @@
      "profession": "Blacksmithing",
      "yellow": 295,
      "grey": 315,
+     "learn": {
+      "type": "reputation"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -39538,6 +39749,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -39898,6 +40112,9 @@
      "profession": "Blacksmithing",
      "yellow": 325,
      "grey": 350,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -39934,6 +40151,9 @@
      "profession": "Blacksmithing",
      "yellow": 325,
      "grey": 350,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -40473,6 +40693,9 @@
      "profession": "Blacksmithing",
      "yellow": 310,
      "grey": 325,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -42111,6 +42334,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -42267,6 +42493,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -42837,6 +43066,9 @@
      "profession": "Blacksmithing",
      "yellow": 295,
      "grey": 315,
+     "learn": {
+      "type": "reputation"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -43329,6 +43561,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "reputation"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -43368,6 +43603,9 @@
      "profession": "Blacksmithing",
      "yellow": 310,
      "grey": 325,
+     "learn": {
+      "type": "drop"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -44316,6 +44554,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "reputation"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -44432,6 +44673,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -45011,6 +45255,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,
@@ -45243,6 +45490,9 @@
      "profession": "Blacksmithing",
      "yellow": 320,
      "grey": 340,
+     "learn": {
+      "type": "unknown"
+     },
      "faction": "both",
      "confidence": "client-data",
      "asap": 60,

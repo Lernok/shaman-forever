@@ -1,7 +1,8 @@
-// Where each weapon comes from, gathered from every source in one place, so
-// fetch-levels.js (what to look up) and build-weapons.js (the site data) see
-// the same thing:
-//   crafted              client recipe tables (exact)
+// Where each item (weapon or armor) comes from, gathered from every source in
+// one place, so fetch-levels.js (what to look up), build-weapons.js and
+// build-gear.js (the site data) see the same thing:
+//   crafted              client recipe tables (exact); how the recipe is
+//                        learned from data/recipes.json (lib/recipes.js)
 //   drop / boss / quest / vendor   QuestieDB (Classic sources, "classic-assumed")
 //   quest (new items)    foreverchanges.pro (data/item-sources-fc.json)
 //   hand-reported        data/item-sources.json
@@ -15,9 +16,12 @@ const fs = require('fs');
 const { parseCSV } = require('./csv');
 const questie = require('./questie');
 const { readJSON } = require('./files');
+const recipes = require('./recipes');
 
 const WEAPON_KINDS = ['2H Axe', '2H Mace', 'Staff', '1H Axe', '1H Mace', 'Dagger', 'Fist'];
 const isWeapon = i => WEAPON_KINDS.includes(i.kind) && i.dps;
+// Everything else a Shaman wears: armor, shields, off-hands, totems, jewelry.
+const isGear = i => !WEAPON_KINDS.includes(i.kind);
 const SHAMAN_CLASS = 64;
 const QUEST_FACTS = ['level', 'requiredLevel', 'faction', 'zone', 'dungeon'];
 
@@ -41,10 +45,14 @@ function open(cacheDir, build) {
   const dungeonRange = {};
   Object.entries(fc.dungeons || {}).forEach(([z, r]) => { dungeonRange[bare(z)] = r; });
   const conflictList = [];
+  const R = recipes.open();
 
   function classify(item) {
     if (item.crafted) {
-      return [{ type: 'crafted', profession: item.crafted.profession, yellow: item.crafted.yellow, grey: item.crafted.grey, faction: 'both', confidence: 'client-data' }];
+      // How the recipe is learned: trainer, Merchant's Favor (with its cost), drop...
+      const learn = R.learn(item.crafted.profession, item.name);
+      delete learn.text;
+      return [{ type: 'crafted', profession: item.crafted.profession, yellow: item.crafted.yellow, grey: item.crafted.grey, learn, faction: 'both', confidence: 'client-data' }];
     }
     const src = Q.sources(item.id) || [];
     const out = [];
@@ -130,4 +138,85 @@ function open(cacheDir, build) {
   return { sourcesOf, noSource, conflicts: () => conflictList.slice(), questie: Q, dungeonRange, bare };
 }
 
-module.exports = { open, isWeapon, WEAPON_KINDS, SHAMAN_CLASS };
+// Places each source at the level you can really get it (data/levels.json,
+// from fetch-levels.js). Shared by build-weapons.js and build-gear.js.
+const GROUP_RANKS = ['elite', 'rare-elite', 'boss'];
+function placer(levels) {
+  const factionNotes = [];
+
+  // A quest only other classes can do (foreverchanges' class line, AllTheThings' classes).
+  function otherClassQuest(s) {
+    if (s.type !== 'quest') return false;
+    if (s.classes && !s.classes.includes('Shaman')) return true;
+    const L = levels.quests[s.questId];
+    return !!(L && L.classes && !L.classes.includes('SHAMAN'));
+  }
+
+  // First level you can take part: the quest's minimum, or a dungeon's floor.
+  function firstLevel(s) {
+    if (s.dungeon && s.dungeonLevels) return Math.max(s.requiredLevel || 0, s.dungeonLevels[0]);
+    return s.requiredLevel || s.level || 0;
+  }
+
+  // Each source gets `asap` (earliest) and `rec` (recommended). What you have to
+  // kill decides it (the hardest target in the quest's whole chain), not the
+  // number on the quest: group content (dungeon or elite) recommended 3 below
+  // that target and earliest 5 below; solo 1 and 3 below. Never below the quest's
+  // minimum or above the quest's own level. With no known target: a dungeon quest
+  // uses one below the dungeon's top level, a solo quest its own level - 1.
+  function place(item, s) {
+    const req = item.req || 0;
+    if (s.type === 'quest') {
+      const L = levels.quests[s.questId];
+      // One faction anywhere in the chain: only that faction gets the reward.
+      if (L && (L.faction === 'horde' || L.faction === 'alliance') && s.faction !== L.faction) {
+        if (s.faction === 'both') s.faction = L.faction;
+        else factionNotes.push(item.name + ' · ' + s.quest + ': facción ' + s.faction + ' en la fuente, ' + L.faction + ' en la cadena (se deja ' + s.faction + ')');
+      }
+      const first = Math.max(req, firstLevel(s));
+      let rec;
+      let early = first;
+      if (L && L.hardest && L.hardest.level) {
+        const group = s.dungeon || GROUP_RANKS.includes(L.hardest.rank);
+        rec = L.hardest.level - (group ? 3 : 1);
+        early = Math.max(first, L.hardest.level - (group ? 5 : 3));
+        s.basis = { name: L.hardest.name, level: L.hardest.level, rank: L.hardest.rank, from: L.hardest.from, group, step: L.hardest.step, steps: L.steps };
+      } else if (s.dungeon && s.dungeonLevels) {
+        rec = s.dungeonLevels[1] - 1 - 3;
+        s.basis = { from: 'dungeon-range', group: true };
+      } else {
+        rec = (s.level || s.requiredLevel || 0) - 1;
+        s.basis = { from: 'quest-level', group: false };
+      }
+      rec = Math.max(rec, s.requiredLevel || 0, req);
+      if (s.level) {
+        rec = Math.min(rec, Math.max(s.level, req));
+        early = Math.min(early, Math.max(s.level, req));
+      }
+      s.asap = early;
+      s.rec = Math.max(rec, early);
+    } else if (s.type === 'boss' || s.type === 'drop') {
+      const n = s.npcId && levels.npcs[s.npcId];
+      const lv = (n && n.level) || Number(String(s.level || '').split('-').pop()) || null;
+      const group = s.type === 'boss' || GROUP_RANKS.includes((n && n.rank) || s.rank);
+      s.asap = lv ? Math.max(req, lv - (group ? 5 : 3)) : req;
+      s.rec = lv ? Math.max(req, lv - (group ? 3 : 1)) : req;
+      if (lv) s.basis = { name: s.npc, level: lv, rank: (n && n.rank) || s.rank, from: n && n.from ? n.from : 'questie', group };
+    } else {
+      s.asap = req;
+      s.rec = req;
+    }
+  }
+
+  // An item's sources, other classes' quests left out, each one placed.
+  function placedSources(S, item) {
+    const sources = S.sourcesOf(item).filter(s => !otherClassQuest(s));
+    if (!sources.length) sources.push(S.noSource(item));
+    sources.forEach(s => place(item, s));
+    return sources;
+  }
+
+  return { place, placedSources, otherClassQuest, factionNotes };
+}
+
+module.exports = { open, placer, isWeapon, isGear, WEAPON_KINDS, SHAMAN_CLASS, INSTANCE, RAID };

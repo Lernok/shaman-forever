@@ -1,4 +1,5 @@
-// Site-wide choices picked once in the header and remembered (spec, faction),
+// Site-wide choices picked once in the header and remembered (spec, faction,
+// race: 'any' shows everything as if none was picked),
 // and the sub-section strip inside long pages ("#Page/section" in the hash).
 (function () {
   const SPECS = ['Enhancement', 'Elemental', 'Restoration'];
@@ -15,11 +16,27 @@
     CLASS_ICON: 'classicon_shaman',
     spec: load('spec', SPECS, 'Enhancement'),
     faction: load('faction', FACTIONS, 'horde'),
+    race: window.UI.store.get('race', 'any'),
+
+    // Races of a faction that can be Shaman: [{ race, icon }] (data/shaman.json).
+    races(faction) {
+      const list = (window.SHAMAN_DATA.racials || {})[faction === 'horde' ? 'Horde' : 'Alliance'] || [];
+      return list.filter(r => r.classes.includes('Shaman')).map(r => ({ race: r.race, icon: r.icon }));
+    },
+    // The race only when it belongs to the faction; 'any' otherwise.
+    validRace(race, faction) {
+      return Site.races(faction).some(r => r.race === race) ? race : 'any';
+    },
 
     set(key, value) {
       if (Site[key] === value) return;
       Site[key] = value;
       window.UI.store.set(key, value);
+      // Another faction: a race of the old one no longer applies.
+      if (key === 'faction' && Site.validRace(Site.race, value) !== Site.race) {
+        Site.race = 'any';
+        window.UI.store.set('race', 'any');
+      }
       listeners.forEach(fn => fn(key, value));
     },
     onChange(fn) { listeners.push(fn); },

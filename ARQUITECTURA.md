@@ -9,16 +9,20 @@ Sitio estático (GitHub Pages): `index.html` carga los datos como variables glob
 | Paso | Script | Fuentes | Escribe |
 |---|---|---|---|
 | 1 | `sync.js` | wago.tools (tablas del cliente; si está caído, copias de AllTheThings), talentsforever.com, QuestieDB, Wowhead (tooltips de ítems) | `shaman.json`, `items.json`, `meta.json`, `changelog.json`, `reports/changes-*.md` |
-| 2 | `fetch-item-sources.js` | foreverchanges.pro | `item-sources-fc.json` |
-| 3 | `fetch-levels.js` | QuestieDB, AllTheThings, Wowhead (NPCs y quests) | `levels.json` |
+| 2 | `fetch-item-sources.js` | foreverchanges.pro (quests del equipo nuevo de Forever y datos de Forever de las quests de Classic que dan equipo) | `item-sources-fc.json` |
+| 3 | `fetch-levels.js` | QuestieDB, AllTheThings, Wowhead (NPCs y quests), para todas las quests y bosses que dan equipo | `levels.json` |
 | 4 | `build-weapons.js` | lo anterior + `item-sources.json` (a mano) | `weapons.json`, `reports/conflicts.md` |
+| 4b | `build-gear.js` | lo mismo, para la armadura (tela, cuero, malla, escudos, off-hands, totems, capas, collares, anillos, trinkets), con `slot` | `gear.json` |
+| 4c | `build-zones.js` | QuestieDB (nivel y zona de cada quest), AllTheThings (zonas nuevas), AreaTable del cliente, foreverchanges (dungeons) | `zones.json`: banda de nivel de cada zona por facción, de cada dungeon, y zona de inicio de cada raza Shaman |
 | 5 | `build-professions.js` | `items.json` + `recipes.json` | `professions.json` |
 | 5b | `build-consumables.js` | tablas del cliente (recetas de Cocina y Primeros Auxilios), Wowhead (efecto y materiales), AllTheThings (dónde pescar), QuestieDB (de dónde sale la receta) | `consumables.json` |
-| 6 | `build-data.js` | todo lo anterior + `data/guides/*.json`, `builds.json`, `news.json` | `data/*.js`; corre los validadores y `check-data.js` |
+| 6 | `build-data.js` | todo lo anterior + `data/guides/*.json`, `builds.json`, `news.json` | `data/*.js` (los que lee el sitio; `items.json` es solo entrada de los pasos); corre los validadores y `check-data.js` |
 
 `fetch-recipes.js` (recetas de classicwowforever.com) se corre a mano; sus páginas duran un mes en caché.
 
 ### Descargas (`scripts/lib/http.js`)
+
+Las fuentes de cada ítem salen de `scripts/lib/item-sources.js` (con la regla de nivel `placer`, igual para armas y armadura); cómo se aprende cada receta (entrenador, Merchant's Favor con su costo, drop) de `scripts/lib/recipes.js`.
 
 Toda descarga pasa por `http.get`: un User-Agent, pausa por sitio, reintentos ante 5xx/429, y **nunca guarda una respuesta inválida** (página de error, cuerpo vacío, HTML donde se esperaba JSON). Cada archivo del caché tiene su fecha en `.cache/_fetched.json` y se vuelve a pedir cuando vence:
 

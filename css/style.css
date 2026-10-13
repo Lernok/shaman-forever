@@ -57,6 +57,13 @@ a { color: var(--accent); }
 .faction-pick .btn { font-weight: 600; padding: 6px 12px; }
 .faction-pick .btn.horde.active { color: #fff; background: rgba(170,40,40,.45); border-color: rgba(220,70,70,.6); }
 .faction-pick .btn.alliance.active { color: #fff; background: rgba(40,80,170,.45); border-color: rgba(80,130,230,.6); }
+.race-pick .btn { display: inline-flex; align-items: center; gap: 6px; padding: 4px; font-weight: 600; }
+.race-pick .btn img { width: 24px; height: 24px; border-radius: 5px; opacity: .5; filter: grayscale(.6); }
+.race-pick .btn span { display: none; }
+.race-pick .btn.active { color: var(--text); background: rgba(255,255,255,.08); border-color: var(--border); padding-right: 10px; }
+.race-pick .btn.active img { opacity: 1; filter: none; }
+.race-pick .btn.active span, .race-pick .btn.any span { display: inline; }
+.race-pick .btn.any { padding: 6px 10px; }
 .picker .lang-toggle { background: var(--bg-panel); border: 1px solid var(--border); padding: 7px 12px; }
 
 /* ---------- Main menu: sticky, one row, scrolls sideways on phones ---------- */
