@@ -1062,3 +1062,8 @@ details.more summary { cursor: pointer; font-size: 12.5px; color: var(--accent);
   .br-lv, .br-new { grid-column: 1; }
   .br-src { grid-column: 1 / -1; }
 }
+
+.spell-ref, [data-ref] { cursor: help; }
+.ref-tip { pointer-events: none; }
+.ref-tip .t-name { color: var(--gold); }
+.ref-learn { color: var(--good) !important; margin-top: 6px; }

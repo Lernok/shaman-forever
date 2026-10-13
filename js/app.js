@@ -107,6 +107,7 @@
         frag.appendChild(document.createTextNode(text.slice(last, m.index)));
         const span = document.createElement('span');
         span.className = 'spell-ref';
+        span.dataset.ref = m[0];
         span.innerHTML = '<img src="' + smallIcon(iconFor(m[0])) + '" alt="" loading="lazy">';
         span.appendChild(document.createTextNode(m[0]));
         frag.appendChild(span);
@@ -118,6 +119,53 @@
   }
 
   // A colored dot; what it means shows on hover or focus, and in the legend.
+  // ---------- hover card for a spell or talent name ----------
+
+  let refTipEl = null;
+  function refTip(name) {
+    const sd = window.SHAMAN_DATA;
+    const C = s => I18N.client(s);
+    let tal = null;
+    sd.talents.trees.forEach(tr => { const x = tr.talents.find(y => y.name === name); if (x) tal = { tree: tr.name, x }; });
+    const ranks = [];
+    sd.spellbook.tabs.forEach(tab => tab.spells.forEach(([n, r]) => { if (n === name && !ranks.includes(r)) ranks.push(r); }));
+    const levels = sd.spellbook.levels[name] || [];
+    const top = ranks[ranks.length - 1];
+    const d = top ? sd.spell_desc['Shaman|' + name + '|' + top] || {} : {};
+    const lines = l => (l || []).map(row => row.filter(Boolean).map(C).join(' · ')).filter(Boolean).join(' · ');
+    let html = '<div class="it-head"><img class="it-icon" src="' + iconUrl(iconFor(name)) + '" alt=""><div><div class="t-name">' + name + '</div>' +
+      '<div class="t-cost">' + (tal ? t('ref.talent', { tree: tal.tree, row: tal.x.row }) + (tal.x.max > 1 ? ' · ' + t('ref.ranks', { n: tal.x.max }) : '') : '') +
+      (top && ranks.length > 1 ? (tal ? ' · ' : '') + t('ref.ranks', { n: ranks.length }) : '') + '</div></div></div>';
+    if (d.d) {
+      html += (lines(d.l) ? '<div class="t-cost">' + lines(d.l) + '</div>' : '') + '<div class="t-rank">' + C(d.d) + '</div>';
+    } else if (tal) {
+      if (tal.x.cost) html += '<div class="t-cost">' + tal.x.cost.split(' | ').map(C).join(' · ') + '</div>';
+      html += '<div class="t-rank">' + C(tal.x.desc[tal.x.desc.length - 1]) + '</div>';
+      if (tal.x.max > 1) html += '<div class="t-cost">' + t('ref.firstRank') + ': ' + C(tal.x.desc[0]) + '</div>';
+    }
+    if (levels.length) html += '<div class="t-cost ref-learn">' + t('ref.learnedAt', { level: levels[0] }) + (levels.length > 1 ? ' · ' + t('ref.ranksAt', { list: levels.join(', ') }) : '') + '</div>';
+    else if (tal) html += '<div class="t-cost ref-learn">' + t('ref.talentLevel', { level: 10 + (tal.x.row - 1) * 5 }) + '</div>';
+    const cmp = top && window.Spellbook && window.Spellbook.compare(name, top);
+    if (cmp && cmp.pct != null) html += '<div class="t-classic">Classic: ' + I18N.range(cmp.then) + ' → ' + I18N.range(cmp.now) + ' (' + (cmp.pct > 0 ? '+' : '') + cmp.pct + '%)</div>';
+    else if (tal && tal.x.classic && tal.x.classic.status === 'new') html += '<div class="t-classic">' + t('ref.newTalent') + '</div>';
+    return html;
+  }
+  function showRefTip(el, x, y) {
+    if (!refTipEl) { refTipEl = document.createElement('div'); refTipEl.className = 'tooltip calc-tip ref-tip'; document.body.appendChild(refTipEl); }
+    refTipEl.innerHTML = refTip(el.dataset.ref);
+    refTipEl.style.display = 'block';
+    const w = refTipEl.offsetWidth, h = refTipEl.offsetHeight;
+    let left = x + 14;
+    if (left + w > window.innerWidth - 8) left = x - w - 14;
+    refTipEl.style.left = Math.max(8, left) + 'px';
+    refTipEl.style.top = Math.max(8, Math.min(y + 14, window.innerHeight - h - 8)) + 'px';
+  }
+  document.addEventListener('mousemove', e => {
+    const el = e.target.closest && e.target.closest('[data-ref]');
+    if (el) showRefTip(el, e.clientX, e.clientY);
+    else if (refTipEl && refTipEl.style.display !== 'none') refTipEl.style.display = 'none';
+  });
+
   function badge(confidence) {
     if (!confidence) return '';
     const cls = CONFIDENCE[confidence] || 'conf-untested';
@@ -230,7 +278,7 @@
       const [full, what] = k.split(' — ');
       const name = full.replace(/ \(.*\)$/, '');
       const where = (full.match(/ \((.*)\)$/) || [])[1];
-      return '<li class="no-refs"><img src="' + iconUrl(iconFor(name)) + '" alt="" loading="lazy"><div><b>' + name + '</b>' +
+      return '<li class="no-refs" data-ref="' + name + '"><img src="' + iconUrl(iconFor(name)) + '" alt="" loading="lazy"><div><b>' + name + '</b>' +
         (where ? ' <span class="dim">' + where + '</span>' : '') + (what ? '<span class="kt-what">' + what + '</span>' : '') + '</div></li>';
     }).join('') + '</ul></div>';
   }
@@ -246,7 +294,7 @@
     });
     if (rot.totems) {
       html += '<div class="sub-label">' + t('guide.keyTotems') + '</div><div class="totem-row no-refs">' + rot.totems.map(n =>
-        '<span class="totem-tile"><img src="' + iconUrl(iconFor(n)) + '" alt="" loading="lazy">' + n + '</span>').join('') + '</div>';
+        '<span class="totem-tile" data-ref="' + n + '"><img src="' + iconUrl(iconFor(n)) + '" alt="" loading="lazy">' + n + '</span>').join('') + '</div>';
     }
     return html + '</div>';
   }
