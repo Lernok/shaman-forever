@@ -78,7 +78,13 @@ Sesión 4 (2026-10-13, tarde), **todo subido a GitHub** (`6032983`, Pages desple
 - Tu camino: sin profesiones elegidas = **sin crafteos** (antes = cualquiera, y eso tapaba quests). Las quests de ruta que solo un crafteo supera quedan en "No te pierdas" como **alternativa gratis** (`st.alt`).
 - Barrido: 672 combinaciones (idiomas × specs × facciones × razas × profesiones × páginas) sin errores; 18 páginas a 375 px sin scroll horizontal (con iframe: resize_window no achica la ventana maximizada).
 
+Sesión 5 (pulido, subido `b71c868`):
+- Recetas cruzadas por **id de ítem** (`fetch-recipes.js` lee los objetos embebidos de classicwowforever): nombres repetidos Classic/Forever ya no se mezclan.
+- Ícono de Skyborne corregido en `build-data.js` (`ICON_FIX`): el sync guarda `shaman.json` tal cual lo publica talentsforever.
+- Camino: quests de clase (`access 'class'`), fuera quests de eventos/raids/PvP/otras profesiones y vendedores en zonas solo de la otra facción (`Route.reachable`); pesos de Enh como su guía (Int 0.5, Agi 0.5).
+- Guía: arma al 30 = la de tu camino; Inicio y novedades al día; páginas de armas filtran por raza; changelog sin la entrada de "5061 ítems" (era el cambio de alcance, no del juego).
+
 Falta / ideas:
-- El usuario está revisando el sitio publicado; esperar su feedback.
+- Esperar feedback del usuario. Ideas no hechas: encabezado más compacto en celular; textos "tope de la beta"/"nivel 30" a revisar el 4-nov (lanzamiento); totems antes del 60; gear.js ~1,3 MB.
 - Afinar con el usuario: pesos de stats, umbrales (UPGRADE 5%, MIN_LEVELS, MIN_FIT 0.4), zonas que propone la ruta.
 - Totems/abalorios: casi sin datos útiles por debajo de 60 (los "Icon" nuevos de Forever no traen efecto).
