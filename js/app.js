@@ -35,7 +35,8 @@
 
   const app = document.getElementById('app');
   const tabs = Array.from(document.querySelectorAll('.spec-tab'));
-  const PAGES = tabs.map(t => t.dataset.spec);
+  // Home has no menu tab: the brand links to it.
+  const PAGES = tabs.map(t => t.dataset.spec).concat('Inicio');
   // Hash is "#<Page>", "#<Page>/<section>" or, for the calculator,
   // "#Talentos/<level>/<build code>".
   function hashParts() { return location.hash.slice(1).split('/'); }
@@ -49,7 +50,7 @@
     history.replaceState(null, '', '#' + parts.join('/'));
   }
   upgradeHash();
-  let currentPage = PAGES.includes(hashParts()[0]) ? hashParts()[0] : 'Guia';
+  let currentPage = PAGES.includes(hashParts()[0]) ? hashParts()[0] : 'Inicio';
   let currentHash = location.hash;
 
   function iconUrl(icon) {
@@ -360,8 +361,14 @@
   // ---------- news page ----------
 
   // "- **Name** #123: what" lines from the sync log.
+  // The sync writes these in Spanish; English swaps the fixed words.
+  const LINE_EN = [[/^Ítem nuevo: /, 'New item: '], [/^Ítem eliminado: /, 'Item removed: '], [/^Talento nuevo: /, 'New talent: '],
+    [/^Talento eliminado: /, 'Talent removed: '], [/^Hechizo nuevo: /, 'New spell: '], [/, nivel (\d+)\)/, ', level $1)'],
+    [/posición /g, 'position '], [/rangos /g, 'ranks '], [/requisito /g, 'requires '], [/texto: /g, 'text: '], [/efectos cambiados/g, 'effects changed']];
   function changeLine(line) {
-    return line.replace(/^- /, '')
+    line = line.replace(/^- /, '');
+    if (I18N.lang === 'en') LINE_EN.forEach(([re, to]) => { line = line.replace(re, to); });
+    return line
       .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
       .replace(/#(\d{3,})/, '<a href="https://www.wowhead.com/forever/item=$1" target="_blank" rel="noopener">#$1</a>');
   }
@@ -418,6 +425,44 @@
     return html;
   }
 
+  // ---------- home ----------
+
+  const LAUNCH = new Date('2026-11-04T23:00:00Z');
+  function renderHome() {
+    const days = Math.ceil((LAUNCH - new Date()) / 86400000);
+    const launch = days > 0 ? t('home.launchIn', { n: days }) : days === 0 ? t('home.launchToday') : t('home.launched');
+    let html = '<section class="home-hero"><div class="home-hero-text"><div class="role">' + t('home.kicker') + '</div>' +
+      '<h2>' + t('home.title') + '</h2><p>' + t('home.tagline') + '</p></div>' +
+      '<div class="countdown"><b>' + launch + '</b><span>' + t('home.launchDate') + '</span><span class="dim">' + t('home.betaEnds') + '</span></div></section>';
+
+    html += '<h3 class="block-title">' + t('home.pick') + '</h3><div class="spec-cards">';
+    Site.SPECS.forEach(spec => {
+      const g = I18N.localize(window.GUIDE_DATA[spec]);
+      const tree = window.SHAMAN_DATA.talents.trees.find(tr => tr.name === spec);
+      const first = String(g.summary).replace(/<[^>]+>/g, '').split(/(?<=\.)\s/)[0];
+      html += '<a class="spec-card' + (Site.spec === spec ? ' current' : '') + '" href="#Guia" data-go-spec="' + spec + '" style="--spec-color:' + SPEC_COLORS[spec] + ';--card-bg:url(' + TREE_BG_BASE + tree.bg + '.jpg)">' +
+        '<img src="' + iconUrl(SPEC_ICONS[spec]) + '" alt="">' +
+        '<span class="role">' + g.role + '</span><b>' + spec + '</b><span class="sc-line">' + first + '</span>' +
+        '<span class="sc-go">' + t('home.goGuide') + '</span></a>';
+    });
+    html += '</div>';
+
+    html += '<div class="home-cols"><div><h3 class="block-title">' + t('home.pages') + '</h3><div class="page-cards">';
+    tabs.filter(b => b.dataset.spec !== 'Guia').forEach(b => {
+      const p = b.dataset.spec;
+      html += '<a class="page-card" href="#' + p + '"><img src="' + b.querySelector('img').src.replace('/medium/', '/large/') + '" alt="">' +
+        '<span><b>' + t('tab.' + p) + '</b><span>' + t('home.desc.' + p) + '</span></span></a>';
+    });
+    html += '</div></div>';
+
+    const news = I18N.localize((window.NEWS_DATA || { site: [] }).site).slice(0, 2);
+    html += '<div><h3 class="block-title">' + t('home.latest') + '</h3><div class="panel home-news">' +
+      news.map(e => '<div class="news-entry"><div class="news-date">' + niceDate(e.day) + '</div><b class="news-title">' + e.title + '</b>' +
+        '<p class="note-text">' + e.items[0] + '</p></div>').join('') +
+      '<a class="home-more" href="#Novedades">' + t('home.allNews') + '</a></div></div></div>';
+    return html;
+  }
+
   // ---------- pages ----------
 
   function render(page) {
@@ -426,7 +471,7 @@
     if (window.Professions) window.Professions.hide();
     const spec = Site.spec;
     // Every page but the class and news ones is about the chosen spec, and wears its color and art.
-    const general = page === 'Clase' || page === 'Novedades';
+    const general = page === 'Clase' || page === 'Novedades' || page === 'Inicio';
     const color = general ? SPEC_COLORS.Clase : SPEC_COLORS[spec];
     const specColors = Object.assign({}, SPEC_COLORS, { Calculadora: color, Armas: color, Profesiones: color, Spellbook: color });
     const tree = window.SHAMAN_DATA.talents.trees.find(tr => tr.name === spec);
@@ -443,6 +488,11 @@
     if (page === 'Hechizos') return window.Spellbook.render(app, helpers);
     if (page === 'Talentos') return window.Calculator.render(app, hashParts().slice(1), helpers);
     if (page === 'Novedades') { app.innerHTML = renderNews(); return; }
+    if (page === 'Inicio') {
+      app.innerHTML = renderHome();
+      app.querySelectorAll('[data-go-spec]').forEach(a => a.addEventListener('click', () => Site.set('spec', a.dataset.goSpec)));
+      return;
+    }
     app.innerHTML = page === 'Clase' ? renderClass(window.I18N.localize(window.GUIDE_DATA.Overview)) : renderGuidePage(spec);
     decorate(app);
   }
