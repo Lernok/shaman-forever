@@ -164,7 +164,27 @@ function open(cacheDir, zoneNames) {
     return zonesFound;
   }
 
-  return { sources, chainZones };
+  // Who a quest sends you to kill (creature objectives, kill credit, and the
+  // NPCs that drop its item objectives), and the quests before it.
+  function quest(questId) {
+    const q = get(quests, questId);
+    if (!q) return null;
+    const ob = q[9] || [];
+    const creatures = [];
+    (ob[0] || []).forEach(o => creatures.push(o[0]));
+    (ob[4] || []).forEach(o => (o[0] || []).forEach(c => creatures.push(c)));
+    (ob[2] || []).forEach(o => { const it = get(items, o[0]); ((it && it[1]) || []).slice(0, 4).forEach(c => creatures.push(c)); });
+    return { name: q[0], requiredLevel: q[3], level: q[4], creatures: [...new Set(creatures)], pre: (q[11] || []).concat(q[12] || []) };
+  }
+
+  // Level and rank of an NPC (Forever data, else Classic's).
+  function npcLevel(id) {
+    const n = get(npcs, id) || get(classicNpcs, id);
+    if (!n) return null;
+    return { name: n[0], maxLevel: n[4] || null, rank: { 1: 'elite', 2: 'rare-elite', 3: 'boss', 4: 'rare' }[n[5]] || 'normal' };
+  }
+
+  return { sources, chainZones, quest, npcLevel };
 }
 
 module.exports = { open, parseLua };

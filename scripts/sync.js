@@ -382,6 +382,10 @@ function diffItems(prev, next) {
   // from foreverchanges.pro (cached per page, so only new items are fetched).
   if (!OFFLINE) execFileSync(process.execPath, [path.join(__dirname, 'fetch-item-sources.js')], { stdio: 'inherit' });
   execFileSync(process.execPath, [path.join(__dirname, 'build-weapons.js')], { stdio: 'inherit' });
+  // How hard each weapon quest really is (who you have to kill), then place
+  // the weapons again with it.
+  execFileSync(process.execPath, [path.join(__dirname, 'fetch-levels.js')].concat(OFFLINE ? ['--offline'] : []), { stdio: 'inherit' });
+  execFileSync(process.execPath, [path.join(__dirname, 'build-weapons.js')], { stdio: 'inherit' });
   // Recipe sources come from scripts/fetch-recipes.js (run it to refresh them).
   execFileSync(process.execPath, [path.join(__dirname, 'build-professions.js')], { stdio: 'inherit' });
   execFileSync(process.execPath, [path.join(__dirname, 'build-data.js')], { stdio: 'inherit' });

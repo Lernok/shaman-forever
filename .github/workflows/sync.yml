@@ -39,6 +39,8 @@ jobs:
 
       - name: Sync
         run: node scripts/sync.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # meta.json and the report change on every run (sync date); only open a
       # pull request when the data itself changed.

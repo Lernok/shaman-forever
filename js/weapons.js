@@ -5,9 +5,15 @@
   let ui = null;
   let container = null;
   let tipEl = null;
-  const state = { random: false, unknown: false, raids: false, pvp: false, path: 'safe' };
+  // Remembered per browser: your professions and whether you'd buy crafts on the AH.
+  const PROFS = ['Blacksmithing', 'Leatherworking', 'Tailoring', 'Engineering', 'Enchanting', 'Alchemy'];
+  const PROF_ICONS = { Blacksmithing: 'trade_blacksmithing', Leatherworking: 'trade_leatherworking', Tailoring: 'trade_tailoring', Engineering: 'trade_engineering', Enchanting: 'trade_engraving', Alchemy: 'trade_alchemy' };
+  const stored = (k, fallback) => { try { const v = JSON.parse(localStorage.getItem('shaman.' + k)); return v == null ? fallback : v; } catch (e) { return fallback; } };
+  const store = (k, v) => { try { localStorage.setItem('shaman.' + k, JSON.stringify(v)); } catch (e) { /* this visit only */ } };
+  const state = { random: false, unknown: false, raids: false, pvp: false, path: 'safe', when: stored('when', 'rec'), profs: stored('profs', []), ah: stored('ah', true) };
+  const openSteps = new Set();
   const Site = window.Site;
-  const SECTIONS = ['progresion', 'dungeon', 'todas'];
+  const SECTIONS = ['progresion', 'tramos', 'dungeon', 'todas'];
 
   // Enhancement ranks by weapon DPS. Casters can't: weapon DPS barely matters
   // to them, and stat weights for Forever aren't known. Forever computes item
@@ -37,7 +43,10 @@
 
   // Sources usable by the chosen faction, honoring the toggles.
   function usableSources(w) {
-    return w.sources.filter(s => {
+    return w.sources.map(s => {
+      if (s.type !== 'crafted' || !state.profs.length || state.profs.includes(s.profession)) return s;
+      return state.ah && w.bind !== 'pickup' ? Object.assign({}, s, { viaAH: true }) : null;
+    }).filter(Boolean).filter(s => {
       if (s.faction !== 'both' && s.faction !== Site.faction) return false;
       if (s.type === 'trash' && !state.random) return false;
       if ((s.type === 'unknown' || s.type === 'unrecorded') && !state.unknown) return false;
@@ -62,7 +71,11 @@
       .filter(w => s.kinds.includes(w.kind) && s.fits(w) && valueOf(w) > 0)
       .map(w => Object.assign({}, w, { usable: usableSources(w) }))
       .filter(w => w.usable.length)
-      .map(w => Object.assign(w, { group: groupOf(w.usable) }));
+      .map(w => {
+        const lv = src => (src[state.when] != null ? src[state.when] : w.req || 0);
+        const via = w.usable.slice().sort((a, b) => lv(a) - lv(b))[0];
+        return Object.assign(w, { group: groupOf(w.usable), obtain: Math.max(w.req || 0, lv(via)), via });
+      });
   }
 
   // Guaranteed: you get it for sure (quest, craft, vendor), no drop luck.
@@ -87,7 +100,7 @@
   function sourceText(s) {
     const I = window.I18N;
     switch (s.type) {
-      case 'crafted': return t('wp.src.crafted', { prof: s.profession, yellow: s.yellow });
+      case 'crafted': return t('wp.src.crafted', { prof: s.profession, yellow: s.yellow }) + (s.viaAH ? ' · ' + t('wp.viaAH') : '');
       case 'boss': return t('wp.src.boss', { npc: s.npc, zone: s.zone || '?' });
       case 'drop': return t('wp.src.drop', { npc: s.npc, zone: s.zone || '?' });
       case 'trash': return t('wp.src.trash', { zones: (s.zones || []).join(', ') || '?', n: s.count });
@@ -202,20 +215,50 @@
       itemIcon(w) + '<span>' + w.name + '</span></a>';
   }
 
+  // "From 15 · recommended 16: Rath'mael is level 19 (estimate), group".
+  function whyLevel(w) {
+    const src = w.via;
+    if (!src || src.rec == null) return '';
+    const b = src.basis || {};
+    let why = '';
+    if (b.name && b.level) why = t('wp.why.target', { name: b.name, level: b.level }) + (b.from === 'dungeon-range' ? ' ' + t('wp.why.estimate') : '') + (b.group ? ' · ' + t('wp.why.group') : '');
+    else if (b.from === 'dungeon-range') why = t('wp.why.range');
+    else if (b.from === 'quest-level') why = t('wp.why.questLevel');
+    const lead = src.asap != null && src.asap !== src.rec ? t('wp.why.fromRec', { asap: src.asap, rec: src.rec }) : t('wp.why.at', { rec: src.rec });
+    return lead + (why ? ' — ' + why : '');
+  }
+
+  // Best other weapons you can have by a level (the path's pick left out).
+  function alternatives(list, w, level) {
+    const fmt = v => spec().metric === 'dps' ? window.I18N.num(v.toFixed(1)) : String(v);
+    const alts = list.filter(o => o.id !== w.id && o.obtain <= level + 2).sort((a, b) => valueOf(b) - valueOf(a)).slice(0, 5);
+    if (!alts.length) return '<p class="note-text dim">' + t('wp.alt.none') + '</p>';
+    return '<div class="alt-list"><div class="alt-title">' + t('wp.alt.title', { level: level + 2 }) + '</div>' + alts.map(o => {
+      const d = valueOf(o) - valueOf(w);
+      return '<div class="alt-row">' + itemLink(o) +
+        '<span class="alt-val">' + fmt(valueOf(o)) + ' <span class="' + (d >= 0 ? 'up' : 'down') + '">' + (d >= 0 ? '+' : '−') + fmt(Math.abs(d)) + '</span></span>' +
+        '<span class="alt-src">' + t('common.level') + ' ' + o.obtain + ' · ' + o.usable.map(sourceText).join(' / ') + '</span></div>';
+    }).join('') + '</div>';
+  }
+
   // One upgrade on the path: level, weapon, its number, where it comes from.
-  function stepCard(s, prev) {
+  function stepCard(s, prev, list) {
     const w = s.weapon;
+    const open = openSteps.has(w.id);
     const gain = prev ? valueOf(w) - valueOf(prev.weapon) : null;
     const fmt = v => spec().metric === 'dps' ? window.I18N.num(v.toFixed(1)) : String(v);
-    return '<div class="step-card">' +
+    return '<div class="step-card' + (open ? ' open' : '') + '">' +
       '<div class="sc-level"><span>' + t('common.level') + '</span><b>' + s.level + '</b></div>' +
       '<a class="sc-icon" data-wid="' + w.id + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' + itemIcon(w, 'sc-img') + '</a>' +
       '<div class="sc-main"><a class="sc-name ' + qualityClass(w.quality) + '" data-wid="' + w.id + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' + w.name + '</a>' +
         (w.era === 'new' ? ' <span class="wp-new">' + t('wp.newInForever') + '</span>' : '') +
         '<span class="wp-sub">' + w.kind + ' · ' + reqText(w) + (w.bind === 'pickup' ? ' · BoP' : '') + (statsText(w) ? ' · ' + statsText(w) : '') + '</span>' +
-        '<span class="sc-src">' + w.usable.map(x => sourceText(x) + ' ' + ui.badge(x.confidence)).join('<br>') + '</span></div>' +
+        '<span class="sc-src">' + w.usable.map(x => sourceText(x) + ' ' + ui.badge(x.confidence)).join('<br>') + '</span>' +
+        (whyLevel(w) ? '<span class="sc-why">' + whyLevel(w) + '</span>' : '') +
+        '<button class="sc-alt-btn" type="button" data-alt="' + w.id + '">' + t(open ? 'wp.alt.hide' : 'wp.alt.show') + '</button></div>' +
       '<div class="sc-value"><b>' + fmt(valueOf(w)) + '</b><span>' + (spec().metric === 'dps' ? 'DPS' : t('wp.ilvl')) + '</span>' +
         (gain != null ? '<span class="sc-gain">+' + fmt(gain) + '</span>' : '') + '</div>' +
+      (open ? '<div class="sc-alts">' + alternatives(list, w, s.level) + '</div>' : '') +
       '</div>';
   }
 
@@ -242,7 +285,7 @@
   // other weapon you could have at the level you can first get it.
   function dungeonQuests(list) {
     const rows = [];
-    const at = (w, s) => s.early || s.level || w.obtain;
+    const at = (w, s) => (s[state.when] != null ? s[state.when] : s.early || s.level || w.obtain);
     list.forEach(w => w.usable.forEach(s => { if (s.type === 'quest' && s.dungeon) rows.push({ w, s }); }));
     rows.sort((a, b) => at(a.w, a.s) - at(b.w, b.s) || valueOf(b.w) - valueOf(a.w));
     let html = '<div class="panel"><h3>' + t('wp.dq.title', { n: rows.length }) + '</h3>' +
@@ -267,6 +310,7 @@
           '<td class="wp-when"><b>' + t('wp.dq.getAt', { level: lv }) + '</b>' +
             '<span class="wp-sub">' + t('wp.dq.questLv', { min: s.requiredLevel || '?', level: s.level || '?' }) + '</span>' +
             (s.dungeonLevels ? '<span class="wp-sub">' + t('wp.dq.dungeonLv', { range: s.dungeonLevels.join('–') }) + '</span>' : '') +
+            (s.basis && s.basis.name ? '<span class="wp-sub">' + t('wp.why.target', { name: s.basis.name, level: s.basis.level }) + (s.basis.from === 'dungeon-range' ? ' ' + t('wp.why.estimate') : '') + '</span>' : '') +
             '<span class="wp-sub">' + reqText(w) + '</span></td>' +
           '<td>' + itemLink(w) +
             (w.era === 'new' ? ' <span class="wp-new">' + t('wp.newInForever') + '</span>' : '') + '<span class="wp-sub">' + w.kind + '</span></td>' +
@@ -286,12 +330,21 @@
     const chart = section === 'progresion' ? renderChart(list, paths) : null;
     const dq = dungeonQuests(list);
     const all = list.slice().sort((a, b) => a.obtain - b.obtain || valueOf(b) - valueOf(a));
-    const counts = { progresion: prog.steps.length, dungeon: dq.n, todas: all.length };
+    const counts = { progresion: prog.steps.length, tramos: null, dungeon: dq.n, todas: all.length };
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Armas + '">' +
       '<div class="role">' + t('wp.role') + ' · ' + Site.spec + ' · ' + t('wp.faction.' + Site.faction) + '</div><h2>' + t('wp.title') + '</h2><p>' + t('wp.intro') + '</p></div>';
     html += Site.sectionTabs('Equipo', SECTIONS, section, k => t('wp.sec.' + k) + (counts[k] != null ? ' <span class="n">' + counts[k] + '</span>' : ''));
     // The source toggles change every list, so they sit above all sections.
     html += '<div class="wp-controls">' +
+      '<span class="ctl-label">' + t('wp.when.label') + '</span><div class="seg">' + ['rec', 'asap'].map(k =>
+        '<button class="btn' + (state.when === k ? ' active' : '') + '" data-when="' + k + '" title="' + t('wp.when.' + k + 'Title') + '">' + t('wp.when.' + k) + '</button>').join('') + '</div>' +
+      '</div><div class="wp-controls">' +
+      '<span class="ctl-label">' + t('wp.profs.label') + '</span>' +
+      PROFS.map(p => '<button class="btn prof-btn' + (state.profs.includes(p) ? ' active' : '') + '" data-prof="' + p + '" title="' + p + '">' +
+        '<img class="pb-icon" src="' + ICON + PROF_ICONS[p] + '.jpg" alt="">' + p + '</button>').join('') +
+      '<label class="chk chip-toggle" title="' + t('wp.profs.ahTitle') + '"><input type="checkbox" id="wpAH"' + (state.ah ? ' checked' : '') + '> ' + t('wp.profs.ah') + '</label>' +
+      '<span class="dim prof-hint">' + (state.profs.length ? '' : t('wp.profs.none')) + '</span>' +
+      '</div><div class="wp-controls">' +
       '<span class="ctl-label">' + t('wp.addSources') + '</span>' +
       '<label class="chk chip-toggle"><input type="checkbox" id="wpRandom"' + (state.random ? ' checked' : '') + '> ' + t('wp.showRandom') + '</label>' +
       '<label class="chk chip-toggle"><input type="checkbox" id="wpUnknown"' + (state.unknown ? ' checked' : '') + '> ' + t('wp.showUnknown') + '</label>' +
@@ -301,6 +354,7 @@
     if (section === 'progresion') html += progressionSection(list, paths, prog, chart);
     if (section === 'dungeon') html += dq.html;
     if (section === 'todas') html += allSection(all);
+    if (section === 'tramos') html += bracketSection(list);
     const notes = [t('wp.chartHow'), spec().metric === 'ilvl' ? t('wp.casterHow') : '', t('wp.dataNote', { build: window.WEAPON_DATA.build }), t('wp.sourcesNote')];
     html += ui.renderSources([
       'https://wago.tools — ' + t('wp.srcWago'),
@@ -319,8 +373,26 @@
     html += '<div class="panel" style="margin-top:16px"><h3>' + t('wp.steps', { n: prog.steps.length }) + '</h3>' +
       '<div class="wp-path">' + ['safe', 'all'].map(p => '<button class="btn' + (state.path === p ? ' active' : '') + '" data-path="' + p + '">' + t('wp.path.' + p) + '</button>').join('') + '</div>' +
       '<p class="note-text dim">' + t('wp.pathNote.' + state.path) + '</p>' +
-      '<div class="step-list">' + prog.steps.map((s, i) => stepCard(s, prog.steps[i - 1])).join('') + '</div></div>';
+      '<div class="step-list">' + prog.steps.map((s, i) => stepCard(s, prog.steps[i - 1], list)).join('') + '</div></div>';
     return html;
+  }
+
+  function bracketSection(list) {
+    const fmt = v => spec().metric === 'dps' ? window.I18N.num(v.toFixed(1)) : String(v);
+    let html = '<p class="note-text dim">' + t('wp.br.intro') + '</p><div class="bracket-list">';
+    for (let lo = 5; lo <= 60; lo += 5) {
+      const hi = Math.min(lo + 4, 60);
+      const pool = list.filter(w => w.obtain <= hi).sort((a, b) => valueOf(b) - valueOf(a)).slice(0, 4);
+      if (!pool.length) continue;
+      html += '<div class="bracket' + (lo > BETA_CAP ? ' post-cap' : '') + '"><div class="br-head"><b>' + lo + '–' + hi + '</b>' +
+        (lo > BETA_CAP ? '<span class="dim">' + t('wp.br.postCap') + '</span>' : '') + '</div><div class="br-items">' +
+        pool.map((w, i) => '<div class="br-item' + (i === 0 ? ' best' : '') + '">' + itemLink(w) +
+          '<span class="br-val">' + fmt(valueOf(w)) + '</span>' +
+          (w.obtain >= lo ? '<span class="br-new">' + t('wp.br.new', { level: w.obtain }) + '</span>' : '<span class="dim br-lv">' + t('common.level') + ' ' + w.obtain + '</span>') +
+          '<span class="br-src">' + w.usable.map(sourceText).join(' / ') + '</span></div>').join('') +
+        '</div></div>';
+    }
+    return html + '</div>';
   }
 
   function allSection(all) {
@@ -362,6 +434,19 @@
     on('#wpRaids', e => { state.raids = e.target.checked; renderAll(); });
     on('#wpPvp', e => { state.pvp = e.target.checked; renderAll(); });
     container.querySelectorAll('[data-path]').forEach(b => b.addEventListener('click', () => { state.path = b.dataset.path; renderAll(); }));
+    container.querySelectorAll('[data-when]').forEach(b => b.addEventListener('click', () => { state.when = b.dataset.when; store('when', state.when); renderAll(); }));
+    container.querySelectorAll('[data-prof]').forEach(b => b.addEventListener('click', () => {
+      const p = b.dataset.prof;
+      state.profs = state.profs.includes(p) ? state.profs.filter(x => x !== p) : state.profs.concat(p).slice(-2);
+      store('profs', state.profs);
+      renderAll();
+    }));
+    on('#wpAH', e => { state.ah = e.target.checked; store('ah', state.ah); renderAll(); });
+    container.querySelectorAll('[data-alt]').forEach(b => b.addEventListener('click', () => {
+      const id = Number(b.dataset.alt);
+      if (openSteps.has(id)) openSteps.delete(id); else openSteps.add(id);
+      renderAll();
+    }));
     const byWid = new Map(list.map(w => [String(w.id), w]));
     container.querySelectorAll('[data-wid]').forEach(a => {
       a.addEventListener('mousemove', e => showTip(weaponTip(byWid.get(a.dataset.wid)), e.clientX, e.clientY));

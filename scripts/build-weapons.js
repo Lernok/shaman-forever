@@ -34,7 +34,7 @@ function classify(item) {
   const out = [];
   const drops = src.filter(s => s.type === 'drop' && s.name);
   if (drops.length && drops.length <= 3) {
-    drops.forEach(d => out.push({ type: INSTANCE.test(d.zone || '') ? 'boss' : 'drop', npc: d.name, level: d.level, rank: d.rank, zone: d.zone, zoneId: d.zoneId,
+    drops.forEach(d => out.push({ type: INSTANCE.test(d.zone || '') ? 'boss' : 'drop', npc: d.name, npcId: d.id, level: d.level, rank: d.rank, zone: d.zone, zoneId: d.zoneId,
       raid: RAID.test(d.zone || ''), faction: 'both', confidence: 'classic-assumed' }));
   } else if (drops.length > 3) {
     const zonesSeen = [...new Set(drops.map(d => d.zone).filter(Boolean))];
@@ -117,12 +117,55 @@ function obtainLevel(item, sources) {
   return Math.max(item.req || 0, fromQuest.length ? Math.min(...fromQuest) : 0);
 }
 
+// Recommended level for each source (scripts/fetch-levels.js, data/levels.json):
+// what you have to kill decides it, not the number on the quest. Group content
+// (dungeon or elite target): its level - 3; solo: its level - 1. Never below
+// the quest's minimum or above the quest's own level. Without a known target,
+// a dungeon quest uses one below the dungeon's top level, and a solo quest its
+// own level - 1. Each source gets `asap` (first level you could) and `rec`.
+const levels = fs.existsSync(path.join(root, 'data/levels.json')) ? JSON.parse(fs.readFileSync(path.join(root, 'data/levels.json'), 'utf8')) : { quests: {}, npcs: {} };
+const GROUP_RANKS = ['elite', 'rare-elite', 'boss'];
+function placeSource(item, s) {
+  const req = item.req || 0;
+  if (s.type === 'quest') {
+    const asap = Math.max(req, s.dungeon && s.dungeonLevels ? questLevel(s) : (s.requiredLevel || s.level || 0));
+    const L = levels.quests[s.questId];
+    let rec;
+    if (L && L.hardest && L.hardest.level) {
+      const group = s.dungeon || GROUP_RANKS.includes(L.hardest.rank);
+      rec = L.hardest.level - (group ? 3 : 1);
+      s.basis = { name: L.hardest.name, level: L.hardest.level, rank: L.hardest.rank, from: L.hardest.from, group };
+    } else if (s.dungeon && s.dungeonLevels) {
+      rec = s.dungeonLevels[1] - 1 - 3;
+      s.basis = { from: 'dungeon-range', group: true };
+    } else {
+      rec = (s.level || s.requiredLevel || 0) - 1;
+      s.basis = { from: 'quest-level', group: false };
+    }
+    rec = Math.max(rec, s.requiredLevel || 0, req);
+    if (s.level) rec = Math.min(rec, Math.max(s.level, req));
+    s.asap = asap;
+    s.rec = Math.max(rec, asap);
+  } else if (s.type === 'boss' || s.type === 'drop') {
+    const n = s.npcId && levels.npcs[s.npcId];
+    const lv = (n && n.level) || Number(String(s.level || '').split('-').pop()) || null;
+    const group = s.type === 'boss' || GROUP_RANKS.includes((n && n.rank) || s.rank);
+    s.asap = req;
+    s.rec = lv ? Math.max(req, lv - (group ? 3 : 1)) : req;
+    if (lv) s.basis = { name: s.npc, level: lv, rank: (n && n.rank) || s.rank, from: n && n.from ? n.from : 'questie', group };
+  } else {
+    s.asap = req;
+    s.rec = req;
+  }
+}
+
 const WEAPON_KINDS = ['2H Axe', '2H Mace', 'Staff', '1H Axe', '1H Mace', 'Dagger', 'Fist'];
 const weapons = Object.values(items)
   .filter(i => WEAPON_KINDS.includes(i.kind) && i.dps)
   .map(i => {
     const sources = sourcesOf(i);
     sources.forEach(s => { if (s.type === 'quest' && s.dungeon && s.dungeonLevels) s.early = Math.max(i.req || 0, questLevel(s)); });
+    sources.forEach(s => placeSource(i, s));
     return {
       id: i.id, name: i.name, kind: i.kind, quality: i.quality, req: i.req, obtain: obtainLevel(i, sources), ilvl: i.ilvl, bind: i.bind,
       dps: i.dps, speed: i.speed, dmgMin: i.dmgMin, dmgMax: i.dmgMax,
