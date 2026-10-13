@@ -96,8 +96,12 @@
     if (b.spellPower) parts.push('+' + b.spellPower + ' ' + I.term('Spell Power'));
     if (b.healing) parts.push('+' + b.healing + ' ' + t('pr.healing'));
     if (b.attackPower) parts.push('+' + b.attackPower + ' ' + I.term('Attack Power'));
+    if (b.spellDamage) parts.push('+' + b.spellDamage + ' ' + t('pr.stat.spellDamage'));
+    ['nature', 'fire', 'frost'].forEach(k => { if (b[k + 'Damage']) parts.push('+' + b[k + 'Damage'] + ' ' + t('ui.school.' + k)); });
     if (b.crit) parts.push('+' + b.crit + '% ' + I.term('Critical Strike'));
+    if (b.spellCrit) parts.push('+' + b.spellCrit + '% ' + t('ui.spellCrit'));
     if (b.hit) parts.push('+' + b.hit + '% ' + I.term('Hit'));
+    if (b.spellHit) parts.push('+' + b.spellHit + '% ' + t('ui.spellHit'));
     if (b.mp5) parts.push('+' + b.mp5 + ' MP5');
     return parts.join(', ');
   }

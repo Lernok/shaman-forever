@@ -5,9 +5,12 @@
 // draws the result; scripts can run it in Node too.
 //
 // How a piece is judged (an approximation, said on the page):
-// - Value: Forever derives item stats from item-level budgets, so a piece is
-//   worth its item level times the share of its stat budget your spec uses
-//   (WEIGHTS, declared below; no measured weights for Forever exist).
+// - Value: the piece's stats, each turned into budget points (COST: what a
+//   point of it costs in an item's stat budget) and weighted by how much your
+//   spec wants it (WEIGHTS, declared below; no measured weights for Forever
+//   exist). A blue with more stats beats a green of the same item level, and
+//   a piece full of stats you don't use is worth little. Enhancement's
+//   two-hander is judged by its DPS.
 // - Access, best first: a quest in a zone of your route > a dungeon quest >
 //   a trainer recipe of your profession > a Merchant's Favor recipe (at most
 //   FAVOR_PER_BRACKET per 10 levels: crates to fill are rare) > a boss drop
@@ -17,16 +20,28 @@
 //   in the 10s). Quests on your route are taken anyway; anything else has to
 //   last a few levels (MIN_LEVELS) to be worth the detour.
 (function (root) {
-  // Share of each stat point in an item's budget (rough Classic costs).
-  const COST = { strength: 1, agility: 1, stamina: 1, intellect: 1, spirit: 1, attackPower: 0.5, spellPower: 1.2, healing: 0.55, mp5: 2.5, crit: 14, hit: 10 };
-  // How much each stat is worth to each spec: 1 main, 0.5 helps, 0.25 a little.
-  const WEIGHTS = {
-    // Enhancement as on its guide: Strength and crit, then Intellect (Mental
-    // Dexterity turns it into attack power) and Agility.
-    Enhancement: { strength: 1, agility: 0.5, attackPower: 1, crit: 1, hit: 1, stamina: 0.25, intellect: 0.5 },
-    Elemental: { spellPower: 1, intellect: 0.75, crit: 0.5, hit: 0.5, mp5: 0.5, stamina: 0.25, spirit: 0.25 },
-    Restoration: { healing: 1, spellPower: 1, intellect: 0.75, mp5: 1, spirit: 0.5, stamina: 0.25 }
+  // Budget points per point of each stat (rough Classic item costs): 2 attack
+  // power cost as much as 1 Strength, 1% crit as much as 14 Strength...
+  const COST = {
+    strength: 1, agility: 1, stamina: 1, intellect: 1, spirit: 1, attackPower: 0.5,
+    spellPower: 1.2, spellDamage: 0.85, healing: 0.55, natureDamage: 0.7, fireDamage: 0.7, frostDamage: 0.7, otherDamage: 0.7,
+    mp5: 2.5, crit: 14, hit: 10, spellCrit: 14, spellHit: 10, defense: 1, dodge: 12
   };
+  // How much each stat is worth to each spec (1 = all of it).
+  const WEIGHTS = {
+    // Enhancement, from the conversions (attack power = AP): 1 Strength =
+    // 2 AP (1); 1% crit is worth about 22 AP at 60, and keeps Flurry up (0.8
+    // of its 14-point cost); 20 Agility = 1% crit, so 1 Agility ~ 1.1 AP
+    // (0.55); 1 Intellect = 1 AP with Mental Dexterity, plus mana (0.5);
+    // spell power helps its shocks and Lightning Bolt a little (0.3).
+    Enhancement: { strength: 1, agility: 0.55, attackPower: 1, crit: 0.8, hit: 1, intellect: 0.5, stamina: 0.25, spellPower: 0.3, spellDamage: 0.3, natureDamage: 0.15, fireDamage: 0.15 },
+    // Elemental casts Flame Shock and Lava Burst (Fire) and Lightning Bolt
+    // (Nature); melee crit and hit do nothing for it.
+    Elemental: { spellPower: 1, spellDamage: 1, natureDamage: 0.6, fireDamage: 0.6, frostDamage: 0.15, intellect: 0.75, spellCrit: 0.75, spellHit: 0.6, mp5: 0.5, stamina: 0.25, spirit: 0.25 },
+    Restoration: { healing: 1, spellPower: 1, intellect: 0.75, mp5: 1, spirit: 0.5, spellCrit: 0.4, stamina: 0.25 }
+  };
+  // Totems and trinkets judged by their effect: budget points per item level.
+  const EFFECT_POINTS = 0.3;
   // Slots of the path; two rings and two trinkets.
   const SLOTS = ['Weapon', 'Head', 'Neck', 'Shoulder', 'Back', 'Chest', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet', 'Finger', 'Trinket', 'Off Hand', 'Relic'];
   const COUNT = { Finger: 2, Trinket: 2 };
@@ -42,7 +57,7 @@
   const isWeapon = item => item.dps != null && item.speed != null;
   const MAIL_AT = 40; // Shamans learn Mail at 40
   const UPGRADE = 1.05; // a piece must be 5% better to count as an upgrade
-  const MIN_FIT = 0.4; // at least 40% of a piece's stats must be ones your spec uses
+  const MIN_FIT = 0.5; // at least half of a piece's stats (Stamina aside) must be ones your spec uses
   const MIN_LEVELS = { class: 0, route: 0, dquest: 3, quest: 5, crafted: 4, favor: 6, vendor: 4, boss: 3 };
   const FAVOR_PER_BRACKET = 2;
   const TIER = { class: 1, route: 1, dquest: 2, quest: 3, crafted: 4, favor: 5, vendor: 6, boss: 7 };
@@ -50,6 +65,7 @@
   // a leveling path around (events, raids, PvP, other professions).
   const CLASS_ZONE = 'Shaman';
   const UNPLANNED = /^(Special|Invasion|Darkmoon Faire|Epic|Ahn'Qiraj|Ruins of Ahn'Qiraj|Naxxramas|Zul'Gurub|Blackwing Lair|Molten Core|Onyxia's Lair|Alterac Valley|Shen'dralas)$/;
+  const BATTLEGROUND = /^(Alterac Valley|Warsong Gulch|Arathi Basin)$/;
   const PROF_ZONES = ['Alchemy', 'Blacksmithing', 'Enchanting', 'Engineering', 'Leatherworking', 'Tailoring', 'Cooking', 'Fishing', 'First Aid', 'Herbalism', 'Mining', 'Skinning'];
   // Race bits of the client's AllowableRace mask (Skyborne's isn't known: allowed).
   const RACE_BIT = { Orc: 2, Dwarf: 4, Tauren: 32, Troll: 128 };
@@ -58,14 +74,50 @@
   const levelTime = l => l;
   const weighted = (from, to) => { let s = 0; for (let l = from; l < to; l++) s += levelTime(l); return s; };
 
-  function fit(item, spec) {
+  // Stats every spec takes a little of (Stamina): they add to a piece's
+  // worth but don't decide whether the piece is for you.
+  const NEUTRAL = ['stamina'];
+  // Budget points of a piece: all of them, the ones your spec uses, and the
+  // same two without the neutral stats (for MIN_FIT).
+  function points(item, spec) {
     const w = WEIGHTS[spec];
     let total = 0;
     let useful = 0;
-    const add = (k, v) => { if (!v || !COST[k]) return; total += v * COST[k]; useful += v * COST[k] * (w[k] || 0); };
+    let coreTotal = 0;
+    let coreUseful = 0;
+    const add = (k, v) => {
+      if (!v || !COST[k]) return;
+      total += v * COST[k];
+      useful += v * COST[k] * (w[k] || 0);
+      if (NEUTRAL.includes(k)) return;
+      coreTotal += v * COST[k];
+      coreUseful += v * COST[k] * (w[k] || 0);
+    };
     Object.entries(item.stats || {}).forEach(([k, v]) => add(k, v));
-    Object.entries(item.bonus || {}).forEach(([k, v]) => { if (!(k === 'healing' && item.bonus.spellPower)) add(k, v); });
-    return total ? useful / total : 0;
+    const b = item.bonus || {};
+    // "Healing done by up to 22 and damage done by up to 7" is one healer's
+    // stat: the damage comes with the healing, it costs no budget of its own
+    // (it still counts for a caster who wants damage).
+    const paired = b.healing && b.spellDamage && !b.spellPower;
+    Object.entries(b).forEach(([k, v]) => {
+      // "Damage and healing" (spellPower) already covers the healing line.
+      if (k === 'healing' && b.spellPower) return;
+      if (k === 'spellDamage' && paired) {
+        const u = v * COST[k] * (w[k] || 0);
+        useful += u;
+        coreUseful += u;
+        return;
+      }
+      add(k, v);
+    });
+    return { total, useful, coreTotal, coreUseful };
+  }
+  // Share of a piece's budget your spec uses, Stamina aside (a Stamina-only
+  // piece fits anyone).
+  function fit(item, spec) {
+    const p = points(item, spec);
+    if (!p.total) return 0;
+    return p.coreTotal ? p.coreUseful / p.coreTotal : 1;
   }
 
   // Totems and many trinkets carry an effect instead of stats: it counts when
@@ -92,10 +144,19 @@
       if (!WEAPON_KINDS[spec].includes(item.kind)) return 0;
       if (spec === 'Enhancement') return item.dps || 0;
     }
-    let f = fit(item, spec) || (['Relic', 'Trinket'].includes(item.slot) ? effectFit(item, spec) : 0);
-    if (f < MIN_FIT && !(item.slot === 'Relic' && f > 0)) return 0;
-    if (item.kind === 'Cloth' && spec === 'Enhancement') f *= 0.85;
-    return Math.round((item.ilvl || 0) * f * 10) / 10;
+    const p = points(item, spec);
+    let v;
+    if (p.total) {
+      // Mostly stats you don't use: not for you, whatever it adds up to.
+      if (fit(item, spec) < MIN_FIT) return 0;
+      v = p.useful;
+    } else {
+      const f = ['Relic', 'Trinket'].includes(item.slot) ? effectFit(item, spec) : 0;
+      if (!f || (f < MIN_FIT && item.slot !== 'Relic')) return 0;
+      v = (item.ilvl || 0) * f * EFFECT_POINTS;
+    }
+    if (item.kind === 'Cloth' && spec === 'Enhancement') v *= 0.85;
+    return Math.round(v * 10) / 10;
   }
 
   function slotOf(item) {
@@ -111,7 +172,7 @@
   //   dungeons in its land }
   function access(item, s, opts) {
     if (s.faction && s.faction !== 'both' && s.faction !== opts.faction) return null;
-    if (s.raid || s.pvp) return null;
+    if (s.raid || s.pvp || BATTLEGROUND.test(s.zone || '')) return null;
     if (s.type === 'quest') {
       // Holiday and event quests (no level, no zone) can't be planned.
       if (!s.level && !s.zone) return null;
@@ -222,15 +283,16 @@
       const z = st.pick.source.zone || '?';
       (dontMiss[z] = dontMiss[z] || []).push(st);
     }));
-    // A route quest beaten only by a craft stays there as the alternative: your
-    // skill or materials may not be there in time, and the quest is free.
-    if (!opts.noAlt && (!opts.profs || opts.profs.length)) {
-      const plain = plan(gear, Object.assign({}, opts, { profs: [], noAlt: true }));
+    // A route quest beaten only by a craft or a boss drop stays there as the
+    // alternative: your skill or materials may not be there in time, the drop
+    // may not drop, and the quest is free.
+    if (!opts.noAlt && (!opts.profs || opts.profs.length || opts.drops)) {
+      const plain = plan(gear, Object.assign({}, opts, { profs: [], drops: false, noAlt: true }));
       SLOTS.forEach(s => plain.slots[s].steps.filter(st => st.pick.access === 'route').forEach(st => {
         const mine = slots[s].steps;
         if (mine.some(m => m.pick.item.id === st.pick.item.id)) return;
         const held = mine.filter(m => m.level <= st.level).slice(-(COUNT[s] || 1));
-        const craft = held.find(m => ['crafted', 'favor'].includes(m.pick.access));
+        const craft = held.find(m => ['crafted', 'favor', 'boss'].includes(m.pick.access));
         if (!craft) return;
         const z = st.pick.source.zone || '?';
         (dontMiss[z] = dontMiss[z] || []).push(Object.assign({}, st, { alt: craft.pick, replaces: null }));
@@ -240,5 +302,5 @@
     return { slots, dontMiss, favor: [...favor], candidates: all.length };
   }
 
-  root.GearPlan = { plan, value, fit, candidates, access, SLOTS, WEIGHTS, COST, MIN_LEVELS, FAVOR_PER_BRACKET, UPGRADE };
+  root.GearPlan = { plan, value, fit, points, candidates, access, SLOTS, WEIGHTS, COST, MIN_LEVELS, FAVOR_PER_BRACKET, UPGRADE };
 })(typeof window !== 'undefined' ? window : globalThis);

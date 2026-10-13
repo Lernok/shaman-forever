@@ -170,16 +170,33 @@ function parseTooltip(html) {
   out.equip = (text.match(/Equip: [^\n]+/g) || []).map(s => s.trim());
   out.use = (text.match(/Use: [^\n]+/g) || []).map(s => s.trim());
   out.chance = (text.match(/Chance on hit: [^\n]+/g) || []).map(s => s.trim());
-  // Common equip lines turned into numbers.
+  // Common equip lines turned into numbers. Percentages can carry decimals
+  // (Forever writes "by 0.5%"). "Spells and attacks" counts for both kinds.
   const bonus = {};
   const eq = out.equip.join(' ');
-  const grab = (key, re) => { const m = eq.match(re); if (m) bonus[key] = Number(m[1]); };
+  const grab = (key, re) => { const m = eq.match(re); if (m) bonus[key] = (bonus[key] || 0) + Number(m[1]); };
   grab('spellPower', /damage and healing done by magical spells and effects by up to (\d+)/);
   grab('healing', /healing done by spells and effects by up to (\d+)/);
+  grab('healing', /Increases healing done by magical spells and effects by up to (\d+)/);
+  // "Increases healing done by up to 22 and damage done by up to 8 for all magical spells and effects."
+  const heal = eq.match(/healing done by up to (\d+) and damage done by up to (\d+)/);
+  if (heal) { bonus.healing = (bonus.healing || 0) + Number(heal[1]); bonus.spellDamage = (bonus.spellDamage || 0) + Number(heal[2]); }
+  grab('spellDamage', /Increases damage done by magical spells and effects by up to (\d+)/);
+  // Schools a Shaman doesn't cast still spend the item's budget.
+  ['Shadow', 'Arcane', 'Holy'].forEach(school => grab('otherDamage', new RegExp('damage done by ' + school + ' spells and effects by up to (\\d+)')));
+  ['Nature', 'Fire', 'Frost'].forEach(school => grab(school.toLowerCase() + 'Damage', new RegExp('damage done by ' + school + ' spells and effects by up to (\\d+)')));
   grab('attackPower', /\+(\d+) Attack Power/);
-  grab('crit', /critical strike by (\d+)%/);
-  grab('hit', /chance to hit by (\d+)%/);
+  grab('crit', /critical strike by ([\d.]+)%/);
+  grab('spellCrit', /critical strike with spells by ([\d.]+)%/);
+  grab('crit', /critical strike with all spells and attacks by ([\d.]+)%/);
+  grab('spellCrit', /critical strike with all spells and attacks by ([\d.]+)%/);
+  grab('hit', /chance to hit by ([\d.]+)%/);
+  grab('spellHit', /chance to hit with spells by ([\d.]+)%/);
+  grab('hit', /chance to hit with all spells and attacks by ([\d.]+)%/);
+  grab('spellHit', /chance to hit with all spells and attacks by ([\d.]+)%/);
   grab('mp5', /Restores (\d+) mana per 5 sec/);
+  grab('defense', /Increased Defense \+(\d+)/);
+  grab('dodge', /chance to [Dd]odge an attack by ([\d.]+)%/);
   out.bonus = bonus;
   Object.keys(out).forEach(k => (out[k] == null ? delete out[k] : null));
   return out;

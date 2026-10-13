@@ -18,7 +18,8 @@
     "strength": 23
    },
    "bonus": {
-    "spellPower": 14
+    "spellPower": 14,
+    "crit": 0.5
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 0.5%.",
@@ -119,6 +120,7 @@
    "stats": {},
    "bonus": {
     "spellPower": 18,
+    "spellCrit": 1,
     "mp5": 7
    },
    "equip": [
@@ -469,7 +471,9 @@
    "stats": {
     "agility": 4
    },
-   "bonus": {},
+   "bonus": {
+    "hit": 1
+   },
    "equip": [
     "Equip: Improves your chance to hit by 1.0%."
    ],
@@ -648,7 +652,8 @@
     "spirit": 19
    },
    "bonus": {
-    "spellPower": 52
+    "spellPower": 52,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -686,7 +691,10 @@
     "stamina": 19,
     "intellect": 16
    },
-   "bonus": {},
+   "bonus": {
+    "otherDamage": 73,
+    "hit": 1
+   },
    "equip": [
     "Equip: Improves your chance to hit by 1.0%.",
     "Equip: Increases damage done by Shadow spells and effects by up to 73."
@@ -724,7 +732,10 @@
     "intellect": 12,
     "spirit": 14
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 94,
+    "spellDamage": 31
+   },
    "equip": [
     "Equip: Increases healing done by up to 94 and damage done by up to 31 for all magical spells and effects."
    ],
@@ -1034,7 +1045,10 @@
    "stats": {
     "spirit": 4
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 97,
+    "spellDamage": 32
+   },
    "equip": [
     "Equip: Increases healing done by up to 97 and damage done by up to 32 for all magical spells and effects.",
     "Equip: Your healing spells have a 5% chance to remove 1 Poison effect from the target. (Proc chance: 5%, 100ms cooldown)"
@@ -1107,7 +1121,10 @@
    "stats": {
     "intellect": 11
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 94,
+    "spellDamage": 31
+   },
    "equip": [
     "Equip: Increases healing done by up to 94 and damage done by up to 31 for all magical spells and effects."
    ],
@@ -1211,7 +1228,9 @@
    "stats": {
     "stamina": 6
    },
-   "bonus": {},
+   "bonus": {
+    "defense": 2
+   },
    "equip": [
     "Equip: Increased Defense +2."
    ],
@@ -1355,7 +1374,10 @@
    "stats": {
     "intellect": 7
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 63,
+    "spellDamage": 21
+   },
    "equip": [
     "Equip: Increases healing done by up to 63 and damage done by up to 21 for all magical spells and effects."
    ],
@@ -4047,7 +4069,10 @@
     "intellect": 3,
     "spirit": 3
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 15,
+    "spellDamage": 5
+   },
    "equip": [
     "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
    ],
@@ -6271,7 +6296,10 @@
    "stats": {
     "spirit": 4
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 33,
+    "spellDamage": 11
+   },
    "equip": [
     "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects."
    ],
@@ -6341,7 +6369,10 @@
    "stats": {
     "stamina": 4
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 33,
+    "spellDamage": 11
+   },
    "equip": [
     "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects."
    ],
@@ -7483,7 +7514,10 @@
     "stamina": 2,
     "spirit": 5
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 22,
+    "spellDamage": 7
+   },
    "equip": [
     "Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects."
    ],
@@ -8525,7 +8559,10 @@
    "stats": {
     "stamina": 3
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 30,
+    "spellDamage": 10
+   },
    "equip": [
     "Equip: Increases healing done by up to 30 and damage done by up to 10 for all magical spells and effects."
    ],
@@ -8738,7 +8775,9 @@
     "stamina": 6,
     "intellect": 5
    },
-   "bonus": {},
+   "bonus": {
+    "otherDamage": 27
+   },
    "equip": [
     "Equip: Increases damage done by Shadow spells and effects by up to 27."
    ],
@@ -10055,7 +10094,10 @@
     "intellect": 5,
     "spirit": 6
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 48,
+    "spellDamage": 16
+   },
    "equip": [
     "Equip: Increases healing done by up to 48 and damage done by up to 16 for all magical spells and effects.",
     "Equip: Movement speed increased by 2% in Elwynn Forest, Westfall, Redridge Mountains, and the Deadmines."
@@ -10354,7 +10396,10 @@
     "stamina": 2,
     "spirit": 5
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 45,
+    "spellDamage": 15
+   },
    "equip": [
     "Equip: Increases healing done by up to 45 and damage done by up to 15 for all magical spells and effects."
    ],
@@ -10404,7 +10449,10 @@
     "stamina": 8,
     "spirit": 8
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 45,
+    "spellDamage": 15
+   },
    "equip": [
     "Equip: Increases healing done by up to 45 and damage done by up to 15 for all magical spells and effects."
    ],
@@ -10822,7 +10870,9 @@
    "stats": {
     "spirit": 6
    },
-   "bonus": {},
+   "bonus": {
+    "frostDamage": 7
+   },
    "equip": [
     "Equip: Increases damage done by Frost spells and effects by up to 7."
    ],
@@ -11007,7 +11057,9 @@
    "dmgMin": 43,
    "dmgMax": 66,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "frostDamage": 32
+   },
    "equip": [
     "Equip: Increases damage done by Frost spells and effects by up to 32."
    ],
@@ -12610,7 +12662,10 @@
     "stamina": 5,
     "spirit": 12
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 52,
+    "spellDamage": 17
+   },
    "equip": [
     "Equip: Increases healing done by up to 52 and damage done by up to 17 for all magical spells and effects."
    ],
@@ -12661,7 +12716,10 @@
     "intellect": 3,
     "spirit": 12
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 52,
+    "spellDamage": 17
+   },
    "equip": [
     "Equip: Increases healing done by up to 52 and damage done by up to 17 for all magical spells and effects."
    ],
@@ -13275,7 +13333,9 @@
    "stats": {
     "stamina": 15
    },
-   "bonus": {},
+   "bonus": {
+    "otherDamage": 37
+   },
    "equip": [
     "Equip: Increases damage done by Shadow spells and effects by up to 37."
    ],
@@ -13596,7 +13656,10 @@
    "stats": {
     "strength": 8
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 24,
+    "spellDamage": 8
+   },
    "equip": [
     "Equip: Increases healing done by up to 24 and damage done by up to 8 for all magical spells and effects."
    ],
@@ -14998,7 +15061,8 @@
     "intellect": 4
    },
    "bonus": {
-    "spellPower": 18
+    "spellPower": 18,
+    "frostDamage": 10
    },
    "equip": [
     "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
@@ -15706,7 +15770,9 @@
    "dmgMin": 60,
    "dmgMax": 91,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "natureDamage": 19
+   },
    "equip": [
     "Equip: Increases damage done by Nature spells and effects by up to 19."
    ],
@@ -16866,7 +16932,9 @@
    "dmgMin": 50,
    "dmgMax": 75,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "natureDamage": 19
+   },
    "equip": [
     "Equip: Increases damage done by Nature spells and effects by up to 19."
    ],
@@ -17088,7 +17156,10 @@
    "stats": {
     "stamina": 12
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 67,
+    "spellDamage": 22
+   },
    "equip": [
     "Equip: Increases healing done by up to 67 and damage done by up to 22 for all magical spells and effects."
    ],
@@ -17320,7 +17391,10 @@
    "dmgMin": 28,
    "dmgMax": 52,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "healing": 68,
+    "otherDamage": 28
+   },
    "equip": [
     "Equip: Increases healing done by magical spells and effects by up to 68.",
     "Equip: Increases damage done by Shadow spells and effects by up to 28."
@@ -17940,7 +18014,10 @@
     "stamina": 6,
     "spirit": 16
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 71,
+    "spellDamage": 23
+   },
    "equip": [
     "Equip: Increases healing done by up to 71 and damage done by up to 23 for all magical spells and effects."
    ],
@@ -19612,7 +19689,9 @@
    "stats": {
     "stamina": 17
    },
-   "bonus": {},
+   "bonus": {
+    "otherDamage": 51
+   },
    "equip": [
     "Equip: Increases damage done by Arcane spells and effects by up to 51."
    ],
@@ -19833,7 +19912,10 @@
     "stamina": 3,
     "spirit": 5
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 56,
+    "spellDamage": 18
+   },
    "equip": [
     "Equip: Increases healing done by up to 56 and damage done by up to 18 for all magical spells and effects."
    ],
@@ -20495,7 +20577,8 @@
     "spirit": 7
    },
    "bonus": {
-    "spellPower": 44
+    "spellPower": 44,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -20714,7 +20797,9 @@
    "stats": {
     "intellect": 7
    },
-   "bonus": {},
+   "bonus": {
+    "fireDamage": 39
+   },
    "equip": [
     "Equip: Increases damage done by Fire spells and effects by up to 39."
    ],
@@ -22542,7 +22627,9 @@
    "stats": {
     "armor": 100
    },
-   "bonus": {},
+   "bonus": {
+    "defense": 5
+   },
    "equip": [
     "Equip: Increased Defense +5."
    ],
@@ -22812,7 +22899,10 @@
    "stats": {
     "spirit": 20
    },
-   "bonus": {},
+   "bonus": {
+    "frostDamage": 59,
+    "hit": 1
+   },
    "equip": [
     "Equip: Improves your chance to hit by 1.0%.",
     "Equip: Increases damage done by Frost spells and effects by up to 59."
@@ -22958,7 +23048,10 @@
     "stamina": 3,
     "spirit": 7
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 75,
+    "spellDamage": 25
+   },
    "equip": [
     "Equip: Increases healing done by up to 75 and damage done by up to 25 for all magical spells and effects."
    ],
@@ -23042,7 +23135,9 @@
    "dmgMin": 93,
    "dmgMax": 140,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "dodge": 1
+   },
    "equip": [
     "Equip: Increases your chance to Dodge an attack by 1.0%.",
     "Equip: Increases your chance to Parry an attack by 1.0%."
@@ -23434,7 +23529,10 @@
    "stats": {
     "intellect": 12
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 94,
+    "spellDamage": 31
+   },
    "equip": [
     "Equip: Increases healing done by up to 94 and damage done by up to 31 for all magical spells and effects.",
     "Equip: While in combat, your healing spells have a chance to grant an ally 300 armor for 10 sec."
@@ -23541,7 +23639,10 @@
     "stamina": 7,
     "spirit": 8
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 94,
+    "spellDamage": 31
+   },
    "equip": [
     "Equip: Increases healing done by up to 94 and damage done by up to 31 for all magical spells and effects."
    ],
@@ -23653,7 +23754,10 @@
    "stats": {
     "stamina": 5
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 86,
+    "spellDamage": 28
+   },
    "equip": [
     "Equip: Increases healing done by up to 86 and damage done by up to 28 for all magical spells and effects.",
     "Equip: Increases the critical strike chance of your Healing Wave and Lesser Healing Wave spells by 2%."
@@ -24338,7 +24442,9 @@
     "strength": 9,
     "spirit": 18
    },
-   "bonus": {},
+   "bonus": {
+    "natureDamage": 14
+   },
    "equip": [
     "Equip: Increases damage done by Nature spells and effects by up to 14."
    ],
@@ -24887,7 +24993,9 @@
    "stats": {
     "spirit": 9
    },
-   "bonus": {},
+   "bonus": {
+    "natureDamage": 33
+   },
    "equip": [
     "Equip: Increases damage done by Nature spells and effects by up to 33."
    ],
@@ -25327,7 +25435,9 @@
    "stats": {
     "stamina": 11
    },
-   "bonus": {},
+   "bonus": {
+    "defense": 10
+   },
    "equip": [
     "Equip: Increased Defense +10."
    ],
@@ -25362,7 +25472,9 @@
    "stats": {
     "strength": 23
    },
-   "bonus": {},
+   "bonus": {
+    "hit": 1
+   },
    "equip": [
     "Equip: Improves your chance to hit by 1.0%."
    ],
@@ -25902,7 +26014,9 @@
    "stats": {
     "strength": 19
    },
-   "bonus": {},
+   "bonus": {
+    "spellDamage": 21
+   },
    "equip": [
     "Equip: Increases damage done by magical spells and effects by up to 21."
    ],
@@ -26106,7 +26220,10 @@
     "stamina": 19,
     "armor": 180
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 105,
+    "spellDamage": 35
+   },
    "equip": [
     "Equip: Increases healing done by up to 105 and damage done by up to 35 for all magical spells and effects."
    ],
@@ -26210,7 +26327,9 @@
    "stats": {
     "stamina": 7
    },
-   "bonus": {},
+   "bonus": {
+    "defense": 4
+   },
    "equip": [
     "Equip: Increased Defense +4."
    ],
@@ -26737,7 +26856,10 @@
     "stamina": 19,
     "spirit": 19
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 105,
+    "spellDamage": 35
+   },
    "equip": [
     "Equip: Increases healing done by up to 105 and damage done by up to 35 for all magical spells and effects."
    ],
@@ -28274,7 +28396,10 @@
    "dmgMin": 103,
    "dmgMax": 156,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "healing": 112,
+    "spellDamage": 37
+   },
    "equip": [
     "Equip: Increases healing done by up to 112 and damage done by up to 37 for all magical spells and effects."
    ],
@@ -28838,7 +28963,9 @@
     "stamina": 11,
     "spirit": 3
    },
-   "bonus": {},
+   "bonus": {
+    "hit": 0.5
+   },
    "equip": [
     "Equip: Improves your chance to hit by 0.5%."
    ],
@@ -28947,7 +29074,8 @@
     "intellect": 12
    },
    "bonus": {
-    "spellPower": 60
+    "spellPower": 60,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -28999,7 +29127,10 @@
    "stats": {
     "intellect": 11
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 116,
+    "spellDamage": 38
+   },
    "equip": [
     "Equip: Increases healing done by up to 116 and damage done by up to 38 for all magical spells and effects."
    ],
@@ -29192,7 +29323,9 @@
    "dmgMin": 53,
    "dmgMax": 100,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "crit": 1
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%."
    ],
@@ -29231,7 +29364,9 @@
    "dmgMin": 47,
    "dmgMax": 89,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "defense": 2
+   },
    "equip": [
     "Equip: Increased Defense +2."
    ],
@@ -29597,7 +29732,9 @@
    "dmgMin": 135,
    "dmgMax": 203,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "hit": 2
+   },
    "equip": [
     "Equip: Increases your chance to Parry an attack by 1.4%.",
     "Equip: Improves your chance to hit by 2.0%."
@@ -30714,7 +30851,9 @@
    "stats": {
     "agility": 7
    },
-   "bonus": {},
+   "bonus": {
+    "hit": 1
+   },
    "equip": [
     "Equip: Improves your chance to hit by 1.0%."
    ],
@@ -30936,7 +31075,9 @@
    "stats": {
     "intellect": 5
    },
-   "bonus": {},
+   "bonus": {
+    "fireDamage": 17
+   },
    "equip": [
     "Equip: Increases damage done by Fire spells and effects by up to 17."
    ],
@@ -31901,7 +32042,10 @@
    "dmgMax": 160,
    "stats": {},
    "bonus": {
-    "attackPower": 109
+    "attackPower": 109,
+    "hit": 2,
+    "spellHit": 2,
+    "defense": 13
    },
    "equip": [
     "Equip: Increased Defense +13.",
@@ -32372,7 +32516,10 @@
    "dmgMin": 147,
    "dmgMax": 221,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "fireDamage": 36,
+    "frostDamage": 36
+   },
    "equip": [
     "Equip: Increases damage done by Fire spells and effects by up to 36.",
     "Equip: Increases damage done by Frost spells and effects by up to 36."
@@ -33473,7 +33620,9 @@
    "stats": {
     "stamina": 12
    },
-   "bonus": {},
+   "bonus": {
+    "defense": 8
+   },
    "equip": [
     "Equip: Increased Defense +8."
    ],
@@ -33661,7 +33810,8 @@
     "spirit": 7
    },
    "bonus": {
-    "spellPower": 29
+    "spellPower": 29,
+    "spellCrit": 1
    },
    "equip": [
     "Equip: Increases damage and healing done by magical spells and effects by up to 29.",
@@ -33817,7 +33967,9 @@
    "stats": {
     "intellect": 24
    },
-   "bonus": {},
+   "bonus": {
+    "spellCrit": 1
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike with spells by 1%."
    ],
@@ -34730,7 +34882,8 @@
     "spirit": 7
    },
    "bonus": {
-    "spellPower": 23
+    "spellPower": 23,
+    "spellCrit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike with spells by 1%.",
@@ -35328,7 +35481,9 @@
    "stats": {
     "intellect": 19
    },
-   "bonus": {},
+   "bonus": {
+    "frostDamage": 26
+   },
    "equip": [
     "Equip: Increases damage done by Frost spells and effects by up to 26."
    ],
@@ -35416,7 +35571,10 @@
    "dmgMin": 89,
    "dmgMax": 167,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "crit": 1,
+    "hit": 1
+   },
    "equip": [
     "Equip: Improves your chance to hit by 1.0%.",
     "Equip: Improves your chance to get a critical strike by 1.0%."
@@ -35754,7 +35912,9 @@
    "stats": {
     "agility": 4
    },
-   "bonus": {},
+   "bonus": {
+    "crit": 1
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%."
    ],
@@ -35885,7 +36045,9 @@
    "stats": {
     "stamina": 5
    },
-   "bonus": {},
+   "bonus": {
+    "otherDamage": 19
+   },
    "equip": [
     "Equip: Increases damage done by Shadow spells and effects by up to 19."
    ],
@@ -36896,7 +37058,9 @@
    "stats": {
     "stamina": 5
    },
-   "bonus": {},
+   "bonus": {
+    "otherDamage": 19
+   },
    "equip": [
     "Equip: Increases damage done by Shadow spells and effects by up to 19."
    ],
@@ -37765,7 +37929,9 @@
     "strength": 26,
     "stamina": 41
    },
-   "bonus": {},
+   "bonus": {
+    "crit": 1
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%."
    ],
@@ -37804,7 +37970,9 @@
     "strength": 26,
     "stamina": 41
    },
-   "bonus": {},
+   "bonus": {
+    "crit": 1
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%."
    ],
@@ -37843,7 +38011,9 @@
     "strength": 26,
     "stamina": 41
    },
-   "bonus": {},
+   "bonus": {
+    "crit": 1
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%."
    ],
@@ -37882,7 +38052,9 @@
     "strength": 26,
     "stamina": 41
    },
-   "bonus": {},
+   "bonus": {
+    "crit": 1
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%."
    ],
@@ -38088,7 +38260,9 @@
     "agility": 11,
     "stamina": 10
    },
-   "bonus": {},
+   "bonus": {
+    "dodge": 1
+   },
    "equip": [
     "Equip: Increases your chance to Dodge an attack by 1.0%."
    ],
@@ -39073,7 +39247,10 @@
     "intellect": 37,
     "spirit": 15
    },
-   "bonus": {},
+   "bonus": {
+    "frostDamage": 132,
+    "crit": 2
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 2.0%.",
     "Equip: Increases damage done by Frost spells and effects by up to 132."
@@ -39197,7 +39374,8 @@
     "intellect": 31
    },
    "bonus": {
-    "spellPower": 126
+    "spellPower": 126,
+    "spellCrit": 2
    },
    "equip": [
     "Equip: Increases damage and healing done by magical spells and effects by up to 126.",
@@ -39322,7 +39500,8 @@
    "dmgMax": 263,
    "stats": {},
    "bonus": {
-    "spellPower": 40
+    "spellPower": 40,
+    "crit": 2
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 2.0%.",
@@ -39374,7 +39553,9 @@
     "strength": 23,
     "stamina": 35
    },
-   "bonus": {},
+   "bonus": {
+    "crit": 1
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%."
    ],
@@ -39411,7 +39592,9 @@
     "strength": 23,
     "stamina": 35
    },
-   "bonus": {},
+   "bonus": {
+    "crit": 1
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%."
    ],
@@ -39488,7 +39671,9 @@
     "strength": 23,
     "stamina": 35
    },
-   "bonus": {},
+   "bonus": {
+    "crit": 1
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%."
    ],
@@ -39525,7 +39710,9 @@
     "strength": 23,
     "stamina": 35
    },
-   "bonus": {},
+   "bonus": {
+    "crit": 1
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%."
    ],
@@ -39602,7 +39789,9 @@
     "strength": 19,
     "stamina": 15
    },
-   "bonus": {},
+   "bonus": {
+    "crit": 2
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 2.0%."
    ],
@@ -39623,6 +39812,7 @@
      "zone": "Alterac Valley",
      "zoneId": 2597,
      "raid": false,
+     "pvp": true,
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 60,
@@ -39832,7 +40022,9 @@
     "intellect": 30
    },
    "bonus": {
-    "spellPower": 113
+    "spellPower": 113,
+    "spellCrit": 1,
+    "spellHit": 2
    },
    "equip": [
     "Equip: Improves your chance to hit with spells by 2%.",
@@ -39941,7 +40133,8 @@
     "spirit": 18
    },
    "bonus": {
-    "spellPower": 84
+    "spellPower": 84,
+    "spellCrit": 2
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike with spells by 2%.",
@@ -39980,7 +40173,9 @@
     "stamina": 12,
     "armor": 70
    },
-   "bonus": {},
+   "bonus": {
+    "defense": 8
+   },
    "equip": [
     "Equip: Increased Defense +8."
    ],
@@ -40034,7 +40229,9 @@
     "stamina": 7
    },
    "bonus": {
-    "attackPower": 18
+    "attackPower": 18,
+    "crit": 1,
+    "hit": 1
    },
    "equip": [
     "Equip: Improves your chance to hit by 1.0%.",
@@ -40092,7 +40289,8 @@
     "intellect": 10
    },
    "bonus": {
-    "attackPower": 14
+    "attackPower": 14,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -40148,7 +40346,8 @@
     "stamina": 7
    },
    "bonus": {
-    "attackPower": 28
+    "attackPower": 28,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -40189,7 +40388,8 @@
     "stamina": 7
    },
    "bonus": {
-    "attackPower": 28
+    "attackPower": 28,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -40264,7 +40464,8 @@
     "stamina": 7
    },
    "bonus": {
-    "attackPower": 28
+    "attackPower": 28,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -40305,7 +40506,8 @@
     "stamina": 7
    },
    "bonus": {
-    "attackPower": 28
+    "attackPower": 28,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -40346,7 +40548,8 @@
     "stamina": 7
    },
    "bonus": {
-    "attackPower": 28
+    "attackPower": 28,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -40387,7 +40590,8 @@
     "stamina": 7
    },
    "bonus": {
-    "attackPower": 28
+    "attackPower": 28,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -40428,7 +40632,8 @@
     "stamina": 7
    },
    "bonus": {
-    "attackPower": 28
+    "attackPower": 28,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -40469,7 +40674,8 @@
     "stamina": 7
    },
    "bonus": {
-    "attackPower": 28
+    "attackPower": 28,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -40510,7 +40716,8 @@
     "stamina": 7
    },
    "bonus": {
-    "attackPower": 28
+    "attackPower": 28,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -40551,7 +40758,8 @@
     "stamina": 7
    },
    "bonus": {
-    "attackPower": 28
+    "attackPower": 28,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -40634,7 +40842,9 @@
     "stamina": 27,
     "intellect": 28
    },
-   "bonus": {},
+   "bonus": {
+    "frostDamage": 72
+   },
    "equip": [
     "Equip: Increases damage done by Frost spells and effects by up to 72."
    ],
@@ -40751,7 +40961,9 @@
     "spirit": 14
    },
    "bonus": {
-    "spellPower": 60
+    "spellPower": 60,
+    "spellCrit": 1,
+    "spellHit": 1
    },
    "equip": [
     "Equip: Increases damage and healing done by magical spells and effects by up to 60.",
@@ -40844,7 +41056,9 @@
     "intellect": 33
    },
    "bonus": {
-    "spellPower": 108
+    "spellPower": 108,
+    "crit": 1,
+    "hit": 2
    },
    "equip": [
     "Equip: Improves your chance to hit by 2.0%.",
@@ -40901,7 +41115,10 @@
     "stamina": 23,
     "intellect": 24
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 203,
+    "spellDamage": 67
+   },
    "equip": [
     "Equip: Increases healing done by up to 203 and damage done by up to 67 for all magical spells and effects."
    ],
@@ -41212,7 +41429,8 @@
     "spirit": 14
    },
    "bonus": {
-    "spellPower": 40
+    "spellPower": 40,
+    "spellCrit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike with spells by 1%.",
@@ -41336,7 +41554,10 @@
     "strength": 11,
     "stamina": 10
    },
-   "bonus": {},
+   "bonus": {
+    "crit": 1,
+    "spellCrit": 1
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike with all spells and attacks by 1%.",
     "Equip: Chance on direct spell damage or melee attack to deal 325 to 500 Fire damage to your target.  Deals extra damage to Silithid creatures in Silithus on almost every hit. (2.1s cooldown)"
@@ -41494,7 +41715,11 @@
    "stats": {
     "stamina": 11
    },
-   "bonus": {},
+   "bonus": {
+    "hit": 1,
+    "spellHit": 1,
+    "defense": 9
+   },
    "equip": [
     "Equip: Improves your chance to hit with all spells and attacks by 1%.",
     "Equip: Increased Defense +9.",
@@ -41538,7 +41763,9 @@
     "strength": 22,
     "stamina": 22
    },
-   "bonus": {},
+   "bonus": {
+    "hit": 1
+   },
    "equip": [
     "Equip: Improves your chance to hit by 1.0%."
    ],
@@ -41693,7 +41920,9 @@
     "strength": 9,
     "stamina": 16
    },
-   "bonus": {},
+   "bonus": {
+    "defense": 5
+   },
    "equip": [
     "Equip: Increased Defense +5."
    ],
@@ -41787,7 +42016,8 @@
     "intellect": 10
    },
    "bonus": {
-    "spellPower": 30
+    "spellPower": 30,
+    "spellHit": 1
    },
    "equip": [
     "Equip: Increases damage and healing done by magical spells and effects by up to 30.",
@@ -42119,7 +42349,9 @@
    "dmgMin": 52,
    "dmgMax": 61,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "crit": 15
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 15.0%.",
     "Equip: Increases your attack speed and casting speed by 15.0%."
@@ -42526,7 +42758,9 @@
     "agility": 8,
     "stamina": 12
    },
-   "bonus": {},
+   "bonus": {
+    "hit": 1
+   },
    "equip": [
     "Equip: Improves your chance to hit by 1.0%."
    ],
@@ -42568,7 +42802,8 @@
     "stamina": 2
    },
    "bonus": {
-    "attackPower": 24
+    "attackPower": 24,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -42607,7 +42842,8 @@
     "stamina": 2
    },
    "bonus": {
-    "attackPower": 24
+    "attackPower": 24,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -42646,7 +42882,8 @@
     "stamina": 2
    },
    "bonus": {
-    "attackPower": 24
+    "attackPower": 24,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -42685,7 +42922,8 @@
     "stamina": 2
    },
    "bonus": {
-    "attackPower": 24
+    "attackPower": 24,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -42724,7 +42962,8 @@
     "stamina": 2
    },
    "bonus": {
-    "attackPower": 24
+    "attackPower": 24,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -42763,7 +43002,8 @@
     "stamina": 2
    },
    "bonus": {
-    "attackPower": 24
+    "attackPower": 24,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -42802,7 +43042,8 @@
     "stamina": 2
    },
    "bonus": {
-    "attackPower": 24
+    "attackPower": 24,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -42841,7 +43082,8 @@
     "stamina": 2
    },
    "bonus": {
-    "attackPower": 24
+    "attackPower": 24,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -42880,7 +43122,8 @@
     "stamina": 2
    },
    "bonus": {
-    "attackPower": 24
+    "attackPower": 24,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -42919,7 +43162,8 @@
     "stamina": 2
    },
    "bonus": {
-    "attackPower": 24
+    "attackPower": 24,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -42974,6 +43218,7 @@
      "zone": "Alterac Valley",
      "zoneId": 2597,
      "raid": false,
+     "pvp": true,
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 60,
@@ -43097,7 +43342,8 @@
     "intellect": 10
    },
    "bonus": {
-    "spellPower": 94
+    "spellPower": 94,
+    "hit": 2
    },
    "equip": [
     "Equip: Improves your chance to hit by 2.0%.",
@@ -43137,7 +43383,8 @@
     "armor": 100
    },
    "bonus": {
-    "spellPower": 94
+    "spellPower": 94,
+    "crit": 2
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 2.0%.",
@@ -43180,7 +43427,8 @@
     "armor": 100
    },
    "bonus": {
-    "spellPower": 94
+    "spellPower": 94,
+    "crit": 2
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 2.0%.",
@@ -43388,7 +43636,10 @@
     "stamina": 10,
     "intellect": 19
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 210,
+    "spellDamage": 70
+   },
    "equip": [
     "Equip: Increases healing done by up to 210 and damage done by up to 70 for all magical spells and effects."
    ],
@@ -43596,7 +43847,10 @@
    "stats": {
     "strength": 7
    },
-   "bonus": {},
+   "bonus": {
+    "crit": 1,
+    "spellCrit": 1
+   },
    "equip": [
     "Equip: Improves your chance to get a critical strike with all spells and attacks by 1%."
    ],
@@ -43654,6 +43908,7 @@
      "zone": "Alterac Valley",
      "zoneId": 2597,
      "raid": false,
+     "pvp": true,
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 60,
@@ -43769,6 +44024,7 @@
      "zone": "Alterac Valley",
      "zoneId": 2597,
      "raid": false,
+     "pvp": true,
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 60,
@@ -44221,6 +44477,7 @@
    },
    "bonus": {
     "spellPower": 40,
+    "spellCrit": 1,
     "mp5": 4
    },
    "equip": [
@@ -44260,7 +44517,8 @@
     "stamina": 6
    },
    "bonus": {
-    "spellPower": 14
+    "spellPower": 14,
+    "spellCrit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike with spells by 1%.",
@@ -44456,7 +44714,8 @@
     "intellect": 7
    },
    "bonus": {
-    "spellPower": 36
+    "spellPower": 36,
+    "spellCrit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike with spells by 1%.",
@@ -44569,6 +44828,7 @@
      "zone": "Alterac Valley",
      "zoneId": 2597,
      "raid": false,
+     "pvp": true,
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 60,
@@ -44671,7 +44931,8 @@
     "intellect": 9
    },
    "bonus": {
-    "healing": 51
+    "healing": 51,
+    "spellCrit": 1
    },
    "equip": [
     "Equip: Increases healing done by spells and effects by up to 51.",
@@ -44814,7 +45075,10 @@
     "stamina": 14,
     "intellect": 8
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 199,
+    "spellDamage": 66
+   },
    "equip": [
     "Equip: Increases healing done by up to 199 and damage done by up to 66 for all magical spells and effects."
    ],
@@ -44853,7 +45117,10 @@
     "stamina": 14,
     "intellect": 8
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 199,
+    "spellDamage": 66
+   },
    "equip": [
     "Equip: Increases healing done by up to 199 and damage done by up to 66 for all magical spells and effects."
    ],
@@ -44893,7 +45160,8 @@
     "intellect": 8
    },
    "bonus": {
-    "spellPower": 106
+    "spellPower": 106,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -44935,7 +45203,8 @@
     "intellect": 8
    },
    "bonus": {
-    "spellPower": 106
+    "spellPower": 106,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -44977,7 +45246,10 @@
     "intellect": 14,
     "spirit": 13
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 195,
+    "spellDamage": 65
+   },
    "equip": [
     "Equip: Increases healing done by up to 195 and damage done by up to 65 for all magical spells and effects."
    ],
@@ -45032,7 +45304,10 @@
     "stamina": 12,
     "intellect": 7
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 176,
+    "spellDamage": 58
+   },
    "equip": [
     "Equip: Increases healing done by up to 176 and damage done by up to 58 for all magical spells and effects."
    ],
@@ -45069,7 +45344,10 @@
     "stamina": 12,
     "intellect": 7
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 176,
+    "spellDamage": 58
+   },
    "equip": [
     "Equip: Increases healing done by up to 176 and damage done by up to 58 for all magical spells and effects."
    ],
@@ -45107,7 +45385,8 @@
     "intellect": 7
    },
    "bonus": {
-    "spellPower": 94
+    "spellPower": 94,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -45147,7 +45426,8 @@
     "intellect": 7
    },
    "bonus": {
-    "spellPower": 94
+    "spellPower": 94,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -45187,7 +45467,8 @@
     "armor": 40
    },
    "bonus": {
-    "spellPower": 94
+    "spellPower": 94,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -45229,7 +45510,8 @@
     "armor": 40
    },
    "bonus": {
-    "spellPower": 94
+    "spellPower": 94,
+    "crit": 1
    },
    "equip": [
     "Equip: Improves your chance to get a critical strike by 1.0%.",
@@ -45324,7 +45606,10 @@
    "stats": {
     "intellect": 6
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 139,
+    "spellDamage": 46
+   },
    "equip": [
     "Equip: Increases healing done by up to 139 and damage done by up to 46 for all magical spells and effects."
    ],

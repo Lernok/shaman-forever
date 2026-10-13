@@ -30,6 +30,8 @@ const INSTANCE = /Ruins of Lordaeron|Deadmines|Wailing Caverns|Shadowfang Keep|B
 // Raids (and raid-like summons). Forever has its own raid lineup (Barrow Deeps,
 // Hyjal Summit, Onyxia...), so Classic raid sources are the least certain.
 const RAID = /Molten Core|Onyxia|Blackwing|Zul'Gurub|Ahn'Qiraj|Naxxramas|Barrow Deeps|Hyjal|Silithus/i;
+// Battlegrounds: what their NPCs "drop" is PvP reward stock.
+const BATTLEGROUND = /^(Alterac Valley|Warsong Gulch|Arathi Basin)$/;
 // Battleground reputation quartermasters (Arathi Basin, Warsong Gulch, Alterac
 // Valley) and honor-rank officers: their wares cost PvP reputation or rank.
 const PVP_VENDOR = /^(Samuel Hawke|Rutherford Twing|Illiyana Moonblaze|Kelm Hargunth|Grunnda Wolfheart|Jekyll Flandring|Gaelden Hammersmith|Thanthaldis Snowgleam|Sergeant Ba'sha|Officer Areyn)$/;
@@ -62,7 +64,7 @@ function open(cacheDir, build) {
     const drops = src.filter(s => s.type === 'drop' && s.name);
     if (drops.length && drops.length <= 3) {
       drops.forEach(d => out.push({ type: INSTANCE.test(d.zone || '') ? 'boss' : 'drop', npc: d.name, npcId: d.id, level: d.level, rank: d.rank, zone: d.zone, zoneId: d.zoneId,
-        raid: RAID.test(d.zone || ''), faction: 'both', confidence: 'classic-assumed' }));
+        raid: RAID.test(d.zone || ''), pvp: BATTLEGROUND.test(d.zone || '') || undefined, faction: 'both', confidence: 'classic-assumed' }));
     } else if (drops.length > 3) {
       const zonesSeen = [...new Set(drops.map(d => d.zone).filter(Boolean))];
       out.push({ type: 'trash', count: drops.length, zones: zonesSeen.slice(0, 3), faction: 'both', confidence: 'classic-assumed' });

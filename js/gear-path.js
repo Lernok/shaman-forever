@@ -48,7 +48,7 @@
 
   // Why it's on the path: how you get it and how long it lasts.
   function why(st) {
-    if (st.alt) return t('gp.why.alt', { name: st.alt.item.name });
+    if (st.alt) return t(st.alt.access === 'boss' ? 'gp.why.altDrop' : 'gp.why.alt', { name: st.alt.item.name });
     const parts = [t('gp.why.' + st.pick.access)];
     parts.push(st.until > 60 ? t('gp.lastsTo60') : t(st.lasts === 1 ? 'gp.lasts1' : 'gp.lasts', { n: st.lasts, until: st.until }));
     if (st.replaces) parts.push(t('gp.replaces', { name: st.replaces.item.name }));

@@ -99,6 +99,13 @@ Sesión 6b (feedback del usuario sobre Tu camino):
 - Dungeons en tierra de la otra facción (`DUNGEON_SIDE`: Deadmines, Stockade, Hall of Thanes = Alianza; Ragefire = Horda) no cuentan sus drops ni vendedores (Tu camino y Armas).
 - Quests fuera de ruta: mínimo 5 niveles de duración, y se ven como "fuera de tu ruta".
 
+Sesión 6c (chequeo fino de stats, pedido del usuario):
+- Valor de una pieza = suma de stats × COST (puntos de presupuesto) × peso de la spec (antes: ilvl × % útil, que ignoraba cuántos stats trae; ej. Leggings of the Fang perdían contra unos verdes).
+- MIN_FIT 0.5 calculado sin Aguante (NEUTRAL). "Curación hasta X y daño hasta Y" = un solo stat (el daño no gasta presupuesto). Enh: Fuerza 1, Agi 0.55, Int 0.5, crit 0.8 (derivados de conversiones, comentados en gear-plan.js). Ele: crit/golpe de hechizos, Naturaleza/Fuego; melee crit/hit 0.
+- sync.js lee % con decimales, crit/golpe de hechizos, "spells and attacks", daño por escuela (Shadow/Arcane/Holy como otherDamage, peso 0), Defense/Dodge.
+- Quests de ruta quedan como "alternativa segura" a drops de jefe. Drops de campos de batalla = PvP.
+- Scripts de auditoría en el scratchpad: audit.js (camino completo con stats), legs.js (candidatos de un slot).
+
 Falta / ideas:
 - Esperar feedback. Textos "tope de la beta"/"nivel 30" a revisar el 4-nov (lanzamiento).
 - Afinar con el usuario: pesos de stats, umbrales (UPGRADE 5%, MIN_LEVELS, MIN_FIT 0.4), zonas que propone la ruta.

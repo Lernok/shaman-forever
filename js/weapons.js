@@ -25,8 +25,8 @@
   const ONE_HAND = ['1H Mace', '1H Axe', 'Dagger', 'Fist'];
   const SPECS = {
     Enhancement: { kinds: ['2H Axe', '2H Mace'], fits: () => true, value: w => w.dps, metric: 'dps' },
-    Elemental: { kinds: ['Staff'].concat(ONE_HAND), fits: w => has(w, ['intellect', 'spellPower']), value: w => w.ilvl, metric: 'ilvl' },
-    Restoration: { kinds: ['Staff'].concat(ONE_HAND), fits: w => has(w, ['intellect', 'spirit', 'healing', 'spellPower']), value: w => w.ilvl, metric: 'ilvl' }
+    Elemental: { kinds: ['Staff'].concat(ONE_HAND), fits: w => has(w, ['intellect', 'spellPower', 'spellDamage', 'natureDamage', 'fireDamage']), value: w => w.ilvl, metric: 'ilvl' },
+    Restoration: { kinds: ['Staff'].concat(ONE_HAND), fits: w => has(w, ['intellect', 'spirit', 'healing', 'spellPower', 'mp5']), value: w => w.ilvl, metric: 'ilvl' }
   };
   const spec = () => SPECS[Site.spec];
   const valueOf = w => spec().value(w) || 0;
