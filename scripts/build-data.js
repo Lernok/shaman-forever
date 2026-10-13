@@ -195,6 +195,19 @@ if (fs.existsSync(path.join(root, 'data/weapons.json'))) {
   write('data/weapons.js', 'WEAPON_DATA', read('data/weapons.json'));
   outputs.push('data/weapons.js');
 }
+// The gear path (js/gear-plan.js) only recommends what you can plan for: a
+// quest, a craft, a vendor or a dungeon/NPC drop, never raids, PvP ranks or
+// unknown sources; the page gets just those pieces and the fields it reads.
+if (fs.existsSync(path.join(root, 'data/gear.json'))) {
+  const g = read('data/gear.json');
+  const SRC = ['type', 'quest', 'questId', 'zone', 'dungeon', 'dungeonZone', 'faction', 'rec', 'asap', 'profession', 'yellow', 'learn', 'npc', 'confidence'];
+  const plannable = s => ['quest', 'crafted', 'vendor', 'boss', 'drop'].includes(s.type) && !s.raid && !s.pvp;
+  const pick = (o, keys) => { const out = {}; keys.forEach(k => { if (o[k] != null) out[k] = o[k]; }); return out; };
+  const gear = g.gear.map(i => Object.assign(pick(i, ['id', 'name', 'kind', 'slot', 'quality', 'req', 'ilvl', 'bind', 'armor', 'block', 'stats', 'bonus', 'equip', 'use', 'era', 'numbers', 'icon', 'raceMask']),
+    { sources: i.sources.filter(plannable).map(s => pick(s, SRC)) })).filter(i => i.slot && i.sources.length);
+  write('data/gear.js', 'GEAR_DATA', { build: g.build, gear });
+  outputs.push('data/gear.js');
+}
 if (fs.existsSync(path.join(root, 'data/zones.json'))) {
   write('data/zones.js', 'ZONE_DATA', read('data/zones.json'));
   outputs.push('data/zones.js');

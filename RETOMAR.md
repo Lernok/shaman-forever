@@ -56,7 +56,15 @@ Leer esto entero antes de seguir. Al usuario le encantó el plan; arrancar por l
 - Repo en LF (`.gitattributes`). Verificar refactors con snapshot de `data/` + diff, y barrido de todas las páginas × specs × facciones × idiomas en el navegador.
 - Fuentes y sus reglas: ver `ARQUITECTURA.md` y la memoria `reference_wow_forever_data_sources.md`.
 
-## Avance 2026-10-13 (sesión 2)
-- Conteo de candidatos de armadura (Cloth/Leather/Mail en todos los slots + capa + Neck/Ring/Trinket, verde+, nivel ≤ 60, filtro de clase): **~6960** (2699 con ItemSparse, 4265 sin ItemSparse: Wowhead decide si existen). Ya están 968 (crafteadas); quedan **~5950 tooltips nuevos** de Wowhead (el primer sync va a tardar bastante; después, caché).
-- `lib/weapon-sources.js` `classify()` ya es genérico (sirve para cualquier ítem); lo atado a armas está en `fetch-item-sources.js` (WEAPON_KINDS), `fetch-levels.js` (`isWeapon`) y `build-weapons.js`.
-- Próximo paso: en `sync.js` `itemTables()` agregar toda la armadura (con campo `slot` desde InventoryType) y correr el sync con red.
+## Avance 2026-10-13 (sesiones 2 y 3)
+
+Hecho (commits locales, sin pushear):
+- **Fase 1**: `sync.js` agrega toda la armadura (con `slot`); `lib/item-sources.js` (ex weapon-sources) con la regla de nivel compartida `placer()`; `build-gear.js` → `data/gear.json`; `fetch-levels`/`fetch-item-sources` cubren todo el equipo; `lib/recipes.js` (costo en Favor, nivel de entrenador) → fuentes `crafted` traen `learn`; `build-zones.js` → `data/zones.json` (banda de cada zona por facción = ventana más angosta con 3/4 de sus quests; dungeons; inicio por raza). Razas Shaman: Orco, Troll, Tauren, Skyborne (Horda), Enano (Alianza).
+- **Fase 2**: selector de raza en el encabezado (razas de la facción + "Cualquiera" = ver todo); `js/route.js` (zonas por nivel; zonas de inicio de otras razas excluidas).
+- **Fase 3 (motor + página)**: `js/gear-plan.js` (valor = ilvl × parte útil de stats con pesos declarados; totems/abalorios por texto del efecto; acceso ruta > dungeon > entrenador > Favor (2 por cada 10 niveles) > jefe; duración ponderada; mínimo de niveles por tipo) y `js/gear-path.js` = sección **Equipo › Tu camino** (primera). `build-data` genera `data/gear.js` recortado.
+- `data/items.js` ya no se genera (nadie lo leía).
+
+En curso / falta:
+- El primer sync con toda la armadura (~8900 tooltips de Wowhead, ~2 h, luego foreverchanges a 1/s). El proceso que corría arrancó con un sync.js anterior: **después correr `node scripts/build-gear.js && node scripts/build-zones.js && node scripts/build-data.js`** (o un sync completo `--offline`). Revisar `gear.json` (slots, conteos), tamaño de `data/gear.js`, y el camino con datos reales (afinar pesos/umbrales).
+- Barrido en navegador (specs × facciones × razas × idiomas, móvil), y que la Guía muestre la raza elegida.
+- **Fase 4** (Profesiones y Cocina+Pesca) sin empezar.

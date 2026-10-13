@@ -13,7 +13,8 @@
   const state = { random: false, unknown: false, raids: false, pvp: false, path: 'safe', when: stored('when', 'rec'), profs: stored('profs', []), ah: stored('ah', true) };
   const openSteps = new Set();
   const Site = window.Site;
-  const SECTIONS = ['progresion', 'tramos', 'dungeon', 'todas'];
+  // 'camino' (your whole gear path) is drawn by js/gear-path.js.
+  const SECTIONS = ['camino', 'progresion', 'tramos', 'dungeon', 'todas'];
 
   // Enhancement ranks by weapon DPS. Casters can't: weapon DPS barely matters
   // to them, and stat weights for Forever aren't known. Forever computes item
@@ -307,14 +308,20 @@
   }
 
   function renderAll() {
+    // Professions are shared with the gear path and the Professions page.
+    state.profs = stored('profs', []);
+    const section = Site.section('Equipo', SECTIONS);
+    if (section === 'camino') {
+      window.GearPath.render(container, ui, Site.sectionTabs('Equipo', SECTIONS, section, k => t('wp.sec.' + k)), renderAll);
+      return;
+    }
     const list = candidates();
     const paths = { safe: progression(list.filter(isSafe)), all: progression(list) };
     const prog = paths[state.path];
-    const section = Site.section('Equipo', SECTIONS);
     const chart = section === 'progresion' ? renderChart(list, paths) : null;
     const dq = dungeonQuests(list);
     const all = list.slice().sort((a, b) => a.obtain - b.obtain || valueOf(b) - valueOf(a));
-    const counts = { progresion: prog.steps.length, tramos: null, dungeon: dq.n, todas: all.length };
+    const counts = { camino: null, progresion: prog.steps.length, tramos: null, dungeon: dq.n, todas: all.length };
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Armas + '">' +
       '<div class="role">' + t('wp.role') + ' · ' + Site.spec + ' · ' + t('wp.faction.' + Site.faction) + '</div><h2>' + t('wp.title') + '</h2><p>' + t('wp.intro') + '</p></div>';
     html += Site.sectionTabs('Equipo', SECTIONS, section, k => t('wp.sec.' + k) + (counts[k] != null ? ' <span class="n">' + counts[k] + '</span>' : ''));
