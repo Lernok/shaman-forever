@@ -42,13 +42,19 @@
 
   function weapons() { return (window.WEAPON_DATA && window.WEAPON_DATA.weapons) || []; }
 
-  // Sources usable by the chosen faction, honoring the toggles.
+  const race = () => (Site.race === 'any' ? null : Site.race);
+  // Race bits of the client's AllowableRace mask (as in js/gear-plan.js).
+  const RACE_BIT = { Orc: 2, Dwarf: 4, Tauren: 32, Troll: 128 };
+
+  // Sources usable by the chosen faction and race, honoring the toggles.
   function usableSources(w) {
     return w.sources.map(s => {
       if (s.type !== 'crafted' || !state.profs.length || state.profs.includes(s.profession)) return s;
       return state.ah && w.bind !== 'pickup' ? Object.assign({}, s, { viaAH: true }) : null;
     }).filter(Boolean).filter(s => {
       if (s.faction !== 'both' && s.faction !== Site.faction) return false;
+      // Another race's starting zone: you never quest there.
+      if (s.type === 'quest' && window.Route && window.Route.otherStart(s.zone, Site.faction, race())) return false;
       if (s.type === 'trash' && !state.random) return false;
       if ((s.type === 'unknown' || s.type === 'unrecorded') && !state.unknown) return false;
       if (s.raid && !state.raids) return false;
@@ -70,6 +76,7 @@
     const s = spec();
     return weapons()
       .filter(w => s.kinds.includes(w.kind) && s.fits(w) && valueOf(w) > 0)
+      .filter(w => { const bit = RACE_BIT[race()]; return !bit || !(w.raceMask > 0) || (w.raceMask & bit); })
       .map(w => Object.assign({}, w, { usable: usableSources(w) }))
       .filter(w => w.usable.length)
       .map(w => {
@@ -323,7 +330,7 @@
     const all = list.slice().sort((a, b) => a.obtain - b.obtain || valueOf(b) - valueOf(a));
     const counts = { camino: null, progresion: prog.steps.length, tramos: null, dungeon: dq.n, todas: all.length };
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Armas + '">' +
-      '<div class="role">' + t('wp.role') + ' · ' + Site.spec + ' · ' + t('wp.faction.' + Site.faction) + '</div><h2>' + t('wp.title') + '</h2><p>' + t('wp.intro') + '</p></div>';
+      '<div class="role">' + t('wp.role') + ' · ' + Site.spec + ' · ' + t('wp.faction.' + Site.faction) + ' · ' + (race() ? t('race.' + race()) : t('race.any')) + '</div><h2>' + t('wp.title') + '</h2><p>' + t('wp.intro') + '</p></div>';
     html += Site.sectionTabs('Equipo', SECTIONS, section, k => t('wp.sec.' + k) + (counts[k] != null ? ' <span class="n">' + counts[k] + '</span>' : ''));
     // The source toggles change every list, so they sit above all sections.
     html += '<div class="wp-controls">' +

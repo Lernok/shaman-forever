@@ -257,7 +257,7 @@
 
       'wp.role': 'Equipo',
       'wp.title': 'Progresión de armas',
-      'wp.intro': 'La mejor arma que podés tener en cada nivel con tu facción, y de dónde sale.',
+      'wp.intro': 'La mejor arma que podés tener en cada nivel con tu facción y raza, y de dónde sale. Para el resto del equipo, Tu camino.',
       'wp.chartHow': 'Cada punto del gráfico es un arma. La línea sólida es el camino seguro: quests, crafteos y vendedores, armas que conseguís sí o sí. La punteada suma los drops de jefes, que pueden ser mejores pero dependen de que te caigan.',
       'wp.casterHow': 'Forever calcula los stats de cada ítem a partir de su nivel de ítem, por eso el nivel de ítem es la mejor guía mientras no haya pesos medidos. Incluye staves y armas de una mano; con una de una mano sumás escudo u off-hand.',
       'wp.dataNote': 'Números exactos del cliente de Forever (build {build}) vía Wowhead. Las fuentes de los ítems de Classic vienen de QuestieDB y no están verificadas en Forever.',
@@ -706,7 +706,7 @@
 
       'wp.role': 'Gear',
       'wp.title': 'Weapon progression',
-      'wp.intro': 'The best weapon you can have at each level with your faction, and where it comes from.',
+      'wp.intro': 'The best weapon you can have at each level with your faction and race, and where it comes from. For the rest of your gear, Your path.',
       'wp.chartHow': 'Every point on the chart is a weapon. The solid line is the guaranteed path: quests, crafts and vendors, weapons you get for sure. The dashed one adds boss drops, which can be better but depend on luck.',
       'wp.casterHow': 'Forever computes each item\'s stats from its item level, so item level is the best guide until stat weights are measured. Includes staves and one-handers; with a one-hander you add a shield or off-hand.',
       'wp.dataNote': 'Exact numbers from the Forever client (build {build}) via Wowhead. Sources for Classic items come from QuestieDB and are not verified in Forever.',
