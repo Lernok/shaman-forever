@@ -5,7 +5,7 @@ Leer esto entero antes de seguir. Al usuario le encantó el plan; arrancar por l
 ## Estado del repo al cortar
 
 - `main` en GitHub = todo hasta el ordenamiento del pipeline (commit `fix http: check the cached copy too…`). El sync diario de GitHub funciona con el pipeline nuevo (`scripts/lib/http.js`, etc.; ver `ARQUITECTURA.md`).
-- **Dos commits locales SIN subir** (no pushear tal cual):
+- (Histórico, ya resuelto y subido) Dos commits viejos:
   - `2cec2ca` Professions: cooking, fishing and first aid (script `scripts/build-consumables.js` → `data/consumables.json`: recetas de Cocina/Primeros Auxilios desde el cliente, efecto desde Wowhead, materiales, peces de AllTheThings). **Los datos sirven**, se reusan en la Fase 4.
   - `b3402ff` Professions reorganized around your plan (secciones plan / profesion / cocina / auxilios / sistemas, `data/camp.json` con los objetos de campamento citados). Al usuario **no le gustó**: "todo mezclado y confuso", ítems de Merchant's Favor engañosos, cocina con comidas que no son de pesca, repetitivo. Se **rehace** en la Fase 4; `camp.json`, `consumables.json` y el fix del lector de ATT (comentarios `--[[ ]]`) se conservan.
 - Antes de pushear algo: correr el barrido de páginas (ver memoria / sesiones anteriores) y `node scripts/build-data.js` (corre `check-data.js`).
@@ -71,7 +71,14 @@ Sesión 3 (después):
 - Barrido en navegador: 3 specs × 2 facciones × razas × 2 idiomas × 16 páginas sin errores ni textos rotos; móvil (375 px) sin scroll horizontal.
 - `data/gear.js` pesa ~1,3 MB (weapons.js ~0,6 MB).
 
+Sesión 4 (2026-10-13, tarde), **todo subido a GitHub** (`6032983`, Pages desplegado):
+- Cocina: se sacó el camino de pesca (el usuario prefiere mandar a wow-professions.com para subir Cocina/Pesca). Quedó "Cocina" = links a esas guías + mejor comida por spec y por tramo (versión de b3402ff).
+- Celular: tocar = acción (suma punto de talento / abre link), mantener apretado = detalle (`UI.tip.longPress`, tarjeta arriba o abajo lejos del dedo). Aviso en la calculadora (`.touch-only`/`.mouse-only`).
+- Ícono de Skyborne: `race_skyborne_male` (en `data/shaman.json`, dato manual).
+- Tu camino: sin profesiones elegidas = **sin crafteos** (antes = cualquiera, y eso tapaba quests). Las quests de ruta que solo un crafteo supera quedan en "No te pierdas" como **alternativa gratis** (`st.alt`).
+- Barrido: 672 combinaciones (idiomas × specs × facciones × razas × profesiones × páginas) sin errores; 18 páginas a 375 px sin scroll horizontal (con iframe: resize_window no achica la ventana maximizada).
+
 Falta / ideas:
-- **Nada está pusheado**: revisar con el usuario y subir (los commits 2cec2ca/b3402ff de la versión anterior de Profesiones quedan en la historia, rehechos encima).
+- El usuario está revisando el sitio publicado; esperar su feedback.
 - Afinar con el usuario: pesos de stats, umbrales (UPGRADE 5%, MIN_LEVELS, MIN_FIT 0.4), zonas que propone la ruta.
 - Totems/abalorios: casi sin datos útiles por debajo de 60 (los "Icon" nuevos de Forever no traen efecto).
