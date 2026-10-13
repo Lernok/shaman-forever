@@ -127,7 +127,7 @@ const weapons = Object.values(items)
       id: i.id, name: i.name, kind: i.kind, quality: i.quality, req: i.req, obtain: obtainLevel(i, sources), ilvl: i.ilvl, bind: i.bind,
       dps: i.dps, speed: i.speed, dmgMin: i.dmgMin, dmgMax: i.dmgMax,
       stats: i.stats || {}, bonus: i.bonus || {}, equip: i.equip || [], chance: i.chance || [],
-      era: i.era, numbers: i.numbers || 'forever', raceMask: i.raceMask, sources
+      era: i.era, numbers: i.numbers || 'forever', icon: i.icon || null, raceMask: i.raceMask, sources
     };
   })
   .sort((a, b) => a.obtain - b.obtain || b.dps - a.dps);

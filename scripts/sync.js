@@ -234,7 +234,7 @@ async function tooltips(ids) {
     let numbers = 'forever';
     if (!j) { j = parse(await get('classic', id)); numbers = 'classic'; }
     if (!j) continue;
-    result[id] = Object.assign(parseTooltip(j.tooltip), { numbers });
+    result[id] = Object.assign(parseTooltip(j.tooltip), { numbers, icon: j.icon || null });
     rawById[id] = j;
   }
   return { result, raw: rawById, fetched };

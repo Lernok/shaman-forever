@@ -193,10 +193,36 @@
 
   // ---------- page ----------
 
+  const ICON = 'https://wow.zamimg.com/images/wow/icons/large/';
+  function itemIcon(w, cls) {
+    return '<img class="' + (cls || 'item-icon') + ' qb' + w.quality + '" src="' + ICON + (w.icon || 'inv_misc_questionmark') + '.jpg" alt="" loading="lazy">';
+  }
+  function itemLink(w) {
+    return '<a class="item-link ' + qualityClass(w.quality) + '" data-wid="' + w.id + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' +
+      itemIcon(w) + '<span>' + w.name + '</span></a>';
+  }
+
+  // One upgrade on the path: level, weapon, its number, where it comes from.
+  function stepCard(s, prev) {
+    const w = s.weapon;
+    const gain = prev ? valueOf(w) - valueOf(prev.weapon) : null;
+    const fmt = v => spec().metric === 'dps' ? window.I18N.num(v.toFixed(1)) : String(v);
+    return '<div class="step-card">' +
+      '<div class="sc-level"><span>' + t('common.level') + '</span><b>' + s.level + '</b></div>' +
+      '<a class="sc-icon" data-wid="' + w.id + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' + itemIcon(w, 'sc-img') + '</a>' +
+      '<div class="sc-main"><a class="sc-name ' + qualityClass(w.quality) + '" data-wid="' + w.id + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' + w.name + '</a>' +
+        (w.era === 'new' ? ' <span class="wp-new">' + t('wp.newInForever') + '</span>' : '') +
+        '<span class="wp-sub">' + w.kind + ' · ' + reqText(w) + (w.bind === 'pickup' ? ' · BoP' : '') + (statsText(w) ? ' · ' + statsText(w) : '') + '</span>' +
+        '<span class="sc-src">' + w.usable.map(x => sourceText(x) + ' ' + ui.badge(x.confidence)).join('<br>') + '</span></div>' +
+      '<div class="sc-value"><b>' + fmt(valueOf(w)) + '</b><span>' + (spec().metric === 'dps' ? 'DPS' : t('wp.ilvl')) + '</span>' +
+        (gain != null ? '<span class="sc-gain">+' + fmt(gain) + '</span>' : '') + '</div>' +
+      '</div>';
+  }
+
   function weaponRow(w, level) {
     return '<tr>' +
       (level != null ? '<td class="num">' + level + '</td>' : '') +
-      '<td><a class="' + qualityClass(w.quality) + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' + w.name + '</a>' +
+      '<td>' + itemLink(w) +
         (w.era === 'new' ? ' <span class="wp-new">' + t('wp.newInForever') + '</span>' : '') +
         (w.numbers === 'classic' ? ' <span class="wp-classic-nums" title="' + t('wp.classicNumbersTitle') + '">' + t('wp.classicNumbers') + '</span>' : '') +
         '<span class="wp-sub">' + w.kind + ' · ' + reqText(w) +
@@ -242,7 +268,7 @@
             '<span class="wp-sub">' + t('wp.dq.questLv', { min: s.requiredLevel || '?', level: s.level || '?' }) + '</span>' +
             (s.dungeonLevels ? '<span class="wp-sub">' + t('wp.dq.dungeonLv', { range: s.dungeonLevels.join('–') }) + '</span>' : '') +
             '<span class="wp-sub">' + reqText(w) + '</span></td>' +
-          '<td><a class="' + qualityClass(w.quality) + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' + w.name + '</a>' +
+          '<td>' + itemLink(w) +
             (w.era === 'new' ? ' <span class="wp-new">' + t('wp.newInForever') + '</span>' : '') + '<span class="wp-sub">' + w.kind + '</span></td>' +
           '<td class="num">' + metricCell(w) + '</td>' +
           '<td>' + (statsText(w) || '—') + '</td>' +
@@ -267,10 +293,10 @@
     // The source toggles change every list, so they sit above all sections.
     html += '<div class="wp-controls">' +
       '<span class="ctl-label">' + t('wp.addSources') + '</span>' +
-      '<label class="chk"><input type="checkbox" id="wpRandom"' + (state.random ? ' checked' : '') + '> ' + t('wp.showRandom') + '</label>' +
-      '<label class="chk"><input type="checkbox" id="wpUnknown"' + (state.unknown ? ' checked' : '') + '> ' + t('wp.showUnknown') + '</label>' +
-      '<label class="chk" title="' + t('wp.showRaidsTitle') + '"><input type="checkbox" id="wpRaids"' + (state.raids ? ' checked' : '') + '> ' + t('wp.showRaids') + '</label>' +
-      '<label class="chk"><input type="checkbox" id="wpPvp"' + (state.pvp ? ' checked' : '') + '> ' + t('wp.showPvp') + '</label>' +
+      '<label class="chk chip-toggle"><input type="checkbox" id="wpRandom"' + (state.random ? ' checked' : '') + '> ' + t('wp.showRandom') + '</label>' +
+      '<label class="chk chip-toggle"><input type="checkbox" id="wpUnknown"' + (state.unknown ? ' checked' : '') + '> ' + t('wp.showUnknown') + '</label>' +
+      '<label class="chk chip-toggle" title="' + t('wp.showRaidsTitle') + '"><input type="checkbox" id="wpRaids"' + (state.raids ? ' checked' : '') + '> ' + t('wp.showRaids') + '</label>' +
+      '<label class="chk chip-toggle"><input type="checkbox" id="wpPvp"' + (state.pvp ? ' checked' : '') + '> ' + t('wp.showPvp') + '</label>' +
       '</div>';
     if (section === 'progresion') html += progressionSection(list, paths, prog, chart);
     if (section === 'dungeon') html += dq.html;
@@ -293,8 +319,7 @@
     html += '<div class="panel" style="margin-top:16px"><h3>' + t('wp.steps', { n: prog.steps.length }) + '</h3>' +
       '<div class="wp-path">' + ['safe', 'all'].map(p => '<button class="btn' + (state.path === p ? ' active' : '') + '" data-path="' + p + '">' + t('wp.path.' + p) + '</button>').join('') + '</div>' +
       '<p class="note-text dim">' + t('wp.pathNote.' + state.path) + '</p>' +
-      '<div class="table-wrap"><table class="cmp wp-table"><thead><tr><th>' + t('wp.colFrom') + '</th><th>' + t('wp.colWeapon') + '</th><th>' + t('wp.col.' + spec().metric) + '</th><th>' + t('wp.colStats') + '</th><th>' + t('wp.colSource') + '</th></tr></thead><tbody>' +
-      prog.steps.map(s => weaponRow(s.weapon, s.level)).join('') + '</tbody></table></div></div>';
+      '<div class="step-list">' + prog.steps.map((s, i) => stepCard(s, prog.steps[i - 1])).join('') + '</div></div>';
     return html;
   }
 
@@ -318,12 +343,16 @@
   function hideTip() { if (tipEl) tipEl.style.display = 'none'; }
 
   function weaponTip(w, levelLine) {
+    const I = window.I18N;
     return (levelLine ? '<div class="t-cost">' + levelLine + '</div>' : '') +
-      '<div class="t-name ' + qualityClass(w.quality) + '">' + w.name + '</div>' +
-      '<div class="t-cost">' + w.kind + ' · ' + reqText(w) + ' · ' + t('wp.ilvl') + ' ' + w.ilvl + ' · ' +
-        window.I18N.num(w.dps.toFixed(1)) + ' DPS · ' + window.I18N.num(String(w.speed)) + ' s</div>' +
-      (statsText(w) ? '<div class="t-rank">' + statsText(w) + '</div>' : '') +
-      w.usable.map(s => '<div class="t-rank">' + sourceText(s) + '</div>').join('');
+      '<div class="it-head">' + itemIcon(w, 'it-icon') + '<div><div class="t-name ' + qualityClass(w.quality) + '">' + w.name + '</div>' +
+        '<div class="t-cost">' + t('wp.ilvl') + ' ' + w.ilvl + (w.bind === 'pickup' ? ' · BoP' : w.bind === 'equip' ? ' · BoE' : '') + '</div></div></div>' +
+      '<div class="it-row"><span>' + w.kind + '</span><span>' + I.num(String(w.speed)) + ' s</span></div>' +
+      (w.dmgMin ? '<div class="it-row"><span>' + I.range(w.dmgMin + ' to ' + w.dmgMax) + '</span><span>' + I.num(w.dps.toFixed(1)) + ' DPS</span></div>' : '') +
+      (Object.keys(w.stats || {}).length ? '<div class="it-stats">' + statsText({ stats: w.stats }) + '</div>' : '') +
+      (w.equip || []).map(e => '<div class="it-equip">' + I.client(e) + '</div>').join('') +
+      '<div class="t-cost">' + reqText(w) + (w.obtain > w.req ? ' · ' + t('wp.obtainFrom', { level: w.obtain }) : '') + '</div>' +
+      '<hr class="t-sep">' + w.usable.map(s => '<div class="t-rank">' + sourceText(s) + '</div>').join('');
   }
 
   function bind(list, paths, chart) {
@@ -333,6 +362,11 @@
     on('#wpRaids', e => { state.raids = e.target.checked; renderAll(); });
     on('#wpPvp', e => { state.pvp = e.target.checked; renderAll(); });
     container.querySelectorAll('[data-path]').forEach(b => b.addEventListener('click', () => { state.path = b.dataset.path; renderAll(); }));
+    const byWid = new Map(list.map(w => [String(w.id), w]));
+    container.querySelectorAll('[data-wid]').forEach(a => {
+      a.addEventListener('mousemove', e => showTip(weaponTip(byWid.get(a.dataset.wid)), e.clientX, e.clientY));
+      a.addEventListener('mouseleave', hideTip);
+    });
 
     if (!chart) return;
     const svg = container.querySelector('.wp-chart');
