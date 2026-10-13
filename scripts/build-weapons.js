@@ -40,7 +40,7 @@ function classify(item) {
     const zonesSeen = [...new Set(drops.map(d => d.zone).filter(Boolean))];
     out.push({ type: 'trash', count: drops.length, zones: zonesSeen.slice(0, 3), faction: 'both', confidence: 'classic-assumed' });
   }
-  src.filter(s => s.type === 'quest').forEach(q => out.push({ type: 'quest', quest: q.name || ('#' + q.id), questId: q.id, level: q.level, requiredLevel: q.requiredLevel, zone: q.zone, faction: q.faction || 'both', confidence: 'classic-assumed' }));
+  src.filter(s => s.type === 'quest' && !(s.classMask && !(s.classMask & SHAMAN_CLASS))).forEach(q => out.push({ type: 'quest', quest: q.name || ('#' + q.id), questId: q.id, level: q.level, requiredLevel: q.requiredLevel, zone: q.zone, faction: q.faction || 'both', confidence: 'classic-assumed' }));
   // PvP rank rewards: sold in the rank halls, or named after a PvP rank.
   const pvp = /^(Premier )?(High Warlord|Grand Marshal|Premier|Warlord|Marshal|General|Champion|Blood Guard|Knight-Lieutenant|Legionnaire|Stone Guard|Lieutenant Commander)'s /.test(item.name);
   src.filter(s => s.type === 'vendor').forEach(v => out.push({ type: 'vendor', npc: v.name, zone: v.zone, faction: v.faction,
@@ -125,9 +125,25 @@ function obtainLevel(item, sources) {
 // own level - 1. Each source gets `asap` (first level you could) and `rec`.
 const levels = fs.existsSync(path.join(root, 'data/levels.json')) ? JSON.parse(fs.readFileSync(path.join(root, 'data/levels.json'), 'utf8')) : { quests: {}, npcs: {} };
 const GROUP_RANKS = ['elite', 'rare-elite', 'boss'];
+const SHAMAN_CLASS = 64;
+// A quest for other classes only (foreverchanges' class line, AllTheThings' classes).
+function otherClassQuest(s) {
+  if (s.type !== 'quest') return false;
+  const fq = fcQuests[s.questId];
+  const fcClasses = s.classes || (fq && fq.classes);
+  if (fcClasses && !fcClasses.includes('Shaman')) return true;
+  const L = levels.quests[s.questId];
+  return !!(L && L.classes && !L.classes.includes('SHAMAN'));
+}
+const factionConflicts = [];
 function placeSource(item, s) {
   const req = item.req || 0;
   if (s.type === 'quest') {
+    const Lf = levels.quests[s.questId];
+    if (Lf && (Lf.faction === 'horde' || Lf.faction === 'alliance') && s.faction !== Lf.faction) {
+      if (s.faction !== 'both') factionConflicts.push(item.name + ': ' + s.quest + ' (' + s.faction + ' vs ' + Lf.faction + ')');
+      else s.faction = Lf.faction;
+    }
     const asap = Math.max(req, s.dungeon && s.dungeonLevels ? questLevel(s) : (s.requiredLevel || s.level || 0));
     const L = levels.quests[s.questId];
     let rec;
@@ -167,7 +183,8 @@ const WEAPON_KINDS = ['2H Axe', '2H Mace', 'Staff', '1H Axe', '1H Mace', 'Dagger
 const weapons = Object.values(items)
   .filter(i => WEAPON_KINDS.includes(i.kind) && i.dps)
   .map(i => {
-    const sources = sourcesOf(i);
+    const sources = sourcesOf(i).filter(s => !otherClassQuest(s));
+    if (!sources.length) sources.push(i.era === 'new' ? { type: 'unknown', faction: 'both', confidence: 'community-untested' } : { type: 'unrecorded', faction: 'both', confidence: 'classic-assumed' });
     sources.forEach(s => { if (s.type === 'quest' && s.dungeon && s.dungeonLevels) s.early = Math.max(i.req || 0, questLevel(s)); });
     sources.forEach(s => placeSource(i, s));
     return {
@@ -179,6 +196,7 @@ const weapons = Object.values(items)
   })
   .sort((a, b) => a.obtain - b.obtain || b.dps - a.dps);
 
+if (factionConflicts.length) console.log('Facción distinta entre fuentes (se deja la registrada): ' + factionConflicts.join('; '));
 fs.writeFileSync(path.join(root, 'data/weapons.json'), JSON.stringify({ build, weapons }, null, 1) + '\n');
 const count = t => weapons.filter(w => w.sources.some(s => s.type === t)).length;
 console.log('Armas: ' + weapons.length + ' · crafteo ' + count('crafted') + ' · jefe ' + count('boss') + ' · drop ' + count('drop') +

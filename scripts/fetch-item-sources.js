@@ -58,11 +58,13 @@ function parseQuest(id, html) {
   const d = meta(html);
   const f = d.match(/ quest for (the Horde|the Alliance|both factions)/);
   const from = d.match(/, from level (\d+)\./);
+  const cls = html.match(/<dt>Class(?:es)?<\/dt><dd>([^<]+)/);
   return {
     type: 'quest', quest: t[1], questId: id, level: Number(t[2]),
     requiredLevel: from ? Number(from[1]) : null,
     zone: t[3],
     dungeon: /level \d+ dungeon quest/.test(d) || undefined,
+    classes: cls ? cls[1].split(/,\s*/).map(x => x.trim()) : undefined,
     bands: bands(html),
     faction: !f ? 'both' : f[1] === 'the Horde' ? 'horde' : f[1] === 'the Alliance' ? 'alliance' : 'both',
     confidence: 'community-untested',
@@ -113,7 +115,7 @@ function dungeonLevels(html) {
     (Q.sources(w.id) || []).forEach(s => { if (s.type === 'quest') classicQuestIds.add(s.id); }));
   for (const q of classicQuestIds) {
     const s = parseQuest(q, await page('quest', q));
-    if (s) quests[q] = { quest: s.quest, level: s.level, requiredLevel: s.requiredLevel, zone: s.zone, dungeon: s.dungeon, bands: s.bands, ref: s.ref };
+    if (s) quests[q] = { quest: s.quest, level: s.level, requiredLevel: s.requiredLevel, zone: s.zone, dungeon: s.dungeon, classes: s.classes, bands: s.bands, ref: s.ref };
   }
   const dungeons = dungeonLevels(await page('dungeon-quests'));
   // The date only moves when the data does, so a daily sync with nothing new

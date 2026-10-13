@@ -130,7 +130,9 @@ function parseAtt(files) {
       (body.match(/\bsourceQuest = (\d+)/g) || []).forEach(x => pre.push(Number(x.match(/\d+/)[0])));
       (body.match(/\bsourceQuests = \{[^}]*\}/g) || []).forEach(x => pre.push(...nums(x)));
       const lvl = (body.match(/\blvl = (\d+)/) || [])[1];
-      quests[id] = { minLevel: lvl ? Number(lvl) : null, creatures: [...new Set(creatures)], pre, instance };
+      const faction = /\braces = HORDE_ONLY/.test(body) ? 'horde' : /\braces = ALLIANCE_ONLY/.test(body) ? 'alliance' : null;
+      const cls = body.match(/\bclasses = \{([^}]*)\}/);
+      quests[id] = { minLevel: lvl ? Number(lvl) : null, creatures: [...new Set(creatures)], pre, instance, faction, classes: cls ? cls[1].match(/[A-Z]+/g) : null };
     }
   }
   return quests;
@@ -228,7 +230,8 @@ async function wowheadTargets(questId) {
       const q = Q.quest(qid);
       const a = att[qid];
       const creatures = (q && q.creatures.length ? q.creatures : (a ? a.creatures : []));
-      out.push({ id: qid, creatures, instance: (a && a.instance) || null, level: q ? q.level : null });
+      const fac = (a && a.faction) || (q && q.faction !== 'both' ? q.faction : null);
+      out.push({ id: qid, creatures, instance: (a && a.instance) || null, level: q ? q.level : null, faction: fac });
       const pre = (q && q.pre.length ? q.pre : []).concat(a ? a.pre : []).concat(depth === 0 && chainHint[qid] ? chainHint[qid] : []);
       [...new Set(pre)].forEach(p => walk(p, depth + 1));
     };
@@ -280,8 +283,12 @@ async function wowheadTargets(questId) {
     const known = targets.filter(tg => tg.level != null);
     if (known.length) withTargets++;
     const hardest = known.sort((a, b) => b.level - a.level)[0] || null;
+    // One faction anywhere in the chain means only that faction gets the reward.
+    const factions = [...new Set(chain.map(st => st.faction).filter(Boolean))];
     quests[id] = {
+      classes: (att[id] && att[id].classes) || null,
       minLevel: (att[id] && att[id].minLevel) || null,
+      faction: factions.length === 1 ? factions[0] : factions.length > 1 ? 'conflict' : null,
       instance: inst || null,
       hardest: hardest && { id: hardest.id, name: hardest.name, level: hardest.level, rank: hardest.rank, from: hardest.from, step: hardest.step !== id ? hardest.step : undefined },
       steps: chain.length

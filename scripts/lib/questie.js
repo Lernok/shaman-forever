@@ -135,7 +135,7 @@ function open(cacheDir, zoneNames) {
       const q = get(quests, id);
       if (!q) { out.push({ type: 'quest', id }); return; }
       const z = q[16] > 0 ? zone(q[16]) : null;
-      out.push({ type: 'quest', id, name: q[0], level: q[4], requiredLevel: q[3], faction: factionOfRaces(q[5]), zone: z });
+      out.push({ type: 'quest', id, name: q[0], level: q[4], requiredLevel: q[3], faction: factionOfRaces(q[5]), classMask: q[6] || 0, zone: z });
     });
     (it[13] || []).forEach(id => {
       const n = npc(id);
@@ -174,7 +174,7 @@ function open(cacheDir, zoneNames) {
     (ob[0] || []).forEach(o => creatures.push(o[0]));
     (ob[4] || []).forEach(o => (o[0] || []).forEach(c => creatures.push(c)));
     (ob[2] || []).forEach(o => { const it = get(items, o[0]); ((it && it[1]) || []).slice(0, 4).forEach(c => creatures.push(c)); });
-    return { name: q[0], requiredLevel: q[3], level: q[4], creatures: [...new Set(creatures)], pre: (q[11] || []).concat(q[12] || []) };
+    return { name: q[0], requiredLevel: q[3], level: q[4], faction: factionOfRaces(q[5]), creatures: [...new Set(creatures)], pre: (q[11] || []).concat(q[12] || []) };
   }
 
   // Level and rank of an NPC (Forever data, else Classic's).
