@@ -4,12 +4,12 @@
   const t = (key, vars) => window.I18N.t(key, vars);
   let ui = null;
   let container = null;
-  let tipEl = null;
   // Remembered per browser: your professions and whether you'd buy crafts on the AH.
   const PROFS = ['Blacksmithing', 'Leatherworking', 'Tailoring', 'Engineering', 'Enchanting', 'Alchemy'];
   const PROF_ICONS = { Blacksmithing: 'trade_blacksmithing', Leatherworking: 'trade_leatherworking', Tailoring: 'trade_tailoring', Engineering: 'trade_engineering', Enchanting: 'trade_engraving', Alchemy: 'trade_alchemy' };
-  const stored = (k, fallback) => { try { const v = JSON.parse(localStorage.getItem('shaman.' + k)); return v == null ? fallback : v; } catch (e) { return fallback; } };
-  const store = (k, v) => { try { localStorage.setItem('shaman.' + k, JSON.stringify(v)); } catch (e) { /* this visit only */ } };
+  const UI = window.UI;
+  const stored = UI.store.get;
+  const store = UI.store.set;
   const state = { random: false, unknown: false, raids: false, pvp: false, path: 'safe', when: stored('when', 'rec'), profs: stored('profs', []), ah: stored('ah', true) };
   const openSteps = new Set();
   const Site = window.Site;
@@ -116,18 +116,7 @@
     }
   }
 
-  function statsText(w) {
-    const I = window.I18N;
-    const parts = Object.entries(w.stats || {}).map(([k, v]) => '+' + v + ' ' + I.term(k.charAt(0).toUpperCase() + k.slice(1)));
-    const b = w.bonus || {};
-    if (b.spellPower) parts.push('+' + b.spellPower + ' ' + I.term('Spell Power'));
-    if (b.attackPower) parts.push('+' + b.attackPower + ' ' + I.term('Attack Power'));
-    if (b.crit) parts.push('+' + b.crit + '% ' + I.term('Critical Strike'));
-    if (b.hit) parts.push('+' + b.hit + '% ' + I.term('Hit'));
-    return parts.join(', ');
-  }
-
-  function qualityClass(q) { return 'q' + q; }
+  const statsText = w => UI.statsText(w);
 
   // Main number of a weapon for the current spec, with the other one below.
   function metricCell(w) {
@@ -206,15 +195,8 @@
 
   // ---------- page ----------
 
-  const ICON = 'https://wow.zamimg.com/images/wow/icons/large/';
-  function itemIcon(w, cls) {
-    return '<img class="' + (cls || 'item-icon') + ' qb' + w.quality + '" src="' + ICON + (w.icon || 'inv_misc_questionmark') + '.jpg" alt="" loading="lazy">';
-  }
-  function itemLink(w) {
-    return '<a class="item-link ' + qualityClass(w.quality) + '" data-wid="' + w.id + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' +
-      itemIcon(w) + '<span>' + w.name + '</span></a>';
-  }
-
+  const itemLink = UI.itemLink;
+  
   // "From 15 · recommended 16: Rath'mael is level 19 (estimate), group".
   function whyLevel(w) {
     const src = w.via;
@@ -251,8 +233,8 @@
     const fmt = v => spec().metric === 'dps' ? window.I18N.num(v.toFixed(1)) : String(v);
     return '<div class="step-card' + (open ? ' open' : '') + '">' +
       '<div class="sc-level"><span>' + t('common.level') + '</span><b>' + s.level + '</b></div>' +
-      '<a class="sc-icon" data-wid="' + w.id + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' + itemIcon(w, 'sc-img') + '</a>' +
-      '<div class="sc-main"><a class="sc-name ' + qualityClass(w.quality) + '" data-wid="' + w.id + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' + w.name + '</a>' +
+      '<a class="sc-icon" data-item="' + w.id + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' + UI.itemIcon(w, 'sc-img') + '</a>' +
+      '<div class="sc-main"><a class="sc-name q' + w.quality + '" data-item="' + w.id + '" href="https://www.wowhead.com/forever/item=' + w.id + '" target="_blank" rel="noopener">' + w.name + '</a>' +
         (w.era === 'new' ? ' <span class="wp-new">' + t('wp.newInForever') + '</span>' : '') +
         '<span class="wp-sub">' + w.kind + ' · ' + reqText(w) + (w.bind === 'pickup' ? ' · BoP' : '') + (statsText(w) ? ' · ' + statsText(w) : '') + '</span>' +
         '<span class="sc-src">' + w.usable.map(x => sourceText(x) + ' ' + ui.badge(x.confidence)).join('<br>') + '</span>' +
@@ -343,7 +325,7 @@
       '</div><div class="wp-controls">' +
       '<span class="ctl-label">' + t('wp.profs.label') + '</span>' +
       PROFS.map(p => '<button class="btn prof-btn' + (state.profs.includes(p) ? ' active' : '') + '" data-prof="' + p + '" title="' + p + '">' +
-        '<img class="pb-icon" src="' + ICON + PROF_ICONS[p] + '.jpg" alt="">' + p + '</button>').join('') +
+        '<img class="pb-icon" src="' + UI.icon(PROF_ICONS[p]) + '" alt="">' + p + '</button>').join('') +
       '<label class="chk chip-toggle" title="' + t('wp.profs.ahTitle') + '"><input type="checkbox" id="wpAH"' + (state.ah ? ' checked' : '') + '> ' + t('wp.profs.ah') + '</label>' +
       '<span class="dim prof-hint">' + (state.profs.length ? '' : t('wp.profs.none')) + '</span>' +
       '</div><div class="wp-controls">' +
@@ -405,28 +387,9 @@
 
   // ---------- interaction ----------
 
-  function showTip(html, clientX, clientY) {
-    tipEl.innerHTML = html;
-    tipEl.style.display = 'block';
-    const w = tipEl.offsetWidth, h = tipEl.offsetHeight;
-    let left = clientX + 14;
-    if (left + w > window.innerWidth - 8) left = clientX - w - 14;
-    tipEl.style.left = Math.max(8, left) + 'px';
-    tipEl.style.top = Math.max(8, Math.min(clientY - 10, window.innerHeight - h - 8)) + 'px';
-  }
-  function hideTip() { if (tipEl) tipEl.style.display = 'none'; }
-
-  function weaponTip(w, levelLine) {
-    const I = window.I18N;
-    return (levelLine ? '<div class="t-cost">' + levelLine + '</div>' : '') +
-      '<div class="it-head">' + itemIcon(w, 'it-icon') + '<div><div class="t-name ' + qualityClass(w.quality) + '">' + w.name + '</div>' +
-        '<div class="t-cost">' + t('wp.ilvl') + ' ' + w.ilvl + (w.bind === 'pickup' ? ' · BoP' : w.bind === 'equip' ? ' · BoE' : '') + '</div></div></div>' +
-      '<div class="it-row"><span>' + w.kind + '</span><span>' + I.num(String(w.speed)) + ' s</span></div>' +
-      (w.dmgMin ? '<div class="it-row"><span>' + I.range(w.dmgMin + ' to ' + w.dmgMax) + '</span><span>' + I.num(w.dps.toFixed(1)) + ' DPS</span></div>' : '') +
-      (Object.keys(w.stats || {}).length ? '<div class="it-stats">' + statsText({ stats: w.stats }) + '</div>' : '') +
-      (w.equip || []).map(e => '<div class="it-equip">' + I.client(e) + '</div>').join('') +
-      '<div class="t-cost">' + reqText(w) + (w.obtain > w.req ? ' · ' + t('wp.obtainFrom', { level: w.obtain }) : '') + '</div>' +
-      '<hr class="t-sep">' + w.usable.map(s => '<div class="t-rank">' + sourceText(s) + '</div>').join('');
+  // Hover card: the item, its level line, where it comes from.
+  function weaponTip(w, lead) {
+    return UI.itemCard(w, [reqText(w) + (w.obtain > w.req ? ' · ' + t('wp.obtainFrom', { level: w.obtain }) : '')].concat(w.usable.map(sourceText)), lead);
   }
 
   function bind(list, paths, chart) {
@@ -449,20 +412,16 @@
       if (openSteps.has(id)) openSteps.delete(id); else openSteps.add(id);
       renderAll();
     }));
-    const byWid = new Map(list.map(w => [String(w.id), w]));
-    container.querySelectorAll('[data-wid]').forEach(a => {
-      a.addEventListener('mousemove', e => showTip(weaponTip(byWid.get(a.dataset.wid)), e.clientX, e.clientY));
-      a.addEventListener('mouseleave', hideTip);
-    });
+    const byId = new Map(list.map(w => [String(w.id), w]));
+    UI.tip.bind(container, '[data-item]', a => byId.has(a.dataset.item) ? weaponTip(byId.get(a.dataset.item)) : null);
 
     if (!chart) return;
     const svg = container.querySelector('.wp-chart');
     const cross = svg.querySelector('.crosshair');
-    const byId = new Map(list.map(w => [String(w.id), w]));
     // Dots: their own tooltip (bigger hit area via the stroke ring).
     svg.querySelectorAll('.wp-dot').forEach(dot => {
-      dot.addEventListener('mouseenter', e => showTip(weaponTip(byId.get(dot.dataset.id)), e.clientX, e.clientY));
-      dot.addEventListener('mouseleave', hideTip);
+      dot.addEventListener('mouseenter', e => UI.tip.at(weaponTip(byId.get(dot.dataset.id)), e.clientX, e.clientY));
+      dot.addEventListener('mouseleave', UI.tip.hide);
     });
     // Crosshair: best weapon at the hovered level.
     const zone = svg.querySelector('.hover-zone');
@@ -477,26 +436,19 @@
       const any = paths.all.best[lv];
       let html = safe ? weaponTip(safe, t('wp.atLevelSafe', { level: lv })) : '';
       if (any && any !== safe) html += (html ? '<hr class="t-sep">' : '') + weaponTip(any, t('wp.atLevelAll', { level: lv }));
-      if (html) showTip(html, e.clientX, e.clientY);
-      else hideTip();
+      if (html) UI.tip.at(html, e.clientX, e.clientY);
+      else UI.tip.hide();
     });
-    zone.addEventListener('mouseleave', () => { cross.setAttribute('x1', -10); cross.setAttribute('x2', -10); hideTip(); });
+    zone.addEventListener('mouseleave', () => { cross.setAttribute('x1', -10); cross.setAttribute('x2', -10); UI.tip.hide(); });
   }
 
   window.Weapons = {
     render(target, uiHelpers) {
       container = target;
       ui = uiHelpers;
-      if (!tipEl) {
-        tipEl = document.createElement('div');
-        tipEl.className = 'tooltip calc-tip';
-        tipEl.style.display = 'none';
-        document.body.appendChild(tipEl);
-      }
       if (!window.WEAPON_DATA) { container.innerHTML = '<div class="caveat">' + t('wp.noData') + '</div>'; return; }
       renderAll();
     },
-    hide: hideTip,
     // Best guaranteed weapon at a level for the header's spec and faction,
     // with the default source toggles (the guide's "at a glance" card).
     bestSafe(level) {

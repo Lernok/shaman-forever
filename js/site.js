@@ -3,9 +3,7 @@
 (function () {
   const SPECS = ['Enhancement', 'Elemental', 'Restoration'];
   const FACTIONS = ['horde', 'alliance'];
-  const load = (key, allowed, fallback) => {
-    try { const v = localStorage.getItem('shaman.' + key); return allowed.includes(v) ? v : fallback; } catch (e) { return fallback; }
-  };
+  const load = (key, allowed, fallback) => { const v = window.UI.store.get(key, fallback); return allowed.includes(v) ? v : fallback; };
   const listeners = [];
 
   const Site = {
@@ -17,7 +15,7 @@
     set(key, value) {
       if (Site[key] === value) return;
       Site[key] = value;
-      try { localStorage.setItem('shaman.' + key, value); } catch (e) { /* private mode: keep it for this visit */ }
+      window.UI.store.set(key, value);
       listeners.forEach(fn => fn(key, value));
     },
     onChange(fn) { listeners.push(fn); },

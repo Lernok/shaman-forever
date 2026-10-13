@@ -27,11 +27,7 @@
     'official': 'conf-official'
   };
 
-  // 'large' is 56x56: shown at 48px it's downscaled (sharp) instead of the
-  // 36x36 'medium' being blown up (blurry). Tree art is Classic's, same CDN.
-  const ICON_BASE = 'https://wow.zamimg.com/images/wow/icons/large/';
-  const ICON_SMALL = 'https://wow.zamimg.com/images/wow/icons/medium/';
-  const TREE_BG_BASE = 'https://wow.zamimg.com/images/wow/talents/backgrounds/classic/';
+  const UI = window.UI;
 
   const app = document.getElementById('app');
   const tabs = Array.from(document.querySelectorAll('.spec-tab'));
@@ -53,16 +49,9 @@
   let currentPage = PAGES.includes(hashParts()[0]) ? hashParts()[0] : 'Inicio';
   let currentHash = location.hash;
 
-  function iconUrl(icon) {
-    return ICON_BASE + (icon || 'inv_misc_questionmark') + '.jpg';
-  }
-  function smallIcon(icon) {
-    return ICON_SMALL + (icon || 'inv_misc_questionmark') + '.jpg';
-  }
-
-  function treeBg(tree) {
-    return 'linear-gradient(rgba(12,13,16,.55), rgba(12,13,16,.82)), url(' + TREE_BG_BASE + tree.bg + '.jpg)';
-  }
+  const iconUrl = icon => UI.icon(icon);
+  const smallIcon = icon => UI.icon(icon, 'medium');
+  const treeBg = tree => 'linear-gradient(rgba(12,13,16,.55), rgba(12,13,16,.82)), url(' + UI.treeArt(tree.bg) + ')';
 
   // ---------- spell and talent names get their icon ----------
 
@@ -121,7 +110,6 @@
   // A colored dot; what it means shows on hover or focus, and in the legend.
   // ---------- hover card for a spell or talent name ----------
 
-  let refTipEl = null;
   function refTip(name) {
     const sd = window.SHAMAN_DATA;
     const C = s => I18N.client(s);
@@ -150,20 +138,12 @@
     else if (tal && tal.x.classic && tal.x.classic.status === 'new') html += '<div class="t-classic">' + t('ref.newTalent') + '</div>';
     return html;
   }
-  function showRefTip(el, x, y) {
-    if (!refTipEl) { refTipEl = document.createElement('div'); refTipEl.className = 'tooltip calc-tip ref-tip'; document.body.appendChild(refTipEl); }
-    refTipEl.innerHTML = refTip(el.dataset.ref);
-    refTipEl.style.display = 'block';
-    const w = refTipEl.offsetWidth, h = refTipEl.offsetHeight;
-    let left = x + 14;
-    if (left + w > window.innerWidth - 8) left = x - w - 14;
-    refTipEl.style.left = Math.max(8, left) + 'px';
-    refTipEl.style.top = Math.max(8, Math.min(y + 14, window.innerHeight - h - 8)) + 'px';
-  }
+  // Any element with data-ref="<name>" shows its card while the mouse is on it.
+  let refShown = false;
   document.addEventListener('mousemove', e => {
     const el = e.target.closest && e.target.closest('[data-ref]');
-    if (el) showRefTip(el, e.clientX, e.clientY);
-    else if (refTipEl && refTipEl.style.display !== 'none') refTipEl.style.display = 'none';
+    if (el) { UI.tip.at('<div class="ref-card">' + refTip(el.dataset.ref) + '</div>', e.clientX, e.clientY); refShown = true; }
+    else if (refShown) { UI.tip.hide(); refShown = false; }
   });
 
   function badge(confidence) {
@@ -488,7 +468,7 @@
       const g = I18N.localize(window.GUIDE_DATA[spec]);
       const tree = window.SHAMAN_DATA.talents.trees.find(tr => tr.name === spec);
       const first = String(g.summary).replace(/<[^>]+>/g, '').split(/(?<=\.)\s/)[0];
-      html += '<a class="spec-card' + (Site.spec === spec ? ' current' : '') + '" href="#Guia" data-go-spec="' + spec + '" style="--spec-color:' + SPEC_COLORS[spec] + ';--card-bg:url(' + TREE_BG_BASE + tree.bg + '.jpg)">' +
+      html += '<a class="spec-card' + (Site.spec === spec ? ' current' : '') + '" href="#Guia" data-go-spec="' + spec + '" style="--spec-color:' + SPEC_COLORS[spec] + ';--card-bg:url(' + UI.treeArt(tree.bg) + ')">' +
         '<img src="' + iconUrl(SPEC_ICONS[spec]) + '" alt="">' +
         '<span class="role">' + g.role + '</span><b>' + spec + '</b><span class="sc-line">' + first + '</span>' +
         '<span class="sc-go">' + t('home.goGuide') + '</span></a>';
@@ -514,9 +494,7 @@
   // ---------- pages ----------
 
   function render(page) {
-    window.Calculator.hide();
-    if (window.Weapons) window.Weapons.hide();
-    if (window.Professions) window.Professions.hide();
+    UI.tip.hide();
     const spec = Site.spec;
     // Every page but the class and news ones is about the chosen spec, and wears its color and art.
     const general = page === 'Clase' || page === 'Novedades' || page === 'Inicio';
@@ -525,7 +503,7 @@
     const tree = window.SHAMAN_DATA.talents.trees.find(tr => tr.name === spec);
     const root = document.documentElement.style;
     root.setProperty('--spec-color', color);
-    root.setProperty('--hero-bg', 'url(' + TREE_BG_BASE + tree.bg + '.jpg)');
+    root.setProperty('--hero-bg', 'url(' + UI.treeArt(tree.bg) + ')');
     root.setProperty('--hero-icon', 'url(' + iconUrl(general ? CLASS_ICON : SPEC_ICONS[spec]) + ')');
     app.style.setProperty('--spec-color', color);
     document.body.dataset.page = page;

@@ -13,7 +13,6 @@
   let state = null; // { level, talented, ranks, buildId, orderBuild }
   let ui = null;
   let container = null;
-  let tipEl = null;
 
   function trees() { return window.SHAMAN_DATA.talents.trees; }
   function builds() { return window.I18N.localize(window.BUILD_DATA || []); }
@@ -226,19 +225,10 @@
       html += '<div class="t-classic">' + t('classic.label') + ': <b>' + t('classic.' + tal.classic.status) + '</b></div>';
     }
     html += I.original([rank > 0 ? tal.desc[rank - 1] : '', rank < tal.max ? tal.desc[rank] : '', tal.cost]);
-    tipEl.innerHTML = html;
-    tipEl.style.display = 'block';
-    const r = el.getBoundingClientRect();
-    const w = tipEl.offsetWidth;
-    const h = tipEl.offsetHeight;
-    let left = r.right + 10;
-    if (left + w > window.innerWidth - 8) left = Math.max(8, r.left - w - 10);
-    let top = Math.min(r.top, window.innerHeight - h - 8);
-    tipEl.style.left = left + 'px';
-    tipEl.style.top = Math.max(8, top) + 'px';
+    window.UI.tip.beside(html, el);
   }
 
-  function hideTip() { if (tipEl) tipEl.style.display = 'none'; }
+  const hideTip = () => window.UI.tip.hide();
 
   // ---------- interaction ----------
 
@@ -339,12 +329,6 @@
     render(target, parts, uiHelpers) {
       container = target;
       ui = uiHelpers;
-      if (!tipEl) {
-        tipEl = document.createElement('div');
-        tipEl.className = 'tooltip calc-tip';
-        tipEl.style.display = 'none';
-        document.body.appendChild(tipEl);
-      }
       const parsed = parseRoute(parts);
       state = { level: parsed.level, talented: parsed.talented, ranks: parsed.ranks, buildId: null, orderBuild: null };
       const b = matchingBuild();
@@ -352,7 +336,6 @@
       window.Calculator.lastHash = routeHash();
       renderAll();
     },
-    hide: hideTip,
     lastHash: null,
     // Hash for opening a given example build, used by the spec pages.
     linkFor(build) {

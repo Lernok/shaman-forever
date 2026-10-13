@@ -15,7 +15,7 @@
   // Level ranges, the beta's cap first: a whole profession is 300+ rows.
   const RANGES = { beta: [1, 30], mid: [31, 45], high: [46, 60], all: [1, 60] };
   const role = () => state.role || (Site.spec === 'Enhancement' ? 'melee' : 'caster');
-  const ICON = 'https://wow.zamimg.com/images/wow/icons/large/';
+  const UI = window.UI;
   const PROF_ICONS = {
     Leatherworking: 'trade_leatherworking', Blacksmithing: 'trade_blacksmithing', Tailoring: 'trade_tailoring',
     Enchanting: 'trade_engraving', Engineering: 'trade_engineering', Skinning: 'inv_misc_pelt_wolf_01',
@@ -23,8 +23,7 @@
   };
   // The new systems, in the order of data/guides/professions.json.
   const SYSTEM_ICONS = ['inv_misc_book_09', 'inv_misc_coin_02', 'inv_misc_bag_10', 'spell_holy_wordfortitude', 'inv_scroll_03'];
-  const profIcon = (p, cls) => '<img class="' + (cls || 'prof-icon') + '" src="' + ICON + (PROF_ICONS[p] || 'inv_misc_questionmark') + '.jpg" alt="" loading="lazy">';
-  let tipEl = null;
+  const profIcon = (p, cls) => '<img class="' + (cls || 'prof-icon') + '" src="' + UI.icon(PROF_ICONS[p]) + '" alt="" loading="lazy">';
 
   // classicwowforever's "how to learn" lines are formulaic; translate the
   // fixed parts and keep names (vendors, factions, zones) as they are.
@@ -52,18 +51,7 @@
       .replace(/, (Friendly|Honored|Revered|Exalted)/, (m, r) => ', ' + REP[r]);
   }
 
-  function statsText(i) {
-    const I = window.I18N;
-    const parts = Object.entries(i.stats || {}).map(([k, v]) => '+' + v + ' ' + I.term(k.charAt(0).toUpperCase() + k.slice(1)));
-    const b = i.bonus || {};
-    if (b.spellPower) parts.push('+' + b.spellPower + ' ' + I.term('Spell Power'));
-    if (b.healing) parts.push('+' + b.healing + ' ' + t('pr.healing'));
-    if (b.attackPower) parts.push('+' + b.attackPower + ' ' + I.term('Attack Power'));
-    if (b.crit) parts.push('+' + b.crit + '% ' + I.term('Critical Strike'));
-    if (b.hit) parts.push('+' + b.hit + '% ' + I.term('Hit'));
-    if (b.mp5) parts.push('+' + b.mp5 + ' MP5');
-    return parts.join(', ');
-  }
+  const statsText = i => UI.statsText(i);
 
   function kindText(i) {
     if (i.dps) return i.kind + ' · ' + window.I18N.num(i.dps.toFixed(1)) + ' DPS';
@@ -105,8 +93,7 @@
       const b = bracket(i.req);
       if (b !== current) { current = b; html += '<tr class="pr-bracket"><td colspan="4">' + t('pr.bracket', { range: b }) + '</td></tr>'; }
       html += '<tr><td class="num">' + i.req + '</td>' +
-        '<td><a class="item-link q' + i.quality + '" data-iid="' + i.id + '" href="https://www.wowhead.com/forever/item=' + i.id + '" target="_blank" rel="noopener">' +
-          '<img class="item-icon qb' + i.quality + '" src="' + ICON + (i.icon || 'inv_misc_questionmark') + '.jpg" alt="" loading="lazy"><span>' + i.name + '</span></a>' +
+        '<td>' + UI.itemLink(i) +
           (i.isNew ? ' <span class="wp-new">' + t('wp.newInForever') + '</span>' : '') +
           '<span class="wp-sub">' + kindText(i) + (i.bind === 'pickup' ? ' · BoP' : i.bind === 'equip' ? ' · BoE' : '') +
           (i.mailFrom40 ? ' · <span class="pr-warn">' + t('pr.mail40') + '</span>' : '') + '</span></td>' +
@@ -137,7 +124,7 @@
 
     // New systems.
     if (section === 'sistemas') html += '<div class="note-grid">' +
-      g.systems.map((s, i) => '<div class="note-card"><img src="' + ICON + (SYSTEM_ICONS[i] || 'inv_misc_note_01') + '.jpg" alt="" loading="lazy"><div>' +
+      g.systems.map((s, i) => '<div class="note-card"><img src="' + UI.icon(SYSTEM_ICONS[i] || 'inv_misc_note_01') + '" alt="" loading="lazy"><div>' +
         '<b class="nc-title">' + s.title + ' ' + ui.badge(s.confidence) + '</b>' + s.fact +
         ' <a class="src" href="' + s.source + '" target="_blank" rel="noopener">' + t('common.source') + '</a></div></div>').join('') + '</div>';
 
@@ -167,42 +154,11 @@
     box.querySelectorAll('[data-range]').forEach(b => b.addEventListener('click', () => { state.range = b.dataset.range; rerender(); }));
     box.querySelector('#prRare').addEventListener('change', e => { state.rareOnly = e.target.checked; rerender(); });
     const byId = new Map(itemsFor().map(i => [String(i.id), i]));
-    box.querySelectorAll('[data-iid]').forEach(a => {
-      a.addEventListener('mousemove', e => showTip(itemTip(byId.get(a.dataset.iid)), e.clientX, e.clientY));
-      a.addEventListener('mouseleave', hideTip);
-    });
+    UI.tip.bind(box, '[data-item]', a => byId.has(a.dataset.item) ? UI.itemCard(byId.get(a.dataset.item), [t('common.level') + ' ' + byId.get(a.dataset.item).req, learnText(byId.get(a.dataset.item).learn.text)]) : null);
   }
 
-  function showTip(html, x, y) {
-    if (!tipEl) {
-      tipEl = document.createElement('div');
-      tipEl.className = 'tooltip calc-tip';
-      document.body.appendChild(tipEl);
-    }
-    tipEl.innerHTML = html;
-    tipEl.style.display = 'block';
-    const w = tipEl.offsetWidth, h = tipEl.offsetHeight;
-    let left = x + 14;
-    if (left + w > window.innerWidth - 8) left = x - w - 14;
-    tipEl.style.left = Math.max(8, left) + 'px';
-    tipEl.style.top = Math.max(8, Math.min(y - 10, window.innerHeight - h - 8)) + 'px';
-  }
-  function hideTip() { if (tipEl) tipEl.style.display = 'none'; }
-
-  function itemTip(i) {
-    const I = window.I18N;
-    return '<div class="it-head"><img class="it-icon qb' + i.quality + '" src="' + ICON + (i.icon || 'inv_misc_questionmark') + '.jpg" alt=""><div>' +
-        '<div class="t-name q' + i.quality + '">' + i.name + '</div>' +
-        '<div class="t-cost">' + t('wp.ilvl') + ' ' + i.ilvl + (i.bind === 'pickup' ? ' · BoP' : i.bind === 'equip' ? ' · BoE' : '') + '</div></div></div>' +
-      '<div class="it-row"><span>' + i.kind + '</span><span>' + (i.armor ? i.armor + ' ' + t('pr.armor') : i.dps ? I.num(i.dps.toFixed(1)) + ' DPS' : '') + '</span></div>' +
-      (Object.keys(i.stats || {}).length ? '<div class="it-stats">' + statsText({ stats: i.stats }) + '</div>' : '') +
-      (i.equip || []).map(e => '<div class="it-equip">' + I.client(e) + '</div>').join('') +
-      '<div class="t-cost">' + t('common.level') + ' ' + i.req + '</div><hr class="t-sep">' +
-      '<div class="t-rank">' + learnText(i.learn.text) + '</div>';
-  }
 
   window.Professions = {
-    hide: hideTip,
     render(target, uiHelpers) {
       container = target;
       ui = uiHelpers;
