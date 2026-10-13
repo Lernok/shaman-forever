@@ -55,17 +55,20 @@ const weaponSources = require('./lib/weapon-sources');
     return out;
   }
 
+  // A level Wowhead gave before isn't lost if Wowhead doesn't answer this time.
+  const previous = readJSON('data/levels.json', { npcs: {} }).npcs || {};
   const npcs = {};
   async function npc(id) {
     if (!npcs[id]) {
       const wh = await wowhead.npc(id);
       const qn = Q.npcLevel(id);
-      npcs[id] = {
+      const before = previous[id] && previous[id].from === 'wowhead' ? previous[id] : null;
+      npcs[id] = wh || !before ? {
         name: (wh && wh.name) || (qn && qn.name) || null,
         level: (wh && wh.level) || (qn && qn.maxLevel) || null,
         rank: (wh && wh.rank !== 'normal' ? wh.rank : qn && qn.rank) || 'normal',
         from: wh && wh.level ? 'wowhead' : qn && qn.maxLevel ? 'questie' : null
-      };
+      } : before;
     }
     return npcs[id];
   }
