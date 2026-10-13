@@ -20,12 +20,40 @@
     }
     return el;
   }
+  // Touch screens: a tap acts (adds a talent point, opens a link) and a long
+  // press shows the card instead, at the top or bottom of the screen away from
+  // your finger; it stays until you touch somewhere else. With a mouse, hover.
+  let lastPointer = 'mouse';
+  document.addEventListener('pointerdown', e => { lastPointer = e.pointerType || 'mouse'; }, true);
+  document.addEventListener('touchstart', e => { if (el && !el.contains(e.target)) tip.hide(); }, { capture: true, passive: true });
+  const isTouch = () => lastPointer !== 'mouse';
+  const LONG_PRESS = 450;
+  function longPress(n, show) {
+    let timer = null;
+    let fired = false;
+    n.addEventListener('touchstart', () => { fired = false; clearTimeout(timer); timer = setTimeout(() => { fired = true; show(); }, LONG_PRESS); }, { passive: true });
+    n.addEventListener('touchmove', () => clearTimeout(timer), { passive: true });
+    n.addEventListener('touchcancel', () => clearTimeout(timer));
+    // After a long press, no tap: no click, no link opened.
+    n.addEventListener('touchend', e => { clearTimeout(timer); if (fired) e.preventDefault(); });
+    n.addEventListener('contextmenu', e => { if (isTouch()) e.preventDefault(); });
+  }
+  // On a phone: across the screen, on the half your finger isn't on.
+  function placeTouch(b, r) {
+    const h = b.offsetHeight;
+    b.style.left = '8px';
+    b.style.top = (r.top + r.height / 2 > window.innerHeight / 2 ? 8 : Math.max(8, window.innerHeight - h - 8)) + 'px';
+  }
+
   const tip = {
+    isTouch,
+    longPress,
     // Next to the mouse.
     at(html, x, y) {
       const b = box();
       b.innerHTML = html;
       b.style.display = 'block';
+      b.classList.remove('touch');
       const w = b.offsetWidth, h = b.offsetHeight;
       let left = x + 14;
       if (left + w > window.innerWidth - 8) left = x - w - 14;
@@ -38,6 +66,8 @@
       b.innerHTML = html;
       b.style.display = 'block';
       const r = target.getBoundingClientRect();
+      b.classList.toggle('touch', isTouch());
+      if (isTouch()) { placeTouch(b, r); return; }
       const w = b.offsetWidth, h = b.offsetHeight;
       let left = r.right + 10;
       if (left + w > window.innerWidth - 8) left = Math.max(8, r.left - w - 10);
@@ -48,8 +78,9 @@
     // Hover cards for elements matching `selector` inside `root`: html(el) or null.
     bind(root, selector, html) {
       root.querySelectorAll(selector).forEach(n => {
-        n.addEventListener('mousemove', e => { const h = html(n); if (h) tip.at(h, e.clientX, e.clientY); });
-        n.addEventListener('mouseleave', tip.hide);
+        n.addEventListener('pointermove', e => { if (e.pointerType !== 'mouse') return; const h = html(n); if (h) tip.at(h, e.clientX, e.clientY); });
+        n.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') tip.hide(); });
+        longPress(n, () => { const h = html(n); if (h) tip.beside(h, n); });
       });
     }
   };

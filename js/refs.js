@@ -97,7 +97,8 @@
   let refShown = false;
   document.addEventListener('mousemove', e => {
     const el = e.target.closest && e.target.closest('[data-ref]');
-    if (el) { UI.tip.at('<div class="ref-card">' + refTip(el.dataset.ref) + '</div>', e.clientX, e.clientY); refShown = true; }
+    // On a phone a tap shows it too, away from your finger.
+    if (el) { const h = '<div class="ref-card">' + refTip(el.dataset.ref) + '</div>'; if (UI.tip.isTouch()) UI.tip.beside(h, el); else UI.tip.at(h, e.clientX, e.clientY); refShown = true; }
     else if (refShown) { UI.tip.hide(); refShown = false; }
   });
 

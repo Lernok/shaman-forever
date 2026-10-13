@@ -3,8 +3,8 @@
 //               objects and, every 10 levels, only what's worth crafting: the
 //               crafted pieces of your gear path (js/gear-plan.js), your 1-2
 //               Merchant's Favor recipes with their cost
-//   cocina      cooking and fishing together, fish recipes only: the skill-up
-//               path, where to fish (zones of your route first), fish food for your spec
+//   cocina      the best food for your spec in each level bracket; leveling
+//               Cooking and Fishing is left to wow-professions.com's guides
 //   auxilios    first aid: a bandage per level bracket, potions, cures
 //   sistemas    Forever's systems (Merchant's Favor, camping, Legacy…)
 // Data: data/guides/professions.json (content), data/professions.js (crafted
@@ -133,11 +133,6 @@
       ' <a class="src" href="' + f.source + '" target="_blank" rel="noopener">' + t('common.source') + '</a></div></div>').join('') + '</div>';
   }
 
-  // ---------- picks ----------
-
-
-
-
   // ---------- sections ----------
 
   function pickerHtml(selected, max) {
@@ -208,106 +203,60 @@
       g.leveling.map(l => '<a class="link-card" href="' + l.url + '" target="_blank" rel="noopener"><b>' + l.site + ' ↗</b><span>' + l.note + '</span></a>').join('') + '</div>';
   }
 
-  // ---------- cooking and fishing ----------
+  // ---------- cooking ----------
 
-  // Only fish recipes: cooking and fishing level together. Recipes your
-  // faction can learn (trainer, or a vendor/quest/drop of your faction).
-  function fishRecipes() {
+  // Stats worth eating for, per spec (first = most important); stamina for everyone.
+  const SPEC_FOOD = {
+    Enhancement: ['strength', 'agility', 'attackPower', 'crit'],
+    Elemental: ['spellDamage', 'intellect', 'crit'],
+    Restoration: ['healing', 'intellect', 'spirit']
+  };
+  const STAT_ICONS = { strength: 'spell_nature_strength', agility: 'ability_rogue_sprint', attackPower: 'ability_warrior_battleshout',
+    spellDamage: 'spell_fire_flamebolt', intellect: 'spell_holy_magicalsentry', healing: 'spell_nature_healingwavegreater', spirit: 'spell_holy_divinespirit',
+    crit: 'ability_criticalstrike', stamina: 'spell_nature_unyeildingstamina' };
+  // Leveling Cooking and Fishing is left to the guides that cover it well.
+  const COOK_GUIDES = [
+    ['Cooking', 'https://www.wow-professions.com/forever/cooking-leveling-guide'],
+    ['Fishing', 'https://www.wow-professions.com/forever/fishing-leveling-guide'],
+    ['Fishing + Cooking', 'https://www.wow-professions.com/forever/fishing-and-cooking-leveling-guide']
+  ];
+
+  // The best food for a stat you can eat by level `hi` (and whether it's new in the bracket).
+  function bestFood(stat, lo, hi) {
+    const list = consumables().items.filter(f => f.profession === 'Cooking' && f.buff && f.buff.stat === stat && f.buff.amount && f.req <= hi);
+    if (!list.length) return null;
+    const top = Math.max(...list.map(f => f.buff.amount));
+    const foods = list.filter(f => f.buff.amount === top).sort((a, b) => b.req - a.req);
+    return { stat, amount: top, foods, isNew: foods.some(f => f.req >= lo) };
+  }
+
+  // Fish the given foods need, with where to catch them.
+  function fishFor(foods) {
     const fish = consumables().fish || {};
-    return consumables().items.filter(f => f.profession === 'Cooking' && (f.reagents || []).some(r => fish[r.id]) && f.skill[1])
-      .filter(f => {
-        const L = f.learn || {};
-        if (L.type === 'trainer' || L.type === 'start') return true;
-        return (L.sources || []).some(s => !s.faction || s.faction === 'both' || s.faction === Site.faction);
-      });
-  }
-  // Skill a recipe is learned at: the client says 1 for these, so it's taken
-  // as 40 below where it turns yellow, as almost every Classic recipe is.
-  // The first recipes (yellow at 45) are learned at 1.
-  const learnSkill = f => (f.skill[0] > 1 ? f.skill[0] : f.skill[1] <= 50 ? 1 : f.skill[1] - 40);
-  const fishOf = f => (f.reagents || []).map(r => Object.assign({ id: r.id }, (consumables().fish || {})[r.id])).filter(x => x.name);
-
-  // Zones of your route where a fish is caught, with the level you're there.
-  function fishZones(fishList) {
-    const race = Site.race === 'any' ? null : Site.race;
-    const on = {};
-    window.Route.brackets(Site.faction, race).forEach(b => b.zones.forEach(z => { if (on[z] == null) on[z] = b.from; }));
-    const zones = [...new Set(fishList.flatMap(x => x.zones || []))];
-    const mine = zones.filter(z => on[z] != null).sort((x, y) => on[x] - on[y]);
-    return { mine, from: mine.length ? on[mine[0]] : null, other: zones.filter(z => on[z] == null) };
-  }
-
-  // The skill-up path: at each skill, the fish recipe that still gives sure
-  // points (orange) the longest; when none is orange, the yellow one that
-  // lasts longest. Recipes whose fish is on your route win a tie.
-  function cookingPath() {
-    const list = fishRecipes();
-    const steps = [];
-    let skill = 1;
-    while (skill < 300) {
-      const can = list.filter(f => learnSkill(f) <= skill && f.skill[2] > skill);
-      const orange = can.filter(f => skill < f.skill[1]);
-      const pool = orange.length ? orange : can;
-      if (!pool.length) {
-        const next = list.filter(f => learnSkill(f) > skill).sort((x, y) => learnSkill(x) - learnSkill(y))[0];
-        if (!next) break;
-        steps.push({ gap: true, from: skill, to: learnSkill(next) });
-        skill = learnSkill(next);
-        continue;
-      }
-      // Longest-lasting first; then fish on your route; then food your spec eats.
-      const key = f => [orange.length ? f.skill[1] : f.skill[2], fishZones(fishOf(f)).mine.length ? 1 : 0,
-        f.buff && FISH_STAT[Site.spec].includes(f.buff.stat) ? f.buff.amount : 0];
-      const cmp = (x, y) => { const a = key(x); const b = key(y); return b[0] - a[0] || b[1] - a[1] || b[2] - a[2]; };
-      const f = pool.slice().sort(cmp)[0];
-      const to = orange.length ? f.skill[1] : f.skill[2];
-      const last = steps[steps.length - 1];
-      if (last && last.f === f) last.to = to;
-      else steps.push({ f, from: skill, to, sure: !!orange.length });
-      skill = to;
-    }
-    return steps;
-  }
-
-  // Stats a spec wants from fish food (fish food gives attack power or spell damage).
-  const FISH_STAT = { Enhancement: ['attackPower'], Elemental: ['spellDamage'], Restoration: [] };
-
-  function cookStep(st) {
-    if (st.gap) return '<div class="cook-step gap"><span class="cs-skill">' + st.from + '–' + st.to + '</span><span class="dim">' + t('pr.fc.gap') + '</span></div>';
-    const f = st.f;
-    const fish = fishOf(f);
-    const where = fishZones(fish);
-    const useful = f.buff && FISH_STAT[Site.spec].includes(f.buff.stat);
-    return '<div class="cook-step"><span class="cs-skill">' + st.from + '–' + st.to + '</span>' +
-      '<div class="cs-main"><span>' + foodLink(f) + (useful ? ' <span class="cs-tag">' + t('pr.fc.forSpec', { spec: Site.spec }) + '</span>' : '') + '</span>' +
-      '<span class="dim">' + t(st.sure ? 'pr.fc.sure' : 'pr.fc.maybe') + ' · ' + t('pr.fc.greyAt', { n: f.skill[2] }) + ' · ' + learnLine(f) + '</span>' +
-      '<span>' + t('pr.fc.fish', { fish: fish.map(x => x.name).join(', ') }) + ' ' +
-      (where.mine.length ? t('pr.fc.onRoute', { zones: where.mine.slice(0, 3).join(', '), level: where.from }) : '<span class="dim">' + fishWhere(fish[0]) + '</span>') + '</span>' +
-      ((f.reagents || []).length > fish.length ? '<span class="dim">' + t('pr.cook.needs') + ': ' + f.reagents.map(r => r.name + (r.count > 1 ? ' ×' + r.count : '')).join(', ') + '</span>' : '') +
-      '</div></div>';
+    const out = new Map();
+    foods.forEach(f => (f.reagents || []).forEach(r => { if (fish[r.id]) out.set(r.id, Object.assign({ id: r.id }, fish[r.id])); }));
+    return [...out.values()];
   }
 
   function renderCooking(g) {
     const sec = g.secondary;
-    let html = '<p class="note-text">' + t('pr.fc.intro') + '</p><div class="camp-grid">' + campCard('Cooking') + campCard('Fishing') + '</div>';
-    html += '<div class="panel"><h3>' + t('pr.fc.path') + '</h3><p class="note-text dim">' + t('pr.fc.pathNote') + '</p>' +
-      cookingPath().map(cookStep).join('') + '</div>';
-    // Which fish food helps your spec, by level (you eat it from its level).
-    const stats = FISH_STAT[Site.spec];
-    html += '<div class="panel" style="margin-top:16px"><h3>' + t('pr.fc.eat', { spec: Site.spec }) + '</h3>';
-    if (!stats.length) html += '<p class="note-text">' + t('pr.fc.eatNone') + '</p>';
-    else {
-      const foods = fishRecipes().filter(f => f.buff && stats.includes(f.buff.stat));
-      BRACKETS.forEach(([lo, hi]) => {
-        const can = foods.filter(f => f.req <= hi);
-        if (!can.length) return;
-        const top = Math.max(...can.map(f => f.buff.amount));
-        const best = can.filter(f => f.buff.amount === top);
-        html += '<div class="aid-row"><b>' + t('pr.levels', { lo, hi }) + '</b><span>' + best.slice(0, 2).map(foodLink).join(' ') + '</span>' +
-          '<span class="aid-val">+' + top + ' ' + t('pr.stat.' + best[0].buff.stat) + '</span><span class="dim">' + fishOf(best[0]).map(x => x.name).join(', ') + '</span></div>';
-      });
-    }
-    html += '<p class="note-text dim">' + t('pr.fc.xp') + '</p></div>';
+    let html = '<p class="note-text">' + t('pr.cook.intro', { spec: Site.spec }) + '</p>' +
+      '<div class="link-grid">' + COOK_GUIDES.map(([name, url]) => '<a class="link-card" href="' + url + '" target="_blank" rel="noopener"><b>' + profIcon(name.split(' ')[0], 'pk-icon') + ' ' + name + ' ↗</b><span>' + t('pr.cook.guide') + '</span></a>').join('') + '</div>' +
+      '<h3 class="block-title" style="margin-top:22px">' + t('pr.food', { spec: Site.spec }) + '</h3><div class="plan-list">';
+    BRACKETS.forEach(([lo, hi]) => {
+      const foods = SPEC_FOOD[Site.spec].concat('stamina').map(s => bestFood(s, lo, hi)).filter(Boolean);
+      const rows = foods.map(b => {
+        const f = b.foods[0];
+        const fish = fishFor([f]);
+        return '<div class="cook-row' + (b.isNew ? '' : ' same') + '"><span class="cook-stat"><img src="' + UI.icon(STAT_ICONS[b.stat], 'medium') + '" alt=""><b>+' + b.amount + (b.stat === 'crit' ? '%' : '') + '</b> ' + t('pr.stat.' + b.stat) + '</span>' +
+          '<span>' + b.foods.slice(0, 2).map(foodLink).join(' ') + '</span>' +
+          '<span class="dim">' + ((f.reagents || []).map(r => r.name).join(', ')) + '</span>' +
+          '<span class="dim">' + (fish.length ? fishWhere(fish[0]) : skillRange(f)) + '</span></div>';
+      }).join('');
+      html += '<div class="plan-bracket' + (lo > BETA_CAP ? ' post-cap' : '') + '">' + bracketHead([lo, hi]) +
+        '<div class="cook-row cook-head"><span>' + t('pr.cook.colStat') + '</span><span>' + t('pr.cook.colFood') + '</span><span>' + t('pr.cook.needs') + '</span><span>' + t('pr.cook.colWhere') + '</span></div>' + rows + '</div>';
+    });
+    html += '</div><p class="note-text dim">' + t('pr.fc.xp') + '</p>';
     html += '<details class="pr-facts"><summary>' + t('pr.cook.facts') + '</summary>' + factCards(sec.cooking.concat(sec.fishing)) + '</details>';
     return html;
   }

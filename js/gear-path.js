@@ -15,11 +15,11 @@
 
   function compute() {
     // Your professions (shared with the Professions page, gathering ones too):
-    // crafts count only from your crafting ones; none picked = any craft.
+    // crafts count only from your crafting ones; none picked = no crafts.
     const picked = UI.store.get('profs', []);
     const profs = picked.filter(p => PROFS.includes(p));
     const opts = {
-      spec: Site.spec, faction: Site.faction, race: race(), profs: picked.length ? profs : null, drops: state.drops,
+      spec: Site.spec, faction: Site.faction, race: race(), profs, drops: state.drops,
       route: (zone, lvl) => window.Route.onRoute(zone, lvl, Site.faction, race()),
       away: zone => window.Route.otherStart(zone, Site.faction, race())
     };

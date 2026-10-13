@@ -444,6 +444,12 @@ ul.plain.ordered li::before {
 .req-arrow.met::after { border-top-color: var(--gold); }
 
 .calc-tip { position: fixed; top: 0; left: 0; z-index: 50; pointer-events: none; width: 300px; }
+.calc-tip.touch { width: calc(100vw - 16px); max-width: 420px; }
+/* Hints for mouse or touch only. */
+@media (hover: none) { .mouse-only { display: none; } }
+@media (hover: hover) { .touch-only { display: none; } }
+/* Long press shows the card: no text selection or link preview. */
+[data-item], [data-food] { -webkit-touch-callout: none; }
 .calc-tip .t-rankno { color: var(--gold); font-weight: 600; margin-left: 4px; }
 .calc-tip .t-cost { font-size: 11.5px; color: #8b8d97; margin: 4px 0; }
 .calc-tip .t-lock { color: #e06c5b; margin-top: 6px; font-weight: 600; }

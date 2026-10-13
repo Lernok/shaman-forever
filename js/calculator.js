@@ -199,7 +199,7 @@
   function renderAll() {
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Calculadora + '">' +
       '<div class="role">' + t('calc.role') + '</div><h2>' + t('calc.title') + '</h2>' +
-      '<p>' + t('calc.intro') + '</p></div>';
+      '<p><span class="mouse-only">' + t('calc.intro') + '</span><span class="touch-only">' + t('calc.introTouch') + '</span></p></div>';
     html += renderBuildPicker();
     html += '<div class="panel calc-panel">' + renderToolbar() +
       '<div class="calc-trees">' + trees().map(renderTree).join('') + '</div></div>';
@@ -295,8 +295,10 @@
 
     container.querySelectorAll('.ctal').forEach(el => {
       const [tree, talent] = talentFromEl(el);
-      el.addEventListener('mouseenter', () => showTip(el));
-      el.addEventListener('mouseleave', hideTip);
+      // Mouse: hover shows the card. Touch: a tap adds a point, a long press shows it.
+      el.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') showTip(el); });
+      el.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') hideTip(); });
+      window.UI.tip.longPress(el, () => showTip(el));
       el.addEventListener('click', e => {
         if (e.target.classList.contains('ctal-minus')) return;
         change(tree, talent, e.shiftKey ? -1 : 1);
@@ -304,6 +306,7 @@
       });
       el.addEventListener('contextmenu', e => {
         e.preventDefault();
+        if (window.UI.tip.isTouch()) return;
         change(tree, talent, -1);
         refreshTip(tree, talent);
       });
@@ -318,8 +321,10 @@
     });
   }
 
-  // After a re-render the hovered element is new; re-anchor the tooltip to it.
+  // After a re-render the hovered element is new; re-anchor the tooltip to it
+  // (with a mouse; on a phone a tap leaves the tree in view).
   function refreshTip(tree, talent) {
+    if (window.UI.tip.isTouch()) { hideTip(); return; }
     const el = container.querySelector('.ctal[data-tree="' + tree.name + '"][data-talent="' + talent.name.replace(/"/g, '\\"') + '"]');
     if (el) showTip(el); else hideTip();
   }
