@@ -13,7 +13,7 @@
     // link, so a report arrives with what the person was looking at.
     FEEDBACK: { url: '', fields: { kind: '', context: '' } },
     // Anonymous visit counter (goatcounter.com, no cookies): the site's code.
-    GOATCOUNTER: '',
+    GOATCOUNTER: 'lernok',
     SPECS,
     FACTIONS,
     COLORS: { Elemental: '#e0742c', Enhancement: '#b07a42', Restoration: '#3fa9f5', Clase: '#c8aa6e' },
