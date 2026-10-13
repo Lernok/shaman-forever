@@ -21,15 +21,18 @@
     const opts = {
       spec: Site.spec, faction: Site.faction, race: race(), profs, drops: state.drops,
       route: (zone, lvl) => window.Route.onRoute(zone, lvl, Site.faction, race()),
-      away: zone => window.Route.otherStart(zone, Site.faction, race())
+      away: zone => window.Route.otherStart(zone, Site.faction, race()),
+      reach: zone => window.Route.reachable(zone, Site.faction)
     };
     return { plan: window.GearPlan.plan(gear(), opts), profs, picked };
   }
 
   // Where it comes from, in one line.
   function sourceText(c) {
-    const s = c.source;
+    // "Call of Fire (given by Olariaan Swiftburn)" -> "Call of Fire".
+    const s = Object.assign({}, c.source, { quest: (c.source.quest || '').replace(/ \(given by [^)]*\)/, '') });
     switch (c.access) {
+      case 'class': return t('gp.src.class', { quest: s.quest });
       case 'route': return t('gp.src.route', { quest: s.quest, zone: s.zone || '?' });
       case 'quest': return t('gp.src.quest', { quest: s.quest, zone: s.zone || '?' });
       case 'dquest': return t('gp.src.dquest', { quest: s.quest, zone: s.dungeonZone || s.zone || '?' });

@@ -5,37 +5,26 @@
 //
 //   node scripts/fetch-recipes.js          (pages cached in .cache/cwf/, 1 req/s)
 //
-// Writes data/recipes.json: { profession: { recipeName: { slot, ilvl, skill:[orange,yellow,green,grey], source, isNew } } }
+// Writes data/recipes.json: { profession: { 'item:<id>' (or the recipe's name): { name, itemId, slot, ilvl, skill:[orange,yellow,green,grey], source, isNew } } }
 const { readJSON, writeJSON } = require('./lib/files');
 const http = require('./lib/http');
 const PROFESSIONS = ['leatherworking', 'blacksmithing', 'tailoring', 'enchanting', 'engineering', 'alchemy'];
 
-function toText(html) {
-  return html
-    .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '')
-    .replace(/<[^>]+>/g, '\n')
-    .replace(/&amp;/g, '&').replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&nbsp;/g, ' ').replace(/&gt;/g, '>').replace(/&lt;/g, '<')
-    .split('\n').map(s => s.trim()).filter(Boolean);
-}
-
-// A recipe block: Name / "Slot, ilvl N" / 4 skill numbers / mats (n × name)… / source / flags.
-function parsePage(lines) {
+// Each page embeds its recipes as objects ({"spell":…,"name":…,"learn":35,
+// "yellow":40,…,"how":"Trainer, …","itemId":…}); they carry the crafted
+// item's id, which tells apart a new Forever recipe from a Classic one with
+// the same name (two "Dark Leather Boots": a new rare from an Ironforge
+// vendor, and the old trainer one).
+const RECIPE = /\{"spell":\d+,"name":"(?:[^"\\]|\\.)*"(?:[^{}\[\]]|\[(?:[^\[\]]|\[[^\[\]]*\])*\])*\}/g;
+function parsePage(html) {
+  const text = html.replace(/\\"/g, '"');
   const out = [];
-  for (let i = 1; i < lines.length; i++) {
-    const m = /^(.*?),?\s*ilvl (\d+)$/.exec(lines[i]);
-    if (!m) continue;
-    const name = lines[i - 1];
-    const skill = lines.slice(i + 1, i + 5).map(s => Number(s.replace('≈', '')));
-    if (skill.some(isNaN)) continue;
-    let j = i + 5;
-    // Materials: "<count>", "×", "<name>" triples.
-    while (/^\d+$/.test(lines[j]) && lines[j + 1] === '×') j += 3;
-    const source = lines[j] || '';
-    const flags = [];
-    for (let k = j + 1; k < j + 3 && k < lines.length; k++) {
-      if (/^New recipe$|Skill-ups|^Changed/.test(lines[k])) flags.push(lines[k]);
-    }
-    out.push({ name, slot: m[1] || null, ilvl: Number(m[2]), skill, source, isNew: flags.includes('New recipe') });
+  for (const m of text.matchAll(RECIPE)) {
+    let r;
+    try { r = JSON.parse(m[0]); } catch (e) { continue; }
+    const ilvl = /ilvl (\d+)/.exec(r.item || '');
+    out.push({ name: r.name, itemId: r.itemId || null, slot: r.slot || null, ilvl: ilvl ? Number(ilvl[1]) : null,
+      skill: [r.learn, r.yellow, r.green, r.grey].map(n => (n == null ? null : Number(n))), source: r.how || '', isNew: !!r.isNew });
   }
   return out;
 }
@@ -43,7 +32,7 @@ function parsePage(lines) {
 // Kept for a month: recipe lists change slowly (pass --offline to rebuild from cache).
 const page = (prof, n) => http.get('https://classicwowforever.com/professions/' + prof + '/recipes/' + (n > 1 ? '?page=' + n : ''),
   { cache: 'cwf/' + prof + '-' + n + '.html', maxAgeDays: 30, valid: t => /<html/i.test(t) }).then(t => {
-  if (t == null) throw new Error('sin la página ' + n + ' de ' + prof);
+  if (t == null && n === 1) throw new Error('sin la página 1 de ' + prof);
   return t;
 });
 
@@ -51,14 +40,21 @@ const page = (prof, n) => http.get('https://classicwowforever.com/professions/' 
   const result = {};
   for (const prof of PROFESSIONS) {
     result[prof] = {};
-    const first = toText(await page(prof, 1));
-    const pagesLine = first.findIndex(l => l === 'Page');
-    const total = pagesLine >= 0 ? Number(first[pagesLine + 3]) || 1 : 1;
-    for (let n = 1; n <= total; n++) {
-      const lines = n === 1 ? first : toText(await page(prof, n));
-      parsePage(lines).forEach(r => { result[prof][r.name] = r; });
+    // Pages until one brings no recipe we didn't have.
+    const seen = new Set();
+    for (let n = 1; n <= 30; n++) {
+      const html = await page(prof, n);
+      if (html == null) break; // past the last page
+      const list = parsePage(html);
+      const fresh = list.filter(r => !seen.has(r.name + '|' + r.itemId));
+      if (!fresh.length) break;
+      fresh.forEach(r => {
+        seen.add(r.name + '|' + r.itemId);
+        // By item id when it has one (recipes that make an item), else by name.
+        result[prof][r.itemId ? 'item:' + r.itemId : r.name] = r;
+      });
     }
-    console.log(prof + ': ' + Object.keys(result[prof]).length + ' recetas (' + total + ' páginas)');
+    console.log(prof + ': ' + Object.keys(result[prof]).length + ' recetas');
   }
   // The date only moves when the recipes do.
   const prev = readJSON('data/recipes.json', {});

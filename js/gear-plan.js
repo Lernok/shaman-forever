@@ -21,7 +21,9 @@
   const COST = { strength: 1, agility: 1, stamina: 1, intellect: 1, spirit: 1, attackPower: 0.5, spellPower: 1.2, healing: 0.55, mp5: 2.5, crit: 14, hit: 10 };
   // How much each stat is worth to each spec: 1 main, 0.5 helps, 0.25 a little.
   const WEIGHTS = {
-    Enhancement: { strength: 1, agility: 0.75, attackPower: 1, crit: 1, hit: 1, stamina: 0.25, intellect: 0.25 },
+    // Enhancement as on its guide: Strength and crit, then Intellect (Mental
+    // Dexterity turns it into attack power) and Agility.
+    Enhancement: { strength: 1, agility: 0.5, attackPower: 1, crit: 1, hit: 1, stamina: 0.25, intellect: 0.5 },
     Elemental: { spellPower: 1, intellect: 0.75, crit: 0.5, hit: 0.5, mp5: 0.5, stamina: 0.25, spirit: 0.25 },
     Restoration: { healing: 1, spellPower: 1, intellect: 0.75, mp5: 1, spirit: 0.5, stamina: 0.25 }
   };
@@ -41,9 +43,14 @@
   const MAIL_AT = 40; // Shamans learn Mail at 40
   const UPGRADE = 1.05; // a piece must be 5% better to count as an upgrade
   const MIN_FIT = 0.4; // at least 40% of a piece's stats must be ones your spec uses
-  const MIN_LEVELS = { route: 0, dquest: 3, quest: 3, crafted: 4, favor: 6, vendor: 4, boss: 3 };
+  const MIN_LEVELS = { class: 0, route: 0, dquest: 3, quest: 3, crafted: 4, favor: 6, vendor: 4, boss: 3 };
   const FAVOR_PER_BRACKET = 2;
-  const TIER = { route: 1, dquest: 2, quest: 3, crafted: 4, favor: 5, vendor: 6, boss: 7 };
+  const TIER = { class: 1, route: 1, dquest: 2, quest: 3, crafted: 4, favor: 5, vendor: 6, boss: 7 };
+  // Quest "zones" that aren't places: class quests, and ones you can't plan
+  // a leveling path around (events, raids, PvP, other professions).
+  const CLASS_ZONE = 'Shaman';
+  const UNPLANNED = /^(Special|Invasion|Darkmoon Faire|Epic|Ahn'Qiraj|Ruins of Ahn'Qiraj|Naxxramas|Zul'Gurub|Blackwing Lair|Molten Core|Onyxia's Lair|Alterac Valley|Shen'dralas)$/;
+  const PROF_ZONES = ['Alchemy', 'Blacksmithing', 'Enchanting', 'Engineering', 'Leatherworking', 'Tailoring', 'Cooking', 'Fishing', 'First Aid', 'Herbalism', 'Mining', 'Skinning'];
   // Race bits of the client's AllowableRace mask (Skyborne's isn't known: allowed).
   const RACE_BIT = { Orc: 2, Dwarf: 4, Tauren: 32, Troll: 128 };
 
@@ -93,13 +100,17 @@
 
   // How you'd get a piece, as the best access you have; null if you can't.
   // opts: { spec, faction, race, profs (crafting professions; null = any),
-  //   drops, route(zone, level), away(zone): zones you never go to }
+  //   drops, route(zone, level), away(zone): zones you never go to,
+  //   reach(zone): false for zones only the other faction quests in }
   function access(item, s, opts) {
     if (s.faction !== 'both' && s.faction !== opts.faction) return null;
     if (s.raid || s.pvp) return null;
     if (s.type === 'quest') {
       // Holiday and event quests (no level, no zone) can't be planned.
       if (!s.level && !s.zone) return null;
+      if (s.zone === CLASS_ZONE || (s.classes || []).includes(CLASS_ZONE)) return 'class';
+      if (UNPLANNED.test(s.zone || '')) return null;
+      if (PROF_ZONES.includes(s.zone) && !(opts.profs || []).includes(s.zone)) return null;
       if (opts.away && opts.away(s.zone)) return null;
       if (s.dungeon) return 'dquest';
       return opts.route(s.zone, s.rec) ? 'route' : 'quest';
@@ -110,7 +121,8 @@
       if (learn.type === 'favor') return 'favor';
       return learn.type === 'trainer' ? 'crafted' : null;
     }
-    if (s.type === 'vendor') return 'vendor';
+    // Vendors deep in the other faction's land don't count.
+    if (s.type === 'vendor') return opts.reach && !opts.reach(s.zone) ? null : 'vendor';
     if ((s.type === 'boss' || s.type === 'drop') && opts.drops) return 'boss';
     return null;
   }

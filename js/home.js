@@ -24,7 +24,8 @@
     Site.SPECS.forEach(spec => {
       const g = I18N.localize(window.GUIDE_DATA[spec]);
       const tree = window.SHAMAN_DATA.talents.trees.find(tr => tr.name === spec);
-      const first = String(g.summary).replace(/<[^>]+>/g, '').split(/(?<=\.)\s/)[0];
+      // The summary's first sentences, enough for a line or two.
+      const first = String(g.summary).replace(/<[^>]+>/g, '').split(/(?<=\.)\s/).reduce((a, x) => (a.length < 80 ? (a ? a + ' ' : '') + x : a), '');
       html += '<a class="spec-card' + (Site.spec === spec ? ' current' : '') + '" href="#Guia" data-go-spec="' + spec + '" style="--spec-color:' + SPEC_COLORS[spec] + ';--card-bg:url(' + UI.treeArt(tree.bg) + ')">' +
         '<img src="' + iconUrl(SPEC_ICONS[spec]) + '" alt="">' +
         '<span class="role">' + g.role + '</span><b>' + spec + '</b><span class="sc-line">' + first + '</span>' +

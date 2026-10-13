@@ -68,15 +68,26 @@
       (sub ? '<span class="tile-sub">' + sub + '</span>' : '') + '</div></' + tag + '>';
   }
 
+  function weaponAt(level) {
+    if (!window.GearPath || !window.GEAR_DATA) return window.Weapons && window.Weapons.bestSafe(level);
+    const steps = window.GearPath.compute().plan.slots.Weapon.steps.filter(st => st.level <= level);
+    const st = steps[steps.length - 1];
+    if (!st) return null;
+    const w = st.pick.item;
+    const value = Site.spec === 'Enhancement' ? I18N.num(w.dps.toFixed(1)) + ' DPS' : t('wp.ilvl') + ' ' + w.ilvl;
+    return { name: w.name, kind: w.kind, quality: w.quality, value, source: window.GearPath.sourceText(st.pick) };
+  }
+
   // The short version, right under the banner.
   function renderTiles(guide, spec) {
     const list = guide.statPriority.list;
     let html = '<div class="tiles">';
     html += tile(SPEC_ICONS[spec], t('tile.role'), guide.role, spec);
-    const best = window.Weapons && window.Weapons.bestSafe(30);
+    // The weapon your gear path has you hold at 30 (your race and professions).
+    const best = weaponAt(30);
     if (best) {
       html += tile(WEAPON_ICONS[best.kind], t('tile.weapon', { level: 30 }), '<span class="q' + best.quality + '">' + best.name + '</span>',
-        best.value + ' · ' + best.source, '#Equipo');
+        best.value + ' · ' + best.source, '#Equipo/camino');
     }
     const build = window.I18N.localize(window.BUILD_DATA || []).find(b => b.spec === spec);
     if (build) {
@@ -129,7 +140,7 @@
     }
     const gear = (guide.gearTargets || []).concat(guide.gearingNotes || []);
     if (gear.length) html += '<div class="sub-label">' + t('guide.gearNotes') + '</div>' + renderNoteList(gear);
-    html += '<p class="note-text dim">' + t('guide.toWeapons') + '</p>';
+    html += '<p class="note-text dim"><a href="#Equipo/camino">' + t('guide.toWeapons') + '</a></p>';
     return html + '</div>';
   }
 

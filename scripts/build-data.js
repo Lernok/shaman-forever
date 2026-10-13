@@ -53,6 +53,9 @@ function checkLang(v, where, key) {
 }
 
 const shaman = read('data/shaman.json');
+// Icons talentsforever names that the icon CDN (wow.zamimg.com) doesn't have.
+const ICON_FIX = { race_skyborne: 'race_skyborne_male' };
+Object.values(shaman.racials).flat().forEach(r => { if (ICON_FIX[r.icon]) r.icon = ICON_FIX[r.icon]; });
 write('data/shaman.js', 'SHAMAN_DATA', shaman);
 // Longest first, so "Nature's Swiftness" is removed before a shorter name inside it.
 properNouns = [

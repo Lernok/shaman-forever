@@ -42,6 +42,13 @@
       return out;
     },
 
+    // A zone you'd go to: unknown zones (cities, dungeons) count; a zone only
+    // the other faction quests in doesn't.
+    reachable(zone, faction) {
+      const z = Z.zones[zone];
+      return !z || !!z[faction];
+    },
+
     // Another race's starting zone: you don't go there.
     otherStart(zone, faction, race) {
       if (!isStart(zone)) return false;

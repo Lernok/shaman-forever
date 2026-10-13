@@ -20,7 +20,7 @@ let matched = 0;
 let total = 0;
 Object.values(items).filter(i => i.crafted).forEach(i => {
   const prof = i.crafted.profession;
-  const r = R.recipe(prof, i.name);
+  const r = R.recipe(prof, i.id, i.name);
   total++;
   if (r) matched++;
   out[prof] = out[prof] || [];
@@ -32,7 +32,7 @@ Object.values(items).filter(i => i.crafted).forEach(i => {
     // Shamans train Mail at 40.
     mailFrom40: i.kind === 'Mail' && i.req < 40,
     skill: r ? r.skill : [i.crafted.yellow, i.crafted.yellow, null, i.crafted.grey],
-    learn: R.learn(prof, i.name),
+    learn: R.learn(prof, i.id, i.name),
     isNew: r ? r.isNew : i.era === 'new'
   });
 });

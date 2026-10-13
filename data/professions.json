@@ -1,7 +1,7 @@
 {
  "build": "1.60.1.70338",
  "recipesSource": "https://classicwowforever.com/professions/",
- "recipesFetched": "2026-10-11",
+ "recipesFetched": "2026-10-13",
  "professions": {
   "Leatherworking": [
    {
@@ -1159,16 +1159,16 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     75,
-     100,
-     112,
-     125
+     35,
+     40,
+     40,
+     40
     ],
     "learn": {
-     "type": "trainer",
-     "text": "Trainer, 3s 50c, learn at ≈75"
+     "type": "drop",
+     "text": "Pattern 5s: Granny Finespindle, Ironforge"
     },
-    "isNew": false
+    "isNew": true
    },
    {
     "id": 2309,
@@ -4824,14 +4824,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     135,
-     155,
-     165,
-     175
+     180,
+     180,
+     null,
+     200
     ],
     "learn": {
-     "type": "trainer",
-     "text": "Trainer, 10s, learn at ≈135"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -5033,14 +5033,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     145,
-     165,
-     175,
-     185
+     190,
+     190,
+     null,
+     210
     ],
     "learn": {
-     "type": "drop",
-     "text": "Pattern: drop"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -6195,14 +6195,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     170,
-     190,
-     200,
-     210
+     215,
+     215,
+     null,
+     235
     ],
     "learn": {
-     "type": "drop",
-     "text": "Pattern: drop"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -6770,14 +6770,14 @@
     "role": "caster",
     "mailFrom40": true,
     "skill": [
-     180,
-     200,
-     210,
-     220
+     225,
+     225,
+     null,
+     245
     ],
     "learn": {
-     "type": "drop",
-     "text": "Pattern: drop or fishing, binds on pickup"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -6918,14 +6918,14 @@
     "role": "caster",
     "mailFrom40": true,
     "skill": [
-     185,
-     205,
-     215,
-     225
+     230,
+     230,
+     null,
+     250
     ],
     "learn": {
-     "type": "trainer",
-     "text": "Trainer, 30s, learn at ≈185"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -6992,14 +6992,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     190,
-     210,
-     220,
-     230
+     235,
+     235,
+     null,
+     255
     ],
     "learn": {
-     "type": "drop",
-     "text": "Pattern: drop"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -7066,14 +7066,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     195,
-     215,
-     225,
-     235
+     240,
+     240,
+     null,
+     260
     ],
     "learn": {
-     "type": "drop",
-     "text": "Pattern: drop"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -10401,14 +10401,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
+     250,
      270,
-     270,
-     null,
+     280,
      290
     ],
     "learn": {
-     "type": "unknown",
-     "text": null
+     "type": "drop",
+     "text": "Pattern: drops from Blackrock Soldier in Burning Steppes"
     },
     "isNew": false
    },
@@ -15248,14 +15248,14 @@
     "role": "hybrid",
     "mailFrom40": false,
     "skill": [
-     320,
-     320,
      null,
+     320,
+     330,
      340
     ],
     "learn": {
      "type": "unknown",
-     "text": null
+     "text": "Source not found yet"
     },
     "isNew": false
    },
@@ -15850,14 +15850,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -15919,14 +15919,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -15988,14 +15988,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -16208,14 +16208,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -16540,14 +16540,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -16615,14 +16615,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -16690,14 +16690,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -16933,14 +16933,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -17004,14 +17004,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -17075,14 +17075,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -17330,14 +17330,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     290,
-     310,
      320,
-     330
+     320,
+     null,
+     340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -17370,14 +17370,14 @@
     "role": "hybrid",
     "mailFrom40": false,
     "skill": [
-     290,
-     310,
      320,
-     330
+     320,
+     null,
+     340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -17409,14 +17409,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     290,
-     310,
      320,
-     330
+     320,
+     null,
+     340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -18075,14 +18075,14 @@
     "role": "other",
     "mailFrom40": false,
     "skill": [
+     300,
      320,
-     320,
-     null,
+     325,
      330
     ],
     "learn": {
-     "type": "unknown",
-     "text": null
+     "type": "drop",
+     "text": "Pattern : Aisarra Nightmeadow, Mount Hyjal"
     },
     "isNew": true
    },
@@ -18106,14 +18106,14 @@
     "role": "other",
     "mailFrom40": false,
     "skill": [
+     300,
      320,
-     320,
-     null,
+     325,
      330
     ],
     "learn": {
-     "type": "unknown",
-     "text": null
+     "type": "drop",
+     "text": "Pattern : Aisarra Nightmeadow, Mount Hyjal"
     },
     "isNew": true
    },
@@ -18168,14 +18168,14 @@
     "role": "other",
     "mailFrom40": false,
     "skill": [
+     300,
      320,
-     320,
-     null,
+     325,
      330
     ],
     "learn": {
-     "type": "unknown",
-     "text": null
+     "type": "drop",
+     "text": "Pattern : Aisarra Nightmeadow, Mount Hyjal"
     },
     "isNew": true
    },
@@ -18199,14 +18199,14 @@
     "role": "other",
     "mailFrom40": false,
     "skill": [
+     300,
      320,
-     320,
-     null,
+     325,
      330
     ],
     "learn": {
-     "type": "unknown",
-     "text": null
+     "type": "drop",
+     "text": "Pattern : Aisarra Nightmeadow, Mount Hyjal"
     },
     "isNew": true
    },
@@ -18261,14 +18261,14 @@
     "role": "other",
     "mailFrom40": false,
     "skill": [
+     300,
      320,
-     320,
-     null,
+     325,
      330
     ],
     "learn": {
-     "type": "unknown",
-     "text": null
+     "type": "drop",
+     "text": "Pattern : Aisarra Nightmeadow, Mount Hyjal"
     },
     "isNew": true
    },
@@ -18323,14 +18323,14 @@
     "role": "other",
     "mailFrom40": false,
     "skill": [
+     300,
      320,
-     320,
-     null,
+     325,
      330
     ],
     "learn": {
-     "type": "unknown",
-     "text": null
+     "type": "drop",
+     "text": "Pattern : Aisarra Nightmeadow, Mount Hyjal"
     },
     "isNew": true
    },
@@ -18354,14 +18354,14 @@
     "role": "other",
     "mailFrom40": false,
     "skill": [
+     300,
      320,
-     320,
-     null,
+     325,
      330
     ],
     "learn": {
-     "type": "unknown",
-     "text": null
+     "type": "drop",
+     "text": "Pattern : Aisarra Nightmeadow, Mount Hyjal"
     },
     "isNew": true
    },
@@ -18385,14 +18385,14 @@
     "role": "other",
     "mailFrom40": false,
     "skill": [
+     300,
      320,
-     320,
-     null,
+     325,
      330
     ],
     "learn": {
-     "type": "unknown",
-     "text": null
+     "type": "drop",
+     "text": "Pattern : Aisarra Nightmeadow, Mount Hyjal"
     },
     "isNew": true
    },
@@ -18423,14 +18423,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     290,
-     310,
      320,
-     330
+     320,
+     null,
+     340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -18462,14 +18462,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     290,
-     310,
      320,
-     330
+     320,
+     null,
+     340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -18501,14 +18501,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     285,
-     305,
-     315,
-     325
+     320,
+     320,
+     null,
+     340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -19909,14 +19909,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     90,
-     90,
      null,
+     90,
+     107,
      125
     ],
     "learn": {
      "type": "unknown",
-     "text": null
+     "text": "Source not found yet"
     },
     "isNew": false
    },
@@ -20647,14 +20647,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
+     85,
      110,
-     110,
-     null,
+     127,
      145
     ],
     "learn": {
-     "type": "unknown",
-     "text": null
+     "type": "trainer",
+     "text": "Trainer, 5s, learn at ≈85"
     },
     "isNew": false
    },
@@ -21931,14 +21931,14 @@
     "role": "other",
     "mailFrom40": false,
     "skill": [
-     135,
-     135,
      null,
+     135,
+     150,
      165
     ],
     "learn": {
      "type": "unknown",
-     "text": null
+     "text": "Source not found yet"
     },
     "isNew": false
    },
@@ -22876,14 +22876,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     130,
-     150,
-     165,
-     180
+     185,
+     185,
+     null,
+     215
     ],
     "learn": {
-     "type": "drop",
-     "text": "Pattern 10s: Xizk Goodstitch, Stranglethorn Vale; Super-Seller 680, Desolace"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -22984,14 +22984,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     135,
-     155,
-     170,
-     185
+     190,
+     190,
+     null,
+     220
     ],
     "learn": {
-     "type": "trainer",
-     "text": "Trainer, 9s, learn at ≈135"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -23269,14 +23269,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     140,
-     160,
-     175,
-     190
+     195,
+     195,
+     null,
+     225
     ],
     "learn": {
-     "type": "drop",
-     "text": "Pattern: drop or fishing"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -23411,14 +23411,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     140,
-     160,
-     175,
-     190
+     195,
+     195,
+     null,
+     225
     ],
     "learn": {
-     "type": "trainer",
-     "text": "Trainer, 10s, learn at ≈140"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -23924,14 +23924,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     150,
-     170,
-     185,
-     200
+     205,
+     205,
+     null,
+     235
     ],
     "learn": {
-     "type": "trainer",
-     "text": "Trainer, 10s, learn at ≈150"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -24030,14 +24030,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     155,
-     175,
-     190,
-     205
+     210,
+     210,
+     null,
+     240
     ],
     "learn": {
-     "type": "drop",
-     "text": "Pattern: drop"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -24177,14 +24177,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     160,
-     180,
-     195,
-     210
+     215,
+     215,
+     null,
+     245
     ],
     "learn": {
-     "type": "drop",
-     "text": "Pattern: drop"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -24616,14 +24616,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     170,
-     185,
-     200,
-     215
+     220,
+     220,
+     null,
+     250
     ],
     "learn": {
-     "type": "trainer",
-     "text": "Trainer, 40s, learn at ≈170"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -24690,14 +24690,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     170,
-     185,
-     200,
-     215
+     220,
+     220,
+     null,
+     250
     ],
     "learn": {
-     "type": "trainer",
-     "text": "Trainer, 40s, learn at ≈170"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -24760,14 +24760,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     170,
-     185,
-     200,
-     215
+     220,
+     220,
+     null,
+     250
     ],
     "learn": {
-     "type": "drop",
-     "text": "Pattern 50s: Vizzklick, Tanaris"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -30742,14 +30742,14 @@
     "role": "other",
     "mailFrom40": false,
     "skill": [
-     300,
      315,
-     330,
+     315,
+     null,
      345
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -30817,14 +30817,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     300,
      315,
-     330,
+     315,
+     null,
      345
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -30892,14 +30892,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     300,
      315,
-     330,
+     315,
+     null,
      345
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -30967,14 +30967,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     300,
      315,
-     330,
+     315,
+     null,
      345
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -31611,14 +31611,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     300,
      315,
-     330,
+     315,
+     null,
      345
     ],
     "learn": {
-     "type": "reputation",
-     "text": "Pattern 5g, needs reputation: Mishta, Silithus"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -31687,14 +31687,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     300,
      315,
-     330,
+     315,
+     null,
      345
     ],
     "learn": {
-     "type": "reputation",
-     "text": "Pattern 5g, needs reputation: Mishta, Silithus"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -31763,14 +31763,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     300,
      315,
-     330,
+     315,
+     null,
      345
     ],
     "learn": {
-     "type": "reputation",
-     "text": "Pattern 5g, needs reputation: Mishta, Silithus"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -32812,14 +32812,14 @@
     "role": "other",
     "mailFrom40": true,
     "skill": [
-     80,
-     80,
      null,
+     80,
+     100,
      120
     ],
     "learn": {
      "type": "unknown",
-     "text": null
+     "text": "Source not found yet"
     },
     "isNew": false
    },
@@ -34032,14 +34032,14 @@
     "role": "other",
     "mailFrom40": true,
     "skill": [
-     115,
-     115,
      null,
+     115,
+     130,
      145
     ],
     "learn": {
      "type": "unknown",
-     "text": null
+     "text": "Source not found yet"
     },
     "isNew": false
    },
@@ -35146,14 +35146,14 @@
     "role": "melee",
     "mailFrom40": true,
     "skill": [
-     140,
-     140,
      null,
+     140,
+     155,
      170
     ],
     "learn": {
      "type": "unknown",
-     "text": null
+     "text": "Source not found yet"
     },
     "isNew": false
    },
@@ -36136,14 +36136,14 @@
     "role": "hybrid",
     "mailFrom40": true,
     "skill": [
-     145,
-     170,
-     182,
-     195
+     195,
+     195,
+     null,
+     220
     ],
     "learn": {
-     "type": "drop",
-     "text": "Plans: drop"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -36448,14 +36448,14 @@
     "role": "hybrid",
     "mailFrom40": true,
     "skill": [
-     150,
-     175,
-     187,
-     200
+     200,
+     200,
+     null,
+     225
     ],
     "learn": {
-     "type": "drop",
-     "text": "Plans: drop"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -37052,14 +37052,14 @@
     "role": "hybrid",
     "mailFrom40": true,
     "skill": [
-     165,
-     190,
-     202,
-     215
+     215,
+     215,
+     null,
+     240
     ],
     "learn": {
-     "type": "drop",
-     "text": "Plans 44s: Krinkle Goodsteel, Tanaris"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -37232,14 +37232,14 @@
     "role": "hybrid",
     "mailFrom40": true,
     "skill": [
-     175,
-     200,
-     212,
-     225
+     225,
+     225,
+     null,
+     250
     ],
     "learn": {
-     "type": "drop",
-     "text": "Plans: drop"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -37303,14 +37303,14 @@
     "role": "hybrid",
     "mailFrom40": true,
     "skill": [
-     170,
-     195,
-     207,
-     220
+     220,
+     220,
+     null,
+     245
     ],
     "learn": {
-     "type": "drop",
-     "text": "Plans: drop"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -37745,14 +37745,14 @@
     "role": "hybrid",
     "mailFrom40": true,
     "skill": [
-     180,
-     200,
-     210,
-     220
+     225,
+     225,
+     null,
+     245
     ],
     "learn": {
-     "type": "drop",
-     "text": "Plans: quest"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -37982,14 +37982,14 @@
     "role": "caster",
     "mailFrom40": false,
     "skill": [
-     215,
-     215,
      null,
+     215,
+     225,
      235
     ],
     "learn": {
      "type": "unknown",
-     "text": null
+     "text": "Source not found yet"
     },
     "isNew": false
    },
@@ -38387,14 +38387,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     270,
-     270,
      null,
+     270,
+     282,
      295
     ],
     "learn": {
      "type": "unknown",
-     "text": null
+     "text": "Source not found yet"
     },
     "isNew": false
    },
@@ -38420,14 +38420,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     270,
-     270,
      null,
+     270,
+     282,
      295
     ],
     "learn": {
      "type": "unknown",
-     "text": null
+     "text": "Source not found yet"
     },
     "isNew": false
    },
@@ -38824,14 +38824,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     285,
-     285,
      null,
+     285,
+     297,
      310
     ],
     "learn": {
      "type": "unknown",
-     "text": null
+     "text": "Source not found yet"
     },
     "isNew": false
    },
@@ -39093,14 +39093,14 @@
     "role": "other",
     "mailFrom40": false,
     "skill": [
-     325,
-     325,
      null,
+     325,
+     337,
      350
     ],
     "learn": {
      "type": "unknown",
-     "text": null
+     "text": "Source not found yet"
     },
     "isNew": false
    },
@@ -39652,14 +39652,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
-     "type": "drop",
-     "text": "Plans: drops from Moam in Ruins of Ahn'Qiraj"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -40078,14 +40078,14 @@
     "role": "other",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
-     "type": "reputation",
-     "text": "Plans 5g, needs reputation: Lieutenant General Andorov, Ruins of Ahn'Qiraj"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -40155,14 +40155,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
      "type": "unknown",
-     "text": "Source not found yet"
+     "text": null
     },
     "isNew": false
    },
@@ -40374,14 +40374,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      320,
-     330,
+     320,
+     null,
      340
     ],
     "learn": {
-     "type": "reputation",
-     "text": "Plans 8g, needs reputation: Lieutenant General Andorov, Ruins of Ahn'Qiraj"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    },
@@ -40631,14 +40631,14 @@
     "role": "melee",
     "mailFrom40": false,
     "skill": [
-     300,
      325,
-     337,
+     325,
+     null,
      350
     ],
     "learn": {
-     "type": "drop",
-     "text": "Plans: quest"
+     "type": "unknown",
+     "text": null
     },
     "isNew": false
    }
@@ -42812,14 +42812,14 @@
     "role": "other",
     "mailFrom40": false,
     "skill": [
+     265,
      285,
-     285,
-     null,
+     305,
      325
     ],
     "learn": {
-     "type": "unknown",
-     "text": null
+     "type": "drop",
+     "text": "Formula: drops from Lord Roccor in Blackrock Depths"
     },
     "isNew": false
    },

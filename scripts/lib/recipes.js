@@ -20,8 +20,12 @@ function learnOf(source) {
 
 function open() {
   const recipes = readJSON('data/recipes.json', { professions: {} });
-  const recipe = (profession, name) => (recipes.professions[profession.toLowerCase()] || {})[name] || null;
-  return { recipes, recipe, learn: (profession, name) => { const r = recipe(profession, name); return r ? learnOf(r.source) : learnOf(null); } };
+  // By the crafted item's id: names repeat between Classic and new Forever recipes.
+  const recipe = (profession, id, name) => {
+    const list = recipes.professions[profession.toLowerCase()] || {};
+    return list['item:' + id] || (name && list[name]) || null;
+  };
+  return { recipes, recipe, learn: (profession, id, name) => { const r = recipe(profession, id, name); return r ? learnOf(r.source) : learnOf(null); } };
 }
 
 module.exports = { open, learnOf };
