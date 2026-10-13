@@ -200,14 +200,32 @@ if (fs.existsSync(path.join(root, 'data/weapons.json'))) {
 }
 // The gear path (js/gear-plan.js) only recommends what you can plan for: a
 // quest, a craft, a vendor or a dungeon/NPC drop, never raids, PvP ranks or
-// unknown sources; the page gets just those pieces and the fields it reads.
+// unknown sources; the page gets just those pieces, only the ones some spec
+// can use (GearPlan.value), and the fields it reads. Totems with an effect
+// stay whatever their source: the page lists every one before 60.
 if (fs.existsSync(path.join(root, 'data/gear.json'))) {
   const g = read('data/gear.json');
-  const SRC = ['type', 'quest', 'questId', 'zone', 'dungeon', 'dungeonZone', 'faction', 'rec', 'asap', 'profession', 'yellow', 'learn', 'npc', 'confidence'];
+  require('../js/gear-plan.js');
+  const GP = globalThis.GearPlan;
+  const SPECS = Object.keys(GP.WEIGHTS);
+  const SRC = ['type', 'quest', 'zone', 'dungeon', 'dungeonZone', 'faction', 'rec', 'profession', 'yellow', 'npc'];
   const plannable = s => ['quest', 'crafted', 'vendor', 'boss', 'drop'].includes(s.type) && !s.raid && !s.pvp;
   const pick = (o, keys) => { const out = {}; keys.forEach(k => { if (o[k] != null) out[k] = o[k]; }); return out; };
-  const gear = g.gear.map(i => Object.assign(pick(i, ['id', 'name', 'kind', 'slot', 'quality', 'req', 'ilvl', 'bind', 'armor', 'block', 'stats', 'bonus', 'equip', 'use', 'era', 'numbers', 'icon', 'raceMask']),
-    { sources: i.sources.filter(plannable).map(s => pick(s, SRC)) })).filter(i => i.slot && i.sources.length);
+  const source = s => {
+    const out = pick(s, SRC);
+    if (out.faction === 'both') delete out.faction; // no faction = both
+    if (s.learn) out.learn = pick(s.learn, ['type', 'favor']);
+    return out;
+  };
+  const totem = i => i.slot === 'Relic' && (i.equip || []).length && (i.req || 0) < 60;
+  const gear = g.gear.filter(i => i.slot && (totem(i) || SPECS.some(spec => GP.value(i, spec) > 0))).map(i => {
+    const out = pick(i, ['id', 'name', 'kind', 'slot', 'quality', 'req', 'ilvl', 'bind', 'armor', 'stats', 'bonus', 'equip', 'use', 'icon']);
+    if (i.raceMask > 0) out.raceMask = i.raceMask;
+    ['stats', 'bonus'].forEach(k => { if (out[k] && !Object.keys(out[k]).length) delete out[k]; });
+    ['equip', 'use'].forEach(k => { if (out[k] && !out[k].length) delete out[k]; });
+    out.sources = (totem(i) ? i.sources : i.sources.filter(plannable)).map(source);
+    return out;
+  }).filter(i => i.sources.length);
   write('data/gear.js', 'GEAR_DATA', { build: g.build, gear });
   outputs.push('data/gear.js');
 }

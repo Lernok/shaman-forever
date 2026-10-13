@@ -70,14 +70,20 @@
 
   // Totems and many trinkets carry an effect instead of stats: it counts when
   // it names something the spec uses (a spell of its rotation, its main stat).
+  // Forever has very few totems before 60, so any totem with an effect beats
+  // an empty slot: one for your spec counts 0.8, pure utility (Grounding,
+  // Reincarnation, totem mana) 0.4, another spec's effect 0.2.
   const EFFECT = {
     Enhancement: /Stormstrike|Windfury|Flametongue|Rockbiter|Earth Shock|Flame Shock|Frost Shock|Lightning Shield|Attack Power|melee|weapon damage|attack speed/i,
-    Elemental: /Lightning Bolt|Chain Lightning|Earth Shock|Flame Shock|Frost Shock|Searing Totem|Magma Totem|Fire Nova|spell damage|damage done by (magical )?spells|spell critical|Nature damage|Fire damage/i,
+    Elemental: /Lightning Bolt|Chain Lightning|Lava Burst|Earth Shock|Flame Shock|Frost Shock|Searing Totem|Magma Totem|Fire Nova|spell damage|damage done by (magical )?spells|spell critical|Nature damage|Fire damage|[Mm]ana regeneration/i,
     Restoration: /Healing Wave|Chain Heal|Healing Stream|Mana Spring|Earth Shield|healing|[Mm]ana regeneration|mana per 5|[Rr]egain .*mana/i
   };
   function effectFit(item, spec) {
     const text = (item.equip || []).concat(item.use || []).join(' ');
-    return text && EFFECT[spec].test(text) ? 0.8 : 0;
+    if (!text) return 0;
+    if (EFFECT[spec].test(text)) return 0.8;
+    if (item.slot !== 'Relic') return 0;
+    return Object.keys(EFFECT).some(o => EFFECT[o].test(text)) ? 0.2 : 0.4;
   }
 
   // Worth of a piece to a spec (0 = useless to it).
@@ -87,7 +93,7 @@
       if (spec === 'Enhancement') return item.dps || 0;
     }
     let f = fit(item, spec) || (['Relic', 'Trinket'].includes(item.slot) ? effectFit(item, spec) : 0);
-    if (f < MIN_FIT) return 0;
+    if (f < MIN_FIT && !(item.slot === 'Relic' && f > 0)) return 0;
     if (item.kind === 'Cloth' && spec === 'Enhancement') f *= 0.85;
     return Math.round((item.ilvl || 0) * f * 10) / 10;
   }
@@ -103,12 +109,13 @@
   //   drops, route(zone, level), away(zone): zones you never go to,
   //   reach(zone): false for zones only the other faction quests in }
   function access(item, s, opts) {
-    if (s.faction !== 'both' && s.faction !== opts.faction) return null;
+    if (s.faction && s.faction !== 'both' && s.faction !== opts.faction) return null;
     if (s.raid || s.pvp) return null;
     if (s.type === 'quest') {
       // Holiday and event quests (no level, no zone) can't be planned.
       if (!s.level && !s.zone) return null;
-      if (s.zone === CLASS_ZONE || (s.classes || []).includes(CLASS_ZONE)) return 'class';
+      // Class quests sit under the "Shaman" heading of the quest log.
+      if (s.zone === CLASS_ZONE) return 'class';
       if (UNPLANNED.test(s.zone || '')) return null;
       if (PROF_ZONES.includes(s.zone) && !(opts.profs || []).includes(s.zone)) return null;
       if (opts.away && opts.away(s.zone)) return null;
@@ -145,6 +152,8 @@
         if (item.kind === 'Mail') at = Math.max(at, MAIL_AT);
         if (!best || TIER[a] < TIER[best.access] || (TIER[a] === TIER[best.access] && at < best.at)) best = { access: a, at, source: s };
       });
+      // Scarce Merchant's Favor isn't spent on a totem that isn't for your spec.
+      if (best && best.access === 'favor' && slot === 'Relic' && effectFit(item, opts.spec) < 0.8) return;
       if (best && best.at <= 60) out.push(Object.assign({ item, slot, value: v }, best));
     });
     return out;
@@ -230,5 +239,5 @@
     return { slots, dontMiss, favor: [...favor], candidates: all.length };
   }
 
-  root.GearPlan = { plan, value, fit, candidates, SLOTS, WEIGHTS, COST, MIN_LEVELS, FAVOR_PER_BRACKET, UPGRADE };
+  root.GearPlan = { plan, value, fit, candidates, access, SLOTS, WEIGHTS, COST, MIN_LEVELS, FAVOR_PER_BRACKET, UPGRADE };
 })(typeof window !== 'undefined' ? window : globalThis);

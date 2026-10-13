@@ -85,6 +85,8 @@ Sesión 5 (pulido, subido `b71c868`):
 - Guía: arma al 30 = la de tu camino; Inicio y novedades al día; páginas de armas filtran por raza; changelog sin la entrada de "5061 ítems" (era el cambio de alcance, no del juego).
 
 Falta / ideas:
-- Esperar feedback del usuario. Ideas no hechas: encabezado más compacto en celular; textos "tope de la beta"/"nivel 30" a revisar el 4-nov (lanzamiento); totems antes del 60; gear.js ~1,3 MB.
+- Totems: lista completa (en Forever casi no hay antes del 60; los "Icon" del cliente no tienen fuente ni efecto). Panel "Totems antes del 60" en Tu camino; efecto de tu spec 0.8, utilidad 0.4, de otra spec 0.2; Favor nunca en un totem que no es de tu spec.
+- gear.js 1,3 MB -> 0,7 MB (82 KB comprimido): solo piezas que alguna spec usa y los campos que lee la página; verificado que los planes son idénticos en 210 combinaciones (script de comparación en el scratchpad: cmpplan.js).
+- Esperar feedback del usuario. Ideas no hechas: encabezado más compacto en celular; textos "tope de la beta"/"nivel 30" a revisar el 4-nov (lanzamiento).
 - Afinar con el usuario: pesos de stats, umbrales (UPGRADE 5%, MIN_LEVELS, MIN_FIT 0.4), zonas que propone la ruta.
 - Totems/abalorios: casi sin datos útiles por debajo de 60 (los "Icon" nuevos de Forever no traen efecto).

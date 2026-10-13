@@ -40,6 +40,7 @@
       case 'favor': return t('gp.src.favor', { prof: s.profession, n: (s.learn || {}).favor || '?' });
       case 'vendor': return t('gp.src.vendor', { npc: s.npc, zone: s.zone || '?' });
       case 'boss': return t('gp.src.boss', { npc: s.npc, zone: s.zone || '?' });
+      case 'unknown': case 'unrecorded': return t('gp.src.unknown');
       default: return '';
     }
   }
@@ -54,6 +55,37 @@
   }
 
   const slotName = s => t('gp.slot.' + s);
+
+  // Totems: Forever has very few before 60. All of them, with how each one
+  // is had and whether your path uses it.
+  const TOTEM_ACCESS = s => (s.type === 'quest' ? (s.zone === 'Shaman' ? 'class' : s.dungeon ? 'dquest' : 'quest')
+    : s.type === 'crafted' ? ((s.learn || {}).type === 'favor' ? 'favor' : 'crafted') : s.type === 'drop' ? 'boss' : s.type);
+  // How you'd get a totem: your faction's and race's way, class quest first.
+  const TOTEM_ORDER = ['class', 'route', 'quest', 'dquest', 'crafted', 'favor', 'vendor', 'boss'];
+  function totemWay(i) {
+    return i.sources.filter(s => (!s.faction || s.faction === 'both' || s.faction === Site.faction) && s.type !== 'unknown' && s.type !== 'unrecorded')
+      .filter(s => !(s.type === 'quest' && window.Route.otherStart(s.zone, Site.faction, race())))
+      .sort((a, b) => TOTEM_ORDER.indexOf(TOTEM_ACCESS(a)) - TOTEM_ORDER.indexOf(TOTEM_ACCESS(b)))[0] || null;
+  }
+  function totemSource(i) {
+    const s = totemWay(i);
+    return s ? sourceText({ access: TOTEM_ACCESS(s), source: s }) : t('gp.src.unknown');
+  }
+  const totemLevel = i => Math.max(i.req || 1, (totemWay(i) || {}).rec || 0);
+  function totems() {
+    return gear().filter(i => i.slot === 'Relic' && (i.req || 0) < 60 && (i.equip || []).length)
+      .filter(i => !(window.Route && i.sources.every(s => s.type === 'quest' && window.Route.otherStart(s.zone, Site.faction, race()))))
+      .sort((a, b) => totemLevel(a) - totemLevel(b));
+  }
+  function totemPanel(plan) {
+    const used = new Set(plan.slots.Relic.steps.map(st => st.pick.item.id));
+    const list = totems();
+    if (!list.length) return '';
+    return '<div class="panel" style="margin-top:16px"><h3>' + t('gp.totems') + '</h3><p class="note-text dim">' + t('gp.totemsNote') + '</p>' +
+      list.map(i => '<div class="gp-step' + (used.has(i.id) ? '' : ' gp-off') + '"><span class="gp-lv">' + totemLevel(i) + '</span>' +
+        '<span class="gp-slot">' + (used.has(i.id) ? t('gp.inPath') : '') + '</span><div class="gp-main">' + UI.itemLink(i) +
+        '<span class="wp-sub">' + totemSource(i) + '</span><span class="gp-why">' + window.I18N.client(i.equip[0]) + '</span></div></div>').join('') + '</div>';
+  }
 
   function stepRow(st) {
     const i = st.pick.item;
@@ -100,6 +132,7 @@
     }).join('') + '</div>' : '<p class="dim">' + t('gp.none') + '</p>';
     html += '</div>';
 
+    html += totemPanel(plan);
     html += '<div class="panel" style="margin-top:16px"><h3>' + t('gp.byBracket') + '</h3>';
     for (let lo = 1; lo <= 60; lo += 10) {
       const hi = lo + 9;
@@ -127,9 +160,12 @@
     const drops = container.querySelector('#gpDrops');
     if (drops) drops.addEventListener('change', e => { state.drops = e.target.checked; UI.store.set('gpDrops', state.drops); onChange(); });
     const byId = new Map(Object.values(plan.dontMiss).flat().concat(steps).map(st => [String(st.pick.item.id), st]));
+    const totemById = new Map(totems().map(i => [String(i.id), i]));
     UI.tip.bind(container, '[data-item]', a => {
       const st = byId.get(a.dataset.item);
-      return st ? UI.itemCard(st.pick.item, [sourceText(st.pick), why(st)]) : null;
+      if (st) return UI.itemCard(st.pick.item, [sourceText(st.pick), why(st)]);
+      const tot = totemById.get(a.dataset.item);
+      return tot ? UI.itemCard(tot, [totemSource(tot)]) : null;
     });
   }
 
