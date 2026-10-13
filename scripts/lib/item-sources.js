@@ -30,6 +30,9 @@ const INSTANCE = /Ruins of Lordaeron|Deadmines|Wailing Caverns|Shadowfang Keep|B
 // Raids (and raid-like summons). Forever has its own raid lineup (Barrow Deeps,
 // Hyjal Summit, Onyxia...), so Classic raid sources are the least certain.
 const RAID = /Molten Core|Onyxia|Blackwing|Zul'Gurub|Ahn'Qiraj|Naxxramas|Barrow Deeps|Hyjal|Silithus/i;
+// Battleground reputation quartermasters (Arathi Basin, Warsong Gulch, Alterac
+// Valley) and honor-rank officers: their wares cost PvP reputation or rank.
+const PVP_VENDOR = /^(Samuel Hawke|Rutherford Twing|Illiyana Moonblaze|Kelm Hargunth|Grunnda Wolfheart|Jekyll Flandring|Gaelden Hammersmith|Thanthaldis Snowgleam|Sergeant Ba'sha|Officer Areyn)$/;
 const PVP_NAME = /^(Premier )?(High Warlord|Grand Marshal|Premier|Warlord|Marshal|General|Champion|Blood Guard|Knight-Lieutenant|Legionnaire|Stone Guard|Lieutenant Commander)'s /;
 
 function open(cacheDir, build) {
@@ -70,7 +73,7 @@ function open(cacheDir, build) {
     // PvP rank rewards: sold in the rank halls, or named after a PvP rank.
     const pvp = PVP_NAME.test(item.name);
     src.filter(s => s.type === 'vendor').forEach(v => out.push({ type: 'vendor', npc: v.name, zone: v.zone, faction: v.faction,
-      pvp: pvp || /Champions' Hall|Hall of Legends/.test(v.zone || ''), confidence: 'classic-assumed' }));
+      pvp: pvp || PVP_VENDOR.test(v.name || '') || /Champions' Hall|Hall of Legends/.test(v.zone || ''), confidence: 'classic-assumed' }));
     return out;
   }
 

@@ -40,6 +40,7 @@
   const isWeapon = item => item.dps != null && item.speed != null;
   const MAIL_AT = 40; // Shamans learn Mail at 40
   const UPGRADE = 1.05; // a piece must be 5% better to count as an upgrade
+  const MIN_FIT = 0.4; // at least 40% of a piece's stats must be ones your spec uses
   const MIN_LEVELS = { route: 0, dquest: 3, quest: 3, crafted: 4, favor: 6, vendor: 4, boss: 3 };
   const FAVOR_PER_BRACKET = 2;
   const TIER = { route: 1, dquest: 2, quest: 3, crafted: 4, favor: 5, vendor: 6, boss: 7 };
@@ -79,7 +80,7 @@
       if (spec === 'Enhancement') return item.dps || 0;
     }
     let f = fit(item, spec) || (['Relic', 'Trinket'].includes(item.slot) ? effectFit(item, spec) : 0);
-    if (!f) return 0;
+    if (f < MIN_FIT) return 0;
     if (item.kind === 'Cloth' && spec === 'Enhancement') f *= 0.85;
     return Math.round((item.ilvl || 0) * f * 10) / 10;
   }
@@ -92,11 +93,14 @@
 
   // How you'd get a piece, as the best access you have; null if you can't.
   // opts: { spec, faction, race, profs (crafting professions; null = any),
-  //   drops, route(zone, level) }
+  //   drops, route(zone, level), away(zone): zones you never go to }
   function access(item, s, opts) {
     if (s.faction !== 'both' && s.faction !== opts.faction) return null;
     if (s.raid || s.pvp) return null;
     if (s.type === 'quest') {
+      // Holiday and event quests (no level, no zone) can't be planned.
+      if (!s.level && !s.zone) return null;
+      if (opts.away && opts.away(s.zone)) return null;
       if (s.dungeon) return 'dquest';
       return opts.route(s.zone, s.rec) ? 'route' : 'quest';
     }
@@ -147,7 +151,8 @@
     };
     for (let lvl = 1; lvl <= 60; lvl++) {
       pool.filter(c => c.at === lvl).sort((a, b) => b.value - a.value).forEach(c => {
-        if (held.includes(c)) return;
+        // Rings and trinkets are unique: never the same one twice.
+        if (held.some(h => h === c || h.item.name === c.item.name)) return;
         const weakest = held.length < count ? null : held.reduce((a, b) => (a.value <= b.value ? a : b));
         if (weakest && c.value < weakest.value * UPGRADE) return;
         const until = nextBetter(c.value, lvl, c);

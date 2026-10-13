@@ -42,6 +42,13 @@
       return out;
     },
 
+    // Another race's starting zone: you don't go there.
+    otherStart(zone, faction, race) {
+      if (!isStart(zone)) return false;
+      const mine = race && Z.starts[race] ? [Z.starts[race].zone] : startZones();
+      return !mine.includes(zone);
+    },
+
     dungeon: name => (Z.dungeons[name] || null),
     start: race => (Z.starts[race] || null),
     data: Z
