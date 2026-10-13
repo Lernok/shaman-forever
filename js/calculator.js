@@ -43,6 +43,15 @@
     return state.orderBuild ? builds().find(b => b.id === state.orderBuild) || null : null;
   }
 
+  // Icon of the build's deepest talent (lowest row with points).
+  function deepest(ranks) {
+    let best = null;
+    trees().forEach(tr => tr.talents.forEach(x => {
+      if ((ranks[tr.name] || {})[x.name] && (!best || x.row > best.row)) best = x;
+    }));
+    return best ? best.icon : null;
+  }
+
   function split(ranks) {
     return trees().map(t => R.treePoints(ranks, t)).join('/');
   }
@@ -55,11 +64,17 @@
     let html = '<div class="panel"><h3>' + t('calc.examples') + '</h3>' +
       '<p class="note-text">' + t('calc.examplesIntro') + '</p>' +
       '<div class="build-grid" style="--spec-color:' + ui.specColors[window.Site.spec] + '">';
+    const COLORS = { Elemental: ui.specColors.Elemental, Enhancement: ui.specColors.Enhancement, Restoration: ui.specColors.Restoration };
     builds().filter(b => b.spec === window.Site.spec).forEach(b => {
+      const pts = trees().map(tr => R.treePoints(b.points, tr));
+      const total = pts.reduce((a, c) => a + c, 0) || 1;
       html += '<button class="build-card' + (active && active.id === b.id ? ' active' : '') + '" data-build="' + b.id + '">' +
-        '<span class="bc-name">' + b.name + '</span>' +
-        '<span class="bc-meta">' + b.case + ' · ' + t('common.level') + ' ' + b.level + ' · ' + split(b.points) +
-          (b.order ? ' · ' + t('calc.withOrder') : '') + '</span>' +
+        '<img class="bc-icon" src="' + ui.iconUrl(deepest(b.points)) + '" alt="" loading="lazy">' +
+        '<span class="bc-body"><span class="bc-name">' + b.name + '</span>' +
+        '<span class="bc-tags"><span class="bc-tag">' + b.case + '</span><span class="bc-tag">' + t('common.level') + ' ' + b.level + '</span>' +
+          (b.order ? '<span class="bc-tag order">' + t('calc.withOrder') + '</span>' : '') + '</span>' +
+        '<span class="bc-split">' + trees().map((tr, i) => pts[i] ? '<span style="flex:' + pts[i] + ';background:' + COLORS[tr.name] + '" title="' + tr.name + ' ' + pts[i] + '"></span>' : '').join('') + '</span>' +
+        '<span class="bc-meta">' + pts.join(' / ') + '</span></span>' +
         '</button>';
     });
     html += '</div>';
