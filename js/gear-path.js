@@ -148,7 +148,7 @@
       (routeZones.length ? '<span class="dim">' + t('gp.zones', { list: routeZones.join(', ') }) + '</span>' : '') + '</div>' +
       (here.length ? here.map(st => stepRow(st, mine && st.level < state.level ? 'gp-done' : '')).join('') : '<p class="dim">' + t('gp.nothing') + '</p>') +
       '<div class="gp-br-foot"><span class="dim"><span class="gp-star">★</span> ' + t('gp.starTitle') + '</span>' +
-      '<button class="btn" data-detail>' + t(state.detail ? 'gp.hideWhy' : 'gp.showWhy') + '</button></div>' +
+      '<button class="btn" data-detail title="' + t('gp.whyTitle') + '">' + t(state.detail ? 'gp.hideWhy' : 'gp.showWhy') + '</button></div>' +
       '<div class="gp-br-nav">' + (br > 0 ? '<button class="btn" data-bracket="' + (br - 1) + '">← ' + BRACKETS[br - 1].join('–') + '</button>' : '<span></span>') +
       (br < 5 ? '<button class="btn" data-bracket="' + (br + 1) + '">' + BRACKETS[br + 1].join('–') + ' →</button>' : '') + '</div></div>';
 
