@@ -104,7 +104,7 @@ Sesión 6c (chequeo fino de stats, pedido del usuario):
 - MIN_FIT 0.5 calculado sin Aguante (NEUTRAL). "Curación hasta X y daño hasta Y" = un solo stat (el daño no gasta presupuesto). Enh: Fuerza 1, Agi 0.55, Int 0.5, crit 0.8 (derivados de conversiones, comentados en gear-plan.js). Ele: crit/golpe de hechizos, Naturaleza/Fuego; melee crit/hit 0.
 - sync.js lee % con decimales, crit/golpe de hechizos, "spells and attacks", daño por escuela (Shadow/Arcane/Holy como otherDamage, peso 0), Defense/Dodge.
 - Quests de ruta quedan como "alternativa segura" a drops de jefe. Drops de campos de batalla = PvP.
-- Scripts de auditoría en el scratchpad: audit.js (camino completo con stats), legs.js (candidatos de un slot).
+- Auditoría del camino: `node scripts/plan.js path|slot <Slot>|item <id> --race --spec --faction --profs [--drops]` (reemplaza a audit.js y legs.js del scratchpad). Revisar reportes: comando `/revisar-feedback` (.claude/skills/revisar-feedback/SKILL.md).
 
 Falta / ideas:
 - Esperar feedback. Textos "tope de la beta"/"nivel 30" a revisar el 4-nov (lanzamiento).
