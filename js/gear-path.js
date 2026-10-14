@@ -189,5 +189,5 @@
   }
 
   // The Professions page shows the crafted part of the same path.
-  window.GearPath = { render, compute, sourceText, why, slotName };
+  window.GearPath = { render, compute, sourceText, why, slotName, stepRow };
 })();

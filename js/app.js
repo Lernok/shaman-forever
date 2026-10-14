@@ -126,6 +126,7 @@
   function selectPage(page) {
     tabs.forEach(t => t.classList.toggle('active', t.dataset.spec === page));
     currentPage = page;
+    renderBottom();
     currentHash = location.hash;
     render(page);
     countVisit(page);
@@ -147,13 +148,35 @@
     window.scrollTo(0, y);
   });
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const page = tab.dataset.spec;
-      // Coming back to the calculator restores the build you left there.
-      location.hash = page === 'Talentos' && window.Calculator.lastHash ? window.Calculator.lastHash : page;
+  // Coming back to the calculator restores the build you left there.
+  const goTo = page => { location.hash = page === 'Talentos' && window.Calculator.lastHash ? window.Calculator.lastHash : page; };
+  tabs.forEach(tab => tab.addEventListener('click', () => goTo(tab.dataset.spec)));
+
+  // Phones: the four main pages in a bar at the bottom, within thumb reach,
+  // and the rest under "More". Visible menus get used far more than hidden ones.
+  const BOTTOM = ['Inicio', 'Equipo', 'Talentos', 'Guia'];
+  const bottom = document.getElementById('bottomNav');
+  const tabIcon = p => (p === 'Inicio' ? UI.icon(CLASS_ICON, 'medium') : tabs.find(x => x.dataset.spec === p).querySelector('img').src);
+  function renderBottom() {
+    if (!bottom) return;
+    const more = PAGES.filter(p => !BOTTOM.includes(p));
+    bottom.innerHTML = BOTTOM.map(p => '<button class="bn-item' + (p === currentPage ? ' active' : '') + '" data-page="' + p + '"><img src="' + tabIcon(p) + '" alt=""><span>' + t('tab.' + p) + '</span></button>').join('') +
+      '<button class="bn-item' + (more.includes(currentPage) ? ' active' : '') + '" data-more aria-expanded="false"><span class="bn-dots" aria-hidden="true">•••</span><span>' + t('nav.more') + '</span></button>' +
+      '<div class="bn-sheet" hidden>' + more.map(p => '<button class="bn-link' + (p === currentPage ? ' active' : '') + '" data-page="' + p + '"><img src="' + tabIcon(p) + '" alt="">' +
+        '<span><b>' + t('tab.' + p) + '</b><span>' + t('home.desc.' + p) + '</span></span></button>').join('') + '</div>';
+  }
+  if (bottom) {
+    bottom.addEventListener('click', e => {
+      const b = e.target.closest('button');
+      if (!b) return;
+      const sheet = bottom.querySelector('.bn-sheet');
+      if (b.hasAttribute('data-more')) { sheet.hidden = !sheet.hidden; b.setAttribute('aria-expanded', String(!sheet.hidden)); return; }
+      sheet.hidden = true;
+      if (b.dataset.page === currentPage) window.scrollTo(0, 0);
+      else goTo(b.dataset.page);
     });
-  });
+    document.addEventListener('click', e => { if (!bottom.contains(e.target)) { const s = bottom.querySelector('.bn-sheet'); if (s) s.hidden = true; } });
+  }
 
   window.addEventListener('hashchange', () => {
     upgradeHash();
@@ -178,6 +201,7 @@
     const y = window.scrollY;
     renderPickers();
     renderLegend();
+    renderBottom();
     render(currentPage);
     window.scrollTo(0, y);
   });
