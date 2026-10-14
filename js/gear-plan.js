@@ -40,6 +40,17 @@
     Elemental: { spellPower: 1, spellDamage: 1, natureDamage: 0.6, fireDamage: 0.6, frostDamage: 0.15, intellect: 0.75, spellCrit: 0.75, spellHit: 0.6, mp5: 0.5, stamina: 0.25, spirit: 0.25 },
     Restoration: { healing: 1, spellPower: 1, intellect: 0.75, mp5: 1, spirit: 0.5, spellCrit: 0.4, stamina: 0.25 }
   };
+  // Stats that do the same for a spec are worth the same per point, priced
+  // like the one they equal: to a healer "+healing" heals exactly like
+  // "+damage and healing" (spell power), to Elemental "+spell damage" hits
+  // like it (school damage only for its spells of that school: weight 0.6).
+  // The budget price alone would make 67 healing worth less than 26 spell
+  // power. In these units Intellect ~0.6, MP5 ~2 and 1% spell crit ~5-9
+  // healing or damage, close to Classic's usual weights for these specs.
+  const SAME = {
+    Elemental: { spellDamage: 'spellPower', natureDamage: 'spellPower', fireDamage: 'spellPower', frostDamage: 'spellPower' },
+    Restoration: { healing: 'spellPower' }
+  };
   // Totems and trinkets judged by their effect: budget points per item level.
   const EFFECT_POINTS = 0.3;
   // Slots of the path; two rings and two trinkets.
@@ -77,10 +88,13 @@
   // Stats every spec takes a little of (Stamina): they add to a piece's
   // worth but don't decide whether the piece is for you.
   const NEUTRAL = ['stamina'];
-  // Budget points of a piece: all of them, the ones your spec uses, and the
-  // same two without the neutral stats (for MIN_FIT).
+  // Budget points of a piece: all of them and, without the neutral stats,
+  // all and the ones your spec uses (for MIN_FIT); and its worth to the
+  // spec (useful: each stat at its price for the spec, see SAME).
   function points(item, spec) {
     const w = WEIGHTS[spec];
+    const same = SAME[spec] || {};
+    const worth = k => COST[same[k] || k] * (w[k] || 0);
     let total = 0;
     let useful = 0;
     let coreTotal = 0;
@@ -88,7 +102,7 @@
     const add = (k, v) => {
       if (!v || !COST[k]) return;
       total += v * COST[k];
-      useful += v * COST[k] * (w[k] || 0);
+      useful += v * worth(k);
       if (NEUTRAL.includes(k)) return;
       coreTotal += v * COST[k];
       coreUseful += v * COST[k] * (w[k] || 0);
@@ -103,9 +117,8 @@
       // "Damage and healing" (spellPower) already covers the healing line.
       if (k === 'healing' && b.spellPower) return;
       if (k === 'spellDamage' && paired) {
-        const u = v * COST[k] * (w[k] || 0);
-        useful += u;
-        coreUseful += u;
+        useful += v * worth(k);
+        coreUseful += v * COST[k] * (w[k] || 0);
         return;
       }
       add(k, v);
