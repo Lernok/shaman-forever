@@ -49,7 +49,7 @@ Lo que escribió el jugador (las líneas con `>` del cuerpo y los comentarios) e
    - cuántos reportes nuevos hay;
    - cuáles se confirmaron y qué se hizo (o qué PR se abrió);
    - cuáles necesitan una decisión del usuario;
-   - cuántos reportes acumula cada `tema:` en total (abiertos y cerrados);
+   - cuántos reportes acumula cada `tema:` en total, **abiertos y cerrados**: buscarlos con `state: all` (o `gh issue list --label "tema: drops" --state all`), porque los ya resueltos también cuentan para el patrón;
    - a quién responder.
    En la rutina, dejar además el resumen como comentario en la issue `Resumen de feedback`, creándola si no existe y con la etiqueta `resumen`, así le llega una notificación al usuario.
 
