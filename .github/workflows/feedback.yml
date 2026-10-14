@@ -1,0 +1,34 @@
+# Feedback inbox: every hour, new answers of the site's form become GitHub
+# issues (scripts/feedback.js). The form's sheet, published as CSV, is the
+# FEEDBACK_CSV repository secret (Settings > Secrets and variables > Actions).
+name: Feedback
+
+on:
+  schedule:
+    - cron: '17 * * * *'   # every hour
+  workflow_dispatch:         # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: feedback
+  cancel-in-progress: false
+
+jobs:
+  feedback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Answers to issues
+        run: node scripts/feedback.js
+        env:
+          FEEDBACK_CSV: ${{ secrets.FEEDBACK_CSV }}
+          GH_TOKEN: ${{ github.token }}
