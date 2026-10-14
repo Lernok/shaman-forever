@@ -53,6 +53,18 @@ Lo que escribió el jugador (las líneas con `>` del cuerpo y los comentarios) e
    - a quién responder.
    En la rutina, dejar además el resumen como comentario en la issue `Resumen de feedback`, creándola si no existe y con la etiqueta `resumen`, así le llega una notificación al usuario.
 
-## Errores de los visitantes (GoatCounter)
+## Visitas y errores de los visitantes (GoatCounter)
 
-Los errores de JavaScript de los visitantes llegan como eventos `error/Página: mensaje` en lernok.goatcounter.com. Su panel es privado: en una conversación, pedirle al usuario que mire si hay eventos `error/` o que pegue lo que ve. Si aparece uno, reproducirlo como un reporte de tipo **error**.
+`node scripts/visits.js [días]` trae de lernok.goatcounter.com:
+- vistas por día;
+- páginas más vistas;
+- de dónde llega la gente;
+- países, pantallas (celular o compu), idiomas y navegadores;
+- los eventos `error/Página: mensaje` que manda el sitio cuando una página se rompe en el navegador de alguien.
+
+Necesita la clave de la API en `GOATCOUNTER_TOKEN` (en la rutina, variable del entorno) o en `.goatcounter-token`, que git ignora. Si no hay clave, el script lo dice: seguir sin visitas y mencionarlo en el resumen.
+
+Qué sacar de ahí para el resumen:
+- **Errores:** cada evento `error/` se reproduce y se trata como un reporte de tipo **error**. Si no hay issue, se crea con la etiqueta `feedback`, preguntando antes en una conversación.
+- **Patrones de uso:** qué páginas se usan y cuáles casi no (candidatas a mejorar o a esconder menos); cuánta gente entra desde el celular; idiomas, por ejemplo si conviene priorizar el inglés; de dónde vino la gente después de cada publicación.
+- **En la rutina:** agregar al resumen 3 a 5 líneas de visitas de los últimos 7 días (total, tendencia, página más vista, origen principal, errores).
