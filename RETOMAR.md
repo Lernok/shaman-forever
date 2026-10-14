@@ -1,8 +1,55 @@
-# Retomar: camino de equipo personalizado (plan acordado el 2026-10-13)
+# Retomar: Shaman: Forever (estado al 2026-10-14)
 
-Leer esto entero antes de seguir. Al usuario le encantó el plan; arrancar por la **Fase 1**.
+Leer esta primera parte antes de seguir. Debajo está la historia del proyecto (plan de fases y sesiones).
 
-## Estado del repo al cortar
+## Dónde estamos
+
+- **El sitio está lanzado** (lanzamiento suave del 2026-10-13): https://lernok.github.io/shaman-forever/ (repo Lernok/shaman-forever, rama `main` = GitHub Pages). El usuario lo compartió en un par de Discords y en Twitter. Primeras visitas: 21 en dos días (AR/EE. UU./Canadá), sin errores.
+- **Funciones**: "Armá tu Shaman" (raza, spec, profesiones, nivel); Equipo › Tu camino (un tramo a la vez, "Ver detalles y reportar", casilla "Sumar drops de jefes" apagada por defecto) y Armas; Talentos; Hechizos; Profesiones; Guía; Clase; Novedades. Español e inglés, anda en celular.
+- **Primer feedback (Discord, issue #6, cerrada)**: el camino de Resto ignoraba el Healer's Staff (Excavation Site: Wetlands). Se arregló la valoración en `js/gear-plan.js` (`SAME`: los stats que hacen lo mismo para una spec valen igual por punto: +curación = poder con hechizos para Resto, daño de hechizos/escuela = poder con hechizos para Elemental; Enhancement sin cambios). Las Robes of Arugal estaban bien, pero solo aparecen con drops: queda etiquetado `tema: drops`.
+
+## Cómo funciona la operación (todo automático)
+
+| Cuándo | Qué | Dónde |
+|---|---|---|
+| Cada push / PR | Chequeos: build-data, archivos generados al día, test-rules, `check-site.js`, `smoke.js` (Playwright, 128 vistas, abre la ventana de reporte) | `.github/workflows/check.yml` |
+| Cada hora | Respuestas del formulario → issues `feedback` (una por ítem; etiquetas tipo/spec/página; sin duplicados) | `feedback.yml` + `scripts/feedback.js`, secreto `FEEDBACK_CSV` |
+| 06:00 AR | Sync de datos del juego → PR para aprobar (corre también check-site y smoke) | `sync.yml` |
+| 08:41 AR | Visitas de GoatCounter → comentario en la issue #7 "Resumen de feedback" | `visits.yml` + `scripts/visits.js`, secreto `GOATCOUNTER_TOKEN` |
+| 09:07 AR | Rutina en la nube "Revisar feedback · Shaman: Forever" (`trig_01S1JEvdgAZWNbSXH1CPbdKY`): corre `/revisar-feedback` en modo rutina (etiqueta, comenta, PRs en ramas `feedback/N`, nunca a main; resumen en la #7; notifica al celular si hay algo) | claude.ai/code; entorno con red completa y variable `GOATCOUNTER_TOKEN` |
+
+- **Reportes**: ventana dentro del sitio (`js/feedback.js`) que manda al formulario de Google (`Site.FEEDBACK` en `js/site.js`: texto `entry.239420346`, contexto `entry.663155691` = `tipo | #página | Raza Spec (facción) | profesiones | lvl N | pieza`; tipo = idea/bug/data/piece).
+- **Errores de visitantes**: si una página se rompe, muestra un aviso con el botón de reporte y manda el evento `error/Página: mensaje` a GoatCounter.
+- **Revisar a mano**: el usuario dice "revisá el feedback" → skill `/revisar-feedback` (`.claude/skills/revisar-feedback/SKILL.md`). Herramientas: `node scripts/plan.js path|slot <Slot>|item <id> --race --spec --faction --profs [--drops]` (el mismo motor que la página) y `node scripts/visits.js [días]` (la clave local está en `.goatcounter-token`, ignorado por git).
+- **Ojo con la rutina**: si se edita desde la página de claude.ai, recargarla antes; si no, vuelve a escribir las instrucciones viejas. Para cambiarla desde acá: `RemoteTrigger` update con `job_config.ccr` (environment_id `env_01DhiBRZPymYTLgc86aY4RXt`, events[0].data = {type:'user', message:{role, content}}).
+
+## Decisiones del usuario vigentes
+
+- Los drops de jefes siguen **opcionales** (casilla apagada). Si se juntan varios reportes `tema: drops`, avisarle: en ese caso la quiere activada por defecto.
+- Botón del camino: "Ver detalles y reportar" / "Ocultar detalles".
+- Los reportes que llegan por otros lados (Discord, Reddit) se registran como issue, **preguntando antes**.
+
+## Pendiente
+
+- **Del 29-oct al 2-nov**: post principal en Reddit (actualización del 8 al 12-nov con datos 30–60). El usuario tiene que confirmar qué subreddits existen y sus reglas (Reddit bloquea las herramientas). Ya hay textos escritos para Twitter y Discord en español e inglés.
+- **4-nov (lanzamiento del juego)**: revisar los textos "tope de la beta"/"nivel 30"; la nota de fin de beta se oculta sola después del 21-oct.
+- **Con los datos post-30/60**: cargar los datos por página (hoy ~2,3 MB, ~260 KB comprimidos, en cada visita).
+- **Afinar con feedback real**: pesos y umbrales (UPGRADE 5%, MIN_LEVELS, MIN_FIT 0.5), zonas de la ruta.
+- **Totems/abalorios**: casi sin datos útiles por debajo de 60.
+
+## Reglas de trabajo
+
+- Responder en español rioplatense.
+- Antes de pushear: `node scripts/build-data.js` y chequeo en navegador (servir con `python -m http.server 8765 --bind 127.0.0.1` y ctrl+shift+r; para celular, un iframe de 375px), o `CHROME=1 node scripts/smoke.js` con playwright instalado (`npm i --no-save playwright@1.48.2`, por ejemplo en el scratchpad con NODE_PATH).
+- Scripts de parche como archivos `.py` escritos con Write: los heredoc de bash se comen las barras y las comillas.
+- `node scripts/sync.js --offline` re-parsea desde la caché; después, `git checkout reports/`.
+- Para comparar planes de antes y después de tocar `gear-plan.js`: un script que cargue las dos versiones del motor y recorra combinaciones de Shaman (raza, spec, profesiones, drops) contando qué piezas cambian. Enhancement no debería cambiar si no se lo toca.
+
+---
+
+# Historia
+
+## Estado del repo al cortar (2026-10-13, antes de la Fase 1)
 
 - `main` en GitHub = todo hasta el ordenamiento del pipeline (commit `fix http: check the cached copy too…`). El sync diario de GitHub funciona con el pipeline nuevo (`scripts/lib/http.js`, etc.; ver `ARQUITECTURA.md`).
 - (Histórico, ya resuelto y subido) Dos commits viejos:
@@ -106,8 +153,5 @@ Sesión 6c (chequeo fino de stats, pedido del usuario):
 - Quests de ruta quedan como "alternativa segura" a drops de jefe. Drops de campos de batalla = PvP.
 - Auditoría del camino: `node scripts/plan.js path|slot <Slot>|item <id> --race --spec --faction --profs [--drops]` (reemplaza a audit.js y legs.js del scratchpad). Revisar reportes: comando `/revisar-feedback` (.claude/skills/revisar-feedback/SKILL.md). Rutina en la nube "Revisar feedback · Shaman: Forever" (trig_01S1JEvdgAZWNbSXH1CPbdKY), todos los días 12:07 UTC (9:07 en Argentina): corre ese skill en modo rutina (etiqueta, comenta, PRs en ramas feedback/N, resumen en la issue "Resumen de feedback"). Prueba del 2026-10-14 OK (lee las issues con mcp__github). Entorno de la rutina: red completa y variable GOATCOUNTER_TOKEN; si guardás la rutina desde la página, recargala antes porque si no vuelve a escribir las instrucciones viejas. Visitas: `node scripts/visits.js [días]` (clave local en .goatcounter-token, ignorado por git) y `.github/workflows/visits.yml`, que todas las mañanas deja el resumen en la issue #7 "Resumen de feedback" (secreto GOATCOUNTER_TOKEN). La rutina también comenta en la #7.
 
-Falta / ideas:
-- Esperar feedback. Textos "tope de la beta"/"nivel 30" a revisar el 4-nov (lanzamiento).
-- Afinar con el usuario: pesos de stats, umbrales (UPGRADE 5%, MIN_LEVELS, MIN_FIT 0.4), zonas que propone la ruta.
-- Lanzamiento (6d): GoatCounter activo (Site.GOATCOUNTER='lernok', visitas en lernok.goatcounter.com, localhost no cuenta). Formulario de Google activo (Site.FEEDBACK en js/site.js): pregunta abierta + "Datos de la página" (entry.663155691), que el sitio rellena con tipo | página | Shaman | profesiones | nivel | pieza; las respuestas llegan a la pestaña Respuestas del formulario (prueba recibida el 2026-10-13). Bandeja automática: la planilla publicada como CSV (secreto FEEDBACK_CSV) → .github/workflows/feedback.yml cada hora → scripts/feedback.js crea issues con etiqueta "feedback" (una por ítem; etiquetas de tipo, spec y página; sin duplicados por la marca <!-- fb:ID -->). Para revisar: `gh issue list --label feedback`. El issue #4 fue la prueba (cerrado). Chequeos en cada push (check.yml: datos, archivos generados al día, talentos, check-site.js, smoke.js en navegador) y errores de visitantes como eventos en GoatCounter: ver ARQUITECTURA.md "Calidad y operación". Pendiente a futuro: cargar los datos por página (hoy ~2,3 MB sin comprimir, ~260 KB comprimidos, en cada visita) cuando lleguen los datos post-60. Reddit: soft launch hasta el 21-oct, post principal del 29-oct al 2-nov, actualización del 8 al 12-nov.
-- Totems/abalorios: casi sin datos útiles por debajo de 60 (los "Icon" nuevos de Forever no traen efecto).
+
+Sesión 7 (2026-10-13/14, lanzamiento): GoatCounter; formulario de Google y después la ventana de reporte dentro del sitio; bandeja de issues; chequeos en cada push (check-site, smoke); avisos de error y eventos en GoatCounter; skill `/revisar-feedback` y `scripts/plan.js`; rutina diaria en la nube; `visits.js` y `visits.yml`; resúmenes de spec reescritos; primer feedback de Discord (arreglo `SAME` en gear-plan.js). El estado está arriba.
