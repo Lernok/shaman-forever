@@ -29,6 +29,13 @@ Leer esta primera parte antes de seguir. Debajo está la historia del proyecto (
 - Botón del camino: "Ver detalles y reportar" / "Ocultar detalles".
 - Los reportes que llegan por otros lados (Discord, Reddit) se registran como issue, **preguntando antes**.
 
+## Inicio y primera visita (2026-10-14)
+
+- Diagnóstico: en la primera visita el formulario "Armá tu Shaman" tapaba todo; en celular mide dos pantallas, sin cruz y con "Listo" al fondo. Inicio tenía el doble de vistas que Equipo.
+- Cambios: "Listo"/"Explorar sin elegir" fijos abajo del formulario; cruz y Escape desde la primera visita (cuentan como explorar sin elegir); con el Shaman armado, "Tu Shaman" va arriba de todo en el Inicio y "Tu camino de equipo" es el primer enlace, destacado.
+- Medición: eventos `setup/listo: <spec>`, `setup/explorar`, `setup/cerrar` (solo primera visita), en la sección "Armá tu Shaman" de `scripts/visits.js` y del comentario diario en la #7. Con una o dos semanas de datos, mirar cuántos terminan el formulario contra cuántos lo cierran.
+- El sync del 14-oct se cortó a la hora: el build nuevo (70374) pidió ~6000 tooltips que la caché de GitHub no tenía, y como se cortó, no guardó nada. Ahora guarda la caché aunque falle y tiene hasta 2,5 h.
+
 ## Pendiente
 
 - **Del 29-oct al 2-nov**: post principal en Reddit (actualización del 8 al 12-nov con datos 30–60). El usuario tiene que confirmar qué subreddits existen y sus reglas (Reddit bloquea las herramientas). Ya hay textos escritos para Twitter y Discord en español e inglés.

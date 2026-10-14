@@ -1,6 +1,7 @@
 // Visits from GoatCounter (lernok.goatcounter.com): totals per day, pages,
 // where visitors came from, countries, screen sizes, languages, and the
-// "error/…" events js/app.js sends when a page breaks on someone's browser.
+// "error/…" events js/app.js sends when a page breaks on someone's browser,
+// and the "setup/…" ones from the first-visit setup (js/setup.js).
 //
 //   node scripts/visits.js [days]      (default 7)
 //
@@ -49,6 +50,9 @@ async function main() {
   list('Páginas', hits.filter(h => !h.event).map(h => ({ name: h.path, count: h.count })));
   const errors = hits.filter(h => h.event && /^\/?error\//.test(h.path));
   list('Errores de visitantes (eventos error/…)', errors.map(h => ({ name: h.path.replace(/^\/?error\//, ''), count: h.count })), 50);
+  // First visit: how many finish "Armá tu Shaman" (listo: spec), skip it or close it.
+  const setup = hits.filter(h => h.event && /^\/?setup\//.test(h.path));
+  list('Armá tu Shaman, primera visita (eventos setup/…)', setup.map(h => ({ name: h.path.replace(/^\/?setup\//, ''), count: h.count })));
 
   for (const [page, title] of [['toprefs', 'De dónde llegan'], ['locations', 'Países'], ['sizes', 'Pantallas'], ['languages', 'Idiomas'], ['browsers', 'Navegadores']]) {
     try {

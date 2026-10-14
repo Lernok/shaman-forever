@@ -1192,13 +1192,15 @@ body.setup-open { overflow: hidden; }
 .setup-pair { display: inline-flex; align-items: center; gap: 4px; font-size: 12.5px; }
 .setup-pair.active { border-color: var(--accent); }
 .pp-mini { width: 16px; height: 16px; border-radius: 3px; }
-.setup-foot { display: flex; gap: 10px; align-items: center; margin-top: 22px; flex-wrap: wrap; }
+/* Stays on screen while the steps scroll: on a phone they're two screens tall. */
+.setup-foot { display: flex; gap: 10px; align-items: center; margin: 22px -24px -22px; padding: 12px 24px; flex-wrap: wrap; position: sticky; bottom: 0; background: var(--bg-panel); border-top: 1px solid var(--border); border-radius: 0 0 14px 14px; }
 .setup-done { background: var(--accent); color: #111; font-weight: 700; padding: 9px 22px; border-color: var(--accent); }
 .setup-done:hover { filter: brightness(1.1); color: #111; }
 .setup-skip { background: transparent; }
 @media (max-width: 560px) {
   .setup-overlay { padding: 8px; }
   .setup { padding: 16px; }
+  .setup-foot { margin: 18px -16px -16px; padding: 10px 16px; }
   .setup-grid { grid-template-columns: repeat(2, 1fr); }
   .setup-grid.specs { grid-template-columns: 1fr; }
 }
@@ -1212,6 +1214,11 @@ body.setup-open { overflow: hidden; }
 .me-link:hover { border-color: color-mix(in srgb, var(--spec-color) 60%, var(--border)); }
 .me-link img { width: 32px; height: 32px; border-radius: 6px; }
 .me-link b { display: block; color: var(--text); font-size: 13.5px; }
+.me-link.main { grid-column: 1 / -1; border-color: color-mix(in srgb, var(--spec-color) 55%, var(--border)); background: color-mix(in srgb, var(--spec-color) 12%, var(--bg-panel-2)); padding: 12px; }
+.me-link.main img { width: 40px; height: 40px; }
+.me-link.main b { font-size: 15px; }
+.me-link.main::after { content: '→'; margin-left: auto; color: var(--text); font-size: 18px; }
+@media (min-width: 700px) { .me-links { grid-template-columns: repeat(3, 1fr); } }
 .gp-for { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-bottom: 12px; font-size: 13px; }
 .gp-levelbar { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin-bottom: 12px; }
 .gp-level { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-dim); }

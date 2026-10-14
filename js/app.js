@@ -47,14 +47,18 @@
   // ("error/Page: message"), once per message and visit: the dashboard shows
   // what breaks out there without anyone having to report it.
   const reported = new Set();
-  function reportError(e, page) {
-    const msg = String(e && e.message || e || 'error').replace(/\s+/g, ' ').slice(0, 120);
-    const path = 'error/' + (page || currentPage) + ': ' + msg;
+  function countEvent(path, title) {
     if (reported.has(path) || !Site.GOATCOUNTER) return;
     reported.add(path);
-    const send = () => window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path, title: msg, event: true });
+    const send = () => window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path, title: title || path, event: true });
     if (window.goatcounter && window.goatcounter.count) send();
     else setTimeout(send, 3000); // the counter's script may still be loading
+  }
+  // Other scripts count their own events too (the setup screen: done/skip/close).
+  Site.countEvent = countEvent;
+  function reportError(e, page) {
+    const msg = String(e && e.message || e || 'error').replace(/\s+/g, ' ').slice(0, 120);
+    countEvent('error/' + (page || currentPage) + ': ' + msg, msg);
   }
   window.addEventListener('error', e => reportError(e.error || e.message));
   window.addEventListener('unhandledrejection', e => reportError(e.reason));

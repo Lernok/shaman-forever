@@ -15,6 +15,7 @@
   const NEW_FOR_SHAMAN = ['Skyborne (Windshaper)', 'Dwarf'];
   let el = null;
   let draft = null;
+  let firstRun = false;
 
   const img = (icon, cls) => '<img class="' + (cls || '') + '" src="' + UI.icon(icon) + '" alt="" loading="lazy">';
   const allRaces = () => Site.FACTIONS.flatMap(f => Site.races(f).map(r => Object.assign({ faction: f }, r)));
@@ -29,7 +30,7 @@
     const pairs = window.GUIDE_DATA.Professions ? window.I18N.localize(window.GUIDE_DATA.Professions).pairs.filter(p => p.specs.includes(draft.spec)) : [];
     let html = '<div class="setup" role="dialog" aria-modal="true" aria-labelledby="setupTitle">' +
       '<div class="setup-head"><div><h2 id="setupTitle">' + t('setup.title') + '</h2><p>' + t('setup.intro') + '</p></div>' +
-      (done ? '<button class="btn setup-x" data-close aria-label="' + t('setup.close') + '">×</button>' : '') + '</div>';
+      '<button class="btn setup-x" data-close aria-label="' + t('setup.close') + '">×</button></div>';
 
     html += '<section class="setup-step"><h3><span class="setup-n">1</span>' + t('setup.race') + '</h3><div class="setup-grid">' +
       allRaces().map(r => '<button class="setup-opt' + (draft.race === r.race ? ' active' : '') + '" data-race="' + r.race + '" data-faction="' + r.faction + '">' +
@@ -62,6 +63,18 @@
     el.innerHTML = html;
   }
 
+  // First visit only: how many finish the setup, skip it or close it.
+  const count = what => firstRun && Site.countEvent && Site.countEvent('setup/' + what);
+
+  // Closing it on the first visit counts as exploring without picking.
+  function dismiss() {
+    if (UI.store.get('setupDone', false)) return close();
+    count('cerrar');
+    UI.store.set('setupDone', true);
+    close();
+    Site.setMany({});
+  }
+
   function onClick(e) {
     if (e.target === el && UI.store.get('setupDone', false)) return close();
     const b = e.target.closest('button');
@@ -74,9 +87,10 @@
       draft.profs = draft.profs.includes(p) ? draft.profs.filter(x => x !== p) : draft.profs.concat(p).slice(-2);
     }
     if (b.dataset.pair) draft.profs = b.dataset.pair.split(' + ');
-    if (b.hasAttribute('data-close')) return close();
-    if (b.hasAttribute('data-skip')) { UI.store.set('setupDone', true); close(); Site.setMany({}); return; }
+    if (b.hasAttribute('data-close')) return dismiss();
+    if (b.hasAttribute('data-skip')) { count('explorar'); UI.store.set('setupDone', true); close(); Site.setMany({}); return; }
     if (b.hasAttribute('data-done')) {
+      count('listo: ' + draft.spec);
       UI.store.set('profs', draft.profs);
       UI.store.set('level', draft.level);
       UI.store.set('setupDone', true);
@@ -90,6 +104,7 @@
   }
 
   function open() {
+    firstRun = !UI.store.get('setupDone', false);
     draft = { race: Site.race, faction: Site.faction, spec: Site.spec, profs: UI.store.get('profs', []).slice(), level: Number(UI.store.get('level', 1)) || 1 };
     if (!el) {
       el = document.createElement('div');
@@ -97,7 +112,7 @@
       document.body.appendChild(el);
       el.addEventListener('click', onClick);
       el.addEventListener('change', e => { if (e.target.matches('[data-level]')) draft.level = Number(e.target.value); });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape' && !el.hidden && UI.store.get('setupDone', false)) close(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && !el.hidden) dismiss(); });
     }
     draw();
     el.hidden = false;
