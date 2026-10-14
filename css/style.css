@@ -1239,7 +1239,23 @@ details.wp-all[open] > summary { margin-bottom: 10px; }
 .feedback { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 0 0 10px; }
 .feedback:empty { display: none; }
 .feedback-btn { text-decoration: none; border-color: var(--accent); color: var(--text); }
-.gp-report { font-size: 11px; color: var(--text-dim); align-self: flex-start; }
+.gp-report { font-size: 11px; color: var(--text-dim); align-self: flex-start; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; font-family: inherit; }
 .gp-report:hover { color: var(--accent); }
 .page-error { max-width: 640px; margin: 48px auto; padding: 24px; text-align: center; border: 1px solid var(--border); border-radius: 12px; }
 .page-error p { color: var(--text-dim); margin: 8px 0 16px; }
+.setup.fb-modal { width: min(560px, 100%); margin-top: 8vh; }
+.fb-kinds { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.fb-kinds .btn.active { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, var(--bg-panel)); color: var(--text); }
+.fb-about { margin: 16px 0 0; font-size: 13.5px; color: var(--text-dim); }
+.fb-about b { color: var(--text); }
+.fb-text, .fb-contact { display: block; width: 100%; box-sizing: border-box; margin-top: 12px; background: var(--bg, #0e0f12); color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; font: inherit; font-size: 14px; }
+.fb-text { resize: vertical; min-height: 110px; }
+.fb-text:focus, .fb-contact:focus { outline: none; border-color: var(--accent); }
+.fb-ctx { margin-top: 10px; font-size: 12px; color: var(--text-dim); }
+.fb-ctx summary { cursor: pointer; }
+.fb-ctx code { display: block; margin-top: 6px; word-break: break-word; white-space: normal; }
+.fb-error { color: #e07a6e; font-size: 13px; margin: 10px 0 0; }
+.fb-hint { font-size: 12px; }
+.fb-done { text-align: center; padding: 18px 0 4px; }
+.fb-done b { font-size: 18px; }
+.fb-done p { color: var(--text-dim); margin: 6px 0 16px; }

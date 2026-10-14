@@ -69,7 +69,10 @@ function toReport(row, col) {
   const ctx = parseContext(row[col.context]);
   const id = crypto.createHash('sha1').update(row[col.time] + '\n' + text).digest('hex').slice(0, 10);
   const item = ctx.itemId ? items.get(ctx.itemId) : null;
-  const kind = ctx.itemId ? 'pieza' : /bug|error|roto|broken|no anda|no funciona/i.test(text) ? 'error' : 'sugerencia';
+  // The site sends a kind code (Site.feedbackContext); older answers carried
+  // a label, so the text decides when there's no code.
+  const CODES = { piece: 'pieza', bug: 'error', data: 'dato', idea: 'sugerencia' };
+  const kind = ctx.itemId ? 'pieza' : CODES[ctx.kind] || (/bug|error|roto|broken|no anda|no funciona/i.test(text) ? 'error' : 'sugerencia');
   return { id, time: row[col.time], text, ctx, item, kind };
 }
 

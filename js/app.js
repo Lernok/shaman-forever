@@ -39,8 +39,8 @@
     el.innerHTML = t('conf.legend') + ' ' + UI.CONFIDENCE_KEYS.map(k =>
       '<span class="conf-key">' + UI.badge(k) + t('conf.' + k) + '</span>').join('');
     const fb = document.getElementById('feedbackLink');
-    const href = Site.feedbackLink(t('fb.kind.idea'));
-    if (fb) fb.innerHTML = href ? '<a class="btn feedback-btn" href="' + href + '" target="_blank" rel="noopener">' + t('fb.button') + '</a><span class="dim">' + t('fb.note') + '</span>' : '';
+    const btn = window.Feedback.button(t('fb.button'), 'idea');
+    if (fb) fb.innerHTML = btn ? btn + '<span class="dim">' + t('fb.note') + '</span>' : '';
   }
 
   // Errors on visitors' browsers reach the visit counter as events
@@ -85,9 +85,8 @@
     } catch (e) {
       console.error(e);
       reportError(e, page);
-      const href = Site.feedbackLink(t('err.kind'), String(e && e.message || e).slice(0, 200));
       app.innerHTML = '<section class="page-error"><h2>' + t('err.title') + '</h2><p>' + t('err.text') + '</p>' +
-        (href ? '<a class="btn feedback-btn" href="' + href + '" target="_blank" rel="noopener">' + t('fb.button') + '</a>' : '') + '</section>';
+        window.Feedback.button(t('fb.button'), 'bug', 'error: ' + String(e && e.message || e).slice(0, 200)) + '</section>';
       return;
     }
     const active = app.querySelector('.subtab.active');

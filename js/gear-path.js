@@ -103,8 +103,7 @@
   // "Wrong piece?": opens the feedback form with this step filled in.
   function reportLink(st) {
     if (!state.detail) return '';
-    const href = Site.feedbackLink(t('fb.kind.piece'), st.level + ' ' + st.pick.slot + ' ' + st.pick.item.name + ' #' + st.pick.item.id + ' (' + st.pick.access + ')');
-    return href ? '<a class="gp-report" href="' + href + '" target="_blank" rel="noopener">' + t('fb.wrongPiece') + '</a>' : '';
+    return window.Feedback.button(t('fb.wrongPiece'), 'piece', st.level + ' ' + st.pick.slot + ' ' + st.pick.item.name + ' #' + st.pick.item.id + ' (' + st.pick.access + ')', 'gp-report', st.pick.item.name);
   }
 
   // Brackets of ten levels; you look at one at a time.

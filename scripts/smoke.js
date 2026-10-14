@@ -95,6 +95,13 @@ async function main() {
       await (await page.$$('#app [data-bracket]'))[i].click();
       await check('#Equipo tramo ' + (i + 1));
     }
+    // The report window opens, shows its fields and closes (nothing is sent).
+    await page.click('#feedbackLink [data-feedback]');
+    const modal = await page.$eval('.fb-modal', el => ({ text: el.innerText, box: !!el.querySelector('.fb-text') })).catch(() => null);
+    if (!modal || !modal.box || BAD_TEXT.test(modal.text) || MISSING_KEY.test(modal.text)) failures.push(who + ' ventana de reporte: ' + (modal ? modal.text.slice(0, 120) : 'no se abrió'));
+    await page.keyboard.press('Escape');
+    errs.forEach(x => failures.push(who + ' ventana de reporte: ' + x));
+    errs = [];
     await context.close();
   }
 

@@ -8,10 +8,10 @@
   const listeners = [];
 
   const Site = {
-    // Feedback goes to a Google Form (answers land in its sheet, not an inbox).
-    // url: the form's "viewform" link; fields: entry ids from its prefilled
-    // link, so a report arrives with what the person was looking at.
-    FEEDBACK: { url: 'https://docs.google.com/forms/d/e/1FAIpQLSfkp8ZYjanltzj9XBkwoEmwO7oJJepL2QrO1eSzHfb_O2ZxKA/viewform', fields: { kind: '', context: 'entry.663155691' } },
+    // Feedback goes to a Google Form (js/feedback.js sends it from the page).
+    // url: the form's "viewform" link; fields: the entry id of each question
+    // (text: what's wrong; context: what the person was looking at).
+    FEEDBACK: { url: 'https://docs.google.com/forms/d/e/1FAIpQLSfkp8ZYjanltzj9XBkwoEmwO7oJJepL2QrO1eSzHfb_O2ZxKA/viewform', fields: { text: 'entry.239420346', context: 'entry.663155691' } },
     // Anonymous visit counter (goatcounter.com, no cookies): the site's code.
     GOATCOUNTER: 'lernok',
     SPECS,
@@ -57,17 +57,19 @@
     },
     onChange(fn) { listeners.push(fn); },
 
-    // Where the feedback form opens: prefilled with the kind of report and
-    // the context (page, your Shaman, an item); null while there's no form.
+    // What a report carries besides its text, read by scripts/feedback.js:
+    //   kind | #Page/section | Race Spec (faction) | profs | lvl N | [extra]
+    // kind is a code (idea, bug, data, piece), the same in both languages.
+    feedbackContext(kind, extra) {
+      const profs = window.UI.store.get('profs', []).join('+') || '-';
+      return [kind, location.hash || '#Inicio', Site.race + ' ' + Site.spec + ' (' + Site.faction + ')', profs, 'lvl ' + window.UI.store.get('level', 1), extra || ''].filter(Boolean).join(' | ');
+    },
+    // The form in a tab, with the context filled in: the way out when the
+    // report window can't send.
     feedbackLink(kind, extra) {
       const F = Site.FEEDBACK;
       if (!F.url) return null;
-      const profs = window.UI.store.get('profs', []).join('+') || '-';
-      const context = [F.fields.kind ? '' : kind, location.hash || '#Inicio', Site.race + ' ' + Site.spec + ' (' + Site.faction + ')', profs, 'lvl ' + window.UI.store.get('level', 1), extra || ''].filter(Boolean).join(' | ');
-      const q = [];
-      if (F.fields.kind && kind) q.push(F.fields.kind + '=' + encodeURIComponent(kind));
-      if (F.fields.context) q.push(F.fields.context + '=' + encodeURIComponent(context));
-      return F.url + (F.url.includes('?') ? '&' : '?') + 'usp=pp_url' + (q.length ? '&' + q.join('&') : '');
+      return F.url + '?usp=pp_url&' + F.fields.context + '=' + encodeURIComponent(Site.feedbackContext(kind, extra));
     },
 
     // Current section of a page: the hash's second part if it's one of
