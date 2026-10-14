@@ -1138,6 +1138,7 @@
   window.I18N = {
     get lang() { return lang; },
     t, localize, setLang, apply, client, num, range, term, original,
+    STRINGS, // for scripts/check-site.js
     onChange(fn) { listeners.push(fn); },
     toggle() { setLang(lang === 'es' ? 'en' : 'es'); }
   };

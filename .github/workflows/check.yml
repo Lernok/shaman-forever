@@ -1,0 +1,50 @@
+# Checks on every push and pull request: the data, the talent rules, the
+# site's code, and every page opened in a real (headless) browser. A red
+# mark on a commit means something here broke; the log says what.
+name: Chequeos
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Rebuilds data/*.js and index.html's versions from the sources, with
+      # the data checks (check-data.js), talent and translation validators.
+      - name: Datos
+        run: node scripts/build-data.js
+
+      # The committed files must be what the build makes from the sources:
+      # otherwise a JSON was edited without running build-data.js.
+      - name: Archivos generados al día
+        run: |
+          if ! git diff --quiet; then
+            echo "::error::Archivos generados desactualizados: correr node scripts/build-data.js y commitear."
+            git diff --stat
+            exit 1
+          fi
+
+      - name: Reglas de talentos
+        run: node scripts/test-rules.js
+
+      - name: Código del sitio
+        run: node scripts/check-site.js
+
+      - name: Navegador
+        run: |
+          npm i --no-save --no-package-lock playwright@1.48.2
+          npx playwright install --with-deps chromium
+          node scripts/smoke.js

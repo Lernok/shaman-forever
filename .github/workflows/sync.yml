@@ -41,6 +41,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # The new data must not break any page: a pull request made by this
+      # workflow doesn't trigger check.yml, so the same checks run here.
+      - name: Check the site with the new data
+        run: |
+          node scripts/check-site.js
+          npm i --no-save --no-package-lock playwright@1.48.2
+          npx playwright install --with-deps chromium
+          node scripts/smoke.js
+
       # meta.json and the report change on every run (sync date); only open a
       # pull request when the data itself changed.
       - name: Open or update the pull request
