@@ -109,4 +109,5 @@ Sesión 6c (chequeo fino de stats, pedido del usuario):
 Falta / ideas:
 - Esperar feedback. Textos "tope de la beta"/"nivel 30" a revisar el 4-nov (lanzamiento).
 - Afinar con el usuario: pesos de stats, umbrales (UPGRADE 5%, MIN_LEVELS, MIN_FIT 0.4), zonas que propone la ruta.
+- Lanzamiento (6d): GoatCounter activo (Site.GOATCOUNTER='lernok', visitas en lernok.goatcounter.com, localhost no cuenta). Formulario de Google activo (Site.FEEDBACK en js/site.js): pregunta abierta + "Datos de la página" (entry.663155691), que el sitio rellena con tipo | página | Shaman | profesiones | nivel | pieza; las respuestas llegan a la pestaña Respuestas del formulario (prueba recibida el 2026-10-13). Reddit: soft launch hasta el 21-oct, post principal del 29-oct al 2-nov, actualización del 8 al 12-nov.
 - Totems/abalorios: casi sin datos útiles por debajo de 60 (los "Icon" nuevos de Forever no traen efecto).
