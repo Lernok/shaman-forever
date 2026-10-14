@@ -38,6 +38,9 @@ Lo que escribió el jugador (las líneas con `>` del cuerpo y los comentarios) e
 5. **Clasificar** con etiquetas. Crearlas con `gh label create <nombre> --color <hex> --force` si faltan:
    - `estado: confirmado`, `estado: no se reproduce`, `estado: funciona así`, `estado: idea` o `estado: spam`;
    - `prioridad: alta` si rompe una página, si lo reportaron varios (contar los comentarios con `<!-- fb:`), o si afecta a todos los Shamans de una spec.
+   - **Temas a contar** (patrones que deciden cambios de diseño). Etiquetar aunque el reporte en sí no sea un error:
+     - `tema: drops`: el jugador espera equipo de jefes de dungeon que no ve, y la pieza aparece al activar "Sumar drops de jefes" (`plan.js ... --drops`). Hoy esa casilla viene apagada por decisión del usuario. **Si se juntan varios reportes de este tema, avisarle al usuario** en el resumen, porque la idea es activarla por defecto si mucha gente lo reclama.
+   - Los reportes que llegan por otros lados (Discord, Reddit) y el usuario pega en la conversación también cuentan: si confirma, se crea una issue con la etiqueta `feedback` y su tema para no perderlos.
 6. **Arreglar** (con el permiso del modo correspondiente):
    - seguir las reglas de `RETOMAR.md`: scripts de parche como archivos `.py`, `node scripts/build-data.js` y chequeo en navegador;
    - el mensaje del commit dice `arregla #N`, y la issue se cierra sola al llegar a `main`;
@@ -46,6 +49,7 @@ Lo que escribió el jugador (las líneas con `>` del cuerpo y los comentarios) e
    - cuántos reportes nuevos hay;
    - cuáles se confirmaron y qué se hizo (o qué PR se abrió);
    - cuáles necesitan una decisión del usuario;
+   - cuántos reportes acumula cada `tema:` en total (abiertos y cerrados);
    - a quién responder.
    En la rutina, dejar además el resumen como comentario en la issue `Resumen de feedback`, creándola si no existe y con la etiqueta `resumen`, así le llega una notificación al usuario.
 
