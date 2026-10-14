@@ -1,0 +1,37 @@
+# Visits of the day: every morning, before the feedback routine (12:07 UTC),
+# scripts/visits.js reads GoatCounter and leaves the last 7 days as a comment
+# on the "Resumen de feedback" issue (label "resumen"). The routine's cloud
+# environment can't reach GoatCounter; it reads the visits from there.
+# The API key is the GOATCOUNTER_TOKEN repository secret.
+name: Visitas
+
+on:
+  schedule:
+    - cron: '41 11 * * *'   # 08:41 in Argentina
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  visits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Visits to the summary issue
+        env:
+          GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/visits.js 7 > visits.txt
+          issue=$(gh issue list --label resumen --state open --limit 1 --json number -q '.[0].number')
+          if [ -z "$issue" ]; then echo "No hay issue con la etiqueta resumen."; cat visits.txt; exit 0; fi
+          { echo "**Visitas** (GoatCounter, últimos 7 días, $(date -u +%F))"; echo; echo '```'; cat visits.txt; echo '```'; echo '<!-- visitas -->'; } > body.md
+          gh issue comment "$issue" --body-file body.md

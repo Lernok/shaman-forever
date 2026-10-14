@@ -62,7 +62,9 @@ Lo que escribió el jugador (las líneas con `>` del cuerpo y los comentarios) e
 - países, pantallas (celular o compu), idiomas y navegadores;
 - los eventos `error/Página: mensaje` que manda el sitio cuando una página se rompe en el navegador de alguien.
 
-Necesita la clave de la API en `GOATCOUNTER_TOKEN` (en la rutina, variable del entorno) o en `.goatcounter-token`, que git ignora. Si no hay clave, el script lo dice: seguir sin visitas y mencionarlo en el resumen.
+Necesita la clave de la API en `GOATCOUNTER_TOKEN` o en `.goatcounter-token`, que git ignora. Si no hay clave, el script lo dice: seguir sin visitas y mencionarlo en el resumen.
+
+**En la rutina no se corre:** su entorno en la nube, con red "Confiable", no llega a GoatCounter. Cada mañana a las 11:41 UTC, `.github/workflows/visits.yml` lo corre en GitHub (secreto `GOATCOUNTER_TOKEN`) y deja un comentario `**Visitas** …` (con `<!-- visitas -->`) en la issue con la etiqueta `resumen`. La rutina lee el último de esos comentarios. Si no hay uno de hoy, lo dice en el resumen.
 
 Qué sacar de ahí para el resumen:
 - **Errores:** cada evento `error/` se reproduce y se trata como un reporte de tipo **error**. Si no hay issue, se crea con la etiqueta `feedback`, preguntando antes en una conversación.
