@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70338",
+ "build": "1.60.1.70374",
  "gear": [
   {
    "id": 208424,
@@ -24260,6 +24260,58 @@
    ]
   },
   {
+   "id": 281289,
+   "name": "Swordfeather Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 0,
+   "obtain": 11,
+   "ilvl": 13,
+   "bind": "pickup",
+   "armor": 12,
+   "stats": {
+    "strength": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_misc_cape_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "WANTED: Jai'vhanel",
+     "questId": 98025,
+     "level": 13,
+     "requiredLevel": 10,
+     "zone": "Darkshore",
+     "bands": {
+      "orange": 10,
+      "yellow": 11,
+      "green": 16,
+      "grey": 19
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98025",
+     "basis": {
+      "name": "Jai'vhanel",
+      "level": 12,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 1
+     },
+     "asap": 10,
+     "rec": 11
+    }
+   ]
+  },
+  {
    "id": 281250,
    "name": "Forest Oracle's Cloak",
    "kind": "Cloth",
@@ -26535,54 +26587,6 @@
       "group": false,
       "step": 956,
       "steps": 4
-     },
-     "asap": 10,
-     "rec": 12
-    }
-   ]
-  },
-  {
-   "id": 281289,
-   "name": "Swordfeather Cloak",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 0,
-   "obtain": 12,
-   "ilvl": 13,
-   "bind": "pickup",
-   "armor": 12,
-   "stats": {
-    "strength": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_misc_cape_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "WANTED: Jai'vhanel",
-     "questId": 98025,
-     "level": 13,
-     "requiredLevel": 10,
-     "zone": "Darkshore",
-     "bands": {
-      "orange": 10,
-      "yellow": 11,
-      "green": 16,
-      "grey": 19
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98025",
-     "basis": {
-      "from": "quest-level",
-      "group": false
      },
      "asap": 10,
      "rec": 12
@@ -39195,6 +39199,89 @@
      },
      "asap": 13,
      "rec": 16
+    }
+   ]
+  },
+  {
+   "id": 276889,
+   "name": "Thornwoven Shield",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 2,
+   "req": 1,
+   "obtain": 17,
+   "ilvl": 24,
+   "bind": "pickup",
+   "armor": 478,
+   "block": 9,
+   "stats": {
+    "stamina": 4,
+    "spirit": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_shield_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Chol'aruk the Ravener (Horde)",
+     "questId": 97003,
+     "level": 21,
+     "requiredLevel": 15,
+     "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97003",
+     "basis": {
+      "name": "Chol'aruk",
+      "level": 20,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 15,
+     "rec": 17
+    },
+    {
+     "type": "quest",
+     "quest": "Chol'aruk the Ravener (Alliance)",
+     "questId": 97005,
+     "level": 21,
+     "requiredLevel": 15,
+     "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97005",
+     "basis": {
+      "name": "Chol'aruk",
+      "level": 20,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 15,
+     "rec": 17
     }
    ]
   },
@@ -56034,81 +56121,6 @@
      "faction": "both",
      "confidence": "community-untested",
      "asap": 20,
-     "rec": 20
-    }
-   ]
-  },
-  {
-   "id": 276889,
-   "name": "Thornwoven Shield",
-   "kind": "Shield",
-   "slot": "Shield",
-   "quality": 2,
-   "req": 1,
-   "obtain": 20,
-   "ilvl": 24,
-   "bind": "pickup",
-   "armor": 478,
-   "block": 9,
-   "stats": {
-    "stamina": 4,
-    "spirit": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_shield_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Chol'aruk the Ravener (Horde)",
-     "questId": 97003,
-     "level": 21,
-     "requiredLevel": 15,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 15,
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97003",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 15,
-     "rec": 20
-    },
-    {
-     "type": "quest",
-     "quest": "Chol'aruk the Ravener (Alliance)",
-     "questId": 97005,
-     "level": 21,
-     "requiredLevel": 15,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 15,
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97005",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 15,
      "rec": 20
     }
    ]
@@ -111682,7 +111694,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_gauntlets_04",
    "raceMask": -1,
    "sources": [
@@ -128641,15 +128653,18 @@
    "bind": "pickup",
    "stats": {
     "stamina": 7,
-    "intellect": 7,
     "spirit": 7
    },
-   "bonus": {},
-   "equip": [],
+   "bonus": {
+    "spellPower": 8
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+   ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_jewelry_amulet_01",
    "raceMask": -1,
    "sources": [
@@ -183906,6 +183921,42 @@
    ]
   },
   {
+   "id": 284065,
+   "name": "Crown of Maldazzar",
+   "kind": "Cloth",
+   "slot": "Head",
+   "quality": 2,
+   "req": 53,
+   "obtain": 53,
+   "ilvl": 58,
+   "bind": "equip",
+   "armor": 61,
+   "stats": {
+    "stamina": 17
+   },
+   "bonus": {
+    "otherDamage": 24
+   },
+   "equip": [
+    "Equip: Increases damage done by Shadow spells and effects by up to 24."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_helmet_12",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 53,
+     "rec": 53
+    }
+   ]
+  },
+  {
    "id": 11726,
    "name": "Savage Gladiator Chain",
    "kind": "Mail",
@@ -221841,6 +221892,243 @@
    ]
   },
   {
+   "id": 18367,
+   "name": "Gordok's Gauntlets",
+   "kind": "Mail",
+   "slot": "Hands",
+   "quality": 3,
+   "req": 0,
+   "obtain": 58,
+   "ilvl": 60,
+   "bind": "pickup",
+   "armor": 221,
+   "stats": {
+    "stamina": 10,
+    "intellect": 10,
+    "spirit": 9
+   },
+   "bonus": {
+    "spellCrit": 1
+   },
+   "equip": [
+    "Equip: Improves your chance to get a critical strike with spells by 1%."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "classic",
+   "icon": "inv_gauntlets_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Unfinished Gordok Business",
+     "questId": 1318,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Dire Maul",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/1318",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 56,
+     "rec": 59
+    },
+    {
+     "type": "quest",
+     "quest": "Unfinished Gordok Business",
+     "questId": 7703,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Dire Maul",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/7703",
+     "basis": {
+      "name": "Prince Tortheldrin",
+      "level": 61,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 56,
+     "rec": 58
+    }
+   ]
+  },
+  {
+   "id": 18368,
+   "name": "Gordok's Gloves",
+   "kind": "Leather",
+   "slot": "Hands",
+   "quality": 3,
+   "req": 0,
+   "obtain": 58,
+   "ilvl": 60,
+   "bind": "pickup",
+   "armor": 106,
+   "stats": {
+    "stamina": 10,
+    "intellect": 10,
+    "spirit": 9
+   },
+   "bonus": {
+    "spellCrit": 1
+   },
+   "equip": [
+    "Equip: Improves your chance to get a critical strike with spells by 1%."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "classic",
+   "icon": "inv_gauntlets_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Unfinished Gordok Business",
+     "questId": 1318,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Dire Maul",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/1318",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 56,
+     "rec": 59
+    },
+    {
+     "type": "quest",
+     "quest": "Unfinished Gordok Business",
+     "questId": 7703,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Dire Maul",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/7703",
+     "basis": {
+      "name": "Prince Tortheldrin",
+      "level": 61,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 56,
+     "rec": 58
+    }
+   ]
+  },
+  {
+   "id": 18369,
+   "name": "Gordok's Handwraps",
+   "kind": "Cloth",
+   "slot": "Hands",
+   "quality": 3,
+   "req": 0,
+   "obtain": 58,
+   "ilvl": 60,
+   "bind": "pickup",
+   "armor": 53,
+   "stats": {
+    "stamina": 10,
+    "intellect": 10,
+    "spirit": 9
+   },
+   "bonus": {
+    "spellCrit": 1
+   },
+   "equip": [
+    "Equip: Improves your chance to get a critical strike with spells by 1%."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "classic",
+   "icon": "inv_gauntlets_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Unfinished Gordok Business",
+     "questId": 1318,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Dire Maul",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/1318",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 56,
+     "rec": 59
+    },
+    {
+     "type": "quest",
+     "quest": "Unfinished Gordok Business",
+     "questId": 7703,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Dire Maul",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/7703",
+     "basis": {
+      "name": "Prince Tortheldrin",
+      "level": 61,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 56,
+     "rec": 58
+    }
+   ]
+  },
+  {
    "id": 15796,
    "name": "Seaspray Bracers",
    "kind": "Mail",
@@ -228586,231 +228874,6 @@
       "steps": 7
      },
      "asap": 57,
-     "rec": 59
-    }
-   ]
-  },
-  {
-   "id": 18367,
-   "name": "Gordok's Gauntlets",
-   "kind": "Mail",
-   "slot": "Hands",
-   "quality": 3,
-   "req": 0,
-   "obtain": 59,
-   "ilvl": 60,
-   "bind": "pickup",
-   "armor": 221,
-   "stats": {
-    "stamina": 10,
-    "intellect": 10,
-    "spirit": 9
-   },
-   "bonus": {
-    "spellCrit": 1
-   },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike with spells by 1%."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_gauntlets_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Unfinished Gordok Business",
-     "questId": 1318,
-     "level": 60,
-     "requiredLevel": 56,
-     "zone": "Dire Maul",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "orange": 56,
-      "yellow": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/1318",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 56,
-     "rec": 59
-    },
-    {
-     "type": "quest",
-     "quest": "Unfinished Gordok Business",
-     "questId": 7703,
-     "level": 60,
-     "requiredLevel": 56,
-     "zone": "Dire Maul",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "orange": 56,
-      "yellow": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/7703",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 56,
-     "rec": 59
-    }
-   ]
-  },
-  {
-   "id": 18368,
-   "name": "Gordok's Gloves",
-   "kind": "Leather",
-   "slot": "Hands",
-   "quality": 3,
-   "req": 0,
-   "obtain": 59,
-   "ilvl": 60,
-   "bind": "pickup",
-   "armor": 106,
-   "stats": {
-    "stamina": 10,
-    "intellect": 10,
-    "spirit": 9
-   },
-   "bonus": {
-    "spellCrit": 1
-   },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike with spells by 1%."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_gauntlets_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Unfinished Gordok Business",
-     "questId": 1318,
-     "level": 60,
-     "requiredLevel": 56,
-     "zone": "Dire Maul",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "orange": 56,
-      "yellow": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/1318",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 56,
-     "rec": 59
-    },
-    {
-     "type": "quest",
-     "quest": "Unfinished Gordok Business",
-     "questId": 7703,
-     "level": 60,
-     "requiredLevel": 56,
-     "zone": "Dire Maul",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "orange": 56,
-      "yellow": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/7703",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 56,
-     "rec": 59
-    }
-   ]
-  },
-  {
-   "id": 18369,
-   "name": "Gordok's Handwraps",
-   "kind": "Cloth",
-   "slot": "Hands",
-   "quality": 3,
-   "req": 0,
-   "obtain": 59,
-   "ilvl": 60,
-   "bind": "pickup",
-   "armor": 53,
-   "stats": {
-    "stamina": 10,
-    "intellect": 10,
-    "spirit": 9
-   },
-   "bonus": {
-    "spellCrit": 1
-   },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike with spells by 1%."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_gauntlets_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Unfinished Gordok Business",
-     "questId": 1318,
-     "level": 60,
-     "requiredLevel": 56,
-     "zone": "Dire Maul",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "orange": 56,
-      "yellow": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/1318",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 56,
-     "rec": 59
-    },
-    {
-     "type": "quest",
-     "quest": "Unfinished Gordok Business",
-     "questId": 7703,
-     "level": 60,
-     "requiredLevel": 56,
-     "zone": "Dire Maul",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "orange": 56,
-      "yellow": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/7703",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 56,
      "rec": 59
     }
    ]

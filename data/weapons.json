@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70338",
+ "build": "1.60.1.70374",
  "weapons": [
   {
    "id": 221518,
@@ -8639,6 +8639,89 @@
    ]
   },
   {
+   "id": 276887,
+   "name": "Big Bad Basher",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 1,
+   "obtain": 17,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 15.97,
+   "speed": 3.1,
+   "dmgMin": 39,
+   "dmgMax": 60,
+   "stats": {
+    "strength": 4,
+    "stamina": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_hammer_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Chol'aruk the Ravener (Horde)",
+     "questId": 97003,
+     "level": 21,
+     "requiredLevel": 15,
+     "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97003",
+     "basis": {
+      "name": "Chol'aruk",
+      "level": 20,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 15,
+     "rec": 17
+    },
+    {
+     "type": "quest",
+     "quest": "Chol'aruk the Ravener (Alliance)",
+     "questId": 97005,
+     "level": 21,
+     "requiredLevel": 15,
+     "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97005",
+     "basis": {
+      "name": "Chol'aruk",
+      "level": 20,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 15,
+     "rec": 17
+    }
+   ]
+  },
+  {
    "id": 273456,
    "name": "Cell Keeper's Claws",
    "kind": "Fist",
@@ -9476,6 +9559,93 @@
       "from": "wowhead",
       "group": false,
       "steps": 3
+     },
+     "asap": 15,
+     "rec": 17
+    }
+   ]
+  },
+  {
+   "id": 276888,
+   "name": "Quilboar Toothpick",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 1,
+   "obtain": 17,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 8.06,
+   "speed": 1.8,
+   "dmgMin": 10,
+   "dmgMax": 19,
+   "stats": {
+    "intellect": 2,
+    "spirit": 2
+   },
+   "bonus": {
+    "spellPower": 16
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 16."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Chol'aruk the Ravener (Horde)",
+     "questId": 97003,
+     "level": 21,
+     "requiredLevel": 15,
+     "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97003",
+     "basis": {
+      "name": "Chol'aruk",
+      "level": 20,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 15,
+     "rec": 17
+    },
+    {
+     "type": "quest",
+     "quest": "Chol'aruk the Ravener (Alliance)",
+     "questId": 97005,
+     "level": 21,
+     "requiredLevel": 15,
+     "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97005",
+     "basis": {
+      "name": "Chol'aruk",
+      "level": 20,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
      },
      "asap": 15,
      "rec": 17
@@ -11775,81 +11945,6 @@
    ]
   },
   {
-   "id": 276887,
-   "name": "Big Bad Basher",
-   "kind": "2H Mace",
-   "quality": 2,
-   "req": 1,
-   "obtain": 20,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 15.97,
-   "speed": 3.1,
-   "dmgMin": 39,
-   "dmgMax": 60,
-   "stats": {
-    "strength": 4,
-    "stamina": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_hammer_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Chol'aruk the Ravener (Horde)",
-     "questId": 97003,
-     "level": 21,
-     "requiredLevel": 15,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 15,
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97003",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 15,
-     "rec": 20
-    },
-    {
-     "type": "quest",
-     "quest": "Chol'aruk the Ravener (Alliance)",
-     "questId": 97005,
-     "level": 21,
-     "requiredLevel": 15,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 15,
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97005",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 15,
-     "rec": 20
-    }
-   ]
-  },
-  {
    "id": 274744,
    "name": "Barrens Basher",
    "kind": "1H Mace",
@@ -12358,85 +12453,6 @@
       "steps": 7
      },
      "asap": 20,
-     "rec": 20
-    }
-   ]
-  },
-  {
-   "id": 276888,
-   "name": "Quilboar Toothpick",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 1,
-   "obtain": 20,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 8.06,
-   "speed": 1.8,
-   "dmgMin": 10,
-   "dmgMax": 19,
-   "stats": {
-    "intellect": 2,
-    "spirit": 2
-   },
-   "bonus": {
-    "spellPower": 16
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 16."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_weapon_shortblade_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Chol'aruk the Ravener (Horde)",
-     "questId": 97003,
-     "level": 21,
-     "requiredLevel": 15,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 15,
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97003",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 15,
-     "rec": 20
-    },
-    {
-     "type": "quest",
-     "quest": "Chol'aruk the Ravener (Alliance)",
-     "questId": 97005,
-     "level": 21,
-     "requiredLevel": 15,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 15,
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97005",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 15,
      "rec": 20
     }
    ]
