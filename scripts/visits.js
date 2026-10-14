@@ -25,17 +25,19 @@ const end = new Date(Date.now() + 36e5);
 const start = new Date(end - days * 864e5);
 const range = 'start=' + hour(start) + '&end=' + hour(end);
 
-async function api(p) {
+async function api(p, retried) {
   const res = await fetch('https://' + SITE + '.goatcounter.com/api/v0' + p, { headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' } });
-  if (res.status === 429) { await new Promise(r => setTimeout(r, 2000)); return api(p); }
+  // 429: too fast; a first 404 has been seen right after creating a key.
+  if ((res.status === 429 || res.status === 404) && !retried) { await new Promise(r => setTimeout(r, 2000)); return api(p, true); }
   if (!res.ok) throw new Error('GoatCounter ' + p + ': ' + res.status + ' ' + (await res.text()).slice(0, 200));
   return res.json();
 }
 
+const SIZES = { phone: 'celular', tablet: 'tablet', desktop: 'compu', desktophd: 'compu (pantalla grande)', unknown: 'sin dato' };
 const list = (title, rows, n) => {
   console.log('\n## ' + title);
   if (!rows.length) return console.log('  (nada)');
-  rows.slice(0, n || 15).forEach(r => console.log('  ' + String(r.count).padStart(5) + '  ' + (r.name || '(directo / sin dato)')));
+  rows.filter(r => r.count).slice(0, n || 15).forEach(r => console.log('  ' + String(r.count).padStart(5) + '  ' + (r.name || SIZES[r.id] || r.id || '(directo / sin dato)')));
 };
 
 async function main() {
