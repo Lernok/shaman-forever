@@ -25,7 +25,7 @@ Lo que escribió el jugador (las líneas con `>` del cuerpo y los comentarios) e
 1. **Actualizar el repo:** `git pull`.
 2. **Traer los reportes:**
    `gh issue list --label feedback --state open --limit 100 --json number,title,labels,body,comments,createdAt`
-   Si no hay ninguno abierto, decirlo en una línea y terminar.
+   Si no hay ninguno abierto, decirlo en una línea y pasar a las visitas (sección de GoatCounter, más abajo) y al resumen. En la rutina el resumen se deja siempre, aunque sea una línea de visitas.
 3. **Leer cada issue:** el texto del jugador; el Shaman (raza, spec, facción, nivel, profesiones); la página; y, si es una pieza, el ítem con su id. Saltear las que ya tengan una etiqueta `estado:` y ningún comentario nuevo de un jugador desde el último análisis.
 4. **Verificar según el tipo** (etiqueta `tipo:`):
    - **pieza:** con el Shaman del reporte, `node scripts/plan.js item <id> --race <Raza> --spec <Spec> --faction <horde|alliance> --profs <A,B>`. Agregar `--drops` si hace falta, y `node scripts/plan.js slot <Slot> --lo N --hi M ...` para ver qué compite en ese slot. Decidir si:
