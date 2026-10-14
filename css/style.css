@@ -1241,3 +1241,5 @@ details.wp-all[open] > summary { margin-bottom: 10px; }
 .feedback-btn { text-decoration: none; border-color: var(--accent); color: var(--text); }
 .gp-report { font-size: 11px; color: var(--text-dim); align-self: flex-start; }
 .gp-report:hover { color: var(--accent); }
+.page-error { max-width: 640px; margin: 48px auto; padding: 24px; text-align: center; border: 1px solid var(--border); border-radius: 12px; }
+.page-error p { color: var(--text-dim); margin: 8px 0 16px; }

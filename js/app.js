@@ -43,6 +43,22 @@
     if (fb) fb.innerHTML = href ? '<a class="btn feedback-btn" href="' + href + '" target="_blank" rel="noopener">' + t('fb.button') + '</a><span class="dim">' + t('fb.note') + '</span>' : '';
   }
 
+  // Errors on visitors' browsers reach the visit counter as events
+  // ("error/Page: message"), once per message and visit: the dashboard shows
+  // what breaks out there without anyone having to report it.
+  const reported = new Set();
+  function reportError(e, page) {
+    const msg = String(e && e.message || e || 'error').replace(/\s+/g, ' ').slice(0, 120);
+    const path = 'error/' + (page || currentPage) + ': ' + msg;
+    if (reported.has(path) || !Site.GOATCOUNTER) return;
+    reported.add(path);
+    const send = () => window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path, title: msg, event: true });
+    if (window.goatcounter && window.goatcounter.count) send();
+    else setTimeout(send, 3000); // the counter's script may still be loading
+  }
+  window.addEventListener('error', e => reportError(e.error || e.message));
+  window.addEventListener('unhandledrejection', e => reportError(e.reason));
+
   // Anonymous visit counter: one count per page shown (the hash names it).
   function countVisit(page) {
     if (!Site.GOATCOUNTER) return;
@@ -61,8 +77,19 @@
   // ---------- pages ----------
 
   // After drawing: the section strip scrolls to the open section (it scrolls sideways on phones).
+  // A page that breaks shows a message with the report button instead of a
+  // blank screen, and the error is counted (reportError).
   function render(page) {
-    draw(page);
+    try {
+      draw(page);
+    } catch (e) {
+      console.error(e);
+      reportError(e, page);
+      const href = Site.feedbackLink(t('err.kind'), String(e && e.message || e).slice(0, 200));
+      app.innerHTML = '<section class="page-error"><h2>' + t('err.title') + '</h2><p>' + t('err.text') + '</p>' +
+        (href ? '<a class="btn feedback-btn" href="' + href + '" target="_blank" rel="noopener">' + t('fb.button') + '</a>' : '') + '</section>';
+      return;
+    }
     const active = app.querySelector('.subtab.active');
     if (active) active.parentElement.scrollLeft = active.offsetLeft - 16;
   }

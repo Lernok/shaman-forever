@@ -1,7 +1,8 @@
 // Static checks on the site's code (no browser): run by CI on every push.
 //   - the interface strings: Spanish and English have the same keys and the
 //     same {placeholders}; every key the code names literally exists;
-//   - index.html only loads files that exist.
+//   - index.html only loads files that exist;
+//   - the data bundles hold no markup.
 // What only shows when the pages run is scripts/smoke.js.
 //
 //   node scripts/check-site.js
@@ -37,6 +38,19 @@ files.concat('index.html').forEach(f => {
 const html = read('index.html');
 [...html.matchAll(/(?:src|href)="((?:js|data|css|img)\/[^"?]+)/g)].forEach(m => {
   if (!fs.existsSync(path.join(root, m[1]))) errors.push('index.html: carga ' + m[1] + ', que no existe');
+});
+
+// The data bundles are plain text (pages put them into HTML as they are): a
+// "<" or ">" coming from a source could inject markup into the site.
+fs.readdirSync(path.join(root, 'data')).filter(f => f.endsWith('.js')).forEach(f => {
+  const box = { window: {} };
+  vm.runInNewContext(read('data/' + f), box);
+  let found = 0;
+  const walk = (v, where) => {
+    if (typeof v === 'string') { if (/[<>]/.test(v) && found++ < 3) errors.push('data/' + f + ' ' + where + ': trae "<" o ">": ' + v.slice(0, 80)); }
+    else if (v && typeof v === 'object') for (const k in v) walk(v[k], where + '.' + k);
+  };
+  Object.keys(box.window).forEach(k => walk(box.window[k], k));
 });
 
 if (errors.length) {

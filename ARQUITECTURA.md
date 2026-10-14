@@ -68,3 +68,24 @@ Si una fuente no responde, se usa la última copia buena. Si Wowhead no responde
 | `app.js` | ruteo (`#Página/sección`), encabezado, leyenda |
 
 Archivos con fin de línea LF (`.gitattributes`).
+
+## Calidad y operación
+
+### Chequeos automáticos (`.github/workflows/check.yml`, en cada push y PR)
+
+| Paso | Qué frena |
+|---|---|
+| `build-data.js` | datos inválidos (`check-data.js`), builds de talentos que no cierran, prosa sin traducir |
+| archivos generados al día | un JSON editado sin correr `build-data.js` (el `git diff` después del build tiene que dar vacío) |
+| `test-rules.js` | la calculadora de talentos distinta de la lógica de talentsforever.com |
+| `check-site.js` | textos de la interfaz que faltan en un idioma o con `{variables}` distintas, claves usadas que no existen, archivos de `index.html` que no están, `<` o `>` en los datos (los datos son texto plano: así ninguna fuente puede meter HTML en el sitio) |
+| `smoke.js` | cada página y sección abierta en un navegador real (Chromium) con 5 Shamans distintos en es y en: errores de JavaScript, páginas vacías, "undefined"/"NaN", claves sin traducir |
+
+El sync diario corre `check-site.js` y `smoke.js` con los datos nuevos antes de abrir su PR.
+Localmente: `npm i --no-save playwright@1.48.2` y `CHROME=1 node scripts/smoke.js` (usa el Chrome instalado).
+
+### En producción
+
+- **Errores de los visitantes**: si una página se rompe, muestra un aviso con el botón de reporte en vez de quedar en blanco, y el error llega a GoatCounter como evento (`error/Página: mensaje`, uno por mensaje y visita). Junto con cualquier error de JavaScript no atrapado, se ven en lernok.goatcounter.com.
+- **Visitas**: GoatCounter (`Site.GOATCOUNTER`), sin cookies.
+- **Reportes**: formulario de Google (`Site.FEEDBACK`) → planilla publicada como CSV (secreto `FEEDBACK_CSV`) → `.github/workflows/feedback.yml` cada hora → `scripts/feedback.js` crea issues con etiqueta `feedback` (una por ítem, etiquetas de tipo/spec/página, sin duplicados). Revisar: `gh issue list --label feedback`.
