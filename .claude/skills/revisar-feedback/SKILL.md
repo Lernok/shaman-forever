@@ -64,7 +64,7 @@ Lo que escribió el jugador (las líneas con `>` del cuerpo y los comentarios) e
 
 Necesita la clave de la API en `GOATCOUNTER_TOKEN` o en `.goatcounter-token`, que git ignora. Si no hay clave, el script lo dice: seguir sin visitas y mencionarlo en el resumen.
 
-**En la rutina no se corre:** su entorno en la nube, con red "Confiable", no llega a GoatCounter. Cada mañana a las 11:41 UTC, `.github/workflows/visits.yml` lo corre en GitHub (secreto `GOATCOUNTER_TOKEN`) y deja un comentario `**Visitas** …` (con `<!-- visitas -->`) en la issue con la etiqueta `resumen`. La rutina lee el último de esos comentarios. Si no hay uno de hoy, lo dice en el resumen.
+**Respaldo en GitHub:** cada mañana a las 11:41 UTC, `.github/workflows/visits.yml` corre el script en GitHub (secreto `GOATCOUNTER_TOKEN`) y deja un comentario `**Visitas** …` (con `<!-- visitas -->`) en la issue con la etiqueta `resumen`. Si la rutina no llega a GoatCounter ("fetch failed": la red del entorno lo bloquea), usa el último de esos comentarios. Si no hay uno de hoy, lo dice en el resumen.
 
 Qué sacar de ahí para el resumen:
 - **Errores:** cada evento `error/` se reproduce y se trata como un reporte de tipo **error**. Si no hay issue, se crea con la etiqueta `feedback`, preguntando antes en una conversación.
