@@ -11,7 +11,7 @@
     // Feedback goes to a Google Form (answers land in its sheet, not an inbox).
     // url: the form's "viewform" link; fields: entry ids from its prefilled
     // link, so a report arrives with what the person was looking at.
-    FEEDBACK: { url: '', fields: { kind: '', context: '' } },
+    FEEDBACK: { url: 'https://docs.google.com/forms/d/e/1FAIpQLSfkp8ZYjanltzj9XBkwoEmwO7oJJepL2QrO1eSzHfb_O2ZxKA/viewform', fields: { kind: '', context: 'entry.663155691' } },
     // Anonymous visit counter (goatcounter.com, no cookies): the site's code.
     GOATCOUNTER: 'lernok',
     SPECS,
@@ -63,7 +63,7 @@
       const F = Site.FEEDBACK;
       if (!F.url) return null;
       const profs = window.UI.store.get('profs', []).join('+') || '-';
-      const context = [location.hash || '#Inicio', Site.race + ' ' + Site.spec + ' (' + Site.faction + ')', profs, 'lvl ' + window.UI.store.get('level', 1), extra || ''].filter(Boolean).join(' | ');
+      const context = [F.fields.kind ? '' : kind, location.hash || '#Inicio', Site.race + ' ' + Site.spec + ' (' + Site.faction + ')', profs, 'lvl ' + window.UI.store.get('level', 1), extra || ''].filter(Boolean).join(' | ');
       const q = [];
       if (F.fields.kind && kind) q.push(F.fields.kind + '=' + encodeURIComponent(kind));
       if (F.fields.context) q.push(F.fields.context + '=' + encodeURIComponent(context));
