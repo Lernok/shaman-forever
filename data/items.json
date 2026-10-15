@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70338",
+ "build": "1.60.1.70374",
  "eraBuild": "1.15.9.70003",
  "items": {
   "720": {
@@ -3316,7 +3316,7 @@
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_gauntlets_04"
   },
   "1664": {
@@ -36382,14 +36382,17 @@
    "era": "classic",
    "stats": {
     "stamina": 7,
-    "intellect": 7,
     "spirit": 7
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+   ],
    "use": [],
    "chance": [],
-   "bonus": {},
-   "numbers": "classic",
+   "bonus": {
+    "spellPower": 8
+   },
+   "numbers": "forever",
    "icon": "inv_jewelry_amulet_01"
   },
   "7723": {
@@ -192050,6 +192053,32 @@
    },
    "numbers": "forever",
    "icon": "inv_axe_04"
+  },
+  "284065": {
+   "id": 284065,
+   "name": "Crown of Maldazzar",
+   "kind": "Cloth",
+   "slot": "Head",
+   "quality": 2,
+   "req": 53,
+   "ilvl": 58,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 61,
+   "stats": {
+    "stamina": 17
+   },
+   "equip": [
+    "Equip: Increases damage done by Shadow spells and effects by up to 24."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "otherDamage": 24
+   },
+   "numbers": "forever",
+   "icon": "inv_helmet_12"
   },
   "284067": {
    "id": 284067,

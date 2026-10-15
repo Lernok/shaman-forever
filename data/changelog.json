@@ -2,6 +2,15 @@
  "_readme": "Game data changes found by scripts/sync.js, newest first (one entry per sync day that found changes).",
  "entries": [
   {
+   "date": "2026-10-14",
+   "talents": [],
+   "items": [
+    "- **Triune Amulet** #7722: stats {\"stamina\":7,\"intellect\":7,\"spirit\":7} → {\"stamina\":7,\"spirit\":7}; efectos cambiados",
+    "- Ítem nuevo: **Crown of Maldazzar** (Cloth, nivel 53) #284065"
+   ],
+   "build": "1.60.1.70374"
+  },
+  {
    "date": "2026-10-12",
    "build": "1.60.1.70338",
    "talents": [],
