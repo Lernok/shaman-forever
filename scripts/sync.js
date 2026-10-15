@@ -292,7 +292,11 @@ function diffItems(prev, next) {
   if (tfText == null) throw new Error('sin datos de talentsforever.com');
   const shaman = JSON.parse(tfText);
   const talentLines = diffTalents(prevShaman, shaman);
-  require('./lib/files').writeText('data/shaman.json', tfText); // as published, not reformatted
+  // talentsforever re-exports now and then with only a new date: keep the old
+  // file then, so the sync doesn't open a pull request for nothing.
+  const undated = s => JSON.stringify(Object.assign({}, s, { generated: null }));
+  if (prevShaman && undated(prevShaman) === undated(shaman)) shaman.generated = prevShaman.generated;
+  else require('./lib/files').writeText('data/shaman.json', tfText); // as published, not reformatted
 
   // Item sources: QuestieDB's Forever files (refreshed daily) and zone names
   // from the client. Needed first: QuestieDB also tells which streamed items exist.
