@@ -38,11 +38,14 @@
     n.addEventListener('touchend', e => { clearTimeout(timer); if (fired) e.preventDefault(); });
     n.addEventListener('contextmenu', e => { if (isTouch()) e.preventDefault(); });
   }
-  // On a phone: across the screen, on the half your finger isn't on.
+  // On a phone: across the screen, on the half your finger isn't on (above
+  // the bottom menu bar).
   function placeTouch(b, r) {
     const h = b.offsetHeight;
+    const bar = document.getElementById('bottomNav');
+    const bottom = window.innerHeight - (bar ? bar.offsetHeight : 0);
     b.style.left = '8px';
-    b.style.top = (r.top + r.height / 2 > window.innerHeight / 2 ? 8 : Math.max(8, window.innerHeight - h - 8)) + 'px';
+    b.style.top = (r.top + r.height / 2 > bottom / 2 ? 8 : Math.max(8, bottom - h - 8)) + 'px';
   }
 
   const tip = {

@@ -464,7 +464,7 @@ ul.plain.ordered li::before {
 .req-arrow.met { background: var(--gold); }
 .req-arrow.met::after { border-top-color: var(--gold); }
 
-.calc-tip { position: fixed; top: 0; left: 0; z-index: 50; pointer-events: none; width: 300px; }
+.calc-tip { position: fixed; top: 0; left: 0; z-index: 95; pointer-events: none; width: 300px; }
 .calc-tip.touch { width: calc(100vw - 16px); max-width: 420px; }
 /* Hints for mouse or touch only. */
 @media (hover: none) { .mouse-only { display: none; } }
