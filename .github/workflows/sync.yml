@@ -19,12 +19,14 @@ concurrency:
 
 jobs:
   sync:
-    runs-on: ubuntu-latest
+    # Pinned: ubuntu-latest moves to Ubuntu 26 from 2026-10-19, which the
+    # pinned Playwright (smoke.js) may not install on.
+    runs-on: ubuntu-24.04
     timeout-minutes: 180
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
 
@@ -33,7 +35,7 @@ jobs:
       # Restore and save are separate so a run that fails or times out still
       # keeps what it downloaded and the next one picks up from there (a new
       # game build can mean thousands of Wowhead tooltips at once).
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v5
         with:
           path: .cache
           key: sync-cache-${{ github.run_id }}
@@ -45,7 +47,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/cache/save@v4
+      - uses: actions/cache/save@v5
         if: always()
         with:
           path: .cache
@@ -60,13 +62,14 @@ jobs:
           npx playwright install --with-deps chromium
           node scripts/smoke.js
 
-      # meta.json and the report change on every run (sync date); only open a
-      # pull request when the data itself changed.
+      # meta.json, the report and index.html (meta.js's version stamp) change
+      # on every run (sync date); only open a pull request when the data itself
+      # changed. When it did, index.html goes along with it.
       - name: Open or update the pull request
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -z "$(git status --porcelain -- . ':!data/meta.json' ':!data/meta.js' ':!reports')" ]; then
+          if [ -z "$(git status --porcelain -- . ':!data/meta.json' ':!data/meta.js' ':!reports' ':!index.html')" ]; then
             echo "Sin cambios en los datos."
             exit 0
           fi
