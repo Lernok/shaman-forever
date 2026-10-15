@@ -89,7 +89,7 @@ full.forEach(item => {
       dg(s.zone).drops.push({ i: item.id, b: s.npc });
       used.add(item.id);
     }
-    if (s.type === 'quest' && s.dungeon && s.zone) {
+    if (s.type === 'quest' && s.dungeon && s.zone && (Z.dungeons[s.zone] || Object.values(INSTANCES).includes(s.zone))) {
       dg(s.zone).quests.push({ q: s.questId, qn: s.quest.replace(/ \(given by [^)]*\)/, ''), i: item.id, f: s.faction === 'both' ? undefined : s.faction, l: s.level });
       used.add(item.id);
     }
@@ -99,6 +99,150 @@ Object.values(dungeons).forEach(d => {
   d.drops.sort((a, b) => a.i - b.i);
   d.quests.sort((a, b) => (a.q || 0) - (b.q || 0) || a.i - b.i);
 });
+// Quest givers and every dungeon's quests, from QuestieDB's Forever files
+// (cached by scripts/sync.js): only facts per quest (name, levels, who gives
+// it and where), never its files. Without the cache the addon still works,
+// with no "pick this up" tips.
+const { parseLua } = require('./lib/questie.js');
+const cache = path.join(root, '.cache');
+const qdir = path.join(cache, 'questiedb');
+const givers = {};
+const dquests = {};
+if (fs.existsSync(path.join(qdir, 'foreverQuestDB.lua'))) {
+  const index = file => {
+    const m = new Map();
+    fs.readFileSync(path.join(qdir, file), 'utf8').split('\n').forEach(line => {
+      const r = /^\[(\d+)\] = (\{.*\}),?\s*$/.exec(line);
+      if (r) m.set(+r[1], r[2]);
+    });
+    return m;
+  };
+  const Q = index('foreverQuestDB.lua'), N = index('foreverNpcDB.lua');
+  const get = (m, id) => (m.has(id) ? parseLua(m.get(id)) : null);
+  const wago = path.join(cache, 'wago');
+  const dir = fs.readdirSync(wago).filter(d => d.startsWith('1.60')).sort().pop();
+  const { parseCSV } = require('./lib/csv.js');
+  const areaName = {};
+  parseCSV(fs.readFileSync(path.join(wago, dir, 'AreaTable.csv'), 'utf8')).forEach(r => { areaName[r.ID] = r.AreaName_lang; });
+  areaName[1585] = 'Blackrock Depths';
+  // Dungeon quests: quest log heading (zoneOrSort) is a dungeon we know.
+  const SHAMAN = 64;
+  const HORDE = 2 | 16 | 32 | 128, ALLIANCE = 1 | 4 | 8 | 64;
+  const factionOf = mask => { if (!mask) return undefined; const a = (mask & ALLIANCE) !== 0, h = (mask & HORDE) !== 0; return a && !h ? 'alliance' : h && !a ? 'horde' : undefined; };
+  // Who gives a quest: the first NPC with a location (name, zone, x, y).
+  const giver = qid => {
+    const q = get(Q, qid);
+    if (!q) return null;
+    for (const nid of ((q[1] || [])[0] || [])) {
+      const n = get(N, nid);
+      if (!n) continue;
+      const spawns = n[6] || {};
+      const zid = Object.keys(spawns).find(z => areaName[z]) || n[8];
+      const xy = (spawns[zid] || [])[0] || [];
+      return { n: n[0], z: +zid || undefined, x: xy[0], y: xy[1] };
+    }
+    return (((q[1] || [])[2] || []).length) ? { item: true } : null;
+  };
+  const known = new Set(Object.keys(Z.dungeons).concat(Object.values(INSTANCES)));
+  Q.forEach((raw, qid) => {
+    const q = get(Q, qid);
+    const dname = q[16] > 0 ? areaName[q[16]] : null;
+    if (!dname || !known.has(dname) || RAID.test(dname)) return;
+    if (q[6] && !(q[6] & SHAMAN)) return;
+    const pre = (q[12] || [])[0] || (q[11] || [])[0];
+    const preQ = pre ? get(Q, pre) : null;
+    (dquests[dname] = dquests[dname] || []).push({ q: qid, qn: q[0], r: q[3] || undefined, l: q[4] || undefined, f: factionOf(q[5]),
+      p: pre || undefined, pn: preQ ? preQ[0] : undefined });
+    givers[qid] = giver(qid);
+  });
+  // Forever's new dungeons aren't under their own heading in QuestieDB: their
+  // quests come from the site's data (quests that reward something).
+  Object.entries(dungeons).forEach(([dname, d]) => d.quests.forEach(x => {
+    const list = dquests[dname] = dquests[dname] || [];
+    if (!x.q || list.some(e => e.q === x.q)) return;
+    const q = get(Q, x.q);
+    list.push({ q: x.q, qn: x.qn, r: q ? q[3] || undefined : undefined, l: x.l, f: x.f });
+    givers[x.q] = giver(x.q);
+  }));
+  // foreverchanges.pro/dungeon-quests (cached by fetch-item-sources.js): the
+  // Forever list, with the place you pick each one up, who gives it and where
+  // (or "inside the dungeon", or the item that starts it). It wins over
+  // QuestieDB, which lacks Forever's new dungeons.
+  const fcFile = path.join(cache, 'foreverchanges', 'dungeon-quests.html');
+  if (fs.existsSync(fcFile)) {
+    const top = {};
+    parseCSV(fs.readFileSync(path.join(wago, dir, 'AreaTable.csv'), 'utf8')).forEach(r => { if (r.ParentAreaID === '0' && !top[r.AreaName_lang]) top[r.AreaName_lang] = +r.ID; });
+    const areaOf = place => Z.zones[place] && Z.zones[place].id || CITIES[place] || top[place];
+    const dungeonOf = f => {
+      const n = f.replace(/^the /, '');
+      return [n, 'The ' + n].find(x => Z.dungeons[x] || Object.values(INSTANCES).includes(x)) || Object.values(INSTANCES).find(x => x.startsWith(n));
+    };
+    const dec = s => s.replace(/<!-- -->/g, '').replace(/&#x27;/g, "'").replace(/&amp;/g, '&').replace(/&quot;/g, '"');
+    const html = fs.readFileSync(fcFile, 'utf8');
+    const re = /<h3 class="dq-place-name">([^<]*)<\/h3>|<li data-q="(\d+)" data-min="(\d*)" data-ql="(\d*)" data-for="(\w*)"[^>]*>(.*?)<\/li>/g;
+    let m, place = null, n = 0;
+    while ((m = re.exec(html))) {
+      if (m[1] !== undefined) { place = dec(m[1]); continue; }
+      const body = dec(m[6]);
+      const name = (body.match(/dq-tl-q">([^<]*)/) || [])[1];
+      const dname = dungeonOf((body.match(/dq-tl-for">, for (.*?)<\/span>/) || [])[1] || '');
+      const small = ((body.match(/<small>(.*?)<\/small>/) || [])[1] || '').replace(/<[^>]+>/g, '');
+      if (!name || !dname) continue;
+      const qid = +m[2];
+      const list = dquests[dname] = dquests[dname] || [];
+      let e = list.find(x => x.q === qid);
+      if (!e) { e = { q: qid }; list.push(e); }
+      const after = (small.match(/After [“"](.*?)[”"]/) || [])[1];
+      Object.assign(e, { qn: name, r: +m[3] || e.r, l: +m[4] || e.l, f: m[5] === 'h' ? 'horde' : m[5] === 'a' ? 'alliance' : e.f, pn: after || e.pn });
+      const item = (small.match(/^Starts with (.*)$/) || [])[1];
+      const g = /^([^,]+), (?:inside the dungeon|(\d+(?:\.\d+)?), (\d+(?:\.\d+)?))/.exec(small);
+      if (item) givers[qid] = { item };
+      else if (g && !g[2]) givers[qid] = { n: g[1], inside: true };
+      else if (g) givers[qid] = { n: g[1], z: areaOf(place), x: +g[2], y: +g[3] };
+      n++;
+    }
+    console.log('foreverchanges: ' + n + ' misiones de dungeon');
+  }
+  // Where a chain starts: the giver of each quest before a dungeon quest.
+  Object.values(dquests).forEach(l => l.forEach(e => { if (e.p && !(e.p in givers)) givers[e.p] = giver(e.p); }));
+  Object.values(dquests).forEach(l => l.sort((a, b) => (a.l || 0) - (b.l || 0) || a.q - b.q));
+  // Givers of the quests on the gear path too.
+  Object.values(paths).forEach(r => Object.values(r).forEach(p => p.forEach(st => { if (st.q && !(st.q in givers)) givers[st.q] = giver(st.q); })));
+  Object.keys(givers).forEach(k => { if (!givers[k]) delete givers[k]; });
+} else console.warn('Sin .cache/questiedb (correr scripts/sync.js): el addon va sin quién da cada misión.');
+// AreaTable id -> the world map (uiMapID) TomTom places waypoints on, from
+// QuestieDB's support tables when it's installed next to the game.
+const uiMaps = {};
+const support = process.env.QUESTIEDB || 'D:/World of Warcraft/_classic_beta_/Interface/AddOns/QuestieDB/support';
+[path.join(support, 'Zones', 'areaIdToUiMapId.lua'), path.join(support, 'Forever', 'Zones', 'areaIdToUiMapId.lua')].forEach(f => {
+  if (!fs.existsSync(f)) return;
+  fs.readFileSync(f, 'utf8').split('\n').forEach(line => {
+    const m = /^\s*\[(\d+)\]\s*=\s*(\d+),/.exec(line);
+    if (m && +m[2] > 0) uiMaps[m[1]] = +m[2];
+  });
+});
+const wanted = new Set(Object.values(givers).map(g => g.z).filter(Boolean).map(String));
+Object.keys(uiMaps).forEach(k => { if (!wanted.has(k)) delete uiMaps[k]; });
+
+// Level range of every dungeon (foreverchanges', else its quests' band).
+const dlevels = {};
+Object.entries(Z.dungeons).forEach(([n, d]) => { if (d.levels) dlevels[n] = d.levels; });
+
+// Talent at each level: the leveling order to 60 of each spec (the site's
+// talentsforever.com orders, Talentos > Calculadora), one point per level.
+const rules = require('../js/talent-rules.js');
+const shaman = read('data/shaman.json');
+const maxRank = {};
+shaman.talents.trees.forEach(t => t.talents.forEach(x => { maxRank[t.name + '/' + x.name] = x.max; }));
+const talents = {};
+SPECS.forEach(spec => {
+  const b = read('data/builds.json').builds.filter(x => x.spec === spec && x.order).sort((a, b) => b.level - a.level)[0];
+  if (!b) return;
+  const at = {};
+  rules.orderPoints(b.order).forEach(pt => { at[pt.level] = [pt.talent, pt.rank, maxRank[pt.tree + '/' + pt.talent] || pt.rank, pt.tree]; });
+  talents[spec] = { name: b.name, at };
+});
+
 const names = {};
 used.forEach(id => { names[id] = (full.get(id) || {}).name; });
 
@@ -127,9 +271,9 @@ function lua(v, ind) {
 
 const out = '-- Generated by scripts/build-addon.js from the site\'s data (build ' + build + '). Do not edit.\n' +
   'local _, SF = ...\n' +
-  'SF.DATA = ' + lua({ build, specs: SPECS, cost: GP.COST, weights: GP.WEIGHTS, upgrade: GP.UPGRADE, instances: INSTANCES, zones, items, names, paths, dungeons }) + '\n';
+  'SF.DATA = ' + lua({ build, talents, dlevels, givers, dquests, uiMaps, specs: SPECS, cost: GP.COST, weights: GP.WEIGHTS, upgrade: GP.UPGRADE, instances: INSTANCES, zones, items, names, paths, dungeons }) + '\n';
 const dest = path.join(root, 'addon', 'ShamanForever', 'Data.lua');
 fs.mkdirSync(path.dirname(dest), { recursive: true });
 fs.writeFileSync(dest, out);
 const n = Object.values(paths).reduce((s, r) => s + Object.values(r).reduce((t, p) => t + p.length, 0), 0);
-console.log('Data.lua: ' + Object.keys(items).length + ' items, ' + n + ' path steps, ' + Object.keys(dungeons).length + ' dungeons, ' + Math.round(out.length / 1024) + ' KB');
+console.log('Data.lua: ' + Object.keys(items).length + ' items, ' + n + ' path steps, ' + Object.keys(dungeons).length + ' dungeons, ' + Object.keys(givers).length + ' givers, ' + Object.values(dquests).reduce((s, l) => s + l.length, 0) + ' dungeon quests, ' + Object.keys(uiMaps).length + ' maps, ' + Math.round(out.length / 1024) + ' KB');

@@ -40,7 +40,9 @@ function GetItemInfo() return nil end
 function GetItemCount() return 0 end
 function GetItemIcon() return 1 end
 function IsQuestFlaggedCompleted(id) return false end
-function GetQuestLogIndexByID(id) return id == 914 and 1 or 0 end
+local carrying = {}
+for q in (os.getenv("ONQUEST") or ""):gmatch("%d+") do carrying[tonumber(q)] = true end
+function GetQuestLogIndexByID(id) return carrying[id] and 1 or 0 end
 function GetAddOnMetadata() return "0.1.0" end
 function time() return 0 end
 C_Timer = { After = function(_, fn) fn() end }
@@ -54,11 +56,15 @@ ev:fire("ADDON_LOADED", "ShamanForever")
 
 local function dump(title, tips)
   print("== " .. title .. " (" .. #tips .. ")")
-  for _, t in ipairs(tips) do print("  " .. t.head .. " | " .. (t.src:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")) .. " | " .. t.gain .. "  [" .. t.key .. "]") end
+  for _, t in ipairs(tips) do print("  " .. t.head .. " | " .. (t.src:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")) .. " | " .. (t.gain or "") .. "  [" .. t.key .. "]" .. (t.lines and (" " .. table.concat(t.lines, ", ")) or "")) end
 end
 print(race, spec, "nivel " .. level, zone, inst or "")
-dump("Próximos", SF.test.pathTips())
+dump("Lo que viene", SF.test.upcoming())
 dump("En la zona", SF.test.zoneTips())
+print("Talento:", SF.test.talentLine(level))
+TomTom = { AddWaypoint = function(_, map, x, y, o) print("TOMTOM", map, x, y, o.title) end }
+local first = SF.test.zoneTips()[1]
+if first and first.giver then SF.test.waypoint(first.giver, first.title or first.head) end
 if inst then dump("Dungeon", SF.test.dungeonTips(SF.DATA.instances[inst])) end
 -- Popups: the first time shows, the second doesn't.
 print("-- entrar a la zona dos veces:")

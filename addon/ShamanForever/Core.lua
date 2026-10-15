@@ -1,36 +1,47 @@
 -- Shaman: Forever, the in-game side of https://lernok.github.io/shaman-forever/
 -- It warns, it never leads: a few levels before a quest or a vendor gives you
 -- an upgrade (the site's gear path, Data.lua), when you walk into a zone that
--- has one, and when you enter a dungeon (what its bosses and quests give that
--- beats what you wear). A tip shows by itself once; "Done" hides it for good.
--- It also keeps a log of levels, zones and dungeons for the planner's research.
+-- has one or that gives quests for a dungeon coming up, and when you enter a
+-- dungeon (what its bosses and quests give that beats what you wear). A tip
+-- shows by itself once; "Done" hides it for good. On level up it also says
+-- where the talent point goes. It keeps a log of levels, zones, dungeons and
+-- quests for the planner's research.
 local ADDON, SF = ...
 local D = SF.DATA
 
 -- Saved state: account (language) and character (spec, tips seen and done,
 -- the log).
 local db, cdb
-local DEFAULTS = { spec = "Enhancement", lead = 2, quiet = false }
+local DEFAULTS = { spec = "Enhancement", lead = 2, quiet = false, talents = true }
 local LOG_MAX = 3000
+-- Path pieces this many levels behind you aren't worth going back for.
+local STALE = 6
+local QUEST_ICON = "Interface\\GossipFrame\\AvailableQuestIcon"
 
 local function L() return SF.L[(db and db.lang) or ((GetLocale() or ""):sub(1, 2) == "es" and "es" or "en")] end
+local function lang() return L() == SF.L.es and "es" or "en" end
 local function say(msg) DEFAULT_CHAT_FRAME:AddMessage("|cff0070ddShaman: Forever|r " .. msg) end
 local function num(x)
   local s = string.format("%.1f", x)
-  if L() == SF.L.es then s = s:gsub("%.", ",") end
+  if lang() == "es" then s = s:gsub("%.", ",") end
   return s
 end
 
--- Game API, old or new names.
+-- Game API, old or new names. Forever has retail-style combat restrictions:
+-- some values come back "secret" and can't be compared; those read as nil.
 local Api = {}
+local function readable(v)
+  if v ~= nil and issecretvalue and issecretvalue(v) then return nil end
+  return v
+end
 function Api.questDone(id)
   if not id then return false end
-  if C_QuestLog and C_QuestLog.IsQuestFlaggedCompleted then return C_QuestLog.IsQuestFlaggedCompleted(id) end
-  return IsQuestFlaggedCompleted and IsQuestFlaggedCompleted(id) or false
+  if C_QuestLog and C_QuestLog.IsQuestFlaggedCompleted then return C_QuestLog.IsQuestFlaggedCompleted(id) and true or false end
+  return IsQuestFlaggedCompleted and IsQuestFlaggedCompleted(id) and true or false
 end
 function Api.onQuest(id)
   if not id then return false end
-  if C_QuestLog and C_QuestLog.IsOnQuest then return C_QuestLog.IsOnQuest(id) end
+  if C_QuestLog and C_QuestLog.IsOnQuest then return C_QuestLog.IsOnQuest(id) and true or false end
   if C_QuestLog and C_QuestLog.GetLogIndexForQuestID then return C_QuestLog.GetLogIndexForQuestID(id) ~= nil end
   return GetQuestLogIndexByID and (GetQuestLogIndexByID(id) or 0) > 0 or false
 end
@@ -39,7 +50,7 @@ function Api.count(id)
   return GetItemCount and GetItemCount(id, true) or 0
 end
 function Api.itemName(id)
-  local name = (C_Item and C_Item.GetItemInfo or GetItemInfo)(id)
+  local name = ((C_Item and C_Item.GetItemInfo) or GetItemInfo)(id)
   return name or D.names[id] or ("#" .. id)
 end
 function Api.icon(id)
@@ -53,12 +64,17 @@ end
 function Api.areaName(id)
   return C_Map and C_Map.GetAreaInfo and C_Map.GetAreaInfo(id) or nil
 end
+function Api.version()
+  local f = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata
+  return f and f(ADDON, "Version") or "?"
+end
 
 -- The spec's index in the data's value lists.
 local function specIndex()
   for i, s in ipairs(D.specs) do if s == cdb.spec then return i end end
   return 1
 end
+local function specName() return L().specs[cdb.spec] or cdb.spec end
 
 -- Race -> the site's race of the path (unknown races: Orc's, same continent).
 local RACE = { Orc = "Orc", Troll = "Troll", Tauren = "Tauren", Dwarf = "Dwarf" }
@@ -72,6 +88,7 @@ local function myPath()
   end
   return (D.paths[race] or D.paths.Orc)[cdb.spec] or {}
 end
+local function myFaction() return (UnitFactionGroup("player") or ""):lower() end
 
 -- Equipment slots of each slot of the path.
 local INV = {
@@ -111,9 +128,9 @@ end
 local function wornValue(slot)
   local best
   for _, inv in ipairs(INV[slot] or {}) do
-    local id = GetInventoryItemID("player", inv)
+    local id = readable(GetInventoryItemID("player", inv))
     local v = 0
-    if id then v = D.items[id] and value(id) or estimate(GetInventoryItemLink("player", inv), slot) end
+    if id then v = D.items[id] and value(id) or estimate(readable(GetInventoryItemLink("player", inv)), slot) end
     if best == nil or v < best then best = v end
   end
   return best or 0
@@ -133,8 +150,9 @@ local function gain(id)
   return { v = v, cur = cur, slot = it.s }
 end
 
--- A zone of the data ("The Barrens") as the game names it in your language.
-local zoneNames
+-- Zones: the data's English names and AreaTable ids, as the game names them
+-- in your language.
+local zoneNames, areaNames
 local function zoneName(z)
   if not zoneNames then
     zoneNames = {}
@@ -142,18 +160,51 @@ local function zoneName(z)
   end
   return zoneNames[z] or z
 end
-local function here() return GetRealZoneText() or "" end
+local function areaName(id)
+  if not id then return nil end
+  if not areaNames then
+    areaNames = {}
+    for name, zid in pairs(D.zones) do areaNames[zid] = name end
+  end
+  return Api.areaName(id) or areaNames[id]
+end
+local function here() return readable(GetRealZoneText()) or "" end
 
--- Path pieces this many levels behind you aren't worth going back for.
-local STALE = 6
+-- Who gives a quest, in one line; and a waypoint to them.
+local function giverText(g)
+  if not g then return nil end
+  if g.item then return type(g.item) == "string" and string.format(L().startsWith, g.item) or L().startsWithAny end
+  if g.inside then return string.format(L().givenInside, g.n) end
+  if g.x then return string.format(L().givenAt, g.n, areaName(g.z) or "?", math.floor(g.x + 0.5), math.floor(g.y + 0.5)) end
+  return string.format(L().givenBy, g.n)
+end
+local function waypoint(g, title)
+  if not g or not g.x or not g.z then return end
+  local map = D.uiMaps[g.z]
+  if map and TomTom and TomTom.AddWaypoint then
+    TomTom:AddWaypoint(map, g.x / 100, g.y / 100, { title = title, from = "Shaman: Forever" })
+    say(string.format(L().arrowSet, title))
+    return
+  end
+  if map and C_Map and C_Map.SetUserWaypoint and UiMapPoint then
+    local ok = pcall(function()
+      C_Map.SetUserWaypoint(UiMapPoint.CreateFromCoordinates(map, g.x / 100, g.y / 100))
+      if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then C_SuperTrack.SetSuperTrackedUserWaypoint(true) end
+    end)
+    if ok then say(string.format(L().pinSet, title)) return end
+  end
+  say(giverText(g))
+end
 
--- Tips. Each one: key (seen/done), item, header line, source line, gain.
+-- Tips -------------------------------------------------------------------------
+-- Each one: key (seen/done), item or icon, three lines, giver, order.
 local function gainText(g)
   if g.cur <= 0 then return L().gainNew end
   if g.slot == "Weapon" and cdb.spec == "Enhancement" then return string.format(L().gainDps, num(g.v), num(g.cur)) end
   return string.format(L().gainPct, math.floor((g.v / g.cur - 1) * 100 + 0.5))
 end
 
+-- Upgrades on your gear path from now to `lead` levels ahead.
 local function pathTips(filter)
   local lvl, tips = UnitLevel("player"), {}
   for _, st in ipairs(myPath()) do
@@ -167,7 +218,50 @@ local function pathTips(filter)
         elseif st.a == "dquest" then src = string.format(L().dquest, st.z, st.qn or "?")
         else src = string.format(L().quest, st.qn or "?") .. " · " .. zoneName(st.z) end
         local head = st.l <= lvl and string.format(L().levelNow, st.l) or string.format(L().levelIn, st.l, st.l - lvl)
-        tips[#tips + 1] = { key = key, item = st.i, head = head .. " · " .. Api.itemName(st.i), src = src, gain = gainText(g), order = -st.l }
+        tips[#tips + 1] = { key = key, item = st.i, head = head .. " · " .. Api.itemName(st.i), src = src, gain = gainText(g),
+          giver = st.q and D.givers[st.q], title = st.qn, order = st.l }
+      end
+    end
+  end
+  return tips
+end
+
+-- Dungeon quests to pick up before a dungeon of your level: a few levels
+-- before its range up to its end. Quests you can't start yet (a chain) point
+-- to where the chain starts. inZone: only those given in the zone you're in.
+local function pickupTips(inZone)
+  local lvl, faction, tips, seenKey = UnitLevel("player"), myFaction(), {}, {}
+  local z = inZone and here()
+  for dname, list in pairs(D.dquests) do
+    local lv = D.dlevels[dname]
+    if lv and lvl >= lv[1] - cdb.lead - 1 and lvl <= lv[2] then
+      -- inList: quests of this dungeon; nextOf: the one each quest leads to.
+      local inList, nextOf = {}, {}
+      for _, e in ipairs(list) do inList[e.q] = true; if e.p then nextOf[e.p] = e end end
+      for _, e in ipairs(list) do
+        if (not e.f or e.f == faction) and (e.r or 0) <= lvl + cdb.lead and not Api.questDone(e.q) and not Api.onQuest(e.q) then
+          local target, chain = e, nil
+          if e.p and not Api.questDone(e.p) then
+            if inList[e.p] or Api.onQuest(e.p) then target = nil
+            else
+              local last = e
+              while nextOf[last.q] do last = nextOf[last.q] end
+              target, chain = { q = e.p, qn = e.pn }, last.qn
+            end
+          end
+          local g = target and D.givers[target.q]
+          local key = target and ("k" .. target.q)
+          if target and g and not g.inside and not g.item and not cdb.done[key] and not seenKey[key]
+            and (not inZone or (g.z and areaName(g.z) == z)) then
+            seenKey[key] = true
+            local src = string.format(L().pickup, target.qn or "?")
+            if chain and chain ~= target.qn then src = src .. " " .. string.format(L().chainTo, chain) end
+            local third = giverText(g)
+            if (e.r or 0) > lvl then third = third .. " · " .. string.format(L().fromLevel, e.r) end
+            tips[#tips + 1] = { key = key, icon = QUEST_ICON, head = string.format(L().forDungeon, dname, lv[1], lv[2]),
+              src = src, gain = third, giver = g, title = target.qn, order = lv[1] }
+          end
+        end
       end
     end
   end
@@ -179,15 +273,31 @@ local function currentDungeon()
   local name, kind, _, _, _, _, _, id = GetInstanceInfo()
   if kind ~= "party" then return nil end
   if id and D.instances[id] then return D.instances[id] end
-  if name and D.dungeons[name] then return name end
+  if name and (D.dungeons[name] or D.dquests[name]) then return name end
   return nil
 end
 
 local function dungeonTips(name)
-  local d, tips, lvl = D.dungeons[name], {}, UnitLevel("player")
-  if not d then return tips end
-  local faction = (UnitFactionGroup("player") or ""):lower()
-  -- Quests: the best reward of each quest for you, whether you carry it.
+  local d, tips, lvl, faction = D.dungeons[name] or { drops = {}, quests = {} }, {}, UnitLevel("player"), myFaction()
+  -- Its quests: how many you carry; the missing ones in the row's tooltip.
+  -- Steps of a chain (a quest another one of the list needs first) count as
+  -- the chain's last quest.
+  local have, missing, isPre = 0, {}, {}
+  for _, e in ipairs(D.dquests[name] or {}) do if e.p then isPre[e.p] = true end end
+  for _, e in ipairs(D.dquests[name] or {}) do
+    if (not e.f or e.f == faction) and (e.r or 0) <= lvl and not isPre[e.q] and not Api.questDone(e.q) then
+      if Api.onQuest(e.q) then have = have + 1
+      else
+        local g = D.givers[e.q]
+        missing[#missing + 1] = e.qn .. (g and (g.item or g.inside) and (" (" .. giverText(g) .. ")") or "")
+      end
+    end
+  end
+  if have + #missing > 0 then
+    tips[#tips + 1] = { key = "s" .. name .. ":" .. lvl, icon = QUEST_ICON, head = string.format(L().carrying, have, have + #missing),
+      src = #missing > 0 and string.format(L().missingN, #missing) or L().allQuests, gain = "", lines = missing, order = -1e9 }
+  end
+  -- Quest rewards: the best of each quest for you, whether you carry it.
   local best = {}
   for _, q in ipairs(d.quests) do
     if (not q.f or q.f == faction) and not Api.questDone(q.q) then
@@ -198,10 +308,10 @@ local function dungeonTips(name)
   for qid, b in pairs(best) do
     local key = "q" .. qid .. ":" .. b.q.i
     if not cdb.done[key] then
-      local have = Api.onQuest(qid)
+      local has = Api.onQuest(qid)
       tips[#tips + 1] = { key = key, item = b.q.i, head = Api.itemName(b.q.i), src = string.format(L().quest, b.q.qn)
-        .. " · " .. (have and ("|cff40ff40" .. L().haveIt .. "|r") or ("|cffff6060" .. L().missing .. "|r")),
-        gain = gainText(b.g), order = -b.g.v / math.max(b.g.cur, 1) }
+        .. " · " .. (has and ("|cff40ff40" .. L().haveIt .. "|r") or ("|cffff6060" .. L().missing .. "|r")),
+        gain = gainText(b.g), giver = D.givers[qid], title = b.q.qn, order = -b.g.v / math.max(b.g.cur, 1) }
     end
   end
   -- Boss drops you can wear soon.
@@ -220,6 +330,14 @@ local function dungeonTips(name)
   return tips
 end
 
+-- Where this level's talent point goes, in the spec's leveling order.
+local function talentLine(lvl)
+  local t = D.talents[cdb.spec]
+  local p = t and t.at[lvl]
+  if not p then return nil end
+  return string.format(L().talent, lvl, p[1], p[2], p[3], t.name[lang()] or t.name.en)
+end
+
 -- The research log: "time|event|level|zone|detail" lines.
 local function log(event, detail)
   local l = cdb.log
@@ -227,28 +345,42 @@ local function log(event, detail)
   while #l > LOG_MAX do table.remove(l, 1) end
 end
 
--- Window ----------------------------------------------------------------------
+-- Window -------------------------------------------------------------------------
 local frame, rows, logFrame = nil, {}, nil
-local ROWS, ROW_H, W = 10, 44, 400
-local showing = {}
+local ROWS, ROW_H, W = 10, 44, 420
+
+local function rowTooltip(r)
+  local tip = r.tip
+  GameTooltip:SetOwner(r, "ANCHOR_LEFT")
+  if tip.item then GameTooltip:SetItemByID(tip.item) else GameTooltip:SetText(tip.head, 1, 0.82, 0) end
+  for _, line in ipairs(tip.lines or {}) do GameTooltip:AddLine(line, 1, 1, 1) end
+  local gt = giverText(tip.giver)
+  if gt then
+    GameTooltip:AddLine(" ")
+    GameTooltip:AddLine(gt, 0.4, 0.8, 1)
+    if tip.giver.x then GameTooltip:AddLine(L().clickArrow, 0.6, 0.6, 0.6) end
+  end
+  GameTooltip:Show()
+end
 
 local function makeRow(i)
-  local r = CreateFrame("Frame", nil, frame)
+  local r = CreateFrame("Button", nil, frame)
   r:SetSize(W - 20, ROW_H)
   r:SetPoint("TOPLEFT", 10, -36 - (i - 1) * ROW_H)
   r.icon = r:CreateTexture(nil, "ARTWORK")
   r.icon:SetSize(32, 32)
   r.icon:SetPoint("LEFT", 0, 0)
-  r.head = r:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-  r.head:SetPoint("TOPLEFT", r.icon, "TOPRIGHT", 6, 2)
-  r.head:SetPoint("RIGHT", -64, 0)
-  r.head:SetJustifyH("LEFT")
-  r.src = r:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-  r.src:SetPoint("TOPLEFT", r.head, "BOTTOMLEFT", 0, -1)
-  r.src:SetPoint("RIGHT", -64, 0)
-  r.src:SetJustifyH("LEFT")
-  r.gain = r:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
-  r.gain:SetPoint("TOPLEFT", r.src, "BOTTOMLEFT", 0, -1)
+  local function line(font, anchor, dy)
+    local fs = r:CreateFontString(nil, "OVERLAY", font)
+    fs:SetPoint("TOPLEFT", anchor, anchor == r.icon and "TOPRIGHT" or "BOTTOMLEFT", anchor == r.icon and 6 or 0, dy)
+    fs:SetPoint("RIGHT", -64, 0)
+    fs:SetJustifyH("LEFT")
+    if fs.SetWordWrap then fs:SetWordWrap(false) end
+    return fs
+  end
+  r.head = line("GameFontNormal", r.icon, 2)
+  r.src = line("GameFontHighlightSmall", r.head, -1)
+  r.gain = line("GameFontDisableSmall", r.src, -1)
   r.gain:SetTextColor(0.4, 1, 0.4)
   r.check = CreateFrame("CheckButton", nil, r, "UICheckButtonTemplate")
   r.check:SetSize(24, 24)
@@ -263,11 +395,9 @@ local function makeRow(i)
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT"); GameTooltip:SetText(L().doneTip, 1, 1, 1, 1, true); GameTooltip:Show()
   end)
   r.check:SetScript("OnLeave", function() GameTooltip:Hide() end)
-  r:EnableMouse(true)
-  r:SetScript("OnEnter", function(self)
-    GameTooltip:SetOwner(self, "ANCHOR_LEFT"); GameTooltip:SetItemByID(self.tip.item); GameTooltip:Show()
-  end)
+  r:SetScript("OnEnter", rowTooltip)
   r:SetScript("OnLeave", function() GameTooltip:Hide() end)
+  r:SetScript("OnClick", function(self) waypoint(self.tip.giver, self.tip.title or self.tip.head) end)
   return r
 end
 
@@ -290,18 +420,18 @@ local function makeFrame()
   bar:SetColorTexture(0, 0.44, 0.87, 1)
   frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
   frame.title:SetPoint("TOPLEFT", 10, -10)
-  frame.title:SetPoint("RIGHT", -120, 0)
+  frame.title:SetPoint("RIGHT", -130, 0)
   frame.title:SetJustifyH("LEFT")
+  if frame.title.SetWordWrap then frame.title:SetWordWrap(false) end
   local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
   close:SetPoint("TOPRIGHT", 2, 2)
   frame.spec = CreateFrame("Button", nil, frame)
-  frame.spec:SetSize(90, 18)
+  frame.spec:SetSize(100, 18)
   frame.spec:SetPoint("TOPRIGHT", -28, -10)
   frame.spec.text = frame.spec:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
   frame.spec.text:SetPoint("RIGHT")
   frame.spec:SetScript("OnClick", function()
-    local i = specIndex() % #D.specs + 1
-    cdb.spec = D.specs[i]
+    cdb.spec = D.specs[specIndex() % #D.specs + 1]
     SF.open(true)
   end)
   frame.spec:SetScript("OnEnter", function(self)
@@ -321,21 +451,19 @@ end
 local function show(title, tips)
   if not frame then makeFrame() end
   frame.title:SetText(title)
-  frame.spec.text:SetText(string.format(L().spec, L().specs[cdb.spec] or cdb.spec))
-  wipe(showing)
+  frame.spec.text:SetText(string.format(L().spec, specName()))
   for i = 1, ROWS do
     local r, tip = rows[i], tips[i]
     r.tip = tip
     if tip then
-      r.icon:SetTexture(Api.icon(tip.item))
+      r.icon:SetTexture(tip.icon or Api.icon(tip.item))
       r.head:SetText(tip.head)
       r.src:SetText(tip.src)
-      r.gain:SetText(tip.gain)
+      r.gain:SetText(tip.gain or "")
       r.check:SetChecked(cdb.done[tip.key] and true or false)
       r.checkLabel:SetText(L().done)
       r:SetAlpha(1)
       r:Show()
-      showing[#showing + 1] = tip.key
     else
       r:Hide()
     end
@@ -363,22 +491,27 @@ local function popup(title, tips)
   show(title, new)
 end
 
--- "/sf": the dungeon you're in, or everything coming up on your path.
+local function upcoming()
+  local tips = pickupTips(false)
+  for _, t in ipairs(pathTips()) do tips[#tips + 1] = t end
+  table.sort(tips, function(a, b) return a.order < b.order end)
+  return tips
+end
+
+-- "/sf": the dungeon you're in, or everything coming up.
 function SF.open(keep)
   if frame and frame:IsShown() and not keep then frame:Hide() return end
   local dname = currentDungeon()
   if dname then show(string.format(L().inDungeon, dname), dungeonTips(dname))
-  else
-    local tips = pathTips()
-    table.sort(tips, function(a, b) return a.order < b.order end)
-    show(L().upcoming, tips)
-  end
+  else show(string.format(L().upcoming, UnitLevel("player")), upcoming()) end
 end
 
--- Events ----------------------------------------------------------------------
+-- Events -------------------------------------------------------------------------
 local function zoneTips()
   local z = here()
-  return pathTips(function(st) return st.a ~= "dquest" and st.a ~= "class" and zoneName(st.z) == z end)
+  local tips = pickupTips(true)
+  for _, t in ipairs(pathTips(function(st) return st.a ~= "dquest" and st.a ~= "class" and zoneName(st.z) == z end)) do tips[#tips + 1] = t end
+  return tips
 end
 
 local lastZone, lastDungeon
@@ -397,8 +530,17 @@ local function onZone()
   if z ~= lastZone then
     lastZone = z
     log("zone")
-    popup(L().inZone, zoneTips())
+    popup(string.format(L().inZone, z), zoneTips())
   end
+end
+
+local function onLevel(lvl)
+  log("level")
+  if cdb.talents then
+    local t = talentLine(lvl)
+    if t then say(t) end
+  end
+  popup(string.format(L().upcoming, lvl), upcoming())
 end
 
 local ev = CreateFrame("Frame")
@@ -417,18 +559,20 @@ ev:SetScript("OnEvent", function(self, event, ...)
     self:RegisterEvent("PLAYER_LEVEL_UP")
     self:RegisterEvent("PLAYER_REGEN_ENABLED")
     self:RegisterEvent("QUEST_TURNED_IN")
+    self:RegisterEvent("QUEST_ACCEPTED")
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
     -- The zone's name settles a moment after a loading screen.
     C_Timer.After(2, onZone)
   elseif event == "PLAYER_LEVEL_UP" then
-    C_Timer.After(1, function()
-      log("level")
-      local tips = pathTips()
-      table.sort(tips, function(a, b) return a.order < b.order end)
-      popup(L().upcoming, tips)
-    end)
+    local lvl = ...
+    -- UnitLevel catches up a moment later.
+    C_Timer.After(1, function() onLevel(tonumber(lvl) or UnitLevel("player")) end)
   elseif event == "QUEST_TURNED_IN" then
     log("quest", tostring((...)))
+  elseif event == "QUEST_ACCEPTED" then
+    -- QUEST_ACCEPTED gives (index, id) on old clients, (id) on new ones.
+    local a, b = ...
+    log("accept", tostring(b or a))
   elseif event == "PLAYER_REGEN_ENABLED" and pending then
     local p = pending
     pending = nil
@@ -441,23 +585,26 @@ local function onTooltip(tt, id)
   if not cdb or not id or not D.items[id] then return end
   local v = value(id)
   if v <= 0 then return end
-  local it = D.items[id]
-  local cur = wornValue(it.s)
-  local spec = L().specs[cdb.spec] or cdb.spec
+  local cur = wornValue(D.items[id].s)
   local text, r, g, b
-  if cur <= 0 then text, r, g, b = string.format(L().tipEmpty, spec), 0.4, 1, 0.4
-  elseif v >= cur then text, r, g, b = string.format(L().tipBetter, math.floor((v / cur - 1) * 100 + 0.5), spec), 0.4, 1, 0.4
-  else text, r, g, b = string.format(L().tipWorse, math.floor((1 - v / cur) * 100 + 0.5), spec), 0.6, 0.6, 0.6 end
+  if cur <= 0 then text, r, g, b = string.format(L().tipEmpty, specName()), 0.4, 1, 0.4
+  elseif v >= cur then text, r, g, b = string.format(L().tipBetter, math.floor((v / cur - 1) * 100 + 0.5), specName()), 0.4, 1, 0.4
+  else text, r, g, b = string.format(L().tipWorse, math.floor((1 - v / cur) * 100 + 0.5), specName()), 0.6, 0.6, 0.6 end
   tt:AddLine("Shaman: Forever: " .. text, r, g, b)
 end
-if TooltipDataProcessor and Enum and Enum.TooltipDataType then
+local function safeTooltip(tt, id)
+  id = readable(id)
+  if id then pcall(onTooltip, tt, id) end
+end
+if TooltipDataProcessor and TooltipDataProcessor.AddTooltipPostCall and Enum and Enum.TooltipDataType then
   TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tt, data)
-    if tt == GameTooltip or tt == ItemRefTooltip then onTooltip(tt, data and data.id) end
+    if tt == GameTooltip or tt == ItemRefTooltip then safeTooltip(tt, data and data.id) end
   end)
 else
   GameTooltip:HookScript("OnTooltipSetItem", function(tt)
     local _, link = tt:GetItem()
-    onTooltip(tt, link and tonumber(link:match("item:(%d+)")))
+    link = readable(link)
+    safeTooltip(tt, link and tonumber(link:match("item:(%d+)")))
   end)
 end
 
@@ -491,16 +638,17 @@ local function showLog()
   end
   logFrame.title:SetText(L().logTitle)
   local _, race = UnitRace("player")
-  local text = "SF1|" .. tostring(race) .. "|" .. cdb.spec .. "|" .. (GetAddOnMetadata or C_AddOns.GetAddOnMetadata)(ADDON, "Version") .. "\n" .. table.concat(cdb.log, "\n")
+  local text = "SF1|" .. tostring(race) .. "|" .. cdb.spec .. "|" .. Api.version() .. "\n" .. table.concat(cdb.log, "\n")
   logFrame.box:SetText(text)
   logFrame:Show()
   logFrame.box:SetFocus()
   logFrame.box:HighlightText()
 end
 
--- Slash commands --------------------------------------------------------------
+-- Slash commands -----------------------------------------------------------------
 local SPEC_WORDS = { mejora = "Enhancement", enh = "Enhancement", enhancement = "Enhancement", ele = "Elemental", elemental = "Elemental",
   resto = "Restoration", restauracion = "Restoration", ["restauración"] = "Restoration", restoration = "Restoration" }
+local function onOff(b) return b and L().on or L().off end
 
 SLASH_SHAMANFOREVER1 = "/sf"
 SLASH_SHAMANFOREVER2 = "/shamanforever"
@@ -509,32 +657,40 @@ SlashCmdList.SHAMANFOREVER = function(msg)
   if cmd == "" then SF.open()
   elseif cmd == "spec" and SPEC_WORDS[arg] then
     cdb.spec = SPEC_WORDS[arg]
-    say(string.format(L().specSet, L().specs[cdb.spec]))
+    say(string.format(L().specSet, specName()))
   elseif (cmd == "anticipo" or cmd == "lead") and tonumber(arg) then
     cdb.lead = math.max(0, math.min(5, math.floor(tonumber(arg))))
     say(string.format(L().leadSet, cdb.lead))
   elseif cmd == "silencio" or cmd == "quiet" then
     cdb.quiet = not cdb.quiet
-    say(L().help[4]:format(cdb.quiet and L().on or L().off))
+    say(L().help[4]:format(onOff(cdb.quiet)))
+  elseif cmd == "talentos" or cmd == "talents" then
+    cdb.talents = not cdb.talents
+    say(L().help[5]:format(onOff(cdb.talents)))
+    local t = talentLine(UnitLevel("player"))
+    if cdb.talents and t then say(t) end
   elseif cmd == "reiniciar" or cmd == "reset" then
     wipe(cdb.seen); wipe(cdb.done)
     say(L().reset)
   elseif cmd == "registro" or cmd == "log" then showLog()
   elseif cmd == "dondeestoy" or cmd == "whereami" then
     local name, kind, _, _, _, _, _, id = GetInstanceInfo()
-    local map = C_Map and C_Map.GetBestMapForUnit and C_Map.GetBestMapForUnit("player")
-    say(string.format("zona=%s subzona=%s mapa=%s instancia=%s (%s, %s) -> %s", here(), GetSubZoneText() or "", tostring(map),
+    local map = C_Map and C_Map.GetBestMapForUnit and readable(C_Map.GetBestMapForUnit("player"))
+    say(string.format("zona=%s subzona=%s mapa=%s instancia=%s (%s, %s) -> %s", here(), readable(GetSubZoneText()) or "", tostring(map),
       tostring(name), tostring(kind), tostring(id), tostring(currentDungeon())))
   elseif (cmd == "idioma" or cmd == "lang") and SF.L[arg] then
     db.lang = arg
     zoneNames = nil
   else
     for i, line in ipairs(L().help) do
-      if i == 3 then line = line:format(cdb.lead) elseif i == 4 then line = line:format(cdb.quiet and L().on or L().off) end
+      if i == 3 then line = line:format(cdb.lead)
+      elseif i == 4 then line = line:format(onOff(cdb.quiet))
+      elseif i == 5 then line = line:format(onOff(cdb.talents)) end
       say(line)
     end
   end
 end
 
 -- For the headless test (scripts/test-addon.lua).
-SF.test = { pathTips = pathTips, dungeonTips = dungeonTips, zoneTips = zoneTips, gain = gain, open = SF.open, onZone = onZone }
+SF.test = { pathTips = pathTips, pickupTips = pickupTips, dungeonTips = dungeonTips, zoneTips = zoneTips, upcoming = upcoming,
+  gain = gain, onZone = onZone, onLevel = onLevel, talentLine = talentLine, giverText = giverText, waypoint = waypoint }
