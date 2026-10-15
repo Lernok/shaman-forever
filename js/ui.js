@@ -79,11 +79,20 @@
     },
     hide() { if (el) el.style.display = 'none'; },
     // Hover cards for elements matching `selector` inside `root`: html(el) or null.
+    // On touch screens a tap shows the card too, instead of leaving for
+    // Wowhead (ad-heavy on phones); the card carries the link for whoever wants it.
     bind(root, selector, html) {
       root.querySelectorAll(selector).forEach(n => {
+        const touchCard = () => {
+          const h = html(n);
+          if (!h) return false;
+          tip.beside(h + (n.href ? '<a class="t-out" href="' + n.href + '" target="_blank" rel="noopener">' + window.I18N.t('site.openWowhead') + ' ↗</a>' : ''), n);
+          return true;
+        };
         n.addEventListener('pointermove', e => { if (e.pointerType !== 'mouse') return; const h = html(n); if (h) tip.at(h, e.clientX, e.clientY); });
         n.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') tip.hide(); });
-        longPress(n, () => { const h = html(n); if (h) tip.beside(h, n); });
+        n.addEventListener('click', e => { if (isTouch() && touchCard()) e.preventDefault(); });
+        longPress(n, touchCard);
       });
     }
   };

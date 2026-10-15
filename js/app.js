@@ -97,6 +97,24 @@
     if (active) active.parentElement.scrollLeft = active.offsetLeft - 16;
   }
 
+  // Phones: the page banner's intro shows two lines and a "Ver más" (the CSS
+  // clamps it only on narrow screens; elsewhere nothing overflows and the
+  // button stays out). Pages redraw their banner on their own too, so every
+  // new banner is checked once.
+  function clampBanner(sum) {
+    sum.dataset.clamp = '1';
+    const p = sum.querySelector('p');
+    if (!p) return;
+    sum.classList.add('clamped');
+    if (p.scrollHeight <= p.clientHeight + 2) { sum.classList.remove('clamped'); return; }
+    const btn = document.createElement('button');
+    btn.className = 'sum-more';
+    btn.textContent = t('site.more');
+    btn.addEventListener('click', () => { btn.textContent = t(sum.classList.toggle('open') ? 'site.less' : 'site.more'); });
+    sum.appendChild(btn);
+  }
+  new MutationObserver(() => app.querySelectorAll('.spec-summary:not([data-clamp])').forEach(clampBanner)).observe(app, { childList: true, subtree: true });
+
   function draw(page) {
     UI.tip.hide();
     const spec = Site.spec;

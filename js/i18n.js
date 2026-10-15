@@ -8,6 +8,9 @@
   const STRINGS = {
     es: {
       'site.tagline': 'Talentos, rotación y gearing para Enhancement, Elemental y Restoration — WoW: Forever (beta)',
+      'site.more': 'Ver más',
+      'site.less': 'Ver menos',
+      'site.openWowhead': 'Abrir en Wowhead',
       'site.footer': 'Datos de talentos/spellbook: {tf} (CC BY 4.0, leído del cliente beta de WoW: Forever). Guías cruzadas con {wh} e {iv}. Iconos: {zam}. Proyecto fan-made, sin afiliación con Blizzard. Datos de beta — pueden cambiar con hotfixes.',
       'tab.Guia': 'Guía',
       'tab.Talentos': 'Talentos',
@@ -552,6 +555,9 @@
     },
     en: {
       'site.tagline': 'Talents, rotation and gearing for Enhancement, Elemental and Restoration — WoW: Forever (beta)',
+      'site.more': 'Show more',
+      'site.less': 'Show less',
+      'site.openWowhead': 'Open on Wowhead',
       'site.footer': 'Talent/spellbook data: {tf} (CC BY 4.0, read from the WoW: Forever beta client). Guides cross-checked with {wh} and {iv}. Icons: {zam}. Fan-made project, not affiliated with Blizzard. Beta data — may change with hotfixes.',
       'tab.Guia': 'Guide',
       'tab.Talentos': 'Talents',
