@@ -13,6 +13,16 @@ Qué agrega:
   de quien da una misión de dungeon, la agarra ahí (si el nivel mínimo y las
   previas lo permiten, con el registro de `questLogMax` = 40 misiones). Así se
   llega a la dungeon con todo aceptado y no hay viajes extra.
+- **Armas** (\`SF_WEAPONS=planner/weapons-enhancement.json\`, generado con
+  \`node planner/build-weapons.js\` desde los datos del sitio): cada misión o jefe
+  que da una 2H mejor la equipa (los jefes con chance \`dropWin\`), y el tiempo de
+  matar se multiplica por (DPS de un arma blanca de tu nivel / DPS de tu arma) ^
+  \`weaponAlpha\`.
+- **Continuaciones de la dungeon**: las misiones que siguen a una de dungeon, sin
+  objetivos y entregadas cerca de la entrada (Hidden Enemies 5729/5730 con Thrall),
+  se hacen al salir.
+- **Misiones lejanas**: antes de la dungeon no se viaja más de \`dungeonFetchMax\`
+  segundos por una misión que no se agarró de paso (Varimathras en Undercity).
 - **Tope de nivel** (`SF_CAP=30`): las rutas se puntúan hasta ese nivel
   mientras el juego llegue hasta ahí.
 
