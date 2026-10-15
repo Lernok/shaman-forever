@@ -83,7 +83,15 @@
   // After drawing: the section strip scrolls to the open section (it scrolls sideways on phones).
   // A page that breaks shows a message with the report button instead of a
   // blank screen, and the error is counted (reportError).
+  // Pages that read the big data bundles (Site.NEEDS): home draws at once and
+  // fills in your plan when they arrive; the others wait behind a short message.
   function render(page) {
+    const need = Site.NEEDS[page] || [];
+    if (!Site.has(need)) {
+      const redraw = () => { if (currentPage !== page) return; const y = window.scrollY; render(page); window.scrollTo(0, y); };
+      Site.need(need).then(redraw, e => { reportError(e, page); app.innerHTML = '<section class="page-error"><h2>' + t('err.title') + '</h2><p>' + t('site.loadFailed') + '</p></section>'; });
+      if (page !== 'Inicio') { app.innerHTML = '<p class="page-loading dim">' + t('site.loading') + '</p>'; return; }
+    }
     try {
       draw(page);
     } catch (e) {
@@ -228,6 +236,9 @@
   renderLegend();
   renderPickers();
   selectPage(currentPage);
+  // Then the rest of the data, quietly, so the next page opens at once.
+  const idle = window.requestIdleCallback || (f => setTimeout(f, 1500));
+  idle(() => Site.need(Site.LAZY).catch(() => {}));
   // First visit: build your Shaman before anything else.
   if (!UI.store.get('setupDone', false)) window.Setup.open();
 })();

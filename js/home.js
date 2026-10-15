@@ -137,7 +137,7 @@
       const gear = gearBlock(plan, lvl);
       const shown = new Set([...planSteps.values()].map(st => st.pick.item.id));
       html += '<div class="plan-blocks">' + gear + talentBlock(lvl) + profBlock(plan, lvl, shown) + '</div>';
-    }
+    } else html += '<p class="page-loading dim">' + t('site.loading') + '</p>';
     html += '<a class="me-link plan-guide" href="#Guia"><img src="' + smallIcon(SPEC_ICONS[Site.spec]) + '" alt=""><span><b>' + t('home.me.guide', { spec: Site.spec }) + '</b><span>' + t('home.plan.guideSub') + '</span></span></a>';
     return '<h3 class="block-title">' + t('home.plan.title') + '</h3>' + html + '</div>';
   }

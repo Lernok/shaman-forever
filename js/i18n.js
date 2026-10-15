@@ -9,6 +9,8 @@
     es: {
       'site.tagline': 'Talentos, rotación y gearing para Enhancement, Elemental y Restoration — WoW: Forever (beta)',
       'site.more': 'Ver más',
+      'site.loading': 'Cargando datos…',
+      'site.loadFailed': 'No se pudieron bajar los datos de esta página. Revisá la conexión y recargá.',
       'site.less': 'Ver menos',
       'site.openWowhead': 'Abrir en Wowhead',
       'site.footer': 'Datos de talentos/spellbook: {tf} (CC BY 4.0, leído del cliente beta de WoW: Forever). Guías cruzadas con {wh} e {iv}. Iconos: {zam}. Proyecto fan-made, sin afiliación con Blizzard. Datos de beta — pueden cambiar con hotfixes.',
@@ -556,6 +558,8 @@
     en: {
       'site.tagline': 'Talents, rotation and gearing for Enhancement, Elemental and Restoration — WoW: Forever (beta)',
       'site.more': 'Show more',
+      'site.loading': 'Loading data…',
+      'site.loadFailed': 'The data for this page could not be downloaded. Check your connection and reload.',
       'site.less': 'Show less',
       'site.openWowhead': 'Open on Wowhead',
       'site.footer': 'Talent/spellbook data: {tf} (CC BY 4.0, read from the WoW: Forever beta client). Guides cross-checked with {wh} and {iv}. Icons: {zam}. Fan-made project, not affiliated with Blizzard. Beta data — may change with hotfixes.',

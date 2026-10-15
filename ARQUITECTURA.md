@@ -1,6 +1,6 @@
 # Cómo está armado el sitio
 
-Sitio estático (GitHub Pages): `index.html` carga los datos como variables globales (`data/*.js`) y los scripts de `js/`. No hay build del lado del navegador.
+Sitio estático (GitHub Pages): `index.html` carga los datos como variables globales (`data/*.js`) y los scripts de `js/`. No hay build del lado del navegador. Los datos grandes (`gear`, `weapons`, `professions`, `consumables`, `camp`) van en un `<template id="lazyData">` y no se ejecutan al abrir: `Site.need([...])` los carga cuando una página los usa (`Site.NEEDS` en `js/site.js`; la página que abrís los pide apenas arranca) y el resto se baja en segundo plano después de mostrar la página. Una página nueva que lea esos datos tiene que figurar en `Site.NEEDS`.
 
 ## Datos: el sync diario
 

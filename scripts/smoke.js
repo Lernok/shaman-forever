@@ -76,8 +76,13 @@ async function main() {
       problems.forEach(x => failures.push(who + ' ' + hash + ': ' + x));
     };
 
+    // A page that needs the big data bundles loads them on its own.
+    await page.goto(base + 'index.html#Profesiones');
+    await page.waitForSelector('#app .subtab', { timeout: 15000 }).catch(() => {});
+    await check('#Profesiones (primera carga)');
     await page.goto(base + 'index.html#Inicio');
     await page.waitForSelector('#app *');
+    await page.evaluate(() => window.Site.need(window.Site.LAZY));
     for (const name of PAGES) {
       await page.evaluate(h => { location.hash = h; }, '#' + name);
       await check('#' + name);

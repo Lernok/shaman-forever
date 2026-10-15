@@ -86,5 +86,31 @@
     }
   };
 
+  // ---------- data loaded on demand ----------
+  // The big bundles (gear, weapons, professions…) are only read by some pages:
+  // Site.need(['gear', 'weapons']) runs them once and resolves when they're in.
+  const lazy = {};
+  const tpl = document.getElementById('lazyData');
+  if (tpl) tpl.content.querySelectorAll('script[data-lazy]').forEach(l => { lazy[l.dataset.lazy] = { href: l.getAttribute('src') }; });
+  Site.LAZY = Object.keys(lazy);
+  Site.has = names => names.every(n => !lazy[n] || lazy[n].done);
+  Site.need = names => Promise.all(names.filter(n => lazy[n]).map(n => {
+    const d = lazy[n];
+    if (!d.promise) d.promise = new Promise((ok, fail) => {
+      const sc = document.createElement('script');
+      sc.src = d.href;
+      sc.onload = () => { d.done = true; ok(); };
+      sc.onerror = () => { d.promise = null; fail(new Error('no se pudo cargar ' + d.href)); };
+      document.body.appendChild(sc);
+    });
+    return d.promise;
+  }));
+  // What each page reads from them. The page you open asks for its own right
+  // away, while the site's scripts are still arriving.
+  Site.NEEDS = { Inicio: ['gear', 'weapons'], Guia: ['gear', 'weapons'], Equipo: ['gear', 'weapons'],
+    Profesiones: ['gear', 'weapons', 'professions', 'consumables', 'camp'] };
+  const opening = location.hash.slice(1).split('/')[0];
+  Site.need(Site.NEEDS[Site.SPECS.includes(opening) ? 'Guia' : opening || 'Inicio'] || []).catch(() => {});
+
   window.Site = Site;
 })();
