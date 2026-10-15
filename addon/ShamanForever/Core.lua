@@ -1,0 +1,540 @@
+-- Shaman: Forever, the in-game side of https://lernok.github.io/shaman-forever/
+-- It warns, it never leads: a few levels before a quest or a vendor gives you
+-- an upgrade (the site's gear path, Data.lua), when you walk into a zone that
+-- has one, and when you enter a dungeon (what its bosses and quests give that
+-- beats what you wear). A tip shows by itself once; "Done" hides it for good.
+-- It also keeps a log of levels, zones and dungeons for the planner's research.
+local ADDON, SF = ...
+local D = SF.DATA
+
+-- Saved state: account (language) and character (spec, tips seen and done,
+-- the log).
+local db, cdb
+local DEFAULTS = { spec = "Enhancement", lead = 2, quiet = false }
+local LOG_MAX = 3000
+
+local function L() return SF.L[(db and db.lang) or ((GetLocale() or ""):sub(1, 2) == "es" and "es" or "en")] end
+local function say(msg) DEFAULT_CHAT_FRAME:AddMessage("|cff0070ddShaman: Forever|r " .. msg) end
+local function num(x)
+  local s = string.format("%.1f", x)
+  if L() == SF.L.es then s = s:gsub("%.", ",") end
+  return s
+end
+
+-- Game API, old or new names.
+local Api = {}
+function Api.questDone(id)
+  if not id then return false end
+  if C_QuestLog and C_QuestLog.IsQuestFlaggedCompleted then return C_QuestLog.IsQuestFlaggedCompleted(id) end
+  return IsQuestFlaggedCompleted and IsQuestFlaggedCompleted(id) or false
+end
+function Api.onQuest(id)
+  if not id then return false end
+  if C_QuestLog and C_QuestLog.IsOnQuest then return C_QuestLog.IsOnQuest(id) end
+  if C_QuestLog and C_QuestLog.GetLogIndexForQuestID then return C_QuestLog.GetLogIndexForQuestID(id) ~= nil end
+  return GetQuestLogIndexByID and (GetQuestLogIndexByID(id) or 0) > 0 or false
+end
+function Api.count(id)
+  if C_Item and C_Item.GetItemCount then return C_Item.GetItemCount(id, true) or 0 end
+  return GetItemCount and GetItemCount(id, true) or 0
+end
+function Api.itemName(id)
+  local name = (C_Item and C_Item.GetItemInfo or GetItemInfo)(id)
+  return name or D.names[id] or ("#" .. id)
+end
+function Api.icon(id)
+  if C_Item and C_Item.GetItemIconByID then return C_Item.GetItemIconByID(id) end
+  return GetItemIcon and GetItemIcon(id) or 134400
+end
+function Api.stats(link)
+  local f = (C_Item and C_Item.GetItemStats) or GetItemStats
+  return f and f(link) or nil
+end
+function Api.areaName(id)
+  return C_Map and C_Map.GetAreaInfo and C_Map.GetAreaInfo(id) or nil
+end
+
+-- The spec's index in the data's value lists.
+local function specIndex()
+  for i, s in ipairs(D.specs) do if s == cdb.spec then return i end end
+  return 1
+end
+
+-- Race -> the site's race of the path (unknown races: Orc's, same continent).
+local RACE = { Orc = "Orc", Troll = "Troll", Tauren = "Tauren", Dwarf = "Dwarf" }
+local function myPath()
+  local _, token = UnitRace("player")
+  local race = RACE[token or ""]
+  if not race and token and token:lower():find("sky") then race = "Skyborne (Windshaper)" end
+  if not race then
+    if not SF.raceWarned then say(string.format(L().unknownRace, tostring(token))); SF.raceWarned = true end
+    race = "Orc"
+  end
+  return (D.paths[race] or D.paths.Orc)[cdb.spec] or {}
+end
+
+-- Equipment slots of each slot of the path.
+local INV = {
+  Weapon = { 16 }, Head = { 1 }, Neck = { 2 }, Shoulder = { 3 }, Back = { 15 }, Chest = { 5 }, Wrist = { 9 },
+  Hands = { 10 }, Waist = { 6 }, Legs = { 7 }, Feet = { 8 }, Finger = { 11, 12 }, Trinket = { 13, 14 },
+  ["Off Hand"] = { 17 }, Relic = { 18 },
+}
+-- Stat keys of GetItemStats, for pieces the site doesn't know (random
+-- "of the Bear" greens): the same weights as the site's gear path.
+local STAT = {
+  ITEM_MOD_STRENGTH_SHORT = "strength", ITEM_MOD_AGILITY_SHORT = "agility", ITEM_MOD_STAMINA_SHORT = "stamina",
+  ITEM_MOD_INTELLECT_SHORT = "intellect", ITEM_MOD_SPIRIT_SHORT = "spirit", ITEM_MOD_ATTACK_POWER_SHORT = "attackPower",
+  ITEM_MOD_SPELL_POWER_SHORT = "spellPower", ITEM_MOD_SPELL_DAMAGE_DONE_SHORT = "spellDamage",
+  ITEM_MOD_SPELL_HEALING_DONE_SHORT = "healing", ITEM_MOD_MANA_REGENERATION_SHORT = "mp5", ITEM_MOD_POWER_REGEN0_SHORT = "mp5",
+  ITEM_MOD_CRIT_RATING_SHORT = "crit", ITEM_MOD_CRIT_MELEE_RATING_SHORT = "crit", ITEM_MOD_HIT_RATING_SHORT = "hit",
+  ITEM_MOD_HIT_MELEE_RATING_SHORT = "hit", ITEM_MOD_CRIT_SPELL_RATING_SHORT = "spellCrit", ITEM_MOD_HIT_SPELL_RATING_SHORT = "spellHit",
+}
+local function estimate(link, slot)
+  local st = link and Api.stats(link)
+  if not st then return 0 end
+  local spec = cdb.spec
+  if slot == "Weapon" and spec == "Enhancement" then return st.ITEM_MOD_DAMAGE_PER_SECOND_SHORT or 0 end
+  local w, v = D.weights[spec], 0
+  for k, n in pairs(st) do
+    local s = STAT[k]
+    if s and D.cost[s] then v = v + n * D.cost[s] * (w[s] or 0) end
+  end
+  return v
+end
+
+-- Worth of an item to your spec (0 = not for you), and of what you wear in
+-- that slot (rings and trinkets: the weaker of the two).
+local function value(id)
+  local it = D.items[id]
+  return it and it.v[specIndex()] or 0
+end
+local function wornValue(slot)
+  local best
+  for _, inv in ipairs(INV[slot] or {}) do
+    local id = GetInventoryItemID("player", inv)
+    local v = 0
+    if id then v = D.items[id] and value(id) or estimate(GetInventoryItemLink("player", inv), slot) end
+    if best == nil or v < best then best = v end
+  end
+  return best or 0
+end
+local function owned(id) return Api.count(id) > 0 end
+
+-- How much better than what you wear; nil if not an upgrade.
+local function gain(id)
+  local it = D.items[id]
+  if not it then return nil end
+  local lvl = UnitLevel("player")
+  if it.m and lvl < 40 then return nil end
+  local v = value(id)
+  if v <= 0 or owned(id) then return nil end
+  local cur = wornValue(it.s)
+  if cur > 0 and v < cur * D.upgrade then return nil end
+  return { v = v, cur = cur, slot = it.s }
+end
+
+-- A zone of the data ("The Barrens") as the game names it in your language.
+local zoneNames
+local function zoneName(z)
+  if not zoneNames then
+    zoneNames = {}
+    for name, id in pairs(D.zones) do zoneNames[name] = Api.areaName(id) or name end
+  end
+  return zoneNames[z] or z
+end
+local function here() return GetRealZoneText() or "" end
+
+-- Path pieces this many levels behind you aren't worth going back for.
+local STALE = 6
+
+-- Tips. Each one: key (seen/done), item, header line, source line, gain.
+local function gainText(g)
+  if g.cur <= 0 then return L().gainNew end
+  if g.slot == "Weapon" and cdb.spec == "Enhancement" then return string.format(L().gainDps, num(g.v), num(g.cur)) end
+  return string.format(L().gainPct, math.floor((g.v / g.cur - 1) * 100 + 0.5))
+end
+
+local function pathTips(filter)
+  local lvl, tips = UnitLevel("player"), {}
+  for _, st in ipairs(myPath()) do
+    if st.l - cdb.lead <= lvl and lvl < st.u and st.l > lvl - STALE and not Api.questDone(st.q) then
+      local g = gain(st.i)
+      local key = st.q and ("q" .. st.q .. ":" .. st.i) or ("i" .. st.i)
+      if g and not cdb.done[key] and (not filter or filter(st)) then
+        local src
+        if st.a == "vendor" then src = string.format(L().vendor, st.k or "?") .. " · " .. zoneName(st.z)
+        elseif st.a == "class" then src = string.format(L().classQuest, st.qn or "?")
+        elseif st.a == "dquest" then src = string.format(L().dquest, st.z, st.qn or "?")
+        else src = string.format(L().quest, st.qn or "?") .. " · " .. zoneName(st.z) end
+        local head = st.l <= lvl and string.format(L().levelNow, st.l) or string.format(L().levelIn, st.l, st.l - lvl)
+        tips[#tips + 1] = { key = key, item = st.i, head = head .. " · " .. Api.itemName(st.i), src = src, gain = gainText(g), order = -st.l }
+      end
+    end
+  end
+  return tips
+end
+
+-- The dungeon you're in: its name in the data, or nil.
+local function currentDungeon()
+  local name, kind, _, _, _, _, _, id = GetInstanceInfo()
+  if kind ~= "party" then return nil end
+  if id and D.instances[id] then return D.instances[id] end
+  if name and D.dungeons[name] then return name end
+  return nil
+end
+
+local function dungeonTips(name)
+  local d, tips, lvl = D.dungeons[name], {}, UnitLevel("player")
+  if not d then return tips end
+  local faction = (UnitFactionGroup("player") or ""):lower()
+  -- Quests: the best reward of each quest for you, whether you carry it.
+  local best = {}
+  for _, q in ipairs(d.quests) do
+    if (not q.f or q.f == faction) and not Api.questDone(q.q) then
+      local g = gain(q.i)
+      if g and (not best[q.q] or g.v > best[q.q].g.v) then best[q.q] = { q = q, g = g } end
+    end
+  end
+  for qid, b in pairs(best) do
+    local key = "q" .. qid .. ":" .. b.q.i
+    if not cdb.done[key] then
+      local have = Api.onQuest(qid)
+      tips[#tips + 1] = { key = key, item = b.q.i, head = Api.itemName(b.q.i), src = string.format(L().quest, b.q.qn)
+        .. " · " .. (have and ("|cff40ff40" .. L().haveIt .. "|r") or ("|cffff6060" .. L().missing .. "|r")),
+        gain = gainText(b.g), order = -b.g.v / math.max(b.g.cur, 1) }
+    end
+  end
+  -- Boss drops you can wear soon.
+  for _, dr in ipairs(d.drops) do
+    local it = D.items[dr.i]
+    local key = "d" .. dr.i
+    if it and it.r <= lvl + 3 and not cdb.done[key] then
+      local g = gain(dr.i)
+      if g then
+        tips[#tips + 1] = { key = key, item = dr.i, head = Api.itemName(dr.i), src = string.format(L().boss, dr.b or "?"),
+          gain = gainText(g), order = -g.v / math.max(g.cur, 1) }
+      end
+    end
+  end
+  table.sort(tips, function(a, b) return a.order < b.order end)
+  return tips
+end
+
+-- The research log: "time|event|level|zone|detail" lines.
+local function log(event, detail)
+  local l = cdb.log
+  l[#l + 1] = table.concat({ time(), event, UnitLevel("player"), here(), detail or "" }, "|")
+  while #l > LOG_MAX do table.remove(l, 1) end
+end
+
+-- Window ----------------------------------------------------------------------
+local frame, rows, logFrame = nil, {}, nil
+local ROWS, ROW_H, W = 10, 44, 400
+local showing = {}
+
+local function makeRow(i)
+  local r = CreateFrame("Frame", nil, frame)
+  r:SetSize(W - 20, ROW_H)
+  r:SetPoint("TOPLEFT", 10, -36 - (i - 1) * ROW_H)
+  r.icon = r:CreateTexture(nil, "ARTWORK")
+  r.icon:SetSize(32, 32)
+  r.icon:SetPoint("LEFT", 0, 0)
+  r.head = r:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+  r.head:SetPoint("TOPLEFT", r.icon, "TOPRIGHT", 6, 2)
+  r.head:SetPoint("RIGHT", -64, 0)
+  r.head:SetJustifyH("LEFT")
+  r.src = r:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+  r.src:SetPoint("TOPLEFT", r.head, "BOTTOMLEFT", 0, -1)
+  r.src:SetPoint("RIGHT", -64, 0)
+  r.src:SetJustifyH("LEFT")
+  r.gain = r:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+  r.gain:SetPoint("TOPLEFT", r.src, "BOTTOMLEFT", 0, -1)
+  r.gain:SetTextColor(0.4, 1, 0.4)
+  r.check = CreateFrame("CheckButton", nil, r, "UICheckButtonTemplate")
+  r.check:SetSize(24, 24)
+  r.check:SetPoint("RIGHT", -34, 0)
+  r.checkLabel = r:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+  r.checkLabel:SetPoint("LEFT", r.check, "RIGHT", 0, 0)
+  r.check:SetScript("OnClick", function(self)
+    cdb.done[r.tip.key] = self:GetChecked() and true or nil
+    r:SetAlpha(self:GetChecked() and 0.4 or 1)
+  end)
+  r.check:SetScript("OnEnter", function(self)
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT"); GameTooltip:SetText(L().doneTip, 1, 1, 1, 1, true); GameTooltip:Show()
+  end)
+  r.check:SetScript("OnLeave", function() GameTooltip:Hide() end)
+  r:EnableMouse(true)
+  r:SetScript("OnEnter", function(self)
+    GameTooltip:SetOwner(self, "ANCHOR_LEFT"); GameTooltip:SetItemByID(self.tip.item); GameTooltip:Show()
+  end)
+  r:SetScript("OnLeave", function() GameTooltip:Hide() end)
+  return r
+end
+
+local function makeFrame()
+  frame = CreateFrame("Frame", "ShamanForeverFrame", UIParent)
+  frame:SetSize(W, 100)
+  frame:SetPoint("TOPRIGHT", -220, -180)
+  frame:SetFrameStrata("HIGH")
+  frame:SetClampedToScreen(true)
+  frame:SetMovable(true)
+  frame:EnableMouse(true)
+  frame:RegisterForDrag("LeftButton")
+  frame:SetScript("OnDragStart", frame.StartMoving)
+  frame:SetScript("OnDragStop", frame.StopMovingOrSizing)
+  local bg = frame:CreateTexture(nil, "BACKGROUND")
+  bg:SetAllPoints()
+  bg:SetColorTexture(0.04, 0.05, 0.08, 0.92)
+  local bar = frame:CreateTexture(nil, "BORDER")
+  bar:SetPoint("TOPLEFT"); bar:SetPoint("TOPRIGHT"); bar:SetHeight(2)
+  bar:SetColorTexture(0, 0.44, 0.87, 1)
+  frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+  frame.title:SetPoint("TOPLEFT", 10, -10)
+  frame.title:SetPoint("RIGHT", -120, 0)
+  frame.title:SetJustifyH("LEFT")
+  local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
+  close:SetPoint("TOPRIGHT", 2, 2)
+  frame.spec = CreateFrame("Button", nil, frame)
+  frame.spec:SetSize(90, 18)
+  frame.spec:SetPoint("TOPRIGHT", -28, -10)
+  frame.spec.text = frame.spec:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+  frame.spec.text:SetPoint("RIGHT")
+  frame.spec:SetScript("OnClick", function()
+    local i = specIndex() % #D.specs + 1
+    cdb.spec = D.specs[i]
+    SF.open(true)
+  end)
+  frame.spec:SetScript("OnEnter", function(self)
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT"); GameTooltip:SetText(L().specTip, 1, 1, 1); GameTooltip:Show()
+  end)
+  frame.spec:SetScript("OnLeave", function() GameTooltip:Hide() end)
+  frame.empty = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+  frame.empty:SetPoint("TOPLEFT", 10, -40)
+  frame.empty:SetPoint("RIGHT", -10, 0)
+  frame.empty:SetJustifyH("LEFT")
+  frame.more = frame:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+  tinsert(UISpecialFrames, "ShamanForeverFrame") -- Escape closes it
+  for i = 1, ROWS do rows[i] = makeRow(i) end
+end
+
+-- Shows a list of tips with a title.
+local function show(title, tips)
+  if not frame then makeFrame() end
+  frame.title:SetText(title)
+  frame.spec.text:SetText(string.format(L().spec, L().specs[cdb.spec] or cdb.spec))
+  wipe(showing)
+  for i = 1, ROWS do
+    local r, tip = rows[i], tips[i]
+    r.tip = tip
+    if tip then
+      r.icon:SetTexture(Api.icon(tip.item))
+      r.head:SetText(tip.head)
+      r.src:SetText(tip.src)
+      r.gain:SetText(tip.gain)
+      r.check:SetChecked(cdb.done[tip.key] and true or false)
+      r.checkLabel:SetText(L().done)
+      r:SetAlpha(1)
+      r:Show()
+      showing[#showing + 1] = tip.key
+    else
+      r:Hide()
+    end
+  end
+  local n = math.min(#tips, ROWS)
+  frame.empty:SetText(#tips == 0 and L().nothing or "")
+  frame.more:ClearAllPoints()
+  frame.more:SetPoint("TOPLEFT", 10, -40 - n * ROW_H)
+  frame.more:SetText(#tips > ROWS and string.format(L().more, #tips - ROWS) or "")
+  frame:SetHeight(#tips == 0 and 70 or (48 + n * ROW_H + (#tips > ROWS and 14 or 0)))
+  frame:Show()
+end
+
+-- Tips shown by themselves are marked seen: they don't pop up again.
+local pending
+local function popup(title, tips)
+  local new = {}
+  for _, tip in ipairs(tips) do if not cdb.seen[tip.key] then new[#new + 1] = tip end end
+  if #new == 0 then return end
+  for _, tip in ipairs(new) do cdb.seen[tip.key] = true end
+  say(string.format(L().chatNew, #new))
+  if cdb.quiet then return end
+  -- Never in the middle of a fight: after it.
+  if InCombatLockdown() then pending = { title, new } return end
+  show(title, new)
+end
+
+-- "/sf": the dungeon you're in, or everything coming up on your path.
+function SF.open(keep)
+  if frame and frame:IsShown() and not keep then frame:Hide() return end
+  local dname = currentDungeon()
+  if dname then show(string.format(L().inDungeon, dname), dungeonTips(dname))
+  else
+    local tips = pathTips()
+    table.sort(tips, function(a, b) return a.order < b.order end)
+    show(L().upcoming, tips)
+  end
+end
+
+-- Events ----------------------------------------------------------------------
+local function zoneTips()
+  local z = here()
+  return pathTips(function(st) return st.a ~= "dquest" and st.a ~= "class" and zoneName(st.z) == z end)
+end
+
+local lastZone, lastDungeon
+local function onZone()
+  local dname = currentDungeon()
+  if dname ~= lastDungeon then
+    if lastDungeon then log("out", lastDungeon) end
+    if dname then log("in", dname) end
+    lastDungeon = dname
+  end
+  if dname then
+    popup(string.format(L().inDungeon, dname), dungeonTips(dname))
+    return
+  end
+  local z = here()
+  if z ~= lastZone then
+    lastZone = z
+    log("zone")
+    popup(L().inZone, zoneTips())
+  end
+end
+
+local ev = CreateFrame("Frame")
+ev:RegisterEvent("ADDON_LOADED")
+ev:SetScript("OnEvent", function(self, event, ...)
+  if event == "ADDON_LOADED" then
+    if ... ~= ADDON then return end
+    ShamanForeverDB = ShamanForeverDB or {}
+    ShamanForeverCharDB = ShamanForeverCharDB or {}
+    db, cdb = ShamanForeverDB, ShamanForeverCharDB
+    for k, v in pairs(DEFAULTS) do if cdb[k] == nil then cdb[k] = v end end
+    cdb.seen, cdb.done, cdb.log = cdb.seen or {}, cdb.done or {}, cdb.log or {}
+    self:UnregisterEvent("ADDON_LOADED")
+    self:RegisterEvent("PLAYER_ENTERING_WORLD")
+    self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+    self:RegisterEvent("PLAYER_LEVEL_UP")
+    self:RegisterEvent("PLAYER_REGEN_ENABLED")
+    self:RegisterEvent("QUEST_TURNED_IN")
+  elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
+    -- The zone's name settles a moment after a loading screen.
+    C_Timer.After(2, onZone)
+  elseif event == "PLAYER_LEVEL_UP" then
+    C_Timer.After(1, function()
+      log("level")
+      local tips = pathTips()
+      table.sort(tips, function(a, b) return a.order < b.order end)
+      popup(L().upcoming, tips)
+    end)
+  elseif event == "QUEST_TURNED_IN" then
+    log("quest", tostring((...)))
+  elseif event == "PLAYER_REGEN_ENABLED" and pending then
+    local p = pending
+    pending = nil
+    show(p[1], p[2])
+  end
+end)
+
+-- Item tooltips: better or worse than what you wear, for your spec.
+local function onTooltip(tt, id)
+  if not cdb or not id or not D.items[id] then return end
+  local v = value(id)
+  if v <= 0 then return end
+  local it = D.items[id]
+  local cur = wornValue(it.s)
+  local spec = L().specs[cdb.spec] or cdb.spec
+  local text, r, g, b
+  if cur <= 0 then text, r, g, b = string.format(L().tipEmpty, spec), 0.4, 1, 0.4
+  elseif v >= cur then text, r, g, b = string.format(L().tipBetter, math.floor((v / cur - 1) * 100 + 0.5), spec), 0.4, 1, 0.4
+  else text, r, g, b = string.format(L().tipWorse, math.floor((1 - v / cur) * 100 + 0.5), spec), 0.6, 0.6, 0.6 end
+  tt:AddLine("Shaman: Forever: " .. text, r, g, b)
+end
+if TooltipDataProcessor and Enum and Enum.TooltipDataType then
+  TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tt, data)
+    if tt == GameTooltip or tt == ItemRefTooltip then onTooltip(tt, data and data.id) end
+  end)
+else
+  GameTooltip:HookScript("OnTooltipSetItem", function(tt)
+    local _, link = tt:GetItem()
+    onTooltip(tt, link and tonumber(link:match("item:(%d+)")))
+  end)
+end
+
+-- The log, in a box to copy from.
+local function showLog()
+  if not logFrame then
+    logFrame = CreateFrame("Frame", "ShamanForeverLog", UIParent)
+    logFrame:SetSize(520, 320)
+    logFrame:SetPoint("CENTER")
+    logFrame:SetFrameStrata("DIALOG")
+    local bg = logFrame:CreateTexture(nil, "BACKGROUND")
+    bg:SetAllPoints()
+    bg:SetColorTexture(0.04, 0.05, 0.08, 0.95)
+    local t = logFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    t:SetPoint("TOPLEFT", 10, -10)
+    logFrame.title = t
+    local close = CreateFrame("Button", nil, logFrame, "UIPanelCloseButton")
+    close:SetPoint("TOPRIGHT", 2, 2)
+    local scroll = CreateFrame("ScrollFrame", nil, logFrame, "UIPanelScrollFrameTemplate")
+    scroll:SetPoint("TOPLEFT", 10, -32)
+    scroll:SetPoint("BOTTOMRIGHT", -30, 10)
+    local box = CreateFrame("EditBox", nil, scroll)
+    box:SetMultiLine(true)
+    box:SetFontObject(ChatFontNormal)
+    box:SetWidth(470)
+    box:SetAutoFocus(false)
+    box:SetScript("OnEscapePressed", function() logFrame:Hide() end)
+    scroll:SetScrollChild(box)
+    logFrame.box = box
+    tinsert(UISpecialFrames, "ShamanForeverLog")
+  end
+  logFrame.title:SetText(L().logTitle)
+  local _, race = UnitRace("player")
+  local text = "SF1|" .. tostring(race) .. "|" .. cdb.spec .. "|" .. (GetAddOnMetadata or C_AddOns.GetAddOnMetadata)(ADDON, "Version") .. "\n" .. table.concat(cdb.log, "\n")
+  logFrame.box:SetText(text)
+  logFrame:Show()
+  logFrame.box:SetFocus()
+  logFrame.box:HighlightText()
+end
+
+-- Slash commands --------------------------------------------------------------
+local SPEC_WORDS = { mejora = "Enhancement", enh = "Enhancement", enhancement = "Enhancement", ele = "Elemental", elemental = "Elemental",
+  resto = "Restoration", restauracion = "Restoration", ["restauración"] = "Restoration", restoration = "Restoration" }
+
+SLASH_SHAMANFOREVER1 = "/sf"
+SLASH_SHAMANFOREVER2 = "/shamanforever"
+SlashCmdList.SHAMANFOREVER = function(msg)
+  local cmd, arg = (msg or ""):lower():match("^%s*(%S*)%s*(.-)%s*$")
+  if cmd == "" then SF.open()
+  elseif cmd == "spec" and SPEC_WORDS[arg] then
+    cdb.spec = SPEC_WORDS[arg]
+    say(string.format(L().specSet, L().specs[cdb.spec]))
+  elseif (cmd == "anticipo" or cmd == "lead") and tonumber(arg) then
+    cdb.lead = math.max(0, math.min(5, math.floor(tonumber(arg))))
+    say(string.format(L().leadSet, cdb.lead))
+  elseif cmd == "silencio" or cmd == "quiet" then
+    cdb.quiet = not cdb.quiet
+    say(L().help[4]:format(cdb.quiet and L().on or L().off))
+  elseif cmd == "reiniciar" or cmd == "reset" then
+    wipe(cdb.seen); wipe(cdb.done)
+    say(L().reset)
+  elseif cmd == "registro" or cmd == "log" then showLog()
+  elseif cmd == "dondeestoy" or cmd == "whereami" then
+    local name, kind, _, _, _, _, _, id = GetInstanceInfo()
+    local map = C_Map and C_Map.GetBestMapForUnit and C_Map.GetBestMapForUnit("player")
+    say(string.format("zona=%s subzona=%s mapa=%s instancia=%s (%s, %s) -> %s", here(), GetSubZoneText() or "", tostring(map),
+      tostring(name), tostring(kind), tostring(id), tostring(currentDungeon())))
+  elseif (cmd == "idioma" or cmd == "lang") and SF.L[arg] then
+    db.lang = arg
+    zoneNames = nil
+  else
+    for i, line in ipairs(L().help) do
+      if i == 3 then line = line:format(cdb.lead) elseif i == 4 then line = line:format(cdb.quiet and L().on or L().off) end
+      say(line)
+    end
+  end
+end
+
+-- For the headless test (scripts/test-addon.lua).
+SF.test = { pathTips = pathTips, dungeonTips = dungeonTips, zoneTips = zoneTips, gain = gain, open = SF.open, onZone = onZone }
