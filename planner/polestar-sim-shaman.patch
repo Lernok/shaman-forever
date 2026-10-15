@@ -1,0 +1,254 @@
+diff --git a/tools/lib/sim/evaluate.js b/tools/lib/sim/evaluate.js
+index 72dbed5..f7f9e89 100644
+--- a/tools/lib/sim/evaluate.js
++++ b/tools/lib/sim/evaluate.js
+@@ -68,6 +68,8 @@ class Evaluator {
+ 		this.visit2 = new Uint8Array(run.P); // a second visit of the package
+ 		this.visit3 = new Uint8Array(run.P); // a third
+ 		this.dungeonDone = new Uint8Array(Math.max(1, (run.dungeons || []).length));
++		this.seen = new Int32Array(512);
++		this.nSeen = 0;
+ 		// Steps of the package being run whose accept (or dungeon) was deferred
+ 		// as too low: sized for the longest package.
+ 		let maxSteps = 0;
+@@ -127,6 +129,7 @@ class Evaluator {
+ 		this.xpDungeon = 0;
+ 		this.dungeonSec = 0;
+ 		this.dungeonsRun = 0;
++		this.picked = 0;
+ 		this.homeLeft = r.homeCount || 0;
+ 		this.unreachable = 0;
+ 		this.riskCrossings = 0;
+@@ -142,7 +145,7 @@ class Evaluator {
+ 			bind: this.bind, hearthReady: this.hearthReady, xpQuest: this.xpQuest, xpKill: this.xpKill, xpGrind: this.xpGrind,
+ 			travelSec: this.travelSec, grindSec: this.grindSec, questsDone: this.questsDone, finished: this.finished,
+ 			infeasible: this.infeasible, hearths: this.hearths, flights: this.flights, levelFrom: this.level,
+-			xpDungeon: this.xpDungeon, dungeonSec: this.dungeonSec, dungeonsRun: this.dungeonsRun,
++			xpDungeon: this.xpDungeon, dungeonSec: this.dungeonSec, dungeonsRun: this.dungeonsRun, picked: this.picked,
+ 			homeLeft: this.homeLeft, unreachable: this.unreachable, riskCrossings: this.riskCrossings, steps: this.steps, catchUpSec: this.catchUpSec,
+ 			zoneChanges: this.zoneChanges,
+ 		};
+@@ -176,6 +179,7 @@ class Evaluator {
+ 		this.xpDungeon = s.xpDungeon;
+ 		this.dungeonSec = s.dungeonSec;
+ 		this.dungeonsRun = s.dungeonsRun;
++		this.picked = s.picked;
+ 		this.homeLeft = s.homeLeft;
+ 		this.unreachable = s.unreachable;
+ 		this.riskCrossings = s.riskCrossings;
+@@ -223,8 +227,8 @@ class Evaluator {
+ 		this.xp -= LEVEL_XP[this.level];
+ 		this.level++;
+ 		this.levelTimes[this.level] = this.time;
+-		if (this.level >= 60) {
+-			this.level = 60;
++		if (this.level >= this.p.capLevel) {
++			this.level = this.p.capLevel;
+ 			this.xp = 0;
+ 			this.finished = true;
+ 			return;
+@@ -308,6 +312,7 @@ class Evaluator {
+ 		this.travelSec += c;
+ 		if (this.run.pMap[pt] !== this.run.pMap[this.pos]) this.zoneChanges++;
+ 		this.pos = pt;
++		if (this.nSeen < this.seen.length) this.seen[this.nSeen++] = pt;
+ 		this.learnAt(pt);
+ 		return true;
+ 	}
+@@ -443,19 +448,22 @@ class Evaluator {
+ 		const dg = r.dungeons[d];
+ 		const p = this.p;
+ 		if (this.dungeonDone[d]) return false;
+-		if (this.defer && this.level < dg.min) {
++		// Shaman: Forever: run at the level groups take you, at most
++		// `dungeonBossGap` below the highest boss (dungeonTarget).
++		const target = this.dungeonTarget(dg);
++		if (this.defer && this.level < target) {
+ 			this.deferred++;
+ 			return false;
+ 		}
+-		if (this.level + p.gateGap < dg.min) {
+-			if (dg.min - p.gateGap < this.gateNeed) this.gateNeed = dg.min - p.gateGap;
++		if (this.level + p.gateGap < target) {
++			if (target - p.gateGap < this.gateNeed) this.gateNeed = target - p.gateGap;
+ 			return false;
+ 		}
+ 		if (!this.moveTo(pt)) {
+ 			this.unreachable++;
+ 			return false;
+ 		}
+-		if (this.level < dg.min) this.grindTo(dg.min);
++		if (this.level < target) this.grindTo(target);
+ 		const mid = (dg.min + dg.max) / 2;
+ 		const runMin = p.dungeonRunLow + ((p.dungeonRunHigh - p.dungeonRunLow) * Math.max(0, Math.min(1, (mid - 15) / 40)));
+ 		this.time += (p.dungeonFormUp + runMin) * 60;
+@@ -479,6 +487,42 @@ class Evaluator {
+ 		return true;
+ 	}
+ 
++	dungeonTarget(dg) {
++		return Math.max(dg.min, dg.top - this.p.dungeonBossGap);
++	}
++
++	// Shaman: Forever: on the way through package p, take the dungeon quests
++	// whose giver is near one of its steps (run.pickQ), so the quests are in
++	// the log before the run and no trip is made for them later. A short
++	// detour there and back, at most `questLogMax` quests in the log.
++	// Only places the character really went to this pass count (this.seen).
++	pickUp(p) {
++		const r = this.run;
++		const a = r.pickStart[p];
++		const b = r.pickEnd[p];
++		if (a === b || !this.nSeen) return;
++		let inLog = 0;
++		for (let i = 0; i < r.Q; i++) inLog += this.active[i];
++		const R = this.p.pickRadius;
++		for (let k = a; k < b && inLog < this.p.questLogMax; k++) {
++			const q = r.pickQ[k];
++			if (this.done[q] || this.active[q] || this.level < r.qMinLevel[q] || !this.prereqOk(q)) continue;
++			const g = r.qGiver[q];
++			let d = Infinity;
++			for (let i = 0; i < this.nSeen; i++) {
++				const pt = this.seen[i];
++				if (r.pMap[pt] !== r.pMap[g]) continue;
++				const e = Math.hypot(r.pX[pt] - r.pX[g], r.pY[pt] - r.pY[g]);
++				if (e < d) d = e;
++			}
++			if (d > R) continue;
++			this.time += (2 * d) / this.p.runSpeed + this.p.talkSec;
++			this.set1(J_ACTIVE, this.active, q);
++			this.picked++;
++			inLog++;
++		}
++	}
++
+ 	// Whether package p may run next: home packages first, once each; any
+ 	// other package up to MAX_VISITS times (flags usedPkg, visit2, visit3).
+ 	canVisit(p) {
+@@ -513,6 +557,7 @@ class Evaluator {
+ 		// Away below level 10: grind to 10 before the package's first move
+ 		// (moveTo), so a package that does nothing grinds nothing.
+ 		this.awayPending = r.pkgAway[p] === 1 && this.level < r.homeLevel;
++		this.nSeen = 0;
+ 		const e = r.pkgEnd[p];
+ 		const before = this.steps;
+ 		this.gateNeed = 99;
+@@ -528,6 +573,7 @@ class Evaluator {
+ 		}
+ 		this.defer = false;
+ 		if (this.deferred) for (let s = r.pkgStart[p]; s < e && !this.finished; s++) this.step(r.sKind[s], r.sQuest[s], r.sTask[s], r.sPt[s]);
++		if (!this.finished) this.pickUp(p);
+ 		if (this.catchUp && this.steps === before && this.gateNeed < 99 && !this.finished) {
+ 			const t0 = this.time;
+ 			this.grindTo(this.gateNeed);
+@@ -550,7 +596,7 @@ class Evaluator {
+ 			const t = pend[i];
+ 			const kind = r.sKind[t];
+ 			const q = r.sQuest[t];
+-			const open = kind === K_DUNGEON ? this.level >= r.dungeons[q].min : this.level >= r.qMinLevel[q] && this.level + this.p.dangerGap >= r.qLevel[q];
++			const open = kind === K_DUNGEON ? this.level >= this.dungeonTarget(r.dungeons[q]) : this.level >= r.qMinLevel[q] && this.level + this.p.dangerGap >= r.qLevel[q];
+ 			if (!open) {
+ 				pend[kept++] = t;
+ 				continue;
+@@ -583,14 +629,14 @@ class Evaluator {
+ 	}
+ 
+ 	finish() {
+-		if (!this.finished) this.grindTo(60);
++		if (!this.finished) this.grindTo(this.p.capLevel);
+ 	}
+ 
+ 	result(extra = {}) {
+ 		const timeTo = {};
+ 		for (let l = 10; l <= 60; l += 10) timeTo[l] = this.levelTimes[l];
+ 		return {
+-			seconds: this.levelTimes[60] || this.time,
++			seconds: this.levelTimes[this.p.capLevel] || this.time,
+ 			feasible: !this.infeasible,
+ 			timeTo,
+ 			levelTimes: Array.from(this.levelTimes),
+@@ -601,6 +647,7 @@ class Evaluator {
+ 			hearths: this.hearths,
+ 			flights: this.flights,
+ 			dungeonsRun: this.dungeonsRun,
++			pickedEarly: this.picked,
+ 			dungeonSeconds: this.dungeonSec,
+ 			xpDungeon: Math.round(this.xpDungeon),
+ 			unreachable: this.unreachable,
+@@ -647,7 +694,7 @@ class Evaluator {
+ 		}
+ 		this.finish();
+ 		this.lastUsed = used;
+-		return (this.levelTimes[60] || this.time) + ((this.p.grindWeight || 1) - 1) * this.grindSec + (this.p.zoneChange || 0) * this.zoneChanges;
++		return (this.levelTimes[this.p.capLevel] || this.time) + ((this.p.grindWeight || 1) - 1) * this.grindSec + (this.p.zoneChange || 0) * this.zoneChanges;
+ 	}
+ 
+ 	packageRecord(p, s) {
+diff --git a/tools/lib/sim/params.js b/tools/lib/sim/params.js
+index a3f7ccf..8235116 100644
+--- a/tools/lib/sim/params.js
++++ b/tools/lib/sim/params.js
+@@ -45,6 +45,10 @@ const PRIORS = {
+ 	dungeonRunHigh: [60, 15, 25, 120, 'minutes per dungeon clear at dungeon level 55'],
+ 	dungeonFormUp: [15, 8, 2, 45, 'minutes to form a group and reach the instance portal'],
+ 	dungeonTrash: [70, 20, 25, 150, 'elite trash kills per clear (DungeonJournal has no trash counts)'],
++	dungeonBossGap: [2, 0, 2, 2, 'Shaman: Forever: most levels the highest boss may be above the character at the run (2 for damage dealers: spells miss 17% at +3; 3 for healers)'],
++	pickRadius: [150, 0, 150, 150, 'Shaman: Forever: yards from a step of the route within which a dungeon quest giver is visited on the way (accepted early)'],
++	capLevel: [Number(process.env.SF_CAP) || 60, 0, Number(process.env.SF_CAP) || 60, Number(process.env.SF_CAP) || 60, 'Shaman: Forever: the level routes are scored to (SF_CAP; 30 while the beta caps there)'],
++	questLogMax: [40, 0, 40, 40, 'Shaman: Forever: quest log size in Forever'],
+ 	partyShare: [0.28, 0, 0.28, 0.28, 'share of solo kill XP each of 5 party members gets (Classic: 1.4 / 5)'],
+ 	restedShare: [0, 0, 0, 1, 'share of kill XP doubled by rested XP (optional)'],
+ };
+diff --git a/tools/lib/sim/run.js b/tools/lib/sim/run.js
+index 49784c3..f74e236 100644
+--- a/tools/lib/sim/run.js
++++ b/tools/lib/sim/run.js
+@@ -374,7 +374,39 @@ function compileRun(world, { race, cls = null, raceBits = {}, family = 'solo' }
+ 	const danger = new Map();
+ 	for (const g of world.danger || []) danger.set(g.region, { gx0: g.gx0, gy0: g.gy0, nx: g.nx, ny: g.ny, cell: g.cell, z: Int32Array.from(g.z) });
+ 
++	// Shaman: Forever: dungeon quests whose giver lies near a step of a
++	// package (same map, `PICK_R` yards at most), so the route takes them on
++	// the way, levels before the run. Per package: quest, distance (yards).
++	const PICK_R = 150;
++	const pickStart = [];
++	const pickEnd = [];
++	const pickQ = [];
++	const pickD = [];
++	const dqAll = [];
++	for (const list of dQuests) for (const qi of list) if (!dqAll.includes(qi)) dqAll.push(qi);
++	packages.forEach((pk, i) => {
++		pickStart.push(pickQ.length);
++		if (pk.dungeon === undefined) {
++			for (const qi of dqAll) {
++				const g = qGiver[qi];
++				let best = Infinity;
++				for (let s = pkgStart[i]; s < pkgEnd[i]; s++) {
++					const pt = sPt[s];
++					if (pMap[pt] !== pMap[g]) continue;
++					const d = Math.hypot(pX[pt] - pX[g], pY[pt] - pY[g]);
++					if (d < best) best = d;
++				}
++				if (best <= PICK_R) {
++					pickQ.push(qi);
++					pickD.push(best);
++				}
++			}
++		}
++		pickEnd.push(pickQ.length);
++	});
++
+ 	return {
++		pickStart: Int32Array.from(pickStart), pickEnd: Int32Array.from(pickEnd), pickQ: Int32Array.from(pickQ), pickD: Float64Array.from(pickD),
+ 		faction, race, cls, world,
+ 		start: { pt: startPt, zone: start.zone, quest: start.quest },
+ 		quests, qIndex, Q,
+@@ -397,7 +429,7 @@ function compileRun(world, { race, cls = null, raceBits = {}, family = 'solo' }
+ 		grindSpacing: Float64Array.from(world.grind.spacing),
+ 		questXpRows: world.questXp,
+ 		family,
+-		dungeons: dungeons.map((d, i) => ({ name: d.name, min: d.min, max: d.max, pt: ptIndex.get(d.pt), bosses: Int32Array.from(d.bosses), bossCount: d.bossCount, quests: Int32Array.from(dQuests[i]) })),
++		dungeons: dungeons.map((d, i) => ({ name: d.name, min: d.min, max: d.max, top: d.bosses.length ? Math.max(...d.bosses) : d.max, pt: ptIndex.get(d.pt), bosses: Int32Array.from(d.bosses), bossCount: d.bossCount, quests: Int32Array.from(dQuests[i]) })),
+ 		qDungeon,
+ 	};
+ }
