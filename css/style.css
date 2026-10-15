@@ -1276,6 +1276,23 @@ body.setup-open { overflow: hidden; }
 .gp-level select { background: var(--bg-panel); color: var(--text); border: 1px solid var(--border); border-radius: 7px; padding: 5px 8px; font: inherit; }
 .gp-brackets { display: flex; flex-wrap: wrap; gap: 4px; }
 .gp-brackets .btn.active { border-color: var(--spec-color); color: var(--text); background: color-mix(in srgb, var(--spec-color) 20%, transparent); }
+/* Phones: level and brackets on one row, the brackets sliding sideways
+   (faded at the edge so it reads as more to scroll). */
+@media (max-width: 600px) {
+  .gp-levelbar { flex-wrap: nowrap; gap: 10px; }
+  .gp-level { flex: none; }
+  .gp-brackets { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; min-width: 0; padding: 0 18px 0 14px;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 22px), transparent); mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 22px), transparent); }
+  .gp-brackets::-webkit-scrollbar { display: none; }
+  .gp-brackets .btn { flex: none; }
+}
+/* Touch screens: buttons and toggles big enough for a thumb. */
+@media (pointer: coarse) {
+  .btn, .chip-toggle, #app select { min-height: 36px; }
+  #app summary { padding-block: 9px; }
+  .chip-toggle { display: inline-flex; align-items: center; gap: 6px; }
+  .sum-more { padding: 8px 12px 6px 0; }
+}
 .gp-br-head { display: flex; flex-direction: column; gap: 2px; margin-bottom: 8px; }
 .gp-br-head b { font-size: 16px; }
 .gp-star { color: var(--gold, #c8aa6e); margin-right: 4px; }

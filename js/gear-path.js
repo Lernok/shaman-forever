@@ -162,6 +162,11 @@
     ], t('gp.how', { upgrade: Math.round((window.GearPlan.UPGRADE - 1) * 100), favor: window.GearPlan.FAVOR_PER_BRACKET }));
     container.innerHTML = html;
 
+    // The bracket strip slides sideways on phones: show the open one, from
+    // the one before it (whole buttons on the left, the fade on the right).
+    const strip = container.querySelector('.gp-brackets');
+    const on = strip && strip.querySelector('.active');
+    if (on && strip.scrollWidth > strip.clientWidth) strip.scrollLeft = (on.previousElementSibling || on).offsetLeft - strip.offsetLeft - 14;
     container.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
     const drops = container.querySelector('#gpDrops');
     if (drops) drops.addEventListener('change', e => { state.drops = e.target.checked; UI.store.set('gpDrops', state.drops); onChange(); });
