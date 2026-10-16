@@ -45,6 +45,11 @@ function Api.onQuest(id)
   if C_QuestLog and C_QuestLog.GetLogIndexForQuestID then return C_QuestLog.GetLogIndexForQuestID(id) ~= nil end
   return GetQuestLogIndexByID and (GetQuestLogIndexByID(id) or 0) > 0 or false
 end
+function Api.questName(id)
+  local f = C_QuestLog and C_QuestLog.GetTitleForQuestID
+  local name = f and readable(f(id))
+  return name or (D.qnames and D.qnames[id]) or ("#" .. tostring(id))
+end
 function Api.count(id)
   if C_Item and C_Item.GetItemCount then return C_Item.GetItemCount(id, true) or 0 end
   return GetItemCount and GetItemCount(id, true) or 0
@@ -393,6 +398,37 @@ end
 
 -- A tip marked "Listo" (done) or dismissed (gone) is kept with what it
 -- showed, for its tab; older saves only have `true` and stay hidden.
+local function inProgress()
+  local tips, seen = {}, {}
+  for _, st in ipairs(myPath()) do
+    if st.q and not seen[st.q] and not Api.questDone(st.q) and carrying(st.q) then
+      seen[st.q] = true
+      local key = "q" .. st.q .. ":" .. st.i
+      if not off(key) then
+        local g = gain(st.i)
+        local src = st.a == "class" and string.format(L().classQuest, st.qn or "?") or string.format(L().quest, st.qn or "?")
+        tips[#tips + 1] = { key = key, item = st.i, head = Api.itemName(st.i), src = src, gain = g and gainText(g) or nil,
+          giver = D.givers[st.q], title = st.qn, order = st.l, q = st.q }
+      end
+    end
+  end
+  for dname, list in pairs(D.dquests or {}) do
+    for _, e in ipairs(list) do
+      if not seen[e.q] and Api.onQuest(e.q) then
+        seen[e.q] = true
+        local key = "k" .. e.q
+        if not off(key) then
+          local lv = D.dlevels[dname] or { e.l or 0, e.l or 0 }
+          tips[#tips + 1] = { key = key, icon = QUEST_ICON, head = string.format(L().forDungeon, dname, lv[1], lv[2]),
+            src = Api.questName(e.q), giver = D.givers[e.q], title = e.qn, order = lv[1], q = e.q }
+        end
+      end
+    end
+  end
+  table.sort(tips, function(a, b) return a.order < b.order end)
+  return tips
+end
+
 local render, archive
 function archive(tip, kind)
   cdb[kind][tip.key] = { item = tip.item, icon = tip.icon, head = tip.head, src = tip.src, when = time() }
@@ -526,7 +562,7 @@ local function makeFrame()
   frame.tab = "next"
   frame.tabs = {}
   local x = 10
-  for _, kind in ipairs({ "next", "done", "gone" }) do
+  for _, kind in ipairs({ "next", "prog", "done", "gone" }) do
     local b = CreateFrame("Button", nil, frame)
     b:SetHeight(20)
     b:SetPoint("TOPLEFT", x, -32)
@@ -546,7 +582,7 @@ end
 -- Shows a list of tips with a title.
 -- The quest log changed: repaint the open window (you just took a quest).
 local function repaint()
-  if frame and frame:IsShown() and frame.lastTitle then show(frame.lastTitle, frame.lastTips, true) end
+  if frame and frame:IsShown() then show(frame.lastTitle or "", frame.lastTips or {}, true) end
 end
 function show(title, tips, keepTab)
   if not frame then makeFrame() end
@@ -557,20 +593,26 @@ end
 function render()
   local tab = frame.tab
   local tips = {}
+  local prog = inProgress()
   if tab == "next" then
-    for _, t in ipairs(frame.lastTips or {}) do if not off(t.key) then tips[#tips + 1] = t end end
+    -- What you already carry is under "En curso".
+    for _, t in ipairs(frame.lastTips or {}) do if not off(t.key) and not (t.q and carrying(t.q)) then tips[#tips + 1] = t end end
+  elseif tab == "prog" then
+    tips = prog
   else
     tips = archived(tab)
   end
-  local counts = { next = nil, done = #archived("done"), gone = #archived("gone") }
+  local counts = { prog = #prog, done = #archived("done"), gone = #archived("gone") }
+  local labels = { prog = L().tabProg, done = L().tabDone, gone = L().tabGone }
   for kind, b in pairs(frame.tabs) do
-    local label = kind == "next" and L().tabNext or string.format(kind == "done" and L().tabDone or L().tabGone, counts[kind])
+    local label = kind == "next" and L().tabNext or string.format(labels[kind], counts[kind])
     b.text:SetText(label)
     b:SetWidth(b.text:GetStringWidth() + 10)
     b.line:SetShown(kind == tab)
     b.text:SetTextColor(kind == tab and 1 or 0.6, kind == tab and 0.82 or 0.6, kind == tab and 0 or 0.6)
   end
-  frame.tabs.done:SetPoint("TOPLEFT", frame.tabs.next, "TOPRIGHT", 6, 0)
+  frame.tabs.prog:SetPoint("TOPLEFT", frame.tabs.next, "TOPRIGHT", 6, 0)
+  frame.tabs.done:SetPoint("TOPLEFT", frame.tabs.prog, "TOPRIGHT", 6, 0)
   frame.tabs.gone:SetPoint("TOPLEFT", frame.tabs.done, "TOPRIGHT", 6, 0)
   frame.title:SetText(frame.lastTitle or "")
   frame.spec.text:SetText(string.format(L().spec, specName()))
@@ -588,14 +630,14 @@ function render()
       r.check:SetShown(tab ~= "gone")
       r.checkLabel:SetText(tab ~= "gone" and L().done or "")
       r.dismiss:SetShown(tab ~= "done")
-      r:SetAlpha(tab == "next" and 1 or 0.75)
+      r:SetAlpha((tab == "next" or tab == "prog") and 1 or 0.75)
       r:Show()
     else
       r:Hide()
     end
   end
   local n = math.min(#tips, ROWS)
-  frame.empty:SetText(#tips == 0 and (tab == "next" and L().nothing or tab == "done" and L().nothingDone or L().nothingGone) or "")
+  frame.empty:SetText(#tips == 0 and (tab == "next" and L().nothing or tab == "prog" and L().nothingProg or tab == "done" and L().nothingDone or L().nothingGone) or "")
   frame.more:ClearAllPoints()
   frame.more:SetPoint("TOPLEFT", 10, -TOP - 4 - n * ROW_H)
   frame.more:SetText(#tips > ROWS and string.format(L().more, #tips - ROWS) or "")
@@ -853,7 +895,7 @@ carrying = function(q) return q and stepOf(q) and select(2, stepOf(q)) == "turni
 -- Marks on the map the step of a quest's chain you're at. `label`: what it's for.
 function SF.markQuest(qid, label)
   local step, state, n, total = stepOf(qid)
-  local name = D.qnames[step] or ("#" .. step)
+  local name = Api.questName(step)
   if state == "done" then say(string.format(L().markDone, label or name)) return true end
   if total > 1 then say(string.format(L().markInfo, label or name, name, n, total)) end
   local g = state == "turnin" and D.enders[step] or D.givers[step]
@@ -990,4 +1032,4 @@ end
 -- For the headless test (scripts/test-addon.lua).
 SF.test = { pathTips = pathTips, pickupTips = pickupTips, dungeonTips = dungeonTips, zoneTips = zoneTips, upcoming = upcoming,
   gain = gain, onZone = onZone, onLevel = onLevel, talentLine = talentLine, giverText = giverText, waypoint = waypoint,
-  archive = function(tip, kind) archive(tip, kind) end, archived = function(kind) return archived(kind) end }
+  archive = function(tip, kind) archive(tip, kind) end, inProgress = function() return inProgress() end, archived = function(kind) return archived(kind) end }

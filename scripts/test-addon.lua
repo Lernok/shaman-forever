@@ -89,6 +89,8 @@ if os.getenv("MARK") then
   print("-- shift+clic en el item " .. os.getenv("MARK") .. ":")
   HandleModifiedItemClick("|cff1eff00|Hitem:" .. os.getenv("MARK") .. "::::::::20:::::|h[x]|h|r")
 end
+-- Quests you carry (ONQUEST): the "En curso" tab.
+for _, t in ipairs(SF.test.inProgress()) do print("EN CURSO", t.head, "|", t.src) end
 -- "Listo" on the first tip: it leaves the tips and shows under Listos.
 local before = SF.test.upcoming()
 if before[1] then
