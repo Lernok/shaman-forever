@@ -326,6 +326,34 @@ local function myProfessions()
   return out
 end
 
+local polestarSet, polestarGuide
+local function polestar()
+  local P = rawget(_G, "Polestar")
+  return type(P) == "table" and P or nil
+end
+-- Quests your open Polestar guide still has you take or turn in.
+local function polestarQuests()
+  local P = polestar()
+  if not P or cdb.polestar == false or not (P.Engine and P.Engine.GetGuide) then return nil end
+  local ok, g = pcall(P.Engine.GetGuide)
+  if not ok or type(g) ~= "table" or type(g.steps) ~= "table" then return nil end
+  if polestarGuide == g and polestarSet then return polestarSet end
+  local set = {}
+  for _, step in ipairs(g.steps) do
+    for _, goal in ipairs(type(step.goals) == "table" and step.goals or {}) do
+      if type(goal.quest) == "number" then set[goal.quest] = true end
+    end
+  end
+  polestarGuide, polestarSet = g, set
+  return set
+end
+local function polestarGear()
+  local P = polestar()
+  if not P or not (P.Gear and P.Gear.IsEnabled) then return false end
+  local ok, on = pcall(P.Gear.IsEnabled)
+  return ok and on and true or false
+end
+
 -- Upgrades on your gear path from now to `lead` levels ahead.
 local function pathTips(filter)
   local lvl, tips = UnitLevel("player"), {}
@@ -1010,6 +1038,12 @@ local function upcoming()
   local tips = pickupTips(false)
   for _, t in ipairs(pathTips()) do tips[#tips + 1] = t end
   tips = nearby(tips)
+  local route = polestarQuests()
+  if route then
+    local out = {}
+    for _, t in ipairs(tips) do if not (t.q and route[t.q]) then out[#out + 1] = t end end
+    tips = out
+  end
   for _, t in ipairs(craftTips()) do tips[#tips + 1] = t end
   table.sort(tips, function(a, b) return a.order < b.order end)
   return tips
@@ -1074,8 +1108,24 @@ local function makeMinimapButton()
   placeMinimapButton()
   b:SetShown(not cdb.mmHide)
 end
--- The minimap's addon list (Addon Compartment), named in the .toc.
+-- The minimap's addon list (Addon Compartment), named in the .toc, and the
+-- key bindings (Bindings.xml; Esc > Options > Keybindings > AddOns).
 function ShamanForever_Toggle() SF.open() end
+function ShamanForever_MarkFirst()
+  if not frame or not frame.lastTips then SF.open(true) end
+  for _, t in ipairs(frame and frame.lastTips or {}) do
+    if not off(t.key) and not (t.q and carrying(t.q)) then
+      if t.q and SF.markQuest then SF.markQuest(t.q, t.item and Api.itemName(t.item) or t.title)
+      elseif t.item and SF.markItem and SF.markItem(t.item) then
+      else waypoint(t.giver, t.title or t.head) end
+      return
+    end
+  end
+  say(L().nothing)
+end
+BINDING_HEADER_SHAMANFOREVER = "Shaman: Forever"
+BINDING_NAME_SHAMANFOREVER_TOGGLE = (GetLocale() or ""):sub(1, 2) == "es" and "Mostrar u ocultar la ventana" or "Show or hide the window"
+BINDING_NAME_SHAMANFOREVER_MARK = (GetLocale() or ""):sub(1, 2) == "es" and "Marcar en el mapa el primer aviso" or "Mark the first tip on the map"
 
 -- Events -------------------------------------------------------------------------
 local function zoneTips()
@@ -1130,6 +1180,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
     self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
     self:RegisterEvent("PLAYER_LEVEL_UP")
     self:RegisterEvent("PLAYER_REGEN_ENABLED")
+    self:RegisterEvent("PLAYER_REGEN_DISABLED")
     self:RegisterEvent("QUEST_TURNED_IN")
     self:RegisterEvent("QUEST_ACCEPTED")
     self:RegisterEvent("QUEST_REMOVED")
@@ -1165,6 +1216,11 @@ ev:SetScript("OnEvent", function(self, event, ...)
     local a, b = ...
     log("accept", tostring(b or a))
     C_Timer.After(0.5, repaint)
+  elseif event == "PLAYER_REGEN_DISABLED" then
+    if cdb.hideCombat and frame and frame:IsShown() then frame:Hide(); frame.hiddenByCombat = true end
+  elseif event == "PLAYER_REGEN_ENABLED" and frame and frame.hiddenByCombat and not pending then
+    frame.hiddenByCombat = nil
+    frame:Show()
   elseif event == "PLAYER_REGEN_ENABLED" and pending then
     local p = pending
     pending = nil
@@ -1175,6 +1231,10 @@ end)
 -- Item tooltips: better or worse than what you wear, for your spec.
 local function onTooltip(tt, id)
   if not cdb or not id or not D.items[id] then return end
+  if polestarGear() and not cdb.tipAlways then
+    if D.iq and D.iq[id] then tt:AddLine(L().markHint, 0.5, 0.75, 1) end
+    return
+  end
   local v = value(id)
   if v <= 0 then return end
   local cur = wornValue(D.items[id].s)
@@ -1417,6 +1477,9 @@ local function makeOptions()
   end)
   check("tomtom", function() return cdb.tomtom end, function(v) cdb.tomtom = v end)
   check("showFar", function() return cdb.showFar end, function(v) cdb.showFar = v end)
+  check("hideCombat", function() return cdb.hideCombat end, function(v) cdb.hideCombat = v end)
+  check("polestar", function() return cdb.polestar ~= false end, function(v) cdb.polestar = v; polestarSet = nil end)
+  check("tipAlways", function() return cdb.tipAlways end, function(v) cdb.tipAlways = v end)
   -- Lead: how many levels ahead.
   y = y - 8
   panel.leadLabel = text("", "GameFontHighlight")

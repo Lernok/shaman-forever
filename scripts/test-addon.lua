@@ -71,6 +71,12 @@ C_Map = { GetAreaInfo = function() return nil end, SetUserWaypoint = function(p)
 UiMapPoint = { CreateFromCoordinates = function(m, x, y) return { m, x, y } end }
 function OpenWorldMap(m) print("OPENMAP", m) end
 
+-- Polestar open with a guide (POLESTAR="quest ids"), its gear advice on.
+if os.getenv("POLESTAR") then
+  local goals = {}
+  for q in os.getenv("POLESTAR"):gmatch("%d+") do goals[#goals + 1] = { t = "accept", quest = tonumber(q) } end
+  Polestar = { Engine = { GetGuide = function() return { steps = { { goals = goals } } } end }, Gear = { IsEnabled = function() return true end } }
+end
 local SF = {}
 for _, f in ipairs({ "Data.lua", "Locale.lua", "Core.lua" }) do assert(loadfile(dir .. f))("ShamanForever", SF) end
 local ev = frames[1]
