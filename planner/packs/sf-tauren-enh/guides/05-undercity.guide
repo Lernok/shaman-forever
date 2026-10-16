@@ -1,34 +1,26 @@
 guide sf-tauren-enh/05-undercity
-title 05 · Undercity (17-18)
+title 05 · Undercity (16-17)
 faction Horde
 race Tauren
-levels 17-18
+levels 16-17
 zone Undercity
 folder Shaman: Forever · Tauren Mejora
 next sf-tauren-enh/06-tirisfal-glades
-# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.1 h under the model). Era + known Forever quests only.
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.3 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 17.9)
+step Pick up quests (level 16.8)
   accept 79095
   turnin 79095
 
-step Pick up quests (level 17.9)
+step Pick up quests (level 16.8)
   accept 97891
 
-step Turn in (level 17.9)
+step Turn in (level 16.9)
   turnin 97891
 
-step Turn in (level 17.9)
-  turnin 1359
-  accept 1358
-
-step Turn in (level 18.0)
-  turnin 447
-  accept 450
-
-step Turn in (level 18.0)
-  turnin 444
+step Turn in (level 17.0)
+  turnin 491
 
 step Pick up: The New Plague (Ruins of Lordaeron)
   accept 95216 optional map 1458 @46.31,71.91

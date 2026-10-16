@@ -66,7 +66,8 @@ files.forEach((file, i) => {
       const m = /^\s+(complete|turnin) (\d+)/.exec(l);
       return m && ids.has(Number(m[2]));
     });
-    while (at > 0 && !/^step\b/.test(lines[at])) at--;
+    // (A guide holding only the run: its step goes where the run was, at the end.)
+    if (runAt < 0) while (at > 0 && !/^step\b/.test(lines[at])) at--;
     if (at < 0) at = lines.length;
     const e = d.entrance;
     const step = [

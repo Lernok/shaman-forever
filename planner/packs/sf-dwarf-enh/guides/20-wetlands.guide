@@ -1,0 +1,226 @@
+guide sf-dwarf-enh/20-wetlands
+title 20 · Wetlands (29-31)
+faction Alliance
+race Dwarf
+levels 29-31
+zone Wetlands
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/21-hillsbrad-foothills
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 35.5 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 29.0)
+  accept 288
+
+step Turn in (level 29.1)
+  turnin 270
+  accept 321
+  accept 526
+
+step Objectives: The Third Fleet (level 29.1)
+  complete 288
+
+step Turn in (level 29.1)
+  turnin 288
+  accept 289
+
+step Pick up quests (level 29.1)
+  accept 464
+  accept 98221
+  turnin 98221
+  accept 98230
+
+step Pick up quests (level 29.1)
+  accept 98209
+
+step Pick up quests (level 29.1)
+  accept 98072
+  accept 98240
+
+step Pick up quests (level 29.1)
+  accept 472
+
+step Turn in (level 29.1)
+  turnin 321
+  accept 324
+
+step Objectives: The Lost Ingots (level 29.2)
+  complete 324
+  complete 526
+
+step Turn in (level 29.2)
+  turnin 324
+  turnin 526
+  accept 322
+
+step Objectives: The Cursed Crew (level 29.3)
+  complete 289
+
+step Objectives: The Cursed Crew (level 29.3)
+  complete 289
+
+step Turn in (level 29.4)
+  turnin 289
+  accept 290
+
+step Objectives: Lifting the Curse (level 29.4)
+  complete 290
+
+step Turn in (level 29.4)
+  turnin 290
+  accept 292
+
+step Hearth (level 29.4)
+  hearth "Deepwater Tavern"
+
+step Turn in (level 29.4)
+  turnin 292
+  accept 293
+
+step Pick up quests (level 29.4)
+  accept 299
+
+step Pick up quests (level 29.4)
+  accept 296
+
+step Objectives: Uncovering the Past (level 29.4)
+  complete 299
+
+step Objectives: Ormer's Revenge (level 29.4)
+  complete 296
+
+step Turn in (level 29.5)
+  turnin 296
+
+step Turn in (level 29.6)
+  turnin 299
+
+step Objectives: War Banners (level 29.6)
+  complete 464
+
+step Turn in (level 29.6)
+  turnin 98230
+  turnin 98240
+  accept 98245
+
+step Pick up quests (level 29.6)
+  accept 98283
+
+step Objectives: Carnage (level 29.6)
+  complete 98283
+
+step Objectives: Razormaw Needling (level 29.7)
+  complete 98245
+
+step Objectives: Carnage (level 29.7)
+  complete 98283
+
+step Turn in (level 29.7)
+  turnin 472
+
+step Turn in (level 29.8)
+  turnin 98245
+
+step Turn in (level 29.9)
+  turnin 98283
+
+step Objectives: Crocs of the Sky (level 29.9)
+  complete 98072
+
+step Objectives: A Noble Brew (level 29.9)
+  complete 335
+
+step Turn in (level 30.0)
+  turnin 464
+  accept 465
+
+step Turn in (level 30.0)
+  turnin 98072
+
+step Pick up quests (level 30.0)
+  accept 1132
+
+step Turn in (level 30.0)
+  turnin 465
+
+step Pick up quests (level 30.0)
+  accept 1302
+
+step Pick up quests (level 30.0)
+  accept 98216
+  accept 98310
+  accept 98313
+
+step Objectives: Understanding Our Present (level 30.1)
+  complete 98216
+
+step Turn in (level 30.1)
+  turnin 98216
+
+step Pick up quests (level 30.1)
+  accept 98297
+  accept 98300
+
+step Pick up quests (level 30.1)
+  accept 95646 optional map 1437 @56.37,40.4
+
+step Pick up quests (level 30.1)
+  accept 98223
+
+step Objectives: Horrors in the Highland (level 30.1)
+  complete 95646 optional
+
+step Turn in (level 30.3)
+  turnin 95646 optional map 1437 @56.37,40.4
+
+step Objectives: Gleaning Our Future (level 30.3)
+  complete 98310
+
+step Objectives: Gleaning Our Future (level 30.3)
+  complete 98310
+
+step Pick up quests (level 30.3)
+  accept 631
+
+step Pick up quests (level 30.3)
+  accept 87318
+
+step Turn in (level 30.3)
+  turnin 87318
+  accept 88758
+
+step Turn in (level 30.4)
+  turnin 88758
+
+step Pick up quests (level 30.4)
+  accept 87491
+
+step Turn in (level 30.4)
+  turnin 87491
+
+step Objectives: Stopping the Cycle (level 30.4)
+  complete 98297
+
+step Objectives: Gleaning Our Future (level 30.5)
+  complete 98310
+
+step Objectives: Gleaning Our Future (level 30.5)
+  complete 98310
+
+step Turn in (level 30.5)
+  turnin 98297
+
+step Turn in (level 30.6)
+  turnin 98310
+
+step Hearth (level 30.6)
+  hearth "Deepwater Tavern"
+
+step Turn in (level 30.6)
+  turnin 98223
+
+step Flight path (level 30.6)
+  getfp "Southshore"
+
+step Hearthstone (level 30.6)
+  sethome "Southshore"

@@ -1,0 +1,64 @@
+guide sf-tauren-enh/02-durotar
+title 02 · Durotar (12-13)
+faction Horde
+race Tauren
+levels 12-13
+zone Durotar
+folder Shaman: Forever · Tauren Mejora
+next sf-tauren-enh/03-orgrimmar
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 12.0)
+  accept 840
+
+step Pick up quests (level 12.0)
+  accept 99048
+
+step Turn in (level 12.0)
+  turnin 99048
+  accept 99049
+
+step Objectives: Threat from Below (level 12.0)
+  complete 99049
+
+step Objectives: Threat from Below (level 12.0)
+  complete 99049
+
+step Turn in (level 12.1)
+  turnin 99049
+  accept 99051
+
+step Pick up quests (level 12.1)
+  accept 97281
+
+step Turn in (level 12.2)
+  turnin 97281
+  accept 97282
+
+step Objectives: Stormy Potential (level 12.3)
+  complete 97282
+
+step Pick up quests (level 12.3)
+  accept 816
+
+step Turn in (level 12.3)
+  turnin 97282
+
+step Pick up quests (level 12.4)
+  accept 832
+
+step Objectives: Threat from Below (level 12.5)
+  complete 99051
+
+step Hearth (level 12.5)
+  hearth "Razor Hill"
+
+step Turn in (level 12.6)
+  turnin 99051
+
+step Objectives: Lost But Not Forgotten (level 12.6)
+  complete 816
+
+step Turn in (level 12.7)
+  turnin 816

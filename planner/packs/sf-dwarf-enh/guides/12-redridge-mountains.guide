@@ -1,0 +1,80 @@
+guide sf-dwarf-enh/12-redridge-mountains
+title 12 · Redridge Mountains (21-23)
+faction Alliance
+race Dwarf
+levels 21-23
+zone Redridge Mountains
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/13-silverpine-forest
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 35.5 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 21.4)
+  accept 150
+
+step Turn in (level 21.4)
+  turnin 65 optional map 1433 @21.39,45.35 live
+  accept 132 optional map 1433 @21.39,45.35 live
+
+step Pick up quests (level 21.4)
+  accept 118
+
+step Pick up quests (level 21.4)
+  accept 125
+
+step Pick up quests (level 21.4)
+  accept 98407
+
+step Objectives: The Lost Tools (level 21.4)
+  complete 125
+
+step Objectives: Murloc Poachers (level 21.5)
+  complete 150
+
+step Turn in (level 21.6)
+  turnin 125
+  accept 89
+
+step Turn in (level 21.6)
+  turnin 150
+
+step Pick up quests (level 21.6)
+  accept 92
+
+step Objectives: The Everstill Bridge (level 21.7)
+  complete 89
+
+step Objectives: Redridge Goulash (level 21.8)
+  complete 92
+
+step Objectives: Show of Force (level 21.8)
+  complete 98407
+
+step Pick up quests (level 21.8)
+  accept 244
+
+step Turn in (level 21.8)
+  turnin 244
+  turnin 98407
+  accept 246
+
+step Turn in (level 21.9)
+  turnin 89
+
+step Objectives: Assessing the Threat (level 21.9)
+  complete 246
+
+step Objectives: Assessing the Threat (level 21.9)
+  complete 246
+
+step Turn in (level 22.0)
+  turnin 246
+
+step Objectives: Redridge Goulash (level 22.1)
+  complete 92
+
+step Objectives: Redridge Goulash (level 22.1)
+  complete 92
+
+step Turn in (level 22.2)
+  turnin 92

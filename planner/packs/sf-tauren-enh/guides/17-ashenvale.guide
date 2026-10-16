@@ -1,0 +1,191 @@
+guide sf-tauren-enh/17-ashenvale
+title 17 · Ashenvale (27-29)
+faction Horde
+race Tauren
+levels 27-29
+zone Ashenvale
+folder Shaman: Forever · Tauren Mejora
+next sf-tauren-enh/18-orgrimmar
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 27.4)
+  accept 216
+
+step Pick up quests (level 27.4)
+  accept 6641
+
+step Pick up quests (level 27.4)
+  accept 6462
+
+step Turn in (level 27.4)
+  turnin 6562 optional map 1440 @11.56,34.29
+  accept 6563 optional map 1440 @11.56,34.29
+
+step Objectives: Vorsha the Lasher (level 27.4)
+  complete 6641
+
+step Objectives: The Essence of Aku'Mai (level 27.4)
+  complete 6563 optional
+
+step Turn in (level 27.4)
+  turnin 6563 optional map 1440 @11.56,34.29
+
+step Turn in (level 27.5)
+  turnin 6641
+
+step Objectives: Between a Rock and a Thistlefur (level 27.5)
+  complete 216
+
+step Objectives: Between a Rock and a Thistlefur (level 27.5)
+  complete 216
+
+step Objectives: Troll Charm (level 27.5)
+  complete 6462
+
+step Pick up quests (level 27.5)
+  accept 6482
+
+step Objectives: Freedom to Ruul (level 27.5)
+  complete 6482
+
+step Pick up quests (level 27.5)
+  accept 98251
+  accept 98252
+
+step Objectives: Never Coming Back (level 27.5)
+  complete 98251
+
+step Pick up quests (level 27.5)
+  accept 23
+
+step Objectives: Never Coming Back (level 27.6)
+  complete 98251
+
+step Turn in (level 27.6)
+  turnin 98252
+
+step Turn in (level 27.6)
+  turnin 98251
+
+step Pick up quests (level 27.6)
+  accept 78132
+  turnin 78132
+  accept 78133
+  turnin 78133
+  accept 78134
+  turnin 78134
+
+step Pick up quests (level 27.8)
+  accept 6544
+
+step Objectives: Torek's Assault (level 27.8)
+  complete 6544
+
+step Pick up quests (level 27.8)
+  accept 6503
+
+step Objectives: Ashenvale Outrunners (level 27.9)
+  complete 6503
+
+step Turn in (level 27.9)
+  turnin 6503
+
+step Hearthstone (level 27.9)
+  sethome "Splintertree Post"
+
+step Turn in (level 28.0)
+  turnin 6544
+
+step Turn in (level 28.0)
+  turnin 23
+
+step Turn in (level 28.1)
+  turnin 6482
+
+step Pick up quests (level 28.1)
+  accept 25
+
+step Objectives: Stonetalon Standstill (level 28.1)
+  complete 25
+
+step Objectives: Stonetalon Standstill (level 28.1)
+  complete 25
+
+step Hearth (level 28.1)
+  hearth "Splintertree Post"
+
+step Turn in (level 28.2)
+  turnin 25
+
+step Turn in (level 28.2)
+  turnin 216
+  accept 6621
+
+step Turn in (level 28.3)
+  turnin 6462
+
+step Objectives: King of the Foulweald (level 28.3)
+  complete 6621
+
+step Turn in (level 28.3)
+  turnin 6621
+
+step Pick up quests (level 28.3)
+  accept 6441
+
+step Pick up quests (level 28.3)
+  accept 6571
+
+step Pick up quests (level 28.3)
+  accept 6504
+  complete 6504
+  turnin 6504
+
+step Pick up quests (level 28.4)
+  accept 2
+
+step Turn in (level 28.5)
+  turnin 2
+
+step Objectives: Warsong Supplies (level 28.5)
+  complete 6571
+
+step Objectives: Warsong Supplies (level 28.5)
+  complete 6571
+
+step Objectives: Satyr Horns (level 28.6)
+  complete 6441
+
+step Objectives: Ordanus (level 28.6)
+  complete 1088
+
+step Pick up quests (level 28.6)
+  accept 24
+
+step Objectives: Warsong Supplies (level 28.7)
+  complete 6571
+
+step Pick up quests (level 28.7)
+  accept 1918
+
+step Hearth (level 28.7)
+  hearth "Splintertree Post"
+
+step Turn in (level 28.7)
+  turnin 6441
+
+step Turn in (level 28.8)
+  turnin 24
+  accept 247
+  turnin 247
+
+step Turn in (level 28.9)
+  turnin 1918
+  accept 824
+
+step Turn in (level 28.9)
+  turnin 824
+
+step Hearthstone (level 28.9)
+  sethome "Orgrimmar"

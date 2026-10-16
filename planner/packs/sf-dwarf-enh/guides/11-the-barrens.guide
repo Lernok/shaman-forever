@@ -1,0 +1,45 @@
+guide sf-dwarf-enh/11-the-barrens
+title 11 · The Barrens (21-22)
+faction Alliance
+race Dwarf
+levels 21-22
+zone The Barrens
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/12-redridge-mountains
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 35.5 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 21.0)
+  accept 1486 optional map 1413 @45.99,35.66
+
+step Pick up quests (level 21.0)
+  accept 1487 optional map 1413 @46.01,35.74
+
+step Dungeon: Wailing Caverns (level 21)
+  zone map 1413
+  goto 46,36.4 "Wailing Caverns" r 30 live
+  tip Find a group and clear Wailing Caverns, with its quests from this route in your log.
+
+step Pick up quests (level 21.2)
+  accept 6981 optional
+
+step Turn in (level 21.3)
+  turnin 1487 optional map 1413 @46.01,35.74
+
+step Turn in (level 21.4)
+  turnin 1486 optional map 1413 @45.99,35.66
+
+step Flight path (level 21.4)
+  getfp "Ratchet"
+
+step Hearthstone (level 21.4)
+  sethome "Ratchet"
+
+step Pick up quests (level 21.4)
+  accept 959 optional map 1413 @63.09,37.61
+
+step Flight path (level 21.4)
+  getfp "Lakeshire"
+
+step Hearthstone (level 21.4)
+  sethome "Lakeshire"

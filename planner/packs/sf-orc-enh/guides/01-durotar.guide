@@ -1,0 +1,353 @@
+guide sf-orc-enh/01-durotar
+title 01 · Durotar (1-12)
+faction Horde
+race Orc
+levels 1-12
+zone Durotar
+folder Shaman: Forever · Orco Mejora
+next sf-orc-enh/02-tirisfal-glades
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 1.0)
+  accept 4641
+
+step Turn in (level 1.1)
+  turnin 4641
+  accept 788
+  accept 97279
+
+step Objectives: Wayward Weapons (level 1.1)
+  complete 97279
+
+step Turn in (level 1.5)
+  turnin 97279
+
+step Pick up quests (level 1.5)
+  accept 790
+
+step Objectives: Sarkoth (level 1.7)
+  complete 790
+
+step Turn in (level 2.4)
+  turnin 790
+
+step Pick up quests (level 2.4)
+  accept 792
+
+step Pick up quests (level 2.4)
+  accept 804
+
+step Turn in (level 2.5)
+  turnin 804
+
+step Objectives: Cutting Teeth (level 3.1)
+  complete 788
+
+step Pick up quests (level 3.1)
+  accept 5441
+
+step Objectives: Lazy Peons (level 3.1)
+  complete 5441
+
+step Turn in (level 3.4)
+  turnin 5441
+  accept 6394
+
+step Turn in (level 3.5)
+  turnin 788
+  accept 789
+  accept 3089
+
+step Turn in (level 3.5)
+  turnin 3089
+
+step Pick up quests (level 3.5)
+  accept 4402
+
+step Objectives: Sting of the Scorpid (level 4.1)
+  complete 789
+
+step Pick up quests (level 4.1)
+  accept 1516
+
+step Objectives: Galgar's Cactus Apple Surprise (level 4.1)
+  complete 4402
+
+step Objectives: Call of Earth (level 4.1)
+  complete 1516
+
+step Objectives: Thazz'ril's Pick (level 4.1)
+  complete 6394
+
+step Objectives: Vile Familiars (level 4.5)
+  complete 792
+
+step Turn in (level 4.7)
+  turnin 6394
+
+step Turn in (level 4.9)
+  turnin 4402
+
+step Turn in (level 5.0)
+  turnin 789
+
+step Turn in (level 5.2)
+  turnin 792
+  accept 794
+
+step Turn in (level 5.3)
+  turnin 1516
+  accept 1517
+
+step Turn in (level 5.4)
+  turnin 1517
+  accept 1518
+
+step Pick up quests (level 5.4)
+  accept 2161
+
+step Objectives: Burning Blade Medallion (level 5.4)
+  complete 794
+
+step Turn in (level 5.6)
+  turnin 1518
+
+step Turn in (level 5.8)
+  turnin 794
+  accept 805
+
+step Pick up quests (level 5.8)
+  accept 96652
+
+step Turn in (level 5.9)
+  turnin 805
+
+step Turn in (level 6.0)
+  turnin 96652
+
+step Hearthstone (level 6.0)
+  sethome "Razor Hill"
+
+step Turn in (level 6.0)
+  turnin 2161
+
+step Pick up quests (level 6.0)
+  accept 784
+  accept 837
+
+step Pick up quests (level 6.0)
+  accept 815
+  accept 96825
+
+step Pick up quests (level 6.0)
+  accept 791
+
+step Pick up quests (level 6.0)
+  accept 96822
+
+step Pick up quests (level 6.0)
+  accept 96604
+
+step Objectives: The Great Outdoors (level 6.0)
+  complete 96604
+
+step Turn in (level 6.2)
+  turnin 96604
+  accept 96655
+
+step Objectives: Encroachment (level 6.4)
+  complete 837
+
+step Objectives: This Fruit Could Bite Back (level 6.4)
+  complete 96825
+
+step Turn in (level 6.5)
+  turnin 96825
+  complete 96655
+  turnin 96655
+
+step Objectives: Encroachment (level 6.8)
+  complete 837
+
+step Objectives: Encroachment (level 6.9)
+  complete 837
+
+step Turn in (level 7.0)
+  turnin 837
+
+step Objectives: For Honor (level 7.0)
+  complete 96822
+
+step Objectives: Vanquish the Betrayers (level 7.2)
+  complete 784
+  complete 791
+
+step Objectives: For Honor (level 7.6)
+  complete 96822
+
+step Objectives: For Honor (level 7.6)
+  complete 96822
+
+step Objectives: Vanquish the Betrayers (level 7.7)
+  complete 784
+
+step Pick up quests (level 7.7)
+  accept 830
+
+step Pick up quests (level 7.7)
+  accept 786
+
+step Pick up quests (level 7.7)
+  accept 97223
+
+step Pick up quests (level 7.7)
+  accept 808
+  accept 823
+  accept 826
+
+step Pick up quests (level 7.7)
+  accept 818
+  accept 97225
+
+step Pick up quests (level 7.7)
+  accept 96821
+  accept 817
+
+step Objectives: A Solvent Spirit (level 7.9)
+  complete 818
+
+step Objectives: Break a Few Eggs (level 7.9)
+  complete 815
+
+step Objectives: Bloodtalon Matriarch (level 7.9)
+  complete 97223
+
+step Objectives: Zalazane (level 8.2)
+  complete 826
+
+step Objectives: Zalazane (level 8.2)
+  complete 826
+
+step Objectives: Minshina's Skull (level 8.2)
+  complete 808
+
+step Objectives: Forgotten Loa Idols (level 8.2)
+  complete 97225
+
+step Objectives: Practical Prey (level 8.4)
+  complete 817
+
+step Objectives: A Solvent Spirit (level 8.6)
+  complete 818
+
+step Turn in (level 8.8)
+  turnin 97225
+  turnin 826
+  turnin 808
+
+step Turn in (level 9.2)
+  turnin 818
+
+step Turn in (level 9.3)
+  turnin 817
+
+step Turn in (level 9.4)
+  turnin 97223
+
+step Objectives: Thwarting Kolkar Aggression (level 9.4)
+  complete 786
+
+step Objectives: Thwarting Kolkar Aggression (level 9.4)
+  complete 786
+
+step Pick up quests (level 9.4)
+  accept 99123
+  complete 99123
+
+step Objectives: Thwarting Kolkar Aggression (level 9.4)
+  complete 786
+
+step Turn in (level 9.5)
+  turnin 786
+
+step Turn in (level 9.6)
+  turnin 99123
+
+step Objectives: Legging It (level 9.6)
+  complete 96821
+
+step Objectives: Legging It (level 9.7)
+  complete 96821
+
+step Turn in (level 9.8)
+  turnin 784
+  turnin 830
+  turnin 96821
+  accept 825
+  accept 831
+
+step Turn in (level 10.0)
+  turnin 823
+  accept 806
+
+step Turn in (level 10.1)
+  turnin 96822
+
+step Pick up quests (level 10.1)
+  accept 2983
+
+step Objectives: From The Wreckage.... (level 10.1)
+  complete 825
+
+step Hearth (level 10.1)
+  hearth "Razor Hill"
+
+step Turn in (level 10.1)
+  turnin 825
+
+step Turn in (level 10.2)
+  turnin 815
+
+step Turn in (level 10.3)
+  turnin 791
+
+step Pick up quests (level 10.3)
+  accept 834
+
+step Objectives: Winds in the Desert (level 10.3)
+  complete 834
+
+step Turn in (level 10.4)
+  turnin 834
+  accept 835
+
+step Objectives: Dark Storms (level 10.4)
+  complete 806
+
+step Pick up quests (level 10.4)
+  accept 812
+
+step Objectives: Securing the Lines (level 10.5)
+  complete 835
+
+step Objectives: Securing the Lines (level 10.7)
+  complete 835
+
+step Turn in (level 10.8)
+  turnin 835
+
+step Turn in (level 10.9)
+  turnin 806
+  accept 828
+
+step Turn in (level 10.9)
+  turnin 828
+  accept 827
+
+step Objectives: Skull Rock (level 11.0)
+  complete 827
+
+step Turn in (level 11.1)
+  turnin 827
+  accept 829

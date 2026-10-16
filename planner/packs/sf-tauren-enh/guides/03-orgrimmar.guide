@@ -1,70 +1,76 @@
 guide sf-tauren-enh/03-orgrimmar
-title 03 · Orgrimmar (16-17)
+title 03 · Orgrimmar (12-14)
 faction Horde
 race Tauren
-levels 16-17
+levels 12-14
 zone Orgrimmar
 folder Shaman: Forever · Tauren Mejora
 next sf-tauren-enh/04-silverpine-forest
-# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.1 h under the model). Era + known Forever quests only.
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.3 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 16.1)
+step Pick up quests (level 12.7)
   accept 97326
 
-step Objectives: Rocks to Rests (level 16.1)
+step Objectives: Rocks to Rests (level 12.7)
   complete 97326
 
-step Turn in (level 16.2)
+step Turn in (level 12.8)
   turnin 97326
 
-step Pick up quests (level 16.2)
+step Pick up quests (level 12.8)
   accept 5726 optional map 1454 @31.73,37.82
 
-step Flight path (level 16.2)
+step Flight path (level 12.8)
   getfp "Orgrimmar"
 
-step Hearthstone (level 16.2)
+step Hearthstone (level 12.8)
   sethome "Orgrimmar"
 
-step Pick up quests (level 16.2)
+step Turn in (level 12.9)
+  turnin 832
+
+step Pick up quests (level 12.9)
   accept 97246
 
-step Pick up quests (level 16.2)
+step Pick up quests (level 12.9)
   accept 97249
   turnin 97246
 
-step Pick up quests (level 16.2)
+step Pick up quests (level 13.0)
   accept 97242
 
-step Pick up quests (level 16.2)
+step Pick up quests (level 13.0)
   accept 97275
 
-step Objectives: Yelmak's Medley (level 16.2)
+step Objectives: Yelmak's Medley (level 13.0)
   complete 97242
 
-step Turn in (level 16.3)
+step Turn in (level 13.0)
   turnin 97242
 
-step Turn in (level 16.3)
+step Turn in (level 13.1)
   turnin 97275
 
-step Turn in (level 16.4)
+step Turn in (level 13.2)
   turnin 97249
+
+step Pick up quests (level 13.2)
+  accept 1061
 
 step Pick up: Slaying the Beast (Ragefire Chasm)
   accept 5761 optional map 1454 @49.47,50.59
 
-step Dungeon: Ragefire Chasm (level 16)
+step Dungeon: Ragefire Chasm (level 13)
   zone map 1454
   goto 52.6,49 "Ragefire Chasm" r 30 live
   tip Find a group and clear Ragefire Chasm, with its quests from this route in your log.
 
-step Turn in (level 16.8)
+step Turn in (level 13.8)
   turnin 5761 optional map 1454 @49.47,50.59
 
-step Flight path (level 16.8)
+step Flight path (level 13.8)
   getfp "The Sepulcher"
 
-step Hearthstone (level 16.8)
+step Hearthstone (level 13.8)
   sethome "The Sepulcher"

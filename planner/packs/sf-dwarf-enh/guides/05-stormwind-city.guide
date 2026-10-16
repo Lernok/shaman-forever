@@ -1,0 +1,47 @@
+guide sf-dwarf-enh/05-stormwind-city
+title 05 · Stormwind City (17-18)
+faction Alliance
+race Dwarf
+levels 17-18
+zone Stormwind City
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/06-tirisfal-glades
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 35.5 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 17.2)
+  accept 97222
+  turnin 97222
+
+step Pick up quests (level 17.2)
+  accept 399
+
+step Turn in (level 17.3)
+  turnin 1338
+
+step Pick up quests (level 17.3)
+  accept 353
+
+step Pick up quests (level 17.3)
+  accept 97220
+
+step Pick up quests (level 17.3)
+  accept 95065
+
+step Objectives: Fishin' Time (level 17.3)
+  complete 95065
+
+step Turn in (level 17.3)
+  turnin 97220
+
+step Turn in (level 17.3)
+  turnin 95065
+
+step Pick up: Underground Assault (The Deadmines)
+  accept 2040 optional map 1453 @62.63,34.11 live
+
+step Pick up: Collecting Memories (The Deadmines)
+  accept 168 optional map 1453 @70.31,40.82 live
+
+step Pick up: Oh Brother... (The Deadmines)
+  accept 167 optional map 1453 @70.31,40.82 live

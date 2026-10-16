@@ -1,0 +1,24 @@
+guide sf-dwarf-enh/13-silverpine-forest
+title 13 · Silverpine Forest (22-23)
+faction Alliance
+race Dwarf
+levels 22-23
+zone Silverpine Forest
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/14-duskwood
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 35.5 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Dungeon: Shadowfang Keep (level 22)
+  zone map 1421
+  goto 44.8,67.8 "Shadowfang Keep" r 30 live
+  tip Find a group and clear Shadowfang Keep, with its quests from this route in your log.
+
+step Hearth (level 22.5)
+  hearth "Lakeshire"
+
+step Flight path (level 22.5)
+  getfp "Darkshire"
+
+step Hearthstone (level 22.5)
+  sethome "Darkshire"

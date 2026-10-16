@@ -1,0 +1,16 @@
+guide sf-dwarf-enh/24-stormwind-city
+title 24 · Stormwind City (31-32)
+faction Alliance
+race Dwarf
+levels 31-32
+zone Stormwind City
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/25-ironforge
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 35.5 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 31.5)
+  turnin 92456 optional map 1453 @31.5,62.61 live
+
+step Turn in (level 31.7)
+  turnin 92489 optional map 1453 @48.71,87.62 live

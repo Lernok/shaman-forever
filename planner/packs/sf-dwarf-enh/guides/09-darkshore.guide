@@ -1,0 +1,185 @@
+guide sf-dwarf-enh/09-darkshore
+title 09 · Darkshore (18-21)
+faction Alliance
+race Dwarf
+levels 18-21
+zone Darkshore
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/10-ashenvale
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 35.5 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 18.8)
+  accept 947
+
+step Pick up quests (level 18.8)
+  accept 963
+
+step Pick up quests (level 18.8)
+  accept 1138
+
+step Pick up quests (level 18.8)
+  accept 87760
+
+step Pick up quests (level 18.8)
+  accept 4740
+
+step Pick up quests (level 18.8)
+  accept 965
+
+step Pick up quests (level 18.8)
+  accept 729
+
+step Pick up quests (level 18.8)
+  accept 982
+
+step Pick up quests (level 18.8)
+  accept 97914
+
+step Objectives: Deep Ocean, Vast Sea (level 18.8)
+  complete 982
+
+step Objectives: Deep Ocean, Vast Sea (level 18.8)
+  complete 982
+
+step Objectives: Fruit of the Sea (level 18.9)
+  complete 1138
+
+step Objectives: Holy Diver (level 18.9)
+  complete 87760
+
+step Pick up quests (level 18.9)
+  accept 2098
+
+step Objectives: Gyromast's Retrieval (level 19.0)
+  complete 2098
+
+step Objectives: Gyromast's Retrieval (level 19.0)
+  complete 2098
+
+step Objectives: Gyromast's Retrieval (level 19.1)
+  complete 2098
+
+step Turn in (level 19.1)
+  turnin 2098
+
+step Turn in (level 19.2)
+  turnin 965
+  accept 966
+
+step Objectives: The Tower of Althalaxx (level 19.2)
+  complete 966
+
+step Turn in (level 19.3)
+  turnin 966
+  accept 967
+
+step Objectives: Cave Mushrooms (level 19.3)
+  complete 947
+
+step Turn in (level 19.3)
+  turnin 947
+  accept 948
+
+step Turn in (level 19.4)
+  turnin 982
+
+step Turn in (level 19.4)
+  turnin 1138
+
+step Turn in (level 19.5)
+  turnin 87760
+
+step Objectives: For Love Eternal (level 19.5)
+  complete 963
+
+step Turn in (level 19.6)
+  turnin 948
+  accept 944
+
+step Pick up quests (level 19.6)
+  accept 98013
+
+step Pick up quests (level 19.6)
+  accept 5321
+
+step Objectives: The Sleeper Has Awakened (level 19.6)
+  complete 5321
+
+step Pick up quests (level 19.7)
+  accept 968
+
+step Objectives: The Master's Glaive (level 19.7)
+  complete 944
+
+step Turn in (level 19.7)
+  turnin 944
+  accept 949
+
+step Turn in (level 19.8)
+  turnin 949
+  accept 950
+  accept 98042
+
+step Objectives: It's All Fun and Games Until... (level 19.8)
+  complete 98042
+
+step Pick up quests (level 19.8)
+  accept 945
+
+step Objectives: Therylune's Escape (level 19.8)
+  complete 945
+
+step Turn in (level 19.8)
+  turnin 729
+  accept 731
+
+step Objectives: The Absent Minded Prospector (level 19.8)
+  complete 731
+
+step Objectives: WANTED: Murkdeep! (level 19.8)
+  complete 4740
+
+step Turn in (level 19.9)
+  turnin 950
+  accept 951
+
+step Hearth (level 19.9)
+  hearth "Auberdine"
+
+step Turn in (level 19.9)
+  turnin 963
+
+step Turn in (level 20.0)
+  turnin 4740
+
+step Turn in (level 20.1)
+  turnin 731
+  accept 741
+
+step Turn in (level 20.1)
+  turnin 98042
+
+step Objectives: Swelling Forces (level 20.2)
+  complete 98013
+
+step Objectives: Swelling Forces (level 20.2)
+  complete 98013
+
+step Objectives: Mathystra Relics (level 20.2)
+  complete 951
+
+step Objectives: Swelling Forces (level 20.3)
+  complete 98013
+
+step Turn in (level 20.4)
+  turnin 951
+
+step Turn in (level 20.5)
+  turnin 98013
+
+step Flight path (level 20.5)
+  getfp "Astranaar"
+
+step Hearthstone (level 20.5)
+  sethome "Astranaar"

@@ -1,0 +1,108 @@
+guide sf-dwarf-enh/16-duskwood
+title 16 · Duskwood (26-28)
+faction Alliance
+race Dwarf
+levels 26-28
+zone Duskwood
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/17-wetlands
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 35.5 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 26.1)
+  accept 66
+
+step Pick up quests (level 26.1)
+  accept 58
+
+step Turn in (level 26.1)
+  turnin 66
+  accept 67
+
+step Pick up quests (level 26.1)
+  accept 173
+
+step Pick up quests (level 26.1)
+  accept 96138
+
+step Objectives: Worgen in the Woods (level 26.1)
+  complete 173
+
+step Turn in (level 26.2)
+  turnin 173
+  accept 221
+
+step Objectives: Worgen in the Woods (level 26.2)
+  complete 221
+
+step Turn in (level 26.3)
+  turnin 221
+  accept 222
+
+step Objectives: Worgen in the Woods (level 26.3)
+  complete 222
+
+step Objectives: Worgen in the Woods (level 26.4)
+  complete 222
+
+step Turn in (level 26.4)
+  turnin 222
+  accept 223
+
+step Turn in (level 26.5)
+  turnin 223
+
+step Objectives: Merrick's Bow (level 26.5)
+  complete 96138
+
+step Objectives: Merrick's Bow (level 26.5)
+  complete 96138
+
+step Pick up quests (level 26.5)
+  accept 134
+
+step Objectives: The Night Watch (level 26.6)
+  complete 58
+
+step Pick up quests (level 26.6)
+  accept 323
+
+step Objectives: Proving Your Worth (level 26.8)
+  complete 323
+
+step Turn in (level 26.8)
+  turnin 323
+  accept 269
+
+step Objectives: Ogre Thieves (level 26.8)
+  complete 134
+
+step Turn in (level 26.9)
+  turnin 134
+  accept 160
+
+step Hearth (level 26.9)
+  hearth "Darkshire"
+
+step Turn in (level 26.9)
+  turnin 160
+  accept 251
+
+step Turn in (level 26.9)
+  turnin 251
+  turnin 96138
+  accept 401
+  turnin 401
+  accept 252
+
+step Turn in (level 27.0)
+  turnin 252
+
+step Turn in (level 27.1)
+  turnin 58
+
+step Flight path (level 27.1)
+  getfp "Menethil Harbor"
+
+step Hearthstone (level 27.1)
+  sethome "Deepwater Tavern"

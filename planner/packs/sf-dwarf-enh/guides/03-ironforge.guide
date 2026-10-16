@@ -1,0 +1,52 @@
+guide sf-dwarf-enh/03-ironforge
+title 03 · Ironforge (14-17)
+faction Alliance
+race Dwarf
+levels 14-17
+zone Ironforge
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/04-loch-modan
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 35.5 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 14.8)
+  accept 94449
+
+step Pick up quests (level 14.8)
+  accept 95041
+
+step Hearthstone (level 14.8)
+  sethome "Ironforge"
+
+step Turn in (level 14.9)
+  turnin 291
+
+step Pick up: An Ancient Grudge (Hall of Thanes)
+  accept 96395 optional map 1455 @43.5,52 live
+
+step Pick up: The Treaty of Understanding (Hall of Thanes)
+  accept 98423 optional
+
+step Pick up: The Restless Dead (Hall of Thanes)
+  accept 96394 optional map 1455 @33.09,47.82
+
+step Pick up: Important Heirlooms (Hall of Thanes)
+  accept 96403 optional map 1455 @32.32,44.79
+
+step Dungeon: Hall of Thanes (level 15)
+  zone map 1455
+  goto 43.5,52 "Hall of Thanes" r 30 live
+  tip Find a group and clear Hall of Thanes, with its quests from this route in your log.
+
+step Turn in (level 15.4)
+  turnin 96395 optional map 1455 @43.5,52 live
+
+step Turn in (level 15.6)
+  turnin 96393 optional map 1455 @39.09,56.2
+  turnin 98423 optional map 1455 @39.09,56.2
+
+step Turn in (level 16.0)
+  turnin 96394 optional map 1455 @33.09,47.82
+
+step Turn in (level 16.2)
+  turnin 96403 optional map 1455 @32.32,44.79

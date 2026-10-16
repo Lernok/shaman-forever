@@ -74,8 +74,17 @@ Polestar no las tiene.
 
 Packs hechos (`planner/packs/`):
 
-- `sf-tauren-enh`: Tauren Mejora hasta 35 con RFC, Ruins of Lordaeron, WC, SFK,
-  City of Dalaran y Excavation Site: Wetlands (sin BFD), 36 h bajo el modelo.
+Las tres con entrada temprana a las dungeons (`SF_BOSS_GAP=3`, rangos en
+`.cache/tools/routes-orc-dwarf.sh`), Polestar 0.2.4, lint 0 errores y playtest
+completo. Horas hasta 35 bajo el modelo (temprana / normal):
+
+- `sf-tauren-enh`: Tauren, RFC 13, RoL 17, WC 20,5, SFK 23,6, Excavation 29,
+  Dalaran 31; 36,3 h / 36,1 h.
+- `sf-orc-enh`: Orco, RFC 13, RoL 17, WC 20,5, SFK 23,6, Excavation 29,5,
+  Dalaran 30; 36,0 h / 35,7 h.
+- `sf-dwarf-enh`: Enano (Alianza: `weapons-enhancement-alliance.json`), Hall of
+  Thanes 15, RoL 17, Deadmines 18, WC 21, SFK 22, Excavation 28, Dalaran 31;
+  35,5 h / 35,2 h.
 
 ### Polestar 0.2.4
 
