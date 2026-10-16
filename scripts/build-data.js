@@ -194,8 +194,13 @@ if (fs.existsSync(path.join(root, 'data/professions.json'))) {
   write('data/professions.js', 'PROFESSION_DATA', read('data/professions.json'));
   outputs.push('data/professions.js');
 }
+// Quests only some races can take (scripts/quest-races.js): on each source.
+const questRaces = fs.existsSync(path.join(root, 'data/quest-races.json')) ? read('data/quest-races.json').quests : {};
+const withRaces = items => items.forEach(i => i.sources.forEach(s => { if (s.type === 'quest' && questRaces[s.questId]) s.races = questRaces[s.questId]; }));
 if (fs.existsSync(path.join(root, 'data/weapons.json'))) {
-  write('data/weapons.js', 'WEAPON_DATA', read('data/weapons.json'));
+  const w = read('data/weapons.json');
+  withRaces(w.weapons);
+  write('data/weapons.js', 'WEAPON_DATA', w);
   outputs.push('data/weapons.js');
 }
 // The gear path (js/gear-plan.js) only recommends what you can plan for: a
@@ -205,10 +210,11 @@ if (fs.existsSync(path.join(root, 'data/weapons.json'))) {
 // stay whatever their source: the page lists every one before 60.
 if (fs.existsSync(path.join(root, 'data/gear.json'))) {
   const g = read('data/gear.json');
+  withRaces(g.gear);
   require('../js/gear-plan.js');
   const GP = globalThis.GearPlan;
   const SPECS = Object.keys(GP.WEIGHTS);
-  const SRC = ['type', 'quest', 'zone', 'dungeon', 'dungeonZone', 'faction', 'rec', 'profession', 'yellow', 'npc'];
+  const SRC = ['type', 'quest', 'zone', 'dungeon', 'dungeonZone', 'faction', 'races', 'rec', 'profession', 'yellow', 'npc'];
   const plannable = s => ['quest', 'crafted', 'vendor', 'boss', 'drop'].includes(s.type) && !s.raid && !s.pvp;
   const pick = (o, keys) => { const out = {}; keys.forEach(k => { if (o[k] != null) out[k] = o[k]; }); return out; };
   const source = s => {

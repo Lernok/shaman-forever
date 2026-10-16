@@ -475,7 +475,8 @@ end
 local function makeFrame()
   frame = CreateFrame("Frame", "ShamanForeverFrame", UIParent)
   frame:SetSize(W, 100)
-  local pos = db.pos
+  -- Per character; a new one starts where you last left it on another.
+  local pos = cdb.pos or db.pos
   if pos then frame:SetPoint(pos[1], UIParent, pos[2], pos[3], pos[4]) else frame:SetPoint("TOPRIGHT", -220, -180) end
   frame:SetFrameStrata("HIGH")
   frame:SetClampedToScreen(true)
@@ -486,7 +487,8 @@ local function makeFrame()
   frame:SetScript("OnDragStop", function(self)
     self:StopMovingOrSizing()
     local point, _, rel, x, y = self:GetPoint()
-    db.pos = { point, rel, x, y }
+    cdb.pos = { point, rel, x, y }
+    db.pos = cdb.pos
   end)
   local bg = frame:CreateTexture(nil, "BACKGROUND")
   bg:SetAllPoints()
@@ -501,7 +503,7 @@ local function makeFrame()
   if frame.title.SetWordWrap then frame.title:SetWordWrap(false) end
   local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
   close:SetPoint("TOPRIGHT", 2, 2)
-  close:SetScript("OnClick", function() frame:Hide(); db.shown = false end)
+  close:SetScript("OnClick", function() frame:Hide(); cdb.shown = false end)
   frame.spec = CreateFrame("Button", nil, frame)
   frame.spec:SetSize(100, 18)
   frame.spec:SetPoint("TOPRIGHT", -28, -10)
@@ -599,7 +601,7 @@ function render()
   frame.more:SetText(#tips > ROWS and string.format(L().more, #tips - ROWS) or "")
   frame:SetHeight(#tips == 0 and (TOP + 34) or (TOP + 12 + n * ROW_H + (#tips > ROWS and 14 or 0)))
   frame:Show()
-  db.shown = true
+  cdb.shown = true
 end
 
 -- Tips shown by themselves are marked seen: they don't pop up again.
@@ -625,7 +627,7 @@ end
 
 -- "/sf": the dungeon you're in, or everything coming up.
 function SF.open(keep)
-  if frame and frame:IsShown() and not keep then frame:Hide(); db.shown = false return end
+  if frame and frame:IsShown() and not keep then frame:Hide(); cdb.shown = false return end
   local dname = currentDungeon()
   if dname then show(string.format(L().inDungeon, dname), dungeonTips(dname))
   else show(string.format(L().upcoming, UnitLevel("player")), upcoming()) end
@@ -634,7 +636,7 @@ end
 -- Minimap button: click shows or hides the window; drag it around the edge.
 local mmButton
 local function placeMinimapButton()
-  local a = math.rad(db.mmAngle or 200)
+  local a = math.rad(cdb.mmAngle or db.mmAngle or 200)
   local r = (Minimap:GetWidth() or 140) / 2 + 8
   mmButton:ClearAllPoints()
   mmButton:SetPoint("CENTER", Minimap, "CENTER", math.cos(a) * r, math.sin(a) * r)
@@ -667,7 +669,7 @@ local function makeMinimapButton()
       local mx, my = Minimap:GetCenter()
       local px, py = GetCursorPosition()
       local scale = Minimap:GetEffectiveScale()
-      db.mmAngle = math.deg(math.atan2(py / scale - my, px / scale - mx))
+      cdb.mmAngle = math.deg(math.atan2(py / scale - my, px / scale - mx))
       placeMinimapButton()
     end)
   end)
@@ -680,7 +682,7 @@ local function makeMinimapButton()
   end)
   b:SetScript("OnLeave", function() GameTooltip:Hide() end)
   placeMinimapButton()
-  b:SetShown(not db.mmHide)
+  b:SetShown(not cdb.mmHide)
 end
 -- The minimap's addon list (Addon Compartment), named in the .toc.
 function ShamanForever_Toggle() SF.open() end
@@ -746,7 +748,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
     if event == "PLAYER_ENTERING_WORLD" and not mmButton then
       makeMinimapButton()
       -- Open again if you left it open (also after /reload).
-      if db.shown then C_Timer.After(2.5, function() if not (frame and frame:IsShown()) and not InCombatLockdown() then SF.open(true) end end) end
+      if cdb.shown then C_Timer.After(2.5, function() if not (frame and frame:IsShown()) and not InCombatLockdown() then SF.open(true) end end) end
     end
   elseif event == "PLAYER_LEVEL_UP" then
     local lvl = ...
@@ -964,9 +966,9 @@ SlashCmdList.SHAMANFOREVER = function(msg)
     cdb.tomtom = not cdb.tomtom
     say(string.format(L().arrowMode, onOff(cdb.tomtom)))
   elseif cmd == "minimapa" or cmd == "minimap" then
-    db.mmHide = not db.mmHide
+    cdb.mmHide = not cdb.mmHide
     makeMinimapButton()
-    if mmButton then mmButton:SetShown(not db.mmHide) end
+    if mmButton then mmButton:SetShown(not cdb.mmHide) end
   elseif cmd == "dondeestoy" or cmd == "whereami" then
     local name, kind, _, _, _, _, _, id = GetInstanceInfo()
     local map = C_Map and C_Map.GetBestMapForUnit and readable(C_Map.GetBestMapForUnit("player"))
