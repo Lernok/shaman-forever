@@ -1335,3 +1335,22 @@ details.wp-all[open] > summary { margin-bottom: 10px; }
 .fb-done { text-align: center; padding: 18px 0 4px; }
 .fb-done b { font-size: 18px; }
 .fb-done p { color: var(--text-dim); margin: 6px 0 16px; }
+
+/* Hechizos › Macros */
+.mc-intro { display: grid; gap: 8px; margin-bottom: 12px; font-size: 13.5px; line-height: 1.55; color: var(--text-dim); }
+.mc-intro p { margin: 0; max-width: 75ch; }
+.mc-intro b { color: var(--text); }
+.mc-how summary { cursor: pointer; color: var(--accent); font-weight: 700; }
+.mc-how ol { margin: 8px 0 0; padding-left: 1.3em; display: grid; gap: 4px; }
+.mc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 10px; align-items: start; }
+.mc-card { background: var(--bg-panel); border: 1px solid var(--border); border-left: 3px solid var(--spec-color, var(--accent)); border-radius: 8px; padding: 12px 14px; display: grid; gap: 8px; min-width: 0; font-size: 12.5px; color: var(--text-dim); }
+.mc-card.mc-later { border-left-color: var(--border); opacity: .78; }
+.mc-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 10px; align-items: baseline; }
+.mc-head b { color: var(--text); font-size: 13.5px; }
+.mc-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.mc-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: #8b8d97; }
+.mc-tag.test { color: var(--warn); cursor: help; }
+.mc-what { margin: 0; line-height: 1.5; }
+.mc-code { margin: 0; padding: 10px 12px; background: rgba(0,0,0,.35); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font: 12px/1.5 ui-monospace, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; user-select: all; }
+.mc-foot { display: flex; align-items: center; gap: 10px; font-size: 11px; }
+@media (max-width: 480px) { .mc-grid { grid-template-columns: 1fr; } }

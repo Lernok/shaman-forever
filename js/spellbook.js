@@ -165,18 +165,25 @@
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Spellbook + '">' +
       '<div class="role">Spellbook</div><h2>' + t('sb.title') + '</h2>' +
       '<p>' + t('sb.intro') + '</p></div>';
-    html += '<div class="sb-toolbar">' +
+    // One spellbook tab at a time (the chosen spec's first); a search looks in all three.
+    const names = tabs.map(x => x.name);
+    const ordered = [window.Site.spec].concat(names.filter(n => n !== window.Site.spec)).concat('nivel', 'macros');
+    const section = window.Site.section('Hechizos', ordered);
+    // Macros have no spells to filter.
+    if (section !== 'macros' || query) html += '<div class="sb-toolbar">' +
       ['all', 'new', 'changed', 'same'].map(k =>
         '<button class="btn sb-filter' + (filter === k ? ' active' : '') + '" data-filter="' + k + '">' +
         (k === 'all' ? t('sb.all', { n: all.length }) : t(STATUS[k].plural, { n: count(k) })) + '</button>').join('') +
       '<input class="sb-search" type="search" placeholder="' + t('sb.search') + '" value="' + query.replace(/"/g, '&quot;') + '">' +
       '</div>';
-    // One spellbook tab at a time (the chosen spec's first); a search looks in all three.
-    const names = tabs.map(x => x.name);
-    const ordered = [window.Site.spec].concat(names.filter(n => n !== window.Site.spec)).concat('nivel');
-    const section = window.Site.section('Hechizos', ordered);
-    html += window.Site.sectionTabs('Hechizos', ordered, section, n => n === 'nivel' ? t('sb.byLevel') :
+    html += window.Site.sectionTabs('Hechizos', ordered, section, n => n === 'nivel' ? t('sb.byLevel') : n === 'macros' ? t('mc.tab') :
       n + ' <span class="n">' + tabs.find(x => x.name === n).spells.filter(matches).length + '</span>');
+    if (section === 'macros' && !query) {
+      container.innerHTML = html + '<div id="macros"></div>';
+      window.Macros.render(container.querySelector('#macros'));
+      bind();
+      return;
+    }
     if (section === 'nivel' && !query) {
       html += byLevel(tabs);
       html += ui.renderSources(['https://talentsforever.com (CC BY 4.0) — data/shaman.json, ' + t('sb.source')], t('sb.how', { build: data().spellbook.build }));
@@ -208,7 +215,7 @@
     const only = container.querySelector('#sbNewOnly');
     if (only) only.addEventListener('change', () => { newOnly = only.checked; renderAll(); });
     const search = container.querySelector('.sb-search');
-    search.addEventListener('input', () => {
+    if (search) search.addEventListener('input', () => {
       query = search.value.trim().toLowerCase();
       const pos = search.selectionStart;
       renderAll();

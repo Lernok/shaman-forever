@@ -16,7 +16,7 @@ const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/cs
 const PAGES = ['Inicio', 'Guia', 'Talentos', 'Equipo', 'Profesiones', 'Hechizos', 'Clase', 'Novedades'];
 // Prefixes of the interface keys (js/i18n.js): text like "gp.slot.Head" on a
 // page means a key without a translation.
-const KEY_PREFIXES = ['site', 'tab', 'home', 'gp', 'wp', 'pr', 'cl', 'sb', 'fb', 'setup', 'race', 'conf', 'origin', 'classic', 'orig', 'calc', 'guide', 'news'];
+const KEY_PREFIXES = ['site', 'tab', 'home', 'gp', 'wp', 'pr', 'cl', 'sb', 'fb', 'setup', 'race', 'conf', 'origin', 'classic', 'orig', 'calc', 'guide', 'news', 'mc'];
 const MISSING_KEY = new RegExp('(^|[\\s(>])(' + KEY_PREFIXES.join('|') + ')\\.[a-z][\\w.]*[a-zA-Z]($|[\\s),.:<])', 'm');
 const BAD_TEXT = /\bundefined\b|\bNaN\b|\[object Object\]/;
 

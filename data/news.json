@@ -2,6 +2,23 @@
   "_readme": "Site updates shown on the News page, newest first. Game data changes come from data/changelog.json (written by scripts/sync.js).",
   "site": [
     {
+      "day": "2026-10-16",
+      "title": {
+        "es": "Macros: un botón para enemigo y aliado",
+        "en": "Macros: one button for enemy and ally"
+      },
+      "items": [
+        {
+          "es": "Nueva pestaña Hechizos › Macros: Lightning Bolt y Healing Wave en un botón (ataca a un enemigo, cura a un aliado o a vos), lo mismo con Chain Lightning y Chain Heal, Purge y las curas, y más. Se arman para tu spec y tu nivel, con un botón para copiarlas.",
+          "en": "New Spells › Macros tab: Lightning Bolt and Healing Wave on one button (attacks an enemy, heals an ally or you), the same for Chain Lightning and Chain Heal, Purge and the cures, and more. Built for your spec and level, with a copy button."
+        },
+        {
+          "es": "Alt para curarte a vos, mouseover y las macros con Shift y Ctrl son opcionales. Las que dicen \"A probar\" todavía no las probamos en el juego.",
+          "en": "Alt to heal yourself, mouseover and the Shift/Ctrl macros are optional. The ones marked \"To test\" have not been tried in game yet."
+        }
+      ]
+    },
+    {
       "day": "2026-10-14",
       "title": {
         "es": "Inicio: tu plan para el nivel en que estás",
