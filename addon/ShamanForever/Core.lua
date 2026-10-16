@@ -353,7 +353,7 @@ end
 -- Window -------------------------------------------------------------------------
 local show
 local frame, rows, logFrame = nil, {}, nil
-local ROWS, ROW_H, W = 10, 44, 420
+local ROWS, ROW_H, W, TOP = 10, 44, 420, 58
 
 -- You carry the quest of a tip, or an earlier step of its chain.
 local function carrying(q)
@@ -388,10 +388,27 @@ local function rowTooltip(r)
   GameTooltip:Show()
 end
 
+-- A tip marked "Listo" (done) or dismissed (gone) is kept with what it
+-- showed, for its tab; older saves only have `true` and stay hidden.
+local render, archive
+function archive(tip, kind)
+  cdb[kind][tip.key] = { item = tip.item, icon = tip.icon, head = tip.head, src = tip.src, when = time() }
+end
+local function archived(kind)
+  local list = {}
+  for key, v in pairs(cdb[kind]) do
+    if type(v) == "table" then
+      list[#list + 1] = { key = key, item = v.item, icon = v.icon, head = v.head or key, src = v.src or "", when = v.when or 0 }
+    end
+  end
+  table.sort(list, function(a, b) return a.when > b.when end)
+  return list
+end
+
 local function makeRow(i)
   local r = CreateFrame("Button", nil, frame)
   r:SetSize(W - 20, ROW_H)
-  r:SetPoint("TOPLEFT", 10, -36 - (i - 1) * ROW_H)
+  r:SetPoint("TOPLEFT", 10, -TOP - (i - 1) * ROW_H)
   r.have = r:CreateTexture(nil, "BACKGROUND")
   r.have:SetAllPoints()
   r.have:SetColorTexture(0.15, 0.45, 0.75, 0.25)
@@ -417,25 +434,26 @@ local function makeRow(i)
   r.checkLabel = r:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
   r.checkLabel:SetPoint("LEFT", r.check, "RIGHT", 0, 0)
   r.check:SetScript("OnClick", function(self)
-    cdb.done[r.tip.key] = self:GetChecked() and true or nil
-    r:SetAlpha(self:GetChecked() and 0.4 or 1)
+    GameTooltip:Hide()
+    if self:GetChecked() then archive(r.tip, "done") else cdb.done[r.tip.key] = nil end
+    render()
   end)
   r.check:SetScript("OnEnter", function(self)
-    GameTooltip:SetOwner(self, "ANCHOR_RIGHT"); GameTooltip:SetText(L().doneTip, 1, 1, 1, 1, true); GameTooltip:Show()
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+    GameTooltip:SetText(frame.tab == "done" and L().restoreTip or L().doneTip, 1, 1, 1, 1, true); GameTooltip:Show()
   end)
   r.check:SetScript("OnLeave", function() GameTooltip:Hide() end)
   r.dismiss = CreateFrame("Button", nil, r, "UIPanelCloseButton")
   r.dismiss:SetSize(22, 22)
   r.dismiss:SetPoint("RIGHT", 2, 0)
   r.dismiss:SetScript("OnClick", function()
-    cdb.gone[r.tip.key] = true
     GameTooltip:Hide()
-    local left = {}
-    for _, t in ipairs(frame.lastTips or {}) do if t ~= r.tip then left[#left + 1] = t end end
-    show(frame.lastTitle, left)
+    if frame.tab == "gone" then cdb.gone[r.tip.key] = nil else archive(r.tip, "gone") end
+    render()
   end)
   r.dismiss:SetScript("OnEnter", function(self)
-    GameTooltip:SetOwner(self, "ANCHOR_RIGHT"); GameTooltip:SetText(L().dismissTip, 1, 1, 1, 1, true); GameTooltip:Show()
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+    GameTooltip:SetText(frame.tab == "gone" and L().restoreTip or L().dismissTip, 1, 1, 1, 1, true); GameTooltip:Show()
   end)
   r.dismiss:SetScript("OnLeave", function() GameTooltip:Hide() end)
   r:SetScript("OnEnter", rowTooltip)
@@ -494,22 +512,61 @@ local function makeFrame()
   end)
   frame.spec:SetScript("OnLeave", function() GameTooltip:Hide() end)
   frame.empty = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-  frame.empty:SetPoint("TOPLEFT", 10, -40)
+  frame.empty:SetPoint("TOPLEFT", 10, -TOP - 4)
   frame.empty:SetPoint("RIGHT", -10, 0)
   frame.empty:SetJustifyH("LEFT")
   frame.more = frame:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+  -- Tabs: the tips, the ones marked done, the dismissed ones.
+  frame.tab = "next"
+  frame.tabs = {}
+  local x = 10
+  for _, kind in ipairs({ "next", "done", "gone" }) do
+    local b = CreateFrame("Button", nil, frame)
+    b:SetHeight(20)
+    b:SetPoint("TOPLEFT", x, -32)
+    b.text = b:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    b.text:SetPoint("LEFT", 4, 0)
+    b.line = b:CreateTexture(nil, "ARTWORK")
+    b.line:SetPoint("BOTTOMLEFT"); b.line:SetPoint("BOTTOMRIGHT"); b.line:SetHeight(2)
+    b.line:SetColorTexture(0, 0.44, 0.87, 1)
+    b:SetScript("OnClick", function() frame.tab = kind; render() end)
+    b:SetWidth(120)
+    frame.tabs[kind] = b
+    x = x + 124
+  end
   for i = 1, ROWS do rows[i] = makeRow(i) end
 end
 
 -- Shows a list of tips with a title.
 -- The quest log changed: repaint the open window (you just took a quest).
 local function repaint()
-  if frame and frame:IsShown() and frame.lastTitle then show(frame.lastTitle, frame.lastTips) end
+  if frame and frame:IsShown() and frame.lastTitle then show(frame.lastTitle, frame.lastTips, true) end
 end
-function show(title, tips)
+function show(title, tips, keepTab)
   if not frame then makeFrame() end
   frame.lastTitle, frame.lastTips = title, tips
-  frame.title:SetText(title)
+  if not keepTab then frame.tab = "next" end
+  render()
+end
+function render()
+  local tab = frame.tab
+  local tips = {}
+  if tab == "next" then
+    for _, t in ipairs(frame.lastTips or {}) do if not off(t.key) then tips[#tips + 1] = t end end
+  else
+    tips = archived(tab)
+  end
+  local counts = { next = nil, done = #archived("done"), gone = #archived("gone") }
+  for kind, b in pairs(frame.tabs) do
+    local label = kind == "next" and L().tabNext or string.format(kind == "done" and L().tabDone or L().tabGone, counts[kind])
+    b.text:SetText(label)
+    b:SetWidth(b.text:GetStringWidth() + 10)
+    b.line:SetShown(kind == tab)
+    b.text:SetTextColor(kind == tab and 1 or 0.6, kind == tab and 0.82 or 0.6, kind == tab and 0 or 0.6)
+  end
+  frame.tabs.done:SetPoint("TOPLEFT", frame.tabs.next, "TOPRIGHT", 6, 0)
+  frame.tabs.gone:SetPoint("TOPLEFT", frame.tabs.done, "TOPRIGHT", 6, 0)
+  frame.title:SetText(frame.lastTitle or "")
   frame.spec.text:SetText(string.format(L().spec, specName()))
   for i = 1, ROWS do
     local r, tip = rows[i], tips[i]
@@ -521,20 +578,22 @@ function show(title, tips)
       local have = tip.q and carrying(tip.q)
       r.have:SetShown(have and true or false)
       r.gain:SetText(have and (L().haveQuest .. (tip.gain and (" · " .. tip.gain) or "")) or tip.gain or "")
-      r.check:SetChecked(cdb.done[tip.key] and true or false)
-      r.checkLabel:SetText(L().done)
-      r:SetAlpha(1)
+      r.check:SetChecked(tab == "done")
+      r.check:SetShown(tab ~= "gone")
+      r.checkLabel:SetText(tab ~= "gone" and L().done or "")
+      r.dismiss:SetShown(tab ~= "done")
+      r:SetAlpha(tab == "next" and 1 or 0.75)
       r:Show()
     else
       r:Hide()
     end
   end
   local n = math.min(#tips, ROWS)
-  frame.empty:SetText(#tips == 0 and L().nothing or "")
+  frame.empty:SetText(#tips == 0 and (tab == "next" and L().nothing or tab == "done" and L().nothingDone or L().nothingGone) or "")
   frame.more:ClearAllPoints()
-  frame.more:SetPoint("TOPLEFT", 10, -40 - n * ROW_H)
+  frame.more:SetPoint("TOPLEFT", 10, -TOP - 4 - n * ROW_H)
   frame.more:SetText(#tips > ROWS and string.format(L().more, #tips - ROWS) or "")
-  frame:SetHeight(#tips == 0 and 70 or (48 + n * ROW_H + (#tips > ROWS and 14 or 0)))
+  frame:SetHeight(#tips == 0 and (TOP + 34) or (TOP + 12 + n * ROW_H + (#tips > ROWS and 14 or 0)))
   frame:Show()
   db.shown = true
 end
@@ -882,4 +941,5 @@ end
 
 -- For the headless test (scripts/test-addon.lua).
 SF.test = { pathTips = pathTips, pickupTips = pickupTips, dungeonTips = dungeonTips, zoneTips = zoneTips, upcoming = upcoming,
-  gain = gain, onZone = onZone, onLevel = onLevel, talentLine = talentLine, giverText = giverText, waypoint = waypoint }
+  gain = gain, onZone = onZone, onLevel = onLevel, talentLine = talentLine, giverText = giverText, waypoint = waypoint,
+  archive = function(tip, kind) archive(tip, kind) end, archived = function(kind) return archived(kind) end }

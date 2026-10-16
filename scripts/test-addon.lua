@@ -7,7 +7,10 @@ local dir = "addon/ShamanForever/"
 -- Anything: every method call returns a stub, so UI code runs.
 local function stub()
   local o = {}
-  return setmetatable(o, { __index = function(t, k) return function(self, ...) return stub() end end, __call = function() return stub() end })
+  -- Sizes and positions read back from frames act as 0.
+  local zero = function() return 0 end
+  return setmetatable(o, { __index = function(t, k) return function(self, ...) return stub() end end, __call = function() return stub() end,
+    __add = zero, __sub = zero, __mul = zero, __div = zero, __unm = zero, __lt = function() return false end, __le = function() return false end })
 end
 local shown = {}
 local frames = {}
@@ -83,6 +86,13 @@ ev:fire("PLAYER_LEVEL_UP", level + 1)
 if os.getenv("MARK") then
   print("-- shift+clic en el item " .. os.getenv("MARK") .. ":")
   HandleModifiedItemClick("|cff1eff00|Hitem:" .. os.getenv("MARK") .. "::::::::20:::::|h[x]|h|r")
+end
+-- "Listo" on the first tip: it leaves the tips and shows under Listos.
+local before = SF.test.upcoming()
+if before[1] then
+  SF.test.archive(before[1], "done")
+  local after = SF.test.upcoming()
+  print("-- listo: avisos " .. #before .. " -> " .. #after .. ", listos " .. #SF.test.archived("done") .. " (" .. SF.test.archived("done")[1].head .. ")")
 end
 SlashCmdList.SHAMANFOREVER("ayuda")
 SlashCmdList.SHAMANFOREVER("dondeestoy")
