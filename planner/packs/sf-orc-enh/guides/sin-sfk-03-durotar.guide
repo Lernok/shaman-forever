@@ -20,10 +20,14 @@ step Turn in (level 12.5)
   accept 99049
 
 step Objectives: Threat from Below (level 12.5)
-  complete 99049
+  collect 286012 quest 99049.1
+  collect 286011 quest 99049.2
+  collect 286010 quest 99049.3
 
 step Objectives: Threat from Below (level 12.5)
-  complete 99049
+  collect 286012 quest 99049.1
+  collect 286011 quest 99049.2
+  collect 286010 quest 99049.3
 
 step Turn in (level 12.6)
   turnin 99049
@@ -37,7 +41,7 @@ step Turn in (level 12.7)
   accept 97282
 
 step Objectives: Stormy Potential (level 12.7)
-  complete 97282
+  collect 277665 x5 quest 97282.1
 
 step Pick up quests (level 12.7)
   accept 816
@@ -49,13 +53,13 @@ step Pick up quests (level 12.8)
   accept 832
 
 step Objectives: Threat from Below (level 13.0)
-  complete 99051
+  collect 286008 x9 quest 99051.1
 
 step Turn in (level 13.0)
   turnin 99051
 
 step Objectives: Lost But Not Forgotten (level 13.1)
-  complete 816
+  collect 4891 quest 816.1
 
 step Turn in (level 13.2)
   turnin 816

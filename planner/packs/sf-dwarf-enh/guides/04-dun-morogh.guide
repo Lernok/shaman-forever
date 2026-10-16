@@ -11,7 +11,7 @@ next sf-dwarf-enh/05-ironforge
 
 step Pick up quests (level 12.3)
   accept 96392
-  complete 96392
+  kill 264936 quest 96392.1
   turnin 96392
   accept 96390
 
@@ -19,14 +19,16 @@ step Pick up quests (level 12.4)
   accept 433
 
 step Objectives: The Public Servant (level 12.5)
-  complete 433
-  complete 96390
+  kill 1117 x10 quest 433.1
+  kill 6123 x10 quest 96390.1
+  kill 1117 quest 96390.2
 
 step Pick up quests (level 12.5)
   accept 94465
 
 step Objectives: Nip 'Em in the Bud (level 12.6)
-  complete 96390
+  kill 6123 x10 quest 96390.1
+  kill 1117 quest 96390.2
   accept 96391 optional
 
 step Turn in (level 12.7)
@@ -50,7 +52,7 @@ step Pick up quests (level 12.9)
   accept 312
 
 step Objectives: Tundra MacGrann's Stolen Stash (level 12.9)
-  complete 312
+  collect 2667 quest 312.1
 
 step Turn in (level 13.0)
   turnin 312

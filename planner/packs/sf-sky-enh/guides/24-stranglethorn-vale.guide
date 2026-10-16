@@ -17,10 +17,10 @@ step Pick up quests (level 32.3)
   accept 629
 
 step Objectives: Bloody Bone Necklaces (level 33.0)
-  complete 596
+  collect 3915 x25 quest 596.1
 
 step Objectives: The Vile Reef (level 33.0)
-  complete 629
+  collect 4094 quest 629.1
 
 step Turn in (level 33.0)
   turnin 596
@@ -29,7 +29,7 @@ step Pick up quests (level 33.0)
   accept 568
 
 step Objectives: The Defense of Grom'gol (level 33.1)
-  complete 568
+  kill 686 x15 quest 568.1
 
 step Turn in (level 33.1)
   turnin 568
@@ -38,7 +38,8 @@ step Pick up quests (level 33.1)
   accept 570
 
 step Objectives: Mok'thardin's Enchantment (level 33.2)
-  complete 570
+  collect 3838 x8 quest 570.1
+  collect 3839 quest 570.2
 
 step Turn in (level 33.2)
   turnin 570
@@ -47,7 +48,8 @@ step Pick up quests (level 33.2)
   accept 569
 
 step Objectives: The Defense of Grom'gol (level 33.2)
-  complete 569
+  kill 1142 quest 569.1
+  kill 1144 quest 569.2
 
 step Turn in (level 33.3)
   turnin 569
@@ -65,7 +67,7 @@ step Pick up quests (level 33.3)
   accept 213
 
 step Objectives: Hostile Takeover (level 33.4)
-  complete 213
+  collect 4106 x8 quest 213.1
 
 step Hearth (level 33.4)
   hearth "Booty Bay"

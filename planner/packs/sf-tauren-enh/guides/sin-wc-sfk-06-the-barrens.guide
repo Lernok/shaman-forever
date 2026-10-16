@@ -30,17 +30,17 @@ step Pick up quests (level 13.7)
   accept 869
 
 step Objectives: Plainstrider Menace (level 13.8)
-  complete 844
+  collect 5087 x7 quest 844.1
 
 step Turn in (level 13.8)
   turnin 844
   accept 845
 
 step Objectives: Raptor Thieves (level 14.0)
-  complete 869
+  collect 5062 x12 quest 869.1
 
 step Objectives: The Zhevra (level 14.1)
-  complete 845
+  collect 5086 x4 quest 845.1
 
 step Turn in (level 14.2)
   turnin 869
@@ -50,16 +50,20 @@ step Turn in (level 14.2)
   accept 903
 
 step Objectives: Disrupt the Attacks (level 14.3)
-  complete 871
+  kill 3267 x8 quest 871.1
+  kill 3268 x8 quest 871.2
+  kill 3265 x3 quest 871.3
 
 step Pick up quests (level 14.3)
   accept 1524
 
 step Objectives: Disrupt the Attacks (level 14.3)
-  complete 871
+  kill 3267 x8 quest 871.1
+  kill 3268 x8 quest 871.2
+  kill 3265 x3 quest 871.3
 
 step Objectives: Supplies for the Crossroads (level 14.3)
-  complete 5041
+  collect 12708 quest 5041.1
 
 step Turn in (level 14.4)
   turnin 840
@@ -81,13 +85,15 @@ step Pick up quests (level 14.4)
   accept 894
 
 step Objectives: Parts and Pieces (level 14.4)
-  complete 97253
+  collect 277331 x5 quest 97253.1
 
 step Objectives: Southsea Freebooters (level 14.4)
-  complete 887
+  kill 3381 x12 quest 887.1
+  kill 3382 x6 quest 887.2
 
 step Objectives: Southsea Freebooters (level 14.5)
-  complete 887
+  kill 3381 x12 quest 887.1
+  kill 3382 x6 quest 887.2
 
 step Turn in (level 14.6)
   turnin 1492
@@ -108,7 +114,7 @@ step Turn in (level 14.7)
   accept 888
 
 step Objectives: Prowlers of the Barrens (level 14.8)
-  complete 903
+  collect 5096 x7 quest 903.1
 
 step Hearthstone (level 14.8)
   sethome "The Crossroads"
@@ -127,7 +133,7 @@ step Pick up quests (level 15.1)
   accept 855
 
 step Objectives: Centaur Bracers (level 15.3)
-  complete 855
+  collect 5030 x15 quest 855.1
 
 step Turn in (level 15.4)
   turnin 855
@@ -147,20 +153,24 @@ step Turn in (level 15.5)
   accept 901
 
 step Objectives: Samophlange (level 15.5)
-  complete 901
+  collect 5089 quest 901.1
 
 step Turn in (level 15.5)
   turnin 901
   accept 902
 
 step Objectives: Echeyakee (level 15.6)
-  complete 881
+  collect 5100 quest 881.1
 
 step Objectives: The Disruption Ends (level 15.6)
-  complete 872
+  kill 3269 x8 quest 872.1
+  kill 3266 x8 quest 872.2
+  collect 5063 quest 872.3
 
 step Objectives: The Disruption Ends (level 15.7)
-  complete 872
+  kill 3269 x8 quest 872.1
+  kill 3266 x8 quest 872.2
+  collect 5063 quest 872.3
 
 step Hearthstone (level 15.7)
   sethome "Ratchet"
@@ -170,10 +180,12 @@ step Turn in (level 15.8)
   accept 3921
 
 step Objectives: Stolen Booty (level 15.8)
-  complete 888
+  collect 5076 quest 888.1
+  collect 5077 quest 888.2
 
 step Objectives: Stolen Booty (level 15.8)
-  complete 888
+  collect 5076 quest 888.1
+  collect 5077 quest 888.2
 
 step Hearth (level 15.8)
   hearth "Ratchet"
@@ -193,7 +205,7 @@ step Turn in (level 16.0)
   accept 905
 
 step Objectives: Fungal Spores (level 16.0)
-  complete 848
+  collect 5012 x4 quest 848.1
 
 step Turn in (level 16.0)
   turnin 872
@@ -228,13 +240,13 @@ step Turn in (level 16.4)
   accept 3922
 
 step Objectives: Nugget Slugs (level 16.4)
-  complete 3922
+  collect 11143 x15 quest 3922.1
 
 step Turn in (level 16.5)
   turnin 3922
 
 step Objectives: Harpy Raiders (level 16.7)
-  complete 867
+  collect 5064 x8 quest 867.1
 
 step Pick up quests (level 16.7)
   accept 819
@@ -251,22 +263,28 @@ step Turn in (level 16.8)
   accept 821
 
 step Objectives: Chen's Empty Keg (level 16.9)
-  complete 821
+  collect 4893 x5 quest 821.1
+  collect 4894 x5 quest 821.2
+  collect 4895 quest 821.3
 
 step Hearth (level 16.9)
   hearth "Ratchet"
 
 step Objectives: Chen's Empty Keg (level 16.9)
-  complete 821
+  collect 4893 x5 quest 821.1
+  collect 4894 x5 quest 821.2
+  collect 4895 quest 821.3
 
 step Objectives: Chen's Empty Keg (level 17.0)
-  complete 821
+  collect 4893 x5 quest 821.1
+  collect 4894 x5 quest 821.2
+  collect 4895 quest 821.3
 
 step Turn in (level 17.1)
   turnin 821
 
 step Objectives: Harpy Lieutenants (level 17.1)
-  complete 875
+  collect 5065 x6 quest 875.1
 
 step Hearthstone (level 17.1)
   sethome "The Crossroads"

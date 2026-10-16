@@ -26,7 +26,7 @@ step Pick up quests (level 19.4)
   accept 98407
 
 step Objectives: The Lost Tools (level 19.4)
-  complete 125
+  collect 1309 quest 125.1
 
 step Turn in (level 19.4)
   turnin 125
@@ -36,13 +36,16 @@ step Pick up quests (level 19.4)
   accept 92
 
 step Objectives: The Everstill Bridge (level 19.5)
-  complete 89
+  collect 2856 x5 quest 89.1
+  collect 1013 x5 quest 89.2
 
 step Objectives: Redridge Goulash (level 19.6)
-  complete 92
+  collect 2296 x5 quest 92.1
+  collect 1080 x5 quest 92.2
+  collect 1081 x5 quest 92.3
 
 step Objectives: Show of Force (level 19.6)
-  complete 98407
+  collect 280911 x5 quest 98407.1
 
 step Pick up quests (level 19.6)
   accept 244
@@ -56,25 +59,31 @@ step Turn in (level 19.8)
   turnin 89
 
 step Objectives: Assessing the Threat (level 19.8)
-  complete 246
+  kill 423 x10 quest 246.1
+  kill 424 x6 quest 246.2
 
 step Objectives: Assessing the Threat (level 19.8)
-  complete 246
+  kill 423 x10 quest 246.1
+  kill 424 x6 quest 246.2
 
 step Turn in (level 19.9)
   turnin 246
 
 step Objectives: Redridge Goulash (level 20.0)
-  complete 92
+  collect 2296 x5 quest 92.1
+  collect 1080 x5 quest 92.2
+  collect 1081 x5 quest 92.3
 
 step Objectives: Redridge Goulash (level 20.1)
-  complete 92
+  collect 2296 x5 quest 92.1
+  collect 1080 x5 quest 92.2
+  collect 1081 x5 quest 92.3
 
 step Pick up quests (level 20.1)
   accept 150
 
 step Objectives: Murloc Poachers (level 20.2)
-  complete 150
+  collect 1468 x8 quest 150.1
 
 step Turn in (level 20.3)
   turnin 150
@@ -98,7 +107,7 @@ step Pick up quests (level 20.3)
   accept 34
 
 step Objectives: An Unwelcome Guest (level 20.3)
-  complete 34
+  collect 3631 quest 34.1
 
 step Turn in (level 20.4)
   turnin 34
@@ -110,16 +119,16 @@ step Pick up quests (level 20.4)
   accept 219
 
 step Objectives: Blackrock Bounty (level 20.5)
-  complete 128
+  kill 435 x15 quest 128.1
 
 step Objectives: Alther's Mill (level 20.6)
-  complete 98386
+  kill 505 x12 quest 98386.1
 
 step Objectives: Selling Fish (level 20.8)
-  complete 127
+  collect 1467 x10 quest 127.1
 
 step Objectives: Blackrock Menace (level 20.9)
-  complete 20
+  collect 3014 x10 quest 20.1
 
 step Objectives: Missing In Action (level 20.9)
   complete 219
@@ -138,7 +147,7 @@ step Turn in (level 21.3)
   turnin 128
 
 step Objectives: Solomon's Law (level 21.3)
-  complete 91
+  collect 1075 x10 quest 91.1
 
 step Pick up quests (level 21.6)
   accept 178
@@ -153,7 +162,7 @@ step Pick up quests (level 21.7)
   accept 180
 
 step Objectives: WANTED: Lieutenant Fangore (level 21.7)
-  complete 180
+  collect 3632 quest 180.1
 
 step Turn in (level 21.8)
   turnin 180

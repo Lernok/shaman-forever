@@ -29,16 +29,22 @@ step Pick up quests (level 18.9)
   accept 152
 
 step Objectives: The Coastal Menace (level 19.0)
-  complete 104
+  collect 3636 quest 104.1
 
 step Objectives: Keeper of the Flame (level 19.0)
-  complete 103
+  collect 814 x5 quest 103.1
 
 step Objectives: The Coast Isn't Clear (level 19.0)
-  complete 152
+  kill 126 x7 quest 152.1
+  kill 171 x7 quest 152.2
+  kill 127 x7 quest 152.3
+  kill 517 x7 quest 152.4
 
 step Objectives: The Coast Isn't Clear (level 19.1)
-  complete 152
+  kill 126 x7 quest 152.1
+  kill 171 x7 quest 152.2
+  kill 127 x7 quest 152.3
+  kill 517 x7 quest 152.4
 
 step Turn in (level 19.2)
   turnin 104
@@ -48,7 +54,10 @@ step Hearth (level 19.3)
   hearth "Sentinel Hill"
 
 step Objectives: The Coast Isn't Clear (level 19.3)
-  complete 152
+  kill 126 x7 quest 152.1
+  kill 171 x7 quest 152.2
+  kill 127 x7 quest 152.3
+  kill 517 x7 quest 152.4
 
 step Turn in (level 19.3)
   turnin 152

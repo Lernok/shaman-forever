@@ -13,7 +13,7 @@ step Pick up quests (level 26.9)
   accept 96261
 
 step Objectives: The Broodmother (level 26.9)
-  complete 96261
+  kill 264082 quest 96261.1
 
 step Turn in (level 26.9)
   turnin 96261
@@ -28,16 +28,17 @@ step Pick up quests (level 26.9)
   accept 96260
 
 step Objectives: Stronger than Steel (level 27.0)
-  complete 96260
+  collect 273181 x3 quest 96260.1
 
 step Pick up quests (level 27.0)
   accept 96294
 
 step Objectives: Talkin' bout Toxins, Mon (level 27.0)
-  complete 96241
+  collect 273001 x5 quest 96241.1
 
 step Objectives: Defending the Dead (level 27.1)
-  complete 96259
+  kill 264083 x5 quest 96259.1
+  kill 264079 x10 quest 96259.2
 
 step Turn in (level 27.2)
   turnin 96260

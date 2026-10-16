@@ -20,7 +20,7 @@ step Turn in (level 7.1)
   accept 96626
 
 step Objectives: Camping 101: Cooking (level 7.1)
-  complete 96626
+  kill 1430 quest 96626.1
   turnin 96626
 
 step Pick up quests (level 7.2)
@@ -42,20 +42,22 @@ step Pick up quests (level 7.2)
   accept 99143
 
 step Objectives: A Net Disaster (level 7.2)
-  complete 99127
+  collect 286205 quest 99127.1
 
 step Turn in (level 7.4)
   turnin 99127
   accept 99128
 
 step Objectives: Slimy Menace (level 7.4)
-  complete 99128
+  kill 735 quest 99128.1
+  kill 285 quest 99128.2
 
 step Objectives: Slimy Menace (level 7.4)
-  complete 99128
+  kill 735 quest 99128.1
+  kill 285 quest 99128.2
 
 step Objectives: Bottles and Baubles (level 7.4)
-  complete 99143
+  collect 286209 x6 quest 99143.1
 
 step Pick up quests (level 7.4)
   accept 91725
@@ -64,7 +66,7 @@ step Pick up quests (level 7.4)
   accept 91723
 
 step Objectives: Delicate Instruments (level 7.6)
-  complete 91723
+  kill 476 x8 quest 91723.1
 
 step Turn in (level 7.7)
   turnin 91723
@@ -79,7 +81,8 @@ step Pick up quests (level 7.8)
   accept 91733
 
 step Objectives: Protect the Frontier (level 7.9)
-  complete 52
+  kill 118 x8 quest 52.1
+  kill 822 x5 quest 52.2
 
 step Pick up quests (level 7.9)
   accept 83
@@ -94,8 +97,8 @@ step Objectives: The Fargodeep Mine (level 7.9)
   complete 62
 
 step Objectives: Kobold Candles (level 8.1)
-  complete 60
-  complete 47
+  collect 772 x8 quest 60.1
+  collect 773 x10 quest 47.1
 
 step Pick up quests (level 9.0)
   accept 184
@@ -125,7 +128,7 @@ step Turn in (level 9.1)
   accept 86
 
 step Objectives: Pie for Billy (level 9.2)
-  complete 86
+  collect 769 x4 quest 86.1
 
 step Turn in (level 9.2)
   turnin 86
@@ -136,7 +139,7 @@ step Turn in (level 9.2)
   accept 87
 
 step Objectives: Goldtooth (level 9.3)
-  complete 87
+  collect 981 quest 87.1
 
 step Turn in (level 9.4)
   turnin 47
@@ -161,7 +164,7 @@ step Turn in (level 9.7)
   turnin 99143
 
 step Objectives: Collecting Kelp (level 9.9)
-  complete 112
+  collect 1256 x4 quest 112.1
 
 step Turn in (level 9.9)
   turnin 112
@@ -172,13 +175,15 @@ step Turn in (level 9.9)
   accept 99130
 
 step Objectives: An Enticing Offer (level 9.9)
-  complete 99130
+  collect 286214 quest 99130.1
+  collect 286215 quest 99130.2
 
 step Turn in (level 10.1)
   turnin 87
 
 step Objectives: An Enticing Offer (level 10.1)
-  complete 99130
+  collect 286214 quest 99130.1
+  collect 286215 quest 99130.2
 
 step Turn in (level 10.2)
   turnin 114
@@ -194,17 +199,17 @@ step Objectives: The Jasperlode Mine (level 10.3)
   complete 76
 
 step Objectives: Stolen Enchanting Supplies (level 10.3)
-  complete 91725
+  collect 247805 x5 quest 91725.1
 
 step Objectives: Delicate Instruments (level 10.4)
-  complete 91724
+  kill 474 x6 quest 91724.1
 
 step Turn in (level 10.4)
   turnin 37
   accept 45
 
 step Objectives: A Bundle of Trouble (level 10.4)
-  complete 5545
+  collect 13872 x8 quest 5545.1
 
 step Turn in (level 10.5)
   turnin 5545
@@ -221,25 +226,32 @@ step Turn in (level 10.6)
   accept 39
 
 step Objectives: Downstream (level 10.6)
-  complete 91733
+  collect 247817 quest 91733.1
+  collect 247813 quest 91733.2
+  collect 247818 quest 91733.3
 
 step Objectives: Red Linen Goods (level 10.7)
-  complete 83
+  collect 1019 x6 quest 83.1
 
 step Objectives: Princess Must Die! (level 10.7)
-  complete 88
+  collect 1006 quest 88.1
 
 step Objectives: Manhunt (level 10.7)
-  complete 147
+  collect 2239 quest 147.1
 
 step Objectives: Downstream (level 10.7)
-  complete 91733
+  collect 247817 quest 91733.1
+  collect 247813 quest 91733.2
+  collect 247818 quest 91733.3
 
 step Objectives: Downstream (level 10.7)
-  complete 91733
+  collect 247817 quest 91733.1
+  collect 247813 quest 91733.2
+  collect 247818 quest 91733.3
 
 step Objectives: Protect the Frontier (level 10.8)
-  complete 52
+  kill 118 x8 quest 52.1
+  kill 822 x5 quest 52.2
 
 step Turn in (level 10.9)
   turnin 83
@@ -257,7 +269,7 @@ step Turn in (level 11.3)
   turnin 91725
 
 step Objectives: Good Steel (level 11.3)
-  complete 91732
+  collect 247816 x4 quest 91732.1
 
 step Hearth (level 11.3)
   hearth "Goldshire"
@@ -278,11 +290,11 @@ step Turn in (level 11.7)
 
 step Pick up quests (level 11.7)
   accept 91738
-  complete 91738
+  collect 247824 quest 91738.1
   turnin 91738
 
 step Objectives: Riverpaw Gnoll Bounty (level 12.0)
-  complete 11
+  collect 782 x8 quest 11.1
 
 step Turn in (level 12.1)
   turnin 11
@@ -297,7 +309,7 @@ step Turn in (level 12.1)
   turnin 91732
 
 step Objectives: Bounty on Murlocs (level 12.3)
-  complete 46
+  collect 780 x8 quest 46.1
 
 step Turn in (level 12.3)
   turnin 46

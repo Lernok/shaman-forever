@@ -17,10 +17,10 @@ step Pick up quests (level 32.3)
   accept 629
 
 step Objectives: Bloody Bone Necklaces (level 33.0)
-  complete 596
+  collect 3915 x25 quest 596.1
 
 step Objectives: The Vile Reef (level 33.0)
-  complete 629
+  collect 4094 quest 629.1
 
 step Turn in (level 33.0)
   turnin 596
@@ -30,7 +30,7 @@ step Pick up quests (level 33.0)
   accept 568
 
 step Objectives: The Defense of Grom'gol (level 33.1)
-  complete 568
+  kill 686 x15 quest 568.1
 
 step Turn in (level 33.2)
   turnin 568
@@ -39,7 +39,8 @@ step Pick up quests (level 33.2)
   accept 570
 
 step Objectives: Mok'thardin's Enchantment (level 33.2)
-  complete 570
+  collect 3838 x8 quest 570.1
+  collect 3839 quest 570.2
 
 step Turn in (level 33.3)
   turnin 570
@@ -48,7 +49,8 @@ step Pick up quests (level 33.3)
   accept 569
 
 step Objectives: The Defense of Grom'gol (level 33.3)
-  complete 569
+  kill 1142 quest 569.1
+  kill 1144 quest 569.2
 
 step Turn in (level 33.3)
   turnin 569
@@ -63,7 +65,7 @@ step Pick up quests (level 33.3)
   accept 213
 
 step Objectives: Hostile Takeover (level 33.4)
-  complete 213
+  collect 4106 x8 quest 213.1
 
 step Hearth (level 33.4)
   hearth "Booty Bay"
@@ -81,14 +83,14 @@ step Pick up quests (level 33.5)
   accept 581
 
 step Objectives: Hunt for Yenniku (level 33.6)
-  complete 581
+  collect 3901 x9 quest 581.1
 
 step Turn in (level 33.6)
   turnin 581
   accept 582
 
 step Objectives: Headhunting (level 33.8)
-  complete 582
+  collect 1532 x20 quest 582.1
 
 step Turn in (level 33.8)
   turnin 582
@@ -109,16 +111,16 @@ step Pick up quests (level 33.8)
   accept 575
 
 step Objectives: Singing Blue Shards (level 33.9)
-  complete 605
+  collect 3918 x10 quest 605.1
 
 step Objectives: Bloodscalp Ears (level 34.1)
-  complete 189
+  collect 1519 x15 quest 189.1
 
 step Objectives: Investigate the Camp (level 34.1)
   complete 201
 
 step Objectives: Supply and Demand (level 34.1)
-  complete 575
+  collect 4053 x2 quest 575.1
 
 step Hearth (level 34.1)
   hearth "Booty Bay"
@@ -137,7 +139,7 @@ step Turn in (level 34.2)
   turnin 189
 
 step Objectives: Some Assembly Required (level 34.2)
-  complete 577
+  collect 4104 quest 577.1
 
 step Turn in (level 34.3)
   turnin 577

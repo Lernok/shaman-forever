@@ -17,13 +17,17 @@ step Pick up quests (level 12.1)
   accept 418
 
 step Objectives: Thelsamar Blood Sausages (level 12.2)
-  complete 418
+  collect 3172 x3 quest 418.1
+  collect 3173 x3 quest 418.2
+  collect 3174 x3 quest 418.3
 
 step Objectives: Rat Catching (level 12.5)
-  complete 416
+  collect 3110 x12 quest 416.1
 
 step Objectives: Thelsamar Blood Sausages (level 12.6)
-  complete 418
+  collect 3172 x3 quest 418.1
+  collect 3173 x3 quest 418.2
+  collect 3174 x3 quest 418.3
 
 step Turn in (level 12.6)
   turnin 416
@@ -39,13 +43,15 @@ step Pick up quests (level 12.7)
   accept 267
 
 step Objectives: The Trogg Threat (level 12.9)
-  complete 267
+  collect 2536 x8 quest 267.1
 
 step Objectives: In Defense of the King's Lands (level 13.1)
-  complete 224
+  kill 1161 x10 quest 224.1
+  kill 1162 x10 quest 224.2
 
 step Objectives: Call of Fire (level 13.1)
-  complete 94466
+  collect 5026 quest 94466.1
+  collect 6652 quest 94466.2
 
 step Turn in (level 13.2)
   turnin 267
@@ -57,7 +63,8 @@ step Pick up quests (level 13.3)
   accept 237
 
 step Objectives: In Defense of the King's Lands (level 13.5)
-  complete 237
+  kill 1163 x10 quest 237.1
+  kill 1166 x10 quest 237.2
 
 step Turn in (level 13.6)
   turnin 237
@@ -66,13 +73,16 @@ step Pick up quests (level 13.6)
   accept 263
 
 step Objectives: In Defense of the King's Lands (level 13.8)
-  complete 263
+  kill 1197 x10 quest 263.1
+  kill 1164 x10 quest 263.2
 
 step Turn in (level 13.9)
   turnin 263
 
 step Objectives: Thelsamar Blood Sausages (level 14.0)
-  complete 418
+  collect 3172 x3 quest 418.1
+  collect 3173 x3 quest 418.2
+  collect 3174 x3 quest 418.3
 
 step Pick up quests (level 14.0)
   accept 298
@@ -81,19 +91,32 @@ step Pick up quests (level 14.0)
   accept 2038
 
 step Objectives: Bingles' Missing Supplies (level 14.0)
-  complete 2038
+  collect 7343 quest 2038.1
+  collect 7345 quest 2038.2
+  collect 7346 quest 2038.3
+  collect 7376 quest 2038.4
 
 step Objectives: Bingles' Missing Supplies (level 14.0)
-  complete 2038
+  collect 7343 quest 2038.1
+  collect 7345 quest 2038.2
+  collect 7346 quest 2038.3
+  collect 7376 quest 2038.4
 
 step Objectives: Bingles' Missing Supplies (level 14.0)
-  complete 2038
+  collect 7343 quest 2038.1
+  collect 7345 quest 2038.2
+  collect 7346 quest 2038.3
+  collect 7376 quest 2038.4
 
 step Objectives: Bingles' Missing Supplies (level 14.0)
-  complete 2038
+  collect 7343 quest 2038.1
+  collect 7345 quest 2038.2
+  collect 7346 quest 2038.3
+  collect 7376 quest 2038.4
 
 step Objectives: Call of Fire (level 14.0)
-  complete 94466
+  collect 5026 quest 94466.1
+  collect 6652 quest 94466.2
 
 step Turn in (level 14.0)
   turnin 1339
@@ -101,7 +124,7 @@ step Turn in (level 14.0)
   accept 307
 
 step Objectives: Filthy Paws (level 14.0)
-  complete 307
+  collect 2640 x4 quest 307.1
 
 step Turn in (level 14.1)
   turnin 307
@@ -121,7 +144,7 @@ step Turn in (level 14.3)
   accept 94467
 
 step Objectives: Call of Fire (level 14.3)
-  complete 94467
+  collect 6655 quest 94467.1
 
 step Turn in (level 14.4)
   turnin 94467
@@ -134,7 +157,8 @@ step Turn in (level 14.5)
   turnin 2038
 
 step Objectives: Crocolisk Hunting (level 14.8)
-  complete 385
+  collect 2924 x5 quest 385.1
+  collect 2925 x6 quest 385.2
 
 step Turn in (level 14.8)
   turnin 385

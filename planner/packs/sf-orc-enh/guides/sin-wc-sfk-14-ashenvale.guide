@@ -18,10 +18,14 @@ step Turn in (level 25.0)
   accept 6543
 
 step Objectives: The Warsong Reports (level 25.0)
-  complete 6543
+  collect 16764 quest 6543.1
+  collect 16763 quest 6543.2
+  collect 16765 quest 6543.3
 
 step Objectives: The Warsong Reports (level 25.0)
-  complete 6543
+  collect 16764 quest 6543.1
+  collect 16763 quest 6543.2
+  collect 16765 quest 6543.3
 
 step Flight path (level 25.0)
   getfp "Zoram'gar Outpost"
@@ -30,10 +34,12 @@ step Pick up quests (level 25.0)
   accept 6442
 
 step Objectives: The Warsong Reports (level 25.0)
-  complete 6543
+  collect 16764 quest 6543.1
+  collect 16763 quest 6543.2
+  collect 16765 quest 6543.3
 
 step Objectives: Naga at the Zoram Strand (level 25.1)
-  complete 6442
+  collect 5490 x20 quest 6442.1
 
 step Turn in (level 25.1)
   turnin 6442

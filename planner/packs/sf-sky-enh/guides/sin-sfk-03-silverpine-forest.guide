@@ -28,16 +28,19 @@ step Turn in (level 15.8)
   accept 491
 
 step Objectives: Watching the Roads (level 15.9)
-  complete 95981
+  kill 1888 x8 quest 95981.1
+  kill 1889 x8 quest 95981.2
 
 step Objectives: Watching the Roads (level 16.0)
-  complete 95981
+  kill 1888 x8 quest 95981.1
+  kill 1889 x8 quest 95981.2
 
 step Objectives: Stop the Spread (level 16.1)
-  complete 98299
+  kill 2053 x5 quest 98299.1
+  kill 2054 x5 quest 98299.2
 
 step Objectives: Arugal's Folly (level 16.2)
-  complete 98298
+  collect 280375 x6 quest 98298.1
 
 step Hearth (level 16.2)
   hearth "The Sepulcher"
@@ -61,7 +64,8 @@ step Pick up quests (level 16.5)
   accept 91921
 
 step Objectives: A Recipe For Death (level 16.5)
-  complete 447
+  collect 3253 x6 quest 447.1
+  collect 3254 x6 quest 447.2
 
 step Turn in (level 16.5)
   turnin 477
@@ -94,7 +98,7 @@ step Pick up quests (level 16.7)
   accept 435
 
 step Objectives: Wild Hearts (level 16.7)
-  complete 429
+  collect 3164 x6 quest 429.1
 
 step Objectives: Escorting Erland (level 16.7)
   complete 435
@@ -104,10 +108,10 @@ step Turn in (level 16.8)
   accept 449
 
 step Objectives: Wild Eyes (level 16.8)
-  complete 91920
+  collect 730 x3 quest 91920.1
 
 step Objectives: Ambermill Investigations (level 16.9)
-  complete 479
+  collect 3354 x8 quest 479.1
 
 step Turn in (level 17.0)
   turnin 479
@@ -135,7 +139,8 @@ step Turn in (level 17.2)
   accept 443
 
 step Objectives: A Recipe For Death (level 17.2)
-  complete 447
+  collect 3253 x6 quest 447.1
+  collect 3254 x6 quest 447.2
 
 step Turn in (level 17.2)
   turnin 430
@@ -144,13 +149,13 @@ step Pick up quests (level 17.2)
   accept 425
 
 step Objectives: Ivar the Foul (level 17.2)
-  complete 425
+  collect 3621 quest 425.1
 
 step Turn in (level 17.3)
   turnin 425
 
 step Objectives: Rot Hide Ichor (level 17.5)
-  complete 443
+  collect 3236 x8 quest 443.1
 
 step Hearth (level 17.5)
   hearth "The Sepulcher"

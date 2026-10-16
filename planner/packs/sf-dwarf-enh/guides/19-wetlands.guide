@@ -15,7 +15,7 @@ step Pick up quests (level 29.5)
   accept 98313
 
 step Objectives: Understanding Our Present (level 29.5)
-  complete 98216
+  collect 279993 quest 98216.1
 
 step Turn in (level 29.6)
   turnin 98216
@@ -37,10 +37,16 @@ step Turn in (level 29.8)
   turnin 95646 optional map 1437 @56.37,40.4
 
 step Objectives: Gleaning Our Future (level 29.8)
-  complete 98310
+  collect 280395 quest 98310.1
+  collect 280396 quest 98310.2
+  collect 280397 quest 98310.3
+  collect 280398 quest 98310.4
 
 step Objectives: Gleaning Our Future (level 29.8)
-  complete 98310
+  collect 280395 quest 98310.1
+  collect 280396 quest 98310.2
+  collect 280397 quest 98310.3
+  collect 280398 quest 98310.4
 
 step Pick up quests (level 29.8)
   accept 631
@@ -62,13 +68,19 @@ step Turn in (level 30.0)
   turnin 87491
 
 step Objectives: Stopping the Cycle (level 30.0)
-  complete 98297
+  kill 271373 quest 98297.1
 
 step Objectives: Gleaning Our Future (level 30.0)
-  complete 98310
+  collect 280395 quest 98310.1
+  collect 280396 quest 98310.2
+  collect 280397 quest 98310.3
+  collect 280398 quest 98310.4
 
 step Objectives: Gleaning Our Future (level 30.0)
-  complete 98310
+  collect 280395 quest 98310.1
+  collect 280396 quest 98310.2
+  collect 280397 quest 98310.3
+  collect 280398 quest 98310.4
 
 step Turn in (level 30.0)
   turnin 98297

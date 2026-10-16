@@ -17,23 +17,34 @@ step Pick up quests (level 26.8)
 
 step Pick up quests (level 26.8)
   accept 6504
-  complete 6504
+  collect 16642 quest 6504.1
+  collect 16643 quest 6504.2
+  collect 16644 quest 6504.3
   turnin 6504
 
 step Objectives: Warsong Supplies (level 26.9)
-  complete 6571
+  collect 16742 quest 6571.1
+  collect 16745 quest 6571.2
+  collect 16744 quest 6571.3
+  collect 16743 quest 6571.4
 
 step Objectives: Warsong Supplies (level 26.9)
-  complete 6571
+  collect 16742 quest 6571.1
+  collect 16745 quest 6571.2
+  collect 16744 quest 6571.3
+  collect 16743 quest 6571.4
 
 step Objectives: Satyr Horns (level 27.0)
-  complete 6441
+  collect 5481 x16 quest 6441.1
 
 step Objectives: Ordanus (level 27.0)
-  complete 1088
+  collect 5686 quest 1088.1
 
 step Objectives: Warsong Supplies (level 27.1)
-  complete 6571
+  collect 16742 quest 6571.1
+  collect 16745 quest 6571.2
+  collect 16744 quest 6571.3
+  collect 16743 quest 6571.4
 
 step Pick up quests (level 27.1)
   accept 1918
@@ -80,13 +91,15 @@ step Turn in (level 27.3)
   turnin 6641
 
 step Objectives: Between a Rock and a Thistlefur (level 27.4)
-  complete 216
+  kill 3925 x8 quest 216.1
+  kill 3924 x8 quest 216.2
 
 step Objectives: Between a Rock and a Thistlefur (level 27.4)
-  complete 216
+  kill 3925 x8 quest 216.1
+  kill 3924 x8 quest 216.2
 
 step Objectives: Troll Charm (level 27.4)
-  complete 6462
+  collect 16602 x8 quest 6462.1
 
 step Pick up quests (level 27.4)
   accept 6482
@@ -99,10 +112,12 @@ step Pick up quests (level 27.4)
   accept 98252
 
 step Objectives: Never Coming Back (level 27.4)
-  complete 98251
+  kill 3817 x6 quest 98251.1
+  kill 3809 x6 quest 98251.2
 
 step Objectives: Never Coming Back (level 27.4)
-  complete 98251
+  kill 3817 x6 quest 98251.1
+  kill 3809 x6 quest 98251.2
 
 step Turn in (level 27.4)
   turnin 98252
@@ -128,7 +143,7 @@ step Pick up quests (level 27.7)
   accept 6503
 
 step Objectives: Ashenvale Outrunners (level 27.7)
-  complete 6503
+  kill 12856 x9 quest 6503.1
 
 step Turn in (level 27.8)
   turnin 6503
@@ -162,7 +177,7 @@ step Turn in (level 28.1)
   turnin 6462
 
 step Objectives: King of the Foulweald (level 28.1)
-  complete 6621
+  collect 16976 quest 6621.1
 
 step Turn in (level 28.2)
   turnin 6621

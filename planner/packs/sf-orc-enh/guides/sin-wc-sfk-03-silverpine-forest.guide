@@ -21,7 +21,8 @@ step Pick up quests (level 12.5)
   accept 91921
 
 step Objectives: A Recipe For Death (level 12.6)
-  complete 447
+  collect 3253 x6 quest 447.1
+  collect 3254 x6 quest 447.2
 
 step Turn in (level 12.6)
   turnin 477
@@ -54,7 +55,7 @@ step Pick up quests (level 12.8)
   accept 435
 
 step Objectives: Wild Hearts (level 13.0)
-  complete 429
+  collect 3164 x6 quest 429.1
 
 step Objectives: Escorting Erland (level 13.0)
   complete 435
@@ -64,13 +65,13 @@ step Turn in (level 13.1)
   accept 449
 
 step Objectives: Wild Eyes (level 13.1)
-  complete 91920
+  collect 730 x3 quest 91920.1
 
 step Hearth (level 13.1)
   hearth "The Sepulcher"
 
 step Objectives: Ambermill Investigations (level 13.3)
-  complete 479
+  collect 3354 x8 quest 479.1
 
 step Turn in (level 13.4)
   turnin 479
@@ -98,7 +99,8 @@ step Turn in (level 13.7)
   accept 443
 
 step Objectives: A Recipe For Death (level 13.8)
-  complete 447
+  collect 3253 x6 quest 447.1
+  collect 3254 x6 quest 447.2
 
 step Turn in (level 13.8)
   turnin 430
@@ -107,13 +109,13 @@ step Pick up quests (level 13.8)
   accept 425
 
 step Objectives: Ivar the Foul (level 13.8)
-  complete 425
+  collect 3621 quest 425.1
 
 step Turn in (level 13.9)
   turnin 425
 
 step Objectives: Rot Hide Ichor (level 14.2)
-  complete 443
+  collect 3236 x8 quest 443.1
 
 step Turn in (level 14.3)
   turnin 443

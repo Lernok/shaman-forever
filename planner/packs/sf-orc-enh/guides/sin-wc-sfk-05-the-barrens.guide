@@ -29,22 +29,34 @@ step Turn in (level 15.4)
   turnin 865 optional map 1413 @62.37,37.62
 
 step Objectives: WANTED: Baron Longshore (level 15.4)
-  complete 895
+  collect 5084 quest 895.1
 
 step Objectives: The Guns of Northwatch (level 15.4)
-  complete 891
+  kill 3393 quest 891.1
+  kill 3455 quest 891.2
+  kill 3454 quest 891.3
+  collect 5078 x10 quest 891.4
 
 step Pick up quests (level 15.4)
   accept 898
 
 step Objectives: The Guns of Northwatch (level 15.4)
-  complete 891
+  kill 3393 quest 891.1
+  kill 3455 quest 891.2
+  kill 3454 quest 891.3
+  collect 5078 x10 quest 891.4
 
 step Objectives: The Guns of Northwatch (level 15.4)
-  complete 891
+  kill 3393 quest 891.1
+  kill 3455 quest 891.2
+  kill 3454 quest 891.3
+  collect 5078 x10 quest 891.4
 
 step Objectives: The Guns of Northwatch (level 15.5)
-  complete 891
+  kill 3393 quest 891.1
+  kill 3455 quest 891.2
+  kill 3454 quest 891.3
+  collect 5078 x10 quest 891.4
 
 step Hearth (level 15.5)
   hearth "Ratchet"
@@ -73,7 +85,7 @@ step Pick up quests (level 15.8)
   accept 850
 
 step Objectives: Kolkar Leaders (level 15.8)
-  complete 850
+  collect 5022 quest 850.1
 
 step Turn in (level 15.9)
   turnin 850
@@ -90,10 +102,10 @@ step Pick up quests (level 15.9)
   accept 95507
 
 step Objectives: Bruised Pride and Lion Hides (level 16.0)
-  complete 95494
+  collect 269715 x6 quest 95494.1
 
 step Objectives: Vrang's Game (level 16.0)
-  complete 95507
+  collect 269719 x8 quest 95507.1
 
 step Turn in (level 16.1)
   turnin 95494
@@ -105,14 +117,14 @@ step Turn in (level 16.2)
   accept 95621
 
 step Objectives: Trouble in the Valley (level 16.2)
-  complete 95621
+  collect 270151 quest 95621.1
 
 step Turn in (level 16.3)
   turnin 95621
   accept 95508
 
 step Objectives: Unwelcome Guests (level 16.3)
-  complete 95508
+  kill 261367 quest 95508.1
 
 step Turn in (level 16.3)
   turnin 95508
@@ -121,26 +133,26 @@ step Pick up quests (level 16.3)
   accept 858
 
 step Objectives: Ignition (level 16.3)
-  complete 858
+  collect 5050 quest 858.1
 
 step Turn in (level 16.4)
   turnin 858
   accept 863
 
 step Objectives: Miner's Fortune (level 16.5)
-  complete 896
+  collect 5097 quest 896.1
 
 step Objectives: The Escape (level 16.5)
   complete 863
 
 step Objectives: Verog the Dervish (level 16.5)
-  complete 851
+  collect 5023 quest 851.1
 
 step Objectives: Lost in Battle (level 16.5)
-  complete 4921
+  kill 10668 quest 4921.1
 
 step Objectives: Consumed by Hatred (level 17.1)
-  complete 899
+  collect 5085 x60 quest 899.1
 
 step Hearth (level 17.1)
   hearth "The Crossroads"
@@ -170,10 +182,10 @@ step Turn in (level 17.5)
   accept 852
 
 step Objectives: Hezrul Bloodmark (level 17.5)
-  complete 852
+  collect 5025 quest 852.1
 
 step Objectives: Her Name Is Olgra (level 17.5)
-  complete 95774
+  collect 277277 x4 quest 95774.1
 
 step Turn in (level 17.6)
   turnin 95774

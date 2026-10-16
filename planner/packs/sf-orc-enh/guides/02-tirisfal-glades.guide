@@ -21,10 +21,14 @@ step Pick up quests (level 11.1)
   accept 96899
 
 step Objectives: The Cult of the Damned (level 11.1)
-  complete 96897
+  kill 267006 x8 quest 96897.1
+  kill 275437 x8 quest 96897.2
+  kill 1547 quest 96897.3
 
 step Objectives: Hides for the Forsaken (level 11.2)
-  complete 97558
+  collect 278242 x8 quest 97558.1
+  collect 278243 x6 quest 97558.2
+  collect 278244 x3 quest 97558.3
 
 step Hearthstone (level 11.2)
   sethome "Gallows' End Tavern"
@@ -39,29 +43,40 @@ step Pick up quests (level 11.2)
   accept 99142
 
 step Objectives: Deaths in the Family (level 11.2)
-  complete 354
+  collect 2829 quest 354.1
+  collect 2828 quest 354.2
+  collect 2830 quest 354.3
 
 step Objectives: Deaths in the Family (level 11.2)
-  complete 354
+  collect 2829 quest 354.1
+  collect 2828 quest 354.2
+  collect 2830 quest 354.3
 
 step Objectives: Deaths in the Family (level 11.2)
-  complete 354
+  collect 2829 quest 354.1
+  collect 2828 quest 354.2
+  collect 2830 quest 354.3
 
 step Objectives: Hides for the Forsaken (level 11.2)
-  complete 97558
+  collect 278242 x8 quest 97558.1
+  collect 278243 x6 quest 97558.2
+  collect 278244 x3 quest 97558.3
 
 step Turn in (level 11.3)
   turnin 354
 
 step Objectives: Tomb Weed (level 11.3)
-  complete 99142
+  collect 286204 x5 quest 99142.1
 
 step Objectives: Rear Guard Patrol (level 11.5)
-  complete 356
+  kill 1529 x8 quest 356.1
+  kill 1532 x8 quest 356.2
 
 step Objectives: The Cult of the Damned (level 11.7)
-  complete 96897
-  complete 96898
+  kill 267006 x8 quest 96897.1
+  kill 275437 x8 quest 96897.2
+  kill 1547 quest 96897.3
+  collect 275851 x12 quest 96898.1
 
 step Turn in (level 12.0)
   turnin 96895

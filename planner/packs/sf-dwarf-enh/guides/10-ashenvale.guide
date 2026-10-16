@@ -36,7 +36,7 @@ step Turn in (level 20.2)
   accept 1023
 
 step Objectives: Raene's Cleansing (level 20.3)
-  complete 1023
+  collect 5463 quest 1023.1
 
 step Turn in (level 20.4)
   turnin 945
@@ -49,7 +49,7 @@ step Turn in (level 20.5)
   turnin 1024
 
 step Objectives: Bathran's Hair (level 20.5)
-  complete 1010
+  collect 5437 x5 quest 1010.1
 
 step Turn in (level 20.5)
   turnin 1010
@@ -59,10 +59,10 @@ step Pick up quests (level 20.5)
   accept 1007
 
 step Objectives: The Zoram Strand (level 20.6)
-  complete 1008
+  collect 5490 x20 quest 1008.1
 
 step Objectives: The Ancient Statuette (level 20.6)
-  complete 1007
+  collect 5424 quest 1007.1
 
 step Turn in (level 20.7)
   turnin 1007
@@ -76,7 +76,7 @@ step Turn in (level 20.8)
   accept 1033
 
 step Objectives: Elune's Tear (level 20.8)
-  complete 1033
+  collect 5493 quest 1033.1
 
 step Turn in (level 20.9)
   turnin 1033
@@ -92,13 +92,13 @@ step Pick up quests (level 20.9)
   accept 1070
 
 step Objectives: Culling the Threat (level 20.9)
-  complete 1054
+  collect 5544 quest 1054.1
 
 step Turn in (level 21.0)
   turnin 1054
 
 step Objectives: The Ruins of Stardust (level 21.0)
-  complete 1034
+  collect 5494 x5 quest 1034.1
 
 step Pick up quests (level 21.0)
   accept 78132
@@ -110,15 +110,21 @@ step Pick up quests (level 21.0)
 
 step Pick up quests (level 21.3)
   accept 1016
-  complete 1016
+  collect 5455 quest 1016.1
   turnin 1016
   accept 1017
 
 step Objectives: An Aggressive Defense (level 21.4)
-  complete 1025
+  kill 3746 quest 1025.1
+  kill 3749 x2 quest 1025.2
+  kill 3750 x10 quest 1025.3
+  kill 3743 x12 quest 1025.4
 
 step Objectives: An Aggressive Defense (level 21.5)
-  complete 1025
+  kill 3746 quest 1025.1
+  kill 3749 x2 quest 1025.2
+  kill 3750 x10 quest 1025.3
+  kill 3743 x12 quest 1025.4
 
 step Hearth (level 21.5)
   hearth "Astranaar"
@@ -133,7 +139,7 @@ step Pick up quests (level 21.7)
   accept 970
 
 step Objectives: The Tower of Althalaxx (level 21.7)
-  complete 970
+  collect 5366 quest 970.1
 
 step Turn in (level 21.8)
   turnin 970
@@ -143,13 +149,13 @@ step Pick up quests (level 21.8)
   accept 1009
 
 step Objectives: Ruuzel (level 21.8)
-  complete 1009
+  collect 5445 quest 1009.1
 
 step Turn in (level 21.9)
   turnin 1009
 
 step Objectives: The Tower of Althalaxx (level 21.9)
-  complete 973
+  collect 5533 quest 973.1
 
 step Turn in (level 22.0)
   turnin 973

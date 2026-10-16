@@ -12,7 +12,9 @@ next sf-orc-enh/sin-wc-sfk-23-silverpine-forest
 step Turn in (level 30.1)
   turnin 513
   accept 515
-  complete 515
+  collect 3388 quest 515.1
+  collect 3509 x5 quest 515.2
+  collect 3510 x5 quest 515.3
 
 step Pick up: Source of Power (City of Dalaran)
   accept 96988 optional map 1458 @46.61,74.09

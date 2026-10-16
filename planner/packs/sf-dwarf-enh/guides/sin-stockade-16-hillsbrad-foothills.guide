@@ -17,17 +17,19 @@ step Pick up quests (level 30.1)
   turnin 98059
 
 step Objectives: Down the Coast (level 30.2)
-  complete 536
+  kill 2377 x10 quest 536.1
+  kill 2376 x10 quest 536.2
 
 step Objectives: Down the Coast (level 30.2)
-  complete 536
+  kill 2377 x10 quest 536.1
+  kill 2376 x10 quest 536.2
 
 step Turn in (level 30.3)
   turnin 536
   accept 559
 
 step Objectives: Farren's Proof (level 30.4)
-  complete 559
+  collect 3716 x10 quest 559.1
 
 step Turn in (level 30.4)
   turnin 559
@@ -42,10 +44,12 @@ step Turn in (level 30.4)
   accept 562
 
 step Objectives: Stormwind Ho! (level 30.5)
-  complete 562
+  kill 2369 x10 quest 562.1
+  kill 2371 x10 quest 562.2
 
 step Objectives: Stormwind Ho! (level 30.5)
-  complete 562
+  kill 2369 x10 quest 562.1
+  kill 2371 x10 quest 562.2
 
 step Turn in (level 30.6)
   turnin 562
@@ -70,27 +74,37 @@ step Pick up quests (level 30.6)
   accept 565
 
 step Objectives: Soothing Turtle Bisque (level 30.6)
-  complete 555
-  complete 565
+  collect 3712 x10 quest 555.1
+  collect 3713 quest 555.2
+  collect 2997 quest 565.1
+  collect 2321 quest 565.2
+  collect 3719 quest 565.3
+  collect 3720 x10 quest 565.4
 
 step Pick up quests (level 30.6)
   accept 564
 
 step Objectives: Soothing Turtle Bisque (level 30.7)
-  complete 555
+  collect 3712 x10 quest 555.1
+  collect 3713 quest 555.2
 
 step Pick up quests (level 30.7)
   accept 510
   accept 511
 
 step Objectives: Syndicate Assassins (level 30.8)
-  complete 505
+  kill 2240 x12 quest 505.1
+  kill 2241 x8 quest 505.2
 
 step Objectives: Syndicate Assassins (level 30.8)
-  complete 505
+  kill 2240 x12 quest 505.1
+  kill 2241 x8 quest 505.2
 
 step Objectives: Bartolo's Yeti Fur Cloak (level 31.0)
-  complete 565
+  collect 2997 quest 565.1
+  collect 2321 quest 565.2
+  collect 3719 quest 565.3
+  collect 3720 x10 quest 565.4
 
 step Turn in (level 31.0)
   turnin 555

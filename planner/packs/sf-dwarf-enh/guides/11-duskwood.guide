@@ -29,34 +29,43 @@ step Pick up quests (level 22.6)
   accept 337
 
 step Objectives: The Night Watch (level 22.7)
-  complete 56
-  complete 101
+  kill 48 x8 quest 56.1
+  kill 203 x6 quest 56.2
+  collect 1129 x10 quest 101.1
+  collect 1130 x5 quest 101.2
+  collect 2378 x10 quest 101.3
 
 step Turn in (level 22.9)
   turnin 56
   accept 57
 
 step Objectives: The Night Watch (level 23.0)
-  complete 57
+  kill 531 x15 quest 57.1
+  kill 202 x15 quest 57.2
 
 step Hearth (level 23.0)
   hearth "Darkshire"
 
 step Objectives: The Totem of Infliction (level 23.2)
-  complete 101
+  collect 1129 x10 quest 101.1
+  collect 1130 x5 quest 101.2
+  collect 2378 x10 quest 101.3
 
 step Pick up quests (level 23.2)
   accept 236
   accept 245
 
 step Objectives: The Valor Family (level 23.2)
-  complete 96139
+  collect 281046 quest 96139.1
 
 step Objectives: The Night Watch (level 23.2)
-  complete 57
+  kill 531 x15 quest 57.1
+  kill 202 x15 quest 57.2
 
 step Objectives: The Totem of Infliction (level 23.5)
-  complete 101
+  collect 1129 x10 quest 101.1
+  collect 1130 x5 quest 101.2
+  collect 2378 x10 quest 101.3
 
 step Turn in (level 23.5)
   turnin 165
@@ -70,16 +79,18 @@ step Pick up quests (level 23.5)
   accept 226
 
 step Objectives: Wolves at Our Heels (level 23.6)
-  complete 226
+  kill 213 x12 quest 226.1
+  kill 565 x8 quest 226.2
 
 step Objectives: Wolves at Our Heels (level 23.6)
-  complete 226
+  kill 213 x12 quest 226.1
+  kill 565 x8 quest 226.2
 
 step Turn in (level 23.7)
   turnin 226
 
 step Objectives: Eight-Legged Menaces (level 23.7)
-  complete 245
+  kill 539 x15 quest 245.1
 
 step Turn in (level 23.8)
   turnin 245
@@ -138,7 +149,7 @@ step Turn in (level 24.2)
   accept 453
 
 step Objectives: Gather Rot Blossoms (level 24.4)
-  complete 156
+  collect 1598 x8 quest 156.1
 
 step Turn in (level 24.4)
   turnin 156
@@ -149,7 +160,7 @@ step Turn in (level 24.4)
   accept 133
 
 step Objectives: Ghoulish Effigy (level 24.8)
-  complete 133
+  collect 884 x7 quest 133.1
 
 step Turn in (level 24.8)
   turnin 133

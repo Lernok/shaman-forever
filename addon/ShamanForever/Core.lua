@@ -555,6 +555,8 @@ local function nextDungeonTip(info)
   if not nd or nd.name == info.now then nd = info and info.dungeons[nd and 2 or 1] end
   if not nd then return nil end
   local lvl = UnitLevel("player")
+  -- Only when it's close: a dungeon ten levels away is no news.
+  if nd.level and nd.level - lvl > cdb.lead + 2 then return nil end
   local head = nd.level and string.format(L().nextDungeon, nd.name, nd.level) or string.format(L().nextDungeonNoLevel, nd.name)
   if nd.level and nd.level > lvl then head = head .. " · " .. (nd.level - lvl == 1 and L().levelToGo or string.format(L().levelsToGo, nd.level - lvl)) end
   local src, lines, ups = L().noQuestsYet, {}, 0
@@ -1097,6 +1099,14 @@ function render()
         if frame.cat == "all" or frame.cat == c then tips[#tips + 1] = t end
       end
     end
+    -- Opened by itself and nothing left (all done or dismissed): it goes
+    -- away. Opened by you, it stays.
+    if frame.auto and inCat.all == 0 and frame:IsShown() then
+      frame.auto = false
+      frame:Hide()
+      cdb.shown = false
+      return
+    end
   elseif tab == "prog" then
     tips = prog
   else
@@ -1158,7 +1168,7 @@ end
 local pending
 local function popup(title, tips)
   local new = {}
-  for _, tip in ipairs(tips) do if not cdb.seen[tip.key] then new[#new + 1] = tip end end
+  for _, tip in ipairs(tips) do if not cdb.seen[tip.key] and not tip.pinned then new[#new + 1] = tip end end
   if #new == 0 then return end
   for _, tip in ipairs(new) do cdb.seen[tip.key] = true end
   say(string.format(L().chatNew, #new))
@@ -1166,7 +1176,7 @@ local function popup(title, tips)
   -- Never in the middle of a fight: after it.
   if InCombatLockdown() then pending = { title, new } return end
   show(title, new)
-  frame.live = false
+  frame.live, frame.auto = false, true
 end
 
 local function craftTips()
@@ -1272,7 +1282,7 @@ function SF.open(keep)
   if frame and frame:IsShown() and not keep then frame:Hide(); cdb.shown = false return end
   local title, tips = currentView()
   show(title, tips)
-  frame.live = true
+  frame.live, frame.auto = true, false
 end
 
 -- Recompute what the window shows (a moment later, once; not in combat),
@@ -1479,6 +1489,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
     local p = pending
     pending = nil
     show(p[1], p[2])
+    frame.live, frame.auto = false, true
   end
 end)
 

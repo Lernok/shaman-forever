@@ -18,7 +18,7 @@ step Turn in (level 1.1)
   accept 97279
 
 step Objectives: Wayward Weapons (level 1.1)
-  complete 97279
+  collect 277653 x6 quest 97279.1
 
 step Turn in (level 1.5)
   turnin 97279
@@ -27,7 +27,7 @@ step Pick up quests (level 1.5)
   accept 790
 
 step Objectives: Sarkoth (level 1.7)
-  complete 790
+  collect 4905 quest 790.1
 
 step Turn in (level 2.4)
   turnin 790
@@ -42,13 +42,13 @@ step Turn in (level 2.5)
   turnin 804
 
 step Objectives: Cutting Teeth (level 3.1)
-  complete 788
+  kill 3098 x10 quest 788.1
 
 step Pick up quests (level 3.1)
   accept 5441
 
 step Objectives: Lazy Peons (level 3.1)
-  complete 5441
+  kill 10556 x5 quest 5441.1
 
 step Turn in (level 3.4)
   turnin 5441
@@ -66,22 +66,22 @@ step Pick up quests (level 3.5)
   accept 4402
 
 step Objectives: Sting of the Scorpid (level 4.1)
-  complete 789
+  collect 4862 x10 quest 789.1
 
 step Pick up quests (level 4.1)
   accept 1516
 
 step Objectives: Galgar's Cactus Apple Surprise (level 4.1)
-  complete 4402
+  collect 11583 x10 quest 4402.1
 
 step Objectives: Call of Earth (level 4.1)
-  complete 1516
+  collect 6640 x2 quest 1516.1
 
 step Objectives: Thazz'ril's Pick (level 4.1)
-  complete 6394
+  collect 16332 quest 6394.1
 
 step Objectives: Vile Familiars (level 4.5)
-  complete 792
+  kill 3101 x12 quest 792.1
 
 step Turn in (level 4.7)
   turnin 6394
@@ -108,7 +108,7 @@ step Pick up quests (level 5.4)
   accept 2161
 
 step Objectives: Burning Blade Medallion (level 5.4)
-  complete 794
+  collect 4859 quest 794.1
 
 step Turn in (level 5.6)
   turnin 1518
@@ -157,40 +157,59 @@ step Turn in (level 6.2)
   accept 96655
 
 step Objectives: Encroachment (level 6.4)
-  complete 837
+  kill 3111 x4 quest 837.1
+  kill 3112 x4 quest 837.2
+  kill 3113 x4 quest 837.3
+  kill 3114 x4 quest 837.4
 
 step Objectives: This Fruit Could Bite Back (level 6.4)
-  complete 96825
+  collect 275718 x8 quest 96825.1
 
 step Turn in (level 6.5)
   turnin 96825
-  complete 96655
+  kill 3191 quest 96655.1
   turnin 96655
 
 step Objectives: Encroachment (level 6.8)
-  complete 837
+  kill 3111 x4 quest 837.1
+  kill 3112 x4 quest 837.2
+  kill 3113 x4 quest 837.3
+  kill 3114 x4 quest 837.4
 
 step Objectives: Encroachment (level 6.9)
-  complete 837
+  kill 3111 x4 quest 837.1
+  kill 3112 x4 quest 837.2
+  kill 3113 x4 quest 837.3
+  kill 3114 x4 quest 837.4
 
 step Turn in (level 7.0)
   turnin 837
 
 step Objectives: For Honor (level 7.0)
-  complete 96822
+  collect 275713 quest 96822.1
+  collect 275716 quest 96822.2
+  collect 275717 quest 96822.3
 
 step Objectives: Vanquish the Betrayers (level 7.2)
-  complete 784
-  complete 791
+  kill 3128 x10 quest 784.1
+  kill 3129 x8 quest 784.2
+  kill 3192 quest 784.3
+  collect 4870 x8 quest 791.1
 
 step Objectives: For Honor (level 7.6)
-  complete 96822
+  collect 275713 quest 96822.1
+  collect 275716 quest 96822.2
+  collect 275717 quest 96822.3
 
 step Objectives: For Honor (level 7.6)
-  complete 96822
+  collect 275713 quest 96822.1
+  collect 275716 quest 96822.2
+  collect 275717 quest 96822.3
 
 step Objectives: Vanquish the Betrayers (level 7.7)
-  complete 784
+  kill 3128 x10 quest 784.1
+  kill 3129 x8 quest 784.2
+  kill 3192 quest 784.3
 
 step Pick up quests (level 7.7)
   accept 830
@@ -215,31 +234,37 @@ step Pick up quests (level 7.7)
   accept 817
 
 step Objectives: A Solvent Spirit (level 7.9)
-  complete 818
+  collect 4887 x4 quest 818.1
+  collect 4888 x8 quest 818.2
 
 step Objectives: Break a Few Eggs (level 7.9)
-  complete 815
+  collect 4890 x3 quest 815.1
 
 step Objectives: Bloodtalon Matriarch (level 7.9)
-  complete 97223
+  collect 277128 quest 97223.1
 
 step Objectives: Zalazane (level 8.2)
-  complete 826
+  kill 3207 x8 quest 826.1
+  kill 3206 x8 quest 826.2
+  collect 4866 quest 826.3
 
 step Objectives: Zalazane (level 8.2)
-  complete 826
+  kill 3207 x8 quest 826.1
+  kill 3206 x8 quest 826.2
+  collect 4866 quest 826.3
 
 step Objectives: Minshina's Skull (level 8.2)
-  complete 808
+  collect 4864 quest 808.1
 
 step Objectives: Forgotten Loa Idols (level 8.2)
-  complete 97225
+  collect 277135 x8 quest 97225.1
 
 step Objectives: Practical Prey (level 8.4)
-  complete 817
+  collect 4892 x4 quest 817.1
 
 step Objectives: A Solvent Spirit (level 8.6)
-  complete 818
+  collect 4887 x4 quest 818.1
+  collect 4888 x8 quest 818.2
 
 step Turn in (level 8.8)
   turnin 97225
@@ -275,10 +300,12 @@ step Turn in (level 9.6)
   turnin 99123
 
 step Objectives: Legging It (level 9.6)
-  complete 96821
+  kill 266850 x6 quest 96821.1
+  kill 266849 x6 quest 96821.2
 
 step Objectives: Legging It (level 9.7)
-  complete 96821
+  kill 266850 x6 quest 96821.1
+  kill 266849 x6 quest 96821.2
 
 step Turn in (level 9.8)
   turnin 784
@@ -298,7 +325,7 @@ step Pick up quests (level 10.1)
   accept 2983
 
 step Objectives: From The Wreckage.... (level 10.1)
-  complete 825
+  collect 4863 x3 quest 825.1
 
 step Hearth (level 10.1)
   hearth "Razor Hill"
@@ -316,23 +343,25 @@ step Pick up quests (level 10.3)
   accept 834
 
 step Objectives: Winds in the Desert (level 10.3)
-  complete 834
+  collect 4918 x5 quest 834.1
 
 step Turn in (level 10.4)
   turnin 834
   accept 835
 
 step Objectives: Dark Storms (level 10.4)
-  complete 806
+  collect 4869 quest 806.1
 
 step Pick up quests (level 10.4)
   accept 812
 
 step Objectives: Securing the Lines (level 10.5)
-  complete 835
+  kill 3117 x12 quest 835.1
+  kill 3118 x8 quest 835.2
 
 step Objectives: Securing the Lines (level 10.7)
-  complete 835
+  kill 3117 x12 quest 835.1
+  kill 3118 x8 quest 835.2
 
 step Turn in (level 10.8)
   turnin 835
@@ -346,7 +375,7 @@ step Turn in (level 10.9)
   accept 827
 
 step Objectives: Skull Rock (level 11.0)
-  complete 827
+  collect 4871 quest 827.1
 
 step Turn in (level 11.1)
   turnin 827

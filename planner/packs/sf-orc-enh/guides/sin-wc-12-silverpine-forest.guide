@@ -14,10 +14,10 @@ step Pick up quests (level 23.8)
   accept 95885
 
 step Objectives: The Offering of Blood (level 23.8)
-  complete 95885
+  kill 212753 quest 95885.1
 
 step Objectives: The Tortured Soul (level 23.8)
-  complete 95883
+  collect 271350 quest 95883.1
 
 step Turn in (level 23.8)
   turnin 95883
@@ -25,7 +25,7 @@ step Turn in (level 23.8)
 
 step Pick up quests (level 23.9)
   accept 95884
-  complete 95884
+  collect 271343 quest 95884.1
 
 step Turn in (level 23.9)
   turnin 95884
@@ -40,7 +40,8 @@ step Pick up quests (level 23.9)
   accept 516
 
 step Objectives: Beren's Peril (level 23.9)
-  complete 516
+  kill 1974 x6 quest 516.1
+  kill 1973 x6 quest 516.2
 
 step Turn in (level 24.0)
   turnin 516

@@ -19,7 +19,7 @@ step Pick up quests (level 33.6)
   accept 1365
 
 step Objectives: Kodo Roundup (level 33.6)
-  complete 5561
+  kill 4700 quest 5561.1
 
 step Turn in (level 33.6)
   turnin 5561
@@ -29,7 +29,7 @@ step Turn in (level 33.6)
   accept 1369
 
 step Objectives: Khan Dez'hepah (level 33.6)
-  complete 1365
+  collect 6066 quest 1365.1
 
 step Pick up quests (level 33.6)
   accept 5821
@@ -46,7 +46,7 @@ step Turn in (level 33.8)
   accept 1366
 
 step Objectives: Centaur Bounty (level 34.1)
-  complete 1366
+  collect 6067 x15 quest 1366.1
 
 step Objectives: Bodyguard for Hire (level 34.1)
   complete 5821
@@ -62,7 +62,7 @@ step Turn in (level 34.2)
   accept 1370
 
 step Objectives: Broken Tears (level 34.2)
-  complete 1369
+  collect 6083 x3 quest 1369.1
 
 step Flight path (level 34.2)
   getfp "Shadowprey Village"
@@ -77,13 +77,13 @@ step Pick up quests (level 34.2)
   accept 6142
 
 step Objectives: Clam Bait (level 34.2)
-  complete 6142
+  collect 15924 x10 quest 6142.1
 
 step Pick up quests (level 34.2)
   accept 5741
 
 step Objectives: Sceptre of Light (level 34.2)
-  complete 5741
+  collect 15750 quest 5741.1
 
 step Turn in (level 34.3)
   turnin 5741
@@ -95,17 +95,17 @@ step Turn in (level 34.3)
   turnin 6142
 
 step Objectives: Stealing Supplies (level 34.3)
-  complete 1370
+  collect 6069 x6 quest 1370.1
 
 step Turn in (level 34.4)
   turnin 1369
   accept 1371
-  complete 1371
+  collect 4392 quest 1371.1
   turnin 1371
   accept 1375
 
 step Objectives: The Corrupter (level 34.4)
-  complete 1481
+  collect 6441 quest 1481.1
 
 step Turn in (level 34.4)
   turnin 1481
@@ -116,13 +116,13 @@ step Turn in (level 34.5)
   accept 1373
 
 step Objectives: Khan Shaka (level 34.5)
-  complete 1375
+  collect 6073 quest 1375.1
 
 step Turn in (level 34.5)
   turnin 1375
 
 step Objectives: The Corrupter (level 34.5)
-  complete 1482
+  collect 6442 quest 1482.1
 
 step Turn in (level 34.6)
   turnin 1482
@@ -153,7 +153,7 @@ step Turn in (level 34.6)
   turnin 5943
 
 step Objectives: Ghost-o-plasm Round Up (level 34.6)
-  complete 6134
+  collect 15849 x8 quest 6134.1
 
 step Turn in (level 34.7)
   turnin 6134
@@ -171,38 +171,46 @@ step Pick up quests (level 34.7)
   accept 5501
 
 step Objectives: Hand of Iruxos (level 34.7)
-  complete 5381
+  collect 13542 quest 5381.1
 
 step Pick up quests (level 34.7)
   accept 6027
 
 step Objectives: Other Fish to Fry (level 34.7)
-  complete 6143
+  kill 4714 x7 quest 6143.1
+  kill 4711 x7 quest 6143.2
+  kill 4712 x5 quest 6143.3
 
 step Pick up quests (level 34.7)
   accept 6161
 
 step Objectives: Claim Rackmore's Treasure! (level 34.8)
-  complete 6161
+  collect 15878 quest 6161.1
+  collect 15881 quest 6161.2
 
 step Objectives: Other Fish to Fry (level 34.8)
-  complete 6143
-  complete 6161
+  kill 4714 x7 quest 6143.1
+  kill 4711 x7 quest 6143.2
+  kill 4712 x5 quest 6143.3
+  collect 15878 quest 6161.1
+  collect 15881 quest 6161.2
 
 step Turn in (level 34.9)
   turnin 6161
 
 step Objectives: Book of the Ancients (level 34.9)
-  complete 6027
+  collect 15803 quest 6027.1
 
 step Objectives: Other Fish to Fry (level 34.9)
-  complete 6143
+  kill 4714 x7 quest 6143.1
+  kill 4711 x7 quest 6143.2
+  kill 4712 x5 quest 6143.3
 
 step Turn in (level 34.9)
   turnin 6027
 
 step Objectives: Bone Collector (level 34.9)
-  complete 5501
+  collect 13703 x10 quest 5501.1
 
 step Turn in (level 35.0)
   turnin 5501

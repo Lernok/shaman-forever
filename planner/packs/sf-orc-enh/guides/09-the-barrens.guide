@@ -29,22 +29,34 @@ step Turn in (level 18.8)
   turnin 865 optional map 1413 @62.37,37.62
 
 step Objectives: WANTED: Baron Longshore (level 18.8)
-  complete 895
+  collect 5084 quest 895.1
 
 step Objectives: The Guns of Northwatch (level 18.9)
-  complete 891
+  kill 3393 quest 891.1
+  kill 3455 quest 891.2
+  kill 3454 quest 891.3
+  collect 5078 x10 quest 891.4
 
 step Pick up quests (level 18.9)
   accept 898
 
 step Objectives: The Guns of Northwatch (level 18.9)
-  complete 891
+  kill 3393 quest 891.1
+  kill 3455 quest 891.2
+  kill 3454 quest 891.3
+  collect 5078 x10 quest 891.4
 
 step Objectives: The Guns of Northwatch (level 18.9)
-  complete 891
+  kill 3393 quest 891.1
+  kill 3455 quest 891.2
+  kill 3454 quest 891.3
+  collect 5078 x10 quest 891.4
 
 step Objectives: The Guns of Northwatch (level 18.9)
-  complete 891
+  kill 3393 quest 891.1
+  kill 3455 quest 891.2
+  kill 3454 quest 891.3
+  collect 5078 x10 quest 891.4
 
 step Objectives: Free From the Hold (level 18.9)
   complete 898
@@ -73,7 +85,7 @@ step Pick up quests (level 19.2)
   accept 850
 
 step Objectives: Kolkar Leaders (level 19.2)
-  complete 850
+  collect 5022 quest 850.1
 
 step Turn in (level 19.2)
   turnin 850
@@ -90,10 +102,10 @@ step Pick up quests (level 19.2)
   accept 95507
 
 step Objectives: Bruised Pride and Lion Hides (level 19.2)
-  complete 95494
+  collect 269715 x6 quest 95494.1
 
 step Objectives: Vrang's Game (level 19.2)
-  complete 95507
+  collect 269719 x8 quest 95507.1
 
 step Turn in (level 19.3)
   turnin 95494
@@ -105,14 +117,14 @@ step Turn in (level 19.4)
   accept 95621
 
 step Objectives: Trouble in the Valley (level 19.4)
-  complete 95621
+  collect 270151 quest 95621.1
 
 step Turn in (level 19.4)
   turnin 95621
   accept 95508
 
 step Objectives: Unwelcome Guests (level 19.4)
-  complete 95508
+  kill 261367 quest 95508.1
 
 step Turn in (level 19.5)
   turnin 95508
@@ -121,14 +133,14 @@ step Pick up quests (level 19.5)
   accept 858
 
 step Objectives: Ignition (level 19.5)
-  complete 858
+  collect 5050 quest 858.1
 
 step Turn in (level 19.6)
   turnin 858
   accept 863
 
 step Objectives: Miner's Fortune (level 19.6)
-  complete 896
+  collect 5097 quest 896.1
 
 step Objectives: The Escape (level 19.6)
   complete 863
@@ -137,13 +149,13 @@ step Hearth (level 19.6)
   hearth "The Crossroads"
 
 step Objectives: Verog the Dervish (level 19.6)
-  complete 851
+  collect 5023 quest 851.1
 
 step Objectives: Lost in Battle (level 19.6)
-  complete 4921
+  kill 10668 quest 4921.1
 
 step Objectives: Consumed by Hatred (level 20.0)
-  complete 899
+  collect 5085 x60 quest 899.1
 
 step Hearthstone (level 20.0)
   sethome "Ratchet"
@@ -167,10 +179,10 @@ step Turn in (level 20.3)
   accept 852
 
 step Objectives: Hezrul Bloodmark (level 20.3)
-  complete 852
+  collect 5025 quest 852.1
 
 step Objectives: Her Name Is Olgra (level 20.4)
-  complete 95774
+  collect 277277 x4 quest 95774.1
 
 step Turn in (level 20.4)
   turnin 95774

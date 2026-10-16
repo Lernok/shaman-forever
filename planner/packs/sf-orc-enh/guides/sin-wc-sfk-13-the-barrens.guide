@@ -16,16 +16,22 @@ step Pick up quests (level 23.5)
   accept 884
 
 step Objectives: Tribes at War (level 23.5)
-  complete 878
+  kill 3260 x6 quest 878.1
+  kill 3261 x12 quest 878.2
+  kill 3263 x12 quest 878.3
 
 step Objectives: Tribes at War (level 23.6)
-  complete 878
+  kill 3260 x6 quest 878.1
+  kill 3261 x12 quest 878.2
+  kill 3263 x12 quest 878.3
 
 step Pick up quests (level 23.6)
   accept 883
 
 step Objectives: Tribes at War (level 23.6)
-  complete 878
+  kill 3260 x6 quest 878.1
+  kill 3261 x12 quest 878.2
+  kill 3263 x12 quest 878.3
 
 step Pick up quests (level 23.6)
   accept 893
@@ -39,7 +45,7 @@ step Turn in (level 23.8)
   accept 5052
 
 step Objectives: Blood Shards of Agamaggan (level 23.8)
-  complete 5052
+  collect 5075 quest 5052.1
 
 step Turn in (level 23.8)
   turnin 5052
@@ -59,31 +65,45 @@ step Pick up quests (level 23.8)
   accept 98093
 
 step Objectives: Field to Clear (level 23.8)
-  complete 98093
+  kill 4128 x7 quest 98093.1
+  kill 3238 x7 quest 98093.2
 
 step Objectives: Betrayal from Within (level 23.8)
-  complete 879
+  collect 5074 quest 879.1
+  collect 5073 quest 879.2
+  collect 5072 quest 879.3
 
 step Objectives: Weapons of Choice (level 23.9)
-  complete 893
+  collect 5093 quest 893.1
+  collect 5092 quest 893.2
+  collect 5094 quest 893.3
 
 step Pick up quests (level 23.9)
   accept 885
 
 step Objectives: Betrayal from Within (level 23.9)
-  complete 879
+  collect 5074 quest 879.1
+  collect 5073 quest 879.2
+  collect 5072 quest 879.3
 
 step Objectives: Weapons of Choice (level 23.9)
-  complete 893
+  collect 5093 quest 893.1
+  collect 5092 quest 893.2
+  collect 5094 quest 893.3
 
 step Objectives: Betrayal from Within (level 23.9)
-  complete 879
+  collect 5074 quest 879.1
+  collect 5073 quest 879.2
+  collect 5072 quest 879.3
 
 step Objectives: Gann's Reclamation (level 24.0)
-  complete 843
+  kill 3374 x15 quest 843.1
+  kill 3375 x5 quest 843.2
+  collect 5006 quest 843.3
 
 step Objectives: Field to Clear (level 24.1)
-  complete 98093
+  kill 4128 x7 quest 98093.1
+  kill 3238 x7 quest 98093.2
 
 step Turn in (level 24.1)
   turnin 98093
@@ -93,7 +113,9 @@ step Turn in (level 24.2)
   accept 846
 
 step Objectives: Revenge of Gann (level 24.4)
-  complete 846
+  collect 5017 x6 quest 846.1
+  collect 5018 x6 quest 846.2
+  collect 5019 x6 quest 846.3
 
 step Turn in (level 24.5)
   turnin 846
@@ -141,14 +163,14 @@ step Pick up quests (level 24.9)
   accept 1530
 
 step Objectives: Egg Hunt (level 24.9)
-  complete 868
+  collect 5058 x12 quest 868.1
 
 step Turn in (level 24.9)
   turnin 1530
   accept 1535
 
 step Objectives: Call of Water (level 24.9)
-  complete 1535
+  collect 7769 quest 1535.1
 
 step Turn in (level 24.9)
   turnin 1535

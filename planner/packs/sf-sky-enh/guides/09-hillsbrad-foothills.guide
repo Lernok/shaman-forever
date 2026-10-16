@@ -24,10 +24,12 @@ step Pick up quests (level 21.0)
   accept 501
 
 step Objectives: Elixir of Suffering (level 21.1)
-  complete 496
+  collect 3476 x10 quest 496.1
+  collect 3477 quest 496.2
 
 step Objectives: Elixir of Suffering (level 21.4)
-  complete 496
+  collect 3476 x10 quest 496.1
+  collect 3477 quest 496.2
 
 step Turn in (level 21.4)
   turnin 496
@@ -37,7 +39,7 @@ step Turn in (level 21.4)
   turnin 499
 
 step Objectives: Elixir of Pain (level 21.9)
-  complete 501
+  collect 3496 x10 quest 501.1
 
 step Turn in (level 22.0)
   turnin 98094
@@ -45,13 +47,15 @@ step Turn in (level 22.0)
   turnin 98095
 
 step Objectives: WANTED: Syndicate Personnel (level 22.1)
-  complete 549
+  kill 2260 x10 quest 549.1
+  kill 2261 x10 quest 549.2
 
 step Objectives: The Rescue (level 22.1)
   complete 498
 
 step Objectives: WANTED: Syndicate Personnel (level 22.2)
-  complete 549
+  kill 2260 x10 quest 549.1
+  kill 2261 x10 quest 549.2
 
 step Objectives: The Rescue (level 22.2)
   complete 498
@@ -70,10 +74,16 @@ step Turn in (level 22.4)
   turnin 502
 
 step Objectives: Battle of Hillsbrad (level 22.5)
-  complete 527
+  kill 2266 x6 quest 527.1
+  kill 2360 x6 quest 527.2
+  kill 232 quest 527.3
+  kill 2403 quest 527.4
 
 step Objectives: Battle of Hillsbrad (level 22.5)
-  complete 527
+  kill 2266 x6 quest 527.1
+  kill 2360 x6 quest 527.2
+  kill 232 quest 527.3
+  kill 2403 quest 527.4
 
 step Hearth (level 22.5)
   hearth "Tarren Mill"
@@ -86,10 +96,10 @@ step Pick up quests (level 22.6)
   accept 546
 
 step Objectives: Battle of Hillsbrad (level 22.7)
-  complete 528
+  kill 2267 x15 quest 528.1
 
 step Objectives: Souvenirs of Death (level 23.2)
-  complete 546
+  collect 3692 x30 quest 546.1
 
 step Turn in (level 23.3)
   turnin 528
@@ -99,7 +109,9 @@ step Turn in (level 23.4)
   turnin 546
 
 step Objectives: Battle of Hillsbrad (level 23.4)
-  complete 529
+  kill 2404 quest 529.1
+  kill 2265 x4 quest 529.2
+  collect 3564 quest 529.3
 
 step Turn in (level 23.5)
   turnin 529

@@ -16,7 +16,8 @@ step Pick up quests (level 24.9)
   accept 484 optional map 1437 @8.55,55.74
 
 step Objectives: Spoils of War (level 24.9)
-  complete 98197
+  collect 279821 x6 quest 98197.1
+  collect 279822 x30 quest 98197.2
 
 step Pick up quests (level 24.9)
   accept 279
@@ -49,13 +50,14 @@ step Turn in (level 25.0)
   accept 471
 
 step Objectives: Claws from the Deep (level 25.1)
-  complete 279
+  kill 1024 x12 quest 279.1
+  collect 3618 quest 279.2
 
 step Objectives: Apprentice's Duties (level 25.1)
-  complete 471
+  collect 3348 x6 quest 471.1
 
 step Objectives: Digging Through the Ooze (level 25.1)
-  complete 470
+  collect 3349 quest 470.1
 
 step Turn in (level 25.2)
   turnin 470
@@ -96,37 +98,41 @@ step Turn in (level 25.5)
   turnin 306
 
 step Objectives: Ormer's Revenge (level 25.5)
-  complete 294
+  kill 1020 x10 quest 294.1
+  kill 1021 x10 quest 294.2
 
 step Objectives: Ormer's Revenge (level 25.6)
-  complete 294
+  kill 1020 x10 quest 294.1
+  kill 1021 x10 quest 294.2
 
 step Turn in (level 25.6)
   turnin 294
   accept 295
 
 step Objectives: Ormer's Revenge (level 25.7)
-  complete 295
+  kill 1022 x10 quest 295.1
+  kill 1023 x10 quest 295.2
 
 step Objectives: Ormer's Revenge (level 25.7)
-  complete 295
+  kill 1022 x10 quest 295.1
+  kill 1023 x10 quest 295.2
 
 step Turn in (level 25.8)
   turnin 295
 
 step Objectives: Alchemical Hazards (level 25.8)
-  complete 98282
+  collect 280319 quest 98282.1
 
 step Pick up quests (level 25.8)
   accept 94497
   accept 94499
   accept 94500
   accept 94501
-  complete 94497
+  collect 265734 quest 94497.1
   turnin 94497
-  complete 94499
+  collect 265748 quest 94499.1
   turnin 94499
-  complete 94500
+  collect 265773 quest 94500.1
   turnin 94500
 
 step Pick up quests (level 25.9)
@@ -175,7 +181,7 @@ step Pick up quests (level 26.3)
   accept 526
 
 step Objectives: The Third Fleet (level 26.3)
-  complete 288
+  collect 2594 quest 288.1
 
 step Turn in (level 26.4)
   turnin 288
@@ -198,23 +204,27 @@ step Pick up quests (level 26.4)
   accept 472
 
 step Objectives: Lightforge Ingots (level 26.5)
-  complete 526
+  collect 2702 x5 quest 526.1
 
 step Turn in (level 26.5)
   turnin 526
 
 step Objectives: The Cursed Crew (level 26.6)
-  complete 289
+  kill 1157 x13 quest 289.1
+  kill 1158 x5 quest 289.2
+  collect 3619 quest 289.3
 
 step Objectives: The Cursed Crew (level 26.6)
-  complete 289
+  kill 1157 x13 quest 289.1
+  kill 1158 x5 quest 289.2
+  collect 3619 quest 289.3
 
 step Turn in (level 26.6)
   turnin 289
   accept 290
 
 step Objectives: Lifting the Curse (level 26.7)
-  complete 290
+  collect 2629 quest 290.1
 
 step Turn in (level 26.7)
   turnin 290
@@ -231,10 +241,13 @@ step Pick up quests (level 26.7)
   accept 296
 
 step Objectives: Uncovering the Past (level 26.7)
-  complete 299
+  collect 2658 quest 299.1
+  collect 2659 quest 299.2
+  collect 2660 quest 299.3
+  collect 2661 quest 299.4
 
 step Objectives: Ormer's Revenge (level 26.7)
-  complete 296
+  collect 3638 quest 296.1
 
 step Turn in (level 26.8)
   turnin 296
@@ -243,7 +256,7 @@ step Turn in (level 26.9)
   turnin 299
 
 step Objectives: War Banners (level 26.9)
-  complete 464
+  collect 3337 x8 quest 464.1
 
 step Turn in (level 27.0)
   turnin 98230
@@ -254,13 +267,15 @@ step Pick up quests (level 27.0)
   accept 98283
 
 step Objectives: Carnage (level 27.0)
-  complete 98283
+  collect 280331 quest 98283.1
+  collect 280330 quest 98283.2
 
 step Objectives: Razormaw Needling (level 27.1)
-  complete 98245
+  collect 280103 x10 quest 98245.1
 
 step Objectives: Carnage (level 27.1)
-  complete 98283
+  collect 280331 quest 98283.1
+  collect 280330 quest 98283.2
 
 step Turn in (level 27.1)
   turnin 472
@@ -272,7 +287,7 @@ step Turn in (level 27.3)
   turnin 98283
 
 step Objectives: Crocs of the Sky (level 27.3)
-  complete 98072
+  collect 279385 x8 quest 98072.1
 
 step Hearth (level 27.3)
   hearth "Deepwater Tavern"

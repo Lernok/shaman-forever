@@ -27,7 +27,7 @@ step Turn in (level 26.0)
   turnin 79980
 
 step Objectives: Cycle of Rebirth (level 26.0)
-  complete 6301
+  collect 16205 x10 quest 6301.1
 
 step Turn in (level 26.1)
   turnin 6301
@@ -38,11 +38,11 @@ step Turn in (level 26.1)
   accept 1093
 
 step Objectives: Super Reaper 6000 (level 26.1)
-  complete 1093
+  collect 5734 quest 1093.1
 
 step Pick up quests (level 26.1)
   accept 1090
-  complete 1090
+  kill 4276 quest 1090.1
   turnin 1090
   accept 1092
 
@@ -52,16 +52,20 @@ step Turn in (level 26.2)
   accept 1094
 
 step Objectives: Cenarius' Legacy (level 26.3)
-  complete 1087
+  kill 4057 x4 quest 1087.1
+  kill 4053 x4 quest 1087.2
+  kill 4051 x4 quest 1087.3
 
 step Objectives: Cenarius' Legacy (level 26.3)
-  complete 1087
+  kill 4057 x4 quest 1087.1
+  kill 4053 x4 quest 1087.2
+  kill 4051 x4 quest 1087.3
 
 step Hearth (level 26.3)
   hearth "Sun Rock Retreat"
 
 step Objectives: Elemental War (level 26.3)
-  complete 6393
+  collect 16312 x10 quest 6393.1
 
 step Objectives: New Life (level 26.3)
   complete 6381
@@ -84,17 +88,29 @@ step Pick up quests (level 26.5)
   accept 86576
 
 step Objectives: Harpies Threaten (level 26.5)
-  complete 6282
-  complete 86576
+  kill 4022 x7 quest 6282.1
+  kill 4025 x7 quest 6282.2
+  kill 4024 x7 quest 6282.3
+  kill 4023 x7 quest 6282.4
+  collect 277936 x15 quest 86576.1
 
 step Objectives: Harpies Threaten (level 26.7)
-  complete 6282
+  kill 4022 x7 quest 6282.1
+  kill 4025 x7 quest 6282.2
+  kill 4024 x7 quest 6282.3
+  kill 4023 x7 quest 6282.4
 
 step Objectives: Harpies Threaten (level 26.7)
-  complete 6282
+  kill 4022 x7 quest 6282.1
+  kill 4025 x7 quest 6282.2
+  kill 4024 x7 quest 6282.3
+  kill 4023 x7 quest 6282.4
 
 step Objectives: Harpies Threaten (level 26.7)
-  complete 6282
+  kill 4022 x7 quest 6282.1
+  kill 4025 x7 quest 6282.2
+  kill 4024 x7 quest 6282.3
+  kill 4023 x7 quest 6282.4
 
 step Turn in (level 26.8)
   turnin 6282
@@ -106,16 +122,28 @@ step Pick up quests (level 26.9)
   accept 1058
 
 step Objectives: Jin'Zil's Forest Magic (level 27.0)
-  complete 1058
+  collect 5582 x5 quest 1058.1
+  collect 5584 x5 quest 1058.2
+  collect 5585 x30 quest 1058.3
+  collect 5583 quest 1058.4
 
 step Objectives: Jin'Zil's Forest Magic (level 27.0)
-  complete 1058
+  collect 5582 x5 quest 1058.1
+  collect 5584 x5 quest 1058.2
+  collect 5585 x30 quest 1058.3
+  collect 5583 quest 1058.4
 
 step Objectives: Jin'Zil's Forest Magic (level 27.0)
-  complete 1058
+  collect 5582 x5 quest 1058.1
+  collect 5584 x5 quest 1058.2
+  collect 5585 x30 quest 1058.3
+  collect 5583 quest 1058.4
 
 step Objectives: Jin'Zil's Forest Magic (level 27.0)
-  complete 1058
+  collect 5582 x5 quest 1058.1
+  collect 5584 x5 quest 1058.2
+  collect 5585 x30 quest 1058.3
+  collect 5583 quest 1058.4
 
 step Hearth (level 27.0)
   hearth "Sun Rock Retreat"

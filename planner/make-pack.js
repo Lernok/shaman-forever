@@ -141,5 +141,26 @@ guides.forEach((lines, gi) => {
     added++;
   }
 });
+// Third pass. The simulator writes "complete <quest>", which Polestar can't
+// point the arrow at; its compiler places kill and collect goals tied to a
+// quest objective (spots where the mobs or the drops are). So a quest whose
+// objectives are all kills or items gets one goal per objective; dungeon
+// quests (done inside) and quests with other objectives stay as they are.
+const questsDoc = JSON.parse(fs.readFileSync(path.join(polestar, 'data', 'forever', 'quests.json'), 'utf8'));
+const questData = questsDoc.quests || questsDoc;
+let expanded = 0;
+guides.forEach((lines) => {
+  for (let li = 0; li < lines.length; li++) {
+    const m = /^(\s+)complete (\d+)\s*$/.exec(lines[li]);
+    if (!m || dungeonOf.has(Number(m[2]))) continue;
+    const objs = (questData[m[2]] || {}).objectives || [];
+    if (!objs.length || !objs.every((o) => (o.type === 'item' || o.type === 'kill') && o.id)) continue;
+    const goals = objs.map((o, i) => `${m[1]}${o.type === 'item' ? 'collect' : 'kill'} ${o.id}${o.count > 1 ? ` x${o.count}` : ''} quest ${m[2]}.${i + 1}`);
+    lines.splice(li, 1, ...goals);
+    li += goals.length - 1;
+    expanded++;
+  }
+});
+console.log(`${expanded} quest objectives placed (kill/collect)`);
 guides.forEach((g, i) => fs.writeFileSync(path.join(outDir, names[i]), g.join('\n').replace(/\n{3,}/g, '\n\n')));
 console.log(`${files.length} guides -> ${outDir} (${visits.reduce((n, v) => n + (v.dungeons || []).length, 0)} dungeon steps, ${added} dungeon quest accepts added)`);

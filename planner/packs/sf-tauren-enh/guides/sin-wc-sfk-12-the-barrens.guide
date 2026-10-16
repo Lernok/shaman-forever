@@ -29,22 +29,34 @@ step Turn in (level 20.3)
   turnin 865 optional map 1413 @62.37,37.62
 
 step Objectives: WANTED: Baron Longshore (level 20.3)
-  complete 895
+  collect 5084 quest 895.1
 
 step Objectives: The Guns of Northwatch (level 20.3)
-  complete 891
+  kill 3393 quest 891.1
+  kill 3455 quest 891.2
+  kill 3454 quest 891.3
+  collect 5078 x10 quest 891.4
 
 step Pick up quests (level 20.3)
   accept 898
 
 step Objectives: The Guns of Northwatch (level 20.4)
-  complete 891
+  kill 3393 quest 891.1
+  kill 3455 quest 891.2
+  kill 3454 quest 891.3
+  collect 5078 x10 quest 891.4
 
 step Objectives: The Guns of Northwatch (level 20.4)
-  complete 891
+  kill 3393 quest 891.1
+  kill 3455 quest 891.2
+  kill 3454 quest 891.3
+  collect 5078 x10 quest 891.4
 
 step Objectives: The Guns of Northwatch (level 20.4)
-  complete 891
+  kill 3393 quest 891.1
+  kill 3455 quest 891.2
+  kill 3454 quest 891.3
+  collect 5078 x10 quest 891.4
 
 step Hearth (level 20.4)
   hearth "Ratchet"
@@ -82,7 +94,7 @@ step Pick up quests (level 20.6)
   accept 850
 
 step Objectives: Kolkar Leaders (level 20.6)
-  complete 850
+  collect 5022 quest 850.1
 
 step Turn in (level 20.6)
   turnin 850
@@ -95,17 +107,17 @@ step Pick up quests (level 20.6)
   accept 6548
 
 step Objectives: Serena Bloodfeather (level 20.7)
-  complete 876
+  collect 5067 quest 876.1
 
 step Pick up quests (level 20.7)
   accept 95494
   accept 95507
 
 step Objectives: Bruised Pride and Lion Hides (level 20.7)
-  complete 95494
+  collect 269715 x6 quest 95494.1
 
 step Objectives: Vrang's Game (level 20.7)
-  complete 95507
+  collect 269719 x8 quest 95507.1
 
 step Pick up quests (level 20.7)
   accept 3923
@@ -120,14 +132,14 @@ step Turn in (level 20.8)
   accept 95621
 
 step Objectives: Trouble in the Valley (level 20.8)
-  complete 95621
+  collect 270151 quest 95621.1
 
 step Turn in (level 20.9)
   turnin 95621
   accept 95508
 
 step Objectives: Unwelcome Guests (level 20.9)
-  complete 95508
+  kill 261367 quest 95508.1
 
 step Turn in (level 20.9)
   turnin 95508
@@ -136,14 +148,14 @@ step Pick up quests (level 20.9)
   accept 858
 
 step Objectives: Ignition (level 20.9)
-  complete 858
+  collect 5050 quest 858.1
 
 step Turn in (level 21.0)
   turnin 858
   accept 863
 
 step Objectives: Miner's Fortune (level 21.0)
-  complete 896
+  collect 5097 quest 896.1
 
 step Objectives: The Escape (level 21.0)
   complete 863
@@ -153,13 +165,13 @@ step Turn in (level 21.1)
   accept 1060
 
 step Objectives: Verog the Dervish (level 21.1)
-  complete 851
+  collect 5023 quest 851.1
 
 step Objectives: Lost in Battle (level 21.1)
-  complete 4921
+  kill 10668 quest 4921.1
 
 step Objectives: Consumed by Hatred (level 21.4)
-  complete 899
+  collect 5085 x60 quest 899.1
 
 step Flight path (level 21.4)
   getfp "Camp Taurajo"
@@ -172,7 +184,7 @@ step Turn in (level 21.4)
   accept 882
 
 step Objectives: Stolen Silver (level 21.4)
-  complete 3281
+  collect 5061 quest 3281.1
 
 step Hearthstone (level 21.4)
   sethome "Ratchet"
@@ -184,7 +196,7 @@ step Turn in (level 21.5)
   turnin 863
 
 step Objectives: Ishamuhale (level 21.5)
-  complete 882
+  collect 5101 quest 882.1
 
 step Hearthstone (level 21.5)
   sethome "The Crossroads"
@@ -202,10 +214,10 @@ step Turn in (level 21.8)
   accept 852
 
 step Objectives: Hezrul Bloodmark (level 21.8)
-  complete 852
+  collect 5025 quest 852.1
 
 step Objectives: Her Name Is Olgra (level 21.8)
-  complete 95774
+  collect 277277 x4 quest 95774.1
 
 step Hearth (level 21.8)
   hearth "The Crossroads"
@@ -225,14 +237,14 @@ step Turn in (level 22.0)
   accept 6382
 
 step Objectives: Enraged Thunder Lizards (level 22.0)
-  complete 907
+  collect 5143 x3 quest 907.1
 
 step Turn in (level 22.1)
   turnin 907
   accept 913
 
 step Objectives: Cry of the Thunderhawk (level 22.1)
-  complete 913
+  collect 5164 quest 913.1
 
 step Turn in (level 22.1)
   turnin 913
@@ -244,16 +256,22 @@ step Pick up quests (level 22.1)
   accept 884
 
 step Objectives: Tribes at War (level 22.2)
-  complete 878
+  kill 3260 x6 quest 878.1
+  kill 3261 x12 quest 878.2
+  kill 3263 x12 quest 878.3
 
 step Objectives: Tribes at War (level 22.2)
-  complete 878
+  kill 3260 x6 quest 878.1
+  kill 3261 x12 quest 878.2
+  kill 3263 x12 quest 878.3
 
 step Pick up quests (level 22.3)
   accept 883
 
 step Objectives: Tribes at War (level 22.3)
-  complete 878
+  kill 3260 x6 quest 878.1
+  kill 3261 x12 quest 878.2
+  kill 3263 x12 quest 878.3
 
 step Pick up quests (level 22.3)
   accept 893
@@ -267,7 +285,7 @@ step Turn in (level 22.4)
   accept 5052
 
 step Objectives: Blood Shards of Agamaggan (level 22.4)
-  complete 5052
+  collect 5075 quest 5052.1
 
 step Turn in (level 22.5)
   turnin 5052
@@ -287,31 +305,45 @@ step Pick up quests (level 22.5)
   accept 98093
 
 step Objectives: Field to Clear (level 22.5)
-  complete 98093
+  kill 4128 x7 quest 98093.1
+  kill 3238 x7 quest 98093.2
 
 step Objectives: Betrayal from Within (level 22.5)
-  complete 879
+  collect 5074 quest 879.1
+  collect 5073 quest 879.2
+  collect 5072 quest 879.3
 
 step Objectives: Weapons of Choice (level 22.6)
-  complete 893
+  collect 5093 quest 893.1
+  collect 5092 quest 893.2
+  collect 5094 quest 893.3
 
 step Pick up quests (level 22.6)
   accept 885
 
 step Objectives: Betrayal from Within (level 22.6)
-  complete 879
+  collect 5074 quest 879.1
+  collect 5073 quest 879.2
+  collect 5072 quest 879.3
 
 step Objectives: Weapons of Choice (level 22.6)
-  complete 893
+  collect 5093 quest 893.1
+  collect 5092 quest 893.2
+  collect 5094 quest 893.3
 
 step Objectives: Betrayal from Within (level 22.6)
-  complete 879
+  collect 5074 quest 879.1
+  collect 5073 quest 879.2
+  collect 5072 quest 879.3
 
 step Objectives: Gann's Reclamation (level 22.8)
-  complete 843
+  kill 3374 x15 quest 843.1
+  kill 3375 x5 quest 843.2
+  collect 5006 quest 843.3
 
 step Objectives: Field to Clear (level 22.8)
-  complete 98093
+  kill 4128 x7 quest 98093.1
+  kill 3238 x7 quest 98093.2
 
 step Turn in (level 22.9)
   turnin 98093
@@ -321,7 +353,9 @@ step Turn in (level 22.9)
   accept 846
 
 step Objectives: Revenge of Gann (level 23.2)
-  complete 846
+  collect 5017 x6 quest 846.1
+  collect 5018 x6 quest 846.2
+  collect 5019 x6 quest 846.3
 
 step Turn in (level 23.3)
   turnin 846
@@ -369,26 +403,32 @@ step Pick up quests (level 23.7)
   accept 822
 
 step Objectives: Chen's Empty Keg (level 23.7)
-  complete 822
+  collect 4898 x5 quest 822.1
+  collect 4897 quest 822.2
+  collect 4896 quest 822.3
 
 step Pick up quests (level 23.7)
   accept 1530
 
 step Objectives: Egg Hunt (level 23.7)
-  complete 868
+  collect 5058 x12 quest 868.1
 
 step Objectives: Chen's Empty Keg (level 23.8)
-  complete 822
+  collect 4898 x5 quest 822.1
+  collect 4897 quest 822.2
+  collect 4896 quest 822.3
 
 step Objectives: Chen's Empty Keg (level 23.8)
-  complete 822
+  collect 4898 x5 quest 822.1
+  collect 4897 quest 822.2
+  collect 4896 quest 822.3
 
 step Turn in (level 23.8)
   turnin 1530
   accept 1535
 
 step Objectives: Call of Water (level 23.8)
-  complete 1535
+  collect 7769 quest 1535.1
 
 step Turn in (level 23.8)
   turnin 1535

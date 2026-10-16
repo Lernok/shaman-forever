@@ -22,10 +22,10 @@ step Pick up quests (level 32.2)
   accept 185
 
 step Objectives: Tiger Mastery (level 32.2)
-  complete 185
+  kill 681 x10 quest 185.1
 
 step Objectives: Panther Mastery (level 32.2)
-  complete 190
+  kill 683 x10 quest 190.1
 
 step Turn in (level 32.3)
   turnin 185
@@ -40,7 +40,7 @@ step Pick up quests (level 32.3)
   accept 191
 
 step Objectives: Tiger Mastery (level 32.3)
-  complete 186
+  kill 682 x10 quest 186.1
 
 step Pick up quests (level 32.4)
   accept 635
@@ -68,10 +68,11 @@ step Turn in (level 32.5)
   accept 328
 
 step Objectives: Bad Medicine (level 32.5)
-  complete 204
+  collect 2633 x7 quest 204.1
+  collect 2634 quest 204.2
 
 step Objectives: The Second Rebellion (level 32.6)
-  complete 203
+  kill 937 x15 quest 203.1
 
 step Turn in (level 32.6)
   turnin 328
@@ -93,13 +94,13 @@ step Turn in (level 32.8)
   turnin 331
 
 step Objectives: Panther Mastery (level 32.8)
-  complete 191
+  kill 736 x10 quest 191.1
 
 step Objectives: Raptor Mastery (level 32.9)
-  complete 194
+  kill 685 x10 quest 194.1
 
 step Objectives: Tiger Mastery (level 32.9)
-  complete 187
+  kill 1085 x10 quest 187.1
 
 step Turn in (level 33.0)
   turnin 194
@@ -113,10 +114,10 @@ step Turn in (level 33.0)
   turnin 191
 
 step Objectives: Tiger Mastery (level 33.0)
-  complete 188
+  collect 3879 quest 188.1
 
 step Objectives: Raptor Mastery (level 33.1)
-  complete 195
+  kill 686 x10 quest 195.1
 
 step Flight path (level 33.1)
   getfp "Booty Bay"
@@ -141,10 +142,10 @@ step Pick up quests (level 33.1)
   accept 189
 
 step Objectives: Singing Blue Shards (level 33.2)
-  complete 605
+  collect 3918 x10 quest 605.1
 
 step Objectives: Bloodscalp Ears (level 33.4)
-  complete 189
+  collect 1519 x15 quest 189.1
 
 step Turn in (level 33.4)
   turnin 195
@@ -159,7 +160,7 @@ step Turn in (level 33.5)
   turnin 198
 
 step Objectives: Supply and Demand (level 33.5)
-  complete 575
+  collect 4053 x2 quest 575.1
 
 step Hearth (level 33.5)
   hearth "Booty Bay"
@@ -178,7 +179,7 @@ step Turn in (level 33.6)
   turnin 189
 
 step Objectives: Some Assembly Required (level 33.6)
-  complete 577
+  collect 4104 quest 577.1
 
 step Turn in (level 33.6)
   turnin 577

@@ -13,7 +13,7 @@ step Pick up quests (level 12.5)
   accept 97326
 
 step Objectives: Rocks to Rests (level 12.5)
-  complete 97326
+  collect 277952 x8 quest 97326.1
 
 step Turn in (level 12.5)
   turnin 97326
@@ -41,7 +41,8 @@ step Pick up quests (level 12.6)
   accept 97275
 
 step Objectives: Yelmak's Medley (level 12.6)
-  complete 97242
+  collect 277278 quest 97242.1
+  collect 277279 quest 97242.2
 
 step Turn in (level 12.7)
   turnin 97242
@@ -54,7 +55,7 @@ step Turn in (level 12.9)
 
 step Pick up quests (level 12.9)
   accept 813
-  complete 812
+  collect 4904 quest 812.1
 
 step Turn in (level 12.9)
   turnin 829

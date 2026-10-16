@@ -33,7 +33,7 @@ step Pick up quests (level 15.3)
   accept 97326
 
 step Objectives: Rocks to Rests (level 15.3)
-  complete 97326
+  collect 277952 x8 quest 97326.1
 
 step Turn in (level 15.3)
   turnin 97326
@@ -55,7 +55,8 @@ step Pick up quests (level 15.4)
   accept 97275
 
 step Objectives: Yelmak's Medley (level 15.4)
-  complete 97242
+  collect 277278 quest 97242.1
+  collect 277279 quest 97242.2
 
 step Turn in (level 15.4)
   turnin 97242

@@ -37,28 +37,36 @@ step Pick up quests (level 16.1)
   accept 97914
 
 step Objectives: Deep Ocean, Vast Sea (level 16.1)
-  complete 982
+  collect 12191 quest 982.1
+  collect 12192 quest 982.2
 
 step Objectives: Deep Ocean, Vast Sea (level 16.1)
-  complete 982
+  collect 12191 quest 982.1
+  collect 12192 quest 982.2
 
 step Objectives: Fruit of the Sea (level 16.3)
-  complete 1138
+  collect 12237 x6 quest 1138.1
 
 step Objectives: Holy Diver (level 16.3)
-  complete 87760
+  collect 280686 quest 87760.1
 
 step Pick up quests (level 16.3)
   accept 2098
 
 step Objectives: Gyromast's Retrieval (level 16.4)
-  complete 2098
+  collect 7498 quest 2098.1
+  collect 7499 quest 2098.2
+  collect 7500 quest 2098.3
 
 step Objectives: Gyromast's Retrieval (level 16.4)
-  complete 2098
+  collect 7498 quest 2098.1
+  collect 7499 quest 2098.2
+  collect 7500 quest 2098.3
 
 step Objectives: Gyromast's Retrieval (level 16.5)
-  complete 2098
+  collect 7498 quest 2098.1
+  collect 7499 quest 2098.2
+  collect 7500 quest 2098.3
 
 step Turn in (level 16.6)
   turnin 2098
@@ -68,14 +76,15 @@ step Turn in (level 16.6)
   accept 966
 
 step Objectives: The Tower of Althalaxx (level 16.7)
-  complete 966
+  collect 5348 x4 quest 966.1
 
 step Turn in (level 16.8)
   turnin 966
   accept 967
 
 step Objectives: Cave Mushrooms (level 16.8)
-  complete 947
+  collect 5271 x5 quest 947.1
+  collect 5270 quest 947.2
 
 step Hearth (level 16.8)
   hearth "Auberdine"
@@ -94,7 +103,7 @@ step Turn in (level 17.1)
   turnin 87760
 
 step Objectives: For Love Eternal (level 17.1)
-  complete 963
+  collect 5382 quest 963.1
 
 step Turn in (level 17.1)
   turnin 948
@@ -125,7 +134,7 @@ step Turn in (level 17.4)
   accept 98042
 
 step Objectives: It's All Fun and Games Until... (level 17.4)
-  complete 98042
+  collect 279279 quest 98042.1
 
 step Pick up quests (level 17.4)
   accept 945
@@ -141,7 +150,7 @@ step Objectives: The Absent Minded Prospector (level 17.5)
   complete 731
 
 step Objectives: WANTED: Murkdeep! (level 17.5)
-  complete 4740
+  kill 10323 quest 4740.1
 
 step Turn in (level 17.5)
   turnin 950
@@ -161,16 +170,22 @@ step Turn in (level 17.9)
   turnin 98042
 
 step Objectives: Swelling Forces (level 17.9)
-  complete 98013
+  kill 2181 x12 quest 98013.1
+  kill 2182 x8 quest 98013.2
+  kill 2183 x6 quest 98013.3
 
 step Objectives: Swelling Forces (level 18.0)
-  complete 98013
+  kill 2181 x12 quest 98013.1
+  kill 2182 x8 quest 98013.2
+  kill 2183 x6 quest 98013.3
 
 step Objectives: Mathystra Relics (level 18.0)
-  complete 951
+  collect 5273 x6 quest 951.1
 
 step Objectives: Swelling Forces (level 18.1)
-  complete 98013
+  kill 2181 x12 quest 98013.1
+  kill 2182 x8 quest 98013.2
+  kill 2183 x6 quest 98013.3
 
 step Turn in (level 18.2)
   turnin 951

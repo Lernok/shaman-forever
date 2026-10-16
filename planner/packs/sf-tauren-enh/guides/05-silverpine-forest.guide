@@ -13,14 +13,14 @@ step Pick up quests (level 13.6)
   accept 421
 
 step Objectives: Prove Your Worth (level 13.7)
-  complete 421
+  kill 1769 x5 quest 421.1
 
 step Turn in (level 13.7)
   turnin 421
   accept 422
 
 step Objectives: Arugal's Folly (level 13.7)
-  complete 422
+  collect 3155 quest 422.1
 
 step Turn in (level 13.8)
   turnin 422
@@ -41,10 +41,12 @@ step Turn in (level 13.9)
   turnin 264
 
 step Objectives: A Recipe For Death (level 13.9)
-  complete 447
+  collect 3253 x6 quest 447.1
+  collect 3254 x6 quest 447.2
 
 step Objectives: Arugal's Folly (level 14.0)
-  complete 423
+  collect 3156 x6 quest 423.1
+  collect 3157 x3 quest 423.2
 
 step Turn in (level 14.1)
   turnin 477
@@ -63,7 +65,8 @@ step Turn in (level 14.2)
   accept 479
 
 step Objectives: Arugal's Folly (level 14.2)
-  complete 423
+  collect 3156 x6 quest 423.1
+  collect 3157 x3 quest 423.2
 
 step Turn in (level 14.3)
   turnin 423
@@ -84,7 +87,7 @@ step Pick up quests (level 14.3)
   accept 435
 
 step Objectives: Wild Hearts (level 14.5)
-  complete 429
+  collect 3164 x6 quest 429.1
 
 step Objectives: Escorting Erland (level 14.5)
   complete 435
@@ -94,13 +97,13 @@ step Turn in (level 14.5)
   accept 449
 
 step Objectives: Wild Eyes (level 14.6)
-  complete 91920
+  collect 730 x3 quest 91920.1
 
 step Objectives: Arugal's Folly (level 14.6)
-  complete 424
+  collect 3634 quest 424.1
 
 step Objectives: Ambermill Investigations (level 14.7)
-  complete 479
+  collect 3354 x8 quest 479.1
 
 step Hearth (level 14.7)
   hearth "The Sepulcher"
@@ -134,7 +137,8 @@ step Turn in (level 15.1)
   accept 443
 
 step Objectives: A Recipe For Death (level 15.2)
-  complete 447
+  collect 3253 x6 quest 447.1
+  collect 3254 x6 quest 447.2
 
 step Turn in (level 15.2)
   turnin 430
@@ -143,13 +147,13 @@ step Pick up quests (level 15.2)
   accept 425
 
 step Objectives: Ivar the Foul (level 15.2)
-  complete 425
+  collect 3621 quest 425.1
 
 step Turn in (level 15.3)
   turnin 425
 
 step Objectives: Rot Hide Ichor (level 15.5)
-  complete 443
+  collect 3236 x8 quest 443.1
 
 step Turn in (level 15.6)
   turnin 443
@@ -174,16 +178,19 @@ step Turn in (level 16.2)
   accept 491
 
 step Objectives: Watching the Roads (level 16.3)
-  complete 95981
+  kill 1888 x8 quest 95981.1
+  kill 1889 x8 quest 95981.2
 
 step Objectives: Watching the Roads (level 16.3)
-  complete 95981
+  kill 1888 x8 quest 95981.1
+  kill 1889 x8 quest 95981.2
 
 step Objectives: Stop the Spread (level 16.4)
-  complete 98299
+  kill 2053 x5 quest 98299.1
+  kill 2054 x5 quest 98299.2
 
 step Objectives: Arugal's Folly (level 16.5)
-  complete 98298
+  collect 280375 x6 quest 98298.1
 
 step Hearth (level 16.5)
   hearth "The Sepulcher"

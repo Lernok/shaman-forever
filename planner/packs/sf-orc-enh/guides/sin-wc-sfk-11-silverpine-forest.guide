@@ -36,16 +36,19 @@ step Turn in (level 20.1)
   accept 491
 
 step Objectives: Watching the Roads (level 20.1)
-  complete 95981
+  kill 1888 x8 quest 95981.1
+  kill 1889 x8 quest 95981.2
 
 step Objectives: Watching the Roads (level 20.2)
-  complete 95981
+  kill 1888 x8 quest 95981.1
+  kill 1889 x8 quest 95981.2
 
 step Objectives: Stop the Spread (level 20.2)
-  complete 98299
+  kill 2053 x5 quest 98299.1
+  kill 2054 x5 quest 98299.2
 
 step Objectives: Arugal's Folly (level 20.3)
-  complete 98298
+  collect 280375 x6 quest 98298.1
 
 step Turn in (level 20.3)
   turnin 95981
@@ -59,10 +62,10 @@ step Pick up quests (level 20.5)
   accept 95885
 
 step Objectives: The Offering of Blood (level 20.5)
-  complete 95885
+  kill 212753 quest 95885.1
 
 step Objectives: The Tortured Soul (level 20.5)
-  complete 95883
+  collect 271350 quest 95883.1
 
 step Turn in (level 20.5)
   turnin 95883
@@ -70,7 +73,7 @@ step Turn in (level 20.5)
 
 step Pick up quests (level 20.6)
   accept 95884
-  complete 95884
+  collect 271343 quest 95884.1
 
 step Turn in (level 20.6)
   turnin 95884
@@ -86,10 +89,11 @@ step Pick up quests (level 20.6)
   accept 516
 
 step Objectives: Beren's Peril (level 20.7)
-  complete 516
+  kill 1974 x6 quest 516.1
+  kill 1973 x6 quest 516.2
 
 step Objectives: The Weaver (level 20.7)
-  complete 480
+  collect 3515 quest 480.1
 
 step Turn in (level 20.8)
   turnin 480

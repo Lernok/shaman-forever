@@ -14,13 +14,19 @@ step Pick up quests (level 28.7)
   turnin 4542
 
 step Objectives: Pacify the Centaur (level 28.7)
-  complete 4841
+  kill 4094 x12 quest 4841.1
+  kill 4093 x10 quest 4841.2
+  kill 4096 x6 quest 4841.3
 
 step Objectives: Pacify the Centaur (level 28.8)
-  complete 4841
+  kill 4094 x12 quest 4841.1
+  kill 4093 x10 quest 4841.2
+  kill 4096 x6 quest 4841.3
 
 step Objectives: Pacify the Centaur (level 28.8)
-  complete 4841
+  kill 4094 x12 quest 4841.1
+  kill 4093 x10 quest 4841.2
+  kill 4096 x6 quest 4841.3
 
 step Turn in (level 28.8)
   turnin 4841
@@ -38,7 +44,7 @@ step Pick up quests (level 28.8)
   accept 5064
 
 step Objectives: Alien Egg (level 28.8)
-  complete 4821
+  collect 12467 quest 4821.1
 
 step Turn in (level 28.9)
   turnin 4821
@@ -57,7 +63,9 @@ step Pick up quests (level 29.0)
   accept 4881
 
 step Objectives: Grimtotem Spying (level 29.0)
-  complete 5064
+  collect 12765 quest 5064.1
+  collect 12766 quest 5064.2
+  collect 12768 quest 5064.3
 
 step Turn in (level 29.1)
   turnin 4865
@@ -68,7 +76,7 @@ step Turn in (level 29.1)
   accept 4966
 
 step Objectives: Protect Kanati Greycloud (level 29.1)
-  complete 4966
+  kill 10720 quest 4966.1
 
 step Turn in (level 29.2)
   turnin 4966
@@ -80,13 +88,13 @@ step Objectives: Homeward Bound (level 29.2)
   complete 4770
 
 step Objectives: Wind Rider (level 29.2)
-  complete 4767
+  collect 12356 x10 quest 4767.1
 
 step Turn in (level 29.2)
   turnin 4770
 
 step Objectives: Sacred Fire (level 29.2)
-  complete 5062
+  collect 12732 x10 quest 5062.1
 
 step Hearth (level 29.2)
   hearth "Freewind Post"
@@ -107,16 +115,16 @@ step Pick up quests (level 29.3)
   accept 1176
 
 step Objectives: Load Lightening (level 29.4)
-  complete 1176
+  collect 5848 x10 quest 1176.1
 
 step Turn in (level 29.4)
   turnin 1176
 
 step Objectives: Hardened Shells (level 29.6)
-  complete 1105
+  collect 5795 x9 quest 1105.1
 
 step Objectives: Salt Flat Venom (level 29.7)
-  complete 1104
+  collect 5794 x6 quest 1104.1
 
 step Turn in (level 29.7)
   turnin 1104

@@ -19,7 +19,7 @@ step Pick up quests (level 34.2)
   accept 1365
 
 step Objectives: Kodo Roundup (level 34.2)
-  complete 5561
+  kill 4700 quest 5561.1
 
 step Turn in (level 34.3)
   turnin 5561
@@ -29,7 +29,7 @@ step Turn in (level 34.3)
   accept 1369
 
 step Objectives: Khan Dez'hepah (level 34.3)
-  complete 1365
+  collect 6066 quest 1365.1
 
 step Pick up quests (level 34.3)
   accept 5821
@@ -46,7 +46,7 @@ step Turn in (level 34.4)
   accept 1366
 
 step Objectives: Centaur Bounty (level 34.7)
-  complete 1366
+  collect 6067 x15 quest 1366.1
 
 step Objectives: Bodyguard for Hire (level 34.7)
   complete 5821
@@ -62,7 +62,7 @@ step Turn in (level 34.8)
   accept 1370
 
 step Objectives: Broken Tears (level 34.8)
-  complete 1369
+  collect 6083 x3 quest 1369.1
 
 step Flight path (level 34.8)
   getfp "Shadowprey Village"
@@ -77,13 +77,13 @@ step Pick up quests (level 34.8)
   accept 6142
 
 step Objectives: Clam Bait (level 34.8)
-  complete 6142
+  collect 15924 x10 quest 6142.1
 
 step Pick up quests (level 34.8)
   accept 5741
 
 step Objectives: Sceptre of Light (level 34.8)
-  complete 5741
+  collect 15750 quest 5741.1
 
 step Turn in (level 34.9)
   turnin 5741
@@ -95,14 +95,14 @@ step Turn in (level 34.9)
   turnin 6142
 
 step Objectives: Stealing Supplies (level 34.9)
-  complete 1370
+  collect 6069 x6 quest 1370.1
 
 step Turn in (level 35.0)
   turnin 1369
   accept 1371
-  complete 1371
+  collect 4392 quest 1371.1
   turnin 1371
   accept 1375
 
 step Objectives: The Corrupter (level 35.0)
-  complete 1481
+  collect 6441 quest 1481.1

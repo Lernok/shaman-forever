@@ -23,14 +23,16 @@ step Turn in (level 33.6)
   accept 1458
 
 step Objectives: Reagents for Reclaimers Inc. (level 33.9)
-  complete 1458
+  collect 6246 x10 quest 1458.1
+  collect 6247 x10 quest 1458.2
 
 step Turn in (level 33.9)
   turnin 1458
   accept 1459
 
 step Objectives: Reagents for Reclaimers Inc. (level 34.0)
-  complete 1459
+  collect 6248 x7 quest 1459.1
+  collect 6249 x3 quest 1459.2
 
 step Turn in (level 34.0)
   turnin 1437
@@ -45,7 +47,7 @@ step Turn in (level 34.1)
   accept 1439
 
 step Objectives: Search for Tyranis (level 34.1)
-  complete 1439
+  collect 6767 quest 1439.1
 
 step Turn in (level 34.1)
   turnin 1439
@@ -55,13 +57,14 @@ step Objectives: Return to Vahlarriel (level 34.1)
   complete 1440
 
 step Objectives: Reagents for Reclaimers Inc. (level 34.1)
-  complete 1459
+  collect 6248 x7 quest 1459.1
+  collect 6249 x3 quest 1459.2
 
 step Pick up quests (level 34.1)
   accept 5821
 
 step Objectives: Centaur Bounty (level 34.3)
-  complete 1387
+  collect 6067 x15 quest 1387.1
 
 step Objectives: Bodyguard for Hire (level 34.3)
   complete 5821
@@ -71,7 +74,7 @@ step Turn in (level 34.4)
   accept 5561
 
 step Objectives: Kodo Roundup (level 34.4)
-  complete 5561
+  kill 4700 quest 5561.1
 
 step Turn in (level 34.4)
   turnin 5561
@@ -81,13 +84,19 @@ step Turn in (level 34.4)
   accept 1386
 
 step Objectives: Assault on the Kolkar (level 34.5)
-  complete 1386
+  kill 4632 x12 quest 1386.1
+  kill 4633 x12 quest 1386.2
+  kill 4634 x6 quest 1386.3
 
 step Objectives: Assault on the Kolkar (level 34.5)
-  complete 1386
+  kill 4632 x12 quest 1386.1
+  kill 4633 x12 quest 1386.2
+  kill 4634 x6 quest 1386.3
 
 step Objectives: Assault on the Kolkar (level 34.5)
-  complete 1386
+  kill 4632 x12 quest 1386.1
+  kill 4633 x12 quest 1386.2
+  kill 4634 x6 quest 1386.3
 
 step Turn in (level 34.6)
   turnin 1386
@@ -109,7 +118,7 @@ step Pick up quests (level 34.7)
   accept 5741
 
 step Objectives: Sceptre of Light (level 34.7)
-  complete 5741
+  collect 15750 quest 5741.1
 
 step Turn in (level 34.8)
   turnin 5741
@@ -119,17 +128,17 @@ step Turn in (level 34.8)
   accept 1384
 
 step Objectives: Broken Tears (level 34.8)
-  complete 1369
+  collect 6083 x3 quest 1369.1
 
 step Turn in (level 34.8)
   turnin 1369
   accept 1371
-  complete 1371
+  collect 4392 quest 1371.1
   turnin 1371
   accept 1375
 
 step Objectives: Raid on the Kolkar (level 35.0)
-  complete 1384
+  collect 6079 x10 quest 1384.1
 
 step Turn in (level 35.0)
   turnin 1384
