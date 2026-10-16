@@ -72,3 +72,29 @@ Packs hechos (`planner/packs/`):
 
 - `sf-tauren-enh`: Tauren Mejora hasta 35 con RFC, Ruins of Lordaeron, WC, SFK,
   City of Dalaran y Excavation Site: Wetlands (sin BFD), 36 h bajo el modelo.
+
+### Polestar 0.2.4
+
+El parche aplica limpio sobre `v0.2.4` (probado el 2026-10-16). Con la 0.2.4 hay
+que volver a correr `data build`, `dungeons build`, `travel build` y
+`sim world --rebuild`; el pack sale en formato 2 (marca lo que pide grupo) y
+necesita Polestar 0.2.4. `sf-tauren-enh` está regenerado así (27 guías, lint 0
+errores, playtest 27/27).
+
+### Plan de talentos de Shaman para Polestar
+
+Polestar 0.2.4 trae planes de talentos (anillo en el próximo talento, números de
+orden, recordatorio), solo para Paladín. El de Shaman sale de los órdenes de
+leveo del sitio:
+
+```
+node planner/talents-for-polestar.js <checkout>        # talents/forever/shaman.json
+# en el checkout: SHAMAN (línea 373) en CLASSES de tools/lib/talents/build.js
+node tools/polestar.js talents build --plans <carpeta con shaman.json> --out <salida>
+node planner/polestar-talents-to-addon.js <salida>/Builds.lua addon/ShamanForever/PolestarTalents.lua
+```
+
+El `talents build` repite cada punto con las reglas del cliente (1.60.1.70374):
+los 3 planes (153 puntos) pasan. El addon registra el plan en Polestar al
+cargar (si Polestar 0.2.4 está). Cuando talentsforever publique los árboles del
+parche del 15-oct, hay que regenerarlo (Elemental cambió).

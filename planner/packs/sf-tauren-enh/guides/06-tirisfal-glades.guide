@@ -1,0 +1,22 @@
+guide sf-tauren-enh/06-tirisfal-glades
+title 06 · Tirisfal Glades (18-19)
+faction Horde
+race Tauren
+levels 18-19
+zone Tirisfal Glades
+folder Shaman: Forever · Tauren Mejora
+next sf-tauren-enh/07-undercity
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.1 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 18.0)
+  accept 92422 optional map 1420 @65.23,60.16
+
+step Dungeon: Ruins of Lordaeron (level 18)
+  zone map 1420
+  goto 63.4,67.4 "Ruins of Lordaeron" r 30 live
+  tip Find a group and clear Ruins of Lordaeron, with its quests from this route in your log.
+
+step Pick up quests (level 18.0)
+  accept 95204 optional
+  accept 97288 optional

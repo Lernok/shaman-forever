@@ -1,0 +1,33 @@
+guide sf-tauren-enh/11-silverpine-forest
+title 11 · Silverpine Forest (26-27)
+faction Horde
+race Tauren
+levels 26-27
+zone Silverpine Forest
+folder Shaman: Forever · Tauren Mejora
+next sf-tauren-enh/12-undercity
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.1 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 26.3)
+  accept 1014 optional map 1421 @44.2,39.81
+
+step Pick up quests (level 26.3)
+  accept 1098 optional map 1421 @43.42,40.86
+
+step Dungeon: Shadowfang Keep (level 26)
+  zone map 1421
+  goto 44.8,67.8 "Shadowfang Keep" r 30 live
+  tip Find a group and clear Shadowfang Keep, with its quests from this route in your log.
+
+step Turn in (level 26.6)
+  turnin 1098 optional map 1421 @44.8,67.8 live
+
+step Hearth (level 26.6)
+  hearth "The Sepulcher"
+
+step Turn in (level 26.7)
+  turnin 1014 optional map 1421 @44.2,39.81
+
+step Hearthstone (level 26.7)
+  sethome "Undercity"

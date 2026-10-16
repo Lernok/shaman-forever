@@ -1,0 +1,129 @@
+guide sf-tauren-enh/04-silverpine-forest
+title 04 · Silverpine Forest (16-18)
+faction Horde
+race Tauren
+levels 16-18
+zone Silverpine Forest
+folder Shaman: Forever · Tauren Mejora
+next sf-tauren-enh/05-undercity
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.1 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 16.8)
+  accept 477
+
+step Pick up quests (level 16.8)
+  accept 428
+  accept 437
+
+step Pick up quests (level 16.8)
+  accept 447
+  accept 91921
+
+step Turn in (level 16.8)
+  turnin 3301
+
+step Objectives: A Recipe For Death (level 16.9)
+  complete 447
+
+step Turn in (level 16.9)
+  turnin 477
+  accept 478
+
+step Turn in (level 17.0)
+  turnin 478
+  accept 481
+
+step Turn in (level 17.0)
+  turnin 481
+  accept 482
+
+step Turn in (level 17.0)
+  turnin 482
+  accept 479
+
+step Objectives: The Dead Fields (level 17.0)
+  complete 437
+
+step Turn in (level 17.0)
+  turnin 428
+  accept 429
+
+step Turn in (level 17.0)
+  turnin 91921
+  accept 91920
+
+step Pick up quests (level 17.0)
+  accept 435
+
+step Objectives: Wild Hearts (level 17.1)
+  complete 429
+
+step Objectives: Escorting Erland (level 17.1)
+  complete 435
+
+step Turn in (level 17.1)
+  turnin 435
+  accept 449
+
+step Objectives: Wild Eyes (level 17.2)
+  complete 91920
+
+step Hearth (level 17.2)
+  hearth "The Sepulcher"
+
+step Objectives: Ambermill Investigations (level 17.2)
+  complete 479
+
+step Turn in (level 17.3)
+  turnin 479
+
+step Turn in (level 17.4)
+  turnin 437
+  turnin 449
+  accept 438
+  accept 3221
+
+step Turn in (level 17.4)
+  turnin 429
+  turnin 3221
+  turnin 91920
+  accept 430
+  accept 1359
+
+step Turn in (level 17.5)
+  turnin 438
+  accept 439
+
+step Turn in (level 17.5)
+  turnin 439
+  accept 440
+  accept 443
+
+step Objectives: A Recipe For Death (level 17.5)
+  complete 447
+
+step Turn in (level 17.6)
+  turnin 430
+
+step Pick up quests (level 17.6)
+  accept 425
+
+step Objectives: Ivar the Foul (level 17.6)
+  complete 425
+
+step Turn in (level 17.6)
+  turnin 425
+
+step Objectives: Rot Hide Ichor (level 17.8)
+  complete 443
+
+step Turn in (level 17.9)
+  turnin 443
+  accept 444
+
+step Flight path (level 17.9)
+  getfp "Undercity"
+
+step Hearthstone (level 17.9)
+  sethome "Undercity"

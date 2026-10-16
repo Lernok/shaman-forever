@@ -1,0 +1,45 @@
+guide sf-tauren-enh/18-dustwallow-marsh
+title 18 · Dustwallow Marsh (30-31)
+faction Horde
+race Tauren
+levels 30-31
+zone Dustwallow Marsh
+folder Shaman: Forever · Tauren Mejora
+next sf-tauren-enh/19-hillsbrad-foothills
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.1 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 30.5)
+  accept 1201
+
+step Objectives: Theramore Spies (level 30.6)
+  complete 1201
+
+step Turn in (level 30.7)
+  turnin 1201
+  accept 1202
+
+step Pick up quests (level 30.7)
+  accept 1218
+
+step Pick up quests (level 30.7)
+  accept 1238
+
+step Turn in (level 30.7)
+  turnin 1238
+
+step Pick up quests (level 30.7)
+  accept 1239
+
+step Turn in (level 30.7)
+  turnin 1239
+  accept 1240
+
+step Objectives: The Theramore Docks (level 30.7)
+  complete 1202
+
+step Turn in (level 30.8)
+  turnin 1202
+
+step Hearthstone (level 30.8)
+  sethome "Tarren Mill"

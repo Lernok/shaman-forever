@@ -1,27 +1,27 @@
-guide sf-tauren-enh/09-undercity
-title 09 · Undercity (18-20)
+guide sf-tauren-enh/07-undercity
+title 07 · Undercity (18-20)
 faction Horde
 race Tauren
 levels 18-20
 zone Undercity
 folder Shaman: Forever · Tauren Mejora
-next sf-tauren-enh/10-tirisfal-glades
-# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+next sf-tauren-enh/08-tirisfal-glades
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.1 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Turn in (level 18.9)
+step Turn in (level 18.6)
   turnin 95204 optional map 1458 @73.06,32.85
 
-step Turn in (level 19.1)
+step Turn in (level 18.8)
   turnin 97288 optional map 1458 @48.82,69.28
 
-step Turn in (level 19.3)
+step Turn in (level 19.1)
   turnin 95216 optional map 1458 @46.31,71.91
 
-step Turn in (level 19.5)
+step Turn in (level 19.3)
   turnin 92421 optional map 1458 @57.73,89.55
 
-step Hearth (level 19.5)
+step Hearth (level 19.3)
   hearth "Undercity"
 
 step Pick up: The Book of Ur (Shadowfang Keep)

@@ -1,51 +1,13 @@
-guide sf-tauren-enh/21-hillsbrad-foothills
-title 21 · Hillsbrad Foothills (30-31)
+guide sf-tauren-enh/19-hillsbrad-foothills
+title 19 · Hillsbrad Foothills (30-31)
 faction Horde
 race Tauren
 levels 30-31
 zone Hillsbrad Foothills
 folder Shaman: Forever · Tauren Mejora
-next sf-tauren-enh/22-silverpine-forest
-# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+next sf-tauren-enh/20-silverpine-forest
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.1 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
-
-step Pick up quests (level 30.6)
-  accept 509
-
-step Pick up quests (level 30.6)
-  accept 567
-
-step Pick up quests (level 30.6)
-  accept 539
-
-step Objectives: Elixir of Agony (level 30.6)
-  complete 509
-
-step Objectives: Battle of Hillsbrad (level 30.6)
-  complete 539
-
-step Objectives: Dangerous! (level 30.7)
-  complete 567
-
-step Objectives: Dangerous! (level 30.7)
-  complete 567
-
-step Objectives: Dangerous! (level 30.7)
-  complete 567
-
-step Objectives: Dangerous! (level 30.7)
-  complete 567
-
-step Hearth (level 30.7)
-  hearth "Tarren Mill"
-
-step Turn in (level 30.7)
-  turnin 509
-  accept 513
-
-step Turn in (level 30.8)
-  turnin 539
-  turnin 567
 
 step Pick up quests (level 30.8)
   accept 533
@@ -72,10 +34,10 @@ step Pick up quests (level 30.8)
 step Objectives: Infiltration (level 30.8)
   complete 533
 
-step Objectives: Valik (level 30.9)
+step Objectives: Valik (level 30.8)
   complete 535
 
-step Turn in (level 30.9)
+step Turn in (level 30.8)
   turnin 535
 
 step Turn in (level 30.9)
@@ -83,6 +45,9 @@ step Turn in (level 30.9)
 
 step Objectives: Helcular's Revenge (level 31.0)
   complete 552
+
+step Hearth (level 31.0)
+  hearth "Tarren Mill"
 
 step Turn in (level 31.0)
   turnin 552

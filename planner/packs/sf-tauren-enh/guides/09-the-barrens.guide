@@ -1,0 +1,464 @@
+guide sf-tauren-enh/09-the-barrens
+title 09 · The Barrens (19-25)
+faction Horde
+race Tauren
+levels 19-25
+zone The Barrens
+folder Shaman: Forever · Tauren Mejora
+next sf-tauren-enh/10-hillsbrad-foothills
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.1 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 19.5)
+  accept 865 optional map 1413 @62.37,37.62
+  accept 1069
+
+step Pick up quests (level 19.5)
+  accept 891
+
+step Pick up quests (level 19.5)
+  accept 896
+
+step Pick up quests (level 19.5)
+  accept 895
+
+step Objectives: Raptor Horns (level 19.6)
+  complete 865 optional
+
+step Turn in (level 19.7)
+  turnin 865 optional map 1413 @62.37,37.62
+
+step Objectives: WANTED: Baron Longshore (level 19.7)
+  complete 895
+
+step Objectives: The Guns of Northwatch (level 19.7)
+  complete 891
+
+step Pick up quests (level 19.7)
+  accept 898
+
+step Objectives: The Guns of Northwatch (level 19.7)
+  complete 891
+
+step Objectives: The Guns of Northwatch (level 19.7)
+  complete 891
+
+step Objectives: The Guns of Northwatch (level 19.7)
+  complete 891
+
+step Objectives: Free From the Hold (level 19.7)
+  complete 898
+
+step Turn in (level 19.8)
+  turnin 891
+  turnin 898
+
+step Turn in (level 20.0)
+  turnin 895
+
+step Hearthstone (level 20.0)
+  sethome "The Crossroads"
+
+step Pick up quests (level 20.0)
+  accept 899
+  accept 4921
+
+step Pick up quests (level 20.0)
+  accept 3261
+
+step Pick up quests (level 20.0)
+  accept 3281
+
+step Pick up quests (level 20.0)
+  accept 876
+
+step Pick up quests (level 20.0)
+  accept 6541
+
+step Pick up quests (level 20.0)
+  accept 850
+
+step Objectives: Kolkar Leaders (level 20.0)
+  complete 850
+
+step Turn in (level 20.0)
+  turnin 850
+  accept 851
+
+step Pick up quests (level 20.0)
+  accept 1062
+
+step Pick up quests (level 20.0)
+  accept 6548
+
+step Objectives: Serena Bloodfeather (level 20.0)
+  complete 876
+
+step Pick up quests (level 20.0)
+  accept 95494
+  accept 95507
+
+step Objectives: Bruised Pride and Lion Hides (level 20.0)
+  complete 95494
+
+step Objectives: Vrang's Game (level 20.0)
+  complete 95507
+
+step Pick up quests (level 20.0)
+  accept 3923
+
+step Turn in (level 20.1)
+  turnin 95494
+  turnin 95507
+  accept 95495
+
+step Turn in (level 20.2)
+  turnin 95495
+  accept 95621
+
+step Objectives: Trouble in the Valley (level 20.2)
+  complete 95621
+
+step Turn in (level 20.2)
+  turnin 95621
+  accept 95508
+
+step Objectives: Unwelcome Guests (level 20.2)
+  complete 95508
+
+step Turn in (level 20.3)
+  turnin 95508
+
+step Pick up quests (level 20.3)
+  accept 858
+
+step Objectives: Ignition (level 20.3)
+  complete 858
+
+step Turn in (level 20.3)
+  turnin 858
+  accept 863
+
+step Objectives: Miner's Fortune (level 20.4)
+  complete 896
+
+step Objectives: The Escape (level 20.4)
+  complete 863
+
+step Hearth (level 20.4)
+  hearth "The Crossroads"
+
+step Turn in (level 20.5)
+  turnin 876
+  accept 1060
+
+step Objectives: Verog the Dervish (level 20.5)
+  complete 851
+
+step Objectives: Lost in Battle (level 20.5)
+  complete 4921
+
+step Objectives: Consumed by Hatred (level 20.8)
+  complete 899
+
+step Flight path (level 20.8)
+  getfp "Camp Taurajo"
+
+step Hearthstone (level 20.8)
+  sethome "Camp Taurajo"
+
+step Turn in (level 20.8)
+  turnin 3261
+  accept 882
+
+step Objectives: Stolen Silver (level 20.8)
+  complete 3281
+
+step Hearthstone (level 20.8)
+  sethome "Ratchet"
+
+step Turn in (level 20.9)
+  turnin 896
+
+step Turn in (level 21.0)
+  turnin 863
+
+step Objectives: Ishamuhale (level 21.0)
+  complete 882
+
+step Hearthstone (level 21.0)
+  sethome "The Crossroads"
+
+step Turn in (level 21.0)
+  turnin 3281
+
+step Turn in (level 21.1)
+  turnin 899
+  turnin 4921
+  accept 95774
+
+step Turn in (level 21.2)
+  turnin 851
+  accept 852
+
+step Objectives: Hezrul Bloodmark (level 21.2)
+  complete 852
+
+step Objectives: Her Name Is Olgra (level 21.2)
+  complete 95774
+
+step Turn in (level 21.3)
+  turnin 95774
+
+step Turn in (level 21.3)
+  turnin 852
+
+step Hearth (level 21.3)
+  hearth "The Crossroads"
+
+step Hearthstone (level 21.3)
+  sethome "Camp Taurajo"
+
+step Turn in (level 21.4)
+  turnin 882
+  accept 907
+  accept 6382
+
+step Objectives: Enraged Thunder Lizards (level 21.4)
+  complete 907
+
+step Turn in (level 21.5)
+  turnin 907
+  accept 913
+
+step Objectives: Cry of the Thunderhawk (level 21.5)
+  complete 913
+
+step Turn in (level 21.6)
+  turnin 913
+
+step Pick up quests (level 21.6)
+  accept 1486 optional map 1413 @45.99,35.66
+
+step Pick up quests (level 21.6)
+  accept 1487 optional map 1413 @46.01,35.74
+
+step Pick up quests (level 21.6)
+  accept 6981 optional
+
+step Dungeon: Wailing Caverns (level 21)
+  zone map 1413
+  goto 46,36.4 "Wailing Caverns" r 30 live
+  tip Find a group and clear Wailing Caverns, with its quests from this route in your log.
+
+step Turn in (level 21.9)
+  turnin 1487 optional map 1413 @46.01,35.74
+
+step Turn in (level 22.0)
+  turnin 1486 optional map 1413 @45.99,35.66
+
+step Turn in (level 22.1)
+  turnin 6981 optional map 1413 @48.18,32.78
+
+step Hearthstone (level 22.1)
+  sethome "Ratchet"
+
+step Turn in (level 22.1)
+  turnin 1491 optional map 1413 @62.37,37.62
+
+step Turn in (level 22.2)
+  turnin 959 optional map 1413 @63.09,37.61
+
+step Hearthstone (level 22.2)
+  sethome "Camp Taurajo"
+
+step Pick up quests (level 22.2)
+  accept 874
+
+step Turn in (level 22.2)
+  turnin 874
+  accept 873
+
+step Objectives: Isha Awak (level 22.2)
+  complete 873
+
+step Turn in (level 22.3)
+  turnin 873
+
+step Hearth (level 22.3)
+  hearth "Camp Taurajo"
+
+step Pick up quests (level 22.3)
+  accept 878
+
+step Pick up quests (level 22.3)
+  accept 884
+
+step Objectives: Tribes at War (level 22.3)
+  complete 878
+
+step Objectives: Tribes at War (level 22.4)
+  complete 878
+
+step Pick up quests (level 22.4)
+  accept 883
+
+step Objectives: Tribes at War (level 22.4)
+  complete 878
+
+step Pick up quests (level 22.4)
+  accept 893
+
+step Turn in (level 22.5)
+  turnin 884
+  turnin 883
+
+step Turn in (level 22.6)
+  turnin 878
+  accept 5052
+
+step Objectives: Blood Shards of Agamaggan (level 22.6)
+  complete 5052
+
+step Turn in (level 22.6)
+  turnin 5052
+  accept 879
+
+step Pick up quests (level 22.6)
+  accept 897
+
+step Pick up quests (level 22.6)
+  accept 79007
+  accept 79192
+
+step Pick up quests (level 22.6)
+  accept 843
+
+step Pick up quests (level 22.6)
+  accept 98093
+
+step Objectives: Field to Clear (level 22.7)
+  complete 98093
+
+step Objectives: Betrayal from Within (level 22.7)
+  complete 879
+
+step Objectives: Weapons of Choice (level 22.7)
+  complete 893
+
+step Pick up quests (level 22.7)
+  accept 885
+
+step Objectives: Betrayal from Within (level 22.7)
+  complete 879
+
+step Objectives: Weapons of Choice (level 22.8)
+  complete 893
+
+step Objectives: Betrayal from Within (level 22.8)
+  complete 879
+
+step Objectives: Gann's Reclamation (level 22.9)
+  complete 843
+
+step Objectives: Field to Clear (level 23.0)
+  complete 98093
+
+step Turn in (level 23.0)
+  turnin 98093
+
+step Turn in (level 23.1)
+  turnin 843
+  accept 846
+
+step Objectives: Revenge of Gann (level 23.4)
+  complete 846
+
+step Turn in (level 23.4)
+  turnin 846
+  accept 849
+
+step Objectives: Revenge of Gann (level 23.4)
+  complete 849
+
+step Pick up quests (level 23.4)
+  accept 4542
+
+step Turn in (level 23.5)
+  turnin 849
+
+step Hearth (level 23.5)
+  hearth "Camp Taurajo"
+
+step Turn in (level 23.6)
+  turnin 879
+  accept 906
+
+step Turn in (level 23.6)
+  turnin 885
+  turnin 897
+
+step Turn in (level 23.8)
+  turnin 893
+
+step Pick up quests (level 23.8)
+  accept 3369
+
+step Hearthstone (level 23.8)
+  sethome "The Crossroads"
+
+step Pick up quests (level 23.8)
+  accept 868
+
+step Turn in (level 23.9)
+  turnin 906
+
+step Hearthstone (level 23.9)
+  sethome "Ratchet"
+
+step Pick up quests (level 23.9)
+  accept 1483
+
+step Pick up quests (level 23.9)
+  accept 822
+
+step Objectives: Chen's Empty Keg (level 23.9)
+  complete 822
+
+step Pick up quests (level 23.9)
+  accept 1530
+
+step Objectives: Egg Hunt (level 23.9)
+  complete 868
+
+step Objectives: Chen's Empty Keg (level 23.9)
+  complete 822
+
+step Objectives: Chen's Empty Keg (level 23.9)
+  complete 822
+
+step Turn in (level 23.9)
+  turnin 1530
+  accept 1535
+
+step Objectives: Call of Water (level 23.9)
+  complete 1535
+
+step Turn in (level 24.0)
+  turnin 1535
+  accept 1536
+
+step Turn in (level 24.0)
+  turnin 822
+
+step Hearthstone (level 24.0)
+  sethome "The Crossroads"
+
+step Turn in (level 24.1)
+  turnin 868
+
+step Flight path (level 24.1)
+  getfp "Tarren Mill"
+
+step Hearthstone (level 24.1)
+  sethome "Tarren Mill"

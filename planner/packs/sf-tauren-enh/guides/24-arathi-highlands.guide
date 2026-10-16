@@ -1,18 +1,18 @@
-guide sf-tauren-enh/26-arathi-highlands
-title 26 · Arathi Highlands (32-33)
+guide sf-tauren-enh/24-arathi-highlands
+title 24 · Arathi Highlands (31-33)
 faction Horde
 race Tauren
-levels 32-33
+levels 31-33
 zone Arathi Highlands
 folder Shaman: Forever · Tauren Mejora
-next sf-tauren-enh/27-wetlands
-# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+next sf-tauren-enh/25-wetlands
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.1 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 32.0)
+step Pick up quests (level 31.9)
   accept 655
 
-step Pick up quests (level 32.0)
+step Pick up quests (level 31.9)
   accept 677
 
 step Turn in (level 32.0)
@@ -63,10 +63,10 @@ step Objectives: Foul Magics (level 32.6)
 step Pick up quests (level 32.6)
   accept 79976
 
-step Turn in (level 32.7)
+step Turn in (level 32.6)
   turnin 79976
 
-step Hearth (level 32.7)
+step Hearth (level 32.6)
   hearth "Hammerfall"
 
 step Turn in (level 32.7)
@@ -78,7 +78,7 @@ step Turn in (level 32.8)
   turnin 701
   accept 702
 
-step Turn in (level 32.9)
+step Turn in (level 32.8)
   turnin 702
   accept 847
 

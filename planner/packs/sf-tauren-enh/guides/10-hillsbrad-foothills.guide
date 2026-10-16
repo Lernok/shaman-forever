@@ -1,12 +1,12 @@
-guide sf-tauren-enh/12-hillsbrad-foothills
-title 12 · Hillsbrad Foothills (24-27)
+guide sf-tauren-enh/10-hillsbrad-foothills
+title 10 · Hillsbrad Foothills (24-27)
 faction Horde
 race Tauren
 levels 24-27
 zone Hillsbrad Foothills
 folder Shaman: Forever · Tauren Mejora
-next sf-tauren-enh/13-silverpine-forest
-# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+next sf-tauren-enh/11-silverpine-forest
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.1 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 24.1)
@@ -36,7 +36,7 @@ step Turn in (level 24.3)
   turnin 496
   accept 499
 
-step Turn in (level 24.4)
+step Turn in (level 24.3)
   turnin 499
 
 step Objectives: Elixir of Pain (level 24.7)
@@ -62,14 +62,14 @@ step Objectives: The Rescue (level 24.9)
 step Turn in (level 25.0)
   turnin 498
 
-step Turn in (level 25.1)
+step Turn in (level 25.0)
   turnin 549
 
 step Turn in (level 25.1)
   turnin 501
   accept 502
 
-step Turn in (level 25.2)
+step Turn in (level 25.1)
   turnin 502
 
 step Objectives: Battle of Hillsbrad (level 25.2)
@@ -88,7 +88,7 @@ step Turn in (level 25.3)
 step Pick up quests (level 25.3)
   accept 546
 
-step Objectives: Battle of Hillsbrad (level 25.4)
+step Objectives: Battle of Hillsbrad (level 25.3)
   complete 528
 
 step Objectives: Souvenirs of Death (level 25.8)
@@ -113,3 +113,44 @@ step Objectives: Battle of Hillsbrad (level 26.0)
 
 step Turn in (level 26.1)
   turnin 532
+
+step Pick up quests (level 26.1)
+  accept 509
+
+step Pick up quests (level 26.1)
+  accept 567
+
+step Pick up quests (level 26.1)
+  accept 539
+
+step Objectives: Elixir of Agony (level 26.1)
+  complete 509
+
+step Objectives: Battle of Hillsbrad (level 26.1)
+  complete 539
+
+step Objectives: Dangerous! (level 26.1)
+  complete 567
+
+step Objectives: Dangerous! (level 26.1)
+  complete 567
+
+step Objectives: Dangerous! (level 26.1)
+  complete 567
+
+step Objectives: Dangerous! (level 26.2)
+  complete 567
+
+step Hearth (level 26.2)
+  hearth "Tarren Mill"
+
+step Turn in (level 26.2)
+  turnin 509
+  accept 513
+
+step Turn in (level 26.3)
+  turnin 539
+  turnin 567
+
+step Hearthstone (level 26.3)
+  sethome "The Sepulcher"
