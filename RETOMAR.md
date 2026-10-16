@@ -45,6 +45,12 @@ Leer esta primera parte antes de seguir. Debajo está la historia del proyecto (
 
 Informe: https://claude.ai/artifact/CG758aFmjsGGA3zDXSTodn. Resumen: nuestra diferencia es el plan personal (nadie más lo tiene); en Forever no andan WeakAuras ni Pawn (el tooltip del addon cubre ese hueco); el addon 0.2.1 sacó `C_SuperTrack.SetSuperTrackedUserWaypoint` (protegido en Forever). Orden propuesto: 1) probar el addon antes del 21/22-oct, 2) página "Addons y macros para Shaman" (Cooldown Manager, totems, imbuiciones; macros probadas por el usuario), 3) plan del día del lanzamiento (carpeta y versión del juego pueden cambiar), 4) dungeons en el sitio reusando los datos del addon, 5) addon en CurseForge (categoría Forever, empaquetador de BigWigs) después del 4-nov, 6) preparación para las raids del 9-dic (Barrow Deeps, Hyjal Summit, Onyxia).
 
+## Macros (2026-10-16)
+
+Hechizos › Macros (`js/macros.js`). Pedido del usuario: juntar en un botón lo que es lo mismo para enemigo y aliado (LB/HW, CL/CH, Purge/curas…). Decisiones: nombres en inglés (funcionan con el cliente en español, el usuario lo confirmó); sin Shift/Ctrl por defecto (la gente los usa para otras cosas), quedan como opción; Alt = curarte a vos (por defecto); mouseover opcional. Los hechizos de talento (Riptide, Stormstrike, Lava Burst, NS…) solo aparecen si el orden de leveo de la spec los toma. Ninguna macro pasa de 255 caracteres (con mouseover, Ancestral Spirit y Purge van solo al objetivo). Las condiciones `[harm]/[help]` andan en Forever (el usuario tiene una). "A probar": Purge/Cure Poison→Cure Disease en dos líneas (supone que Cure Poison sin veneno falla sin GCD), NS+HW en un clic, Totemic Projection `[@cursor]`, Elemental Mastery+Lava Burst (aparece cuando EM esté en los datos).
+
+Parche del 15-oct (notas de Blizzard): Elemental muy mejorado (Lava Burst a 21 puntos con rango 4, vuelve Elemental Mastery a 31, CL −35% maná), raciales rehechos, totems de raid. talentsforever todavía no lo tenía; el sync lo va a traer. Revisar a mano la Guía de Elemental y las recomendaciones de raza cuando llegue.
+
 ## Pendiente
 
 - **Del 29-oct al 2-nov**: post principal en Reddit (actualización del 8 al 12-nov con datos 30–60). El usuario tiene que confirmar qué subreddits existen y sus reglas (Reddit bloquea las herramientas). Ya hay textos escritos para Twitter y Discord en español e inglés.
