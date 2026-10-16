@@ -1,0 +1,41 @@
+guide sf-sky-enh/sin-sfk-12-undercity
+title 12 · Undercity (26-27)
+faction Horde
+race Skyborne
+levels 26-27
+zone Undercity
+folder Shaman: Forever · Skyborne Mejora · sin SFK
+next sf-sky-enh/sin-sfk-13-ashenvale
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 26.6)
+  accept 97289
+
+step Turn in (level 26.6)
+  turnin 97289
+  accept 97290
+
+step Turn in (level 26.7)
+  turnin 97290
+  accept 97291
+
+step Hearthstone (level 26.7)
+  sethome "Undercity"
+
+step Objectives: Unending Torment (level 26.7)
+  complete 97291
+
+step Turn in (level 26.7)
+  turnin 97291
+  accept 97292
+  turnin 97292
+
+step Flight path (level 26.8)
+  getfp "Splintertree Post"
+
+step Hearthstone (level 26.8)
+  sethome "Splintertree Post"
+
+step Pick up: Source of Power (City of Dalaran)
+  accept 96988 optional map 1458 @46.61,74.09

@@ -1,0 +1,51 @@
+guide sf-orc-enh/sin-wc-sfk-14-ashenvale
+title 14 · Ashenvale (25-26)
+faction Horde
+race Orc, Troll
+levels 25-26
+zone Ashenvale
+folder Shaman: Forever · Orco y Troll Mejora · sin WC ni SFK
+next sf-orc-enh/sin-wc-sfk-15-stonetalon-mountains
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 25.0)
+  accept 6383
+  turnin 6383
+
+step Turn in (level 25.0)
+  turnin 6541
+  accept 6543
+
+step Objectives: The Warsong Reports (level 25.0)
+  complete 6543
+
+step Objectives: The Warsong Reports (level 25.0)
+  complete 6543
+
+step Flight path (level 25.0)
+  getfp "Zoram'gar Outpost"
+
+step Pick up quests (level 25.0)
+  accept 6442
+
+step Objectives: The Warsong Reports (level 25.0)
+  complete 6543
+
+step Objectives: Naga at the Zoram Strand (level 25.1)
+  complete 6442
+
+step Turn in (level 25.1)
+  turnin 6442
+
+step Hearth (level 25.1)
+  hearth "Splintertree Post"
+
+step Turn in (level 25.2)
+  turnin 6543
+
+step Flight path (level 25.2)
+  getfp "Sun Rock Retreat"
+
+step Hearthstone (level 25.2)
+  sethome "Sun Rock Retreat"

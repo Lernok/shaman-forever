@@ -1,0 +1,168 @@
+guide sf-dwarf-enh/sin-stockade-09-duskwood
+title 09 · Duskwood (21-25)
+faction Alliance
+race Dwarf
+levels 21-25
+zone Duskwood
+folder Shaman: Forever · Enano Mejora · sin Stockade
+next sf-dwarf-enh/sin-stockade-10-redridge-mountains
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 21.4)
+  accept 101
+
+step Pick up quests (level 21.4)
+  accept 96139
+
+step Pick up quests (level 21.4)
+  accept 56
+
+step Pick up quests (level 21.4)
+  accept 164
+  accept 165
+
+step Pick up quests (level 21.4)
+  accept 174
+
+step Pick up quests (level 22.1)
+  accept 337
+
+step Objectives: The Night Watch (level 22.2)
+  complete 56
+  complete 101
+
+step Turn in (level 22.4)
+  turnin 56
+  accept 57
+
+step Objectives: The Night Watch (level 22.5)
+  complete 57
+
+step Hearth (level 22.5)
+  hearth "Darkshire"
+
+step Objectives: The Totem of Infliction (level 22.7)
+  complete 101
+
+step Pick up quests (level 22.7)
+  accept 236
+  accept 245
+
+step Objectives: The Valor Family (level 22.7)
+  complete 96139
+
+step Objectives: The Night Watch (level 22.8)
+  complete 57
+
+step Objectives: The Totem of Infliction (level 23.0)
+  complete 101
+
+step Turn in (level 23.1)
+  turnin 165
+  accept 148
+
+step Turn in (level 23.1)
+  turnin 164
+  accept 95
+
+step Pick up quests (level 23.1)
+  accept 226
+
+step Objectives: Wolves at Our Heels (level 23.1)
+  complete 226
+
+step Objectives: Wolves at Our Heels (level 23.2)
+  complete 226
+
+step Turn in (level 23.2)
+  turnin 226
+
+step Objectives: Eight-Legged Menaces (level 23.3)
+  complete 245
+
+step Turn in (level 23.3)
+  turnin 245
+
+step Turn in (level 23.4)
+  turnin 95
+  accept 230
+
+step Hearth (level 23.4)
+  hearth "Darkshire"
+
+step Turn in (level 23.4)
+  turnin 96139
+
+step Turn in (level 23.5)
+  turnin 57
+
+step Turn in (level 23.6)
+  turnin 101
+  turnin 148
+  accept 149
+
+step Turn in (level 23.6)
+  turnin 149
+  accept 154
+
+step Turn in (level 23.6)
+  turnin 154
+  accept 157
+
+step Turn in (level 23.7)
+  turnin 236
+
+step Turn in (level 23.7)
+  turnin 157
+  accept 158
+
+step Turn in (level 23.7)
+  turnin 230
+  accept 262
+
+step Turn in (level 23.8)
+  turnin 158
+  accept 156
+
+step Turn in (level 23.8)
+  turnin 262
+  accept 265
+
+step Turn in (level 23.8)
+  turnin 265
+  accept 266
+
+step Turn in (level 23.8)
+  turnin 266
+  accept 453
+
+step Objectives: Gather Rot Blossoms (level 24.0)
+  complete 156
+
+step Turn in (level 24.0)
+  turnin 156
+  accept 159
+
+step Turn in (level 24.0)
+  turnin 159
+  accept 133
+
+step Objectives: Ghoulish Effigy (level 24.4)
+  complete 133
+
+step Turn in (level 24.4)
+  turnin 133
+
+step Turn in (level 24.4)
+  turnin 453
+  accept 268
+
+step Turn in (level 24.5)
+  turnin 268
+
+step Hearth (level 24.5)
+  hearth "Darkshire"
+
+step Hearthstone (level 24.5)
+  sethome "Lakeshire"

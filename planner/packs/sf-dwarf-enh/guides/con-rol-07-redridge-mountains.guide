@@ -1,0 +1,165 @@
+guide sf-dwarf-enh/con-rol-07-redridge-mountains
+title 07 · Redridge Mountains (19-22)
+faction Alliance
+race Dwarf
+levels 19-22
+zone Redridge Mountains
+folder Shaman: Forever · Enano Mejora · con Ruins of Lordaeron
+next sf-dwarf-enh/con-rol-08-duskwood
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.1 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 19.4)
+  turnin 65 optional map 1433 @21.39,45.35 live
+  accept 132 optional map 1433 @21.39,45.35 live
+
+step Flight path (level 19.4)
+  getfp "Lakeshire"
+
+step Pick up quests (level 19.4)
+  accept 118
+
+step Pick up quests (level 19.4)
+  accept 125
+
+step Pick up quests (level 19.4)
+  accept 98407
+
+step Objectives: The Lost Tools (level 19.4)
+  complete 125
+
+step Turn in (level 19.4)
+  turnin 125
+  accept 89
+
+step Pick up quests (level 19.4)
+  accept 92
+
+step Objectives: The Everstill Bridge (level 19.5)
+  complete 89
+
+step Objectives: Redridge Goulash (level 19.6)
+  complete 92
+
+step Objectives: Show of Force (level 19.6)
+  complete 98407
+
+step Pick up quests (level 19.6)
+  accept 244
+
+step Turn in (level 19.6)
+  turnin 244
+  turnin 98407
+  accept 246
+
+step Turn in (level 19.8)
+  turnin 89
+
+step Objectives: Assessing the Threat (level 19.8)
+  complete 246
+
+step Objectives: Assessing the Threat (level 19.8)
+  complete 246
+
+step Turn in (level 19.9)
+  turnin 246
+
+step Objectives: Redridge Goulash (level 20.0)
+  complete 92
+
+step Objectives: Redridge Goulash (level 20.1)
+  complete 92
+
+step Pick up quests (level 20.1)
+  accept 150
+
+step Objectives: Murloc Poachers (level 20.2)
+  complete 150
+
+step Turn in (level 20.3)
+  turnin 150
+
+step Turn in (level 20.3)
+  turnin 92
+
+step Pick up quests (level 20.3)
+  accept 98386
+
+step Pick up quests (level 20.3)
+  accept 20
+
+step Pick up quests (level 20.3)
+  accept 91
+
+step Pick up quests (level 20.3)
+  accept 127
+
+step Pick up quests (level 20.3)
+  accept 34
+
+step Objectives: An Unwelcome Guest (level 20.3)
+  complete 34
+
+step Turn in (level 20.4)
+  turnin 34
+
+step Pick up quests (level 20.4)
+  accept 128
+
+step Pick up quests (level 20.4)
+  accept 219
+
+step Objectives: Blackrock Bounty (level 20.5)
+  complete 128
+
+step Objectives: Alther's Mill (level 20.6)
+  complete 98386
+
+step Objectives: Selling Fish (level 20.8)
+  complete 127
+
+step Objectives: Blackrock Menace (level 20.9)
+  complete 20
+
+step Objectives: Missing In Action (level 20.9)
+  complete 219
+
+step Turn in (level 21.0)
+  turnin 219
+  turnin 20
+
+step Turn in (level 21.1)
+  turnin 98386
+
+step Turn in (level 21.2)
+  turnin 127
+
+step Turn in (level 21.3)
+  turnin 128
+
+step Objectives: Solomon's Law (level 21.3)
+  complete 91
+
+step Pick up quests (level 21.6)
+  accept 178
+
+step Hearth (level 21.6)
+  hearth "Lakeshire"
+
+step Turn in (level 21.7)
+  turnin 91
+
+step Pick up quests (level 21.7)
+  accept 180
+
+step Objectives: WANTED: Lieutenant Fangore (level 21.7)
+  complete 180
+
+step Turn in (level 21.8)
+  turnin 180
+
+step Flight path (level 21.8)
+  getfp "Darkshire"
+
+step Hearthstone (level 21.8)
+  sethome "Darkshire"

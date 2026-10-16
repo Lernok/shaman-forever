@@ -1,0 +1,41 @@
+guide sf-sky-enh/sin-wc-15-mulgore
+title 15 · Mulgore (28-29)
+faction Horde
+race Skyborne
+levels 28-29
+zone Mulgore
+folder Shaman: Forever · Skyborne Mejora · sin WC
+next sf-sky-enh/sin-wc-16-thunder-bluff
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 28.0)
+  accept 96241
+
+step Pick up quests (level 28.0)
+  accept 96259
+
+step Pick up quests (level 28.0)
+  accept 96260
+
+step Objectives: Stronger than Steel (level 28.0)
+  complete 96260
+
+step Pick up quests (level 28.0)
+  accept 96294
+
+step Objectives: Talkin' bout Toxins, Mon (level 28.1)
+  complete 96241
+
+step Objectives: Defending the Dead (level 28.2)
+  complete 96259
+
+step Turn in (level 28.2)
+  turnin 96260
+
+step Turn in (level 28.3)
+  turnin 96241
+
+step Turn in (level 28.3)
+  turnin 96259
+  turnin 96294

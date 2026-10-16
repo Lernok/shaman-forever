@@ -1,0 +1,21 @@
+guide sf-orc-enh/sin-wc-27-tirisfal-glades
+title 27 · Tirisfal Glades (32-33)
+faction Horde
+race Orc, Troll
+levels 32-33
+zone Tirisfal Glades
+folder Shaman: Forever · Orco y Troll Mejora · sin WC
+next sf-orc-enh/sin-wc-28-stranglethorn-vale
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.6 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Dungeon: Scarlet Monastery: Graveyard (level 32)
+  zone map 1420
+  goto 82.6,33.8 "Scarlet Monastery: Graveyard" r 30 live
+  tip Find a group and clear Scarlet Monastery: Graveyard, with its quests from this route in your log.
+
+step Flight path (level 32.5)
+  getfp "Grom'gol"
+
+step Hearthstone (level 32.5)
+  sethome "Grom'gol Base Camp"

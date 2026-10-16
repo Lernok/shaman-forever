@@ -1,0 +1,51 @@
+guide sf-sky-enh/sin-wc-sfk-21-hillsbrad-foothills
+title 21 · Hillsbrad Foothills (29-30)
+faction Horde
+race Skyborne
+levels 29-30
+zone Hillsbrad Foothills
+folder Shaman: Forever · Skyborne Mejora · sin WC ni SFK
+next sf-sky-enh/sin-wc-sfk-22-undercity
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 34.4 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 29.8)
+  accept 509
+
+step Pick up quests (level 29.8)
+  accept 567
+
+step Pick up quests (level 29.8)
+  accept 539
+
+step Objectives: Elixir of Agony (level 29.8)
+  complete 509
+
+step Objectives: Battle of Hillsbrad (level 29.8)
+  complete 539
+
+step Objectives: Dangerous! (level 29.8)
+  complete 567
+
+step Objectives: Dangerous! (level 29.9)
+  complete 567
+
+step Objectives: Dangerous! (level 29.9)
+  complete 567
+
+step Objectives: Dangerous! (level 29.9)
+  complete 567
+
+step Hearth (level 29.9)
+  hearth "Tarren Mill"
+
+step Turn in (level 29.9)
+  turnin 509
+  accept 513
+
+step Turn in (level 30.0)
+  turnin 539
+  turnin 567
+
+step Pick up: The Grave Knight (City of Dalaran)
+  accept 96986 optional map 1424 @62.63,20.65

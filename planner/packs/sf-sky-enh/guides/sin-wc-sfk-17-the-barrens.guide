@@ -1,0 +1,34 @@
+guide sf-sky-enh/sin-wc-sfk-17-the-barrens
+title 17 · The Barrens (28-29)
+faction Horde
+race Skyborne
+levels 28-29
+zone The Barrens
+folder Shaman: Forever · Skyborne Mejora · sin WC ni SFK
+next sf-sky-enh/sin-wc-sfk-18-thousand-needles
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 34.4 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 28.2)
+  accept 1153
+
+step Pick up quests (level 28.2)
+  accept 857
+
+step Objectives: The Tear of the Moons (level 28.2)
+  complete 857
+
+step Turn in (level 28.2)
+  turnin 857
+
+step Pick up quests (level 28.2)
+  accept 4904
+
+step Turn in (level 28.2)
+  turnin 5881
+
+step Flight path (level 28.2)
+  getfp "Freewind Post"
+
+step Hearthstone (level 28.2)
+  sethome "Freewind Post"

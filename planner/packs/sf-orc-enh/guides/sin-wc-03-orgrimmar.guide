@@ -1,0 +1,83 @@
+guide sf-orc-enh/sin-wc-03-orgrimmar
+title 03 · Orgrimmar (12-14)
+faction Horde
+race Orc, Troll
+levels 12-14
+zone Orgrimmar
+folder Shaman: Forever · Orco y Troll Mejora · sin WC
+next sf-orc-enh/sin-wc-04-the-barrens
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.6 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 12.5)
+  accept 97326
+
+step Objectives: Rocks to Rests (level 12.5)
+  complete 97326
+
+step Turn in (level 12.5)
+  turnin 97326
+
+step Pick up quests (level 12.5)
+  accept 5726 optional map 1454 @31.73,37.82
+
+step Flight path (level 12.5)
+  getfp "Orgrimmar"
+
+step Hearthstone (level 12.5)
+  sethome "Orgrimmar"
+
+step Pick up quests (level 12.5)
+  accept 97246
+
+step Pick up quests (level 12.5)
+  accept 97249
+  turnin 97246
+
+step Pick up quests (level 12.6)
+  accept 97242
+
+step Pick up quests (level 12.6)
+  accept 97275
+
+step Objectives: Yelmak's Medley (level 12.6)
+  complete 97242
+
+step Turn in (level 12.7)
+  turnin 97242
+
+step Turn in (level 12.8)
+  turnin 97275
+
+step Turn in (level 12.9)
+  turnin 97249
+
+step Pick up quests (level 12.9)
+  accept 813
+  complete 812
+
+step Turn in (level 12.9)
+  turnin 829
+
+step Turn in (level 13.0)
+  turnin 831
+
+step Grind to 13 (1 min)
+  level 13 -- grind on Burning Blade Apprentice (level 11) at Skull Rock, Durotar 52.6,8.2
+
+step Pick up: Slaying the Beast (Ragefire Chasm)
+  accept 5761 optional map 1454 @49.47,50.59
+
+step Dungeon: Ragefire Chasm (level 13)
+  zone map 1454
+  goto 52.6,49 "Ragefire Chasm" r 30 live
+  tip Find a group and clear Ragefire Chasm, with its quests from this route in your log.
+
+step Turn in (level 13.6)
+  turnin 5761 optional map 1454 @49.47,50.59
+
+step Flight path (level 13.6)
+  getfp "Crossroads"
+
+step Hearthstone (level 13.6)
+  sethome "The Crossroads"

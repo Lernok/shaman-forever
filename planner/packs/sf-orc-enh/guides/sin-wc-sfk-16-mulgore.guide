@@ -1,0 +1,44 @@
+guide sf-orc-enh/sin-wc-sfk-16-mulgore
+title 16 · Mulgore (26-27)
+faction Horde
+race Orc, Troll
+levels 26-27
+zone Mulgore
+folder Shaman: Forever · Orco y Troll Mejora · sin WC ni SFK
+next sf-orc-enh/sin-wc-sfk-17-ashenvale
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 26.4)
+  accept 96241
+
+step Pick up quests (level 26.4)
+  accept 96259
+
+step Pick up quests (level 26.4)
+  accept 96260
+
+step Objectives: Stronger than Steel (level 26.4)
+  complete 96260
+
+step Pick up quests (level 26.4)
+  accept 96294
+
+step Objectives: Talkin' bout Toxins, Mon (level 26.5)
+  complete 96241
+
+step Objectives: Defending the Dead (level 26.5)
+  complete 96259
+
+step Turn in (level 26.6)
+  turnin 96260
+
+step Turn in (level 26.7)
+  turnin 96241
+
+step Turn in (level 26.7)
+  turnin 96259
+  turnin 96294
+
+step Hearth (level 26.8)
+  hearth "Sun Rock Retreat"

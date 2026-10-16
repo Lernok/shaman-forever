@@ -1,0 +1,28 @@
+guide sf-orc-enh/sin-wc-09-undercity
+title 09 · Undercity (20-21)
+faction Horde
+race Orc, Troll
+levels 20-21
+zone Undercity
+folder Shaman: Forever · Orco y Troll Mejora · sin WC
+next sf-orc-enh/sin-wc-10-silverpine-forest
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.6 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 20.5)
+  accept 97583
+
+step Objectives: WRIGGLE. (level 20.5)
+  complete 97583
+
+step Turn in (level 20.5)
+  turnin 97583
+
+step Flight path (level 20.5)
+  getfp "The Sepulcher"
+
+step Hearthstone (level 20.5)
+  sethome "The Sepulcher"
+
+step Pick up: The Book of Ur (Shadowfang Keep)
+  accept 1013 optional map 1458 @53.74,54.46

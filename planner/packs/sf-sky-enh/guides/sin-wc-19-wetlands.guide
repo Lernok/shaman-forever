@@ -1,0 +1,24 @@
+guide sf-sky-enh/sin-wc-19-wetlands
+title 19 · Wetlands (29-30)
+faction Horde
+race Skyborne
+levels 29-30
+zone Wetlands
+folder Shaman: Forever · Skyborne Mejora · sin WC
+next sf-sky-enh/sin-wc-20-hillsbrad-foothills
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 29.5)
+  accept 95682 optional map 1437 @47.8,56.3 live
+
+step Dungeon: Excavation Site: Wetlands (level 29)
+  zone map 1437
+  goto 47.7,56.2 "Excavation Site: Wetlands" r 30 live
+  tip Find a group and clear Excavation Site: Wetlands, with its quests from this route in your log.
+
+step Turn in (level 29.9)
+  turnin 95682 optional map 1437 @47.8,56.3 live
+
+step Hearthstone (level 29.9)
+  sethome "Tarren Mill"

@@ -1,0 +1,70 @@
+guide sf-tauren-enh/sin-wc-sfk-03-durotar
+title 03 · Durotar (12-13)
+faction Horde
+race Tauren
+levels 12-13
+zone Durotar
+folder Shaman: Forever · Tauren Mejora · sin WC ni SFK
+next sf-tauren-enh/sin-wc-sfk-04-orgrimmar
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 12.3)
+  accept 840
+
+step Pick up quests (level 12.3)
+  accept 99048
+
+step Turn in (level 12.3)
+  turnin 99048
+  accept 99049
+
+step Objectives: Threat from Below (level 12.3)
+  complete 99049
+
+step Objectives: Threat from Below (level 12.3)
+  complete 99049
+
+step Turn in (level 12.4)
+  turnin 99049
+  accept 99051
+
+step Pick up quests (level 12.4)
+  accept 97281
+
+step Turn in (level 12.5)
+  turnin 97281
+  accept 97282
+
+step Objectives: Stormy Potential (level 12.6)
+  complete 97282
+
+step Pick up quests (level 12.6)
+  accept 816
+
+step Turn in (level 12.7)
+  turnin 97282
+
+step Pick up quests (level 12.7)
+  accept 832
+
+step Objectives: Threat from Below (level 12.8)
+  complete 99051
+
+step Hearth (level 12.8)
+  hearth "Razor Hill"
+
+step Turn in (level 12.9)
+  turnin 99051
+
+step Objectives: Lost But Not Forgotten (level 13.0)
+  complete 816
+
+step Turn in (level 13.0)
+  turnin 816
+
+step Flight path (level 13.0)
+  getfp "Orgrimmar"
+
+step Hearthstone (level 13.0)
+  sethome "Orgrimmar"

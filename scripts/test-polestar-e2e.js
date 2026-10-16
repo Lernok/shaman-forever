@@ -12,6 +12,7 @@ const r = runAddon({
   before: `
     local w = stub.world
     w.addMap(1421, { name = "Silverpine Forest", c = 1415, left = 3450, right = -750, top = 1800, bottom = -2400 })
+    w.addMap(1413, { name = "The Barrens", c = 1414, left = 2622.9, right = -2295.8, top = 1612.5, bottom = -4672.9 })
     w.moveTo(1421, 44, 42)
     w.race, w.raceName, w.class, w.className, w.faction, w.level = "Orc", "Orc", "SHAMAN", "Shaman", "Horde", 15
     GetInstanceInfo = GetInstanceInfo or function() return "Silverpine Forest", "none" end
@@ -61,6 +62,16 @@ const r = runAddon({
     stub.advance(1.5)
     print("step after Skip:", E.GetStepIndex(), g6.steps[E.GetStepIndex() or 1] and g6.steps[E.GetStepIndex() or 1].title)
     view("after the dungeon step")
+    -- "/sf skip" before Wailing Caverns: the route without it.
+    W.level = 19
+    stub.world.moveTo(1413, 52, 30)
+    E.SetGuide("sf-orc-enh/09-the-barrens")
+    stub.advance(1)
+    view("before skipping")
+    SlashCmdList.SHAMANFOREVER("skip")
+    stub.advance(1.5)
+    print("after skip:", E.GetGuide() and E.GetGuide().id)
+    view("after skipping")
     print("DONE")`,
 });
 console.log(r.stdout.split('\n').filter((l) => !/^@@/.test(l)).slice(-40).join('\n'));

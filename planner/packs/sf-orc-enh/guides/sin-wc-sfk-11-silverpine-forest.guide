@@ -1,0 +1,102 @@
+guide sf-orc-enh/sin-wc-sfk-11-silverpine-forest
+title 11 · Silverpine Forest (19-21)
+faction Horde
+race Orc, Troll
+levels 19-21
+zone Silverpine Forest
+folder Shaman: Forever · Orco y Troll Mejora · sin WC ni SFK
+next sf-orc-enh/sin-wc-sfk-12-hillsbrad-foothills
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 19.7)
+  turnin 446
+  accept 448
+  accept 493
+
+step Turn in (level 19.7)
+  turnin 448
+
+step Pick up quests (level 19.7)
+  accept 95981
+
+step Pick up quests (level 19.7)
+  accept 98298
+  accept 98299
+
+step Pick up quests (level 20.0)
+  accept 460
+
+step Turn in (level 20.0)
+  turnin 460
+  accept 461
+
+step Turn in (level 20.1)
+  turnin 461
+  accept 491
+
+step Objectives: Watching the Roads (level 20.1)
+  complete 95981
+
+step Objectives: Watching the Roads (level 20.2)
+  complete 95981
+
+step Objectives: Stop the Spread (level 20.2)
+  complete 98299
+
+step Objectives: Arugal's Folly (level 20.3)
+  complete 98298
+
+step Turn in (level 20.3)
+  turnin 95981
+
+step Turn in (level 20.4)
+  turnin 98298
+  turnin 98299
+
+step Pick up quests (level 20.5)
+  accept 95883
+  accept 95885
+
+step Objectives: The Offering of Blood (level 20.5)
+  complete 95885
+
+step Objectives: The Tortured Soul (level 20.5)
+  complete 95883
+
+step Turn in (level 20.5)
+  turnin 95883
+  turnin 95885
+
+step Pick up quests (level 20.6)
+  accept 95884
+  complete 95884
+
+step Turn in (level 20.6)
+  turnin 95884
+
+step Hearth (level 20.6)
+  hearth "The Sepulcher"
+
+step Pick up quests (level 20.6)
+  accept 92401 optional map 1421 @44.54,42.96
+
+step Pick up quests (level 20.6)
+  accept 480
+  accept 516
+
+step Objectives: Beren's Peril (level 20.7)
+  complete 516
+
+step Objectives: The Weaver (level 20.7)
+  complete 480
+
+step Turn in (level 20.8)
+  turnin 480
+  turnin 516
+
+step Flight path (level 20.9)
+  getfp "Tarren Mill"
+
+step Hearthstone (level 20.9)
+  sethome "Tarren Mill"

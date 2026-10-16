@@ -1,0 +1,65 @@
+guide sf-orc-enh/sin-wc-10-silverpine-forest
+title 10 · Silverpine Forest (20-22)
+faction Horde
+race Orc, Troll
+levels 20-22
+zone Silverpine Forest
+folder Shaman: Forever · Orco y Troll Mejora · sin WC
+next sf-orc-enh/sin-wc-11-hillsbrad-foothills
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.6 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 20.5)
+  accept 493
+
+step Pick up quests (level 20.5)
+  accept 95981
+
+step Pick up quests (level 20.5)
+  accept 98298
+  accept 98299
+
+step Pick up quests (level 20.8)
+  accept 460
+
+step Turn in (level 20.8)
+  turnin 460
+  accept 461
+
+step Turn in (level 20.8)
+  turnin 461
+  accept 491
+
+step Objectives: Watching the Roads (level 20.9)
+  complete 95981
+
+step Objectives: Watching the Roads (level 20.9)
+  complete 95981
+
+step Objectives: Stop the Spread (level 21.0)
+  complete 98299
+
+step Objectives: Arugal's Folly (level 21.0)
+  complete 98298
+
+step Hearth (level 21.0)
+  hearth "The Sepulcher"
+
+step Turn in (level 21.1)
+  turnin 95981
+
+step Turn in (level 21.1)
+  turnin 98298
+  turnin 98299
+
+step Flight path (level 21.2)
+  getfp "Tarren Mill"
+
+step Hearthstone (level 21.2)
+  sethome "Tarren Mill"
+
+step Pick up: Deathstalkers in Shadowfang (Shadowfang Keep)
+  accept 1098 optional map 1421 @43.42,40.86
+
+step Pick up: Arugal Must Die (Shadowfang Keep)
+  accept 1014 optional map 1421 @44.2,39.81

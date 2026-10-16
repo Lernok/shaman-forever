@@ -1,0 +1,37 @@
+guide sf-tauren-enh/sin-sfk-25-alterac-mountains
+title 25 · Alterac Mountains (31-32)
+faction Horde
+race Tauren
+levels 31-32
+zone Alterac Mountains
+folder Shaman: Forever · Tauren Mejora · sin SFK
+next sf-tauren-enh/sin-sfk-26-arathi-highlands
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.7 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 31.6)
+  turnin 1051 optional map 1416 @61.5,80.5
+
+step Objectives: Prison Break In (level 31.7)
+  complete 544 optional
+
+step Objectives: Stone Tokens (level 31.7)
+  complete 556
+
+step Objectives: Prison Break In (level 31.8)
+  complete 544 optional
+
+step Objectives: Helcular's Revenge (level 31.8)
+  complete 553
+
+step Objectives: Gol'dir (level 31.8)
+  complete 503
+
+step Turn in (level 31.8)
+  turnin 503
+
+step Flight path (level 31.8)
+  getfp "Hammerfall"
+
+step Hearthstone (level 31.8)
+  sethome "Hammerfall"

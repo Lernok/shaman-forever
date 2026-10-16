@@ -1,0 +1,27 @@
+guide sf-sky-enh/sin-sfk-24-hillsbrad-foothills
+title 24 · Hillsbrad Foothills (31-32)
+faction Horde
+race Skyborne
+levels 31-32
+zone Hillsbrad Foothills
+folder Shaman: Forever · Skyborne Mejora · sin SFK
+next sf-sky-enh/sin-sfk-25-arathi-highlands
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 31.7)
+  turnin 544 optional map 1424 @61.6,20.85
+  accept 545 optional map 1424 @61.6,20.85
+
+step Turn in (level 31.7)
+  turnin 556
+  accept 557
+
+step Turn in (level 31.8)
+  turnin 553
+
+step Flight path (level 31.8)
+  getfp "Hammerfall"
+
+step Hearthstone (level 31.8)
+  sethome "Hammerfall"

@@ -1,0 +1,282 @@
+guide sf-tauren-enh/sin-sfk-05-the-barrens
+title 05 · The Barrens (13-18)
+faction Horde
+race Tauren
+levels 13-18
+zone The Barrens
+folder Shaman: Forever · Tauren Mejora · sin SFK
+next sf-tauren-enh/sin-sfk-06-silverpine-forest
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.7 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 13.6)
+  accept 870 optional map 1413 @52.26,31.93
+
+step Pick up quests (level 13.6)
+  accept 844
+
+step Pick up quests (level 13.6)
+  accept 867
+
+step Pick up quests (level 13.6)
+  accept 871
+  accept 5041
+
+step Pick up quests (level 13.6)
+  accept 848
+  accept 1492
+
+step Pick up quests (level 13.6)
+  accept 869
+
+step Objectives: Plainstrider Menace (level 13.7)
+  complete 844
+
+step Turn in (level 13.8)
+  turnin 844
+  accept 845
+
+step Objectives: Raptor Thieves (level 13.9)
+  complete 869
+
+step Objectives: The Zhevra (level 14.0)
+  complete 845
+
+step Turn in (level 14.1)
+  turnin 869
+
+step Turn in (level 14.2)
+  turnin 845
+  accept 903
+
+step Objectives: Disrupt the Attacks (level 14.3)
+  complete 871
+
+step Pick up quests (level 14.3)
+  accept 1524
+
+step Objectives: Disrupt the Attacks (level 14.3)
+  complete 871
+
+step Objectives: Supplies for the Crossroads (level 14.3)
+  complete 5041
+
+step Flight path (level 14.3)
+  getfp "Ratchet"
+
+step Pick up quests (level 14.3)
+  accept 887
+
+step Pick up quests (level 14.3)
+  accept 97253
+
+step Hearthstone (level 14.3)
+  sethome "Ratchet"
+
+step Pick up quests (level 14.3)
+  accept 894
+
+step Objectives: Parts and Pieces (level 14.3)
+  complete 97253
+
+step Objectives: Southsea Freebooters (level 14.4)
+  complete 887
+
+step Objectives: Southsea Freebooters (level 14.5)
+  complete 887
+
+step Turn in (level 14.5)
+  turnin 1492
+
+step Turn in (level 14.6)
+  turnin 97253
+
+step Turn in (level 14.6)
+  turnin 887
+  accept 890
+
+step Turn in (level 14.6)
+  turnin 890
+  accept 892
+
+step Turn in (level 14.6)
+  turnin 892
+  accept 888
+
+step Objectives: Prowlers of the Barrens (level 14.7)
+  complete 903
+
+step Hearthstone (level 14.7)
+  sethome "The Crossroads"
+
+step Turn in (level 14.8)
+  turnin 903
+  accept 881
+
+step Turn in (level 14.9)
+  turnin 871
+  turnin 5041
+  accept 872
+
+step Pick up quests (level 14.9)
+  accept 855
+
+step Objectives: Centaur Bracers (level 15.2)
+  complete 855
+
+step Turn in (level 15.3)
+  turnin 855
+
+step Objectives: The Forgotten Pools (level 15.3)
+  complete 870 optional
+
+step Turn in (level 15.3)
+  turnin 894
+  accept 900
+
+step Objectives: Samophlange (level 15.3)
+  complete 900
+
+step Turn in (level 15.4)
+  turnin 900
+  accept 901
+
+step Objectives: Samophlange (level 15.4)
+  complete 901
+
+step Turn in (level 15.4)
+  turnin 901
+  accept 902
+
+step Objectives: Echeyakee (level 15.4)
+  complete 881
+
+step Objectives: The Disruption Ends (level 15.5)
+  complete 872
+
+step Objectives: The Disruption Ends (level 15.5)
+  complete 872
+
+step Hearthstone (level 15.5)
+  sethome "Ratchet"
+
+step Turn in (level 15.6)
+  turnin 902
+  accept 3921
+
+step Objectives: Stolen Booty (level 15.6)
+  complete 888
+
+step Objectives: Stolen Booty (level 15.6)
+  complete 888
+
+step Hearth (level 15.6)
+  hearth "Ratchet"
+
+step Turn in (level 15.7)
+  turnin 888
+
+step Hearthstone (level 15.7)
+  sethome "The Crossroads"
+
+step Turn in (level 15.8)
+  turnin 870 optional map 1413 @52.26,31.93
+  accept 877 optional map 1413 @52.26,31.93
+
+step Turn in (level 15.9)
+  turnin 881
+  accept 905
+
+step Objectives: Fungal Spores (level 15.9)
+  complete 848
+
+step Turn in (level 15.9)
+  turnin 872
+
+step Turn in (level 16.0)
+  turnin 848
+  accept 853
+
+step Objectives: The Angry Scytheclaws (level 16.0)
+  complete 905
+
+step Objectives: The Stagnant Oasis (level 16.0)
+  complete 877 optional
+
+step Turn in (level 16.1)
+  turnin 877 optional map 1413 @52.26,31.93
+  accept 880 optional map 1413 @52.26,31.93
+
+step Turn in (level 16.2)
+  turnin 905
+
+step Objectives: Altered Beings (level 16.2)
+  complete 880 optional
+
+step Turn in (level 16.3)
+  turnin 880 optional map 1413 @52.26,31.93
+  accept 1489 optional map 1413 @52.26,31.93
+  accept 3301
+
+step Turn in (level 16.3)
+  turnin 3921
+  accept 3922
+
+step Objectives: Nugget Slugs (level 16.3)
+  complete 3922
+
+step Turn in (level 16.4)
+  turnin 3922
+
+step Objectives: Harpy Raiders (level 16.6)
+  complete 867
+
+step Pick up quests (level 16.6)
+  accept 819
+
+step Turn in (level 16.6)
+  turnin 867
+  accept 875
+
+step Hearthstone (level 16.6)
+  sethome "Ratchet"
+
+step Turn in (level 16.7)
+  turnin 819
+  accept 821
+
+step Objectives: Chen's Empty Keg (level 16.8)
+  complete 821
+
+step Hearth (level 16.8)
+  hearth "Ratchet"
+
+step Objectives: Chen's Empty Keg (level 16.8)
+  complete 821
+
+step Objectives: Chen's Empty Keg (level 16.9)
+  complete 821
+
+step Turn in (level 17.0)
+  turnin 821
+
+step Objectives: Harpy Lieutenants (level 17.0)
+  complete 875
+
+step Hearthstone (level 17.0)
+  sethome "The Crossroads"
+
+step Turn in (level 17.1)
+  turnin 875
+
+step Flight path (level 17.1)
+  getfp "The Sepulcher"
+
+step Hearthstone (level 17.1)
+  sethome "The Sepulcher"
+
+step Pick up: Smart Drinks (Wailing Caverns)
+  accept 1491 optional map 1413 @62.37,37.62
+
+step Pick up: Trouble at the Docks (Wailing Caverns)
+  accept 959 optional map 1413 @63.09,37.61

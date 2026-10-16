@@ -1,0 +1,47 @@
+guide sf-tauren-enh/sin-wc-sfk-15-mulgore
+title 15 · Mulgore (26-27)
+faction Horde
+race Tauren
+levels 26-27
+zone Mulgore
+folder Shaman: Forever · Tauren Mejora · sin WC ni SFK
+next sf-tauren-enh/sin-wc-sfk-16-stonetalon-mountains
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 26.1)
+  accept 96241
+
+step Pick up quests (level 26.1)
+  accept 96259
+
+step Pick up quests (level 26.1)
+  accept 96260
+
+step Objectives: Stronger than Steel (level 26.2)
+  complete 96260
+
+step Pick up quests (level 26.2)
+  accept 96294
+
+step Objectives: Talkin' bout Toxins, Mon (level 26.2)
+  complete 96241
+
+step Objectives: Defending the Dead (level 26.3)
+  complete 96259
+
+step Turn in (level 26.4)
+  turnin 96260
+
+step Turn in (level 26.5)
+  turnin 96241
+
+step Turn in (level 26.5)
+  turnin 96259
+  turnin 96294
+
+step Flight path (level 26.6)
+  getfp "Sun Rock Retreat"
+
+step Hearthstone (level 26.6)
+  sethome "Sun Rock Retreat"

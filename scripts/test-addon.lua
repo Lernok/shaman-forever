@@ -96,8 +96,16 @@ if os.getenv("PPACK") then
   assert(loadfile(os.getenv("PPACK")))()
   local open, at = byId[os.getenv("PGUIDE")], tonumber(os.getenv("PSTEP") or "1")
   assert(open, "no guide " .. tostring(os.getenv("PGUIDE")))
-  Polestar = { Engine = { GetGuide = function() return open end, GetStepIndex = function() return at end },
-    Guides = { Get = function(id) return byId[id] end }, On = function(msg) print("POLESTAR ON", msg) end }
+  Polestar = { Engine = { GetGuide = function() return open end, GetStepIndex = function() return at end,
+      SetGuide = function(id) if byId[id] then open, at = byId[id], 1; print("POLESTAR SETGUIDE", id) return true end return false end },
+    Guides = { Get = function(id) return byId[id] end,
+      List = function()
+        local out = {}
+        for id, g in pairs(byId) do out[#out + 1] = { id = id, maxLevel = g.maxLevel, minLevel = g.minLevel, folder = g.folder } end
+        table.sort(out, function(a, b) return a.id < b.id end)
+        return out
+      end },
+    On = function(msg) print("POLESTAR ON", msg) end }
 end
 local SF = {}
 for _, f in ipairs({ "Data.lua", "Locale.lua", "Core.lua" }) do assert(loadfile(dir .. f))("ShamanForever", SF) end
@@ -112,6 +120,11 @@ end
 print(race, spec, "nivel " .. level, zone, inst or "")
 dump("Lo que viene", SF.test.upcoming())
 if os.getenv("POLESTAR") or os.getenv("PPACK") then local title, tips = SF.test.currentView(); dump("Vista: " .. title, tips) end
+-- SKIP="<dungeon>": "skip this dungeon" on the open route.
+if os.getenv("SKIP") then
+  SF.skipDungeon(os.getenv("SKIP"))
+  local title, tips = SF.test.currentView(); dump("Tras saltear: " .. title, tips)
+end
 dump("En la zona", SF.test.zoneTips())
 print("Talento:", SF.test.talentLine(level))
 TomTom = { AddWaypoint = function(_, map, x, y, o) print("TOMTOM", map, x, y, o.title) end }

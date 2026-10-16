@@ -1,0 +1,58 @@
+guide sf-orc-enh/sin-sfk-31-desolace
+title 31 · Desolace (34-35)
+faction Horde
+race Orc, Troll
+levels 34-35
+zone Desolace
+folder Shaman: Forever · Orco y Troll Mejora · sin SFK
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 34.4)
+  accept 5561
+
+step Pick up quests (level 34.4)
+  accept 1367
+  accept 1368
+
+step Pick up quests (level 34.4)
+  accept 1365
+
+step Objectives: Kodo Roundup (level 34.4)
+  complete 5561
+
+step Turn in (level 34.5)
+  turnin 5561
+
+step Turn in (level 34.5)
+  turnin 1367
+  accept 1369
+
+step Objectives: Khan Dez'hepah (level 34.5)
+  complete 1365
+
+step Pick up quests (level 34.5)
+  accept 5821
+
+step Pick up quests (level 34.5)
+  accept 1480
+
+step Turn in (level 34.6)
+  turnin 1480
+  accept 1481
+
+step Turn in (level 34.6)
+  turnin 1365
+  accept 1366
+
+step Objectives: Centaur Bounty (level 34.9)
+  complete 1366
+
+step Objectives: Bodyguard for Hire (level 34.9)
+  complete 5821
+
+step Turn in (level 34.9)
+  turnin 5821
+
+step Turn in (level 35.0)
+  turnin 1366

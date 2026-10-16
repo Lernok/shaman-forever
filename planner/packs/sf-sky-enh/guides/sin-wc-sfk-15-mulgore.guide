@@ -1,0 +1,54 @@
+guide sf-sky-enh/sin-wc-sfk-15-mulgore
+title 15 · Mulgore (27-29)
+faction Horde
+race Skyborne
+levels 27-29
+zone Mulgore
+folder Shaman: Forever · Skyborne Mejora · sin WC ni SFK
+next sf-sky-enh/sin-wc-sfk-16-thunder-bluff
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 34.4 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 27.7)
+  accept 96241
+
+step Pick up quests (level 27.7)
+  accept 96259
+
+step Pick up quests (level 27.7)
+  accept 96260
+
+step Objectives: Stronger than Steel (level 27.7)
+  complete 96260
+
+step Pick up quests (level 27.7)
+  accept 96294
+
+step Objectives: Talkin' bout Toxins, Mon (level 27.8)
+  complete 96241
+
+step Objectives: Defending the Dead (level 27.9)
+  complete 96259
+
+step Turn in (level 27.9)
+  turnin 96260
+
+step Turn in (level 28.0)
+  turnin 96241
+
+step Turn in (level 28.0)
+  turnin 96259
+  turnin 96294
+  accept 96261
+
+step Objectives: The Broodmother (level 28.1)
+  complete 96261
+
+step Turn in (level 28.2)
+  turnin 96261
+
+step Flight path (level 28.2)
+  getfp "Thunder Bluff"
+
+step Hearthstone (level 28.2)
+  sethome "Thunder Bluff"

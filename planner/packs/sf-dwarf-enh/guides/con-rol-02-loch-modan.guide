@@ -1,0 +1,143 @@
+guide sf-dwarf-enh/con-rol-02-loch-modan
+title 02 · Loch Modan (12-15)
+faction Alliance
+race Dwarf
+levels 12-15
+zone Loch Modan
+folder Shaman: Forever · Enano Mejora · con Ruins of Lordaeron
+next sf-dwarf-enh/con-rol-03-ironforge
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.1 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 12.1)
+  accept 416
+  accept 1339
+
+step Pick up quests (level 12.1)
+  accept 418
+
+step Objectives: Thelsamar Blood Sausages (level 12.2)
+  complete 418
+
+step Objectives: Rat Catching (level 12.5)
+  complete 416
+
+step Objectives: Thelsamar Blood Sausages (level 12.6)
+  complete 418
+
+step Turn in (level 12.6)
+  turnin 416
+
+step Turn in (level 12.7)
+  turnin 94465
+  accept 94466
+
+step Pick up quests (level 12.7)
+  accept 224
+
+step Pick up quests (level 12.7)
+  accept 267
+
+step Objectives: The Trogg Threat (level 12.9)
+  complete 267
+
+step Objectives: In Defense of the King's Lands (level 13.1)
+  complete 224
+
+step Objectives: Call of Fire (level 13.1)
+  complete 94466
+
+step Turn in (level 13.2)
+  turnin 267
+
+step Turn in (level 13.3)
+  turnin 224
+
+step Pick up quests (level 13.3)
+  accept 237
+
+step Objectives: In Defense of the King's Lands (level 13.5)
+  complete 237
+
+step Turn in (level 13.6)
+  turnin 237
+
+step Pick up quests (level 13.6)
+  accept 263
+
+step Objectives: In Defense of the King's Lands (level 13.8)
+  complete 263
+
+step Turn in (level 13.9)
+  turnin 263
+
+step Objectives: Thelsamar Blood Sausages (level 14.0)
+  complete 418
+
+step Pick up quests (level 14.0)
+  accept 298
+
+step Pick up quests (level 14.0)
+  accept 2038
+
+step Objectives: Bingles' Missing Supplies (level 14.0)
+  complete 2038
+
+step Objectives: Bingles' Missing Supplies (level 14.0)
+  complete 2038
+
+step Objectives: Bingles' Missing Supplies (level 14.0)
+  complete 2038
+
+step Objectives: Bingles' Missing Supplies (level 14.0)
+  complete 2038
+
+step Objectives: Call of Fire (level 14.0)
+  complete 94466
+
+step Turn in (level 14.0)
+  turnin 1339
+  accept 1338
+  accept 307
+
+step Objectives: Filthy Paws (level 14.0)
+  complete 307
+
+step Turn in (level 14.1)
+  turnin 307
+
+step Hearth (level 14.1)
+  hearth "Stoutlager Inn"
+
+step Turn in (level 14.2)
+  turnin 418
+
+step Turn in (level 14.2)
+  turnin 298
+  accept 301
+
+step Turn in (level 14.3)
+  turnin 94466
+  accept 94467
+
+step Objectives: Call of Fire (level 14.3)
+  complete 94467
+
+step Turn in (level 14.4)
+  turnin 94467
+  accept 94468
+
+step Pick up quests (level 14.4)
+  accept 385
+
+step Turn in (level 14.5)
+  turnin 2038
+
+step Objectives: Crocolisk Hunting (level 14.8)
+  complete 385
+
+step Turn in (level 14.8)
+  turnin 385
+
+step Flight path (level 14.8)
+  getfp "Ironforge"

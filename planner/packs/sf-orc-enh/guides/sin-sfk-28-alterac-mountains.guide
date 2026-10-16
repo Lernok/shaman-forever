@@ -1,0 +1,19 @@
+guide sf-orc-enh/sin-sfk-28-alterac-mountains
+title 28 · Alterac Mountains (31-32)
+faction Horde
+race Orc, Troll
+levels 31-32
+zone Alterac Mountains
+folder Shaman: Forever · Orco y Troll Mejora · sin SFK
+next sf-orc-enh/sin-sfk-29-arathi-highlands
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 31.5)
+  turnin 1051 optional map 1416 @61.5,80.5
+
+step Flight path (level 31.5)
+  getfp "Hammerfall"
+
+step Hearthstone (level 31.5)
+  sethome "Hammerfall"

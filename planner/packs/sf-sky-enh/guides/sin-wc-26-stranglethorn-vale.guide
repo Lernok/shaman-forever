@@ -1,0 +1,143 @@
+guide sf-sky-enh/sin-wc-26-stranglethorn-vale
+title 26 · Stranglethorn Vale (32-35)
+faction Horde
+race Skyborne
+levels 32-35
+zone Stranglethorn Vale
+folder Shaman: Forever · Skyborne Mejora · sin WC
+next sf-sky-enh/sin-wc-27-desolace
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 32.3)
+  accept 638
+
+step Pick up quests (level 32.3)
+  accept 596
+  accept 629
+
+step Objectives: Bloody Bone Necklaces (level 33.0)
+  complete 596
+
+step Objectives: The Vile Reef (level 33.0)
+  complete 629
+
+step Turn in (level 33.0)
+  turnin 596
+  turnin 629
+
+step Pick up quests (level 33.0)
+  accept 568
+
+step Objectives: The Defense of Grom'gol (level 33.1)
+  complete 568
+
+step Turn in (level 33.2)
+  turnin 568
+
+step Pick up quests (level 33.2)
+  accept 570
+
+step Objectives: Mok'thardin's Enchantment (level 33.2)
+  complete 570
+
+step Turn in (level 33.3)
+  turnin 570
+
+step Pick up quests (level 33.3)
+  accept 569
+
+step Objectives: The Defense of Grom'gol (level 33.3)
+  complete 569
+
+step Turn in (level 33.3)
+  turnin 569
+
+step Flight path (level 33.3)
+  getfp "Booty Bay"
+
+step Hearthstone (level 33.3)
+  sethome "Booty Bay"
+
+step Pick up quests (level 33.3)
+  accept 213
+
+step Objectives: Hostile Takeover (level 33.4)
+  complete 213
+
+step Hearth (level 33.4)
+  hearth "Booty Bay"
+
+step Turn in (level 33.4)
+  turnin 213
+
+step Pick up quests (level 33.5)
+  accept 635
+
+step Hearthstone (level 33.5)
+  sethome "Grom'gol Base Camp"
+
+step Pick up quests (level 33.5)
+  accept 581
+
+step Objectives: Hunt for Yenniku (level 33.6)
+  complete 581
+
+step Turn in (level 33.6)
+  turnin 581
+  accept 582
+
+step Objectives: Headhunting (level 33.8)
+  complete 582
+
+step Turn in (level 33.8)
+  turnin 582
+
+step Hearthstone (level 33.8)
+  sethome "Booty Bay"
+
+step Pick up quests (level 33.8)
+  accept 189
+
+step Pick up quests (level 33.8)
+  accept 201
+
+step Pick up quests (level 33.8)
+  accept 605
+
+step Pick up quests (level 33.8)
+  accept 575
+
+step Objectives: Singing Blue Shards (level 33.9)
+  complete 605
+
+step Objectives: Bloodscalp Ears (level 34.1)
+  complete 189
+
+step Objectives: Investigate the Camp (level 34.1)
+  complete 201
+
+step Objectives: Supply and Demand (level 34.1)
+  complete 575
+
+step Hearth (level 34.1)
+  hearth "Booty Bay"
+
+step Turn in (level 34.2)
+  turnin 575
+  accept 577
+
+step Turn in (level 34.2)
+  turnin 605
+
+step Turn in (level 34.2)
+  turnin 201
+
+step Turn in (level 34.2)
+  turnin 189
+
+step Objectives: Some Assembly Required (level 34.2)
+  complete 577
+
+step Turn in (level 34.3)
+  turnin 577

@@ -1,0 +1,41 @@
+guide sf-sky-enh/sin-wc-sfk-09-undercity
+title 09 · Undercity (20-21)
+faction Horde
+race Skyborne
+levels 20-21
+zone Undercity
+folder Shaman: Forever · Skyborne Mejora · sin WC ni SFK
+next sf-sky-enh/sin-wc-sfk-10-hillsbrad-foothills
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 34.4 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 20.5)
+  accept 97289
+
+step Turn in (level 20.6)
+  turnin 97289
+  accept 97290
+
+step Turn in (level 20.7)
+  turnin 97290
+  accept 97291
+
+step Hearthstone (level 20.7)
+  sethome "Undercity"
+
+step Objectives: Unending Torment (level 20.7)
+  complete 97291
+
+step Turn in (level 20.7)
+  turnin 97291
+  accept 97292
+  turnin 97292
+
+step Objectives: A Frightened Request (level 20.8)
+  complete 92401 optional
+
+step Flight path (level 20.8)
+  getfp "Tarren Mill"
+
+step Hearthstone (level 20.8)
+  sethome "Tarren Mill"

@@ -1,0 +1,16 @@
+guide sf-sky-enh/sin-wc-sfk-16-thunder-bluff
+title 16 · Thunder Bluff (28-29)
+faction Horde
+race Skyborne
+levels 28-29
+zone Thunder Bluff
+folder Shaman: Forever · Skyborne Mejora · sin WC ni SFK
+next sf-sky-enh/sin-wc-sfk-17-the-barrens
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 34.4 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 28.2)
+  accept 1195
+
+step Hearthstone (level 28.2)
+  sethome "Camp Taurajo"

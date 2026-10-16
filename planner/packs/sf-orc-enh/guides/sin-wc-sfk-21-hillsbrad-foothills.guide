@@ -1,0 +1,51 @@
+guide sf-orc-enh/sin-wc-sfk-21-hillsbrad-foothills
+title 21 · Hillsbrad Foothills (29-31)
+faction Horde
+race Orc, Troll
+levels 29-31
+zone Hillsbrad Foothills
+folder Shaman: Forever · Orco y Troll Mejora · sin WC ni SFK
+next sf-orc-enh/sin-wc-sfk-22-undercity
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 29.9)
+  accept 509
+
+step Pick up quests (level 29.9)
+  accept 567
+
+step Pick up quests (level 29.9)
+  accept 539
+
+step Objectives: Elixir of Agony (level 29.9)
+  complete 509
+
+step Objectives: Battle of Hillsbrad (level 29.9)
+  complete 539
+
+step Objectives: Dangerous! (level 29.9)
+  complete 567
+
+step Objectives: Dangerous! (level 29.9)
+  complete 567
+
+step Objectives: Dangerous! (level 29.9)
+  complete 567
+
+step Objectives: Dangerous! (level 29.9)
+  complete 567
+
+step Hearth (level 29.9)
+  hearth "Tarren Mill"
+
+step Turn in (level 30.0)
+  turnin 509
+  accept 513
+
+step Turn in (level 30.0)
+  turnin 539
+  turnin 567
+
+step Pick up: The Grave Knight (City of Dalaran)
+  accept 96986 optional map 1424 @62.63,20.65

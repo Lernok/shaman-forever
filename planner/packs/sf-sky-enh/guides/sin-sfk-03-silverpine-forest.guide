@@ -1,0 +1,166 @@
+guide sf-sky-enh/sin-sfk-03-silverpine-forest
+title 03 · Silverpine Forest (15-18)
+faction Horde
+race Skyborne
+levels 15-18
+zone Silverpine Forest
+folder Shaman: Forever · Skyborne Mejora · sin SFK
+next sf-sky-enh/sin-sfk-04-undercity
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 15.3)
+  accept 95981
+
+step Pick up quests (level 15.3)
+  accept 98298
+  accept 98299
+
+step Pick up quests (level 15.8)
+  accept 460
+
+step Turn in (level 15.8)
+  turnin 460
+  accept 461
+
+step Turn in (level 15.8)
+  turnin 461
+  accept 491
+
+step Objectives: Watching the Roads (level 15.9)
+  complete 95981
+
+step Objectives: Watching the Roads (level 16.0)
+  complete 95981
+
+step Objectives: Stop the Spread (level 16.1)
+  complete 98299
+
+step Objectives: Arugal's Folly (level 16.2)
+  complete 98298
+
+step Hearth (level 16.2)
+  hearth "The Sepulcher"
+
+step Turn in (level 16.3)
+  turnin 95981
+
+step Turn in (level 16.4)
+  turnin 98298
+  turnin 98299
+
+step Pick up quests (level 16.5)
+  accept 477
+
+step Pick up quests (level 16.5)
+  accept 428
+  accept 437
+
+step Pick up quests (level 16.5)
+  accept 447
+  accept 91921
+
+step Objectives: A Recipe For Death (level 16.5)
+  complete 447
+
+step Turn in (level 16.5)
+  turnin 477
+  accept 478
+
+step Turn in (level 16.6)
+  turnin 478
+  accept 481
+
+step Turn in (level 16.6)
+  turnin 481
+  accept 482
+
+step Turn in (level 16.6)
+  turnin 482
+  accept 479
+
+step Objectives: The Dead Fields (level 16.6)
+  complete 437
+
+step Turn in (level 16.6)
+  turnin 428
+  accept 429
+
+step Turn in (level 16.7)
+  turnin 91921
+  accept 91920
+
+step Pick up quests (level 16.7)
+  accept 435
+
+step Objectives: Wild Hearts (level 16.7)
+  complete 429
+
+step Objectives: Escorting Erland (level 16.7)
+  complete 435
+
+step Turn in (level 16.8)
+  turnin 435
+  accept 449
+
+step Objectives: Wild Eyes (level 16.8)
+  complete 91920
+
+step Objectives: Ambermill Investigations (level 16.9)
+  complete 479
+
+step Turn in (level 17.0)
+  turnin 479
+
+step Turn in (level 17.0)
+  turnin 437
+  turnin 449
+  accept 438
+  accept 3221
+
+step Turn in (level 17.1)
+  turnin 429
+  turnin 3221
+  turnin 91920
+  accept 430
+  accept 1359
+
+step Turn in (level 17.2)
+  turnin 438
+  accept 439
+
+step Turn in (level 17.2)
+  turnin 439
+  accept 440
+  accept 443
+
+step Objectives: A Recipe For Death (level 17.2)
+  complete 447
+
+step Turn in (level 17.2)
+  turnin 430
+
+step Pick up quests (level 17.2)
+  accept 425
+
+step Objectives: Ivar the Foul (level 17.2)
+  complete 425
+
+step Turn in (level 17.3)
+  turnin 425
+
+step Objectives: Rot Hide Ichor (level 17.5)
+  complete 443
+
+step Hearth (level 17.5)
+  hearth "The Sepulcher"
+
+step Turn in (level 17.5)
+  turnin 443
+  accept 444
+
+step Flight path (level 17.5)
+  getfp "Undercity"
+
+step Hearthstone (level 17.5)
+  sethome "Undercity"

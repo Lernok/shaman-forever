@@ -1,0 +1,89 @@
+guide sf-tauren-enh/sin-wc-29-arathi-highlands
+title 29 · Arathi Highlands (31-33)
+faction Horde
+race Tauren
+levels 31-33
+zone Arathi Highlands
+folder Shaman: Forever · Tauren Mejora · sin WC
+next sf-tauren-enh/sin-wc-30-stranglethorn-vale
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 35.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 31.8)
+  accept 655
+
+step Pick up quests (level 31.8)
+  accept 677
+
+step Turn in (level 31.8)
+  turnin 655
+  accept 671
+  accept 672
+
+step Objectives: Raising Spirits (level 31.9)
+  complete 672
+
+step Pick up quests (level 31.9)
+  accept 8263
+  turnin 8263
+
+step Turn in (level 32.0)
+  turnin 672
+  accept 674
+
+step Turn in (level 32.0)
+  turnin 674
+  accept 675
+
+step Turn in (level 32.0)
+  turnin 675
+
+step Objectives: Call to Arms (level 32.0)
+  complete 677
+
+step Pick up quests (level 32.0)
+  accept 701
+
+step Objectives: Call to Arms (level 32.0)
+  complete 677
+
+step Objectives: Call to Arms (level 32.1)
+  complete 677
+
+step Objectives: Guile of the Raptor (level 32.3)
+  complete 701
+
+step Objectives: The Hammer May Fall (level 32.3)
+  complete 676
+
+step Objectives: The Hammer May Fall (level 32.3)
+  complete 676
+
+step Objectives: Foul Magics (level 32.4)
+  complete 671
+
+step Turn in (level 32.5)
+  turnin 79975
+  accept 79976
+
+step Turn in (level 32.5)
+  turnin 79976
+
+step Hearth (level 32.5)
+  hearth "Hammerfall"
+
+step Turn in (level 32.6)
+  turnin 676
+  turnin 677
+
+step Turn in (level 32.7)
+  turnin 671
+  turnin 701
+  accept 702
+
+step Turn in (level 32.7)
+  turnin 702
+  accept 847
+
+step Turn in (level 32.8)
+  turnin 847

@@ -1,0 +1,63 @@
+guide sf-dwarf-enh/sin-stockade-07-stormwind-city
+title 07 · Stormwind City (20-21)
+faction Alliance
+race Dwarf
+levels 20-21
+zone Stormwind City
+folder Shaman: Forever · Enano Mejora · sin Stockade
+next sf-dwarf-enh/sin-stockade-08-redridge-mountains
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 20.3)
+  turnin 373 optional map 1453 @57.74,47.86 live
+
+step Turn in (level 20.4)
+  turnin 2040 optional map 1453 @62.63,34.11 live
+
+step Turn in (level 20.5)
+  turnin 168 optional map 1453 @70.31,40.82 live
+  turnin 167 optional map 1453 @70.31,40.82 live
+
+step Flight path (level 20.5)
+  getfp "Stormwind"
+
+step Hearthstone (level 20.5)
+  sethome "Stormwind City"
+
+step Pick up quests (level 20.5)
+  accept 97222
+  turnin 97222
+
+step Pick up quests (level 20.6)
+  accept 399
+
+step Turn in (level 20.6)
+  turnin 1338
+
+step Pick up quests (level 20.6)
+  accept 353
+
+step Pick up quests (level 20.6)
+  accept 97220
+
+step Pick up quests (level 20.6)
+  accept 95065
+
+step Objectives: Fishin' Time (level 20.6)
+  complete 95065
+
+step Turn in (level 20.6)
+  turnin 97220
+
+step Turn in (level 20.6)
+  turnin 95065
+
+step Hearth (level 20.6)
+  hearth "Stormwind City"
+
+step Flight path (level 20.6)
+  getfp "Lakeshire"
+
+step Hearthstone (level 20.6)
+  sethome "Lakeshire"

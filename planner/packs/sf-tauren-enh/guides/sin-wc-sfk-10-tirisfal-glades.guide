@@ -1,0 +1,19 @@
+guide sf-tauren-enh/sin-wc-sfk-10-tirisfal-glades
+title 10 · Tirisfal Glades (18-19)
+faction Horde
+race Tauren
+levels 18-19
+zone Tirisfal Glades
+folder Shaman: Forever · Tauren Mejora · sin WC ni SFK
+next sf-tauren-enh/sin-wc-sfk-11-silverpine-forest
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 18.9)
+  turnin 92422 optional map 1420 @65.23,60.16
+
+step Flight path (level 18.9)
+  getfp "The Sepulcher"
+
+step Hearthstone (level 18.9)
+  sethome "The Sepulcher"

@@ -1,0 +1,37 @@
+guide sf-dwarf-enh/con-rol-16-stranglethorn-vale
+title 16 · Stranglethorn Vale (29-30)
+faction Alliance
+race Dwarf
+levels 29-30
+zone Stranglethorn Vale
+folder Shaman: Forever · Enano Mejora · con Ruins of Lordaeron
+next sf-dwarf-enh/con-rol-17-wetlands
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.1 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 29.3)
+  accept 583
+
+step Turn in (level 29.3)
+  turnin 583
+
+step Pick up quests (level 29.3)
+  accept 190
+
+step Pick up quests (level 29.3)
+  accept 185
+
+step Objectives: Tiger Mastery (level 29.4)
+  complete 185
+
+step Objectives: Panther Mastery (level 29.4)
+  complete 190
+
+step Turn in (level 29.4)
+  turnin 185
+
+step Turn in (level 29.5)
+  turnin 190
+
+step Hearth (level 29.5)
+  hearth "Lakeshire"

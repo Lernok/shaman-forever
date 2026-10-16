@@ -1,0 +1,24 @@
+guide sf-tauren-enh/sin-sfk-21-alterac-mountains
+title 21 · Alterac Mountains (30-31)
+faction Horde
+race Tauren
+levels 30-31
+zone Alterac Mountains
+folder Shaman: Forever · Tauren Mejora · sin SFK
+next sf-tauren-enh/sin-sfk-22-undercity
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.7 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 30.0)
+  accept 96987 optional map 1416 @8.5,59.3 live
+
+step Dungeon: City of Dalaran (level 30)
+  zone map 1416
+  goto 8.5,59.3 "City of Dalaran" r 30 live
+  tip Find a group and clear City of Dalaran, with its quests from this route in your log.
+
+step Turn in (level 30.4)
+  turnin 96987 optional map 1416 @8.5,59.3 live
+
+step Hearth (level 30.4)
+  hearth "Undercity"

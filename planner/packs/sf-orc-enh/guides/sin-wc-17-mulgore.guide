@@ -1,0 +1,47 @@
+guide sf-orc-enh/sin-wc-17-mulgore
+title 17 · Mulgore (28-29)
+faction Horde
+race Orc, Troll
+levels 28-29
+zone Mulgore
+folder Shaman: Forever · Orco y Troll Mejora · sin WC
+next sf-orc-enh/sin-wc-18-thousand-needles
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.6 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 28.0)
+  accept 96241
+
+step Pick up quests (level 28.0)
+  accept 96259
+
+step Pick up quests (level 28.0)
+  accept 96260
+
+step Objectives: Stronger than Steel (level 28.0)
+  complete 96260
+
+step Pick up quests (level 28.0)
+  accept 96294
+
+step Objectives: Talkin' bout Toxins, Mon (level 28.1)
+  complete 96241
+
+step Objectives: Defending the Dead (level 28.1)
+  complete 96259
+
+step Turn in (level 28.2)
+  turnin 96260
+
+step Turn in (level 28.3)
+  turnin 96241
+
+step Turn in (level 28.3)
+  turnin 96259
+  turnin 96294
+
+step Flight path (level 28.4)
+  getfp "Freewind Post"
+
+step Hearthstone (level 28.4)
+  sethome "Freewind Post"

@@ -1,0 +1,380 @@
+guide sf-tauren-enh/sin-wc-01-mulgore
+title 01 · Mulgore (1-13)
+faction Horde
+race Tauren
+levels 1-13
+zone Mulgore
+folder Shaman: Forever · Tauren Mejora · sin WC
+next sf-tauren-enh/sin-wc-02-thunder-bluff
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 35.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 1.0)
+  accept 747
+
+step Pick up quests (level 1.0)
+  accept 752
+
+step Objectives: The Hunt Begins (level 2.7)
+  complete 747
+
+step Turn in (level 2.8)
+  turnin 747
+  accept 750
+  accept 3093
+
+step Turn in (level 2.9)
+  turnin 3093
+
+step Turn in (level 3.0)
+  turnin 752
+
+step Pick up quests (level 3.0)
+  accept 3376
+
+step Pick up quests (level 3.0)
+  accept 753
+
+step Objectives: A Humble Task (level 3.0)
+  complete 753
+
+step Turn in (level 3.2)
+  turnin 753
+  accept 755
+
+step Pick up quests (level 3.2)
+  accept 1656
+
+step Objectives: The Hunt Continues (level 3.7)
+  complete 750
+
+step Turn in (level 3.9)
+  turnin 755
+  accept 95805
+  accept 757
+
+step Turn in (level 4.1)
+  turnin 750
+
+step Pick up quests (level 4.1)
+  accept 1519
+
+step Pick up quests (level 4.1)
+  accept 780
+
+step Objectives: The Battleboars (level 4.7)
+  complete 780
+
+step Objectives: Rite of Strength (level 5.1)
+  complete 757
+
+step Objectives: Break Sharptusk! (level 5.2)
+  complete 3376
+
+step Objectives: Call of Earth (level 5.2)
+  complete 1519
+
+step Pick up quests (level 5.2)
+  accept 781
+
+step Turn in (level 5.3)
+  turnin 95805
+
+step Turn in (level 5.4)
+  turnin 780
+
+step Turn in (level 5.7)
+  turnin 3376
+
+step Turn in (level 5.8)
+  turnin 1519
+  accept 1520
+
+step Turn in (level 5.9)
+  turnin 781
+  turnin 757
+  accept 763
+
+step Turn in (level 6.1)
+  turnin 1520
+  accept 1521
+
+step Turn in (level 6.2)
+  turnin 1521
+
+step Hearthstone (level 6.2)
+  sethome "Bloodhoof Village"
+
+step Turn in (level 6.2)
+  turnin 1656
+
+step Turn in (level 6.3)
+  turnin 763
+
+step Pick up quests (level 6.3)
+  accept 748
+
+step Pick up quests (level 6.3)
+  accept 96130
+
+step Objectives: Poison Water (level 6.5)
+  complete 748
+
+step Objectives: Poison Water (level 6.8)
+  complete 748
+
+step Turn in (level 7.0)
+  turnin 748
+  accept 754
+
+step Objectives: Winterhoof Cleansing (level 7.0)
+  complete 754
+
+step Turn in (level 7.1)
+  turnin 754
+  accept 756
+
+step Objectives: Chakuyak (level 7.1)
+  complete 96130
+
+step Objectives: Thunderhorn Totem (level 7.4)
+  complete 756
+
+step Turn in (level 7.4)
+  turnin 96130
+
+step Objectives: Thunderhorn Totem (level 7.7)
+  complete 756
+
+step Turn in (level 7.8)
+  turnin 756
+
+step Pick up quests (level 7.8)
+  accept 99101
+  accept 99079
+
+step Pick up quests (level 7.8)
+  accept 743
+
+step Pick up quests (level 7.8)
+  accept 745
+  accept 746
+  accept 767
+  accept 99080
+  accept 99082
+  turnin 99101
+
+step Pick up quests (level 7.9)
+  accept 758
+  accept 98435
+
+step Pick up quests (level 7.9)
+  accept 761
+
+step Turn in (level 7.9)
+  turnin 767
+  accept 771
+
+step Pick up quests (level 7.9)
+  accept 766
+
+step Objectives: Mazzranache (level 8.1)
+  complete 766
+
+step Objectives: Mazzranache (level 8.5)
+  complete 766
+
+step Objectives: Thunderhorn Cleansing (level 8.5)
+  complete 758
+
+step Objectives: Rite of Vision (level 8.5)
+  complete 771
+
+step Pick up quests (level 8.5)
+  accept 99411
+
+step Objectives: Rite of Vision (level 8.5)
+  complete 771
+
+step Turn in (level 8.7)
+  turnin 771
+  accept 772
+
+step Turn in (level 8.8)
+  turnin 758
+  accept 759
+
+step Objectives: Kyle's Gone Missing! (level 8.8)
+  complete 99411
+
+step Pick up quests (level 8.8)
+  accept 99108
+  turnin 99108
+
+step Pick up quests (level 8.9)
+  accept 96605
+
+step Objectives: The Great Outdoors (level 8.9)
+  complete 96605
+
+step Turn in (level 9.0)
+  turnin 96605
+  accept 96661
+
+step Objectives: Camping 101: Cooking (level 9.0)
+  complete 96661
+  turnin 96661
+
+step Turn in (level 9.2)
+  turnin 99411
+
+step Objectives: Swoop Hunting (level 9.3)
+  complete 761
+
+step Pick up quests (level 9.3)
+  accept 749
+
+step Turn in (level 9.3)
+  turnin 99079
+  accept 99081
+
+step Objectives: Wildmane Totem (level 9.6)
+  complete 759
+
+step Objectives: Drive Them Out (level 9.7)
+  complete 99080
+
+step Objectives: Drive Them Out (level 9.8)
+  complete 99080
+
+step Pick up quests (level 9.8)
+  accept 98424
+
+step Objectives: Fizsprocket's Notes (level 9.8)
+  complete 98424
+
+step Objectives: Fizsprocket's Notes (level 9.8)
+  complete 98424
+
+step Turn in (level 9.9)
+  turnin 749
+  accept 751
+
+step Turn in (level 10.0)
+  turnin 761
+
+step Pick up quests (level 10.0)
+  accept 861
+
+step Objectives: The Hunter's Way (level 10.1)
+  complete 861
+
+step Hearth (level 10.1)
+  hearth "Bloodhoof Village"
+
+step Pick up quests (level 10.1)
+  accept 2984
+
+step Turn in (level 10.2)
+  turnin 759
+  accept 760
+
+step Turn in (level 10.3)
+  turnin 99080
+
+step Turn in (level 10.4)
+  turnin 99081
+
+step Objectives: Sharing the Land (level 10.5)
+  complete 745
+
+step Objectives: Mazzranache (level 10.5)
+  complete 766
+
+step Pick up quests (level 10.5)
+  accept 96659
+
+step Turn in (level 10.5)
+  turnin 96659
+
+step Turn in (level 10.6)
+  turnin 766
+
+step Turn in (level 10.7)
+  turnin 751
+  turnin 98424
+  accept 764
+  accept 765
+
+step Objectives: The Venture Co. (level 10.9)
+  complete 764
+
+step Objectives: Supervisor Fizsprocket (level 11.0)
+  complete 765
+
+step Objectives: The Venture Co. (level 11.0)
+  complete 764
+
+step Pick up quests (level 11.0)
+  accept 833
+
+step Objectives: A Sacred Burial (level 11.1)
+  complete 833
+
+step Turn in (level 11.2)
+  turnin 833
+
+step Objectives: Wildmane Cleansing (level 11.2)
+  complete 760
+
+step Turn in (level 11.2)
+  turnin 772
+  accept 773
+
+step Objectives: Dangers of the Windfury (level 11.3)
+  complete 743
+
+step Objectives: Dwarven Digging (level 11.3)
+  complete 746
+
+step Objectives: Sharing the Land (level 11.4)
+  complete 745
+
+step Pick up quests (level 11.4)
+  accept 98430
+
+step Objectives: The Longwalkers (level 11.4)
+  complete 98430
+
+step Turn in (level 11.4)
+  turnin 743
+
+step Turn in (level 11.5)
+  turnin 745
+  turnin 746
+
+step Turn in (level 11.7)
+  turnin 760
+
+step Turn in (level 11.8)
+  turnin 764
+  turnin 765
+
+step Turn in (level 12.0)
+  turnin 773
+  accept 775
+
+step Pick up quests (level 12.0)
+  accept 770
+
+step Hearth (level 12.0)
+  hearth "Bloodhoof Village"
+
+step Turn in (level 12.1)
+  turnin 770
+
+step Flight path (level 12.1)
+  getfp "Thunder Bluff"
+
+step Hearthstone (level 12.1)
+  sethome "Thunder Bluff"

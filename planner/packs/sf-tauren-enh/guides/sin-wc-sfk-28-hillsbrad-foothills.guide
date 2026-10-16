@@ -1,0 +1,24 @@
+guide sf-tauren-enh/sin-wc-sfk-28-hillsbrad-foothills
+title 28 · Hillsbrad Foothills (32-33)
+faction Horde
+race Tauren
+levels 32-33
+zone Hillsbrad Foothills
+folder Shaman: Forever · Tauren Mejora · sin WC ni SFK
+next sf-tauren-enh/sin-wc-sfk-29-stranglethorn-vale
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 32.7)
+  turnin 544 optional map 1424 @61.6,20.85
+  accept 545 optional map 1424 @61.6,20.85
+
+step Turn in (level 32.8)
+  turnin 556
+  accept 557
+
+step Turn in (level 32.8)
+  turnin 553
+
+step Hearth (level 32.8)
+  hearth "Tarren Mill"

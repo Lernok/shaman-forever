@@ -1,0 +1,170 @@
+guide sf-tauren-enh/sin-sfk-13-ashenvale
+title 13 · Ashenvale (25-27)
+faction Horde
+race Tauren
+levels 25-27
+zone Ashenvale
+folder Shaman: Forever · Tauren Mejora · sin SFK
+next sf-tauren-enh/sin-sfk-14-stonetalon-mountains
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.7 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 25.5)
+  accept 6441
+
+step Pick up quests (level 25.5)
+  accept 6571
+
+step Pick up quests (level 25.5)
+  accept 6504
+  complete 6504
+  turnin 6504
+
+step Objectives: Warsong Supplies (level 25.6)
+  complete 6571
+
+step Objectives: Warsong Supplies (level 25.6)
+  complete 6571
+
+step Objectives: Satyr Horns (level 25.8)
+  complete 6441
+
+step Objectives: Warsong Supplies (level 25.9)
+  complete 6571
+
+step Pick up quests (level 25.9)
+  accept 1918
+
+step Hearth (level 25.9)
+  hearth "Splintertree Post"
+
+step Turn in (level 25.9)
+  turnin 6441
+
+step Turn in (level 25.9)
+  turnin 1918
+  accept 824
+
+step Flight path (level 25.9)
+  getfp "Zoram'gar Outpost"
+
+step Turn in (level 26.0)
+  turnin 824
+
+step Pick up quests (level 26.0)
+  accept 216
+
+step Pick up quests (level 26.0)
+  accept 6641
+
+step Pick up quests (level 26.0)
+  accept 6462
+
+step Pick up quests (level 26.0)
+  accept 6563 optional map 1440 @11.56,34.29
+
+step Objectives: Vorsha the Lasher (level 26.0)
+  complete 6641
+
+step Objectives: The Essence of Aku'Mai (level 26.0)
+  complete 6563 optional
+
+step Turn in (level 26.1)
+  turnin 6563 optional map 1440 @11.56,34.29
+
+step Turn in (level 26.1)
+  turnin 6641
+
+step Objectives: Between a Rock and a Thistlefur (level 26.2)
+  complete 216
+
+step Objectives: Between a Rock and a Thistlefur (level 26.2)
+  complete 216
+
+step Objectives: Troll Charm (level 26.2)
+  complete 6462
+
+step Pick up quests (level 26.2)
+  accept 6482
+
+step Objectives: Freedom to Ruul (level 26.2)
+  complete 6482
+
+step Pick up quests (level 26.2)
+  accept 98251
+  accept 98252
+
+step Objectives: Never Coming Back (level 26.2)
+  complete 98251
+
+step Objectives: Never Coming Back (level 26.2)
+  complete 98251
+
+step Turn in (level 26.3)
+  turnin 98252
+
+step Turn in (level 26.3)
+  turnin 98251
+
+step Pick up quests (level 26.3)
+  accept 78132
+  turnin 78132
+  accept 78133
+  turnin 78133
+  accept 78134
+  turnin 78134
+
+step Pick up quests (level 26.5)
+  accept 6544
+
+step Objectives: Torek's Assault (level 26.5)
+  complete 6544
+
+step Pick up quests (level 26.5)
+  accept 6503
+
+step Objectives: Ashenvale Outrunners (level 26.6)
+  complete 6503
+
+step Turn in (level 26.6)
+  turnin 6503
+
+step Turn in (level 26.7)
+  turnin 6544
+
+step Turn in (level 26.7)
+  turnin 6482
+
+step Pick up quests (level 26.7)
+  accept 25
+
+step Objectives: Stonetalon Standstill (level 26.7)
+  complete 25
+
+step Objectives: Stonetalon Standstill (level 26.8)
+  complete 25
+
+step Hearth (level 26.8)
+  hearth "Splintertree Post"
+
+step Turn in (level 26.9)
+  turnin 25
+
+step Turn in (level 26.9)
+  turnin 216
+  accept 6621
+
+step Turn in (level 27.0)
+  turnin 6462
+
+step Objectives: King of the Foulweald (level 27.0)
+  complete 6621
+
+step Turn in (level 27.0)
+  turnin 6621
+
+step Flight path (level 27.0)
+  getfp "Sun Rock Retreat"
+
+step Hearthstone (level 27.0)
+  sethome "Sun Rock Retreat"

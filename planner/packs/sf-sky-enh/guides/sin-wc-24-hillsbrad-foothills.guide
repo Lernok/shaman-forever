@@ -1,0 +1,67 @@
+guide sf-sky-enh/sin-wc-24-hillsbrad-foothills
+title 24 · Hillsbrad Foothills (30-32)
+faction Horde
+race Skyborne
+levels 30-32
+zone Hillsbrad Foothills
+folder Shaman: Forever · Skyborne Mejora · sin WC
+next sf-sky-enh/sin-wc-25-arathi-highlands
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 30.8)
+  turnin 96984 optional map 1424 @61.6,20.85
+
+step Turn in (level 31.0)
+  turnin 96986 optional map 1424 @62.63,20.65
+
+step Pick up quests (level 31.0)
+  accept 533
+  accept 1361
+
+step Pick up quests (level 31.0)
+  accept 552
+
+step Pick up quests (level 31.0)
+  accept 676
+
+step Pick up quests (level 31.0)
+  accept 544 optional map 1424 @61.6,20.85
+  accept 92434 optional map 1424 @61.6,20.85
+  accept 93680 optional map 1424 @61.6,20.85
+  turnin 93680 optional map 1424 @61.6,20.85
+
+step Pick up quests (level 31.1)
+  accept 556
+
+step Pick up quests (level 31.1)
+  accept 535
+
+step Objectives: Infiltration (level 31.1)
+  complete 533
+
+step Objectives: Valik (level 31.1)
+  complete 535
+
+step Turn in (level 31.1)
+  turnin 535
+
+step Turn in (level 31.1)
+  turnin 533
+  accept 503
+
+step Objectives: Helcular's Revenge (level 31.2)
+  complete 552
+
+step Turn in (level 31.3)
+  turnin 552
+  accept 553
+
+step Objectives: Helcular's Revenge (level 31.3)
+  complete 553
+
+step Flight path (level 31.3)
+  getfp "Hammerfall"
+
+step Hearthstone (level 31.3)
+  sethome "Hammerfall"

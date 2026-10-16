@@ -1,0 +1,26 @@
+guide sf-sky-enh/sin-sfk-10-thunder-bluff
+title 10 · Thunder Bluff (24-25)
+faction Horde
+race Skyborne
+levels 24-25
+zone Thunder Bluff
+folder Shaman: Forever · Skyborne Mejora · sin SFK
+next sf-sky-enh/sin-sfk-11-hillsbrad-foothills
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 24.7)
+  accept 744
+
+step Pick up quests (level 24.7)
+  accept 76240
+  turnin 76240
+
+step Pick up quests (level 24.7)
+  accept 264
+
+step Flight path (level 24.7)
+  getfp "Tarren Mill"
+
+step Hearthstone (level 24.7)
+  sethome "Tarren Mill"

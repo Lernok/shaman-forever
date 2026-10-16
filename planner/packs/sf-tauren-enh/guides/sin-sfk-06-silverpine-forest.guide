@@ -1,0 +1,26 @@
+guide sf-tauren-enh/sin-sfk-06-silverpine-forest
+title 06 · Silverpine Forest (17-18)
+faction Horde
+race Tauren
+levels 17-18
+zone Silverpine Forest
+folder Shaman: Forever · Tauren Mejora · sin SFK
+next sf-tauren-enh/sin-sfk-07-undercity
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.7 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 17.1)
+  accept 421
+
+step Objectives: Prove Your Worth (level 17.1)
+  complete 421
+
+step Turn in (level 17.1)
+  turnin 421
+  accept 422
+
+step Objectives: Arugal's Folly (level 17.1)
+  complete 422
+
+step Turn in (level 17.2)
+  turnin 422

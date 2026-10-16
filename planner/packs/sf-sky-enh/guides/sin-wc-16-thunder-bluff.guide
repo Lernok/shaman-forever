@@ -1,0 +1,31 @@
+guide sf-sky-enh/sin-wc-16-thunder-bluff
+title 16 · Thunder Bluff (28-29)
+faction Horde
+race Skyborne
+levels 28-29
+zone Thunder Bluff
+folder Shaman: Forever · Skyborne Mejora · sin WC
+next sf-sky-enh/sin-wc-17-thousand-needles
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 28.4)
+  accept 1529
+
+step Pick up quests (level 28.4)
+  accept 962 optional map 1456 @22.81,20.89
+
+step Flight path (level 28.4)
+  getfp "Thunder Bluff"
+
+step Hearthstone (level 28.4)
+  sethome "Thunder Bluff"
+
+step Pick up quests (level 28.4)
+  accept 742
+
+step Flight path (level 28.4)
+  getfp "Freewind Post"
+
+step Hearthstone (level 28.4)
+  sethome "Freewind Post"

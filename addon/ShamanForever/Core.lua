@@ -336,7 +336,7 @@ local function myProfessions()
   return out
 end
 
-local routeCache
+local routeCache, refresh
 local function polestar()
   local P = rawget(_G, "Polestar")
   return type(P) == "table" and P or nil
@@ -570,7 +570,92 @@ local function nextDungeonTip(info)
   local where = type(nd.guide.title) == "string" and string.format(L().inGuide, nd.guide.title) or nil
   return { key = "n" .. nd.name, icon = "Interface\\Icons\\INV_Misc_Map_01", head = head, src = src,
     gain = (ups > 0 and string.format(L().upgradesN, ups) or L().noUpgrades) .. (where and (" · " .. where) or ""),
-    lines = lines, giver = nd.spot, title = nd.name, order = -1e9, cat = "dungeon", where = D.dcont[nd.name], pinned = true }
+    lines = lines, giver = nd.spot, title = nd.name, order = -1e9, cat = "dungeon", where = D.dcont[nd.name], pinned = true,
+    skip = nd.name }
+end
+
+-- The routes of a pack: its guides "<pack>/<tag>-NN-zone" by tag (the main
+-- route has none; variants like "sin-wc" skip or add dungeons), in order,
+-- with the dungeons each route runs.
+local function routeTag(rest) return rest:match("^(.-)%-?%d%d%-") end
+local function packRoutes(packId)
+  local P = polestar()
+  if not (P and P.Guides and P.Guides.List and P.Guides.Get) then return nil end
+  local ok, list = pcall(P.Guides.List)
+  if not ok or type(list) ~= "table" then return nil end
+  local routes = {}
+  for _, h in ipairs(list) do
+    local id = type(h) == "table" and h.id
+    if type(id) == "string" and id:sub(1, #packId + 1) == packId .. "/" then
+      local rest = id:sub(#packId + 2)
+      local tag, nn = rest:match("^(.-)%-?(%d%d)%-")
+      if nn then
+        local r = routes[tag] or { tag = tag, guides = {}, dungeons = {}, folder = h.folder }
+        routes[tag] = r
+        r.guides[#r.guides + 1] = { id = id, n = tonumber(nn), min = tonumber(h.minLevel), max = tonumber(h.maxLevel), map = tonumber(h.zone) }
+      end
+    end
+  end
+  for _, r in pairs(routes) do
+    table.sort(r.guides, function(a, b) return a.n < b.n end)
+    for _, gh in ipairs(r.guides) do
+      local ok2, g = pcall(P.Guides.Get, gh.id)
+      for _, st in ipairs(ok2 and type(g) == "table" and type(g.steps) == "table" and g.steps or {}) do
+        local dn = type(st) == "table" and stepDungeon(st)
+        if dn then r.dungeons[dn] = true end
+      end
+    end
+  end
+  return routes
+end
+
+-- "Skip this dungeon": the pack's route without it that keeps most of the
+-- rest of yours, opened in Polestar at the guide for your level. Polestar
+-- checks off what you already did; our tips follow the new route.
+function SF.skipDungeon(name)
+  local info, P = routeInfo(), polestar()
+  local gid = info and type(info.guide.id) == "string" and info.guide.id
+  local packId = gid and gid:match("^([^/]+)/")
+  local routes = packId and packRoutes(packId)
+  if not routes or not (P.Engine and P.Engine.SetGuide) then say(L().noRoute) return end
+  local cur = routes[routeTag(gid:sub(#packId + 2)) or ""] or { dungeons = {} }
+  local best, score
+  for _, r in pairs(routes) do
+    if r ~= cur and not r.dungeons[name] then
+      local s = 0
+      for d in pairs(cur.dungeons) do if d ~= name then s = s + (r.dungeons[d] and 2 or -2) end end
+      for d in pairs(r.dungeons) do if not cur.dungeons[d] then s = s - 1 end end
+      if not best or s > score then best, score = r, s end
+    end
+  end
+  if not best then
+    -- No route without it: at its step, Polestar's own skip moves on.
+    if info.now == name and P.Engine.Skip and pcall(P.Engine.Skip) then
+      say(string.format(L().stepSkipped, name))
+      routeCache = nil
+      refresh()
+    else say(string.format(L().noVariant, name)) end
+    return
+  end
+  -- The first guide for your level; one in the zone you're in, if the next
+  -- few guides have it.
+  local lvl, pick = UnitLevel("player"), nil
+  local okMap, z = pcall(function() return C_Map and C_Map.GetBestMapForUnit and C_Map.GetBestMapForUnit("player") end)
+  z = okMap and z or nil
+  local first
+  for i, gh in ipairs(best.guides) do
+    if (gh.max or 99) >= lvl then
+      first = first or i
+      if z and gh.map == z and (gh.min or 0) <= lvl + 1 then pick = gh break end
+      if i - first >= 3 then break end
+    end
+  end
+  pick = pick or best.guides[first or #best.guides]
+  local ok = pick and pcall(P.Engine.SetGuide, pick.id)
+  routeCache = nil
+  if not ok then say(L().noRoute) return end
+  say(string.format(L().routeSwitched, name, best.folder or pick.id))
+  refresh()
 end
 
 -- Where this level's talent point goes, in the spec's leveling order.
@@ -627,6 +712,7 @@ local function rowTooltip(r)
     GameTooltip:AddLine(gt, 0.4, 0.8, 1)
     if tip.giver.x then GameTooltip:AddLine(L().clickArrow, 0.6, 0.6, 0.6) end
   end
+  if tip.skip then GameTooltip:AddLine(L().skipHint, 0.6, 0.6, 0.6) end
   GameTooltip:Show()
 end
 
@@ -793,6 +879,7 @@ end
 
 local function makeRow(i)
   local r = CreateFrame("Button", nil, frame)
+  r:RegisterForClicks("LeftButtonUp", "RightButtonUp")
   r:SetHeight(ROW_H)
   r:SetPoint("TOPLEFT", 10, -TOP - (i - 1) * ROW_H)
   r:SetPoint("RIGHT", frame, "RIGHT", -10, 0)
@@ -846,8 +933,12 @@ local function makeRow(i)
   r:SetScript("OnLeave", function() GameTooltip:Hide() end)
   -- An item from a quest: the step of its chain you're at (as Shift+click on
   -- any item); anything else: who gives it.
-  r:SetScript("OnClick", function(self)
+  r:SetScript("OnClick", function(self, button)
     local tip = self.tip
+    if button == "RightButton" then
+      if tip.skip then SF.skipDungeon(tip.skip) end
+      return
+    end
     if tip.q and SF.markQuest then SF.markQuest(tip.q, tip.item and Api.itemName(tip.item) or tip.title) return end
     if tip.item and SF.markItem and SF.markItem(tip.item) then return end
     waypoint(tip.giver, tip.title or tip.head)
@@ -1168,7 +1259,11 @@ local function currentView()
   local dname = currentDungeon()
   if dname then return string.format(L().inDungeon, dname), dungeonTips(dname) end
   local info = routeInfo()
-  if info and info.now then return string.format(L().routeStep, info.now), dungeonTips(info.nowData or info.now) end
+  if info and info.now then
+    local tips = dungeonTips(info.nowData or info.now)
+    if tips[1] and tips[1].key:sub(1, 1) == "s" then tips[1].skip = info.now end
+    return string.format(L().routeStep, info.now), tips
+  end
   return string.format(L().upcoming, UnitLevel("player")), upcoming()
 end
 
@@ -1183,7 +1278,7 @@ end
 -- Recompute what the window shows (a moment later, once; not in combat),
 -- keeping the tab if it's still the same view.
 local refreshPending
-local function refresh()
+function refresh()
   if refreshPending then return end
   refreshPending = true
   C_Timer.After(0.5, function()
@@ -1740,6 +1835,10 @@ SlashCmdList.SHAMANFOREVER = function(msg)
     cdb.mmHide = not cdb.mmHide
     makeMinimapButton()
     if mmButton then mmButton:SetShown(not cdb.mmHide) end
+  elseif cmd == "saltear" or cmd == "skip" then
+    local info = routeInfo()
+    local nd = info and (info.now or (info.dungeons[1] and info.dungeons[1].name))
+    if nd then SF.skipDungeon(nd) else say(L().noRoute) end
   elseif cmd == "dondeestoy" or cmd == "whereami" then
     local name, kind, _, _, _, _, _, id = GetInstanceInfo()
     local map = C_Map and C_Map.GetBestMapForUnit and readable(C_Map.GetBestMapForUnit("player"))

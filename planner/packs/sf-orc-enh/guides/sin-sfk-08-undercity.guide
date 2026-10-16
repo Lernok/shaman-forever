@@ -1,0 +1,25 @@
+guide sf-orc-enh/sin-sfk-08-undercity
+title 08 · Undercity (17-19)
+faction Horde
+race Orc, Troll
+levels 17-19
+zone Undercity
+folder Shaman: Forever · Orco y Troll Mejora · sin SFK
+next sf-orc-enh/sin-sfk-09-tirisfal-glades
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 17.7)
+  turnin 95204 optional map 1458 @73.06,32.85
+
+step Turn in (level 17.9)
+  turnin 97288 optional map 1458 @48.82,69.28
+
+step Turn in (level 18.2)
+  turnin 95216 optional map 1458 @46.31,71.91
+
+step Turn in (level 18.4)
+  turnin 92421 optional map 1458 @57.73,89.55
+
+step Hearth (level 18.4)
+  hearth "Undercity"

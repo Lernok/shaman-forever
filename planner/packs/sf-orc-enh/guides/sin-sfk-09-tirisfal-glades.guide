@@ -1,0 +1,19 @@
+guide sf-orc-enh/sin-sfk-09-tirisfal-glades
+title 09 · Tirisfal Glades (18-19)
+faction Horde
+race Orc, Troll
+levels 18-19
+zone Tirisfal Glades
+folder Shaman: Forever · Orco y Troll Mejora · sin SFK
+next sf-orc-enh/sin-sfk-10-the-barrens
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 18.7)
+  turnin 92422 optional map 1420 @65.23,60.16
+
+step Flight path (level 18.7)
+  getfp "Ratchet"
+
+step Hearthstone (level 18.7)
+  sethome "Ratchet"

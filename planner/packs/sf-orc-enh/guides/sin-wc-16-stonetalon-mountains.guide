@@ -1,0 +1,76 @@
+guide sf-orc-enh/sin-wc-16-stonetalon-mountains
+title 16 · Stonetalon Mountains (27-28)
+faction Horde
+race Orc, Troll
+levels 27-28
+zone Stonetalon Mountains
+folder Shaman: Forever · Orco y Troll Mejora · sin WC
+next sf-orc-enh/sin-wc-17-mulgore
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.6 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 27.5)
+  accept 1087
+
+step Pick up quests (level 27.5)
+  accept 6393
+  accept 6562 optional map 1442 @47.36,64.25
+
+step Pick up quests (level 27.5)
+  accept 6301
+
+step Turn in (level 27.6)
+  turnin 79192
+  accept 79980
+
+step Turn in (level 27.6)
+  turnin 79980
+
+step Objectives: Cycle of Rebirth (level 27.6)
+  complete 6301
+
+step Turn in (level 27.6)
+  turnin 6301
+  accept 6381
+
+step Turn in (level 27.6)
+  turnin 1483
+  accept 1093
+
+step Objectives: Super Reaper 6000 (level 27.6)
+  complete 1093
+
+step Pick up quests (level 27.6)
+  accept 1090
+  complete 1090
+  turnin 1090
+  accept 1092
+
+step Turn in (level 27.7)
+  turnin 1092
+  turnin 1093
+  accept 1094
+
+step Objectives: Cenarius' Legacy (level 27.8)
+  complete 1087
+
+step Objectives: Cenarius' Legacy (level 27.8)
+  complete 1087
+
+step Hearth (level 27.8)
+  hearth "Sun Rock Retreat"
+
+step Objectives: Elemental War (level 27.8)
+  complete 6393
+
+step Objectives: New Life (level 27.8)
+  complete 6381
+
+step Turn in (level 27.9)
+  turnin 1087
+
+step Turn in (level 27.9)
+  turnin 6381
+
+step Turn in (level 28.0)
+  turnin 6393

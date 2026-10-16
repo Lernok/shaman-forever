@@ -1,0 +1,82 @@
+guide sf-dwarf-enh/sin-stockade-08-redridge-mountains
+title 08 · Redridge Mountains (20-22)
+faction Alliance
+race Dwarf
+levels 20-22
+zone Redridge Mountains
+folder Shaman: Forever · Enano Mejora · sin Stockade
+next sf-dwarf-enh/sin-stockade-09-duskwood
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 20.6)
+  accept 150
+
+step Pick up quests (level 20.6)
+  accept 118
+
+step Pick up quests (level 20.6)
+  accept 125
+
+step Pick up quests (level 20.6)
+  accept 98407
+
+step Objectives: The Lost Tools (level 20.6)
+  complete 125
+
+step Objectives: Murloc Poachers (level 20.8)
+  complete 150
+
+step Turn in (level 20.8)
+  turnin 125
+  accept 89
+
+step Turn in (level 20.9)
+  turnin 150
+
+step Pick up quests (level 20.9)
+  accept 92
+
+step Objectives: The Everstill Bridge (level 21.0)
+  complete 89
+
+step Objectives: Redridge Goulash (level 21.0)
+  complete 92
+
+step Objectives: Show of Force (level 21.0)
+  complete 98407
+
+step Pick up quests (level 21.0)
+  accept 244
+
+step Turn in (level 21.1)
+  turnin 244
+  turnin 98407
+  accept 246
+
+step Turn in (level 21.2)
+  turnin 89
+
+step Objectives: Assessing the Threat (level 21.2)
+  complete 246
+
+step Objectives: Assessing the Threat (level 21.2)
+  complete 246
+
+step Turn in (level 21.2)
+  turnin 246
+
+step Objectives: Redridge Goulash (level 21.3)
+  complete 92
+
+step Objectives: Redridge Goulash (level 21.4)
+  complete 92
+
+step Turn in (level 21.4)
+  turnin 92
+
+step Flight path (level 21.4)
+  getfp "Darkshire"
+
+step Hearthstone (level 21.4)
+  sethome "Darkshire"

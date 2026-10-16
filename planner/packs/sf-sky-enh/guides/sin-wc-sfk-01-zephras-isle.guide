@@ -1,0 +1,616 @@
+guide sf-sky-enh/sin-wc-sfk-01-zephras-isle
+title 01 · Zephras Isle (1-15)
+faction Horde
+race Skyborne
+levels 1-15
+zone Zephras Isle
+folder Shaman: Forever · Skyborne Mejora · sin WC ni SFK
+next sf-sky-enh/sin-wc-sfk-02-orgrimmar
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 34.4 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 1.0)
+  accept 92460
+
+step Turn in (level 1.1)
+  turnin 92460
+  accept 92461
+
+step Pick up quests (level 1.1)
+  accept 92462
+
+step Objectives: Harmony in Balance (level 2.1)
+  complete 92461
+
+step Pick up quests (level 2.1)
+  accept 92464
+
+step Pick up quests (level 2.1)
+  accept 92598
+
+step Pick up quests (level 2.1)
+  accept 92474
+
+step Pick up quests (level 2.1)
+  accept 94414
+  complete 94414
+  turnin 94414
+
+step Turn in (level 2.3)
+  turnin 92474
+  turnin 92461
+  accept 92484
+
+step Turn in (level 2.4)
+  turnin 92484
+
+step Pick up quests (level 2.4)
+  accept 93552
+
+step Objectives: Harvesting Windstones (level 2.4)
+  complete 93552
+
+step Turn in (level 2.8)
+  turnin 93552
+
+step Turn in (level 2.9)
+  turnin 92464
+  accept 92465
+
+step Objectives: The Gift of Skysight (level 2.9)
+  complete 92598
+
+step Objectives: Agitators (level 3.5)
+  complete 92465
+
+step Pick up quests (level 3.5)
+  accept 92466
+
+step Objectives: Call of Earth (level 3.6)
+  complete 92466
+
+step Turn in (level 3.7)
+  turnin 92465
+  accept 92469
+
+step Objectives: Infestation Investigation (level 4.0)
+  complete 92462
+
+step Turn in (level 4.1)
+  turnin 92462
+
+step Pick up quests (level 4.1)
+  accept 92471
+
+step Turn in (level 4.1)
+  turnin 92471
+  accept 92470
+
+step Pick up quests (level 4.1)
+  accept 92473
+
+step Objectives: Aggressive Encroachment (level 4.4)
+  complete 92473
+
+step Turn in (level 4.6)
+  turnin 92473
+
+step Pick up quests (level 4.6)
+  accept 92463
+
+step Turn in (level 4.7)
+  turnin 92598
+
+step Turn in (level 4.9)
+  turnin 92466
+  accept 92467
+
+step Turn in (level 4.9)
+  turnin 92469
+
+step Pick up quests (level 4.9)
+  accept 92544
+
+step Objectives: Al'Aketh Thugs (level 5.2)
+  complete 92544
+
+step Turn in (level 5.3)
+  turnin 92544
+
+step Objectives: Foul Matriarch (level 5.4)
+  complete 92470
+
+step Objectives: Foul Matriarch (level 5.5)
+  complete 92470
+
+step Turn in (level 5.7)
+  turnin 92470
+  accept 92472
+  accept 96638
+
+step Objectives: The Cirrusfly Queen (level 5.7)
+  complete 92463
+
+step Turn in (level 5.8)
+  turnin 92467
+  accept 92468
+
+step Turn in (level 5.9)
+  turnin 92468
+
+step Turn in (level 6.0)
+  turnin 92463
+
+step Turn in (level 6.1)
+  turnin 96638
+
+step Turn in (level 6.2)
+  turnin 92472
+
+step Pick up quests (level 6.2)
+  accept 92595
+  complete 92595
+  turnin 92595
+  accept 94411
+
+step Pick up quests (level 6.4)
+  accept 96101
+
+step Objectives: The Great Outdoors (level 6.4)
+  complete 96101
+
+step Turn in (level 6.5)
+  turnin 96101
+  accept 96646
+
+step Objectives: Camping 101: Cooking (level 6.5)
+  complete 96646
+  turnin 96646
+
+step Pick up quests (level 6.7)
+  accept 92514
+
+step Objectives: Welcome to Shen'dar Village (level 6.7)
+  complete 92514
+
+step Turn in (level 6.7)
+  turnin 92514
+  accept 92517
+
+step Pick up quests (level 6.7)
+  accept 92516
+  accept 93319
+
+step Pick up quests (level 6.7)
+  accept 92515
+
+step Pick up quests (level 6.7)
+  accept 93951
+
+step Objectives: The Problem With Prideclaws (level 7.0)
+  complete 92515
+
+step Turn in (level 7.2)
+  turnin 92515
+
+step Pick up quests (level 7.2)
+  accept 92553
+
+step Objectives: Restocking the Larders (level 7.7)
+  complete 92553
+
+step Turn in (level 7.8)
+  turnin 92553
+
+step Objectives: Meddlesome Mages (level 7.9)
+  complete 94411
+
+step Objectives: The Criminal Element (level 8.1)
+  complete 92517
+  complete 93319
+
+step Objectives: The Criminal Element (level 8.3)
+  complete 92517
+
+step Turn in (level 8.4)
+  turnin 92517
+  accept 93036
+
+step Turn in (level 8.4)
+  turnin 93036
+  accept 92529
+
+step Objectives: Hippogryph Harrassment (level 8.5)
+  complete 92516
+
+step Objectives: Hippogryph Harrassment (level 8.6)
+  complete 92516
+
+step Objectives: A Little Beauty (level 8.6)
+  complete 93951
+
+step Turn in (level 8.7)
+  turnin 94411
+
+step Turn in (level 8.8)
+  turnin 93319
+  turnin 92516
+
+step Turn in (level 9.0)
+  turnin 93951
+
+step Turn in (level 9.0)
+  turnin 92529
+  accept 92528
+
+step Objectives: Among the Faithful (level 9.0)
+  complete 92528
+
+step Turn in (level 9.1)
+  turnin 92528
+  accept 92550
+  accept 93926
+
+step Pick up quests (level 9.1)
+  accept 92551
+
+step Objectives: Havoc in the Highlands (level 9.1)
+  complete 92550
+
+step Objectives: Havoc in the Highlands (level 9.1)
+  complete 92550
+
+step Objectives: Havoc in the Highlands (level 9.2)
+  complete 92550
+  complete 92551
+
+step Objectives: The Western Watch (level 9.4)
+  complete 93926
+  turnin 93926
+  accept 93927
+
+step Objectives: A Last Request (level 9.5)
+  complete 93927
+
+step Objectives: A Last Request (level 9.5)
+  complete 93927
+
+step Turn in (level 9.6)
+  turnin 92550
+  turnin 93927
+  accept 92579
+  accept 93948
+
+step Turn in (level 9.7)
+  turnin 92551
+
+step Pick up quests (level 9.7)
+  accept 93317
+
+step Pick up quests (level 9.7)
+  accept 92679
+  complete 92679
+
+step Objectives: Crab Season (level 9.9)
+  complete 93317
+
+step Turn in (level 10.0)
+  turnin 93317
+
+step Turn in (level 10.0)
+  turnin 93948
+
+step Pick up quests (level 10.0)
+  accept 97243
+
+step Turn in (level 10.1)
+  turnin 92579
+  accept 92700
+  accept 93949
+
+step Objectives: Bugged (level 10.1)
+  complete 93949
+
+step Turn in (level 10.2)
+  turnin 93949
+
+step Turn in (level 10.2)
+  turnin 92700
+  accept 92708
+  accept 93735
+  complete 92708
+  turnin 92708
+
+step Pick up quests (level 10.4)
+  accept 93736
+
+step Turn in (level 10.4)
+  turnin 93735
+  accept 93737
+  complete 93737
+
+step Objectives: Unwelcome Spirits (level 10.7)
+  complete 93736
+
+step Objectives: The Broken Construct (level 10.7)
+  complete 93737
+
+step Objectives: The Broken Construct (level 10.7)
+  complete 93737
+
+step Turn in (level 10.8)
+  turnin 93736
+
+step Turn in (level 10.8)
+  turnin 97243
+  accept 97244
+
+step Objectives: Blood Tithe (level 10.8)
+  complete 92679
+  turnin 92679
+  accept 92682
+  accept 92683
+  accept 92684
+
+step Objectives: Ornery Ornery Galestriders (level 11.0)
+  complete 92684
+
+step Pick up quests (level 11.0)
+  accept 92698
+
+step Objectives: Flutterfly Dust (level 11.0)
+  complete 92683
+
+step Objectives: Make Yourself Useful (level 11.1)
+  complete 92682
+
+step Turn in (level 11.1)
+  turnin 92682
+  turnin 92684
+  turnin 92683
+  turnin 92698
+  accept 92685
+
+step Objectives: The Hills Have Eyes (level 11.4)
+  complete 92685
+
+step Objectives: The Broken Construct (level 11.4)
+  complete 93737
+
+step Turn in (level 11.5)
+  turnin 92685
+  accept 92693
+  complete 92693
+
+step Objectives: Standing Our Ground (level 11.5)
+  complete 92693
+
+step Turn in (level 11.5)
+  turnin 92693
+  accept 92703
+
+step Turn in (level 11.6)
+  turnin 93737
+  accept 93738
+
+step Turn in (level 11.7)
+  turnin 92703
+
+step Turn in (level 11.8)
+  turnin 93738
+  accept 93746
+
+step Objectives: Call of Fire (level 11.8)
+  complete 97244
+
+step Objectives: A Firm Response (level 11.8)
+  complete 93746
+
+step Turn in (level 11.9)
+  turnin 93746
+  accept 92871
+  accept 93740
+
+step Turn in (level 11.9)
+  turnin 92871
+  accept 93320
+
+step Objectives: Blood for Blood (level 12.0)
+  complete 93740
+
+step Turn in (level 12.1)
+  turnin 93320
+  accept 92642
+  accept 92645
+
+step Objectives: Disrupting Logistics (level 12.2)
+  complete 92642
+
+step Objectives: Breaking the Breaker (level 12.2)
+  complete 92645
+
+step Turn in (level 12.3)
+  turnin 92642
+  turnin 92645
+
+step Turn in (level 12.5)
+  turnin 93740
+
+step Turn in (level 12.5)
+  turnin 97244
+  accept 97245
+
+step Objectives: Call of Fire (level 12.6)
+  complete 97245
+
+step Turn in (level 12.6)
+  turnin 97245
+  accept 97257
+
+step Objectives: Call of Fire (level 12.6)
+  complete 97257
+
+step Objectives: Call of Fire (level 12.6)
+  complete 97257
+
+step Turn in (level 12.7)
+  turnin 97257
+
+step Pick up quests (level 12.7)
+  accept 94484
+
+step Pick up quests (level 12.7)
+  accept 94896
+  accept 94897
+
+step Pick up quests (level 12.7)
+  accept 92880
+
+step Turn in (level 12.8)
+  turnin 92880
+  accept 92881
+
+step Turn in (level 12.8)
+  turnin 92881
+  accept 92643
+
+step Pick up quests (level 12.8)
+  accept 98512
+
+step Objectives: Al'Aketh Assassins (level 12.9)
+  complete 98512
+
+step Objectives: The Turncoat (level 12.9)
+  complete 92643
+
+step Turn in (level 13.0)
+  turnin 98512
+
+step Turn in (level 13.0)
+  turnin 92643
+  accept 92644
+
+step Pick up quests (level 13.0)
+  accept 93159
+  complete 93159
+  turnin 93159
+  accept 93160
+  accept 93172
+
+step Objectives: The Forest's Bounty (level 13.1)
+  complete 93160
+
+step Objectives: Aid For The Refugees (level 13.1)
+  complete 94896
+
+step Objectives: Free the Hollows (level 13.1)
+  complete 93172
+
+step Objectives: The Fate of a Loved One (level 13.1)
+  complete 94897
+
+step Turn in (level 13.2)
+  turnin 93160
+  turnin 93172
+
+step Turn in (level 13.3)
+  turnin 94484
+  accept 94485
+  accept 94486
+  accept 94487
+
+step Objectives: Unwanted and Unworthy (level 13.3)
+  complete 94487
+
+step Pick up quests (level 13.3)
+  accept 93165
+
+step Objectives: Mercy Falls on Deaf Ears (level 13.3)
+  complete 93165
+
+step Turn in (level 13.4)
+  turnin 93165
+
+step Objectives: Feathers for Binding (level 13.7)
+  complete 94486
+
+step Objectives: Tears of the Lady (level 13.7)
+  complete 94485
+
+step Turn in (level 13.7)
+  turnin 94485
+  turnin 94487
+  turnin 94486
+  accept 94488
+  accept 94489
+
+step Pick up quests (level 13.9)
+  accept 94490
+  complete 94488
+
+step Objectives: The Wounds of Betrayal (level 13.9)
+  complete 94489
+
+step Turn in (level 14.0)
+  turnin 94488
+  turnin 94489
+  turnin 94490
+  accept 94491
+
+step Turn in (level 14.2)
+  turnin 94896
+  turnin 94897
+
+step Turn in (level 14.3)
+  turnin 92644
+  accept 94568
+  complete 94568
+  turnin 94568
+  accept 92640
+
+step Turn in (level 14.3)
+  turnin 94491
+
+step Objectives: Desperate Times (level 14.3)
+  complete 92640
+
+step Objectives: Desperate Times (level 14.3)
+  complete 92640
+  turnin 92640
+  accept 93065
+
+step Objectives: Prepare for Battle (level 14.4)
+  complete 93065
+  turnin 93065
+  accept 92947
+
+step Objectives: Making Our Move (level 14.5)
+  complete 92947
+
+step Objectives: Making Our Move (level 14.5)
+  complete 92947
+
+step Objectives: Making Our Move (level 14.5)
+  complete 92947
+  turnin 92947
+  accept 93958
+
+step Turn in (level 14.7)
+  turnin 93958
+  accept 92646
+
+step Objectives: Confront Lorthuna (level 14.7)
+  complete 92646
+
+step Turn in (level 14.7)
+  turnin 92646
+  accept 93836
+
+step Objectives: The Fate of Zephras (level 14.7)
+  complete 93836
+  turnin 93836
+  accept 93090
+
+step Turn in (level 14.8)
+  turnin 93090
+  accept 95349

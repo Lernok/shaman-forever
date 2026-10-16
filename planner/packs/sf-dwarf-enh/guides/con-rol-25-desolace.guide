@@ -1,0 +1,135 @@
+guide sf-dwarf-enh/con-rol-25-desolace
+title 25 · Desolace (33-35)
+faction Alliance
+race Dwarf
+levels 33-35
+zone Desolace
+folder Shaman: Forever · Enano Mejora · con Ruins of Lordaeron
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.1 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 33.6)
+  accept 1382
+  accept 1385
+
+step Pick up quests (level 33.6)
+  accept 1387
+
+step Pick up quests (level 33.6)
+  accept 1437
+
+step Turn in (level 33.6)
+  turnin 1453
+  accept 1458
+
+step Objectives: Reagents for Reclaimers Inc. (level 33.9)
+  complete 1458
+
+step Turn in (level 33.9)
+  turnin 1458
+  accept 1459
+
+step Objectives: Reagents for Reclaimers Inc. (level 34.0)
+  complete 1459
+
+step Turn in (level 34.0)
+  turnin 1437
+  accept 1465
+
+step Turn in (level 34.0)
+  turnin 1465
+  accept 1438
+
+step Turn in (level 34.1)
+  turnin 1438
+  accept 1439
+
+step Objectives: Search for Tyranis (level 34.1)
+  complete 1439
+
+step Turn in (level 34.1)
+  turnin 1439
+  accept 1440
+
+step Objectives: Return to Vahlarriel (level 34.1)
+  complete 1440
+
+step Objectives: Reagents for Reclaimers Inc. (level 34.1)
+  complete 1459
+
+step Pick up quests (level 34.1)
+  accept 5821
+
+step Objectives: Centaur Bounty (level 34.3)
+  complete 1387
+
+step Objectives: Bodyguard for Hire (level 34.3)
+  complete 5821
+
+step Turn in (level 34.4)
+  turnin 5821
+  accept 5561
+
+step Objectives: Kodo Roundup (level 34.4)
+  complete 5561
+
+step Turn in (level 34.4)
+  turnin 5561
+
+step Turn in (level 34.4)
+  turnin 1385
+  accept 1386
+
+step Objectives: Assault on the Kolkar (level 34.5)
+  complete 1386
+
+step Objectives: Assault on the Kolkar (level 34.5)
+  complete 1386
+
+step Objectives: Assault on the Kolkar (level 34.5)
+  complete 1386
+
+step Turn in (level 34.6)
+  turnin 1386
+  accept 1369
+
+step Hearth (level 34.6)
+  hearth "Nijel's Point"
+
+step Turn in (level 34.6)
+  turnin 1440
+
+step Turn in (level 34.7)
+  turnin 1387
+
+step Turn in (level 34.7)
+  turnin 1459
+
+step Pick up quests (level 34.7)
+  accept 5741
+
+step Objectives: Sceptre of Light (level 34.7)
+  complete 5741
+
+step Turn in (level 34.8)
+  turnin 5741
+
+step Turn in (level 34.8)
+  turnin 1382
+  accept 1384
+
+step Objectives: Broken Tears (level 34.8)
+  complete 1369
+
+step Turn in (level 34.8)
+  turnin 1369
+  accept 1371
+  complete 1371
+  turnin 1371
+  accept 1375
+
+step Objectives: Raid on the Kolkar (level 35.0)
+  complete 1384
+
+step Turn in (level 35.0)
+  turnin 1384

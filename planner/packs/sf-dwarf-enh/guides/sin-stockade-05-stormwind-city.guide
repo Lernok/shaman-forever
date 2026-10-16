@@ -1,0 +1,17 @@
+guide sf-dwarf-enh/sin-stockade-05-stormwind-city
+title 05 · Stormwind City (20-20)
+faction Alliance
+race Dwarf
+levels 20-20
+zone Stormwind City
+folder Shaman: Forever · Enano Mejora · sin Stockade
+next sf-dwarf-enh/sin-stockade-06-westfall
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 20.0)
+  accept 2040 optional map 1453 @62.63,34.11 live
+
+step Pick up quests (level 20.0)
+  accept 167 optional map 1453 @70.31,40.82 live
+  accept 168 optional map 1453 @70.31,40.82 live

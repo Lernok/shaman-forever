@@ -1,0 +1,92 @@
+guide sf-tauren-enh/sin-wc-sfk-11-silverpine-forest
+title 11 · Silverpine Forest (18-21)
+faction Horde
+race Tauren
+levels 18-21
+zone Silverpine Forest
+folder Shaman: Forever · Tauren Mejora · sin WC ni SFK
+next sf-tauren-enh/sin-wc-sfk-12-the-barrens
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 18.9)
+  accept 95981
+
+step Pick up quests (level 18.9)
+  accept 98298
+  accept 98299
+
+step Pick up quests (level 19.2)
+  accept 460
+
+step Pick up quests (level 19.2)
+  accept 493
+
+step Turn in (level 19.2)
+  turnin 460
+  accept 461
+
+step Turn in (level 19.2)
+  turnin 461
+  accept 491
+
+step Objectives: Watching the Roads (level 19.3)
+  complete 95981
+
+step Objectives: Watching the Roads (level 19.4)
+  complete 95981
+
+step Objectives: Stop the Spread (level 19.4)
+  complete 98299
+
+step Objectives: Arugal's Folly (level 19.5)
+  complete 98298
+
+step Hearth (level 19.5)
+  hearth "The Sepulcher"
+
+step Turn in (level 19.5)
+  turnin 95981
+
+step Turn in (level 19.6)
+  turnin 98298
+  turnin 98299
+
+step Pick up quests (level 19.7)
+  accept 92401 optional map 1421 @44.54,42.96
+
+step Pick up quests (level 19.7)
+  accept 516
+
+step Objectives: Beren's Peril (level 19.8)
+  complete 516
+
+step Turn in (level 19.8)
+  turnin 516
+
+step Grind to 20 (13 min)
+  level 20 -- grind on Ravenclaw Guardian (level 21) at Beren's Peril, Silverpine Forest 57.4,70.9
+
+step Pick up quests (level 20.0)
+  accept 95883
+  accept 95885
+
+step Objectives: The Offering of Blood (level 20.0)
+  complete 95885
+
+step Objectives: The Tortured Soul (level 20.0)
+  complete 95883
+
+step Turn in (level 20.1)
+  turnin 95883
+  turnin 95885
+
+step Pick up quests (level 20.2)
+  accept 95884
+  complete 95884
+
+step Turn in (level 20.2)
+  turnin 95884
+
+step Hearthstone (level 20.2)
+  sethome "Ratchet"

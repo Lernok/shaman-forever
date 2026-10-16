@@ -92,6 +92,14 @@ Comparaciones (experiments.sh): Horda + RFK 36,6 h, + SM GY 35,9, sin WC 35,6
 Gnomeregan 33,5, con RoL+SFK+Stockade 34,9, la anterior (RoL, SFK, sin
 Stockade) 34,0.
 
+Variantes en el mismo pack (`planner/routes-variants.sh`, después de
+routes-final.sh): las dungeons que más se saltean según guías y foros (WC y
+SFK para la Horda; para la Alianza se suma la opción con Ruins of Lordaeron,
+que los testers dicen que vale el viaje, y sin Stockade). Horas hasta 35:
+Tauren sin WC 35,8 · sin SFK 36,7 · sin ambas 36,0; Orco/Troll 36,6 · 36,3 ·
+35,8; Skyborne 35,0 · 35,2 · 34,4; Enano con RoL 34,1 · sin Stockade 32,3.
+Diferencias de menos de ~0,5 h son ruido de la búsqueda.
+
 ### Polestar 0.2.4
 
 El parche aplica limpio sobre `v0.2.4` (probado el 2026-10-16). Con la 0.2.4 hay

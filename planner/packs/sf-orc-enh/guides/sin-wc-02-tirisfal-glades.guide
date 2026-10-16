@@ -1,0 +1,87 @@
+guide sf-orc-enh/sin-wc-02-tirisfal-glades
+title 02 · Tirisfal Glades (11-13)
+faction Horde
+race Orc, Troll
+levels 11-13
+zone Tirisfal Glades
+folder Shaman: Forever · Orco y Troll Mejora · sin WC
+next sf-orc-enh/sin-wc-03-orgrimmar
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.6 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 11.1)
+  accept 97558
+
+step Pick up quests (level 11.1)
+  accept 356
+
+step Pick up quests (level 11.1)
+  accept 96897
+  accept 96898
+  accept 96899
+
+step Objectives: The Cult of the Damned (level 11.1)
+  complete 96897
+
+step Objectives: Hides for the Forsaken (level 11.2)
+  complete 97558
+
+step Hearthstone (level 11.2)
+  sethome "Gallows' End Tavern"
+
+step Pick up quests (level 11.2)
+  accept 96895
+
+step Pick up quests (level 11.2)
+  accept 354
+
+step Pick up quests (level 11.2)
+  accept 99142
+
+step Objectives: Deaths in the Family (level 11.2)
+  complete 354
+
+step Objectives: Deaths in the Family (level 11.2)
+  complete 354
+
+step Objectives: Deaths in the Family (level 11.2)
+  complete 354
+
+step Objectives: Hides for the Forsaken (level 11.2)
+  complete 97558
+
+step Turn in (level 11.3)
+  turnin 354
+
+step Objectives: Tomb Weed (level 11.3)
+  complete 99142
+
+step Objectives: Rear Guard Patrol (level 11.5)
+  complete 356
+
+step Objectives: The Cult of the Damned (level 11.7)
+  complete 96897
+  complete 96898
+
+step Turn in (level 12.0)
+  turnin 96895
+  turnin 96898
+  turnin 96897
+
+step Turn in (level 12.3)
+  turnin 356
+
+step Turn in (level 12.3)
+  turnin 97558
+
+step Turn in (level 12.4)
+  turnin 99142
+
+step Turn in (level 12.5)
+  turnin 96899
+  accept 96896
+  turnin 96896
+  accept 98545
+
+step Hearth (level 12.5)
+  hearth "Gallows' End Tavern"

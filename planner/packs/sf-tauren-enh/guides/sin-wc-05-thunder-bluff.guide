@@ -1,0 +1,16 @@
+guide sf-tauren-enh/sin-wc-05-thunder-bluff
+title 05 · Thunder Bluff (13-14)
+faction Horde
+race Tauren
+levels 13-14
+zone Thunder Bluff
+folder Shaman: Forever · Tauren Mejora · sin WC
+next sf-tauren-enh/sin-wc-06-the-barrens
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 35.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 13.7)
+  turnin 5723 optional map 1456 @70.14,29.52
+
+step Hearthstone (level 13.7)
+  sethome "The Crossroads"

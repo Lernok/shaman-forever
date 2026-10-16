@@ -1,0 +1,16 @@
+guide sf-dwarf-enh/sin-stockade-13-redridge-mountains
+title 13 · Redridge Mountains (28-29)
+faction Alliance
+race Dwarf
+levels 28-29
+zone Redridge Mountains
+folder Shaman: Forever · Enano Mejora · sin Stockade
+next sf-dwarf-enh/sin-stockade-14-duskwood
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 28.7)
+  turnin 95795 optional map 1433 @25.79,46.44 live
+
+step Hearthstone (level 28.7)
+  sethome "Darkshire"

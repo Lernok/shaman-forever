@@ -1,0 +1,32 @@
+guide sf-orc-enh/sin-wc-sfk-10-undercity
+title 10 · Undercity (19-20)
+faction Horde
+race Orc, Troll
+levels 19-20
+zone Undercity
+folder Shaman: Forever · Orco y Troll Mejora · sin WC ni SFK
+next sf-orc-enh/sin-wc-sfk-11-silverpine-forest
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 19.4)
+  accept 97289
+
+step Turn in (level 19.4)
+  turnin 97289
+  accept 97290
+
+step Turn in (level 19.5)
+  turnin 97290
+  accept 97291
+
+step Objectives: Unending Torment (level 19.5)
+  complete 97291
+
+step Turn in (level 19.6)
+  turnin 97291
+  accept 97292
+  turnin 97292
+
+step Hearthstone (level 19.7)
+  sethome "The Sepulcher"

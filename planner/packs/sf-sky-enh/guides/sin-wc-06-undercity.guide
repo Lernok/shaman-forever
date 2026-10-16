@@ -1,0 +1,28 @@
+guide sf-sky-enh/sin-wc-06-undercity
+title 06 · Undercity (18-20)
+faction Horde
+race Skyborne
+levels 18-20
+zone Undercity
+folder Shaman: Forever · Skyborne Mejora · sin WC
+next sf-sky-enh/sin-wc-07-tirisfal-glades
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 18.7)
+  turnin 95204 optional map 1458 @73.06,32.85
+
+step Turn in (level 18.9)
+  turnin 97288 optional map 1458 @48.82,69.28
+
+step Turn in (level 19.2)
+  turnin 95216 optional map 1458 @46.31,71.91
+
+step Turn in (level 19.4)
+  turnin 92421 optional map 1458 @57.73,89.55
+
+step Hearth (level 19.4)
+  hearth "Undercity"
+
+step Pick up: The Book of Ur (Shadowfang Keep)
+  accept 1013 optional map 1458 @53.74,54.46

@@ -1,0 +1,104 @@
+guide sf-sky-enh/sin-wc-27-desolace
+title 27 · Desolace (34-35)
+faction Horde
+race Skyborne
+levels 34-35
+zone Desolace
+folder Shaman: Forever · Skyborne Mejora · sin WC
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 34.3)
+  accept 5561
+
+step Pick up quests (level 34.3)
+  accept 1367
+  accept 1368
+
+step Pick up quests (level 34.3)
+  accept 1365
+
+step Objectives: Kodo Roundup (level 34.3)
+  complete 5561
+
+step Turn in (level 34.3)
+  turnin 5561
+
+step Turn in (level 34.3)
+  turnin 1367
+  accept 1369
+
+step Objectives: Khan Dez'hepah (level 34.3)
+  complete 1365
+
+step Pick up quests (level 34.3)
+  accept 5821
+
+step Pick up quests (level 34.4)
+  accept 1480
+
+step Turn in (level 34.4)
+  turnin 1480
+  accept 1481
+
+step Turn in (level 34.4)
+  turnin 1365
+  accept 1366
+
+step Objectives: Centaur Bounty (level 34.7)
+  complete 1366
+
+step Objectives: Bodyguard for Hire (level 34.7)
+  complete 5821
+
+step Turn in (level 34.8)
+  turnin 5821
+
+step Turn in (level 34.8)
+  turnin 1366
+
+step Turn in (level 34.8)
+  turnin 1368
+  accept 1370
+
+step Objectives: Broken Tears (level 34.8)
+  complete 1369
+
+step Flight path (level 34.8)
+  getfp "Shadowprey Village"
+
+step Hearthstone (level 34.8)
+  sethome "Shadowprey Village"
+
+step Pick up quests (level 34.8)
+  accept 5763
+
+step Pick up quests (level 34.8)
+  accept 6142
+
+step Objectives: Clam Bait (level 34.9)
+  complete 6142
+
+step Pick up quests (level 34.9)
+  accept 5741
+
+step Objectives: Sceptre of Light (level 34.9)
+  complete 5741
+
+step Turn in (level 34.9)
+  turnin 5741
+
+step Hearth (level 34.9)
+  hearth "Shadowprey Village"
+
+step Turn in (level 35.0)
+  turnin 6142
+
+step Objectives: Stealing Supplies (level 35.0)
+  complete 1370
+
+step Turn in (level 35.0)
+  turnin 1369
+  accept 1371
+  complete 1371
+  turnin 1371

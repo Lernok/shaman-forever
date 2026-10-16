@@ -1,0 +1,408 @@
+guide sf-dwarf-enh/sin-stockade-04-darkshore
+title 04 · Darkshore (16-20)
+faction Alliance
+race Dwarf
+levels 16-20
+zone Darkshore
+folder Shaman: Forever · Enano Mejora · sin Stockade
+next sf-dwarf-enh/sin-stockade-05-stormwind-city
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 16.2)
+  accept 4811
+
+step Pick up quests (level 16.2)
+  accept 98025
+
+step Pick up quests (level 16.2)
+  accept 3524
+
+step Pick up quests (level 16.2)
+  accept 1141
+  complete 1141
+  turnin 1141
+
+step Pick up quests (level 16.2)
+  accept 954
+  accept 958
+
+step Pick up quests (level 16.2)
+  accept 2118
+
+step Pick up quests (level 16.2)
+  accept 984
+
+step Objectives: Plagued Lands (level 16.2)
+  complete 2118
+
+step Objectives: Washed Ashore (level 16.2)
+  complete 3524
+
+step Turn in (level 16.3)
+  turnin 3524
+  accept 4681
+
+step Turn in (level 16.3)
+  turnin 2118
+  accept 2138
+
+step Objectives: Cleansing of the Infected (level 16.5)
+  complete 2138
+
+step Pick up quests (level 16.5)
+  accept 953
+
+step Objectives: Tools of the Highborne (level 16.5)
+  complete 958
+
+step Objectives: The Fall of Ameth'Aran (level 16.5)
+  complete 953
+
+step Objectives: WANTED: Jai'vhanel (level 16.5)
+  complete 98025
+
+step Objectives: The Fall of Ameth'Aran (level 16.5)
+  complete 953
+
+step Turn in (level 16.6)
+  turnin 953
+
+step Objectives: The Red Crystal (level 16.6)
+  complete 4811
+
+step Objectives: Bashal'Aran (level 16.6)
+  complete 954
+
+step Turn in (level 16.6)
+  turnin 954
+  accept 955
+
+step Objectives: Bashal'Aran (level 16.7)
+  complete 955
+
+step Turn in (level 16.8)
+  turnin 955
+  accept 956
+
+step Objectives: Bashal'Aran (level 16.8)
+  complete 956
+
+step Turn in (level 16.8)
+  turnin 956
+  accept 957
+
+step Objectives: How Big a Threat? (level 16.8)
+  complete 984
+
+step Hearth (level 16.8)
+  hearth "Auberdine"
+
+step Turn in (level 16.9)
+  turnin 984
+  accept 985
+  accept 4761
+
+step Turn in (level 16.9)
+  turnin 2138
+
+step Turn in (level 17.0)
+  turnin 4811
+  turnin 98025
+  accept 4812
+
+step Objectives: As Water Cascades (level 17.0)
+  complete 4812
+
+step Turn in (level 17.1)
+  turnin 958
+  turnin 4761
+  accept 4762
+
+step Objectives: Washed Ashore (level 17.1)
+  complete 4681
+
+step Turn in (level 17.2)
+  turnin 4681
+
+step Objectives: How Big a Threat? (level 17.2)
+  complete 985
+
+step Objectives: Bashal'Aran (level 17.2)
+  complete 957
+
+step Pick up quests (level 17.2)
+  accept 4722
+
+step Pick up quests (level 17.2)
+  accept 4728
+
+step Pick up quests (level 17.2)
+  accept 4730
+
+step Pick up quests (level 17.2)
+  accept 5713
+
+step Objectives: One Shot. One Kill. (level 17.2)
+  complete 5713
+
+step Turn in (level 17.2)
+  turnin 4812
+  accept 4813
+
+step Objectives: The Cliffspring River (level 17.2)
+  complete 4762
+
+step Pick up quests (level 17.2)
+  accept 4727
+
+step Pick up quests (level 17.2)
+  accept 4725
+
+step Pick up quests (level 17.2)
+  accept 4723
+
+step Turn in (level 17.3)
+  turnin 957
+
+step Turn in (level 17.3)
+  turnin 4762
+
+step Turn in (level 17.4)
+  turnin 985
+
+step Turn in (level 17.4)
+  turnin 4813
+
+step Turn in (level 17.5)
+  turnin 4722
+  turnin 4728
+  turnin 4730
+  turnin 4727
+  turnin 4725
+  turnin 4723
+
+step Pick up quests (level 17.6)
+  accept 947
+
+step Pick up quests (level 17.6)
+  accept 963
+
+step Pick up quests (level 17.6)
+  accept 1138
+
+step Pick up quests (level 17.6)
+  accept 87760
+
+step Pick up quests (level 17.6)
+  accept 4740
+
+step Pick up quests (level 17.6)
+  accept 965
+
+step Pick up quests (level 17.6)
+  accept 986
+
+step Pick up quests (level 17.6)
+  accept 2139
+
+step Pick up quests (level 17.6)
+  accept 729
+
+step Pick up quests (level 17.6)
+  accept 982
+
+step Pick up quests (level 17.6)
+  accept 4763
+  accept 97914
+
+step Objectives: Deep Ocean, Vast Sea (level 17.6)
+  complete 982
+
+step Objectives: Deep Ocean, Vast Sea (level 17.6)
+  complete 982
+
+step Objectives: Fruit of the Sea (level 17.7)
+  complete 1138
+
+step Objectives: Holy Diver (level 17.7)
+  complete 87760
+
+step Pick up quests (level 17.7)
+  accept 2098
+
+step Objectives: Gyromast's Retrieval (level 17.8)
+  complete 2098
+
+step Objectives: Gyromast's Retrieval (level 17.9)
+  complete 2098
+
+step Objectives: Gyromast's Retrieval (level 17.9)
+  complete 2098
+
+step Turn in (level 18.0)
+  turnin 2098
+
+step Turn in (level 18.0)
+  turnin 965
+  accept 966
+
+step Objectives: The Tower of Althalaxx (level 18.1)
+  complete 966
+
+step Turn in (level 18.1)
+  turnin 966
+  accept 967
+
+step Objectives: Cave Mushrooms (level 18.1)
+  complete 947
+
+step Objectives: The Blackwood Corrupted (level 18.1)
+  complete 4763
+
+step Objectives: Tharnariun's Hope (level 18.2)
+  complete 2139
+
+step Hearth (level 18.2)
+  hearth "Auberdine"
+
+step Turn in (level 18.2)
+  turnin 2139
+
+step Turn in (level 18.3)
+  turnin 947
+  accept 948
+
+step Turn in (level 18.4)
+  turnin 982
+
+step Turn in (level 18.4)
+  turnin 4763
+
+step Turn in (level 18.5)
+  turnin 1138
+
+step Turn in (level 18.6)
+  turnin 87760
+
+step Objectives: For Love Eternal (level 18.6)
+  complete 963
+
+step Turn in (level 18.6)
+  turnin 948
+  accept 944
+
+step Pick up quests (level 18.6)
+  accept 98013
+
+step Pick up quests (level 18.6)
+  accept 5321
+
+step Objectives: The Sleeper Has Awakened (level 18.6)
+  complete 5321
+
+step Objectives: A Lost Master (level 18.7)
+  complete 986
+
+step Pick up quests (level 18.9)
+  accept 968
+
+step Objectives: The Master's Glaive (level 18.9)
+  complete 944
+
+step Turn in (level 18.9)
+  turnin 944
+  accept 949
+
+step Turn in (level 19.0)
+  turnin 949
+  accept 950
+  accept 98042
+
+step Objectives: It's All Fun and Games Until... (level 19.0)
+  complete 98042
+
+step Pick up quests (level 19.0)
+  accept 945
+
+step Objectives: Therylune's Escape (level 19.0)
+  complete 945
+
+step Turn in (level 19.0)
+  turnin 729
+  accept 731
+
+step Objectives: The Absent Minded Prospector (level 19.0)
+  complete 731
+
+step Pick up quests (level 19.0)
+  accept 4733
+
+step Pick up quests (level 19.0)
+  accept 4732
+
+step Pick up quests (level 19.0)
+  accept 4731
+
+step Objectives: WANTED: Murkdeep! (level 19.0)
+  complete 4740
+
+step Turn in (level 19.1)
+  turnin 950
+  accept 951
+
+step Turn in (level 19.1)
+  turnin 4731
+  turnin 4732
+  turnin 4733
+
+step Turn in (level 19.2)
+  turnin 963
+
+step Turn in (level 19.3)
+  turnin 4740
+
+step Turn in (level 19.4)
+  turnin 731
+  accept 741
+
+step Turn in (level 19.4)
+  turnin 98042
+
+step Turn in (level 19.5)
+  turnin 986
+  accept 993
+
+step Objectives: Swelling Forces (level 19.6)
+  complete 98013
+
+step Objectives: Swelling Forces (level 19.6)
+  complete 98013
+
+step Objectives: Mathystra Relics (level 19.6)
+  complete 951
+
+step Objectives: Swelling Forces (level 19.7)
+  complete 98013
+
+step Hearth (level 19.7)
+  hearth "Auberdine"
+
+step Turn in (level 19.8)
+  turnin 951
+
+step Turn in (level 19.9)
+  turnin 98013
+
+step Turn in (level 19.9)
+  turnin 993
+  accept 994
+
+step Objectives: Escape Through Force (level 19.9)
+  complete 994
+
+step Turn in (level 20.0)
+  turnin 994
+
+step Pick up quests (level 20.0)
+  accept 990

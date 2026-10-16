@@ -1,0 +1,70 @@
+guide sf-orc-enh/sin-wc-sfk-04-orgrimmar
+title 04 · Orgrimmar (14-16)
+faction Horde
+race Orc, Troll
+levels 14-16
+zone Orgrimmar
+folder Shaman: Forever · Orco y Troll Mejora · sin WC ni SFK
+next sf-orc-enh/sin-wc-sfk-05-the-barrens
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 14.3)
+  accept 97326
+
+step Objectives: Rocks to Rests (level 14.3)
+  complete 97326
+
+step Turn in (level 14.3)
+  turnin 97326
+
+step Pick up quests (level 14.3)
+  accept 5726 optional map 1454 @31.73,37.82
+
+step Flight path (level 14.3)
+  getfp "Orgrimmar"
+
+step Hearthstone (level 14.3)
+  sethome "Orgrimmar"
+
+step Pick up quests (level 14.3)
+  accept 97246
+
+step Pick up quests (level 14.3)
+  accept 97249
+  turnin 97246
+
+step Pick up quests (level 14.4)
+  accept 97242
+
+step Pick up quests (level 14.4)
+  accept 97275
+
+step Objectives: Yelmak's Medley (level 14.4)
+  complete 97242
+
+step Turn in (level 14.5)
+  turnin 97242
+
+step Turn in (level 14.5)
+  turnin 97275
+
+step Turn in (level 14.6)
+  turnin 97249
+
+step Pick up: Slaying the Beast (Ragefire Chasm)
+  accept 5761 optional map 1454 @49.47,50.59
+
+step Dungeon: Ragefire Chasm (level 15)
+  zone map 1454
+  goto 52.6,49 "Ragefire Chasm" r 30 live
+  tip Find a group and clear Ragefire Chasm, with its quests from this route in your log.
+
+step Turn in (level 15.1)
+  turnin 5761 optional map 1454 @49.47,50.59
+
+step Flight path (level 15.1)
+  getfp "Ratchet"
+
+step Hearthstone (level 15.1)
+  sethome "Ratchet"

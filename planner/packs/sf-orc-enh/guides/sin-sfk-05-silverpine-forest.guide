@@ -1,0 +1,199 @@
+guide sf-orc-enh/sin-sfk-05-silverpine-forest
+title 05 · Silverpine Forest (13-17)
+faction Horde
+race Orc, Troll
+levels 13-17
+zone Silverpine Forest
+folder Shaman: Forever · Orco y Troll Mejora · sin SFK
+next sf-orc-enh/sin-sfk-06-undercity
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 13.8)
+  accept 421
+
+step Objectives: Prove Your Worth (level 13.9)
+  complete 421
+
+step Turn in (level 13.9)
+  turnin 421
+  accept 422
+
+step Objectives: Arugal's Folly (level 13.9)
+  complete 422
+
+step Turn in (level 14.0)
+  turnin 422
+  accept 423
+
+step Pick up quests (level 14.0)
+  accept 477
+
+step Pick up quests (level 14.0)
+  accept 428
+  accept 437
+
+step Pick up quests (level 14.0)
+  accept 447
+  accept 91921
+
+step Objectives: A Recipe For Death (level 14.1)
+  complete 447
+
+step Objectives: Arugal's Folly (level 14.1)
+  complete 423
+
+step Turn in (level 14.2)
+  turnin 477
+  accept 478
+
+step Turn in (level 14.3)
+  turnin 478
+  accept 481
+
+step Turn in (level 14.3)
+  turnin 481
+  accept 482
+
+step Turn in (level 14.3)
+  turnin 482
+  accept 479
+
+step Objectives: Arugal's Folly (level 14.3)
+  complete 423
+
+step Turn in (level 14.4)
+  turnin 423
+  accept 424
+
+step Objectives: The Dead Fields (level 14.4)
+  complete 437
+
+step Turn in (level 14.4)
+  turnin 428
+  accept 429
+
+step Turn in (level 14.5)
+  turnin 91921
+  accept 91920
+
+step Pick up quests (level 14.5)
+  accept 435
+
+step Objectives: Wild Hearts (level 14.6)
+  complete 429
+
+step Objectives: Escorting Erland (level 14.6)
+  complete 435
+
+step Turn in (level 14.6)
+  turnin 435
+  accept 449
+
+step Objectives: Wild Eyes (level 14.7)
+  complete 91920
+
+step Objectives: Arugal's Folly (level 14.7)
+  complete 424
+
+step Objectives: Ambermill Investigations (level 14.8)
+  complete 479
+
+step Hearth (level 14.8)
+  hearth "The Sepulcher"
+
+step Turn in (level 14.9)
+  turnin 479
+
+step Turn in (level 15.0)
+  turnin 437
+  turnin 449
+  accept 438
+  accept 3221
+
+step Turn in (level 15.0)
+  turnin 429
+  turnin 3221
+  turnin 91920
+  accept 430
+  accept 1359
+
+step Turn in (level 15.1)
+  turnin 424
+
+step Turn in (level 15.2)
+  turnin 438
+  accept 439
+
+step Turn in (level 15.2)
+  turnin 439
+  accept 440
+  accept 443
+
+step Objectives: A Recipe For Death (level 15.3)
+  complete 447
+
+step Turn in (level 15.3)
+  turnin 430
+
+step Pick up quests (level 15.3)
+  accept 425
+
+step Objectives: Ivar the Foul (level 15.3)
+  complete 425
+
+step Turn in (level 15.4)
+  turnin 425
+
+step Objectives: Rot Hide Ichor (level 15.6)
+  complete 443
+
+step Turn in (level 15.7)
+  turnin 443
+  accept 444
+
+step Pick up quests (level 15.7)
+  accept 95981
+
+step Pick up quests (level 15.7)
+  accept 98298
+  accept 98299
+
+step Pick up quests (level 16.2)
+  accept 460
+
+step Turn in (level 16.2)
+  turnin 460
+  accept 461
+
+step Turn in (level 16.3)
+  turnin 461
+  accept 491
+
+step Objectives: Watching the Roads (level 16.4)
+  complete 95981
+
+step Objectives: Watching the Roads (level 16.4)
+  complete 95981
+
+step Objectives: Stop the Spread (level 16.5)
+  complete 98299
+
+step Objectives: Arugal's Folly (level 16.6)
+  complete 98298
+
+step Hearth (level 16.6)
+  hearth "The Sepulcher"
+
+step Turn in (level 16.7)
+  turnin 95981
+
+step Turn in (level 16.8)
+  turnin 98298
+  turnin 98299
+
+step Flight path (level 16.9)
+  getfp "Undercity"
+
+step Hearthstone (level 16.9)
+  sethome "Undercity"

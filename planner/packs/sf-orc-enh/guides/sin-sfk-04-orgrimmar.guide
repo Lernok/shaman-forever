@@ -1,0 +1,40 @@
+guide sf-orc-enh/sin-sfk-04-orgrimmar
+title 04 · Orgrimmar (13-14)
+faction Horde
+race Orc, Troll
+levels 13-14
+zone Orgrimmar
+folder Shaman: Forever · Orco y Troll Mejora · sin SFK
+next sf-orc-enh/sin-sfk-05-silverpine-forest
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 13.2)
+  accept 5761 optional map 1454 @49.47,50.59
+
+step Dungeon: Ragefire Chasm (level 13)
+  zone map 1454
+  goto 52.6,49 "Ragefire Chasm" r 30 live
+  tip Find a group and clear Ragefire Chasm, with its quests from this route in your log.
+
+step Turn in (level 13.7)
+  turnin 5761 optional map 1454 @49.47,50.59
+
+step Pick up quests (level 13.7)
+  accept 813
+  complete 812
+
+step Turn in (level 13.8)
+  turnin 829
+
+step Turn in (level 13.8)
+  turnin 831
+
+step Hearth (level 13.8)
+  hearth "Orgrimmar"
+
+step Flight path (level 13.8)
+  getfp "The Sepulcher"
+
+step Hearthstone (level 13.8)
+  sethome "The Sepulcher"

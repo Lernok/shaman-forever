@@ -1,0 +1,182 @@
+guide sf-orc-enh/sin-wc-14-the-barrens
+title 14 · The Barrens (24-27)
+faction Horde
+race Orc, Troll
+levels 24-27
+zone The Barrens
+folder Shaman: Forever · Orco y Troll Mejora · sin WC
+next sf-orc-enh/sin-wc-15-ashenvale
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.6 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 24.7)
+  accept 878
+
+step Pick up quests (level 24.7)
+  accept 884
+
+step Objectives: Tribes at War (level 24.7)
+  complete 878
+
+step Objectives: Tribes at War (level 24.8)
+  complete 878
+
+step Pick up quests (level 24.8)
+  accept 883
+
+step Objectives: Tribes at War (level 24.8)
+  complete 878
+
+step Pick up quests (level 24.8)
+  accept 893
+
+step Turn in (level 24.8)
+  turnin 884
+  turnin 883
+
+step Turn in (level 24.9)
+  turnin 878
+  accept 5052
+
+step Objectives: Blood Shards of Agamaggan (level 24.9)
+  complete 5052
+
+step Turn in (level 24.9)
+  turnin 5052
+  accept 879
+
+step Pick up quests (level 25.0)
+  accept 897
+
+step Pick up quests (level 25.0)
+  accept 79007
+  accept 79192
+
+step Pick up quests (level 25.0)
+  accept 843
+
+step Pick up quests (level 25.0)
+  accept 98093
+
+step Objectives: Field to Clear (level 25.0)
+  complete 98093
+
+step Objectives: Betrayal from Within (level 25.0)
+  complete 879
+
+step Objectives: Weapons of Choice (level 25.0)
+  complete 893
+
+step Pick up quests (level 25.0)
+  accept 885
+
+step Objectives: Betrayal from Within (level 25.0)
+  complete 879
+
+step Objectives: Weapons of Choice (level 25.1)
+  complete 893
+
+step Objectives: Betrayal from Within (level 25.1)
+  complete 879
+
+step Objectives: Gann's Reclamation (level 25.1)
+  complete 843
+
+step Objectives: Field to Clear (level 25.2)
+  complete 98093
+
+step Turn in (level 25.2)
+  turnin 98093
+
+step Turn in (level 25.3)
+  turnin 843
+  accept 846
+
+step Objectives: Revenge of Gann (level 25.5)
+  complete 846
+
+step Turn in (level 25.6)
+  turnin 846
+  accept 849
+
+step Objectives: Revenge of Gann (level 25.6)
+  complete 849
+
+step Pick up quests (level 25.6)
+  accept 4542
+
+step Turn in (level 25.6)
+  turnin 849
+
+step Hearth (level 25.6)
+  hearth "Camp Taurajo"
+
+step Turn in (level 25.7)
+  turnin 879
+  accept 906
+
+step Turn in (level 25.7)
+  turnin 885
+  turnin 897
+
+step Turn in (level 25.9)
+  turnin 893
+
+step Hearthstone (level 25.9)
+  sethome "The Crossroads"
+
+step Pick up quests (level 25.9)
+  accept 868
+
+step Turn in (level 25.9)
+  turnin 906
+
+step Hearthstone (level 25.9)
+  sethome "Ratchet"
+
+step Pick up quests (level 25.9)
+  accept 1483
+
+step Pick up quests (level 25.9)
+  accept 822
+
+step Objectives: Chen's Empty Keg (level 25.9)
+  complete 822
+
+step Pick up quests (level 25.9)
+  accept 1530
+
+step Objectives: Egg Hunt (level 25.9)
+  complete 868
+
+step Objectives: Chen's Empty Keg (level 26.0)
+  complete 822
+
+step Objectives: Chen's Empty Keg (level 26.0)
+  complete 822
+
+step Turn in (level 26.0)
+  turnin 1530
+  accept 1535
+
+step Objectives: Call of Water (level 26.0)
+  complete 1535
+
+step Turn in (level 26.0)
+  turnin 1535
+  accept 1536
+
+step Turn in (level 26.1)
+  turnin 822
+
+step Hearthstone (level 26.1)
+  sethome "The Crossroads"
+
+step Turn in (level 26.1)
+  turnin 868
+
+step Flight path (level 26.1)
+  getfp "Splintertree Post"
+
+step Hearthstone (level 26.1)
+  sethome "Splintertree Post"

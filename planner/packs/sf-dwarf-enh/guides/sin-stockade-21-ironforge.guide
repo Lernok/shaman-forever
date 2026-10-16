@@ -1,0 +1,26 @@
+guide sf-dwarf-enh/sin-stockade-21-ironforge
+title 21 · Ironforge (32-33)
+faction Alliance
+race Dwarf
+levels 32-33
+zone Ironforge
+folder Shaman: Forever · Enano Mejora · sin Stockade
+next sf-dwarf-enh/sin-stockade-22-stranglethorn-vale
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 32.2)
+  accept 1453
+
+step Turn in (level 32.2)
+  turnin 514
+  accept 525
+
+step Turn in (level 32.2)
+  turnin 98313
+
+step Hearthstone (level 32.2)
+  sethome "Ironforge"
+
+step Turn in (level 32.2)
+  turnin 98300

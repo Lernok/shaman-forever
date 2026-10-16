@@ -1,0 +1,18 @@
+guide sf-dwarf-enh/sin-stockade-06-westfall
+title 06 · Westfall (20-21)
+faction Alliance
+race Dwarf
+levels 20-21
+zone Westfall
+folder Shaman: Forever · Enano Mejora · sin Stockade
+next sf-dwarf-enh/sin-stockade-07-stormwind-city
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.3 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 20.0)
+  accept 373 optional
+
+step Dungeon: The Deadmines (level 20)
+  zone map 1436
+  goto 42.5,71.7 "The Deadmines" r 30 live
+  tip Find a group and clear The Deadmines, with its quests from this route in your log.
