@@ -81,7 +81,8 @@ local RACE = { Orc = "Orc", Troll = "Troll", Tauren = "Tauren", Dwarf = "Dwarf" 
 local function myPath()
   local _, token = UnitRace("player")
   local race = RACE[token or ""]
-  if not race and token and token:lower():find("sky") then race = "Skyborne (Windshaper)" end
+  local low = (token or ""):lower()
+  if not race and (low:find("sky") or low:find("wind")) then race = "Skyborne (Windshaper)" end
   if not race then
     if not SF.raceWarned then say(string.format(L().unknownRace, tostring(token))); SF.raceWarned = true end
     race = "Orc"
