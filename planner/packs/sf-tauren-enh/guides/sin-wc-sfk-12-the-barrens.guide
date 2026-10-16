@@ -364,6 +364,12 @@ step Turn in (level 23.3)
 step Objectives: Revenge of Gann (level 23.3)
   complete 849
 
+step Reach level 23
+  zone map 1413
+  goto 43.5,82.8 "Razormane Stalker (level 23)" r 40 optional
+  level 23
+  tip If you're not level 23 yet: kill Razormane Stalker here (level 23). Message to Freewind Post needs level 23.
+
 step Pick up quests (level 23.3)
   accept 4542
 

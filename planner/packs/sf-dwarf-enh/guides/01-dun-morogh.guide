@@ -37,6 +37,12 @@ step Pick up quests (level 3.0)
 step Turn in (level 3.1)
   turnin 233
 
+step Reach level 3
+  zone map 1426
+  goto 30.5,74.9 "Rockjaw Trogg (level 2)" r 40 optional
+  level 3
+  tip If you're not level 3 yet: kill Rockjaw Trogg here (level 2). A Refugee's Quandary needs level 3.
+
 step Pick up quests (level 3.1)
   accept 3361
 
@@ -67,6 +73,12 @@ step Turn in (level 3.8)
 
 step Objectives: The Troll Cave (level 4.3)
   kill 706 x14 quest 182.1
+
+step Reach level 4
+  zone map 1426
+  goto 30.5,74.9 "Rockjaw Trogg (level 2)" r 40 optional
+  level 4
+  tip If you're not level 4 yet: kill Rockjaw Trogg here (level 2). Call of Earth needs level 4.
 
 step Pick up quests (level 4.3)
   accept 94373

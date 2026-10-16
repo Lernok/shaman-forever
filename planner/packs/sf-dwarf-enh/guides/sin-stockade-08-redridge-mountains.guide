@@ -9,6 +9,12 @@ next sf-dwarf-enh/sin-stockade-09-duskwood
 # Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.3 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
+step Reach level 20
+  zone map 1433
+  goto 35.5,49.1 "Murloc Tidecaller (level 20)" r 40 optional
+  level 20
+  tip If you're not level 20 yet: kill Murloc Tidecaller here (level 20). Murloc Poachers needs level 20.
+
 step Pick up quests (level 20.6)
   accept 150
 

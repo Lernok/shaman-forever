@@ -364,6 +364,12 @@ step Turn in (level 22.9)
   turnin 885
   turnin 897
 
+step Reach level 23
+  zone map 1413
+  goto 43.5,82.8 "Razormane Stalker (level 23)" r 40 optional
+  level 23
+  tip If you're not level 23 yet: kill Razormane Stalker here (level 23). Message to Freewind Post needs level 23.
+
 step Pick up quests (level 23.0)
   accept 4542
 

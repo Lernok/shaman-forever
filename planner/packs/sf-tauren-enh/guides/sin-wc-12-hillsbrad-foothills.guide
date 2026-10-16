@@ -30,6 +30,12 @@ step Objectives: Elixir of Suffering (level 21.0)
   collect 3476 x10 quest 496.1
   collect 3477 quest 496.2
 
+step Reach level 21
+  zone map 1416
+  goto 51.3,74.5 "Forest Moss Creeper (level 21)" r 40 optional
+  level 21
+  tip If you're not level 21 yet: kill Forest Moss Creeper here (level 21). Elixir of Pain needs level 21.
+
 step Pick up quests (level 21.0)
   accept 501
   turnin 496

@@ -123,6 +123,12 @@ step Objectives: Rot Hide Ichor (level 19.4)
 step Hearth (level 19.4)
   hearth "The Sepulcher"
 
+step Reach level 19
+  zone map 1421
+  goto 65.1,25.1 "Rot Hide Savage (level 19)" r 40 optional
+  level 19
+  tip If you're not level 19 yet: kill Rot Hide Savage here (level 19). Journey to Hillsbrad Foothills needs level 19.
+
 step Turn in (level 19.5)
   turnin 443
   accept 444
@@ -167,6 +173,10 @@ step Turn in (level 20.1)
 step Turn in (level 20.2)
   turnin 98298
   turnin 98299
+
+step Reach level 20
+  level 20
+  tip Kill the mobs on your way until level 20: The Tortured Soul needs it.
 
 step Pick up quests (level 20.3)
   accept 95883

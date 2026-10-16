@@ -141,6 +141,88 @@ guides.forEach((lines, gi) => {
     added++;
   }
 });
+// Breadcrumbs. A quest that only sends you to the next one (Mulgore's "The
+// Adventurer", a supply bundle for Kaga Wildhoof) has no XP in the data, so
+// the simulator never takes it. When the route takes the quest it leads to
+// and already stands with its giver earlier (an accept or turn-in there, at
+// a step of its level), it's taken there and turned in just before.
+const questsAll = JSON.parse(fs.readFileSync(path.join(polestar, 'data', 'forever', 'quests.json'), 'utf8'));
+const qAll = questsAll.quests || questsAll;
+const racesDoc = JSON.parse(fs.readFileSync(path.join(polestar, 'data', 'forever', 'races.json'), 'utf8'));
+const raceBit = (name) => { const r = racesDoc[name.trim()]; const e = r && Object.values(r)[0]; return e ? e.bit : 0; };
+const crumbsFor = new Map();
+for (const q of Object.values(qAll)) if (q && q.breadcrumbFor) (crumbsFor.get(q.breadcrumbFor) || crumbsFor.set(q.breadcrumbFor, []).get(q.breadcrumbFor)).push(q);
+const inRoute = new Set();
+guides.forEach((lines) => lines.forEach((l) => { const m = /^\s+(?:accept|turnin|complete) (\d+)/.exec(l); if (m) inRoute.add(Number(m[1])); }));
+const npcsOf = (q, side) => ((q && q[side]) || {}).npc || [];
+// A breadcrumb the simulator took after the quest it leads to (it's worth
+// nothing to it, so it lands anywhere): out of there, placed again below.
+const firstAccept = (id) => {
+  for (let g = 0; g < guides.length; g++) {
+    const k = guides[g].findIndex((l) => new RegExp(`^\\s+accept ${id}\\b`).test(l));
+    if (k >= 0) return [g, k];
+  }
+  return null;
+};
+for (const [target, list] of crumbsFor) {
+  const t = firstAccept(target);
+  if (!t) continue;
+  for (const b of list) {
+    const a = firstAccept(b.id);
+    if (!a || a[0] < t[0] || (a[0] === t[0] && a[1] < t[1])) continue;
+    for (const L of guides) {
+      for (let k = L.length - 1; k >= 0; k--) {
+        if (!new RegExp(`^\\s+(accept|turnin) ${b.id}\\b`).test(L[k])) continue;
+        L.splice(k, 1);
+        // Its step, if nothing is left in it.
+        let s = k - 1;
+        while (s >= 0 && !/^step\b/.test(L[s])) s--;
+        let e = s + 1;
+        while (e < L.length && !/^step\b/.test(L[e])) e++;
+        if (s >= 0 && !L.slice(s + 1, e).some((l) => /^\s+\S/.test(l))) L.splice(s, e - s);
+      }
+    }
+    inRoute.delete(b.id);
+  }
+}
+let crumbs = 0;
+guides.forEach((lines, gi) => {
+  const races = ((lines.find((l) => /^race /.test(l)) || '').slice(5)).split(',').filter(Boolean);
+  const bits = races.reduce((b, r) => b | raceBit(r), 0);
+  for (let li = 0; li < lines.length; li++) {
+    const m = /^(\s+)accept (\d+)/.exec(lines[li]);
+    if (!m) continue;
+    for (const b of crumbsFor.get(Number(m[2])) || []) {
+      if (inRoute.has(b.id) || (b.races && bits && !races.every((r) => (Number(b.races) & raceBit(r)) || Number(b.races) >= 2 ** 32 && raceBit(r) >= 2 ** 32))) continue;
+      const giver = npcsOf(b, 'start')[0];
+      if (!giver) continue;
+      // The last earlier goal at its giver, at a step of its level.
+      let at = null;
+      for (let g = gi; g >= 0 && !at; g--) {
+        let lvl = null;
+        const L = guides[g];
+        const end = g === gi ? li : L.length;
+        const hits = [];
+        for (let k = 0; k < end; k++) {
+          const s = /^step .*\(level ([\d.]+)\)/.exec(L[k]);
+          if (/^step\b/.test(L[k])) { lvl = s ? Number(s[1]) : lvl; continue; }
+          const x = /^\s+(accept|turnin) (\d+)/.exec(L[k]);
+          if (!x || lvl == null || lvl < (Number(b.minLevel) || 0)) continue;
+          if (npcsOf(qAll[x[2]], x[1] === 'accept' ? 'start' : 'end').includes(giver)) hits.push(k);
+        }
+        if (hits.length) at = { g, k: hits[hits.length - 1] };
+      }
+      if (!at) continue;
+      inRoute.add(b.id);
+      guides[gi].splice(li, 0, `${m[1]}turnin ${b.id}`);
+      li++;
+      guides[at.g].splice(at.k + 1, 0, `${m[1]}accept ${b.id}`);
+      if (at.g === gi) li++;
+      crumbs++;
+    }
+  }
+});
+console.log(`${crumbs} breadcrumb quests added`);
 // Third pass. The simulator writes "complete <quest>", which Polestar can't
 // point the arrow at; its compiler places kill and collect goals tied to a
 // quest objective (spots where the mobs or the drops are). So a quest whose
@@ -162,5 +244,60 @@ guides.forEach((lines) => {
   }
 });
 console.log(`${expanded} quest objectives placed (kill/collect)`);
+// Fourth pass. The simulator takes a quest as soon as its model reaches the
+// quest's level, and a real character can be a bit behind (the Tauren went
+// for Call of Earth, level 4, at 3). Before an accept the route reaches with
+// less than LEVEL_MARGIN to spare: a "reach level N" step. Polestar ticks it
+// by itself when you already are; when you're not, it says so instead of
+// sending you to a quest you can't take yet.
+const LEVEL_MARGIN = 1;
+// Where to get that level: Polestar's mob camps (sim export's loadCamps: 6+
+// spawns of a quest mob together), on the map of the quest's giver, mobs one
+// or two levels under the one needed, nearer the giver and bigger first.
+const camps = require(path.join(polestar, 'tools', 'lib', 'sim', 'export.js')).loadCamps({ dataDir: path.join(polestar, 'data', 'forever') });
+const npcData = JSON.parse(fs.readFileSync(path.join(polestar, 'data', 'forever', 'npcs.json'), 'utf8'));
+const frames = JSON.parse(fs.readFileSync(path.join(polestar, 'data', 'forever', 'map-frames.json'), 'utf8'));
+function grindCamp(q, need) {
+  const giver = npcData[String(((q.start || {}).npc || [])[0])];
+  const spawn = giver && Object.entries(giver.spawns || {}).find(([, sp]) => sp && Array.isArray(sp.pts) && sp.pts.length);
+  if (!spawn) return null;
+  const map = Number(spawn[0]);
+  const [gx, gy] = spawn[1].pts[0];
+  let best = null, bs = 0;
+  for (const c of camps) {
+    if (c.map !== map || c.level < need - 2 || c.level > need) continue;
+    const sc = Math.min(c.size, 15) / (1 + Math.hypot(c.x - gx, c.y - gy) / 10);
+    if (sc > bs) { bs = sc; best = c; }
+  }
+  if (!best) return null;
+  const live = !(frames.era || {})[map] && (frames.forever || {})[map];
+  return Object.assign({ live }, best);
+}
+let gates = 0;
+guides.forEach((lines) => {
+  let stepAt = -1, stepLevel = null;
+  const gated = new Set();
+  for (let li = 0; li < lines.length; li++) {
+    const s = /^step .*\(level ([\d.]+)\)/.exec(lines[li]);
+    if (/^step\b/.test(lines[li])) { stepAt = li; stepLevel = s ? Number(s[1]) : null; continue; }
+    const m = /^\s+accept (\d+)/.exec(lines[li]);
+    if (!m || stepAt < 0 || stepLevel == null || dungeonOf.has(Number(m[1]))) continue;
+    const q = questData[m[1]] || {};
+    const need = Number(q.minLevel) || 0;
+    if (need <= 1 || stepLevel - need >= LEVEL_MARGIN || gated.has(need)) continue;
+    gated.add(need);
+    const camp = grindCamp(q, need);
+    const step = camp
+      ? [`step Reach level ${need}`, `  zone map ${camp.map}`, `  goto ${camp.x},${camp.y} "${camp.name} (level ${camp.level})" r 40${camp.live ? ' live' : ''} optional`, `  level ${need}`,
+        `  tip If you're not level ${need} yet: kill ${camp.name} here (level ${camp.level}). ${q.title || 'The next quest'} needs level ${need}.`, '']
+      : [`step Reach level ${need}`, `  level ${need}`,
+        `  tip Kill the mobs on your way until level ${need}: ${q.title || 'the next quest'} needs it.`, ''];
+    lines.splice(stepAt, 0, ...step);
+    li += step.length;
+    stepAt += step.length;
+    gates++;
+  }
+});
+console.log(`${gates} level gates`);
 guides.forEach((g, i) => fs.writeFileSync(path.join(outDir, names[i]), g.join('\n').replace(/\n{3,}/g, '\n\n')));
 console.log(`${files.length} guides -> ${outDir} (${visits.reduce((n, v) => n + (v.dungeons || []).length, 0)} dungeon steps, ${added} dungeon quest accepts added)`);

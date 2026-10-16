@@ -154,6 +154,9 @@ if before[1] then
   local after = SF.test.upcoming()
   print("-- listo: avisos " .. #before .. " -> " .. #after .. ", listos " .. #SF.test.archived("done") .. " (" .. SF.test.archived("done")[1].head .. ")")
 end
+-- Quest XP the game pays, kept for the route planner (turn-in event).
+ev:fire("QUEST_TURNED_IN", 96659, 410, 0)
+print("qxp 96659:", ShamanForeverDB.qxp and ShamanForeverDB.qxp[96659] and table.concat(ShamanForeverDB.qxp[96659], " @ nivel "))
 SlashCmdList.SHAMANFOREVER("ayuda")
 SlashCmdList.SHAMANFOREVER("dondeestoy")
 SlashCmdList.SHAMANFOREVER("registro")

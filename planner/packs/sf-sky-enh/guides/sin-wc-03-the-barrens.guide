@@ -9,6 +9,12 @@ next sf-sky-enh/sin-wc-04-undercity
 # Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.0 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
+step Reach level 15
+  zone map 1413
+  goto 63.9,44.9 "Southsea Brigand (level 13)" r 40 optional
+  level 15
+  tip If you're not level 15 yet: kill Southsea Brigand here (level 13). Deepmoss Spider Eggs needs level 15.
+
 step Pick up quests (level 15.5)
   accept 865 optional map 1413 @62.37,37.62
   accept 1069
@@ -153,6 +159,12 @@ step Objectives: Lost in Battle (level 16.9)
 
 step Objectives: Consumed by Hatred (level 17.4)
   collect 5085 x60 quest 899.1
+
+step Reach level 17
+  zone map 1413
+  goto 46.6,39.8 "Oasis Snapjaw (level 16)" r 40 optional
+  level 17
+  tip If you're not level 17 yet: kill Oasis Snapjaw here (level 16). Report to Kadrak needs level 17.
 
 step Pick up quests (level 17.4)
   accept 6541

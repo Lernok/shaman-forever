@@ -1429,6 +1429,22 @@ local function onLevel(lvl)
   popup(string.format(L().upcoming, lvl), upcoming())
 end
 
+-- Quest XP as the game pays it, for the route planner: the data lacks it
+-- for some of Forever's new quests (scripts/import-quest-xp.js reads it from
+-- the SavedVariables). Account-wide: { [quest id] = { xp, your level } };
+-- the reward window and the turn-in both tell.
+local function noteXp(id, xp)
+  id, xp = readable(id), readable(xp)
+  if type(id) ~= "number" or id <= 0 or type(xp) ~= "number" or xp <= 0 then return end
+  db.qxp = db.qxp or {}
+  db.qxp[id] = { xp, UnitLevel("player") }
+end
+local function noteRewardXp()
+  local id = GetQuestID and GetQuestID()
+  local xp = GetRewardXP and GetRewardXP()
+  pcall(noteXp, id, xp)
+end
+
 local ev = CreateFrame("Frame")
 ev:RegisterEvent("ADDON_LOADED")
 ev:SetScript("OnEvent", function(self, event, ...)
@@ -1449,6 +1465,8 @@ ev:SetScript("OnEvent", function(self, event, ...)
     self:RegisterEvent("QUEST_TURNED_IN")
     self:RegisterEvent("QUEST_ACCEPTED")
     self:RegisterEvent("QUEST_REMOVED")
+    self:RegisterEvent("QUEST_DETAIL")
+    self:RegisterEvent("QUEST_COMPLETE")
     self:RegisterEvent("SKILL_LINES_CHANGED")
     self:RegisterEvent("BAG_UPDATE_DELAYED")
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
@@ -1464,8 +1482,12 @@ ev:SetScript("OnEvent", function(self, event, ...)
     local lvl = ...
     -- UnitLevel catches up a moment later.
     C_Timer.After(1, function() onLevel(tonumber(lvl) or UnitLevel("player")) end)
+  elseif event == "QUEST_DETAIL" or event == "QUEST_COMPLETE" then
+    noteRewardXp()
   elseif event == "QUEST_TURNED_IN" then
-    log("quest", tostring((...)))
+    local id, xp = ...
+    pcall(noteXp, id, xp)
+    log("quest", tostring(id))
     if frame and frame.live then refresh() else C_Timer.After(0.5, repaint) end
   elseif event == "BAG_UPDATE_DELAYED" then
     bagBest = nil

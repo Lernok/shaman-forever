@@ -79,6 +79,12 @@ step Turn in (level 23.9)
 step Turn in (level 23.9)
   turnin 6393
 
+step Reach level 23
+  zone map 1442
+  goto 73.3,60.5 "Windshear Digger (level 22)" r 40 optional
+  level 23
+  tip If you're not level 23 yet: kill Windshear Digger here (level 22). Calling in the Reserves needs level 23.
+
 step Pick up quests (level 23.9)
   accept 5881
   accept 6282

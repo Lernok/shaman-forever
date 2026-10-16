@@ -37,6 +37,12 @@ step Pick up quests (level 3.0)
 step Turn in (level 3.1)
   turnin 233
 
+step Reach level 3
+  zone map 1426
+  goto 30.5,74.9 "Rockjaw Trogg (level 2)" r 40 optional
+  level 3
+  tip If you're not level 3 yet: kill Rockjaw Trogg here (level 2). A Refugee's Quandary needs level 3.
+
 step Pick up quests (level 3.1)
   accept 3361
 
@@ -67,6 +73,12 @@ step Turn in (level 3.8)
 
 step Objectives: The Troll Cave (level 4.3)
   kill 706 x14 quest 182.1
+
+step Reach level 4
+  zone map 1426
+  goto 30.5,74.9 "Rockjaw Trogg (level 2)" r 40 optional
+  level 4
+  tip If you're not level 4 yet: kill Rockjaw Trogg here (level 2). Call of Earth needs level 4.
 
 step Pick up quests (level 4.3)
   accept 94373
@@ -176,6 +188,12 @@ step Pick up quests (level 6.9)
 
 step Turn in (level 7.1)
   turnin 384
+
+step Reach level 7
+  zone map 1426
+  goto 42,48.4 "Wendigo (level 7)" r 40 optional
+  level 7
+  tip If you're not level 7 yet: kill Wendigo here (level 7). Frostmane Hold needs level 7.
 
 step Pick up quests (level 7.1)
   accept 287
@@ -388,6 +406,7 @@ step Turn in (level 10.9)
 
 step Turn in (level 11.0)
   turnin 320
+  accept 415
 
 step Objectives: The Perfect Stout (level 11.0)
   collect 2676 x6 quest 315.1
@@ -400,13 +419,8 @@ step Turn in (level 11.2)
 
 step Turn in (level 11.3)
   turnin 315
-  accept 413
-
-step Pick up quests (level 11.3)
-  accept 415
-
-step Turn in (level 11.3)
   turnin 415
+  accept 413
 
 step Turn in (level 11.4)
   turnin 413
@@ -440,11 +454,7 @@ step Turn in (level 11.7)
 step Hearth (level 11.7)
   hearth "Thunderbrew Distillery"
 
-step Pick up quests (level 11.7)
-  accept 96408
-
 step Turn in (level 11.8)
-  turnin 96408
   turnin 96391 optional map 1426 @64.87,58.47
   turnin 96390
 

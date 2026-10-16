@@ -30,6 +30,12 @@ step Turn in (level 2.9)
 step Turn in (level 3.0)
   turnin 752
 
+step Reach level 3
+  zone map 1412
+  goto 43.2,87.1 "Mountain Cougar (level 3)" r 40 optional
+  level 3
+  tip If you're not level 3 yet: kill Mountain Cougar here (level 3). Break Sharptusk! needs level 3.
+
 step Pick up quests (level 3.0)
   accept 3376
 
@@ -56,6 +62,12 @@ step Turn in (level 3.9)
 
 step Turn in (level 4.1)
   turnin 750
+
+step Reach level 4
+  zone map 1412
+  goto 52.1,77.4 "Battleboar (level 4)" r 40 optional
+  level 4
+  tip If you're not level 4 yet: kill Battleboar here (level 4). Call of Earth needs level 4.
 
 step Pick up quests (level 4.1)
   accept 1519
@@ -96,6 +108,7 @@ step Turn in (level 5.9)
   turnin 781
   turnin 757
   accept 763
+  accept 96659
 
 step Turn in (level 6.1)
   turnin 1520
@@ -226,6 +239,7 @@ step Pick up quests (level 8.8)
   turnin 99108
 
 step Pick up quests (level 8.9)
+  turnin 96659
   accept 96605
 
 step Objectives: The Great Outdoors (level 8.9)
@@ -285,6 +299,12 @@ step Turn in (level 9.9)
 step Turn in (level 10.0)
   turnin 761
 
+step Reach level 10
+  zone map 1412
+  goto 62.2,71.8 "Windfury Harpy (level 8)" r 40 optional
+  level 10
+  tip If you're not level 10 yet: kill Windfury Harpy here (level 8). The Hunter's Way needs level 10.
+
 step Pick up quests (level 10.0)
   accept 861
 
@@ -317,12 +337,6 @@ step Objectives: Mazzranache (level 10.5)
   collect 4805 quest 766.2
   collect 4806 quest 766.3
   collect 4807 quest 766.4
-
-step Pick up quests (level 10.5)
-  accept 96659
-
-step Turn in (level 10.5)
-  turnin 96659
 
 step Turn in (level 10.6)
   turnin 766

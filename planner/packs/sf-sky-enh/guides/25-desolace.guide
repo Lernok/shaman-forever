@@ -143,6 +143,12 @@ step Pick up quests (level 34.4)
 step Pick up quests (level 34.4)
   accept 5943
 
+step Reach level 34
+  zone map 1443
+  goto 54.5,27.5 "Burning Blade Felsworn (level 32)" r 40 optional
+  level 34
+  tip If you're not level 34 yet: kill Burning Blade Felsworn here (level 32). Ghost-o-plasm Round Up needs level 34.
+
 step Pick up quests (level 34.4)
   accept 6134
 

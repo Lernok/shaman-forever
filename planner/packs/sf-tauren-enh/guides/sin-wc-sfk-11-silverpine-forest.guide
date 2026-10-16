@@ -19,6 +19,12 @@ step Pick up quests (level 18.9)
 step Pick up quests (level 19.2)
   accept 460
 
+step Reach level 19
+  zone map 1421
+  goto 65.1,25.1 "Rot Hide Savage (level 19)" r 40 optional
+  level 19
+  tip If you're not level 19 yet: kill Rot Hide Savage here (level 19). Journey to Hillsbrad Foothills needs level 19.
+
 step Pick up quests (level 19.2)
   accept 493
 
@@ -70,6 +76,10 @@ step Turn in (level 19.8)
 
 step Grind to 20 (13 min)
   level 20 -- grind on Ravenclaw Guardian (level 21) at Beren's Peril, Silverpine Forest 57.4,70.9
+
+step Reach level 20
+  level 20
+  tip Kill the mobs on your way until level 20: The Tortured Soul needs it.
 
 step Pick up quests (level 20.0)
   accept 95883

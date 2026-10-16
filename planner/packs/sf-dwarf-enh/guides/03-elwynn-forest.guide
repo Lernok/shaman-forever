@@ -26,6 +26,12 @@ step Objectives: Camping 101: Cooking (level 7.1)
 step Pick up quests (level 7.2)
   accept 60
 
+step Reach level 7
+  zone map 1429
+  goto 53.7,66.8 "Murloc (level 7)" r 40 optional
+  level 7
+  tip If you're not level 7 yet: kill Murloc here (level 7). A Fishy Peril needs level 7.
+
 step Pick up quests (level 7.2)
   accept 40
   accept 47

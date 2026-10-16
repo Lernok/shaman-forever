@@ -231,6 +231,12 @@ step Hearth (level 20.7)
 step Hearthstone (level 20.7)
   sethome "Camp Taurajo"
 
+step Reach level 20
+  zone map 1413
+  goto 51,55.8 "Bristleback Thornweaver (level 19)" r 40 optional
+  level 20
+  tip If you're not level 20 yet: kill Bristleback Thornweaver here (level 19). The Ashenvale Hunt needs level 20.
+
 step Turn in (level 20.8)
   turnin 882
   accept 907
@@ -409,6 +415,12 @@ step Turn in (level 22.9)
 step Turn in (level 22.9)
   turnin 885
   turnin 897
+
+step Reach level 23
+  zone map 1413
+  goto 43.5,82.8 "Razormane Stalker (level 23)" r 40 optional
+  level 23
+  tip If you're not level 23 yet: kill Razormane Stalker here (level 23). Message to Freewind Post needs level 23.
 
 step Pick up quests (level 23.0)
   accept 4542

@@ -111,6 +111,12 @@ step Pick up quests (level 29.0)
 step Pick up quests (level 29.0)
   accept 1105
 
+step Reach level 29
+  zone map 1441
+  goto 10.3,35.7 "Highperch Wyvern (level 29)" r 40 optional
+  level 29
+  tip If you're not level 29 yet: kill Highperch Wyvern here (level 29). Load Lightening needs level 29.
+
 step Pick up quests (level 29.0)
   accept 1176
 

@@ -29,6 +29,7 @@ step Pick up quests (level 24.7)
 
 step Turn in (level 24.8)
   turnin 98197
+  accept 473
 
 step Pick up quests (level 24.8)
   accept 463 optional map 1437 @10.9,59.64
@@ -188,6 +189,7 @@ step Turn in (level 26.3)
   accept 289
 
 step Pick up quests (level 26.3)
+  turnin 473
   accept 464
   accept 98221
   turnin 98221

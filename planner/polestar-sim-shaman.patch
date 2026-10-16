@@ -432,3 +432,30 @@ index 49784c3..0962d43 100644
  		qDungeon,
  	};
  }
+diff --git a/tools/lib/sim/world.js b/tools/lib/sim/world.js
+index 8727cc7..98d91ea 100644
+--- a/tools/lib/sim/world.js
++++ b/tools/lib/sim/world.js
+@@ -44,6 +44,13 @@
+ //   ['visit']            reach a place
+ 
+ const fs = require('node:fs');
++// Shaman: Forever: SF_QUEST_XP=<planner/quest-xp.json>, quest XP seen in the
++// game (scripts/import-quest-xp.js), for quests the data lacks or has wrong.
++const SF_QUEST_XP = {};
++if (process.env.SF_QUEST_XP) {
++	const doc = JSON.parse(require('fs').readFileSync(process.env.SF_QUEST_XP, 'utf8'));
++	for (const [qid, v] of Object.entries(doc.quests || {})) if (v && v.xp > 0) SF_QUEST_XP[Number(qid)] = v.xp;
++}
+ const path = require('node:path');
+ const crypto = require('node:crypto');
+ const { loadData } = require('../route/model');
+@@ -862,7 +869,7 @@ function buildWorld(data, opts = {}) {
+ 			pre: (Array.isArray(raw.pre) ? raw.pre : []).map(Number).filter(Number.isFinite),
+ 			excl: (Array.isArray(raw.excl) ? raw.excl : []).map(Number).filter(Number.isFinite),
+ 			next: Number(raw.next) || null,
+-			xp: typeof raw.xp === 'number' && raw.xp > 0 ? raw.xp : null,
++			xp: SF_QUEST_XP[id] || (typeof raw.xp === 'number' && raw.xp > 0 ? raw.xp : null),
+ 			// Repeatables count once; without a recorded reward they give no XP
+ 			// (the QuestXP tier estimate is for one-time quests).
+ 			noXp: !!raw.repeatable && !(typeof raw.xp === 'number' && raw.xp > 0),

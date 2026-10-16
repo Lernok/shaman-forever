@@ -32,6 +32,12 @@ step Objectives: Sarkoth (level 1.7)
 step Turn in (level 2.4)
   turnin 790
 
+step Reach level 2
+  zone map 1411
+  goto 43.1,64 "Mottled Boar (level 2)" r 40 optional
+  level 2
+  tip If you're not level 2 yet: kill Mottled Boar here (level 2). Vile Familiars needs level 2.
+
 step Pick up quests (level 2.4)
   accept 792
 
@@ -43,6 +49,12 @@ step Turn in (level 2.5)
 
 step Objectives: Cutting Teeth (level 3.1)
   kill 3098 x10 quest 788.1
+
+step Reach level 3
+  zone map 1411
+  goto 40,66 "Scorpid Worker (level 3)" r 40 optional
+  level 3
+  tip If you're not level 3 yet: kill Scorpid Worker here (level 3). Lazy Peons needs level 3.
 
 step Pick up quests (level 3.1)
   accept 5441
@@ -67,6 +79,12 @@ step Pick up quests (level 3.5)
 
 step Objectives: Sting of the Scorpid (level 4.1)
   collect 4862 x10 quest 789.1
+
+step Reach level 4
+  zone map 1411
+  goto 40,66 "Scorpid Worker (level 3)" r 40 optional
+  level 4
+  tip If you're not level 4 yet: kill Scorpid Worker here (level 3). Call of Earth needs level 4.
 
 step Pick up quests (level 4.1)
   accept 1516
@@ -131,6 +149,12 @@ step Hearthstone (level 6.0)
 
 step Turn in (level 6.0)
   turnin 2161
+
+step Reach level 6
+  zone map 1411
+  goto 43.8,54.9 "Felstalker (level 4)" r 40 optional
+  level 6
+  tip If you're not level 6 yet: kill Felstalker here (level 4). Encroachment needs level 6.
 
 step Pick up quests (level 6.0)
   accept 784
@@ -320,6 +344,12 @@ step Turn in (level 10.0)
 
 step Turn in (level 10.1)
   turnin 96822
+
+step Reach level 10
+  zone map 1411
+  goto 43.2,39.4 "Razormane Battleguard (level 10)" r 40 optional
+  level 10
+  tip If you're not level 10 yet: kill Razormane Battleguard here (level 10). Call of Fire needs level 10.
 
 step Pick up quests (level 10.1)
   accept 2983

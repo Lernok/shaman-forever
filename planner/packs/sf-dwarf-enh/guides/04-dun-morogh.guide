@@ -37,11 +37,7 @@ step Turn in (level 12.7)
 step Hearthstone (level 12.7)
   sethome "Thunderbrew Distillery"
 
-step Pick up quests (level 12.7)
-  accept 96408
-
 step Turn in (level 12.7)
-  turnin 96408
   turnin 96391 optional map 1426 @64.87,58.47
   turnin 96390
 

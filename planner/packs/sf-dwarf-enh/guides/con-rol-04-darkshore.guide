@@ -112,6 +112,12 @@ step Turn in (level 17.1)
 step Pick up quests (level 17.1)
   accept 98013
 
+step Reach level 17
+  zone map 1439
+  goto 39.3,81.4 "Grizzled Thistle Bear (level 17)" r 40 optional
+  level 17
+  tip If you're not level 17 yet: kill Grizzled Thistle Bear here (level 17). The Sleeper Has Awakened needs level 17.
+
 step Pick up quests (level 17.1)
   accept 5321
 

@@ -22,6 +22,12 @@ step Pick up quests (level 1.1)
 step Objectives: Harmony in Balance (level 2.1)
   kill 250873 x8 quest 92461.1
 
+step Reach level 2
+  zone map 2521
+  goto 46.3,26.6 "Pesky Cirrusfly (level 1)" r 40 live optional
+  level 2
+  tip If you're not level 2 yet: kill Pesky Cirrusfly here (level 1). Elemental Unrest needs level 2.
+
 step Pick up quests (level 2.1)
   accept 92464
 
@@ -64,6 +70,12 @@ step Objectives: Agitators (level 3.5)
   kill 251160 x7 quest 92465.1
   kill 251143 x6 quest 92465.2
 
+step Reach level 3
+  zone map 2521
+  goto 46.3,26.6 "Pesky Cirrusfly (level 1)" r 40 live optional
+  level 3
+  tip If you're not level 3 yet: kill Pesky Cirrusfly here (level 1). Call of Earth needs level 3.
+
 step Pick up quests (level 3.5)
   accept 92466
 
@@ -79,6 +91,12 @@ step Objectives: Infestation Investigation (level 4.0)
 
 step Turn in (level 4.1)
   turnin 92462
+
+step Reach level 4
+  zone map 2521
+  goto 46.3,20.3 "Roiling Winds (level 3)" r 40 live optional
+  level 4
+  tip If you're not level 4 yet: kill Roiling Winds here (level 3). Aetheen of the Gales needs level 4.
 
 step Pick up quests (level 4.1)
   accept 92471
@@ -325,6 +343,12 @@ step Turn in (level 10.0)
 
 step Turn in (level 10.0)
   turnin 93948
+
+step Reach level 10
+  zone map 2521
+  goto 47.3,81.2 "Hungry Bandit (level 9)" r 40 live optional
+  level 10
+  tip If you're not level 10 yet: kill Hungry Bandit here (level 9). Call of Fire needs level 10.
 
 step Pick up quests (level 10.0)
   accept 97243

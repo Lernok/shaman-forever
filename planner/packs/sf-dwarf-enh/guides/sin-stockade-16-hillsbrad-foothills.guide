@@ -61,6 +61,12 @@ step Pick up quests (level 30.6)
 step Pick up quests (level 30.6)
   accept 98463
 
+step Reach level 30
+  zone map 1424
+  goto 66,82.2 "Daggerspine Shorestalker (level 29)" r 40 optional
+  level 30
+  tip If you're not level 30 yet: kill Daggerspine Shorestalker here (level 29). Hints of a New Plague? needs level 30.
+
 step Pick up quests (level 30.6)
   accept 659
 

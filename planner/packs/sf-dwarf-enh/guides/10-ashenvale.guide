@@ -22,6 +22,12 @@ step Pick up quests (level 20.1)
 step Turn in (level 20.1)
   turnin 967
 
+step Reach level 20
+  zone map 1440
+  goto 31,30.9 "Dark Strand Cultist (level 19)" r 40 optional
+  level 20
+  tip If you're not level 20 yet: kill Dark Strand Cultist here (level 19). Bathran's Hair needs level 20.
+
 step Pick up quests (level 20.1)
   accept 1010
 

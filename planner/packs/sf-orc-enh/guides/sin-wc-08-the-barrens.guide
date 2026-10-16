@@ -231,6 +231,12 @@ step Turn in (level 20.2)
 step Hearthstone (level 20.2)
   sethome "Camp Taurajo"
 
+step Reach level 20
+  zone map 1413
+  goto 51,55.8 "Bristleback Thornweaver (level 19)" r 40 optional
+  level 20
+  tip If you're not level 20 yet: kill Bristleback Thornweaver here (level 19). The Ashenvale Hunt needs level 20.
+
 step Turn in (level 20.3)
   turnin 882
   accept 907
