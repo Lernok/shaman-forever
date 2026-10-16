@@ -1,0 +1,43 @@
+guide sf-tauren-enh/19-stranglethorn-vale
+title 19 · Stranglethorn Vale (30-31)
+faction Horde
+race Tauren
+levels 30-31
+zone Stranglethorn Vale
+folder Shaman: Forever · Tauren Mejora
+next sf-tauren-enh/20-undercity
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 30.5)
+  accept 583
+
+step Turn in (level 30.5)
+  turnin 583
+
+step Pick up quests (level 30.5)
+  accept 190
+
+step Pick up quests (level 30.5)
+  accept 185
+
+step Objectives: Tiger Mastery (level 30.5)
+  complete 185
+
+step Objectives: Panther Mastery (level 30.6)
+  complete 190
+
+step Turn in (level 30.6)
+  turnin 185
+
+step Turn in (level 30.6)
+  turnin 190
+
+step Flight path (level 30.6)
+  getfp "Booty Bay"
+
+step Hearthstone (level 30.6)
+  sethome "Booty Bay"
+
+step Objectives: Warsong Supplies (level 30.6)
+  complete 6571

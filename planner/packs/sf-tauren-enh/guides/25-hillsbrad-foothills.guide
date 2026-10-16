@@ -1,0 +1,22 @@
+guide sf-tauren-enh/25-hillsbrad-foothills
+title 25 · Hillsbrad Foothills (31-32)
+faction Horde
+race Tauren
+levels 31-32
+zone Hillsbrad Foothills
+folder Shaman: Forever · Tauren Mejora
+next sf-tauren-enh/26-arathi-highlands
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 31.8)
+  turnin 96984 optional map 1424 @61.6,20.85
+
+step Turn in (level 32.0)
+  turnin 96986 optional map 1424 @62.63,20.65
+
+step Flight path (level 32.0)
+  getfp "Hammerfall"
+
+step Hearthstone (level 32.0)
+  sethome "Hammerfall"

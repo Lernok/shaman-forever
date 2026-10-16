@@ -1,8 +1,22 @@
 diff --git a/tools/lib/sim/evaluate.js b/tools/lib/sim/evaluate.js
-index 72dbed5..00b7f80 100644
+index 72dbed5..e6e728e 100644
 --- a/tools/lib/sim/evaluate.js
 +++ b/tools/lib/sim/evaluate.js
-@@ -68,6 +68,8 @@ class Evaluator {
+@@ -39,6 +39,13 @@
+ 
+ const { Travel } = require('./travel');
+ const { MOBL, K_ACCEPT, K_TASK, K_TURNIN, K_GRIND, K_DUNGEON, W_KILL, W_USE, W_ESCORT, W_BUY } = require('./run');
++// Shaman: Forever: SF_DUNGEON_LEVELS="Ragefire Chasm:13-16,..." the level
++// window each chosen dungeon is run in.
++const SF_WINDOWS = {};
++for (const part of (process.env.SF_DUNGEON_LEVELS || '').split(',')) {
++	const m = /^\s*(.+?):(\d+)-(\d+)\s*$/.exec(part);
++	if (m) SF_WINDOWS[m[1]] = [Number(m[2]), Number(m[3])];
++}
+ const { LEVEL_XP, mobXp } = require('../game/xp');
+ 
+ const SHARE = new Float64Array(64);
+@@ -68,6 +75,8 @@ class Evaluator {
  		this.visit2 = new Uint8Array(run.P); // a second visit of the package
  		this.visit3 = new Uint8Array(run.P); // a third
  		this.dungeonDone = new Uint8Array(Math.max(1, (run.dungeons || []).length));
@@ -11,7 +25,7 @@ index 72dbed5..00b7f80 100644
  		// Steps of the package being run whose accept (or dungeon) was deferred
  		// as too low: sized for the longest package.
  		let maxSteps = 0;
-@@ -127,6 +129,9 @@ class Evaluator {
+@@ -127,6 +136,9 @@ class Evaluator {
  		this.xpDungeon = 0;
  		this.dungeonSec = 0;
  		this.dungeonsRun = 0;
@@ -21,7 +35,7 @@ index 72dbed5..00b7f80 100644
  		this.homeLeft = r.homeCount || 0;
  		this.unreachable = 0;
  		this.riskCrossings = 0;
-@@ -142,7 +147,7 @@ class Evaluator {
+@@ -142,7 +154,7 @@ class Evaluator {
  			bind: this.bind, hearthReady: this.hearthReady, xpQuest: this.xpQuest, xpKill: this.xpKill, xpGrind: this.xpGrind,
  			travelSec: this.travelSec, grindSec: this.grindSec, questsDone: this.questsDone, finished: this.finished,
  			infeasible: this.infeasible, hearths: this.hearths, flights: this.flights, levelFrom: this.level,
@@ -30,7 +44,7 @@ index 72dbed5..00b7f80 100644
  			homeLeft: this.homeLeft, unreachable: this.unreachable, riskCrossings: this.riskCrossings, steps: this.steps, catchUpSec: this.catchUpSec,
  			zoneChanges: this.zoneChanges,
  		};
-@@ -176,6 +181,9 @@ class Evaluator {
+@@ -176,6 +188,9 @@ class Evaluator {
  		this.xpDungeon = s.xpDungeon;
  		this.dungeonSec = s.dungeonSec;
  		this.dungeonsRun = s.dungeonsRun;
@@ -40,7 +54,7 @@ index 72dbed5..00b7f80 100644
  		this.homeLeft = s.homeLeft;
  		this.unreachable = s.unreachable;
  		this.riskCrossings = s.riskCrossings;
-@@ -223,13 +231,14 @@ class Evaluator {
+@@ -223,13 +238,14 @@ class Evaluator {
  		this.xp -= LEVEL_XP[this.level];
  		this.level++;
  		this.levelTimes[this.level] = this.time;
@@ -57,7 +71,7 @@ index 72dbed5..00b7f80 100644
  		if (!this.mounted && this.level >= this.p.mountLevel) {
  			this.mounted = true;
  			this.D = this.travel.matrixFor(this.mask, true);
-@@ -250,7 +259,7 @@ class Evaluator {
+@@ -250,7 +266,7 @@ class Evaluator {
  			const target = this.level < level ? LEVEL_XP[this.level] : xpInto;
  			const need = target - this.xp;
  			if (need <= 0) break;
@@ -66,7 +80,7 @@ index 72dbed5..00b7f80 100644
  			this.time += sec;
  			this.grindSec += sec;
  			this.xpGrind += need;
-@@ -308,6 +317,7 @@ class Evaluator {
+@@ -308,6 +324,7 @@ class Evaluator {
  		this.travelSec += c;
  		if (this.run.pMap[pt] !== this.run.pMap[this.pos]) this.zoneChanges++;
  		this.pos = pt;
@@ -74,7 +88,7 @@ index 72dbed5..00b7f80 100644
  		this.learnAt(pt);
  		return true;
  	}
-@@ -329,7 +339,7 @@ class Evaluator {
+@@ -329,7 +346,7 @@ class Evaluator {
  				while (n > 0 && !this.finished) {
  					const L = this.level;
  					const xpPer = t.killX[L * MOBL + M] * (elite ? 2 : 1);
@@ -83,7 +97,7 @@ index 72dbed5..00b7f80 100644
  					if (xpPer <= 0) {
  						this.time += n * tPer;
  						break;
-@@ -392,6 +402,9 @@ class Evaluator {
+@@ -392,6 +409,9 @@ class Evaluator {
  				if (opens < this.gateNeed) this.gateNeed = opens;
  				return;
  			}
@@ -93,7 +107,7 @@ index 72dbed5..00b7f80 100644
  			if (!this.moveTo(pt)) {
  				this.unreachable++;
  				return;
-@@ -423,6 +436,7 @@ class Evaluator {
+@@ -423,6 +443,7 @@ class Evaluator {
  			const xp = this.t.qFull[q] * SHARE[d < 0 ? 0 : d > 63 ? 63 : d];
  			this.set0Active(q);
  			this.set1(J_DONE, this.done, q);
@@ -101,7 +115,7 @@ index 72dbed5..00b7f80 100644
  			this.questsDone++;
  			this.xpQuest += xp;
  			this.gain(xp);
-@@ -443,19 +457,22 @@ class Evaluator {
+@@ -443,19 +464,26 @@ class Evaluator {
  		const dg = r.dungeons[d];
  		const p = this.p;
  		if (this.dungeonDone[d]) return false;
@@ -124,11 +138,15 @@ index 72dbed5..00b7f80 100644
  			return false;
  		}
 -		if (this.level < dg.min) this.grindTo(dg.min);
++		// Shaman: Forever: SF_DUNGEON_LEVELS windows: past its window the run
++		// doesn't count (the search pays for it as left out).
++		const win = SF_WINDOWS[dg.name];
++		if (win && this.level > win[1]) return false;
 +		if (this.level < target) this.grindTo(target);
  		const mid = (dg.min + dg.max) / 2;
  		const runMin = p.dungeonRunLow + ((p.dungeonRunHigh - p.dungeonRunLow) * Math.max(0, Math.min(1, (mid - 15) / 40)));
  		this.time += (p.dungeonFormUp + runMin) * 60;
-@@ -475,10 +492,69 @@ class Evaluator {
+@@ -475,10 +503,70 @@ class Evaluator {
  			for (let t = r.qTask0[qi]; t < r.qTask1[qi]; t++) if (!this.taskDone[t]) this.set1(J_TASK, this.taskDone, t);
  		}
  		this.dungeonsRun++;
@@ -160,7 +178,8 @@ index 72dbed5..00b7f80 100644
 +	}
 +
 +	dungeonTarget(dg) {
-+		return Math.max(dg.min, dg.top - this.p.dungeonBossGap);
++		const w = SF_WINDOWS[dg.name];
++		return Math.max(dg.min, dg.top - this.p.dungeonBossGap, w ? w[0] : 0);
 +	}
 +
 +	// Shaman: Forever: on the way through package p, take the dungeon quests
@@ -198,7 +217,7 @@ index 72dbed5..00b7f80 100644
  	// Whether package p may run next: home packages first, once each; any
  	// other package up to MAX_VISITS times (flags usedPkg, visit2, visit3).
  	canVisit(p) {
-@@ -513,6 +589,8 @@ class Evaluator {
+@@ -513,6 +601,8 @@ class Evaluator {
  		// Away below level 10: grind to 10 before the package's first move
  		// (moveTo), so a package that does nothing grinds nothing.
  		this.awayPending = r.pkgAway[p] === 1 && this.level < r.homeLevel;
@@ -207,7 +226,7 @@ index 72dbed5..00b7f80 100644
  		const e = r.pkgEnd[p];
  		const before = this.steps;
  		this.gateNeed = 99;
-@@ -528,6 +606,7 @@ class Evaluator {
+@@ -528,6 +618,7 @@ class Evaluator {
  		}
  		this.defer = false;
  		if (this.deferred) for (let s = r.pkgStart[p]; s < e && !this.finished; s++) this.step(r.sKind[s], r.sQuest[s], r.sTask[s], r.sPt[s]);
@@ -215,7 +234,7 @@ index 72dbed5..00b7f80 100644
  		if (this.catchUp && this.steps === before && this.gateNeed < 99 && !this.finished) {
  			const t0 = this.time;
  			this.grindTo(this.gateNeed);
-@@ -535,6 +614,7 @@ class Evaluator {
+@@ -535,6 +626,7 @@ class Evaluator {
  			for (let s = r.pkgStart[p]; s < e && !this.finished; s++) this.step(r.sKind[s], r.sQuest[s], r.sTask[s], r.sPt[s]);
  		}
  		this.awayPending = false;
@@ -223,7 +242,7 @@ index 72dbed5..00b7f80 100644
  		return true;
  	}
  
-@@ -550,7 +630,7 @@ class Evaluator {
+@@ -550,7 +642,7 @@ class Evaluator {
  			const t = pend[i];
  			const kind = r.sKind[t];
  			const q = r.sQuest[t];
@@ -232,7 +251,7 @@ index 72dbed5..00b7f80 100644
  			if (!open) {
  				pend[kept++] = t;
  				continue;
-@@ -583,14 +663,14 @@ class Evaluator {
+@@ -583,14 +675,14 @@ class Evaluator {
  	}
  
  	finish() {
@@ -249,7 +268,7 @@ index 72dbed5..00b7f80 100644
  			feasible: !this.infeasible,
  			timeTo,
  			levelTimes: Array.from(this.levelTimes),
-@@ -601,6 +681,7 @@ class Evaluator {
+@@ -601,6 +693,7 @@ class Evaluator {
  			hearths: this.hearths,
  			flights: this.flights,
  			dungeonsRun: this.dungeonsRun,
@@ -257,12 +276,15 @@ index 72dbed5..00b7f80 100644
  			dungeonSeconds: this.dungeonSec,
  			xpDungeon: Math.round(this.xpDungeon),
  			unreachable: this.unreachable,
-@@ -647,7 +728,7 @@ class Evaluator {
+@@ -647,7 +740,10 @@ class Evaluator {
  		}
  		this.finish();
  		this.lastUsed = used;
 -		return (this.levelTimes[60] || this.time) + ((this.p.grindWeight || 1) - 1) * this.grindSec + (this.p.zoneChange || 0) * this.zoneChanges;
-+		return (this.levelTimes[this.p.capLevel] || this.time) + ((this.p.grindWeight || 1) - 1) * this.grindSec + (this.p.zoneChange || 0) * this.zoneChanges;
++		// Shaman: Forever: with SF_DUNGEONS, every chosen dungeon left out costs
++		// SF_MISSING hours (default 10), so the search keeps them all.
++		const missing = process.env.SF_DUNGEONS ? Math.max(0, this.run.dungeons.filter((d) => d.allowed !== false).length - this.dungeonsRun) * (Number(process.env.SF_MISSING) || 10) * 3600 : 0;
++		return (this.levelTimes[this.p.capLevel] || this.time) + ((this.p.grindWeight || 1) - 1) * this.grindSec + (this.p.zoneChange || 0) * this.zoneChanges + missing;
  	}
  
  	packageRecord(p, s) {
@@ -285,10 +307,39 @@ index a3f7ccf..2c4e812 100644
  	restedShare: [0, 0, 0, 1, 'share of kill XP doubled by rested XP (optional)'],
  };
 diff --git a/tools/lib/sim/run.js b/tools/lib/sim/run.js
-index 49784c3..12ffedd 100644
+index 49784c3..0962d43 100644
 --- a/tools/lib/sim/run.js
 +++ b/tools/lib/sim/run.js
-@@ -260,6 +260,28 @@ function compileRun(world, { race, cls = null, raceBits = {}, family = 'solo' }
+@@ -94,13 +94,18 @@ function compileRun(world, { race, cls = null, raceBits = {}, family = 'solo' }
+ 	if (!start) throw new Error(`no ${faction} start for race ${race} (known: ${Object.keys(world.starts).join(', ')})`);
+ 	const withDungeons = family === 'dungeons';
+ 	const skyborne = race === 'Skyborne';
++	// Shaman: Forever: SF_DUNGEONS="Ragefire Chasm,Ruins of Lordaeron,..." keeps
++	// only those dungeons (and their quests); evaluate.js charges every one the
++	// route leaves out, so the search fits them all in.
++	const sfDungeons = process.env.SF_DUNGEONS ? new Set(process.env.SF_DUNGEONS.split(',').map((x) => x.trim())) : null;
++	const dungeonAllowed = (i) => !sfDungeons || sfDungeons.has(((world.dungeons || [])[i] || {}).name);
+ 
+ 	// ---- quests open to this character ----
+ 	const worldById = new Map(world.quests.map((q) => [q.id, q]));
+ 	const excludedIds = new Set(world.excludedIds || []);
+ 	const isOpen = (q) => questOpen(q, faction, rbit, cls) && (skyborne || !onIsle(world, q));
+ 	let open = new Map();
+-	for (const q of world.quests) if (isOpen(q) && (withDungeons || q.dungeon === undefined)) open.set(q.id, q);
++	for (const q of world.quests) if (isOpen(q) && (q.dungeon === undefined || (withDungeons && dungeonAllowed(q.dungeon)))) open.set(q.id, q);
+ 	// Prerequisites: any-of (`pre`) and all-of (`preAll`). Open ones count;
+ 	// ones closed to this character do not apply; ones excluded for missing
+ 	// data (or not reachable) make the quest unreachable: any-of when none is
+@@ -247,7 +252,7 @@ function compileRun(world, { race, cls = null, raceBits = {}, family = 'solo' }
+ 	const dQuests = dungeons.map(() => []);
+ 	for (const p of world.packages) {
+ 		if (p.dungeon !== undefined) {
+-			if (!withDungeons) continue;
++			if (!withDungeons || !dungeonAllowed(p.dungeon)) continue;
+ 			// Fixed order: accepts, the run, turn-ins.
+ 			const steps = [];
+ 			for (const [kind, qid, task, pt] of p.steps) {
+@@ -260,6 +265,28 @@ function compileRun(world, { race, cls = null, raceBits = {}, family = 'solo' }
  				if (kind === K_ACCEPT) dQuests[p.dungeon].push(qi);
  				steps.push([kind, qi, kind === K_ACCEPT ? qAccept[qi] : -1, usePt(pt)]);
  			}
@@ -317,7 +368,7 @@ index 49784c3..12ffedd 100644
  			pkgStart.push(sKind.length);
  			for (const s of steps) {
  				sKind.push(s[0]);
-@@ -374,7 +396,54 @@ function compileRun(world, { race, cls = null, raceBits = {}, family = 'solo' }
+@@ -374,7 +401,54 @@ function compileRun(world, { race, cls = null, raceBits = {}, family = 'solo' }
  	const danger = new Map();
  	for (const g of world.danger || []) danger.set(g.region, { gx0: g.gx0, gy0: g.gy0, nx: g.nx, ny: g.ny, cell: g.cell, z: Int32Array.from(g.z) });
  
@@ -372,12 +423,12 @@ index 49784c3..12ffedd 100644
  		faction, race, cls, world,
  		start: { pt: startPt, zone: start.zone, quest: start.quest },
  		quests, qIndex, Q,
-@@ -397,7 +466,7 @@ function compileRun(world, { race, cls = null, raceBits = {}, family = 'solo' }
+@@ -397,7 +471,7 @@ function compileRun(world, { race, cls = null, raceBits = {}, family = 'solo' }
  		grindSpacing: Float64Array.from(world.grind.spacing),
  		questXpRows: world.questXp,
  		family,
 -		dungeons: dungeons.map((d, i) => ({ name: d.name, min: d.min, max: d.max, pt: ptIndex.get(d.pt), bosses: Int32Array.from(d.bosses), bossCount: d.bossCount, quests: Int32Array.from(dQuests[i]) })),
-+		dungeons: dungeons.map((d, i) => ({ drops: dDrops[i], name: d.name, min: d.min, max: d.max, top: d.bosses.length ? Math.max(...d.bosses) : d.max, pt: ptIndex.get(d.pt), bosses: Int32Array.from(d.bosses), bossCount: d.bossCount, quests: Int32Array.from(dQuests[i]) })),
++		dungeons: dungeons.map((d, i) => ({ allowed: dungeonAllowed(i), drops: dDrops[i], name: d.name, min: d.min, max: d.max, top: d.bosses.length ? Math.max(...d.bosses) : d.max, pt: ptIndex.get(d.pt), bosses: Int32Array.from(d.bosses), bossCount: d.bossCount, quests: Int32Array.from(dQuests[i]) })),
  		qDungeon,
  	};
  }

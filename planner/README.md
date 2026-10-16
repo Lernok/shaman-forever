@@ -35,3 +35,40 @@ node tools/polestar.js data build --questie "<AddOns de Forever>"
 node tools/polestar.js dungeons build --source "<AddOns>/ForeverDungeonJournal"
 SF_CAP=30 node tools/polestar.js sim run --faction horde --race Orc --class Shaman --dungeons
 ```
+
+## Rutas a medida como packs de Polestar
+
+Además del parche de arriba:
+
+- **Dungeons elegidas** (`SF_DUNGEONS="Ragefire Chasm,Ruins of Lordaeron,…"`):
+  solo esas dungeons (y sus misiones); cada una que la ruta deja afuera cuesta
+  `SF_MISSING` horas (10 por defecto), así la búsqueda las mete todas.
+- **Rango de nivel por dungeon** (`SF_DUNGEON_LEVELS="Ragefire Chasm:13-16,…"`):
+  fuera de su rango la corrida no cuenta.
+- **Viajes**: el modelo necesita `data/forever/travel.json` (vuelos, zepelines,
+  barcos, posadas). Sin él no hay transporte y Reinos del Este queda fuera de
+  alcance para la Horda. Se arma con `node tools/polestar.js travel build` y
+  después `sim world --faction horde --rebuild`.
+
+Del resultado a un pack instalable:
+
+```
+SF_CAP=35 SF_DUNGEONS="…" SF_DUNGEON_LEVELS="…" SF_WEAPONS=<planner/weapons-enhancement.json> \
+  node tools/polestar.js sim run --faction horde --race Tauren --class Shaman --dungeons --workers 3 --paths 300000
+node tools/polestar.js sim export --result data/sim/results/horde-tauren-shaman-dungeons.json --out <export>
+node tools/polestar.js new <pack> --id sf-tauren-enh --title "…" --author Lernok --license CC-BY-4.0 --yes
+node planner/make-pack.js <export> <pack> sf-tauren-enh "Shaman: Forever · Tauren Mejora"
+cd <pack> && polestar lint && LUA=<lua5.1> polestar playtest && polestar install --dest "<AddOns>"
+```
+
+`make-pack.js` renombra las guías al id del pack, las agrupa en una carpeta del
+menú, cambia la nota "Run <dungeon>" por un paso con la entrada, agrega la
+aceptación de las misiones de dungeon que el simulador agarró de paso (al final
+de la última visita a la zona de quien la da, si no antes de la dungeon), las
+marca `optional` y les pone las coordenadas del diario de dungeons cuando
+Polestar no las tiene.
+
+Packs hechos (`planner/packs/`):
+
+- `sf-tauren-enh`: Tauren Mejora hasta 35 con RFC, Ruins of Lordaeron, WC, SFK,
+  City of Dalaran y Excavation Site: Wetlands (sin BFD), 36 h bajo el modelo.
