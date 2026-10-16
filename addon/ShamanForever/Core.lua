@@ -188,8 +188,9 @@ local function waypoint(g, title)
   end
   if map and C_Map and C_Map.SetUserWaypoint and UiMapPoint then
     local ok = pcall(function()
+      -- Only the pin: super-tracking it is protected on Forever and can be
+      -- blocked silently ("Interface action failed because of an AddOn").
       C_Map.SetUserWaypoint(UiMapPoint.CreateFromCoordinates(map, g.x / 100, g.y / 100))
-      if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then C_SuperTrack.SetSuperTrackedUserWaypoint(true) end
     end)
     if ok then say(string.format(L().pinSet, title)) return end
   end
