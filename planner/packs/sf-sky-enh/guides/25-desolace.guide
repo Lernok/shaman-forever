@@ -1,0 +1,224 @@
+guide sf-sky-enh/25-desolace
+title 25 · Desolace (33-35)
+faction Horde
+race Skyborne
+levels 33-35
+zone Desolace
+folder Shaman: Forever · Skyborne Mejora
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.9 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 33.4)
+  accept 5561
+
+step Pick up quests (level 33.4)
+  accept 1367
+  accept 1368
+
+step Pick up quests (level 33.4)
+  accept 1365
+
+step Objectives: Kodo Roundup (level 33.4)
+  complete 5561
+
+step Turn in (level 33.5)
+  turnin 5561
+
+step Turn in (level 33.5)
+  turnin 1367
+  accept 1369
+
+step Objectives: Khan Dez'hepah (level 33.5)
+  complete 1365
+
+step Pick up quests (level 33.5)
+  accept 5821
+
+step Pick up quests (level 33.6)
+  accept 1480
+
+step Turn in (level 33.6)
+  turnin 1480
+  accept 1481
+
+step Turn in (level 33.6)
+  turnin 1365
+  accept 1366
+
+step Objectives: Centaur Bounty (level 33.9)
+  complete 1366
+
+step Objectives: Bodyguard for Hire (level 33.9)
+  complete 5821
+
+step Turn in (level 34.0)
+  turnin 5821
+
+step Turn in (level 34.1)
+  turnin 1366
+
+step Turn in (level 34.1)
+  turnin 1368
+  accept 1370
+
+step Objectives: Broken Tears (level 34.1)
+  complete 1369
+
+step Flight path (level 34.1)
+  getfp "Shadowprey Village"
+
+step Hearthstone (level 34.1)
+  sethome "Shadowprey Village"
+
+step Pick up quests (level 34.1)
+  accept 5763
+
+step Pick up quests (level 34.1)
+  accept 6142
+
+step Objectives: Clam Bait (level 34.1)
+  complete 6142
+
+step Pick up quests (level 34.1)
+  accept 5741
+
+step Objectives: Sceptre of Light (level 34.1)
+  complete 5741
+
+step Turn in (level 34.1)
+  turnin 5741
+
+step Hearth (level 34.1)
+  hearth "Shadowprey Village"
+
+step Turn in (level 34.2)
+  turnin 6142
+
+step Objectives: Stealing Supplies (level 34.2)
+  complete 1370
+
+step Turn in (level 34.2)
+  turnin 1369
+  accept 1371
+  complete 1371
+  turnin 1371
+  accept 1375
+
+step Objectives: The Corrupter (level 34.3)
+  complete 1481
+
+step Turn in (level 34.3)
+  turnin 1481
+  accept 1482
+
+step Turn in (level 34.3)
+  turnin 1370
+  accept 1373
+
+step Objectives: Khan Shaka (level 34.3)
+  complete 1375
+
+step Turn in (level 34.4)
+  turnin 1375
+
+step Objectives: The Corrupter (level 34.4)
+  complete 1482
+
+step Turn in (level 34.4)
+  turnin 1482
+  accept 1484
+
+step Turn in (level 34.4)
+  turnin 1484
+
+step Pick up quests (level 34.4)
+  accept 5381
+
+step Pick up quests (level 34.4)
+  accept 6143
+
+step Pick up quests (level 34.4)
+  accept 93034
+
+step Pick up quests (level 34.4)
+  accept 5943
+
+step Pick up quests (level 34.4)
+  accept 6134
+
+step Objectives: Gizelton Caravan (level 34.4)
+  complete 5943
+
+step Turn in (level 34.5)
+  turnin 5943
+
+step Objectives: Ghost-o-plasm Round Up (level 34.5)
+  complete 6134
+
+step Turn in (level 34.5)
+  turnin 6134
+
+step Pick up quests (level 34.5)
+  accept 6132
+
+step Objectives: Get Me Out of Here! (level 34.5)
+  complete 6132
+
+step Turn in (level 34.6)
+  turnin 6132
+
+step Pick up quests (level 34.6)
+  accept 5501
+
+step Objectives: Hand of Iruxos (level 34.6)
+  complete 5381
+
+step Pick up quests (level 34.6)
+  accept 6027
+
+step Objectives: Other Fish to Fry (level 34.6)
+  complete 6143
+
+step Pick up quests (level 34.6)
+  accept 6161
+
+step Objectives: Claim Rackmore's Treasure! (level 34.6)
+  complete 6161
+
+step Objectives: Other Fish to Fry (level 34.7)
+  complete 6143
+  complete 6161
+
+step Turn in (level 34.7)
+  turnin 6161
+
+step Objectives: Book of the Ancients (level 34.7)
+  complete 6027
+
+step Objectives: Other Fish to Fry (level 34.8)
+  complete 6143
+
+step Turn in (level 34.8)
+  turnin 6027
+
+step Objectives: Bone Collector (level 34.8)
+  complete 5501
+
+step Turn in (level 34.9)
+  turnin 5501
+
+step Hearth (level 34.9)
+  hearth "Shadowprey Village"
+
+step Turn in (level 34.9)
+  turnin 5381
+  accept 5581
+
+step Turn in (level 34.9)
+  turnin 6143
+
+step Objectives: Portals of the Legion (level 34.9)
+  complete 5581
+
+step Turn in (level 35.0)
+  turnin 5581

@@ -5,8 +5,8 @@ race Tauren
 levels 1-12
 zone Mulgore
 folder Shaman: Forever · Tauren Mejora
-next sf-tauren-enh/02-durotar
-# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.3 h under the model). Era + known Forever quests only.
+next sf-tauren-enh/02-thunder-bluff
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 1.0)
@@ -364,5 +364,8 @@ step Turn in (level 12.0)
   turnin 773
   accept 775
 
+step Flight path (level 12.0)
+  getfp "Thunder Bluff"
+
 step Hearthstone (level 12.0)
-  sethome "Razor Hill"
+  sethome "Thunder Bluff"

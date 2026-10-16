@@ -1,12 +1,12 @@
 guide sf-orc-enh/09-the-barrens
 title 09 · The Barrens (18-21)
 faction Horde
-race Orc
+race Orc, Troll
 levels 18-21
 zone The Barrens
-folder Shaman: Forever · Orco Mejora
+folder Shaman: Forever · Orco y Troll Mejora
 next sf-orc-enh/10-hillsbrad-foothills
-# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.9 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 18.6)
@@ -22,7 +22,7 @@ step Pick up quests (level 18.6)
 step Pick up quests (level 18.6)
   accept 895
 
-step Objectives: Raptor Horns (level 18.7)
+step Objectives: Raptor Horns (level 18.8)
   complete 865 optional
 
 step Turn in (level 18.8)
@@ -31,16 +31,16 @@ step Turn in (level 18.8)
 step Objectives: WANTED: Baron Longshore (level 18.8)
   complete 895
 
-step Objectives: The Guns of Northwatch (level 18.8)
+step Objectives: The Guns of Northwatch (level 18.9)
   complete 891
 
-step Pick up quests (level 18.8)
+step Pick up quests (level 18.9)
   accept 898
 
-step Objectives: The Guns of Northwatch (level 18.8)
+step Objectives: The Guns of Northwatch (level 18.9)
   complete 891
 
-step Objectives: The Guns of Northwatch (level 18.8)
+step Objectives: The Guns of Northwatch (level 18.9)
   complete 891
 
 step Objectives: The Guns of Northwatch (level 18.9)
@@ -53,26 +53,26 @@ step Turn in (level 19.0)
   turnin 891
   turnin 898
 
-step Turn in (level 19.1)
+step Turn in (level 19.2)
   turnin 895
 
-step Flight path (level 19.1)
+step Flight path (level 19.2)
   getfp "Crossroads"
 
-step Hearthstone (level 19.1)
+step Hearthstone (level 19.2)
   sethome "The Crossroads"
 
-step Pick up quests (level 19.1)
+step Pick up quests (level 19.2)
   accept 899
   accept 4921
 
-step Pick up quests (level 19.1)
+step Pick up quests (level 19.2)
   accept 6541
 
-step Pick up quests (level 19.1)
+step Pick up quests (level 19.2)
   accept 850
 
-step Objectives: Kolkar Leaders (level 19.1)
+step Objectives: Kolkar Leaders (level 19.2)
   complete 850
 
 step Turn in (level 19.2)
@@ -123,7 +123,7 @@ step Pick up quests (level 19.5)
 step Objectives: Ignition (level 19.5)
   complete 858
 
-step Turn in (level 19.5)
+step Turn in (level 19.6)
   turnin 858
   accept 863
 
@@ -151,10 +151,10 @@ step Hearthstone (level 20.0)
 step Turn in (level 20.1)
   turnin 896
 
-step Turn in (level 20.1)
+step Turn in (level 20.2)
   turnin 863
 
-step Hearthstone (level 20.1)
+step Hearthstone (level 20.2)
   sethome "The Crossroads"
 
 step Turn in (level 20.2)
@@ -169,7 +169,7 @@ step Turn in (level 20.3)
 step Objectives: Hezrul Bloodmark (level 20.3)
   complete 852
 
-step Objectives: Her Name Is Olgra (level 20.3)
+step Objectives: Her Name Is Olgra (level 20.4)
   complete 95774
 
 step Turn in (level 20.4)

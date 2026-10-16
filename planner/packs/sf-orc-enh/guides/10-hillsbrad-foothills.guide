@@ -1,12 +1,12 @@
 guide sf-orc-enh/10-hillsbrad-foothills
 title 10 · Hillsbrad Foothills (21-24)
 faction Horde
-race Orc
+race Orc, Troll
 levels 21-24
 zone Hillsbrad Foothills
-folder Shaman: Forever · Orco Mejora
+folder Shaman: Forever · Orco y Troll Mejora
 next sf-orc-enh/11-silverpine-forest
-# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.9 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 21.0)
@@ -26,10 +26,10 @@ step Pick up quests (level 21.0)
 step Objectives: Elixir of Suffering (level 21.1)
   complete 496
 
-step Objectives: Elixir of Suffering (level 21.3)
+step Objectives: Elixir of Suffering (level 21.4)
   complete 496
 
-step Turn in (level 21.3)
+step Turn in (level 21.4)
   turnin 496
   accept 499
 
@@ -56,7 +56,7 @@ step Objectives: WANTED: Syndicate Personnel (level 22.2)
 step Objectives: The Rescue (level 22.2)
   complete 498
 
-step Turn in (level 22.2)
+step Turn in (level 22.3)
   turnin 498
 
 step Turn in (level 22.3)
@@ -66,7 +66,7 @@ step Turn in (level 22.4)
   turnin 501
   accept 502
 
-step Turn in (level 22.4)
+step Turn in (level 22.5)
   turnin 502
 
 step Objectives: Battle of Hillsbrad (level 22.5)
@@ -113,6 +113,3 @@ step Hearth (level 23.5)
 
 step Turn in (level 23.6)
   turnin 532
-
-step Hearthstone (level 23.6)
-  sethome "The Sepulcher"

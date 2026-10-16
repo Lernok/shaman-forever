@@ -1,33 +1,68 @@
 guide sf-orc-enh/11-silverpine-forest
-title 11 · Silverpine Forest (23-24)
+title 11 · Silverpine Forest (23-25)
 faction Horde
-race Orc
-levels 23-24
+race Orc, Troll
+levels 23-25
 zone Silverpine Forest
-folder Shaman: Forever · Orco Mejora
+folder Shaman: Forever · Orco y Troll Mejora
 next sf-orc-enh/12-undercity
-# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.9 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 23.6)
-  accept 1014 optional map 1421 @44.2,39.81
+  accept 95883
+  accept 95885
 
-step Pick up quests (level 23.6)
-  accept 1098 optional map 1421 @43.42,40.86
+step Objectives: The Offering of Blood (level 23.6)
+  complete 95885
 
-step Dungeon: Shadowfang Keep (level 23)
+step Objectives: The Tortured Soul (level 23.6)
+  complete 95883
+
+step Turn in (level 23.7)
+  turnin 95883
+  turnin 95885
+
+step Pick up quests (level 23.7)
+  accept 95884
+  complete 95884
+
+step Turn in (level 23.8)
+  turnin 95884
+
+step Hearthstone (level 23.8)
+  sethome "The Sepulcher"
+
+step Pick up quests (level 23.8)
+  accept 92401 optional map 1421 @44.54,42.96
+
+step Pick up quests (level 23.8)
+  accept 480
+  accept 516
+
+step Objectives: Beren's Peril (level 23.8)
+  complete 516
+
+step Objectives: The Weaver (level 23.8)
+  complete 480
+
+step Turn in (level 23.9)
+  turnin 480
+  turnin 516
+
+step Dungeon: Shadowfang Keep (level 24)
   zone map 1421
   goto 44.8,67.8 "Shadowfang Keep" r 30 live
   tip Find a group and clear Shadowfang Keep, with its quests from this route in your log.
 
-step Turn in (level 23.9)
+step Turn in (level 24.2)
   turnin 1098 optional map 1421 @44.8,67.8 live
 
-step Hearth (level 23.9)
+step Hearth (level 24.2)
   hearth "The Sepulcher"
 
-step Turn in (level 24.0)
+step Turn in (level 24.3)
   turnin 1014 optional map 1421 @44.2,39.81
 
-step Hearthstone (level 24.0)
+step Hearthstone (level 24.3)
   sethome "Undercity"

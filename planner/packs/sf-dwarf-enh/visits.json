@@ -5,9 +5,9 @@
  "race": "Dwarf",
  "family": "dungeons",
  "worldHash": "b211d6ef24585d9aa7b7a60c3b57ec4bc640a311",
- "label": "Alliance Dwarf, dungeons, best route 34.0 h under the model",
- "seconds": 122401.9042259801,
- "hours": 34,
+ "label": "Alliance Dwarf, dungeons, best route 32.7 h under the model",
+ "seconds": 117584.35609963506,
+ "hours": 32.7,
  "visits": [
   {
    "n": 1,
@@ -2133,7 +2133,7 @@
    "levelIn": 13,
    "levelOut": 14.6,
    "arrive": 14230,
-   "leave": 17437,
+   "leave": 18003,
    "packages": [
     "Dungeon: Hall of Thanes"
    ],
@@ -2272,533 +2272,1756 @@
      "level": 13.5
     }
    ],
-   "binds": [],
-   "flightPaths": [],
-   "hearths": [],
-   "grinds": [],
-   "hours": 0.9
-  },
-  {
-   "n": 6,
-   "zone": "Westfall",
-   "map": 1436,
-   "guide": "sim/alliance/dwarf-dungeons/06-westfall",
-   "levelIn": 14.6,
-   "levelOut": 18.5,
-   "arrive": 17821,
-   "leave": 29717,
-   "packages": [
-    "Westfall 11-15"
-   ],
-   "quests": [
-    {
-     "id": 9,
-     "title": "The Killing Fields",
-     "level": 15,
-     "giver": {
-      "name": "Farmer Saldean",
-      "hub": "Saldean's Farm",
-      "pos": {
-       "map": 1436,
-       "x": 56,
-       "y": 31.2
-      }
-     },
-     "ender": {
-      "name": "Farmer Saldean",
-      "hub": "Saldean's Farm",
-      "pos": {
-       "map": 1436,
-       "x": 56,
-       "y": 31.2
-      }
-     },
-     "acceptedAt": 14.6,
-     "objectivesAt": 15,
-     "turnedInAt": 17.1
-    },
-    {
-     "id": 22,
-     "title": "Goretusk Liver Pie",
-     "level": 12,
-     "giver": {
-      "name": "Salma Saldean",
-      "hub": "Saldean's Farm",
-      "pos": {
-       "map": 1436,
-       "x": 56.4,
-       "y": 30.5
-      }
-     },
-     "ender": {
-      "name": "Salma Saldean",
-      "hub": "Saldean's Farm",
-      "pos": {
-       "map": 1436,
-       "x": 56.4,
-       "y": 30.5
-      }
-     },
-     "acceptedAt": 14.6,
-     "objectivesAt": 14.8,
-     "turnedInAt": 17.2
-    },
-    {
-     "id": 92909,
-     "title": "Harvesting the Harvesters",
-     "level": 15,
-     "giver": {
-      "name": "Ozwin Ironsprocket",
-      "hub": "Saldean's Farm",
-      "pos": {
-       "map": 1436,
-       "x": 51.5,
-       "y": 32.3
-      }
-     },
-     "ender": {
-      "name": "Ozwin Ironsprocket",
-      "hub": "Saldean's Farm",
-      "pos": {
-       "map": 1436,
-       "x": 51.5,
-       "y": 32.3
-      }
-     },
-     "acceptedAt": 14.8,
-     "objectivesAt": 15.5,
-     "turnedInAt": 17
-    },
-    {
-     "id": 92911,
-     "title": "Harvesting the Harvesters",
-     "level": 15,
-     "giver": {
-      "name": "Ozwin Ironsprocket",
-      "hub": "Saldean's Farm",
-      "pos": {
-       "map": 1436,
-       "x": 51.5,
-       "y": 32.3
-      }
-     },
-     "ender": {
-      "name": "Ozwin Ironsprocket",
-      "hub": "Saldean's Farm",
-      "pos": {
-       "map": 1436,
-       "x": 51.5,
-       "y": 32.3
-      }
-     },
-     "acceptedAt": 14.8,
-     "objectivesAt": 17,
-     "turnedInAt": 17.1
-    },
-    {
-     "id": 151,
-     "title": "Poor Old Blanchy",
-     "level": 14,
-     "giver": {
-      "name": "Verna Furlbrow",
-      "hub": "The Jansen Stead",
-      "pos": {
-       "map": 1436,
-       "x": 59.9,
-       "y": 19.4
-      }
-     },
-     "ender": {
-      "name": "Verna Furlbrow",
-      "hub": "The Jansen Stead",
-      "pos": {
-       "map": 1436,
-       "x": 59.9,
-       "y": 19.4
-      }
-     },
-     "acceptedAt": 17.2,
-     "objectivesAt": 17.2,
-     "turnedInAt": 17.3
-    },
-    {
-     "id": 64,
-     "title": "The Forgotten Heirloom",
-     "level": 12,
-     "giver": {
-      "name": "Farmer Furlbrow",
-      "hub": "The Jansen Stead",
-      "pos": {
-       "map": 1436,
-       "x": 60,
-       "y": 19.4
-      }
-     },
-     "ender": {
-      "name": "Farmer Furlbrow",
-      "hub": "The Jansen Stead",
-      "pos": {
-       "map": 1436,
-       "x": 60,
-       "y": 19.4
-      }
-     },
-     "acceptedAt": 17.2,
-     "objectivesAt": 17.2,
-     "turnedInAt": 17.2
-    },
-    {
-     "id": 93928,
-     "title": "Of Mice and Milk",
-     "level": 15,
-     "giver": {
-      "name": "Mouse",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 60.2,
-       "y": 43.3
-      }
-     },
-     "ender": {
-      "name": "Hemet Nesingwary",
-      "hub": "Nesingwary's Expedition",
-      "pos": {
-       "map": 1434,
-       "x": 35.7,
-       "y": 10.8
-      }
-     },
-     "acceptedAt": 17.3
-    },
-    {
-     "id": 102,
-     "title": "Patrolling Westfall",
-     "level": 14,
-     "giver": {
-      "name": "Captain Danuvin",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 56.4,
-       "y": 47.6
-      }
-     },
-     "ender": {
-      "name": "Captain Danuvin",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 56.4,
-       "y": 47.6
-      }
-     },
-     "acceptedAt": 17.3,
-     "objectivesAt": 18,
-     "turnedInAt": 18.2
-    },
-    {
-     "id": 12,
-     "title": "The People's Militia",
-     "level": 12,
-     "giver": {
-      "name": "Gryan Stoutmantle",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 56.3,
-       "y": 47.5
-      }
-     },
-     "ender": {
-      "name": "Gryan Stoutmantle",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 56.3,
-       "y": 47.5
-      }
-     },
-     "acceptedAt": 17.3,
-     "objectivesAt": 17.4,
-     "turnedInAt": 17.7
-    },
-    {
-     "id": 153,
-     "title": "Red Leather Bandanas",
-     "level": 15,
-     "giver": {
-      "name": "Scout Galiaan",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 54,
-       "y": 53
-      }
-     },
-     "ender": {
-      "name": "Scout Galiaan",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 54,
-       "y": 53
-      }
-     },
-     "acceptedAt": 17.3,
-     "objectivesAt": 17.6,
-     "turnedInAt": 17.6
-    },
-    {
-     "id": 92742,
-     "title": "Testing the Wells",
-     "level": 12,
-     "giver": {
-      "name": "Alba Fairmoon",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 52.5,
-       "y": 53
-      }
-     },
-     "ender": {
-      "name": "Alba Fairmoon",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 52.5,
-       "y": 53
-      }
-     },
-     "acceptedAt": 17.3,
-     "objectivesAt": 17.3,
-     "turnedInAt": 17.3
-    },
-    {
-     "id": 92744,
-     "title": "Murloc Gills",
-     "level": 12,
-     "giver": {
-      "name": "Alba Fairmoon",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 52.5,
-       "y": 53
-      }
-     },
-     "ender": {
-      "name": "Alba Fairmoon",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 52.5,
-       "y": 53
-      }
-     },
-     "acceptedAt": 17.3,
-     "objectivesAt": 18,
-     "turnedInAt": 18.2
-    },
-    {
-     "id": 92745,
-     "title": "The State of the Mines",
-     "level": 14,
-     "giver": {
-      "name": "Alba Fairmoon",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 52.5,
-       "y": 53
-      }
-     },
-     "ender": {
-      "name": "Alba Fairmoon",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 52.5,
-       "y": 53
-      }
-     },
-     "acceptedAt": 17.3,
-     "objectivesAt": 18,
-     "turnedInAt": 18.2
-    },
-    {
-     "id": 13,
-     "title": "The People's Militia",
-     "level": 14,
-     "giver": {
-      "name": "Gryan Stoutmantle",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 56.3,
-       "y": 47.5
-      }
-     },
-     "ender": {
-      "name": "Gryan Stoutmantle",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 56.3,
-       "y": 47.5
-      }
-     },
-     "acceptedAt": 17.7,
-     "objectivesAt": 17.8,
-     "turnedInAt": 18.1
-    },
-    {
-     "id": 92910,
-     "title": "Harvesting the Harvesters",
-     "level": 15,
-     "giver": {
-      "name": "Precessive Autocognition Assembly (drop: Harvest Golem)",
-      "hub": "Alexston Farmstead",
-      "pos": {
-       "map": 1436,
-       "x": 34.9,
-       "y": 46.8
-      }
-     },
-     "ender": {
-      "name": "Ozwin Ironsprocket",
-      "hub": "Saldean's Farm",
-      "pos": {
-       "map": 1436,
-       "x": 51.5,
-       "y": 32.3
-      }
-     },
-     "acceptedAt": 17.8,
-     "turnedInAt": 18.1
-    },
-    {
-     "id": 14,
-     "title": "The People's Militia",
-     "level": 17,
-     "giver": {
-      "name": "Gryan Stoutmantle",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 56.3,
-       "y": 47.5
-      }
-     },
-     "ender": {
-      "name": "Gryan Stoutmantle",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 56.3,
-       "y": 47.5
-      }
-     },
-     "acceptedAt": 18.1,
-     "objectivesAt": 18.4,
-     "turnedInAt": 18.5
-    },
-    {
-     "id": 92747,
-     "title": "Moonbrook Espionage",
-     "level": 15,
-     "giver": {
-      "name": "Alba Fairmoon",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 52.5,
-       "y": 53
-      }
-     },
-     "ender": {
-      "name": "Alba Fairmoon",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 52.5,
-       "y": 53
-      }
-     },
-     "acceptedAt": 18.2,
-     "objectivesAt": 18.2,
-     "turnedInAt": 18.4
-    },
-    {
-     "id": 92748,
-     "title": "Explosive Consultation",
-     "level": 16,
-     "giver": {
-      "name": "Alba Fairmoon",
-      "hub": "Sentinel Hill",
-      "pos": {
-       "map": 1436,
-       "x": 52.5,
-       "y": 53
-      }
-     },
-     "ender": {
-      "name": "Sprite Jumpsprocket",
-      "hub": "near Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 61.9,
-       "y": 30.6
-      }
-     },
-     "acceptedAt": 18.4
-    }
-   ],
-   "dungeons": [],
    "binds": [
     {
-     "inn": "Sentinel Hill",
-     "level": 17.3
+     "inn": "Auberdine",
+     "level": 14.6
     }
    ],
    "flightPaths": [
     {
-     "name": "Sentinel Hill",
-     "level": 17.3
+     "name": "Auberdine",
+     "level": 14.6
     }
    ],
    "hearths": [],
    "grinds": [],
-   "hours": 3.3
+   "hours": 1
   },
   {
-   "n": 7,
-   "zone": "Tirisfal Glades",
-   "map": 1420,
-   "guide": "sim/alliance/dwarf-dungeons/07-tirisfal-glades",
-   "levelIn": 18.8,
-   "levelOut": 18.8,
-   "arrive": 34315,
-   "leave": 34315,
+   "n": 6,
+   "zone": "Darkshore",
+   "map": 1439,
+   "guide": "sim/alliance/dwarf-dungeons/06-darkshore",
+   "levelIn": 14.6,
+   "levelOut": 19.5,
+   "arrive": 18009,
+   "leave": 31933,
    "packages": [
-    "Dungeon: Ruins of Lordaeron"
+    "Darkshore 6-10",
+    "Darkshore 11-15",
+    "Darkshore 16-20"
    ],
-   "quests": [],
-   "dungeons": [
+   "quests": [
     {
-     "name": "Ruins of Lordaeron",
-     "level": 18.8
+     "id": 983,
+     "title": "Buzzbox 827",
+     "level": 10,
+     "giver": {
+      "name": "Wizbang Cranktoggle",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37,
+       "y": 44.1
+      }
+     },
+     "ender": {
+      "name": "Buzzbox 827",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 46.3
+      }
+     },
+     "acceptedAt": 14.6,
+     "objectivesAt": 14.6,
+     "turnedInAt": 14.7
+    },
+    {
+     "id": 1001,
+     "title": "Buzzbox 411",
+     "level": 12,
+     "giver": {
+      "name": "Buzzbox 827",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 46.3
+      }
+     },
+     "ender": {
+      "name": "Buzzbox 411",
+      "hub": "Bashal'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 42,
+       "y": 28.6
+      }
+     },
+     "acceptedAt": 14.7,
+     "objectivesAt": 14.7,
+     "turnedInAt": 14.8
+    },
+    {
+     "id": 4811,
+     "title": "The Red Crystal",
+     "level": 14,
+     "giver": {
+      "name": "Sentinel Glynda Nal'Shea",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.7,
+       "y": 43.4
+      }
+     },
+     "ender": {
+      "name": "Sentinel Glynda Nal'Shea",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.7,
+       "y": 43.4
+      }
+     },
+     "acceptedAt": 14.8,
+     "objectivesAt": 15.3,
+     "turnedInAt": 16.2
+    },
+    {
+     "id": 98025,
+     "title": "WANTED: Jai'vhanel",
+     "level": 13,
+     "giver": {
+      "name": "WANTED: Murkdeep!",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.2,
+       "y": 44.2
+      }
+     },
+     "ender": {
+      "name": "Sentinel Glynda Nal'Shea",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.7,
+       "y": 43.4
+      }
+     },
+     "acceptedAt": 14.8,
+     "objectivesAt": 15.3,
+     "turnedInAt": 16.3
+    },
+    {
+     "id": 3524,
+     "title": "Washed Ashore",
+     "level": 13,
+     "giver": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "ender": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "acceptedAt": 14.8,
+     "objectivesAt": 14.9,
+     "turnedInAt": 15
+    },
+    {
+     "id": 1141,
+     "title": "The Family and the Fishing Pole",
+     "level": 14,
+     "giver": {
+      "name": "Gubber Blump",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.1,
+       "y": 44.9
+      }
+     },
+     "ender": {
+      "name": "Gubber Blump",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.1,
+       "y": 44.9
+      }
+     },
+     "acceptedAt": 14.8,
+     "objectivesAt": 14.8,
+     "turnedInAt": 14.9
+    },
+    {
+     "id": 954,
+     "title": "Bashal'Aran",
+     "level": 12,
+     "giver": {
+      "name": "Thundris Windweaver",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.4,
+       "y": 40.1
+      }
+     },
+     "ender": {
+      "name": "Asterion",
+      "hub": "Bashal'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 44.2,
+       "y": 36.3
+      }
+     },
+     "acceptedAt": 14.9,
+     "objectivesAt": 15.3,
+     "turnedInAt": 15.4
+    },
+    {
+     "id": 958,
+     "title": "Tools of the Highborne",
+     "level": 12,
+     "giver": {
+      "name": "Thundris Windweaver",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.4,
+       "y": 40.1
+      }
+     },
+     "ender": {
+      "name": "Thundris Windweaver",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.4,
+       "y": 40.1
+      }
+     },
+     "acceptedAt": 14.9,
+     "objectivesAt": 15.3,
+     "turnedInAt": 16.3
+    },
+    {
+     "id": 2118,
+     "title": "Plagued Lands",
+     "level": 14,
+     "giver": {
+      "name": "Tharnariun Treetender",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 38.8,
+       "y": 43.4
+      }
+     },
+     "ender": {
+      "name": "Tharnariun Treetender",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 38.8,
+       "y": 43.4
+      }
+     },
+     "acceptedAt": 14.9,
+     "objectivesAt": 14.9,
+     "turnedInAt": 15
+    },
+    {
+     "id": 984,
+     "title": "How Big a Threat?",
+     "level": 14,
+     "giver": {
+      "name": "Terenthis",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 39.4,
+       "y": 43.5
+      }
+     },
+     "ender": {
+      "name": "Terenthis",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 39.4,
+       "y": 43.5
+      }
+     },
+     "acceptedAt": 14.9,
+     "objectivesAt": 16,
+     "turnedInAt": 16.1
+    },
+    {
+     "id": 4681,
+     "title": "Washed Ashore",
+     "level": 14,
+     "giver": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "ender": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "acceptedAt": 15,
+     "objectivesAt": 16.3,
+     "turnedInAt": 16.4
+    },
+    {
+     "id": 2138,
+     "title": "Cleansing of the Infected",
+     "level": 16,
+     "giver": {
+      "name": "Tharnariun Treetender",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 38.8,
+       "y": 43.4
+      }
+     },
+     "ender": {
+      "name": "Tharnariun Treetender",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 38.8,
+       "y": 43.4
+      }
+     },
+     "acceptedAt": 15,
+     "objectivesAt": 15.2,
+     "turnedInAt": 16.2
+    },
+    {
+     "id": 953,
+     "title": "The Fall of Ameth'Aran",
+     "level": 12,
+     "giver": {
+      "name": "Sentinel Tysha Moonblade",
+      "hub": "Ameth'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 40.3,
+       "y": 59.7
+      }
+     },
+     "ender": {
+      "name": "Sentinel Tysha Moonblade",
+      "hub": "Ameth'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 40.3,
+       "y": 59.7
+      }
+     },
+     "acceptedAt": 15.2,
+     "objectivesAt": 15.3,
+     "turnedInAt": 15.3
+    },
+    {
+     "id": 955,
+     "title": "Bashal'Aran",
+     "level": 12,
+     "giver": {
+      "name": "Asterion",
+      "hub": "Bashal'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 44.2,
+       "y": 36.3
+      }
+     },
+     "ender": {
+      "name": "Asterion",
+      "hub": "Bashal'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 44.2,
+       "y": 36.3
+      }
+     },
+     "acceptedAt": 15.4,
+     "objectivesAt": 15.5,
+     "turnedInAt": 15.5
+    },
+    {
+     "id": 956,
+     "title": "Bashal'Aran",
+     "level": 13,
+     "giver": {
+      "name": "Asterion",
+      "hub": "Bashal'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 44.2,
+       "y": 36.3
+      }
+     },
+     "ender": {
+      "name": "Asterion",
+      "hub": "Bashal'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 44.2,
+       "y": 36.3
+      }
+     },
+     "acceptedAt": 15.5,
+     "objectivesAt": 15.5,
+     "turnedInAt": 15.6
+    },
+    {
+     "id": 957,
+     "title": "Bashal'Aran",
+     "level": 13,
+     "giver": {
+      "name": "Asterion",
+      "hub": "Bashal'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 44.2,
+       "y": 36.3
+      }
+     },
+     "ender": {
+      "name": "Asterion",
+      "hub": "Bashal'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 44.2,
+       "y": 36.3
+      }
+     },
+     "acceptedAt": 15.6,
+     "objectivesAt": 16.5,
+     "turnedInAt": 16.6
+    },
+    {
+     "id": 1002,
+     "title": "Buzzbox 323",
+     "level": 14,
+     "giver": {
+      "name": "Buzzbox 411",
+      "hub": "Bashal'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 42,
+       "y": 28.6
+      }
+     },
+     "ender": {
+      "name": "Buzzbox 323",
+      "hub": "Tower of Althalaxx",
+      "pos": {
+       "map": 1439,
+       "x": 51.3,
+       "y": 24.6
+      }
+     },
+     "acceptedAt": 15.6,
+     "objectivesAt": 15.9,
+     "turnedInAt": 16
+    },
+    {
+     "id": 1003,
+     "title": "Buzzbox 525",
+     "level": 16,
+     "giver": {
+      "name": "Buzzbox 323",
+      "hub": "Tower of Althalaxx",
+      "pos": {
+       "map": 1439,
+       "x": 51.3,
+       "y": 24.6
+      }
+     },
+     "ender": {
+      "name": "Buzzbox 525",
+      "hub": "Grove of the Ancients",
+      "pos": {
+       "map": 1439,
+       "x": 41.4,
+       "y": 80.6
+      }
+     },
+     "acceptedAt": 16,
+     "objectivesAt": 16.1,
+     "turnedInAt": 16.6
+    },
+    {
+     "id": 985,
+     "title": "How Big a Threat?",
+     "level": 14,
+     "giver": {
+      "name": "Terenthis",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 39.4,
+       "y": 43.5
+      }
+     },
+     "ender": {
+      "name": "Terenthis",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 39.4,
+       "y": 43.5
+      }
+     },
+     "acceptedAt": 16.1,
+     "objectivesAt": 16.5,
+     "turnedInAt": 16.7
+    },
+    {
+     "id": 4761,
+     "title": "Thundris Windweaver",
+     "level": 15,
+     "giver": {
+      "name": "Terenthis",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 39.4,
+       "y": 43.5
+      }
+     },
+     "ender": {
+      "name": "Thundris Windweaver",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.4,
+       "y": 40.1
+      }
+     },
+     "acceptedAt": 16.1,
+     "turnedInAt": 16.3
+    },
+    {
+     "id": 4812,
+     "title": "As Water Cascades",
+     "level": 14,
+     "giver": {
+      "name": "Sentinel Glynda Nal'Shea",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.7,
+       "y": 43.4
+      }
+     },
+     "ender": {
+      "name": "Mysterious Red Crystal",
+      "hub": "Ameth'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 47.3,
+       "y": 48.7
+      }
+     },
+     "acceptedAt": 16.3,
+     "objectivesAt": 16.3,
+     "turnedInAt": 16.6
+    },
+    {
+     "id": 4762,
+     "title": "The Cliffspring River",
+     "level": 15,
+     "giver": {
+      "name": "Thundris Windweaver",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.4,
+       "y": 40.1
+      }
+     },
+     "ender": {
+      "name": "Thundris Windweaver",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.4,
+       "y": 40.1
+      }
+     },
+     "acceptedAt": 16.3,
+     "objectivesAt": 16.6,
+     "turnedInAt": 16.7
+    },
+    {
+     "id": 4722,
+     "title": "Beached Sea Turtle",
+     "level": 13,
+     "giver": {
+      "name": "Beached Sea Turtle",
+      "hub": "Ameth'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 37.1,
+       "y": 62.2
+      }
+     },
+     "ender": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "acceptedAt": 16.5,
+     "turnedInAt": 16.8
+    },
+    {
+     "id": 4728,
+     "title": "Beached Sea Creature",
+     "level": 14,
+     "giver": {
+      "name": "Beached Sea Creature",
+      "hub": "Grove of the Ancients",
+      "pos": {
+       "map": 1439,
+       "x": 36,
+       "y": 70.9
+      }
+     },
+     "ender": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "acceptedAt": 16.5,
+     "turnedInAt": 16.9
+    },
+    {
+     "id": 4730,
+     "title": "Beached Sea Creature",
+     "level": 16,
+     "giver": {
+      "name": "Beached Sea Creature",
+      "hub": "Remtravel's Excavation",
+      "pos": {
+       "map": 1439,
+       "x": 32.7,
+       "y": 80.8
+      }
+     },
+     "ender": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "acceptedAt": 16.5,
+     "turnedInAt": 16.9
+    },
+    {
+     "id": 5713,
+     "title": "One Shot. One Kill.",
+     "level": 15,
+     "giver": {
+      "name": "Sentinel Aynasha",
+      "hub": "The Master's Glaive",
+      "pos": {
+       "map": 1439,
+       "x": 45.9,
+       "y": 90.3
+      }
+     },
+     "ender": {
+      "name": "Sentinel Onaeya",
+      "hub": "Lake Falathim",
+      "pos": {
+       "map": 1440,
+       "x": 26.6,
+       "y": 36.7
+      }
+     },
+     "acceptedAt": 16.6,
+     "objectivesAt": 16.6
+    },
+    {
+     "id": 4813,
+     "title": "The Fragments Within",
+     "level": 14,
+     "giver": {
+      "name": "Mysterious Red Crystal",
+      "hub": "Ameth'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 47.3,
+       "y": 48.7
+      }
+     },
+     "ender": {
+      "name": "Sentinel Glynda Nal'Shea",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.7,
+       "y": 43.4
+      }
+     },
+     "acceptedAt": 16.6,
+     "turnedInAt": 16.8
+    },
+    {
+     "id": 4727,
+     "title": "Beached Sea Turtle",
+     "level": 15,
+     "giver": {
+      "name": "Beached Sea Turtle",
+      "hub": "Ruins of Mathystra",
+      "pos": {
+       "map": 1439,
+       "x": 53.1,
+       "y": 18.1
+      }
+     },
+     "ender": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "acceptedAt": 16.6,
+     "turnedInAt": 16.9
+    },
+    {
+     "id": 4725,
+     "title": "Beached Sea Turtle",
+     "level": 15,
+     "giver": {
+      "name": "Beached Sea Turtle",
+      "hub": "Bashal'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 44.2,
+       "y": 20.6
+      }
+     },
+     "ender": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "acceptedAt": 16.6,
+     "turnedInAt": 17
+    },
+    {
+     "id": 4723,
+     "title": "Beached Sea Creature",
+     "level": 13,
+     "giver": {
+      "name": "Beached Sea Creature",
+      "hub": "Bashal'Aran",
+      "pos": {
+       "map": 1439,
+       "x": 41.9,
+       "y": 31.5
+      }
+     },
+     "ender": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "acceptedAt": 16.6,
+     "turnedInAt": 17
+    },
+    {
+     "id": 947,
+     "title": "Cave Mushrooms",
+     "level": 17,
+     "giver": {
+      "name": "Barithras Moonshade",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.3,
+       "y": 43.6
+      }
+     },
+     "ender": {
+      "name": "Barithras Moonshade",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.3,
+       "y": 43.6
+      }
+     },
+     "acceptedAt": 17,
+     "objectivesAt": 17.5,
+     "turnedInAt": 17.7
+    },
+    {
+     "id": 963,
+     "title": "For Love Eternal",
+     "level": 16,
+     "giver": {
+      "name": "Cerellean Whiteclaw",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 35.7,
+       "y": 43.7
+      }
+     },
+     "ender": {
+      "name": "Cerellean Whiteclaw",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 35.7,
+       "y": 43.7
+      }
+     },
+     "acceptedAt": 17,
+     "objectivesAt": 18,
+     "turnedInAt": 18.7
+    },
+    {
+     "id": 1138,
+     "title": "Fruit of the Sea",
+     "level": 17,
+     "giver": {
+      "name": "Gubber Blump",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.1,
+       "y": 44.9
+      }
+     },
+     "ender": {
+      "name": "Gubber Blump",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.1,
+       "y": 44.9
+      }
+     },
+     "acceptedAt": 17,
+     "objectivesAt": 17.1,
+     "turnedInAt": 17.9
+    },
+    {
+     "id": 87760,
+     "title": "Holy Diver",
+     "level": 20,
+     "giver": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "ender": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "acceptedAt": 17,
+     "objectivesAt": 17.1,
+     "turnedInAt": 18
+    },
+    {
+     "id": 4740,
+     "title": "WANTED: Murkdeep!",
+     "level": 18,
+     "giver": {
+      "name": "WANTED: Murkdeep!",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.2,
+       "y": 44.2
+      }
+     },
+     "ender": {
+      "name": "Sentinel Glynda Nal'Shea",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.7,
+       "y": 43.4
+      }
+     },
+     "acceptedAt": 17,
+     "objectivesAt": 18.5,
+     "turnedInAt": 18.8
+    },
+    {
+     "id": 965,
+     "title": "The Tower of Althalaxx",
+     "level": 18,
+     "giver": {
+      "name": "Sentinel Elissa Starbreeze",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 39,
+       "y": 43.6
+      }
+     },
+     "ender": {
+      "name": "Balthule Shadowstrike",
+      "hub": "Tower of Althalaxx",
+      "pos": {
+       "map": 1439,
+       "x": 55,
+       "y": 24.9
+      }
+     },
+     "acceptedAt": 17,
+     "turnedInAt": 17.4
+    },
+    {
+     "id": 986,
+     "title": "A Lost Master",
+     "level": 20,
+     "giver": {
+      "name": "Terenthis",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 39.4,
+       "y": 43.5
+      }
+     },
+     "ender": {
+      "name": "Terenthis",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 39.4,
+       "y": 43.5
+      }
+     },
+     "acceptedAt": 17,
+     "objectivesAt": 18.2,
+     "turnedInAt": 19
+    },
+    {
+     "id": 2139,
+     "title": "Tharnariun's Hope",
+     "level": 18,
+     "giver": {
+      "name": "Tharnariun Treetender",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 38.8,
+       "y": 43.4
+      }
+     },
+     "ender": {
+      "name": "Tharnariun Treetender",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 38.8,
+       "y": 43.4
+      }
+     },
+     "acceptedAt": 17,
+     "objectivesAt": 17.6,
+     "turnedInAt": 17.6
+    },
+    {
+     "id": 729,
+     "title": "The Absent Minded Prospector",
+     "level": 20,
+     "giver": {
+      "name": "Archaeologist Hollee",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.4,
+       "y": 41.8
+      }
+     },
+     "ender": {
+      "name": "Prospector Remtravel",
+      "hub": "Remtravel's Excavation",
+      "pos": {
+       "map": 1439,
+       "x": 35.7,
+       "y": 83.7
+      }
+     },
+     "acceptedAt": 17,
+     "turnedInAt": 18.5
+    },
+    {
+     "id": 982,
+     "title": "Deep Ocean, Vast Sea",
+     "level": 17,
+     "giver": {
+      "name": "Gorbold Steelhand",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 38.1,
+       "y": 41.2
+      }
+     },
+     "ender": {
+      "name": "Gorbold Steelhand",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 38.1,
+       "y": 41.2
+      }
+     },
+     "acceptedAt": 17,
+     "objectivesAt": 17,
+     "turnedInAt": 17.8
+    },
+    {
+     "id": 4763,
+     "title": "The Blackwood Corrupted",
+     "level": 18,
+     "giver": {
+      "name": "Thundris Windweaver",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.4,
+       "y": 40.1
+      }
+     },
+     "ender": {
+      "name": "Thundris Windweaver",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.4,
+       "y": 40.1
+      }
+     },
+     "acceptedAt": 17,
+     "objectivesAt": 17.5,
+     "turnedInAt": 17.9
+    },
+    {
+     "id": 97914,
+     "title": "Expanding Horizons",
+     "level": 17,
+     "giver": {
+      "name": "Thundris Windweaver",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.4,
+       "y": 40.1
+      }
+     },
+     "ender": {
+      "name": "Baros Alexston",
+      "hub": "near Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 57.7,
+       "y": 47.9
+      }
+     },
+     "acceptedAt": 17
+    },
+    {
+     "id": 2098,
+     "title": "Gyromast's Retrieval",
+     "level": 20,
+     "giver": {
+      "name": "Gelkak Gyromast",
+      "hub": "Ruins of Mathystra",
+      "pos": {
+       "map": 1439,
+       "x": 56.7,
+       "y": 13.5
+      }
+     },
+     "ender": {
+      "name": "Gelkak Gyromast",
+      "hub": "Ruins of Mathystra",
+      "pos": {
+       "map": 1439,
+       "x": 56.7,
+       "y": 13.5
+      }
+     },
+     "acceptedAt": 17.1,
+     "objectivesAt": 17.3,
+     "turnedInAt": 17.4
+    },
+    {
+     "id": 966,
+     "title": "The Tower of Althalaxx",
+     "level": 18,
+     "giver": {
+      "name": "Balthule Shadowstrike",
+      "hub": "Tower of Althalaxx",
+      "pos": {
+       "map": 1439,
+       "x": 55,
+       "y": 24.9
+      }
+     },
+     "ender": {
+      "name": "Balthule Shadowstrike",
+      "hub": "Tower of Althalaxx",
+      "pos": {
+       "map": 1439,
+       "x": 55,
+       "y": 24.9
+      }
+     },
+     "acceptedAt": 17.4,
+     "objectivesAt": 17.5,
+     "turnedInAt": 17.5
+    },
+    {
+     "id": 967,
+     "title": "The Tower of Althalaxx",
+     "level": 18,
+     "giver": {
+      "name": "Balthule Shadowstrike",
+      "hub": "Tower of Althalaxx",
+      "pos": {
+       "map": 1439,
+       "x": 55,
+       "y": 24.9
+      }
+     },
+     "ender": {
+      "name": "Delgren the Purifier",
+      "hub": "Lake Falathim",
+      "pos": {
+       "map": 1440,
+       "x": 26.2,
+       "y": 38.7
+      }
+     },
+     "acceptedAt": 17.5
+    },
+    {
+     "id": 948,
+     "title": "Onu",
+     "level": 17,
+     "giver": {
+      "name": "Barithras Moonshade",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.3,
+       "y": 43.6
+      }
+     },
+     "ender": {
+      "name": "Onu",
+      "hub": "Grove of the Ancients",
+      "pos": {
+       "map": 1439,
+       "x": 43.6,
+       "y": 76.3
+      }
+     },
+     "acceptedAt": 17.7,
+     "turnedInAt": 18.1
+    },
+    {
+     "id": 944,
+     "title": "The Master's Glaive",
+     "level": 17,
+     "giver": {
+      "name": "Onu",
+      "hub": "Grove of the Ancients",
+      "pos": {
+       "map": 1439,
+       "x": 43.6,
+       "y": 76.3
+      }
+     },
+     "ender": {
+      "name": "Scrying Bowl",
+      "hub": "The Master's Glaive",
+      "pos": {
+       "map": 1439,
+       "x": 38.6,
+       "y": 86.2
+      }
+     },
+     "acceptedAt": 18.1,
+     "objectivesAt": 18.3,
+     "turnedInAt": 18.3
+    },
+    {
+     "id": 98013,
+     "title": "Swelling Forces",
+     "level": 20,
+     "giver": {
+      "name": "Arbal",
+      "hub": "Grove of the Ancients",
+      "pos": {
+       "map": 1439,
+       "x": 43.7,
+       "y": 76.5
+      }
+     },
+     "ender": {
+      "name": "Arbal",
+      "hub": "Grove of the Ancients",
+      "pos": {
+       "map": 1439,
+       "x": 43.7,
+       "y": 76.5
+      }
+     },
+     "acceptedAt": 18.1,
+     "objectivesAt": 19.2,
+     "turnedInAt": 19.4
+    },
+    {
+     "id": 5321,
+     "title": "The Sleeper Has Awakened",
+     "level": 20,
+     "giver": {
+      "name": "Kerlonian Evershade",
+      "hub": "Grove of the Ancients",
+      "pos": {
+       "map": 1439,
+       "x": 44.4,
+       "y": 76.4
+      }
+     },
+     "ender": {
+      "name": "Liladris Moonriver",
+      "hub": "Lake Falathim",
+      "pos": {
+       "map": 1440,
+       "x": 27.3,
+       "y": 35.6
+      }
+     },
+     "acceptedAt": 18.1,
+     "objectivesAt": 18.1
+    },
+    {
+     "id": 968,
+     "title": "The Powers Below",
+     "level": 20,
+     "giver": {
+      "name": "Book: The Powers Below (drop: Twilight Thug)",
+      "hub": "The Master's Glaive",
+      "pos": {
+       "map": 1439,
+       "x": 38.9,
+       "y": 86.5
+      }
+     },
+     "ender": {
+      "name": "Gerrig Bonegrip",
+      "hub": "near Ironforge",
+      "pos": {
+       "map": 1455,
+       "x": 50.8,
+       "y": 5.6
+      }
+     },
+     "acceptedAt": 18.3
+    },
+    {
+     "id": 949,
+     "title": "The Twilight Camp",
+     "level": 17,
+     "giver": {
+      "name": "Scrying Bowl",
+      "hub": "The Master's Glaive",
+      "pos": {
+       "map": 1439,
+       "x": 38.6,
+       "y": 86.2
+      }
+     },
+     "ender": {
+      "name": "Twilight Tome",
+      "hub": "The Master's Glaive",
+      "pos": {
+       "map": 1439,
+       "x": 38.5,
+       "y": 86.1
+      }
+     },
+     "acceptedAt": 18.3,
+     "turnedInAt": 18.4
+    },
+    {
+     "id": 950,
+     "title": "Return to Onu",
+     "level": 17,
+     "giver": {
+      "name": "Twilight Tome",
+      "hub": "The Master's Glaive",
+      "pos": {
+       "map": 1439,
+       "x": 38.5,
+       "y": 86.1
+      }
+     },
+     "ender": {
+      "name": "Onu",
+      "hub": "Grove of the Ancients",
+      "pos": {
+       "map": 1439,
+       "x": 43.6,
+       "y": 76.3
+      }
+     },
+     "acceptedAt": 18.4,
+     "turnedInAt": 18.5
+    },
+    {
+     "id": 98042,
+     "title": "It's All Fun and Games Until...",
+     "level": 17,
+     "giver": {
+      "name": "Twilight Tome",
+      "hub": "The Master's Glaive",
+      "pos": {
+       "map": 1439,
+       "x": 38.5,
+       "y": 86.1
+      }
+     },
+     "ender": {
+      "name": "Thundris Windweaver",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.4,
+       "y": 40.1
+      }
+     },
+     "acceptedAt": 18.4,
+     "objectivesAt": 18.4,
+     "turnedInAt": 18.9
+    },
+    {
+     "id": 945,
+     "title": "Therylune's Escape",
+     "level": 18,
+     "giver": {
+      "name": "Therylune",
+      "hub": "The Master's Glaive",
+      "pos": {
+       "map": 1439,
+       "x": 38.6,
+       "y": 87.3
+      }
+     },
+     "ender": {
+      "name": "Therysil",
+      "hub": "The Shrine of Aessina",
+      "pos": {
+       "map": 1440,
+       "x": 22.6,
+       "y": 51.9
+      }
+     },
+     "acceptedAt": 18.4,
+     "objectivesAt": 18.4
+    },
+    {
+     "id": 731,
+     "title": "The Absent Minded Prospector",
+     "level": 20,
+     "giver": {
+      "name": "Prospector Remtravel",
+      "hub": "Remtravel's Excavation",
+      "pos": {
+       "map": 1439,
+       "x": 35.7,
+       "y": 83.7
+      }
+     },
+     "ender": {
+      "name": "Archaeologist Hollee",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.4,
+       "y": 41.8
+      }
+     },
+     "acceptedAt": 18.5,
+     "objectivesAt": 18.5,
+     "turnedInAt": 18.9
+    },
+    {
+     "id": 4733,
+     "title": "Beached Sea Creature",
+     "level": 19,
+     "giver": {
+      "name": "Beached Sea Creature",
+      "hub": "Remtravel's Excavation",
+      "pos": {
+       "map": 1439,
+       "x": 31.3,
+       "y": 87.4
+      }
+     },
+     "ender": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "acceptedAt": 18.5,
+     "turnedInAt": 18.6
+    },
+    {
+     "id": 4732,
+     "title": "Beached Sea Turtle",
+     "level": 19,
+     "giver": {
+      "name": "Beached Sea Turtle",
+      "hub": "Remtravel's Excavation",
+      "pos": {
+       "map": 1439,
+       "x": 31.2,
+       "y": 85.6
+      }
+     },
+     "ender": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "acceptedAt": 18.5,
+     "turnedInAt": 18.6
+    },
+    {
+     "id": 4731,
+     "title": "Beached Sea Turtle",
+     "level": 19,
+     "giver": {
+      "name": "Beached Sea Turtle",
+      "hub": "Remtravel's Excavation",
+      "pos": {
+       "map": 1439,
+       "x": 31.7,
+       "y": 83.7
+      }
+     },
+     "ender": {
+      "name": "Gwennyth Bly'Leggonde",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 36.6,
+       "y": 45.6
+      }
+     },
+     "acceptedAt": 18.5,
+     "turnedInAt": 18.6
+    },
+    {
+     "id": 951,
+     "title": "Mathystra Relics",
+     "level": 20,
+     "giver": {
+      "name": "Onu",
+      "hub": "Grove of the Ancients",
+      "pos": {
+       "map": 1439,
+       "x": 43.6,
+       "y": 76.3
+      }
+     },
+     "ender": {
+      "name": "Onu",
+      "hub": "Grove of the Ancients",
+      "pos": {
+       "map": 1439,
+       "x": 43.6,
+       "y": 76.3
+      }
+     },
+     "acceptedAt": 18.5,
+     "objectivesAt": 19.1,
+     "turnedInAt": 19.3
+    },
+    {
+     "id": 741,
+     "title": "The Absent Minded Prospector",
+     "level": 20,
+     "giver": {
+      "name": "Archaeologist Hollee",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 37.4,
+       "y": 41.8
+      }
+     },
+     "ender": {
+      "name": "Chief Archaeologist Greywhisker",
+      "hub": "near Craftsmen's Terrace",
+      "pos": {
+       "map": 1457,
+       "x": 31.2,
+       "y": 84.5
+      }
+     },
+     "acceptedAt": 18.9
+    },
+    {
+     "id": 993,
+     "title": "A Lost Master",
+     "level": 20,
+     "giver": {
+      "name": "Terenthis",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 39.4,
+       "y": 43.5
+      }
+     },
+     "ender": {
+      "name": "Volcor",
+      "hub": "The Master's Glaive",
+      "pos": {
+       "map": 1439,
+       "x": 45,
+       "y": 85.3
+      }
+     },
+     "acceptedAt": 19,
+     "turnedInAt": 19.4
+    },
+    {
+     "id": 994,
+     "title": "Escape Through Force",
+     "level": 22,
+     "giver": {
+      "name": "Volcor",
+      "hub": "The Master's Glaive",
+      "pos": {
+       "map": 1439,
+       "x": 45,
+       "y": 85.3
+      }
+     },
+     "ender": {
+      "name": "Terenthis",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 39.4,
+       "y": 43.5
+      }
+     },
+     "acceptedAt": 19.4,
+     "objectivesAt": 19.4,
+     "turnedInAt": 19.5
+    },
+    {
+     "id": 990,
+     "title": "Trek to Ashenvale",
+     "level": 19,
+     "giver": {
+      "name": "Sentinel Selarin",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 39.3,
+       "y": 43.5
+      }
+     },
+     "ender": {
+      "name": "Raene Wolfrunner",
+      "hub": "Astranaar",
+      "pos": {
+       "map": 1440,
+       "x": 36.6,
+       "y": 49.6
+      }
+     },
+     "acceptedAt": 19.5
     }
    ],
+   "dungeons": [],
    "binds": [],
    "flightPaths": [],
    "hearths": [
     {
-     "to": "Sentinel Hill",
-     "level": 18.8
+     "to": "Auberdine",
+     "level": 14.8
+    },
+    {
+     "to": "Auberdine",
+     "level": 16.6
+    },
+    {
+     "to": "Auberdine",
+     "level": 18.5
     }
    ],
+   "grinds": [],
+   "hours": 3.9
+  },
+  {
+   "n": 7,
+   "zone": "Stormwind City",
+   "map": 1453,
+   "guide": "sim/alliance/dwarf-dungeons/07-stormwind-city",
+   "levelIn": 19.5,
+   "levelOut": 19.5,
+   "arrive": 32466,
+   "leave": 32508,
+   "packages": [
+    "Dungeon: The Deadmines"
+   ],
+   "quests": [
+    {
+     "id": 2040,
+     "title": "Underground Assault",
+     "level": 20,
+     "giver": {
+      "name": "Shoni the Shilent",
+      "hub": "near Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 62.63,
+       "y": 34.11
+      }
+     },
+     "ender": {
+      "name": "Shoni the Shilent",
+      "hub": "near Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 62.63,
+       "y": 34.11
+      }
+     },
+     "acceptedAt": 19.5
+    },
+    {
+     "id": 167,
+     "title": "Oh Brother...",
+     "level": 20,
+     "giver": {
+      "name": "Wilder Thistlenettle",
+      "hub": "near Stormwind",
+      "pos": {
+       "map": 1453,
+       "x": 70.31,
+       "y": 40.82
+      }
+     },
+     "ender": {
+      "name": "Wilder Thistlenettle",
+      "hub": "near Stormwind",
+      "pos": {
+       "map": 1453,
+       "x": 70.31,
+       "y": 40.82
+      }
+     },
+     "acceptedAt": 19.5
+    },
+    {
+     "id": 168,
+     "title": "Collecting Memories",
+     "level": 18,
+     "giver": {
+      "name": "Wilder Thistlenettle",
+      "hub": "near Stormwind",
+      "pos": {
+       "map": 1453,
+       "x": 70.31,
+       "y": 40.82
+      }
+     },
+     "ender": {
+      "name": "Wilder Thistlenettle",
+      "hub": "near Stormwind",
+      "pos": {
+       "map": 1453,
+       "x": 70.31,
+       "y": 40.82
+      }
+     },
+     "acceptedAt": 19.5
+    }
+   ],
+   "dungeons": [],
+   "binds": [],
+   "flightPaths": [],
+   "hearths": [],
    "grinds": [],
    "hours": 0
   },
@@ -2807,35 +4030,10 @@
    "zone": "Westfall",
    "map": 1436,
    "guide": "sim/alliance/dwarf-dungeons/08-westfall",
-   "levelIn": 19.2,
-   "levelOut": 19.2,
-   "arrive": 37736,
-   "leave": 37736,
-   "packages": [
-    "Dungeon: The Deadmines"
-   ],
-   "quests": [],
-   "dungeons": [
-    {
-     "name": "The Deadmines",
-     "level": 19.2
-    }
-   ],
-   "binds": [],
-   "flightPaths": [],
-   "hearths": [],
-   "grinds": [],
-   "hours": 0
-  },
-  {
-   "n": 9,
-   "zone": "Stormwind City",
-   "map": 1453,
-   "guide": "sim/alliance/dwarf-dungeons/09-stormwind-city",
-   "levelIn": 19.2,
-   "levelOut": 19.2,
-   "arrive": 38071,
-   "leave": 38530,
+   "levelIn": 19.5,
+   "levelOut": 19.8,
+   "arrive": 33053,
+   "leave": 36297,
    "packages": [
     "Dungeon: The Deadmines"
    ],
@@ -2863,1147 +4061,163 @@
        "y": 47.86
       }
      },
-     "turnedInAt": 19.2
+     "acceptedAt": 19.5
     }
    ],
-   "dungeons": [],
-   "binds": [
+   "dungeons": [
     {
-     "inn": "Darkshire",
-     "level": 19.2
+     "name": "The Deadmines",
+     "level": 19.8
     }
    ],
-   "flightPaths": [
-    {
-     "name": "Darkshire",
-     "level": 19.2
-    }
-   ],
-   "hearths": [
-    {
-     "to": "Sentinel Hill",
-     "level": 19.2
-    }
-   ],
+   "binds": [],
+   "flightPaths": [],
+   "hearths": [],
    "grinds": [],
-   "hours": 0.1
+   "hours": 0.9
   },
   {
-   "n": 10,
-   "zone": "Duskwood",
-   "map": 1431,
-   "guide": "sim/alliance/dwarf-dungeons/10-duskwood",
-   "levelIn": 19.2,
-   "levelOut": 23.1,
-   "arrive": 38536,
-   "leave": 55168,
+   "n": 9,
+   "zone": "Stormwind City",
+   "map": 1453,
+   "guide": "sim/alliance/dwarf-dungeons/09-stormwind-city",
+   "levelIn": 19.9,
+   "levelOut": 20.1,
+   "arrive": 36814,
+   "leave": 37670,
    "packages": [
-    "Duskwood 21-25",
-    "Duskwood 16-20"
+    "Dungeon: The Deadmines"
    ],
    "quests": [
     {
-     "id": 96139,
-     "title": "The Valor Family",
+     "id": 373,
+     "title": "The Unsent Letter",
      "level": 22,
      "giver": {
-      "name": "Sirra Von'Indi",
-      "hub": "Darkshire",
+      "name": null,
+      "hub": "Moonbrook",
       "pos": {
-       "map": 1431,
-       "x": 72.6,
-       "y": 47.6
+       "map": 1436,
+       "x": 42.5,
+       "y": 71.7,
+       "inDungeon": true
       }
      },
      "ender": {
-      "name": "Sirra Von'Indi",
-      "hub": "Darkshire",
+      "name": "Baros Alexston",
+      "hub": "near Stormwind City",
       "pos": {
-       "map": 1431,
-       "x": 72.6,
-       "y": 47.6
+       "map": 1453,
+       "x": 57.74,
+       "y": 47.86
       }
      },
-     "acceptedAt": 19.2,
-     "objectivesAt": 19.4,
      "turnedInAt": 19.9
     },
     {
-     "id": 56,
-     "title": "The Night Watch",
-     "level": 24,
+     "id": 2040,
+     "title": "Underground Assault",
+     "level": 20,
      "giver": {
-      "name": "Commander Althea Ebonlocke",
-      "hub": "Darkshire",
+      "name": "Shoni the Shilent",
+      "hub": "near Stormwind City",
       "pos": {
-       "map": 1431,
-       "x": 73.5,
-       "y": 46.8
+       "map": 1453,
+       "x": 62.63,
+       "y": 34.11
       }
      },
      "ender": {
-      "name": "Commander Althea Ebonlocke",
-      "hub": "Darkshire",
+      "name": "Shoni the Shilent",
+      "hub": "near Stormwind City",
       "pos": {
-       "map": 1431,
-       "x": 73.5,
-       "y": 46.8
+       "map": 1453,
+       "x": 62.63,
+       "y": 34.11
       }
      },
-     "acceptedAt": 19.2,
-     "objectivesAt": 19.3,
-     "turnedInAt": 19.4
-    },
-    {
-     "id": 164,
-     "title": "Deliveries to Sven",
-     "level": 23,
-     "giver": {
-      "name": "Elaine Carevin",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 75.3,
-       "y": 48.8
-      }
-     },
-     "ender": {
-      "name": "Sven Yorgen",
-      "hub": "The Hushed Bank",
-      "pos": {
-       "map": 1431,
-       "x": 7.8,
-       "y": 34.1
-      }
-     },
-     "acceptedAt": 19.2,
-     "turnedInAt": 19.4
-    },
-    {
-     "id": 236,
-     "title": "Awaiting Word",
-     "level": 21,
-     "giver": {
-      "name": "Watcher Dodds",
-      "hub": "The Yorgen Farmstead",
-      "pos": {
-       "map": 1431,
-       "x": 45.1,
-       "y": 67
-      }
-     },
-     "ender": {
-      "name": "Watcher Callahan",
-      "hub": "Manor Mistmantle",
-      "pos": {
-       "map": 1431,
-       "x": 81.9,
-       "y": 19.7
-      }
-     },
-     "acceptedAt": 19.4,
      "turnedInAt": 19.9
     },
     {
-     "id": 245,
-     "title": "Eight-Legged Menaces",
-     "level": 21,
+     "id": 168,
+     "title": "Collecting Memories",
+     "level": 18,
      "giver": {
-      "name": "Watcher Dodds",
-      "hub": "The Yorgen Farmstead",
-      "pos": {
-       "map": 1431,
-       "x": 45.1,
-       "y": 67
-      }
-     },
-     "ender": {
-      "name": "Watcher Dodds",
-      "hub": "The Yorgen Farmstead",
-      "pos": {
-       "map": 1431,
-       "x": 45.1,
-       "y": 67
-      }
-     },
-     "acceptedAt": 19.4,
-     "objectivesAt": 19.7,
-     "turnedInAt": 19.8
-    },
-    {
-     "id": 226,
-     "title": "Wolves at Our Heels",
-     "level": 21,
-     "giver": {
-      "name": "Lars",
-      "hub": "The Hushed Bank",
-      "pos": {
-       "map": 1431,
-       "x": 7.7,
-       "y": 33.2
-      }
-     },
-     "ender": {
-      "name": "Lars",
-      "hub": "The Hushed Bank",
-      "pos": {
-       "map": 1431,
-       "x": 7.7,
-       "y": 33.2
-      }
-     },
-     "acceptedAt": 19.4,
-     "objectivesAt": 19.6,
-     "turnedInAt": 19.6
-    },
-    {
-     "id": 101,
-     "title": "The Totem of Infliction",
-     "level": 25,
-     "giver": {
-      "name": "Madame Eva",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 75.8,
-       "y": 45.3
-      }
-     },
-     "ender": {
-      "name": "Madame Eva",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 75.8,
-       "y": 45.3
-      }
-     },
-     "acceptedAt": 20,
-     "objectivesAt": 21.7,
-     "turnedInAt": 21.9
-    },
-    {
-     "id": 165,
-     "title": "The Hermit",
-     "level": 25,
-     "giver": {
-      "name": "Elaine Carevin",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 75.3,
-       "y": 48.8
-      }
-     },
-     "ender": {
-      "name": "Abercrombie",
-      "hub": "Raven Hill Cemetery",
-      "pos": {
-       "map": 1431,
-       "x": 28.1,
-       "y": 31.5
-      }
-     },
-     "acceptedAt": 20,
-     "turnedInAt": 21.7
-    },
-    {
-     "id": 174,
-     "title": "Look to the Stars",
-     "level": 25,
-     "giver": {
-      "name": "Viktori Prism'Antras",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 79.8,
-       "y": 48
-      }
-     },
-     "ender": {
-      "name": "Viktori Prism'Antras",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 79.8,
-       "y": 48
-      }
-     },
-     "acceptedAt": 20
-    },
-    {
-     "id": 337,
-     "title": "An Old History Book",
-     "level": 25,
-     "giver": {
-      "name": "An Old History Book (drop: Skeletal Horror)",
-      "hub": "Tranquil Gardens Cemetery",
-      "pos": {
-       "map": 1431,
-       "x": 80.6,
-       "y": 59.2
-      }
-     },
-     "ender": {
-      "name": "Milton Sheaf",
+      "name": "Wilder Thistlenettle",
       "hub": "near Stormwind",
       "pos": {
        "map": 1453,
-       "x": 77.1,
-       "y": 30.2
-      }
-     },
-     "acceptedAt": 20.8
-    },
-    {
-     "id": 57,
-     "title": "The Night Watch",
-     "level": 26,
-     "giver": {
-      "name": "Commander Althea Ebonlocke",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 73.5,
-       "y": 46.8
+       "x": 70.31,
+       "y": 40.82
       }
      },
      "ender": {
-      "name": "Commander Althea Ebonlocke",
-      "hub": "Darkshire",
+      "name": "Wilder Thistlenettle",
+      "hub": "near Stormwind",
       "pos": {
-       "map": 1431,
-       "x": 73.5,
-       "y": 46.8
+       "map": 1453,
+       "x": 70.31,
+       "y": 40.82
       }
      },
-     "acceptedAt": 21,
-     "objectivesAt": 21.4,
-     "turnedInAt": 21.8
+     "turnedInAt": 20
     },
     {
-     "id": 148,
-     "title": "Supplies from Darkshire",
-     "level": 24,
-     "giver": {
-      "name": "Abercrombie",
-      "hub": "Raven Hill Cemetery",
-      "pos": {
-       "map": 1431,
-       "x": 28.1,
-       "y": 31.5
-      }
-     },
-     "ender": {
-      "name": "Madame Eva",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 75.8,
-       "y": 45.3
-      }
-     },
-     "acceptedAt": 21.7,
-     "turnedInAt": 22
-    },
-    {
-     "id": 95,
-     "title": "Sven's Revenge",
-     "level": 25,
-     "giver": {
-      "name": "Sven Yorgen",
-      "hub": "The Hushed Bank",
-      "pos": {
-       "map": 1431,
-       "x": 7.8,
-       "y": 34.1
-      }
-     },
-     "ender": {
-      "name": "Mound of loose dirt",
-      "hub": "The Yorgen Farmstead",
-      "pos": {
-       "map": 1431,
-       "x": 49.8,
-       "y": 77.7
-      }
-     },
-     "acceptedAt": 21.7,
-     "turnedInAt": 21.8
-    },
-    {
-     "id": 230,
-     "title": "Sven's Camp",
-     "level": 25,
-     "giver": {
-      "name": "Mound of loose dirt",
-      "hub": "The Yorgen Farmstead",
-      "pos": {
-       "map": 1431,
-       "x": 49.8,
-       "y": 77.7
-      }
-     },
-     "ender": {
-      "name": "Sven Yorgen",
-      "hub": "The Hushed Bank",
-      "pos": {
-       "map": 1431,
-       "x": 7.8,
-       "y": 34.1
-      }
-     },
-     "acceptedAt": 21.8,
-     "turnedInAt": 22.1
-    },
-    {
-     "id": 149,
-     "title": "Ghost Hair Thread",
-     "level": 24,
-     "giver": {
-      "name": "Madame Eva",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 75.8,
-       "y": 45.3
-      }
-     },
-     "ender": {
-      "name": "Blind Mary",
-      "hub": "Tranquil Gardens Cemetery",
-      "pos": {
-       "map": 1431,
-       "x": 82,
-       "y": 59.1
-      }
-     },
-     "acceptedAt": 22,
-     "turnedInAt": 22
-    },
-    {
-     "id": 154,
-     "title": "Return the Comb",
-     "level": 24,
-     "giver": {
-      "name": "Blind Mary",
-      "hub": "Tranquil Gardens Cemetery",
-      "pos": {
-       "map": 1431,
-       "x": 82,
-       "y": 59.1
-      }
-     },
-     "ender": {
-      "name": "Madame Eva",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 75.8,
-       "y": 45.3
-      }
-     },
-     "acceptedAt": 22,
-     "turnedInAt": 22
-    },
-    {
-     "id": 157,
-     "title": "Deliver the Thread",
-     "level": 24,
-     "giver": {
-      "name": "Madame Eva",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 75.8,
-       "y": 45.3
-      }
-     },
-     "ender": {
-      "name": "Abercrombie",
-      "hub": "Raven Hill Cemetery",
-      "pos": {
-       "map": 1431,
-       "x": 28.1,
-       "y": 31.5
-      }
-     },
-     "acceptedAt": 22,
-     "turnedInAt": 22
-    },
-    {
-     "id": 158,
-     "title": "Zombie Juice",
-     "level": 24,
-     "giver": {
-      "name": "Abercrombie",
-      "hub": "Raven Hill Cemetery",
-      "pos": {
-       "map": 1431,
-       "x": 28.1,
-       "y": 31.5
-      }
-     },
-     "ender": {
-      "name": "Tavernkeep Smitts",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 73.8,
-       "y": 44.5
-      }
-     },
-     "acceptedAt": 22,
-     "turnedInAt": 22.1
-    },
-    {
-     "id": 262,
-     "title": "The Shadowy Figure",
-     "level": 25,
-     "giver": {
-      "name": "Sven Yorgen",
-      "hub": "The Hushed Bank",
-      "pos": {
-       "map": 1431,
-       "x": 7.8,
-       "y": 34.1
-      }
-     },
-     "ender": {
-      "name": "Madame Eva",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 75.8,
-       "y": 45.3
-      }
-     },
-     "acceptedAt": 22.1,
-     "turnedInAt": 22.1
-    },
-    {
-     "id": 156,
-     "title": "Gather Rot Blossoms",
-     "level": 24,
-     "giver": {
-      "name": "Tavernkeep Smitts",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 73.8,
-       "y": 44.5
-      }
-     },
-     "ender": {
-      "name": "Tavernkeep Smitts",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 73.8,
-       "y": 44.5
-      }
-     },
-     "acceptedAt": 22.1,
-     "objectivesAt": 22.4,
-     "turnedInAt": 22.4
-    },
-    {
-     "id": 265,
-     "title": "The Shadowy Search Continues",
-     "level": 25,
-     "giver": {
-      "name": "Madame Eva",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 75.8,
-       "y": 45.3
-      }
-     },
-     "ender": {
-      "name": "Clerk Daltry",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 72.5,
-       "y": 46.9
-      }
-     },
-     "acceptedAt": 22.1,
-     "turnedInAt": 22.1
-    },
-    {
-     "id": 266,
-     "title": "Inquire at the Inn",
-     "level": 25,
-     "giver": {
-      "name": "Clerk Daltry",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 72.5,
-       "y": 46.9
-      }
-     },
-     "ender": {
-      "name": "Tavernkeep Smitts",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 73.8,
-       "y": 44.5
-      }
-     },
-     "acceptedAt": 22.1,
-     "turnedInAt": 22.1
-    },
-    {
-     "id": 453,
-     "title": "Finding the Shadowy Figure",
-     "level": 25,
-     "giver": {
-      "name": "Tavernkeep Smitts",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 73.8,
-       "y": 44.5
-      }
-     },
-     "ender": {
-      "name": "Jitters",
-      "hub": "Raven Hill",
-      "pos": {
-       "map": 1431,
-       "x": 18.4,
-       "y": 56.4
-      }
-     },
-     "acceptedAt": 22.1,
-     "turnedInAt": 22.9
-    },
-    {
-     "id": 159,
-     "title": "Juice Delivery",
-     "level": 24,
-     "giver": {
-      "name": "Tavernkeep Smitts",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 73.8,
-       "y": 44.5
-      }
-     },
-     "ender": {
-      "name": "Abercrombie",
-      "hub": "Raven Hill Cemetery",
-      "pos": {
-       "map": 1431,
-       "x": 28.1,
-       "y": 31.5
-      }
-     },
-     "acceptedAt": 22.4,
-     "turnedInAt": 22.4
-    },
-    {
-     "id": 133,
-     "title": "Ghoulish Effigy",
-     "level": 27,
-     "giver": {
-      "name": "Abercrombie",
-      "hub": "Raven Hill Cemetery",
-      "pos": {
-       "map": 1431,
-       "x": 28.1,
-       "y": 31.5
-      }
-     },
-     "ender": {
-      "name": "Abercrombie",
-      "hub": "Raven Hill Cemetery",
-      "pos": {
-       "map": 1431,
-       "x": 28.1,
-       "y": 31.5
-      }
-     },
-     "acceptedAt": 22.4,
-     "objectivesAt": 22.8,
-     "turnedInAt": 22.8
-    },
-    {
-     "id": 268,
-     "title": "Return to Sven",
-     "level": 25,
-     "giver": {
-      "name": "Jitters",
-      "hub": "Raven Hill",
-      "pos": {
-       "map": 1431,
-       "x": 18.4,
-       "y": 56.4
-      }
-     },
-     "ender": {
-      "name": "Sven Yorgen",
-      "hub": "The Hushed Bank",
-      "pos": {
-       "map": 1431,
-       "x": 7.8,
-       "y": 34.1
-      }
-     },
-     "acceptedAt": 22.9,
-     "turnedInAt": 22.9
-    },
-    {
-     "id": 163,
-     "title": "Raven Hill",
+     "id": 167,
+     "title": "Oh Brother...",
      "level": 20,
      "giver": {
-      "name": "Elaine Carevin",
-      "hub": "Darkshire",
+      "name": "Wilder Thistlenettle",
+      "hub": "near Stormwind",
       "pos": {
-       "map": 1431,
-       "x": 75.3,
-       "y": 48.8
+       "map": 1453,
+       "x": 70.31,
+       "y": 40.82
       }
      },
      "ender": {
-      "name": "Jitters",
-      "hub": "Raven Hill",
+      "name": "Wilder Thistlenettle",
+      "hub": "near Stormwind",
       "pos": {
-       "map": 1431,
-       "x": 18.4,
-       "y": 56.4
+       "map": 1453,
+       "x": 70.31,
+       "y": 40.82
       }
      },
-     "acceptedAt": 22.9,
-     "turnedInAt": 22.9
-    },
-    {
-     "id": 5,
-     "title": "Jitters' Growling Gut",
-     "level": 20,
-     "giver": {
-      "name": "Jitters",
-      "hub": "Raven Hill",
-      "pos": {
-       "map": 1431,
-       "x": 18.4,
-       "y": 56.4
-      }
-     },
-     "ender": {
-      "name": "Chef Grual",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 73.7,
-       "y": 43.5
-      }
-     },
-     "acceptedAt": 22.9,
-     "turnedInAt": 22.9
-    },
-    {
-     "id": 93,
-     "title": "Dusky Crab Cakes",
-     "level": 20,
-     "giver": {
-      "name": "Chef Grual",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 73.7,
-       "y": 43.5
-      }
-     },
-     "ender": {
-      "name": "Chef Grual",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 73.7,
-       "y": 43.5
-      }
-     },
-     "acceptedAt": 22.9,
-     "objectivesAt": 23,
-     "turnedInAt": 23.1
-    },
-    {
-     "id": 240,
-     "title": "Return to Jitters",
-     "level": 20,
-     "giver": {
-      "name": "Chef Grual",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 73.7,
-       "y": 43.5
-      }
-     },
-     "ender": {
-      "name": "Jitters",
-      "hub": "Raven Hill",
-      "pos": {
-       "map": 1431,
-       "x": 18.4,
-       "y": 56.4
-      }
-     },
-     "acceptedAt": 23.1,
-     "turnedInAt": 23.1
-    }
-   ],
-   "dungeons": [],
-   "binds": [],
-   "flightPaths": [],
-   "hearths": [
-    {
-     "to": "Darkshire",
-     "level": 21.1
-    },
-    {
-     "to": "Darkshire",
-     "level": 22.1
-    },
-    {
-     "to": "Darkshire",
-     "level": 22.9
-    }
-   ],
-   "grinds": [
-    {
-     "zone": "Duskwood",
-     "near": "Darkshire",
-     "from": 19.9,
-     "to": 20,
-     "minutes": 7,
-     "spot": {
-      "mob": "Redridge Drudger",
-      "level": 21,
-      "zone": "Redridge Mountains",
-      "map": 1433,
-      "x": 15.2,
-      "y": 21.1,
-      "area": "Redridge Canyons"
-     }
-    },
-    {
-     "zone": "Duskwood",
-     "near": "Darkshire",
-     "from": 21,
-     "to": 21,
-     "minutes": 4,
-     "spot": {
-      "mob": "Skeletal Warrior",
-      "level": 22,
-      "zone": "Duskwood",
-      "map": 1431,
-      "x": 78.6,
-      "y": 70.9,
-      "area": "Tranquil Gardens Cemetery"
-     }
-    }
-   ],
-   "hours": 4.6
-  },
-  {
-   "n": 11,
-   "zone": "Silverpine Forest",
-   "map": 1421,
-   "guide": "sim/alliance/dwarf-dungeons/11-silverpine-forest",
-   "levelIn": 23.4,
-   "levelOut": 23.4,
-   "arrive": 59959,
-   "leave": 60295,
-   "packages": [
-    "Dungeon: Shadowfang Keep"
-   ],
-   "quests": [],
-   "dungeons": [
-    {
-     "name": "Shadowfang Keep",
-     "level": 23.4
-    }
-   ],
-   "binds": [
-    {
-     "inn": "Lakeshire",
-     "level": 23.4
-    }
-   ],
-   "flightPaths": [
-    {
-     "name": "Lakeshire",
-     "level": 23.4
-    }
-   ],
-   "hearths": [
-    {
-     "to": "Darkshire",
-     "level": 23.4
-    }
-   ],
-   "grinds": [],
-   "hours": 0.1
-  },
-  {
-   "n": 12,
-   "zone": "Redridge Mountains",
-   "map": 1433,
-   "guide": "sim/alliance/dwarf-dungeons/12-redridge-mountains",
-   "levelIn": 23.4,
-   "levelOut": 24.4,
-   "arrive": 60301,
-   "leave": 65657,
-   "packages": [
-    "Redridge Mountains 21-25"
-   ],
-   "quests": [
-    {
-     "id": 98386,
-     "title": "Alther's Mill",
-     "level": 21,
-     "giver": {
-      "name": "Foreman Oslow",
-      "hub": "Lakeshire",
-      "pos": {
-       "map": 1433,
-       "x": 27.1,
-       "y": 48.6
-      }
-     },
-     "ender": {
-      "name": "Foreman Oslow",
-      "hub": "Lakeshire",
-      "pos": {
-       "map": 1433,
-       "x": 27.1,
-       "y": 48.6
-      }
-     },
-     "acceptedAt": 23.4,
-     "objectivesAt": 23.6,
-     "turnedInAt": 24
-    },
-    {
-     "id": 20,
-     "title": "Blackrock Menace",
-     "level": 21,
-     "giver": {
-      "name": "Marshal Marris",
-      "hub": "Lakeshire",
-      "pos": {
-       "map": 1433,
-       "x": 28.4,
-       "y": 49
-      }
-     },
-     "ender": {
-      "name": "Marshal Marris",
-      "hub": "Lakeshire",
-      "pos": {
-       "map": 1433,
-       "x": 28.4,
-       "y": 49
-      }
-     },
-     "acceptedAt": 23.4,
-     "objectivesAt": 23.8,
-     "turnedInAt": 23.9
-    },
-    {
-     "id": 91,
-     "title": "Solomon's Law",
-     "level": 23,
-     "giver": {
-      "name": "Bailiff Conacher",
-      "hub": "Lakeshire",
-      "pos": {
-       "map": 1433,
-       "x": 24.6,
-       "y": 44.3
-      }
-     },
-     "ender": {
-      "name": "Bailiff Conacher",
-      "hub": "Lakeshire",
-      "pos": {
-       "map": 1433,
-       "x": 24.6,
-       "y": 44.3
-      }
-     },
-     "acceptedAt": 23.4,
-     "objectivesAt": 24.1,
-     "turnedInAt": 24.4
-    },
-    {
-     "id": 127,
-     "title": "Selling Fish",
-     "level": 21,
-     "giver": {
-      "name": "Dockmaster Baren",
-      "hub": "Lakeshire",
-      "pos": {
-       "map": 1433,
-       "x": 22.6,
-       "y": 47.4
-      }
-     },
-     "ender": {
-      "name": "Dockmaster Baren",
-      "hub": "Lakeshire",
-      "pos": {
-       "map": 1433,
-       "x": 22.6,
-       "y": 47.4
-      }
-     },
-     "acceptedAt": 23.4,
-     "objectivesAt": 23.7,
-     "turnedInAt": 24
-    },
-    {
-     "id": 34,
-     "title": "An Unwelcome Guest",
-     "level": 24,
-     "giver": {
-      "name": "Martie Jainrose",
-      "hub": "Lakeshire",
-      "pos": {
-       "map": 1433,
-       "x": 16.8,
-       "y": 46.3
-      }
-     },
-     "ender": {
-      "name": "Martie Jainrose",
-      "hub": "Lakeshire",
-      "pos": {
-       "map": 1433,
-       "x": 16.8,
-       "y": 46.3
-      }
-     },
-     "acceptedAt": 23.4,
-     "objectivesAt": 23.4,
-     "turnedInAt": 23.4
-    },
-    {
-     "id": 128,
-     "title": "Blackrock Bounty",
-     "level": 25,
-     "giver": {
-      "name": "Guard Howe",
-      "hub": "Lakeshire",
-      "pos": {
-       "map": 1433,
-       "x": 26.4,
-       "y": 57.8
-      }
-     },
-     "ender": {
-      "name": "Guard Howe",
-      "hub": "Lakeshire",
-      "pos": {
-       "map": 1433,
-       "x": 26.4,
-       "y": 57.8
-      }
-     },
-     "acceptedAt": 23.4,
-     "objectivesAt": 23.5,
-     "turnedInAt": 24.1
-    },
-    {
-     "id": 219,
-     "title": "Missing In Action",
-     "level": 25,
-     "giver": {
-      "name": "Corporal Keeshan",
-      "hub": "Redridge Canyons",
-      "pos": {
-       "map": 1433,
-       "x": 23.3,
-       "y": 12.5
-      }
-     },
-     "ender": {
-      "name": "Marshal Marris",
-      "hub": "Lakeshire",
-      "pos": {
-       "map": 1433,
-       "x": 28.4,
-       "y": 49
-      }
-     },
-     "acceptedAt": 23.4,
-     "objectivesAt": 23.8,
-     "turnedInAt": 23.8
-    },
-    {
-     "id": 178,
-     "title": "Theocritus' Retrieval",
-     "level": 23,
-     "giver": {
-      "name": "Glowing Shadowhide Pendant (drop: Shadowhide Darkweaver)",
-      "hub": "Galardell Valley",
-      "pos": {
-       "map": 1433,
-       "x": 75.2,
-       "y": 52.3
-      }
-     },
-     "ender": {
-      "name": "Theocritus",
-      "hub": "Tower of Azora",
-      "pos": {
-       "map": 1429,
-       "x": 65.2,
-       "y": 69.7
-      }
-     },
-     "acceptedAt": 24.3
+     "turnedInAt": 20.1
     }
    ],
    "dungeons": [],
    "binds": [
     {
      "inn": "Astranaar",
-     "level": 24.4
+     "level": 20.1
     }
    ],
    "flightPaths": [
     {
      "name": "Astranaar",
-     "level": 24.4
+     "level": 20.1
     }
    ],
    "hearths": [
     {
-     "to": "Lakeshire",
-     "level": 24.3
+     "to": "Auberdine",
+     "level": 20.1
     }
    ],
    "grinds": [],
-   "hours": 1.5
+   "hours": 0.2
   },
   {
-   "n": 13,
+   "n": 10,
    "zone": "Ashenvale",
    "map": 1440,
-   "guide": "sim/alliance/dwarf-dungeons/13-ashenvale",
-   "levelIn": 24.4,
-   "levelOut": 25.5,
-   "arrive": 65663,
-   "leave": 71566,
+   "guide": "sim/alliance/dwarf-dungeons/10-ashenvale",
+   "levelIn": 20.1,
+   "levelOut": 22,
+   "arrive": 37676,
+   "leave": 45452,
    "packages": [
     "Ashenvale 16-20",
     "Ashenvale 21-25"
@@ -4031,8 +4245,32 @@
        "y": 42.3
       }
      },
-     "acceptedAt": 24.4,
-     "turnedInAt": 24.4
+     "acceptedAt": 20.1,
+     "turnedInAt": 20.2
+    },
+    {
+     "id": 990,
+     "title": "Trek to Ashenvale",
+     "level": 19,
+     "giver": {
+      "name": "Sentinel Selarin",
+      "hub": "Auberdine",
+      "pos": {
+       "map": 1439,
+       "x": 39.3,
+       "y": 43.5
+      }
+     },
+     "ender": {
+      "name": "Raene Wolfrunner",
+      "hub": "Astranaar",
+      "pos": {
+       "map": 1440,
+       "x": 36.6,
+       "y": 49.6
+      }
+     },
+     "turnedInAt": 20.1
     },
     {
      "id": 1056,
@@ -4056,7 +4294,7 @@
        "y": 8.1
       }
      },
-     "acceptedAt": 24.4
+     "acceptedAt": 20.1
     },
     {
      "id": 1008,
@@ -4080,9 +4318,33 @@
        "y": 48.8
       }
      },
-     "acceptedAt": 24.4,
-     "objectivesAt": 24.6,
-     "turnedInAt": 24.7
+     "acceptedAt": 20.1,
+     "objectivesAt": 20.6,
+     "turnedInAt": 20.7
+    },
+    {
+     "id": 967,
+     "title": "The Tower of Althalaxx",
+     "level": 18,
+     "giver": {
+      "name": "Balthule Shadowstrike",
+      "hub": "Tower of Althalaxx",
+      "pos": {
+       "map": 1439,
+       "x": 55,
+       "y": 24.9
+      }
+     },
+     "ender": {
+      "name": "Delgren the Purifier",
+      "hub": "Lake Falathim",
+      "pos": {
+       "map": 1440,
+       "x": 26.2,
+       "y": 38.7
+      }
+     },
+     "turnedInAt": 20.1
     },
     {
      "id": 1010,
@@ -4106,9 +4368,34 @@
        "y": 38.6
       }
      },
-     "acceptedAt": 24.4,
-     "objectivesAt": 24.5,
-     "turnedInAt": 24.6
+     "acceptedAt": 20.1,
+     "objectivesAt": 20.5,
+     "turnedInAt": 20.5
+    },
+    {
+     "id": 5321,
+     "title": "The Sleeper Has Awakened",
+     "level": 20,
+     "giver": {
+      "name": "Kerlonian Evershade",
+      "hub": "Grove of the Ancients",
+      "pos": {
+       "map": 1439,
+       "x": 44.4,
+       "y": 76.4
+      }
+     },
+     "ender": {
+      "name": "Liladris Moonriver",
+      "hub": "Lake Falathim",
+      "pos": {
+       "map": 1440,
+       "x": 27.3,
+       "y": 35.6
+      }
+     },
+     "objectivesAt": 20.1,
+     "turnedInAt": 20.2
     },
     {
      "id": 1023,
@@ -4132,9 +4419,33 @@
        "y": 49.6
       }
      },
-     "acceptedAt": 24.4,
-     "objectivesAt": 24.5,
-     "turnedInAt": 24.5
+     "acceptedAt": 20.2,
+     "objectivesAt": 20.3,
+     "turnedInAt": 20.4
+    },
+    {
+     "id": 945,
+     "title": "Therylune's Escape",
+     "level": 18,
+     "giver": {
+      "name": "Therylune",
+      "hub": "The Master's Glaive",
+      "pos": {
+       "map": 1439,
+       "x": 38.6,
+       "y": 87.3
+      }
+     },
+     "ender": {
+      "name": "Therysil",
+      "hub": "The Shrine of Aessina",
+      "pos": {
+       "map": 1440,
+       "x": 22.6,
+       "y": 51.9
+      }
+     },
+     "turnedInAt": 20.4
     },
     {
      "id": 1024,
@@ -4158,8 +4469,8 @@
        "y": 46.2
       }
      },
-     "acceptedAt": 24.5,
-     "turnedInAt": 24.5
+     "acceptedAt": 20.4,
+     "turnedInAt": 20.5
     },
     {
      "id": 1020,
@@ -4183,8 +4494,8 @@
        "y": 51.8
       }
      },
-     "acceptedAt": 24.6,
-     "turnedInAt": 24.8
+     "acceptedAt": 20.5,
+     "turnedInAt": 20.8
     },
     {
      "id": 1007,
@@ -4208,9 +4519,9 @@
        "y": 31.3
       }
      },
-     "acceptedAt": 24.6,
-     "objectivesAt": 24.6,
-     "turnedInAt": 24.6
+     "acceptedAt": 20.5,
+     "objectivesAt": 20.6,
+     "turnedInAt": 20.7
     },
     {
      "id": 1134,
@@ -4234,7 +4545,7 @@
        "y": 48.8
       }
      },
-     "acceptedAt": 24.7
+     "acceptedAt": 20.7
     },
     {
      "id": 1033,
@@ -4258,9 +4569,9 @@
        "y": 51.8
       }
      },
-     "acceptedAt": 24.8,
-     "objectivesAt": 24.8,
-     "turnedInAt": 24.8
+     "acceptedAt": 20.8,
+     "objectivesAt": 20.8,
+     "turnedInAt": 20.9
     },
     {
      "id": 1025,
@@ -4284,9 +4595,9 @@
        "y": 49.6
       }
      },
-     "acceptedAt": 24.8,
-     "objectivesAt": 25.3,
-     "turnedInAt": 25.4
+     "acceptedAt": 20.9,
+     "objectivesAt": 21.5,
+     "turnedInAt": 21.7
     },
     {
      "id": 1054,
@@ -4310,9 +4621,9 @@
        "y": 49.6
       }
      },
-     "acceptedAt": 24.8,
-     "objectivesAt": 24.8,
-     "turnedInAt": 24.9
+     "acceptedAt": 20.9,
+     "objectivesAt": 20.9,
+     "turnedInAt": 21
     },
     {
      "id": 1034,
@@ -4336,9 +4647,9 @@
        "y": 51.8
       }
      },
-     "acceptedAt": 24.8,
-     "objectivesAt": 24.9,
-     "turnedInAt": 25.3
+     "acceptedAt": 20.9,
+     "objectivesAt": 21,
+     "turnedInAt": 21.6
     },
     {
      "id": 1070,
@@ -4362,7 +4673,7 @@
        "y": 66.8
       }
      },
-     "acceptedAt": 24.8
+     "acceptedAt": 20.9
     },
     {
      "id": 78132,
@@ -4386,8 +4697,8 @@
        "y": 69.9
       }
      },
-     "acceptedAt": 24.9,
-     "turnedInAt": 25
+     "acceptedAt": 21,
+     "turnedInAt": 21.1
     },
     {
      "id": 78133,
@@ -4411,8 +4722,8 @@
        "y": 69.9
       }
      },
-     "acceptedAt": 25,
-     "turnedInAt": 25
+     "acceptedAt": 21.1,
+     "turnedInAt": 21.2
     },
     {
      "id": 78134,
@@ -4436,8 +4747,8 @@
        "y": 69.9
       }
      },
-     "acceptedAt": 25,
-     "turnedInAt": 25.1
+     "acceptedAt": 21.2,
+     "turnedInAt": 21.3
     },
     {
      "id": 1016,
@@ -4461,9 +4772,9 @@
        "y": 67.2
       }
      },
-     "acceptedAt": 25.1,
-     "objectivesAt": 25.1,
-     "turnedInAt": 25.2
+     "acceptedAt": 21.3,
+     "objectivesAt": 21.3,
+     "turnedInAt": 21.4
     },
     {
      "id": 1017,
@@ -4487,7 +4798,59 @@
        "y": 67.2
       }
      },
-     "acceptedAt": 25.2
+     "acceptedAt": 21.4
+    },
+    {
+     "id": 970,
+     "title": "The Tower of Althalaxx",
+     "level": 21,
+     "giver": {
+      "name": "Delgren the Purifier",
+      "hub": "Lake Falathim",
+      "pos": {
+       "map": 1440,
+       "x": 26.2,
+       "y": 38.7
+      }
+     },
+     "ender": {
+      "name": "Delgren the Purifier",
+      "hub": "Lake Falathim",
+      "pos": {
+       "map": 1440,
+       "x": 26.2,
+       "y": 38.7
+      }
+     },
+     "acceptedAt": 21.7,
+     "objectivesAt": 21.7,
+     "turnedInAt": 21.8
+    },
+    {
+     "id": 973,
+     "title": "The Tower of Althalaxx",
+     "level": 24,
+     "giver": {
+      "name": "Delgren the Purifier",
+      "hub": "Lake Falathim",
+      "pos": {
+       "map": 1440,
+       "x": 26.2,
+       "y": 38.7
+      }
+     },
+     "ender": {
+      "name": "Delgren the Purifier",
+      "hub": "Lake Falathim",
+      "pos": {
+       "map": 1440,
+       "x": 26.2,
+       "y": 38.7
+      }
+     },
+     "acceptedAt": 21.8,
+     "objectivesAt": 21.9,
+     "turnedInAt": 22
     },
     {
      "id": 1009,
@@ -4511,46 +4874,765 @@
        "y": 31.3
       }
      },
-     "acceptedAt": 25.4,
-     "objectivesAt": 25.4,
-     "turnedInAt": 25.5
+     "acceptedAt": 21.8,
+     "objectivesAt": 21.8,
+     "turnedInAt": 21.9
+    },
+    {
+     "id": 976,
+     "title": "Supplies to Auberdine",
+     "level": 24,
+     "giver": {
+      "name": "Feero Ironhand",
+      "hub": "Lake Falathim",
+      "pos": {
+       "map": 1440,
+       "x": 26.2,
+       "y": 38.9
+      }
+     },
+     "ender": {
+      "name": "Delgren the Purifier",
+      "hub": "Lake Falathim",
+      "pos": {
+       "map": 1440,
+       "x": 26.2,
+       "y": 38.7
+      }
+     },
+     "acceptedAt": 22
+    }
+   ],
+   "dungeons": [],
+   "binds": [
+    {
+     "inn": "Darkshire",
+     "level": 22
+    }
+   ],
+   "flightPaths": [
+    {
+     "name": "Darkshire",
+     "level": 22
+    }
+   ],
+   "hearths": [
+    {
+     "to": "Astranaar",
+     "level": 21.5
+    }
+   ],
+   "grinds": [],
+   "hours": 2.2
+  },
+  {
+   "n": 11,
+   "zone": "Duskwood",
+   "map": 1431,
+   "guide": "sim/alliance/dwarf-dungeons/11-duskwood",
+   "levelIn": 22,
+   "levelOut": 24.9,
+   "arrive": 45458,
+   "leave": 58840,
+   "packages": [
+    "Duskwood 21-25"
+   ],
+   "quests": [
+    {
+     "id": 101,
+     "title": "The Totem of Infliction",
+     "level": 25,
+     "giver": {
+      "name": "Madame Eva",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.8,
+       "y": 45.3
+      }
+     },
+     "ender": {
+      "name": "Madame Eva",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.8,
+       "y": 45.3
+      }
+     },
+     "acceptedAt": 22,
+     "objectivesAt": 23.5,
+     "turnedInAt": 24
+    },
+    {
+     "id": 96139,
+     "title": "The Valor Family",
+     "level": 22,
+     "giver": {
+      "name": "Sirra Von'Indi",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 72.6,
+       "y": 47.6
+      }
+     },
+     "ender": {
+      "name": "Sirra Von'Indi",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 72.6,
+       "y": 47.6
+      }
+     },
+     "acceptedAt": 22,
+     "objectivesAt": 23.2,
+     "turnedInAt": 23.9
+    },
+    {
+     "id": 56,
+     "title": "The Night Watch",
+     "level": 24,
+     "giver": {
+      "name": "Commander Althea Ebonlocke",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 73.5,
+       "y": 46.8
+      }
+     },
+     "ender": {
+      "name": "Commander Althea Ebonlocke",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 73.5,
+       "y": 46.8
+      }
+     },
+     "acceptedAt": 22,
+     "objectivesAt": 22.7,
+     "turnedInAt": 22.9
+    },
+    {
+     "id": 164,
+     "title": "Deliveries to Sven",
+     "level": 23,
+     "giver": {
+      "name": "Elaine Carevin",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.3,
+       "y": 48.8
+      }
+     },
+     "ender": {
+      "name": "Sven Yorgen",
+      "hub": "The Hushed Bank",
+      "pos": {
+       "map": 1431,
+       "x": 7.8,
+       "y": 34.1
+      }
+     },
+     "acceptedAt": 22,
+     "turnedInAt": 23.5
+    },
+    {
+     "id": 165,
+     "title": "The Hermit",
+     "level": 25,
+     "giver": {
+      "name": "Elaine Carevin",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.3,
+       "y": 48.8
+      }
+     },
+     "ender": {
+      "name": "Abercrombie",
+      "hub": "Raven Hill Cemetery",
+      "pos": {
+       "map": 1431,
+       "x": 28.1,
+       "y": 31.5
+      }
+     },
+     "acceptedAt": 22,
+     "turnedInAt": 23.5
+    },
+    {
+     "id": 174,
+     "title": "Look to the Stars",
+     "level": 25,
+     "giver": {
+      "name": "Viktori Prism'Antras",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 79.8,
+       "y": 48
+      }
+     },
+     "ender": {
+      "name": "Viktori Prism'Antras",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 79.8,
+       "y": 48
+      }
+     },
+     "acceptedAt": 22
+    },
+    {
+     "id": 337,
+     "title": "An Old History Book",
+     "level": 25,
+     "giver": {
+      "name": "An Old History Book (drop: Skeletal Horror)",
+      "hub": "Tranquil Gardens Cemetery",
+      "pos": {
+       "map": 1431,
+       "x": 80.6,
+       "y": 59.2
+      }
+     },
+     "ender": {
+      "name": "Milton Sheaf",
+      "hub": "near Stormwind",
+      "pos": {
+       "map": 1453,
+       "x": 77.1,
+       "y": 30.2
+      }
+     },
+     "acceptedAt": 22.6
+    },
+    {
+     "id": 57,
+     "title": "The Night Watch",
+     "level": 26,
+     "giver": {
+      "name": "Commander Althea Ebonlocke",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 73.5,
+       "y": 46.8
+      }
+     },
+     "ender": {
+      "name": "Commander Althea Ebonlocke",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 73.5,
+       "y": 46.8
+      }
+     },
+     "acceptedAt": 22.9,
+     "objectivesAt": 23.2,
+     "turnedInAt": 23.9
+    },
+    {
+     "id": 236,
+     "title": "Awaiting Word",
+     "level": 21,
+     "giver": {
+      "name": "Watcher Dodds",
+      "hub": "The Yorgen Farmstead",
+      "pos": {
+       "map": 1431,
+       "x": 45.1,
+       "y": 67
+      }
+     },
+     "ender": {
+      "name": "Watcher Callahan",
+      "hub": "Manor Mistmantle",
+      "pos": {
+       "map": 1431,
+       "x": 81.9,
+       "y": 19.7
+      }
+     },
+     "acceptedAt": 23.2,
+     "turnedInAt": 24.1
+    },
+    {
+     "id": 245,
+     "title": "Eight-Legged Menaces",
+     "level": 21,
+     "giver": {
+      "name": "Watcher Dodds",
+      "hub": "The Yorgen Farmstead",
+      "pos": {
+       "map": 1431,
+       "x": 45.1,
+       "y": 67
+      }
+     },
+     "ender": {
+      "name": "Watcher Dodds",
+      "hub": "The Yorgen Farmstead",
+      "pos": {
+       "map": 1431,
+       "x": 45.1,
+       "y": 67
+      }
+     },
+     "acceptedAt": 23.2,
+     "objectivesAt": 23.7,
+     "turnedInAt": 23.8
+    },
+    {
+     "id": 148,
+     "title": "Supplies from Darkshire",
+     "level": 24,
+     "giver": {
+      "name": "Abercrombie",
+      "hub": "Raven Hill Cemetery",
+      "pos": {
+       "map": 1431,
+       "x": 28.1,
+       "y": 31.5
+      }
+     },
+     "ender": {
+      "name": "Madame Eva",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.8,
+       "y": 45.3
+      }
+     },
+     "acceptedAt": 23.5,
+     "turnedInAt": 24
+    },
+    {
+     "id": 95,
+     "title": "Sven's Revenge",
+     "level": 25,
+     "giver": {
+      "name": "Sven Yorgen",
+      "hub": "The Hushed Bank",
+      "pos": {
+       "map": 1431,
+       "x": 7.8,
+       "y": 34.1
+      }
+     },
+     "ender": {
+      "name": "Mound of loose dirt",
+      "hub": "The Yorgen Farmstead",
+      "pos": {
+       "map": 1431,
+       "x": 49.8,
+       "y": 77.7
+      }
+     },
+     "acceptedAt": 23.5,
+     "turnedInAt": 23.8
+    },
+    {
+     "id": 226,
+     "title": "Wolves at Our Heels",
+     "level": 21,
+     "giver": {
+      "name": "Lars",
+      "hub": "The Hushed Bank",
+      "pos": {
+       "map": 1431,
+       "x": 7.7,
+       "y": 33.2
+      }
+     },
+     "ender": {
+      "name": "Lars",
+      "hub": "The Hushed Bank",
+      "pos": {
+       "map": 1431,
+       "x": 7.7,
+       "y": 33.2
+      }
+     },
+     "acceptedAt": 23.5,
+     "objectivesAt": 23.6,
+     "turnedInAt": 23.7
+    },
+    {
+     "id": 230,
+     "title": "Sven's Camp",
+     "level": 25,
+     "giver": {
+      "name": "Mound of loose dirt",
+      "hub": "The Yorgen Farmstead",
+      "pos": {
+       "map": 1431,
+       "x": 49.8,
+       "y": 77.7
+      }
+     },
+     "ender": {
+      "name": "Sven Yorgen",
+      "hub": "The Hushed Bank",
+      "pos": {
+       "map": 1431,
+       "x": 7.8,
+       "y": 34.1
+      }
+     },
+     "acceptedAt": 23.8,
+     "turnedInAt": 24.2
+    },
+    {
+     "id": 149,
+     "title": "Ghost Hair Thread",
+     "level": 24,
+     "giver": {
+      "name": "Madame Eva",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.8,
+       "y": 45.3
+      }
+     },
+     "ender": {
+      "name": "Blind Mary",
+      "hub": "Tranquil Gardens Cemetery",
+      "pos": {
+       "map": 1431,
+       "x": 82,
+       "y": 59.1
+      }
+     },
+     "acceptedAt": 24,
+     "turnedInAt": 24
+    },
+    {
+     "id": 154,
+     "title": "Return the Comb",
+     "level": 24,
+     "giver": {
+      "name": "Blind Mary",
+      "hub": "Tranquil Gardens Cemetery",
+      "pos": {
+       "map": 1431,
+       "x": 82,
+       "y": 59.1
+      }
+     },
+     "ender": {
+      "name": "Madame Eva",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.8,
+       "y": 45.3
+      }
+     },
+     "acceptedAt": 24,
+     "turnedInAt": 24.1
+    },
+    {
+     "id": 157,
+     "title": "Deliver the Thread",
+     "level": 24,
+     "giver": {
+      "name": "Madame Eva",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.8,
+       "y": 45.3
+      }
+     },
+     "ender": {
+      "name": "Abercrombie",
+      "hub": "Raven Hill Cemetery",
+      "pos": {
+       "map": 1431,
+       "x": 28.1,
+       "y": 31.5
+      }
+     },
+     "acceptedAt": 24.1,
+     "turnedInAt": 24.1
+    },
+    {
+     "id": 158,
+     "title": "Zombie Juice",
+     "level": 24,
+     "giver": {
+      "name": "Abercrombie",
+      "hub": "Raven Hill Cemetery",
+      "pos": {
+       "map": 1431,
+       "x": 28.1,
+       "y": 31.5
+      }
+     },
+     "ender": {
+      "name": "Tavernkeep Smitts",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 73.8,
+       "y": 44.5
+      }
+     },
+     "acceptedAt": 24.1,
+     "turnedInAt": 24.2
+    },
+    {
+     "id": 262,
+     "title": "The Shadowy Figure",
+     "level": 25,
+     "giver": {
+      "name": "Sven Yorgen",
+      "hub": "The Hushed Bank",
+      "pos": {
+       "map": 1431,
+       "x": 7.8,
+       "y": 34.1
+      }
+     },
+     "ender": {
+      "name": "Madame Eva",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.8,
+       "y": 45.3
+      }
+     },
+     "acceptedAt": 24.2,
+     "turnedInAt": 24.2
+    },
+    {
+     "id": 156,
+     "title": "Gather Rot Blossoms",
+     "level": 24,
+     "giver": {
+      "name": "Tavernkeep Smitts",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 73.8,
+       "y": 44.5
+      }
+     },
+     "ender": {
+      "name": "Tavernkeep Smitts",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 73.8,
+       "y": 44.5
+      }
+     },
+     "acceptedAt": 24.2,
+     "objectivesAt": 24.4,
+     "turnedInAt": 24.4
+    },
+    {
+     "id": 265,
+     "title": "The Shadowy Search Continues",
+     "level": 25,
+     "giver": {
+      "name": "Madame Eva",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.8,
+       "y": 45.3
+      }
+     },
+     "ender": {
+      "name": "Clerk Daltry",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 72.5,
+       "y": 46.9
+      }
+     },
+     "acceptedAt": 24.2,
+     "turnedInAt": 24.2
+    },
+    {
+     "id": 266,
+     "title": "Inquire at the Inn",
+     "level": 25,
+     "giver": {
+      "name": "Clerk Daltry",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 72.5,
+       "y": 46.9
+      }
+     },
+     "ender": {
+      "name": "Tavernkeep Smitts",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 73.8,
+       "y": 44.5
+      }
+     },
+     "acceptedAt": 24.2,
+     "turnedInAt": 24.2
+    },
+    {
+     "id": 453,
+     "title": "Finding the Shadowy Figure",
+     "level": 25,
+     "giver": {
+      "name": "Tavernkeep Smitts",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 73.8,
+       "y": 44.5
+      }
+     },
+     "ender": {
+      "name": "Jitters",
+      "hub": "Raven Hill",
+      "pos": {
+       "map": 1431,
+       "x": 18.4,
+       "y": 56.4
+      }
+     },
+     "acceptedAt": 24.2,
+     "turnedInAt": 24.8
+    },
+    {
+     "id": 159,
+     "title": "Juice Delivery",
+     "level": 24,
+     "giver": {
+      "name": "Tavernkeep Smitts",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 73.8,
+       "y": 44.5
+      }
+     },
+     "ender": {
+      "name": "Abercrombie",
+      "hub": "Raven Hill Cemetery",
+      "pos": {
+       "map": 1431,
+       "x": 28.1,
+       "y": 31.5
+      }
+     },
+     "acceptedAt": 24.4,
+     "turnedInAt": 24.4
+    },
+    {
+     "id": 133,
+     "title": "Ghoulish Effigy",
+     "level": 27,
+     "giver": {
+      "name": "Abercrombie",
+      "hub": "Raven Hill Cemetery",
+      "pos": {
+       "map": 1431,
+       "x": 28.1,
+       "y": 31.5
+      }
+     },
+     "ender": {
+      "name": "Abercrombie",
+      "hub": "Raven Hill Cemetery",
+      "pos": {
+       "map": 1431,
+       "x": 28.1,
+       "y": 31.5
+      }
+     },
+     "acceptedAt": 24.4,
+     "objectivesAt": 24.8,
+     "turnedInAt": 24.8
+    },
+    {
+     "id": 268,
+     "title": "Return to Sven",
+     "level": 25,
+     "giver": {
+      "name": "Jitters",
+      "hub": "Raven Hill",
+      "pos": {
+       "map": 1431,
+       "x": 18.4,
+       "y": 56.4
+      }
+     },
+     "ender": {
+      "name": "Sven Yorgen",
+      "hub": "The Hushed Bank",
+      "pos": {
+       "map": 1431,
+       "x": 7.8,
+       "y": 34.1
+      }
+     },
+     "acceptedAt": 24.8,
+     "turnedInAt": 24.9
     }
    ],
    "dungeons": [],
    "binds": [
     {
      "inn": "Deepwater Tavern",
-     "level": 25.5
+     "level": 24.9
     }
    ],
    "flightPaths": [
     {
      "name": "Menethil Harbor",
-     "level": 25.5
+     "level": 24.9
     }
    ],
    "hearths": [
     {
-     "to": "Astranaar",
-     "level": 24.6
+     "to": "Darkshire",
+     "level": 23
+    },
+    {
+     "to": "Darkshire",
+     "level": 23.8
     }
    ],
    "grinds": [],
-   "hours": 1.6
+   "hours": 3.7
   },
   {
-   "n": 14,
+   "n": 12,
    "zone": "Wetlands",
    "map": 1437,
-   "guide": "sim/alliance/dwarf-dungeons/14-wetlands",
-   "levelIn": 25.5,
-   "levelOut": 28.5,
-   "arrive": 71572,
-   "leave": 86955,
+   "guide": "sim/alliance/dwarf-dungeons/12-wetlands",
+   "levelIn": 24.9,
+   "levelOut": 27.5,
+   "arrive": 58846,
+   "leave": 69913,
    "packages": [
     "Wetlands 21-25",
-    "Wetlands 26-30",
-    "Dungeon: Excavation Site: Wetlands"
+    "Wetlands 26-30"
    ],
    "quests": [
     {
@@ -4575,9 +5657,9 @@
        "y": 56.9
       }
      },
-     "acceptedAt": 25.5,
-     "objectivesAt": 25.5,
-     "turnedInAt": 25.5
+     "acceptedAt": 24.9,
+     "objectivesAt": 24.9,
+     "turnedInAt": 24.9
     },
     {
      "id": 484,
@@ -4601,9 +5683,9 @@
        "y": 55.7
       }
      },
-     "acceptedAt": 25.5,
-     "objectivesAt": 25.6,
-     "turnedInAt": 25.6
+     "acceptedAt": 24.9,
+     "objectivesAt": 25,
+     "turnedInAt": 25
     },
     {
      "id": 279,
@@ -4627,9 +5709,9 @@
        "y": 58.6
       }
      },
-     "acceptedAt": 25.5,
-     "objectivesAt": 25.7,
-     "turnedInAt": 25.9
+     "acceptedAt": 24.9,
+     "objectivesAt": 25.1,
+     "turnedInAt": 25.3
     },
     {
      "id": 98189,
@@ -4653,8 +5735,8 @@
        "y": 57.5
       }
      },
-     "acceptedAt": 25.5,
-     "turnedInAt": 25.5
+     "acceptedAt": 24.9,
+     "turnedInAt": 24.9
     },
     {
      "id": 98190,
@@ -4678,7 +5760,7 @@
        "y": 38.4
       }
      },
-     "acceptedAt": 25.5
+     "acceptedAt": 24.9
     },
     {
      "id": 463,
@@ -4702,8 +5784,8 @@
        "y": 40.4
       }
      },
-     "acceptedAt": 25.5,
-     "turnedInAt": 26.5
+     "acceptedAt": 24.9,
+     "turnedInAt": 25.9
     },
     {
      "id": 98282,
@@ -4727,9 +5809,9 @@
        "y": 58.8
       }
      },
-     "acceptedAt": 25.5,
-     "objectivesAt": 26.4,
-     "turnedInAt": 26.9
+     "acceptedAt": 24.9,
+     "objectivesAt": 25.8,
+     "turnedInAt": 26.3
     },
     {
      "id": 470,
@@ -4753,9 +5835,9 @@
        "y": 58
       }
      },
-     "acceptedAt": 25.5,
-     "objectivesAt": 25.7,
-     "turnedInAt": 25.8
+     "acceptedAt": 24.9,
+     "objectivesAt": 25.1,
+     "turnedInAt": 25.2
     },
     {
      "id": 305,
@@ -4779,8 +5861,8 @@
        "y": 52.3
       }
      },
-     "acceptedAt": 25.6,
-     "turnedInAt": 26
+     "acceptedAt": 25,
+     "turnedInAt": 25.5
     },
     {
      "id": 471,
@@ -4804,9 +5886,9 @@
        "y": 55.7
       }
      },
-     "acceptedAt": 25.6,
-     "objectivesAt": 25.7,
-     "turnedInAt": 25.9
+     "acceptedAt": 25,
+     "objectivesAt": 25.1,
+     "turnedInAt": 25.3
     },
     {
      "id": 281,
@@ -4830,8 +5912,8 @@
        "y": 41.4
       }
      },
-     "acceptedAt": 25.9,
-     "turnedInAt": 25.9
+     "acceptedAt": 25.3,
+     "turnedInAt": 25.3
     },
     {
      "id": 284,
@@ -4855,8 +5937,8 @@
        "y": 38.2
       }
      },
-     "acceptedAt": 25.9,
-     "turnedInAt": 25.9
+     "acceptedAt": 25.3,
+     "turnedInAt": 25.4
     },
     {
      "id": 285,
@@ -4880,8 +5962,8 @@
        "y": 34.8
       }
      },
-     "acceptedAt": 25.9,
-     "turnedInAt": 26
+     "acceptedAt": 25.4,
+     "turnedInAt": 25.4
     },
     {
      "id": 286,
@@ -4905,8 +5987,8 @@
        "y": 58.6
       }
      },
-     "acceptedAt": 26,
-     "turnedInAt": 26
+     "acceptedAt": 25.4,
+     "turnedInAt": 25.4
     },
     {
      "id": 294,
@@ -4930,9 +6012,9 @@
        "y": 50.9
       }
      },
-     "acceptedAt": 26,
-     "objectivesAt": 26.1,
-     "turnedInAt": 26.2
+     "acceptedAt": 25.4,
+     "objectivesAt": 25.6,
+     "turnedInAt": 25.6
     },
     {
      "id": 306,
@@ -4956,8 +6038,8 @@
        "y": 52.2
       }
      },
-     "acceptedAt": 26,
-     "turnedInAt": 26.1
+     "acceptedAt": 25.5,
+     "turnedInAt": 25.5
     },
     {
      "id": 295,
@@ -4981,9 +6063,9 @@
        "y": 50.9
       }
      },
-     "acceptedAt": 26.2,
-     "objectivesAt": 26.3,
-     "turnedInAt": 26.4
+     "acceptedAt": 25.6,
+     "objectivesAt": 25.7,
+     "turnedInAt": 25.8
     },
     {
      "id": 94497,
@@ -5007,9 +6089,9 @@
        "y": 76.5
       }
      },
-     "acceptedAt": 26.4,
-     "objectivesAt": 26.4,
-     "turnedInAt": 26.4
+     "acceptedAt": 25.8,
+     "objectivesAt": 25.8,
+     "turnedInAt": 25.8
     },
     {
      "id": 94499,
@@ -5033,9 +6115,9 @@
        "y": 76.5
       }
      },
-     "acceptedAt": 26.4,
-     "objectivesAt": 26.4,
-     "turnedInAt": 26.4
+     "acceptedAt": 25.8,
+     "objectivesAt": 25.8,
+     "turnedInAt": 25.9
     },
     {
      "id": 94500,
@@ -5059,9 +6141,9 @@
        "y": 76.5
       }
      },
-     "acceptedAt": 26.4,
-     "objectivesAt": 26.4,
-     "turnedInAt": 26.5
+     "acceptedAt": 25.8,
+     "objectivesAt": 25.9,
+     "turnedInAt": 25.9
     },
     {
      "id": 94501,
@@ -5085,7 +6167,7 @@
        "y": 19.1
       }
      },
-     "acceptedAt": 26.4
+     "acceptedAt": 25.8
     },
     {
      "id": 469,
@@ -5109,8 +6191,8 @@
        "y": 55.7
       }
      },
-     "acceptedAt": 26.5,
-     "turnedInAt": 26.9
+     "acceptedAt": 25.9,
+     "turnedInAt": 26.3
     },
     {
      "id": 276,
@@ -5134,9 +6216,9 @@
        "y": 40.4
       }
      },
-     "acceptedAt": 26.5,
-     "objectivesAt": 26.6,
-     "turnedInAt": 26.6
+     "acceptedAt": 25.9,
+     "objectivesAt": 26,
+     "turnedInAt": 26.1
     },
     {
      "id": 277,
@@ -5160,9 +6242,9 @@
        "y": 40.4
       }
      },
-     "acceptedAt": 26.6,
-     "objectivesAt": 26.6,
-     "turnedInAt": 26.7
+     "acceptedAt": 26.1,
+     "objectivesAt": 26.1,
+     "turnedInAt": 26.1
     },
     {
      "id": 275,
@@ -5186,9 +6268,9 @@
        "y": 40.4
       }
      },
-     "acceptedAt": 26.7,
-     "objectivesAt": 26.7,
-     "turnedInAt": 26.8
+     "acceptedAt": 26.1,
+     "objectivesAt": 26.2,
+     "turnedInAt": 26.3
     },
     {
      "id": 288,
@@ -5212,9 +6294,9 @@
        "y": 59.6
       }
      },
-     "acceptedAt": 26.9,
-     "objectivesAt": 26.9,
-     "turnedInAt": 26.9
+     "acceptedAt": 26.3,
+     "objectivesAt": 26.3,
+     "turnedInAt": 26.4
     },
     {
      "id": 526,
@@ -5238,9 +6320,9 @@
        "y": 60.6
       }
      },
-     "acceptedAt": 26.9,
-     "objectivesAt": 27,
-     "turnedInAt": 27
+     "acceptedAt": 26.3,
+     "objectivesAt": 26.5,
+     "turnedInAt": 26.5
     },
     {
      "id": 289,
@@ -5264,9 +6346,9 @@
        "y": 59.6
       }
      },
-     "acceptedAt": 26.9,
-     "objectivesAt": 27.1,
-     "turnedInAt": 27.2
+     "acceptedAt": 26.4,
+     "objectivesAt": 26.6,
+     "turnedInAt": 26.6
     },
     {
      "id": 464,
@@ -5290,9 +6372,9 @@
        "y": 57.5
       }
      },
-     "acceptedAt": 26.9,
-     "objectivesAt": 27.4,
-     "turnedInAt": 27.9
+     "acceptedAt": 26.4,
+     "objectivesAt": 26.9,
+     "turnedInAt": 27.4
     },
     {
      "id": 98221,
@@ -5316,8 +6398,8 @@
        "y": 57.5
       }
      },
-     "acceptedAt": 26.9,
-     "turnedInAt": 26.9
+     "acceptedAt": 26.4,
+     "turnedInAt": 26.4
     },
     {
      "id": 98230,
@@ -5341,8 +6423,8 @@
        "y": 42
       }
      },
-     "acceptedAt": 26.9,
-     "turnedInAt": 27.5
+     "acceptedAt": 26.4,
+     "turnedInAt": 27
     },
     {
      "id": 98209,
@@ -5366,7 +6448,7 @@
        "y": 40.1
       }
      },
-     "acceptedAt": 26.9
+     "acceptedAt": 26.4
     },
     {
      "id": 98072,
@@ -5390,9 +6472,9 @@
        "y": 55.7
       }
      },
-     "acceptedAt": 26.9,
-     "objectivesAt": 27.8,
-     "turnedInAt": 27.9
+     "acceptedAt": 26.4,
+     "objectivesAt": 27.3,
+     "turnedInAt": 27.4
     },
     {
      "id": 98240,
@@ -5416,8 +6498,8 @@
        "y": 42
       }
      },
-     "acceptedAt": 26.9,
-     "turnedInAt": 27.5
+     "acceptedAt": 26.4,
+     "turnedInAt": 27
     },
     {
      "id": 472,
@@ -5441,8 +6523,8 @@
        "y": 18.3
       }
      },
-     "acceptedAt": 26.9,
-     "turnedInAt": 27.6
+     "acceptedAt": 26.4,
+     "turnedInAt": 27.1
     },
     {
      "id": 290,
@@ -5466,9 +6548,9 @@
        "y": 24
       }
      },
-     "acceptedAt": 27.2,
-     "objectivesAt": 27.2,
-     "turnedInAt": 27.2
+     "acceptedAt": 26.6,
+     "objectivesAt": 26.7,
+     "turnedInAt": 26.7
     },
     {
      "id": 292,
@@ -5492,8 +6574,8 @@
        "y": 60.6
       }
      },
-     "acceptedAt": 27.2,
-     "turnedInAt": 27.2
+     "acceptedAt": 26.7,
+     "turnedInAt": 26.7
     },
     {
      "id": 293,
@@ -5517,7 +6599,7 @@
        "y": 45.5
       }
      },
-     "acceptedAt": 27.2
+     "acceptedAt": 26.7
     },
     {
      "id": 299,
@@ -5541,9 +6623,9 @@
        "y": 52.4
       }
      },
-     "acceptedAt": 27.2,
-     "objectivesAt": 27.2,
-     "turnedInAt": 27.4
+     "acceptedAt": 26.7,
+     "objectivesAt": 26.7,
+     "turnedInAt": 26.9
     },
     {
      "id": 296,
@@ -5567,9 +6649,9 @@
        "y": 50.9
       }
      },
-     "acceptedAt": 27.2,
-     "objectivesAt": 27.2,
-     "turnedInAt": 27.3
+     "acceptedAt": 26.7,
+     "objectivesAt": 26.7,
+     "turnedInAt": 26.8
     },
     {
      "id": 98245,
@@ -5593,9 +6675,9 @@
        "y": 42
       }
      },
-     "acceptedAt": 27.5,
-     "objectivesAt": 27.6,
-     "turnedInAt": 27.7
+     "acceptedAt": 27,
+     "objectivesAt": 27.1,
+     "turnedInAt": 27.2
     },
     {
      "id": 98283,
@@ -5619,9 +6701,9 @@
        "y": 40.4
       }
      },
-     "acceptedAt": 27.5,
-     "objectivesAt": 27.6,
-     "turnedInAt": 27.8
+     "acceptedAt": 27,
+     "objectivesAt": 27.1,
+     "turnedInAt": 27.3
     },
     {
      "id": 465,
@@ -5645,9 +6727,569 @@
        "y": 47
       }
      },
-     "acceptedAt": 27.9,
-     "turnedInAt": 28
+     "acceptedAt": 27.4,
+     "turnedInAt": 27.5
+    }
+   ],
+   "dungeons": [],
+   "binds": [],
+   "flightPaths": [],
+   "hearths": [
+    {
+     "to": "Deepwater Tavern",
+     "level": 25.4
     },
+    {
+     "to": "Deepwater Tavern",
+     "level": 26.3
+    },
+    {
+     "to": "Deepwater Tavern",
+     "level": 27.3
+    }
+   ],
+   "grinds": [],
+   "hours": 3.1
+  },
+  {
+   "n": 13,
+   "zone": "Stormwind City",
+   "map": 1453,
+   "guide": "sim/alliance/dwarf-dungeons/13-stormwind-city",
+   "levelIn": 27.5,
+   "levelOut": 27.8,
+   "arrive": 70384,
+   "leave": 74475,
+   "packages": [
+    "Dungeon: The Stockade"
+   ],
+   "quests": [
+    {
+     "id": 388,
+     "title": "The Color of Blood",
+     "level": 26,
+     "giver": {
+      "name": "Nikova Raskol",
+      "hub": "Stormwind",
+      "pos": {
+       "map": 1453,
+       "x": 76.42,
+       "y": 63.67
+      }
+     },
+     "ender": {
+      "name": "Nikova Raskol",
+      "hub": "Stormwind",
+      "pos": {
+       "map": 1453,
+       "x": 76.42,
+       "y": 63.67
+      }
+     },
+     "acceptedAt": 27.5,
+     "turnedInAt": 27.8
+    },
+    {
+     "id": 387,
+     "title": "Quell the Uprising",
+     "level": 26,
+     "giver": {
+      "name": "Warden Thelwater",
+      "hub": "Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 51.49,
+       "y": 69.38
+      }
+     },
+     "ender": {
+      "name": "Warden Thelwater",
+      "hub": "Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 51.49,
+       "y": 69.38
+      }
+     },
+     "acceptedAt": 27.5,
+     "turnedInAt": 27.7
+    }
+   ],
+   "dungeons": [
+    {
+     "name": "The Stockade",
+     "level": 27.7
+    }
+   ],
+   "binds": [
+    {
+     "inn": "Stormwind City",
+     "level": 27.5
+    },
+    {
+     "inn": "Darkshire",
+     "level": 27.8
+    }
+   ],
+   "flightPaths": [],
+   "hearths": [],
+   "grinds": [],
+   "hours": 1.1
+  },
+  {
+   "n": 14,
+   "zone": "Duskwood",
+   "map": 1431,
+   "guide": "sim/alliance/dwarf-dungeons/14-duskwood",
+   "levelIn": 27.9,
+   "levelOut": 28.7,
+   "arrive": 74481,
+   "leave": 78682,
+   "packages": [
+    "Dungeon: The Stockade",
+    "Duskwood 26-30"
+   ],
+   "quests": [
+    {
+     "id": 377,
+     "title": "Crime and Punishment",
+     "level": 26,
+     "giver": {
+      "name": "Councilman Millstipe",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 71.92,
+       "y": 47.79
+      }
+     },
+     "ender": {
+      "name": "Councilman Millstipe",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 71.92,
+       "y": 47.79
+      }
+     },
+     "turnedInAt": 27.9
+    },
+    {
+     "id": 66,
+     "title": "The Legend of Stalvan",
+     "level": 28,
+     "giver": {
+      "name": "Madame Eva",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.8,
+       "y": 45.3
+      }
+     },
+     "ender": {
+      "name": "Clerk Daltry",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 72.5,
+       "y": 46.9
+      }
+     },
+     "acceptedAt": 27.9,
+     "turnedInAt": 27.9
+    },
+    {
+     "id": 58,
+     "title": "The Night Watch",
+     "level": 30,
+     "giver": {
+      "name": "Commander Althea Ebonlocke",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 73.5,
+       "y": 46.8
+      }
+     },
+     "ender": {
+      "name": "Commander Althea Ebonlocke",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 73.5,
+       "y": 46.8
+      }
+     },
+     "acceptedAt": 27.9,
+     "objectivesAt": 28.4,
+     "turnedInAt": 28.7
+    },
+    {
+     "id": 67,
+     "title": "The Legend of Stalvan",
+     "level": 28,
+     "giver": {
+      "name": "Clerk Daltry",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 72.5,
+       "y": 46.9
+      }
+     },
+     "ender": {
+      "name": "Old Footlocker",
+      "hub": "Moonbrook",
+      "pos": {
+       "map": 1436,
+       "x": 41.5,
+       "y": 66.7
+      }
+     },
+     "acceptedAt": 27.9
+    },
+    {
+     "id": 173,
+     "title": "Worgen in the Woods",
+     "level": 28,
+     "giver": {
+      "name": "Calor",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.7,
+       "y": 47.6
+      }
+     },
+     "ender": {
+      "name": "Calor",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.7,
+       "y": 47.6
+      }
+     },
+     "acceptedAt": 27.9,
+     "objectivesAt": 27.9,
+     "turnedInAt": 27.9
+    },
+    {
+     "id": 96138,
+     "title": "Merrick's Bow",
+     "level": 28,
+     "giver": {
+      "name": "Merrick's Bow (drop: Lost Watcher)",
+      "hub": "The Rotting Orchard",
+      "pos": {
+       "map": 1431,
+       "x": 62.5,
+       "y": 64.8
+      }
+     },
+     "ender": {
+      "name": "Sirra Von'Indi",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 72.6,
+       "y": 47.6
+      }
+     },
+     "acceptedAt": 27.9,
+     "objectivesAt": 28.3,
+     "turnedInAt": 28.6
+    },
+    {
+     "id": 221,
+     "title": "Worgen in the Woods",
+     "level": 29,
+     "giver": {
+      "name": "Calor",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.7,
+       "y": 47.6
+      }
+     },
+     "ender": {
+      "name": "Calor",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.7,
+       "y": 47.6
+      }
+     },
+     "acceptedAt": 27.9,
+     "objectivesAt": 28,
+     "turnedInAt": 28.1
+    },
+    {
+     "id": 222,
+     "title": "Worgen in the Woods",
+     "level": 31,
+     "giver": {
+      "name": "Calor",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.7,
+       "y": 47.6
+      }
+     },
+     "ender": {
+      "name": "Calor",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.7,
+       "y": 47.6
+      }
+     },
+     "acceptedAt": 28.1,
+     "objectivesAt": 28.1,
+     "turnedInAt": 28.2
+    },
+    {
+     "id": 223,
+     "title": "Worgen in the Woods",
+     "level": 31,
+     "giver": {
+      "name": "Calor",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.7,
+       "y": 47.6
+      }
+     },
+     "ender": {
+      "name": "Jonathan Carevin",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 75.3,
+       "y": 49
+      }
+     },
+     "acceptedAt": 28.2,
+     "turnedInAt": 28.3
+    },
+    {
+     "id": 134,
+     "title": "Ogre Thieves",
+     "level": 30,
+     "giver": {
+      "name": "Abercrombie",
+      "hub": "Raven Hill Cemetery",
+      "pos": {
+       "map": 1431,
+       "x": 28.1,
+       "y": 31.5
+      }
+     },
+     "ender": {
+      "name": "Abercrombie",
+      "hub": "Raven Hill Cemetery",
+      "pos": {
+       "map": 1431,
+       "x": 28.1,
+       "y": 31.5
+      }
+     },
+     "acceptedAt": 28.3,
+     "objectivesAt": 28.5,
+     "turnedInAt": 28.5
+    },
+    {
+     "id": 323,
+     "title": "Proving Your Worth",
+     "level": 28,
+     "giver": {
+      "name": "Sven Yorgen",
+      "hub": "The Hushed Bank",
+      "pos": {
+       "map": 1431,
+       "x": 7.8,
+       "y": 34.1
+      }
+     },
+     "ender": {
+      "name": "Sven Yorgen",
+      "hub": "The Hushed Bank",
+      "pos": {
+       "map": 1431,
+       "x": 7.8,
+       "y": 34.1
+      }
+     },
+     "acceptedAt": 28.4,
+     "objectivesAt": 28.5,
+     "turnedInAt": 28.5
+    },
+    {
+     "id": 269,
+     "title": "Seeking Wisdom",
+     "level": 29,
+     "giver": {
+      "name": "Sven Yorgen",
+      "hub": "The Hushed Bank",
+      "pos": {
+       "map": 1431,
+       "x": 7.8,
+       "y": 34.1
+      }
+     },
+     "ender": {
+      "name": "Bishop Farthing",
+      "hub": "near Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 49.9,
+       "y": 46
+      }
+     },
+     "acceptedAt": 28.5
+    },
+    {
+     "id": 160,
+     "title": "Note to the Mayor",
+     "level": 30,
+     "giver": {
+      "name": "Abercrombie",
+      "hub": "Raven Hill Cemetery",
+      "pos": {
+       "map": 1431,
+       "x": 28.1,
+       "y": 31.5
+      }
+     },
+     "ender": {
+      "name": "Lord Ello Ebonlocke",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 71.9,
+       "y": 46.4
+      }
+     },
+     "acceptedAt": 28.5,
+     "turnedInAt": 28.6
+    },
+    {
+     "id": 251,
+     "title": "Translate Abercrombie's Note",
+     "level": 30,
+     "giver": {
+      "name": "Lord Ello Ebonlocke",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 71.9,
+       "y": 46.4
+      }
+     },
+     "ender": {
+      "name": "Sirra Von'Indi",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 72.6,
+       "y": 47.6
+      }
+     },
+     "acceptedAt": 28.6,
+     "turnedInAt": 28.6
+    },
+    {
+     "id": 401,
+     "title": "Wait for Sirra to Finish",
+     "level": 30,
+     "giver": {
+      "name": "Sirra Von'Indi",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 72.6,
+       "y": 47.6
+      }
+     },
+     "ender": {
+      "name": "Sirra Von'Indi",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 72.6,
+       "y": 47.6
+      }
+     },
+     "acceptedAt": 28.6,
+     "turnedInAt": 28.7
+    },
+    {
+     "id": 252,
+     "title": "Translation to Ello",
+     "level": 30,
+     "giver": {
+      "name": "Sirra Von'Indi",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 72.6,
+       "y": 47.6
+      }
+     },
+     "ender": {
+      "name": "Lord Ello Ebonlocke",
+      "hub": "Darkshire",
+      "pos": {
+       "map": 1431,
+       "x": 71.9,
+       "y": 46.4
+      }
+     },
+     "acceptedAt": 28.7,
+     "turnedInAt": 28.7
+    }
+   ],
+   "dungeons": [],
+   "binds": [
+    {
+     "inn": "Lakeshire",
+     "level": 28.7
+    }
+   ],
+   "flightPaths": [
+    {
+     "name": "Lakeshire",
+     "level": 28.7
+    }
+   ],
+   "hearths": [
+    {
+     "to": "Darkshire",
+     "level": 28.5
+    }
+   ],
+   "grinds": [],
+   "hours": 1.2
+  },
+  {
+   "n": 15,
+   "zone": "Redridge Mountains",
+   "map": 1433,
+   "guide": "sim/alliance/dwarf-dungeons/15-redridge-mountains",
+   "levelIn": 28.7,
+   "levelOut": 28.7,
+   "arrive": 78688,
+   "leave": 78688,
+   "packages": [
+    "Dungeon: Excavation Site: Wetlands"
+   ],
+   "quests": [
     {
      "id": 95772,
      "title": "Songblade Search",
@@ -5671,7 +7313,53 @@
        "inDungeon": true
       }
      },
-     "turnedInAt": 28.3
+     "acceptedAt": 28.7
+    }
+   ],
+   "dungeons": [],
+   "binds": [],
+   "flightPaths": [],
+   "hearths": [],
+   "grinds": [],
+   "hours": 0
+  },
+  {
+   "n": 16,
+   "zone": "Wetlands",
+   "map": 1437,
+   "guide": "sim/alliance/dwarf-dungeons/16-wetlands",
+   "levelIn": 28.9,
+   "levelOut": 29.2,
+   "arrive": 82885,
+   "leave": 83849,
+   "packages": [
+    "Dungeon: Excavation Site: Wetlands"
+   ],
+   "quests": [
+    {
+     "id": 95772,
+     "title": "Songblade Search",
+     "level": 31,
+     "giver": {
+      "name": "Dorin Songblade",
+      "hub": "Lakeshire",
+      "pos": {
+       "map": 1433,
+       "x": 25.79,
+       "y": 46.44
+      }
+     },
+     "ender": {
+      "name": "inside Excavation Site: Wetlands",
+      "hub": "Angerfang Encampment",
+      "pos": {
+       "map": 1437,
+       "x": 47.7,
+       "y": 56.2,
+       "inDungeon": true
+      }
+     },
+     "turnedInAt": 29.1
     },
     {
      "id": 95809,
@@ -5696,7 +7384,7 @@
        "y": 58.82
       }
      },
-     "turnedInAt": 28.5
+     "turnedInAt": 29.2
     },
     {
      "id": 98815,
@@ -5720,69 +7408,39 @@
        "y": 55.74
       }
      },
-     "turnedInAt": 28.5
+     "turnedInAt": 29.2
     }
    ],
    "dungeons": [
     {
      "name": "Excavation Site: Wetlands",
-     "level": 28.2
+     "level": 28.9
     }
    ],
    "binds": [
     {
+     "inn": "Deepwater Tavern",
+     "level": 29.1
+    },
+    {
      "inn": "Lakeshire",
-     "level": 28.5
+     "level": 29.2
     }
    ],
    "flightPaths": [],
-   "hearths": [
-    {
-     "to": "Deepwater Tavern",
-     "level": 26
-    },
-    {
-     "to": "Deepwater Tavern",
-     "level": 26.8
-    },
-    {
-     "to": "Deepwater Tavern",
-     "level": 27.8
-    },
-    {
-     "to": "Deepwater Tavern",
-     "level": 28.3
-    }
-   ],
-   "grinds": [
-    {
-     "zone": "Wetlands",
-     "near": "Angerfang Encampment",
-     "from": 28,
-     "to": 28,
-     "minutes": 4,
-     "spot": {
-      "mob": "Dragonmaw Bonewarder",
-      "level": 27,
-      "zone": "Wetlands",
-      "map": 1437,
-      "x": 49.3,
-      "y": 47.5,
-      "area": "Angerfang Encampment"
-     }
-    }
-   ],
-   "hours": 4.3
+   "hearths": [],
+   "grinds": [],
+   "hours": 0.3
   },
   {
-   "n": 15,
+   "n": 17,
    "zone": "Redridge Mountains",
    "map": 1433,
-   "guide": "sim/alliance/dwarf-dungeons/15-redridge-mountains",
-   "levelIn": 28.7,
-   "levelOut": 28.7,
-   "arrive": 86961,
-   "leave": 87278,
+   "guide": "sim/alliance/dwarf-dungeons/17-redridge-mountains",
+   "levelIn": 29.4,
+   "levelOut": 29.4,
+   "arrive": 83855,
+   "leave": 83855,
    "packages": [
     "Dungeon: Excavation Site: Wetlands"
    ],
@@ -5810,289 +7468,273 @@
        "y": 46.44
       }
      },
-     "turnedInAt": 28.7
+     "turnedInAt": 29.4
     }
    ],
    "dungeons": [],
-   "binds": [
-    {
-     "inn": "Darkshire",
-     "level": 28.7
-    }
-   ],
+   "binds": [],
    "flightPaths": [],
    "hearths": [],
    "grinds": [],
-   "hours": 0.1
+   "hours": 0
   },
   {
-   "n": 16,
-   "zone": "Duskwood",
-   "map": 1431,
-   "guide": "sim/alliance/dwarf-dungeons/16-duskwood",
-   "levelIn": 28.7,
+   "n": 18,
+   "zone": "Stormwind City",
+   "map": 1453,
+   "guide": "sim/alliance/dwarf-dungeons/18-stormwind-city",
+   "levelIn": 29.4,
    "levelOut": 29.5,
-   "arrive": 87284,
-   "leave": 91058,
+   "arrive": 84194,
+   "leave": 85182,
    "packages": [
-    "Duskwood 26-30"
+    "Stormwind City 21-25",
+    "Stormwind City 26-30"
    ],
    "quests": [
     {
-     "id": 66,
-     "title": "The Legend of Stalvan",
-     "level": 28,
+     "id": 343,
+     "title": "Speaking of Fortitude",
+     "level": 24,
      "giver": {
-      "name": "Madame Eva",
-      "hub": "Darkshire",
+      "name": "Brother Kristoff",
+      "hub": "near Stormwind City",
       "pos": {
-       "map": 1431,
-       "x": 75.8,
-       "y": 45.3
+       "map": 1453,
+       "x": 55,
+       "y": 54.2
       }
      },
      "ender": {
-      "name": "Clerk Daltry",
-      "hub": "Darkshire",
+      "name": "Milton Sheaf",
+      "hub": "near Stormwind",
       "pos": {
-       "map": 1431,
-       "x": 72.5,
-       "y": 46.9
+       "map": 1453,
+       "x": 77.1,
+       "y": 30.2
       }
      },
-     "acceptedAt": 28.7,
-     "turnedInAt": 28.7
-    },
-    {
-     "id": 58,
-     "title": "The Night Watch",
-     "level": 30,
-     "giver": {
-      "name": "Commander Althea Ebonlocke",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 73.5,
-       "y": 46.8
-      }
-     },
-     "ender": {
-      "name": "Commander Althea Ebonlocke",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 73.5,
-       "y": 46.8
-      }
-     },
-     "acceptedAt": 28.7,
-     "objectivesAt": 29.1,
-     "turnedInAt": 29.5
-    },
-    {
-     "id": 67,
-     "title": "The Legend of Stalvan",
-     "level": 28,
-     "giver": {
-      "name": "Clerk Daltry",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 72.5,
-       "y": 46.9
-      }
-     },
-     "ender": {
-      "name": "Old Footlocker",
-      "hub": "Moonbrook",
-      "pos": {
-       "map": 1436,
-       "x": 41.5,
-       "y": 66.7
-      }
-     },
-     "acceptedAt": 28.7
-    },
-    {
-     "id": 173,
-     "title": "Worgen in the Woods",
-     "level": 28,
-     "giver": {
-      "name": "Calor",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 75.7,
-       "y": 47.6
-      }
-     },
-     "ender": {
-      "name": "Calor",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 75.7,
-       "y": 47.6
-      }
-     },
-     "acceptedAt": 28.7,
-     "objectivesAt": 28.7,
-     "turnedInAt": 28.7
-    },
-    {
-     "id": 96138,
-     "title": "Merrick's Bow",
-     "level": 28,
-     "giver": {
-      "name": "Merrick's Bow (drop: Lost Watcher)",
-      "hub": "The Rotting Orchard",
-      "pos": {
-       "map": 1431,
-       "x": 62.5,
-       "y": 64.8
-      }
-     },
-     "ender": {
-      "name": "Sirra Von'Indi",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 72.6,
-       "y": 47.6
-      }
-     },
-     "acceptedAt": 28.7,
-     "objectivesAt": 29.1,
+     "acceptedAt": 29.4,
      "turnedInAt": 29.4
     },
     {
-     "id": 221,
-     "title": "Worgen in the Woods",
-     "level": 29,
+     "id": 389,
+     "title": "Bazil Thredd",
+     "level": 22,
      "giver": {
-      "name": "Calor",
-      "hub": "Darkshire",
+      "name": "Baros Alexston",
+      "hub": "near Stormwind City",
       "pos": {
-       "map": 1431,
-       "x": 75.7,
-       "y": 47.6
+       "map": 1453,
+       "x": 57.7,
+       "y": 47.9
       }
      },
      "ender": {
-      "name": "Calor",
-      "hub": "Darkshire",
+      "name": "Warden Thelwater",
+      "hub": "Stormwind City",
       "pos": {
-       "map": 1431,
-       "x": 75.7,
-       "y": 47.6
+       "map": 1453,
+       "x": 51.5,
+       "y": 69.4
       }
      },
-     "acceptedAt": 28.7,
-     "objectivesAt": 28.8,
-     "turnedInAt": 28.8
+     "acceptedAt": 29.4,
+     "turnedInAt": 29.4
     },
     {
-     "id": 222,
-     "title": "Worgen in the Woods",
-     "level": 31,
+     "id": 95161,
+     "title": "Remember That I Love You",
+     "level": 22,
      "giver": {
-      "name": "Calor",
-      "hub": "Darkshire",
+      "name": "Orphan Matron Nightingale",
+      "hub": "near Stormwind City",
       "pos": {
-       "map": 1431,
-       "x": 75.7,
-       "y": 47.6
+       "map": 1453,
+       "x": 56.3,
+       "y": 54
       }
      },
      "ender": {
-      "name": "Calor",
+      "name": "Avette Fellwood",
       "hub": "Darkshire",
       "pos": {
        "map": 1431,
-       "x": 75.7,
-       "y": 47.6
+       "x": 73,
+       "y": 44.4
       }
      },
-     "acceptedAt": 28.8,
-     "objectivesAt": 28.9,
-     "turnedInAt": 29
+     "acceptedAt": 29.4
     },
     {
-     "id": 223,
-     "title": "Worgen in the Woods",
-     "level": 31,
+     "id": 3765,
+     "title": "The Corruption Abroad",
+     "level": 24,
      "giver": {
-      "name": "Calor",
-      "hub": "Darkshire",
+      "name": "Argos Nightwhisper",
+      "hub": "near Stormwind City",
       "pos": {
-       "map": 1431,
-       "x": 75.7,
-       "y": 47.6
+       "map": 1453,
+       "x": 36.2,
+       "y": 67.6
       }
      },
      "ender": {
-      "name": "Jonathan Carevin",
-      "hub": "Darkshire",
+      "name": "Gershala Nightwhisper",
+      "hub": "Auberdine",
       "pos": {
-       "map": 1431,
-       "x": 75.3,
-       "y": 49
+       "map": 1439,
+       "x": 38.3,
+       "y": 43
       }
      },
-     "acceptedAt": 29,
-     "turnedInAt": 29
+     "acceptedAt": 29.4
     },
     {
-     "id": 134,
-     "title": "Ogre Thieves",
-     "level": 30,
+     "id": 337,
+     "title": "An Old History Book",
+     "level": 25,
      "giver": {
-      "name": "Abercrombie",
-      "hub": "Raven Hill Cemetery",
+      "name": "An Old History Book (drop: Skeletal Horror)",
+      "hub": "Tranquil Gardens Cemetery",
       "pos": {
        "map": 1431,
-       "x": 28.1,
-       "y": 31.5
+       "x": 80.6,
+       "y": 59.2
       }
      },
      "ender": {
-      "name": "Abercrombie",
-      "hub": "Raven Hill Cemetery",
+      "name": "Milton Sheaf",
+      "hub": "near Stormwind",
       "pos": {
-       "map": 1431,
-       "x": 28.1,
-       "y": 31.5
+       "map": 1453,
+       "x": 77.1,
+       "y": 30.2
       }
      },
-     "acceptedAt": 29.1,
-     "objectivesAt": 29.3,
-     "turnedInAt": 29.3
+     "turnedInAt": 29.4
     },
     {
-     "id": 323,
-     "title": "Proving Your Worth",
+     "id": 344,
+     "title": "Brother Paxton",
+     "level": 24,
+     "giver": {
+      "name": "Milton Sheaf",
+      "hub": "near Stormwind",
+      "pos": {
+       "map": 1453,
+       "x": 77.1,
+       "y": 30.2
+      }
+     },
+     "ender": {
+      "name": "Brother Paxton",
+      "hub": "Northshire Valley",
+      "pos": {
+       "map": 1429,
+       "x": 49.6,
+       "y": 40.4
+      }
+     },
+     "acceptedAt": 29.4
+    },
+    {
+     "id": 98190,
+     "title": "A Friend of the Family",
+     "level": 25,
+     "giver": {
+      "name": "Captain Stoutfist",
+      "hub": "Menethil Harbor",
+      "pos": {
+       "map": 1437,
+       "x": 9.9,
+       "y": 57.5
+      }
+     },
+     "ender": {
+      "name": "Highlord Bolvar Fordragon",
+      "hub": "near Stormwind",
+      "pos": {
+       "map": 1453,
+       "x": 80.2,
+       "y": 38.4
+      }
+     },
+     "turnedInAt": 29.4
+    },
+    {
+     "id": 98191,
+     "title": "A Friend of the Family",
+     "level": 25,
+     "giver": {
+      "name": "Highlord Bolvar Fordragon",
+      "hub": "near Stormwind",
+      "pos": {
+       "map": 1453,
+       "x": 80.2,
+       "y": 38.4
+      }
+     },
+     "ender": {
+      "name": "Lord Grayson Shadowbreaker",
+      "hub": "near Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 48.4,
+       "y": 50.2
+      }
+     },
+     "acceptedAt": 29.4,
+     "turnedInAt": 29.5
+    },
+    {
+     "id": 1274,
+     "title": "The Missing Diplomat",
      "level": 28,
      "giver": {
-      "name": "Sven Yorgen",
-      "hub": "The Hushed Bank",
+      "name": "Thomas",
+      "hub": "near Stormwind City",
       "pos": {
-       "map": 1431,
-       "x": 7.8,
-       "y": 34.1
+       "map": 1453,
+       "x": 49.6,
+       "y": 44.5
       }
      },
      "ender": {
-      "name": "Sven Yorgen",
-      "hub": "The Hushed Bank",
+      "name": "Bishop DeLavey",
+      "hub": "near Stormwind",
       "pos": {
-       "map": 1431,
-       "x": 7.8,
-       "y": 34.1
+       "map": 1453,
+       "x": 80.2,
+       "y": 44.1
       }
      },
-     "acceptedAt": 29.1,
-     "objectivesAt": 29.2,
-     "turnedInAt": 29.3
+     "acceptedAt": 29.5,
+     "turnedInAt": 29.5
+    },
+    {
+     "id": 293,
+     "title": "Cleansing the Eye",
+     "level": 30,
+     "giver": {
+      "name": "Glorin Steelbrow",
+      "hub": "Menethil Harbor",
+      "pos": {
+       "map": 1437,
+       "x": 10.6,
+       "y": 60.6
+      }
+     },
+     "ender": {
+      "name": "Archbishop Benedictus",
+      "hub": "near Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 50.3,
+       "y": 45.5
+      }
+     },
+     "turnedInAt": 29.5
     },
     {
      "id": 269,
@@ -6116,130 +7758,229 @@
        "y": 46
       }
      },
-     "acceptedAt": 29.3
+     "turnedInAt": 29.5
     },
     {
-     "id": 160,
-     "title": "Note to the Mayor",
-     "level": 30,
+     "id": 270,
+     "title": "The Doomed Fleet",
+     "level": 29,
      "giver": {
-      "name": "Abercrombie",
-      "hub": "Raven Hill Cemetery",
+      "name": "Bishop Farthing",
+      "hub": "near Stormwind City",
       "pos": {
-       "map": 1431,
-       "x": 28.1,
-       "y": 31.5
+       "map": 1453,
+       "x": 49.9,
+       "y": 46
       }
      },
      "ender": {
-      "name": "Lord Ello Ebonlocke",
-      "hub": "Darkshire",
+      "name": "Glorin Steelbrow",
+      "hub": "Menethil Harbor",
       "pos": {
-       "map": 1431,
-       "x": 71.9,
-       "y": 46.4
+       "map": 1437,
+       "x": 10.6,
+       "y": 60.6
       }
      },
-     "acceptedAt": 29.3,
-     "turnedInAt": 29.3
+     "acceptedAt": 29.5
     },
     {
-     "id": 251,
-     "title": "Translate Abercrombie's Note",
-     "level": 30,
+     "id": 2923,
+     "title": "Tinkmaster Overspark",
+     "level": 26,
      "giver": {
-      "name": "Lord Ello Ebonlocke",
-      "hub": "Darkshire",
+      "name": "Brother Sarno",
+      "hub": "near Stormwind City",
       "pos": {
-       "map": 1431,
-       "x": 71.9,
-       "y": 46.4
+       "map": 1453,
+       "x": 51.1,
+       "y": 48.4
       }
      },
      "ender": {
-      "name": "Sirra Von'Indi",
-      "hub": "Darkshire",
+      "name": "Tinkmaster Overspark",
+      "hub": "Ironforge",
       "pos": {
-       "map": 1431,
-       "x": 72.6,
-       "y": 47.6
+       "map": 1455,
+       "x": 69.6,
+       "y": 50.3
       }
      },
-     "acceptedAt": 29.3,
-     "turnedInAt": 29.3
+     "acceptedAt": 29.5
     },
     {
-     "id": 401,
-     "title": "Wait for Sirra to Finish",
+     "id": 98219,
+     "title": "The Shamed Lieutenant",
      "level": 30,
      "giver": {
-      "name": "Sirra Von'Indi",
-      "hub": "Darkshire",
+      "name": "Lord Grayson Shadowbreaker",
+      "hub": "near Stormwind City",
       "pos": {
-       "map": 1431,
-       "x": 72.6,
-       "y": 47.6
+       "map": 1453,
+       "x": 48.4,
+       "y": 50.2
       }
      },
      "ender": {
-      "name": "Sirra Von'Indi",
-      "hub": "Darkshire",
+      "name": "Lieutenant Farren Orinelle",
+      "hub": "Southshore",
       "pos": {
-       "map": 1431,
-       "x": 72.6,
-       "y": 47.6
+       "map": 1424,
+       "x": 51.5,
+       "y": 58.4
       }
      },
-     "acceptedAt": 29.4,
-     "turnedInAt": 29.4
+     "acceptedAt": 29.5
     },
     {
-     "id": 252,
-     "title": "Translation to Ello",
+     "id": 335,
+     "title": "A Noble Brew",
      "level": 30,
      "giver": {
-      "name": "Sirra Von'Indi",
-      "hub": "Darkshire",
+      "name": "Zardeth of the Black Claw",
+      "hub": "near Stormwind City",
       "pos": {
-       "map": 1431,
-       "x": 72.6,
-       "y": 47.6
+       "map": 1453,
+       "x": 40.1,
+       "y": 85.3
       }
      },
      "ender": {
-      "name": "Lord Ello Ebonlocke",
+      "name": "Zardeth of the Black Claw",
+      "hub": "near Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 40.1,
+       "y": 85.3
+      }
+     },
+     "acceptedAt": 29.5
+    },
+    {
+     "id": 1078,
+     "title": "Retrieval for Mauren",
+     "level": 26,
+     "giver": {
+      "name": "Collin Mauren",
+      "hub": "Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 53,
+       "y": 86.6
+      }
+     },
+     "ender": {
+      "name": "Collin Mauren",
+      "hub": "Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 53,
+       "y": 86.6
+      }
+     },
+     "acceptedAt": 29.5
+    },
+    {
+     "id": 1241,
+     "title": "The Missing Diplomat",
+     "level": 28,
+     "giver": {
+      "name": "Bishop DeLavey",
+      "hub": "near Stormwind",
+      "pos": {
+       "map": 1453,
+       "x": 80.2,
+       "y": 44.1
+      }
+     },
+     "ender": {
+      "name": "Jorgen",
+      "hub": "Stormwind",
+      "pos": {
+       "map": 1453,
+       "x": 76.3,
+       "y": 85.1
+      }
+     },
+     "acceptedAt": 29.5,
+     "turnedInAt": 29.5
+    },
+    {
+     "id": 1242,
+     "title": "The Missing Diplomat",
+     "level": 28,
+     "giver": {
+      "name": "Jorgen",
+      "hub": "Stormwind",
+      "pos": {
+       "map": 1453,
+       "x": 76.3,
+       "y": 85.1
+      }
+     },
+     "ender": {
+      "name": "Elling Trias",
+      "hub": "Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 66,
+       "y": 74.1
+      }
+     },
+     "acceptedAt": 29.5,
+     "turnedInAt": 29.5
+    },
+    {
+     "id": 1243,
+     "title": "The Missing Diplomat",
+     "level": 28,
+     "giver": {
+      "name": "Elling Trias",
+      "hub": "Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 66,
+       "y": 74.1
+      }
+     },
+     "ender": {
+      "name": "Watcher Backus",
       "hub": "Darkshire",
       "pos": {
        "map": 1431,
-       "x": 71.9,
-       "y": 46.4
+       "x": 74.8,
+       "y": 44.2
       }
      },
-     "acceptedAt": 29.4,
-     "turnedInAt": 29.4
+     "acceptedAt": 29.5
     }
    ],
    "dungeons": [],
-   "binds": [],
+   "binds": [
+    {
+     "inn": "Stormwind City",
+     "level": 29.4
+    }
+   ],
    "flightPaths": [],
    "hearths": [
     {
-     "to": "Darkshire",
-     "level": 29.3
+     "to": "Stormwind City",
+     "level": 29.4
     }
    ],
    "grinds": [],
-   "hours": 1
+   "hours": 0.3
   },
   {
-   "n": 17,
+   "n": 19,
    "zone": "Wetlands",
    "map": 1437,
-   "guide": "sim/alliance/dwarf-dungeons/17-wetlands",
+   "guide": "sim/alliance/dwarf-dungeons/19-wetlands",
    "levelIn": 29.5,
    "levelOut": 30.1,
-   "arrive": 91724,
-   "leave": 94486,
+   "arrive": 85610,
+   "leave": 88113,
    "packages": [
     "Wetlands 31-35"
    ],
@@ -6293,8 +8034,8 @@
       }
      },
      "acceptedAt": 29.5,
-     "objectivesAt": 29.9,
-     "turnedInAt": 30
+     "objectivesAt": 30,
+     "turnedInAt": 30.1
     },
     {
      "id": 98313,
@@ -6343,7 +8084,7 @@
       }
      },
      "acceptedAt": 29.6,
-     "objectivesAt": 29.9,
+     "objectivesAt": 30,
      "turnedInAt": 30
     },
     {
@@ -6394,7 +8135,7 @@
      },
      "acceptedAt": 29.6,
      "objectivesAt": 29.6,
-     "turnedInAt": 29.7
+     "turnedInAt": 29.8
     },
     {
      "id": 98223,
@@ -6443,7 +8184,7 @@
        "y": 93.1
       }
      },
-     "acceptedAt": 29.7
+     "acceptedAt": 29.8
     },
     {
      "id": 87318,
@@ -6467,7 +8208,7 @@
        "y": 9
       }
      },
-     "acceptedAt": 29.7,
+     "acceptedAt": 29.8,
      "turnedInAt": 29.8
     },
     {
@@ -6493,7 +8234,7 @@
       }
      },
      "acceptedAt": 29.8,
-     "turnedInAt": 29.8
+     "turnedInAt": 29.9
     },
     {
      "id": 87491,
@@ -6517,8 +8258,8 @@
        "y": 18.1
       }
      },
-     "acceptedAt": 29.8,
-     "turnedInAt": 29.9
+     "acceptedAt": 29.9,
+     "turnedInAt": 30
     },
     {
      "id": 1302,
@@ -6550,31 +8291,250 @@
     {
      "inn": "Deepwater Tavern",
      "level": 30
+    }
+   ],
+   "flightPaths": [],
+   "hearths": [
+    {
+     "to": "Deepwater Tavern",
+     "level": 30.1
+    }
+   ],
+   "grinds": [],
+   "hours": 0.7
+  },
+  {
+   "n": 20,
+   "zone": "Silverpine Forest",
+   "map": 1421,
+   "guide": "sim/alliance/dwarf-dungeons/20-silverpine-forest",
+   "levelIn": 30.1,
+   "levelOut": 30.1,
+   "arrive": 88919,
+   "leave": 88919,
+   "packages": [
+    "Silverpine Forest 31-35"
+   ],
+   "quests": [
+    {
+     "id": 92459,
+     "title": "Friend of the Kirin Tor",
+     "level": 33,
+     "giver": {
+      "name": "Image of Archmage Modera",
+      "hub": "Fenris Isle",
+      "pos": {
+       "map": 1421,
+       "x": 68.6,
+       "y": 45.2
+      }
+     },
+     "ender": {
+      "name": "Archmage Celindra",
+      "hub": "Dalaran",
+      "pos": {
+       "map": 1416,
+       "x": 14.3,
+       "y": 60.1
+      }
+     },
+     "acceptedAt": 30.1
+    }
+   ],
+   "dungeons": [],
+   "binds": [],
+   "flightPaths": [],
+   "hearths": [],
+   "grinds": [],
+   "hours": 0
+  },
+  {
+   "n": 21,
+   "zone": "Alterac Mountains",
+   "map": 1416,
+   "guide": "sim/alliance/dwarf-dungeons/21-alterac-mountains",
+   "levelIn": 30.3,
+   "levelOut": 30.3,
+   "arrive": 92517,
+   "leave": 92517,
+   "packages": [
+    "Dungeon: City of Dalaran"
+   ],
+   "quests": [],
+   "dungeons": [
+    {
+     "name": "City of Dalaran",
+     "level": 30.3
+    }
+   ],
+   "binds": [],
+   "flightPaths": [],
+   "hearths": [],
+   "grinds": [],
+   "hours": 0
+  },
+  {
+   "n": 22,
+   "zone": "Silverpine Forest",
+   "map": 1421,
+   "guide": "sim/alliance/dwarf-dungeons/22-silverpine-forest",
+   "levelIn": 30.5,
+   "levelOut": 30.7,
+   "arrive": 92528,
+   "leave": 92534,
+   "packages": [
+    "Dungeon: City of Dalaran"
+   ],
+   "quests": [
+    {
+     "id": 92457,
+     "title": "Starving Arcane",
+     "level": 33,
+     "giver": {
+      "name": "Image of Archmage Modera",
+      "hub": "Fenris Isle",
+      "pos": {
+       "map": 1421,
+       "x": 68.6,
+       "y": 45.18
+      }
+     },
+     "ender": {
+      "name": "Image of Archmage Modera",
+      "hub": "Fenris Isle",
+      "pos": {
+       "map": 1421,
+       "x": 68.6,
+       "y": 45.18
+      }
+     },
+     "turnedInAt": 30.5
     },
     {
+     "id": 92458,
+     "title": "Heart of Disruption",
+     "level": 33,
+     "giver": {
+      "name": "Image of Archmage Modera",
+      "hub": "Fenris Isle",
+      "pos": {
+       "map": 1421,
+       "x": 68.6,
+       "y": 45.18
+      }
+     },
+     "ender": {
+      "name": "Image of Archmage Modera",
+      "hub": "Fenris Isle",
+      "pos": {
+       "map": 1421,
+       "x": 68.6,
+       "y": 45.18
+      }
+     },
+     "turnedInAt": 30.7
+    }
+   ],
+   "dungeons": [],
+   "binds": [],
+   "flightPaths": [],
+   "hearths": [
+    {
+     "to": "Deepwater Tavern",
+     "level": 30.7
+    }
+   ],
+   "grinds": [],
+   "hours": 0
+  },
+  {
+   "n": 23,
+   "zone": "Stormwind City",
+   "map": 1453,
+   "guide": "sim/alliance/dwarf-dungeons/23-stormwind-city",
+   "levelIn": 30.9,
+   "levelOut": 31.1,
+   "arrive": 92977,
+   "leave": 93967,
+   "packages": [
+    "Dungeon: City of Dalaran"
+   ],
+   "quests": [
+    {
+     "id": 92456,
+     "title": "A Green Sample",
+     "level": 33,
+     "giver": {
+      "name": "Shylamiir",
+      "hub": "near Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 31.5,
+       "y": 62.61
+      }
+     },
+     "ender": {
+      "name": "Shylamiir",
+      "hub": "near Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 31.5,
+       "y": 62.61
+      }
+     },
+     "turnedInAt": 30.9
+    },
+    {
+     "id": 92489,
+     "title": "Power Overwhelming",
+     "level": 33,
+     "giver": {
+      "name": "High Sorcerer Andromath",
+      "hub": "Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 48.71,
+       "y": 87.62
+      }
+     },
+     "ender": {
+      "name": "High Sorcerer Andromath",
+      "hub": "Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 48.71,
+       "y": 87.62
+      }
+     },
+     "turnedInAt": 31.1
+    }
+   ],
+   "dungeons": [],
+   "binds": [
+    {
      "inn": "Southshore",
-     "level": 30.1
+     "level": 31.1
     }
    ],
    "flightPaths": [
     {
      "name": "Southshore",
-     "level": 30.1
+     "level": 31.1
     }
    ],
    "hearths": [],
    "grinds": [],
-   "hours": 0.8
+   "hours": 0.3
   },
   {
-   "n": 18,
+   "n": 24,
    "zone": "Hillsbrad Foothills",
    "map": 1424,
-   "guide": "sim/alliance/dwarf-dungeons/18-hillsbrad-foothills",
-   "levelIn": 30.1,
-   "levelOut": 31.1,
-   "arrive": 94492,
-   "leave": 100325,
+   "guide": "sim/alliance/dwarf-dungeons/24-hillsbrad-foothills",
+   "levelIn": 31.1,
+   "levelOut": 32.1,
+   "arrive": 93973,
+   "leave": 99542,
    "packages": [
     "Hillsbrad Foothills 26-30",
     "Hillsbrad Foothills 31-35"
@@ -6602,9 +8562,33 @@
        "y": 58.4
       }
      },
-     "acceptedAt": 30.1,
-     "objectivesAt": 30.2,
-     "turnedInAt": 30.3
+     "acceptedAt": 31.1,
+     "objectivesAt": 31.2,
+     "turnedInAt": 31.3
+    },
+    {
+     "id": 98219,
+     "title": "The Shamed Lieutenant",
+     "level": 30,
+     "giver": {
+      "name": "Lord Grayson Shadowbreaker",
+      "hub": "near Stormwind City",
+      "pos": {
+       "map": 1453,
+       "x": 48.4,
+       "y": 50.2
+      }
+     },
+     "ender": {
+      "name": "Lieutenant Farren Orinelle",
+      "hub": "Southshore",
+      "pos": {
+       "map": 1424,
+       "x": 51.5,
+       "y": 58.4
+      }
+     },
+     "turnedInAt": 31.1
     },
     {
      "id": 98059,
@@ -6628,8 +8612,8 @@
        "y": 50.1
       }
      },
-     "acceptedAt": 30.1,
-     "turnedInAt": 30.1
+     "acceptedAt": 31.1,
+     "turnedInAt": 31.2
     },
     {
      "id": 559,
@@ -6653,9 +8637,9 @@
        "y": 58.4
       }
      },
-     "acceptedAt": 30.3,
-     "objectivesAt": 30.4,
-     "turnedInAt": 30.4
+     "acceptedAt": 31.3,
+     "objectivesAt": 31.4,
+     "turnedInAt": 31.4
     },
     {
      "id": 560,
@@ -6679,8 +8663,8 @@
        "y": 58.7
       }
      },
-     "acceptedAt": 30.4,
-     "turnedInAt": 30.4
+     "acceptedAt": 31.4,
+     "turnedInAt": 31.4
     },
     {
      "id": 561,
@@ -6704,8 +8688,8 @@
        "y": 58.4
       }
      },
-     "acceptedAt": 30.4,
-     "turnedInAt": 30.4
+     "acceptedAt": 31.4,
+     "turnedInAt": 31.4
     },
     {
      "id": 562,
@@ -6729,9 +8713,9 @@
        "y": 58.4
       }
      },
-     "acceptedAt": 30.4,
-     "objectivesAt": 30.5,
-     "turnedInAt": 30.6
+     "acceptedAt": 31.4,
+     "objectivesAt": 31.5,
+     "turnedInAt": 31.6
     },
     {
      "id": 563,
@@ -6755,7 +8739,7 @@
        "y": 36.7
       }
      },
-     "acceptedAt": 30.6
+     "acceptedAt": 31.6
     },
     {
      "id": 555,
@@ -6779,9 +8763,9 @@
        "y": 58.7
       }
      },
-     "acceptedAt": 30.6,
-     "objectivesAt": 30.7,
-     "turnedInAt": 31
+     "acceptedAt": 31.6,
+     "objectivesAt": 31.7,
+     "turnedInAt": 32
     },
     {
      "id": 98463,
@@ -6805,7 +8789,7 @@
        "y": 77.2
       }
      },
-     "acceptedAt": 30.6
+     "acceptedAt": 31.6
     },
     {
      "id": 659,
@@ -6829,7 +8813,7 @@
        "y": 53.8
       }
      },
-     "acceptedAt": 30.6
+     "acceptedAt": 31.6
     },
     {
      "id": 92432,
@@ -6853,7 +8837,7 @@
        "y": 45.2
       }
      },
-     "acceptedAt": 30.6
+     "acceptedAt": 31.6
     },
     {
      "id": 505,
@@ -6877,9 +8861,9 @@
        "y": 59.1
       }
      },
-     "acceptedAt": 30.6,
-     "objectivesAt": 30.8,
-     "turnedInAt": 31.1
+     "acceptedAt": 31.6,
+     "objectivesAt": 31.8,
+     "turnedInAt": 32
     },
     {
      "id": 565,
@@ -6903,8 +8887,8 @@
        "y": 55.5
       }
      },
-     "acceptedAt": 30.6,
-     "objectivesAt": 31
+     "acceptedAt": 31.6,
+     "objectivesAt": 31.9
     },
     {
      "id": 564,
@@ -6928,7 +8912,7 @@
        "y": 56
       }
      },
-     "acceptedAt": 30.6
+     "acceptedAt": 31.6
     },
     {
      "id": 510,
@@ -6952,8 +8936,8 @@
        "y": 59.1
       }
      },
-     "acceptedAt": 30.7,
-     "turnedInAt": 31.1
+     "acceptedAt": 31.7,
+     "turnedInAt": 32.1
     },
     {
      "id": 511,
@@ -6977,8 +8961,8 @@
        "y": 57.1
       }
      },
-     "acceptedAt": 30.7,
-     "turnedInAt": 31
+     "acceptedAt": 31.7,
+     "turnedInAt": 32
     },
     {
      "id": 514,
@@ -7002,7 +8986,7 @@
        "y": 11.7
       }
      },
-     "acceptedAt": 31
+     "acceptedAt": 32
     },
     {
      "id": 512,
@@ -7026,7 +9010,7 @@
        "y": 59.1
       }
      },
-     "acceptedAt": 31.1
+     "acceptedAt": 32.1
     }
    ],
    "dungeons": [],
@@ -7034,91 +9018,17 @@
    "flightPaths": [],
    "hearths": [],
    "grinds": [],
-   "hours": 1.6
+   "hours": 1.5
   },
   {
-   "n": 19,
-   "zone": "Silverpine Forest",
-   "map": 1421,
-   "guide": "sim/alliance/dwarf-dungeons/19-silverpine-forest",
-   "levelIn": 31.1,
-   "levelOut": 31.1,
-   "arrive": 100646,
-   "leave": 100664,
-   "packages": [
-    "Silverpine Forest 31-35"
-   ],
-   "quests": [
-    {
-     "id": 92459,
-     "title": "Friend of the Kirin Tor",
-     "level": 33,
-     "giver": {
-      "name": "Image of Archmage Modera",
-      "hub": "Fenris Isle",
-      "pos": {
-       "map": 1421,
-       "x": 68.6,
-       "y": 45.2
-      }
-     },
-     "ender": {
-      "name": "Archmage Celindra",
-      "hub": "Dalaran",
-      "pos": {
-       "map": 1416,
-       "x": 14.3,
-       "y": 60.1
-      }
-     },
-     "acceptedAt": 31.1
-    },
-    {
-     "id": 92432,
-     "title": "An Alarming Request",
-     "level": 33,
-     "giver": {
-      "name": "Emissary Jacques",
-      "hub": "Southshore",
-      "pos": {
-       "map": 1424,
-       "x": 48.3,
-       "y": 60
-      }
-     },
-     "ender": {
-      "name": "Image of Archmage Modera",
-      "hub": "Fenris Isle",
-      "pos": {
-       "map": 1421,
-       "x": 68.6,
-       "y": 45.2
-      }
-     },
-     "turnedInAt": 31.1
-    }
-   ],
-   "dungeons": [],
-   "binds": [],
-   "flightPaths": [],
-   "hearths": [
-    {
-     "to": "Southshore",
-     "level": 31.1
-    }
-   ],
-   "grinds": [],
-   "hours": 0
-  },
-  {
-   "n": 20,
+   "n": 25,
    "zone": "Ironforge",
    "map": 1455,
-   "guide": "sim/alliance/dwarf-dungeons/20-ironforge",
-   "levelIn": 31.1,
-   "levelOut": 31.2,
-   "arrive": 101095,
-   "leave": 101210,
+   "guide": "sim/alliance/dwarf-dungeons/25-ironforge",
+   "levelIn": 32.1,
+   "levelOut": 32.2,
+   "arrive": 99962,
+   "leave": 100077,
    "packages": [
     "Ironforge 31-35"
    ],
@@ -7145,7 +9055,7 @@
        "y": 9.6
       }
      },
-     "acceptedAt": 31.1
+     "acceptedAt": 32.1
     },
     {
      "id": 514,
@@ -7169,7 +9079,7 @@
        "y": 11.7
       }
      },
-     "turnedInAt": 31.2
+     "turnedInAt": 32.1
     },
     {
      "id": 525,
@@ -7193,7 +9103,7 @@
        "y": 59.1
       }
      },
-     "acceptedAt": 31.2
+     "acceptedAt": 32.1
     },
     {
      "id": 98313,
@@ -7217,7 +9127,7 @@
        "y": 11.8
       }
      },
-     "turnedInAt": 31.2
+     "turnedInAt": 32.1
     },
     {
      "id": 98300,
@@ -7241,14 +9151,14 @@
        "y": 56.2
       }
      },
-     "turnedInAt": 31.2
+     "turnedInAt": 32.2
     }
    ],
    "dungeons": [],
    "binds": [
     {
      "inn": "Ironforge",
-     "level": 31.2
+     "level": 32.1
     }
    ],
    "flightPaths": [],
@@ -7257,548 +9167,14 @@
    "hours": 0
   },
   {
-   "n": 21,
-   "zone": "Stormwind City",
-   "map": 1453,
-   "guide": "sim/alliance/dwarf-dungeons/21-stormwind-city",
-   "levelIn": 31.2,
-   "levelOut": 31.4,
-   "arrive": 101554,
-   "leave": 102235,
-   "packages": [
-    "Stormwind City 26-30",
-    "Dungeon: City of Dalaran"
-   ],
-   "quests": [
-    {
-     "id": 1274,
-     "title": "The Missing Diplomat",
-     "level": 28,
-     "giver": {
-      "name": "Thomas",
-      "hub": "near Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 49.6,
-       "y": 44.5
-      }
-     },
-     "ender": {
-      "name": "Bishop DeLavey",
-      "hub": "near Stormwind",
-      "pos": {
-       "map": 1453,
-       "x": 80.2,
-       "y": 44.1
-      }
-     },
-     "acceptedAt": 31.2,
-     "turnedInAt": 31.4
-    },
-    {
-     "id": 293,
-     "title": "Cleansing the Eye",
-     "level": 30,
-     "giver": {
-      "name": "Glorin Steelbrow",
-      "hub": "Menethil Harbor",
-      "pos": {
-       "map": 1437,
-       "x": 10.6,
-       "y": 60.6
-      }
-     },
-     "ender": {
-      "name": "Archbishop Benedictus",
-      "hub": "near Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 50.3,
-       "y": 45.5
-      }
-     },
-     "turnedInAt": 31.3
-    },
-    {
-     "id": 269,
-     "title": "Seeking Wisdom",
-     "level": 29,
-     "giver": {
-      "name": "Sven Yorgen",
-      "hub": "The Hushed Bank",
-      "pos": {
-       "map": 1431,
-       "x": 7.8,
-       "y": 34.1
-      }
-     },
-     "ender": {
-      "name": "Bishop Farthing",
-      "hub": "near Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 49.9,
-       "y": 46
-      }
-     },
-     "turnedInAt": 31.3
-    },
-    {
-     "id": 270,
-     "title": "The Doomed Fleet",
-     "level": 29,
-     "giver": {
-      "name": "Bishop Farthing",
-      "hub": "near Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 49.9,
-       "y": 46
-      }
-     },
-     "ender": {
-      "name": "Glorin Steelbrow",
-      "hub": "Menethil Harbor",
-      "pos": {
-       "map": 1437,
-       "x": 10.6,
-       "y": 60.6
-      }
-     },
-     "acceptedAt": 31.3
-    },
-    {
-     "id": 2923,
-     "title": "Tinkmaster Overspark",
-     "level": 26,
-     "giver": {
-      "name": "Brother Sarno",
-      "hub": "near Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 51.1,
-       "y": 48.4
-      }
-     },
-     "ender": {
-      "name": "Tinkmaster Overspark",
-      "hub": "Ironforge",
-      "pos": {
-       "map": 1455,
-       "x": 69.6,
-       "y": 50.3
-      }
-     },
-     "acceptedAt": 31.3
-    },
-    {
-     "id": 98219,
-     "title": "The Shamed Lieutenant",
-     "level": 30,
-     "giver": {
-      "name": "Lord Grayson Shadowbreaker",
-      "hub": "near Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 48.4,
-       "y": 50.2
-      }
-     },
-     "ender": {
-      "name": "Lieutenant Farren Orinelle",
-      "hub": "Southshore",
-      "pos": {
-       "map": 1424,
-       "x": 51.5,
-       "y": 58.4
-      }
-     },
-     "acceptedAt": 31.3
-    },
-    {
-     "id": 335,
-     "title": "A Noble Brew",
-     "level": 30,
-     "giver": {
-      "name": "Zardeth of the Black Claw",
-      "hub": "near Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 40.1,
-       "y": 85.3
-      }
-     },
-     "ender": {
-      "name": "Zardeth of the Black Claw",
-      "hub": "near Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 40.1,
-       "y": 85.3
-      }
-     },
-     "acceptedAt": 31.3
-    },
-    {
-     "id": 1078,
-     "title": "Retrieval for Mauren",
-     "level": 26,
-     "giver": {
-      "name": "Collin Mauren",
-      "hub": "Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 53,
-       "y": 86.6
-      }
-     },
-     "ender": {
-      "name": "Collin Mauren",
-      "hub": "Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 53,
-       "y": 86.6
-      }
-     },
-     "acceptedAt": 31.3
-    },
-    {
-     "id": 563,
-     "title": "Reassignment",
-     "level": 32,
-     "giver": {
-      "name": "Lieutenant Farren Orinelle",
-      "hub": "Southshore",
-      "pos": {
-       "map": 1424,
-       "x": 51.5,
-       "y": 58.4
-      }
-     },
-     "ender": {
-      "name": "Major Samuelson",
-      "hub": "near Stormwind",
-      "pos": {
-       "map": 1453,
-       "x": 75.8,
-       "y": 36.7
-      }
-     },
-     "turnedInAt": 31.4
-    },
-    {
-     "id": 1241,
-     "title": "The Missing Diplomat",
-     "level": 28,
-     "giver": {
-      "name": "Bishop DeLavey",
-      "hub": "near Stormwind",
-      "pos": {
-       "map": 1453,
-       "x": 80.2,
-       "y": 44.1
-      }
-     },
-     "ender": {
-      "name": "Jorgen",
-      "hub": "Stormwind",
-      "pos": {
-       "map": 1453,
-       "x": 76.3,
-       "y": 85.1
-      }
-     },
-     "acceptedAt": 31.4,
-     "turnedInAt": 31.4
-    },
-    {
-     "id": 1242,
-     "title": "The Missing Diplomat",
-     "level": 28,
-     "giver": {
-      "name": "Jorgen",
-      "hub": "Stormwind",
-      "pos": {
-       "map": 1453,
-       "x": 76.3,
-       "y": 85.1
-      }
-     },
-     "ender": {
-      "name": "Elling Trias",
-      "hub": "Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 66,
-       "y": 74.1
-      }
-     },
-     "acceptedAt": 31.4,
-     "turnedInAt": 31.4
-    },
-    {
-     "id": 1243,
-     "title": "The Missing Diplomat",
-     "level": 28,
-     "giver": {
-      "name": "Elling Trias",
-      "hub": "Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 66,
-       "y": 74.1
-      }
-     },
-     "ender": {
-      "name": "Watcher Backus",
-      "hub": "Darkshire",
-      "pos": {
-       "map": 1431,
-       "x": 74.8,
-       "y": 44.2
-      }
-     },
-     "acceptedAt": 31.4
-    },
-    {
-     "id": 92489,
-     "title": "Power Overwhelming",
-     "level": 33,
-     "giver": {
-      "name": "High Sorcerer Andromath",
-      "hub": "Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 48.71,
-       "y": 87.62
-      }
-     },
-     "ender": {
-      "name": "High Sorcerer Andromath",
-      "hub": "Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 48.71,
-       "y": 87.62
-      }
-     },
-     "acceptedAt": 31.4
-    },
-    {
-     "id": 92456,
-     "title": "A Green Sample",
-     "level": 33,
-     "giver": {
-      "name": "Shylamiir",
-      "hub": "near Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 31.5,
-       "y": 62.61
-      }
-     },
-     "ender": {
-      "name": "Shylamiir",
-      "hub": "near Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 31.5,
-       "y": 62.61
-      }
-     },
-     "acceptedAt": 31.4
-    }
-   ],
-   "dungeons": [],
-   "binds": [
-    {
-     "inn": "Stormwind City",
-     "level": 31.3
-    }
-   ],
-   "flightPaths": [],
-   "hearths": [],
-   "grinds": [],
-   "hours": 0.2
-  },
-  {
-   "n": 22,
-   "zone": "Alterac Mountains",
-   "map": 1416,
-   "guide": "sim/alliance/dwarf-dungeons/22-alterac-mountains",
-   "levelIn": 31.5,
-   "levelOut": 31.5,
-   "arrive": 106666,
-   "leave": 106666,
-   "packages": [
-    "Dungeon: City of Dalaran"
-   ],
-   "quests": [],
-   "dungeons": [
-    {
-     "name": "City of Dalaran",
-     "level": 31.5
-    }
-   ],
-   "binds": [],
-   "flightPaths": [],
-   "hearths": [],
-   "grinds": [],
-   "hours": 0
-  },
-  {
-   "n": 23,
-   "zone": "Silverpine Forest",
-   "map": 1421,
-   "guide": "sim/alliance/dwarf-dungeons/23-silverpine-forest",
-   "levelIn": 31.7,
-   "levelOut": 31.9,
-   "arrive": 106677,
-   "leave": 106683,
-   "packages": [
-    "Dungeon: City of Dalaran"
-   ],
-   "quests": [
-    {
-     "id": 92457,
-     "title": "Starving Arcane",
-     "level": 33,
-     "giver": {
-      "name": "Image of Archmage Modera",
-      "hub": "Fenris Isle",
-      "pos": {
-       "map": 1421,
-       "x": 68.6,
-       "y": 45.18
-      }
-     },
-     "ender": {
-      "name": "Image of Archmage Modera",
-      "hub": "Fenris Isle",
-      "pos": {
-       "map": 1421,
-       "x": 68.6,
-       "y": 45.18
-      }
-     },
-     "turnedInAt": 31.7
-    },
-    {
-     "id": 92458,
-     "title": "Heart of Disruption",
-     "level": 33,
-     "giver": {
-      "name": "Image of Archmage Modera",
-      "hub": "Fenris Isle",
-      "pos": {
-       "map": 1421,
-       "x": 68.6,
-       "y": 45.18
-      }
-     },
-     "ender": {
-      "name": "Image of Archmage Modera",
-      "hub": "Fenris Isle",
-      "pos": {
-       "map": 1421,
-       "x": 68.6,
-       "y": 45.18
-      }
-     },
-     "turnedInAt": 31.9
-    }
-   ],
-   "dungeons": [],
-   "binds": [],
-   "flightPaths": [],
-   "hearths": [
-    {
-     "to": "Stormwind City",
-     "level": 31.9
-    }
-   ],
-   "grinds": [],
-   "hours": 0
-  },
-  {
-   "n": 24,
-   "zone": "Stormwind City",
-   "map": 1453,
-   "guide": "sim/alliance/dwarf-dungeons/24-stormwind-city",
-   "levelIn": 32.1,
-   "levelOut": 32.3,
-   "arrive": 106860,
-   "leave": 106946,
-   "packages": [
-    "Dungeon: City of Dalaran"
-   ],
-   "quests": [
-    {
-     "id": 92456,
-     "title": "A Green Sample",
-     "level": 33,
-     "giver": {
-      "name": "Shylamiir",
-      "hub": "near Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 31.5,
-       "y": 62.61
-      }
-     },
-     "ender": {
-      "name": "Shylamiir",
-      "hub": "near Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 31.5,
-       "y": 62.61
-      }
-     },
-     "turnedInAt": 32.1
-    },
-    {
-     "id": 92489,
-     "title": "Power Overwhelming",
-     "level": 33,
-     "giver": {
-      "name": "High Sorcerer Andromath",
-      "hub": "Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 48.71,
-       "y": 87.62
-      }
-     },
-     "ender": {
-      "name": "High Sorcerer Andromath",
-      "hub": "Stormwind City",
-      "pos": {
-       "map": 1453,
-       "x": 48.71,
-       "y": 87.62
-      }
-     },
-     "turnedInAt": 32.3
-    }
-   ],
-   "dungeons": [],
-   "binds": [],
-   "flightPaths": [],
-   "hearths": [],
-   "grinds": [],
-   "hours": 0
-  },
-  {
-   "n": 25,
+   "n": 26,
    "zone": "Stranglethorn Vale",
    "map": 1434,
-   "guide": "sim/alliance/dwarf-dungeons/25-stranglethorn-vale",
-   "levelIn": 32.3,
-   "levelOut": 33.7,
-   "arrive": 107447,
-   "leave": 119168,
+   "guide": "sim/alliance/dwarf-dungeons/26-stranglethorn-vale",
+   "levelIn": 32.2,
+   "levelOut": 33.6,
+   "arrive": 100914,
+   "leave": 112644,
    "packages": [
     "Stranglethorn Vale 26-30",
     "Stranglethorn Vale 31-35"
@@ -7826,8 +9202,8 @@
        "y": 10.8
       }
      },
-     "acceptedAt": 32.3,
-     "turnedInAt": 32.3
+     "acceptedAt": 32.2,
+     "turnedInAt": 32.2
     },
     {
      "id": 190,
@@ -7851,9 +9227,9 @@
        "y": 10.6
       }
      },
-     "acceptedAt": 32.3,
-     "objectivesAt": 32.3,
-     "turnedInAt": 32.4
+     "acceptedAt": 32.2,
+     "objectivesAt": 32.2,
+     "turnedInAt": 32.3
     },
     {
      "id": 185,
@@ -7877,9 +9253,9 @@
        "y": 10.6
       }
      },
-     "acceptedAt": 32.3,
-     "objectivesAt": 32.3,
-     "turnedInAt": 32.4
+     "acceptedAt": 32.2,
+     "objectivesAt": 32.2,
+     "turnedInAt": 32.3
     },
     {
      "id": 186,
@@ -7903,9 +9279,9 @@
        "y": 10.6
       }
      },
-     "acceptedAt": 32.4,
-     "objectivesAt": 32.4,
-     "turnedInAt": 32.5
+     "acceptedAt": 32.3,
+     "objectivesAt": 32.3,
+     "turnedInAt": 32.4
     },
     {
      "id": 191,
@@ -7929,9 +9305,9 @@
        "y": 10.6
       }
      },
-     "acceptedAt": 32.4,
-     "objectivesAt": 32.9,
-     "turnedInAt": 33.1
+     "acceptedAt": 32.3,
+     "objectivesAt": 32.8,
+     "turnedInAt": 33
     },
     {
      "id": 635,
@@ -7955,7 +9331,7 @@
        "y": 33.7
       }
      },
-     "acceptedAt": 32.5
+     "acceptedAt": 32.4
     },
     {
      "id": 194,
@@ -7979,8 +9355,8 @@
        "y": 10.8
       }
      },
-     "acceptedAt": 32.5,
-     "objectivesAt": 33,
+     "acceptedAt": 32.4,
+     "objectivesAt": 32.9,
      "turnedInAt": 33
     },
     {
@@ -8005,9 +9381,9 @@
        "y": 10.6
       }
      },
-     "acceptedAt": 32.5,
-     "objectivesAt": 33,
-     "turnedInAt": 33.1
+     "acceptedAt": 32.4,
+     "objectivesAt": 32.9,
+     "turnedInAt": 33
     },
     {
      "id": 215,
@@ -8031,8 +9407,8 @@
        "y": 3
       }
      },
-     "acceptedAt": 32.5,
-     "turnedInAt": 32.6
+     "acceptedAt": 32.4,
+     "turnedInAt": 32.5
     },
     {
      "id": 203,
@@ -8056,9 +9432,9 @@
        "y": 3.3
       }
      },
-     "acceptedAt": 32.5,
-     "objectivesAt": 32.7,
-     "turnedInAt": 32.8
+     "acceptedAt": 32.4,
+     "objectivesAt": 32.6,
+     "turnedInAt": 32.7
     },
     {
      "id": 204,
@@ -8082,9 +9458,9 @@
        "y": 3.3
       }
      },
-     "acceptedAt": 32.5,
-     "objectivesAt": 32.6,
-     "turnedInAt": 32.8
+     "acceptedAt": 32.4,
+     "objectivesAt": 32.5,
+     "turnedInAt": 32.7
     },
     {
      "id": 200,
@@ -8108,8 +9484,8 @@
        "y": 9.4
       }
      },
-     "acceptedAt": 32.6,
-     "turnedInAt": 32.6
+     "acceptedAt": 32.5,
+     "turnedInAt": 32.5
     },
     {
      "id": 328,
@@ -8133,8 +9509,8 @@
        "y": 7.6
       }
      },
-     "acceptedAt": 32.6,
-     "turnedInAt": 32.7
+     "acceptedAt": 32.5,
+     "turnedInAt": 32.6
     },
     {
      "id": 329,
@@ -8158,8 +9534,8 @@
        "y": 3
       }
      },
-     "acceptedAt": 32.7,
-     "turnedInAt": 32.8
+     "acceptedAt": 32.6,
+     "turnedInAt": 32.7
     },
     {
      "id": 330,
@@ -8183,8 +9559,8 @@
        "y": 3.4
       }
      },
-     "acceptedAt": 32.8,
-     "turnedInAt": 32.8
+     "acceptedAt": 32.7,
+     "turnedInAt": 32.7
     },
     {
      "id": 331,
@@ -8208,8 +9584,8 @@
        "y": 3
       }
      },
-     "acceptedAt": 32.8,
-     "turnedInAt": 32.9
+     "acceptedAt": 32.7,
+     "turnedInAt": 32.8
     },
     {
      "id": 195,
@@ -8234,8 +9610,8 @@
       }
      },
      "acceptedAt": 33,
-     "objectivesAt": 33.2,
-     "turnedInAt": 33.5
+     "objectivesAt": 33.1,
+     "turnedInAt": 33.4
     },
     {
      "id": 188,
@@ -8259,9 +9635,9 @@
        "y": 10.6
       }
      },
-     "acceptedAt": 33.1,
-     "objectivesAt": 33.1,
-     "turnedInAt": 33.6
+     "acceptedAt": 33,
+     "objectivesAt": 33,
+     "turnedInAt": 33.5
     },
     {
      "id": 575,
@@ -8285,9 +9661,9 @@
        "y": 77.6
       }
      },
-     "acceptedAt": 33.2,
-     "objectivesAt": 33.6,
-     "turnedInAt": 33.6
+     "acceptedAt": 33.1,
+     "objectivesAt": 33.5,
+     "turnedInAt": 33.5
     },
     {
      "id": 605,
@@ -8311,9 +9687,9 @@
        "y": 77.2
       }
      },
-     "acceptedAt": 33.2,
-     "objectivesAt": 33.3,
-     "turnedInAt": 33.7
+     "acceptedAt": 33.1,
+     "objectivesAt": 33.2,
+     "turnedInAt": 33.6
     },
     {
      "id": 98463,
@@ -8337,7 +9713,7 @@
        "y": 77.2
       }
      },
-     "turnedInAt": 33.2
+     "turnedInAt": 33.1
     },
     {
      "id": 198,
@@ -8361,8 +9737,8 @@
        "y": 8.4
       }
      },
-     "acceptedAt": 33.2,
-     "turnedInAt": 33.6
+     "acceptedAt": 33.1,
+     "turnedInAt": 33.5
     },
     {
      "id": 201,
@@ -8386,9 +9762,9 @@
        "y": 77.2
       }
      },
-     "acceptedAt": 33.2,
-     "objectivesAt": 33.6,
-     "turnedInAt": 33.7
+     "acceptedAt": 33.1,
+     "objectivesAt": 33.5,
+     "turnedInAt": 33.6
     },
     {
      "id": 189,
@@ -8412,9 +9788,9 @@
        "y": 77.1
       }
      },
-     "acceptedAt": 33.2,
-     "objectivesAt": 33.5,
-     "turnedInAt": 33.7
+     "acceptedAt": 33.1,
+     "objectivesAt": 33.4,
+     "turnedInAt": 33.6
     },
     {
      "id": 577,
@@ -8438,50 +9814,50 @@
        "y": 77.6
       }
      },
-     "acceptedAt": 33.6,
-     "objectivesAt": 33.7,
-     "turnedInAt": 33.7
+     "acceptedAt": 33.5,
+     "objectivesAt": 33.6,
+     "turnedInAt": 33.6
     }
    ],
    "dungeons": [],
    "binds": [
     {
      "inn": "Booty Bay",
-     "level": 33.2
+     "level": 33.1
     },
     {
      "inn": "Nijel's Point",
-     "level": 33.7
+     "level": 33.6
     }
    ],
    "flightPaths": [
     {
      "name": "Booty Bay",
-     "level": 33.2
+     "level": 33.1
     },
     {
      "name": "Nijel's Point",
-     "level": 33.7
+     "level": 33.6
     }
    ],
    "hearths": [
     {
      "to": "Booty Bay",
-     "level": 33.6
+     "level": 33.5
     }
    ],
    "grinds": [],
    "hours": 3.3
   },
   {
-   "n": 26,
+   "n": 27,
    "zone": "Desolace",
    "map": 1443,
-   "guide": "sim/alliance/dwarf-dungeons/26-desolace",
-   "levelIn": 33.7,
+   "guide": "sim/alliance/dwarf-dungeons/27-desolace",
+   "levelIn": 33.6,
    "levelOut": 35,
-   "arrive": 119174,
-   "leave": 128042,
+   "arrive": 112650,
+   "leave": 122311,
    "packages": [
     "Desolace 31-35"
    ],
@@ -8508,8 +9884,8 @@
        "y": 79.3
       }
      },
-     "acceptedAt": 33.7,
-     "turnedInAt": 34.9
+     "acceptedAt": 33.6,
+     "turnedInAt": 34.8
     },
     {
      "id": 1385,
@@ -8533,8 +9909,8 @@
        "y": 68.2
       }
      },
-     "acceptedAt": 33.7,
-     "turnedInAt": 34.6
+     "acceptedAt": 33.6,
+     "turnedInAt": 34.5
     },
     {
      "id": 1387,
@@ -8558,9 +9934,9 @@
        "y": 10.9
       }
      },
-     "acceptedAt": 33.7,
-     "objectivesAt": 34.5,
-     "turnedInAt": 34.8
+     "acceptedAt": 33.6,
+     "objectivesAt": 34.4,
+     "turnedInAt": 34.7
     },
     {
      "id": 1437,
@@ -8584,8 +9960,8 @@
        "y": 17.8
       }
      },
-     "acceptedAt": 33.7,
-     "turnedInAt": 34.1
+     "acceptedAt": 33.6,
+     "turnedInAt": 34
     },
     {
      "id": 1453,
@@ -8609,7 +9985,7 @@
        "y": 9.6
       }
      },
-     "turnedInAt": 33.8
+     "turnedInAt": 33.7
     },
     {
      "id": 1458,
@@ -8633,9 +10009,9 @@
        "y": 9.6
       }
      },
-     "acceptedAt": 33.8,
-     "objectivesAt": 34,
-     "turnedInAt": 34.1
+     "acceptedAt": 33.7,
+     "objectivesAt": 33.9,
+     "turnedInAt": 34
     },
     {
      "id": 1459,
@@ -8659,7 +10035,7 @@
        "y": 9.6
       }
      },
-     "acceptedAt": 34.1,
+     "acceptedAt": 34,
      "objectivesAt": 34.2,
      "turnedInAt": 34.8
     },
@@ -8685,8 +10061,8 @@
        "y": 11.8
       }
      },
-     "acceptedAt": 34.1,
-     "turnedInAt": 34.2
+     "acceptedAt": 34,
+     "turnedInAt": 34.1
     },
     {
      "id": 1438,
@@ -8710,8 +10086,8 @@
        "y": 26.1
       }
      },
-     "acceptedAt": 34.2,
-     "turnedInAt": 34.2
+     "acceptedAt": 34.1,
+     "turnedInAt": 34.1
     },
     {
      "id": 1439,
@@ -8735,8 +10111,8 @@
        "y": 26.1
       }
      },
-     "acceptedAt": 34.2,
-     "objectivesAt": 34.2,
+     "acceptedAt": 34.1,
+     "objectivesAt": 34.1,
      "turnedInAt": 34.2
     },
     {
@@ -8788,8 +10164,8 @@
       }
      },
      "acceptedAt": 34.2,
-     "objectivesAt": 34.5,
-     "turnedInAt": 34.5
+     "objectivesAt": 34.4,
+     "turnedInAt": 34.4
     },
     {
      "id": 5561,
@@ -8813,9 +10189,9 @@
        "y": 61.9
       }
      },
-     "acceptedAt": 34.5,
-     "objectivesAt": 34.5,
-     "turnedInAt": 34.5
+     "acceptedAt": 34.4,
+     "objectivesAt": 34.4,
+     "turnedInAt": 34.4
     },
     {
      "id": 1386,
@@ -8839,9 +10215,9 @@
        "y": 68.2
       }
      },
-     "acceptedAt": 34.6,
+     "acceptedAt": 34.5,
      "objectivesAt": 34.6,
-     "turnedInAt": 34.7
+     "turnedInAt": 34.6
     },
     {
      "id": 1369,
@@ -8865,9 +10241,9 @@
        "y": 68.2
       }
      },
-     "acceptedAt": 34.7,
-     "objectivesAt": 34.9,
-     "turnedInAt": 35
+     "acceptedAt": 34.6,
+     "objectivesAt": 34.8,
+     "turnedInAt": 34.9
     },
     {
      "id": 5741,
@@ -8893,7 +10269,7 @@
      },
      "acceptedAt": 34.8,
      "objectivesAt": 34.8,
-     "turnedInAt": 34.9
+     "turnedInAt": 34.8
     },
     {
      "id": 1384,
@@ -8917,7 +10293,7 @@
        "y": 79.3
       }
      },
-     "acceptedAt": 34.9,
+     "acceptedAt": 34.8,
      "objectivesAt": 35
     },
     {
@@ -8942,9 +10318,9 @@
        "y": 68.2
       }
      },
-     "acceptedAt": 35,
-     "objectivesAt": 35,
-     "turnedInAt": 35
+     "acceptedAt": 34.9,
+     "objectivesAt": 34.9,
+     "turnedInAt": 34.9
     },
     {
      "id": 1375,
@@ -8968,7 +10344,7 @@
        "y": 68.2
       }
      },
-     "acceptedAt": 35
+     "acceptedAt": 34.9
     }
    ],
    "dungeons": [],
@@ -8977,11 +10353,11 @@
    "hearths": [
     {
      "to": "Nijel's Point",
-     "level": 34.7
+     "level": 34.6
     }
    ],
    "grinds": [],
-   "hours": 2.5
+   "hours": 2.7
   }
  ]
 }

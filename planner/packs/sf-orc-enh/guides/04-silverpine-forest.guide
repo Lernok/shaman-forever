@@ -1,12 +1,12 @@
 guide sf-orc-enh/04-silverpine-forest
 title 04 · Silverpine Forest (13-17)
 faction Horde
-race Orc
+race Orc, Troll
 levels 13-17
 zone Silverpine Forest
-folder Shaman: Forever · Orco Mejora
+folder Shaman: Forever · Orco y Troll Mejora
 next sf-orc-enh/05-undercity
-# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.9 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 13.6)
@@ -194,3 +194,12 @@ step Turn in (level 16.6)
 
 step Flight path (level 16.7)
   getfp "Undercity"
+
+step Hearthstone (level 16.7)
+  sethome "Undercity"
+
+step Pick up: Deathstalkers in Shadowfang (Shadowfang Keep)
+  accept 1098 optional map 1421 @43.42,40.86
+
+step Pick up: Arugal Must Die (Shadowfang Keep)
+  accept 1014 optional map 1421 @44.2,39.81

@@ -1,0 +1,27 @@
+guide sf-tauren-enh/31-stranglethorn-vale
+title 31 · Stranglethorn Vale (34-35)
+faction Horde
+race Tauren
+levels 34-35
+zone Stranglethorn Vale
+folder Shaman: Forever · Tauren Mejora
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 34.8)
+  turnin 5763
+
+step Pick up quests (level 34.9)
+  accept 635
+
+step Hearthstone (level 34.9)
+  sethome "Grom'gol Base Camp"
+
+step Pick up quests (level 34.9)
+  accept 581
+
+step Objectives: Hunt for Yenniku (level 35.0)
+  complete 581
+
+step Turn in (level 35.0)
+  turnin 581

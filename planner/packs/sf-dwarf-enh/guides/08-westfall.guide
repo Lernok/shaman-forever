@@ -6,8 +6,11 @@ levels 19-20
 zone Westfall
 folder Shaman: Forever · Enano Mejora
 next sf-dwarf-enh/09-stormwind-city
-# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.0 h under the model). Era + known Forever quests only.
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.7 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 19.5)
+  accept 373 optional
 
 step Dungeon: The Deadmines (level 19)
   zone map 1436

@@ -1,0 +1,19 @@
+guide sf-dwarf-enh/20-silverpine-forest
+title 20 · Silverpine Forest (30-31)
+faction Alliance
+race Dwarf
+levels 30-31
+zone Silverpine Forest
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/21-alterac-mountains
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.7 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 30.1)
+  accept 92459
+
+step Pick up: Starving Arcane (City of Dalaran)
+  accept 92457 optional map 1421 @68.6,45.18
+
+step Pick up: Heart of Disruption (City of Dalaran)
+  accept 92458 optional map 1421 @68.6,45.18

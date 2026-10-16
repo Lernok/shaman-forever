@@ -1,0 +1,124 @@
+guide sf-tauren-enh/15-stonetalon-mountains
+title 15 · Stonetalon Mountains (25-27)
+faction Horde
+race Tauren
+levels 25-27
+zone Stonetalon Mountains
+folder Shaman: Forever · Tauren Mejora
+next sf-tauren-enh/16-mulgore
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 25.7)
+  accept 1087
+
+step Pick up quests (level 25.7)
+  accept 6393
+  accept 6562 optional map 1442 @47.36,64.25
+
+step Pick up quests (level 25.7)
+  accept 6301
+
+step Turn in (level 25.8)
+  turnin 79192
+  accept 79980
+
+step Turn in (level 25.8)
+  turnin 79980
+
+step Objectives: Cycle of Rebirth (level 25.8)
+  complete 6301
+
+step Turn in (level 25.8)
+  turnin 6301
+  accept 6381
+
+step Turn in (level 25.8)
+  turnin 1483
+  accept 1093
+
+step Objectives: Super Reaper 6000 (level 25.8)
+  complete 1093
+
+step Pick up quests (level 25.8)
+  accept 1090
+  complete 1090
+  turnin 1090
+  accept 1092
+
+step Turn in (level 25.9)
+  turnin 1092
+  turnin 1093
+  accept 1094
+
+step Objectives: Cenarius' Legacy (level 26.0)
+  complete 1087
+
+step Objectives: Cenarius' Legacy (level 26.0)
+  complete 1087
+
+step Hearth (level 26.0)
+  hearth "Sun Rock Retreat"
+
+step Objectives: Elemental War (level 26.1)
+  complete 6393
+
+step Objectives: New Life (level 26.1)
+  complete 6381
+
+step Turn in (level 26.1)
+  turnin 1087
+
+step Turn in (level 26.2)
+  turnin 6381
+
+step Turn in (level 26.2)
+  turnin 6393
+
+step Pick up quests (level 26.2)
+  accept 1088
+
+step Pick up quests (level 26.2)
+  accept 5881
+  accept 6282
+  accept 86576
+
+step Objectives: Harpies Threaten (level 26.3)
+  complete 6282
+  complete 86576
+
+step Objectives: Harpies Threaten (level 26.4)
+  complete 6282
+
+step Objectives: Harpies Threaten (level 26.5)
+  complete 6282
+
+step Objectives: Harpies Threaten (level 26.5)
+  complete 6282
+
+step Turn in (level 26.6)
+  turnin 6282
+
+step Turn in (level 26.6)
+  turnin 86576
+
+step Pick up quests (level 26.6)
+  accept 1058
+
+step Objectives: Jin'Zil's Forest Magic (level 26.7)
+  complete 1058
+
+step Objectives: Jin'Zil's Forest Magic (level 26.8)
+  complete 1058
+
+step Objectives: Jin'Zil's Forest Magic (level 26.8)
+  complete 1058
+
+step Objectives: Jin'Zil's Forest Magic (level 26.8)
+  complete 1058
+
+step Hearth (level 26.8)
+  hearth "Sun Rock Retreat"
+
+step Turn in (level 26.9)
+  turnin 1058

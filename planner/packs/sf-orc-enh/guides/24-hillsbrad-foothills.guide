@@ -1,67 +1,61 @@
 guide sf-orc-enh/24-hillsbrad-foothills
 title 24 · Hillsbrad Foothills (30-32)
 faction Horde
-race Orc
+race Orc, Troll
 levels 30-32
 zone Hillsbrad Foothills
-folder Shaman: Forever · Orco Mejora
-next sf-orc-enh/25-arathi-highlands
-# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+folder Shaman: Forever · Orco y Troll Mejora
+next sf-orc-enh/25-tirisfal-glades
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.9 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Turn in (level 30.9)
   turnin 96984 optional map 1424 @61.6,20.85
 
-step Turn in (level 31.0)
+step Turn in (level 31.1)
   turnin 96986 optional map 1424 @62.63,20.65
 
-step Pick up quests (level 31.0)
+step Pick up quests (level 31.1)
   accept 533
   accept 1361
 
-step Pick up quests (level 31.0)
+step Pick up quests (level 31.1)
   accept 552
 
-step Pick up quests (level 31.0)
+step Pick up quests (level 31.1)
   accept 676
 
-step Pick up quests (level 31.0)
+step Pick up quests (level 31.1)
   accept 544 optional map 1424 @61.6,20.85
   accept 92434 optional map 1424 @61.6,20.85
   accept 93680 optional map 1424 @61.6,20.85
   turnin 93680 optional map 1424 @61.6,20.85
 
-step Pick up quests (level 31.1)
+step Pick up quests (level 31.2)
   accept 556
 
-step Pick up quests (level 31.1)
+step Pick up quests (level 31.2)
   accept 535
 
-step Objectives: Infiltration (level 31.1)
+step Objectives: Infiltration (level 31.2)
   complete 533
 
-step Objectives: Valik (level 31.1)
+step Objectives: Valik (level 31.2)
   complete 535
 
-step Turn in (level 31.1)
+step Turn in (level 31.2)
   turnin 535
 
-step Turn in (level 31.1)
+step Turn in (level 31.2)
   turnin 533
   accept 503
 
-step Objectives: Helcular's Revenge (level 31.2)
+step Objectives: Helcular's Revenge (level 31.3)
   complete 552
 
-step Turn in (level 31.3)
+step Turn in (level 31.4)
   turnin 552
   accept 553
 
-step Objectives: Helcular's Revenge (level 31.3)
+step Objectives: Helcular's Revenge (level 31.4)
   complete 553
-
-step Flight path (level 31.3)
-  getfp "Hammerfall"
-
-step Hearthstone (level 31.3)
-  sethome "Hammerfall"

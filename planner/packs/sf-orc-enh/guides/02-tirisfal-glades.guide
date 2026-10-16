@@ -1,12 +1,12 @@
 guide sf-orc-enh/02-tirisfal-glades
 title 02 · Tirisfal Glades (11-13)
 faction Horde
-race Orc
+race Orc, Troll
 levels 11-13
 zone Tirisfal Glades
-folder Shaman: Forever · Orco Mejora
+folder Shaman: Forever · Orco y Troll Mejora
 next sf-orc-enh/03-orgrimmar
-# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.9 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 11.1)
@@ -85,9 +85,3 @@ step Turn in (level 12.5)
 
 step Hearth (level 12.5)
   hearth "Gallows' End Tavern"
-
-step Flight path (level 12.5)
-  getfp "Orgrimmar"
-
-step Hearthstone (level 12.5)
-  sethome "Orgrimmar"

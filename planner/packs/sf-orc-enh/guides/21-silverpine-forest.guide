@@ -1,13 +1,13 @@
 guide sf-orc-enh/21-silverpine-forest
 title 21 · Silverpine Forest (30-31)
 faction Horde
-race Orc
+race Orc, Troll
 levels 30-31
 zone Silverpine Forest
-folder Shaman: Forever · Orco Mejora
+folder Shaman: Forever · Orco y Troll Mejora
 next sf-orc-enh/22-alterac-mountains
-# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.9 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 30.1)
+step Pick up quests (level 30.2)
   accept 96984 optional map 1421 @68.6,45.18

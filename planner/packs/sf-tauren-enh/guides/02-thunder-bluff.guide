@@ -1,0 +1,55 @@
+guide sf-tauren-enh/02-thunder-bluff
+title 02 · Thunder Bluff (12-13)
+faction Horde
+race Tauren
+levels 12-13
+zone Thunder Bluff
+folder Shaman: Forever · Tauren Mejora
+next sf-tauren-enh/03-orgrimmar
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 12.0)
+  accept 97485
+  complete 97485
+
+step Pick up quests (level 12.0)
+  accept 76156
+  turnin 76156
+
+step Turn in (level 12.1)
+  turnin 775
+  turnin 98430
+  turnin 99082
+
+step Turn in (level 12.2)
+  turnin 861
+  accept 860
+
+step Objectives: Traditions of the Bluff (level 12.2)
+  complete 97485
+
+step Turn in (level 12.3)
+  turnin 97485
+
+step Turn in (level 12.3)
+  turnin 98435
+  accept 886 optional map 1412 @45.8,22.7
+
+step Pick up quests (level 12.3)
+  accept 744
+
+step Pick up quests (level 12.3)
+  accept 76160
+  turnin 76160
+  accept 76240
+  turnin 76240
+
+step Pick up quests (level 12.4)
+  accept 776
+
+step Pick up quests (level 12.4)
+  accept 264
+
+step Pick up: Testing an Enemy's Strength (Ragefire Chasm)
+  accept 5723 optional map 1456 @70.14,29.52

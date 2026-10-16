@@ -1,0 +1,106 @@
+guide sf-dwarf-enh/24-hillsbrad-foothills
+title 24 · Hillsbrad Foothills (31-33)
+faction Alliance
+race Dwarf
+levels 31-33
+zone Hillsbrad Foothills
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/25-ironforge
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.7 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 31.1)
+  accept 536
+  turnin 98219
+
+step Pick up quests (level 31.1)
+  accept 98059
+  turnin 98059
+
+step Objectives: Down the Coast (level 31.2)
+  complete 536
+
+step Objectives: Down the Coast (level 31.2)
+  complete 536
+
+step Turn in (level 31.3)
+  turnin 536
+  accept 559
+
+step Objectives: Farren's Proof (level 31.4)
+  complete 559
+
+step Turn in (level 31.4)
+  turnin 559
+  accept 560
+
+step Turn in (level 31.4)
+  turnin 560
+  accept 561
+
+step Turn in (level 31.4)
+  turnin 561
+  accept 562
+
+step Objectives: Stormwind Ho! (level 31.5)
+  complete 562
+
+step Objectives: Stormwind Ho! (level 31.5)
+  complete 562
+
+step Turn in (level 31.6)
+  turnin 562
+  accept 563
+
+step Pick up quests (level 31.6)
+  accept 555
+
+step Pick up quests (level 31.6)
+  accept 98463
+
+step Pick up quests (level 31.6)
+  accept 659
+
+step Pick up quests (level 31.6)
+  accept 92432 optional map 1424 @48.32,60
+
+step Pick up quests (level 31.6)
+  accept 505
+
+step Pick up quests (level 31.6)
+  accept 565
+
+step Objectives: Soothing Turtle Bisque (level 31.6)
+  complete 555
+  complete 565
+
+step Pick up quests (level 31.6)
+  accept 564
+
+step Objectives: Soothing Turtle Bisque (level 31.7)
+  complete 555
+
+step Pick up quests (level 31.7)
+  accept 510
+  accept 511
+
+step Objectives: Syndicate Assassins (level 31.8)
+  complete 505
+
+step Objectives: Syndicate Assassins (level 31.8)
+  complete 505
+
+step Objectives: Bartolo's Yeti Fur Cloak (level 31.9)
+  complete 565
+
+step Turn in (level 32.0)
+  turnin 555
+
+step Turn in (level 32.0)
+  turnin 511
+  accept 514
+
+step Turn in (level 32.0)
+  turnin 505
+  turnin 510
+  accept 512

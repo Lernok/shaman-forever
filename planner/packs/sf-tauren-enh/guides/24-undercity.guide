@@ -1,0 +1,16 @@
+guide sf-tauren-enh/24-undercity
+title 24 · Undercity (30-31)
+faction Horde
+race Tauren
+levels 30-31
+zone Undercity
+folder Shaman: Forever · Tauren Mejora
+next sf-tauren-enh/25-hillsbrad-foothills
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 30.9)
+  turnin 96988 optional map 1458 @46.61,74.09
+
+step Hearth (level 30.9)
+  hearth "Tarren Mill"

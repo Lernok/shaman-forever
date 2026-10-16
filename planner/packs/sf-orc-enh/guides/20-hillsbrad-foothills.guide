@@ -1,49 +1,49 @@
 guide sf-orc-enh/20-hillsbrad-foothills
-title 20 · Hillsbrad Foothills (29-31)
+title 20 · Hillsbrad Foothills (30-31)
 faction Horde
-race Orc
-levels 29-31
+race Orc, Troll
+levels 30-31
 zone Hillsbrad Foothills
-folder Shaman: Forever · Orco Mejora
+folder Shaman: Forever · Orco y Troll Mejora
 next sf-orc-enh/21-silverpine-forest
-# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.9 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 29.9)
+step Pick up quests (level 30.0)
   accept 509
 
-step Pick up quests (level 29.9)
+step Pick up quests (level 30.0)
   accept 567
 
-step Pick up quests (level 29.9)
+step Pick up quests (level 30.0)
   accept 539
 
-step Objectives: Elixir of Agony (level 29.9)
+step Objectives: Elixir of Agony (level 30.0)
   complete 509
 
-step Objectives: Battle of Hillsbrad (level 29.9)
+step Objectives: Battle of Hillsbrad (level 30.0)
   complete 539
 
-step Objectives: Dangerous! (level 29.9)
+step Objectives: Dangerous! (level 30.0)
   complete 567
 
-step Objectives: Dangerous! (level 29.9)
+step Objectives: Dangerous! (level 30.0)
   complete 567
 
-step Objectives: Dangerous! (level 29.9)
+step Objectives: Dangerous! (level 30.0)
   complete 567
 
-step Objectives: Dangerous! (level 29.9)
+step Objectives: Dangerous! (level 30.0)
   complete 567
 
-step Hearth (level 29.9)
+step Hearth (level 30.0)
   hearth "Tarren Mill"
 
-step Turn in (level 30.0)
+step Turn in (level 30.1)
   turnin 509
   accept 513
 
-step Turn in (level 30.0)
+step Turn in (level 30.1)
   turnin 539
   turnin 567
 

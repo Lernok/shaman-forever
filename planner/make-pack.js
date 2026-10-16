@@ -9,7 +9,8 @@
 // <pack dir> is a pack made with `polestar new`; its guides/ folder is
 // replaced. Dungeon entrances and quests come from Polestar's
 // data/forever/dungeons.json (POLESTAR: the Polestar checkout, default
-// .cache/tools/polestar).
+// .cache/tools/polestar). RACES="Orc, Troll": the races the guides are for
+// (default: the simulated one), for races sharing a start.
 const fs = require('fs');
 const path = require('path');
 
@@ -49,6 +50,7 @@ files.forEach((file, i) => {
   const lv = (text.match(/^levels (\S+)$/m) || [])[1];
   text = text.replace(/^title (.+)$/m, (m, t) => `title ${String(i + 1).padStart(2, '0')} · ${t}${lv ? ` (${lv})` : ''}`);
   if (folder) text = text.replace(/^(zone .+)$/m, `$1\nfolder ${folder}`);
+  if (process.env.RACES) text = text.replace(/^race .+$/m, `race ${process.env.RACES}`);
   for (const run of v.dungeons || []) {
     const d = dungeons.get(run.name);
     if (!d || !d.entrance) { console.warn(`warning: no entrance for ${run.name}`); continue; }

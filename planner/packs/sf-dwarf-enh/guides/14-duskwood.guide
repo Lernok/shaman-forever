@@ -1,0 +1,111 @@
+guide sf-dwarf-enh/14-duskwood
+title 14 · Duskwood (27-29)
+faction Alliance
+race Dwarf
+levels 27-29
+zone Duskwood
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/15-redridge-mountains
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.7 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 27.9)
+  turnin 377 optional map 1431 @71.92,47.79
+
+step Pick up quests (level 27.9)
+  accept 66
+
+step Pick up quests (level 27.9)
+  accept 58
+
+step Turn in (level 27.9)
+  turnin 66
+  accept 67
+
+step Pick up quests (level 27.9)
+  accept 173
+
+step Pick up quests (level 27.9)
+  accept 96138
+
+step Objectives: Worgen in the Woods (level 27.9)
+  complete 173
+
+step Turn in (level 27.9)
+  turnin 173
+  accept 221
+
+step Objectives: Worgen in the Woods (level 28.0)
+  complete 221
+
+step Turn in (level 28.1)
+  turnin 221
+  accept 222
+
+step Objectives: Worgen in the Woods (level 28.1)
+  complete 222
+
+step Objectives: Worgen in the Woods (level 28.1)
+  complete 222
+
+step Turn in (level 28.2)
+  turnin 222
+  accept 223
+
+step Turn in (level 28.3)
+  turnin 223
+
+step Objectives: Merrick's Bow (level 28.3)
+  complete 96138
+
+step Objectives: Merrick's Bow (level 28.3)
+  complete 96138
+
+step Pick up quests (level 28.3)
+  accept 134
+
+step Objectives: The Night Watch (level 28.4)
+  complete 58
+
+step Pick up quests (level 28.4)
+  accept 323
+
+step Objectives: Proving Your Worth (level 28.5)
+  complete 323
+
+step Turn in (level 28.5)
+  turnin 323
+  accept 269
+
+step Objectives: Ogre Thieves (level 28.5)
+  complete 134
+
+step Turn in (level 28.5)
+  turnin 134
+  accept 160
+
+step Hearth (level 28.5)
+  hearth "Darkshire"
+
+step Turn in (level 28.6)
+  turnin 160
+  accept 251
+
+step Turn in (level 28.6)
+  turnin 251
+  turnin 96138
+  accept 401
+  turnin 401
+  accept 252
+
+step Turn in (level 28.7)
+  turnin 252
+
+step Turn in (level 28.7)
+  turnin 58
+
+step Flight path (level 28.7)
+  getfp "Lakeshire"
+
+step Hearthstone (level 28.7)
+  sethome "Lakeshire"

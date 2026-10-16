@@ -1,0 +1,15 @@
+guide sf-dwarf-enh/21-alterac-mountains
+title 21 · Alterac Mountains (30-31)
+faction Alliance
+race Dwarf
+levels 30-31
+zone Alterac Mountains
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/22-silverpine-forest
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.7 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Dungeon: City of Dalaran (level 30)
+  zone map 1416
+  goto 8.5,59.3 "City of Dalaran" r 30 live
+  tip Find a group and clear City of Dalaran, with its quests from this route in your log.

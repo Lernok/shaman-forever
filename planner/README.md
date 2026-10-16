@@ -72,19 +72,25 @@ de la última visita a la zona de quien la da, si no antes de la dungeon), las
 marca `optional` y les pone las coordenadas del diario de dungeons cuando
 Polestar no las tiene.
 
-Packs hechos (`planner/packs/`):
+Packs hechos (`planner/packs/`), 16-oct. Las dungeons salen de lo que más
+hace la gente en cada facción (guías de Forever) más las elecciones del usuario,
+comparadas en el simulador (`planner/experiments.sh`); los packs se arman con
+`planner/routes-final.sh`. Todos con entrada temprana (`SF_BOSS_GAP=3`),
+Polestar 0.2.4, lint 0 errores y playtest completo. Horas hasta 35:
 
-Las tres con entrada temprana a las dungeons (`SF_BOSS_GAP=3`, rangos en
-`.cache/tools/routes-orc-dwarf.sh`), Polestar 0.2.4, lint 0 errores y playtest
-completo. Horas hasta 35 bajo el modelo (temprana / normal):
+- `sf-tauren-enh`: Tauren. RFC 13, RoL 17, WC 20,5, SFK 23,6, Excavation 30,
+  Dalaran 30, SM Graveyard 31,5; 36,0 h.
+- `sf-orc-enh`: Orco y Troll (`RACES="Orc, Troll"`, mismo inicio). Las mismas
+  dungeons; 35,9 h.
+- `sf-sky-enh`: Skyborne (Zephras Isle), sin SM Graveyard (le caía a 33,8 y
+  costaba media hora); 35,9 h.
+- `sf-dwarf-enh`: Enano. Hall of Thanes 13, Deadmines 19,5, Stockade 27,5,
+  Excavation 28,7, Dalaran 30; 32,7 h.
 
-- `sf-tauren-enh`: Tauren, RFC 13, RoL 17, WC 20,5, SFK 23,6, Excavation 29,
-  Dalaran 31; 36,3 h / 36,1 h.
-- `sf-orc-enh`: Orco, RFC 13, RoL 17, WC 20,5, SFK 23,6, Excavation 29,5,
-  Dalaran 30; 36,0 h / 35,7 h.
-- `sf-dwarf-enh`: Enano (Alianza: `weapons-enhancement-alliance.json`), Hall of
-  Thanes 13, RoL 18,5, Deadmines 19, SFK 23, Excavation 28, Dalaran 31; 34,0 h.
-  Sin Wailing Caverns: con WC daba 35,5 h (y es un viaje hostil en PvP).
+Comparaciones (experiments.sh): Horda + RFK 36,6 h, + SM GY 35,9, sin WC 35,6
+(el usuario quiere WC). Alianza con RoL 34,1 h (+1,4 y es viaje hostil), con
+Gnomeregan 33,5, con RoL+SFK+Stockade 34,9, la anterior (RoL, SFK, sin
+Stockade) 34,0.
 
 ### Polestar 0.2.4
 

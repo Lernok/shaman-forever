@@ -5,8 +5,8 @@ race Dwarf
 levels 13-15
 zone Ironforge
 folder Shaman: Forever · Enano Mejora
-next sf-dwarf-enh/06-westfall
-# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.0 h under the model). Era + known Forever quests only.
+next sf-dwarf-enh/06-darkshore
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.7 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 13.0)
@@ -36,3 +36,9 @@ step Turn in (level 14.4)
 
 step Turn in (level 14.6)
   turnin 96403 optional map 1455 @32.32,44.79
+
+step Flight path (level 14.6)
+  getfp "Auberdine"
+
+step Hearthstone (level 14.6)
+  sethome "Auberdine"

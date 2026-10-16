@@ -341,6 +341,14 @@ local function polestar()
   local P = rawget(_G, "Polestar")
   return type(P) == "table" and P or nil
 end
+-- Our data's name for a dungeon of Polestar's ("Scarlet Monastery:
+-- Graveyard" is our "Scarlet Monastery").
+local function ourDungeon(name)
+  if D.dungeons[name] or D.dquests[name] then return name end
+  local base = name:match("^(.-):")
+  if base and (D.dungeons[base] or D.dquests[base]) then return base end
+  return name
+end
 -- A dungeon a route step is about: our packs' "Dungeon: <name> (level N)"
 -- steps, else a step doing a dungeon quest's objectives (Polestar's guides).
 local function stepDungeon(step)
@@ -374,14 +382,15 @@ local function routeInfo()
       local step = g.steps[si]
       if type(step) == "table" then
         local dn, lv, ours = stepDungeon(step)
-        if dn and g == info.guide and si == at then info.now = dn end
+        if dn and g == info.guide and si == at then info.now, info.nowData = dn, ourDungeon(dn) end
         if dn and not seenD[dn] then
           seenD[dn] = true
           local spot
           for _, goal in ipairs(type(step.goals) == "table" and step.goals or {}) do
             if ours and goal.t == "goto" and goal.map and goal.x then spot = { map = goal.map, x = goal.x, y = goal.y, n = dn, entrance = true } break end
           end
-          info.dungeons[#info.dungeons + 1] = { name = dn, level = lv or (D.dlevels[dn] and D.dlevels[dn][1]), guide = g, spot = spot }
+          local our = ourDungeon(dn)
+          info.dungeons[#info.dungeons + 1] = { name = dn, data = our, level = lv or (D.dlevels[dn] and D.dlevels[dn][1]) or (D.dlevels[our] and D.dlevels[our][1]), guide = g, spot = spot }
         end
         for _, goal in ipairs(type(step.goals) == "table" and step.goals or {}) do
           if type(goal.quest) == "number" and not info.quests[goal.quest] then info.quests[goal.quest] = g end
@@ -549,7 +558,7 @@ local function nextDungeonTip(info)
   local head = nd.level and string.format(L().nextDungeon, nd.name, nd.level) or string.format(L().nextDungeonNoLevel, nd.name)
   if nd.level and nd.level > lvl then head = head .. " · " .. (nd.level - lvl == 1 and L().levelToGo or string.format(L().levelsToGo, nd.level - lvl)) end
   local src, lines, ups = L().noQuestsYet, {}, 0
-  for _, t in ipairs(dungeonTips(nd.name)) do
+  for _, t in ipairs(dungeonTips(nd.data or nd.name)) do
     if t.key:sub(1, 1) == "s" then
       src = t.head
       for _, l in ipairs(t.lines or {}) do lines[#lines + 1] = "· " .. l end
@@ -1116,7 +1125,7 @@ end
 local function upcoming()
   local info = routeInfo()
   local tips, inRoute = {}, {}
-  for _, d in ipairs(info and info.dungeons or {}) do inRoute[d.name] = true end
+  for _, d in ipairs(info and info.dungeons or {}) do inRoute[d.name], inRoute[d.data or d.name] = true, true end
   for _, t in ipairs(pickupTips(false)) do
     -- Quests the route already has you take: Polestar tells you.
     if not (info and t.q and info.quests[t.q]) then tips[#tips + 1] = t end
@@ -1159,7 +1168,7 @@ local function currentView()
   local dname = currentDungeon()
   if dname then return string.format(L().inDungeon, dname), dungeonTips(dname) end
   local info = routeInfo()
-  if info and info.now then return string.format(L().routeStep, info.now), dungeonTips(info.now) end
+  if info and info.now then return string.format(L().routeStep, info.now), dungeonTips(info.nowData or info.now) end
   return string.format(L().upcoming, UnitLevel("player")), upcoming()
 end
 

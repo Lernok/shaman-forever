@@ -1,0 +1,37 @@
+guide sf-orc-enh/26-alterac-mountains
+title 26 · Alterac Mountains (31-32)
+faction Horde
+race Orc, Troll
+levels 31-32
+zone Alterac Mountains
+folder Shaman: Forever · Orco y Troll Mejora
+next sf-orc-enh/27-arathi-highlands
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.9 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 31.6)
+  turnin 1051 optional map 1416 @61.5,80.5
+
+step Objectives: Prison Break In (level 31.6)
+  complete 544 optional
+
+step Objectives: Stone Tokens (level 31.7)
+  complete 556
+
+step Objectives: Prison Break In (level 31.7)
+  complete 544 optional
+
+step Objectives: Helcular's Revenge (level 31.7)
+  complete 553
+
+step Objectives: Gol'dir (level 31.7)
+  complete 503
+
+step Turn in (level 31.8)
+  turnin 503
+
+step Flight path (level 31.8)
+  getfp "Hammerfall"
+
+step Hearthstone (level 31.8)
+  sethome "Hammerfall"

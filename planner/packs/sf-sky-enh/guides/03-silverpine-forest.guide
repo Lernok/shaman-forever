@@ -1,0 +1,56 @@
+guide sf-sky-enh/03-silverpine-forest
+title 03 · Silverpine Forest (15-17)
+faction Horde
+race Skyborne
+levels 15-17
+zone Silverpine Forest
+folder Shaman: Forever · Skyborne Mejora
+next sf-sky-enh/04-undercity
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.9 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 15.5)
+  accept 95981
+
+step Pick up quests (level 15.5)
+  accept 98298
+  accept 98299
+
+step Pick up quests (level 16.0)
+  accept 460
+
+step Turn in (level 16.1)
+  turnin 460
+  accept 461
+
+step Turn in (level 16.1)
+  turnin 461
+  accept 491
+
+step Objectives: Watching the Roads (level 16.2)
+  complete 95981
+
+step Objectives: Watching the Roads (level 16.3)
+  complete 95981
+
+step Objectives: Stop the Spread (level 16.4)
+  complete 98299
+
+step Objectives: Arugal's Folly (level 16.5)
+  complete 98298
+
+step Hearth (level 16.5)
+  hearth "The Sepulcher"
+
+step Turn in (level 16.6)
+  turnin 95981
+
+step Turn in (level 16.6)
+  turnin 98298
+  turnin 98299
+
+step Flight path (level 16.7)
+  getfp "Undercity"
+
+step Hearthstone (level 16.7)
+  sethome "Undercity"
