@@ -289,14 +289,14 @@ index 72dbed5..e6e728e 100644
  
  	packageRecord(p, s) {
 diff --git a/tools/lib/sim/params.js b/tools/lib/sim/params.js
-index a3f7ccf..2c4e812 100644
+index a3f7ccf..4539a53 100644
 --- a/tools/lib/sim/params.js
 +++ b/tools/lib/sim/params.js
 @@ -45,6 +45,13 @@ const PRIORS = {
  	dungeonRunHigh: [60, 15, 25, 120, 'minutes per dungeon clear at dungeon level 55'],
  	dungeonFormUp: [15, 8, 2, 45, 'minutes to form a group and reach the instance portal'],
  	dungeonTrash: [70, 20, 25, 150, 'elite trash kills per clear (DungeonJournal has no trash counts)'],
-+	dungeonBossGap: [2, 0, 2, 2, 'Shaman: Forever: most levels the highest boss may be above the character at the run (2 for damage dealers: spells miss 17% at +3; 3 for healers)'],
++	dungeonBossGap: [Number(process.env.SF_BOSS_GAP) || 2, 0, Number(process.env.SF_BOSS_GAP) || 2, Number(process.env.SF_BOSS_GAP) || 2, 'Shaman: Forever: most levels the highest boss may be above the character at the run (2 for damage dealers: spells miss 17% at +3; 3 for healers; SF_BOSS_GAP)'],
 +	pickRadius: [150, 0, 150, 150, 'Shaman: Forever: yards from a step of the route within which a dungeon quest giver is visited on the way (accepted early)'],
 +	capLevel: [Number(process.env.SF_CAP) || 60, 0, Number(process.env.SF_CAP) || 60, Number(process.env.SF_CAP) || 60, 'Shaman: Forever: the level routes are scored to (SF_CAP; 30 while the beta caps there)'],
 +	weaponAlpha: [0.6, 0.15, 0.3, 0.9, 'Shaman: Forever: kill time scales as (base weapon DPS / your weapon DPS) ^ this (fights shrink, eating and walking do not); 0 turns weapons off'],

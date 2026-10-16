@@ -45,6 +45,10 @@ Además del parche de arriba:
   `SF_MISSING` horas (10 por defecto), así la búsqueda las mete todas.
 - **Rango de nivel por dungeon** (`SF_DUNGEON_LEVELS="Ragefire Chasm:13-16,…"`):
   fuera de su rango la corrida no cuenta.
+- **Distancia al jefe** (`SF_BOSS_GAP`, 2 por defecto): cuántos niveles puede
+  llevarte el jefe más alto al entrar. Con 3 (DPS en grupo) se entra antes:
+  el 16-oct, Tauren Mejora con 3 y rangos tempranos dio 36,3 h hasta 35
+  contra 36,1 h, con RFC a 13, SFK a 23,6 y Excavation a 29.
 - **Viajes**: el modelo necesita `data/forever/travel.json` (vuelos, zepelines,
   barcos, posadas). Sin él no hay transporte y Reinos del Este queda fuera de
   alcance para la Horda. Se arma con `node tools/polestar.js travel build` y
