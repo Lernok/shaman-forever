@@ -769,7 +769,7 @@ local function makeFrame()
   lock:SetSize(16, 16)
   lock:SetPoint("RIGHT", grip, "LEFT", -2, 0)
   local function paintLock()
-    local tex = cdb.locked and "Interface\Buttons\LockButton-Locked-Up" or "Interface\Buttons\LockButton-Unlocked-Up"
+    local tex = cdb.locked and "Interface\\Buttons\\LockButton-Locked-Up" or "Interface\\Buttons\\LockButton-Unlocked-Up"
     lock:SetNormalTexture(tex)
     grip:SetAlpha(cdb.locked and 0.25 or 1)
   end
