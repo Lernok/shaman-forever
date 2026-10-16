@@ -259,10 +259,46 @@ end
 
 -- Tips -------------------------------------------------------------------------
 -- Each one: key (seen/done), item or icon, three lines, giver, order.
+-- "+35%", or "much better (x12)" from double up: a white belt with 1 stat
+-- against one with 12 is +1100%, true but meaningless.
+local function pctText(v, cur, fmt)
+  local pct = (v / cur - 1) * 100
+  if pct >= 100 then return string.format(L().muchBetter, v / cur) end
+  return string.format(fmt, math.floor(pct + 0.5))
+end
 local function gainText(g)
   if g.cur <= 0 then return L().gainNew end
   if g.slot == "Weapon" and cdb.spec == "Enhancement" then return string.format(L().gainDps, num(g.v), num(g.cur)) end
-  return string.format(L().gainPct, math.floor((g.v / g.cur - 1) * 100 + 0.5))
+  return pctText(g.v, g.cur, L().gainPct)
+end
+
+-- Your crafting professions: { English name = { name (yours), skill, max } }.
+-- Skill line ids; the names of the old API in English and Spanish as backup.
+local PROF_IDS = { [164] = "Blacksmithing", [165] = "Leatherworking", [197] = "Tailoring", [202] = "Engineering",
+  [171] = "Alchemy", [333] = "Enchanting" }
+local PROF_NAMES = { Blacksmithing = "Blacksmithing", Leatherworking = "Leatherworking", Tailoring = "Tailoring",
+  Engineering = "Engineering", Alchemy = "Alchemy", Enchanting = "Enchanting", ["Herrería"] = "Blacksmithing",
+  ["Peletería"] = "Leatherworking", ["Sastrería"] = "Tailoring", ["Ingeniería"] = "Engineering", Alquimia = "Alchemy",
+  Encantamiento = "Enchanting" }
+local function myProfessions()
+  local out = {}
+  if GetProfessions and GetProfessionInfo then
+    local a, b = GetProfessions()
+    for _, i in ipairs({ readable(a) or 0, readable(b) or 0 }) do
+      if i and i > 0 then
+        local name, _, skill, max, _, _, line = GetProfessionInfo(i)
+        local en = PROF_IDS[readable(line) or 0] or PROF_NAMES[readable(name) or ""]
+        if en then out[en] = { name = readable(name) or en, skill = readable(skill) or 0, max = readable(max) or 0 } end
+      end
+    end
+  elseif GetNumSkillLines and GetSkillLineInfo then
+    for i = 1, GetNumSkillLines() do
+      local name, header, _, skill, _, _, max = GetSkillLineInfo(i)
+      local en = not header and PROF_NAMES[name or ""]
+      if en then out[en] = { name = name, skill = skill or 0, max = max or 0 } end
+    end
+  end
+  return out
 end
 
 -- Upgrades on your gear path from now to `lead` levels ahead.
@@ -745,7 +781,7 @@ local function makeFrame()
   end
   frame.cat = "all"
   frame.cats = {}
-  for _, cat in ipairs({ "all", "world", "dungeon" }) do
+  for _, cat in ipairs({ "all", "world", "dungeon", "prof" }) do
     local b = CreateFrame("Button", nil, frame)
     b:SetHeight(18)
     b.text = b:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
@@ -759,6 +795,7 @@ local function makeFrame()
   frame.cats.all:SetPoint("TOPLEFT", 12, -56)
   frame.cats.world:SetPoint("LEFT", frame.cats.all, "RIGHT", 6, 0)
   frame.cats.dungeon:SetPoint("LEFT", frame.cats.world, "RIGHT", 6, 0)
+  frame.cats.prof:SetPoint("LEFT", frame.cats.dungeon, "RIGHT", 6, 0)
   for i = 1, ROWS do rows[i] = makeRow(i) end
 end
 
@@ -777,7 +814,7 @@ function render()
   local tab = frame.tab
   local tips = {}
   local prog = inProgress()
-  local inCat = { all = 0, world = 0, dungeon = 0 }
+  local inCat = { all = 0, world = 0, dungeon = 0, prof = 0 }
   if tab == "next" then
     -- What you already carry is under "En curso".
     for _, t in ipairs(frame.lastTips or {}) do
@@ -854,6 +891,34 @@ local function popup(title, tips)
   show(title, new)
 end
 
+local function craftTips()
+  local tips, best, lvl, faction = {}, {}, UnitLevel("player"), myFaction()
+  for prof, p in pairs(myProfessions()) do
+    for _, c in ipairs(D.crafts and D.crafts[prof] or {}) do
+      local id, req, skill = c[1], c[2], c[3]
+      if skill <= p.max and req <= lvl + cdb.lead and req > lvl - STALE then
+        local g = gain(id)
+        local key = "c" .. id
+        if g and not off(key) then
+          local learn = c[4] == "f" and string.format(L().learnFavor, c[5] or 0, (faction == "alliance" and c[7] or c[6]) or "?")
+            or L().learnTrainer
+          local need = p.skill < skill and (" · |cffff9933" .. string.format(L().skillNeed, skill - p.skill) .. "|r") or ""
+          local head = req <= lvl and string.format(L().levelNow, req) or string.format(L().levelIn, req, req - lvl)
+          local tip = { key = key, item = id, head = head .. " · " .. Api.itemName(id),
+            src = string.format(L().craft, p.name, skill) .. need, gain = gainText(g) .. " · " .. learn,
+            order = req, cat = "prof", v = g.v, slot = g.slot, skill = skill }
+          -- One per slot: the best one (the easier to make on a tie).
+          local cur = best[g.slot]
+          if not cur or tip.v > cur.v or (tip.v == cur.v and tip.skill < cur.skill) then best[g.slot] = tip end
+        end
+      end
+    end
+  end
+  for _, tip in pairs(best) do tips[#tips + 1] = tip end
+  table.sort(tips, function(a, b) return a.order < b.order end)
+  return tips
+end
+
 local FAR, OFF = 0.35, 0.2
 local function nearby(tips)
   if cdb.showFar then return tips end
@@ -874,6 +939,7 @@ local function upcoming()
   local tips = pickupTips(false)
   for _, t in ipairs(pathTips()) do tips[#tips + 1] = t end
   tips = nearby(tips)
+  for _, t in ipairs(craftTips()) do tips[#tips + 1] = t end
   table.sort(tips, function(a, b) return a.order < b.order end)
   return tips
 end
@@ -996,6 +1062,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
     self:RegisterEvent("QUEST_TURNED_IN")
     self:RegisterEvent("QUEST_ACCEPTED")
     self:RegisterEvent("QUEST_REMOVED")
+    self:RegisterEvent("SKILL_LINES_CHANGED")
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
     -- The zone's name settles a moment after a loading screen.
     C_Timer.After(2, onZone)
@@ -1011,6 +1078,12 @@ ev:SetScript("OnEvent", function(self, event, ...)
   elseif event == "QUEST_TURNED_IN" then
     log("quest", tostring((...)))
     C_Timer.After(0.5, repaint)
+  elseif event == "SKILL_LINES_CHANGED" then
+    C_Timer.After(1, function()
+      if frame and frame:IsShown() and not currentDungeon() and not InCombatLockdown() then
+        show(string.format(L().upcoming, UnitLevel("player")), upcoming(), true)
+      end
+    end)
   elseif event == "QUEST_REMOVED" then
     C_Timer.After(0.5, repaint)
   elseif event == "QUEST_ACCEPTED" then
@@ -1033,10 +1106,17 @@ local function onTooltip(tt, id)
   local cur = wornValue(D.items[id].s)
   local text, r, g, b
   if cur <= 0 then text, r, g, b = string.format(L().tipEmpty, specName()), 0.4, 1, 0.4
-  elseif v >= cur then text, r, g, b = string.format(L().tipBetter, math.floor((v / cur - 1) * 100 + 0.5), specName()), 0.4, 1, 0.4
+  elseif v >= cur then text, r, g, b = pctText(v, cur, L().tipBetter) .. " (" .. specName() .. ")", 0.4, 1, 0.4
   else text, r, g, b = string.format(L().tipWorse, math.floor((1 - v / cur) * 100 + 0.5), specName()), 0.6, 0.6, 0.6 end
   tt:AddLine("Shaman: Forever: " .. text, r, g, b)
   if D.iq and D.iq[id] then tt:AddLine(L().markHint, 0.5, 0.75, 1) end
+  for prof, p in pairs(myProfessions()) do
+    for _, c in ipairs(D.crafts and D.crafts[prof] or {}) do
+      if c[1] == id then
+        tt:AddLine(string.format(L().youCraft, p.name, c[3]) .. (p.skill < c[3] and (" · " .. string.format(L().skillNeed, c[3] - p.skill)) or ""), 1, 0.6, 0.2)
+      end
+    end
+  end
 end
 
 -- Shift+click on an item: a mark on the map where to pick up the quest that
@@ -1383,4 +1463,4 @@ end
 SF.test = { pathTips = pathTips, pickupTips = pickupTips, dungeonTips = dungeonTips, zoneTips = zoneTips, upcoming = upcoming,
   gain = gain, onZone = onZone, onLevel = onLevel, talentLine = talentLine, giverText = giverText, waypoint = waypoint,
   archive = function(tip, kind) archive(tip, kind) end, inProgress = function() return inProgress() end, archived = function() return archived() end,
-  npcLines = function(id) return npcLines(id) end }
+  npcLines = function(id) return npcLines(id) end, craftTips = function() return craftTips() end }

@@ -41,6 +41,11 @@ function GetInventoryItemID(_, slot) if slot == 16 then return tonumber(os.geten
 function GetInventoryItemLink() return nil end
 function GetItemInfo() return nil end
 function GetItemCount() return 0 end
+-- Professions (PROFS="165:85:150 164:40:75": skill line, skill, max).
+local profs = {}
+for line, skill, max in (os.getenv("PROFS") or ""):gmatch("(%d+):(%d+):(%d+)") do profs[#profs + 1] = { tonumber(line), tonumber(skill), tonumber(max) } end
+function GetProfessions() return profs[1] and 1 or nil, profs[2] and 2 or nil end
+function GetProfessionInfo(i) local p = profs[i] return "Prof" .. p[1], 0, p[2], p[3], 0, 0, p[1] end
 -- Bags: four 6-slot bags (BAGS=<slots> to change).
 function GetContainerNumSlots(bag) return tonumber(os.getenv("BAGS") or "6") end
 function GetItemIcon() return 1 end
@@ -95,6 +100,7 @@ end
 if os.getenv("NPC") then
   for _, q in ipairs(SF.test.npcLines(tonumber(os.getenv("NPC")))) do print("NPC", q[1]); for _, l in ipairs(q[2]) do print("     ", l) end end
 end
+for _, t in ipairs(SF.test.craftTips()) do print("CRAFT", t.head, "|", (t.src:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")), "|", (t.gain:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""))) end
 -- Quests you carry (ONQUEST): the "En curso" tab.
 for _, t in ipairs(SF.test.inProgress()) do print("EN CURSO", t.head, "|", t.src, "|", (t.gain or ""):gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")) end
 -- "Listo" on the first tip: it leaves the tips and shows under Listos.
