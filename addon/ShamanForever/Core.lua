@@ -593,6 +593,65 @@ local function onTooltip(tt, id)
   elseif v >= cur then text, r, g, b = string.format(L().tipBetter, math.floor((v / cur - 1) * 100 + 0.5), specName()), 0.4, 1, 0.4
   else text, r, g, b = string.format(L().tipWorse, math.floor((1 - v / cur) * 100 + 0.5), specName()), 0.6, 0.6, 0.6 end
   tt:AddLine("Shaman: Forever: " .. text, r, g, b)
+  if D.iq and D.iq[id] then tt:AddLine(L().markHint, 0.5, 0.75, 1) end
+end
+
+-- Shift+click on an item: a mark on the map where to pick up the quest that
+-- rewards it, at the step of its chain you're at (or where to turn it in, if
+-- you already carry that step).
+local function questOf(id)
+  local f = myFaction():sub(1, 1)
+  local mine
+  for _, e in ipairs(D.iq[id] or {}) do
+    if not e[2] or e[2] == f then
+      if not Api.questDone(e[1]) then return e[1] end
+      mine = mine or e[1]
+    end
+  end
+  return mine, mine ~= nil
+end
+local function chainOf(qid)
+  local list, seen = {}, {}
+  while qid and not seen[qid] do
+    seen[qid] = true
+    table.insert(list, 1, qid)
+    qid = D.qpre[qid]
+  end
+  return list
+end
+function SF.markItem(id, linkName)
+  if not cdb or not D.iq or not D.iq[id] then return false end
+  local qid, done = questOf(id)
+  if not qid then return false end
+  local item = linkName or Api.itemName(id)
+  if done then say(string.format(L().markDone, item)) return true end
+  local chain = chainOf(qid)
+  local step, n = qid, #chain
+  for i, q in ipairs(chain) do
+    if not Api.questDone(q) then step, n = q, i break end
+  end
+  local name = D.qnames[step] or ("#" .. step)
+  say(string.format(L().markInfo, item, name, n, #chain))
+  if Api.onQuest(step) then
+    local e = D.enders[step]
+    if e then waypoint(e, string.format(L().markTurnIn, name)) else say(string.format(L().markNoWhere, name)) end
+  else
+    local g = D.givers[step]
+    if g then waypoint(g, string.format(L().pickup, name)) else say(string.format(L().markNoWhere, name)) end
+  end
+  return true
+end
+-- Shift+click anywhere items are (bags, chat links, loot lists, quest
+-- rewards) goes through HandleModifiedItemClick; with the chat box open it's
+-- linking the item, so it's left alone.
+if hooksecurefunc and HandleModifiedItemClick then
+  hooksecurefunc("HandleModifiedItemClick", function(link)
+    if not cdb or not IsShiftKeyDown() or IsControlKeyDown() or IsAltKeyDown() then return end
+    if ChatEdit_GetActiveWindow and ChatEdit_GetActiveWindow() then return end
+    link = readable(link)
+    local id = type(link) == "string" and tonumber(link:match("item:(%d+)"))
+    if id then pcall(SF.markItem, id, link:match("|h%[(.-)%]|h")) end
+  end)
 end
 local function safeTooltip(tt, id)
   id = readable(id)

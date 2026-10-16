@@ -13,6 +13,7 @@ El lado del juego del sitio. **Avisa, no te lleva de la mano**: vos elegís por 
   - Qué te sirve de ahí, tanto lo que tiran los jefes como las recompensas de las misiones.
 - **En el tooltip de un ítem:** cuánto mejor o peor es que lo que tenés puesto.
 - **Clic en un aviso:** pone la flecha de TomTom hasta quien da la misión. Sin TomTom, deja una marca en el mapa.
+- **Shift + clic en un ítem** (en las bolsas, un link del chat, AtlasLoot, las recompensas de una misión): si sale de una misión, marca en el mapa a quién hablarle en el paso de la cadena en que estás. Si ya tenés ese paso, marca a quién entregárselo. Con el chat abierto, Shift + clic sigue linkeando el ítem como siempre.
 - **Avisos que no se repiten:** cada aviso salta solo una vez. Si lo marcás como "Listo", no aparece más.
 - **Registro para investigar:** `/sf registro` muestra los niveles, zonas, dungeons y misiones aceptadas y entregadas, con la hora, para copiar.
 
@@ -29,5 +30,5 @@ Escribí `/sf ayuda` en el juego para ver todos los comandos.
 ## Para desarrollar
 
 - `node scripts/build-addon.js` vuelve a generar `ShamanForever/Data.lua`. Usa la cache de `scripts/sync.js` y, si está instalado, el QuestieDB del juego (para los mapas de TomTom).
-- `lua5.1 scripts/test-addon.lua Orc Enhancement 20 "The Barrens" [instanceId]` prueba el addon sin el juego: simula las funciones del juego y muestra los avisos que daría. Con `WEAPON=<itemId>` simulás un arma equipada y con `ONQUEST="914 962"` misiones en el registro.
+- `lua5.1 scripts/test-addon.lua Orc Enhancement 20 "The Barrens" [instanceId]` prueba el addon sin el juego: simula las funciones del juego y muestra los avisos que daría. Con `WEAPON=<itemId>` simulás un arma equipada, con `ONQUEST="914 962"` misiones en el registro, con `DONE="..."` misiones hechas y con `MARK=<itemId>` un Shift + clic en ese ítem. Lua 5.1 para Windows queda en `.cache/lua51/lua5.1.exe`.
 - Para instalarlo, copiá la carpeta `ShamanForever` a `_classic_beta_/Interface/AddOns/` (en el lanzamiento, a `_forever_`).

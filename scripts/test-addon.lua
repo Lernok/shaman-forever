@@ -39,7 +39,16 @@ function GetInventoryItemLink() return nil end
 function GetItemInfo() return nil end
 function GetItemCount() return 0 end
 function GetItemIcon() return 1 end
-function IsQuestFlaggedCompleted(id) return false end
+local completed = {}
+for q in (os.getenv("DONE") or ""):gmatch("%d+") do completed[tonumber(q)] = true end
+function IsQuestFlaggedCompleted(id) return completed[id] or false end
+-- Shift+click on an item (MARK=<item id>): the hook the addon adds.
+local clickHooks = {}
+function HandleModifiedItemClick(link) for _, fn in ipairs(clickHooks) do fn(link) end end
+function hooksecurefunc(name, fn) if name == "HandleModifiedItemClick" then table.insert(clickHooks, fn) end end
+function IsShiftKeyDown() return true end
+function IsControlKeyDown() return false end
+function IsAltKeyDown() return false end
 local carrying = {}
 for q in (os.getenv("ONQUEST") or ""):gmatch("%d+") do carrying[tonumber(q)] = true end
 function GetQuestLogIndexByID(id) return carrying[id] and 1 or 0 end
@@ -71,6 +80,10 @@ print("-- entrar a la zona dos veces:")
 SF.test.onZone()
 zone = "Elsewhere"; SF.test.onZone(); zone = arg[4] or "The Barrens"; SF.test.onZone()
 ev:fire("PLAYER_LEVEL_UP", level + 1)
+if os.getenv("MARK") then
+  print("-- shift+clic en el item " .. os.getenv("MARK") .. ":")
+  HandleModifiedItemClick("|cff1eff00|Hitem:" .. os.getenv("MARK") .. "::::::::20:::::|h[x]|h|r")
+end
 SlashCmdList.SHAMANFOREVER("ayuda")
 SlashCmdList.SHAMANFOREVER("dondeestoy")
 SlashCmdList.SHAMANFOREVER("registro")
