@@ -476,7 +476,10 @@ end
 -- Window -------------------------------------------------------------------------
 local show
 local frame, rows, logFrame = nil, {}, nil
-local ROWS, ROW_H, W, TOP = 10, 44, 420, 80
+-- ROWS: rows made (the most a tall window shows); AUTO: rows of a window
+-- you never resized. Size bounds: MIN_W..MAX_W, MIN_H..MAX_H.
+local ROWS, AUTO, ROW_H, W, TOP = 16, 10, 44, 420, 80
+local MIN_W, MAX_W, MIN_H, MAX_H = 340, 900, TOP + 12 + 2 * ROW_H, TOP + 26 + 16 * ROW_H
 
 -- You carry the quest of a tip, or a step of its chain (set further down).
 local carrying = function() return false end
@@ -675,8 +678,9 @@ end
 
 local function makeRow(i)
   local r = CreateFrame("Button", nil, frame)
-  r:SetSize(W - 20, ROW_H)
+  r:SetHeight(ROW_H)
   r:SetPoint("TOPLEFT", 10, -TOP - (i - 1) * ROW_H)
+  r:SetPoint("RIGHT", frame, "RIGHT", -10, 0)
   r.have = r:CreateTexture(nil, "BACKGROUND")
   r.have:SetAllPoints()
   r.have:SetColorTexture(0.15, 0.45, 0.75, 0.25)
@@ -738,7 +742,30 @@ end
 
 local function makeFrame()
   frame = CreateFrame("Frame", "ShamanForeverFrame", UIParent)
-  frame:SetSize(W, 100)
+  frame:SetSize(cdb.size and cdb.size[1] or W, 100)
+  frame:SetResizable(true)
+  if frame.SetResizeBounds then frame:SetResizeBounds(MIN_W, MIN_H, MAX_W, MAX_H)
+  elseif frame.SetMinResize then frame:SetMinResize(MIN_W, MIN_H); frame:SetMaxResize(MAX_W, MAX_H) end
+  local grip = CreateFrame("Button", nil, frame)
+  grip:SetSize(16, 16)
+  grip:SetPoint("BOTTOMRIGHT", -2, 2)
+  grip:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Up")
+  grip:SetHighlightTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Highlight")
+  grip:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Down")
+  grip:SetScript("OnMouseDown", function() frame.sizing = true; frame:StartSizing("BOTTOMRIGHT") end)
+  grip:SetScript("OnMouseUp", function()
+    frame:StopMovingOrSizing()
+    frame.sizing = false
+    cdb.size = { math.floor(frame:GetWidth() + 0.5), math.floor(frame:GetHeight() + 0.5) }
+    render()
+  end)
+  grip:SetScript("OnDoubleClick", function() cdb.size = nil; frame:SetWidth(W); render() end)
+  grip:SetScript("OnEnter", function(self)
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT"); GameTooltip:SetText(L().resizeTip, 1, 1, 1, 1, true); GameTooltip:Show()
+  end)
+  grip:SetScript("OnLeave", function() GameTooltip:Hide() end)
+  -- While dragging the corner: as many rows as fit.
+  frame:SetScript("OnSizeChanged", function() if frame.sizing then render() end end)
   -- Per character; a new one starts where you last left it on another.
   local pos = cdb.pos or db.pos
   if pos then frame:SetPoint(pos[1], UIParent, pos[2], pos[3], pos[4]) else frame:SetPoint("TOPRIGHT", -220, -180) end
@@ -873,8 +900,9 @@ function render()
   end
   frame.title:SetText(frame.lastTitle or "")
   frame.spec.text:SetText(string.format(L().spec, specName()))
+  local fit = cdb.size and math.max(1, math.min(ROWS, math.floor(((frame.sizing and frame:GetHeight() or cdb.size[2]) - TOP - 26) / ROW_H))) or AUTO
   for i = 1, ROWS do
-    local r, tip = rows[i], tips[i]
+    local r, tip = rows[i], i <= fit and tips[i] or nil
     r.tip = tip
     if tip then
       r.icon:SetTexture(tip.icon or Api.icon(tip.item))
@@ -892,12 +920,15 @@ function render()
       r:Hide()
     end
   end
-  local n = math.min(#tips, ROWS)
+  local n = math.min(#tips, fit)
   frame.empty:SetText(#tips == 0 and (tab == "next" and L().nothing or tab == "prog" and L().nothingProg or L().nothingHidden) or "")
   frame.more:ClearAllPoints()
   frame.more:SetPoint("TOPLEFT", 10, -TOP - 4 - n * ROW_H)
-  frame.more:SetText(#tips > ROWS and string.format(L().more, #tips - ROWS) or "")
-  frame:SetHeight(#tips == 0 and (TOP + 34) or (TOP + 12 + n * ROW_H + (#tips > ROWS and 14 or 0)))
+  frame.more:SetText(#tips > fit and string.format(L().more, #tips - fit) or "")
+  if not frame.sizing then
+    if cdb.size then frame:SetSize(cdb.size[1], cdb.size[2])
+    else frame:SetHeight(#tips == 0 and (TOP + 34) or (TOP + 12 + n * ROW_H + (#tips > fit and 14 or 0))) end
+  end
   frame:Show()
   cdb.shown = true
 end
@@ -1401,6 +1432,9 @@ local function makeOptions()
   end
   action("open", function() SF.open(true) end, 16)
   action("log", function() showLog() end, 192)
+  y = y - 30
+  action("size", function() cdb.size = nil; if frame then frame:SetWidth(W); if frame:IsShown() then render() end end end, 16)
+  y = y + 30
   action("reset", function() wipe(cdb.seen); wipe(cdb.done); wipe(cdb.gone); say(L().reset); if frame and frame:IsShown() then render() end end, 368)
   panel.refresh = function()
     title:SetText("Shaman: Forever " .. Api.version())
