@@ -224,6 +224,15 @@ local function areaName(id)
   return Api.areaName(id) or areaNames[id]
 end
 local function here() return readable(GetRealZoneText()) or "" end
+-- A spot's zone name: our zone ids (z), else a map id (map, from Polestar).
+local function spotZone(g)
+  local n = areaName(g.z)
+  if not n and g.map and C_Map and C_Map.GetMapInfo then
+    local ok, info = pcall(C_Map.GetMapInfo, g.map)
+    n = ok and type(info) == "table" and readable(info.name) or nil
+  end
+  return n or "?"
+end
 local CONTINENT_MAPS = { [1414] = 1, [1415] = 0 }
 local function myContinent()
   local z = here()
@@ -249,12 +258,12 @@ local function giverText(g)
   if not g then return nil end
   if g.item then return type(g.item) == "string" and string.format(L().startsWith, g.item) or L().startsWithAny end
   if g.inside then return string.format(L().givenInside, g.n) end
-  if g.x then return string.format(L().givenAt, g.n, areaName(g.z) or "?", math.floor(g.x + 0.5), math.floor(g.y + 0.5)) end
+  if g.x then return string.format(L().givenAt, g.n, spotZone(g), math.floor(g.x + 0.5), math.floor(g.y + 0.5)) end
   return string.format(L().givenBy, g.n)
 end
 local function waypoint(g, title)
-  if not g or not g.x or not g.z then return end
-  local map = D.uiMaps[g.z]
+  if not g or not g.x or not (g.z or g.map) then return end
+  local map = g.map or D.uiMaps[g.z]
   if map and cdb.tomtom and TomTom and TomTom.AddWaypoint then
     TomTom:AddWaypoint(map, g.x / 100, g.y / 100, { title = title, from = "Shaman: Forever" })
     say(string.format(L().arrowSet, title))
@@ -278,7 +287,7 @@ local function waypoint(g, title)
     end
   end
   -- No map for that zone: say it in chat.
-  if g.x then say(string.format("%s: %s · %s (%d, %d)", title, g.n, areaName(g.z) or "?", math.floor(g.x + 0.5), math.floor(g.y + 0.5)))
+  if g.x then say(string.format("%s: %s · %s (%d, %d)", title, g.n, spotZone(g), math.floor(g.x + 0.5), math.floor(g.y + 0.5)))
   else say(giverText(g)) end
 end
 
@@ -326,26 +335,67 @@ local function myProfessions()
   return out
 end
 
-local polestarSet, polestarGuide
+local routeCache
 local function polestar()
   local P = rawget(_G, "Polestar")
   return type(P) == "table" and P or nil
 end
--- Quests your open Polestar guide still has you take or turn in.
-local function polestarQuests()
+-- A dungeon a route step is about: our packs' "Dungeon: <name> (level N)"
+-- steps, else a step doing a dungeon quest's objectives (Polestar's guides).
+local function stepDungeon(step)
+  local title = type(step.title) == "string" and step.title or ""
+  local name, lv = title:match("^Dungeon: (.-) %(level (%d+)%)")
+  if not name then name = title:match("^Dungeon: (.+)$") end
+  if name then return name, tonumber(lv), true end
+  for _, goal in ipairs(type(step.goals) == "table" and step.goals or {}) do
+    local gr = type(goal.group) == "table" and goal.group
+    if gr and gr.kind == "dungeon" and type(gr.name) == "string" and goal.t == "complete" then return gr.name end
+  end
+  return nil
+end
+-- What's left of your Polestar route: the open guide from its current step,
+-- then the guides it leads to (`next`). quests: quest id -> the guide it's
+-- in; dungeons: the dungeon steps in order; now: the dungeon of the current
+-- step. nil without Polestar (or with it turned off in our options).
+local function routeInfo()
   local P = polestar()
   if not P or cdb.polestar == false or not (P.Engine and P.Engine.GetGuide) then return nil end
   local ok, g = pcall(P.Engine.GetGuide)
   if not ok or type(g) ~= "table" or type(g.steps) ~= "table" then return nil end
-  if polestarGuide == g and polestarSet then return polestarSet end
-  local set = {}
-  for _, step in ipairs(g.steps) do
-    for _, goal in ipairs(type(step.goals) == "table" and step.goals or {}) do
-      if type(goal.quest) == "number" then set[goal.quest] = true end
+  local ok2, at = pcall(P.Engine.GetStepIndex or function() return 1 end)
+  at = ok2 and tonumber(at) or 1
+  if routeCache and routeCache.guide == g and routeCache.at == at then return routeCache end
+  local info = { guide = g, at = at, quests = {}, dungeons = {} }
+  local seen, seenD, i = {}, {}, at
+  while g and not seen[g] do
+    seen[g] = true
+    for si = math.max(i, 1), #g.steps do
+      local step = g.steps[si]
+      if type(step) == "table" then
+        local dn, lv, ours = stepDungeon(step)
+        if dn and g == info.guide and si == at then info.now = dn end
+        if dn and not seenD[dn] then
+          seenD[dn] = true
+          local spot
+          for _, goal in ipairs(type(step.goals) == "table" and step.goals or {}) do
+            if ours and goal.t == "goto" and goal.map and goal.x then spot = { map = goal.map, x = goal.x, y = goal.y, n = dn } break end
+          end
+          info.dungeons[#info.dungeons + 1] = { name = dn, level = lv or (D.dlevels[dn] and D.dlevels[dn][1]), guide = g, spot = spot }
+        end
+        for _, goal in ipairs(type(step.goals) == "table" and step.goals or {}) do
+          if type(goal.quest) == "number" and not info.quests[goal.quest] then info.quests[goal.quest] = g end
+        end
+      end
     end
+    local nx = g.next
+    if type(nx) == "table" then nx = nx[1]; if type(nx) == "table" then nx = nx.id end end
+    local ok3, ng = false, nil
+    if type(nx) == "string" and P.Guides and P.Guides.Get then ok3, ng = pcall(P.Guides.Get, nx) end
+    g = ok3 and type(ng) == "table" and type(ng.steps) == "table" and ng or nil
+    i = 1
   end
-  polestarGuide, polestarSet = g, set
-  return set
+  routeCache = info
+  return info
 end
 local function polestarGear()
   local P = polestar()
@@ -373,6 +423,7 @@ local function pathTips(filter)
         tips[#tips + 1] = { key = key, item = st.i, head = head .. " · " .. Api.itemName(st.i), src = src, gain = gainText(g),
           giver = giver, title = st.qn, order = st.l, q = st.q,
           cat = st.a == "dquest" and "dungeon" or "world", where = where, offRoute = st.a == "quest",
+          dungeon = st.a == "dquest" and st.z or nil, kind = st.a,
           pct = g.cur > 0 and (g.v / g.cur - 1) or 0.25 }
       end
     end
@@ -484,6 +535,32 @@ local function dungeonTips(name)
   for _, t in ipairs(tips) do t.cat = "dungeon" end
   table.sort(tips, function(a, b) return a.order < b.order end)
   return tips
+end
+
+-- The next dungeon of your Polestar route, in one row at the top: its
+-- level, the quests to take there and the upgrades it has for you (all in
+-- the row's tooltip). The click marks its entrance.
+local function nextDungeonTip(info)
+  local nd = info and info.dungeons[1]
+  if not nd or nd.name == info.now then nd = info and info.dungeons[nd and 2 or 1] end
+  if not nd then return nil end
+  local lvl = UnitLevel("player")
+  local head = nd.level and string.format(L().nextDungeon, nd.name, nd.level) or string.format(L().nextDungeonNoLevel, nd.name)
+  if nd.level and nd.level > lvl then head = head .. " · " .. string.format(L().levelsToGo, nd.level - lvl) end
+  local src, lines, ups = L().noQuestsYet, {}, 0
+  for _, t in ipairs(dungeonTips(nd.name)) do
+    if t.key:sub(1, 1) == "s" then
+      src = t.head
+      for _, l in ipairs(t.lines or {}) do lines[#lines + 1] = "· " .. l end
+    elseif t.item then
+      ups = ups + 1
+      lines[#lines + 1] = "+ " .. t.head .. " (" .. t.gain .. ")"
+    end
+  end
+  local where = type(nd.guide.title) == "string" and string.format(L().inGuide, nd.guide.title) or nil
+  return { key = "n" .. nd.name .. ":" .. lvl, icon = "Interface\\Icons\\INV_Misc_Map_01", head = head, src = src,
+    gain = (ups > 0 and string.format(L().upgradesN, ups) or L().noUpgrades) .. (where and (" · " .. where) or ""),
+    lines = lines, giver = nd.spot, title = nd.name, order = -1e9, cat = "dungeon", where = D.dcont[nd.name], pinned = true }
 end
 
 -- Where this level's talent point goes, in the spec's leveling order.
@@ -1035,26 +1112,83 @@ local function nearby(tips)
   return out
 end
 local function upcoming()
-  local tips = pickupTips(false)
+  local info = routeInfo()
+  local tips, inRoute = {}, {}
+  for _, d in ipairs(info and info.dungeons or {}) do inRoute[d.name] = true end
+  for _, t in ipairs(pickupTips(false)) do
+    -- Quests the route already has you take: Polestar tells you.
+    if not (info and t.q and info.quests[t.q]) then tips[#tips + 1] = t end
+  end
   for _, t in ipairs(pathTips()) do tips[#tips + 1] = t end
+  if info then
+    -- Upgrades the route gets you go first, with the guide that does them;
+    -- the rest is off the route (shown only when it's worth it).
+    for _, t in ipairs(tips) do
+      if t.item then
+        local g = t.q and info.quests[t.q]
+        local label = g and (type(g.title) == "string" and g.title or "?") or (t.dungeon and inRoute[t.dungeon] and t.dungeon)
+        if label then
+          t.onRoute, t.offRoute, t.where = true, false, nil
+          t.src = t.src .. " · |cff40c0ff" .. string.format(L().onRoute, label) .. "|r"
+        elseif t.kind == "quest" or t.kind == "route" or t.kind == "dquest" then
+          -- (Our own route gives way to Polestar's; class quests are in its class guides.)
+          t.offRoute = true
+          t.order = t.order + 0.5
+        end
+      end
+    end
+  end
   tips = nearby(tips)
-  local route = polestarQuests()
-  if route then
-    local out = {}
-    for _, t in ipairs(tips) do if not (t.q and route[t.q]) then out[#out + 1] = t end end
-    tips = out
+  if info then
+    for _, t in ipairs(tips) do
+      if t.offRoute and t.item then t.src = t.src .. " · |cff999999" .. L().offRouteTag .. "|r" end
+    end
+    local nd = nextDungeonTip(info)
+    if nd then tips[#tips + 1] = nd end
   end
   for _, t in ipairs(craftTips()) do tips[#tips + 1] = t end
   table.sort(tips, function(a, b) return a.order < b.order end)
   return tips
 end
 
--- "/sf": the dungeon you're in, or everything coming up.
+-- What the window shows: the dungeon you're in, the dungeon your Polestar
+-- route has you run now, or everything coming up.
+local function currentView()
+  local dname = currentDungeon()
+  if dname then return string.format(L().inDungeon, dname), dungeonTips(dname) end
+  local info = routeInfo()
+  if info and info.now then return string.format(L().routeStep, info.now), dungeonTips(info.now) end
+  return string.format(L().upcoming, UnitLevel("player")), upcoming()
+end
+
+-- "/sf": open or close the window.
 function SF.open(keep)
   if frame and frame:IsShown() and not keep then frame:Hide(); cdb.shown = false return end
-  local dname = currentDungeon()
-  if dname then show(string.format(L().inDungeon, dname), dungeonTips(dname))
-  else show(string.format(L().upcoming, UnitLevel("player")), upcoming()) end
+  local title, tips = currentView()
+  show(title, tips)
+end
+
+-- Polestar moved to another step or guide: the window follows (a moment
+-- later, once; not in combat).
+local polestarHooked, followPending
+local function followPolestar()
+  local P = polestar()
+  if polestarHooked or not P or type(P.On) ~= "function" then return end
+  polestarHooked = true
+  local function again()
+    routeCache = nil
+    if followPending then return end
+    followPending = true
+    C_Timer.After(0.5, function()
+      followPending = false
+      if frame and frame:IsShown() and not InCombatLockdown() then
+        local title, tips = currentView()
+        show(title, tips, title == frame.lastTitle)
+      end
+    end)
+  end
+  pcall(P.On, "STEP_CHANGED", again)
+  pcall(P.On, "GUIDE_CHANGED", again)
 end
 
 -- Minimap button: click shows or hides the window; drag it around the edge.
@@ -1189,6 +1323,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
     -- The zone's name settles a moment after a loading screen.
     C_Timer.After(2, onZone)
+    followPolestar()
     if event == "PLAYER_ENTERING_WORLD" and not mmButton then
       makeMinimapButton()
       -- Open again if you left it open (also after /reload).
@@ -1478,7 +1613,7 @@ local function makeOptions()
   check("tomtom", function() return cdb.tomtom end, function(v) cdb.tomtom = v end)
   check("showFar", function() return cdb.showFar end, function(v) cdb.showFar = v end)
   check("hideCombat", function() return cdb.hideCombat end, function(v) cdb.hideCombat = v end)
-  check("polestar", function() return cdb.polestar ~= false end, function(v) cdb.polestar = v; polestarSet = nil end)
+  check("polestar", function() return cdb.polestar ~= false end, function(v) cdb.polestar = v; routeCache = nil end)
   check("tipAlways", function() return cdb.tipAlways end, function(v) cdb.tipAlways = v end)
   -- Lead: how many levels ahead.
   y = y - 8
@@ -1603,4 +1738,5 @@ end
 SF.test = { pathTips = pathTips, pickupTips = pickupTips, dungeonTips = dungeonTips, zoneTips = zoneTips, upcoming = upcoming,
   gain = gain, onZone = onZone, onLevel = onLevel, talentLine = talentLine, giverText = giverText, waypoint = waypoint,
   archive = function(tip, kind) archive(tip, kind) end, inProgress = function() return inProgress() end, archived = function() return archived() end,
-  npcLines = function(id) return npcLines(id) end, craftTips = function() return craftTips() end }
+  npcLines = function(id) return npcLines(id) end, craftTips = function() return craftTips() end,
+  currentView = function() return currentView() end }

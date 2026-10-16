@@ -72,10 +72,32 @@ UiMapPoint = { CreateFromCoordinates = function(m, x, y) return { m, x, y } end 
 function OpenWorldMap(m) print("OPENMAP", m) end
 
 -- Polestar open with a guide (POLESTAR="quest ids"), its gear advice on.
+-- PDUNGEON="Wailing Caverns:20": a dungeon step in the guide it leads to
+-- (PROUTE="quest ids": that guide's quests); PNOW=1: the current step.
 if os.getenv("POLESTAR") then
-  local goals = {}
+  local goals, goals2 = {}, {}
   for q in os.getenv("POLESTAR"):gmatch("%d+") do goals[#goals + 1] = { t = "accept", quest = tonumber(q) } end
-  Polestar = { Engine = { GetGuide = function() return { steps = { { goals = goals } } } end }, Gear = { IsEnabled = function() return true end } }
+  for q in (os.getenv("PROUTE") or ""):gmatch("%d+") do goals2[#goals2 + 1] = { t = "turnin", quest = tonumber(q) } end
+  local g2 = { title = "02 · The Barrens (19-21)", steps = { { title = "Turn in", goals = goals2 } } }
+  local g1 = { title = "01 · Test", next = "sf/02", steps = { { title = "Pick up", goals = goals } } }
+  local dn, dl = (os.getenv("PDUNGEON") or ""):match("^(.-):(%d+)$")
+  if dn then
+    local st = { title = "Dungeon: " .. dn .. " (level " .. dl .. ")", goals = { { t = "goto", text = dn, map = 1413, x = 46, y = 36, r = 30 } } }
+    if os.getenv("PNOW") then table.insert(g1.steps, 1, st) else table.insert(g2.steps, 1, st) end
+  end
+  Polestar = { Engine = { GetGuide = function() return g1 end, GetStepIndex = function() return 1 end },
+    Guides = { Get = function(id) return id == "sf/02" and g2 or nil end },
+    Gear = { IsEnabled = function() return true end }, On = function(msg) print("POLESTAR ON", msg) end }
+end
+-- A real guide pack (PPACK=<its Guides.lua>), open at guide PGUIDE, step PSTEP.
+if os.getenv("PPACK") then
+  local byId = {}
+  Polestar = { RegisterGuide = function(g) byId[g.id] = g end }
+  assert(loadfile(os.getenv("PPACK")))()
+  local open, at = byId[os.getenv("PGUIDE")], tonumber(os.getenv("PSTEP") or "1")
+  assert(open, "no guide " .. tostring(os.getenv("PGUIDE")))
+  Polestar = { Engine = { GetGuide = function() return open end, GetStepIndex = function() return at end },
+    Guides = { Get = function(id) return byId[id] end }, On = function(msg) print("POLESTAR ON", msg) end }
 end
 local SF = {}
 for _, f in ipairs({ "Data.lua", "Locale.lua", "Core.lua" }) do assert(loadfile(dir .. f))("ShamanForever", SF) end
@@ -89,6 +111,7 @@ local function dump(title, tips)
 end
 print(race, spec, "nivel " .. level, zone, inst or "")
 dump("Lo que viene", SF.test.upcoming())
+if os.getenv("POLESTAR") or os.getenv("PPACK") then local title, tips = SF.test.currentView(); dump("Vista: " .. title, tips) end
 dump("En la zona", SF.test.zoneTips())
 print("Talento:", SF.test.talentLine(level))
 TomTom = { AddWaypoint = function(_, map, x, y, o) print("TOMTOM", map, x, y, o.title) end }
