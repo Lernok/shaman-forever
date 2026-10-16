@@ -185,7 +185,7 @@ end
 local function waypoint(g, title)
   if not g or not g.x or not g.z then return end
   local map = D.uiMaps[g.z]
-  if map and TomTom and TomTom.AddWaypoint then
+  if map and cdb.tomtom and TomTom and TomTom.AddWaypoint then
     TomTom:AddWaypoint(map, g.x / 100, g.y / 100, { title = title, from = "Shaman: Forever" })
     say(string.format(L().arrowSet, title))
     return
@@ -196,9 +196,20 @@ local function waypoint(g, title)
       -- blocked silently ("Interface action failed because of an AddOn").
       C_Map.SetUserWaypoint(UiMapPoint.CreateFromCoordinates(map, g.x / 100, g.y / 100))
     end)
-    if ok then say(string.format(L().pinSet, title)) return end
+    if ok then
+      say(string.format(L().pinSet, title))
+      if not InCombatLockdown() then
+        pcall(function()
+          if OpenWorldMap then OpenWorldMap(map)
+          elseif WorldMapFrame then ShowUIPanel(WorldMapFrame); WorldMapFrame:SetMapID(map) end
+        end)
+      end
+      return
+    end
   end
-  say(giverText(g))
+  -- No map for that zone: say it in chat.
+  if g.x then say(string.format("%s: %s · %s (%d, %d)", title, g.n, areaName(g.z) or "?", math.floor(g.x + 0.5), math.floor(g.y + 0.5)))
+  else say(giverText(g)) end
 end
 
 -- Tips -------------------------------------------------------------------------
@@ -355,16 +366,8 @@ local show
 local frame, rows, logFrame = nil, {}, nil
 local ROWS, ROW_H, W, TOP = 10, 44, 420, 58
 
--- You carry the quest of a tip, or an earlier step of its chain.
-local function carrying(q)
-  local seen = {}
-  while q and not seen[q] do
-    if Api.onQuest(q) then return true end
-    seen[q] = true
-    q = D.qpre and D.qpre[q]
-  end
-  return false
-end
+-- You carry the quest of a tip, or a step of its chain (set further down).
+local carrying = function() return false end
 
 -- Beside the window, on the side with room (people keep it in a corner), so
 -- the item and its comparison never cover it.
@@ -462,6 +465,7 @@ local function makeRow(i)
   -- any item); anything else: who gives it.
   r:SetScript("OnClick", function(self)
     local tip = self.tip
+    if tip.q and SF.markQuest then SF.markQuest(tip.q, tip.item and Api.itemName(tip.item) or tip.title) return end
     if tip.item and SF.markItem and SF.markItem(tip.item) then return end
     waypoint(tip.giver, tip.title or tip.head)
   end)
@@ -782,17 +786,37 @@ end
 -- Shift+click on an item: a mark on the map where to pick up the quest that
 -- rewards it, at the step of its chain you're at (or where to turn it in, if
 -- you already carry that step).
+-- Your race as the data's letter (Orc, Troll, taUren, Dwarf, Skyborne).
+local function raceLetter()
+  local _, token = UnitRace("player")
+  local low = (token or ""):lower()
+  if low:find("sky") or low:find("wind") then return "S" end
+  return ({ orc = "O", troll = "T", tauren = "U", dwarf = "D" })[low] or "O"
+end
+-- Which quest that rewards an item is yours: one whose chain you started,
+-- else one outside another race's starting zone, else any (all not done);
+-- (quest, true) when you already did one.
+local stepOf
 local function questOf(id)
-  local f = myFaction():sub(1, 1)
-  local mine
+  local f, me = myFaction():sub(1, 1), raceLetter()
+  local started, near, any, did
   for _, e in ipairs(D.iq[id] or {}) do
-    if not e[2] or e[2] == f then
-      if not Api.questDone(e[1]) then return e[1] end
-      mine = mine or e[1]
+    if (not e[2] or e[2] == f) and (not e[3] or e[3]:find(me, 1, true)) then
+      if Api.questDone(e[1]) then did = did or e[1]
+      else
+        local _, state, n = stepOf(e[1])
+        if state == "turnin" or n > 1 then started = started or e[1] end
+        if not e[4] or e[4]:find(me, 1, true) then near = near or e[1] end
+        any = any or e[1]
+      end
     end
   end
-  return mine, mine ~= nil
+  -- Got the item from one of them already: nothing else to suggest.
+  if did then return did, true end
+  return started or near or any
 end
+-- A chain, first step first; a step with alternatives (any of them opens the
+-- next) counts as done or carried when any of them is.
 local function chainOf(qid)
   local list, seen = {}, {}
   while qid and not seen[qid] do
@@ -802,27 +826,46 @@ local function chainOf(qid)
   end
   return list
 end
+local function anyOf(q, test)
+  for _, a in ipairs(D.qalt and D.qalt[q] or { q }) do if test(a) then return a end end
+end
+-- The step of qid's chain you're at: (quest, "turnin" | "pickup" | "done", n, total).
+function stepOf(qid)
+  local chain = chainOf(qid)
+  for i = #chain, 1, -1 do
+    local q = chain[i]
+    local on = anyOf(q, Api.onQuest)
+    if on then return on, "turnin", i, #chain end
+    if anyOf(q, Api.questDone) then
+      if i == #chain then return q, "done", i, #chain end
+      return chain[i + 1], "pickup", i + 1, #chain
+    end
+  end
+  -- Not started: of the ways in, the one given in your zone, else the first.
+  local first = chain[1]
+  local z = here()
+  local pick = anyOf(first, function(a) local g = D.givers[a] return g and g.z and areaName(g.z) == z end)
+  return pick or first, "pickup", 1, #chain
+end
+carrying = function(q) return q and stepOf(q) and select(2, stepOf(q)) == "turnin" end
+-- Marks on the map the step of a quest's chain you're at. `label`: what it's for.
+function SF.markQuest(qid, label)
+  local step, state, n, total = stepOf(qid)
+  local name = D.qnames[step] or ("#" .. step)
+  if state == "done" then say(string.format(L().markDone, label or name)) return true end
+  if total > 1 then say(string.format(L().markInfo, label or name, name, n, total)) end
+  local g = state == "turnin" and D.enders[step] or D.givers[step]
+  if g then waypoint(g, string.format(state == "turnin" and L().markTurnIn or L().pickup, name))
+  else say(string.format(L().markNoWhere, name)) end
+  return true
+end
 function SF.markItem(id, linkName)
   if not cdb or not D.iq or not D.iq[id] then return false end
   local qid, done = questOf(id)
   if not qid then return false end
   local item = linkName or Api.itemName(id)
   if done then say(string.format(L().markDone, item)) return true end
-  local chain = chainOf(qid)
-  local step, n = qid, #chain
-  for i, q in ipairs(chain) do
-    if not Api.questDone(q) then step, n = q, i break end
-  end
-  local name = D.qnames[step] or ("#" .. step)
-  say(string.format(L().markInfo, item, name, n, #chain))
-  if Api.onQuest(step) then
-    local e = D.enders[step]
-    if e then waypoint(e, string.format(L().markTurnIn, name)) else say(string.format(L().markNoWhere, name)) end
-  else
-    local g = D.givers[step]
-    if g then waypoint(g, string.format(L().pickup, name)) else say(string.format(L().markNoWhere, name)) end
-  end
-  return true
+  return SF.markQuest(qid, item)
 end
 -- Shift+click anywhere items are (bags, chat links, loot lists, quest
 -- rewards) goes through HandleModifiedItemClick; with the chat box open it's
@@ -917,6 +960,9 @@ SlashCmdList.SHAMANFOREVER = function(msg)
     wipe(cdb.seen); wipe(cdb.done); wipe(cdb.gone)
     say(L().reset)
   elseif cmd == "registro" or cmd == "log" then showLog()
+  elseif cmd == "flecha" or cmd == "arrow" then
+    cdb.tomtom = not cdb.tomtom
+    say(string.format(L().arrowMode, onOff(cdb.tomtom)))
   elseif cmd == "minimapa" or cmd == "minimap" then
     db.mmHide = not db.mmHide
     makeMinimapButton()

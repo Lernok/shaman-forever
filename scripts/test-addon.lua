@@ -58,7 +58,9 @@ function GetQuestLogIndexByID(id) return carrying[id] and 1 or 0 end
 function GetAddOnMetadata() return "0.1.0" end
 function time() return 0 end
 C_Timer = { After = function(_, fn) fn() end }
-C_Map = { GetAreaInfo = function() return nil end }
+C_Map = { GetAreaInfo = function() return nil end, SetUserWaypoint = function(p) print("PIN", p[1], p[2], p[3]) end }
+UiMapPoint = { CreateFromCoordinates = function(m, x, y) return { m, x, y } end }
+function OpenWorldMap(m) print("OPENMAP", m) end
 
 local SF = {}
 for _, f in ipairs({ "Data.lua", "Locale.lua", "Core.lua" }) do assert(loadfile(dir .. f))("ShamanForever", SF) end
