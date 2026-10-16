@@ -48,6 +48,8 @@ function GetProfessions() return profs[1] and 1 or nil, profs[2] and 2 or nil en
 function GetProfessionInfo(i) local p = profs[i] return "Prof" .. p[1], 0, p[2], p[3], 0, 0, p[1] end
 -- Bags: four 6-slot bags (BAGS=<slots> to change).
 function GetContainerNumSlots(bag) return tonumber(os.getenv("BAGS") or "6") end
+-- An item in the first bag slot (INBAG=<item id>).
+function GetContainerItemID(bag, slot) if bag == 0 and slot == 1 then return tonumber(os.getenv("INBAG") or "") end end
 function GetItemIcon() return 1 end
 local completed = {}
 for q in (os.getenv("DONE") or ""):gmatch("%d+") do completed[tonumber(q)] = true end

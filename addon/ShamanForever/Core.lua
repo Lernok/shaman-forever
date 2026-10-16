@@ -155,6 +155,31 @@ local function value(id)
   local it = D.items[id]
   return it and it.v[specIndex()] or 0
 end
+-- The best piece per slot in your bags that you can wear now or within your
+-- lead (only slots with one place: rings and trinkets go in pairs). Read again
+-- when your bags change.
+local bagBest
+local function bagValue(slot)
+  if not bagBest then
+    bagBest = {}
+    local num = (C_Container and C_Container.GetContainerNumSlots) or GetContainerNumSlots
+    local item = (C_Container and C_Container.GetContainerItemID) or GetContainerItemID
+    local lvl = UnitLevel("player")
+    if num and item then
+      for bag = 0, 4 do
+        for i = 1, (readable(num(bag)) or 0) do
+          local id = readable(item(bag, i))
+          local it = id and D.items[id]
+          if it and #(INV[it.s] or {}) == 1 and it.r <= lvl + cdb.lead and not (it.m and lvl < 40) then
+            local v = value(id)
+            if v > (bagBest[it.s] or 0) then bagBest[it.s] = v end
+          end
+        end
+      end
+    end
+  end
+  return bagBest[slot] or 0
+end
 local function wornValue(slot)
   local best
   for _, inv in ipairs(INV[slot] or {}) do
@@ -163,7 +188,7 @@ local function wornValue(slot)
     if id then v = D.items[id] and value(id) or estimate(readable(GetInventoryItemLink("player", inv)), slot) end
     if best == nil or v < best then best = v end
   end
-  return best or 0
+  return math.max(best or 0, bagValue(slot))
 end
 local function owned(id) return Api.count(id) > 0 end
 
@@ -1063,6 +1088,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
     self:RegisterEvent("QUEST_ACCEPTED")
     self:RegisterEvent("QUEST_REMOVED")
     self:RegisterEvent("SKILL_LINES_CHANGED")
+    self:RegisterEvent("BAG_UPDATE_DELAYED")
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
     -- The zone's name settles a moment after a loading screen.
     C_Timer.After(2, onZone)
@@ -1078,6 +1104,8 @@ ev:SetScript("OnEvent", function(self, event, ...)
   elseif event == "QUEST_TURNED_IN" then
     log("quest", tostring((...)))
     C_Timer.After(0.5, repaint)
+  elseif event == "BAG_UPDATE_DELAYED" then
+    bagBest = nil
   elseif event == "SKILL_LINES_CHANGED" then
     C_Timer.After(1, function()
       if frame and frame:IsShown() and not currentDungeon() and not InCombatLockdown() then
