@@ -199,6 +199,22 @@ local function areaName(id)
   return Api.areaName(id) or areaNames[id]
 end
 local function here() return readable(GetRealZoneText()) or "" end
+local CONTINENT_MAPS = { [1414] = 1, [1415] = 0 }
+local function myContinent()
+  local z = here()
+  for name, id in pairs(D.zones) do
+    if D.cont[id] and zoneName(name) == z then return D.cont[id] end
+  end
+  if C_Map and C_Map.GetBestMapForUnit and C_Map.GetMapInfo then
+    local map = readable(C_Map.GetBestMapForUnit("player"))
+    for _ = 1, 6 do
+      if not map then break end
+      if CONTINENT_MAPS[map] then return CONTINENT_MAPS[map] end
+      local info = C_Map.GetMapInfo(map)
+      map = info and info.parentMapID
+    end
+  end
+end
 
 -- A tip marked done ("Listo") or dismissed (the cross): not shown again.
 local function off(key) return cdb.done[key] or cdb.gone[key] end
@@ -263,8 +279,12 @@ local function pathTips(filter)
         elseif st.a == "dquest" then src = string.format(L().dquest, st.z, st.qn or "?")
         else src = string.format(L().quest, st.qn or "?") .. " · " .. zoneName(st.z) end
         local head = st.l <= lvl and string.format(L().levelNow, st.l) or string.format(L().levelIn, st.l, st.l - lvl)
+        local giver = st.q and D.givers[st.q]
+        local where = st.a == "dquest" and D.dcont[st.z] or (D.zones[st.z] and D.cont[D.zones[st.z]]) or (giver and giver.z and D.cont[giver.z])
         tips[#tips + 1] = { key = key, item = st.i, head = head .. " · " .. Api.itemName(st.i), src = src, gain = gainText(g),
-          giver = st.q and D.givers[st.q], title = st.qn, order = st.l, q = st.q }
+          giver = giver, title = st.qn, order = st.l, q = st.q,
+          cat = st.a == "dquest" and "dungeon" or "world", where = where, offRoute = st.a == "quest",
+          pct = g.cur > 0 and (g.v / g.cur - 1) or 0.25 }
       end
     end
   end
@@ -304,7 +324,8 @@ local function pickupTips(inZone)
             local third = giverText(g)
             if (e.r or 0) > lvl then third = third .. " · " .. string.format(L().fromLevel, e.r) end
             tips[#tips + 1] = { key = key, icon = QUEST_ICON, head = string.format(L().forDungeon, dname, lv[1], lv[2]),
-              src = src, gain = third, giver = g, title = target.qn, order = lv[1], q = target.q }
+              src = src, gain = third, giver = g, title = target.qn, order = lv[1], q = target.q,
+              cat = "dungeon", where = D.dcont[dname] }
           end
         end
       end
@@ -371,6 +392,7 @@ local function dungeonTips(name)
       end
     end
   end
+  for _, t in ipairs(tips) do t.cat = "dungeon" end
   table.sort(tips, function(a, b) return a.order < b.order end)
   return tips
 end
@@ -393,7 +415,7 @@ end
 -- Window -------------------------------------------------------------------------
 local show
 local frame, rows, logFrame = nil, {}, nil
-local ROWS, ROW_H, W, TOP = 10, 44, 420, 58
+local ROWS, ROW_H, W, TOP = 10, 44, 420, 80
 
 -- You carry the quest of a tip, or a step of its chain (set further down).
 local carrying = function() return false end
@@ -467,8 +489,25 @@ end
 
 -- The gear a quest rewards, as lines: "item: +12% over yours" (your race,
 -- faction and spec; nothing for pieces nobody in your spec wears).
+local function smallestBag()
+  local n = GetContainerNumSlots or (C_Container and C_Container.GetContainerNumSlots)
+  if not n then return nil end
+  local least
+  for bag = 1, 4 do
+    local slots = readable(n(bag)) or 0
+    least = least and math.min(least, slots) or slots
+  end
+  return least
+end
 function rewardLines(qid, onlyUpgrades)
   local out = {}
+  for _, b in ipairs(D.qbag and D.qbag[qid] or {}) do
+    local least = smallestBag()
+    local better = least and b[2] > least
+    if better or not onlyUpgrades then
+      out[#out + 1] = string.format(better and L().bagBetter or L().bagSame, Api.itemName(b[1]), b[2], least or 0)
+    end
+  end
   local f, me = myFaction():sub(1, 1), raceLetter()
   for _, id in ipairs(D.qr and D.qr[qid] or {}) do
     local ok = false
@@ -704,6 +743,22 @@ local function makeFrame()
     frame.tabs[kind] = b
     x = x + 124
   end
+  frame.cat = "all"
+  frame.cats = {}
+  for _, cat in ipairs({ "all", "world", "dungeon" }) do
+    local b = CreateFrame("Button", nil, frame)
+    b:SetHeight(18)
+    b.text = b:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    b.text:SetPoint("LEFT", 4, 0)
+    b.bg = b:CreateTexture(nil, "BACKGROUND")
+    b.bg:SetAllPoints()
+    b.bg:SetColorTexture(0, 0.44, 0.87, 0.35)
+    b:SetScript("OnClick", function() frame.cat = cat; render() end)
+    frame.cats[cat] = b
+  end
+  frame.cats.all:SetPoint("TOPLEFT", 12, -56)
+  frame.cats.world:SetPoint("LEFT", frame.cats.all, "RIGHT", 6, 0)
+  frame.cats.dungeon:SetPoint("LEFT", frame.cats.world, "RIGHT", 6, 0)
   for i = 1, ROWS do rows[i] = makeRow(i) end
 end
 
@@ -722,9 +777,16 @@ function render()
   local tab = frame.tab
   local tips = {}
   local prog = inProgress()
+  local inCat = { all = 0, world = 0, dungeon = 0 }
   if tab == "next" then
     -- What you already carry is under "En curso".
-    for _, t in ipairs(frame.lastTips or {}) do if not off(t.key) and not (t.q and carrying(t.q)) then tips[#tips + 1] = t end end
+    for _, t in ipairs(frame.lastTips or {}) do
+      if not off(t.key) and not (t.q and carrying(t.q)) then
+        local c = t.cat or "world"
+        inCat.all, inCat[c] = inCat.all + 1, inCat[c] + 1
+        if frame.cat == "all" or frame.cat == c then tips[#tips + 1] = t end
+      end
+    end
   elseif tab == "prog" then
     tips = prog
   else
@@ -741,6 +803,12 @@ function render()
   end
   frame.tabs.prog:SetPoint("TOPLEFT", frame.tabs.next, "TOPRIGHT", 6, 0)
   frame.tabs.hidden:SetPoint("TOPLEFT", frame.tabs.prog, "TOPRIGHT", 6, 0)
+  for cat, b in pairs(frame.cats) do
+    b:SetShown(tab == "next")
+    b.text:SetText(string.format(L().cats[cat], inCat[cat]))
+    b:SetWidth(b.text:GetStringWidth() + 10)
+    b.bg:SetShown(cat == frame.cat)
+  end
   frame.title:SetText(frame.lastTitle or "")
   frame.spec.text:SetText(string.format(L().spec, specName()))
   for i = 1, ROWS do
@@ -786,9 +854,26 @@ local function popup(title, tips)
   show(title, new)
 end
 
+local FAR, OFF = 0.35, 0.2
+local function nearby(tips)
+  if cdb.showFar then return tips end
+  local mine, out = myContinent(), {}
+  for _, t in ipairs(tips) do
+    local keep = true
+    if mine and t.where and t.where ~= mine then
+      keep = (t.pct or 0) >= FAR
+      if keep then t.gain = (t.gain or "") .. " · |cffffd100" .. L().worthTrip .. "|r" end
+    elseif t.offRoute then
+      keep = (t.pct or 0) >= OFF
+    end
+    if keep then out[#out + 1] = t end
+  end
+  return out
+end
 local function upcoming()
   local tips = pickupTips(false)
   for _, t in ipairs(pathTips()) do tips[#tips + 1] = t end
+  tips = nearby(tips)
   table.sort(tips, function(a, b) return a.order < b.order end)
   return tips
 end
@@ -1177,6 +1262,7 @@ local function makeOptions()
     if mmButton then mmButton:SetShown(v) end
   end)
   check("tomtom", function() return cdb.tomtom end, function(v) cdb.tomtom = v end)
+  check("showFar", function() return cdb.showFar end, function(v) cdb.showFar = v end)
   -- Lead: how many levels ahead.
   y = y - 8
   panel.leadLabel = text("", "GameFontHighlight")

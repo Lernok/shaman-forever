@@ -41,6 +41,8 @@ function GetInventoryItemID(_, slot) if slot == 16 then return tonumber(os.geten
 function GetInventoryItemLink() return nil end
 function GetItemInfo() return nil end
 function GetItemCount() return 0 end
+-- Bags: four 6-slot bags (BAGS=<slots> to change).
+function GetContainerNumSlots(bag) return tonumber(os.getenv("BAGS") or "6") end
 function GetItemIcon() return 1 end
 local completed = {}
 for q in (os.getenv("DONE") or ""):gmatch("%d+") do completed[tonumber(q)] = true end
