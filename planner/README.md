@@ -83,8 +83,8 @@ completo. Horas hasta 35 bajo el modelo (temprana / normal):
 - `sf-orc-enh`: Orco, RFC 13, RoL 17, WC 20,5, SFK 23,6, Excavation 29,5,
   Dalaran 30; 36,0 h / 35,7 h.
 - `sf-dwarf-enh`: Enano (Alianza: `weapons-enhancement-alliance.json`), Hall of
-  Thanes 15, RoL 17, Deadmines 18, WC 21, SFK 22, Excavation 28, Dalaran 31;
-  35,5 h / 35,2 h.
+  Thanes 13, RoL 18,5, Deadmines 19, SFK 23, Excavation 28, Dalaran 31; 34,0 h.
+  Sin Wailing Caverns: con WC daba 35,5 h (y es un viaje hostil en PvP).
 
 ### Polestar 0.2.4
 

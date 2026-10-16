@@ -1,0 +1,45 @@
+guide sf-dwarf-enh/02-stormwind-city
+title 02 · Stormwind City (6-7)
+faction Alliance
+race Dwarf
+levels 6-7
+zone Stormwind City
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/03-elwynn-forest
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 6.1)
+  accept 84397
+  turnin 84397
+  accept 84398
+  turnin 84398
+  accept 84399
+  turnin 84399
+  accept 84402
+  turnin 84402
+
+step Flight path (level 6.9)
+  getfp "Stormwind"
+
+step Hearthstone (level 6.9)
+  sethome "Stormwind City"
+
+step Pick up quests (level 6.9)
+  accept 332
+
+step Pick up quests (level 6.9)
+  accept 333
+
+step Pick up quests (level 6.9)
+  accept 334
+  turnin 333
+
+step Turn in (level 6.9)
+  turnin 332
+
+step Turn in (level 6.9)
+  turnin 334
+
+step Hearthstone (level 6.9)
+  sethome "Goldshire"

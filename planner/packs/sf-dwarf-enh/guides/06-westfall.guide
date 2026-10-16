@@ -1,0 +1,143 @@
+guide sf-dwarf-enh/06-westfall
+title 06 · Westfall (14-19)
+faction Alliance
+race Dwarf
+levels 14-19
+zone Westfall
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/07-tirisfal-glades
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 14.6)
+  accept 9
+
+step Pick up quests (level 14.6)
+  accept 22
+
+step Objectives: Goretusk Liver Pie (level 14.8)
+  complete 22
+
+step Pick up quests (level 14.8)
+  accept 92909
+  accept 92911
+
+step Objectives: The Killing Fields (level 15.0)
+  complete 9
+  complete 92909
+  complete 92911
+
+step Turn in (level 17.0)
+  turnin 92909
+  turnin 92911
+
+step Turn in (level 17.1)
+  turnin 9
+
+step Turn in (level 17.2)
+  turnin 22
+
+step Pick up quests (level 17.2)
+  accept 151
+
+step Pick up quests (level 17.2)
+  accept 64
+
+step Objectives: Poor Old Blanchy (level 17.2)
+  complete 151
+
+step Objectives: The Forgotten Heirloom (level 17.2)
+  complete 64
+
+step Turn in (level 17.2)
+  turnin 64
+
+step Turn in (level 17.3)
+  turnin 151
+
+step Pick up quests (level 17.3)
+  accept 93928
+
+step Flight path (level 17.3)
+  getfp "Sentinel Hill"
+
+step Hearthstone (level 17.3)
+  sethome "Sentinel Hill"
+
+step Pick up quests (level 17.3)
+  accept 102
+
+step Pick up quests (level 17.3)
+  accept 12
+
+step Pick up quests (level 17.3)
+  accept 153
+
+step Pick up quests (level 17.3)
+  accept 92742 optional map 1436 @52.48,53.05
+  accept 92744 optional map 1436 @52.48,53.05
+  accept 92745 optional map 1436 @52.48,53.05
+  complete 92742 optional
+  turnin 92742 optional map 1436 @52.48,53.05
+
+step Objectives: The People's Militia (level 17.4)
+  complete 12
+
+step Objectives: Red Leather Bandanas (level 17.6)
+  complete 153
+
+step Turn in (level 17.6)
+  turnin 153
+
+step Turn in (level 17.7)
+  turnin 12
+  accept 13
+
+step Objectives: The People's Militia (level 17.8)
+  complete 13
+
+step Pick up quests (level 17.8)
+  accept 92910
+
+step Objectives: The State of the Mines (level 17.9)
+  complete 92745 optional
+
+step Objectives: Murloc Gills (level 18.0)
+  complete 92744 optional
+
+step Objectives: Patrolling Westfall (level 18.0)
+  complete 102
+
+step Objectives: The State of the Mines (level 18.0)
+  complete 92745 optional
+
+step Turn in (level 18.1)
+  turnin 92910
+
+step Turn in (level 18.1)
+  turnin 13
+  accept 14
+
+step Turn in (level 18.2)
+  turnin 102
+
+step Turn in (level 18.2)
+  turnin 92744 optional map 1436 @52.48,53.05
+  turnin 92745 optional map 1436 @52.48,53.05
+  accept 92747 optional map 1436 @52.48,53.05
+
+step Objectives: Moonbrook Espionage (level 18.2)
+  complete 92747 optional
+
+step Objectives: The People's Militia (level 18.3)
+  complete 14
+
+step Objectives: The People's Militia (level 18.4)
+  complete 14
+
+step Turn in (level 18.4)
+  turnin 92747 optional map 1436 @52.48,53.05
+  accept 92748 optional map 1436 @52.48,53.05
+
+step Turn in (level 18.5)
+  turnin 14

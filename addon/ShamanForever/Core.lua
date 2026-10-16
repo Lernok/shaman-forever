@@ -258,6 +258,7 @@ local function giverText(g)
   if not g then return nil end
   if g.item then return type(g.item) == "string" and string.format(L().startsWith, g.item) or L().startsWithAny end
   if g.inside then return string.format(L().givenInside, g.n) end
+  if g.entrance and g.x then return string.format(L().entranceAt, spotZone(g), math.floor(g.x + 0.5), math.floor(g.y + 0.5)) end
   if g.x then return string.format(L().givenAt, g.n, spotZone(g), math.floor(g.x + 0.5), math.floor(g.y + 0.5)) end
   return string.format(L().givenBy, g.n)
 end
@@ -378,7 +379,7 @@ local function routeInfo()
           seenD[dn] = true
           local spot
           for _, goal in ipairs(type(step.goals) == "table" and step.goals or {}) do
-            if ours and goal.t == "goto" and goal.map and goal.x then spot = { map = goal.map, x = goal.x, y = goal.y, n = dn } break end
+            if ours and goal.t == "goto" and goal.map and goal.x then spot = { map = goal.map, x = goal.x, y = goal.y, n = dn, entrance = true } break end
           end
           info.dungeons[#info.dungeons + 1] = { name = dn, level = lv or (D.dlevels[dn] and D.dlevels[dn][1]), guide = g, spot = spot }
         end
@@ -546,7 +547,7 @@ local function nextDungeonTip(info)
   if not nd then return nil end
   local lvl = UnitLevel("player")
   local head = nd.level and string.format(L().nextDungeon, nd.name, nd.level) or string.format(L().nextDungeonNoLevel, nd.name)
-  if nd.level and nd.level > lvl then head = head .. " · " .. string.format(L().levelsToGo, nd.level - lvl) end
+  if nd.level and nd.level > lvl then head = head .. " · " .. (nd.level - lvl == 1 and L().levelToGo or string.format(L().levelsToGo, nd.level - lvl)) end
   local src, lines, ups = L().noQuestsYet, {}, 0
   for _, t in ipairs(dungeonTips(nd.name)) do
     if t.key:sub(1, 1) == "s" then
@@ -558,7 +559,7 @@ local function nextDungeonTip(info)
     end
   end
   local where = type(nd.guide.title) == "string" and string.format(L().inGuide, nd.guide.title) or nil
-  return { key = "n" .. nd.name .. ":" .. lvl, icon = "Interface\\Icons\\INV_Misc_Map_01", head = head, src = src,
+  return { key = "n" .. nd.name, icon = "Interface\\Icons\\INV_Misc_Map_01", head = head, src = src,
     gain = (ups > 0 and string.format(L().upgradesN, ups) or L().noUpgrades) .. (where and (" · " .. where) or ""),
     lines = lines, giver = nd.spot, title = nd.name, order = -1e9, cat = "dungeon", where = D.dcont[nd.name], pinned = true }
 end
@@ -1065,6 +1066,7 @@ local function popup(title, tips)
   -- Never in the middle of a fight: after it.
   if InCombatLockdown() then pending = { title, new } return end
   show(title, new)
+  frame.live = false
 end
 
 local function craftTips()
@@ -1166,27 +1168,33 @@ function SF.open(keep)
   if frame and frame:IsShown() and not keep then frame:Hide(); cdb.shown = false return end
   local title, tips = currentView()
   show(title, tips)
+  frame.live = true
+end
+
+-- Recompute what the window shows (a moment later, once; not in combat),
+-- keeping the tab if it's still the same view.
+local refreshPending
+local function refresh()
+  if refreshPending then return end
+  refreshPending = true
+  C_Timer.After(0.5, function()
+    refreshPending = false
+    if frame and frame:IsShown() and not InCombatLockdown() then
+      local title, tips = currentView()
+      show(title, tips, title == frame.lastTitle)
+      frame.live = true
+    end
+  end)
 end
 
 -- Polestar moved to another step or guide: the window follows (a moment
 -- later, once; not in combat).
-local polestarHooked, followPending
+local polestarHooked
 local function followPolestar()
   local P = polestar()
   if polestarHooked or not P or type(P.On) ~= "function" then return end
   polestarHooked = true
-  local function again()
-    routeCache = nil
-    if followPending then return end
-    followPending = true
-    C_Timer.After(0.5, function()
-      followPending = false
-      if frame and frame:IsShown() and not InCombatLockdown() then
-        local title, tips = currentView()
-        show(title, tips, title == frame.lastTitle)
-      end
-    end)
-  end
+  local function again() routeCache = nil; refresh() end
   pcall(P.On, "STEP_CHANGED", again)
   pcall(P.On, "GUIDE_CHANGED", again)
 end
@@ -1248,7 +1256,7 @@ function ShamanForever_Toggle() SF.open() end
 function ShamanForever_MarkFirst()
   if not frame or not frame.lastTips then SF.open(true) end
   for _, t in ipairs(frame and frame.lastTips or {}) do
-    if not off(t.key) and not (t.q and carrying(t.q)) then
+    if not off(t.key) and not (t.q and carrying(t.q)) and not t.pinned then
       if t.q and SF.markQuest then SF.markQuest(t.q, t.item and Api.itemName(t.item) or t.title)
       elseif t.item and SF.markItem and SF.markItem(t.item) then
       else waypoint(t.giver, t.title or t.head) end
@@ -1289,9 +1297,18 @@ local function onZone()
   end
 end
 
+-- Polestar (0.2.4+) has our Shaman plan and reminds you of talent points.
+local function polestarTalents()
+  local P = polestar()
+  local T = P and P.Talents
+  if type(T) ~= "table" or not (T.Data and T.Get) then return false end
+  local ok, on = pcall(function() return T.Data("SHAMAN") and T.Get("enabled") ~= false and T.Get("reminder") ~= false end)
+  return ok and on and true or false
+end
+
 local function onLevel(lvl)
   log("level")
-  if cdb.talents then
+  if cdb.talents and not polestarTalents() then
     local t = talentLine(lvl)
     if t then say(t) end
   end
@@ -1335,22 +1352,20 @@ ev:SetScript("OnEvent", function(self, event, ...)
     C_Timer.After(1, function() onLevel(tonumber(lvl) or UnitLevel("player")) end)
   elseif event == "QUEST_TURNED_IN" then
     log("quest", tostring((...)))
-    C_Timer.After(0.5, repaint)
+    if frame and frame.live then refresh() else C_Timer.After(0.5, repaint) end
   elseif event == "BAG_UPDATE_DELAYED" then
     bagBest = nil
   elseif event == "SKILL_LINES_CHANGED" then
     C_Timer.After(1, function()
-      if frame and frame:IsShown() and not currentDungeon() and not InCombatLockdown() then
-        show(string.format(L().upcoming, UnitLevel("player")), upcoming(), true)
-      end
+      if frame and frame.live then refresh() end
     end)
   elseif event == "QUEST_REMOVED" then
-    C_Timer.After(0.5, repaint)
+    if frame and frame.live then refresh() else C_Timer.After(0.5, repaint) end
   elseif event == "QUEST_ACCEPTED" then
     -- QUEST_ACCEPTED gives (index, id) on old clients, (id) on new ones.
     local a, b = ...
     log("accept", tostring(b or a))
-    C_Timer.After(0.5, repaint)
+    if frame and frame.live then refresh() else C_Timer.After(0.5, repaint) end
   elseif event == "PLAYER_REGEN_DISABLED" then
     if cdb.hideCombat and frame and frame:IsShown() then frame:Hide(); frame.hiddenByCombat = true end
   elseif event == "PLAYER_REGEN_ENABLED" and frame and frame.hiddenByCombat and not pending then

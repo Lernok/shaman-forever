@@ -1,0 +1,65 @@
+guide sf-dwarf-enh/04-dun-morogh
+title 04 · Dun Morogh (12-13)
+faction Alliance
+race Dwarf
+levels 12-13
+zone Dun Morogh
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/05-ironforge
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 12.3)
+  accept 96392
+  complete 96392
+  turnin 96392
+  accept 96390
+
+step Pick up quests (level 12.4)
+  accept 433
+
+step Objectives: The Public Servant (level 12.5)
+  complete 433
+  complete 96390
+
+step Pick up quests (level 12.5)
+  accept 94465
+
+step Objectives: Nip 'Em in the Bud (level 12.6)
+  complete 96390
+  accept 96391 optional
+
+step Turn in (level 12.7)
+  turnin 433
+
+step Hearthstone (level 12.7)
+  sethome "Thunderbrew Distillery"
+
+step Pick up quests (level 12.7)
+  accept 96408
+
+step Turn in (level 12.7)
+  turnin 96408
+  turnin 96391 optional map 1426 @64.87,58.47
+  turnin 96390
+
+step Hearth (level 12.9)
+  hearth "Thunderbrew Distillery"
+
+step Pick up quests (level 12.9)
+  accept 312
+
+step Objectives: Tundra MacGrann's Stolen Stash (level 12.9)
+  complete 312
+
+step Turn in (level 13.0)
+  turnin 312
+
+step Flight path (level 13.0)
+  getfp "Ironforge"
+
+step Hearthstone (level 13.0)
+  sethome "Ironforge"
+
+step Pick up: Old Ironforge Incursion (Hall of Thanes)
+  accept 96393 optional map 1426 @64.87,58.47

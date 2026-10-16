@@ -1,195 +1,92 @@
 guide sf-dwarf-enh/17-wetlands
-title 17 · Wetlands (27-29)
+title 17 · Wetlands (29-31)
 faction Alliance
 race Dwarf
-levels 27-29
+levels 29-31
 zone Wetlands
 folder Shaman: Forever · Enano Mejora
-next sf-dwarf-enh/18-redridge-mountains
-# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 35.5 h under the model). Era + known Forever quests only.
+next sf-dwarf-enh/18-hillsbrad-foothills
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.0 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 27.1)
-  accept 98197
+step Pick up quests (level 29.5)
+  accept 98216
+  accept 98310
+  accept 98313
 
-step Pick up quests (level 27.1)
-  accept 484 optional map 1437 @8.55,55.74
+step Objectives: Understanding Our Present (level 29.5)
+  complete 98216
 
-step Objectives: Spoils of War (level 27.1)
-  complete 98197
+step Turn in (level 29.6)
+  turnin 98216
 
-step Pick up quests (level 27.1)
-  accept 279
-  accept 98189
+step Pick up quests (level 29.6)
+  accept 98297
+  accept 98300
 
-step Pick up quests (level 27.1)
-  accept 98190
-  turnin 98189
+step Pick up quests (level 29.6)
+  accept 95646 optional map 1437 @56.37,40.4
 
-step Turn in (level 27.1)
-  turnin 98197
+step Pick up quests (level 29.6)
+  accept 98223
 
-step Pick up quests (level 27.1)
-  accept 463 optional map 1437 @10.9,59.64
+step Objectives: Horrors in the Highland (level 29.6)
+  complete 95646 optional
 
-step Pick up quests (level 27.1)
-  accept 98282
+step Turn in (level 29.7)
+  turnin 95646 optional map 1437 @56.37,40.4
 
-step Pick up quests (level 27.1)
-  accept 470
+step Objectives: Gleaning Our Future (level 29.7)
+  complete 98310
 
-step Objectives: Young Crocolisk Skins (level 27.1)
-  complete 484 optional
+step Objectives: Gleaning Our Future (level 29.7)
+  complete 98310
 
-step Pick up quests (level 27.1)
-  accept 305
+step Pick up quests (level 29.7)
+  accept 631
 
-step Turn in (level 27.2)
-  turnin 484 optional map 1437 @8.55,55.74
-  accept 471
+step Pick up quests (level 29.7)
+  accept 87318
 
-step Objectives: Claws from the Deep (level 27.2)
-  complete 279
+step Turn in (level 29.8)
+  turnin 87318
+  accept 88758
 
-step Objectives: Apprentice's Duties (level 27.2)
-  complete 471
+step Turn in (level 29.8)
+  turnin 88758
 
-step Objectives: Digging Through the Ooze (level 27.3)
-  complete 470
+step Pick up quests (level 29.8)
+  accept 87491
 
-step Turn in (level 27.3)
-  turnin 470
+step Turn in (level 29.9)
+  turnin 87491
 
-step Turn in (level 27.4)
-  turnin 279
-  accept 281
+step Objectives: Stopping the Cycle (level 29.9)
+  complete 98297
 
-step Turn in (level 27.4)
-  turnin 471
+step Objectives: Gleaning Our Future (level 29.9)
+  complete 98310
 
-step Turn in (level 27.4)
-  turnin 281
-  accept 284
+step Objectives: Gleaning Our Future (level 29.9)
+  complete 98310
 
-step Turn in (level 27.5)
-  turnin 284
-  accept 285
+step Turn in (level 30.0)
+  turnin 98297
 
-step Turn in (level 27.5)
-  turnin 285
-  accept 286
+step Turn in (level 30.0)
+  turnin 98310
 
-step Turn in (level 27.5)
-  turnin 286
+step Hearthstone (level 30.0)
+  sethome "Deepwater Tavern"
 
-step Pick up quests (level 27.5)
-  accept 294
+step Pick up quests (level 30.0)
+  accept 1302
 
-step Turn in (level 27.5)
-  turnin 305
-  accept 306
+step Turn in (level 30.1)
+  turnin 98223
 
-step Turn in (level 27.6)
-  turnin 306
+step Flight path (level 30.1)
+  getfp "Southshore"
 
-step Objectives: Ormer's Revenge (level 27.6)
-  complete 294
-
-step Objectives: Ormer's Revenge (level 27.6)
-  complete 294
-
-step Turn in (level 27.7)
-  turnin 294
-  accept 295
-
-step Objectives: Ormer's Revenge (level 27.7)
-  complete 295
-
-step Objectives: Ormer's Revenge (level 27.8)
-  complete 295
-
-step Turn in (level 27.8)
-  turnin 295
-
-step Objectives: Alchemical Hazards (level 27.8)
-  complete 98282
-
-step Pick up quests (level 27.8)
-  accept 94497
-  accept 94499
-  accept 94500
-  accept 94501
-  complete 94497
-  turnin 94497
-  complete 94499
-  turnin 94499
-  complete 94500
-  turnin 94500
-
-step Pick up quests (level 27.9)
-  accept 469
-
-step Pick up quests (level 27.9)
-  accept 276 optional map 1437 @56.37,40.4
-  turnin 463 optional map 1437 @56.37,40.4
-
-step Objectives: Tramping Paws (level 28.0)
-  complete 276 optional
-
-step Objectives: Tramping Paws (level 28.0)
-  complete 276 optional
-
-step Turn in (level 28.0)
-  turnin 276 optional map 1437 @56.37,40.4
-  accept 277 optional map 1437 @56.37,40.4
-
-step Objectives: Fire Taboo (level 28.0)
-  complete 277 optional
-
-step Turn in (level 28.1)
-  turnin 277 optional map 1437 @56.37,40.4
-  accept 275 optional map 1437 @56.37,40.4
-
-step Objectives: Blisters on the Land (level 28.1)
-  complete 275 optional
-
-step Turn in (level 28.2)
-  turnin 275 optional map 1437 @56.37,40.4
-
-step Hearth (level 28.2)
-  hearth "Deepwater Tavern"
-
-step Turn in (level 28.2)
-  turnin 98282
-
-step Turn in (level 28.2)
-  turnin 469
-
-step Pick up: Heartwoven (Excavation Site: Wetlands)
-  accept 95809 optional map 1437 @47.7,56.2 live
-
-step Pick up: Highland Hides (Excavation Site: Wetlands)
-  accept 98815 optional map 1437 @8.55,55.74
-
-step Dungeon: Excavation Site: Wetlands (level 28)
-  zone map 1437
-  goto 47.7,56.2 "Excavation Site: Wetlands" r 30 live
-  tip Find a group and clear Excavation Site: Wetlands, with its quests from this route in your log.
-
-step Turn in (level 28.6)
-  turnin 95772 optional map 1437 @47.7,56.2 live
-
-step Hearth (level 28.6)
-  hearth "Deepwater Tavern"
-
-step Turn in (level 28.7)
-  turnin 95809 optional map 1437 @11.88,58.82
-
-step Turn in (level 28.8)
-  turnin 98815 optional map 1437 @8.55,55.74
-
-step Hearthstone (level 28.8)
-  sethome "Lakeshire"
-
-step Pick up: Fallen in the Fen (Excavation Site: Wetlands)
-  accept 95795 optional map 1437 @47.7,56.2 live
+step Hearthstone (level 30.1)
+  sethome "Southshore"

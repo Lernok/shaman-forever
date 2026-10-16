@@ -1,0 +1,17 @@
+guide sf-dwarf-enh/23-silverpine-forest
+title 23 · Silverpine Forest (31-32)
+faction Alliance
+race Dwarf
+levels 31-32
+zone Silverpine Forest
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/24-stormwind-city
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 31.7)
+  turnin 92457 optional map 1421 @68.6,45.18
+  turnin 92458 optional map 1421 @68.6,45.18
+
+step Hearth (level 31.9)
+  hearth "Stormwind City"

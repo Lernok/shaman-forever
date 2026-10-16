@@ -1,0 +1,303 @@
+guide sf-dwarf-enh/03-elwynn-forest
+title 03 · Elwynn Forest (6-13)
+faction Alliance
+race Dwarf
+levels 6-13
+zone Elwynn Forest
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/04-dun-morogh
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 6.9)
+  accept 95998
+
+step Objectives: The Great Outdoors (level 6.9)
+  complete 95998
+
+step Turn in (level 7.1)
+  turnin 95998
+  accept 96626
+
+step Objectives: Camping 101: Cooking (level 7.1)
+  complete 96626
+  turnin 96626
+
+step Pick up quests (level 7.2)
+  accept 60
+
+step Pick up quests (level 7.2)
+  accept 40
+  accept 47
+
+step Pick up quests (level 7.2)
+  accept 62
+  turnin 40
+  accept 35
+
+step Pick up quests (level 7.2)
+  accept 99127
+
+step Pick up quests (level 7.2)
+  accept 99143
+
+step Objectives: A Net Disaster (level 7.2)
+  complete 99127
+
+step Turn in (level 7.4)
+  turnin 99127
+  accept 99128
+
+step Objectives: Slimy Menace (level 7.4)
+  complete 99128
+
+step Objectives: Slimy Menace (level 7.4)
+  complete 99128
+
+step Objectives: Bottles and Baubles (level 7.4)
+  complete 99143
+
+step Pick up quests (level 7.4)
+  accept 91725
+
+step Pick up quests (level 7.4)
+  accept 91723
+
+step Objectives: Delicate Instruments (level 7.6)
+  complete 91723
+
+step Turn in (level 7.7)
+  turnin 91723
+  accept 91724
+
+step Turn in (level 7.8)
+  turnin 35
+  accept 37
+  accept 52
+
+step Pick up quests (level 7.8)
+  accept 91733
+
+step Objectives: Protect the Frontier (level 7.9)
+  complete 52
+
+step Pick up quests (level 7.9)
+  accept 83
+
+step Pick up quests (level 7.9)
+  accept 5545
+
+step Hearth (level 7.9)
+  hearth "Goldshire"
+
+step Objectives: The Fargodeep Mine (level 7.9)
+  complete 62
+
+step Objectives: Kobold Candles (level 8.1)
+  complete 60
+  complete 47
+
+step Pick up quests (level 9.0)
+  accept 184
+
+step Pick up quests (level 9.0)
+  accept 106
+
+step Pick up quests (level 9.0)
+  accept 88
+
+step Pick up quests (level 9.0)
+  accept 85
+
+step Turn in (level 9.0)
+  turnin 106
+  accept 111
+
+step Pick up quests (level 9.1)
+  accept 123
+
+step Turn in (level 9.1)
+  turnin 111
+  accept 107
+
+step Turn in (level 9.1)
+  turnin 85
+  accept 86
+
+step Objectives: Pie for Billy (level 9.2)
+  complete 86
+
+step Turn in (level 9.2)
+  turnin 86
+  accept 84
+
+step Turn in (level 9.2)
+  turnin 84
+  accept 87
+
+step Objectives: Goldtooth (level 9.3)
+  complete 87
+
+step Turn in (level 9.4)
+  turnin 47
+
+step Turn in (level 9.4)
+  turnin 62
+  turnin 123
+  accept 76
+  accept 147
+
+step Turn in (level 9.5)
+  turnin 60
+  turnin 107
+  accept 61
+  accept 112
+
+step Turn in (level 9.6)
+  turnin 99128
+  accept 99129
+
+step Turn in (level 9.7)
+  turnin 99143
+
+step Objectives: Collecting Kelp (level 9.9)
+  complete 112
+
+step Turn in (level 9.9)
+  turnin 112
+  accept 114
+
+step Turn in (level 9.9)
+  turnin 99129
+  accept 99130
+
+step Objectives: An Enticing Offer (level 9.9)
+  complete 99130
+
+step Turn in (level 10.1)
+  turnin 87
+
+step Objectives: An Enticing Offer (level 10.1)
+  complete 99130
+
+step Turn in (level 10.2)
+  turnin 114
+
+step Turn in (level 10.2)
+  turnin 99130
+  accept 99131
+
+step Turn in (level 10.3)
+  turnin 99131
+
+step Objectives: The Jasperlode Mine (level 10.3)
+  complete 76
+
+step Objectives: Stolen Enchanting Supplies (level 10.3)
+  complete 91725
+
+step Objectives: Delicate Instruments (level 10.4)
+  complete 91724
+
+step Turn in (level 10.4)
+  turnin 37
+  accept 45
+
+step Objectives: A Bundle of Trouble (level 10.4)
+  complete 5545
+
+step Turn in (level 10.5)
+  turnin 5545
+
+step Pick up quests (level 10.5)
+  accept 91732
+
+step Turn in (level 10.6)
+  turnin 45
+  accept 71
+
+step Turn in (level 10.6)
+  turnin 71
+  accept 39
+
+step Objectives: Downstream (level 10.6)
+  complete 91733
+
+step Objectives: Red Linen Goods (level 10.7)
+  complete 83
+
+step Objectives: Princess Must Die! (level 10.7)
+  complete 88
+
+step Objectives: Manhunt (level 10.7)
+  complete 147
+
+step Objectives: Downstream (level 10.7)
+  complete 91733
+
+step Objectives: Downstream (level 10.7)
+  complete 91733
+
+step Objectives: Protect the Frontier (level 10.8)
+  complete 52
+
+step Turn in (level 10.9)
+  turnin 83
+
+step Turn in (level 11.0)
+  turnin 91733
+
+step Turn in (level 11.1)
+  turnin 52
+
+step Turn in (level 11.2)
+  turnin 91724
+
+step Turn in (level 11.3)
+  turnin 91725
+
+step Objectives: Good Steel (level 11.3)
+  complete 91732
+
+step Hearth (level 11.3)
+  hearth "Goldshire"
+
+step Turn in (level 11.4)
+  turnin 39
+  turnin 76
+  turnin 147
+  accept 59
+  accept 239
+
+step Turn in (level 11.7)
+  turnin 88
+
+step Turn in (level 11.7)
+  turnin 239
+  accept 11
+
+step Pick up quests (level 11.7)
+  accept 91738
+  complete 91738
+  turnin 91738
+
+step Objectives: Riverpaw Gnoll Bounty (level 12.0)
+  complete 11
+
+step Turn in (level 12.1)
+  turnin 11
+
+step Pick up quests (level 12.1)
+  accept 46
+
+step Turn in (level 12.1)
+  turnin 59
+
+step Turn in (level 12.1)
+  turnin 91732
+
+step Objectives: Bounty on Murlocs (level 12.3)
+  complete 46
+
+step Turn in (level 12.3)
+  turnin 46

@@ -1,0 +1,38 @@
+guide sf-dwarf-enh/05-ironforge
+title 05 · Ironforge (13-15)
+faction Alliance
+race Dwarf
+levels 13-15
+zone Ironforge
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/06-westfall
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 13.0)
+  accept 96403 optional map 1455 @32.32,44.79
+
+step Pick up quests (level 13.0)
+  accept 96394 optional map 1455 @33.09,47.82
+
+step Pick up quests (level 13.0)
+  accept 98423 optional
+  accept 96395 optional map 1455 @43.5,52 live
+
+step Dungeon: Hall of Thanes (level 13)
+  zone map 1455
+  goto 43.5,52 "Hall of Thanes" r 30 live
+  tip Find a group and clear Hall of Thanes, with its quests from this route in your log.
+
+step Turn in (level 13.7)
+  turnin 96395 optional map 1455 @43.5,52 live
+
+step Turn in (level 14.0)
+  turnin 96393 optional map 1455 @39.09,56.2
+  turnin 98423 optional map 1455 @39.09,56.2
+
+step Turn in (level 14.4)
+  turnin 96394 optional map 1455 @33.09,47.82
+
+step Turn in (level 14.6)
+  turnin 96403 optional map 1455 @32.32,44.79

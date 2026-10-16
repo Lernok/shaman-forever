@@ -1,0 +1,15 @@
+guide sf-dwarf-enh/08-westfall
+title 08 · Westfall (19-20)
+faction Alliance
+race Dwarf
+levels 19-20
+zone Westfall
+folder Shaman: Forever · Enano Mejora
+next sf-dwarf-enh/09-stormwind-city
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.0 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Dungeon: The Deadmines (level 19)
+  zone map 1436
+  goto 42.5,71.7 "The Deadmines" r 30 live
+  tip Find a group and clear The Deadmines, with its quests from this route in your log.
