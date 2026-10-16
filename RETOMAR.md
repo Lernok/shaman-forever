@@ -51,6 +51,12 @@ Hechizos › Macros (`js/macros.js`). Pedido del usuario: juntar en un botón lo
 
 Parche del 15-oct (notas de Blizzard): Elemental muy mejorado (Lava Burst a 21 puntos con rango 4, vuelve Elemental Mastery a 31, CL −35% maná), raciales rehechos, totems de raid. talentsforever todavía no lo tenía; el sync lo va a traer. Revisar a mano la Guía de Elemental y las recomendaciones de raza cuando llegue.
 
+## Addon y datos por raza (2026-10-16)
+
+- `data/quest-races.json` (de `node scripts/quest-races.js`, local: necesita el QuestieDB instalado en el juego): misiones solo para algunas razas (Call of Fire de Skyborne, 97257). `build-data.js` lo suma a las fuentes y `js/gear-plan.js` las descarta para otras razas. Correrlo de nuevo cuando cambien las fuentes de quest.
+- Addon: datos de misiones de las zonas nuevas desde el QuestieDB instalado (`scripts/lib/questiedb-baked.js`, CBOR en el .toc). Cadenas con varios comienzos (`qalt`), paso actual leído desde el final; marca en el mapa + abre el mapa (TomTom solo con `/sf flecha`); pestañas Avisos/Listos/Descartados; botón del minimapa; Esc no cierra; todo por personaje salvo el idioma.
+- Pedido siguiente del usuario: profesiones en el addon (detectarlas en el juego y avisar mejoras crafteables según su tramo 1-75, 75-150…, como "Tu plan" de la web).
+
 ## Pendiente
 
 - **Del 29-oct al 2-nov**: post principal en Reddit (actualización del 8 al 12-nov con datos 30–60). El usuario tiene que confirmar qué subreddits existen y sus reglas (Reddit bloquea las herramientas). Ya hay textos escritos para Twitter y Discord en español e inglés.
