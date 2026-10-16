@@ -41,6 +41,10 @@ Leer esta primera parte antes de seguir. Debajo está la historia del proyecto (
 - Idea pendiente: un "¿No sabés qué spec?" en el formulario (wowforeverbuilds tiene un quiz de clase); un "¿Cómo uso el sitio?" de 3 pasos solo si los números muestran que hace falta.
 - El sync del 14-oct se cortó a la hora: el build nuevo (70374) pidió ~6000 tooltips que la caché de GitHub no tenía, y como se cortó, no guardó nada. Ahora guarda la caché aunque falle y tiene hasta 2,5 h.
 
+## Investigación del 2026-10-15 (sitio + addon)
+
+Informe: https://claude.ai/artifact/CG758aFmjsGGA3zDXSTodn. Resumen: nuestra diferencia es el plan personal (nadie más lo tiene); en Forever no andan WeakAuras ni Pawn (el tooltip del addon cubre ese hueco); el addon 0.2.1 sacó `C_SuperTrack.SetSuperTrackedUserWaypoint` (protegido en Forever). Orden propuesto: 1) probar el addon antes del 21/22-oct, 2) página "Addons y macros para Shaman" (Cooldown Manager, totems, imbuiciones; macros probadas por el usuario), 3) plan del día del lanzamiento (carpeta y versión del juego pueden cambiar), 4) dungeons en el sitio reusando los datos del addon, 5) addon en CurseForge (categoría Forever, empaquetador de BigWigs) después del 4-nov, 6) preparación para las raids del 9-dic (Barrow Deeps, Hyjal Summit, Onyxia).
+
 ## Pendiente
 
 - **Del 29-oct al 2-nov**: post principal en Reddit (actualización del 8 al 12-nov con datos 30–60). El usuario tiene que confirmar qué subreddits existen y sus reglas (Reddit bloquea las herramientas). Ya hay textos escritos para Twitter y Discord en español e inglés.
