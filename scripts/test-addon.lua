@@ -89,6 +89,10 @@ if os.getenv("MARK") then
   print("-- shift+clic en el item " .. os.getenv("MARK") .. ":")
   HandleModifiedItemClick("|cff1eff00|Hitem:" .. os.getenv("MARK") .. "::::::::20:::::|h[x]|h|r")
 end
+-- Hovering a quest giver (NPC=<id>): the gear its quests give you.
+if os.getenv("NPC") then
+  for _, q in ipairs(SF.test.npcLines(tonumber(os.getenv("NPC")))) do print("NPC", q[1]); for _, l in ipairs(q[2]) do print("     ", l) end end
+end
 -- Quests you carry (ONQUEST): the "En curso" tab.
 for _, t in ipairs(SF.test.inProgress()) do print("EN CURSO", t.head, "|", t.src) end
 -- "Listo" on the first tip: it leaves the tips and shows under Listos.

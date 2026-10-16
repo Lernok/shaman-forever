@@ -95,6 +95,13 @@ local function myPath()
   return (D.paths[race] or D.paths.Orc)[cdb.spec] or {}
 end
 local function myFaction() return (UnitFactionGroup("player") or ""):lower() end
+-- Your race as the data's letter (Orc, Troll, taUren, Dwarf, Skyborne).
+local function raceLetter()
+  local _, token = UnitRace("player")
+  local low = (token or ""):lower()
+  if low:find("sky") or low:find("wind") then return "S" end
+  return ({ orc = "O", troll = "T", tauren = "U", dwarf = "D" })[low] or "O"
+end
 
 -- Equipment slots of each slot of the path.
 local INV = {
@@ -374,6 +381,7 @@ local ROWS, ROW_H, W, TOP = 10, 44, 420, 58
 -- You carry the quest of a tip, or a step of its chain (set further down).
 local carrying = function() return false end
 
+local rewardLines
 -- Beside the window, on the side with room (people keep it in a corner), so
 -- the item and its comparison never cover it.
 local function rowTooltip(r)
@@ -386,6 +394,13 @@ local function rowTooltip(r)
   else GameTooltip:SetPoint("TOPRIGHT", frame, "TOPLEFT", -6, dy) end
   if tip.item then GameTooltip:SetItemByID(tip.item) else GameTooltip:SetText(tip.head, 1, 0.82, 0) end
   if tip.q and carrying(tip.q) then GameTooltip:AddLine(L().haveQuestTip, 0.4, 0.8, 1) end
+  if tip.q and not tip.item and rewardLines then
+    local lines = rewardLines(tip.q)
+    if #lines > 0 then
+      GameTooltip:AddLine(L().rewards, 1, 0.82, 0)
+      for _, line in ipairs(lines) do GameTooltip:AddLine("  " .. line, 1, 1, 1) end
+    end
+  end
   for _, line in ipairs(tip.lines or {}) do GameTooltip:AddLine(line, 1, 1, 1) end
   local gt = giverText(tip.giver)
   if gt then
@@ -429,15 +444,50 @@ local function inProgress()
   return tips
 end
 
+-- The gear a quest rewards, as lines: "item: +12% over yours" (your race,
+-- faction and spec; nothing for pieces nobody in your spec wears).
+function rewardLines(qid)
+  local out = {}
+  local f, me = myFaction():sub(1, 1), raceLetter()
+  for _, id in ipairs(D.qr and D.qr[qid] or {}) do
+    local ok = false
+    for _, e in ipairs(D.iq[id] or {}) do
+      if e[1] == qid and (not e[2] or e[2] == f) and (not e[3] or e[3]:find(me, 1, true)) then ok = true end
+    end
+    if ok and value(id) > 0 then
+      local g = gain(id)
+      out[#out + 1] = Api.itemName(id) .. ": " .. (g and gainText(g) or (owned(id) and L().haveIt or L().noUpgrade))
+    end
+  end
+  return out
+end
+-- Hovering an NPC: its quests that reward gear, and what it'd be for you.
+local function npcLines(npcId)
+  local out = {}
+  for _, qid in ipairs(D.npcq and D.npcq[npcId] or {}) do
+    if not Api.questDone(qid) then
+      local lines = rewardLines(qid)
+      if #lines > 0 then
+        out[#out + 1] = { Api.questName(qid) .. (Api.onQuest(qid) and (" · " .. L().haveQuestShort) or ""), lines }
+      end
+    end
+  end
+  return out
+end
+
 local render, archive
 function archive(tip, kind)
   cdb[kind][tip.key] = { item = tip.item, icon = tip.icon, head = tip.head, src = tip.src, when = time() }
 end
-local function archived(kind)
+-- Hidden tips, newest first: marked done or dismissed (kind says which).
+local function archived()
   local list = {}
-  for key, v in pairs(cdb[kind]) do
-    if type(v) == "table" then
-      list[#list + 1] = { key = key, item = v.item, icon = v.icon, head = v.head or key, src = v.src or "", when = v.when or 0 }
+  for _, kind in ipairs({ "done", "gone" }) do
+    for key, v in pairs(cdb[kind]) do
+      if type(v) == "table" then
+        list[#list + 1] = { key = key, item = v.item, icon = v.icon, head = v.head or key, when = v.when or 0, kind = kind,
+          src = (kind == "done" and L().hiddenDone or L().hiddenGone) .. " · " .. (v.src or "") }
+      end
     end
   end
   table.sort(list, function(a, b) return a.when > b.when end)
@@ -474,12 +524,11 @@ local function makeRow(i)
   r.checkLabel:SetPoint("LEFT", r.check, "RIGHT", 0, 0)
   r.check:SetScript("OnClick", function(self)
     GameTooltip:Hide()
-    if self:GetChecked() then archive(r.tip, "done") else cdb.done[r.tip.key] = nil end
+    if self:GetChecked() then archive(r.tip, "done") end
     render()
   end)
   r.check:SetScript("OnEnter", function(self)
-    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-    GameTooltip:SetText(frame.tab == "done" and L().restoreTip or L().doneTip, 1, 1, 1, 1, true); GameTooltip:Show()
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT"); GameTooltip:SetText(L().doneTip, 1, 1, 1, 1, true); GameTooltip:Show()
   end)
   r.check:SetScript("OnLeave", function() GameTooltip:Hide() end)
   r.dismiss = CreateFrame("Button", nil, r, "UIPanelCloseButton")
@@ -487,12 +536,12 @@ local function makeRow(i)
   r.dismiss:SetPoint("RIGHT", 2, 0)
   r.dismiss:SetScript("OnClick", function()
     GameTooltip:Hide()
-    if frame.tab == "gone" then cdb.gone[r.tip.key] = nil else archive(r.tip, "gone") end
+    if frame.tab == "hidden" then cdb.done[r.tip.key] = nil; cdb.gone[r.tip.key] = nil else archive(r.tip, "gone") end
     render()
   end)
   r.dismiss:SetScript("OnEnter", function(self)
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-    GameTooltip:SetText(frame.tab == "gone" and L().restoreTip or L().dismissTip, 1, 1, 1, 1, true); GameTooltip:Show()
+    GameTooltip:SetText(frame.tab == "hidden" and L().restoreTip or L().dismissTip, 1, 1, 1, 1, true); GameTooltip:Show()
   end)
   r.dismiss:SetScript("OnLeave", function() GameTooltip:Hide() end)
   r:SetScript("OnEnter", rowTooltip)
@@ -562,7 +611,7 @@ local function makeFrame()
   frame.tab = "next"
   frame.tabs = {}
   local x = 10
-  for _, kind in ipairs({ "next", "prog", "done", "gone" }) do
+  for _, kind in ipairs({ "next", "prog", "hidden" }) do
     local b = CreateFrame("Button", nil, frame)
     b:SetHeight(20)
     b:SetPoint("TOPLEFT", x, -32)
@@ -600,10 +649,10 @@ function render()
   elseif tab == "prog" then
     tips = prog
   else
-    tips = archived(tab)
+    tips = archived()
   end
-  local counts = { prog = #prog, done = #archived("done"), gone = #archived("gone") }
-  local labels = { prog = L().tabProg, done = L().tabDone, gone = L().tabGone }
+  local counts = { prog = #prog, hidden = #archived() }
+  local labels = { prog = L().tabProg, hidden = L().tabHidden }
   for kind, b in pairs(frame.tabs) do
     local label = kind == "next" and L().tabNext or string.format(labels[kind], counts[kind])
     b.text:SetText(label)
@@ -612,8 +661,7 @@ function render()
     b.text:SetTextColor(kind == tab and 1 or 0.6, kind == tab and 0.82 or 0.6, kind == tab and 0 or 0.6)
   end
   frame.tabs.prog:SetPoint("TOPLEFT", frame.tabs.next, "TOPRIGHT", 6, 0)
-  frame.tabs.done:SetPoint("TOPLEFT", frame.tabs.prog, "TOPRIGHT", 6, 0)
-  frame.tabs.gone:SetPoint("TOPLEFT", frame.tabs.done, "TOPRIGHT", 6, 0)
+  frame.tabs.hidden:SetPoint("TOPLEFT", frame.tabs.prog, "TOPRIGHT", 6, 0)
   frame.title:SetText(frame.lastTitle or "")
   frame.spec.text:SetText(string.format(L().spec, specName()))
   for i = 1, ROWS do
@@ -626,10 +674,9 @@ function render()
       local have = tip.q and carrying(tip.q)
       r.have:SetShown(have and true or false)
       r.gain:SetText(have and (L().haveQuest .. (tip.gain and (" · " .. tip.gain) or "")) or tip.gain or "")
-      r.check:SetChecked(tab == "done")
-      r.check:SetShown(tab ~= "gone")
-      r.checkLabel:SetText(tab ~= "gone" and L().done or "")
-      r.dismiss:SetShown(tab ~= "done")
+      r.check:SetChecked(false)
+      r.check:SetShown(tab ~= "hidden")
+      r.checkLabel:SetText(tab ~= "hidden" and L().done or "")
       r:SetAlpha((tab == "next" or tab == "prog") and 1 or 0.75)
       r:Show()
     else
@@ -637,7 +684,7 @@ function render()
     end
   end
   local n = math.min(#tips, ROWS)
-  frame.empty:SetText(#tips == 0 and (tab == "next" and L().nothing or tab == "prog" and L().nothingProg or tab == "done" and L().nothingDone or L().nothingGone) or "")
+  frame.empty:SetText(#tips == 0 and (tab == "next" and L().nothing or tab == "prog" and L().nothingProg or L().nothingHidden) or "")
   frame.more:ClearAllPoints()
   frame.more:SetPoint("TOPLEFT", 10, -TOP - 4 - n * ROW_H)
   frame.more:SetText(#tips > ROWS and string.format(L().more, #tips - ROWS) or "")
@@ -705,7 +752,7 @@ local function makeMinimapButton()
   border:SetSize(53, 53)
   border:SetTexture("Interface\\Minimap\\MiniMap-TrackingBorder")
   border:SetPoint("TOPLEFT")
-  b:SetScript("OnClick", function() SF.open() end)
+  b:SetScript("OnClick", function(_, button) if button == "RightButton" then SF.options() else SF.open() end end)
   b:SetScript("OnDragStart", function(self)
     self:SetScript("OnUpdate", function()
       local mx, my = Minimap:GetCenter()
@@ -777,6 +824,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
     for k, v in pairs(DEFAULTS) do if cdb[k] == nil then cdb[k] = v end end
     cdb.seen, cdb.done, cdb.gone, cdb.log = cdb.seen or {}, cdb.done or {}, cdb.gone or {}, cdb.log or {}
     self:UnregisterEvent("ADDON_LOADED")
+    pcall(makeOptions)
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
     self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
     self:RegisterEvent("PLAYER_LEVEL_UP")
@@ -830,13 +878,6 @@ end
 -- Shift+click on an item: a mark on the map where to pick up the quest that
 -- rewards it, at the step of its chain you're at (or where to turn it in, if
 -- you already carry that step).
--- Your race as the data's letter (Orc, Troll, taUren, Dwarf, Skyborne).
-local function raceLetter()
-  local _, token = UnitRace("player")
-  local low = (token or ""):lower()
-  if low:find("sky") or low:find("wind") then return "S" end
-  return ({ orc = "O", troll = "T", tauren = "U", dwarf = "D" })[low] or "O"
-end
 -- Which quest that rewards an item is yours: one whose chain you started,
 -- else one outside another race's starting zone, else any (all not done);
 -- (quest, true) when you already did one.
@@ -939,6 +980,33 @@ else
   end)
 end
 
+-- Quest givers: the gear their quests reward, for you.
+local function onUnitTooltip(tt, guid)
+  if not cdb or cdb.npcTips == false or type(guid) ~= "string" then return end
+  local kind, _, _, _, _, id = strsplit("-", guid)
+  if kind ~= "Creature" then return end
+  local list = npcLines(tonumber(id))
+  if #list == 0 then return end
+  tt:AddLine(" ")
+  tt:AddLine("Shaman: Forever", 0, 0.44, 0.87)
+  for i, q in ipairs(list) do
+    if i > 3 then break end
+    tt:AddLine(q[1], 1, 0.82, 0)
+    for _, line in ipairs(q[2]) do tt:AddLine("  " .. line, 1, 1, 1) end
+  end
+  tt:Show()
+end
+if TooltipDataProcessor and TooltipDataProcessor.AddTooltipPostCall and Enum and Enum.TooltipDataType and Enum.TooltipDataType.Unit then
+  TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, function(tt, data)
+    if tt == GameTooltip then pcall(onUnitTooltip, tt, readable(data and data.guid)) end
+  end)
+elseif GameTooltip.HookScript then
+  GameTooltip:HookScript("OnTooltipSetUnit", function(tt)
+    local _, unit = tt:GetUnit()
+    pcall(onUnitTooltip, tt, unit and readable(UnitGUID(unit)))
+  end)
+end
+
 -- The log, in a box to copy from.
 local function showLog()
   if not logFrame then
@@ -976,6 +1044,122 @@ local function showLog()
   logFrame.box:HighlightText()
 end
 
+-- Options -------------------------------------------------------------------------
+local panel
+local function makeOptions()
+  if panel then return end
+  panel = CreateFrame("Frame", "ShamanForeverOptions")
+  panel.name = "Shaman: Forever"
+  local y = -16
+  local function text(str, font, x)
+    local fs = panel:CreateFontString(nil, "ARTWORK", font or "GameFontHighlight")
+    fs:SetPoint("TOPLEFT", x or 16, y)
+    fs:SetJustifyH("LEFT")
+    fs:SetText(str)
+    return fs
+  end
+  local title = text("Shaman: Forever " .. Api.version(), "GameFontNormalLarge")
+  y = y - 26
+  local sub = text("", "GameFontHighlightSmall")
+  sub:SetWidth(560)
+  y = y - 34
+  panel.widgets = {}
+  -- Spec: three buttons.
+  panel.specLabel = text("", "GameFontNormal")
+  y = y - 22
+  local x = 16
+  panel.specButtons = {}
+  for _, spec in ipairs(D.specs) do
+    local b = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
+    b:SetSize(130, 22)
+    b:SetPoint("TOPLEFT", x, y)
+    b:SetScript("OnClick", function() cdb.spec = spec; panel.refresh(); if frame and frame:IsShown() then SF.open(true) end end)
+    panel.specButtons[spec] = b
+    x = x + 136
+  end
+  y = y - 36
+  -- Checkboxes: { label key, get, set }.
+  local function check(key, get, set)
+    local c = CreateFrame("CheckButton", nil, panel, "UICheckButtonTemplate")
+    c:SetSize(26, 26)
+    c:SetPoint("TOPLEFT", 12, y)
+    c.label = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+    c.label:SetPoint("LEFT", c, "RIGHT", 4, 0)
+    c:SetScript("OnClick", function(self) set(self:GetChecked() and true or false); panel.refresh() end)
+    c.refresh = function() c:SetChecked(get() and true or false); c.label:SetText(L().opt[key]) end
+    panel.widgets[#panel.widgets + 1] = c
+    y = y - 30
+  end
+  check("popup", function() return not cdb.quiet end, function(v) cdb.quiet = not v end)
+  check("talents", function() return cdb.talents end, function(v) cdb.talents = v end)
+  check("npcTips", function() return cdb.npcTips ~= false end, function(v) cdb.npcTips = v end)
+  check("minimap", function() return not cdb.mmHide end, function(v)
+    cdb.mmHide = not v
+    if mmButton then mmButton:SetShown(v) end
+  end)
+  check("tomtom", function() return cdb.tomtom end, function(v) cdb.tomtom = v end)
+  -- Lead: how many levels ahead.
+  y = y - 8
+  panel.leadLabel = text("", "GameFontHighlight")
+  local minus = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
+  minus:SetSize(26, 22); minus:SetPoint("TOPLEFT", 330, y + 4); minus:SetText("-")
+  minus:SetScript("OnClick", function() cdb.lead = math.max(0, cdb.lead - 1); panel.refresh() end)
+  local plus = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
+  plus:SetSize(26, 22); plus:SetPoint("LEFT", minus, "RIGHT", 4, 0); plus:SetText("+")
+  plus:SetScript("OnClick", function() cdb.lead = math.min(5, cdb.lead + 1); panel.refresh() end)
+  y = y - 34
+  -- Language.
+  panel.langLabel = text("", "GameFontHighlight")
+  x = 330
+  for _, lang in ipairs({ "es", "en" }) do
+    local b = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
+    b:SetSize(70, 22); b:SetPoint("TOPLEFT", x, y + 4); b:SetText(lang == "es" and "Español" or "English")
+    b:SetScript("OnClick", function() db.lang = lang; zoneNames = nil; panel.refresh(); if frame and frame:IsShown() then SF.open(true) end end)
+    x = x + 76
+  end
+  y = y - 44
+  -- Actions.
+  local function action(labelKey, fn, ax)
+    local b = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
+    b:SetSize(170, 24); b:SetPoint("TOPLEFT", ax, y)
+    b:SetScript("OnClick", fn)
+    b.refresh = function() b:SetText(L().opt[labelKey]) end
+    panel.widgets[#panel.widgets + 1] = b
+  end
+  action("open", function() SF.open(true) end, 16)
+  action("log", function() showLog() end, 192)
+  action("reset", function() wipe(cdb.seen); wipe(cdb.done); wipe(cdb.gone); say(L().reset); if frame and frame:IsShown() then render() end end, 368)
+  panel.refresh = function()
+    title:SetText("Shaman: Forever " .. Api.version())
+    sub:SetText(L().opt.intro)
+    panel.specLabel:SetText(L().opt.spec)
+    for spec, b in pairs(panel.specButtons) do
+      b:SetText((spec == cdb.spec and "> " or "") .. (L().specs[spec] or spec) .. (spec == cdb.spec and " <" or ""))
+    end
+    for _, w in ipairs(panel.widgets) do w.refresh() end
+    panel.leadLabel:SetText(string.format(L().opt.lead, cdb.lead))
+    panel.langLabel:SetText(L().opt.lang)
+  end
+  panel:SetScript("OnShow", panel.refresh)
+  if Settings and Settings.RegisterCanvasLayoutCategory then
+    local cat = Settings.RegisterCanvasLayoutCategory(panel, panel.name)
+    Settings.RegisterAddOnCategory(cat)
+    panel.category = cat
+  elseif InterfaceOptions_AddCategory then
+    InterfaceOptions_AddCategory(panel)
+  end
+end
+function SF.options()
+  makeOptions()
+  if InCombatLockdown() then return end
+  if Settings and Settings.OpenToCategory and panel.category then
+    Settings.OpenToCategory(panel.category:GetID())
+  elseif InterfaceOptionsFrame_OpenToCategory then
+    InterfaceOptionsFrame_OpenToCategory(panel)
+    InterfaceOptionsFrame_OpenToCategory(panel)
+  end
+end
+
 -- Slash commands -----------------------------------------------------------------
 local SPEC_WORDS = { mejora = "Enhancement", enh = "Enhancement", enhancement = "Enhancement", ele = "Elemental", elemental = "Elemental",
   resto = "Restoration", restauracion = "Restoration", ["restauración"] = "Restoration", restoration = "Restoration" }
@@ -1004,6 +1188,7 @@ SlashCmdList.SHAMANFOREVER = function(msg)
     wipe(cdb.seen); wipe(cdb.done); wipe(cdb.gone)
     say(L().reset)
   elseif cmd == "registro" or cmd == "log" then showLog()
+  elseif cmd == "config" or cmd == "opciones" or cmd == "options" then SF.options()
   elseif cmd == "flecha" or cmd == "arrow" then
     cdb.tomtom = not cdb.tomtom
     say(string.format(L().arrowMode, onOff(cdb.tomtom)))
@@ -1032,4 +1217,5 @@ end
 -- For the headless test (scripts/test-addon.lua).
 SF.test = { pathTips = pathTips, pickupTips = pickupTips, dungeonTips = dungeonTips, zoneTips = zoneTips, upcoming = upcoming,
   gain = gain, onZone = onZone, onLevel = onLevel, talentLine = talentLine, giverText = giverText, waypoint = waypoint,
-  archive = function(tip, kind) archive(tip, kind) end, inProgress = function() return inProgress() end, archived = function(kind) return archived(kind) end }
+  archive = function(tip, kind) archive(tip, kind) end, inProgress = function() return inProgress() end, archived = function() return archived() end,
+  npcLines = function(id) return npcLines(id) end }
