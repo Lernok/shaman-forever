@@ -221,7 +221,7 @@ local function pathTips(filter)
         else src = string.format(L().quest, st.qn or "?") .. " · " .. zoneName(st.z) end
         local head = st.l <= lvl and string.format(L().levelNow, st.l) or string.format(L().levelIn, st.l, st.l - lvl)
         tips[#tips + 1] = { key = key, item = st.i, head = head .. " · " .. Api.itemName(st.i), src = src, gain = gainText(g),
-          giver = st.q and D.givers[st.q], title = st.qn, order = st.l }
+          giver = st.q and D.givers[st.q], title = st.qn, order = st.l, q = st.q }
       end
     end
   end
@@ -261,7 +261,7 @@ local function pickupTips(inZone)
             local third = giverText(g)
             if (e.r or 0) > lvl then third = third .. " · " .. string.format(L().fromLevel, e.r) end
             tips[#tips + 1] = { key = key, icon = QUEST_ICON, head = string.format(L().forDungeon, dname, lv[1], lv[2]),
-              src = src, gain = third, giver = g, title = target.qn, order = lv[1] }
+              src = src, gain = third, giver = g, title = target.qn, order = lv[1], q = target.q }
           end
         end
       end
@@ -313,7 +313,7 @@ local function dungeonTips(name)
       local has = Api.onQuest(qid)
       tips[#tips + 1] = { key = key, item = b.q.i, head = Api.itemName(b.q.i), src = string.format(L().quest, b.q.qn)
         .. " · " .. (has and ("|cff40ff40" .. L().haveIt .. "|r") or ("|cffff6060" .. L().missing .. "|r")),
-        gain = gainText(b.g), giver = D.givers[qid], title = b.q.qn, order = -b.g.v / math.max(b.g.cur, 1) }
+        gain = gainText(b.g), giver = D.givers[qid], title = b.q.qn, order = -b.g.v / math.max(b.g.cur, 1), q = qid }
     end
   end
   -- Boss drops you can wear soon.
@@ -351,10 +351,29 @@ end
 local frame, rows, logFrame = nil, {}, nil
 local ROWS, ROW_H, W = 10, 44, 420
 
+-- You carry the quest of a tip, or an earlier step of its chain.
+local function carrying(q)
+  local seen = {}
+  while q and not seen[q] do
+    if Api.onQuest(q) then return true end
+    seen[q] = true
+    q = D.qpre and D.qpre[q]
+  end
+  return false
+end
+
+-- Beside the window, on the side with room (people keep it in a corner), so
+-- the item and its comparison never cover it.
 local function rowTooltip(r)
   local tip = r.tip
-  GameTooltip:SetOwner(r, "ANCHOR_LEFT")
+  GameTooltip:SetOwner(r, "ANCHOR_NONE")
+  GameTooltip:ClearAllPoints()
+  local dy = (r:GetTop() or 0) - (frame:GetTop() or 0)
+  local x = frame:GetCenter() or 0
+  if x < (UIParent:GetWidth() or 0) / 2 then GameTooltip:SetPoint("TOPLEFT", frame, "TOPRIGHT", 6, dy)
+  else GameTooltip:SetPoint("TOPRIGHT", frame, "TOPLEFT", -6, dy) end
   if tip.item then GameTooltip:SetItemByID(tip.item) else GameTooltip:SetText(tip.head, 1, 0.82, 0) end
+  if tip.q and carrying(tip.q) then GameTooltip:AddLine(L().haveQuestTip, 0.4, 0.8, 1) end
   for _, line in ipairs(tip.lines or {}) do GameTooltip:AddLine(line, 1, 1, 1) end
   local gt = giverText(tip.giver)
   if gt then
@@ -369,6 +388,10 @@ local function makeRow(i)
   local r = CreateFrame("Button", nil, frame)
   r:SetSize(W - 20, ROW_H)
   r:SetPoint("TOPLEFT", 10, -36 - (i - 1) * ROW_H)
+  r.have = r:CreateTexture(nil, "BACKGROUND")
+  r.have:SetAllPoints()
+  r.have:SetColorTexture(0.15, 0.45, 0.75, 0.25)
+  r.have:Hide()
   r.icon = r:CreateTexture(nil, "ARTWORK")
   r.icon:SetSize(32, 32)
   r.icon:SetPoint("LEFT", 0, 0)
@@ -399,21 +422,32 @@ local function makeRow(i)
   r.check:SetScript("OnLeave", function() GameTooltip:Hide() end)
   r:SetScript("OnEnter", rowTooltip)
   r:SetScript("OnLeave", function() GameTooltip:Hide() end)
-  r:SetScript("OnClick", function(self) waypoint(self.tip.giver, self.tip.title or self.tip.head) end)
+  -- An item from a quest: the step of its chain you're at (as Shift+click on
+  -- any item); anything else: who gives it.
+  r:SetScript("OnClick", function(self)
+    local tip = self.tip
+    if tip.item and SF.markItem and SF.markItem(tip.item) then return end
+    waypoint(tip.giver, tip.title or tip.head)
+  end)
   return r
 end
 
 local function makeFrame()
   frame = CreateFrame("Frame", "ShamanForeverFrame", UIParent)
   frame:SetSize(W, 100)
-  frame:SetPoint("TOPRIGHT", -220, -180)
+  local pos = db.pos
+  if pos then frame:SetPoint(pos[1], UIParent, pos[2], pos[3], pos[4]) else frame:SetPoint("TOPRIGHT", -220, -180) end
   frame:SetFrameStrata("HIGH")
   frame:SetClampedToScreen(true)
   frame:SetMovable(true)
   frame:EnableMouse(true)
   frame:RegisterForDrag("LeftButton")
   frame:SetScript("OnDragStart", frame.StartMoving)
-  frame:SetScript("OnDragStop", frame.StopMovingOrSizing)
+  frame:SetScript("OnDragStop", function(self)
+    self:StopMovingOrSizing()
+    local point, _, rel, x, y = self:GetPoint()
+    db.pos = { point, rel, x, y }
+  end)
   local bg = frame:CreateTexture(nil, "BACKGROUND")
   bg:SetAllPoints()
   bg:SetColorTexture(0.04, 0.05, 0.08, 0.92)
@@ -450,8 +484,14 @@ local function makeFrame()
 end
 
 -- Shows a list of tips with a title.
-local function show(title, tips)
+local show
+-- The quest log changed: repaint the open window (you just took a quest).
+local function repaint()
+  if frame and frame:IsShown() and frame.lastTitle then show(frame.lastTitle, frame.lastTips) end
+end
+function show(title, tips)
   if not frame then makeFrame() end
+  frame.lastTitle, frame.lastTips = title, tips
   frame.title:SetText(title)
   frame.spec.text:SetText(string.format(L().spec, specName()))
   for i = 1, ROWS do
@@ -461,7 +501,9 @@ local function show(title, tips)
       r.icon:SetTexture(tip.icon or Api.icon(tip.item))
       r.head:SetText(tip.head)
       r.src:SetText(tip.src)
-      r.gain:SetText(tip.gain or "")
+      local have = tip.q and carrying(tip.q)
+      r.have:SetShown(have and true or false)
+      r.gain:SetText(have and (L().haveQuest .. (tip.gain and (" · " .. tip.gain) or "")) or tip.gain or "")
       r.check:SetChecked(cdb.done[tip.key] and true or false)
       r.checkLabel:SetText(L().done)
       r:SetAlpha(1)
@@ -562,6 +604,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
     self:RegisterEvent("PLAYER_REGEN_ENABLED")
     self:RegisterEvent("QUEST_TURNED_IN")
     self:RegisterEvent("QUEST_ACCEPTED")
+    self:RegisterEvent("QUEST_REMOVED")
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
     -- The zone's name settles a moment after a loading screen.
     C_Timer.After(2, onZone)
@@ -571,10 +614,14 @@ ev:SetScript("OnEvent", function(self, event, ...)
     C_Timer.After(1, function() onLevel(tonumber(lvl) or UnitLevel("player")) end)
   elseif event == "QUEST_TURNED_IN" then
     log("quest", tostring((...)))
+    C_Timer.After(0.5, repaint)
+  elseif event == "QUEST_REMOVED" then
+    C_Timer.After(0.5, repaint)
   elseif event == "QUEST_ACCEPTED" then
     -- QUEST_ACCEPTED gives (index, id) on old clients, (id) on new ones.
     local a, b = ...
     log("accept", tostring(b or a))
+    C_Timer.After(0.5, repaint)
   elseif event == "PLAYER_REGEN_ENABLED" and pending then
     local p = pending
     pending = nil

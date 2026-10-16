@@ -13,6 +13,8 @@ El lado del juego del sitio. **Avisa, no te lleva de la mano**: vos elegís por 
   - Qué te sirve de ahí, tanto lo que tiran los jefes como las recompensas de las misiones.
 - **En el tooltip de un ítem:** cuánto mejor o peor es que lo que tenés puesto.
 - **Clic en un aviso:** pone la flecha de TomTom hasta quien da la misión. Sin TomTom, deja una marca en el mapa.
+- **La ventana** se mueve arrastrándola y queda donde la dejaste, también después de un /reload. El tooltip de un aviso sale al costado de la ventana (del lado con lugar), así no la tapa. Si ya tenés la misión de un aviso (o un paso de su cadena), el renglón se pinta de azul y dice "Ya tenés la misión"; se actualiza solo al aceptar o entregar una misión.
+- **Clic en un aviso de un ítem:** igual que Shift + clic, marca el paso de la cadena en que estás.
 - **Shift + clic en un ítem** (en las bolsas, un link del chat, AtlasLoot, las recompensas de una misión): si sale de una misión, marca en el mapa a quién hablarle en el paso de la cadena en que estás. Si ya tenés ese paso, marca a quién entregárselo. Con el chat abierto, Shift + clic sigue linkeando el ítem como siempre.
 - **Avisos que no se repiten:** cada aviso salta solo una vez. Si lo marcás como "Listo", no aparece más.
 - **Registro para investigar:** `/sf registro` muestra los niveles, zonas, dungeons y misiones aceptadas y entregadas, con la hora, para copiar.
