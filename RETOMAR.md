@@ -60,7 +60,8 @@ Parche del 15-oct (notas de Blizzard): Elemental muy mejorado (Lava Burst a 21 p
 ## Addon 0.12.0 y rutas con Polestar (2026-10-16)
 
 - Addon: pestañas Avisos (Todos/Misiones/Dungeons/Profesiones) · En curso · Ocultos; avisos lejanos filtrados por continente (otro continente ≥35%, fuera de ruta ≥20%); recompensas con equipo, bolsas y XP en el tooltip de quien da misiones; profesiones leídas del personaje (crafteos por tramo, uno por casillero); piezas mejores en las bolsas cuentan; ventana redimensionable con candado; atajos de teclado; ocultar en combate; convive con Polestar (no avisa lo que su guía ya cubre). Nada de esto probado en el juego todavía salvo lo que el usuario fue confirmando (mapa, tamaño).
-- Siguiente: **rutas de Shaman como packs de Polestar** con el planner. Elecciones del usuario: dungeons nuevas de Forever siempre (Ruins of Lordaeron, Excavation Site: Wetlands, City of Dalaran), RFC y RoL casi seguidas, después WC, SFK sí, BFD no. Orco y Tauren primero; Enano después.
+- Hecho: pack de Polestar **Tauren Mejora** (`planner/packs/sf-tauren-enh`, instalado como PolestarPack_ShamanForeverTaurenMejora): RFC 16, RoL 18, WC 23, SFK 26, Dalaran 31, Excavation 33; 36 h hasta 35 según el modelo. Herramientas en `.cache/tools/` (clon de Polestar con el parche, Node 24, packs); pasos en planner/README.md. Siguiente: Orco, después Enano.
+- Antes: **rutas de Shaman como packs de Polestar** con el planner. Elecciones del usuario: dungeons nuevas de Forever siempre (Ruins of Lordaeron, Excavation Site: Wetlands, City of Dalaran), RFC y RoL casi seguidas, después WC, SFK sí, BFD no. Orco y Tauren primero; Enano después.
 
 ## Pendiente
 
