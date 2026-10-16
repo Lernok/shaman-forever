@@ -18,22 +18,22 @@ step Hearthstone (level 27.4)
 step Pick up quests (level 27.4)
   accept 387 optional map 1453 @51.49,69.38 live
 
-step Dungeon: The Stockade (level 27)
+step Dungeon: The Stockade (level 27.4)
   zone map 1453
   goto 52.4,70 "The Stockade" r 30 live
   tip Find a group and clear The Stockade, with its quests from this route in your log.
 
-step Turn in (level 27.7)
+step Turn in (level 28.1)
   turnin 387 optional map 1453 @51.49,69.38 live
 
-step Turn in (level 27.7)
+step Turn in (level 28.1)
   turnin 388 optional map 1453 @76.42,63.67 live
 
-step Hearthstone (level 27.7)
+step Hearthstone (level 28.1)
   sethome "Darkshire"
-
-step Pick up: A Green Sample (City of Dalaran)
-  accept 92456 optional map 1453 @31.5,62.61 live
 
 step Pick up: Power Overwhelming (City of Dalaran)
   accept 92489 optional map 1453 @48.71,87.62 live
+
+step Pick up: A Green Sample (City of Dalaran)
+  accept 92456 optional map 1453 @31.5,62.61 live

@@ -18,41 +18,33 @@ step Pick up quests (level 14.8)
 step Hearthstone (level 14.8)
   sethome "Ironforge"
 
-step Turn in (level 14.9)
-  turnin 291
-
-step Pick up: An Ancient Grudge (Hall of Thanes)
+step Turn in and pick up (Hall of Thanes)
   accept 96395 optional map 1455 @43.5,52 live
+  turnin 291
 
 step Pick up: The Treaty of Understanding (Hall of Thanes)
   accept 98423 optional
 
-step Pick up: The Restless Dead (Hall of Thanes)
+step Pick up quests (Hall of Thanes)
   accept 96394 optional map 1455 @33.09,47.82
-
-step Pick up: Important Heirlooms (Hall of Thanes)
   accept 96403 optional map 1455 @32.32,44.79
 
-step Dungeon: Hall of Thanes (level 15)
+step Dungeon: Hall of Thanes (level 14.9)
   zone map 1455
   goto 43.5,52 "Hall of Thanes" r 30 live
   tip Find a group and clear Hall of Thanes, with its quests from this route in your log.
 
-step Turn in (level 15.4)
+step Turn in (level 15.3)
   turnin 96395 optional map 1455 @43.5,52 live
-
-step Turn in (level 15.6)
   turnin 96393 optional map 1455 @39.09,56.2
   turnin 98423 optional map 1455 @39.09,56.2
 
-step Turn in (level 16.0)
+step Turn in (level 15.9)
   turnin 96394 optional map 1455 @33.09,47.82
-
-step Turn in (level 16.2)
   turnin 96403 optional map 1455 @32.32,44.79
 
-step Flight path (level 16.2)
+step Flight path (level 16.1)
   getfp "Auberdine"
 
-step Hearthstone (level 16.2)
+step Hearthstone (level 16.1)
   sethome "Auberdine"

@@ -11,20 +11,16 @@ next sf-tauren-enh/sin-wc-02-thunder-bluff
 
 step Pick up quests (level 1.0)
   accept 747
-
-step Pick up quests (level 1.0)
   accept 752
 
 step Objectives: The Hunt Begins (level 2.7)
   collect 4739 x7 quest 747.1
   collect 4740 x7 quest 747.2
 
-step Turn in (level 2.8)
+step Turn in and pick up (level 2.8)
   turnin 747
   accept 750
   accept 3093
-
-step Turn in (level 2.9)
   turnin 3093
 
 step Turn in (level 3.0)
@@ -36,32 +32,28 @@ step Reach level 3
   level 3
   tip If you're not level 3 yet: kill Mountain Cougar here (level 3). Break Sharptusk! needs level 3.
 
-step Pick up quests (level 3.0)
-  accept 3376
+step Objectives: The Hunt Continues (level 3.0)
+  collect 4742 x10 quest 750.1
 
-step Pick up quests (level 3.0)
+step Pick up quests (level 3.2)
   accept 753
 
-step Objectives: A Humble Task (level 3.0)
+step Objectives: A Humble Task (level 3.2)
   collect 4755 quest 753.1
 
-step Turn in (level 3.2)
+step Turn in and pick up (level 3.4)
+  turnin 750
+  accept 3376
   turnin 753
   accept 755
 
-step Pick up quests (level 3.2)
+step Pick up quests (level 3.4)
   accept 1656
-
-step Objectives: The Hunt Continues (level 3.7)
-  collect 4742 x10 quest 750.1
 
 step Turn in (level 3.9)
   turnin 755
   accept 95805
   accept 757
-
-step Turn in (level 4.1)
-  turnin 750
 
 step Reach level 4
   zone map 1412
@@ -71,8 +63,6 @@ step Reach level 4
 
 step Pick up quests (level 4.1)
   accept 1519
-
-step Pick up quests (level 4.1)
   accept 780
 
 step Objectives: The Battleboars (level 4.7)
@@ -82,10 +72,8 @@ step Objectives: The Battleboars (level 4.7)
 step Objectives: Rite of Strength (level 5.1)
   collect 4770 x12 quest 757.1
 
-step Objectives: Break Sharptusk! (level 5.2)
+step Objectives (level 5.2)
   collect 10459 quest 3376.1
-
-step Objectives: Call of Earth (level 5.2)
   collect 6634 x2 quest 1519.1
 
 step Pick up quests (level 5.2)
@@ -94,51 +82,39 @@ step Pick up quests (level 5.2)
 step Turn in (level 5.3)
   turnin 95805
 
-step Turn in (level 5.4)
-  turnin 780
-
-step Turn in (level 5.7)
-  turnin 3376
-
-step Turn in (level 5.8)
+step Turn in and pick up (level 5.4)
   turnin 1519
   accept 1520
+  turnin 3376
+  turnin 780
 
 step Turn in (level 5.9)
+  turnin 1520
+  accept 1521
+
+step Turn in and pick up (level 6.0)
+  turnin 1521
   turnin 781
   turnin 757
   accept 763
   accept 96659
 
-step Turn in (level 6.1)
-  turnin 1520
-  accept 1521
-
-step Turn in (level 6.2)
-  turnin 1521
-
 step Hearthstone (level 6.2)
   sethome "Bloodhoof Village"
 
-step Turn in (level 6.2)
-  turnin 1656
-
-step Turn in (level 6.3)
-  turnin 763
-
-step Pick up quests (level 6.3)
+step Pick up quests (level 6.2)
   accept 748
 
-step Pick up quests (level 6.3)
+step Pick up quests (level 6.2)
   accept 96130
 
-step Objectives: Poison Water (level 6.5)
+step Objectives (level 6.4)
   collect 4758 x6 quest 748.1
   collect 4759 x4 quest 748.2
 
-step Objectives: Poison Water (level 6.8)
-  collect 4758 x6 quest 748.1
-  collect 4759 x4 quest 748.2
+step Turn in (level 6.9)
+  turnin 1656
+  turnin 763
 
 step Turn in (level 7.0)
   turnin 748
@@ -147,35 +123,12 @@ step Turn in (level 7.0)
 step Objectives: Winterhoof Cleansing (level 7.0)
   complete 754
 
-step Turn in (level 7.1)
+step Turn in and pick up (level 7.1)
   turnin 754
   accept 756
-
-step Objectives: Chakuyak (level 7.1)
-  collect 270302 quest 96130.1
-
-step Objectives: Thunderhorn Totem (level 7.4)
-  collect 4801 x6 quest 756.1
-  collect 4802 x6 quest 756.2
-
-step Turn in (level 7.4)
-  turnin 96130
-
-step Objectives: Thunderhorn Totem (level 7.7)
-  collect 4801 x6 quest 756.1
-  collect 4802 x6 quest 756.2
-
-step Turn in (level 7.8)
-  turnin 756
-
-step Pick up quests (level 7.8)
+  accept 743
   accept 99101
   accept 99079
-
-step Pick up quests (level 7.8)
-  accept 743
-
-step Pick up quests (level 7.8)
   accept 745
   accept 746
   accept 767
@@ -183,64 +136,63 @@ step Pick up quests (level 7.8)
   accept 99082
   turnin 99101
 
-step Pick up quests (level 7.9)
-  accept 758
-  accept 98435
+step Pick up quests (level 7.2)
+  accept 766
 
-step Pick up quests (level 7.9)
-  accept 761
+step Objectives: Chakuyak (level 7.4)
+  collect 270302 quest 96130.1
 
-step Turn in (level 7.9)
+step Objectives (level 7.7)
+  collect 4804 quest 766.1
+  collect 4805 quest 766.2
+  collect 4806 quest 766.3
+  collect 4807 quest 766.4
+  collect 4801 x6 quest 756.1
+  collect 4802 x6 quest 756.2
+
+step Objectives: Thunderhorn Totem (level 8.1)
+  collect 4801 x6 quest 756.1
+  collect 4802 x6 quest 756.2
+
+step Turn in and pick up (level 8.2)
+  turnin 96130
   turnin 767
   accept 771
 
-step Pick up quests (level 7.9)
-  accept 766
-
-step Objectives: Mazzranache (level 8.1)
-  collect 4804 quest 766.1
-  collect 4805 quest 766.2
-  collect 4806 quest 766.3
-  collect 4807 quest 766.4
-
-step Objectives: Mazzranache (level 8.5)
-  collect 4804 quest 766.1
-  collect 4805 quest 766.2
-  collect 4806 quest 766.3
-  collect 4807 quest 766.4
+step Turn in and pick up (level 8.5)
+  accept 761
+  turnin 756
+  accept 758
+  accept 98435
 
 step Objectives: Thunderhorn Cleansing (level 8.5)
   complete 758
 
-step Objectives: Rite of Vision (level 8.5)
-  collect 4808 x2 quest 771.1
-  collect 4809 x2 quest 771.2
+step Turn in (level 8.5)
+  turnin 758
+  accept 759
 
 step Pick up quests (level 8.5)
   accept 99411
 
-step Objectives: Rite of Vision (level 8.5)
-  collect 4808 x2 quest 771.1
-  collect 4809 x2 quest 771.2
-
-step Turn in (level 8.7)
-  turnin 771
-  accept 772
-
-step Turn in (level 8.8)
-  turnin 758
-  accept 759
-
-step Objectives: Kyle's Gone Missing! (level 8.8)
-  kill 277154 quest 99411.1
-
-step Pick up quests (level 8.8)
+step Pick up quests (level 8.5)
   accept 99108
   turnin 99108
 
-step Pick up quests (level 8.9)
+step Pick up quests (level 8.6)
   turnin 96659
   accept 96605
+
+step Objectives: Kyle's Gone Missing! (level 8.6)
+  kill 277154 quest 99411.1
+
+step Objectives (level 8.6)
+  collect 4808 x2 quest 771.1
+  collect 4809 x2 quest 771.2
+
+step Turn in (level 8.8)
+  turnin 771
+  accept 772
 
 step Objectives: The Great Outdoors (level 8.9)
   complete 96605
@@ -269,12 +221,7 @@ step Turn in (level 9.3)
 step Objectives: Wildmane Totem (level 9.6)
   collect 4803 x8 quest 759.1
 
-step Objectives: Drive Them Out (level 9.7)
-  kill 2967 x6 quest 99080.1
-  kill 2968 x4 quest 99080.2
-  collect 286075 quest 99080.3
-
-step Objectives: Drive Them Out (level 9.8)
+step Objectives (level 9.7)
   kill 2967 x6 quest 99080.1
   kill 2968 x4 quest 99080.2
   collect 286075 quest 99080.3
@@ -282,12 +229,7 @@ step Objectives: Drive Them Out (level 9.8)
 step Pick up quests (level 9.8)
   accept 98424
 
-step Objectives: Fizsprocket's Notes (level 9.8)
-  collect 281035 quest 98424.1
-  collect 281036 quest 98424.2
-  collect 281037 quest 98424.3
-
-step Objectives: Fizsprocket's Notes (level 9.8)
+step Objectives (level 9.8)
   collect 281035 quest 98424.1
   collect 281036 quest 98424.2
   collect 281037 quest 98424.3
@@ -314,29 +256,23 @@ step Objectives: The Hunter's Way (level 10.1)
 step Hearth (level 10.1)
   hearth "Bloodhoof Village"
 
-step Pick up quests (level 10.1)
-  accept 2984
-
-step Turn in (level 10.2)
-  turnin 759
-  accept 760
-
-step Turn in (level 10.3)
+step Turn in (level 10.1)
   turnin 99080
-
-step Turn in (level 10.4)
   turnin 99081
 
-step Objectives: Sharing the Land (level 10.5)
+step Objectives (level 10.3)
   kill 2949 x10 quest 745.1
   kill 2950 x8 quest 745.2
   kill 2951 x5 quest 745.3
-
-step Objectives: Mazzranache (level 10.5)
   collect 4804 quest 766.1
   collect 4805 quest 766.2
   collect 4806 quest 766.3
   collect 4807 quest 766.4
+
+step Turn in and pick up (level 10.4)
+  turnin 759
+  accept 760
+  accept 2984
 
 step Turn in (level 10.6)
   turnin 766
@@ -351,10 +287,8 @@ step Objectives: The Venture Co. (level 10.9)
   kill 2978 x14 quest 764.1
   kill 2979 x6 quest 764.2
 
-step Objectives: Supervisor Fizsprocket (level 11.0)
+step Objectives (level 11.0)
   collect 4819 quest 765.1
-
-step Objectives: The Venture Co. (level 11.0)
   kill 2978 x14 quest 764.1
   kill 2979 x6 quest 764.2
 
@@ -393,12 +327,8 @@ step Objectives: The Longwalkers (level 11.4)
 
 step Turn in (level 11.4)
   turnin 743
-
-step Turn in (level 11.5)
   turnin 745
   turnin 746
-
-step Turn in (level 11.7)
   turnin 760
 
 step Turn in (level 11.8)

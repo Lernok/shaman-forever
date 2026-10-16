@@ -12,54 +12,38 @@ next sf-dwarf-enh/con-rol-19-silverpine-forest
 step Pick up quests (level 30.1)
   accept 536
 
-step Pick up quests (level 30.1)
-  accept 98059
-  turnin 98059
-
-step Objectives: Down the Coast (level 30.2)
+step Objectives (level 30.1)
   kill 2377 x10 quest 536.1
   kill 2376 x10 quest 536.2
 
-step Objectives: Down the Coast (level 30.2)
-  kill 2377 x10 quest 536.1
-  kill 2376 x10 quest 536.2
-
-step Turn in (level 30.2)
+step Turn in (level 30.1)
   turnin 536
   accept 559
 
-step Objectives: Farren's Proof (level 30.4)
+step Objectives: Farren's Proof (level 30.3)
   collect 3716 x10 quest 559.1
 
-step Turn in (level 30.4)
+step Turn in and pick up (level 30.3)
   turnin 559
   accept 560
-
-step Turn in (level 30.4)
   turnin 560
   accept 561
-
-step Turn in (level 30.4)
   turnin 561
   accept 562
+  accept 98463
+  accept 555
 
-step Objectives: Stormwind Ho! (level 30.5)
+step Objectives (level 30.4)
   kill 2369 x10 quest 562.1
   kill 2371 x10 quest 562.2
 
-step Objectives: Stormwind Ho! (level 30.5)
-  kill 2369 x10 quest 562.1
-  kill 2371 x10 quest 562.2
-
-step Turn in (level 30.6)
+step Turn in (level 30.5)
   turnin 562
   accept 563
 
-step Pick up quests (level 30.6)
-  accept 555
-
-step Pick up quests (level 30.6)
-  accept 98463
+step Pick up quests (level 30.5)
+  accept 98059
+  turnin 98059
 
 step Reach level 30
   zone map 1424
@@ -69,11 +53,7 @@ step Reach level 30
 
 step Pick up quests (level 30.6)
   accept 659
-
-step Pick up quests (level 30.6)
   accept 92432 optional map 1424 @48.32,60
-
-step Pick up quests (level 30.6)
   accept 505
 
 step Pick up quests (level 30.6)
@@ -98,11 +78,7 @@ step Pick up quests (level 30.7)
   accept 510
   accept 511
 
-step Objectives: Syndicate Assassins (level 30.8)
-  kill 2240 x12 quest 505.1
-  kill 2241 x8 quest 505.2
-
-step Objectives: Syndicate Assassins (level 30.8)
+step Objectives (level 30.8)
   kill 2240 x12 quest 505.1
   kill 2241 x8 quest 505.2
 
@@ -113,13 +89,11 @@ step Objectives: Bartolo's Yeti Fur Cloak (level 31.0)
   collect 3720 x10 quest 565.4
 
 step Turn in (level 31.0)
-  turnin 555
-
-step Turn in (level 31.0)
-  turnin 511
-  accept 514
-
-step Turn in (level 31.1)
   turnin 505
   turnin 510
   accept 512
+
+step Turn in and pick up (level 31.0)
+  turnin 511
+  accept 514
+  turnin 555

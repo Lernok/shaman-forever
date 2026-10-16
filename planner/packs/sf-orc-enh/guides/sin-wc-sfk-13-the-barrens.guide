@@ -15,12 +15,7 @@ step Pick up quests (level 23.5)
 step Pick up quests (level 23.5)
   accept 884
 
-step Objectives: Tribes at War (level 23.5)
-  kill 3260 x6 quest 878.1
-  kill 3261 x12 quest 878.2
-  kill 3263 x12 quest 878.3
-
-step Objectives: Tribes at War (level 23.6)
+step Objectives (level 23.5)
   kill 3260 x6 quest 878.1
   kill 3261 x12 quest 878.2
   kill 3263 x12 quest 878.3
@@ -36,11 +31,9 @@ step Objectives: Tribes at War (level 23.6)
 step Pick up quests (level 23.6)
   accept 893
 
-step Turn in (level 23.7)
+step Turn in and pick up (level 23.7)
   turnin 884
   turnin 883
-
-step Turn in (level 23.8)
   turnin 878
   accept 5052
 
@@ -59,14 +52,14 @@ step Pick up quests (level 23.8)
   accept 79192
 
 step Pick up quests (level 23.8)
-  accept 843
-
-step Pick up quests (level 23.8)
   accept 98093
 
 step Objectives: Field to Clear (level 23.8)
   kill 4128 x7 quest 98093.1
   kill 3238 x7 quest 98093.2
+
+step Pick up quests (level 23.8)
+  accept 843
 
 step Objectives: Betrayal from Within (level 23.8)
   collect 5074 quest 879.1
@@ -81,17 +74,12 @@ step Objectives: Weapons of Choice (level 23.9)
 step Pick up quests (level 23.9)
   accept 885
 
-step Objectives: Betrayal from Within (level 23.9)
-  collect 5074 quest 879.1
-  collect 5073 quest 879.2
-  collect 5072 quest 879.3
-
 step Objectives: Weapons of Choice (level 23.9)
   collect 5093 quest 893.1
   collect 5092 quest 893.2
   collect 5094 quest 893.3
 
-step Objectives: Betrayal from Within (level 23.9)
+step Objectives (level 23.9)
   collect 5074 quest 879.1
   collect 5073 quest 879.2
   collect 5072 quest 879.3
@@ -106,11 +94,11 @@ step Objectives: Field to Clear (level 24.1)
   kill 3238 x7 quest 98093.2
 
 step Turn in (level 24.1)
-  turnin 98093
-
-step Turn in (level 24.2)
   turnin 843
   accept 846
+
+step Turn in (level 24.3)
+  turnin 98093
 
 step Objectives: Revenge of Gann (level 24.4)
   collect 5017 x6 quest 846.1
@@ -124,20 +112,18 @@ step Turn in (level 24.5)
 step Objectives: Revenge of Gann (level 24.5)
   complete 849
 
+step Turn in (level 24.5)
+  turnin 849
+
 step Pick up quests (level 24.5)
   accept 4542
-
-step Turn in (level 24.6)
-  turnin 849
 
 step Hearth (level 24.6)
   hearth "Camp Taurajo"
 
-step Turn in (level 24.6)
+step Turn in and pick up (level 24.6)
   turnin 879
   accept 906
-
-step Turn in (level 24.7)
   turnin 885
   turnin 897
 
@@ -147,11 +133,11 @@ step Turn in (level 24.8)
 step Hearthstone (level 24.8)
   sethome "The Crossroads"
 
+step Turn in (level 24.8)
+  turnin 906
+
 step Pick up quests (level 24.8)
   accept 868
-
-step Turn in (level 24.9)
-  turnin 906
 
 step Hearthstone (level 24.9)
   sethome "Ratchet"

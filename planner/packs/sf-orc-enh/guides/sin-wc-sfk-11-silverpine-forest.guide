@@ -15,20 +15,14 @@ step Reach level 19
   level 19
   tip If you're not level 19 yet: kill Rot Hide Savage here (level 19). Journey to Hillsbrad Foothills needs level 19.
 
-step Turn in (level 19.7)
+step Turn in and pick up (level 19.7)
+  accept 98298
+  accept 98299
+  accept 95981
   turnin 446
   accept 448
   accept 493
-
-step Turn in (level 19.7)
   turnin 448
-
-step Pick up quests (level 19.7)
-  accept 95981
-
-step Pick up quests (level 19.7)
-  accept 98298
-  accept 98299
 
 step Pick up quests (level 20.0)
   accept 460
@@ -41,25 +35,17 @@ step Turn in (level 20.1)
   turnin 461
   accept 491
 
-step Objectives: Watching the Roads (level 20.1)
+step Objectives (level 20.1)
   kill 1888 x8 quest 95981.1
   kill 1889 x8 quest 95981.2
 
-step Objectives: Watching the Roads (level 20.2)
-  kill 1888 x8 quest 95981.1
-  kill 1889 x8 quest 95981.2
-
-step Objectives: Stop the Spread (level 20.2)
+step Objectives (level 20.2)
   kill 2053 x5 quest 98299.1
   kill 2054 x5 quest 98299.2
-
-step Objectives: Arugal's Folly (level 20.3)
   collect 280375 x6 quest 98298.1
 
 step Turn in (level 20.3)
   turnin 95981
-
-step Turn in (level 20.4)
   turnin 98298
   turnin 98299
 
@@ -67,50 +53,46 @@ step Reach level 20
   level 20
   tip Kill the mobs on your way until level 20: The Tortured Soul needs it.
 
-step Pick up quests (level 20.5)
+step Pick up quests (level 20.4)
   accept 95883
   accept 95885
 
-step Objectives: The Offering of Blood (level 20.5)
+step Objectives (level 20.4)
+  collect 271350 quest 95883.1
   kill 212753 quest 95885.1
 
-step Objectives: The Tortured Soul (level 20.5)
-  collect 271350 quest 95883.1
-
-step Turn in (level 20.5)
+step Turn in (level 20.4)
   turnin 95883
   turnin 95885
 
-step Pick up quests (level 20.6)
+step Pick up quests (level 20.5)
   accept 95884
   collect 271343 quest 95884.1
 
-step Turn in (level 20.6)
+step Turn in (level 20.5)
   turnin 95884
 
-step Hearth (level 20.6)
+step Hearth (level 20.5)
   hearth "The Sepulcher"
 
-step Pick up quests (level 20.6)
-  accept 92401 optional map 1421 @44.54,42.96
-
-step Pick up quests (level 20.6)
+step Pick up quests (level 20.5)
   accept 480
   accept 516
+  accept 92401 optional map 1421 @44.54,42.96
 
-step Objectives: Beren's Peril (level 20.7)
+step Objectives: Beren's Peril (level 20.6)
   kill 1974 x6 quest 516.1
   kill 1973 x6 quest 516.2
 
-step Objectives: The Weaver (level 20.7)
+step Objectives: The Weaver (level 20.6)
   collect 3515 quest 480.1
 
-step Turn in (level 20.8)
+step Turn in (level 20.7)
   turnin 480
   turnin 516
 
-step Flight path (level 20.9)
+step Flight path (level 20.8)
   getfp "Tarren Mill"
 
-step Hearthstone (level 20.9)
+step Hearthstone (level 20.8)
   sethome "Tarren Mill"

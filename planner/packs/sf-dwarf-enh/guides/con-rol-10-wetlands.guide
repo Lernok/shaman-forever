@@ -9,122 +9,106 @@ next sf-dwarf-enh/con-rol-11-stormwind-city
 # Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.1 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 24.7)
-  accept 98197
+step Pick up quests (level 24.8)
+  accept 463 optional map 1437 @10.9,59.64
+  accept 98282
+  accept 470
 
-step Pick up quests (level 24.7)
+step Pick up quests (level 24.9)
+  accept 98197
   accept 484 optional map 1437 @8.55,55.74
 
-step Objectives: Spoils of War (level 24.7)
+step Objectives: Spoils of War (level 24.9)
   collect 279821 x6 quest 98197.1
   collect 279822 x30 quest 98197.2
 
-step Pick up quests (level 24.7)
+step Turn in and pick up (level 24.9)
   accept 279
   accept 98189
-
-step Pick up quests (level 24.7)
   accept 98190
   turnin 98189
 
-step Turn in (level 24.8)
+step Turn in (level 25.0)
   turnin 98197
   accept 473
 
-step Pick up quests (level 24.8)
-  accept 463 optional map 1437 @10.9,59.64
-
-step Pick up quests (level 24.8)
-  accept 98282
-
-step Pick up quests (level 24.8)
-  accept 470
-
-step Objectives: Young Crocolisk Skins (level 24.9)
+step Objectives: Young Crocolisk Skins (level 25.0)
   complete 484 optional
 
-step Pick up quests (level 24.9)
-  accept 305
-
-step Turn in (level 24.9)
+step Turn in (level 25.0)
   turnin 484 optional map 1437 @8.55,55.74
   accept 471
 
-step Objectives: Claws from the Deep (level 25.0)
+step Objectives: Claws from the Deep (level 25.1)
   kill 1024 x12 quest 279.1
   collect 3618 quest 279.2
 
-step Objectives: Apprentice's Duties (level 25.0)
+step Objectives: Apprentice's Duties (level 25.1)
   collect 3348 x6 quest 471.1
 
-step Objectives: Digging Through the Ooze (level 25.0)
+step Objectives: Digging Through the Ooze (level 25.1)
   collect 3349 quest 470.1
 
-step Turn in (level 25.1)
+step Turn in (level 25.2)
   turnin 470
 
-step Turn in (level 25.2)
+step Turn in and pick up (level 25.3)
   turnin 279
   accept 281
-
-step Turn in (level 25.2)
   turnin 471
 
-step Turn in (level 25.2)
+step Pick up quests (level 25.3)
+  accept 305
+
+step Turn in (level 25.3)
   turnin 281
   accept 284
 
-step Turn in (level 25.2)
+step Turn in (level 25.3)
   turnin 284
   accept 285
 
-step Turn in (level 25.3)
+step Turn in (level 25.4)
   turnin 285
   accept 286
 
-step Hearth (level 25.3)
+step Hearth (level 25.4)
   hearth "Deepwater Tavern"
 
-step Turn in (level 25.3)
-  turnin 286
+step Objectives: Alchemical Hazards (level 25.4)
+  collect 280319 quest 98282.1
 
-step Pick up quests (level 25.3)
-  accept 294
-
-step Turn in (level 25.4)
+step Turn in and pick up (level 25.4)
   turnin 305
   accept 306
-
-step Turn in (level 25.4)
-  turnin 306
-
-step Objectives: Ormer's Revenge (level 25.4)
-  kill 1020 x10 quest 294.1
-  kill 1021 x10 quest 294.2
+  accept 294
 
 step Objectives: Ormer's Revenge (level 25.5)
   kill 1020 x10 quest 294.1
   kill 1021 x10 quest 294.2
 
-step Turn in (level 25.5)
+step Turn in (level 25.6)
+  turnin 286
+
+step Turn in (level 25.6)
+  turnin 306
+
+step Objectives: Ormer's Revenge (level 25.6)
+  kill 1020 x10 quest 294.1
+  kill 1021 x10 quest 294.2
+
+step Turn in (level 25.6)
   turnin 294
   accept 295
 
-step Objectives: Ormer's Revenge (level 25.6)
+step Objectives (level 25.7)
   kill 1022 x10 quest 295.1
   kill 1023 x10 quest 295.2
 
-step Objectives: Ormer's Revenge (level 25.6)
-  kill 1022 x10 quest 295.1
-  kill 1023 x10 quest 295.2
-
-step Turn in (level 25.7)
+step Turn in (level 25.8)
   turnin 295
 
-step Objectives: Alchemical Hazards (level 25.7)
-  collect 280319 quest 98282.1
-
-step Pick up quests (level 25.7)
+step Pick up quests (level 25.8)
   accept 94497
   accept 94499
   accept 94500
@@ -136,175 +120,152 @@ step Pick up quests (level 25.7)
   collect 265773 quest 94500.1
   turnin 94500
 
-step Pick up quests (level 25.8)
-  accept 469
-
-step Pick up quests (level 25.8)
+step Pick up quests (level 25.9)
   accept 276 optional map 1437 @56.37,40.4
   turnin 463 optional map 1437 @56.37,40.4
 
-step Objectives: Tramping Paws (level 25.9)
+step Pick up quests (level 26.0)
+  accept 469
+
+step Objectives: Tramping Paws (level 26.0)
   complete 276 optional
 
-step Objectives: Tramping Paws (level 25.9)
+step Objectives: Tramping Paws (level 26.0)
   complete 276 optional
 
-step Turn in (level 26.0)
+step Turn in (level 26.1)
   turnin 276 optional map 1437 @56.37,40.4
   accept 277 optional map 1437 @56.37,40.4
 
-step Objectives: Fire Taboo (level 26.0)
+step Objectives: Fire Taboo (level 26.1)
   complete 277 optional
 
-step Turn in (level 26.1)
+step Turn in (level 26.2)
   turnin 277 optional map 1437 @56.37,40.4
   accept 275 optional map 1437 @56.37,40.4
 
-step Objectives: Blisters on the Land (level 26.1)
+step Objectives: Blisters on the Land (level 26.2)
   complete 275 optional
 
-step Turn in (level 26.2)
+step Turn in (level 26.3)
   turnin 275 optional map 1437 @56.37,40.4
 
-step Hearth (level 26.2)
+step Hearth (level 26.3)
   hearth "Deepwater Tavern"
 
-step Turn in (level 26.2)
-  turnin 98282
-
-step Turn in (level 26.3)
+step Turn in and pick up (level 26.3)
+  accept 98209
   turnin 469
+  accept 98072
+  accept 98240
 
-step Pick up quests (level 26.3)
-  accept 288
-
-step Pick up quests (level 26.3)
-  accept 526
-
-step Objectives: The Third Fleet (level 26.3)
-  collect 2594 quest 288.1
-
-step Turn in (level 26.3)
-  turnin 288
-  accept 289
-
-step Pick up quests (level 26.3)
+step Turn in and pick up (level 26.3)
+  accept 472
   turnin 473
   accept 464
   accept 98221
   turnin 98221
   accept 98230
 
-step Pick up quests (level 26.3)
-  accept 98209
-
-step Pick up quests (level 26.3)
-  accept 98072
-  accept 98240
-
-step Pick up quests (level 26.3)
-  accept 472
+step Pick up quests (level 26.4)
+  accept 288
+  accept 526
 
 step Objectives: Lightforge Ingots (level 26.4)
   collect 2702 x5 quest 526.1
 
-step Turn in (level 26.4)
-  turnin 526
-
-step Objectives: The Cursed Crew (level 26.5)
-  kill 1157 x13 quest 289.1
-  kill 1158 x5 quest 289.2
-  collect 3619 quest 289.3
-
-step Objectives: The Cursed Crew (level 26.5)
-  kill 1157 x13 quest 289.1
-  kill 1158 x5 quest 289.2
-  collect 3619 quest 289.3
-
-step Turn in (level 26.6)
-  turnin 289
-  accept 290
-
-step Objectives: Lifting the Curse (level 26.6)
-  collect 2629 quest 290.1
-
-step Turn in (level 26.6)
-  turnin 290
-  accept 292
-
-step Turn in (level 26.6)
-  turnin 292
-  accept 293
-
-step Pick up quests (level 26.6)
+step Pick up quests (level 26.4)
   accept 299
-
-step Pick up quests (level 26.6)
   accept 296
 
-step Objectives: Uncovering the Past (level 26.6)
+step Objectives: Uncovering the Past (level 26.4)
   collect 2658 quest 299.1
   collect 2659 quest 299.2
   collect 2660 quest 299.3
   collect 2661 quest 299.4
 
-step Objectives: Ormer's Revenge (level 26.6)
+step Objectives: Ormer's Revenge (level 26.4)
   collect 3638 quest 296.1
 
-step Turn in (level 26.7)
+step Turn in (level 26.5)
+  turnin 299
   turnin 296
 
-step Turn in (level 26.8)
-  turnin 299
-
-step Objectives: War Banners (level 26.8)
+step Objectives: War Banners (level 26.6)
   collect 3337 x8 quest 464.1
 
-step Turn in (level 26.9)
+step Turn in (level 26.7)
   turnin 98230
   turnin 98240
   accept 98245
 
-step Pick up quests (level 26.9)
+step Pick up quests (level 26.7)
   accept 98283
 
-step Objectives: Carnage (level 26.9)
+step Objectives: Carnage (level 26.7)
   collect 280331 quest 98283.1
   collect 280330 quest 98283.2
 
-step Objectives: Razormaw Needling (level 27.0)
-  collect 280103 x10 quest 98245.1
-
-step Objectives: Carnage (level 27.0)
-  collect 280331 quest 98283.1
-  collect 280330 quest 98283.2
-
-step Turn in (level 27.0)
-  turnin 472
-
-step Turn in (level 27.1)
-  turnin 98245
-
-step Turn in (level 27.2)
-  turnin 98283
-
-step Objectives: Crocs of the Sky (level 27.2)
+step Objectives: Crocs of the Sky (level 26.8)
   collect 279385 x8 quest 98072.1
 
-step Hearth (level 27.2)
+step Objectives: Carnage (level 26.8)
+  collect 280331 quest 98283.1
+  collect 280330 quest 98283.2
+
+step Objectives: Razormaw Needling (level 26.8)
+  collect 280103 x10 quest 98245.1
+
+step Turn in (level 26.8)
+  turnin 98283
+
+step Turn in (level 26.8)
+  turnin 98245
+
+step Turn in (level 26.9)
+  turnin 472
+
+step Objectives: The Third Fleet (level 27.0)
+  collect 2594 quest 288.1
+
+step Turn in (level 27.0)
+  turnin 288
+  accept 289
+
+step Objectives (level 27.0)
+  kill 1157 x13 quest 289.1
+  kill 1158 x5 quest 289.2
+  collect 3619 quest 289.3
+
+step Turn in and pick up (level 27.1)
+  turnin 289
+  accept 290
+  turnin 98282
+
+step Objectives: Lifting the Curse (level 27.2)
+  collect 2629 quest 290.1
+
+step Turn in (level 27.2)
+  turnin 290
+  accept 292
+
+step Turn in and pick up (level 27.2)
+  turnin 526
+  turnin 292
+  accept 293
+
+step Hearth (level 27.3)
   hearth "Deepwater Tavern"
 
-step Turn in (level 27.3)
+step Turn in and pick up (level 27.4)
+  turnin 98072
   turnin 464
   accept 465
 
-step Turn in (level 27.3)
-  turnin 98072
-
-step Turn in (level 27.4)
+step Turn in (level 27.5)
   turnin 465
 
-step Flight path (level 27.4)
+step Flight path (level 27.5)
   getfp "Stormwind"
 
 step Pick up: Heartwoven (Excavation Site: Wetlands)

@@ -10,31 +10,21 @@ next sf-tauren-enh/sin-wc-sfk-07-undercity
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 13.7)
-  accept 870 optional map 1413 @52.26,31.93
-
-step Pick up quests (level 13.7)
-  accept 844
-
-step Pick up quests (level 13.7)
   accept 867
-
-step Pick up quests (level 13.7)
   accept 871
   accept 5041
-
-step Pick up quests (level 13.7)
   accept 848
   accept 1492
-
-step Pick up quests (level 13.7)
   accept 869
+  accept 844
 
 step Objectives: Plainstrider Menace (level 13.8)
   collect 5087 x7 quest 844.1
 
-step Turn in (level 13.8)
+step Turn in and pick up (level 13.8)
   turnin 844
   accept 845
+  accept 870 optional map 1413 @52.26,31.93
 
 step Objectives: Raptor Thieves (level 14.0)
   collect 5062 x12 quest 869.1
@@ -42,25 +32,18 @@ step Objectives: Raptor Thieves (level 14.0)
 step Objectives: The Zhevra (level 14.1)
   collect 5086 x4 quest 845.1
 
-step Turn in (level 14.2)
-  turnin 869
-
-step Turn in (level 14.2)
+step Turn in and pick up (level 14.2)
   turnin 845
   accept 903
+  turnin 869
 
-step Objectives: Disrupt the Attacks (level 14.3)
+step Objectives (level 14.3)
   kill 3267 x8 quest 871.1
   kill 3268 x8 quest 871.2
   kill 3265 x3 quest 871.3
 
 step Pick up quests (level 14.3)
   accept 1524
-
-step Objectives: Disrupt the Attacks (level 14.3)
-  kill 3267 x8 quest 871.1
-  kill 3268 x8 quest 871.2
-  kill 3265 x3 quest 871.3
 
 step Objectives: Supplies for the Crossroads (level 14.3)
   collect 12708 quest 5041.1
@@ -74,42 +57,32 @@ step Flight path (level 14.4)
 
 step Pick up quests (level 14.4)
   accept 887
-
-step Pick up quests (level 14.4)
   accept 97253
 
 step Hearthstone (level 14.4)
   sethome "Ratchet"
 
-step Pick up quests (level 14.4)
-  accept 894
-
-step Objectives: Parts and Pieces (level 14.4)
-  collect 277331 x5 quest 97253.1
-
-step Objectives: Southsea Freebooters (level 14.4)
-  kill 3381 x12 quest 887.1
-  kill 3382 x6 quest 887.2
-
-step Objectives: Southsea Freebooters (level 14.5)
-  kill 3381 x12 quest 887.1
-  kill 3382 x6 quest 887.2
-
-step Turn in (level 14.6)
+step Turn in (level 14.4)
   turnin 1492
 
-step Turn in (level 14.6)
-  turnin 97253
+step Objectives (level 14.4)
+  kill 3381 x12 quest 887.1
+  kill 3382 x6 quest 887.2
 
-step Turn in (level 14.7)
+step Objectives: Parts and Pieces (level 14.6)
+  collect 277331 x5 quest 97253.1
+
+step Turn in and pick up (level 14.6)
   turnin 887
   accept 890
+  turnin 97253
 
 step Turn in (level 14.7)
   turnin 890
   accept 892
 
-step Turn in (level 14.7)
+step Turn in and pick up (level 14.7)
+  accept 894
   turnin 892
   accept 888
 
@@ -119,12 +92,10 @@ step Objectives: Prowlers of the Barrens (level 14.8)
 step Hearthstone (level 14.8)
   sethome "The Crossroads"
 
-step Turn in (level 14.9)
+step Turn in and pick up (level 14.9)
   turnin 842
   turnin 903
   accept 881
-
-step Turn in (level 15.0)
   turnin 871
   turnin 5041
   accept 872
@@ -162,12 +133,7 @@ step Turn in (level 15.5)
 step Objectives: Echeyakee (level 15.6)
   collect 5100 quest 881.1
 
-step Objectives: The Disruption Ends (level 15.6)
-  kill 3269 x8 quest 872.1
-  kill 3266 x8 quest 872.2
-  collect 5063 quest 872.3
-
-step Objectives: The Disruption Ends (level 15.7)
+step Objectives (level 15.6)
   kill 3269 x8 quest 872.1
   kill 3266 x8 quest 872.2
   collect 5063 quest 872.3
@@ -179,11 +145,7 @@ step Turn in (level 15.8)
   turnin 902
   accept 3921
 
-step Objectives: Stolen Booty (level 15.8)
-  collect 5076 quest 888.1
-  collect 5077 quest 888.2
-
-step Objectives: Stolen Booty (level 15.8)
+step Objectives (level 15.8)
   collect 5076 quest 888.1
   collect 5077 quest 888.2
 
@@ -196,21 +158,17 @@ step Turn in (level 15.8)
 step Hearthstone (level 15.8)
   sethome "The Crossroads"
 
-step Turn in (level 15.9)
+step Objectives: Fungal Spores (level 15.9)
+  collect 5012 x4 quest 848.1
+
+step Turn in and pick up (level 15.9)
   turnin 870 optional map 1413 @52.26,31.93
   accept 877 optional map 1413 @52.26,31.93
-
-step Turn in (level 16.0)
   turnin 881
   accept 905
 
-step Objectives: Fungal Spores (level 16.0)
-  collect 5012 x4 quest 848.1
-
-step Turn in (level 16.0)
+step Turn in and pick up (level 16.0)
   turnin 872
-
-step Turn in (level 16.1)
   turnin 848
   accept 853
 
@@ -220,12 +178,10 @@ step Objectives: The Angry Scytheclaws (level 16.1)
 step Objectives: The Stagnant Oasis (level 16.1)
   complete 877 optional
 
-step Turn in (level 16.2)
+step Turn in and pick up (level 16.2)
+  turnin 905
   turnin 877 optional map 1413 @52.26,31.93
   accept 880 optional map 1413 @52.26,31.93
-
-step Turn in (level 16.3)
-  turnin 905
 
 step Objectives: Altered Beings (level 16.3)
   complete 880 optional
@@ -270,21 +226,16 @@ step Objectives: Chen's Empty Keg (level 16.9)
 step Hearth (level 16.9)
   hearth "Ratchet"
 
-step Objectives: Chen's Empty Keg (level 16.9)
-  collect 4893 x5 quest 821.1
-  collect 4894 x5 quest 821.2
-  collect 4895 quest 821.3
+step Objectives: Harpy Lieutenants (level 16.9)
+  collect 5065 x6 quest 875.1
 
-step Objectives: Chen's Empty Keg (level 17.0)
+step Objectives (level 16.9)
   collect 4893 x5 quest 821.1
   collect 4894 x5 quest 821.2
   collect 4895 quest 821.3
 
 step Turn in (level 17.1)
   turnin 821
-
-step Objectives: Harpy Lieutenants (level 17.1)
-  collect 5065 x6 quest 875.1
 
 step Hearthstone (level 17.1)
   sethome "The Crossroads"

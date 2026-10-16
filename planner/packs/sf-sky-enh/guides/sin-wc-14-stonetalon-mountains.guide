@@ -10,10 +10,10 @@ next sf-sky-enh/sin-wc-15-mulgore
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 27.0)
-  accept 1087
+  accept 6393
 
 step Pick up quests (level 27.0)
-  accept 6393
+  accept 1087
 
 step Pick up quests (level 27.0)
   accept 6301
@@ -27,10 +27,6 @@ step Turn in (level 27.1)
 
 step Objectives: Cycle of Rebirth (level 27.1)
   collect 16205 x10 quest 6301.1
-
-step Turn in (level 27.1)
-  turnin 6301
-  accept 6381
 
 step Turn in (level 27.1)
   turnin 1483
@@ -49,6 +45,10 @@ step Turn in (level 27.2)
   turnin 1092
   turnin 1093
   accept 1094
+
+step Turn in (level 27.3)
+  turnin 6301
+  accept 6381
 
 step Objectives: Cenarius' Legacy (level 27.3)
   kill 4057 x4 quest 1087.1
@@ -70,21 +70,14 @@ step Objectives: New Life (level 27.3)
   complete 6381
 
 step Turn in (level 27.4)
-  turnin 1087
-
-step Turn in (level 27.4)
   turnin 6381
 
-step Turn in (level 27.5)
-  turnin 6393
-
-step Pick up quests (level 27.5)
-  accept 1088
-
-step Pick up quests (level 27.5)
+step Turn in and pick up (level 27.5)
   accept 5881
   accept 6282
   accept 86576
+  turnin 1087
+  accept 1088
 
 step Objectives: Harpies Threaten (level 27.5)
   kill 4022 x7 quest 6282.1
@@ -93,19 +86,7 @@ step Objectives: Harpies Threaten (level 27.5)
   kill 4023 x7 quest 6282.4
   collect 277936 x15 quest 86576.1
 
-step Objectives: Harpies Threaten (level 27.6)
-  kill 4022 x7 quest 6282.1
-  kill 4025 x7 quest 6282.2
-  kill 4024 x7 quest 6282.3
-  kill 4023 x7 quest 6282.4
-
-step Objectives: Harpies Threaten (level 27.7)
-  kill 4022 x7 quest 6282.1
-  kill 4025 x7 quest 6282.2
-  kill 4024 x7 quest 6282.3
-  kill 4023 x7 quest 6282.4
-
-step Objectives: Harpies Threaten (level 27.7)
+step Objectives (level 27.6)
   kill 4022 x7 quest 6282.1
   kill 4025 x7 quest 6282.2
   kill 4024 x7 quest 6282.3
@@ -116,6 +97,7 @@ step Turn in (level 27.7)
 
 step Turn in (level 27.8)
   turnin 86576
+  turnin 6393
 
 step Pick up quests (level 27.8)
   accept 1058
@@ -126,19 +108,7 @@ step Objectives: Jin'Zil's Forest Magic (level 27.9)
   collect 5585 x30 quest 1058.3
   collect 5583 quest 1058.4
 
-step Objectives: Jin'Zil's Forest Magic (level 27.9)
-  collect 5582 x5 quest 1058.1
-  collect 5584 x5 quest 1058.2
-  collect 5585 x30 quest 1058.3
-  collect 5583 quest 1058.4
-
-step Objectives: Jin'Zil's Forest Magic (level 27.9)
-  collect 5582 x5 quest 1058.1
-  collect 5584 x5 quest 1058.2
-  collect 5585 x30 quest 1058.3
-  collect 5583 quest 1058.4
-
-step Objectives: Jin'Zil's Forest Magic (level 27.9)
+step Objectives (level 27.9)
   collect 5582 x5 quest 1058.1
   collect 5584 x5 quest 1058.2
   collect 5585 x30 quest 1058.3

@@ -10,12 +10,10 @@ next sf-sky-enh/sin-wc-sfk-16-thunder-bluff
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 27.7)
-  accept 96241
-
-step Pick up quests (level 27.7)
   accept 96259
 
 step Pick up quests (level 27.7)
+  accept 96241
   accept 96260
 
 step Objectives: Stronger than Steel (level 27.7)
@@ -24,17 +22,13 @@ step Objectives: Stronger than Steel (level 27.7)
 step Pick up quests (level 27.7)
   accept 96294
 
-step Objectives: Talkin' bout Toxins, Mon (level 27.8)
-  collect 273001 x5 quest 96241.1
-
-step Objectives: Defending the Dead (level 27.9)
+step Objectives (level 27.8)
   kill 264083 x5 quest 96259.1
   kill 264079 x10 quest 96259.2
+  collect 273001 x5 quest 96241.1
 
 step Turn in (level 27.9)
   turnin 96260
-
-step Turn in (level 28.0)
   turnin 96241
 
 step Turn in (level 28.0)

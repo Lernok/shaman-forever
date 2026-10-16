@@ -10,17 +10,15 @@ next sf-sky-enh/09-hillsbrad-foothills
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 18.6)
-  accept 865 optional map 1413 @62.37,37.62
-  accept 1069
-
-step Pick up quests (level 18.6)
   accept 891
 
 step Pick up quests (level 18.6)
-  accept 896
-
-step Pick up quests (level 18.6)
+  accept 865 optional map 1413 @62.37,37.62
+  accept 1069
   accept 895
+
+step Pick up quests (level 18.7)
+  accept 896
 
 step Objectives: Raptor Horns (level 18.7)
   complete 865 optional
@@ -31,32 +29,14 @@ step Turn in (level 18.8)
 step Objectives: WANTED: Baron Longshore (level 18.8)
   collect 5084 quest 895.1
 
-step Objectives: The Guns of Northwatch (level 18.8)
+step Objectives (level 18.8)
   kill 3393 quest 891.1
   kill 3455 quest 891.2
   kill 3454 quest 891.3
   collect 5078 x10 quest 891.4
 
-step Pick up quests (level 18.8)
+step Pick up quests (level 18.9)
   accept 898
-
-step Objectives: The Guns of Northwatch (level 18.8)
-  kill 3393 quest 891.1
-  kill 3455 quest 891.2
-  kill 3454 quest 891.3
-  collect 5078 x10 quest 891.4
-
-step Objectives: The Guns of Northwatch (level 18.8)
-  kill 3393 quest 891.1
-  kill 3455 quest 891.2
-  kill 3454 quest 891.3
-  collect 5078 x10 quest 891.4
-
-step Objectives: The Guns of Northwatch (level 18.9)
-  kill 3393 quest 891.1
-  kill 3455 quest 891.2
-  kill 3454 quest 891.3
-  collect 5078 x10 quest 891.4
 
 step Objectives: Free From the Hold (level 18.9)
   complete 898
@@ -77,8 +57,6 @@ step Hearthstone (level 19.1)
 step Pick up quests (level 19.1)
   accept 899
   accept 4921
-
-step Pick up quests (level 19.1)
   accept 6541
 
 step Pick up quests (level 19.1)
@@ -91,21 +69,17 @@ step Turn in (level 19.2)
   turnin 850
   accept 851
 
-step Turn in (level 19.2)
+step Turn in and pick up (level 19.2)
   turnin 1061
   accept 1062
-
-step Pick up quests (level 19.2)
   accept 6548
 
 step Pick up quests (level 19.2)
   accept 95494
   accept 95507
 
-step Objectives: Bruised Pride and Lion Hides (level 19.2)
+step Objectives (level 19.2)
   collect 269715 x6 quest 95494.1
-
-step Objectives: Vrang's Game (level 19.2)
   collect 269719 x8 quest 95507.1
 
 step Turn in (level 19.3)
@@ -170,6 +144,10 @@ step Turn in (level 20.1)
 step Hearthstone (level 20.1)
   sethome "The Crossroads"
 
+step Pick up quests (Wailing Caverns)
+  accept 959 optional map 1413 @63.09,37.61
+  accept 1491 optional map 1413 @62.37,37.62
+
 step Turn in (level 20.2)
   turnin 899
   turnin 4921
@@ -178,6 +156,10 @@ step Turn in (level 20.2)
 step Turn in (level 20.3)
   turnin 851
   accept 852
+
+step Pick up quests (level 20.3)
+  accept 1486 optional map 1413 @45.99,35.66
+  accept 1487 optional map 1413 @46.01,35.74
 
 step Objectives: Hezrul Bloodmark (level 20.3)
   collect 5025 quest 852.1
@@ -191,46 +173,30 @@ step Turn in (level 20.4)
 step Turn in (level 20.5)
   turnin 852
 
-step Pick up quests (level 20.5)
-  accept 1486 optional map 1413 @45.99,35.66
-
-step Pick up quests (level 20.5)
-  accept 1487 optional map 1413 @46.01,35.74
-
-step Pick up: Smart Drinks (Wailing Caverns)
-  accept 1491 optional map 1413 @62.37,37.62
-
-step Pick up: Trouble at the Docks (Wailing Caverns)
-  accept 959 optional map 1413 @63.09,37.61
-
-step Dungeon: Wailing Caverns (level 20)
+step Dungeon: Wailing Caverns (level 20.5)
   zone map 1413
   goto 46,36.4 "Wailing Caverns" r 30 live
   tip Find a group and clear Wailing Caverns, with its quests from this route in your log.
 
-step Turn in (level 20.8)
+step Turn in (level 21.3)
   turnin 1487 optional map 1413 @46.01,35.74
-
-step Turn in (level 20.9)
   turnin 1486 optional map 1413 @45.99,35.66
 
-step Hearth (level 20.9)
+step Hearth (level 21.4)
   hearth "The Crossroads"
 
-step Hearthstone (level 20.9)
+step Hearthstone (level 21.4)
   sethome "Ratchet"
 
-step Turn in (level 21.0)
+step Turn in (level 21.5)
   turnin 1491 optional map 1413 @62.37,37.62
-
-step Turn in (level 21.0)
   turnin 959 optional map 1413 @63.09,37.61
 
-step Pick up quests (level 21.0)
+step Pick up quests (level 21.5)
   accept 6981 optional
 
-step Flight path (level 21.0)
+step Flight path (level 21.5)
   getfp "Tarren Mill"
 
-step Hearthstone (level 21.0)
+step Hearthstone (level 21.5)
   sethome "Tarren Mill"

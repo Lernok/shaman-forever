@@ -29,24 +29,20 @@ step Turn in (level 12.3)
 step Objectives: Traditions of the Bluff (level 12.3)
   complete 97485
 
-step Turn in (level 12.4)
-  turnin 97485
-
-step Turn in (level 12.4)
-  turnin 98435
-  accept 886 optional map 1412 @45.8,22.7
-
-step Pick up quests (level 12.4)
-  accept 744
-
-step Pick up quests (level 12.4)
+step Turn in and pick up (level 12.4)
   accept 76160
   turnin 76160
   accept 76240
   turnin 76240
+  accept 744
+  turnin 97485
 
 step Pick up quests (level 12.5)
   accept 776
+
+step Turn in (level 12.5)
+  turnin 98435
+  accept 886 optional map 1412 @45.8,22.7
 
 step Reach level 12
   zone map 1412

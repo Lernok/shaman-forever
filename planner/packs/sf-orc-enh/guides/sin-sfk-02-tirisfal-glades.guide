@@ -11,21 +11,15 @@ next sf-orc-enh/sin-sfk-03-durotar
 
 step Pick up quests (level 11.1)
   accept 97558
-
-step Pick up quests (level 11.1)
   accept 356
-
-step Pick up quests (level 11.1)
   accept 96897
   accept 96898
   accept 96899
 
-step Objectives: The Cult of the Damned (level 11.1)
+step Objectives (level 11.1)
   kill 267006 x8 quest 96897.1
   kill 275437 x8 quest 96897.2
   kill 1547 quest 96897.3
-
-step Objectives: Hides for the Forsaken (level 11.2)
   collect 278242 x8 quest 97558.1
   collect 278243 x6 quest 97558.2
   collect 278244 x3 quest 97558.3
@@ -42,35 +36,20 @@ step Pick up quests (level 11.2)
 step Pick up quests (level 11.2)
   accept 99142
 
-step Objectives: Deaths in the Family (level 11.2)
-  collect 2829 quest 354.1
-  collect 2828 quest 354.2
-  collect 2830 quest 354.3
-
-step Objectives: Deaths in the Family (level 11.2)
-  collect 2829 quest 354.1
-  collect 2828 quest 354.2
-  collect 2830 quest 354.3
-
-step Objectives: Deaths in the Family (level 11.2)
-  collect 2829 quest 354.1
-  collect 2828 quest 354.2
-  collect 2830 quest 354.3
-
 step Objectives: Hides for the Forsaken (level 11.2)
   collect 278242 x8 quest 97558.1
   collect 278243 x6 quest 97558.2
   collect 278244 x3 quest 97558.3
 
-step Turn in (level 11.3)
-  turnin 354
+step Objectives (level 11.3)
+  collect 2829 quest 354.1
+  collect 2828 quest 354.2
+  collect 2830 quest 354.3
 
-step Objectives: Tomb Weed (level 11.3)
-  collect 286204 x5 quest 99142.1
-
-step Objectives: Rear Guard Patrol (level 11.5)
+step Objectives (level 11.3)
   kill 1529 x8 quest 356.1
   kill 1532 x8 quest 356.2
+  collect 286204 x5 quest 99142.1
 
 step Objectives: The Cult of the Damned (level 11.7)
   kill 267006 x8 quest 96897.1
@@ -82,12 +61,11 @@ step Turn in (level 12.0)
   turnin 96895
   turnin 96898
   turnin 96897
-
-step Turn in (level 12.3)
   turnin 356
-
-step Turn in (level 12.3)
   turnin 97558
+
+step Turn in (level 12.4)
+  turnin 354
 
 step Turn in (level 12.4)
   turnin 99142

@@ -30,8 +30,6 @@ step Hearth (level 14.8)
 
 step Pick up quests (level 14.8)
   accept 4811
-
-step Pick up quests (level 14.8)
   accept 98025
 
 step Pick up quests (level 14.8)
@@ -49,9 +47,6 @@ step Pick up quests (level 14.9)
 step Pick up quests (level 14.9)
   accept 2118
 
-step Pick up quests (level 14.9)
-  accept 984
-
 step Objectives: Plagued Lands (level 14.9)
   kill 2164 quest 2118.1
 
@@ -62,9 +57,10 @@ step Turn in (level 15.0)
   turnin 3524
   accept 4681
 
-step Turn in (level 15.0)
+step Turn in and pick up (level 15.0)
   turnin 2118
   accept 2138
+  accept 984
 
 step Objectives: Cleansing of the Infected (level 15.2)
   kill 2164 x20 quest 2138.1
@@ -127,12 +123,10 @@ step Objectives: How Big a Threat? (level 16.0)
 step Objectives: Buzzbox 525 (level 16.1)
   collect 5414 x4 quest 1003.1
 
-step Turn in (level 16.1)
+step Turn in and pick up (level 16.1)
   turnin 984
   accept 985
   accept 4761
-
-step Turn in (level 16.2)
   turnin 2138
 
 step Turn in (level 16.2)
@@ -223,40 +217,24 @@ step Pick up quests (level 17.0)
 
 step Pick up quests (level 17.0)
   accept 963
-
-step Pick up quests (level 17.0)
   accept 1138
 
 step Pick up quests (level 17.0)
   accept 87760
-
-step Pick up quests (level 17.0)
   accept 4740
 
 step Pick up quests (level 17.0)
   accept 965
-
-step Pick up quests (level 17.0)
   accept 986
-
-step Pick up quests (level 17.0)
   accept 2139
 
 step Pick up quests (level 17.0)
   accept 729
-
-step Pick up quests (level 17.0)
   accept 982
-
-step Pick up quests (level 17.0)
   accept 4763
   accept 97914
 
-step Objectives: Deep Ocean, Vast Sea (level 17.0)
-  collect 12191 quest 982.1
-  collect 12192 quest 982.2
-
-step Objectives: Deep Ocean, Vast Sea (level 17.0)
+step Objectives (level 17.0)
   collect 12191 quest 982.1
   collect 12192 quest 982.2
 
@@ -269,17 +247,7 @@ step Objectives: Holy Diver (level 17.1)
 step Pick up quests (level 17.1)
   accept 2098
 
-step Objectives: Gyromast's Retrieval (level 17.2)
-  collect 7498 quest 2098.1
-  collect 7499 quest 2098.2
-  collect 7500 quest 2098.3
-
-step Objectives: Gyromast's Retrieval (level 17.2)
-  collect 7498 quest 2098.1
-  collect 7499 quest 2098.2
-  collect 7500 quest 2098.3
-
-step Objectives: Gyromast's Retrieval (level 17.3)
+step Objectives (level 17.2)
   collect 7498 quest 2098.1
   collect 7499 quest 2098.2
   collect 7500 quest 2098.3
@@ -317,27 +285,19 @@ step Turn in (level 17.7)
 
 step Turn in (level 17.8)
   turnin 982
-
-step Turn in (level 17.9)
   turnin 4763
 
 step Turn in (level 17.9)
   turnin 1138
-
-step Turn in (level 18.0)
   turnin 87760
 
 step Objectives: For Love Eternal (level 18.0)
   collect 5382 quest 963.1
 
-step Turn in (level 18.1)
+step Turn in and pick up (level 18.1)
   turnin 948
   accept 944
-
-step Pick up quests (level 18.1)
   accept 98013
-
-step Pick up quests (level 18.1)
   accept 5321
 
 step Objectives: The Sleeper Has Awakened (level 18.1)
@@ -352,11 +312,9 @@ step Pick up quests (level 18.3)
 step Objectives: The Master's Glaive (level 18.3)
   complete 944
 
-step Turn in (level 18.3)
+step Turn in and pick up (level 18.3)
   turnin 944
   accept 949
-
-step Turn in (level 18.4)
   turnin 949
   accept 950
   accept 98042
@@ -397,17 +355,15 @@ step Hearth (level 18.5)
   hearth "Auberdine"
 
 step Turn in (level 18.6)
+  turnin 963
+
+step Turn in (level 18.7)
   turnin 4731
   turnin 4732
   turnin 4733
 
-step Turn in (level 18.7)
-  turnin 963
-
-step Turn in (level 18.8)
+step Turn in and pick up (level 18.8)
   turnin 4740
-
-step Turn in (level 18.9)
   turnin 731
   accept 741
 
@@ -423,23 +379,14 @@ step Objectives: Swelling Forces (level 19.1)
   kill 2182 x8 quest 98013.2
   kill 2183 x6 quest 98013.3
 
-step Objectives: Swelling Forces (level 19.1)
+step Objectives (level 19.1)
   kill 2181 x12 quest 98013.1
   kill 2182 x8 quest 98013.2
   kill 2183 x6 quest 98013.3
-
-step Objectives: Mathystra Relics (level 19.1)
   collect 5273 x6 quest 951.1
-
-step Objectives: Swelling Forces (level 19.2)
-  kill 2181 x12 quest 98013.1
-  kill 2182 x8 quest 98013.2
-  kill 2183 x6 quest 98013.3
 
 step Turn in (level 19.3)
   turnin 951
-
-step Turn in (level 19.4)
   turnin 98013
 
 step Turn in (level 19.4)
@@ -449,8 +396,6 @@ step Turn in (level 19.4)
 step Objectives: Escape Through Force (level 19.4)
   complete 994
 
-step Turn in (level 19.5)
+step Turn in and pick up (level 19.5)
   turnin 994
-
-step Pick up quests (level 19.5)
   accept 990

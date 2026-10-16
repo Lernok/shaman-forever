@@ -9,22 +9,13 @@ next sf-tauren-enh/sin-wc-12-hillsbrad-foothills
 # Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 35.8 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 18.8)
+step Turn in and pick up (level 18.8)
   accept 477
-
-step Pick up quests (level 18.8)
   accept 428
   accept 437
-
-step Pick up quests (level 18.8)
   accept 447
   accept 91921
-
-step Turn in (level 18.8)
   turnin 3301
-
-step Turn in (level 18.9)
-  turnin 264
 
 step Objectives: A Recipe For Death (level 18.9)
   collect 3253 x6 quest 447.1
@@ -34,34 +25,31 @@ step Turn in (level 18.9)
   turnin 477
   accept 478
 
-step Turn in (level 19.0)
+step Turn in and pick up (level 19.0)
+  turnin 264
   turnin 478
   accept 481
 
-step Turn in (level 19.0)
+step Turn in and pick up (level 19.0)
   turnin 481
   accept 482
-
-step Turn in (level 19.0)
   turnin 482
   accept 479
 
 step Objectives: The Dead Fields (level 19.0)
   complete 437
 
-step Turn in (level 19.0)
+step Turn in and pick up (level 19.0)
   turnin 428
   accept 429
-
-step Turn in (level 19.0)
   turnin 91921
   accept 91920
 
-step Pick up quests (level 19.0)
-  accept 435
-
 step Objectives: Wild Hearts (level 19.0)
   collect 3164 x6 quest 429.1
+
+step Pick up quests (level 19.0)
+  accept 435
 
 step Objectives: Escorting Erland (level 19.0)
   complete 435
@@ -73,42 +61,36 @@ step Turn in (level 19.0)
 step Objectives: Wild Eyes (level 19.0)
   collect 730 x3 quest 91920.1
 
-step Objectives: Ambermill Investigations (level 19.1)
-  collect 3354 x8 quest 479.1
-
-step Turn in (level 19.1)
-  turnin 479
-
-step Turn in (level 19.2)
+step Turn in and pick up (level 19.1)
   turnin 437
   turnin 449
   accept 438
   accept 3221
-
-step Turn in (level 19.2)
   turnin 429
   turnin 3221
   turnin 91920
   accept 430
   accept 1359
 
+step Objectives: A Recipe For Death (level 19.1)
+  collect 3253 x6 quest 447.1
+  collect 3254 x6 quest 447.2
+
+step Objectives: Ambermill Investigations (level 19.2)
+  collect 3354 x8 quest 479.1
+
 step Turn in (level 19.2)
   turnin 438
   accept 439
 
-step Turn in (level 19.2)
+step Turn in and pick up (level 19.2)
+  turnin 479
   turnin 439
   accept 440
   accept 443
 
-step Objectives: A Recipe For Death (level 19.2)
-  collect 3253 x6 quest 447.1
-  collect 3254 x6 quest 447.2
-
-step Turn in (level 19.3)
+step Turn in and pick up (level 19.3)
   turnin 430
-
-step Pick up quests (level 19.3)
   accept 425
 
 step Objectives: Ivar the Foul (level 19.3)
@@ -129,48 +111,36 @@ step Reach level 19
   level 19
   tip If you're not level 19 yet: kill Rot Hide Savage here (level 19). Journey to Hillsbrad Foothills needs level 19.
 
-step Turn in (level 19.5)
+step Turn in and pick up (level 19.4)
+  accept 98298
+  accept 98299
+  accept 95981
   turnin 443
   accept 444
   accept 493
 
-step Pick up quests (level 19.5)
-  accept 95981
-
-step Pick up quests (level 19.5)
-  accept 98298
-  accept 98299
-
-step Pick up quests (level 19.8)
+step Pick up quests (level 19.7)
   accept 460
 
-step Turn in (level 19.8)
+step Turn in (level 19.7)
   turnin 460
   accept 461
 
-step Turn in (level 19.8)
+step Turn in (level 19.7)
   turnin 461
   accept 491
 
-step Objectives: Watching the Roads (level 19.9)
+step Objectives (level 19.8)
   kill 1888 x8 quest 95981.1
   kill 1889 x8 quest 95981.2
 
-step Objectives: Watching the Roads (level 20.0)
-  kill 1888 x8 quest 95981.1
-  kill 1889 x8 quest 95981.2
-
-step Objectives: Stop the Spread (level 20.0)
+step Objectives (level 19.9)
   kill 2053 x5 quest 98299.1
   kill 2054 x5 quest 98299.2
-
-step Objectives: Arugal's Folly (level 20.1)
   collect 280375 x6 quest 98298.1
 
-step Turn in (level 20.1)
+step Turn in (level 20.0)
   turnin 95981
-
-step Turn in (level 20.2)
   turnin 98298
   turnin 98299
 
@@ -178,56 +148,50 @@ step Reach level 20
   level 20
   tip Kill the mobs on your way until level 20: The Tortured Soul needs it.
 
-step Pick up quests (level 20.3)
+step Pick up quests (level 20.1)
   accept 95883
   accept 95885
 
-step Objectives: The Offering of Blood (level 20.3)
+step Objectives (level 20.1)
+  collect 271350 quest 95883.1
   kill 212753 quest 95885.1
 
-step Objectives: The Tortured Soul (level 20.3)
-  collect 271350 quest 95883.1
-
-step Turn in (level 20.3)
+step Turn in (level 20.1)
   turnin 95883
   turnin 95885
 
-step Pick up quests (level 20.4)
+step Pick up quests (level 20.2)
   accept 95884
   collect 271343 quest 95884.1
 
-step Turn in (level 20.4)
+step Turn in (level 20.2)
   turnin 95884
 
-step Pick up quests (level 20.4)
+step Pick up quests (level 20.2)
   accept 92401 optional map 1421 @44.54,42.96
-
-step Pick up quests (level 20.4)
   accept 480
   accept 516
 
-step Objectives: Beren's Peril (level 20.5)
+step Objectives: Beren's Peril (level 20.3)
   kill 1974 x6 quest 516.1
   kill 1973 x6 quest 516.2
 
-step Objectives: The Weaver (level 20.5)
+step Objectives: The Weaver (level 20.3)
   collect 3515 quest 480.1
 
-step Hearth (level 20.5)
+step Hearth (level 20.3)
   hearth "The Sepulcher"
 
-step Turn in (level 20.6)
+step Turn in (level 20.4)
   turnin 480
   turnin 516
 
-step Flight path (level 20.7)
+step Flight path (level 20.5)
   getfp "Tarren Mill"
 
-step Hearthstone (level 20.7)
+step Hearthstone (level 20.5)
   sethome "Tarren Mill"
 
-step Pick up: Deathstalkers in Shadowfang (Shadowfang Keep)
+step Pick up quests (Shadowfang Keep)
   accept 1098 optional map 1421 @43.42,40.86
-
-step Pick up: Arugal Must Die (Shadowfang Keep)
   accept 1014 optional map 1421 @44.2,39.81

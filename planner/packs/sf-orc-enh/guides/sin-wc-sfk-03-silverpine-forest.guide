@@ -11,12 +11,8 @@ next sf-orc-enh/sin-wc-sfk-04-orgrimmar
 
 step Pick up quests (level 12.5)
   accept 477
-
-step Pick up quests (level 12.5)
   accept 428
   accept 437
-
-step Pick up quests (level 12.5)
   accept 447
   accept 91921
 
@@ -28,34 +24,28 @@ step Turn in (level 12.6)
   turnin 477
   accept 478
 
-step Turn in (level 12.7)
+step Turn in and pick up (level 12.7)
   turnin 478
   accept 481
-
-step Turn in (level 12.7)
   turnin 481
   accept 482
-
-step Turn in (level 12.7)
   turnin 482
   accept 479
 
 step Objectives: The Dead Fields (level 12.8)
   complete 437
 
-step Turn in (level 12.8)
+step Turn in and pick up (level 12.8)
   turnin 428
   accept 429
-
-step Turn in (level 12.8)
   turnin 91921
   accept 91920
 
+step Objectives: Wild Hearts (level 12.8)
+  collect 3164 x6 quest 429.1
+
 step Pick up quests (level 12.8)
   accept 435
-
-step Objectives: Wild Hearts (level 13.0)
-  collect 3164 x6 quest 429.1
 
 step Objectives: Escorting Erland (level 13.0)
   complete 435
@@ -73,49 +63,43 @@ step Hearth (level 13.1)
 step Objectives: Ambermill Investigations (level 13.3)
   collect 3354 x8 quest 479.1
 
-step Turn in (level 13.4)
-  turnin 479
+step Objectives: A Recipe For Death (level 13.4)
+  collect 3253 x6 quest 447.1
+  collect 3254 x6 quest 447.2
 
-step Turn in (level 13.5)
+step Turn in and pick up (level 13.4)
   turnin 437
   turnin 449
   accept 438
   accept 3221
+  turnin 479
 
 step Turn in (level 13.5)
+  turnin 438
+  accept 439
+
+step Turn in and pick up (level 13.5)
+  turnin 439
+  accept 440
+  accept 443
   turnin 429
   turnin 3221
   turnin 91920
   accept 430
   accept 1359
 
-step Turn in (level 13.7)
-  turnin 438
-  accept 439
+step Objectives: Rot Hide Ichor (level 13.8)
+  collect 3236 x8 quest 443.1
 
-step Turn in (level 13.7)
-  turnin 439
-  accept 440
-  accept 443
-
-step Objectives: A Recipe For Death (level 13.8)
-  collect 3253 x6 quest 447.1
-  collect 3254 x6 quest 447.2
-
-step Turn in (level 13.8)
+step Turn in and pick up (level 13.9)
   turnin 430
-
-step Pick up quests (level 13.8)
   accept 425
 
-step Objectives: Ivar the Foul (level 13.8)
+step Objectives: Ivar the Foul (level 13.9)
   collect 3621 quest 425.1
 
-step Turn in (level 13.9)
+step Turn in (level 14.0)
   turnin 425
-
-step Objectives: Rot Hide Ichor (level 14.2)
-  collect 3236 x8 quest 443.1
 
 step Turn in (level 14.3)
   turnin 443

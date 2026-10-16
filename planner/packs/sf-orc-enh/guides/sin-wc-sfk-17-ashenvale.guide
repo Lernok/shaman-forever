@@ -9,16 +9,10 @@ next sf-orc-enh/sin-wc-sfk-18-thousand-needles
 # Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.8 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 26.8)
-  accept 216
-
-step Pick up quests (level 26.8)
+step Turn in and pick up (level 26.8)
   accept 6641
-
-step Pick up quests (level 26.8)
+  accept 216
   accept 6462
-
-step Turn in (level 26.8)
   turnin 6562 optional map 1440 @11.56,34.29
   accept 6563 optional map 1440 @11.56,34.29
 
@@ -30,15 +24,9 @@ step Objectives: The Essence of Aku'Mai (level 26.8)
 
 step Turn in (level 26.8)
   turnin 6563 optional map 1440 @11.56,34.29
-
-step Turn in (level 26.9)
   turnin 6641
 
-step Objectives: Between a Rock and a Thistlefur (level 26.9)
-  kill 3925 x8 quest 216.1
-  kill 3924 x8 quest 216.2
-
-step Objectives: Between a Rock and a Thistlefur (level 27.0)
+step Objectives (level 26.9)
   kill 3925 x8 quest 216.1
   kill 3924 x8 quest 216.2
 
@@ -100,14 +88,10 @@ step Hearthstone (level 27.4)
 
 step Turn in (level 27.4)
   turnin 6544
-
-step Turn in (level 27.5)
   turnin 23
 
-step Turn in (level 27.6)
+step Turn in and pick up (level 27.6)
   turnin 6482
-
-step Pick up quests (level 27.6)
   accept 25
 
 step Objectives: Stonetalon Standstill (level 27.6)
@@ -120,26 +104,22 @@ step Hearth (level 27.6)
   hearth "Splintertree Post"
 
 step Turn in (level 27.6)
-  turnin 25
-
-step Turn in (level 27.7)
   turnin 216
   accept 6621
 
-step Turn in (level 27.7)
-  turnin 6462
+step Turn in and pick up (level 27.6)
+  turnin 25
+  accept 6441
+
+step Pick up quests (level 27.7)
+  accept 6571
 
 step Objectives: King of the Foulweald (level 27.7)
   collect 16976 quest 6621.1
 
 step Turn in (level 27.8)
   turnin 6621
-
-step Pick up quests (level 27.8)
-  accept 6441
-
-step Pick up quests (level 27.8)
-  accept 6571
+  turnin 6462
 
 step Pick up quests (level 27.8)
   accept 6504
@@ -154,13 +134,7 @@ step Pick up quests (level 27.9)
 step Turn in (level 28.0)
   turnin 2
 
-step Objectives: Warsong Supplies (level 28.0)
-  collect 16742 quest 6571.1
-  collect 16745 quest 6571.2
-  collect 16744 quest 6571.3
-  collect 16743 quest 6571.4
-
-step Objectives: Warsong Supplies (level 28.0)
+step Objectives (level 28.0)
   collect 16742 quest 6571.1
   collect 16745 quest 6571.2
   collect 16744 quest 6571.3
@@ -187,15 +161,11 @@ step Pick up quests (level 28.2)
 step Hearth (level 28.2)
   hearth "Splintertree Post"
 
-step Turn in (level 28.2)
+step Turn in and pick up (level 28.2)
   turnin 6441
-
-step Turn in (level 28.3)
   turnin 24
   accept 247
   turnin 247
-
-step Turn in (level 28.4)
   turnin 1918
   accept 824
 

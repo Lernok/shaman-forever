@@ -9,9 +9,12 @@ next sf-dwarf-enh/sin-stockade-12-wetlands
 # Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.3 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Turn in (level 25.4)
+step Turn in and pick up (level 25.4)
   turnin 97914
   accept 97926
+  accept 389 optional map 1453 @57.74,47.86 live
+  accept 95161
+  accept 343
 
 step Pick up quests (level 25.4)
   accept 97234
@@ -23,34 +26,25 @@ step Pick up quests (level 25.4)
 step Turn in (level 25.4)
   turnin 97234
 
-step Pick up quests (level 25.4)
-  accept 343
-
-step Pick up quests (level 25.4)
-  accept 389 optional map 1453 @57.74,47.86 live
-
-step Pick up quests (level 25.4)
-  accept 95161
-
 step Hearthstone (level 25.4)
   sethome "Stormwind City"
+
+step Turn in (level 25.4)
+  turnin 337
+  turnin 343
+  accept 344
+
+step Pick up quests (level 25.4)
+  accept 98191
+
+step Turn in (level 25.4)
+  turnin 98191
 
 step Turn in (level 25.4)
   turnin 389 optional map 1453 @51.49,69.38 live
 
 step Pick up quests (level 25.4)
   accept 3765 optional map 1453 @36.24,67.61 live
-
-step Turn in (level 25.5)
-  turnin 337
-  turnin 343
-  accept 344
-
-step Pick up quests (level 25.5)
-  accept 98191
-
-step Turn in (level 25.5)
-  turnin 98191
 
 step Flight path (level 25.5)
   getfp "Menethil Harbor"

@@ -16,20 +16,18 @@ step Reach level 32
   tip If you're not level 32 yet: kill Young Stranglethorn Tiger here (level 31). Trollbane needs level 32.
 
 step Pick up quests (level 32.3)
-  accept 638
-
-step Pick up quests (level 32.3)
   accept 596
   accept 629
 
 step Objectives: Bloody Bone Necklaces (level 33.0)
   collect 3915 x25 quest 596.1
 
+step Turn in and pick up (level 33.0)
+  turnin 596
+  accept 638
+
 step Objectives: The Vile Reef (level 33.0)
   collect 4094 quest 629.1
-
-step Turn in (level 33.0)
-  turnin 596
 
 step Reach level 33
   zone map 1434
@@ -37,37 +35,29 @@ step Reach level 33
   level 33
   tip If you're not level 33 yet: kill Mistvale Gorilla here (level 33). The Defense of Grom'gol needs level 33.
 
-step Pick up quests (level 33.0)
+step Turn in and pick up (level 33.0)
   accept 568
+  turnin 629
 
 step Objectives: The Defense of Grom'gol (level 33.1)
   kill 686 x15 quest 568.1
 
-step Turn in (level 33.1)
+step Turn in and pick up (level 33.1)
   turnin 568
-
-step Pick up quests (level 33.1)
-  accept 570
-
-step Objectives: Mok'thardin's Enchantment (level 33.2)
-  collect 3838 x8 quest 570.1
-  collect 3839 quest 570.2
-
-step Turn in (level 33.2)
-  turnin 570
-
-step Pick up quests (level 33.2)
   accept 569
+  accept 570
 
 step Objectives: The Defense of Grom'gol (level 33.2)
   kill 1142 quest 569.1
   kill 1144 quest 569.2
 
-step Turn in (level 33.3)
-  turnin 569
+step Objectives: Mok'thardin's Enchantment (level 33.3)
+  collect 3838 x8 quest 570.1
+  collect 3839 quest 570.2
 
 step Turn in (level 33.3)
-  turnin 629
+  turnin 570
+  turnin 569
 
 step Flight path (level 33.3)
   getfp "Booty Bay"

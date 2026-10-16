@@ -13,11 +13,9 @@ step Pick up quests (level 23.6)
   accept 95883
   accept 95885
 
-step Objectives: The Offering of Blood (level 23.6)
-  kill 212753 quest 95885.1
-
-step Objectives: The Tortured Soul (level 23.6)
+step Objectives (level 23.6)
   collect 271350 quest 95883.1
+  kill 212753 quest 95885.1
 
 step Turn in (level 23.7)
   turnin 95883
@@ -35,8 +33,6 @@ step Hearthstone (level 23.8)
 
 step Pick up quests (level 23.8)
   accept 92401 optional map 1421 @44.54,42.96
-
-step Pick up quests (level 23.8)
   accept 480
   accept 516
 
@@ -51,7 +47,7 @@ step Turn in (level 23.9)
   turnin 480
   turnin 516
 
-step Dungeon: Shadowfang Keep (level 24)
+step Dungeon: Shadowfang Keep (level 24.0)
   zone map 1421
   goto 44.8,67.8 "Shadowfang Keep" r 30 live
   tip Find a group and clear Shadowfang Keep, with its quests from this route in your log.

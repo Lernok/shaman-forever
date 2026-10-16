@@ -9,10 +9,8 @@ next sf-orc-enh/02-tirisfal-glades
 # Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 35.9 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 1.0)
+step Turn in and pick up (level 1.0)
   accept 4641
-
-step Turn in (level 1.1)
   turnin 4641
   accept 788
   accept 97279
@@ -20,11 +18,11 @@ step Turn in (level 1.1)
 step Objectives: Wayward Weapons (level 1.1)
   collect 277653 x6 quest 97279.1
 
-step Turn in (level 1.5)
-  turnin 97279
-
 step Pick up quests (level 1.5)
   accept 790
+
+step Turn in (level 1.7)
+  turnin 97279
 
 step Objectives: Sarkoth (level 1.7)
   collect 4905 quest 790.1
@@ -39,16 +37,14 @@ step Reach level 2
   tip If you're not level 2 yet: kill Mottled Boar here (level 2). Vile Familiars needs level 2.
 
 step Pick up quests (level 2.4)
-  accept 792
-
-step Pick up quests (level 2.4)
   accept 804
 
-step Turn in (level 2.5)
-  turnin 804
-
-step Objectives: Cutting Teeth (level 3.1)
+step Objectives: Cutting Teeth (level 2.5)
   kill 3098 x10 quest 788.1
+
+step Turn in and pick up (level 2.5)
+  turnin 804
+  accept 792
 
 step Reach level 3
   zone map 1411
@@ -56,29 +52,27 @@ step Reach level 3
   level 3
   tip If you're not level 3 yet: kill Scorpid Worker here (level 3). Lazy Peons needs level 3.
 
-step Pick up quests (level 3.1)
-  accept 5441
-
-step Objectives: Lazy Peons (level 3.1)
-  kill 10556 x5 quest 5441.1
-
-step Turn in (level 3.4)
-  turnin 5441
-  accept 6394
-
-step Turn in (level 3.5)
+step Turn in and pick up (level 3.1)
   turnin 788
   accept 789
   accept 3089
-
-step Turn in (level 3.5)
   turnin 3089
 
-step Pick up quests (level 3.5)
+step Objectives: Sting of the Scorpid (level 3.1)
+  collect 4862 x10 quest 789.1
+
+step Pick up quests (level 3.1)
   accept 4402
 
-step Objectives: Sting of the Scorpid (level 4.1)
-  collect 4862 x10 quest 789.1
+step Pick up quests (level 3.7)
+  accept 5441
+
+step Objectives: Lazy Peons (level 3.7)
+  kill 10556 x5 quest 5441.1
+
+step Turn in (level 4.0)
+  turnin 5441
+  accept 6394
 
 step Reach level 4
   zone map 1411
@@ -86,60 +80,48 @@ step Reach level 4
   level 4
   tip If you're not level 4 yet: kill Scorpid Worker here (level 3). Call of Earth needs level 4.
 
-step Pick up quests (level 4.1)
+step Turn in and pick up (level 4.1)
+  turnin 789
   accept 1516
 
-step Objectives: Galgar's Cactus Apple Surprise (level 4.1)
-  collect 11583 x10 quest 4402.1
-
-step Objectives: Call of Earth (level 4.1)
-  collect 6640 x2 quest 1516.1
-
-step Objectives: Thazz'ril's Pick (level 4.1)
+step Objectives (level 4.3)
+  kill 3101 x12 quest 792.1
   collect 16332 quest 6394.1
 
-step Objectives: Vile Familiars (level 4.5)
-  kill 3101 x12 quest 792.1
+step Objectives: Call of Earth (level 4.9)
+  collect 6640 x2 quest 1516.1
 
-step Turn in (level 4.7)
-  turnin 6394
-
-step Turn in (level 4.9)
-  turnin 4402
-
-step Turn in (level 5.0)
-  turnin 789
-
-step Turn in (level 5.2)
+step Turn in and pick up (level 4.9)
   turnin 792
   accept 794
-
-step Turn in (level 5.3)
   turnin 1516
   accept 1517
 
-step Turn in (level 5.4)
+step Turn in (level 5.1)
   turnin 1517
   accept 1518
 
-step Pick up quests (level 5.4)
-  accept 2161
+step Objectives: Galgar's Cactus Apple Surprise (level 5.1)
+  collect 11583 x10 quest 4402.1
 
-step Objectives: Burning Blade Medallion (level 5.4)
+step Turn in (level 5.1)
+  turnin 6394
+
+step Objectives: Burning Blade Medallion (level 5.3)
   collect 4859 quest 794.1
 
-step Turn in (level 5.6)
+step Turn in and pick up (level 5.5)
+  turnin 4402
   turnin 1518
-
-step Turn in (level 5.8)
   turnin 794
   accept 805
-
-step Pick up quests (level 5.8)
   accept 96652
 
 step Turn in (level 5.9)
   turnin 805
+
+step Pick up quests (level 6.0)
+  accept 2161
 
 step Turn in (level 6.0)
   turnin 96652
@@ -157,21 +139,19 @@ step Reach level 6
   tip If you're not level 6 yet: kill Felstalker here (level 4). Encroachment needs level 6.
 
 step Pick up quests (level 6.0)
-  accept 784
-  accept 837
-
-step Pick up quests (level 6.0)
-  accept 815
-  accept 96825
-
-step Pick up quests (level 6.0)
-  accept 791
+  accept 96604
 
 step Pick up quests (level 6.0)
   accept 96822
 
 step Pick up quests (level 6.0)
-  accept 96604
+  accept 784
+  accept 837
+  accept 815
+  accept 96825
+
+step Pick up quests (level 6.0)
+  accept 791
 
 step Objectives: The Great Outdoors (level 6.0)
   complete 96604
@@ -180,89 +160,54 @@ step Turn in (level 6.2)
   turnin 96604
   accept 96655
 
-step Objectives: Encroachment (level 6.4)
+step Objectives (level 6.4)
   kill 3111 x4 quest 837.1
   kill 3112 x4 quest 837.2
   kill 3113 x4 quest 837.3
   kill 3114 x4 quest 837.4
 
-step Objectives: This Fruit Could Bite Back (level 6.4)
+step Objectives (level 6.5)
   collect 275718 x8 quest 96825.1
+  kill 3111 x4 quest 837.1
+  kill 3112 x4 quest 837.2
+  kill 3113 x4 quest 837.3
+  kill 3114 x4 quest 837.4
 
-step Turn in (level 6.5)
+step Turn in (level 6.7)
   turnin 96825
   kill 3191 quest 96655.1
   turnin 96655
 
-step Objectives: Encroachment (level 6.8)
-  kill 3111 x4 quest 837.1
-  kill 3112 x4 quest 837.2
-  kill 3113 x4 quest 837.3
-  kill 3114 x4 quest 837.4
-
-step Objectives: Encroachment (level 6.9)
-  kill 3111 x4 quest 837.1
-  kill 3112 x4 quest 837.2
-  kill 3113 x4 quest 837.3
-  kill 3114 x4 quest 837.4
-
 step Turn in (level 7.0)
   turnin 837
 
-step Objectives: For Honor (level 7.0)
-  collect 275713 quest 96822.1
-  collect 275716 quest 96822.2
-  collect 275717 quest 96822.3
-
-step Objectives: Vanquish the Betrayers (level 7.2)
+step Objectives (level 7.0)
   kill 3128 x10 quest 784.1
   kill 3129 x8 quest 784.2
   kill 3192 quest 784.3
   collect 4870 x8 quest 791.1
 
-step Objectives: For Honor (level 7.6)
+step Objectives (level 7.4)
   collect 275713 quest 96822.1
   collect 275716 quest 96822.2
   collect 275717 quest 96822.3
-
-step Objectives: For Honor (level 7.6)
-  collect 275713 quest 96822.1
-  collect 275716 quest 96822.2
-  collect 275717 quest 96822.3
-
-step Objectives: Vanquish the Betrayers (level 7.7)
-  kill 3128 x10 quest 784.1
-  kill 3129 x8 quest 784.2
-  kill 3192 quest 784.3
 
 step Pick up quests (level 7.7)
   accept 830
 
 step Pick up quests (level 7.7)
-  accept 786
-
-step Pick up quests (level 7.7)
+  accept 96821
+  accept 817
+  accept 818
+  accept 97225
   accept 97223
-
-step Pick up quests (level 7.7)
   accept 808
   accept 823
   accept 826
 
-step Pick up quests (level 7.7)
-  accept 818
-  accept 97225
-
-step Pick up quests (level 7.7)
-  accept 96821
-  accept 817
-
 step Objectives: A Solvent Spirit (level 7.9)
   collect 4887 x4 quest 818.1
   collect 4888 x8 quest 818.2
-
-step Objectives: Break a Few Eggs (level 7.9)
-  collect 4890 x3 quest 815.1
 
 step Objectives: Bloodtalon Matriarch (level 7.9)
   collect 277128 quest 97223.1
@@ -272,15 +217,11 @@ step Objectives: Zalazane (level 8.2)
   kill 3206 x8 quest 826.2
   collect 4866 quest 826.3
 
-step Objectives: Zalazane (level 8.2)
+step Objectives (level 8.2)
+  collect 4864 quest 808.1
   kill 3207 x8 quest 826.1
   kill 3206 x8 quest 826.2
   collect 4866 quest 826.3
-
-step Objectives: Minshina's Skull (level 8.2)
-  collect 4864 quest 808.1
-
-step Objectives: Forgotten Loa Idols (level 8.2)
   collect 277135 x8 quest 97225.1
 
 step Objectives: Practical Prey (level 8.4)
@@ -290,19 +231,19 @@ step Objectives: A Solvent Spirit (level 8.6)
   collect 4887 x4 quest 818.1
   collect 4888 x8 quest 818.2
 
+step Objectives: Break a Few Eggs (level 8.8)
+  collect 4890 x3 quest 815.1
+
 step Turn in (level 8.8)
+  turnin 817
+  turnin 818
   turnin 97225
   turnin 826
   turnin 808
-
-step Turn in (level 9.2)
-  turnin 818
-
-step Turn in (level 9.3)
-  turnin 817
-
-step Turn in (level 9.4)
   turnin 97223
+
+step Pick up quests (level 9.4)
+  accept 786
 
 step Objectives: Thwarting Kolkar Aggression (level 9.4)
   complete 786
@@ -319,26 +260,18 @@ step Objectives: Thwarting Kolkar Aggression (level 9.4)
 
 step Turn in (level 9.5)
   turnin 786
-
-step Turn in (level 9.6)
   turnin 99123
 
-step Objectives: Legging It (level 9.6)
+step Objectives (level 9.6)
   kill 266850 x6 quest 96821.1
   kill 266849 x6 quest 96821.2
 
-step Objectives: Legging It (level 9.7)
-  kill 266850 x6 quest 96821.1
-  kill 266849 x6 quest 96821.2
-
-step Turn in (level 9.8)
+step Turn in and pick up (level 9.8)
   turnin 784
   turnin 830
   turnin 96821
   accept 825
   accept 831
-
-step Turn in (level 10.0)
   turnin 823
   accept 806
 
@@ -360,43 +293,35 @@ step Objectives: From The Wreckage.... (level 10.1)
 step Hearth (level 10.1)
   hearth "Razor Hill"
 
-step Turn in (level 10.1)
-  turnin 825
+step Pick up quests (level 10.1)
+  accept 812
 
-step Turn in (level 10.2)
-  turnin 815
+step Objectives: Dark Storms (level 10.2)
+  collect 4869 quest 806.1
 
-step Turn in (level 10.3)
-  turnin 791
-
-step Pick up quests (level 10.3)
+step Pick up quests (level 10.2)
   accept 834
 
-step Objectives: Winds in the Desert (level 10.3)
+step Objectives: Winds in the Desert (level 10.2)
   collect 4918 x5 quest 834.1
 
-step Turn in (level 10.4)
+step Turn in (level 10.3)
   turnin 834
   accept 835
 
-step Objectives: Dark Storms (level 10.4)
-  collect 4869 quest 806.1
-
-step Pick up quests (level 10.4)
-  accept 812
-
-step Objectives: Securing the Lines (level 10.5)
+step Objectives (level 10.3)
   kill 3117 x12 quest 835.1
   kill 3118 x8 quest 835.2
 
-step Objectives: Securing the Lines (level 10.7)
-  kill 3117 x12 quest 835.1
-  kill 3118 x8 quest 835.2
-
-step Turn in (level 10.8)
+step Turn in (level 10.6)
   turnin 835
 
-step Turn in (level 10.9)
+step Turn in (level 10.7)
+  turnin 791
+
+step Turn in and pick up (level 10.7)
+  turnin 815
+  turnin 825
   turnin 806
   accept 828
 

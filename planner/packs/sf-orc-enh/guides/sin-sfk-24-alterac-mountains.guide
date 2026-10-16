@@ -12,7 +12,7 @@ next sf-orc-enh/sin-sfk-25-undercity
 step Pick up quests (level 30.0)
   accept 96987 optional map 1416 @8.5,59.3 live
 
-step Dungeon: City of Dalaran (level 30)
+step Dungeon: City of Dalaran (level 30.0)
   zone map 1416
   goto 8.5,59.3 "City of Dalaran" r 30 live
   tip Find a group and clear City of Dalaran, with its quests from this route in your log.

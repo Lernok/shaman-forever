@@ -21,51 +21,47 @@ step Hearthstone (level 14.8)
 step Pick up quests (level 14.8)
   accept 5761 optional map 1454 @49.47,50.59
 
-step Dungeon: Ragefire Chasm (level 15)
+step Dungeon: Ragefire Chasm (level 15.0)
   zone map 1454
   goto 52.6,49 "Ragefire Chasm" r 30 live
   tip Find a group and clear Ragefire Chasm, with its quests from this route in your log.
 
-step Turn in (level 15.3)
-  turnin 5761 optional map 1454 @49.47,50.59
-
 step Pick up quests (level 15.3)
-  accept 97326
-
-step Objectives: Rocks to Rests (level 15.3)
-  collect 277952 x8 quest 97326.1
-
-step Turn in (level 15.3)
-  turnin 97326
-
-step Pick up quests (level 15.3)
-  accept 5726 optional map 1454 @31.73,37.82
-
-step Pick up quests (level 15.3)
-  accept 97246
-
-step Pick up quests (level 15.3)
-  accept 97249
-  turnin 97246
-
-step Pick up quests (level 15.4)
   accept 97242
-
-step Pick up quests (level 15.4)
   accept 97275
 
-step Objectives: Yelmak's Medley (level 15.4)
+step Objectives: Yelmak's Medley (level 15.3)
   collect 277278 quest 97242.1
   collect 277279 quest 97242.2
 
-step Turn in (level 15.4)
+step Turn in (level 15.3)
   turnin 97242
-
-step Turn in (level 15.5)
   turnin 97275
+
+step Pick up quests (level 15.4)
+  accept 97326
+
+step Objectives: Rocks to Rests (level 15.4)
+  collect 277952 x8 quest 97326.1
+
+step Turn in (level 15.4)
+  turnin 97326
+
+step Turn in (level 15.4)
+  turnin 5761 optional map 1454 @49.47,50.59
+
+step Pick up quests (level 15.4)
+  accept 97246
+
+step Pick up quests (level 15.4)
+  accept 97249
+  turnin 97246
 
 step Turn in (level 15.5)
   turnin 97249
+
+step Pick up quests (level 15.5)
+  accept 5726 optional map 1454 @31.73,37.82
 
 step Hearth (level 15.5)
   hearth "Orgrimmar"

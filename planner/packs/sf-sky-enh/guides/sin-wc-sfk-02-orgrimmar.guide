@@ -21,7 +21,7 @@ step Hearthstone (level 14.8)
 step Pick up quests (level 14.8)
   accept 5761 optional map 1454 @49.47,50.59
 
-step Dungeon: Ragefire Chasm (level 15)
+step Dungeon: Ragefire Chasm (level 15.0)
   zone map 1454
   goto 52.6,49 "Ragefire Chasm" r 30 live
   tip Find a group and clear Ragefire Chasm, with its quests from this route in your log.

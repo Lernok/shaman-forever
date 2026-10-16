@@ -14,8 +14,6 @@ step Pick up quests (level 33.4)
 step Pick up quests (level 33.4)
   accept 1367
   accept 1368
-
-step Pick up quests (level 33.4)
   accept 1365
 
 step Objectives: Kodo Roundup (level 33.4)
@@ -111,37 +109,33 @@ step Turn in (level 34.3)
   turnin 1481
   accept 1482
 
-step Turn in (level 34.3)
-  turnin 1370
-  accept 1373
+step Pick up quests (level 34.3)
+  accept 5943
 
 step Objectives: Khan Shaka (level 34.3)
   collect 6073 quest 1375.1
 
-step Turn in (level 34.4)
-  turnin 1375
-
-step Objectives: The Corrupter (level 34.4)
-  collect 6442 quest 1482.1
-
-step Turn in (level 34.4)
-  turnin 1482
-  accept 1484
-
-step Turn in (level 34.4)
-  turnin 1484
-
-step Pick up quests (level 34.4)
-  accept 5381
+step Turn in and pick up (level 34.4)
+  turnin 1370
+  accept 1373
+  accept 93034
 
 step Pick up quests (level 34.4)
   accept 6143
 
 step Pick up quests (level 34.4)
-  accept 93034
+  accept 5381
 
-step Pick up quests (level 34.4)
-  accept 5943
+step Objectives: The Corrupter (level 34.4)
+  collect 6442 quest 1482.1
+
+step Turn in and pick up (level 34.4)
+  turnin 1482
+  accept 1484
+  turnin 1484
+
+step Turn in (level 34.4)
+  turnin 1375
 
 step Reach level 34
   zone map 1443
@@ -170,9 +164,6 @@ step Pick up quests (level 34.5)
 step Objectives: Get Me Out of Here! (level 34.5)
   complete 6132
 
-step Turn in (level 34.6)
-  turnin 6132
-
 step Pick up quests (level 34.6)
   accept 5501
 
@@ -182,11 +173,6 @@ step Objectives: Hand of Iruxos (level 34.6)
 step Pick up quests (level 34.6)
   accept 6027
 
-step Objectives: Other Fish to Fry (level 34.6)
-  kill 4714 x7 quest 6143.1
-  kill 4711 x7 quest 6143.2
-  kill 4712 x5 quest 6143.3
-
 step Pick up quests (level 34.6)
   accept 6161
 
@@ -194,23 +180,21 @@ step Objectives: Claim Rackmore's Treasure! (level 34.6)
   collect 15878 quest 6161.1
   collect 15881 quest 6161.2
 
-step Objectives: Other Fish to Fry (level 34.7)
+step Objectives (level 34.7)
   kill 4714 x7 quest 6143.1
   kill 4711 x7 quest 6143.2
   kill 4712 x5 quest 6143.3
   collect 15878 quest 6161.1
   collect 15881 quest 6161.2
 
-step Turn in (level 34.7)
-  turnin 6161
-
-step Objectives: Book of the Ancients (level 34.7)
-  collect 15803 quest 6027.1
-
-step Objectives: Other Fish to Fry (level 34.8)
+step Objectives (level 34.7)
   kill 4714 x7 quest 6143.1
   kill 4711 x7 quest 6143.2
   kill 4712 x5 quest 6143.3
+  collect 15803 quest 6027.1
+
+step Turn in (level 34.8)
+  turnin 6161
 
 step Turn in (level 34.8)
   turnin 6027
@@ -219,17 +203,20 @@ step Objectives: Bone Collector (level 34.8)
   collect 13703 x10 quest 5501.1
 
 step Turn in (level 34.9)
+  turnin 6132
+
+step Turn in (level 34.9)
   turnin 5501
 
 step Hearth (level 34.9)
   hearth "Shadowprey Village"
 
 step Turn in (level 34.9)
-  turnin 5381
-  accept 5581
+  turnin 6143
 
 step Turn in (level 34.9)
-  turnin 6143
+  turnin 5381
+  accept 5581
 
 step Objectives: Portals of the Legion (level 34.9)
   kill 11937 quest 5581.1

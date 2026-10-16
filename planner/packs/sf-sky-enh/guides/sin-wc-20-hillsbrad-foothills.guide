@@ -11,11 +11,7 @@ next sf-sky-enh/sin-wc-21-silverpine-forest
 
 step Pick up quests (level 29.9)
   accept 509
-
-step Pick up quests (level 29.9)
   accept 567
-
-step Pick up quests (level 29.9)
   accept 539
 
 step Objectives: Elixir of Agony (level 29.9)
@@ -25,25 +21,7 @@ step Objectives: Battle of Hillsbrad (level 29.9)
   kill 2305 quest 539.1
   kill 2269 x10 quest 539.2
 
-step Objectives: Dangerous! (level 29.9)
-  kill 2448 quest 567.1
-  kill 2449 quest 567.2
-  kill 2450 quest 567.3
-  kill 2451 quest 567.4
-
-step Objectives: Dangerous! (level 29.9)
-  kill 2448 quest 567.1
-  kill 2449 quest 567.2
-  kill 2450 quest 567.3
-  kill 2451 quest 567.4
-
-step Objectives: Dangerous! (level 29.9)
-  kill 2448 quest 567.1
-  kill 2449 quest 567.2
-  kill 2450 quest 567.3
-  kill 2451 quest 567.4
-
-step Objectives: Dangerous! (level 29.9)
+step Objectives (level 29.9)
   kill 2448 quest 567.1
   kill 2449 quest 567.2
   kill 2450 quest 567.3
@@ -52,13 +30,9 @@ step Objectives: Dangerous! (level 29.9)
 step Hearth (level 29.9)
   hearth "Tarren Mill"
 
-step Turn in (level 30.0)
+step Turn in and pick up (level 30.0)
   turnin 509
   accept 513
-
-step Turn in (level 30.0)
   turnin 539
   turnin 567
-
-step Pick up: The Grave Knight (City of Dalaran)
   accept 96986 optional map 1424 @62.63,20.65

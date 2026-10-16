@@ -25,30 +25,26 @@ step Flight path (level 20.5)
 step Hearthstone (level 20.5)
   sethome "Stormwind City"
 
-step Pick up quests (level 20.5)
-  accept 97222
-  turnin 97222
-
-step Pick up quests (level 20.6)
-  accept 399
-
-step Turn in (level 20.6)
+step Turn in and pick up (level 20.5)
   turnin 1338
-
-step Pick up quests (level 20.6)
   accept 353
 
-step Pick up quests (level 20.6)
+step Pick up quests (level 20.5)
   accept 97220
 
-step Pick up quests (level 20.6)
+step Pick up quests (level 20.5)
   accept 95065
+
+step Pick up quests (level 20.5)
+  accept 399
+
+step Turn in and pick up (level 20.5)
+  accept 97222
+  turnin 97222
+  turnin 97220
 
 step Objectives: Fishin' Time (level 20.6)
   collect 6530 x3 quest 95065.1
-
-step Turn in (level 20.6)
-  turnin 97220
 
 step Turn in (level 20.6)
   turnin 95065

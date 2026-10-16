@@ -11,16 +11,12 @@ next sf-dwarf-enh/sin-stockade-15-wetlands
 
 step Pick up quests (level 28.7)
   accept 66
-
-step Pick up quests (level 28.7)
+  accept 173
   accept 58
 
 step Turn in (level 28.7)
   turnin 66
   accept 67
-
-step Pick up quests (level 28.7)
-  accept 173
 
 step Pick up quests (level 28.7)
   accept 96138
@@ -47,18 +43,12 @@ step Objectives: Worgen in the Woods (level 28.9)
   kill 206 x8 quest 222.1
   kill 920 x8 quest 222.2
 
-step Turn in (level 29.0)
+step Turn in and pick up (level 29.0)
   turnin 222
   accept 223
-
-step Turn in (level 29.0)
   turnin 223
 
-step Objectives: Merrick's Bow (level 29.1)
-  kill 212 quest 96138.1
-  kill 892 quest 96138.2
-
-step Objectives: Merrick's Bow (level 29.1)
+step Objectives (level 29.1)
   kill 212 quest 96138.1
   kill 892 quest 96138.2
 
@@ -90,19 +80,13 @@ step Turn in (level 29.3)
 step Hearth (level 29.3)
   hearth "Darkshire"
 
-step Turn in (level 29.3)
+step Turn in and pick up (level 29.3)
   turnin 160
   accept 251
-
-step Turn in (level 29.3)
   turnin 251
   turnin 96138
   accept 401
   turnin 401
   accept 252
-
-step Turn in (level 29.4)
   turnin 252
-
-step Turn in (level 29.5)
   turnin 58

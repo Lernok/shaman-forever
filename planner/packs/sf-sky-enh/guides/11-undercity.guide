@@ -9,19 +9,15 @@ next sf-sky-enh/12-the-barrens
 # Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.9 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Turn in (level 24.1)
-  turnin 1013 optional map 1458 @53.74,54.46
-
-step Pick up quests (level 24.1)
+step Turn in and pick up (level 24.1)
   accept 97289
-
-step Turn in (level 24.2)
   turnin 97289
   accept 97290
-
-step Turn in (level 24.2)
   turnin 97290
   accept 97291
+
+step Turn in (level 24.2)
+  turnin 1013 optional map 1458 @53.74,54.46
 
 step Objectives: Unending Torment (level 24.2)
   collect 281300 quest 97291.1

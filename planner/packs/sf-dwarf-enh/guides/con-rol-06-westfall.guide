@@ -9,7 +9,7 @@ next sf-dwarf-enh/con-rol-07-redridge-mountains
 # Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.1 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Dungeon: The Deadmines (level 18)
+step Dungeon: The Deadmines (level 18.0)
   zone map 1436
   goto 42.5,71.7 "The Deadmines" r 30 live
   tip Find a group and clear The Deadmines, with its quests from this route in your log.
@@ -19,9 +19,6 @@ step Flight path (level 18.9)
 
 step Hearthstone (level 18.9)
   sethome "Sentinel Hill"
-
-step Pick up quests (level 18.9)
-  accept 65 optional map 1436 @56.33,47.52
 
 step Pick up quests (level 18.9)
   accept 103
@@ -34,21 +31,18 @@ step Objectives: The Coastal Menace (level 19.0)
 step Objectives: Keeper of the Flame (level 19.0)
   collect 814 x5 quest 103.1
 
-step Objectives: The Coast Isn't Clear (level 19.0)
-  kill 126 x7 quest 152.1
-  kill 171 x7 quest 152.2
-  kill 127 x7 quest 152.3
-  kill 517 x7 quest 152.4
-
-step Objectives: The Coast Isn't Clear (level 19.1)
-  kill 126 x7 quest 152.1
-  kill 171 x7 quest 152.2
-  kill 127 x7 quest 152.3
-  kill 517 x7 quest 152.4
-
-step Turn in (level 19.2)
+step Turn in (level 19.0)
   turnin 104
   turnin 103
+
+step Pick up quests (level 19.1)
+  accept 65 optional map 1436 @56.33,47.52
+
+step Objectives (level 19.1)
+  kill 126 x7 quest 152.1
+  kill 171 x7 quest 152.2
+  kill 127 x7 quest 152.3
+  kill 517 x7 quest 152.4
 
 step Hearth (level 19.3)
   hearth "Sentinel Hill"

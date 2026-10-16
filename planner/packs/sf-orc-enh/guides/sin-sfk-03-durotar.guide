@@ -11,20 +11,13 @@ next sf-orc-enh/sin-sfk-04-orgrimmar
 
 step Pick up quests (level 12.5)
   accept 840
-
-step Pick up quests (level 12.5)
   accept 99048
 
 step Turn in (level 12.5)
   turnin 99048
   accept 99049
 
-step Objectives: Threat from Below (level 12.5)
-  collect 286012 quest 99049.1
-  collect 286011 quest 99049.2
-  collect 286010 quest 99049.3
-
-step Objectives: Threat from Below (level 12.5)
+step Objectives (level 12.5)
   collect 286012 quest 99049.1
   collect 286011 quest 99049.2
   collect 286010 quest 99049.3
@@ -36,15 +29,15 @@ step Turn in (level 12.6)
 step Pick up quests (level 12.6)
   accept 97281
 
-step Turn in (level 12.7)
+step Pick up quests (level 12.7)
+  accept 816
+
+step Turn in (level 12.8)
   turnin 97281
   accept 97282
 
-step Objectives: Stormy Potential (level 12.7)
+step Objectives: Stormy Potential (level 12.8)
   collect 277665 x5 quest 97282.1
-
-step Pick up quests (level 12.7)
-  accept 816
 
 step Turn in (level 12.8)
   turnin 97282

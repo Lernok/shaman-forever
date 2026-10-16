@@ -11,8 +11,6 @@ next sf-sky-enh/04-undercity
 
 step Pick up quests (level 15.5)
   accept 95981
-
-step Pick up quests (level 15.5)
   accept 98298
   accept 98299
 
@@ -27,19 +25,13 @@ step Turn in (level 16.1)
   turnin 461
   accept 491
 
-step Objectives: Watching the Roads (level 16.2)
+step Objectives (level 16.2)
   kill 1888 x8 quest 95981.1
   kill 1889 x8 quest 95981.2
 
-step Objectives: Watching the Roads (level 16.3)
-  kill 1888 x8 quest 95981.1
-  kill 1889 x8 quest 95981.2
-
-step Objectives: Stop the Spread (level 16.4)
+step Objectives (level 16.4)
   kill 2053 x5 quest 98299.1
   kill 2054 x5 quest 98299.2
-
-step Objectives: Arugal's Folly (level 16.5)
   collect 280375 x6 quest 98298.1
 
 step Hearth (level 16.5)
@@ -47,8 +39,6 @@ step Hearth (level 16.5)
 
 step Turn in (level 16.6)
   turnin 95981
-
-step Turn in (level 16.6)
   turnin 98298
   turnin 98299
 

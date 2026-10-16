@@ -11,23 +11,21 @@ next sf-sky-enh/11-undercity
 
 step Pick up quests (level 23.6)
   accept 1014 optional map 1421 @44.2,39.81
-
-step Pick up quests (level 23.6)
   accept 1098 optional map 1421 @43.42,40.86
 
-step Dungeon: Shadowfang Keep (level 23)
+step Dungeon: Shadowfang Keep (level 23.6)
   zone map 1421
   goto 44.8,67.8 "Shadowfang Keep" r 30 live
   tip Find a group and clear Shadowfang Keep, with its quests from this route in your log.
 
-step Turn in (level 24.0)
+step Turn in (level 24.6)
   turnin 1098 optional map 1421 @44.8,67.8 live
 
-step Hearth (level 24.0)
+step Hearth (level 24.6)
   hearth "The Sepulcher"
 
-step Turn in (level 24.1)
+step Turn in (level 24.7)
   turnin 1014 optional map 1421 @44.2,39.81
 
-step Hearthstone (level 24.1)
+step Hearthstone (level 24.7)
   sethome "Undercity"

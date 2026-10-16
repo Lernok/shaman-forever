@@ -10,11 +10,11 @@ next sf-sky-enh/sin-sfk-10-thunder-bluff
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 23.3)
-  accept 1087
-
-step Pick up quests (level 23.3)
   accept 6393
   accept 6562 optional map 1442 @47.36,64.25
+
+step Pick up quests (level 23.3)
+  accept 1087
 
 step Pick up quests (level 23.3)
   accept 6301
@@ -71,10 +71,10 @@ step Objectives: New Life (level 23.8)
   complete 6381
 
 step Turn in (level 23.8)
-  turnin 1087
-
-step Turn in (level 23.9)
   turnin 6381
+
+step Turn in (level 23.8)
+  turnin 1087
 
 step Turn in (level 23.9)
   turnin 6393
@@ -86,69 +86,43 @@ step Reach level 23
   tip If you're not level 23 yet: kill Windshear Digger here (level 22). Calling in the Reserves needs level 23.
 
 step Pick up quests (level 23.9)
+  accept 1058
+
+step Pick up quests (level 23.9)
   accept 5881
   accept 6282
   accept 86576
+  accept 1088
 
-step Objectives: Harpies Threaten (level 24.0)
+step Objectives (level 24.1)
   kill 4022 x7 quest 6282.1
   kill 4025 x7 quest 6282.2
   kill 4024 x7 quest 6282.3
   kill 4023 x7 quest 6282.4
   collect 277936 x15 quest 86576.1
 
-step Pick up quests (level 24.1)
-  accept 1088
-
-step Objectives: Harpies Threaten (level 24.2)
-  kill 4022 x7 quest 6282.1
-  kill 4025 x7 quest 6282.2
-  kill 4024 x7 quest 6282.3
-  kill 4023 x7 quest 6282.4
-
-step Objectives: Harpies Threaten (level 24.2)
-  kill 4022 x7 quest 6282.1
-  kill 4025 x7 quest 6282.2
-  kill 4024 x7 quest 6282.3
-  kill 4023 x7 quest 6282.4
-
-step Objectives: Harpies Threaten (level 24.3)
+step Objectives (level 24.2)
   kill 4022 x7 quest 6282.1
   kill 4025 x7 quest 6282.2
   kill 4024 x7 quest 6282.3
   kill 4023 x7 quest 6282.4
 
 step Turn in (level 24.3)
-  turnin 6282
-
-step Turn in (level 24.4)
   turnin 86576
 
-step Pick up quests (level 24.4)
-  accept 1058
+step Turn in (level 24.3)
+  turnin 6282
 
 step Hearth (level 24.4)
   hearth "Sun Rock Retreat"
 
-step Objectives: Jin'Zil's Forest Magic (level 24.6)
+step Objectives (level 24.6)
   collect 5582 x5 quest 1058.1
   collect 5584 x5 quest 1058.2
   collect 5585 x30 quest 1058.3
   collect 5583 quest 1058.4
 
-step Objectives: Jin'Zil's Forest Magic (level 24.6)
-  collect 5582 x5 quest 1058.1
-  collect 5584 x5 quest 1058.2
-  collect 5585 x30 quest 1058.3
-  collect 5583 quest 1058.4
-
-step Objectives: Jin'Zil's Forest Magic (level 24.6)
-  collect 5582 x5 quest 1058.1
-  collect 5584 x5 quest 1058.2
-  collect 5585 x30 quest 1058.3
-  collect 5583 quest 1058.4
-
-step Objectives: Jin'Zil's Forest Magic (level 24.6)
+step Objectives: Jin'Zil's Forest Magic (level 24.7)
   collect 5582 x5 quest 1058.1
   collect 5584 x5 quest 1058.2
   collect 5585 x30 quest 1058.3

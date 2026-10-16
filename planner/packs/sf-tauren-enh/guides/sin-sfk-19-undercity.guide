@@ -9,14 +9,10 @@ next sf-tauren-enh/sin-sfk-20-silverpine-forest
 # Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.7 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 29.9)
+step Turn in and pick up (level 29.9)
   accept 97289
-
-step Turn in (level 30.0)
   turnin 97289
   accept 97290
-
-step Turn in (level 30.0)
   turnin 97290
   accept 97291
 
@@ -26,10 +22,8 @@ step Hearthstone (level 30.0)
 step Objectives: Unending Torment (level 30.0)
   collect 281300 quest 97291.1
 
-step Turn in (level 30.0)
+step Turn in and pick up (level 30.0)
   turnin 97291
   accept 97292
   turnin 97292
-
-step Pick up: Source of Power (City of Dalaran)
   accept 96988 optional map 1458 @46.61,74.09

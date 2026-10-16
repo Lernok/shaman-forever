@@ -9,21 +9,15 @@ next sf-dwarf-enh/con-rol-13-redridge-mountains
 # Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.1 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Turn in (level 27.8)
-  turnin 377 optional map 1431 @71.92,47.79
-
 step Pick up quests (level 27.8)
   accept 66
-
-step Pick up quests (level 27.8)
+  accept 173
   accept 58
 
-step Turn in (level 27.8)
+step Turn in and pick up (level 27.8)
   turnin 66
   accept 67
-
-step Pick up quests (level 27.8)
-  accept 173
+  turnin 377 optional map 1431 @71.92,47.79
 
 step Pick up quests (level 27.8)
   accept 96138
@@ -50,18 +44,12 @@ step Objectives: Worgen in the Woods (level 28.1)
   kill 206 x8 quest 222.1
   kill 920 x8 quest 222.2
 
-step Turn in (level 28.1)
+step Turn in and pick up (level 28.1)
   turnin 222
   accept 223
-
-step Turn in (level 28.2)
   turnin 223
 
-step Objectives: Merrick's Bow (level 28.2)
-  kill 212 quest 96138.1
-  kill 892 quest 96138.2
-
-step Objectives: Merrick's Bow (level 28.2)
+step Objectives (level 28.2)
   kill 212 quest 96138.1
   kill 892 quest 96138.2
 
@@ -93,21 +81,15 @@ step Turn in (level 28.5)
 step Hearth (level 28.5)
   hearth "Darkshire"
 
-step Turn in (level 28.5)
+step Turn in and pick up (level 28.5)
   turnin 160
   accept 251
-
-step Turn in (level 28.5)
   turnin 251
   turnin 96138
   accept 401
   turnin 401
   accept 252
-
-step Turn in (level 28.6)
   turnin 252
-
-step Turn in (level 28.7)
   turnin 58
 
 step Hearthstone (level 28.7)

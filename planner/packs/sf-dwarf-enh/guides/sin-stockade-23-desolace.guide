@@ -8,35 +8,29 @@ folder Shaman: Forever · Enano Mejora · sin Stockade
 # Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.3 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 33.7)
-  accept 1382
-  accept 1385
-
-step Pick up quests (level 33.7)
-  accept 1387
-
-step Pick up quests (level 33.7)
-  accept 1437
-
-step Turn in (level 33.7)
+step Turn in and pick up (level 33.7)
   turnin 1453
   accept 1458
+  accept 1437
 
 step Objectives: Reagents for Reclaimers Inc. (level 34.0)
   collect 6246 x10 quest 1458.1
   collect 6247 x10 quest 1458.2
 
-step Turn in (level 34.0)
+step Turn in and pick up (level 34.0)
+  accept 1387
+  accept 1382
+  accept 1385
   turnin 1458
   accept 1459
-
-step Objectives: Reagents for Reclaimers Inc. (level 34.1)
-  collect 6248 x7 quest 1459.1
-  collect 6249 x3 quest 1459.2
 
 step Turn in (level 34.1)
   turnin 1437
   accept 1465
+
+step Objectives: Reagents for Reclaimers Inc. (level 34.1)
+  collect 6248 x7 quest 1459.1
+  collect 6249 x3 quest 1459.2
 
 step Turn in (level 34.1)
   turnin 1465
@@ -83,17 +77,7 @@ step Turn in (level 34.6)
   turnin 1385
   accept 1386
 
-step Objectives: Assault on the Kolkar (level 34.6)
-  kill 4632 x12 quest 1386.1
-  kill 4633 x12 quest 1386.2
-  kill 4634 x6 quest 1386.3
-
-step Objectives: Assault on the Kolkar (level 34.6)
-  kill 4632 x12 quest 1386.1
-  kill 4633 x12 quest 1386.2
-  kill 4634 x6 quest 1386.3
-
-step Objectives: Assault on the Kolkar (level 34.6)
+step Objectives (level 34.6)
   kill 4632 x12 quest 1386.1
   kill 4633 x12 quest 1386.2
   kill 4634 x6 quest 1386.3
@@ -107,11 +91,7 @@ step Hearth (level 34.7)
 
 step Turn in (level 34.7)
   turnin 1440
-
-step Turn in (level 34.8)
   turnin 1387
-
-step Turn in (level 34.8)
   turnin 1459
 
 step Pick up quests (level 34.8)

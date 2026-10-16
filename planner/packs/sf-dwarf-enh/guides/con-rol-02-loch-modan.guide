@@ -12,8 +12,6 @@ next sf-dwarf-enh/con-rol-03-ironforge
 step Pick up quests (level 12.1)
   accept 416
   accept 1339
-
-step Pick up quests (level 12.1)
   accept 418
 
 step Objectives: Thelsamar Blood Sausages (level 12.2)
@@ -21,123 +19,87 @@ step Objectives: Thelsamar Blood Sausages (level 12.2)
   collect 3173 x3 quest 418.2
   collect 3174 x3 quest 418.3
 
-step Objectives: Rat Catching (level 12.5)
-  collect 3110 x12 quest 416.1
-
-step Objectives: Thelsamar Blood Sausages (level 12.6)
+step Objectives: Thelsamar Blood Sausages (level 12.5)
   collect 3172 x3 quest 418.1
   collect 3173 x3 quest 418.2
   collect 3174 x3 quest 418.3
 
-step Turn in (level 12.6)
-  turnin 416
-
-step Turn in (level 12.7)
+step Turn in (level 12.5)
   turnin 94465
   accept 94466
 
-step Pick up quests (level 12.7)
+step Pick up quests (level 12.5)
   accept 224
-
-step Pick up quests (level 12.7)
   accept 267
 
-step Objectives: The Trogg Threat (level 12.9)
+step Objectives (level 12.7)
   collect 2536 x8 quest 267.1
-
-step Objectives: In Defense of the King's Lands (level 13.1)
   kill 1161 x10 quest 224.1
   kill 1162 x10 quest 224.2
 
-step Objectives: Call of Fire (level 13.1)
-  collect 5026 quest 94466.1
-  collect 6652 quest 94466.2
-
-step Turn in (level 13.2)
+step Turn in and pick up (level 12.9)
   turnin 267
-
-step Turn in (level 13.3)
   turnin 224
-
-step Pick up quests (level 13.3)
   accept 237
 
-step Objectives: In Defense of the King's Lands (level 13.5)
+step Objectives: In Defense of the King's Lands (level 13.2)
   kill 1163 x10 quest 237.1
   kill 1166 x10 quest 237.2
 
-step Turn in (level 13.6)
+step Turn in and pick up (level 13.3)
   turnin 237
-
-step Pick up quests (level 13.6)
   accept 263
 
-step Objectives: In Defense of the King's Lands (level 13.8)
+step Objectives: In Defense of the King's Lands (level 13.5)
   kill 1197 x10 quest 263.1
   kill 1164 x10 quest 263.2
 
-step Turn in (level 13.9)
+step Turn in (level 13.6)
   turnin 263
 
-step Objectives: Thelsamar Blood Sausages (level 14.0)
+step Objectives (level 13.7)
+  collect 3110 x12 quest 416.1
   collect 3172 x3 quest 418.1
   collect 3173 x3 quest 418.2
   collect 3174 x3 quest 418.3
 
-step Pick up quests (level 14.0)
-  accept 298
+step Turn in (level 13.8)
+  turnin 416
 
-step Pick up quests (level 14.0)
-  accept 2038
-
-step Objectives: Bingles' Missing Supplies (level 14.0)
-  collect 7343 quest 2038.1
-  collect 7345 quest 2038.2
-  collect 7346 quest 2038.3
-  collect 7376 quest 2038.4
-
-step Objectives: Bingles' Missing Supplies (level 14.0)
-  collect 7343 quest 2038.1
-  collect 7345 quest 2038.2
-  collect 7346 quest 2038.3
-  collect 7376 quest 2038.4
-
-step Objectives: Bingles' Missing Supplies (level 14.0)
-  collect 7343 quest 2038.1
-  collect 7345 quest 2038.2
-  collect 7346 quest 2038.3
-  collect 7376 quest 2038.4
-
-step Objectives: Bingles' Missing Supplies (level 14.0)
-  collect 7343 quest 2038.1
-  collect 7345 quest 2038.2
-  collect 7346 quest 2038.3
-  collect 7376 quest 2038.4
-
-step Objectives: Call of Fire (level 14.0)
-  collect 5026 quest 94466.1
-  collect 6652 quest 94466.2
-
-step Turn in (level 14.0)
+step Turn in (level 13.9)
   turnin 1339
   accept 1338
   accept 307
 
-step Objectives: Filthy Paws (level 14.0)
+step Objectives: Filthy Paws (level 13.9)
   collect 2640 x4 quest 307.1
 
-step Turn in (level 14.1)
+step Turn in (level 14.0)
   turnin 307
+
+step Objectives (level 14.0)
+  collect 5026 quest 94466.1
+  collect 6652 quest 94466.2
+
+step Pick up quests (level 14.1)
+  accept 298
+
+step Pick up quests (level 14.1)
+  accept 2038
+
+step Objectives (level 14.1)
+  collect 7343 quest 2038.1
+  collect 7345 quest 2038.2
+  collect 7346 quest 2038.3
+  collect 7376 quest 2038.4
 
 step Hearth (level 14.1)
   hearth "Stoutlager Inn"
 
-step Turn in (level 14.2)
-  turnin 418
-
-step Turn in (level 14.2)
+step Turn in and pick up (level 14.2)
   turnin 298
   accept 301
+  turnin 418
 
 step Turn in (level 14.3)
   turnin 94466

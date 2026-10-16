@@ -9,91 +9,71 @@ next sf-tauren-enh/sin-wc-sfk-28-hillsbrad-foothills
 # Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.0 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 31.7)
-  accept 655
-
-step Pick up quests (level 31.7)
-  accept 677
-
-step Turn in (level 31.7)
-  turnin 655
-  accept 671
-  accept 672
-
-step Objectives: Raising Spirits (level 31.8)
-  collect 4512 x10 quest 672.1
-
 step Pick up quests (level 31.8)
   accept 8263
   turnin 8263
 
+step Pick up quests (level 31.9)
+  accept 655
+
 step Turn in (level 31.9)
+  turnin 655
+  accept 671
+  accept 672
+
+step Objectives: Raising Spirits (level 32.0)
+  collect 4512 x10 quest 672.1
+
+step Turn in and pick up (level 32.0)
+  accept 677
   turnin 672
   accept 674
-
-step Turn in (level 31.9)
   turnin 674
   accept 675
-
-step Turn in (level 31.9)
   turnin 675
 
-step Objectives: Call to Arms (level 31.9)
+step Objectives (level 32.0)
   kill 2554 x10 quest 677.1
   kill 2556 x10 quest 677.2
   kill 2555 x8 quest 677.3
 
-step Objectives: Call to Arms (level 32.0)
-  kill 2554 x10 quest 677.1
-  kill 2556 x10 quest 677.2
-  kill 2555 x8 quest 677.3
-
-step Objectives: Call to Arms (level 32.0)
-  kill 2554 x10 quest 677.1
-  kill 2556 x10 quest 677.2
-  kill 2555 x8 quest 677.3
-
-step Hearth (level 32.0)
+step Hearth (level 32.1)
   hearth "Hammerfall"
 
-step Pick up quests (level 32.0)
+step Pick up quests (level 32.1)
   accept 701
 
-step Objectives: Guile of the Raptor (level 32.2)
+step Objectives: Guile of the Raptor (level 32.3)
   collect 4513 x12 quest 701.1
-
-step Objectives: The Hammer May Fall (level 32.2)
-  kill 2562 x8 quest 676.1
-  kill 2564 x10 quest 676.2
 
 step Objectives: The Hammer May Fall (level 32.3)
   kill 2562 x8 quest 676.1
   kill 2564 x10 quest 676.2
 
-step Objectives: Foul Magics (level 32.4)
-  collect 4495 x10 quest 671.1
+step Objectives: The Hammer May Fall (level 32.4)
+  kill 2562 x8 quest 676.1
+  kill 2564 x10 quest 676.2
 
-step Pick up quests (level 32.4)
+step Turn in and pick up (level 32.5)
   accept 79976
-
-step Turn in (level 32.4)
   turnin 79976
 
-step Turn in (level 32.5)
-  turnin 676
-  turnin 677
+step Objectives: Foul Magics (level 32.6)
+  collect 4495 x10 quest 671.1
 
-step Turn in (level 32.5)
+step Turn in and pick up (level 32.6)
   turnin 671
   turnin 701
   accept 702
+  turnin 676
+  turnin 677
 
-step Turn in (level 32.6)
+step Turn in (level 32.7)
   turnin 702
   accept 847
 
-step Turn in (level 32.7)
+step Turn in (level 32.8)
   turnin 847
 
-step Hearthstone (level 32.7)
+step Hearthstone (level 32.8)
   sethome "Tarren Mill"

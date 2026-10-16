@@ -9,14 +9,10 @@ next sf-sky-enh/sin-wc-02-orgrimmar
 # Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.0 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 1.0)
+step Turn in and pick up (level 1.0)
   accept 92460
-
-step Turn in (level 1.1)
   turnin 92460
   accept 92461
-
-step Pick up quests (level 1.1)
   accept 92462
 
 step Objectives: Harmony in Balance (level 2.1)
@@ -29,37 +25,25 @@ step Reach level 2
   tip If you're not level 2 yet: kill Pesky Cirrusfly here (level 1). Elemental Unrest needs level 2.
 
 step Pick up quests (level 2.1)
-  accept 92464
-
-step Pick up quests (level 2.1)
-  accept 92598
-
-step Pick up quests (level 2.1)
-  accept 92474
-
-step Pick up quests (level 2.1)
   accept 94414
   kill 257554 quest 94414.1
   turnin 94414
 
-step Turn in (level 2.3)
+step Turn in and pick up (level 2.3)
+  accept 92474
+  accept 92598
+  accept 92464
   turnin 92474
   turnin 92461
   accept 92484
-
-step Turn in (level 2.4)
   turnin 92484
-
-step Pick up quests (level 2.4)
   accept 93552
 
 step Objectives: Harvesting Windstones (level 2.4)
   collect 258772 x15 quest 93552.1
 
-step Turn in (level 2.8)
+step Turn in and pick up (level 2.8)
   turnin 93552
-
-step Turn in (level 2.9)
   turnin 92464
   accept 92465
 
@@ -76,21 +60,19 @@ step Reach level 3
   level 3
   tip If you're not level 3 yet: kill Pesky Cirrusfly here (level 1). Call of Earth needs level 3.
 
-step Pick up quests (level 3.5)
-  accept 92466
-
-step Objectives: Call of Earth (level 3.6)
-  collect 251924 quest 92466.1
-
-step Turn in (level 3.7)
-  turnin 92465
-  accept 92469
-
-step Objectives: Infestation Investigation (level 4.0)
+step Objectives: Infestation Investigation (level 3.5)
   kill 251169 x8 quest 92462.1
 
-step Turn in (level 4.1)
+step Turn in and pick up (level 3.6)
   turnin 92462
+  accept 92466
+
+step Objectives: Call of Earth (level 3.7)
+  collect 251924 quest 92466.1
+
+step Turn in (level 3.8)
+  turnin 92465
+  accept 92469
 
 step Reach level 4
   zone map 2521
@@ -98,77 +80,53 @@ step Reach level 4
   level 4
   tip If you're not level 4 yet: kill Roiling Winds here (level 3). Aetheen of the Gales needs level 4.
 
-step Pick up quests (level 4.1)
+step Turn in and pick up (level 4.1)
   accept 92471
-
-step Turn in (level 4.1)
-  turnin 92471
-  accept 92470
-
-step Pick up quests (level 4.1)
-  accept 92473
-
-step Objectives: Aggressive Encroachment (level 4.4)
-  collect 251918 x6 quest 92473.1
-
-step Turn in (level 4.6)
-  turnin 92473
-
-step Pick up quests (level 4.6)
-  accept 92463
-
-step Turn in (level 4.7)
-  turnin 92598
-
-step Turn in (level 4.9)
+  turnin 92469
   turnin 92466
   accept 92467
+  turnin 92471
+  accept 92470
+  turnin 92598
+  accept 92473
 
-step Turn in (level 4.9)
-  turnin 92469
+step Objectives: Aggressive Encroachment (level 4.6)
+  collect 251918 x6 quest 92473.1
 
-step Pick up quests (level 4.9)
+step Turn in and pick up (level 4.8)
+  turnin 92473
+  accept 92463
+  turnin 92467
+  accept 92468
+
+step Objectives: The Cirrusfly Queen (level 5.0)
+  kill 251404 quest 92463.1
+
+step Pick up quests (level 5.1)
   accept 92544
 
-step Objectives: Al'Aketh Thugs (level 5.2)
+step Objectives: Al'Aketh Thugs (level 5.4)
   kill 251145 x6 quest 92544.1
   kill 251448 x4 quest 92544.2
   kill 256935 quest 92544.3
 
-step Turn in (level 5.3)
+step Turn in (level 5.5)
   turnin 92544
 
-step Objectives: Foul Matriarch (level 5.4)
+step Objectives (level 5.6)
   kill 250937 x8 quest 92470.1
   collect 252665 quest 92470.2
 
-step Objectives: Foul Matriarch (level 5.5)
-  kill 250937 x8 quest 92470.1
-  collect 252665 quest 92470.2
-
-step Turn in (level 5.7)
+step Turn in and pick up (level 5.9)
+  turnin 92468
   turnin 92470
   accept 92472
   accept 96638
-
-step Objectives: The Cirrusfly Queen (level 5.7)
-  kill 251404 quest 92463.1
-
-step Turn in (level 5.8)
-  turnin 92467
-  accept 92468
-
-step Turn in (level 5.9)
-  turnin 92468
-
-step Turn in (level 6.0)
   turnin 92463
 
-step Turn in (level 6.1)
+step Turn in and pick up (level 6.1)
   turnin 96638
-
-step Turn in (level 6.2)
-  turnin 92472
+  accept 96101
 
 step Pick up quests (level 6.2)
   accept 92595
@@ -176,46 +134,33 @@ step Pick up quests (level 6.2)
   turnin 92595
   accept 94411
 
-step Pick up quests (level 6.4)
-  accept 96101
+step Turn in (level 6.4)
+  turnin 92472
 
 step Objectives: The Great Outdoors (level 6.4)
   complete 96101
 
-step Turn in (level 6.5)
-  turnin 96101
-  accept 96646
-
-step Objectives: Camping 101: Cooking (level 6.5)
-  kill 251905 quest 96646.1
-  turnin 96646
-
-step Pick up quests (level 6.7)
+step Pick up quests (level 6.5)
   accept 92514
 
-step Objectives: Welcome to Shen'dar Village (level 6.7)
+step Objectives: Welcome to Shen'dar Village (level 6.5)
   kill 251902 quest 92514.1
   kill 254089 quest 92514.2
 
-step Turn in (level 6.7)
+step Turn in and pick up (level 6.5)
+  turnin 96101
+  accept 96646
   turnin 92514
   accept 92517
-
-step Pick up quests (level 6.7)
   accept 92516
   accept 93319
-
-step Pick up quests (level 6.7)
   accept 92515
-
-step Pick up quests (level 6.7)
   accept 93951
 
-step Objectives: The Problem With Prideclaws (level 7.0)
+step Objectives (level 6.8)
   collect 252670 x10 quest 92515.1
-
-step Turn in (level 7.2)
-  turnin 92515
+  kill 251905 quest 96646.1
+  turnin 96646
 
 step Pick up quests (level 7.2)
   accept 92553
@@ -227,48 +172,30 @@ step Objectives: Restocking the Larders (level 7.7)
 step Turn in (level 7.8)
   turnin 92553
 
-step Objectives: Meddlesome Mages (level 7.9)
+step Objectives (level 7.9)
   kill 257521 x6 quest 94411.1
-
-step Objectives: The Criminal Element (level 8.1)
   kill 251918 x10 quest 92517.1
   kill 255534 quest 92517.2
   collect 257945 x10 quest 93319.1
 
-step Objectives: The Criminal Element (level 8.3)
-  kill 251918 x10 quest 92517.1
-  kill 255534 quest 92517.2
-
 step Turn in (level 8.4)
-  turnin 92517
-  accept 93036
-
-step Turn in (level 8.4)
-  turnin 93036
-  accept 92529
-
-step Objectives: Hippogryph Harrassment (level 8.5)
-  kill 251291 x8 quest 92516.1
-  kill 251284 x6 quest 92516.2
-  kill 251261 quest 92516.3
-
-step Objectives: Hippogryph Harrassment (level 8.6)
-  kill 251291 x8 quest 92516.1
-  kill 251284 x6 quest 92516.2
-  kill 251261 quest 92516.3
-
-step Objectives: A Little Beauty (level 8.6)
-  collect 263493 x8 quest 93951.1
-
-step Turn in (level 8.7)
   turnin 94411
 
-step Turn in (level 8.8)
+step Objectives (level 8.5)
+  collect 263493 x8 quest 93951.1
+  kill 251291 x8 quest 92516.1
+  kill 251284 x6 quest 92516.2
+  kill 251261 quest 92516.3
+
+step Turn in and pick up (level 8.7)
   turnin 93319
   turnin 92516
-
-step Turn in (level 9.0)
+  turnin 92515
   turnin 93951
+  turnin 92517
+  accept 93036
+  turnin 93036
+  accept 92529
 
 step Turn in (level 9.0)
   turnin 92529
@@ -277,69 +204,47 @@ step Turn in (level 9.0)
 step Objectives: Among the Faithful (level 9.0)
   kill 254128 quest 92528.1
 
-step Turn in (level 9.1)
+step Turn in and pick up (level 9.1)
   turnin 92528
   accept 92550
   accept 93926
-
-step Pick up quests (level 9.1)
   accept 92551
 
-step Objectives: Havoc in the Highlands (level 9.1)
-  kill 252068 x6 quest 92550.1
-  kill 251662 x4 quest 92550.2
-  collect 252661 quest 92550.3
-
-step Objectives: Havoc in the Highlands (level 9.1)
-  kill 252068 x6 quest 92550.1
-  kill 251662 x4 quest 92550.2
-  collect 252661 quest 92550.3
-
-step Objectives: Havoc in the Highlands (level 9.2)
+step Objectives (level 9.1)
   kill 252068 x6 quest 92550.1
   kill 251662 x4 quest 92550.2
   collect 252661 quest 92550.3
   collect 252760 x10 quest 92551.1
-
-step Objectives: The Western Watch (level 9.4)
   kill 252155 quest 93926.1
   turnin 93926
   accept 93927
 
-step Objectives: A Last Request (level 9.5)
+step Objectives (level 9.5)
   kill 256966 quest 93927.1
   collect 254871 quest 93927.2
   collect 263415 quest 93927.3
   collect 263418 quest 93927.4
 
-step Objectives: A Last Request (level 9.5)
-  kill 256966 quest 93927.1
-  collect 254871 quest 93927.2
-  collect 263415 quest 93927.3
-  collect 263418 quest 93927.4
-
-step Turn in (level 9.6)
+step Turn in and pick up (level 9.6)
+  turnin 92551
   turnin 92550
   turnin 93927
   accept 92579
   accept 93948
 
-step Turn in (level 9.7)
-  turnin 92551
-
 step Pick up quests (level 9.7)
   accept 93317
 
-step Pick up quests (level 9.7)
+step Objectives: Crab Season (level 9.7)
+  collect 257941 x6 quest 93317.1
+
+step Turn in (level 9.8)
+  turnin 93317
+
+step Pick up quests (level 9.8)
   accept 92679
   kill 252800 quest 92679.1
   kill 252448 quest 92679.2
-
-step Objectives: Crab Season (level 9.9)
-  collect 257941 x6 quest 93317.1
-
-step Turn in (level 10.0)
-  turnin 93317
 
 step Turn in (level 10.0)
   turnin 93948
@@ -350,31 +255,56 @@ step Reach level 10
   level 10
   tip If you're not level 10 yet: kill Hungry Bandit here (level 9). Call of Fire needs level 10.
 
-step Pick up quests (level 10.0)
-  accept 97243
+step Objectives (level 10.0)
+  kill 252800 quest 92679.1
+  kill 252448 quest 92679.2
+  turnin 92679
+  accept 92682
+  accept 92683
+  accept 92684
+  collect 253597 x7 quest 92684.1
+  collect 253591 x10 quest 92682.1
+  kill 252802 x5 quest 92682.2
+  collect 253595 x5 quest 92683.1
 
-step Turn in (level 10.1)
+step Turn in and pick up (level 10.3)
+  accept 92698
+  turnin 92682
+  turnin 92684
+  turnin 92683
+  turnin 92698
+  accept 92685
+
+step Objectives (level 10.6)
+  collect 253596 x7 quest 92685.1
+  turnin 92685
+  accept 92693
+  kill 252800 quest 92693.1
+  kill 252863 quest 92693.2
+
+step Turn in (level 10.6)
+  turnin 92693
+  accept 92703
+
+step Turn in and pick up (level 10.7)
+  accept 94484
   turnin 92579
   accept 92700
   accept 93949
 
-step Objectives: Bugged (level 10.1)
+step Objectives (level 10.7)
   kill 251727 quest 93949.1
-
-step Turn in (level 10.2)
-  turnin 93949
-
-step Turn in (level 10.2)
   turnin 92700
   accept 92708
   accept 93735
   kill 251968 quest 92708.1
   turnin 92708
 
-step Pick up quests (level 10.4)
+step Pick up quests (level 11.0)
+  accept 97243
   accept 93736
 
-step Turn in (level 10.4)
+step Objectives (level 11.1)
   turnin 93735
   accept 93737
   kill 256083 quest 93737.1
@@ -382,237 +312,128 @@ step Turn in (level 10.4)
   collect 260883 quest 93737.3
   collect 260880 quest 93737.4
 
-step Objectives: Unwelcome Spirits (level 10.7)
-  collect 262357 x10 quest 93736.1
-
-step Objectives: The Broken Construct (level 10.7)
-  kill 256083 quest 93737.1
-  collect 260881 quest 93737.2
-  collect 260883 quest 93737.3
-  collect 260880 quest 93737.4
-
-step Objectives: The Broken Construct (level 10.7)
-  kill 256083 quest 93737.1
-  collect 260881 quest 93737.2
-  collect 260883 quest 93737.3
-  collect 260880 quest 93737.4
-
-step Turn in (level 10.8)
-  turnin 93736
-
-step Turn in (level 10.8)
-  turnin 97243
-  accept 97244
-
-step Objectives: Blood Tithe (level 10.8)
-  kill 252800 quest 92679.1
-  kill 252448 quest 92679.2
-  turnin 92679
-  accept 92682
-  accept 92683
-  accept 92684
-
-step Objectives: Ornery Ornery Galestriders (level 11.0)
-  collect 253597 x7 quest 92684.1
-
-step Pick up quests (level 11.0)
-  accept 92698
-
-step Objectives: Flutterfly Dust (level 11.0)
-  collect 253595 x5 quest 92683.1
-
-step Objectives: Make Yourself Useful (level 11.1)
-  collect 253591 x10 quest 92682.1
-  kill 252802 x5 quest 92682.2
-
-step Turn in (level 11.1)
-  turnin 92682
-  turnin 92684
-  turnin 92683
-  turnin 92698
-  accept 92685
-
-step Objectives: The Hills Have Eyes (level 11.4)
-  collect 253596 x7 quest 92685.1
-
-step Objectives: The Broken Construct (level 11.4)
-  kill 256083 quest 93737.1
-  collect 260881 quest 93737.2
-  collect 260883 quest 93737.3
-  collect 260880 quest 93737.4
-
-step Turn in (level 11.5)
-  turnin 92685
-  accept 92693
-  kill 252800 quest 92693.1
-  kill 252863 quest 92693.2
-
-step Objectives: Standing Our Ground (level 11.5)
-  kill 252800 quest 92693.1
-  kill 252863 quest 92693.2
-
-step Turn in (level 11.5)
-  turnin 92693
-  accept 92703
-
-step Turn in (level 11.6)
+step Turn in and pick up (level 11.6)
   turnin 93737
   accept 93738
-
-step Turn in (level 11.7)
-  turnin 92703
-
-step Turn in (level 11.8)
   turnin 93738
   accept 93746
 
-step Objectives: Call of Fire (level 11.8)
+step Turn in (level 11.7)
+  turnin 97243
+  accept 97244
+
+step Pick up quests (level 11.7)
+  accept 98512
+
+step Objectives (level 11.8)
+  kill 254626 x10 quest 98512.1
+  kill 256247 quest 93746.1
   collect 277267 quest 97244.1
 
-step Objectives: A Firm Response (level 11.8)
-  kill 256247 quest 93746.1
-
-step Turn in (level 11.9)
+step Turn in and pick up (level 11.9)
+  turnin 92703
   turnin 93746
   accept 92871
   accept 93740
-
-step Turn in (level 11.9)
+  turnin 93949
   turnin 92871
   accept 93320
+  accept 94896
+  accept 94897
 
-step Objectives: Blood for Blood (level 12.0)
+step Objectives: Blood for Blood (level 12.1)
   collect 255658 x10 quest 93740.1
 
-step Turn in (level 12.1)
+step Turn in (level 12.2)
   turnin 93320
   accept 92642
   accept 92645
 
-step Objectives: Disrupting Logistics (level 12.2)
+step Objectives (level 12.3)
   kill 254596 x4 quest 92642.1
   kill 270201 x8 quest 92642.2
-
-step Objectives: Breaking the Breaker (level 12.2)
   kill 252666 quest 92645.1
 
-step Turn in (level 12.3)
+step Turn in and pick up (level 12.4)
   turnin 92642
   turnin 92645
+  accept 92880
 
-step Turn in (level 12.5)
+step Turn in and pick up (level 12.7)
+  turnin 92880
+  accept 92881
+  turnin 92881
+  accept 92643
   turnin 93740
 
-step Turn in (level 12.5)
+step Turn in (level 12.7)
   turnin 97244
   accept 97245
 
-step Objectives: Call of Fire (level 12.6)
+step Objectives: Call of Fire (level 12.8)
   collect 277269 quest 97245.1
 
-step Turn in (level 12.6)
-  turnin 97245
-  accept 97257
-
-step Objectives: Call of Fire (level 12.6)
-  kill 268762 quest 97257.1
-  kill 268679 quest 97257.2
-
-step Objectives: Call of Fire (level 12.6)
-  kill 268762 quest 97257.1
-  kill 268679 quest 97257.2
-
-step Turn in (level 12.7)
-  turnin 97257
-
-step Pick up quests (level 12.7)
-  accept 94484
-
-step Pick up quests (level 12.7)
-  accept 94896
-  accept 94897
-
-step Pick up quests (level 12.7)
-  accept 92880
-
-step Turn in (level 12.8)
-  turnin 92880
-  accept 92881
-
-step Turn in (level 12.8)
-  turnin 92881
-  accept 92643
-
-step Pick up quests (level 12.8)
-  accept 98512
-
-step Objectives: Al'Aketh Assassins (level 12.9)
-  kill 254626 x10 quest 98512.1
-
-step Objectives: The Turncoat (level 12.9)
+step Objectives: The Turncoat (level 12.8)
   kill 255013 quest 92643.1
   kill 253372 quest 92643.2
 
-step Turn in (level 13.0)
-  turnin 98512
-
-step Turn in (level 13.0)
+step Turn in (level 12.9)
   turnin 92643
   accept 92644
 
-step Pick up quests (level 13.0)
+step Objectives (level 12.9)
   accept 93159
   kill 251684 quest 93159.1
   turnin 93159
   accept 93160
   accept 93172
-
-step Objectives: The Forest's Bounty (level 13.1)
   collect 257128 quest 93160.1
-
-step Objectives: Aid For The Refugees (level 13.1)
   collect 266433 x8 quest 94896.1
-
-step Objectives: Free the Hollows (level 13.1)
   kill 251676 x10 quest 93172.1
-
-step Objectives: The Fate of a Loved One (level 13.1)
   collect 266434 quest 94897.1
+  collect 262357 x10 quest 93736.1
 
-step Turn in (level 13.2)
+step Turn in and pick up (level 13.1)
   turnin 93160
   turnin 93172
-
-step Turn in (level 13.3)
   turnin 94484
   accept 94485
   accept 94486
   accept 94487
 
-step Objectives: Unwanted and Unworthy (level 13.3)
+step Objectives (level 13.2)
   collect 265141 quest 94487.1
-
-step Pick up quests (level 13.3)
-  accept 93165
-
-step Objectives: Mercy Falls on Deaf Ears (level 13.3)
-  collect 258771 quest 93165.1
-
-step Turn in (level 13.4)
-  turnin 93165
-
-step Objectives: Feathers for Binding (level 13.7)
+  collect 265105 x8 quest 94485.1
   collect 265140 x20 quest 94486.1
 
-step Objectives: Tears of the Lady (level 13.7)
-  collect 265105 x8 quest 94485.1
+step Pick up quests (level 13.2)
+  accept 93165
 
-step Turn in (level 13.7)
+step Objectives: Mercy Falls on Deaf Ears (level 13.2)
+  collect 258771 quest 93165.1
+
+step Turn in and pick up (level 13.3)
+  turnin 93165
   turnin 94485
   turnin 94487
   turnin 94486
   accept 94488
   accept 94489
+
+step Turn in (level 13.8)
+  turnin 98512
+
+step Turn in (level 13.8)
+  turnin 97245
+  accept 97257
+
+step Objectives (level 13.8)
+  kill 268762 quest 97257.1
+  kill 268679 quest 97257.2
+
+step Turn in (level 13.9)
+  turnin 93736
+  turnin 97257
 
 step Pick up quests (level 13.9)
   accept 94490
@@ -629,49 +450,30 @@ step Turn in (level 14.0)
   accept 94491
 
 step Turn in (level 14.2)
-  turnin 94896
-  turnin 94897
+  turnin 94491
 
-step Turn in (level 14.3)
+step Objectives (level 14.2)
   turnin 92644
   accept 94568
   kill 252476 quest 94568.1
   turnin 94568
   accept 92640
-
-step Turn in (level 14.3)
-  turnin 94491
-
-step Objectives: Desperate Times (level 14.3)
-  kill 252383 quest 92640.1
-  kill 251968 quest 92640.2
-  kill 252475 quest 92640.3
-
-step Objectives: Desperate Times (level 14.3)
   kill 252383 quest 92640.1
   kill 251968 quest 92640.2
   kill 252475 quest 92640.3
   turnin 92640
   accept 93065
 
+step Turn in (level 14.3)
+  turnin 94896
+  turnin 94897
+
 step Objectives: Prepare for Battle (level 14.4)
   kill 253844 quest 93065.1
   turnin 93065
   accept 92947
 
-step Objectives: Making Our Move (level 14.5)
-  kill 252762 x7 quest 92947.1
-  kill 252763 x7 quest 92947.2
-  kill 252765 x7 quest 92947.3
-  kill 253576 quest 92947.4
-
-step Objectives: Making Our Move (level 14.5)
-  kill 252762 x7 quest 92947.1
-  kill 252763 x7 quest 92947.2
-  kill 252765 x7 quest 92947.3
-  kill 253576 quest 92947.4
-
-step Objectives: Making Our Move (level 14.5)
+step Objectives (level 14.5)
   kill 252762 x7 quest 92947.1
   kill 252763 x7 quest 92947.2
   kill 252765 x7 quest 92947.3

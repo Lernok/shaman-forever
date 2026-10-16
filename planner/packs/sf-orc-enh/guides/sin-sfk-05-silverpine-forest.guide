@@ -9,198 +9,166 @@ next sf-orc-enh/sin-sfk-06-undercity
 # Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.3 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 13.8)
-  accept 421
-
-step Objectives: Prove Your Worth (level 13.9)
-  kill 1769 x5 quest 421.1
-
-step Turn in (level 13.9)
-  turnin 421
-  accept 422
-
-step Objectives: Arugal's Folly (level 13.9)
-  collect 3155 quest 422.1
-
-step Turn in (level 14.0)
-  turnin 422
-  accept 423
-
-step Pick up quests (level 14.0)
-  accept 477
-
-step Pick up quests (level 14.0)
-  accept 428
-  accept 437
-
 step Pick up quests (level 14.0)
   accept 447
   accept 91921
+  accept 428
+  accept 437
+  accept 421
 
-step Objectives: A Recipe For Death (level 14.1)
-  collect 3253 x6 quest 447.1
-  collect 3254 x6 quest 447.2
-
-step Objectives: Arugal's Folly (level 14.1)
-  collect 3156 x6 quest 423.1
-  collect 3157 x3 quest 423.2
+step Objectives: Prove Your Worth (level 14.2)
+  kill 1769 x5 quest 421.1
 
 step Turn in (level 14.2)
-  turnin 477
-  accept 478
+  turnin 421
+  accept 422
+
+step Objectives: Arugal's Folly (level 14.2)
+  collect 3155 quest 422.1
 
 step Turn in (level 14.3)
-  turnin 478
-  accept 481
-
-step Turn in (level 14.3)
-  turnin 481
-  accept 482
-
-step Turn in (level 14.3)
-  turnin 482
-  accept 479
+  turnin 422
+  accept 423
 
 step Objectives: Arugal's Folly (level 14.3)
   collect 3156 x6 quest 423.1
   collect 3157 x3 quest 423.2
 
-step Turn in (level 14.4)
-  turnin 423
-  accept 424
+step Objectives: Arugal's Folly (level 14.4)
+  collect 3156 x6 quest 423.1
+  collect 3157 x3 quest 423.2
 
-step Objectives: The Dead Fields (level 14.4)
-  complete 437
+step Pick up quests (level 14.5)
+  accept 477
 
-step Turn in (level 14.4)
-  turnin 428
-  accept 429
+step Objectives: A Recipe For Death (level 14.5)
+  collect 3253 x6 quest 447.1
+  collect 3254 x6 quest 447.2
 
 step Turn in (level 14.5)
+  turnin 477
+  accept 478
+
+step Turn in and pick up (level 14.6)
+  turnin 478
+  accept 481
+  turnin 423
+  accept 424
+  turnin 481
+  accept 482
+  turnin 482
+  accept 479
+
+step Objectives: The Dead Fields (level 14.6)
+  complete 437
+
+step Turn in and pick up (level 14.6)
+  turnin 428
+  accept 429
   turnin 91921
   accept 91920
 
-step Pick up quests (level 14.5)
-  accept 435
-
-step Objectives: Wild Hearts (level 14.6)
+step Objectives: Wild Hearts (level 14.7)
   collect 3164 x6 quest 429.1
 
-step Objectives: Escorting Erland (level 14.6)
+step Pick up quests (level 14.7)
+  accept 435
+
+step Objectives: Escorting Erland (level 14.8)
   complete 435
 
-step Turn in (level 14.6)
+step Turn in (level 14.8)
   turnin 435
   accept 449
 
-step Objectives: Wild Eyes (level 14.7)
+step Objectives: Wild Eyes (level 14.9)
   collect 730 x3 quest 91920.1
 
-step Objectives: Arugal's Folly (level 14.7)
+step Objectives: Arugal's Folly (level 14.9)
   collect 3634 quest 424.1
 
-step Objectives: Ambermill Investigations (level 14.8)
+step Objectives: Ambermill Investigations (level 15.0)
   collect 3354 x8 quest 479.1
 
-step Hearth (level 14.8)
+step Hearth (level 15.0)
   hearth "The Sepulcher"
 
-step Turn in (level 14.9)
-  turnin 479
+step Objectives: A Recipe For Death (level 15.1)
+  collect 3253 x6 quest 447.1
+  collect 3254 x6 quest 447.2
 
-step Turn in (level 15.0)
+step Turn in and pick up (level 15.1)
   turnin 437
   turnin 449
   accept 438
   accept 3221
+  turnin 479
+  accept 95981
 
-step Turn in (level 15.0)
+step Turn in (level 15.2)
+  turnin 438
+  accept 439
+
+step Turn in and pick up (level 15.2)
+  turnin 424
+  accept 98298
+  accept 98299
+  turnin 439
+  accept 440
+  accept 443
   turnin 429
   turnin 3221
   turnin 91920
   accept 430
   accept 1359
 
-step Turn in (level 15.1)
-  turnin 424
-
-step Turn in (level 15.2)
-  turnin 438
-  accept 439
-
-step Turn in (level 15.2)
-  turnin 439
-  accept 440
-  accept 443
-
-step Objectives: A Recipe For Death (level 15.3)
-  collect 3253 x6 quest 447.1
-  collect 3254 x6 quest 447.2
-
-step Turn in (level 15.3)
-  turnin 430
-
-step Pick up quests (level 15.3)
-  accept 425
-
-step Objectives: Ivar the Foul (level 15.3)
-  collect 3621 quest 425.1
-
-step Turn in (level 15.4)
-  turnin 425
-
-step Objectives: Rot Hide Ichor (level 15.6)
+step Objectives: Rot Hide Ichor (level 16.0)
   collect 3236 x8 quest 443.1
 
-step Turn in (level 15.7)
+step Turn in and pick up (level 16.1)
+  turnin 430
+  accept 425
+
+step Objectives: Ivar the Foul (level 16.1)
+  collect 3621 quest 425.1
+
+step Turn in (level 16.2)
+  turnin 425
+
+step Turn in (level 16.4)
   turnin 443
   accept 444
 
-step Pick up quests (level 15.7)
-  accept 95981
-
-step Pick up quests (level 15.7)
-  accept 98298
-  accept 98299
-
-step Pick up quests (level 16.2)
+step Pick up quests (level 16.4)
   accept 460
 
-step Turn in (level 16.2)
+step Turn in (level 16.4)
   turnin 460
   accept 461
 
-step Turn in (level 16.3)
+step Turn in (level 16.5)
   turnin 461
   accept 491
 
-step Objectives: Watching the Roads (level 16.4)
+step Objectives (level 16.6)
   kill 1888 x8 quest 95981.1
   kill 1889 x8 quest 95981.2
 
-step Objectives: Watching the Roads (level 16.4)
-  kill 1888 x8 quest 95981.1
-  kill 1889 x8 quest 95981.2
-
-step Objectives: Stop the Spread (level 16.5)
+step Objectives (level 16.7)
   kill 2053 x5 quest 98299.1
   kill 2054 x5 quest 98299.2
-
-step Objectives: Arugal's Folly (level 16.6)
   collect 280375 x6 quest 98298.1
 
-step Hearth (level 16.6)
+step Hearth (level 16.8)
   hearth "The Sepulcher"
 
-step Turn in (level 16.7)
+step Turn in (level 16.9)
   turnin 95981
-
-step Turn in (level 16.8)
   turnin 98298
   turnin 98299
 
-step Flight path (level 16.9)
+step Flight path (level 17.1)
   getfp "Undercity"
 
-step Hearthstone (level 16.9)
+step Hearthstone (level 17.1)
   sethome "Undercity"

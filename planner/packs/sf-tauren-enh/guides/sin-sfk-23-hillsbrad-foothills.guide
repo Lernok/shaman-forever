@@ -9,97 +9,55 @@ next sf-tauren-enh/sin-sfk-24-tirisfal-glades
 # Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 36.7 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Turn in (level 30.8)
+step Turn in and pick up (level 30.8)
   turnin 96984 optional map 1424 @61.6,20.85
-
-step Turn in (level 31.0)
-  turnin 96986 optional map 1424 @62.63,20.65
-
-step Pick up quests (level 31.0)
-  accept 509
-
-step Pick up quests (level 31.0)
-  accept 567
-
-step Pick up quests (level 31.0)
-  accept 539
-
-step Objectives: Elixir of Agony (level 31.0)
-  collect 3502 x6 quest 509.1
-
-step Objectives: Battle of Hillsbrad (level 31.0)
-  kill 2305 quest 539.1
-  kill 2269 x10 quest 539.2
-
-step Objectives: Dangerous! (level 31.0)
-  kill 2448 quest 567.1
-  kill 2449 quest 567.2
-  kill 2450 quest 567.3
-  kill 2451 quest 567.4
-
-step Objectives: Dangerous! (level 31.0)
-  kill 2448 quest 567.1
-  kill 2449 quest 567.2
-  kill 2450 quest 567.3
-  kill 2451 quest 567.4
-
-step Objectives: Dangerous! (level 31.0)
-  kill 2448 quest 567.1
-  kill 2449 quest 567.2
-  kill 2450 quest 567.3
-  kill 2451 quest 567.4
-
-step Objectives: Dangerous! (level 31.0)
-  kill 2448 quest 567.1
-  kill 2449 quest 567.2
-  kill 2450 quest 567.3
-  kill 2451 quest 567.4
-
-step Turn in (level 31.1)
-  turnin 509
-  accept 513
-
-step Turn in (level 31.1)
-  turnin 539
-  turnin 567
-
-step Pick up quests (level 31.2)
-  accept 533
-  accept 1361
-
-step Pick up quests (level 31.2)
-  accept 552
-
-step Pick up quests (level 31.2)
-  accept 676
-
-step Pick up quests (level 31.2)
   accept 544 optional map 1424 @61.6,20.85
   accept 92434 optional map 1424 @61.6,20.85
   accept 93680 optional map 1424 @61.6,20.85
   turnin 93680 optional map 1424 @61.6,20.85
+  accept 539
+  turnin 96986 optional map 1424 @62.63,20.65
+  accept 533
+  accept 1361
+  accept 552
+  accept 567
+  accept 676
+  accept 509
 
-step Pick up quests (level 31.2)
-  accept 556
-
-step Pick up quests (level 31.2)
+step Pick up quests (level 31.0)
   accept 535
 
-step Objectives: Infiltration (level 31.2)
+step Objectives (level 31.0)
   collect 3601 quest 533.1
-
-step Objectives: Valik (level 31.2)
   collect 3703 quest 535.1
 
-step Turn in (level 31.2)
+step Turn in (level 31.0)
   turnin 535
 
-step Turn in (level 31.3)
+step Objectives: Helcular's Revenge (level 31.1)
+  collect 3708 quest 552.1
+
+step Objectives (level 31.2)
+  kill 2448 quest 567.1
+  kill 2449 quest 567.2
+  kill 2450 quest 567.3
+  kill 2451 quest 567.4
+
+step Objectives: Battle of Hillsbrad (level 31.3)
+  kill 2305 quest 539.1
+  kill 2269 x10 quest 539.2
+
+step Objectives: Elixir of Agony (level 31.3)
+  collect 3502 x6 quest 509.1
+
+step Turn in and pick up (level 31.3)
+  accept 556
+  turnin 509
+  accept 513
+  turnin 539
+  turnin 567
   turnin 533
   accept 503
-
-step Objectives: Helcular's Revenge (level 31.3)
-  collect 3708 quest 552.1
 
 step Turn in (level 31.4)
   turnin 552

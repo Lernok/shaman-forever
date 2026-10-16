@@ -10,17 +10,15 @@ next sf-tauren-enh/sin-wc-sfk-13-hillsbrad-foothills
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 20.2)
-  accept 865 optional map 1413 @62.37,37.62
-  accept 1069
-
-step Pick up quests (level 20.2)
   accept 891
 
 step Pick up quests (level 20.2)
-  accept 896
-
-step Pick up quests (level 20.2)
+  accept 865 optional map 1413 @62.37,37.62
+  accept 1069
   accept 895
+
+step Pick up quests (level 20.3)
+  accept 896
 
 step Objectives: Raptor Horns (level 20.3)
   complete 865 optional
@@ -31,7 +29,7 @@ step Turn in (level 20.3)
 step Objectives: WANTED: Baron Longshore (level 20.3)
   collect 5084 quest 895.1
 
-step Objectives: The Guns of Northwatch (level 20.3)
+step Objectives (level 20.3)
   kill 3393 quest 891.1
   kill 3455 quest 891.2
   kill 3454 quest 891.3
@@ -39,24 +37,6 @@ step Objectives: The Guns of Northwatch (level 20.3)
 
 step Pick up quests (level 20.3)
   accept 898
-
-step Objectives: The Guns of Northwatch (level 20.4)
-  kill 3393 quest 891.1
-  kill 3455 quest 891.2
-  kill 3454 quest 891.3
-  collect 5078 x10 quest 891.4
-
-step Objectives: The Guns of Northwatch (level 20.4)
-  kill 3393 quest 891.1
-  kill 3455 quest 891.2
-  kill 3454 quest 891.3
-  collect 5078 x10 quest 891.4
-
-step Objectives: The Guns of Northwatch (level 20.4)
-  kill 3393 quest 891.1
-  kill 3455 quest 891.2
-  kill 3454 quest 891.3
-  collect 5078 x10 quest 891.4
 
 step Hearth (level 20.4)
   hearth "Ratchet"
@@ -77,17 +57,11 @@ step Hearthstone (level 20.6)
 step Pick up quests (level 20.6)
   accept 899
   accept 4921
-
-step Pick up quests (level 20.6)
   accept 3261
 
 step Pick up quests (level 20.6)
   accept 3281
-
-step Pick up quests (level 20.6)
   accept 876
-
-step Pick up quests (level 20.6)
   accept 6541
 
 step Pick up quests (level 20.6)
@@ -102,8 +76,6 @@ step Turn in (level 20.6)
 
 step Pick up quests (level 20.6)
   accept 1062
-
-step Pick up quests (level 20.6)
   accept 6548
 
 step Objectives: Serena Bloodfeather (level 20.7)
@@ -113,14 +85,9 @@ step Pick up quests (level 20.7)
   accept 95494
   accept 95507
 
-step Objectives: Bruised Pride and Lion Hides (level 20.7)
+step Objectives (level 20.7)
   collect 269715 x6 quest 95494.1
-
-step Objectives: Vrang's Game (level 20.7)
   collect 269719 x8 quest 95507.1
-
-step Pick up quests (level 20.7)
-  accept 3923
 
 step Turn in (level 20.7)
   turnin 95494
@@ -143,6 +110,9 @@ step Objectives: Unwelcome Guests (level 20.9)
 
 step Turn in (level 20.9)
   turnin 95508
+
+step Pick up quests (level 20.9)
+  accept 3923
 
 step Pick up quests (level 20.9)
   accept 858
@@ -202,12 +172,12 @@ step Hearthstone (level 21.5)
   sethome "The Crossroads"
 
 step Turn in (level 21.6)
-  turnin 3281
-
-step Turn in (level 21.7)
   turnin 899
   turnin 4921
   accept 95774
+
+step Turn in (level 21.7)
+  turnin 3281
 
 step Turn in (level 21.8)
   turnin 851
@@ -231,10 +201,11 @@ step Turn in (level 21.9)
 step Hearthstone (level 21.9)
   sethome "Camp Taurajo"
 
-step Turn in (level 22.0)
+step Turn in and pick up (level 22.0)
   turnin 882
   accept 907
   accept 6382
+  accept 878
 
 step Objectives: Enraged Thunder Lizards (level 22.0)
   collect 5143 x3 quest 907.1
@@ -250,17 +221,9 @@ step Turn in (level 22.1)
   turnin 913
 
 step Pick up quests (level 22.1)
-  accept 878
-
-step Pick up quests (level 22.1)
   accept 884
 
-step Objectives: Tribes at War (level 22.2)
-  kill 3260 x6 quest 878.1
-  kill 3261 x12 quest 878.2
-  kill 3263 x12 quest 878.3
-
-step Objectives: Tribes at War (level 22.2)
+step Objectives (level 22.2)
   kill 3260 x6 quest 878.1
   kill 3261 x12 quest 878.2
   kill 3263 x12 quest 878.3
@@ -276,11 +239,9 @@ step Objectives: Tribes at War (level 22.3)
 step Pick up quests (level 22.3)
   accept 893
 
-step Turn in (level 22.3)
+step Turn in and pick up (level 22.3)
   turnin 884
   turnin 883
-
-step Turn in (level 22.4)
   turnin 878
   accept 5052
 
@@ -299,14 +260,14 @@ step Pick up quests (level 22.5)
   accept 79192
 
 step Pick up quests (level 22.5)
-  accept 843
-
-step Pick up quests (level 22.5)
   accept 98093
 
 step Objectives: Field to Clear (level 22.5)
   kill 4128 x7 quest 98093.1
   kill 3238 x7 quest 98093.2
+
+step Pick up quests (level 22.5)
+  accept 843
 
 step Objectives: Betrayal from Within (level 22.5)
   collect 5074 quest 879.1
@@ -321,17 +282,12 @@ step Objectives: Weapons of Choice (level 22.6)
 step Pick up quests (level 22.6)
   accept 885
 
-step Objectives: Betrayal from Within (level 22.6)
-  collect 5074 quest 879.1
-  collect 5073 quest 879.2
-  collect 5072 quest 879.3
-
 step Objectives: Weapons of Choice (level 22.6)
   collect 5093 quest 893.1
   collect 5092 quest 893.2
   collect 5094 quest 893.3
 
-step Objectives: Betrayal from Within (level 22.6)
+step Objectives (level 22.6)
   collect 5074 quest 879.1
   collect 5073 quest 879.2
   collect 5072 quest 879.3
@@ -346,11 +302,11 @@ step Objectives: Field to Clear (level 22.8)
   kill 3238 x7 quest 98093.2
 
 step Turn in (level 22.9)
-  turnin 98093
-
-step Turn in (level 22.9)
   turnin 843
   accept 846
+
+step Turn in (level 23.2)
+  turnin 98093
 
 step Objectives: Revenge of Gann (level 23.2)
   collect 5017 x6 quest 846.1
@@ -370,20 +326,18 @@ step Reach level 23
   level 23
   tip If you're not level 23 yet: kill Razormane Stalker here (level 23). Message to Freewind Post needs level 23.
 
+step Turn in (level 23.3)
+  turnin 849
+
 step Pick up quests (level 23.3)
   accept 4542
-
-step Turn in (level 23.4)
-  turnin 849
 
 step Hearth (level 23.4)
   hearth "Camp Taurajo"
 
-step Turn in (level 23.4)
+step Turn in and pick up (level 23.4)
   turnin 879
   accept 906
-
-step Turn in (level 23.5)
   turnin 885
   turnin 897
 
@@ -393,25 +347,17 @@ step Turn in (level 23.6)
 step Hearthstone (level 23.6)
   sethome "The Crossroads"
 
+step Turn in (level 23.6)
+  turnin 906
+
 step Pick up quests (level 23.6)
   accept 868
-
-step Turn in (level 23.7)
-  turnin 906
 
 step Hearthstone (level 23.7)
   sethome "Ratchet"
 
 step Pick up quests (level 23.7)
-  accept 1483
-
-step Pick up quests (level 23.7)
   accept 822
-
-step Objectives: Chen's Empty Keg (level 23.7)
-  collect 4898 x5 quest 822.1
-  collect 4897 quest 822.2
-  collect 4896 quest 822.3
 
 step Pick up quests (level 23.7)
   accept 1530
@@ -419,12 +365,7 @@ step Pick up quests (level 23.7)
 step Objectives: Egg Hunt (level 23.7)
   collect 5058 x12 quest 868.1
 
-step Objectives: Chen's Empty Keg (level 23.8)
-  collect 4898 x5 quest 822.1
-  collect 4897 quest 822.2
-  collect 4896 quest 822.3
-
-step Objectives: Chen's Empty Keg (level 23.8)
+step Objectives (level 23.8)
   collect 4898 x5 quest 822.1
   collect 4897 quest 822.2
   collect 4896 quest 822.3
@@ -440,8 +381,16 @@ step Turn in (level 23.8)
   turnin 1535
   accept 1536
 
+step Objectives: Chen's Empty Keg (level 23.9)
+  collect 4898 x5 quest 822.1
+  collect 4897 quest 822.2
+  collect 4896 quest 822.3
+
 step Turn in (level 23.9)
   turnin 822
+
+step Pick up quests (level 23.9)
+  accept 1483
 
 step Hearthstone (level 23.9)
   sethome "The Crossroads"

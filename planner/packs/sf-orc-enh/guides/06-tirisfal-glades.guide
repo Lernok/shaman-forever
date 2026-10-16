@@ -15,13 +15,13 @@ step Pick up quests (level 16.9)
 step Grind to 17 (7 min)
   level 17 -- grind on Vile Fin Tidecaller (level 18) at Fenris Isle, Silverpine Forest 79.3,30.3
 
-step Pick up quests (level 17.0)
+step Pick up quests (level 16.9)
   accept 92422 optional map 1420 @65.23,60.16
 
-step Pick up quests (level 17.0)
+step Pick up quests (level 16.9)
   accept 95204 optional
 
-step Dungeon: Ruins of Lordaeron (level 17)
+step Dungeon: Ruins of Lordaeron (level 16.9)
   zone map 1420
   goto 63.4,67.4 "Ruins of Lordaeron" r 30 live
   tip Find a group and clear Ruins of Lordaeron, with its quests from this route in your log.

@@ -15,19 +15,13 @@ step Pick up quests (level 1.0)
 step Objectives: Dwarven Outfitters (level 2.1)
   collect 750 x8 quest 179.1
 
-step Turn in (level 2.2)
+step Turn in and pick up (level 2.2)
   turnin 179
   accept 233
   accept 98581
-
-step Pick up quests (level 2.2)
   accept 170
 
-step Objectives: A New Threat (level 2.6)
-  kill 707 x6 quest 170.1
-  kill 724 x6 quest 170.2
-
-step Objectives: A New Threat (level 3.0)
+step Objectives (level 2.6)
   kill 707 x6 quest 170.1
   kill 724 x6 quest 170.2
 
@@ -46,21 +40,6 @@ step Reach level 3
 step Pick up quests (level 3.1)
   accept 3361
 
-step Objectives: A Refugee's Quandary (level 3.1)
-  collect 10438 quest 3361.1
-  collect 16313 quest 3361.2
-  collect 16314 quest 3361.3
-
-step Objectives: A Refugee's Quandary (level 3.1)
-  collect 10438 quest 3361.1
-  collect 16313 quest 3361.2
-  collect 16314 quest 3361.3
-
-step Objectives: A Refugee's Quandary (level 3.1)
-  collect 10438 quest 3361.1
-  collect 16313 quest 3361.2
-  collect 16314 quest 3361.3
-
 step Pick up quests (level 3.1)
   accept 183
   accept 234
@@ -71,8 +50,11 @@ step Objectives: The Boar Hunter (level 3.7)
 step Turn in (level 3.8)
   turnin 183
 
-step Objectives: The Troll Cave (level 4.3)
+step Objectives (level 4.3)
   kill 706 x14 quest 182.1
+  collect 10438 quest 3361.1
+  collect 16313 quest 3361.2
+  collect 16314 quest 3361.3
 
 step Reach level 4
   zone map 1426
@@ -80,74 +62,62 @@ step Reach level 4
   level 4
   tip If you're not level 4 yet: kill Rockjaw Trogg here (level 2). Call of Earth needs level 4.
 
-step Pick up quests (level 4.3)
-  accept 94373
-
-step Objectives: Call of Earth (level 4.4)
-  collect 264356 quest 94373.1
+step Turn in (level 4.3)
+  turnin 170
 
 step Pick up quests (level 4.4)
-  accept 3364
+  accept 94373
 
-step Turn in (level 4.5)
+step Turn in and pick up (level 4.5)
   turnin 234
   turnin 182
   accept 218
+  accept 3364
 
-step Turn in (level 4.8)
-  turnin 170
+step Objectives: Call of Earth (level 4.9)
+  collect 264356 quest 94373.1
 
-step Turn in (level 4.9)
+step Objectives: The Stolen Journal (level 4.9)
+  collect 2004 quest 218.1
+
+step Turn in (level 5.1)
+  turnin 218
+  accept 282
+
+step Turn in and pick up (level 5.3)
   turnin 3361
-
-step Turn in (level 5.0)
   turnin 3364
   accept 3365
-
-step Turn in (level 5.0)
   turnin 98581
   turnin 94373
   accept 94374
 
-step Turn in (level 5.2)
+step Turn in (level 5.6)
   turnin 94374
   accept 94375
 
-step Turn in (level 5.4)
+step Turn in (level 5.8)
   turnin 94375
 
-step Pick up quests (level 5.4)
-  accept 2160
-
-step Objectives: The Stolen Journal (level 5.4)
-  collect 2004 quest 218.1
-
-step Turn in (level 5.6)
-  turnin 218
-  accept 282
-
-step Turn in (level 5.8)
-  turnin 3365
-
-step Turn in (level 5.9)
+step Turn in and pick up (level 5.8)
   turnin 282
   accept 420
   accept 96628
+  accept 2160
+
+step Turn in (level 5.8)
+  turnin 3365
 
 step Hearthstone (level 5.9)
   sethome "Thunderbrew Distillery"
 
 step Turn in (level 6.0)
   turnin 96628
-
-step Turn in (level 6.1)
   turnin 420
 
-step Turn in (level 6.1)
-  turnin 2160
-
-step Pick up quests (level 6.1)
+step Turn in and pick up (level 6.1)
   accept 400
+  turnin 2160
 
 step Turn in (level 6.1)
   turnin 400

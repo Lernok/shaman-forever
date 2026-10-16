@@ -22,13 +22,7 @@ step Pick up quests (level 27.1)
   collect 16644 quest 6504.3
   turnin 6504
 
-step Objectives: Warsong Supplies (level 27.2)
-  collect 16742 quest 6571.1
-  collect 16745 quest 6571.2
-  collect 16744 quest 6571.3
-  collect 16743 quest 6571.4
-
-step Objectives: Warsong Supplies (level 27.2)
+step Objectives (level 27.2)
   collect 16742 quest 6571.1
   collect 16745 quest 6571.2
   collect 16744 quest 6571.3
@@ -40,41 +34,25 @@ step Objectives: Satyr Horns (level 27.4)
 step Objectives: Ordanus (level 27.4)
   collect 5686 quest 1088.1
 
-step Objectives: Warsong Supplies (level 27.4)
-  collect 16742 quest 6571.1
-  collect 16745 quest 6571.2
-  collect 16744 quest 6571.3
-  collect 16743 quest 6571.4
-
 step Pick up quests (level 27.4)
   accept 1918
 
 step Hearth (level 27.4)
   hearth "Splintertree Post"
 
-step Turn in (level 27.5)
+step Turn in and pick up (level 27.5)
   turnin 6441
-
-step Turn in (level 27.5)
   turnin 1918
   accept 824
 
 step Flight path (level 27.5)
   getfp "Zoram'gar Outpost"
 
-step Turn in (level 27.6)
-  turnin 824
-
-step Pick up quests (level 27.6)
-  accept 216
-
-step Pick up quests (level 27.6)
+step Turn in and pick up (level 27.6)
   accept 6641
-
-step Pick up quests (level 27.6)
+  accept 216
   accept 6462
-
-step Turn in (level 27.6)
+  turnin 824
   turnin 6562 optional map 1440 @11.56,34.29
   accept 6563 optional map 1440 @11.56,34.29
 
@@ -86,15 +64,9 @@ step Objectives: The Essence of Aku'Mai (level 27.6)
 
 step Turn in (level 27.6)
   turnin 6563 optional map 1440 @11.56,34.29
-
-step Turn in (level 27.7)
   turnin 6641
 
-step Objectives: Between a Rock and a Thistlefur (level 27.7)
-  kill 3925 x8 quest 216.1
-  kill 3924 x8 quest 216.2
-
-step Objectives: Between a Rock and a Thistlefur (level 27.7)
+step Objectives (level 27.7)
   kill 3925 x8 quest 216.1
   kill 3924 x8 quest 216.2
 
@@ -151,10 +123,8 @@ step Turn in (level 28.1)
 step Turn in (level 28.2)
   turnin 6544
 
-step Turn in (level 28.2)
+step Turn in and pick up (level 28.2)
   turnin 6482
-
-step Pick up quests (level 28.2)
   accept 25
 
 step Objectives: Stonetalon Standstill (level 28.2)
@@ -166,15 +136,13 @@ step Objectives: Stonetalon Standstill (level 28.3)
 step Hearth (level 28.3)
   hearth "Splintertree Post"
 
-step Turn in (level 28.3)
-  turnin 25
-
-step Turn in (level 28.4)
+step Turn in and pick up (level 28.3)
+  turnin 6462
   turnin 216
   accept 6621
 
-step Turn in (level 28.4)
-  turnin 6462
+step Turn in (level 28.3)
+  turnin 25
 
 step Objectives: King of the Foulweald (level 28.4)
   collect 16976 quest 6621.1

@@ -16,79 +16,75 @@ step Reach level 20
   tip If you're not level 20 yet: kill Murloc Tidecaller here (level 20). Murloc Poachers needs level 20.
 
 step Pick up quests (level 20.6)
-  accept 150
-
-step Pick up quests (level 20.6)
-  accept 118
-
-step Pick up quests (level 20.6)
   accept 125
 
 step Pick up quests (level 20.6)
-  accept 98407
+  accept 150
 
-step Objectives: The Lost Tools (level 20.6)
-  collect 1309 quest 125.1
-
-step Objectives: Murloc Poachers (level 20.8)
-  collect 1468 x8 quest 150.1
-
-step Turn in (level 20.8)
-  turnin 125
-  accept 89
-
-step Turn in (level 20.9)
-  turnin 150
-
-step Pick up quests (level 20.9)
+step Pick up quests (level 20.6)
   accept 92
 
-step Objectives: The Everstill Bridge (level 21.0)
-  collect 2856 x5 quest 89.1
-  collect 1013 x5 quest 89.2
-
-step Objectives: Redridge Goulash (level 21.0)
+step Objectives: Redridge Goulash (level 20.7)
   collect 2296 x5 quest 92.1
   collect 1080 x5 quest 92.2
   collect 1081 x5 quest 92.3
 
-step Objectives: Show of Force (level 21.0)
+step Pick up quests (level 20.7)
+  accept 98407
+
+step Objectives: Redridge Goulash (level 20.7)
+  collect 2296 x5 quest 92.1
+  collect 1080 x5 quest 92.2
+  collect 1081 x5 quest 92.3
+
+step Objectives: Show of Force (level 20.7)
   collect 280911 x5 quest 98407.1
 
-step Pick up quests (level 21.0)
+step Pick up quests (level 20.7)
   accept 244
 
-step Turn in (level 21.1)
+step Turn in (level 20.8)
   turnin 244
   turnin 98407
   accept 246
 
+step Objectives: Redridge Goulash (level 20.9)
+  collect 2296 x5 quest 92.1
+  collect 1080 x5 quest 92.2
+  collect 1081 x5 quest 92.3
+
+step Objectives (level 21.0)
+  collect 1468 x8 quest 150.1
+  collect 1309 quest 125.1
+
 step Turn in (level 21.2)
+  turnin 125
+  accept 89
+
+step Turn in (level 21.3)
+  turnin 150
+
+step Turn in (level 21.3)
+  turnin 92
+
+step Objectives: The Everstill Bridge (level 21.3)
+  collect 2856 x5 quest 89.1
+  collect 1013 x5 quest 89.2
+
+step Turn in and pick up (level 21.3)
+  accept 118
   turnin 89
 
-step Objectives: Assessing the Threat (level 21.2)
+step Objectives: Assessing the Threat (level 21.3)
   kill 423 x10 quest 246.1
   kill 424 x6 quest 246.2
 
-step Objectives: Assessing the Threat (level 21.2)
+step Objectives: Assessing the Threat (level 21.3)
   kill 423 x10 quest 246.1
   kill 424 x6 quest 246.2
 
-step Turn in (level 21.2)
+step Turn in (level 21.3)
   turnin 246
-
-step Objectives: Redridge Goulash (level 21.3)
-  collect 2296 x5 quest 92.1
-  collect 1080 x5 quest 92.2
-  collect 1081 x5 quest 92.3
-
-step Objectives: Redridge Goulash (level 21.4)
-  collect 2296 x5 quest 92.1
-  collect 1080 x5 quest 92.2
-  collect 1081 x5 quest 92.3
-
-step Turn in (level 21.4)
-  turnin 92
 
 step Flight path (level 21.4)
   getfp "Darkshire"

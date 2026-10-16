@@ -11,11 +11,7 @@ next sf-orc-enh/sin-wc-11-hillsbrad-foothills
 
 step Pick up quests (level 20.5)
   accept 493
-
-step Pick up quests (level 20.5)
   accept 95981
-
-step Pick up quests (level 20.5)
   accept 98298
   accept 98299
 
@@ -30,19 +26,13 @@ step Turn in (level 20.8)
   turnin 461
   accept 491
 
-step Objectives: Watching the Roads (level 20.9)
+step Objectives (level 20.9)
   kill 1888 x8 quest 95981.1
   kill 1889 x8 quest 95981.2
 
-step Objectives: Watching the Roads (level 20.9)
-  kill 1888 x8 quest 95981.1
-  kill 1889 x8 quest 95981.2
-
-step Objectives: Stop the Spread (level 21.0)
+step Objectives (level 21.0)
   kill 2053 x5 quest 98299.1
   kill 2054 x5 quest 98299.2
-
-step Objectives: Arugal's Folly (level 21.0)
   collect 280375 x6 quest 98298.1
 
 step Hearth (level 21.0)
@@ -50,8 +40,6 @@ step Hearth (level 21.0)
 
 step Turn in (level 21.1)
   turnin 95981
-
-step Turn in (level 21.1)
   turnin 98298
   turnin 98299
 
@@ -61,8 +49,6 @@ step Flight path (level 21.2)
 step Hearthstone (level 21.2)
   sethome "Tarren Mill"
 
-step Pick up: Deathstalkers in Shadowfang (Shadowfang Keep)
-  accept 1098 optional map 1421 @43.42,40.86
-
-step Pick up: Arugal Must Die (Shadowfang Keep)
+step Pick up quests (Shadowfang Keep)
   accept 1014 optional map 1421 @44.2,39.81
+  accept 1098 optional map 1421 @43.42,40.86

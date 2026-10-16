@@ -33,54 +33,32 @@ step Pick up quests (level 29.6)
 step Objectives: Horrors in the Highland (level 29.6)
   complete 95646 optional
 
-step Turn in (level 29.7)
-  turnin 95646 optional map 1437 @56.37,40.4
-
-step Objectives: Gleaning Our Future (level 29.7)
-  collect 280395 quest 98310.1
-  collect 280396 quest 98310.2
-  collect 280397 quest 98310.3
-  collect 280398 quest 98310.4
-
-step Objectives: Gleaning Our Future (level 29.7)
-  collect 280395 quest 98310.1
-  collect 280396 quest 98310.2
-  collect 280397 quest 98310.3
-  collect 280398 quest 98310.4
-
 step Pick up quests (level 29.7)
-  accept 631
+  accept 87491
 
-step Pick up quests (level 29.7)
+step Pick up quests (level 29.8)
   accept 87318
 
-step Turn in (level 29.8)
+step Turn in (level 29.9)
   turnin 87318
   accept 88758
 
-step Turn in (level 29.8)
+step Turn in (level 29.9)
   turnin 88758
 
-step Pick up quests (level 29.8)
-  accept 87491
-
-step Turn in (level 29.9)
+step Turn in and pick up (level 29.9)
   turnin 87491
+  accept 631
 
-step Objectives: Stopping the Cycle (level 29.9)
+step Objectives (level 29.9)
   kill 271373 quest 98297.1
-
-step Objectives: Gleaning Our Future (level 29.9)
   collect 280395 quest 98310.1
   collect 280396 quest 98310.2
   collect 280397 quest 98310.3
   collect 280398 quest 98310.4
 
-step Objectives: Gleaning Our Future (level 29.9)
-  collect 280395 quest 98310.1
-  collect 280396 quest 98310.2
-  collect 280397 quest 98310.3
-  collect 280398 quest 98310.4
+step Turn in (level 30.0)
+  turnin 95646 optional map 1437 @56.37,40.4
 
 step Turn in (level 30.0)
   turnin 98297

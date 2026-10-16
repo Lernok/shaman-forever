@@ -15,19 +15,13 @@ step Pick up quests (level 1.0)
 step Objectives: Dwarven Outfitters (level 2.1)
   collect 750 x8 quest 179.1
 
-step Turn in (level 2.2)
+step Turn in and pick up (level 2.2)
   turnin 179
   accept 233
   accept 98581
-
-step Pick up quests (level 2.2)
   accept 170
 
-step Objectives: A New Threat (level 2.6)
-  kill 707 x6 quest 170.1
-  kill 724 x6 quest 170.2
-
-step Objectives: A New Threat (level 3.0)
+step Objectives (level 2.6)
   kill 707 x6 quest 170.1
   kill 724 x6 quest 170.2
 
@@ -46,21 +40,6 @@ step Reach level 3
 step Pick up quests (level 3.1)
   accept 3361
 
-step Objectives: A Refugee's Quandary (level 3.1)
-  collect 10438 quest 3361.1
-  collect 16313 quest 3361.2
-  collect 16314 quest 3361.3
-
-step Objectives: A Refugee's Quandary (level 3.1)
-  collect 10438 quest 3361.1
-  collect 16313 quest 3361.2
-  collect 16314 quest 3361.3
-
-step Objectives: A Refugee's Quandary (level 3.1)
-  collect 10438 quest 3361.1
-  collect 16313 quest 3361.2
-  collect 16314 quest 3361.3
-
 step Pick up quests (level 3.1)
   accept 183
   accept 234
@@ -71,8 +50,11 @@ step Objectives: The Boar Hunter (level 3.7)
 step Turn in (level 3.8)
   turnin 183
 
-step Objectives: The Troll Cave (level 4.3)
+step Objectives (level 4.3)
   kill 706 x14 quest 182.1
+  collect 10438 quest 3361.1
+  collect 16313 quest 3361.2
+  collect 16314 quest 3361.3
 
 step Reach level 4
   zone map 1426
@@ -80,96 +62,80 @@ step Reach level 4
   level 4
   tip If you're not level 4 yet: kill Rockjaw Trogg here (level 2). Call of Earth needs level 4.
 
-step Pick up quests (level 4.3)
-  accept 94373
-
-step Objectives: Call of Earth (level 4.4)
-  collect 264356 quest 94373.1
+step Turn in (level 4.3)
+  turnin 170
 
 step Pick up quests (level 4.4)
-  accept 3364
+  accept 94373
 
-step Turn in (level 4.5)
+step Turn in and pick up (level 4.5)
   turnin 234
   turnin 182
   accept 218
+  accept 3364
 
-step Turn in (level 4.8)
-  turnin 170
+step Objectives: Call of Earth (level 4.9)
+  collect 264356 quest 94373.1
 
-step Turn in (level 4.9)
+step Objectives: The Stolen Journal (level 4.9)
+  collect 2004 quest 218.1
+
+step Turn in (level 5.1)
+  turnin 218
+  accept 282
+
+step Turn in and pick up (level 5.3)
   turnin 3361
-
-step Turn in (level 5.0)
   turnin 3364
   accept 3365
-
-step Turn in (level 5.0)
   turnin 98581
   turnin 94373
   accept 94374
 
-step Turn in (level 5.2)
+step Turn in (level 5.6)
   turnin 94374
   accept 94375
 
-step Turn in (level 5.4)
+step Turn in (level 5.8)
   turnin 94375
 
-step Pick up quests (level 5.4)
+step Turn in and pick up (level 5.8)
+  turnin 282
+  accept 420
+  accept 96628
   accept 2160
-
-step Objectives: The Stolen Journal (level 5.4)
-  collect 2004 quest 218.1
-
-step Turn in (level 5.6)
-  turnin 218
-  accept 282
 
 step Turn in (level 5.8)
   turnin 3365
 
-step Turn in (level 5.9)
-  turnin 282
-  accept 420
-  accept 96628
-
 step Hearthstone (level 5.9)
   sethome "Thunderbrew Distillery"
 
-step Turn in (level 6.0)
+step Turn in and pick up (level 6.0)
   turnin 96628
-
-step Turn in (level 6.1)
+  accept 96608
   turnin 420
-
-step Turn in (level 6.1)
-  turnin 2160
-
-step Pick up quests (level 6.1)
-  accept 400
-
-step Turn in (level 6.1)
-  turnin 400
-
-step Pick up quests (level 6.1)
+  accept 98322
   accept 99158
-
-step Pick up quests (level 6.1)
+  turnin 2160
   accept 384
+
+step Pick up quests (level 6.2)
+  accept 400
 
 step Objectives: Beer Basted Boar Ribs (level 6.2)
   collect 2886 x6 quest 384.1
   collect 2894 quest 384.2
 
-step Pick up quests (level 6.2)
-  accept 98322
-
-step Pick up quests (level 6.2)
-  accept 96608
+step Turn in (level 6.2)
+  turnin 400
 
 step Objectives: The Great Outdoors (level 6.2)
   complete 96608
+
+step Objectives: Beer Basted Boar Ribs (level 6.4)
+  collect 2886 x6 quest 384.1
+  collect 2894 quest 384.2
 
 step Turn in (level 6.4)
   turnin 96608
@@ -179,15 +145,9 @@ step Objectives: Camping 101: Cooking (level 6.4)
   kill 1699 quest 96629.1
   turnin 96629
 
-step Objectives: Beer Basted Boar Ribs (level 6.9)
-  collect 2886 x6 quest 384.1
-  collect 2894 quest 384.2
-
-step Pick up quests (level 6.9)
-  accept 98321
-
-step Turn in (level 7.1)
+step Turn in and pick up (level 6.9)
   turnin 384
+  accept 98321
 
 step Reach level 7
   zone map 1426
@@ -195,41 +155,33 @@ step Reach level 7
   level 7
   tip If you're not level 7 yet: kill Wendigo here (level 7). Frostmane Hold needs level 7.
 
-step Pick up quests (level 7.1)
-  accept 287
+step Objectives: Flintfire's Shipment (level 7.1)
+  collect 280413 quest 98321.1
 
-step Pick up quests (level 7.1)
+step Pick up quests (level 7.4)
   accept 412
 
-step Pick up quests (level 7.1)
+step Pick up quests (level 7.4)
   accept 317
-
-step Pick up quests (level 7.1)
   accept 313
-
-step Pick up quests (level 7.1)
   accept 5541
 
-step Objectives: Stocking Jetsteam (level 7.1)
+step Objectives (level 7.4)
   collect 769 x4 quest 317.1
   collect 6952 x2 quest 317.2
 
-step Objectives: Stocking Jetsteam (level 7.3)
-  collect 769 x4 quest 317.1
-  collect 6952 x2 quest 317.2
-
-step Turn in (level 7.4)
+step Turn in (level 7.7)
   turnin 317
   accept 318
 
-step Objectives: Flintfire's Shipment (level 7.4)
-  collect 280413 quest 98321.1
+step Pick up quests (level 7.7)
+  accept 287
+
+step Turn in (level 7.7)
+  turnin 98321
 
 step Objectives: The Grizzled Den (level 7.7)
   collect 2671 x8 quest 313.1
-
-step Turn in (level 7.8)
-  turnin 98321
 
 step Objectives: Ammo for Rumbleshot (level 7.8)
   collect 13850 quest 5541.1
@@ -255,9 +207,6 @@ step Turn in (level 8.1)
   turnin 99158
   accept 99159
 
-step Pick up quests (level 8.1)
-  accept 95212
-
 step Objectives: Finding Warmth (level 8.1)
   collect 286339 x14 quest 99159.1
 
@@ -276,17 +225,7 @@ step Turn in (level 8.5)
 step Objectives: Rime's Wrath (level 8.5)
   collect 286325 quest 99161.1
 
-step Objectives: Treacherous Cold (level 8.5)
-  collect 286360 quest 99162.1
-  collect 286359 quest 99162.2
-  collect 286358 quest 99162.3
-
-step Objectives: Treacherous Cold (level 8.5)
-  collect 286360 quest 99162.1
-  collect 286359 quest 99162.2
-  collect 286358 quest 99162.3
-
-step Objectives: Treacherous Cold (level 8.5)
+step Objectives (level 8.5)
   collect 286360 quest 99162.1
   collect 286359 quest 99162.2
   collect 286358 quest 99162.3
@@ -294,6 +233,9 @@ step Objectives: Treacherous Cold (level 8.5)
 step Turn in (level 8.6)
   turnin 99161
   turnin 99162
+
+step Pick up quests (level 8.8)
+  accept 95212
 
 step Pick up quests (level 8.8)
   accept 432
@@ -360,28 +302,14 @@ step Objectives: Operation Recombobulation (level 10.4)
   collect 3083 x8 quest 412.1
   collect 3084 x8 quest 412.2
 
-step Pick up quests (level 10.4)
+step Turn in and pick up (level 10.4)
   accept 310
-
-step Turn in (level 10.4)
   turnin 318
   accept 315
   accept 319
-
-step Pick up quests (level 10.4)
   accept 98326
 
-step Objectives: A Favor for Evershine (level 10.5)
-  kill 1196 x6 quest 319.1
-  kill 1127 x8 quest 319.2
-  kill 1201 x8 quest 319.3
-
-step Objectives: A Favor for Evershine (level 10.6)
-  kill 1196 x6 quest 319.1
-  kill 1127 x8 quest 319.2
-  kill 1201 x8 quest 319.3
-
-step Objectives: A Favor for Evershine (level 10.6)
+step Objectives (level 10.5)
   kill 1196 x6 quest 319.1
   kill 1127 x8 quest 319.2
   kill 1201 x8 quest 319.3
@@ -396,11 +324,9 @@ step Objectives: Frosthowl (level 10.7)
 step Turn in (level 10.8)
   turnin 412
 
-step Turn in (level 10.9)
+step Turn in and pick up (level 10.9)
   turnin 310
   accept 311
-
-step Turn in (level 10.9)
   turnin 287
   accept 291
 
@@ -411,13 +337,9 @@ step Turn in (level 11.0)
 step Objectives: The Perfect Stout (level 11.0)
   collect 2676 x6 quest 315.1
 
-step Turn in (level 11.1)
+step Turn in and pick up (level 11.1)
   turnin 98326
-
-step Turn in (level 11.2)
   turnin 311
-
-step Turn in (level 11.3)
   turnin 315
   turnin 415
   accept 413

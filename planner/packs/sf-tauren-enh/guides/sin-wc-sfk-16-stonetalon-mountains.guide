@@ -21,19 +21,7 @@ step Objectives: Harpies Threaten (level 26.6)
   kill 4023 x7 quest 6282.4
   collect 277936 x15 quest 86576.1
 
-step Objectives: Harpies Threaten (level 26.8)
-  kill 4022 x7 quest 6282.1
-  kill 4025 x7 quest 6282.2
-  kill 4024 x7 quest 6282.3
-  kill 4023 x7 quest 6282.4
-
-step Objectives: Harpies Threaten (level 26.8)
-  kill 4022 x7 quest 6282.1
-  kill 4025 x7 quest 6282.2
-  kill 4024 x7 quest 6282.3
-  kill 4023 x7 quest 6282.4
-
-step Objectives: Harpies Threaten (level 26.8)
+step Objectives (level 26.8)
   kill 4022 x7 quest 6282.1
   kill 4025 x7 quest 6282.2
   kill 4024 x7 quest 6282.3
@@ -42,51 +30,35 @@ step Objectives: Harpies Threaten (level 26.8)
 step Hearth (level 26.8)
   hearth "Sun Rock Retreat"
 
-step Turn in (level 26.9)
-  turnin 6282
-
-step Turn in (level 26.9)
-  turnin 86576
-
 step Pick up quests (level 26.9)
   accept 1058
 
-step Objectives: Jin'Zil's Forest Magic (level 27.1)
-  collect 5582 x5 quest 1058.1
-  collect 5584 x5 quest 1058.2
-  collect 5585 x30 quest 1058.3
-  collect 5583 quest 1058.4
-
-step Objectives: Jin'Zil's Forest Magic (level 27.1)
-  collect 5582 x5 quest 1058.1
-  collect 5584 x5 quest 1058.2
-  collect 5585 x30 quest 1058.3
-  collect 5583 quest 1058.4
-
-step Objectives: Jin'Zil's Forest Magic (level 27.1)
-  collect 5582 x5 quest 1058.1
-  collect 5584 x5 quest 1058.2
-  collect 5585 x30 quest 1058.3
-  collect 5583 quest 1058.4
-
-step Objectives: Jin'Zil's Forest Magic (level 27.1)
-  collect 5582 x5 quest 1058.1
-  collect 5584 x5 quest 1058.2
-  collect 5585 x30 quest 1058.3
-  collect 5583 quest 1058.4
+step Pick up quests (level 27.1)
+  accept 1090
+  kill 4276 quest 1090.1
+  turnin 1090
+  accept 1092
 
 step Turn in (level 27.2)
-  turnin 1058
+  turnin 1483
+  accept 1093
 
-step Pick up quests (level 27.2)
-  accept 1087
-
-step Pick up quests (level 27.2)
-  accept 6393
-  accept 6562 optional map 1442 @47.36,64.25
+step Objectives: Super Reaper 6000 (level 27.2)
+  collect 5734 quest 1093.1
 
 step Pick up quests (level 27.2)
   accept 6301
+
+step Turn in (level 27.2)
+  turnin 6282
+
+step Turn in and pick up (level 27.2)
+  accept 6393
+  accept 6562 optional map 1442 @47.36,64.25
+  turnin 86576
+
+step Pick up quests (level 27.2)
+  accept 1087
 
 step Turn in (level 27.2)
   turnin 79192
@@ -95,30 +67,32 @@ step Turn in (level 27.2)
 step Turn in (level 27.2)
   turnin 79980
 
-step Objectives: Cycle of Rebirth (level 27.2)
+step Objectives (level 27.2)
+  collect 5582 x5 quest 1058.1
+  collect 5584 x5 quest 1058.2
+  collect 5585 x30 quest 1058.3
+  collect 5583 quest 1058.4
+
+step Objectives: Jin'Zil's Forest Magic (level 27.3)
+  collect 5582 x5 quest 1058.1
+  collect 5584 x5 quest 1058.2
+  collect 5585 x30 quest 1058.3
+  collect 5583 quest 1058.4
+
+step Objectives: Cycle of Rebirth (level 27.3)
   collect 16205 x10 quest 6301.1
 
-step Turn in (level 27.3)
+step Turn in (level 27.4)
   turnin 6301
   accept 6381
-
-step Turn in (level 27.3)
-  turnin 1483
-  accept 1093
-
-step Objectives: Super Reaper 6000 (level 27.3)
-  collect 5734 quest 1093.1
-
-step Pick up quests (level 27.3)
-  accept 1090
-  kill 4276 quest 1090.1
-  turnin 1090
-  accept 1092
 
 step Turn in (level 27.4)
   turnin 1092
   turnin 1093
   accept 1094
+
+step Turn in (level 27.4)
+  turnin 1058
 
 step Hearth (level 27.4)
   hearth "Sun Rock Retreat"
@@ -128,7 +102,7 @@ step Objectives: Cenarius' Legacy (level 27.4)
   kill 4053 x4 quest 1087.2
   kill 4051 x4 quest 1087.3
 
-step Objectives: Cenarius' Legacy (level 27.4)
+step Objectives: Cenarius' Legacy (level 27.5)
   kill 4057 x4 quest 1087.1
   kill 4053 x4 quest 1087.2
   kill 4051 x4 quest 1087.3
@@ -140,10 +114,10 @@ step Objectives: New Life (level 27.5)
   complete 6381
 
 step Turn in (level 27.5)
-  turnin 1087
-
-step Turn in (level 27.6)
   turnin 6381
+
+step Turn in (level 27.5)
+  turnin 1087
 
 step Turn in (level 27.6)
   turnin 6393

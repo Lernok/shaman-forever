@@ -16,11 +16,9 @@ step Pick up quests (level 17.1)
 step Pick up quests (level 17.1)
   accept 97891
 
-step Turn in (level 17.2)
-  turnin 97891
-
-step Pick up: The New Plague (Ruins of Lordaeron)
+step Turn in and pick up (Ruins of Lordaeron)
   accept 95216 optional map 1458 @46.31,71.91
+  turnin 97891
 
 step Pick up: Light's Justice (Ruins of Lordaeron)
   accept 92421 optional map 1458 @57.73,89.55

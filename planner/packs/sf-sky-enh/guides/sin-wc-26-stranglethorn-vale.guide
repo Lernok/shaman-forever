@@ -16,9 +16,6 @@ step Reach level 32
   tip If you're not level 32 yet: kill Young Stranglethorn Tiger here (level 31). Trollbane needs level 32.
 
 step Pick up quests (level 32.3)
-  accept 638
-
-step Pick up quests (level 32.3)
   accept 596
   accept 629
 
@@ -28,7 +25,8 @@ step Objectives: Bloody Bone Necklaces (level 33.0)
 step Objectives: The Vile Reef (level 33.0)
   collect 4094 quest 629.1
 
-step Turn in (level 33.0)
+step Turn in and pick up (level 33.0)
+  accept 638
   turnin 596
   turnin 629
 
@@ -44,11 +42,14 @@ step Pick up quests (level 33.0)
 step Objectives: The Defense of Grom'gol (level 33.1)
   kill 686 x15 quest 568.1
 
-step Turn in (level 33.2)
+step Turn in and pick up (level 33.2)
   turnin 568
-
-step Pick up quests (level 33.2)
+  accept 569
   accept 570
+
+step Objectives: The Defense of Grom'gol (level 33.2)
+  kill 1142 quest 569.1
+  kill 1144 quest 569.2
 
 step Objectives: Mok'thardin's Enchantment (level 33.2)
   collect 3838 x8 quest 570.1
@@ -56,15 +57,6 @@ step Objectives: Mok'thardin's Enchantment (level 33.2)
 
 step Turn in (level 33.3)
   turnin 570
-
-step Pick up quests (level 33.3)
-  accept 569
-
-step Objectives: The Defense of Grom'gol (level 33.3)
-  kill 1142 quest 569.1
-  kill 1144 quest 569.2
-
-step Turn in (level 33.3)
   turnin 569
 
 step Flight path (level 33.3)
@@ -112,11 +104,7 @@ step Hearthstone (level 33.8)
 
 step Pick up quests (level 33.8)
   accept 189
-
-step Pick up quests (level 33.8)
   accept 201
-
-step Pick up quests (level 33.8)
   accept 605
 
 step Pick up quests (level 33.8)
@@ -138,17 +126,13 @@ step Hearth (level 34.1)
   hearth "Booty Bay"
 
 step Turn in (level 34.2)
-  turnin 575
-  accept 577
-
-step Turn in (level 34.2)
+  turnin 201
+  turnin 189
   turnin 605
 
 step Turn in (level 34.2)
-  turnin 201
-
-step Turn in (level 34.2)
-  turnin 189
+  turnin 575
+  accept 577
 
 step Objectives: Some Assembly Required (level 34.2)
   collect 4104 quest 577.1

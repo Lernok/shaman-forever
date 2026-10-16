@@ -18,16 +18,16 @@ step Hearthstone (level 27.5)
 step Pick up quests (level 27.5)
   accept 387 optional map 1453 @51.49,69.38 live
 
-step Dungeon: The Stockade (level 27)
+step Dungeon: The Stockade (level 27.5)
   zone map 1453
   goto 52.4,70 "The Stockade" r 30 live
   tip Find a group and clear The Stockade, with its quests from this route in your log.
 
-step Turn in (level 27.7)
+step Turn in (level 28.2)
   turnin 387 optional map 1453 @51.49,69.38 live
 
-step Turn in (level 27.8)
+step Turn in (level 28.3)
   turnin 388 optional map 1453 @76.42,63.67 live
 
-step Hearthstone (level 27.8)
+step Hearthstone (level 28.3)
   sethome "Darkshire"

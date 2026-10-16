@@ -11,12 +11,8 @@ next sf-dwarf-enh/19-wetlands
 
 step Pick up quests (level 29.4)
   accept 343
-
-step Pick up quests (level 29.4)
-  accept 389 optional map 1453 @57.74,47.86 live
-
-step Pick up quests (level 29.4)
   accept 95161
+  accept 389 optional map 1453 @57.74,47.86 live
 
 step Hearthstone (level 29.4)
   sethome "Stormwind City"
@@ -31,37 +27,31 @@ step Hearth (level 29.4)
   hearth "Stormwind City"
 
 step Turn in (level 29.4)
-  turnin 337
-  turnin 343
-  accept 344
-
-step Turn in (level 29.4)
   turnin 98190
   accept 98191
 
 step Turn in (level 29.5)
-  turnin 98191
+  turnin 337
+  turnin 343
+  accept 344
 
-step Pick up quests (level 29.5)
+step Turn in and pick up (level 29.5)
   accept 1274
-
-step Turn in (level 29.5)
   turnin 293
-
-step Turn in (level 29.5)
   turnin 269
   accept 270
-
-step Pick up quests (level 29.5)
   accept 2923 optional map 1453 @51.05,48.39 live
-
-step Pick up quests (level 29.5)
+  turnin 98191
   accept 98219
+
+step Pick up: A Green Sample (City of Dalaran)
+  accept 92456 optional map 1453 @31.5,62.61 live
 
 step Pick up quests (level 29.5)
   accept 335
 
-step Pick up quests (level 29.5)
+step Pick up quests (City of Dalaran)
+  accept 92489 optional map 1453 @48.71,87.62 live
   accept 1078
 
 step Turn in (level 29.5)
@@ -75,9 +65,3 @@ step Turn in (level 29.5)
 step Turn in (level 29.5)
   turnin 1242
   accept 1243
-
-step Pick up: A Green Sample (City of Dalaran)
-  accept 92456 optional map 1453 @31.5,62.61 live
-
-step Pick up: Power Overwhelming (City of Dalaran)
-  accept 92489 optional map 1453 @48.71,87.62 live

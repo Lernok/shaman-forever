@@ -10,6 +10,9 @@ next sf-orc-enh/04-silverpine-forest
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 12.5)
+  accept 5726 optional map 1454 @31.73,37.82
+
+step Pick up quests (level 12.5)
   accept 97326
 
 step Objectives: Rocks to Rests (level 12.5)
@@ -17,9 +20,6 @@ step Objectives: Rocks to Rests (level 12.5)
 
 step Turn in (level 12.5)
   turnin 97326
-
-step Pick up quests (level 12.5)
-  accept 5726 optional map 1454 @31.73,37.82
 
 step Flight path (level 12.5)
   getfp "Orgrimmar"
@@ -36,8 +36,6 @@ step Pick up quests (level 12.5)
 
 step Pick up quests (level 12.6)
   accept 97242
-
-step Pick up quests (level 12.6)
   accept 97275
 
 step Objectives: Yelmak's Medley (level 12.6)
@@ -46,8 +44,6 @@ step Objectives: Yelmak's Medley (level 12.6)
 
 step Turn in (level 12.7)
   turnin 97242
-
-step Turn in (level 12.8)
   turnin 97275
 
 step Turn in (level 12.9)
@@ -59,16 +55,16 @@ step Grind to 13 (5 min)
 step Pick up: Slaying the Beast (Ragefire Chasm)
   accept 5761 optional map 1454 @49.47,50.59
 
-step Dungeon: Ragefire Chasm (level 13)
+step Dungeon: Ragefire Chasm (level 12.9)
   zone map 1454
   goto 52.6,49 "Ragefire Chasm" r 30 live
   tip Find a group and clear Ragefire Chasm, with its quests from this route in your log.
 
-step Turn in (level 13.6)
+step Turn in (level 13.5)
   turnin 5761 optional map 1454 @49.47,50.59
 
-step Flight path (level 13.6)
+step Flight path (level 13.5)
   getfp "The Sepulcher"
 
-step Hearthstone (level 13.6)
+step Hearthstone (level 13.5)
   sethome "The Sepulcher"

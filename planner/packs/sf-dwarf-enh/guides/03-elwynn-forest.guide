@@ -32,19 +32,15 @@ step Reach level 7
   level 7
   tip If you're not level 7 yet: kill Murloc here (level 7). A Fishy Peril needs level 7.
 
-step Pick up quests (level 7.2)
+step Turn in and pick up (level 7.2)
   accept 40
   accept 47
-
-step Pick up quests (level 7.2)
   accept 62
   turnin 40
   accept 35
 
 step Pick up quests (level 7.2)
   accept 99127
-
-step Pick up quests (level 7.2)
   accept 99143
 
 step Objectives: A Net Disaster (level 7.2)
@@ -54,11 +50,7 @@ step Turn in (level 7.4)
   turnin 99127
   accept 99128
 
-step Objectives: Slimy Menace (level 7.4)
-  kill 735 quest 99128.1
-  kill 285 quest 99128.2
-
-step Objectives: Slimy Menace (level 7.4)
+step Objectives (level 7.4)
   kill 735 quest 99128.1
   kill 285 quest 99128.2
 
@@ -114,8 +106,6 @@ step Pick up quests (level 9.0)
 
 step Pick up quests (level 9.0)
   accept 88
-
-step Pick up quests (level 9.0)
   accept 85
 
 step Turn in (level 9.0)
@@ -126,17 +116,15 @@ step Pick up quests (level 9.1)
   accept 123
 
 step Turn in (level 9.1)
-  turnin 111
-  accept 107
-
-step Turn in (level 9.1)
   turnin 85
   accept 86
 
 step Objectives: Pie for Billy (level 9.2)
   collect 769 x4 quest 86.1
 
-step Turn in (level 9.2)
+step Turn in and pick up (level 9.2)
+  turnin 111
+  accept 107
   turnin 86
   accept 84
 
@@ -144,59 +132,51 @@ step Turn in (level 9.2)
   turnin 84
   accept 87
 
-step Objectives: Goldtooth (level 9.3)
-  collect 981 quest 87.1
-
-step Turn in (level 9.4)
-  turnin 47
-
-step Turn in (level 9.4)
-  turnin 62
-  turnin 123
-  accept 76
-  accept 147
-
-step Turn in (level 9.5)
+step Turn in (level 9.3)
   turnin 60
   turnin 107
   accept 61
   accept 112
 
-step Turn in (level 9.6)
+step Turn in and pick up (level 9.4)
   turnin 99128
   accept 99129
-
-step Turn in (level 9.7)
   turnin 99143
 
-step Objectives: Collecting Kelp (level 9.9)
+step Objectives: Collecting Kelp (level 9.7)
   collect 1256 x4 quest 112.1
 
-step Turn in (level 9.9)
+step Turn in and pick up (level 9.7)
   turnin 112
   accept 114
-
-step Turn in (level 9.9)
+  turnin 47
   turnin 99129
   accept 99130
 
-step Objectives: An Enticing Offer (level 9.9)
+step Objectives: Goldtooth (level 9.7)
+  collect 981 quest 87.1
+
+step Objectives: An Enticing Offer (level 9.8)
+  collect 286214 quest 99130.1
+  collect 286215 quest 99130.2
+
+step Turn in (level 10.0)
+  turnin 114
+
+step Objectives: An Enticing Offer (level 10.0)
   collect 286214 quest 99130.1
   collect 286215 quest 99130.2
 
 step Turn in (level 10.1)
   turnin 87
 
-step Objectives: An Enticing Offer (level 10.1)
-  collect 286214 quest 99130.1
-  collect 286215 quest 99130.2
-
-step Turn in (level 10.2)
-  turnin 114
-
-step Turn in (level 10.2)
+step Turn in and pick up (level 10.1)
   turnin 99130
   accept 99131
+  turnin 62
+  turnin 123
+  accept 76
+  accept 147
 
 step Turn in (level 10.3)
   turnin 99131
@@ -218,55 +198,35 @@ step Objectives: A Bundle of Trouble (level 10.4)
   collect 13872 x8 quest 5545.1
 
 step Turn in (level 10.5)
-  turnin 5545
-
-step Pick up quests (level 10.5)
-  accept 91732
-
-step Turn in (level 10.6)
   turnin 45
   accept 71
 
-step Turn in (level 10.6)
-  turnin 71
-  accept 39
+step Turn in and pick up (level 10.5)
+  accept 91732
+  turnin 5545
 
-step Objectives: Downstream (level 10.6)
-  collect 247817 quest 91733.1
-  collect 247813 quest 91733.2
-  collect 247818 quest 91733.3
-
-step Objectives: Red Linen Goods (level 10.7)
-  collect 1019 x6 quest 83.1
-
-step Objectives: Princess Must Die! (level 10.7)
+step Objectives (level 10.6)
   collect 1006 quest 88.1
-
-step Objectives: Manhunt (level 10.7)
+  collect 1019 x6 quest 83.1
   collect 2239 quest 147.1
 
-step Objectives: Downstream (level 10.7)
+step Objectives (level 10.6)
   collect 247817 quest 91733.1
   collect 247813 quest 91733.2
   collect 247818 quest 91733.3
-
-step Objectives: Downstream (level 10.7)
-  collect 247817 quest 91733.1
-  collect 247813 quest 91733.2
-  collect 247818 quest 91733.3
-
-step Objectives: Protect the Frontier (level 10.8)
   kill 118 x8 quest 52.1
   kill 822 x5 quest 52.2
 
-step Turn in (level 10.9)
-  turnin 83
+step Turn in and pick up (level 10.9)
+  turnin 71
+  accept 39
+  turnin 52
 
 step Turn in (level 11.0)
   turnin 91733
 
 step Turn in (level 11.1)
-  turnin 52
+  turnin 83
 
 step Turn in (level 11.2)
   turnin 91724

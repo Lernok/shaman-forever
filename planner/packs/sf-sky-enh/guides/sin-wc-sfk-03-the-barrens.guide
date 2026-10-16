@@ -16,17 +16,15 @@ step Reach level 15
   tip If you're not level 15 yet: kill Southsea Brigand here (level 13). Deepmoss Spider Eggs needs level 15.
 
 step Pick up quests (level 15.3)
-  accept 865 optional map 1413 @62.37,37.62
-  accept 1069
-
-step Pick up quests (level 15.3)
   accept 891
 
 step Pick up quests (level 15.3)
-  accept 896
-
-step Pick up quests (level 15.3)
+  accept 865 optional map 1413 @62.37,37.62
+  accept 1069
   accept 895
+
+step Pick up quests (level 15.4)
+  accept 896
 
 step Objectives: Raptor Horns (level 15.4)
   complete 865 optional
@@ -37,32 +35,14 @@ step Turn in (level 15.5)
 step Objectives: WANTED: Baron Longshore (level 15.5)
   collect 5084 quest 895.1
 
-step Objectives: The Guns of Northwatch (level 15.6)
+step Objectives (level 15.6)
   kill 3393 quest 891.1
   kill 3455 quest 891.2
   kill 3454 quest 891.3
   collect 5078 x10 quest 891.4
 
-step Pick up quests (level 15.6)
+step Pick up quests (level 15.7)
   accept 898
-
-step Objectives: The Guns of Northwatch (level 15.6)
-  kill 3393 quest 891.1
-  kill 3455 quest 891.2
-  kill 3454 quest 891.3
-  collect 5078 x10 quest 891.4
-
-step Objectives: The Guns of Northwatch (level 15.6)
-  kill 3393 quest 891.1
-  kill 3455 quest 891.2
-  kill 3454 quest 891.3
-  collect 5078 x10 quest 891.4
-
-step Objectives: The Guns of Northwatch (level 15.7)
-  kill 3393 quest 891.1
-  kill 3455 quest 891.2
-  kill 3454 quest 891.3
-  collect 5078 x10 quest 891.4
 
 step Hearth (level 15.7)
   hearth "Ratchet"
@@ -97,21 +77,17 @@ step Turn in (level 16.1)
   turnin 850
   accept 851
 
-step Turn in (level 16.1)
+step Turn in and pick up (level 16.1)
   turnin 1061
   accept 1062
-
-step Pick up quests (level 16.1)
   accept 6548
 
 step Pick up quests (level 16.1)
   accept 95494
   accept 95507
 
-step Objectives: Bruised Pride and Lion Hides (level 16.2)
+step Objectives (level 16.2)
   collect 269715 x6 quest 95494.1
-
-step Objectives: Vrang's Game (level 16.2)
   collect 269719 x8 quest 95507.1
 
 step Turn in (level 16.2)
@@ -177,10 +153,10 @@ step Hearthstone (level 17.2)
   sethome "Ratchet"
 
 step Turn in (level 17.3)
-  turnin 896
-
-step Turn in (level 17.4)
   turnin 863
+
+step Turn in (level 17.3)
+  turnin 896
 
 step Hearthstone (level 17.4)
   sethome "The Crossroads"

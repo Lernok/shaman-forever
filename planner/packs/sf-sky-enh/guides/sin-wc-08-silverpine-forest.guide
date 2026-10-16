@@ -16,14 +16,10 @@ step Reach level 19
   tip If you're not level 19 yet: kill Rot Hide Savage here (level 19). Journey to Hillsbrad Foothills needs level 19.
 
 step Pick up quests (level 19.6)
-  accept 493
-
-step Pick up quests (level 19.6)
-  accept 95981
-
-step Pick up quests (level 19.6)
   accept 98298
   accept 98299
+  accept 95981
+  accept 493
 
 step Pick up quests (level 19.9)
   accept 460
@@ -36,25 +32,17 @@ step Turn in (level 20.0)
   turnin 461
   accept 491
 
-step Objectives: Watching the Roads (level 20.0)
+step Objectives (level 20.0)
   kill 1888 x8 quest 95981.1
   kill 1889 x8 quest 95981.2
 
-step Objectives: Watching the Roads (level 20.1)
-  kill 1888 x8 quest 95981.1
-  kill 1889 x8 quest 95981.2
-
-step Objectives: Stop the Spread (level 20.1)
+step Objectives (level 20.1)
   kill 2053 x5 quest 98299.1
   kill 2054 x5 quest 98299.2
-
-step Objectives: Arugal's Folly (level 20.2)
   collect 280375 x6 quest 98298.1
 
 step Turn in (level 20.2)
   turnin 95981
-
-step Turn in (level 20.3)
   turnin 98298
   turnin 98299
 
@@ -66,11 +54,9 @@ step Pick up quests (level 20.3)
   accept 95883
   accept 95885
 
-step Objectives: The Offering of Blood (level 20.4)
-  kill 212753 quest 95885.1
-
-step Objectives: The Tortured Soul (level 20.4)
+step Objectives (level 20.4)
   collect 271350 quest 95883.1
+  kill 212753 quest 95885.1
 
 step Turn in (level 20.4)
   turnin 95883
@@ -87,10 +73,8 @@ step Hearth (level 20.5)
   hearth "The Sepulcher"
 
 step Pick up quests (level 20.5)
-  accept 92401 optional map 1421 @44.54,42.96
-
-step Pick up quests (level 20.5)
   accept 516
+  accept 92401 optional map 1421 @44.54,42.96
 
 step Objectives: Beren's Peril (level 20.6)
   kill 1974 x6 quest 516.1
@@ -105,8 +89,6 @@ step Flight path (level 20.7)
 step Hearthstone (level 20.7)
   sethome "Tarren Mill"
 
-step Pick up: Deathstalkers in Shadowfang (Shadowfang Keep)
+step Pick up quests (Shadowfang Keep)
   accept 1098 optional map 1421 @43.42,40.86
-
-step Pick up: Arugal Must Die (Shadowfang Keep)
   accept 1014 optional map 1421 @44.2,39.81

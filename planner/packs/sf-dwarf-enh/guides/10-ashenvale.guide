@@ -9,11 +9,9 @@ next sf-dwarf-enh/11-duskwood
 # Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 32.7 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 20.1)
+step Turn in and pick up (level 20.1)
   accept 991
   turnin 990
-
-step Pick up quests (level 20.1)
   accept 1056
 
 step Pick up quests (level 20.1)
@@ -35,9 +33,6 @@ step Objectives: The Sleeper Has Awakened (level 20.1)
   complete 5321
 
 step Turn in (level 20.2)
-  turnin 5321
-
-step Turn in (level 20.2)
   turnin 991
   accept 1023
 
@@ -47,61 +42,60 @@ step Objectives: Raene's Cleansing (level 20.3)
 step Turn in (level 20.4)
   turnin 945
 
-step Turn in (level 20.4)
+step Pick up quests (level 20.4)
+  accept 1070
+
+step Turn in and pick up (level 20.4)
   turnin 1023
   accept 1024
-
-step Turn in (level 20.5)
-  turnin 1024
-
-step Objectives: Bathran's Hair (level 20.5)
-  collect 5437 x5 quest 1010.1
-
-step Turn in (level 20.5)
-  turnin 1010
-  accept 1020
-
-step Pick up quests (level 20.5)
-  accept 1007
-
-step Objectives: The Zoram Strand (level 20.6)
-  collect 5490 x20 quest 1008.1
-
-step Objectives: The Ancient Statuette (level 20.6)
-  collect 5424 quest 1007.1
-
-step Turn in (level 20.7)
-  turnin 1007
-
-step Turn in (level 20.7)
-  turnin 1008
-  accept 1134
-
-step Turn in (level 20.8)
-  turnin 1020
-  accept 1033
-
-step Objectives: Elune's Tear (level 20.8)
-  collect 5493 quest 1033.1
-
-step Turn in (level 20.9)
-  turnin 1033
-
-step Pick up quests (level 20.9)
   accept 1025
   accept 1054
 
-step Pick up quests (level 20.9)
-  accept 1034
-
-step Pick up quests (level 20.9)
-  accept 1070
-
-step Objectives: Culling the Threat (level 20.9)
+step Objectives: Culling the Threat (level 20.5)
   collect 5544 quest 1054.1
 
-step Turn in (level 21.0)
+step Objectives: Bathran's Hair (level 20.6)
+  collect 5437 x5 quest 1010.1
+
+step Pick up quests (level 20.6)
+  accept 1007
+
+step Objectives: The Zoram Strand (level 20.7)
+  collect 5490 x20 quest 1008.1
+
+step Objectives: The Ancient Statuette (level 20.7)
+  collect 5424 quest 1007.1
+
+step Turn in (level 20.8)
+  turnin 1007
+
+step Turn in (level 20.8)
+  turnin 5321
+
+step Turn in (level 20.8)
+  turnin 1010
+  accept 1020
+
+step Turn in (level 20.8)
+  turnin 1008
+  accept 1134
+
+step Turn in (level 20.9)
   turnin 1054
+
+step Turn in (level 20.9)
+  turnin 1020
+  accept 1033
+
+step Turn in (level 20.9)
+  turnin 1024
+
+step Objectives: Elune's Tear (level 20.9)
+  collect 5493 quest 1033.1
+
+step Turn in and pick up (level 21.0)
+  turnin 1033
+  accept 1034
 
 step Objectives: The Ruins of Stardust (level 21.0)
   collect 5494 x5 quest 1034.1
@@ -120,13 +114,7 @@ step Pick up quests (level 21.3)
   turnin 1016
   accept 1017
 
-step Objectives: An Aggressive Defense (level 21.4)
-  kill 3746 quest 1025.1
-  kill 3749 x2 quest 1025.2
-  kill 3750 x10 quest 1025.3
-  kill 3743 x12 quest 1025.4
-
-step Objectives: An Aggressive Defense (level 21.5)
+step Objectives (level 21.4)
   kill 3746 quest 1025.1
   kill 3749 x2 quest 1025.2
   kill 3750 x10 quest 1025.3
@@ -163,10 +151,8 @@ step Turn in (level 21.9)
 step Objectives: The Tower of Althalaxx (level 21.9)
   collect 5533 quest 973.1
 
-step Turn in (level 22.0)
+step Turn in and pick up (level 22.0)
   turnin 973
-
-step Pick up quests (level 22.0)
   accept 976
 
 step Flight path (level 22.0)

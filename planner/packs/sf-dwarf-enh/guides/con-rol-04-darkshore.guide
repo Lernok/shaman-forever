@@ -10,37 +10,25 @@ next sf-dwarf-enh/con-rol-05-tirisfal-glades
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 16.1)
+  accept 965
+
+step Pick up quests (level 16.1)
   accept 947
+  accept 4740
+
+step Pick up quests (level 16.1)
+  accept 87760
+  accept 1138
 
 step Pick up quests (level 16.1)
   accept 963
 
 step Pick up quests (level 16.1)
-  accept 1138
-
-step Pick up quests (level 16.1)
-  accept 87760
-
-step Pick up quests (level 16.1)
-  accept 4740
-
-step Pick up quests (level 16.1)
-  accept 965
-
-step Pick up quests (level 16.1)
   accept 729
-
-step Pick up quests (level 16.1)
   accept 982
-
-step Pick up quests (level 16.1)
   accept 97914
 
-step Objectives: Deep Ocean, Vast Sea (level 16.1)
-  collect 12191 quest 982.1
-  collect 12192 quest 982.2
-
-step Objectives: Deep Ocean, Vast Sea (level 16.1)
+step Objectives (level 16.1)
   collect 12191 quest 982.1
   collect 12192 quest 982.2
 
@@ -53,17 +41,7 @@ step Objectives: Holy Diver (level 16.3)
 step Pick up quests (level 16.3)
   accept 2098
 
-step Objectives: Gyromast's Retrieval (level 16.4)
-  collect 7498 quest 2098.1
-  collect 7499 quest 2098.2
-  collect 7500 quest 2098.3
-
-step Objectives: Gyromast's Retrieval (level 16.4)
-  collect 7498 quest 2098.1
-  collect 7499 quest 2098.2
-  collect 7500 quest 2098.3
-
-step Objectives: Gyromast's Retrieval (level 16.5)
+step Objectives (level 16.4)
   collect 7498 quest 2098.1
   collect 7499 quest 2098.2
   collect 7500 quest 2098.3
@@ -98,18 +76,14 @@ step Turn in (level 16.9)
 
 step Turn in (level 17.0)
   turnin 1138
-
-step Turn in (level 17.1)
   turnin 87760
 
 step Objectives: For Love Eternal (level 17.1)
   collect 5382 quest 963.1
 
-step Turn in (level 17.1)
+step Turn in and pick up (level 17.1)
   turnin 948
   accept 944
-
-step Pick up quests (level 17.1)
   accept 98013
 
 step Reach level 17
@@ -130,11 +104,9 @@ step Pick up quests (level 17.3)
 step Objectives: The Master's Glaive (level 17.3)
   complete 944
 
-step Turn in (level 17.3)
+step Turn in and pick up (level 17.3)
   turnin 944
   accept 949
-
-step Turn in (level 17.4)
   turnin 949
   accept 950
   accept 98042
@@ -165,10 +137,8 @@ step Turn in (level 17.5)
 step Turn in (level 17.6)
   turnin 963
 
-step Turn in (level 17.7)
+step Turn in and pick up (level 17.7)
   turnin 4740
-
-step Turn in (level 17.8)
   turnin 731
   accept 741
 
@@ -180,23 +150,14 @@ step Objectives: Swelling Forces (level 17.9)
   kill 2182 x8 quest 98013.2
   kill 2183 x6 quest 98013.3
 
-step Objectives: Swelling Forces (level 18.0)
+step Objectives (level 18.0)
   kill 2181 x12 quest 98013.1
   kill 2182 x8 quest 98013.2
   kill 2183 x6 quest 98013.3
-
-step Objectives: Mathystra Relics (level 18.0)
   collect 5273 x6 quest 951.1
-
-step Objectives: Swelling Forces (level 18.1)
-  kill 2181 x12 quest 98013.1
-  kill 2182 x8 quest 98013.2
-  kill 2183 x6 quest 98013.3
 
 step Turn in (level 18.2)
   turnin 951
-
-step Turn in (level 18.3)
   turnin 98013
 
 step Hearth (level 18.3)

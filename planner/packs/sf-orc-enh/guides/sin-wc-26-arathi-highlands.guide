@@ -9,74 +9,52 @@ next sf-orc-enh/sin-wc-27-tirisfal-glades
 # Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 36.6 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 31.3)
-  accept 655
-
-step Pick up quests (level 31.3)
-  accept 677
-
-step Turn in (level 31.3)
-  turnin 655
-  accept 671
-  accept 672
-
-step Objectives: Raising Spirits (level 31.4)
-  collect 4512 x10 quest 672.1
-
 step Pick up quests (level 31.4)
   accept 8263
   turnin 8263
 
+step Pick up quests (level 31.4)
+  accept 655
+
 step Turn in (level 31.4)
+  turnin 655
+  accept 671
+  accept 672
+
+step Objectives: Raising Spirits (level 31.5)
+  collect 4512 x10 quest 672.1
+
+step Turn in and pick up (level 31.5)
+  accept 677
   turnin 672
   accept 674
-
-step Turn in (level 31.5)
   turnin 674
   accept 675
-
-step Turn in (level 31.5)
   turnin 675
 
-step Objectives: Call to Arms (level 31.5)
+step Objectives (level 31.6)
   kill 2554 x10 quest 677.1
   kill 2556 x10 quest 677.2
   kill 2555 x8 quest 677.3
-
-step Objectives: Call to Arms (level 31.5)
-  kill 2554 x10 quest 677.1
-  kill 2556 x10 quest 677.2
-  kill 2555 x8 quest 677.3
-
-step Objectives: Call to Arms (level 31.6)
-  kill 2554 x10 quest 677.1
-  kill 2556 x10 quest 677.2
-  kill 2555 x8 quest 677.3
-
-step Objectives: The Hammer May Fall (level 31.6)
-  kill 2562 x8 quest 676.1
-  kill 2564 x10 quest 676.2
 
 step Objectives: The Hammer May Fall (level 31.7)
   kill 2562 x8 quest 676.1
   kill 2564 x10 quest 676.2
 
-step Objectives: Foul Magics (level 31.8)
+step Objectives: The Hammer May Fall (level 31.8)
+  kill 2562 x8 quest 676.1
+  kill 2564 x10 quest 676.2
+
+step Objectives: Foul Magics (level 31.9)
   collect 4495 x10 quest 671.1
 
-step Turn in (level 31.8)
+step Turn in and pick up (level 31.9)
   turnin 79975
   accept 79976
-
-step Turn in (level 31.9)
   turnin 79976
 
-step Hearth (level 31.9)
+step Hearth (level 32.0)
   hearth "Hammerfall"
-
-step Turn in (level 31.9)
-  turnin 676
-  turnin 677
 
 step Turn in (level 32.0)
   turnin 671
@@ -85,13 +63,15 @@ step Turn in (level 32.0)
 step Objectives: Guile of the Raptor (level 32.2)
   collect 4513 x12 quest 701.1
 
-step Turn in (level 32.3)
+step Turn in and pick up (level 32.3)
   turnin 701
   accept 702
+  turnin 676
+  turnin 677
 
-step Turn in (level 32.3)
+step Turn in (level 32.4)
   turnin 702
   accept 847
 
-step Turn in (level 32.3)
+step Turn in (level 32.4)
   turnin 847

@@ -11,20 +11,13 @@ next sf-tauren-enh/sin-wc-sfk-04-orgrimmar
 
 step Pick up quests (level 12.3)
   accept 840
-
-step Pick up quests (level 12.3)
   accept 99048
 
 step Turn in (level 12.3)
   turnin 99048
   accept 99049
 
-step Objectives: Threat from Below (level 12.3)
-  collect 286012 quest 99049.1
-  collect 286011 quest 99049.2
-  collect 286010 quest 99049.3
-
-step Objectives: Threat from Below (level 12.3)
+step Objectives (level 12.3)
   collect 286012 quest 99049.1
   collect 286011 quest 99049.2
   collect 286010 quest 99049.3
@@ -36,15 +29,15 @@ step Turn in (level 12.4)
 step Pick up quests (level 12.4)
   accept 97281
 
-step Turn in (level 12.5)
+step Pick up quests (level 12.5)
+  accept 816
+
+step Turn in (level 12.6)
   turnin 97281
   accept 97282
 
-step Objectives: Stormy Potential (level 12.6)
+step Objectives: Stormy Potential (level 12.7)
   collect 277665 x5 quest 97282.1
-
-step Pick up quests (level 12.6)
-  accept 816
 
 step Turn in (level 12.7)
   turnin 97282
@@ -58,14 +51,14 @@ step Objectives: Threat from Below (level 12.8)
 step Hearth (level 12.8)
   hearth "Razor Hill"
 
-step Turn in (level 12.9)
-  turnin 99051
-
-step Objectives: Lost But Not Forgotten (level 13.0)
+step Objectives: Lost But Not Forgotten (level 12.9)
   collect 4891 quest 816.1
 
-step Turn in (level 13.0)
+step Turn in (level 12.9)
   turnin 816
+
+step Turn in (level 12.9)
+  turnin 99051
 
 step Flight path (level 13.0)
   getfp "Orgrimmar"

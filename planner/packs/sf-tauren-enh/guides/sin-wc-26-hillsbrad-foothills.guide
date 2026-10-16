@@ -9,53 +9,39 @@ next sf-tauren-enh/sin-wc-27-tirisfal-glades
 # Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 35.8 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Turn in (level 30.9)
+step Turn in and pick up (level 31.1)
+  accept 556
   turnin 96984 optional map 1424 @61.6,20.85
-
-step Turn in (level 31.1)
-  turnin 96986 optional map 1424 @62.63,20.65
-
-step Pick up quests (level 31.1)
-  accept 533
-  accept 1361
-
-step Pick up quests (level 31.1)
-  accept 552
-
-step Pick up quests (level 31.1)
-  accept 676
-
-step Pick up quests (level 31.1)
   accept 544 optional map 1424 @61.6,20.85
   accept 92434 optional map 1424 @61.6,20.85
   accept 93680 optional map 1424 @61.6,20.85
   turnin 93680 optional map 1424 @61.6,20.85
+  turnin 96986 optional map 1424 @62.63,20.65
+  accept 533
+  accept 1361
 
-step Pick up quests (level 31.1)
-  accept 556
+step Pick up quests (level 31.3)
+  accept 552
 
-step Pick up quests (level 31.1)
+step Pick up quests (level 31.3)
   accept 535
 
-step Objectives: Infiltration (level 31.2)
+step Objectives (level 31.4)
   collect 3601 quest 533.1
-
-step Objectives: Valik (level 31.2)
   collect 3703 quest 535.1
 
-step Turn in (level 31.2)
+step Turn in (level 31.4)
   turnin 535
 
-step Turn in (level 31.2)
-  turnin 533
-  accept 503
-
-step Objectives: Helcular's Revenge (level 31.3)
+step Objectives: Helcular's Revenge (level 31.4)
   collect 3708 quest 552.1
 
-step Turn in (level 31.3)
+step Turn in and pick up (level 31.4)
+  accept 676
+  turnin 533
+  accept 503
   turnin 552
   accept 553
 
-step Objectives: Helcular's Revenge (level 31.3)
+step Objectives: Helcular's Revenge (level 31.5)
   complete 553

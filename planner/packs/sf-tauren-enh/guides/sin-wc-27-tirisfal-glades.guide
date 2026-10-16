@@ -12,10 +12,10 @@ next sf-tauren-enh/sin-wc-28-alterac-mountains
 step Pick up quests (level 31.3)
   accept 1051 optional map 1420 @82.6,33.8 live
 
-step Dungeon: Scarlet Monastery: Graveyard (level 31)
+step Dungeon: Scarlet Monastery: Graveyard (level 31.3)
   zone map 1420
   goto 82.6,33.8 "Scarlet Monastery: Graveyard" r 30 live
   tip Find a group and clear Scarlet Monastery: Graveyard, with its quests from this route in your log.
 
-step Hearth (level 31.5)
+step Hearth (level 31.8)
   hearth "Tarren Mill"

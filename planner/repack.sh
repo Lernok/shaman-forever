@@ -10,6 +10,8 @@ export LUA="C:/Users/el-lo/Desktop/Wow Enh/.cache/lua51/lua5.1.exe"
 pack() { # export dir, pack dir, id, title, races
   rm -rf "$2/guides"; mkdir -p "$2/guides"
   cd "$R"; RACES="$5" POLESTAR="$P" node planner/make-pack.js "$1" "$2" $3 "$4" 2>&1 | tail -1
+  [ -f "$2/pack.json" ] || cp "$T/packs/$3/pack.json" "$2/"
+  POLESTAR="$P" "$NODE" planner/reorder.js "$2" 2>&1 | tail -1
 }
 for spec in "sf-tauren-enh|Shaman: Forever · Tauren Mejora|" "sf-orc-enh|Shaman: Forever · Orco y Troll Mejora|Orc, Troll" "sf-sky-enh|Shaman: Forever · Skyborne Mejora|" "sf-dwarf-enh|Shaman: Forever · Enano Mejora|"; do
   IFS='|' read -r id title races <<< "$spec"

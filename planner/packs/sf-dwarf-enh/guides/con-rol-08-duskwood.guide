@@ -10,17 +10,13 @@ next sf-dwarf-enh/con-rol-09-stormwind-city
 # Quests in the order the simulator did them; review every step in game before publishing.
 
 step Pick up quests (level 21.8)
-  accept 101
-
-step Pick up quests (level 21.8)
   accept 96139
-
-step Pick up quests (level 21.8)
   accept 56
-
-step Pick up quests (level 21.8)
   accept 164
   accept 165
+
+step Pick up quests (level 21.8)
+  accept 101
 
 step Pick up quests (level 21.8)
   accept 174
@@ -46,51 +42,40 @@ step Objectives: The Night Watch (level 22.8)
 step Hearth (level 22.8)
   hearth "Darkshire"
 
-step Objectives: The Totem of Infliction (level 23.0)
-  collect 1129 x10 quest 101.1
-  collect 1130 x5 quest 101.2
-  collect 2378 x10 quest 101.3
-
 step Pick up quests (level 23.0)
   accept 236
   accept 245
 
-step Objectives: The Valor Family (level 23.0)
-  collect 281046 quest 96139.1
+step Turn in (level 23.0)
+  turnin 165
+  accept 148
 
-step Objectives: The Night Watch (level 23.1)
-  kill 531 x15 quest 57.1
-  kill 202 x15 quest 57.2
-
-step Objectives: The Totem of Infliction (level 23.3)
+step Objectives (level 23.0)
   collect 1129 x10 quest 101.1
   collect 1130 x5 quest 101.2
   collect 2378 x10 quest 101.3
 
-step Turn in (level 23.4)
-  turnin 165
-  accept 148
+step Pick up quests (level 23.1)
+  accept 226
 
-step Turn in (level 23.4)
+step Objectives (level 23.1)
+  kill 213 x12 quest 226.1
+  kill 565 x8 quest 226.2
+
+step Turn in and pick up (level 23.2)
+  turnin 226
   turnin 164
   accept 95
 
-step Pick up quests (level 23.4)
-  accept 226
-
-step Objectives: Wolves at Our Heels (level 23.4)
-  kill 213 x12 quest 226.1
-  kill 565 x8 quest 226.2
-
-step Objectives: Wolves at Our Heels (level 23.5)
-  kill 213 x12 quest 226.1
-  kill 565 x8 quest 226.2
-
-step Turn in (level 23.5)
-  turnin 226
-
-step Objectives: Eight-Legged Menaces (level 23.6)
+step Objectives: Eight-Legged Menaces (level 23.3)
   kill 539 x15 quest 245.1
+
+step Objectives: The Night Watch (level 23.3)
+  kill 531 x15 quest 57.1
+  kill 202 x15 quest 57.2
+
+step Objectives: The Valor Family (level 23.5)
+  collect 281046 quest 96139.1
 
 step Turn in (level 23.6)
   turnin 245
@@ -103,55 +88,48 @@ step Hearth (level 23.6)
   hearth "Darkshire"
 
 step Turn in (level 23.7)
-  turnin 96139
+  turnin 236
 
 step Turn in (level 23.8)
-  turnin 57
-
-step Turn in (level 23.9)
   turnin 101
   turnin 148
   accept 149
 
-step Turn in (level 23.9)
+step Turn in (level 23.8)
   turnin 149
   accept 154
 
-step Turn in (level 23.9)
+step Turn in and pick up (level 23.8)
   turnin 154
   accept 157
+  turnin 57
 
-step Turn in (level 23.9)
-  turnin 236
-
-step Turn in (level 24.0)
-  turnin 157
-  accept 158
+step Turn in and pick up (level 23.9)
+  turnin 96139
+  accept 377 optional map 1431 @71.92,47.79
 
 step Turn in (level 24.0)
   turnin 230
   accept 262
 
 step Turn in (level 24.0)
+  turnin 157
+  accept 158
+
+step Turn in and pick up (level 24.0)
   turnin 158
   accept 156
-
-step Turn in (level 24.0)
   turnin 262
   accept 265
 
-step Turn in (level 24.0)
-  turnin 265
-  accept 266
-
-step Turn in (level 24.1)
-  turnin 266
-  accept 453
-
-step Objectives: Gather Rot Blossoms (level 24.2)
+step Objectives: Gather Rot Blossoms (level 24.0)
   collect 1598 x8 quest 156.1
 
-step Turn in (level 24.3)
+step Turn in and pick up (level 24.1)
+  turnin 265
+  accept 266
+  turnin 266
+  accept 453
   turnin 156
   accept 159
 
@@ -171,6 +149,3 @@ step Turn in (level 24.7)
 
 step Turn in (level 24.7)
   turnin 268
-
-step Pick up: Crime and Punishment (The Stockade)
-  accept 377 optional map 1431 @71.92,47.79

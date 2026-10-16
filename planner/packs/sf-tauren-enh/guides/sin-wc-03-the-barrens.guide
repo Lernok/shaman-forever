@@ -9,18 +9,16 @@ next sf-tauren-enh/sin-wc-04-orgrimmar
 # Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 35.8 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 12.5)
+step Turn in (level 12.6)
+  turnin 2984
+
+step Pick up quests (level 12.6)
   accept 6361
 
-step Turn in (level 12.6)
+step Turn in (level 12.7)
   turnin 6361
   accept 6362
 
-step Turn in (level 12.6)
-  turnin 886 optional map 1413 @52.26,31.93
-
-step Turn in (level 12.6)
+step Turn in (level 12.7)
   turnin 860
-
-step Turn in (level 12.6)
-  turnin 2984
+  turnin 886 optional map 1413 @52.26,31.93

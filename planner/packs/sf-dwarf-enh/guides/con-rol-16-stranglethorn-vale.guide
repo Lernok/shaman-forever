@@ -9,28 +9,18 @@ next sf-dwarf-enh/con-rol-17-wetlands
 # Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 34.1 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 29.3)
+step Turn in and pick up (level 29.3)
   accept 583
-
-step Turn in (level 29.3)
   turnin 583
-
-step Pick up quests (level 29.3)
+  accept 185
   accept 190
 
-step Pick up quests (level 29.3)
-  accept 185
-
-step Objectives: Tiger Mastery (level 29.4)
+step Objectives (level 29.4)
   kill 681 x10 quest 185.1
-
-step Objectives: Panther Mastery (level 29.4)
   kill 683 x10 quest 190.1
 
 step Turn in (level 29.4)
   turnin 185
-
-step Turn in (level 29.5)
   turnin 190
 
 step Hearth (level 29.5)

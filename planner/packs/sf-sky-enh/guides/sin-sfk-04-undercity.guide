@@ -9,21 +9,19 @@ next sf-sky-enh/sin-sfk-05-tirisfal-glades
 # Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 35.2 h under the model). Era + known Forever quests only.
 # Quests in the order the simulator did them; review every step in game before publishing.
 
-step Pick up quests (level 17.5)
-  accept 79095
-  turnin 79095
-
-step Pick up quests (level 17.6)
-  accept 97891
-
-step Turn in (level 17.6)
-  turnin 97891
-
 step Turn in (level 17.7)
   turnin 491
 
-step Pick up: The New Plague (Ruins of Lordaeron)
+step Pick up quests (level 17.7)
+  accept 79095
+  turnin 79095
+
+step Pick up quests (level 17.8)
+  accept 97891
+
+step Turn in and pick up (Ruins of Lordaeron)
   accept 95216 optional map 1458 @46.31,71.91
+  turnin 97891
 
 step Pick up: Light's Justice (Ruins of Lordaeron)
   accept 92421 optional map 1458 @57.73,89.55
