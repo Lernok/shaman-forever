@@ -1,7 +1,7 @@
 // Hechizos › Macros: one button for what is "the same" on an enemy and on an
 // ally (Lightning Bolt / Healing Wave, Purge / Cure Poison…), written for the
-// chosen spec and level. Spell names stay in English: the game reads them in
-// any client language. Shift/Ctrl variants are opt-in (people bind those).
+// chosen spec and level, with the spell names of the game's language
+// (data/macro-names.js). Shift/Ctrl variants are opt-in (people bind those).
 (function () {
   const t = (key, vars) => window.I18N.t(key, vars);
   const store = () => window.UI.store;
@@ -11,6 +11,24 @@
     Object.keys(OPTS).forEach(k => { o[k] = !!store().get('macro.' + k, OPTS[k]); });
     return o;
   }
+
+  // The game's language: /cast only takes the spell's name in it. Spanish
+  // site → Latin American client by default (the Americas realms).
+  const GAME_LANGS = ['enUS', 'esMX', 'esES'];
+  function gameLang() {
+    const v = store().get('macro.lang', null);
+    return GAME_LANGS.includes(v) ? v : window.I18N.lang === 'es' ? 'esMX' : 'enUS';
+  }
+  // English names in a macro → the game's language, longest first.
+  function localize(text, lang) {
+    const names = (window.MACRO_NAMES || {})[lang];
+    if (!names) return text;
+    return Object.keys(names).sort((a, b) => b.length - a.length)
+      .reduce((out, en) => out.split(en).join(names[en]), text);
+  }
+  const SHORTER = [['[@mouseover,harm,nodead]', '[@mouseover,harm]'], ['[harm,nodead]', '[harm]'], ['[@mouseover,help,nodead]', '[@mouseover,help]']];
+  // The game counts bytes (UTF-8), so "á" takes two of the 255.
+  function bytes(text) { return new TextEncoder().encode(text).length; }
 
   // Level a spell is usable at for the chosen spec: trainer level, or the
   // level its talent gets a point in the spec's leveling order (null: the spec
@@ -97,8 +115,11 @@
     return MACROS.filter(m => (!m.mods || o.mods) && (!m.spec || m.spec === window.Site.spec)).map(m => {
       const levels = m.spells.map(levelOf);
       if (levels.some(l => l == null)) return null;
-      const text = m.text(o);
-      if (text.length > 255) return null; // the game cuts it
+      let text = localize(m.text(o), o.lang || 'enUS');
+      // Too long (long Spanish names): drop the "not dead" checks that
+      // matter least, one at a time; a cast on a corpse just fails.
+      SHORTER.forEach(([from, to]) => { if (bytes(text) > 255) text = text.split(from).join(to); });
+      if (bytes(text) > 255) return null; // the game cuts it
       return { m, text, level: Math.max.apply(null, levels) };
     }).filter(Boolean).sort((a, b) => a.level - b.level);
   }
@@ -107,12 +128,15 @@
 
   function render(container) {
     const o = opts();
+    o.lang = gameLang();
     const lvl = Math.min(60, Math.max(1, Number(store().get('level', 1)) || 1));
     const items = list(o);
     const box = (k) => '<label class="chk chip-toggle"><input type="checkbox" id="macro-' + k + '" data-opt="' + k + '"' + (o[k] ? ' checked' : '') + '> ' + t('mc.opt.' + k) + '</label>';
     let html = '<div class="mc-intro"><p>' + t('mc.intro', { spec: window.Site.spec, n: lvl }) + '</p>' +
       '<details class="mc-how"><summary>' + t('mc.howTitle') + '</summary><ol>' + t('mc.how') + '</ol></details></div>';
-    html += '<div class="lv-toolbar">' + ['alt', 'mo', 'mods'].map(box).join('') + '</div>';
+    html += '<div class="lv-toolbar"><label class="mc-lang">' + t('mc.lang') + ' <select id="macro-lang">' +
+      GAME_LANGS.map(l => '<option value="' + l + '"' + (l === o.lang ? ' selected' : '') + '>' + t('mc.lang.' + l) + '</option>').join('') +
+      '</select></label>' + ['alt', 'mo', 'mods'].map(box).join('') + '</div>';
     html += '<div class="mc-grid">' + items.map(({ m, text, level }) => {
       const later = level > lvl;
       return '<div class="mc-card' + (later ? ' mc-later' : '') + '">' +
@@ -122,12 +146,16 @@
         '<p class="mc-what">' + t('mc.' + m.id + '.what') + '</p>' +
         '<pre class="mc-code">' + esc(text) + '</pre>' +
         '<div class="mc-foot"><button class="btn mc-copy" type="button" data-copy="' + m.id + '">' + t('mc.copy') + '</button>' +
-          '<span class="dim">' + t('mc.chars', { n: text.length }) + '</span></div>' +
+          '<span class="dim">' + t('mc.chars', { n: bytes(text) }) + '</span></div>' +
         '</div>';
     }).join('') + '</div>';
     html += '<p class="note-text dim">' + t('mc.note') + '</p>';
     container.innerHTML = html;
 
+    container.querySelector('#macro-lang').addEventListener('change', e => {
+      store().set('macro.lang', e.target.value);
+      render(container);
+    });
     container.querySelectorAll('[data-opt]').forEach(el => el.addEventListener('change', () => {
       store().set('macro.' + el.dataset.opt, el.checked);
       render(container);
