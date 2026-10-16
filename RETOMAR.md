@@ -57,6 +57,11 @@ Parche del 15-oct (notas de Blizzard): Elemental muy mejorado (Lava Burst a 21 p
 - Addon: datos de misiones de las zonas nuevas desde el QuestieDB instalado (`scripts/lib/questiedb-baked.js`, CBOR en el .toc). Cadenas con varios comienzos (`qalt`), paso actual leído desde el final; marca en el mapa + abre el mapa (TomTom solo con `/sf flecha`); pestañas Avisos/Listos/Descartados; botón del minimapa; Esc no cierra; todo por personaje salvo el idioma.
 - Pedido siguiente del usuario: profesiones en el addon (detectarlas en el juego y avisar mejoras crafteables según su tramo 1-75, 75-150…, como "Tu plan" de la web).
 
+## Addon 0.12.0 y rutas con Polestar (2026-10-16)
+
+- Addon: pestañas Avisos (Todos/Misiones/Dungeons/Profesiones) · En curso · Ocultos; avisos lejanos filtrados por continente (otro continente ≥35%, fuera de ruta ≥20%); recompensas con equipo, bolsas y XP en el tooltip de quien da misiones; profesiones leídas del personaje (crafteos por tramo, uno por casillero); piezas mejores en las bolsas cuentan; ventana redimensionable con candado; atajos de teclado; ocultar en combate; convive con Polestar (no avisa lo que su guía ya cubre). Nada de esto probado en el juego todavía salvo lo que el usuario fue confirmando (mapa, tamaño).
+- Siguiente: **rutas de Shaman como packs de Polestar** con el planner. Elecciones del usuario: dungeons nuevas de Forever siempre (Ruins of Lordaeron, Excavation Site: Wetlands, City of Dalaran), RFC y RoL casi seguidas, después WC, SFK sí, BFD no. Orco y Tauren primero; Enano después.
+
 ## Pendiente
 
 - **Del 29-oct al 2-nov**: post principal en Reddit (actualización del 8 al 12-nov con datos 30–60). El usuario tiene que confirmar qué subreddits existen y sus reglas (Reddit bloquea las herramientas). Ya hay textos escritos para Twitter y Discord en español e inglés.
