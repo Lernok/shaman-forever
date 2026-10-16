@@ -35,9 +35,11 @@ SF.DATA = {
   [65]={n="Gryan Stoutmantle",z=40,x=56.33,y=47.52},
   [66]={n="Madame Eva",z=10,x=75.79,y=45.32},
   [67]={n="Clerk Daltry",z=10,x=72.54,y=46.87},
+  [68]={n="Old Footlocker",z=40,x=41.51,y=66.73},
   [69]={n="Clerk Daltry",z=10,x=72.54,y=46.87},
   [70]={n="Innkeeper Farley",z=12,x=43.77,y=65.8},
   [72]={n="Caretaker Folsom",z=1519,x=42.53,y=72.36},
+  [74]={n="Sealed Crate",z=1519,x=42.47,y=72.05},
   [75]={n="Marshal Haggard",z=12,x=84.61,y=69.38},
   [78]={n="Marshal Haggard",z=12,x=84.61,y=69.38},
   [79]={n="Tavernkeep Smitts",z=10,x=73.78,y=44.49},
@@ -61,6 +63,9 @@ SF.DATA = {
   [134]={n="Abercrombie",z=10,x=28.11,y=31.46},
   [135]={n="Gryan Stoutmantle",z=40,x=56.33,y=47.52},
   [136]={item=true},
+  [138]={n="Captain's Footlocker",z=40,x=25.91,y=47.75},
+  [139]={n="Broken Barrel",z=40,x=40.52,y=47.79},
+  [140]={n="Old Jug",z=40,x=40.63,y=17.03},
   [141]={n="Master Mathias Shaw",z=1519,x=78.31,y=70.74},
   [142]={n="Gryan Stoutmantle",z=40,x=56.33,y=47.52},
   [148]={n="Abercrombie",z=10,x=28.11,y=31.46},
@@ -81,6 +86,7 @@ SF.DATA = {
   [173]={n="Calor",z=10,x=75.75,y=47.57},
   [174]={n="Viktori Prism'Antras",z=10,x=79.8,y=48.02},
   [175]={n="Viktori Prism'Antras",z=10,x=79.8,y=48.02},
+  [176]={n="Wanted Poster",z=12,x=24.55,y=74.69},
   [177]={n="Blind Mary",z=10,x=81.99,y=59.09},
   [181]={n="Viktori Prism'Antras",z=10,x=79.8,y=48.02},
   [185]={n="Ajeck Rouack",z=33,x=35.62,y=10.62},
@@ -95,6 +101,7 @@ SF.DATA = {
   [195]={n="Hemet Nesingwary",z=33,x=35.66,y=10.81},
   [196]={n="Hemet Nesingwary",z=33,x=35.66,y=10.81},
   [197]={n="Hemet Nesingwary",z=33,x=35.66,y=10.81},
+  [199]={n="Suspicious Barrel",z=38,x=56.05,y=13.24},
   [200]={n="Lieutenant Doren",z=33,x=38.04,y=3.01},
   [202]={n="Lieutenant Doren",z=33,x=38.04,y=3.01},
   [203]={n="Sergeant Yohwa",z=33,x=38.02,y=3.33},
@@ -110,9 +117,11 @@ SF.DATA = {
   [222]={n="Calor",z=10,x=75.75,y=47.57},
   [223]={n="Calor",z=10,x=75.75,y=47.57},
   [224]={n="Mountaineer Cobbleflint",z=38,x=22.07,y=73.13},
+  [225]={n="A Weathered Grave",z=10,x=17.73,y=29.08},
   [227]={n="Sirra Von'Indi",z=10,x=72.62,y=47.62},
   [228]={n="Commander Althea Ebonlocke",z=10,x=73.54,y=46.82},
   [229]={n="Commander Althea Ebonlocke",z=10,x=73.54,y=46.82},
+  [230]={n="Mound of loose dirt",z=10,x=49.85,y=77.71},
   [231]={n="Watcher Ladimore",z=10,x=74.02,y=47.82},
   [232]={n="Apothecary Zinge",z=1497,x=50.14,y=67.97},
   [235]={n="Warcaller Gorlach",z=1637,x=37.56,y=75.36},
@@ -121,10 +130,13 @@ SF.DATA = {
   [243]={n="Apothecary Zinge",z=1497,x=50.14,y=67.97},
   [245]={n="Watcher Dodds",z=10,x=45.12,y=67.03},
   [247]={n="Senani Thunderheart",z=331,x=73.78,y=61.46},
+  [248]={n="Old Lion Statue",z=44,x=79.4,y=46.83},
+  [249]={n="Old Lion Statue",z=44,x=79.4,y=46.83},
   [250]={n="Chief Engineer Hinderweir VII",z=38,x=46.05,y=13.61},
   [251]={n="Lord Ello Ebonlocke",z=10,x=71.93,y=46.42},
   [252]={n="Sirra Von'Indi",z=10,x=72.62,y=47.62},
   [253]={n="Lord Ello Ebonlocke",z=10,x=71.93,y=46.42},
+  [256]={n="WANTED",z=38,x=37.3,y=46.52},
   [261]={n="Brother Anton",z=405,x=66.52,y=7.91},
   [262]={n="Sven Yorgen",z=10,x=7.78,y=34.07},
   [263]={n="Mountaineer Wallbang",z=38,x=23.47,y=74.51},
@@ -142,9 +154,14 @@ SF.DATA = {
   [279]={n="Karl Boran",z=11,x=8.32,y=58.57},
   [280]={n="Chief Engineer Hinderweir VII",z=38,x=46.05,y=13.61},
   [281]={n="Karl Boran",z=11,x=8.32,y=58.57},
+  [283]={n="Explosive Charge",z=38,x=50.58,y=14.3},
+  [284]={n="Damaged Crate",z=11,x=13.52,y=41.38},
+  [285]={n="Sealed Barrel",z=11,x=13.6,y=38.22},
+  [286]={n="Half-buried Barrel",z=11,x=13.94,y=34.81},
   [288]={n="First Mate Fitzsimmons",z=11,x=10.9,y=59.64},
   [289]={n="First Mate Fitzsimmons",z=11,x=10.9,y=59.64},
   [290]={n="First Mate Fitzsimmons",z=11,x=10.9,y=59.64},
+  [292]={n="Intrepid's Locked Strongbox",z=11,x=14.38,y=24.04},
   [293]={n="Glorin Steelbrow",z=11,x=10.58,y=60.59},
   [294]={n="Ormer Ironbraid",z=11,x=38.18,y=50.89},
   [295]={n="Ormer Ironbraid",z=11,x=38.18,y=50.89},
@@ -161,7 +178,10 @@ SF.DATA = {
   [321]={n="Glorin Steelbrow",z=11,x=10.58,y=60.59},
   [322]={n="Glorin Steelbrow",z=11,x=10.58,y=60.59},
   [323]={n="Sven Yorgen",z=10,x=7.78,y=34.07},
+  [324]={n="Waterlogged Chest",z=11,x=12.11,y=64.19},
   [325]={n="Grimand Elmore",z=1519,x=59.73,y=33.78},
+  [328]={n="Bookie Herod's Records",z=33,x=43.67,y=9.37},
+  [329]={n="Bookie Herod's Strongbox",z=33,x=49.62,y=7.56},
   [330]={n="Lieutenant Doren",z=33,x=38.04,y=3.01},
   [331]={n="Corporal Sethman",z=33,x=37.66,y=3.39},
   [343]={n="Brother Kristoff",z=1519,x=55.04,y=54.16},
@@ -199,6 +219,7 @@ SF.DATA = {
   [435]={n="Deathstalker Erland",z=130,x=56.18,y=9.18},
   [437]={n="High Executor Hadrec",z=130,x=43.42,y=40.86},
   [438]={n="High Executor Hadrec",z=130,x=43.42,y=40.86},
+  [439]={n="Corpse Laden Boat",z=130,x=58.44,y=34.9},
   [440]={n="High Executor Hadrec",z=130,x=43.42,y=40.86},
   [441]={n="Magistrate Sevren",z=85,x=61.26,y=50.84},
   [442]={n="High Executor Hadrec",z=130,x=43.42,y=40.86},
@@ -214,15 +235,18 @@ SF.DATA = {
   [453]={n="Tavernkeep Smitts",z=10,x=73.78,y=44.49},
   [454]={n="Huldar",z=38,x=52.19,y=69.32},
   [460]={item=true},
+  [461]={n="Shallow Grave",z=130,x=67.87,y=24.85},
   [464]={n="Captain Stoutfist",z=11,x=9.86,y=57.49},
   [465]={n="Captain Stoutfist",z=11,x=9.86,y=57.49},
   [466]={n="Pilot Stonegear",z=1,x=49.62,y=48.61},
   [467]={n="Mountaineer Kadrell",z=38,x=34.17,y=47.84},
   [471]={n="James Halloran",z=11,x=8.55,y=55.74},
   [473]={n="Valstag Ironjaw",z=11,x=10.1,y=56.9},
+  [474]={n="Dragonmaw Catapult",z=11,x=47.46,y=47.01},
   [475]={n="Athridas Bearmantle",z=141,x=55.96,y=57.27},
   [476]={n="Gaerolas Talvethren",z=141,x=66.26,y=58.52},
   [477]={n="Shadow Priest Allister",z=130,x=43.98,y=40.93},
+  [478]={n="Dalaran Crate",z=130,x=49.89,y=60.33},
   [479]={n="Shadow Priest Allister",z=130,x=43.98,y=40.93},
   [480]={n="Shadow Priest Allister",z=130,x=43.98,y=40.93},
   [481]={n="Shadow Priest Allister",z=130,x=43.98,y=40.93},
@@ -231,6 +255,7 @@ SF.DATA = {
   [484]={n="James Halloran",z=11,x=8.55,y=55.74},
   [485]={item=true},
   [486]={n="Athridas Bearmantle",z=141,x=55.96,y=57.27},
+  [491]={n="Dusty Shelf",z=130,x=65.36,y=24.81},
   [495]={n="Sharlindra",z=1497,x=57.63,y=93.8},
   [498]={n="Krusk",z=267,x=63.24,y=20.66},
   [500]={n="Marshal Redpath",z=267,x=49.47,y=58.73},
@@ -259,6 +284,7 @@ SF.DATA = {
   [541]={n="High Executor Darthalia",z=267,x=62.33,y=20.45},
   [546]={n="Deathguard Samsa",z=267,x=62.11,y=19.7},
   [547]={n="Deathguard Humbert",z=267,x=62.76,y=20.21},
+  [549]={n="WANTED",z=267,x=62.63,y=20.75},
   [550]={n="High Executor Darthalia",z=267,x=62.33,y=20.45},
   [559]={n="Lieutenant Farren Orinelle",z=267,x=51.46,y=58.39},
   [560]={n="Lieutenant Farren Orinelle",z=267,x=51.46,y=58.39},
@@ -266,6 +292,8 @@ SF.DATA = {
   [562]={n="Lieutenant Farren Orinelle",z=267,x=51.46,y=58.39},
   [564]={n="Darren Malvew",z=267,x=52.42,y=55.96},
   [565]={n="Bartolo Ginsetti",z=267,x=49.43,y=55.53},
+  [566]={n="WANTED",z=267,x=62.63,y=20.75},
+  [567]={n="Dangerous!",z=267,x=62.56,y=19.66},
   [570]={n="Far Seer Mok'thardin",z=33,x=32.12,y=29.24},
   [571]={n="Far Seer Mok'thardin",z=33,x=32.12,y=29.24},
   [572]={n="Far Seer Mok'thardin",z=33,x=32.12,y=29.24},
@@ -279,6 +307,8 @@ SF.DATA = {
   [582]={n="Nimboya",z=33,x=32.16,y=27.72},
   [583]={n="Barnil Stonepot",z=33,x=35.66,y=10.53},
   [584]={n="Nimboya",z=33,x=32.16,y=27.72},
+  [585]={n="Bubbling Cauldron",z=33,x=32.22,y=27.6},
+  [588]={n="Bubbling Cauldron",z=33,x=32.22,y=27.6},
   [589]={n="Kin'weelay",z=33,x=32.27,y=27.71},
   [591]={n="Kin'weelay",z=33,x=32.27,y=27.71},
   [592]={n="Kin'weelay",z=33,x=32.27,y=27.71},
@@ -304,16 +334,22 @@ SF.DATA = {
   [628]={n="Drizzlik",z=33,x=28.29,y=77.59},
   [630]={n="Princess Poobah",z=33,x=38.53,y=80.58},
   [631]={n="Rhag Garmason",z=11,x=49.9,y=18.24},
+  [632]={n="Ebenezer Rustlocke's Corpse",z=11,x=51.28,y=7.95},
   [633]={n="Rhag Garmason",z=11,x=49.9,y=18.24},
   [637]={item=true},
   [638]={n="Nimboya",z=33,x=32.16,y=27.72},
   [639]={n="Zengu",z=45,x=73.8,y=33.96},
   [640]={n="Zengu",z=45,x=73.8,y=33.96},
   [641]={n="Tor'gan",z=45,x=74.72,y=36.29},
+  [642]={n="Shards of Myzrael",z=45,x=62.5,y=33.73},
   [643]={n="Zengu",z=45,x=73.8,y=33.96},
   [644]={n="Zengu",z=45,x=73.8,y=33.96},
   [645]={n="Zengu",z=45,x=73.8,y=33.96},
+  [646]={n="Trollbane's Tomb",z=45,x=28.86,y=59.62},
   [648]={n="Homing Robot OOX-17/TN",z=440,x=60.23,y=64.72},
+  [651]={n="Iridescent Shards",z=45,x=84.31,y=30.95},
+  [652]={n="Stone of Inner Binding",z=45,x=36.23,y=57.38},
+  [653]={n="Keystone",z=45,x=36.08,y=58.09},
   [654]={item=true},
   [656]={n="Theldurin the Lost",z=3,x=51.39,y=76.87},
   [657]={n="Quae",z=45,x=60.18,y=53.85},
@@ -338,6 +374,8 @@ SF.DATA = {
   [681]={n="Captain Nials",z=45,x=45.83,y=47.56},
   [682]={n="Captain Nials",z=45,x=45.83,y=47.56},
   [683]={n="Sara Balloo",z=1537,x=63.5,y=67.3},
+  [684]={n="Wanted Board",z=45,x=46.04,y=47.76},
+  [685]={n="Wanted Board",z=45,x=46.04,y=47.76},
   [686]={n="King Magni Bronzebeard",z=1537,x=39.09,y=56.2},
   [687]={n="Gerrig Bonegrip",z=1537,x=50.83,y=5.62},
   [689]={n="Grand Mason Marblesten",z=1537,x=39.04,y=88.05},
@@ -361,6 +399,7 @@ SF.DATA = {
   [716]={n="Lucien Tosselwrench",z=3,x=25.82,y=44.24},
   [717]={n="Garek",z=3,x=61.94,y=54.26},
   [718]={n="Sigrun Ironhew",z=3,x=53.8,y=43.3},
+  [720]={n="Crumpled Map",z=3,x=53.03,y=33.94},
   [721]={n="Prospector Ryedol",z=3,x=53.42,y=43.39},
   [722]={n="Hammertoe Grez",z=38,x=37.28,y=85.78},
   [723]={n="Hammertoe Grez",z=38,x=37.28,y=85.78},
@@ -375,8 +414,10 @@ SF.DATA = {
   [735]={n="Gerrig Bonegrip",z=1537,x=50.83,y=5.62},
   [737]={n="Gerrig Bonegrip",z=1537,x=50.83,y=5.62},
   [738]={n="Prospector Ironband",z=38,x=65.93,y=65.62},
+  [739]={n="Battered Dwarven Skeleton",z=3,x=50.89,y=62.4},
   [741]={n="Archaeologist Hollee",z=148,x=37.44,y=41.84},
   [749]={n="Morin Cloudstalker",z=215,x=54.76,y=64.27},
+  [751]={n="Sealed Supply Crate",z=215,x=51.87,y=53.37},
   [752]={n="Chief Hawkwind",z=215,x=43.89,y=76.66},
   [753]={n="Greatmother Hawkwind",z=215,x=48.77,y=80.92},
   [755]={n="Chief Hawkwind",z=215,x=43.89,y=76.66},
@@ -442,6 +483,9 @@ SF.DATA = {
   [894]={n="Sputtervalve",z=17,x=62.98,y=37.22},
   [898]={n="Gilthares Firebough",z=17,x=61.96,y=54.96},
   [899]={n="Mankrik",z=17,x=51.95,y=31.58},
+  [900]={n="Control Console",z=17,x=52.4,y=11.65},
+  [901]={n="Control Console",z=17,x=52.4,y=11.65},
+  [902]={n="Control Console",z=17,x=52.4,y=11.65},
   [903]={n="Sergra Darkthorn",z=17,x=52.23,y=31.01},
   [905]={n="Sergra Darkthorn",z=17,x=52.23,y=31.01},
   [906]={n="Mangletooth",z=17,x=44.55,y=59.26},
@@ -510,6 +554,7 @@ SF.DATA = {
   [1051]={n="Vorrel Sengutz",z=796,x=-1,y=-1},
   [1052]={n="Brother Anton",z=405,x=66.52,y=7.91},
   [1053]={n="Raleigh the Devout",z=267,x=51.47,y=58.35},
+  [1055]={n="Hidden Shrine",z=331,x=56.35,y=49.2},
   [1057]={n="Keeper Albagorm",z=406,x=37.1,y=8.1},
   [1058]={n="Witch Doctor Jin'Zil",z=406,x=74.54,y=97.94},
   [1059]={n="Keeper Albagorm",z=406,x=37.1,y=8.1},
@@ -581,6 +626,8 @@ SF.DATA = {
   [1206]={n="\"Swamp Eye\" Jarl",z=15,x=55.44,y=26.27},
   [1218]={n="\"Swamp Eye\" Jarl",z=15,x=55.44,y=26.27},
   [1221]={n="Mebok Mizzyrix",z=17,x=62.37,y=37.62},
+  [1238]={n="Loose Dirt",z=15,x=55.44,y=25.92},
+  [1239]={n="Loose Dirt",z=15,x=55.44,y=25.92},
   [1240]={n="Nazeer Bloodpike",z=15,x=35.21,y=30.66},
   [1241]={n="Bishop DeLavey",z=1519,x=80.24,y=44.07},
   [1242]={n="Jorgen",z=1519,x=76.29,y=85.12},
@@ -592,6 +639,7 @@ SF.DATA = {
   [1248]={n="Elling Trias",z=1519,x=66.03,y=74.1},
   [1249]={n="Mikhail",z=11,x=10.6,y=60.77},
   [1250]={n="Tapoke \"Slim\" Jahn",z=11,x=10.54,y=60.26},
+  [1261]={n="Bubbling Cauldron",z=33,x=32.22,y=27.6},
   [1262]={n="Nazeer Bloodpike",z=15,x=35.21,y=30.66},
   [1264]={n="Mikhail",z=11,x=10.6,y=60.77},
   [1265]={n="Commander Samaul",z=15,x=68.02,y=48.71},
@@ -646,10 +694,12 @@ SF.DATA = {
   [1452]={n="Rhapsody Shindigger",z=47,x=26.94,y=48.59},
   [1453]={n="Roetten Stonehammer",z=1537,x=69.95,y=21.26},
   [1454]={n="Kreldig Ungor",z=405,x=66.2,y=9.63},
+  [1455]={n="Karnitol's Chest",z=405,x=36.11,y=30.45},
   [1456]={n="Kreldig Ungor",z=405,x=66.2,y=9.63},
   [1457]={n="Kreldig Ungor",z=405,x=66.2,y=9.63},
   [1458]={n="Kreldig Ungor",z=405,x=66.2,y=9.63},
   [1459]={n="Kreldig Ungor",z=405,x=66.2,y=9.63},
+  [1465]={n="Malem Chest",z=405,x=56.52,y=17.84},
   [1466]={n="Kreldig Ungor",z=405,x=66.2,y=9.63},
   [1467]={n="Kreldig Ungor",z=405,x=66.2,y=9.63},
   [1469]={n="Rhapsody Shindigger",z=47,x=26.94,y=48.59},
@@ -668,6 +718,7 @@ SF.DATA = {
   [1524]={n="Kranal Fiss",z=17,x=56.03,y=19.89},
   [1525]={n="Telf Joolam",z=14,x=38.55,y=58.96},
   [1526]={n="Telf Joolam",z=14,x=38.55,y=58.96},
+  [1527]={n="Brazier of the Dormant Flame",z=14,x=38.96,y=58.22},
   [1560]={n="Tooga",z=440,x=31.8,y=74.15},
   [1918]={item=true},
   [2038]={n="Bingles Blastenheimer",z=38,x=63.56,y=47.92},
@@ -680,8 +731,12 @@ SF.DATA = {
   [2200]={n="Talvash del Kissel",z=1537,x=36.38,y=3.61},
   [2201]={n="Remains of a Paladin",z=1337,x=-1,y=-1},
   [2202]={n="Jarkal Mossmeld",z=3,x=2.42,y=46.06},
+  [2204]={n="Talvash's Scrying Bowl",z=1337,x=-1,y=-1},
   [2240]={n="Baelog",z=1337,x=-1,y=-1},
   [2258]={n="Jarkal Mossmeld",z=3,x=2.42,y=46.06},
+  [2278]={n="The Discs of Norgannon",z=1337,x=-1,y=-1},
+  [2279]={n="The Discs of Norgannon",z=1337,x=-1,y=-1},
+  [2280]={n="The Discs of Norgannon",z=1337,x=-1,y=-1},
   [2283]={n="Dran Droffers",z=1637,x=59.49,y=36.57},
   [2284]={n="Dran Droffers",z=1637,x=59.49,y=36.57},
   [2318]={n="Remains of a Paladin",z=1337,x=-1,y=-1},
@@ -709,6 +764,7 @@ SF.DATA = {
   [2767]={n="Homing Robot OOX-22/FE",z=357,x=53.35,y=55.7},
   [2768]={n="Chief Engineer Bilgewhizzle",z=440,x=52.46,y=28.51},
   [2770]={n="Wizzle Brassbolts",z=400,x=78.14,y=77.12},
+  [2782]={n="Rin'ji's Secret",z=47,x=86.3,y=59.01},
   [2784]={n="Fallen Hero of the Horde",z=8,x=34.29,y=66.14},
   [2801]={n="Fallen Hero of the Horde",z=8,x=34.29,y=66.14},
   [2821]={n="Pratt McGrubben",z=357,x=30.63,y=42.71},
@@ -728,6 +784,7 @@ SF.DATA = {
   [2873]={n="Stoley",z=440,x=67.11,y=23.98},
   [2874]={n="Stoley",z=440,x=67.11,y=23.98},
   [2902]={n="Hadoken Swiftstrider",z=357,x=74.91,y=42.46},
+  [2903]={n="Woodpaw Battle Map",z=357,x=71.63,y=55.92},
   [2904]={n="Kernobee",z=721,x=-1,y=-1},
   [2922]={n="Tinkmaster Overspark",z=1537,x=69.4,y=50.4},
   [2923]={n="Brother Sarno",z=1519,x=51.05,y=48.39},
@@ -739,6 +796,7 @@ SF.DATA = {
   [2929]={n="High Tinker Mekkatorque",z=1537,x=69,y=49},
   [2930]={n="Master Mechanic Castpipe",z=1537,x=69.8,y=48.4},
   [2931]={n="Gaxim Rustfizzle",z=406,x=59.52,y=67.15},
+  [2933]={n="Venom Bottle",z=47,x=23.54,y=58.8},
   [2934]={n="Apothecary Lydon",z=267,x=61.44,y=19.06},
   [2935]={n="Apothecary Lydon",z=267,x=61.44,y=19.06},
   [2936]={n="Master Gadrin",z=14,x=55.95,y=74.72},
@@ -747,6 +805,9 @@ SF.DATA = {
   [2945]={item=true},
   [2947]={n="The Sparklematic 5200",inside=true},
   [2949]={n="The Sparklematic 5200",inside=true},
+  [2951]={n="The Sparklematic 5200",z=721,x=-1,y=-1},
+  [2952]={n="The Sparklematic 5200",z=721,x=-1,y=-1},
+  [2953]={n="The Sparklematic 5200",z=721,x=-1,y=-1},
   [2962]={n="Ozzie Togglevolt",z=1,x=45.8,y=49.2},
   [2969]={n="Kindal Moonweaver",z=357,x=65.94,y=45.65},
   [2970]={n="Jer'kai Moonweaver",z=357,x=65.95,y=45.61},
@@ -779,6 +840,7 @@ SF.DATA = {
   [3301]={n="Tonga Runetotem",z=17,x=52.26,y=31.93},
   [3341]={n="Andrew Brownell",z=1497,x=74.05,y=33.31},
   [3367]={n="Dorius Stonetender",z=51,x=63.92,y=60.99},
+  [3368]={n="Singed Letter",z=51,x=74.45,y=19.29},
   [3369]={n="Falla Sagewind",z=17,x=48.18,y=32.78},
   [3370]={n="Falla Sagewind",z=17,x=48.18,y=32.78},
   [3371]={n="Curator Thorius",z=1537,x=71.5,y=15.74},
@@ -804,8 +866,10 @@ SF.DATA = {
   [3461]={n="Pilot Xiggs Fuselighter"},
   [3462]={n="Kalaran Windblade",z=51,x=39.06,y=38.99},
   [3463]={n="Squire Maltrake",z=51,x=39.17,y=39},
+  [3481]={n="Hoard of the Black Dragonflight",z=51,x=38.85,y=38.99},
   [3504]={n="Belgrom Rockmaul",z=1637,x=75.23,y=34.24},
   [3505]={n="Ag'tor Bloodfist",z=16,x=22.26,y=51.48},
+  [3506]={n="Kaldorei Tome of Summoning",z=16,x=59.51,y=31.3},
   [3507]={n="Ag'tor Bloodfist",z=16,x=22.26,y=51.48},
   [3513]={item=true},
   [3514]={n="Kadrak",z=17,x=48.12,y=5.42},
@@ -829,6 +893,8 @@ SF.DATA = {
   [3823]={n="Oralius",z=46,x=84.56,y=68.68},
   [3824]={n="Oralius",z=46,x=84.56,y=68.68},
   [3825]={n="Oralius",z=46,x=84.56,y=68.68},
+  [3844]={n="A Wrecked Raft",z=490,x=63.02,y=68.6},
+  [3845]={n="A Small Pack",z=490,x=63.11,y=69.06},
   [3882]={n="Spark Nilminer",z=490,x=43.5,y=7.42},
   [3906]={n="Thunderheart",z=3,x=3.33,y=48.26},
   [3907]={n="Thunderheart",z=3,x=3.33,y=48.26},
@@ -836,6 +902,7 @@ SF.DATA = {
   [3909]={n="Donova Snowden",z=618,x=31.27,y=45.16},
   [3912]={n="Donova Snowden",z=618,x=31.27,y=45.16},
   [3913]={n="Gaeriyan",z=440,x=53.92,y=23.33},
+  [3914]={n="A Conspicuous Gravestone",z=440,x=53.81,y=29.06},
   [3921]={n="Sputtervalve",z=17,x=62.98,y=37.22},
   [3922]={n="Wenikee Boltbucket",z=17,x=49.05,y=11.17},
   [3923]={n="Wenikee Boltbucket",z=17,x=49.05,y=11.17},
@@ -856,6 +923,9 @@ SF.DATA = {
   [4061]={n="Hierophant Theodora Mulvadania",z=3,x=3.02,y=47.81},
   [4062]={n="Hierophant Theodora Mulvadania",z=3,x=3.02,y=47.81},
   [4063]={n="Lotwil Veriatus",z=3,x=25.95,y=44.87},
+  [4081]={n="WANTED",z=3,x=3.74,y=47.43},
+  [4082]={n="KILL ON SIGHT",z=3,x=3.94,y=46.73},
+  [4083]={n="Spectral Chalice",z=1585,x=-1,y=-1},
   [4084]={n="Eridan Bluewind",z=361,x=51.35,y=81.51},
   [4121]={n="Grark Lorkrub",z=46,x=40.2,y=34.24},
   [4122]={n="Lexlort",z=3,x=5.88,y=47.63},
@@ -863,6 +933,7 @@ SF.DATA = {
   [4124]={n="Latronicus Moonspear",z=357,x=30.38,y=46.17},
   [4125]={n="Ginro Hearthkindle",z=357,x=31.86,y=45.13},
   [4126]={n="Ragnar Thunderbrew",z=1,x=46.83,y=52.36},
+  [4127]={n="Wrecked Row Boat",z=357,x=45.44,y=64.96},
   [4128]={n="Enohar Thunderbrew",z=4,x=63.63,y=20.63},
   [4129]={n="Ginro Hearthkindle",z=357,x=31.86,y=45.13},
   [4130]={n="Quintis Jonespyre",z=357,x=32.45,y=43.79},
@@ -870,6 +941,7 @@ SF.DATA = {
   [4132]={n="Warlord Goretooth",z=3,x=5.81,y=47.52},
   [4133]={n="Apothecary Zinge",z=1497,x=50.14,y=67.97},
   [4134]={n="Shadowmage Vivian Lagrave",z=3,x=2.9,y=47.76},
+  [4135]={n="Large Leather Backpacks",z=357,x=73.32,y=56.31},
   [4136]={n="Yuka Screwspigot",z=46,x=66.06,y=21.95},
   [4146]={n="Liv Rizzlefix",z=17,x=62.45,y=38.73},
   [4147]={n="Larion",z=490,x=45.54,y=8.72},
@@ -887,6 +959,7 @@ SF.DATA = {
   [4262]={n="Jalinda Sprig",z=46,x=85.41,y=70.06},
   [4263]={n="Jalinda Sprig",z=46,x=85.41,y=70.06},
   [4264]={item=true},
+  [4265]={n="Zukk'ash Pod",z=357,x=72.07,y=63.72},
   [4266]={n="Ginro Hearthkindle",z=357,x=31.86,y=45.13},
   [4282]={n="Marshal Windsor",z=1585,x=-1,y=-1},
   [4286]={n="Oralius",z=46,x=84.56,y=68.68},
@@ -908,9 +981,12 @@ SF.DATA = {
   [4421]={n="Eridan Bluewind",z=361,x=51.35,y=81.51},
   [4441]={n="Eridan Bluewind",z=361,x=51.35,y=81.51},
   [4442]={n="Eridan Bluewind",z=361,x=51.35,y=81.51},
+  [4449]={n="Wooden Outhouse",z=51,x=65.59,y=62.17},
+  [4450]={n="Wooden Outhouse",z=51,x=65.59,y=62.17},
   [4491]={n="Ringo",z=490,x=51.9,y=49.85},
   [4492]={n="Spraggle Frock",z=490,x=43.62,y=8.5},
   [4496]={n="Alchemist Pestlezugg",z=440,x=50.89,y=26.96},
+  [4501]={n="Beware of Pterrordax",z=490,x=43.53,y=8.44},
   [4503]={n="Shizzle",z=490,x=44.23,y=11.59},
   [4507]={n="Alchemist Pestlezugg",z=440,x=50.89,y=26.96},
   [4508]={n="Alchemist Pestlezugg",z=440,x=50.89,y=26.96},
@@ -921,6 +997,12 @@ SF.DATA = {
   [4513]={n="Laris Geardawdle",z=1537,x=75.77,y=23.38},
   [4542]={n="Brave Moonhorn",z=400,x=32.24,y=22.17},
   [4581]={n="Shindrell Swiftfire",z=331,x=34.67,y=48.84},
+  [4601]={n="The Sparklematic 5200",z=721,x=-1,y=-1},
+  [4602]={n="The Sparklematic 5200",z=721,x=-1,y=-1},
+  [4603]={n="The Sparklematic 5200",z=721,x=-1,y=-1},
+  [4604]={n="The Sparklematic 5200",z=721,x=-1,y=-1},
+  [4605]={n="The Sparklematic 5200",z=721,x=-1,y=-1},
+  [4606]={n="The Sparklematic 5200",z=721,x=-1,y=-1},
   [4642]={n="Chemist Fuely",z=1497,x=47.45,y=73.35},
   [4681]={n="Gwennyth Bly'Leggonde",z=148,x=36.62,y=45.59},
   [4701]={n="Helendis Riverhorn",z=46,x=85.82,y=68.95},
@@ -929,6 +1011,7 @@ SF.DATA = {
   [4729]={n="Kibler",z=46,x=65.89,y=21.92},
   [4734]={n="Tinkee Steamboil",z=46,x=65.24,y=24},
   [4735]={n="Tinkee Steamboil",z=46,x=65.24,y=24},
+  [4740]={n="WANTED: Murkdeep!",z=148,x=37.22,y=44.22},
   [4742]={n="Vaelan"},
   [4743]={n="Vaelan"},
   [4761]={n="Terenthis",z=148,x=39.37,y=43.48},
@@ -947,6 +1030,7 @@ SF.DATA = {
   [4810]={n="Felnok Steelspring",z=618,x=61.63,y=38.61},
   [4811]={n="Sentinel Glynda Nal'Shea",z=148,x=37.7,y=43.41},
   [4812]={n="Sentinel Glynda Nal'Shea",z=148,x=37.7,y=43.41},
+  [4813]={n="Mysterious Red Crystal",z=148,x=47.32,y=48.68},
   [4821]={n="Hagar Lightninghoof",z=400,x=44.64,y=50.29},
   [4841]={n="Cliffwatcher Longhorn",z=400,x=45.67,y=50.74},
   [4842]={n="Donova Snowden",z=618,x=31.27,y=45.16},
@@ -978,13 +1062,18 @@ SF.DATA = {
   [5055]={n="Storm Shadowhoof",z=618,x=61.93,y=38.38},
   [5056]={n="Storm Shadowhoof",z=618,x=61.93,y=38.38},
   [5057]={n="Storm Shadowhoof",z=618,x=61.93,y=38.38},
+  [5060]={n="Locked Cabinet",z=28,x=47.35,y=49.63},
   [5062]={n="Motega Firemane",z=400,x=21.54,y=32.35},
+  [5063]={n="Malyfous's Catalogue",z=618,x=61,y=38.8},
   [5064]={n="Cliffwatcher Longhorn",z=400,x=45.67,y=50.74},
   [5065]={n="Prospector Ironboot",z=440,x=66.89,y=24.03},
   [5066]={n="Crier Goodman",z=1519,x=56.39,y=74.09},
+  [5067]={n="Malyfous's Catalogue",z=618,x=61,y=38.8},
+  [5068]={n="Malyfous's Catalogue",z=618,x=61,y=38.8},
   [5081]={n="Marshal Maxwell",z=46,x=84.74,y=69.02},
   [5083]={item=true},
   [5084]={n="Donova Snowden",z=618,x=31.27,y=45.16},
+  [5085]={n="Deadwood Cauldron",z=361,x=60.2,y=5.84},
   [5086]={n="Donova Snowden",z=618,x=31.27,y=45.16},
   [5087]={n="Donova Snowden",z=618,x=31.27,y=45.16},
   [5088]={n="Magatha Grimtotem",z=1638,x=69.85,y=30.91},
@@ -999,6 +1088,7 @@ SF.DATA = {
   [5126]={n="Lorax",z=618,x=63.79,y=73.76},
   [5127]={n="Lorax",z=618,x=63.79,y=73.76},
   [5142]={n="Marlene Redpath",z=28,x=49.17,y=78.57},
+  [5147]={n="Wanted Poster - Arnak Grimtotem",z=400,x=46,y=50.86},
   [5149]={n="Pamela Redpath",z=139,x=31.15,y=77.98},
   [5151]={n="Wizlo Bearingshiner",z=400,x=21.43,y=32.55},
   [5152]={n="Pamela Redpath",z=139,x=31.15,y=77.98},
@@ -1013,6 +1103,7 @@ SF.DATA = {
   [5162]={n="Haleh",z=618,x=54.55,y=51.2},
   [5164]={n="Jeziba",z=28,x=39.37,y=66.78},
   [5165]={n="Greta Mosshoof",z=361,x=51.21,y=82.11},
+  [5167]={n="Catalogue of the Wayward",z=28,x=39.35,y=66.6},
   [5168]={n="Carlin Redpath",z=139,x=71.7,y=50.04},
   [5206]={n="Carlin Redpath",z=139,x=71.7,y=50.04},
   [5210]={n="Chromie",z=28,x=39.46,y=66.76},
@@ -1021,14 +1112,22 @@ SF.DATA = {
   [5214]={n="Smokey LaRue",z=139,x=70.88,y=48.43},
   [5215]={n="Commander Ashlam Valorfist",z=28,x=42.7,y=84.03},
   [5216]={n="High Priestess MacDonnell",z=28,x=42.97,y=84.5},
+  [5217]={n="Scourge Cauldron",z=28,x=37.25,y=56.78},
   [5219]={n="High Priestess MacDonnell",z=28,x=42.97,y=84.5},
+  [5220]={n="Scourge Cauldron",z=28,x=46.18,y=51.9},
   [5222]={n="High Priestess MacDonnell",z=28,x=42.97,y=84.5},
+  [5223]={n="Scourge Cauldron",z=28,x=53.02,y=65.61},
   [5225]={n="High Priestess MacDonnell",z=28,x=42.97,y=84.5},
+  [5226]={n="Scourge Cauldron",z=28,x=62.54,y=58.47},
   [5228]={n="High Executor Derrington",z=85,x=83.13,y=68.94},
   [5229]={n="Shadow Priestess Vandis",z=85,x=83.04,y=71.91},
+  [5230]={n="Scourge Cauldron",z=28,x=37.25,y=56.78},
   [5231]={n="Shadow Priestess Vandis",z=85,x=83.04,y=71.91},
+  [5232]={n="Scourge Cauldron",z=28,x=46.18,y=51.9},
   [5233]={n="Shadow Priestess Vandis",z=85,x=83.04,y=71.91},
+  [5234]={n="Scourge Cauldron",z=28,x=53.02,y=65.61},
   [5235]={n="Shadow Priestess Vandis",z=85,x=83.04,y=71.91},
+  [5236]={n="Scourge Cauldron",z=28,x=62.54,y=58.47},
   [5237]={n="High Executor Derrington",z=85,x=83.13,y=68.94},
   [5238]={n="Commander Ashlam Valorfist",z=28,x=42.7,y=84.03},
   [5242]={n="Greta Mosshoof",z=361,x=51.21,y=82.11},
@@ -1056,6 +1155,7 @@ SF.DATA = {
   [5461]={n="Magistrate Marduke",z=28,x=70.57,y=74.11},
   [5462]={n="Magistrate Marduke",z=28,x=70.57,y=74.11},
   [5463]={n="Leonid Barthalomew the Revered",z=139,x=71.89,y=48.29},
+  [5464]={n="Menethil's Gift",z=2017,x=-1,y=-1},
   [5465]={n="Leonid Barthalomew the Revered",z=139,x=71.89,y=48.29},
   [5466]={n="Magistrate Marduke",z=28,x=70.57,y=74.11},
   [5501]={n="Bibbly F'utzbuckle",z=405,x=62.33,y=38.99},
@@ -1112,6 +1212,7 @@ SF.DATA = {
   [6146]={n="Nathanos Blightcaller",z=139,x=22.23,y=63.51},
   [6147]={n="Crusader Lord Valdelmar",z=139,x=75.21,y=71.17},
   [6148]={n="Nathanos Blightcaller",z=139,x=22.23,y=63.51},
+  [6161]={n="Rackmore's Log",z=405,x=36.07,y=30.41},
   [6163]={n="Nathanos Blightcaller",z=139,x=22.23,y=63.51},
   [6182]={n="Highlord Bolvar Fordragon",z=1519,x=80.21,y=38.35},
   [6183]={n="Master Mathias Shaw",z=1519,x=78.31,y=70.74},
@@ -1121,6 +1222,7 @@ SF.DATA = {
   [6187]={n="Highlord Bolvar Fordragon",z=1519,x=80.21,y=38.35},
   [6282]={n="Maggran Earthbinder",z=406,x=47.2,y=61.16},
   [6283]={n="Maggran Earthbinder",z=406,x=47.2,y=61.16},
+  [6284]={n="Wanted Poster: Besseleth",z=406,x=59.06,y=75.71},
   [6301]={n="Tammra Windfield",z=406,x=47.46,y=58.38},
   [6381]={n="Tammra Windfield",z=406,x=47.46,y=58.38},
   [6383]={n="Senani Thunderheart",z=331,x=73.78,y=61.46},
@@ -1197,10 +1299,12 @@ SF.DATA = {
   [7508]={item=true},
   [7541]={n="Zor Lonetree",z=1637,x=38.93,y=38.4},
   [7604]={item=true},
+  [7701]={n="Wanted/Missing/Lost & Found",z=51,x=37.65,y=26.47},
   [7703]={n="Captain Kromcrush",z=2557,x=-1,y=-1},
   [7704]={item=true},
   [7721]={n="Zorbin Fandazzle",z=357,x=44.81,y=43.42},
   [7724]={n="Hansel Heavyhands",z=51,x=38.58,y=27.81},
+  [7728]={n="Wanted/Missing/Lost & Found",z=51,x=37.65,y=26.47},
   [7733]={n="Pratt McGrubben",z=357,x=30.63,y=42.71},
   [7734]={n="Jangdor Swiftstrider",z=357,x=74.43,y=42.91},
   [7761]={item=true},
@@ -1215,6 +1319,8 @@ SF.DATA = {
   [7846]={n="Elder Torntusk",z=47,x=59.69,y=77.84},
   [7847]={n="Elder Torntusk",z=47,x=59.69,y=77.84},
   [7849]={n="Huntsman Markhor",z=47,x=79.16,y=79.53},
+  [7861]={n="Call to Arms!",z=47,x=79.08,y=78.99},
+  [7862]={n="Call to Arms!",z=47,x=79.08,y=78.99},
   [7877]={n="Shen'dralar Ancient",z=2557,x=-1,y=-1},
   [7928]={item=true},
   [7929]={item=true},
@@ -1225,6 +1331,7 @@ SF.DATA = {
   [8271]={n="Prospector Stonehewer",z=36,x=40.65,y=79.56},
   [8272]={n="Voggah Deathgrip",z=36,x=63.84,y=60.47},
   [8273]={n="Oran Snakewrithe",z=1497,x=73.06,y=32.85},
+  [8283]={n="Wanted Poster: Deathclasp",z=1377,x=51.35,y=38.27},
   [8304]={n="Commander Mar'alith",z=1377,x=49.2,y=34.18},
   [8306]={n="Commander Mar'alith",z=1377,x=49.2,y=34.18},
   [8366]={n="Security Chief Bilgewhizzle",z=440,x=67.06,y=23.89},
@@ -1241,6 +1348,7 @@ SF.DATA = {
   [8575]={item=true},
   [8576]={n="Narain Soothfancy",z=440,x=65.24,y=18.58},
   [8597]={n="Narain Soothfancy",z=440,x=65.24,y=18.58},
+  [8598]={n="Freshly Dug Dirt",z=10089,x=29.99,y=89.15},
   [8606]={n="Narain Soothfancy",z=440,x=65.24,y=18.58},
   [8620]={n="Narain Soothfancy",z=440,x=65.24,y=18.58},
   [8706]={n="Warden Haro",z=1377,x=51.14,y=38.94},
@@ -1327,6 +1435,22 @@ SF.DATA = {
   [9227]={n="Quartermaster Miranda Breechlock",z=139,x=71.79,y=50.25},
   [9228]={n="Quartermaster Miranda Breechlock",z=139,x=71.79,y=50.25},
   [9333]={n="Argent Outfitter",z=139,x=71.06,y=49.81},
+  [76240]={n="Boarton Shadetotem",z=1638,x=39.42,y=65.74},
+  [79442]={n="Rau Cliffrunner",z=400,x=46.14,y=51.71},
+  [79536]={n="Garion Wendell",z=1519,x=48.95,y=86.54},
+  [86574]={n="Night Elf Courier",z=406,x=48.73,y=39.85},
+  [86576]={n="Maggran Earthbinder",z=406,x=47.2,y=61.16},
+  [86585]={n="Mountaineer Ylva",z=38,x=31.72,y=86.54},
+  [86614]={n="Discarded Fishing Toolbox",z=38,x=45.61,y=43.06},
+  [88758]={n="Essene Villard",z=11,x=51.54,y=9},
+  [91743]={n="Brother Paxton",z=12,x=49.61,y=40.41},
+  [91745]={n="Brother Paxton",z=12,x=49.61,y=40.41},
+  [91752]={n="Kelsey Fargo",z=12,x=47.18,y=32.16},
+  [91758]={n="Marshal McBride",z=12,x=48.92,y=41.61},
+  [91772]={n="Tordrin Sternblade",z=12,x=51.21,y=40.8},
+  [91775]={n="Marshal Dughan",z=12,x=42.11,y=65.93},
+  [91777]={n="Marshal Dughan",z=12,x=42.11,y=65.93},
+  [92124]={n="Brother Paxton",z=12,x=49.61,y=40.41},
   [92401]={n="Tabitha Heartweaver",z=130,x=44.4,y=43},
   [92415]={item="Blood-Stained Letter"},
   [92421]={n="Morbin Lightbane",z=1497,x=57.8,y=89.8},
@@ -1335,12 +1459,69 @@ SF.DATA = {
   [92457]={n="Image of Archmage Modera",z=130,x=68.4,y=45.4},
   [92458]={n="Image of Archmage Modera",z=130,x=68.4,y=45.4},
   [92489]={n="High Sorcerer Andromath",z=1519,x=48.7,y=87.6},
+  [92514]={n="Constable Aonda",z=16593,x=45.63,y=45.5},
+  [92517]={n="Constable Aonda",z=16593,x=45.63,y=45.5},
+  [92528]={n="Missionary Jasaan",z=16593,x=46.86,y=56.21},
+  [92529]={n="Sania Silverstream",z=16593,x=44.86,y=45.46},
+  [92550]={n="Constable Aonda",z=16593,x=45.63,y=45.5},
+  [92579]={n="Constable Aonda",z=16593,x=45.63,y=45.5},
+  [92595]={n="Illaya Amberwind",z=16593,x=43.53,y=44.78},
+  [92640]={n="Talaanis Shadowsong",z=16593,x=66.17,y=76.51},
+  [92642]={n="Yorana Windyreed",z=16593,x=69.47,y=67.27},
+  [92643]={n="Talaanis Shadowsong",z=16593,x=66.17,y=76.51},
+  [92644]={n="Dead Cultist",z=16593,x=56.02,y=58.79},
+  [92645]={n="Yorana Windyreed",z=16593,x=69.47,y=67.27},
+  [92646]={n="Valennia Stormfist",z=16593,x=65.22,y=50.38},
+  [92679]={n="Alvarion Windfield",z=16593,x=62.14,y=73.31},
+  [92682]={n="Aamelia Windfield",z=16593,x=46.7,y=81.95},
+  [92685]={n="Aamelia Windfield",z=16593,x=46.7,y=81.95},
+  [92693]={n="Aamelia Windfield",z=16593,x=46.7,y=81.95},
+  [92699]={n="Valennia Stormfist",z=16593,x=66.22,y=76.63},
+  [92700]={n="Valennia Stormfist",z=16593,x=66.22,y=76.63},
+  [92701]={n="Constable Aonda",z=16593,x=45.63,y=45.5},
+  [92703]={n="Aamelia Windfield",z=16593,x=46.7,y=81.95},
+  [92727]={n="Dondallion Whisperwind",z=16593,x=66.28,y=79.84},
   [92753]={n="Alba Fairmoon",z=40,x=52.4,y=53},
+  [92834]={n="Elaadrin Evengale",z=16593,x=66.59,y=79.91},
+  [92840]={n="Elaadrin Evengale",z=16593,x=66.59,y=79.91},
+  [92849]={n="Bloodstained Satchel",z=16593,x=53.25,y=72.18},
+  [92850]={n="Fillion Flamebreeze",z=16593,x=52.05,y=69.4},
+  [92860]={n="Elaadrin Evengale",z=16593,x=66.59,y=79.91},
+  [92880]={n="Yorana Windyreed",z=16593,x=69.47,y=67.27},
+  [92881]={n="Valennia Stormfist",z=16593,x=66.22,y=76.63},
+  [92947]={n="Valennia Stormfist",z=16593,x=61.17,y=70.95},
+  [93036]={n="Constable Aonda",z=16593,x=45.63,y=45.5},
+  [93065]={n="Valennia Stormfist",z=16593,x=66.22,y=76.63},
+  [93128]={n="Nerlokh",z=16651,x=21.2,y=23.2},
+  [93159]={n="Strange Hermit",z=16593,x=53.96,y=38.9},
+  [93165]={n="Vayn Moongaze",z=16593,x=63.77,y=36.02},
+  [93172]={n="Strange Hermit",z=16593,x=53.96,y=38.9},
+  [93318]={n="Bounty Available: Vulgara the Insatiable!",z=16593,x=43.39,y=45.82},
+  [93320]={n="Valennia Stormfist",z=16593,x=66.22,y=76.63},
+  [93735]={n="Ayessa Dawnsinger",z=16593,x=59.15,y=79.73},
+  [93737]={n="Riaani Nightwind",z=16593,x=59.01,y=72.93},
+  [93738]={n="Riaani Nightwind",z=16593,x=59.01,y=72.93},
+  [93739]={n="Thrall",z=1637,x=31.73,y=37.82},
+  [93746]={n="Ayessa Dawnsinger",z=16593,x=59.15,y=79.73},
+  [93835]={n="Valennia Stormfist",z=16593,x=65.22,y=50.38},
+  [93958]={n="Hyusaa Quickbreeze",z=16593,x=63.77,y=50.51},
+  [93963]={n="Highlord Bolvar Fordragon",z=1519,x=80.21,y=38.35},
+  [94411]={n="Illaya Amberwind",z=16593,x=43.53,y=44.78},
+  [94465]={n="Bruegs Kindleborn",z=1},
+  [94466]={n="Braldir Ashmantle",z=38,x=32.17,y=65.97},
+  [94467]={n="Braldir Ashmantle",z=38,x=32.17,y=65.97},
+  [94468]={n="Brazier of the Dormant Flame",z=14,x=38.96,y=58.22},
+  [94484]={n="Lotheluum Starbreeze",z=16593,x=64.01,y=75.1},
+  [94568]={n="Talaanis Shadowsong",z=16593,x=66.17,y=76.51},
+  [94947]={n="Denaaris Stargale",z=36,x=12.24,y=56.54},
+  [95161]={n="Orphan Matron Nightingale",z=1519,x=56.31,y=53.99},
   [95189]={item="Crest of Lordaeron"},
   [95195]={item="Bloodied Insignia"},
   [95204]={item="Crest of Lordaeron"},
   [95216]={n="Theodore Griffs",z=1497,x=46.6,y=71.4},
   [95250]={n="Captain Truman",inside=true},
+  [95350]={n="Alaana Stormwalker",z=215,x=33.4,y=22.5},
+  [95508]={n="Walton",z=17,x=42.01,y=11.44},
   [95646]={n="Rethiel the Greenwarden",z=11,x=56.2,y=40.5},
   [95647]={n="Caitlin Grassman",z=11,x=11.8,y=58.6},
   [95663]={n="Zaruk",z=45,x=74.4,y=35.6},
@@ -1350,15 +1531,54 @@ SF.DATA = {
   [95737]={n="Llana",z=331,x=35,y=48.4},
   [95772]={n="Dorin Songblade",z=44,x=30.8,y=46.6},
   [95810]={item="Titan Relic"},
+  [95885]={n="Offering Stone",z=130,x=58.09,y=69.84},
+  [95981]={n="Shadow Priest Allister",z=130,x=43.98,y=40.93},
+  [95999]={n="Wanted: Incinerator Gar'im",z=44,x=24.29,y=46.18},
+  [96016]={n="Veyric Thunderhame",z=45,x=59.77,y=27.6},
+  [96260]={n="Yorn Grimtotem",z=215,x=32.46,y=19.99},
   [96393]={n="Earthseer Farsen",z=1,x=64.8,y=58.4},
   [96394]={n="Afadra Dunwall",z=1537,x=33.2,y=47.8},
   [96403]={n="Thom Filch",z=1537,x=32.4,y=44.8},
+  [96800]={n="Magus Olvek",z=36,x=10.72,y=64.07},
   [96984]={n="Image of Archmage Modera",z=130,x=68.4,y=45.4},
   [96986]={n="Melisara",z=267,x=62.6,y=20.6},
   [96988]={n="Doctor Martin Felben",z=1497,x=46.6,y=74.4},
+  [97003]={n="Gur'ak",z=17,x=52.64,y=29.05},
+  [97005]={n="Bainham",z=17,x=61.91,y=39.42},
+  [97223]={n="Xar'Ti",z=14,x=55.28,y=75.49},
+  [97243]={n="Sessaria Skystride",z=16593,x=58.33,y=78.44},
+  [97244]={n="Olariaan Swiftburn",z=16593,x=51.21,y=86.22},
+  [97245]={n="Olariaan Swiftburn",z=16593,x=51.21,y=86.22},
+  [97250]={n="Grunt Logmar",z=17,x=44.62,y=59.27},
+  [97257]={n="Olariaan Swiftburn",z=16593,x=51.21,y=86.22},
+  [97265]={n="Aka'rai",z=405,x=25.35,y=67.17},
+  [97282]={n="Rezlak",z=14,x=46.37,y=22.94},
   [97288]={item="Abominable Head"},
+  [97290]={n="Unfinished Abomination",z=1497,x=45.77,y=61.95},
+  [97326]={n="Thra",z=1637},
+  [97558]={n="Shelene Rhobart",z=85,x=65.43,y=60.12},
+  [98025]={n="WANTED: Murkdeep!",z=148,x=37.22,y=44.22},
+  [98071]={n="Brewmeister Bilger",z=267,x=52.13,y=58.74},
+  [98095]={n="Deathstalker Masoj",z=267,x=63.98,y=53.94},
+  [98191]={n="Highlord Bolvar Fordragon",z=1519,x=80.21,y=38.35},
+  [98208]={n="Sylessa Duskwhisper",z=11,x=7.96,y=55.85},
+  [98216]={n="Prospector Whelgar",z=11,x=38.81,y=52.39},
+  [98223]={n="Tattered Spellbook",z=11,x=53.46,y=54.52},
+  [98283]={n="Rethiel the Greenwarden",z=11,x=56.37,y=40.4},
+  [98297]={n="Howin Kindfeather",z=11,x=49.36,y=42.05},
+  [98298]={n="Dalar Dawnweaver",z=130,x=44.2,y=39.81},
+  [98310]={n="Prospector Whelgar",z=11,x=38.81,y=52.39},
   [98423]={item="Treaty of Understanding"},
-  [98815]={n="James Halloran",z=11,x=8.6,y=55.6}
+  [98545]={n="Leonid Barthalomew the Revered",z=85,x=21.97,y=44.87},
+  [98815]={n="James Halloran",z=11,x=8.6,y=55.6},
+  [98823]={n="Bashana Runetotem",z=1638,x=71.06,y=34.19},
+  [98824]={n="Prospector Whelgar",z=11,x=38.81,y=52.39},
+  [99048]={n="Orgnil Soulscar",z=14,x=52.24,y=43.15},
+  [99049]={n="Heglan Shadeeye",z=14,x=58.6,y=45.6},
+  [99051]={n="Orgnil Soulscar",z=14,x=52.24,y=43.15},
+  [99052]={n="Orgnil Soulscar",z=14,x=52.24,y=43.15},
+  [99156]={n="Deathguard Linnea",z=85,x=65.49,y=60.25},
+  [99260]={n="Fillion Flamebreeze",z=16593,x=66.2,y=79.88}
  },
  dquests={
   Uldaman={
@@ -1445,7 +1665,7 @@ SF.DATA = {
    {q=1160,qn="Test of Lore",r=25,l=36,f="horde",p=1159,pn="Test of Lore"},
    {q=1049,qn="Compendium of the Fallen",r=28,l=38,f="horde"},
    {q=1050,qn="Mythology of the Titans",r=28,l=38,f="alliance"},
-   {q=96800,qn="Past Due",l=38,f="alliance"},
+   {q=96800,qn="Past Due",r=30,l=38,f="alliance"},
    {q=1053,qn="In the Name of the Light",r=34,l=40,f="alliance",p=1052,pn="Down the Scarlet Path"},
    {q=1048,qn="Into The Scarlet Monastery",r=33,l=42,f="horde"}
   },
@@ -1709,8 +1929,8 @@ SF.DATA = {
    {q=95772,qn="Songblade Search",r=24,l=31,f="alliance"},
    {q=95795,qn="Fallen in the Fen",r=24,l=31,f="alliance"},
    {q=95810,qn="Lost Relic Carry",r=24,l=31,f="alliance"},
-   {q=98823,qn="Earthen Echo",l=31,f="horde"},
-   {q=98824,qn="Prehistoric Prism",l=31,f="alliance"}
+   {q=98823,qn="Earthen Echo",r=24,l=31,f="horde"},
+   {q=98824,qn="Prehistoric Prism",r=24,l=31,f="alliance"}
   },
   ["City of Dalaran"]={
    {q=92456,qn="A Green Sample",r=24,l=33,f="alliance"},
@@ -3864,8 +4084,124 @@ SF.DATA = {
    {9094,"a"},
    {9333,"h"}
   },
+  [248005]={
+   {91777,"a"}
+  },
+  [248008]={
+   {91777,"a"}
+  },
+  [251486]={
+   {92401,"h"}
+  },
+  [251533]={
+   {92422,"h"}
+  },
+  [251534]={
+   {92422,"h"}
+  },
+  [251962]={
+   {92489,"a"}
+  },
+  [251965]={
+   {96986,"h"}
+  },
+  [257255]={
+   {93318,nil}
+  },
+  [257342]={
+   {92640,nil}
+  },
+  [257343]={
+   {92880,nil}
+  },
+  [257344]={
+   {92640,nil}
+  },
+  [257345]={
+   {92880,nil}
+  },
+  [257943]={
+   {93318,nil}
+  },
+  [263305]={
+   {93746,"h"}
+  },
+  [263306]={
+   {93165,nil}
+  },
+  [263307]={
+   {93165,nil}
+  },
+  [263308]={
+   {93165,nil}
+  },
+  [263309]={
+   {93172,nil}
+  },
+  [263310]={
+   {93172,nil}
+  },
+  [263311]={
+   {93172,nil}
+  },
+  [263312]={
+   {92703,nil}
+  },
+  [263314]={
+   {92703,nil}
+  },
+  [263330]={
+   {92644,nil}
+  },
+  [263332]={
+   {92644,nil}
+  },
+  [263333]={
+   {92644,nil}
+  },
+  [263335]={
+   {92645,nil}
+  },
+  [263336]={
+   {92645,nil}
+  },
+  [263337]={
+   {92645,nil}
+  },
+  [263338]={
+   {93320,nil}
+  },
+  [263339]={
+   {93320,nil}
+  },
+  [263340]={
+   {93320,nil}
+  },
+  [263401]={
+   {92834,"a"}
+  },
+  [263402]={
+   {92834,"a"}
+  },
+  [263403]={
+   {92834,"a"}
+  },
+  [263405]={
+   {92646,"h"},
+   {93835,"a"}
+  },
+  [263406]={
+   {92646,"h"},
+   {93835,"a"}
+  },
   [263412]={
-   {1527,"h"}
+   {94411,"h"},
+   {1527,"h"},
+   {94468,"a"},
+   {97257,"h"}
+  },
+  [269716]={
+   {95508,"h"}
   },
   [270000]={
    {176,"a"}
@@ -4055,6 +4391,63 @@ SF.DATA = {
   [270091]={
    {613,nil}
   },
+  [271664]={
+   {95646,"a"}
+  },
+  [271667]={
+   {95646,"a"}
+  },
+  [271670]={
+   {95646,"a"}
+  },
+  [271719]={
+   {98823,"h"}
+  },
+  [271732]={
+   {95682,"h"}
+  },
+  [271740]={
+   {95682,"h"}
+  },
+  [271766]={
+   {98823,"h"},
+   {98824,"a"}
+  },
+  [271767]={
+   {98823,"h"},
+   {98824,"a"}
+  },
+  [271769]={
+   {95795,"a"}
+  },
+  [271797]={
+   {92873,nil}
+  },
+  [271798]={
+   {92873,nil}
+  },
+  [271801]={
+   {93128,nil}
+  },
+  [271803]={
+   {93196,nil}
+  },
+  [271804]={
+   {93196,nil}
+  },
+  [271805]={
+   {93128,nil}
+  },
+  [273654]={
+   {96260,"h"}
+  },
+  [273875]={
+   {92646,"h"},
+   {93835,"a"}
+  },
+  [273876]={
+   {92640,nil}
+  },
   [274078]={
    {1144,nil}
   },
@@ -4073,12 +4466,288 @@ SF.DATA = {
   [276727]={
    {515,"h"}
   },
+  [276887]={
+   {97003,"h"},
+   {97005,"a"}
+  },
+  [276888]={
+   {97003,"h"},
+   {97005,"a"}
+  },
+  [276889]={
+   {97003,"h"},
+   {97005,"a"}
+  },
+  [276898]={
+   {96800,"a"}
+  },
+  [276899]={
+   {96800,"a"}
+  },
+  [277203]={
+   {78150,nil}
+  },
+  [277204]={
+   {78150,nil}
+  },
+  [277206]={
+   {95534,nil}
+  },
+  [277214]={
+   {97048,nil}
+  },
+  [277218]={
+   {95999,"a"}
+  },
+  [277224]={
+   {97048,nil}
+  },
+  [277226]={
+   {95999,"a"}
+  },
+  [277232]={
+   {97048,nil}
+  },
+  [277234]={
+   {95999,"a"}
+  },
+  [277247]={
+   {98545,"h"}
+  },
+  [277286]={
+   {97250,"h"}
+  },
+  [277288]={
+   {97250,"h"}
+  },
+  [277289]={
+   {97250,"h"}
+  },
+  [277514]={
+   {97265,"h"}
+  },
+  [278002]={
+   {76240,"h"}
+  },
+  [279388]={
+   {98071,"a"}
+  },
+  [279835]={
+   {92456,"a"}
+  },
+  [279836]={
+   {92456,"a"}
+  },
+  [279837]={
+   {92457,"a"}
+  },
+  [279839]={
+   {92458,"a"}
+  },
+  [279840]={
+   {92458,"a"}
+  },
+  [279841]={
+   {92458,"a"}
+  },
+  [279843]={
+   {96984,"h"}
+  },
+  [279845]={
+   {96987,"h"}
+  },
+  [279846]={
+   {96987,"h"}
+  },
+  [279848]={
+   {96988,"h"}
+  },
+  [279849]={
+   {92489,"a"}
+  },
+  [279865]={
+   {95250,"a"},
+   {97290,"h"}
+  },
+  [279868]={
+   {95195,"a"}
+  },
+  [279869]={
+   {95195,"a"}
+  },
+  [279870]={
+   {95161,"a"}
+  },
+  [279874]={
+   {92421,"h"}
+  },
+  [279875]={
+   {92421,"h"}
+  },
+  [279877]={
+   {95216,"h"}
+  },
+  [279895]={
+   {96393,"a"}
+  },
+  [279898]={
+   {96403,"a"}
+  },
+  [279899]={
+   {96395,"a"}
+  },
+  [280095]={
+   {96394,"a"}
+  },
+  [280096]={
+   {96403,"a"}
+  },
+  [280604]={
+   {79442,"h"},
+   {96016,"a"}
+  },
+  [280605]={
+   {96016,"a"}
+  },
+  [280607]={
+   {96016,"a"}
+  },
+  [280696]={
+   {79442,"h"},
+   {96016,"a"}
+  },
   [281250]={
    {940,"a"}
+  },
+  [281251]={
+   {86574,"a"}
+  },
+  [281252]={
+   {86576,"h"}
+  },
+  [281253]={
+   {86585,"a"}
+  },
+  [281256]={
+   {86614,"a"}
+  },
+  [281258]={
+   {88758,"a"}
+  },
+  [281265]={
+   {95981,"h"}
+  },
+  [281267]={
+   {97223,"h"}
+  },
+  [281269]={
+   {97326,"h"}
+  },
+  [281270]={
+   {97326,"h"}
+  },
+  [281271]={
+   {97326,"h"}
+  },
+  [281272]={
+   {97326,"h"}
+  },
+  [281273]={
+   {97326,"h"}
+  },
+  [281274]={
+   {97282,"h"}
+  },
+  [281283]={
+   {97558,"h"}
+  },
+  [281284]={
+   {97558,"h"}
+  },
+  [281285]={
+   {97558,"h"}
+  },
+  [281289]={
+   {98025,"a"}
+  },
+  [281291]={
+   {98028,"a"}
+  },
+  [281292]={
+   {98028,"a"}
+  },
+  [281294]={
+   {98095,"h"}
+  },
+  [281295]={
+   {98156,"a"}
+  },
+  [281297]={
+   {98191,"a"}
+  },
+  [281304]={
+   {98216,"a"}
+  },
+  [281305]={
+   {98216,"a"}
+  },
+  [281306]={
+   {98223,"a"}
+  },
+  [281307]={
+   {98223,"a"}
+  },
+  [281309]={
+   {98283,nil}
+  },
+  [281310]={
+   {98283,nil}
+  },
+  [281312]={
+   {98297,"a"}
+  },
+  [281315]={
+   {98298,"h"}
+  },
+  [281318]={
+   {98208,nil}
+  },
+  [281319]={
+   {98310,"a"}
+  },
+  [281320]={
+   {98310,"a"}
+  },
+  [281321]={
+   {98310,"a"}
+  },
+  [281634]={
+   {79536,nil}
+  },
+  [281635]={
+   {79536,nil}
+  },
+  [281673]={
+   {95885,"h"}
+  },
+  [286426]={
+   {93739,"h"}
+  },
+  [286427]={
+   {93963,"a"}
+  },
+  [286731]={
+   {99052,"h"}
+  },
+  [286742]={
+   {99156,"h"}
+  },
+  [286744]={
+   {99156,"h"}
   }
  },
- qpre={[2]=6383,[13]=12,[14]=13,[19]=20,[49]=48,[50]=49,[51]=50,[53]=51,[55]=325,[67]=66,[68]=67,[69]=68,[70]=69,[72]=70,[74]=72,[75]=74,[78]=75,[79]=78,[80]=79,[89]=125,[97]=80,[98]=97,[99]=424,[119]=118,[122]=119,[124]=119,[126]=124,[132]=65,[133]=159,[134]=133,[135]=132,[138]=136,[139]=138,[140]=139,[141]=135,[142]=141,[148]=165,[149]=148,[154]=149,[155]=142,[156]=158,[157]=154,[158]=157,[159]=156,[160]=134,[161]=199,[166]=155,[175]=174,[177]=175,[181]=177,[185]=583,[186]=185,[187]=186,[188]=187,[190]=583,[191]=190,[192]=191,[193]=192,[194]=583,[195]=194,[196]=195,[197]=196,[199]=250,[200]=215,[202]=574,[206]=202,[214]=155,[217]=263,[221]=173,[222]=221,[223]=222,[227]=225,[228]=227,[229]=228,[230]=95,[231]=229,[237]=224,[238]=232,[243]=238,[247]=2,[248]=94,[249]=248,[251]=160,[252]=401,[253]=252,[262]=230,[263]=237,[265]=262,[266]=265,[268]=453,[269]=323,[270]=269,[273]=302,[274]=161,[275]=277,[277]=276,[278]=274,[280]=278,[281]=279,[283]=280,[284]=281,[285]=284,[286]=285,[289]=288,[290]=289,[292]=290,[293]=292,[295]=294,[296]=295,[301]=298,[302]=301,[309]=454,[321]=270,[322]=324,[323]=268,[324]=321,[325]=322,[328]=200,[329]=328,[330]=329,[331]=330,[344]=343,[345]=344,[346]=347,[347]=345,[350]=393,[355]=354,[378]=303,[379]=243,[389]=373,[391]=389,[392]=391,[393]=392,[394]=434,[395]=394,[396]=395,[401]=251,[408]=355,[417]=419,[422]=421,[423]=422,[424]=423,[434]=2746,[438]=437,[439]=438,[440]=439,[441]=440,[442]=448,[443]=438,[444]=443,[446]=444,[448]=446,[449]=435,[450]=447,[451]=450,[453]=266,[454]=273,[461]=460,[464]=473,[465]=464,[466]=467,[471]=484,[474]=465,[476]=475,[478]=477,[479]=482,[480]=479,[481]=478,[482]=481,[483]=476,[486]=483,[491]=461,[503]=533,[504]=500,[506]=503,[507]=506,[508]=507,[513]=509,[515]=513,[518]=495,[519]=518,[520]=519,[521]=520,[528]=527,[529]=528,[530]=441,[532]=529,[533]=498,[539]=532,[541]=539,[546]=527,[550]=541,[559]=536,[560]=559,[561]=560,[562]=561,[571]=572,[572]=570,[573]=571,[574]=203,[576]=595,[577]=575,[578]=616,[582]=581,[584]=582,[585]=584,[588]=585,[589]=588,[591]=589,[592]=591,[598]=596,[600]=605,[601]=578,[602]=601,[603]=602,[607]=606,[609]=607,[610]=603,[611]=610,[613]=609,[622]=627,[627]=210,[628]=577,[630]=594,[632]=631,[633]=632,[639]=638,[640]=639,[641]=640,[643]=641,[644]=643,[645]=644,[646]=645,[648]=351,[651]=642,[652]=651,[653]=652,[654]=379,[656]=692,[657]=658,[658]=659,[660]=657,[661]=660,[666]=665,[667]=670,[668]=666,[669]=668,[670]=669,[673]=671,[677]=676,[678]=677,[679]=678,[680]=678,[682]=681,[683]=637,[686]=683,[687]=653,[689]=686,[691]=690,[692]=687,[693]=691,[694]=693,[695]=694,[696]=695,[697]=696,[699]=698,[700]=689,[704]=739,[711]=710,[712]=711,[716]=712,[717]=732,[721]=720,[722]=721,[723]=722,[724]=723,[725]=724,[726]=725,[727]=709,[731]=729,[732]=718,[733]=718,[735]=727,[737]=735,[738]=707,[739]=738,[741]=731,[751]=749,[753]=752,[755]=753,[757]=755,[762]=726,[763]=757,[765]=751,[767]=763,[771]=767,[772]=771,[773]=772,[775]=773,[776]=775,[793]=782,[806]=823,[809]=829,[824]=1918,[827]=828,[828]=806,[829]=827,[836]=485,[845]=844,[846]=843,[849]=846,[851]=850,[852]=851,[853]=848,[863]=858,[864]=654,[872]=871,[873]=874,[874]=913,[875]=867,[876]=875,[877]=870,[879]=5052,[880]=877,[881]=903,[882]=3261,[888]=892,[890]=887,[892]=890,[900]=894,[901]=900,[902]=901,[903]=845,[905]=881,[906]=879,[907]=882,[913]=907,[914]=1490,[924]=809,[940]=937,[942]=741,[943]=942,[955]=954,[956]=955,[957]=956,[966]=965,[967]=966,[970]=967,[973]=970,[976]=973,[978]=3661,[979]=978,[980]=974,[981]=1143,[985]=984,[986]=985,[993]=986,[994]=993,[995]=993,[1009]=1007,[1011]=4581,[1012]=1011,[1020]=1010,[1023]=991,[1024]=1023,[1026]=1024,[1027]=1026,[1028]=1027,[1029]=1055,[1030]=1029,[1031]=1021,[1033]=1020,[1034]=1033,[1035]=1034,[1045]=1030,[1046]=1045,[1052]=261,[1053]=1052,[1055]=1028,[1059]=1057,[1071]=1085,[1075]=1071,[1076]=1075,[1077]=1076,[1079]=1077,[1081]=1082,[1082]=1083,[1083]=1091,[1088]=1087,[1089]=1088,[1091]=1079,[1092]=1090,[1094]=1093,[1095]=1094,[1096]=1095,[1101]=1100,[1108]=1106,[1137]=1108,[1139]=762,[1140]=973,[1143]=1167,[1167]=1140,[1170]=1169,[1171]=1170,[1172]=1171,[1178]=1176,[1180]=1178,[1181]=1180,[1182]=1181,[1183]=1182,[1184]=1148,[1186]=1183,[1187]=1186,[1188]=1187,[1189]=1188,[1196]=1195,[1197]=1196,[1200]=1198,[1203]=1206,[1206]=1218,[1239]=1238,[1240]=1239,[1241]=1274,[1242]=1241,[1243]=1242,[1244]=1243,[1245]=1244,[1246]=1245,[1247]=1447,[1248]=1247,[1249]=1248,[1250]=1249,[1261]=1240,[1262]=1261,[1264]=1250,[1265]=1264,[1266]=1265,[1267]=1324,[1275]=3765,[1324]=1266,[1358]=1359,[1359]=3221,[1366]=1365,[1369]=1367,[1370]=1368,[1371]=1369,[1373]=1370,[1374]=1373,[1375]=1371,[1380]=1374,[1381]=1375,[1383]=1372,[1422]=699,[1426]=1422,[1427]=1426,[1429]=1424,[1432]=1431,[1433]=1432,[1435]=1433,[1436]=1435,[1438]=1465,[1439]=1438,[1440]=1439,[1444]=1429,[1445]=1444,[1447]=1246,[1449]=1448,[1450]=1449,[1451]=1450,[1452]=1451,[1454]=1453,[1455]=1454,[1456]=1455,[1457]=1456,[1458]=1453,[1459]=1458,[1465]=1437,[1466]=1459,[1467]=1466,[1469]=1452,[1475]=1469,[1481]=1480,[1482]=1481,[1484]=1482,[1488]=1484,[1489]=880,[1490]=1489,[1524]=1522,[1525]=1524,[1526]=1525,[1527]=1526,[2138]=2118,[2139]=2138,[2199]=2198,[2200]=2199,[2201]=2200,[2204]=2201,[2240]=2398,[2284]=2283,[2318]=2284,[2338]=2318,[2339]=2338,[2340]=2339,[2341]=2340,[2361]=2204,[2561]=2541,[2621]=2784,[2622]=2621,[2623]=2622,[2681]=2801,[2701]=2702,[2702]=2681,[2745]=350,[2746]=2745,[2767]=2766,[2782]=2742,[2801]=2623,[2845]=2844,[2863]=2862,[2873]=2872,[2874]=2873,[2902]=2863,[2903]=2902,[2934]=2933,[2935]=2934,[2936]=2935,[2937]=2936,[2938]=2937,[2970]=2969,[2972]=2970,[2974]=2973,[2976]=2974,[2989]=2988,[2990]=2989,[2991]=2990,[2992]=2991,[2993]=2992,[2994]=2993,[3122]=3121,[3123]=3122,[3124]=3123,[3125]=3124,[3126]=3125,[3127]=3126,[3129]=3127,[3221]=449,[3261]=905,[3281]=869,[3301]=880,[3368]=3367,[3369]=6981,[3370]=6981,[3371]=3368,[3372]=3371,[3378]=3377,[3385]=3379,[3442]=3441,[3443]=3442,[3449]=3448,[3452]=3443,[3453]=3452,[3454]=3453,[3461]=3449,[3462]=3454,[3463]=3462,[3481]=3463,[3505]=3504,[3506]=3505,[3507]=3506,[3514]=3513,[3525]=3523,[3527]=3520,[3528]=4787,[3566]=3372,[3701]=3702,[3822]=3821,[3824]=3823,[3825]=3824,[3845]=3844,[3907]=3906,[3908]=3845,[3909]=3908,[3912]=3909,[3913]=3912,[3914]=3913,[3921]=902,[3922]=3921,[3923]=3922,[3924]=3923,[3941]=3914,[3942]=3941,[3961]=4005,[3962]=3961,[3981]=3906,[3982]=3981,[4001]=3982,[4002]=4001,[4003]=4002,[4004]=4003,[4005]=4084,[4022]=3481,[4024]=4022,[4062]=4061,[4063]=4062,[4084]=3942,[4121]=4122,[4125]=4124,[4126]=4128,[4127]=4125,[4129]=4127,[4130]=4129,[4131]=4130,[4132]=4121,[4134]=4133,[4135]=4131,[4136]=4324,[4183]=4182,[4184]=4183,[4185]=4184,[4186]=4185,[4223]=4186,[4224]=4223,[4241]=4224,[4242]=4241,[4261]=4442,[4263]=4262,[4264]=4242,[4265]=4135,[4266]=4265,[4282]=4264,[4291]=4290,[4292]=4291,[4301]=4289,[4322]=4282,[4341]=3701,[4361]=4341,[4362]=4361,[4363]=4362,[4441]=939,[4442]=4441,[4450]=4449,[4491]=4492,[4507]=4496,[4508]=4507,[4509]=4507,[4510]=4508,[4511]=4509,[4513]=4512,[4642]=4293,[4681]=3524,[4734]=4810,[4735]=4734,[4761]=984,[4762]=4761,[4763]=4762,[4764]=4766,[4765]=4764,[4768]=4769,[4771]=5531,[4787]=3527,[4808]=4726,[4809]=4808,[4810]=4809,[4812]=4811,[4813]=4812,[4841]=4542,[4842]=980,[4865]=4821,[4883]=4882,[4901]=979,[4902]=4901,[4906]=4421,[4941]=4903,[4966]=4881,[4974]=4941,[4982]=4981,[4983]=4982,[5002]=5001,[5052]=878,[5055]=5054,[5056]=5055,[5057]=5056,[5062]=4865,[5063]=5047,[5064]=4841,[5067]=5047,[5068]=5047,[5081]=5002,[5084]=5083,[5085]=5084,[5086]=5085,[5087]=5086,[5088]=5062,[5092]=5066,[5096]=5093,[5102]=5089,[5121]=5087,[5125]=5122,[5149]=5142,[5152]=5149,[5153]=5152,[5154]=5153,[5157]=5155,[5158]=5157,[5159]=5158,[5161]=5160,[5162]=5161,[5164]=5162,[5165]=5159,[5167]=5164,[5168]=5210,[5206]=5168,[5210]=5154,[5213]=5212,[5215]=5092,[5216]=5215,[5217]=5216,[5219]=5217,[5220]=5219,[5222]=5220,[5223]=5222,[5225]=5223,[5226]=5225,[5228]=5096,[5229]=5228,[5230]=5229,[5231]=5230,[5232]=5231,[5233]=5232,[5234]=5233,[5235]=5234,[5236]=5235,[5237]=5236,[5238]=5226,[5242]=5165,[5245]=5244,[5246]=5245,[5247]=5246,[5248]=5247,[5252]=5248,[5253]=5252,[5262]=5251,[5263]=5262,[5264]=5263,[5265]=5264,[5282]=5281,[5384]=5515,[5461]=5384,[5462]=5461,[5463]=5462,[5464]=5463,[5465]=5464,[5466]=5465,[5515]=5382,[5522]=4735,[5526]=5527,[5531]=5522,[5581]=5381,[5721]=5941,[5724]=5722,[5727]=5726,[5728]=5727,[5729]=5728,[5730]=5729,[5742]=5542,[5781]=5742,[5845]=5781,[5846]=5845,[5848]=5846,[5861]=5848,[5862]=5861,[5941]=5206,[5942]=5721,[5944]=5862,[6027]=5741,[6041]=6026,[6135]=6133,[6145]=6144,[6146]=6145,[6147]=6146,[6148]=6147,[6163]=6135,[6183]=6182,[6184]=6183,[6185]=6184,[6186]=6185,[6187]=6186,[6283]=6282,[6381]=6301,[6383]=235,[6402]=4322,[6403]=6402,[6481]=6421,[6501]=6403,[6502]=6501,[6521]=6522,[6565]=6564,[6566]=4974,[6567]=6566,[6568]=6567,[6569]=6568,[6570]=6569,[6582]=6570,[6585]=6582,[6601]=6585,[6602]=6601,[6621]=216,[6821]=6804,[6822]=6821,[6823]=6822,[6824]=6823,[7462]=7461,[7486]=6824,[7488]=7494,[7489]=7492,[7491]=7490,[7496]=7495,[7541]=1262,[7733]=2821,[7734]=2822,[7782]=7781,[7784]=7783,[7842]=7841,[7843]=7842,[7846]=7845,[7847]=7846,[7877]=7461,[8271]=7141,[8272]=7142,[8273]=2782,[8306]=8304,[8412]=8410,[8413]=8412,[8447]=8446,[8576]=8575,[8597]=8576,[8598]=8597,[8606]=8598,[8620]=8606,[8728]=8620,[8729]=8728,[8734]=8733,[8735]=8734,[8736]=8735,[8742]=8729,[8745]=8742,[8748]=8747,[8749]=8748,[8750]=8749,[8751]=8750,[8753]=8752,[8754]=8753,[8755]=8754,[8756]=8755,[8758]=8757,[8759]=8758,[8760]=8759,[8761]=8760,[8921]=8922,[8922]=8905,[8924]=8921,[8925]=8924,[8926]=8977,[8928]=8925,[8929]=8926,[8942]=8978,[8945]=8929,[8946]=8945,[8947]=8946,[8948]=8947,[8949]=8948,[8950]=8949,[8951]=9015,[8957]=9015,[8960]=8951,[8961]=8960,[8965]=8961,[8977]=8928,[8978]=8928,[8986]=8965,[8989]=8986,[8994]=8989,[8995]=8994,[8996]=8995,[8998]=8996,[9011]=8998,[9015]=8950,[9094]=9153,[9333]=9153},
- qnames={[2]="Sharptalon's Claw",[9]="The Killing Fields",[12]="The People's Militia",[13]="The People's Militia",[14]="The People's Militia",[19]="Tharil'zun",[20]="Blackrock Menace",[48]="Sweet Amber",[49]="Sweet Amber",[50]="Sweet Amber",[51]="Sweet Amber",[53]="Sweet Amber",[55]="Morbent Fel",[65]="The Defias Brotherhood",[66]="The Legend of Stalvan",[67]="The Legend of Stalvan",[68]="The Legend of Stalvan",[69]="The Legend of Stalvan",[70]="The Legend of Stalvan",[72]="The Legend of Stalvan",[74]="The Legend of Stalvan",[75]="The Legend of Stalvan",[78]="The Legend of Stalvan",[79]="The Legend of Stalvan",[80]="The Legend of Stalvan",[89]="The Everstill Bridge",[94]="A Watchful Eye",[95]="Sven's Revenge",[97]="The Legend of Stalvan",[98]="The Legend of Stalvan",[99]="Arugal's Folly",[104]="The Coastal Menace",[116]="Dry Times",[118]="The Price of Shoes",[119]="Return to Verner",[122]="Underbelly Scales",[124]="A Baying of Gnolls",[125]="The Lost Tools",[126]="Howling in the Hills",[132]="The Defias Brotherhood",[133]="Ghoulish Effigy",[134]="Ogre Thieves",[135]="The Defias Brotherhood",[136]="Captain Sander's Hidden Treasure",[138]="Captain Sander's Hidden Treasure",[139]="Captain Sander's Hidden Treasure",[140]="Captain Sander's Hidden Treasure",[141]="The Defias Brotherhood",[142]="The Defias Brotherhood",[148]="Supplies from Darkshire",[149]="Ghost Hair Thread",[153]="Red Leather Bandanas",[154]="Return the Comb",[155]="The Defias Brotherhood",[156]="Gather Rot Blossoms",[157]="Deliver the Thread",[158]="Zombie Juice",[159]="Juice Delivery",[160]="Note to the Mayor",[161]="A Dark Threat Looms",[165]="The Hermit",[166]="The Defias Brotherhood",[167]="Oh Brother. . .",[168]="Collecting Memories",[173]="Worgen in the Woods",[174]="Look To The Stars",[175]="Look To The Stars",[176]="Wanted:  \"Hogger\"",[177]="Look To The Stars",[181]="Look To The Stars",[185]="Tiger Mastery",[186]="Tiger Mastery",[187]="Tiger Mastery",[188]="Tiger Mastery",[190]="Panther Mastery",[191]="Panther Mastery",[192]="Panther Mastery",[193]="Panther Mastery",[194]="Raptor Mastery",[195]="Raptor Mastery",[196]="Raptor Mastery",[197]="Raptor Mastery",[199]="A Dark Threat Looms",[200]="Bookie Herod",[202]="Colonel Kurzen",[203]="The Second Rebellion",[204]="Bad Medicine",[206]="Mai'Zoth",[210]="Krazek's Cookery",[214]="Red Silk Bandanas",[215]="Jungle Secrets",[216]="Between a Rock and a Thistlefur",[217]="In Defense of the King's Lands",[219]="Missing In Action",[221]="Worgen in the Woods",[222]="Worgen in the Woods",[223]="Worgen in the Woods",[224]="In Defense of the King's Lands",[225]="The Weathered Grave",[227]="Morgan Ladimore",[228]="Mor'Ladim",[229]="The Daughter Who Lived",[230]="Sven's Camp",[231]="A Daughter's Love",[232]="Errand for Apothecary Zinge",[235]="The Ashenvale Hunt",[237]="In Defense of the King's Lands",[238]="Errand for Apothecary Zinge",[243]="Into the Field",[245]="Eight-Legged Menaces",[247]="The Hunt Completed",[248]="Looking Further",[249]="Morganth",[250]="A Dark Threat Looms",[251]="Translate Abercrombie's Note",[252]="Translation to Ello",[253]="Bride of the Embalmer",[256]="WANTED: Chok'sul",[261]="Down the Scarlet Path",[262]="The Shadowy Figure",[263]="In Defense of the King's Lands",[265]="The Shadowy Search Continues",[266]="Inquire at the Inn",[268]="Return to Sven",[269]="Seeking Wisdom",[270]="The Doomed Fleet",[273]="Resupplying the Excavation",[274]="A Dark Threat Looms",[275]="Blisters on The Land",[276]="Tramping Paws",[277]="Fire Taboo",[278]="A Dark Threat Looms",[279]="Claws from the Deep",[280]="A Dark Threat Looms",[281]="Reclaiming Goods",[283]="A Dark Threat Looms",[284]="The Search Continues",[285]="Search More Hovels",[286]="Return the Statuette",[288]="The Third Fleet",[289]="The Cursed Crew",[290]="Lifting the Curse",[292]="The Eye of Paleth",[293]="Cleansing the Eye",[294]="Ormer's Revenge",[295]="Ormer's Revenge",[296]="Ormer's Revenge",[298]="Excavation Progress Report",[299]="Uncovering the Past",[301]="Report to Ironforge",[302]="Powder to Ironband",[303]="The Dark Iron War",[304]="A Grim Task",[307]="Filthy Paws",[309]="Protecting the Shipment",[314]="Protecting the Herd",[321]="Lightforge Iron",[322]="Blessed Arm",[323]="Proving Your Worth",[324]="The Lost Ingots",[325]="Armed and Ready",[328]="The Hidden Key",[329]="The Spy Revealed!",[330]="Patrol Schedules",[331]="Report to Doren",[343]="Speaking of Fortitude",[344]="Brother Paxton",[345]="Ink Supplies",[346]="Return to Kristoff",[347]="Rethban Ore",[348]="Stranglethorn Fever",[350]="Look to an Old Friend",[351]="Find OOX-17/TN!",[354]="Deaths in the Family",[355]="Speak with Sevren",[373]="The Unsent Letter",[377]="Crime and Punishment",[378]="The Fury Runs Deep",[379]="Slake That Thirst",[386]="What Comes Around...",[389]="Bazil Thredd",[391]="The Stockade Riots",[392]="The Curious Visitor",[393]="Shadow of the Past",[394]="The Head of the Beast",[395]="Brotherhood's End",[396]="An Audience with the King",[401]="Wait for Sirra to Finish",[408]="The Family Crypt",[417]="A Pilot's Revenge",[419]="The Lost Pilot",[421]="Prove Your Worth",[422]="Arugal's Folly",[423]="Arugal's Folly",[424]="Arugal's Folly",[434]="The Attack!",[435]="Escorting Erland",[437]="The Dead Fields",[438]="The Decrepit Ferry",[439]="Rot Hide Clues",[440]="The Engraved Ring",[441]="Raleigh and the Undercity",[442]="Assault on Fenris Isle",[443]="Rot Hide Ichor",[444]="Rot Hide Origins",[446]="Thule Ravenclaw",[447]="A Recipe For Death",[448]="Report to Hadrec",[449]="The Deathstalkers' Report",[450]="A Recipe For Death",[451]="A Recipe For Death",[452]="Pyrewood Ambush",[453]="Finding the Shadowy Figure",[454]="After the Ambush",[460]="Resting in Pieces",[461]="The Hidden Niche",[464]="War Banners",[465]="Nek'rosh's Gambit",[466]="Search for Incendicite",[467]="Stonegear's Search",[471]="Apprentice's Duties",[473]="Report to Captain Stoutfist",[474]="Defeat Nek'rosh",[475]="A Troubling Breeze",[476]="Gnarlpine Corruption",[477]="Border Crossings",[478]="Maps and Runes",[479]="Ambermill Investigations",[480]="The Weaver",[481]="Dalar's Analysis",[482]="Dalaran's Intentions",[483]="The Relics of Wakening",[484]="Young Crocolisk Skins",[485]="Find OOX-09/HL!",[486]="Ursal the Mauler",[491]="Wand to Bethor",[495]="The Crown of Will",[498]="The Rescue",[500]="Crushridge Bounty",[501]="Elixir of Pain",[503]="Gol'dir",[504]="Crushridge Warmongers",[505]="Syndicate Assassins",[506]="Blackmoore's Legacy",[507]="Lord Aliden Perenolde",[508]="Taretha's Gift",[509]="Elixir of Agony",[513]="Elixir of Agony",[515]="Elixir of Agony",[518]="The Crown of Will",[519]="The Crown of Will",[520]="The Crown of Will",[521]="The Crown of Will",[527]="Battle of Hillsbrad",[528]="Battle of Hillsbrad",[529]="Battle of Hillsbrad",[530]="A Husband's Revenge",[532]="Battle of Hillsbrad",[533]="Infiltration",[536]="Down the Coast",[539]="Battle of Hillsbrad",[541]="Battle of Hillsbrad",[546]="Souvenirs of Death",[547]="Humbert's Sword",[549]="WANTED: Syndicate Personnel",[550]="Battle of Hillsbrad",[559]="Farren's Proof",[560]="Farren's Proof",[561]="Farren's Proof",[562]="Stormwind Ho!",[564]="Costly Menace",[565]="Bartolo's Yeti Fur Cloak",[566]="WANTED: Baron Vardus",[567]="Dangerous!",[570]="Mok'thardin's Enchantment",[571]="Mok'thardin's Enchantment",[572]="Mok'thardin's Enchantment",[573]="Mok'thardin's Enchantment",[574]="Special Forces",[575]="Supply and Demand",[576]="Keep An Eye Out",[577]="Some Assembly Required",[578]="The Stone of the Tides",[581]="Hunt for Yenniku",[582]="Headhunting",[583]="Welcome to the Jungle",[584]="Bloodscalp Clan Heads",[585]="Speaking with Nezzliok",[588]="The Fate of Yenniku",[589]="The Singing Crystals",[591]="The Mind's Eye",[592]="Saving Yenniku",[594]="Message in a Bottle",[595]="The Bloodsail Buccaneers",[596]="Bloody Bone Necklaces",[598]="Split Bone Necklace",[600]="Venture Company Mining",[601]="Water Elementals",[602]="Magical Analysis",[603]="Ansirem's Key",[605]="Singing Blue Shards",[606]="Scaring Shaky",[607]="Return to MacKinley",[609]="Voodoo Dues",[610]="\"Pretty Boy\" Duncan",[611]="The Curse of the Tides",[613]="Cracking Maury's Foot",[614]="The Captain's Chest",[616]="The Haunted Isle",[621]="Zanzil's Secret",[622]="Return to Corporal Kaleb",[627]="Favor for Krazek",[628]="Excelsior",[630]="Message in a Bottle",[631]="The Thandol Span",[632]="The Thandol Span",[633]="The Thandol Span",[637]="Sully Balloo's Letter",[638]="Trollbane",[639]="Sigil of Strom",[640]="The Broken Sigil",[641]="Sigil of Thoradin",[642]="The Princess Trapped",[643]="Sigil of Arathor",[644]="Sigil of Trollbane",[645]="Trol'kalar",[646]="Trol'kalar",[648]="Rescue OOX-17/TN!",[651]="Stones of Binding",[652]="Breaking the Keystone",[653]="Myzrael's Allies",[654]="Tanaris Field Sampling",[656]="Summoning the Princess",[657]="Hints of a New Plague?",[658]="Hints of a New Plague?",[659]="Hints of a New Plague?",[660]="Hints of a New Plague?",[661]="Hints of a New Plague?",[664]="Drowned Sorrows",[665]="Sunken Treasure",[666]="Sunken Treasure",[667]="Death From Below",[668]="Sunken Treasure",[669]="Sunken Treasure",[670]="Sunken Treasure",[671]="Foul Magics",[673]="Foul Magics",[676]="The Hammer May Fall",[677]="Call to Arms",[678]="Call to Arms",[679]="Call to Arms",[680]="The Real Threat",[681]="Northfold Manor",[682]="Stromgarde Badges",[683]="Sara Balloo's Plea",[684]="Wanted!  Marez Cowl",[685]="Wanted!  Otto and Falconcrest",[686]="A King's Tribute",[687]="Theldurin the Lost",[689]="A King's Tribute",[690]="Malin's Request",[691]="Worth Its Weight in Gold",[692]="The Lost Fragments",[693]="Wand over Fist",[694]="Trelane's Defenses",[695]="An Apprentice's Enchantment",[696]="Attack on the Tower",[697]="Malin's Request",[698]="Lack of Surplus",[699]="Lack of Surplus",[700]="A King's Tribute",[704]="Agmond's Fate",[707]="Ironband Wants You!",[709]="Solution to Doom",[710]="Study of the Elements: Rock",[711]="Study of the Elements: Rock",[712]="Study of the Elements: Rock",[716]="Stone Is Better than Cloth",[717]="Tremors of the Earth",[718]="Mirages",[720]="A Sign of Hope",[721]="A Sign of Hope",[722]="Amulet of Secrets",[723]="Prospect of Faith",[724]="Prospect of Faith",[725]="Passing Word of a Threat",[726]="Passing Word of a Threat",[727]="To Ironforge for Yagyin's Digest",[729]="The Absent Minded Prospector",[731]="The Absent Minded Prospector",[732]="Tremors of the Earth",[733]="Scrounging",[735]="The Star, the Hand and the Heart",[737]="Forbidden Knowledge",[738]="Find Agmond",[739]="Murdaloc",[741]="The Absent Minded Prospector",[749]="The Ravaged Caravan",[751]="The Ravaged Caravan",[752]="A Humble Task",[753]="A Humble Task",[755]="Rites of the Earthmother",[757]="Rite of Strength",[762]="An Ambassador of Evil",[763]="Rites of the Earthmother",[765]="Supervisor Fizsprocket",[767]="Rite of Vision",[771]="Rite of Vision",[772]="Rite of Vision",[773]="Rite of Wisdom",[775]="Journey into Thunder Bluff",[776]="Rites of the Earthmother",[782]="Broken Alliances",[793]="Broken Alliances",[806]="Dark Storms",[809]="Ak'Zeloth",[823]="Report to Orgnil",[824]="Je'neu of the Earthen Ring",[827]="Skull Rock",[828]="Margoz",[829]="Neeru Fireblade",[836]="Rescue OOX-09/HL!",[843]="Gann's Reclamation",[844]="Plainstrider Menace",[845]="The Zhevra",[846]="Revenge of Gann",[848]="Fungal Spores",[849]="Revenge of Gann",[850]="Kolkar Leaders",[851]="Verog the Dervish",[852]="Hezrul Bloodmark",[853]="Apothecary Zamah",[855]="Centaur Bracers",[858]="Ignition",[862]="Dig Rat Stew",[863]="The Escape",[864]="Return to Apothecary Zinge",[865]="Raptor Horns",[866]="Root Samples",[867]="Harpy Raiders",[868]="Egg Hunt",[869]="Raptor Thieves",[870]="The Forgotten Pools",[871]="Disrupt the Attacks",[872]="The Disruption Ends",[873]="Isha Awak",[874]="Mahren Skyseer",[875]="Harpy Lieutenants",[876]="Serena Bloodfeather",[877]="The Stagnant Oasis",[878]="Tribes at War",[879]="Betrayal from Within",[880]="Altered Beings",[881]="Echeyakee",[882]="Ishamuhale",[887]="Southsea Freebooters",[888]="Stolen Booty",[890]="The Missing Shipment",[891]="The Guns of Northwatch",[892]="The Missing Shipment",[893]="Weapons of Choice",[894]="Samophlange",[898]="Free From the Hold",[899]="Consumed by Hatred",[900]="Samophlange",[901]="Samophlange",[902]="Samophlange",[903]="Prowlers of the Barrens",[905]="The Angry Scytheclaws",[906]="Betrayal from Within",[907]="Enraged Thunder Lizards",[913]="Cry of the Thunderhawk",[914]="Leaders of the Fang",[924]="The Demon Seed",[937]="The Enchanted Glade",[939]="Flute of Xavaric",[940]="Teldrassil",[942]="The Absent Minded Prospector",[943]="The Absent Minded Prospector",[947]="Cave Mushrooms",[954]="Bashal'Aran",[955]="Bashal'Aran",[956]="Bashal'Aran",[957]="Bashal'Aran",[962]="Serpentbloom",[963]="For Love Eternal",[965]="The Tower of Althalaxx",[966]="The Tower of Althalaxx",[967]="The Tower of Althalaxx",[970]="The Tower of Althalaxx",[971]="Knowledge in the Deeps",[973]="The Tower of Althalaxx",[974]="Finding the Source",[976]="Supplies to Auberdine",[978]="Moontouched Wildkin",[979]="Find Ranshalla",[980]="The New Springs",[981]="The Tower of Althalaxx",[982]="Deep Ocean, Vast Sea",[984]="How Big a Threat?",[985]="How Big a Threat?",[986]="A Lost Master",[991]="Raene's Cleansing",[993]="A Lost Master",[994]="Escape Through Force",[995]="Escape Through Stealth",[1007]="The Ancient Statuette",[1009]="Ruuzel",[1010]="Bathran's Hair",[1011]="Forsaken Diseases",[1012]="Insane Druids",[1013]="The Book of Ur",[1014]="Arugal Must Die",[1020]="Orendil's Cure",[1021]="Vile Satyr! Dryads in Danger!",[1023]="Raene's Cleansing",[1024]="Raene's Cleansing",[1026]="Raene's Cleansing",[1027]="Raene's Cleansing",[1028]="Raene's Cleansing",[1029]="Raene's Cleansing",[1030]="Raene's Cleansing",[1031]="The Branch of Cenarius",[1033]="Elune's Tear",[1034]="The Ruins of Stardust",[1035]="Fallen Sky Lake",[1045]="Raene's Cleansing",[1046]="Raene's Cleansing",[1048]="Into The Scarlet Monastery",[1049]="Compendium of the Fallen",[1050]="Mythology of the Titans",[1051]="Vorrel's Revenge",[1052]="Down the Scarlet Path",[1053]="In the Name of the Light",[1055]="Raene's Cleansing",[1057]="Reclaiming the Charred Vale",[1058]="Jin'Zil's Forest Magic",[1059]="Reclaiming the Charred Vale",[1071]="A Gnome's Respite",[1075]="A Scroll from Mauren",[1076]="Devils in Westfall",[1077]="Special Delivery for Gaxim",[1079]="Covert Ops - Alpha",[1081]="Reception from Tyrande",[1082]="Update for Sentinel Thenysil",[1083]="Enraged Spirits",[1085]="On Guard in Stonetalon",[1087]="Cenarius' Legacy",[1088]="Ordanus",[1089]="The Den",[1090]="Gerenzo's Orders",[1091]="Kaela's Update",[1092]="Gerenzo's Orders",[1093]="Super Reaper 6000",[1094]="Further Instructions",[1095]="Further Instructions",[1096]="Gerenzo Wrenchwhistle",[1098]="Deathstalkers in Shadowfang",[1100]="Lonebrow's Journal",[1101]="The Crone of the Kraul",[1102]="A Vengeful Fate",[1106]="Martek the Exiled",[1108]="Indurium",[1135]="Highperch Venom",[1137]="News for Fizzle",[1138]="Fruit of the Sea",[1139]="The Lost Tablets of Will",[1140]="The Tower of Althalaxx",[1142]="Mortality Wanes",[1143]="The Tower of Althalaxx",[1144]="Willix the Importer",[1148]="Parts of the Swarm",[1164]="To Steal From Thieves",[1166]="Overlord Mok'Morokk's Concern",[1167]="The Tower of Althalaxx",[1168]="Army of the Black Dragon",[1169]="Identifying the Brood",[1170]="The Brood of Onyxia",[1171]="The Brood of Onyxia",[1172]="The Brood of Onyxia",[1176]="Load Lightening",[1177]="Hungry!",[1178]="Goblin Sponsorship",[1180]="Goblin Sponsorship",[1181]="Goblin Sponsorship",[1182]="Goblin Sponsorship",[1183]="Goblin Sponsorship",[1184]="Parts of the Swarm",[1186]="The Eighteenth Pilot",[1187]="Razzeric's Tweaking",[1188]="Safety First",[1189]="Safety First",[1195]="The Sacred Flame",[1196]="The Sacred Flame",[1197]="The Sacred Flame",[1198]="In Search of Thaelrid",[1199]="Twilight Falls",[1200]="Blackfathom Villainy",[1203]="Jarl Needs a Blade",[1206]="Jarl Needs Eyes",[1218]="Soothing Spices",[1238]="The Lost Report",[1239]="The Severed Head",[1240]="The Troll Witchdoctor",[1241]="The Missing Diplomat",[1242]="The Missing Diplomat",[1243]="The Missing Diplomat",[1244]="The Missing Diplomat",[1245]="The Missing Diplomat",[1246]="The Missing Diplomat",[1247]="The Missing Diplomat",[1248]="The Missing Diplomat",[1249]="The Missing Diplomat",[1250]="The Missing Diplomat",[1261]="Marg Speaks",[1262]="Report to Zor",[1264]="The Missing Diplomat",[1265]="The Missing Diplomat",[1266]="The Missing Diplomat",[1267]="The Missing Diplomat",[1274]="The Missing Diplomat",[1275]="Researching the Corruption",[1318]="Unfinished Gordok Business",[1324]="The Missing Diplomat",[1358]="Sample for Helbrim",[1359]="Zinge's Delivery",[1364]="Mazen's Behest",[1365]="Khan Dez'hepah",[1366]="Centaur Bounty",[1367]="Magram Alliance",[1368]="Gelkis Alliance",[1369]="Broken Tears",[1370]="Stealing Supplies",[1371]="Gizmo for Warug",[1372]="Nothing But The Truth",[1373]="Ongeku",[1374]="Khan Jehn",[1375]="Khan Shaka",[1380]="Khan Hratha",[1381]="Khan Hratha",[1383]="Nothing But The Truth",[1387]="Centaur Bounty",[1393]="Galen's Escape",[1422]="Threat From the Sea",[1424]="Pool of Tears",[1426]="Threat From the Sea",[1427]="Threat From the Sea",[1429]="The Atal'ai Exile",[1430]="Fresh Meat",[1431]="Alliance Relations",[1432]="Alliance Relations",[1433]="Alliance Relations",[1435]="The Burning of Spirits",[1436]="Alliance Relations",[1437]="Vahlarriel's Search",[1438]="Vahlarriel's Search",[1439]="Search for Tyranis",[1440]="Return to Vahlarriel",[1444]="Return to Fel'Zerul",[1445]="The Temple of Atal'Hakkar",[1447]="The Missing Diplomat",[1448]="In Search of The Temple",[1449]="To The Hinterlands",[1450]="Gryphon Master Talonaxe",[1451]="Rhapsody Shindigger",[1452]="Rhapsody's Kalimdor Kocktail",[1453]="Reclaimers' Business in Desolace",[1454]="The Karnitol Shipwreck",[1455]="The Karnitol Shipwreck",[1456]="The Karnitol Shipwreck",[1457]="The Karnitol Shipwreck",[1458]="Reagents for Reclaimers Inc.",[1459]="Reagents for Reclaimers Inc.",[1465]="Vahlarriel's Search",[1466]="Reagents for Reclaimers Inc.",[1467]="Reagents for Reclaimers Inc.",[1469]="Rhapsody's Tale",[1475]="Into The Temple of Atal'Hakkar",[1480]="The Corrupter",[1481]="The Corrupter",[1482]="The Corrupter",[1484]="The Corrupter",[1486]="Deviate Hides",[1487]="Deviate Eradication",[1488]="The Corrupter",[1489]="Hamuul Runetotem",[1490]="Nara Wildmane",[1522]="Call of Fire",[1524]="Call of Fire",[1525]="Call of Fire",[1526]="Call of Fire",[1527]="Call of Fire",[1560]="Tooga's Quest",[1918]="The Befouled Element",[2038]="Bingles' Missing Supplies",[2040]="Underground Assault",[2118]="Plagued Lands",[2138]="Cleansing of the Infected",[2139]="Tharnariun's Hope",[2198]="The Shattered Necklace",[2199]="Lore for a Price",[2200]="Back to Uldaman",[2201]="Find the Gems",[2204]="Restoring the Necklace",[2240]="The Hidden Chamber",[2283]="Necklace Recovery",[2284]="Necklace Recovery, Take 2",[2318]="Translating the Journal",[2338]="Translating the Journal",[2339]="Find the Gems and Power Source",[2340]="Deliver the Gems",[2341]="Necklace Recovery, Take 3",[2361]="Restoring the Necklace",[2398]="The Lost Dwarves",[2418]="Power Stones",[2541]="The Sleeping Druid",[2561]="Druid of the Claw",[2621]="The Disgraced One",[2622]="The Missing Orders",[2623]="The Swamp Talker",[2681]="The Stones That Bind Us",[2701]="Heroes of Old",[2702]="Heroes of Old",[2742]="Rin'ji is Trapped!",[2745]="Infiltrating the Castle",[2746]="Items of Some Consequence",[2766]="Find OOX-22/FE!",[2767]="Rescue OOX-22/FE!",[2768]="Divino-matic Rod",[2782]="Rin'ji's Secret",[2784]="Fall From Grace",[2801]="A Tale of Sorrow",[2821]="The Mark of Quality",[2822]="The Mark of Quality",[2841]="Rig Wars",[2844]="The Giant Guardian",[2845]="Wandering Shay",[2846]="Tiara of the Deep",[2862]="War on the Woodpaw",[2863]="Alpha Strike",[2872]="Stoley's Debt",[2873]="Stoley's Shipment",[2874]="Deliver to MacKinley",[2902]="Woodpaw Investigation",[2903]="The Battle Plans",[2904]="A Fine Mess",[2928]="Gyrodrillmatic Excavationators",[2929]="The Grand Betrayal",[2930]="Data Rescue",[2933]="Venom Bottles",[2934]="Undamaged Venom Sac",[2935]="Consult Master Gadrin",[2936]="The Spider God",[2937]="Summoning Shadra",[2938]="Venom to the Undercity",[2969]="Freedom for All Creatures",[2970]="Doling Justice",[2972]="Doling Justice",[2973]="A New Cloak's Sheen",[2974]="A Grim Discovery",[2976]="A Grim Discovery",[2987]="Gordunni Cobalt",[2988]="Witherbark Cages",[2989]="The Altar of Zul",[2990]="Thadius Grimshade",[2991]="Nekrum's Medallion",[2992]="The Divination",[2993]="Return to the Hinterlands",[2994]="Saving Sharpbeak",[3062]="Dark Heart",[3121]="A Strange Request",[3122]="Return to Witch Doctor Uzer'i",[3123]="Testing the Vessel",[3124]="Hippogryph Muisek",[3125]="Faerie Dragon Muisek",[3126]="Treant Muisek",[3127]="Mountain Giant Muisek",[3129]="Weapons of Spirit",[3161]="Gahz'ridian",[3221]="Speak with Renferrel",[3261]="Jorn Skyseer",[3281]="Stolen Silver",[3301]="Mura Runetotem",[3367]="Suntara Stones",[3368]="Suntara Stones",[3369]="In Nightmares",[3370]="In Nightmares",[3371]="Dwarven Justice",[3372]="Release Them",[3373]="The Essence of Eranikus",[3377]="Prayer to Elune",[3378]="Prayer to Elune",[3379]="Shadoweaver",[3385]="The Undermarket",[3441]="Divine Retribution",[3442]="The Flawless Flame",[3443]="Forging the Shaft",[3448]="Passing the Burden",[3449]="Arcane Runes",[3452]="The Flame's Casing",[3453]="The Torch of Retribution",[3454]="The Torch of Retribution",[3461]="Return to Tymor",[3462]="Squire Maltrake",[3463]="Set Them Ablaze!",[3481]="Trinkets...",[3504]="Betrayed",[3505]="Betrayed",[3506]="Betrayed",[3507]="Betrayed",[3513]="The Runed Scroll",[3514]="Horde Presence",[3520]="Screecher Spirits",[3523]="Scourge of the Downs",[3524]="Washed Ashore",[3525]="Extinguishing the Idol",[3527]="The Prophecy of Mosh'aru",[3528]="The God Hakkar",[3566]="Rise, Obsidion!",[3661]="Favored of Elune?",[3701]="The Smoldering Ruins of Thaurissan",[3702]="The Smoldering Ruins of Thaurissan",[3765]="The Corruption Abroad",[3791]="The Mystery of Morrowgrain",[3821]="Dreadmaul Rock",[3822]="Krom'Grul",[3823]="Extinguish the Firegut",[3824]="Gor'tesh the Brute Lord",[3825]="Ogre Head On A Stick = Party",[3844]="It's a Secret to Everybody",[3845]="It's a Secret to Everybody",[3882]="Roll the Bones",[3906]="Disharmony of Flame",[3907]="Disharmony of Fire",[3908]="It's a Secret to Everybody",[3909]="The Videre Elixir",[3912]="Meet at the Grave",[3913]="A Grave Situation",[3914]="Linken's Sword",[3921]="Wenikee Boltbucket",[3922]="Nugget Slugs",[3923]="Rilli Greasygob",[3924]="Samophlange Manual",[3941]="A Gnome's Assistance",[3942]="Linken's Memory",[3961]="Linken's Adventure",[3962]="It's Dangerous to Go Alone",[3981]="Commander Gor'shak",[3982]="What Is Going On?",[4001]="What Is Going On?",[4002]="The Eastern Kingdom",[4003]="The Royal Rescue",[4004]="The Princess Saved?",[4005]="Aquementas",[4022]="A Taste of Flame",[4024]="A Taste of Flame",[4061]="The Rise of the Machines",[4062]="The Rise of the Machines",[4063]="The Rise of the Machines",[4084]="Silver Heart",[4121]="Precarious Predicament",[4122]="Grark Lorkrub",[4124]="The Missing Courier",[4125]="The Missing Courier",[4126]="Hurley Blackbreath",[4127]="Boat Wreckage",[4128]="Ragnar Thunderbrew",[4129]="The Knife Revealed",[4130]="Psychometric Reading",[4131]="The Woodpaw Gnolls",[4132]="Operation: Death to Angerforge",[4133]="Vivian Lagrave",[4134]="Lost Thunderbrew Recipe",[4135]="The Writhing Deep",[4136]="Ribbly Screwspigot",[4182]="Dragonkin Menace",[4183]="The True Masters",[4184]="The True Masters",[4185]="The True Masters",[4186]="The True Masters",[4201]="The Love Potion",[4223]="The True Masters",[4224]="The True Masters",[4241]="Marshal Windsor",[4242]="Abandoned Hope",[4261]="Ancient Spirit",[4262]="Overmaster Pyron",[4263]="Incendius!",[4264]="A Crumpled Up Note",[4265]="Freed from the Hive",[4266]="A Hero's Welcome",[4282]="A Shred of Hope",[4289]="The Apes of Un'Goro",[4290]="The Fare of Lar'korwi",[4291]="The Scent of Lar'korwi",[4292]="The Bait for Lar'korwi",[4293]="A Sample of Slime...",[4300]="Bone-Bladed Weapons",[4301]="The Mighty U'cha",[4322]="Jail Break!",[4324]="Yuka Screwspigot",[4341]="Kharan Mighthammer",[4361]="The Bearer of Bad News",[4362]="The Fate of the Kingdom",[4363]="The Princess's Surprise",[4421]="The Corruption of the Jadefire",[4441]="Felbound Ancients",[4442]="Purified!",[4449]="Caught!",[4450]="Ledger from Tanaris",[4491]="A Little Help From My Friends",[4492]="Lost!",[4496]="Bungle in the Jungle",[4501]="Beware of Pterrordax",[4503]="Shizzle's Flyer",[4507]="Pawn Captures Queen",[4508]="Calm Before the Storm",[4509]="Calm Before the Storm",[4510]="Calm Before the Storm",[4511]="Calm Before the Storm",[4512]="A Little Slime Goes a Long Way",[4513]="A Little Slime Goes a Long Way",[4542]="Message to Freewind Post",[4581]="Kayneth Stillwind",[4642]="Melding of Influences",[4681]="Washed Ashore",[4701]="Put Her Down",[4724]="The Pack Mistress",[4726]="Broodling Essence",[4734]="Egg Freezing",[4735]="Egg Collection",[4740]="WANTED: Murkdeep!",[4761]="Thundris Windweaver",[4762]="The Cliffspring River",[4763]="The Blackwood Corrupted",[4764]="Doomrigger's Clasp",[4765]="Delivery to Ridgewell",[4766]="Mayara Brightwing",[4768]="The Darkstone Tablet",[4769]="Vivian Lagrave and the Darkstone Tablet",[4771]="Dawn's Gambit",[4787]="The Ancient Egg",[4808]="Felnok Steelspring",[4809]="Chillwind Horns",[4810]="Return to Tinkee",[4811]="The Red Crystal",[4812]="As Water Cascades",[4813]="The Fragments Within",[4821]="Alien Egg",[4841]="Pacify the Centaur",[4842]="Strange Sources",[4865]="Serpent Wild",[4881]="Assassination Plot",[4882]="Guarding Secrets",[4883]="Guarding Secrets",[4901]="Guardians of the Altar",[4902]="Wildkin of Elune",[4903]="Warlord's Command",[4904]="Free at Last",[4906]="Further Corruption",[4941]="Eitrigg's Wisdom",[4966]="Protect Kanati Greycloud",[4971]="A Matter of Time",[4974]="For The Horde!",[4981]="Operative Bijou",[4982]="Bijou's Belongings",[4983]="Bijou's Reconnaissance Report",[5001]="Bijou's Belongings",[5002]="Message to Maxwell",[5047]="Finkle Einhorn, At Your Service!",[5052]="Blood Shards of Agamaggan",[5054]="Ursius of the Shardtooth",[5055]="Brumeran of the Chillwind",[5056]="Shy-Rotam",[5057]="Past Endeavors",[5060]="Locked Away",[5062]="Sacred Fire",[5063]="Cap of the Scarlet Savant",[5064]="Grimtotem Spying",[5066]="A Call to Arms: The Plaguelands!",[5067]="Leggings of Arcana",[5068]="Breastplate of Bloodthirst",[5081]="Maxwell's Mission",[5083]="Winterfall Firewater",[5084]="Falling to Corruption",[5085]="Mystery Goo",[5086]="Toxic Horrors",[5087]="Winterfall Runners",[5088]="Arikara",[5089]="General Drakkisath's Command",[5092]="Clear the Way",[5093]="A Call to Arms: The Plaguelands!",[5096]="Scarlet Diversions",[5102]="General Drakkisath's Demise",[5121]="High Chief Winterfall",[5122]="The Medallion of Faith",[5125]="Aurius' Reckoning",[5142]="Little Pamela",[5147]="Wanted - Arnak Grimtotem",[5149]="Pamela's Doll",[5151]="Hypercapacitor Gizmo",[5152]="Auntie Marlene",[5153]="A Strange Historian",[5154]="The Annals of Darrowshire",[5155]="Forces of Jaedenar",[5157]="Collection of the Corrupt Water",[5158]="Seeking Spiritual Aid",[5159]="Cleansed Water Returns to Felwood",[5160]="The Matron Protectorate",[5161]="Wrath of the Blue Flight",[5162]="Wrath of the Blue Flight",[5164]="Catalogue of the Wayward",[5165]="Dousing the Flames of Protection",[5167]="Legplates of the Chromatic Defier",[5168]="Heroes of Darrowshire",[5206]="Marauders of Darrowshire",[5210]="Brother Carlin",[5212]="The Flesh Does Not Lie",[5213]="The Active Agent",[5214]="The Great Fras Siabi",[5215]="The Scourge Cauldrons",[5216]="Target: Felstone Field",[5217]="Return to Chillwind Camp",[5219]="Target: Dalson's Tears",[5220]="Return to Chillwind Camp",[5222]="Target: Writhing Haunt",[5223]="Return to Chillwind Camp",[5225]="Target: Gahrron's Withering",[5226]="Return to Chillwind Point",[5228]="The Scourge Cauldrons",[5229]="Target: Felstone Field",[5230]="Return to the Bulwark",[5231]="Target: Dalson's Tears",[5232]="Return to the Bulwark",[5233]="Target: Writhing Haunt",[5234]="Return to the Bulwark",[5235]="Target: Gahrron's Withering",[5236]="Return to the Bulwark",[5237]="Mission Accomplished!",[5238]="Mission Accomplished!",[5242]="A Final Blow",[5243]="Houses of the Holy",[5244]="The Ruins of Kel'Theril",[5245]="Troubled Spirits of Kel'Theril",[5246]="Fragments of the Past",[5247]="Fragments of the Past",[5248]="Tormented By the Past",[5251]="The Archivist",[5252]="Remorseful Highborne",[5253]="The Crystal of Zin-Malor",[5262]="The Truth Comes Crashing Down",[5263]="Above and Beyond",[5264]="Lord Maxwell Tyrosus",[5265]="The Argent Hold",[5281]="The Restless Souls",[5282]="The Restless Souls",[5321]="The Sleeper Has Awakened",[5381]="Hand of Iruxos",[5382]="Doctor Theolen Krastinov, the Butcher",[5384]="Kirtonos the Herald",[5461]="The Human, Ras Frostwhisper",[5462]="The Dying, Ras Frostwhisper",[5463]="Menethil's Gift",[5464]="Menethil's Gift",[5465]="Soulbound Keepsake",[5466]="The Lich, Ras Frostwhisper",[5501]="Bone Collector",[5515]="Krastinov's Bag of Horrors",[5522]="Leonid Barthalomew",[5526]="Shards of the Felvine",[5527]="A Reliquary of Purity",[5531]="Betina Bigglezink",[5542]="Demon Dogs",[5561]="Kodo Roundup",[5581]="Portals of the Legion",[5721]="The Battle of Darrowshire",[5722]="Searching for the Lost Satchel",[5724]="Returning the Lost Satchel",[5725]="The Power to Destroy...",[5726]="Hidden Enemies",[5727]="Hidden Enemies",[5728]="Hidden Enemies",[5729]="Hidden Enemies",[5730]="Hidden Enemies",[5741]="Sceptre of Light",[5742]="Redemption",[5781]="Of Forgotten Memories",[5821]="Bodyguard for Hire",[5845]="Of Lost Honor",[5846]="Of Love and Family",[5848]="Of Love and Family",[5861]="Find Myranda",[5862]="Scarlet Subterfuge",[5863]="The Dunemaul Compound",[5941]="Return to Chromie",[5942]="Hidden Treasures",[5943]="Gizelton Caravan",[5944]="In Dreams",[6026]="That's Asking A Lot",[6027]="Book of the Ancients",[6031]="Runecloth",[6041]="When Smokey Sings, I Get Violent",[6133]="The Ranger Lord's Behest",[6134]="Ghost-o-plasm Round Up",[6135]="Duskwing, Oh How I Hate Thee...",[6136]="The Corpulent One",[6142]="Clam Bait",[6144]="The Call to Command",[6145]="The Crimson Courier",[6146]="Nathanos' Ruse",[6147]="Return to Nathanos",[6148]="The Scarlet Oracle, Demetria",[6161]="Claim Rackmore's Treasure!",[6163]="Ramstein",[6182]="The First and the Last",[6183]="Honor the Dead",[6184]="Flint Shadowmore",[6185]="The Eastern Plagues",[6186]="The Blightcaller Cometh",[6187]="Order Must Be Restored",[6282]="Harpies Threaten",[6283]="Bloodfury Bloodline",[6284]="Arachnophobia",[6301]="Cycle of Rebirth",[6381]="New Life",[6383]="The Ashenvale Hunt",[6402]="Stormwind Rendezvous",[6403]="The Great Masquerade",[6421]="Boulderslide Ravine",[6481]="Earthen Arise",[6501]="The Dragon's Eye",[6502]="Drakefire Amulet",[6504]="The Lost Pages",[6521]="An Unholy Alliance",[6522]="An Unholy Alliance",[6544]="Torek's Assault",[6561]="Blackfathom Villainy",[6564]="Allegiance to the Old Gods",[6565]="Allegiance to the Old Gods",[6566]="What the Wind Carries",[6567]="The Champion of the Horde",[6568]="The Testament of Rexxar",[6569]="Oculus Illusions",[6570]="Emberstrife",[6571]="Warsong Supplies",[6582]="The Test of Skulls, Scryer",[6585]="The Test of Skulls, Axtroz",[6601]="Ascension...",[6602]="Blood of the Black Dragon Champion",[6621]="King of the Foulweald",[6641]="Vorsha the Lasher",[6804]="Poisoned Water",[6821]="Eye of the Emberseer",[6822]="The Molten Core",[6823]="Agent of Hydraxis",[6824]="Hands of the Enemy",[6922]="Baron Aquanis",[6981]="The Glowing Shard",[7028]="Twisted Evils",[7029]="Vyletongue Corruption",[7041]="Vyletongue Corruption",[7064]="Corruption of Earth and Seed",[7065]="Corruption of Earth and Seed",[7068]="Shadowshard Fragments",[7070]="Shadowshard Fragments",[7141]="The Battle of Alterac",[7142]="The Battle for Alterac",[7201]="The Last Element",[7461]="The Madness Within",[7462]="The Treasure of the Shen'dralar",[7486]="A Hero's Reward",[7488]="Lethtendris's Web",[7489]="Lethtendris's Web",[7490]="Victory for the Horde",[7491]="For All To See",[7492]="Camp Mojache",[7494]="Feathermoon Stronghold",[7495]="Victory for the Alliance",[7496]="Celebrating Good Times",[7505]="Frost Shock and You",[7541]="Service to the Horde",[7701]="WANTED: Overseer Maltorius",[7703]="Unfinished Gordok Business",[7704]="Look at the Size of It!",[7721]="Fuel for the Zapping",[7724]="Fiery Menace!",[7728]="STOLEN: Smithing Tuyere and Lookout's Spyglass",[7733]="Improved Quality",[7734]="Improved Quality",[7781]="The Lord of Blackrock",[7782]="The Lord of Blackrock",[7783]="The Lord of Blackrock",[7784]="The Lord of Blackrock",[7841]="Message to the Wildhammer",[7842]="Another Message to the Wildhammer",[7843]="The Final Message to the Wildhammer",[7845]="Kidnapped Elder Torntusk!",[7846]="Recover the Key!",[7847]="Return to Primal Torntusk",[7849]="Separation Anxiety",[7861]="Wanted: Vile Priestess Hexx and Her Minions",[7862]="Job Opening: Guard Captain of Revantusk Village",[7877]="The Treasure of the Shen'dralar",[7928]="Darkmoon Warlords Deck",[7929]="Darkmoon Elementals Deck",[7940]="1200 Tickets - Orb of the Darkmoon",[7981]="1200 Tickets - Amulet of the Darkmoon",[8221]="Rare Fish - Keefer's Angelfish",[8225]="Rare Fish - Brownell's Blue Striped Racer",[8271]="Hero of the Stormpike",[8272]="Hero of the Frostwolf",[8273]="Oran's Gratitude",[8283]="Wanted - Deathclasp, Terror of the Sands",[8304]="Dearest Natalia",[8306]="Into The Maw of Madness",[8366]="Southsea Shakedown",[8410]="Elemental Mastery",[8412]="Spirit Totem",[8413]="Da Voodoo",[8446]="Shrouded in Nightmare",[8447]="Waking Legends",[8460]="Timbermaw Ally",[8461]="Deadwood of the North",[8464]="Winterfall Activity",[8551]="The Captain's Chest",[8573]="Champion's Battlegear",[8575]="Azuregos's Magical Ledger",[8576]="Translating the Ledger",[8597]="Draconic for Dummies",[8598]="rAnS0m",[8606]="Decoy!",[8620]="The Only Prescription",[8706]="Hammer of the Gathering Storm",[8728]="The Good News and The Bad News",[8729]="The Wrath of Neptulon",[8733]="Eranikus, Tyrant of the Dream",[8734]="Tyrande and Remulos",[8735]="The Nightmare's Corruption",[8736]="The Nightmare Manifests",[8742]="The Might of Kalimdor",[8745]="Treasure of the Timeless One",[8747]="The Path of the Protector",[8748]="The Path of the Protector",[8749]="The Path of the Protector",[8750]="The Path of the Protector",[8751]="The Protector of Kalimdor",[8752]="The Path of the Conqueror",[8753]="The Path of the Conqueror",[8754]="The Path of the Conqueror",[8755]="The Path of the Conqueror",[8756]="The Qiraji Conqueror",[8757]="The Path of the Invoker",[8758]="The Path of the Invoker",[8759]="The Path of the Invoker",[8760]="The Path of the Invoker",[8761]="The Grand Invoker",[8764]="The Changing of Paths - Protector No More",[8765]="The Changing of Paths - Invoker No More",[8766]="The Changing of Paths - Conqueror No More",[8790]="Imperial Qiraji Regalia",[8905]="An Earnest Proposition",[8918]="An Earnest Proposition",[8921]="The Ectoplasmic Distiller",[8922]="A Supernatural Device",[8924]="Hunting for Ectoplasm",[8925]="A Portable Power Source",[8926]="Just Compensation",[8928]="A Shifty Merchant",[8929]="In Search of Anthion",[8942]="Just Compensation",[8945]="Dead Man's Plea",[8946]="Proof of Life",[8947]="Anthion's Strange Request",[8948]="Anthion's Old Friend",[8949]="Falrin's Vendetta",[8950]="The Instigator's Enchantment",[8951]="Anthion's Parting Words",[8957]="Anthion's Parting Words",[8960]="Bodley's Unfortunate Fate",[8961]="Three Kings of Flame",[8965]="Components of Importance",[8977]="Return to Deliana",[8978]="Return to Mokvar",[8986]="More Components of Importance",[8989]="The Right Piece of Lord Valthalak's Amulet",[8994]="Final Preparations",[8995]="Mea Culpa, Lord Valthalak",[8996]="Return to Bodley",[8998]="Back to the Beginning",[9011]="Saving the Best for Last",[9015]="The Challenge",[9023]="The Perfect Poison",[9094]="Argent Dawn Gloves",[9153]="Under the Shadow",[9221]="Superior Armaments of Battle - Friend of the Dawn",[9222]="Epic Armaments of Battle - Friend of the Dawn",[9223]="Superior Armaments of Battle - Honored Amongst the Dawn",[9224]="Epic Armaments of Battle - Honored Amongst the Dawn",[9225]="Epic Armaments of Battle - Revered Amongst the Dawn",[9226]="Superior Armaments of Battle - Revered Amongst the Dawn",[9227]="Superior Armaments of Battle - Exalted Amongst the Dawn",[9228]="Epic Armaments of Battle - Exalted Amongst the Dawn",[9333]="Argent Dawn Gloves"},
+ qpre={[2]=6383,[13]=12,[14]=13,[19]=20,[49]=48,[50]=49,[51]=50,[53]=51,[55]=325,[67]=66,[68]=67,[69]=68,[70]=69,[72]=70,[74]=72,[75]=74,[78]=75,[79]=78,[80]=79,[89]=125,[97]=80,[98]=97,[99]=424,[119]=118,[122]=119,[124]=119,[126]=124,[132]=65,[133]=159,[134]=133,[135]=132,[138]=136,[139]=138,[140]=139,[141]=135,[142]=141,[148]=165,[149]=148,[154]=149,[155]=142,[156]=158,[157]=154,[158]=157,[159]=156,[160]=134,[161]=199,[166]=155,[175]=174,[177]=175,[181]=177,[185]=583,[186]=185,[187]=186,[188]=187,[190]=583,[191]=190,[192]=191,[193]=192,[194]=583,[195]=194,[196]=195,[197]=196,[199]=250,[200]=215,[202]=574,[206]=202,[214]=155,[217]=263,[221]=173,[222]=221,[223]=222,[227]=225,[228]=227,[229]=228,[230]=95,[231]=229,[237]=224,[238]=232,[243]=238,[247]=2,[248]=94,[249]=248,[251]=160,[252]=401,[253]=252,[262]=230,[263]=237,[265]=262,[266]=265,[268]=453,[269]=323,[270]=269,[273]=302,[274]=161,[275]=277,[277]=276,[278]=274,[280]=278,[281]=279,[283]=280,[284]=281,[285]=284,[286]=285,[289]=288,[290]=289,[292]=290,[293]=292,[295]=294,[296]=295,[301]=298,[302]=301,[309]=454,[321]=270,[322]=324,[323]=268,[324]=321,[325]=322,[328]=200,[329]=328,[330]=329,[331]=330,[344]=343,[345]=344,[346]=347,[347]=345,[350]=393,[355]=354,[378]=303,[379]=243,[389]=373,[391]=389,[392]=391,[393]=392,[394]=434,[395]=394,[396]=395,[401]=251,[408]=355,[417]=419,[422]=421,[423]=422,[424]=423,[434]=2746,[438]=437,[439]=438,[440]=439,[441]=440,[442]=448,[443]=438,[444]=443,[446]=444,[448]=446,[449]=435,[450]=447,[451]=450,[453]=266,[454]=273,[461]=460,[464]=473,[465]=464,[466]=467,[471]=484,[474]=465,[476]=475,[478]=477,[479]=482,[480]=479,[481]=478,[482]=481,[483]=476,[486]=483,[491]=461,[503]=533,[504]=500,[506]=503,[507]=506,[508]=507,[513]=509,[515]=513,[518]=495,[519]=518,[520]=519,[521]=520,[528]=527,[529]=528,[530]=441,[532]=529,[533]=498,[539]=532,[541]=539,[546]=527,[550]=541,[559]=536,[560]=559,[561]=560,[562]=561,[571]=572,[572]=570,[573]=571,[574]=203,[576]=595,[577]=575,[578]=616,[582]=581,[584]=582,[585]=584,[588]=585,[589]=588,[591]=589,[592]=591,[598]=596,[600]=605,[601]=578,[602]=601,[603]=602,[607]=606,[609]=607,[610]=603,[611]=610,[613]=609,[622]=627,[627]=210,[628]=577,[630]=594,[632]=631,[633]=632,[639]=638,[640]=639,[641]=640,[643]=641,[644]=643,[645]=644,[646]=645,[648]=351,[651]=642,[652]=651,[653]=652,[654]=379,[656]=692,[657]=658,[658]=659,[660]=657,[661]=660,[666]=665,[667]=670,[668]=666,[669]=668,[670]=669,[673]=671,[677]=676,[678]=677,[679]=678,[680]=678,[682]=681,[683]=637,[686]=683,[687]=653,[689]=686,[691]=690,[692]=687,[693]=691,[694]=693,[695]=694,[696]=695,[697]=696,[699]=698,[700]=689,[704]=739,[711]=710,[712]=711,[716]=712,[717]=732,[721]=720,[722]=721,[723]=722,[724]=723,[725]=724,[726]=725,[727]=709,[731]=729,[732]=718,[733]=718,[735]=727,[737]=735,[738]=707,[739]=738,[741]=731,[751]=749,[753]=752,[755]=753,[757]=755,[762]=726,[763]=757,[765]=751,[767]=763,[771]=767,[772]=771,[773]=772,[775]=773,[776]=775,[793]=782,[806]=823,[809]=829,[824]=1918,[827]=828,[828]=806,[829]=827,[836]=485,[845]=844,[846]=843,[849]=846,[851]=850,[852]=851,[853]=848,[863]=858,[864]=654,[872]=871,[873]=874,[874]=913,[875]=867,[876]=875,[877]=870,[879]=5052,[880]=877,[881]=903,[882]=3261,[888]=892,[890]=887,[892]=890,[900]=894,[901]=900,[902]=901,[903]=845,[905]=881,[906]=879,[907]=882,[913]=907,[914]=1490,[924]=809,[940]=937,[942]=741,[943]=942,[955]=954,[956]=955,[957]=956,[966]=965,[967]=966,[970]=967,[973]=970,[976]=973,[978]=3661,[979]=978,[980]=974,[981]=1143,[985]=984,[986]=985,[993]=986,[994]=993,[995]=993,[1009]=1007,[1011]=4581,[1012]=1011,[1020]=1010,[1023]=991,[1024]=1023,[1026]=1024,[1027]=1026,[1028]=1027,[1029]=1055,[1030]=1029,[1031]=1021,[1033]=1020,[1034]=1033,[1035]=1034,[1045]=1030,[1046]=1045,[1052]=261,[1053]=1052,[1055]=1028,[1059]=1057,[1071]=1085,[1075]=1071,[1076]=1075,[1077]=1076,[1079]=1077,[1081]=1082,[1082]=1083,[1083]=1091,[1088]=1087,[1089]=1088,[1091]=1079,[1092]=1090,[1094]=1093,[1095]=1094,[1096]=1095,[1101]=1100,[1108]=1106,[1137]=1108,[1139]=762,[1140]=973,[1143]=1167,[1167]=1140,[1170]=1169,[1171]=1170,[1172]=1171,[1178]=1176,[1180]=1178,[1181]=1180,[1182]=1181,[1183]=1182,[1184]=1148,[1186]=1183,[1187]=1186,[1188]=1187,[1189]=1188,[1196]=1195,[1197]=1196,[1200]=1198,[1203]=1206,[1206]=1218,[1239]=1238,[1240]=1239,[1241]=1274,[1242]=1241,[1243]=1242,[1244]=1243,[1245]=1244,[1246]=1245,[1247]=1447,[1248]=1247,[1249]=1248,[1250]=1249,[1261]=1240,[1262]=1261,[1264]=1250,[1265]=1264,[1266]=1265,[1267]=1324,[1275]=3765,[1324]=1266,[1358]=1359,[1359]=3221,[1366]=1365,[1369]=1367,[1370]=1368,[1371]=1369,[1373]=1370,[1374]=1373,[1375]=1371,[1380]=1374,[1381]=1375,[1383]=1372,[1422]=699,[1426]=1422,[1427]=1426,[1429]=1424,[1432]=1431,[1433]=1432,[1435]=1433,[1436]=1435,[1438]=1465,[1439]=1438,[1440]=1439,[1444]=1429,[1445]=1444,[1447]=1246,[1449]=1448,[1450]=1449,[1451]=1450,[1452]=1451,[1454]=1453,[1455]=1454,[1456]=1455,[1457]=1456,[1458]=1453,[1459]=1458,[1465]=1437,[1466]=1459,[1467]=1466,[1469]=1452,[1475]=1469,[1481]=1480,[1482]=1481,[1484]=1482,[1488]=1484,[1489]=880,[1490]=1489,[1524]=1522,[1525]=1524,[1526]=1525,[1527]=1526,[2138]=2118,[2139]=2138,[2199]=2198,[2200]=2199,[2201]=2200,[2204]=2201,[2240]=2398,[2284]=2283,[2318]=2284,[2338]=2318,[2339]=2338,[2340]=2339,[2341]=2340,[2361]=2204,[2561]=2541,[2621]=2784,[2622]=2621,[2623]=2622,[2681]=2801,[2701]=2702,[2702]=2681,[2745]=350,[2746]=2745,[2767]=2766,[2782]=2742,[2801]=2623,[2845]=2844,[2863]=2862,[2873]=2872,[2874]=2873,[2902]=2863,[2903]=2902,[2934]=2933,[2935]=2934,[2936]=2935,[2937]=2936,[2938]=2937,[2970]=2969,[2972]=2970,[2974]=2973,[2976]=2974,[2989]=2988,[2990]=2989,[2991]=2990,[2992]=2991,[2993]=2992,[2994]=2993,[3122]=3121,[3123]=3122,[3124]=3123,[3125]=3124,[3126]=3125,[3127]=3126,[3129]=3127,[3221]=449,[3261]=905,[3281]=869,[3301]=880,[3368]=3367,[3369]=6981,[3370]=6981,[3371]=3368,[3372]=3371,[3378]=3377,[3385]=3379,[3442]=3441,[3443]=3442,[3449]=3448,[3452]=3443,[3453]=3452,[3454]=3453,[3461]=3449,[3462]=3454,[3463]=3462,[3481]=3463,[3505]=3504,[3506]=3505,[3507]=3506,[3514]=3513,[3525]=3523,[3527]=3520,[3528]=4787,[3566]=3372,[3701]=3702,[3822]=3821,[3824]=3823,[3825]=3824,[3845]=3844,[3907]=3906,[3908]=3845,[3909]=3908,[3912]=3909,[3913]=3912,[3914]=3913,[3921]=902,[3922]=3921,[3923]=3922,[3924]=3923,[3941]=3914,[3942]=3941,[3961]=4005,[3962]=3961,[3981]=3906,[3982]=3981,[4001]=3982,[4002]=4001,[4003]=4002,[4004]=4003,[4005]=4084,[4022]=3481,[4024]=4022,[4062]=4061,[4063]=4062,[4084]=3942,[4121]=4122,[4125]=4124,[4126]=4128,[4127]=4125,[4129]=4127,[4130]=4129,[4131]=4130,[4132]=4121,[4134]=4133,[4135]=4131,[4136]=4324,[4183]=4182,[4184]=4183,[4185]=4184,[4186]=4185,[4223]=4186,[4224]=4223,[4241]=4224,[4242]=4241,[4261]=4442,[4263]=4262,[4264]=4242,[4265]=4135,[4266]=4265,[4282]=4264,[4291]=4290,[4292]=4291,[4301]=4289,[4322]=4282,[4341]=3701,[4361]=4341,[4362]=4361,[4363]=4362,[4441]=939,[4442]=4441,[4450]=4449,[4491]=4492,[4507]=4496,[4508]=4507,[4509]=4507,[4510]=4508,[4511]=4509,[4513]=4512,[4642]=4293,[4681]=3524,[4734]=4810,[4735]=4734,[4761]=984,[4762]=4761,[4763]=4762,[4764]=4766,[4765]=4764,[4768]=4769,[4771]=5531,[4787]=3527,[4808]=4726,[4809]=4808,[4810]=4809,[4812]=4811,[4813]=4812,[4841]=4542,[4842]=980,[4865]=4821,[4883]=4882,[4901]=979,[4902]=4901,[4906]=4421,[4941]=4903,[4966]=4881,[4974]=4941,[4982]=4981,[4983]=4982,[5002]=5001,[5052]=878,[5055]=5054,[5056]=5055,[5057]=5056,[5062]=4865,[5063]=5047,[5064]=4841,[5067]=5047,[5068]=5047,[5081]=5002,[5084]=5083,[5085]=5084,[5086]=5085,[5087]=5086,[5088]=5062,[5092]=5066,[5096]=5093,[5102]=5089,[5121]=5087,[5125]=5122,[5149]=5142,[5152]=5149,[5153]=5152,[5154]=5153,[5157]=5155,[5158]=5157,[5159]=5158,[5161]=5160,[5162]=5161,[5164]=5162,[5165]=5159,[5167]=5164,[5168]=5210,[5206]=5168,[5210]=5154,[5213]=5212,[5215]=5092,[5216]=5215,[5217]=5216,[5219]=5217,[5220]=5219,[5222]=5220,[5223]=5222,[5225]=5223,[5226]=5225,[5228]=5096,[5229]=5228,[5230]=5229,[5231]=5230,[5232]=5231,[5233]=5232,[5234]=5233,[5235]=5234,[5236]=5235,[5237]=5236,[5238]=5226,[5242]=5165,[5245]=5244,[5246]=5245,[5247]=5246,[5248]=5247,[5252]=5248,[5253]=5252,[5262]=5251,[5263]=5262,[5264]=5263,[5265]=5264,[5282]=5281,[5384]=5515,[5461]=5384,[5462]=5461,[5463]=5462,[5464]=5463,[5465]=5464,[5466]=5465,[5515]=5382,[5522]=4735,[5526]=5527,[5531]=5522,[5581]=5381,[5721]=5941,[5724]=5722,[5727]=5726,[5728]=5727,[5729]=5728,[5730]=5729,[5742]=5542,[5781]=5742,[5845]=5781,[5846]=5845,[5848]=5846,[5861]=5848,[5862]=5861,[5941]=5206,[5942]=5721,[5944]=5862,[6027]=5741,[6041]=6026,[6135]=6133,[6145]=6144,[6146]=6145,[6147]=6146,[6148]=6147,[6163]=6135,[6183]=6182,[6184]=6183,[6185]=6184,[6186]=6185,[6187]=6186,[6283]=6282,[6381]=6301,[6383]=235,[6402]=4322,[6403]=6402,[6481]=6421,[6501]=6403,[6502]=6501,[6521]=6522,[6565]=6564,[6566]=4974,[6567]=6566,[6568]=6567,[6569]=6568,[6570]=6569,[6582]=6570,[6585]=6582,[6601]=6585,[6602]=6601,[6621]=216,[6821]=6804,[6822]=6821,[6823]=6822,[6824]=6823,[7462]=7461,[7486]=6824,[7488]=7494,[7489]=7492,[7491]=7490,[7496]=7495,[7541]=1262,[7733]=2821,[7734]=2822,[7782]=7781,[7784]=7783,[7842]=7841,[7843]=7842,[7846]=7845,[7847]=7846,[7877]=7461,[8271]=7141,[8272]=7142,[8273]=2782,[8306]=8304,[8412]=8410,[8413]=8412,[8447]=8446,[8576]=8575,[8597]=8576,[8598]=8597,[8606]=8598,[8620]=8606,[8728]=8620,[8729]=8728,[8734]=8733,[8735]=8734,[8736]=8735,[8742]=8729,[8745]=8742,[8748]=8747,[8749]=8748,[8750]=8749,[8751]=8750,[8753]=8752,[8754]=8753,[8755]=8754,[8756]=8755,[8758]=8757,[8759]=8758,[8760]=8759,[8761]=8760,[8921]=8922,[8922]=8905,[8924]=8921,[8925]=8924,[8926]=8977,[8928]=8925,[8929]=8926,[8942]=8978,[8945]=8929,[8946]=8945,[8947]=8946,[8948]=8947,[8949]=8948,[8950]=8949,[8951]=9015,[8957]=9015,[8960]=8951,[8961]=8960,[8965]=8961,[8977]=8928,[8978]=8928,[8986]=8965,[8989]=8986,[8994]=8989,[8995]=8994,[8996]=8995,[8998]=8996,[9011]=8998,[9015]=8950,[9094]=9153,[9333]=9153,[91743]=92124,[91745]=91743,[91752]=91745,[91758]=91752,[91772]=91758,[91775]=91772,[91777]=91775,[92124]=91741,[92517]=92514,[92528]=92529,[92529]=93036,[92550]=92528,[92579]=92550,[92640]=94568,[92642]=93320,[92643]=92881,[92644]=92643,[92645]=93320,[92646]=93958,[92682]=92679,[92685]=92682,[92693]=92685,[92699]=92701,[92700]=92579,[92701]=92550,[92703]=92693,[92727]=92699,[92834]=92840,[92840]=99260,[92849]=92727,[92850]=92849,[92860]=92840,[92880]=92642,[92881]=92880,[92947]=93065,[93036]=92517,[93065]=92640,[93165]=94484,[93172]=93159,[93318]=92514,[93320]=92860,[93735]=92700,[93737]=93735,[93738]=93737,[93739]=95350,[93746]=93738,[93835]=93958,[93958]=92947,[93963]=94947,[94411]=92595,[94466]=94465,[94467]=94466,[94468]=94467,[94568]=92644,[96393]=96391,[97244]=97243,[97245]=97244,[97257]=97245,[99049]=99048,[99051]=99049,[99052]=99051,[99260]=92850},
+ qnames={[2]="Sharptalon's Claw",[9]="The Killing Fields",[12]="The People's Militia",[13]="The People's Militia",[14]="The People's Militia",[19]="Tharil'zun",[20]="Blackrock Menace",[48]="Sweet Amber",[49]="Sweet Amber",[50]="Sweet Amber",[51]="Sweet Amber",[53]="Sweet Amber",[55]="Morbent Fel",[65]="The Defias Brotherhood",[66]="The Legend of Stalvan",[67]="The Legend of Stalvan",[68]="The Legend of Stalvan",[69]="The Legend of Stalvan",[70]="The Legend of Stalvan",[72]="The Legend of Stalvan",[74]="The Legend of Stalvan",[75]="The Legend of Stalvan",[78]="The Legend of Stalvan",[79]="The Legend of Stalvan",[80]="The Legend of Stalvan",[89]="The Everstill Bridge",[94]="A Watchful Eye",[95]="Sven's Revenge",[97]="The Legend of Stalvan",[98]="The Legend of Stalvan",[99]="Arugal's Folly",[104]="The Coastal Menace",[116]="Dry Times",[118]="The Price of Shoes",[119]="Return to Verner",[122]="Underbelly Scales",[124]="A Baying of Gnolls",[125]="The Lost Tools",[126]="Howling in the Hills",[132]="The Defias Brotherhood",[133]="Ghoulish Effigy",[134]="Ogre Thieves",[135]="The Defias Brotherhood",[136]="Captain Sander's Hidden Treasure",[138]="Captain Sander's Hidden Treasure",[139]="Captain Sander's Hidden Treasure",[140]="Captain Sander's Hidden Treasure",[141]="The Defias Brotherhood",[142]="The Defias Brotherhood",[148]="Supplies from Darkshire",[149]="Ghost Hair Thread",[153]="Red Leather Bandanas",[154]="Return the Comb",[155]="The Defias Brotherhood",[156]="Gather Rot Blossoms",[157]="Deliver the Thread",[158]="Zombie Juice",[159]="Juice Delivery",[160]="Note to the Mayor",[161]="A Dark Threat Looms",[165]="The Hermit",[166]="The Defias Brotherhood",[167]="Oh Brother. . .",[168]="Collecting Memories",[173]="Worgen in the Woods",[174]="Look To The Stars",[175]="Look To The Stars",[176]="Wanted:  \"Hogger\"",[177]="Look To The Stars",[181]="Look To The Stars",[185]="Tiger Mastery",[186]="Tiger Mastery",[187]="Tiger Mastery",[188]="Tiger Mastery",[190]="Panther Mastery",[191]="Panther Mastery",[192]="Panther Mastery",[193]="Panther Mastery",[194]="Raptor Mastery",[195]="Raptor Mastery",[196]="Raptor Mastery",[197]="Raptor Mastery",[199]="A Dark Threat Looms",[200]="Bookie Herod",[202]="Colonel Kurzen",[203]="The Second Rebellion",[204]="Bad Medicine",[206]="Mai'Zoth",[210]="Krazek's Cookery",[214]="Red Silk Bandanas",[215]="Jungle Secrets",[216]="Between a Rock and a Thistlefur",[217]="In Defense of the King's Lands",[219]="Missing In Action",[221]="Worgen in the Woods",[222]="Worgen in the Woods",[223]="Worgen in the Woods",[224]="In Defense of the King's Lands",[225]="The Weathered Grave",[227]="Morgan Ladimore",[228]="Mor'Ladim",[229]="The Daughter Who Lived",[230]="Sven's Camp",[231]="A Daughter's Love",[232]="Errand for Apothecary Zinge",[235]="The Ashenvale Hunt",[237]="In Defense of the King's Lands",[238]="Errand for Apothecary Zinge",[243]="Into the Field",[245]="Eight-Legged Menaces",[247]="The Hunt Completed",[248]="Looking Further",[249]="Morganth",[250]="A Dark Threat Looms",[251]="Translate Abercrombie's Note",[252]="Translation to Ello",[253]="Bride of the Embalmer",[256]="WANTED: Chok'sul",[261]="Down the Scarlet Path",[262]="The Shadowy Figure",[263]="In Defense of the King's Lands",[265]="The Shadowy Search Continues",[266]="Inquire at the Inn",[268]="Return to Sven",[269]="Seeking Wisdom",[270]="The Doomed Fleet",[273]="Resupplying the Excavation",[274]="A Dark Threat Looms",[275]="Blisters on The Land",[276]="Tramping Paws",[277]="Fire Taboo",[278]="A Dark Threat Looms",[279]="Claws from the Deep",[280]="A Dark Threat Looms",[281]="Reclaiming Goods",[283]="A Dark Threat Looms",[284]="The Search Continues",[285]="Search More Hovels",[286]="Return the Statuette",[288]="The Third Fleet",[289]="The Cursed Crew",[290]="Lifting the Curse",[292]="The Eye of Paleth",[293]="Cleansing the Eye",[294]="Ormer's Revenge",[295]="Ormer's Revenge",[296]="Ormer's Revenge",[298]="Excavation Progress Report",[299]="Uncovering the Past",[301]="Report to Ironforge",[302]="Powder to Ironband",[303]="The Dark Iron War",[304]="A Grim Task",[307]="Filthy Paws",[309]="Protecting the Shipment",[314]="Protecting the Herd",[321]="Lightforge Iron",[322]="Blessed Arm",[323]="Proving Your Worth",[324]="The Lost Ingots",[325]="Armed and Ready",[328]="The Hidden Key",[329]="The Spy Revealed!",[330]="Patrol Schedules",[331]="Report to Doren",[343]="Speaking of Fortitude",[344]="Brother Paxton",[345]="Ink Supplies",[346]="Return to Kristoff",[347]="Rethban Ore",[348]="Stranglethorn Fever",[350]="Look to an Old Friend",[351]="Find OOX-17/TN!",[354]="Deaths in the Family",[355]="Speak with Sevren",[373]="The Unsent Letter",[377]="Crime and Punishment",[378]="The Fury Runs Deep",[379]="Slake That Thirst",[386]="What Comes Around...",[389]="Bazil Thredd",[391]="The Stockade Riots",[392]="The Curious Visitor",[393]="Shadow of the Past",[394]="The Head of the Beast",[395]="Brotherhood's End",[396]="An Audience with the King",[401]="Wait for Sirra to Finish",[408]="The Family Crypt",[417]="A Pilot's Revenge",[419]="The Lost Pilot",[421]="Prove Your Worth",[422]="Arugal's Folly",[423]="Arugal's Folly",[424]="Arugal's Folly",[434]="The Attack!",[435]="Escorting Erland",[437]="The Dead Fields",[438]="The Decrepit Ferry",[439]="Rot Hide Clues",[440]="The Engraved Ring",[441]="Raleigh and the Undercity",[442]="Assault on Fenris Isle",[443]="Rot Hide Ichor",[444]="Rot Hide Origins",[446]="Thule Ravenclaw",[447]="A Recipe For Death",[448]="Report to Hadrec",[449]="The Deathstalkers' Report",[450]="A Recipe For Death",[451]="A Recipe For Death",[452]="Pyrewood Ambush",[453]="Finding the Shadowy Figure",[454]="After the Ambush",[460]="Resting in Pieces",[461]="The Hidden Niche",[464]="War Banners",[465]="Nek'rosh's Gambit",[466]="Search for Incendicite",[467]="Stonegear's Search",[471]="Apprentice's Duties",[473]="Report to Captain Stoutfist",[474]="Defeat Nek'rosh",[475]="A Troubling Breeze",[476]="Gnarlpine Corruption",[477]="Border Crossings",[478]="Maps and Runes",[479]="Ambermill Investigations",[480]="The Weaver",[481]="Dalar's Analysis",[482]="Dalaran's Intentions",[483]="The Relics of Wakening",[484]="Young Crocolisk Skins",[485]="Find OOX-09/HL!",[486]="Ursal the Mauler",[491]="Wand to Bethor",[495]="The Crown of Will",[498]="The Rescue",[500]="Crushridge Bounty",[501]="Elixir of Pain",[503]="Gol'dir",[504]="Crushridge Warmongers",[505]="Syndicate Assassins",[506]="Blackmoore's Legacy",[507]="Lord Aliden Perenolde",[508]="Taretha's Gift",[509]="Elixir of Agony",[513]="Elixir of Agony",[515]="Elixir of Agony",[518]="The Crown of Will",[519]="The Crown of Will",[520]="The Crown of Will",[521]="The Crown of Will",[527]="Battle of Hillsbrad",[528]="Battle of Hillsbrad",[529]="Battle of Hillsbrad",[530]="A Husband's Revenge",[532]="Battle of Hillsbrad",[533]="Infiltration",[536]="Down the Coast",[539]="Battle of Hillsbrad",[541]="Battle of Hillsbrad",[546]="Souvenirs of Death",[547]="Humbert's Sword",[549]="WANTED: Syndicate Personnel",[550]="Battle of Hillsbrad",[559]="Farren's Proof",[560]="Farren's Proof",[561]="Farren's Proof",[562]="Stormwind Ho!",[564]="Costly Menace",[565]="Bartolo's Yeti Fur Cloak",[566]="WANTED: Baron Vardus",[567]="Dangerous!",[570]="Mok'thardin's Enchantment",[571]="Mok'thardin's Enchantment",[572]="Mok'thardin's Enchantment",[573]="Mok'thardin's Enchantment",[574]="Special Forces",[575]="Supply and Demand",[576]="Keep An Eye Out",[577]="Some Assembly Required",[578]="The Stone of the Tides",[581]="Hunt for Yenniku",[582]="Headhunting",[583]="Welcome to the Jungle",[584]="Bloodscalp Clan Heads",[585]="Speaking with Nezzliok",[588]="The Fate of Yenniku",[589]="The Singing Crystals",[591]="The Mind's Eye",[592]="Saving Yenniku",[594]="Message in a Bottle",[595]="The Bloodsail Buccaneers",[596]="Bloody Bone Necklaces",[598]="Split Bone Necklace",[600]="Venture Company Mining",[601]="Water Elementals",[602]="Magical Analysis",[603]="Ansirem's Key",[605]="Singing Blue Shards",[606]="Scaring Shaky",[607]="Return to MacKinley",[609]="Voodoo Dues",[610]="\"Pretty Boy\" Duncan",[611]="The Curse of the Tides",[613]="Cracking Maury's Foot",[614]="The Captain's Chest",[616]="The Haunted Isle",[621]="Zanzil's Secret",[622]="Return to Corporal Kaleb",[627]="Favor for Krazek",[628]="Excelsior",[630]="Message in a Bottle",[631]="The Thandol Span",[632]="The Thandol Span",[633]="The Thandol Span",[637]="Sully Balloo's Letter",[638]="Trollbane",[639]="Sigil of Strom",[640]="The Broken Sigil",[641]="Sigil of Thoradin",[642]="The Princess Trapped",[643]="Sigil of Arathor",[644]="Sigil of Trollbane",[645]="Trol'kalar",[646]="Trol'kalar",[648]="Rescue OOX-17/TN!",[651]="Stones of Binding",[652]="Breaking the Keystone",[653]="Myzrael's Allies",[654]="Tanaris Field Sampling",[656]="Summoning the Princess",[657]="Hints of a New Plague?",[658]="Hints of a New Plague?",[659]="Hints of a New Plague?",[660]="Hints of a New Plague?",[661]="Hints of a New Plague?",[664]="Drowned Sorrows",[665]="Sunken Treasure",[666]="Sunken Treasure",[667]="Death From Below",[668]="Sunken Treasure",[669]="Sunken Treasure",[670]="Sunken Treasure",[671]="Foul Magics",[673]="Foul Magics",[676]="The Hammer May Fall",[677]="Call to Arms",[678]="Call to Arms",[679]="Call to Arms",[680]="The Real Threat",[681]="Northfold Manor",[682]="Stromgarde Badges",[683]="Sara Balloo's Plea",[684]="Wanted!  Marez Cowl",[685]="Wanted!  Otto and Falconcrest",[686]="A King's Tribute",[687]="Theldurin the Lost",[689]="A King's Tribute",[690]="Malin's Request",[691]="Worth Its Weight in Gold",[692]="The Lost Fragments",[693]="Wand over Fist",[694]="Trelane's Defenses",[695]="An Apprentice's Enchantment",[696]="Attack on the Tower",[697]="Malin's Request",[698]="Lack of Surplus",[699]="Lack of Surplus",[700]="A King's Tribute",[704]="Agmond's Fate",[707]="Ironband Wants You!",[709]="Solution to Doom",[710]="Study of the Elements: Rock",[711]="Study of the Elements: Rock",[712]="Study of the Elements: Rock",[716]="Stone Is Better than Cloth",[717]="Tremors of the Earth",[718]="Mirages",[720]="A Sign of Hope",[721]="A Sign of Hope",[722]="Amulet of Secrets",[723]="Prospect of Faith",[724]="Prospect of Faith",[725]="Passing Word of a Threat",[726]="Passing Word of a Threat",[727]="To Ironforge for Yagyin's Digest",[729]="The Absent Minded Prospector",[731]="The Absent Minded Prospector",[732]="Tremors of the Earth",[733]="Scrounging",[735]="The Star, the Hand and the Heart",[737]="Forbidden Knowledge",[738]="Find Agmond",[739]="Murdaloc",[741]="The Absent Minded Prospector",[749]="The Ravaged Caravan",[751]="The Ravaged Caravan",[752]="A Humble Task",[753]="A Humble Task",[755]="Rites of the Earthmother",[757]="Rite of Strength",[762]="An Ambassador of Evil",[763]="Rites of the Earthmother",[765]="Supervisor Fizsprocket",[767]="Rite of Vision",[771]="Rite of Vision",[772]="Rite of Vision",[773]="Rite of Wisdom",[775]="Journey into Thunder Bluff",[776]="Rites of the Earthmother",[782]="Broken Alliances",[793]="Broken Alliances",[806]="Dark Storms",[809]="Ak'Zeloth",[823]="Report to Orgnil",[824]="Je'neu of the Earthen Ring",[827]="Skull Rock",[828]="Margoz",[829]="Neeru Fireblade",[836]="Rescue OOX-09/HL!",[843]="Gann's Reclamation",[844]="Plainstrider Menace",[845]="The Zhevra",[846]="Revenge of Gann",[848]="Fungal Spores",[849]="Revenge of Gann",[850]="Kolkar Leaders",[851]="Verog the Dervish",[852]="Hezrul Bloodmark",[853]="Apothecary Zamah",[855]="Centaur Bracers",[858]="Ignition",[862]="Dig Rat Stew",[863]="The Escape",[864]="Return to Apothecary Zinge",[865]="Raptor Horns",[866]="Root Samples",[867]="Harpy Raiders",[868]="Egg Hunt",[869]="Raptor Thieves",[870]="The Forgotten Pools",[871]="Disrupt the Attacks",[872]="The Disruption Ends",[873]="Isha Awak",[874]="Mahren Skyseer",[875]="Harpy Lieutenants",[876]="Serena Bloodfeather",[877]="The Stagnant Oasis",[878]="Tribes at War",[879]="Betrayal from Within",[880]="Altered Beings",[881]="Echeyakee",[882]="Ishamuhale",[887]="Southsea Freebooters",[888]="Stolen Booty",[890]="The Missing Shipment",[891]="The Guns of Northwatch",[892]="The Missing Shipment",[893]="Weapons of Choice",[894]="Samophlange",[898]="Free From the Hold",[899]="Consumed by Hatred",[900]="Samophlange",[901]="Samophlange",[902]="Samophlange",[903]="Prowlers of the Barrens",[905]="The Angry Scytheclaws",[906]="Betrayal from Within",[907]="Enraged Thunder Lizards",[913]="Cry of the Thunderhawk",[914]="Leaders of the Fang",[924]="The Demon Seed",[937]="The Enchanted Glade",[939]="Flute of Xavaric",[940]="Teldrassil",[942]="The Absent Minded Prospector",[943]="The Absent Minded Prospector",[947]="Cave Mushrooms",[954]="Bashal'Aran",[955]="Bashal'Aran",[956]="Bashal'Aran",[957]="Bashal'Aran",[962]="Serpentbloom",[963]="For Love Eternal",[965]="The Tower of Althalaxx",[966]="The Tower of Althalaxx",[967]="The Tower of Althalaxx",[970]="The Tower of Althalaxx",[971]="Knowledge in the Deeps",[973]="The Tower of Althalaxx",[974]="Finding the Source",[976]="Supplies to Auberdine",[978]="Moontouched Wildkin",[979]="Find Ranshalla",[980]="The New Springs",[981]="The Tower of Althalaxx",[982]="Deep Ocean, Vast Sea",[984]="How Big a Threat?",[985]="How Big a Threat?",[986]="A Lost Master",[991]="Raene's Cleansing",[993]="A Lost Master",[994]="Escape Through Force",[995]="Escape Through Stealth",[1007]="The Ancient Statuette",[1009]="Ruuzel",[1010]="Bathran's Hair",[1011]="Forsaken Diseases",[1012]="Insane Druids",[1013]="The Book of Ur",[1014]="Arugal Must Die",[1020]="Orendil's Cure",[1021]="Vile Satyr! Dryads in Danger!",[1023]="Raene's Cleansing",[1024]="Raene's Cleansing",[1026]="Raene's Cleansing",[1027]="Raene's Cleansing",[1028]="Raene's Cleansing",[1029]="Raene's Cleansing",[1030]="Raene's Cleansing",[1031]="The Branch of Cenarius",[1033]="Elune's Tear",[1034]="The Ruins of Stardust",[1035]="Fallen Sky Lake",[1045]="Raene's Cleansing",[1046]="Raene's Cleansing",[1048]="Into The Scarlet Monastery",[1049]="Compendium of the Fallen",[1050]="Mythology of the Titans",[1051]="Vorrel's Revenge",[1052]="Down the Scarlet Path",[1053]="In the Name of the Light",[1055]="Raene's Cleansing",[1057]="Reclaiming the Charred Vale",[1058]="Jin'Zil's Forest Magic",[1059]="Reclaiming the Charred Vale",[1071]="A Gnome's Respite",[1075]="A Scroll from Mauren",[1076]="Devils in Westfall",[1077]="Special Delivery for Gaxim",[1079]="Covert Ops - Alpha",[1081]="Reception from Tyrande",[1082]="Update for Sentinel Thenysil",[1083]="Enraged Spirits",[1085]="On Guard in Stonetalon",[1087]="Cenarius' Legacy",[1088]="Ordanus",[1089]="The Den",[1090]="Gerenzo's Orders",[1091]="Kaela's Update",[1092]="Gerenzo's Orders",[1093]="Super Reaper 6000",[1094]="Further Instructions",[1095]="Further Instructions",[1096]="Gerenzo Wrenchwhistle",[1098]="Deathstalkers in Shadowfang",[1100]="Lonebrow's Journal",[1101]="The Crone of the Kraul",[1102]="A Vengeful Fate",[1106]="Martek the Exiled",[1108]="Indurium",[1135]="Highperch Venom",[1137]="News for Fizzle",[1138]="Fruit of the Sea",[1139]="The Lost Tablets of Will",[1140]="The Tower of Althalaxx",[1142]="Mortality Wanes",[1143]="The Tower of Althalaxx",[1144]="Willix the Importer",[1148]="Parts of the Swarm",[1164]="To Steal From Thieves",[1166]="Overlord Mok'Morokk's Concern",[1167]="The Tower of Althalaxx",[1168]="Army of the Black Dragon",[1169]="Identifying the Brood",[1170]="The Brood of Onyxia",[1171]="The Brood of Onyxia",[1172]="The Brood of Onyxia",[1176]="Load Lightening",[1177]="Hungry!",[1178]="Goblin Sponsorship",[1180]="Goblin Sponsorship",[1181]="Goblin Sponsorship",[1182]="Goblin Sponsorship",[1183]="Goblin Sponsorship",[1184]="Parts of the Swarm",[1186]="The Eighteenth Pilot",[1187]="Razzeric's Tweaking",[1188]="Safety First",[1189]="Safety First",[1195]="The Sacred Flame",[1196]="The Sacred Flame",[1197]="The Sacred Flame",[1198]="In Search of Thaelrid",[1199]="Twilight Falls",[1200]="Blackfathom Villainy",[1203]="Jarl Needs a Blade",[1206]="Jarl Needs Eyes",[1218]="Soothing Spices",[1238]="The Lost Report",[1239]="The Severed Head",[1240]="The Troll Witchdoctor",[1241]="The Missing Diplomat",[1242]="The Missing Diplomat",[1243]="The Missing Diplomat",[1244]="The Missing Diplomat",[1245]="The Missing Diplomat",[1246]="The Missing Diplomat",[1247]="The Missing Diplomat",[1248]="The Missing Diplomat",[1249]="The Missing Diplomat",[1250]="The Missing Diplomat",[1261]="Marg Speaks",[1262]="Report to Zor",[1264]="The Missing Diplomat",[1265]="The Missing Diplomat",[1266]="The Missing Diplomat",[1267]="The Missing Diplomat",[1274]="The Missing Diplomat",[1275]="Researching the Corruption",[1318]="Unfinished Gordok Business",[1324]="The Missing Diplomat",[1358]="Sample for Helbrim",[1359]="Zinge's Delivery",[1364]="Mazen's Behest",[1365]="Khan Dez'hepah",[1366]="Centaur Bounty",[1367]="Magram Alliance",[1368]="Gelkis Alliance",[1369]="Broken Tears",[1370]="Stealing Supplies",[1371]="Gizmo for Warug",[1372]="Nothing But The Truth",[1373]="Ongeku",[1374]="Khan Jehn",[1375]="Khan Shaka",[1380]="Khan Hratha",[1381]="Khan Hratha",[1383]="Nothing But The Truth",[1387]="Centaur Bounty",[1393]="Galen's Escape",[1422]="Threat From the Sea",[1424]="Pool of Tears",[1426]="Threat From the Sea",[1427]="Threat From the Sea",[1429]="The Atal'ai Exile",[1430]="Fresh Meat",[1431]="Alliance Relations",[1432]="Alliance Relations",[1433]="Alliance Relations",[1435]="The Burning of Spirits",[1436]="Alliance Relations",[1437]="Vahlarriel's Search",[1438]="Vahlarriel's Search",[1439]="Search for Tyranis",[1440]="Return to Vahlarriel",[1444]="Return to Fel'Zerul",[1445]="The Temple of Atal'Hakkar",[1447]="The Missing Diplomat",[1448]="In Search of The Temple",[1449]="To The Hinterlands",[1450]="Gryphon Master Talonaxe",[1451]="Rhapsody Shindigger",[1452]="Rhapsody's Kalimdor Kocktail",[1453]="Reclaimers' Business in Desolace",[1454]="The Karnitol Shipwreck",[1455]="The Karnitol Shipwreck",[1456]="The Karnitol Shipwreck",[1457]="The Karnitol Shipwreck",[1458]="Reagents for Reclaimers Inc.",[1459]="Reagents for Reclaimers Inc.",[1465]="Vahlarriel's Search",[1466]="Reagents for Reclaimers Inc.",[1467]="Reagents for Reclaimers Inc.",[1469]="Rhapsody's Tale",[1475]="Into The Temple of Atal'Hakkar",[1480]="The Corrupter",[1481]="The Corrupter",[1482]="The Corrupter",[1484]="The Corrupter",[1486]="Deviate Hides",[1487]="Deviate Eradication",[1488]="The Corrupter",[1489]="Hamuul Runetotem",[1490]="Nara Wildmane",[1522]="Call of Fire",[1524]="Call of Fire",[1525]="Call of Fire",[1526]="Call of Fire",[1527]="Call of Fire",[1560]="Tooga's Quest",[1918]="The Befouled Element",[2038]="Bingles' Missing Supplies",[2040]="Underground Assault",[2118]="Plagued Lands",[2138]="Cleansing of the Infected",[2139]="Tharnariun's Hope",[2198]="The Shattered Necklace",[2199]="Lore for a Price",[2200]="Back to Uldaman",[2201]="Find the Gems",[2204]="Restoring the Necklace",[2240]="The Hidden Chamber",[2283]="Necklace Recovery",[2284]="Necklace Recovery, Take 2",[2318]="Translating the Journal",[2338]="Translating the Journal",[2339]="Find the Gems and Power Source",[2340]="Deliver the Gems",[2341]="Necklace Recovery, Take 3",[2361]="Restoring the Necklace",[2398]="The Lost Dwarves",[2418]="Power Stones",[2541]="The Sleeping Druid",[2561]="Druid of the Claw",[2621]="The Disgraced One",[2622]="The Missing Orders",[2623]="The Swamp Talker",[2681]="The Stones That Bind Us",[2701]="Heroes of Old",[2702]="Heroes of Old",[2742]="Rin'ji is Trapped!",[2745]="Infiltrating the Castle",[2746]="Items of Some Consequence",[2766]="Find OOX-22/FE!",[2767]="Rescue OOX-22/FE!",[2768]="Divino-matic Rod",[2782]="Rin'ji's Secret",[2784]="Fall From Grace",[2801]="A Tale of Sorrow",[2821]="The Mark of Quality",[2822]="The Mark of Quality",[2841]="Rig Wars",[2844]="The Giant Guardian",[2845]="Wandering Shay",[2846]="Tiara of the Deep",[2862]="War on the Woodpaw",[2863]="Alpha Strike",[2872]="Stoley's Debt",[2873]="Stoley's Shipment",[2874]="Deliver to MacKinley",[2902]="Woodpaw Investigation",[2903]="The Battle Plans",[2904]="A Fine Mess",[2928]="Gyrodrillmatic Excavationators",[2929]="The Grand Betrayal",[2930]="Data Rescue",[2933]="Venom Bottles",[2934]="Undamaged Venom Sac",[2935]="Consult Master Gadrin",[2936]="The Spider God",[2937]="Summoning Shadra",[2938]="Venom to the Undercity",[2969]="Freedom for All Creatures",[2970]="Doling Justice",[2972]="Doling Justice",[2973]="A New Cloak's Sheen",[2974]="A Grim Discovery",[2976]="A Grim Discovery",[2987]="Gordunni Cobalt",[2988]="Witherbark Cages",[2989]="The Altar of Zul",[2990]="Thadius Grimshade",[2991]="Nekrum's Medallion",[2992]="The Divination",[2993]="Return to the Hinterlands",[2994]="Saving Sharpbeak",[3062]="Dark Heart",[3121]="A Strange Request",[3122]="Return to Witch Doctor Uzer'i",[3123]="Testing the Vessel",[3124]="Hippogryph Muisek",[3125]="Faerie Dragon Muisek",[3126]="Treant Muisek",[3127]="Mountain Giant Muisek",[3129]="Weapons of Spirit",[3161]="Gahz'ridian",[3221]="Speak with Renferrel",[3261]="Jorn Skyseer",[3281]="Stolen Silver",[3301]="Mura Runetotem",[3367]="Suntara Stones",[3368]="Suntara Stones",[3369]="In Nightmares",[3370]="In Nightmares",[3371]="Dwarven Justice",[3372]="Release Them",[3373]="The Essence of Eranikus",[3377]="Prayer to Elune",[3378]="Prayer to Elune",[3379]="Shadoweaver",[3385]="The Undermarket",[3441]="Divine Retribution",[3442]="The Flawless Flame",[3443]="Forging the Shaft",[3448]="Passing the Burden",[3449]="Arcane Runes",[3452]="The Flame's Casing",[3453]="The Torch of Retribution",[3454]="The Torch of Retribution",[3461]="Return to Tymor",[3462]="Squire Maltrake",[3463]="Set Them Ablaze!",[3481]="Trinkets...",[3504]="Betrayed",[3505]="Betrayed",[3506]="Betrayed",[3507]="Betrayed",[3513]="The Runed Scroll",[3514]="Horde Presence",[3520]="Screecher Spirits",[3523]="Scourge of the Downs",[3524]="Washed Ashore",[3525]="Extinguishing the Idol",[3527]="The Prophecy of Mosh'aru",[3528]="The God Hakkar",[3566]="Rise, Obsidion!",[3661]="Favored of Elune?",[3701]="The Smoldering Ruins of Thaurissan",[3702]="The Smoldering Ruins of Thaurissan",[3765]="The Corruption Abroad",[3791]="The Mystery of Morrowgrain",[3821]="Dreadmaul Rock",[3822]="Krom'Grul",[3823]="Extinguish the Firegut",[3824]="Gor'tesh the Brute Lord",[3825]="Ogre Head On A Stick = Party",[3844]="It's a Secret to Everybody",[3845]="It's a Secret to Everybody",[3882]="Roll the Bones",[3906]="Disharmony of Flame",[3907]="Disharmony of Fire",[3908]="It's a Secret to Everybody",[3909]="The Videre Elixir",[3912]="Meet at the Grave",[3913]="A Grave Situation",[3914]="Linken's Sword",[3921]="Wenikee Boltbucket",[3922]="Nugget Slugs",[3923]="Rilli Greasygob",[3924]="Samophlange Manual",[3941]="A Gnome's Assistance",[3942]="Linken's Memory",[3961]="Linken's Adventure",[3962]="It's Dangerous to Go Alone",[3981]="Commander Gor'shak",[3982]="What Is Going On?",[4001]="What Is Going On?",[4002]="The Eastern Kingdom",[4003]="The Royal Rescue",[4004]="The Princess Saved?",[4005]="Aquementas",[4022]="A Taste of Flame",[4024]="A Taste of Flame",[4061]="The Rise of the Machines",[4062]="The Rise of the Machines",[4063]="The Rise of the Machines",[4084]="Silver Heart",[4121]="Precarious Predicament",[4122]="Grark Lorkrub",[4124]="The Missing Courier",[4125]="The Missing Courier",[4126]="Hurley Blackbreath",[4127]="Boat Wreckage",[4128]="Ragnar Thunderbrew",[4129]="The Knife Revealed",[4130]="Psychometric Reading",[4131]="The Woodpaw Gnolls",[4132]="Operation: Death to Angerforge",[4133]="Vivian Lagrave",[4134]="Lost Thunderbrew Recipe",[4135]="The Writhing Deep",[4136]="Ribbly Screwspigot",[4182]="Dragonkin Menace",[4183]="The True Masters",[4184]="The True Masters",[4185]="The True Masters",[4186]="The True Masters",[4201]="The Love Potion",[4223]="The True Masters",[4224]="The True Masters",[4241]="Marshal Windsor",[4242]="Abandoned Hope",[4261]="Ancient Spirit",[4262]="Overmaster Pyron",[4263]="Incendius!",[4264]="A Crumpled Up Note",[4265]="Freed from the Hive",[4266]="A Hero's Welcome",[4282]="A Shred of Hope",[4289]="The Apes of Un'Goro",[4290]="The Fare of Lar'korwi",[4291]="The Scent of Lar'korwi",[4292]="The Bait for Lar'korwi",[4293]="A Sample of Slime...",[4300]="Bone-Bladed Weapons",[4301]="The Mighty U'cha",[4322]="Jail Break!",[4324]="Yuka Screwspigot",[4341]="Kharan Mighthammer",[4361]="The Bearer of Bad News",[4362]="The Fate of the Kingdom",[4363]="The Princess's Surprise",[4421]="The Corruption of the Jadefire",[4441]="Felbound Ancients",[4442]="Purified!",[4449]="Caught!",[4450]="Ledger from Tanaris",[4491]="A Little Help From My Friends",[4492]="Lost!",[4496]="Bungle in the Jungle",[4501]="Beware of Pterrordax",[4503]="Shizzle's Flyer",[4507]="Pawn Captures Queen",[4508]="Calm Before the Storm",[4509]="Calm Before the Storm",[4510]="Calm Before the Storm",[4511]="Calm Before the Storm",[4512]="A Little Slime Goes a Long Way",[4513]="A Little Slime Goes a Long Way",[4542]="Message to Freewind Post",[4581]="Kayneth Stillwind",[4642]="Melding of Influences",[4681]="Washed Ashore",[4701]="Put Her Down",[4724]="The Pack Mistress",[4726]="Broodling Essence",[4734]="Egg Freezing",[4735]="Egg Collection",[4740]="WANTED: Murkdeep!",[4761]="Thundris Windweaver",[4762]="The Cliffspring River",[4763]="The Blackwood Corrupted",[4764]="Doomrigger's Clasp",[4765]="Delivery to Ridgewell",[4766]="Mayara Brightwing",[4768]="The Darkstone Tablet",[4769]="Vivian Lagrave and the Darkstone Tablet",[4771]="Dawn's Gambit",[4787]="The Ancient Egg",[4808]="Felnok Steelspring",[4809]="Chillwind Horns",[4810]="Return to Tinkee",[4811]="The Red Crystal",[4812]="As Water Cascades",[4813]="The Fragments Within",[4821]="Alien Egg",[4841]="Pacify the Centaur",[4842]="Strange Sources",[4865]="Serpent Wild",[4881]="Assassination Plot",[4882]="Guarding Secrets",[4883]="Guarding Secrets",[4901]="Guardians of the Altar",[4902]="Wildkin of Elune",[4903]="Warlord's Command",[4904]="Free at Last",[4906]="Further Corruption",[4941]="Eitrigg's Wisdom",[4966]="Protect Kanati Greycloud",[4971]="A Matter of Time",[4974]="For The Horde!",[4981]="Operative Bijou",[4982]="Bijou's Belongings",[4983]="Bijou's Reconnaissance Report",[5001]="Bijou's Belongings",[5002]="Message to Maxwell",[5047]="Finkle Einhorn, At Your Service!",[5052]="Blood Shards of Agamaggan",[5054]="Ursius of the Shardtooth",[5055]="Brumeran of the Chillwind",[5056]="Shy-Rotam",[5057]="Past Endeavors",[5060]="Locked Away",[5062]="Sacred Fire",[5063]="Cap of the Scarlet Savant",[5064]="Grimtotem Spying",[5066]="A Call to Arms: The Plaguelands!",[5067]="Leggings of Arcana",[5068]="Breastplate of Bloodthirst",[5081]="Maxwell's Mission",[5083]="Winterfall Firewater",[5084]="Falling to Corruption",[5085]="Mystery Goo",[5086]="Toxic Horrors",[5087]="Winterfall Runners",[5088]="Arikara",[5089]="General Drakkisath's Command",[5092]="Clear the Way",[5093]="A Call to Arms: The Plaguelands!",[5096]="Scarlet Diversions",[5102]="General Drakkisath's Demise",[5121]="High Chief Winterfall",[5122]="The Medallion of Faith",[5125]="Aurius' Reckoning",[5142]="Little Pamela",[5147]="Wanted - Arnak Grimtotem",[5149]="Pamela's Doll",[5151]="Hypercapacitor Gizmo",[5152]="Auntie Marlene",[5153]="A Strange Historian",[5154]="The Annals of Darrowshire",[5155]="Forces of Jaedenar",[5157]="Collection of the Corrupt Water",[5158]="Seeking Spiritual Aid",[5159]="Cleansed Water Returns to Felwood",[5160]="The Matron Protectorate",[5161]="Wrath of the Blue Flight",[5162]="Wrath of the Blue Flight",[5164]="Catalogue of the Wayward",[5165]="Dousing the Flames of Protection",[5167]="Legplates of the Chromatic Defier",[5168]="Heroes of Darrowshire",[5206]="Marauders of Darrowshire",[5210]="Brother Carlin",[5212]="The Flesh Does Not Lie",[5213]="The Active Agent",[5214]="The Great Fras Siabi",[5215]="The Scourge Cauldrons",[5216]="Target: Felstone Field",[5217]="Return to Chillwind Camp",[5219]="Target: Dalson's Tears",[5220]="Return to Chillwind Camp",[5222]="Target: Writhing Haunt",[5223]="Return to Chillwind Camp",[5225]="Target: Gahrron's Withering",[5226]="Return to Chillwind Point",[5228]="The Scourge Cauldrons",[5229]="Target: Felstone Field",[5230]="Return to the Bulwark",[5231]="Target: Dalson's Tears",[5232]="Return to the Bulwark",[5233]="Target: Writhing Haunt",[5234]="Return to the Bulwark",[5235]="Target: Gahrron's Withering",[5236]="Return to the Bulwark",[5237]="Mission Accomplished!",[5238]="Mission Accomplished!",[5242]="A Final Blow",[5243]="Houses of the Holy",[5244]="The Ruins of Kel'Theril",[5245]="Troubled Spirits of Kel'Theril",[5246]="Fragments of the Past",[5247]="Fragments of the Past",[5248]="Tormented By the Past",[5251]="The Archivist",[5252]="Remorseful Highborne",[5253]="The Crystal of Zin-Malor",[5262]="The Truth Comes Crashing Down",[5263]="Above and Beyond",[5264]="Lord Maxwell Tyrosus",[5265]="The Argent Hold",[5281]="The Restless Souls",[5282]="The Restless Souls",[5321]="The Sleeper Has Awakened",[5381]="Hand of Iruxos",[5382]="Doctor Theolen Krastinov, the Butcher",[5384]="Kirtonos the Herald",[5461]="The Human, Ras Frostwhisper",[5462]="The Dying, Ras Frostwhisper",[5463]="Menethil's Gift",[5464]="Menethil's Gift",[5465]="Soulbound Keepsake",[5466]="The Lich, Ras Frostwhisper",[5501]="Bone Collector",[5515]="Krastinov's Bag of Horrors",[5522]="Leonid Barthalomew",[5526]="Shards of the Felvine",[5527]="A Reliquary of Purity",[5531]="Betina Bigglezink",[5542]="Demon Dogs",[5561]="Kodo Roundup",[5581]="Portals of the Legion",[5721]="The Battle of Darrowshire",[5722]="Searching for the Lost Satchel",[5724]="Returning the Lost Satchel",[5725]="The Power to Destroy...",[5726]="Hidden Enemies",[5727]="Hidden Enemies",[5728]="Hidden Enemies",[5729]="Hidden Enemies",[5730]="Hidden Enemies",[5741]="Sceptre of Light",[5742]="Redemption",[5781]="Of Forgotten Memories",[5821]="Bodyguard for Hire",[5845]="Of Lost Honor",[5846]="Of Love and Family",[5848]="Of Love and Family",[5861]="Find Myranda",[5862]="Scarlet Subterfuge",[5863]="The Dunemaul Compound",[5941]="Return to Chromie",[5942]="Hidden Treasures",[5943]="Gizelton Caravan",[5944]="In Dreams",[6026]="That's Asking A Lot",[6027]="Book of the Ancients",[6031]="Runecloth",[6041]="When Smokey Sings, I Get Violent",[6133]="The Ranger Lord's Behest",[6134]="Ghost-o-plasm Round Up",[6135]="Duskwing, Oh How I Hate Thee...",[6136]="The Corpulent One",[6142]="Clam Bait",[6144]="The Call to Command",[6145]="The Crimson Courier",[6146]="Nathanos' Ruse",[6147]="Return to Nathanos",[6148]="The Scarlet Oracle, Demetria",[6161]="Claim Rackmore's Treasure!",[6163]="Ramstein",[6182]="The First and the Last",[6183]="Honor the Dead",[6184]="Flint Shadowmore",[6185]="The Eastern Plagues",[6186]="The Blightcaller Cometh",[6187]="Order Must Be Restored",[6282]="Harpies Threaten",[6283]="Bloodfury Bloodline",[6284]="Arachnophobia",[6301]="Cycle of Rebirth",[6381]="New Life",[6383]="The Ashenvale Hunt",[6402]="Stormwind Rendezvous",[6403]="The Great Masquerade",[6421]="Boulderslide Ravine",[6481]="Earthen Arise",[6501]="The Dragon's Eye",[6502]="Drakefire Amulet",[6504]="The Lost Pages",[6521]="An Unholy Alliance",[6522]="An Unholy Alliance",[6544]="Torek's Assault",[6561]="Blackfathom Villainy",[6564]="Allegiance to the Old Gods",[6565]="Allegiance to the Old Gods",[6566]="What the Wind Carries",[6567]="The Champion of the Horde",[6568]="The Testament of Rexxar",[6569]="Oculus Illusions",[6570]="Emberstrife",[6571]="Warsong Supplies",[6582]="The Test of Skulls, Scryer",[6585]="The Test of Skulls, Axtroz",[6601]="Ascension...",[6602]="Blood of the Black Dragon Champion",[6621]="King of the Foulweald",[6641]="Vorsha the Lasher",[6804]="Poisoned Water",[6821]="Eye of the Emberseer",[6822]="The Molten Core",[6823]="Agent of Hydraxis",[6824]="Hands of the Enemy",[6922]="Baron Aquanis",[6981]="The Glowing Shard",[7028]="Twisted Evils",[7029]="Vyletongue Corruption",[7041]="Vyletongue Corruption",[7064]="Corruption of Earth and Seed",[7065]="Corruption of Earth and Seed",[7068]="Shadowshard Fragments",[7070]="Shadowshard Fragments",[7141]="The Battle of Alterac",[7142]="The Battle for Alterac",[7201]="The Last Element",[7461]="The Madness Within",[7462]="The Treasure of the Shen'dralar",[7486]="A Hero's Reward",[7488]="Lethtendris's Web",[7489]="Lethtendris's Web",[7490]="Victory for the Horde",[7491]="For All To See",[7492]="Camp Mojache",[7494]="Feathermoon Stronghold",[7495]="Victory for the Alliance",[7496]="Celebrating Good Times",[7505]="Frost Shock and You",[7541]="Service to the Horde",[7701]="WANTED: Overseer Maltorius",[7703]="Unfinished Gordok Business",[7704]="Look at the Size of It!",[7721]="Fuel for the Zapping",[7724]="Fiery Menace!",[7728]="STOLEN: Smithing Tuyere and Lookout's Spyglass",[7733]="Improved Quality",[7734]="Improved Quality",[7781]="The Lord of Blackrock",[7782]="The Lord of Blackrock",[7783]="The Lord of Blackrock",[7784]="The Lord of Blackrock",[7841]="Message to the Wildhammer",[7842]="Another Message to the Wildhammer",[7843]="The Final Message to the Wildhammer",[7845]="Kidnapped Elder Torntusk!",[7846]="Recover the Key!",[7847]="Return to Primal Torntusk",[7849]="Separation Anxiety",[7861]="Wanted: Vile Priestess Hexx and Her Minions",[7862]="Job Opening: Guard Captain of Revantusk Village",[7877]="The Treasure of the Shen'dralar",[7928]="Darkmoon Warlords Deck",[7929]="Darkmoon Elementals Deck",[7940]="1200 Tickets - Orb of the Darkmoon",[7981]="1200 Tickets - Amulet of the Darkmoon",[8221]="Rare Fish - Keefer's Angelfish",[8225]="Rare Fish - Brownell's Blue Striped Racer",[8271]="Hero of the Stormpike",[8272]="Hero of the Frostwolf",[8273]="Oran's Gratitude",[8283]="Wanted - Deathclasp, Terror of the Sands",[8304]="Dearest Natalia",[8306]="Into The Maw of Madness",[8366]="Southsea Shakedown",[8410]="Elemental Mastery",[8412]="Spirit Totem",[8413]="Da Voodoo",[8446]="Shrouded in Nightmare",[8447]="Waking Legends",[8460]="Timbermaw Ally",[8461]="Deadwood of the North",[8464]="Winterfall Activity",[8551]="The Captain's Chest",[8573]="Champion's Battlegear",[8575]="Azuregos's Magical Ledger",[8576]="Translating the Ledger",[8597]="Draconic for Dummies",[8598]="rAnS0m",[8606]="Decoy!",[8620]="The Only Prescription",[8706]="Hammer of the Gathering Storm",[8728]="The Good News and The Bad News",[8729]="The Wrath of Neptulon",[8733]="Eranikus, Tyrant of the Dream",[8734]="Tyrande and Remulos",[8735]="The Nightmare's Corruption",[8736]="The Nightmare Manifests",[8742]="The Might of Kalimdor",[8745]="Treasure of the Timeless One",[8747]="The Path of the Protector",[8748]="The Path of the Protector",[8749]="The Path of the Protector",[8750]="The Path of the Protector",[8751]="The Protector of Kalimdor",[8752]="The Path of the Conqueror",[8753]="The Path of the Conqueror",[8754]="The Path of the Conqueror",[8755]="The Path of the Conqueror",[8756]="The Qiraji Conqueror",[8757]="The Path of the Invoker",[8758]="The Path of the Invoker",[8759]="The Path of the Invoker",[8760]="The Path of the Invoker",[8761]="The Grand Invoker",[8764]="The Changing of Paths - Protector No More",[8765]="The Changing of Paths - Invoker No More",[8766]="The Changing of Paths - Conqueror No More",[8790]="Imperial Qiraji Regalia",[8905]="An Earnest Proposition",[8918]="An Earnest Proposition",[8921]="The Ectoplasmic Distiller",[8922]="A Supernatural Device",[8924]="Hunting for Ectoplasm",[8925]="A Portable Power Source",[8926]="Just Compensation",[8928]="A Shifty Merchant",[8929]="In Search of Anthion",[8942]="Just Compensation",[8945]="Dead Man's Plea",[8946]="Proof of Life",[8947]="Anthion's Strange Request",[8948]="Anthion's Old Friend",[8949]="Falrin's Vendetta",[8950]="The Instigator's Enchantment",[8951]="Anthion's Parting Words",[8957]="Anthion's Parting Words",[8960]="Bodley's Unfortunate Fate",[8961]="Three Kings of Flame",[8965]="Components of Importance",[8977]="Return to Deliana",[8978]="Return to Mokvar",[8986]="More Components of Importance",[8989]="The Right Piece of Lord Valthalak's Amulet",[8994]="Final Preparations",[8995]="Mea Culpa, Lord Valthalak",[8996]="Return to Bodley",[8998]="Back to the Beginning",[9011]="Saving the Best for Last",[9015]="The Challenge",[9023]="The Perfect Poison",[9094]="Argent Dawn Gloves",[9153]="Under the Shadow",[9221]="Superior Armaments of Battle - Friend of the Dawn",[9222]="Epic Armaments of Battle - Friend of the Dawn",[9223]="Superior Armaments of Battle - Honored Amongst the Dawn",[9224]="Epic Armaments of Battle - Honored Amongst the Dawn",[9225]="Epic Armaments of Battle - Revered Amongst the Dawn",[9226]="Superior Armaments of Battle - Revered Amongst the Dawn",[9227]="Superior Armaments of Battle - Exalted Amongst the Dawn",[9228]="Epic Armaments of Battle - Exalted Amongst the Dawn",[9333]="Argent Dawn Gloves",[76240]="Stalk With The Earthmother",[78150]="Friend of the Library",[79442]="The Tempest's Weapons",[79536]="Greater Friend of the Library",[86574]="Stonetalon Supply Run",[86576]="Bloodfury Trinkets",[86585]="Banner of the Fallen",[86614]="Silver of the Waves",[88758]="Sentiments of the Lost",[91741]="Nibbled-On Book",[91743]="Rascally Rodents",[91745]="Mining Consultant",[91752]="The Big Picture",[91758]="Follow That Kobold!",[91772]="Shhh! We're Hunting Kobolds",[91775]="Book Return",[91777]="Rare Books",[92124]="Book Inventory",[92401]="A Frightened Request",[92421]="Light's Justice",[92422]="The Wrath of Rath'mael",[92456]="A Green Sample",[92457]="Starving Arcane",[92458]="Heart of Disruption",[92489]="Power Overwhelming",[92514]="Welcome to Shen'dar Village",[92517]="The Criminal Element",[92528]="Among the Faithful",[92529]="Falaath Village",[92550]="Havoc in the Highlands",[92579]="To Valanaar",[92595]="The Windshapers",[92640]="Desperate Times",[92642]="Disrupting Logistics",[92643]="The Turncoat",[92644]="Unfortunate News",[92645]="Breaking the Breaker",[92646]="Confront Lorthuna",[92679]="Blood Tithe",[92682]="Make Yourself Useful",[92685]="The Hills Have Eyes",[92693]="Standing Our Ground",[92699]="The Supreme Magister",[92700]="The Grand Skyseer",[92701]="To Valanaar",[92703]="Deliver the News",[92727]="The Missing Scholar",[92834]="Avenged Tenfold",[92840]="Catching Wind",[92849]="The Missing Scholar",[92850]="The Missing Scholar",[92860]="In Service of Zephras",[92873]="Proof of Concept",[92880]="Return to Valanaar",[92881]="The High Elder's Request",[92947]="Making Our Move",[93036]="Infiltrating the Cult",[93065]="Prepare for Battle",[93128]="Khan Jehn",[93159]="The Strange Hermit",[93165]="Mercy Falls on Deaf Ears",[93172]="Free the Hollows",[93196]="Khan Jehn",[93318]="WANTED: Vulgara the Insatiable",[93320]="Tower Defense",[93735]="The Broken Construct",[93737]="The Broken Construct",[93738]="The Broken Construct",[93739]="Exploring the Horde",[93746]="A Firm Response",[93835]="Confront Lorthuna",[93958]="The Inner Sanctum",[93963]="Exploring the Alliance",[94411]="Meddlesome Mages",[94465]="Call of Fire",[94466]="Call of Fire",[94467]="Call of Fire",[94468]="Call of Fire",[94484]="Unnerving Silence",[94568]="The Cult's True Plans",[94947]="Welcome to Azeroth",[95161]="Remember That I Love You",[95195]="Bloodied Insignia",[95216]="The New Plague",[95250]="Abominable Creatures",[95350]="Welcome to Azeroth",[95508]="Unwelcome Guests",[95534]="Strahnbrad Mystery",[95646]="Horrors in the Highland",[95682]="Open the Maw",[95795]="Fallen in the Fen",[95885]="The Offering of Blood",[95981]="Watching the Roads",[95999]="WANTED: Incinerator Gar'im",[96016]="The Tempest's Weapons",[96260]="Stronger than Steel",[96391]="Underground Map",[96393]="Old Ironforge Incursion",[96394]="The Restless Dead",[96395]="An Ancient Grudge",[96403]="Important Heirlooms",[96800]="Past Due",[96984]="Heart of Disruption",[96986]="The Grave Knight",[96987]="Opportunistic Education",[96988]="Source of Power",[97003]="Chol'aruk the Ravener",[97005]="Chol'aruk the Ravener",[97048]="Returning to Port",[97223]="Bloodtalon Matriarch",[97243]="Call of Fire",[97244]="Call of Fire",[97245]="Call of Fire",[97250]="Wrongly Blamed, Justly Corrected",[97257]="Call of Fire",[97265]="Hate the Hatefury",[97282]="Stormy Potential",[97290]="Unending Torment",[97326]="Rocks to Rests",[97558]="Hides for the Forsaken",[98025]="WANTED: Jai'vhanel",[98028]="Baron Marinous",[98071]="Brewer's Trade",[98095]="Valuable Vantages",[98156]="Packaged Pristine Pelts",[98191]="A Friend of the Family",[98208]="Bloom of the Heavens",[98216]="Understanding Our Present",[98223]="Old Habits",[98283]="Carnage",[98297]="Stopping the Cycle",[98298]="Arugal's Folly",[98310]="Gleaning Our Future",[98545]="Leonid's Letter",[98823]="Earthen Echo",[98824]="Prehistoric Prism",[99048]="A Missing Hand",[99049]="Threat from Below",[99051]="Threat from Below",[99052]="Threat from Below",[99156]="Rear Guard Patrol",[99260]="Fillion's Mission"},
  enders={
   [2]={n="Senani Thunderheart",z=331,x=73.78,y=61.46},
   [9]={n="Farmer Saldean",z=40,x=56.04,y=31.23},
@@ -5286,9 +5955,136 @@ SF.DATA = {
   [9226]={n="Quartermaster Miranda Breechlock",z=139,x=71.79,y=50.25},
   [9227]={n="Quartermaster Miranda Breechlock",z=139,x=71.79,y=50.25},
   [9228]={n="Quartermaster Miranda Breechlock",z=139,x=71.79,y=50.25},
-  [9333]={n="Argent Outfitter",z=139,x=71.06,y=49.81}
+  [9333]={n="Argent Outfitter",z=139,x=71.06,y=49.81},
+  [76240]={n="Boarton Shadetotem",z=1638,x=39.42,y=65.74},
+  [78150]={n="Owen Thadd",z=1497,x=73.19,y=33.41},
+  [79442]={n="Bath'rah the Windwatcher",z=36,x=80.5,y=66.92},
+  [79536]={n="Owen Thadd",z=1497,x=73.19,y=33.41},
+  [86574]={n="Innkeeper Faralia",z=406,x=35.79,y=5.74},
+  [86576]={n="Mor'rogal",z=406,x=47.22,y=64.04},
+  [86585]={n="Captain Rugelfuss",z=38,x=23.23,y=73.68},
+  [86614]={n="Khara Deepwater",z=38,x=40.28,y=39.28},
+  [88758]={n="Comar Villard",z=11,x=49.93,y=12.55},
+  [91741]={n="Brother Paxton",z=12,x=49.61,y=40.41},
+  [91743]={n="Brother Paxton",z=12,x=49.61,y=40.41},
+  [91745]={n="Kelsey Fargo",z=12,x=47.18,y=32.16},
+  [91752]={n="Marshal McBride",z=12,x=48.92,y=41.61},
+  [91758]={n="Tordrin Sternblade",z=12,x=51.21,y=40.8},
+  [91772]={n="Marshal Dughan",z=12,x=42.11,y=65.93},
+  [91775]={n="Marshal Dughan",z=12,x=42.11,y=65.93},
+  [91777]={n="Brother Paxton",z=12,x=49.61,y=40.41},
+  [92124]={n="Daniel",z=12,x=49.48,y=40.67},
+  [92401]={n="Tabitha Heartweaver",z=130,x=44.54,y=42.96},
+  [92421]={n="Morbin Lightbane",z=1497,x=57.73,y=89.1},
+  [92422]={n="Deathguard Kristof",z=85,x=65.23,y=60.16},
+  [92456]={n="Shylamiir",z=1519,x=31.5,y=62.61},
+  [92457]={n="Image of Archmage Modera",z=130,x=68.6,y=45.18},
+  [92458]={n="Image of Archmage Modera",z=130,x=68.6,y=45.18},
+  [92489]={n="High Sorcerer Andromath",z=1519,x=48.71,y=87.62},
+  [92514]={n="Constable Aonda",z=16593,x=45.63,y=45.5},
+  [92517]={n="Constable Aonda",z=16593,x=45.63,y=45.5},
+  [92528]={n="Constable Aonda",z=16593,x=45.63,y=45.5},
+  [92529]={n="Missionary Jasaan",z=16593,x=46.86,y=56.21},
+  [92550]={n="Constable Aonda",z=16593,x=45.63,y=45.5},
+  [92579]={n="Valennia Stormfist",z=16593,x=66.22,y=76.63},
+  [92595]={n="Illaya Amberwind",z=16593,x=43.53,y=44.78},
+  [92640]={n="Valennia Stormfist",z=16593,x=66.22,y=76.63},
+  [92642]={n="Yorana Windyreed",z=16593,x=69.47,y=67.27},
+  [92643]={n="Dead Cultist",z=16593,x=56.02,y=58.79},
+  [92644]={n="Talaanis Shadowsong",z=16593,x=66.17,y=76.51},
+  [92645]={n="Yorana Windyreed",z=16593,x=69.47,y=67.27},
+  [92646]={n="Ayessa Dawnsinger",z=16593,x=59.15,y=79.73},
+  [92679]={n="Aamelia Windfield",z=16593,x=46.7,y=81.95},
+  [92682]={n="Aamelia Windfield",z=16593,x=46.7,y=81.95},
+  [92685]={n="Aamelia Windfield",z=16593,x=46.7,y=81.95},
+  [92693]={n="Aamelia Windfield",z=16593,x=46.7,y=81.95},
+  [92699]={n="Elaadrin Evengale",z=16593,x=66.59,y=79.91},
+  [92700]={n="Ayessa Dawnsinger",z=16593,x=59.15,y=79.73},
+  [92701]={n="Valennia Stormfist",z=16593,x=66.22,y=76.63},
+  [92703]={n="Alvarion Windfield",z=16593,x=62.14,y=73.31},
+  [92834]={n="Elaadrin Evengale",z=16593,x=66.59,y=79.91},
+  [92840]={n="Elaadrin Evengale",z=16593,x=66.59,y=79.91},
+  [92849]={n="Fillion Flamebreeze",z=16593,x=52.05,y=69.4},
+  [92850]={n="Fillion Flamebreeze",z=16593,x=66.2,y=79.88},
+  [92860]={n="Valennia Stormfist",z=16593,x=66.22,y=76.63},
+  [92880]={n="Valennia Stormfist",z=16593,x=66.22,y=76.63},
+  [92881]={n="Talaanis Shadowsong",z=16593,x=66.17,y=76.51},
+  [92947]={n="Hyusaa Quickbreeze",z=16593,x=63.77,y=50.51},
+  [93036]={n="Sania Silverstream",z=16593,x=44.86,y=45.46},
+  [93065]={n="Valennia Stormfist",z=16593,x=61.17,y=70.95},
+  [93128]={n="Uthek the Wise",z=405,x=36.22,y=79.25},
+  [93159]={n="Strange Hermit",z=16593,x=53.96,y=38.9},
+  [93165]={n="Vayn Moongaze",z=16593,x=63.77,y=36.02},
+  [93172]={n="Strange Hermit",z=16593,x=53.96,y=38.9},
+  [93318]={n="Danarii Bellowveil",z=16593,x=45.24,y=45.18},
+  [93320]={n="Yorana Windyreed",z=16593,x=69.47,y=67.27},
+  [93735]={n="Riaani Nightwind",z=16593,x=59.01,y=72.93},
+  [93737]={n="Riaani Nightwind",z=16593,x=59.01,y=72.93},
+  [93738]={n="Ayessa Dawnsinger",z=16593,x=59.15,y=79.73},
+  [93739]={n="Thrall",z=1637,x=31.73,y=37.82},
+  [93746]={n="Ayessa Dawnsinger",z=16593,x=59.15,y=79.73},
+  [93835]={n="Elaadrin Evengale",z=16593,x=66.59,y=79.91},
+  [93958]={n="Valennia Stormfist",z=16593,x=65.22,y=50.38},
+  [93963]={n="Highlord Bolvar Fordragon",z=1519,x=80.21,y=38.35},
+  [94411]={n="Illaya Amberwind",z=16593,x=43.53,y=44.78},
+  [94465]={n="Braldir Ashmantle",z=38,x=32.17,y=65.97},
+  [94466]={n="Braldir Ashmantle",z=38,x=32.17,y=65.97},
+  [94484]={n="Elegael Thornpaw",z=16593,x=61.76,y=39.14},
+  [94568]={n="Talaanis Shadowsong",z=16593,x=66.17,y=76.51},
+  [94947]={n="Highlord Bolvar Fordragon",z=1519,x=80.21,y=38.35},
+  [95161]={n="Avette Fellwood",z=10,x=73.03,y=44.42},
+  [95195]={n="General Marcus Jonathan",z=1519,x=69.17,y=82.72},
+  [95216]={n="Theodore Griffs",z=1497,x=46.31,y=71.91},
+  [95350]={n="Thrall",z=1637,x=31.73,y=37.82},
+  [95508]={n="Walton",z=17,x=42.01,y=11.44},
+  [95534]={n="Shara Blazen",z=267,x=63.66,y=21.16},
+  [95646]={n="Rethiel the Greenwarden",z=11,x=56.37,y=40.4},
+  [95795]={n="Dorin Songblade",z=44,x=25.79,y=46.44},
+  [95981]={n="Shadow Priest Allister",z=130,x=43.98,y=40.93},
+  [95999]={n="Magistrate Solomon",z=44,x=24.9,y=44.45},
+  [96016]={n="Bath'rah the Windwatcher",z=36,x=80.5,y=66.92},
+  [96260]={n="Yorn Grimtotem",z=215,x=32.46,y=19.99},
+  [96393]={n="King Magni Bronzebeard",z=1537,x=39.09,y=56.2},
+  [96403]={n="Thom Filch",z=1537,x=31.8,y=45.12},
+  [96800]={n="Magus Olvek",z=36,x=10.72,y=64.07},
+  [96984]={n="Magus Wordeen Voidglare",z=267,x=61.6,y=20.85},
+  [96986]={n="Melisara",z=267,x=62.63,y=20.65},
+  [96988]={n="Doctor Martin Felben",z=1497,x=46.61,y=74.09},
+  [97003]={n="Gur'ak",z=17,x=52.64,y=29.05},
+  [97005]={n="Bainham",z=17,x=61.91,y=39.42},
+  [97223]={n="Xar'Ti",z=14,x=55.28,y=75.49},
+  [97243]={n="Olariaan Swiftburn",z=16593,x=51.21,y=86.22},
+  [97244]={n="Olariaan Swiftburn",z=16593,x=51.21,y=86.22},
+  [97245]={n="Olariaan Swiftburn",z=16593,x=51.21,y=86.22},
+  [97250]={n="Grunt Logmar",z=17,x=44.62,y=59.27},
+  [97257]={n="Sessaria Skystride",z=16593,x=58.33,y=78.44},
+  [97282]={n="Rezlak",z=14,x=46.37,y=22.94},
+  [97290]={n="Master Apothecary Faranell",z=1497,x=48.82,y=69.28},
+  [97558]={n="Shelene Rhobart",z=85,x=65.43,y=60.12},
+  [98025]={n="Sentinel Glynda Nal'Shea",z=148,x=37.7,y=43.41},
+  [98028]={n="Onu",z=148,x=43.55,y=76.29},
+  [98071]={n="Brewmeister Bilger",z=267,x=52.13,y=58.74},
+  [98095]={n="Deathstalker Masoj",z=267,x=63.98,y=53.94},
+  [98156]={n="Kimberly Grant",z=1519,x=37.78,y=64.8},
+  [98191]={n="Lord Grayson Shadowbreaker",z=1519,x=48.43,y=50.22},
+  [98208]={n="Sylessa Duskwhisper",z=11,x=7.96,y=55.85},
+  [98216]={n="Prospector Whelgar",z=11,x=38.81,y=52.39},
+  [98223]={n="Captain Stoutfist",z=11,x=9.86,y=57.49},
+  [98283]={n="Rethiel the Greenwarden",z=11,x=56.37,y=40.4},
+  [98297]={n="Howin Kindfeather",z=11,x=49.36,y=42.05},
+  [98298]={n="Dalar Dawnweaver",z=130,x=44.2,y=39.81},
+  [98310]={n="Prospector Whelgar",z=11,x=38.81,y=52.39},
+  [98545]={n="Glix Xizzix",z=1497,x=69.5,y=47.31},
+  [98823]={n="Muln Earthfury",z=215,x=33.42,y=22.52},
+  [98824]={n="High Explorer Magellas",z=1537,x=69.93,y=18.55},
+  [99048]={n="Heglan Shadeeye",z=14,x=58.6,y=45.6},
+  [99049]={n="Orgnil Soulscar",z=14,x=52.24,y=43.15},
+  [99051]={n="Orgnil Soulscar",z=14,x=52.24,y=43.15},
+  [99052]={n="Orgnil Soulscar",z=14,x=52.24,y=43.15},
+  [99156]={n="Deathguard Linnea",z=85,x=65.49,y=60.25},
+  [99260]={n="Elaadrin Evengale",z=16593,x=66.59,y=79.91}
  },
- uiMaps={[1]=1426,[3]=1418,[4]=1419,[8]=1435,[10]=1431,[11]=1437,[12]=1429,[14]=1411,[15]=1445,[16]=1447,[17]=1413,[28]=1422,[33]=1434,[36]=1416,[38]=1432,[40]=1436,[44]=1433,[45]=1417,[46]=1428,[47]=1425,[51]=1427,[85]=1420,[130]=1421,[139]=1423,[141]=1438,[148]=1439,[209]=310,[215]=1412,[267]=1424,[331]=1440,[357]=1444,[361]=1448,[400]=1441,[405]=1443,[406]=1442,[440]=1446,[490]=1449,[491]=301,[493]=1450,[618]=1452,[719]=221,[721]=226,[722]=300,[796]=302,[1337]=230,[1377]=1451,[1497]=1458,[1519]=1453,[1537]=1455,[1583]=253,[1585]=243,[1637]=1454,[1638]=1456,[1657]=1457,[2017]=317,[2437]=213,[2557]=234,[3428]=320},
+ uiMaps={[1]=1426,[3]=1418,[4]=1419,[8]=1435,[10]=1431,[11]=1437,[12]=1429,[14]=1411,[15]=1445,[16]=1447,[17]=1413,[28]=1422,[33]=1434,[36]=1416,[38]=1432,[40]=1436,[44]=1433,[45]=1417,[46]=1428,[47]=1425,[51]=1427,[85]=1420,[130]=1421,[139]=1423,[141]=1438,[148]=1439,[209]=310,[215]=1412,[267]=1424,[331]=1440,[357]=1444,[361]=1448,[400]=1441,[405]=1443,[406]=1442,[440]=1446,[490]=1449,[491]=301,[493]=1450,[618]=1452,[719]=221,[721]=226,[722]=300,[796]=302,[1337]=230,[1377]=1451,[1497]=1458,[1519]=1453,[1537]=1455,[1583]=253,[1585]=243,[1637]=1454,[1638]=1456,[1657]=1457,[2017]=317,[2437]=213,[2557]=234,[3428]=320,[10089]=947,[16593]=2521,[16651]=2652},
  specs={"Enhancement","Elemental","Restoration"},
  cost={strength=1,agility=1,stamina=1,intellect=1,spirit=1,attackPower=0.5,spellPower=1.2,spellDamage=0.85,healing=0.55,natureDamage=0.7,fireDamage=0.7,frostDamage=0.7,otherDamage=0.7,mp5=2.5,crit=14,hit=10,spellCrit=14,spellHit=10,defense=1,dodge=12},
  weights={

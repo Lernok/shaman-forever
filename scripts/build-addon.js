@@ -106,6 +106,8 @@ Object.values(dungeons).forEach(d => {
 const { parseLua } = require('./lib/questie.js');
 const cache = path.join(root, '.cache');
 const qdir = path.join(cache, 'questiedb');
+// The QuestieDB addon installed next to the game (QUESTIEDB: its support folder).
+const support = process.env.QUESTIEDB || 'D:/World of Warcraft/_classic_beta_/Interface/AddOns/QuestieDB/support';
 const givers = {};
 const dquests = {};
 const iq = {}, qpre = {}, qnames = {}, enders = {};
@@ -119,7 +121,11 @@ if (fs.existsSync(path.join(qdir, 'foreverQuestDB.lua'))) {
     return m;
   };
   const Q = index('foreverQuestDB.lua'), N = index('foreverNpcDB.lua');
-  const get = (m, id) => (m.has(id) ? parseLua(m.get(id)) : null);
+  // Quests and NPCs the repo's files lack yet (Forever's new zones): from the
+  // QuestieDB addon installed in the game.
+  const B = require('./lib/questiedb-baked.js').load(path.dirname(support));
+  if (B) console.log('QuestieDB instalado: ' + B.questIds().length + ' misiones (' + B.file + ')');
+  const get = (m, id) => (m.has(id) ? parseLua(m.get(id)) : B ? (m === Q ? B.quest(id) : m === N ? B.npc(id) : null) : null);
   const wago = path.join(cache, 'wago');
   const dir = fs.readdirSync(wago).filter(d => d.startsWith('1.60')).sort().pop();
   const { parseCSV } = require('./lib/csv.js');
@@ -141,6 +147,15 @@ if (fs.existsSync(path.join(qdir, 'foreverQuestDB.lua'))) {
       const zid = Object.keys(spawns).find(z => areaName[z]) || n[8];
       const xy = (spawns[zid] || [])[0] || [];
       return { n: n[0], z: +zid || undefined, x: xy[0], y: xy[1] };
+    }
+    // A world object (a wanted poster…): only the installed QuestieDB has them.
+    for (const oid of ((q[1] || [])[1] || [])) {
+      const o = B && B.object(oid);
+      if (!o) continue;
+      const spawns = o[3] || {};
+      const zid = Object.keys(spawns).find(z => areaName[z]) || o[4];
+      const xy = (spawns[zid] || [])[0] || [];
+      if (xy.length) return { n: o[0], z: +zid || undefined, x: xy[0], y: xy[1] };
     }
     return (((q[1] || [])[2] || []).length) ? { item: true } : null;
   };
@@ -253,7 +268,6 @@ if (fs.existsSync(path.join(qdir, 'foreverQuestDB.lua'))) {
 // AreaTable id -> the world map (uiMapID) TomTom places waypoints on, from
 // QuestieDB's support tables when it's installed next to the game.
 const uiMaps = {};
-const support = process.env.QUESTIEDB || 'D:/World of Warcraft/_classic_beta_/Interface/AddOns/QuestieDB/support';
 [path.join(support, 'Zones', 'areaIdToUiMapId.lua'), path.join(support, 'Forever', 'Zones', 'areaIdToUiMapId.lua')].forEach(f => {
   if (!fs.existsSync(f)) return;
   fs.readFileSync(f, 'utf8').split('\n').forEach(line => {

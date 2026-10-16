@@ -171,6 +171,9 @@ local function areaName(id)
 end
 local function here() return readable(GetRealZoneText()) or "" end
 
+-- A tip marked done ("Listo") or dismissed (the cross): not shown again.
+local function off(key) return cdb.done[key] or cdb.gone[key] end
+
 -- Who gives a quest, in one line; and a waypoint to them.
 local function giverText(g)
   if not g then return nil end
@@ -213,7 +216,7 @@ local function pathTips(filter)
     if st.l - cdb.lead <= lvl and lvl < st.u and st.l > lvl - STALE and not Api.questDone(st.q) then
       local g = gain(st.i)
       local key = st.q and ("q" .. st.q .. ":" .. st.i) or ("i" .. st.i)
-      if g and not cdb.done[key] and (not filter or filter(st)) then
+      if g and not off(key) and (not filter or filter(st)) then
         local src
         if st.a == "vendor" then src = string.format(L().vendor, st.k or "?") .. " · " .. zoneName(st.z)
         elseif st.a == "class" then src = string.format(L().classQuest, st.qn or "?")
@@ -253,7 +256,7 @@ local function pickupTips(inZone)
           end
           local g = target and D.givers[target.q]
           local key = target and ("k" .. target.q)
-          if target and g and not g.inside and not g.item and not cdb.done[key] and not seenKey[key]
+          if target and g and not g.inside and not g.item and not off(key) and not seenKey[key]
             and (not inZone or (g.z and areaName(g.z) == z)) then
             seenKey[key] = true
             local src = string.format(L().pickup, target.qn or "?")
@@ -309,7 +312,7 @@ local function dungeonTips(name)
   end
   for qid, b in pairs(best) do
     local key = "q" .. qid .. ":" .. b.q.i
-    if not cdb.done[key] then
+    if not off(key) then
       local has = Api.onQuest(qid)
       tips[#tips + 1] = { key = key, item = b.q.i, head = Api.itemName(b.q.i), src = string.format(L().quest, b.q.qn)
         .. " · " .. (has and ("|cff40ff40" .. L().haveIt .. "|r") or ("|cffff6060" .. L().missing .. "|r")),
@@ -320,7 +323,7 @@ local function dungeonTips(name)
   for _, dr in ipairs(d.drops) do
     local it = D.items[dr.i]
     local key = "d" .. dr.i
-    if it and it.r <= lvl + 3 and not cdb.done[key] then
+    if it and it.r <= lvl + 3 and not off(key) then
       local g = gain(dr.i)
       if g then
         tips[#tips + 1] = { key = key, item = dr.i, head = Api.itemName(dr.i), src = string.format(L().boss, dr.b or "?"),
@@ -348,6 +351,7 @@ local function log(event, detail)
 end
 
 -- Window -------------------------------------------------------------------------
+local show
 local frame, rows, logFrame = nil, {}, nil
 local ROWS, ROW_H, W = 10, 44, 420
 
@@ -398,7 +402,7 @@ local function makeRow(i)
   local function line(font, anchor, dy)
     local fs = r:CreateFontString(nil, "OVERLAY", font)
     fs:SetPoint("TOPLEFT", anchor, anchor == r.icon and "TOPRIGHT" or "BOTTOMLEFT", anchor == r.icon and 6 or 0, dy)
-    fs:SetPoint("RIGHT", -64, 0)
+    fs:SetPoint("RIGHT", -84, 0)
     fs:SetJustifyH("LEFT")
     if fs.SetWordWrap then fs:SetWordWrap(false) end
     return fs
@@ -409,7 +413,7 @@ local function makeRow(i)
   r.gain:SetTextColor(0.4, 1, 0.4)
   r.check = CreateFrame("CheckButton", nil, r, "UICheckButtonTemplate")
   r.check:SetSize(24, 24)
-  r.check:SetPoint("RIGHT", -34, 0)
+  r.check:SetPoint("RIGHT", -54, 0)
   r.checkLabel = r:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
   r.checkLabel:SetPoint("LEFT", r.check, "RIGHT", 0, 0)
   r.check:SetScript("OnClick", function(self)
@@ -420,6 +424,20 @@ local function makeRow(i)
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT"); GameTooltip:SetText(L().doneTip, 1, 1, 1, 1, true); GameTooltip:Show()
   end)
   r.check:SetScript("OnLeave", function() GameTooltip:Hide() end)
+  r.dismiss = CreateFrame("Button", nil, r, "UIPanelCloseButton")
+  r.dismiss:SetSize(22, 22)
+  r.dismiss:SetPoint("RIGHT", 2, 0)
+  r.dismiss:SetScript("OnClick", function()
+    cdb.gone[r.tip.key] = true
+    GameTooltip:Hide()
+    local left = {}
+    for _, t in ipairs(frame.lastTips or {}) do if t ~= r.tip then left[#left + 1] = t end end
+    show(frame.lastTitle, left)
+  end)
+  r.dismiss:SetScript("OnEnter", function(self)
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT"); GameTooltip:SetText(L().dismissTip, 1, 1, 1, 1, true); GameTooltip:Show()
+  end)
+  r.dismiss:SetScript("OnLeave", function() GameTooltip:Hide() end)
   r:SetScript("OnEnter", rowTooltip)
   r:SetScript("OnLeave", function() GameTooltip:Hide() end)
   -- An item from a quest: the step of its chain you're at (as Shift+click on
@@ -461,6 +479,7 @@ local function makeFrame()
   if frame.title.SetWordWrap then frame.title:SetWordWrap(false) end
   local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
   close:SetPoint("TOPRIGHT", 2, 2)
+  close:SetScript("OnClick", function() frame:Hide(); db.shown = false end)
   frame.spec = CreateFrame("Button", nil, frame)
   frame.spec:SetSize(100, 18)
   frame.spec:SetPoint("TOPRIGHT", -28, -10)
@@ -479,12 +498,10 @@ local function makeFrame()
   frame.empty:SetPoint("RIGHT", -10, 0)
   frame.empty:SetJustifyH("LEFT")
   frame.more = frame:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
-  tinsert(UISpecialFrames, "ShamanForeverFrame") -- Escape closes it
   for i = 1, ROWS do rows[i] = makeRow(i) end
 end
 
 -- Shows a list of tips with a title.
-local show
 -- The quest log changed: repaint the open window (you just took a quest).
 local function repaint()
   if frame and frame:IsShown() and frame.lastTitle then show(frame.lastTitle, frame.lastTips) end
@@ -519,6 +536,7 @@ function show(title, tips)
   frame.more:SetText(#tips > ROWS and string.format(L().more, #tips - ROWS) or "")
   frame:SetHeight(#tips == 0 and 70 or (48 + n * ROW_H + (#tips > ROWS and 14 or 0)))
   frame:Show()
+  db.shown = true
 end
 
 -- Tips shown by themselves are marked seen: they don't pop up again.
@@ -544,11 +562,65 @@ end
 
 -- "/sf": the dungeon you're in, or everything coming up.
 function SF.open(keep)
-  if frame and frame:IsShown() and not keep then frame:Hide() return end
+  if frame and frame:IsShown() and not keep then frame:Hide(); db.shown = false return end
   local dname = currentDungeon()
   if dname then show(string.format(L().inDungeon, dname), dungeonTips(dname))
   else show(string.format(L().upcoming, UnitLevel("player")), upcoming()) end
 end
+
+-- Minimap button: click shows or hides the window; drag it around the edge.
+local mmButton
+local function placeMinimapButton()
+  local a = math.rad(db.mmAngle or 200)
+  local r = (Minimap:GetWidth() or 140) / 2 + 8
+  mmButton:ClearAllPoints()
+  mmButton:SetPoint("CENTER", Minimap, "CENTER", math.cos(a) * r, math.sin(a) * r)
+end
+local function makeMinimapButton()
+  if mmButton or not Minimap then return end
+  local b = CreateFrame("Button", "ShamanForeverMinimapButton", Minimap)
+  mmButton = b
+  b:SetSize(31, 31)
+  b:SetFrameStrata("MEDIUM")
+  b:SetFrameLevel(8)
+  b:RegisterForClicks("AnyUp")
+  b:RegisterForDrag("LeftButton")
+  b:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
+  local bg = b:CreateTexture(nil, "BACKGROUND")
+  bg:SetSize(20, 20)
+  bg:SetTexture("Interface\\Minimap\\UI-Minimap-Background")
+  bg:SetPoint("TOPLEFT", 7, -5)
+  local icon = b:CreateTexture(nil, "ARTWORK")
+  icon:SetSize(17, 17)
+  icon:SetTexture("Interface\\Icons\\Spell_Nature_LightningShield")
+  icon:SetPoint("TOPLEFT", 7, -6)
+  local border = b:CreateTexture(nil, "OVERLAY")
+  border:SetSize(53, 53)
+  border:SetTexture("Interface\\Minimap\\MiniMap-TrackingBorder")
+  border:SetPoint("TOPLEFT")
+  b:SetScript("OnClick", function() SF.open() end)
+  b:SetScript("OnDragStart", function(self)
+    self:SetScript("OnUpdate", function()
+      local mx, my = Minimap:GetCenter()
+      local px, py = GetCursorPosition()
+      local scale = Minimap:GetEffectiveScale()
+      db.mmAngle = math.deg(math.atan2(py / scale - my, px / scale - mx))
+      placeMinimapButton()
+    end)
+  end)
+  b:SetScript("OnDragStop", function(self) self:SetScript("OnUpdate", nil) end)
+  b:SetScript("OnEnter", function(self)
+    GameTooltip:SetOwner(self, "ANCHOR_LEFT")
+    GameTooltip:SetText("Shaman: Forever", 1, 0.82, 0)
+    GameTooltip:AddLine(L().mmTip, 1, 1, 1, true)
+    GameTooltip:Show()
+  end)
+  b:SetScript("OnLeave", function() GameTooltip:Hide() end)
+  placeMinimapButton()
+  b:SetShown(not db.mmHide)
+end
+-- The minimap's addon list (Addon Compartment), named in the .toc.
+function ShamanForever_Toggle() SF.open() end
 
 -- Events -------------------------------------------------------------------------
 local function zoneTips()
@@ -596,7 +668,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
     ShamanForeverCharDB = ShamanForeverCharDB or {}
     db, cdb = ShamanForeverDB, ShamanForeverCharDB
     for k, v in pairs(DEFAULTS) do if cdb[k] == nil then cdb[k] = v end end
-    cdb.seen, cdb.done, cdb.log = cdb.seen or {}, cdb.done or {}, cdb.log or {}
+    cdb.seen, cdb.done, cdb.gone, cdb.log = cdb.seen or {}, cdb.done or {}, cdb.gone or {}, cdb.log or {}
     self:UnregisterEvent("ADDON_LOADED")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
     self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
@@ -608,6 +680,11 @@ ev:SetScript("OnEvent", function(self, event, ...)
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
     -- The zone's name settles a moment after a loading screen.
     C_Timer.After(2, onZone)
+    if event == "PLAYER_ENTERING_WORLD" and not mmButton then
+      makeMinimapButton()
+      -- Open again if you left it open (also after /reload).
+      if db.shown then C_Timer.After(2.5, function() if not (frame and frame:IsShown()) and not InCombatLockdown() then SF.open(true) end end) end
+    end
   elseif event == "PLAYER_LEVEL_UP" then
     local lvl = ...
     -- UnitLevel catches up a moment later.
@@ -778,9 +855,13 @@ SlashCmdList.SHAMANFOREVER = function(msg)
     local t = talentLine(UnitLevel("player"))
     if cdb.talents and t then say(t) end
   elseif cmd == "reiniciar" or cmd == "reset" then
-    wipe(cdb.seen); wipe(cdb.done)
+    wipe(cdb.seen); wipe(cdb.done); wipe(cdb.gone)
     say(L().reset)
   elseif cmd == "registro" or cmd == "log" then showLog()
+  elseif cmd == "minimapa" or cmd == "minimap" then
+    db.mmHide = not db.mmHide
+    makeMinimapButton()
+    if mmButton then mmButton:SetShown(not db.mmHide) end
   elseif cmd == "dondeestoy" or cmd == "whereami" then
     local name, kind, _, _, _, _, _, id = GetInstanceInfo()
     local map = C_Map and C_Map.GetBestMapForUnit and readable(C_Map.GetBestMapForUnit("player"))
