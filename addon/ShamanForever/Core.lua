@@ -50,6 +50,23 @@ function Api.questName(id)
   local name = f and readable(f(id))
   return name or (D.qnames and D.qnames[id]) or ("#" .. tostring(id))
 end
+function Api.questXP(id)
+  if Api.onQuest(id) and GetQuestLogRewardXP then
+    local xp = readable(GetQuestLogRewardXP(id))
+    if type(xp) == "number" and xp > 0 then return xp end
+  end
+  local e = D.qxp and D.qxp[id]
+  if not e then return nil end
+  local lvl = UnitLevel("player")
+  if lvl >= 60 then return 0 end
+  local mult = math.max(1, math.min(10, 2 * (e[1] - lvl) + 20))
+  local xp = e[2] * mult / 10
+  if xp <= 100 then xp = 5 * math.floor((xp + 2) / 5)
+  elseif xp <= 500 then xp = 10 * math.floor((xp + 5) / 10)
+  elseif xp <= 1000 then xp = 25 * math.floor((xp + 12) / 25)
+  else xp = 50 * math.floor((xp + 25) / 50) end
+  return xp
+end
 function Api.count(id)
   if C_Item and C_Item.GetItemCount then return C_Item.GetItemCount(id, true) or 0 end
   return GetItemCount and GetItemCount(id, true) or 0
@@ -381,7 +398,7 @@ local ROWS, ROW_H, W, TOP = 10, 44, 420, 58
 -- You carry the quest of a tip, or a step of its chain (set further down).
 local carrying = function() return false end
 
-local rewardLines
+local rewardLines, questWorth
 -- Beside the window, on the side with room (people keep it in a corner), so
 -- the item and its comparison never cover it.
 local function rowTooltip(r)
@@ -394,10 +411,11 @@ local function rowTooltip(r)
   else GameTooltip:SetPoint("TOPRIGHT", frame, "TOPLEFT", -6, dy) end
   if tip.item then GameTooltip:SetItemByID(tip.item) else GameTooltip:SetText(tip.head, 1, 0.82, 0) end
   if tip.q and carrying(tip.q) then GameTooltip:AddLine(L().haveQuestTip, 0.4, 0.8, 1) end
-  if tip.q and not tip.item and rewardLines then
-    local lines = rewardLines(tip.q)
+  if tip.q and questWorth then
+    local lines = questWorth(tip.q)
     if #lines > 0 then
-      GameTooltip:AddLine(L().rewards, 1, 0.82, 0)
+      GameTooltip:AddLine(" ")
+      GameTooltip:AddLine(Api.questName(tip.q), 1, 0.82, 0)
       for _, line in ipairs(lines) do GameTooltip:AddLine("  " .. line, 1, 1, 1) end
     end
   end
@@ -413,6 +431,7 @@ end
 
 -- A tip marked "Listo" (done) or dismissed (gone) is kept with what it
 -- showed, for its tab; older saves only have `true` and stay hidden.
+local leadLine, xpText
 local function inProgress()
   local tips, seen = {}, {}
   for _, st in ipairs(myPath()) do
@@ -422,7 +441,9 @@ local function inProgress()
       if not off(key) then
         local g = gain(st.i)
         local src = st.a == "class" and string.format(L().classQuest, st.qn or "?") or string.format(L().quest, st.qn or "?")
-        tips[#tips + 1] = { key = key, item = st.i, head = Api.itemName(st.i), src = src, gain = g and gainText(g) or nil,
+        local worth = g and gainText(g) or leadLine(st.q) or ("|cffaaaaaa" .. L().noLonger .. "|r")
+        local xp = xpText(st.q)
+        tips[#tips + 1] = { key = key, item = st.i, head = Api.itemName(st.i), src = src, gain = worth .. (xp and (" · " .. xp) or ""),
           giver = D.givers[st.q], title = st.qn, order = st.l, q = st.q }
       end
     end
@@ -435,7 +456,7 @@ local function inProgress()
         if not off(key) then
           local lv = D.dlevels[dname] or { e.l or 0, e.l or 0 }
           tips[#tips + 1] = { key = key, icon = QUEST_ICON, head = string.format(L().forDungeon, dname, lv[1], lv[2]),
-            src = Api.questName(e.q), giver = D.givers[e.q], title = e.qn, order = lv[1], q = e.q }
+            src = Api.questName(e.q), gain = xpText(e.q), giver = D.givers[e.q], title = e.qn, order = lv[1], q = e.q }
         end
       end
     end
@@ -446,7 +467,7 @@ end
 
 -- The gear a quest rewards, as lines: "item: +12% over yours" (your race,
 -- faction and spec; nothing for pieces nobody in your spec wears).
-function rewardLines(qid)
+function rewardLines(qid, onlyUpgrades)
   local out = {}
   local f, me = myFaction():sub(1, 1), raceLetter()
   for _, id in ipairs(D.qr and D.qr[qid] or {}) do
@@ -456,19 +477,77 @@ function rewardLines(qid)
     end
     if ok and value(id) > 0 then
       local g = gain(id)
-      out[#out + 1] = Api.itemName(id) .. ": " .. (g and gainText(g) or (owned(id) and L().haveIt or L().noUpgrade))
+      if g or not onlyUpgrades then
+        out[#out + 1] = Api.itemName(id) .. ": " .. (g and gainText(g) or (owned(id) and L().haveIt or L().noUpgrade))
+      end
     end
   end
   return out
 end
--- Hovering an NPC: its quests that reward gear, and what it'd be for you.
+-- Quests a step opens further on that reward gear: { step -> { quest… } }.
+local leads
+local function leadsOf(q)
+  if not leads then
+    leads = {}
+    for r in pairs(D.qr or {}) do
+      local seen, p = {}, D.qpre[r]
+      while p and not seen[p] do
+        seen[p] = true
+        for _, a in ipairs(D.qalt and D.qalt[p] or { p }) do
+          leads[a] = leads[a] or {}
+          table.insert(leads[a], r)
+        end
+        p = D.qpre[p]
+      end
+    end
+  end
+  return leads[q] or {}
+end
+-- "Leads to <quest>: <item> +12%" when a later step of its chain is an upgrade.
+function leadLine(q)
+  for _, r in ipairs(leadsOf(q)) do
+    if not Api.questDone(r) then
+      local up = rewardLines(r, true)
+      if #up > 0 then return string.format(L().leadsTo, Api.questName(r), up[1]) end
+    end
+  end
+end
+function xpText(q)
+  local xp = Api.questXP(q)
+  if not xp or xp <= 0 then return nil end
+  return string.format(L().xp, BreakUpLargeNumbers and BreakUpLargeNumbers(xp) or tostring(xp))
+end
+-- What a quest is worth to you, in lines: its gear (or that none helps you
+-- any more), the chain's later upgrade, its XP.
+function questWorth(q)
+  local lines = rewardLines(q)
+  local up = rewardLines(q, true)
+  if #lines > 0 and #up == 0 then
+    local lead = leadLine(q)
+    if lead then lines[#lines + 1] = lead end
+  elseif #lines == 0 then
+    local lead = leadLine(q)
+    if lead then lines[#lines + 1] = lead end
+  end
+  local xp = xpText(q)
+  if xp then lines[#lines + 1] = xp end
+  return lines
+end
+-- Hovering an NPC: its quests for you (not done, your race), with their gear,
+-- what they lead to and their XP.
 local function npcLines(npcId)
   local out = {}
+  local me, lvl = raceLetter(), UnitLevel("player")
   for _, qid in ipairs(D.npcq and D.npcq[npcId] or {}) do
-    if not Api.questDone(qid) then
-      local lines = rewardLines(qid)
+    local r = D.qrace and D.qrace[qid]
+    local req = D.qreq and D.qreq[qid]
+    -- Quests you can take now or within 5 levels.
+    if not Api.questDone(qid) and (not r or r:find(me, 1, true)) and (not req or req <= lvl + 5) then
+      local lines = questWorth(qid)
       if #lines > 0 then
-        out[#out + 1] = { Api.questName(qid) .. (Api.onQuest(qid) and (" · " .. L().haveQuestShort) or ""), lines }
+        local name = Api.questName(qid) .. (Api.onQuest(qid) and (" · " .. L().haveQuestShort) or "")
+          .. (req and req > lvl and (" · " .. string.format(L().fromLevel, req)) or "")
+        out[#out + 1] = { name, lines }
       end
     end
   end

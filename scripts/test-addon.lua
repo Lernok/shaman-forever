@@ -94,7 +94,7 @@ if os.getenv("NPC") then
   for _, q in ipairs(SF.test.npcLines(tonumber(os.getenv("NPC")))) do print("NPC", q[1]); for _, l in ipairs(q[2]) do print("     ", l) end end
 end
 -- Quests you carry (ONQUEST): the "En curso" tab.
-for _, t in ipairs(SF.test.inProgress()) do print("EN CURSO", t.head, "|", t.src) end
+for _, t in ipairs(SF.test.inProgress()) do print("EN CURSO", t.head, "|", t.src, "|", (t.gain or ""):gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")) end
 -- "Listo" on the first tip: it leaves the tips and shows under Listos.
 local before = SF.test.upcoming()
 if before[1] then
