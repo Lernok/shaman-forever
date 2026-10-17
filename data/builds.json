@@ -16,19 +16,18 @@
       "origin": "guia",
       "confidence": "community-untested",
       "note": {
-        "es": "El build de leveling de la guía, ajustado a 21 puntos (la versión original sumaba 22): Reverberation queda en 1/5. Lightning Overload como punto final.",
-        "en": "The guide's leveling build, trimmed to 21 points (the original added up to 22): Reverberation stays at 1/5. Lightning Overload as the last point."
+        "es": "El build de leveling de la guía, ajustado a 21 puntos y al árbol nuevo (build 70450 quitó Call of Thunder): ese punto pasa a Reverberation, que queda en 2/5. Lightning Overload como punto final.",
+        "en": "The guide's leveling build, trimmed to 21 points and to the new tree (build 70450 removed Call of Thunder): that point goes to Reverberation, now 2/5. Lightning Overload as the last point."
       },
       "points": {
         "Elemental": {
           "Convection": 5,
           "Concussion": 3,
-          "Reverberation": 1,
+          "Reverberation": 2,
           "Call of Flame": 3,
           "Elemental Focus": 1,
           "Elemental Alacrity": 3,
           "Eye of the Storm": 3,
-          "Call of Thunder": 1,
           "Lightning Overload": 1
         }
       }
@@ -48,19 +47,18 @@
       "origin": "guia",
       "confidence": "community-untested",
       "note": {
-        "es": "Variante que menciona la guía: Earthbound en vez del primer punto de Lightning Overload, para tener una inmovilización instantánea al subir de nivel solo.",
-        "en": "Variant mentioned by the guide: Earthbound instead of Lightning Overload's first point, for an instant root while leveling solo."
+        "es": "Variante que menciona la guía: Earthbound en vez del primer punto de Lightning Overload, para tener una inmovilización instantánea al subir de nivel solo. Call of Thunder ya no existe (build 70450): ese punto pasa a Reverberation.",
+        "en": "Variant mentioned by the guide: Earthbound instead of Lightning Overload's first point, for an instant root while leveling solo. Call of Thunder no longer exists (build 70450): that point goes to Reverberation."
       },
       "points": {
         "Elemental": {
           "Convection": 5,
           "Concussion": 3,
-          "Reverberation": 1,
+          "Reverberation": 2,
           "Call of Flame": 3,
           "Elemental Focus": 1,
           "Elemental Alacrity": 3,
           "Eye of the Storm": 3,
-          "Call of Thunder": 1,
           "Earthbound": 1
         }
       }
@@ -140,8 +138,8 @@
       },
       "level": 30,
       "note": {
-        "es": "Los primeros 21 puntos del orden más común entre 18.887 builds de leveo Elemental planeados en talentsforever.com (18 sep – 6 oct 2026). En cada tramo de 10 niveles coincide entre el 13% y el 73% de los builds que llegan ahí (73% en 30-39). Es lo que la gente planea, no algo probado en juego.",
-        "en": "The first 21 points of the most common order among 18,887 Elemental leveling builds planned on talentsforever.com (Sep 18 – Oct 6, 2026). In each 10-level bracket, 13% to 73% of the builds that get there agree (73% at 30-39). It's what people plan, not something tested in game."
+        "es": "Orden de leveo de talentsforever.com hasta el nivel 29 (Elemental, 17.166 órdenes, árbol nuevo del build 70450). Del 30 en adelante la página no tiene un orden común: seguimos lo que toma la mayoría (Lightning Overload 96%, Elemental Fury 76%, Elemental Reach 74%, Lava Burst 44%) y Elemental Mastery, el talento final nuevo.",
+        "en": "talentsforever.com leveling order up to level 29 (Elemental, 17,166 orders, new tree from build 70450). From 30 on the page has no common order: we follow what most take (Lightning Overload 96%, Elemental Fury 76%, Elemental Reach 74%, Lava Burst 44%) and Elemental Mastery, the new final talent."
       },
       "points": {
         "Elemental": {
@@ -150,8 +148,7 @@
           "Call of Flame": 3,
           "Elemental Alacrity": 3,
           "Elemental Focus": 1,
-          "Call of Thunder": 1,
-          "Improved Fire Nova": 2,
+          "Eye of the Storm": 3,
           "Lightning Overload": 1
         }
       },
@@ -197,17 +194,10 @@
         ],
         [
           27,
-          27,
-          "Elemental",
-          "Call of Thunder",
-          1
-        ],
-        [
-          28,
           29,
           "Elemental",
-          "Improved Fire Nova",
-          2
+          "Eye of the Storm",
+          3
         ],
         [
           30,
@@ -232,45 +222,45 @@
         ],
         [
           40,
-          44,
-          "Enhancement",
-          "Thundering Strikes",
-          5
-        ],
-        [
-          45,
-          45,
+          40,
           "Elemental",
           "Lava Burst",
           1
         ],
         [
-          46,
-          49,
-          "Restoration",
-          "Totemic Focus",
-          4
+          41,
+          41,
+          "Elemental",
+          "Elemental Mastery",
+          1
         ],
         [
-          50,
-          54,
+          42,
+          46,
+          "Enhancement",
+          "Thundering Strikes",
+          5
+        ],
+        [
+          47,
+          51,
           "Enhancement",
           "Ancestral Knowledge",
           5
         ],
         [
-          55,
-          55,
-          "Restoration",
-          "Totemic Focus",
-          5
-        ],
-        [
+          52,
           56,
-          60,
           "Restoration",
           "Tidal Focus",
           5
+        ],
+        [
+          57,
+          60,
+          "Restoration",
+          "Totemic Focus",
+          4
         ]
       ]
     },
@@ -286,8 +276,8 @@
       },
       "level": 60,
       "note": {
-        "es": "El mismo orden hasta el 60 (proyección: la beta tiene tope en nivel 30). Lava Burst a los 45; después Totemic Focus, Ancestral Knowledge y Tidal Focus como relleno. Cambiá el nivel para ver cómo queda el build en cada punto del leveo.",
-        "en": "The same order up to 60 (a projection: the beta is capped at 30). Lava Burst at 45; then Totemic Focus, Ancestral Knowledge and Tidal Focus as filler. Change the level to see the build at each point of the leveling."
+        "es": "Orden de leveo de talentsforever.com hasta el nivel 29 (Elemental, 17.166 órdenes, árbol nuevo del build 70450). Del 30 en adelante la página no tiene un orden común: seguimos lo que toma la mayoría (Lightning Overload 96%, Elemental Fury 76%, Elemental Reach 74%, Lava Burst 44%) y Elemental Mastery, el talento final nuevo.",
+        "en": "talentsforever.com leveling order up to level 29 (Elemental, 17,166 orders, new tree from build 70450). From 30 on the page has no common order: we follow what most take (Lightning Overload 96%, Elemental Fury 76%, Elemental Reach 74%, Lava Burst 44%) and Elemental Mastery, the new final talent."
       },
       "points": {
         "Elemental": {
@@ -296,20 +286,20 @@
           "Call of Flame": 3,
           "Elemental Alacrity": 3,
           "Elemental Focus": 1,
-          "Call of Thunder": 1,
-          "Improved Fire Nova": 2,
+          "Eye of the Storm": 3,
           "Lightning Overload": 3,
           "Elemental Reach": 2,
           "Elemental Fury": 5,
-          "Lava Burst": 1
+          "Lava Burst": 1,
+          "Elemental Mastery": 1
         },
         "Enhancement": {
           "Thundering Strikes": 5,
           "Ancestral Knowledge": 5
         },
         "Restoration": {
-          "Totemic Focus": 5,
-          "Tidal Focus": 5
+          "Tidal Focus": 5,
+          "Totemic Focus": 4
         }
       },
       "spec": "Elemental",
@@ -354,17 +344,10 @@
         ],
         [
           27,
-          27,
-          "Elemental",
-          "Call of Thunder",
-          1
-        ],
-        [
-          28,
           29,
           "Elemental",
-          "Improved Fire Nova",
-          2
+          "Eye of the Storm",
+          3
         ],
         [
           30,
@@ -389,45 +372,45 @@
         ],
         [
           40,
-          44,
-          "Enhancement",
-          "Thundering Strikes",
-          5
-        ],
-        [
-          45,
-          45,
+          40,
           "Elemental",
           "Lava Burst",
           1
         ],
         [
-          46,
-          49,
-          "Restoration",
-          "Totemic Focus",
-          4
+          41,
+          41,
+          "Elemental",
+          "Elemental Mastery",
+          1
         ],
         [
-          50,
-          54,
+          42,
+          46,
+          "Enhancement",
+          "Thundering Strikes",
+          5
+        ],
+        [
+          47,
+          51,
           "Enhancement",
           "Ancestral Knowledge",
           5
         ],
         [
-          55,
-          55,
-          "Restoration",
-          "Totemic Focus",
-          5
-        ],
-        [
+          52,
           56,
-          60,
           "Restoration",
           "Tidal Focus",
           5
+        ],
+        [
+          57,
+          60,
+          "Restoration",
+          "Totemic Focus",
+          4
         ]
       ]
     },
@@ -586,14 +569,14 @@
           51,
           55,
           "Restoration",
-          "Totemic Focus",
+          "Tidal Focus",
           5
         ],
         [
           56,
           60,
           "Restoration",
-          "Tidal Focus",
+          "Totemic Focus",
           5
         ]
       ]
@@ -766,14 +749,14 @@
           51,
           55,
           "Restoration",
-          "Totemic Focus",
+          "Tidal Focus",
           5
         ],
         [
           56,
           60,
           "Restoration",
-          "Tidal Focus",
+          "Totemic Focus",
           5
         ]
       ]
@@ -1080,17 +1063,17 @@
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
       "note": {
-        "es": "#1 de Shaman en talentsforever.com (1.197 aperturas, 152 guardados). Los 18 de Elemental van a Concussion, Reverberation, Call of Flame, Elemental Devastation e Improved Fire Nova: Earth Shock y shocks más seguidos. Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
-        "en": "#1 Shaman build on talentsforever.com (1,197 opens, 152 saves). The 18 Elemental points go to Concussion, Reverberation, Call of Flame, Elemental Devastation and Improved Fire Nova: Earth Shock and more frequent shocks. Ranking of 41+ point builds since the Sep 24 patch (build 70009); it's what people build, not something tested."
+        "es": "#1 de Shaman en talentsforever.com (1.597 aperturas, 187 guardados). Los 18 de Elemental van a Concussion, Elemental Devastation, Reverberation, Call of Flame y Trial by Fire: Earth Shock y shocks más seguidos. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
+        "en": "#1 Shaman build on talentsforever.com (1,597 opens, 187 saves). The 18 Elemental points go to Concussion, Elemental Devastation, Reverberation, Call of Flame and Trial by Fire: Earth Shock and more frequent shocks. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
       },
-      "code": "050533002-052032031005112251-"
+      "code": "053503002-052032031005112251-"
     },
     {
-      "id": "tf-pop-enh-3",
-      "spec": "Enhancement",
+      "id": "tf-pop-ele-2",
+      "spec": "Elemental",
       "name": {
-        "es": "Más popular #3: 8/33/10",
-        "en": "Most popular #3: 8/33/10"
+        "es": "Más popular #2: 33/7/11",
+        "en": "Most popular #2: 33/7/11"
       },
       "case": {
         "es": "Popular",
@@ -1101,17 +1084,59 @@
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
       "note": {
-        "es": "#3 (689 aperturas, 132 guardados). Mismo Enhancement que el #1, con solo Concussion y Elemental Devastation en Elemental y 10 puntos de maná en Resto (Totemic Focus y Tidal Focus, que además da índice de golpe). Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
-        "en": "#3 (689 opens, 132 saves). Same Enhancement as #1, with only Concussion and Elemental Devastation in Elemental and 10 mana points in Resto (Totemic Focus and Tidal Focus, which also gives hit). Ranking of 41+ point builds since the Sep 24 patch (build 70009); it's what people build, not something tested."
+        "es": "#2 de Shaman y el primero de Elemental (137 aperturas, 31 guardados). Elemental completo hasta Elemental Mastery con Earthbound, Thundering Strikes e Improved Ghost Wolf en Enhancement, y Tidal Focus, Mindfulness, Natural Grace y Water Shield en Resto. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
+        "en": "#2 Shaman build and the top Elemental one (137 opens, 31 saves). Full Elemental down to Elemental Mastery with Earthbound, Thundering Strikes and Improved Ghost Wolf in Enhancement, and Tidal Focus, Mindfulness, Natural Grace and Water Shield in Resto. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
       },
-      "code": "050003-052032031005112251-05005"
+      "code": "3500331023121351-050002-053200001"
+    },
+    {
+      "id": "tf-pop-resto-3",
+      "spec": "Restoration",
+      "name": {
+        "es": "Más popular #3: 0/10/41",
+        "en": "Most popular #3: 0/10/41"
+      },
+      "case": {
+        "es": "Popular",
+        "en": "Popular"
+      },
+      "level": 60,
+      "origin": "talentsforever",
+      "confidence": "community-untested",
+      "source": "https://talentsforever.com/shaman/builds",
+      "note": {
+        "es": "#3 de Shaman y el primero de Resto (1.580 aperturas, 264 guardados). Restoration hasta Riptide y Purification, más Thundering Strikes y Ancestral Knowledge en Enhancement. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
+        "en": "#3 Shaman build and the top Resto one (1,580 opens, 264 saves). Restoration down to Riptide and Purification, plus Thundering Strikes and Ancestral Knowledge in Enhancement. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
+      },
+      "code": "-055-5530003315513151"
+    },
+    {
+      "id": "tf-pop-enh-4",
+      "spec": "Enhancement",
+      "name": {
+        "es": "Más popular #4: 12/34/5",
+        "en": "Most popular #4: 12/34/5"
+      },
+      "case": {
+        "es": "Popular",
+        "en": "Popular"
+      },
+      "level": 60,
+      "origin": "talentsforever",
+      "confidence": "community-untested",
+      "source": "https://talentsforever.com/shaman/builds",
+      "note": {
+        "es": "#4 (38 aperturas, 26 guardados). Enhancement con Ancestral Knowledge 5/5, Concussion, Elemental Devastation, Call of Flame y Elemental Focus en Elemental, y Tidal Focus en Resto (índice de golpe). Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
+        "en": "#4 (38 opens, 26 saves). Enhancement with Ancestral Knowledge 5/5, Concussion, Elemental Devastation, Call of Flame and Elemental Focus in Elemental, and Tidal Focus in Resto (hit). Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
+      },
+      "code": "0530031-055030031005112251-05"
     },
     {
       "id": "tf-pop-enh-5",
       "spec": "Enhancement",
       "name": {
-        "es": "Más popular #5: 18/33/0 (Alacrity)",
-        "en": "Most popular #5: 18/33/0 (Alacrity)"
+        "es": "Más popular #5: 0/32/17 (tanque)",
+        "en": "Most popular #5: 0/32/17 (tank)"
       },
       "case": {
         "es": "Popular",
@@ -1122,52 +1147,10 @@
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
       "note": {
-        "es": "#5 (397 aperturas, 89 guardados). Variante del #1 que en Elemental va a Elemental Focus, Elemental Alacrity y Call of Thunder en vez de Reverberation. Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
-        "en": "#5 (397 opens, 89 saves). A variant of #1 that goes to Elemental Focus, Elemental Alacrity and Call of Thunder in Elemental instead of Reverberation. Ranking of 41+ point builds since the Sep 24 patch (build 70009); it's what people build, not something tested."
+        "es": "#5 (168 aperturas, 3 guardados). Enhancement defensivo (Anticipation, Toughness) sin Maelstrom Weapon, con Resto hasta Mana Tide Totem. 49 puntos: es como lo guardaron. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
+        "en": "#5 (168 opens, 3 saves). Defensive Enhancement (Anticipation, Toughness) without Maelstrom Weapon, with Resto down to Mana Tide Totem. 49 points: that's how it was saved. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
       },
-      "code": "05003313201-052032031005112251-"
-    },
-    {
-      "id": "tf-pop-ele-4",
-      "spec": "Elemental",
-      "name": {
-        "es": "Más popular: 38/13/0",
-        "en": "Most popular: 38/13/0"
-      },
-      "case": {
-        "es": "Popular",
-        "en": "Popular"
-      },
-      "level": 60,
-      "origin": "talentsforever",
-      "confidence": "community-untested",
-      "source": "https://talentsforever.com/shaman/builds",
-      "note": {
-        "es": "#4 de Shaman y el primero de Elemental (1.109 aperturas, 138 guardados). Elemental completo hasta Lava Burst con Earthbound, y 13 en Enhancement por crit (Thundering Strikes), Intelecto (Ancestral Knowledge), Ghost Wolf y Shamanistic Focus. Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
-        "en": "#4 Shaman build and the top Elemental one (1,109 opens, 138 saves). Full Elemental down to Lava Burst with Earthbound, and 13 in Enhancement for crit (Thundering Strikes), Intellect (Ancestral Knowledge), Ghost Wolf and Shamanistic Focus. Ranking of 41+ point builds since the Sep 24 patch (build 70009); it's what people build, not something tested."
-      },
-      "code": "5505301303123151-055002001-"
-    },
-    {
-      "id": "tf-pop-resto-2",
-      "spec": "Restoration",
-      "name": {
-        "es": "Más popular: 0/10/41",
-        "en": "Most popular: 0/10/41"
-      },
-      "case": {
-        "es": "Popular",
-        "en": "Popular"
-      },
-      "level": 60,
-      "origin": "talentsforever",
-      "confidence": "community-untested",
-      "source": "https://talentsforever.com/shaman/builds",
-      "note": {
-        "es": "#2 de Shaman y el primero de Resto (1.373 aperturas, 242 guardados). Restoration hasta Riptide y Purification, más Thundering Strikes y Ancestral Knowledge en Enhancement. Ranking de builds de 41+ puntos desde el parche del 24 sep (build 70009); es lo que la gente arma, no algo probado.",
-        "en": "#2 Shaman build and the top Resto one (1,373 opens, 242 saves). Restoration down to Riptide and Purification, plus Thundering Strikes and Ancestral Knowledge in Enhancement. Ranking of 41+ point builds since the Sep 24 patch (build 70009); it's what people build, not something tested."
-      },
-      "code": "-055-5030503315513151"
+      "code": "-050032011355112201-053022031001"
     }
   ]
 }
