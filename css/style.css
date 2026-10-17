@@ -270,6 +270,7 @@ ul.plain.ordered li::before {
 .sources-caveat { margin: 8px 0 0; line-height: 1.5; color: #8b8d97; }
 .sources a { color: #8ea7bd; }
 .sources ul { margin: 4px 0 0; padding-left: 16px; }
+.sources li { overflow-wrap: anywhere; }
 .sources li { margin: 2px 0; }
 
 .caveat {

@@ -1,4 +1,4 @@
-// Phone check: every page and sub-section at phone size (390x844, touch),
+// Phone check: every page and sub-section at phone size (390 and 360 px wide, touch),
 // in both languages. A view fails when the page scrolls sideways or a
 // visible element sticks out of the screen. Also reports (without failing)
 // tap targets under 28 px and text under 11 px. Most visitors come on a
@@ -17,6 +17,7 @@ const PAGES = ['Inicio', 'Guia', 'Talentos', 'Equipo', 'Profesiones', 'Hechizos'
 const PROFILES = [
   { spec: 'Enhancement', faction: 'horde', race: 'Orc', profs: ['Blacksmithing', 'Mining'], level: 24, lang: 'es' },
   { spec: 'Restoration', faction: 'alliance', race: 'Dwarf', profs: ['Herbalism', 'Alchemy'], level: 33, lang: 'en' },
+  { spec: 'Elemental', faction: 'horde', race: 'Tauren', profs: ['Tailoring', 'Enchanting'], level: 12, lang: 'es', width: 360 },
 ];
 const SHOTS = process.env.SHOTS;
 
@@ -61,8 +62,8 @@ async function main() {
   if (SHOTS) fs.mkdirSync(SHOTS, { recursive: true });
 
   for (const p of PROFILES) {
-    const who = p.spec + ' ' + p.race + ' [' + p.lang + ']';
-    const context = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+    const who = p.spec + ' ' + p.race + ' [' + p.lang + '] ' + (p.width || 390) + 'px';
+    const context = await browser.newContext({ viewport: { width: p.width || 390, height: 800 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
     await context.route(url => !url.href.startsWith(base), r => r.abort());
     await context.addInitScript(s => {
       Object.entries(s).forEach(([k, v]) => localStorage.setItem(k, typeof v === 'string' && k === 'shamanForeverLang' ? v : JSON.stringify(v)));
