@@ -301,10 +301,18 @@ local function pctText(v, cur, fmt)
   if pct >= 100 then return string.format(L().muchBetter, v / cur) end
   return string.format(fmt, math.floor(pct + 0.5))
 end
+local function slotName(slot) return (L().slots and L().slots[slot]) or slot or "?" end
 local function gainText(g)
-  if g.cur <= 0 then return L().gainNew end
-  if g.slot == "Weapon" and cdb.spec == "Enhancement" then return string.format(L().gainDps, num(g.v), num(g.cur)) end
-  return pctText(g.v, g.cur, L().gainPct)
+  local s = slotName(g.slot) .. ": "
+  if g.cur <= 0 then return s .. L().gainNew end
+  if g.slot == "Weapon" and cdb.spec == "Enhancement" then return s .. string.format(L().gainDps, num(g.v), num(g.cur)) end
+  return s .. pctText(g.v, g.cur, L().gainPct)
+end
+-- From which level: "for your level", or "from level 13 (1 to go)".
+local function whenText(l)
+  local lvl = UnitLevel("player")
+  if l <= lvl then return L().whenNow end
+  return l - lvl == 1 and string.format(L().whenIn1, l) or string.format(L().whenInN, l, l - lvl)
 end
 
 -- Your crafting professions: { English name = { name (yours), skill, max } }.
@@ -485,10 +493,9 @@ local function pathTips(filter)
         elseif st.a == "class" then src = string.format(L().classQuest, st.qn or "?")
         elseif st.a == "dquest" then src = string.format(L().dquest, st.z, st.qn or "?")
         else src = string.format(L().quest, st.qn or "?") .. " · " .. zoneName(st.z) end
-        local head = st.l <= lvl and string.format(L().levelNow, st.l) or string.format(L().levelIn, st.l, st.l - lvl)
         local giver = st.q and D.givers[st.q]
         local where = st.a == "dquest" and D.dcont[st.z] or (D.zones[st.z] and D.cont[D.zones[st.z]]) or (giver and giver.z and D.cont[giver.z])
-        tips[#tips + 1] = { key = key, item = st.i, head = head .. " · " .. Api.itemName(st.i), src = src, gain = gainText(g),
+        tips[#tips + 1] = { key = key, item = st.i, head = Api.itemName(st.i), src = src, gain = gainText(g) .. " · " .. whenText(st.l),
           giver = giver, title = st.qn, order = st.l, q = st.q,
           cat = st.a == "dquest" and "dungeon" or "world", where = where, offRoute = st.a == "quest",
           dungeon = st.a == "dquest" and st.z or nil, kind = st.a,
@@ -739,6 +746,21 @@ local function talentLine(lvl)
   if not p then return nil end
   return string.format(L().talent, lvl, p[1], p[2], p[3], t.name[lang()] or t.name.en)
 end
+-- A talent point you haven't spent: a row at the top with where it goes
+-- (the first unspent point's level in the spec's order). Clicking it opens
+-- the talent window.
+local function talentTip()
+  local ok, pts = pcall(function() return UnitCharacterPoints and UnitCharacterPoints("player") end)
+  pts = ok and readable(pts)
+  if type(pts) ~= "number" or pts <= 0 then return nil end
+  local lvl = UnitLevel("player")
+  local t = D.talents[cdb.spec]
+  local p = t and t.at[lvl - pts + 1]
+  return { key = "t" .. lvl .. ":" .. pts, icon = "Interface\\Icons\\INV_Misc_Book_11", pinned = true, talent = true,
+    head = pts == 1 and L().talentHead1 or string.format(L().talentHeadN, pts),
+    src = p and string.format(L().talentWhere, p[1], p[2], p[3]) or L().talentNoPlan,
+    gain = L().talentOpen, order = -3e9, cat = "world" }
+end
 
 -- The research log: "time|event|level|zone|detail" lines.
 local function log(event, detail)
@@ -752,7 +774,7 @@ local show
 local frame, rows, logFrame = nil, {}, nil
 -- ROWS: rows made (the most a tall window shows); AUTO: rows of a window
 -- you never resized. Size bounds: MIN_W..MAX_W, MIN_H..MAX_H.
-local ROWS, AUTO, ROW_H, W, TOP = 16, 10, 44, 420, 80
+local ROWS, AUTO, ROW_H, W, TOP = 16, 10, 44, 420, 58
 local MIN_W, MAX_W, MIN_H, MAX_H = 340, 900, TOP + 12 + 2 * ROW_H, TOP + 26 + 16 * ROW_H
 
 -- You carry the quest of a tip, or a step of its chain (set further down).
@@ -948,7 +970,7 @@ local function archived()
     for key, v in pairs(cdb[kind]) do
       if type(v) == "table" then
         list[#list + 1] = { key = key, item = v.item, icon = v.icon, head = v.head or key, when = v.when or 0, kind = kind,
-          src = (kind == "done" and L().hiddenDone or L().hiddenGone) .. " · " .. (v.src or "") }
+          src = v.src or "" }
       end
     end
   end
@@ -972,7 +994,7 @@ local function makeRow(i)
   local function line(font, anchor, dy)
     local fs = r:CreateFontString(nil, "OVERLAY", font)
     fs:SetPoint("TOPLEFT", anchor, anchor == r.icon and "TOPRIGHT" or "BOTTOMLEFT", anchor == r.icon and 6 or 0, dy)
-    fs:SetPoint("RIGHT", -84, 0)
+    fs:SetPoint("RIGHT", -26, 0)
     fs:SetJustifyH("LEFT")
     if fs.SetWordWrap then fs:SetWordWrap(false) end
     return fs
@@ -981,26 +1003,12 @@ local function makeRow(i)
   r.src = line("GameFontHighlightSmall", r.head, -1)
   r.gain = line("GameFontDisableSmall", r.src, -1)
   r.gain:SetTextColor(0.4, 1, 0.4)
-  r.check = CreateFrame("CheckButton", nil, r, "UICheckButtonTemplate")
-  r.check:SetSize(24, 24)
-  r.check:SetPoint("RIGHT", -54, 0)
-  r.checkLabel = r:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-  r.checkLabel:SetPoint("LEFT", r.check, "RIGHT", 0, 0)
-  r.check:SetScript("OnClick", function(self)
-    GameTooltip:Hide()
-    if self:GetChecked() then archive(r.tip, "done") end
-    render()
-  end)
-  r.check:SetScript("OnEnter", function(self)
-    GameTooltip:SetOwner(self, "ANCHOR_RIGHT"); GameTooltip:SetText(L().doneTip, 1, 1, 1, 1, true); GameTooltip:Show()
-  end)
-  r.check:SetScript("OnLeave", function() GameTooltip:Hide() end)
   r.dismiss = CreateFrame("Button", nil, r, "UIPanelCloseButton")
   r.dismiss:SetSize(22, 22)
   r.dismiss:SetPoint("RIGHT", 2, 0)
   r.dismiss:SetScript("OnClick", function()
     GameTooltip:Hide()
-    if frame.tab == "hidden" then cdb.done[r.tip.key] = nil; cdb.gone[r.tip.key] = nil else archive(r.tip, "gone") end
+    if frame.tab == "hidden" then cdb.done[r.tip.key] = nil; cdb.gone[r.tip.key] = nil else archive(r.tip, "done") end
     render()
   end)
   r.dismiss:SetScript("OnEnter", function(self)
@@ -1016,6 +1024,10 @@ local function makeRow(i)
     local tip = self.tip
     if button == "RightButton" then
       if tip.skip then SF.skipDungeon(tip.skip) end
+      return
+    end
+    if tip.talent then
+      if not InCombatLockdown() then pcall(function() if ToggleTalentFrame then ToggleTalentFrame() end end) end
       return
     end
     if tip.q and SF.markQuest then SF.markQuest(tip.q, tip.item and Api.itemName(tip.item) or tip.title) return end
@@ -1133,23 +1145,9 @@ local function makeFrame()
     frame.tabs[kind] = b
     x = x + 124
   end
-  frame.cat = "all"
-  frame.cats = {}
-  for _, cat in ipairs({ "all", "world", "dungeon", "prof" }) do
-    local b = CreateFrame("Button", nil, frame)
-    b:SetHeight(18)
-    b.text = b:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    b.text:SetPoint("LEFT", 4, 0)
-    b.bg = b:CreateTexture(nil, "BACKGROUND")
-    b.bg:SetAllPoints()
-    b.bg:SetColorTexture(0, 0.44, 0.87, 0.35)
-    b:SetScript("OnClick", function() frame.cat = cat; render() end)
-    frame.cats[cat] = b
-  end
-  frame.cats.all:SetPoint("TOPLEFT", 12, -56)
-  frame.cats.world:SetPoint("LEFT", frame.cats.all, "RIGHT", 6, 0)
-  frame.cats.dungeon:SetPoint("LEFT", frame.cats.world, "RIGHT", 6, 0)
-  frame.cats.prof:SetPoint("LEFT", frame.cats.dungeon, "RIGHT", 6, 0)
+  -- What a click does, under the list.
+  frame.hint = frame:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+  frame.hint:SetJustifyH("LEFT")
   for i = 1, ROWS do rows[i] = makeRow(i) end
 end
 
@@ -1168,19 +1166,14 @@ function render()
   local tab = frame.tab
   local tips = {}
   local prog = inProgress()
-  local inCat = { all = 0, world = 0, dungeon = 0, prof = 0 }
   if tab == "next" then
     -- What you already carry is under "En curso".
     for _, t in ipairs(frame.lastTips or {}) do
-      if not off(t.key) and not (t.q and carrying(t.q)) then
-        local c = t.cat or "world"
-        inCat.all, inCat[c] = inCat.all + 1, inCat[c] + 1
-        if frame.cat == "all" or frame.cat == c then tips[#tips + 1] = t end
-      end
+      if not off(t.key) and not (t.q and carrying(t.q)) then tips[#tips + 1] = t end
     end
     -- Opened by itself and nothing left (all done or dismissed): it goes
     -- away. Opened by you, it stays.
-    if frame.auto and inCat.all == 0 and frame:IsShown() then
+    if frame.auto and #tips == 0 and frame:IsShown() then
       frame.auto = false
       frame:Hide()
       cdb.shown = false
@@ -1202,12 +1195,6 @@ function render()
   end
   frame.tabs.prog:SetPoint("TOPLEFT", frame.tabs.next, "TOPRIGHT", 6, 0)
   frame.tabs.hidden:SetPoint("TOPLEFT", frame.tabs.prog, "TOPRIGHT", 6, 0)
-  for cat, b in pairs(frame.cats) do
-    b:SetShown(tab == "next")
-    b.text:SetText(string.format(L().cats[cat], inCat[cat]))
-    b:SetWidth(b.text:GetStringWidth() + 10)
-    b.bg:SetShown(cat == frame.cat)
-  end
   frame.title:SetText(frame.lastTitle or "")
   frame.spec.text:SetText(string.format(L().spec, specName()))
   local fit = cdb.size and math.max(1, math.min(ROWS, math.floor(((frame.sizing and frame:GetHeight() or cdb.size[2]) - TOP - 26) / ROW_H))) or AUTO
@@ -1221,9 +1208,6 @@ function render()
       local have = tip.q and carrying(tip.q)
       r.have:SetShown(have and true or false)
       r.gain:SetText(have and (L().haveQuest .. (tip.gain and (" · " .. tip.gain) or "")) or tip.gain or "")
-      r.check:SetChecked(false)
-      r.check:SetShown(tab ~= "hidden")
-      r.checkLabel:SetText(tab ~= "hidden" and L().done or "")
       r:SetAlpha((tab == "next" or tab == "prog") and 1 or 0.75)
       r:Show()
     else
@@ -1235,9 +1219,14 @@ function render()
   frame.more:ClearAllPoints()
   frame.more:SetPoint("TOPLEFT", 10, -TOP - 4 - n * ROW_H)
   frame.more:SetText(#tips > fit and string.format(L().more, #tips - fit) or "")
+  local extra = #tips > fit and 14 or 0
+  frame.hint:ClearAllPoints()
+  frame.hint:SetPoint("TOPLEFT", 10, -TOP - 4 - n * ROW_H - extra)
+  frame.hint:SetPoint("RIGHT", -40, 0)
+  frame.hint:SetText(n > 0 and (tab == "hidden" and L().hintHidden or L().hint) or "")
   if not frame.sizing then
     if cdb.size then frame:SetSize(cdb.size[1], cdb.size[2])
-    else frame:SetHeight(#tips == 0 and (TOP + 34) or (TOP + 12 + n * ROW_H + (#tips > fit and 14 or 0))) end
+    else frame:SetHeight(#tips == 0 and (TOP + 34) or (TOP + 26 + n * ROW_H + extra)) end
   end
   frame:Show()
   cdb.shown = true
@@ -1291,9 +1280,8 @@ local function craftTips()
           local learn = c[4] == "f" and string.format(L().learnFavor, c[5] or 0, (faction == "alliance" and c[7] or c[6]) or "?")
             or L().learnTrainer
           local need = p.skill < skill and (" · |cffff9933" .. string.format(L().skillNeed, skill - p.skill) .. "|r") or ""
-          local head = req <= lvl and string.format(L().levelNow, req) or string.format(L().levelIn, req, req - lvl)
-          local tip = { key = key, item = id, head = head .. " · " .. Api.itemName(id),
-            src = string.format(L().craft, p.name, skill) .. need, gain = gainText(g) .. " · " .. learn,
+          local tip = { key = key, item = id, head = Api.itemName(id),
+            src = string.format(L().craft, p.name, skill) .. need .. " · " .. learn, gain = gainText(g) .. " · " .. whenText(req),
             order = req, cat = "prof", v = g.v, slot = g.slot, skill = skill }
           -- One per slot: the best one (the easier to make on a tie).
           local cur = best[g.slot]
@@ -1373,6 +1361,8 @@ local function upcoming()
   end
   for _, t in ipairs(craftTips()) do tips[#tips + 1] = t end
   for _, t in ipairs(campTips()) do tips[#tips + 1] = t end
+  local tt = talentTip()
+  if tt and not off(tt.key) then tips[#tips + 1] = tt end
   table.sort(tips, function(a, b) return a.order < b.order end)
   return tips
 end
@@ -1592,6 +1582,10 @@ ev:SetScript("OnEvent", function(self, event, ...)
     self:RegisterEvent("QUEST_COMPLETE")
     self:RegisterEvent("SKILL_LINES_CHANGED")
     self:RegisterEvent("BAG_UPDATE_DELAYED")
+    -- Spending a talent point takes its row away (an event older clients have).
+    pcall(self.RegisterEvent, self, "CHARACTER_POINTS_CHANGED")
+  elseif event == "CHARACTER_POINTS_CHANGED" then
+    if frame and frame.live then refresh() end
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
     -- The zone's name settles a moment after a loading screen.
     C_Timer.After(2, onZone)
@@ -1652,7 +1646,7 @@ local function onTooltip(tt, id)
   local cur = wornValue(D.items[id].s)
   local text, r, g, b
   if cur <= 0 then text, r, g, b = string.format(L().tipEmpty, specName()), 0.4, 1, 0.4
-  elseif v >= cur then text, r, g, b = pctText(v, cur, L().tipBetter) .. " (" .. specName() .. ")", 0.4, 1, 0.4
+  elseif v >= cur then text, r, g, b = pctText(v, cur, L().tipBetter):gsub("^%l", string.upper) .. " (" .. specName() .. ")", 0.4, 1, 0.4
   else text, r, g, b = string.format(L().tipWorse, math.floor((1 - v / cur) * 100 + 0.5), specName()), 0.6, 0.6, 0.6 end
   tt:AddLine("Shaman: Forever: " .. text, r, g, b)
   if D.iq and D.iq[id] then tt:AddLine(L().markHint, 0.5, 0.75, 1) end

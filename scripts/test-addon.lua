@@ -41,6 +41,8 @@ function GetInventoryItemID(_, slot) if slot == 16 then return tonumber(os.geten
 function GetInventoryItemLink() return nil end
 function GetItemInfo() return nil end
 function GetItemCount() return 0 end
+-- Unspent talent points (TPTS=<n>).
+function UnitCharacterPoints() return tonumber(os.getenv("TPTS") or "0") end
 -- Professions (PROFS="165:85:150 164:40:75": skill line, skill, max).
 local profs = {}
 for line, skill, max in (os.getenv("PROFS") or ""):gmatch("(%d+):(%d+):(%d+)") do profs[#profs + 1] = { tonumber(line), tonumber(skill), tonumber(max) } end
