@@ -5,18 +5,18 @@
     "en": "Ranged DPS / caster"
   },
   "summary": {
-    "es": "Rayos y lava desde lejos: Lava Burst pega 20% más fuerte sobre tu Flame Shock, y Lightning Overload te regala Lightning Bolts extra gratis. En Forever, Elemental Alacrity le saca 0,5 s a tus hechizos principales ya desde la fila 3, así que el ritmo es rápido desde temprano. Ojo: el daño base de los hechizos bajó mucho frente a Classic (Lightning Bolt −56% en su rango máximo) porque el poder con hechizos ahora viene del equipo desde el nivel 10, así que el equipo pesa más que nunca.",
-    "en": "Lightning and lava from range: Lava Burst hits 20% harder on your Flame Shock, and Lightning Overload throws in free extra Lightning Bolts. In Forever, Elemental Alacrity cuts 0.5 sec off your main spells as early as row 3, so the pace is fast from the start. Note: spells' base damage dropped a lot compared to Classic (Lightning Bolt −56% at its top rank) because spell power now comes from gear from level 10, so gear matters more than ever."
+    "es": "Rayos y lava desde lejos: Lava Burst pega 20% más fuerte sobre tu Flame Shock, y Lightning Overload te regala Lightning Bolts extra gratis. En Forever, Elemental Alacrity le saca 0,5 s a tus hechizos principales ya desde la fila 2, así que el ritmo es rápido desde temprano. Ojo: el daño base de los hechizos bajó mucho frente a Classic (Lightning Bolt −56% en su rango máximo) porque el poder con hechizos ahora viene del equipo desde el nivel 10, así que el equipo pesa más que nunca.",
+    "en": "Lightning and lava from range: Lava Burst hits 20% harder on your Flame Shock, and Lightning Overload throws in free extra Lightning Bolts. In Forever, Elemental Alacrity cuts 0.5 sec off your main spells as early as row 2, so the pace is fast from the start. Note: spells' base damage dropped a lot compared to Classic (Lightning Bolt −56% at its top rank) because spell power now comes from gear from level 10, so gear matters more than ever."
   },
   "mechanicalChanges": [
     {
       "change": {
-        "es": "Lava Burst reemplaza a Elemental Mastery",
-        "en": "Lava Burst replaces Elemental Mastery"
+        "es": "Lava Burst en la fila 5, y vuelve Elemental Mastery",
+        "en": "Lava Burst on row 5, and Elemental Mastery is back"
       },
       "detail": {
-        "es": "Fila 7 (nivel 40), pide Lightning Overload 3/3. Bolt de fuego de 2,5 s y 10 s de CD que hace 20% más con tu Flame Shock puesto. Rangos 2 y 3 en el entrenador a los 50 y 60. Elemental Mastery (el crítico garantizado) ya no existe.",
-        "en": "Row 7 (level 40), requires Lightning Overload 3/3. A 2.5 sec Fire bolt on a 10 sec cooldown that deals 20% more with your Flame Shock up. Ranks 2 and 3 at the trainer at 50 and 60. Elemental Mastery (the guaranteed crit) is gone."
+        "es": "Desde el parche del 17-oct (build 70450), Lava Burst está en la fila 5 (nivel 30) y ya no pide Lightning Overload: bolt de fuego de 2,5 s y 10 s de CD que hace 20% más con tu Flame Shock puesto; rangos 2, 3 y 4 en el entrenador a los 40, 50 y 60. Elemental Mastery vuelve como talento final (fila 7, nivel 40, pide Lava Burst), distinto al de Classic: durante 15 s le saca 0,5 s a Lightning Bolt y Lava Burst y quita el CD de Chain Lightning.",
+        "en": "Since the Oct 17 patch (build 70450), Lava Burst is on row 5 (level 30) and no longer needs Lightning Overload: a 2.5 sec Fire bolt on a 10 sec cooldown that deals 20% more with your Flame Shock up; ranks 2, 3 and 4 at the trainer at 40, 50 and 60. Elemental Mastery is back as the final talent (row 7, level 40, needs Lava Burst), unlike Classic's: for 15 sec it takes 0.5 sec off Lightning Bolt and Lava Burst and removes Chain Lightning's cooldown."
       },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
@@ -35,12 +35,12 @@
     },
     {
       "change": {
-        "es": "Elemental Alacrity (ex Lightning Mastery) sube a la fila 3",
-        "en": "Elemental Alacrity (formerly Lightning Mastery) moves up to row 3"
+        "es": "Elemental Alacrity (ex Lightning Mastery) sube a la fila 2",
+        "en": "Elemental Alacrity (formerly Lightning Mastery) moves up to row 2"
       },
       "detail": {
-        "es": "A 3/3 saca 0,5 s a Lightning Bolt, Chain Lightning y Lava Burst: un Lightning Bolt de 2 s ya cerca del nivel 25. En Classic estaba en la fila 6 (nivel 35).",
-        "en": "At 3/3 it takes 0.5 sec off Lightning Bolt, Chain Lightning and Lava Burst: a 2 sec Lightning Bolt already around level 25. In Classic it was on row 6 (level 35)."
+        "es": "A 3/3 saca 0,5 s a Lightning Bolt, Chain Lightning y Lava Burst: un Lightning Bolt de 2 s ya cerca del nivel 20. En Classic estaba en la fila 6 (nivel 35).",
+        "en": "At 3/3 it takes 0.5 sec off Lightning Bolt, Chain Lightning and Lava Burst: a 2 sec Lightning Bolt already around level 20. In Classic it was on row 6 (level 35)."
       },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
@@ -51,8 +51,8 @@
         "en": "Lightning Overload is new (row 5)"
       },
       "detail": {
-        "es": "Chance de que Lightning Bolt o Chain Lightning lancen una copia gratis a la mitad de daño y sin amenaza. El tooltip y el hechizo no coinciden en la chance, y no se sabe si Lava Burst también puede activarlo.",
-        "en": "A chance for Lightning Bolt or Chain Lightning to cast a free copy at half damage and no threat. The tooltip and the spell disagree on the chance, and it's unknown whether Lava Burst can overload."
+        "es": "Pide Elemental Alacrity 3/3. Chance de que Lightning Bolt o Chain Lightning lancen una copia gratis a la mitad de daño y sin amenaza. El tooltip y el hechizo no coinciden en la chance, y no se sabe si Lava Burst también puede activarlo.",
+        "en": "Needs Elemental Alacrity 3/3. A chance for Lightning Bolt or Chain Lightning to cast a free copy at half damage and no threat. The tooltip and the spell disagree on the chance, and it's unknown whether Lava Burst can overload."
       },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
@@ -63,8 +63,8 @@
         "en": "Earthbound: Earthbind roots"
       },
       "detail": {
-        "es": "Talento nuevo de 1 punto (fila 5): Earthbind Totem inmoviliza 5 s a lo que tenga cerca al caer. La inmovilización se aplica del lado del servidor y nadie lo probó todavía.",
-        "en": "New 1-point talent (row 5): Earthbind Totem immobilizes nearby targets for 5 sec when it drops. The root is applied server-side and nobody has tested it yet."
+        "es": "Talento nuevo de 1 punto (fila 4): Earthbind Totem inmoviliza 5 s a lo que tenga cerca al caer. La inmovilización se aplica del lado del servidor y nadie lo probó todavía.",
+        "en": "New 1-point talent (row 4): Earthbind Totem immobilizes nearby targets for 5 sec when it drops. The root is applied server-side and nobody has tested it yet."
       },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
@@ -75,8 +75,8 @@
         "en": "Changes across the rest of the tree"
       },
       "detail": {
-        "es": "Call of Thunder: 1 punto por 3% (antes 5 puntos por 6%), ahora fila 4. Elemental Fury: 5 puntos en la fila 6 (antes 1 en la 5), mismo 100%. Concussion ya solo afecta Earth Shock de los shocks. Call of Flame suma 15% a totems de fuego, Flame Shock, Fire Nova y Lava Burst.",
-        "en": "Call of Thunder: 1 point for 3% (was 5 points for 6%), now row 4. Elemental Fury: 5 points on row 6 (was 1 on row 5), same 100%. Concussion now only affects Earth Shock among the shocks. Call of Flame adds 15% to Fire totems, Flame Shock, Fire Nova and Lava Burst."
+        "es": "Call of Thunder e Improved Fire Nova ya no existen (build 70450). Trial by Fire (fila 4, 2 puntos) es nuevo: +20% de daño a Fire Nova, 4 s menos de CD y 20 s más de Magma Totem. Elemental Fury: 5 puntos en la fila 6 (antes 1 en la 5), mismo 100%, ahora pide Lightning Overload. Concussion ya solo afecta Earth Shock de los shocks. Call of Flame suma 15% a totems de fuego, Flame Shock, Fire Nova y Lava Burst, y 9 s más de Flame Shock. Elemental Devastation sube a la fila 2 y ahora se activa con críticos de hechizos de daño directo.",
+        "en": "Call of Thunder and Improved Fire Nova are gone (build 70450). Trial by Fire (row 4, 2 points) is new: +20% Fire Nova damage, 4 sec off its cooldown and 20 sec more Magma Totem. Elemental Fury: 5 points on row 6 (was 1 on row 5), same 100%, now needs Lightning Overload. Concussion now only affects Earth Shock among the shocks. Call of Flame adds 15% to Fire totems, Flame Shock, Fire Nova and Lava Burst, and 9 sec more Flame Shock. Elemental Devastation moves up to row 2 and now triggers on direct damage spell crits."
       },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
@@ -162,6 +162,10 @@
       {
         "es": "Lightning Bolt de relleno entre Flame Shock y Lava Burst (Lightning Overload puede lanzar uno extra gratis).",
         "en": "Lightning Bolt as filler between Flame Shock and Lava Burst (Lightning Overload can fire a free extra one)."
+      },
+      {
+        "es": "Elemental Mastery en peleas largas o con varios enemigos: 15 s de Lightning Bolt y Lava Burst más rápidos y Chain Lightning sin CD.",
+        "en": "Elemental Mastery on long fights or several enemies: 15 sec of faster Lightning Bolt and Lava Burst and Chain Lightning with no cooldown."
       }
     ],
     "level60Confidence": "community-untested",
@@ -185,16 +189,16 @@
   ],
   "keyTalents": [
     {
-      "es": "Lava Burst (fila 7) — 20% más de daño con tu Flame Shock en el objetivo",
-      "en": "Lava Burst (row 7) — 20% more damage with your Flame Shock on the target"
+      "es": "Lava Burst (fila 5) — 20% más de daño con tu Flame Shock en el objetivo",
+      "en": "Lava Burst (row 5) — 20% more damage with your Flame Shock on the target"
     },
     {
       "es": "Lightning Overload — chance de un Lightning Bolt/Chain Lightning extra gratis, a la mitad de daño",
       "en": "Lightning Overload — chance for a free extra Lightning Bolt/Chain Lightning at half damage"
     },
     {
-      "es": "Elemental Alacrity — −0,5 s a Lightning Bolt, Chain Lightning y Lava Burst, ya en la fila 3",
-      "en": "Elemental Alacrity — −0.5 sec on Lightning Bolt, Chain Lightning and Lava Burst, already on row 3"
+      "es": "Elemental Alacrity — −0,5 s a Lightning Bolt, Chain Lightning y Lava Burst, ya en la fila 2",
+      "en": "Elemental Alacrity — −0.5 sec on Lightning Bolt, Chain Lightning and Lava Burst, already on row 2"
     },
     {
       "es": "Call of Flame — +15% a totems de fuego, Flame Shock, Fire Nova y Lava Burst",
