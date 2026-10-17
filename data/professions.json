@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70374",
+ "build": "1.60.1.70450",
  "recipesSource": "https://classicwowforever.com/professions/",
  "recipesFetched": "2026-10-13",
  "professions": {
@@ -2034,39 +2034,6 @@
     "isNew": true
    },
    {
-    "id": 2315,
-    "name": "Dark Leather Boots",
-    "kind": "Leather",
-    "quality": 2,
-    "req": 15,
-    "ilvl": 20,
-    "bind": "equip",
-    "stats": {
-     "agility": 5
-    },
-    "bonus": {},
-    "armor": 53,
-    "dps": null,
-    "speed": null,
-    "era": "changed",
-    "numbers": "forever",
-    "icon": "inv_boots_05",
-    "equip": [],
-    "role": "melee",
-    "mailFrom40": false,
-    "skill": [
-     75,
-     100,
-     112,
-     125
-    ],
-    "learn": {
-     "type": "trainer",
-     "text": "Trainer, 3s 50c, learn at ≈75"
-    },
-    "isNew": false
-   },
-   {
     "id": 2317,
     "name": "Dark Leather Tunic",
     "kind": "Leather",
@@ -2170,6 +2137,39 @@
      "favor": 30
     },
     "isNew": true
+   },
+   {
+    "id": 2315,
+    "name": "Gray Leather Boots",
+    "kind": "Leather",
+    "quality": 2,
+    "req": 15,
+    "ilvl": 20,
+    "bind": "equip",
+    "stats": {
+     "agility": 5
+    },
+    "bonus": {},
+    "armor": 53,
+    "dps": null,
+    "speed": null,
+    "era": "changed",
+    "numbers": "forever",
+    "icon": "inv_boots_05",
+    "equip": [],
+    "role": "melee",
+    "mailFrom40": false,
+    "skill": [
+     75,
+     100,
+     112,
+     125
+    ],
+    "learn": {
+     "type": "trainer",
+     "text": "Trainer, 3s 50c, learn at ≈75"
+    },
+    "isNew": false
    },
    {
     "id": 4244,
@@ -8046,7 +8046,7 @@
    },
    {
     "id": 252538,
-    "name": "Mender's Leather Shoulder",
+    "name": "Mender's Leather Shoulders",
     "kind": "Leather",
     "quality": 3,
     "req": 42,
@@ -8087,7 +8087,7 @@
    },
    {
     "id": 252569,
-    "name": "Mender's Mail Shoulder",
+    "name": "Mender's Mail Shoulders",
     "kind": "Mail",
     "quality": 3,
     "req": 42,
@@ -8163,7 +8163,7 @@
    },
    {
     "id": 252534,
-    "name": "Prowler's Leather Shoulder",
+    "name": "Prowler's Leather Shoulders",
     "kind": "Leather",
     "quality": 3,
     "req": 42,
@@ -8200,7 +8200,7 @@
    },
    {
     "id": 252568,
-    "name": "Skirmisher's Mail Shoulder",
+    "name": "Skirmisher's Mail Shoulders",
     "kind": "Mail",
     "quality": 3,
     "req": 42,
@@ -8277,7 +8277,7 @@
    },
    {
     "id": 252537,
-    "name": "Skycaller's Leather Shoulder",
+    "name": "Skycaller's Leather Shoulders",
     "kind": "Leather",
     "quality": 3,
     "req": 42,
@@ -8317,7 +8317,7 @@
    },
    {
     "id": 252567,
-    "name": "Skycaller's Mail Shoulder",
+    "name": "Skycaller's Mail Shoulders",
     "kind": "Mail",
     "quality": 3,
     "req": 42,
@@ -8357,7 +8357,7 @@
    },
    {
     "id": 252566,
-    "name": "Stalker's Mail Shoulder",
+    "name": "Stalker's Mail Shoulders",
     "kind": "Mail",
     "quality": 3,
     "req": 42,
@@ -8466,7 +8466,7 @@
    },
    {
     "id": 252536,
-    "name": "Warden's Leather Shoulder",
+    "name": "Warden's Leather Shoulders",
     "kind": "Leather",
     "quality": 3,
     "req": 42,
@@ -10374,7 +10374,7 @@
    },
    {
     "id": 252583,
-    "name": "Charged Scorpid Shoulder",
+    "name": "Charged Scorpid Shoulders",
     "kind": "Mail",
     "quality": 2,
     "req": 50,
@@ -11943,7 +11943,7 @@
    },
    {
     "id": 252592,
-    "name": "Supple Scorpid Shoulder",
+    "name": "Supple Scorpid Shoulders",
     "kind": "Mail",
     "quality": 2,
     "req": 51,
@@ -12090,7 +12090,7 @@
    },
    {
     "id": 252554,
-    "name": "Blue Suede Shoulder",
+    "name": "Blue Suede Shoulders",
     "kind": "Leather",
     "quality": 2,
     "req": 52,
@@ -13748,7 +13748,7 @@
    },
    {
     "id": 252556,
-    "name": "Wicked Leather Shoulder",
+    "name": "Wicked Leather Shoulders",
     "kind": "Leather",
     "quality": 2,
     "req": 54,
@@ -29142,6 +29142,43 @@
     "isNew": false
    },
    {
+    "id": 254123,
+    "name": "Runecloth Cuffs",
+    "kind": "Cloth",
+    "quality": 2,
+    "req": 52,
+    "ilvl": 57,
+    "bind": "equip",
+    "stats": {
+     "intellect": 10
+    },
+    "bonus": {
+     "spellPower": 11
+    },
+    "armor": 33,
+    "dps": null,
+    "speed": null,
+    "era": "new",
+    "numbers": "forever",
+    "icon": "inv_bracer_13",
+    "equip": [
+     "Equip: Increases damage and healing done by magical spells and effects by up to 11."
+    ],
+    "role": "caster",
+    "mailFrom40": false,
+    "skill": [
+     250,
+     265,
+     280,
+     295
+    ],
+    "learn": {
+     "type": "drop",
+     "text": "Pattern 10g: Pexmit, Mount Hyjal"
+    },
+    "isNew": true
+   },
+   {
     "id": 13865,
     "name": "Runecloth Pants",
     "kind": "Cloth",
@@ -29769,43 +29806,6 @@
     "learn": {
      "type": "drop",
      "text": "Pattern: source not found yet"
-    },
-    "isNew": true
-   },
-   {
-    "id": 254123,
-    "name": "Runecloth Cuffs",
-    "kind": "Cloth",
-    "quality": 2,
-    "req": 54,
-    "ilvl": 59,
-    "bind": "equip",
-    "stats": {
-     "intellect": 10
-    },
-    "bonus": {
-     "spellPower": 11
-    },
-    "armor": 33,
-    "dps": null,
-    "speed": null,
-    "era": "new",
-    "numbers": "forever",
-    "icon": "inv_bracer_13",
-    "equip": [
-     "Equip: Increases damage and healing done by magical spells and effects by up to 11."
-    ],
-    "role": "caster",
-    "mailFrom40": false,
-    "skill": [
-     250,
-     265,
-     280,
-     295
-    ],
-    "learn": {
-     "type": "drop",
-     "text": "Pattern 10g: Pexmit, Mount Hyjal"
     },
     "isNew": true
    },
@@ -39621,6 +39621,43 @@
     "isNew": false
    },
    {
+    "id": 250616,
+    "name": "Bold Dirk",
+    "kind": "Dagger",
+    "quality": 2,
+    "req": 52,
+    "ilvl": 57,
+    "bind": "equip",
+    "stats": {
+     "agility": 7
+    },
+    "bonus": {
+     "attackPower": 16
+    },
+    "armor": null,
+    "dps": 35.28,
+    "speed": 1.8,
+    "era": "new",
+    "numbers": "forever",
+    "icon": "inv_weapon_shortblade_01",
+    "equip": [
+     "Equip: +16 Attack Power."
+    ],
+    "role": "melee",
+    "mailFrom40": false,
+    "skill": [
+     270,
+     290,
+     300,
+     310
+    ],
+    "learn": {
+     "type": "drop",
+     "text": "Plans 10g: Pexmit, Mount Hyjal"
+    },
+    "isNew": true
+   },
+   {
     "id": 11607,
     "name": "Dark Iron Sunderer",
     "kind": "2H Axe",
@@ -39813,43 +39850,6 @@
      "text": "Plans: drops from Volchan"
     },
     "isNew": false
-   },
-   {
-    "id": 250616,
-    "name": "Bold Dirk",
-    "kind": "Dagger",
-    "quality": 2,
-    "req": 54,
-    "ilvl": 59,
-    "bind": "equip",
-    "stats": {
-     "agility": 7
-    },
-    "bonus": {
-     "attackPower": 16
-    },
-    "armor": null,
-    "dps": 35.28,
-    "speed": 1.8,
-    "era": "new",
-    "numbers": "forever",
-    "icon": "inv_weapon_shortblade_01",
-    "equip": [
-     "Equip: +16 Attack Power."
-    ],
-    "role": "melee",
-    "mailFrom40": false,
-    "skill": [
-     270,
-     290,
-     300,
-     310
-    ],
-    "learn": {
-     "type": "drop",
-     "text": "Plans 10g: Pexmit, Mount Hyjal"
-    },
-    "isNew": true
    },
    {
     "id": 16989,
@@ -42915,6 +42915,37 @@
     "isNew": true
    },
    {
+    "id": 260829,
+    "name": "EZ-Thro Magnetic Displacer",
+    "kind": "Cloth",
+    "quality": 2,
+    "req": 55,
+    "ilvl": 60,
+    "bind": "equip",
+    "stats": {},
+    "bonus": {},
+    "armor": 44,
+    "dps": null,
+    "speed": null,
+    "era": "new",
+    "numbers": "forever",
+    "icon": "inv_misc_magnet",
+    "equip": [],
+    "role": "other",
+    "mailFrom40": false,
+    "skill": [
+     300,
+     320,
+     330,
+     340
+    ],
+    "learn": {
+     "type": "drop",
+     "text": "Schematic: source not found yet"
+    },
+    "isNew": true
+   },
+   {
     "id": 260820,
     "name": "SAF-T Emergency Ripper: Everlook",
     "kind": "Trinket",
@@ -42930,6 +42961,37 @@
     "era": "new",
     "numbers": "forever",
     "icon": "inv_misc_enggizmos_01",
+    "equip": [],
+    "role": "other",
+    "mailFrom40": false,
+    "skill": [
+     300,
+     320,
+     330,
+     340
+    ],
+    "learn": {
+     "type": "drop",
+     "text": "Schematic: source not found yet"
+    },
+    "isNew": true
+   },
+   {
+    "id": 260828,
+    "name": "SAF-T Nitro Boosts",
+    "kind": "Cloth",
+    "quality": 2,
+    "req": 55,
+    "ilvl": 60,
+    "bind": "equip",
+    "stats": {},
+    "bonus": {},
+    "armor": 44,
+    "dps": null,
+    "speed": null,
+    "era": "new",
+    "numbers": "forever",
+    "icon": "inv_gizmo_rocketbootextreme",
     "equip": [],
     "role": "other",
     "mailFrom40": false,

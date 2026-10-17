@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70374",
+ "build": "1.60.1.70450",
  "fishSource": "https://github.com/ATTWoWAddon/AllTheThings (MIT)",
  "items": [
   {
@@ -5892,8 +5892,8 @@
    "profession": "First Aid",
    "skill": [
     1,
-    null,
-    null
+    20,
+    25
    ],
    "learn": {
     "type": "trainer"
@@ -6125,8 +6125,8 @@
    "profession": "First Aid",
    "skill": [
     1,
-    null,
-    null
+    300,
+    300
    ],
    "learn": {
     "type": "trainer"
@@ -6364,8 +6364,8 @@
    "profession": "First Aid",
    "skill": [
     1,
-    null,
-    null
+    140,
+    145
    ],
    "learn": {
     "type": "trainer"

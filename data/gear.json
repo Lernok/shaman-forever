@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70374",
+ "build": "1.60.1.70450",
  "gear": [
   {
    "id": 208424,
@@ -1686,7 +1686,7 @@
   },
   {
    "id": 275736,
-   "name": "Horn of Ve'ho",
+   "name": "Horn of Ve'han",
    "kind": "Neck",
    "slot": "Neck",
    "quality": 3,
@@ -1723,7 +1723,7 @@
   },
   {
    "id": 275737,
-   "name": "Horned Pauldron",
+   "name": "Hermit's Pauldron",
    "kind": "Mail",
    "slot": "Shoulder",
    "quality": 3,
@@ -1761,7 +1761,7 @@
   },
   {
    "id": 275738,
-   "name": "Jereman Band",
+   "name": "Jereman's Bauble",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 3,
@@ -2927,75 +2927,6 @@
    ]
   },
   {
-   "id": 276333,
-   "name": "Sawyer Family Seal",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 60,
-   "bind": "pickup",
-   "block": 15,
-   "stats": {
-    "stamina": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_jewelry_ring_27",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 276334,
-   "name": "Hand-Hewn Buckler",
-   "kind": "Shield",
-   "slot": "Shield",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 60,
-   "bind": "pickup",
-   "armor": 1833,
-   "block": 34,
-   "stats": {
-    "stamina": 10
-   },
-   "bonus": {
-    "spellPower": 12
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 12."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_shield_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 276336,
    "name": "Yashiro's Spirit Bead",
    "kind": "Off-hand",
@@ -3020,78 +2951,6 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_misc_orb_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 276337,
-   "name": "Thaelemaches' Talisman",
-   "kind": "Trinket",
-   "slot": "Trinket",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 60,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {
-    "attackPower": 18
-   },
-   "equip": [
-    "Equip: +18 Attack Power."
-   ],
-   "use": [
-    "Use: Fear all Demons within 15 yds for 6 sec. (5 Min Cooldown)"
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_jewelry_talisman_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 276339,
-   "name": "Cured Staghide Leggings",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 60,
-   "bind": "pickup",
-   "armor": 135,
-   "stats": {
-    "agility": 15,
-    "stamina": 13
-   },
-   "bonus": {
-    "defense": 9
-   },
-   "equip": [
-    "Equip: Increased Defense +9."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_pants_12",
    "raceMask": -1,
    "sources": [
     {
@@ -3267,6 +3126,110 @@
    ]
   },
   {
+   "id": 275347,
+   "name": "Lichbane",
+   "kind": "Trinket",
+   "slot": "Trinket",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 59,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "use": [
+    "Use: Stuns target Undead for 6 sec. (5 Min Cooldown)"
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_jewelry_talisman_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 275390,
+   "name": "Shallow Bindings",
+   "kind": "Cloth",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 59,
+   "bind": "pickup",
+   "armor": 33,
+   "stats": {
+    "stamina": 9
+   },
+   "bonus": {
+    "spellPower": 11
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 11."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_bracer_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 275434,
+   "name": "Murkborn Girdle",
+   "kind": "Mail",
+   "slot": "Waist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 59,
+   "bind": "pickup",
+   "armor": 176,
+   "stats": {
+    "stamina": 10,
+    "intellect": 10
+   },
+   "bonus": {
+    "attackPower": 18
+   },
+   "equip": [
+    "Equip: +18 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_belt_20",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 275649,
    "name": "Bramblebark Barrier",
    "kind": "Shield",
@@ -3360,6 +3323,147 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_misc_cape_17",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 275669,
+   "name": "Punchy's Punchers",
+   "kind": "Leather",
+   "slot": "Hands",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 59,
+   "bind": "pickup",
+   "armor": 94,
+   "stats": {
+    "strength": 13
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increased Fist Weapons +1."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_gauntlets_26",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 275671,
+   "name": "Field Agent Beverage",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 59,
+   "bind": "pickup",
+   "stats": {
+    "spirit": 4
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Reduces the hit chance of Charm effects against you by 6%."
+   ],
+   "use": [
+    "Use: Increases your effective stealth detection level by 3 for 10 sec, then reduces your effective stealth detection level by 6 for 20 sec. (3 Min Cooldown)"
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_potion_12",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 275685,
+   "name": "Stormwind Intelligence Seal",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 59,
+   "bind": "pickup",
+   "stats": {
+    "agility": 9,
+    "intellect": 8
+   },
+   "bonus": {
+    "healing": 11,
+    "spellDamage": 4
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_jewelry_ring_26",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 276337,
+   "name": "Thaelemaches' Talisman",
+   "kind": "Trinket",
+   "slot": "Trinket",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 59,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {
+    "attackPower": 18
+   },
+   "equip": [
+    "Equip: +18 Attack Power."
+   ],
+   "use": [
+    "Use: Fear all Demons within 15 yds for 6 sec. (5 Min Cooldown)"
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_jewelry_talisman_09",
    "raceMask": -1,
    "sources": [
     {
@@ -3713,213 +3817,6 @@
    ]
   },
   {
-   "id": 274719,
-   "name": "Forgotten Trompers",
-   "kind": "Leather",
-   "slot": "Feet",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "armor": 103,
-   "stats": {
-    "agility": 15,
-    "spirit": 9
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_boots_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 274720,
-   "name": "Abandoned Boots",
-   "kind": "Mail",
-   "slot": "Feet",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "armor": 215,
-   "stats": {
-    "strength": 13,
-    "intellect": 12
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_boots_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 274721,
-   "name": "Tattered Sandals",
-   "kind": "Cloth",
-   "slot": "Feet",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "armor": 52,
-   "stats": {
-    "intellect": 14
-   },
-   "bonus": {
-    "healing": 22,
-    "spellDamage": 8
-   },
-   "equip": [
-    "Equip: Increases healing done by up to 22 and damage done by up to 8 for all magical spells and effects."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_boots_fabric_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 275347,
-   "name": "Lichbane",
-   "kind": "Trinket",
-   "slot": "Trinket",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [
-    "Use: Stuns target Undead for 6 sec. (5 Min Cooldown)"
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_jewelry_talisman_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 275390,
-   "name": "Shallow Bindings",
-   "kind": "Cloth",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "armor": 33,
-   "stats": {
-    "stamina": 9
-   },
-   "bonus": {
-    "spellPower": 11
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 11."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_bracer_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 275434,
-   "name": "Murkborn Girdle",
-   "kind": "Mail",
-   "slot": "Waist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "armor": 176,
-   "stats": {
-    "stamina": 10,
-    "intellect": 10
-   },
-   "bonus": {
-    "attackPower": 18
-   },
-   "equip": [
-    "Equip: +18 Attack Power."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_belt_20",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 275630,
    "name": "Depleted Eye of Influence",
    "kind": "Off-hand",
@@ -3942,148 +3839,6 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_misc_gem_sapphire_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 275669,
-   "name": "Punchy's Punchers",
-   "kind": "Leather",
-   "slot": "Hands",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "armor": 94,
-   "stats": {
-    "strength": 13
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increased Fist Weapons +1."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_gauntlets_26",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 275671,
-   "name": "Field Agent Beverage",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "stats": {
-    "spirit": 4
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Reduces the hit chance of Charm effects against you by 6%."
-   ],
-   "use": [
-    "Use: Increases your effective stealth detection level by 3 for 10 sec, then reduces your effective stealth detection level by 6 for 20 sec. (3 Min Cooldown)"
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_potion_12",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 275685,
-   "name": "Stormwind Intelligence Seal",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "stats": {
-    "agility": 9,
-    "intellect": 8
-   },
-   "bonus": {
-    "healing": 11,
-    "spellDamage": 4
-   },
-   "equip": [
-    "Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_jewelry_ring_26",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 275715,
-   "name": "Rocket Pilot Gloves",
-   "kind": "Cloth",
-   "slot": "Hands",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "armor": 47,
-   "stats": {
-    "spirit": 12
-   },
-   "bonus": {
-    "fireDamage": 19
-   },
-   "equip": [
-    "Equip: Increases damage done by Fire spells and effects by up to 19."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_gauntlets_16",
    "raceMask": -1,
    "sources": [
     {
@@ -4130,43 +3885,6 @@
    ]
   },
   {
-   "id": 275827,
-   "name": "Wool-Stitched Waistband",
-   "kind": "Cloth",
-   "slot": "Waist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "armor": 42,
-   "stats": {
-    "spirit": 10
-   },
-   "bonus": {
-    "healing": 24,
-    "spellDamage": 8
-   },
-   "equip": [
-    "Equip: Increases healing done by up to 24 and damage done by up to 8 for all magical spells and effects."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_belt_10",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 275831,
    "name": "Highfeather Bangle",
    "kind": "Ring",
@@ -4187,77 +3905,6 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_jewelry_ring_23",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 275832,
-   "name": "Crowfeather Tunic",
-   "kind": "Leather",
-   "slot": "Chest",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "armor": 150,
-   "stats": {
-    "agility": 11,
-    "intellect": 10
-   },
-   "bonus": {
-    "spellPower": 20
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 20."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_chest_leather_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 275833,
-   "name": "Bristlecone Cloak",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "armor": 38,
-   "stats": {
-    "stamina": 10
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: When struck in combat, inflicts 3 Nature damage to the attacker."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_misc_cape_03",
    "raceMask": -1,
    "sources": [
     {
@@ -4323,6 +3970,71 @@
    "era": "new",
    "numbers": "forever",
    "icon": "trade_archaeology_pendant-of-the-aqir",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 277215,
+   "name": "Plain Handwraps",
+   "kind": "Cloth",
+   "slot": "Hands",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 58,
+   "bind": "pickup",
+   "armor": 37,
+   "stats": {
+    "intellect": 8,
+    "spirit": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_gauntlets_23",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 277222,
+   "name": "War Painted Cuffs",
+   "kind": "Leather",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 58,
+   "bind": "pickup",
+   "armor": 53,
+   "stats": {
+    "stamina": 7
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_bracer_08",
    "raceMask": -1,
    "sources": [
     {
@@ -4430,6 +4142,322 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_misc_cape_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 274719,
+   "name": "Forgotten Trompers",
+   "kind": "Leather",
+   "slot": "Feet",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 57,
+   "bind": "pickup",
+   "armor": 103,
+   "stats": {
+    "agility": 15,
+    "spirit": 9
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_boots_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 274720,
+   "name": "Abandoned Boots",
+   "kind": "Mail",
+   "slot": "Feet",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 57,
+   "bind": "pickup",
+   "armor": 215,
+   "stats": {
+    "strength": 13,
+    "intellect": 12
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_boots_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 274721,
+   "name": "Tattered Sandals",
+   "kind": "Cloth",
+   "slot": "Feet",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 57,
+   "bind": "pickup",
+   "armor": 52,
+   "stats": {
+    "intellect": 14
+   },
+   "bonus": {
+    "healing": 22,
+    "spellDamage": 8
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 22 and damage done by up to 8 for all magical spells and effects."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_boots_fabric_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 275715,
+   "name": "Rocket Pilot Gloves",
+   "kind": "Cloth",
+   "slot": "Hands",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 57,
+   "bind": "pickup",
+   "armor": 47,
+   "stats": {
+    "spirit": 12
+   },
+   "bonus": {
+    "fireDamage": 19
+   },
+   "equip": [
+    "Equip: Increases damage done by Fire spells and effects by up to 19."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_gauntlets_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 275832,
+   "name": "Crowfeather Tunic",
+   "kind": "Leather",
+   "slot": "Chest",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 57,
+   "bind": "pickup",
+   "armor": 150,
+   "stats": {
+    "agility": 11,
+    "intellect": 10
+   },
+   "bonus": {
+    "spellPower": 20
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 20."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_chest_leather_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 275833,
+   "name": "Bristlecone Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 57,
+   "bind": "pickup",
+   "armor": 38,
+   "stats": {
+    "stamina": 10
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: When struck in combat, inflicts 3 Nature damage to the attacker."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_misc_cape_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 276333,
+   "name": "Sawyer Family Seal",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 57,
+   "bind": "pickup",
+   "block": 15,
+   "stats": {
+    "stamina": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_jewelry_ring_27",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 276334,
+   "name": "Hand-Hewn Buckler",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 57,
+   "bind": "pickup",
+   "armor": 1833,
+   "block": 34,
+   "stats": {
+    "stamina": 10
+   },
+   "bonus": {
+    "spellPower": 12
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_shield_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 276339,
+   "name": "Cured Staghide Leggings",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 57,
+   "bind": "pickup",
+   "armor": 135,
+   "stats": {
+    "agility": 15,
+    "stamina": 13
+   },
+   "bonus": {
+    "defense": 9
+   },
+   "equip": [
+    "Equip: Increased Defense +9."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_pants_12",
    "raceMask": -1,
    "sources": [
     {
@@ -4715,6 +4743,43 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_helmet_50",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 275827,
+   "name": "Wool-Stitched Waistband",
+   "kind": "Cloth",
+   "slot": "Waist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 56,
+   "bind": "pickup",
+   "armor": 42,
+   "stats": {
+    "spirit": 10
+   },
+   "bonus": {
+    "healing": 24,
+    "spellDamage": 8
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 24 and damage done by up to 8 for all magical spells and effects."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_belt_10",
    "raceMask": -1,
    "sources": [
     {
@@ -9152,7 +9217,7 @@
    "name": "Scoutmaster's Eyepatch",
    "kind": "Leather",
    "slot": "Head",
-   "quality": 3,
+   "quality": 2,
    "req": 0,
    "obtain": 0,
    "ilvl": 43,
@@ -14452,6 +14517,70 @@
    ]
   },
   {
+   "id": 3322,
+   "name": "Wispy Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 5,
+   "obtain": 5,
+   "ilvl": 10,
+   "bind": "equip",
+   "armor": 10,
+   "stats": {
+    "spirit": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_misc_cape_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 5,
+     "rec": 5
+    }
+   ]
+  },
+  {
+   "id": 3323,
+   "name": "Ghostly Bracers",
+   "kind": "Cloth",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 5,
+   "obtain": 5,
+   "ilvl": 10,
+   "bind": "equip",
+   "armor": 8,
+   "stats": {
+    "intellect": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_bracer_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 5,
+     "rec": 5
+    }
+   ]
+  },
+  {
    "id": 3471,
    "name": "Copper Chain Vest",
    "kind": "Mail",
@@ -16322,6 +16451,38 @@
    ]
   },
   {
+   "id": 3008,
+   "name": "Wendigo Fur Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 6,
+   "obtain": 6,
+   "ilvl": 11,
+   "bind": "equip",
+   "armor": 10,
+   "stats": {
+    "strength": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_misc_cape_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 6,
+     "rec": 6
+    }
+   ]
+  },
+  {
    "id": 4861,
    "name": "Sleek Feathered Tunic",
    "kind": "Leather",
@@ -17754,6 +17915,38 @@
    ]
   },
   {
+   "id": 763,
+   "name": "Ice-covered Bracers",
+   "kind": "Leather",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 7,
+   "obtain": 7,
+   "ilvl": 12,
+   "bind": "equip",
+   "armor": 27,
+   "stats": {
+    "agility": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_bracer_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 7,
+     "rec": 7
+    }
+   ]
+  },
+  {
    "id": 1965,
    "name": "White Wolf Gloves",
    "kind": "Leather",
@@ -18033,6 +18226,70 @@
      },
      "faction": "both",
      "confidence": "client-data",
+     "asap": 7,
+     "rec": 7
+    }
+   ]
+  },
+  {
+   "id": 6147,
+   "name": "Ratty Old Belt",
+   "kind": "Leather",
+   "slot": "Waist",
+   "quality": 2,
+   "req": 7,
+   "obtain": 7,
+   "ilvl": 12,
+   "bind": "equip",
+   "armor": 35,
+   "stats": {
+    "strength": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_belt_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 7,
+     "rec": 7
+    }
+   ]
+  },
+  {
+   "id": 6201,
+   "name": "Lithe Boots",
+   "kind": "Leather",
+   "slot": "Feet",
+   "quality": 2,
+   "req": 7,
+   "obtain": 7,
+   "ilvl": 12,
+   "bind": "equip",
+   "armor": 42,
+   "stats": {
+    "stamina": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_boots_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
      "asap": 7,
      "rec": 7
     }
@@ -19119,7 +19376,7 @@
       "from": "wowhead",
       "group": false,
       "step": 92550,
-      "steps": 7
+      "steps": 8
      },
      "asap": 5,
      "rec": 7
@@ -19267,6 +19524,38 @@
      },
      "faction": "both",
      "confidence": "client-data",
+     "asap": 8,
+     "rec": 8
+    }
+   ]
+  },
+  {
+   "id": 2546,
+   "name": "Royal Frostmane Girdle",
+   "kind": "Mail",
+   "slot": "Waist",
+   "quality": 2,
+   "req": 8,
+   "obtain": 8,
+   "ilvl": 13,
+   "bind": "equip",
+   "armor": 73,
+   "stats": {
+    "intellect": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_belt_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
      "asap": 8,
      "rec": 8
     }
@@ -19701,6 +19990,38 @@
       "steps": 4
      },
      "asap": 6,
+     "rec": 8
+    }
+   ]
+  },
+  {
+   "id": 6202,
+   "name": "Fingerless Gloves",
+   "kind": "Cloth",
+   "slot": "Hands",
+   "quality": 2,
+   "req": 8,
+   "obtain": 8,
+   "ilvl": 13,
+   "bind": "equip",
+   "armor": 15,
+   "stats": {
+    "agility": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_gauntlets_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 8,
      "rec": 8
     }
    ]
@@ -21480,6 +21801,165 @@
    ]
   },
   {
+   "id": 281283,
+   "name": "Patchwing Pants",
+   "kind": "Cloth",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 9,
+   "ilvl": 11,
+   "bind": "pickup",
+   "armor": 18,
+   "stats": {
+    "intellect": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_pants_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hides for the Forsaken",
+     "questId": 97558,
+     "level": 11,
+     "requiredLevel": 6,
+     "zone": "Tirisfal Glades",
+     "bands": {
+      "red": 6,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97558",
+     "basis": {
+      "name": "Vile Fin Muckdweller",
+      "level": 10,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 1
+     },
+     "asap": 7,
+     "rec": 9
+    }
+   ]
+  },
+  {
+   "id": 281284,
+   "name": "Howlhide Vest",
+   "kind": "Leather",
+   "slot": "Chest",
+   "quality": 2,
+   "req": 0,
+   "obtain": 9,
+   "ilvl": 11,
+   "bind": "pickup",
+   "armor": 58,
+   "stats": {
+    "agility": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_chest_wolf",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hides for the Forsaken",
+     "questId": 97558,
+     "level": 11,
+     "requiredLevel": 6,
+     "zone": "Tirisfal Glades",
+     "bands": {
+      "red": 6,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97558",
+     "basis": {
+      "name": "Vile Fin Muckdweller",
+      "level": 10,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 1
+     },
+     "asap": 7,
+     "rec": 9
+    }
+   ]
+  },
+  {
+   "id": 281285,
+   "name": "Finscale Soles",
+   "kind": "Mail",
+   "slot": "Feet",
+   "quality": 2,
+   "req": 0,
+   "obtain": 9,
+   "ilvl": 11,
+   "bind": "pickup",
+   "armor": 79,
+   "stats": {
+    "strength": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_boots_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hides for the Forsaken",
+     "questId": 97558,
+     "level": 11,
+     "requiredLevel": 6,
+     "zone": "Tirisfal Glades",
+     "bands": {
+      "red": 6,
+      "orange": 7,
+      "yellow": 9,
+      "green": 14,
+      "grey": 17
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97558",
+     "basis": {
+      "name": "Vile Fin Muckdweller",
+      "level": 10,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 1
+     },
+     "asap": 7,
+     "rec": 9
+    }
+   ]
+  },
+  {
    "id": 9598,
    "name": "Sleeping Robes",
    "kind": "Cloth",
@@ -23241,6 +23721,59 @@
    ]
   },
   {
+   "id": 286744,
+   "name": "Thrice-Stitched Flesh",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 0,
+   "obtain": 10,
+   "ilvl": 13,
+   "bind": "pickup",
+   "armor": 12,
+   "stats": {
+    "agility": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_misc_cape_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Rear Guard Patrol",
+     "questId": 99156,
+     "level": 13,
+     "requiredLevel": 6,
+     "zone": "Tirisfal Glades",
+     "bands": {
+      "red": 6,
+      "orange": 9,
+      "yellow": 11,
+      "green": 16,
+      "grey": 19
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/99156",
+     "basis": {
+      "name": "Riptear",
+      "level": 13,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 8,
+     "rec": 10
+    }
+   ]
+  },
+  {
    "id": 286731,
    "name": "Aggor's Refitted Belt",
    "kind": "Mail",
@@ -23287,153 +23820,6 @@
       "steps": 4
      },
      "asap": 10,
-     "rec": 10
-    }
-   ]
-  },
-  {
-   "id": 281283,
-   "name": "Patchwing Pants",
-   "kind": "Cloth",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 10,
-   "ilvl": 11,
-   "bind": "pickup",
-   "armor": 18,
-   "stats": {
-    "intellect": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_pants_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hides for the Forsaken",
-     "questId": 97558,
-     "level": 11,
-     "requiredLevel": 6,
-     "zone": "Tirisfal Glades",
-     "bands": {
-      "red": 6,
-      "orange": 7,
-      "yellow": 9,
-      "green": 14,
-      "grey": 17
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97558",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 6,
-     "rec": 10
-    }
-   ]
-  },
-  {
-   "id": 281284,
-   "name": "Howlhide Vest",
-   "kind": "Leather",
-   "slot": "Chest",
-   "quality": 2,
-   "req": 0,
-   "obtain": 10,
-   "ilvl": 11,
-   "bind": "pickup",
-   "armor": 58,
-   "stats": {
-    "agility": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_chest_wolf",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hides for the Forsaken",
-     "questId": 97558,
-     "level": 11,
-     "requiredLevel": 6,
-     "zone": "Tirisfal Glades",
-     "bands": {
-      "red": 6,
-      "orange": 7,
-      "yellow": 9,
-      "green": 14,
-      "grey": 17
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97558",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 6,
-     "rec": 10
-    }
-   ]
-  },
-  {
-   "id": 281285,
-   "name": "Finscale Soles",
-   "kind": "Mail",
-   "slot": "Feet",
-   "quality": 2,
-   "req": 0,
-   "obtain": 10,
-   "ilvl": 11,
-   "bind": "pickup",
-   "armor": 79,
-   "stats": {
-    "strength": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_boots_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hides for the Forsaken",
-     "questId": 97558,
-     "level": 11,
-     "requiredLevel": 6,
-     "zone": "Tirisfal Glades",
-     "bands": {
-      "red": 6,
-      "orange": 7,
-      "yellow": 9,
-      "green": 14,
-      "grey": 17
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97558",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 6,
      "rec": 10
     }
    ]
@@ -26589,55 +26975,6 @@
       "steps": 4
      },
      "asap": 10,
-     "rec": 12
-    }
-   ]
-  },
-  {
-   "id": 286744,
-   "name": "Thrice-Stitched Flesh",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 0,
-   "obtain": 12,
-   "ilvl": 13,
-   "bind": "pickup",
-   "armor": 12,
-   "stats": {
-    "agility": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_misc_cape_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Rear Guard Patrol",
-     "questId": 99156,
-     "level": 13,
-     "requiredLevel": 6,
-     "zone": "Tirisfal Glades",
-     "bands": {
-      "red": 6,
-      "orange": 9,
-      "yellow": 11,
-      "green": 16,
-      "grey": 19
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/99156",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 6,
      "rec": 12
     }
    ]
@@ -32277,7 +32614,7 @@
   },
   {
    "id": 2315,
-   "name": "Dark Leather Boots",
+   "name": "Gray Leather Boots",
    "kind": "Leather",
    "slot": "Feet",
    "quality": 2,
@@ -58750,6 +59087,38 @@
    ]
   },
   {
+   "id": 273645,
+   "name": "Blindwatcher's Sight",
+   "kind": "Cloth",
+   "slot": "Head",
+   "quality": 3,
+   "req": 21,
+   "obtain": 21,
+   "ilvl": 26,
+   "bind": "pickup",
+   "armor": 35,
+   "stats": {},
+   "bonus": {},
+   "equip": [
+    "Equip: Reduces the hit chance of Disorient effects against you by 7%."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_misc_bandana_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 21,
+     "rec": 21
+    }
+   ]
+  },
+  {
    "id": 273647,
    "name": "Worgpelt Leggings",
    "kind": "Leather",
@@ -78141,6 +78510,75 @@
    ]
   },
   {
+   "id": 286985,
+   "name": "Thicket Bindings",
+   "kind": "Leather",
+   "slot": "Wrist",
+   "quality": 3,
+   "req": 26,
+   "obtain": 26,
+   "ilvl": 31,
+   "bind": "equip",
+   "armor": 46,
+   "stats": {
+    "stamina": 8
+   },
+   "bonus": {
+    "hit": 0.5
+   },
+   "equip": [
+    "Equip: Improves your chance to hit by 0.5%."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_bracer_12",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 26,
+     "rec": 26
+    }
+   ]
+  },
+  {
+   "id": 286986,
+   "name": "Abandoned Leggings",
+   "kind": "Cloth",
+   "slot": "Legs",
+   "quality": 3,
+   "req": 26,
+   "obtain": 26,
+   "ilvl": 31,
+   "bind": "equip",
+   "armor": 42,
+   "stats": {
+    "stamina": 8,
+    "spirit": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_pants_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 26,
+     "rec": 26
+    }
+   ]
+  },
+  {
    "id": 10653,
    "name": "Trailblazer Boots",
    "kind": "Leather",
@@ -81577,6 +82015,81 @@
    ]
   },
   {
+   "id": 286991,
+   "name": "Roused Nature Footwraps",
+   "kind": "Leather",
+   "slot": "Feet",
+   "quality": 3,
+   "req": 27,
+   "obtain": 27,
+   "ilvl": 32,
+   "bind": "equip",
+   "armor": 73,
+   "stats": {
+    "stamina": 6,
+    "spirit": 9
+   },
+   "bonus": {
+    "healing": 13,
+    "spellDamage": 4
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 13 and damage done by up to 4 for all magical spells and effects."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_boots_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 27,
+     "rec": 27
+    }
+   ]
+  },
+  {
+   "id": 286993,
+   "name": "Suffused Bindings",
+   "kind": "Mail",
+   "slot": "Waist",
+   "quality": 3,
+   "req": 27,
+   "obtain": 27,
+   "ilvl": 32,
+   "bind": "equip",
+   "armor": 126,
+   "stats": {
+    "stamina": 9,
+    "intellect": 4
+   },
+   "bonus": {
+    "spellPower": 6
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 6."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_belt_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 27,
+     "rec": 27
+    }
+   ]
+  },
+  {
    "id": 6682,
    "name": "Death Speaker Robes",
    "kind": "Cloth",
@@ -81670,58 +82183,6 @@
      "ref": "https://foreverchanges.pro/quest/5151",
      "basis": {
       "name": "Enraged Panther",
-      "level": 30,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 25,
-     "rec": 27
-    }
-   ]
-  },
-  {
-   "id": 276895,
-   "name": "Transformative Cocoon",
-   "kind": "Trinket",
-   "slot": "Trinket",
-   "quality": 2,
-   "req": 1,
-   "obtain": 27,
-   "ilvl": 31,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [
-    "Use: Absorb up to 260 to 300 damage and Stun yourself for 5 sec. When the Stun expires, gain 60% increased movement speed for 8 sec. (5 Min Cooldown)"
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_misc_web_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Broodmother",
-     "questId": 96261,
-     "level": 31,
-     "requiredLevel": 23,
-     "zone": "Mulgore",
-     "bands": {
-      "red": 23,
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96261",
-     "basis": {
-      "name": "Broodmother Valraxx",
       "level": 30,
       "rank": "elite",
       "from": "wowhead",
@@ -81889,6 +82350,112 @@
       "steps": 1
      },
      "asap": 26,
+     "rec": 27
+    }
+   ]
+  },
+  {
+   "id": 273654,
+   "name": "Crystal Thread Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 0,
+   "obtain": 27,
+   "ilvl": 30,
+   "bind": "pickup",
+   "armor": 23,
+   "stats": {
+    "stamina": 4,
+    "armor": 40
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_misc_cape_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Stronger than Steel",
+     "questId": 96260,
+     "level": 30,
+     "requiredLevel": 23,
+     "zone": "Mulgore",
+     "bands": {
+      "red": 23,
+      "orange": 26,
+      "yellow": 28,
+      "green": 33,
+      "grey": 38
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96260",
+     "basis": {
+      "name": "Gloomrise Spinner",
+      "level": 28,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 1
+     },
+     "asap": 25,
+     "rec": 27
+    }
+   ]
+  },
+  {
+   "id": 276895,
+   "name": "Transformative Cocoon",
+   "kind": "Trinket",
+   "slot": "Trinket",
+   "quality": 2,
+   "req": 1,
+   "obtain": 27,
+   "ilvl": 30,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "use": [
+    "Use: Absorb up to 260 to 300 damage and Stun yourself for 5 sec. When the Stun expires, gain 60% increased movement speed for 8 sec. (5 Min Cooldown)"
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_misc_web_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Broodmother",
+     "questId": 96261,
+     "level": 31,
+     "requiredLevel": 23,
+     "zone": "Mulgore",
+     "bands": {
+      "red": 23,
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96261",
+     "basis": {
+      "name": "Broodmother Valraxx",
+      "level": 30,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 25,
      "rec": 27
     }
    ]
@@ -86757,6 +87324,38 @@
    ]
   },
   {
+   "id": 286984,
+   "name": "Mark of the Marsh",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 3,
+   "req": 28,
+   "obtain": 28,
+   "ilvl": 33,
+   "bind": "equip",
+   "stats": {
+    "strength": 5,
+    "agility": 8
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_jewelry_necklace_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 28,
+     "rec": 28
+    }
+   ]
+  },
+  {
    "id": 286987,
    "name": "Violet Sorcerer's Sandals",
    "kind": "Cloth",
@@ -86814,6 +87413,146 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_gauntlets_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 28,
+     "rec": 28
+    }
+   ]
+  },
+  {
+   "id": 286990,
+   "name": "Arcane Remnant Leggings",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 3,
+   "req": 28,
+   "obtain": 28,
+   "ilvl": 33,
+   "bind": "equip",
+   "armor": 95,
+   "stats": {
+    "intellect": 12
+   },
+   "bonus": {
+    "otherDamage": 17
+   },
+   "equip": [
+    "Equip: Increases damage done by Arcane spells and effects by up to 17."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_pants_leather_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 28,
+     "rec": 28
+    }
+   ]
+  },
+  {
+   "id": 286992,
+   "name": "Construct's Grips",
+   "kind": "Mail",
+   "slot": "Hands",
+   "quality": 3,
+   "req": 28,
+   "obtain": 28,
+   "ilvl": 33,
+   "bind": "equip",
+   "armor": 142,
+   "stats": {
+    "strength": 12,
+    "stamina": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_gauntlets_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 28,
+     "rec": 28
+    }
+   ]
+  },
+  {
+   "id": 286994,
+   "name": "Tattered Kirin Tor Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 3,
+   "req": 28,
+   "obtain": 28,
+   "ilvl": 33,
+   "bind": "equip",
+   "armor": 25,
+   "stats": {
+    "intellect": 8
+   },
+   "bonus": {
+    "hit": 0.5
+   },
+   "equip": [
+    "Equip: Improves your chance to hit by 0.5%."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_misc_cape_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 28,
+     "rec": 28
+    }
+   ]
+  },
+  {
+   "id": 286995,
+   "name": "Guardian's Emblem",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 3,
+   "req": 28,
+   "obtain": 28,
+   "ilvl": 33,
+   "bind": "equip",
+   "stats": {
+    "stamina": 8
+   },
+   "bonus": {
+    "spellPower": 6
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 6."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "spell_arcane_arcaneresilience",
    "raceMask": -1,
    "sources": [
     {
@@ -87271,54 +88010,6 @@
    ]
   },
   {
-   "id": 281290,
-   "name": "Replica Crescent Necklace",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 2,
-   "req": 0,
-   "obtain": 28,
-   "ilvl": 29,
-   "bind": "pickup",
-   "stats": {
-    "agility": 4,
-    "spirit": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_jewelry_necklace_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Gleaming Crescent Necklace",
-     "questId": 98027,
-     "level": 29,
-     "requiredLevel": 25,
-     "zone": "Ashenvale",
-     "bands": {
-      "orange": 25,
-      "yellow": 27,
-      "green": 32,
-      "grey": 37
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98027",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 25,
-     "rec": 28
-    }
-   ]
-  },
-  {
    "id": 281318,
    "name": "Bouquet of Auberdine Flowers",
    "kind": "Off-hand",
@@ -87690,6 +88381,54 @@
       "steps": 3
      },
      "asap": 26,
+     "rec": 28
+    }
+   ]
+  },
+  {
+   "id": 281290,
+   "name": "Replica Crescent Necklace",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 2,
+   "req": 0,
+   "obtain": 28,
+   "ilvl": 26,
+   "bind": "pickup",
+   "stats": {
+    "agility": 4,
+    "spirit": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_jewelry_necklace_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Gleaming Crescent Necklace",
+     "questId": 98027,
+     "level": 29,
+     "requiredLevel": 25,
+     "zone": "Ashenvale",
+     "bands": {
+      "orange": 25,
+      "yellow": 27,
+      "green": 32,
+      "grey": 37
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98027",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 25,
      "rec": 28
     }
    ]
@@ -97138,60 +97877,6 @@
    ]
   },
   {
-   "id": 273654,
-   "name": "Crystal Thread Cloak",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 30,
-   "obtain": 30,
-   "ilvl": 35,
-   "bind": "pickup",
-   "armor": 23,
-   "stats": {
-    "stamina": 4,
-    "armor": 40
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_misc_cape_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Stronger than Steel",
-     "questId": 96260,
-     "level": 30,
-     "requiredLevel": 23,
-     "zone": "Mulgore",
-     "bands": {
-      "red": 23,
-      "orange": 26,
-      "yellow": 28,
-      "green": 33,
-      "grey": 38
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96260",
-     "basis": {
-      "name": "Gloomrise Spinner",
-      "level": 28,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 1
-     },
-     "asap": 30,
-     "rec": 30
-    }
-   ]
-  },
-  {
    "id": 274745,
    "name": "Deckswabber's Mitts",
    "kind": "Mail",
@@ -99062,55 +99747,6 @@
    ]
   },
   {
-   "id": 281295,
-   "name": "Pelt Pants",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 30,
-   "ilvl": 31,
-   "bind": "pickup",
-   "armor": 83,
-   "stats": {
-    "strength": 9,
-    "agility": 7
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_pants_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Packaged Pristine Pelts",
-     "questId": 98156,
-     "level": 31,
-     "requiredLevel": 27,
-     "zone": "Thousand Needles",
-     "bands": {
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98156",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 27,
-     "rec": 30
-    }
-   ]
-  },
-  {
    "id": 281306,
    "name": "Flamescarred Spellbook",
    "kind": "Off-hand",
@@ -99478,6 +100114,55 @@
       "steps": 3
      },
      "asap": 29,
+     "rec": 30
+    }
+   ]
+  },
+  {
+   "id": 281295,
+   "name": "Pelt Pants",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 30,
+   "ilvl": 29,
+   "bind": "pickup",
+   "armor": 83,
+   "stats": {
+    "strength": 9,
+    "agility": 7
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_pants_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Packaged Pristine Pelts",
+     "questId": 98156,
+     "level": 31,
+     "requiredLevel": 27,
+     "zone": "Thousand Needles",
+     "bands": {
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98156",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 27,
      "rec": 30
     }
    ]
@@ -115803,14 +116488,44 @@
    ]
   },
   {
+   "id": 14255,
+   "name": "Lunar Belt",
+   "kind": "Cloth",
+   "slot": "Waist",
+   "quality": 2,
+   "req": 36,
+   "obtain": 36,
+   "ilvl": 42,
+   "bind": "equip",
+   "armor": 31,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_belt_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 36,
+     "rec": 36
+    }
+   ]
+  },
+  {
    "id": 271805,
    "name": "Thrice-Damned Effigy",
    "kind": "Off-hand",
    "slot": "Held In Off-hand",
    "quality": 3,
-   "req": 1,
+   "req": 35,
    "obtain": 36,
-   "ilvl": 43,
+   "ilvl": 42,
    "bind": "pickup",
    "stats": {
     "stamina": 2,
@@ -115852,36 +116567,6 @@
       "steps": 1
      },
      "asap": 35,
-     "rec": 36
-    }
-   ]
-  },
-  {
-   "id": 14255,
-   "name": "Lunar Belt",
-   "kind": "Cloth",
-   "slot": "Waist",
-   "quality": 2,
-   "req": 36,
-   "obtain": 36,
-   "ilvl": 42,
-   "bind": "equip",
-   "armor": 31,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_belt_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 36,
      "rec": 36
     }
    ]
@@ -120333,6 +121018,53 @@
    ]
   },
   {
+   "id": 9398,
+   "name": "Worn Running Boots",
+   "kind": "Leather",
+   "slot": "Feet",
+   "quality": 3,
+   "req": 37,
+   "obtain": 37,
+   "ilvl": 42,
+   "bind": "pickup",
+   "armor": 87,
+   "stats": {
+    "agility": 13,
+    "stamina": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_boots_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Eric \"The Swift\"",
+     "npcId": 6907,
+     "level": 40,
+     "rank": "elite",
+     "zone": "Uldaman",
+     "zoneId": 1337,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 37,
+     "rec": 37,
+     "basis": {
+      "name": "Eric \"The Swift\"",
+      "level": 40,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 9403,
    "name": "Battered Viking Shield",
    "kind": "Shield",
@@ -122968,53 +123700,6 @@
      },
      "asap": 28,
      "rec": 37
-    }
-   ]
-  },
-  {
-   "id": 9398,
-   "name": "Worn Running Boots",
-   "kind": "Leather",
-   "slot": "Feet",
-   "quality": 2,
-   "req": 35,
-   "obtain": 37,
-   "ilvl": 40,
-   "bind": "pickup",
-   "armor": 76,
-   "stats": {
-    "agility": 11,
-    "stamina": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_boots_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Eric \"The Swift\"",
-     "npcId": 6907,
-     "level": 40,
-     "rank": "elite",
-     "zone": "Uldaman",
-     "zoneId": 1337,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 35,
-     "rec": 37,
-     "basis": {
-      "name": "Eric \"The Swift\"",
-      "level": 40,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },
@@ -128606,15 +129291,21 @@
    "armor": 52,
    "stats": {
     "stamina": 9,
-    "intellect": 14,
-    "spirit": 14
+    "intellect": 10,
+    "spirit": 12
    },
-   "bonus": {},
-   "equip": [],
+   "bonus": {
+    "healing": 20,
+    "spellDamage": 7
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 20 and damage done by up to 7 for all magical spells and effects.",
+    "Equip: Reduces the cast time of spells and effects that revive targets by 20%."
+   ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_helmet_12",
    "raceMask": -1,
    "sources": [
@@ -130585,7 +131276,7 @@
    "kind": "Mail",
    "slot": "Chest",
    "quality": 2,
-   "req": 0,
+   "req": 35,
    "obtain": 39,
    "ilvl": 42,
    "bind": "pickup",
@@ -130598,7 +131289,7 @@
    "equip": [],
    "use": [],
    "chance": [],
-   "era": "same",
+   "era": "changed",
    "numbers": "forever",
    "icon": "inv_chest_chain_07",
    "raceMask": -1,
@@ -130639,7 +131330,7 @@
    "kind": "Off-hand",
    "slot": "Held In Off-hand",
    "quality": 2,
-   "req": 0,
+   "req": 35,
    "obtain": 39,
    "ilvl": 42,
    "bind": "pickup",
@@ -130652,7 +131343,7 @@
    "equip": [],
    "use": [],
    "chance": [],
-   "era": "same",
+   "era": "changed",
    "numbers": "forever",
    "icon": "inv_wand_03",
    "raceMask": -1,
@@ -130693,7 +131384,7 @@
    "kind": "Leather",
    "slot": "Waist",
    "quality": 2,
-   "req": 0,
+   "req": 35,
    "obtain": 39,
    "ilvl": 42,
    "bind": "pickup",
@@ -130706,7 +131397,7 @@
    "equip": [],
    "use": [],
    "chance": [],
-   "era": "same",
+   "era": "changed",
    "numbers": "forever",
    "icon": "inv_belt_11",
    "raceMask": -1,
@@ -130747,7 +131438,7 @@
    "kind": "Cloth",
    "slot": "Back",
    "quality": 2,
-   "req": 0,
+   "req": 35,
    "obtain": 39,
    "ilvl": 42,
    "bind": "pickup",
@@ -130760,7 +131451,7 @@
    "equip": [],
    "use": [],
    "chance": [],
-   "era": "same",
+   "era": "changed",
    "numbers": "forever",
    "icon": "inv_misc_cape_12",
    "raceMask": -1,
@@ -134729,6 +135420,44 @@
    ]
   },
   {
+   "id": 276204,
+   "name": "Thrash's Trash",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 3,
+   "req": 40,
+   "obtain": 40,
+   "ilvl": 45,
+   "bind": "pickup",
+   "armor": 1580,
+   "block": 24,
+   "stats": {
+    "stamina": 5
+   },
+   "bonus": {
+    "healing": 5,
+    "spellDamage": 14
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 5 and damage done by up to 14 for all magical spells and effects."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_shield_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 40,
+     "rec": 40
+    }
+   ]
+  },
+  {
    "id": 277212,
    "name": "Soulwoven Epaulets",
    "kind": "Cloth",
@@ -134750,39 +135479,6 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_shoulder_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 40,
-     "rec": 40
-    }
-   ]
-  },
-  {
-   "id": 277215,
-   "name": "Nimble Gloves",
-   "kind": "Cloth",
-   "slot": "Hands",
-   "quality": 2,
-   "req": 40,
-   "obtain": 40,
-   "ilvl": 45,
-   "bind": "pickup",
-   "armor": 37,
-   "stats": {
-    "intellect": 8,
-    "spirit": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_gauntlets_23",
    "raceMask": -1,
    "sources": [
     {
@@ -134848,38 +135544,6 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_pants_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 40,
-     "rec": 40
-    }
-   ]
-  },
-  {
-   "id": 277222,
-   "name": "Feathered Cuffs",
-   "kind": "Leather",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 40,
-   "obtain": 40,
-   "ilvl": 45,
-   "bind": "pickup",
-   "armor": 53,
-   "stats": {
-    "stamina": 7
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_bracer_08",
    "raceMask": -1,
    "sources": [
     {
@@ -135847,57 +136511,6 @@
    ]
   },
   {
-   "id": 271798,
-   "name": "Desperate Barrier",
-   "kind": "Shield",
-   "slot": "Shield",
-   "quality": 2,
-   "req": 1,
-   "obtain": 40,
-   "ilvl": 43,
-   "bind": "pickup",
-   "armor": 1257,
-   "block": 15,
-   "stats": {
-    "strength": 4,
-    "stamina": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_shield_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Proof of Concept",
-     "questId": 92873,
-     "level": 41,
-     "requiredLevel": 35,
-     "zone": "Shen'dralas",
-     "bands": {
-      "red": 35,
-      "orange": 37,
-      "yellow": 39,
-      "green": 44,
-      "grey": 52
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92873",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 35,
-     "rec": 40
-    }
-   ]
-  },
-  {
    "id": 7920,
    "name": "Mithril Plate Pants",
    "kind": "Mail",
@@ -136306,6 +136919,57 @@
       "steps": 3
      },
      "asap": 40,
+     "rec": 40
+    }
+   ]
+  },
+  {
+   "id": 271798,
+   "name": "Desperate Barrier",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 2,
+   "req": 35,
+   "obtain": 40,
+   "ilvl": 38,
+   "bind": "pickup",
+   "armor": 1257,
+   "block": 15,
+   "stats": {
+    "strength": 4,
+    "stamina": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_shield_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Proof of Concept",
+     "questId": 92873,
+     "level": 41,
+     "requiredLevel": 35,
+     "zone": "Shen'dralas",
+     "bands": {
+      "red": 35,
+      "orange": 37,
+      "yellow": 39,
+      "green": 44,
+      "grey": 52
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92873",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 35,
      "rec": 40
     }
    ]
@@ -140556,6 +141220,52 @@
    ]
   },
   {
+   "id": 11311,
+   "name": "Emberscale Cape",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 3,
+   "req": 42,
+   "obtain": 42,
+   "ilvl": 47,
+   "bind": "pickup",
+   "armor": 34,
+   "stats": {
+    "stamina": 14
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_misc_cape_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Galgann Firehammer",
+     "npcId": 7291,
+     "level": 45,
+     "rank": "elite",
+     "zone": "Uldaman",
+     "zoneId": 1337,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 42,
+     "rec": 42,
+     "basis": {
+      "name": "Galgann Firehammer",
+      "level": 45,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 11988,
    "name": "Tellurium Band",
    "kind": "Ring",
@@ -141429,7 +142139,7 @@
   },
   {
    "id": 252534,
-   "name": "Prowler's Leather Shoulder",
+   "name": "Prowler's Leather Shoulders",
    "kind": "Leather",
    "slot": "Shoulder",
    "quality": 3,
@@ -141513,7 +142223,7 @@
   },
   {
    "id": 252536,
-   "name": "Warden's Leather Shoulder",
+   "name": "Warden's Leather Shoulders",
    "kind": "Leather",
    "slot": "Shoulder",
    "quality": 3,
@@ -141555,7 +142265,7 @@
   },
   {
    "id": 252537,
-   "name": "Skycaller's Leather Shoulder",
+   "name": "Skycaller's Leather Shoulders",
    "kind": "Leather",
    "slot": "Shoulder",
    "quality": 3,
@@ -141600,7 +142310,7 @@
   },
   {
    "id": 252538,
-   "name": "Mender's Leather Shoulder",
+   "name": "Mender's Leather Shoulders",
    "kind": "Leather",
    "slot": "Shoulder",
    "quality": 3,
@@ -141646,7 +142356,7 @@
   },
   {
    "id": 252566,
-   "name": "Stalker's Mail Shoulder",
+   "name": "Stalker's Mail Shoulders",
    "kind": "Mail",
    "slot": "Shoulder",
    "quality": 3,
@@ -141688,7 +142398,7 @@
   },
   {
    "id": 252567,
-   "name": "Skycaller's Mail Shoulder",
+   "name": "Skycaller's Mail Shoulders",
    "kind": "Mail",
    "slot": "Shoulder",
    "quality": 3,
@@ -141733,7 +142443,7 @@
   },
   {
    "id": 252568,
-   "name": "Skirmisher's Mail Shoulder",
+   "name": "Skirmisher's Mail Shoulders",
    "kind": "Mail",
    "slot": "Shoulder",
    "quality": 3,
@@ -141778,7 +142488,7 @@
   },
   {
    "id": 252569,
-   "name": "Mender's Mail Shoulder",
+   "name": "Mender's Mail Shoulders",
    "kind": "Mail",
    "slot": "Shoulder",
    "quality": 3,
@@ -142295,53 +143005,6 @@
      "confidence": "community-untested",
      "asap": 42,
      "rec": 42
-    }
-   ]
-  },
-  {
-   "id": 11311,
-   "name": "Emberscale Cape",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 41,
-   "obtain": 42,
-   "ilvl": 46,
-   "bind": "pickup",
-   "armor": 30,
-   "stats": {
-    "stamina": 10,
-    "spirit": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_misc_cape_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Galgann Firehammer",
-     "npcId": 7291,
-     "level": 45,
-     "rank": "elite",
-     "zone": "Uldaman",
-     "zoneId": 1337,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 41,
-     "rec": 42,
-     "basis": {
-      "name": "Galgann Firehammer",
-      "level": 45,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },
@@ -154122,16 +154785,20 @@
    "bind": "equip",
    "armor": 209,
    "stats": {
-    "stamina": 10,
-    "intellect": 10,
-    "spirit": 20
+    "strength": 20,
+    "stamina": 11,
+    "intellect": 7
    },
-   "bonus": {},
-   "equip": [],
+   "bonus": {
+    "spellPower": 9
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 9."
+   ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_gauntlets_15",
    "raceMask": -1,
    "sources": [
@@ -170448,7 +171115,7 @@
   },
   {
    "id": 252583,
-   "name": "Charged Scorpid Shoulder",
+   "name": "Charged Scorpid Shoulders",
    "kind": "Mail",
    "slot": "Shoulder",
    "quality": 2,
@@ -174561,7 +175228,7 @@
   },
   {
    "id": 252592,
-   "name": "Supple Scorpid Shoulder",
+   "name": "Supple Scorpid Shoulders",
    "kind": "Mail",
    "slot": "Shoulder",
    "quality": 2,
@@ -179309,7 +179976,7 @@
   },
   {
    "id": 252554,
-   "name": "Blue Suede Shoulder",
+   "name": "Blue Suede Shoulders",
    "kind": "Leather",
    "slot": "Shoulder",
    "quality": 2,
@@ -179466,6 +180133,48 @@
      "profession": "Tailoring",
      "yellow": 255,
      "grey": 285,
+     "learn": {
+      "type": "drop"
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 52,
+     "rec": 52
+    }
+   ]
+  },
+  {
+   "id": 254123,
+   "name": "Runecloth Cuffs",
+   "kind": "Cloth",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 52,
+   "obtain": 52,
+   "ilvl": 57,
+   "bind": "equip",
+   "armor": 33,
+   "stats": {
+    "intellect": 10
+   },
+   "bonus": {
+    "spellPower": 11
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 11."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_bracer_13",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Tailoring",
+     "yellow": 265,
+     "grey": 295,
      "learn": {
       "type": "drop"
      },
@@ -187550,7 +188259,7 @@
   },
   {
    "id": 252556,
-   "name": "Wicked Leather Shoulder",
+   "name": "Wicked Leather Shoulders",
    "kind": "Leather",
    "slot": "Shoulder",
    "quality": 2,
@@ -187742,48 +188451,6 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_chest_cloth_20",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Tailoring",
-     "yellow": 265,
-     "grey": 295,
-     "learn": {
-      "type": "drop"
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 54,
-     "rec": 54
-    }
-   ]
-  },
-  {
-   "id": 254123,
-   "name": "Runecloth Cuffs",
-   "kind": "Cloth",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 54,
-   "obtain": 54,
-   "ilvl": 59,
-   "bind": "equip",
-   "armor": 33,
-   "stats": {
-    "intellect": 10
-   },
-   "bonus": {
-    "spellPower": 11
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 11."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_bracer_13",
    "raceMask": -1,
    "sources": [
     {
@@ -192773,6 +193440,635 @@
    ]
   },
   {
+   "id": 19308,
+   "name": "Tome of Arcane Domination",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 4,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {
+    "otherDamage": 34
+   },
+   "equip": [
+    "Equip: Increases damage done by Arcane spells and effects by up to 34."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_misc_book_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Grunnda Wolfheart",
+     "npcId": 13218,
+     "level": "54-58",
+     "rank": "elite",
+     "zone": "Alterac Valley",
+     "zoneId": 2597,
+     "raid": false,
+     "pvp": true,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55,
+     "basis": {
+      "name": "Grunnda Wolfheart",
+      "level": 58,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    },
+    {
+     "type": "vendor",
+     "npc": "Gaelden Hammersmith",
+     "zone": "Alterac Valley",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Thanthaldis Snowgleam",
+     "zone": "Alterac Mountains",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Grunnda Wolfheart",
+     "zone": "Alterac Valley",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Jekyll Flandring",
+     "zone": "Alterac Mountains",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
+   "id": 19309,
+   "name": "Tome of Shadow Force",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 4,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 8
+   },
+   "bonus": {
+    "otherDamage": 34
+   },
+   "equip": [
+    "Equip: Increases damage done by Shadow spells and effects by up to 34."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_misc_book_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Grunnda Wolfheart",
+     "npcId": 13218,
+     "level": "54-58",
+     "rank": "elite",
+     "zone": "Alterac Valley",
+     "zoneId": 2597,
+     "raid": false,
+     "pvp": true,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55,
+     "basis": {
+      "name": "Grunnda Wolfheart",
+      "level": 58,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    },
+    {
+     "type": "vendor",
+     "npc": "Gaelden Hammersmith",
+     "zone": "Alterac Valley",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Thanthaldis Snowgleam",
+     "zone": "Alterac Mountains",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Grunnda Wolfheart",
+     "zone": "Alterac Valley",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Jekyll Flandring",
+     "zone": "Alterac Mountains",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
+   "id": 19310,
+   "name": "Tome of the Ice Lord",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 4,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "pickup",
+   "stats": {
+    "intellect": 9
+   },
+   "bonus": {
+    "frostDamage": 34
+   },
+   "equip": [
+    "Equip: Increases damage done by Frost spells and effects by up to 34."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_misc_book_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Grunnda Wolfheart",
+     "npcId": 13218,
+     "level": "54-58",
+     "rank": "elite",
+     "zone": "Alterac Valley",
+     "zoneId": 2597,
+     "raid": false,
+     "pvp": true,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55,
+     "basis": {
+      "name": "Grunnda Wolfheart",
+      "level": 58,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    },
+    {
+     "type": "vendor",
+     "npc": "Gaelden Hammersmith",
+     "zone": "Alterac Valley",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Thanthaldis Snowgleam",
+     "zone": "Alterac Mountains",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Grunnda Wolfheart",
+     "zone": "Alterac Valley",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Jekyll Flandring",
+     "zone": "Alterac Mountains",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
+   "id": 19311,
+   "name": "Tome of Fiery Arcana",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 4,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {
+    "fireDamage": 40
+   },
+   "equip": [
+    "Equip: Increases damage done by Fire spells and effects by up to 40."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_misc_book_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Grunnda Wolfheart",
+     "npcId": 13218,
+     "level": "54-58",
+     "rank": "elite",
+     "zone": "Alterac Valley",
+     "zoneId": 2597,
+     "raid": false,
+     "pvp": true,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55,
+     "basis": {
+      "name": "Grunnda Wolfheart",
+      "level": 58,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    },
+    {
+     "type": "vendor",
+     "npc": "Gaelden Hammersmith",
+     "zone": "Alterac Valley",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Thanthaldis Snowgleam",
+     "zone": "Alterac Mountains",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Grunnda Wolfheart",
+     "zone": "Alterac Valley",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Jekyll Flandring",
+     "zone": "Alterac Mountains",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
+   "id": 19312,
+   "name": "Lei of the Lifegiver",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 4,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 12
+   },
+   "bonus": {
+    "healing": 40,
+    "spellDamage": 13
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 40 and damage done by up to 13 for all magical spells and effects."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_misc_flower_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Grunnda Wolfheart",
+     "npcId": 13218,
+     "level": "54-58",
+     "rank": "elite",
+     "zone": "Alterac Valley",
+     "zoneId": 2597,
+     "raid": false,
+     "pvp": true,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55,
+     "basis": {
+      "name": "Grunnda Wolfheart",
+      "level": 58,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    },
+    {
+     "type": "vendor",
+     "npc": "Gaelden Hammersmith",
+     "zone": "Alterac Valley",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Thanthaldis Snowgleam",
+     "zone": "Alterac Mountains",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Grunnda Wolfheart",
+     "zone": "Alterac Valley",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Jekyll Flandring",
+     "zone": "Alterac Mountains",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
+   "id": 19315,
+   "name": "Therazane's Touch",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 4,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {
+    "spellPower": 31
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 31."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_misc_branch_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Grunnda Wolfheart",
+     "npcId": 13218,
+     "level": "54-58",
+     "rank": "elite",
+     "zone": "Alterac Valley",
+     "zoneId": 2597,
+     "raid": false,
+     "pvp": true,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55,
+     "basis": {
+      "name": "Grunnda Wolfheart",
+      "level": 58,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    },
+    {
+     "type": "vendor",
+     "npc": "Gaelden Hammersmith",
+     "zone": "Alterac Valley",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Thanthaldis Snowgleam",
+     "zone": "Alterac Mountains",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Grunnda Wolfheart",
+     "zone": "Alterac Valley",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Jekyll Flandring",
+     "zone": "Alterac Mountains",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
+   "id": 19325,
+   "name": "Don Julio's Band",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 4,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 11
+   },
+   "bonus": {
+    "attackPower": 16,
+    "crit": 1,
+    "hit": 1
+   },
+   "equip": [
+    "Equip: Improves your chance to hit by 1.0%.",
+    "Equip: Improves your chance to get a critical strike by 1.0%.",
+    "Equip: +16 Attack Power."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "inv_jewelry_ring_35",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Grunnda Wolfheart",
+     "npcId": 13218,
+     "level": "54-58",
+     "rank": "elite",
+     "zone": "Alterac Valley",
+     "zoneId": 2597,
+     "raid": false,
+     "pvp": true,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55,
+     "basis": {
+      "name": "Grunnda Wolfheart",
+      "level": 58,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    },
+    {
+     "type": "vendor",
+     "npc": "Gaelden Hammersmith",
+     "zone": "Alterac Valley",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Thanthaldis Snowgleam",
+     "zone": "Alterac Mountains",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Grunnda Wolfheart",
+     "zone": "Alterac Valley",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    },
+    {
+     "type": "vendor",
+     "npc": "Jekyll Flandring",
+     "zone": "Alterac Mountains",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
    "id": 20295,
    "name": "Blue Dragonscale Leggings",
    "kind": "Mail",
@@ -193216,6 +194512,82 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_misc_enggizmos_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Engineering",
+     "yellow": 320,
+     "grey": 340,
+     "learn": {
+      "type": "drop"
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
+   "id": 260828,
+   "name": "SAF-T Nitro Boosts",
+   "kind": "Cloth",
+   "slot": "Waist",
+   "quality": 2,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 44,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "use": [
+    "Use: Activate a set of jets to increase your movement speed by up to 160%, for up to 8 sec."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_gizmo_rocketbootextreme",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Engineering",
+     "yellow": 320,
+     "grey": 340,
+     "learn": {
+      "type": "drop"
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
+   "id": 260829,
+   "name": "EZ-Thro Magnetic Displacer",
+   "kind": "Cloth",
+   "slot": "Waist",
+   "quality": 2,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 44,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "use": [
+    "Use: Disrupt a magnetic field between you and your nearby enemy target, knocking you both away."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_misc_magnet",
    "raceMask": -1,
    "sources": [
     {
@@ -258926,723 +260298,6 @@
    ]
   },
   {
-   "id": 19308,
-   "name": "Tome of Arcane Domination",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 65,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {
-    "otherDamage": 34
-   },
-   "equip": [
-    "Equip: Increases damage done by Arcane spells and effects by up to 34."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "inv_misc_book_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "drop",
-     "npc": "Grunnda Wolfheart",
-     "npcId": 13218,
-     "level": "54-58",
-     "rank": "elite",
-     "zone": "Alterac Valley",
-     "zoneId": 2597,
-     "raid": false,
-     "pvp": true,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60,
-     "basis": {
-      "name": "Grunnda Wolfheart",
-      "level": 58,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    },
-    {
-     "type": "vendor",
-     "npc": "Gaelden Hammersmith",
-     "zone": "Alterac Valley",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Thanthaldis Snowgleam",
-     "zone": "Alterac Mountains",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Grunnda Wolfheart",
-     "zone": "Alterac Valley",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Jekyll Flandring",
-     "zone": "Alterac Mountains",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 19309,
-   "name": "Tome of Shadow Force",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 65,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 8
-   },
-   "bonus": {
-    "otherDamage": 34
-   },
-   "equip": [
-    "Equip: Increases damage done by Shadow spells and effects by up to 34."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "inv_misc_book_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "drop",
-     "npc": "Grunnda Wolfheart",
-     "npcId": 13218,
-     "level": "54-58",
-     "rank": "elite",
-     "zone": "Alterac Valley",
-     "zoneId": 2597,
-     "raid": false,
-     "pvp": true,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60,
-     "basis": {
-      "name": "Grunnda Wolfheart",
-      "level": 58,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    },
-    {
-     "type": "vendor",
-     "npc": "Gaelden Hammersmith",
-     "zone": "Alterac Valley",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Thanthaldis Snowgleam",
-     "zone": "Alterac Mountains",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Grunnda Wolfheart",
-     "zone": "Alterac Valley",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Jekyll Flandring",
-     "zone": "Alterac Mountains",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 19310,
-   "name": "Tome of the Ice Lord",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 65,
-   "bind": "pickup",
-   "stats": {
-    "intellect": 9
-   },
-   "bonus": {
-    "frostDamage": 34
-   },
-   "equip": [
-    "Equip: Increases damage done by Frost spells and effects by up to 34."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "inv_misc_book_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "drop",
-     "npc": "Grunnda Wolfheart",
-     "npcId": 13218,
-     "level": "54-58",
-     "rank": "elite",
-     "zone": "Alterac Valley",
-     "zoneId": 2597,
-     "raid": false,
-     "pvp": true,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60,
-     "basis": {
-      "name": "Grunnda Wolfheart",
-      "level": 58,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    },
-    {
-     "type": "vendor",
-     "npc": "Gaelden Hammersmith",
-     "zone": "Alterac Valley",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Thanthaldis Snowgleam",
-     "zone": "Alterac Mountains",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Grunnda Wolfheart",
-     "zone": "Alterac Valley",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Jekyll Flandring",
-     "zone": "Alterac Mountains",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 19311,
-   "name": "Tome of Fiery Arcana",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 65,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {
-    "fireDamage": 40
-   },
-   "equip": [
-    "Equip: Increases damage done by Fire spells and effects by up to 40."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "inv_misc_book_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "drop",
-     "npc": "Grunnda Wolfheart",
-     "npcId": 13218,
-     "level": "54-58",
-     "rank": "elite",
-     "zone": "Alterac Valley",
-     "zoneId": 2597,
-     "raid": false,
-     "pvp": true,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60,
-     "basis": {
-      "name": "Grunnda Wolfheart",
-      "level": 58,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    },
-    {
-     "type": "vendor",
-     "npc": "Gaelden Hammersmith",
-     "zone": "Alterac Valley",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Thanthaldis Snowgleam",
-     "zone": "Alterac Mountains",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Grunnda Wolfheart",
-     "zone": "Alterac Valley",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Jekyll Flandring",
-     "zone": "Alterac Mountains",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 19312,
-   "name": "Lei of the Lifegiver",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 65,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 12
-   },
-   "bonus": {
-    "healing": 40,
-    "spellDamage": 13
-   },
-   "equip": [
-    "Equip: Increases healing done by up to 40 and damage done by up to 13 for all magical spells and effects."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "inv_misc_flower_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "drop",
-     "npc": "Grunnda Wolfheart",
-     "npcId": 13218,
-     "level": "54-58",
-     "rank": "elite",
-     "zone": "Alterac Valley",
-     "zoneId": 2597,
-     "raid": false,
-     "pvp": true,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60,
-     "basis": {
-      "name": "Grunnda Wolfheart",
-      "level": 58,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    },
-    {
-     "type": "vendor",
-     "npc": "Gaelden Hammersmith",
-     "zone": "Alterac Valley",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Thanthaldis Snowgleam",
-     "zone": "Alterac Mountains",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Grunnda Wolfheart",
-     "zone": "Alterac Valley",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Jekyll Flandring",
-     "zone": "Alterac Mountains",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 19315,
-   "name": "Therazane's Touch",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 65,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {
-    "spellPower": 31
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 31."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "inv_misc_branch_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "drop",
-     "npc": "Grunnda Wolfheart",
-     "npcId": 13218,
-     "level": "54-58",
-     "rank": "elite",
-     "zone": "Alterac Valley",
-     "zoneId": 2597,
-     "raid": false,
-     "pvp": true,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60,
-     "basis": {
-      "name": "Grunnda Wolfheart",
-      "level": 58,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    },
-    {
-     "type": "vendor",
-     "npc": "Gaelden Hammersmith",
-     "zone": "Alterac Valley",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Thanthaldis Snowgleam",
-     "zone": "Alterac Mountains",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Grunnda Wolfheart",
-     "zone": "Alterac Valley",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Jekyll Flandring",
-     "zone": "Alterac Mountains",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 19321,
-   "name": "The Immovable Object",
-   "kind": "Shield",
-   "slot": "Shield",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 65,
-   "bind": "pickup",
-   "armor": 2468,
-   "block": 44,
-   "stats": {
-    "stamina": 15
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "spell_frost_chillingarmor",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "drop",
-     "npc": "Grunnda Wolfheart",
-     "npcId": 13218,
-     "level": "54-58",
-     "rank": "elite",
-     "zone": "Alterac Valley",
-     "zoneId": 2597,
-     "raid": false,
-     "pvp": true,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60,
-     "basis": {
-      "name": "Grunnda Wolfheart",
-      "level": 58,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    },
-    {
-     "type": "vendor",
-     "npc": "Gaelden Hammersmith",
-     "zone": "Alterac Valley",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Thanthaldis Snowgleam",
-     "zone": "Alterac Mountains",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Grunnda Wolfheart",
-     "zone": "Alterac Valley",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Jekyll Flandring",
-     "zone": "Alterac Mountains",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 19325,
-   "name": "Don Julio's Band",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 65,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 11
-   },
-   "bonus": {
-    "attackPower": 16,
-    "crit": 1,
-    "hit": 1
-   },
-   "equip": [
-    "Equip: Improves your chance to hit by 1.0%.",
-    "Equip: Improves your chance to get a critical strike by 1.0%.",
-    "Equip: +16 Attack Power."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "changed",
-   "numbers": "forever",
-   "icon": "inv_jewelry_ring_35",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "drop",
-     "npc": "Grunnda Wolfheart",
-     "npcId": 13218,
-     "level": "54-58",
-     "rank": "elite",
-     "zone": "Alterac Valley",
-     "zoneId": 2597,
-     "raid": false,
-     "pvp": true,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60,
-     "basis": {
-      "name": "Grunnda Wolfheart",
-      "level": 58,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    },
-    {
-     "type": "vendor",
-     "npc": "Gaelden Hammersmith",
-     "zone": "Alterac Valley",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Thanthaldis Snowgleam",
-     "zone": "Alterac Mountains",
-     "faction": "alliance",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Grunnda Wolfheart",
-     "zone": "Alterac Valley",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    },
-    {
-     "type": "vendor",
-     "npc": "Jekyll Flandring",
-     "zone": "Alterac Mountains",
-     "faction": "horde",
-     "pvp": true,
-     "confidence": "classic-assumed",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
    "id": 19426,
    "name": "Orb of the Darkmoon",
    "kind": "Neck",
@@ -269719,6 +270374,94 @@
      },
      "faction": "both",
      "confidence": "client-data",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 19321,
+   "name": "The Immovable Object",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 60,
+   "bind": "pickup",
+   "armor": 2468,
+   "block": 44,
+   "stats": {
+    "stamina": 15
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "forever",
+   "icon": "spell_frost_chillingarmor",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Grunnda Wolfheart",
+     "npcId": 13218,
+     "level": "54-58",
+     "rank": "elite",
+     "zone": "Alterac Valley",
+     "zoneId": 2597,
+     "raid": false,
+     "pvp": true,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 60,
+     "rec": 60,
+     "basis": {
+      "name": "Grunnda Wolfheart",
+      "level": 58,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    },
+    {
+     "type": "vendor",
+     "npc": "Gaelden Hammersmith",
+     "zone": "Alterac Valley",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 60,
+     "rec": 60
+    },
+    {
+     "type": "vendor",
+     "npc": "Thanthaldis Snowgleam",
+     "zone": "Alterac Mountains",
+     "faction": "alliance",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 60,
+     "rec": 60
+    },
+    {
+     "type": "vendor",
+     "npc": "Grunnda Wolfheart",
+     "zone": "Alterac Valley",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
+     "asap": 60,
+     "rec": 60
+    },
+    {
+     "type": "vendor",
+     "npc": "Jekyll Flandring",
+     "zone": "Alterac Mountains",
+     "faction": "horde",
+     "pvp": true,
+     "confidence": "classic-assumed",
      "asap": 60,
      "rec": 60
     }
