@@ -1354,3 +1354,12 @@ details.wp-all[open] > summary { margin-bottom: 10px; }
 .mc-code { margin: 0; padding: 10px 12px; background: rgba(0,0,0,.35); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font: 12px/1.5 ui-monospace, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; user-select: all; }
 .mc-foot { display: flex; align-items: center; gap: 10px; font-size: 11px; }
 @media (max-width: 480px) { .mc-grid { grid-template-columns: 1fr; } }
+
+/* Touch screens: buttons, menus and "see more" links big enough for a finger
+   (most visitors come on a phone). The computer layout doesn't change. */
+@media (pointer: coarse) {
+  .btn, select, .sb-search { min-height: 40px; }
+  .home-more, .plan-more, .sum-more { display: inline-block; padding-top: 10px; padding-bottom: 10px; }
+  .chk input[type=checkbox] { width: 18px; height: 18px; }
+  a.src { display: inline-block; padding: 6px 2px; }
+}

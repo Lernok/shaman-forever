@@ -50,3 +50,4 @@ jobs:
           npm i --no-save --no-package-lock playwright@1.48.2
           npx playwright install --with-deps chromium
           node scripts/smoke.js
+          node scripts/mobile-check.js
