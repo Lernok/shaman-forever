@@ -5,7 +5,8 @@ const path = require('path');
 const P = process.argv[2];
 process.chdir(P);
 const { runAddon } = require(path.join(P, 'tests/helpers/lua'));
-const A = 'D:/World of Warcraft/_classic_beta_/Interface/AddOns';
+// The packs are on standby, out of the game (PACKS=<folder> to point elsewhere).
+const A = process.env.PACKS || path.join(__dirname, '..', '.cache', 'tools', 'backup-packs-installed');
 const guide = process.argv[3] || 'sf-orc-enh/04-silverpine-forest';
 const r = runAddon({
   stubs: ['stub_world.lua'],

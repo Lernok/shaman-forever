@@ -504,10 +504,11 @@ end
 -- to where the chain starts. inZone: only those given in the zone you're in.
 local function pickupTips(inZone)
   local lvl, faction, tips, seenKey = UnitLevel("player"), myFaction(), {}, {}
-  local z = inZone and here()
+  local z, me = inZone and here(), here()
   for dname, list in pairs(D.dquests) do
     local lv = D.dlevels[dname]
-    if lv and lvl >= lv[1] - cdb.lead - 1 and lvl <= lv[2] then
+    if lv and lvl >= lv[1] - cdb.lead - 1 and lvl <= lv[2] and not off("k" .. dname) then
+      local rows = {}
       -- inList: quests of this dungeon; nextOf: the one each quest leads to.
       local inList, nextOf = {}, {}
       for _, e in ipairs(list) do inList[e.q] = true; if e.p then nextOf[e.p] = e end end
@@ -531,11 +532,24 @@ local function pickupTips(inZone)
             if chain and chain ~= target.qn then src = src .. " " .. string.format(L().chainTo, chain) end
             local third = giverText(g)
             if (e.r or 0) > lvl then third = third .. " · " .. string.format(L().fromLevel, e.r) end
-            tips[#tips + 1] = { key = key, icon = QUEST_ICON, head = string.format(L().forDungeon, dname, lv[1], lv[2]),
+            rows[#rows + 1] = { key = key, icon = QUEST_ICON, head = string.format(L().forDungeon, dname, lv[1], lv[2]),
               src = src, gain = third, giver = g, title = target.qn, order = lv[1], q = target.q,
               cat = "dungeon", where = D.dcont[dname] }
           end
         end
+      end
+      -- One row per dungeon: its quests in the row's tooltip, the click marks
+      -- the giver closest to you (one in your zone if there is).
+      if #rows == 1 then tips[#tips + 1] = rows[1]
+      elseif #rows > 1 then
+        local pick, lines = rows[1], {}
+        for _, r in ipairs(rows) do
+          if r.giver.z and areaName(r.giver.z) == me and not (pick.giver.z and areaName(pick.giver.z) == me) then pick = r end
+          lines[#lines + 1] = "· " .. (r.title or "?") .. " — " .. (r.gain or "")
+        end
+        tips[#tips + 1] = { key = "k" .. dname, icon = QUEST_ICON, head = pick.head .. " · " .. string.format(L().pickupN, #rows),
+          src = pick.src .. " " .. string.format(L().pickupMore, #rows - 1), gain = pick.gain, lines = lines, giver = pick.giver, title = pick.title, order = lv[1],
+          cat = "dungeon", where = pick.where }
       end
     end
   end
