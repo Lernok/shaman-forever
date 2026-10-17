@@ -2,6 +2,14 @@
 
 Leer esta primera parte antes de seguir. Debajo está la historia del proyecto (plan de fases y sesiones).
 
+## 2026-10-17: foco en el sitio y el addon (las guías de ruta, en pausa)
+
+- **Decisión del usuario**: las guías de ruta para Polestar (`planner/`, packs) quedan en pausa (errores de pathing que el usuario no puede revisar, poco tiempo). Prioridad: que el sitio y el addon anden perfectos y con buen flujo. Los 8 packs se sacaron del juego a `.cache/tools/backup-packs-installed/`; el sweep y el e2e los leen de ahí (`PACKS=` para otra carpeta).
+- **Parche 70450 (17-oct)**: árbol Elemental nuevo (sin Call of Thunder ni Improved Fire Nova; Trial by Fire, Elemental Mastery; Lava Burst fila 5), Tidal/Totemic Focus cambian de fila, ~20 textos del cliente. La sync diaria fallaba por eso: plantillas en `data/i18n/client-es.json`, builds en `data/builds.json` (los `code` populares son posicionales: con un árbol nuevo hay que reemplazarlos por el ranking actual, no "pasan" igual), casos de `scripts/test-rules.js`, guías (elemental, restoration, overview) y novedades. Addon 0.18.3: talentos regenerados (`talents build --build 1.60.1.70450`).
+- **Addon 0.18.4**: misiones de dungeon en una fila por dungeon; setup sin ofrecer packs. `scripts/test-journey.lua [raza] [spec]`: un personaje del 1 al 30 sin ruta, qué dice y muestra por nivel (ventana máx. 8–11 filas).
+- **Celular** (55 de 78 visitas): `scripts/mobile-check.js` (390 y 360 px, en Chequeos), toques de ≥40 px en pantallas táctiles, textos "pasá el mouse o tocá".
+- **Foros oficiales de Blizzard** (Reddit bloquea herramientas; el foro tiene API: `us.forums.blizzard.com/en/wow/search.json?q=...`): debates de Grace of Air vs Windfury Totem para Enhancement, "The Big Shaman Fixlist", un reporte de Healing Wave que cura 30–40% menos a objetivos de más nivel dentro de dungeons (sin confirmar).
+
 ## Dónde estamos
 
 - **El sitio está lanzado** (lanzamiento suave del 2026-10-13): https://lernok.github.io/shaman-forever/ (repo Lernok/shaman-forever, rama `main` = GitHub Pages). El usuario lo compartió en un par de Discords y en Twitter. Primeras visitas: 21 en dos días (AR/EE. UU./Canadá), sin errores.
