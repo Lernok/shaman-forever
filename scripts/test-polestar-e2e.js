@@ -22,6 +22,7 @@ const r = runAddon({
     GetRealZoneText = GetRealZoneText or function() return "Silverpine Forest" end
     GetItemInfo = GetItemInfo or function(id) return "Item " .. tostring(id) end`,
   addons: ['Polestar', { name: 'PolestarPack_ShamanForeverOrcoYTrollMejora', dir: A + '/PolestarPack_ShamanForeverOrcoYTrollMejora' },
+    { name: 'PolestarPack_ShamanForeverOrcoYTrollElementalYResto', dir: A + '/PolestarPack_ShamanForeverOrcoYTrollElementalYResto' },
     { name: 'ShamanForever', dir: path.join(__dirname, '..', 'addon', 'ShamanForever') }],
   script: `
     local W = stub.world
@@ -72,6 +73,16 @@ const r = runAddon({
     stub.advance(1.5)
     print("after skip:", E.GetGuide() and E.GetGuide().id)
     view("after skipping")
+    -- The first-run setup: Elemental, window yes, open my route.
+    SlashCmdList.SHAMANFOREVER("setup")
+    local S = ShamanForeverSetup
+    print("setup shown:", S and S:IsShown())
+    S.buttons[2]:Click()
+    S.buttons[1]:Click()
+    print("setup page 3:", S.text:GetText())
+    S.buttons[1]:Click()
+    stub.advance(1)
+    print("route after setup:", E.GetGuide() and E.GetGuide().id, "setup shown:", S:IsShown())
     print("DONE")`,
 });
 console.log(r.stdout.split('\n').filter((l) => !/^@@/.test(l)).slice(-40).join('\n'));

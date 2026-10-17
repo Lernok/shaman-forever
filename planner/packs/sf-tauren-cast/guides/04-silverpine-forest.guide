@@ -1,0 +1,160 @@
+guide sf-tauren-cast/04-silverpine-forest
+title 04 · Silverpine Forest (14-17)
+faction Horde
+race Tauren
+levels 14-17
+zone Silverpine Forest
+folder Shaman: Forever · Tauren Elemental y Resto
+next sf-tauren-cast/05-undercity
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 14.1)
+  accept 477
+  accept 428
+  accept 437
+  accept 447
+  accept 91921
+
+step Objectives: A Recipe For Death (level 14.2)
+  collect 3253 x6 quest 447.1
+  collect 3254 x6 quest 447.2
+
+step Turn in (level 14.2)
+  turnin 477
+  accept 478
+
+step Turn in and pick up (level 14.3)
+  turnin 478
+  accept 481
+  turnin 481
+  accept 482
+  turnin 482
+  accept 479
+
+step Objectives: The Dead Fields (level 14.3)
+  complete 437
+  zone map 1435
+  goto 47.35,52.89 "Essence of Nightlash" r 15 optional
+  tip Kill rot hide gnolls at the Dead Fields.$B$BWhen Nightlash appears, kill her.$B$BBring the Essence of Nightlash to High Executor Hadrec at the Sepulcher.
+
+step Turn in and pick up (level 14.3)
+  turnin 428
+  accept 429
+  turnin 91921
+  accept 91920
+
+step Objectives: Wild Hearts (level 14.4)
+  collect 3164 x6 quest 429.1
+
+step Pick up quests (level 14.4)
+  accept 435
+
+step Objectives: Escorting Erland (level 14.5)
+  complete 435
+  zone map 1421
+  goto 54.37,13.38 "Erland must reach Rane Yorick" r 15 optional
+  tip Escort Erland through the wolves, to Rane Yorick.
+
+step Turn in (level 14.6)
+  turnin 435
+  accept 449
+
+step Objectives: Wild Eyes (level 14.6)
+  collect 730 x3 quest 91920.1
+
+step Hearth (level 14.6)
+  hearth "The Sepulcher"
+
+step Objectives: Ambermill Investigations (level 14.7)
+  collect 3354 x8 quest 479.1
+  collect 3253 x6 quest 447.1 optional
+  collect 3254 x6 quest 447.2 optional
+
+step Objectives: A Recipe For Death (level 14.8)
+  collect 3253 x6 quest 447.1
+  collect 3254 x6 quest 447.2
+
+step Turn in and pick up (level 14.9)
+  turnin 437
+  turnin 449
+  accept 438
+  accept 3221
+  turnin 479
+  accept 95981
+
+step Turn in (level 15.0)
+  turnin 438
+  accept 439
+
+step Turn in and pick up (level 15.1)
+  turnin 439
+  accept 440
+  accept 443
+  turnin 429
+  turnin 3221
+  turnin 91920
+  accept 430
+  accept 1359
+
+step Turn in and pick up (level 15.2)
+  turnin 430
+  accept 425
+
+step Objectives: Ivar the Foul (level 15.2)
+  collect 3621 quest 425.1
+
+step Turn in (level 15.2)
+  turnin 425
+
+step Objectives: Rot Hide Ichor (level 15.5)
+  collect 3236 x8 quest 443.1
+
+step Turn in and pick up (level 15.6)
+  accept 98298
+  accept 98299
+  turnin 443
+  accept 444
+
+step Pick up quests (level 16.1)
+  accept 460
+
+step Turn in (level 16.1)
+  turnin 460
+  accept 461
+
+step Turn in (level 16.1)
+  turnin 461
+  accept 491
+
+step Objectives: Watching the Roads (level 16.2)
+  complete 95981
+  zone map 1421
+  goto 55.96,78.03 "Dalaran Watcher" r 15 optional
+  tip Slay 8 Dalaran Wizards and 8 Dalaran Watchers for Shadow Priest Allister in the Sepulcher.
+
+step Objectives: Watching the Roads (level 16.3)
+  complete 95981
+  zone map 1421
+  goto 55.96,78.03 "Dalaran Watcher" r 15 optional
+  tip Slay 8 Dalaran Wizards and 8 Dalaran Watchers for Shadow Priest Allister in the Sepulcher.
+
+step Objectives: Stop the Spread (level 16.4)
+  complete 98299
+  zone map 1421
+  goto 44.33,84.41 "Haggard Refugee" r 15 optional
+  tip Slay 5 Sickly Refugees and 5 Haggard Refugees for Dalar Dawnweaver in The Sepulcher.
+
+step Objectives: Arugal's Folly (level 16.5)
+  collect 280375 x6 quest 98298.1
+
+step Hearth (level 16.5)
+  hearth "The Sepulcher"
+
+step Turn in (level 16.6)
+  turnin 95981
+  turnin 98298
+  turnin 98299
+
+step Flight path (level 16.7)
+  getfp "Undercity"

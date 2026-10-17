@@ -1,0 +1,63 @@
+guide sf-dwarf-cast/03-dun-morogh
+title 03 · Dun Morogh (14-15)
+faction Alliance
+race Dwarf
+levels 14-15
+zone Dun Morogh
+folder Shaman: Forever · Enano Elemental y Resto
+next sf-dwarf-cast/04-ironforge
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 33.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 14.1)
+  accept 96392
+  complete 96392
+  zone map 1426
+  goto 64.87,58.47 "Earthseer Farsen" r 15 optional
+  tip Speak with Earthseer Farsen's and ask him to lend you his farsight to observe the Dark Iron threat.
+  turnin 96392
+  accept 96390
+
+step Pick up quests (level 14.1)
+  accept 433
+
+step Objectives: The Public Servant (level 14.2)
+  kill 1117 x10 quest 433.1
+  kill 6123 x10 quest 96390.1
+  kill 1117 quest 96390.2
+
+step Pick up quests (level 14.2)
+  accept 94465
+
+step Objectives: Nip 'Em in the Bud (level 14.2)
+  kill 6123 x10 quest 96390.1
+  kill 1117 quest 96390.2
+  accept 96391 optional
+
+step Turn in (level 14.3)
+  turnin 433
+
+step Hearthstone (level 14.3)
+  sethome "Thunderbrew Distillery"
+
+step Turn in (level 14.3)
+  turnin 96391 optional map 1426 @64.87,58.47
+  turnin 96390
+
+step Pick up quests (level 14.5)
+  accept 312
+
+step Objectives: Tundra MacGrann's Stolen Stash (level 14.5)
+  collect 2667 quest 312.1
+
+step Turn in (level 14.5)
+  turnin 312
+
+step Flight path (level 14.5)
+  getfp "Ironforge"
+
+step Hearthstone (level 14.5)
+  sethome "Ironforge"
+
+step Pick up: Old Ironforge Incursion (Hall of Thanes)
+  accept 96393 optional map 1426 @64.87,58.47

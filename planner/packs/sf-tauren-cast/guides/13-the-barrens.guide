@@ -1,0 +1,185 @@
+guide sf-tauren-cast/13-the-barrens
+title 13 · The Barrens (24-26)
+faction Horde
+race Tauren
+levels 24-26
+zone The Barrens
+folder Shaman: Forever · Tauren Elemental y Resto
+next sf-tauren-cast/14-stonetalon-mountains
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 24.3)
+  accept 878
+
+step Pick up quests (level 24.3)
+  accept 884
+
+step Objectives (level 24.4)
+  kill 3260 x6 quest 878.1
+  kill 3261 x12 quest 878.2
+  kill 3263 x12 quest 878.3
+
+step Pick up quests (level 24.4)
+  accept 883
+
+step Objectives: Tribes at War (level 24.4)
+  kill 3260 x6 quest 878.1
+  kill 3261 x12 quest 878.2
+  kill 3263 x12 quest 878.3
+
+step Pick up quests (level 24.4)
+  accept 893
+
+step Turn in and pick up (level 24.5)
+  turnin 884
+  turnin 883
+  turnin 878
+  accept 5052
+
+step Objectives: Blood Shards of Agamaggan (level 24.5)
+  collect 5075 quest 5052.1
+
+step Turn in (level 24.6)
+  turnin 5052
+  accept 879
+
+step Pick up quests (level 24.6)
+  accept 897
+
+step Pick up quests (level 24.6)
+  accept 79007
+  accept 79192
+
+step Pick up quests (level 24.6)
+  accept 98093
+
+step Objectives: Field to Clear (level 24.6)
+  kill 4128 x7 quest 98093.1
+  kill 3238 x7 quest 98093.2
+
+step Pick up quests (level 24.6)
+  accept 843
+
+step Objectives: Betrayal from Within (level 24.6)
+  collect 5074 quest 879.1
+  collect 5073 quest 879.2
+  collect 5072 quest 879.3
+  collect 5093 quest 893.1 optional
+  collect 5092 quest 893.2 optional
+  collect 5094 quest 893.3 optional
+
+step Objectives: Weapons of Choice (level 24.6)
+  collect 5093 quest 893.1
+  collect 5092 quest 893.2
+  collect 5094 quest 893.3
+
+step Pick up quests (level 24.6)
+  accept 885
+
+step Objectives: Weapons of Choice (level 24.7)
+  collect 5093 quest 893.1
+  collect 5092 quest 893.2
+  collect 5094 quest 893.3
+  collect 5074 quest 879.1 optional
+  collect 5073 quest 879.2 optional
+  collect 5072 quest 879.3 optional
+
+step Objectives (level 24.7)
+  collect 5074 quest 879.1
+  collect 5073 quest 879.2
+  collect 5072 quest 879.3
+
+step Objectives: Gann's Reclamation (level 24.8)
+  complete 843
+  zone map 1413
+  goto 46.86,85.57 "Bael'dun Excavator" r 15 optional
+  tip Gann Stonespire wants you to kill 15 Bael'dun Excavators and 5 Bael'dun Foremen.$B$BBring Khazgorm's Journal to Gann Stonespire.
+
+step Objectives: Field to Clear (level 24.8)
+  kill 4128 x7 quest 98093.1
+  kill 3238 x7 quest 98093.2
+
+step Turn in (level 24.9)
+  turnin 843
+  accept 846
+
+step Turn in (level 25.1)
+  turnin 98093
+
+step Objectives: Revenge of Gann (level 25.2)
+  collect 5017 x6 quest 846.1
+  collect 5018 x6 quest 846.2
+  collect 5019 x6 quest 846.3
+
+step Turn in (level 25.3)
+  turnin 846
+  accept 849
+
+step Objectives: Revenge of Gann (level 25.3)
+  complete 849
+  zone map 1413
+  goto 46.97,85.63 "Bael Modan Flying Machine destroyed" r 15 optional
+  tip Destroy the flying machine at Bael Modan and return to Gann Stonespire.
+
+step Pick up quests (level 25.3)
+  accept 4542
+
+step Turn in (level 25.3)
+  turnin 849
+
+step Hearth (level 25.3)
+  hearth "Camp Taurajo"
+
+step Turn in and pick up (level 25.4)
+  turnin 879
+  accept 906
+  turnin 885
+  turnin 897
+
+step Turn in (level 25.5)
+  turnin 893
+
+step Hearthstone (level 25.5)
+  sethome "The Crossroads"
+
+step Turn in (level 25.5)
+  turnin 906
+
+step Pick up quests (level 25.5)
+  accept 868
+
+step Hearthstone (level 25.6)
+  sethome "Ratchet"
+
+step Pick up quests (level 25.6)
+  accept 1483
+
+step Pick up quests (level 25.6)
+  accept 1530
+
+step Objectives: Egg Hunt (level 25.6)
+  collect 5058 x12 quest 868.1
+
+step Turn in (level 25.6)
+  turnin 1530
+  accept 1535
+
+step Objectives: Call of Water (level 25.6)
+  collect 7769 quest 1535.1
+
+step Turn in (level 25.7)
+  turnin 1535
+  accept 1536
+
+step Hearthstone (level 25.7)
+  sethome "The Crossroads"
+
+step Turn in (level 25.7)
+  turnin 868
+
+step Flight path (level 25.7)
+  getfp "Sun Rock Retreat"
+
+step Hearthstone (level 25.7)
+  sethome "Sun Rock Retreat"

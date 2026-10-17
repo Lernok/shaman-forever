@@ -1,0 +1,26 @@
+guide sf-dwarf-cast/08-stormwind-city
+title 08 · Stormwind City (20-21)
+faction Alliance
+race Dwarf
+levels 20-21
+zone Stormwind City
+folder Shaman: Forever · Enano Elemental y Resto
+next sf-dwarf-cast/09-redridge-mountains
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 33.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 20.3)
+  turnin 373 optional map 1453 @57.74,47.86 live
+
+step Turn in (level 20.4)
+  turnin 2040 optional map 1453 @62.63,34.11 live
+
+step Turn in (level 20.4)
+  turnin 168 optional map 1453 @70.31,40.82 live
+  turnin 167 optional map 1453 @70.31,40.82 live
+
+step Flight path (level 20.5)
+  getfp "Lakeshire"
+
+step Hearthstone (level 20.5)
+  sethome "Lakeshire"

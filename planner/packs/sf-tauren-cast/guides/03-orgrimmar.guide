@@ -1,0 +1,67 @@
+guide sf-tauren-cast/03-orgrimmar
+title 03 · Orgrimmar (13-15)
+faction Horde
+race Tauren
+levels 13-15
+zone Orgrimmar
+folder Shaman: Forever · Tauren Elemental y Resto
+next sf-tauren-cast/04-silverpine-forest
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 13.3)
+  accept 5726 optional map 1454 @31.73,37.82
+
+step Pick up quests (level 13.3)
+  accept 97326
+
+step Objectives: Rocks to Rests (level 13.3)
+  collect 277952 x8 quest 97326.1
+
+step Turn in (level 13.4)
+  turnin 97326
+
+step Flight path (level 13.4)
+  getfp "Orgrimmar"
+
+step Hearthstone (level 13.4)
+  sethome "Orgrimmar"
+
+step Pick up quests (level 13.4)
+  accept 97242
+  accept 97275
+
+step Objectives: Yelmak's Medley (level 13.4)
+  collect 277278 quest 97242.1
+  collect 277279 quest 97242.2
+
+step Turn in (level 13.5)
+  turnin 97275
+  turnin 97242
+
+step Pick up quests (level 13.7)
+  accept 97246
+
+step Pick up quests (level 13.7)
+  accept 97249
+  turnin 97246
+
+step Pick up: Slaying the Beast (Ragefire Chasm)
+  accept 5761 optional map 1454 @49.47,50.59
+
+step Turn in (level 13.7)
+  turnin 97249
+
+step Dungeon: Ragefire Chasm (level 13.7)
+  zone map 1454
+  goto 52.6,49 "Ragefire Chasm" r 30 live
+  tip Find a group and clear Ragefire Chasm, with its quests from this route in your log.
+
+step Turn in (level 13.8)
+  turnin 5761 optional map 1454 @49.47,50.59
+
+step Flight path (level 13.8)
+  getfp "The Sepulcher"
+
+step Hearthstone (level 13.8)
+  sethome "The Sepulcher"

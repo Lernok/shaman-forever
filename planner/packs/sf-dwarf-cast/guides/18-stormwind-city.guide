@@ -1,0 +1,67 @@
+guide sf-dwarf-cast/18-stormwind-city
+title 18 · Stormwind City (29-30)
+faction Alliance
+race Dwarf
+levels 29-30
+zone Stormwind City
+folder Shaman: Forever · Enano Elemental y Resto
+next sf-dwarf-cast/19-wetlands
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 33.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 29.3)
+  accept 343
+  accept 95161
+  accept 389 optional map 1453 @57.74,47.86 live
+
+step Hearthstone (level 29.3)
+  sethome "Stormwind City"
+
+step Turn in (level 29.3)
+  turnin 389 optional map 1453 @51.49,69.38 live
+
+step Pick up quests (level 29.3)
+  accept 3765 optional map 1453 @36.24,67.61 live
+
+step Hearth (level 29.3)
+  hearth "Stormwind City"
+
+step Turn in (level 29.4)
+  turnin 98190
+  accept 98191
+
+step Turn in (level 29.4)
+  turnin 337
+  turnin 343
+  accept 344
+
+step Turn in and pick up (level 29.4)
+  accept 1274
+  turnin 293
+  turnin 269
+  accept 270
+  accept 2923 optional map 1453 @51.05,48.39 live
+  turnin 98191
+  accept 98219
+
+step Pick up: A Green Sample (City of Dalaran)
+  accept 92456 optional map 1453 @31.5,62.61 live
+
+step Pick up quests (level 29.5)
+  accept 335
+
+step Pick up quests (City of Dalaran)
+  accept 92489 optional map 1453 @48.71,87.62 live
+  accept 1078
+
+step Turn in (level 29.5)
+  turnin 1274
+  accept 1241
+
+step Turn in (level 29.5)
+  turnin 1241
+  accept 1242
+
+step Turn in (level 29.5)
+  turnin 1242
+  accept 1243

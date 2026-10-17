@@ -1,0 +1,138 @@
+guide sf-orc-cast/14-stonetalon-mountains
+title 14 · Stonetalon Mountains (26-28)
+faction Horde
+race Orc, Troll
+levels 26-28
+zone Stonetalon Mountains
+folder Shaman: Forever · Orco y Troll Elemental y Resto
+next sf-orc-cast/15-mulgore
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 26.0)
+  accept 6393
+  accept 6562 optional map 1442 @47.36,64.25
+
+step Pick up quests (level 26.0)
+  accept 1087
+
+step Pick up quests (level 26.0)
+  accept 6301
+
+step Turn in (level 26.0)
+  turnin 79192
+  accept 79980
+
+step Turn in (level 26.0)
+  turnin 79980
+
+step Objectives: Cycle of Rebirth (level 26.0)
+  collect 16205 x10 quest 6301.1
+
+step Turn in (level 26.1)
+  turnin 6301
+  accept 6381
+
+step Turn in (level 26.1)
+  turnin 1483
+  accept 1093
+
+step Objectives: Super Reaper 6000 (level 26.1)
+  collect 5734 quest 1093.1
+
+step Pick up quests (level 26.1)
+  accept 1090
+  complete 1090
+  zone map 1442
+  goto 71.87,60 "Piznik" r 15 optional
+  tip Get the mysterious ore from Piznik after he finishes mining it.
+  turnin 1090
+  accept 1092
+
+step Turn in (level 26.2)
+  turnin 1092
+  turnin 1093
+  accept 1094
+
+step Objectives: Cenarius' Legacy (level 26.3)
+  complete 1087
+  zone map 1442
+  goto 35.29,13.11 "Son of Cenarius" r 15 optional
+  tip Kill 4 Sons of Cenarius, 4 Daughters of Cenarius and 4 Cenarion Botanists for Braelyn Firehand near Sun Rock Retreat.
+
+step Objectives: Cenarius' Legacy (level 26.3)
+  complete 1087
+  zone map 1442
+  goto 35.29,13.11 "Son of Cenarius" r 15 optional
+  tip Kill 4 Sons of Cenarius, 4 Daughters of Cenarius and 4 Cenarion Botanists for Braelyn Firehand near Sun Rock Retreat.
+
+step Hearth (level 26.3)
+  hearth "Sun Rock Retreat"
+
+step Objectives: Elemental War (level 26.3)
+  collect 16312 x10 quest 6393.1
+
+step Objectives: New Life (level 26.3)
+  complete 6381
+  zone map 1442
+  goto 27.82,64.7 "Gaea seed planted" r 15 optional
+  tip Plant 10 Gaea Seeds in Gaea Dirt Mounds, and then return the remaining Enchanted Gaea Seeds to Tammra at Sun Rock Retreat.
+
+step Turn in and pick up (level 26.4)
+  turnin 1087
+  accept 1088
+  accept 5881
+  accept 6282
+  accept 86576
+
+step Turn in (level 26.4)
+  turnin 6381
+
+step Objectives: Harpies Threaten (level 26.5)
+  kill 4022 x7 quest 6282.1
+  kill 4025 x7 quest 6282.2
+  kill 4024 x7 quest 6282.3
+  kill 4023 x7 quest 6282.4
+  collect 277936 x15 quest 86576.1
+  kill 4022 x7 quest 6282.1 optional
+  kill 4025 x7 quest 6282.2 optional
+  kill 4024 x7 quest 6282.3 optional
+  kill 4023 x7 quest 6282.4 optional
+
+step Objectives (level 26.7)
+  kill 4022 x7 quest 6282.1
+  kill 4025 x7 quest 6282.2
+  kill 4024 x7 quest 6282.3
+  kill 4023 x7 quest 6282.4
+
+step Turn in (level 26.8)
+  turnin 6282
+
+step Turn in (level 26.8)
+  turnin 86576
+  turnin 6393
+
+step Pick up quests (level 26.8)
+  accept 1058
+
+step Objectives: Jin'Zil's Forest Magic (level 27.0)
+  collect 5582 x5 quest 1058.1
+  collect 5584 x5 quest 1058.2
+  collect 5585 x30 quest 1058.3
+  collect 5583 quest 1058.4
+  collect 5582 x5 quest 1058.1 optional
+  collect 5584 x5 quest 1058.2 optional
+  collect 5585 x30 quest 1058.3 optional
+  collect 5583 quest 1058.4 optional
+
+step Objectives (level 27.0)
+  collect 5582 x5 quest 1058.1
+  collect 5584 x5 quest 1058.2
+  collect 5585 x30 quest 1058.3
+  collect 5583 quest 1058.4
+
+step Hearth (level 27.0)
+  hearth "Sun Rock Retreat"
+
+step Turn in (level 27.1)
+  turnin 1058

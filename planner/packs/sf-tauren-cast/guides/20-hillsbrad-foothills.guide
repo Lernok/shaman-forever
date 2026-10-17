@@ -1,0 +1,58 @@
+guide sf-tauren-cast/20-hillsbrad-foothills
+title 20 · Hillsbrad Foothills (30-31)
+faction Horde
+race Tauren
+levels 30-31
+zone Hillsbrad Foothills
+folder Shaman: Forever · Tauren Elemental y Resto
+next sf-tauren-cast/21-silverpine-forest
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 30.1)
+  accept 509
+  accept 567
+  accept 539
+
+step Objectives: Elixir of Agony (level 30.1)
+  collect 3502 x6 quest 509.1
+
+step Objectives: Battle of Hillsbrad (level 30.1)
+  complete 539
+  zone map 1424
+  goto 31.21,56.01 "Foreman Bonds" r 15 optional
+  tip Kill Foreman Bonds and 10 Hillsbrad Miners and report back to Darthalia in Tarren Mill.
+
+step Objectives: Dangerous! (level 30.1)
+  complete 567
+  zone map 1424
+  goto 29.51,42.41 "Clerk Horrace Whitesteed" r 15 optional
+  tip High Executor Darthalia of Tarren Mill is offering a bounty on Clerk Horrace Whitesteed, Citizen Wilkes, Miner Hackett and Farmer Kalaba.
+
+step Objectives: Dangerous! (level 30.2)
+  complete 567
+  zone map 1424
+  goto 29.51,42.41 "Clerk Horrace Whitesteed" r 15 optional
+  tip High Executor Darthalia of Tarren Mill is offering a bounty on Clerk Horrace Whitesteed, Citizen Wilkes, Miner Hackett and Farmer Kalaba.
+
+step Objectives: Dangerous! (level 30.2)
+  complete 567
+  zone map 1424
+  goto 29.51,42.41 "Clerk Horrace Whitesteed" r 15 optional
+  tip High Executor Darthalia of Tarren Mill is offering a bounty on Clerk Horrace Whitesteed, Citizen Wilkes, Miner Hackett and Farmer Kalaba.
+
+step Objectives: Dangerous! (level 30.2)
+  complete 567
+  zone map 1424
+  goto 29.51,42.41 "Clerk Horrace Whitesteed" r 15 optional
+  tip High Executor Darthalia of Tarren Mill is offering a bounty on Clerk Horrace Whitesteed, Citizen Wilkes, Miner Hackett and Farmer Kalaba.
+
+step Hearth (level 30.2)
+  hearth "Tarren Mill"
+
+step Turn in and pick up (level 30.2)
+  turnin 509
+  accept 513
+  turnin 539
+  turnin 567
+  accept 96986 optional map 1424 @62.63,20.65

@@ -1,0 +1,111 @@
+guide sf-dwarf-cast/02-loch-modan
+title 02 · Loch Modan (11-15)
+faction Alliance
+race Dwarf
+levels 11-15
+zone Loch Modan
+folder Shaman: Forever · Enano Elemental y Resto
+next sf-dwarf-cast/03-dun-morogh
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 33.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 11.4)
+  accept 416
+  accept 1339
+  accept 418
+
+step Objectives: Thelsamar Blood Sausages (level 11.5)
+  collect 3172 x3 quest 418.1
+  collect 3173 x3 quest 418.2
+  collect 3174 x3 quest 418.3
+  collect 3110 x12 quest 416.1 optional
+  collect 3172 x3 quest 418.1 optional
+  collect 3173 x3 quest 418.2 optional
+  collect 3174 x3 quest 418.3 optional
+
+step Objectives (level 11.8)
+  collect 3110 x12 quest 416.1
+  collect 3172 x3 quest 418.1
+  collect 3173 x3 quest 418.2
+  collect 3174 x3 quest 418.3
+
+step Turn in (level 12.0)
+  turnin 416
+
+step Pick up quests (level 12.0)
+  accept 224
+  accept 267
+
+step Objectives (level 12.2)
+  collect 2536 x8 quest 267.1
+  kill 1161 x10 quest 224.1
+  kill 1162 x10 quest 224.2
+
+step Turn in and pick up (level 12.5)
+  turnin 267
+  turnin 224
+  accept 237
+
+step Objectives: In Defense of the King's Lands (level 12.8)
+  kill 1163 x10 quest 237.1
+  kill 1166 x10 quest 237.2
+
+step Turn in and pick up (level 12.9)
+  turnin 237
+  accept 263
+
+step Objectives: In Defense of the King's Lands (level 13.1)
+  kill 1197 x10 quest 263.1
+  kill 1164 x10 quest 263.2
+
+step Turn in (level 13.2)
+  turnin 263
+
+step Objectives: Thelsamar Blood Sausages (level 13.3)
+  collect 3172 x3 quest 418.1
+  collect 3173 x3 quest 418.2
+  collect 3174 x3 quest 418.3
+
+step Pick up quests (level 13.3)
+  accept 298
+
+step Pick up quests (level 13.3)
+  accept 2038
+
+step Objectives (level 13.3)
+  collect 7343 quest 2038.1
+  collect 7345 quest 2038.2
+  collect 7346 quest 2038.3
+  collect 7376 quest 2038.4
+
+step Turn in (level 13.4)
+  turnin 1339
+  accept 1338
+  accept 307
+
+step Objectives: Filthy Paws (level 13.4)
+  collect 2640 x4 quest 307.1
+
+step Turn in (level 13.5)
+  turnin 307
+
+step Hearth (level 13.5)
+  hearth "Stoutlager Inn"
+
+step Turn in and pick up (level 13.6)
+  turnin 418
+  turnin 298
+  accept 301
+
+step Pick up quests (level 13.6)
+  accept 385
+
+step Turn in (level 13.7)
+  turnin 2038
+
+step Objectives: Crocolisk Hunting (level 14.0)
+  collect 2924 x5 quest 385.1
+  collect 2925 x6 quest 385.2
+
+step Turn in (level 14.1)
+  turnin 385

@@ -1,0 +1,21 @@
+guide sf-tauren-cast/25-tirisfal-glades
+title 25 · Tirisfal Glades (31-32)
+faction Horde
+race Tauren
+levels 31-32
+zone Tirisfal Glades
+folder Shaman: Forever · Tauren Elemental y Resto
+next sf-tauren-cast/26-alterac-mountains
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 31.5)
+  accept 1051 optional map 1420 @82.6,33.8 live
+
+step Dungeon: Scarlet Monastery: Graveyard (level 31.5)
+  zone map 1420
+  goto 82.6,33.8 "Scarlet Monastery: Graveyard" r 30 live
+  tip Find a group and clear Scarlet Monastery: Graveyard, with its quests from this route in your log.
+
+step Hearth (level 32.2)
+  hearth "Tarren Mill"

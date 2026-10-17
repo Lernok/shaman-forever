@@ -1,0 +1,46 @@
+guide sf-orc-cast/15-mulgore
+title 15 · Mulgore (27-28)
+faction Horde
+race Orc, Troll
+levels 27-28
+zone Mulgore
+folder Shaman: Forever · Orco y Troll Elemental y Resto
+next sf-orc-cast/16-ashenvale
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 27.1)
+  accept 96259
+
+step Pick up quests (level 27.1)
+  accept 96241
+  accept 96260
+
+step Objectives: Stronger than Steel (level 27.1)
+  collect 273181 x3 quest 96260.1
+
+step Pick up quests (level 27.1)
+  accept 96294
+
+step Objectives (level 27.2)
+  kill 264083 x5 quest 96259.1
+  kill 264079 x10 quest 96259.2
+  collect 273001 x5 quest 96241.1
+
+step Turn in (level 27.3)
+  turnin 96260
+  turnin 96241
+
+step Turn in (level 27.4)
+  turnin 96259
+  turnin 96294
+  accept 96261
+
+step Objectives: The Broodmother (level 27.5)
+  kill 264082 quest 96261.1
+
+step Turn in (level 27.6)
+  turnin 96261
+
+step Flight path (level 27.6)
+  getfp "Zoram'gar Outpost"

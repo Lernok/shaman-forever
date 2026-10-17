@@ -1,0 +1,56 @@
+guide sf-sky-cast/24-hillsbrad-foothills
+title 24 · Hillsbrad Foothills (30-32)
+faction Horde
+race Skyborne
+levels 30-32
+zone Hillsbrad Foothills
+folder Shaman: Forever · Skyborne Elemental y Resto
+next sf-sky-cast/25-arathi-highlands
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 36.4 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in and pick up (level 31.1)
+  accept 556
+  turnin 96984 optional map 1424 @61.6,20.85
+  accept 544 optional map 1424 @61.6,20.85
+  accept 92434 optional map 1424 @61.6,20.85
+  accept 93680 optional map 1424 @61.6,20.85
+  turnin 93680 optional map 1424 @61.6,20.85
+  turnin 96986 optional map 1424 @62.63,20.65
+  accept 533
+  accept 1361
+
+step Pick up quests (level 31.4)
+  accept 552
+
+step Pick up quests (level 31.4)
+  accept 535
+
+step Objectives (level 31.4)
+  collect 3601 quest 533.1
+  collect 3703 quest 535.1
+
+step Turn in (level 31.4)
+  turnin 535
+
+step Objectives: Helcular's Revenge (level 31.4)
+  collect 3708 quest 552.1
+
+step Turn in and pick up (level 31.5)
+  accept 676
+  turnin 533
+  accept 503
+  turnin 552
+  accept 553
+
+step Objectives: Helcular's Revenge (level 31.6)
+  complete 553
+  zone map 1424
+  goto 43.89,28.06 "Flame of Azel charged" r 15 optional
+  tip Charge the Rod of Helcular with the powers of the Flame of Azel, Flame of Veraz and the Flame of Uzel.$B$BDrive the charged rod into Helcular's grave in Southshore.
+
+step Flight path (level 31.6)
+  getfp "Hammerfall"
+
+step Hearthstone (level 31.6)
+  sethome "Hammerfall"

@@ -1,0 +1,26 @@
+guide sf-orc-cast/07-undercity
+title 07 · Undercity (17-19)
+faction Horde
+race Orc, Troll
+levels 17-19
+zone Undercity
+folder Shaman: Forever · Orco y Troll Elemental y Resto
+next sf-orc-cast/08-tirisfal-glades
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 17.7)
+  turnin 95204 optional map 1458 @73.06,32.85
+
+step Turn in (level 17.9)
+  turnin 97288 optional map 1458 @48.82,69.28
+  turnin 95216 optional map 1458 @46.31,71.91
+
+step Turn in (level 18.4)
+  turnin 92421 optional map 1458 @57.73,89.55
+
+step Hearth (level 18.4)
+  hearth "Undercity"
+
+step Pick up: The Book of Ur (Shadowfang Keep)
+  accept 1013 optional map 1458 @53.74,54.46

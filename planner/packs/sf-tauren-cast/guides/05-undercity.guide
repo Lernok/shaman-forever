@@ -1,0 +1,41 @@
+guide sf-tauren-cast/05-undercity
+title 05 · Undercity (16-17)
+faction Horde
+race Tauren
+levels 16-17
+zone Undercity
+folder Shaman: Forever · Tauren Elemental y Resto
+next sf-tauren-cast/06-tirisfal-glades
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in and pick up (level 16.7)
+  turnin 1359
+  accept 1358
+  turnin 447
+  accept 450
+
+step Hearthstone (level 16.8)
+  sethome "Undercity"
+
+step Pick up quests (level 16.8)
+  accept 97891
+
+step Pick up quests (level 16.9)
+  accept 79095
+  turnin 79095
+
+step Turn in and pick up (level 16.9)
+  turnin 444
+  turnin 491
+  accept 446
+
+step Turn in (level 16.9)
+  turnin 98545
+
+step Turn in and pick up (Ruins of Lordaeron)
+  accept 95216 optional map 1458 @46.31,71.91
+  turnin 97891
+
+step Pick up: Light's Justice (Ruins of Lordaeron)
+  accept 92421 optional map 1458 @57.73,89.55

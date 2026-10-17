@@ -1,0 +1,16 @@
+guide sf-sky-cast/23-undercity
+title 23 · Undercity (30-31)
+faction Horde
+race Skyborne
+levels 30-31
+zone Undercity
+folder Shaman: Forever · Skyborne Elemental y Resto
+next sf-sky-cast/24-hillsbrad-foothills
+# Skeleton from `polestar sim export` (Horde Skyborne, dungeons, best route 36.4 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in (level 30.6)
+  turnin 96988 optional map 1458 @46.61,74.09
+
+step Hearth (level 30.6)
+  hearth "Tarren Mill"

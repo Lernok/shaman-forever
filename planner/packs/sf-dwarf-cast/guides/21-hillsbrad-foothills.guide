@@ -1,0 +1,100 @@
+guide sf-dwarf-cast/21-hillsbrad-foothills
+title 21 · Hillsbrad Foothills (30-32)
+faction Alliance
+race Dwarf
+levels 30-32
+zone Hillsbrad Foothills
+folder Shaman: Forever · Enano Elemental y Resto
+next sf-dwarf-cast/22-silverpine-forest
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 33.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 30.2)
+  accept 536
+  turnin 98219
+
+step Objectives (level 30.2)
+  kill 2377 x10 quest 536.1
+  kill 2376 x10 quest 536.2
+
+step Turn in (level 30.3)
+  turnin 536
+  accept 559
+
+step Objectives: Farren's Proof (level 30.4)
+  collect 3716 x10 quest 559.1
+
+step Turn in and pick up (level 30.4)
+  turnin 559
+  accept 560
+  turnin 560
+  accept 561
+  turnin 561
+  accept 562
+  accept 98463
+  accept 555
+
+step Objectives (level 30.5)
+  kill 2369 x10 quest 562.1
+  kill 2371 x10 quest 562.2
+
+step Turn in (level 30.6)
+  turnin 562
+  accept 563
+
+step Pick up quests (level 30.6)
+  accept 98059
+  turnin 98059
+
+step Reach level 30
+  zone map 1424
+  goto 31.8,72.9 "Torn Fin Coastrunner (level 30)" r 40 optional
+  level 30
+  tip If you're not level 30 yet: kill Torn Fin Coastrunner around here (level 30), then go on.
+
+step Pick up quests (level 30.7)
+  accept 659
+  accept 92432 optional map 1424 @48.32,60
+  accept 505
+
+step Pick up quests (level 30.7)
+  accept 565
+
+step Objectives: Soothing Turtle Bisque (level 30.7)
+  collect 3712 x10 quest 555.1
+  collect 3713 quest 555.2
+  collect 2997 quest 565.1
+  collect 2321 quest 565.2
+  collect 3719 quest 565.3
+  collect 3720 x10 quest 565.4
+
+step Pick up quests (level 30.7)
+  accept 564
+
+step Objectives: Soothing Turtle Bisque (level 30.8)
+  collect 3712 x10 quest 555.1
+  collect 3713 quest 555.2
+
+step Pick up quests (level 30.8)
+  accept 510
+  accept 511
+
+step Objectives (level 30.9)
+  kill 2240 x12 quest 505.1
+  kill 2241 x8 quest 505.2
+
+step Objectives: Bartolo's Yeti Fur Cloak (level 31.1)
+  collect 2997 quest 565.1
+  collect 2321 quest 565.2
+  collect 3719 quest 565.3
+  collect 3720 x10 quest 565.4
+
+step Turn in (level 31.1)
+  turnin 505
+  turnin 510
+  accept 512
+
+step Turn in and pick up (level 31.1)
+  turnin 511
+  accept 514
+  turnin 555

@@ -1,0 +1,82 @@
+guide sf-dwarf-cast/19-wetlands
+title 19 · Wetlands (29-31)
+faction Alliance
+race Dwarf
+levels 29-31
+zone Wetlands
+folder Shaman: Forever · Enano Elemental y Resto
+next sf-dwarf-cast/20-ironforge
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 33.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 29.5)
+  accept 98216
+  accept 98310
+  accept 98313
+
+step Objectives: Understanding Our Present (level 29.5)
+  collect 279993 quest 98216.1
+
+step Turn in (level 29.6)
+  turnin 98216
+
+step Pick up quests (level 29.6)
+  accept 98297
+  accept 98300
+
+step Pick up quests (level 29.6)
+  accept 95646 optional map 1437 @56.37,40.4
+
+step Pick up quests (level 29.6)
+  accept 98223
+
+step Objectives: Horrors in the Highland (level 29.6)
+  complete 95646 optional
+
+step Pick up quests (level 29.7)
+  accept 87491
+
+step Pick up quests (level 29.7)
+  accept 87318
+
+step Turn in (level 29.8)
+  turnin 87318
+  accept 88758
+
+step Turn in (level 29.9)
+  turnin 88758
+
+step Turn in and pick up (level 29.9)
+  turnin 87491
+  accept 631
+
+step Objectives (level 29.9)
+  kill 271373 quest 98297.1
+  collect 280395 quest 98310.1
+  collect 280396 quest 98310.2
+  collect 280397 quest 98310.3
+  collect 280398 quest 98310.4
+
+step Turn in (level 30.0)
+  turnin 95646 optional map 1437 @56.37,40.4
+
+step Turn in (level 30.0)
+  turnin 98297
+
+step Turn in (level 30.1)
+  turnin 98310
+
+step Hearthstone (level 30.1)
+  sethome "Deepwater Tavern"
+
+step Reach level 30
+  zone map 1437
+  goto 24.1,16.9 "Bluegill Raider (level 29)" r 40 optional
+  level 30
+  tip If you're not level 30 yet: kill Bluegill Raider around here (level 29), then go on.
+
+step Pick up quests (level 30.1)
+  accept 1302
+
+step Turn in (level 30.1)
+  turnin 98223

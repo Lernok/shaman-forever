@@ -1,0 +1,104 @@
+guide sf-orc-cast/02-tirisfal-glades
+title 02 · Tirisfal Glades (11-13)
+faction Horde
+race Orc, Troll
+levels 11-13
+zone Tirisfal Glades
+folder Shaman: Forever · Orco y Troll Elemental y Resto
+next sf-orc-cast/03-orgrimmar
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 11.1)
+  accept 97558
+  accept 356
+  accept 96897
+  accept 96898
+  accept 96899
+
+step Objectives (level 11.1)
+  kill 267006 x8 quest 96897.1
+  kill 275437 x8 quest 96897.2
+  kill 1547 quest 96897.3
+  collect 278242 x8 quest 97558.1
+  collect 278243 x6 quest 97558.2
+  collect 278244 x3 quest 97558.3
+
+step Hearthstone (level 11.2)
+  sethome "Gallows' End Tavern"
+
+step Pick up quests (level 11.2)
+  accept 96895
+
+step Pick up quests (level 11.2)
+  accept 354
+
+step Pick up quests (level 11.2)
+  accept 99142
+
+step Objectives: Hides for the Forsaken (level 11.2)
+  collect 278242 x8 quest 97558.1
+  collect 278243 x6 quest 97558.2
+  collect 278244 x3 quest 97558.3
+  collect 2829 quest 354.1 optional
+  collect 2828 quest 354.2 optional
+  collect 2830 quest 354.3 optional
+  kill 1529 x8 quest 356.1 optional
+  kill 1532 x8 quest 356.2 optional
+  collect 286204 x5 quest 99142.1 optional
+  kill 267006 x8 quest 96897.1 optional
+  kill 275437 x8 quest 96897.2 optional
+  kill 1547 quest 96897.3 optional
+  collect 275851 x12 quest 96898.1 optional
+
+step Objectives (level 11.3)
+  collect 2829 quest 354.1
+  collect 2828 quest 354.2
+  collect 2830 quest 354.3
+  kill 267006 x8 quest 96897.1 optional
+  kill 275437 x8 quest 96897.2 optional
+  kill 1547 quest 96897.3 optional
+  collect 275851 x12 quest 96898.1 optional
+
+step Objectives (level 11.3)
+  kill 1529 x8 quest 356.1
+  kill 1532 x8 quest 356.2
+  collect 286204 x5 quest 99142.1
+  kill 267006 x8 quest 96897.1 optional
+  kill 275437 x8 quest 96897.2 optional
+  kill 1547 quest 96897.3 optional
+  collect 275851 x12 quest 96898.1 optional
+
+step Objectives: The Cult of the Damned (level 11.7)
+  kill 267006 x8 quest 96897.1
+  kill 275437 x8 quest 96897.2
+  kill 1547 quest 96897.3
+  collect 275851 x12 quest 96898.1
+
+step Turn in (level 12.0)
+  turnin 96895
+  turnin 96898
+  turnin 96897
+  turnin 356
+  turnin 97558
+
+step Turn in (level 12.4)
+  turnin 354
+
+step Turn in (level 12.4)
+  turnin 99142
+
+step Turn in (level 12.5)
+  turnin 96899
+  accept 96896
+  turnin 96896
+  accept 98545
+
+step Hearth (level 12.5)
+  hearth "Gallows' End Tavern"
+
+step Flight path (level 12.5)
+  getfp "Orgrimmar"
+
+step Hearthstone (level 12.5)
+  sethome "Orgrimmar"

@@ -1,0 +1,33 @@
+guide sf-dwarf-cast/13-stormwind-city
+title 13 · Stormwind City (27-28)
+faction Alliance
+race Dwarf
+levels 27-28
+zone Stormwind City
+folder Shaman: Forever · Enano Elemental y Resto
+next sf-dwarf-cast/14-duskwood
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 33.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 27.4)
+  accept 388 optional map 1453 @76.42,63.67 live
+
+step Hearthstone (level 27.4)
+  sethome "Stormwind City"
+
+step Pick up quests (level 27.4)
+  accept 387 optional map 1453 @51.49,69.38 live
+
+step Dungeon: The Stockade (level 27.4)
+  zone map 1453
+  goto 52.4,70 "The Stockade" r 30 live
+  tip Find a group and clear The Stockade, with its quests from this route in your log.
+
+step Turn in (level 28.1)
+  turnin 387 optional map 1453 @51.49,69.38 live
+
+step Turn in (level 28.2)
+  turnin 388 optional map 1453 @76.42,63.67 live
+
+step Hearthstone (level 28.2)
+  sethome "Darkshire"

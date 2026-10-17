@@ -1,0 +1,130 @@
+guide sf-orc-cast/10-hillsbrad-foothills
+title 10 · Hillsbrad Foothills (21-24)
+faction Horde
+race Orc, Troll
+levels 21-24
+zone Hillsbrad Foothills
+folder Shaman: Forever · Orco y Troll Elemental y Resto
+next sf-orc-cast/11-silverpine-forest
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 21.0)
+  accept 498
+  accept 549
+  accept 527
+  accept 98094
+
+step Reach level 21
+  zone map 1416
+  goto 51.3,74.5 "Forest Moss Creeper (level 21)" r 40 optional
+  level 21
+  tip If you're not level 21 yet: kill Forest Moss Creeper around here (level 21), then go on.
+
+step Pick up quests (level 21.0)
+  accept 496
+  accept 501
+
+step Objectives (level 21.1)
+  collect 3476 x10 quest 496.1
+  collect 3477 quest 496.2
+
+step Turn in and pick up (level 21.3)
+  turnin 496
+  accept 499
+  turnin 499
+
+step Objectives: Elixir of Pain (level 21.9)
+  collect 3496 x10 quest 501.1
+  kill 2260 x10 quest 549.1 optional
+  kill 2261 x10 quest 549.2 optional
+
+step Objectives: WANTED: Syndicate Personnel (level 22.0)
+  kill 2260 x10 quest 549.1
+  kill 2261 x10 quest 549.2
+
+step Turn in (level 22.0)
+  turnin 98094
+  accept 98095
+  turnin 98095
+
+step Objectives: The Rescue (level 22.1)
+  complete 498
+  zone map 1424
+  goto 75.33,41.5 "Rescue Drull" r 15 optional
+  tip Krusk in Tarren Mill needs you to free Drull and Tog'thar from Durnholde Keep.
+
+step Objectives: WANTED: Syndicate Personnel (level 22.2)
+  kill 2260 x10 quest 549.1
+  kill 2261 x10 quest 549.2
+
+step Objectives: The Rescue (level 22.2)
+  complete 498
+  zone map 1424
+  goto 75.33,41.5 "Rescue Drull" r 15 optional
+  tip Krusk in Tarren Mill needs you to free Drull and Tog'thar from Durnholde Keep.
+
+step Turn in and pick up (level 22.2)
+  turnin 498
+  turnin 549
+  turnin 501
+  accept 502
+
+step Turn in (level 22.4)
+  turnin 502
+
+step Objectives: Battle of Hillsbrad (level 22.5)
+  complete 527
+  zone map 1424
+  goto 29.68,37.49 "Hillsbrad Farmer" r 15 optional
+  tip Kill 6 Hillsbrad Farmhands, 6 Hillsbrad Farmers, Farmer Ray and Farmer Getz and report back to Darthalia in Tarren Mill.
+
+step Objectives: Battle of Hillsbrad (level 22.5)
+  complete 527
+  zone map 1424
+  goto 29.68,37.49 "Hillsbrad Farmer" r 15 optional
+  tip Kill 6 Hillsbrad Farmhands, 6 Hillsbrad Farmers, Farmer Ray and Farmer Getz and report back to Darthalia in Tarren Mill.
+
+step Hearth (level 22.5)
+  hearth "Tarren Mill"
+
+step Turn in and pick up (level 22.6)
+  turnin 527
+  accept 528
+  accept 546
+
+step Objectives: Battle of Hillsbrad (level 22.7)
+  complete 528
+  zone map 1424
+  goto 29.77,43.77 "Hillsbrad Peasant" r 15 optional
+  tip Kill 15 Hillsbrad Peasants and report back to Darthalia in Tarren Mill.
+
+step Objectives: Souvenirs of Death (level 23.2)
+  collect 3692 x30 quest 546.1
+
+step Turn in and pick up (level 23.3)
+  turnin 528
+  accept 529
+  turnin 546
+
+step Objectives: Battle of Hillsbrad (level 23.4)
+  complete 529
+  zone map 1424
+  goto 32.11,44.42 "Blacksmith Verringtan" r 15 optional
+  tip Kill Blacksmith Verringtan and 4 Hillsbrad Apprentice Blacksmiths.$B$BRetrieve a shipment of iron and report back to Darthalia in Tarren Mill.
+
+step Turn in (level 23.5)
+  turnin 529
+  accept 532
+
+step Objectives: Battle of Hillsbrad (level 23.5)
+  complete 532
+  zone map 1424
+  goto 29.67,41.64 "Magistrate Burnside" r 15 optional
+  tip Kill Magistrate Burnside and 5 Hillsbrad Councilmen. Destroy the Hillsbrad Proclamation. Steal the Hillsbrad Town Registry. Report back to Darthalia in Tarren Mill afterwards.
+
+step Hearth (level 23.5)
+  hearth "Tarren Mill"
+
+step Turn in (level 23.6)
+  turnin 532

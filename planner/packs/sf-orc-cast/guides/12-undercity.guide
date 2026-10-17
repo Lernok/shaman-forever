@@ -1,0 +1,40 @@
+guide sf-orc-cast/12-undercity
+title 12 · Undercity (24-25)
+faction Horde
+race Orc, Troll
+levels 24-25
+zone Undercity
+folder Shaman: Forever · Orco y Troll Elemental y Resto
+next sf-orc-cast/13-the-barrens
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in and pick up (level 24.4)
+  accept 97289
+  turnin 97289
+  accept 97290
+  turnin 97290
+  accept 97291
+
+step Turn in (level 24.5)
+  turnin 1013 optional map 1458 @53.74,54.46
+
+step Objectives: Unending Torment (level 24.5)
+  collect 281300 quest 97291.1
+
+step Turn in (level 24.5)
+  turnin 97291
+  accept 97292
+  turnin 97292
+
+step Objectives: A Frightened Request (level 24.6)
+  complete 92401 optional
+
+step Flight path (level 24.6)
+  getfp "Camp Taurajo"
+
+step Hearthstone (level 24.6)
+  sethome "Camp Taurajo"
+
+step Pick up: Source of Power (City of Dalaran)
+  accept 96988 optional map 1458 @46.61,74.09

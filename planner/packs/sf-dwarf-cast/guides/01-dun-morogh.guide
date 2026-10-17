@@ -1,0 +1,372 @@
+guide sf-dwarf-cast/01-dun-morogh
+title 01 · Dun Morogh (1-12)
+faction Alliance
+race Dwarf
+levels 1-12
+zone Dun Morogh
+folder Shaman: Forever · Enano Elemental y Resto
+next sf-dwarf-cast/02-loch-modan
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 33.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 1.0)
+  accept 179
+
+step Objectives: Dwarven Outfitters (level 2.1)
+  collect 750 x8 quest 179.1
+
+step Turn in and pick up (level 2.2)
+  turnin 179
+  accept 233
+  accept 98581
+  accept 170
+
+step Objectives (level 2.6)
+  kill 707 x6 quest 170.1
+  kill 724 x6 quest 170.2
+
+step Pick up quests (level 3.0)
+  accept 182
+
+step Turn in (level 3.1)
+  turnin 233
+
+step Reach level 3
+  zone map 1426
+  goto 22.6,70.2 "Small Crag Boar (level 3)" r 40 optional
+  level 3
+  tip If you're not level 3 yet: kill Small Crag Boar around here (level 3), then go on.
+
+step Pick up quests (level 3.1)
+  accept 3361
+
+step Pick up quests (level 3.1)
+  accept 183
+  accept 234
+
+step Objectives: The Boar Hunter (level 3.7)
+  kill 708 x12 quest 183.1
+
+step Turn in (level 3.8)
+  turnin 183
+
+step Objectives (level 4.3)
+  kill 706 x14 quest 182.1
+  collect 10438 quest 3361.1
+  collect 16313 quest 3361.2
+  collect 16314 quest 3361.3
+
+step Reach level 4
+  zone map 1426
+  goto 21.9,76.3 "Burly Rockjaw Trogg (level 2)" r 40 optional
+  level 4
+  tip If you're not level 4 yet: kill Burly Rockjaw Trogg around here (level 2), then go on.
+
+step Turn in (level 4.3)
+  turnin 170
+
+step Pick up quests (level 4.4)
+  accept 94373
+
+step Turn in and pick up (level 4.5)
+  turnin 234
+  turnin 182
+  accept 218
+  accept 3364
+
+step Objectives: Call of Earth (level 4.9)
+  collect 264356 quest 94373.1
+  collect 2004 quest 218.1 optional
+
+step Objectives: The Stolen Journal (level 4.9)
+  collect 2004 quest 218.1
+
+step Turn in (level 5.1)
+  turnin 218
+  accept 282
+
+step Turn in and pick up (level 5.3)
+  turnin 3361
+  turnin 3364
+  accept 3365
+  turnin 98581
+  turnin 94373
+  accept 94374
+
+step Turn in (level 5.6)
+  turnin 94374
+  accept 94375
+
+step Turn in (level 5.8)
+  turnin 94375
+
+step Turn in and pick up (level 5.8)
+  turnin 282
+  accept 420
+  accept 96628
+  accept 2160
+
+step Turn in (level 5.8)
+  turnin 3365
+
+step Hearthstone (level 5.9)
+  sethome "Thunderbrew Distillery"
+
+step Turn in and pick up (level 6.0)
+  turnin 96628
+  accept 96608
+  turnin 420
+  accept 98322
+  accept 99158
+  turnin 2160
+  accept 384
+
+step Pick up quests (level 6.2)
+  accept 400
+
+step Objectives: Beer Basted Boar Ribs (level 6.2)
+  collect 2886 x6 quest 384.1
+  collect 2894 quest 384.2
+
+step Turn in (level 6.2)
+  turnin 400
+
+step Objectives: The Great Outdoors (level 6.2)
+  complete 96608
+  zone map 1426
+  goto 46.68,53.84 "Basic Campfire" r 15 optional
+  tip Sit near Eric's Basic Campfire by typing /sit in the chat window and wait until you receive the Boosted Rest buff.
+
+step Turn in (level 6.4)
+  turnin 96608
+  accept 96629
+
+step Objectives: Camping 101: Cooking (level 6.4)
+  complete 96629
+  zone map 1426
+  goto 47.67,52.31 "Gremlock Pilsnor" r 15 optional
+  tip Speak with Gremlock Pilsnor in Kharanos to learn to become a cook.
+  turnin 96629
+
+step Objectives: Beer Basted Boar Ribs (level 6.9)
+  collect 2886 x6 quest 384.1
+  collect 2894 quest 384.2
+
+step Turn in and pick up (level 6.9)
+  turnin 384
+  accept 98321
+
+step Reach level 7
+  zone map 1426
+  goto 42,48.4 "Wendigo (level 7)" r 40 optional
+  level 7
+  tip If you're not level 7 yet: kill Wendigo around here (level 7), then go on.
+
+step Objectives: Flintfire's Shipment (level 7.1)
+  collect 280413 quest 98321.1
+
+step Pick up quests (level 7.4)
+  accept 412
+
+step Pick up quests (level 7.4)
+  accept 317
+  accept 313
+  accept 5541
+
+step Objectives (level 7.4)
+  collect 769 x4 quest 317.1
+  collect 6952 x2 quest 317.2
+
+step Turn in (level 7.7)
+  turnin 317
+  accept 318
+
+step Pick up quests (level 7.7)
+  accept 287
+
+step Turn in (level 7.7)
+  turnin 98321
+
+step Objectives: The Grizzled Den (level 7.7)
+  collect 2671 x8 quest 313.1
+  collect 13850 quest 5541.1 optional
+
+step Objectives: Ammo for Rumbleshot (level 7.8)
+  collect 13850 quest 5541.1
+
+step Turn in (level 7.9)
+  turnin 98322
+  accept 98319
+
+step Objectives: Secure the Mountain (level 7.9)
+  complete 98319
+  zone map 1426
+  goto 43.03,49.62 "Mountaineer Cornelius" r 15 optional
+  tip Find Mountaineer Cornelius in the Grizzled Den for Mountaineer Gretchen.
+
+step Turn in (level 7.9)
+  turnin 98319
+  accept 98323
+
+step Turn in (level 7.9)
+  turnin 98323
+
+step Turn in (level 8.0)
+  turnin 313
+
+step Turn in (level 8.1)
+  turnin 99158
+  accept 99159
+
+step Objectives: Finding Warmth (level 8.1)
+  collect 286339 x14 quest 99159.1
+
+step Turn in (level 8.2)
+  turnin 99159
+  accept 99160
+  accept 99162
+
+step Objectives: Rime's Wrath (level 8.3)
+  kill 276003 x10 quest 99160.1
+
+step Turn in (level 8.5)
+  turnin 99160
+  accept 99161
+
+step Objectives: Rime's Wrath (level 8.5)
+  collect 286325 quest 99161.1
+  collect 286360 quest 99162.1 optional
+  collect 286359 quest 99162.2 optional
+  collect 286358 quest 99162.3 optional
+
+step Objectives (level 8.5)
+  collect 286360 quest 99162.1
+  collect 286359 quest 99162.2
+  collect 286358 quest 99162.3
+
+step Turn in (level 8.6)
+  turnin 99161
+  turnin 99162
+
+step Pick up quests (level 8.8)
+  accept 95212
+
+step Pick up quests (level 8.8)
+  accept 432
+
+step Objectives: Those Blasted Troggs! (level 8.9)
+  kill 1115 x6 quest 432.1
+
+step Turn in (level 9.0)
+  turnin 432
+
+step Objectives: Never Saddle on Quality (level 9.1)
+  collect 267414 x6 quest 95212.1
+
+step Pick up quests (level 9.2)
+  accept 95213
+  collect 268548 quest 95213.1
+
+step Turn in (level 9.2)
+  turnin 95213
+  accept 95214
+
+step Objectives: Stolen Blasting Powder (level 9.6)
+  collect 267415 x16 quest 95214.1
+
+step Turn in (level 9.7)
+  turnin 95214
+
+step Turn in (level 9.8)
+  turnin 95212
+
+step Pick up quests (level 9.8)
+  accept 419
+
+step Turn in (level 9.9)
+  turnin 419
+  accept 417
+
+step Objectives: A Pilot's Revenge (level 9.9)
+  collect 3183 quest 417.1
+
+step Turn in (level 10.0)
+  turnin 417
+
+step Hearth (level 10.0)
+  hearth "Thunderbrew Distillery"
+
+step Turn in (level 10.1)
+  turnin 5541
+
+step Pick up quests (level 10.1)
+  accept 97277
+
+step Objectives: Grund and Gozwin (level 10.1)
+  collect 277976 quest 97277.1
+  kill 269075 quest 97277.2
+
+step Turn in (level 10.1)
+  turnin 97277
+
+step Objectives: Frostmane Hold (level 10.2)
+  complete 287
+  zone map 1426
+  goto 21.07,51.63 "Frostmane Headhunter" r 15 optional
+  tip Explore Frostmane Hold, and kill 5 Frostmane Headhunters for Senir Whitebeard in Kharanos.
+
+step Objectives: Operation Recombobulation (level 10.4)
+  collect 3083 x8 quest 412.1
+  collect 3084 x8 quest 412.2
+
+step Turn in and pick up (level 10.4)
+  accept 310
+  turnin 318
+  accept 315
+  accept 319
+  accept 98326
+
+step Objectives (level 10.5)
+  kill 1196 x6 quest 319.1
+  kill 1127 x8 quest 319.2
+  kill 1201 x8 quest 319.3
+
+step Turn in (level 10.7)
+  turnin 319
+  accept 320
+
+step Objectives: Frosthowl (level 10.7)
+  collect 280426 quest 98326.1
+
+step Turn in (level 10.8)
+  turnin 412
+
+step Turn in and pick up (level 10.9)
+  turnin 310
+  accept 311
+  turnin 287
+  accept 291
+
+step Turn in (level 11.0)
+  turnin 320
+  accept 415
+
+step Objectives: The Perfect Stout (level 11.0)
+  collect 2676 x6 quest 315.1
+
+step Turn in and pick up (level 11.1)
+  turnin 98326
+  turnin 311
+  turnin 315
+  turnin 415
+  accept 413
+
+step Turn in (level 11.4)
+  turnin 413
+  accept 414
+
+step Flight path (level 11.4)
+  getfp "Thelsamar"
+
+step Hearthstone (level 11.4)
+  sethome "Stoutlager Inn"

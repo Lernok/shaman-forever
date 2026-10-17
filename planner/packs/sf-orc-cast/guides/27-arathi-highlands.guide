@@ -1,0 +1,75 @@
+guide sf-orc-cast/27-arathi-highlands
+title 27 · Arathi Highlands (31-33)
+faction Horde
+race Orc, Troll
+levels 31-33
+zone Arathi Highlands
+folder Shaman: Forever · Orco y Troll Elemental y Resto
+next sf-orc-cast/28-stranglethorn-vale
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 31.5)
+  accept 8263
+  turnin 8263
+
+step Pick up quests (level 31.6)
+  accept 655
+
+step Turn in (level 31.6)
+  turnin 655
+  accept 671
+  accept 672
+
+step Objectives: Raising Spirits (level 31.7)
+  collect 4512 x10 quest 672.1
+
+step Turn in and pick up (level 31.7)
+  accept 677
+  turnin 672
+  accept 674
+  turnin 674
+  accept 675
+  turnin 675
+
+step Objectives (level 31.7)
+  kill 2554 x10 quest 677.1
+  kill 2556 x10 quest 677.2
+  kill 2555 x8 quest 677.3
+  collect 4495 x10 quest 671.1 optional
+
+step Objectives: Foul Magics (level 31.9)
+  collect 4495 x10 quest 671.1
+
+step Turn in and pick up (level 32.0)
+  turnin 79975
+  accept 79976
+  turnin 79976
+
+step Hearth (level 32.0)
+  hearth "Hammerfall"
+
+step Turn in (level 32.1)
+  turnin 671
+  accept 701
+
+step Objectives: Guile of the Raptor (level 32.3)
+  collect 4513 x12 quest 701.1
+
+step Turn in and pick up (level 32.3)
+  turnin 701
+  accept 702
+  turnin 677
+
+step Turn in (level 32.3)
+  turnin 702
+  accept 847
+
+step Turn in (level 32.4)
+  turnin 847
+
+step Flight path (level 32.4)
+  getfp "Grom'gol"
+
+step Hearthstone (level 32.4)
+  sethome "Grom'gol Base Camp"

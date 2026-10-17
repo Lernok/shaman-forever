@@ -1,0 +1,419 @@
+guide sf-dwarf-cast/05-darkshore
+title 05 · Darkshore (15-20)
+faction Alliance
+race Dwarf
+levels 15-20
+zone Darkshore
+folder Shaman: Forever · Enano Elemental y Resto
+next sf-dwarf-cast/06-stormwind-city
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 33.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 15.9)
+  accept 4811
+  accept 98025
+
+step Pick up quests (level 15.9)
+  accept 3524
+
+step Pick up quests (level 15.9)
+  accept 1141
+  collect 12238 x6 quest 1141.1
+  turnin 1141
+
+step Pick up quests (level 16.0)
+  accept 954
+  accept 958
+
+step Pick up quests (level 16.0)
+  accept 2118
+
+step Objectives: Plagued Lands (level 16.0)
+  kill 2164 quest 2118.1
+  collect 12242 quest 3524.1 optional
+
+step Objectives: Washed Ashore (level 16.0)
+  collect 12242 quest 3524.1
+
+step Turn in (level 16.0)
+  turnin 3524
+  accept 4681
+
+step Turn in and pick up (level 16.1)
+  turnin 2118
+  accept 2138
+  accept 984
+
+step Objectives: Cleansing of the Infected (level 16.2)
+  kill 2164 x20 quest 2138.1
+
+step Pick up quests (level 16.2)
+  accept 953
+
+step Objectives: Tools of the Highborne (level 16.3)
+  collect 5360 x7 quest 958.1
+
+step Objectives: The Fall of Ameth'Aran (level 16.3)
+  complete 953
+  zone map 1439
+  goto 43.3,58.68 "Read the Lay of Ameth'Aran" r 15 optional
+  tip Study the tablets which tell of Ameth'Aran and of its fall, then return to Sentinel Tysha Moonblade in Darkshore.
+
+step Objectives: WANTED: Jai'vhanel (level 16.3)
+  collect 281038 quest 98025.1
+
+step Objectives: The Fall of Ameth'Aran (level 16.3)
+  complete 953
+  zone map 1439
+  goto 43.3,58.68 "Read the Lay of Ameth'Aran" r 15 optional
+  tip Study the tablets which tell of Ameth'Aran and of its fall, then return to Sentinel Tysha Moonblade in Darkshore.
+
+step Turn in (level 16.3)
+  turnin 953
+
+step Objectives: The Red Crystal (level 16.3)
+  complete 4811
+  zone map 1439
+  goto 47.32,48.68 "Mysterious Red Crystal" r 15 optional
+  tip Travel east of Auberdine and look for a large, red crystal along Darkshore's eastern mountain range. Report back what you find to Sentinel Glynda Nal'Shea in Auberdine.
+
+step Objectives: Bashal'Aran (level 16.3)
+  complete 954
+  zone map 1439
+  goto 44.28,36.37 "Find the source of the strange blue aura in the ruins of Bashal'Aran." r 15 optional
+  tip Find the source of the strange blue aura in the ruins of Bashal'Aran.
+
+step Turn in (level 16.4)
+  turnin 954
+  accept 955
+
+step Objectives: Bashal'Aran (level 16.4)
+  collect 5336 x8 quest 955.1
+
+step Turn in (level 16.5)
+  turnin 955
+  accept 956
+
+step Objectives: Bashal'Aran (level 16.5)
+  collect 5338 quest 956.1
+
+step Turn in (level 16.6)
+  turnin 956
+  accept 957
+
+step Objectives: How Big a Threat? (level 16.6)
+  complete 984
+  zone map 1439
+  goto 50.91,34.74 "Find a corrupt furbolg camp" r 15 optional
+  tip Find a corrupt furbolg camp in Darkshore and return to Terenthis in Auberdine.
+
+step Hearth (level 16.6)
+  hearth "Auberdine"
+
+step Objectives: Washed Ashore (level 16.6)
+  collect 12289 quest 4681.1
+
+step Turn in (level 16.7)
+  turnin 4681
+
+step Turn in and pick up (level 16.8)
+  turnin 2138
+  turnin 984
+  accept 985
+  accept 4761
+
+step Turn in (level 16.9)
+  turnin 958
+  turnin 4761
+  accept 4762
+
+step Turn in (level 16.9)
+  turnin 4811
+  turnin 98025
+  accept 4812
+
+step Objectives: As Water Cascades (level 17.0)
+  collect 14339 quest 4812.1
+  kill 2167 x8 quest 985.1 optional
+  kill 2324 x5 quest 985.2 optional
+
+step Objectives: How Big a Threat? (level 17.0)
+  kill 2167 x8 quest 985.1
+  kill 2324 x5 quest 985.2
+
+step Objectives: Bashal'Aran (level 17.0)
+  complete 957
+  zone map 1439
+  goto 42.37,61.82 "Destroy the seal at the ancient flame" r 15 optional
+  tip Destroy the Ancient Moonstone Seal at the ancient flame in Ameth'Aran, then return to Asterion in Bashal'Aran.
+
+step Pick up quests (level 17.0)
+  accept 4722
+
+step Pick up quests (level 17.0)
+  accept 4728
+
+step Pick up quests (level 17.0)
+  accept 4730
+
+step Pick up quests (level 17.0)
+  accept 5713
+
+step Objectives: One Shot. One Kill. (level 17.0)
+  complete 5713
+  zone map 1439
+  goto 45.87,90.42 "Protect Aynasha" r 15 optional
+  tip Protect Sentinel Aynasha, then speak with Onaeya at Maestra's Post in Ashenvale.
+
+step Turn in (level 17.0)
+  turnin 4812
+  accept 4813
+
+step Turn in and pick up (level 17.0)
+  turnin 985
+  accept 986
+  accept 965
+  accept 2139
+
+step Turn in and pick up (level 17.0)
+  turnin 4813
+  accept 947
+  accept 4740
+
+step Pick up quests (level 17.0)
+  accept 87760
+  accept 1138
+
+step Pick up quests (level 17.0)
+  accept 963
+
+step Pick up quests (level 17.0)
+  accept 729
+  accept 982
+
+step Objectives (level 17.0)
+  collect 12191 quest 982.1
+  collect 12192 quest 982.2
+
+step Pick up quests (level 17.1)
+  accept 4723
+
+step Objectives: Fruit of the Sea (level 17.2)
+  collect 12237 x6 quest 1138.1
+
+step Pick up quests (level 17.2)
+  accept 4725
+
+step Objectives: Holy Diver (level 17.2)
+  collect 280686 quest 87760.1
+
+step Pick up quests (level 17.2)
+  accept 4727
+
+step Pick up quests (level 17.2)
+  accept 2098
+
+step Objectives (level 17.3)
+  collect 7498 quest 2098.1
+  collect 7499 quest 2098.2
+  collect 7500 quest 2098.3
+
+step Turn in (level 17.5)
+  turnin 2098
+
+step Turn in (level 17.5)
+  turnin 965
+  accept 966
+
+step Objectives: The Tower of Althalaxx (level 17.6)
+  collect 5348 x4 quest 966.1
+
+step Turn in (level 17.6)
+  turnin 966
+  accept 967
+
+step Objectives: The Cliffspring River (level 17.6)
+  collect 12349 quest 4762.1
+
+step Turn in (level 17.6)
+  turnin 957
+
+step Turn in and pick up (level 17.6)
+  turnin 4762
+  accept 4763
+  accept 97914
+
+step Turn in (level 17.7)
+  turnin 4722
+  turnin 4728
+  turnin 4730
+  turnin 4727
+  turnin 4725
+  turnin 4723
+
+step Objectives: Tharnariun's Hope (level 17.9)
+  kill 6788 quest 2139.1
+  collect 12355 quest 4763.1 optional
+  collect 5271 x5 quest 947.1 optional
+  collect 5270 quest 947.2 optional
+
+step Objectives: The Blackwood Corrupted (level 17.9)
+  collect 12355 quest 4763.1
+  collect 5271 x5 quest 947.1 optional
+  collect 5270 quest 947.2 optional
+
+step Objectives: Cave Mushrooms (level 17.9)
+  collect 5271 x5 quest 947.1
+  collect 5270 quest 947.2
+
+step Hearth (level 17.9)
+  hearth "Auberdine"
+
+step Turn in (level 18.0)
+  turnin 2139
+
+step Turn in (level 18.1)
+  turnin 982
+  turnin 4763
+
+step Turn in (level 18.2)
+  turnin 947
+  accept 948
+
+step Turn in (level 18.3)
+  turnin 1138
+  turnin 87760
+
+step Objectives: For Love Eternal (level 18.4)
+  collect 5382 quest 963.1
+
+step Turn in and pick up (level 18.4)
+  turnin 948
+  accept 944
+  accept 98013
+  accept 5321
+
+step Objectives: The Sleeper Has Awakened (level 18.4)
+  complete 5321
+  zone map 1459
+  goto 44.09,68.6 "Horn of Awakening" r 15 optional
+  tip Escort Kerlonian Evershade to Liladris Moonriver at Maestra's Post in Ashenvale.
+
+step Objectives: A Lost Master (level 18.5)
+  collect 5386 x5 quest 986.1
+
+step Pick up quests (level 18.7)
+  accept 968
+
+step Objectives: The Master's Glaive (level 18.7)
+  complete 944
+  zone map 1439
+  goto 38.48,86.45 "Enter the Master's Glaive" r 15 optional
+  tip Gather information, then use the Phial of Scrying to create a Scrying Bowl. Use the bowl to speak with Onu.
+
+step Turn in and pick up (level 18.7)
+  turnin 944
+  accept 949
+  turnin 949
+  accept 950
+  accept 98042
+
+step Objectives: It's All Fun and Games Until... (level 18.8)
+  collect 279279 quest 98042.1
+
+step Pick up quests (level 18.8)
+  accept 945
+
+step Objectives: Therylune's Escape (level 18.8)
+  complete 945
+  zone map 1439
+  goto 40.51,87.08 "Escort Therylune away from the Master's Glaive" r 15 optional
+  tip Help Therylune escape, then tell Therysil at the Shrine of Aessina that her sister is safe.
+
+step Turn in (level 18.8)
+  turnin 729
+  accept 731
+
+step Objectives: The Absent Minded Prospector (level 18.8)
+  complete 731
+  zone map 1439
+  goto 35.67,84.03 "Escort Prospector Remtravel" r 15 optional
+  tip Protect Prospector Remtravel as he searches for the mysterious fossil, then return to Archaeologist Hollee in Auberdine.
+
+step Pick up quests (level 18.8)
+  accept 4733
+
+step Pick up quests (level 18.8)
+  accept 4732
+
+step Pick up quests (level 18.8)
+  accept 4731
+
+step Objectives: WANTED: Murkdeep! (level 18.8)
+  kill 10323 quest 4740.1
+
+step Turn in (level 18.9)
+  turnin 950
+  accept 951
+
+step Turn in (level 18.9)
+  turnin 4731
+  turnin 4732
+  turnin 4733
+
+step Turn in (level 19.0)
+  turnin 963
+
+step Turn in and pick up (level 19.1)
+  turnin 98042
+  turnin 731
+  accept 741
+
+step Turn in (level 19.2)
+  turnin 4740
+
+step Turn in (level 19.3)
+  turnin 986
+  accept 993
+
+step Objectives: Swelling Forces (level 19.4)
+  kill 2181 x12 quest 98013.1
+  kill 2182 x8 quest 98013.2
+  kill 2183 x6 quest 98013.3
+  kill 2181 x12 quest 98013.1 optional
+  kill 2182 x8 quest 98013.2 optional
+  kill 2183 x6 quest 98013.3 optional
+  collect 5273 x6 quest 951.1 optional
+
+step Objectives (level 19.4)
+  kill 2181 x12 quest 98013.1
+  kill 2182 x8 quest 98013.2
+  kill 2183 x6 quest 98013.3
+  collect 5273 x6 quest 951.1
+
+step Hearth (level 19.5)
+  hearth "Auberdine"
+
+step Turn in (level 19.6)
+  turnin 951
+  turnin 98013
+
+step Turn in (level 19.7)
+  turnin 993
+  accept 994
+
+step Objectives: Escape Through Force (level 19.7)
+  complete 994
+  zone map 1439
+  goto 41.92,81.76 "Help Volcor to the road" r 15 optional
+  tip Protect Volcor until you reach the road, then speak to Terenthis in Auberdine.
+
+step Turn in and pick up (level 19.8)
+  turnin 994
+  accept 990
+
+step Flight path (level 19.8)
+  getfp "Stormwind"
+
+step Hearthstone (level 19.8)
+  sethome "Stormwind City"

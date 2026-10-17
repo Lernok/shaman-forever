@@ -1,0 +1,194 @@
+guide sf-tauren-cast/28-stranglethorn-vale
+title 28 · Stranglethorn Vale (32-35)
+faction Horde
+race Tauren
+levels 32-35
+zone Stranglethorn Vale
+folder Shaman: Forever · Tauren Elemental y Resto
+# Skeleton from `polestar sim export` (Horde Tauren, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in and pick up (level 32.8)
+  accept 583
+  turnin 583
+  accept 185
+  accept 190
+
+step Objectives (level 32.8)
+  kill 681 x10 quest 185.1
+  kill 683 x10 quest 190.1
+
+step Turn in (level 32.9)
+  turnin 185
+  turnin 190
+
+step Flight path (level 32.9)
+  getfp "Booty Bay"
+
+step Hearthstone (level 32.9)
+  sethome "Booty Bay"
+
+step Pick up quests (level 32.9)
+  accept 191
+  accept 186
+  accept 194
+
+step Objectives: Tiger Mastery (level 32.9)
+  kill 682 x10 quest 186.1
+
+step Objectives: Warsong Supplies (level 33.0)
+  collect 16742 quest 6571.1
+  collect 16745 quest 6571.2
+  collect 16744 quest 6571.3
+  collect 16743 quest 6571.4
+
+step Pick up quests (level 33.0)
+  accept 635
+
+step Flight path (level 33.0)
+  getfp "Grom'gol"
+
+step Hearthstone (level 33.0)
+  sethome "Grom'gol Base Camp"
+
+step Pick up quests (level 33.0)
+  accept 581
+
+step Objectives: Hunt for Yenniku (level 33.1)
+  collect 3901 x9 quest 581.1
+  kill 685 x10 quest 194.1 optional
+  kill 736 x10 quest 191.1 optional
+
+step Objectives (level 33.1)
+  kill 685 x10 quest 194.1
+  kill 736 x10 quest 191.1
+
+step Turn in and pick up (level 33.2)
+  turnin 186
+  accept 187
+  turnin 194
+  accept 195
+
+step Objectives: Raptor Mastery (level 33.3)
+  kill 686 x10 quest 195.1
+
+step Turn in (level 33.4)
+  turnin 581
+  accept 582
+
+step Objectives: Tiger Mastery (level 33.4)
+  kill 1085 x10 quest 187.1
+
+step Turn in and pick up (level 33.4)
+  turnin 195
+  turnin 187
+  accept 188
+
+step Objectives: Tiger Mastery (level 33.4)
+  collect 3879 quest 188.1
+
+step Turn in (level 33.5)
+  turnin 188
+  turnin 191
+
+step Objectives: Headhunting (level 33.6)
+  collect 1532 x20 quest 582.1
+
+step Hearth (level 33.6)
+  hearth "Grom'gol Base Camp"
+
+step Turn in (level 33.6)
+  turnin 582
+
+step Hearthstone (level 33.6)
+  sethome "Booty Bay"
+
+step Pick up quests (level 33.6)
+  accept 189
+  accept 201
+  accept 605
+
+step Pick up quests (level 33.6)
+  accept 575
+
+step Objectives: Singing Blue Shards (level 33.7)
+  collect 3918 x10 quest 605.1
+  collect 1519 x15 quest 189.1 optional
+
+step Objectives: Bloodscalp Ears (level 34.0)
+  collect 1519 x15 quest 189.1
+
+step Objectives: Investigate the Camp (level 34.0)
+  complete 201
+  zone map 1434
+  goto 35.65,10.59 "Locate the hunters' camp" r 15 optional
+  tip Find the hunters' camp and report its location to Krazek in Booty Bay.
+
+step Objectives: Supply and Demand (level 34.0)
+  collect 4053 x2 quest 575.1
+
+step Hearth (level 34.0)
+  hearth "Booty Bay"
+
+step Turn in (level 34.0)
+  turnin 201
+  turnin 189
+  turnin 605
+
+step Turn in (level 34.1)
+  turnin 575
+  accept 577
+
+step Objectives: Some Assembly Required (level 34.1)
+  collect 4104 quest 577.1
+
+step Turn in (level 34.1)
+  turnin 577
+
+step Hearthstone (level 34.1)
+  sethome "Grom'gol Base Camp"
+
+step Pick up quests (level 34.1)
+  accept 570
+  accept 568
+  accept 596
+  accept 629
+
+step Objectives: The Defense of Grom'gol (level 34.1)
+  kill 686 x15 quest 568.1
+
+step Turn in and pick up (level 34.1)
+  accept 638
+  turnin 568
+  accept 569
+
+step Objectives: The Defense of Grom'gol (level 34.2)
+  kill 1142 quest 569.1
+  kill 1144 quest 569.2
+  collect 3838 x8 quest 570.1 optional
+  collect 3839 quest 570.2 optional
+
+step Objectives: Mok'thardin's Enchantment (level 34.3)
+  collect 3838 x8 quest 570.1
+  collect 3839 quest 570.2
+
+step Turn in (level 34.3)
+  turnin 570
+  turnin 569
+
+step Objectives: The Vile Reef (level 34.9)
+  collect 4094 quest 629.1
+  collect 3915 x25 quest 596.1 optional
+
+step Objectives: Bloody Bone Necklaces (level 34.9)
+  collect 3915 x25 quest 596.1
+
+step Turn in (level 34.9)
+  turnin 596
+  turnin 629
+
+step Pick up quests (level 35.0)
+  accept 192
+
+step Objectives: Panther Mastery (level 35.0)
+  kill 684 x10 quest 192.1

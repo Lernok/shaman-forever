@@ -336,6 +336,63 @@ local function myProfessions()
   return out
 end
 
+-- Every profession you have, gathering and secondary ones too: { English name = true }.
+local ALL_PROF_IDS = { [164] = "Blacksmithing", [165] = "Leatherworking", [197] = "Tailoring", [202] = "Engineering",
+  [171] = "Alchemy", [333] = "Enchanting", [182] = "Herbalism", [186] = "Mining", [393] = "Skinning", [356] = "Fishing",
+  [185] = "Cooking", [129] = "First Aid" }
+local ALL_PROF_NAMES = { ["Herbalism"] = "Herbalism", ["Mining"] = "Mining", ["Skinning"] = "Skinning", ["Fishing"] = "Fishing",
+  ["Cooking"] = "Cooking", ["First Aid"] = "First Aid", ["Herboristería"] = "Herbalism", ["Minería"] = "Mining",
+  ["Desuello"] = "Skinning", ["Pesca"] = "Fishing", ["Cocina"] = "Cooking", ["Primeros auxilios"] = "First Aid" }
+local function allProfessions()
+  local out = {}
+  for en in pairs(myProfessions()) do out[en] = true end
+  if GetProfessions and GetProfessionInfo then
+    for _, i in ipairs({ GetProfessions() }) do
+      i = readable(i)
+      if i and i > 0 then
+        local name, _, _, _, _, _, line = GetProfessionInfo(i)
+        local en = ALL_PROF_IDS[readable(line) or 0] or ALL_PROF_NAMES[readable(name) or ""] or PROF_NAMES[readable(name) or ""]
+        if en then out[en] = true end
+      end
+    end
+  elseif GetNumSkillLines and GetSkillLineInfo then
+    for i = 1, GetNumSkillLines() do
+      local name, header = GetSkillLineInfo(i)
+      local en = not header and (ALL_PROF_NAMES[name or ""] or PROF_NAMES[name or ""])
+      if en then out[en] = true end
+    end
+  end
+  return out
+end
+
+-- Forever's profession tutorial ("Camping 101: <profession>") of each of
+-- your professions, at the camp of your start (another start's, if not).
+local function campTips()
+  local tips, lvl, letter, z = {}, UnitLevel("player"), raceLetter(), here()
+  local START = { U = "Mulgore", O = "Durotar", T = "Durotar", D = "Dun Morogh", S = "Zephras Isle" }
+  for prof in pairs(allProfessions()) do
+    local best
+    for _, e in ipairs(D.camp and D.camp[prof] or {}) do
+      if not Api.questDone(e.q) and not Api.onQuest(e.q) and (e.l or 1) <= lvl + 1 and (not e.r or e.r:find(letter, 1, true)) then
+        -- The camp where you are, else your race's start.
+        local gz = areaName((D.givers[e.q] or {}).z)
+        local score = (gz == z and 2 or 0) + (gz == START[letter] and 1 or 0)
+        if not best or score > best.score then best = { e = e, score = score } end
+      end
+    end
+    if best then
+      local e, g = best.e, D.givers[best.e.q]
+      local key = "p" .. e.q
+      if g and not off(key) then
+        tips[#tips + 1] = { key = key, icon = QUEST_ICON, head = string.format(L().campHead, L().profNames[prof] or prof),
+          src = string.format(L().pickup, D.qnames[e.q] or "Camping 101"), gain = giverText(g) or "", giver = g,
+          title = D.qnames[e.q], order = e.l or lvl, q = e.q, cat = "prof", onRoute = true }
+      end
+    end
+  end
+  return tips
+end
+
 local routeCache, refresh
 local function polestar()
   local P = rawget(_G, "Polestar")
@@ -353,7 +410,8 @@ end
 -- steps, else a step doing a dungeon quest's objectives (Polestar's guides).
 local function stepDungeon(step)
   local title = type(step.title) == "string" and step.title or ""
-  local name, lv = title:match("^Dungeon: (.-) %(level (%d+)%)")
+  local name, lv = title:match("^Dungeon: (.-) %(level ([%d%.]+)%)")
+  if lv then lv = math.floor(tonumber(lv) or 0) end
   if not name then name = title:match("^Dungeon: (.+)$") end
   if name then return name, tonumber(lv), true end
   for _, goal in ipairs(type(step.goals) == "table" and step.goals or {}) do
@@ -1166,12 +1224,33 @@ end
 
 -- Tips shown by themselves are marked seen: they don't pop up again.
 local pending
+-- How much a tip matters now: upgrades on your route and for your level
+-- first, by how much they improve.
+local function priority(t)
+  local lvl = UnitLevel("player")
+  local p = 0
+  if t.onRoute then p = p + 2 end
+  if t.item then p = p + math.min(t.pct or 0.25, 2) end
+  if (t.order or 99) <= lvl then p = p + 1 end
+  if t.cat == "prof" then p = p + 0.3 end
+  return p
+end
+local POPUP_MAX = 3
 local function popup(title, tips)
   local new = {}
   for _, tip in ipairs(tips) do if not cdb.seen[tip.key] and not tip.pinned then new[#new + 1] = tip end end
   if #new == 0 then return end
   for _, tip in ipairs(new) do cdb.seen[tip.key] = true end
-  say(string.format(L().chatNew, #new))
+  -- Only the few that matter most pop up; the rest wait in /sf.
+  local total = #new
+  if total > POPUP_MAX then
+    table.sort(new, function(a, b) return priority(a) > priority(b) end)
+    for i = #new, POPUP_MAX + 1, -1 do table.remove(new, i) end
+    table.sort(new, function(a, b) return (a.order or 0) < (b.order or 0) end)
+    say(string.format(L().chatNewMore, total, POPUP_MAX))
+  else
+    say(string.format(L().chatNew, total))
+  end
   if cdb.quiet then return end
   -- Never in the middle of a fight: after it.
   if InCombatLockdown() then pending = { title, new } return end
@@ -1207,7 +1286,9 @@ local function craftTips()
   return tips
 end
 
-local FAR, OFF = 0.35, 0.2
+-- Off the route and worth a detour: OFF without a Polestar route, ROUTE_OFF
+-- with one (you follow it; only a big upgrade is worth leaving it).
+local FAR, OFF, ROUTE_OFF = 0.35, 0.2, 0.35
 local function nearby(tips)
   if cdb.showFar then return tips end
   local mine, out = myContinent(), {}
@@ -1217,7 +1298,7 @@ local function nearby(tips)
       keep = (t.pct or 0) >= FAR
       if keep then t.gain = (t.gain or "") .. " · |cffffd100" .. L().worthTrip .. "|r" end
     elseif t.offRoute then
-      keep = (t.pct or 0) >= OFF
+      keep = (t.pct or 0) >= (t.minPct or OFF)
     end
     if keep then out[#out + 1] = t end
   end
@@ -1227,9 +1308,10 @@ local function upcoming()
   local info = routeInfo()
   local tips, inRoute = {}, {}
   for _, d in ipairs(info and info.dungeons or {}) do inRoute[d.name], inRoute[d.data or d.name] = true, true end
-  for _, t in ipairs(pickupTips(false)) do
-    -- Quests the route already has you take: Polestar tells you.
-    if not (info and t.q and info.quests[t.q]) then tips[#tips + 1] = t end
+  -- With a route, the next dungeon's row says which of its quests you still
+  -- need; the pick-up rows (every dungeon in range) are only noise.
+  if not info then
+    for _, t in ipairs(pickupTips(false)) do tips[#tips + 1] = t end
   end
   for _, t in ipairs(pathTips()) do tips[#tips + 1] = t end
   if info then
@@ -1243,6 +1325,7 @@ local function upcoming()
           t.onRoute, t.offRoute, t.where = true, false, nil
           t.src = t.src .. " · |cff40c0ff" .. string.format(L().onRoute, label) .. "|r"
         elseif t.kind == "quest" or t.kind == "route" or t.kind == "dquest" then
+          t.minPct = ROUTE_OFF
           -- (Our own route gives way to Polestar's; class quests are in its class guides.)
           t.offRoute = true
           t.order = t.order + 0.5
@@ -1257,8 +1340,18 @@ local function upcoming()
     end
     local nd = nextDungeonTip(info)
     if nd then tips[#tips + 1] = nd end
+    -- Your spec and the route's: Enhancement routes ("-enh") count on its
+    -- weapons; Elemental and Restoration have their own ("-cast").
+    local gid = type(info.guide.id) == "string" and info.guide.id or ""
+    local pack = gid:match("^(sf%-[%a]+%-)")
+    local caster = cdb.spec == "Elemental" or cdb.spec == "Restoration"
+    if pack and ((caster and gid:find("^sf%-%a+%-enh/")) or (not caster and gid:find("^sf%-%a+%-cast/"))) then
+      tips[#tips + 1] = { key = "r" .. pack .. cdb.spec, icon = "Interface\\Icons\\INV_Misc_Map_01", pinned = true,
+        head = caster and L().routeForCaster or L().routeForEnh, src = L().routeSwitchHow, gain = "", order = -2e9, cat = "world" }
+    end
   end
   for _, t in ipairs(craftTips()) do tips[#tips + 1] = t end
+  for _, t in ipairs(campTips()) do tips[#tips + 1] = t end
   table.sort(tips, function(a, b) return a.order < b.order end)
   return tips
 end
@@ -1386,6 +1479,15 @@ BINDING_NAME_SHAMANFOREVER_MARK = (GetLocale() or ""):sub(1, 2) == "es" and "Mar
 -- Events -------------------------------------------------------------------------
 local function zoneTips()
   local z = here()
+  -- With a Polestar route it already walks you through the zone: only the
+  -- upgrades of this zone the route gets you (or big ones off it).
+  if routeInfo() then
+    local tips = {}
+    for _, t in ipairs(upcoming()) do
+      if t.item and t.giver and areaName(t.giver.z) == z and (t.onRoute or (t.pct or 0) >= ROUTE_OFF) then tips[#tips + 1] = t end
+    end
+    return tips
+  end
   local tips = pickupTips(true)
   for _, t in ipairs(pathTips(function(st) return st.a ~= "dquest" and st.a ~= "class" and zoneName(st.z) == z end)) do tips[#tips + 1] = t end
   return tips
@@ -1477,6 +1579,8 @@ ev:SetScript("OnEvent", function(self, event, ...)
       makeMinimapButton()
       -- Open again if you left it open (also after /reload).
       if cdb.shown then C_Timer.After(2.5, function() if not (frame and frame:IsShown()) and not InCombatLockdown() then SF.open(true) end end) end
+      -- First time on this character: the setup.
+      if not cdb.setupDone then C_Timer.After(4, function() if not cdb.setupDone and not InCombatLockdown() then SF.setup() end end) end
     end
   elseif event == "PLAYER_LEVEL_UP" then
     local lvl = ...
@@ -1833,6 +1937,103 @@ function SF.options()
 end
 
 -- Slash commands -----------------------------------------------------------------
+-- First-run setup (once per character; /sf setup brings it back): your
+-- spec, whether the window may open by itself, and your route in Polestar.
+local PACK_OF_RACE = { U = "sf-tauren", O = "sf-orc", T = "sf-orc", S = "sf-sky", D = "sf-dwarf" }
+local function myRouteStart()
+  local P = polestar()
+  if not (P and P.Guides and P.Guides.List and P.Engine and P.Engine.SetGuide) then return nil end
+  local kind = (cdb.spec == "Elemental" or cdb.spec == "Restoration") and "cast" or "enh"
+  local prefix = (PACK_OF_RACE[raceLetter()] or "sf-orc") .. "-" .. kind .. "/"
+  local ok, list = pcall(P.Guides.List)
+  if not ok or type(list) ~= "table" then return nil end
+  -- The main route's guide for your level (variants have a tag before the
+  -- number): the first one that doesn't end below you.
+  local lvl, best, bestN = UnitLevel("player"), nil, nil
+  for _, h in ipairs(list) do
+    local id = type(h) == "table" and h.id
+    local n = type(id) == "string" and id:sub(1, #prefix) == prefix and tonumber(id:sub(#prefix + 1):match("^(%d%d)%-"))
+    if n and (tonumber(h.maxLevel) or 99) >= lvl and (not bestN or n < bestN) then best, bestN = id, n end
+  end
+  return best
+end
+local setupFrame
+function SF.setup()
+  if InCombatLockdown() then return end
+  if not setupFrame then
+    local f = CreateFrame("Frame", "ShamanForeverSetup", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
+    setupFrame = f
+    f:SetSize(380, 230)
+    f:SetPoint("CENTER", 0, 80)
+    f:SetFrameStrata("DIALOG")
+    f:EnableMouse(true)
+    f:SetMovable(true)
+    f:RegisterForDrag("LeftButton")
+    f:SetScript("OnDragStart", f.StartMoving)
+    f:SetScript("OnDragStop", f.StopMovingOrSizing)
+    if f.SetBackdrop then
+      f:SetBackdrop({ bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background", edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+        tile = true, tileSize = 32, edgeSize = 32, insets = { left = 11, right = 12, top = 12, bottom = 11 } })
+    end
+    f.icon = f:CreateTexture(nil, "ARTWORK")
+    f.icon:SetSize(32, 32)
+    f.icon:SetPoint("TOPLEFT", 20, -18)
+    f.icon:SetTexture("Interface\\Icons\\Spell_Nature_LightningShield")
+    f.title = f:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+    f.title:SetPoint("LEFT", f.icon, "RIGHT", 10, 0)
+    f.title:SetText("Shaman: Forever")
+    f.step = f:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+    f.step:SetPoint("TOPRIGHT", -22, -24)
+    f.text = f:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    f.text:SetPoint("TOPLEFT", 22, -64)
+    f.text:SetPoint("RIGHT", -22, 0)
+    f.text:SetJustifyH("LEFT")
+    f.buttons = {}
+    for i = 1, 3 do
+      local b = CreateFrame("Button", nil, f, "UIPanelButtonTemplate")
+      b:SetSize(108, 26)
+      b:SetPoint("BOTTOMLEFT", 22 + (i - 1) * 114, 20)
+      f.buttons[i] = b
+    end
+    f.close = CreateFrame("Button", nil, f, "UIPanelCloseButton")
+    f.close:SetPoint("TOPRIGHT", -4, -4)
+    f.close:SetScript("OnClick", function() cdb.setupDone = true; f:Hide() end)
+  end
+  local f = setupFrame
+  local function page(n, text, buttons)
+    f.step:SetText(string.format(L().setupStep, n, 3))
+    f.text:SetText(text)
+    for i, b in ipairs(f.buttons) do
+      local spec = buttons[i]
+      b:SetShown(spec ~= nil)
+      if spec then b:SetText(spec[1]); b:SetScript("OnClick", spec[2]) end
+    end
+  end
+  local pages = {}
+  pages[1] = function()
+    local function pick(spec) return function() cdb.spec = spec; routeCache = nil; pages[2]() end end
+    page(1, L().setupSpec, { { L().specs.Enhancement, pick("Enhancement") }, { L().specs.Elemental, pick("Elemental") },
+      { L().specs.Restoration, pick("Restoration") } })
+  end
+  pages[2] = function()
+    local function pick(quiet) return function() cdb.quiet = quiet; pages[3]() end end
+    page(2, L().setupPopups, { { L().yes, pick(false) }, { L().no, pick(true) } })
+  end
+  pages[3] = function()
+    local start = myRouteStart()
+    local done = function() cdb.setupDone = true; f:Hide(); SF.open(true) end
+    if start then
+      page(3, string.format(L().setupRoute, L().specs[cdb.spec] or cdb.spec), {
+        { L().setupOpen, function() pcall(polestar().Engine.SetGuide, start); routeCache = nil; done() end },
+        { L().setupLater, done } })
+    else
+      page(3, polestar() and L().setupNoPack or L().setupNoPolestar, { { L().setupFinish, done } })
+    end
+  end
+  pages[1]()
+  f:Show()
+end
+
 local SPEC_WORDS = { mejora = "Enhancement", enh = "Enhancement", enhancement = "Enhancement", ele = "Elemental", elemental = "Elemental",
   resto = "Restoration", restauracion = "Restoration", ["restauración"] = "Restoration", restoration = "Restoration" }
 local function onOff(b) return b and L().on or L().off end
@@ -1860,6 +2061,7 @@ SlashCmdList.SHAMANFOREVER = function(msg)
     wipe(cdb.seen); wipe(cdb.done); wipe(cdb.gone)
     say(L().reset)
   elseif cmd == "registro" or cmd == "log" then showLog()
+  elseif cmd == "setup" or cmd == "inicio" then SF.setup()
   elseif cmd == "config" or cmd == "opciones" or cmd == "options" then SF.options()
   elseif cmd == "flecha" or cmd == "arrow" then
     cdb.tomtom = not cdb.tomtom

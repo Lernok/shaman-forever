@@ -1,0 +1,20 @@
+guide sf-dwarf-cast/11-ironforge
+title 11 · Ironforge (24-25)
+faction Alliance
+race Dwarf
+levels 24-25
+zone Ironforge
+folder Shaman: Forever · Enano Elemental y Resto
+next sf-dwarf-cast/12-wetlands
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 33.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in and pick up (level 24.7)
+  accept 94494
+  turnin 968
+
+step Flight path (level 24.8)
+  getfp "Menethil Harbor"
+
+step Hearthstone (level 24.8)
+  sethome "Deepwater Tavern"

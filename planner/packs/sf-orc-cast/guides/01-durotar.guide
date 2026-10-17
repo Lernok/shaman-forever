@@ -1,0 +1,417 @@
+guide sf-orc-cast/01-durotar
+title 01 · Durotar (1-12)
+faction Horde
+race Orc, Troll
+levels 1-12
+zone Durotar
+folder Shaman: Forever · Orco y Troll Elemental y Resto
+next sf-orc-cast/02-tirisfal-glades
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Turn in and pick up (level 1.0)
+  accept 4641
+  turnin 4641
+  accept 788
+  accept 97279
+
+step Objectives: Wayward Weapons (level 1.1)
+  collect 277653 x6 quest 97279.1
+
+step Pick up quests (level 1.5)
+  accept 790
+
+step Turn in (level 1.7)
+  turnin 97279
+
+step Objectives: Sarkoth (level 1.7)
+  collect 4905 quest 790.1
+
+step Turn in (level 2.4)
+  turnin 790
+
+step Reach level 2
+  zone map 1411
+  goto 43.1,64 "Mottled Boar (level 2)" r 40 optional
+  level 2
+  tip If you're not level 2 yet: kill Mottled Boar around here (level 2), then go on.
+
+step Pick up quests (level 2.4)
+  accept 804
+
+step Objectives: Cutting Teeth (level 2.5)
+  kill 3098 x10 quest 788.1
+
+step Turn in and pick up (level 2.5)
+  turnin 804
+  accept 792
+
+step Reach level 3
+  zone map 1411
+  goto 40,66 "Scorpid Worker (level 3)" r 40 optional
+  level 3
+  tip If you're not level 3 yet: kill Scorpid Worker around here (level 3), then go on.
+
+step Pick up quests (level 3.1)
+  accept 5441
+
+step Objectives: Lazy Peons (level 3.1)
+  complete 5441
+  zone map 1411
+  goto 38.83,61.8 "Lazy Peon" r 15 optional
+  tip Use the Foreman's Blackjack on Lazy Peons when they're sleeping. Wake up 5 peons, then return the Foreman's Blackjack to Foreman Thazz'ril in the Valley of Trials.
+
+step Turn in and pick up (level 3.4)
+  turnin 788
+  accept 789
+  accept 3089
+  turnin 3089
+
+step Objectives: Sting of the Scorpid (level 3.4)
+  collect 4862 x10 quest 789.1
+
+step Pick up quests (level 3.4)
+  accept 4402
+
+step Turn in (level 4.0)
+  turnin 5441
+  accept 6394
+
+step Reach level 4
+  zone map 1411
+  goto 40,66 "Scorpid Worker (level 3)" r 40 optional
+  level 4
+  tip If you're not level 4 yet: kill Scorpid Worker around here (level 3), then go on.
+
+step Turn in and pick up (level 4.1)
+  turnin 789
+  accept 1516
+
+step Objectives (level 4.3)
+  kill 3101 x12 quest 792.1
+  collect 16332 quest 6394.1
+  collect 6640 x2 quest 1516.1 optional
+
+step Objectives: Call of Earth (level 4.9)
+  collect 6640 x2 quest 1516.1
+
+step Turn in and pick up (level 4.9)
+  turnin 792
+  accept 794
+  turnin 1516
+  accept 1517
+
+step Turn in (level 5.1)
+  turnin 1517
+  accept 1518
+
+step Objectives: Galgar's Cactus Apple Surprise (level 5.1)
+  collect 11583 x10 quest 4402.1
+
+step Turn in (level 5.1)
+  turnin 6394
+
+step Objectives: Burning Blade Medallion (level 5.3)
+  collect 4859 quest 794.1
+
+step Turn in and pick up (level 5.5)
+  turnin 4402
+  turnin 1518
+  turnin 794
+  accept 805
+  accept 96652
+
+step Turn in (level 5.9)
+  turnin 805
+
+step Pick up quests (level 6.0)
+  accept 2161
+
+step Turn in (level 6.0)
+  turnin 96652
+
+step Hearthstone (level 6.0)
+  sethome "Razor Hill"
+
+step Turn in (level 6.0)
+  turnin 2161
+
+step Reach level 6
+  zone map 1411
+  goto 44.2,55.3 "Vile Familiar (level 4)" r 40 optional
+  level 6
+  tip If you're not level 6 yet: kill Vile Familiar around here (level 4), then go on.
+
+step Pick up quests (level 6.0)
+  accept 96604
+
+step Pick up quests (level 6.0)
+  accept 96822
+
+step Pick up quests (level 6.0)
+  accept 784
+  accept 837
+  accept 815
+  accept 96825
+
+step Pick up quests (level 6.0)
+  accept 791
+
+step Objectives: The Great Outdoors (level 6.0)
+  complete 96604
+  zone map 1411
+  goto 52.09,47.39 "Basic Campfire" r 15 optional
+  tip Sit near Brakk's Basic Campfire by typing /sit in the chat window and wait until you receive the Boosted Rest buff.
+
+step Turn in (level 6.2)
+  turnin 96604
+  accept 96655
+
+step Objectives: Encroachment (level 6.4)
+  kill 3111 x4 quest 837.1
+  kill 3112 x4 quest 837.2
+  kill 3113 x4 quest 837.3
+  kill 3114 x4 quest 837.4
+  collect 275718 x8 quest 96825.1 optional
+
+step Objectives: This Fruit Could Bite Back (level 6.4)
+  collect 275718 x8 quest 96825.1
+
+step Turn in (level 6.5)
+  turnin 96825
+  complete 96655
+  zone map 1411
+  goto 51.11,42.45 "Cook Torka" r 15 optional
+  tip Speak with Cook Torka in Razor Hill to learn to become a cook.
+  turnin 96655
+
+step Objectives: Encroachment (level 6.8)
+  kill 3111 x4 quest 837.1
+  kill 3112 x4 quest 837.2
+  kill 3113 x4 quest 837.3
+  kill 3114 x4 quest 837.4
+  kill 3111 x4 quest 837.1 optional
+  kill 3112 x4 quest 837.2 optional
+  kill 3113 x4 quest 837.3 optional
+  kill 3114 x4 quest 837.4 optional
+
+step Objectives: Encroachment (level 6.9)
+  kill 3111 x4 quest 837.1
+  kill 3112 x4 quest 837.2
+  kill 3113 x4 quest 837.3
+  kill 3114 x4 quest 837.4
+
+step Turn in (level 7.0)
+  turnin 837
+
+step Objectives: For Honor (level 7.0)
+  collect 275713 quest 96822.1
+  collect 275716 quest 96822.2
+  collect 275717 quest 96822.3
+
+step Objectives: Vanquish the Betrayers (level 7.2)
+  complete 784
+  zone map 1411
+  goto 55.72,57.54 "Kul Tiras Sailor" r 15 optional
+  tip Kill 10 Kul Tiras Sailors, 8 Kul Tiras Marines and Lieutenant Benedict and return to Gar'Thok in Razor Hill.
+  collect 4870 x8 quest 791.1
+
+step Objectives (level 7.6)
+  collect 275713 quest 96822.1
+  collect 275716 quest 96822.2
+  collect 275717 quest 96822.3
+
+step Objectives: Vanquish the Betrayers (level 7.7)
+  complete 784
+  zone map 1411
+  goto 55.72,57.54 "Kul Tiras Sailor" r 15 optional
+  tip Kill 10 Kul Tiras Sailors, 8 Kul Tiras Marines and Lieutenant Benedict and return to Gar'Thok in Razor Hill.
+
+step Pick up quests (level 7.7)
+  accept 830
+
+step Pick up quests (level 7.7)
+  accept 96821
+  accept 817
+  accept 818
+  accept 97225
+  accept 97223
+  accept 808
+  accept 823
+  accept 826
+
+step Objectives: A Solvent Spirit (level 7.9)
+  collect 4887 x4 quest 818.1
+  collect 4888 x8 quest 818.2
+  collect 277128 quest 97223.1 optional
+  kill 3207 x8 quest 826.1 optional
+  kill 3206 x8 quest 826.2 optional
+  collect 4866 quest 826.3 optional
+  collect 4864 quest 808.1 optional
+  collect 277135 x8 quest 97225.1 optional
+  collect 4892 x4 quest 817.1 optional
+  collect 4887 x4 quest 818.1 optional
+  collect 4888 x8 quest 818.2 optional
+
+step Objectives: Bloodtalon Matriarch (level 7.9)
+  collect 277128 quest 97223.1
+  kill 3207 x8 quest 826.1 optional
+  kill 3206 x8 quest 826.2 optional
+  collect 4866 quest 826.3 optional
+  collect 4864 quest 808.1 optional
+  collect 277135 x8 quest 97225.1 optional
+  collect 4892 x4 quest 817.1 optional
+  collect 4887 x4 quest 818.1 optional
+  collect 4888 x8 quest 818.2 optional
+  collect 4890 x3 quest 815.1 optional
+
+step Objectives: Zalazane (level 8.2)
+  kill 3207 x8 quest 826.1
+  kill 3206 x8 quest 826.2
+  collect 4866 quest 826.3
+  collect 4864 quest 808.1 optional
+  kill 3207 x8 quest 826.1 optional
+  kill 3206 x8 quest 826.2 optional
+  collect 4866 quest 826.3 optional
+  collect 277135 x8 quest 97225.1 optional
+  collect 4892 x4 quest 817.1 optional
+  collect 4887 x4 quest 818.1 optional
+  collect 4888 x8 quest 818.2 optional
+  collect 4890 x3 quest 815.1 optional
+
+step Objectives (level 8.2)
+  collect 4864 quest 808.1
+  kill 3207 x8 quest 826.1
+  kill 3206 x8 quest 826.2
+  collect 4866 quest 826.3
+  collect 277135 x8 quest 97225.1
+  collect 4892 x4 quest 817.1 optional
+  collect 4887 x4 quest 818.1 optional
+  collect 4888 x8 quest 818.2 optional
+  collect 4890 x3 quest 815.1 optional
+
+step Objectives: Practical Prey (level 8.4)
+  collect 4892 x4 quest 817.1
+  collect 4887 x4 quest 818.1 optional
+  collect 4888 x8 quest 818.2 optional
+  collect 4890 x3 quest 815.1 optional
+
+step Objectives: A Solvent Spirit (level 8.6)
+  collect 4887 x4 quest 818.1
+  collect 4888 x8 quest 818.2
+  collect 4890 x3 quest 815.1 optional
+
+step Objectives: Break a Few Eggs (level 8.8)
+  collect 4890 x3 quest 815.1
+
+step Turn in (level 8.8)
+  turnin 817
+  turnin 818
+  turnin 97225
+  turnin 826
+  turnin 808
+  turnin 97223
+
+step Pick up quests (level 9.4)
+  accept 786
+
+step Objectives: Thwarting Kolkar Aggression (level 9.4)
+  complete 786
+  zone map 1411
+  goto 49.81,81.29 "Attack Plan: Valley of Trials destroyed" r 15 optional
+  tip Lar Prowltusk outside of Sen'jin Village wants you to destroy the 3 sets of Attack Plans held within Kolkar Crag.
+
+step Objectives: Thwarting Kolkar Aggression (level 9.4)
+  complete 786
+  zone map 1411
+  goto 49.81,81.29 "Attack Plan: Valley of Trials destroyed" r 15 optional
+  tip Lar Prowltusk outside of Sen'jin Village wants you to destroy the 3 sets of Attack Plans held within Kolkar Crag.
+
+step Pick up quests (level 9.4)
+  accept 99123
+  complete 99123
+  tip Help Pal'juh escape Kolkar Crag and bring news of your success to Master Vornal in Sen'jin Village.
+
+step Objectives: Thwarting Kolkar Aggression (level 9.4)
+  complete 786
+  zone map 1411
+  goto 49.81,81.29 "Attack Plan: Valley of Trials destroyed" r 15 optional
+  tip Lar Prowltusk outside of Sen'jin Village wants you to destroy the 3 sets of Attack Plans held within Kolkar Crag.
+
+step Turn in (level 9.5)
+  turnin 786
+  turnin 99123
+
+step Objectives (level 9.6)
+  kill 266850 x6 quest 96821.1
+  kill 266849 x6 quest 96821.2
+
+step Turn in and pick up (level 9.8)
+  turnin 784
+  turnin 830
+  turnin 96821
+  accept 825
+  accept 831
+  turnin 823
+  accept 806
+
+step Turn in (level 10.1)
+  turnin 96822
+
+step Reach level 10
+  zone map 1411
+  goto 49.2,48.4 "Razormane Scout (level 8)" r 40 optional
+  level 10
+  tip If you're not level 10 yet: kill Razormane Scout around here (level 8), then go on.
+
+step Pick up quests (level 10.1)
+  accept 2983
+
+step Objectives: From The Wreckage.... (level 10.1)
+  collect 4863 x3 quest 825.1
+
+step Hearth (level 10.1)
+  hearth "Razor Hill"
+
+step Pick up quests (level 10.1)
+  accept 812
+
+step Objectives: Dark Storms (level 10.2)
+  collect 4869 quest 806.1
+
+step Pick up quests (level 10.2)
+  accept 834
+
+step Objectives: Winds in the Desert (level 10.2)
+  collect 4918 x5 quest 834.1
+
+step Turn in (level 10.3)
+  turnin 834
+  accept 835
+
+step Objectives (level 10.3)
+  kill 3117 x12 quest 835.1
+  kill 3118 x8 quest 835.2
+
+step Turn in (level 10.6)
+  turnin 835
+
+step Turn in (level 10.7)
+  turnin 791
+
+step Turn in and pick up (level 10.7)
+  turnin 815
+  turnin 825
+  turnin 806
+  accept 828
+
+step Turn in (level 10.9)
+  turnin 828
+  accept 827
+
+step Objectives: Skull Rock (level 11.0)
+  collect 4871 quest 827.1
+
+step Turn in (level 11.1)
+  turnin 827
+  accept 829

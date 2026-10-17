@@ -1,0 +1,229 @@
+guide sf-orc-cast/09-the-barrens
+title 09 · The Barrens (18-21)
+faction Horde
+race Orc, Troll
+levels 18-21
+zone The Barrens
+folder Shaman: Forever · Orco y Troll Elemental y Resto
+next sf-orc-cast/10-hillsbrad-foothills
+# Skeleton from `polestar sim export` (Horde Orc, dungeons, best route 37.2 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Pick up quests (level 18.6)
+  accept 891
+
+step Pick up quests (level 18.6)
+  accept 865 optional map 1413 @62.37,37.62
+  accept 1069
+  accept 895
+
+step Pick up quests (level 18.7)
+  accept 896
+
+step Objectives: Raptor Horns (level 18.7)
+  complete 865 optional
+
+step Turn in (level 18.8)
+  turnin 865 optional map 1413 @62.37,37.62
+
+step Objectives: WANTED: Baron Longshore (level 18.8)
+  collect 5084 quest 895.1
+
+step Objectives: The Guns of Northwatch (level 18.8)
+  complete 891
+  zone map 1413
+  goto 61.85,54.65 "Captain Fairmount" r 15 optional
+  tip Captain Thalo'thas Brightsun of Ratchet wants you to collect 10 Theramore Medals and slay Captain Fairmount, Cannoneer Whessan and Cannoneer Smythe.
+
+step Pick up quests (level 18.8)
+  accept 898
+
+step Objectives: The Guns of Northwatch (level 18.8)
+  complete 891
+  zone map 1413
+  goto 61.85,54.65 "Captain Fairmount" r 15 optional
+  tip Captain Thalo'thas Brightsun of Ratchet wants you to collect 10 Theramore Medals and slay Captain Fairmount, Cannoneer Whessan and Cannoneer Smythe.
+
+step Objectives: The Guns of Northwatch (level 18.8)
+  complete 891
+  zone map 1413
+  goto 61.85,54.65 "Captain Fairmount" r 15 optional
+  tip Captain Thalo'thas Brightsun of Ratchet wants you to collect 10 Theramore Medals and slay Captain Fairmount, Cannoneer Whessan and Cannoneer Smythe.
+
+step Objectives: The Guns of Northwatch (level 18.9)
+  complete 891
+  zone map 1413
+  goto 61.85,54.65 "Captain Fairmount" r 15 optional
+  tip Captain Thalo'thas Brightsun of Ratchet wants you to collect 10 Theramore Medals and slay Captain Fairmount, Cannoneer Whessan and Cannoneer Smythe.
+
+step Objectives: Free From the Hold (level 18.9)
+  complete 898
+  zone map 1413
+  goto 62.27,39.09 "Escort Gilthares Firebough back to Ratchet" r 15 optional
+  tip Safely escort Gilthares Firebough back to Captain Brightsun in Ratchet.
+
+step Turn in (level 19.0)
+  turnin 891
+  turnin 898
+
+step Turn in (level 19.1)
+  turnin 895
+
+step Flight path (level 19.1)
+  getfp "Crossroads"
+
+step Hearthstone (level 19.1)
+  sethome "The Crossroads"
+
+step Pick up quests (level 19.1)
+  accept 899
+  accept 4921
+  accept 6541
+
+step Pick up quests (level 19.1)
+  accept 850
+
+step Objectives: Kolkar Leaders (level 19.1)
+  collect 5022 quest 850.1
+
+step Turn in (level 19.2)
+  turnin 850
+  accept 851
+
+step Pick up quests (level 19.2)
+  accept 1062
+  accept 6548
+
+step Pick up quests (level 19.2)
+  accept 95494
+  accept 95507
+
+step Objectives (level 19.2)
+  collect 269715 x6 quest 95494.1
+  collect 269719 x8 quest 95507.1
+
+step Turn in (level 19.3)
+  turnin 95494
+  turnin 95507
+  accept 95495
+
+step Turn in (level 19.4)
+  turnin 95495
+  accept 95621
+
+step Objectives: Trouble in the Valley (level 19.4)
+  collect 270151 quest 95621.1
+
+step Turn in (level 19.4)
+  turnin 95621
+  accept 95508
+
+step Objectives: Unwelcome Guests (level 19.4)
+  kill 261367 quest 95508.1
+
+step Turn in (level 19.5)
+  turnin 95508
+
+step Pick up quests (level 19.5)
+  accept 858
+
+step Objectives: Ignition (level 19.5)
+  collect 5050 quest 858.1
+
+step Turn in (level 19.5)
+  turnin 858
+  accept 863
+
+step Objectives: Miner's Fortune (level 19.6)
+  collect 5097 quest 896.1
+
+step Objectives: The Escape (level 19.6)
+  complete 863
+  zone map 1413
+  goto 55.36,7.68 "Escort Wizzlecrank out of the Venture Co. drill site" r 15 optional
+  tip Protect Wizzlecrank and the stolen goblin shredder on the way to Sputtervalve in Ratchet.
+
+step Hearth (level 19.6)
+  hearth "The Crossroads"
+
+step Objectives: Verog the Dervish (level 19.6)
+  collect 5023 quest 851.1
+
+step Objectives: Lost in Battle (level 19.6)
+  complete 4921
+  zone map 1413
+  goto 49.33,50.32 "Beaten Corpse" r 15 optional
+  tip Find Mankrik's wife and then return to him in the Crossroads.
+
+step Objectives: Consumed by Hatred (level 20.0)
+  collect 5085 x60 quest 899.1
+
+step Hearthstone (level 20.0)
+  sethome "Ratchet"
+
+step Turn in (level 20.1)
+  turnin 896
+
+step Turn in (level 20.1)
+  turnin 863
+
+step Hearthstone (level 20.1)
+  sethome "The Crossroads"
+
+step Pick up quests (Wailing Caverns)
+  accept 959 optional map 1413 @63.09,37.61
+  accept 1491 optional map 1413 @62.37,37.62
+
+step Turn in (level 20.2)
+  turnin 899
+  turnin 4921
+  accept 95774
+
+step Turn in (level 20.3)
+  turnin 851
+  accept 852
+
+step Pick up quests (level 20.3)
+  accept 1486 optional map 1413 @45.99,35.66
+  accept 1487 optional map 1413 @46.01,35.74
+
+step Objectives: Hezrul Bloodmark (level 20.3)
+  collect 5025 quest 852.1
+  collect 277277 x4 quest 95774.1 optional
+
+step Objectives: Her Name Is Olgra (level 20.3)
+  collect 277277 x4 quest 95774.1
+
+step Turn in (level 20.4)
+  turnin 95774
+
+step Turn in (level 20.5)
+  turnin 852
+
+step Dungeon: Wailing Caverns (level 20.5)
+  zone map 1413
+  goto 46,36.4 "Wailing Caverns" r 30 live
+  tip Find a group and clear Wailing Caverns, with its quests from this route in your log.
+
+step Turn in (level 21.3)
+  turnin 1487 optional map 1413 @46.01,35.74
+  turnin 1486 optional map 1413 @45.99,35.66
+
+step Hearth (level 21.4)
+  hearth "The Crossroads"
+
+step Hearthstone (level 21.4)
+  sethome "Ratchet"
+
+step Turn in (level 21.5)
+  turnin 1491 optional map 1413 @62.37,37.62
+  turnin 959 optional map 1413 @63.09,37.61
+
+step Pick up quests (level 21.5)
+  accept 6981 optional
+
+step Flight path (level 21.5)
+  getfp "Tarren Mill"
+
+step Hearthstone (level 21.5)
+  sethome "Tarren Mill"

@@ -1,0 +1,33 @@
+guide sf-dwarf-cast/16-wetlands
+title 16 · Wetlands (28-30)
+faction Alliance
+race Dwarf
+levels 28-30
+zone Wetlands
+folder Shaman: Forever · Enano Elemental y Resto
+next sf-dwarf-cast/17-redridge-mountains
+# Skeleton from `polestar sim export` (Alliance Dwarf, dungeons, best route 33.8 h under the model). Era + known Forever quests only.
+# Quests in the order the simulator did them; review every step in game before publishing.
+
+step Dungeon: Excavation Site: Wetlands (level 28.0)
+  zone map 1437
+  goto 47.7,56.2 "Excavation Site: Wetlands" r 30 live
+  tip Find a group and clear Excavation Site: Wetlands, with its quests from this route in your log.
+
+step Turn in (level 29.0)
+  turnin 95772 optional map 1437 @47.7,56.2 live
+
+step Hearthstone (level 29.0)
+  sethome "Deepwater Tavern"
+
+step Turn in (level 29.2)
+  turnin 95809 optional map 1437 @11.88,58.82
+
+step Turn in (level 29.2)
+  turnin 98815 optional map 1437 @8.55,55.74
+
+step Hearthstone (level 29.2)
+  sethome "Lakeshire"
+
+step Pick up: Fallen in the Fen (Excavation Site: Wetlands)
+  accept 95795 optional map 1437 @47.7,56.2 live
