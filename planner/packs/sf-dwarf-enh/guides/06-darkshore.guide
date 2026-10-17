@@ -74,21 +74,33 @@ step Objectives: Tools of the Highborne (level 15.3)
 
 step Objectives: The Fall of Ameth'Aran (level 15.3)
   complete 953
+  zone map 1439
+  goto 43.3,58.68 "Read the Lay of Ameth'Aran" r 15 optional
+  tip Study the tablets which tell of Ameth'Aran and of its fall, then return to Sentinel Tysha Moonblade in Darkshore.
 
 step Objectives: WANTED: Jai'vhanel (level 15.3)
   collect 281038 quest 98025.1
 
 step Objectives: The Fall of Ameth'Aran (level 15.3)
   complete 953
+  zone map 1439
+  goto 43.3,58.68 "Read the Lay of Ameth'Aran" r 15 optional
+  tip Study the tablets which tell of Ameth'Aran and of its fall, then return to Sentinel Tysha Moonblade in Darkshore.
 
 step Turn in (level 15.3)
   turnin 953
 
 step Objectives: The Red Crystal (level 15.3)
   complete 4811
+  zone map 1439
+  goto 47.32,48.68 "Mysterious Red Crystal" r 15 optional
+  tip Travel east of Auberdine and look for a large, red crystal along Darkshore's eastern mountain range. Report back what you find to Sentinel Glynda Nal'Shea in Auberdine.
 
 step Objectives: Bashal'Aran (level 15.3)
   complete 954
+  zone map 1439
+  goto 44.28,36.37 "Find the source of the strange blue aura in the ruins of Bashal'Aran." r 15 optional
+  tip Find the source of the strange blue aura in the ruins of Bashal'Aran.
 
 step Turn in (level 15.4)
   turnin 954
@@ -120,6 +132,9 @@ step Turn in (level 16.0)
 
 step Objectives: How Big a Threat? (level 16.0)
   complete 984
+  zone map 1439
+  goto 50.91,34.74 "Find a corrupt furbolg camp" r 15 optional
+  tip Find a corrupt furbolg camp in Darkshore and return to Terenthis in Auberdine.
 
 step Objectives: Buzzbox 525 (level 16.1)
   collect 5414 x4 quest 1003.1
@@ -155,6 +170,9 @@ step Objectives: How Big a Threat? (level 16.5)
 
 step Objectives: Bashal'Aran (level 16.5)
   complete 957
+  zone map 1439
+  goto 42.37,61.82 "Destroy the seal at the ancient flame" r 15 optional
+  tip Destroy the Ancient Moonstone Seal at the ancient flame in Ameth'Aran, then return to Asterion in Bashal'Aran.
 
 step Pick up quests (level 16.5)
   accept 4722
@@ -173,6 +191,9 @@ step Pick up quests (level 16.6)
 
 step Objectives: One Shot. One Kill. (level 16.6)
   complete 5713
+  zone map 1439
+  goto 45.87,90.42 "Protect Aynasha" r 15 optional
+  tip Protect Sentinel Aynasha, then speak with Onaeya at Maestra's Post in Ashenvale.
 
 step Hearth (level 16.6)
   hearth "Auberdine"
@@ -308,6 +329,9 @@ step Turn in and pick up (level 18.1)
 
 step Objectives: The Sleeper Has Awakened (level 18.1)
   complete 5321
+  zone map 1459
+  goto 44.09,68.6 "Horn of Awakening" r 15 optional
+  tip Escort Kerlonian Evershade to Liladris Moonriver at Maestra's Post in Ashenvale.
 
 step Objectives: A Lost Master (level 18.2)
   collect 5386 x5 quest 986.1
@@ -317,6 +341,9 @@ step Pick up quests (level 18.3)
 
 step Objectives: The Master's Glaive (level 18.3)
   complete 944
+  zone map 1439
+  goto 38.48,86.45 "Enter the Master's Glaive" r 15 optional
+  tip Gather information, then use the Phial of Scrying to create a Scrying Bowl. Use the bowl to speak with Onu.
 
 step Turn in and pick up (level 18.3)
   turnin 944
@@ -333,6 +360,9 @@ step Pick up quests (level 18.4)
 
 step Objectives: Therylune's Escape (level 18.4)
   complete 945
+  zone map 1439
+  goto 40.51,87.08 "Escort Therylune away from the Master's Glaive" r 15 optional
+  tip Help Therylune escape, then tell Therysil at the Shrine of Aessina that her sister is safe.
 
 step Turn in (level 18.5)
   turnin 729
@@ -340,6 +370,9 @@ step Turn in (level 18.5)
 
 step Objectives: The Absent Minded Prospector (level 18.5)
   complete 731
+  zone map 1439
+  goto 35.67,84.03 "Escort Prospector Remtravel" r 15 optional
+  tip Protect Prospector Remtravel as he searches for the mysterious fossil, then return to Archaeologist Hollee in Auberdine.
 
 step Pick up quests (level 18.5)
   accept 4733
@@ -405,6 +438,9 @@ step Turn in (level 19.4)
 
 step Objectives: Escape Through Force (level 19.4)
   complete 994
+  zone map 1439
+  goto 41.92,81.76 "Help Volcor to the road" r 15 optional
+  tip Protect Volcor until you reach the road, then speak to Terenthis in Auberdine.
 
 step Turn in and pick up (level 19.5)
   turnin 994

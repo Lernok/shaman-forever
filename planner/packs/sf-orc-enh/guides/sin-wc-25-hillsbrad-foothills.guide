@@ -45,6 +45,9 @@ step Turn in and pick up (level 31.5)
 
 step Objectives: Helcular's Revenge (level 31.6)
   complete 553
+  zone map 1424
+  goto 43.89,28.06 "Flame of Azel charged" r 15 optional
+  tip Charge the Rod of Helcular with the powers of the Flame of Azel, Flame of Veraz and the Flame of Uzel.$B$BDrive the charged rod into Helcular's grave in Southshore.
 
 step Flight path (level 31.6)
   getfp "Hammerfall"

@@ -99,12 +99,18 @@ step Pick up quests (level 17.1)
 
 step Objectives: The Sleeper Has Awakened (level 17.1)
   complete 5321
+  zone map 1459
+  goto 44.09,68.6 "Horn of Awakening" r 15 optional
+  tip Escort Kerlonian Evershade to Liladris Moonriver at Maestra's Post in Ashenvale.
 
 step Pick up quests (level 17.3)
   accept 968
 
 step Objectives: The Master's Glaive (level 17.3)
   complete 944
+  zone map 1439
+  goto 38.48,86.45 "Enter the Master's Glaive" r 15 optional
+  tip Gather information, then use the Phial of Scrying to create a Scrying Bowl. Use the bowl to speak with Onu.
 
 step Turn in and pick up (level 17.3)
   turnin 944
@@ -121,6 +127,9 @@ step Pick up quests (level 17.4)
 
 step Objectives: Therylune's Escape (level 17.4)
   complete 945
+  zone map 1439
+  goto 40.51,87.08 "Escort Therylune away from the Master's Glaive" r 15 optional
+  tip Help Therylune escape, then tell Therysil at the Shrine of Aessina that her sister is safe.
 
 step Turn in (level 17.5)
   turnin 729
@@ -128,6 +137,9 @@ step Turn in (level 17.5)
 
 step Objectives: The Absent Minded Prospector (level 17.5)
   complete 731
+  zone map 1439
+  goto 35.67,84.03 "Escort Prospector Remtravel" r 15 optional
+  tip Protect Prospector Remtravel as he searches for the mysterious fossil, then return to Archaeologist Hollee in Auberdine.
 
 step Objectives: WANTED: Murkdeep! (level 17.5)
   kill 10323 quest 4740.1

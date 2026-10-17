@@ -84,28 +84,17 @@ step Objectives: Weapons of Choice (level 24.4)
   collect 5074 quest 879.1 optional
   collect 5073 quest 879.2 optional
   collect 5072 quest 879.3 optional
-  kill 3374 x15 quest 843.1 optional
-  kill 3375 x5 quest 843.2 optional
-  collect 5006 quest 843.3 optional
-  kill 4128 x7 quest 98093.1 optional
-  kill 3238 x7 quest 98093.2 optional
 
 step Objectives (level 24.5)
   collect 5074 quest 879.1
   collect 5073 quest 879.2
   collect 5072 quest 879.3
-  kill 3374 x15 quest 843.1 optional
-  kill 3375 x5 quest 843.2 optional
-  collect 5006 quest 843.3 optional
-  kill 4128 x7 quest 98093.1 optional
-  kill 3238 x7 quest 98093.2 optional
 
 step Objectives: Gann's Reclamation (level 24.5)
-  kill 3374 x15 quest 843.1
-  kill 3375 x5 quest 843.2
-  collect 5006 quest 843.3
-  kill 4128 x7 quest 98093.1 optional
-  kill 3238 x7 quest 98093.2 optional
+  complete 843
+  zone map 1413
+  goto 46.86,85.57 "Bael'dun Excavator" r 15 optional
+  tip Gann Stonespire wants you to kill 15 Bael'dun Excavators and 5 Bael'dun Foremen.$B$BBring Khazgorm's Journal to Gann Stonespire.
 
 step Objectives: Field to Clear (level 24.6)
   kill 4128 x7 quest 98093.1
@@ -129,12 +118,15 @@ step Turn in (level 25.0)
 
 step Objectives: Revenge of Gann (level 25.0)
   complete 849
-
-step Turn in (level 25.0)
-  turnin 849
+  zone map 1413
+  goto 46.97,85.63 "Bael Modan Flying Machine destroyed" r 15 optional
+  tip Destroy the flying machine at Bael Modan and return to Gann Stonespire.
 
 step Pick up quests (level 25.0)
   accept 4542
+
+step Turn in (level 25.1)
+  turnin 849
 
 step Hearth (level 25.1)
   hearth "Camp Taurajo"

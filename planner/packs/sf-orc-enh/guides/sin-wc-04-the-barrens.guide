@@ -115,6 +115,9 @@ step Turn in (level 15.3)
 
 step Objectives: Samophlange (level 15.3)
   complete 900
+  zone map 1413
+  goto 52.33,11.56 "Shut off Main Control Valve" r 15 optional
+  tip Close off the Fuel Control Valve, the Regulator Valve and the Main Control Valve then use the control console again.
 
 step Turn in (level 15.3)
   turnin 900
@@ -174,14 +177,17 @@ step Turn in and pick up (level 15.9)
 
 step Objectives: The Angry Scytheclaws (level 16.0)
   complete 905
+  zone map 1413
+  goto 52.6,46.11 "Visit Blue Raptor Nest" r 15 optional
+  tip Kill Sunscale raptors and collect their feathers. Use the feathers on the 3 Scytheclaw nests. Return to Sergra Darkthorn in the Crossroads.
 
 step Objectives: The Stagnant Oasis (level 16.0)
   complete 877 optional
 
 step Turn in and pick up (level 16.0)
-  turnin 905
   turnin 877 optional map 1413 @52.26,31.93
   accept 880 optional map 1413 @52.26,31.93
+  turnin 905
 
 step Objectives: Altered Beings (level 16.2)
   complete 880 optional

@@ -14,13 +14,19 @@ step Pick up quests (level 6.9)
 
 step Objectives: The Great Outdoors (level 6.9)
   complete 95998
+  zone map 1429
+  goto 44.94,63.2 "Basic Campfire" r 15 optional
+  tip Sit near Sam's Basic Campfire by typing /sit in the chat window and wait until you receive the Boosted Rest buff.
 
 step Turn in (level 7.1)
   turnin 95998
   accept 96626
 
 step Objectives: Camping 101: Cooking (level 7.1)
-  kill 1430 quest 96626.1
+  complete 96626
+  zone map 1429
+  goto 44.37,65.99 "Tomas" r 15 optional
+  tip Speak with Tomas in Goldshire to learn to become a cook.
   turnin 96626
 
 step Pick up quests (level 7.2)
@@ -94,6 +100,9 @@ step Hearth (level 7.9)
 
 step Objectives: The Fargodeep Mine (level 7.9)
   complete 62
+  zone map 1429
+  goto 40.56,82.26 "Scout through the Fargodeep Mine" r 15 optional
+  tip Explore the Fargodeep Mine, then return to Marshal Dughan in Goldshire.
 
 step Objectives: Kobold Candles (level 8.1)
   collect 772 x8 quest 60.1
@@ -186,6 +195,9 @@ step Turn in (level 10.3)
 
 step Objectives: The Jasperlode Mine (level 10.3)
   complete 76
+  zone map 1429
+  goto 61.93,53.16 "Scout through the Jasperlode Mine" r 15 optional
+  tip Explore the Jasperlode Mine, then report back to Marshal Dughan in Goldshire.
 
 step Objectives: Stolen Enchanting Supplies (level 10.3)
   collect 247805 x5 quest 91725.1

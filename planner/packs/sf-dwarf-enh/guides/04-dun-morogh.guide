@@ -11,7 +11,10 @@ next sf-dwarf-enh/05-ironforge
 
 step Pick up quests (level 12.3)
   accept 96392
-  kill 264936 quest 96392.1
+  complete 96392
+  zone map 1426
+  goto 64.87,58.47 "Earthseer Farsen" r 15 optional
+  tip Speak with Earthseer Farsen's and ask him to lend you his farsight to observe the Dark Iron threat.
   turnin 96392
   accept 96390
 

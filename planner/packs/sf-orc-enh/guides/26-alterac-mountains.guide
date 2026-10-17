@@ -23,9 +23,15 @@ step Objectives: Prison Break In (level 31.7)
 
 step Objectives: Helcular's Revenge (level 31.7)
   complete 553
+  zone map 1416
+  goto 40,91 "Flame of Azel charged" r 15 optional
+  tip Charge the Rod of Helcular with the powers of the Flame of Azel, Flame of Veraz and the Flame of Uzel.$B$BDrive the charged rod into Helcular's grave in Southshore.
 
 step Objectives: Gol'dir (level 31.7)
   complete 503
+  zone map 1413
+  goto 44.93,59.39 "Rusted Iron Key" r 15 optional
+  tip Free Gol'dir then return to Krusk in Tarren Mill.
 
 step Turn in (level 31.8)
   turnin 503

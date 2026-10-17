@@ -127,6 +127,9 @@ step Turn in (level 7.0)
 
 step Objectives: Winterhoof Cleansing (level 7.0)
   complete 754
+  zone map 1412
+  goto 51.76,68.43 "Cleanse the Winterhoof Water Well" r 15 live optional
+  tip Use the Winterhoof Cleansing Totem at the Winterhoof Water Well, then return to Mull Thunderhorn.
 
 step Turn in and pick up (level 7.1)
   turnin 754
@@ -180,51 +183,56 @@ step Turn in and pick up (level 8.5)
 
 step Objectives: Thunderhorn Cleansing (level 8.5)
   complete 758
+  zone map 1412
+  goto 44.17,51.11 "Cleanse the Thunderhorn Water Well" r 15 live optional
+  tip Use the Thunderhorn Cleansing Totem at the Thunderhorn Water Well, then return to Mull.
 
-step Turn in (level 8.5)
-  turnin 758
-  accept 759
-
-step Pick up quests (level 8.5)
-  accept 99411
-
-step Pick up quests (level 8.5)
-  accept 99108
-  turnin 99108
-
-step Pick up quests (level 8.6)
-  turnin 96659
-  accept 96605
-
-step Objectives: Kyle's Gone Missing! (level 8.6)
-  kill 277154 quest 99411.1
-  collect 4808 x2 quest 771.1 optional
-  collect 4809 x2 quest 771.2 optional
-
-step Objectives (level 8.6)
+step Objectives (level 8.5)
   collect 4808 x2 quest 771.1
   collect 4809 x2 quest 771.2
 
-step Turn in (level 8.8)
+step Pick up quests (level 8.7)
+  accept 99411
+
+step Turn in (level 8.7)
   turnin 771
   accept 772
 
+step Turn in and pick up (level 8.8)
+  accept 99108
+  turnin 99108
+  turnin 758
+  accept 759
+
+step Objectives: Kyle's Gone Missing! (level 8.9)
+  kill 277154 quest 99411.1
+
+step Pick up quests (level 8.9)
+  turnin 96659
+  accept 96605
+
 step Objectives: The Great Outdoors (level 8.9)
   complete 96605
+  zone map 1412
+  goto 46.21,67.31 "Basic Campfire" r 15 live optional
+  tip Sit near Kaga's Basic Campfire by typing /sit in the chat window and wait until you receive the Boosted Rest buff.
 
 step Turn in (level 9.0)
   turnin 96605
   accept 96661
 
 step Objectives: Camping 101: Cooking (level 9.0)
-  kill 3067 quest 96661.1
+  complete 96661
+  zone map 1412
+  goto 44.92,61.67 "Pyall Silentstride" r 15 live optional
+  tip Speak with Pyall Silentstride in Bloodhoof Village to learn to become a cook.
   turnin 96661
+
+step Objectives: Swoop Hunting (level 9.2)
+  collect 4769 x8 quest 761.1
 
 step Turn in (level 9.2)
   turnin 99411
-
-step Objectives: Swoop Hunting (level 9.3)
-  collect 4769 x8 quest 761.1
 
 step Pick up quests (level 9.3)
   accept 749
@@ -324,6 +332,9 @@ step Turn in (level 11.2)
 
 step Objectives: Wildmane Cleansing (level 11.2)
   complete 760
+  zone map 1412
+  goto 42.7,24.98 "Cleanse the Wildmane Well" r 15 live optional
+  tip Use the Wildmane Cleansing Totem at the Wildmane Water Well, then return to Mull Thunderhorn.
 
 step Turn in (level 11.2)
   turnin 772
@@ -352,6 +363,9 @@ step Pick up quests (level 11.4)
 
 step Objectives: The Longwalkers (level 11.4)
   complete 98430
+  zone map 1412
+  goto 37.19,64.62 "Escort Perith Stormhoof out of Palemane Rock" r 15 live optional
+  tip Help Perith Stormhoof escape Palemane Rock, and report his safety to Cairne Bloodhoof in Thunder Bluff.
 
 step Turn in (level 11.4)
   turnin 743

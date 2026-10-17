@@ -48,6 +48,9 @@ step Objectives: Centaur Bounty (level 34.7)
 
 step Objectives: Bodyguard for Hire (level 34.7)
   complete 5821
+  zone map 1443
+  goto 67.17,56.62 "Escort Gizelton Caravan past Kolkar Centaur Village" r 15 optional
+  tip Escort the Gizelton Caravan past the Kolkar Centaur village. Talk with Smeed at Scrabblescrew's Camp for your reward.
 
 step Turn in (level 34.7)
   turnin 5821

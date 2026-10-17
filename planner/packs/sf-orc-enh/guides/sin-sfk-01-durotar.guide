@@ -52,23 +52,26 @@ step Reach level 3
   level 3
   tip If you're not level 3 yet: kill Scorpid Worker around here (level 3), then go on.
 
-step Turn in and pick up (level 3.1)
+step Pick up quests (level 3.1)
+  accept 5441
+
+step Objectives: Lazy Peons (level 3.1)
+  complete 5441
+  zone map 1411
+  goto 38.83,61.8 "Lazy Peon" r 15 optional
+  tip Use the Foreman's Blackjack on Lazy Peons when they're sleeping. Wake up 5 peons, then return the Foreman's Blackjack to Foreman Thazz'ril in the Valley of Trials.
+
+step Turn in and pick up (level 3.4)
   turnin 788
   accept 789
   accept 3089
   turnin 3089
 
-step Objectives: Sting of the Scorpid (level 3.1)
+step Objectives: Sting of the Scorpid (level 3.4)
   collect 4862 x10 quest 789.1
 
-step Pick up quests (level 3.1)
+step Pick up quests (level 3.4)
   accept 4402
-
-step Pick up quests (level 3.7)
-  accept 5441
-
-step Objectives: Lazy Peons (level 3.7)
-  kill 10556 x5 quest 5441.1
 
 step Turn in (level 4.0)
   turnin 5441
@@ -156,52 +159,73 @@ step Pick up quests (level 6.0)
 
 step Objectives: The Great Outdoors (level 6.0)
   complete 96604
+  zone map 1411
+  goto 52.09,47.39 "Basic Campfire" r 15 optional
+  tip Sit near Brakk's Basic Campfire by typing /sit in the chat window and wait until you receive the Boosted Rest buff.
 
 step Turn in (level 6.2)
   turnin 96604
   accept 96655
 
-step Objectives (level 6.4)
+step Objectives: Encroachment (level 6.4)
   kill 3111 x4 quest 837.1
   kill 3112 x4 quest 837.2
   kill 3113 x4 quest 837.3
   kill 3114 x4 quest 837.4
   collect 275718 x8 quest 96825.1 optional
-  kill 3111 x4 quest 837.1 optional
-  kill 3112 x4 quest 837.2 optional
-  kill 3113 x4 quest 837.3 optional
-  kill 3114 x4 quest 837.4 optional
-  kill 3191 quest 96655.1 optional
 
-step Objectives (level 6.5)
+step Objectives: This Fruit Could Bite Back (level 6.4)
   collect 275718 x8 quest 96825.1
+
+step Turn in (level 6.5)
+  turnin 96825
+  complete 96655
+  zone map 1411
+  goto 51.11,42.45 "Cook Torka" r 15 optional
+  tip Speak with Cook Torka in Razor Hill to learn to become a cook.
+  turnin 96655
+
+step Objectives: Encroachment (level 6.8)
   kill 3111 x4 quest 837.1
   kill 3112 x4 quest 837.2
   kill 3113 x4 quest 837.3
   kill 3114 x4 quest 837.4
-  kill 3191 quest 96655.1 optional
+  kill 3111 x4 quest 837.1 optional
+  kill 3112 x4 quest 837.2 optional
+  kill 3113 x4 quest 837.3 optional
+  kill 3114 x4 quest 837.4 optional
 
-step Turn in (level 6.7)
-  turnin 96825
-  kill 3191 quest 96655.1
-  turnin 96655
+step Objectives: Encroachment (level 6.9)
+  kill 3111 x4 quest 837.1
+  kill 3112 x4 quest 837.2
+  kill 3113 x4 quest 837.3
+  kill 3114 x4 quest 837.4
 
 step Turn in (level 7.0)
   turnin 837
 
-step Objectives (level 7.0)
-  kill 3128 x10 quest 784.1
-  kill 3129 x8 quest 784.2
-  kill 3192 quest 784.3
-  collect 4870 x8 quest 791.1
-  collect 275713 quest 96822.1 optional
-  collect 275716 quest 96822.2 optional
-  collect 275717 quest 96822.3 optional
-
-step Objectives (level 7.4)
+step Objectives: For Honor (level 7.0)
   collect 275713 quest 96822.1
   collect 275716 quest 96822.2
   collect 275717 quest 96822.3
+
+step Objectives: Vanquish the Betrayers (level 7.2)
+  complete 784
+  zone map 1411
+  goto 55.72,57.54 "Kul Tiras Sailor" r 15 optional
+  tip Kill 10 Kul Tiras Sailors, 8 Kul Tiras Marines and Lieutenant Benedict and return to Gar'Thok in Razor Hill.
+  collect 4870 x8 quest 791.1
+
+step Objectives (level 7.6)
+  collect 275713 quest 96822.1
+  collect 275716 quest 96822.2
+  collect 275717 quest 96822.3
+
+step Objectives: Vanquish the Betrayers (level 7.7)
+  complete 784
+  zone map 1411
+  goto 55.72,57.54 "Kul Tiras Sailor" r 15 optional
+  tip Kill 10 Kul Tiras Sailors, 8 Kul Tiras Marines and Lieutenant Benedict and return to Gar'Thok in Razor Hill.
 
 step Pick up quests (level 7.7)
   accept 830
@@ -293,16 +317,26 @@ step Pick up quests (level 9.4)
 
 step Objectives: Thwarting Kolkar Aggression (level 9.4)
   complete 786
+  zone map 1411
+  goto 49.81,81.29 "Attack Plan: Valley of Trials destroyed" r 15 optional
+  tip Lar Prowltusk outside of Sen'jin Village wants you to destroy the 3 sets of Attack Plans held within Kolkar Crag.
 
 step Objectives: Thwarting Kolkar Aggression (level 9.4)
   complete 786
+  zone map 1411
+  goto 49.81,81.29 "Attack Plan: Valley of Trials destroyed" r 15 optional
+  tip Lar Prowltusk outside of Sen'jin Village wants you to destroy the 3 sets of Attack Plans held within Kolkar Crag.
 
 step Pick up quests (level 9.4)
   accept 99123
   complete 99123
+  tip Help Pal'juh escape Kolkar Crag and bring news of your success to Master Vornal in Sen'jin Village.
 
 step Objectives: Thwarting Kolkar Aggression (level 9.4)
   complete 786
+  zone map 1411
+  goto 49.81,81.29 "Attack Plan: Valley of Trials destroyed" r 15 optional
+  tip Lar Prowltusk outside of Sen'jin Village wants you to destroy the 3 sets of Attack Plans held within Kolkar Crag.
 
 step Turn in (level 9.5)
   turnin 786

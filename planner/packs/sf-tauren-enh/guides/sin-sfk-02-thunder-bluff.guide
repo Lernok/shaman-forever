@@ -12,6 +12,9 @@ next sf-tauren-enh/sin-sfk-03-orgrimmar
 step Pick up quests (level 12.1)
   accept 97485
   complete 97485
+  zone map 1456
+  goto 53.3,87.9 "Spread incense" r 15 optional
+  tip Purchase a Bundle of Herbs from Nida the herbalist, a Bundle of Ceder Twigs from Nata the enchanting supplier, and Sinew Thread from Mahu the leatherworking supplier and Ceremonial Flint and Tinder from Naal the cooking supplier.$B$BCombine the items and sprinkle the incense off of Hunter's Rise.
 
 step Pick up quests (level 12.1)
   accept 76156
@@ -28,6 +31,9 @@ step Turn in (level 12.3)
 
 step Objectives: Traditions of the Bluff (level 12.3)
   complete 97485
+  zone map 1456
+  goto 53.3,87.9 "Spread incense" r 15 optional
+  tip Purchase a Bundle of Herbs from Nida the herbalist, a Bundle of Ceder Twigs from Nata the enchanting supplier, and Sinew Thread from Mahu the leatherworking supplier and Ceremonial Flint and Tinder from Naal the cooking supplier.$B$BCombine the items and sprinkle the incense off of Hunter's Rise.
 
 step Turn in and pick up (level 12.4)
   accept 76160

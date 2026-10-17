@@ -29,6 +29,10 @@ step Objectives: Cycle of Rebirth (level 27.6)
   collect 16205 x10 quest 6301.1
 
 step Turn in (level 27.6)
+  turnin 6301
+  accept 6381
+
+step Turn in (level 27.6)
   turnin 1483
   accept 1093
 
@@ -37,7 +41,10 @@ step Objectives: Super Reaper 6000 (level 27.6)
 
 step Pick up quests (level 27.6)
   accept 1090
-  kill 4276 quest 1090.1
+  complete 1090
+  zone map 1442
+  goto 71.87,60 "Piznik" r 15 optional
+  tip Get the mysterious ore from Piznik after he finishes mining it.
   turnin 1090
   accept 1092
 
@@ -46,22 +53,17 @@ step Turn in (level 27.7)
   turnin 1093
   accept 1094
 
-step Turn in (level 27.8)
-  turnin 6301
-  accept 6381
+step Objectives: Cenarius' Legacy (level 27.8)
+  complete 1087
+  zone map 1442
+  goto 35.29,13.11 "Son of Cenarius" r 15 optional
+  tip Kill 4 Sons of Cenarius, 4 Daughters of Cenarius and 4 Cenarion Botanists for Braelyn Firehand near Sun Rock Retreat.
 
 step Objectives: Cenarius' Legacy (level 27.8)
-  kill 4057 x4 quest 1087.1
-  kill 4053 x4 quest 1087.2
-  kill 4051 x4 quest 1087.3
-  kill 4057 x4 quest 1087.1 optional
-  kill 4053 x4 quest 1087.2 optional
-  kill 4051 x4 quest 1087.3 optional
-
-step Objectives: Cenarius' Legacy (level 27.8)
-  kill 4057 x4 quest 1087.1
-  kill 4053 x4 quest 1087.2
-  kill 4051 x4 quest 1087.3
+  complete 1087
+  zone map 1442
+  goto 35.29,13.11 "Son of Cenarius" r 15 optional
+  tip Kill 4 Sons of Cenarius, 4 Daughters of Cenarius and 4 Cenarion Botanists for Braelyn Firehand near Sun Rock Retreat.
 
 step Hearth (level 27.8)
   hearth "Sun Rock Retreat"
@@ -71,12 +73,15 @@ step Objectives: Elemental War (level 27.8)
 
 step Objectives: New Life (level 27.8)
   complete 6381
+  zone map 1442
+  goto 27.82,64.7 "Gaea seed planted" r 15 optional
+  tip Plant 10 Gaea Seeds in Gaea Dirt Mounds, and then return the remaining Enchanted Gaea Seeds to Tammra at Sun Rock Retreat.
+
+step Turn in (level 27.9)
+  turnin 1087
 
 step Turn in (level 27.9)
   turnin 6381
-
-step Turn in (level 28.0)
-  turnin 1087
 
 step Turn in (level 28.0)
   turnin 6393

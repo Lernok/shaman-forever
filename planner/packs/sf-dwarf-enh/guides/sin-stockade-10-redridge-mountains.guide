@@ -45,14 +45,17 @@ step Objectives: Blackrock Bounty (level 24.7)
 
 step Objectives: Missing In Action (level 24.8)
   complete 219
+  zone map 1433
+  goto 28.27,48.7 "Escort Corporal Keeshan back to Redridge" r 15 live optional
+  tip Protect Corporal Keeshan on the journey back to Redridge.
 
 step Turn in (level 24.9)
-  turnin 127
-
-step Turn in (level 25.0)
-  turnin 98386
   turnin 219
   turnin 20
+  turnin 98386
+
+step Turn in (level 25.0)
+  turnin 127
 
 step Turn in (level 25.1)
   turnin 128

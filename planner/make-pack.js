@@ -230,13 +230,17 @@ console.log(`${crumbs} breadcrumb quests added`);
 // quests (done inside) and quests with other objectives stay as they are.
 const questsDoc = JSON.parse(fs.readFileSync(path.join(polestar, 'data', 'forever', 'quests.json'), 'utf8'));
 const questData = questsDoc.quests || questsDoc;
+const npcAll = JSON.parse(fs.readFileSync(path.join(polestar, 'data', 'forever', 'npcs.json'), 'utf8'));
 let expanded = 0;
 guides.forEach((lines) => {
   for (let li = 0; li < lines.length; li++) {
     const m = /^(\s+)complete (\d+)\s*$/.exec(lines[li]);
     if (!m || dungeonOf.has(Number(m[2]))) continue;
     const objs = (questData[m[2]] || {}).objectives || [];
-    if (!objs.length || !objs.every((o) => (o.type === 'item' || o.type === 'kill') && o.id)) continue;
+    // A "kill" of a friendly NPC is Forever's "speak with" (Camping 101: talk
+    // to the cook): not a kill goal, it gets explained below.
+    const hostile = (o) => o.type === 'item' || (o.type === 'kill' && !(npcAll[String(o.id)] || {}).faction);
+    if (!objs.length || !objs.every((o) => hostile(o) && o.id)) continue;
     const goals = objs.map((o, i) => `${m[1]}${o.type === 'item' ? 'collect' : 'kill'} ${o.id}${o.count > 1 ? ` x${o.count}` : ''} quest ${m[2]}.${i + 1}`);
     lines.splice(li, 1, ...goals);
     li += goals.length - 1;
@@ -244,6 +248,46 @@ guides.forEach((lines) => {
   }
 });
 console.log(`${expanded} quest objectives placed (kill/collect)`);
+// Quests left as "complete" (Forever's new mechanics: sit at a campfire,
+// escort, speak with someone; objects and events): the game's own objective
+// text as the step's tip, and an arrow (optional goto) to where it's done:
+// the object's spawn, the NPC, or the event's spot, on the guide's map first.
+const objAll = JSON.parse(fs.readFileSync(path.join(polestar, 'data', 'forever', 'objects.json'), 'utf8'));
+let explained = 0;
+guides.forEach((lines) => {
+  const gmap = zoneMap.get((lines.find((l) => /^zone /.test(l)) || '').slice(5).trim()) || null;
+  for (let li = 0; li < lines.length; li++) {
+    const m = /^(\s+)complete (\d+)\s*$/.exec(lines[li]);
+    if (!m || dungeonOf.has(Number(m[2]))) continue;
+    const q = questData[m[2]] || {};
+    // The step it's in: no tip there yet.
+    let s = li;
+    while (s > 0 && !/^step\b/.test(lines[s])) s--;
+    let e = li + 1;
+    while (e < lines.length && !/^step\b/.test(lines[e])) e++;
+    if (lines.slice(s, e).some((l) => /^\s+(tip|zone map) /.test(l))) continue;
+    let spot = null;
+    for (const o of q.objectives || []) {
+      if (o.map != null && o.x != null) { spot = { map: Number(o.map), x: o.x, y: o.y, f: o.f, n: o.text }; break; }
+      const ent = o.type === 'object' ? objAll[String(o.id)] : npcAll[String(o.id)];
+      const sp = ent && ent.spawns || {};
+      const keys = Object.keys(sp).filter((k) => sp[k] && Array.isArray(sp[k].pts) && sp[k].pts.length);
+      const k = keys.find((x) => Number(x) === gmap) || keys[0];
+      if (k) { spot = { map: Number(k), x: sp[k].pts[0][0], y: sp[k].pts[0][1], f: sp[k].f, n: o.text || ent.name }; break; }
+    }
+    const add = [];
+    if (spot) {
+      add.push(`${m[1]}zone map ${spot.map}`);
+      add.push(`${m[1]}goto ${spot.x},${spot.y} "${String(spot.n || q.title).replace(/"/g, "'")}" r 15${spot.f === 'l' ? ' live' : ''} optional`);
+    }
+    if (q.objectiveText) add.push(`${m[1]}tip ${q.objectiveText.replace(/\s+/g, ' ').trim()}`);
+    if (!add.length) continue;
+    lines.splice(li + 1, 0, ...add);
+    li += add.length;
+    explained++;
+  }
+});
+console.log(`${explained} quests explained (Forever mechanics, objects, events)`);
 // Fourth pass. The simulator takes a quest as soon as its model reaches the
 // quest's level, and a real character can be a bit behind (the Tauren went
 // for Call of Earth, level 4, at 3). Before an accept the route reaches with

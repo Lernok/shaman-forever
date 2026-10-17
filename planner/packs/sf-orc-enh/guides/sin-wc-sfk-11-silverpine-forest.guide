@@ -35,16 +35,25 @@ step Turn in (level 20.1)
   turnin 461
   accept 491
 
-step Objectives (level 20.1)
-  kill 1888 x8 quest 95981.1
-  kill 1889 x8 quest 95981.2
-  kill 2053 x5 quest 98299.1 optional
-  kill 2054 x5 quest 98299.2 optional
-  collect 280375 x6 quest 98298.1 optional
+step Objectives: Watching the Roads (level 20.1)
+  complete 95981
+  zone map 1421
+  goto 55.96,78.03 "Dalaran Watcher" r 15 optional
+  tip Slay 8 Dalaran Wizards and 8 Dalaran Watchers for Shadow Priest Allister in the Sepulcher.
 
-step Objectives (level 20.2)
-  kill 2053 x5 quest 98299.1
-  kill 2054 x5 quest 98299.2
+step Objectives: Watching the Roads (level 20.2)
+  complete 95981
+  zone map 1421
+  goto 55.96,78.03 "Dalaran Watcher" r 15 optional
+  tip Slay 8 Dalaran Wizards and 8 Dalaran Watchers for Shadow Priest Allister in the Sepulcher.
+
+step Objectives: Stop the Spread (level 20.2)
+  complete 98299
+  zone map 1421
+  goto 44.33,84.41 "Haggard Refugee" r 15 optional
+  tip Slay 5 Sickly Refugees and 5 Haggard Refugees for Dalar Dawnweaver in The Sepulcher.
+
+step Objectives: Arugal's Folly (level 20.3)
   collect 280375 x6 quest 98298.1
 
 step Turn in (level 20.3)

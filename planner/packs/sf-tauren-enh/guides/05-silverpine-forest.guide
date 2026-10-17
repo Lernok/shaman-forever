@@ -64,6 +64,9 @@ step Turn in and pick up (level 14.4)
 
 step Objectives: The Dead Fields (level 14.5)
   complete 437
+  zone map 1435
+  goto 47.35,52.89 "Essence of Nightlash" r 15 optional
+  tip Kill rot hide gnolls at the Dead Fields.$B$BWhen Nightlash appears, kill her.$B$BBring the Essence of Nightlash to High Executor Hadrec at the Sepulcher.
 
 step Turn in and pick up (level 14.5)
   turnin 428
@@ -79,6 +82,9 @@ step Pick up quests (level 14.5)
 
 step Objectives: Escorting Erland (level 14.7)
   complete 435
+  zone map 1421
+  goto 54.37,13.38 "Erland must reach Rane Yorick" r 15 optional
+  tip Escort Erland through the wolves, to Rane Yorick.
 
 step Turn in (level 14.7)
   turnin 435
@@ -156,16 +162,25 @@ step Turn in (level 16.4)
   turnin 461
   accept 491
 
-step Objectives (level 16.5)
-  kill 1888 x8 quest 95981.1
-  kill 1889 x8 quest 95981.2
-  kill 2053 x5 quest 98299.1 optional
-  kill 2054 x5 quest 98299.2 optional
-  collect 280375 x6 quest 98298.1 optional
+step Objectives: Watching the Roads (level 16.5)
+  complete 95981
+  zone map 1421
+  goto 55.96,78.03 "Dalaran Watcher" r 15 optional
+  tip Slay 8 Dalaran Wizards and 8 Dalaran Watchers for Shadow Priest Allister in the Sepulcher.
 
-step Objectives (level 16.6)
-  kill 2053 x5 quest 98299.1
-  kill 2054 x5 quest 98299.2
+step Objectives: Watching the Roads (level 16.5)
+  complete 95981
+  zone map 1421
+  goto 55.96,78.03 "Dalaran Watcher" r 15 optional
+  tip Slay 8 Dalaran Wizards and 8 Dalaran Watchers for Shadow Priest Allister in the Sepulcher.
+
+step Objectives: Stop the Spread (level 16.6)
+  complete 98299
+  zone map 1421
+  goto 44.33,84.41 "Haggard Refugee" r 15 optional
+  tip Slay 5 Sickly Refugees and 5 Haggard Refugees for Dalar Dawnweaver in The Sepulcher.
+
+step Objectives: Arugal's Folly (level 16.7)
   collect 280375 x6 quest 98298.1
 
 step Hearth (level 16.7)

@@ -34,6 +34,9 @@ step Turn in and pick up (level 12.7)
 
 step Objectives: The Dead Fields (level 12.8)
   complete 437
+  zone map 1435
+  goto 47.35,52.89 "Essence of Nightlash" r 15 optional
+  tip Kill rot hide gnolls at the Dead Fields.$B$BWhen Nightlash appears, kill her.$B$BBring the Essence of Nightlash to High Executor Hadrec at the Sepulcher.
 
 step Turn in and pick up (level 12.8)
   turnin 428
@@ -49,6 +52,9 @@ step Pick up quests (level 12.8)
 
 step Objectives: Escorting Erland (level 13.0)
   complete 435
+  zone map 1421
+  goto 54.37,13.38 "Erland must reach Rane Yorick" r 15 optional
+  tip Escort Erland through the wolves, to Rane Yorick.
 
 step Turn in (level 13.1)
   turnin 435

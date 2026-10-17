@@ -50,6 +50,9 @@ step Turn in (level 22.0)
 
 step Objectives: The Rescue (level 22.1)
   complete 498
+  zone map 1424
+  goto 75.33,41.5 "Rescue Drull" r 15 optional
+  tip Krusk in Tarren Mill needs you to free Drull and Tog'thar from Durnholde Keep.
 
 step Objectives: WANTED: Syndicate Personnel (level 22.2)
   kill 2260 x10 quest 549.1
@@ -57,6 +60,9 @@ step Objectives: WANTED: Syndicate Personnel (level 22.2)
 
 step Objectives: The Rescue (level 22.2)
   complete 498
+  zone map 1424
+  goto 75.33,41.5 "Rescue Drull" r 15 optional
+  tip Krusk in Tarren Mill needs you to free Drull and Tog'thar from Durnholde Keep.
 
 step Turn in and pick up (level 22.2)
   turnin 498
@@ -64,54 +70,58 @@ step Turn in and pick up (level 22.2)
   turnin 501
   accept 502
 
-step Objectives: Battle of Hillsbrad (level 22.4)
-  kill 2266 x6 quest 527.1
-  kill 2360 x6 quest 527.2
-  kill 232 quest 527.3
-  kill 2403 quest 527.4
-
 step Turn in (level 22.4)
   turnin 502
 
 step Objectives: Battle of Hillsbrad (level 22.5)
-  kill 2266 x6 quest 527.1
-  kill 2360 x6 quest 527.2
-  kill 232 quest 527.3
-  kill 2403 quest 527.4
+  complete 527
+  zone map 1424
+  goto 29.68,37.49 "Hillsbrad Farmer" r 15 optional
+  tip Kill 6 Hillsbrad Farmhands, 6 Hillsbrad Farmers, Farmer Ray and Farmer Getz and report back to Darthalia in Tarren Mill.
+
+step Objectives: Battle of Hillsbrad (level 22.5)
+  complete 527
+  zone map 1424
+  goto 29.68,37.49 "Hillsbrad Farmer" r 15 optional
+  tip Kill 6 Hillsbrad Farmhands, 6 Hillsbrad Farmers, Farmer Ray and Farmer Getz and report back to Darthalia in Tarren Mill.
 
 step Hearth (level 22.5)
   hearth "Tarren Mill"
 
-step Turn in (level 22.6)
+step Turn in and pick up (level 22.6)
   turnin 527
   accept 528
-
-step Objectives: Battle of Hillsbrad (level 22.6)
-  kill 2267 x15 quest 528.1
-
-step Turn in and pick up (level 23.1)
-  turnin 528
-  accept 529
   accept 546
 
-step Objectives: Souvenirs of Death (level 23.3)
+step Objectives: Battle of Hillsbrad (level 22.7)
+  complete 528
+  zone map 1424
+  goto 29.77,43.77 "Hillsbrad Peasant" r 15 optional
+  tip Kill 15 Hillsbrad Peasants and report back to Darthalia in Tarren Mill.
+
+step Objectives: Souvenirs of Death (level 23.2)
   collect 3692 x30 quest 546.1
-  kill 2404 quest 529.1 optional
-  kill 2265 x4 quest 529.2 optional
-  collect 3564 quest 529.3 optional
+
+step Turn in and pick up (level 23.3)
+  turnin 528
+  accept 529
+  turnin 546
 
 step Objectives: Battle of Hillsbrad (level 23.4)
-  kill 2404 quest 529.1
-  kill 2265 x4 quest 529.2
-  collect 3564 quest 529.3
+  complete 529
+  zone map 1424
+  goto 32.11,44.42 "Blacksmith Verringtan" r 15 optional
+  tip Kill Blacksmith Verringtan and 4 Hillsbrad Apprentice Blacksmiths.$B$BRetrieve a shipment of iron and report back to Darthalia in Tarren Mill.
 
-step Turn in and pick up (level 23.5)
+step Turn in (level 23.5)
   turnin 529
   accept 532
-  turnin 546
 
 step Objectives: Battle of Hillsbrad (level 23.5)
   complete 532
+  zone map 1424
+  goto 29.67,41.64 "Magistrate Burnside" r 15 optional
+  tip Kill Magistrate Burnside and 5 Hillsbrad Councilmen. Destroy the Hillsbrad Proclamation. Steal the Hillsbrad Town Registry. Report back to Darthalia in Tarren Mill afterwards.
 
 step Hearth (level 23.5)
   hearth "Tarren Mill"

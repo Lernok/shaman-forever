@@ -18,18 +18,34 @@ step Objectives: Elixir of Agony (level 30.1)
   collect 3502 x6 quest 509.1
 
 step Objectives: Battle of Hillsbrad (level 30.1)
-  kill 2305 quest 539.1
-  kill 2269 x10 quest 539.2
-  kill 2448 quest 567.1 optional
-  kill 2449 quest 567.2 optional
-  kill 2450 quest 567.3 optional
-  kill 2451 quest 567.4 optional
+  complete 539
+  zone map 1424
+  goto 31.21,56.01 "Foreman Bonds" r 15 optional
+  tip Kill Foreman Bonds and 10 Hillsbrad Miners and report back to Darthalia in Tarren Mill.
 
-step Objectives (level 30.1)
-  kill 2448 quest 567.1
-  kill 2449 quest 567.2
-  kill 2450 quest 567.3
-  kill 2451 quest 567.4
+step Objectives: Dangerous! (level 30.1)
+  complete 567
+  zone map 1424
+  goto 29.51,42.41 "Clerk Horrace Whitesteed" r 15 optional
+  tip High Executor Darthalia of Tarren Mill is offering a bounty on Clerk Horrace Whitesteed, Citizen Wilkes, Miner Hackett and Farmer Kalaba.
+
+step Objectives: Dangerous! (level 30.1)
+  complete 567
+  zone map 1424
+  goto 29.51,42.41 "Clerk Horrace Whitesteed" r 15 optional
+  tip High Executor Darthalia of Tarren Mill is offering a bounty on Clerk Horrace Whitesteed, Citizen Wilkes, Miner Hackett and Farmer Kalaba.
+
+step Objectives: Dangerous! (level 30.1)
+  complete 567
+  zone map 1424
+  goto 29.51,42.41 "Clerk Horrace Whitesteed" r 15 optional
+  tip High Executor Darthalia of Tarren Mill is offering a bounty on Clerk Horrace Whitesteed, Citizen Wilkes, Miner Hackett and Farmer Kalaba.
+
+step Objectives: Dangerous! (level 30.1)
+  complete 567
+  zone map 1424
+  goto 29.51,42.41 "Clerk Horrace Whitesteed" r 15 optional
+  tip High Executor Darthalia of Tarren Mill is offering a bounty on Clerk Horrace Whitesteed, Citizen Wilkes, Miner Hackett and Farmer Kalaba.
 
 step Hearth (level 30.1)
   hearth "Tarren Mill"

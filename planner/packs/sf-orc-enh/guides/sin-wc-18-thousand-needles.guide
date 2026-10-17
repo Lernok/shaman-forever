@@ -64,6 +64,9 @@ step Pick up quests (level 28.9)
 
 step Objectives: Homeward Bound (level 28.9)
   complete 4770
+  zone map 1441
+  goto 15.15,32.65 "Escort Pao'ka from Highperch" r 15 optional
+  tip Escort Pao'ka Swiftmountain from Highperch, and then talk to Motega Firemane in Whitereach Post.
 
 step Objectives: Wind Rider (level 28.9)
   collect 12356 x10 quest 4767.1

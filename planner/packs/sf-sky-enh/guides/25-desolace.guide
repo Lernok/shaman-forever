@@ -48,6 +48,9 @@ step Objectives: Centaur Bounty (level 33.9)
 
 step Objectives: Bodyguard for Hire (level 33.9)
   complete 5821
+  zone map 1443
+  goto 67.17,56.62 "Escort Gizelton Caravan past Kolkar Centaur Village" r 15 optional
+  tip Escort the Gizelton Caravan past the Kolkar Centaur village. Talk with Smeed at Scrabblescrew's Camp for your reward.
 
 step Turn in (level 34.0)
   turnin 5821
@@ -148,12 +151,15 @@ step Pick up quests (level 34.4)
 
 step Objectives: Gizelton Caravan (level 34.4)
   complete 5943
-
-step Turn in (level 34.5)
-  turnin 5943
+  zone map 1443
+  goto 55.69,67.79 "Escort Gizelton Caravan past Mannoroc Coven" r 15 optional
+  tip Escort the Gizelton Caravan through Mannoroc Coven. Talk with Smeed at Scrabblescrew's Camp for your reward.
 
 step Objectives: Ghost-o-plasm Round Up (level 34.5)
   collect 15849 x8 quest 6134.1
+
+step Turn in (level 34.5)
+  turnin 5943
 
 step Turn in (level 34.5)
   turnin 6134
@@ -163,6 +169,12 @@ step Pick up quests (level 34.5)
 
 step Objectives: Get Me Out of Here! (level 34.5)
   complete 6132
+  zone map 1443
+  goto 40.15,61.58 "Melizza Brimbuzzle escorted to safety" r 15 optional
+  tip Escort Melizza Brimbuzzle, then speak with Hornizz Brimbuzzle at the Kodo Graveyard in Desolace.
+
+step Turn in (level 34.6)
+  turnin 6132
 
 step Pick up quests (level 34.6)
   accept 5501
@@ -211,9 +223,6 @@ step Turn in (level 34.8)
 
 step Objectives: Bone Collector (level 34.8)
   collect 13703 x10 quest 5501.1
-
-step Turn in (level 34.9)
-  turnin 6132
 
 step Turn in (level 34.9)
   turnin 5501

@@ -133,18 +133,24 @@ step Turn in (level 6.2)
 
 step Objectives: The Great Outdoors (level 6.2)
   complete 96608
-
-step Objectives: Beer Basted Boar Ribs (level 6.4)
-  collect 2886 x6 quest 384.1
-  collect 2894 quest 384.2
+  zone map 1426
+  goto 46.68,53.84 "Basic Campfire" r 15 optional
+  tip Sit near Eric's Basic Campfire by typing /sit in the chat window and wait until you receive the Boosted Rest buff.
 
 step Turn in (level 6.4)
   turnin 96608
   accept 96629
 
 step Objectives: Camping 101: Cooking (level 6.4)
-  kill 1699 quest 96629.1
+  complete 96629
+  zone map 1426
+  goto 47.67,52.31 "Gremlock Pilsnor" r 15 optional
+  tip Speak with Gremlock Pilsnor in Kharanos to learn to become a cook.
   turnin 96629
+
+step Objectives: Beer Basted Boar Ribs (level 6.9)
+  collect 2886 x6 quest 384.1
+  collect 2894 quest 384.2
 
 step Turn in and pick up (level 6.9)
   turnin 384
@@ -194,6 +200,9 @@ step Turn in (level 7.9)
 
 step Objectives: Secure the Mountain (level 7.9)
   complete 98319
+  zone map 1426
+  goto 43.03,49.62 "Mountaineer Cornelius" r 15 optional
+  tip Find Mountaineer Cornelius in the Grizzled Den for Mountaineer Gretchen.
 
 step Turn in (level 7.9)
   turnin 98319
@@ -302,6 +311,9 @@ step Turn in (level 10.1)
 
 step Objectives: Frostmane Hold (level 10.2)
   complete 287
+  zone map 1426
+  goto 21.07,51.63 "Frostmane Headhunter" r 15 optional
+  tip Explore Frostmane Hold, and kill 5 Frostmane Headhunters for Senir Whitebeard in Kharanos.
 
 step Objectives: Operation Recombobulation (level 10.4)
   collect 3083 x8 quest 412.1
@@ -355,7 +367,10 @@ step Turn in (level 11.4)
 
 step Pick up quests (level 11.4)
   accept 96392
-  kill 264936 quest 96392.1
+  complete 96392
+  zone map 1426
+  goto 64.87,58.47 "Earthseer Farsen" r 15 optional
+  tip Speak with Earthseer Farsen's and ask him to lend you his farsight to observe the Dark Iron threat.
   turnin 96392
   accept 96390
 

@@ -49,6 +49,9 @@ step Turn in (level 34.2)
 
 step Objectives: Return to Vahlarriel (level 34.2)
   complete 1440
+  zone map 1443
+  goto 58.27,30.91 "Rescue Dalinda Malem" r 15 optional
+  tip Escort Dalinda Malem from Thunder Axe Fortress and then return to Vahlarriel Demonslayer in Desolace.
 
 step Objectives: Reagents for Reclaimers Inc. (level 34.2)
   collect 6248 x7 quest 1459.1
@@ -62,6 +65,9 @@ step Objectives: Centaur Bounty (level 34.4)
 
 step Objectives: Bodyguard for Hire (level 34.4)
   complete 5821
+  zone map 1443
+  goto 67.17,56.62 "Escort Gizelton Caravan past Kolkar Centaur Village" r 15 optional
+  tip Escort the Gizelton Caravan past the Kolkar Centaur village. Talk with Smeed at Scrabblescrew's Camp for your reward.
 
 step Turn in (level 34.5)
   turnin 5821

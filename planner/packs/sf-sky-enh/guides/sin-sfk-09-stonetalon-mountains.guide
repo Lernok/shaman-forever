@@ -42,7 +42,10 @@ step Objectives: Super Reaper 6000 (level 23.4)
 
 step Pick up quests (level 23.4)
   accept 1090
-  kill 4276 quest 1090.1
+  complete 1090
+  zone map 1442
+  goto 71.87,60 "Piznik" r 15 optional
+  tip Get the mysterious ore from Piznik after he finishes mining it.
   turnin 1090
   accept 1092
 
@@ -55,29 +58,31 @@ step Hearth (level 23.6)
   hearth "Sun Rock Retreat"
 
 step Objectives: Cenarius' Legacy (level 23.6)
-  kill 4057 x4 quest 1087.1
-  kill 4053 x4 quest 1087.2
-  kill 4051 x4 quest 1087.3
-  kill 4057 x4 quest 1087.1 optional
-  kill 4053 x4 quest 1087.2 optional
-  kill 4051 x4 quest 1087.3 optional
+  complete 1087
+  zone map 1442
+  goto 35.29,13.11 "Son of Cenarius" r 15 optional
+  tip Kill 4 Sons of Cenarius, 4 Daughters of Cenarius and 4 Cenarion Botanists for Braelyn Firehand near Sun Rock Retreat.
 
 step Objectives: Cenarius' Legacy (level 23.7)
-  kill 4057 x4 quest 1087.1
-  kill 4053 x4 quest 1087.2
-  kill 4051 x4 quest 1087.3
+  complete 1087
+  zone map 1442
+  goto 35.29,13.11 "Son of Cenarius" r 15 optional
+  tip Kill 4 Sons of Cenarius, 4 Daughters of Cenarius and 4 Cenarion Botanists for Braelyn Firehand near Sun Rock Retreat.
 
 step Objectives: Elemental War (level 23.8)
   collect 16312 x10 quest 6393.1
 
 step Objectives: New Life (level 23.8)
   complete 6381
-
-step Turn in (level 23.8)
-  turnin 6381
+  zone map 1442
+  goto 27.82,64.7 "Gaea seed planted" r 15 optional
+  tip Plant 10 Gaea Seeds in Gaea Dirt Mounds, and then return the remaining Enchanted Gaea Seeds to Tammra at Sun Rock Retreat.
 
 step Turn in (level 23.8)
   turnin 1087
+
+step Turn in (level 23.9)
+  turnin 6381
 
 step Turn in (level 23.9)
   turnin 6393

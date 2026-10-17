@@ -31,6 +31,9 @@ step Pick up quests (level 20.1)
 
 step Objectives: The Sleeper Has Awakened (level 20.1)
   complete 5321
+  zone map 1459
+  goto 44.09,68.6 "Horn of Awakening" r 15 optional
+  tip Escort Kerlonian Evershade to Liladris Moonriver at Maestra's Post in Ashenvale.
 
 step Turn in (level 20.2)
   turnin 991

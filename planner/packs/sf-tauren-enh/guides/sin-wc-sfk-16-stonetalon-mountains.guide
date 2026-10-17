@@ -37,41 +37,26 @@ step Hearth (level 26.8)
 step Pick up quests (level 26.9)
   accept 1058
 
-step Pick up quests (level 27.1)
-  accept 1090
-  kill 4276 quest 1090.1
-  turnin 1090
-  accept 1092
-
-step Turn in (level 27.2)
-  turnin 1483
-  accept 1093
-
-step Objectives: Super Reaper 6000 (level 27.2)
-  collect 5734 quest 1093.1
-
-step Pick up quests (level 27.2)
-  accept 6301
-
-step Turn in (level 27.2)
-  turnin 6282
-
-step Turn in and pick up (level 27.2)
+step Turn in and pick up (level 27.1)
   accept 6393
   accept 6562 optional map 1442 @47.36,64.25
   turnin 86576
 
-step Pick up quests (level 27.2)
+step Turn in and pick up (level 27.1)
+  turnin 6282
   accept 1087
 
-step Turn in (level 27.2)
-  turnin 79192
-  accept 79980
+step Pick up quests (level 27.1)
+  accept 6301
 
-step Turn in (level 27.2)
-  turnin 79980
+step Objectives: Cycle of Rebirth (level 27.1)
+  collect 16205 x10 quest 6301.1
+  collect 5582 x5 quest 1058.1 optional
+  collect 5584 x5 quest 1058.2 optional
+  collect 5585 x30 quest 1058.3 optional
+  collect 5583 quest 1058.4 optional
 
-step Objectives (level 27.2)
+step Objectives: Jin'Zil's Forest Magic (level 27.2)
   collect 5582 x5 quest 1058.1
   collect 5584 x5 quest 1058.2
   collect 5585 x30 quest 1058.3
@@ -80,57 +65,77 @@ step Objectives (level 27.2)
   collect 5584 x5 quest 1058.2 optional
   collect 5585 x30 quest 1058.3 optional
   collect 5583 quest 1058.4 optional
-  collect 16205 x10 quest 6301.1 optional
 
-step Objectives: Jin'Zil's Forest Magic (level 27.3)
+step Objectives (level 27.2)
   collect 5582 x5 quest 1058.1
   collect 5584 x5 quest 1058.2
   collect 5585 x30 quest 1058.3
   collect 5583 quest 1058.4
-  collect 16205 x10 quest 6301.1 optional
 
-step Objectives: Cycle of Rebirth (level 27.3)
-  collect 16205 x10 quest 6301.1
+step Turn in (level 27.3)
+  turnin 79192
+  accept 79980
 
-step Turn in (level 27.4)
+step Turn in (level 27.3)
+  turnin 79980
+
+step Turn in (level 27.3)
   turnin 6301
   accept 6381
+
+step Turn in (level 27.3)
+  turnin 1483
+  accept 1093
+
+step Objectives: Super Reaper 6000 (level 27.3)
+  collect 5734 quest 1093.1
+
+step Turn in (level 27.3)
+  turnin 1058
+
+step Pick up quests (level 27.3)
+  accept 1090
+  complete 1090
+  zone map 1442
+  goto 71.87,60 "Piznik" r 15 optional
+  tip Get the mysterious ore from Piznik after he finishes mining it.
+  turnin 1090
+  accept 1092
 
 step Turn in (level 27.4)
   turnin 1092
   turnin 1093
   accept 1094
 
-step Turn in (level 27.4)
-  turnin 1058
-
 step Hearth (level 27.4)
   hearth "Sun Rock Retreat"
 
 step Objectives: Cenarius' Legacy (level 27.4)
-  kill 4057 x4 quest 1087.1
-  kill 4053 x4 quest 1087.2
-  kill 4051 x4 quest 1087.3
-  kill 4057 x4 quest 1087.1 optional
-  kill 4053 x4 quest 1087.2 optional
-  kill 4051 x4 quest 1087.3 optional
+  complete 1087
+  zone map 1442
+  goto 35.29,13.11 "Son of Cenarius" r 15 optional
+  tip Kill 4 Sons of Cenarius, 4 Daughters of Cenarius and 4 Cenarion Botanists for Braelyn Firehand near Sun Rock Retreat.
 
-step Objectives: Cenarius' Legacy (level 27.5)
-  kill 4057 x4 quest 1087.1
-  kill 4053 x4 quest 1087.2
-  kill 4051 x4 quest 1087.3
+step Objectives: Cenarius' Legacy (level 27.4)
+  complete 1087
+  zone map 1442
+  goto 35.29,13.11 "Son of Cenarius" r 15 optional
+  tip Kill 4 Sons of Cenarius, 4 Daughters of Cenarius and 4 Cenarion Botanists for Braelyn Firehand near Sun Rock Retreat.
 
 step Objectives: Elemental War (level 27.5)
   collect 16312 x10 quest 6393.1
 
 step Objectives: New Life (level 27.5)
   complete 6381
-
-step Turn in (level 27.5)
-  turnin 6381
+  zone map 1442
+  goto 27.82,64.7 "Gaea seed planted" r 15 optional
+  tip Plant 10 Gaea Seeds in Gaea Dirt Mounds, and then return the remaining Enchanted Gaea Seeds to Tammra at Sun Rock Retreat.
 
 step Turn in (level 27.5)
   turnin 1087
+
+step Turn in (level 27.6)
+  turnin 6381
 
 step Turn in (level 27.6)
   turnin 6393

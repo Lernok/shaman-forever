@@ -124,6 +124,9 @@ step Turn in (level 33.5)
 
 step Objectives: Investigate the Camp (level 33.6)
   complete 201
+  zone map 1434
+  goto 35.65,10.59 "Locate the hunters' camp" r 15 optional
+  tip Find the hunters' camp and report its location to Krazek in Booty Bay.
 
 step Objectives: Supply and Demand (level 33.6)
   collect 4053 x2 quest 575.1

@@ -55,6 +55,9 @@ step Turn in and pick up (level 26.0)
 
 step Objectives: Vorsha the Lasher (level 26.0)
   complete 6641
+  zone map 1440
+  goto 9.59,27.58 "Defeat Vorsha the Lasher" r 15 optional
+  tip Keep Muglash safe as he travels to the brazier. Help him by putting the brazier out, then protect him as you fight against the Naga.$B$BIf you are successful, return to the Zoram'gar Outpost and inform the Warsong Runner of the death of Vorsha the Lasher.
 
 step Objectives: The Essence of Aku'Mai (level 26.0)
   complete 6563 optional
@@ -76,6 +79,9 @@ step Pick up quests (level 26.2)
 
 step Objectives: Freedom to Ruul (level 26.2)
   complete 6482
+  zone map 1440
+  goto 38.53,37.32 "Escort Ruul from the Thistlefurs." r 15 optional
+  tip Escort Ruul, then speak with Yama Snowhoof in Splintertree Post.
 
 step Pick up quests (level 26.2)
   accept 98251
@@ -110,12 +116,18 @@ step Pick up quests (level 26.5)
 
 step Objectives: Torek's Assault (level 26.5)
   complete 6544
+  zone map 1440
+  goto 64.65,75.35 "Take Silverwing Outpost." r 15 optional
+  tip Escort Torek on his attack against Silverwing Outpost and Duriel Moonfire, then report to Ertog Ragetusk at Splintertree Post.
 
 step Pick up quests (level 26.5)
   accept 6503
 
 step Objectives: Ashenvale Outrunners (level 26.6)
-  kill 12856 x9 quest 6503.1
+  complete 6503
+  zone map 1440
+  goto 69.98,76.21 "Ashenvale Outrunner" r 15 optional
+  tip Kill 9 Ashenvale Outrunners, then return to Kuray'bin at Splintertree Outpost.
 
 step Turn in (level 26.6)
   turnin 6503
@@ -129,9 +141,15 @@ step Turn in and pick up (level 26.7)
 
 step Objectives: Stonetalon Standstill (level 26.7)
   complete 25
+  zone map 1440
+  goto 45.08,69.3 "Befouled Water Elemental" r 15 optional
+  tip Dispatch 12 Befouled Water Elementals at Mystral Lake, due east of the Talondeep Path and southwest of Splintertree Post.$B$BScout the gazebo on Mystral Lake that overlooks the nearby Alliance outpost.$B$BReturn to Mastok Wrilehiss at Splintertree Post, Ashenvale.
 
 step Objectives: Stonetalon Standstill (level 26.8)
   complete 25
+  zone map 1440
+  goto 45.08,69.3 "Befouled Water Elemental" r 15 optional
+  tip Dispatch 12 Befouled Water Elementals at Mystral Lake, due east of the Talondeep Path and southwest of Splintertree Post.$B$BScout the gazebo on Mystral Lake that overlooks the nearby Alliance outpost.$B$BReturn to Mastok Wrilehiss at Splintertree Post, Ashenvale.
 
 step Hearth (level 26.8)
   hearth "Splintertree Post"
