@@ -139,9 +139,9 @@ step Turn in (level 34.4)
 
 step Reach level 34
   zone map 1443
-  goto 54.5,27.5 "Burning Blade Felsworn (level 32)" r 40 optional
+  goto 72.9,46.7 "Kolkar Battle Lord (level 33)" r 40 optional
   level 34
-  tip If you're not level 34 yet: kill Burning Blade Felsworn here (level 32). Ghost-o-plasm Round Up needs level 34.
+  tip If you're not level 34 yet: kill Kolkar Battle Lord around here (level 33), then go on.
 
 step Pick up quests (level 34.4)
   accept 6134
@@ -179,6 +179,12 @@ step Pick up quests (level 34.6)
 step Objectives: Claim Rackmore's Treasure! (level 34.6)
   collect 15878 quest 6161.1
   collect 15881 quest 6161.2
+  kill 4714 x7 quest 6143.1 optional
+  kill 4711 x7 quest 6143.2 optional
+  kill 4712 x5 quest 6143.3 optional
+  collect 15878 quest 6161.1 optional
+  collect 15881 quest 6161.2 optional
+  collect 15803 quest 6027.1 optional
 
 step Objectives (level 34.7)
   kill 4714 x7 quest 6143.1
@@ -186,6 +192,10 @@ step Objectives (level 34.7)
   kill 4712 x5 quest 6143.3
   collect 15878 quest 6161.1
   collect 15881 quest 6161.2
+  kill 4714 x7 quest 6143.1 optional
+  kill 4711 x7 quest 6143.2 optional
+  kill 4712 x5 quest 6143.3 optional
+  collect 15803 quest 6027.1 optional
 
 step Objectives (level 34.7)
   kill 4714 x7 quest 6143.1

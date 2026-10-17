@@ -21,6 +21,7 @@ step Pick up quests (level 32.3)
 
 step Objectives: Bloody Bone Necklaces (level 33.0)
   collect 3915 x25 quest 596.1
+  collect 4094 quest 629.1 optional
 
 step Objectives: The Vile Reef (level 33.0)
   collect 4094 quest 629.1
@@ -34,7 +35,7 @@ step Reach level 33
   zone map 1434
   goto 37.5,16.8 "Mistvale Gorilla (level 33)" r 40 optional
   level 33
-  tip If you're not level 33 yet: kill Mistvale Gorilla here (level 33). The Defense of Grom'gol needs level 33.
+  tip If you're not level 33 yet: kill Mistvale Gorilla around here (level 33), then go on.
 
 step Pick up quests (level 33.0)
   accept 568
@@ -50,6 +51,8 @@ step Turn in and pick up (level 33.2)
 step Objectives: The Defense of Grom'gol (level 33.2)
   kill 1142 quest 569.1
   kill 1144 quest 569.2
+  collect 3838 x8 quest 570.1 optional
+  collect 3839 quest 570.2 optional
 
 step Objectives: Mok'thardin's Enchantment (level 33.2)
   collect 3838 x8 quest 570.1
@@ -112,6 +115,7 @@ step Pick up quests (level 33.8)
 
 step Objectives: Singing Blue Shards (level 33.9)
   collect 3918 x10 quest 605.1
+  collect 1519 x15 quest 189.1 optional
 
 step Objectives: Bloodscalp Ears (level 34.1)
   collect 1519 x15 quest 189.1

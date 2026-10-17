@@ -23,6 +23,9 @@ const { makeProjector, dist } = require(path.join(polestar, 'tools', 'lib', 'rou
 
 const MERGE_NPC = 80;
 const MERGE_OBJ = 120;
+const STICKY_R = 600;
+const STICKY_BACK = 5;
+const GRIND_NEAR = 1200;
 const QUEST_GOALS = new Set(['accept', 'turnin', 'complete', 'kill', 'collect', 'interact', 'use', 'talk']);
 
 const data = loadData(path.join(polestar, 'data', 'forever'));
@@ -35,7 +38,8 @@ const { guides } = compileSources(sources, data, undefined, { pack: packId });
 const byFile = new Map(guides.map((g) => [g._ast ? g._ast.file : g.source, g]));
 
 const quest = (id) => data.quests[String(id)] || {};
-let before = 0, after = 0, merged = 0;
+let before = 0, after = 0, merged = 0, stickies = 0, grinds = 0;
+const camps = require(path.join(polestar, 'tools', 'lib', 'sim', 'export.js')).loadCamps({ dataDir: path.join(polestar, 'data', 'forever') });
 const stats = { planned: 0, plannedSteps: 0, rejected: 0, rejectedSteps: 0 };
 
 for (const src of sources) {
@@ -59,7 +63,9 @@ for (const src of sources) {
       || /^step (Dungeon|Reach level|Hearthstone|Fly|Grind)/.test(b[0]);
     const kinds = new Set(goals.map((x) => x.t));
     const home = goals.find((x) => x.t === 'sethome' && x.map != null && x.x != null);
-    return { i, block: b, goals, level: lv ? Number(lv[1]) : null, pt: pts[0] || null, barrier,
+    const objPts = goals.filter((x) => (x.t === 'kill' || x.t === 'collect') && x.map != null && x.x != null)
+      .flatMap((x) => [project.point(x.map, x.x, x.y, x.f || null)].concat((x.spots || []).map((sp) => project.point(x.map, sp.x, sp.y, x.f || null))));
+    return { i, block: b, goals, objPts, level: lv ? Number(lv[1]) : null, pt: pts[0] || null, barrier,
       sethome: home ? project.point(home.map, home.x, home.y, home.f || null) : null,
       hearth: kinds.has('hearth'), fly: kinds.has('fly'),
       npc: [...kinds].every((k) => k === 'accept' || k === 'turnin' || k === 'talk') };
@@ -109,6 +115,8 @@ for (const src of sources) {
       const have = new Set(last.block.map((l) => l.trim()));
       last.block = last.block.filter((l) => l.trim() !== '').concat(s.block.slice(1).filter((l) => l.trim() !== '' && !have.has(l.trim())));
       last.gain += s.gain;
+      last.goals = last.goals.concat(s.goals);
+      last.objPts = last.objPts.concat(s.objPts);
       last.block.push('');
       last.merged = true;
       merged++;
@@ -123,6 +131,63 @@ for (const src of sources) {
     const has = (v) => new RegExp(`^\\s+${v} `, 'm').test(body);
     const what = s.npc ? (has('turnin') ? (has('accept') ? 'Turn in and pick up' : 'Turn in') : 'Pick up quests') : 'Objectives';
     s.block[0] = s.block[0].replace(/^step [^(]*/, `step ${what || 'Quests'} `);
+  }
+  // Sticky objectives (what good guides do: "kill these while you're there").
+  // An objective step whose mobs or drops are in the same area as the few
+  // objective steps before it (STICKY_R yards, STICKY_BACK steps, nothing in
+  // between that leaves: a barrier or a town stop) goes into those steps as
+  // optional goals; whatever is left is finished at its own step, which
+  // Polestar ticks by itself when it's already done. Only once its quest is
+  // in the log.
+  const acceptedAt = new Map();
+  final.forEach((s, idx) => { for (const x of s.goals) if (x.t === 'accept' && !acceptedAt.has(x.quest)) acceptedAt.set(x.quest, idx); });
+  const near = (a, b) => a.some((p) => b.some((q) => p.c === q.c && dist(p, q) <= STICKY_R));
+  for (let i = 0; i < final.length; i++) {
+    const X = final[i];
+    if (X.barrier || X.npc || !X.objPts.length) continue;
+    const lines = X.block.slice(1).filter((l) => /^\s+(kill|collect) .* quest \d+\.\d+\s*$/.test(l));
+    if (!lines.length) continue;
+    const qs = new Set(X.goals.filter((x) => x.quest).map((x) => x.quest));
+    for (let k = i - 1; k >= Math.max(0, i - STICKY_BACK); k--) {
+      const S = final[k];
+      if (S.barrier || S.npc) break;
+      if ([...qs].some((q) => !(acceptedAt.get(q) < k))) break;
+      if (!S.objPts.length || !near(S.objPts, X.objPts)) continue;
+      const have = new Set(S.block.map((l) => l.trim()));
+      const add = lines.map((l) => `${l.replace(/\s+$/, '')} optional`).filter((l) => !have.has(l.trim()));
+      if (!add.length) continue;
+      S.block = S.block.filter((l) => l.trim() !== '').concat(add, ['']);
+      stickies++;
+    }
+  }
+  // "Reach level N" where you are: the camp of mobs of that level nearest
+  // the step before (within GRIND_NEAR yards), like good guides' "kill
+  // enemies around this area"; else the camp make-pack chose stays.
+  for (let i = 1; i < final.length; i++) {
+    const m = /^step Reach level (\d+)/.exec(final[i].block[0]);
+    if (!m) continue;
+    let from = null;
+    for (let k = i - 1; k >= 0 && !from; k--) from = final[k].pt;
+    if (!from) continue;
+    const need = Number(m[1]);
+    let best = null, bs = 0;
+    for (const c of camps) {
+      if (c.level < need - 2 || c.level > need) continue;
+      const p = project.point(c.map, c.x, c.y);
+      if (p.c !== from.c) continue;
+      const d = dist(p, from);
+      if (d > GRIND_NEAR) continue;
+      const sc = Math.min(c.size, 15) / (1 + d / 200);
+      if (sc > bs) { bs = sc; best = c; }
+    }
+    if (!best) continue;
+    final[i].block = final[i].block.map((l) => {
+      if (/^\s+zone map /.test(l)) return `  zone map ${best.map}`;
+      if (/^\s+goto .* optional$/.test(l)) return `  goto ${best.x},${best.y} "${best.name} (level ${best.level})" r 40 optional`;
+      if (/^\s+tip /.test(l)) return `  tip If you're not level ${need} yet: kill ${best.name} around here (level ${best.level}), then go on.`;
+      return l;
+    });
+    grinds++;
   }
   // Titles' levels for the new order.
   let lv2 = final.find((x) => x.level != null) ? final.find((x) => x.level != null).level : null;
@@ -211,4 +276,4 @@ function plan(seg, from, startLevel) {
 }
 
 console.log(JSON.stringify(stats));
-console.log(`${packDir}: walking ${Math.round(before)} -> ${Math.round(after)} yards (${before ? Math.round((1 - after / before) * 100) : 0}% less), ${merged} steps merged`);
+console.log(`${packDir}: walking ${Math.round(before)} -> ${Math.round(after)} yards (${before ? Math.round((1 - after / before) * 100) : 0}% less), ${merged} steps merged, ${stickies} sticky objectives, ${grinds} level steps near you`);

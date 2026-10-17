@@ -34,7 +34,7 @@ step Reach level 2
   zone map 1411
   goto 43.1,64 "Mottled Boar (level 2)" r 40 optional
   level 2
-  tip If you're not level 2 yet: kill Mottled Boar here (level 2). Vile Familiars needs level 2.
+  tip If you're not level 2 yet: kill Mottled Boar around here (level 2), then go on.
 
 step Pick up quests (level 2.4)
   accept 804
@@ -50,7 +50,7 @@ step Reach level 3
   zone map 1411
   goto 40,66 "Scorpid Worker (level 3)" r 40 optional
   level 3
-  tip If you're not level 3 yet: kill Scorpid Worker here (level 3). Lazy Peons needs level 3.
+  tip If you're not level 3 yet: kill Scorpid Worker around here (level 3), then go on.
 
 step Turn in and pick up (level 3.1)
   turnin 788
@@ -78,7 +78,7 @@ step Reach level 4
   zone map 1411
   goto 40,66 "Scorpid Worker (level 3)" r 40 optional
   level 4
-  tip If you're not level 4 yet: kill Scorpid Worker here (level 3). Call of Earth needs level 4.
+  tip If you're not level 4 yet: kill Scorpid Worker around here (level 3), then go on.
 
 step Turn in and pick up (level 4.1)
   turnin 789
@@ -87,6 +87,7 @@ step Turn in and pick up (level 4.1)
 step Objectives (level 4.3)
   kill 3101 x12 quest 792.1
   collect 16332 quest 6394.1
+  collect 6640 x2 quest 1516.1 optional
 
 step Objectives: Call of Earth (level 4.9)
   collect 6640 x2 quest 1516.1
@@ -134,9 +135,9 @@ step Turn in (level 6.0)
 
 step Reach level 6
   zone map 1411
-  goto 43.8,54.9 "Felstalker (level 4)" r 40 optional
+  goto 44.2,55.3 "Vile Familiar (level 4)" r 40 optional
   level 6
-  tip If you're not level 6 yet: kill Felstalker here (level 4). Encroachment needs level 6.
+  tip If you're not level 6 yet: kill Vile Familiar around here (level 4), then go on.
 
 step Pick up quests (level 6.0)
   accept 96604
@@ -165,6 +166,12 @@ step Objectives (level 6.4)
   kill 3112 x4 quest 837.2
   kill 3113 x4 quest 837.3
   kill 3114 x4 quest 837.4
+  collect 275718 x8 quest 96825.1 optional
+  kill 3111 x4 quest 837.1 optional
+  kill 3112 x4 quest 837.2 optional
+  kill 3113 x4 quest 837.3 optional
+  kill 3114 x4 quest 837.4 optional
+  kill 3191 quest 96655.1 optional
 
 step Objectives (level 6.5)
   collect 275718 x8 quest 96825.1
@@ -172,6 +179,7 @@ step Objectives (level 6.5)
   kill 3112 x4 quest 837.2
   kill 3113 x4 quest 837.3
   kill 3114 x4 quest 837.4
+  kill 3191 quest 96655.1 optional
 
 step Turn in (level 6.7)
   turnin 96825
@@ -186,6 +194,9 @@ step Objectives (level 7.0)
   kill 3129 x8 quest 784.2
   kill 3192 quest 784.3
   collect 4870 x8 quest 791.1
+  collect 275713 quest 96822.1 optional
+  collect 275716 quest 96822.2 optional
+  collect 275717 quest 96822.3 optional
 
 step Objectives (level 7.4)
   collect 275713 quest 96822.1
@@ -208,14 +219,41 @@ step Pick up quests (level 7.7)
 step Objectives: A Solvent Spirit (level 7.9)
   collect 4887 x4 quest 818.1
   collect 4888 x8 quest 818.2
+  collect 277128 quest 97223.1 optional
+  kill 3207 x8 quest 826.1 optional
+  kill 3206 x8 quest 826.2 optional
+  collect 4866 quest 826.3 optional
+  collect 4864 quest 808.1 optional
+  collect 277135 x8 quest 97225.1 optional
+  collect 4892 x4 quest 817.1 optional
+  collect 4887 x4 quest 818.1 optional
+  collect 4888 x8 quest 818.2 optional
 
 step Objectives: Bloodtalon Matriarch (level 7.9)
   collect 277128 quest 97223.1
+  kill 3207 x8 quest 826.1 optional
+  kill 3206 x8 quest 826.2 optional
+  collect 4866 quest 826.3 optional
+  collect 4864 quest 808.1 optional
+  collect 277135 x8 quest 97225.1 optional
+  collect 4892 x4 quest 817.1 optional
+  collect 4887 x4 quest 818.1 optional
+  collect 4888 x8 quest 818.2 optional
+  collect 4890 x3 quest 815.1 optional
 
 step Objectives: Zalazane (level 8.2)
   kill 3207 x8 quest 826.1
   kill 3206 x8 quest 826.2
   collect 4866 quest 826.3
+  collect 4864 quest 808.1 optional
+  kill 3207 x8 quest 826.1 optional
+  kill 3206 x8 quest 826.2 optional
+  collect 4866 quest 826.3 optional
+  collect 277135 x8 quest 97225.1 optional
+  collect 4892 x4 quest 817.1 optional
+  collect 4887 x4 quest 818.1 optional
+  collect 4888 x8 quest 818.2 optional
+  collect 4890 x3 quest 815.1 optional
 
 step Objectives (level 8.2)
   collect 4864 quest 808.1
@@ -223,13 +261,21 @@ step Objectives (level 8.2)
   kill 3206 x8 quest 826.2
   collect 4866 quest 826.3
   collect 277135 x8 quest 97225.1
+  collect 4892 x4 quest 817.1 optional
+  collect 4887 x4 quest 818.1 optional
+  collect 4888 x8 quest 818.2 optional
+  collect 4890 x3 quest 815.1 optional
 
 step Objectives: Practical Prey (level 8.4)
   collect 4892 x4 quest 817.1
+  collect 4887 x4 quest 818.1 optional
+  collect 4888 x8 quest 818.2 optional
+  collect 4890 x3 quest 815.1 optional
 
 step Objectives: A Solvent Spirit (level 8.6)
   collect 4887 x4 quest 818.1
   collect 4888 x8 quest 818.2
+  collect 4890 x3 quest 815.1 optional
 
 step Objectives: Break a Few Eggs (level 8.8)
   collect 4890 x3 quest 815.1
@@ -280,9 +326,9 @@ step Turn in (level 10.1)
 
 step Reach level 10
   zone map 1411
-  goto 43.2,39.4 "Razormane Battleguard (level 10)" r 40 optional
+  goto 49.2,48.4 "Razormane Scout (level 8)" r 40 optional
   level 10
-  tip If you're not level 10 yet: kill Razormane Battleguard here (level 10). Call of Fire needs level 10.
+  tip If you're not level 10 yet: kill Razormane Scout around here (level 8), then go on.
 
 step Pick up quests (level 10.1)
   accept 2983

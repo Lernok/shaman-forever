@@ -71,9 +71,9 @@ step Hearthstone (level 30.0)
 
 step Reach level 30
   zone map 1437
-  goto 10.2,70.4 "Bluegill Raider (level 29)" r 40 optional
+  goto 24.1,16.9 "Bluegill Raider (level 29)" r 40 optional
   level 30
-  tip If you're not level 30 yet: kill Bluegill Raider here (level 29). James Hyal needs level 30.
+  tip If you're not level 30 yet: kill Bluegill Raider around here (level 29), then go on.
 
 step Pick up quests (level 30.0)
   accept 1302

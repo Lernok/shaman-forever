@@ -31,9 +31,11 @@ step Pick up quests (level 16.1)
 step Objectives (level 16.1)
   collect 12191 quest 982.1
   collect 12192 quest 982.2
+  collect 12237 x6 quest 1138.1 optional
 
 step Objectives: Fruit of the Sea (level 16.3)
   collect 12237 x6 quest 1138.1
+  collect 280686 quest 87760.1 optional
 
 step Objectives: Holy Diver (level 16.3)
   collect 280686 quest 87760.1
@@ -90,7 +92,7 @@ step Reach level 17
   zone map 1439
   goto 39.3,81.4 "Grizzled Thistle Bear (level 17)" r 40 optional
   level 17
-  tip If you're not level 17 yet: kill Grizzled Thistle Bear here (level 17). The Sleeper Has Awakened needs level 17.
+  tip If you're not level 17 yet: kill Grizzled Thistle Bear around here (level 17), then go on.
 
 step Pick up quests (level 17.1)
   accept 5321
@@ -149,6 +151,10 @@ step Objectives: Swelling Forces (level 17.9)
   kill 2181 x12 quest 98013.1
   kill 2182 x8 quest 98013.2
   kill 2183 x6 quest 98013.3
+  kill 2181 x12 quest 98013.1 optional
+  kill 2182 x8 quest 98013.2 optional
+  kill 2183 x6 quest 98013.3 optional
+  collect 5273 x6 quest 951.1 optional
 
 step Objectives (level 18.0)
   kill 2181 x12 quest 98013.1

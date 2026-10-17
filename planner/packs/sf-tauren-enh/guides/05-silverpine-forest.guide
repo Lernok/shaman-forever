@@ -33,6 +33,8 @@ step Turn in (level 14.1)
 step Objectives: Arugal's Folly (level 14.1)
   collect 3156 x6 quest 423.1
   collect 3157 x3 quest 423.2
+  collect 3156 x6 quest 423.1 optional
+  collect 3157 x3 quest 423.2 optional
 
 step Objectives: Arugal's Folly (level 14.2)
   collect 3156 x6 quest 423.1
@@ -84,9 +86,12 @@ step Turn in (level 14.7)
 
 step Objectives: Wild Eyes (level 14.8)
   collect 730 x3 quest 91920.1
+  collect 3634 quest 424.1 optional
+  collect 3354 x8 quest 479.1 optional
 
 step Objectives: Arugal's Folly (level 14.8)
   collect 3634 quest 424.1
+  collect 3354 x8 quest 479.1 optional
 
 step Objectives: Ambermill Investigations (level 14.9)
   collect 3354 x8 quest 479.1
@@ -154,6 +159,9 @@ step Turn in (level 16.4)
 step Objectives (level 16.5)
   kill 1888 x8 quest 95981.1
   kill 1889 x8 quest 95981.2
+  kill 2053 x5 quest 98299.1 optional
+  kill 2054 x5 quest 98299.2 optional
+  collect 280375 x6 quest 98298.1 optional
 
 step Objectives (level 16.6)
   kill 2053 x5 quest 98299.1

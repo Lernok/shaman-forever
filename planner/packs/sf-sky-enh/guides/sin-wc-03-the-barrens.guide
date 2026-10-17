@@ -34,6 +34,10 @@ step Turn in (level 15.8)
 
 step Objectives: WANTED: Baron Longshore (level 15.8)
   collect 5084 quest 895.1
+  kill 3393 quest 891.1 optional
+  kill 3455 quest 891.2 optional
+  kill 3454 quest 891.3 optional
+  collect 5078 x10 quest 891.4 optional
 
 step Objectives (level 15.8)
   kill 3393 quest 891.1
@@ -132,15 +136,16 @@ step Objectives: Verog the Dervish (level 16.9)
 
 step Objectives: Lost in Battle (level 16.9)
   kill 10668 quest 4921.1
+  collect 5085 x60 quest 899.1 optional
 
 step Objectives: Consumed by Hatred (level 17.4)
   collect 5085 x60 quest 899.1
 
 step Reach level 17
   zone map 1413
-  goto 46.6,39.8 "Oasis Snapjaw (level 16)" r 40 optional
+  goto 45.5,53.8 "Bristleback Water Seeker (level 17)" r 40 optional
   level 17
-  tip If you're not level 17 yet: kill Oasis Snapjaw here (level 16). Report to Kadrak needs level 17.
+  tip If you're not level 17 yet: kill Bristleback Water Seeker around here (level 17), then go on.
 
 step Pick up quests (level 17.4)
   accept 6541
@@ -168,6 +173,7 @@ step Turn in (level 17.8)
 
 step Objectives: Hezrul Bloodmark (level 17.9)
   collect 5025 quest 852.1
+  collect 277277 x4 quest 95774.1 optional
 
 step Objectives: Her Name Is Olgra (level 17.9)
   collect 277277 x4 quest 95774.1

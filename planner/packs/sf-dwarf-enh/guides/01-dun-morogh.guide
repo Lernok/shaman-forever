@@ -33,9 +33,9 @@ step Turn in (level 3.1)
 
 step Reach level 3
   zone map 1426
-  goto 30.5,74.9 "Rockjaw Trogg (level 2)" r 40 optional
+  goto 22.6,70.2 "Small Crag Boar (level 3)" r 40 optional
   level 3
-  tip If you're not level 3 yet: kill Rockjaw Trogg here (level 2). A Refugee's Quandary needs level 3.
+  tip If you're not level 3 yet: kill Small Crag Boar around here (level 3), then go on.
 
 step Pick up quests (level 3.1)
   accept 3361
@@ -58,9 +58,9 @@ step Objectives (level 4.3)
 
 step Reach level 4
   zone map 1426
-  goto 30.5,74.9 "Rockjaw Trogg (level 2)" r 40 optional
+  goto 21.9,76.3 "Burly Rockjaw Trogg (level 2)" r 40 optional
   level 4
-  tip If you're not level 4 yet: kill Rockjaw Trogg here (level 2). Call of Earth needs level 4.
+  tip If you're not level 4 yet: kill Burly Rockjaw Trogg around here (level 2), then go on.
 
 step Turn in (level 4.3)
   turnin 170
@@ -76,6 +76,7 @@ step Turn in and pick up (level 4.5)
 
 step Objectives: Call of Earth (level 4.9)
   collect 264356 quest 94373.1
+  collect 2004 quest 218.1 optional
 
 step Objectives: The Stolen Journal (level 4.9)
   collect 2004 quest 218.1

@@ -30,6 +30,7 @@ step Pick up quests (level 16.2)
 
 step Objectives: Plagued Lands (level 16.2)
   kill 2164 quest 2118.1
+  collect 12242 quest 3524.1 optional
 
 step Objectives: Washed Ashore (level 16.2)
   collect 12242 quest 3524.1
@@ -118,6 +119,8 @@ step Turn in (level 17.1)
 
 step Objectives: As Water Cascades (level 17.1)
   collect 14339 quest 4812.1
+  kill 2167 x8 quest 985.1 optional
+  kill 2324 x5 quest 985.2 optional
 
 step Objectives: How Big a Threat? (level 17.2)
   kill 2167 x8 quest 985.1
@@ -229,9 +232,14 @@ step Turn in (level 18.0)
 
 step Objectives: Tharnariun's Hope (level 18.1)
   kill 6788 quest 2139.1
+  collect 12355 quest 4763.1 optional
+  collect 5271 x5 quest 947.1 optional
+  collect 5270 quest 947.2 optional
 
 step Objectives: The Blackwood Corrupted (level 18.1)
   collect 12355 quest 4763.1
+  collect 5271 x5 quest 947.1 optional
+  collect 5270 quest 947.2 optional
 
 step Objectives: Cave Mushrooms (level 18.2)
   collect 5271 x5 quest 947.1
@@ -339,6 +347,10 @@ step Objectives: Swelling Forces (level 19.6)
   kill 2181 x12 quest 98013.1
   kill 2182 x8 quest 98013.2
   kill 2183 x6 quest 98013.3
+  kill 2181 x12 quest 98013.1 optional
+  kill 2182 x8 quest 98013.2 optional
+  kill 2183 x6 quest 98013.3 optional
+  collect 5273 x6 quest 951.1 optional
 
 step Objectives (level 19.6)
   kill 2181 x12 quest 98013.1

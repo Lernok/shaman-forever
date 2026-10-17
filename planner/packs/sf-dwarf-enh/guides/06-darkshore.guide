@@ -49,6 +49,7 @@ step Pick up quests (level 14.9)
 
 step Objectives: Plagued Lands (level 14.9)
   kill 2164 quest 2118.1
+  collect 12242 quest 3524.1 optional
 
 step Objectives: Washed Ashore (level 14.9)
   collect 12242 quest 3524.1
@@ -237,9 +238,11 @@ step Pick up quests (level 17.0)
 step Objectives (level 17.0)
   collect 12191 quest 982.1
   collect 12192 quest 982.2
+  collect 12237 x6 quest 1138.1 optional
 
 step Objectives: Fruit of the Sea (level 17.1)
   collect 12237 x6 quest 1138.1
+  collect 280686 quest 87760.1 optional
 
 step Objectives: Holy Diver (level 17.1)
   collect 280686 quest 87760.1
@@ -269,9 +272,12 @@ step Turn in (level 17.5)
 step Objectives: Cave Mushrooms (level 17.5)
   collect 5271 x5 quest 947.1
   collect 5270 quest 947.2
+  collect 12355 quest 4763.1 optional
+  kill 6788 quest 2139.1 optional
 
 step Objectives: The Blackwood Corrupted (level 17.5)
   collect 12355 quest 4763.1
+  kill 6788 quest 2139.1 optional
 
 step Objectives: Tharnariun's Hope (level 17.6)
   kill 6788 quest 2139.1
@@ -378,6 +384,10 @@ step Objectives: Swelling Forces (level 19.1)
   kill 2181 x12 quest 98013.1
   kill 2182 x8 quest 98013.2
   kill 2183 x6 quest 98013.3
+  kill 2181 x12 quest 98013.1 optional
+  kill 2182 x8 quest 98013.2 optional
+  kill 2183 x6 quest 98013.3 optional
+  collect 5273 x6 quest 951.1 optional
 
 step Objectives (level 19.1)
   kill 2181 x12 quest 98013.1

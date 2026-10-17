@@ -25,9 +25,9 @@ step Objectives: Bloody Bone Necklaces (level 33.1)
 
 step Reach level 33
   zone map 1434
-  goto 37.5,16.8 "Mistvale Gorilla (level 33)" r 40 optional
+  goto 29.2,13.6 "Panther (level 33)" r 40 optional
   level 33
-  tip If you're not level 33 yet: kill Mistvale Gorilla here (level 33). The Defense of Grom'gol needs level 33.
+  tip If you're not level 33 yet: kill Panther around here (level 33), then go on.
 
 step Objectives: The Vile Reef (level 33.1)
   collect 4094 quest 629.1
@@ -48,6 +48,8 @@ step Turn in and pick up (level 33.3)
 step Objectives: The Defense of Grom'gol (level 33.4)
   kill 1142 quest 569.1
   kill 1144 quest 569.2
+  collect 3838 x8 quest 570.1 optional
+  collect 3839 quest 570.2 optional
 
 step Objectives: Mok'thardin's Enchantment (level 33.5)
   collect 3838 x8 quest 570.1

@@ -42,6 +42,8 @@ step Turn in (level 25.0)
 step Objectives: Claws from the Deep (level 25.1)
   kill 1024 x12 quest 279.1
   collect 3618 quest 279.2
+  collect 3348 x6 quest 471.1 optional
+  collect 3349 quest 470.1 optional
 
 step Objectives: Apprentice's Duties (level 25.1)
   collect 3348 x6 quest 471.1
@@ -183,6 +185,7 @@ step Objectives: Uncovering the Past (level 26.4)
   collect 2659 quest 299.2
   collect 2660 quest 299.3
   collect 2661 quest 299.4
+  collect 3638 quest 296.1 optional
 
 step Objectives: Ormer's Revenge (level 26.4)
   collect 3638 quest 296.1
@@ -205,13 +208,21 @@ step Pick up quests (level 26.7)
 step Objectives: Carnage (level 26.7)
   collect 280331 quest 98283.1
   collect 280330 quest 98283.2
+  collect 279385 x8 quest 98072.1 optional
+  collect 280331 quest 98283.1 optional
+  collect 280330 quest 98283.2 optional
+  collect 280103 x10 quest 98245.1 optional
 
 step Objectives: Crocs of the Sky (level 26.8)
   collect 279385 x8 quest 98072.1
+  collect 280331 quest 98283.1 optional
+  collect 280330 quest 98283.2 optional
+  collect 280103 x10 quest 98245.1 optional
 
 step Objectives: Carnage (level 26.8)
   collect 280331 quest 98283.1
   collect 280330 quest 98283.2
+  collect 280103 x10 quest 98245.1 optional
 
 step Objectives: Razormaw Needling (level 26.8)
   collect 280103 x10 quest 98245.1

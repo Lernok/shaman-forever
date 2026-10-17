@@ -19,7 +19,7 @@ step Reach level 21
   zone map 1416
   goto 51.3,74.5 "Forest Moss Creeper (level 21)" r 40 optional
   level 21
-  tip If you're not level 21 yet: kill Forest Moss Creeper here (level 21). Elixir of Pain needs level 21.
+  tip If you're not level 21 yet: kill Forest Moss Creeper around here (level 21), then go on.
 
 step Pick up quests (level 21.2)
   accept 496
@@ -36,6 +36,8 @@ step Turn in and pick up (level 21.5)
 
 step Objectives: Elixir of Pain (level 22.1)
   collect 3496 x10 quest 501.1
+  kill 2260 x10 quest 549.1 optional
+  kill 2261 x10 quest 549.2 optional
 
 step Objectives: WANTED: Syndicate Personnel (level 22.1)
   kill 2260 x10 quest 549.1
@@ -94,6 +96,9 @@ step Turn in and pick up (level 23.3)
 
 step Objectives: Souvenirs of Death (level 23.4)
   collect 3692 x30 quest 546.1
+  kill 2404 quest 529.1 optional
+  kill 2265 x4 quest 529.2 optional
+  collect 3564 quest 529.3 optional
 
 step Objectives: Battle of Hillsbrad (level 23.5)
   kill 2404 quest 529.1

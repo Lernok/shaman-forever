@@ -30,7 +30,7 @@ step Reach level 7
   zone map 1429
   goto 53.7,66.8 "Murloc (level 7)" r 40 optional
   level 7
-  tip If you're not level 7 yet: kill Murloc here (level 7). A Fishy Peril needs level 7.
+  tip If you're not level 7 yet: kill Murloc around here (level 7), then go on.
 
 step Turn in and pick up (level 7.2)
   accept 40
@@ -53,6 +53,7 @@ step Turn in (level 7.4)
 step Objectives (level 7.4)
   kill 735 quest 99128.1
   kill 285 quest 99128.2
+  collect 286209 x6 quest 99143.1 optional
 
 step Objectives: Bottles and Baubles (level 7.4)
   collect 286209 x6 quest 99143.1
@@ -155,6 +156,8 @@ step Turn in and pick up (level 9.7)
 
 step Objectives: Goldtooth (level 9.7)
   collect 981 quest 87.1
+  collect 286214 quest 99130.1 optional
+  collect 286215 quest 99130.2 optional
 
 step Objectives: An Enticing Offer (level 9.8)
   collect 286214 quest 99130.1
@@ -186,6 +189,7 @@ step Objectives: The Jasperlode Mine (level 10.3)
 
 step Objectives: Stolen Enchanting Supplies (level 10.3)
   collect 247805 x5 quest 91725.1
+  kill 474 x6 quest 91724.1 optional
 
 step Objectives: Delicate Instruments (level 10.4)
   kill 474 x6 quest 91724.1
@@ -209,6 +213,11 @@ step Objectives (level 10.6)
   collect 1006 quest 88.1
   collect 1019 x6 quest 83.1
   collect 2239 quest 147.1
+  collect 247817 quest 91733.1 optional
+  collect 247813 quest 91733.2 optional
+  collect 247818 quest 91733.3 optional
+  kill 118 x8 quest 52.1 optional
+  kill 822 x5 quest 52.2 optional
 
 step Objectives (level 10.6)
   collect 247817 quest 91733.1

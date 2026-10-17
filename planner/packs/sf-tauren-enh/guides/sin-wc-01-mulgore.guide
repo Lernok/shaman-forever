@@ -30,7 +30,7 @@ step Reach level 3
   zone map 1412
   goto 43.2,87.1 "Mountain Cougar (level 3)" r 40 optional
   level 3
-  tip If you're not level 3 yet: kill Mountain Cougar here (level 3). Break Sharptusk! needs level 3.
+  tip If you're not level 3 yet: kill Mountain Cougar around here (level 3), then go on.
 
 step Objectives: The Hunt Continues (level 3.0)
   collect 4742 x10 quest 750.1
@@ -57,9 +57,9 @@ step Turn in (level 3.9)
 
 step Reach level 4
   zone map 1412
-  goto 52.1,77.4 "Battleboar (level 4)" r 40 optional
+  goto 43.2,87.1 "Mountain Cougar (level 3)" r 40 optional
   level 4
-  tip If you're not level 4 yet: kill Battleboar here (level 4). Call of Earth needs level 4.
+  tip If you're not level 4 yet: kill Mountain Cougar around here (level 3), then go on.
 
 step Pick up quests (level 4.1)
   accept 1519
@@ -68,9 +68,14 @@ step Pick up quests (level 4.1)
 step Objectives: The Battleboars (level 4.7)
   collect 4848 x8 quest 780.1
   collect 4849 x8 quest 780.2
+  collect 4770 x12 quest 757.1 optional
+  collect 10459 quest 3376.1 optional
+  collect 6634 x2 quest 1519.1 optional
 
 step Objectives: Rite of Strength (level 5.1)
   collect 4770 x12 quest 757.1
+  collect 10459 quest 3376.1 optional
+  collect 6634 x2 quest 1519.1 optional
 
 step Objectives (level 5.2)
   collect 10459 quest 3376.1
@@ -141,6 +146,12 @@ step Pick up quests (level 7.2)
 
 step Objectives: Chakuyak (level 7.4)
   collect 270302 quest 96130.1
+  collect 4804 quest 766.1 optional
+  collect 4805 quest 766.2 optional
+  collect 4806 quest 766.3 optional
+  collect 4807 quest 766.4 optional
+  collect 4801 x6 quest 756.1 optional
+  collect 4802 x6 quest 756.2 optional
 
 step Objectives (level 7.7)
   collect 4804 quest 766.1
@@ -149,6 +160,8 @@ step Objectives (level 7.7)
   collect 4807 quest 766.4
   collect 4801 x6 quest 756.1
   collect 4802 x6 quest 756.2
+  collect 4801 x6 quest 756.1 optional
+  collect 4802 x6 quest 756.2 optional
 
 step Objectives: Thunderhorn Totem (level 8.1)
   collect 4801 x6 quest 756.1
@@ -185,6 +198,8 @@ step Pick up quests (level 8.6)
 
 step Objectives: Kyle's Gone Missing! (level 8.6)
   kill 277154 quest 99411.1
+  collect 4808 x2 quest 771.1 optional
+  collect 4809 x2 quest 771.2 optional
 
 step Objectives (level 8.6)
   collect 4808 x2 quest 771.1
@@ -220,6 +235,9 @@ step Turn in (level 9.3)
 
 step Objectives: Wildmane Totem (level 9.6)
   collect 4803 x8 quest 759.1
+  kill 2967 x6 quest 99080.1 optional
+  kill 2968 x4 quest 99080.2 optional
+  collect 286075 quest 99080.3 optional
 
 step Objectives (level 9.7)
   kill 2967 x6 quest 99080.1
@@ -243,9 +261,9 @@ step Turn in (level 10.0)
 
 step Reach level 10
   zone map 1412
-  goto 62.2,71.8 "Windfury Harpy (level 8)" r 40 optional
+  goto 38.9,44.6 "Skeletal Trooper (level 10)" r 40 optional
   level 10
-  tip If you're not level 10 yet: kill Windfury Harpy here (level 8). The Hunter's Way needs level 10.
+  tip If you're not level 10 yet: kill Skeletal Trooper around here (level 10), then go on.
 
 step Pick up quests (level 10.0)
   accept 861
@@ -286,6 +304,9 @@ step Turn in (level 10.7)
 step Objectives: The Venture Co. (level 10.9)
   kill 2978 x14 quest 764.1
   kill 2979 x6 quest 764.2
+  collect 4819 quest 765.1 optional
+  kill 2978 x14 quest 764.1 optional
+  kill 2979 x6 quest 764.2 optional
 
 step Objectives (level 11.0)
   collect 4819 quest 765.1
@@ -310,9 +331,16 @@ step Turn in (level 11.2)
 
 step Objectives: Dangers of the Windfury (level 11.3)
   collect 4751 x8 quest 743.1
+  collect 4703 x5 quest 746.1 optional
+  kill 2949 x10 quest 745.1 optional
+  kill 2950 x8 quest 745.2 optional
+  kill 2951 x5 quest 745.3 optional
 
 step Objectives: Dwarven Digging (level 11.3)
   collect 4703 x5 quest 746.1
+  kill 2949 x10 quest 745.1 optional
+  kill 2950 x8 quest 745.2 optional
+  kill 2951 x5 quest 745.3 optional
 
 step Objectives: Sharing the Land (level 11.4)
   kill 2949 x10 quest 745.1

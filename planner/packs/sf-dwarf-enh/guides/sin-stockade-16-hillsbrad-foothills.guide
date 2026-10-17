@@ -47,9 +47,9 @@ step Pick up quests (level 30.5)
 
 step Reach level 30
   zone map 1424
-  goto 66,82.2 "Daggerspine Shorestalker (level 29)" r 40 optional
+  goto 31.8,72.9 "Torn Fin Coastrunner (level 30)" r 40 optional
   level 30
-  tip If you're not level 30 yet: kill Daggerspine Shorestalker here (level 29). Hints of a New Plague? needs level 30.
+  tip If you're not level 30 yet: kill Torn Fin Coastrunner around here (level 30), then go on.
 
 step Pick up quests (level 30.6)
   accept 659

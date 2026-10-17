@@ -20,9 +20,9 @@ step Objectives: Harmony in Balance (level 2.1)
 
 step Reach level 2
   zone map 2521
-  goto 46.3,26.6 "Pesky Cirrusfly (level 1)" r 40 live optional
+  goto 46.3,26.6 "Pesky Cirrusfly (level 1)" r 40 optional
   level 2
-  tip If you're not level 2 yet: kill Pesky Cirrusfly here (level 1). Elemental Unrest needs level 2.
+  tip If you're not level 2 yet: kill Pesky Cirrusfly around here (level 1), then go on.
 
 step Pick up quests (level 2.1)
   accept 94414
@@ -56,9 +56,9 @@ step Objectives: Agitators (level 3.5)
 
 step Reach level 3
   zone map 2521
-  goto 46.3,26.6 "Pesky Cirrusfly (level 1)" r 40 live optional
+  goto 46.9,20.5 "Al'Aketh Convert (level 3)" r 40 optional
   level 3
-  tip If you're not level 3 yet: kill Pesky Cirrusfly here (level 1). Call of Earth needs level 3.
+  tip If you're not level 3 yet: kill Al'Aketh Convert around here (level 3), then go on.
 
 step Objectives: Infestation Investigation (level 3.5)
   kill 251169 x8 quest 92462.1
@@ -76,9 +76,9 @@ step Turn in (level 3.8)
 
 step Reach level 4
   zone map 2521
-  goto 46.3,20.3 "Roiling Winds (level 3)" r 40 live optional
+  goto 46.9,20.5 "Al'Aketh Convert (level 3)" r 40 optional
   level 4
-  tip If you're not level 4 yet: kill Roiling Winds here (level 3). Aetheen of the Gales needs level 4.
+  tip If you're not level 4 yet: kill Al'Aketh Convert around here (level 3), then go on.
 
 step Turn in and pick up (level 4.1)
   accept 92471
@@ -251,9 +251,9 @@ step Turn in (level 10.0)
 
 step Reach level 10
   zone map 2521
-  goto 47.3,81.2 "Hungry Bandit (level 9)" r 40 live optional
+  goto 65.4,68 "Al'Aketh Healer (level 10)" r 40 optional
   level 10
-  tip If you're not level 10 yet: kill Hungry Bandit here (level 9). Call of Fire needs level 10.
+  tip If you're not level 10 yet: kill Al'Aketh Healer around here (level 10), then go on.
 
 step Objectives (level 10.0)
   kill 252800 quest 92679.1
@@ -372,6 +372,8 @@ step Turn in (level 12.7)
 
 step Objectives: Call of Fire (level 12.8)
   collect 277269 quest 97245.1
+  kill 255013 quest 92643.1 optional
+  kill 253372 quest 92643.2 optional
 
 step Objectives: The Turncoat (level 12.8)
   kill 255013 quest 92643.1

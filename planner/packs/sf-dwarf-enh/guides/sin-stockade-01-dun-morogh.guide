@@ -33,9 +33,9 @@ step Turn in (level 3.1)
 
 step Reach level 3
   zone map 1426
-  goto 30.5,74.9 "Rockjaw Trogg (level 2)" r 40 optional
+  goto 22.6,70.2 "Small Crag Boar (level 3)" r 40 optional
   level 3
-  tip If you're not level 3 yet: kill Rockjaw Trogg here (level 2). A Refugee's Quandary needs level 3.
+  tip If you're not level 3 yet: kill Small Crag Boar around here (level 3), then go on.
 
 step Pick up quests (level 3.1)
   accept 3361
@@ -58,9 +58,9 @@ step Objectives (level 4.3)
 
 step Reach level 4
   zone map 1426
-  goto 30.5,74.9 "Rockjaw Trogg (level 2)" r 40 optional
+  goto 21.9,76.3 "Burly Rockjaw Trogg (level 2)" r 40 optional
   level 4
-  tip If you're not level 4 yet: kill Rockjaw Trogg here (level 2). Call of Earth needs level 4.
+  tip If you're not level 4 yet: kill Burly Rockjaw Trogg around here (level 2), then go on.
 
 step Turn in (level 4.3)
   turnin 170
@@ -76,6 +76,7 @@ step Turn in and pick up (level 4.5)
 
 step Objectives: Call of Earth (level 4.9)
   collect 264356 quest 94373.1
+  collect 2004 quest 218.1 optional
 
 step Objectives: The Stolen Journal (level 4.9)
   collect 2004 quest 218.1
@@ -153,7 +154,7 @@ step Reach level 7
   zone map 1426
   goto 42,48.4 "Wendigo (level 7)" r 40 optional
   level 7
-  tip If you're not level 7 yet: kill Wendigo here (level 7). Frostmane Hold needs level 7.
+  tip If you're not level 7 yet: kill Wendigo around here (level 7), then go on.
 
 step Objectives: Flintfire's Shipment (level 7.1)
   collect 280413 quest 98321.1
@@ -182,6 +183,7 @@ step Turn in (level 7.7)
 
 step Objectives: The Grizzled Den (level 7.7)
   collect 2671 x8 quest 313.1
+  collect 13850 quest 5541.1 optional
 
 step Objectives: Ammo for Rumbleshot (level 7.8)
   collect 13850 quest 5541.1
@@ -224,6 +226,9 @@ step Turn in (level 8.5)
 
 step Objectives: Rime's Wrath (level 8.5)
   collect 286325 quest 99161.1
+  collect 286360 quest 99162.1 optional
+  collect 286359 quest 99162.2 optional
+  collect 286358 quest 99162.3 optional
 
 step Objectives (level 8.5)
   collect 286360 quest 99162.1

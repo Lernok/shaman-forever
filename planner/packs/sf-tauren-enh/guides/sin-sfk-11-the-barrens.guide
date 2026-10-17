@@ -28,6 +28,10 @@ step Turn in (level 19.0)
 
 step Objectives: WANTED: Baron Longshore (level 19.0)
   collect 5084 quest 895.1
+  kill 3393 quest 891.1 optional
+  kill 3455 quest 891.2 optional
+  kill 3454 quest 891.3 optional
+  collect 5078 x10 quest 891.4 optional
 
 step Objectives (level 19.0)
   kill 3393 quest 891.1
@@ -139,6 +143,7 @@ step Objectives: Verog the Dervish (level 19.8)
 
 step Objectives: Lost in Battle (level 19.8)
   kill 10668 quest 4921.1
+  collect 5085 x60 quest 899.1 optional
 
 step Objectives: Consumed by Hatred (level 20.2)
   collect 5085 x60 quest 899.1
@@ -185,6 +190,7 @@ step Turn in (level 20.6)
 
 step Objectives: Hezrul Bloodmark (level 20.6)
   collect 5025 quest 852.1
+  collect 277277 x4 quest 95774.1 optional
 
 step Objectives: Her Name Is Olgra (level 20.6)
   collect 277277 x4 quest 95774.1
@@ -307,6 +313,9 @@ step Objectives: Betrayal from Within (level 21.9)
   collect 5074 quest 879.1
   collect 5073 quest 879.2
   collect 5072 quest 879.3
+  collect 5093 quest 893.1 optional
+  collect 5092 quest 893.2 optional
+  collect 5094 quest 893.3 optional
 
 step Objectives: Weapons of Choice (level 21.9)
   collect 5093 quest 893.1
@@ -320,16 +329,31 @@ step Objectives: Weapons of Choice (level 21.9)
   collect 5093 quest 893.1
   collect 5092 quest 893.2
   collect 5094 quest 893.3
+  collect 5074 quest 879.1 optional
+  collect 5073 quest 879.2 optional
+  collect 5072 quest 879.3 optional
+  kill 3374 x15 quest 843.1 optional
+  kill 3375 x5 quest 843.2 optional
+  collect 5006 quest 843.3 optional
+  kill 4128 x7 quest 98093.1 optional
+  kill 3238 x7 quest 98093.2 optional
 
 step Objectives (level 21.9)
   collect 5074 quest 879.1
   collect 5073 quest 879.2
   collect 5072 quest 879.3
+  kill 3374 x15 quest 843.1 optional
+  kill 3375 x5 quest 843.2 optional
+  collect 5006 quest 843.3 optional
+  kill 4128 x7 quest 98093.1 optional
+  kill 3238 x7 quest 98093.2 optional
 
 step Objectives: Gann's Reclamation (level 22.1)
   kill 3374 x15 quest 843.1
   kill 3375 x5 quest 843.2
   collect 5006 quest 843.3
+  kill 4128 x7 quest 98093.1 optional
+  kill 3238 x7 quest 98093.2 optional
 
 step Objectives: Field to Clear (level 22.1)
   kill 4128 x7 quest 98093.1
@@ -367,10 +391,10 @@ step Turn in and pick up (level 22.8)
   turnin 897
 
 step Reach level 23
-  zone map 1413
-  goto 43.5,82.8 "Razormane Stalker (level 23)" r 40 optional
+  zone map 1412
+  goto 73.2,65.6 "Thunderhead (level 21)" r 40 optional
   level 23
-  tip If you're not level 23 yet: kill Razormane Stalker here (level 23). Message to Freewind Post needs level 23.
+  tip If you're not level 23 yet: kill Thunderhead around here (level 21), then go on.
 
 step Pick up quests (level 22.8)
   accept 4542
@@ -398,6 +422,9 @@ step Pick up quests (level 23.0)
 
 step Objectives: Egg Hunt (level 23.0)
   collect 5058 x12 quest 868.1
+  collect 4898 x5 quest 822.1 optional
+  collect 4897 quest 822.2 optional
+  collect 4896 quest 822.3 optional
 
 step Objectives (level 23.0)
   collect 4898 x5 quest 822.1

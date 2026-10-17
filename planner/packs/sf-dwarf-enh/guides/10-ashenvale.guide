@@ -24,7 +24,7 @@ step Reach level 20
   zone map 1440
   goto 31,30.9 "Dark Strand Cultist (level 19)" r 40 optional
   level 20
-  tip If you're not level 20 yet: kill Dark Strand Cultist here (level 19). Bathran's Hair needs level 20.
+  tip If you're not level 20 yet: kill Dark Strand Cultist around here (level 19), then go on.
 
 step Pick up quests (level 20.1)
   accept 1010
@@ -62,6 +62,7 @@ step Pick up quests (level 20.6)
 
 step Objectives: The Zoram Strand (level 20.7)
   collect 5490 x20 quest 1008.1
+  collect 5424 quest 1007.1 optional
 
 step Objectives: The Ancient Statuette (level 20.7)
   collect 5424 quest 1007.1

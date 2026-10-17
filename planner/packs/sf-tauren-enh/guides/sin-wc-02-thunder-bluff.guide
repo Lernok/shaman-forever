@@ -20,7 +20,7 @@ step Reach level 12
   zone map 1412
   goto 32.8,33.6 "Windfury Matriarch (level 11)" r 40 optional
   level 12
-  tip If you're not level 12 yet: kill Windfury Matriarch here (level 11). Until Death Do Us Part needs level 12.
+  tip If you're not level 12 yet: kill Windfury Matriarch around here (level 11), then go on.
 
 step Pick up quests (level 12.1)
   accept 264

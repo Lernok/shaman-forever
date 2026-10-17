@@ -35,6 +35,9 @@ step Turn in (level 20.0)
 step Objectives (level 20.0)
   kill 1888 x8 quest 95981.1
   kill 1889 x8 quest 95981.2
+  kill 2053 x5 quest 98299.1 optional
+  kill 2054 x5 quest 98299.2 optional
+  collect 280375 x6 quest 98298.1 optional
 
 step Objectives (level 20.1)
   kill 2053 x5 quest 98299.1
@@ -48,7 +51,7 @@ step Turn in (level 20.2)
 
 step Reach level 20
   level 20
-  tip Kill the mobs on your way until level 20: The Tortured Soul needs it.
+  tip If you're not level 20 yet: kill Vile Fin Lakestalker around here (level 19), then go on.
 
 step Pick up quests (level 20.3)
   accept 95883

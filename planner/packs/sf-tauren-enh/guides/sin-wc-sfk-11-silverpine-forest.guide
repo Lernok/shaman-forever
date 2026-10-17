@@ -18,10 +18,10 @@ step Pick up quests (level 19.2)
   accept 460
 
 step Reach level 19
-  zone map 1421
-  goto 65.1,25.1 "Rot Hide Savage (level 19)" r 40 optional
+  zone map 1416
+  goto 4.8,59.8 "Vile Fin Lakestalker (level 19)" r 40 optional
   level 19
-  tip If you're not level 19 yet: kill Rot Hide Savage here (level 19). Journey to Hillsbrad Foothills needs level 19.
+  tip If you're not level 19 yet: kill Vile Fin Lakestalker around here (level 19), then go on.
 
 step Turn in (level 19.2)
   turnin 460
@@ -67,7 +67,7 @@ step Grind to 20 (13 min)
 
 step Reach level 20
   level 20
-  tip Kill the mobs on your way until level 20: The Tortured Soul needs it.
+  tip If you're not level 20 yet: kill Vile Fin Lakestalker around here (level 19), then go on.
 
 step Pick up quests (level 19.8)
   accept 95883
