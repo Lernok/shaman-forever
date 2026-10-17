@@ -1050,7 +1050,9 @@ local function makeFrame()
   -- Per character; a new one starts where you last left it on another.
   local pos = cdb.pos or db.pos
   if pos then frame:SetPoint(pos[1], UIParent, pos[2], pos[3], pos[4]) else frame:SetPoint("TOPRIGHT", -220, -180) end
-  frame:SetFrameStrata("HIGH")
+  -- Under the game's windows (quest and gossip dialogs, bags): you can
+  -- still read and accept a quest where the window sits.
+  frame:SetFrameStrata("LOW")
   frame:SetClampedToScreen(true)
   frame:SetMovable(true)
   frame:EnableMouse(true)
