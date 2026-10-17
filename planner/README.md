@@ -121,7 +121,8 @@ node tools/polestar.js talents build --plans <carpeta con shaman.json> --out <sa
 node planner/polestar-talents-to-addon.js <salida>/Builds.lua addon/ShamanForever/PolestarTalents.lua
 ```
 
-El `talents build` repite cada punto con las reglas del cliente (1.60.1.70374):
-los 3 planes (153 puntos) pasan. El addon registra el plan en Polestar al
-cargar (si Polestar 0.2.4 está). Cuando talentsforever publique los árboles del
-parche del 15-oct, hay que regenerarlo (Elemental cambió).
+El `talents build` repite cada punto con las reglas del cliente: pasarle
+`--build <versión>` del cliente actual (1.60.1.70450 desde el 17-oct, con el
+árbol Elemental nuevo); los 3 planes (153 puntos) pasan. El addon registra el
+plan en Polestar al cargar (si Polestar 0.2.4 está). Regenerarlo cada vez que
+un parche cambie los árboles.
