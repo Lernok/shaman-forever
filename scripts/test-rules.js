@@ -48,32 +48,32 @@ ranks = {};
 set('Elemental', 'Convection', 5);
 set('Elemental', 'Call of Flame', 3);
 set('Elemental', 'Reverberation', 1);
-check('9 points above row 3 (needs 10): closed', canAdd('Elemental', 'Elemental Alacrity'), false);
+check('9 points above row 3 (needs 10): closed', canAdd('Elemental', 'Elemental Focus'), false);
 set('Elemental', 'Reverberation', 2);
-check('10 above row 3: open', canAdd('Elemental', 'Elemental Alacrity'), true);
+check('10 above row 3: open', canAdd('Elemental', 'Elemental Focus'), true);
 
-// Prerequisite arrows: Call of Thunder (row 4) needs Elemental Alacrity 3/3.
+// Prerequisite arrows: Lightning Overload (row 5) needs Elemental Alacrity 3/3.
+ranks = {};
+set('Elemental', 'Convection', 5); set('Elemental', 'Concussion', 5);
+set('Elemental', 'Reverberation', 5); set('Elemental', 'Call of Flame', 3);
 set('Elemental', 'Elemental Alacrity', 2);
-set('Elemental', 'Elemental Focus', 1);
-set('Elemental', 'Concussion', 2);
-check('row 4 gate met (15) but prereq at 2/3: closed', canAdd('Elemental', 'Call of Thunder'), false);
+check('row 5 gate met (20) but prereq at 2/3: closed', canAdd('Elemental', 'Lightning Overload'), false);
 set('Elemental', 'Elemental Alacrity', 3);
-check('prereq maxed: open', canAdd('Elemental', 'Call of Thunder'), true);
-set('Elemental', 'Call of Thunder', 1);
+check('prereq maxed: open', canAdd('Elemental', 'Lightning Overload'), true);
+set('Elemental', 'Lightning Overload', 1);
 check('prereq point cannot come out while dependent has points', canRemove('Elemental', 'Elemental Alacrity'), false);
 
-// Lava Burst: row 7 (30 points in rows 1-6) AND Lightning Overload 3/3.
+// Elemental Mastery: row 7 (30 points in rows 1-6) AND Lava Burst.
 ranks = {};
 set('Elemental', 'Convection', 5); set('Elemental', 'Concussion', 5);
 set('Elemental', 'Reverberation', 5); set('Elemental', 'Call of Flame', 3); set('Elemental', 'Elemental Warding', 2);
 set('Elemental', 'Elemental Focus', 1); set('Elemental', 'Elemental Alacrity', 3);
-set('Elemental', 'Eye of the Storm', 3); set('Elemental', 'Call of Thunder', 1);
-set('Elemental', 'Lightning Overload', 2);
-check('LO 2/3, 30 above row 7: Lava Burst closed (prereq)', canAdd('Elemental', 'Lava Burst'), false);
-set('Elemental', 'Lightning Overload', 3);
-check('LO 3/3 + 31 above: Lava Burst open', canAdd('Elemental', 'Lava Burst'), true);
+set('Elemental', 'Eye of the Storm', 3); set('Elemental', 'Lightning Overload', 3);
+check('no Lava Burst, 30 above row 7: Elemental Mastery closed (prereq)', canAdd('Elemental', 'Elemental Mastery'), false);
 set('Elemental', 'Lava Burst', 1);
-check('LO point cannot come out under Lava Burst', canRemove('Elemental', 'Lightning Overload'), false);
+check('Lava Burst + 31 above: Elemental Mastery open', canAdd('Elemental', 'Elemental Mastery'), true);
+set('Elemental', 'Elemental Mastery', 1);
+check('Lava Burst cannot come out under Elemental Mastery', canRemove('Elemental', 'Lava Burst'), false);
 check('row-1 point removable while rows above row 7 keep 30', canRemove('Elemental', 'Convection'), true);
 set('Elemental', 'Elemental Warding', 1);
 check('...but not once rows 1-6 are at exactly 30', canRemove('Elemental', 'Convection'), false);
