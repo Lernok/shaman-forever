@@ -62,52 +62,56 @@ step Reach level 4
   level 4
   tip If you're not level 4 yet: kill Burly Rockjaw Trogg around here (level 2), then go on.
 
-step Turn in (level 4.3)
-  turnin 170
-
-step Pick up quests (level 4.4)
+step Pick up quests (level 4.3)
   accept 94373
 
+step Objectives: Call of Earth (level 4.4)
+  collect 264356 quest 94373.1
+
+step Timed quest: Scalding Mornbrew Delivery (level 4.4)
+  accept 3364
+  tip Quest with a timer (5 min): take it only when you're ready and go straight to the turn-in, no stops on the way.
+
+step Turn in: Scalding Mornbrew Delivery (level 4.4)
+  turnin 3364
+
 step Turn in and pick up (level 4.5)
+  accept 3365
+  turnin 3361
+
+step Turn in and pick up (level 4.6)
   turnin 234
   turnin 182
   accept 218
-  accept 3364
+  turnin 3365
 
-step Objectives: Call of Earth (level 4.9)
-  collect 264356 quest 94373.1
-  collect 2004 quest 218.1 optional
-
-step Objectives: The Stolen Journal (level 4.9)
+step Objectives: The Stolen Journal (level 5.0)
   collect 2004 quest 218.1
 
-step Turn in (level 5.1)
+step Turn in (level 5.2)
   turnin 218
   accept 282
 
-step Turn in and pick up (level 5.3)
-  turnin 3361
-  turnin 3364
-  accept 3365
+step Turn in (level 5.4)
+  turnin 170
+
+step Turn in and pick up (level 5.5)
+  accept 2160
+  turnin 282
+  accept 420
+  accept 96628
+
+step Turn in (level 5.5)
   turnin 98581
   turnin 94373
   accept 94374
 
-step Turn in (level 5.6)
+step Turn in (level 5.7)
   turnin 94374
   accept 94375
 
-step Turn in (level 5.8)
+step Turn in (level 5.9)
   turnin 94375
-
-step Turn in and pick up (level 5.8)
-  turnin 282
-  accept 420
-  accept 96628
-  accept 2160
-
-step Turn in (level 5.8)
-  turnin 3365
 
 step Hearthstone (level 5.9)
   sethome "Thunderbrew Distillery"

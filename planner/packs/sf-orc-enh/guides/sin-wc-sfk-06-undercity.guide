@@ -18,23 +18,28 @@ step Turn in and pick up (level 17.7)
 step Hearthstone (level 17.7)
   sethome "Undercity"
 
-step Pick up quests (level 17.8)
-  accept 97891
+step Turn in (level 17.8)
+  turnin 98545
 
 step Pick up quests (level 17.8)
   accept 79095
   turnin 79095
 
-step Turn in and pick up (level 17.8)
-  turnin 444
-  accept 446
-
 step Turn in (level 17.8)
-  turnin 98545
+  turnin 444
 
-step Turn in and pick up (Ruins of Lordaeron)
-  accept 95216 optional map 1458 @46.31,71.91
+step Timed quest: Prompt Potion Runner (level 17.8)
+  accept 97891
+  tip Quest with a timer: take it only when you're ready and go straight to the turn-in, no stops on the way.
+
+step Turn in: Prompt Potion Runner (level 17.8)
   turnin 97891
+
+step Pick up: The New Plague (Ruins of Lordaeron)
+  accept 95216 optional map 1458 @46.31,71.91
 
 step Pick up: Light's Justice (Ruins of Lordaeron)
   accept 92421 optional map 1458 @57.73,89.55
+
+step Pick up quests (level 17.8)
+  accept 446

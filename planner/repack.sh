@@ -13,12 +13,13 @@ pack() { # export dir, pack dir, id, title, races
   [ -f "$2/pack.json" ] || cp "$T/packs/$3/pack.json" "$2/"
   POLESTAR="$P" "$NODE" planner/reorder.js "$2" 2>&1 | tail -1
 }
-for spec in "sf-tauren-enh|Shaman: Forever · Tauren Mejora|" "sf-orc-enh|Shaman: Forever · Orco y Troll Mejora|Orc, Troll" "sf-sky-enh|Shaman: Forever · Skyborne Mejora|" "sf-dwarf-enh|Shaman: Forever · Enano Mejora|"; do
+for spec in "sf-tauren-enh|Shaman: Forever · Tauren Mejora|" "sf-orc-enh|Shaman: Forever · Orco y Troll Mejora|Orc, Troll" "sf-sky-enh|Shaman: Forever · Skyborne Mejora|" "sf-dwarf-enh|Shaman: Forever · Enano Mejora|" "sf-tauren-cast|Shaman: Forever · Tauren Elemental y Resto|" "sf-orc-cast|Shaman: Forever · Orco y Troll Elemental y Resto|Orc, Troll" "sf-sky-cast|Shaman: Forever · Skyborne Elemental y Resto|" "sf-dwarf-cast|Shaman: Forever · Enano Elemental y Resto|"; do
   IFS='|' read -r id title races <<< "$spec"
   echo "=== $id"
   pack "$T/export-$id" "$T/packs/$id" $id "$title" "$races"
   rm -rf "$T/packs/$id-all"; cp -r "$T/packs/$id" "$T/packs/$id-all"; rm -rf "$T/packs/$id-all/dist"
   for v in "$T/variants/$id-"*-export; do
+    [ -d "$v" ] || continue
     tag=$(basename "$v" -export); tag=${tag#$id-}
     pack "$v" "$T/variants/$id-$tag-pack" $id "$title" "$races"
     case $tag in sin-wc) l="sin WC";; sin-sfk) l="sin SFK";; sin-wc-sfk) l="sin WC ni SFK";; con-rol) l="con Ruins of Lordaeron";; sin-stockade) l="sin Stockade";; *) l=$tag;; esac

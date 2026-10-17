@@ -60,7 +60,7 @@ for (const src of sources) {
     const lv = /\(level ([\d.]+)\)/.exec(b[0]);
     const pts = goals.filter((x) => x.map != null && x.x != null).map((x) => project.point(x.map, x.x, x.y, x.f || null));
     const barrier = !goals.length || goals.some((x) => !QUEST_GOALS.has(x.t) || x.map == null || x.x == null)
-      || /^step (Dungeon|Reach level|Hearthstone|Fly|Grind)/.test(b[0]);
+      || /^step (Dungeon|Reach level|Hearthstone|Fly|Grind|Timed quest|Turn in: )/.test(b[0]);
     const kinds = new Set(goals.map((x) => x.t));
     const home = goals.find((x) => x.t === 'sethome' && x.map != null && x.x != null);
     const objPts = goals.filter((x) => (x.t === 'kill' || x.t === 'collect') && x.map != null && x.x != null)

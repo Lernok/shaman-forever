@@ -223,6 +223,69 @@ guides.forEach((lines, gi) => {
   }
 });
 console.log(`${crumbs} breadcrumb quests added`);
+// Timed quests ("...before the incense burns to ash in ten minutes!"): the
+// simulator knows no timers and can take one and do other things before it
+// (Grace of An'she and Mu'sha, taken at 3.9 and turned in at 5.3). Each one
+// gets its own step and the turn-in right after it, nothing in between
+// (reorder.js keeps "Timed quest" steps where they are).
+const NUM = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, fifteen: 15, twenty: 20, thirty: 30 };
+const timerOf = (q) => {
+  const t = (q && q.objectiveText) || '';
+  const m = /(\d+|one|two|three|four|five|six|seven|eight|nine|ten|fifteen|twenty|thirty) minutes?/i.exec(t);
+  if (m) return `${NUM[m[1].toLowerCase()] || m[1]} min`;
+  return /\b(before (it|the \w+) (burns|expires|runs out|fades)|time limit|timer)\b/i.test(t) ? 'timer' : null;
+};
+let timed = 0;
+guides.forEach((lines) => {
+  for (let li = 0; li < lines.length; li++) {
+    const m = /^(\s+)accept (\d+)\b/.exec(lines[li]);
+    if (!m) continue;
+    const q = qAll[m[2]];
+    const timer = timerOf(q);
+    if (!timer || /^step Timed quest/.test((() => { let s = li; while (s > 0 && !/^step\b/.test(lines[s])) s--; return lines[s]; })())) continue;
+    // Its turn-in, wherever the route had it: out of there.
+    let found = false;
+    for (const L of guides) {
+      for (let k = L.length - 1; k >= 0; k--) {
+        if (!new RegExp(`^\\s+turnin ${m[2]}\\b`).test(L[k])) continue;
+        L.splice(k, 1);
+        found = true;
+        if (L === lines && k < li) li--;
+        let s = k - 1;
+        while (s >= 0 && !/^step\b/.test(L[s])) s--;
+        let e = s + 1;
+        while (e < L.length && !/^step\b/.test(L[e])) e++;
+        if (s >= 0 && !L.slice(s + 1, e).some((l) => /^\s+\S/.test(l))) {
+          L.splice(s, e - s);
+          if (L === lines && s < li) li -= e - s;
+        }
+      }
+    }
+    if (!found) continue;
+    // The accept leaves its step for a step of its own, then the turn-in.
+    const acceptLine = lines[li];
+    lines.splice(li, 1);
+    let s = li - 1;
+    while (s >= 0 && !/^step\b/.test(lines[s])) s--;
+    let e = s + 1;
+    while (e < lines.length && !/^step\b/.test(lines[e])) e++;
+    const lv = (/\(level ([\d.]+)\)/.exec(lines[s] || '') || [])[1];
+    // Its old step, if nothing is left in it.
+    if (s >= 0 && !lines.slice(s + 1, e).some((l) => /^\s+\S/.test(l))) {
+      lines.splice(s, e - s);
+      e = s;
+    }
+    const title = (q.title || 'Quest').replace(/"/g, "'");
+    const minutes = timer === 'timer' ? '' : ` (${timer})`;
+    const block = [`step Timed quest: ${title}${lv ? ` (level ${lv})` : ''}`, acceptLine,
+      `  tip Quest with a timer${minutes}: take it only when you're ready and go straight to the turn-in, no stops on the way.`, '',
+      `step Turn in: ${title}${lv ? ` (level ${lv})` : ''}`, `  turnin ${m[2]}`, ''];
+    lines.splice(e, 0, ...block);
+    li = e + block.length - 1;
+    timed++;
+  }
+});
+console.log(`${timed} timed quests taken and turned in back to back`);
 // Third pass. The simulator writes "complete <quest>", which Polestar can't
 // point the arrow at; its compiler places kill and collect goals tied to a
 // quest objective (spots where the mobs or the drops are). So a quest whose

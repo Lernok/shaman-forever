@@ -448,22 +448,27 @@ step Objectives: Call of Fire (level 12.6)
 
 step Turn in (level 12.6)
   turnin 97245
+
+step Timed quest: Call of Fire (level 12.6)
   accept 97257
+  tip Quest with a timer: take it only when you're ready and go straight to the turn-in, no stops on the way.
 
-step Objectives: Call of Fire (level 12.6)
-  complete 97257
-  zone map 2521
-  goto 51.2,85.9 "Brazier of Offering" r 15 live optional
-  tip Wait for Olariaan to begin the ritual at the Brazier of Offering and follow his instructions.$B$BYou must deliver the Eternal Flame to Valanaar before the timer runs out.
-
-step Objectives: Call of Fire (level 12.6)
-  complete 97257
-  zone map 2521
-  goto 51.2,85.9 "Brazier of Offering" r 15 live optional
-  tip Wait for Olariaan to begin the ritual at the Brazier of Offering and follow his instructions.$B$BYou must deliver the Eternal Flame to Valanaar before the timer runs out.
-
-step Turn in and pick up (level 12.7)
+step Turn in: Call of Fire (level 12.6)
   turnin 97257
+
+step Objectives: Call of Fire (level 12.6)
+  complete 97257
+  zone map 2521
+  goto 51.2,85.9 "Brazier of Offering" r 15 live optional
+  tip Wait for Olariaan to begin the ritual at the Brazier of Offering and follow his instructions.$B$BYou must deliver the Eternal Flame to Valanaar before the timer runs out.
+
+step Objectives: Call of Fire (level 12.6)
+  complete 97257
+  zone map 2521
+  goto 51.2,85.9 "Brazier of Offering" r 15 live optional
+  tip Wait for Olariaan to begin the ritual at the Brazier of Offering and follow his instructions.$B$BYou must deliver the Eternal Flame to Valanaar before the timer runs out.
+
+step Pick up quests (level 12.7)
   accept 94484
 
 step Pick up quests (level 12.7)

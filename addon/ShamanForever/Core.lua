@@ -908,6 +908,11 @@ local function npcLines(npcId)
     -- Quests you can take now or within 5 levels.
     if not Api.questDone(qid) and (not r or r:find(me, 1, true)) and (not req or req <= lvl + 5) then
       local lines = questWorth(qid)
+      -- A quest with a timer: say it before you take it.
+      local tm = D.qtimer and D.qtimer[qid]
+      if tm then
+        table.insert(lines, 1, "|cffff9933" .. (tm > 0 and string.format(L().timerMin, tm) or L().timer) .. "|r")
+      end
       if #lines > 0 then
         local name = Api.questName(qid) .. (Api.onQuest(qid) and (" · " .. L().haveQuestShort) or "")
           .. (req and req > lvl and (" · " .. string.format(L().fromLevel, req)) or "")

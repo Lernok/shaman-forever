@@ -32,34 +32,42 @@ step Reach level 3
   level 3
   tip If you're not level 3 yet: kill Mountain Cougar around here (level 3), then go on.
 
-step Objectives: The Hunt Continues (level 3.0)
-  collect 4742 x10 quest 750.1
-
-step Pick up quests (level 3.2)
+step Pick up quests (level 3.0)
   accept 753
 
-step Objectives: A Humble Task (level 3.2)
+step Objectives: A Humble Task (level 3.0)
   collect 4755 quest 753.1
 
-step Turn in and pick up (level 3.4)
-  turnin 750
+step Turn in and pick up (level 3.2)
   accept 3376
   turnin 753
   accept 755
+
+step Objectives: The Hunt Continues (level 3.2)
+  collect 4742 x10 quest 750.1
 
 step Pick up quests (level 3.4)
   accept 1656
 
 step Turn in (level 3.9)
   turnin 755
-  accept 95805
   accept 757
+
+step Timed quest: Grace of An'she and Mu'sha (level 3.9)
+  accept 95805
+  tip Quest with a timer (10 min): take it only when you're ready and go straight to the turn-in, no stops on the way.
+
+step Turn in: Grace of An'she and Mu'sha (level 3.9)
+  turnin 95805
+
+step Turn in (level 4.1)
+  turnin 750
 
 step Reach level 4
   zone map 1412
-  goto 43.2,87.1 "Mountain Cougar (level 3)" r 40 optional
+  goto 52.1,77.4 "Battleboar (level 4)" r 40 optional
   level 4
-  tip If you're not level 4 yet: kill Mountain Cougar around here (level 3), then go on.
+  tip If you're not level 4 yet: kill Battleboar around here (level 4), then go on.
 
 step Pick up quests (level 4.1)
   accept 1519
@@ -83,9 +91,6 @@ step Objectives (level 5.2)
 
 step Pick up quests (level 5.2)
   accept 781
-
-step Turn in (level 5.3)
-  turnin 95805
 
 step Turn in and pick up (level 5.4)
   turnin 1519
