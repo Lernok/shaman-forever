@@ -4,7 +4,7 @@ local _, SF = ...
 
 SF.L = {
   es = {
-    upcoming = "Lo que viene (nivel %d)",
+    upcoming = "Para hacer ya (nivel %d)",
     inZone = "En %s",
     inDungeon = "Te sirve de %s",
     routeStep = "Tu ruta: %s",
@@ -153,7 +153,7 @@ SF.L = {
       hideCombat = "Ocultar la ventana en combate (vuelve al terminar)",
       polestar = "Seguir tu ruta de Polestar (próxima dungeon, mejoras de tu ruta primero, sin repetir lo que ya te hace hacer)",
       tipAlways = "Con Polestar: mostrar igual nuestra comparación en el tooltip",
-      lead = "Avisar con %d nivel(es) de anticipación",
+      lead = "Mostrar lo de %d nivel(es) más adelante",
       lang = "Idioma del addon",
       open = "Abrir la ventana",
       log = "Ver el registro",
@@ -173,7 +173,7 @@ SF.L = {
     help = {
       "/sf  abre o cierra la ventana",
       "/sf spec mejora | elemental | resto  tu especialización",
-      "/sf anticipo N  cuántos niveles antes avisar (ahora: %d)",
+      "/sf anticipo N  mostrar también lo de N niveles más adelante (ahora: %d)",
       "/sf silencio  no abrir la ventana sola (ahora: %s)",
       "/sf talentos  decir dónde va el punto de talento al subir (ahora: %s)",
       "/sf reiniciar  volver a mostrar los avisos vistos y hechos",
@@ -187,7 +187,7 @@ SF.L = {
     },
     on = "sí", off = "no",
     reset = "Listo: los avisos vuelven a aparecer.",
-    leadSet = "Te avisamos %d nivel(es) antes.",
+    leadSet = "La ventana muestra también lo de %d nivel(es) más adelante.",
     specSet = "Especialización: %s.",
     unknownRace = "No reconozco tu raza (%s): uso el camino de Orco.",
     specs = { Enhancement = "Mejora", Elemental = "Elemental", Restoration = "Restauración" },
@@ -201,7 +201,7 @@ SF.L = {
     setupNoPolestar = "¡Listo! Al subir de nivel te aviso las mejoras de equipo cerca tuyo, tus dungeons y dónde va tu talento.\n\nAbrí la ventana cuando quieras con /sf o con el botón del minimapa.",
   },
   en = {
-    upcoming = "Coming up (level %d)",
+    upcoming = "To do now (level %d)",
     inZone = "In %s",
     inDungeon = "Useful for you in %s",
     routeStep = "Your route: %s",
@@ -348,7 +348,7 @@ SF.L = {
       hideCombat = "Hide the window in combat (back after it)",
       polestar = "Follow your Polestar route (next dungeon, its upgrades first, no repeats of what it has you do)",
       tipAlways = "With Polestar: show our tooltip comparison anyway",
-      lead = "Warn %d level(s) ahead",
+      lead = "Also show what's %d level(s) ahead",
       lang = "Addon language",
       open = "Open the window",
       log = "Show the log",
@@ -368,7 +368,7 @@ SF.L = {
     help = {
       "/sf  opens or closes the window",
       "/sf spec enh | ele | resto  your specialization",
-      "/sf lead N  how many levels ahead to warn (now: %d)",
+      "/sf lead N  also show what's N levels ahead (now: %d)",
       "/sf quiet  don't open the window by itself (now: %s)",
       "/sf talents  say where the talent point goes on level up (now: %s)",
       "/sf reset  show seen and done tips again",
@@ -382,7 +382,7 @@ SF.L = {
     },
     on = "yes", off = "no",
     reset = "Done: tips will show again.",
-    leadSet = "We'll warn you %d level(s) ahead.",
+    leadSet = "The window also shows what's %d level(s) ahead.",
     specSet = "Specialization: %s.",
     unknownRace = "Unknown race (%s): using the Orc path.",
     specs = { Enhancement = "Enhancement", Elemental = "Elemental", Restoration = "Restoration" },

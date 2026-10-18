@@ -74,6 +74,7 @@ local ROUTES = {
 }
 ROUTES.Troll = ROUTES.Orc
 local route = ROUTES[race] or ROUTES.Tauren
+local CITY = { Tauren = "Thunder Bluff", Orc = "Orgrimmar", Troll = "Orgrimmar", Dwarf = "Ironforge" }
 local function zoneAt(l) local z for _, r in ipairs(route) do if l >= r[1] then z = r[2] end end return z end
 
 local SF = {}
@@ -91,10 +92,16 @@ for l = 1, TO do
   if l > 1 then ev:fire("PLAYER_LEVEL_UP", l) end
   local z = zoneAt(l)
   if z ~= zone then zone = z; SF.test.onZone() end
+  -- What pops up by itself (on level up, in the zone you're in).
+  local function heads(list, n)
+    local h = {}
+    for i, t in ipairs(list) do if i <= n then h[#h + 1] = (t.head:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")) end end
+    return table.concat(h, " / ")
+  end
+  local pop = SF.test.zoneTips()
   local tips = SF.test.upcoming()
-  local heads = {}
-  for i, t in ipairs(tips) do if i <= 4 then heads[#heads + 1] = (t.head:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")) end end
-  print(string.format("%2d %-22s chat %d · ventana %2d   %s", l, zone, #chat, #tips, table.concat(heads, " / ")))
+  print(string.format("%2d %-22s chat %d · ventana %2d   %s", l, zone, #chat, #tips, heads(tips, 4)))
+  if #pop > 0 then print("       salta acá: " .. heads(pop, 6)) end
   for _, m in ipairs(chat) do print("       > " .. m) end
   if #chat > worst then worst = #chat end
   total = total + #chat
@@ -104,6 +111,16 @@ for l = 1, TO do
   for _, c in ipairs(SF.DATA.classq) do
     for _, t in ipairs(tips) do if t.key == "cq" .. c.e and l >= c.l then owned[c.item] = true end end
   end
-  if l % 2 == 0 then ev:fire("TRAINER_SHOW") end
+  -- Every even level: to the capital to train, and back.
+  if l % 2 == 0 and l >= 4 then
+    wipe(chat)
+    zone = CITY[race] or "Orgrimmar"; SF.test.onZone()
+    local here = SF.test.zoneTips()
+    print(string.format("   en %s: chat %d · salta: %s", zone, #chat, heads(here, 6)))
+    for _, m in ipairs(chat) do print("       > " .. m) end
+    for _, t in ipairs(here) do if t.q then completed[t.q] = true end end
+    ev:fire("TRAINER_SHOW")
+    zone = z; SF.test.onZone()
+  end
 end
 print(string.format("chat: %d líneas en total, máximo %d en un nivel", total, worst))

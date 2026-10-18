@@ -1,10 +1,11 @@
 -- Shaman: Forever, the in-game side of https://lernok.github.io/shaman-forever/
--- It warns, it never leads: a few levels before a quest or a vendor gives you
--- an upgrade (the site's gear path, Data.lua), when you walk into a zone that
--- has one or that gives quests for a dungeon coming up, and when you enter a
--- dungeon (what its bosses and quests give that beats what you wear). A tip
--- shows by itself once; "Done" hides it for good. On level up it also says
--- where the talent point goes. It keeps a log of levels, zones, dungeons and
+-- It warns, it never leads, and only of what you can do now: when you walk
+-- into a zone where it's done (an upgrade of the site's gear path, Data.lua; a
+-- dungeon quest to carry, above all one whose reward is on that path; your
+-- trainer; a totem quest), and when you enter a dungeon (what its bosses and
+-- quests give that beats what you wear). "lead" levels ahead shows what comes
+-- later too (0 by default). A tip shows by itself once; "Done" hides it for
+-- good. On level up it says where the talent point goes. It keeps a log of levels, zones, dungeons and
 -- quests for the planner's research.
 local ADDON, SF = ...
 local D = SF.DATA
@@ -12,7 +13,7 @@ local D = SF.DATA
 -- Saved state: account (language) and character (spec, tips seen and done,
 -- the log).
 local db, cdb
-local DEFAULTS = { spec = "Enhancement", lead = 2, quiet = false, talents = true }
+local DEFAULTS = { spec = "Enhancement", lead = 0, quiet = false, talents = true }
 local LOG_MAX = 3000
 -- Path pieces this many levels behind you aren't worth going back for.
 local STALE = 6
@@ -521,6 +522,19 @@ end
 local function pickupTips(inZone)
   local lvl, faction, tips, seenKey = UnitLevel("player"), myFaction(), {}, {}
   local z, me = inZone and here(), here()
+  -- Dungeon quests whose reward is on your gear path and beats what you wear.
+  local rewardOf = {}
+  for _, st in ipairs(myPath()) do
+    if st.q and st.a == "dquest" and not rewardOf[st.q] then
+      local g = gain(st.i)
+      -- The quests before it in its chain lead to it too.
+      local q, n = st.q, 0
+      while g and q and n < 20 do
+        rewardOf[q] = rewardOf[q] or { i = st.i, g = g }
+        q, n = D.qpre and D.qpre[q], n + 1
+      end
+    end
+  end
   for dname, list in pairs(D.dquests) do
     local lv = D.dlevels[dname]
     if lv and lvl >= lv[1] - cdb.lead - 1 and lvl <= lv[2] and not off("k" .. dname) then
@@ -548,9 +562,18 @@ local function pickupTips(inZone)
             if chain and chain ~= target.qn then src = src .. " " .. string.format(L().chainTo, chain) end
             local third = giverText(g)
             if (e.r or 0) > lvl then third = third .. " · " .. string.format(L().fromLevel, e.r) end
-            rows[#rows + 1] = { key = key, icon = QUEST_ICON, head = string.format(L().forDungeon, dname, lv[1], lv[2]),
+            -- This quest, or the one its chain ends in, rewards a piece of your path.
+            local x, rw = e, rewardOf[e.q]
+            while not rw and nextOf[x.q] do x = nextOf[x.q]; rw = rewardOf[x.q] end
+            local row = { key = key, icon = QUEST_ICON, head = string.format(L().forDungeon, dname, lv[1], lv[2]),
               src = src, gain = third, giver = g, title = target.qn, order = lv[1], q = target.q,
               cat = "dungeon", where = D.dcont[dname] }
+            if rw then
+              row.item, row.icon, row.head, row.pct = rw.i, nil, Api.itemName(rw.i), rw.g.cur > 0 and (rw.g.v / rw.g.cur - 1) or 0.25
+              row.src = src .. " · " .. string.format(L().forDungeon, dname, lv[1], lv[2])
+              row.gain = gainText(rw.g) .. " · " .. third
+            end
+            rows[#rows + 1] = row
           end
         end
       end
@@ -558,14 +581,17 @@ local function pickupTips(inZone)
       -- the giver closest to you (one in your zone if there is).
       if #rows == 1 then tips[#tips + 1] = rows[1]
       elseif #rows > 1 then
+        -- The one whose reward is on your path first, then the one given here.
+        local function score(r) return (r.item and 2 or 0) + (r.giver.z and areaName(r.giver.z) == me and 1 or 0) end
         local pick, lines = rows[1], {}
         for _, r in ipairs(rows) do
-          if r.giver.z and areaName(r.giver.z) == me and not (pick.giver.z and areaName(pick.giver.z) == me) then pick = r end
+          if score(r) > score(pick) then pick = r end
           lines[#lines + 1] = "· " .. (r.title or "?") .. " — " .. (r.gain or "")
         end
-        tips[#tips + 1] = { key = "k" .. dname, icon = QUEST_ICON, head = pick.head .. " · " .. string.format(L().pickupN, #rows),
+        tips[#tips + 1] = { key = "k" .. dname, item = pick.item, icon = pick.icon,
+          head = pick.item and pick.head or (pick.head .. " · " .. string.format(L().pickupN, #rows)),
           src = pick.src .. " " .. string.format(L().pickupMore, #rows - 1), gain = pick.gain, lines = lines, giver = pick.giver, title = pick.title, order = lv[1],
-          cat = "dungeon", where = pick.where }
+          cat = "dungeon", where = pick.where, pct = pick.pct }
       end
     end
   end
@@ -1447,10 +1473,14 @@ local function upcoming()
   for _, d in ipairs(info and info.dungeons or {}) do inRoute[d.name], inRoute[d.data or d.name] = true, true end
   -- With a route, the next dungeon's row says which of its quests you still
   -- need; the pick-up rows (every dungeon in range) are only noise.
+  local told = {}
   if not info then
-    for _, t in ipairs(pickupTips(false)) do tips[#tips + 1] = t end
+    for _, t in ipairs(pickupTips(false)) do
+      tips[#tips + 1] = t
+      if t.item then told[t.item] = true end
+    end
   end
-  for _, t in ipairs(pathTips()) do tips[#tips + 1] = t end
+  for _, t in ipairs(pathTips()) do if not told[t.item] then tips[#tips + 1] = t end end
   if info then
     -- Upgrades the route gets you go first, with the guide that does them;
     -- the rest is off the route (shown only when it's worth it).
@@ -1632,6 +1662,14 @@ local function zoneTips()
   end
   local tips = pickupTips(true)
   for _, t in ipairs(pathTips(function(st) return st.a ~= "dquest" and st.a ~= "class" and zoneName(st.z) == z end)) do tips[#tips + 1] = t end
+  -- Your trainer is here and you have spells to learn.
+  local tr = trainTip()
+  if tr and tr.giver and areaName(tr.giver.z) == z and not off(tr.key) then tips[#tips + 1] = tr end
+  -- A totem quest you can start here.
+  for _, t in ipairs(classQuestTips()) do
+    if t.giver and t.giver.z and areaName(t.giver.z) == z and not Api.onQuest(t.q) then tips[#tips + 1] = t end
+  end
+  table.sort(tips, function(a, b) return a.order < b.order end)
   return tips
 end
 
@@ -1670,7 +1708,7 @@ local function onLevel(lvl)
     local t = talentLine(lvl)
     if t then say(t) end
   end
-  popup(string.format(L().upcoming, lvl), upcoming())
+  popup(string.format(L().upcoming, lvl), zoneTips())
 end
 
 -- Quest XP as the game pays it, for the route planner: the data lacks it
@@ -1700,6 +1738,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
     ShamanForeverCharDB = ShamanForeverCharDB or {}
     db, cdb = ShamanForeverDB, ShamanForeverCharDB
     for k, v in pairs(DEFAULTS) do if cdb[k] == nil then cdb[k] = v end end
+    if not cdb.nowFirst then cdb.lead, cdb.nowFirst = 0, true end
     cdb.seen, cdb.done, cdb.gone, cdb.log = cdb.seen or {}, cdb.done or {}, cdb.gone or {}, cdb.log or {}
     self:UnregisterEvent("ADDON_LOADED")
     pcall(makeOptions)
