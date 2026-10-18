@@ -79,6 +79,15 @@ function Api.icon(id)
   if C_Item and C_Item.GetItemIconByID then return C_Item.GetItemIconByID(id) end
   return GetItemIcon and GetItemIcon(id) or 134400
 end
+-- A spell's name in your game's language (nil if the game doesn't know it).
+function Api.spellName(id)
+  if not id or id == 0 then return nil end
+  local ok, name = pcall(function()
+    if C_Spell and C_Spell.GetSpellName then return C_Spell.GetSpellName(id) end
+    return GetSpellInfo and (GetSpellInfo(id)) or nil
+  end)
+  return ok and readable(name) or nil
+end
 function Api.stats(link)
   local f = (C_Item and C_Item.GetItemStats) or GetItemStats
   return f and f(link) or nil
@@ -762,6 +771,125 @@ local function talentTip()
     gain = L().talentOpen, order = -3e9, cat = "world" }
 end
 
+-- The totem quests: each element's totem item is still needed to drop that
+-- element's totems. While you don't carry it: the step of the chain in your
+-- log, else the first step not done (of its alternatives, the one given in
+-- your zone). The click marks where to go.
+local function stepQuests(step) return type(step) == "table" and step or { step } end
+local function classQuestTips()
+  local lvl, tips = UnitLevel("player"), {}
+  for _, c in ipairs(D.classq or {}) do
+    local chain = c.chains[raceLetter()]
+    if chain and lvl >= c.l - cdb.lead and Api.count(c.item) == 0 and not off("cq" .. c.e) then
+      local cur, at
+      for i, step in ipairs(chain) do
+        for _, q in ipairs(stepQuests(step)) do if Api.onQuest(q) then cur, at = q, i end end
+      end
+      local q = cur
+      if not q then
+        for i, step in ipairs(chain) do
+          local alts, done = stepQuests(step), false
+          for _, x in ipairs(alts) do if Api.questDone(x) then done = true end end
+          if not done then
+            q, at = alts[1], i
+            for _, x in ipairs(alts) do
+              local g = D.givers[x]
+              if g and g.z and areaName(g.z) == here() then q = x break end
+            end
+            break
+          end
+        end
+      end
+      if q then
+        local g = D.givers[q]
+        local name = Api.questName(q) or D.qnames[q] or "?"
+        tips[#tips + 1] = { key = "cq" .. c.e, item = nil, icon = Api.icon(c.item), cat = "world",
+          head = string.format(L().totemHead, L().elements[c.e] or c.e),
+          src = cur and string.format(L().totemOn, name, at, #chain) or (string.format(L().totemStart, name) .. (g and (" — " .. (giverText(g) or "")) or "")),
+          gain = L().totemNeed[c.e] .. " · " .. whenText(c.l), giver = g, title = name, q = q, order = -2e9 + c.l }
+      end
+    end
+  end
+  return tips
+end
+
+-- The trainer. A rank this spec can skip (data/training.json), or nil.
+local function skipRule(name, rank)
+  for _, r in ipairs(D.train and D.train.rules or {}) do
+    if r.s == name and rank >= r.from and (("," .. r.specs .. ","):find("," .. cdb.spec .. ",", 1, true)) then return r end
+  end
+end
+local function spellKnown(id)
+  if not id or id == 0 then return nil end
+  local ok, known = pcall(function()
+    if IsPlayerSpell then return IsPlayerSpell(id) end
+    if IsSpellKnown then return IsSpellKnown(id) end
+  end)
+  if ok then return known end
+end
+-- Ranks up to your level you don't know yet: to buy, and to skip (with
+-- why). Without a way to ask the game what you know, the ranks since your
+-- last visit to a trainer.
+local function trainList()
+  local lvl, buy, skip = UnitLevel("player"), {}, {}
+  for name, s in pairs(D.train and D.train.spells or {}) do
+    -- Only ranks above the highest one you know (lower ones add nothing).
+    local top = 0
+    for rank = #s.l, 1, -1 do if spellKnown(s.id[rank]) then top = rank break end end
+    for rank, l in ipairs(s.l) do
+      if rank > top and l > 1 and l <= lvl then
+        local known = spellKnown(s.id[rank])
+        if known == nil then known = l <= (cdb.trainedAt or 0) end
+        if not known then
+          local e = { name = name, rank = rank, l = l, id = s.id[rank], max = #s.l }
+          local r = skipRule(name, rank)
+          if r then e.why = lang() == "es" and r.es or r.en; skip[#skip + 1] = e else buy[#buy + 1] = e end
+        end
+      end
+    end
+  end
+  local byLevel = function(a, b) return a.l < b.l or (a.l == b.l and a.name < b.name) end
+  table.sort(buy, byLevel); table.sort(skip, byLevel)
+  return buy, skip
+end
+local function spellLabel(e)
+  local n = Api.spellName and Api.spellName(e.id) or e.name
+  return e.max > 1 and string.format(L().rankOf, n, e.rank) or n
+end
+-- The Shaman trainer to go to: one in your zone, else one on your continent
+-- (a city first), else any of your faction.
+local CITY_AREAS = { [1637] = true, [1638] = true, [1537] = true }
+local function nearestTrainer()
+  local f, z, cont = myFaction():sub(1, 1), here(), myContinent()
+  local best, rank
+  for _, t in ipairs(D.trainers or {}) do
+    if not t.f or t.f == f then
+      local r = areaName(t.z) == z and 3 or (cont and D.cont[t.z] == cont and (CITY_AREAS[t.z] and 2 or 1)) or 0
+      if not rank or r > rank then best, rank = t, r end
+    end
+  end
+  return best
+end
+local function trainTip()
+  local buy, skip = trainList()
+  if #buy == 0 then return nil end
+  local lvl = UnitLevel("player")
+  local names = {}
+  for i, e in ipairs(buy) do if i <= 3 then names[#names + 1] = spellLabel(e) end end
+  local src = table.concat(names, ", ") .. (#buy > 3 and (" " .. string.format(L().andMore, #buy - 3)) or "")
+  local lines = { L().trainBuy }
+  for _, e in ipairs(buy) do lines[#lines + 1] = "  " .. spellLabel(e) end
+  if #skip > 0 then
+    lines[#lines + 1] = L().trainSkipHead
+    for _, e in ipairs(skip) do lines[#lines + 1] = "  " .. spellLabel(e) .. " — " .. e.why end
+  end
+  local t = nearestTrainer()
+  local gain = (#skip > 0 and (string.format(L().trainSkipN, #skip) .. " · ") or "") .. (t and string.format(L().trainNear, t.n, areaName(t.z) or "?") or "")
+  return { key = "tr" .. lvl, icon = "Interface\\Icons\\INV_Misc_Book_09", cat = "world", order = -2.5e9,
+    head = #buy == 1 and L().trainHead1 or string.format(L().trainHeadN, #buy), src = src, gain = gain, lines = lines,
+    giver = t and { n = t.n, z = t.z, x = t.x, y = t.y }, title = t and t.n }
+end
+
 -- The research log: "time|event|level|zone|detail" lines.
 local function log(event, detail)
   local l = cdb.log
@@ -1363,6 +1491,9 @@ local function upcoming()
   for _, t in ipairs(campTips()) do tips[#tips + 1] = t end
   local tt = talentTip()
   if tt and not off(tt.key) then tips[#tips + 1] = tt end
+  local tr = trainTip()
+  if tr and not off(tr.key) then tips[#tips + 1] = tr end
+  for _, t in ipairs(classQuestTips()) do tips[#tips + 1] = t end
   table.sort(tips, function(a, b) return a.order < b.order end)
   return tips
 end
@@ -1558,6 +1689,8 @@ local function noteRewardXp()
   pcall(noteXp, id, xp)
 end
 
+-- The trainer panel (further down).
+local trainerPanel, paintTrainer, showTrainerPanel
 local ev = CreateFrame("Frame")
 ev:RegisterEvent("ADDON_LOADED")
 ev:SetScript("OnEvent", function(self, event, ...)
@@ -1584,7 +1717,21 @@ ev:SetScript("OnEvent", function(self, event, ...)
     self:RegisterEvent("BAG_UPDATE_DELAYED")
     -- Spending a talent point takes its row away (an event older clients have).
     pcall(self.RegisterEvent, self, "CHARACTER_POINTS_CHANGED")
-  elseif event == "CHARACTER_POINTS_CHANGED" then
+    pcall(self.RegisterEvent, self, "TRAINER_SHOW")
+    pcall(self.RegisterEvent, self, "TRAINER_UPDATE")
+    pcall(self.RegisterEvent, self, "TRAINER_CLOSED")
+    pcall(self.RegisterEvent, self, "LEARNED_SPELL_IN_TAB")
+  elseif event == "CHARACTER_POINTS_CHANGED" or event == "LEARNED_SPELL_IN_TAB" then
+    if frame and frame.live then refresh() end
+  elseif event == "TRAINER_SHOW" then
+    cdb.trainedAt = UnitLevel("player")
+    -- The trainer's window lays out a moment after the event.
+    C_Timer.After(0.1, function() pcall(showTrainerPanel) end)
+    if frame and frame.live then refresh() end
+  elseif event == "TRAINER_UPDATE" then
+    if trainerPanel and trainerPanel:IsShown() then pcall(paintTrainer) end
+  elseif event == "TRAINER_CLOSED" then
+    if trainerPanel then trainerPanel:Hide() end
     if frame and frame.live then refresh() end
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
     -- The zone's name settles a moment after a loading screen.
@@ -1951,6 +2098,112 @@ function SF.options()
   end
 end
 
+-- At the trainer ----------------------------------------------------------------
+-- Beside the class trainer's window: what to buy and what this spec can
+-- skip (with why), and a button that buys what's recommended. The game names
+-- spells in your language: each one's id gives the same name.
+local localName
+local function englishName(name)
+  if not localName then
+    localName = {}
+    for en, s in pairs(D.train and D.train.spells or {}) do
+      for _, id in ipairs(s.id) do
+        local n = Api.spellName(id)
+        if n then localName[n] = en break end
+      end
+    end
+  end
+  return localName[name] or name
+end
+-- The trainer's spells you can learn now: { i, name (English), rank, cost, skip rule }.
+local function trainerOffer()
+  local list = {}
+  local n = readable(GetNumTrainerServices and GetNumTrainerServices()) or 0
+  for i = 1, n do
+    local name, sub, kind = GetTrainerServiceInfo(i)
+    if kind == "available" and name then
+      local rank = tonumber(tostring(sub or ""):match("%d+")) or 1
+      local en = englishName(name)
+      local cost = GetTrainerServiceCost and readable(GetTrainerServiceCost(i)) or 0
+      list[#list + 1] = { i = i, name = en, shown = name, rank = rank, cost = cost, rule = skipRule(en, rank) }
+    end
+  end
+  return list
+end
+
+-- From the last to the first: buying one doesn't move the ones above it.
+local function buyRecommended()
+  local list, n = trainerOffer(), 0
+  for k = #list, 1, -1 do
+    local e = list[k]
+    if not e.rule and pcall(BuyTrainerService, e.i) then n = n + 1 end
+  end
+  say(string.format(L().trainBought, n))
+end
+local function money(c) return GetCoinTextureString and GetCoinTextureString(c) or (math.floor(c / 10000) .. "g") end
+function paintTrainer()
+  local f = trainerPanel
+  local buy, skip, cost, saved = {}, {}, 0, 0
+  for _, e in ipairs(trainerOffer()) do
+    local label = e.shown .. (e.rank > 1 and (" " .. string.format(L().rankShort, e.rank)) or "")
+    if e.rule then
+      skip[#skip + 1] = "|cff999999" .. label .. "|r — " .. (lang() == "es" and e.rule.es or e.rule.en)
+      saved = saved + (e.cost or 0)
+    else
+      buy[#buy + 1] = label
+      cost = cost + (e.cost or 0)
+    end
+  end
+  local lines = {}
+  if #buy > 0 then lines[#lines + 1] = "|cffffd100" .. string.format(L().trainPanelBuy, #buy) .. "|r " .. table.concat(buy, ", ") end
+  if #skip > 0 then
+    lines[#lines + 1] = "|cffffd100" .. string.format(L().trainPanelSkip, #skip) .. "|r"
+    for _, s in ipairs(skip) do lines[#lines + 1] = "· " .. s end
+    if saved > 0 then lines[#lines + 1] = string.format(L().trainSaved, money(saved)) end
+  end
+  if #buy == 0 and #skip == 0 then lines[#lines + 1] = L().trainPanelNone end
+  f.text:SetText(table.concat(lines, "\n"))
+  f.buy:SetText(cost > 0 and string.format(L().trainBtnCost, money(cost)) or L().trainBtn)
+  f.buy:SetEnabled(#buy > 0)
+  f:SetHeight(math.max(110, (f.text:GetStringHeight() or 60) + 86))
+end
+function showTrainerPanel()
+  if not (UnitClass and select(2, UnitClass("player")) == "SHAMAN") then return end
+  if IsTradeskillTrainer and IsTradeskillTrainer() then return end
+  if not trainerPanel then
+    local f = CreateFrame("Frame", "ShamanForeverTrainer", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
+    trainerPanel = f
+    f:SetWidth(300)
+    f:SetFrameStrata("HIGH")
+    if f.SetBackdrop then
+      f:SetBackdrop({ bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background", edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+        tile = true, tileSize = 16, edgeSize = 14, insets = { left = 4, right = 4, top = 4, bottom = 4 } })
+    end
+    f.title = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    f.title:SetPoint("TOPLEFT", 12, -10)
+    f.text = f:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    f.text:SetPoint("TOPLEFT", 12, -30)
+    f.text:SetPoint("RIGHT", -12, 0)
+    f.text:SetJustifyH("LEFT")
+    f.note = f:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+    f.note:SetPoint("BOTTOMLEFT", 12, 40)
+    f.note:SetPoint("RIGHT", -12, 0)
+    f.note:SetJustifyH("LEFT")
+    f.buy = CreateFrame("Button", nil, f, "UIPanelButtonTemplate")
+    f.buy:SetSize(276, 24)
+    f.buy:SetPoint("BOTTOM", 0, 10)
+    f.buy:SetScript("OnClick", buyRecommended)
+  end
+  local f = trainerPanel
+  f:ClearAllPoints()
+  if ClassTrainerFrame and ClassTrainerFrame:IsShown() then f:SetPoint("TOPLEFT", ClassTrainerFrame, "TOPRIGHT", -30, -12)
+  else f:SetPoint("LEFT", UIParent, "CENTER", 120, 0) end
+  f.title:SetText(string.format(L().trainPanelTitle, specName()))
+  f.note:SetText(L().trainSource)
+  paintTrainer()
+  f:Show()
+end
+
 -- Slash commands -----------------------------------------------------------------
 -- First-run setup (once per character; /sf setup brings it back): your
 -- spec, whether the window may open by itself, and your route in Polestar.
@@ -2112,4 +2365,5 @@ SF.test = { pathTips = pathTips, pickupTips = pickupTips, dungeonTips = dungeonT
   gain = gain, onZone = onZone, onLevel = onLevel, talentLine = talentLine, giverText = giverText, waypoint = waypoint,
   archive = function(tip, kind) archive(tip, kind) end, inProgress = function() return inProgress() end, archived = function() return archived() end,
   npcLines = function(id) return npcLines(id) end, craftTips = function() return craftTips() end,
-  currentView = function() return currentView() end }
+  currentView = function() return currentView() end, trainerOffer = trainerOffer, buyRecommended = buyRecommended,
+  classQuestTips = classQuestTips, trainList = trainList }

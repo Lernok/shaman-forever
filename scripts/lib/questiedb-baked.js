@@ -90,7 +90,7 @@ function load(dir) {
     decoded[kind].set(id, out);
     return out;
   };
-  return { quest: id => get('Quest', id), npc: id => get('Npc', id), object: id => get('Object', id), questIds: () => [...rows.Quest.keys()], file: toc };
+  return { quest: id => get('Quest', id), npc: id => get('Npc', id), object: id => get('Object', id), questIds: () => [...rows.Quest.keys()], npcIds: () => [...rows.Npc.keys()], file: toc };
 }
 
 module.exports = { load, cbor };

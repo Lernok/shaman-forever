@@ -41,7 +41,10 @@ function InCombatLockdown() return false end
 function GetInventoryItemID() return nil end
 function GetInventoryItemLink() return nil end
 function GetItemInfo() return nil end
-function GetItemCount() return 0 end
+-- Totem items the character has (it does each totem quest when it shows up).
+local owned = {}
+function GetItemCount(id) return owned[id] and 1 or 0 end
+function UnitClass() return "Shaman", "SHAMAN" end
 function GetProfessions() return nil end
 function GetContainerNumSlots() return 6 end
 function GetContainerItemID() return nil end
@@ -95,7 +98,12 @@ for l = 1, TO do
   for _, m in ipairs(chat) do print("       > " .. m) end
   if #chat > worst then worst = #chat end
   total = total + #chat
-  -- The player does the quests of the tips at their level as they go.
+  -- The player does the quests of the tips at their level as they go, the
+  -- totem quests too, and visits the trainer on every even level.
   for _, t in ipairs(tips) do if t.q and (t.order or 99) <= l then completed[t.q] = true end end
+  for _, c in ipairs(SF.DATA.classq) do
+    for _, t in ipairs(tips) do if t.key == "cq" .. c.e and l >= c.l then owned[c.item] = true end end
+  end
+  if l % 2 == 0 then ev:fire("TRAINER_SHOW") end
 end
 print(string.format("chat: %d líneas en total, máximo %d en un nivel", total, worst))

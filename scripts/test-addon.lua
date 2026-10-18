@@ -111,6 +111,25 @@ if os.getenv("PPACK") then
 end
 local SF = {}
 for _, f in ipairs({ "Data.lua", "Locale.lua", "Core.lua" }) do assert(loadfile(dir .. f))("ShamanForever", SF) end
+-- Spells you know: every rank up to level KNOWN (default: your level - 2).
+-- The trainer (TRAINER=1) offers the ranks you don't know up to your level,
+-- 1 silver each.
+local knownLv = tonumber(os.getenv("KNOWN") or "") or level - 2
+local knownIds, offer = {}, {}
+for name, sp in pairs(SF.DATA.train.spells) do
+  for rank, l in ipairs(sp.l) do
+    if l > 0 and l <= knownLv then knownIds[sp.id[rank]] = true
+    elseif l > 0 and l <= level then offer[#offer + 1] = { name, #sp.l > 1 and ("Rank " .. rank) or "", 100 } end
+  end
+end
+table.sort(offer, function(a, b) return a[1] .. a[2] < b[1] .. b[2] end)
+function IsPlayerSpell(id) return knownIds[id] or false end
+function GetSpellInfo(id) for name, sp in pairs(SF.DATA.train.spells) do for _, x in ipairs(sp.id) do if x == id then return name end end end end
+function UnitClass() return "Shaman", "SHAMAN" end
+function GetNumTrainerServices() return #offer end
+function GetTrainerServiceInfo(i) return offer[i][1], offer[i][2], "available" end
+function GetTrainerServiceCost(i) return offer[i][3] end
+function BuyTrainerService(i) print("BUY", offer[i][1], offer[i][2]) end
 local ev = frames[1]
 ShamanForeverCharDB = { spec = spec }
 ev:fire("ADDON_LOADED", "ShamanForever")
@@ -155,6 +174,13 @@ if before[1] then
   SF.test.archive(before[1], "done")
   local after = SF.test.upcoming()
   print("-- listo: avisos " .. #before .. " -> " .. #after .. ", listos " .. #SF.test.archived("done") .. " (" .. SF.test.archived("done")[1].head .. ")")
+end
+-- At the trainer (TRAINER=1): what it offers, what this spec skips, and the
+-- "buy what's recommended" button.
+if os.getenv("TRAINER") then
+  print("-- entrenador:")
+  for _, e in ipairs(SF.test.trainerOffer()) do print("  " .. e.name .. " " .. e.rank .. (e.rule and ("  SALTEAR: " .. e.rule.es) or "")) end
+  SF.test.buyRecommended()
 end
 -- Quest XP the game pays, kept for the route planner (turn-in event).
 ev:fire("QUEST_TURNED_IN", 96659, 410, 0)

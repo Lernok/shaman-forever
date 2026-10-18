@@ -113,6 +113,7 @@ const givers = {};
 const dquests = {};
 const iq = {}, qpre = {}, qalt = {}, qnames = {}, enders = {}, qr = {}, npcq = {}, qxp = {}, qrace = {}, qreq = {}, qbag = {}, cont = {}, dcont = {}, camp = {}, qtimer = {};
 const bagNames = {};
+const classq = [], trainers = [];
 if (fs.existsSync(path.join(qdir, 'foreverQuestDB.lua'))) {
   const index = file => {
     const m = new Map();
@@ -138,6 +139,14 @@ if (fs.existsSync(path.join(qdir, 'foreverQuestDB.lua'))) {
   const SHAMAN = 64;
   const HORDE = 2 | 16 | 32 | 128, ALLIANCE = 1 | 4 | 8 | 64;
   const factionOf = mask => { if (!mask) return undefined; const a = (mask & ALLIANCE) !== 0, h = (mask & HORDE) !== 0; return a && !h ? 'alliance' : h && !a ? 'horde' : undefined; };
+  // Spawns by zone id. The installed QuestieDB keeps zone 1 (Dun Morogh) as a
+  // Lua array, which arrives as a JS array: index 0 is zone 1.
+  const spawnsOf = s => {
+    if (!Array.isArray(s)) return s || {};
+    const o = {};
+    s.forEach((v, i) => { if (v && v.length) o[i + 1] = v; });
+    return o;
+  };
   // Who gives a quest: the first NPC with a location (name, zone, x, y).
   const giver = qid => {
     const q = get(Q, qid);
@@ -145,7 +154,7 @@ if (fs.existsSync(path.join(qdir, 'foreverQuestDB.lua'))) {
     for (const nid of ((q[1] || [])[0] || [])) {
       const n = get(N, nid);
       if (!n) continue;
-      const spawns = n[6] || {};
+      const spawns = spawnsOf(n[6]);
       const zid = Object.keys(spawns).find(z => areaName[z]) || n[8];
       const xy = (spawns[zid] || [])[0] || [];
       return { n: n[0], z: +zid || undefined, x: xy[0], y: xy[1] };
@@ -154,7 +163,7 @@ if (fs.existsSync(path.join(qdir, 'foreverQuestDB.lua'))) {
     for (const oid of ((q[1] || [])[1] || [])) {
       const o = B && B.object(oid);
       if (!o) continue;
-      const spawns = o[3] || {};
+      const spawns = spawnsOf(o[3]);
       const zid = Object.keys(spawns).find(z => areaName[z]) || o[4];
       const xy = (spawns[zid] || [])[0] || [];
       if (xy.length) return { n: o[0], z: +zid || undefined, x: xy[0], y: xy[1] };
@@ -234,7 +243,7 @@ if (fs.existsSync(path.join(qdir, 'foreverQuestDB.lua'))) {
     for (const nid of (((q || [])[2] || [])[0] || [])) {
       const n = get(N, nid);
       if (!n) continue;
-      const spawns = n[6] || {};
+      const spawns = spawnsOf(n[6]);
       const zid = Object.keys(spawns).find(z => areaName[z]) || n[8];
       const xy = (spawns[zid] || [])[0] || [];
       if (xy.length) return { n: n[0], z: +zid || undefined, x: xy[0], y: xy[1] };
@@ -363,6 +372,37 @@ if (fs.existsSync(path.join(qdir, 'foreverQuestDB.lua'))) {
       if (!qr[qid]) qr[qid] = [];
     });
   });
+  // The four totem quests: each element's totem item is still needed to
+  // drop that element's totems. Per race letter, the chain in order; a step
+  // given as a list has alternatives (Call of Fire starts with any of its
+  // givers). The addon checks the item in your bags, shows the step you're
+  // at, or the nearest giver of the first step. Skyborne take the Horde's
+  // Water and Air quests.
+  const HORDE_FIRE = [1524, 1525, 1526, 1527], HORDE_WATER = [1530, 1535, 1536, 1534, 220, 63, 100, 96];
+  const CLASSQ = [
+    { e: 'Earth', item: 5175, l: 4, chains: { U: [1519, 1520, 1521], O: [1516, 1517, 1518], T: [1516, 1517, 1518],
+      S: [92466, 92467, 92468], D: [94373, 94374, 94375] } },
+    { e: 'Fire', item: 5176, l: 10, chains: { U: [[2984, 1523], ...HORDE_FIRE], O: [[2983, 1522], ...HORDE_FIRE], T: [[2983, 1522], ...HORDE_FIRE],
+      S: [97243, 97244, 97245, 97257], D: [94449, 94465, 94466, 94467, 94468] } },
+    { e: 'Water', item: 5177, l: 20, chains: { U: [[2986, 1529], ...HORDE_WATER], O: [[2985, 1528], ...HORDE_WATER], T: [[2985, 1528], ...HORDE_WATER],
+      S: [[1528, 1529], ...HORDE_WATER], D: [94494, 94495, [94497, 94499], [94500, 94501], 94502, 94503, 94505] } },
+    { e: 'Air', item: 5178, l: 30, chains: { U: [[1532, 1531]], O: [[1531, 1532]], T: [[1531, 1532]], S: [[1531, 1532]], D: [94789] } },
+  ];
+  CLASSQ.forEach(c => Object.values(c.chains).forEach(ch => ch.flat().forEach(q => { learn(q); chainStep(q); })));
+  classq.push(...CLASSQ);
+  // Shaman trainers (QuestieDB's "Shaman Trainer" NPCs with a place): the
+  // level-up row marks the nearest one of your faction.
+  const npcIds = new Set([...N.keys(), ...(B && B.npcIds ? B.npcIds() : [])]);
+  npcIds.forEach(nid => {
+    const n = get(N, nid);
+    if (!n || !/^Shaman Trainer$/.test(n[13] || '')) return;
+    const spawns = spawnsOf(n[6]);
+    const zid = Object.keys(spawns).find(z => areaName[z]);
+    const xy = zid && (spawns[zid] || [])[0];
+    if (!xy || xy[0] < 0) return;
+    trainers.push({ n: n[0], z: +zid, x: xy[0], y: xy[1], f: n[12] === 'A' ? 'a' : n[12] === 'H' ? 'h' : undefined });
+  });
+  trainers.sort((a, b) => a.n.localeCompare(b.n));
   // Every tip's quest too (class quests, dungeon quests): where you are in it.
   Object.values(paths).forEach(r => Object.values(r).forEach(p => p.forEach(st => { if (st.q) chainStep(st.q); })));
   Object.values(dquests).forEach(l => l.forEach(e => chainStep(e.q)));
@@ -427,6 +467,25 @@ SPECS.forEach(spec => {
   talents[spec] = { name: b.name, at };
 });
 
+// The trainer: every trainable Shaman spell with its rank levels and spell
+// ids (the ids name it in your game's language and tell whether you know a
+// rank), and the ranks each spec can skip (data/training.json).
+const train = { spells: {}, rules: [] };
+Object.entries(shaman.spell_desc).forEach(([k, v]) => {
+  const [cls, name, rank] = k.split('|');
+  const learned = /Learned at level (\d+)/.exec(v.lv || '');
+  if (cls !== 'Shaman' || !v.id || !learned) return;
+  const r = +((rank || '').match(/\d+/) || [1])[0];
+  const s = train.spells[name] = train.spells[name] || { l: [], id: [] };
+  s.l[r - 1] = +learned[1];
+  s.id[r - 1] = v.id;
+});
+Object.values(train.spells).forEach(s => { s.l = Array.from(s.l, x => x || 0); s.id = Array.from(s.id, x => x || 0); });
+read('data/training.json').rules.forEach(r => {
+  if (!train.spells[r.spell]) throw new Error('data/training.json: ' + r.spell + ' no está en el libro de hechizos');
+  train.rules.push({ s: r.spell, from: r.from, specs: r.specs.join(','), es: r.why.es, en: r.why.en });
+});
+
 const names = {};
 // Names for the tooltips' rewards too (the game may not have loaded an item yet).
 Object.values(qr).forEach(l => l.forEach(id => used.add(id)));
@@ -458,7 +517,7 @@ function lua(v, ind) {
 
 const out = '-- Generated by scripts/build-addon.js from the site\'s data (build ' + build + '). Do not edit.\n' +
   'local _, SF = ...\n' +
-  'SF.DATA = ' + lua({ build, talents, dlevels, crafts, camp, qtimer, givers, dquests, iq, qpre, qalt, qnames, enders, qr, npcq, qxp, qrace, qreq, qbag, cont, dcont, uiMaps, specs: SPECS, cost: GP.COST, weights: GP.WEIGHTS, upgrade: GP.UPGRADE, instances: INSTANCES, zones, items, names, paths, dungeons }) + '\n';
+  'SF.DATA = ' + lua({ build, talents, train, classq, trainers, dlevels, crafts, camp, qtimer, givers, dquests, iq, qpre, qalt, qnames, enders, qr, npcq, qxp, qrace, qreq, qbag, cont, dcont, uiMaps, specs: SPECS, cost: GP.COST, weights: GP.WEIGHTS, upgrade: GP.UPGRADE, instances: INSTANCES, zones, items, names, paths, dungeons }) + '\n';
 const dest = path.join(root, 'addon', 'ShamanForever', 'Data.lua');
 fs.mkdirSync(path.dirname(dest), { recursive: true });
 fs.writeFileSync(dest, out);
