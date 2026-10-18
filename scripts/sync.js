@@ -7,7 +7,9 @@
 // Sources:
 //   talentsforever.com/export/shaman.json   talents, spellbook, racials (CC BY 4.0)
 //   wago.tools db2 CSV                      client item and recipe tables, per build
-//   nether.wowhead.com/forever/tooltip      exact item numbers (damage, stats, effects)
+//   nether.wowhead.com/forever/tooltip      item texts and effects (numbers when the client has none)
+//   wowsims/gamedata items.txt (MIT)        the client's numbers with hotfixes (scripts/client-items.js)
+//   wowsims/gamedata patches/ (MIT)         what each build and hotfix changed for Shaman (scripts/patch-news.js)
 //
 // Writes data/shaman.json, data/items.json, data/meta.json and
 // reports/changes-<from>-to-<to>.md, then runs scripts/build-data.js.
@@ -185,7 +187,8 @@ function parseTooltip(html) {
   // Schools a Shaman doesn't cast still spend the item's budget.
   ['Shadow', 'Arcane', 'Holy'].forEach(school => grab('otherDamage', new RegExp('damage done by ' + school + ' spells and effects by up to (\\d+)')));
   ['Nature', 'Fire', 'Frost'].forEach(school => grab(school.toLowerCase() + 'Damage', new RegExp('damage done by ' + school + ' spells and effects by up to (\\d+)')));
-  grab('attackPower', /\+(\d+) Attack Power/);
+  // Not the conditional kind ("+18 Attack Power against Mechanical units").
+  grab('attackPower', /\+(\d+) Attack Power(?! against)/);
   grab('crit', /critical strike by ([\d.]+)%/);
   grab('spellCrit', /critical strike with spells by ([\d.]+)%/);
   grab('crit', /critical strike with all spells and attacks by ([\d.]+)%/);
@@ -328,6 +331,11 @@ function diffItems(prev, next) {
     if (!raw[id] || !fillFromTooltip(items[id], raw[id])) { delete items[id]; return; }
     Object.assign(items[id], result[id]);
   });
+  // The client's own numbers over Wowhead's (scripts/client-items.js).
+  const clientItems = require('./client-items');
+  const cards = await clientItems.load();
+  if (cards) console.log('Números del cliente (wowsims/gamedata): ' + clientItems.apply(items, cards) + ' ítems difieren de Wowhead');
+  else console.log('Sin números del cliente (wowsims/gamedata no respondió): quedan los de Wowhead.');
   ids = Object.keys(items).map(Number).sort((a, b) => a - b);
   console.log('Ítems usables por Shaman (calidad verde o mejor, nivel ≤ 60): ' + ids.length);
   const itemLines = diffItems(prevItems, items);
@@ -380,6 +388,7 @@ function diffItems(prev, next) {
   // Recipe sources come from scripts/fetch-recipes.js (run it to refresh them).
   step('build-professions.js');
   step('build-consumables.js');
+  step('patch-news.js');
   step('build-data.js');
   console.log('Descargas del sync: ' + (http.summary() || 'ninguna'));
 })().catch(e => { console.error(e.message); process.exit(1); });

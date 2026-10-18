@@ -115,6 +115,9 @@
     if (b.hit) parts.push('+' + b.hit + '% ' + I.term('Hit'));
     if (b.spellHit) parts.push('+' + b.spellHit + '% ' + t('ui.spellHit'));
     if (b.mp5) parts.push('+' + b.mp5 + ' MP5');
+    // Forever's ratings (the client's numbers, scripts/client-items.js).
+    [['critRating', 'Critical Strike Rating'], ['hitRating', 'Hit Rating'], ['hasteRating', 'Haste Rating'], ['expertiseRating', 'Expertise Rating']]
+      .forEach(([k, name]) => { if (b[k]) parts.push('+' + b[k] + ' ' + I.term(name)); });
     return parts.join(', ');
   }
 
@@ -131,7 +134,9 @@
         '<div class="t-cost">' + t('wp.ilvl') + ' ' + i.ilvl + bindText(i.bind) + '</div></div></div>' +
       '<div class="it-row"><span>' + i.kind + '</span><span>' + right + '</span></div>' +
       (i.dmgMin ? '<div class="it-row"><span>' + I.range(i.dmgMin + ' to ' + i.dmgMax) + '</span><span>' + I.num(i.dps.toFixed(1)) + ' DPS</span></div>' : '') +
-      (Object.keys(i.stats || {}).length ? '<div class="it-stats">' + statsText(i, true) + '</div>' : '') +
+      // The client's numbers state every stat; Wowhead's leave some in equip lines.
+      (i.numbers === 'client' ? (statsText(i) ? '<div class="it-stats">' + statsText(i) + '</div>' : '')
+        : Object.keys(i.stats || {}).length ? '<div class="it-stats">' + statsText(i, true) + '</div>' : '') +
       (i.equip || []).map(e => '<div class="it-equip">' + I.client(e) + '</div>').join('') +
       (foot && foot.length ? '<hr class="t-sep">' + foot.map(f => '<div class="t-rank">' + f + '</div>').join('') : '');
   }

@@ -2,6 +2,27 @@
   "_readme": "Site updates shown on the News page, newest first. Game data changes come from data/changelog.json (written by scripts/sync.js).",
   "site": [
     {
+      "day": "2026-10-18",
+      "title": {
+        "es": "Ítems con los números del juego y los cambios de cada parche",
+        "en": "Items with the game's numbers and every patch's changes"
+      },
+      "items": [
+        {
+          "es": "Los stats de los ítems salen ahora del cliente del juego, con los hotfixes. Corrige cientos de piezas que Forever retocó y que seguían con números viejos: armas de caster sin poder con hechizos, crítico y golpe como índice, piezas con otros stats.",
+          "en": "Item stats now come from the game client, with the hotfixes. This fixes hundreds of pieces Forever reworked that still had old numbers: caster weapons without spell power, crit and hit as ratings, pieces with other stats."
+        },
+        {
+          "es": "Nuevo en Novedades: qué cambió para Shaman en cada parche, hechizo por hechizo (antes → ahora). Se actualiza solo.",
+          "en": "New on this page: what changed for Shaman in each patch, spell by spell (before → now). It updates by itself."
+        },
+        {
+          "es": "El camino de equipo valora los stats con los pesos que midió el simulador WoWSims para Forever, ajustados para levear.",
+          "en": "The gear path weighs stats with the weights the WoWSims simulator measured for Forever, adjusted for leveling."
+        }
+      ]
+    },
+    {
       "day": "2026-10-17",
       "title": {
         "es": "Talentos al día con el parche del 17 de octubre",

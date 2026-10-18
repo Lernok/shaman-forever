@@ -78,7 +78,9 @@ if (langErrors.length) {
   process.exit(1);
 }
 write('data/guides.js', 'GUIDE_DATA', guides);
-write('data/news.js', 'NEWS_DATA', { site: news.site, data: read('data/changelog.json').entries });
+// What each build changed for the Shaman (scripts/patch-news.js; optional).
+const patchNotes = fs.existsSync(path.join(root, 'data/patch-notes.json')) ? read('data/patch-notes.json').updates : [];
+write('data/news.js', 'NEWS_DATA', { site: news.site, data: read('data/changelog.json').entries, patches: patchNotes });
 
 // ---------- client text templates (GLOSARIO.md, section 4) ----------
 // Every text that comes from the game client must have a Spanish template; a

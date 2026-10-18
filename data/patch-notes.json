@@ -1,0 +1,987 @@
+{
+ "_readme": "What each Forever build and hotfix changed for the Shaman, newest first. Written by scripts/patch-news.js from wowsims/gamedata (MIT), read from the game client with its hotfixes. Field values are the client's own words.",
+ "source": "https://github.com/wowsims/gamedata",
+ "checked": [
+  "1.60.1.70009/hotfix-16781678",
+  "1.60.1.70009/hotfix-17060470",
+  "1.60.1.70009/patch",
+  "1.60.1.70245/hotfix-17059304",
+  "1.60.1.70245/patch",
+  "1.60.1.70291/patch",
+  "1.60.1.70334/patch",
+  "1.60.1.70338/hotfix-112562+5",
+  "1.60.1.70338/hotfix-16778875+1",
+  "1.60.1.70338/hotfix-16781694+3",
+  "1.60.1.70338/hotfix-16783543+4",
+  "1.60.1.70338/hotfix-16784937+2",
+  "1.60.1.70338/hotfix-16784938",
+  "1.60.1.70338/hotfix-16786610+7",
+  "1.60.1.70338/hotfix-16786617+1",
+  "1.60.1.70338/hotfix-16787978+4",
+  "1.60.1.70338/hotfix-17051044+1",
+  "1.60.1.70338/patch",
+  "1.60.1.70374/hotfix-112621+4",
+  "1.60.1.70374/hotfix-112659+5",
+  "1.60.1.70374/hotfix-112765+2",
+  "1.60.1.70374/patch",
+  "1.60.1.70425/hotfix-112821+13",
+  "1.60.1.70425/hotfix-16784936+1",
+  "1.60.1.70425/patch",
+  "1.60.1.70450/hotfix-16786608",
+  "1.60.1.70450/hotfix-17059766",
+  "1.60.1.70450/patch"
+ ],
+ "updates": [
+  {
+   "id": "1.60.1.70425/patch",
+   "version": "1.60.1.70425",
+   "hotfix": false,
+   "date": "2026-10-16",
+   "spells": [
+    {
+     "name": "Elemental Mastery",
+     "spec": "elemental",
+     "status": "added",
+     "lines": [
+      {
+       "k": "duration",
+       "from": null,
+       "to": "15 s"
+      },
+      {
+       "k": "cooldown",
+       "from": null,
+       "to": "180 s"
+      },
+      {
+       "k": "charges",
+       "from": null,
+       "to": "1"
+      },
+      {
+       "k": "effect 1",
+       "from": null,
+       "to": "cast time -0.5 s"
+      },
+      {
+       "k": "effect 2",
+       "from": null,
+       "to": "cooldown -100%"
+      }
+     ]
+    },
+    {
+     "name": "Lava Burst",
+     "spec": "elemental",
+     "status": "added",
+     "lines": [
+      {
+       "k": "cast",
+       "from": null,
+       "to": "2.5 s"
+      },
+      {
+       "k": "cooldown",
+       "from": null,
+       "to": "10 s (category)"
+      },
+      {
+       "k": "cost",
+       "from": null,
+       "to": "265 mana"
+      },
+      {
+       "k": "range",
+       "from": null,
+       "to": "30 yd"
+      },
+      {
+       "k": "effect 1",
+       "from": null,
+       "to": "192–248 fire damage to the enemy (at level 60, +0.714 spell power)"
+      }
+     ],
+     "ranks": [
+      4
+     ]
+    },
+    {
+     "name": "Mana Tide",
+     "spec": "other",
+     "status": "added",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": null,
+       "to": "party aura: restores 290 mana every 3 s"
+      }
+     ],
+     "ranks": [
+      4
+     ]
+    },
+    {
+     "name": "Mana Tide Totem",
+     "spec": "restoration",
+     "status": "added",
+     "lines": [
+      {
+       "k": "duration",
+       "from": null,
+       "to": "13 s"
+      },
+      {
+       "k": "cooldown",
+       "from": null,
+       "to": "300 s (category)"
+      },
+      {
+       "k": "cost",
+       "from": null,
+       "to": "60 mana"
+      }
+     ],
+     "ranks": [
+      4
+     ]
+    },
+    {
+     "name": "Call of Flame",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 3",
+       "from": null,
+       "to": "duration +9 s"
+      }
+     ]
+    },
+    {
+     "name": "Chain Lightning",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "485 mana",
+       "to": "315 mana"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Elemental Devastation",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Elemental Reach",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 2",
+       "from": "range +15",
+       "to": null
+      },
+      {
+       "k": "effect 3",
+       "from": null,
+       "to": "cooldown -20 s"
+      }
+     ]
+    },
+    {
+     "name": "Fire Nova",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": "398–442 fire damage (at level 60, +0.214 spell power)",
+       "to": "232–259 fire damage (at level 60, +0.143 spell power)"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Lava Burst",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "265 mana",
+       "to": "230 mana"
+      },
+      {
+       "k": "effect 1",
+       "from": "192–248 fire damage to the enemy (at level 60, +0.714 spell power)",
+       "to": "179–230 fire damage to the enemy (at level 60, +0.714 spell power)"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Trial by Fire",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 3",
+       "from": null,
+       "to": "duration +20 s"
+      }
+     ]
+    },
+    {
+     "name": "Flametongue Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Stormstrike",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "125 mana",
+       "to": "8% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Grace of Air",
+     "spec": "other",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": "party aura",
+       "to": "raid aura"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Mana Tide",
+     "spec": "other",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": "party aura: restores 290 mana every 3 s",
+       "to": "party aura: restores 197 mana every 3 s"
+      }
+     ],
+     "ranks": [
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Shaman Pet Scaling",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Shield Mastery",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Strength of Earth",
+     "spec": "other",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": "party aura",
+       "to": "raid aura"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Mana Tide Totem",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "60 mana",
+       "to": "30 mana"
+      }
+     ],
+     "ranks": [
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Restorative Totems",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 2",
+       "from": "effect +5%",
+       "to": "dot +5%"
+      }
+     ]
+    },
+    {
+     "name": "Water Shield",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    }
+   ]
+  },
+  {
+   "id": "1.60.1.70291/patch",
+   "version": "1.60.1.70291",
+   "hotfix": false,
+   "date": "2026-10-08",
+   "spells": [
+    {
+     "name": "Clearcasting",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Lightning Bolt",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": "70–81 nature damage to the enemy (at level 60, +0.714 spell power)",
+       "to": "78–91 nature damage to the enemy (at level 60, +0.714 spell power)"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Ghost Wolf",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Grounding Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "Grounding Totem Passive",
+     "spec": "other",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": "casts 8178 Grounding Totem Effect every 10 s",
+       "to": "casts 8178 Grounding Totem every 10 s"
+      }
+     ]
+    },
+    {
+     "name": "Water Shield",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cooldown",
+       "from": "15 s (category)",
+       "to": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1.60.1.70245/patch",
+   "version": "1.60.1.70245",
+   "hotfix": false,
+   "date": "2026-10-08",
+   "spells": [
+    {
+     "name": "Totemic Recall",
+     "spec": "elemental",
+     "status": "added",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": null,
+       "to": "restores 0 mana to the caster"
+      }
+     ]
+    },
+    {
+     "name": "Revelation",
+     "spec": "other",
+     "status": "added",
+     "lines": [
+      {
+       "k": "duration",
+       "from": null,
+       "to": "15 s"
+      },
+      {
+       "k": "stack",
+       "from": null,
+       "to": "up to 1"
+      },
+      {
+       "k": "charges",
+       "from": null,
+       "to": "1"
+      },
+      {
+       "k": "effect 1",
+       "from": null,
+       "to": "crit chance +100%"
+      }
+     ]
+    },
+    {
+     "name": "Chain Lightning",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Clearcasting",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Earth Shock",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": "517–545 nature damage to the enemy (at level 60, +0.386 spell power)",
+       "to": "703–731 nature damage to the enemy (at level 60, +0.386 spell power)"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    {
+     "name": "Earthbind Totem",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "6% of maximum mana",
+       "to": "6% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Elemental Focus",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Fire Nova",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Flame Shock",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      5
+     ]
+    },
+    {
+     "name": "Frost Shock",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Lava Burst",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Lightning Bolt",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ]
+    },
+    {
+     "name": "Molten Blast",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "18% of maximum mana",
+       "to": "18% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Purge",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "5% of maximum mana",
+       "to": "5% of base mana"
+      }
+     ],
+     "ranks": [
+      1,
+      2
+     ]
+    },
+    {
+     "name": "Decoy Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "11% of maximum mana",
+       "to": "11% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Grounding Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "6% of maximum mana",
+       "to": "6% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Lava Lash",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "1% of maximum mana",
+       "to": "1% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Maelstrom Weapon",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Mental Dexterity",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Spirit of the Alpha",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "8% of maximum mana",
+       "to": "8% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Totemic Projection",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "25% of maximum mana",
+       "to": "25% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Burn",
+     "spec": "other",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": "+120 holy+fire+nature+frost+shadow+arcane damage done (at level 60)",
+       "to": "+122 holy+fire+nature+frost+shadow+arcane damage done (at level 60)"
+      }
+     ]
+    },
+    {
+     "name": "Feral Spirit",
+     "spec": "other",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "12% of maximum mana",
+       "to": "12% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Flame Charged",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Flametongue Attack",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Frostbrand Attack",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      5
+     ]
+    },
+    {
+     "name": "Power Surge",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Elemental 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Enhancement 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Tank 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T2 - Shaman - Restoration 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - TAQ - Shaman - Tank 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Static Shock",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Ancestral Spirit",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "90% of maximum mana",
+       "to": "90% of base mana"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Chain Heal",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Cure Disease",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "9% of maximum mana",
+       "to": "9% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Cure Poison",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "9% of maximum mana",
+       "to": "9% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Disease Cleansing Totem",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "duration",
+       "from": "120 s",
+       "to": "300 s"
+      },
+      {
+       "k": "cost",
+       "from": "10% of maximum mana",
+       "to": "10% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Earth Shield",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "15% of maximum mana",
+       "to": "15% of base mana"
+      }
+     ],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "Healing Rain",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "21% of maximum mana",
+       "to": "21% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Healing Wave",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ]
+    },
+    {
+     "name": "Lesser Healing Wave",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": "832–928 healing to the friendly target (at level 60, +0.429 spell power)",
+       "to": "1084–1180 healing to the friendly target (at level 60, +0.429 spell power)"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "name": "Poison Cleansing Totem",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "10% of maximum mana",
+       "to": "10% of base mana"
+      }
+     ]
+    },
+    {
+     "name": "Riptide",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1.60.1.70245/hotfix-17059304",
+   "version": "1.60.1.70245",
+   "hotfix": true,
+   "date": "2026-10-08",
+   "spells": [
+    {
+     "name": "Frostbrand Attack",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      5
+     ]
+    }
+   ]
+  }
+ ]
+}

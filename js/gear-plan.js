@@ -7,8 +7,8 @@
 // How a piece is judged (an approximation, said on the page):
 // - Value: the piece's stats, each turned into budget points (COST: what a
 //   point of it costs in an item's stat budget) and weighted by how much your
-//   spec wants it (WEIGHTS, declared below; no measured weights for Forever
-//   exist). A blue with more stats beats a green of the same item level, and
+//   spec wants it (WEIGHTS, declared below: WoWSims' measured weights for
+//   Forever at 60, adjusted for leveling). A blue with more stats beats a green of the same item level, and
 //   a piece full of stats you don't use is worth little. Enhancement's
 //   two-hander is judged by its DPS.
 // - Access, best first: a quest in a zone of your route > a dungeon quest >
@@ -25,20 +25,38 @@
   const COST = {
     strength: 1, agility: 1, stamina: 1, intellect: 1, spirit: 1, attackPower: 0.5,
     spellPower: 1.2, spellDamage: 0.85, healing: 0.55, natureDamage: 0.7, fireDamage: 0.7, frostDamage: 0.7, otherDamage: 0.7,
-    mp5: 2.5, crit: 14, hit: 10, spellCrit: 14, spellHit: 10, defense: 1, dodge: 12
+    mp5: 2.5, crit: 14, hit: 10, spellCrit: 14, spellHit: 10, defense: 1, dodge: 12,
+    // Forever's ratings (the client's numbers, scripts/client-items.js): at
+    // 60, 14 crit rating = 1% crit and 10 hit rating = 1% hit, for melee and
+    // spells alike (WoWSims' constants), the same price as the percentages.
+    critRating: 1, hitRating: 1, hasteRating: 1, expertiseRating: 1, dodgeRating: 1
   };
-  // How much each stat is worth to each spec (1 = all of it).
+  // How much each stat is worth to each spec (1 = all of it). From the
+  // weights WoWSims measured for Forever (wowsims/forever, ui/specs/shaman/*/
+  // presets.ts: level 60, raid buffs, a three-minute fight), turned into
+  // these units, and adjusted for leveling where a raid fight differs: mana
+  // runs out between pulls (Intellect, Spirit and MP5 count more than in a
+  // three-minute sim) and monsters of your level are missed far less than a
+  // raid boss (hit counts less).
   const WEIGHTS = {
-    // Enhancement, from the conversions (attack power = AP): 1 Strength =
-    // 2 AP (1); 1% crit is worth about 22 AP at 60, and keeps Flurry up (0.8
-    // of its 14-point cost); 20 Agility = 1% crit, so 1 Agility ~ 1.1 AP
-    // (0.55); 1 Intellect = 1 AP with Mental Dexterity, plus mana (0.5);
-    // spell power helps its shocks and Lightning Bolt a little (0.3).
-    Enhancement: { strength: 1, agility: 0.55, attackPower: 1, crit: 0.8, hit: 1, intellect: 0.5, stamina: 0.25, spellPower: 0.3, spellDamage: 0.3, natureDamage: 0.15, fireDamage: 0.15 },
-    // Elemental casts Flame Shock and Lava Burst (Fire) and Lightning Bolt
-    // (Nature); melee crit and hit do nothing for it.
-    Elemental: { spellPower: 1, spellDamage: 1, natureDamage: 0.6, fireDamage: 0.6, frostDamage: 0.15, intellect: 0.75, spellCrit: 0.75, spellHit: 0.6, mp5: 0.5, stamina: 0.25, spirit: 0.25 },
-    Restoration: { healing: 1, spellPower: 1, intellect: 0.75, mp5: 1, spirit: 0.5, spellCrit: 0.4, stamina: 0.25 }
+    // Enhancement, in attack power (AP): WoWSims has 1 Strength = 2.2 AP
+    // (1.1), 1 Agility = 1.32 AP (0.66), 1 crit rating = 2.4 AP (1.2); haste
+    // and expertise only come at 60. Hit: 5.2 AP a point against a raid
+    // boss, about 3 against your level (1.5). Intellect: 2 AP at 60, but
+    // Mental Dexterity (Intellect as AP) is full only from about level 17
+    // and a caster piece trades away the armor a melee needs: 1.5 AP (0.75).
+    // Spell damage: 1.3 AP at 60 with raid buffs, a bit less leveling (0.6).
+    Enhancement: { strength: 1.1, agility: 0.66, attackPower: 1, crit: 1.2, critRating: 1.2, hit: 1.5, hitRating: 1.5, hasteRating: 1.4, expertiseRating: 1.2,
+      intellect: 0.75, stamina: 0.25, spellPower: 0.45, spellDamage: 0.6, natureDamage: 0.4, fireDamage: 0.25 },
+    // Elemental, in spell power: WoWSims has Nature damage at 0.69 and Fire
+    // at 0.31 (Lightning Bolt over Flame Shock and Lava Burst), 1 crit rating
+    // = 0.61 (0.73), 1 hit rating = 1.18 against a raid boss (0.9 against
+    // your level), Intellect 0.19 and MP5 0.04 (in a three-minute fight mana
+    // never runs out; leveling it does: 0.45 and 0.4).
+    Elemental: { spellPower: 1, spellDamage: 1, natureDamage: 0.7, fireDamage: 0.35, frostDamage: 0.15, intellect: 0.45, spellCrit: 0.75, critRating: 0.73,
+      spellHit: 0.9, hitRating: 0.9, hasteRating: 1.4, mp5: 0.4, stamina: 0.25, spirit: 0.2 },
+    // Restoration: WoWSims has no weights for it yet; Classic's usual ones.
+    Restoration: { healing: 1, spellPower: 1, intellect: 0.75, mp5: 1, spirit: 0.5, spellCrit: 0.4, critRating: 0.4, hasteRating: 0.6, stamina: 0.25 }
   };
   // Stats that do the same for a spec are worth the same per point, priced
   // like the one they equal: to a healer "+healing" heals exactly like
