@@ -236,9 +236,10 @@
   renderLegend();
   renderPickers();
   selectPage(currentPage);
-  // Then the rest of the data, quietly, so the next page opens at once.
+  // Then the rest of the data, quietly, so the next page opens at once:
+  // after the page you opened has its own (on a slow phone they'd share the line).
   const idle = window.requestIdleCallback || (f => setTimeout(f, 1500));
-  idle(() => Site.need(Site.LAZY).catch(() => {}));
+  Site.first.then(() => idle(() => Site.need(Site.LAZY).catch(() => {})));
   // First visit: build your Shaman before anything else.
   if (!UI.store.get('setupDone', false)) window.Setup.open();
 })();

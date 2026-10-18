@@ -21,7 +21,12 @@ local QUEST_ICON = "Interface\\GossipFrame\\AvailableQuestIcon"
 
 local function L() return SF.L[(db and db.lang) or ((GetLocale() or ""):sub(1, 2) == "es" and "es" or "en")] end
 local function lang() return L() == SF.L.es and "es" or "en" end
-local function say(msg) DEFAULT_CHAT_FRAME:AddMessage("|cff0070ddShaman: Forever|r " .. msg) end
+-- Set once the log exists (further down): chat lines go to the log too.
+local logChat
+local function say(msg)
+  DEFAULT_CHAT_FRAME:AddMessage("|cff0070ddShaman: Forever|r " .. msg)
+  if logChat then pcall(logChat, msg) end
+end
 local function num(x)
   local s = string.format("%.1f", x)
   if lang() == "es" then s = s:gsub("%.", ",") end
@@ -916,11 +921,32 @@ local function trainTip()
     giver = t and { n = t.n, z = t.z, x = t.x, y = t.y }, title = t and t.n }
 end
 
--- The research log: "time|event|level|zone|detail" lines.
+-- The research log: "time|event|level|zone|detail" lines. Besides what you
+-- do (zones, levels, quests), what the addon did: what popped up, what it
+-- said in the chat, the trainer's advice, your clicks and any error. The
+-- game writes it to the SavedVariables on logout or /reload, where
+-- scripts/read-log.js reads it.
+-- Text without the game's color and icon codes, and no "|" (the separator).
+local function plain(v)
+  v = tostring(v or ""):gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""):gsub("|T.-|t", ""):gsub("|A.-|a", ""):gsub("|H.-|h(.-)|h", "%1")
+  return (v:gsub("|", "/"):gsub("\n", " / "))
+end
 local function log(event, detail)
+  if not (cdb and cdb.log) then return end
   local l = cdb.log
-  l[#l + 1] = table.concat({ time(), event, UnitLevel("player"), here(), detail or "" }, "|")
+  l[#l + 1] = table.concat({ time(), event, UnitLevel("player"), plain(here()), plain(detail) }, "|")
   while #l > LOG_MAX do table.remove(l, 1) end
+end
+logChat = function(msg) log("chat", msg) end
+-- A tip in a few words for the log: its key and its headline.
+local function tipWords(tip) return tostring(tip.key) .. " " .. plain(tip.head or tip.title or "") end
+-- Runs fn; an error goes to the log (and to the game's error frame).
+local function guarded(name, fn, ...)
+  local ok, err = pcall(fn, ...)
+  if not ok then
+    log("error", name .. ": " .. tostring(err))
+    if geterrorhandler then geterrorhandler()(err) end
+  end
 end
 
 -- Window -------------------------------------------------------------------------
@@ -1162,7 +1188,8 @@ local function makeRow(i)
   r.dismiss:SetPoint("RIGHT", 2, 0)
   r.dismiss:SetScript("OnClick", function()
     GameTooltip:Hide()
-    if frame.tab == "hidden" then cdb.done[r.tip.key] = nil; cdb.gone[r.tip.key] = nil else archive(r.tip, "done") end
+    if frame.tab == "hidden" then cdb.done[r.tip.key] = nil; cdb.gone[r.tip.key] = nil; log("restore", tipWords(r.tip))
+    else archive(r.tip, "done"); log("done", tipWords(r.tip)) end
     render()
   end)
   r.dismiss:SetScript("OnEnter", function(self)
@@ -1176,6 +1203,7 @@ local function makeRow(i)
   -- any item); anything else: who gives it.
   r:SetScript("OnClick", function(self, button)
     local tip = self.tip
+    log("click", (button == "RightButton" and "right " or "") .. tipWords(tip))
     if button == "RightButton" then
       if tip.skip then SF.skipDungeon(tip.skip) end
       return
@@ -1407,6 +1435,9 @@ local function popup(title, tips)
   for _, tip in ipairs(new) do cdb.seen[tip.key] = true end
   -- Only the few that matter most pop up; the rest wait in /sf.
   local total = #new
+  local said = {}
+  for _, tip in ipairs(new) do said[#said + 1] = tipWords(tip) end
+  log("pop", plain(title) .. " (" .. total .. "): " .. table.concat(said, " ; "))
   if total > POPUP_MAX then
     table.sort(new, function(a, b) return priority(a) > priority(b) end)
     for i = #new, POPUP_MAX + 1, -1 do table.remove(new, i) end
@@ -1731,7 +1762,9 @@ end
 local trainerPanel, paintTrainer, showTrainerPanel
 local ev = CreateFrame("Frame")
 ev:RegisterEvent("ADDON_LOADED")
-ev:SetScript("OnEvent", function(self, event, ...)
+local onEvent
+ev:SetScript("OnEvent", function(self, event, ...) guarded(event, onEvent, self, event, ...) end)
+onEvent = function(self, event, ...)
   if event == "ADDON_LOADED" then
     if ... ~= ADDON then return end
     ShamanForeverDB = ShamanForeverDB or {}
@@ -1740,6 +1773,8 @@ ev:SetScript("OnEvent", function(self, event, ...)
     for k, v in pairs(DEFAULTS) do if cdb[k] == nil then cdb[k] = v end end
     if not cdb.nowFirst then cdb.lead, cdb.nowFirst = 0, true end
     cdb.seen, cdb.done, cdb.gone, cdb.log = cdb.seen or {}, cdb.done or {}, cdb.gone or {}, cdb.log or {}
+    local _, race = UnitRace("player")
+    log("load", Api.version() .. " " .. tostring(race) .. " " .. cdb.spec .. (cdb.quiet and " quiet" or "") .. " lead " .. tostring(cdb.lead))
     self:UnregisterEvent("ADDON_LOADED")
     pcall(makeOptions)
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -1765,7 +1800,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
   elseif event == "TRAINER_SHOW" then
     cdb.trainedAt = UnitLevel("player")
     -- The trainer's window lays out a moment after the event.
-    C_Timer.After(0.1, function() pcall(showTrainerPanel) end)
+    C_Timer.After(0.1, function() guarded("trainer", showTrainerPanel) end)
     if frame and frame.live then refresh() end
   elseif event == "TRAINER_UPDATE" then
     if trainerPanel and trainerPanel:IsShown() then pcall(paintTrainer) end
@@ -1774,7 +1809,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
     if frame and frame.live then refresh() end
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
     -- The zone's name settles a moment after a loading screen.
-    C_Timer.After(2, onZone)
+    C_Timer.After(2, function() guarded("zone", onZone) end)
     followPolestar()
     if event == "PLAYER_ENTERING_WORLD" and not mmButton then
       makeMinimapButton()
@@ -1786,7 +1821,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
   elseif event == "PLAYER_LEVEL_UP" then
     local lvl = ...
     -- UnitLevel catches up a moment later.
-    C_Timer.After(1, function() onLevel(tonumber(lvl) or UnitLevel("player")) end)
+    C_Timer.After(1, function() guarded("level", onLevel, tonumber(lvl) or UnitLevel("player")) end)
   elseif event == "QUEST_DETAIL" or event == "QUEST_COMPLETE" then
     noteRewardXp()
   elseif event == "QUEST_TURNED_IN" then
@@ -1818,7 +1853,7 @@ ev:SetScript("OnEvent", function(self, event, ...)
     show(p[1], p[2])
     frame.live, frame.auto = false, true
   end
-end)
+end
 
 -- Item tooltips: better or worse than what you wear, for your spec.
 local function onTooltip(tt, id)
@@ -2177,6 +2212,7 @@ local function buyRecommended()
     local e = list[k]
     if not e.rule and pcall(BuyTrainerService, e.i) then n = n + 1 end
   end
+  log("buy", tostring(n))
   say(string.format(L().trainBought, n))
 end
 local function money(c) return GetCoinTextureString and GetCoinTextureString(c) or (math.floor(c / 10000) .. "g") end
@@ -2241,6 +2277,12 @@ function showTrainerPanel()
   f.note:SetText(L().trainSource)
   paintTrainer()
   f:Show()
+  local buy, skip = {}, {}
+  for _, e in ipairs(trainerOffer()) do
+    local label = e.name .. " " .. e.rank
+    if e.rule then skip[#skip + 1] = label else buy[#buy + 1] = label end
+  end
+  log("trainer", "buy: " .. table.concat(buy, ", ") .. " · skip: " .. table.concat(skip, ", "))
 end
 
 -- Slash commands -----------------------------------------------------------------

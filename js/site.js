@@ -110,7 +110,8 @@
   Site.NEEDS = { Inicio: ['gear', 'weapons'], Guia: ['gear', 'weapons'], Equipo: ['gear', 'weapons'],
     Profesiones: ['gear', 'weapons', 'professions', 'consumables', 'camp'] };
   const opening = location.hash.slice(1).split('/')[0];
-  Site.need(Site.NEEDS[Site.SPECS.includes(opening) ? 'Guia' : opening || 'Inicio'] || []).catch(() => {});
+  // Site.first: settled once they're in (or failed).
+  Site.first = Site.need(Site.NEEDS[Site.SPECS.includes(opening) ? 'Guia' : opening || 'Inicio'] || []).catch(() => {});
 
   window.Site = Site;
 })();
