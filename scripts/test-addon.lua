@@ -182,6 +182,24 @@ if os.getenv("TRAINER") then
   for _, e in ipairs(SF.test.trainerOffer()) do print("  " .. e.name .. " " .. e.rank .. (e.rule and ("  SALTEAR: " .. e.rule.es) or "")) end
   SF.test.buyRecommended()
 end
+-- At the profession window (TRADE=<profession>, e.g. Leatherworking, with
+-- PROFS for its skill): the recipes you know up to your skill, and what the
+-- panel says about each.
+if os.getenv("TRADE") then
+  local p = profs[1] or { 0, 0, 0 }
+  local list = {}
+  for _, c in ipairs(SF.DATA.crafts[os.getenv("TRADE")] or {}) do
+    if c[3] <= p[2] then list[#list + 1] = { id = c[1], kind = (p[2] - c[3] < 10 and "optimal") or (p[2] - c[3] < 25 and "medium") or "trivial" } end
+  end
+  function GetNumTradeSkills() return #list end
+  function GetTradeSkillInfo(i) return "Recipe" .. list[i].id, list[i].kind end
+  function GetTradeSkillItemLink(i) return "|Hitem:" .. list[i].id .. ":0|h[x]|h" end
+  local yes, soon, short, no = SF.test.craftReview()
+  local function show(head, l) print("  " .. head .. " " .. #l) for _, e in ipairs(l) do print("    " .. e.text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")) end end
+  print("-- profesión (" .. #list .. " recetas):")
+  show("SÍ", yes) show("PRONTO", soon) show("NO VALE", short) print("  no mejoran: " .. no)
+  ev:fire("TRADE_SKILL_SHOW")
+end
 -- Quest XP the game pays, kept for the route planner (turn-in event).
 ev:fire("QUEST_TURNED_IN", 96659, 410, 0)
 print("qxp 96659:", ShamanForeverDB.qxp and ShamanForeverDB.qxp[96659] and table.concat(ShamanForeverDB.qxp[96659], " @ nivel "))

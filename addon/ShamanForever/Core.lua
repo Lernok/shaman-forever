@@ -1516,6 +1516,42 @@ local function craftTips()
   return tips
 end
 
+-- How long a piece made now lasts: the first level where your gear path
+-- (quests, dungeons, vendors) or a better recipe of yours replaces it; nil
+-- when nothing does.
+local function lastsUntil(id)
+  local it = D.items[id]
+  if not it then return nil end
+  local v, from = value(id), math.max(UnitLevel("player"), it.r or 1)
+  local best
+  local function consider(other, l, how)
+    local o = D.items[other]
+    if o and other ~= id and o.s == it.s and l > from and value(other) > v * D.upgrade and (not best or l < best.l) then
+      best = { l = l, i = other, how = how }
+    end
+  end
+  for _, st in ipairs(myPath()) do consider(st.i, st.l, "path") end
+  for prof in pairs(myProfessions()) do
+    for _, c in ipairs(D.crafts and D.crafts[prof] or {}) do consider(c[1], c[2], "craft") end
+  end
+  return best
+end
+-- Whether to make a piece now: "yes", "soon" (in a few levels), "short"
+-- (replaced too soon to spend the materials on it), "no" (no better than
+-- what you have), "have", "later" (far off); nil: not gear for your spec.
+local SOON, SHORT = 3, 2
+local function craftVerdict(id)
+  local it = D.items[id]
+  if not it or value(id) <= 0 then return nil end
+  if owned(id) then return "have" end
+  local lvl, req = UnitLevel("player"), it.r or 1
+  if req > lvl + SOON then return "later" end
+  if not gain(id) then return "no" end
+  local last = lastsUntil(id)
+  if last and last.l - math.max(lvl, req) <= SHORT then return "short", last end
+  return req > lvl and "soon" or "yes", last
+end
+
 -- Off the route and worth a detour: OFF without a Polestar route, ROUTE_OFF
 -- with one (you follow it; only a big upgrade is worth leaving it).
 local FAR, OFF, ROUTE_OFF = 0.35, 0.2, 0.35
@@ -1799,6 +1835,8 @@ end
 
 -- The trainer panel (further down).
 local trainerPanel, paintTrainer, showTrainerPanel
+-- The profession window's panel (further down).
+local craftPanel, paintCrafts, showCraftPanel
 local ev = CreateFrame("Frame")
 ev:RegisterEvent("ADDON_LOADED")
 local onEvent
@@ -1833,6 +1871,9 @@ onEvent = function(self, event, ...)
     pcall(self.RegisterEvent, self, "TRAINER_SHOW")
     pcall(self.RegisterEvent, self, "TRAINER_UPDATE")
     pcall(self.RegisterEvent, self, "TRAINER_CLOSED")
+    pcall(self.RegisterEvent, self, "TRADE_SKILL_SHOW")
+    pcall(self.RegisterEvent, self, "TRADE_SKILL_UPDATE")
+    pcall(self.RegisterEvent, self, "TRADE_SKILL_CLOSE")
     pcall(self.RegisterEvent, self, "LEARNED_SPELL_IN_TAB")
   elseif event == "CHARACTER_POINTS_CHANGED" or event == "LEARNED_SPELL_IN_TAB" then
     if frame and frame.live then refresh() end
@@ -1846,6 +1887,12 @@ onEvent = function(self, event, ...)
   elseif event == "TRAINER_CLOSED" then
     if trainerPanel then trainerPanel:Hide() end
     if frame and frame.live then refresh() end
+  elseif event == "TRADE_SKILL_SHOW" then
+    C_Timer.After(0.1, function() guarded("crafts", showCraftPanel) end)
+  elseif event == "TRADE_SKILL_UPDATE" then
+    if craftPanel and craftPanel:IsShown() then guarded("crafts", paintCrafts) end
+  elseif event == "TRADE_SKILL_CLOSE" then
+    if craftPanel then craftPanel:Hide() end
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
     -- The zone's name settles a moment after a loading screen.
     C_Timer.After(2, function() guarded("zone", onZone) end)
@@ -1914,6 +1961,8 @@ local function onTooltip(tt, id)
     for _, c in ipairs(D.crafts and D.crafts[prof] or {}) do
       if c[1] == id then
         tt:AddLine(string.format(L().youCraft, p.name, c[3]) .. (p.skill < c[3] and (" · " .. string.format(L().skillNeed, c[3] - p.skill)) or ""), 1, 0.6, 0.2)
+        local last = lastsUntil(id)
+        tt:AddLine(last and string.format(L().craftLast, last.l, Api.itemName(last.i) or "?") or L().craftLastLong, 1, 0.6, 0.2)
       end
     end
   end
@@ -2324,6 +2373,113 @@ function showTrainerPanel()
   log("trainer", "buy: " .. table.concat(buy, ", ") .. " · skip: " .. table.concat(skip, ", "))
 end
 
+-- Beside the profession window: of the pieces you can make, which are worth
+-- making now for your spec (and until when they last), which in a few
+-- levels, and which aren't worth the materials.
+local function recipes()
+  local out = {}
+  if not (GetNumTradeSkills and GetTradeSkillInfo and GetTradeSkillItemLink) then return out end
+  for i = 1, (readable(GetNumTradeSkills()) or 0) do
+    local name, kind = GetTradeSkillInfo(i)
+    if kind and kind ~= "header" and kind ~= "subheader" then
+      local id = tonumber(tostring(GetTradeSkillItemLink(i) or ""):match("item:(%d+)"))
+      if id then out[#out + 1] = { id = id, kind = kind, name = name } end
+    end
+  end
+  return out
+end
+-- A recipe that can still raise your skill (orange, yellow, green).
+local SKILL_UP = { optimal = true, medium = true, easy = true }
+-- One piece per slot in each group: the best you can make now, one in a few
+-- levels only if it beats that, and the most valuable of those not worth it.
+local SHORT_MAX = 6
+local function craftReview()
+  local yes, soon, short, no = {}, {}, {}, 0
+  for _, r in ipairs(recipes()) do
+    local verdict, last = craftVerdict(r.id)
+    local it, v = D.items[r.id], value(r.id)
+    local e = it and { id = r.id, slot = it.s, v = v, last = last, up = SKILL_UP[r.kind], name = Api.itemName(r.id) or r.name or "?" }
+    local group = verdict == "yes" and yes or verdict == "soon" and soon or verdict == "short" and short
+    if group then
+      local cur = group[e.slot]
+      if cur then no = no + 1 end
+      if not cur or e.v > cur.v then group[e.slot] = e end
+    elseif verdict == "no" or verdict == "have" then
+      no = no + 1
+    end
+  end
+  for slot, e in pairs(soon) do if yes[slot] and yes[slot].v >= e.v then soon[slot] = nil; no = no + 1 end end
+  for slot, e in pairs(short) do if yes[slot] or soon[slot] then short[slot] = nil; no = no + 1 end end
+  local function list(group, line, order)
+    local out = {}
+    for _, e in pairs(group) do out[#out + 1] = { v = order(e), text = e.name .. " — " .. line(e) } end
+    table.sort(out, function(a, b) return a.v < b.v end)
+    return out
+  end
+  local function untilText(e) return e.last and string.format(L().craftUntil, e.last.l, Api.itemName(e.last.i) or "?") or L().craftUntilLong end
+  local Y = list(yes, function(e) local g = gain(e.id) return (g and gainText(g) .. " · " or "") .. untilText(e) .. (e.up and (" · " .. L().craftSkillUp) or "") end,
+    function(e) return -e.v end)
+  local S = list(soon, function(e) return string.format(L().craftFrom, D.items[e.id].r) .. " · " .. untilText(e) end, function(e) return D.items[e.id].r end)
+  local N = list(short, function(e) return string.format(L().craftShortWhy, e.last.l, Api.itemName(e.last.i) or "?") end, function(e) return e.last.l end)
+  while #N > SHORT_MAX do table.remove(N); no = no + 1 end
+  return Y, S, N, no
+end
+function paintCrafts()
+  local f = craftPanel
+  local yes, soon, short, no = craftReview()
+  local lines = {}
+  local function group(head, list)
+    if #list == 0 then return end
+    lines[#lines + 1] = "|cffffd100" .. string.format(head, #list) .. "|r"
+    for _, e in ipairs(list) do lines[#lines + 1] = "· " .. e.text end
+  end
+  group(L().craftYes, yes)
+  group(L().craftSoon, soon)
+  group(L().craftShort, short)
+  if no > 0 then lines[#lines + 1] = "|cff999999" .. string.format(L().craftNo, no) .. "|r" end
+  if #yes + #soon + #short == 0 then lines[#lines + 1] = L().craftNone end
+  f.text:SetText(table.concat(lines, "\n"))
+  f:SetHeight(math.max(90, (f.text:GetStringHeight() or 60) + 64))
+  return yes, soon, short, no
+end
+function showCraftPanel()
+  if not (UnitClass and select(2, UnitClass("player")) == "SHAMAN") then return end
+  -- Only professions that make gear: the rest have nothing to say here.
+  local any = false
+  for _, r in ipairs(recipes()) do if D.items[r.id] then any = true break end end
+  if not any then if craftPanel then craftPanel:Hide() end return end
+  if not craftPanel then
+    local f = CreateFrame("Frame", "ShamanForeverCrafts", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
+    craftPanel = f
+    f:SetWidth(320)
+    f:SetFrameStrata("HIGH")
+    if f.SetBackdrop then
+      f:SetBackdrop({ bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background", edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+        tile = true, tileSize = 16, edgeSize = 14, insets = { left = 4, right = 4, top = 4, bottom = 4 } })
+    end
+    f.title = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    f.title:SetPoint("TOPLEFT", 12, -10)
+    f.text = f:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    f.text:SetPoint("TOPLEFT", 12, -30)
+    f.text:SetPoint("RIGHT", -12, 0)
+    f.text:SetJustifyH("LEFT")
+    f.note = f:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+    f.note:SetPoint("BOTTOMLEFT", 12, 10)
+    f.note:SetPoint("RIGHT", -12, 0)
+    f.note:SetJustifyH("LEFT")
+  end
+  local f = craftPanel
+  f:ClearAllPoints()
+  if TradeSkillFrame and TradeSkillFrame:IsShown() then f:SetPoint("TOPLEFT", TradeSkillFrame, "TOPRIGHT", -30, -12)
+  else f:SetPoint("LEFT", UIParent, "CENTER", 120, 0) end
+  f.title:SetText(string.format(L().craftTitle, specName()))
+  f.note:SetText(L().craftNote)
+  local yes, soon, short, no = paintCrafts()
+  f:Show()
+  local names = function(list) local t = {} for _, e in ipairs(list) do t[#t + 1] = (e.text:match("^(.-) —") or e.text) end return table.concat(t, ", ") end
+  log("crafts", "yes: " .. names(yes) .. " · soon: " .. names(soon) .. " · short: " .. names(short) .. " · no " .. no)
+end
+
 -- Slash commands -----------------------------------------------------------------
 -- First-run setup (once per character; /sf setup brings it back): your
 -- spec, whether the window may open by itself, and your route in Polestar.
@@ -2486,4 +2642,5 @@ SF.test = { pathTips = pathTips, pickupTips = pickupTips, dungeonTips = dungeonT
   archive = function(tip, kind) archive(tip, kind) end, inProgress = function() return inProgress() end, archived = function() return archived() end,
   npcLines = function(id) return npcLines(id) end, craftTips = function() return craftTips() end,
   currentView = function() return currentView() end, trainerOffer = trainerOffer, buyRecommended = buyRecommended,
-  classQuestTips = classQuestTips, trainList = trainList }
+  classQuestTips = classQuestTips, trainList = trainList, craftVerdict = craftVerdict, lastsUntil = lastsUntil,
+  craftReview = function() return craftReview() end }
