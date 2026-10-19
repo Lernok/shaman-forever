@@ -390,9 +390,38 @@ end
 
 -- Forever's profession tutorial ("Camping 101: <profession>") of each of
 -- your professions, at the camp of your start (another start's, if not).
+local START = { U = "Mulgore", O = "Durotar", T = "Durotar", D = "Dun Morogh", S = "Zephras Isle" }
+-- The campfire quest ("The Great Outdoors", one per starting camp): it
+-- unlocks camping, and every "Camping 101" needs it done.
+local function outdoorsDone()
+  for _, e in ipairs(D.outdoors or {}) do if Api.questDone(e.q) then return true end end
+  return not D.outdoors or #D.outdoors == 0
+end
+local function outdoorsTip()
+  if outdoorsDone() then return nil end
+  local lvl, letter, z = UnitLevel("player"), raceLetter(), here()
+  local best
+  for _, e in ipairs(D.outdoors) do
+    if Api.onQuest(e.q) then return nil end
+    if (e.l or 1) <= lvl and (not e.r or e.r:find(letter, 1, true)) then
+      -- The camp where you are, else your race's start.
+      local gz = areaName((D.givers[e.q] or {}).z)
+      local score = (gz == z and 2 or 0) + (gz == START[letter] and 1 or 0)
+      if score > 0 and (not best or score > best.score) then best = { e = e, score = score } end
+    end
+  end
+  if not best then return nil end
+  local e, g = best.e, D.givers[best.e.q]
+  if not g or off("go" .. e.q) then return nil end
+  return { key = "go" .. e.q, icon = QUEST_ICON, head = L().outdoorsHead, src = string.format(L().pickup, D.qnames[e.q] or "The Great Outdoors"),
+    gain = L().outdoorsWhy .. " · " .. (giverText(g) or ""), giver = g, title = D.qnames[e.q], order = e.l or lvl, q = e.q, cat = "prof", onRoute = true }
+end
 local function campTips()
   local tips, lvl, letter, z = {}, UnitLevel("player"), raceLetter(), here()
-  local START = { U = "Mulgore", O = "Durotar", T = "Durotar", D = "Dun Morogh", S = "Zephras Isle" }
+  local go = outdoorsTip()
+  if go then tips[#tips + 1] = go end
+  -- The Camping 101 quests open once the campfire quest is done.
+  if not outdoorsDone() then return tips end
   for prof in pairs(allProfessions()) do
     local best
     for _, e in ipairs(D.camp and D.camp[prof] or {}) do
@@ -1703,6 +1732,9 @@ local function zoneTips()
   -- Your trainer is here and you have spells to learn.
   local tr = trainTip()
   if tr and tr.giver and areaName(tr.giver.z) == z and not off(tr.key) then tips[#tips + 1] = tr end
+  -- The campfire quest, when its giver is here.
+  local go = outdoorsTip()
+  if go and go.giver and areaName(go.giver.z) == z then tips[#tips + 1] = go end
   -- A totem quest you can start here.
   for _, t in ipairs(classQuestTips()) do
     if t.giver and t.giver.z and areaName(t.giver.z) == z and not Api.onQuest(t.q) then tips[#tips + 1] = t end
