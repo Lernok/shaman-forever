@@ -858,6 +858,10 @@ local function spellKnown(id)
   end)
   if ok then return known end
 end
+-- Rank 1 of these totems comes with the totem quest, not from the trainer:
+-- Stoneskin (Call of Earth), Searing (Call of Fire), Healing Stream (Call
+-- of Water).
+local FROM_QUEST = { [8071] = true, [3599] = true, [5394] = true }
 -- Ranks up to your level you don't know yet: to buy, and to skip (with
 -- why). Without a way to ask the game what you know, the ranks since your
 -- last visit to a trainer.
@@ -868,7 +872,7 @@ local function trainList()
     local top = 0
     for rank = #s.l, 1, -1 do if spellKnown(s.id[rank]) then top = rank break end end
     for rank, l in ipairs(s.l) do
-      if rank > top and l > 1 and l <= lvl then
+      if rank > top and l > 1 and l <= lvl and not FROM_QUEST[s.id[rank]] then
         local known = spellKnown(s.id[rank])
         if known == nil then known = l <= (cdb.trainedAt or 0) end
         if not known then
@@ -904,7 +908,6 @@ end
 local function trainTip()
   local buy, skip = trainList()
   if #buy == 0 then return nil end
-  local lvl = UnitLevel("player")
   local names = {}
   for i, e in ipairs(buy) do if i <= 3 then names[#names + 1] = spellLabel(e) end end
   local src = table.concat(names, ", ") .. (#buy > 3 and (" " .. string.format(L().andMore, #buy - 3)) or "")
@@ -916,7 +919,11 @@ local function trainTip()
   end
   local t = nearestTrainer()
   local gain = (#skip > 0 and (string.format(L().trainSkipN, #skip) .. " · ") or "") .. (t and string.format(L().trainNear, t.n, areaName(t.z) or "?") or "")
-  return { key = "tr" .. lvl, icon = "Interface\\Icons\\INV_Misc_Book_09", cat = "world", order = -2.5e9,
+  -- Named after the newest spell on the list: the same list on the next
+  -- level is the same tip (seen once), a new spell makes it a new one.
+  local newest = 0
+  for _, e in ipairs(buy) do newest = math.max(newest, e.l) end
+  return { key = "tr" .. newest, icon = "Interface\\Icons\\INV_Misc_Book_09", cat = "world", order = -2.5e9,
     head = #buy == 1 and L().trainHead1 or string.format(L().trainHeadN, #buy), src = src, gain = gain, lines = lines,
     giver = t and { n = t.n, z = t.z, x = t.x, y = t.y }, title = t and t.n }
 end
