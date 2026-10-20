@@ -73,6 +73,8 @@ if (!realm || !all[realm]) { console.error('Sin precios de Auctionator (reinos: 
 const SK = readJSON('data/skinning.json');
 const wanted = new Set(SK.skin);
 SK.recipes.forEach(r => { wanted.add(r.id); r.mats.forEach(([m]) => wanted.add(m)); });
+// And every other crafted piece's reagents (data/crafts.json, scripts/build-reagents.js).
+Object.keys(readJSON('data/crafts.json', { items: {} }).items).forEach(id => wanted.add(Number(id)));
 
 const db = all[realm];
 const prices = {};
@@ -83,4 +85,4 @@ for (const id of wanted) {
 }
 const date = new Date(Date.UTC(2020, 0, 1) + day * 86400000).toISOString().slice(0, 10);
 writeJSON('data/prices.json', { _readme: 'Written by scripts/import-prices.js from Auctionator scans: lowest price per unit (copper).', realm, date, items: Object.keys(db).length, prices });
-console.log('Precios: ' + realm + ' (' + date + '), ' + Object.keys(prices).length + ' de ' + wanted.size + ' ítems del plan de Peletería');
+console.log('Precios: ' + realm + ' (' + date + '), ' + Object.keys(prices).length + ' de ' + wanted.size + ' ítems de crafteo');

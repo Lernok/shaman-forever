@@ -99,8 +99,60 @@
       '<span class="gp-slot">' + (star ? '<span class="gp-star" title="' + t('gp.starTitle') + '">★</span>' : '') + slotName(st.pick.slot) + '</span>' +
       '<div class="gp-main">' + UI.itemLink(i) + '<span class="wp-sub">' + sourceText(st.pick) +
       (st.pick.access === 'quest' ? ' · <span class="gp-off-tag">' + t('gp.offRoute') + '</span>' : '') + '</span>' +
-      (st.pick.access === 'crafted' || st.pick.access === 'favor' ? (window.Professions && window.Professions.lwHow ? window.Professions.lwHow(st) : '') : '') +
+      (st.pick.access === 'crafted' || st.pick.access === 'favor' ? (window.Professions && window.Professions.lwHow ? window.Professions.lwHow(st) : '') + craftMats(st) : '') +
       (st.alt || state.detail ? '<span class="gp-why">' + why(st) + '</span>' : '') + reportLink(st) + '</div></div>';
+  }
+
+  // A crafted piece of another profession than Leatherworking (that one has
+  // its plan, js/professions.js): its materials, each with where it comes
+  // from in a word, and what buying them costs against the quest gold of
+  // that level (data/crafts.js, scripts/build-reagents.js).
+  const PROF_KEY = { blacksmithing: 'Blacksmithing', tailoring: 'Tailoring', engineering: 'Engineering', enchanting: 'Enchanting', alchemy: 'Alchemy', leatherworking: 'Leatherworking', cooking: 'Cooking' };
+  const coin = c => ((c >= 10000 ? Math.floor(c / 10000) + 'g ' : '') + (c % 10000 >= 100 ? Math.floor(c % 10000 / 100) + 's' : (c < 100 ? c + 'c' : ''))).trim();
+  // The tag of a material and whether you get it yourself (then it isn't bought).
+  function matTag(e, mine) {
+    const g = e.g || {};
+    if (g.smelt) return mine.includes('Mining') ? [t('gp.mat.smeltYou'), true] : [t('gp.mat.smelt')];
+    if ((e.d || []).some(d => d[5] & 2)) return mine.includes('Skinning') ? [t('gp.mat.skinYou'), true] : [t('gp.mat.skin')];
+    if (e.c) return mine.includes(PROF_KEY[e.c[0]]) ? [t('gp.mat.youMake'), true] : [t('gp.mat.prof', { prof: t('pr.lw.prof.' + e.c[0]) })];
+    if (g.de) return mine.includes('Enchanting') ? [t('gp.mat.deYou'), true] : [t('gp.mat.de')];
+    if (g.mined) return mine.includes('Mining') ? [t('gp.mat.minedYou'), true] : [t('gp.mat.mined')];
+    if (e.d && e.d.length) return [t('gp.mat.drop')];
+    if (g.inItem) return [t('gp.mat.inItem')];
+    return [''];
+  }
+  const PRISTINE = [249427, 249428, 249429];
+  function craftMats(st) {
+    const C = window.CRAFT_DATA;
+    const s = st.pick.source || {};
+    if (!C || s.profession === 'Leatherworking') return '';
+    const mats = (C.mats[st.pick.item.id] || []).filter(([m]) => !(C.items[m] || {}).v);
+    if (!mats.length) return '';
+    const mine = UI.store.get('profs', []);
+    const buy = [];
+    const list = mats.map(([m, n]) => {
+      const e = C.items[m] || {};
+      // Forever's Pristine Leather, Hide and Scale: rare, from skinning (named and rare beasts).
+      const [tag, yours] = PRISTINE.includes(m) ? [t('gp.mat.pristine')] : matTag(e, mine);
+      if (!yours) buy.push([m, n]);
+      return n + ' ' + (e.n || '#' + m) + (tag ? ' <span class="dim">(' + tag + ')</span>' : '');
+    }).join(', ');
+    // The cost: only what you don't make or gather yourself.
+    let cost = '';
+    const P = C.prices;
+    if (P && !buy.length) cost = '<span class="lw-cost lw-cheap">' + t('gp.mat.allYours') + '</span>';
+    else if (P) {
+      let total = 0;
+      let missing = 0;
+      buy.forEach(([m, n]) => { if (P.p[m]) total += P.p[m] * n; else missing++; });
+      if (total) {
+        const share = total / (C.gold[Math.min(59, Math.max(1, st.level)) - 1] || 1);
+        const tier = share < 0.25 ? 'cheap' : share < 0.75 ? 'mid' : 'dear';
+        cost = '<span class="lw-cost lw-' + tier + '">' + t('pr.lw.cost.' + tier) + ' · ' +
+          t('pr.lw.cost.line', { cost: coin(total) + (missing ? '+' : ''), pct: Math.round(share * 100), n: st.level }) + '</span>';
+      }
+    }
+    return '<span class="gp-lw">' + t('gp.mat.list', { list }) + cost + '</span>';
   }
 
   // "Wrong piece?": opens the feedback form with this step filled in.
@@ -201,5 +253,5 @@
 
   // The Professions page shows the crafted part of the same path.
   function setFarm(on) { state.farm = !!on; UI.store.set('gpFarm', state.farm); }
-  window.GearPath = { render, compute, sourceText, why, slotName, stepRow, setFarm, farm: () => state.farm };
+  window.GearPath = { render, compute, sourceText, why, slotName, stepRow, craftMats, setFarm, farm: () => state.farm };
 })();

@@ -203,7 +203,7 @@
     return '<div class="gp-step"><span class="gp-lv">' + st.level + '</span><span class="gp-slot">' + GP.slotName(st.pick.slot) + '</span>' +
       '<div class="gp-main">' + UI.itemLink(st.pick.item) + '<span class="wp-sub">' + s.profession + ' · ' + t('pr.plan.skill', { n: (s.learn || {}).learnAt || s.yellow }) +
       (st.pick.access === 'favor' ? ' · ' + t('pr.plan.favorCost', { n: (s.learn || {}).favor || '?' }) : '') + '</span>' +
-      '<span class="gp-why">' + GP.why(st) + '</span></div></div>';
+      '<span class="gp-why">' + GP.why(st) + '</span>' + GP.craftMats(st) + '</div></div>';
   }
 
   function guidesHtml(g) {

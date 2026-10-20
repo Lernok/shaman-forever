@@ -1,14 +1,16 @@
-// Where the reagents of the Leatherworking recipes come from, when they are
-// neither skinned, nor Leatherworking's own, nor sold by a vendor (scales,
+// Where the reagents of crafted gear come from: every reagent of the
+// Leatherworking recipes that isn't skinned or Leatherworking's own (scales,
 // feathers, gems, pearls, elixirs...), for the "Leatherworking while
-// leveling" plan:
+// leveling" plan, and every reagent of the other professions' gear recipes
+// (bars, cloth, gems...), for Equipo › Tu camino:
 //
 // - Made by another profession (data/recipes.json): which, at what skill and
 //   from what (Forever's Sulfuric Acid and Cerulean Dye are alchemy).
 // - Dropped: Wowhead Classic's "Dropped by" tab of each reagent (count / out
 //   of, so the chance per kill), with the creature's levels and zones, and
 //   whether it's elite; only creatures looted often enough.
-// - Gathered: mined from, fished in, found in (clams).
+// - Gathered: mined from, fished in, found in (clams); smelted (bars).
+// - Its name, when the client tables don't have it (the Wowhead page's title).
 //
 // - Quest gold per level, to weigh a price: the experience to level up
 //   (Classic's table) times the share that comes from quests (QUEST_SHARE),
@@ -33,6 +35,8 @@ const http = require('./lib/http');
 const MIN_LOOTS = 50;
 const MIN_CHANCE = 0.02;
 const MAX_DROPS = 80;
+// Skill lines of the professions (Wowhead's spell lists).
+const SKILL_PROF = { 164: 'blacksmithing', 165: 'leatherworking', 197: 'tailoring', 202: 'engineering', 333: 'enchanting', 171: 'alchemy', 185: 'cooking' };
 // Experience to reach the next level, 1-59 (Classic).
 const XP = [400, 900, 1400, 2100, 2800, 3600, 4500, 5400, 6500, 7600, 8800, 10100, 11400, 12900, 14400, 16000, 17700, 19400, 21300, 23200,
   25200, 27300, 29400, 31700, 34000, 36400, 38900, 41400, 44300, 47400, 50800, 54500, 58600, 62800, 67100, 71600, 76100, 80800, 85700, 90700,
@@ -65,26 +69,39 @@ function listview(html, id) {
   const zoneName = {};
   parseCSV(areas).forEach(r => { zoneName[r.ID] = r.AreaName_lang; });
 
-  // Who makes what, outside Leatherworking.
+  // Who makes what (Leatherworking's own count only for the other professions).
   const madeBy = new Map();
   for (const [prof, list] of Object.entries(recipes)) {
-    if (prof === 'leatherworking') continue;
     for (const r of Object.values(list)) if (r.itemId && !madeBy.has(r.itemId)) madeBy.set(r.itemId, { prof, skill: r.skill[0], mats: r.mats || [] });
   }
 
   const own = new Set(SK.recipes.map(r => r.id).concat(SK.skin));
   const wanted = new Set();
   SK.recipes.forEach(r => r.mats.forEach(([m]) => { if (!own.has(m)) wanted.add(m); }));
+  const forLw = new Set(wanted);
+  // The other professions: the reagents of the recipes of the gear the site plans.
+  const crafted = new Map();
+  readJSON('data/gear.json').gear.concat(readJSON('data/weapons.json').weapons).forEach(i => (i.sources || []).forEach(s => {
+    if (s.type !== 'crafted' || s.profession === 'Leatherworking') return;
+    const r = Object.values(recipes[s.profession.toLowerCase()] || {}).find(x => x.itemId === i.id);
+    if (r && r.mats && r.mats.length) crafted.set(i.id, r.mats);
+  }));
+  crafted.forEach(mats => mats.forEach(([m]) => wanted.add(m)));
+  const sparse = await http.get('https://wago.tools/db2/ItemSparse/csv?build=' + build, { cache: 'wago/' + build + '/ItemSparse.csv', valid: t => /^ID,|,ID,/.test(t.slice(0, 2000)) });
+  const nameOf = new Map(parseCSV(sparse).map(r => [Number(r.ID), r.Display_lang]));
 
   const items = {};
   let fetched = 0;
   for (const id of [...wanted].sort((a, b) => a - b)) {
-    const e = { name: SK.names[id] || null };
+    const e = { name: SK.names[id] || nameOf.get(id) || null };
     const made = madeBy.get(id);
     if (made) e.craft = { prof: made.prof, skill: made.skill, mats: made.mats };
     const html = await http.get('https://www.wowhead.com/classic/item=' + id, { cache: 'wowhead-classic/item-' + id + '.html', maxAgeDays: 30 });
     if (html) {
       fetched++;
+      if (!e.name) e.name = ((html.match(/<title>([^<]+?) - Item - /) || [])[1] || '').trim() || null;
+      const icon = (html.match(/"icon":"([a-z0-9_]+)"/) || [])[1];
+      if (icon) e.icon = icon;
       // Sold by a vendor: thread, dye, salt, vials... nothing to look for.
       if (listview(html, 'sold-by').length) { e.vendor = true; items[id] = e; continue; }
       // Dropped, or skinned (turtles give Turtle Scale, deviate beasts Deviate Scale).
@@ -109,6 +126,15 @@ function listview(html, id) {
       if (fished.length) gather.fished = [...new Set(fished)].slice(0, 6);
       const inItem = listview(html, 'contained-in-item').filter(r => r.outof >= MIN_LOOTS).sort((a, b) => b.count / b.outof - a.count / a.outof).map(r => r.name);
       if (inItem.length) gather.inItem = [...new Set(inItem)].slice(0, 4);
+      // Enchanting dust and essences: from disenchanting green gear.
+      if (listview(html, 'disenchanted-from').length) gather.de = 1;
+      // Made by a spell: smelted (Mining) from ore, or another profession's
+      // (essences: Enchanting) when the recipe data doesn't have it.
+      listview(html, 'created-by-spell').forEach(r => {
+        const skill = (r.skill || [])[0];
+        if (skill === 186 && !gather.smelt) gather.smelt = [r.name, r.learnedat || 1];
+        else if (SKILL_PROF[skill] && !e.craft) e.craft = { prof: SKILL_PROF[skill], skill: r.learnedat || 1, mats: r.reagents || [] };
+      });
       if (Object.keys(gather).length) e.gather = gather;
     }
     items[id] = e;
@@ -119,16 +145,18 @@ function listview(html, id) {
     sources: { drops: 'https://www.wowhead.com/classic/item=5784/slimy-murloc-scale#dropped-by', recipes: 'https://classicwowforever.com/professions/' },
     items
   });
-  // The page's copy, beside the skinning data it plans with (data/skinning.json).
-  const page = {};
-  for (const [id, e] of Object.entries(items)) {
-    if (e.vendor) { page[id] = { v: 1 }; continue; }
+  // The page's copy: { v: vendor, c: [profession, skill], d: drops, g: gather, n: name, i: icon }.
+  const compact = (e, named) => {
+    if (e.vendor) return named ? { v: 1, n: e.name } : { v: 1 };
     const o = {};
     if (e.craft) o.c = [e.craft.prof, e.craft.skill];
     if (e.drops) o.d = e.drops.map(d => [d.n, d.l[0], d.l[1], d.p, d.z, (d.elite ? 1 : 0) + (d.skin ? 2 : 0), d.friend || 0]);
     if (e.gather) o.g = e.gather;
-    page[id] = o;
-  }
+    if (named) { o.n = e.name; if (e.icon) o.i = e.icon; }
+    return o;
+  };
+  const page = {};
+  forLw.forEach(id => { if (items[id]) page[id] = compact(items[id]); });
   SK.reagents = page;
   // Quest gold per level (copper), gold[level - 1].
   const table = async name => {
@@ -143,6 +171,16 @@ function listview(html, id) {
   if (prices) SK.prices = { realm: prices.realm, date: prices.date, p: prices.prices };
   SK.sources.reagents = 'https://www.wowhead.com/classic/item=5784/slimy-murloc-scale#dropped-by';
   writeJSON('data/skinning.json', SK);
+  // Every crafting profession's gear (data/crafts.js on the page): each
+  // piece's reagents, where each comes from, prices and quest gold.
+  const all = {};
+  // The ten drops most likely per reagent: enough to say where.
+  Object.entries(items).forEach(([id, e]) => { all[id] = compact(Object.assign({}, e, e.drops ? { drops: e.drops.slice(0, 10) } : {}), true); });
+  writeJSON('data/crafts.json', {
+    _readme: 'Written by scripts/build-reagents.js: reagents of crafted gear (mats[item] = [[reagent, n]]), where each comes from, auction prices and quest gold per level.',
+    sources: { drops: SK.sources.reagents, gold: SK.sources.gold },
+    mats: Object.fromEntries(crafted), items: all, gold: SK.gold, prices: SK.prices || null
+  });
   const n = Object.values(items);
   console.log('Reactivos: ' + n.length + ' (' + fetched + ' con página de Wowhead): ' + n.filter(e => e.drops).length + ' caen de bichos, ' +
     n.filter(e => e.craft).length + ' de otra profesión, ' + n.filter(e => e.gather).length + ' se recolectan, ' + n.filter(e => e.vendor).length + ' de vendedor, ' +

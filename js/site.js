@@ -110,17 +110,21 @@
   // The gear pages read the skinning data only when your path needs it:
   // with Leatherworking (its pieces say how to make them) or farming
   // everything (crafts wait for their materials).
+  const CRAFTING = ['Blacksmithing', 'Leatherworking', 'Tailoring', 'Engineering', 'Enchanting', 'Alchemy'];
   const gearNeeds = () => {
     let lw = false;
     try {
       lw = JSON.parse(localStorage.getItem('shaman.gpFarm') || 'false') === true ||
         (JSON.parse(localStorage.getItem('shaman.profs') || '[]') || []).includes('Leatherworking');
     } catch (e) { /* private mode: without it */ }
-    return ['gear', 'weapons'].concat(lw ? ['skinning'] : []);
+    // Crafted pieces say what their materials cost (any crafting profession).
+    let crafts = false;
+    try { crafts = (JSON.parse(localStorage.getItem('shaman.profs') || '[]') || []).some(p => CRAFTING.includes(p)); } catch (e) { /* without it */ }
+    return ['gear', 'weapons'].concat(lw ? ['skinning'] : [], crafts ? ['crafts'] : []);
   };
   Site.NEEDS = {
     get Inicio() { return gearNeeds(); }, get Guia() { return gearNeeds(); }, get Equipo() { return gearNeeds(); },
-    Profesiones: ['gear', 'weapons', 'professions', 'consumables', 'camp', 'skinning'] };
+    Profesiones: ['gear', 'weapons', 'professions', 'consumables', 'camp', 'skinning', 'crafts'] };
   const opening = location.hash.slice(1).split('/')[0];
   // Site.first: settled once they're in (or failed).
   Site.first = Site.need(Site.NEEDS[Site.SPECS.includes(opening) ? 'Guia' : opening || 'Inicio'] || []).catch(() => {});

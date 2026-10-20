@@ -192,6 +192,11 @@ if (fs.existsSync(path.join(root, 'data/consumables.json'))) {
   write('data/consumables.js', 'CONSUMABLE_DATA', read('data/consumables.json'));
   outputs.push('data/consumables.js');
 }
+// Crafted gear's reagents, their sources and prices (scripts/build-reagents.js).
+if (fs.existsSync(path.join(root, 'data/crafts.json'))) {
+  write('data/crafts.js', 'CRAFT_DATA', read('data/crafts.json'));
+  outputs.push('data/crafts.js');
+}
 // Skinning yields, beasts per zone and Leatherworking recipes (scripts/build-skinning.js).
 if (fs.existsSync(path.join(root, 'data/skinning.json'))) {
   write('data/skinning.js', 'SKINNING_DATA', read('data/skinning.json'));
