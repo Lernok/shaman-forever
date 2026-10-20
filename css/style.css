@@ -1478,4 +1478,16 @@ header.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 
   background: linear-gradient(90deg, var(--earth) 0 25%, var(--fire) 25% 50%, var(--water) 50% 75%, var(--air) 75% 100%); opacity: .85; }
 .spec-summary h2, .home-hero h2, .block-title, .setup-head h2 { font-family: var(--display); letter-spacing: .02em; }
 .setup-head-btns { display: flex; gap: 8px; align-items: flex-start; }
+.home-next .hn-item .item-link img { display: none; }
+
+/* The first visit's three steps. */
+.setup-progress { list-style: none; margin: 0 0 18px; padding: 0; display: flex; gap: 8px; }
+.setup-progress li { flex: 1; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px; background: var(--bg-panel-2); color: var(--text-dim); font-size: 14px; border-bottom: 3px solid var(--border); }
+.setup-progress li.now { color: var(--text); border-bottom-color: var(--accent); }
+.setup-progress li.done { color: var(--text); border-bottom-color: var(--good); }
+.setup-wizard .setup-step h3 { font-family: var(--display); font-size: 20px; margin: 4px 0 14px; }
+.setup-wizard .setup-opt.spec { background: linear-gradient(180deg, color-mix(in srgb, var(--bg-panel-2) 70%, transparent), var(--bg-panel-2) 75%), var(--spec-art, none) center / cover no-repeat; min-height: 150px; }
+.setup-wizard .setup-pairs { margin-bottom: 14px; }
+.setup-wizard .setup-foot { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.setup-wizard .setup-foot .setup-skip { margin-left: auto; }
 
