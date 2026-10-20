@@ -478,14 +478,6 @@
      "skill": 50,
      "level": 0
     },
-    "Light Leather Bracers": {
-     "item": 7281,
-     "cost": 135,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 45,
-     "level": 0
-    },
     "Embossed Leather Pants": {
      "item": 4242,
      "cost": 180,
@@ -494,12 +486,20 @@
      "skill": 50,
      "level": 0
     },
-    "Cured Light Hide": {
-     "item": 4231,
-     "cost": 45,
+    "Light Leather Bracers": {
+     "item": 7281,
+     "cost": 135,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 45,
+     "level": 0
+    },
+    "Camp Tent": {
+     "item": 279978,
+     "cost": 90,
      "prof": "Leatherworking",
      "kind": "used",
-     "skill": 30,
+     "skill": 20,
      "level": 0
     },
     "Apprentice Leatherworking": {
@@ -516,12 +516,12 @@
      "skill": 15,
      "level": 0
     },
-    "Camp Tent": {
-     "item": 279978,
-     "cost": 90,
+    "Cured Light Hide": {
+     "item": 4231,
+     "cost": 45,
      "prof": "Leatherworking",
      "kind": "used",
-     "skill": 20,
+     "skill": 30,
      "level": 0
     },
     "Black Whelp Slippers": {
@@ -537,6 +537,117 @@
   }
  },
  "vendors": {},
- "colors": {},
+ "colors": {
+  "Leatherworking": {
+   "2302": {
+    "trivial": [
+     83,
+     83
+    ]
+   },
+   "2304": {
+    "trivial": [
+     83,
+     83
+    ]
+   },
+   "2318": {
+    "trivial": [
+     83,
+     83
+    ]
+   },
+   "2319": {
+    "easy": [
+     83,
+     83
+    ]
+   },
+   "4231": {
+    "trivial": [
+     83,
+     83
+    ]
+   },
+   "4233": {
+    "optimal": [
+     83,
+     83
+    ]
+   },
+   "4239": {
+    "medium": [
+     83,
+     83
+    ]
+   },
+   "4246": {
+    "optimal": [
+     83,
+     83
+    ]
+   },
+   "5081": {
+    "easy": [
+     83,
+     83
+    ]
+   },
+   "5780": {
+    "optimal": [
+     83,
+     83
+    ]
+   },
+   "5957": {
+    "trivial": [
+     83,
+     83
+    ]
+   },
+   "7276": {
+    "trivial": [
+     83,
+     83
+    ]
+   },
+   "7277": {
+    "trivial": [
+     83,
+     83
+    ]
+   },
+   "252424": {
+    "trivial": [
+     83,
+     83
+    ]
+   },
+   "252426": {
+    "trivial": [
+     83,
+     83
+    ]
+   },
+   "252431": {
+    "optimal": [
+     83,
+     83
+    ]
+   },
+   "277715": {
+    "trivial": [
+     83,
+     83
+    ]
+   },
+   "279978": {
+    "trivial": [
+     83,
+     83
+    ]
+   }
+  }
+ },
  "sources": {}
 }
