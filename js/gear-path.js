@@ -235,6 +235,13 @@
       '<label class="chk" title="' + t('gp.dropsTitle') + '"><input type="checkbox" id="gpDrops"' + (state.drops ? ' checked' : '') + '> ' + t('gp.drops') + '</label>' +
       (profs.length ? '<label class="chk" title="' + t('gp.farmTitle') + '"><input type="checkbox" id="gpFarm"' + (state.farm ? ' checked' : '') + '> ' + t('gp.farm') + '</label>' : '') +
       '</div></details></div>';
+    // Picked professions not learned yet: say so here too, without going home.
+    const pend = picked
+      .map(p => Object.assign({ prof: p }, window.Route.profFrom(p, Site.faction, race()))).filter(x => x.level > lvl);
+    if (pend.length) {
+      html += '<div class="gp-learn"><span>' + t('gp.learn', { list: pend.map(x => x.prof + ' (' + (x.zone || '?') + ')').join(', '), n: Math.min(...pend.map(x => x.level)) }) + '</span>' +
+        pend.map(x => '<button class="btn" data-learned="' + x.prof + '">' + t('home.learned', { prof: x.prof }) + '</button>').join('') + '</div>';
+    }
     html += tabsHtml;
 
     // What you'd have on now.
@@ -299,6 +306,12 @@
       onChange();
     };
     container.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
+    container.querySelectorAll('[data-learned]').forEach(b => b.addEventListener('click', () => {
+      const all = UI.store.get('learnedProfs', {});
+      all[b.dataset.learned] = state.level;
+      UI.store.set('learnedProfs', all);
+      onChange();
+    }));
     const drops = container.querySelector('#gpDrops');
     if (drops) drops.addEventListener('change', e => { state.drops = e.target.checked; UI.store.set('gpDrops', state.drops); onChange(); });
     const farm = container.querySelector('#gpFarm');

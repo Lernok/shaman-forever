@@ -259,6 +259,14 @@ if os.getenv("SCAN") then
   UnitGUID = function(u) return u == "target" and "Creature-0-1-1-1-3110-0001" or "Creature-0-1-1-1-3365-00001" end
   UnitName = function(u) return u == "target" and "Dreadmaw Crocolisk" or "Karolek" end
   ev:fire("LOOT_OPENED")
+  -- Skinning a level-5 boar: 2 Ruined Leather Scraps.
+  function GetNumLootItems() return 1 end
+  function GetLootSlotLink() return "|Hitem:2934::::|h[Ruined Leather Scraps]|h" end
+  function GetLootSlotInfo() return 0, "Ruined Leather Scraps", 2 end
+  function UnitLevel(u) return u == "target" and 5 or level end
+  ev:fire("LOOT_OPENED")
+  local sk = (ShamanForeverDB.scan.skins or {})[5]
+  print("pieles nv 5:", sk and sk.n, sk and sk.items[2934])
   GetTradeSkillLine = nil -- Forever: the skill comes from GetProfessionInfo
   ev:fire("TRADE_SKILL_SHOW")
   local function show(t, pad)

@@ -148,6 +148,8 @@
     if (b.hasAttribute('data-skip')) { count('explorar'); UI.store.set('setupDone', true); close(); Site.setMany({}); return; }
     if (b.hasAttribute('data-done')) {
       count('listo: ' + draft.spec);
+      const before = JSON.stringify([Site.race, Site.faction, UI.store.get('profs', [])]);
+      if (before !== JSON.stringify([draft.race, draft.faction, draft.profs])) UI.store.set('learnedProfs', {});
       UI.store.set('profs', draft.profs);
       UI.store.set('level', draft.level);
       UI.store.set('setupDone', true);

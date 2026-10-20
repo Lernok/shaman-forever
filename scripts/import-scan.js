@@ -47,6 +47,7 @@ merged.recipes = merged.recipes || {};
 merged.bags = merged.bags || {};
 merged.drops = merged.drops || {};
 merged.goods = merged.goods || {};
+merged.skins = merged.skins || {};
 // Lua arrays come as {"1": a, "2": b}.
 const arr = o => (o && typeof o === 'object' ? Object.keys(o).sort((a, b) => a - b).map(k => o[k]) : o);
 for (const f of files) {
@@ -70,6 +71,11 @@ for (const f of files) {
   if (scan.fields) merged.fields = scan.fields;
   // Recipes seen in your bags (first time), and looted (from whom, how many).
   for (const [item, e] of Object.entries(scan.bags || {})) if (!merged.bags[item]) merged.bags[item] = e;
+  // Skins by beast level (the save keeps running totals per account: the newest file wins).
+  for (const [lvl, e] of Object.entries(scan.skins || {})) {
+    const m = merged.skins[lvl];
+    if (!m || (e.n || 0) >= (m.n || 0)) merged.skins[lvl] = { n: e.n, items: e.items };
+  }
   // Crafting materials vendors sell (the newest visit to each NPC wins).
   for (const [id, v] of Object.entries(scan.goods || {})) if (!merged.goods[id] || (merged.goods[id].t || 0) <= (v.t || 0)) merged.goods[id] = v;
   for (const [item, d] of Object.entries(scan.drops || {})) {
@@ -169,6 +175,17 @@ for (const [id, v] of Object.entries(merged.goods)) {
     const kept = scarce[item].price;
     console.log('  ' + e.name + ' #' + item + ' · ' + coin(e.price || 0) + (e.stock ? ' · stock ' + e.stock : '') +
       (kept !== e.price ? '   <-- data/scarce.json dice ' + (kept == null ? 'sin precio' : coin(kept)) : ''));
+  });
+}
+// What a skin gives in Forever, by beast level, against the site's (Classic's) yields.
+if (Object.keys(merged.skins).length) {
+  const SKD = JSON.parse(fs.readFileSync(path.join(root, 'data', 'skinning.json'), 'utf8'));
+  const nm = id => SKD.names[id] || '#' + id;
+  console.log('\nPIELES (lo que deja cada piel, por nivel del bicho; entre paréntesis, lo que usa el sitio)');
+  Object.entries(merged.skins).sort((a, b) => a[0] - b[0]).forEach(([lvl, e]) => {
+    const site = SKD.yields[Number(lvl) - 1] || {};
+    const ids = [...new Set(Object.keys(e.items).concat(Object.keys(site)))];
+    console.log('  nv ' + String(lvl).padStart(2) + ' · ' + e.n + ' pieles: ' + ids.map(id => nm(id) + ' ' + ((e.items[id] || 0) / e.n).toFixed(2) + ' (' + (site[id] || 0).toFixed(2) + ')').join(', '));
   });
 }
 if (merged.fields) console.log('\nCampos de una receta: ' + merged.fields);

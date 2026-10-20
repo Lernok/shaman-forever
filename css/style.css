@@ -1580,4 +1580,6 @@ header.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 
 /* The settings menu opens over the tabs below the head. */
 .gp-head { position: relative; z-index: 40; }
 .gp-settings[open] > div { z-index: 50; }
+.gp-learn { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: color-mix(in srgb, var(--good) 8%, var(--bg-panel)); border: 1px solid color-mix(in srgb, var(--good) 35%, var(--border)); border-radius: 12px; padding: 10px 14px; margin: 0 0 14px; font-size: 14px; }
+.gp-learn .btn { border-color: color-mix(in srgb, var(--good) 55%, var(--border)); color: var(--good); }
 
