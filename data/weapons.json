@@ -26419,41 +26419,6 @@
    ]
   },
   {
-   "id": 17055,
-   "name": "Changuk Smasher",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 45,
-   "obtain": 45,
-   "ilvl": 50,
-   "bind": "equip",
-   "dps": 33.42,
-   "speed": 1.9,
-   "dmgMin": 44,
-   "dmgMax": 83,
-   "stats": {
-    "stamina": 6,
-    "intellect": 6,
-    "spirit": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_hammer_17",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 45,
-     "rec": 45
-    }
-   ]
-  },
-  {
    "id": 9478,
    "name": "Ripsaw",
    "kind": "1H Axe",
@@ -27199,6 +27164,41 @@
       "steps": 4
      },
      "asap": 45,
+     "rec": 47
+    }
+   ]
+  },
+  {
+   "id": 17055,
+   "name": "Changuk Smasher",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 47,
+   "obtain": 47,
+   "ilvl": 52,
+   "bind": "equip",
+   "dps": 34.7,
+   "speed": 1.9,
+   "dmgMin": 46,
+   "dmgMax": 86,
+   "stats": {
+    "stamina": 6,
+    "intellect": 6,
+    "spirit": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_hammer_17",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 47,
      "rec": 47
     }
    ]

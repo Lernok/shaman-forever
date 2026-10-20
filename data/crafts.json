@@ -17067,11 +17067,9 @@
    "i": "spell_nature_web"
   },
   "14256": {
-   "v": 1,
    "n": "Felcloth"
   },
   "14341": {
-   "v": 1,
    "n": "Rune Thread"
   },
   "14342": {
@@ -17079,633 +17077,109 @@
     "tailoring",
     230
    ],
-   "n": "Mooncloth",
-   "i": "inv_fabric_moonrag_01"
+   "n": "Mooncloth"
   },
   "14343": {
-   "g": {
-    "de": 1
-   },
-   "n": "Small Brilliant Shard",
-   "i": "inv_enchant_shardbrilliantsmall"
+   "n": "Small Brilliant Shard"
   },
   "14344": {
-   "g": {
-    "inItem": [
-     "Supply Bag",
-     "Damaged Undermine Supply Crate",
-     "Wartorn Undermine Supply Crate"
-    ],
-    "de": 1
-   },
-   "n": "Large Brilliant Shard",
-   "i": "inv_enchant_shardbrilliantlarge"
+   "n": "Large Brilliant Shard"
   },
   "15409": {
-   "n": "Refined Deeprock Salt",
-   "i": "inv_egg_05"
+   "n": "Refined Deeprock Salt"
   },
   "15412": {
-   "d": [
-    [
-     "Morphaz",
-     52,
-     52,
-     0.994,
-     [
-      "The Temple of Atal'Hakkar"
-     ],
-     3,
-     0
-    ],
-    [
-     "Dreamscythe",
-     53,
-     53,
-     0.994,
-     [
-      "The Temple of Atal'Hakkar"
-     ],
-     3,
-     0
-    ],
-    [
-     "Hazzas",
-     53,
-     53,
-     0.992,
-     [
-      "The Temple of Atal'Hakkar"
-     ],
-     3,
-     0
-    ],
-    [
-     "Weaver",
-     51,
-     51,
-     0.99,
-     [
-      "The Temple of Atal'Hakkar"
-     ],
-     3,
-     0
-    ],
-    [
-     "Gyth",
-     62,
-     62,
-     0.982,
-     [
-      "Blackrock Spire"
-     ],
-     3,
-     0
-    ],
-    [
-     "Shade of Eranikus",
-     55,
-     55,
-     0.326,
-     [
-      "The Temple of Atal'Hakkar"
-     ],
-     3,
-     0
-    ],
-    [
-     "Wyrmkin Starhunter",
-     51,
-     51,
-     0.322,
-     [
-      "The Hinterlands"
-     ],
-     3,
-     0
-    ],
-    [
-     "Nightmare Suppressor",
-     49,
-     50,
-     0.262,
-     [
-      "The Temple of Atal'Hakkar"
-     ],
-     3,
-     0
-    ],
-    [
-     "Nightmare Wanderer",
-     51,
-     51,
-     0.254,
-     [
-      "The Temple of Atal'Hakkar"
-     ],
-     3,
-     0
-    ],
-    [
-     "Nightmare Scalebane",
-     50,
-     51,
-     0.251,
-     [
-      "The Temple of Atal'Hakkar"
-     ],
-     3,
-     0
-    ]
-   ],
-   "g": {
-    "inItem": [
-     "Otherworldly Treasure"
-    ]
-   },
-   "n": "Green Dragonscale",
-   "i": "inv_misc_monsterscales_11"
+   "n": "Green Dragonscale"
   },
   "15415": {
-   "d": [
-    [
-     "Gyth",
-     62,
-     62,
-     0.982,
-     [
-      "Blackrock Spire"
-     ],
-     3,
-     0
-    ],
-    [
-     "General Colbatann",
-     56,
-     57,
-     0.276,
-     [
-      "Winterspring"
-     ],
-     3,
-     0
-    ],
-    [
-     "Spellmaw",
-     56,
-     56,
-     0.268,
-     [
-      "Winterspring"
-     ],
-     3,
-     0
-    ],
-    [
-     "Manaclaw",
-     58,
-     58,
-     0.261,
-     [
-      "Winterspring"
-     ],
-     3,
-     0
-    ],
-    [
-     "Cobalt Mageweaver",
-     57,
-     58,
-     0.251,
-     [
-      "Winterspring"
-     ],
-     3,
-     0
-    ],
-    [
-     "Cobalt Scalebane",
-     56,
-     57,
-     0.248,
-     [
-      "Winterspring"
-     ],
-     3,
-     0
-    ],
-    [
-     "Draconic Magelord",
-     53,
-     54,
-     0.171,
-     [
-      "Azshara"
-     ],
-     3,
-     0
-    ],
-    [
-     "Draconic Mageweaver",
-     51,
-     52,
-     0.158,
-     [
-      "Azshara"
-     ],
-     3,
-     0
-    ],
-    [
-     "Cobalt Wyrmkin",
-     55,
-     56,
-     0.155,
-     [
-      "Winterspring"
-     ],
-     3,
-     0
-    ],
-    [
-     "Blue Dragonspawn",
-     50,
-     51,
-     0.152,
-     [
-      "Azshara"
-     ],
-     3,
-     0
-    ]
-   ],
-   "g": {
-    "inItem": [
-     "Otherworldly Treasure"
-    ]
-   },
-   "n": "Blue Dragonscale",
-   "i": "inv_misc_monsterscales_09"
+   "n": "Blue Dragonscale"
   },
   "15417": {
-   "d": [
-    [
-     "Devilsaur",
-     54,
-     55,
-     1,
-     [
-      "Un'Goro Crater"
-     ],
-     3,
-     0
-    ],
-    [
-     "Tyrant Devilsaur",
-     54,
-     55,
-     1,
-     [
-      "Un'Goro Crater"
-     ],
-     3,
-     0
-    ],
-    [
-     "Ironhide Devilsaur",
-     54,
-     56,
-     1,
-     [
-      "Un'Goro Crater"
-     ],
-     3,
-     0
-    ]
-   ],
-   "g": {
-    "inItem": [
-     "Damaged Undermine Supply Crate",
-     "Wartorn Undermine Supply Crate"
-    ]
-   },
-   "n": "Devilsaur Leather",
-   "i": "inv_misc_pelt_03"
+   "n": "Devilsaur Leather"
   },
   "15994": {
    "c": [
     "engineering",
     260
    ],
-   "n": "Thorium Widget",
-   "i": "inv_gizmo_04"
+   "n": "Thorium Widget"
   },
   "16000": {
    "c": [
     "engineering",
     275
    ],
-   "n": "Thorium Tube",
-   "i": "inv_gizmo_pipe_04"
+   "n": "Thorium Tube"
   },
   "16006": {
    "c": [
     "engineering",
     285
    ],
-   "n": "Delicate Arcanite Converter",
-   "i": "inv_gizmo_07"
+   "n": "Delicate Arcanite Converter"
   },
   "16203": {
-   "g": {
-    "inItem": [
-     "Wartorn Undermine Supply Crate",
-     "Damaged Undermine Supply Crate",
-     "Supply Bag"
-    ],
-    "de": 1
-   },
-   "n": "Greater Eternal Essence",
-   "i": "inv_enchant_essenceeternallarge"
+   "n": "Greater Eternal Essence"
   },
   "16204": {
-   "g": {
-    "inItem": [
-     "Decoded True Believer Clippings"
-    ],
-    "de": 1
-   },
-   "n": "Illusion Dust",
-   "i": "inv_enchant_dustillusion"
+   "n": "Illusion Dust"
   },
   "17010": {
-   "v": 1,
    "n": "Fiery Core"
   },
   "17011": {
-   "v": 1,
    "n": "Lava Core"
   },
   "17203": {
-   "n": "Sulfuron Ingot",
-   "i": "inv_hammer_unique_sulfuras"
+   "n": "Sulfuron Ingot"
   },
   "18631": {
    "c": [
     "engineering",
     260
    ],
-   "n": "Truesilver Transformer",
-   "i": "inv_staff_18"
+   "n": "Truesilver Transformer"
   },
   "18984": {
    "c": [
     "engineering",
     285
    ],
-   "n": "Dimensional Ripper - Everlook",
-   "i": "inv_helmet_47"
+   "n": "Dimensional Ripper - Everlook"
   },
   "18986": {
    "c": [
     "engineering",
     285
    ],
-   "n": "Ultrasafe Transporter: Gadgetzan",
-   "i": "inv_helmet_47"
+   "n": "Ultrasafe Transporter: Gadgetzan"
   },
   "19726": {
-   "d": [
-    [
-     "Gurubashi Headhunter",
-     60,
-     60,
-     0.026,
-     [
-      "Zul'Gurub"
-     ],
-     1,
-     0
-    ],
-    [
-     "Gurubashi Blood Drinker",
-     60,
-     60,
-     0.026,
-     [
-      "Zul'Gurub"
-     ],
-     1,
-     0
-    ],
-    [
-     "Atal'ai Mistress",
-     60,
-     60,
-     0.026,
-     [
-      "Zul'Gurub"
-     ],
-     1,
-     0
-    ],
-    [
-     "Hakkari Shadow Hunter",
-     61,
-     61,
-     0.024,
-     [
-      "Zul'Gurub"
-     ],
-     1,
-     0
-    ]
-   ],
-   "n": "Bloodvine",
-   "i": "inv_fabric_moonrag_01"
+   "n": "Bloodvine"
   },
   "19774": {
-   "g": {
-    "mined": [
-     "Hakkari Thorium Vein"
-    ]
-   },
-   "n": "Souldarite",
-   "i": "inv_misc_gem_01"
+   "n": "Souldarite"
   },
   "20520": {
-   "d": [
-    [
-     "Scholomance Necromancer",
-     58,
-     59,
-     0.394,
-     [
-      "Scholomance"
-     ],
-     1,
-     0
-    ],
-    [
-     "Scholomance Dark Summoner",
-     58,
-     59,
-     0.339,
-     [
-      "Scholomance"
-     ],
-     1,
-     0
-    ],
-    [
-     "Tortured Student",
-     59,
-     61,
-     0.151,
-     [
-      "Karazhan Crypts"
-     ],
-     1,
-     0
-    ],
-    [
-     "Lost Neophyte",
-     61,
-     62,
-     0.135,
-     [
-      "Karazhan Crypts"
-     ],
-     1,
-     0
-    ],
-    [
-     "Karazhan Shadowcaster",
-     59,
-     61,
-     0.13,
-     [
-      "Karazhan Crypts"
-     ],
-     1,
-     0
-    ],
-    [
-     "Failed Novice",
-     60,
-     62,
-     0.13,
-     [
-      "Karazhan Crypts"
-     ],
-     0,
-     0
-    ],
-    [
-     "Lady Illucia Barov",
-     60,
-     60,
-     0.129,
-     [
-      "Scholomance"
-     ],
-     1,
-     0
-    ],
-    [
-     "Lost Necromancer",
-     60,
-     61,
-     0.128,
-     [
-      "Karazhan Crypts"
-     ],
-     1,
-     0
-    ],
-    [
-     "Unrepentant Conjuror",
-     58,
-     60,
-     0.126,
-     [
-      "Karazhan Crypts"
-     ],
-     1,
-     0
-    ],
-    [
-     "The Ravenian",
-     60,
-     60,
-     0.124,
-     [
-      "Scholomance"
-     ],
-     1,
-     0
-    ]
-   ],
-   "g": {
-    "inItem": [
-     "Raid Consumables",
-     "Otherworldly Treasure",
-     "Wartorn Undermine Supply Crate",
-     "Damaged Undermine Supply Crate"
-    ]
-   },
-   "n": "Dark Rune",
-   "i": "inv_misc_rune_04"
+   "n": "Dark Rune"
   },
   "20725": {
-   "g": {
-    "inItem": [
-     "Supply Bag"
-    ],
-    "de": 1
-   },
-   "n": "Nexus Crystal",
-   "i": "inv_shoulder_24"
+   "n": "Nexus Crystal"
   },
   "22202": {
-   "g": {
-    "mined": [
-     "Small Obsidian Chunk",
-     "Large Obsidian Chunk"
-    ],
-    "inItem": [
-     "Damaged Undermine Supply Crate"
-    ]
-   },
-   "n": "Small Obsidian Shard",
-   "i": "inv_misc_stonetablet_01"
+   "n": "Small Obsidian Shard"
   },
   "22203": {
-   "g": {
-    "mined": [
-     "Small Obsidian Chunk",
-     "Large Obsidian Chunk"
-    ],
-    "inItem": [
-     "Damaged Undermine Supply Crate",
-     "Supply Bag",
-     "Wartorn Undermine Supply Crate"
-    ]
-   },
-   "n": "Large Obsidian Shard",
-   "i": "inv_stone_15"
+   "n": "Large Obsidian Shard"
   },
   "22682": {
-   "n": "Frozen Rune",
-   "i": "inv_misc_rune_09"
+   "n": "Frozen Rune"
   },
   "238787": {
-   "n": "Schematic: Tinker: Nitro Boosts",
-   "i": "inv_scroll_06"
+   "n": null
   },
   "238788": {
-   "n": "Schematic: Tinker: Magnetic Displacement",
-   "i": "inv_scroll_06"
+   "n": null
   },
   "248824": {
    "n": "Fel Hide"
