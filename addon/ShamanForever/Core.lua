@@ -2743,22 +2743,34 @@ local function craftReview(list)
   for slot, e in pairs(short) do if yes[slot] or soon[slot] then short[slot] = nil; no = no + 1 end end
   local function list(group, line, order)
     local out = {}
-    for _, e in pairs(group) do out[#out + 1] = { v = order(e), text = e.name .. " — " .. line(e) } end
+    for _, e in pairs(group) do
+      out[#out + 1] = { v = order(e), name = e.name,
+        text = "|cffffffff" .. e.name .. "|r  |cffaaaaaa" .. slotName(e.slot) .. "|r\n     " .. line(e) }
+    end
     table.sort(out, function(a, b) return a.v < b.v end)
     return out
   end
-  local function untilText(e) return e.last and string.format(L().craftUntil, e.last.l, Api.itemName(e.last.i) or "?") or L().craftUntilLong end
-  -- At a trainer: the skill it asks when you don't have it yet, and its price.
-  local function offerText(e)
-    local t = ""
-    if e.need and e.have and e.need > e.have then t = t .. " · |cffff7f3f" .. string.format(L().offerSkill, e.need, e.have) .. "|r" end
-    if e.price and e.price > 0 then t = t .. " · " .. money(e.price) end
-    return t
+  -- How much better: "+25%", "x3" (twice or more), or new for an empty slot.
+  local function better(e)
+    local g = gain(e.id)
+    if not g then return nil end
+    if g.cur <= 0 then return "|cff40ff40" .. L().craftEmpty .. "|r" end
+    local r = g.v / g.cur
+    return "|cff40ff40" .. (r >= 2 and ("x" .. math.floor(r)) or ("+" .. math.floor((r - 1) * 100 + 0.5) .. "%")) .. "|r"
   end
-  local Y = list(yes, function(e) local g = gain(e.id) return (g and gainText(g) .. " · " or "") .. untilText(e) .. (e.up and (" · " .. L().craftSkillUp) or "") .. offerText(e) end,
+  local function untilText(e) return e.last and string.format(L().craftUntilShort, e.last.l) or L().craftUntilLong end
+  -- At a trainer: the skill it asks when you don't have it yet, and its price.
+  local function offerText(e, parts)
+    local t = {}
+    for i = 1, 3 do if parts[i] then t[#t + 1] = parts[i] end end
+    if e.need and e.have and e.need > e.have then t[#t + 1] = "|cffff9933" .. string.format(L().offerSkill, e.need, e.have) .. "|r" end
+    if e.price and e.price > 0 then t[#t + 1] = money(e.price) end
+    return table.concat(t, " · ")
+  end
+  local Y = list(yes, function(e) return offerText(e, { better(e), untilText(e), e.up and L().craftSkillUp or nil }) end,
     function(e) return -e.v end)
-  local S = list(soon, function(e) return string.format(L().craftFrom, D.items[e.id].r) .. " · " .. untilText(e) .. offerText(e) end, function(e) return D.items[e.id].r end)
-  local N = list(short, function(e) return string.format(L().craftShortWhy, e.last.l, Api.itemName(e.last.i) or "?") .. offerText(e) end, function(e) return e.last.l end)
+  local S = list(soon, function(e) return offerText(e, { string.format(L().craftFrom, D.items[e.id].r), untilText(e) }) end, function(e) return D.items[e.id].r end)
+  local N = list(short, function(e) return offerText(e, { string.format(L().craftShortWhy, e.last.l, Api.itemName(e.last.i) or "?") }) end, function(e) return e.last.l end)
   while #N > SHORT_MAX do table.remove(N); no = no + 1 end
   return Y, S, N, no
 end
@@ -2769,7 +2781,8 @@ function paintCrafts()
   local function group(head, list)
     if #list == 0 then return end
     lines[#lines + 1] = "|cffffd100" .. string.format(head, #list) .. "|r"
-    for _, e in ipairs(list) do lines[#lines + 1] = "· " .. e.text end
+    for _, e in ipairs(list) do lines[#lines + 1] = e.text end
+    lines[#lines + 1] = " "
   end
   group(L().craftYes, yes)
   group(L().craftSoon, soon)
@@ -2777,7 +2790,8 @@ function paintCrafts()
   if no > 0 then lines[#lines + 1] = "|cff999999" .. string.format(L().craftNo, no) .. "|r" end
   if #yes + #soon + #short == 0 then lines[#lines + 1] = f.offer and L().offerNone or L().craftNone end
   f.text:SetText(table.concat(lines, "\n"))
-  f:SetHeight(math.max(90, (f.text:GetStringHeight() or 60) + 64))
+  -- The note goes under the list, never over it.
+  f:SetHeight(math.max(90, (f.text:GetStringHeight() or 60) + (f.note:GetStringHeight() or 24) + 52))
   return yes, soon, short, no
 end
 -- offer: a trainer's recipes you don't know (nil: the profession window's).
@@ -2790,20 +2804,24 @@ function showCraftPanel(offer)
   if not craftPanel then
     local f = CreateFrame("Frame", "ShamanForeverCrafts", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
     craftPanel = f
-    f:SetWidth(320)
+    f:SetWidth(340)
     f:SetFrameStrata("HIGH")
     if f.SetBackdrop then
       f:SetBackdrop({ bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background", edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
         tile = true, tileSize = 16, edgeSize = 14, insets = { left = 4, right = 4, top = 4, bottom = 4 } })
+      if f.SetBackdropColor then f:SetBackdropColor(0, 0, 0, 0.92) end
     end
     f.title = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     f.title:SetPoint("TOPLEFT", 12, -10)
-    f.text = f:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    f.text:SetPoint("TOPLEFT", 12, -30)
+    f.title:SetPoint("RIGHT", -12, 0)
+    f.title:SetJustifyH("LEFT")
+    f.text = f:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    f.text:SetPoint("TOPLEFT", 12, -32)
     f.text:SetPoint("RIGHT", -12, 0)
     f.text:SetJustifyH("LEFT")
+    f.text:SetSpacing(2)
     f.note = f:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
-    f.note:SetPoint("BOTTOMLEFT", 12, 10)
+    f.note:SetPoint("TOPLEFT", f.text, "BOTTOMLEFT", 0, -6)
     f.note:SetPoint("RIGHT", -12, 0)
     f.note:SetJustifyH("LEFT")
   end
@@ -2819,7 +2837,7 @@ function showCraftPanel(offer)
   f.note:SetText(offer and L().offerNote or L().craftNote)
   local yes, soon, short, no = paintCrafts()
   f:Show()
-  local names = function(list) local t = {} for _, e in ipairs(list) do t[#t + 1] = (e.text:match("^(.-) —") or e.text) end return table.concat(t, ", ") end
+  local names = function(list) local t = {} for _, e in ipairs(list) do t[#t + 1] = e.name or "?" end return table.concat(t, ", ") end
   log(offer and "offer" or "crafts", "yes: " .. names(yes) .. " · soon: " .. names(soon) .. " · short: " .. names(short) .. " · no " .. no)
 end
 
