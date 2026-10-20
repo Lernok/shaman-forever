@@ -215,7 +215,7 @@ if os.getenv("SCAN") then
   local function visible() local out = {} for _, s in ipairs(services) do if s[3] == "header" or filter[s[3]] then out[#out + 1] = s end end return out end
   function IsTradeskillTrainer() return true end
   function GetTrainerServiceTypeFilter(f) return filter[f] end
-  function SetTrainerServiceTypeFilter(f, on) filter[f] = on == 1 end
+  function SetTrainerServiceTypeFilter(f, on) assert(type(on) == "boolean", "Missing on/off parameter") filter[f] = on end
   function GetNumTrainerServices() return #visible() end
   function GetTrainerServiceInfo(i) local s = visible()[i] return s[1], s[2], s[3] end
   function GetTrainerServiceItemLink(i) return "|Hitem:" .. visible()[i][4] .. ":0|h[x]|h" end

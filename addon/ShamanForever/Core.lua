@@ -1874,11 +1874,17 @@ local function scanTrainer()
   if not (IsTradeskillTrainer and IsTradeskillTrainer() and GetNumTrainerServices) then return end
   local id, info = npcHere()
   if not id then return end
+  -- Forever's client takes true/false; older ones 1/0. If neither works,
+  -- what the filters show is scanned.
+  local function setFilter(f, on)
+    if not pcall(SetTrainerServiceTypeFilter, f, on) then pcall(SetTrainerServiceTypeFilter, f, on and 1 or 0) end
+  end
   local filters = {}
   if GetTrainerServiceTypeFilter and SetTrainerServiceTypeFilter then
     for _, f in ipairs({ "available", "unavailable", "used" }) do
-      filters[f] = GetTrainerServiceTypeFilter(f)
-      if not filters[f] then SetTrainerServiceTypeFilter(f, 1) end
+      local ok, on = pcall(GetTrainerServiceTypeFilter, f)
+      filters[f] = ok and on and on ~= 0
+      if not filters[f] then setFilter(f, true) end
     end
   end
   local list = {}
@@ -1894,7 +1900,7 @@ local function scanTrainer()
     end
   end
   for f, on in pairs(filters) do
-    if not on then SetTrainerServiceTypeFilter(f, 0) end
+    if not on then setFilter(f, false) end
   end
   scanStore("trainers", id, info, list)
 end
