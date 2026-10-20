@@ -1,4 +1,5 @@
-// Home: pick a spec, launch countdown, shortcuts to every page, latest news.
+// Home. Before the setup: what the site is, the specs, every page, latest
+// news. After it: what to do now (your next step and a line per area).
 (function () {
   const I18N = window.I18N;
   const Site = window.Site;
@@ -30,130 +31,154 @@
     return html;
   }
 
-  // ---------- after the setup: your plan for the level you're at ----------
-  // Not a menu: what to do now (gear worth getting, talent points, crafts),
-  // each block with a way into its page. Players asked for guidance that
-  // starts where they are and suggests rather than dictates.
+  // ---------- after the setup: what to do now ----------
+  // One question answered: "what do I do now?". The next step (the biggest
+  // upgrade around your level, else the talent that's due), then a line each
+  // for gear, talents and your profession; the details live in their pages
+  // (show the essential, the rest one click away).
   const level = () => Math.min(60, Math.max(1, Number(UI.store.get('level', 1)) || 1));
   const CRAFTING = ['Blacksmithing', 'Leatherworking', 'Tailoring', 'Engineering', 'Enchanting', 'Alchemy'];
   let planSteps = new Map(); // item id -> step, for the tooltips
 
-  // Gear steps of your path around your level: the few worth the trip.
   // Gain = how much better than what it replaces, times how long it lasts.
-  function gearNow(steps, lvl) {
-    const gain = st => (st.replaces ? st.pick.value / st.replaces.value - 1 : 1) * st.weight;
-    let near = steps.filter(st => st.level >= lvl - 2 && st.level <= lvl + 5 && st.until > lvl);
-    if (!near.length) near = steps.filter(st => st.level > lvl).sort((a, b) => a.level - b.level).slice(0, 2);
-    return near.sort((a, b) => gain(b) - gain(a)).slice(0, 3).sort((a, b) => a.level - b.level);
-  }
+  const gainOf = st => (st.replaces ? st.pick.value / st.replaces.value - 1 : 1) * st.weight;
+  // Pieces you said you have ("Ya la tengo"): the next step moves on.
+  const got = () => new Set(UI.store.get('gotItems', []));
 
-  function planBlock(n, title, body, href, more) {
-    return '<section class="plan-block"><h4><span class="setup-n">' + n + '</span>' + title + '</h4>' + body +
-      (href ? '<a class="plan-more" href="' + href + '">' + more + ' →</a>' : '') + '</section>';
-  }
-
-  function gearBlock(plan, lvl) {
-    const GP = window.GearPath;
+  function allSteps(plan) {
     const steps = [];
     Object.values(plan.slots).forEach(p => p.steps.forEach(st => steps.push(st)));
-    const picks = gearNow(steps, lvl);
-    picks.forEach(st => planSteps.set(String(st.pick.item.id), st));
-    const race = Site.race === 'any' ? null : Site.race;
-    const zones = [...new Set(window.Route.brackets(Site.faction, race).filter(b => b.from <= lvl + 2 && b.to >= lvl).flatMap(b => b.zones))];
-    const body = (zones.length ? '<p class="plan-zones">' + t('home.plan.zones', { list: zones.join(', ') }) + '</p>' : '') +
-      (picks.length ? '<p class="note-text dim">' + t('home.plan.gearNote') + '</p>' + picks.map(st => GP.stepRow(st, st.level < lvl ? 'gp-done' : '')).join('')
-        : '<p class="note-text">' + t('home.plan.gearNone') + '</p>');
-    return planBlock(1, t('home.plan.gear', { n: lvl }), body, '#Equipo/camino', t('home.plan.gearMore'));
+    return steps;
   }
 
-  function talentBlock(lvl) {
+  // The biggest upgrade you can get now or within two levels, not had yet.
+  function nextStep(steps, lvl) {
+    const have = got();
+    return steps.filter(st => st.level <= lvl + 2 && st.until > lvl && !have.has(st.pick.item.id))
+      .sort((a, b) => gainOf(b) - gainOf(a))[0] || null;
+  }
+
+  function talentNow(lvl) {
     const build = I18N.localize(window.BUILD_DATA || []).filter(b => b.spec === Site.spec && b.order).sort((a, b) => b.level - a.level)[0];
-    if (!build) return '';
+    if (!build) return null;
     const trees = window.SHAMAN_DATA.talents.trees;
-    const row = ([from, to, treeName, talent, rank], tag) => {
+    const at = row => {
+      if (!row) return null;
+      const [from, to, treeName, talent, rank] = row;
       const tal = trees.find(x => x.name === treeName).talents.find(x => x.name === talent);
-      return '<div class="plan-row"><span class="plan-tag">' + tag + ' · ' + t('calc.lv') + ' ' + (from === to ? from : from + '–' + to) + '</span>' +
-        '<span class="plan-tal"><img src="' + smallIcon(tal.icon) + '" alt=""><b>' + talent + '</b> <span class="dim">' + rank + '/' + tal.max + '</span></span></div>';
+      return { from, to, talent, rank, max: tal.max, icon: tal.icon };
     };
-    let body;
-    if (lvl < 10) body = '<p class="note-text">' + t('home.plan.talentsAt10') + '</p>' + row(build.order[0], t('home.plan.first'));
-    else {
-      const now = build.order.find(([from, to]) => from <= lvl && lvl <= to);
-      const next = build.order.find(([from]) => from > lvl);
-      body = (now ? row(now, t('home.plan.now')) : '') + (next ? row(next, t('home.plan.next')) : '') +
-        (!now && !next ? '<p class="note-text">' + t('home.plan.talentsDone') + '</p>' : '');
-    }
-    return planBlock(2, t('home.plan.talents'), '<p class="note-text dim">' + t('home.plan.talentsNote', { name: build.name }) + '</p>' + body,
-      window.Calculator.linkFor(build), t('home.plan.talentsMore'));
+    return {
+      build,
+      now: at(lvl < 10 ? build.order[0] : build.order.find(([from, to]) => from <= lvl && lvl <= to)),
+      next: at(build.order.find(([from]) => from > Math.max(lvl, 9)))
+    };
   }
 
-  // Crafts ahead: the skill each profession needs and by when, then the
-  // pieces the gear block above doesn't already show.
-  function profBlock(plan, lvl, shown) {
-    const GP = window.GearPath;
+  function nextCard(steps, lvl, tal) {
+    const st = nextStep(steps, lvl);
+    const head = '<span class="hn-kicker">' + t('home.next.kicker') + ' · <label class="hn-level">' + t('home.next.level') +
+      ' <select data-plan-level>' + Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === lvl ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label></span>';
+    if (st) {
+      planSteps.set(String(st.pick.item.id), st);
+      const i = st.pick.item;
+      const gain = st.replaces ? t('home.next.better', { pct: Math.round((st.pick.value / st.replaces.value - 1) * 100) }) : t('home.next.empty');
+      const lasts = st.until > 60 ? t('home.next.lastsLong') : t('home.next.lasts', { n: st.until });
+      const verb = ['crafted', 'favor'].includes(st.pick.access) ? 'home.next.make' : 'home.next.get';
+      return '<section class="home-next" aria-labelledby="hnTitle"><div class="hn-text">' + head +
+        '<h2 id="hnTitle">' + t(verb, { item: i.name }) + '</h2>' +
+        '<p class="dim">' + t(st.level > lvl ? 'home.next.whySoon' : 'home.next.why', { slot: window.GearPath.slotName(st.pick.slot), n: st.level }) + '</p>' +
+        '<div class="hn-actions"><a class="btn hn-go" href="#Equipo/camino">' + t('home.next.how') + '</a>' +
+        '<button class="btn" data-got="' + i.id + '">' + t('home.next.have') + '</button></div></div>' +
+        '<div class="hn-item">' + UI.itemLink(i) + '<span class="dim">' + window.GearPath.slotName(st.pick.slot) + ' · ' + window.GearPath.sourceText(st.pick) + '</span>' +
+        '<span class="hn-gain">' + gain + ' · ' + lasts + '</span></div></section>';
+    }
+    // No gear ahead: the talent that's due.
+    if (tal && tal.now) {
+      return '<section class="home-next" aria-labelledby="hnTitle"><div class="hn-text">' + head +
+        '<h2 id="hnTitle">' + t('home.next.talent', { talent: tal.now.talent, rank: tal.now.rank, max: tal.now.max }) + '</h2>' +
+        '<p class="dim">' + t('home.next.talentWhy') + '</p><div class="hn-actions"><a class="btn hn-go" href="' + window.Calculator.linkFor(tal.build) + '">' + t('home.plan.talentsMore') + '</a></div></div></section>';
+    }
+    return '<section class="home-next"><div class="hn-text">' + head + '<h2>' + t('home.next.none') + '</h2></div></section>';
+  }
+
+  function tile(kind, title, line, href, more, attrs) {
+    return '<a class="home-tile" href="' + href + '"' + (attrs || '') + '><span class="ht-kind">' + kind + '</span><b>' + title + '</b>' +
+      (line ? '<span class="dim">' + line + '</span>' : '') + '<span class="ht-more">' + more + ' →</span></a>';
+  }
+
+  function tiles(plan, steps, lvl, tal) {
+    // Gear: the upgrades in the next five levels.
+    const soon = steps.filter(st => st.level > lvl && st.level <= lvl + 5).sort((a, b) => a.level - b.level);
+    const gear = soon.length
+      ? tile(t('home.tile.gear'), t(soon.length === 1 ? 'home.tile.gearOne' : 'home.tile.gearN', { n: soon.length, lvl: lvl + 5 }),
+        soon.slice(0, 2).map(st => st.pick.item.name + ' (' + st.level + ')').join(', '), '#Equipo/camino', t('home.plan.gearMore'))
+      : tile(t('home.tile.gear'), t('home.tile.gearNone', { lvl: lvl + 5 }), '', '#Equipo/camino', t('home.plan.gearMore'));
+    // Talents: now and next.
+    const talents = tal && (tal.now || tal.next)
+      ? tile(t('home.tile.talents'), tal.now ? t('home.tile.talentNow', { talent: tal.now.talent, rank: tal.now.rank, max: tal.now.max }) : t('home.tile.talentNext', { talent: tal.next.talent, n: tal.next.from }),
+        tal.now && tal.next ? t('home.tile.talentThen', { talent: tal.next.talent, n: tal.next.from }) : '', window.Calculator.linkFor(tal.build), t('home.plan.talentsMore'))
+      : tile(t('home.tile.talents'), t('home.plan.talentsDone'), '', '#Talentos', t('home.plan.talentsMore'));
+    // Profession: the skill the coming crafts ask for, or picking yours.
     const profs = UI.store.get('profs', []);
     const makers = profs.filter(p => CRAFTING.includes(p));
-    let body;
-    if (!profs.length) body = '<p class="note-text">' + t('home.plan.profsNone') + '</p><button class="btn" data-open-setup>' + t('home.plan.pickProfs') + '</button>';
-    else if (!makers.length) body = '<p class="note-text">' + t('home.plan.profsGather', { profs: profs.join(' + ') }) + '</p>';
+    let prof;
+    if (!profs.length) prof = '<button class="home-tile" data-open-setup><span class="ht-kind">' + t('home.tile.profs') + '</span><b>' + t('home.tile.profsPick') + '</b><span class="dim">' + t('home.tile.profsWhy') + '</span><span class="ht-more">' + t('home.plan.pickProfs') + ' →</span></button>';
+    else if (!makers.length) prof = tile(t('home.tile.profs'), t('home.tile.gatherOnly', { profs: profs.join(' + ') }), '', '#Profesiones', t('home.plan.profsMore'));
     else {
-      const crafts = [];
-      Object.values(plan.slots).forEach(p => p.steps.forEach(st => { if (['crafted', 'favor'].includes(st.pick.access) && st.level >= lvl - 2 && st.until > lvl) crafts.push(st); }));
-      crafts.sort((a, b) => a.level - b.level);
-      const soon = crafts.filter(st => st.level <= lvl + 9).slice(0, 4);
-      soon.forEach(st => planSteps.set(String(st.pick.item.id), st));
-      if (!soon.length) body = '<p class="note-text">' + (crafts.length ? t('home.plan.craftLater', { n: crafts[0].level, profs: makers.join(' + ') }) : t('home.plan.craftNone', { profs: makers.join(' + ') })) + '</p>';
-      else {
-        // The skill to reach per profession: the highest the coming pieces ask for.
-        const goals = makers.map(p => {
-          const mine = soon.filter(st => st.pick.source.profession === p);
-          if (!mine.length) return '';
-          const top = mine.reduce((a, b) => ((b.pick.source.yellow || 0) > (a.pick.source.yellow || 0) ? b : a));
-          return '<p class="plan-zones">' + t('home.plan.skillGoal', { prof: p, n: top.pick.source.yellow || '?', lvl: top.level }) + '</p>';
-        }).join('');
-        const rest = soon.filter(st => !shown.has(st.pick.item.id));
-        body = goals + (rest.length ? rest.map(st => GP.stepRow(st, st.level < lvl ? 'gp-done' : '')).join('') : '<p class="note-text dim">' + t('home.plan.craftAbove') + '</p>');
-      }
+      // The next craft from your level on (one you're already wearing is behind you).
+      const crafts = steps.filter(st => ['crafted', 'favor'].includes(st.pick.access) && st.level >= lvl && st.level <= lvl + 9 && !got().has(st.pick.item.id)).sort((a, b) => a.level - b.level);
+      const first = crafts[0];
+      const skill = first && ((first.pick.source.learn || {}).learnAt || first.pick.source.yellow);
+      prof = first
+        ? tile(first.pick.source.profession, t('home.tile.skillGoal', { n: skill || '?', lvl: first.level }), t('home.tile.craftFirst', { item: first.pick.item.name }), '#Profesiones/plan', t('home.plan.profsMore'))
+        : tile(makers.join(' + '), t('home.tile.craftNone'), '', '#Profesiones/plan', t('home.plan.profsMore'));
     }
-    return planBlock(3, t('home.plan.profs'), body, '#Profesiones', t('home.plan.profsMore'));
+    return '<div class="home-tiles">' + gear + talents + prof + '</div>';
+  }
+
+  // What changed since your last visit (site news newer than it), once.
+  function sinceStrip() {
+    const news = I18N.localize((window.NEWS_DATA || { site: [] }).site);
+    const last = UI.store.get('newsSeen', null);
+    if (!news.length) return '';
+    if (!last) { UI.store.set('newsSeen', news[0].day); return ''; }
+    const fresh = news.filter(e => e.day > last);
+    if (!fresh.length) return '';
+    return '<div class="home-since"><span class="hs-tag">' + t('home.since') + '</span><span>' + fresh.slice(0, 2).map(e => e.title).join(' · ') + '</span>' +
+      '<a href="#Novedades">' + t('home.sinceAll') + '</a><button class="hs-x" data-news-seen="' + news[0].day + '" aria-label="' + t('home.sinceClose') + '">×</button></div>';
+  }
+
+  // The beta and the launch, said as of today.
+  function launchLine() {
+    const days = Math.ceil((LAUNCH - new Date()) / 86400000);
+    const key = new Date() < BETA_END ? 'home.status.beta' : days > 0 ? 'home.status.betaOver' : 'home.status.live';
+    return '<div class="home-status"><span class="hs-state">' + t(key + 'Tag') + '</span><span>' + t(key, { n: days }) + '</span>' +
+      '<a href="#Guia">' + t('home.me.guide', { spec: Site.spec }) + ' →</a></div>';
   }
 
   function planCard() {
-    const r = Site.race !== 'any' ? Site.races(Site.faction).find(x => x.race === Site.race) : null;
-    const profs = UI.store.get('profs', []);
-    const g = I18N.localize(window.GUIDE_DATA[Site.spec]);
     const lvl = level();
     planSteps = new Map();
-    let html = '<div class="me-card plan-card" style="--spec-color:' + SPEC_COLORS[Site.spec] + '">' +
-      '<div class="me-head">' + (r ? '<img src="' + iconUrl(r.icon) + '" alt="">' : '') + '<img src="' + iconUrl(SPEC_ICONS[Site.spec]) + '" alt="">' +
-      '<div><b>' + (r ? t('race.' + r.race) : t('wp.faction.' + Site.faction)) + ' · ' + Site.spec + '</b><span class="dim">' + g.role + ' · ' +
-      (profs.length ? profs.join(' + ') : t('setup.noProfsShort')) + '</span></div>' +
-      '<button class="btn me-change" data-open-setup>' + t('home.change') + '</button></div>' +
-      '<div class="plan-level"><label>' + t('home.plan.level') + ' <select data-plan-level>' +
-      Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === lvl ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label>' +
-      '<span class="dim">' + t('home.plan.levelHint') + '</span></div>';
-    if (window.GearPath && window.GEAR_DATA) {
-      const { plan } = window.GearPath.compute();
-      const gear = gearBlock(plan, lvl);
-      const shown = new Set([...planSteps.values()].map(st => st.pick.item.id));
-      html += '<div class="plan-blocks">' + gear + talentBlock(lvl) + profBlock(plan, lvl, shown) + '</div>';
-    } else html += '<p class="page-loading dim">' + t('site.loading') + '</p>';
-    html += '<a class="me-link plan-guide" href="#Guia"><img src="' + smallIcon(SPEC_ICONS[Site.spec]) + '" alt=""><span><b>' + t('home.me.guide', { spec: Site.spec }) + '</b><span>' + t('home.plan.guideSub') + '</span></span></a>';
-    return '<h3 class="block-title">' + t('home.plan.title') + '</h3>' + html + '</div>';
+    if (!(window.GearPath && window.GEAR_DATA)) return '<p class="page-loading dim">' + t('site.loading') + '</p>';
+    const { plan } = window.GearPath.compute();
+    const steps = allSteps(plan);
+    const tal = talentNow(lvl);
+    return sinceStrip() + nextCard(steps, lvl, tal) + tiles(plan, steps, lvl, tal) + launchLine();
   }
 
   const LAUNCH = new Date('2026-11-04T23:00:00Z');
   const BETA_END = new Date('2026-10-22T07:00:00Z');
   function renderHome() {
+    const setupDone = UI.store.get('setupDone', false);
+    // With your Shaman picked: only what to do now (the pages are in the menu).
+    if (setupDone) return planCard();
     const days = Math.ceil((LAUNCH - new Date()) / 86400000);
     const launch = days > 0 ? t('home.launchIn', { n: days }) : days === 0 ? t('home.launchToday') : t('home.launched');
-    const setupDone = UI.store.get('setupDone', false);
-    let html = setupDone ? planCard() : '';
-    html += '<section class="home-hero"><div class="home-hero-text"><div class="role">' + t('home.kicker') + '</div>' +
+    let html = '<section class="home-hero"><div class="home-hero-text"><div class="role">' + t('home.kicker') + '</div>' +
       '<h2>' + t('home.title') + '</h2><p>' + t('home.tagline') + '</p></div>' +
-      '<div class="countdown"><b>' + launch + '</b><span>' + t('home.launchDate') + '</span>' + (new Date() < BETA_END ? '<span class="dim">' + t('home.betaEnds') + '</span>' : '') + '</div></section>';
-
-    if (!setupDone) html += specCards();
+      '<div class="countdown"><b>' + launch + '</b><span>' + t('home.launchDate') + '</span>' + (new Date() < BETA_END ? '<span class="dim">' + t('home.betaEnds') + '</span>' : '<span class="dim">' + t('home.betaOver') + '</span>') + '</div></section>';
+    html += specCards();
 
     html += '<div class="home-cols"><div><h3 class="block-title">' + t('home.pages') + '</h3><div class="page-cards">';
     tabs.filter(b => b.dataset.spec !== 'Guia').forEach(b => {
@@ -176,6 +201,14 @@
       app.innerHTML = renderHome();
       app.querySelectorAll('[data-go-spec]').forEach(a => a.addEventListener('click', () => Site.set('spec', a.dataset.goSpec)));
       app.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
+      app.querySelectorAll('[data-got]').forEach(b => b.addEventListener('click', () => {
+        UI.store.set('gotItems', UI.store.get('gotItems', []).concat(Number(b.dataset.got)));
+        window.Home.render(app);
+      }));
+      app.querySelectorAll('[data-news-seen]').forEach(b => b.addEventListener('click', () => {
+        UI.store.set('newsSeen', b.dataset.newsSeen);
+        b.closest('.home-since').remove();
+      }));
       const sel = app.querySelector('[data-plan-level]');
       if (sel) sel.addEventListener('change', e => { UI.store.set('level', Number(e.target.value)); Site.setMany({}); });
       UI.tip.bind(app, '[data-item]', a => {

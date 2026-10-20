@@ -28,8 +28,11 @@
   function draw() {
     const done = UI.store.get('setupDone', false);
     const pairs = window.GUIDE_DATA.Professions ? window.I18N.localize(window.GUIDE_DATA.Professions).pairs.filter(p => p.specs.includes(draft.spec)) : [];
-    let html = '<div class="setup" role="dialog" aria-modal="true" aria-labelledby="setupTitle">' +
-      '<div class="setup-head"><div><h2 id="setupTitle">' + t('setup.title') + '</h2><p>' + t('setup.intro') + '</p></div>' +
+    // The first visit asks only race and spec: level and professions come
+    // later, where they matter (home, Profesiones).
+    const short = firstRun;
+    let html = '<div class="setup' + (short ? ' setup-short' : '') + '" role="dialog" aria-modal="true" aria-labelledby="setupTitle">' +
+      '<div class="setup-head"><div><h2 id="setupTitle">' + t(short ? 'setup.firstTitle' : 'setup.title') + '</h2><p>' + t(short ? 'setup.firstIntro' : 'setup.intro') + '</p></div>' +
       '<button class="btn setup-x" data-close aria-label="' + t('setup.close') + '">×</button></div>';
 
     html += '<section class="setup-step"><h3><span class="setup-n">1</span>' + t('setup.race') + '</h3><div class="setup-grid">' +
@@ -46,7 +49,7 @@
           img(Site.SPEC_ICONS[s]) + '<b>' + s + '</b><span class="setup-sub">' + l.role + '</span><span class="setup-line">' + l.line + '</span></button>';
       }).join('') + '</div></section>';
 
-    html += '<section class="setup-step"><h3><span class="setup-n">3</span>' + t('setup.profs') + ' <span class="dim">' + t('setup.profsHint') + '</span></h3>' +
+    if (!short) html += '<section class="setup-step"><h3><span class="setup-n">3</span>' + t('setup.profs') + ' <span class="dim">' + t('setup.profsHint') + '</span></h3>' +
       '<div class="setup-grid profs">' + PRIMARY.map(p => '<button class="setup-opt prof' + (draft.profs.includes(p) ? ' active' : '') + '" data-prof="' + p + '">' +
         img(PROF_ICONS[p]) + '<b>' + p + '</b></button>').join('') +
       '<button class="setup-opt prof any' + (!draft.profs.length ? ' active' : '') + '" data-prof="none"><b>' + t('setup.noProfs') + '</b></button></div>' +
@@ -55,10 +58,11 @@
         p.pair.split(' + ').map(x => img(PROF_ICONS[x], 'pp-mini')).join('') + p.pair + ' <span class="dim">· ' + p.when + '</span></button>').join('') + '</div>' : '') +
       '</section>';
 
-    html += '<section class="setup-step"><h3><span class="setup-n">4</span>' + t('setup.level') + ' <span class="dim">' + t('setup.levelHint') + '</span></h3>' +
+    if (!short) html += '<section class="setup-step"><h3><span class="setup-n">4</span>' + t('setup.level') + ' <span class="dim">' + t('setup.levelHint') + '</span></h3>' +
       '<select class="setup-level" data-level>' + Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === draft.level ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></section>';
 
-    html += '<div class="setup-foot"><button class="btn setup-done" data-done>' + t('setup.done') + '</button>' +
+    html += '<div class="setup-foot"><button class="btn setup-done" data-done>' + t(short ? 'setup.start' : 'setup.done') + '</button>' +
+      (short ? '<span class="dim setup-later">' + t('setup.later') + '</span>' : '') +
       (done ? '' : '<button class="btn setup-skip" data-skip>' + t('setup.skip') + '</button>') + '</div></div>';
     el.innerHTML = html;
   }
