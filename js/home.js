@@ -88,6 +88,23 @@
       .map(p => Object.assign({ prof: p }, window.Route.profFrom(p, Site.faction, race)))
       .filter(x => x.level > lvl).sort((a, b) => a.level - b.level);
   }
+  // Skinning learned, Leatherworking still ahead: what leather to keep for
+  // the first Leatherworking piece of your path (its skinned materials).
+  function leatherGoal(steps, lvl, learn) {
+    const SK = window.SKINNING_DATA;
+    const race = Site.race === 'any' ? null : Site.race;
+    if (!SK || !learn || learn.prof !== 'Leatherworking' || learn.level <= lvl) return null;
+    if (window.Route.profFrom('Skinning', Site.faction, race).level > lvl) return null;
+    const first = steps.filter(st => (st.pick.source || {}).profession === 'Leatherworking' && st.until > lvl).sort((a, b) => a.level - b.level || gainOf(b) - gainOf(a))[0];
+    const r = first && SK.recipes.find(x => x.id === first.pick.item.id);
+    if (!r) return null;
+    // Raw skins: cured hides count as their raw hide.
+    const RAW = { 4231: 783, 4233: 4232, 4236: 4235 };
+    const need = {};
+    r.mats.forEach(([m, n]) => { const raw = RAW[m] || m; if (SK.skin.includes(raw)) need[raw] = (need[raw] || 0) + n; });
+    if (!Object.keys(need).length) return null;
+    return { item: first.pick.item.name, list: Object.entries(need).map(([m, n]) => n + ' ' + (SK.names[m] || '#' + m)).join(', ') };
+  }
   // "Ya la aprendí": the button that moves a profession to now.
   const learnedBtn = p => '<button class="btn" data-learned="' + p + '">' + t('home.learned', { prof: p }) + '</button>';
 
@@ -161,9 +178,15 @@
       // No trainer of it yet on your route: where and when you learn it.
       const race = Site.race === 'any' ? null : Site.race;
       const learn = makers.map(p => Object.assign({ prof: p }, window.Route.profFrom(p, Site.faction, race))).sort((a, b) => a.level - b.level)[0];
+      const goal = leatherGoal(steps, lvl, learn);
+      if (goal) {
+        return '<div class="home-tiles">' + gear + talents + '<div class="home-tile ht-prof"><span class="ht-head"><img src="' + smallIcon(window.Setup.PROF_ICONS.Skinning) + '" alt=""><span class="ht-kind">Skinning</span></span>' +
+          '<b>' + t('home.tile.gather') + '</b><span class="dim">' + t('home.tile.gatherFor', { list: goal.list, item: goal.item, zone: learn.zone || '?' }) + '</span>' +
+          '<span class="ht-actions">' + learnedBtn('Leatherworking') + '</span></div></div>';
+      }
       if (learn && learn.level > lvl) {
         return '<div class="home-tiles">' + gear + talents + '<div class="home-tile ht-prof"><span class="ht-head"><img src="' + smallIcon(window.Setup.PROF_ICONS[learn.prof]) + '" alt=""><span class="ht-kind">' + learn.prof + '</span></span>' +
-          '<b>' + t('home.tile.learnAt', { prof: learn.prof, zone: learn.zone || '?', n: learn.level }) + '</b><span class="dim">' + t('home.tile.learnWhy') + '</span>' +
+          '<b>' + t('home.tile.learnAt', { prof: learn.prof, zone: learn.zone || '?', n: learn.level }) + '</b><span class="dim">' + t('home.tile.learnWhy', { n: learn.level }) + '</span>' +
           '<span class="ht-actions">' + learnedBtn(learn.prof) + '</span></div></div>';
       }
       // The next craft from your level on (one you're already wearing is behind you).
