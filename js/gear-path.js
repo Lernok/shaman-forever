@@ -112,16 +112,20 @@
   // The tag of a material and whether you get it yourself (then it isn't bought).
   function matTag(e, mine) {
     const g = e.g || {};
+    // Forever's scarce materials: a bonus from any node of a gathering profession.
+    if (e.s) return mine.includes(e.s) ? [t('gp.mat.scarceYou'), true] : [t('gp.mat.scarce', { prof: t('gp.gather.' + e.s) }) + (e.b != null ? ', ' + t('gp.mat.market') : '')];
     if (g.smelt) return mine.includes('Mining') ? [t('gp.mat.smeltYou'), true] : [t('gp.mat.smelt')];
     if ((e.d || []).some(d => d[5] & 2)) return mine.includes('Skinning') ? [t('gp.mat.skinYou'), true] : [t('gp.mat.skin')];
-    if (e.c) return mine.includes(PROF_KEY[e.c[0]]) ? [t('gp.mat.youMake'), true] : [t('gp.mat.prof', { prof: t('pr.lw.prof.' + e.c[0]) })];
+    if (e.c) {
+      const with_ = e.c[2] ? ' ' + t('gp.mat.with', { what: e.c[2] }) : '';
+      return mine.includes(PROF_KEY[e.c[0]]) ? [t('gp.mat.youMake') + with_, true] : [t('gp.mat.prof', { prof: t('pr.lw.prof.' + e.c[0]) }) + with_];
+    }
     if (g.de) return mine.includes('Enchanting') ? [t('gp.mat.deYou'), true] : [t('gp.mat.de')];
     if (g.mined) return mine.includes('Mining') ? [t('gp.mat.minedYou'), true] : [t('gp.mat.mined')];
     if (e.d && e.d.length) return [t('gp.mat.drop')];
     if (g.inItem) return [t('gp.mat.inItem')];
     return [''];
   }
-  const PRISTINE = [249427, 249428, 249429];
   function craftMats(st) {
     const C = window.CRAFT_DATA;
     const s = st.pick.source || {};
@@ -132,8 +136,7 @@
     const buy = [];
     const list = mats.map(([m, n]) => {
       const e = C.items[m] || {};
-      // Forever's Pristine Leather, Hide and Scale: rare, from skinning (named and rare beasts).
-      const [tag, yours] = PRISTINE.includes(m) ? [t('gp.mat.pristine')] : matTag(e, mine);
+      const [tag, yours] = matTag(e, mine);
       if (!yours) buy.push([m, n]);
       return n + ' ' + (e.n || '#' + m) + (tag ? ' <span class="dim">(' + tag + ')</span>' : '');
     }).join(', ');
@@ -144,7 +147,9 @@
     else if (P) {
       let total = 0;
       let missing = 0;
-      buy.forEach(([m, n]) => { if (P.p[m]) total += P.p[m] * n; else missing++; });
+      // The auction price, or the Black Market's when it's lower (its fixed price caps it).
+      const price = m => { const ah = P.p[m]; const bm = (C.items[m] || {}).b; return ah && bm ? Math.min(ah, bm) : ah || bm || 0; };
+      buy.forEach(([m, n]) => { if (price(m)) total += price(m) * n; else missing++; });
       if (total) {
         const share = total / (C.gold[Math.min(59, Math.max(1, st.level)) - 1] || 1);
         const tier = share < 0.25 ? 'cheap' : share < 0.75 ? 'mid' : 'dear';

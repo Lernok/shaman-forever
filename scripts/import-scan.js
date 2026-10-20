@@ -46,6 +46,7 @@ merged.sources = merged.sources || {};
 merged.recipes = merged.recipes || {};
 merged.bags = merged.bags || {};
 merged.drops = merged.drops || {};
+merged.goods = merged.goods || {};
 // Lua arrays come as {"1": a, "2": b}.
 const arr = o => (o && typeof o === 'object' ? Object.keys(o).sort((a, b) => a - b).map(k => o[k]) : o);
 for (const f of files) {
@@ -69,6 +70,8 @@ for (const f of files) {
   if (scan.fields) merged.fields = scan.fields;
   // Recipes seen in your bags (first time), and looted (from whom, how many).
   for (const [item, e] of Object.entries(scan.bags || {})) if (!merged.bags[item]) merged.bags[item] = e;
+  // Crafting materials vendors sell (the newest visit to each NPC wins).
+  for (const [id, v] of Object.entries(scan.goods || {})) if (!merged.goods[id] || (merged.goods[id].t || 0) <= (v.t || 0)) merged.goods[id] = v;
   for (const [item, d] of Object.entries(scan.drops || {})) {
     const m = merged.drops[item] = merged.drops[item] || { name: d.name, from: {} };
     for (const [k, f] of Object.entries(d.from || {})) m.from[k] = f; // the save keeps the running count
@@ -155,6 +158,18 @@ for (const [item, e] of Object.entries(merged.bags)) console.log('  ' + e.name +
 if (Object.keys(merged.drops).length) console.log('\nLOOTEADAS');
 for (const [item, d] of Object.entries(merged.drops)) {
   console.log('  ' + d.name + ' #' + item + ' de ' + Object.entries(d.from).map(([k, f]) => (f.n || k) + ' (' + f.z + ', ' + f.c + 'x)').join(', ') + '   web: ' + webOf(d.name));
+}
+// Vendors of scarce materials (data/scarce.json): what the game says they cost.
+const scarce = JSON.parse(fs.readFileSync(path.join(root, 'data', 'scarce.json'), 'utf8')).items;
+for (const [id, v] of Object.entries(merged.goods)) {
+  const hits = Object.entries(v.list || {}).filter(([item]) => scarce[item]);
+  if (!hits.length) continue;
+  console.log('\nMATERIALES ESCASOS en ' + where(v) + ' #' + id);
+  hits.forEach(([item, e]) => {
+    const kept = scarce[item].price;
+    console.log('  ' + e.name + ' #' + item + ' · ' + coin(e.price || 0) + (e.stock ? ' · stock ' + e.stock : '') +
+      (kept !== e.price ? '   <-- data/scarce.json dice ' + (kept == null ? 'sin precio' : coin(kept)) : ''));
+  });
 }
 if (merged.fields) console.log('\nCampos de una receta: ' + merged.fields);
 const colorN = Object.values(merged.colors).reduce((n, m) => n + Object.keys(m).length, 0);

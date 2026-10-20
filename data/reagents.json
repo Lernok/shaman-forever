@@ -21382,7 +21382,8 @@
      "Damaged Undermine Supply Crate",
      "Scarlet Junkbox"
     ]
-   }
+   },
+   "market": 500000
   },
   "13512": {
    "name": "Flask of Supreme Power",
@@ -22902,7 +22903,9 @@
    "name": "Fel Hide"
   },
   "249391": {
-   "name": "Pyrite"
+   "name": "Pyrite",
+   "scarce": "Mining",
+   "market": 0
   },
   "249409": {
    "name": "Cerulean Dye",
@@ -22939,13 +22942,19 @@
    }
   },
   "249427": {
-   "name": "Pristine Leather"
+   "name": "Pristine Leather",
+   "scarce": "Skinning",
+   "market": 50000
   },
   "249428": {
-   "name": "Pristine Hide"
+   "name": "Pristine Hide",
+   "scarce": "Skinning",
+   "market": 0
   },
   "249429": {
-   "name": "Pristine Scale"
+   "name": "Pristine Scale",
+   "scarce": "Skinning",
+   "market": 0
   },
   "249430": {
    "name": "Magenta Dye",

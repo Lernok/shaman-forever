@@ -2,7 +2,18 @@
  "_readme": "Written by scripts/build-reagents.js: reagents of crafted gear (mats[item] = [[reagent, n]]), where each comes from, auction prices and quest gold per level.",
  "sources": {
   "drops": "https://www.wowhead.com/classic/item=5784/slimy-murloc-scale#dropped-by",
-  "gold": "https://wago.tools/db2/QuestMoneyReward"
+  "gold": "https://wago.tools/db2/QuestMoneyReward",
+  "scarce": [
+   "https://www.foreverwisp.com/guides/wow-forever-scarce-materials-pyrite-frilled-lichen-pristine-leather",
+   "https://wowforever.be/news/every-gathering-node-can-drop-a-scarce-material/",
+   "https://www.raidmuster.com/guides/wow-forever-black-market-vendor"
+  ],
+  "market": {
+   "npc": "Mister Graphed",
+   "zone": "Riverglades",
+   "where": "Powderfuse Port, 78.1 51.9",
+   "source": "https://www.foreverwisp.com/guides/wow-forever-black-market-location-reagent-vendor"
+  }
  },
  "mats": {
   "2569": [
@@ -16061,7 +16072,8 @@
   "12360": {
    "c": [
     "alchemy",
-    275
+    275,
+    "Arcane Crystal"
    ],
    "g": {
     "inItem": [
@@ -16779,13 +16791,15 @@
      "Scarlet Junkbox"
     ]
    },
+   "b": 500000,
    "n": "Black Lotus",
    "i": "inv_misc_herb_blacklotus"
   },
   "13512": {
    "c": [
     "alchemy",
-    300
+    300,
+    "Black Lotus"
    ],
    "g": {
     "inItem": [
@@ -17185,29 +17199,39 @@
    "n": "Fel Hide"
   },
   "249391": {
+   "s": "Mining",
+   "b": 0,
    "n": "Pyrite"
   },
   "249409": {
    "c": [
     "alchemy",
-    50
+    50,
+    "Frilled Lichen"
    ],
    "n": "Cerulean Dye"
   },
   "249410": {
    "c": [
     "alchemy",
-    50
+    50,
+    "Pyrite"
    ],
    "n": "Sulfuric Acid"
   },
   "249427": {
+   "s": "Skinning",
+   "b": 50000,
    "n": "Pristine Leather"
   },
   "249428": {
+   "s": "Skinning",
+   "b": 0,
    "n": "Pristine Hide"
   },
   "249429": {
+   "s": "Skinning",
+   "b": 0,
    "n": "Pristine Scale"
   },
   "249430": {
@@ -17220,7 +17244,8 @@
   "249431": {
    "c": [
     "alchemy",
-    230
+    230,
+    "Stranglevine"
    ],
    "n": "Viridian Dye"
   },
@@ -17237,7 +17262,8 @@
   "251290": {
    "c": [
     "alchemy",
-    275
+    275,
+    "Fel Crystal"
    ],
    "n": "Legionite Bar"
   },
@@ -17254,7 +17280,8 @@
   "260815": {
    "c": [
     "engineering",
-    285
+    285,
+    "Pristine Scale"
    ],
    "n": "EZ-Thro Shell"
   },

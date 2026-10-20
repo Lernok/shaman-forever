@@ -2023,7 +2023,7 @@ local function scanVendor()
   if not (GetMerchantNumItems and GetMerchantItemLink) then log("scan", "vendor: no API") return end
   local id, info = npcHere()
   if not id then log("scan", "vendor: no npc") return end
-  local list, total, unknown = {}, readable(GetMerchantNumItems()) or 0, 0
+  local list, goods, total, unknown = {}, {}, readable(GetMerchantNumItems()) or 0, 0
   for i = 1, total do
     local item = itemIdOf(GetMerchantItemLink(i))
     local name, price, stock
@@ -2035,20 +2035,29 @@ local function scanVendor()
       name, _, price, _, stock = GetMerchantItemInfo(i)
     end
     if not item then unknown = unknown + 1 end
-    if isRecipe(item, name) then
+    -- Recipes, and crafting materials (item class 7: their price, for the site).
+    local recipe, good = isRecipe(item, name), itemClass(item) == 7
+    if recipe or good then
       local e = { name = name, price = readable(price), stock = stock and stock >= 0 and stock or nil }
       for j = 1, (GetMerchantItemCostInfo and GetMerchantItemCostInfo(i) or 0) do
         local _, n, link, currency = GetMerchantItemCostItem(i, j)
         e.cost = e.cost or {}
         e.cost[#e.cost + 1] = { n, currency or itemIdOf(link) or tostring(link) }
       end
-      list[item or name] = e
+      if recipe then list[item or name] = e else goods[item] = e end
     end
   end
-  local n = 0
+  local n, g = 0, 0
   for _ in pairs(list) do n = n + 1 end
-  log("scan", "vendor " .. tostring(info.n) .. " " .. id .. ": " .. total .. " items, " .. (unknown > 0 and (unknown .. " not loaded, ") or "") .. n .. " recipes")
+  for _ in pairs(goods) do g = g + 1 end
+  log("scan", "vendor " .. tostring(info.n) .. " " .. id .. ": " .. total .. " items, " .. (unknown > 0 and (unknown .. " not loaded, ") or "") .. n .. " recipes, " .. g .. " materials")
   if next(list) then scanStore("vendors", id, info, list) end
+  if next(goods) then
+    db.scan = db.scan or {}
+    db.scan.goods = db.scan.goods or {}
+    info.list = goods
+    db.scan.goods[id] = info
+  end
   return unknown
 end
 

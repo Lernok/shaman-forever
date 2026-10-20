@@ -1,0 +1,20 @@
+{
+  "_readme": "Hand-kept facts (scripts/build-reagents.js reads them): Forever's scarce materials, a bonus any gathering node may give (gather: the profession), and the Black Market reagent vendor that sells them at a fixed price (copper; null: price not reported). Beta observations from fan sites: confidence community-untested. Check them in game (the addon's vendor scan) and update.",
+  "vendor": { "npc": "Mister Graphed", "zone": "Riverglades", "where": "Powderfuse Port, 78.1 51.9", "source": "https://www.foreverwisp.com/guides/wow-forever-black-market-location-reagent-vendor" },
+  "sources": [
+    "https://www.foreverwisp.com/guides/wow-forever-scarce-materials-pyrite-frilled-lichen-pristine-leather",
+    "https://wowforever.be/news/every-gathering-node-can-drop-a-scarce-material/",
+    "https://www.raidmuster.com/guides/wow-forever-black-market-vendor"
+  ],
+  "items": {
+    "249391": { "name": "Pyrite", "gather": "Mining", "price": null },
+    "249399": { "name": "Frilled Lichen", "gather": "Herbalism", "price": null },
+    "249427": { "name": "Pristine Leather", "gather": "Skinning", "price": 50000 },
+    "249428": { "name": "Pristine Hide", "gather": "Skinning", "price": null },
+    "249429": { "name": "Pristine Scale", "gather": "Skinning", "price": null },
+    "13468": { "name": "Black Lotus", "price": 500000 },
+    "12363": { "name": "Arcane Crystal", "price": 500000 },
+    "248819": { "name": "Fel Crystal", "price": null },
+    "249274": { "name": "Stranglevine", "price": null }
+  }
+}

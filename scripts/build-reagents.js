@@ -11,6 +11,8 @@
 //   whether it's elite; only creatures looted often enough.
 // - Gathered: mined from, fished in, found in (clams); smelted (bars).
 // - Its name, when the client tables don't have it (the Wowhead page's title).
+// - Forever's scarce materials (a bonus from gathering nodes) and the Black
+//   Market vendor's fixed prices: hand-kept in data/scarce.json.
 //
 // - Quest gold per level, to weigh a price: the experience to level up
 //   (Classic's table) times the share that comes from quests (QUEST_SHARE),
@@ -60,6 +62,7 @@ function listview(html, id) {
   try { return JSON.parse(html.slice(start, end + 1)); } catch (e) { return []; }
 }
 
+let scarceItems = {};
 (async () => {
   const meta = readJSON('data/meta.json');
   const build = meta.items.build;
@@ -140,6 +143,15 @@ function listview(html, id) {
     items[id] = e;
   }
 
+  // Scarce materials and the Black Market vendor (data/scarce.json).
+  const scarce = readJSON('data/scarce.json', { items: {} });
+  scarceItems = scarce.items;
+  Object.entries(scarce.items).forEach(([id, s]) => {
+    if (!items[id]) return;
+    if (s.gather) items[id].scarce = s.gather;
+    items[id].market = s.price || 0;
+  });
+
   writeJSON('data/reagents.json', {
     _readme: 'Written by scripts/build-reagents.js. Reagents of Leatherworking recipes that are not skinned, not Leatherworking-made: craft (another profession), drops (p: chance per kill, l: levels, z: zones), gather, vendor.',
     sources: { drops: 'https://www.wowhead.com/classic/item=5784/slimy-murloc-scale#dropped-by', recipes: 'https://classicwowforever.com/professions/' },
@@ -149,9 +161,17 @@ function listview(html, id) {
   const compact = (e, named) => {
     if (e.vendor) return named ? { v: 1, n: e.name } : { v: 1 };
     const o = {};
-    if (e.craft) o.c = [e.craft.prof, e.craft.skill];
+    // Made by another profession; with the scarce material it takes, if any (Cerulean Dye: Frilled Lichen).
+    if (e.craft) {
+      o.c = [e.craft.prof, e.craft.skill];
+      const sc = (e.craft.mats || []).find(([m]) => scarceItems[m]);
+      if (sc) o.c.push(scarceItems[sc[0]].name);
+    }
     if (e.drops) o.d = e.drops.map(d => [d.n, d.l[0], d.l[1], d.p, d.z, (d.elite ? 1 : 0) + (d.skin ? 2 : 0), d.friend || 0]);
     if (e.gather) o.g = e.gather;
+    // s: scarce, from this gathering profession; b: the Black Market sells it (price, 0 unknown).
+    if (e.scarce) o.s = e.scarce;
+    if (e.market != null) o.b = e.market;
     if (named) { o.n = e.name; if (e.icon) o.i = e.icon; }
     return o;
   };
@@ -178,7 +198,7 @@ function listview(html, id) {
   Object.entries(items).forEach(([id, e]) => { all[id] = compact(Object.assign({}, e, e.drops ? { drops: e.drops.slice(0, 10) } : {}), true); });
   writeJSON('data/crafts.json', {
     _readme: 'Written by scripts/build-reagents.js: reagents of crafted gear (mats[item] = [[reagent, n]]), where each comes from, auction prices and quest gold per level.',
-    sources: { drops: SK.sources.reagents, gold: SK.sources.gold },
+    sources: { drops: SK.sources.reagents, gold: SK.sources.gold, scarce: scarce.sources, market: scarce.vendor },
     mats: Object.fromEntries(crafted), items: all, gold: SK.gold, prices: SK.prices || null
   });
   const n = Object.values(items);

@@ -261,7 +261,11 @@
     const whereMat = (m, n, lvl) => {
       const e = REAG[m] || {};
       const parts = [];
-      if (m === 249427) return '<div class="lw-mat">' + chip(m, n) + '<span class="dim"> ' + t('pr.lw.mat.pristine', { pct: Math.round(window.LwPlan.PRISTINE * 100) }) + '</span></div>';
+      if (m === 249427) return '<div class="lw-mat">' + chip(m, n) + '<span class="dim"> ' + t('pr.lw.mat.pristine', { pct: Math.round(window.LwPlan.PRISTINE * 100) }) + ' · ' + t('pr.lw.mat.market') + '</span></div>';
+      const C = window.CRAFT_DATA;
+      const sc = C && C.items[m];
+      if (sc && sc.s) return '<div class="lw-mat">' + chip(m, n) + '<span class="dim"> ' + t('pr.lw.mat.scarce', { prof: t('gp.gather.' + sc.s) }) +
+        (sc.b != null ? ' · ' + t('pr.lw.mat.market') : '') + (e.c ? ' · ' + t('pr.lw.mat.craft', { prof: t('pr.lw.prof.' + e.c[0]), n: e.c[1] }) : '') + (farm ? '' : ' · ' + t('pr.lw.mat.ah')) + '</span></div>';
       const drops = (e.d || []).filter(d => d[6] !== side);
       const kills = d => Math.ceil(n / d[3]);
       const say = (d, key, extra) => t(key, Object.assign({ mob: d[0], zone: d[4][0], lo: d[1], hi: d[2], pct: Math.round(d[3] * 100), kills: kills(d) }, extra || {})) +
@@ -283,7 +287,11 @@
           if (d) parts.push(say(d, 'pr.lw.mat.detour'));
         }
       }
-      if (e.c) parts.push(t('pr.lw.mat.craft', { prof: t('pr.lw.prof.' + e.c[0]), n: e.c[1] }));
+      if (e.c) {
+        // Alchemy's Sulfuric Acid and Cerulean Dye take a scarce material (Pyrite, Frilled Lichen).
+        const sub = ((window.CRAFT_DATA || { items: {} }).items[m] || {}).c;
+        parts.push(t('pr.lw.mat.craft', { prof: t('pr.lw.prof.' + e.c[0]), n: e.c[1] }) + (sub && sub[2] ? ' ' + t('gp.mat.with', { what: sub[2] }) : ''));
+      }
       if (e.g && e.g.mined) parts.push(t('pr.lw.mat.mined', { what: e.g.mined.slice(0, 2).join(', ') }));
       if (e.g && e.g.inItem && !parts.length) parts.push(t('pr.lw.mat.inItem', { what: e.g.inItem.slice(0, 2).join(', ') }));
       if (!farm) parts.push(t('pr.lw.mat.ah'));
