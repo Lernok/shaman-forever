@@ -382,7 +382,7 @@
       return '<p class="note-text">' + t('pr.lw.noLw') + '</p><button class="btn" data-open-setup>' + t('home.plan.pickProfs') + '</button>';
     }
     const M = lwModel();
-    const { SK, skinning, intensity, farm, base, pieces, name, chips, row, piece, early, lwAt, skinAt, stepOf } = M;
+    const { SK, skinning, intensity, farm, base, pieces, name, chip, chips, row, piece, early, lwAt, skinAt, stepOf } = M;
     const lvl = Math.min(BETA_CAP, Math.max(1, Number(UI.store.get('level', 1)) || 1));
 
     // The settings, folded: how much you skin, auction house or farming.
@@ -432,6 +432,23 @@
       sg.rows.forEach(r => Object.entries(r.crafts).forEach(([id, n]) => { if (!r.made.includes(Number(id))) crafts[id] = (crafts[id] || 0) + n; }));
       return crafts;
     };
+    // The order to level the skill in a stage: each craft with the skill you
+    // start and stop making it at ("1 → 33: 40 Light Leather"); crafts that
+    // no longer raise it (converting leather, curing hides) go apart.
+    const orderOf = sg => {
+      const crafts = craftsOf(sg);
+      const range = {};
+      sg.rows.forEach(r => Object.entries(r.ranges || {}).forEach(([id, [a, b]]) => {
+        if (r.made.includes(Number(id))) return;
+        const g = range[id];
+        range[id] = g ? [Math.min(g[0], a), Math.max(g[1], b)] : [a, b];
+      }));
+      const steps = Object.entries(range).sort((x, y) => x[1][0] - y[1][0] || x[1][1] - y[1][1]);
+      const rest = Object.fromEntries(Object.entries(crafts).filter(([id]) => !range[id]));
+      if (!steps.length && !Object.keys(rest).length) return '';
+      return '<ol class="lw-order">' + steps.map(([id, [a, b]]) => '<li><span class="lo-range">' + (a === b ? a : a + ' → ' + b) + '</span>' + chip(id, crafts[id]) + '</li>').join('') + '</ol>' +
+        (Object.keys(rest).length ? '<div class="lo-rest dim">' + t('pr.lw.forMats') + ' ' + chips(rest) + '</div>' : '');
+    };
     const skillBefore = i => (i ? stages[i - 1].rows[stages[i - 1].rows.length - 1].skill : 1);
 
     // Now: the stage you're in, said plainly.
@@ -446,7 +463,7 @@
       html += '<section class="pr-now"><span class="hn-kicker">' + t('pr.now.kicker', { lo: now.from, hi: last.level }) + '</span>' +
         '<h2>' + t('pr.now.title', { a: Math.floor(skillBefore(mineAt)), b: last.skill }) + '</h2>' +
         (zones.length ? line(t('pr.lw.kSkin'), zones.map(z => '<b>' + (z.name || '?') + '</b> <span class="dim">· ' + window.LwPlan.beasts(z.name, Math.round((z.from + z.to) / 2)).map(b => b.name).join(', ') + '</span>').join('<br>')) : '') +
-        (Object.keys(crafts).length ? line(t('pr.now.craft'), chips(crafts)) : '') +
+        (Object.keys(crafts).length ? line(t('pr.now.craft'), orderOf(now)) : '') +
         (Object.keys(last.keep).length ? line(t('pr.lw.kKeep'), chips(last.keep)) : '') +
         (made.length ? line(t('pr.lw.kGoal'), made.map(id => '<span class="lw-chip">' + (stepOf.get(id) ? UI.itemLink(stepOf.get(id).pick.item) : name(id)) + '</span>').join('')) : '') +
         (now.rows.some(r => r.level === base.bridge.level) ? line(t('pr.lw.kBuy'), chips(base.bridge.items) + ' <span class="dim">' + t('pr.lw.bridgeWhy') + '</span>') : '') +
@@ -493,7 +510,7 @@
         html += '<details class="lw-step"' + (i === mineAt ? ' open' : '') + '><summary class="lw-head"><b>' + t(sg.from === to ? 'pr.lw.stageOne' : 'pr.lw.stage', { lo: sg.from, hi: to }) + '</b>' +
           '<span class="lw-skill">' + t('pr.lw.skillRange', { a: Math.floor(skillBefore(i)), b: last.skill }) + '</span><span class="lw-bar"><i style="width:' + pct + '%"></i></span>' +
           (made.length ? '<span class="lw-goals">' + made.map(id => name(id)).join(', ') + '</span>' : '') + '</summary>' +
-          (Object.keys(crafts).length ? row(t('pr.lw.kCraft'), chips(crafts)) : '') +
+          (Object.keys(crafts).length ? row(t('pr.lw.kCraft'), orderOf(sg)) : '') +
           (where ? row(t('pr.lw.kSkin'), where) : '') +
           (Object.keys(last.keep).length ? row(t('pr.lw.kKeep'), chips(last.keep)) : '') +
           (to === base.bridge.level ? row(t('pr.lw.kBuy'), chips(base.bridge.items) + '<span class="dim"> ' + t('pr.lw.bridgeWhy') + '</span>', 'lw-buyrow') : '') +

@@ -88,6 +88,16 @@ function skinnedFrom(html) {
     Object.entries(s.got).forEach(([id, n]) => { const r = Math.round(n / s.skins * 1000) / 1000; if (r >= 0.005) y[id] = r; });
     yields.push(y);
   }
+  // Light Leather from beasts of level 5 on: the skinning wikis give it for
+  // creatures 5-27 and Icy Veins' Forever guide finds it in starting areas;
+  // the site owner skinned it from level 6-7 beasts. Wowhead's per-beast
+  // list starts at 10, so below that it's an estimate (rising from 0.15 a
+  // skin at 5 to the 0.6 of level 11), until the addon's measured skins
+  // (ShamanForeverDB.scan.skins, scripts/import-scan.js) replace it.
+  for (let l = 5; l <= 10; l++) {
+    const y = yields[l - 1];
+    if (!y[2318]) y[2318] = Math.round((0.15 + (l - 5) * 0.075) * 1000) / 1000;
+  }
 
   // Forever's NPCs (QuestieDB): name, levels, spawns per zone, friendly to whom.
   const zoneName = {};
@@ -156,7 +166,7 @@ function skinnedFrom(html) {
 
   writeJSON('data/skinning.json', {
     _readme: 'Written by scripts/build-skinning.js. yields[level-1]: items per skin of a beast of that level. zones: skinnable beasts (share of the hostile spawns). recipes: Leatherworking, trainer (t) or Merchant\'s Favor (f).',
-    sources: { yields: 'https://www.wowhead.com/classic/item=783/light-hide#skinned-from', beasts: 'https://github.com/Questie/QuestieDB', recipes: 'https://classicwowforever.com/professions/leatherworking/recipes/' },
+    sources: { yields: 'https://www.wowhead.com/classic/item=783/light-hide#skinned-from', lowLeather: 'https://warcraft.wiki.gg/wiki/Skinning', beasts: 'https://github.com/Questie/QuestieDB', recipes: 'https://classicwowforever.com/professions/leatherworking/recipes/' },
     skin: SKIN, yields, zones: outZones, recipes: outRecipes, names, icons
   });
   console.log('Despellejar: ' + beasts.size + ' bestias con datos, ' + Object.keys(outZones).length + ' zonas, ' + outRecipes.length + ' recetas de Peletería');

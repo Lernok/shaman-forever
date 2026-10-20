@@ -76,10 +76,17 @@
     const skinned = id => SKINS[id] != null || CURE[id] != null || CONVERT.includes(id);
     // Not skinned, not from a vendor (gems, alchemy reagents): bought, and listed.
     const fromAH = id => !isVendor(id) && !skinned(id) && !byId.has(id);
-    const cost = r => r.mats.reduce((a, [id, n]) => a + n * (isVendor(id) ? 0.05 : SKINS[id] != null ? SKINS[id] : CURE[id] ? SKINS[CURE[id]] : fromAH(id) ? 15 : 8), 0);
+    // Turning scraps into Light Leather (or Light into Medium) is nearly free:
+    // the lower leather is only good converted, so it's done while it still
+    // raises the skill (the guides' "1-20: Light Leather").
+    const cost = r => CONVERT.includes(r.id) ? 0.4 : r.mats.reduce((a, [id, n]) => a + n * (isVendor(id) ? 0.05 : SKINS[id] != null ? SKINS[id] : CURE[id] ? SKINS[CURE[id]] : fromAH(id) ? 15 : 8), 0);
 
+    // ranges[id] = [skill when you start making it, skill when you stop]: the
+    // order to level the profession in ("1 to 20: Light Leather").
+    let ranges = {};
     function craft(r, crafts) {
       const p = chance(r, skill);
+      const from = Math.floor(skill);
       r.mats.forEach(([id, n]) => {
         if (isVendor(id)) return;
         if (fromAH(id)) { bought[id] = (bought[id] || 0) + n; return; }
@@ -88,6 +95,11 @@
       add(r.id, 1);
       skill = Math.min(capNow, skill + p);
       crafts[r.id] = (crafts[r.id] || 0) + 1;
+      // Only crafts that can raise the skill make the order to follow.
+      if (p > 0) {
+        const g = ranges[r.id] || [from, from];
+        ranges[r.id] = [Math.min(g[0], from), Math.max(g[1], Math.floor(skill))];
+      }
     }
     let capNow = 75;
 
@@ -151,6 +163,7 @@
       const crafts = {};
       const buyLog = {};
       const made = [];
+      ranges = {};
       // No trainer yet: nothing to craft.
       for (let guard = L >= (opts.lwFrom || 1) ? 0 : 600; guard < 600; guard++) {
         // 1) A piece of your path, due now, that your skill allows.
@@ -193,7 +206,7 @@
         break;
       }
       Object.entries(buyLog).forEach(([id, n]) => { bought[id] = (bought[id] || 0) + n; });
-      rows.push({ level: L, zone, skins, skill: Math.floor(skill), crafts, made, bought: buyLog,
+      rows.push({ level: L, zone, skins, skill: Math.floor(skill), crafts, ranges, made, bought: buyLog,
         keep: Object.fromEntries(Object.entries(keep).filter(([id]) => have(Number(id)) >= 1).map(([id, n]) => [id, Math.min(n, Math.floor(have(Number(id))))])) });
     }
     return { rows, made: madeAt, bought, bridge };

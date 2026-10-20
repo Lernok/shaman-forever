@@ -2,6 +2,7 @@
  "_readme": "Written by scripts/build-skinning.js. yields[level-1]: items per skin of a beast of that level. zones: skinnable beasts (share of the hostile spawns). recipes: Leatherworking, trainer (t) or Merchant's Favor (f).",
  "sources": {
   "yields": "https://www.wowhead.com/classic/item=783/light-hide#skinned-from",
+  "lowLeather": "https://warcraft.wiki.gg/wiki/Skinning",
   "beasts": "https://github.com/Questie/QuestieDB",
   "recipes": "https://classicwowforever.com/professions/leatherworking/recipes/",
   "gold": "https://wago.tools/db2/QuestMoneyReward",
@@ -32,21 +33,27 @@
    "2934": 0.602
   },
   {
+   "2318": 0.15,
    "2934": 0.602
   },
   {
+   "2318": 0.225,
    "2934": 0.598
   },
   {
+   "2318": 0.3,
    "2934": 0.601
   },
   {
+   "2318": 0.375,
    "2934": 0.602
   },
   {
+   "2318": 0.45,
    "2934": 0.6
   },
   {
+   "2318": 0.525,
    "2934": 0.598
   },
   {
