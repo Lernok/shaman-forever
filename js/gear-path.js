@@ -172,48 +172,114 @@
   const BRACKETS = [[1, 10], [11, 20], [21, 30], [31, 40], [41, 50], [51, 60]];
   const bracketOf = lvl => Math.min(5, Math.floor((Math.max(1, lvl) - 1) / 10));
 
+  // ---------- the page: what you wear now, what comes next ----------
+  // What you'd have on at your level, slot by slot, then the coming pieces
+  // grouped by level, one line each (tap to open the details); the full list
+  // by brackets stays one button away.
+  const TAGS = { dquest: 'dungeon', route: 'quest', quest: 'quest', class: 'quest', crafted: 'craft', favor: 'craft', vendor: 'vendor', boss: 'boss' };
+  const SOON = 5;
+  function wornAt(steps, lvl) {
+    return steps.filter(st => st.level <= lvl && st.until > lvl);
+  }
+  function slotTile(slot, held, next, lvl) {
+    if (held.length) {
+      return held.map(st => {
+        const i = st.pick.item;
+        const ends = st.until > 60 ? t('gp.now.lastsLong') : t('gp.now.until', { n: st.until });
+        return '<div class="gp-slot-tile"><span class="gst-slot">' + slotName(slot) + '</span>' +
+          '<span class="gst-item">' + (i.icon ? '<img class="gst-icon q' + (i.quality || 1) + '" src="' + UI.icon(i.icon) + '" alt="">' : '') +
+          '<a class="item-link q' + i.quality + '" data-item="' + i.id + '" href="https://www.wowhead.com/forever/item=' + i.id + '" target="_blank" rel="noopener">' + i.name + '</a></span>' +
+          '<span class="gst-until' + (st.until - lvl <= 2 ? ' soon' : '') + '">' + ends + '</span></div>';
+      }).join('');
+    }
+    return '<div class="gp-slot-tile empty"><span class="gst-slot">' + slotName(slot) + '</span><span class="dim">' + t('gp.now.nothing') + '</span>' +
+      '<span class="gst-next">' + t('gp.now.next', { n: next.level, item: next.pick.item.name }) + '</span></div>';
+  }
+  function comingCard(st) {
+    const i = st.pick.item;
+    const tag = st.alt ? 'alt' : (TAGS[st.pick.access] || 'quest');
+    const off = st.pick.access === 'quest' ? ' · <span class="gp-off-tag">' + t('gp.offRoute') + '</span>' : '';
+    const stats = UI.statsText(i);
+    const ends = st.until > 60 ? t('gp.now.lastsLong') : t('gp.now.until', { n: st.until });
+    return '<details class="gp-card gp-tag-' + tag + '"><summary>' + (i.icon ? '<img class="gst-icon q' + (i.quality || 1) + '" src="' + UI.icon(i.icon) + '" alt="">' : '') +
+      '<span class="gpc-main"><b class="q' + i.quality + '">' + i.name + '</b><span class="gpc-sub">' + slotName(st.pick.slot) + ' · <span class="gpc-tag">' + t('gp.tag.' + tag) + '</span>' + off + '</span></span></summary>' +
+      '<div class="gpc-body"><span>' + sourceText(st.pick) + '</span>' + (stats ? '<span class="gpc-stats">' + stats + '</span>' : '') +
+      '<span class="dim">' + ends + '</span>' + (st.alt ? '<span class="dim">' + why(st) + '</span>' : '') +
+      (['crafted', 'favor'].includes(st.pick.access) ? (window.Professions && window.Professions.lwHow ? window.Professions.lwHow(st) : '') + craftMats(st) : '') +
+      '<a class="item-link gpc-link" data-item="' + i.id + '" href="https://www.wowhead.com/forever/item=' + i.id + '" target="_blank" rel="noopener">Wowhead ↗</a>' +
+      reportLinkAlways(st) + '</div></details>';
+  }
+  function reportLinkAlways(st) {
+    return window.Feedback ? window.Feedback.button(t('fb.wrongPiece'), 'piece', st.level + ' ' + st.pick.slot + ' ' + st.pick.item.name + ' #' + st.pick.item.id + ' (' + st.pick.access + ')', 'gp-report', st.pick.item.name) : '';
+  }
+
   function render(container, ui, tabsHtml, onChange) {
     // The level may have changed in the setup screen.
     const stored = Math.min(60, Math.max(1, Number(UI.store.get('level', 1)) || 1));
-    if (stored !== state.level) { state.level = stored; state.bracket = bracketOf(stored); }
+    if (stored !== state.level) { state.level = stored; state.bracket = bracketOf(stored); state.ahead = SOON; }
     if (!window.GEAR_DATA) { container.innerHTML = tabsHtml + '<div class="caveat">' + t('gp.noData') + '</div>'; return; }
     const { plan, profs, picked } = compute();
+    const lvl = state.level;
     const raceLabel = race() ? t('race.' + race()) : t('wp.faction.' + Site.faction);
-    let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Armas + '">' +
-      '<div class="role">' + t('wp.role') + ' · ' + raceLabel + ' · ' + Site.spec + '</div>' +
-      '<h2>' + t('gp.title') + '</h2><p>' + t('gp.intro') + '</p></div>';
-    html += tabsHtml;
-
-    // For whom: your Shaman (change it in the setup) and the drops toggle.
-    html += '<div class="gp-for"><span>' + t('gp.for', { who: raceLabel + ' · ' + Site.spec, profs: picked.length ? picked.join(' + ') : t('setup.noProfsShort') }) +
-      (!picked.length ? ' <span class="dim">' + t('gp.profsNone') + '</span>' : !profs.length ? ' <span class="dim">' + t('gp.profsGatherOnly') + '</span>' : '') + '</span>' +
-      '<button class="btn" data-open-setup>' + t('home.change') + '</button>' +
-      '<label class="chk chip-toggle" title="' + t('gp.dropsTitle') + '"><input type="checkbox" id="gpDrops"' + (state.drops ? ' checked' : '') + '> ' + t('gp.drops') + '</label>' +
-      (profs.length ? '<label class="chk chip-toggle" title="' + t('gp.farmTitle') + '"><input type="checkbox" id="gpFarm"' + (state.farm ? ' checked' : '') + '> ' + t('gp.farm') + '</label>' : '') + '</div>';
-
-    // Your level picks the bracket; the bracket strip jumps to another one.
-    const br = state.bracket;
-    const [lo, hi] = BRACKETS[br];
-    html += '<div class="gp-levelbar"><label class="gp-level">' + t('gp.level') + ' <select id="gpLevel">' +
-      Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === state.level ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label>' +
-      '<div class="seg gp-brackets">' + BRACKETS.map(([a, z], k) => '<button class="btn' + (k === br ? ' active' : '') + '" data-bracket="' + k + '">' + a + '–' + z + '</button>').join('') + '</div></div>';
-
-    // The bracket: its zones, then every piece in level order, route quests
-    // starred and free alternatives to crafts in between.
     const steps = [];
     Object.values(plan.slots).forEach(p => p.steps.forEach(st => steps.push(st)));
     const alts = Object.values(plan.dontMiss).flat().filter(st => st.alt);
-    const order = (a, b) => a.level - b.level || window.GearPlan.SLOTS.indexOf(a.pick.slot) - window.GearPlan.SLOTS.indexOf(b.pick.slot);
-    const here = steps.concat(alts).filter(st => st.level >= lo && st.level <= hi).sort(order);
-    const routeZones = [...new Set(window.Route.brackets(Site.faction, race()).filter(b => b.to >= lo && b.from <= hi).flatMap(b => b.zones))];
-    const mine = state.level >= lo && state.level <= hi;
-    html += '<div class="panel gp-bracket-panel"><div class="gp-br-head"><b>' + t('gp.levels', { lo, hi }) + '</b>' +
-      (routeZones.length ? '<span class="dim">' + t('gp.zones', { list: routeZones.join(', ') }) + '</span>' : '') + '</div>' +
-      (here.length ? here.map(st => stepRow(st, mine && st.level < state.level ? 'gp-done' : '')).join('') : '<p class="dim">' + t('gp.nothing') + '</p>') +
-      '<div class="gp-br-foot"><span class="dim"><span class="gp-star">★</span> ' + t('gp.starTitle') + '</span>' +
-      '<button class="btn" data-detail title="' + t('gp.whyTitle') + '">' + t(state.detail ? 'gp.hideWhy' : 'gp.showWhy') + '</button></div>' +
-      '<div class="gp-br-nav">' + (br > 0 ? '<button class="btn" data-bracket="' + (br - 1) + '">← ' + BRACKETS[br - 1].join('–') + '</button>' : '<span></span>') +
-      (br < 5 ? '<button class="btn" data-bracket="' + (br + 1) + '">' + BRACKETS[br + 1].join('–') + ' →</button>' : '') + '</div></div>';
+
+    // Head: your level (- and +), who for, the settings folded.
+    let html = '<div class="gp-head"><h2>' + t('gp.mine') + '</h2>' +
+      '<span class="gp-lvl"><button class="hn-step" data-gp-step="-1" aria-label="' + t('home.levelDown') + '"' + (lvl <= 1 ? ' disabled' : '') + '>−</button>' +
+      '<label>' + t('home.next.level') + ' <select id="gpLevel">' + Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === lvl ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label>' +
+      '<button class="hn-step" data-gp-step="1" aria-label="' + t('home.levelUp') + '"' + (lvl >= 60 ? ' disabled' : '') + '>+</button></span>' +
+      '<span class="gp-who dim">' + raceLabel + ' · ' + Site.spec + ' · ' + (picked.length ? picked.join(' + ') : t('setup.noProfsShort')) + ' <button class="btn-link" data-open-setup>' + t('home.change') + '</button></span>' +
+      '<details class="gp-settings"><summary>' + t('gp.settings') + '</summary><div>' +
+      '<label class="chk" title="' + t('gp.dropsTitle') + '"><input type="checkbox" id="gpDrops"' + (state.drops ? ' checked' : '') + '> ' + t('gp.drops') + '</label>' +
+      (profs.length ? '<label class="chk" title="' + t('gp.farmTitle') + '"><input type="checkbox" id="gpFarm"' + (state.farm ? ' checked' : '') + '> ' + t('gp.farm') + '</label>' : '') +
+      '</div></details></div>';
+    html += tabsHtml;
+
+    // What you'd have on now.
+    const worn = wornAt(steps, lvl);
+    const tiles = [];
+    const bare = [];
+    window.GearPlan.SLOTS.forEach(slot => {
+      if (slot === 'Off Hand' && Site.spec === 'Enhancement') return;
+      const held = worn.filter(st => st.pick.slot === slot);
+      const next = steps.filter(st => st.pick.slot === slot && st.level > lvl && st.level <= lvl + 10).sort((a, b) => a.level - b.level)[0];
+      if (held.length || next) tiles.push(slotTile(slot, held, next, lvl));
+      else bare.push(slotName(slot).toLowerCase());
+    });
+    html += '<section class="gp-now"><h3>' + t('gp.now.title') + ' <span class="dim">· ' + t('gp.now.at', { n: lvl }) + '</span></h3>' +
+      '<div class="gp-slots">' + tiles.join('') + '</div>' +
+      (bare.length ? '<p class="dim gp-bare">' + t('gp.now.bare', { list: bare.join(', ') }) + '</p>' : '') + '</section>';
+
+    // What comes: by level, a window that grows.
+    const ahead = state.ahead || SOON;
+    const coming = steps.concat(alts).filter(st => st.level > lvl && st.level <= lvl + ahead)
+      .sort((a, b) => a.level - b.level || window.GearPlan.SLOTS.indexOf(a.pick.slot) - window.GearPlan.SLOTS.indexOf(b.pick.slot));
+    const byLevel = new Map();
+    coming.forEach(st => { if (!byLevel.has(st.level)) byLevel.set(st.level, []); byLevel.get(st.level).push(st); });
+    html += '<section class="gp-coming"><div class="gp-coming-head"><h3>' + t('gp.coming.title') + ' <span class="dim">· ' + t('gp.coming.range', { a: lvl + 1, b: Math.min(60, lvl + ahead) }) + '</span></h3>' +
+      '<span class="gp-legend">' + ['dungeon', 'quest', 'craft', 'vendor'].map(k => '<span class="gp-tag-' + k + '"><span class="gpc-tag">' + t('gp.tag.' + k) + '</span></span>').join('') + '</span></div>' +
+      (byLevel.size ? [...byLevel.entries()].map(([l, list]) => '<div class="gp-lvl-row"><b class="gp-lvl-n">' + t('home.tile.lv', { n: l }) + '</b><div class="gp-cards">' + list.map(comingCard).join('') + '</div></div>').join('')
+        : '<p class="dim">' + t('gp.coming.none') + '</p>') +
+      '<div class="gp-coming-foot">' + (lvl + ahead < 60 ? '<button class="btn" data-more>' + t('gp.coming.more', { n: Math.min(60, lvl + ahead + 1) }) + ' →</button>' : '') +
+      '<button class="btn-link" data-full>' + t(state.full ? 'gp.full.hide' : 'gp.full.show') + '</button></div></section>';
+
+    // The full list by brackets (as before), on demand.
+    if (state.full) {
+      const br = state.bracket;
+      const [lo, hi] = BRACKETS[br];
+      const order = (a, b) => a.level - b.level || window.GearPlan.SLOTS.indexOf(a.pick.slot) - window.GearPlan.SLOTS.indexOf(b.pick.slot);
+      const here = steps.concat(alts).filter(st => st.level >= lo && st.level <= hi).sort(order);
+      const routeZones = [...new Set(window.Route.brackets(Site.faction, race()).filter(b => b.to >= lo && b.from <= hi).flatMap(b => b.zones))];
+      const mine = lvl >= lo && lvl <= hi;
+      html += '<div class="seg gp-brackets">' + BRACKETS.map(([a, z], k) => '<button class="btn' + (k === br ? ' active' : '') + '" data-bracket="' + k + '">' + a + '–' + z + '</button>').join('') + '</div>' +
+        '<div class="panel gp-bracket-panel"><div class="gp-br-head"><b>' + t('gp.levels', { lo, hi }) + '</b>' +
+        (routeZones.length ? '<span class="dim">' + t('gp.zones', { list: routeZones.join(', ') }) + '</span>' : '') + '</div>' +
+        (here.length ? here.map(st => stepRow(st, mine && st.level < lvl ? 'gp-done' : '')).join('') : '<p class="dim">' + t('gp.nothing') + '</p>') +
+        '<div class="gp-br-foot"><span class="dim"><span class="gp-star">★</span> ' + t('gp.starTitle') + '</span>' +
+        '<button class="btn" data-detail title="' + t('gp.whyTitle') + '">' + t(state.detail ? 'gp.hideWhy' : 'gp.showWhy') + '</button></div></div>';
+    }
 
     html += totemPanel(plan);
     html += ui.renderSources([
@@ -225,29 +291,26 @@
     ], t('gp.how', { upgrade: Math.round((window.GearPlan.UPGRADE - 1) * 100), favor: window.GearPlan.FAVOR_PER_BRACKET }));
     container.innerHTML = html;
 
-    // The bracket strip slides sideways on phones: show the open one, from
-    // the one before it (whole buttons on the left, the fade on the right).
-    const strip = container.querySelector('.gp-brackets');
-    const on = strip && strip.querySelector('.active');
-    if (on && strip.scrollWidth > strip.clientWidth) strip.scrollLeft = (on.previousElementSibling || on).offsetLeft - strip.offsetLeft - 14;
+    const setLevel = n => {
+      state.level = Math.min(60, Math.max(1, n));
+      state.bracket = bracketOf(state.level);
+      state.ahead = SOON;
+      UI.store.set('level', state.level);
+      onChange();
+    };
     container.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
     const drops = container.querySelector('#gpDrops');
     if (drops) drops.addEventListener('change', e => { state.drops = e.target.checked; UI.store.set('gpDrops', state.drops); onChange(); });
     const farm = container.querySelector('#gpFarm');
     if (farm) farm.addEventListener('change', e => { setFarm(e.target.checked); onChange(); });
-    container.querySelector('#gpLevel').addEventListener('change', e => {
-      state.level = Number(e.target.value);
-      state.bracket = bracketOf(state.level);
-      UI.store.set('level', state.level);
-      onChange();
-    });
-    container.querySelectorAll('[data-bracket]').forEach(b => b.addEventListener('click', () => {
-      state.bracket = Number(b.dataset.bracket);
-      onChange();
-      const head = container.querySelector('.gp-levelbar');
-      if (b.closest('.gp-br-nav') && head) head.scrollIntoView({ block: 'nearest' });
-    }));
-    container.querySelector('[data-detail]').addEventListener('click', () => { state.detail = !state.detail; UI.store.set('gpDetail', state.detail); onChange(); });
+    container.querySelector('#gpLevel').addEventListener('change', e => setLevel(Number(e.target.value)));
+    container.querySelectorAll('[data-gp-step]').forEach(b => b.addEventListener('click', () => setLevel(state.level + Number(b.dataset.gpStep))));
+    const more = container.querySelector('[data-more]');
+    if (more) more.addEventListener('click', () => { state.ahead = (state.ahead || SOON) + SOON; onChange(); });
+    container.querySelector('[data-full]').addEventListener('click', () => { state.full = !state.full; onChange(); });
+    container.querySelectorAll('[data-bracket]').forEach(b => b.addEventListener('click', () => { state.bracket = Number(b.dataset.bracket); onChange(); }));
+    const detail = container.querySelector('[data-detail]');
+    if (detail) detail.addEventListener('click', () => { state.detail = !state.detail; UI.store.set('gpDetail', state.detail); onChange(); });
     const byId = new Map(steps.concat(alts).map(st => [String(st.pick.item.id), st]));
     const totemById = new Map(totems().map(i => [String(i.id), i]));
     UI.tip.bind(container, '[data-item]', a => {

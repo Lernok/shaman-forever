@@ -92,9 +92,16 @@ async function main() {
         await check(h);
       }
     }
-    // Your path, bracket by bracket.
+    // Your gear: what comes, further and further; a piece opened; then the
+    // full list, bracket by bracket.
     await page.evaluate(() => { location.hash = '#Equipo'; });
     await page.waitForTimeout(60);
+    for (let i = 0; i < 2 && await page.$('#app [data-more]'); i++) {
+      await page.click('#app [data-more]');
+      await check('#Equipo más niveles ' + (i + 1));
+    }
+    if (await page.$('#app .gp-card summary')) { await page.click('#app .gp-card summary'); await check('#Equipo pieza abierta'); }
+    if (await page.$('#app [data-full]')) { await page.click('#app [data-full]'); await check('#Equipo lista completa'); }
     const brackets = await page.$$('#app [data-bracket]');
     for (let i = 0; i < brackets.length; i++) {
       await (await page.$$('#app [data-bracket]'))[i].click();
