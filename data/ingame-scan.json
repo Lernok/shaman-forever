@@ -392,148 +392,148 @@
    "n": "Karolek"
   },
   "5811": {
-   "y": 44.6,
-   "x": 63,
+   "y": 45,
+   "x": 63.1,
    "z": "Orgrimmar",
-   "f": "horde",
-   "t": 1792513346,
+   "n": "Kamari",
+   "t": 1792514426,
    "list": {
-    "Dark Leather Boots": {
-     "item": 252425,
-     "cost": 450,
+    "Black Whelp Slippers": {
+     "item": 252424,
+     "cost": 500,
      "prof": "Leatherworking",
-     "kind": "available",
+     "kind": "unavailable",
      "skill": 35,
      "level": 0
     },
-    "Embossed Leather Gloves": {
-     "item": 4239,
-     "cost": 135,
-     "prof": "Leatherworking",
+    "Apprentice Leatherworking": {
+     "level": 1,
      "kind": "used",
-     "skill": 40,
-     "level": 0
-    },
-    "Murloc Scale Shoes": {
-     "item": 252426,
-     "cost": 450,
-     "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 35,
-     "level": 0
-    },
-    "Small Leather Ammo Pouch": {
-     "item": 7279,
-     "cost": 90,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 25,
-     "level": 0
-    },
-    "Embossed Leather Cloak": {
-     "item": 2310,
-     "cost": 90,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 40,
-     "level": 0
-    },
-    "Handstitched Leather Belt": {
-     "item": 4237,
-     "cost": 67,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 25,
-     "level": 0
-    },
-    "Light Leather Quiver": {
-     "item": 7278,
-     "cost": 90,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 25,
-     "level": 0
-    },
-    "Embossed Leather Vest": {
-     "item": 2300,
-     "cost": 90,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 35,
-     "level": 0
+     "skill": 0,
+     "cost": 10
     },
     "Moonglow Boots": {
      "item": 252427,
-     "cost": 450,
+     "cost": 500,
      "prof": "Leatherworking",
-     "kind": "available",
+     "kind": "unavailable",
      "skill": 35,
      "level": 0
     },
-    "Embossed Leather Boots": {
-     "item": 2309,
-     "cost": 90,
+    "Dark Leather Boots": {
+     "item": 252425,
+     "cost": 500,
      "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 50,
+     "kind": "unavailable",
+     "skill": 35,
      "level": 0
     },
     "Embossed Leather Pants": {
      "item": 4242,
-     "cost": 180,
+     "cost": 200,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 50,
+     "level": 0
+    },
+    "Embossed Leather Cloak": {
+     "item": 2310,
+     "cost": 100,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 40,
+     "level": 0
+    },
+    "Light Leather Quiver": {
+     "item": 7278,
+     "cost": 100,
      "prof": "Leatherworking",
      "kind": "available",
-     "skill": 50,
+     "skill": 25,
      "level": 0
     },
     "Light Leather Bracers": {
      "item": 7281,
-     "cost": 135,
+     "cost": 150,
      "prof": "Leatherworking",
-     "kind": "available",
+     "kind": "unavailable",
      "skill": 45,
+     "level": 0
+    },
+    "Murloc Scale Shoes": {
+     "item": 252426,
+     "cost": 500,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 35,
      "level": 0
     },
     "Camp Tent": {
      "item": 279978,
-     "cost": 90,
+     "cost": 100,
      "prof": "Leatherworking",
      "kind": "used",
      "skill": 20,
      "level": 0
     },
-    "Apprentice Leatherworking": {
-     "cost": 9,
-     "level": 1,
-     "skill": 0,
-     "kind": "used"
-    },
-    "Handstitched Leather Pants": {
-     "item": 2303,
-     "cost": 45,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 15,
-     "level": 0
-    },
     "Cured Light Hide": {
      "item": 4231,
-     "cost": 45,
+     "cost": 50,
      "prof": "Leatherworking",
      "kind": "used",
      "skill": 30,
      "level": 0
     },
-    "Black Whelp Slippers": {
-     "item": 252424,
-     "cost": 450,
+    "Handstitched Leather Belt": {
+     "item": 4237,
+     "cost": 75,
      "prof": "Leatherworking",
      "kind": "used",
+     "skill": 25,
+     "level": 0
+    },
+    "Handstitched Leather Pants": {
+     "item": 2303,
+     "cost": 50,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 15,
+     "level": 0
+    },
+    "Small Leather Ammo Pouch": {
+     "item": 7279,
+     "cost": 100,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 25,
+     "level": 0
+    },
+    "Embossed Leather Gloves": {
+     "item": 4239,
+     "cost": 150,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 40,
+     "level": 0
+    },
+    "Embossed Leather Boots": {
+     "item": 2309,
+     "cost": 100,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 50,
+     "level": 0
+    },
+    "Embossed Leather Vest": {
+     "item": 2300,
+     "cost": 100,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
      "skill": 35,
      "level": 0
     }
    },
-   "n": "Kamari"
+   "f": "horde"
   }
  },
  "vendors": {},
@@ -543,18 +543,36 @@
     "trivial": [
      83,
      83
+    ],
+    "optimal": [
+     34,
+     34
+    ]
+   },
+   "2303": {
+    "optimal": [
+     34,
+     34
     ]
    },
    "2304": {
     "trivial": [
      83,
      83
+    ],
+    "medium": [
+     34,
+     34
     ]
    },
    "2318": {
     "trivial": [
      83,
      83
+    ],
+    "easy": [
+     34,
+     34
     ]
    },
    "2319": {
@@ -567,12 +585,22 @@
     "trivial": [
      83,
      83
+    ],
+    "optimal": [
+     34,
+     34
     ]
    },
    "4233": {
     "optimal": [
      83,
      83
+    ]
+   },
+   "4237": {
+    "optimal": [
+     34,
+     34
     ]
    },
    "4239": {
@@ -603,18 +631,30 @@
     "trivial": [
      83,
      83
+    ],
+    "optimal": [
+     34,
+     34
     ]
    },
    "7276": {
     "trivial": [
      83,
      83
+    ],
+    "optimal": [
+     34,
+     34
     ]
    },
    "7277": {
     "trivial": [
      83,
      83
+    ],
+    "optimal": [
+     34,
+     34
     ]
    },
    "252424": {
@@ -643,11 +683,20 @@
    },
    "279978": {
     "trivial": [
-     83,
+     34,
      83
+    ]
+   }
+  },
+  "Skinning": {
+   "279979": {
+    "trivial": [
+     68,
+     68
     ]
    }
   }
  },
- "sources": {}
+ "sources": {},
+ "recipes": {}
 }

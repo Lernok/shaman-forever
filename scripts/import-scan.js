@@ -43,6 +43,7 @@ fs.writeFileSync(tmp, dump);
 
 const merged = fs.existsSync(out) ? JSON.parse(fs.readFileSync(out, 'utf8')) : { trainers: {}, vendors: {}, colors: {}, sources: {} };
 merged.sources = merged.sources || {};
+merged.recipes = merged.recipes || {};
 // Lua arrays come as {"1": a, "2": b}.
 const arr = o => (o && typeof o === 'object' ? Object.keys(o).sort((a, b) => a - b).map(k => o[k]) : o);
 for (const f of files) {
@@ -61,6 +62,9 @@ for (const f of files) {
       if (!merged[kind][id] || (merged[kind][id].t || 0) <= (v.t || 0)) merged[kind][id] = v;
     }
   }
+  // Every recipe the profession window lists (learned or not).
+  for (const [prof, items] of Object.entries(scan.recipes || {})) merged.recipes[prof] = Object.assign(merged.recipes[prof] || {}, items);
+  if (scan.fields) merged.fields = scan.fields;
   // How the game says to learn recipes you don't know (profession window).
   for (const [prof, items] of Object.entries(scan.sources || {})) merged.sources[prof] = Object.assign(merged.sources[prof] || {}, items);
   for (const [prof, items] of Object.entries(scan.colors || {})) {
@@ -119,5 +123,22 @@ for (const [prof, items] of Object.entries(merged.sources)) {
     console.log('  ' + e.name + ' #' + item + ' · ' + e.source + (w && w.source !== e.source ? '   (web: ' + w.source + ')' : ''));
   }
 }
+// The window's full list against the web data: missing ones, other grey levels.
+for (const [prof, items] of Object.entries(merged.recipes)) {
+  const webList = Object.values(web[prof.toLowerCase()] || {});
+  const webIds = new Set(webList.map(r => r.itemId));
+  const missing = [], grey = [];
+  for (const [item, e] of Object.entries(items)) {
+    const w = webIds.has(Number(item)) && byItem.get(Number(item));
+    if (!w) missing.push(e.name + ' #' + item + (e.grey ? ' (gris ' + e.grey + ')' : ''));
+    else if (e.grey && w.skill[3] != null && e.grey !== w.skill[3]) grey.push(e.name + ': juego ' + e.grey + ', web ' + w.skill[3]);
+  }
+  const notInGame = webList.filter(r => r.itemId && !items[r.itemId]).map(r => r.name + ' (' + r.skill[0] + ', ' + r.source + ')');
+  console.log('\nVENTANA DE ' + prof + ': ' + Object.keys(items).length + ' recetas en el juego, ' + webList.length + ' en la web');
+  console.log('  en el juego y no en la web (' + missing.length + '): ' + missing.slice(0, 60).join(', '));
+  console.log('  gris distinto (' + grey.length + '): ' + grey.slice(0, 40).join(' · '));
+  console.log('  en la web y no en el juego (' + notInGame.length + '): ' + notInGame.slice(0, 60).join(', '));
+}
+if (merged.fields) console.log('\nCampos de una receta: ' + merged.fields);
 const colorN = Object.values(merged.colors).reduce((n, m) => n + Object.keys(m).length, 0);
 console.log('\n' + Object.keys(merged.trainers).length + ' entrenadores, ' + Object.keys(merged.vendors).length + ' vendedores, colores de ' + colorN + ' recetas -> ' + path.relative(root, out));

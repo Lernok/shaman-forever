@@ -124,7 +124,7 @@ function Api.tradeList()
       if not item and T.GetRecipeItemLink then item = tonumber(tostring(T.GetRecipeItemLink(rid) or ""):match("item:(%d+)")) end
       if info and item then
         local kind = info.difficulty or DIFFICULTY[info.relativeDifficulty]
-        local e = { id = item, kind = kind, name = info.name, learned = info.learned ~= false }
+        local e = { id = item, kind = kind, name = info.name, learned = info.learned ~= false, rid = rid, grey = info.maxTrivialLevel, info = info }
         if not e.learned and T.GetRecipeSourceText then
           local ok, src = pcall(T.GetRecipeSourceText, rid)
           e.source = ok and src or nil
@@ -2002,7 +2002,8 @@ end
 local scanPending
 local function scanColors()
   local list = {}
-  for _, e in ipairs(Api.tradeList()) do
+  local all = Api.tradeList()
+  for _, e in ipairs(all) do
     if e.learned then list[#list + 1] = { e.id, e.kind } end
   end
   local prof, rank = Api.tradeLine()
@@ -2015,9 +2016,26 @@ local function scanColors()
       end
     end
   end
+  -- Every recipe the window lists, learned or not (Forever lists them all):
+  -- recipes the web data lacks show up here. The first time, the fields the
+  -- game gives a recipe, for the log.
+  if prof and #all > 0 then
+    db.scan = db.scan or {}
+    db.scan.recipes = db.scan.recipes or {}
+    local r = {}
+    for _, e in ipairs(all) do r[e.id] = { name = e.name, rid = e.rid, grey = e.grey, learned = e.learned or nil } end
+    db.scan.recipes[prof] = r
+    if not db.scan.fields then
+      local f = {}
+      for k, v in pairs(all[1].info or {}) do if type(v) ~= "table" then f[#f + 1] = k .. "=" .. tostring(v) end end
+      table.sort(f)
+      db.scan.fields = table.concat(f, " ")
+      log("scan", "fields " .. db.scan.fields)
+    end
+  end
   -- How to learn the ones you don't know yet, as the game words it.
   if prof then
-    for _, e in ipairs(Api.tradeList()) do
+    for _, e in ipairs(all) do
       if not e.learned and e.source then
         db.scan = db.scan or {}
         db.scan.sources = db.scan.sources or {}
@@ -2026,7 +2044,6 @@ local function scanColors()
       end
     end
   end
-  local all = Api.tradeList()
   local T = C_TradeSkillUI
   log("scan", "colors " .. tostring(prof) .. " " .. tostring(rank) .. ": " .. #list .. " of " .. #all ..
     (T and (" ids " .. #(T.GetAllRecipeIDs and T.GetAllRecipeIDs() or {}) .. (T.GetRecipeSourceText and " src" or " nosrc")) or ""))
