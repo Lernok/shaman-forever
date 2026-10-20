@@ -290,6 +290,22 @@
       if (!farm) parts.push(t('pr.lw.mat.ah'));
       return '<div class="lw-mat">' + chip(m, n) + '<span class="dim"> ' + parts.join(' · ') + '</span></div>';
     };
+    // Buying a piece's rare materials: at the last auction scan's prices,
+    // as a share of the gold a level's quests pay at the level you make it
+    // (cheap under a quarter, dear from three quarters).
+    const PR = SK.prices;
+    const coin = c => (c >= 10000 ? Math.floor(c / 10000) + 'g ' : '') + (c % 10000 >= 100 ? Math.floor(c % 10000 / 100) + 's' : (c < 100 ? c + 'c' : ''));
+    const buyCost = (own, lvl) => {
+      if (farm || !PR || !own.length) return '';
+      let total = 0;
+      let missing = 0;
+      own.forEach(([m, n]) => { if (PR.p[m]) total += PR.p[m] * n; else missing++; });
+      if (!total) return '';
+      const gold = SK.gold[Math.min(59, Math.max(1, lvl)) - 1] || 1;
+      const share = total / gold;
+      const tier = share < 0.25 ? 'cheap' : share < 0.75 ? 'mid' : 'dear';
+      return '<div class="lw-cost lw-' + tier + '">' + t('pr.lw.cost.' + tier) + ' · ' + t('pr.lw.cost.line', { cost: coin(total).trim() + (missing ? '+' : ''), pct: Math.round(share * 100), n: lvl }) + '</div>';
+    };
     const piece = id => {
       const st = stepOf.get(id);
       const r = recipe.get(id);
@@ -297,7 +313,7 @@
       const lvl = (pieceOf.get(id) || {}).alone || st.level;
       return '<span class="lw-piece">' + UI.itemLink(st.pick.item) + '<span class="dim"> ' + window.GearPath.slotName(st.pick.slot) +
         (r && r.how === 'f' ? ' · ' + t('pr.plan.favorCost', { n: r.favor || 30 }) : '') + '</span>' +
-        (own.length ? '<span class="lw-mats">' + own.map(([m, n]) => whereMat(m, n, lvl)).join('') + '</span>' : '') + '</span>';
+        (own.length ? '<span class="lw-mats">' + own.map(([m, n]) => whereMat(m, n, lvl)).join('') + buyCost(own, lvl) + '</span>' : '') + '</span>';
     };
     // Having a piece at the level your gear path suggests it, when skinning alone is
     // later: offered for the pieces that matter (blue, Favor, or from level 12), not
@@ -318,7 +334,7 @@
       : '<span class="dim">' + t('pr.lw.noSkinning') + '</span>') +
       '<span class="ctl-label">' + t('pr.lw.matsLabel') + '</span><div class="seg">' + ['ah', 'farm'].map(k =>
         '<button class="btn' + ((k === 'farm') === farm ? ' active' : '') + '" data-lw-farm="' + k + '" title="' + t('pr.lw.mats.' + k + 'Title') + '">' + t('pr.lw.mats.' + k) + '</button>').join('') + '</div></div>' +
-      (farm ? '<p class="note-text dim">' + t('pr.lw.farmNote') + '</p>' : '');
+      (farm ? '<p class="note-text dim">' + t('pr.lw.farmNote') + '</p>' : SK.prices ? '<p class="note-text dim">' + t('pr.lw.pricesNote', { date: SK.prices.date.split('-').reverse().slice(0, 2).join('/') }) + '</p>' : '');
 
     if (skinning) {
       // At a glance: the skill you have at 10, 20 and 30, and the pieces you make.

@@ -1401,6 +1401,10 @@ details[open] > .lw-head .lw-goals { display: none; }
 .lw-mats { display: flex; flex-direction: column; gap: 3px; margin: 2px 0 4px 34px; padding-left: 8px; border-left: 2px solid var(--border); }
 .lw-mat { font-size: 12px; line-height: 1.5; }
 .lw-mat .lw-chip { margin-right: 2px; }
+.lw-cost { font-size: 12px; color: var(--text-dim); }
+.lw-cheap { color: #6cc070; }
+.lw-mid { color: var(--warn); }
+.lw-dear { color: #e06c5a; }
 .lw-early { flex-basis: 100%; font-size: 12px; color: var(--text-dim); display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; margin: 2px 0 4px; }
 .lw-buyrow .lw-k { color: var(--warn); }
 .lw-more { margin-top: 18px; }

@@ -2181,6 +2181,18 @@ local function scanColors()
   end
 end
 
+-- Gold you earn per level, for the site's "share of a level's quest gold":
+-- cdb.income[level] = { q = from quests, all = everything you gained }.
+local lastMoney
+local function noteIncome(kind, coin)
+  if not coin or coin <= 0 then return end
+  cdb.income = cdb.income or {}
+  local l = UnitLevel("player")
+  local e = cdb.income[l] or { q = 0, all = 0 }
+  e[kind] = (e[kind] or 0) + coin
+  cdb.income[l] = e
+end
+
 -- The trainer panel (further down).
 local trainerPanel, paintTrainer, showTrainerPanel
 local ev = CreateFrame("Frame")
@@ -2206,6 +2218,7 @@ onEvent = function(self, event, ...)
     self:RegisterEvent("PLAYER_REGEN_ENABLED")
     self:RegisterEvent("PLAYER_REGEN_DISABLED")
     self:RegisterEvent("QUEST_TURNED_IN")
+    pcall(self.RegisterEvent, self, "PLAYER_MONEY")
     self:RegisterEvent("QUEST_ACCEPTED")
     self:RegisterEvent("QUEST_REMOVED")
     self:RegisterEvent("QUEST_DETAIL")
@@ -2261,6 +2274,7 @@ onEvent = function(self, event, ...)
     -- The zone's name settles a moment after a loading screen.
     C_Timer.After(2, function() guarded("zone", onZone) end)
     C_Timer.After(3, function() guarded("scan", scanBags) end)
+    if GetMoney then lastMoney = readable(GetMoney()) end
     followPolestar()
     if event == "PLAYER_ENTERING_WORLD" and not mmButton then
       makeMinimapButton()
@@ -2276,10 +2290,16 @@ onEvent = function(self, event, ...)
   elseif event == "QUEST_DETAIL" or event == "QUEST_COMPLETE" then
     noteRewardXp()
   elseif event == "QUEST_TURNED_IN" then
-    local id, xp = ...
+    local id, xp, coin = ...
     pcall(noteXp, id, xp)
+    pcall(noteIncome, "q", readable(coin))
     log("quest", tostring(id))
     if frame and frame.live then refresh() else C_Timer.After(0.5, repaint) end
+  elseif event == "PLAYER_MONEY" then
+    -- Money you gain (loot, sales, quests); spending doesn't count.
+    local now = readable(GetMoney())
+    if now and lastMoney and now > lastMoney then pcall(noteIncome, "all", now - lastMoney) end
+    lastMoney = now
   elseif event == "BAG_UPDATE_DELAYED" then
     bagBest = nil
     guarded("scan", scanBags)

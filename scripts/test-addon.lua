@@ -287,7 +287,15 @@ if os.getenv("OFFER") then
   show("SÍ", yes) show("PRONTO", soon) show("NO VALE", short) print("  no mejoran: " .. no)
 end
 -- Quest XP the game pays, kept for the route planner (turn-in event).
-ev:fire("QUEST_TURNED_IN", 96659, 410, 0)
+local money = 1000
+function GetMoney() return money end
+ev:fire("PLAYER_ENTERING_WORLD")
+ev:fire("QUEST_TURNED_IN", 96659, 410, 75)
+money = 1075; ev:fire("PLAYER_MONEY")
+money = 1000; ev:fire("PLAYER_MONEY")
+money = 1030; ev:fire("PLAYER_MONEY")
+local inc = (ShamanForeverCharDB.income or {})[UnitLevel("player")] or {}
+print("ingresos del nivel: misiones " .. tostring(inc.q) .. ", todo " .. tostring(inc.all))
 print("qxp 96659:", ShamanForeverDB.qxp and ShamanForeverDB.qxp[96659] and table.concat(ShamanForeverDB.qxp[96659], " @ nivel "))
 SlashCmdList.SHAMANFOREVER("ayuda")
 SlashCmdList.SHAMANFOREVER("dondeestoy")

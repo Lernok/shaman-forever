@@ -10,6 +10,13 @@
 //   whether it's elite; only creatures looted often enough.
 // - Gathered: mined from, fished in, found in (clams).
 //
+// - Quest gold per level, to weigh a price: the experience to level up
+//   (Classic's table) times the share that comes from quests (QUEST_SHARE),
+//   at the money a quest of that level pays per point of experience (the
+//   client's QuestMoneyReward and QuestXP, same difficulty column).
+// - Auction prices, when data/prices.json exists (scripts/import-prices.js,
+//   from Auctionator scans): realm, day and the lowest price per unit.
+//
 // Only these facts, with the source cited on the page; fetched politely and
 // cached in .cache/wowhead-classic/ (refreshed monthly). Forever's own items
 // aren't on Wowhead Classic: they stay "unknown" unless a profession makes
@@ -26,6 +33,14 @@ const http = require('./lib/http');
 const MIN_LOOTS = 50;
 const MIN_CHANCE = 0.02;
 const MAX_DROPS = 80;
+// Experience to reach the next level, 1-59 (Classic).
+const XP = [400, 900, 1400, 2100, 2800, 3600, 4500, 5400, 6500, 7600, 8800, 10100, 11400, 12900, 14400, 16000, 17700, 19400, 21300, 23200,
+  25200, 27300, 29400, 31700, 34000, 36400, 38900, 41400, 44300, 47400, 50800, 54500, 58600, 62800, 67100, 71600, 76100, 80800, 85700, 90700,
+  95800, 101000, 106300, 111800, 117500, 123200, 129100, 135100, 141200, 147500, 153900, 160400, 167100, 173900, 180800, 187900, 195000, 202300, 209800];
+// Of a level's experience, what quests give (the rest: kills; js/lw-plan.js KILL_SHARE).
+const QUEST_SHARE = 0.6;
+// QuestMoneyReward / QuestXP column of an ordinary quest.
+const DIFFICULTY = 'Difficulty_5';
 
 // A listview's rows (id: 'dropped-by', 'mined-from-object'...) of a Wowhead page.
 function listview(html, id) {
@@ -115,6 +130,17 @@ function listview(html, id) {
     page[id] = o;
   }
   SK.reagents = page;
+  // Quest gold per level (copper), gold[level - 1].
+  const table = async name => {
+    const csv = await http.get('https://wago.tools/db2/' + name + '/csv?build=' + build, { cache: 'wago/' + build + '/' + name + '.csv', valid: t => /^ID,/.test(t) });
+    return new Map(parseCSV(csv).map(r => [Number(r.ID), Number(r[DIFFICULTY])]));
+  };
+  const money = await table('QuestMoneyReward');
+  const qxp = await table('QuestXP');
+  SK.gold = XP.map((xp, i) => Math.round(xp * QUEST_SHARE * (money.get(i + 1) || 0) / (qxp.get(i + 1) || 1)));
+  SK.sources.gold = 'https://wago.tools/db2/QuestMoneyReward';
+  const prices = readJSON('data/prices.json', null);
+  if (prices) SK.prices = { realm: prices.realm, date: prices.date, p: prices.prices };
   SK.sources.reagents = 'https://www.wowhead.com/classic/item=5784/slimy-murloc-scale#dropped-by';
   writeJSON('data/skinning.json', SK);
   const n = Object.values(items);
