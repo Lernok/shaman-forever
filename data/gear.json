@@ -81477,6 +81477,41 @@
    ]
   },
   {
+   "id": 286982,
+   "name": "Unearthed Barrier",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 3,
+   "req": 27,
+   "obtain": 27,
+   "ilvl": 32,
+   "bind": "equip",
+   "armor": 699,
+   "block": 15,
+   "stats": {
+    "stamina": 8
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Deals 6 to 39 Nature damage every time you block. Damage is doubled in swamps."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_shield_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 27,
+     "rec": 27
+    }
+   ]
+  },
+  {
    "id": 286991,
    "name": "Roused Nature Footwraps",
    "kind": "Leather",
@@ -118240,6 +118275,39 @@
    ]
   },
   {
+   "id": 281676,
+   "name": "Rog'mar Trainee Shoulderpads",
+   "kind": "Leather",
+   "slot": "Shoulder",
+   "quality": 2,
+   "req": 36,
+   "obtain": 36,
+   "ilvl": 41,
+   "bind": "equip",
+   "armor": 84,
+   "stats": {
+    "agility": 10,
+    "stamina": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_shoulder_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 36,
+     "rec": 36
+    }
+   ]
+  },
+  {
    "id": 282704,
    "name": "Shadow Council Apprentice's Mantle",
    "kind": "Cloth",
@@ -120335,7 +120403,7 @@
    "bonus": {},
    "equip": [],
    "use": [
-    "Use: Reduces your fall speed for 10 sec. (1 Hour Cooldown)"
+    "Use: Reduces your fall speed for 10 sec. (30 Min Cooldown)"
    ],
    "chance": [],
    "era": "classic",
@@ -121845,7 +121913,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_boots_chain_02",
    "raceMask": -1,
    "sources": [

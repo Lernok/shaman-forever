@@ -73,17 +73,17 @@
   "statPriority": {
     "list": [
       "Healing Power",
+      "Mana Regeneration (MP5)",
       "Intellect",
       "Spirit",
-      "Mana Regeneration (MP5)",
-      "Stamina"
+      "Critical Strike"
     ],
     "confidence": "classic-assumed",
     "rationale": {
-      "es": "El poder de curación mejora cada cura, el Intelecto sostiene la reserva de maná y Mindfulness hace que el Espíritu rinda mientras lanzás hechizos. Tené suficiente Aguante para que un golpe suelto no te interrumpa una cura.",
-      "en": "Healing power improves every heal, Intellect sustains the mana pool, and Mindfulness makes Spirit pay off while casting. Keep enough Stamina that a stray hit doesn't interrupt a heal."
+      "es": "Este orden es el mismo con el que Equipo › Tu camino elige tus piezas. WoWSims todavía no tiene pesos para Restauración en Forever: son los habituales de Classic. El poder de curación mejora cada cura; la regeneración (MP5) y el Intelecto sostienen el maná, y Mindfulness hace que el Espíritu rinda mientras lanzás. Tené suficiente Aguante para que un golpe suelto no te interrumpa una cura.",
+      "en": "This is the order Equipo › Your path picks your pieces with. WoWSims has no Restoration weights for Forever yet: these are Classic's usual ones. Healing power improves every heal; regeneration (MP5) and Intellect sustain your mana, and Mindfulness makes Spirit pay off while casting. Keep enough Stamina that a stray hit doesn't interrupt a heal."
     },
-    "source": "https://classicwowforever.com/class-guides/shaman/restoration/",
+    "source": "https://github.com/wowsims/forever",
     "forever": {
       "note": {
         "es": "Específico de Forever: las curas bajaron poco (Healing Wave −7%, Chain Heal −17%) y los rangos bajos de Healing Wave escalan más con poder con hechizos que en Classic. Con Mindfulness 3/3 y Water Shield, la regeneración vale más que en Classic.",
@@ -170,8 +170,8 @@
     "https://talentsforever.com/shaman/changes"
   ],
   "caveat": {
-    "es": "Beta de Forever, cap en nivel 30 (oct 2026). Casi todo lo de rotación y prioridad de stats viene etiquetado como 'asumido de Classic' por su propia fuente (classicwowforever.com): significa que nada en el cliente beta contradice el comportamiento de Classic Era, no que esté confirmado. Tomalo como punto de partida, no como verdad cerrada.",
-    "en": "Forever beta, level 30 cap (Oct 2026). Almost all rotation and stat priority content is labeled 'assumed from Classic' by its own source (classicwowforever.com): it means nothing in the beta client contradicts Classic Era behavior, not that it's confirmed. Treat it as a starting point, not settled fact."
+    "es": "Beta de Forever, cap en nivel 30 (oct 2026). WoWSims todavía no tiene pesos para Restauración en Forever: el orden de stats es el habitual de Classic, el mismo con el que Equipo › Tu camino elige tus piezas. La rotación viene de classicwowforever.com, que la etiqueta 'asumida de Classic': nada en el cliente beta la contradice, pero no está confirmada. Tomala como punto de partida.",
+    "en": "Forever beta, level 30 cap (Oct 2026). WoWSims has no Restoration weights for Forever yet: the stat order is Classic's usual one, the same Equipo › Your path picks your pieces with. The rotation comes from classicwowforever.com, which labels it 'assumed from Classic': nothing in the beta client contradicts it, but it isn't confirmed. Treat it as a starting point."
   },
   "gearTargets": [
     {

@@ -39,10 +39,28 @@
   }
 
   // Priority as bars that shrink down the list.
+  // The stats in the order the gear path values them (js/gear-plan.js
+  // WEIGHTS: WoWSims for Forever, adjusted for leveling), so the guide and
+  // Equipo › Tu camino never disagree. Haste and expertise come at 60 only;
+  // a school's damage counts as spell power. Enhancement's weapon goes first
+  // (its DPS is judged apart). Each bar is the stat's worth per item point.
+  // Main stats first: on a tie they lead.
+  const STAT_OF = { spellPower: 'Spell Power', healing: 'Healing Power', strength: 'Strength', attackPower: 'Attack Power', hitRating: 'Hit',
+    critRating: 'Critical Strike', intellect: 'Intellect', mp5: 'Mana Regeneration (MP5)', agility: 'Agility', spirit: 'Spirit', stamina: 'Stamina' };
+  function statOrder(spec, fallback) {
+    const W = window.GearPlan && window.GearPlan.WEIGHTS[spec];
+    if (!W) return fallback.map(s => ({ name: s, w: null }));
+    // A healer's spell power is its healing power: one line.
+    const out = Object.entries(STAT_OF).filter(([k]) => W[k] != null && !(k === 'spellPower' && W.healing != null)).map(([k, name]) => ({ name, w: W[k] }))
+      .sort((a, b) => b.w - a.w).slice(0, 5);
+    if (spec === 'Enhancement') out.unshift({ name: 'Weapon Damage', w: null });
+    return out;
+  }
   function renderStatBars(list) {
+    const max = Math.max(...list.map(s => s.w || 0)) || 1;
     return '<ol class="stat-bars">' + list.map((s, i) =>
-      '<li><span class="sb-n">' + (i + 1) + '</span><span class="sb-name">' + I18N.term(s) + '</span>' +
-      '<span class="sb-bar"><span style="width:' + Math.max(18, 100 - i * 18) + '%"></span></span></li>').join('') + '</ol>';
+      '<li><span class="sb-n">' + (i + 1) + '</span><span class="sb-name">' + I18N.term(s.name) + '</span>' +
+      '<span class="sb-bar"><span style="width:' + (s.w == null ? 100 : Math.max(12, Math.round(s.w / max * 100))) + '%"></span></span></li>').join('') + '</ol>';
   }
 
   function renderList(items, ordered) {
@@ -80,7 +98,7 @@
 
   // The short version, right under the banner.
   function renderTiles(guide, spec) {
-    const list = guide.statPriority.list;
+    const list = statOrder(spec, guide.statPriority.list).map(s => s.name);
     let html = '<div class="tiles">';
     html += tile(SPEC_ICONS[spec], t('tile.role'), guide.role, spec);
     // The weapon your gear path has you hold at 30 (your race and professions).
@@ -151,7 +169,7 @@
     html += renderChanges(guide.mechanicalChanges, spec);
     html += '<div class="guide-cols">';
     html += '<div class="col">' + '<div class="panel"><h3>' + t('guide.stats') + ' ' + badge(guide.statPriority.confidence) + '</h3>' +
-      renderStatBars(guide.statPriority.list) + '</div>' + renderKeyTalents(guide) + '</div>';
+      renderStatBars(statOrder(spec, guide.statPriority.list)) + '</div>' + renderKeyTalents(guide) + '</div>';
     html += '<div class="col">' + renderRotation(guide.rotation, spec) + renderStatsGear(guide) + '</div>';
     html += '</div>';
     html += renderSources(guide.sources, guide.caveat);

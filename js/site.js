@@ -107,7 +107,19 @@
   }));
   // What each page reads from them. The page you open asks for its own right
   // away, while the site's scripts are still arriving.
-  Site.NEEDS = { Inicio: ['gear', 'weapons', 'skinning'], Guia: ['gear', 'weapons', 'skinning'], Equipo: ['gear', 'weapons', 'skinning'],
+  // The gear pages read the skinning data only when your path needs it:
+  // with Leatherworking (its pieces say how to make them) or farming
+  // everything (crafts wait for their materials).
+  const gearNeeds = () => {
+    let lw = false;
+    try {
+      lw = JSON.parse(localStorage.getItem('shaman.gpFarm') || 'false') === true ||
+        (JSON.parse(localStorage.getItem('shaman.profs') || '[]') || []).includes('Leatherworking');
+    } catch (e) { /* private mode: without it */ }
+    return ['gear', 'weapons'].concat(lw ? ['skinning'] : []);
+  };
+  Site.NEEDS = {
+    get Inicio() { return gearNeeds(); }, get Guia() { return gearNeeds(); }, get Equipo() { return gearNeeds(); },
     Profesiones: ['gear', 'weapons', 'professions', 'consumables', 'camp', 'skinning'] };
   const opening = location.hash.slice(1).split('/')[0];
   // Site.first: settled once they're in (or failed).

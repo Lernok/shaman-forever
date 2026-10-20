@@ -1,7 +1,7 @@
 {
  "_readme": "Fuentes de misión del equipo nuevo de Forever (items) y datos de Forever de las misiones de Classic que dan equipo (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json.",
  "source": "https://foreverchanges.pro",
- "fetched": "2026-10-13",
+ "fetched": "2026-10-20",
  "items": {
   "246164": {
    "name": "Skullthumper",
@@ -4050,7 +4050,7 @@
    "sources": [
     {
      "type": "quest",
-     "quest": "Stalk With The Earthmother",
+     "quest": "Stalk With The Earthmother (Hunter, Shaman, Druid)",
      "questId": 76240,
      "level": 11,
      "requiredLevel": 4,
@@ -4078,7 +4078,7 @@
    "sources": [
     {
      "type": "quest",
-     "quest": "Stalk With The Earthmother",
+     "quest": "Stalk With The Earthmother (Hunter, Shaman, Druid)",
      "questId": 76240,
      "level": 11,
      "requiredLevel": 4,
@@ -10375,6 +10375,7 @@
    "level": 58,
    "requiredLevel": null,
    "zone": "Blackrock Depths",
+   "dungeon": true,
    "bands": {
     "red": 52,
     "orange": 54,
@@ -11926,6 +11927,7 @@
    "level": 47,
    "requiredLevel": null,
    "zone": "Maraudon",
+   "dungeon": true,
    "bands": {
     "red": 41,
     "orange": 43,
@@ -12960,7 +12962,7 @@
    "ref": "https://foreverchanges.pro/quest/8366"
   },
   "8377": {
-   "quest": "Armaments of War",
+   "quest": "Armaments of War (Hunter)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Silithus",
@@ -12973,7 +12975,7 @@
    "ref": "https://foreverchanges.pro/quest/8377"
   },
   "8378": {
-   "quest": "Armaments of War",
+   "quest": "Armaments of War (Rogue)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Silithus",
@@ -12986,7 +12988,7 @@
    "ref": "https://foreverchanges.pro/quest/8378"
   },
   "8379": {
-   "quest": "Armaments of War",
+   "quest": "Armaments of War (Priest)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Silithus",
@@ -12999,7 +13001,7 @@
    "ref": "https://foreverchanges.pro/quest/8379"
   },
   "8380": {
-   "quest": "Armaments of War (Horde)",
+   "quest": "Armaments of War (Shaman)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Silithus",
@@ -13012,7 +13014,7 @@
    "ref": "https://foreverchanges.pro/quest/8380"
   },
   "8381": {
-   "quest": "Armaments of War",
+   "quest": "Armaments of War (Mage, Warlock)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Silithus",
@@ -13026,7 +13028,7 @@
    "ref": "https://foreverchanges.pro/quest/8381"
   },
   "8382": {
-   "quest": "Armaments of War",
+   "quest": "Armaments of War (Druid)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Silithus",
@@ -13209,7 +13211,7 @@
   "8573": {
    "quest": "Champion's Battlegear",
    "level": 60,
-   "requiredLevel": null,
+   "requiredLevel": 60,
    "zone": "Silithus",
    "bands": {
     "yellow": 60
@@ -13601,7 +13603,7 @@
    "ref": "https://foreverchanges.pro/quest/8802"
   },
   "8905": {
-   "quest": "An Earnest Proposition",
+   "quest": "An Earnest Proposition (Druid)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -13615,7 +13617,7 @@
    "ref": "https://foreverchanges.pro/quest/8905"
   },
   "8906": {
-   "quest": "An Earnest Proposition",
+   "quest": "An Earnest Proposition (Hunter)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -13629,7 +13631,7 @@
    "ref": "https://foreverchanges.pro/quest/8906"
   },
   "8907": {
-   "quest": "An Earnest Proposition",
+   "quest": "An Earnest Proposition (Mage)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -13643,7 +13645,7 @@
    "ref": "https://foreverchanges.pro/quest/8907"
   },
   "8909": {
-   "quest": "An Earnest Proposition",
+   "quest": "An Earnest Proposition (Priest)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -13657,7 +13659,7 @@
    "ref": "https://foreverchanges.pro/quest/8909"
   },
   "8910": {
-   "quest": "An Earnest Proposition",
+   "quest": "An Earnest Proposition (Rogue)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -13671,7 +13673,7 @@
    "ref": "https://foreverchanges.pro/quest/8910"
   },
   "8911": {
-   "quest": "An Earnest Proposition",
+   "quest": "An Earnest Proposition (Warlock)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -13685,7 +13687,7 @@
    "ref": "https://foreverchanges.pro/quest/8911"
   },
   "8913": {
-   "quest": "An Earnest Proposition",
+   "quest": "An Earnest Proposition (Druid)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13699,7 +13701,7 @@
    "ref": "https://foreverchanges.pro/quest/8913"
   },
   "8914": {
-   "quest": "An Earnest Proposition",
+   "quest": "An Earnest Proposition (Hunter)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13713,7 +13715,7 @@
    "ref": "https://foreverchanges.pro/quest/8914"
   },
   "8915": {
-   "quest": "An Earnest Proposition",
+   "quest": "An Earnest Proposition (Mage)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13727,7 +13729,7 @@
    "ref": "https://foreverchanges.pro/quest/8915"
   },
   "8916": {
-   "quest": "An Earnest Proposition",
+   "quest": "An Earnest Proposition (Priest)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13741,7 +13743,7 @@
    "ref": "https://foreverchanges.pro/quest/8916"
   },
   "8917": {
-   "quest": "An Earnest Proposition",
+   "quest": "An Earnest Proposition (Rogue)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13755,7 +13757,7 @@
    "ref": "https://foreverchanges.pro/quest/8917"
   },
   "8918": {
-   "quest": "An Earnest Proposition",
+   "quest": "An Earnest Proposition (Shaman)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13769,7 +13771,7 @@
    "ref": "https://foreverchanges.pro/quest/8918"
   },
   "8919": {
-   "quest": "An Earnest Proposition",
+   "quest": "An Earnest Proposition (Warlock)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13783,7 +13785,7 @@
    "ref": "https://foreverchanges.pro/quest/8919"
   },
   "8926": {
-   "quest": "Just Compensation",
+   "quest": "Just Compensation (Druid)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -13797,7 +13799,7 @@
    "ref": "https://foreverchanges.pro/quest/8926"
   },
   "8927": {
-   "quest": "Just Compensation",
+   "quest": "Just Compensation (Druid)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13811,7 +13813,7 @@
    "ref": "https://foreverchanges.pro/quest/8927"
   },
   "8931": {
-   "quest": "Just Compensation",
+   "quest": "Just Compensation (Hunter)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -13825,7 +13827,7 @@
    "ref": "https://foreverchanges.pro/quest/8931"
   },
   "8932": {
-   "quest": "Just Compensation",
+   "quest": "Just Compensation (Mage)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -13839,7 +13841,7 @@
    "ref": "https://foreverchanges.pro/quest/8932"
   },
   "8934": {
-   "quest": "Just Compensation",
+   "quest": "Just Compensation (Priest)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -13853,7 +13855,7 @@
    "ref": "https://foreverchanges.pro/quest/8934"
   },
   "8935": {
-   "quest": "Just Compensation",
+   "quest": "Just Compensation (Rogue)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -13867,7 +13869,7 @@
    "ref": "https://foreverchanges.pro/quest/8935"
   },
   "8936": {
-   "quest": "Just Compensation",
+   "quest": "Just Compensation (Warlock)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -13881,7 +13883,7 @@
    "ref": "https://foreverchanges.pro/quest/8936"
   },
   "8938": {
-   "quest": "Just Compensation",
+   "quest": "Just Compensation (Hunter)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13895,7 +13897,7 @@
    "ref": "https://foreverchanges.pro/quest/8938"
   },
   "8939": {
-   "quest": "Just Compensation",
+   "quest": "Just Compensation (Mage)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13909,7 +13911,7 @@
    "ref": "https://foreverchanges.pro/quest/8939"
   },
   "8940": {
-   "quest": "Just Compensation",
+   "quest": "Just Compensation (Priest)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13923,7 +13925,7 @@
    "ref": "https://foreverchanges.pro/quest/8940"
   },
   "8941": {
-   "quest": "Just Compensation",
+   "quest": "Just Compensation (Rogue)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13937,7 +13939,7 @@
    "ref": "https://foreverchanges.pro/quest/8941"
   },
   "8942": {
-   "quest": "Just Compensation",
+   "quest": "Just Compensation (Shaman)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13951,7 +13953,7 @@
    "ref": "https://foreverchanges.pro/quest/8942"
   },
   "8943": {
-   "quest": "Just Compensation",
+   "quest": "Just Compensation (Warlock)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -13976,7 +13978,7 @@
    "ref": "https://foreverchanges.pro/quest/8949"
   },
   "8951": {
-   "quest": "Anthion's Parting Words",
+   "quest": "Anthion's Parting Words (Druid)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -13990,7 +13992,7 @@
    "ref": "https://foreverchanges.pro/quest/8951"
   },
   "8952": {
-   "quest": "Anthion's Parting Words",
+   "quest": "Anthion's Parting Words (Hunter)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -14004,7 +14006,7 @@
    "ref": "https://foreverchanges.pro/quest/8952"
   },
   "8953": {
-   "quest": "Anthion's Parting Words",
+   "quest": "Anthion's Parting Words (Mage)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -14018,7 +14020,7 @@
    "ref": "https://foreverchanges.pro/quest/8953"
   },
   "8955": {
-   "quest": "Anthion's Parting Words",
+   "quest": "Anthion's Parting Words (Priest)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -14032,7 +14034,7 @@
    "ref": "https://foreverchanges.pro/quest/8955"
   },
   "8956": {
-   "quest": "Anthion's Parting Words",
+   "quest": "Anthion's Parting Words (Rogue)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -14046,7 +14048,7 @@
    "ref": "https://foreverchanges.pro/quest/8956"
   },
   "8957": {
-   "quest": "Anthion's Parting Words",
+   "quest": "Anthion's Parting Words (Shaman)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -14060,7 +14062,7 @@
    "ref": "https://foreverchanges.pro/quest/8957"
   },
   "8958": {
-   "quest": "Anthion's Parting Words",
+   "quest": "Anthion's Parting Words (Warlock)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -14074,7 +14076,7 @@
    "ref": "https://foreverchanges.pro/quest/8958"
   },
   "8999": {
-   "quest": "Saving the Best for Last",
+   "quest": "Saving the Best for Last (Druid)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -14088,7 +14090,7 @@
    "ref": "https://foreverchanges.pro/quest/8999"
   },
   "9000": {
-   "quest": "Saving the Best for Last",
+   "quest": "Saving the Best for Last (Hunter)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -14102,7 +14104,7 @@
    "ref": "https://foreverchanges.pro/quest/9000"
   },
   "9001": {
-   "quest": "Saving the Best for Last",
+   "quest": "Saving the Best for Last (Mage)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -14116,7 +14118,7 @@
    "ref": "https://foreverchanges.pro/quest/9001"
   },
   "9003": {
-   "quest": "Saving the Best for Last",
+   "quest": "Saving the Best for Last (Priest)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -14130,7 +14132,7 @@
    "ref": "https://foreverchanges.pro/quest/9003"
   },
   "9004": {
-   "quest": "Saving the Best for Last",
+   "quest": "Saving the Best for Last (Rogue)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -14144,7 +14146,7 @@
    "ref": "https://foreverchanges.pro/quest/9004"
   },
   "9005": {
-   "quest": "Saving the Best for Last",
+   "quest": "Saving the Best for Last (Warlock)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Ironforge",
@@ -14158,7 +14160,7 @@
    "ref": "https://foreverchanges.pro/quest/9005"
   },
   "9007": {
-   "quest": "Saving the Best for Last",
+   "quest": "Saving the Best for Last (Druid)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -14172,7 +14174,7 @@
    "ref": "https://foreverchanges.pro/quest/9007"
   },
   "9008": {
-   "quest": "Saving the Best for Last",
+   "quest": "Saving the Best for Last (Hunter)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -14186,7 +14188,7 @@
    "ref": "https://foreverchanges.pro/quest/9008"
   },
   "9009": {
-   "quest": "Saving the Best for Last",
+   "quest": "Saving the Best for Last (Priest)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -14200,7 +14202,7 @@
    "ref": "https://foreverchanges.pro/quest/9009"
   },
   "9010": {
-   "quest": "Saving the Best for Last",
+   "quest": "Saving the Best for Last (Rogue)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -14214,7 +14216,7 @@
    "ref": "https://foreverchanges.pro/quest/9010"
   },
   "9011": {
-   "quest": "Saving the Best for Last",
+   "quest": "Saving the Best for Last (Shaman)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -14228,7 +14230,7 @@
    "ref": "https://foreverchanges.pro/quest/9011"
   },
   "9012": {
-   "quest": "Saving the Best for Last",
+   "quest": "Saving the Best for Last (Warlock)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -14242,7 +14244,7 @@
    "ref": "https://foreverchanges.pro/quest/9012"
   },
   "9014": {
-   "quest": "Saving the Best for Last",
+   "quest": "Saving the Best for Last (Mage)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -14256,7 +14258,7 @@
    "ref": "https://foreverchanges.pro/quest/9014"
   },
   "9016": {
-   "quest": "Anthion's Parting Words",
+   "quest": "Anthion's Parting Words (Druid)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -14270,7 +14272,7 @@
    "ref": "https://foreverchanges.pro/quest/9016"
   },
   "9017": {
-   "quest": "Anthion's Parting Words",
+   "quest": "Anthion's Parting Words (Hunter)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -14284,7 +14286,7 @@
    "ref": "https://foreverchanges.pro/quest/9017"
   },
   "9018": {
-   "quest": "Anthion's Parting Words",
+   "quest": "Anthion's Parting Words (Mage)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -14298,7 +14300,7 @@
    "ref": "https://foreverchanges.pro/quest/9018"
   },
   "9019": {
-   "quest": "Anthion's Parting Words",
+   "quest": "Anthion's Parting Words (Priest)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -14312,7 +14314,7 @@
    "ref": "https://foreverchanges.pro/quest/9019"
   },
   "9020": {
-   "quest": "Anthion's Parting Words",
+   "quest": "Anthion's Parting Words (Rogue)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",
@@ -14326,7 +14328,7 @@
    "ref": "https://foreverchanges.pro/quest/9020"
   },
   "9021": {
-   "quest": "Anthion's Parting Words",
+   "quest": "Anthion's Parting Words (Warlock)",
    "level": 60,
    "requiredLevel": 58,
    "zone": "Orgrimmar",

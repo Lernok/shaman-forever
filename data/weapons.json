@@ -4241,7 +4241,7 @@
    "sources": [
     {
      "type": "quest",
-     "quest": "Stalk With The Earthmother",
+     "quest": "Stalk With The Earthmother (Hunter, Shaman, Druid)",
      "questId": 76240,
      "level": 11,
      "requiredLevel": 4,
@@ -4296,7 +4296,7 @@
    "sources": [
     {
      "type": "quest",
-     "quest": "Stalk With The Earthmother",
+     "quest": "Stalk With The Earthmother (Hunter, Shaman, Druid)",
      "questId": 76240,
      "level": 11,
      "requiredLevel": 4,
@@ -16468,6 +16468,41 @@
    ]
   },
   {
+   "id": 286983,
+   "name": "Ancient Cleaver",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 28,
+   "obtain": 28,
+   "ilvl": 33,
+   "bind": "equip",
+   "dps": 27.78,
+   "speed": 3.6,
+   "dmgMin": 80,
+   "dmgMax": 120,
+   "stats": {
+    "strength": 12
+   },
+   "bonus": {
+    "spellPower": 14
+   },
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_halbard_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 28,
+     "rec": 28
+    }
+   ]
+  },
+  {
    "id": 19569,
    "name": "Advisor's Gnarled Staff",
    "kind": "Staff",
@@ -21363,6 +21398,39 @@
    ]
   },
   {
+   "id": 274484,
+   "name": "Axe of Inevitable Ruin",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 37,
+   "obtain": 37,
+   "ilvl": 42,
+   "bind": "pickup",
+   "dps": 37.17,
+   "speed": 3,
+   "dmgMin": 89,
+   "dmgMax": 134,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "chance": [
+    "Chance on hit: Wounds the target for 140 to 196 damage."
+   ],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_axe_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 37,
+     "rec": 37
+    }
+   ]
+  },
+  {
    "id": 866,
    "name": "Monk's Staff",
    "kind": "Staff",
@@ -22654,6 +22722,40 @@
    ]
   },
   {
+   "id": 282550,
+   "name": "Combat Tuning Wrench",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 38,
+   "obtain": 38,
+   "ilvl": 43,
+   "bind": "equip",
+   "dps": 25,
+   "speed": 2.3,
+   "dmgMin": 40,
+   "dmgMax": 75,
+   "stats": {
+    "strength": 5,
+    "agility": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_wrench_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 38,
+     "rec": 38
+    }
+   ]
+  },
+  {
    "id": 9457,
    "name": "Royal Diplomatic Scepter",
    "kind": "1H Mace",
@@ -22744,19 +22846,21 @@
    "req": 39,
    "obtain": 39,
    "ilvl": 44,
-   "bind": "equip",
+   "bind": "pickup",
    "dps": 38.88,
    "speed": 4,
    "dmgMin": 124,
    "dmgMax": 187,
    "stats": {},
    "bonus": {},
-   "equip": [],
+   "equip": [
+    "Equip: Each swing alternates your attack speed between 100% faster and 50% slower."
+   ],
    "chance": [
-    "Chance on hit: Delivers a fatal wound for 250 to 350 damage."
+    "Chance on hit: Delivers a fatal wound for 259 to 363 Physical damage. Deals 50% increased damage to targets below 25% health."
    ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_weapon_halberd_08",
    "raceMask": -1,
    "sources": [
@@ -24670,7 +24774,7 @@
    "id": 9419,
    "name": "Galgann's Firehammer",
    "kind": "1H Mace",
-   "quality": 2,
+   "quality": 3,
    "req": 42,
    "obtain": 42,
    "ilvl": 47,
@@ -24681,10 +24785,10 @@
    "dmgMax": 91,
    "stats": {},
    "bonus": {},
-   "equip": [],
-   "chance": [
-    "Chance on hit: Blasts a target for 80 to 112 Fire damage."
+   "equip": [
+    "Equip: Chance on harmful spell cast to blast a target for 64 to 90 Fire damage. (100ms cooldown)"
    ],
+   "chance": [],
    "era": "classic",
    "numbers": "client",
    "icon": "inv_hammer_17",
@@ -29850,9 +29954,7 @@
     "strength": 27,
     "stamina": 8
    },
-   "bonus": {
-    "attackPower": 12
-   },
+   "bonus": {},
    "equip": [
     "Equip: +12 Attack Power against Humanoids."
    ],
@@ -32080,7 +32182,7 @@
    "obtain": 55,
    "ilvl": 60,
    "bind": "equip",
-   "dps": 39.4,
+   "dps": 39.42,
    "speed": 2.6,
    "dmgMin": 71,
    "dmgMax": 134,
@@ -32090,7 +32192,7 @@
    "bonus": {},
    "equip": [],
    "chance": [
-    "Chance on hit: Blasts a target for 35 Fire damage."
+    "Chance on hit: Blasts a target for 90 Fire damage."
    ],
    "era": "classic",
    "numbers": "client",

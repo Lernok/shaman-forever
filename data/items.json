@@ -41100,7 +41100,7 @@
    },
    "equip": [],
    "use": [
-    "Use: Reduces your fall speed for 10 sec. (1 Hour Cooldown)"
+    "Use: Reduces your fall speed for 10 sec. (30 Min Cooldown)"
    ],
    "chance": [],
    "bonus": {},
@@ -41361,7 +41361,7 @@
    "name": "Galgann's Firehammer",
    "kind": "1H Mace",
    "slot": "Main Hand",
-   "quality": 2,
+   "quality": 3,
    "req": 42,
    "ilvl": 47,
    "bind": "pickup",
@@ -41372,11 +41372,11 @@
    "speed": 2.2,
    "dps": 31.6,
    "stats": {},
-   "equip": [],
-   "use": [],
-   "chance": [
-    "Chance on hit: Blasts a target for 80 to 112 Fire damage."
+   "equip": [
+    "Equip: Chance on harmful spell cast to blast a target for 64 to 90 Fire damage. (100ms cooldown)"
    ],
+   "use": [],
+   "chance": [],
    "bonus": {},
    "numbers": "client",
    "icon": "inv_hammer_17"
@@ -41438,7 +41438,7 @@
    "quality": 3,
    "req": 39,
    "ilvl": 44,
-   "bind": "equip",
+   "bind": "pickup",
    "raceMask": -1,
    "era": "classic",
    "dmgMin": 124,
@@ -41446,13 +41446,15 @@
    "speed": 4,
    "dps": 38.88,
    "stats": {},
-   "equip": [],
+   "equip": [
+    "Equip: Each swing alternates your attack speed between 100% faster and 50% slower."
+   ],
    "use": [],
    "chance": [
-    "Chance on hit: Delivers a fatal wound for 250 to 350 damage."
+    "Chance on hit: Delivers a fatal wound for 259 to 363 Physical damage. Deals 50% increased damage to targets below 25% health."
    ],
    "bonus": {},
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_weapon_halberd_08"
   },
   "9427": {
@@ -60604,9 +60606,7 @@
    ],
    "use": [],
    "chance": [],
-   "bonus": {
-    "attackPower": 12
-   },
+   "bonus": {},
    "numbers": "forever",
    "icon": "inv_axe_02"
   },
@@ -107173,14 +107173,14 @@
    "dmgMin": 71,
    "dmgMax": 134,
    "speed": 2.6,
-   "dps": 39.4,
+   "dps": 39.42,
    "stats": {
     "strength": 5
    },
    "equip": [],
    "use": [],
    "chance": [
-    "Chance on hit: Blasts a target for 35 Fire damage."
+    "Chance on hit: Blasts a target for 90 Fire damage."
    ],
    "bonus": {},
    "numbers": "client",
@@ -113764,7 +113764,7 @@
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_boots_chain_02"
   },
   "19510": {
@@ -174383,6 +174383,33 @@
    "numbers": "client",
    "icon": "inv_jewelry_trinketpvp_01"
   },
+  "274484": {
+   "id": 274484,
+   "name": "Axe of Inevitable Ruin",
+   "kind": "2H Axe",
+   "slot": "Two-Hand",
+   "quality": 3,
+   "req": 37,
+   "ilvl": 42,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 89,
+   "dmgMax": 134,
+   "speed": 3,
+   "dps": 37.17,
+   "stats": {},
+   "equip": [],
+   "use": [
+    "Use: Combines Axe of Lingering Dread and Axe of Inevitable Ruin to reconstruct the Pendulum of Doom."
+   ],
+   "chance": [
+    "Chance on hit: Wounds the target for 140 to 196 damage."
+   ],
+   "bonus": {},
+   "numbers": "client",
+   "icon": "inv_axe_01"
+  },
   "274485": {
    "id": 274485,
    "name": "Axe of Lingering Dread",
@@ -186439,6 +186466,29 @@
    "numbers": "client",
    "icon": "inv_misc_bandana_01"
   },
+  "281676": {
+   "id": 281676,
+   "name": "Rog'mar Trainee Shoulderpads",
+   "kind": "Leather",
+   "slot": "Shoulder",
+   "quality": 2,
+   "req": 36,
+   "ilvl": 41,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 84,
+   "stats": {
+    "agility": 10,
+    "stamina": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "client",
+   "icon": "inv_shoulder_06"
+  },
   "281685": {
    "id": 281685,
    "name": "Restored Cloth Helm",
@@ -187667,6 +187717,32 @@
    "bonus": {},
    "numbers": "client",
    "icon": "inv_sword_12"
+  },
+  "282550": {
+   "id": 282550,
+   "name": "Combat Tuning Wrench",
+   "kind": "1H Mace",
+   "slot": "One-Hand",
+   "quality": 2,
+   "req": 38,
+   "ilvl": 43,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 40,
+   "dmgMax": 75,
+   "speed": 2.3,
+   "dps": 25,
+   "stats": {
+    "strength": 5,
+    "agility": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "client",
+   "icon": "inv_misc_wrench_01"
   },
   "282551": {
    "id": 282551,
@@ -191152,6 +191228,58 @@
    "bonus": {},
    "numbers": "client",
    "icon": "inv_bracer_06"
+  },
+  "286982": {
+   "id": 286982,
+   "name": "Unearthed Barrier",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 3,
+   "req": 27,
+   "ilvl": 32,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "armor": 699,
+   "block": 15,
+   "stats": {
+    "stamina": 8
+   },
+   "equip": [
+    "Equip: Deals 6 to 39 Nature damage every time you block. Damage is doubled in swamps."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "client",
+   "icon": "inv_shield_02"
+  },
+  "286983": {
+   "id": 286983,
+   "name": "Ancient Cleaver",
+   "kind": "2H Axe",
+   "slot": "Two-Hand",
+   "quality": 3,
+   "req": 28,
+   "ilvl": 33,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 80,
+   "dmgMax": 120,
+   "speed": 3.6,
+   "dps": 27.78,
+   "stats": {
+    "strength": 12
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 14
+   },
+   "numbers": "client",
+   "icon": "inv_weapon_halbard_01"
   },
   "286984": {
    "id": 286984,

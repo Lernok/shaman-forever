@@ -97,21 +97,22 @@
   "statPriority": {
     "list": [
       "Weapon Damage",
-      "Strength",
+      "Hit",
       "Critical Strike",
-      "Intellect",
-      "Agility"
+      "Strength",
+      "Attack Power",
+      "Intellect"
     ],
-    "confidence": "classic-assumed",
+    "confidence": "client-data",
     "rationale": {
-      "es": "Mental Dexterity le da al Intelecto un rol de poder de ataque, y además necesitás maná para shocks y curas de emergencia. La fuente no ve nada en el cliente que contradiga los stats cuerpo a cuerpo de Classic.",
-      "en": "Mental Dexterity gives Intellect an attack-power role, and you still need mana for shocks and emergency heals. The source sees nothing in the client contradicting Classic's melee stats."
+      "es": "Este orden es el mismo con el que Equipo › Tu camino elige tus piezas: los pesos que WoWSims midió para Mejora en Forever, ajustados para levear. Primero el daño del arma (se compara por DPS). Después, por punto de ítem: índice de golpe (contra bichos de tu nivel pesa menos que contra un jefe de banda, igual rinde), crítico y Fuerza. El Intelecto vale como poder de ataque con Mental Dexterity, pero una pieza de caster te saca armadura: va detrás. La Agilidad rinde menos que la Fuerza.",
+      "en": "This is the order Equipo › Your path picks your pieces with: the weights WoWSims measured for Enhancement in Forever, adjusted for leveling. First the weapon's damage (judged by DPS). Then, per item point: hit rating (against your level it counts less than against a raid boss, still pays), crit and Strength. Intellect is attack power with Mental Dexterity, but a caster piece costs you armor: it comes after. Agility pays less than Strength."
     },
-    "source": "https://classicwowforever.com/class-guides/shaman/enhancement/",
+    "source": "https://github.com/wowsims/forever",
     "forever": {
       "note": {
-        "es": "Específico de Forever: con Mental Dexterity 3/3 cada punto de Intelecto es 1 de poder de ataque, Ancestral Knowledge lo sube 10% y Mental Quickness convierte hasta 30% en poder con hechizos para Earth Shock y Lightning Bolt. El Intelecto probablemente vale más de lo que dice esta lista (sacada de Classic), pero nadie lo midió.",
-        "en": "Forever-specific: with Mental Dexterity 3/3 each point of Intellect is 1 attack power, Ancestral Knowledge raises it 10%, and Mental Quickness turns up to 30% into spell power for Earth Shock and Lightning Bolt. Intellect is probably worth more than this list (taken from Classic) says, but nobody has measured it."
+        "es": "Específico de Forever: con Mental Dexterity 3/3 cada punto de Intelecto es 1 de poder de ataque, Ancestral Knowledge lo sube 10% y Mental Quickness convierte hasta 30% en poder con hechizos para Earth Shock y Lightning Bolt. Los pesos de arriba ya lo cuentan (desde el nivel 17, cuando Mental Dexterity está completo).",
+        "en": "Forever-specific: with Mental Dexterity 3/3 each point of Intellect is 1 attack power, Ancestral Knowledge raises it 10%, and Mental Quickness turns up to 30% into spell power for Earth Shock and Lightning Bolt. The weights above already count it (from level 17, once Mental Dexterity is full)."
       },
       "confidence": "client-data"
     }
@@ -182,8 +183,8 @@
     "https://talentsforever.com/shaman/builds"
   ],
   "caveat": {
-    "es": "Beta de Forever, cap en nivel 30 (oct 2026). Casi todo lo de rotación y prioridad de stats viene etiquetado como 'asumido de Classic' por su propia fuente (classicwowforever.com): significa que nada en el cliente beta contradice el comportamiento de Classic Era, no que esté confirmado. Tomalo como punto de partida, no como verdad cerrada.",
-    "en": "Forever beta, level 30 cap (Oct 2026). Almost all rotation and stat priority content is labeled 'assumed from Classic' by its own source (classicwowforever.com): it means nothing in the beta client contradicts Classic Era behavior, not that it's confirmed. Treat it as a starting point, not settled fact."
+    "es": "Beta de Forever, cap en nivel 30 (oct 2026). El orden de stats es el de los pesos que WoWSims midió para Forever, ajustados para levear: el mismo con el que Equipo › Tu camino elige tus piezas. La rotación viene de classicwowforever.com, que la etiqueta 'asumida de Classic': nada en el cliente beta la contradice, pero no está confirmada. Tomala como punto de partida.",
+    "en": "Forever beta, level 30 cap (Oct 2026). The stat order follows the weights WoWSims measured for Forever, adjusted for leveling: the same Equipo › Your path picks your pieces with. The rotation comes from classicwowforever.com, which labels it 'assumed from Classic': nothing in the beta client contradicts it, but it isn't confirmed. Treat it as a starting point."
   },
   "keyTalents": [
     {
@@ -217,10 +218,10 @@
     },
     {
       "note": {
-        "es": "Después del arma: Fuerza (poder de ataque) y Agilidad (golpe crítico, que mantiene Flurry activo).",
-        "en": "After the weapon: Strength (attack power) and Agility (critical strike, which keeps Flurry up)."
+        "es": "Después del arma: índice de golpe, crítico (mantiene Flurry activo) y Fuerza (poder de ataque). La Agilidad rinde menos por punto que la Fuerza.",
+        "en": "After the weapon: hit rating, crit (keeps Flurry up) and Strength (attack power). Agility pays less per point than Strength."
       },
-      "confidence": "classic-assumed"
+      "confidence": "client-data"
     },
     {
       "note": {
@@ -231,10 +232,10 @@
     },
     {
       "note": {
-        "es": "Sin números objetivo todavía: no hay un cap de índice de golpe confirmado ni pesos de stats medidos en Forever.",
-        "en": "No target numbers yet: there is no confirmed hit cap and no measured stat weights in Forever."
+        "es": "No hay un cap de índice de golpe confirmado para levear. Los pesos de stats son los que WoWSims midió para Forever al 60, ajustados para levear: los mismos que usa Equipo › Tu camino.",
+        "en": "There is no confirmed hit cap for leveling. Stat weights are the ones WoWSims measured for Forever at 60, adjusted for leveling: the same Equipo › Your path uses."
       },
-      "confidence": "community-untested"
+      "confidence": "client-data"
     }
   ]
 }

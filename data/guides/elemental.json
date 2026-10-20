@@ -97,17 +97,17 @@
   "statPriority": {
     "list": [
       "Spell Power",
-      "Intellect",
+      "Hit",
       "Critical Strike",
-      "Spirit",
-      "Stamina"
+      "Intellect",
+      "Mana Regeneration (MP5)"
     ],
-    "confidence": "classic-assumed",
+    "confidence": "client-data",
     "rationale": {
-      "es": "El poder con hechizos mejora cada lanzamiento, y el Intelecto paga el maná para abrir y para curarte. La fuente no ve nada en el cliente beta que contradiga cómo funcionaban los stats de caster en Classic.",
-      "en": "Spell power improves every cast, and Intellect pays for the mana to open and to heal yourself. The source sees nothing in the beta client contradicting how caster stats worked in Classic."
+      "es": "Este orden es el mismo con el que Equipo › Tu camino elige tus piezas: los pesos que WoWSims midió para Elemental en Forever (el daño de Naturaleza vale más que el de Fuego, por Lightning Bolt), ajustados para levear. El índice de golpe va antes que el crítico: un hechizo que falla no hace nada. El Intelecto y la regeneración pesan más que en una pelea de banda de tres minutos, porque leveando el maná sí se termina entre grupo y grupo.",
+      "en": "This is the order Equipo › Your path picks your pieces with: the weights WoWSims measured for Elemental in Forever (Nature damage counts more than Fire, for Lightning Bolt), adjusted for leveling. Hit comes before crit: a missed spell does nothing. Intellect and regeneration weigh more than in a three-minute raid fight, because leveling, your mana does run out between pulls."
     },
-    "source": "https://classicwowforever.com/class-guides/shaman/elemental/",
+    "source": "https://github.com/wowsims/forever",
     "alsoReported": {
       "list": [
         "Spell Power",
@@ -223,8 +223,8 @@
     "https://talentsforever.com/shaman/changes"
   ],
   "caveat": {
-    "es": "Beta de Forever, cap en nivel 30 (oct 2026). Casi todo lo de rotación y prioridad de stats viene etiquetado como 'asumido de Classic' por su propia fuente (classicwowforever.com): significa que nada en el cliente beta contradice el comportamiento de Classic Era, no que esté confirmado. Tomalo como punto de partida, no como verdad cerrada.",
-    "en": "Forever beta, level 30 cap (Oct 2026). Almost all rotation and stat priority content is labeled 'assumed from Classic' by its own source (classicwowforever.com): it means nothing in the beta client contradicts Classic Era behavior, not that it's confirmed. Treat it as a starting point, not settled fact."
+    "es": "Beta de Forever, cap en nivel 30 (oct 2026). El orden de stats es el de los pesos que WoWSims midió para Forever, ajustados para levear: el mismo con el que Equipo › Tu camino elige tus piezas. La rotación viene de classicwowforever.com, que la etiqueta 'asumida de Classic': nada en el cliente beta la contradice, pero no está confirmada. Tomala como punto de partida.",
+    "en": "Forever beta, level 30 cap (Oct 2026). The stat order follows the weights WoWSims measured for Forever, adjusted for leveling: the same Equipo › Your path picks your pieces with. The rotation comes from classicwowforever.com, which labels it 'assumed from Classic': nothing in the beta client contradicts it, but it isn't confirmed. Treat it as a starting point."
   },
   "gearTargets": [
     {
