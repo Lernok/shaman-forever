@@ -4,100 +4,20 @@
    "y": 44.5,
    "x": 62.8,
    "z": "Orgrimmar",
-   "f": "horde",
-   "t": 1792513332,
+   "n": "Karolek",
+   "t": 1792515931,
    "list": {
-    "Hillman's Leather Gloves": {
-     "item": 4247,
-     "cost": 450,
+    "Nimble Leather Gloves": {
+     "item": 7285,
+     "cost": 500,
      "prof": "Leatherworking",
      "kind": "unavailable",
-     "skill": 120,
-     "level": 0
-    },
-    "Warden's Leather Belt": {
-     "item": 252460,
-     "cost": 1800,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 150,
-     "level": 0
-    },
-    "Stalker's Leather Belt": {
-     "item": 252521,
-     "cost": 1800,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 150,
-     "level": 0
-    },
-    "Fine Leather Tunic": {
-     "item": 4243,
-     "cost": 315,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 60,
-     "level": 0
-    },
-    "Small Leather Ammo Pouch": {
-     "item": 7279,
-     "cost": 90,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 25,
-     "level": 0
-    },
-    "Skirmisher's Leather Belt": {
-     "item": 252461,
-     "cost": 1800,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 150,
-     "level": 0
-    },
-    "Heavy Leather Ammo Pouch": {
-     "item": 7372,
-     "cost": 450,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 125,
-     "level": 0
-    },
-    "Handstitched Leather Belt": {
-     "item": 4237,
-     "cost": 67,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 25,
-     "level": 0
-    },
-    "Cured Heavy Hide": {
-     "item": 4236,
-     "cost": 450,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 125,
-     "level": 0
-    },
-    "Fine Leather Cloak": {
-     "item": 2308,
-     "cost": 225,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 50,
-     "level": 0
-    },
-    "Embossed Leather Vest": {
-     "item": 2300,
-     "cost": 90,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 35,
+     "skill": 95,
      "level": 0
     },
     "Moonglow Boots": {
      "item": 252427,
-     "cost": 450,
+     "cost": 500,
      "prof": "Leatherworking",
      "kind": "available",
      "skill": 35,
@@ -105,101 +25,324 @@
     },
     "Dark Leather Belt": {
      "item": 4249,
-     "cost": 360,
+     "cost": 400,
      "prof": "Leatherworking",
      "kind": "unavailable",
      "skill": 100,
      "level": 0
     },
-    "Camp Tent": {
-     "item": 279978,
-     "cost": 90,
-     "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 20,
-     "level": 0
-    },
-    "Apprentice Leatherworking": {
-     "cost": 9,
-     "level": 1,
-     "skill": 0,
-     "kind": "used"
-    },
-    "Handstitched Leather Pants": {
-     "item": 2303,
-     "cost": 45,
+    "Embossed Leather Pants": {
+     "item": 4242,
+     "cost": 200,
      "prof": "Leatherworking",
      "kind": "available",
-     "skill": 15,
+     "skill": 50,
      "level": 0
     },
-    "Dark Leather Boots": {
-     "item": 252425,
-     "cost": 450,
+    "Dark Leather Pants": {
+     "item": 5961,
+     "cost": 400,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 90,
+     "level": 0
+    },
+    "Embossed Leather Cloak": {
+     "item": 2310,
+     "cost": 100,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 40,
+     "level": 0
+    },
+    "Light Leather Quiver": {
+     "item": 7278,
+     "cost": 100,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 25,
+     "level": 0
+    },
+    "Light Leather Bracers": {
+     "item": 7281,
+     "cost": 150,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 45,
+     "level": 0
+    },
+    "Light Leather Pants": {
+     "item": 7282,
+     "cost": 400,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 70,
+     "level": 0
+    },
+    "Embossed Leather Vest": {
+     "item": 2300,
+     "cost": 100,
      "prof": "Leatherworking",
      "kind": "available",
      "skill": 35,
      "level": 0
     },
+    "Cured Medium Hide": {
+     "item": 4233,
+     "cost": 200,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 75,
+     "level": 0
+    },
+    "Fine Leather Belt": {
+     "item": 4246,
+     "cost": 300,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 55,
+     "level": 0
+    },
+    "Cured Light Hide": {
+     "item": 4231,
+     "cost": 50,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 30,
+     "level": 0
+    },
+    "Toughened Leather Gloves": {
+     "item": 4253,
+     "cost": 500,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 110,
+     "level": 0
+    },
+    "Hillman's Leather Gloves": {
+     "item": 4247,
+     "cost": 500,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 120,
+     "level": 0
+    },
+    "Heavy Armor Kit": {
+     "item": 4265,
+     "cost": 750,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 125,
+     "level": 0
+    },
+    "Skirmisher's Leather Belt": {
+     "item": 252461,
+     "cost": 2000,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 150,
+     "level": 0
+    },
+    "Black Whelp Slippers": {
+     "item": 252424,
+     "cost": 500,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 35,
+     "level": 0
+    },
+    "Gray Leather Boots": {
+     "item": 2315,
+     "cost": 350,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 75,
+     "level": 0
+    },
+    "Skulker's Leather Belt": {
+     "item": 252520,
+     "cost": 2000,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 150,
+     "level": 0
+    },
+    "Skycaller's Leather Belt": {
+     "item": 252522,
+     "cost": 2000,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 150,
+     "level": 0
+    },
+    "Handstitched Leather Pants": {
+     "item": 2303,
+     "cost": 50,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 15,
+     "level": 0
+    },
+    "Hillman's Shoulders": {
+     "item": 4251,
+     "cost": 500,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 105,
+     "level": 0
+    },
+    "Handstitched Leather Belt": {
+     "item": 4237,
+     "cost": 75,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 25,
+     "level": 0
+    },
+    "Small Leather Ammo Pouch": {
+     "item": 7279,
+     "cost": 100,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 25,
+     "level": 0
+    },
     "Embossed Leather Gloves": {
      "item": 4239,
-     "cost": 135,
+     "cost": 150,
      "prof": "Leatherworking",
      "kind": "used",
      "skill": 40,
      "level": 0
     },
-    "Murloc Scale Shoes": {
-     "item": 252426,
-     "cost": 450,
+    "Camp Tent": {
+     "item": 279978,
+     "cost": 100,
      "prof": "Leatherworking",
      "kind": "used",
+     "skill": 20,
+     "level": 0
+    },
+    "Heavy Leather Ammo Pouch": {
+     "item": 7372,
+     "cost": 500,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 125,
+     "level": 0
+    },
+    "Hillman's Cloak": {
+     "item": 3719,
+     "cost": 600,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 125,
+     "level": 0
+    },
+    "Heavy Quiver": {
+     "item": 7371,
+     "cost": 500,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 125,
+     "level": 0
+    },
+    "Medium Armor Kit": {
+     "item": 2313,
+     "cost": 250,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 75,
+     "level": 0
+    },
+    "Fletcher's Gloves": {
+     "item": 7348,
+     "cost": 500,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 100,
+     "level": 0
+    },
+    "Fine Leather Cloak": {
+     "item": 2308,
+     "cost": 250,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 50,
+     "level": 0
+    },
+    "Murloc Scale Shoes": {
+     "item": 252426,
+     "cost": 500,
+     "prof": "Leatherworking",
+     "kind": "available",
      "skill": 35,
      "level": 0
     },
-    "Skulker's Leather Belt": {
-     "item": 252520,
-     "cost": 1800,
+    "Medium Leather": {
+     "item": 2319,
+     "cost": 500,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 75,
+     "level": 0
+    },
+    "Dark Leather Cloak": {
+     "item": 2316,
+     "cost": 350,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 85,
+     "level": 0
+    },
+    "Journeyman Leatherworking": {
+     "cost": 500,
+     "prof": "Leatherworking",
+     "level": 10,
+     "skill": 50,
+     "kind": "available"
+    },
+    "Warden's Leather Belt": {
+     "item": 252460,
+     "cost": 2000,
      "prof": "Leatherworking",
      "kind": "unavailable",
      "skill": 150,
      "level": 0
     },
-    "Fine Leather Belt": {
-     "item": 4246,
-     "cost": 270,
+    "Dark Leather Boots": {
+     "item": 252425,
+     "cost": 500,
      "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 35,
+     "level": 0
+    },
+    "Apprentice Leatherworking": {
+     "level": 1,
      "kind": "used",
-     "skill": 55,
-     "level": 0
+     "skill": 0,
+     "cost": 10
     },
-    "Skycaller's Leather Belt": {
-     "item": 252522,
-     "cost": 1800,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 150,
-     "level": 0
-    },
-    "Nimble Leather Gloves": {
-     "item": 7285,
+    "Toughened Leather Armor": {
+     "item": 2314,
      "cost": 450,
      "prof": "Leatherworking",
      "kind": "unavailable",
      "skill": 95,
      "level": 0
     },
-    "Gray Leather Boots": {
-     "item": 2315,
-     "cost": 315,
+    "Cured Heavy Hide": {
+     "item": 4236,
+     "cost": 500,
      "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 75,
+     "kind": "unavailable",
+     "skill": 125,
      "level": 0
     },
-    "Mender's Leather Belt": {
-     "item": 252523,
-     "cost": 1800,
+    "Prowler's Leather Belt": {
+     "item": 252459,
+     "cost": 2000,
      "prof": "Leatherworking",
      "kind": "unavailable",
      "skill": 150,
@@ -207,202 +350,59 @@
     },
     "Heavy Leather": {
      "item": 4234,
-     "cost": 900,
+     "cost": 1000,
      "prof": "Leatherworking",
      "kind": "unavailable",
      "skill": 125,
      "level": 0
     },
-    "Dark Leather Pants": {
-     "item": 5961,
-     "cost": 360,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 90,
-     "level": 0
-    },
-    "Hillman's Cloak": {
-     "item": 3719,
-     "cost": 540,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 125,
-     "level": 0
-    },
-    "Embossed Leather Cloak": {
-     "item": 2310,
-     "cost": 90,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 40,
-     "level": 0
-    },
-    "Prowler's Leather Belt": {
-     "item": 252459,
-     "cost": 1800,
+    "Mender's Leather Belt": {
+     "item": 252523,
+     "cost": 2000,
      "prof": "Leatherworking",
      "kind": "unavailable",
      "skill": 150,
      "level": 0
     },
-    "Cured Medium Hide": {
-     "item": 4233,
-     "cost": 180,
-     "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 75,
-     "level": 0
-    },
-    "Light Leather Quiver": {
-     "item": 7278,
-     "cost": 90,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 25,
-     "level": 0
-    },
-    "Toughened Leather Gloves": {
-     "item": 4253,
-     "cost": 450,
+    "Fine Leather Tunic": {
+     "item": 4243,
+     "cost": 350,
      "prof": "Leatherworking",
      "kind": "unavailable",
-     "skill": 110,
-     "level": 0
-    },
-    "Heavy Quiver": {
-     "item": 7371,
-     "cost": 450,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 125,
-     "level": 0
-    },
-    "Medium Leather": {
-     "item": 2319,
-     "cost": 450,
-     "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 75,
-     "level": 0
-    },
-    "Dark Leather Cloak": {
-     "item": 2316,
-     "cost": 315,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 85,
-     "level": 0
-    },
-    "Journeyman Leatherworking": {
-     "cost": 450,
-     "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 50,
-     "level": 10
-    },
-    "Hillman's Shoulders": {
-     "item": 4251,
-     "cost": 450,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 105,
-     "level": 0
-    },
-    "Fletcher's Gloves": {
-     "item": 7348,
-     "cost": 450,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 100,
+     "skill": 60,
      "level": 0
     },
     "Embossed Leather Boots": {
      "item": 2309,
-     "cost": 90,
+     "cost": 100,
      "prof": "Leatherworking",
      "kind": "available",
      "skill": 50,
      "level": 0
     },
-    "Light Leather Pants": {
-     "item": 7282,
-     "cost": 360,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 70,
-     "level": 0
-    },
-    "Toughened Leather Armor": {
-     "item": 2314,
-     "cost": 405,
+    "Stalker's Leather Belt": {
+     "item": 252521,
+     "cost": 2000,
      "prof": "Leatherworking",
      "kind": "unavailable",
-     "skill": 95,
-     "level": 0
-    },
-    "Medium Armor Kit": {
-     "item": 2313,
-     "cost": 225,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 75,
-     "level": 0
-    },
-    "Cured Light Hide": {
-     "item": 4231,
-     "cost": 45,
-     "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 30,
-     "level": 0
-    },
-    "Embossed Leather Pants": {
-     "item": 4242,
-     "cost": 180,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 50,
-     "level": 0
-    },
-    "Heavy Armor Kit": {
-     "item": 4265,
-     "cost": 675,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 125,
-     "level": 0
-    },
-    "Light Leather Bracers": {
-     "item": 7281,
-     "cost": 135,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 45,
-     "level": 0
-    },
-    "Black Whelp Slippers": {
-     "item": 252424,
-     "cost": 450,
-     "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 35,
+     "skill": 150,
      "level": 0
     }
    },
-   "n": "Karolek"
+   "f": "horde"
   },
   "5811": {
-   "y": 45,
-   "x": 63.1,
+   "y": 44.9,
+   "x": 63,
    "z": "Orgrimmar",
    "n": "Kamari",
-   "t": 1792514426,
+   "t": 1792515719,
    "list": {
     "Black Whelp Slippers": {
      "item": 252424,
      "cost": 500,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 35,
      "level": 0
     },
@@ -416,7 +416,7 @@
      "item": 252427,
      "cost": 500,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 35,
      "level": 0
     },
@@ -424,7 +424,7 @@
      "item": 252425,
      "cost": 500,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 35,
      "level": 0
     },
@@ -440,7 +440,7 @@
      "item": 2310,
      "cost": 100,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 40,
      "level": 0
     },
@@ -464,7 +464,7 @@
      "item": 252426,
      "cost": 500,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 35,
      "level": 0
     },
@@ -512,7 +512,7 @@
      "item": 4239,
      "cost": 150,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 40,
      "level": 0
     },
@@ -528,7 +528,7 @@
      "item": 2300,
      "cost": 100,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 35,
      "level": 0
     }
@@ -546,13 +546,21 @@
     ],
     "optimal": [
      34,
-     34
+     39
+    ],
+    "medium": [
+     40,
+     50
     ]
    },
    "2303": {
     "optimal": [
      34,
-     34
+     44
+    ],
+    "medium": [
+     45,
+     50
     ]
    },
    "2304": {
@@ -562,17 +570,21 @@
     ],
     "medium": [
      34,
-     34
+     44
+    ],
+    "easy": [
+     45,
+     50
     ]
    },
    "2318": {
     "trivial": [
-     83,
+     40,
      83
     ],
     "easy": [
      34,
-     34
+     39
     ]
    },
    "2319": {
@@ -588,7 +600,11 @@
     ],
     "optimal": [
      34,
-     34
+     49
+    ],
+    "medium": [
+     50,
+     50
     ]
    },
    "4233": {
@@ -600,13 +616,17 @@
    "4237": {
     "optimal": [
      34,
-     34
+     50
     ]
    },
    "4239": {
     "medium": [
      83,
      83
+    ],
+    "optimal": [
+     45,
+     50
     ]
    },
    "4246": {
@@ -634,7 +654,11 @@
     ],
     "optimal": [
      34,
-     34
+     39
+    ],
+    "medium": [
+     40,
+     50
     ]
    },
    "7276": {
@@ -644,7 +668,11 @@
     ],
     "optimal": [
      34,
-     34
+     39
+    ],
+    "medium": [
+     40,
+     50
     ]
    },
    "7277": {
@@ -654,7 +682,11 @@
     ],
     "optimal": [
      34,
-     34
+     39
+    ],
+    "medium": [
+     40,
+     50
     ]
    },
    "252424": {
@@ -698,5 +730,2998 @@
   }
  },
  "sources": {},
- "recipes": {}
+ "recipes": {
+  "Skinning": {
+   "279938": {
+    "rid": 1262982,
+    "grey": 300,
+    "name": "Trapper's Workbench"
+   },
+   "279969": {
+    "rid": 1262985,
+    "grey": 145,
+    "name": "Field Guide"
+   },
+   "279979": {
+    "rid": 1229517,
+    "grey": 25,
+    "name": "Camp Chair",
+    "learned": true
+   }
+  },
+  "Leatherworking": {
+   "2300": {
+    "rid": 2160,
+    "grey": 95,
+    "name": "Embossed Leather Vest"
+   },
+   "2302": {
+    "rid": 2149,
+    "grey": 70,
+    "name": "Handstitched Leather Boots",
+    "learned": true
+   },
+   "2303": {
+    "rid": 2153,
+    "grey": 75,
+    "name": "Handstitched Leather Pants",
+    "learned": true
+   },
+   "2304": {
+    "rid": 2152,
+    "grey": 60,
+    "name": "Light Armor Kit",
+    "learned": true
+   },
+   "2307": {
+    "rid": 2158,
+    "grey": 125,
+    "name": "Fine Leather Boots"
+   },
+   "2308": {
+    "rid": 2159,
+    "grey": 100,
+    "name": "Fine Leather Cloak"
+   },
+   "2309": {
+    "rid": 2161,
+    "grey": 110,
+    "name": "Embossed Leather Boots"
+   },
+   "2310": {
+    "rid": 2162,
+    "grey": 100,
+    "name": "Embossed Leather Cloak"
+   },
+   "2311": {
+    "rid": 2163,
+    "grey": 100,
+    "name": "White Leather Jerkin"
+   },
+   "2312": {
+    "rid": 2164,
+    "grey": 110,
+    "name": "Fine Leather Gloves"
+   },
+   "2313": {
+    "rid": 2165,
+    "grey": 105,
+    "name": "Medium Armor Kit"
+   },
+   "2314": {
+    "rid": 2166,
+    "grey": 145,
+    "name": "Toughened Leather Armor"
+   },
+   "2315": {
+    "rid": 2167,
+    "grey": 125,
+    "name": "Gray Leather Boots"
+   },
+   "2316": {
+    "rid": 2168,
+    "grey": 135,
+    "name": "Dark Leather Cloak"
+   },
+   "2317": {
+    "rid": 2169,
+    "grey": 125,
+    "name": "Dark Leather Tunic"
+   },
+   "2318": {
+    "rid": 2881,
+    "grey": 40,
+    "name": "Light Leather",
+    "learned": true
+   },
+   "2319": {
+    "rid": 20648,
+    "grey": 85,
+    "name": "Medium Leather"
+   },
+   "3719": {
+    "rid": 3760,
+    "grey": 165,
+    "name": "Hillman's Cloak"
+   },
+   "4231": {
+    "rid": 3816,
+    "grey": 70,
+    "name": "Cured Light Hide",
+    "learned": true
+   },
+   "4233": {
+    "rid": 3817,
+    "grey": 105,
+    "name": "Cured Medium Hide"
+   },
+   "4234": {
+    "rid": 20649,
+    "grey": 135,
+    "name": "Heavy Leather"
+   },
+   "4236": {
+    "rid": 3818,
+    "grey": 145,
+    "name": "Cured Heavy Hide"
+   },
+   "4237": {
+    "rid": 3753,
+    "grey": 85,
+    "name": "Handstitched Leather Belt",
+    "learned": true
+   },
+   "4239": {
+    "rid": 3756,
+    "grey": 100,
+    "name": "Embossed Leather Gloves",
+    "learned": true
+   },
+   "4242": {
+    "rid": 3759,
+    "grey": 110,
+    "name": "Embossed Leather Pants"
+   },
+   "4243": {
+    "rid": 3761,
+    "grey": 120,
+    "name": "Fine Leather Tunic"
+   },
+   "4244": {
+    "rid": 3762,
+    "grey": 125,
+    "name": "Hillman's Leather Vest"
+   },
+   "4246": {
+    "rid": 3763,
+    "grey": 115,
+    "name": "Fine Leather Belt"
+   },
+   "4247": {
+    "rid": 3764,
+    "grey": 170,
+    "name": "Hillman's Leather Gloves"
+   },
+   "4248": {
+    "rid": 3765,
+    "grey": 165,
+    "name": "Dark Leather Gloves"
+   },
+   "4249": {
+    "rid": 3766,
+    "grey": 150,
+    "name": "Dark Leather Belt"
+   },
+   "4250": {
+    "rid": 3767,
+    "grey": 150,
+    "name": "Hillman's Belt"
+   },
+   "4251": {
+    "rid": 3768,
+    "grey": 155,
+    "name": "Hillman's Shoulders"
+   },
+   "4252": {
+    "rid": 3769,
+    "grey": 165,
+    "name": "Dark Leather Shoulders"
+   },
+   "4253": {
+    "rid": 3770,
+    "grey": 160,
+    "name": "Toughened Leather Gloves"
+   },
+   "4254": {
+    "rid": 3771,
+    "grey": 170,
+    "name": "Barbaric Gloves"
+   },
+   "4255": {
+    "rid": 3772,
+    "grey": 170,
+    "name": "Green Leather Armor"
+   },
+   "4256": {
+    "rid": 3773,
+    "grey": 190,
+    "name": "Guardian Armor"
+   },
+   "4257": {
+    "rid": 3774,
+    "grey": 175,
+    "name": "Green Leather Belt"
+   },
+   "4258": {
+    "rid": 3775,
+    "grey": 185,
+    "name": "Guardian Belt"
+   },
+   "4259": {
+    "rid": 3776,
+    "grey": 195,
+    "name": "Green Leather Bracers"
+   },
+   "4260": {
+    "rid": 3777,
+    "grey": 210,
+    "name": "Guardian Leather Bracers"
+   },
+   "4262": {
+    "rid": 3778,
+    "grey": 200,
+    "name": "Gem-studded Leather Belt"
+   },
+   "4264": {
+    "rid": 3779,
+    "grey": 215,
+    "name": "Barbaric Belt"
+   },
+   "4265": {
+    "rid": 3780,
+    "grey": 165,
+    "name": "Heavy Armor Kit"
+   },
+   "4304": {
+    "rid": 20650,
+    "grey": 180,
+    "name": "Thick Leather"
+   },
+   "4455": {
+    "rid": 4096,
+    "grey": 180,
+    "name": "Raptor Hide Harness"
+   },
+   "4456": {
+    "rid": 4097,
+    "grey": 180,
+    "name": "Raptor Hide Belt"
+   },
+   "5081": {
+    "rid": 5244,
+    "grey": 95,
+    "name": "Kodo Hide Bag"
+   },
+   "5739": {
+    "rid": 6661,
+    "grey": 205,
+    "name": "Barbaric Harness"
+   },
+   "5780": {
+    "rid": 6702,
+    "grey": 125,
+    "name": "Murloc Scale Belt"
+   },
+   "5781": {
+    "rid": 6703,
+    "grey": 130,
+    "name": "Murloc Scale Breastplate"
+   },
+   "5782": {
+    "rid": 6704,
+    "grey": 185,
+    "name": "Thick Murloc Armor"
+   },
+   "5783": {
+    "rid": 6705,
+    "grey": 205,
+    "name": "Murloc Scale Bracers"
+   },
+   "5957": {
+    "rid": 7126,
+    "grey": 70,
+    "name": "Handstitched Leather Vest",
+    "learned": true
+   },
+   "5958": {
+    "rid": 7133,
+    "grey": 130,
+    "name": "Fine Leather Pants"
+   },
+   "5961": {
+    "rid": 7135,
+    "grey": 140,
+    "name": "Dark Leather Pants"
+   },
+   "5962": {
+    "rid": 7147,
+    "grey": 175,
+    "name": "Guardian Pants"
+   },
+   "5963": {
+    "rid": 7149,
+    "grey": 185,
+    "name": "Barbaric Leggings"
+   },
+   "5964": {
+    "rid": 7151,
+    "grey": 190,
+    "name": "Barbaric Shoulders"
+   },
+   "5965": {
+    "rid": 7153,
+    "grey": 200,
+    "name": "Guardian Cloak"
+   },
+   "5966": {
+    "rid": 7156,
+    "grey": 205,
+    "name": "Guardian Gloves"
+   },
+   "6466": {
+    "rid": 7953,
+    "grey": 125,
+    "name": "Deviate Scale Cloak"
+   },
+   "6467": {
+    "rid": 7954,
+    "grey": 130,
+    "name": "Deviate Scale Gloves"
+   },
+   "6468": {
+    "rid": 7955,
+    "grey": 140,
+    "name": "Deviate Scale Belt"
+   },
+   "6709": {
+    "rid": 8322,
+    "grey": 120,
+    "name": "Moonglow Vest"
+   },
+   "7276": {
+    "rid": 9058,
+    "grey": 70,
+    "name": "Handstitched Leather Cloak",
+    "learned": true
+   },
+   "7277": {
+    "rid": 9059,
+    "grey": 70,
+    "name": "Handstitched Leather Bracers",
+    "learned": true
+   },
+   "7278": {
+    "rid": 9060,
+    "grey": 85,
+    "name": "Light Leather Quiver"
+   },
+   "7279": {
+    "rid": 9062,
+    "grey": 85,
+    "name": "Small Leather Ammo Pouch"
+   },
+   "7280": {
+    "rid": 9064,
+    "grey": 90,
+    "name": "Rugged Leather Pants"
+   },
+   "7281": {
+    "rid": 9065,
+    "grey": 105,
+    "name": "Light Leather Bracers"
+   },
+   "7282": {
+    "rid": 9068,
+    "grey": 130,
+    "name": "Light Leather Pants"
+   },
+   "7283": {
+    "rid": 9070,
+    "grey": 125,
+    "name": "Black Whelp Cloak"
+   },
+   "7284": {
+    "rid": 9072,
+    "grey": 145,
+    "name": "Red Whelp Gloves"
+   },
+   "7285": {
+    "rid": 9074,
+    "grey": 145,
+    "name": "Nimble Leather Gloves"
+   },
+   "7348": {
+    "rid": 9145,
+    "grey": 150,
+    "name": "Fletcher's Gloves"
+   },
+   "7349": {
+    "rid": 9146,
+    "grey": 160,
+    "name": "Herbalist's Gloves"
+   },
+   "7352": {
+    "rid": 9147,
+    "grey": 160,
+    "name": "Earthen Leather Shoulders"
+   },
+   "7358": {
+    "rid": 9148,
+    "grey": 165,
+    "name": "Pilferer's Gloves"
+   },
+   "7359": {
+    "rid": 9149,
+    "grey": 170,
+    "name": "Heavy Earthen Gloves"
+   },
+   "7371": {
+    "rid": 9193,
+    "grey": 165,
+    "name": "Heavy Quiver"
+   },
+   "7372": {
+    "rid": 9194,
+    "grey": 165,
+    "name": "Heavy Leather Ammo Pouch"
+   },
+   "7373": {
+    "rid": 9195,
+    "grey": 180,
+    "name": "Dusky Leather Leggings"
+   },
+   "7374": {
+    "rid": 9196,
+    "grey": 190,
+    "name": "Dusky Leather Armor"
+   },
+   "7375": {
+    "rid": 9197,
+    "grey": 190,
+    "name": "Green Whelp Armor"
+   },
+   "7377": {
+    "rid": 9198,
+    "grey": 195,
+    "name": "Frost Leather Cloak"
+   },
+   "7378": {
+    "rid": 9201,
+    "grey": 200,
+    "name": "Dusky Bracers"
+   },
+   "7386": {
+    "rid": 9202,
+    "grey": 205,
+    "name": "Green Whelp Bracers"
+   },
+   "7387": {
+    "rid": 9206,
+    "grey": 210,
+    "name": "Dusky Belt"
+   },
+   "7390": {
+    "rid": 9207,
+    "grey": 215,
+    "name": "Dusky Boots"
+   },
+   "7391": {
+    "rid": 9208,
+    "grey": 215,
+    "name": "Swift Boots"
+   },
+   "8170": {
+    "rid": 22331,
+    "grey": 225,
+    "name": "Rugged Leather"
+   },
+   "8172": {
+    "rid": 10482,
+    "grey": 175,
+    "name": "Cured Thick Hide"
+   },
+   "8173": {
+    "rid": 10487,
+    "grey": 215,
+    "name": "Thick Armor Kit"
+   },
+   "8174": {
+    "rid": 10490,
+    "grey": 215,
+    "name": "Comfortable Leather Hat"
+   },
+   "8175": {
+    "rid": 10499,
+    "grey": 220,
+    "name": "Nightscape Tunic"
+   },
+   "8176": {
+    "rid": 10507,
+    "grey": 220,
+    "name": "Nightscape Headband"
+   },
+   "8185": {
+    "rid": 10556,
+    "grey": 250,
+    "name": "Turtle Scale Leggings"
+   },
+   "8187": {
+    "rid": 10509,
+    "grey": 220,
+    "name": "Turtle Scale Gloves"
+   },
+   "8189": {
+    "rid": 10511,
+    "grey": 225,
+    "name": "Turtle Scale Breastplate"
+   },
+   "8191": {
+    "rid": 10552,
+    "grey": 245,
+    "name": "Turtle Scale Helm"
+   },
+   "8192": {
+    "rid": 10516,
+    "grey": 225,
+    "name": "Nightscape Shoulders"
+   },
+   "8193": {
+    "rid": 10548,
+    "grey": 245,
+    "name": "Nightscape Pants"
+   },
+   "8195": {
+    "rid": 10550,
+    "grey": 245,
+    "name": "Nightscape Cloak"
+   },
+   "8197": {
+    "rid": 10558,
+    "grey": 250,
+    "name": "Nightscape Boots"
+   },
+   "8198": {
+    "rid": 10518,
+    "grey": 225,
+    "name": "Turtle Scale Bracers"
+   },
+   "8200": {
+    "rid": 10520,
+    "grey": 230,
+    "name": "Big Voodoo Robe"
+   },
+   "8201": {
+    "rid": 10531,
+    "grey": 235,
+    "name": "Big Voodoo Mask"
+   },
+   "8202": {
+    "rid": 10560,
+    "grey": 250,
+    "name": "Big Voodoo Pants"
+   },
+   "8203": {
+    "rid": 10525,
+    "grey": 235,
+    "name": "Tough Scorpid Breastplate"
+   },
+   "8204": {
+    "rid": 10542,
+    "grey": 240,
+    "name": "Tough Scorpid Gloves"
+   },
+   "8205": {
+    "rid": 10533,
+    "grey": 235,
+    "name": "Tough Scorpid Bracers"
+   },
+   "8206": {
+    "rid": 10568,
+    "grey": 260,
+    "name": "Tough Scorpid Leggings"
+   },
+   "8207": {
+    "rid": 10564,
+    "grey": 255,
+    "name": "Tough Scorpid Shoulders"
+   },
+   "8208": {
+    "rid": 10570,
+    "grey": 265,
+    "name": "Tough Scorpid Helm"
+   },
+   "8209": {
+    "rid": 10554,
+    "grey": 250,
+    "name": "Tough Scorpid Boots"
+   },
+   "8210": {
+    "rid": 10529,
+    "grey": 235,
+    "name": "Wild Leather Shoulders"
+   },
+   "8211": {
+    "rid": 10544,
+    "grey": 240,
+    "name": "Wild Leather Vest"
+   },
+   "8212": {
+    "rid": 10572,
+    "grey": 265,
+    "name": "Wild Leather Leggings"
+   },
+   "8213": {
+    "rid": 10566,
+    "grey": 260,
+    "name": "Wild Leather Boots"
+   },
+   "8214": {
+    "rid": 10546,
+    "grey": 240,
+    "name": "Wild Leather Helmet"
+   },
+   "8215": {
+    "rid": 10574,
+    "grey": 265,
+    "name": "Wild Leather Cloak"
+   },
+   "8216": {
+    "rid": 10562,
+    "grey": 255,
+    "name": "Big Voodoo Cloak"
+   },
+   "8217": {
+    "rid": 14930,
+    "grey": 240,
+    "name": "Quickdraw Quiver"
+   },
+   "8218": {
+    "rid": 14932,
+    "grey": 240,
+    "name": "Thick Leather Ammo Pouch"
+   },
+   "8345": {
+    "rid": 10621,
+    "grey": 240,
+    "name": "Wolfshead Helm"
+   },
+   "8346": {
+    "rid": 10630,
+    "grey": 245,
+    "name": "Gauntlets of the Sea"
+   },
+   "8347": {
+    "rid": 10619,
+    "grey": 240,
+    "name": "Dragonscale Gauntlets"
+   },
+   "8348": {
+    "rid": 10632,
+    "grey": 265,
+    "name": "Helm of Fire"
+   },
+   "8349": {
+    "rid": 10647,
+    "grey": 265,
+    "name": "Feathered Breastplate"
+   },
+   "8367": {
+    "rid": 10650,
+    "grey": 270,
+    "name": "Dragonscale Breastplate"
+   },
+   "12624": {
+    "rid": 16650,
+    "grey": 285,
+    "name": "Wildthorn Mail"
+   },
+   "12632": {
+    "rid": 16661,
+    "grey": 310,
+    "name": "Storm Gauntlets"
+   },
+   "12636": {
+    "rid": 16728,
+    "grey": 310,
+    "name": "Helm of the Great Chief"
+   },
+   "12641": {
+    "rid": 16746,
+    "grey": 310,
+    "name": "Invulnerable Mail"
+   },
+   "15045": {
+    "rid": 19050,
+    "grey": 275,
+    "name": "Green Dragonscale Breastplate"
+   },
+   "15046": {
+    "rid": 19060,
+    "grey": 285,
+    "name": "Green Dragonscale Leggings"
+   },
+   "15047": {
+    "rid": 19054,
+    "grey": 330,
+    "name": "Red Dragonscale Breastplate"
+   },
+   "15048": {
+    "rid": 19077,
+    "grey": 300,
+    "name": "Blue Dragonscale Breastplate"
+   },
+   "15049": {
+    "rid": 19089,
+    "grey": 310,
+    "name": "Blue Dragonscale Shoulders"
+   },
+   "15050": {
+    "rid": 19085,
+    "grey": 305,
+    "name": "Black Dragonscale Breastplate"
+   },
+   "15051": {
+    "rid": 19094,
+    "grey": 330,
+    "name": "Black Dragonscale Shoulders"
+   },
+   "15052": {
+    "rid": 19107,
+    "grey": 330,
+    "name": "Black Dragonscale Leggings"
+   },
+   "15053": {
+    "rid": 19076,
+    "grey": 300,
+    "name": "Volcanic Breastplate"
+   },
+   "15054": {
+    "rid": 19059,
+    "grey": 285,
+    "name": "Volcanic Leggings"
+   },
+   "15055": {
+    "rid": 19101,
+    "grey": 320,
+    "name": "Volcanic Shoulders"
+   },
+   "15056": {
+    "rid": 19079,
+    "grey": 300,
+    "name": "Stormshroud Armor"
+   },
+   "15057": {
+    "rid": 19067,
+    "grey": 290,
+    "name": "Stormshroud Pants"
+   },
+   "15058": {
+    "rid": 19090,
+    "grey": 310,
+    "name": "Stormshroud Shoulders"
+   },
+   "15059": {
+    "rid": 19095,
+    "grey": 330,
+    "name": "Living Breastplate"
+   },
+   "15060": {
+    "rid": 19078,
+    "grey": 300,
+    "name": "Living Leggings"
+   },
+   "15061": {
+    "rid": 19061,
+    "grey": 285,
+    "name": "Living Shoulders"
+   },
+   "15062": {
+    "rid": 19097,
+    "grey": 330,
+    "name": "Devilsaur Leggings"
+   },
+   "15063": {
+    "rid": 19084,
+    "grey": 305,
+    "name": "Devilsaur Gauntlets"
+   },
+   "15064": {
+    "rid": 19068,
+    "grey": 290,
+    "name": "Warbear Harness"
+   },
+   "15065": {
+    "rid": 19080,
+    "grey": 300,
+    "name": "Warbear Woolies"
+   },
+   "15066": {
+    "rid": 19086,
+    "grey": 305,
+    "name": "Ironfeather Breastplate"
+   },
+   "15067": {
+    "rid": 19062,
+    "grey": 285,
+    "name": "Ironfeather Shoulders"
+   },
+   "15068": {
+    "rid": 19104,
+    "grey": 330,
+    "name": "Frostsaber Tunic"
+   },
+   "15069": {
+    "rid": 19074,
+    "grey": 300,
+    "name": "Frostsaber Leggings"
+   },
+   "15070": {
+    "rid": 19087,
+    "grey": 310,
+    "name": "Frostsaber Gloves"
+   },
+   "15071": {
+    "rid": 19066,
+    "grey": 290,
+    "name": "Frostsaber Boots"
+   },
+   "15072": {
+    "rid": 19073,
+    "grey": 295,
+    "name": "Chimeric Leggings"
+   },
+   "15073": {
+    "rid": 19063,
+    "grey": 290,
+    "name": "Chimeric Boots"
+   },
+   "15074": {
+    "rid": 19053,
+    "grey": 280,
+    "name": "Chimeric Gloves"
+   },
+   "15075": {
+    "rid": 19081,
+    "grey": 305,
+    "name": "Chimeric Vest"
+   },
+   "15076": {
+    "rid": 19051,
+    "grey": 280,
+    "name": "Heavy Scorpid Vest"
+   },
+   "15077": {
+    "rid": 19048,
+    "grey": 270,
+    "name": "Heavy Scorpid Bracers"
+   },
+   "15078": {
+    "rid": 19064,
+    "grey": 290,
+    "name": "Heavy Scorpid Gauntlets"
+   },
+   "15079": {
+    "rid": 19075,
+    "grey": 300,
+    "name": "Heavy Scorpid Leggings"
+   },
+   "15080": {
+    "rid": 19088,
+    "grey": 310,
+    "name": "Heavy Scorpid Helm"
+   },
+   "15081": {
+    "rid": 19100,
+    "grey": 320,
+    "name": "Heavy Scorpid Shoulders"
+   },
+   "15082": {
+    "rid": 19070,
+    "grey": 295,
+    "name": "Heavy Scorpid Belt"
+   },
+   "15083": {
+    "rid": 19049,
+    "grey": 275,
+    "name": "Wicked Leather Gauntlets"
+   },
+   "15084": {
+    "rid": 19052,
+    "grey": 280,
+    "name": "Wicked Leather Bracers"
+   },
+   "15085": {
+    "rid": 19098,
+    "grey": 320,
+    "name": "Wicked Leather Armor"
+   },
+   "15086": {
+    "rid": 19071,
+    "grey": 295,
+    "name": "Wicked Leather Headband"
+   },
+   "15087": {
+    "rid": 19083,
+    "grey": 305,
+    "name": "Wicked Leather Pants"
+   },
+   "15088": {
+    "rid": 19092,
+    "grey": 315,
+    "name": "Wicked Leather Belt"
+   },
+   "15090": {
+    "rid": 19102,
+    "grey": 325,
+    "name": "Runic Leather Armor"
+   },
+   "15091": {
+    "rid": 19055,
+    "grey": 285,
+    "name": "Runic Leather Gauntlets"
+   },
+   "15092": {
+    "rid": 19065,
+    "grey": 290,
+    "name": "Runic Leather Bracers"
+   },
+   "15093": {
+    "rid": 19072,
+    "grey": 295,
+    "name": "Runic Leather Belt"
+   },
+   "15094": {
+    "rid": 19082,
+    "grey": 305,
+    "name": "Runic Leather Headband"
+   },
+   "15095": {
+    "rid": 19091,
+    "grey": 315,
+    "name": "Runic Leather Pants"
+   },
+   "15096": {
+    "rid": 19103,
+    "grey": 325,
+    "name": "Runic Leather Shoulders"
+   },
+   "15138": {
+    "rid": 19093,
+    "grey": 340,
+    "name": "Onyxia Scale Cloak"
+   },
+   "15141": {
+    "rid": 19106,
+    "grey": 340,
+    "name": "Onyxia Scale Breastplate"
+   },
+   "15407": {
+    "rid": 19047,
+    "grey": 235,
+    "name": "Cured Rugged Hide"
+   },
+   "15564": {
+    "rid": 19058,
+    "grey": 245,
+    "name": "Rugged Armor Kit"
+   },
+   "16982": {
+    "rid": 20853,
+    "grey": 335,
+    "name": "Corehound Boots"
+   },
+   "16983": {
+    "rid": 20854,
+    "grey": 340,
+    "name": "Molten Helm"
+   },
+   "16984": {
+    "rid": 20855,
+    "grey": 340,
+    "name": "Black Dragonscale Boots"
+   },
+   "17721": {
+    "rid": 21943,
+    "grey": 205,
+    "name": "Gloves of the Greatfather"
+   },
+   "18238": {
+    "rid": 22711,
+    "grey": 205,
+    "name": "Shadowskin Gloves"
+   },
+   "18251": {
+    "rid": 22727,
+    "grey": 340,
+    "name": "Core Armor Kit"
+   },
+   "18258": {
+    "rid": 22815,
+    "grey": 295,
+    "name": "Gordok Ogre Suit"
+   },
+   "18504": {
+    "rid": 22921,
+    "grey": 330,
+    "name": "Girdle of Insight"
+   },
+   "18506": {
+    "rid": 22922,
+    "grey": 330,
+    "name": "Mongoose Boots"
+   },
+   "18508": {
+    "rid": 22923,
+    "grey": 330,
+    "name": "Swift Flight Bracers"
+   },
+   "18509": {
+    "rid": 22926,
+    "grey": 340,
+    "name": "Chromatic Cloak"
+   },
+   "18510": {
+    "rid": 22927,
+    "grey": 340,
+    "name": "Hide of the Wild"
+   },
+   "18511": {
+    "rid": 22928,
+    "grey": 340,
+    "name": "Shifting Cloak"
+   },
+   "18662": {
+    "rid": 23190,
+    "grey": 135,
+    "name": "Heavy Leather Ball"
+   },
+   "18948": {
+    "rid": 23399,
+    "grey": 175,
+    "name": "Barbaric Bracers"
+   },
+   "19043": {
+    "rid": 23628,
+    "grey": 305,
+    "name": "Heavy Timbermaw Belt"
+   },
+   "19044": {
+    "rid": 23703,
+    "grey": 305,
+    "name": "Might of the Timbermaw"
+   },
+   "19048": {
+    "rid": 23629,
+    "grey": 320,
+    "name": "Heavy Timbermaw Boots"
+   },
+   "19049": {
+    "rid": 23704,
+    "grey": 335,
+    "name": "Timbermaw Brawlers"
+   },
+   "19052": {
+    "rid": 23705,
+    "grey": 305,
+    "name": "Dawn Treaders"
+   },
+   "19058": {
+    "rid": 23706,
+    "grey": 335,
+    "name": "Golden Mantle of the Dawn"
+   },
+   "19149": {
+    "rid": 23707,
+    "grey": 340,
+    "name": "Lava Belt"
+   },
+   "19157": {
+    "rid": 23708,
+    "grey": 340,
+    "name": "Chromatic Gauntlets"
+   },
+   "19162": {
+    "rid": 23709,
+    "grey": 340,
+    "name": "Corehound Belt"
+   },
+   "19163": {
+    "rid": 23710,
+    "grey": 340,
+    "name": "Molten Belt"
+   },
+   "19685": {
+    "rid": 24121,
+    "grey": 340,
+    "name": "Primal Batskin Jerkin"
+   },
+   "19686": {
+    "rid": 24122,
+    "grey": 340,
+    "name": "Primal Batskin Gloves"
+   },
+   "19687": {
+    "rid": 24123,
+    "grey": 340,
+    "name": "Primal Batskin Bracers"
+   },
+   "19688": {
+    "rid": 24124,
+    "grey": 340,
+    "name": "Blood Tiger Breastplate"
+   },
+   "19689": {
+    "rid": 24125,
+    "grey": 340,
+    "name": "Blood Tiger Shoulders"
+   },
+   "20295": {
+    "rid": 24654,
+    "grey": 330,
+    "name": "Blue Dragonscale Leggings"
+   },
+   "20296": {
+    "rid": 24655,
+    "grey": 295,
+    "name": "Green Dragonscale Gauntlets"
+   },
+   "20380": {
+    "rid": 24703,
+    "grey": 340,
+    "name": "Dreamscale Breastplate"
+   },
+   "20476": {
+    "rid": 24849,
+    "grey": 330,
+    "name": "Sandstalker Bracers"
+   },
+   "20477": {
+    "rid": 24850,
+    "grey": 330,
+    "name": "Sandstalker Gauntlets"
+   },
+   "20478": {
+    "rid": 24851,
+    "grey": 330,
+    "name": "Sandstalker Breastplate"
+   },
+   "20479": {
+    "rid": 24848,
+    "grey": 330,
+    "name": "Spitfire Breastplate"
+   },
+   "20480": {
+    "rid": 24847,
+    "grey": 325,
+    "name": "Spitfire Gauntlets"
+   },
+   "20481": {
+    "rid": 24846,
+    "grey": 330,
+    "name": "Spitfire Bracers"
+   },
+   "20575": {
+    "rid": 24940,
+    "grey": 125,
+    "name": "Black Whelp Tunic"
+   },
+   "21278": {
+    "rid": 26279,
+    "grey": 330,
+    "name": "Stormshroud Gloves"
+   },
+   "22661": {
+    "rid": 28219,
+    "grey": 340,
+    "name": "Polar Tunic"
+   },
+   "22662": {
+    "rid": 28220,
+    "grey": 340,
+    "name": "Polar Gloves"
+   },
+   "22663": {
+    "rid": 28221,
+    "grey": 340,
+    "name": "Polar Bracers"
+   },
+   "22664": {
+    "rid": 28222,
+    "grey": 340,
+    "name": "Icy Scale Breastplate"
+   },
+   "22665": {
+    "rid": 28224,
+    "grey": 340,
+    "name": "Icy Scale Bracers"
+   },
+   "22666": {
+    "rid": 28223,
+    "grey": 340,
+    "name": "Icy Scale Gauntlets"
+   },
+   "22759": {
+    "rid": 28472,
+    "grey": 340,
+    "name": "Bramblewood Helm"
+   },
+   "22760": {
+    "rid": 28473,
+    "grey": 340,
+    "name": "Bramblewood Boots"
+   },
+   "22761": {
+    "rid": 28474,
+    "grey": 340,
+    "name": "Bramblewood Belt"
+   },
+   "34086": {
+    "rid": 44953,
+    "grey": 0,
+    "name": "Winter Boots"
+   },
+   "211423": {
+    "rid": 429354,
+    "grey": 185,
+    "name": "Void-Touched Leather Gloves"
+   },
+   "211502": {
+    "rid": 429869,
+    "grey": 185,
+    "name": "Void-Touched Leather Gauntlets"
+   },
+   "213369": {
+    "rid": 435819,
+    "grey": 220,
+    "name": "Faintly Glowing Leather"
+   },
+   "215114": {
+    "rid": 435949,
+    "grey": 235,
+    "name": "Glowing Hyperconductive Scale Coif"
+   },
+   "215166": {
+    "rid": 435904,
+    "grey": 235,
+    "name": "Glowing Gneuro-Linked Cowl"
+   },
+   "215381": {
+    "rid": 435951,
+    "grey": 235,
+    "name": "Gneuro-Conductive Channeler's Hood"
+   },
+   "215382": {
+    "rid": 435953,
+    "grey": 235,
+    "name": "Rad-Resistant Scale Hood"
+   },
+   "217259": {
+    "rid": 439105,
+    "grey": 260,
+    "name": "Big Voodoo Mask"
+   },
+   "217261": {
+    "rid": 439108,
+    "grey": 255,
+    "name": "Big Voodoo Robe"
+   },
+   "217263": {
+    "rid": 439110,
+    "grey": 235,
+    "name": "Guardian Leather Bracers"
+   },
+   "217265": {
+    "rid": 439112,
+    "grey": 210,
+    "name": "Guardian Belt"
+   },
+   "217267": {
+    "rid": 439114,
+    "grey": 200,
+    "name": "Guardian Pants"
+   },
+   "217268": {
+    "rid": 439116,
+    "grey": 250,
+    "name": "Turtle Scale Breastplate"
+   },
+   "217270": {
+    "rid": 439118,
+    "grey": 245,
+    "name": "Turtle Scale Gloves"
+   },
+   "220741": {
+    "rid": 451706,
+    "grey": 260,
+    "name": "Screaming Chain Pauldrons"
+   },
+   "220742": {
+    "rid": 446185,
+    "grey": 260,
+    "name": "Shrieking Spaulders"
+   },
+   "220743": {
+    "rid": 446186,
+    "grey": 260,
+    "name": "Cacophonous Chain Shoulderguards"
+   },
+   "220744": {
+    "rid": 446190,
+    "grey": 260,
+    "name": "Wailing Chain Mantle"
+   },
+   "220745": {
+    "rid": 446192,
+    "grey": 260,
+    "name": "Membrane of Dark Neurosis"
+   },
+   "220747": {
+    "rid": 446183,
+    "grey": 260,
+    "name": "Paranoia Mantle"
+   },
+   "220748": {
+    "rid": 446189,
+    "grey": 260,
+    "name": "Shoulderpads of Obsession"
+   },
+   "227847": {
+    "rid": 461724,
+    "grey": 340,
+    "name": "Devilcore Leggings"
+   },
+   "227848": {
+    "rid": 461722,
+    "grey": 330,
+    "name": "Devilcore Gauntlets"
+   },
+   "227851": {
+    "rid": 461655,
+    "grey": 330,
+    "name": "Hardened Black Dragonscale Breastplate"
+   },
+   "227852": {
+    "rid": 461657,
+    "grey": 340,
+    "name": "Hardened Black Dragonscale Leggings"
+   },
+   "227853": {
+    "rid": 461659,
+    "grey": 340,
+    "name": "Hardened Black Dragonscale Shoulders"
+   },
+   "227854": {
+    "rid": 461690,
+    "grey": 340,
+    "name": "Mastercrafted Shifting Cloak"
+   },
+   "227855": {
+    "rid": 461692,
+    "grey": 295,
+    "name": "Synthetic Gordok Ogre Suit"
+   },
+   "227866": {
+    "rid": 461663,
+    "grey": 340,
+    "name": "Masterwork Volcanic Shoulders"
+   },
+   "227867": {
+    "rid": 461665,
+    "grey": 310,
+    "name": "Masterwork Volcanic Leggings"
+   },
+   "227868": {
+    "rid": 461661,
+    "grey": 325,
+    "name": "Masterwork Volcanic Breastplate"
+   },
+   "227869": {
+    "rid": 461653,
+    "grey": 340,
+    "name": "Brilliant Chromatic Cloak"
+   },
+   "227873": {
+    "rid": 461645,
+    "grey": 335,
+    "name": "Honed Blue Dragonscale Shoulders"
+   },
+   "227874": {
+    "rid": 462227,
+    "grey": 340,
+    "name": "Honed Blue Dragonscale Leggings"
+   },
+   "227875": {
+    "rid": 461673,
+    "grey": 325,
+    "name": "Honed Blue Dragonscale Breastplate"
+   },
+   "227877": {
+    "rid": 461649,
+    "grey": 310,
+    "name": "Living Green Dragonscale Leggings"
+   },
+   "227878": {
+    "rid": 461677,
+    "grey": 320,
+    "name": "Living Green Dragonscale Gauntlets"
+   },
+   "227879": {
+    "rid": 461720,
+    "grey": 300,
+    "name": "Living Green Dragonscale Breastplate"
+   },
+   "227882": {
+    "rid": 461754,
+    "grey": 340,
+    "name": "Girdle of Arcane Insight"
+   },
+   "227883": {
+    "rid": 461706,
+    "grey": 340,
+    "name": "Swift Flight Vambraces"
+   },
+   "233802": {
+    "rid": 1213513,
+    "grey": 340,
+    "name": "Glowing Chitin Armor Kit"
+   },
+   "233803": {
+    "rid": 1213519,
+    "grey": 340,
+    "name": "Sharpened Chitin Armor Kit"
+   },
+   "233804": {
+    "rid": 1213523,
+    "grey": 340,
+    "name": "Razorbramble Shoulderpads"
+   },
+   "233808": {
+    "rid": 1213521,
+    "grey": 340,
+    "name": "Razorbramble Cowl"
+   },
+   "233813": {
+    "rid": 1213525,
+    "grey": 340,
+    "name": "Razorbramble Leathers"
+   },
+   "234294": {
+    "rid": 1213717,
+    "grey": 340,
+    "name": "Sandstalker Bracers"
+   },
+   "234296": {
+    "rid": 1213720,
+    "grey": 340,
+    "name": "Sandstalker Gauntlets"
+   },
+   "234298": {
+    "rid": 1213723,
+    "grey": 340,
+    "name": "Sandstalker Breastplate"
+   },
+   "234300": {
+    "rid": 1213726,
+    "grey": 340,
+    "name": "Spitfire Bracers"
+   },
+   "234302": {
+    "rid": 1213728,
+    "grey": 340,
+    "name": "Spitfire Gauntlets"
+   },
+   "234304": {
+    "rid": 1213731,
+    "grey": 340,
+    "name": "Spitfire Breastplate"
+   },
+   "234306": {
+    "rid": 1213734,
+    "grey": 340,
+    "name": "Bramblewood Belt"
+   },
+   "234308": {
+    "rid": 1213736,
+    "grey": 340,
+    "name": "Bramblewood Boots"
+   },
+   "234310": {
+    "rid": 1213738,
+    "grey": 340,
+    "name": "Bramblewood Helm"
+   },
+   "234324": {
+    "rid": 1213751,
+    "grey": 340,
+    "name": "Dreamscale Breastplate"
+   },
+   "234482": {
+    "rid": 1214303,
+    "grey": 340,
+    "name": "Dreamscale Kilt"
+   },
+   "236698": {
+    "rid": 1223778,
+    "grey": 340,
+    "name": "Icy Scale Bracers"
+   },
+   "236699": {
+    "rid": 1223774,
+    "grey": 340,
+    "name": "Icy Scale Breastplate"
+   },
+   "236700": {
+    "rid": 1223776,
+    "grey": 340,
+    "name": "Icy Scale Gauntlets"
+   },
+   "236701": {
+    "rid": 1223784,
+    "grey": 340,
+    "name": "Polar Bracers"
+   },
+   "236702": {
+    "rid": 1223780,
+    "grey": 340,
+    "name": "Polar Tunic"
+   },
+   "236703": {
+    "rid": 1223782,
+    "grey": 340,
+    "name": "Polar Gloves"
+   },
+   "238272": {
+    "rid": 1224615,
+    "grey": 305,
+    "name": "Scarlet Infiltrator's Bandana"
+   },
+   "238273": {
+    "rid": 1224616,
+    "grey": 305,
+    "name": "Scarlet Infiltrator's Shoulderpads"
+   },
+   "238274": {
+    "rid": 1224617,
+    "grey": 305,
+    "name": "Scarlet Infiltrator's Vest"
+   },
+   "238275": {
+    "rid": 1224618,
+    "grey": 305,
+    "name": "Scarlet Infiltrator's Bracers"
+   },
+   "238276": {
+    "rid": 1224619,
+    "grey": 305,
+    "name": "Scarlet Infiltrator's Gloves"
+   },
+   "238277": {
+    "rid": 1224620,
+    "grey": 305,
+    "name": "Scarlet Infiltrator's Belt"
+   },
+   "238278": {
+    "rid": 1224621,
+    "grey": 305,
+    "name": "Scarlet Infiltrator's Trousers"
+   },
+   "238279": {
+    "rid": 1224622,
+    "grey": 305,
+    "name": "Scarlet Infiltrator's Shoes"
+   },
+   "238280": {
+    "rid": 1224623,
+    "grey": 305,
+    "name": "Scarlet Huntsman's Coif"
+   },
+   "238281": {
+    "rid": 1224624,
+    "grey": 305,
+    "name": "Scarlet Huntsman's Pauldrons"
+   },
+   "238282": {
+    "rid": 1224625,
+    "grey": 305,
+    "name": "Scarlet Huntsman's Chain"
+   },
+   "238283": {
+    "rid": 1224626,
+    "grey": 305,
+    "name": "Scarlet Huntsman's Wristguards"
+   },
+   "238284": {
+    "rid": 1224627,
+    "grey": 305,
+    "name": "Scarlet Huntsman's Handguards"
+   },
+   "238285": {
+    "rid": 1224628,
+    "grey": 305,
+    "name": "Scarlet Huntsman's Clasp"
+   },
+   "238286": {
+    "rid": 1224629,
+    "grey": 305,
+    "name": "Scarlet Huntsman's Legguards"
+   },
+   "238287": {
+    "rid": 1224630,
+    "grey": 305,
+    "name": "Scarlet Huntsman's Boots"
+   },
+   "238925": {
+    "rid": 1226689,
+    "grey": 290,
+    "name": "Scarlet Quiver"
+   },
+   "238926": {
+    "rid": 1226690,
+    "grey": 290,
+    "name": "Scarlet Ammo Pouch"
+   },
+   "252424": {
+    "rid": 1255146,
+    "grey": 40,
+    "name": "Black Whelp Slippers"
+   },
+   "252425": {
+    "rid": 1255145,
+    "grey": 40,
+    "name": "Dark Leather Boots"
+   },
+   "252426": {
+    "rid": 1255144,
+    "grey": 40,
+    "name": "Murloc Scale Shoes"
+   },
+   "252427": {
+    "rid": 1255143,
+    "grey": 40,
+    "name": "Moonglow Boots"
+   },
+   "252428": {
+    "rid": 1255142,
+    "grey": 120,
+    "name": "Brawler's Leather Belt"
+   },
+   "252429": {
+    "rid": 1255141,
+    "grey": 120,
+    "name": "Trapper's Leather Belt"
+   },
+   "252430": {
+    "rid": 1255140,
+    "grey": 120,
+    "name": "Defender's Leather Belt"
+   },
+   "252431": {
+    "rid": 1255139,
+    "grey": 120,
+    "name": "Totemic Leather Belt"
+   },
+   "252432": {
+    "rid": 1255138,
+    "grey": 120,
+    "name": "Stormrider's Leather Belt"
+   },
+   "252433": {
+    "rid": 1255137,
+    "grey": 120,
+    "name": "Wisdom's Leather Belt"
+   },
+   "252434": {
+    "rid": 1255134,
+    "grey": 80,
+    "name": "Defender's Leather Armor"
+   },
+   "252435": {
+    "rid": 1255133,
+    "grey": 80,
+    "name": "Totemic Leather Armor"
+   },
+   "252436": {
+    "rid": 1255124,
+    "grey": 110,
+    "name": "Mystic Medium Armor Kit"
+   },
+   "252437": {
+    "rid": 1255123,
+    "grey": 110,
+    "name": "Forceful Medium Armor Kit"
+   },
+   "252439": {
+    "rid": 1255121,
+    "grey": 135,
+    "name": "Brawler's Leather Boots"
+   },
+   "252440": {
+    "rid": 1255120,
+    "grey": 135,
+    "name": "Trapper's Leather Boots"
+   },
+   "252441": {
+    "rid": 1255119,
+    "grey": 135,
+    "name": "Defender's Leather Boots"
+   },
+   "252442": {
+    "rid": 1255118,
+    "grey": 135,
+    "name": "Totemic Leather Boots"
+   },
+   "252443": {
+    "rid": 1255117,
+    "grey": 135,
+    "name": "Stormrider's Leather Boots"
+   },
+   "252444": {
+    "rid": 1255116,
+    "grey": 135,
+    "name": "Wisdom's Leather Boots"
+   },
+   "252445": {
+    "rid": 1255113,
+    "grey": 105,
+    "name": "Defender's Leather Pants"
+   },
+   "252446": {
+    "rid": 1255112,
+    "grey": 105,
+    "name": "Totemic Leather Pants"
+   },
+   "252447": {
+    "rid": 1255107,
+    "grey": 150,
+    "name": "Defender's Leather Hood"
+   },
+   "252448": {
+    "rid": 1255106,
+    "grey": 150,
+    "name": "Totemic Leather Hood"
+   },
+   "252449": {
+    "rid": 1255103,
+    "grey": 160,
+    "name": "Hillman's Leather Boots"
+   },
+   "252450": {
+    "rid": 1255100,
+    "grey": 160,
+    "name": "Defender's Leather Tunic"
+   },
+   "252451": {
+    "rid": 1255099,
+    "grey": 160,
+    "name": "Totemic Leather Tunic"
+   },
+   "252452": {
+    "rid": 1255096,
+    "grey": 175,
+    "name": "Mystic Heavy Armor Kit"
+   },
+   "252453": {
+    "rid": 1255095,
+    "grey": 175,
+    "name": "Forceful Heavy Armor Kit"
+   },
+   "252455": {
+    "rid": 1255091,
+    "grey": 130,
+    "name": "Defender's Leather Helm"
+   },
+   "252456": {
+    "rid": 1255090,
+    "grey": 130,
+    "name": "Totemic Leather Helm"
+   },
+   "252457": {
+    "rid": 1255085,
+    "grey": 170,
+    "name": "Defender's Leather Kilt"
+   },
+   "252458": {
+    "rid": 1255084,
+    "grey": 170,
+    "name": "Totemic Leather Leggings"
+   },
+   "252459": {
+    "rid": 1255081,
+    "grey": 155,
+    "name": "Prowler's Leather Belt"
+   },
+   "252460": {
+    "rid": 1255078,
+    "grey": 155,
+    "name": "Warden's Leather Belt"
+   },
+   "252461": {
+    "rid": 1255077,
+    "grey": 155,
+    "name": "Skirmisher's Leather Belt"
+   },
+   "252462": {
+    "rid": 1255074,
+    "grey": 225,
+    "name": "Mystic Thick Armor Kit"
+   },
+   "252463": {
+    "rid": 1255073,
+    "grey": 225,
+    "name": "Forceful Thick Armor Kit"
+   },
+   "252465": {
+    "rid": 1255064,
+    "grey": 205,
+    "name": "Prowler's Leather Shoes"
+   },
+   "252466": {
+    "rid": 1255062,
+    "grey": 205,
+    "name": "Warden's Leather Shoes"
+   },
+   "252467": {
+    "rid": 1255048,
+    "grey": 275,
+    "name": "Blue Suede Shoes"
+   },
+   "252468": {
+    "rid": 1255047,
+    "grey": 275,
+    "name": "Prowler's Leather Boots"
+   },
+   "252469": {
+    "rid": 1255046,
+    "grey": 275,
+    "name": "Skulker's Leather Boots"
+   },
+   "252470": {
+    "rid": 1255045,
+    "grey": 275,
+    "name": "Warden's Leather Boots"
+   },
+   "252471": {
+    "rid": 1255044,
+    "grey": 275,
+    "name": "Skycaller's Leather Boots"
+   },
+   "252472": {
+    "rid": 1255043,
+    "grey": 275,
+    "name": "Mender's Leather Boots"
+   },
+   "252473": {
+    "rid": 1255035,
+    "grey": 290,
+    "name": "Prowler's Leather Waistguard"
+   },
+   "252474": {
+    "rid": 1255034,
+    "grey": 290,
+    "name": "Skulker's Leather Waistguard"
+   },
+   "252475": {
+    "rid": 1255033,
+    "grey": 290,
+    "name": "Warden's Leather Waistguard"
+   },
+   "252476": {
+    "rid": 1255032,
+    "grey": 290,
+    "name": "Skycaller's Leather Waistguard"
+   },
+   "252477": {
+    "rid": 1255031,
+    "grey": 290,
+    "name": "Mender's Leather Waistguard"
+   },
+   "252478": {
+    "rid": 1255029,
+    "grey": 295,
+    "name": "Blue Suede Pants"
+   },
+   "252479": {
+    "rid": 1255028,
+    "grey": 300,
+    "name": "Wicked Leather Boots"
+   },
+   "252480": {
+    "rid": 1255024,
+    "grey": 305,
+    "name": "Blue Suede Armor"
+   },
+   "252481": {
+    "rid": 1255021,
+    "grey": 310,
+    "name": "Blue Suede Belt"
+   },
+   "252482": {
+    "rid": 1255017,
+    "grey": 320,
+    "name": "Blue Suede Hat"
+   },
+   "252483": {
+    "rid": 1255015,
+    "grey": 340,
+    "name": "Dawn Armor"
+   },
+   "252484": {
+    "rid": 1255014,
+    "grey": 340,
+    "name": "Timbermaw Tunic"
+   },
+   "252485": {
+    "rid": 1255013,
+    "grey": 340,
+    "name": "Warbear Helm"
+   },
+   "252486": {
+    "rid": 1255012,
+    "grey": 340,
+    "name": "Ironfeather Leggings"
+   },
+   "252487": {
+    "rid": 1254966,
+    "grey": 255,
+    "name": "Mystic Rugged Armor Kit"
+   },
+   "252488": {
+    "rid": 1254965,
+    "grey": 255,
+    "name": "Forceful Rugged Armor Kit"
+   },
+   "252490": {
+    "rid": 1255136,
+    "grey": 80,
+    "name": "Brawler's Leather Armor"
+   },
+   "252491": {
+    "rid": 1255135,
+    "grey": 80,
+    "name": "Trapper's Leather Armor"
+   },
+   "252492": {
+    "rid": 1255132,
+    "grey": 80,
+    "name": "Stormrider's Leather Armor"
+   },
+   "252493": {
+    "rid": 1255131,
+    "grey": 80,
+    "name": "Wisdom's Leather Armor"
+   },
+   "252494": {
+    "rid": 1255130,
+    "grey": 125,
+    "name": "Brawler's Leather Gloves"
+   },
+   "252495": {
+    "rid": 1255129,
+    "grey": 125,
+    "name": "Trapper's Leather Gloves"
+   },
+   "252496": {
+    "rid": 1255128,
+    "grey": 125,
+    "name": "Defender's Leather Gloves"
+   },
+   "252497": {
+    "rid": 1255127,
+    "grey": 125,
+    "name": "Totemic Leather Gloves"
+   },
+   "252498": {
+    "rid": 1255126,
+    "grey": 125,
+    "name": "Stormrider's Leather Gloves"
+   },
+   "252499": {
+    "rid": 1255125,
+    "grey": 125,
+    "name": "Wisdom's Leather Gloves"
+   },
+   "252500": {
+    "rid": 1255115,
+    "grey": 105,
+    "name": "Brawler's Leather Pants"
+   },
+   "252501": {
+    "rid": 1255114,
+    "grey": 105,
+    "name": "Trapper's Leather Pants"
+   },
+   "252502": {
+    "rid": 1255111,
+    "grey": 105,
+    "name": "Stormrider's Leather Pants"
+   },
+   "252503": {
+    "rid": 1255110,
+    "grey": 105,
+    "name": "Wisdom's Leather Pants"
+   },
+   "252504": {
+    "rid": 1255109,
+    "grey": 150,
+    "name": "Brawler's Leather Hood"
+   },
+   "252505": {
+    "rid": 1255108,
+    "grey": 150,
+    "name": "Trapper's Leather Hood"
+   },
+   "252506": {
+    "rid": 1255105,
+    "grey": 150,
+    "name": "Stormrider's Leather Hood"
+   },
+   "252507": {
+    "rid": 1255104,
+    "grey": 150,
+    "name": "Wisdom's Leather Hood"
+   },
+   "252508": {
+    "rid": 1255102,
+    "grey": 160,
+    "name": "Brawler's Leather Tunic"
+   },
+   "252509": {
+    "rid": 1255101,
+    "grey": 160,
+    "name": "Trapper's Leather Tunic"
+   },
+   "252510": {
+    "rid": 1255098,
+    "grey": 160,
+    "name": "Stormrider's Leather Tunic"
+   },
+   "252511": {
+    "rid": 1255097,
+    "grey": 160,
+    "name": "Wisdom's Leather Tunic"
+   },
+   "252512": {
+    "rid": 1255093,
+    "grey": 130,
+    "name": "Brawler's Leather Helm"
+   },
+   "252513": {
+    "rid": 1255092,
+    "grey": 130,
+    "name": "Trapper's Leather Helm"
+   },
+   "252514": {
+    "rid": 1255089,
+    "grey": 130,
+    "name": "Stormrider's Leather Helm"
+   },
+   "252515": {
+    "rid": 1255088,
+    "grey": 130,
+    "name": "Wisdom's Leather Helm"
+   },
+   "252516": {
+    "rid": 1255087,
+    "grey": 170,
+    "name": "Brawler's Leather Legguards"
+   },
+   "252517": {
+    "rid": 1255086,
+    "grey": 170,
+    "name": "Trapper's Leather Legguards"
+   },
+   "252518": {
+    "rid": 1255083,
+    "grey": 170,
+    "name": "Stormrider's Leather Kilt"
+   },
+   "252519": {
+    "rid": 1255082,
+    "grey": 170,
+    "name": "Wisdom's Leather Leggings"
+   },
+   "252520": {
+    "rid": 1255080,
+    "grey": 155,
+    "name": "Skulker's Leather Belt"
+   },
+   "252521": {
+    "rid": 1255079,
+    "grey": 155,
+    "name": "Stalker's Leather Belt"
+   },
+   "252522": {
+    "rid": 1255076,
+    "grey": 155,
+    "name": "Skycaller's Leather Belt"
+   },
+   "252523": {
+    "rid": 1255075,
+    "grey": 155,
+    "name": "Mender's Leather Belt"
+   },
+   "252524": {
+    "rid": 1255071,
+    "grey": 215,
+    "name": "Prowler's Leather Gloves"
+   },
+   "252525": {
+    "rid": 1255070,
+    "grey": 215,
+    "name": "Skulker's Leather Gloves"
+   },
+   "252526": {
+    "rid": 1255069,
+    "grey": 215,
+    "name": "Stalker's Leather Gloves"
+   },
+   "252527": {
+    "rid": 1255068,
+    "grey": 215,
+    "name": "Warden's Leather Gloves"
+   },
+   "252528": {
+    "rid": 1255067,
+    "grey": 215,
+    "name": "Skirmisher's Leather Gloves"
+   },
+   "252529": {
+    "rid": 1255066,
+    "grey": 215,
+    "name": "Skycaller's Leather Gloves"
+   },
+   "252530": {
+    "rid": 1255065,
+    "grey": 215,
+    "name": "Mender's Leather Gloves"
+   },
+   "252531": {
+    "rid": 1255063,
+    "grey": 205,
+    "name": "Skulker's Leather Shoes"
+   },
+   "252532": {
+    "rid": 1255061,
+    "grey": 205,
+    "name": "Skycaller's Leather Shoes"
+   },
+   "252533": {
+    "rid": 1255060,
+    "grey": 205,
+    "name": "Mender's Leather Shoes"
+   },
+   "252534": {
+    "rid": 1255059,
+    "grey": 250,
+    "name": "Prowler's Leather Shoulders"
+   },
+   "252535": {
+    "rid": 1255058,
+    "grey": 250,
+    "name": "Skulker's Leather Shoulders"
+   },
+   "252536": {
+    "rid": 1255057,
+    "grey": 250,
+    "name": "Warden's Leather Shoulders"
+   },
+   "252537": {
+    "rid": 1255056,
+    "grey": 250,
+    "name": "Skycaller's Leather Shoulders"
+   },
+   "252538": {
+    "rid": 1255055,
+    "grey": 250,
+    "name": "Mender's Leather Shoulders"
+   },
+   "252539": {
+    "rid": 1255054,
+    "grey": 265,
+    "name": "Prowler's Leather Bracers"
+   },
+   "252540": {
+    "rid": 1255053,
+    "grey": 265,
+    "name": "Skulker's Leather Bracers"
+   },
+   "252541": {
+    "rid": 1255052,
+    "grey": 265,
+    "name": "Warden's Leather Bracers"
+   },
+   "252542": {
+    "rid": 1255051,
+    "grey": 265,
+    "name": "Skycaller's Leather Bracers"
+   },
+   "252543": {
+    "rid": 1255050,
+    "grey": 265,
+    "name": "Mender's Leather Bracers"
+   },
+   "252544": {
+    "rid": 1255049,
+    "grey": 275,
+    "name": "Tooled Leather Belt"
+   },
+   "252545": {
+    "rid": 1255042,
+    "grey": 280,
+    "name": "Tooled Leather Boots"
+   },
+   "252546": {
+    "rid": 1255041,
+    "grey": 280,
+    "name": "Blue Suede Gloves"
+   },
+   "252547": {
+    "rid": 1255040,
+    "grey": 255,
+    "name": "Prowler's Leather Gauntlets"
+   },
+   "252548": {
+    "rid": 1255039,
+    "grey": 255,
+    "name": "Skulker's Leather Gauntlets"
+   },
+   "252549": {
+    "rid": 1255038,
+    "grey": 255,
+    "name": "Warden's Leather Gauntlets"
+   },
+   "252550": {
+    "rid": 1255037,
+    "grey": 255,
+    "name": "Skycaller's Leather Gauntlets"
+   },
+   "252551": {
+    "rid": 1255036,
+    "grey": 255,
+    "name": "Mender's Leather Gauntlets"
+   },
+   "252552": {
+    "rid": 1255030,
+    "grey": 295,
+    "name": "Tooled Leather Armor"
+   },
+   "252553": {
+    "rid": 1255027,
+    "grey": 300,
+    "name": "Tooled Leather Gauntlets"
+   },
+   "252554": {
+    "rid": 1255026,
+    "grey": 300,
+    "name": "Blue Suede Shoulders"
+   },
+   "252555": {
+    "rid": 1255025,
+    "grey": 305,
+    "name": "Tooled Leather Crown"
+   },
+   "252556": {
+    "rid": 1255023,
+    "grey": 310,
+    "name": "Wicked Leather Shoulders"
+   },
+   "252557": {
+    "rid": 1255022,
+    "grey": 310,
+    "name": "Tooled Leather Bracers"
+   },
+   "252558": {
+    "rid": 1255020,
+    "grey": 315,
+    "name": "Tooled Leather Epaulets"
+   },
+   "252559": {
+    "rid": 1255019,
+    "grey": 315,
+    "name": "Blue Suede Bracers"
+   },
+   "252560": {
+    "rid": 1255018,
+    "grey": 320,
+    "name": "Tooled Leather Pants"
+   },
+   "252561": {
+    "rid": 1255016,
+    "grey": 340,
+    "name": "Living Crown"
+   },
+   "252562": {
+    "rid": 1255011,
+    "grey": 205,
+    "name": "Stalker's Mail Boots"
+   },
+   "252563": {
+    "rid": 1255010,
+    "grey": 205,
+    "name": "Skycaller's Mail Boots"
+   },
+   "252564": {
+    "rid": 1255009,
+    "grey": 205,
+    "name": "Skirmisher's Mail Boots"
+   },
+   "252565": {
+    "rid": 1255008,
+    "grey": 205,
+    "name": "Mender's Mail Boots"
+   },
+   "252566": {
+    "rid": 1255007,
+    "grey": 240,
+    "name": "Stalker's Mail Shoulders"
+   },
+   "252567": {
+    "rid": 1255006,
+    "grey": 240,
+    "name": "Skycaller's Mail Shoulders"
+   },
+   "252568": {
+    "rid": 1255005,
+    "grey": 240,
+    "name": "Skirmisher's Mail Shoulders"
+   },
+   "252569": {
+    "rid": 1255004,
+    "grey": 240,
+    "name": "Mender's Mail Shoulders"
+   },
+   "252570": {
+    "rid": 1255003,
+    "grey": 240,
+    "name": "Stalker's Mail Bracers"
+   },
+   "252571": {
+    "rid": 1255002,
+    "grey": 240,
+    "name": "Skycaller's Mail Bracers"
+   },
+   "252572": {
+    "rid": 1255001,
+    "grey": 240,
+    "name": "Skirmisher's Mail Bracers"
+   },
+   "252573": {
+    "rid": 1255000,
+    "grey": 240,
+    "name": "Mender's Mail Bracers"
+   },
+   "252574": {
+    "rid": 1254999,
+    "grey": 270,
+    "name": "Supple Scorpid Boots"
+   },
+   "252575": {
+    "rid": 1254998,
+    "grey": 270,
+    "name": "Charged Scorpid Belt"
+   },
+   "252576": {
+    "rid": 1254997,
+    "grey": 275,
+    "name": "Stalker's Mail Sabatons"
+   },
+   "252577": {
+    "rid": 1254996,
+    "grey": 275,
+    "name": "Skycaller's Mail Sabatons"
+   },
+   "252578": {
+    "rid": 1254995,
+    "grey": 275,
+    "name": "Skirmisher's Mail Sabatons"
+   },
+   "252579": {
+    "rid": 1254994,
+    "grey": 275,
+    "name": "Mender's Mail Sabatons"
+   },
+   "252580": {
+    "rid": 1254993,
+    "grey": 280,
+    "name": "Supple Scorpid Leggings"
+   },
+   "252581": {
+    "rid": 1254992,
+    "grey": 280,
+    "name": "Charged Scorpid Helm"
+   },
+   "252582": {
+    "rid": 1254991,
+    "grey": 290,
+    "name": "Supple Scorpid Bracers"
+   },
+   "252583": {
+    "rid": 1254990,
+    "grey": 290,
+    "name": "Charged Scorpid Shoulders"
+   },
+   "252584": {
+    "rid": 1254989,
+    "grey": 255,
+    "name": "Stalker's Mail Gauntlets"
+   },
+   "252585": {
+    "rid": 1254988,
+    "grey": 255,
+    "name": "Skycaller's Mail Gauntlets"
+   },
+   "252586": {
+    "rid": 1254987,
+    "grey": 255,
+    "name": "Skirmisher's Mail Gauntlets"
+   },
+   "252587": {
+    "rid": 1254986,
+    "grey": 255,
+    "name": "Mender's Mail Gauntlets"
+   },
+   "252588": {
+    "rid": 1254985,
+    "grey": 290,
+    "name": "Stalker's Mail Belt"
+   },
+   "252589": {
+    "rid": 1254984,
+    "grey": 290,
+    "name": "Skycaller's Mail Belt"
+   },
+   "252590": {
+    "rid": 1254983,
+    "grey": 290,
+    "name": "Skirmisher's Mail Belt"
+   },
+   "252591": {
+    "rid": 1254982,
+    "grey": 290,
+    "name": "Mender's Mail Belt"
+   },
+   "252592": {
+    "rid": 1254981,
+    "grey": 295,
+    "name": "Supple Scorpid Shoulders"
+   },
+   "252593": {
+    "rid": 1254980,
+    "grey": 295,
+    "name": "Charged Scorpid Bracers"
+   },
+   "252594": {
+    "rid": 1254979,
+    "grey": 295,
+    "name": "Heavy Scorpid Boots"
+   },
+   "252595": {
+    "rid": 1254978,
+    "grey": 295,
+    "name": "Supple Scorpid Belt"
+   },
+   "252596": {
+    "rid": 1254977,
+    "grey": 295,
+    "name": "Charged Scorpid Gauntlets"
+   },
+   "252597": {
+    "rid": 1254976,
+    "grey": 300,
+    "name": "Supple Scorpid Helm"
+   },
+   "252598": {
+    "rid": 1254975,
+    "grey": 300,
+    "name": "Charged Scorpid Vest"
+   },
+   "252599": {
+    "rid": 1254974,
+    "grey": 310,
+    "name": "Supple Scorpid Vest"
+   },
+   "252600": {
+    "rid": 1254973,
+    "grey": 310,
+    "name": "Charged Scorpid Leggings"
+   },
+   "252601": {
+    "rid": 1254972,
+    "grey": 320,
+    "name": "Supple Scorpid Sabatons"
+   },
+   "252602": {
+    "rid": 1254971,
+    "grey": 320,
+    "name": "Charged Scorpid Boots"
+   },
+   "252603": {
+    "rid": 1254970,
+    "grey": 340,
+    "name": "Red Dragonscale Leggings"
+   },
+   "252604": {
+    "rid": 1254969,
+    "grey": 340,
+    "name": "Blue Dragonscale Helm"
+   },
+   "252605": {
+    "rid": 1254968,
+    "grey": 340,
+    "name": "Black Dragonscale Helm"
+   },
+   "252606": {
+    "rid": 1254967,
+    "grey": 340,
+    "name": "Pristine Scorpid Leggings"
+   },
+   "273884": {
+    "rid": 1292920,
+    "grey": 330,
+    "name": "Grovekeeper Trousers"
+   },
+   "273885": {
+    "rid": 1292921,
+    "grey": 330,
+    "name": "Grovekeeper Grips"
+   },
+   "273886": {
+    "rid": 1292923,
+    "grey": 330,
+    "name": "Grovekeeper Shoulderpads"
+   },
+   "273887": {
+    "rid": 1292924,
+    "grey": 330,
+    "name": "Grovekeeper Stompers"
+   },
+   "273888": {
+    "rid": 1292925,
+    "grey": 330,
+    "name": "Grovekeeper Kilt"
+   },
+   "273889": {
+    "rid": 1292926,
+    "grey": 330,
+    "name": "Grovekeeper Mitts"
+   },
+   "273890": {
+    "rid": 1292927,
+    "grey": 330,
+    "name": "Grovekeeper Mantle"
+   },
+   "273891": {
+    "rid": 1292928,
+    "grey": 330,
+    "name": "Grovekeeper Sandals"
+   },
+   "273892": {
+    "rid": 1292929,
+    "grey": 330,
+    "name": "Grovekeeper Legguards"
+   },
+   "273893": {
+    "rid": 1292930,
+    "grey": 330,
+    "name": "Grovekeeper Handguards"
+   },
+   "273894": {
+    "rid": 1292931,
+    "grey": 330,
+    "name": "Grovekeeper Pauldrons"
+   },
+   "273895": {
+    "rid": 1292932,
+    "grey": 330,
+    "name": "Grovekeeper Boots"
+   },
+   "273896": {
+    "rid": 1292933,
+    "grey": 330,
+    "name": "Grovekeeper Leggings"
+   },
+   "273897": {
+    "rid": 1292934,
+    "grey": 330,
+    "name": "Grovekeeper Gauntlets"
+   },
+   "273898": {
+    "rid": 1292935,
+    "grey": 330,
+    "name": "Grovekeeper Spaulders"
+   },
+   "273899": {
+    "rid": 1292936,
+    "grey": 330,
+    "name": "Grovekeeper Treads"
+   },
+   "273900": {
+    "rid": 1292937,
+    "grey": 330,
+    "name": "Wildstalker's Legguards"
+   },
+   "273901": {
+    "rid": 1292938,
+    "grey": 330,
+    "name": "Wildstalker's Gauntlets"
+   },
+   "273902": {
+    "rid": 1292939,
+    "grey": 330,
+    "name": "Wildstalker's Spaulders"
+   },
+   "273903": {
+    "rid": 1292940,
+    "grey": 330,
+    "name": "Wildstalker's Greaves"
+   },
+   "273928": {
+    "rid": 1292965,
+    "grey": 330,
+    "name": "Grimstitch Pants"
+   },
+   "273929": {
+    "rid": 1292966,
+    "grey": 330,
+    "name": "Grimstitch Gloves"
+   },
+   "273930": {
+    "rid": 1292967,
+    "grey": 330,
+    "name": "Grimstitch Spaulders"
+   },
+   "273931": {
+    "rid": 1292968,
+    "grey": 330,
+    "name": "Grimstitch Boots"
+   },
+   "273932": {
+    "rid": 1292969,
+    "grey": 330,
+    "name": "Spiritcaller Leggings"
+   },
+   "273933": {
+    "rid": 1292970,
+    "grey": 330,
+    "name": "Spiritcaller Grips"
+   },
+   "273934": {
+    "rid": 1292971,
+    "grey": 330,
+    "name": "Spiritcaller Spaulders"
+   },
+   "273935": {
+    "rid": 1292972,
+    "grey": 330,
+    "name": "Spiritcaller Treads"
+   },
+   "273936": {
+    "rid": 1292973,
+    "grey": 330,
+    "name": "Spiritcaller Pants"
+   },
+   "273937": {
+    "rid": 1292974,
+    "grey": 330,
+    "name": "Spiritcaller Gauntlets"
+   },
+   "273938": {
+    "rid": 1292975,
+    "grey": 330,
+    "name": "Spiritcaller Epaulets"
+   },
+   "273939": {
+    "rid": 1292976,
+    "grey": 330,
+    "name": "Spiritcaller Greaves"
+   },
+   "275610": {
+    "rid": 1297126,
+    "grey": 295,
+    "name": "Bileblister Claws"
+   },
+   "275611": {
+    "rid": 1297127,
+    "grey": 300,
+    "name": "Bileblister Girdle"
+   },
+   "275612": {
+    "rid": 1297128,
+    "grey": 300,
+    "name": "Bileblister Boots"
+   },
+   "275613": {
+    "rid": 1297129,
+    "grey": 295,
+    "name": "Hivethrasher's Claws"
+   },
+   "275614": {
+    "rid": 1297130,
+    "grey": 300,
+    "name": "Hivethrasher's Girdle"
+   },
+   "275615": {
+    "rid": 1297131,
+    "grey": 300,
+    "name": "Hivethrasher's Boots"
+   },
+   "275616": {
+    "rid": 1297132,
+    "grey": 295,
+    "name": "Scalegut Clenchers"
+   },
+   "275617": {
+    "rid": 1297133,
+    "grey": 300,
+    "name": "Scalegut Belt"
+   },
+   "275618": {
+    "rid": 1297134,
+    "grey": 300,
+    "name": "Scalegut Treaders"
+   },
+   "275619": {
+    "rid": 1297135,
+    "grey": 295,
+    "name": "Broodwatcher's Clenchers"
+   },
+   "275620": {
+    "rid": 1297136,
+    "grey": 300,
+    "name": "Broodwatcher's Belt"
+   },
+   "275621": {
+    "rid": 1297137,
+    "grey": 300,
+    "name": "Broodwatcher's Treaders"
+   },
+   "276538": {
+    "rid": 1299914,
+    "grey": 330,
+    "name": "Spiritcaller Kilt"
+   },
+   "276539": {
+    "rid": 1299915,
+    "grey": 330,
+    "name": "Spiritcaller Gloves"
+   },
+   "276540": {
+    "rid": 1299916,
+    "grey": 330,
+    "name": "Spiritcaller Mantle"
+   },
+   "276541": {
+    "rid": 1299917,
+    "grey": 330,
+    "name": "Spiritcaller Boots"
+   },
+   "276998": {
+    "rid": 1301427,
+    "grey": 70,
+    "name": "Cloudy Gustwoven Harness"
+   },
+   "276999": {
+    "rid": 1301428,
+    "grey": 60,
+    "name": "Cloudy Gustwoven Bracers"
+   },
+   "277000": {
+    "rid": 1301429,
+    "grey": 65,
+    "name": "Cloudy Gustwoven Gloves"
+   },
+   "277001": {
+    "rid": 1301430,
+    "grey": 60,
+    "name": "Cloudy Gustwoven Belt"
+   },
+   "277002": {
+    "rid": 1301431,
+    "grey": 70,
+    "name": "Cloudy Gustwoven Trousers"
+   },
+   "277003": {
+    "rid": 1301432,
+    "grey": 65,
+    "name": "Cloudy Gustwoven Boots"
+   },
+   "277004": {
+    "rid": 1301433,
+    "grey": 70,
+    "name": "Cloudy Windraveled Jerkin"
+   },
+   "277005": {
+    "rid": 1301434,
+    "grey": 60,
+    "name": "Cloudy Windraveled Armguards"
+   },
+   "277006": {
+    "rid": 1301435,
+    "grey": 65,
+    "name": "Cloudy Windraveled Mitts"
+   },
+   "277007": {
+    "rid": 1301436,
+    "grey": 60,
+    "name": "Cloudy Windraveled Strap"
+   },
+   "277008": {
+    "rid": 1301437,
+    "grey": 70,
+    "name": "Cloudy Windraveled Pants"
+   },
+   "277009": {
+    "rid": 1301438,
+    "grey": 65,
+    "name": "Cloudy Windraveled Footwraps"
+   },
+   "277022": {
+    "rid": 1301451,
+    "grey": 70,
+    "name": "Azure Gustwoven Harness"
+   },
+   "277023": {
+    "rid": 1301452,
+    "grey": 60,
+    "name": "Azure Gustwoven Bracers"
+   },
+   "277024": {
+    "rid": 1301453,
+    "grey": 65,
+    "name": "Azure Gustwoven Gloves"
+   },
+   "277025": {
+    "rid": 1301454,
+    "grey": 60,
+    "name": "Azure Gustwoven Belt"
+   },
+   "277026": {
+    "rid": 1301455,
+    "grey": 70,
+    "name": "Azure Gustwoven Trousers"
+   },
+   "277027": {
+    "rid": 1301456,
+    "grey": 65,
+    "name": "Azure Gustwoven Boots"
+   },
+   "277028": {
+    "rid": 1301457,
+    "grey": 70,
+    "name": "Azure Windraveled Jerkin"
+   },
+   "277029": {
+    "rid": 1301458,
+    "grey": 60,
+    "name": "Azure Windraveled Armguards"
+   },
+   "277030": {
+    "rid": 1301459,
+    "grey": 65,
+    "name": "Azure Windraveled Mitts"
+   },
+   "277031": {
+    "rid": 1301460,
+    "grey": 60,
+    "name": "Azure Windraveled Strap"
+   },
+   "277032": {
+    "rid": 1301461,
+    "grey": 70,
+    "name": "Azure Windraveled Pants"
+   },
+   "277033": {
+    "rid": 1301462,
+    "grey": 65,
+    "name": "Azure Windraveled Footwraps"
+   },
+   "277042": {
+    "rid": 1301528,
+    "grey": 190,
+    "name": "Cloudy Gustwoven Hood"
+   },
+   "277043": {
+    "rid": 1301529,
+    "grey": 190,
+    "name": "Cloudy Gustwoven Spaulders"
+   },
+   "277044": {
+    "rid": 1301530,
+    "grey": 190,
+    "name": "Cloudy Windraveled Cover"
+   },
+   "277045": {
+    "rid": 1301531,
+    "grey": 190,
+    "name": "Cloudy Windraveled Drapes"
+   },
+   "277050": {
+    "rid": 1301536,
+    "grey": 190,
+    "name": "Azure Gustwoven Hood"
+   },
+   "277051": {
+    "rid": 1301537,
+    "grey": 190,
+    "name": "Azure Gustwoven Spaulders"
+   },
+   "277052": {
+    "rid": 1301538,
+    "grey": 190,
+    "name": "Azure Windraveled Cover"
+   },
+   "277053": {
+    "rid": 1301539,
+    "grey": 190,
+    "name": "Azure Windraveled Drapes"
+   },
+   "277715": {
+    "rid": 1302604,
+    "grey": 50,
+    "name": "Light Leather Reagent Bag"
+   },
+   "279252": {
+    "rid": 1306526,
+    "grey": 325,
+    "name": "Elderwild Waistcord"
+   },
+   "279253": {
+    "rid": 1306527,
+    "grey": 325,
+    "name": "Outlaw's Collar"
+   },
+   "279254": {
+    "rid": 1306528,
+    "grey": 325,
+    "name": "Elderwild Pants"
+   },
+   "279255": {
+    "rid": 1306529,
+    "grey": 325,
+    "name": "Eternity Pauldrons"
+   },
+   "279256": {
+    "rid": 1306530,
+    "grey": 325,
+    "name": "Tranquil Wristguards"
+   },
+   "279257": {
+    "rid": 1306531,
+    "grey": 325,
+    "name": "Mourning Handguards"
+   },
+   "279258": {
+    "rid": 1306532,
+    "grey": 325,
+    "name": "Wild Leather Armor Kit"
+   },
+   "279941": {
+    "rid": 1263031,
+    "grey": 145,
+    "name": "Tanning Rack"
+   },
+   "279945": {
+    "rid": 1263079,
+    "grey": 300,
+    "name": "Sewing Machine"
+   },
+   "279978": {
+    "rid": 1229432,
+    "grey": 25,
+    "name": "Camp Tent",
+    "learned": true
+   }
+  }
+ },
+ "fields": "alwaysUsesLowestQuality=true canCreateMultiple=true canSkillUp=true categoryID=2574 craftable=true disabled=false favorite=false firstCraft=false hasSingleItemOutput=false hyperlink=|cnIQ1:|Hitem:279945::::::::10:1489:::1:3524::::::|h[Sewing Machine]|h|r icon=3622223 isDummyRecipe=false isEnchantingRecipe=false isGatheringRecipe=false isRecraft=false isSalvageRecipe=false itemLevel=60 learned=false maxTrivialLevel=300 name=Sewing Machine numSkillUps=1 recipeID=1263079 relativeDifficulty=0 skillLineAbilityID=57039 supportsCraftingStats=false supportsQualities=false"
 }
