@@ -1,7 +1,9 @@
 # Daily data sync: pulls the latest Forever build, talents, QuestieDB and
-# foreverchanges.pro, rebuilds the site data and, if anything real changed,
-# opens (or updates) one pull request with the change report to review.
-# Nothing reaches the live site until that pull request is merged.
+# foreverchanges.pro, rebuilds the site data and, if anything real changed
+# and every check passes, publishes it on main by itself (the site owner
+# asked for it: they don't review pull requests). If main moved meanwhile
+# and the data can't go on top of it, it opens (or updates) a pull request
+# instead, with the change report. A failed check publishes nothing.
 name: Sync de datos
 
 on:
@@ -12,6 +14,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  pages: write
 
 concurrency:
   group: sync
@@ -63,9 +66,9 @@ jobs:
           node scripts/smoke.js
 
       # meta.json, the report and index.html (meta.js's version stamp) change
-      # on every run (sync date); only open a pull request when the data itself
-      # changed. When it did, index.html goes along with it.
-      - name: Open or update the pull request
+      # on every run (sync date); only publish when the data itself changed.
+      # When it did, index.html goes along with it.
+      - name: Publish on main (or open a pull request)
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -76,9 +79,23 @@ jobs:
           report=$(ls -t reports/changes-*.md | head -1)
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B sync/auto
+          # Straight to main, on top of anything pushed since the checkout.
           git add -A
-          git commit -q -m "Sync de datos $(date -u +%F)"
+          git commit -q -m "Sync de datos $(date -u +%F)" -m "$(head -40 "$report")"
+          if git pull -q --rebase origin main && git push -q origin HEAD:main; then
+            echo "Publicado en main."
+            # A push by this workflow's token doesn't start a Pages build: ask for one.
+            gh api -X POST "repos/${{ github.repository }}/pages/builds" >/dev/null || echo "No se pudo pedir el build de Pages."
+            # An older sync pull request is now moot.
+            if gh pr view sync/auto --json state -q .state 2>/dev/null | grep -q OPEN; then
+              gh pr close sync/auto --comment "Los datos ya se publicaron directo en main." --delete-branch || true
+            fi
+            exit 0
+          fi
+          echo "No se pudo publicar directo (main cambió en los mismos archivos): abro un pull request."
+          # The sync's commit (on the main it started from) goes to the branch instead.
+          git rebase --abort 2>/dev/null || true
+          git checkout -B sync/auto
           git push -f origin sync/auto
           {
             echo "Sync automático del $(date -u +%F). Revisá el reporte y los cambios en la pestaña *Files changed*; al hacer *Merge*, el sitio se actualiza solo."
