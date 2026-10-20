@@ -1577,4 +1577,7 @@ header.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 
 @media (max-width: 760px) { .gp-card .gpc-link, .gp-slot-tile .gst-item a { min-height: 44px; display: inline-flex; align-items: center; } }
 @media (max-width: 760px) { .btn-link, .home-next .hn-item .item-link { min-height: 44px; display: inline-flex; align-items: center; } }
 @media (max-width: 760px) { .gp-card .gp-report { min-height: 44px; } }
+/* The settings menu opens over the tabs below the head. */
+.gp-head { position: relative; z-index: 40; }
+.gp-settings[open] > div { z-index: 50; }
 

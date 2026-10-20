@@ -17,6 +17,8 @@
 //   Artisan at 35) and the Merchant's Favor pieces of your path.
 (function () {
   const KILL_SHARE = 0.4;
+  const START_KILLS = 0.6;
+  const START_SHARE = 0.8;
   const PRISTINE = 0.02;
   const PRISTINE_ID = 249427;
   // Bought from leatherworking supply vendors (threads, salt, dyes, bleach, buckles).
@@ -125,8 +127,13 @@
       capNow = rank(L);
       const zone = (window.Route.zonesAt(L, opts.faction, opts.race)[0] || {}).name || null;
       const z = (zone && S.zones[zone]) || null;
-      const share = z ? z.share : 0.4;
-      const skins = opts.skinning && L >= (opts.skinFrom || 1) ? Math.round(KILL_SHARE * (8 * L + diff(L)) * share * mult) : 0;
+      // Starting zones are beasts and kill quests: more of your XP comes from
+      // kills and more of them skin (calibrated on 40-60 Ruined Leather
+      // Scraps when an Orc leaves the Valley of Trials, about level 6).
+      const start = zone && (window.ZONE_DATA.zones[zone] || {}).start;
+      const share = Math.max(z ? z.share : 0.4, start ? START_SHARE : 0);
+      const kills = start ? START_KILLS : KILL_SHARE;
+      const skins = opts.skinning && L >= (opts.skinFrom || 1) ? Math.round(kills * (8 * L + diff(L)) * share * mult) : 0;
       // The beasts you meet are around your level, some a little lower.
       Object.entries(AROUND).forEach(([d, w]) => {
         const lv = Math.min(60, Math.max(1, L + Number(d)));

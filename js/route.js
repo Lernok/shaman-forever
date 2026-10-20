@@ -13,6 +13,7 @@
   // level a starting zone's second town (with its trainers) comes in.
   const CAPITAL = { Orc: 'Orgrimmar', Troll: 'Orgrimmar', Tauren: 'Thunder Bluff', 'Skyborne (Windshaper)': 'Orgrimmar', Dwarf: 'Ironforge' };
   const CAPITAL_AT = 10;
+  const FROM_START = ['Skinning'];
   const START_TOWN = 5;
   // The continent each race starts on (Skyborne leave Zephras Isle for
   // Orgrimmar). The zones that follow the starting ones (bands from 12 down)
@@ -38,6 +39,13 @@
       return learned != null && learned < found.level ? { level: learned, zone: found.zone, learned: true } : found;
     },
     trainerFrom(prof, faction, race) {
+      // Skinning from your starting zone (players skin from the first
+      // levels: an Orc reaches Razor Hill with 40 to 60 Ruined Leather
+      // Scraps, the site owner's own count, 2026-10-21).
+      if (FROM_START.includes(prof)) {
+        const start = race && Z.starts[race] ? Z.starts[race].zone : null;
+        return { level: 1, zone: start };
+      }
       const where = ((Z.trainers || {})[faction] || {})[prof];
       if (!where) return { level: 1, zone: null };
       const cap = CAPITAL[race] || (faction === 'alliance' ? 'Ironforge' : 'Orgrimmar');

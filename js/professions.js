@@ -338,7 +338,12 @@
       if (!p || !r || !Object.keys(p.extra).length || (skinning && p.alone && p.alone - p.level < 2)) return '';
       if (skinning && p.alone && p.level < EARLY_FROM && st.pick.item.quality < 3 && r.how !== 'f') return '';
       const vars = { skill: r.skill[0], alone: p.alone, n: p.level, cap: BETA_CAP, has: skillAt(BETA_CAP) };
-      const key = !skinning ? 'pr.lw.buyNoSkin' : p.alone ? 'pr.lw.buyEarly' : 'pr.lw.buyLate';
+      // When the skill comes before the piece, what holds it back is a skinned
+      // material (Light Hide only drops from beasts of level 11 on): say so.
+      const skillLvl = (base.rows.find(x => x.skill >= r.skill[0]) || {}).level;
+      const hides = r.mats.filter(([m]) => [783, 4231, 4232, 4233, 4235, 4236, 249427].includes(m)).map(([m, n]) => n + ' ' + name(m)).join(', ');
+      if (skinning && p.alone && skillLvl && skillLvl < p.alone && hides) Object.assign(vars, { s: skillLvl, mats: hides });
+      const key = !skinning ? 'pr.lw.buyNoSkin' : p.alone ? (vars.mats ? 'pr.lw.buyMats' : 'pr.lw.buyEarly') : 'pr.lw.buyLate';
       return '<div class="lw-early"><span>' + t(key, vars) + '</span> ' + chips(p.extra) + buyCost(Object.entries(p.extra).map(([m, n]) => [Number(m), n]), p.level) + '</div>';
     };
     return { SK, mine, skinning, intensity, race, farm, steps, stepOf, base, pieces, pieceOf, recipe, name, chip, chips, row, extraMats, whereMat, buyCost, piece, early, skillAt, lwAt, skinAt };
