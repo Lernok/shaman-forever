@@ -2026,7 +2026,10 @@ local function scanColors()
       end
     end
   end
-  log("scan", "colors " .. tostring(prof) .. " " .. tostring(rank) .. ": " .. #list)
+  local all = Api.tradeList()
+  local T = C_TradeSkillUI
+  log("scan", "colors " .. tostring(prof) .. " " .. tostring(rank) .. ": " .. #list .. " of " .. #all ..
+    (T and (" ids " .. #(T.GetAllRecipeIDs and T.GetAllRecipeIDs() or {}) .. (T.GetRecipeSourceText and " src" or " nosrc")) or ""))
   if not (prof and rank and #list > 0) then return end
   db.scan = db.scan or {}
   db.scan.colors = db.scan.colors or {}
