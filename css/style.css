@@ -1480,14 +1480,22 @@ header.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 
 .setup-head-btns { display: flex; gap: 8px; align-items: flex-start; }
 .home-next .hn-item .item-link img { display: none; }
 
-/* The first visit's three steps. */
-.setup-progress { list-style: none; margin: 0 0 18px; padding: 0; display: flex; gap: 8px; }
-.setup-progress li { flex: 1; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px; background: var(--bg-panel-2); color: var(--text-dim); font-size: 14px; border-bottom: 3px solid var(--border); }
-.setup-progress li.now { color: var(--text); border-bottom-color: var(--accent); }
-.setup-progress li.done { color: var(--text); border-bottom-color: var(--good); }
-.setup-wizard .setup-step h3 { font-family: var(--display); font-size: 20px; margin: 4px 0 14px; }
+/* The first visit's three steps: a stepper (dots joined by a line), the
+   question, the choices, then Back / Next at the bottom right. */
+.setup-wizard .setup-head { margin-bottom: 6px; }
+.setup-wizard .setup-head p { margin: 6px 0 0; }
+.setup-progress { list-style: none; margin: 22px 0 26px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); counter-reset: none; }
+.setup-progress li { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--text-dim); font-size: 13px; }
+.setup-progress li::before { content: ""; position: absolute; top: 15px; left: -50%; width: 100%; height: 2px; background: var(--border); z-index: 0; }
+.setup-progress li:first-child::before { display: none; }
+.setup-progress li.done::before, .setup-progress li.now::before { background: var(--good); }
+.setup-progress .sp-dot { position: relative; z-index: 1; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; background: var(--bg-panel-2); border: 2px solid var(--border); color: var(--text-dim); }
+.setup-progress li.now .sp-dot { border-color: var(--accent); color: var(--text); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent); }
+.setup-progress li.done .sp-dot { background: var(--good); border-color: var(--good); color: #0e1a12; }
+.setup-progress li.now .sp-name, .setup-progress li.done .sp-name { color: var(--text); font-weight: 600; }
+.setup-wizard .setup-step h3 { font-family: var(--display); font-size: 20px; margin: 0 0 16px; }
 .setup-wizard .setup-opt.spec { background: linear-gradient(180deg, color-mix(in srgb, var(--bg-panel-2) 70%, transparent), var(--bg-panel-2) 75%), var(--spec-art, none) center / cover no-repeat; min-height: 150px; }
 .setup-wizard .setup-pairs { margin-bottom: 14px; }
 .setup-wizard .setup-foot { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.setup-wizard .setup-foot .setup-skip { margin-left: auto; }
-
+.setup-wizard .setup-foot-go { margin-left: auto; display: flex; gap: 10px; }
+.setup-wizard .setup-skip { background: none; border-color: transparent; color: var(--text-dim); text-decoration: underline; }

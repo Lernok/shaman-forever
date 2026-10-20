@@ -62,15 +62,16 @@
       '<div class="setup-head-btns"><button class="btn setup-lang" data-lang-switch title="' + t('lang.switchTitle') + '">' + t('lang.switch') + '</button>' +
       '<button class="btn setup-x" data-close aria-label="' + t('setup.close') + '">×</button></div></div>' +
       '<ol class="setup-progress" aria-label="' + t('setup.progress', { n: step }) + '">' + names.map((n, k) =>
-        '<li class="' + (k + 1 < step ? 'done' : k + 1 === step ? 'now' : '') + '"' + (k + 1 === step ? ' aria-current="step"' : '') + '><span class="setup-n">' + (k + 1) + '</span>' + n + '</li>').join('') + '</ol>';
+        '<li class="' + (k + 1 < step ? 'done' : k + 1 === step ? 'now' : '') + '"' + (k + 1 === step ? ' aria-current="step"' : '') + '><span class="sp-dot">' + (k + 1 < step ? '✓' : k + 1) + '</span><span class="sp-name">' + n + '</span></li>').join('') + '</ol>';
     html += '<section class="setup-step">';
     if (step === 1) html += '<h3>' + t('setup.q.race') + '</h3>' + raceGrid();
     if (step === 2) html += '<h3>' + t('setup.q.spec') + '</h3>' + specGrid();
     if (step === 3) html += '<h3>' + t('setup.q.profs') + ' <span class="dim">' + t('setup.profsHint') + '</span></h3>' + profGrid(pairs);
     html += '</section><div class="setup-foot">' +
-      (step > 1 ? '<button class="btn" data-back>← ' + t('setup.back') + '</button>' : '') +
-      (step === 3 ? '<button class="btn setup-done" data-done>' + t('setup.start') + '</button>' : '<span class="dim setup-later">' + t('setup.tapToGo') + '</span>') +
-      '<button class="btn setup-skip" data-skip>' + t('setup.skip') + '</button></div></div>';
+      '<button class="btn setup-skip" data-skip>' + t('setup.skip') + '</button>' +
+      '<span class="setup-foot-go">' + (step > 1 ? '<button class="btn" data-back>← ' + t('setup.back') + '</button>' : '') +
+      (step === 3 ? '<button class="btn setup-done" data-done>' + t('setup.start') + '</button>' : '<button class="btn setup-done" data-next>' + t('setup.next') + ' →</button>') +
+      '</span></div></div>';
     el.innerHTML = html;
   }
 
@@ -132,9 +133,10 @@
     if (e.target === el && UI.store.get('setupDone', false)) return close();
     const b = e.target.closest('button');
     if (!b) return;
-    if (b.dataset.race) { draft.race = b.dataset.race; draft.faction = b.dataset.faction; if (firstRun) step = 2; }
-    if (b.dataset.spec) { draft.spec = b.dataset.spec; if (firstRun) step = 3; }
+    if (b.dataset.race) { draft.race = b.dataset.race; draft.faction = b.dataset.faction; }
+    if (b.dataset.spec) draft.spec = b.dataset.spec;
     if (b.hasAttribute('data-back')) step = Math.max(1, step - 1);
+    if (b.hasAttribute('data-next')) step = Math.min(3, step + 1);
     if (b.dataset.prof === 'none') draft.profs = [];
     else if (b.dataset.prof) {
       const p = b.dataset.prof;
