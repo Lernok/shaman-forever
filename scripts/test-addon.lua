@@ -248,6 +248,17 @@ if os.getenv("SCAN") then
   function GetMerchantItemCostInfo(i) return wares[i][5] and 1 or 0 end
   function GetMerchantItemCostItem(i) return 0, wares[i][5][1], nil, wares[i][5][2] end
   ev:fire("MERCHANT_SHOW")
+  -- A pattern in the bags, and one looted from a creature you target.
+  C_Container = { GetContainerNumSlots = function(bag) return bag == 0 and 2 or 0 end,
+    GetContainerItemID = function(bag, i) return i == 1 and 252425 or 2589 end }
+  function GetItemInfo(id) return id == 252425 and "Pattern: Dark Leather Boots" or "Linen Cloth" end
+  ev:fire("BAG_UPDATE_DELAYED")
+  function GetNumLootItems() return 2 end
+  function GetLootSlotLink(i) return i == 1 and "|Hitem:2406::::|h[Pattern: Fine Leather Boots]|h" or "|Hitem:2589::::|h[Linen Cloth]|h" end
+  function GetLootSourceInfo() return "Creature-0-1-1-1-3110-0001", 1 end
+  UnitGUID = function(u) return u == "target" and "Creature-0-1-1-1-3110-0001" or "Creature-0-1-1-1-3365-00001" end
+  UnitName = function(u) return u == "target" and "Dreadmaw Crocolisk" or "Karolek" end
+  ev:fire("LOOT_OPENED")
   GetTradeSkillLine = nil -- Forever: the skill comes from GetProfessionInfo
   ev:fire("TRADE_SKILL_SHOW")
   local function show(t, pad)

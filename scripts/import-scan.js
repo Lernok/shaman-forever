@@ -44,6 +44,8 @@ fs.writeFileSync(tmp, dump);
 const merged = fs.existsSync(out) ? JSON.parse(fs.readFileSync(out, 'utf8')) : { trainers: {}, vendors: {}, colors: {}, sources: {} };
 merged.sources = merged.sources || {};
 merged.recipes = merged.recipes || {};
+merged.bags = merged.bags || {};
+merged.drops = merged.drops || {};
 // Lua arrays come as {"1": a, "2": b}.
 const arr = o => (o && typeof o === 'object' ? Object.keys(o).sort((a, b) => a - b).map(k => o[k]) : o);
 for (const f of files) {
@@ -65,6 +67,12 @@ for (const f of files) {
   // Every recipe the profession window lists (learned or not).
   for (const [prof, items] of Object.entries(scan.recipes || {})) merged.recipes[prof] = Object.assign(merged.recipes[prof] || {}, items);
   if (scan.fields) merged.fields = scan.fields;
+  // Recipes seen in your bags (first time), and looted (from whom, how many).
+  for (const [item, e] of Object.entries(scan.bags || {})) if (!merged.bags[item]) merged.bags[item] = e;
+  for (const [item, d] of Object.entries(scan.drops || {})) {
+    const m = merged.drops[item] = merged.drops[item] || { name: d.name, from: {} };
+    for (const [k, f] of Object.entries(d.from || {})) m.from[k] = f; // the save keeps the running count
+  }
   // How the game says to learn recipes you don't know (profession window).
   for (const [prof, items] of Object.entries(scan.sources || {})) merged.sources[prof] = Object.assign(merged.sources[prof] || {}, items);
   for (const [prof, items] of Object.entries(scan.colors || {})) {
@@ -138,6 +146,15 @@ for (const [prof, items] of Object.entries(merged.recipes)) {
   console.log('  en el juego y no en la web (' + missing.length + '): ' + missing.slice(0, 60).join(', '));
   console.log('  gris distinto (' + grey.length + '): ' + grey.slice(0, 40).join(' · '));
   console.log('  en la web y no en el juego (' + notInGame.length + '): ' + notInGame.slice(0, 60).join(', '));
+}
+const allRecipes = Object.values(web).flatMap(l => Object.values(l));
+const taughtBy = name => allRecipes.filter(r => r.name.toLowerCase() === String(name || '').replace(/^[^:]+:\s*/, '').toLowerCase());
+const webOf = name => taughtBy(name).map(r => r.skill[0] + ', ' + r.source).join(' | ') || 'NO ESTÁ en los datos web';
+if (Object.keys(merged.bags).length) console.log('\nEN TUS BOLSAS');
+for (const [item, e] of Object.entries(merged.bags)) console.log('  ' + e.name + ' #' + item + ' · visto en ' + e.z + ' (nivel ' + e.l + ')   web: ' + webOf(e.name));
+if (Object.keys(merged.drops).length) console.log('\nLOOTEADAS');
+for (const [item, d] of Object.entries(merged.drops)) {
+  console.log('  ' + d.name + ' #' + item + ' de ' + Object.entries(d.from).map(([k, f]) => (f.n || k) + ' (' + f.z + ', ' + f.c + 'x)').join(', ') + '   web: ' + webOf(d.name));
 }
 if (merged.fields) console.log('\nCampos de una receta: ' + merged.fields);
 const colorN = Object.values(merged.colors).reduce((n, m) => n + Object.keys(m).length, 0);

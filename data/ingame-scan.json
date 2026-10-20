@@ -191,12 +191,12 @@
      "skill": 105,
      "level": 0
     },
-    "Handstitched Leather Belt": {
-     "item": 4237,
-     "cost": 75,
+    "Embossed Leather Gloves": {
+     "item": 4239,
+     "cost": 150,
      "prof": "Leatherworking",
      "kind": "used",
-     "skill": 25,
+     "skill": 40,
      "level": 0
     },
     "Small Leather Ammo Pouch": {
@@ -207,20 +207,20 @@
      "skill": 25,
      "level": 0
     },
-    "Embossed Leather Gloves": {
-     "item": 4239,
-     "cost": 150,
-     "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 40,
-     "level": 0
-    },
     "Camp Tent": {
      "item": 279978,
      "cost": 100,
      "prof": "Leatherworking",
      "kind": "used",
      "skill": 20,
+     "level": 0
+    },
+    "Heavy Quiver": {
+     "item": 7371,
+     "cost": 500,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 125,
      "level": 0
     },
     "Heavy Leather Ammo Pouch": {
@@ -239,20 +239,20 @@
      "skill": 125,
      "level": 0
     },
-    "Heavy Quiver": {
-     "item": 7371,
-     "cost": 500,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 125,
-     "level": 0
-    },
     "Medium Armor Kit": {
      "item": 2313,
      "cost": 250,
      "prof": "Leatherworking",
      "kind": "unavailable",
      "skill": 75,
+     "level": 0
+    },
+    "Murloc Scale Shoes": {
+     "item": 252426,
+     "cost": 500,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 35,
      "level": 0
     },
     "Fletcher's Gloves": {
@@ -271,12 +271,12 @@
      "skill": 50,
      "level": 0
     },
-    "Murloc Scale Shoes": {
-     "item": 252426,
-     "cost": 500,
+    "Handstitched Leather Belt": {
+     "item": 4237,
+     "cost": 75,
      "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 35,
+     "kind": "used",
+     "skill": 25,
      "level": 0
     },
     "Medium Leather": {
@@ -3723,5 +3723,7 @@
    }
   }
  },
- "fields": "alwaysUsesLowestQuality=true canCreateMultiple=true canSkillUp=true categoryID=2574 craftable=true disabled=false favorite=false firstCraft=false hasSingleItemOutput=false hyperlink=|cnIQ1:|Hitem:279945::::::::10:1489:::1:3524::::::|h[Sewing Machine]|h|r icon=3622223 isDummyRecipe=false isEnchantingRecipe=false isGatheringRecipe=false isRecraft=false isSalvageRecipe=false itemLevel=60 learned=false maxTrivialLevel=300 name=Sewing Machine numSkillUps=1 recipeID=1263079 relativeDifficulty=0 skillLineAbilityID=57039 supportsCraftingStats=false supportsQualities=false"
+ "fields": "alwaysUsesLowestQuality=true canCreateMultiple=true canSkillUp=true categoryID=2574 craftable=true disabled=false favorite=false firstCraft=false hasSingleItemOutput=false hyperlink=|cnIQ1:|Hitem:279945::::::::10:1489:::1:3524::::::|h[Sewing Machine]|h|r icon=3622223 isDummyRecipe=false isEnchantingRecipe=false isGatheringRecipe=false isRecraft=false isSalvageRecipe=false itemLevel=60 learned=false maxTrivialLevel=300 name=Sewing Machine numSkillUps=1 recipeID=1263079 relativeDifficulty=0 skillLineAbilityID=57039 supportsCraftingStats=false supportsQualities=false",
+ "bags": {},
+ "drops": {}
 }

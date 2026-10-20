@@ -1967,39 +1967,93 @@ end
 
 -- A vendor's recipes (patterns, plans, formulas...), with their price in
 -- money and in anything else (Merchant's Favor, reputation tokens).
+-- A recipe item: class 9, or by its name while the item isn't cached.
+local RECIPE_WORDS = { "^Pattern:", "^Plans:", "^Formula:", "^Recipe:", "^Schematic:", "^Manual:", "^Patrón:", "^Diseño:", "^Fórmula:", "^Receta:", "^Esquema:" }
+local function isRecipe(item, name)
+  local classID = item and GetItemInfoInstant and select(6, GetItemInfoInstant(item))
+  if classID then return classID == 9 end
+  for _, w in ipairs(RECIPE_WORDS) do if tostring(name or ""):match(w) then return true end end
+  return false
+end
 local function scanVendor()
-  if not (GetMerchantNumItems and GetMerchantItemLink and GetItemInfoInstant) then return end
+  if not (GetMerchantNumItems and GetMerchantItemLink) then log("scan", "vendor: no API") return end
   local id, info = npcHere()
-  if not id then return end
-  local list = {}
-  for i = 1, (readable(GetMerchantNumItems()) or 0) do
+  if not id then log("scan", "vendor: no npc") return end
+  local list, total, unknown = {}, readable(GetMerchantNumItems()) or 0, 0
+  for i = 1, total do
     local item = itemIdOf(GetMerchantItemLink(i))
-    local classID = item and select(6, GetItemInfoInstant(item))
-    if classID == 9 then
-      local name, price, stock
-      if C_MerchantFrame and C_MerchantFrame.GetItemInfo then
-        local m = C_MerchantFrame.GetItemInfo(i) or {}
-        name, price, stock = m.name, m.price, m.numAvailable
-      else
-        local _
-        name, _, price, _, stock = GetMerchantItemInfo(i)
-      end
+    local name, price, stock
+    if C_MerchantFrame and C_MerchantFrame.GetItemInfo then
+      local m = C_MerchantFrame.GetItemInfo(i) or {}
+      name, price, stock = m.name, m.price, m.numAvailable
+    elseif GetMerchantItemInfo then
+      local _
+      name, _, price, _, stock = GetMerchantItemInfo(i)
+    end
+    if not item then unknown = unknown + 1 end
+    if isRecipe(item, name) then
       local e = { name = name, price = readable(price), stock = stock and stock >= 0 and stock or nil }
       for j = 1, (GetMerchantItemCostInfo and GetMerchantItemCostInfo(i) or 0) do
         local _, n, link, currency = GetMerchantItemCostItem(i, j)
         e.cost = e.cost or {}
         e.cost[#e.cost + 1] = { n, currency or itemIdOf(link) or tostring(link) }
       end
-      list[item] = e
+      list[item or name] = e
     end
   end
+  local n = 0
+  for _ in pairs(list) do n = n + 1 end
+  log("scan", "vendor " .. tostring(info.n) .. " " .. id .. ": " .. total .. " items, " .. (unknown > 0 and (unknown .. " not loaded, ") or "") .. n .. " recipes")
   if next(list) then scanStore("vendors", id, info, list) end
+  return unknown
+end
+
+-- Recipes in your bags (looted, bought, from a quest): which and since when.
+-- And the ones you loot: from which creature (or object) and where.
+local function scanBags()
+  local num = (C_Container and C_Container.GetContainerNumSlots) or GetContainerNumSlots
+  local itemAt = (C_Container and C_Container.GetContainerItemID) or GetContainerItemID
+  if not (num and itemAt) then return end
+  db.scan = db.scan or {}
+  db.scan.bags = db.scan.bags or {}
+  for bag = 0, 4 do
+    for i = 1, (readable(num(bag)) or 0) do
+      local item = readable(itemAt(bag, i))
+      if item and not db.scan.bags[item] and isRecipe(item) then
+        local name = GetItemInfo and GetItemInfo(item)
+        db.scan.bags[item] = { name = name, z = here(), l = UnitLevel("player"), t = time() }
+        log("scan", "bag recipe " .. tostring(name) .. " " .. item)
+      end
+    end
+  end
+end
+local function scanLoot()
+  if not (GetNumLootItems and GetLootSlotLink) then return end
+  for slot = 1, (readable(GetNumLootItems()) or 0) do
+    local link = GetLootSlotLink(slot)
+    local item = itemIdOf(link)
+    if item and isRecipe(item, tostring(link):match("%[(.-)%]")) then
+      local guid = GetLootSourceInfo and readable((GetLootSourceInfo(slot)))
+      local kind, npc = tostring(guid or ""):match("^(%a+)%-"), guid and tonumber((select(6, strsplit("-", guid))))
+      local mob = guid and UnitGUID and readable(UnitGUID("target")) == guid and readable(UnitName("target")) or nil
+      db.scan = db.scan or {}
+      db.scan.drops = db.scan.drops or {}
+      local d = db.scan.drops[item] or { name = tostring(link):match("%[(.-)%]"), from = {} }
+      db.scan.drops[item] = d
+      local key = (kind or "?") .. ":" .. tostring(npc or "?")
+      local f = d.from[key] or { n = mob, z = here(), c = 0 }
+      f.c = f.c + 1
+      d.from[key] = f
+      log("scan", "loot recipe " .. tostring(d.name) .. " " .. item .. " from " .. key .. " " .. tostring(mob))
+      say(string.format(L().scanLoot, tostring(d.name), mob or here()))
+    end
+  end
 end
 
 -- Your recipes' colors at your skill: where each one turns yellow, green, grey.
 -- The window's profession and skill: GetTradeSkillLine where the client has
 -- it, otherwise the crafting profession whose recipes these are.
-local scanPending
+local scanPending, colorsSaid
 local function scanColors()
   local list = {}
   local all = Api.tradeList()
@@ -2060,9 +2114,9 @@ local function scanColors()
     c[item][kind] = r
   end
   -- Once per skill: in the chat, so you know it was saved.
-  db.scan.colorsAt = db.scan.colorsAt or {}
-  if db.scan.colorsAt[prof] ~= rank then
-    db.scan.colorsAt[prof] = rank
+  colorsSaid = colorsSaid or {}
+  if not colorsSaid[prof] then
+    colorsSaid[prof] = true
     say(string.format(L().scanColors, #list, prof, rank))
   end
 end
@@ -2111,6 +2165,7 @@ onEvent = function(self, event, ...)
     pcall(self.RegisterEvent, self, "TRADE_SKILL_CLOSE")
     pcall(self.RegisterEvent, self, "LEARNED_SPELL_IN_TAB")
     pcall(self.RegisterEvent, self, "MERCHANT_SHOW")
+    pcall(self.RegisterEvent, self, "LOOT_OPENED")
   elseif event == "CHARACTER_POINTS_CHANGED" or event == "LEARNED_SPELL_IN_TAB" then
     if frame and frame.live then refresh() end
   elseif event == "TRAINER_SHOW" then
@@ -2135,12 +2190,18 @@ onEvent = function(self, event, ...)
       C_Timer.After(0.5, function() scanPending = false guarded("scan", scanColors) end)
     end
   elseif event == "MERCHANT_SHOW" then
-    C_Timer.After(0.3, function() guarded("scan", scanVendor) end)
+    -- Items not loaded yet come a moment later: one more look.
+    C_Timer.After(0.3, function()
+      guarded("scan", function() if (scanVendor() or 0) > 0 then C_Timer.After(1.5, function() guarded("scan", scanVendor) end) end end)
+    end)
+  elseif event == "LOOT_OPENED" then
+    guarded("scan", scanLoot)
   elseif event == "TRADE_SKILL_CLOSE" then
     if craftPanel then craftPanel:Hide() end
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
     -- The zone's name settles a moment after a loading screen.
     C_Timer.After(2, function() guarded("zone", onZone) end)
+    C_Timer.After(3, function() guarded("scan", scanBags) end)
     followPolestar()
     if event == "PLAYER_ENTERING_WORLD" and not mmButton then
       makeMinimapButton()
@@ -2162,6 +2223,7 @@ onEvent = function(self, event, ...)
     if frame and frame.live then refresh() else C_Timer.After(0.5, repaint) end
   elseif event == "BAG_UPDATE_DELAYED" then
     bagBest = nil
+    guarded("scan", scanBags)
   elseif event == "SKILL_LINES_CHANGED" then
     C_Timer.After(1, function()
       if frame and frame.live then refresh() end
