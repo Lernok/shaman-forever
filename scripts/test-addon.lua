@@ -194,6 +194,22 @@ if os.getenv("TRADE") then
   function GetNumTradeSkills() return #list end
   function GetTradeSkillInfo(i) return "Recipe" .. list[i].id, list[i].kind end
   function GetTradeSkillItemLink(i) return "|Hitem:" .. list[i].id .. ":0|h[x]|h" end
+  -- MODERN=1: Forever's window (C_TradeSkillUI), with a recipe you don't know.
+  if os.getenv("MODERN") then
+    GetNumTradeSkills, GetTradeSkillInfo, GetTradeSkillItemLink = nil, nil, nil
+    local DIFF = { optimal = 0, medium = 1, easy = 2, trivial = 3 }
+    C_TradeSkillUI = {
+      GetAllRecipeIDs = function() local ids = {} for i = 1, #list + 1 do ids[i] = 1000 + i end return ids end,
+      GetRecipeInfo = function(rid)
+        local e = list[rid - 1000]
+        if not e then return { recipeID = rid, name = "Moonglow Boots", learned = false, relativeDifficulty = 0 } end
+        return { recipeID = rid, name = "Recipe" .. e.id, learned = true, relativeDifficulty = DIFF[e.kind] }
+      end,
+      GetRecipeOutputItemData = function(rid) local e = list[rid - 1000] return { itemID = e and e.id or 252427 } end,
+      GetRecipeSourceText = function() return "|cFFFFD200Trainer|r: Karolek" end,
+      GetChildProfessionInfo = function() return { professionName = "Leatherworking", skillLevel = p[2], maxSkillLevel = p[3] } end,
+    }
+  end
   local yes, soon, short, no = SF.test.craftReview()
   local function show(head, l) print("  " .. head .. " " .. #l) for _, e in ipairs(l) do print("    " .. e.text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")) end end
   print("-- profesión (" .. #list .. " recetas):")

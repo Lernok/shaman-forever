@@ -41,7 +41,8 @@ io.write(enc((ShamanForeverDB or {}).scan or {}))`;
 const tmp = path.join(os.tmpdir(), 'sf-scan.lua');
 fs.writeFileSync(tmp, dump);
 
-const merged = fs.existsSync(out) ? JSON.parse(fs.readFileSync(out, 'utf8')) : { trainers: {}, vendors: {}, colors: {} };
+const merged = fs.existsSync(out) ? JSON.parse(fs.readFileSync(out, 'utf8')) : { trainers: {}, vendors: {}, colors: {}, sources: {} };
+merged.sources = merged.sources || {};
 // Lua arrays come as {"1": a, "2": b}.
 const arr = o => (o && typeof o === 'object' ? Object.keys(o).sort((a, b) => a - b).map(k => o[k]) : o);
 for (const f of files) {
@@ -60,6 +61,8 @@ for (const f of files) {
       if (!merged[kind][id] || (merged[kind][id].t || 0) <= (v.t || 0)) merged[kind][id] = v;
     }
   }
+  // How the game says to learn recipes you don't know (profession window).
+  for (const [prof, items] of Object.entries(scan.sources || {})) merged.sources[prof] = Object.assign(merged.sources[prof] || {}, items);
   for (const [prof, items] of Object.entries(scan.colors || {})) {
     const m = merged.colors[prof] = merged.colors[prof] || {};
     for (const [item, kinds] of Object.entries(items)) {
@@ -107,6 +110,14 @@ for (const [id, v] of Object.entries(merged.vendors)) {
     const price = [e.price ? coin(e.price) : null].concat((e.cost || []).map(([n, what]) => n + ' ' + what)).filter(Boolean).join(' + ');
     console.log('  ' + e.name + ' #' + item + ' · ' + (price || 'gratis') + (e.stock ? ' · stock ' + e.stock : '') +
       (taught.length ? '   (web: ' + taught.map(r => r.prof + ' ' + r.skill[0] + ', ' + r.source).join(' | ') + ')' : '   <-- NO ESTÁ en los datos web'));
+  }
+}
+for (const [prof, items] of Object.entries(merged.sources)) {
+  console.log('
+SIN APRENDER (' + prof + ', según el juego)');
+  for (const [item, e] of Object.entries(items)) {
+    const w = byItem.get(Number(item));
+    console.log('  ' + e.name + ' #' + item + ' · ' + e.source + (w && w.source !== e.source ? '   (web: ' + w.source + ')' : ''));
   }
 }
 const colorN = Object.values(merged.colors).reduce((n, m) => n + Object.keys(m).length, 0);

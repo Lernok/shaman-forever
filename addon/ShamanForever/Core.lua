@@ -105,6 +105,63 @@ function Api.version()
   local f = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata
   return f and f(ADDON, "Version") or "?"
 end
+-- The open profession window's recipes: { id (item made), kind (optimal,
+-- medium, easy, trivial), name, learned, source (how to learn it, when not
+-- learned) }. Forever has the modern window (C_TradeSkillUI); old clients,
+-- GetTradeSkillInfo.
+local DIFFICULTY = { [0] = "optimal", [1] = "medium", [2] = "easy", [3] = "trivial" }
+function Api.tradeList()
+  local out = {}
+  local T = C_TradeSkillUI
+  if T and T.GetAllRecipeIDs and T.GetRecipeInfo then
+    for _, rid in ipairs(T.GetAllRecipeIDs() or {}) do
+      local info = T.GetRecipeInfo(rid)
+      local item
+      if T.GetRecipeOutputItemData then
+        local ok, o = pcall(T.GetRecipeOutputItemData, rid)
+        item = ok and o and (o.itemID or tonumber(tostring(o.hyperlink or ""):match("item:(%d+)")))
+      end
+      if not item and T.GetRecipeItemLink then item = tonumber(tostring(T.GetRecipeItemLink(rid) or ""):match("item:(%d+)")) end
+      if info and item then
+        local kind = info.difficulty or DIFFICULTY[info.relativeDifficulty]
+        local e = { id = item, kind = kind, name = info.name, learned = info.learned ~= false }
+        if not e.learned and T.GetRecipeSourceText then
+          local ok, src = pcall(T.GetRecipeSourceText, rid)
+          e.source = ok and src or nil
+        end
+        out[#out + 1] = e
+      end
+    end
+    return out
+  end
+  if not (GetNumTradeSkills and GetTradeSkillInfo and GetTradeSkillItemLink) then return out end
+  for i = 1, (readable(GetNumTradeSkills()) or 0) do
+    local name, kind = GetTradeSkillInfo(i)
+    if kind and kind ~= "header" and kind ~= "subheader" then
+      local id = tonumber(tostring(GetTradeSkillItemLink(i) or ""):match("item:(%d+)"))
+      if id then out[#out + 1] = { id = id, kind = kind, name = name, learned = true } end
+    end
+  end
+  return out
+end
+-- The open profession window's name and skill (nil where the client can't say).
+function Api.tradeLine()
+  local T = C_TradeSkillUI
+  for _, fn in ipairs({ "GetChildProfessionInfo", "GetBaseProfessionInfo" }) do
+    if T and T[fn] then
+      local ok, p = pcall(T[fn])
+      if ok and type(p) == "table" and p.professionName and p.skillLevel and p.skillLevel > 0 then return p.professionName, p.skillLevel end
+    end
+  end
+  if T and T.GetTradeSkillLine then
+    local ok, _, name, rank = pcall(T.GetTradeSkillLine)
+    if ok and name and rank then return name, rank end
+  end
+  if GetTradeSkillLine then
+    local ok, name, rank = pcall(GetTradeSkillLine)
+    if ok and name and name ~= "UNKNOWN" then return name, readable(rank) end
+  end
+end
 
 -- The spec's index in the data's value lists.
 local function specIndex()
@@ -1944,18 +2001,12 @@ end
 -- it, otherwise the crafting profession whose recipes these are.
 local scanPending
 local function scanColors()
-  if not (GetNumTradeSkills and GetTradeSkillInfo and GetTradeSkillItemLink) then log("scan", "colors: no API") return end
   local list = {}
-  for i = 1, (readable(GetNumTradeSkills()) or 0) do
-    local _, kind = GetTradeSkillInfo(i)
-    local item = kind and kind ~= "header" and kind ~= "subheader" and itemIdOf(GetTradeSkillItemLink(i))
-    if item then list[#list + 1] = { item, kind } end
+  for _, e in ipairs(Api.tradeList()) do
+    if e.learned then list[#list + 1] = { e.id, e.kind } end
   end
-  local prof, rank
-  if GetTradeSkillLine then
-    local ok, p, r = pcall(GetTradeSkillLine)
-    if ok and p and p ~= "UNKNOWN" then prof, rank = PROF_NAMES[p] or p, readable(r) end
-  end
+  local prof, rank = Api.tradeLine()
+  prof = prof and (PROF_NAMES[prof] or prof)
   if not rank then
     local mine = myProfessions()
     for en, m in pairs(mine) do
@@ -1963,10 +2014,16 @@ local function scanColors()
         if list[1] and c[1] == list[1][1] then prof, rank = en, m.skill end
       end
     end
-    if not prof then
-      local only
-      for en in pairs(mine) do only = only == nil and en or false end
-      if only then prof, rank = only, mine[only].skill end
+  end
+  -- How to learn the ones you don't know yet, as the game words it.
+  if prof then
+    for _, e in ipairs(Api.tradeList()) do
+      if not e.learned and e.source then
+        db.scan = db.scan or {}
+        db.scan.sources = db.scan.sources or {}
+        db.scan.sources[prof] = db.scan.sources[prof] or {}
+        db.scan.sources[prof][e.id] = { name = e.name, source = plain(e.source) }
+      end
     end
   end
   log("scan", "colors " .. tostring(prof) .. " " .. tostring(rank) .. ": " .. #list)
@@ -1976,7 +2033,7 @@ local function scanColors()
   local c = db.scan.colors[prof] or {}
   db.scan.colors[prof] = c
   for _, e in ipairs(list) do
-    local item, kind = e[1], e[2]
+    local item, kind = e[1], e[2] or "?"
     c[item] = c[item] or {}
     local r = c[item][kind] or { rank, rank }
     r[1], r[2] = math.min(r[1], rank), math.max(r[2], rank)
@@ -2546,13 +2603,8 @@ end
 -- levels, and which aren't worth the materials.
 local function recipes()
   local out = {}
-  if not (GetNumTradeSkills and GetTradeSkillInfo and GetTradeSkillItemLink) then return out end
-  for i = 1, (readable(GetNumTradeSkills()) or 0) do
-    local name, kind = GetTradeSkillInfo(i)
-    if kind and kind ~= "header" and kind ~= "subheader" then
-      local id = tonumber(tostring(GetTradeSkillItemLink(i) or ""):match("item:(%d+)"))
-      if id then out[#out + 1] = { id = id, kind = kind, name = name } end
-    end
+  for _, e in ipairs(Api.tradeList()) do
+    if e.learned then out[#out + 1] = e end
   end
   return out
 end
@@ -2638,7 +2690,8 @@ function showCraftPanel()
   end
   local f = craftPanel
   f:ClearAllPoints()
-  if TradeSkillFrame and TradeSkillFrame:IsShown() then f:SetPoint("TOPLEFT", TradeSkillFrame, "TOPRIGHT", -30, -12)
+  if ProfessionsFrame and ProfessionsFrame:IsShown() then f:SetPoint("TOPLEFT", ProfessionsFrame, "TOPRIGHT", 4, -12)
+  elseif TradeSkillFrame and TradeSkillFrame:IsShown() then f:SetPoint("TOPLEFT", TradeSkillFrame, "TOPRIGHT", -30, -12)
   else f:SetPoint("LEFT", UIParent, "CENTER", 120, 0) end
   f.title:SetText(string.format(L().craftTitle, specName()))
   f.note:SetText(L().craftNote)
