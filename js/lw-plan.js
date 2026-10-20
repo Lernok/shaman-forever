@@ -220,5 +220,47 @@
     return { base, pieces: out };
   }
 
-  window.LwPlan = { run, pieces, beasts, KILL_SHARE, PRISTINE };
+  // Farming everything yourself (no auction house): the first level you can
+  // gather a Leatherworking piece's reagents that aren't skinned, made by
+  // Leatherworking or sold by vendors (data/skinning.js reagents): a creature
+  // of about your level in a zone of your levels that drops it often enough
+  // (not elite, not of your faction; skinned ones need Skinning), a
+  // profession of yours that makes it (Alchemy) or gathers it (Mining).
+  // Infinity: never by yourself. 0: no constraint (not Leatherworking).
+  const FARM_MIN = 0.05;
+  const MAKES = { alchemy: 'Alchemy', tailoring: 'Tailoring', blacksmithing: 'Blacksmithing', engineering: 'Engineering', enchanting: 'Enchanting', cooking: 'Cooking' };
+  const zoneCache = {};
+  function zonesOf(lvl, faction, race) {
+    const k = lvl + faction + race;
+    if (!zoneCache[k]) zoneCache[k] = new Set(window.Route.zonesAt(lvl, faction, race).map(z => z.name));
+    return zoneCache[k];
+  }
+  function matsAt(itemId, ctx) {
+    const SK = window.SKINNING_DATA;
+    if (!SK || !SK.reagents) return 0;
+    const r = SK.recipes.find(x => x.id === itemId);
+    if (!r) return 0;
+    const profs = ctx.profs || [];
+    const side = ctx.faction === 'alliance' ? 'A' : 'H';
+    const made = new Set(SK.recipes.map(x => x.id));
+    let at = 0;
+    r.mats.forEach(([m]) => {
+      if (SK.skin.includes(m) || made.has(m) || VENDOR.has(m)) return;
+      if (m === PRISTINE_ID) { if (!profs.includes('Skinning')) at = Infinity; return; }
+      const e = SK.reagents[m] || {};
+      if (e.v) return;
+      let best = Infinity;
+      if (e.c && profs.includes(MAKES[e.c[0]])) best = 0;
+      if (e.g && e.g.mined && profs.includes('Mining')) best = 0;
+      const drops = (e.d || []).filter(d => d[6] !== side && !(d[5] & 1) && d[3] >= FARM_MIN && (!(d[5] & 2) || profs.includes('Skinning')));
+      for (let L = 1; L <= 60 && best > L; L++) {
+        const zs = zonesOf(L, ctx.faction, ctx.race);
+        if (drops.some(d => d[1] <= L + 2 && d[1] >= L - 8 && d[4].some(z => zs.has(z)))) best = L;
+      }
+      at = Math.max(at, best);
+    });
+    return at;
+  }
+
+  window.LwPlan = { run, pieces, beasts, matsAt, KILL_SHARE, PRISTINE };
 })();

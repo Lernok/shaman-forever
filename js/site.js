@@ -107,7 +107,7 @@
   }));
   // What each page reads from them. The page you open asks for its own right
   // away, while the site's scripts are still arriving.
-  Site.NEEDS = { Inicio: ['gear', 'weapons'], Guia: ['gear', 'weapons'], Equipo: ['gear', 'weapons'],
+  Site.NEEDS = { Inicio: ['gear', 'weapons', 'skinning'], Guia: ['gear', 'weapons', 'skinning'], Equipo: ['gear', 'weapons', 'skinning'],
     Profesiones: ['gear', 'weapons', 'professions', 'consumables', 'camp', 'skinning'] };
   const opening = location.hash.slice(1).split('/')[0];
   // Site.first: settled once they're in (or failed).

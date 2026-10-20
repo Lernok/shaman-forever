@@ -245,6 +245,9 @@
         if (!a) return;
         let at = Math.max(s.rec, item.req || 0);
         if (item.kind === 'Mail') at = Math.max(at, MAIL_AT);
+        // Farming everything yourself: a craft waits for its reagents (or never).
+        if ((a === 'crafted' || a === 'favor') && opts.matsAt) at = Math.max(at, opts.matsAt(item, s));
+        if (!isFinite(at)) return;
         if (!best || TIER[a] < TIER[best.access] || (TIER[a] === TIER[best.access] && at < best.at)) best = { access: a, at, source: s };
       });
       // Scarce Merchant's Favor isn't spent on a totem that isn't for your spec.

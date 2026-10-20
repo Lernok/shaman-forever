@@ -17,7 +17,7 @@
   const UI = window.UI;
   let ui = null;
   let container = null;
-  const SECTIONS = ['plan', 'subir', 'cocina', 'auxilios', 'sistemas'];
+  const SECTIONS = ['plan', 'cocina', 'auxilios', 'sistemas'];
   const CRAFTING = ['Leatherworking', 'Blacksmithing', 'Tailoring', 'Enchanting', 'Engineering', 'Alchemy'];
   const GATHERING = ['Skinning', 'Mining', 'Herbalism'];
   const PRIMARY = ['Leatherworking', 'Skinning', 'Blacksmithing', 'Mining', 'Tailoring', 'Enchanting', 'Engineering', 'Herbalism', 'Alchemy'];
@@ -170,12 +170,20 @@
     const makers = mine.filter(p => CRAFTING.includes(p));
     if (!makers.length) return html + '<p class="note-text">' + t('pr.plan.gatherOnly') + '</p>' + guidesHtml(g);
 
+    // Leatherworking: the plan to level it while you level, with its pieces.
+    const lw = makers.includes('Leatherworking');
+    if (lw) html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.sec.subir') + '</h3>' + renderLeveling();
+    const others = makers.filter(p => p !== 'Leatherworking');
+    if (!others.length) return html + guidesHtml(g);
+
     const GP = window.GearPath;
     const { plan } = GP.compute();
     const steps = [];
-    Object.values(plan.slots).forEach(p => p.steps.forEach(st => { if (['crafted', 'favor'].includes(st.pick.access)) steps.push(st); }));
+    Object.values(plan.slots).forEach(p => p.steps.forEach(st => {
+      if (['crafted', 'favor'].includes(st.pick.access) && !(lw && st.pick.source.profession === 'Leatherworking')) steps.push(st);
+    }));
     steps.sort((x, y) => x.level - y.level);
-    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.plan.title', { spec: Site.spec, profs: makers.join(' + ') }) + '</h3>' +
+    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.plan.title', { spec: Site.spec, profs: others.join(' + ') }) + '</h3>' +
       '<p class="note-text dim">' + t('pr.plan.worth') + '</p><div class="plan-list">';
     BRACKETS.forEach(([lo, hi]) => {
       const here = steps.filter(st => st.level >= lo && st.level <= hi);
@@ -218,6 +226,7 @@
     const skinning = mine.includes('Skinning');
     const intensity = SKIN_LEVELS.includes(UI.store.get('lwSkin', 'normal')) ? UI.store.get('lwSkin', 'normal') : 'normal';
     const race = Site.race === 'any' ? null : Site.race;
+    const farm = window.GearPath.farm();
     const { plan } = window.GearPath.compute();
     const steps = [];
     Object.values(plan.slots).forEach(p => p.steps.forEach(st => { if ((st.pick.source || {}).profession === 'Leatherworking' && st.level <= BETA_CAP) steps.push(st); }));
@@ -278,7 +287,7 @@
       if (e.c) parts.push(t('pr.lw.mat.craft', { prof: t('pr.lw.prof.' + e.c[0]), n: e.c[1] }));
       if (e.g && e.g.mined) parts.push(t('pr.lw.mat.mined', { what: e.g.mined.slice(0, 2).join(', ') }));
       if (e.g && e.g.inItem && !parts.length) parts.push(t('pr.lw.mat.inItem', { what: e.g.inItem.slice(0, 2).join(', ') }));
-      parts.push(t('pr.lw.mat.ah'));
+      if (!farm) parts.push(t('pr.lw.mat.ah'));
       return '<div class="lw-mat">' + chip(m, n) + '<span class="dim"> ' + parts.join(' · ') + '</span></div>';
     };
     const piece = id => {
@@ -306,7 +315,10 @@
     html += '<div class="wp-controls" style="margin-top:12px">' + (skinning
       ? '<span class="ctl-label">' + t('pr.lw.skinLabel') + '</span><div class="seg">' + SKIN_LEVELS.map(k =>
         '<button class="btn' + (intensity === k ? ' active' : '') + '" data-lw-skin="' + k + '" title="' + t('pr.lw.skin.' + k + 'Title') + '">' + t('pr.lw.skin.' + k) + '</button>').join('') + '</div>'
-      : '<span class="dim">' + t('pr.lw.noSkinning') + '</span>') + '</div>';
+      : '<span class="dim">' + t('pr.lw.noSkinning') + '</span>') +
+      '<span class="ctl-label">' + t('pr.lw.matsLabel') + '</span><div class="seg">' + ['ah', 'farm'].map(k =>
+        '<button class="btn' + ((k === 'farm') === farm ? ' active' : '') + '" data-lw-farm="' + k + '" title="' + t('pr.lw.mats.' + k + 'Title') + '">' + t('pr.lw.mats.' + k) + '</button>').join('') + '</div></div>' +
+      (farm ? '<p class="note-text dim">' + t('pr.lw.farmNote') + '</p>' : '');
 
     if (skinning) {
       // At a glance: the skill you have at 10, 20 and 30, and the pieces you make.
@@ -472,7 +484,6 @@
     let html = '<div class="spec-summary"><div class="role">' + t('pr.role') + '</div><h2>' + t('pr.title') + '</h2><p>' + g.intro + '</p></div>';
     html += Site.sectionTabs('Profesiones', SECTIONS, section, k => t('pr.sec.' + k));
     if (section === 'plan') html += renderPlan(g);
-    if (section === 'subir') html += renderLeveling();
     if (section === 'cocina') html += renderCooking(g);
     if (section === 'auxilios') html += renderFirstAid(g);
     if (section === 'sistemas') html += renderSystems(g);
@@ -490,6 +501,7 @@
     container.querySelectorAll('[data-use-pair]').forEach(b => b.addEventListener('click', () => { UI.store.set('profs', b.dataset.usePair.split(' + ')); Site.setMany({}); }));
     container.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
     container.querySelectorAll('[data-lw-skin]').forEach(b => b.addEventListener('click', () => { UI.store.set('lwSkin', b.dataset.lwSkin); renderAll(); }));
+    container.querySelectorAll('[data-lw-farm]').forEach(b => b.addEventListener('click', () => { window.GearPath.setFarm(b.dataset.lwFarm === 'farm'); renderAll(); }));
   }
 
   window.Professions = {

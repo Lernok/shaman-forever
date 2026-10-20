@@ -8,7 +8,7 @@
   const Site = window.Site;
   const PROFS = ['Blacksmithing', 'Leatherworking', 'Tailoring', 'Engineering', 'Enchanting', 'Alchemy'];
   const level = Math.min(60, Math.max(1, Number(UI.store.get('level', 1)) || 1));
-  const state = { drops: UI.store.get('gpDrops', false), detail: UI.store.get('gpDetail', false), level, bracket: Math.min(5, Math.floor((level - 1) / 10)) };
+  const state = { drops: UI.store.get('gpDrops', false), farm: UI.store.get('gpFarm', false), detail: UI.store.get('gpDetail', false), level, bracket: Math.min(5, Math.floor((level - 1) / 10)) };
 
   // Armor and weapons: the weapon is one more slot of the plan.
   const gear = () => ((window.GEAR_DATA && window.GEAR_DATA.gear) || []).concat((window.WEAPON_DATA && window.WEAPON_DATA.weapons) || []);
@@ -23,7 +23,9 @@
       spec: Site.spec, faction: Site.faction, race: race(), profs, drops: state.drops,
       route: (zone, lvl) => window.Route.onRoute(zone, lvl, Site.faction, race()),
       away: zone => window.Route.otherStart(zone, Site.faction, race()),
-      reach: zone => window.Route.reachable(zone, Site.faction)
+      reach: zone => window.Route.reachable(zone, Site.faction),
+      // No auction house: crafts wait until you can gather their reagents.
+      matsAt: state.farm && window.LwPlan ? (item => window.LwPlan.matsAt(item.id, { faction: Site.faction, race: race(), profs: picked })) : null
     };
     return { plan: window.GearPlan.plan(gear(), opts), profs, picked };
   }
@@ -126,7 +128,8 @@
     html += '<div class="gp-for"><span>' + t('gp.for', { who: raceLabel + ' · ' + Site.spec, profs: picked.length ? picked.join(' + ') : t('setup.noProfsShort') }) +
       (!picked.length ? ' <span class="dim">' + t('gp.profsNone') + '</span>' : !profs.length ? ' <span class="dim">' + t('gp.profsGatherOnly') + '</span>' : '') + '</span>' +
       '<button class="btn" data-open-setup>' + t('home.change') + '</button>' +
-      '<label class="chk chip-toggle" title="' + t('gp.dropsTitle') + '"><input type="checkbox" id="gpDrops"' + (state.drops ? ' checked' : '') + '> ' + t('gp.drops') + '</label></div>';
+      '<label class="chk chip-toggle" title="' + t('gp.dropsTitle') + '"><input type="checkbox" id="gpDrops"' + (state.drops ? ' checked' : '') + '> ' + t('gp.drops') + '</label>' +
+      (profs.length ? '<label class="chk chip-toggle" title="' + t('gp.farmTitle') + '"><input type="checkbox" id="gpFarm"' + (state.farm ? ' checked' : '') + '> ' + t('gp.farm') + '</label>' : '') + '</div>';
 
     // Your level picks the bracket; the bracket strip jumps to another one.
     const br = state.bracket;
@@ -170,6 +173,8 @@
     container.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
     const drops = container.querySelector('#gpDrops');
     if (drops) drops.addEventListener('change', e => { state.drops = e.target.checked; UI.store.set('gpDrops', state.drops); onChange(); });
+    const farm = container.querySelector('#gpFarm');
+    if (farm) farm.addEventListener('change', e => { setFarm(e.target.checked); onChange(); });
     container.querySelector('#gpLevel').addEventListener('change', e => {
       state.level = Number(e.target.value);
       state.bracket = bracketOf(state.level);
@@ -194,5 +199,6 @@
   }
 
   // The Professions page shows the crafted part of the same path.
-  window.GearPath = { render, compute, sourceText, why, slotName, stepRow };
+  function setFarm(on) { state.farm = !!on; UI.store.set('gpFarm', state.farm); }
+  window.GearPath = { render, compute, sourceText, why, slotName, stepRow, setFarm, farm: () => state.farm };
 })();
