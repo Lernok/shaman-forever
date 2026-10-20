@@ -1,4 +1,6 @@
 // Professions page, built around the player's plan:
+//   subir       Leatherworking while leveling (js/lw-plan.js): what to skin,
+//               craft and keep at each level, and your pieces on time
 //   plan        your two professions (shared with the Gear page), their camp
 //               objects and, every 10 levels, only what's worth crafting: the
 //               crafted pieces of your gear path (js/gear-plan.js), your 1-2
@@ -15,7 +17,7 @@
   const UI = window.UI;
   let ui = null;
   let container = null;
-  const SECTIONS = ['plan', 'cocina', 'auxilios', 'sistemas'];
+  const SECTIONS = ['plan', 'subir', 'cocina', 'auxilios', 'sistemas'];
   const CRAFTING = ['Leatherworking', 'Blacksmithing', 'Tailoring', 'Enchanting', 'Engineering', 'Alchemy'];
   const GATHERING = ['Skinning', 'Mining', 'Herbalism'];
   const PRIMARY = ['Leatherworking', 'Skinning', 'Blacksmithing', 'Mining', 'Tailoring', 'Enchanting', 'Engineering', 'Herbalism', 'Alchemy'];
@@ -200,6 +202,79 @@
       g.leveling.map(l => '<a class="link-card" href="' + l.url + '" target="_blank" rel="noopener"><b>' + l.site + ' ↗</b><span>' + l.note + '</span></a>').join('') + '</div>';
   }
 
+  // ---------- Leatherworking while leveling (js/lw-plan.js) ----------
+
+  const SKIN_LEVELS = ['few', 'normal', 'all'];
+  function renderLeveling() {
+    const mine = myProfs();
+    let html = '<p class="note-text" style="margin-top:16px">' + t('pr.lw.intro') + '</p>';
+    if (!mine.includes('Leatherworking')) {
+      return html + '<p class="note-text">' + t('pr.lw.noLw') + '</p><button class="btn" data-open-setup>' + t('home.plan.pickProfs') + '</button>';
+    }
+    const SK = window.SKINNING_DATA;
+    const skinning = mine.includes('Skinning');
+    const intensity = SKIN_LEVELS.includes(UI.store.get('lwSkin', 'normal')) ? UI.store.get('lwSkin', 'normal') : 'normal';
+    const race = Site.race === 'any' ? null : Site.race;
+    const { plan } = window.GearPath.compute();
+    const steps = [];
+    Object.values(plan.slots).forEach(p => p.steps.forEach(st => { if ((st.pick.source || {}).profession === 'Leatherworking' && st.level <= BETA_CAP) steps.push(st); }));
+    steps.sort((a, b) => a.level - b.level);
+    const items = new Map(steps.map(st => [st.pick.item.id, st.pick.item]));
+    const opts = { faction: Site.faction, race, targets: steps.map(st => ({ id: st.pick.item.id, level: st.level })), intensity, skinning, to: BETA_CAP };
+    const { base, pieces } = window.LwPlan.pieces(opts);
+    const name = id => SK.names[id] || (items.get(Number(id)) || {}).name || '#' + id;
+    const list = o => Object.entries(o).map(([id, n]) => '<b>' + Math.round(n) + '</b> ' + name(id)).join(', ');
+    const recipe = new Map(SK.recipes.map(r => [r.id, r]));
+    const at = lvl => base.rows[lvl - 1] ? base.rows[lvl - 1].skill : null;
+
+    html += '<div class="wp-controls" style="margin-top:12px">' + (skinning
+      ? '<span class="ctl-label">' + t('pr.lw.skinLabel') + '</span><div class="seg">' + SKIN_LEVELS.map(k =>
+        '<button class="btn' + (intensity === k ? ' active' : '') + '" data-lw-skin="' + k + '" title="' + t('pr.lw.skin.' + k + 'Title') + '">' + t('pr.lw.skin.' + k) + '</button>').join('') + '</div>'
+      : '<span class="dim">' + t('pr.lw.noSkinning') + '</span>') + '</div>';
+    if (skinning) {
+      html += '<p class="plan-zones">' + t('pr.lw.reach', { a: at(10), b: at(15), c: at(20), d: at(BETA_CAP) }) + '</p>';
+      const br = base.bridge;
+      if (br.level) html += '<p class="plan-zones">' + t('pr.lw.bridge', { lvl: br.level, list: list(br.items) }) + '</p>';
+    }
+
+    // Your pieces: when with what you skin, and what buying them on time takes.
+    html += '<h3 class="block-title" style="margin-top:18px">' + t('pr.lw.piecesTitle') + '</h3><p class="note-text dim">' + t('pr.lw.piecesNote') + '</p><div class="plan-list"><div class="plan-bracket">';
+    html += pieces.map(p => {
+      const st = steps.find(s => s.pick.item.id === p.id);
+      const r = recipe.get(p.id);
+      const own = r ? r.mats.filter(([id]) => !SK.skin.includes(id) && ![2318, 2319, 4234, 4231, 4233, 4236, 249427].includes(id) && !/Thread|Dye|Salt|Bleach|Buckle/.test(name(id))) : [];
+      const when = !skinning ? '' : p.alone === p.level ? t('pr.lw.onTime') : p.alone ? t('pr.lw.alone', { n: p.alone }) : t('pr.lw.notAlone', { n: BETA_CAP });
+      const buy = Object.keys(p.extra).length ? t('pr.lw.buy', { list: list(p.extra) }) : (skinning ? '' : t('pr.lw.buyNothing'));
+      return '<div class="gp-step"><span class="gp-lv">' + p.level + '</span><span class="gp-slot">' + window.GearPath.slotName(st.pick.slot) + '</span>' +
+        '<div class="gp-main">' + UI.itemLink(st.pick.item) + '<span class="wp-sub">' + t('pr.plan.skill', { n: r ? r.skill[0] : '?' }) +
+        (r && r.how === 'f' ? ' · ' + t('pr.plan.favorCost', { n: r.favor || 30 }) : '') + (own.length ? ' · ' + t('pr.lw.ahMats', { list: own.map(([id, n]) => n + ' ' + name(id)).join(', ') }) : '') + '</span>' +
+        '<span class="gp-why">' + [when, buy].filter(Boolean).join(' · ') + '</span></div></div>';
+    }).join('') + '</div></div>';
+
+    // Level by level: where to skin, what to craft, what to keep.
+    if (skinning) {
+      html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.lw.stepsTitle') + '</h3><div class="plan-list">';
+      BRACKETS.filter(([lo]) => lo <= BETA_CAP).forEach(([lo, hi]) => {
+        const rows = base.rows.filter(r => r.level >= lo && r.level <= hi);
+        html += '<div class="plan-bracket">' + bracketHead([lo, hi]) + rows.map(r => {
+          const crafts = Object.entries(r.crafts).filter(([id]) => !r.made.includes(Number(id)));
+          const beasts = r.zone ? window.LwPlan.beasts(r.zone, r.level).map(b => b.name).join(', ') : '';
+          const keep = Object.keys(r.keep).length ? t('pr.lw.keep', { list: list(r.keep) }) : '';
+          const what = r.made.map(id => '<b>' + t('pr.lw.make', { name: name(id) }) + '</b>').concat(crafts.length ? [t('pr.lw.craft', { list: crafts.map(([id, n]) => n + '× ' + name(id)).join(', ') })] : []);
+          return '<div class="gp-step"><span class="gp-lv">' + r.level + '</span><span class="gp-slot">' + t('pr.lw.skill', { n: r.skill }) + '</span><div class="gp-main">' +
+            '<span>' + (what.join(' · ') || '<span class="dim">' + t('pr.lw.nothing') + '</span>') + '</span>' +
+            '<span class="gp-why">' + t('pr.lw.skins', { n: r.skins, zone: r.zone || '?' }) + (beasts ? ': ' + beasts : '') + (keep ? ' · ' + keep : '') + '</span></div></div>';
+        }).join('') + '</div>';
+      });
+      html += '</div>';
+    }
+    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.lw.keysTitle') + '</h3><ul class="plain">' +
+      ['hide', 'gap', 'ranks', 'pristine', 'zones'].map(k => '<li>' + t('pr.lw.key.' + k) + '</li>').join('') + '</ul>' +
+      '<p class="note-text dim">' + t('pr.lw.how', { kills: Math.round(window.LwPlan.KILL_SHARE * 100), pristine: Math.round(window.LwPlan.PRISTINE * 100) }) +
+      ' <a class="src" href="' + SK.sources.yields + '" target="_blank" rel="noopener">Wowhead</a> · <a class="src" href="' + SK.sources.beasts + '" target="_blank" rel="noopener">QuestieDB</a> · <a class="src" href="' + SK.sources.recipes + '" target="_blank" rel="noopener">classicwowforever</a></p>';
+    return html;
+  }
+
   // ---------- cooking ----------
 
   // Stats worth eating for, per spec (first = most important); stamina for everyone.
@@ -290,6 +365,7 @@
     let html = '<div class="spec-summary"><div class="role">' + t('pr.role') + '</div><h2>' + t('pr.title') + '</h2><p>' + g.intro + '</p></div>';
     html += Site.sectionTabs('Profesiones', SECTIONS, section, k => t('pr.sec.' + k));
     if (section === 'plan') html += renderPlan(g);
+    if (section === 'subir') html += renderLeveling();
     if (section === 'cocina') html += renderCooking(g);
     if (section === 'auxilios') html += renderFirstAid(g);
     if (section === 'sistemas') html += renderSystems(g);
@@ -306,6 +382,7 @@
     UI.tip.bind(container, '[data-food]', a => (food.has(a.dataset.food) ? foodCard(food.get(a.dataset.food)) : null));
     container.querySelectorAll('[data-use-pair]').forEach(b => b.addEventListener('click', () => { UI.store.set('profs', b.dataset.usePair.split(' + ')); Site.setMany({}); }));
     container.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
+    container.querySelectorAll('[data-lw-skin]').forEach(b => b.addEventListener('click', () => { UI.store.set('lwSkin', b.dataset.lwSkin); renderAll(); }));
   }
 
   window.Professions = {

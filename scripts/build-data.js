@@ -192,6 +192,11 @@ if (fs.existsSync(path.join(root, 'data/consumables.json'))) {
   write('data/consumables.js', 'CONSUMABLE_DATA', read('data/consumables.json'));
   outputs.push('data/consumables.js');
 }
+// Skinning yields, beasts per zone and Leatherworking recipes (scripts/build-skinning.js).
+if (fs.existsSync(path.join(root, 'data/skinning.json'))) {
+  write('data/skinning.js', 'SKINNING_DATA', read('data/skinning.json'));
+  outputs.push('data/skinning.js');
+}
 if (fs.existsSync(path.join(root, 'data/professions.json'))) {
   write('data/professions.js', 'PROFESSION_DATA', read('data/professions.json'));
   outputs.push('data/professions.js');

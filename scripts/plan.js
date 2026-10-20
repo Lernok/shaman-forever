@@ -4,6 +4,8 @@
 //   node scripts/plan.js path [options]           every step of the path, with stats
 //   node scripts/plan.js slot <Slot> [options]    candidates of a slot and the path's picks
 //   node scripts/plan.js item <id> [options]      one item: sources, value, where the path uses it
+//   node scripts/plan.js leather [options]        Leatherworking while leveling (js/lw-plan.js), up to --hi
+//        --skin few|normal|all (default normal), --buy (with auction house help)
 //
 // Options (the Shaman of a report: its issue body says race, spec, faction, professions):
 //   --spec Enhancement|Elemental|Restoration   (default Enhancement)
@@ -19,6 +21,8 @@ const load = f => { const w = {}; new Function('window', fs.readFileSync(path.jo
 global.window = { ZONE_DATA: JSON.parse(fs.readFileSync(path.join(root, 'data/zones.json'), 'utf8')) };
 require('../js/route.js');
 require('../js/gear-plan.js');
+window.SKINNING_DATA = JSON.parse(fs.readFileSync(path.join(root, 'data/skinning.json'), 'utf8'));
+require('../js/lw-plan.js');
 const R = window.Route, GP = window.GearPlan;
 // What the page plans with (data/*.js: only plannable sources), not the full sync output.
 const gear = load('data/gear.js').GEAR_DATA.gear.concat(load('data/weapons.js').WEAPON_DATA.weapons);
@@ -67,6 +71,16 @@ if (cmd === 'path') {
   console.log(used.length ? 'En el camino: ' + used.map(st => 'nivel ' + st.level + ' (' + st.pick.slot + '), dura ' + st.lasts + ' niveles').join('; ') : 'No está en el camino.');
   const slot = plan.slots[item.slot] || plan.slots[c[0] && c[0].slot];
   if (slot) console.log('Camino de ese slot: ' + slot.steps.map(st => st.level + ': ' + st.pick.item.name + ' (v' + st.pick.value.toFixed(1) + ')').join(' | '));
+} else if (cmd === 'leather') {
+  const SK = window.SKINNING_DATA;
+  const name = id => SK.names[id] || (gear.find(i => i.id === Number(id)) || {}).name || '#' + id;
+  const targets = steps(plan).filter(st => (st.pick.source || {}).profession === 'Leatherworking').map(st => ({ id: st.pick.item.id, level: st.level }));
+  const out = window.LwPlan.run({ faction, race, targets, intensity: opt('skin', 'normal'), skinning: profs.includes('Skinning'), buy: args.includes('--buy'), to: hi });
+  const list = o => Object.entries(o).map(([id, n]) => Math.round(n) + 'x ' + name(id)).join(', ');
+  out.rows.forEach(r => console.log(String(r.level).padStart(2), (r.zone || '-').padEnd(20), String(r.skins).padStart(3) + ' pieles', 'LW ' + String(r.skill).padStart(3), '|',
+    r.made.map(id => 'HACE ' + name(id)).concat(list(r.crafts) || []).filter(Boolean).join('; '), Object.keys(r.bought).length ? '| COMPRA ' + list(r.bought) : ''));
+  targets.forEach(t => console.log('  ' + name(t.id) + ': meta ' + t.level + ' -> ' + (out.made[t.id] || 'no llega')));
+  console.log('Total comprado: ' + (list(out.bought) || 'nada'));
 } else {
-  console.log('Comandos: path, slot <Slot>, item <id>. Ver el encabezado de scripts/plan.js.');
+  console.log('Comandos: path, slot <Slot>, item <id>, leather. Ver el encabezado de scripts/plan.js.');
 }
