@@ -158,23 +158,28 @@
   function renderPlan(g) {
     const mine = myProfs();
     // Your professions come from your Shaman (the setup screen).
-    let html = '<div class="gp-for"><span>' + t('pr.plan.yours') + ' <b>' + (mine.length ? mine.join(' + ') : t('setup.noProfsShort')) + '</b></span>' +
-      '<button class="btn" data-open-setup>' + t('home.change') + '</button></div>';
+    const lvlNow = Math.min(60, Math.max(1, Number(UI.store.get('level', 1)) || 1));
+    let html = '<div class="gp-head"><h2>' + t('pr.mine') + '</h2>' +
+      '<span class="gp-lvl"><button class="hn-step" data-pr-step="-1" aria-label="' + t('home.levelDown') + '"' + (lvlNow <= 1 ? ' disabled' : '') + '>−</button>' +
+      '<label>' + t('home.next.level') + ' <select data-pr-level>' + Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === lvlNow ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label>' +
+      '<button class="hn-step" data-pr-step="1" aria-label="' + t('home.levelUp') + '"' + (lvlNow >= 60 ? ' disabled' : '') + '>+</button></span>' +
+      '<span class="gp-who dim">' + (mine.length ? mine.join(' + ') : t('setup.noProfsShort')) + ' <button class="btn-link" data-open-setup>' + t('home.change') + '</button></span></div>';
     if (mine.length < 2) {
       html += '<p class="note-text" style="margin-top:16px">' + t('pr.plan.none', { spec: Site.spec }) + '</p><div class="pr-pairs">' +
         g.pairs.filter(p => p.specs.includes(Site.spec)).map(p => pairCard(p, true)).join('') + '</div>';
       if (!mine.length) return html;
     }
-    html += '<div class="camp-grid" style="margin-top:16px">' + mine.map(campCard).join('') + '</div>';
-    mine.filter(p => GATHERING.includes(p)).forEach(p => { html += '<p class="note-text">' + profIcon(p, 'pk-icon') + ' ' + t('pr.prof.gather', { list: FEEDS[p].join(', ') }) + '</p>'; });
+    let extra = '<details class="pr-more"><summary>' + t('pr.more.camp') + '</summary><div class="camp-grid" style="margin-top:12px">' + mine.map(campCard).join('') + '</div>';
+    mine.filter(p => GATHERING.includes(p)).forEach(p => { extra += '<p class="note-text">' + profIcon(p, 'pk-icon') + ' ' + t('pr.prof.gather', { list: FEEDS[p].join(', ') }) + '</p>'; });
+    extra += '</details><details class="pr-more"><summary>' + t('pr.prof.guides') + '</summary>' + guidesHtml(g) + '</details>';
     const makers = mine.filter(p => CRAFTING.includes(p));
-    if (!makers.length) return html + '<p class="note-text">' + t('pr.plan.gatherOnly') + '</p>' + guidesHtml(g);
+    if (!makers.length) return html + '<p class="note-text">' + t('pr.plan.gatherOnly') + '</p>' + extra;
 
     // Leatherworking: the plan to level it while you level, with its pieces.
     const lw = makers.includes('Leatherworking');
-    if (lw) html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.sec.subir') + '</h3>' + renderLeveling();
+    if (lw) html += renderLeveling();
     const others = makers.filter(p => p !== 'Leatherworking');
-    if (!others.length) return html + guidesHtml(g);
+    if (!others.length) return html + extra;
 
     const GP = window.GearPath;
     const { plan } = GP.compute();
@@ -194,7 +199,7 @@
         (rows || '<p class="dim">' + t('pr.plan.nothingWorth') + '</p>') + '</div>';
     });
     html += '</div><p class="note-text dim">' + t('pr.plan.note2') + '</p>';
-    return html + guidesHtml(g);
+    return html + extra;
   }
 
   function craftRow(st) {
@@ -373,98 +378,130 @@
   }
 
   function renderLeveling() {
-    let html = '<p class="note-text" style="margin-top:16px">' + t('pr.lw.intro') + '</p>';
     if (!myProfs().includes('Leatherworking')) {
-      return html + '<p class="note-text">' + t('pr.lw.noLw') + '</p><button class="btn" data-open-setup>' + t('home.plan.pickProfs') + '</button>';
+      return '<p class="note-text">' + t('pr.lw.noLw') + '</p><button class="btn" data-open-setup>' + t('home.plan.pickProfs') + '</button>';
     }
     const M = lwModel();
-    const { SK, skinning, intensity, farm, base, pieces, name, chips, row, piece, early, lwAt, skinAt } = M;
+    const { SK, skinning, intensity, farm, base, pieces, name, chips, row, piece, early, lwAt, skinAt, stepOf } = M;
+    const lvl = Math.min(BETA_CAP, Math.max(1, Number(UI.store.get('level', 1)) || 1));
 
-    html += '<div class="wp-controls" style="margin-top:12px">' + (skinning
-      ? '<span class="ctl-label">' + t('pr.lw.skinLabel') + '</span><div class="seg">' + SKIN_LEVELS.map(k =>
+    // The settings, folded: how much you skin, auction house or farming.
+    let html = '<div class="pr-sec-head"><h3>' + t('pr.sec.subir') + '</h3><details class="gp-settings"><summary>' + t('gp.settings') + '</summary><div>' +
+      (skinning ? '<span class="ctl-label">' + t('pr.lw.skinLabel') + '</span><div class="seg">' + SKIN_LEVELS.map(k =>
         '<button class="btn' + (intensity === k ? ' active' : '') + '" data-lw-skin="' + k + '" title="' + t('pr.lw.skin.' + k + 'Title') + '">' + t('pr.lw.skin.' + k) + '</button>').join('') + '</div>'
-      : '<span class="dim">' + t('pr.lw.noSkinning') + '</span>') +
+        : '<span class="dim">' + t('pr.lw.noSkinning') + '</span>') +
       '<span class="ctl-label">' + t('pr.lw.matsLabel') + '</span><div class="seg">' + ['ah', 'farm'].map(k =>
-        '<button class="btn' + ((k === 'farm') === farm ? ' active' : '') + '" data-lw-farm="' + k + '" title="' + t('pr.lw.mats.' + k + 'Title') + '">' + t('pr.lw.mats.' + k) + '</button>').join('') + '</div></div>' +
-      (farm ? '<p class="note-text dim">' + t('pr.lw.farmNote') + '</p>' : SK.prices ? '<p class="note-text dim">' + t('pr.lw.pricesNote', { date: SK.prices.date.split('-').reverse().slice(0, 2).join('/') }) + '</p>' : '');
+        '<button class="btn' + ((k === 'farm') === farm ? ' active' : '') + '" data-lw-farm="' + k + '" title="' + t('pr.lw.mats.' + k + 'Title') + '">' + t('pr.lw.mats.' + k) + '</button>').join('') + '</div>' +
+      '<span class="dim">' + (farm ? t('pr.lw.farmNote') : SK.prices ? t('pr.lw.pricesNote', { date: SK.prices.date.split('-').reverse().slice(0, 2).join('/') }) : '') + '</span>' +
+      '</div></details></div>';
 
-    if (skinning) {
-      // At a glance: the skill you have at 10, 20 and 30, and the pieces you make.
-      const at = lvl => (base.rows[lvl - 1] || {}).skill;
-      const madeCount = pieces.filter(p => p.alone).length;
-      html += '<div class="lw-sum">' + [10, 20, BETA_CAP].map(l => '<div class="lw-tile"><span>' + t('pr.lw.atLevel', { n: l }) + '</span><b>' + at(l) + '</b><small>' + t('pr.lw.skillShort') + '</small></div>').join('') +
-        '<div class="lw-tile"><span>' + t('pr.lw.piecesMade') + '</span><b>' + madeCount + '/' + pieces.length + '</b><small>' + t('pr.lw.piecesMadeSub', { n: BETA_CAP }) + '</small></div></div>';
-      // Shopping: only the cheap Light Leather that gets you past 70-75.
-      if (base.bridge.level) html += '<div class="lw-shop"><b>' + t('pr.lw.shopTitle') + '</b> ' + chips(base.bridge.items) + '<span class="dim"> ' + t('pr.lw.shopWhy', { n: base.bridge.level }) + '</span></div>';
+    // Not learned yet: where, at any level, and "I learned it".
+    const learned = UI.store.get('learnedProfs', {});
+    const first = Math.min(lwAt.level, skinAt.level);
+    const pending = ['Leatherworking', 'Skinning'].filter(p => (p === 'Skinning' ? skinning && skinAt : lwAt).level > lvl && learned[p] == null);
+    if (pending.length) {
+      html += '<div class="gp-learn"><span>' + t('pr.lw.learnWhere', { lw: lwAt.zone || '?', n: lwAt.level, skin: skinAt.zone || '?', m: skinAt.level }) + '</span>' +
+        pending.map(p => '<button class="btn" data-learned="' + p + '">' + t('home.learned', { prof: p }) + '</button>').join('') + '</div>';
+    }
+    const said = Object.keys(learned).filter(p => ['Leatherworking', 'Skinning'].includes(p));
+    if (said.length) html += '<p class="note-text dim">' + t('pr.lw.learnedSaid', { list: said.map(p => p + ' (' + t('common.level') + ' ' + learned[p] + ')').join(', ') }) +
+      ' <button class="btn-link" data-unlearn>' + t('pr.lw.learnedUndo') + '</button></p>';
 
-      // Stages: from one goal to the next (pieces you make, the 70-75 wall).
-      const stages = [];
-      let cur = null;
-      const first = Math.min(lwAt.level, skinAt.level);
-      const learned = UI.store.get('learnedProfs', {});
-      if (first > 1 && !(lwAt.learned && skinAt.learned)) {
-        html += '<div class="lw-learn"><b>' + t('pr.lw.learnTitle', { n: first }) + '</b> ' +
-          t('pr.lw.learnWhere', { lw: lwAt.zone || '?', n: lwAt.level, skin: skinAt.zone || '?', m: skinAt.level }) +
-          '<span class="lw-learn-btns">' + ['Leatherworking', 'Skinning'].filter(p => learned[p] == null).map(p => '<button class="btn" data-learned="' + p + '">' + t('home.learned', { prof: p }) + '</button>').join('') + '</span></div>';
-      }
-      const said = Object.keys(learned).filter(p => ['Leatherworking', 'Skinning'].includes(p));
-      if (said.length) html += '<p class="note-text dim">' + t('pr.lw.learnedSaid', { list: said.map(p => p + ' (' + t('common.level') + ' ' + learned[p] + ')').join(', ') }) +
-        ' <button class="btn-link" data-unlearn>' + t('pr.lw.learnedUndo') + '</button></p>';
-      base.rows.filter(r => r.level >= first).forEach(r => {
-        if (!cur) cur = { from: r.level, rows: [] };
-        cur.rows.push(r);
-        // Goals close to each other share a stage (at least STAGE_MIN levels).
-        const goal = r.made.length && r.level - cur.from + 1 >= STAGE_MIN;
-        if (goal || r.level === base.bridge.level || r.level === BETA_CAP) { stages.push(cur); cur = null; }
+    // Stages: from one goal to the next (pieces you make, the 70-75 wall).
+    const stages = [];
+    let cur = null;
+    base.rows.filter(r => r.level >= first).forEach(r => {
+      if (!cur) cur = { from: r.level, rows: [] };
+      cur.rows.push(r);
+      const goal = r.made.length && r.level - cur.from + 1 >= STAGE_MIN;
+      if (goal || r.level === base.bridge.level || r.level === BETA_CAP) { stages.push(cur); cur = null; }
+    });
+    if (cur) stages.push(cur);
+    const zonesOf = sg => {
+      const zones = [];
+      sg.rows.forEach(r => {
+        let z = zones.find(x => x.name === r.zone);
+        if (!z) zones.push(z = { name: r.zone, skins: 0, from: r.level, to: r.level });
+        z.skins += r.skins;
+        z.to = r.level;
       });
-      if (cur) stages.push(cur);
-      html += '<h3 class="block-title" style="margin-top:20px">' + t('pr.lw.stagesTitle') + '</h3><div class="lw-steps">';
-      let skillBefore = 1;
-      // Open: the stage of your level and the next one; the rest fold to one line.
-      const lvl = Math.min(BETA_CAP, Math.max(1, Number(UI.store.get('level', 1)) || 1));
-      const mineAt = stages.findIndex(sg => lvl <= sg.rows[sg.rows.length - 1].level);
+      return zones.filter(z => z.skins > 0);
+    };
+    const craftsOf = sg => {
+      const crafts = {};
+      sg.rows.forEach(r => Object.entries(r.crafts).forEach(([id, n]) => { if (!r.made.includes(Number(id))) crafts[id] = (crafts[id] || 0) + n; }));
+      return crafts;
+    };
+    const skillBefore = i => (i ? stages[i - 1].rows[stages[i - 1].rows.length - 1].skill : 1);
+
+    // Now: the stage you're in, said plainly.
+    const mineAt = Math.max(0, stages.findIndex(sg => lvl <= sg.rows[sg.rows.length - 1].level));
+    const now = stages[mineAt];
+    if (skinning && now) {
+      const last = now.rows[now.rows.length - 1];
+      const zones = zonesOf(now);
+      const crafts = craftsOf(now);
+      const made = [].concat(...now.rows.map(r => r.made));
+      const line = (k, body) => '<div class="pn-row"><span class="pn-k">' + k + '</span><div class="pn-v">' + body + '</div></div>';
+      html += '<section class="pr-now"><span class="hn-kicker">' + t('pr.now.kicker', { lo: now.from, hi: last.level }) + '</span>' +
+        '<h2>' + t('pr.now.title', { a: Math.floor(skillBefore(mineAt)), b: last.skill }) + '</h2>' +
+        (zones.length ? line(t('pr.lw.kSkin'), zones.map(z => '<b>' + (z.name || '?') + '</b> <span class="dim">· ' + window.LwPlan.beasts(z.name, Math.round((z.from + z.to) / 2)).map(b => b.name).join(', ') + '</span>').join('<br>')) : '') +
+        (Object.keys(crafts).length ? line(t('pr.now.craft'), chips(crafts)) : '') +
+        (Object.keys(last.keep).length ? line(t('pr.lw.kKeep'), chips(last.keep)) : '') +
+        (made.length ? line(t('pr.lw.kGoal'), made.map(id => '<span class="lw-chip">' + (stepOf.get(id) ? UI.itemLink(stepOf.get(id).pick.item) : name(id)) + '</span>').join('')) : '') +
+        (now.rows.some(r => r.level === base.bridge.level) ? line(t('pr.lw.kBuy'), chips(base.bridge.items) + ' <span class="dim">' + t('pr.lw.bridgeWhy') + '</span>') : '') +
+        '</section>';
+    }
+
+    // At a glance: the skill at 10, 20 and 30, and the pieces you make.
+    if (skinning) {
+      const at = l => (base.rows[l - 1] || {}).skill;
+      html += '<div class="lw-sum">' + [10, 20, BETA_CAP].map(l => '<div class="lw-tile"><span>' + t('pr.lw.atLevel', { n: l }) + '</span><b>' + at(l) + '</b><small>' + t('pr.lw.skillShort') + '</small></div>').join('') +
+        '<div class="lw-tile"><span>' + t('pr.lw.piecesMade') + '</span><b>' + pieces.filter(p => p.alone).length + '/' + pieces.length + '</b><small>' + t('pr.lw.piecesMadeSub', { n: BETA_CAP }) + '</small></div></div>';
+    }
+
+    // Your pieces, by the level you make them: one line each, the rest on tap.
+    const groups = new Map();
+    pieces.slice().sort((a, b) => (a.alone || 99) - (b.alone || 99) || a.level - b.level).forEach(p => {
+      const at = skinning && p.alone ? p.alone : null;
+      const key = at ? t('home.tile.lv', { n: at }) : t('pr.pieces.later', { n: BETA_CAP });
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(p);
+    });
+    html += '<section class="gp-coming"><div class="gp-coming-head"><h3>' + t('pr.pieces.title') + '</h3><span class="dim">' + t('pr.pieces.sub') + '</span></div>' +
+      [...groups.entries()].map(([k, list]) => '<div class="gp-lvl-row"><b class="gp-lvl-n">' + k + '</b><div class="gp-cards">' + list.map(p => {
+        const st = stepOf.get(p.id);
+        const i = st.pick.item;
+        const r = M.recipe.get(p.id);
+        const tag = r && r.how === 'f' ? t('pr.pieces.favor', { n: r.favor || 30 }) : t('pr.pieces.skill', { n: r ? r.skill[0] : '?' });
+        return '<details class="gp-card gp-tag-craft"><summary>' + (i.icon ? '<img class="gst-icon q' + (i.quality || 1) + '" src="' + UI.icon(i.icon) + '" alt="">' : '') +
+          '<span class="gpc-main"><b class="q' + i.quality + '">' + i.name + '</b><span class="gpc-sub">' + window.GearPath.slotName(st.pick.slot) + ' · <span class="gpc-tag">' + tag + '</span>' +
+          (p.level < (p.alone || 99) ? ' · <span class="dim">' + t('pr.pieces.path', { n: p.level }) + '</span>' : '') + '</span></span></summary>' +
+          '<div class="gpc-body">' + piece(p.id) + early(p.id) + '</div></details>';
+      }).join('') + '</div></div>').join('') + '</section>';
+
+    // The plan level by level, for whoever wants it.
+    if (skinning) {
+      html += '<details class="pr-more"><summary>' + t('pr.lw.stagesFull') + '</summary><div class="lw-steps">';
       stages.forEach((sg, i) => {
         const last = sg.rows[sg.rows.length - 1];
         const to = last.level;
-        const zones = [];
-        sg.rows.forEach(r => {
-          let z = zones.find(x => x.name === r.zone);
-          if (!z) zones.push(z = { name: r.zone, skins: 0, from: r.level, to: r.level });
-          z.skins += r.skins;
-          z.to = r.level;
-        });
-        const where = zones.filter(z => z.skins > 0).map(z => {
-          const beasts = z.name ? window.LwPlan.beasts(z.name, Math.round((z.from + z.to) / 2)).map(b => b.name).join(', ') : '';
-          return '<div><b>' + (z.name || '?') + '</b> · ' + t('pr.lw.skinsN', { n: z.skins }) + (beasts ? '<div class="dim lw-beasts">' + beasts + '</div>' : '') + '</div>';
-        }).join('');
-        const crafts = {};
-        sg.rows.forEach(r => Object.entries(r.crafts).forEach(([id, n]) => { if (!r.made.includes(Number(id))) crafts[id] = (crafts[id] || 0) + n; }));
+        const where = zonesOf(sg).map(z => '<div><b>' + (z.name || '?') + '</b> · ' + t('pr.lw.skinsN', { n: z.skins }) + '</div>').join('');
+        const crafts = craftsOf(sg);
         const made = [].concat(...sg.rows.map(r => r.made));
         const pct = Math.min(100, Math.round(last.skill / 3));
-        const open = i === mineAt || i === mineAt + 1;
-        html += '<details class="lw-step"' + (open ? ' open' : '') + '><summary class="lw-head"><b>' + t(sg.from === to ? 'pr.lw.stageOne' : 'pr.lw.stage', { lo: sg.from, hi: to }) + '</b>' +
-          '<span class="lw-skill">' + t('pr.lw.skillRange', { a: skillBefore, b: last.skill }) + '</span>' +
-          '<span class="lw-bar"><i style="width:' + pct + '%"></i></span>' +
+        html += '<details class="lw-step"' + (i === mineAt ? ' open' : '') + '><summary class="lw-head"><b>' + t(sg.from === to ? 'pr.lw.stageOne' : 'pr.lw.stage', { lo: sg.from, hi: to }) + '</b>' +
+          '<span class="lw-skill">' + t('pr.lw.skillRange', { a: Math.floor(skillBefore(i)), b: last.skill }) + '</span><span class="lw-bar"><i style="width:' + pct + '%"></i></span>' +
           (made.length ? '<span class="lw-goals">' + made.map(id => name(id)).join(', ') + '</span>' : '') + '</summary>' +
-          (made.length ? row(t('pr.lw.kGoal'), made.map(id => piece(id) + early(id)).join(''), 'lw-goal') : '') +
           (Object.keys(crafts).length ? row(t('pr.lw.kCraft'), chips(crafts)) : '') +
           (where ? row(t('pr.lw.kSkin'), where) : '') +
           (Object.keys(last.keep).length ? row(t('pr.lw.kKeep'), chips(last.keep)) : '') +
           (to === base.bridge.level ? row(t('pr.lw.kBuy'), chips(base.bridge.items) + '<span class="dim"> ' + t('pr.lw.bridgeWhy') + '</span>', 'lw-buyrow') : '') +
           '</details>';
-        skillBefore = last.skill;
       });
-      html += '</div>';
+      html += '</div></details>';
     }
-
-    // Pieces skinning alone doesn't reach by 30 (or all of them, without Skinning).
-    const later = pieces.filter(p => !skinning || !p.alone);
-    if (later.length) {
-      html += '<h3 class="block-title" style="margin-top:22px">' + t(skinning ? 'pr.lw.laterTitle' : 'pr.lw.piecesTitle', { n: BETA_CAP }) + '</h3>' +
-        '<p class="note-text dim">' + t(skinning ? 'pr.lw.laterNote' : 'pr.lw.piecesNote') + '</p><div class="lw-steps"><div class="lw-step">' +
-        later.map(p => row(t('pr.lw.levelN', { n: p.level }), piece(p.id) + early(p.id))).join('') + '</div></div>';
-    }
-    html += '<details class="lw-more"><summary>' + t('pr.lw.keysTitle') + '</summary><ul class="plain">' +
+    html += '<details class="pr-more"><summary>' + t('pr.lw.keysTitle') + '</summary><ul class="plain">' +
       ['hide', 'gap', 'ranks', 'pristine', 'zones'].map(k => '<li>' + t('pr.lw.key.' + k) + '</li>').join('') + '</ul>' +
       '<p class="note-text dim">' + t('pr.lw.how', { kills: Math.round(window.LwPlan.KILL_SHARE * 100), pristine: Math.round(window.LwPlan.PRISTINE * 100) }) +
       ' <a class="src" href="' + SK.sources.yields + '" target="_blank" rel="noopener">Wowhead</a> · <a class="src" href="' + SK.sources.beasts + '" target="_blank" rel="noopener">QuestieDB</a> · <a class="src" href="' + SK.sources.recipes + '" target="_blank" rel="noopener">classicwowforever</a>' +
@@ -559,7 +596,7 @@
   function renderAll() {
     const g = guide();
     const section = Site.section('Profesiones', SECTIONS);
-    let html = '<div class="spec-summary"><div class="role">' + t('pr.role') + '</div><h2>' + t('pr.title') + '</h2><p>' + g.intro + '</p></div>';
+    let html = '<div class="spec-summary"><div class="role">' + t('pr.role') + '</div><h2>' + t('pr.title') + '</h2>' + (section === 'plan' ? '' : '<p>' + g.intro + '</p>') + '</div>';
     html += Site.sectionTabs('Profesiones', SECTIONS, section, k => t('pr.sec.' + k));
     if (section === 'plan') html += renderPlan(g);
     if (section === 'cocina') html += renderCooking(g);
@@ -580,6 +617,10 @@
     container.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
     container.querySelectorAll('[data-lw-skin]').forEach(b => b.addEventListener('click', () => { UI.store.set('lwSkin', b.dataset.lwSkin); renderAll(); }));
     container.querySelectorAll('[data-lw-farm]').forEach(b => b.addEventListener('click', () => { window.GearPath.setFarm(b.dataset.lwFarm === 'farm'); renderAll(); }));
+    const setLvl = n => { UI.store.set('level', Math.min(60, Math.max(1, n))); renderAll(); };
+    container.querySelectorAll('[data-pr-step]').forEach(b => b.addEventListener('click', () => setLvl((Number(UI.store.get('level', 1)) || 1) + Number(b.dataset.prStep))));
+    const prSel = container.querySelector('[data-pr-level]');
+    if (prSel) prSel.addEventListener('change', e => setLvl(Number(e.target.value)));
     container.querySelectorAll('[data-learned]').forEach(b => b.addEventListener('click', () => {
       const all = UI.store.get('learnedProfs', {});
       all[b.dataset.learned] = Math.max(1, Number(UI.store.get('level', 1)) || 1);
