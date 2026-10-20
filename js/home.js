@@ -123,14 +123,17 @@
       const lasts = st.until > 60 ? t('home.next.lastsLong') : t('home.next.lasts', { n: st.until });
       // Far ahead (beyond the next two levels): said as what comes, not as an order.
       const verb = st.level > lvl + 2 ? 'home.next.later' : ['crafted', 'favor'].includes(st.pick.access) ? 'home.next.make' : 'home.next.get';
+      const slot = window.GearPath.slotName(st.pick.slot).toLowerCase();
+      const forWhat = [t(st.level > lvl ? 'home.next.forSoon' : 'home.next.forNow', { slot, n: st.level }), st.replaces ? gain : t('home.next.nothingThere'), lasts].join(' · ');
       return '<section class="home-next"' + art + ' aria-labelledby="hnTitle"><div class="hn-text">' + head +
         '<h2 id="hnTitle">' + t(verb, { item: i.name, n: st.level }) + '</h2>' +
-        '<p class="dim">' + t(st.level > lvl ? 'home.next.whySoon' : 'home.next.why', { slot: window.GearPath.slotName(st.pick.slot), n: st.level }) + '</p>' +
+        '<p class="hn-how"><b>' + t('home.next.howLabel') + '</b> ' + window.GearPath.sourceText(st.pick) + '</p>' +
+        '<p class="dim">' + forWhat + '</p>' +
         '<div class="hn-actions"><a class="btn hn-go" href="#Equipo/camino">' + t('home.next.how') + '</a>' +
         '<button class="btn" data-got="' + i.id + '">' + t('home.next.have') + '</button></div></div>' +
         '<div class="hn-item">' + (i.icon ? '<img class="hn-icon q' + (i.quality || 1) + '" src="' + UI.icon(i.icon, 'large') + '" alt="">' : '') +
-        '<div class="hn-item-text">' + UI.itemLink(i) + '<span class="dim">' + window.GearPath.slotName(st.pick.slot) + ' · ' + window.GearPath.sourceText(st.pick) + '</span>' +
-        '<span class="hn-gain">' + gain + ' · ' + lasts + '</span></div></div></section>';
+        '<div class="hn-item-text">' + UI.itemLink(i) + '<span class="dim">' + window.GearPath.slotName(st.pick.slot) + (i.req ? ' · ' + t('common.level') + ' ' + i.req : '') + '</span>' +
+        (UI.statsText(i) ? '<span class="hn-stats">' + UI.statsText(i) + '</span>' : '') + '</div></div></section>';
     }
     // No gear ahead: the talent that's due.
     if (tal && tal.now) {
@@ -157,10 +160,13 @@
 
   function tiles(plan, steps, lvl, tal) {
     // Gear: the upgrades in the next five levels.
-    const soon = steps.filter(st => st.level > lvl && st.level <= lvl + 5).sort((a, b) => a.level - b.level);
+    // Not the one the big card already shows.
+    const main = nextStep(steps, lvl);
+    const soon = steps.filter(st => st.level > lvl && st.level <= lvl + 5 && st !== main).sort((a, b) => a.level - b.level);
     const gear = soon.length
-      ? tile(t('home.tile.gear'), t(soon.length === 1 ? 'home.tile.gearOne' : 'home.tile.gearN', { n: soon.length, lvl: lvl + 5 }),
-        soon.slice(0, 2).map(st => st.pick.item.name + ' (' + st.level + ')').join(', '), '#Equipo/camino', t('home.plan.gearMore'), soon[0].pick.item.icon, 'gear')
+      ? tile(t('home.tile.gear'), t('home.tile.gearNext'),
+        '<span class="ht-list">' + soon.slice(0, 3).map(st => '<span><span class="ht-lv">' + t('home.tile.lv', { n: st.level }) + '</span> ' + st.pick.item.name + '</span>').join('') + '</span>',
+        '#Equipo/camino', t('home.plan.gearMore'), soon[0].pick.item.icon, 'gear')
       : tile(t('home.tile.gear'), t('home.tile.gearNone', { lvl: lvl + 5 }), '', '#Equipo/camino', t('home.plan.gearMore'), 'inv_chest_chain', 'gear');
     // Talents: now and next.
     const tIcon = tal && ((tal.now || tal.next) || {}).icon;
@@ -194,7 +200,7 @@
       const first = crafts[0];
       const skill = first && ((first.pick.source.learn || {}).learnAt || first.pick.source.yellow);
       prof = first
-        ? tile(first.pick.source.profession, skill > 1 ? t('home.tile.skillGoal', { n: skill, lvl: first.level }) : t('home.tile.knownRecipe', { lvl: first.level }), t('home.tile.craftFirst', { item: first.pick.item.name }), '#Profesiones/plan', t('home.plan.profsMore'), window.Setup.PROF_ICONS[first.pick.source.profession], 'prof')
+        ? tile(first.pick.source.profession, skill > 1 ? t('home.tile.skillGoal', { prof: first.pick.source.profession, n: skill, lvl: first.level }) : t('home.tile.knownRecipe', { lvl: first.level }), t('home.tile.craftFirst', { item: first.pick.item.name }), '#Profesiones/plan', t('home.plan.profsMore'), window.Setup.PROF_ICONS[first.pick.source.profession], 'prof')
         : tile(makers.join(' + '), t('home.tile.craftNone'), '', '#Profesiones/plan', t('home.plan.profsMore'), window.Setup.PROF_ICONS[makers[0]], 'prof');
     }
     return '<div class="home-tiles">' + gear + talents + prof + '</div>';

@@ -1509,4 +1509,10 @@ header.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 
 .home-tile .ht-actions .btn { border-color: color-mix(in srgb, var(--tone) 55%, var(--border)); color: var(--tone); }
 .lw-learn-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 .btn-link { background: none; border: 0; padding: 0; color: var(--accent); text-decoration: underline; font: inherit; cursor: pointer; }
+.home-next .hn-how { margin: 0; font-size: 16px; color: var(--text); }
+.home-next .hn-how b { color: var(--gold); font-weight: 600; }
+.home-next .hn-stats { color: var(--good); font-weight: 600; }
+.home-tile .ht-list { display: flex; flex-direction: column; gap: 2px; }
+.home-tile .ht-lv { color: var(--tone); font-weight: 600; display: inline-block; min-width: 42px; }
+@media (max-width: 760px) { .home-tile .ht-list { display: flex; } .home-tile .dim:has(.ht-list) { display: block; } }
 
