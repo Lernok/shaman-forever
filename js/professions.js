@@ -233,14 +233,62 @@
       (n != null ? '<b>' + Math.round(n) + '</b> ' : '') + name(id) + '</span>';
     const chips = o => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([id, n]) => chip(id, n)).join('');
     const row = (label, body, cls) => '<div class="lw-row' + (cls ? ' ' + cls : '') + '"><span class="lw-k">' + label + '</span><div class="lw-v">' + body + '</div></div>';
-    // Reagents a piece needs that you neither skin nor buy from a vendor (gems, alchemy).
-    const extraMats = r => (r ? r.mats.filter(([m]) => !SK.skin.includes(m) && ![2318, 2319, 4234, 4231, 4233, 4236, 249427].includes(m) && !/Thread|Dye|Salt|Bleach|Buckle/.test(name(m))) : []);
+    // Reagents a piece needs that you neither skin, nor make, nor buy from a
+    // vendor: scales, feathers, gems, alchemy (data/skinning.json reagents,
+    // from scripts/build-reagents.js).
+    const REAG = SK.reagents || {};
+    const made = new Set(SK.recipes.map(r => r.id));
+    const extraMats = r => (r ? r.mats.filter(([m]) => !SK.skin.includes(m) && !made.has(m) && !(REAG[m] || {}).v) : []);
+    const DETOUR_MIN = 0.05;
+    const side = Site.faction === 'alliance' ? 'A' : 'H';
+    const zonesNear = (from, to) => {
+      const out = new Set();
+      for (let l = Math.max(1, from); l <= to; l++) window.Route.zonesAt(l, Site.faction, race).forEach(z => out.add(z.name));
+      return out;
+    };
+    // Where to get a reagent for a piece made at level `lvl`: a creature in
+    // the zones of your levels (on the way), the first level your route
+    // passes one (later), or the nearest elsewhere (a detour); a profession;
+    // gathering; else the auction house.
+    const whereMat = (m, n, lvl) => {
+      const e = REAG[m] || {};
+      const parts = [];
+      if (m === 249427) return '<div class="lw-mat">' + chip(m, n) + '<span class="dim"> ' + t('pr.lw.mat.pristine', { pct: Math.round(window.LwPlan.PRISTINE * 100) }) + '</span></div>';
+      const drops = (e.d || []).filter(d => d[6] !== side);
+      const kills = d => Math.ceil(n / d[3]);
+      const say = (d, key, extra) => t(key, Object.assign({ mob: d[0], zone: d[4][0], lo: d[1], hi: d[2], pct: Math.round(d[3] * 100), kills: kills(d) }, extra || {})) +
+        (d[5] & 2 ? ' ' + t('pr.lw.mat.skinned') : '') + (d[5] & 1 ? ' ' + t('pr.lw.mat.elite') : '');
+      const near = zonesNear(lvl - 6, lvl);
+      const onWay = drops.filter(d => d[1] <= lvl + 2 && d[4].some(z => near.has(z)) && !(d[5] & 1)).sort((a, b) => b[3] - a[3])[0];
+      if (onWay) parts.push(say(onWay, 'pr.lw.mat.onWay'));
+      else {
+        let later = null;
+        for (let l = lvl + 1; l <= BETA_CAP + 10 && !later; l++) {
+          const zs = zonesNear(l, l);
+          const d = drops.filter(x => x[1] <= l + 2 && x[1] >= l - 6 && x[4].some(z => zs.has(z)) && !(x[5] & 1)).sort((a, b) => b[3] - a[3])[0];
+          if (d) later = { d, l };
+        }
+        if (later) parts.push(say(later.d, 'pr.lw.mat.later', { n: later.l }));
+        else {
+          // A detour only for a drop worth farming (not a rare elite at 2%).
+          const d = drops.filter(x => x[3] >= DETOUR_MIN && !(x[5] & 1)).sort((a, b) => a[1] - b[1] || b[3] - a[3])[0];
+          if (d) parts.push(say(d, 'pr.lw.mat.detour'));
+        }
+      }
+      if (e.c) parts.push(t('pr.lw.mat.craft', { prof: t('pr.lw.prof.' + e.c[0]), n: e.c[1] }));
+      if (e.g && e.g.mined) parts.push(t('pr.lw.mat.mined', { what: e.g.mined.slice(0, 2).join(', ') }));
+      if (e.g && e.g.inItem && !parts.length) parts.push(t('pr.lw.mat.inItem', { what: e.g.inItem.slice(0, 2).join(', ') }));
+      parts.push(t('pr.lw.mat.ah'));
+      return '<div class="lw-mat">' + chip(m, n) + '<span class="dim"> ' + parts.join(' · ') + '</span></div>';
+    };
     const piece = id => {
       const st = stepOf.get(id);
       const r = recipe.get(id);
       const own = extraMats(r);
+      const lvl = (pieceOf.get(id) || {}).alone || st.level;
       return '<span class="lw-piece">' + UI.itemLink(st.pick.item) + '<span class="dim"> ' + window.GearPath.slotName(st.pick.slot) +
-        (r && r.how === 'f' ? ' · ' + t('pr.plan.favorCost', { n: r.favor || 30 }) : '') + (own.length ? ' · ' + t('pr.lw.ahMats', { list: own.map(([m, n]) => n + ' ' + name(m)).join(', ') }) : '') + '</span></span>';
+        (r && r.how === 'f' ? ' · ' + t('pr.plan.favorCost', { n: r.favor || 30 }) : '') + '</span>' +
+        (own.length ? '<span class="lw-mats">' + own.map(([m, n]) => whereMat(m, n, lvl)).join('') + '</span>' : '') + '</span>';
     };
     // Having a piece at the level your gear path suggests it, when skinning alone is
     // later: offered for the pieces that matter (blue, Favor, or from level 12), not
@@ -329,7 +377,8 @@
     html += '<details class="lw-more"><summary>' + t('pr.lw.keysTitle') + '</summary><ul class="plain">' +
       ['hide', 'gap', 'ranks', 'pristine', 'zones'].map(k => '<li>' + t('pr.lw.key.' + k) + '</li>').join('') + '</ul>' +
       '<p class="note-text dim">' + t('pr.lw.how', { kills: Math.round(window.LwPlan.KILL_SHARE * 100), pristine: Math.round(window.LwPlan.PRISTINE * 100) }) +
-      ' <a class="src" href="' + SK.sources.yields + '" target="_blank" rel="noopener">Wowhead</a> · <a class="src" href="' + SK.sources.beasts + '" target="_blank" rel="noopener">QuestieDB</a> · <a class="src" href="' + SK.sources.recipes + '" target="_blank" rel="noopener">classicwowforever</a></p></details>';
+      ' <a class="src" href="' + SK.sources.yields + '" target="_blank" rel="noopener">Wowhead</a> · <a class="src" href="' + SK.sources.beasts + '" target="_blank" rel="noopener">QuestieDB</a> · <a class="src" href="' + SK.sources.recipes + '" target="_blank" rel="noopener">classicwowforever</a>' +
+      (SK.sources.reagents ? ' · <a class="src" href="' + SK.sources.reagents + '" target="_blank" rel="noopener">' + t('pr.lw.matSource') + '</a>' : '') + '</p></details>';
     return html;
   }
 

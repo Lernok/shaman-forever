@@ -1,0 +1,8815 @@
+{
+ "_readme": "Written by scripts/build-reagents.js. Reagents of Leatherworking recipes that are not skinned, not Leatherworking-made: craft (another profession), drops (p: chance per kill, l: levels, z: zones), gather, vendor.",
+ "sources": {
+  "drops": "https://www.wowhead.com/classic/item=5784/slimy-murloc-scale#dropped-by",
+  "recipes": "https://classicwowforever.com/professions/"
+ },
+ "items": {
+  "1210": {
+   "name": "Shadowgem",
+   "drops": [
+    {
+     "id": 3533,
+     "n": "Moonrage Leatherworker",
+     "l": [
+      14,
+      15
+     ],
+     "p": 0.032,
+     "z": [
+      "Silverpine Forest"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3851,
+     "n": "Shadowfang Whitescalp",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.029,
+     "z": [
+      "Shadowfang Keep"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3853,
+     "n": "Shadowfang Moonwalker",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.028,
+     "z": [
+      "Shadowfang Keep"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3840,
+     "n": "Druid of the Fang",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.026,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 1179,
+     "n": "Mo'grosh Enforcer",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.025,
+     "z": [
+      "Loch Modan"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3849,
+     "n": "Deathstalker Adamant",
+     "l": [
+      18,
+      18
+     ],
+     "p": 0.025,
+     "z": [
+      "Shadowfang Keep"
+     ],
+     "elite": true,
+     "friend": "H"
+    },
+    {
+     "id": 5761,
+     "n": "Deviate Shambler",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.025,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 634,
+     "n": "Defias Overseer",
+     "l": [
+      17,
+      18
+     ],
+     "p": 0.024,
+     "z": [
+      "The Deadmines"
+     ],
+     "elite": true
+    },
+    {
+     "id": 641,
+     "n": "Goblin Woodcarver",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.024,
+     "z": [
+      "The Deadmines"
+     ],
+     "elite": true
+    },
+    {
+     "id": 1180,
+     "n": "Mo'grosh Brute",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.024,
+     "z": [
+      "Loch Modan"
+     ],
+     "elite": true
+    },
+    {
+     "id": 4417,
+     "n": "Defias Taskmaster",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.024,
+     "z": [
+      "The Deadmines"
+     ],
+     "elite": true
+    },
+    {
+     "id": 4418,
+     "n": "Defias Wizard",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.024,
+     "z": [
+      "The Deadmines"
+     ],
+     "elite": true
+    },
+    {
+     "id": 1178,
+     "n": "Mo'grosh Ogre",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.023,
+     "z": [
+      "Loch Modan"
+     ],
+     "elite": true
+    },
+    {
+     "id": 1732,
+     "n": "Defias Squallshaper",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.023,
+     "z": [
+      "The Deadmines"
+     ],
+     "elite": true
+    },
+    {
+     "id": 1271,
+     "n": "Old Icebeard",
+     "l": [
+      11,
+      11
+     ],
+     "p": 0.022,
+     "z": [
+      "Dun Morogh"
+     ],
+     "elite": true
+    },
+    {
+     "id": 1729,
+     "n": "Defias Evoker",
+     "l": [
+      17,
+      18
+     ],
+     "p": 0.022,
+     "z": [
+      "The Deadmines"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3947,
+     "n": "Goblin Shipbuilder",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.022,
+     "z": [
+      "The Deadmines"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5912,
+     "n": "Deviate Faerie Dragon",
+     "l": [
+      20,
+      20
+     ],
+     "p": 0.022,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 636,
+     "n": "Defias Blackguard",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.021,
+     "z": [
+      "The Deadmines"
+     ],
+     "elite": true
+    },
+    {
+     "id": 657,
+     "n": "Defias Pirate",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.021,
+     "z": [
+      "The Deadmines"
+     ],
+     "elite": true
+    },
+    {
+     "id": 1183,
+     "n": "Mo'grosh Mystic",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.021,
+     "z": [
+      "Loch Modan"
+     ],
+     "elite": true
+    }
+   ],
+   "gather": {
+    "mined": [
+     "Copper Vein",
+     "Tin Vein",
+     "Silver Vein"
+    ],
+    "fished": [
+     "Stormwind City",
+     "Orgrimmar",
+     "Durotar",
+     "Stonetalon Mountains",
+     "Undercity"
+    ],
+    "inItem": [
+     "A Small Container of Gems",
+     "Sack of Gems",
+     "Bloated Mud Snapper",
+     "Bloated Catfish"
+    ]
+   }
+  },
+  "1529": {
+   "name": "Jade",
+   "drops": [
+    {
+     "id": 5915,
+     "n": "Brother Ravenoak",
+     "l": [
+      29,
+      29
+     ],
+     "p": 0.033,
+     "z": [
+      "Stonetalon Mountains"
+     ],
+     "elite": true
+    }
+   ],
+   "gather": {
+    "mined": [
+     "Tin Vein",
+     "Gold Vein",
+     "Iron Deposit",
+     "Ooze Covered Gold Vein"
+    ],
+    "fished": [
+     "Stranglethorn Vale"
+    ],
+    "inItem": [
+     "Gray Sack of Gems",
+     "Yellow Sack of Gems",
+     "Blue Sack of Gems",
+     "Red Sack of Gems"
+    ]
+   }
+  },
+  "2320": {
+   "name": "Coarse Thread",
+   "vendor": true
+  },
+  "2321": {
+   "name": "Fine Thread",
+   "vendor": true
+  },
+  "2325": {
+   "name": "Black Dye",
+   "vendor": true
+  },
+  "2457": {
+   "name": "Elixir of Minor Agility",
+   "craft": {
+    "prof": "alchemy",
+    "skill": 50,
+    "mats": [
+     [
+      2452,
+      1
+     ],
+     [
+      765,
+      1
+     ],
+     [
+      3371,
+      1
+     ]
+    ]
+   }
+  },
+  "2458": {
+   "name": "Elixir of Minor Fortitude",
+   "craft": {
+    "prof": "alchemy",
+    "skill": 50,
+    "mats": [
+     [
+      2449,
+      2
+     ],
+     [
+      2447,
+      1
+     ],
+     [
+      3371,
+      1
+     ]
+    ]
+   }
+  },
+  "2605": {
+   "name": "Green Dye",
+   "vendor": true
+  },
+  "3182": {
+   "name": "Spider's Silk",
+   "drops": [
+    {
+     "id": 2565,
+     "n": "Giant Plains Creeper",
+     "l": [
+      35,
+      36
+     ],
+     "p": 0.1,
+     "z": [
+      "Arathi Highlands"
+     ]
+    },
+    {
+     "id": 2563,
+     "n": "Plains Creeper",
+     "l": [
+      32,
+      33
+     ],
+     "p": 0.09,
+     "z": [
+      "Arathi Highlands"
+     ]
+    },
+    {
+     "id": 3821,
+     "n": "Wildthorn Lurker",
+     "l": [
+      28,
+      29
+     ],
+     "p": 0.071,
+     "z": [
+      "Ashenvale"
+     ]
+    },
+    {
+     "id": 2348,
+     "n": "Elder Moss Creeper",
+     "l": [
+      26,
+      27
+     ],
+     "p": 0.068,
+     "z": [
+      "Hillsbrad Foothills"
+     ]
+    },
+    {
+     "id": 930,
+     "n": "Black Widow Hatchling",
+     "l": [
+      20,
+      25
+     ],
+     "p": 0.061,
+     "z": [
+      "Duskwood"
+     ]
+    },
+    {
+     "id": 2349,
+     "n": "Giant Moss Creeper",
+     "l": [
+      24,
+      25
+     ],
+     "p": 0.06,
+     "z": [
+      "Hillsbrad Foothills",
+      "Alterac Mountains"
+     ]
+    },
+    {
+     "id": 4040,
+     "n": "Cave Stalker",
+     "l": [
+      21,
+      22
+     ],
+     "p": 0.06,
+     "z": [
+      "Wetlands"
+     ]
+    },
+    {
+     "id": 3820,
+     "n": "Wildthorn Venomspitter",
+     "l": [
+      24,
+      25
+     ],
+     "p": 0.057,
+     "z": [
+      "Ashenvale"
+     ]
+    },
+    {
+     "id": 3819,
+     "n": "Wildthorn Stalker",
+     "l": [
+      20,
+      21
+     ],
+     "p": 0.056,
+     "z": [
+      "Ashenvale",
+      "The Barrens"
+     ]
+    },
+    {
+     "id": 949,
+     "n": "Carrion Recluse",
+     "l": [
+      25,
+      26
+     ],
+     "p": 0.055,
+     "z": [
+      "Duskwood"
+     ]
+    },
+    {
+     "id": 2350,
+     "n": "Forest Moss Creeper",
+     "l": [
+      20,
+      21
+     ],
+     "p": 0.054,
+     "z": [
+      "Hillsbrad Foothills"
+     ]
+    },
+    {
+     "id": 1111,
+     "n": "Leech Stalker",
+     "l": [
+      21,
+      22
+     ],
+     "p": 0.052,
+     "z": [
+      "Wetlands"
+     ]
+    },
+    {
+     "id": 569,
+     "n": "Green Recluse",
+     "l": [
+      21,
+      22
+     ],
+     "p": 0.05,
+     "z": [
+      "Duskwood"
+     ]
+    },
+    {
+     "id": 4264,
+     "n": "Deepmoss Matriarch",
+     "l": [
+      22,
+      22
+     ],
+     "p": 0.05,
+     "z": [
+      "Stonetalon Mountains"
+     ]
+    },
+    {
+     "id": 221169,
+     "n": "Black Widow Broodmother",
+     "l": [
+      26,
+      26
+     ],
+     "p": 0.045,
+     "z": [
+      "Duskwood"
+     ]
+    },
+    {
+     "id": 4007,
+     "n": "Deepmoss Venomspitter",
+     "l": [
+      17,
+      18
+     ],
+     "p": 0.044,
+     "z": [
+      "Stonetalon Mountains"
+     ]
+    },
+    {
+     "id": 217,
+     "n": "Venom Web Spider",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.041,
+     "z": [
+      "Duskwood"
+     ]
+    },
+    {
+     "id": 4006,
+     "n": "Deepmoss Webspinner",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.04,
+     "z": [
+      "Stonetalon Mountains"
+     ]
+    },
+    {
+     "id": 505,
+     "n": "Greater Tarantula",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.039,
+     "z": [
+      "Redridge Mountains"
+     ]
+    },
+    {
+     "id": 539,
+     "n": "Pygmy Venom Web Spider",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.039,
+     "z": [
+      "Duskwood"
+     ]
+    },
+    {
+     "id": 11921,
+     "n": "Besseleth",
+     "l": [
+      21,
+      21
+     ],
+     "p": 0.035,
+     "z": [
+      "Stonetalon Mountains"
+     ],
+     "elite": true
+    },
+    {
+     "id": 4005,
+     "n": "Deepmoss Creeper",
+     "l": [
+      16,
+      17
+     ],
+     "p": 0.034,
+     "z": [
+      "Stonetalon Mountains"
+     ]
+    }
+   ]
+  },
+  "3389": {
+   "name": "Elixir of Lesser Defense",
+   "craft": {
+    "prof": "alchemy",
+    "skill": 130,
+    "mats": [
+     [
+      3355,
+      1
+     ],
+     [
+      3820,
+      1
+     ],
+     [
+      3372,
+      1
+     ]
+    ]
+   }
+  },
+  "3391": {
+   "name": "Elixir of Ogre Strength",
+   "craft": {
+    "prof": "alchemy",
+    "skill": 150,
+    "mats": [
+     [
+      2449,
+      1
+     ],
+     [
+      3356,
+      1
+     ],
+     [
+      3372,
+      1
+     ]
+    ]
+   }
+  },
+  "3824": {
+   "name": "Shadow Oil",
+   "craft": {
+    "prof": "alchemy",
+    "skill": 165,
+    "mats": [
+     [
+      3818,
+      4
+     ],
+     [
+      3369,
+      4
+     ],
+     [
+      3372,
+      1
+     ]
+    ]
+   },
+   "gather": {
+    "inItem": [
+     "Supply Bag"
+    ]
+   }
+  },
+  "3864": {
+   "name": "Citrine",
+   "drops": [
+    {
+     "id": 7030,
+     "n": "Shadowforge Geologist",
+     "l": [
+      40,
+      41
+     ],
+     "p": 0.021,
+     "z": [
+      "Uldaman"
+     ],
+     "elite": true
+    }
+   ],
+   "gather": {
+    "mined": [
+     "Gold Vein",
+     "Iron Deposit",
+     "Mithril Deposit",
+     "Truesilver Deposit"
+    ],
+    "fished": [
+     "The Hinterlands"
+    ],
+    "inItem": [
+     "Green Sack of Gems",
+     "Gray Sack of Gems",
+     "Red Sack of Gems",
+     "Blue Sack of Gems"
+    ]
+   }
+  },
+  "4289": {
+   "name": "Salt",
+   "vendor": true
+  },
+  "4291": {
+   "name": "Silken Thread",
+   "vendor": true
+  },
+  "4305": {
+   "name": "Bolt of Silk Cloth",
+   "craft": {
+    "prof": "tailoring",
+    "skill": 100,
+    "mats": [
+     [
+      4306,
+      4
+     ]
+    ]
+   },
+   "drops": [
+    {
+     "id": 223544,
+     "n": "Fel Interloper",
+     "l": [
+      45,
+      48
+     ],
+     "p": 0.113,
+     "z": [
+      "Blasted Lands",
+      "Feralas",
+      "Azshara"
+     ]
+    },
+    {
+     "id": 223543,
+     "n": "Fel Interloper",
+     "l": [
+      35,
+      38
+     ],
+     "p": 0.054,
+     "z": [
+      "Swamp of Sorrows",
+      "Desolace"
+     ]
+    }
+   ],
+   "gather": {
+    "fished": [
+     "Stranglethorn Vale"
+    ],
+    "inItem": [
+     "Iron Bound Trunk",
+     "Ironbound Locked Chest",
+     "Watertight Trunk",
+     "Sturdy Locked Chest"
+    ]
+   }
+  },
+  "4340": {
+   "name": "Gray Dye",
+   "vendor": true
+  },
+  "5116": {
+   "name": "Long Tail Feather",
+   "drops": [
+    {
+     "id": 4694,
+     "n": "Dread Ripper",
+     "l": [
+      39,
+      40
+     ],
+     "p": 0.273,
+     "z": [
+      "Desolace"
+     ]
+    },
+    {
+     "id": 2579,
+     "n": "Mesa Buzzard",
+     "l": [
+      34,
+      35
+     ],
+     "p": 0.253,
+     "z": [
+      "Arathi Highlands"
+     ]
+    },
+    {
+     "id": 213795,
+     "n": "Gharrik",
+     "l": [
+      40,
+      40
+     ],
+     "p": 0.25,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 4695,
+     "n": "Carrion Horror",
+     "l": [
+      35,
+      37
+     ],
+     "p": 0.249,
+     "z": [
+      "Desolace"
+     ]
+    },
+    {
+     "id": 2580,
+     "n": "Elder Mesa Buzzard",
+     "l": [
+      37,
+      38
+     ],
+     "p": 0.246,
+     "z": [
+      "Arathi Highlands"
+     ]
+    },
+    {
+     "id": 2830,
+     "n": "Buzzard",
+     "l": [
+      37,
+      39
+     ],
+     "p": 0.24,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 2831,
+     "n": "Giant Buzzard",
+     "l": [
+      39,
+      41
+     ],
+     "p": 0.238,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 4154,
+     "n": "Salt Flats Scavenger",
+     "l": [
+      30,
+      32
+     ],
+     "p": 0.229,
+     "z": [
+      "Thousand Needles"
+     ]
+    },
+    {
+     "id": 4158,
+     "n": "Salt Flats Vulture",
+     "l": [
+      32,
+      34
+     ],
+     "p": 0.227,
+     "z": [
+      "Thousand Needles"
+     ]
+    },
+    {
+     "id": 2829,
+     "n": "Starving Buzzard",
+     "l": [
+      35,
+      37
+     ],
+     "p": 0.199,
+     "z": [
+      "Badlands",
+      "Loch Modan"
+     ]
+    },
+    {
+     "id": 2578,
+     "n": "Young Mesa Buzzard",
+     "l": [
+      31,
+      32
+     ],
+     "p": 0.179,
+     "z": [
+      "Arathi Highlands"
+     ]
+    },
+    {
+     "id": 4026,
+     "n": "Bloodfury Windcaller",
+     "l": [
+      24,
+      25
+     ],
+     "p": 0.166,
+     "z": [
+      "Stonetalon Mountains"
+     ]
+    },
+    {
+     "id": 4025,
+     "n": "Bloodfury Ambusher",
+     "l": [
+      23,
+      24
+     ],
+     "p": 0.164,
+     "z": [
+      "Stonetalon Mountains"
+     ]
+    },
+    {
+     "id": 4022,
+     "n": "Bloodfury Harpy",
+     "l": [
+      23,
+      24
+     ],
+     "p": 0.163,
+     "z": [
+      "Stonetalon Mountains"
+     ]
+    },
+    {
+     "id": 4023,
+     "n": "Bloodfury Roguefeather",
+     "l": [
+      25,
+      26
+     ],
+     "p": 0.162,
+     "z": [
+      "Stonetalon Mountains"
+     ]
+    },
+    {
+     "id": 4024,
+     "n": "Bloodfury Slayer",
+     "l": [
+      25,
+      26
+     ],
+     "p": 0.162,
+     "z": [
+      "Stonetalon Mountains"
+     ]
+    },
+    {
+     "id": 4027,
+     "n": "Bloodfury Storm Witch",
+     "l": [
+      26,
+      27
+     ],
+     "p": 0.16,
+     "z": [
+      "Stonetalon Mountains"
+     ]
+    },
+    {
+     "id": 12676,
+     "n": "Sharptalon",
+     "l": [
+      31,
+      31
+     ],
+     "p": 0.155,
+     "z": [
+      "Ashenvale"
+     ],
+     "friend": "A"
+    },
+    {
+     "id": 462,
+     "n": "Vultros",
+     "l": [
+      26,
+      26
+     ],
+     "p": 0.123,
+     "z": [
+      "Westfall"
+     ],
+     "elite": true
+    },
+    {
+     "id": 211965,
+     "n": "Carrodin",
+     "l": [
+      25,
+      25
+     ],
+     "p": 0.116,
+     "z": [
+      "Wetlands"
+     ],
+     "elite": true
+    },
+    {
+     "id": 4692,
+     "n": "Dread Swoop",
+     "l": [
+      32,
+      33
+     ],
+     "p": 0.109,
+     "z": [
+      "Desolace"
+     ]
+    },
+    {
+     "id": 4693,
+     "n": "Dread Flyer",
+     "l": [
+      36,
+      37
+     ],
+     "p": 0.095,
+     "z": [
+      "Desolace"
+     ]
+    },
+    {
+     "id": 5930,
+     "n": "Sister Riven",
+     "l": [
+      28,
+      28
+     ],
+     "p": 0.056,
+     "z": [
+      "Stonetalon Mountains"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5362,
+     "n": "Northspring Harpy",
+     "l": [
+      48,
+      49
+     ],
+     "p": 0.046,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 221371,
+     "n": "Dreamspring Stormcaller",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.045,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 5363,
+     "n": "Northspring Roguefeather",
+     "l": [
+      48,
+      49
+     ],
+     "p": 0.043,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 5366,
+     "n": "Northspring Windcaller",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.042,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 221370,
+     "n": "Dreamspring Roguefeather",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.04,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 5364,
+     "n": "Northspring Slayer",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.038,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 12579,
+     "n": "Bloodfury Ripper",
+     "l": [
+      26,
+      26
+     ],
+     "p": 0.038,
+     "z": [
+      "Stonetalon Mountains"
+     ],
+     "elite": true
+    },
+    {
+     "id": 4104,
+     "n": "Screeching Windcaller",
+     "l": [
+      30,
+      30
+     ],
+     "p": 0.033,
+     "z": [
+      "Thousand Needles"
+     ]
+    },
+    {
+     "id": 4101,
+     "n": "Screeching Roguefeather",
+     "l": [
+      29,
+      30
+     ],
+     "p": 0.026,
+     "z": [
+      "Thousand Needles"
+     ]
+    },
+    {
+     "id": 4100,
+     "n": "Screeching Harpy",
+     "l": [
+      28,
+      29
+     ],
+     "p": 0.024,
+     "z": [
+      "Thousand Needles"
+     ]
+    }
+   ]
+  },
+  "5498": {
+   "name": "Small Lustrous Pearl",
+   "drops": [
+    {
+     "id": 3454,
+     "n": "Cannoneer Smythe",
+     "l": [
+      19,
+      19
+     ],
+     "p": 0.06,
+     "z": [
+      "The Barrens"
+     ]
+    },
+    {
+     "id": 3455,
+     "n": "Cannoneer Whessan",
+     "l": [
+      19,
+      19
+     ],
+     "p": 0.053,
+     "z": [
+      "The Barrens"
+     ]
+    },
+    {
+     "id": 3386,
+     "n": "Theramore Preserver",
+     "l": [
+      16,
+      17
+     ],
+     "p": 0.04,
+     "z": [
+      "The Barrens"
+     ],
+     "friend": "A"
+    },
+    {
+     "id": 3381,
+     "n": "Southsea Brigand",
+     "l": [
+      12,
+      13
+     ],
+     "p": 0.039,
+     "z": [
+      "The Barrens"
+     ]
+    },
+    {
+     "id": 3382,
+     "n": "Southsea Cannoneer",
+     "l": [
+      13,
+      14
+     ],
+     "p": 0.039,
+     "z": [
+      "The Barrens"
+     ]
+    },
+    {
+     "id": 3383,
+     "n": "Southsea Cutthroat",
+     "l": [
+      14,
+      15
+     ],
+     "p": 0.038,
+     "z": [
+      "The Barrens"
+     ]
+    },
+    {
+     "id": 3393,
+     "n": "Captain Fairmount",
+     "l": [
+      20,
+      20
+     ],
+     "p": 0.038,
+     "z": [
+      "The Barrens"
+     ]
+    },
+    {
+     "id": 3385,
+     "n": "Theramore Marine",
+     "l": [
+      15,
+      16
+     ],
+     "p": 0.034,
+     "z": [
+      "The Barrens"
+     ],
+     "friend": "A"
+    },
+    {
+     "id": 3384,
+     "n": "Southsea Privateer",
+     "l": [
+      14,
+      15
+     ],
+     "p": 0.033,
+     "z": [
+      "The Barrens"
+     ]
+    },
+    {
+     "id": 3467,
+     "n": "Baron Longshore",
+     "l": [
+      16,
+      16
+     ],
+     "p": 0.024,
+     "z": [
+      "The Barrens"
+     ]
+    }
+   ],
+   "gather": {
+    "fished": [
+     "Azshara",
+     "Feralas"
+    ],
+    "inItem": [
+     "A Small Container of Gems",
+     "Sack of Gems",
+     "Small Barnacled Clam",
+     "Thick-shelled Clam"
+    ]
+   }
+  },
+  "5500": {
+   "name": "Iridescent Pearl",
+   "gather": {
+    "fished": [
+     "Azshara",
+     "Feralas",
+     "The Hinterlands",
+     "Tanaris"
+    ],
+    "inItem": [
+     "A Small Container of Gems",
+     "Sack of Gems",
+     "Thaurissan Family Jewels",
+     "Thick-shelled Clam"
+    ]
+   }
+  },
+  "5784": {
+   "name": "Slimy Murloc Scale",
+   "drops": [
+    {
+     "id": 1029,
+     "n": "Bluegill Oracle",
+     "l": [
+      25,
+      26
+     ],
+     "p": 0.278,
+     "z": [
+      "Wetlands"
+     ]
+    },
+    {
+     "id": 1027,
+     "n": "Bluegill Warrior",
+     "l": [
+      24,
+      25
+     ],
+     "p": 0.268,
+     "z": [
+      "Wetlands"
+     ]
+    },
+    {
+     "id": 1028,
+     "n": "Bluegill Muckdweller",
+     "l": [
+      23,
+      24
+     ],
+     "p": 0.255,
+     "z": [
+      "Wetlands"
+     ]
+    },
+    {
+     "id": 10323,
+     "n": "Murkdeep",
+     "l": [
+      19,
+      19
+     ],
+     "p": 0.252,
+     "z": [
+      "Darkshore"
+     ]
+    },
+    {
+     "id": 1026,
+     "n": "Bluegill Forager",
+     "l": [
+      22,
+      23
+     ],
+     "p": 0.241,
+     "z": [
+      "Wetlands"
+     ]
+    },
+    {
+     "id": 1908,
+     "n": "Vile Fin Oracle",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.241,
+     "z": [
+      "Silverpine Forest"
+     ]
+    },
+    {
+     "id": 1025,
+     "n": "Bluegill Puddlejumper",
+     "l": [
+      21,
+      22
+     ],
+     "p": 0.24,
+     "z": [
+      "Wetlands"
+     ]
+    },
+    {
+     "id": 4819,
+     "n": "Blindlight Muckdweller",
+     "l": [
+      25,
+      26
+     ],
+     "p": 0.24,
+     "z": [
+      "Blackfathom Deeps"
+     ],
+     "elite": true
+    },
+    {
+     "id": 127,
+     "n": "Murloc Tidehunter",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.236,
+     "z": [
+      "Westfall"
+     ]
+    },
+    {
+     "id": 4820,
+     "n": "Blindlight Oracle",
+     "l": [
+      25,
+      26
+     ],
+     "p": 0.236,
+     "z": [
+      "Blackfathom Deeps"
+     ],
+     "elite": true
+    },
+    {
+     "id": 1909,
+     "n": "Vile Fin Lakestalker",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.233,
+     "z": [
+      "Silverpine Forest"
+     ]
+    },
+    {
+     "id": 2208,
+     "n": "Greymist Tidehunter",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.233,
+     "z": [
+      "Darkshore"
+     ]
+    },
+    {
+     "id": 1957,
+     "n": "Vile Fin Shorecreeper",
+     "l": [
+      16,
+      17
+     ],
+     "p": 0.228,
+     "z": [
+      "Silverpine Forest",
+      "Alterac Mountains"
+     ]
+    },
+    {
+     "id": 1024,
+     "n": "Bluegill Murloc",
+     "l": [
+      20,
+      21
+     ],
+     "p": 0.226,
+     "z": [
+      "Wetlands"
+     ]
+    },
+    {
+     "id": 2207,
+     "n": "Greymist Oracle",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.226,
+     "z": [
+      "Darkshore"
+     ]
+    },
+    {
+     "id": 517,
+     "n": "Murloc Oracle",
+     "l": [
+      17,
+      18
+     ],
+     "p": 0.225,
+     "z": [
+      "Westfall"
+     ]
+    },
+    {
+     "id": 458,
+     "n": "Murloc Hunter",
+     "l": [
+      16,
+      17
+     ],
+     "p": 0.222,
+     "z": [
+      "Westfall"
+     ]
+    },
+    {
+     "id": 3739,
+     "n": "Saltspittle Warrior",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.216,
+     "z": [
+      "Ashenvale"
+     ]
+    },
+    {
+     "id": 4818,
+     "n": "Blindlight Murloc",
+     "l": [
+      22,
+      25
+     ],
+     "p": 0.215,
+     "z": [
+      "Blackfathom Deeps"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3742,
+     "n": "Saltspittle Oracle",
+     "l": [
+      20,
+      21
+     ],
+     "p": 0.213,
+     "z": [
+      "Ashenvale"
+     ]
+    },
+    {
+     "id": 544,
+     "n": "Murloc Nightcrawler",
+     "l": [
+      21,
+      22
+     ],
+     "p": 0.212,
+     "z": [
+      "Redridge Mountains"
+     ]
+    },
+    {
+     "id": 14270,
+     "n": "Squiddic",
+     "l": [
+      19,
+      19
+     ],
+     "p": 0.211,
+     "z": [
+      "Redridge Mountains"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3737,
+     "n": "Saltspittle Puddlejumper",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.21,
+     "z": [
+      "Ashenvale"
+     ]
+    },
+    {
+     "id": 1958,
+     "n": "Vile Fin Tidecaller",
+     "l": [
+      17,
+      18
+     ],
+     "p": 0.209,
+     "z": [
+      "Silverpine Forest",
+      "Alterac Mountains"
+     ]
+    },
+    {
+     "id": 2206,
+     "n": "Greymist Hunter",
+     "l": [
+      16,
+      17
+     ],
+     "p": 0.207,
+     "z": [
+      "Darkshore"
+     ]
+    },
+    {
+     "id": 3740,
+     "n": "Saltspittle Muckdweller",
+     "l": [
+      20,
+      21
+     ],
+     "p": 0.207,
+     "z": [
+      "Ashenvale"
+     ]
+    },
+    {
+     "id": 578,
+     "n": "Murloc Scout",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.203,
+     "z": [
+      "Redridge Mountains"
+     ]
+    },
+    {
+     "id": 171,
+     "n": "Murloc Warrior",
+     "l": [
+      15,
+      16
+     ],
+     "p": 0.199,
+     "z": [
+      "Westfall"
+     ]
+    },
+    {
+     "id": 2205,
+     "n": "Greymist Warrior",
+     "l": [
+      15,
+      16
+     ],
+     "p": 0.198,
+     "z": [
+      "Darkshore"
+     ]
+    },
+    {
+     "id": 545,
+     "n": "Murloc Tidecaller",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.197,
+     "z": [
+      "Redridge Mountains"
+     ]
+    },
+    {
+     "id": 422,
+     "n": "Murloc Flesheater",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.195,
+     "z": [
+      "Redridge Mountains"
+     ]
+    },
+    {
+     "id": 548,
+     "n": "Murloc Minor Tidecaller",
+     "l": [
+      17,
+      18
+     ],
+     "p": 0.186,
+     "z": [
+      "Redridge Mountains"
+     ]
+    },
+    {
+     "id": 391,
+     "n": "Old Murk-Eye",
+     "l": [
+      20,
+      20
+     ],
+     "p": 0.176,
+     "z": [
+      "Westfall"
+     ]
+    },
+    {
+     "id": 1083,
+     "n": "Murloc Shorestriker",
+     "l": [
+      16,
+      17
+     ],
+     "p": 0.176,
+     "z": [
+      "Redridge Mountains"
+     ]
+    },
+    {
+     "id": 520,
+     "n": "Brack",
+     "l": [
+      19,
+      19
+     ],
+     "p": 0.171,
+     "z": [
+      "Westfall"
+     ],
+     "elite": true
+    },
+    {
+     "id": 1259,
+     "n": "Gobbler",
+     "l": [
+      22,
+      22
+     ],
+     "p": 0.168,
+     "z": [
+      "Wetlands"
+     ]
+    },
+    {
+     "id": 7015,
+     "n": "Flagglemurk the Cruel",
+     "l": [
+      16,
+      16
+     ],
+     "p": 0.167,
+     "z": [
+      "Darkshore"
+     ],
+     "elite": true
+    },
+    {
+     "id": 645,
+     "n": "Cookie",
+     "l": [
+      20,
+      20
+     ],
+     "p": 0.11,
+     "z": [
+      "The Deadmines"
+     ],
+     "elite": true
+    },
+    {
+     "id": 6243,
+     "n": "Gelihast",
+     "l": [
+      26,
+      26
+     ],
+     "p": 0.106,
+     "z": [
+      "Blackfathom Deeps"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3654,
+     "n": "Mutanus the Devourer",
+     "l": [
+      22,
+      22
+     ],
+     "p": 0.093,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    }
+   ]
+  },
+  "6470": {
+   "name": "Deviate Scale",
+   "drops": [
+    {
+     "id": 5762,
+     "n": "Deviate Moccasin",
+     "l": [
+      20,
+      21
+     ],
+     "p": 0.139,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5761,
+     "n": "Deviate Shambler",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.1,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5048,
+     "n": "Deviate Adder",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.09,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 3630,
+     "n": "Deviate Coiler",
+     "l": [
+      15,
+      16
+     ],
+     "p": 0.085,
+     "z": [
+      "The Barrens"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5056,
+     "n": "Deviate Dreadfang",
+     "l": [
+      20,
+      21
+     ],
+     "p": 0.082,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 3632,
+     "n": "Deviate Creeper",
+     "l": [
+      15,
+      16
+     ],
+     "p": 0.081,
+     "z": [
+      "The Barrens"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 3637,
+     "n": "Deviate Guardian",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.08,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 8886,
+     "n": "Deviate Python",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.08,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "skin": true
+    },
+    {
+     "id": 3634,
+     "n": "Deviate Stalker",
+     "l": [
+      15,
+      17
+     ],
+     "p": 0.08,
+     "z": [
+      "The Barrens"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5756,
+     "n": "Deviate Venomwing",
+     "l": [
+      20,
+      21
+     ],
+     "p": 0.079,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 3630,
+     "n": "Deviate Coiler",
+     "l": [
+      15,
+      16
+     ],
+     "p": 0.076,
+     "z": [
+      "The Barrens"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3636,
+     "n": "Deviate Ravager",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.075,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 3632,
+     "n": "Deviate Creeper",
+     "l": [
+      15,
+      16
+     ],
+     "p": 0.074,
+     "z": [
+      "The Barrens"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3634,
+     "n": "Deviate Stalker",
+     "l": [
+      15,
+      17
+     ],
+     "p": 0.072,
+     "z": [
+      "The Barrens"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3637,
+     "n": "Deviate Guardian",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.068,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5053,
+     "n": "Deviate Crocolisk",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.068,
+     "z": [
+      "Wailing Caverns"
+     ]
+    },
+    {
+     "id": 5755,
+     "n": "Deviate Viper",
+     "l": [
+      19,
+      20
+     ],
+     "p": 0.067,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5762,
+     "n": "Deviate Moccasin",
+     "l": [
+      20,
+      21
+     ],
+     "p": 0.066,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3636,
+     "n": "Deviate Ravager",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.065,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5056,
+     "n": "Deviate Dreadfang",
+     "l": [
+      20,
+      21
+     ],
+     "p": 0.065,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5756,
+     "n": "Deviate Venomwing",
+     "l": [
+      20,
+      21
+     ],
+     "p": 0.064,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5048,
+     "n": "Deviate Adder",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.063,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3653,
+     "n": "Kresh",
+     "l": [
+      20,
+      20
+     ],
+     "p": 0.056,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5775,
+     "n": "Verdan the Everliving",
+     "l": [
+      21,
+      21
+     ],
+     "p": 0.036,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5912,
+     "n": "Deviate Faerie Dragon",
+     "l": [
+      20,
+      20
+     ],
+     "p": 0.035,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 8886,
+     "n": "Deviate Python",
+     "l": [
+      18,
+      19
+     ],
+     "p": 0.032,
+     "z": [
+      "Wailing Caverns"
+     ]
+    },
+    {
+     "id": 3674,
+     "n": "Skum",
+     "l": [
+      21,
+      21
+     ],
+     "p": 0.031,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3654,
+     "n": "Mutanus the Devourer",
+     "l": [
+      22,
+      22
+     ],
+     "p": 0.027,
+     "z": [
+      "Wailing Caverns"
+     ],
+     "elite": true
+    }
+   ],
+   "gather": {
+    "fished": [
+     "The Barrens",
+     "Undercity",
+     "Ashenvale",
+     "Thousand Needles"
+    ]
+   }
+  },
+  "7067": {
+   "name": "Elemental Earth",
+   "drops": [
+    {
+     "id": 228722,
+     "n": "Infernus Siege Giant",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.129,
+     "z": [
+      "Searing Gorge"
+     ],
+     "elite": true
+    },
+    {
+     "id": 228729,
+     "n": "Duke Tectonis",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.104,
+     "z": [
+      "Searing Gorge"
+     ],
+     "elite": true
+    },
+    {
+     "id": 2592,
+     "n": "Rumbling Exile",
+     "l": [
+      38,
+      39
+     ],
+     "p": 0.099,
+     "z": [
+      "Arathi Highlands"
+     ]
+    },
+    {
+     "id": 92,
+     "n": "Rock Elemental",
+     "l": [
+      39,
+      40
+     ],
+     "p": 0.096,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 2735,
+     "n": "Lesser Rock Elemental",
+     "l": [
+      37,
+      39
+     ],
+     "p": 0.088,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 2258,
+     "n": "Stone Fury",
+     "l": [
+      37,
+      37
+     ],
+     "p": 0.084,
+     "z": [
+      "Alterac Mountains"
+     ],
+     "elite": true
+    },
+    {
+     "id": 2359,
+     "n": "Elemental Slave",
+     "l": [
+      33,
+      34
+     ],
+     "p": 0.071,
+     "z": [
+      "Alterac Mountains"
+     ],
+     "friend": "A"
+    },
+    {
+     "id": 11747,
+     "n": "Desert Rager",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.06,
+     "z": [
+      "Silithus"
+     ]
+    },
+    {
+     "id": 228725,
+     "n": "Firesworn",
+     "l": [
+      60,
+      61
+     ],
+     "p": 0.057,
+     "z": [
+      "Burning Steppes"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7031,
+     "n": "Obsidian Elemental",
+     "l": [
+      51,
+      53
+     ],
+     "p": 0.053,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 4120,
+     "n": "Thundering Boulderkin",
+     "l": [
+      28,
+      29
+     ],
+     "p": 0.05,
+     "z": [
+      "Thousand Needles"
+     ]
+    },
+    {
+     "id": 2791,
+     "n": "Enraged Rock Elemental",
+     "l": [
+      42,
+      43
+     ],
+     "p": 0.049,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 7032,
+     "n": "Greater Obsidian Elemental",
+     "l": [
+      55,
+      57
+     ],
+     "p": 0.049,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 11746,
+     "n": "Desert Rumbler",
+     "l": [
+      56,
+      58
+     ],
+     "p": 0.049,
+     "z": [
+      "Silithus"
+     ]
+    },
+    {
+     "id": 2736,
+     "n": "Greater Rock Elemental",
+     "l": [
+      42,
+      44
+     ],
+     "p": 0.048,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 9396,
+     "n": "Ground Pounder",
+     "l": [
+      41,
+      43
+     ],
+     "p": 0.048,
+     "z": [
+      "Tanaris"
+     ]
+    },
+    {
+     "id": 4035,
+     "n": "Furious Stone Spirit",
+     "l": [
+      26,
+      27
+     ],
+     "p": 0.047,
+     "z": [
+      "Stonetalon Mountains"
+     ]
+    },
+    {
+     "id": 14462,
+     "n": "Thundering Invader",
+     "l": [
+      55,
+      57
+     ],
+     "p": 0.047,
+     "z": [
+      "Azshara"
+     ]
+    },
+    {
+     "id": 2919,
+     "n": "Fam'retor Guardian",
+     "l": [
+      45,
+      45
+     ],
+     "p": 0.046,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 4499,
+     "n": "Rok'Alim the Pounder",
+     "l": [
+      30,
+      30
+     ],
+     "p": 0.044,
+     "z": [
+      "Thousand Needles"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5465,
+     "n": "Land Rager",
+     "l": [
+      45,
+      47
+     ],
+     "p": 0.043,
+     "z": [
+      "Tanaris"
+     ]
+    },
+    {
+     "id": 11783,
+     "n": "Theradrim Shardling",
+     "l": [
+      46,
+      46
+     ],
+     "p": 0.041,
+     "z": [
+      "Maraudon"
+     ]
+    },
+    {
+     "id": 228723,
+     "n": "Obsidian Reaver",
+     "l": [
+      56,
+      60
+     ],
+     "p": 0.04,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 11784,
+     "n": "Theradrim Guardian",
+     "l": [
+      47,
+      48
+     ],
+     "p": 0.039,
+     "z": [
+      "Maraudon"
+     ],
+     "elite": true
+    },
+    {
+     "id": 4034,
+     "n": "Enraged Stone Spirit",
+     "l": [
+      24,
+      25
+     ],
+     "p": 0.035,
+     "z": [
+      "Stonetalon Mountains"
+     ]
+    },
+    {
+     "id": 11777,
+     "n": "Shadowshard Rumbler",
+     "l": [
+      40,
+      41
+     ],
+     "p": 0.029,
+     "z": [
+      "Desolace"
+     ],
+     "elite": true
+    },
+    {
+     "id": 11778,
+     "n": "Shadowshard Smasher",
+     "l": [
+      41,
+      42
+     ],
+     "p": 0.028,
+     "z": [
+      "Desolace"
+     ],
+     "elite": true
+    },
+    {
+     "id": 228911,
+     "n": "Searing Infernal",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.026,
+     "z": [
+      "Demon Fall Canyon"
+     ],
+     "elite": true
+    },
+    {
+     "id": 228910,
+     "n": "Hulking Infernal",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.025,
+     "z": [
+      "Demon Fall Canyon"
+     ],
+     "elite": true
+    },
+    {
+     "id": 228724,
+     "n": "Obsidian Surger",
+     "l": [
+      55,
+      58
+     ],
+     "p": 0.024,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 9016,
+     "n": "Bael'Gar",
+     "l": [
+      54,
+      54
+     ],
+     "p": 0.021,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "elite": true,
+     "friend": "A"
+    }
+   ],
+   "gather": {
+    "mined": [
+     "Small Thorium Vein",
+     "Mithril Deposit",
+     "Truesilver Deposit",
+     "Ooze Covered Thorium Vein"
+    ],
+    "inItem": [
+     "Bag of Spoils",
+     "Ziri's Mystery Crate"
+    ]
+   }
+  },
+  "7069": {
+   "name": "Elemental Air",
+   "drops": [
+    {
+     "id": 2762,
+     "n": "Thundering Exile",
+     "l": [
+      38,
+      39
+     ],
+     "p": 0.129,
+     "z": [
+      "Arathi Highlands"
+     ]
+    },
+    {
+     "id": 9377,
+     "n": "Swirling Vortex",
+     "l": [
+      33,
+      34
+     ],
+     "p": 0.125,
+     "z": [
+      "Thousand Needles"
+     ]
+    },
+    {
+     "id": 11576,
+     "n": "Whirlwind Ripper",
+     "l": [
+      32,
+      34
+     ],
+     "p": 0.124,
+     "z": [
+      "Desolace"
+     ]
+    },
+    {
+     "id": 11577,
+     "n": "Whirlwind Stormwalker",
+     "l": [
+      35,
+      37
+     ],
+     "p": 0.12,
+     "z": [
+      "Desolace"
+     ]
+    },
+    {
+     "id": 11578,
+     "n": "Whirlwind Shredder",
+     "l": [
+      32,
+      34
+     ],
+     "p": 0.108,
+     "z": [
+      "Desolace"
+     ]
+    },
+    {
+     "id": 8667,
+     "n": "Gusting Vortex",
+     "l": [
+      43,
+      45
+     ],
+     "p": 0.073,
+     "z": [
+      "Tanaris"
+     ]
+    },
+    {
+     "id": 9397,
+     "n": "Living Storm",
+     "l": [
+      47,
+      49
+     ],
+     "p": 0.063,
+     "z": [
+      "Tanaris"
+     ]
+    },
+    {
+     "id": 11744,
+     "n": "Dust Stormer",
+     "l": [
+      55,
+      57
+     ],
+     "p": 0.062,
+     "z": [
+      "Silithus"
+     ]
+    },
+    {
+     "id": 14455,
+     "n": "Whirling Invader",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.045,
+     "z": [
+      "Silithus"
+     ]
+    },
+    {
+     "id": 11745,
+     "n": "Cyclone Warrior",
+     "l": [
+      57,
+      59
+     ],
+     "p": 0.043,
+     "z": [
+      "Silithus"
+     ]
+    },
+    {
+     "id": 231868,
+     "n": "Cyclone Imperator",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.026,
+     "z": [
+      "The Crystal Vale"
+     ],
+     "elite": true
+    }
+   ],
+   "gather": {
+    "inItem": [
+     "Bag of Spoils"
+    ]
+   }
+  },
+  "7070": {
+   "name": "Elemental Water",
+   "drops": [
+    {
+     "id": 14269,
+     "n": "Seeker Aqualon",
+     "l": [
+      21,
+      21
+     ],
+     "p": 0.367,
+     "z": [
+      "Redridge Mountains"
+     ],
+     "elite": true
+    },
+    {
+     "id": 13280,
+     "n": "Hydrospawn",
+     "l": [
+      57,
+      57
+     ],
+     "p": 0.22,
+     "z": [
+      "Dire Maul"
+     ],
+     "elite": true
+    },
+    {
+     "id": 2761,
+     "n": "Cresting Exile",
+     "l": [
+      38,
+      39
+     ],
+     "p": 0.103,
+     "z": [
+      "Arathi Highlands"
+     ]
+    },
+    {
+     "id": 691,
+     "n": "Lesser Water Elemental",
+     "l": [
+      36,
+      37
+     ],
+     "p": 0.091,
+     "z": [
+      "Stranglethorn Vale"
+     ]
+    },
+    {
+     "id": 5461,
+     "n": "Sea Elemental",
+     "l": [
+      48,
+      49
+     ],
+     "p": 0.071,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 8837,
+     "n": "Muck Splash",
+     "l": [
+      47,
+      49
+     ],
+     "p": 0.066,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 10756,
+     "n": "Scalding Elemental",
+     "l": [
+      28,
+      29
+     ],
+     "p": 0.064,
+     "z": [
+      "Thousand Needles"
+     ]
+    },
+    {
+     "id": 5462,
+     "n": "Sea Spray",
+     "l": [
+      47,
+      48
+     ],
+     "p": 0.062,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 8519,
+     "n": "Blighted Surge",
+     "l": [
+      54,
+      55
+     ],
+     "p": 0.06,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 8520,
+     "n": "Plague Ravager",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.059,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 8521,
+     "n": "Blighted Horror",
+     "l": [
+      56,
+      57
+     ],
+     "p": 0.058,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 8522,
+     "n": "Plague Monstrosity",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.058,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 7132,
+     "n": "Toxic Horror",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.055,
+     "z": [
+      "Felwood"
+     ]
+    },
+    {
+     "id": 4978,
+     "n": "Aku'mai Servant",
+     "l": [
+      26,
+      26
+     ],
+     "p": 0.052,
+     "z": [
+      "Blackfathom Deeps"
+     ],
+     "elite": true
+    },
+    {
+     "id": 6220,
+     "n": "Irradiated Horror",
+     "l": [
+      28,
+      40
+     ],
+     "p": 0.052,
+     "z": [
+      "Gnomeregan"
+     ],
+     "elite": true
+    },
+    {
+     "id": 10757,
+     "n": "Boiling Elemental",
+     "l": [
+      27,
+      28
+     ],
+     "p": 0.052,
+     "z": [
+      "Thousand Needles"
+     ]
+    },
+    {
+     "id": 13696,
+     "n": "Noxxious Scion",
+     "l": [
+      46,
+      46
+     ],
+     "p": 0.049,
+     "z": [
+      "Maraudon"
+     ]
+    },
+    {
+     "id": 14458,
+     "n": "Watery Invader",
+     "l": [
+      56,
+      58
+     ],
+     "p": 0.044,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 12759,
+     "n": "Tideress",
+     "l": [
+      27,
+      27
+     ],
+     "p": 0.036,
+     "z": [
+      "Ashenvale"
+     ]
+    },
+    {
+     "id": 226982,
+     "n": "Frijidar",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.036,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "friend": "A"
+    },
+    {
+     "id": 212837,
+     "n": "Primordial Anomaly",
+     "l": [
+      25,
+      25
+     ],
+     "p": 0.029,
+     "z": [
+      "Stonetalon Mountains"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7079,
+     "n": "Viscous Fallout",
+     "l": [
+      30,
+      30
+     ],
+     "p": 0.027,
+     "z": [
+      "Gnomeregan"
+     ],
+     "elite": true
+    },
+    {
+     "id": 3917,
+     "n": "Befouled Water Elemental",
+     "l": [
+      23,
+      25
+     ],
+     "p": 0.022,
+     "z": [
+      "Ashenvale"
+     ]
+    },
+    {
+     "id": 13282,
+     "n": "Noxxion",
+     "l": [
+      48,
+      48
+     ],
+     "p": 0.021,
+     "z": [
+      "Maraudon"
+     ],
+     "elite": true
+    }
+   ],
+   "gather": {
+    "fished": [
+     "Azshara"
+    ],
+    "inItem": [
+     "Bag of Spoils",
+     "Ziri's Mystery Crate"
+    ]
+   }
+  },
+  "7071": {
+   "name": "Iron Buckle",
+   "craft": {
+    "prof": "blacksmithing",
+    "skill": 125,
+    "mats": [
+     [
+      3575,
+      1
+     ]
+    ]
+   }
+  },
+  "7075": {
+   "name": "Core of Earth",
+   "drops": [
+    {
+     "id": 7031,
+     "n": "Obsidian Elemental",
+     "l": [
+      51,
+      53
+     ],
+     "p": 0.052,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 7032,
+     "n": "Greater Obsidian Elemental",
+     "l": [
+      55,
+      57
+     ],
+     "p": 0.052,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 11746,
+     "n": "Desert Rumbler",
+     "l": [
+      56,
+      58
+     ],
+     "p": 0.049,
+     "z": [
+      "Silithus"
+     ]
+    },
+    {
+     "id": 14462,
+     "n": "Thundering Invader",
+     "l": [
+      55,
+      57
+     ],
+     "p": 0.048,
+     "z": [
+      "Azshara"
+     ]
+    },
+    {
+     "id": 2919,
+     "n": "Fam'retor Guardian",
+     "l": [
+      45,
+      45
+     ],
+     "p": 0.045,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 11747,
+     "n": "Desert Rager",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.042,
+     "z": [
+      "Silithus"
+     ]
+    },
+    {
+     "id": 11784,
+     "n": "Theradrim Guardian",
+     "l": [
+      47,
+      48
+     ],
+     "p": 0.04,
+     "z": [
+      "Maraudon"
+     ],
+     "elite": true
+    },
+    {
+     "id": 228723,
+     "n": "Obsidian Reaver",
+     "l": [
+      56,
+      60
+     ],
+     "p": 0.039,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 228729,
+     "n": "Duke Tectonis",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.033,
+     "z": [
+      "Searing Gorge"
+     ],
+     "elite": true
+    },
+    {
+     "id": 11783,
+     "n": "Theradrim Shardling",
+     "l": [
+      46,
+      46
+     ],
+     "p": 0.032,
+     "z": [
+      "Maraudon"
+     ]
+    },
+    {
+     "id": 9396,
+     "n": "Ground Pounder",
+     "l": [
+      41,
+      43
+     ],
+     "p": 0.029,
+     "z": [
+      "Tanaris"
+     ]
+    },
+    {
+     "id": 5465,
+     "n": "Land Rager",
+     "l": [
+      45,
+      47
+     ],
+     "p": 0.027,
+     "z": [
+      "Tanaris"
+     ]
+    },
+    {
+     "id": 228724,
+     "n": "Obsidian Surger",
+     "l": [
+      55,
+      58
+     ],
+     "p": 0.026,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 228910,
+     "n": "Hulking Infernal",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.022,
+     "z": [
+      "Demon Fall Canyon"
+     ],
+     "elite": true
+    },
+    {
+     "id": 228911,
+     "n": "Searing Infernal",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.021,
+     "z": [
+      "Demon Fall Canyon"
+     ],
+     "elite": true
+    }
+   ],
+   "gather": {
+    "inItem": [
+     "Sack of Spoils"
+    ]
+   }
+  },
+  "7077": {
+   "name": "Heart of Fire",
+   "drops": [
+    {
+     "id": 9878,
+     "n": "Entropic Beast",
+     "l": [
+      51,
+      52
+     ],
+     "p": 0.065,
+     "z": [
+      "Felwood"
+     ]
+    },
+    {
+     "id": 9879,
+     "n": "Entropic Horror",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.065,
+     "z": [
+      "Felwood"
+     ]
+    },
+    {
+     "id": 8281,
+     "n": "Scald",
+     "l": [
+      49,
+      49
+     ],
+     "p": 0.058,
+     "z": [
+      "Searing Gorge"
+     ],
+     "elite": true
+    },
+    {
+     "id": 6520,
+     "n": "Scorching Elemental",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.057,
+     "z": [
+      "Un'Goro Crater"
+     ]
+    },
+    {
+     "id": 6521,
+     "n": "Living Blaze",
+     "l": [
+      54,
+      55
+     ],
+     "p": 0.057,
+     "z": [
+      "Un'Goro Crater"
+     ]
+    },
+    {
+     "id": 8909,
+     "n": "Fireguard",
+     "l": [
+      50,
+      52
+     ],
+     "p": 0.051,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "elite": true
+    },
+    {
+     "id": 8910,
+     "n": "Blazing Fireguard",
+     "l": [
+      52,
+      54
+     ],
+     "p": 0.05,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "elite": true
+    },
+    {
+     "id": 14460,
+     "n": "Blazing Invader",
+     "l": [
+      54,
+      56
+     ],
+     "p": 0.049,
+     "z": [
+      "Un'Goro Crater"
+     ]
+    },
+    {
+     "id": 8911,
+     "n": "Fireguard Destroyer",
+     "l": [
+      54,
+      56
+     ],
+     "p": 0.047,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5852,
+     "n": "Inferno Elemental",
+     "l": [
+      47,
+      49
+     ],
+     "p": 0.045,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 228719,
+     "n": "Firelands Drudge",
+     "l": [
+      56,
+      57
+     ],
+     "p": 0.037,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 5850,
+     "n": "Blazing Elemental",
+     "l": [
+      45,
+      47
+     ],
+     "p": 0.034,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 5855,
+     "n": "Magma Elemental",
+     "l": [
+      46,
+      48
+     ],
+     "p": 0.033,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 228718,
+     "n": "Firelands Invader",
+     "l": [
+      54,
+      55
+     ],
+     "p": 0.032,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 228722,
+     "n": "Infernus Siege Giant",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.032,
+     "z": [
+      "Searing Gorge"
+     ],
+     "elite": true
+    },
+    {
+     "id": 224386,
+     "n": "Fireguard Destroyer",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.028,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "elite": true
+    },
+    {
+     "id": 11663,
+     "n": "Flamewaker Healer",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.026,
+     "z": [
+      "Molten Core"
+     ],
+     "elite": true
+    },
+    {
+     "id": 228720,
+     "n": "Duke Searbrand",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.024,
+     "z": [
+      "Searing Gorge"
+     ],
+     "elite": true
+    },
+    {
+     "id": 11664,
+     "n": "Flamewaker Elite",
+     "l": [
+      61,
+      62
+     ],
+     "p": 0.022,
+     "z": [
+      "Molten Core"
+     ],
+     "elite": true
+    }
+   ],
+   "gather": {
+    "inItem": [
+     "Otherworldly Treasure",
+     "Sack of Spoils"
+    ]
+   }
+  },
+  "7079": {
+   "name": "Globe of Water",
+   "drops": [
+    {
+     "id": 13280,
+     "n": "Hydrospawn",
+     "l": [
+      57,
+      57
+     ],
+     "p": 0.143,
+     "z": [
+      "Dire Maul"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7132,
+     "n": "Toxic Horror",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.077,
+     "z": [
+      "Felwood"
+     ]
+    },
+    {
+     "id": 8837,
+     "n": "Muck Splash",
+     "l": [
+      47,
+      49
+     ],
+     "p": 0.077,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 13696,
+     "n": "Noxxious Scion",
+     "l": [
+      46,
+      46
+     ],
+     "p": 0.077,
+     "z": [
+      "Maraudon"
+     ]
+    },
+    {
+     "id": 5461,
+     "n": "Sea Elemental",
+     "l": [
+      48,
+      49
+     ],
+     "p": 0.061,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 8519,
+     "n": "Blighted Surge",
+     "l": [
+      54,
+      55
+     ],
+     "p": 0.061,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 5462,
+     "n": "Sea Spray",
+     "l": [
+      47,
+      48
+     ],
+     "p": 0.059,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 8520,
+     "n": "Plague Ravager",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.059,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 8521,
+     "n": "Blighted Horror",
+     "l": [
+      56,
+      57
+     ],
+     "p": 0.056,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 8522,
+     "n": "Plague Monstrosity",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.054,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 14458,
+     "n": "Watery Invader",
+     "l": [
+      56,
+      58
+     ],
+     "p": 0.05,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 226982,
+     "n": "Frijidar",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.036,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "friend": "A"
+    },
+    {
+     "id": 13282,
+     "n": "Noxxion",
+     "l": [
+      48,
+      48
+     ],
+     "p": 0.029,
+     "z": [
+      "Maraudon"
+     ],
+     "elite": true
+    }
+   ],
+   "gather": {
+    "fished": [
+     "Azshara"
+    ],
+    "inItem": [
+     "Sack of Spoils"
+    ]
+   }
+  },
+  "7286": {
+   "name": "Black Whelp Scale",
+   "drops": [
+    {
+     "id": 441,
+     "n": "Black Dragon Whelp",
+     "l": [
+      17,
+      18
+     ],
+     "p": 0.298,
+     "z": [
+      "Redridge Mountains"
+     ],
+     "skin": true
+    },
+    {
+     "id": 14272,
+     "n": "Snarlflare",
+     "l": [
+      18,
+      18
+     ],
+     "p": 0.226,
+     "z": [
+      "Redridge Mountains"
+     ],
+     "elite": true,
+     "skin": true
+    }
+   ]
+  },
+  "7971": {
+   "name": "Black Pearl",
+   "gather": {
+    "fished": [
+     "Azshara",
+     "Feralas",
+     "The Hinterlands",
+     "Tanaris"
+    ],
+    "inItem": [
+     "Gray Sack of Gems",
+     "Blue Sack of Gems",
+     "Red Sack of Gems",
+     "Yellow Sack of Gems"
+    ]
+   }
+  },
+  "8146": {
+   "name": "Wicked Claw",
+   "drops": [
+    {
+     "id": 9778,
+     "n": "Flamekin Torcher",
+     "l": [
+      54,
+      56
+     ],
+     "p": 0.275,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 9776,
+     "n": "Flamekin Spitter",
+     "l": [
+      51,
+      53
+     ],
+     "p": 0.274,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 9777,
+     "n": "Flamekin Sprite",
+     "l": [
+      51,
+      53
+     ],
+     "p": 0.256,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 9779,
+     "n": "Flamekin Rager",
+     "l": [
+      54,
+      56
+     ],
+     "p": 0.246,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 7048,
+     "n": "Scalding Broodling",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.204,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 7459,
+     "n": "Ice Thistle Matriarch",
+     "l": [
+      56,
+      57
+     ],
+     "p": 0.192,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 7460,
+     "n": "Ice Thistle Patriarch",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.189,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 7047,
+     "n": "Black Broodling",
+     "l": [
+      51,
+      52
+     ],
+     "p": 0.188,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 7049,
+     "n": "Flamescale Broodling",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.181,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 10661,
+     "n": "Spell Eater",
+     "l": [
+      54,
+      56
+     ],
+     "p": 0.18,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 10660,
+     "n": "Cobalt Broodling",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.176,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 10659,
+     "n": "Cobalt Whelp",
+     "l": [
+      54,
+      55
+     ],
+     "p": 0.169,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 7848,
+     "n": "Lurking Feral Scar",
+     "l": [
+      46,
+      46
+     ],
+     "p": 0.143,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 7458,
+     "n": "Ice Thistle Yeti",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.131,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 10442,
+     "n": "Chromatic Whelp",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.129,
+     "z": [
+      "Blackrock Spire"
+     ]
+    },
+    {
+     "id": 5718,
+     "n": "Rothos",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.122,
+     "z": [
+      "The Hinterlands"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7457,
+     "n": "Rogue Ice Thistle",
+     "l": [
+      53,
+      55
+     ],
+     "p": 0.116,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 5297,
+     "n": "Elder Rage Scar",
+     "l": [
+      48,
+      49
+     ],
+     "p": 0.113,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 221651,
+     "n": "Ceruleos",
+     "l": [
+      50,
+      50
+     ],
+     "p": 0.109,
+     "z": [
+      "Azshara"
+     ]
+    },
+    {
+     "id": 5293,
+     "n": "Hulking Feral Scar",
+     "l": [
+      45,
+      46
+     ],
+     "p": 0.108,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 11368,
+     "n": "Bloodseeker Bat",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.094,
+     "z": [
+      "Zul'Gurub"
+     ]
+    },
+    {
+     "id": 5296,
+     "n": "Rage Scar Yeti",
+     "l": [
+      46,
+      47
+     ],
+     "p": 0.089,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 5299,
+     "n": "Ferocious Rage Scar",
+     "l": [
+      47,
+      48
+     ],
+     "p": 0.089,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 5364,
+     "n": "Northspring Slayer",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.089,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 13276,
+     "n": "Wildspawn Imp",
+     "l": [
+      56,
+      56
+     ],
+     "p": 0.088,
+     "z": [
+      "Dire Maul"
+     ]
+    },
+    {
+     "id": 221370,
+     "n": "Dreamspring Roguefeather",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.088,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 5363,
+     "n": "Northspring Roguefeather",
+     "l": [
+      48,
+      49
+     ],
+     "p": 0.087,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 221371,
+     "n": "Dreamspring Stormcaller",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.087,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 5366,
+     "n": "Northspring Windcaller",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.085,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 5292,
+     "n": "Feral Scar Yeti",
+     "l": [
+      43,
+      44
+     ],
+     "p": 0.082,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 5295,
+     "n": "Enraged Feral Scar",
+     "l": [
+      44,
+      45
+     ],
+     "p": 0.082,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 5362,
+     "n": "Northspring Harpy",
+     "l": [
+      48,
+      49
+     ],
+     "p": 0.082,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 5276,
+     "n": "Sprite Dragon",
+     "l": [
+      47,
+      50
+     ],
+     "p": 0.081,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 14398,
+     "n": "Eldreth Darter",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.071,
+     "z": [
+      "Dire Maul"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7808,
+     "n": "Marauding Owlbeast",
+     "l": [
+      46,
+      46
+     ],
+     "p": 0.07,
+     "z": [
+      "The Hinterlands"
+     ]
+    },
+    {
+     "id": 10678,
+     "n": "Plagued Hatchling",
+     "l": [
+      57,
+      59
+     ],
+     "p": 0.068,
+     "z": [
+      "Scholomance"
+     ]
+    },
+    {
+     "id": 12498,
+     "n": "Dreamstalker",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.068,
+     "z": [
+      "Ashenvale"
+     ],
+     "elite": true
+    },
+    {
+     "id": 14344,
+     "n": "Mongress",
+     "l": [
+      50,
+      50
+     ],
+     "p": 0.065,
+     "z": [
+      "Felwood"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5722,
+     "n": "Hazzas",
+     "l": [
+      53,
+      53
+     ],
+     "p": 0.064,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true
+    },
+    {
+     "id": 8535,
+     "n": "Putrid Shrieker",
+     "l": [
+      56,
+      58
+     ],
+     "p": 0.064,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 7125,
+     "n": "Jaedenar Hound",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.063,
+     "z": [
+      "Felwood"
+     ]
+    },
+    {
+     "id": 7450,
+     "n": "Ragged Owlbeast",
+     "l": [
+      53,
+      55
+     ],
+     "p": 0.063,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 8601,
+     "n": "Noxious Plaguebat",
+     "l": [
+      54,
+      56
+     ],
+     "p": 0.063,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 12497,
+     "n": "Dreamroarer",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.063,
+     "z": [
+      "Feralas"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7097,
+     "n": "Ironbeak Owl",
+     "l": [
+      48,
+      49
+     ],
+     "p": 0.062,
+     "z": [
+      "Felwood"
+     ]
+    },
+    {
+     "id": 2929,
+     "n": "Savage Owlbeast",
+     "l": [
+      46,
+      47
+     ],
+     "p": 0.061,
+     "z": [
+      "The Hinterlands"
+     ]
+    },
+    {
+     "id": 7126,
+     "n": "Jaedenar Hunter",
+     "l": [
+      52,
+      60
+     ],
+     "p": 0.061,
+     "z": [
+      "Felwood"
+     ]
+    },
+    {
+     "id": 8600,
+     "n": "Plaguebat",
+     "l": [
+      53,
+      55
+     ],
+     "p": 0.061,
+     "z": [
+      "Eastern Plaguelands",
+      "Western Plaguelands"
+     ]
+    },
+    {
+     "id": 8675,
+     "n": "Felbeast",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.061,
+     "z": [
+      "Blasted Lands"
+     ]
+    },
+    {
+     "id": 2522,
+     "n": "Jaguero Stalker",
+     "l": [
+      50,
+      50
+     ],
+     "p": 0.06,
+     "z": [
+      "Stranglethorn Vale"
+     ]
+    },
+    {
+     "id": 7451,
+     "n": "Raging Owlbeast",
+     "l": [
+      54,
+      56
+     ],
+     "p": 0.06,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 7452,
+     "n": "Crazed Owlbeast",
+     "l": [
+      56,
+      57
+     ],
+     "p": 0.06,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 227746,
+     "n": "Escaped Core Hound",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.06,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 6010,
+     "n": "Felhound",
+     "l": [
+      54,
+      55
+     ],
+     "p": 0.059,
+     "z": [
+      "Blasted Lands"
+     ]
+    },
+    {
+     "id": 7453,
+     "n": "Moontouched Owlbeast",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.059,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 7454,
+     "n": "Berserk Owlbeast",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.059,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 8534,
+     "n": "Putrid Gargoyle",
+     "l": [
+      54,
+      56
+     ],
+     "p": 0.059,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 8602,
+     "n": "Monstrous Plaguebat",
+     "l": [
+      56,
+      58
+     ],
+     "p": 0.059,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 1815,
+     "n": "Diseased Black Bear",
+     "l": [
+      51,
+      52
+     ],
+     "p": 0.058,
+     "z": [
+      "Western Plaguelands",
+      "Tirisfal Glades"
+     ]
+    },
+    {
+     "id": 8597,
+     "n": "Plaguehound",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.057,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 8927,
+     "n": "Dark Screecher",
+     "l": [
+      50,
+      52
+     ],
+     "p": 0.057,
+     "z": [
+      "Blackrock Depths"
+     ]
+    },
+    {
+     "id": 9165,
+     "n": "Fledgling Pterrordax",
+     "l": [
+      48,
+      50
+     ],
+     "p": 0.057,
+     "z": [
+      "Un'Goro Crater"
+     ]
+    },
+    {
+     "id": 9166,
+     "n": "Pterrordax",
+     "l": [
+      50,
+      52
+     ],
+     "p": 0.057,
+     "z": [
+      "Un'Goro Crater"
+     ]
+    },
+    {
+     "id": 9694,
+     "n": "Slavering Ember Worg",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.057,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 5719,
+     "n": "Morphaz",
+     "l": [
+      52,
+      52
+     ],
+     "p": 0.056,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7055,
+     "n": "Blackrock Worg",
+     "l": [
+      54,
+      55
+     ],
+     "p": 0.056,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 7444,
+     "n": "Shardtooth Bear",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.056,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 8596,
+     "n": "Plaguehound Runt",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.056,
+     "z": [
+      "Eastern Plaguelands",
+      "Western Plaguelands"
+     ]
+    },
+    {
+     "id": 9697,
+     "n": "Giant Ember Worg",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.056,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 10221,
+     "n": "Bloodaxe Worg Pup",
+     "l": [
+      52,
+      53
+     ],
+     "p": 0.056,
+     "z": [
+      "Blackrock Spire"
+     ]
+    },
+    {
+     "id": 7098,
+     "n": "Ironbeak Screecher",
+     "l": [
+      52,
+      53
+     ],
+     "p": 0.055,
+     "z": [
+      "Felwood"
+     ]
+    },
+    {
+     "id": 7099,
+     "n": "Ironbeak Hunter",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.055,
+     "z": [
+      "Felwood"
+     ]
+    },
+    {
+     "id": 8598,
+     "n": "Frenzied Plaguehound",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.055,
+     "z": [
+      "Eastern Plaguelands"
+     ]
+    },
+    {
+     "id": 8956,
+     "n": "Angerclaw Bear",
+     "l": [
+      47,
+      48
+     ],
+     "p": 0.055,
+     "z": [
+      "Felwood"
+     ]
+    },
+    {
+     "id": 8957,
+     "n": "Angerclaw Grizzly",
+     "l": [
+      51,
+      52
+     ],
+     "p": 0.055,
+     "z": [
+      "Felwood"
+     ]
+    },
+    {
+     "id": 5274,
+     "n": "Ironfur Patriarch",
+     "l": [
+      48,
+      49
+     ],
+     "p": 0.054,
+     "z": [
+      "Feralas"
+     ]
+    },
+    {
+     "id": 6506,
+     "n": "Ravasaur Runner",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.054,
+     "z": [
+      "Un'Goro Crater"
+     ]
+    },
+    {
+     "id": 6508,
+     "n": "Venomhide Ravasaur",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.054,
+     "z": [
+      "Un'Goro Crater"
+     ]
+    },
+    {
+     "id": 7456,
+     "n": "Winterspring Screecher",
+     "l": [
+      57,
+      59
+     ],
+     "p": 0.054,
+     "z": [
+      "Winterspring"
+     ]
+    },
+    {
+     "id": 8958,
+     "n": "Angerclaw Mauler",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.054,
+     "z": [
+      "Felwood"
+     ]
+    }
+   ]
+  },
+  "8150": {
+   "name": "Deeprock Salt",
+   "drops": [
+    {
+     "id": 2723,
+     "n": "Stone Golem",
+     "l": [
+      38,
+      39
+     ],
+     "p": 0.373,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 10120,
+     "n": "Vault Warder",
+     "l": [
+      45,
+      45
+     ],
+     "p": 0.327,
+     "z": [
+      "Uldaman"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5853,
+     "n": "Tempered War Golem",
+     "l": [
+      45,
+      47
+     ],
+     "p": 0.287,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 2763,
+     "n": "Thenan",
+     "l": [
+      42,
+      42
+     ],
+     "p": 0.286,
+     "z": [
+      "Arathi Highlands"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5854,
+     "n": "Heavy War Golem",
+     "l": [
+      47,
+      49
+     ],
+     "p": 0.281,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 2551,
+     "n": "Brutus",
+     "l": [
+      43,
+      43
+     ],
+     "p": 0.27,
+     "z": [
+      "Stranglethorn Vale"
+     ]
+    },
+    {
+     "id": 4857,
+     "n": "Stone Keeper",
+     "l": [
+      46,
+      46
+     ],
+     "p": 0.269,
+     "z": [
+      "Uldaman"
+     ],
+     "elite": true
+    },
+    {
+     "id": 4860,
+     "n": "Stone Steward",
+     "l": [
+      44,
+      44
+     ],
+     "p": 0.262,
+     "z": [
+      "Uldaman"
+     ],
+     "elite": true
+    },
+    {
+     "id": 12206,
+     "n": "Primordial Behemoth",
+     "l": [
+      48,
+      49
+     ],
+     "p": 0.259,
+     "z": [
+      "Maraudon"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7039,
+     "n": "War Reaver",
+     "l": [
+      53,
+      55
+     ],
+     "p": 0.253,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 5465,
+     "n": "Land Rager",
+     "l": [
+      45,
+      47
+     ],
+     "p": 0.216,
+     "z": [
+      "Tanaris"
+     ]
+    },
+    {
+     "id": 221373,
+     "n": "Enraged Mountain Giant",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.216,
+     "z": [
+      "Feralas"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7023,
+     "n": "Obsidian Sentinel",
+     "l": [
+      42,
+      42
+     ],
+     "p": 0.213,
+     "z": [
+      "Uldaman"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7031,
+     "n": "Obsidian Elemental",
+     "l": [
+      51,
+      53
+     ],
+     "p": 0.21,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 8907,
+     "n": "Wrath Hammer Construct",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.204,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "elite": true
+    },
+    {
+     "id": 2359,
+     "n": "Elemental Slave",
+     "l": [
+      33,
+      34
+     ],
+     "p": 0.202,
+     "z": [
+      "Alterac Mountains"
+     ],
+     "friend": "A"
+    },
+    {
+     "id": 8908,
+     "n": "Molten War Golem",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.2,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7032,
+     "n": "Greater Obsidian Elemental",
+     "l": [
+      55,
+      57
+     ],
+     "p": 0.199,
+     "z": [
+      "Burning Steppes"
+     ]
+    },
+    {
+     "id": 2592,
+     "n": "Rumbling Exile",
+     "l": [
+      38,
+      39
+     ],
+     "p": 0.197,
+     "z": [
+      "Arathi Highlands"
+     ]
+    },
+    {
+     "id": 8906,
+     "n": "Ragereaver Golem",
+     "l": [
+      54,
+      55
+     ],
+     "p": 0.197,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "elite": true
+    },
+    {
+     "id": 8905,
+     "n": "Warbringer Construct",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.196,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "elite": true
+    },
+    {
+     "id": 9396,
+     "n": "Ground Pounder",
+     "l": [
+      41,
+      43
+     ],
+     "p": 0.196,
+     "z": [
+      "Tanaris"
+     ]
+    },
+    {
+     "id": 2791,
+     "n": "Enraged Rock Elemental",
+     "l": [
+      42,
+      43
+     ],
+     "p": 0.193,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 2735,
+     "n": "Lesser Rock Elemental",
+     "l": [
+      37,
+      39
+     ],
+     "p": 0.192,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 92,
+     "n": "Rock Elemental",
+     "l": [
+      39,
+      40
+     ],
+     "p": 0.191,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 11746,
+     "n": "Desert Rumbler",
+     "l": [
+      56,
+      58
+     ],
+     "p": 0.191,
+     "z": [
+      "Silithus"
+     ]
+    },
+    {
+     "id": 14462,
+     "n": "Thundering Invader",
+     "l": [
+      55,
+      57
+     ],
+     "p": 0.188,
+     "z": [
+      "Azshara"
+     ]
+    },
+    {
+     "id": 2736,
+     "n": "Greater Rock Elemental",
+     "l": [
+      42,
+      44
+     ],
+     "p": 0.187,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 2919,
+     "n": "Fam'retor Guardian",
+     "l": [
+      45,
+      45
+     ],
+     "p": 0.184,
+     "z": [
+      "Badlands"
+     ]
+    },
+    {
+     "id": 11747,
+     "n": "Desert Rager",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.178,
+     "z": [
+      "Silithus"
+     ]
+    },
+    {
+     "id": 2258,
+     "n": "Stone Fury",
+     "l": [
+      37,
+      37
+     ],
+     "p": 0.177,
+     "z": [
+      "Alterac Mountains"
+     ],
+     "elite": true
+    },
+    {
+     "id": 2749,
+     "n": "Siege Golem",
+     "l": [
+      40,
+      40
+     ],
+     "p": 0.17,
+     "z": [
+      "Badlands"
+     ],
+     "elite": true
+    },
+    {
+     "id": 11783,
+     "n": "Theradrim Shardling",
+     "l": [
+      46,
+      46
+     ],
+     "p": 0.162,
+     "z": [
+      "Maraudon"
+     ]
+    },
+    {
+     "id": 11784,
+     "n": "Theradrim Guardian",
+     "l": [
+      47,
+      48
+     ],
+     "p": 0.154,
+     "z": [
+      "Maraudon"
+     ],
+     "elite": true
+    },
+    {
+     "id": 228723,
+     "n": "Obsidian Reaver",
+     "l": [
+      56,
+      60
+     ],
+     "p": 0.153,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 228729,
+     "n": "Duke Tectonis",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.141,
+     "z": [
+      "Searing Gorge"
+     ],
+     "elite": true
+    },
+    {
+     "id": 12201,
+     "n": "Princess Theradras",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.137,
+     "z": [
+      "Maraudon"
+     ],
+     "elite": true
+    },
+    {
+     "id": 2611,
+     "n": "Fozruk",
+     "l": [
+      42,
+      42
+     ],
+     "p": 0.127,
+     "z": [
+      "Arathi Highlands"
+     ],
+     "elite": true
+    },
+    {
+     "id": 12203,
+     "n": "Landslide",
+     "l": [
+      50,
+      50
+     ],
+     "p": 0.113,
+     "z": [
+      "Maraudon"
+     ],
+     "elite": true
+    },
+    {
+     "id": 11778,
+     "n": "Shadowshard Smasher",
+     "l": [
+      41,
+      42
+     ],
+     "p": 0.111,
+     "z": [
+      "Desolace"
+     ],
+     "elite": true
+    },
+    {
+     "id": 11777,
+     "n": "Shadowshard Rumbler",
+     "l": [
+      40,
+      41
+     ],
+     "p": 0.107,
+     "z": [
+      "Desolace"
+     ],
+     "elite": true
+    },
+    {
+     "id": 228911,
+     "n": "Searing Infernal",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.102,
+     "z": [
+      "Demon Fall Canyon"
+     ],
+     "elite": true
+    },
+    {
+     "id": 222546,
+     "n": "Iodax the Obliterator",
+     "l": [
+      50,
+      50
+     ],
+     "p": 0.101,
+     "z": [
+      "Searing Gorge"
+     ],
+     "elite": true
+    },
+    {
+     "id": 228724,
+     "n": "Obsidian Surger",
+     "l": [
+      55,
+      58
+     ],
+     "p": 0.096,
+     "z": [
+      "Searing Gorge"
+     ]
+    },
+    {
+     "id": 228910,
+     "n": "Hulking Infernal",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.091,
+     "z": [
+      "Demon Fall Canyon"
+     ],
+     "elite": true
+    },
+    {
+     "id": 9025,
+     "n": "Lord Roccor",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.076,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "elite": true
+    },
+    {
+     "id": 222789,
+     "n": "The Giant",
+     "l": [
+      52,
+      52
+     ],
+     "p": 0.07,
+     "z": [
+      "Feralas"
+     ],
+     "elite": true
+    },
+    {
+     "id": 12101,
+     "n": "Lava Surger",
+     "l": [
+      61,
+      62
+     ],
+     "p": 0.067,
+     "z": [
+      "Molten Core"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7206,
+     "n": "Ancient Stone Keeper",
+     "l": [
+      44,
+      44
+     ],
+     "p": 0.066,
+     "z": [
+      "Uldaman"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7228,
+     "n": "Ironaya",
+     "l": [
+      40,
+      40
+     ],
+     "p": 0.064,
+     "z": [
+      "Uldaman"
+     ],
+     "elite": true
+    },
+    {
+     "id": 9502,
+     "n": "Phalanx",
+     "l": [
+      55,
+      55
+     ],
+     "p": 0.062,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "elite": true,
+     "friend": "A"
+    },
+    {
+     "id": 228725,
+     "n": "Firesworn",
+     "l": [
+      60,
+      61
+     ],
+     "p": 0.057,
+     "z": [
+      "Burning Steppes"
+     ],
+     "elite": true
+    },
+    {
+     "id": 2748,
+     "n": "Archaedas",
+     "l": [
+      47,
+      47
+     ],
+     "p": 0.054,
+     "z": [
+      "Uldaman"
+     ],
+     "elite": true
+    },
+    {
+     "id": 8923,
+     "n": "Panzor the Invincible",
+     "l": [
+      57,
+      57
+     ],
+     "p": 0.05,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "elite": true
+    }
+   ],
+   "gather": {
+    "inItem": [
+     "Ziri's Mystery Crate"
+    ]
+   }
+  },
+  "8165": {
+   "name": "Worn Dragonscale",
+   "drops": [
+    {
+     "id": 5719,
+     "n": "Morphaz",
+     "l": [
+      52,
+      52
+     ],
+     "p": 0.995,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5721,
+     "n": "Dreamscythe",
+     "l": [
+      53,
+      53
+     ],
+     "p": 0.995,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5722,
+     "n": "Hazzas",
+     "l": [
+      53,
+      53
+     ],
+     "p": 0.994,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5720,
+     "n": "Weaver",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.99,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12497,
+     "n": "Dreamroarer",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.172,
+     "z": [
+      "Feralas"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5720,
+     "n": "Weaver",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.162,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5721,
+     "n": "Dreamscythe",
+     "l": [
+      53,
+      53
+     ],
+     "p": 0.158,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5722,
+     "n": "Hazzas",
+     "l": [
+      53,
+      53
+     ],
+     "p": 0.148,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true
+    },
+    {
+     "id": 6130,
+     "n": "Blue Scalebane",
+     "l": [
+      52,
+      53
+     ],
+     "p": 0.14,
+     "z": [
+      "Azshara"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12476,
+     "n": "Emeraldon Oracle",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.136,
+     "z": [
+      "Ashenvale",
+      "Orgrimmar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12477,
+     "n": "Verdantine Boughguard",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.132,
+     "z": [
+      "The Hinterlands",
+      "Ironforge"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10663,
+     "n": "Manaclaw",
+     "l": [
+      58,
+      58
+     ],
+     "p": 0.124,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 1049,
+     "n": "Wyrmkin Firebrand",
+     "l": [
+      61,
+      62
+     ],
+     "p": 0.12,
+     "z": [
+      "Wetlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 1756,
+     "n": "Stormwind Royal Guard",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.114,
+     "z": [
+      "Stormwind City"
+     ],
+     "friend": "A",
+     "skin": true
+    },
+    {
+     "id": 10366,
+     "n": "Rage Talon Dragon Guard",
+     "l": [
+      60,
+      61
+     ],
+     "p": 0.108,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 1047,
+     "n": "Red Scalebane",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.106,
+     "z": [
+      "Wetlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7042,
+     "n": "Flamescale Dragonspawn",
+     "l": [
+      56,
+      57
+     ],
+     "p": 0.104,
+     "z": [
+      "Burning Steppes"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 6131,
+     "n": "Draconic Mageweaver",
+     "l": [
+      51,
+      52
+     ],
+     "p": 0.104,
+     "z": [
+      "Azshara"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 1048,
+     "n": "Scalebane Lieutenant",
+     "l": [
+      60,
+      61
+     ],
+     "p": 0.104,
+     "z": [
+      "Wetlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7040,
+     "n": "Black Dragonspawn",
+     "l": [
+      52,
+      53
+     ],
+     "p": 0.103,
+     "z": [
+      "Burning Steppes"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7044,
+     "n": "Black Drake",
+     "l": [
+      50,
+      52
+     ],
+     "p": 0.103,
+     "z": [
+      "Burning Steppes"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 9461,
+     "n": "Frenzied Black Drake",
+     "l": [
+      54,
+      54
+     ],
+     "p": 0.103,
+     "z": [
+      "Burning Steppes"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7436,
+     "n": "Cobalt Scalebane",
+     "l": [
+      56,
+      57
+     ],
+     "p": 0.102,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10083,
+     "n": "Rage Talon Flamescale",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.102,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10372,
+     "n": "Rage Talon Fire Tongue",
+     "l": [
+      60,
+      61
+     ],
+     "p": 0.101,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10371,
+     "n": "Rage Talon Captain",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.101,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10683,
+     "n": "Rookery Hatcher",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.101,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10264,
+     "n": "Solakar Flamewreath",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.101,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12479,
+     "n": "Verdantine Tree Warder",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.101,
+     "z": [
+      "The Hinterlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 9096,
+     "n": "Rage Talon Dragonspawn",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.1,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7041,
+     "n": "Black Wyrmkin",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.1,
+     "z": [
+      "Burning Steppes"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7437,
+     "n": "Cobalt Mageweaver",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.1,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 1045,
+     "n": "Red Dragonspawn",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.1,
+     "z": [
+      "Wetlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7435,
+     "n": "Cobalt Wyrmkin",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.099,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 1050,
+     "n": "Scalebane Royal Guard",
+     "l": [
+      61,
+      62
+     ],
+     "p": 0.096,
+     "z": [
+      "Wetlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 221325,
+     "n": "Wyrmkin Starhunter",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.096,
+     "z": [
+      "The Hinterlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 193,
+     "n": "Blue Dragonspawn",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.094,
+     "z": [
+      "Azshara"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7043,
+     "n": "Flamescale Wyrmkin",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.092,
+     "z": [
+      "Burning Steppes"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12474,
+     "n": "Emeraldon Boughguard",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.09,
+     "z": [
+      "Ashenvale",
+      "Orgrimmar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10258,
+     "n": "Rookery Guardian",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.089,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5319,
+     "n": "Jademir Tree Warder",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.088,
+     "z": [
+      "Feralas"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5317,
+     "n": "Jademir Oracle",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.086,
+     "z": [
+      "Feralas"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12478,
+     "n": "Verdantine Oracle",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.086,
+     "z": [
+      "The Hinterlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5320,
+     "n": "Jademir Boughguard",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.084,
+     "z": [
+      "Feralas",
+      "Desolace"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5719,
+     "n": "Morphaz",
+     "l": [
+      52,
+      52
+     ],
+     "p": 0.08,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5277,
+     "n": "Nightmare Scalebane",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.073,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 8497,
+     "n": "Nightmare Suppressor",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.073,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5280,
+     "n": "Nightmare Wyrmkin",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.072,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10814,
+     "n": "Chromatic Elite Guard",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.07,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 224255,
+     "n": "Nightmare Scalebane",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.07,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10447,
+     "n": "Chromatic Dragonspawn",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.069,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5283,
+     "n": "Nightmare Wanderer",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.065,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10678,
+     "n": "Plagued Hatchling",
+     "l": [
+      57,
+      59
+     ],
+     "p": 0.051,
+     "z": [
+      "Scholomance"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7047,
+     "n": "Black Broodling",
+     "l": [
+      51,
+      52
+     ],
+     "p": 0.051,
+     "z": [
+      "Burning Steppes"
+     ],
+     "skin": true
+    },
+    {
+     "id": 5277,
+     "n": "Nightmare Scalebane",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.045,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true
+    },
+    {
+     "id": 5280,
+     "n": "Nightmare Wyrmkin",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.043,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true
+    },
+    {
+     "id": 8319,
+     "n": "Nightmare Whelp",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.027,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ]
+    },
+    {
+     "id": 7435,
+     "n": "Cobalt Wyrmkin",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.024,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7436,
+     "n": "Cobalt Scalebane",
+     "l": [
+      56,
+      57
+     ],
+     "p": 0.023,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7437,
+     "n": "Cobalt Mageweaver",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.021,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true
+    },
+    {
+     "id": 2726,
+     "n": "Scorched Guardian",
+     "l": [
+      43,
+      45
+     ],
+     "p": 0.02,
+     "z": [
+      "Badlands"
+     ],
+     "elite": true
+    }
+   ],
+   "gather": {
+    "inItem": [
+     "Otherworldly Treasure"
+    ]
+   }
+  },
+  "8167": {
+   "name": "Turtle Scale",
+   "drops": [
+    {
+     "id": 6352,
+     "n": "Coralshell Lurker",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.523,
+     "z": [
+      "Azshara"
+     ],
+     "skin": true
+    },
+    {
+     "id": 4399,
+     "n": "Mudrock Borer",
+     "l": [
+      42,
+      43
+     ],
+     "p": 0.519,
+     "z": [
+      "Dustwallow Marsh"
+     ],
+     "skin": true
+    },
+    {
+     "id": 4400,
+     "n": "Mudrock Snapjaw",
+     "l": [
+      41,
+      42
+     ],
+     "p": 0.509,
+     "z": [
+      "Dustwallow Marsh"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7977,
+     "n": "Gammerita",
+     "l": [
+      48,
+      48
+     ],
+     "p": 0.507,
+     "z": [
+      "The Hinterlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 14123,
+     "n": "Steeljaw Snapper",
+     "l": [
+      42,
+      43
+     ],
+     "p": 0.504,
+     "z": [
+      "Tanaris"
+     ],
+     "skin": true
+    },
+    {
+     "id": 6369,
+     "n": "Coralshell Tortoise",
+     "l": [
+      50,
+      52
+     ],
+     "p": 0.5,
+     "z": [
+      "Azshara"
+     ],
+     "skin": true
+    },
+    {
+     "id": 5431,
+     "n": "Surf Glider",
+     "l": [
+      48,
+      50
+     ],
+     "p": 0.499,
+     "z": [
+      "Tanaris"
+     ],
+     "skin": true
+    },
+    {
+     "id": 2505,
+     "n": "Saltwater Snapjaw",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.497,
+     "z": [
+      "The Hinterlands"
+     ],
+     "skin": true
+    },
+    {
+     "id": 13599,
+     "n": "Stolid Snapjaw",
+     "l": [
+      46,
+      47
+     ],
+     "p": 0.49,
+     "z": [
+      "Maraudon"
+     ],
+     "skin": true
+    },
+    {
+     "id": 8213,
+     "n": "Ironback",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.438,
+     "z": [
+      "The Hinterlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 13896,
+     "n": "Scalebeard",
+     "l": [
+      52,
+      52
+     ],
+     "p": 0.4,
+     "z": [
+      "Azshara"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 4398,
+     "n": "Mudrock Burrower",
+     "l": [
+      39,
+      40
+     ],
+     "p": 0.264,
+     "z": [
+      "Dustwallow Marsh"
+     ],
+     "skin": true
+    },
+    {
+     "id": 4396,
+     "n": "Mudrock Tortoise",
+     "l": [
+      36,
+      37
+     ],
+     "p": 0.257,
+     "z": [
+      "Dustwallow Marsh"
+     ],
+     "skin": true
+    },
+    {
+     "id": 4397,
+     "n": "Mudrock Spikeshell",
+     "l": [
+      37,
+      38
+     ],
+     "p": 0.251,
+     "z": [
+      "Dustwallow Marsh"
+     ],
+     "skin": true
+    }
+   ]
+  },
+  "8168": {
+   "name": "Jet Black Feather",
+   "drops": [
+    {
+     "id": 5982,
+     "n": "Black Slayer",
+     "l": [
+      46,
+      48
+     ],
+     "p": 0.799,
+     "z": [
+      "Blasted Lands"
+     ]
+    },
+    {
+     "id": 222699,
+     "n": "Enraged Stormcrow",
+     "l": [
+      45,
+      45
+     ],
+     "p": 0.622,
+     "z": [
+      "Searing Gorge"
+     ]
+    }
+   ]
+  },
+  "8171": {
+   "name": "Rugged Hide",
+   "drops": [
+    {
+     "id": 12803,
+     "n": "Lord Lakmaeran",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.133,
+     "z": [
+      "Feralas"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7048,
+     "n": "Scalding Broodling",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.125,
+     "z": [
+      "Burning Steppes"
+     ],
+     "skin": true
+    },
+    {
+     "id": 4374,
+     "n": "Strashaz Hydra",
+     "l": [
+      59,
+      61
+     ],
+     "p": 0.117,
+     "z": [
+      "Dustwallow Marsh"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 8957,
+     "n": "Angerclaw Grizzly",
+     "l": [
+      51,
+      52
+     ],
+     "p": 0.108,
+     "z": [
+      "Felwood"
+     ],
+     "skin": true
+    },
+    {
+     "id": 10366,
+     "n": "Rage Talon Dragon Guard",
+     "l": [
+      60,
+      61
+     ],
+     "p": 0.096,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10221,
+     "n": "Bloodaxe Worg Pup",
+     "l": [
+      52,
+      53
+     ],
+     "p": 0.096,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7434,
+     "n": "Frostsaber Pride Watcher",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.093,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 10664,
+     "n": "Scryer",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.092,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 8958,
+     "n": "Angerclaw Mauler",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.09,
+     "z": [
+      "Felwood"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7444,
+     "n": "Shardtooth Bear",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.09,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 10737,
+     "n": "Shy-Rotam",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.081,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 221324,
+     "n": "Grief-Crazed Gryphon",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.08,
+     "z": [
+      "The Hinterlands"
+     ],
+     "skin": true
+    },
+    {
+     "id": 10741,
+     "n": "Sian-Rotam",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.075,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 1045,
+     "n": "Red Dragonspawn",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.073,
+     "z": [
+      "Wetlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12475,
+     "n": "Emeraldon Tree Warder",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.071,
+     "z": [
+      "Ashenvale",
+      "Orgrimmar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7045,
+     "n": "Scalding Drake",
+     "l": [
+      53,
+      55
+     ],
+     "p": 0.069,
+     "z": [
+      "Burning Steppes"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 1047,
+     "n": "Red Scalebane",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.067,
+     "z": [
+      "Wetlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12464,
+     "n": "Death Talon Seether",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.066,
+     "z": [
+      "Blackwing Lair"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12478,
+     "n": "Verdantine Oracle",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.064,
+     "z": [
+      "The Hinterlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10258,
+     "n": "Rookery Guardian",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.06,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7446,
+     "n": "Rabid Shardtooth",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.059,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7043,
+     "n": "Flamescale Wyrmkin",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.057,
+     "z": [
+      "Burning Steppes"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 11373,
+     "n": "Razzashi Cobra",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.057,
+     "z": [
+      "Zul'Gurub"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7462,
+     "n": "Hederine Manastalker",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.057,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12465,
+     "n": "Death Talon Wyrmkin",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.057,
+     "z": [
+      "Blackwing Lair"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10371,
+     "n": "Rage Talon Captain",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.056,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10814,
+     "n": "Chromatic Elite Guard",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.055,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 1756,
+     "n": "Stormwind Royal Guard",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.054,
+     "z": [
+      "Stormwind City"
+     ],
+     "friend": "A",
+     "skin": true
+    },
+    {
+     "id": 9042,
+     "n": "Verek",
+     "l": [
+      55,
+      55
+     ],
+     "p": 0.054,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12801,
+     "n": "Arcane Chimaerok",
+     "l": [
+      60,
+      62
+     ],
+     "p": 0.054,
+     "z": [
+      "Feralas"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7445,
+     "n": "Elder Shardtooth",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.053,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7460,
+     "n": "Ice Thistle Patriarch",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.053,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 10083,
+     "n": "Rage Talon Flamescale",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.053,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 11365,
+     "n": "Zulian Panther",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.053,
+     "z": [
+      "Zul'Gurub"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7042,
+     "n": "Flamescale Dragonspawn",
+     "l": [
+      56,
+      57
+     ],
+     "p": 0.053,
+     "z": [
+      "Burning Steppes"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10442,
+     "n": "Chromatic Whelp",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.052,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "skin": true
+    },
+    {
+     "id": 11368,
+     "n": "Bloodseeker Bat",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.052,
+     "z": [
+      "Zul'Gurub"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7433,
+     "n": "Frostsaber Huntress",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.052,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 11371,
+     "n": "Razzashi Serpent",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.052,
+     "z": [
+      "Zul'Gurub"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10447,
+     "n": "Chromatic Dragonspawn",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.051,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 15043,
+     "n": "Zulian Crocolisk",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.051,
+     "z": [
+      "Zul'Gurub"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 8598,
+     "n": "Frenzied Plaguehound",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.051,
+     "z": [
+      "Eastern Plaguelands"
+     ],
+     "skin": true
+    },
+    {
+     "id": 11360,
+     "n": "Zulian Cub",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.051,
+     "z": [
+      "Zul'Gurub"
+     ],
+     "skin": true
+    },
+    {
+     "id": 11359,
+     "n": "Soulflayer",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.051,
+     "z": [
+      "Zul'Gurub"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 1050,
+     "n": "Scalebane Royal Guard",
+     "l": [
+      61,
+      62
+     ],
+     "p": 0.051,
+     "z": [
+      "Wetlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 9096,
+     "n": "Rage Talon Dragonspawn",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.05,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 13036,
+     "n": "Gordok Mastiff",
+     "l": [
+      56,
+      59
+     ],
+     "p": 0.05,
+     "z": [
+      "Dire Maul"
+     ],
+     "skin": true
+    },
+    {
+     "id": 10678,
+     "n": "Plagued Hatchling",
+     "l": [
+      57,
+      59
+     ],
+     "p": 0.05,
+     "z": [
+      "Scholomance"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7436,
+     "n": "Cobalt Scalebane",
+     "l": [
+      56,
+      57
+     ],
+     "p": 0.05,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 8602,
+     "n": "Monstrous Plaguebat",
+     "l": [
+      56,
+      58
+     ],
+     "p": 0.05,
+     "z": [
+      "Eastern Plaguelands"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7448,
+     "n": "Chillwind Chimaera",
+     "l": [
+      55,
+      57
+     ],
+     "p": 0.049,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 1816,
+     "n": "Diseased Grizzly",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.049,
+     "z": [
+      "Western Plaguelands"
+     ],
+     "skin": true
+    },
+    {
+     "id": 14821,
+     "n": "Razzashi Raptor",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.049,
+     "z": [
+      "Zul'Gurub"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7449,
+     "n": "Chillwind Ravager",
+     "l": [
+      57,
+      59
+     ],
+     "p": 0.048,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 11372,
+     "n": "Razzashi Adder",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.048,
+     "z": [
+      "Zul'Gurub"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10372,
+     "n": "Rage Talon Fire Tongue",
+     "l": [
+      60,
+      61
+     ],
+     "p": 0.047,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10661,
+     "n": "Spell Eater",
+     "l": [
+      54,
+      56
+     ],
+     "p": 0.045,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7457,
+     "n": "Rogue Ice Thistle",
+     "l": [
+      53,
+      55
+     ],
+     "p": 0.043,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 9167,
+     "n": "Frenzied Pterrordax",
+     "l": [
+      52,
+      54
+     ],
+     "p": 0.042,
+     "z": [
+      "Un'Goro Crater"
+     ],
+     "skin": true
+    },
+    {
+     "id": 10659,
+     "n": "Cobalt Whelp",
+     "l": [
+      54,
+      55
+     ],
+     "p": 0.042,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7047,
+     "n": "Black Broodling",
+     "l": [
+      51,
+      52
+     ],
+     "p": 0.041,
+     "z": [
+      "Burning Steppes"
+     ],
+     "skin": true
+    },
+    {
+     "id": 8596,
+     "n": "Plaguehound Runt",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.041,
+     "z": [
+      "Eastern Plaguelands",
+      "Western Plaguelands"
+     ],
+     "skin": true
+    },
+    {
+     "id": 6513,
+     "n": "Un'Goro Stomper",
+     "l": [
+      51,
+      52
+     ],
+     "p": 0.041,
+     "z": [
+      "Un'Goro Crater"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7041,
+     "n": "Black Wyrmkin",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.041,
+     "z": [
+      "Burning Steppes"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7040,
+     "n": "Black Dragonspawn",
+     "l": [
+      52,
+      53
+     ],
+     "p": 0.041,
+     "z": [
+      "Burning Steppes"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 8600,
+     "n": "Plaguebat",
+     "l": [
+      53,
+      55
+     ],
+     "p": 0.04,
+     "z": [
+      "Eastern Plaguelands",
+      "Western Plaguelands"
+     ],
+     "skin": true
+    },
+    {
+     "id": 6514,
+     "n": "Un'Goro Gorilla",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.04,
+     "z": [
+      "Un'Goro Crater"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7435,
+     "n": "Cobalt Wyrmkin",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.04,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 9416,
+     "n": "Scarshield Worg",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.04,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "skin": true
+    },
+    {
+     "id": 8961,
+     "n": "Felpaw Ravager",
+     "l": [
+      51,
+      52
+     ],
+     "p": 0.04,
+     "z": [
+      "Felwood"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7458,
+     "n": "Ice Thistle Yeti",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.039,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 9163,
+     "n": "Diemetradon",
+     "l": [
+      51,
+      52
+     ],
+     "p": 0.039,
+     "z": [
+      "Un'Goro Crater"
+     ],
+     "skin": true
+    },
+    {
+     "id": 6516,
+     "n": "Un'Goro Thunderer",
+     "l": [
+      52,
+      53
+     ],
+     "p": 0.038,
+     "z": [
+      "Un'Goro Crater"
+     ],
+     "skin": true
+    },
+    {
+     "id": 9164,
+     "n": "Elder Diemetradon",
+     "l": [
+      54,
+      55
+     ],
+     "p": 0.038,
+     "z": [
+      "Un'Goro Crater"
+     ],
+     "skin": true
+    },
+    {
+     "id": 8601,
+     "n": "Noxious Plaguebat",
+     "l": [
+      54,
+      56
+     ],
+     "p": 0.038,
+     "z": [
+      "Eastern Plaguelands"
+     ],
+     "skin": true
+    }
+   ],
+   "gather": {
+    "inItem": [
+     "Otherworldly Treasure"
+    ]
+   }
+  },
+  "8343": {
+   "name": "Heavy Silken Thread",
+   "vendor": true
+  },
+  "8368": {
+   "name": "Thick Wolfhide",
+   "drops": [
+    {
+     "id": 1817,
+     "n": "Diseased Wolf",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.11,
+     "z": [
+      "Western Plaguelands"
+     ],
+     "skin": true
+    },
+    {
+     "id": 9690,
+     "n": "Ember Worg",
+     "l": [
+      51,
+      52
+     ],
+     "p": 0.104,
+     "z": [
+      "Burning Steppes"
+     ],
+     "skin": true
+    },
+    {
+     "id": 10221,
+     "n": "Bloodaxe Worg Pup",
+     "l": [
+      52,
+      53
+     ],
+     "p": 0.094,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "skin": true
+    },
+    {
+     "id": 12418,
+     "n": "Gordok Hyena",
+     "l": [
+      52,
+      54
+     ],
+     "p": 0.085,
+     "z": [
+      "Feralas"
+     ],
+     "skin": true
+    },
+    {
+     "id": 8718,
+     "n": "Manahound",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.06,
+     "z": [
+      "Blasted Lands",
+      "The Tainted Scar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10981,
+     "n": "Frostwolf",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.058,
+     "z": [
+      "Alterac Valley"
+     ]
+    },
+    {
+     "id": 13036,
+     "n": "Gordok Mastiff",
+     "l": [
+      56,
+      59
+     ],
+     "p": 0.051,
+     "z": [
+      "Dire Maul"
+     ],
+     "skin": true
+    },
+    {
+     "id": 9696,
+     "n": "Bloodaxe Worg",
+     "l": [
+      56,
+      60
+     ],
+     "p": 0.049,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "skin": true
+    },
+    {
+     "id": 9694,
+     "n": "Slavering Ember Worg",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.049,
+     "z": [
+      "Burning Steppes"
+     ],
+     "skin": true
+    },
+    {
+     "id": 14282,
+     "n": "Frostwolf Bloodhound",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.048,
+     "z": [
+      "Alterac Valley"
+     ],
+     "friend": "H",
+     "skin": true
+    },
+    {
+     "id": 8922,
+     "n": "Bloodhound Mastiff",
+     "l": [
+      54,
+      55
+     ],
+     "p": 0.046,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7055,
+     "n": "Blackrock Worg",
+     "l": [
+      54,
+      55
+     ],
+     "p": 0.042,
+     "z": [
+      "Burning Steppes"
+     ],
+     "skin": true
+    },
+    {
+     "id": 2925,
+     "n": "Silvermane Howler",
+     "l": [
+      45,
+      46
+     ],
+     "p": 0.033,
+     "z": [
+      "The Hinterlands"
+     ],
+     "skin": true
+    },
+    {
+     "id": 9697,
+     "n": "Giant Ember Worg",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.032,
+     "z": [
+      "Burning Steppes"
+     ],
+     "skin": true
+    },
+    {
+     "id": 2926,
+     "n": "Silvermane Stalker",
+     "l": [
+      47,
+      48
+     ],
+     "p": 0.03,
+     "z": [
+      "The Hinterlands"
+     ],
+     "skin": true
+    },
+    {
+     "id": 2681,
+     "n": "Vilebranch Raiding Wolf",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.03,
+     "z": [
+      "The Hinterlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5985,
+     "n": "Snickerfang Hyena",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.03,
+     "z": [
+      "Blasted Lands"
+     ],
+     "skin": true
+    },
+    {
+     "id": 11885,
+     "n": "Blighthound",
+     "l": [
+      58,
+      59
+     ],
+     "p": 0.03,
+     "z": [
+      "Eastern Plaguelands"
+     ],
+     "elite": true,
+     "friend": "H",
+     "skin": true
+    },
+    {
+     "id": 8921,
+     "n": "Bloodhound",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.029,
+     "z": [
+      "Blackrock Depths"
+     ],
+     "skin": true
+    },
+    {
+     "id": 5984,
+     "n": "Starving Snickerfang",
+     "l": [
+      45,
+      46
+     ],
+     "p": 0.029,
+     "z": [
+      "Blasted Lands"
+     ],
+     "skin": true
+    },
+    {
+     "id": 5288,
+     "n": "Rabid Longtooth",
+     "l": [
+      47,
+      48
+     ],
+     "p": 0.026,
+     "z": [
+      "Feralas"
+     ],
+     "skin": true
+    },
+    {
+     "id": 5286,
+     "n": "Longtooth Runner",
+     "l": [
+      40,
+      41
+     ],
+     "p": 0.024,
+     "z": [
+      "Feralas"
+     ],
+     "skin": true
+    },
+    {
+     "id": 2924,
+     "n": "Silvermane Wolf",
+     "l": [
+      43,
+      44
+     ],
+     "p": 0.02,
+     "z": [
+      "The Hinterlands"
+     ],
+     "skin": true
+    }
+   ]
+  },
+  "8949": {
+   "name": "Elixir of Agility",
+   "craft": {
+    "prof": "alchemy",
+    "skill": 185,
+    "mats": [
+     [
+      3820,
+      1
+     ],
+     [
+      3821,
+      1
+     ],
+     [
+      3372,
+      1
+     ]
+    ]
+   }
+  },
+  "8951": {
+   "name": "Elixir of Defense",
+   "craft": {
+    "prof": "alchemy",
+    "skill": 195,
+    "mats": [
+     [
+      3355,
+      1
+     ],
+     [
+      3821,
+      1
+     ],
+     [
+      3372,
+      1
+     ]
+    ]
+   },
+   "gather": {
+    "inItem": [
+     "Ysida's Satchel"
+    ]
+   }
+  },
+  "11137": {
+   "name": "Vision Dust",
+   "gather": {
+    "inItem": [
+     "Sparklematic-Wrapped Box",
+     "Ziri's Mystery Crate"
+    ]
+   }
+  },
+  "11176": {
+   "name": "Dream Dust",
+   "gather": {
+    "inItem": [
+     "Sparklematic-Wrapped Box"
+    ]
+   }
+  },
+  "13444": {
+   "name": "Major Mana Potion",
+   "craft": {
+    "prof": "alchemy",
+    "skill": 295,
+    "mats": [
+     [
+      13463,
+      3
+     ],
+     [
+      13467,
+      2
+     ],
+     [
+      8925,
+      1
+     ]
+    ]
+   },
+   "vendor": true
+  },
+  "14341": {
+   "name": "Rune Thread",
+   "vendor": true
+  },
+  "15409": {
+   "name": "Refined Deeprock Salt"
+  },
+  "15412": {
+   "name": "Green Dragonscale",
+   "drops": [
+    {
+     "id": 5719,
+     "n": "Morphaz",
+     "l": [
+      52,
+      52
+     ],
+     "p": 0.994,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5721,
+     "n": "Dreamscythe",
+     "l": [
+      53,
+      53
+     ],
+     "p": 0.994,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5722,
+     "n": "Hazzas",
+     "l": [
+      53,
+      53
+     ],
+     "p": 0.992,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5720,
+     "n": "Weaver",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.99,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10339,
+     "n": "Gyth",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.982,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5709,
+     "n": "Shade of Eranikus",
+     "l": [
+      55,
+      55
+     ],
+     "p": 0.326,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 221325,
+     "n": "Wyrmkin Starhunter",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.322,
+     "z": [
+      "The Hinterlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 8497,
+     "n": "Nightmare Suppressor",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.262,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 224253,
+     "n": "Nightmare Wanderer",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.254,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5277,
+     "n": "Nightmare Scalebane",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.251,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 224254,
+     "n": "Nightmare Wyrmkin",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.25,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5283,
+     "n": "Nightmare Wanderer",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.247,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5280,
+     "n": "Nightmare Wyrmkin",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.24,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 224255,
+     "n": "Nightmare Scalebane",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.237,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12478,
+     "n": "Verdantine Oracle",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.18,
+     "z": [
+      "The Hinterlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5317,
+     "n": "Jademir Oracle",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.165,
+     "z": [
+      "Feralas"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 221367,
+     "n": "Wyrmkin Berserker",
+     "l": [
+      51,
+      51
+     ],
+     "p": 0.162,
+     "z": [
+      "Feralas"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12474,
+     "n": "Emeraldon Boughguard",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.162,
+     "z": [
+      "Ashenvale",
+      "Orgrimmar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 744,
+     "n": "Green Scalebane",
+     "l": [
+      42,
+      43
+     ],
+     "p": 0.159,
+     "z": [
+      "Swamp of Sorrows"
+     ],
+     "skin": true
+    },
+    {
+     "id": 742,
+     "n": "Green Wyrmkin",
+     "l": [
+      41,
+      42
+     ],
+     "p": 0.158,
+     "z": [
+      "Swamp of Sorrows"
+     ],
+     "skin": true
+    },
+    {
+     "id": 746,
+     "n": "Elder Dragonkin",
+     "l": [
+      45,
+      45
+     ],
+     "p": 0.156,
+     "z": [
+      "Swamp of Sorrows"
+     ],
+     "skin": true
+    },
+    {
+     "id": 5320,
+     "n": "Jademir Boughguard",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.156,
+     "z": [
+      "Feralas",
+      "Desolace"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12475,
+     "n": "Emeraldon Tree Warder",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.155,
+     "z": [
+      "Ashenvale",
+      "Orgrimmar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5319,
+     "n": "Jademir Tree Warder",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.148,
+     "z": [
+      "Feralas"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 745,
+     "n": "Scalebane Captain",
+     "l": [
+      43,
+      44
+     ],
+     "p": 0.146,
+     "z": [
+      "Swamp of Sorrows"
+     ],
+     "skin": true
+    },
+    {
+     "id": 743,
+     "n": "Wyrmkin Dreamwalker",
+     "l": [
+      42,
+      43
+     ],
+     "p": 0.143,
+     "z": [
+      "Swamp of Sorrows"
+     ],
+     "skin": true
+    },
+    {
+     "id": 10814,
+     "n": "Chromatic Elite Guard",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.141,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12476,
+     "n": "Emeraldon Oracle",
+     "l": [
+      61,
+      61
+     ],
+     "p": 0.14,
+     "z": [
+      "Ashenvale",
+      "Orgrimmar"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12497,
+     "n": "Dreamroarer",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.138,
+     "z": [
+      "Feralas"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12477,
+     "n": "Verdantine Boughguard",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.136,
+     "z": [
+      "The Hinterlands",
+      "Ironforge"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 12479,
+     "n": "Verdantine Tree Warder",
+     "l": [
+      60,
+      60
+     ],
+     "p": 0.126,
+     "z": [
+      "The Hinterlands"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 5314,
+     "n": "Phantim",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.098,
+     "z": [
+      "Ashenvale"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10447,
+     "n": "Chromatic Dragonspawn",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.069,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 8319,
+     "n": "Nightmare Whelp",
+     "l": [
+      49,
+      50
+     ],
+     "p": 0.039,
+     "z": [
+      "The Temple of Atal'Hakkar"
+     ],
+     "skin": true
+    }
+   ],
+   "gather": {
+    "inItem": [
+     "Otherworldly Treasure"
+    ]
+   }
+  },
+  "15415": {
+   "name": "Blue Dragonscale",
+   "drops": [
+    {
+     "id": 10339,
+     "n": "Gyth",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.982,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10196,
+     "n": "General Colbatann",
+     "l": [
+      56,
+      57
+     ],
+     "p": 0.276,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10662,
+     "n": "Spellmaw",
+     "l": [
+      56,
+      56
+     ],
+     "p": 0.268,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10663,
+     "n": "Manaclaw",
+     "l": [
+      58,
+      58
+     ],
+     "p": 0.261,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7437,
+     "n": "Cobalt Mageweaver",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.251,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7436,
+     "n": "Cobalt Scalebane",
+     "l": [
+      56,
+      57
+     ],
+     "p": 0.248,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 6129,
+     "n": "Draconic Magelord",
+     "l": [
+      53,
+      54
+     ],
+     "p": 0.171,
+     "z": [
+      "Azshara"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 6131,
+     "n": "Draconic Mageweaver",
+     "l": [
+      51,
+      52
+     ],
+     "p": 0.158,
+     "z": [
+      "Azshara"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7435,
+     "n": "Cobalt Wyrmkin",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.155,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 193,
+     "n": "Blue Dragonspawn",
+     "l": [
+      50,
+      51
+     ],
+     "p": 0.152,
+     "z": [
+      "Azshara"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 6130,
+     "n": "Blue Scalebane",
+     "l": [
+      52,
+      53
+     ],
+     "p": 0.152,
+     "z": [
+      "Azshara"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10659,
+     "n": "Cobalt Whelp",
+     "l": [
+      54,
+      55
+     ],
+     "p": 0.088,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 10814,
+     "n": "Chromatic Elite Guard",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.073,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 10447,
+     "n": "Chromatic Dragonspawn",
+     "l": [
+      59,
+      60
+     ],
+     "p": 0.07,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true,
+     "skin": true
+    },
+    {
+     "id": 7436,
+     "n": "Cobalt Scalebane",
+     "l": [
+      56,
+      57
+     ],
+     "p": 0.059,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true
+    },
+    {
+     "id": 7437,
+     "n": "Cobalt Mageweaver",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.056,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true
+    },
+    {
+     "id": 10339,
+     "n": "Gyth",
+     "l": [
+      62,
+      62
+     ],
+     "p": 0.055,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "elite": true
+    },
+    {
+     "id": 10442,
+     "n": "Chromatic Whelp",
+     "l": [
+      57,
+      58
+     ],
+     "p": 0.047,
+     "z": [
+      "Blackrock Spire"
+     ],
+     "skin": true
+    },
+    {
+     "id": 7435,
+     "n": "Cobalt Wyrmkin",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.035,
+     "z": [
+      "Winterspring"
+     ],
+     "elite": true
+    },
+    {
+     "id": 10660,
+     "n": "Cobalt Broodling",
+     "l": [
+      55,
+      56
+     ],
+     "p": 0.029,
+     "z": [
+      "Winterspring"
+     ],
+     "skin": true
+    },
+    {
+     "id": 10661,
+     "n": "Spell Eater",
+     "l": [
+      54,
+      56
+     ],
+     "p": 0.021,
+     "z": [
+      "Winterspring"
+     ]
+    }
+   ],
+   "gather": {
+    "inItem": [
+     "Otherworldly Treasure"
+    ]
+   }
+  },
+  "248824": {
+   "name": "Fel Hide"
+  },
+  "249409": {
+   "name": "Cerulean Dye",
+   "craft": {
+    "prof": "alchemy",
+    "skill": 50,
+    "mats": [
+     [
+      249399,
+      2
+     ],
+     [
+      3371,
+      1
+     ]
+    ]
+   }
+  },
+  "249410": {
+   "name": "Sulfuric Acid",
+   "craft": {
+    "prof": "alchemy",
+    "skill": 50,
+    "mats": [
+     [
+      249391,
+      2
+     ],
+     [
+      3371,
+      1
+     ]
+    ]
+   }
+  },
+  "249427": {
+   "name": "Pristine Leather"
+  },
+  "249428": {
+   "name": "Pristine Hide"
+  },
+  "249429": {
+   "name": "Pristine Scale"
+  }
+ }
+}

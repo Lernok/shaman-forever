@@ -3,7 +3,8 @@
  "sources": {
   "yields": "https://www.wowhead.com/classic/item=783/light-hide#skinned-from",
   "beasts": "https://github.com/Questie/QuestieDB",
-  "recipes": "https://classicwowforever.com/professions/leatherworking/recipes/"
+  "recipes": "https://classicwowforever.com/professions/leatherworking/recipes/",
+  "reagents": "https://www.wowhead.com/classic/item=5784/slimy-murloc-scale#dropped-by"
  },
  "skin": [
   2934,
@@ -8248,5 +8249,7449 @@
   "252590": "inv_belt_39c",
   "252591": "inv_belt_37c",
   "279978": "inv_misc_leatherscrap_01"
+ },
+ "reagents": {
+  "1210": {
+   "d": [
+    [
+     "Moonrage Leatherworker",
+     14,
+     15,
+     0.032,
+     [
+      "Silverpine Forest"
+     ],
+     1,
+     0
+    ],
+    [
+     "Shadowfang Whitescalp",
+     18,
+     19,
+     0.029,
+     [
+      "Shadowfang Keep"
+     ],
+     1,
+     0
+    ],
+    [
+     "Shadowfang Moonwalker",
+     19,
+     20,
+     0.028,
+     [
+      "Shadowfang Keep"
+     ],
+     1,
+     0
+    ],
+    [
+     "Druid of the Fang",
+     19,
+     20,
+     0.026,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Mo'grosh Enforcer",
+     18,
+     19,
+     0.025,
+     [
+      "Loch Modan"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deathstalker Adamant",
+     18,
+     18,
+     0.025,
+     [
+      "Shadowfang Keep"
+     ],
+     1,
+     "H"
+    ],
+    [
+     "Deviate Shambler",
+     19,
+     20,
+     0.025,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Defias Overseer",
+     17,
+     18,
+     0.024,
+     [
+      "The Deadmines"
+     ],
+     1,
+     0
+    ],
+    [
+     "Goblin Woodcarver",
+     18,
+     19,
+     0.024,
+     [
+      "The Deadmines"
+     ],
+     1,
+     0
+    ],
+    [
+     "Mo'grosh Brute",
+     19,
+     20,
+     0.024,
+     [
+      "Loch Modan"
+     ],
+     1,
+     0
+    ],
+    [
+     "Defias Taskmaster",
+     18,
+     19,
+     0.024,
+     [
+      "The Deadmines"
+     ],
+     1,
+     0
+    ],
+    [
+     "Defias Wizard",
+     18,
+     19,
+     0.024,
+     [
+      "The Deadmines"
+     ],
+     1,
+     0
+    ],
+    [
+     "Mo'grosh Ogre",
+     18,
+     19,
+     0.023,
+     [
+      "Loch Modan"
+     ],
+     1,
+     0
+    ],
+    [
+     "Defias Squallshaper",
+     19,
+     20,
+     0.023,
+     [
+      "The Deadmines"
+     ],
+     1,
+     0
+    ],
+    [
+     "Old Icebeard",
+     11,
+     11,
+     0.022,
+     [
+      "Dun Morogh"
+     ],
+     1,
+     0
+    ],
+    [
+     "Defias Evoker",
+     17,
+     18,
+     0.022,
+     [
+      "The Deadmines"
+     ],
+     1,
+     0
+    ],
+    [
+     "Goblin Shipbuilder",
+     19,
+     20,
+     0.022,
+     [
+      "The Deadmines"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deviate Faerie Dragon",
+     20,
+     20,
+     0.022,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Defias Blackguard",
+     19,
+     20,
+     0.021,
+     [
+      "The Deadmines"
+     ],
+     1,
+     0
+    ],
+    [
+     "Defias Pirate",
+     19,
+     20,
+     0.021,
+     [
+      "The Deadmines"
+     ],
+     1,
+     0
+    ],
+    [
+     "Mo'grosh Mystic",
+     19,
+     20,
+     0.021,
+     [
+      "Loch Modan"
+     ],
+     1,
+     0
+    ]
+   ],
+   "g": {
+    "mined": [
+     "Copper Vein",
+     "Tin Vein",
+     "Silver Vein"
+    ],
+    "fished": [
+     "Stormwind City",
+     "Orgrimmar",
+     "Durotar",
+     "Stonetalon Mountains",
+     "Undercity"
+    ],
+    "inItem": [
+     "A Small Container of Gems",
+     "Sack of Gems",
+     "Bloated Mud Snapper",
+     "Bloated Catfish"
+    ]
+   }
+  },
+  "1529": {
+   "d": [
+    [
+     "Brother Ravenoak",
+     29,
+     29,
+     0.033,
+     [
+      "Stonetalon Mountains"
+     ],
+     1,
+     0
+    ]
+   ],
+   "g": {
+    "mined": [
+     "Tin Vein",
+     "Gold Vein",
+     "Iron Deposit",
+     "Ooze Covered Gold Vein"
+    ],
+    "fished": [
+     "Stranglethorn Vale"
+    ],
+    "inItem": [
+     "Gray Sack of Gems",
+     "Yellow Sack of Gems",
+     "Blue Sack of Gems",
+     "Red Sack of Gems"
+    ]
+   }
+  },
+  "2320": {
+   "v": 1
+  },
+  "2321": {
+   "v": 1
+  },
+  "2325": {
+   "v": 1
+  },
+  "2457": {
+   "c": [
+    "alchemy",
+    50
+   ]
+  },
+  "2458": {
+   "c": [
+    "alchemy",
+    50
+   ]
+  },
+  "2605": {
+   "v": 1
+  },
+  "3182": {
+   "d": [
+    [
+     "Giant Plains Creeper",
+     35,
+     36,
+     0.1,
+     [
+      "Arathi Highlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Plains Creeper",
+     32,
+     33,
+     0.09,
+     [
+      "Arathi Highlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Wildthorn Lurker",
+     28,
+     29,
+     0.071,
+     [
+      "Ashenvale"
+     ],
+     0,
+     0
+    ],
+    [
+     "Elder Moss Creeper",
+     26,
+     27,
+     0.068,
+     [
+      "Hillsbrad Foothills"
+     ],
+     0,
+     0
+    ],
+    [
+     "Black Widow Hatchling",
+     20,
+     25,
+     0.061,
+     [
+      "Duskwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Giant Moss Creeper",
+     24,
+     25,
+     0.06,
+     [
+      "Hillsbrad Foothills",
+      "Alterac Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Cave Stalker",
+     21,
+     22,
+     0.06,
+     [
+      "Wetlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Wildthorn Venomspitter",
+     24,
+     25,
+     0.057,
+     [
+      "Ashenvale"
+     ],
+     0,
+     0
+    ],
+    [
+     "Wildthorn Stalker",
+     20,
+     21,
+     0.056,
+     [
+      "Ashenvale",
+      "The Barrens"
+     ],
+     0,
+     0
+    ],
+    [
+     "Carrion Recluse",
+     25,
+     26,
+     0.055,
+     [
+      "Duskwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Forest Moss Creeper",
+     20,
+     21,
+     0.054,
+     [
+      "Hillsbrad Foothills"
+     ],
+     0,
+     0
+    ],
+    [
+     "Leech Stalker",
+     21,
+     22,
+     0.052,
+     [
+      "Wetlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Green Recluse",
+     21,
+     22,
+     0.05,
+     [
+      "Duskwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Deepmoss Matriarch",
+     22,
+     22,
+     0.05,
+     [
+      "Stonetalon Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Black Widow Broodmother",
+     26,
+     26,
+     0.045,
+     [
+      "Duskwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Deepmoss Venomspitter",
+     17,
+     18,
+     0.044,
+     [
+      "Stonetalon Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Venom Web Spider",
+     19,
+     20,
+     0.041,
+     [
+      "Duskwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Deepmoss Webspinner",
+     19,
+     20,
+     0.04,
+     [
+      "Stonetalon Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Greater Tarantula",
+     19,
+     20,
+     0.039,
+     [
+      "Redridge Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Pygmy Venom Web Spider",
+     18,
+     19,
+     0.039,
+     [
+      "Duskwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Besseleth",
+     21,
+     21,
+     0.035,
+     [
+      "Stonetalon Mountains"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deepmoss Creeper",
+     16,
+     17,
+     0.034,
+     [
+      "Stonetalon Mountains"
+     ],
+     0,
+     0
+    ]
+   ]
+  },
+  "3389": {
+   "c": [
+    "alchemy",
+    130
+   ]
+  },
+  "3391": {
+   "c": [
+    "alchemy",
+    150
+   ]
+  },
+  "3824": {
+   "c": [
+    "alchemy",
+    165
+   ],
+   "g": {
+    "inItem": [
+     "Supply Bag"
+    ]
+   }
+  },
+  "3864": {
+   "d": [
+    [
+     "Shadowforge Geologist",
+     40,
+     41,
+     0.021,
+     [
+      "Uldaman"
+     ],
+     1,
+     0
+    ]
+   ],
+   "g": {
+    "mined": [
+     "Gold Vein",
+     "Iron Deposit",
+     "Mithril Deposit",
+     "Truesilver Deposit"
+    ],
+    "fished": [
+     "The Hinterlands"
+    ],
+    "inItem": [
+     "Green Sack of Gems",
+     "Gray Sack of Gems",
+     "Red Sack of Gems",
+     "Blue Sack of Gems"
+    ]
+   }
+  },
+  "4289": {
+   "v": 1
+  },
+  "4291": {
+   "v": 1
+  },
+  "4305": {
+   "c": [
+    "tailoring",
+    100
+   ],
+   "d": [
+    [
+     "Fel Interloper",
+     45,
+     48,
+     0.113,
+     [
+      "Blasted Lands",
+      "Feralas",
+      "Azshara"
+     ],
+     0,
+     0
+    ],
+    [
+     "Fel Interloper",
+     35,
+     38,
+     0.054,
+     [
+      "Swamp of Sorrows",
+      "Desolace"
+     ],
+     0,
+     0
+    ]
+   ],
+   "g": {
+    "fished": [
+     "Stranglethorn Vale"
+    ],
+    "inItem": [
+     "Iron Bound Trunk",
+     "Ironbound Locked Chest",
+     "Watertight Trunk",
+     "Sturdy Locked Chest"
+    ]
+   }
+  },
+  "4340": {
+   "v": 1
+  },
+  "5116": {
+   "d": [
+    [
+     "Dread Ripper",
+     39,
+     40,
+     0.273,
+     [
+      "Desolace"
+     ],
+     0,
+     0
+    ],
+    [
+     "Mesa Buzzard",
+     34,
+     35,
+     0.253,
+     [
+      "Arathi Highlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Gharrik",
+     40,
+     40,
+     0.25,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Carrion Horror",
+     35,
+     37,
+     0.249,
+     [
+      "Desolace"
+     ],
+     0,
+     0
+    ],
+    [
+     "Elder Mesa Buzzard",
+     37,
+     38,
+     0.246,
+     [
+      "Arathi Highlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Buzzard",
+     37,
+     39,
+     0.24,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Giant Buzzard",
+     39,
+     41,
+     0.238,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Salt Flats Scavenger",
+     30,
+     32,
+     0.229,
+     [
+      "Thousand Needles"
+     ],
+     0,
+     0
+    ],
+    [
+     "Salt Flats Vulture",
+     32,
+     34,
+     0.227,
+     [
+      "Thousand Needles"
+     ],
+     0,
+     0
+    ],
+    [
+     "Starving Buzzard",
+     35,
+     37,
+     0.199,
+     [
+      "Badlands",
+      "Loch Modan"
+     ],
+     0,
+     0
+    ],
+    [
+     "Young Mesa Buzzard",
+     31,
+     32,
+     0.179,
+     [
+      "Arathi Highlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bloodfury Windcaller",
+     24,
+     25,
+     0.166,
+     [
+      "Stonetalon Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bloodfury Ambusher",
+     23,
+     24,
+     0.164,
+     [
+      "Stonetalon Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bloodfury Harpy",
+     23,
+     24,
+     0.163,
+     [
+      "Stonetalon Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bloodfury Roguefeather",
+     25,
+     26,
+     0.162,
+     [
+      "Stonetalon Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bloodfury Slayer",
+     25,
+     26,
+     0.162,
+     [
+      "Stonetalon Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bloodfury Storm Witch",
+     26,
+     27,
+     0.16,
+     [
+      "Stonetalon Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Sharptalon",
+     31,
+     31,
+     0.155,
+     [
+      "Ashenvale"
+     ],
+     0,
+     "A"
+    ],
+    [
+     "Vultros",
+     26,
+     26,
+     0.123,
+     [
+      "Westfall"
+     ],
+     1,
+     0
+    ],
+    [
+     "Carrodin",
+     25,
+     25,
+     0.116,
+     [
+      "Wetlands"
+     ],
+     1,
+     0
+    ],
+    [
+     "Dread Swoop",
+     32,
+     33,
+     0.109,
+     [
+      "Desolace"
+     ],
+     0,
+     0
+    ],
+    [
+     "Dread Flyer",
+     36,
+     37,
+     0.095,
+     [
+      "Desolace"
+     ],
+     0,
+     0
+    ],
+    [
+     "Sister Riven",
+     28,
+     28,
+     0.056,
+     [
+      "Stonetalon Mountains"
+     ],
+     1,
+     0
+    ],
+    [
+     "Northspring Harpy",
+     48,
+     49,
+     0.046,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Dreamspring Stormcaller",
+     49,
+     50,
+     0.045,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Northspring Roguefeather",
+     48,
+     49,
+     0.043,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Northspring Windcaller",
+     49,
+     50,
+     0.042,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Dreamspring Roguefeather",
+     51,
+     51,
+     0.04,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Northspring Slayer",
+     49,
+     50,
+     0.038,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bloodfury Ripper",
+     26,
+     26,
+     0.038,
+     [
+      "Stonetalon Mountains"
+     ],
+     1,
+     0
+    ],
+    [
+     "Screeching Windcaller",
+     30,
+     30,
+     0.033,
+     [
+      "Thousand Needles"
+     ],
+     0,
+     0
+    ],
+    [
+     "Screeching Roguefeather",
+     29,
+     30,
+     0.026,
+     [
+      "Thousand Needles"
+     ],
+     0,
+     0
+    ],
+    [
+     "Screeching Harpy",
+     28,
+     29,
+     0.024,
+     [
+      "Thousand Needles"
+     ],
+     0,
+     0
+    ]
+   ]
+  },
+  "5498": {
+   "d": [
+    [
+     "Cannoneer Smythe",
+     19,
+     19,
+     0.06,
+     [
+      "The Barrens"
+     ],
+     0,
+     0
+    ],
+    [
+     "Cannoneer Whessan",
+     19,
+     19,
+     0.053,
+     [
+      "The Barrens"
+     ],
+     0,
+     0
+    ],
+    [
+     "Theramore Preserver",
+     16,
+     17,
+     0.04,
+     [
+      "The Barrens"
+     ],
+     0,
+     "A"
+    ],
+    [
+     "Southsea Brigand",
+     12,
+     13,
+     0.039,
+     [
+      "The Barrens"
+     ],
+     0,
+     0
+    ],
+    [
+     "Southsea Cannoneer",
+     13,
+     14,
+     0.039,
+     [
+      "The Barrens"
+     ],
+     0,
+     0
+    ],
+    [
+     "Southsea Cutthroat",
+     14,
+     15,
+     0.038,
+     [
+      "The Barrens"
+     ],
+     0,
+     0
+    ],
+    [
+     "Captain Fairmount",
+     20,
+     20,
+     0.038,
+     [
+      "The Barrens"
+     ],
+     0,
+     0
+    ],
+    [
+     "Theramore Marine",
+     15,
+     16,
+     0.034,
+     [
+      "The Barrens"
+     ],
+     0,
+     "A"
+    ],
+    [
+     "Southsea Privateer",
+     14,
+     15,
+     0.033,
+     [
+      "The Barrens"
+     ],
+     0,
+     0
+    ],
+    [
+     "Baron Longshore",
+     16,
+     16,
+     0.024,
+     [
+      "The Barrens"
+     ],
+     0,
+     0
+    ]
+   ],
+   "g": {
+    "fished": [
+     "Azshara",
+     "Feralas"
+    ],
+    "inItem": [
+     "A Small Container of Gems",
+     "Sack of Gems",
+     "Small Barnacled Clam",
+     "Thick-shelled Clam"
+    ]
+   }
+  },
+  "5500": {
+   "g": {
+    "fished": [
+     "Azshara",
+     "Feralas",
+     "The Hinterlands",
+     "Tanaris"
+    ],
+    "inItem": [
+     "A Small Container of Gems",
+     "Sack of Gems",
+     "Thaurissan Family Jewels",
+     "Thick-shelled Clam"
+    ]
+   }
+  },
+  "5784": {
+   "d": [
+    [
+     "Bluegill Oracle",
+     25,
+     26,
+     0.278,
+     [
+      "Wetlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bluegill Warrior",
+     24,
+     25,
+     0.268,
+     [
+      "Wetlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bluegill Muckdweller",
+     23,
+     24,
+     0.255,
+     [
+      "Wetlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Murkdeep",
+     19,
+     19,
+     0.252,
+     [
+      "Darkshore"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bluegill Forager",
+     22,
+     23,
+     0.241,
+     [
+      "Wetlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Vile Fin Oracle",
+     19,
+     20,
+     0.241,
+     [
+      "Silverpine Forest"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bluegill Puddlejumper",
+     21,
+     22,
+     0.24,
+     [
+      "Wetlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Blindlight Muckdweller",
+     25,
+     26,
+     0.24,
+     [
+      "Blackfathom Deeps"
+     ],
+     1,
+     0
+    ],
+    [
+     "Murloc Tidehunter",
+     18,
+     19,
+     0.236,
+     [
+      "Westfall"
+     ],
+     0,
+     0
+    ],
+    [
+     "Blindlight Oracle",
+     25,
+     26,
+     0.236,
+     [
+      "Blackfathom Deeps"
+     ],
+     1,
+     0
+    ],
+    [
+     "Vile Fin Lakestalker",
+     18,
+     19,
+     0.233,
+     [
+      "Silverpine Forest"
+     ],
+     0,
+     0
+    ],
+    [
+     "Greymist Tidehunter",
+     19,
+     20,
+     0.233,
+     [
+      "Darkshore"
+     ],
+     0,
+     0
+    ],
+    [
+     "Vile Fin Shorecreeper",
+     16,
+     17,
+     0.228,
+     [
+      "Silverpine Forest",
+      "Alterac Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bluegill Murloc",
+     20,
+     21,
+     0.226,
+     [
+      "Wetlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Greymist Oracle",
+     18,
+     19,
+     0.226,
+     [
+      "Darkshore"
+     ],
+     0,
+     0
+    ],
+    [
+     "Murloc Oracle",
+     17,
+     18,
+     0.225,
+     [
+      "Westfall"
+     ],
+     0,
+     0
+    ],
+    [
+     "Murloc Hunter",
+     16,
+     17,
+     0.222,
+     [
+      "Westfall"
+     ],
+     0,
+     0
+    ],
+    [
+     "Saltspittle Warrior",
+     19,
+     20,
+     0.216,
+     [
+      "Ashenvale"
+     ],
+     0,
+     0
+    ],
+    [
+     "Blindlight Murloc",
+     22,
+     25,
+     0.215,
+     [
+      "Blackfathom Deeps"
+     ],
+     1,
+     0
+    ],
+    [
+     "Saltspittle Oracle",
+     20,
+     21,
+     0.213,
+     [
+      "Ashenvale"
+     ],
+     0,
+     0
+    ],
+    [
+     "Murloc Nightcrawler",
+     21,
+     22,
+     0.212,
+     [
+      "Redridge Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Squiddic",
+     19,
+     19,
+     0.211,
+     [
+      "Redridge Mountains"
+     ],
+     1,
+     0
+    ],
+    [
+     "Saltspittle Puddlejumper",
+     19,
+     20,
+     0.21,
+     [
+      "Ashenvale"
+     ],
+     0,
+     0
+    ],
+    [
+     "Vile Fin Tidecaller",
+     17,
+     18,
+     0.209,
+     [
+      "Silverpine Forest",
+      "Alterac Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Greymist Hunter",
+     16,
+     17,
+     0.207,
+     [
+      "Darkshore"
+     ],
+     0,
+     0
+    ],
+    [
+     "Saltspittle Muckdweller",
+     20,
+     21,
+     0.207,
+     [
+      "Ashenvale"
+     ],
+     0,
+     0
+    ],
+    [
+     "Murloc Scout",
+     19,
+     20,
+     0.203,
+     [
+      "Redridge Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Murloc Warrior",
+     15,
+     16,
+     0.199,
+     [
+      "Westfall"
+     ],
+     0,
+     0
+    ],
+    [
+     "Greymist Warrior",
+     15,
+     16,
+     0.198,
+     [
+      "Darkshore"
+     ],
+     0,
+     0
+    ],
+    [
+     "Murloc Tidecaller",
+     19,
+     20,
+     0.197,
+     [
+      "Redridge Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Murloc Flesheater",
+     18,
+     19,
+     0.195,
+     [
+      "Redridge Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Murloc Minor Tidecaller",
+     17,
+     18,
+     0.186,
+     [
+      "Redridge Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Old Murk-Eye",
+     20,
+     20,
+     0.176,
+     [
+      "Westfall"
+     ],
+     0,
+     0
+    ],
+    [
+     "Murloc Shorestriker",
+     16,
+     17,
+     0.176,
+     [
+      "Redridge Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Brack",
+     19,
+     19,
+     0.171,
+     [
+      "Westfall"
+     ],
+     1,
+     0
+    ],
+    [
+     "Gobbler",
+     22,
+     22,
+     0.168,
+     [
+      "Wetlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Flagglemurk the Cruel",
+     16,
+     16,
+     0.167,
+     [
+      "Darkshore"
+     ],
+     1,
+     0
+    ],
+    [
+     "Cookie",
+     20,
+     20,
+     0.11,
+     [
+      "The Deadmines"
+     ],
+     1,
+     0
+    ],
+    [
+     "Gelihast",
+     26,
+     26,
+     0.106,
+     [
+      "Blackfathom Deeps"
+     ],
+     1,
+     0
+    ],
+    [
+     "Mutanus the Devourer",
+     22,
+     22,
+     0.093,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ]
+   ]
+  },
+  "6470": {
+   "d": [
+    [
+     "Deviate Moccasin",
+     20,
+     21,
+     0.139,
+     [
+      "Wailing Caverns"
+     ],
+     3,
+     0
+    ],
+    [
+     "Deviate Shambler",
+     19,
+     20,
+     0.1,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deviate Adder",
+     18,
+     19,
+     0.09,
+     [
+      "Wailing Caverns"
+     ],
+     3,
+     0
+    ],
+    [
+     "Deviate Coiler",
+     15,
+     16,
+     0.085,
+     [
+      "The Barrens"
+     ],
+     3,
+     0
+    ],
+    [
+     "Deviate Dreadfang",
+     20,
+     21,
+     0.082,
+     [
+      "Wailing Caverns"
+     ],
+     3,
+     0
+    ],
+    [
+     "Deviate Creeper",
+     15,
+     16,
+     0.081,
+     [
+      "The Barrens"
+     ],
+     3,
+     0
+    ],
+    [
+     "Deviate Guardian",
+     18,
+     19,
+     0.08,
+     [
+      "Wailing Caverns"
+     ],
+     3,
+     0
+    ],
+    [
+     "Deviate Python",
+     18,
+     19,
+     0.08,
+     [
+      "Wailing Caverns"
+     ],
+     2,
+     0
+    ],
+    [
+     "Deviate Stalker",
+     15,
+     17,
+     0.08,
+     [
+      "The Barrens"
+     ],
+     3,
+     0
+    ],
+    [
+     "Deviate Venomwing",
+     20,
+     21,
+     0.079,
+     [
+      "Wailing Caverns"
+     ],
+     3,
+     0
+    ],
+    [
+     "Deviate Coiler",
+     15,
+     16,
+     0.076,
+     [
+      "The Barrens"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deviate Ravager",
+     18,
+     19,
+     0.075,
+     [
+      "Wailing Caverns"
+     ],
+     3,
+     0
+    ],
+    [
+     "Deviate Creeper",
+     15,
+     16,
+     0.074,
+     [
+      "The Barrens"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deviate Stalker",
+     15,
+     17,
+     0.072,
+     [
+      "The Barrens"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deviate Guardian",
+     18,
+     19,
+     0.068,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deviate Crocolisk",
+     18,
+     19,
+     0.068,
+     [
+      "Wailing Caverns"
+     ],
+     0,
+     0
+    ],
+    [
+     "Deviate Viper",
+     19,
+     20,
+     0.067,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deviate Moccasin",
+     20,
+     21,
+     0.066,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deviate Ravager",
+     18,
+     19,
+     0.065,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deviate Dreadfang",
+     20,
+     21,
+     0.065,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deviate Venomwing",
+     20,
+     21,
+     0.064,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deviate Adder",
+     18,
+     19,
+     0.063,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Kresh",
+     20,
+     20,
+     0.056,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Verdan the Everliving",
+     21,
+     21,
+     0.036,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deviate Faerie Dragon",
+     20,
+     20,
+     0.035,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Deviate Python",
+     18,
+     19,
+     0.032,
+     [
+      "Wailing Caverns"
+     ],
+     0,
+     0
+    ],
+    [
+     "Skum",
+     21,
+     21,
+     0.031,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ],
+    [
+     "Mutanus the Devourer",
+     22,
+     22,
+     0.027,
+     [
+      "Wailing Caverns"
+     ],
+     1,
+     0
+    ]
+   ],
+   "g": {
+    "fished": [
+     "The Barrens",
+     "Undercity",
+     "Ashenvale",
+     "Thousand Needles"
+    ]
+   }
+  },
+  "7067": {
+   "d": [
+    [
+     "Infernus Siege Giant",
+     60,
+     60,
+     0.129,
+     [
+      "Searing Gorge"
+     ],
+     1,
+     0
+    ],
+    [
+     "Duke Tectonis",
+     59,
+     60,
+     0.104,
+     [
+      "Searing Gorge"
+     ],
+     1,
+     0
+    ],
+    [
+     "Rumbling Exile",
+     38,
+     39,
+     0.099,
+     [
+      "Arathi Highlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Rock Elemental",
+     39,
+     40,
+     0.096,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Lesser Rock Elemental",
+     37,
+     39,
+     0.088,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Stone Fury",
+     37,
+     37,
+     0.084,
+     [
+      "Alterac Mountains"
+     ],
+     1,
+     0
+    ],
+    [
+     "Elemental Slave",
+     33,
+     34,
+     0.071,
+     [
+      "Alterac Mountains"
+     ],
+     0,
+     "A"
+    ],
+    [
+     "Desert Rager",
+     58,
+     59,
+     0.06,
+     [
+      "Silithus"
+     ],
+     0,
+     0
+    ],
+    [
+     "Firesworn",
+     60,
+     61,
+     0.057,
+     [
+      "Burning Steppes"
+     ],
+     1,
+     0
+    ],
+    [
+     "Obsidian Elemental",
+     51,
+     53,
+     0.053,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Thundering Boulderkin",
+     28,
+     29,
+     0.05,
+     [
+      "Thousand Needles"
+     ],
+     0,
+     0
+    ],
+    [
+     "Enraged Rock Elemental",
+     42,
+     43,
+     0.049,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Greater Obsidian Elemental",
+     55,
+     57,
+     0.049,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Desert Rumbler",
+     56,
+     58,
+     0.049,
+     [
+      "Silithus"
+     ],
+     0,
+     0
+    ],
+    [
+     "Greater Rock Elemental",
+     42,
+     44,
+     0.048,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Ground Pounder",
+     41,
+     43,
+     0.048,
+     [
+      "Tanaris"
+     ],
+     0,
+     0
+    ],
+    [
+     "Furious Stone Spirit",
+     26,
+     27,
+     0.047,
+     [
+      "Stonetalon Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Thundering Invader",
+     55,
+     57,
+     0.047,
+     [
+      "Azshara"
+     ],
+     0,
+     0
+    ],
+    [
+     "Fam'retor Guardian",
+     45,
+     45,
+     0.046,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Rok'Alim the Pounder",
+     30,
+     30,
+     0.044,
+     [
+      "Thousand Needles"
+     ],
+     1,
+     0
+    ],
+    [
+     "Land Rager",
+     45,
+     47,
+     0.043,
+     [
+      "Tanaris"
+     ],
+     0,
+     0
+    ],
+    [
+     "Theradrim Shardling",
+     46,
+     46,
+     0.041,
+     [
+      "Maraudon"
+     ],
+     0,
+     0
+    ],
+    [
+     "Obsidian Reaver",
+     56,
+     60,
+     0.04,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Theradrim Guardian",
+     47,
+     48,
+     0.039,
+     [
+      "Maraudon"
+     ],
+     1,
+     0
+    ],
+    [
+     "Enraged Stone Spirit",
+     24,
+     25,
+     0.035,
+     [
+      "Stonetalon Mountains"
+     ],
+     0,
+     0
+    ],
+    [
+     "Shadowshard Rumbler",
+     40,
+     41,
+     0.029,
+     [
+      "Desolace"
+     ],
+     1,
+     0
+    ],
+    [
+     "Shadowshard Smasher",
+     41,
+     42,
+     0.028,
+     [
+      "Desolace"
+     ],
+     1,
+     0
+    ],
+    [
+     "Searing Infernal",
+     61,
+     61,
+     0.026,
+     [
+      "Demon Fall Canyon"
+     ],
+     1,
+     0
+    ],
+    [
+     "Hulking Infernal",
+     61,
+     61,
+     0.025,
+     [
+      "Demon Fall Canyon"
+     ],
+     1,
+     0
+    ],
+    [
+     "Obsidian Surger",
+     55,
+     58,
+     0.024,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bael'Gar",
+     54,
+     54,
+     0.021,
+     [
+      "Blackrock Depths"
+     ],
+     1,
+     "A"
+    ]
+   ],
+   "g": {
+    "mined": [
+     "Small Thorium Vein",
+     "Mithril Deposit",
+     "Truesilver Deposit",
+     "Ooze Covered Thorium Vein"
+    ],
+    "inItem": [
+     "Bag of Spoils",
+     "Ziri's Mystery Crate"
+    ]
+   }
+  },
+  "7069": {
+   "d": [
+    [
+     "Thundering Exile",
+     38,
+     39,
+     0.129,
+     [
+      "Arathi Highlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Swirling Vortex",
+     33,
+     34,
+     0.125,
+     [
+      "Thousand Needles"
+     ],
+     0,
+     0
+    ],
+    [
+     "Whirlwind Ripper",
+     32,
+     34,
+     0.124,
+     [
+      "Desolace"
+     ],
+     0,
+     0
+    ],
+    [
+     "Whirlwind Stormwalker",
+     35,
+     37,
+     0.12,
+     [
+      "Desolace"
+     ],
+     0,
+     0
+    ],
+    [
+     "Whirlwind Shredder",
+     32,
+     34,
+     0.108,
+     [
+      "Desolace"
+     ],
+     0,
+     0
+    ],
+    [
+     "Gusting Vortex",
+     43,
+     45,
+     0.073,
+     [
+      "Tanaris"
+     ],
+     0,
+     0
+    ],
+    [
+     "Living Storm",
+     47,
+     49,
+     0.063,
+     [
+      "Tanaris"
+     ],
+     0,
+     0
+    ],
+    [
+     "Dust Stormer",
+     55,
+     57,
+     0.062,
+     [
+      "Silithus"
+     ],
+     0,
+     0
+    ],
+    [
+     "Whirling Invader",
+     57,
+     58,
+     0.045,
+     [
+      "Silithus"
+     ],
+     0,
+     0
+    ],
+    [
+     "Cyclone Warrior",
+     57,
+     59,
+     0.043,
+     [
+      "Silithus"
+     ],
+     0,
+     0
+    ],
+    [
+     "Cyclone Imperator",
+     62,
+     62,
+     0.026,
+     [
+      "The Crystal Vale"
+     ],
+     1,
+     0
+    ]
+   ],
+   "g": {
+    "inItem": [
+     "Bag of Spoils"
+    ]
+   }
+  },
+  "7070": {
+   "d": [
+    [
+     "Seeker Aqualon",
+     21,
+     21,
+     0.367,
+     [
+      "Redridge Mountains"
+     ],
+     1,
+     0
+    ],
+    [
+     "Hydrospawn",
+     57,
+     57,
+     0.22,
+     [
+      "Dire Maul"
+     ],
+     1,
+     0
+    ],
+    [
+     "Cresting Exile",
+     38,
+     39,
+     0.103,
+     [
+      "Arathi Highlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Lesser Water Elemental",
+     36,
+     37,
+     0.091,
+     [
+      "Stranglethorn Vale"
+     ],
+     0,
+     0
+    ],
+    [
+     "Sea Elemental",
+     48,
+     49,
+     0.071,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Muck Splash",
+     47,
+     49,
+     0.066,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Scalding Elemental",
+     28,
+     29,
+     0.064,
+     [
+      "Thousand Needles"
+     ],
+     0,
+     0
+    ],
+    [
+     "Sea Spray",
+     47,
+     48,
+     0.062,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Blighted Surge",
+     54,
+     55,
+     0.06,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Plague Ravager",
+     55,
+     56,
+     0.059,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Blighted Horror",
+     56,
+     57,
+     0.058,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Plague Monstrosity",
+     57,
+     58,
+     0.058,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Toxic Horror",
+     53,
+     54,
+     0.055,
+     [
+      "Felwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Aku'mai Servant",
+     26,
+     26,
+     0.052,
+     [
+      "Blackfathom Deeps"
+     ],
+     1,
+     0
+    ],
+    [
+     "Irradiated Horror",
+     28,
+     40,
+     0.052,
+     [
+      "Gnomeregan"
+     ],
+     1,
+     0
+    ],
+    [
+     "Boiling Elemental",
+     27,
+     28,
+     0.052,
+     [
+      "Thousand Needles"
+     ],
+     0,
+     0
+    ],
+    [
+     "Noxxious Scion",
+     46,
+     46,
+     0.049,
+     [
+      "Maraudon"
+     ],
+     0,
+     0
+    ],
+    [
+     "Watery Invader",
+     56,
+     58,
+     0.044,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Tideress",
+     27,
+     27,
+     0.036,
+     [
+      "Ashenvale"
+     ],
+     0,
+     0
+    ],
+    [
+     "Frijidar",
+     60,
+     60,
+     0.036,
+     [
+      "Winterspring"
+     ],
+     1,
+     "A"
+    ],
+    [
+     "Primordial Anomaly",
+     25,
+     25,
+     0.029,
+     [
+      "Stonetalon Mountains"
+     ],
+     1,
+     0
+    ],
+    [
+     "Viscous Fallout",
+     30,
+     30,
+     0.027,
+     [
+      "Gnomeregan"
+     ],
+     1,
+     0
+    ],
+    [
+     "Befouled Water Elemental",
+     23,
+     25,
+     0.022,
+     [
+      "Ashenvale"
+     ],
+     0,
+     0
+    ],
+    [
+     "Noxxion",
+     48,
+     48,
+     0.021,
+     [
+      "Maraudon"
+     ],
+     1,
+     0
+    ]
+   ],
+   "g": {
+    "fished": [
+     "Azshara"
+    ],
+    "inItem": [
+     "Bag of Spoils",
+     "Ziri's Mystery Crate"
+    ]
+   }
+  },
+  "7071": {
+   "c": [
+    "blacksmithing",
+    125
+   ]
+  },
+  "7075": {
+   "d": [
+    [
+     "Obsidian Elemental",
+     51,
+     53,
+     0.052,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Greater Obsidian Elemental",
+     55,
+     57,
+     0.052,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Desert Rumbler",
+     56,
+     58,
+     0.049,
+     [
+      "Silithus"
+     ],
+     0,
+     0
+    ],
+    [
+     "Thundering Invader",
+     55,
+     57,
+     0.048,
+     [
+      "Azshara"
+     ],
+     0,
+     0
+    ],
+    [
+     "Fam'retor Guardian",
+     45,
+     45,
+     0.045,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Desert Rager",
+     58,
+     59,
+     0.042,
+     [
+      "Silithus"
+     ],
+     0,
+     0
+    ],
+    [
+     "Theradrim Guardian",
+     47,
+     48,
+     0.04,
+     [
+      "Maraudon"
+     ],
+     1,
+     0
+    ],
+    [
+     "Obsidian Reaver",
+     56,
+     60,
+     0.039,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Duke Tectonis",
+     59,
+     60,
+     0.033,
+     [
+      "Searing Gorge"
+     ],
+     1,
+     0
+    ],
+    [
+     "Theradrim Shardling",
+     46,
+     46,
+     0.032,
+     [
+      "Maraudon"
+     ],
+     0,
+     0
+    ],
+    [
+     "Ground Pounder",
+     41,
+     43,
+     0.029,
+     [
+      "Tanaris"
+     ],
+     0,
+     0
+    ],
+    [
+     "Land Rager",
+     45,
+     47,
+     0.027,
+     [
+      "Tanaris"
+     ],
+     0,
+     0
+    ],
+    [
+     "Obsidian Surger",
+     55,
+     58,
+     0.026,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Hulking Infernal",
+     61,
+     61,
+     0.022,
+     [
+      "Demon Fall Canyon"
+     ],
+     1,
+     0
+    ],
+    [
+     "Searing Infernal",
+     61,
+     61,
+     0.021,
+     [
+      "Demon Fall Canyon"
+     ],
+     1,
+     0
+    ]
+   ],
+   "g": {
+    "inItem": [
+     "Sack of Spoils"
+    ]
+   }
+  },
+  "7077": {
+   "d": [
+    [
+     "Entropic Beast",
+     51,
+     52,
+     0.065,
+     [
+      "Felwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Entropic Horror",
+     53,
+     54,
+     0.065,
+     [
+      "Felwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Scald",
+     49,
+     49,
+     0.058,
+     [
+      "Searing Gorge"
+     ],
+     1,
+     0
+    ],
+    [
+     "Scorching Elemental",
+     53,
+     54,
+     0.057,
+     [
+      "Un'Goro Crater"
+     ],
+     0,
+     0
+    ],
+    [
+     "Living Blaze",
+     54,
+     55,
+     0.057,
+     [
+      "Un'Goro Crater"
+     ],
+     0,
+     0
+    ],
+    [
+     "Fireguard",
+     50,
+     52,
+     0.051,
+     [
+      "Blackrock Depths"
+     ],
+     1,
+     0
+    ],
+    [
+     "Blazing Fireguard",
+     52,
+     54,
+     0.05,
+     [
+      "Blackrock Depths"
+     ],
+     1,
+     0
+    ],
+    [
+     "Blazing Invader",
+     54,
+     56,
+     0.049,
+     [
+      "Un'Goro Crater"
+     ],
+     0,
+     0
+    ],
+    [
+     "Fireguard Destroyer",
+     54,
+     56,
+     0.047,
+     [
+      "Blackrock Depths"
+     ],
+     1,
+     0
+    ],
+    [
+     "Inferno Elemental",
+     47,
+     49,
+     0.045,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Firelands Drudge",
+     56,
+     57,
+     0.037,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Blazing Elemental",
+     45,
+     47,
+     0.034,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Magma Elemental",
+     46,
+     48,
+     0.033,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Firelands Invader",
+     54,
+     55,
+     0.032,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Infernus Siege Giant",
+     60,
+     60,
+     0.032,
+     [
+      "Searing Gorge"
+     ],
+     1,
+     0
+    ],
+    [
+     "Fireguard Destroyer",
+     50,
+     51,
+     0.028,
+     [
+      "Blackrock Depths"
+     ],
+     1,
+     0
+    ],
+    [
+     "Flamewaker Healer",
+     59,
+     60,
+     0.026,
+     [
+      "Molten Core"
+     ],
+     1,
+     0
+    ],
+    [
+     "Duke Searbrand",
+     59,
+     60,
+     0.024,
+     [
+      "Searing Gorge"
+     ],
+     1,
+     0
+    ],
+    [
+     "Flamewaker Elite",
+     61,
+     62,
+     0.022,
+     [
+      "Molten Core"
+     ],
+     1,
+     0
+    ]
+   ],
+   "g": {
+    "inItem": [
+     "Otherworldly Treasure",
+     "Sack of Spoils"
+    ]
+   }
+  },
+  "7079": {
+   "d": [
+    [
+     "Hydrospawn",
+     57,
+     57,
+     0.143,
+     [
+      "Dire Maul"
+     ],
+     1,
+     0
+    ],
+    [
+     "Toxic Horror",
+     53,
+     54,
+     0.077,
+     [
+      "Felwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Muck Splash",
+     47,
+     49,
+     0.077,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Noxxious Scion",
+     46,
+     46,
+     0.077,
+     [
+      "Maraudon"
+     ],
+     0,
+     0
+    ],
+    [
+     "Sea Elemental",
+     48,
+     49,
+     0.061,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Blighted Surge",
+     54,
+     55,
+     0.061,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Sea Spray",
+     47,
+     48,
+     0.059,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Plague Ravager",
+     55,
+     56,
+     0.059,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Blighted Horror",
+     56,
+     57,
+     0.056,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Plague Monstrosity",
+     57,
+     58,
+     0.054,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Watery Invader",
+     56,
+     58,
+     0.05,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Frijidar",
+     60,
+     60,
+     0.036,
+     [
+      "Winterspring"
+     ],
+     1,
+     "A"
+    ],
+    [
+     "Noxxion",
+     48,
+     48,
+     0.029,
+     [
+      "Maraudon"
+     ],
+     1,
+     0
+    ]
+   ],
+   "g": {
+    "fished": [
+     "Azshara"
+    ],
+    "inItem": [
+     "Sack of Spoils"
+    ]
+   }
+  },
+  "7286": {
+   "d": [
+    [
+     "Black Dragon Whelp",
+     17,
+     18,
+     0.298,
+     [
+      "Redridge Mountains"
+     ],
+     2,
+     0
+    ],
+    [
+     "Snarlflare",
+     18,
+     18,
+     0.226,
+     [
+      "Redridge Mountains"
+     ],
+     3,
+     0
+    ]
+   ]
+  },
+  "7971": {
+   "g": {
+    "fished": [
+     "Azshara",
+     "Feralas",
+     "The Hinterlands",
+     "Tanaris"
+    ],
+    "inItem": [
+     "Gray Sack of Gems",
+     "Blue Sack of Gems",
+     "Red Sack of Gems",
+     "Yellow Sack of Gems"
+    ]
+   }
+  },
+  "8146": {
+   "d": [
+    [
+     "Flamekin Torcher",
+     54,
+     56,
+     0.275,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Flamekin Spitter",
+     51,
+     53,
+     0.274,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Flamekin Sprite",
+     51,
+     53,
+     0.256,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Flamekin Rager",
+     54,
+     56,
+     0.246,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Scalding Broodling",
+     53,
+     54,
+     0.204,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Ice Thistle Matriarch",
+     56,
+     57,
+     0.192,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Ice Thistle Patriarch",
+     57,
+     58,
+     0.189,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Black Broodling",
+     51,
+     52,
+     0.188,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Flamescale Broodling",
+     55,
+     56,
+     0.181,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Spell Eater",
+     54,
+     56,
+     0.18,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Cobalt Broodling",
+     55,
+     56,
+     0.176,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Cobalt Whelp",
+     54,
+     55,
+     0.169,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Lurking Feral Scar",
+     46,
+     46,
+     0.143,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Ice Thistle Yeti",
+     55,
+     56,
+     0.131,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Chromatic Whelp",
+     57,
+     58,
+     0.129,
+     [
+      "Blackrock Spire"
+     ],
+     0,
+     0
+    ],
+    [
+     "Rothos",
+     62,
+     62,
+     0.122,
+     [
+      "The Hinterlands"
+     ],
+     1,
+     0
+    ],
+    [
+     "Rogue Ice Thistle",
+     53,
+     55,
+     0.116,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Elder Rage Scar",
+     48,
+     49,
+     0.113,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Ceruleos",
+     50,
+     50,
+     0.109,
+     [
+      "Azshara"
+     ],
+     0,
+     0
+    ],
+    [
+     "Hulking Feral Scar",
+     45,
+     46,
+     0.108,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bloodseeker Bat",
+     60,
+     60,
+     0.094,
+     [
+      "Zul'Gurub"
+     ],
+     0,
+     0
+    ],
+    [
+     "Rage Scar Yeti",
+     46,
+     47,
+     0.089,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Ferocious Rage Scar",
+     47,
+     48,
+     0.089,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Northspring Slayer",
+     49,
+     50,
+     0.089,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Wildspawn Imp",
+     56,
+     56,
+     0.088,
+     [
+      "Dire Maul"
+     ],
+     0,
+     0
+    ],
+    [
+     "Dreamspring Roguefeather",
+     51,
+     51,
+     0.088,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Northspring Roguefeather",
+     48,
+     49,
+     0.087,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Dreamspring Stormcaller",
+     49,
+     50,
+     0.087,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Northspring Windcaller",
+     49,
+     50,
+     0.085,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Feral Scar Yeti",
+     43,
+     44,
+     0.082,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Enraged Feral Scar",
+     44,
+     45,
+     0.082,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Northspring Harpy",
+     48,
+     49,
+     0.082,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Sprite Dragon",
+     47,
+     50,
+     0.081,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Eldreth Darter",
+     58,
+     59,
+     0.071,
+     [
+      "Dire Maul"
+     ],
+     1,
+     0
+    ],
+    [
+     "Marauding Owlbeast",
+     46,
+     46,
+     0.07,
+     [
+      "The Hinterlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Plagued Hatchling",
+     57,
+     59,
+     0.068,
+     [
+      "Scholomance"
+     ],
+     0,
+     0
+    ],
+    [
+     "Dreamstalker",
+     62,
+     62,
+     0.068,
+     [
+      "Ashenvale"
+     ],
+     1,
+     0
+    ],
+    [
+     "Mongress",
+     50,
+     50,
+     0.065,
+     [
+      "Felwood"
+     ],
+     1,
+     0
+    ],
+    [
+     "Hazzas",
+     53,
+     53,
+     0.064,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     1,
+     0
+    ],
+    [
+     "Putrid Shrieker",
+     56,
+     58,
+     0.064,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Jaedenar Hound",
+     50,
+     51,
+     0.063,
+     [
+      "Felwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Ragged Owlbeast",
+     53,
+     55,
+     0.063,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Noxious Plaguebat",
+     54,
+     56,
+     0.063,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Dreamroarer",
+     62,
+     62,
+     0.063,
+     [
+      "Feralas"
+     ],
+     1,
+     0
+    ],
+    [
+     "Ironbeak Owl",
+     48,
+     49,
+     0.062,
+     [
+      "Felwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Savage Owlbeast",
+     46,
+     47,
+     0.061,
+     [
+      "The Hinterlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Jaedenar Hunter",
+     52,
+     60,
+     0.061,
+     [
+      "Felwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Plaguebat",
+     53,
+     55,
+     0.061,
+     [
+      "Eastern Plaguelands",
+      "Western Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Felbeast",
+     50,
+     51,
+     0.061,
+     [
+      "Blasted Lands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Jaguero Stalker",
+     50,
+     50,
+     0.06,
+     [
+      "Stranglethorn Vale"
+     ],
+     0,
+     0
+    ],
+    [
+     "Raging Owlbeast",
+     54,
+     56,
+     0.06,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Crazed Owlbeast",
+     56,
+     57,
+     0.06,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Escaped Core Hound",
+     60,
+     60,
+     0.06,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Felhound",
+     54,
+     55,
+     0.059,
+     [
+      "Blasted Lands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Moontouched Owlbeast",
+     57,
+     58,
+     0.059,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Berserk Owlbeast",
+     58,
+     59,
+     0.059,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Putrid Gargoyle",
+     54,
+     56,
+     0.059,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Monstrous Plaguebat",
+     56,
+     58,
+     0.059,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Diseased Black Bear",
+     51,
+     52,
+     0.058,
+     [
+      "Western Plaguelands",
+      "Tirisfal Glades"
+     ],
+     0,
+     0
+    ],
+    [
+     "Plaguehound",
+     55,
+     56,
+     0.057,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Dark Screecher",
+     50,
+     52,
+     0.057,
+     [
+      "Blackrock Depths"
+     ],
+     0,
+     0
+    ],
+    [
+     "Fledgling Pterrordax",
+     48,
+     50,
+     0.057,
+     [
+      "Un'Goro Crater"
+     ],
+     0,
+     0
+    ],
+    [
+     "Pterrordax",
+     50,
+     52,
+     0.057,
+     [
+      "Un'Goro Crater"
+     ],
+     0,
+     0
+    ],
+    [
+     "Slavering Ember Worg",
+     53,
+     54,
+     0.057,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Morphaz",
+     52,
+     52,
+     0.056,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     1,
+     0
+    ],
+    [
+     "Blackrock Worg",
+     54,
+     55,
+     0.056,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Shardtooth Bear",
+     53,
+     54,
+     0.056,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Plaguehound Runt",
+     53,
+     54,
+     0.056,
+     [
+      "Eastern Plaguelands",
+      "Western Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Giant Ember Worg",
+     55,
+     56,
+     0.056,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Bloodaxe Worg Pup",
+     52,
+     53,
+     0.056,
+     [
+      "Blackrock Spire"
+     ],
+     0,
+     0
+    ],
+    [
+     "Ironbeak Screecher",
+     52,
+     53,
+     0.055,
+     [
+      "Felwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Ironbeak Hunter",
+     50,
+     51,
+     0.055,
+     [
+      "Felwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Frenzied Plaguehound",
+     57,
+     58,
+     0.055,
+     [
+      "Eastern Plaguelands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Angerclaw Bear",
+     47,
+     48,
+     0.055,
+     [
+      "Felwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Angerclaw Grizzly",
+     51,
+     52,
+     0.055,
+     [
+      "Felwood"
+     ],
+     0,
+     0
+    ],
+    [
+     "Ironfur Patriarch",
+     48,
+     49,
+     0.054,
+     [
+      "Feralas"
+     ],
+     0,
+     0
+    ],
+    [
+     "Ravasaur Runner",
+     49,
+     50,
+     0.054,
+     [
+      "Un'Goro Crater"
+     ],
+     0,
+     0
+    ],
+    [
+     "Venomhide Ravasaur",
+     50,
+     51,
+     0.054,
+     [
+      "Un'Goro Crater"
+     ],
+     0,
+     0
+    ],
+    [
+     "Winterspring Screecher",
+     57,
+     59,
+     0.054,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ],
+    [
+     "Angerclaw Mauler",
+     49,
+     50,
+     0.054,
+     [
+      "Felwood"
+     ],
+     0,
+     0
+    ]
+   ]
+  },
+  "8150": {
+   "d": [
+    [
+     "Stone Golem",
+     38,
+     39,
+     0.373,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Vault Warder",
+     45,
+     45,
+     0.327,
+     [
+      "Uldaman"
+     ],
+     1,
+     0
+    ],
+    [
+     "Tempered War Golem",
+     45,
+     47,
+     0.287,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Thenan",
+     42,
+     42,
+     0.286,
+     [
+      "Arathi Highlands"
+     ],
+     1,
+     0
+    ],
+    [
+     "Heavy War Golem",
+     47,
+     49,
+     0.281,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Brutus",
+     43,
+     43,
+     0.27,
+     [
+      "Stranglethorn Vale"
+     ],
+     0,
+     0
+    ],
+    [
+     "Stone Keeper",
+     46,
+     46,
+     0.269,
+     [
+      "Uldaman"
+     ],
+     1,
+     0
+    ],
+    [
+     "Stone Steward",
+     44,
+     44,
+     0.262,
+     [
+      "Uldaman"
+     ],
+     1,
+     0
+    ],
+    [
+     "Primordial Behemoth",
+     48,
+     49,
+     0.259,
+     [
+      "Maraudon"
+     ],
+     1,
+     0
+    ],
+    [
+     "War Reaver",
+     53,
+     55,
+     0.253,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Land Rager",
+     45,
+     47,
+     0.216,
+     [
+      "Tanaris"
+     ],
+     0,
+     0
+    ],
+    [
+     "Enraged Mountain Giant",
+     49,
+     50,
+     0.216,
+     [
+      "Feralas"
+     ],
+     1,
+     0
+    ],
+    [
+     "Obsidian Sentinel",
+     42,
+     42,
+     0.213,
+     [
+      "Uldaman"
+     ],
+     1,
+     0
+    ],
+    [
+     "Obsidian Elemental",
+     51,
+     53,
+     0.21,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Wrath Hammer Construct",
+     55,
+     56,
+     0.204,
+     [
+      "Blackrock Depths"
+     ],
+     1,
+     0
+    ],
+    [
+     "Elemental Slave",
+     33,
+     34,
+     0.202,
+     [
+      "Alterac Mountains"
+     ],
+     0,
+     "A"
+    ],
+    [
+     "Molten War Golem",
+     55,
+     56,
+     0.2,
+     [
+      "Blackrock Depths"
+     ],
+     1,
+     0
+    ],
+    [
+     "Greater Obsidian Elemental",
+     55,
+     57,
+     0.199,
+     [
+      "Burning Steppes"
+     ],
+     0,
+     0
+    ],
+    [
+     "Rumbling Exile",
+     38,
+     39,
+     0.197,
+     [
+      "Arathi Highlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Ragereaver Golem",
+     54,
+     55,
+     0.197,
+     [
+      "Blackrock Depths"
+     ],
+     1,
+     0
+    ],
+    [
+     "Warbringer Construct",
+     53,
+     54,
+     0.196,
+     [
+      "Blackrock Depths"
+     ],
+     1,
+     0
+    ],
+    [
+     "Ground Pounder",
+     41,
+     43,
+     0.196,
+     [
+      "Tanaris"
+     ],
+     0,
+     0
+    ],
+    [
+     "Enraged Rock Elemental",
+     42,
+     43,
+     0.193,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Lesser Rock Elemental",
+     37,
+     39,
+     0.192,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Rock Elemental",
+     39,
+     40,
+     0.191,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Desert Rumbler",
+     56,
+     58,
+     0.191,
+     [
+      "Silithus"
+     ],
+     0,
+     0
+    ],
+    [
+     "Thundering Invader",
+     55,
+     57,
+     0.188,
+     [
+      "Azshara"
+     ],
+     0,
+     0
+    ],
+    [
+     "Greater Rock Elemental",
+     42,
+     44,
+     0.187,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Fam'retor Guardian",
+     45,
+     45,
+     0.184,
+     [
+      "Badlands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Desert Rager",
+     58,
+     59,
+     0.178,
+     [
+      "Silithus"
+     ],
+     0,
+     0
+    ],
+    [
+     "Stone Fury",
+     37,
+     37,
+     0.177,
+     [
+      "Alterac Mountains"
+     ],
+     1,
+     0
+    ],
+    [
+     "Siege Golem",
+     40,
+     40,
+     0.17,
+     [
+      "Badlands"
+     ],
+     1,
+     0
+    ],
+    [
+     "Theradrim Shardling",
+     46,
+     46,
+     0.162,
+     [
+      "Maraudon"
+     ],
+     0,
+     0
+    ],
+    [
+     "Theradrim Guardian",
+     47,
+     48,
+     0.154,
+     [
+      "Maraudon"
+     ],
+     1,
+     0
+    ],
+    [
+     "Obsidian Reaver",
+     56,
+     60,
+     0.153,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Duke Tectonis",
+     59,
+     60,
+     0.141,
+     [
+      "Searing Gorge"
+     ],
+     1,
+     0
+    ],
+    [
+     "Princess Theradras",
+     51,
+     51,
+     0.137,
+     [
+      "Maraudon"
+     ],
+     1,
+     0
+    ],
+    [
+     "Fozruk",
+     42,
+     42,
+     0.127,
+     [
+      "Arathi Highlands"
+     ],
+     1,
+     0
+    ],
+    [
+     "Landslide",
+     50,
+     50,
+     0.113,
+     [
+      "Maraudon"
+     ],
+     1,
+     0
+    ],
+    [
+     "Shadowshard Smasher",
+     41,
+     42,
+     0.111,
+     [
+      "Desolace"
+     ],
+     1,
+     0
+    ],
+    [
+     "Shadowshard Rumbler",
+     40,
+     41,
+     0.107,
+     [
+      "Desolace"
+     ],
+     1,
+     0
+    ],
+    [
+     "Searing Infernal",
+     61,
+     61,
+     0.102,
+     [
+      "Demon Fall Canyon"
+     ],
+     1,
+     0
+    ],
+    [
+     "Iodax the Obliterator",
+     50,
+     50,
+     0.101,
+     [
+      "Searing Gorge"
+     ],
+     1,
+     0
+    ],
+    [
+     "Obsidian Surger",
+     55,
+     58,
+     0.096,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ],
+    [
+     "Hulking Infernal",
+     61,
+     61,
+     0.091,
+     [
+      "Demon Fall Canyon"
+     ],
+     1,
+     0
+    ],
+    [
+     "Lord Roccor",
+     51,
+     51,
+     0.076,
+     [
+      "Blackrock Depths"
+     ],
+     1,
+     0
+    ],
+    [
+     "The Giant",
+     52,
+     52,
+     0.07,
+     [
+      "Feralas"
+     ],
+     1,
+     0
+    ],
+    [
+     "Lava Surger",
+     61,
+     62,
+     0.067,
+     [
+      "Molten Core"
+     ],
+     1,
+     0
+    ],
+    [
+     "Ancient Stone Keeper",
+     44,
+     44,
+     0.066,
+     [
+      "Uldaman"
+     ],
+     1,
+     0
+    ],
+    [
+     "Ironaya",
+     40,
+     40,
+     0.064,
+     [
+      "Uldaman"
+     ],
+     1,
+     0
+    ],
+    [
+     "Phalanx",
+     55,
+     55,
+     0.062,
+     [
+      "Blackrock Depths"
+     ],
+     1,
+     "A"
+    ],
+    [
+     "Firesworn",
+     60,
+     61,
+     0.057,
+     [
+      "Burning Steppes"
+     ],
+     1,
+     0
+    ],
+    [
+     "Archaedas",
+     47,
+     47,
+     0.054,
+     [
+      "Uldaman"
+     ],
+     1,
+     0
+    ],
+    [
+     "Panzor the Invincible",
+     57,
+     57,
+     0.05,
+     [
+      "Blackrock Depths"
+     ],
+     1,
+     0
+    ]
+   ],
+   "g": {
+    "inItem": [
+     "Ziri's Mystery Crate"
+    ]
+   }
+  },
+  "8165": {
+   "d": [
+    [
+     "Morphaz",
+     52,
+     52,
+     0.995,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Dreamscythe",
+     53,
+     53,
+     0.995,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Hazzas",
+     53,
+     53,
+     0.994,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Weaver",
+     51,
+     51,
+     0.99,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Dreamroarer",
+     62,
+     62,
+     0.172,
+     [
+      "Feralas"
+     ],
+     3,
+     0
+    ],
+    [
+     "Weaver",
+     51,
+     51,
+     0.162,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     1,
+     0
+    ],
+    [
+     "Dreamscythe",
+     53,
+     53,
+     0.158,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     1,
+     0
+    ],
+    [
+     "Hazzas",
+     53,
+     53,
+     0.148,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     1,
+     0
+    ],
+    [
+     "Blue Scalebane",
+     52,
+     53,
+     0.14,
+     [
+      "Azshara"
+     ],
+     3,
+     0
+    ],
+    [
+     "Emeraldon Oracle",
+     61,
+     61,
+     0.136,
+     [
+      "Ashenvale",
+      "Orgrimmar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Verdantine Boughguard",
+     62,
+     62,
+     0.132,
+     [
+      "The Hinterlands",
+      "Ironforge"
+     ],
+     3,
+     0
+    ],
+    [
+     "Manaclaw",
+     58,
+     58,
+     0.124,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Wyrmkin Firebrand",
+     61,
+     62,
+     0.12,
+     [
+      "Wetlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Stormwind Royal Guard",
+     60,
+     60,
+     0.114,
+     [
+      "Stormwind City"
+     ],
+     2,
+     "A"
+    ],
+    [
+     "Rage Talon Dragon Guard",
+     60,
+     61,
+     0.108,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Red Scalebane",
+     59,
+     60,
+     0.106,
+     [
+      "Wetlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Flamescale Dragonspawn",
+     56,
+     57,
+     0.104,
+     [
+      "Burning Steppes"
+     ],
+     3,
+     0
+    ],
+    [
+     "Draconic Mageweaver",
+     51,
+     52,
+     0.104,
+     [
+      "Azshara"
+     ],
+     3,
+     0
+    ],
+    [
+     "Scalebane Lieutenant",
+     60,
+     61,
+     0.104,
+     [
+      "Wetlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Black Dragonspawn",
+     52,
+     53,
+     0.103,
+     [
+      "Burning Steppes"
+     ],
+     3,
+     0
+    ],
+    [
+     "Black Drake",
+     50,
+     52,
+     0.103,
+     [
+      "Burning Steppes"
+     ],
+     3,
+     0
+    ],
+    [
+     "Frenzied Black Drake",
+     54,
+     54,
+     0.103,
+     [
+      "Burning Steppes"
+     ],
+     3,
+     0
+    ],
+    [
+     "Cobalt Scalebane",
+     56,
+     57,
+     0.102,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Rage Talon Flamescale",
+     58,
+     59,
+     0.102,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Rage Talon Fire Tongue",
+     60,
+     61,
+     0.101,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Rage Talon Captain",
+     62,
+     62,
+     0.101,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Rookery Hatcher",
+     58,
+     59,
+     0.101,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Solakar Flamewreath",
+     60,
+     60,
+     0.101,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Verdantine Tree Warder",
+     60,
+     60,
+     0.101,
+     [
+      "The Hinterlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Rage Talon Dragonspawn",
+     58,
+     59,
+     0.1,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Black Wyrmkin",
+     53,
+     54,
+     0.1,
+     [
+      "Burning Steppes"
+     ],
+     3,
+     0
+    ],
+    [
+     "Cobalt Mageweaver",
+     57,
+     58,
+     0.1,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Red Dragonspawn",
+     57,
+     58,
+     0.1,
+     [
+      "Wetlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Cobalt Wyrmkin",
+     55,
+     56,
+     0.099,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Scalebane Royal Guard",
+     61,
+     62,
+     0.096,
+     [
+      "Wetlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Wyrmkin Starhunter",
+     51,
+     51,
+     0.096,
+     [
+      "The Hinterlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Blue Dragonspawn",
+     50,
+     51,
+     0.094,
+     [
+      "Azshara"
+     ],
+     3,
+     0
+    ],
+    [
+     "Flamescale Wyrmkin",
+     57,
+     58,
+     0.092,
+     [
+      "Burning Steppes"
+     ],
+     3,
+     0
+    ],
+    [
+     "Emeraldon Boughguard",
+     62,
+     62,
+     0.09,
+     [
+      "Ashenvale",
+      "Orgrimmar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Rookery Guardian",
+     58,
+     59,
+     0.089,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Jademir Tree Warder",
+     60,
+     60,
+     0.088,
+     [
+      "Feralas"
+     ],
+     3,
+     0
+    ],
+    [
+     "Jademir Oracle",
+     61,
+     61,
+     0.086,
+     [
+      "Feralas"
+     ],
+     3,
+     0
+    ],
+    [
+     "Verdantine Oracle",
+     61,
+     61,
+     0.086,
+     [
+      "The Hinterlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Jademir Boughguard",
+     62,
+     62,
+     0.084,
+     [
+      "Feralas",
+      "Desolace"
+     ],
+     3,
+     0
+    ],
+    [
+     "Morphaz",
+     52,
+     52,
+     0.08,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     1,
+     0
+    ],
+    [
+     "Nightmare Scalebane",
+     50,
+     51,
+     0.073,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Nightmare Suppressor",
+     49,
+     50,
+     0.073,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Nightmare Wyrmkin",
+     50,
+     51,
+     0.072,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Chromatic Elite Guard",
+     59,
+     60,
+     0.07,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Nightmare Scalebane",
+     51,
+     51,
+     0.07,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Chromatic Dragonspawn",
+     59,
+     60,
+     0.069,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Nightmare Wanderer",
+     49,
+     50,
+     0.065,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Plagued Hatchling",
+     57,
+     59,
+     0.051,
+     [
+      "Scholomance"
+     ],
+     2,
+     0
+    ],
+    [
+     "Black Broodling",
+     51,
+     52,
+     0.051,
+     [
+      "Burning Steppes"
+     ],
+     2,
+     0
+    ],
+    [
+     "Nightmare Scalebane",
+     50,
+     51,
+     0.045,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     1,
+     0
+    ],
+    [
+     "Nightmare Wyrmkin",
+     50,
+     51,
+     0.043,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     1,
+     0
+    ],
+    [
+     "Nightmare Whelp",
+     49,
+     50,
+     0.027,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     0,
+     0
+    ],
+    [
+     "Cobalt Wyrmkin",
+     55,
+     56,
+     0.024,
+     [
+      "Winterspring"
+     ],
+     1,
+     0
+    ],
+    [
+     "Cobalt Scalebane",
+     56,
+     57,
+     0.023,
+     [
+      "Winterspring"
+     ],
+     1,
+     0
+    ],
+    [
+     "Cobalt Mageweaver",
+     57,
+     58,
+     0.021,
+     [
+      "Winterspring"
+     ],
+     1,
+     0
+    ],
+    [
+     "Scorched Guardian",
+     43,
+     45,
+     0.02,
+     [
+      "Badlands"
+     ],
+     1,
+     0
+    ]
+   ],
+   "g": {
+    "inItem": [
+     "Otherworldly Treasure"
+    ]
+   }
+  },
+  "8167": {
+   "d": [
+    [
+     "Coralshell Lurker",
+     53,
+     54,
+     0.523,
+     [
+      "Azshara"
+     ],
+     2,
+     0
+    ],
+    [
+     "Mudrock Borer",
+     42,
+     43,
+     0.519,
+     [
+      "Dustwallow Marsh"
+     ],
+     2,
+     0
+    ],
+    [
+     "Mudrock Snapjaw",
+     41,
+     42,
+     0.509,
+     [
+      "Dustwallow Marsh"
+     ],
+     2,
+     0
+    ],
+    [
+     "Gammerita",
+     48,
+     48,
+     0.507,
+     [
+      "The Hinterlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Steeljaw Snapper",
+     42,
+     43,
+     0.504,
+     [
+      "Tanaris"
+     ],
+     2,
+     0
+    ],
+    [
+     "Coralshell Tortoise",
+     50,
+     52,
+     0.5,
+     [
+      "Azshara"
+     ],
+     2,
+     0
+    ],
+    [
+     "Surf Glider",
+     48,
+     50,
+     0.499,
+     [
+      "Tanaris"
+     ],
+     2,
+     0
+    ],
+    [
+     "Saltwater Snapjaw",
+     49,
+     50,
+     0.497,
+     [
+      "The Hinterlands"
+     ],
+     2,
+     0
+    ],
+    [
+     "Stolid Snapjaw",
+     46,
+     47,
+     0.49,
+     [
+      "Maraudon"
+     ],
+     2,
+     0
+    ],
+    [
+     "Ironback",
+     51,
+     51,
+     0.438,
+     [
+      "The Hinterlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Scalebeard",
+     52,
+     52,
+     0.4,
+     [
+      "Azshara"
+     ],
+     3,
+     0
+    ],
+    [
+     "Mudrock Burrower",
+     39,
+     40,
+     0.264,
+     [
+      "Dustwallow Marsh"
+     ],
+     2,
+     0
+    ],
+    [
+     "Mudrock Tortoise",
+     36,
+     37,
+     0.257,
+     [
+      "Dustwallow Marsh"
+     ],
+     2,
+     0
+    ],
+    [
+     "Mudrock Spikeshell",
+     37,
+     38,
+     0.251,
+     [
+      "Dustwallow Marsh"
+     ],
+     2,
+     0
+    ]
+   ]
+  },
+  "8168": {
+   "d": [
+    [
+     "Black Slayer",
+     46,
+     48,
+     0.799,
+     [
+      "Blasted Lands"
+     ],
+     0,
+     0
+    ],
+    [
+     "Enraged Stormcrow",
+     45,
+     45,
+     0.622,
+     [
+      "Searing Gorge"
+     ],
+     0,
+     0
+    ]
+   ]
+  },
+  "8171": {
+   "d": [
+    [
+     "Lord Lakmaeran",
+     62,
+     62,
+     0.133,
+     [
+      "Feralas"
+     ],
+     3,
+     0
+    ],
+    [
+     "Scalding Broodling",
+     53,
+     54,
+     0.125,
+     [
+      "Burning Steppes"
+     ],
+     2,
+     0
+    ],
+    [
+     "Strashaz Hydra",
+     59,
+     61,
+     0.117,
+     [
+      "Dustwallow Marsh"
+     ],
+     3,
+     0
+    ],
+    [
+     "Angerclaw Grizzly",
+     51,
+     52,
+     0.108,
+     [
+      "Felwood"
+     ],
+     2,
+     0
+    ],
+    [
+     "Rage Talon Dragon Guard",
+     60,
+     61,
+     0.096,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Bloodaxe Worg Pup",
+     52,
+     53,
+     0.096,
+     [
+      "Blackrock Spire"
+     ],
+     2,
+     0
+    ],
+    [
+     "Frostsaber Pride Watcher",
+     59,
+     60,
+     0.093,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Scryer",
+     60,
+     60,
+     0.092,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Angerclaw Mauler",
+     49,
+     50,
+     0.09,
+     [
+      "Felwood"
+     ],
+     2,
+     0
+    ],
+    [
+     "Shardtooth Bear",
+     53,
+     54,
+     0.09,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Shy-Rotam",
+     60,
+     60,
+     0.081,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Grief-Crazed Gryphon",
+     51,
+     51,
+     0.08,
+     [
+      "The Hinterlands"
+     ],
+     2,
+     0
+    ],
+    [
+     "Sian-Rotam",
+     60,
+     60,
+     0.075,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Red Dragonspawn",
+     57,
+     58,
+     0.073,
+     [
+      "Wetlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Emeraldon Tree Warder",
+     60,
+     60,
+     0.071,
+     [
+      "Ashenvale",
+      "Orgrimmar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Scalding Drake",
+     53,
+     55,
+     0.069,
+     [
+      "Burning Steppes"
+     ],
+     3,
+     0
+    ],
+    [
+     "Red Scalebane",
+     59,
+     60,
+     0.067,
+     [
+      "Wetlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Death Talon Seether",
+     62,
+     62,
+     0.066,
+     [
+      "Blackwing Lair"
+     ],
+     3,
+     0
+    ],
+    [
+     "Verdantine Oracle",
+     61,
+     61,
+     0.064,
+     [
+      "The Hinterlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Rookery Guardian",
+     58,
+     59,
+     0.06,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Rabid Shardtooth",
+     59,
+     60,
+     0.059,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Flamescale Wyrmkin",
+     57,
+     58,
+     0.057,
+     [
+      "Burning Steppes"
+     ],
+     3,
+     0
+    ],
+    [
+     "Razzashi Cobra",
+     60,
+     60,
+     0.057,
+     [
+      "Zul'Gurub"
+     ],
+     3,
+     0
+    ],
+    [
+     "Hederine Manastalker",
+     59,
+     60,
+     0.057,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Death Talon Wyrmkin",
+     61,
+     61,
+     0.057,
+     [
+      "Blackwing Lair"
+     ],
+     3,
+     0
+    ],
+    [
+     "Rage Talon Captain",
+     62,
+     62,
+     0.056,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Chromatic Elite Guard",
+     59,
+     60,
+     0.055,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Stormwind Royal Guard",
+     60,
+     60,
+     0.054,
+     [
+      "Stormwind City"
+     ],
+     2,
+     "A"
+    ],
+    [
+     "Verek",
+     55,
+     55,
+     0.054,
+     [
+      "Blackrock Depths"
+     ],
+     3,
+     0
+    ],
+    [
+     "Arcane Chimaerok",
+     60,
+     62,
+     0.054,
+     [
+      "Feralas"
+     ],
+     3,
+     0
+    ],
+    [
+     "Elder Shardtooth",
+     57,
+     58,
+     0.053,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Ice Thistle Patriarch",
+     57,
+     58,
+     0.053,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Rage Talon Flamescale",
+     58,
+     59,
+     0.053,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Zulian Panther",
+     60,
+     60,
+     0.053,
+     [
+      "Zul'Gurub"
+     ],
+     3,
+     0
+    ],
+    [
+     "Flamescale Dragonspawn",
+     56,
+     57,
+     0.053,
+     [
+      "Burning Steppes"
+     ],
+     3,
+     0
+    ],
+    [
+     "Chromatic Whelp",
+     57,
+     58,
+     0.052,
+     [
+      "Blackrock Spire"
+     ],
+     2,
+     0
+    ],
+    [
+     "Bloodseeker Bat",
+     60,
+     60,
+     0.052,
+     [
+      "Zul'Gurub"
+     ],
+     2,
+     0
+    ],
+    [
+     "Frostsaber Huntress",
+     58,
+     59,
+     0.052,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Razzashi Serpent",
+     60,
+     60,
+     0.052,
+     [
+      "Zul'Gurub"
+     ],
+     3,
+     0
+    ],
+    [
+     "Chromatic Dragonspawn",
+     59,
+     60,
+     0.051,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Zulian Crocolisk",
+     60,
+     60,
+     0.051,
+     [
+      "Zul'Gurub"
+     ],
+     3,
+     0
+    ],
+    [
+     "Frenzied Plaguehound",
+     57,
+     58,
+     0.051,
+     [
+      "Eastern Plaguelands"
+     ],
+     2,
+     0
+    ],
+    [
+     "Zulian Cub",
+     60,
+     60,
+     0.051,
+     [
+      "Zul'Gurub"
+     ],
+     2,
+     0
+    ],
+    [
+     "Soulflayer",
+     61,
+     61,
+     0.051,
+     [
+      "Zul'Gurub"
+     ],
+     3,
+     0
+    ],
+    [
+     "Scalebane Royal Guard",
+     61,
+     62,
+     0.051,
+     [
+      "Wetlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Rage Talon Dragonspawn",
+     58,
+     59,
+     0.05,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Gordok Mastiff",
+     56,
+     59,
+     0.05,
+     [
+      "Dire Maul"
+     ],
+     2,
+     0
+    ],
+    [
+     "Plagued Hatchling",
+     57,
+     59,
+     0.05,
+     [
+      "Scholomance"
+     ],
+     2,
+     0
+    ],
+    [
+     "Cobalt Scalebane",
+     56,
+     57,
+     0.05,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Monstrous Plaguebat",
+     56,
+     58,
+     0.05,
+     [
+      "Eastern Plaguelands"
+     ],
+     2,
+     0
+    ],
+    [
+     "Chillwind Chimaera",
+     55,
+     57,
+     0.049,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Diseased Grizzly",
+     55,
+     56,
+     0.049,
+     [
+      "Western Plaguelands"
+     ],
+     2,
+     0
+    ],
+    [
+     "Razzashi Raptor",
+     60,
+     60,
+     0.049,
+     [
+      "Zul'Gurub"
+     ],
+     3,
+     0
+    ],
+    [
+     "Chillwind Ravager",
+     57,
+     59,
+     0.048,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Razzashi Adder",
+     60,
+     60,
+     0.048,
+     [
+      "Zul'Gurub"
+     ],
+     3,
+     0
+    ],
+    [
+     "Rage Talon Fire Tongue",
+     60,
+     61,
+     0.047,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Spell Eater",
+     54,
+     56,
+     0.045,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Rogue Ice Thistle",
+     53,
+     55,
+     0.043,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Frenzied Pterrordax",
+     52,
+     54,
+     0.042,
+     [
+      "Un'Goro Crater"
+     ],
+     2,
+     0
+    ],
+    [
+     "Cobalt Whelp",
+     54,
+     55,
+     0.042,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Black Broodling",
+     51,
+     52,
+     0.041,
+     [
+      "Burning Steppes"
+     ],
+     2,
+     0
+    ],
+    [
+     "Plaguehound Runt",
+     53,
+     54,
+     0.041,
+     [
+      "Eastern Plaguelands",
+      "Western Plaguelands"
+     ],
+     2,
+     0
+    ],
+    [
+     "Un'Goro Stomper",
+     51,
+     52,
+     0.041,
+     [
+      "Un'Goro Crater"
+     ],
+     2,
+     0
+    ],
+    [
+     "Black Wyrmkin",
+     53,
+     54,
+     0.041,
+     [
+      "Burning Steppes"
+     ],
+     3,
+     0
+    ],
+    [
+     "Black Dragonspawn",
+     52,
+     53,
+     0.041,
+     [
+      "Burning Steppes"
+     ],
+     3,
+     0
+    ],
+    [
+     "Plaguebat",
+     53,
+     55,
+     0.04,
+     [
+      "Eastern Plaguelands",
+      "Western Plaguelands"
+     ],
+     2,
+     0
+    ],
+    [
+     "Un'Goro Gorilla",
+     50,
+     51,
+     0.04,
+     [
+      "Un'Goro Crater"
+     ],
+     2,
+     0
+    ],
+    [
+     "Cobalt Wyrmkin",
+     55,
+     56,
+     0.04,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Scarshield Worg",
+     53,
+     54,
+     0.04,
+     [
+      "Blackrock Spire"
+     ],
+     2,
+     0
+    ],
+    [
+     "Felpaw Ravager",
+     51,
+     52,
+     0.04,
+     [
+      "Felwood"
+     ],
+     2,
+     0
+    ],
+    [
+     "Ice Thistle Yeti",
+     55,
+     56,
+     0.039,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Diemetradon",
+     51,
+     52,
+     0.039,
+     [
+      "Un'Goro Crater"
+     ],
+     2,
+     0
+    ],
+    [
+     "Un'Goro Thunderer",
+     52,
+     53,
+     0.038,
+     [
+      "Un'Goro Crater"
+     ],
+     2,
+     0
+    ],
+    [
+     "Elder Diemetradon",
+     54,
+     55,
+     0.038,
+     [
+      "Un'Goro Crater"
+     ],
+     2,
+     0
+    ],
+    [
+     "Noxious Plaguebat",
+     54,
+     56,
+     0.038,
+     [
+      "Eastern Plaguelands"
+     ],
+     2,
+     0
+    ]
+   ],
+   "g": {
+    "inItem": [
+     "Otherworldly Treasure"
+    ]
+   }
+  },
+  "8343": {
+   "v": 1
+  },
+  "8368": {
+   "d": [
+    [
+     "Diseased Wolf",
+     53,
+     54,
+     0.11,
+     [
+      "Western Plaguelands"
+     ],
+     2,
+     0
+    ],
+    [
+     "Ember Worg",
+     51,
+     52,
+     0.104,
+     [
+      "Burning Steppes"
+     ],
+     2,
+     0
+    ],
+    [
+     "Bloodaxe Worg Pup",
+     52,
+     53,
+     0.094,
+     [
+      "Blackrock Spire"
+     ],
+     2,
+     0
+    ],
+    [
+     "Gordok Hyena",
+     52,
+     54,
+     0.085,
+     [
+      "Feralas"
+     ],
+     2,
+     0
+    ],
+    [
+     "Manahound",
+     60,
+     60,
+     0.06,
+     [
+      "Blasted Lands",
+      "The Tainted Scar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Frostwolf",
+     50,
+     51,
+     0.058,
+     [
+      "Alterac Valley"
+     ],
+     0,
+     0
+    ],
+    [
+     "Gordok Mastiff",
+     56,
+     59,
+     0.051,
+     [
+      "Dire Maul"
+     ],
+     2,
+     0
+    ],
+    [
+     "Bloodaxe Worg",
+     56,
+     60,
+     0.049,
+     [
+      "Blackrock Spire"
+     ],
+     2,
+     0
+    ],
+    [
+     "Slavering Ember Worg",
+     53,
+     54,
+     0.049,
+     [
+      "Burning Steppes"
+     ],
+     2,
+     0
+    ],
+    [
+     "Frostwolf Bloodhound",
+     53,
+     54,
+     0.048,
+     [
+      "Alterac Valley"
+     ],
+     2,
+     "H"
+    ],
+    [
+     "Bloodhound Mastiff",
+     54,
+     55,
+     0.046,
+     [
+      "Blackrock Depths"
+     ],
+     2,
+     0
+    ],
+    [
+     "Blackrock Worg",
+     54,
+     55,
+     0.042,
+     [
+      "Burning Steppes"
+     ],
+     2,
+     0
+    ],
+    [
+     "Silvermane Howler",
+     45,
+     46,
+     0.033,
+     [
+      "The Hinterlands"
+     ],
+     2,
+     0
+    ],
+    [
+     "Giant Ember Worg",
+     55,
+     56,
+     0.032,
+     [
+      "Burning Steppes"
+     ],
+     2,
+     0
+    ],
+    [
+     "Silvermane Stalker",
+     47,
+     48,
+     0.03,
+     [
+      "The Hinterlands"
+     ],
+     2,
+     0
+    ],
+    [
+     "Vilebranch Raiding Wolf",
+     50,
+     51,
+     0.03,
+     [
+      "The Hinterlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Snickerfang Hyena",
+     49,
+     50,
+     0.03,
+     [
+      "Blasted Lands"
+     ],
+     2,
+     0
+    ],
+    [
+     "Blighthound",
+     58,
+     59,
+     0.03,
+     [
+      "Eastern Plaguelands"
+     ],
+     3,
+     "H"
+    ],
+    [
+     "Bloodhound",
+     49,
+     50,
+     0.029,
+     [
+      "Blackrock Depths"
+     ],
+     2,
+     0
+    ],
+    [
+     "Starving Snickerfang",
+     45,
+     46,
+     0.029,
+     [
+      "Blasted Lands"
+     ],
+     2,
+     0
+    ],
+    [
+     "Rabid Longtooth",
+     47,
+     48,
+     0.026,
+     [
+      "Feralas"
+     ],
+     2,
+     0
+    ],
+    [
+     "Longtooth Runner",
+     40,
+     41,
+     0.024,
+     [
+      "Feralas"
+     ],
+     2,
+     0
+    ],
+    [
+     "Silvermane Wolf",
+     43,
+     44,
+     0.02,
+     [
+      "The Hinterlands"
+     ],
+     2,
+     0
+    ]
+   ]
+  },
+  "8949": {
+   "c": [
+    "alchemy",
+    185
+   ]
+  },
+  "8951": {
+   "c": [
+    "alchemy",
+    195
+   ],
+   "g": {
+    "inItem": [
+     "Ysida's Satchel"
+    ]
+   }
+  },
+  "11137": {
+   "g": {
+    "inItem": [
+     "Sparklematic-Wrapped Box",
+     "Ziri's Mystery Crate"
+    ]
+   }
+  },
+  "11176": {
+   "g": {
+    "inItem": [
+     "Sparklematic-Wrapped Box"
+    ]
+   }
+  },
+  "13444": {
+   "v": 1
+  },
+  "14341": {
+   "v": 1
+  },
+  "15409": {},
+  "15412": {
+   "d": [
+    [
+     "Morphaz",
+     52,
+     52,
+     0.994,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Dreamscythe",
+     53,
+     53,
+     0.994,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Hazzas",
+     53,
+     53,
+     0.992,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Weaver",
+     51,
+     51,
+     0.99,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Gyth",
+     62,
+     62,
+     0.982,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Shade of Eranikus",
+     55,
+     55,
+     0.326,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Wyrmkin Starhunter",
+     51,
+     51,
+     0.322,
+     [
+      "The Hinterlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Nightmare Suppressor",
+     49,
+     50,
+     0.262,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Nightmare Wanderer",
+     51,
+     51,
+     0.254,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Nightmare Scalebane",
+     50,
+     51,
+     0.251,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Nightmare Wyrmkin",
+     51,
+     51,
+     0.25,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Nightmare Wanderer",
+     49,
+     50,
+     0.247,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Nightmare Wyrmkin",
+     50,
+     51,
+     0.24,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Nightmare Scalebane",
+     51,
+     51,
+     0.237,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Verdantine Oracle",
+     61,
+     61,
+     0.18,
+     [
+      "The Hinterlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Jademir Oracle",
+     61,
+     61,
+     0.165,
+     [
+      "Feralas"
+     ],
+     3,
+     0
+    ],
+    [
+     "Wyrmkin Berserker",
+     51,
+     51,
+     0.162,
+     [
+      "Feralas"
+     ],
+     3,
+     0
+    ],
+    [
+     "Emeraldon Boughguard",
+     62,
+     62,
+     0.162,
+     [
+      "Ashenvale",
+      "Orgrimmar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Green Scalebane",
+     42,
+     43,
+     0.159,
+     [
+      "Swamp of Sorrows"
+     ],
+     2,
+     0
+    ],
+    [
+     "Green Wyrmkin",
+     41,
+     42,
+     0.158,
+     [
+      "Swamp of Sorrows"
+     ],
+     2,
+     0
+    ],
+    [
+     "Elder Dragonkin",
+     45,
+     45,
+     0.156,
+     [
+      "Swamp of Sorrows"
+     ],
+     2,
+     0
+    ],
+    [
+     "Jademir Boughguard",
+     62,
+     62,
+     0.156,
+     [
+      "Feralas",
+      "Desolace"
+     ],
+     3,
+     0
+    ],
+    [
+     "Emeraldon Tree Warder",
+     60,
+     60,
+     0.155,
+     [
+      "Ashenvale",
+      "Orgrimmar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Jademir Tree Warder",
+     60,
+     60,
+     0.148,
+     [
+      "Feralas"
+     ],
+     3,
+     0
+    ],
+    [
+     "Scalebane Captain",
+     43,
+     44,
+     0.146,
+     [
+      "Swamp of Sorrows"
+     ],
+     2,
+     0
+    ],
+    [
+     "Wyrmkin Dreamwalker",
+     42,
+     43,
+     0.143,
+     [
+      "Swamp of Sorrows"
+     ],
+     2,
+     0
+    ],
+    [
+     "Chromatic Elite Guard",
+     59,
+     60,
+     0.141,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Emeraldon Oracle",
+     61,
+     61,
+     0.14,
+     [
+      "Ashenvale",
+      "Orgrimmar"
+     ],
+     3,
+     0
+    ],
+    [
+     "Dreamroarer",
+     62,
+     62,
+     0.138,
+     [
+      "Feralas"
+     ],
+     3,
+     0
+    ],
+    [
+     "Verdantine Boughguard",
+     62,
+     62,
+     0.136,
+     [
+      "The Hinterlands",
+      "Ironforge"
+     ],
+     3,
+     0
+    ],
+    [
+     "Verdantine Tree Warder",
+     60,
+     60,
+     0.126,
+     [
+      "The Hinterlands"
+     ],
+     3,
+     0
+    ],
+    [
+     "Phantim",
+     62,
+     62,
+     0.098,
+     [
+      "Ashenvale"
+     ],
+     3,
+     0
+    ],
+    [
+     "Chromatic Dragonspawn",
+     59,
+     60,
+     0.069,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Nightmare Whelp",
+     49,
+     50,
+     0.039,
+     [
+      "The Temple of Atal'Hakkar"
+     ],
+     2,
+     0
+    ]
+   ],
+   "g": {
+    "inItem": [
+     "Otherworldly Treasure"
+    ]
+   }
+  },
+  "15415": {
+   "d": [
+    [
+     "Gyth",
+     62,
+     62,
+     0.982,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "General Colbatann",
+     56,
+     57,
+     0.276,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Spellmaw",
+     56,
+     56,
+     0.268,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Manaclaw",
+     58,
+     58,
+     0.261,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Cobalt Mageweaver",
+     57,
+     58,
+     0.251,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Cobalt Scalebane",
+     56,
+     57,
+     0.248,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Draconic Magelord",
+     53,
+     54,
+     0.171,
+     [
+      "Azshara"
+     ],
+     3,
+     0
+    ],
+    [
+     "Draconic Mageweaver",
+     51,
+     52,
+     0.158,
+     [
+      "Azshara"
+     ],
+     3,
+     0
+    ],
+    [
+     "Cobalt Wyrmkin",
+     55,
+     56,
+     0.155,
+     [
+      "Winterspring"
+     ],
+     3,
+     0
+    ],
+    [
+     "Blue Dragonspawn",
+     50,
+     51,
+     0.152,
+     [
+      "Azshara"
+     ],
+     3,
+     0
+    ],
+    [
+     "Blue Scalebane",
+     52,
+     53,
+     0.152,
+     [
+      "Azshara"
+     ],
+     3,
+     0
+    ],
+    [
+     "Cobalt Whelp",
+     54,
+     55,
+     0.088,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Chromatic Elite Guard",
+     59,
+     60,
+     0.073,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Chromatic Dragonspawn",
+     59,
+     60,
+     0.07,
+     [
+      "Blackrock Spire"
+     ],
+     3,
+     0
+    ],
+    [
+     "Cobalt Scalebane",
+     56,
+     57,
+     0.059,
+     [
+      "Winterspring"
+     ],
+     1,
+     0
+    ],
+    [
+     "Cobalt Mageweaver",
+     57,
+     58,
+     0.056,
+     [
+      "Winterspring"
+     ],
+     1,
+     0
+    ],
+    [
+     "Gyth",
+     62,
+     62,
+     0.055,
+     [
+      "Blackrock Spire"
+     ],
+     1,
+     0
+    ],
+    [
+     "Chromatic Whelp",
+     57,
+     58,
+     0.047,
+     [
+      "Blackrock Spire"
+     ],
+     2,
+     0
+    ],
+    [
+     "Cobalt Wyrmkin",
+     55,
+     56,
+     0.035,
+     [
+      "Winterspring"
+     ],
+     1,
+     0
+    ],
+    [
+     "Cobalt Broodling",
+     55,
+     56,
+     0.029,
+     [
+      "Winterspring"
+     ],
+     2,
+     0
+    ],
+    [
+     "Spell Eater",
+     54,
+     56,
+     0.021,
+     [
+      "Winterspring"
+     ],
+     0,
+     0
+    ]
+   ],
+   "g": {
+    "inItem": [
+     "Otherworldly Treasure"
+    ]
+   }
+  },
+  "248824": {},
+  "249409": {
+   "c": [
+    "alchemy",
+    50
+   ]
+  },
+  "249410": {
+   "c": [
+    "alchemy",
+    50
+   ]
+  },
+  "249427": {},
+  "249428": {},
+  "249429": {}
  }
 }

@@ -1398,6 +1398,9 @@ details[open] > .lw-head .lw-goals { display: none; }
 .lw-chip { display: inline-flex; align-items: center; gap: 4px; background: rgba(255,255,255,.04); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px 1px 2px; font-size: 12.5px; white-space: nowrap; }
 .lw-chip img { width: 18px; height: 18px; border-radius: 4px; border: 1px solid #000; }
 .lw-beasts { font-size: 12px; }
+.lw-mats { display: flex; flex-direction: column; gap: 3px; margin: 2px 0 4px 34px; padding-left: 8px; border-left: 2px solid var(--border); }
+.lw-mat { font-size: 12px; line-height: 1.5; }
+.lw-mat .lw-chip { margin-right: 2px; }
 .lw-early { flex-basis: 100%; font-size: 12px; color: var(--text-dim); display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; margin: 2px 0 4px; }
 .lw-buyrow .lw-k { color: var(--warn); }
 .lw-more { margin-top: 18px; }
