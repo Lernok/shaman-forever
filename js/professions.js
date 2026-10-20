@@ -432,24 +432,44 @@
       sg.rows.forEach(r => Object.entries(r.crafts).forEach(([id, n]) => { if (!r.made.includes(Number(id))) crafts[id] = (crafts[id] || 0) + n; }));
       return crafts;
     };
-    // The order to level the skill in a stage: each craft with the skill you
-    // start and stop making it at ("1 → 33: 40 Light Leather"); crafts that
-    // no longer raise it (converting leather, curing hides) go apart.
-    const orderOf = sg => {
-      const crafts = craftsOf(sg);
-      const range = {};
-      sg.rows.forEach(r => Object.entries(r.ranges || {}).forEach(([id, [a, b]]) => {
-        if (r.made.includes(Number(id))) return;
-        const g = range[id];
-        range[id] = g ? [Math.min(g[0], a), Math.max(g[1], b)] : [a, b];
+    // The steps to level the skill in a stage, one after another, said in
+    // words: "1. Make 40 Light Leather (uses 120 Ruined Leather Scraps).
+    // Leatherworking goes from 1 to 33." Each craft in the order you first
+    // make it, its stretch as long as the skill it gave; the pieces you wear
+    // are steps too. Crafts that no longer raise it go apart.
+    const skillBefore = i => (i ? stages[i - 1].rows[stages[i - 1].rows.length - 1].skill : 1);
+    const orderOf = (sg, i) => {
+      const all = {};
+      sg.rows.forEach(r => Object.entries(r.crafts).forEach(([id, n]) => { all[id] = (all[id] || 0) + n; }));
+      const first = {};
+      const gain = {};
+      sg.rows.forEach(r => Object.entries(r.gains || {}).forEach(([id, g]) => {
+        gain[id] = (gain[id] || 0) + g;
+        const a = ((r.ranges || {})[id] || [])[0];
+        if (first[id] == null || a < first[id]) first[id] = a;
       }));
-      const steps = Object.entries(range).sort((x, y) => x[1][0] - y[1][0] || x[1][1] - y[1][1]);
-      const rest = Object.fromEntries(Object.entries(crafts).filter(([id]) => !range[id]));
+      const ids = Object.keys(gain).filter(id => gain[id] >= 0.5).sort((x, y) => first[x] - first[y]);
+      const end = sg.rows[sg.rows.length - 1].skill;
+      let at = Math.floor(skillBefore(i));
+      let sum = at;
+      const steps = ids.map((id, k) => {
+        sum += gain[id];
+        const a = at;
+        const b = k === ids.length - 1 ? end : Math.min(end, Math.round(sum));
+        at = b;
+        const r = M.recipe.get(Number(id));
+        const uses = r && r.mats.length ? r.mats.map(([m, n]) => Math.round(n * all[id]) + ' ' + name(m)).join(', ') : '';
+        const wear = sg.rows.some(x => x.made.includes(Number(id)));
+        return '<li><span class="lo-do">' + t('pr.lw.step.make', { n: Math.round(all[id]) }) + ' ' + chip(id) + '</span>' +
+          (wear ? ' <span class="gpc-tag">' + t(Math.round(all[id]) > 1 ? 'pr.lw.step.wearOne' : 'pr.lw.step.wear') + '</span>' : '') +
+          (uses ? ' <span class="dim">' + t('pr.lw.step.uses', { list: uses }) + '</span>' : '') +
+          '<span class="lo-up">' + t(a < b ? 'pr.lw.step.up' : 'pr.lw.step.upLittle', { a, b }) + '</span></li>';
+      });
+      const rest = Object.fromEntries(Object.entries(all).filter(([id]) => !ids.includes(id) && !sg.rows.some(x => x.made.includes(Number(id)))));
       if (!steps.length && !Object.keys(rest).length) return '';
-      return '<ol class="lw-order">' + steps.map(([id, [a, b]]) => '<li><span class="lo-range">' + (a === b ? a : a + ' → ' + b) + '</span>' + chip(id, crafts[id]) + '</li>').join('') + '</ol>' +
+      return '<ol class="lw-order">' + steps.join('') + '</ol>' +
         (Object.keys(rest).length ? '<div class="lo-rest dim">' + t('pr.lw.forMats') + ' ' + chips(rest) + '</div>' : '');
     };
-    const skillBefore = i => (i ? stages[i - 1].rows[stages[i - 1].rows.length - 1].skill : 1);
 
     // Now: the stage you're in, said plainly.
     const mineAt = Math.max(0, stages.findIndex(sg => lvl <= sg.rows[sg.rows.length - 1].level));
@@ -458,12 +478,13 @@
       const last = now.rows[now.rows.length - 1];
       const zones = zonesOf(now);
       const crafts = craftsOf(now);
-      const made = [].concat(...now.rows.map(r => r.made));
+      // Pieces to wear that the steps don't already say (they gave no skill).
+      const made = [].concat(...now.rows.map(r => r.made)).filter(id => !now.rows.some(r => (r.gains || {})[id] >= 0.5));
       const line = (k, body) => '<div class="pn-row"><span class="pn-k">' + k + '</span><div class="pn-v">' + body + '</div></div>';
       html += '<section class="pr-now"><span class="hn-kicker">' + t('pr.now.kicker', { lo: now.from, hi: last.level }) + '</span>' +
         '<h2>' + t('pr.now.title', { a: Math.floor(skillBefore(mineAt)), b: last.skill }) + '</h2>' +
         (zones.length ? line(t('pr.lw.kSkin'), zones.map(z => '<b>' + (z.name || '?') + '</b> <span class="dim">· ' + window.LwPlan.beasts(z.name, Math.round((z.from + z.to) / 2)).map(b => b.name).join(', ') + '</span>').join('<br>')) : '') +
-        (Object.keys(crafts).length ? line(t('pr.now.craft'), orderOf(now)) : '') +
+        (Object.keys(crafts).length ? line(t('pr.now.craft'), orderOf(now, mineAt)) : '') +
         (Object.keys(last.keep).length ? line(t('pr.lw.kKeep'), chips(last.keep)) : '') +
         (made.length ? line(t('pr.lw.kGoal'), made.map(id => '<span class="lw-chip">' + (stepOf.get(id) ? UI.itemLink(stepOf.get(id).pick.item) : name(id)) + '</span>').join('')) : '') +
         (now.rows.some(r => r.level === base.bridge.level) ? line(t('pr.lw.kBuy'), chips(base.bridge.items) + ' <span class="dim">' + t('pr.lw.bridgeWhy') + '</span>') : '') +
@@ -510,7 +531,7 @@
         html += '<details class="lw-step"' + (i === mineAt ? ' open' : '') + '><summary class="lw-head"><b>' + t(sg.from === to ? 'pr.lw.stageOne' : 'pr.lw.stage', { lo: sg.from, hi: to }) + '</b>' +
           '<span class="lw-skill">' + t('pr.lw.skillRange', { a: Math.floor(skillBefore(i)), b: last.skill }) + '</span><span class="lw-bar"><i style="width:' + pct + '%"></i></span>' +
           (made.length ? '<span class="lw-goals">' + made.map(id => name(id)).join(', ') + '</span>' : '') + '</summary>' +
-          (Object.keys(crafts).length ? row(t('pr.lw.kCraft'), orderOf(sg)) : '') +
+          (Object.keys(crafts).length ? row(t('pr.lw.kCraft'), orderOf(sg, i)) : '') +
           (where ? row(t('pr.lw.kSkin'), where) : '') +
           (Object.keys(last.keep).length ? row(t('pr.lw.kKeep'), chips(last.keep)) : '') +
           (to === base.bridge.level ? row(t('pr.lw.kBuy'), chips(base.bridge.items) + '<span class="dim"> ' + t('pr.lw.bridgeWhy') + '</span>', 'lw-buyrow') : '') +

@@ -83,7 +83,9 @@
 
     // ranges[id] = [skill when you start making it, skill when you stop]: the
     // order to level the profession in ("1 to 20: Light Leather").
+    // gains[id]: the skill those crafts gave (to say the steps one after another).
     let ranges = {};
+    let gains = {};
     function craft(r, crafts) {
       const p = chance(r, skill);
       const from = Math.floor(skill);
@@ -93,7 +95,9 @@
         inv[id] -= n;
       });
       add(r.id, 1);
+      const before = skill;
       skill = Math.min(capNow, skill + p);
+      if (skill > before) gains[r.id] = (gains[r.id] || 0) + skill - before;
       crafts[r.id] = (crafts[r.id] || 0) + 1;
       // Only crafts that can raise the skill make the order to follow.
       if (p > 0) {
@@ -164,6 +168,7 @@
       const buyLog = {};
       const made = [];
       ranges = {};
+      gains = {};
       // No trainer yet: nothing to craft.
       for (let guard = L >= (opts.lwFrom || 1) ? 0 : 600; guard < 600; guard++) {
         // 1) A piece of your path, due now, that your skill allows.
@@ -206,7 +211,7 @@
         break;
       }
       Object.entries(buyLog).forEach(([id, n]) => { bought[id] = (bought[id] || 0) + n; });
-      rows.push({ level: L, zone, skins, skill: Math.floor(skill), crafts, ranges, made, bought: buyLog,
+      rows.push({ level: L, zone, skins, skill: Math.floor(skill), crafts, ranges, gains, made, bought: buyLog,
         keep: Object.fromEntries(Object.entries(keep).filter(([id]) => have(Number(id)) >= 1).map(([id, n]) => [id, Math.min(n, Math.floor(have(Number(id))))])) });
     }
     return { rows, made: madeAt, bought, bridge };
