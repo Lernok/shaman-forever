@@ -352,7 +352,7 @@
   let lwKey = '';
   function lwHow(st) {
     if (!window.SKINNING_DATA || (st.pick.source || {}).profession !== 'Leatherworking' || !myProfs().includes('Leatherworking')) return '';
-    const key = JSON.stringify([Site.spec, Site.faction, Site.race, myProfs(), UI.store.get('lwSkin', 'normal'), window.GearPath.farm(), UI.store.get('gpDrops', false)]);
+    const key = JSON.stringify([Site.spec, Site.faction, Site.race, myProfs(), UI.store.get('lwSkin', 'normal'), window.GearPath.farm(), UI.store.get('gpDrops', false), UI.store.get('learnedProfs', {})]);
     if (!lwCache || key !== lwKey) { lwCache = lwModel(); lwKey = key; }
     const M = lwCache;
     const id = st.pick.item.id;
@@ -396,10 +396,15 @@
       const stages = [];
       let cur = null;
       const first = Math.min(lwAt.level, skinAt.level);
-      if (first > 1) {
+      const learned = UI.store.get('learnedProfs', {});
+      if (first > 1 && !(lwAt.learned && skinAt.learned)) {
         html += '<div class="lw-learn"><b>' + t('pr.lw.learnTitle', { n: first }) + '</b> ' +
-          t('pr.lw.learnWhere', { lw: lwAt.zone || '?', n: lwAt.level, skin: skinAt.zone || '?', m: skinAt.level }) + '</div>';
+          t('pr.lw.learnWhere', { lw: lwAt.zone || '?', n: lwAt.level, skin: skinAt.zone || '?', m: skinAt.level }) +
+          '<span class="lw-learn-btns">' + ['Leatherworking', 'Skinning'].filter(p => learned[p] == null).map(p => '<button class="btn" data-learned="' + p + '">' + t('home.learned', { prof: p }) + '</button>').join('') + '</span></div>';
       }
+      const said = Object.keys(learned).filter(p => ['Leatherworking', 'Skinning'].includes(p));
+      if (said.length) html += '<p class="note-text dim">' + t('pr.lw.learnedSaid', { list: said.map(p => p + ' (' + t('common.level') + ' ' + learned[p] + ')').join(', ') }) +
+        ' <button class="btn-link" data-unlearn>' + t('pr.lw.learnedUndo') + '</button></p>';
       base.rows.filter(r => r.level >= first).forEach(r => {
         if (!cur) cur = { from: r.level, rows: [] };
         cur.rows.push(r);
@@ -570,6 +575,13 @@
     container.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
     container.querySelectorAll('[data-lw-skin]').forEach(b => b.addEventListener('click', () => { UI.store.set('lwSkin', b.dataset.lwSkin); renderAll(); }));
     container.querySelectorAll('[data-lw-farm]').forEach(b => b.addEventListener('click', () => { window.GearPath.setFarm(b.dataset.lwFarm === 'farm'); renderAll(); }));
+    container.querySelectorAll('[data-learned]').forEach(b => b.addEventListener('click', () => {
+      const all = UI.store.get('learnedProfs', {});
+      all[b.dataset.learned] = Math.max(1, Number(UI.store.get('level', 1)) || 1);
+      UI.store.set('learnedProfs', all);
+      renderAll();
+    }));
+    container.querySelectorAll('[data-unlearn]').forEach(b => b.addEventListener('click', () => { UI.store.set('learnedProfs', {}); renderAll(); }));
   }
 
   window.Professions = {

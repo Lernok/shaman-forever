@@ -31,6 +31,13 @@
     // levels that has one (in your starting zone, from its second town), or
     // your capital, where you go around level 10.
     profFrom(prof, faction, race) {
+      // "I already learned it" (the home and the profession plan): from then on.
+      let learned = null;
+      try { learned = (JSON.parse(localStorage.getItem('shaman.learnedProfs') || '{}') || {})[prof]; } catch (e) { /* not stored */ }
+      const found = Route.trainerFrom(prof, faction, race);
+      return learned != null && learned < found.level ? { level: learned, zone: found.zone, learned: true } : found;
+    },
+    trainerFrom(prof, faction, race) {
       const where = ((Z.trainers || {})[faction] || {})[prof];
       if (!where) return { level: 1, zone: null };
       const cap = CAPITAL[race] || (faction === 'alliance' ? 'Ironforge' : 'Orgrimmar');

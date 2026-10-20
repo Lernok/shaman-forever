@@ -81,9 +81,19 @@
     };
   }
 
+  // A profession you picked whose trainer your route hasn't reached yet.
+  function pendingProf(lvl) {
+    const race = Site.race === 'any' ? null : Site.race;
+    return UI.store.get('profs', []).filter(p => CRAFTING.includes(p) || p === 'Skinning')
+      .map(p => Object.assign({ prof: p }, window.Route.profFrom(p, Site.faction, race)))
+      .filter(x => x.level > lvl).sort((a, b) => a.level - b.level);
+  }
+  // "Ya la aprendí": the button that moves a profession to now.
+  const learnedBtn = p => '<button class="btn" data-learned="' + p + '">' + t('home.learned', { prof: p }) + '</button>';
+
   function nextCard(steps, lvl, tal) {
-    let st = nextStep(steps, lvl);
-    if (!st && !(tal && tal.now)) st = aheadStep(steps, lvl);
+    const st = nextStep(steps, lvl);
+    const ahead = !st ? aheadStep(steps, lvl) : null;
     const tree = window.SHAMAN_DATA.talents.trees.find(tr => tr.name === Site.spec);
     const art = tree ? ' style="--spec-color:' + SPEC_COLORS[Site.spec] + ';--hn-art:url(' + UI.treeArt(tree.bg) + ')"' : '';
     const head = '<span class="hn-kicker">' + t('home.next.kicker') + ' · <span class="hn-level"><button class="hn-step" data-level-step="-1" aria-label="' + t('home.levelDown') + '"' + (lvl <= 1 ? ' disabled' : '') + '>−</button>' +
@@ -111,7 +121,14 @@
         '<h2 id="hnTitle">' + t('home.next.talent', { talent: tal.now.talent, rank: tal.now.rank, max: tal.now.max }) + '</h2>' +
         '<p class="dim">' + t('home.next.talentWhy') + '</p><div class="hn-actions"><a class="btn hn-go" href="' + window.Calculator.linkFor(tal.build) + '">' + t('home.plan.talentsMore') + '</a></div></div></section>';
     }
-    return '<section class="home-next"' + art + '><div class="hn-text">' + head + '<h2>' + t('home.next.none') + '</h2></div></section>';
+    // Nothing to change now: keep leveling; what comes next, in a line; and,
+    // if a profession is still ahead, the way to say you learned it already.
+    const pend = pendingProf(lvl);
+    return '<section class="home-next"' + art + ' aria-labelledby="hnTitle"><div class="hn-text">' + head +
+      '<h2 id="hnTitle">' + t('home.next.quiet') + '</h2>' +
+      '<p class="dim">' + (ahead ? t('home.next.aheadLine', { item: ahead.pick.item.name, n: ahead.level }) : t('home.next.none')) + '</p>' +
+      (pend.length ? '<p class="dim">' + t('home.next.learnLine', { prof: pend[0].prof, zone: pend[0].zone || '?', n: pend[0].level }) + '</p><div class="hn-actions">' + pend.map(x => learnedBtn(x.prof)).join('') + '</div>' : '') +
+      '</div></section>';
   }
 
   // icon: a game icon name; tone: gear, talents or prof (its color).
@@ -145,8 +162,9 @@
       const race = Site.race === 'any' ? null : Site.race;
       const learn = makers.map(p => Object.assign({ prof: p }, window.Route.profFrom(p, Site.faction, race))).sort((a, b) => a.level - b.level)[0];
       if (learn && learn.level > lvl) {
-        return '<div class="home-tiles">' + gear + talents + tile(learn.prof, t('home.tile.learnAt', { prof: learn.prof, zone: learn.zone || '?', n: learn.level }),
-          t('home.tile.learnWhy'), '#Profesiones/plan', t('home.plan.profsMore'), window.Setup.PROF_ICONS[learn.prof], 'prof') + '</div>';
+        return '<div class="home-tiles">' + gear + talents + '<div class="home-tile ht-prof"><span class="ht-head"><img src="' + smallIcon(window.Setup.PROF_ICONS[learn.prof]) + '" alt=""><span class="ht-kind">' + learn.prof + '</span></span>' +
+          '<b>' + t('home.tile.learnAt', { prof: learn.prof, zone: learn.zone || '?', n: learn.level }) + '</b><span class="dim">' + t('home.tile.learnWhy') + '</span>' +
+          '<span class="ht-actions">' + learnedBtn(learn.prof) + '</span></div></div>';
       }
       // The next craft from your level on (one you're already wearing is behind you).
       const crafts = steps.filter(st => ['crafted', 'favor'].includes(st.pick.access) && st.level >= lvl && st.level <= lvl + 9 && !got().has(st.pick.item.id)).sort((a, b) => a.level - b.level);
@@ -223,6 +241,12 @@
       app.innerHTML = renderHome();
       app.querySelectorAll('[data-go-spec]').forEach(a => a.addEventListener('click', () => Site.set('spec', a.dataset.goSpec)));
       app.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
+      app.querySelectorAll('[data-learned]').forEach(b => b.addEventListener('click', () => {
+        const all = UI.store.get('learnedProfs', {});
+        all[b.dataset.learned] = level();
+        UI.store.set('learnedProfs', all);
+        Site.setMany({});
+      }));
       app.querySelectorAll('[data-level-step]').forEach(b => b.addEventListener('click', () => {
         const next = Math.min(60, Math.max(1, level() + Number(b.dataset.levelStep)));
         UI.store.set('level', next);
