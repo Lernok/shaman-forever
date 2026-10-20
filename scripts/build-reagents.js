@@ -95,6 +95,10 @@ let scarceItems = {};
 
   const items = {};
   let fetched = 0;
+  let kept = 0;
+  // What the last run found: kept for a reagent whose page can't be fetched
+  // now (Wowhead refuses some requests from the sync's servers).
+  const before = readJSON('data/reagents.json', { items: {} }).items;
   for (const id of [...wanted].sort((a, b) => a - b)) {
     const e = { name: SK.names[id] || nameOf.get(id) || null };
     const made = madeBy.get(id);
@@ -139,6 +143,9 @@ let scarceItems = {};
         else if (SKILL_PROF[skill] && !e.craft) e.craft = { prof: SKILL_PROF[skill], skill: r.learnedat || 1, mats: r.reagents || [] };
       });
       if (Object.keys(gather).length) e.gather = gather;
+    } else if (before[id]) {
+      kept++;
+      Object.assign(e, before[id], { name: e.name || before[id].name });
     }
     items[id] = e;
   }
@@ -202,7 +209,7 @@ let scarceItems = {};
     mats: Object.fromEntries(crafted), items: all, gold: SK.gold, prices: SK.prices || null
   });
   const n = Object.values(items);
-  console.log('Reactivos: ' + n.length + ' (' + fetched + ' con página de Wowhead): ' + n.filter(e => e.drops).length + ' caen de bichos, ' +
+  console.log('Reactivos: ' + n.length + ' (' + fetched + ' con página de Wowhead' + (kept ? ', ' + kept + ' como estaban' : '') + '): ' + n.filter(e => e.drops).length + ' caen de bichos, ' +
     n.filter(e => e.craft).length + ' de otra profesión, ' + n.filter(e => e.gather).length + ' se recolectan, ' + n.filter(e => e.vendor).length + ' de vendedor, ' +
     n.filter(e => !e.drops && !e.craft && !e.gather && !e.vendor).length + ' sin fuente');
 })().catch(e => { console.error(e.message); process.exit(1); });
