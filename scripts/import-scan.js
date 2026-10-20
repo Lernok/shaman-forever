@@ -113,8 +113,7 @@ for (const [id, v] of Object.entries(merged.vendors)) {
   }
 }
 for (const [prof, items] of Object.entries(merged.sources)) {
-  console.log('
-SIN APRENDER (' + prof + ', según el juego)');
+  console.log('\nSIN APRENDER (' + prof + ', según el juego)');
   for (const [item, e] of Object.entries(items)) {
     const w = byItem.get(Number(item));
     console.log('  ' + e.name + ' #' + item + ' · ' + e.source + (w && w.source !== e.source ? '   (web: ' + w.source + ')' : ''));
