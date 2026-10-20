@@ -27,11 +27,159 @@
   "1.60.1.70425/hotfix-112821+13",
   "1.60.1.70425/hotfix-16784936+1",
   "1.60.1.70425/patch",
+  "1.60.1.70450/hotfix-112712+2",
+  "1.60.1.70450/hotfix-112753+22",
+  "1.60.1.70450/hotfix-112916+3",
   "1.60.1.70450/hotfix-16786608",
+  "1.60.1.70450/hotfix-16786641+1",
+  "1.60.1.70450/hotfix-16791770",
+  "1.60.1.70450/hotfix-16796725+1",
   "1.60.1.70450/hotfix-17059766",
   "1.60.1.70450/patch"
  ],
  "updates": [
+  {
+   "id": "1.60.1.70450/hotfix-112916+3",
+   "version": "1.60.1.70450",
+   "hotfix": true,
+   "date": "2026-10-20",
+   "spells": [
+    {
+     "name": "Elemental Focus",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    }
+   ]
+  },
+  {
+   "id": "1.60.1.70450/hotfix-112712+2",
+   "version": "1.60.1.70450",
+   "hotfix": true,
+   "date": "2026-10-19",
+   "spells": [
+    {
+     "name": "Ancestral Guidance",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Fire Nova",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Magma Totem",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Decoy Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Lightning Shield",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    {
+     "name": "Beacon's Companion",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Disease Cleansing Totem Effect",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Earthbind",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Earthbound",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Earthgrab",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Poison Cleansing Totem Effect",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Shamanistic Rage",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Stoneclaw Totem Effect",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "name": "Tremor Totem Effect",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Healing Rain",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    }
+   ]
+  },
   {
    "id": "1.60.1.70425/patch",
    "version": "1.60.1.70425",

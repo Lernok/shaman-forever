@@ -2,6 +2,20 @@
  "_readme": "Game data changes found by scripts/sync.js, newest first (one entry per sync day that found changes).",
  "entries": [
   {
+   "date": "2026-10-20",
+   "talents": [],
+   "items": [
+    "- **Galgann's Firehammer** #9419: quality 2 → 3; efectos cambiados",
+    "- **Pendulum of Doom** #9425: efectos cambiados",
+    "- Ítem nuevo: **Axe of Inevitable Ruin** (2H Axe, nivel 37) #274484",
+    "- Ítem nuevo: **Rog'mar Trainee Shoulderpads** (Leather, nivel 36) #281676",
+    "- Ítem nuevo: **Combat Tuning Wrench** (1H Mace, nivel 38) #282550",
+    "- Ítem nuevo: **Unearthed Barrier** (Shield, nivel 27) #286982",
+    "- Ítem nuevo: **Ancient Cleaver** (2H Axe, nivel 28) #286983"
+   ],
+   "build": "1.60.1.70450"
+  },
+  {
    "date": "2026-10-17",
    "talents": [
     "- **Elemental / Elemental Devastation**: posición 2.4 → 2.1; texto: \"Your offensive spell critical strikes will increase your chance to get a critical strike with melee attacks by 9% for 10 sec.\" → \"Your Critical Strikes with direct damage spells increase your chance to get a Critical Strike with melee attacks by 9% for 10 sec.\"",

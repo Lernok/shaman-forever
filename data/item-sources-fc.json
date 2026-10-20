@@ -1,7 +1,7 @@
 {
  "_readme": "Fuentes de misión del equipo nuevo de Forever (items) y datos de Forever de las misiones de Classic que dan equipo (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json.",
  "source": "https://foreverchanges.pro",
- "fetched": "2026-10-13",
+ "fetched": "2026-10-20",
  "items": {
   "246164": {
    "name": "Skullthumper",
@@ -4050,7 +4050,7 @@
    "sources": [
     {
      "type": "quest",
-     "quest": "Stalk With The Earthmother",
+     "quest": "Stalk With The Earthmother (Hunter, Shaman, Druid)",
      "questId": 76240,
      "level": 11,
      "requiredLevel": 4,
@@ -4078,7 +4078,7 @@
    "sources": [
     {
      "type": "quest",
-     "quest": "Stalk With The Earthmother",
+     "quest": "Stalk With The Earthmother (Hunter, Shaman, Druid)",
      "questId": 76240,
      "level": 11,
      "requiredLevel": 4,
@@ -13209,7 +13209,7 @@
   "8573": {
    "quest": "Champion's Battlegear",
    "level": 60,
-   "requiredLevel": null,
+   "requiredLevel": 60,
    "zone": "Silithus",
    "bands": {
     "yellow": 60
