@@ -37,7 +37,7 @@
       case 'route': return t('gp.src.route', { quest: s.quest, zone: s.zone || '?' });
       case 'quest': return t('gp.src.quest', { quest: s.quest, zone: s.zone || '?' });
       case 'dquest': return t('gp.src.dquest', { quest: s.quest, zone: s.dungeonZone || s.zone || '?' });
-      case 'crafted': return t('gp.src.crafted', { prof: s.profession, skill: s.yellow });
+      case 'crafted': return t((s.learn || {}).type === 'unreleased' ? 'gp.src.unreleased' : 'gp.src.crafted', { prof: s.profession, skill: s.yellow });
       case 'favor': return t('gp.src.favor', { prof: s.profession, n: (s.learn || {}).favor || '?' });
       case 'vendor': return t('gp.src.vendor', { npc: s.npc, zone: s.zone || '?' });
       case 'boss': return t('gp.src.boss', { npc: s.npc, zone: s.zone || '?' });

@@ -1,6 +1,6 @@
 {
  "source": "https://classicwowforever.com/professions/",
- "fetched": "2026-10-13",
+ "fetched": "2026-10-20",
  "professions": {
   "leatherworking": {
    "item:2302": {
@@ -13492,7 +13492,7 @@
    "item:279973": {
     "name": "Faction Banner",
     "itemId": 279973,
-    "slot": null,
+    "slot": "Camping",
     "ilvl": null,
     "skill": [
      20,
@@ -21394,8 +21394,8 @@
     "ilvl": null,
     "skill": [
      290,
-     290,
      295,
+     297,
      300
     ],
     "source": "Formula: source not found yet, binds on pickup",
@@ -21548,9 +21548,9 @@
     "ilvl": null,
     "skill": [
      295,
-     285,
-     287,
-     290
+     295,
+     297,
+     300
     ],
     "source": "Formula: source not found yet, binds on pickup",
     "isNew": true
@@ -23889,8 +23889,8 @@
     "skill": [
      205,
      205,
-     205,
-     205
+     207,
+     210
     ],
     "source": "Schematic: source not found yet, binds on pickup",
     "isNew": false

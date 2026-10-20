@@ -32,7 +32,7 @@ Object.values(items).filter(i => i.crafted).forEach(i => {
     // Shamans train Mail at 40.
     mailFrom40: i.kind === 'Mail' && i.req < 40,
     skill: r ? r.skill : [i.crafted.yellow, i.crafted.yellow, null, i.crafted.grey],
-    learn: R.learn(prof, i.id, i.name),
+    learn: R.learn(prof, i.id, i.name, i.crafted.spell),
     isNew: r ? r.isNew : i.era === 'new'
   });
 });

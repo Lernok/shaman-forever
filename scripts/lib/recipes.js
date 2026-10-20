@@ -20,12 +20,20 @@ function learnOf(source) {
 
 function open() {
   const recipes = readJSON('data/recipes.json', { professions: {} });
+  // New recipes whose pattern isn't handed out yet (scripts/recipe-patterns.js).
+  const unreleased = readJSON('data/recipe-patterns.json', { unreleased: {} }).unreleased;
   // By the crafted item's id: names repeat between Classic and new Forever recipes.
   const recipe = (profession, id, name) => {
     const list = recipes.professions[profession.toLowerCase()] || {};
     return list['item:' + id] || (name && list[name]) || null;
   };
-  return { recipes, recipe, learn: (profession, id, name) => { const r = recipe(profession, id, name); return r ? learnOf(r.source) : learnOf(null); } };
+  const learn = (profession, id, name, spell) => {
+    const r = recipe(profession, id, name);
+    const out = r ? learnOf(r.source) : learnOf(null);
+    if (spell && unreleased[spell] && (out.type === 'unknown' || out.type === 'trainer')) return { type: 'unreleased', text: null, pattern: unreleased[spell] };
+    return out;
+  };
+  return { recipes, recipe, learn };
 }
 
 module.exports = { open, learnOf };

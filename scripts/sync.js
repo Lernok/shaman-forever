@@ -386,6 +386,7 @@ function diffItems(prev, next) {
   step('build-gear.js');
   step('build-zones.js');
   // Recipe sources come from scripts/fetch-recipes.js (run it to refresh them).
+  step('recipe-patterns.js');
   step('build-professions.js');
   step('build-consumables.js');
   step('patch-news.js');

@@ -112,7 +112,7 @@
   function sourceText(s) {
     const I = window.I18N;
     switch (s.type) {
-      case 'crafted': return t('wp.src.crafted', { prof: s.profession, yellow: s.yellow }) + (s.viaAH ? ' · ' + t('wp.viaAH') : '');
+      case 'crafted': return t((s.learn || {}).type === 'unreleased' ? 'gp.src.unreleased' : 'wp.src.crafted', { prof: s.profession, yellow: s.yellow, skill: s.yellow }) + (s.viaAH ? ' · ' + t('wp.viaAH') : '');
       case 'boss': return t('wp.src.boss', { npc: s.npc, zone: s.zone || '?' });
       case 'drop': return t('wp.src.drop', { npc: s.npc, zone: s.zone || '?' });
       case 'trash': return t('wp.src.trash', { zones: (s.zones || []).join(', ') || '?', n: s.count });

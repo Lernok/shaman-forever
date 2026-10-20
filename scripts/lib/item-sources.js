@@ -55,7 +55,7 @@ function open(cacheDir, build) {
   function classify(item) {
     if (item.crafted) {
       // How the recipe is learned: trainer, Merchant's Favor (with its cost), drop...
-      const learn = R.learn(item.crafted.profession, item.id, item.name);
+      const learn = R.learn(item.crafted.profession, item.id, item.name, item.crafted.spell);
       delete learn.text;
       return [{ type: 'crafted', profession: item.crafted.profession, yellow: item.crafted.yellow, grey: item.crafted.grey, learn, faction: 'both', confidence: 'client-data' }];
     }
