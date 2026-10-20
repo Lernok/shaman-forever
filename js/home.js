@@ -57,6 +57,11 @@
     return steps.filter(st => st.level <= lvl + 2 && st.until > lvl && !have.has(st.pick.item.id))
       .sort((a, b) => gainOf(b) - gainOf(a))[0] || null;
   }
+  // Nothing within two levels: the first upgrade ahead.
+  function aheadStep(steps, lvl) {
+    const have = got();
+    return steps.filter(st => st.level > lvl && !have.has(st.pick.item.id)).sort((a, b) => a.level - b.level || gainOf(b) - gainOf(a))[0] || null;
+  }
 
   function talentNow(lvl) {
     const build = I18N.localize(window.BUILD_DATA || []).filter(b => b.spec === Site.spec && b.order).sort((a, b) => b.level - a.level)[0];
@@ -68,15 +73,19 @@
       const tal = trees.find(x => x.name === treeName).talents.find(x => x.name === talent);
       return { from, to, talent, rank, max: tal.max, icon: tal.icon };
     };
+    // Below 10 there's no point to spend yet: the first one is "next".
     return {
       build,
-      now: at(lvl < 10 ? build.order[0] : build.order.find(([from, to]) => from <= lvl && lvl <= to)),
-      next: at(build.order.find(([from]) => from > Math.max(lvl, 9)))
+      now: lvl < 10 ? null : at(build.order.find(([from, to]) => from <= lvl && lvl <= to)),
+      next: at(lvl < 10 ? build.order[0] : build.order.find(([from]) => from > lvl))
     };
   }
 
   function nextCard(steps, lvl, tal) {
-    const st = nextStep(steps, lvl);
+    let st = nextStep(steps, lvl);
+    if (!st && !(tal && tal.now)) st = aheadStep(steps, lvl);
+    const tree = window.SHAMAN_DATA.talents.trees.find(tr => tr.name === Site.spec);
+    const art = tree ? ' style="--spec-color:' + SPEC_COLORS[Site.spec] + ';--hn-art:url(' + UI.treeArt(tree.bg) + ')"' : '';
     const head = '<span class="hn-kicker">' + t('home.next.kicker') + ' · <label class="hn-level">' + t('home.next.level') +
       ' <select data-plan-level>' + Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === lvl ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label></span>';
     if (st) {
@@ -85,25 +94,28 @@
       const gain = st.replaces ? t('home.next.better', { pct: Math.round((st.pick.value / st.replaces.value - 1) * 100) }) : t('home.next.empty');
       const lasts = st.until > 60 ? t('home.next.lastsLong') : t('home.next.lasts', { n: st.until });
       const verb = ['crafted', 'favor'].includes(st.pick.access) ? 'home.next.make' : 'home.next.get';
-      return '<section class="home-next" aria-labelledby="hnTitle"><div class="hn-text">' + head +
+      return '<section class="home-next"' + art + ' aria-labelledby="hnTitle"><div class="hn-text">' + head +
         '<h2 id="hnTitle">' + t(verb, { item: i.name }) + '</h2>' +
         '<p class="dim">' + t(st.level > lvl ? 'home.next.whySoon' : 'home.next.why', { slot: window.GearPath.slotName(st.pick.slot), n: st.level }) + '</p>' +
         '<div class="hn-actions"><a class="btn hn-go" href="#Equipo/camino">' + t('home.next.how') + '</a>' +
         '<button class="btn" data-got="' + i.id + '">' + t('home.next.have') + '</button></div></div>' +
-        '<div class="hn-item">' + UI.itemLink(i) + '<span class="dim">' + window.GearPath.slotName(st.pick.slot) + ' · ' + window.GearPath.sourceText(st.pick) + '</span>' +
-        '<span class="hn-gain">' + gain + ' · ' + lasts + '</span></div></section>';
+        '<div class="hn-item">' + (i.icon ? '<img class="hn-icon q' + (i.quality || 1) + '" src="' + UI.icon(i.icon, 'large') + '" alt="">' : '') +
+        '<div class="hn-item-text">' + UI.itemLink(i) + '<span class="dim">' + window.GearPath.slotName(st.pick.slot) + ' · ' + window.GearPath.sourceText(st.pick) + '</span>' +
+        '<span class="hn-gain">' + gain + ' · ' + lasts + '</span></div></div></section>';
     }
     // No gear ahead: the talent that's due.
     if (tal && tal.now) {
-      return '<section class="home-next" aria-labelledby="hnTitle"><div class="hn-text">' + head +
+      return '<section class="home-next"' + art + ' aria-labelledby="hnTitle"><div class="hn-text">' + head +
         '<h2 id="hnTitle">' + t('home.next.talent', { talent: tal.now.talent, rank: tal.now.rank, max: tal.now.max }) + '</h2>' +
         '<p class="dim">' + t('home.next.talentWhy') + '</p><div class="hn-actions"><a class="btn hn-go" href="' + window.Calculator.linkFor(tal.build) + '">' + t('home.plan.talentsMore') + '</a></div></div></section>';
     }
-    return '<section class="home-next"><div class="hn-text">' + head + '<h2>' + t('home.next.none') + '</h2></div></section>';
+    return '<section class="home-next"' + art + '><div class="hn-text">' + head + '<h2>' + t('home.next.none') + '</h2></div></section>';
   }
 
-  function tile(kind, title, line, href, more, attrs) {
-    return '<a class="home-tile" href="' + href + '"' + (attrs || '') + '><span class="ht-kind">' + kind + '</span><b>' + title + '</b>' +
+  // icon: a game icon name; tone: gear, talents or prof (its color).
+  function tile(kind, title, line, href, more, icon, tone) {
+    return '<a class="home-tile ht-' + tone + '" href="' + href + '"><span class="ht-head">' + (icon ? '<img src="' + smallIcon(icon) + '" alt="">' : '') +
+      '<span class="ht-kind">' + kind + '</span></span><b>' + title + '</b>' +
       (line ? '<span class="dim">' + line + '</span>' : '') + '<span class="ht-more">' + more + ' →</span></a>';
   }
 
@@ -112,27 +124,28 @@
     const soon = steps.filter(st => st.level > lvl && st.level <= lvl + 5).sort((a, b) => a.level - b.level);
     const gear = soon.length
       ? tile(t('home.tile.gear'), t(soon.length === 1 ? 'home.tile.gearOne' : 'home.tile.gearN', { n: soon.length, lvl: lvl + 5 }),
-        soon.slice(0, 2).map(st => st.pick.item.name + ' (' + st.level + ')').join(', '), '#Equipo/camino', t('home.plan.gearMore'))
-      : tile(t('home.tile.gear'), t('home.tile.gearNone', { lvl: lvl + 5 }), '', '#Equipo/camino', t('home.plan.gearMore'));
+        soon.slice(0, 2).map(st => st.pick.item.name + ' (' + st.level + ')').join(', '), '#Equipo/camino', t('home.plan.gearMore'), soon[0].pick.item.icon, 'gear')
+      : tile(t('home.tile.gear'), t('home.tile.gearNone', { lvl: lvl + 5 }), '', '#Equipo/camino', t('home.plan.gearMore'), 'inv_chest_chain', 'gear');
     // Talents: now and next.
+    const tIcon = tal && ((tal.now || tal.next) || {}).icon;
     const talents = tal && (tal.now || tal.next)
-      ? tile(t('home.tile.talents'), tal.now ? t('home.tile.talentNow', { talent: tal.now.talent, rank: tal.now.rank, max: tal.now.max }) : t('home.tile.talentNext', { talent: tal.next.talent, n: tal.next.from }),
-        tal.now && tal.next ? t('home.tile.talentThen', { talent: tal.next.talent, n: tal.next.from }) : '', window.Calculator.linkFor(tal.build), t('home.plan.talentsMore'))
-      : tile(t('home.tile.talents'), t('home.plan.talentsDone'), '', '#Talentos', t('home.plan.talentsMore'));
+      ? tile(t('home.tile.talents'), tal.now ? t('home.tile.talentNow', { talent: tal.now.talent, rank: tal.now.rank, max: tal.now.max }) : t(lvl < 10 ? 'home.tile.talentFirst' : 'home.tile.talentNext', { talent: tal.next.talent, n: tal.next.from }),
+        tal.now && tal.next ? t('home.tile.talentThen', { talent: tal.next.talent, n: tal.next.from }) : lvl < 10 ? t('home.tile.talentFirstWhy') : '', window.Calculator.linkFor(tal.build), t('home.plan.talentsMore'), tIcon, 'talents')
+      : tile(t('home.tile.talents'), t('home.plan.talentsDone'), '', '#Talentos', t('home.plan.talentsMore'), null, 'talents');
     // Profession: the skill the coming crafts ask for, or picking yours.
     const profs = UI.store.get('profs', []);
     const makers = profs.filter(p => CRAFTING.includes(p));
     let prof;
-    if (!profs.length) prof = '<button class="home-tile" data-open-setup><span class="ht-kind">' + t('home.tile.profs') + '</span><b>' + t('home.tile.profsPick') + '</b><span class="dim">' + t('home.tile.profsWhy') + '</span><span class="ht-more">' + t('home.plan.pickProfs') + ' →</span></button>';
-    else if (!makers.length) prof = tile(t('home.tile.profs'), t('home.tile.gatherOnly', { profs: profs.join(' + ') }), '', '#Profesiones', t('home.plan.profsMore'));
+    if (!profs.length) prof = '<button class="home-tile ht-prof" data-open-setup><span class="ht-head"><img src="' + smallIcon('trade_leatherworking') + '" alt=""><span class="ht-kind">' + t('home.tile.profs') + '</span></span><b>' + t('home.tile.profsPick') + '</b><span class="dim">' + t('home.tile.profsWhy') + '</span><span class="ht-more">' + t('home.plan.pickProfs') + ' →</span></button>';
+    else if (!makers.length) prof = tile(t('home.tile.profs'), t('home.tile.gatherOnly', { profs: profs.join(' + ') }), '', '#Profesiones', t('home.plan.profsMore'), window.Setup.PROF_ICONS[profs[0]], 'prof');
     else {
       // The next craft from your level on (one you're already wearing is behind you).
       const crafts = steps.filter(st => ['crafted', 'favor'].includes(st.pick.access) && st.level >= lvl && st.level <= lvl + 9 && !got().has(st.pick.item.id)).sort((a, b) => a.level - b.level);
       const first = crafts[0];
       const skill = first && ((first.pick.source.learn || {}).learnAt || first.pick.source.yellow);
       prof = first
-        ? tile(first.pick.source.profession, t('home.tile.skillGoal', { n: skill || '?', lvl: first.level }), t('home.tile.craftFirst', { item: first.pick.item.name }), '#Profesiones/plan', t('home.plan.profsMore'))
-        : tile(makers.join(' + '), t('home.tile.craftNone'), '', '#Profesiones/plan', t('home.plan.profsMore'));
+        ? tile(first.pick.source.profession, skill > 1 ? t('home.tile.skillGoal', { n: skill, lvl: first.level }) : t('home.tile.knownRecipe', { lvl: first.level }), t('home.tile.craftFirst', { item: first.pick.item.name }), '#Profesiones/plan', t('home.plan.profsMore'), window.Setup.PROF_ICONS[first.pick.source.profession], 'prof')
+        : tile(makers.join(' + '), t('home.tile.craftNone'), '', '#Profesiones/plan', t('home.plan.profsMore'), window.Setup.PROF_ICONS[makers[0]], 'prof');
     }
     return '<div class="home-tiles">' + gear + talents + prof + '</div>';
   }

@@ -1424,24 +1424,33 @@ details[open] > .lw-head .lw-goals { display: none; }
 .home-since .hs-tag { color: var(--gold); font-weight: 600; }
 .home-since a { margin-left: auto; }
 .home-since .hs-x { background: none; border: 0; color: var(--text-dim); font-size: 20px; min-width: 44px; min-height: 44px; cursor: pointer; }
-.home-next { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: center; background: var(--bg-panel); border: 1px solid color-mix(in srgb, var(--gold) 35%, var(--border)); border-radius: 16px; padding: 28px 32px; }
+.home-next { position: relative; overflow: hidden; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: center; border: 1px solid color-mix(in srgb, var(--spec-color, var(--gold)) 45%, var(--border)); border-radius: 18px; padding: 30px 34px;
+  background: linear-gradient(100deg, var(--bg-panel) 35%, color-mix(in srgb, var(--bg-panel) 55%, transparent) 70%, color-mix(in srgb, var(--bg-panel) 25%, transparent)), var(--hn-art, none) right center / cover no-repeat, var(--bg-panel);
+  box-shadow: 0 10px 40px -12px color-mix(in srgb, var(--spec-color, var(--gold)) 45%, transparent); }
+.home-next > * { position: relative; }
 .home-next .hn-text { display: flex; flex-direction: column; gap: 12px; }
 .home-next .hn-kicker { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); font-weight: 600; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .home-next .hn-level { text-transform: none; letter-spacing: 0; display: inline-flex; gap: 6px; align-items: center; color: var(--gold); }
 .home-next .hn-level select { background: var(--bg-panel-2); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 2px 4px; font: inherit; font-size: 14px; }
-.home-next h2 { margin: 0; font-size: 28px; line-height: 1.2; }
+.home-next h2 { margin: 0; font-size: 30px; line-height: 1.2; font-family: var(--display); font-weight: 700; letter-spacing: .01em; }
 .home-next p { margin: 0; max-width: 46ch; }
 .home-next .hn-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
 .home-next .hn-go { background: var(--accent); color: #0c1a26; border-color: var(--accent); font-weight: 700; text-decoration: none; }
-.home-next .hn-item { background: var(--bg-panel-2); border: 1px solid var(--border); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.home-next .hn-item { background: color-mix(in srgb, var(--bg-panel-2) 85%, transparent); backdrop-filter: blur(4px); border: 1px solid var(--border); border-radius: 14px; padding: 18px; display: flex; gap: 16px; align-items: center; font-size: 14px; }
+.home-next .hn-item-text { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.home-next .hn-icon { width: 64px; height: 64px; border-radius: 10px; border: 2px solid #555; box-shadow: 0 4px 14px rgba(0,0,0,.5); flex: none; }
+.home-next .hn-icon.q2 { border-color: #1eff00; } .home-next .hn-icon.q3 { border-color: #0070dd; } .home-next .hn-icon.q4 { border-color: #a335ee; }
 .home-next .hn-gain { color: var(--good); font-weight: 600; }
 .home-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
-.home-tile { text-decoration: none; color: var(--text); background: var(--bg-panel); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; text-align: left; font: inherit; cursor: pointer; }
-.home-tile:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
-.home-tile .ht-kind { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-dim); }
+.home-tile { --tone: var(--gold); text-decoration: none; color: var(--text); background: linear-gradient(160deg, color-mix(in srgb, var(--tone) 10%, var(--bg-panel)), var(--bg-panel) 55%); border: 1px solid var(--border); border-top: 3px solid var(--tone); border-radius: 14px; padding: 16px 20px 18px; display: flex; flex-direction: column; gap: 6px; text-align: left; font: inherit; cursor: pointer; transition: transform .15s, border-color .15s; }
+.home-tile:hover { border-color: color-mix(in srgb, var(--tone) 60%, var(--border)); transform: translateY(-2px); }
+.home-tile.ht-gear { --tone: #e0a63c; } .home-tile.ht-talents { --tone: #3fa9f5; } .home-tile.ht-prof { --tone: #5bc27a; }
+.home-tile .ht-head { display: flex; align-items: center; gap: 10px; }
+.home-tile .ht-head img { width: 30px; height: 30px; border-radius: 6px; border: 1px solid #000; }
+.home-tile .ht-kind { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--tone); font-weight: 600; }
 .home-tile b { font-size: 17px; }
 .home-tile .dim { font-size: 14px; }
-.home-tile .ht-more { color: var(--accent); font-size: 14px; margin-top: auto; padding-top: 4px; }
+.home-tile .ht-more { color: var(--tone); font-size: 14px; margin-top: auto; padding-top: 4px; }
 .home-status { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; color: var(--text-dim); font-size: 14px; border-top: 1px solid var(--border); padding-top: 14px; margin-top: 22px; }
 .home-status .hs-state { color: var(--warn); font-weight: 600; }
 .home-status a { margin-left: auto; display: inline-flex; align-items: center; min-height: 44px; }
@@ -1455,3 +1464,18 @@ details[open] > .lw-head .lw-goals { display: none; }
   .home-tile .dim { display: none; }
   .home-since a { margin-left: 0; }
 }
+
+/* Personality: elemental light behind the page, the four elements under the
+   header, a display face for titles. */
+:root { --display: "Cinzel", Georgia, serif; --earth: #a7794a; --fire: #e0742c; --water: #3fa9f5; --air: #9fd6e8; }
+body { background:
+  radial-gradient(900px 520px at 8% -8%, rgba(63, 169, 245, .13), transparent 62%),
+  radial-gradient(800px 520px at 102% 4%, rgba(224, 116, 44, .11), transparent 60%),
+  radial-gradient(700px 500px at 50% 110%, rgba(91, 194, 122, .07), transparent 60%),
+  var(--bg); background-attachment: fixed; }
+header.top { position: relative; }
+header.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px;
+  background: linear-gradient(90deg, var(--earth) 0 25%, var(--fire) 25% 50%, var(--water) 50% 75%, var(--air) 75% 100%); opacity: .85; }
+.spec-summary h2, .home-hero h2, .block-title, .setup-head h2 { font-family: var(--display); letter-spacing: .02em; }
+.setup-head-btns { display: flex; gap: 8px; align-items: flex-start; }
+

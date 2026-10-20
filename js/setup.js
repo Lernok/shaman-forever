@@ -33,7 +33,8 @@
     const short = firstRun;
     let html = '<div class="setup' + (short ? ' setup-short' : '') + '" role="dialog" aria-modal="true" aria-labelledby="setupTitle">' +
       '<div class="setup-head"><div><h2 id="setupTitle">' + t(short ? 'setup.firstTitle' : 'setup.title') + '</h2><p>' + t(short ? 'setup.firstIntro' : 'setup.intro') + '</p></div>' +
-      '<button class="btn setup-x" data-close aria-label="' + t('setup.close') + '">×</button></div>';
+      '<div class="setup-head-btns"><button class="btn setup-lang" data-lang-switch title="' + t('lang.switchTitle') + '">' + t('lang.switch') + '</button>' +
+      '<button class="btn setup-x" data-close aria-label="' + t('setup.close') + '">×</button></div></div>';
 
     html += '<section class="setup-step"><h3><span class="setup-n">1</span>' + t('setup.race') + '</h3><div class="setup-grid">' +
       allRaces().map(r => '<button class="setup-opt' + (draft.race === r.race ? ' active' : '') + '" data-race="' + r.race + '" data-faction="' + r.faction + '">' +
@@ -92,6 +93,7 @@
     }
     if (b.dataset.pair) draft.profs = b.dataset.pair.split(' + ');
     if (b.hasAttribute('data-close')) return dismiss();
+    if (b.hasAttribute('data-lang-switch')) { window.I18N.toggle(); draw(); return; }
     if (b.hasAttribute('data-skip')) { count('explorar'); UI.store.set('setupDone', true); close(); Site.setMany({}); return; }
     if (b.hasAttribute('data-done')) {
       count('listo: ' + draft.spec);
