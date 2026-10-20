@@ -9,6 +9,11 @@
   const isStart = name => !!(Z.zones[name] || {}).start;
   // Starting zones are left after this level (the next zones begin around 10-12).
   const START_TOP = 12;
+  // Your race's capital, where the route takes you around level 10, and the
+  // level a starting zone's second town (with its trainers) comes in.
+  const CAPITAL = { Orc: 'Orgrimmar', Troll: 'Orgrimmar', Tauren: 'Thunder Bluff', 'Skyborne (Windshaper)': 'Orgrimmar', Dwarf: 'Ironforge' };
+  const CAPITAL_AT = 10;
+  const START_TOWN = 5;
   // The continent each race starts on (Skyborne leave Zephras Isle for
   // Orgrimmar). The zones that follow the starting ones (bands from 12 down)
   // count only on your own continent: an Orc levels in the Barrens, not in
@@ -21,6 +26,26 @@
   const Route = {
     // Zones of your route around level `lvl`, best fit first (the band's middle
     // closest to that level).
+    // The first level your route reaches a trainer of a profession, and where
+    // (data/zones.json trainers, scripts/build-trainers.js): a zone of your
+    // levels that has one (in your starting zone, from its second town), or
+    // your capital, where you go around level 10.
+    profFrom(prof, faction, race) {
+      const where = ((Z.trainers || {})[faction] || {})[prof];
+      if (!where) return { level: 1, zone: null };
+      const cap = CAPITAL[race] || (faction === 'alliance' ? 'Ironforge' : 'Orgrimmar');
+      let best = where.includes(cap) ? { level: CAPITAL_AT, zone: cap } : { level: 61, zone: null };
+      for (let l = 1; l < best.level; l++) {
+        const z = Route.zonesAt(l, faction, race).find(x => where.includes(x.name));
+        if (z) {
+          const at = isStart(z.name) ? Math.max(l, START_TOWN) : l;
+          if (at < best.level) best = { level: at, zone: z.name };
+          break;
+        }
+      }
+      return best;
+    },
+
     zonesAt(lvl, faction, race) {
       const mine = race && Z.starts[race] ? [Z.starts[race].zone] : startZones().filter(z => (Z.zones[z] || {})[faction]);
       return Object.entries(Z.zones).filter(([name, z]) => {

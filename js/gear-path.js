@@ -24,6 +24,8 @@
       route: (zone, lvl) => window.Route.onRoute(zone, lvl, Site.faction, race()),
       away: zone => window.Route.otherStart(zone, Site.faction, race()),
       reach: zone => window.Route.reachable(zone, Site.faction),
+      // Crafts wait for your first trainer of that profession.
+      profAt: prof => window.Route.profFrom(prof, Site.faction, race()).level,
       // No auction house: crafts wait until you can gather their reagents.
       matsAt: state.farm && window.LwPlan ? (item => window.LwPlan.matsAt(item.id, { faction: Site.faction, race: race(), profs: picked })) : null
     };

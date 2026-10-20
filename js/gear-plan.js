@@ -245,6 +245,8 @@
         if (!a) return;
         let at = Math.max(s.rec, item.req || 0);
         if (item.kind === 'Mail') at = Math.max(at, MAIL_AT);
+        // A craft waits until your route reaches a trainer of its profession.
+        if ((a === 'crafted' || a === 'favor') && opts.profAt) at = Math.max(at, opts.profAt(s.profession));
         // Farming everything yourself: a craft waits for its reagents (or never).
         if ((a === 'crafted' || a === 'favor') && opts.matsAt) at = Math.max(at, opts.matsAt(item, s));
         if (!isFinite(at)) return;

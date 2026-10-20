@@ -126,7 +126,7 @@
       const zone = (window.Route.zonesAt(L, opts.faction, opts.race)[0] || {}).name || null;
       const z = (zone && S.zones[zone]) || null;
       const share = z ? z.share : 0.4;
-      const skins = opts.skinning ? Math.round(KILL_SHARE * (8 * L + diff(L)) * share * mult) : 0;
+      const skins = opts.skinning && L >= (opts.skinFrom || 1) ? Math.round(KILL_SHARE * (8 * L + diff(L)) * share * mult) : 0;
       // The beasts you meet are around your level, some a little lower.
       Object.entries(AROUND).forEach(([d, w]) => {
         const lv = Math.min(60, Math.max(1, L + Number(d)));
@@ -144,7 +144,8 @@
       const crafts = {};
       const buyLog = {};
       const made = [];
-      for (let guard = 0; guard < 600; guard++) {
+      // No trainer yet: nothing to craft.
+      for (let guard = L >= (opts.lwFrom || 1) ? 0 : 600; guard < 600; guard++) {
         // 1) A piece of your path, due now, that your skill allows.
         const due = opts.targets.find(t => !madeAt[t.id] && t.level <= L + 1 && byId.has(t.id) && skill >= byId.get(t.id).skill[0]);
         if (due) {

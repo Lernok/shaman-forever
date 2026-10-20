@@ -86,16 +86,18 @@
     if (!st && !(tal && tal.now)) st = aheadStep(steps, lvl);
     const tree = window.SHAMAN_DATA.talents.trees.find(tr => tr.name === Site.spec);
     const art = tree ? ' style="--spec-color:' + SPEC_COLORS[Site.spec] + ';--hn-art:url(' + UI.treeArt(tree.bg) + ')"' : '';
-    const head = '<span class="hn-kicker">' + t('home.next.kicker') + ' · <label class="hn-level">' + t('home.next.level') +
-      ' <select data-plan-level>' + Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === lvl ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label></span>';
+    const head = '<span class="hn-kicker">' + t('home.next.kicker') + ' · <span class="hn-level"><button class="hn-step" data-level-step="-1" aria-label="' + t('home.levelDown') + '"' + (lvl <= 1 ? ' disabled' : '') + '>−</button>' +
+      '<label>' + t('home.next.level') + ' <select data-plan-level>' + Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === lvl ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label>' +
+      '<button class="hn-step" data-level-step="1" aria-label="' + t('home.levelUp') + '"' + (lvl >= 60 ? ' disabled' : '') + '>+</button></span></span>';
     if (st) {
       planSteps.set(String(st.pick.item.id), st);
       const i = st.pick.item;
       const gain = st.replaces ? t('home.next.better', { pct: Math.round((st.pick.value / st.replaces.value - 1) * 100) }) : t('home.next.empty');
       const lasts = st.until > 60 ? t('home.next.lastsLong') : t('home.next.lasts', { n: st.until });
-      const verb = ['crafted', 'favor'].includes(st.pick.access) ? 'home.next.make' : 'home.next.get';
+      // Far ahead (beyond the next two levels): said as what comes, not as an order.
+      const verb = st.level > lvl + 2 ? 'home.next.later' : ['crafted', 'favor'].includes(st.pick.access) ? 'home.next.make' : 'home.next.get';
       return '<section class="home-next"' + art + ' aria-labelledby="hnTitle"><div class="hn-text">' + head +
-        '<h2 id="hnTitle">' + t(verb, { item: i.name }) + '</h2>' +
+        '<h2 id="hnTitle">' + t(verb, { item: i.name, n: st.level }) + '</h2>' +
         '<p class="dim">' + t(st.level > lvl ? 'home.next.whySoon' : 'home.next.why', { slot: window.GearPath.slotName(st.pick.slot), n: st.level }) + '</p>' +
         '<div class="hn-actions"><a class="btn hn-go" href="#Equipo/camino">' + t('home.next.how') + '</a>' +
         '<button class="btn" data-got="' + i.id + '">' + t('home.next.have') + '</button></div></div>' +
@@ -139,6 +141,13 @@
     if (!profs.length) prof = '<button class="home-tile ht-prof" data-open-setup><span class="ht-head"><img src="' + smallIcon('trade_leatherworking') + '" alt=""><span class="ht-kind">' + t('home.tile.profs') + '</span></span><b>' + t('home.tile.profsPick') + '</b><span class="dim">' + t('home.tile.profsWhy') + '</span><span class="ht-more">' + t('home.plan.pickProfs') + ' →</span></button>';
     else if (!makers.length) prof = tile(t('home.tile.profs'), t('home.tile.gatherOnly', { profs: profs.join(' + ') }), '', '#Profesiones', t('home.plan.profsMore'), window.Setup.PROF_ICONS[profs[0]], 'prof');
     else {
+      // No trainer of it yet on your route: where and when you learn it.
+      const race = Site.race === 'any' ? null : Site.race;
+      const learn = makers.map(p => Object.assign({ prof: p }, window.Route.profFrom(p, Site.faction, race))).sort((a, b) => a.level - b.level)[0];
+      if (learn && learn.level > lvl) {
+        return '<div class="home-tiles">' + gear + talents + tile(learn.prof, t('home.tile.learnAt', { prof: learn.prof, zone: learn.zone || '?', n: learn.level }),
+          t('home.tile.learnWhy'), '#Profesiones/plan', t('home.plan.profsMore'), window.Setup.PROF_ICONS[learn.prof], 'prof') + '</div>';
+      }
       // The next craft from your level on (one you're already wearing is behind you).
       const crafts = steps.filter(st => ['crafted', 'favor'].includes(st.pick.access) && st.level >= lvl && st.level <= lvl + 9 && !got().has(st.pick.item.id)).sort((a, b) => a.level - b.level);
       const first = crafts[0];
@@ -214,6 +223,11 @@
       app.innerHTML = renderHome();
       app.querySelectorAll('[data-go-spec]').forEach(a => a.addEventListener('click', () => Site.set('spec', a.dataset.goSpec)));
       app.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
+      app.querySelectorAll('[data-level-step]').forEach(b => b.addEventListener('click', () => {
+        const next = Math.min(60, Math.max(1, level() + Number(b.dataset.levelStep)));
+        UI.store.set('level', next);
+        Site.setMany({});
+      }));
       app.querySelectorAll('[data-got]').forEach(b => b.addEventListener('click', () => {
         UI.store.set('gotItems', UI.store.get('gotItems', []).concat(Number(b.dataset.got)));
         window.Home.render(app);

@@ -1499,3 +1499,10 @@ header.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 
 .setup-wizard .setup-foot { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .setup-wizard .setup-foot-go { margin-left: auto; display: flex; gap: 10px; }
 .setup-wizard .setup-skip { background: none; border-color: transparent; color: var(--text-dim); text-decoration: underline; }
+.home-next .hn-level { gap: 4px; }
+.home-next .hn-step { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-panel-2); color: var(--text); font: inherit; font-size: 18px; line-height: 1; cursor: pointer; display: inline-grid; place-items: center; }
+.home-next .hn-step:hover:not(:disabled) { border-color: var(--gold); color: var(--gold); }
+.home-next .hn-step:disabled { opacity: .35; cursor: default; }
+.lw-learn { background: color-mix(in srgb, var(--accent) 8%, var(--bg-panel)); border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border)); border-radius: 12px; padding: 12px 16px; margin: 14px 0; font-size: 14px; }
+@media (max-width: 760px) { .home-next .hn-step { width: 44px; height: 44px; } }
+

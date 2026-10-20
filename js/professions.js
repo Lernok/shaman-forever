@@ -231,7 +231,11 @@
     Object.values(plan.slots).forEach(p => p.steps.forEach(st => { if ((st.pick.source || {}).profession === 'Leatherworking' && st.level <= BETA_CAP) steps.push(st); }));
     steps.sort((a, b) => a.level - b.level);
     const stepOf = new Map(steps.map(st => [st.pick.item.id, st]));
-    const opts = { faction: Site.faction, race, targets: steps.map(st => ({ id: st.pick.item.id, level: st.level })), intensity, skinning, to: BETA_CAP };
+    // Where and when your route first reaches each trainer.
+    const lwAt = window.Route.profFrom('Leatherworking', Site.faction, race);
+    const skinAt = window.Route.profFrom('Skinning', Site.faction, race);
+    const opts = { faction: Site.faction, race, targets: steps.map(st => ({ id: st.pick.item.id, level: st.level })), intensity, skinning, to: BETA_CAP,
+      lwFrom: lwAt.level, skinFrom: skinning ? skinAt.level : 61 };
     const { base, pieces } = window.LwPlan.pieces(opts);
     const pieceOf = new Map(pieces.map(p => [p.id, p]));
     const recipe = new Map(SK.recipes.map(r => [r.id, r]));
@@ -337,7 +341,7 @@
       const key = !skinning ? 'pr.lw.buyNoSkin' : p.alone ? 'pr.lw.buyEarly' : 'pr.lw.buyLate';
       return '<div class="lw-early"><span>' + t(key, vars) + '</span> ' + chips(p.extra) + buyCost(Object.entries(p.extra).map(([m, n]) => [Number(m), n]), p.level) + '</div>';
     };
-    return { SK, mine, skinning, intensity, race, farm, steps, stepOf, base, pieces, pieceOf, recipe, name, chip, chips, row, extraMats, whereMat, buyCost, piece, early, skillAt };
+    return { SK, mine, skinning, intensity, race, farm, steps, stepOf, base, pieces, pieceOf, recipe, name, chip, chips, row, extraMats, whereMat, buyCost, piece, early, skillAt, lwAt, skinAt };
   }
 
   // A Leatherworking piece of your gear path, for its row in Equipo › Tu
@@ -369,7 +373,7 @@
       return html + '<p class="note-text">' + t('pr.lw.noLw') + '</p><button class="btn" data-open-setup>' + t('home.plan.pickProfs') + '</button>';
     }
     const M = lwModel();
-    const { SK, skinning, intensity, farm, base, pieces, name, chips, row, piece, early } = M;
+    const { SK, skinning, intensity, farm, base, pieces, name, chips, row, piece, early, lwAt, skinAt } = M;
 
     html += '<div class="wp-controls" style="margin-top:12px">' + (skinning
       ? '<span class="ctl-label">' + t('pr.lw.skinLabel') + '</span><div class="seg">' + SKIN_LEVELS.map(k =>
@@ -391,7 +395,12 @@
       // Stages: from one goal to the next (pieces you make, the 70-75 wall).
       const stages = [];
       let cur = null;
-      base.rows.forEach(r => {
+      const first = Math.min(lwAt.level, skinAt.level);
+      if (first > 1) {
+        html += '<div class="lw-learn"><b>' + t('pr.lw.learnTitle', { n: first }) + '</b> ' +
+          t('pr.lw.learnWhere', { lw: lwAt.zone || '?', n: lwAt.level, skin: skinAt.zone || '?', m: skinAt.level }) + '</div>';
+      }
+      base.rows.filter(r => r.level >= first).forEach(r => {
         if (!cur) cur = { from: r.level, rows: [] };
         cur.rows.push(r);
         // Goals close to each other share a stage (at least STAGE_MIN levels).
