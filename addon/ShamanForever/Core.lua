@@ -1982,7 +1982,7 @@ end
 local RECIPE_WORDS = { "^Pattern:", "^Plans:", "^Formula:", "^Recipe:", "^Schematic:", "^Manual:", "^Patrón:", "^Diseño:", "^Fórmula:", "^Receta:", "^Esquema:" }
 local function isRecipe(item, name)
   local classID = item and GetItemInfoInstant and select(6, GetItemInfoInstant(item))
-  if classID then return classID == 9 end
+  if classID == 9 then return true end
   for _, w in ipairs(RECIPE_WORDS) do if tostring(name or ""):match(w) then return true end end
   return false
 end
@@ -2033,19 +2033,23 @@ local function scanBags()
     for i = 1, (readable(num(bag)) or 0) do
       local item = readable(itemAt(bag, i))
       if item then seen = seen + 1 end
-      -- Named like a recipe but another item class: for the log.
+      -- The name from the slot's link: an item not cached yet has no GetItemInfo.
       local nm = item and GetItemInfo and GetItemInfo(item)
+      if item and not nm and C_Container and C_Container.GetContainerItemInfo then
+        local info = C_Container.GetContainerItemInfo(bag, i)
+        nm = info and tostring(info.hyperlink or ""):match("%[(.-)%]")
+      end
       if nm and not isRecipe(item) and isRecipe(nil, nm) and #odd < 5 then
         odd[#odd + 1] = item .. " " .. nm .. " class " .. tostring(select(6, GetItemInfoInstant(item)))
       end
-      if item and not db.scan.bags[item] and isRecipe(item) then
-        local name = GetItemInfo and GetItemInfo(item)
+      if item and not db.scan.bags[item] and isRecipe(item, nm) then
+        local name = nm
         db.scan.bags[item] = { name = name, z = here(), l = UnitLevel("player"), t = time() }
         log("scan", "bag recipe " .. tostring(name) .. " " .. item)
       end
     end
   end
-  if not bagsLogged then
+  if not bagsLogged and seen > 0 then
     bagsLogged = true
     log("scan", "bags " .. seen .. " items" .. (#odd > 0 and (", recipe names of another class: " .. table.concat(odd, "; ")) or ""))
   end
