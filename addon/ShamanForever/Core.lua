@@ -1980,8 +1980,19 @@ end
 -- money and in anything else (Merchant's Favor, reputation tokens).
 -- A recipe item: class 9, or by its name while the item isn't cached.
 local RECIPE_WORDS = { "^Pattern:", "^Plans:", "^Formula:", "^Recipe:", "^Schematic:", "^Manual:", "^Patrón:", "^Diseño:", "^Fórmula:", "^Receta:", "^Esquema:" }
+-- An item's class (9: recipe) and name; Forever has them under C_Item only.
+local function itemClass(item)
+  local f = (C_Item and C_Item.GetItemInfoInstant) or GetItemInfoInstant
+  if not (f and item) then return nil end
+  local ok, _, _, _, _, _, classID = pcall(f, item)
+  return ok and classID or nil
+end
+local function itemInfoName(item)
+  local f = (C_Item and C_Item.GetItemInfo) or GetItemInfo
+  return f and item and (f(item)) or nil
+end
 local function isRecipe(item, name)
-  local classID = item and GetItemInfoInstant and select(6, GetItemInfoInstant(item))
+  local classID = itemClass(item)
   if classID == 9 then return true end
   for _, w in ipairs(RECIPE_WORDS) do if tostring(name or ""):match(w) then return true end end
   return false
@@ -2034,13 +2045,13 @@ local function scanBags()
       local item = readable(itemAt(bag, i))
       if item then seen = seen + 1 end
       -- The name from the slot's link: an item not cached yet has no GetItemInfo.
-      local nm = item and GetItemInfo and GetItemInfo(item)
+      local nm = itemInfoName(item)
       if item and not nm and C_Container and C_Container.GetContainerItemInfo then
         local info = C_Container.GetContainerItemInfo(bag, i)
         nm = info and tostring(info.hyperlink or ""):match("%[(.-)%]")
       end
       if nm and not isRecipe(item) and isRecipe(nil, nm) and #odd < 5 then
-        odd[#odd + 1] = item .. " " .. nm .. " class " .. tostring(select(6, GetItemInfoInstant(item)))
+        odd[#odd + 1] = item .. " " .. nm .. " class " .. tostring(itemClass(item))
       end
       if item and not db.scan.bags[item] and isRecipe(item, nm) then
         local name = nm

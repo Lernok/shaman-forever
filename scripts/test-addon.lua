@@ -243,7 +243,7 @@ if os.getenv("SCAN") then
   local wares = { { 252425, 9, "Pattern: Dark Leather Boots", 500 }, { 249500, 9, "Pattern: Something", 0, { 30, "Merchant's Favor" } }, { 2320, 7, "Coarse Thread", 10 } }
   function GetMerchantNumItems() return #wares end
   function GetMerchantItemLink(i) return "|Hitem:" .. wares[i][1] .. ":0|h[x]|h" end
-  function GetItemInfoInstant(id) for _, w in ipairs(wares) do if w[1] == id then return id, "", "", "", 0, w[2], 0 end end end
+  C_Item = { GetItemInfoInstant = function(id) for _, w in ipairs(wares) do if w[1] == id then return id, "", "", "", 0, w[2], 0 end end end }
   function GetMerchantItemInfo(i) return wares[i][3], 0, wares[i][4], 1, -1 end
   function GetMerchantItemCostInfo(i) return wares[i][5] and 1 or 0 end
   function GetMerchantItemCostItem(i) return 0, wares[i][5][1], nil, wares[i][5][2] end
