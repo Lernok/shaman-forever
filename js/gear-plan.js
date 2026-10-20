@@ -87,7 +87,7 @@
   const MAIL_AT = 40; // Shamans learn Mail at 40
   const UPGRADE = 1.05; // a piece must be 5% better to count as an upgrade
   const MIN_FIT = 0.5; // at least half of a piece's stats (Stamina aside) must be ones your spec uses
-  const MIN_LEVELS = { class: 0, route: 0, dquest: 3, quest: 5, crafted: 4, favor: 6, vendor: 4, boss: 3 };
+  const MIN_LEVELS = { class: 0, route: 0, dquest: 3, quest: 5, crafted: 2, favor: 6, vendor: 4, boss: 3 };
   const FAVOR_PER_BRACKET = 2;
   const TIER = { class: 1, route: 1, dquest: 2, quest: 3, crafted: 4, favor: 5, vendor: 6, boss: 7 };
   // Quest "zones" that aren't places: class quests, and ones you can't plan
@@ -278,7 +278,10 @@
         if (weakest && c.value < weakest.value * UPGRADE) return;
         const until = nextBetter(c.value, lvl, c);
         const lasts = until - lvl;
-        if (lasts < MIN_LEVELS[c.access]) { skipped.push({ c, lasts, until }); return; }
+        // A craft of your own for a slot that's empty is worth it however soon
+        // it's replaced: you make such pieces anyway to raise the skill.
+        const empty = !weakest && c.access === 'crafted';
+        if (lasts < MIN_LEVELS[c.access] && !empty) { skipped.push({ c, lasts, until }); return; }
         if (weakest) held.splice(held.indexOf(weakest), 1);
         held.push(c);
         steps.push({ level: lvl, pick: c, replaces: weakest, lasts, until, weight: weighted(lvl, until) });
