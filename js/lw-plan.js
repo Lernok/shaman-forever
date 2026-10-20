@@ -175,7 +175,7 @@
           if (ready) { craft(r, crafts); madeAt[due.id] = L; made.push(due.id); continue; }
         }
         // 2) The most skill for the skins it spends, keeping what the next pieces need.
-        const usable = trainer.filter(r => skill >= r.skill[0] && skill < capNow && chance(r, skill) >= 0.3 && !targetIds.has(r.id) && !CURE[r.id]);
+        const usable = trainer.filter(r => skill >= r.skill[0] && skill < capNow && chance(r, skill) >= 0.3 && !CURE[r.id]);
         let best = null;
         usable.forEach(r => {
           if (!affordable(r, keep) && !(CONVERT.includes(r.id) && affordable(r, {}))) return;
