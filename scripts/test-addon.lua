@@ -232,7 +232,7 @@ if os.getenv("SCAN") then
   function GetMerchantItemCostInfo(i) return wares[i][5] and 1 or 0 end
   function GetMerchantItemCostItem(i) return 0, wares[i][5][1], nil, wares[i][5][2] end
   ev:fire("MERCHANT_SHOW")
-  function GetTradeSkillLine() return "Leatherworking", 40, 75 end
+  GetTradeSkillLine = nil -- Forever: the skill comes from GetProfessionInfo
   ev:fire("TRADE_SKILL_SHOW")
   local function show(t, pad)
     local keys = {}

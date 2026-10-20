@@ -1940,24 +1940,53 @@ local function scanVendor()
 end
 
 -- Your recipes' colors at your skill: where each one turns yellow, green, grey.
+-- The window's profession and skill: GetTradeSkillLine where the client has
+-- it, otherwise the crafting profession whose recipes these are.
+local scanPending
 local function scanColors()
-  if not (GetTradeSkillLine and GetNumTradeSkills) then return end
-  local prof, rank = GetTradeSkillLine()
-  rank = readable(rank)
-  if not (prof and rank and prof ~= "UNKNOWN") then return end
+  if not (GetNumTradeSkills and GetTradeSkillInfo and GetTradeSkillItemLink) then log("scan", "colors: no API") return end
+  local list = {}
+  for i = 1, (readable(GetNumTradeSkills()) or 0) do
+    local _, kind = GetTradeSkillInfo(i)
+    local item = kind and kind ~= "header" and kind ~= "subheader" and itemIdOf(GetTradeSkillItemLink(i))
+    if item then list[#list + 1] = { item, kind } end
+  end
+  local prof, rank
+  if GetTradeSkillLine then
+    local ok, p, r = pcall(GetTradeSkillLine)
+    if ok and p and p ~= "UNKNOWN" then prof, rank = PROF_NAMES[p] or p, readable(r) end
+  end
+  if not rank then
+    local mine = myProfessions()
+    for en, m in pairs(mine) do
+      for _, c in ipairs(D.crafts and D.crafts[en] or {}) do
+        if list[1] and c[1] == list[1][1] then prof, rank = en, m.skill end
+      end
+    end
+    if not prof then
+      local only
+      for en in pairs(mine) do only = only == nil and en or false end
+      if only then prof, rank = only, mine[only].skill end
+    end
+  end
+  log("scan", "colors " .. tostring(prof) .. " " .. tostring(rank) .. ": " .. #list)
+  if not (prof and rank and #list > 0) then return end
   db.scan = db.scan or {}
   db.scan.colors = db.scan.colors or {}
   local c = db.scan.colors[prof] or {}
   db.scan.colors[prof] = c
-  for i = 1, (readable(GetNumTradeSkills()) or 0) do
-    local _, kind = GetTradeSkillInfo(i)
-    local item = kind and kind ~= "header" and kind ~= "subheader" and GetTradeSkillItemLink and itemIdOf(GetTradeSkillItemLink(i))
-    if item then
-      c[item] = c[item] or {}
-      local r = c[item][kind] or { rank, rank }
-      r[1], r[2] = math.min(r[1], rank), math.max(r[2], rank)
-      c[item][kind] = r
-    end
+  for _, e in ipairs(list) do
+    local item, kind = e[1], e[2]
+    c[item] = c[item] or {}
+    local r = c[item][kind] or { rank, rank }
+    r[1], r[2] = math.min(r[1], rank), math.max(r[2], rank)
+    c[item][kind] = r
+  end
+  -- Once per skill: in the chat, so you know it was saved.
+  db.scan.colorsAt = db.scan.colorsAt or {}
+  if db.scan.colorsAt[prof] ~= rank then
+    db.scan.colorsAt[prof] = rank
+    say(string.format(L().scanColors, #list, prof, rank))
   end
 end
 
@@ -2001,6 +2030,7 @@ onEvent = function(self, event, ...)
     pcall(self.RegisterEvent, self, "TRAINER_CLOSED")
     pcall(self.RegisterEvent, self, "TRADE_SKILL_SHOW")
     pcall(self.RegisterEvent, self, "TRADE_SKILL_UPDATE")
+    pcall(self.RegisterEvent, self, "TRADE_SKILL_LIST_UPDATE")
     pcall(self.RegisterEvent, self, "TRADE_SKILL_CLOSE")
     pcall(self.RegisterEvent, self, "LEARNED_SPELL_IN_TAB")
     pcall(self.RegisterEvent, self, "MERCHANT_SHOW")
@@ -2020,8 +2050,13 @@ onEvent = function(self, event, ...)
   elseif event == "TRADE_SKILL_SHOW" then
     C_Timer.After(0.1, function() guarded("crafts", showCraftPanel) end)
     C_Timer.After(0.3, function() guarded("scan", scanColors) end)
-  elseif event == "TRADE_SKILL_UPDATE" then
+  elseif event == "TRADE_SKILL_UPDATE" or event == "TRADE_SKILL_LIST_UPDATE" then
     if craftPanel and craftPanel:IsShown() then guarded("crafts", paintCrafts) end
+    -- The list can fill after the window opens.
+    if not scanPending then
+      scanPending = true
+      C_Timer.After(0.5, function() scanPending = false guarded("scan", scanColors) end)
+    end
   elseif event == "MERCHANT_SHOW" then
     C_Timer.After(0.3, function() guarded("scan", scanVendor) end)
   elseif event == "TRADE_SKILL_CLOSE" then
