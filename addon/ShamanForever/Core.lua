@@ -1980,6 +1980,28 @@ end
 -- money and in anything else (Merchant's Favor, reputation tokens).
 -- A recipe item: class 9, or by its name while the item isn't cached.
 local RECIPE_WORDS = { "^Pattern:", "^Plans:", "^Formula:", "^Recipe:", "^Schematic:", "^Manual:", "^Patrón:", "^Diseño:", "^Fórmula:", "^Receta:", "^Esquema:" }
+-- What a piece's materials cost at your auction house: Auctionator's last
+-- scan (its public API), else the vendor price it knows. nil without
+-- Auctionator or without the recipe's reagents; missing: reagents without a price.
+local function auctionPrice(item)
+  local api = Auctionator and Auctionator.API and Auctionator.API.v1
+  if not api then return nil end
+  local ok, p = pcall(api.GetAuctionPriceByItemID, "Shaman: Forever", item)
+  if ok and p then return p end
+  ok, p = pcall(api.GetVendorPriceByItemID, "Shaman: Forever", item)
+  return ok and p or nil
+end
+local function matsCost(id)
+  local m = D.mats and D.mats[id]
+  if not (m and Auctionator and Auctionator.API) then return nil end
+  local total, missing = 0, 0
+  for i = 1, #m, 2 do
+    local p = auctionPrice(m[i])
+    if p then total = total + p * m[i + 1] else missing = missing + 1 end
+  end
+  return total, missing
+end
+
 -- An item's class (9: recipe) and name; Forever has them under C_Item only.
 local function itemClass(item)
   local f = (C_Item and C_Item.GetItemInfoInstant) or GetItemInfoInstant
@@ -2780,6 +2802,9 @@ local function craftReview(list)
     for i = 1, 3 do if parts[i] then t[#t + 1] = parts[i] end end
     if e.need and e.have and e.need > e.have then t[#t + 1] = "|cffff9933" .. string.format(L().offerSkill, e.need, e.have) .. "|r" end
     if e.price and e.price > 0 then t[#t + 1] = money(e.price) end
+    -- The materials at your auction house (Auctionator's last scan).
+    local cost, missing = matsCost(e.id)
+    if cost and cost > 0 then t[#t + 1] = "|cffbbbbbb" .. string.format(L().matsCost, money(cost)) .. (missing > 0 and "+" or "") .. "|r" end
     return table.concat(t, " · ")
   end
   local Y = list(yes, function(e) return offerText(e, { better(e), untilText(e), e.up and L().craftSkillUp or nil }) end,

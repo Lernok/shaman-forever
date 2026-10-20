@@ -275,6 +275,11 @@ end
 -- skill>): what the panel beside it says.
 if os.getenv("OFFER") then
   SKILL = tonumber(os.getenv("SKILL") or "1")
+  -- PRICES=1: Auctionator with a scan (each reagent at 1s, Slimy Murloc Scale missing).
+  if os.getenv("PRICES") then
+    Auctionator = { API = { v1 = { GetAuctionPriceByItemID = function(_, id) return id ~= 5784 and 100 or nil end,
+      GetVendorPriceByItemID = function() return nil end } } }
+  end
   assert(loadfile(os.getenv("OFFER")))()
   local yes, soon, short, no = SF.test.craftReview(OFFER_LIST)
   local function show(head, l) print("  " .. head .. " " .. #l) for _, e in ipairs(l) do print("    " .. e.text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")) end end
