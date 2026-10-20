@@ -3515,7 +3515,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -3552,7 +3553,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -4712,7 +4714,8 @@
      "yellow": 285,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 275
      },
      "faction": "both",
      "confidence": "client-data",
@@ -5373,7 +5376,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -7798,7 +7802,8 @@
      "yellow": 250,
      "grey": 270,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 230
      },
      "faction": "both",
      "confidence": "client-data",
@@ -8138,7 +8143,8 @@
      "yellow": 245,
      "grey": 265,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 130
      },
      "faction": "both",
      "confidence": "client-data",
@@ -8212,7 +8218,8 @@
      "yellow": 245,
      "grey": 265,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -8660,7 +8667,8 @@
      "yellow": 240,
      "grey": 260,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 220
      },
      "faction": "both",
      "confidence": "client-data",
@@ -8871,7 +8879,8 @@
      "yellow": 245,
      "grey": 265,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -9410,7 +9419,8 @@
      "yellow": 225,
      "grey": 245,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -10255,7 +10265,8 @@
      "yellow": 195,
      "grey": 215,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -10531,7 +10542,8 @@
      "yellow": 165,
      "grey": 190,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 140
      },
      "faction": "both",
      "confidence": "client-data",
@@ -10603,7 +10615,8 @@
      "yellow": 150,
      "grey": 175,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -10642,7 +10655,8 @@
      "yellow": 145,
      "grey": 170,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 120
      },
      "faction": "both",
      "confidence": "client-data",
@@ -13368,7 +13382,8 @@
      "yellow": 15,
      "grey": 55,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 1
      },
      "faction": "both",
      "confidence": "client-data",
@@ -13406,7 +13421,8 @@
      "yellow": 40,
      "grey": 70,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 1
      },
      "faction": "both",
      "confidence": "client-data",
@@ -13789,7 +13805,8 @@
      "yellow": 60,
      "grey": 70,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -14122,7 +14139,8 @@
      "yellow": 50,
      "grey": 85,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 25
      },
      "faction": "both",
      "confidence": "client-data",
@@ -14352,7 +14370,8 @@
      "yellow": 70,
      "grey": 110,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 30
      },
      "faction": "both",
      "confidence": "client-data",
@@ -14461,7 +14480,8 @@
      "yellow": 50,
      "grey": 85,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 25
      },
      "faction": "both",
      "confidence": "client-data",
@@ -14499,7 +14519,8 @@
      "yellow": 50,
      "grey": 85,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 25
      },
      "faction": "both",
      "confidence": "client-data",
@@ -14537,7 +14558,8 @@
      "yellow": 50,
      "grey": 85,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 25
      },
      "faction": "both",
      "confidence": "client-data",
@@ -14575,7 +14597,8 @@
      "yellow": 50,
      "grey": 85,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 25
      },
      "faction": "both",
      "confidence": "client-data",
@@ -14889,7 +14912,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -14927,7 +14951,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -14965,7 +14990,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -15003,7 +15029,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -15041,7 +15068,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -15079,7 +15107,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -15117,7 +15146,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -15155,7 +15185,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -15193,7 +15224,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -15231,7 +15263,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -15269,7 +15302,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -15307,7 +15341,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -15345,7 +15380,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -15383,7 +15419,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -15421,7 +15458,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -15459,7 +15497,8 @@
      "yellow": 55,
      "grey": 60,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16052,7 +16091,8 @@
      "yellow": 70,
      "grey": 110,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 30
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16313,7 +16353,8 @@
      "yellow": 60,
      "grey": 90,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 30
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16561,7 +16602,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16599,7 +16641,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16637,7 +16680,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16675,7 +16719,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16713,7 +16758,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16751,7 +16797,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16789,7 +16836,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16827,7 +16875,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16865,7 +16914,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16903,7 +16953,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16941,7 +16992,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -16979,7 +17031,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -17017,7 +17070,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -17055,7 +17109,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -17093,7 +17148,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -17131,7 +17187,8 @@
      "yellow": 60,
      "grey": 65,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -17753,7 +17810,8 @@
      "yellow": 60,
      "grey": 95,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 35
      },
      "faction": "both",
      "confidence": "client-data",
@@ -17890,7 +17948,8 @@
      "yellow": 75,
      "grey": 115,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 35
      },
      "faction": "both",
      "confidence": "client-data",
@@ -17928,7 +17987,8 @@
      "yellow": 60,
      "grey": 95,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 35
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18032,7 +18092,8 @@
      "yellow": 60,
      "grey": 95,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 35
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18072,7 +18133,8 @@
      "yellow": 60,
      "grey": 95,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 35
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18354,7 +18416,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18392,7 +18455,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18430,7 +18494,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18468,7 +18533,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18506,7 +18572,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18544,7 +18611,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18582,7 +18650,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18620,7 +18689,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18658,7 +18728,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18696,7 +18767,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18734,7 +18806,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18772,7 +18845,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18810,7 +18884,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18848,7 +18923,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18886,7 +18962,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -18924,7 +19001,8 @@
      "yellow": 65,
      "grey": 70,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -19188,7 +19266,8 @@
      "yellow": 70,
      "grey": 100,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 40
      },
      "faction": "both",
      "confidence": "client-data",
@@ -19258,7 +19337,8 @@
      "yellow": 65,
      "grey": 100,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 40
      },
      "faction": "both",
      "confidence": "client-data",
@@ -19461,7 +19541,8 @@
      "yellow": 75,
      "grey": 115,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 35
      },
      "faction": "both",
      "confidence": "client-data",
@@ -20263,7 +20344,8 @@
      "yellow": 65,
      "grey": 100,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 40
      },
      "faction": "both",
      "confidence": "client-data",
@@ -20371,7 +20453,8 @@
      "yellow": 70,
      "grey": 105,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 45
      },
      "faction": "both",
      "confidence": "client-data",
@@ -20411,7 +20494,8 @@
      "yellow": 70,
      "grey": 105,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 45
      },
      "faction": "both",
      "confidence": "client-data",
@@ -21911,7 +21995,8 @@
      "yellow": 80,
      "grey": 110,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -22209,7 +22294,8 @@
      "yellow": 75,
      "grey": 115,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 35
      },
      "faction": "both",
      "confidence": "client-data",
@@ -22423,7 +22509,8 @@
      "yellow": 75,
      "grey": 110,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 50
      },
      "faction": "both",
      "confidence": "client-data",
@@ -23562,7 +23649,8 @@
      "yellow": 80,
      "grey": 115,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -23807,7 +23895,8 @@
      "yellow": 80,
      "grey": 115,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -24583,7 +24672,8 @@
      "yellow": 85,
      "grey": 120,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -24859,7 +24949,8 @@
      "yellow": 85,
      "grey": 120,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -25700,7 +25791,8 @@
      "grey": 125,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 45
      },
      "faction": "both",
      "confidence": "client-data",
@@ -25742,7 +25834,8 @@
      "grey": 125,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 45
      },
      "faction": "both",
      "confidence": "client-data",
@@ -25784,7 +25877,8 @@
      "grey": 125,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 45
      },
      "faction": "both",
      "confidence": "client-data",
@@ -25827,7 +25921,8 @@
      "grey": 125,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 45
      },
      "faction": "both",
      "confidence": "client-data",
@@ -25869,7 +25964,8 @@
      "grey": 125,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 45
      },
      "faction": "both",
      "confidence": "client-data",
@@ -25910,7 +26006,8 @@
      "grey": 120,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -25951,7 +26048,8 @@
      "grey": 120,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -25992,7 +26090,8 @@
      "grey": 120,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -26034,7 +26133,8 @@
      "grey": 120,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -26076,7 +26176,8 @@
      "grey": 120,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -26119,7 +26220,8 @@
      "grey": 120,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -26162,7 +26264,8 @@
      "grey": 120,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -26204,7 +26307,8 @@
      "grey": 120,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -26246,7 +26350,8 @@
      "grey": 120,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -26288,7 +26393,8 @@
      "grey": 120,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -26330,7 +26436,8 @@
      "grey": 120,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -26372,7 +26479,8 @@
      "grey": 120,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 60
      },
      "faction": "both",
      "confidence": "client-data",
@@ -26974,7 +27082,8 @@
      "yellow": 95,
      "grey": 125,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 65
      },
      "faction": "both",
      "confidence": "client-data",
@@ -27013,7 +27122,8 @@
      "yellow": 85,
      "grey": 125,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 45
      },
      "faction": "both",
      "confidence": "client-data",
@@ -27052,7 +27162,8 @@
      "yellow": 95,
      "grey": 135,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 55
      },
      "faction": "both",
      "confidence": "client-data",
@@ -27495,7 +27606,8 @@
      "yellow": 95,
      "grey": 125,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 65
      },
      "faction": "both",
      "confidence": "client-data",
@@ -27574,7 +27686,8 @@
      "yellow": 100,
      "grey": 130,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 70
      },
      "faction": "both",
      "confidence": "client-data",
@@ -27647,7 +27760,8 @@
      "yellow": 95,
      "grey": 125,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 65
      },
      "faction": "both",
      "confidence": "client-data",
@@ -27810,7 +27924,8 @@
      "yellow": 90,
      "grey": 120,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 65
      },
      "faction": "both",
      "confidence": "client-data",
@@ -29443,7 +29558,8 @@
      "yellow": 95,
      "grey": 130,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 70
      },
      "faction": "both",
      "confidence": "client-data",
@@ -29482,7 +29598,8 @@
      "yellow": 90,
      "grey": 115,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 65
      },
      "faction": "both",
      "confidence": "client-data",
@@ -29588,7 +29705,8 @@
      "yellow": 95,
      "grey": 130,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 70
      },
      "faction": "both",
      "confidence": "client-data",
@@ -29627,7 +29745,8 @@
      "yellow": 100,
      "grey": 130,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 70
      },
      "faction": "both",
      "confidence": "client-data",
@@ -30038,7 +30157,8 @@
      "yellow": 95,
      "grey": 130,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 70
      },
      "faction": "both",
      "confidence": "client-data",
@@ -32320,7 +32440,8 @@
      "yellow": 100,
      "grey": 125,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -32493,7 +32614,8 @@
      "yellow": 100,
      "grey": 125,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -32533,7 +32655,8 @@
      "yellow": 80,
      "grey": 115,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -32886,7 +33009,8 @@
      "yellow": 100,
      "grey": 135,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -33058,7 +33182,8 @@
      "yellow": 115,
      "grey": 155,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -33096,7 +33221,8 @@
      "yellow": 100,
      "grey": 125,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -34122,7 +34248,8 @@
      "yellow": 100,
      "grey": 125,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -34204,7 +34331,8 @@
      "yellow": 85,
      "grey": 85,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 80
      },
      "faction": "both",
      "confidence": "client-data",
@@ -34372,7 +34500,8 @@
      "grey": 140,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 80
      },
      "faction": "both",
      "confidence": "client-data",
@@ -34414,7 +34543,8 @@
      "grey": 140,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 80
      },
      "faction": "both",
      "confidence": "client-data",
@@ -34456,7 +34586,8 @@
      "grey": 140,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 80
      },
      "faction": "both",
      "confidence": "client-data",
@@ -34499,7 +34630,8 @@
      "grey": 140,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 80
      },
      "faction": "both",
      "confidence": "client-data",
@@ -34541,7 +34673,8 @@
      "grey": 140,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 80
      },
      "faction": "both",
      "confidence": "client-data",
@@ -34838,7 +34971,8 @@
      "grey": 125,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -34879,7 +35013,8 @@
      "grey": 125,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -34920,7 +35055,8 @@
      "grey": 125,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -34962,7 +35098,8 @@
      "grey": 125,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35004,7 +35141,8 @@
      "grey": 125,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35047,7 +35185,8 @@
      "grey": 125,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35090,7 +35229,8 @@
      "yellow": 80,
      "grey": 80,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35132,7 +35272,8 @@
      "yellow": 80,
      "grey": 80,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35174,7 +35315,8 @@
      "yellow": 80,
      "grey": 80,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35216,7 +35358,8 @@
      "yellow": 80,
      "grey": 80,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35258,7 +35401,8 @@
      "yellow": 80,
      "grey": 80,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35300,7 +35444,8 @@
      "yellow": 80,
      "grey": 80,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35343,7 +35488,8 @@
      "grey": 135,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35385,7 +35531,8 @@
      "grey": 135,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35427,7 +35574,8 @@
      "grey": 135,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35469,7 +35617,8 @@
      "grey": 135,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35511,7 +35660,8 @@
      "grey": 135,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -35553,7 +35703,8 @@
      "grey": 135,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 75
      },
      "faction": "both",
      "confidence": "client-data",
@@ -37090,7 +37241,8 @@
      "yellow": 105,
      "grey": 140,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 80
      },
      "faction": "both",
      "confidence": "client-data",
@@ -37129,7 +37281,8 @@
      "yellow": 120,
      "grey": 150,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 80
      },
      "faction": "both",
      "confidence": "client-data",
@@ -37368,7 +37521,8 @@
      "yellow": 105,
      "grey": 140,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 80
      },
      "faction": "both",
      "confidence": "client-data",
@@ -37439,7 +37593,8 @@
      "yellow": 105,
      "grey": 130,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 80
      },
      "faction": "both",
      "confidence": "client-data",
@@ -37511,7 +37666,8 @@
      "yellow": 105,
      "grey": 130,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 80
      },
      "faction": "both",
      "confidence": "client-data",
@@ -39435,7 +39591,8 @@
      "yellow": 115,
      "grey": 145,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -39475,7 +39632,8 @@
      "yellow": 110,
      "grey": 145,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -39515,7 +39673,8 @@
      "yellow": 110,
      "grey": 145,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -40171,7 +40330,8 @@
      "yellow": 110,
      "grey": 145,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -40967,7 +41127,8 @@
      "grey": 145,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41009,7 +41170,8 @@
      "grey": 145,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41051,7 +41213,8 @@
      "grey": 145,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41094,7 +41257,8 @@
      "grey": 145,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41136,7 +41300,8 @@
      "grey": 145,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41177,7 +41342,8 @@
      "grey": 135,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41218,7 +41384,8 @@
      "grey": 135,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41259,7 +41426,8 @@
      "grey": 135,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41301,7 +41469,8 @@
      "grey": 135,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41343,7 +41512,8 @@
      "grey": 135,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41386,7 +41556,8 @@
      "grey": 135,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41429,7 +41600,8 @@
      "grey": 145,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41471,7 +41643,8 @@
      "grey": 145,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41513,7 +41686,8 @@
      "grey": 145,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41555,7 +41729,8 @@
      "grey": 145,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41597,7 +41772,8 @@
      "grey": 145,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -41639,7 +41815,8 @@
      "grey": 145,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 85
      },
      "faction": "both",
      "confidence": "client-data",
@@ -43669,7 +43846,8 @@
      "yellow": 120,
      "grey": 150,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 80
      },
      "faction": "both",
      "confidence": "client-data",
@@ -44356,7 +44534,8 @@
      "yellow": 115,
      "grey": 150,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 90
      },
      "faction": "both",
      "confidence": "client-data",
@@ -44554,7 +44733,8 @@
      "yellow": 115,
      "grey": 140,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 90
      },
      "faction": "both",
      "confidence": "client-data",
@@ -47717,7 +47897,8 @@
      "yellow": 120,
      "grey": 155,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 95
      },
      "faction": "both",
      "confidence": "client-data",
@@ -48527,7 +48708,8 @@
      "yellow": 120,
      "grey": 145,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 95
      },
      "faction": "both",
      "confidence": "client-data",
@@ -52223,7 +52405,8 @@
      "yellow": 125,
      "grey": 155,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 95
      },
      "faction": "both",
      "confidence": "client-data",
@@ -52362,7 +52545,8 @@
      "yellow": 130,
      "grey": 160,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -52442,7 +52626,8 @@
      "yellow": 125,
      "grey": 150,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 95
      },
      "faction": "both",
      "confidence": "client-data",
@@ -52482,7 +52667,8 @@
      "yellow": 125,
      "grey": 160,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -52523,7 +52709,8 @@
      "yellow": 125,
      "grey": 160,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -52561,7 +52748,8 @@
      "yellow": 125,
      "grey": 160,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -54225,7 +54413,8 @@
      "grey": 180,
      "learn": {
       "type": "favor",
-      "favor": 45
+      "favor": 45,
+      "learnAt": 130
      },
      "faction": "both",
      "confidence": "client-data",
@@ -54266,7 +54455,8 @@
      "yellow": 130,
      "grey": 160,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -54516,7 +54706,8 @@
      "grey": 155,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 95
      },
      "faction": "both",
      "confidence": "client-data",
@@ -54556,7 +54747,8 @@
      "grey": 155,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 95
      },
      "faction": "both",
      "confidence": "client-data",
@@ -54597,7 +54789,8 @@
      "grey": 155,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 95
      },
      "faction": "both",
      "confidence": "client-data",
@@ -54639,7 +54832,8 @@
      "grey": 155,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 95
      },
      "faction": "both",
      "confidence": "client-data",
@@ -54680,7 +54874,8 @@
      "grey": 155,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 95
      },
      "faction": "both",
      "confidence": "client-data",
@@ -54805,7 +55000,8 @@
      "grey": 150,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -54846,7 +55042,8 @@
      "grey": 150,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55057,7 +55254,8 @@
      "grey": 150,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55097,7 +55295,8 @@
      "grey": 150,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55137,7 +55336,8 @@
      "grey": 150,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55179,7 +55379,8 @@
      "grey": 150,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55222,7 +55423,8 @@
      "yellow": 105,
      "grey": 105,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55264,7 +55466,8 @@
      "yellow": 105,
      "grey": 105,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55306,7 +55509,8 @@
      "yellow": 105,
      "grey": 105,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55348,7 +55552,8 @@
      "yellow": 105,
      "grey": 105,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55390,7 +55595,8 @@
      "yellow": 105,
      "grey": 105,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55432,7 +55638,8 @@
      "yellow": 105,
      "grey": 105,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55474,7 +55681,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55515,7 +55723,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55556,7 +55765,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55597,7 +55807,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55638,7 +55849,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -55679,7 +55891,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 100
      },
      "faction": "both",
      "confidence": "client-data",
@@ -56498,7 +56711,8 @@
      "yellow": 135,
      "grey": 165,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 105
      },
      "faction": "both",
      "confidence": "client-data",
@@ -56801,7 +57015,8 @@
      "yellow": 135,
      "grey": 165,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 105
      },
      "faction": "both",
      "confidence": "client-data",
@@ -56875,7 +57090,8 @@
      "yellow": 140,
      "grey": 165,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 95
      },
      "faction": "both",
      "confidence": "client-data",
@@ -56955,7 +57171,8 @@
      "yellow": 125,
      "grey": 155,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 105
      },
      "faction": "both",
      "confidence": "client-data",
@@ -58417,7 +58634,8 @@
      "yellow": 135,
      "grey": 165,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 105
      },
      "faction": "both",
      "confidence": "client-data",
@@ -58458,7 +58676,8 @@
      "yellow": 135,
      "grey": 165,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 105
      },
      "faction": "both",
      "confidence": "client-data",
@@ -59914,7 +60133,8 @@
      "yellow": 140,
      "grey": 170,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -60341,7 +60561,8 @@
      "yellow": 130,
      "grey": 160,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -60776,7 +60997,8 @@
      "yellow": 135,
      "grey": 160,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -60814,7 +61036,8 @@
      "yellow": 135,
      "grey": 160,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -61596,7 +61819,8 @@
      "yellow": 140,
      "grey": 170,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -61637,7 +61861,8 @@
      "grey": 170,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -61679,7 +61904,8 @@
      "grey": 170,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -61721,7 +61947,8 @@
      "grey": 170,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -61764,7 +61991,8 @@
      "grey": 170,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -61806,7 +62034,8 @@
      "grey": 170,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -61846,7 +62075,8 @@
      "yellow": 135,
      "grey": 160,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -61888,7 +62118,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -61931,7 +62162,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -61973,7 +62205,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -62015,7 +62248,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -62058,7 +62292,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -62102,7 +62337,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -62146,7 +62382,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -62189,7 +62426,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -62232,7 +62470,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -62275,7 +62514,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -62318,7 +62558,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -62361,7 +62602,8 @@
      "grey": 160,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 110
      },
      "faction": "both",
      "confidence": "client-data",
@@ -63172,7 +63414,8 @@
      "yellow": 140,
      "grey": 165,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 115
      },
      "faction": "both",
      "confidence": "client-data",
@@ -63212,7 +63455,8 @@
      "yellow": 135,
      "grey": 160,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 115
      },
      "faction": "both",
      "confidence": "client-data",
@@ -64200,7 +64444,8 @@
      "yellow": 135,
      "grey": 165,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 115
      },
      "faction": "both",
      "confidence": "client-data",
@@ -64238,7 +64483,8 @@
      "yellow": 140,
      "grey": 165,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 115
      },
      "faction": "both",
      "confidence": "client-data",
@@ -65812,7 +66058,8 @@
      "yellow": 150,
      "grey": 180,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 120
      },
      "faction": "both",
      "confidence": "client-data",
@@ -65884,7 +66131,8 @@
      "yellow": 150,
      "grey": 180,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 120
      },
      "faction": "both",
      "confidence": "client-data",
@@ -65965,7 +66213,8 @@
      "yellow": 140,
      "grey": 170,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 120
      },
      "faction": "both",
      "confidence": "client-data",
@@ -66693,7 +66942,8 @@
      "yellow": 140,
      "grey": 170,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 120
      },
      "faction": "both",
      "confidence": "client-data",
@@ -66733,7 +66983,8 @@
      "yellow": 130,
      "grey": 140,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 120
      },
      "faction": "both",
      "confidence": "client-data",
@@ -66771,7 +67022,8 @@
      "yellow": 145,
      "grey": 170,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 120
      },
      "faction": "both",
      "confidence": "client-data",
@@ -70363,7 +70615,8 @@
      "yellow": 155,
      "grey": 185,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -70608,7 +70861,8 @@
      "yellow": 150,
      "grey": 170,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -70648,7 +70902,8 @@
      "yellow": 145,
      "grey": 175,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -70920,7 +71175,8 @@
      "yellow": 145,
      "grey": 175,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -71198,7 +71454,8 @@
      "yellow": 145,
      "grey": 175,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -72616,7 +72873,8 @@
      "grey": 180,
      "learn": {
       "type": "favor",
-      "favor": 45
+      "favor": 45,
+      "learnAt": 140
      },
      "faction": "both",
      "confidence": "client-data",
@@ -72657,7 +72915,8 @@
      "grey": 180,
      "learn": {
       "type": "favor",
-      "favor": 45
+      "favor": 45,
+      "learnAt": 140
      },
      "faction": "both",
      "confidence": "client-data",
@@ -72698,7 +72957,8 @@
      "yellow": 155,
      "grey": 185,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -72943,7 +73203,8 @@
      "grey": 185,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -72985,7 +73246,8 @@
      "grey": 185,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73027,7 +73289,8 @@
      "grey": 185,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73070,7 +73333,8 @@
      "grey": 185,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73112,7 +73376,8 @@
      "grey": 185,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73235,7 +73500,8 @@
      "grey": 170,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73278,7 +73544,8 @@
      "grey": 170,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73482,7 +73749,8 @@
      "grey": 170,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73524,7 +73792,8 @@
      "grey": 170,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73566,7 +73835,8 @@
      "grey": 170,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73610,7 +73880,8 @@
      "grey": 170,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73651,7 +73922,8 @@
      "yellow": 130,
      "grey": 130,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73691,7 +73963,8 @@
      "yellow": 130,
      "grey": 130,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73731,7 +74004,8 @@
      "yellow": 130,
      "grey": 130,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73771,7 +74045,8 @@
      "yellow": 130,
      "grey": 130,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73811,7 +74086,8 @@
      "yellow": 130,
      "grey": 130,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73851,7 +74127,8 @@
      "yellow": 130,
      "grey": 130,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73895,7 +74172,8 @@
      "grey": 175,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73938,7 +74216,8 @@
      "grey": 175,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -73981,7 +74260,8 @@
      "grey": 175,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -74024,7 +74304,8 @@
      "grey": 175,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -74067,7 +74348,8 @@
      "grey": 175,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -74110,7 +74392,8 @@
      "grey": 175,
      "learn": {
       "type": "favor",
-      "favor": 30
+      "favor": 30,
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -75709,7 +75992,8 @@
      "yellow": 155,
      "grey": 180,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 130
      },
      "faction": "both",
      "confidence": "client-data",
@@ -75914,7 +76198,8 @@
      "yellow": 150,
      "grey": 170,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 130
      },
      "faction": "both",
      "confidence": "client-data",
@@ -76654,7 +76939,8 @@
      "yellow": 155,
      "grey": 180,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 130
      },
      "faction": "both",
      "confidence": "client-data",
@@ -79009,7 +79295,8 @@
      "yellow": 160,
      "grey": 185,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 135
      },
      "faction": "both",
      "confidence": "client-data",
@@ -79048,7 +79335,8 @@
      "yellow": 155,
      "grey": 175,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 135
      },
      "faction": "both",
      "confidence": "client-data",
@@ -79187,7 +79475,8 @@
      "yellow": 155,
      "grey": 175,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 135
      },
      "faction": "both",
      "confidence": "client-data",
@@ -79399,7 +79688,8 @@
      "yellow": 135,
      "grey": 145,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 125
      },
      "faction": "both",
      "confidence": "client-data",
@@ -79597,7 +79887,8 @@
      "yellow": 160,
      "grey": 185,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 135
      },
      "faction": "both",
      "confidence": "client-data",
@@ -79635,7 +79926,8 @@
      "yellow": 160,
      "grey": 185,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 135
      },
      "faction": "both",
      "confidence": "client-data",
@@ -80788,7 +81080,8 @@
      "yellow": 155,
      "grey": 175,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 130
      },
      "faction": "both",
      "confidence": "client-data",
@@ -82183,7 +82476,8 @@
      "yellow": 165,
      "grey": 190,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 140
      },
      "faction": "both",
      "confidence": "client-data",
@@ -82223,7 +82517,8 @@
      "yellow": 150,
      "grey": 180,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 130
      },
      "faction": "both",
      "confidence": "client-data",
@@ -82261,7 +82556,8 @@
      "yellow": 160,
      "grey": 180,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 140
      },
      "faction": "both",
      "confidence": "client-data",
@@ -82300,7 +82596,8 @@
      "yellow": 160,
      "grey": 180,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 140
      },
      "faction": "both",
      "confidence": "client-data",
@@ -82610,7 +82907,8 @@
      "yellow": 150,
      "grey": 180,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 130
      },
      "faction": "both",
      "confidence": "client-data",
@@ -82739,7 +83037,8 @@
      "yellow": 160,
      "grey": 180,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 140
      },
      "faction": "both",
      "confidence": "client-data",
@@ -88483,7 +88782,8 @@
      "yellow": 170,
      "grey": 195,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 145
      },
      "faction": "both",
      "confidence": "client-data",
@@ -88522,7 +88822,8 @@
      "yellow": 170,
      "grey": 195,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 145
      },
      "faction": "both",
      "confidence": "client-data",
@@ -88661,7 +88962,8 @@
      "yellow": 165,
      "grey": 185,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 145
      },
      "faction": "both",
      "confidence": "client-data",
@@ -88701,7 +89003,8 @@
      "yellow": 155,
      "grey": 185,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 135
      },
      "faction": "both",
      "confidence": "client-data",
@@ -88904,7 +89207,8 @@
      "yellow": 165,
      "grey": 185,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 145
      },
      "faction": "both",
      "confidence": "client-data",
@@ -88944,7 +89248,8 @@
      "yellow": 165,
      "grey": 185,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 145
      },
      "faction": "both",
      "confidence": "client-data",
@@ -89310,7 +89615,8 @@
      "yellow": 155,
      "grey": 185,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 135
      },
      "faction": "both",
      "confidence": "client-data",
@@ -90869,7 +91175,8 @@
      "yellow": 170,
      "grey": 195,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 145
      },
      "faction": "both",
      "confidence": "client-data",
@@ -93123,7 +93430,8 @@
      "yellow": 175,
      "grey": 200,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 150
      },
      "faction": "both",
      "confidence": "client-data",
@@ -93362,7 +93670,8 @@
      "yellow": 170,
      "grey": 190,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 150
      },
      "faction": "both",
      "confidence": "client-data",
@@ -93402,7 +93711,8 @@
      "yellow": 160,
      "grey": 190,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 140
      },
      "faction": "both",
      "confidence": "client-data",
@@ -93666,7 +93976,8 @@
      "yellow": 170,
      "grey": 190,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 150
      },
      "faction": "both",
      "confidence": "client-data",
@@ -93837,7 +94148,8 @@
      "yellow": 160,
      "grey": 190,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 140
      },
      "faction": "both",
      "confidence": "client-data",
@@ -93877,7 +94189,8 @@
      "yellow": 160,
      "grey": 190,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 140
      },
      "faction": "both",
      "confidence": "client-data",
@@ -93917,7 +94230,8 @@
      "yellow": 160,
      "grey": 190,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 140
      },
      "faction": "both",
      "confidence": "client-data",
@@ -94015,7 +94329,8 @@
      "yellow": 170,
      "grey": 190,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 150
      },
      "faction": "both",
      "confidence": "client-data",
@@ -94055,7 +94370,8 @@
      "yellow": 170,
      "grey": 190,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 150
      },
      "faction": "both",
      "confidence": "client-data",
@@ -94644,7 +94960,8 @@
      "yellow": 175,
      "grey": 200,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 150
      },
      "faction": "both",
      "confidence": "client-data",
@@ -95952,7 +96269,8 @@
      "yellow": 175,
      "grey": 200,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 150
      },
      "faction": "both",
      "confidence": "client-data",
@@ -96501,7 +96819,8 @@
      "yellow": 160,
      "grey": 190,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 140
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97030,7 +97349,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97069,7 +97389,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97108,7 +97429,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97147,7 +97469,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97186,7 +97509,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97225,7 +97549,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97264,7 +97589,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97303,7 +97629,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97342,7 +97669,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97381,7 +97709,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97420,7 +97749,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97459,7 +97789,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97498,7 +97829,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97537,7 +97869,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97576,7 +97909,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97615,7 +97949,8 @@
      "yellow": 185,
      "grey": 190,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97652,7 +97987,8 @@
      "grey": 185,
      "learn": {
       "type": "favor",
-      "favor": 180
+      "favor": 180,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97689,7 +98025,8 @@
      "grey": 185,
      "learn": {
       "type": "favor",
-      "favor": 180
+      "favor": 180,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -97726,7 +98063,8 @@
      "grey": 185,
      "learn": {
       "type": "favor",
-      "favor": 180
+      "favor": 180,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -99605,7 +99943,8 @@
      "yellow": 180,
      "grey": 205,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 155
      },
      "faction": "both",
      "confidence": "client-data",
@@ -99744,7 +100083,8 @@
      "yellow": 175,
      "grey": 195,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 155
      },
      "faction": "both",
      "confidence": "client-data",
@@ -99784,7 +100124,8 @@
      "yellow": 165,
      "grey": 195,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 145
      },
      "faction": "both",
      "confidence": "client-data",
@@ -100228,7 +100569,8 @@
      "yellow": 165,
      "grey": 195,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 145
      },
      "faction": "both",
      "confidence": "client-data",
@@ -100268,7 +100610,8 @@
      "yellow": 165,
      "grey": 195,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 145
      },
      "faction": "both",
      "confidence": "client-data",
@@ -100306,7 +100649,8 @@
      "yellow": 175,
      "grey": 195,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 155
      },
      "faction": "both",
      "confidence": "client-data",
@@ -100573,7 +100917,8 @@
      "yellow": 180,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 155
      },
      "faction": "both",
      "confidence": "client-data",
@@ -101903,7 +102248,8 @@
      "yellow": 165,
      "grey": 195,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 145
      },
      "faction": "both",
      "confidence": "client-data",
@@ -102757,7 +103103,8 @@
      "yellow": 185,
      "grey": 210,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 160
      },
      "faction": "both",
      "confidence": "client-data",
@@ -102866,7 +103213,8 @@
      "yellow": 180,
      "grey": 200,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 160
      },
      "faction": "both",
      "confidence": "client-data",
@@ -102906,7 +103254,8 @@
      "yellow": 170,
      "grey": 200,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 150
      },
      "faction": "both",
      "confidence": "client-data",
@@ -102944,7 +103293,8 @@
      "yellow": 205,
      "grey": 225,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 185
      },
      "faction": "both",
      "confidence": "client-data",
@@ -103017,7 +103367,8 @@
      "yellow": 180,
      "grey": 200,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 160
      },
      "faction": "both",
      "confidence": "client-data",
@@ -103056,7 +103407,8 @@
      "yellow": 185,
      "grey": 210,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 160
      },
      "faction": "both",
      "confidence": "client-data",
@@ -103195,7 +103547,8 @@
      "yellow": 170,
      "grey": 190,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 150
      },
      "faction": "both",
      "confidence": "client-data",
@@ -103267,7 +103620,8 @@
      "yellow": 180,
      "grey": 200,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 160
      },
      "faction": "both",
      "confidence": "client-data",
@@ -103589,7 +103943,8 @@
      "yellow": 185,
      "grey": 210,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 160
      },
      "faction": "both",
      "confidence": "client-data",
@@ -104764,7 +105119,8 @@
      "yellow": 185,
      "grey": 210,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 160
      },
      "faction": "both",
      "confidence": "client-data",
@@ -104805,7 +105161,8 @@
      "yellow": 170,
      "grey": 200,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 150
      },
      "faction": "both",
      "confidence": "client-data",
@@ -105472,7 +105829,8 @@
      "yellow": 190,
      "grey": 215,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -105612,7 +105970,8 @@
      "yellow": 185,
      "grey": 205,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -105651,7 +106010,8 @@
      "yellow": 185,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -105691,7 +106051,8 @@
      "yellow": 185,
      "grey": 205,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -105832,7 +106193,8 @@
      "yellow": 175,
      "grey": 205,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 155
      },
      "faction": "both",
      "confidence": "client-data",
@@ -105871,7 +106233,8 @@
      "yellow": 175,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 155
      },
      "faction": "both",
      "confidence": "client-data",
@@ -105911,7 +106274,8 @@
      "yellow": 175,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 155
      },
      "faction": "both",
      "confidence": "client-data",
@@ -105951,7 +106315,8 @@
      "yellow": 185,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -107552,7 +107917,8 @@
      "yellow": 185,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -107676,7 +108042,8 @@
      "yellow": 190,
      "grey": 215,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -108574,7 +108941,8 @@
      "yellow": 190,
      "grey": 210,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 170
      },
      "faction": "both",
      "confidence": "client-data",
@@ -108814,7 +109182,8 @@
      "yellow": 180,
      "grey": 210,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 160
      },
      "faction": "both",
      "confidence": "client-data",
@@ -108854,7 +109223,8 @@
      "yellow": 180,
      "grey": 200,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 160
      },
      "faction": "both",
      "confidence": "client-data",
@@ -108893,7 +109263,8 @@
      "yellow": 190,
      "grey": 210,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 170
      },
      "faction": "both",
      "confidence": "client-data",
@@ -110465,7 +110836,8 @@
      "yellow": 180,
      "grey": 210,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 160
      },
      "faction": "both",
      "confidence": "client-data",
@@ -111380,7 +111752,8 @@
      "yellow": 195,
      "grey": 220,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 170
      },
      "faction": "both",
      "confidence": "client-data",
@@ -111419,7 +111792,8 @@
      "yellow": 200,
      "grey": 225,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -111591,7 +111965,8 @@
      "yellow": 195,
      "grey": 215,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -111631,7 +112006,8 @@
      "yellow": 185,
      "grey": 215,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -111671,7 +112047,8 @@
      "yellow": 185,
      "grey": 215,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -111837,7 +112214,8 @@
      "yellow": 195,
      "grey": 215,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -111877,7 +112255,8 @@
      "yellow": 195,
      "grey": 215,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -112185,7 +112564,8 @@
      "yellow": 200,
      "grey": 225,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -112225,7 +112605,8 @@
      "yellow": 195,
      "grey": 215,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113241,7 +113622,8 @@
      "yellow": 185,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113460,7 +113842,8 @@
      "yellow": 195,
      "grey": 220,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 170
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113500,7 +113883,8 @@
      "yellow": 200,
      "grey": 225,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113540,7 +113924,8 @@
      "yellow": 200,
      "grey": 225,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113581,7 +113966,8 @@
      "grey": 225,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113623,7 +114009,8 @@
      "grey": 225,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113665,7 +114052,8 @@
      "grey": 225,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113708,7 +114096,8 @@
      "grey": 225,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113750,7 +114139,8 @@
      "grey": 225,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113791,7 +114181,8 @@
      "grey": 215,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113832,7 +114223,8 @@
      "grey": 215,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113873,7 +114265,8 @@
      "grey": 215,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113914,7 +114307,8 @@
      "grey": 215,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113956,7 +114350,8 @@
      "grey": 215,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -113998,7 +114393,8 @@
      "grey": 215,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -114041,7 +114437,8 @@
      "grey": 215,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -114082,7 +114479,8 @@
      "yellow": 185,
      "grey": 215,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -114124,7 +114522,8 @@
      "yellow": 185,
      "grey": 215,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -114166,7 +114565,8 @@
      "grey": 215,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -114208,7 +114608,8 @@
      "grey": 215,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -114250,7 +114651,8 @@
      "grey": 215,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -114292,7 +114694,8 @@
      "grey": 215,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -114334,7 +114737,8 @@
      "grey": 215,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 165
      },
      "faction": "both",
      "confidence": "client-data",
@@ -115798,7 +116202,8 @@
      "yellow": 185,
      "grey": 215,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 170
      },
      "faction": "both",
      "confidence": "client-data",
@@ -116112,7 +116517,8 @@
      "yellow": 200,
      "grey": 220,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 180
      },
      "faction": "both",
      "confidence": "client-data",
@@ -116151,7 +116557,8 @@
      "yellow": 200,
      "grey": 220,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 180
      },
      "faction": "both",
      "confidence": "client-data",
@@ -116192,7 +116599,8 @@
      "yellow": 200,
      "grey": 220,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 180
      },
      "faction": "both",
      "confidence": "client-data",
@@ -116231,7 +116639,8 @@
      "yellow": 200,
      "grey": 220,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 180
      },
      "faction": "both",
      "confidence": "client-data",
@@ -116483,7 +116892,8 @@
      "yellow": 185,
      "grey": 215,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 170
      },
      "faction": "both",
      "confidence": "client-data",
@@ -116523,7 +116933,8 @@
      "yellow": 185,
      "grey": 215,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 170
      },
      "faction": "both",
      "confidence": "client-data",
@@ -117785,7 +118196,8 @@
      "yellow": 185,
      "grey": 215,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 170
      },
      "faction": "both",
      "confidence": "client-data",
@@ -119205,7 +119617,8 @@
      "yellow": 190,
      "grey": 220,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -119583,7 +119996,8 @@
      "yellow": 205,
      "grey": 225,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 185
      },
      "faction": "both",
      "confidence": "client-data",
@@ -119622,7 +120036,8 @@
      "yellow": 205,
      "grey": 225,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 185
      },
      "faction": "both",
      "confidence": "client-data",
@@ -119663,7 +120078,8 @@
      "yellow": 205,
      "grey": 225,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 185
      },
      "faction": "both",
      "confidence": "client-data",
@@ -120313,7 +120729,8 @@
      "yellow": 190,
      "grey": 220,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -120353,7 +120770,8 @@
      "yellow": 190,
      "grey": 220,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 175
      },
      "faction": "both",
      "confidence": "client-data",
@@ -124101,7 +124519,8 @@
      "yellow": 210,
      "grey": 230,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -124478,7 +124897,8 @@
      "yellow": 195,
      "grey": 225,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 180
      },
      "faction": "both",
      "confidence": "client-data",
@@ -124518,7 +124938,8 @@
      "yellow": 195,
      "grey": 225,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 180
      },
      "faction": "both",
      "confidence": "client-data",
@@ -124556,7 +124977,8 @@
      "yellow": 195,
      "grey": 225,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 180
      },
      "faction": "both",
      "confidence": "client-data",
@@ -124595,7 +125017,8 @@
      "yellow": 185,
      "grey": 195,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 180
      },
      "faction": "both",
      "confidence": "client-data",
@@ -124635,7 +125058,8 @@
      "yellow": 195,
      "grey": 225,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 180
      },
      "faction": "both",
      "confidence": "client-data",
@@ -128208,7 +128632,8 @@
      "yellow": 215,
      "grey": 235,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 195
      },
      "faction": "both",
      "confidence": "client-data",
@@ -128247,7 +128672,8 @@
      "yellow": 215,
      "grey": 235,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 195
      },
      "faction": "both",
      "confidence": "client-data",
@@ -128286,7 +128712,8 @@
      "yellow": 215,
      "grey": 235,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 195
      },
      "faction": "both",
      "confidence": "client-data",
@@ -128322,7 +128749,8 @@
      "yellow": 215,
      "grey": 235,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 195
      },
      "faction": "both",
      "confidence": "client-data",
@@ -128672,7 +129100,8 @@
      "yellow": 200,
      "grey": 230,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 185
      },
      "faction": "both",
      "confidence": "client-data",
@@ -128713,7 +129142,8 @@
      "yellow": 200,
      "grey": 230,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 185
      },
      "faction": "both",
      "confidence": "client-data",
@@ -131263,7 +131693,8 @@
      "yellow": 220,
      "grey": 240,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -131299,7 +131730,8 @@
      "yellow": 220,
      "grey": 240,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -131335,7 +131767,8 @@
      "yellow": 220,
      "grey": 240,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -131376,7 +131809,8 @@
      "yellow": 220,
      "grey": 240,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -131761,7 +132195,8 @@
      "yellow": 205,
      "grey": 235,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -131802,7 +132237,8 @@
      "yellow": 205,
      "grey": 235,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -131844,7 +132280,8 @@
      "yellow": 205,
      "grey": 235,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -131885,7 +132322,8 @@
      "yellow": 205,
      "grey": 235,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -131925,7 +132363,8 @@
      "yellow": 205,
      "grey": 235,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -131963,7 +132402,8 @@
      "yellow": 205,
      "grey": 235,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133249,7 +133689,8 @@
      "grey": 265,
      "learn": {
       "type": "favor",
-      "favor": 120
+      "favor": 120,
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133290,7 +133731,8 @@
      "yellow": 205,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133331,7 +133773,8 @@
      "yellow": 205,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133372,7 +133815,8 @@
      "yellow": 205,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133414,7 +133858,8 @@
      "yellow": 205,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133457,7 +133902,8 @@
      "yellow": 205,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133498,7 +133944,8 @@
      "yellow": 205,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133540,7 +133987,8 @@
      "yellow": 205,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133582,7 +134030,8 @@
      "yellow": 205,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133625,7 +134074,8 @@
      "yellow": 205,
      "grey": 205,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133668,7 +134118,8 @@
      "yellow": 195,
      "grey": 195,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133710,7 +134161,8 @@
      "yellow": 195,
      "grey": 195,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133752,7 +134204,8 @@
      "yellow": 195,
      "grey": 195,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133794,7 +134247,8 @@
      "yellow": 195,
      "grey": 195,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133836,7 +134290,8 @@
      "yellow": 195,
      "grey": 195,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -133878,7 +134333,8 @@
      "yellow": 195,
      "grey": 195,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -134518,7 +134974,8 @@
      "grey": 210,
      "learn": {
       "type": "favor",
-      "favor": 180
+      "favor": 180,
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -134557,7 +135014,8 @@
      "grey": 210,
      "learn": {
       "type": "favor",
-      "favor": 180
+      "favor": 180,
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -134596,7 +135054,8 @@
      "grey": 210,
      "learn": {
       "type": "favor",
-      "favor": 180
+      "favor": 180,
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -134816,7 +135275,8 @@
      "yellow": 210,
      "grey": 230,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -135160,7 +135620,8 @@
      "yellow": 205,
      "grey": 225,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 185
      },
      "faction": "both",
      "confidence": "client-data",
@@ -135198,7 +135659,8 @@
      "yellow": 225,
      "grey": 245,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -136408,7 +136870,8 @@
      "yellow": 225,
      "grey": 245,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -136549,7 +137012,8 @@
      "yellow": 225,
      "grey": 245,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -136588,7 +137052,8 @@
      "yellow": 225,
      "grey": 245,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -136627,7 +137092,8 @@
      "yellow": 225,
      "grey": 245,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -136670,7 +137136,8 @@
      "yellow": 225,
      "grey": 245,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -136921,7 +137388,8 @@
      "yellow": 205,
      "grey": 235,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -136961,7 +137429,8 @@
      "yellow": 205,
      "grey": 235,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -137001,7 +137470,8 @@
      "yellow": 205,
      "grey": 235,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 190
      },
      "faction": "both",
      "confidence": "client-data",
@@ -139027,7 +139497,8 @@
      "yellow": 230,
      "grey": 250,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -139332,7 +139803,8 @@
      "yellow": 230,
      "grey": 250,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -139372,7 +139844,8 @@
      "yellow": 230,
      "grey": 250,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -139412,7 +139885,8 @@
      "yellow": 230,
      "grey": 250,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -139451,7 +139925,8 @@
      "yellow": 230,
      "grey": 250,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -139710,7 +140185,8 @@
      "yellow": 210,
      "grey": 240,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 195
      },
      "faction": "both",
      "confidence": "client-data",
@@ -139750,7 +140226,8 @@
      "yellow": 210,
      "grey": 240,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 195
      },
      "faction": "both",
      "confidence": "client-data",
@@ -140756,7 +141233,8 @@
      "grey": 250,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -140798,7 +141276,8 @@
      "grey": 250,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -140840,7 +141319,8 @@
      "grey": 250,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -140883,7 +141363,8 @@
      "grey": 250,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -140927,7 +141408,8 @@
      "grey": 250,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -140969,7 +141451,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -141012,7 +141495,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -141055,7 +141539,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -141099,7 +141584,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -141143,7 +141629,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 195
      },
      "faction": "both",
      "confidence": "client-data",
@@ -141186,7 +141673,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 195
      },
      "faction": "both",
      "confidence": "client-data",
@@ -141229,7 +141717,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 195
      },
      "faction": "both",
      "confidence": "client-data",
@@ -141272,7 +141761,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 195
      },
      "faction": "both",
      "confidence": "client-data",
@@ -141315,7 +141805,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 195
      },
      "faction": "both",
      "confidence": "client-data",
@@ -141358,7 +141849,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 195
      },
      "faction": "both",
      "confidence": "client-data",
@@ -142986,7 +143478,8 @@
      "yellow": 235,
      "grey": 255,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -143026,7 +143519,8 @@
      "yellow": 235,
      "grey": 255,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -143445,7 +143939,8 @@
      "yellow": 215,
      "grey": 245,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -143485,7 +143980,8 @@
      "yellow": 215,
      "grey": 245,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -143527,7 +144023,8 @@
      "yellow": 215,
      "grey": 245,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -143567,7 +144064,8 @@
      "yellow": 215,
      "grey": 245,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -145355,7 +145853,8 @@
      "yellow": 240,
      "grey": 260,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 220
      },
      "faction": "both",
      "confidence": "client-data",
@@ -145391,7 +145890,8 @@
      "yellow": 240,
      "grey": 260,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 220
      },
      "faction": "both",
      "confidence": "client-data",
@@ -145791,7 +146291,8 @@
      "yellow": 215,
      "grey": 245,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -145862,7 +146363,8 @@
      "yellow": 215,
      "grey": 245,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -145900,7 +146402,8 @@
      "yellow": 215,
      "grey": 245,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 200
      },
      "faction": "both",
      "confidence": "client-data",
@@ -148210,7 +148713,8 @@
      "yellow": 245,
      "grey": 265,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -148246,7 +148750,8 @@
      "yellow": 245,
      "grey": 265,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -148282,7 +148787,8 @@
      "yellow": 245,
      "grey": 265,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -148456,7 +148962,8 @@
      "yellow": 245,
      "grey": 265,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -148497,7 +149004,8 @@
      "yellow": 245,
      "grey": 265,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -148809,7 +149317,8 @@
      "yellow": 220,
      "grey": 250,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -148850,7 +149359,8 @@
      "yellow": 220,
      "grey": 250,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -149168,7 +149678,8 @@
      "yellow": 315,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 275
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150193,7 +150704,8 @@
      "grey": 265,
      "learn": {
       "type": "favor",
-      "favor": 120
+      "favor": 120,
+      "learnAt": 220
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150235,7 +150747,8 @@
      "grey": 265,
      "learn": {
       "type": "favor",
-      "favor": 120
+      "favor": 120,
+      "learnAt": 220
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150277,7 +150790,8 @@
      "grey": 265,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150319,7 +150833,8 @@
      "grey": 265,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150361,7 +150876,8 @@
      "grey": 265,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150404,7 +150920,8 @@
      "grey": 265,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150448,7 +150965,8 @@
      "grey": 265,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150490,7 +151008,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150533,7 +151052,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150576,7 +151096,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150620,7 +151141,8 @@
      "grey": 240,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150664,7 +151186,8 @@
      "grey": 250,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150707,7 +151230,8 @@
      "grey": 250,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150750,7 +151274,8 @@
      "grey": 250,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150793,7 +151318,8 @@
      "grey": 250,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150836,7 +151362,8 @@
      "grey": 250,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -150879,7 +151406,8 @@
      "grey": 250,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 205
      },
      "faction": "both",
      "confidence": "client-data",
@@ -151826,7 +152354,8 @@
      "yellow": 250,
      "grey": 270,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 230
      },
      "faction": "both",
      "confidence": "client-data",
@@ -152423,7 +152952,8 @@
      "yellow": 225,
      "grey": 255,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -152463,7 +152993,8 @@
      "yellow": 225,
      "grey": 255,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -152503,7 +153034,8 @@
      "yellow": 225,
      "grey": 255,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 210
      },
      "faction": "both",
      "confidence": "client-data",
@@ -152920,7 +153452,8 @@
      "yellow": 250,
      "grey": 270,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -153731,7 +154264,8 @@
      "yellow": 250,
      "grey": 270,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 230
      },
      "faction": "both",
      "confidence": "client-data",
@@ -153772,7 +154306,8 @@
      "yellow": 250,
      "grey": 270,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 230
      },
      "faction": "both",
      "confidence": "client-data",
@@ -154738,7 +155273,8 @@
      "yellow": 230,
      "grey": 260,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -155637,7 +156173,8 @@
      "yellow": 255,
      "grey": 275,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -155749,7 +156286,8 @@
      "yellow": 230,
      "grey": 260,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -155789,7 +156327,8 @@
      "yellow": 230,
      "grey": 260,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -155829,7 +156368,8 @@
      "yellow": 230,
      "grey": 260,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -156157,7 +156697,8 @@
      "yellow": 255,
      "grey": 275,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -156196,7 +156737,8 @@
      "yellow": 255,
      "grey": 275,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -156603,7 +157145,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -156686,7 +157229,8 @@
      "yellow": 255,
      "grey": 275,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -156727,7 +157271,8 @@
      "grey": 275,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -156768,7 +157313,8 @@
      "grey": 275,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -156809,7 +157355,8 @@
      "grey": 275,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -156851,7 +157398,8 @@
      "grey": 275,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -156894,7 +157442,8 @@
      "grey": 275,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -156935,7 +157484,8 @@
      "yellow": 255,
      "grey": 275,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -156976,7 +157526,8 @@
      "grey": 275,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -157018,7 +157569,8 @@
      "grey": 275,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -157060,7 +157612,8 @@
      "grey": 275,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -157103,7 +157656,8 @@
      "grey": 275,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -157143,7 +157697,8 @@
      "yellow": 230,
      "grey": 260,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -157184,7 +157739,8 @@
      "yellow": 230,
      "grey": 260,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -157225,7 +157781,8 @@
      "yellow": 230,
      "grey": 260,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -157268,7 +157825,8 @@
      "grey": 260,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -157310,7 +157868,8 @@
      "grey": 260,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -157352,7 +157911,8 @@
      "grey": 260,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -157394,7 +157954,8 @@
      "grey": 260,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -157436,7 +157997,8 @@
      "grey": 260,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -157478,7 +158040,8 @@
      "grey": 260,
      "learn": {
       "type": "favor",
-      "favor": 60
+      "favor": 60,
+      "learnAt": 215
      },
      "faction": "both",
      "confidence": "client-data",
@@ -159119,7 +159682,8 @@
      "yellow": 240,
      "grey": 270,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 220
      },
      "faction": "both",
      "confidence": "client-data",
@@ -159159,7 +159723,8 @@
      "yellow": 235,
      "grey": 265,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 220
      },
      "faction": "both",
      "confidence": "client-data",
@@ -159558,7 +160123,8 @@
      "yellow": 260,
      "grey": 280,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 240
      },
      "faction": "both",
      "confidence": "client-data",
@@ -159597,7 +160163,8 @@
      "yellow": 260,
      "grey": 280,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 240
      },
      "faction": "both",
      "confidence": "client-data",
@@ -159636,7 +160203,8 @@
      "yellow": 260,
      "grey": 280,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 240
      },
      "faction": "both",
      "confidence": "client-data",
@@ -161284,7 +161852,8 @@
      "yellow": 260,
      "grey": 280,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 240
      },
      "faction": "both",
      "confidence": "client-data",
@@ -161324,7 +161893,8 @@
      "yellow": 260,
      "grey": 280,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 240
      },
      "faction": "both",
      "confidence": "client-data",
@@ -161365,7 +161935,8 @@
      "yellow": 260,
      "grey": 280,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 240
      },
      "faction": "both",
      "confidence": "client-data",
@@ -161406,7 +161977,8 @@
      "yellow": 260,
      "grey": 280,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 240
      },
      "faction": "both",
      "confidence": "client-data",
@@ -163846,7 +164418,8 @@
      "yellow": 265,
      "grey": 285,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -163924,7 +164497,8 @@
      "yellow": 265,
      "grey": 285,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -163997,7 +164571,8 @@
      "yellow": 240,
      "grey": 270,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -164035,7 +164610,8 @@
      "yellow": 240,
      "grey": 270,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -164073,7 +164649,8 @@
      "yellow": 240,
      "grey": 270,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -164113,7 +164690,8 @@
      "yellow": 240,
      "grey": 270,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -164481,7 +165059,8 @@
      "yellow": 265,
      "grey": 285,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -164519,7 +165098,8 @@
      "yellow": 265,
      "grey": 285,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -164561,7 +165141,8 @@
      "yellow": 265,
      "grey": 285,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -164602,7 +165183,8 @@
      "yellow": 265,
      "grey": 285,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -164642,7 +165224,8 @@
      "yellow": 265,
      "grey": 285,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -165173,7 +165756,8 @@
      "yellow": 240,
      "grey": 270,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -166255,7 +166839,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -166846,7 +167431,8 @@
      "yellow": 285,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -167083,7 +167669,8 @@
      "yellow": 245,
      "grey": 275,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 230
      },
      "faction": "both",
      "confidence": "client-data",
@@ -167123,7 +167710,8 @@
      "yellow": 245,
      "grey": 275,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 230
      },
      "faction": "both",
      "confidence": "client-data",
@@ -167161,7 +167749,8 @@
      "yellow": 245,
      "grey": 275,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 230
      },
      "faction": "both",
      "confidence": "client-data",
@@ -167201,7 +167790,8 @@
      "yellow": 245,
      "grey": 275,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 230
      },
      "faction": "both",
      "confidence": "client-data",
@@ -167239,7 +167829,8 @@
      "yellow": 245,
      "grey": 275,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 230
      },
      "faction": "both",
      "confidence": "client-data",
@@ -167279,7 +167870,8 @@
      "yellow": 250,
      "grey": 280,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -167320,7 +167912,8 @@
      "yellow": 240,
      "grey": 270,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 225
      },
      "faction": "both",
      "confidence": "client-data",
@@ -167610,7 +168203,8 @@
      "yellow": 270,
      "grey": 290,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -167650,7 +168244,8 @@
      "yellow": 270,
      "grey": 290,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -167688,7 +168283,8 @@
      "yellow": 270,
      "grey": 290,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -167726,7 +168322,8 @@
      "yellow": 270,
      "grey": 290,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -167765,7 +168362,8 @@
      "yellow": 270,
      "grey": 290,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -167805,7 +168403,8 @@
      "yellow": 270,
      "grey": 290,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -168995,7 +169594,8 @@
      "grey": 290,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169036,7 +169636,8 @@
      "grey": 290,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169077,7 +169678,8 @@
      "grey": 290,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169119,7 +169721,8 @@
      "grey": 290,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169162,7 +169765,8 @@
      "grey": 290,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169203,7 +169807,8 @@
      "yellow": 255,
      "grey": 255,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169244,7 +169849,8 @@
      "yellow": 255,
      "grey": 255,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169285,7 +169891,8 @@
      "yellow": 255,
      "grey": 255,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169327,7 +169934,8 @@
      "yellow": 255,
      "grey": 255,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169370,7 +169978,8 @@
      "yellow": 255,
      "grey": 255,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169411,7 +170020,8 @@
      "yellow": 270,
      "grey": 290,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169452,7 +170062,8 @@
      "yellow": 270,
      "grey": 290,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169493,7 +170104,8 @@
      "yellow": 255,
      "grey": 255,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169535,7 +170147,8 @@
      "yellow": 255,
      "grey": 255,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169577,7 +170190,8 @@
      "yellow": 255,
      "grey": 255,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169620,7 +170234,8 @@
      "yellow": 255,
      "grey": 255,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169661,7 +170276,8 @@
      "grey": 290,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169703,7 +170319,8 @@
      "grey": 290,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169745,7 +170362,8 @@
      "grey": 290,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169788,7 +170406,8 @@
      "grey": 290,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169831,7 +170450,8 @@
      "yellow": 240,
      "grey": 240,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169873,7 +170493,8 @@
      "yellow": 240,
      "grey": 240,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169915,7 +170536,8 @@
      "yellow": 240,
      "grey": 240,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169957,7 +170579,8 @@
      "yellow": 240,
      "grey": 240,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -169999,7 +170622,8 @@
      "yellow": 240,
      "grey": 240,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -170041,7 +170665,8 @@
      "yellow": 240,
      "grey": 240,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -170084,7 +170709,8 @@
      "grey": 280,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -170126,7 +170752,8 @@
      "grey": 280,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -170168,7 +170795,8 @@
      "grey": 280,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -170210,7 +170838,8 @@
      "grey": 280,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -170252,7 +170881,8 @@
      "grey": 280,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -170294,7 +170924,8 @@
      "grey": 280,
      "learn": {
       "type": "favor",
-      "favor": 90
+      "favor": 90,
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -171957,7 +172588,8 @@
      "yellow": 265,
      "grey": 285,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -172203,7 +172835,8 @@
      "yellow": 250,
      "grey": 280,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -172243,7 +172876,8 @@
      "yellow": 250,
      "grey": 280,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -172283,7 +172917,8 @@
      "yellow": 250,
      "grey": 280,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 235
      },
      "faction": "both",
      "confidence": "client-data",
@@ -172570,7 +173205,8 @@
      "yellow": 275,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -172609,7 +173245,8 @@
      "yellow": 275,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -172648,7 +173285,8 @@
      "yellow": 275,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -172688,7 +173326,8 @@
      "yellow": 275,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -173035,7 +173674,8 @@
      "yellow": 285,
      "grey": 315,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 230
      },
      "faction": "both",
      "confidence": "client-data",
@@ -173299,7 +173939,8 @@
      "yellow": 275,
      "grey": 295,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -173415,7 +174056,8 @@
      "yellow": 275,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -173456,7 +174098,8 @@
      "yellow": 275,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -173497,7 +174140,8 @@
      "yellow": 275,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -173538,7 +174182,8 @@
      "yellow": 275,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -173577,7 +174222,8 @@
      "yellow": 275,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -173617,7 +174263,8 @@
      "yellow": 275,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -173658,7 +174305,8 @@
      "yellow": 275,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -176355,7 +177003,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -176462,7 +177111,8 @@
      "yellow": 255,
      "grey": 285,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 240
      },
      "faction": "both",
      "confidence": "client-data",
@@ -176502,7 +177152,8 @@
      "yellow": 255,
      "grey": 285,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 240
      },
      "faction": "both",
      "confidence": "client-data",
@@ -176543,7 +177194,8 @@
      "yellow": 260,
      "grey": 290,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -176937,7 +177589,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -176975,7 +177628,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -177014,7 +177668,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -177056,7 +177711,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -177096,7 +177752,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -177134,7 +177791,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -177173,7 +177831,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -178122,7 +178781,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -178163,7 +178823,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -178203,7 +178864,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -178244,7 +178906,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -178285,7 +178948,8 @@
      "yellow": 280,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -178326,7 +178990,8 @@
      "yellow": 255,
      "grey": 285,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 240
      },
      "faction": "both",
      "confidence": "client-data",
@@ -178366,7 +179031,8 @@
      "yellow": 265,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -180137,7 +180803,8 @@
      "yellow": 285,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -180207,7 +180874,8 @@
      "yellow": 260,
      "grey": 290,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -180247,7 +180915,8 @@
      "yellow": 260,
      "grey": 290,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -180289,7 +180958,8 @@
      "yellow": 270,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -180329,7 +180999,8 @@
      "yellow": 260,
      "grey": 290,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -180657,7 +181328,8 @@
      "yellow": 285,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -180698,7 +181370,8 @@
      "yellow": 285,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -180739,7 +181412,8 @@
      "yellow": 285,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -180777,7 +181451,8 @@
      "yellow": 285,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -180816,7 +181491,8 @@
      "yellow": 285,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -180856,7 +181532,8 @@
      "yellow": 285,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -181423,7 +182100,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -181537,7 +182215,8 @@
      "yellow": 285,
      "grey": 305,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -181577,7 +182256,8 @@
      "yellow": 285,
      "grey": 305,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -181619,7 +182299,8 @@
      "yellow": 270,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -181659,7 +182340,8 @@
      "yellow": 285,
      "grey": 305,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -181699,7 +182381,8 @@
      "yellow": 270,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -181818,7 +182501,8 @@
      "yellow": 285,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -181859,7 +182543,8 @@
      "yellow": 285,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -181900,7 +182585,8 @@
      "yellow": 260,
      "grey": 290,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 245
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182008,7 +182694,8 @@
      "yellow": 290,
      "grey": 295,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 285
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182047,7 +182734,8 @@
      "yellow": 295,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182087,7 +182775,8 @@
      "yellow": 295,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 295
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182128,7 +182817,8 @@
      "yellow": 290,
      "grey": 295,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 285
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182169,7 +182859,8 @@
      "yellow": 295,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182210,7 +182901,8 @@
      "yellow": 295,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 295
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182249,7 +182941,8 @@
      "yellow": 290,
      "grey": 295,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 285
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182288,7 +182981,8 @@
      "yellow": 295,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182328,7 +183022,8 @@
      "yellow": 295,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 295
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182367,7 +183062,8 @@
      "yellow": 290,
      "grey": 295,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 285
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182406,7 +183102,8 @@
      "yellow": 295,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182445,7 +183142,8 @@
      "yellow": 295,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 295
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182484,7 +183182,8 @@
      "yellow": 290,
      "grey": 295,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 285
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182523,7 +183222,8 @@
      "yellow": 295,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182563,7 +183263,8 @@
      "yellow": 295,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 295
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182604,7 +183305,8 @@
      "yellow": 290,
      "grey": 295,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 285
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182645,7 +183347,8 @@
      "yellow": 295,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -182686,7 +183389,8 @@
      "yellow": 295,
      "grey": 300,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 295
      },
      "faction": "both",
      "confidence": "client-data",
@@ -184802,7 +185506,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -184845,7 +185550,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -184989,7 +185695,8 @@
      "yellow": 265,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -185449,7 +186156,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -185490,7 +186198,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -185528,7 +186237,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -185567,7 +186277,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -185913,7 +186624,8 @@
      "yellow": 315,
      "grey": 335,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 295
      },
      "faction": "both",
      "confidence": "client-data",
@@ -185953,7 +186665,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -186361,7 +187074,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -186400,7 +187114,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -186441,7 +187156,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -186482,7 +187198,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -186523,7 +187240,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -186564,7 +187282,8 @@
      "yellow": 265,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -186604,7 +187323,8 @@
      "yellow": 265,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 250
      },
      "faction": "both",
      "confidence": "client-data",
@@ -189421,7 +190141,8 @@
      "yellow": 270,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -189463,7 +190184,8 @@
      "yellow": 285,
      "grey": 315,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -189754,7 +190476,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 270
      },
      "faction": "both",
      "confidence": "client-data",
@@ -189796,7 +190519,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -189837,7 +190561,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -189876,7 +190601,8 @@
      "yellow": 295,
      "grey": 315,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 275
      },
      "faction": "both",
      "confidence": "client-data",
@@ -189916,7 +190642,8 @@
      "yellow": 295,
      "grey": 315,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 275
      },
      "faction": "both",
      "confidence": "client-data",
@@ -189956,7 +190683,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -190432,7 +191160,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -190647,7 +191376,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -192151,7 +192881,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "trainer"
+      "type": "trainer",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -192369,7 +193100,8 @@
      "yellow": 295,
      "grey": 315,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 275
      },
      "faction": "both",
      "confidence": "client-data",
@@ -192409,7 +193141,8 @@
      "yellow": 295,
      "grey": 315,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 275
      },
      "faction": "both",
      "confidence": "client-data",
@@ -192449,7 +193182,8 @@
      "yellow": 265,
      "grey": 295,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -192490,7 +193224,8 @@
      "yellow": 270,
      "grey": 300,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 255
      },
      "faction": "both",
      "confidence": "client-data",
@@ -192527,7 +193262,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -192564,7 +193300,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -192602,7 +193339,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -192640,7 +193378,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -196972,7 +197711,8 @@
      "yellow": 300,
      "grey": 320,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 280
      },
      "faction": "both",
      "confidence": "client-data",
@@ -197013,7 +197753,8 @@
      "yellow": 290,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -197247,7 +197988,8 @@
      "yellow": 275,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -197287,7 +198029,8 @@
      "yellow": 275,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -197325,7 +198068,8 @@
      "yellow": 275,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -197367,7 +198111,8 @@
      "yellow": 290,
      "grey": 320,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 275
      },
      "faction": "both",
      "confidence": "client-data",
@@ -198242,7 +198987,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -198280,7 +199026,8 @@
      "yellow": 300,
      "grey": 320,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 280
      },
      "faction": "both",
      "confidence": "client-data",
@@ -198319,7 +199066,8 @@
      "yellow": 300,
      "grey": 320,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 280
      },
      "faction": "both",
      "confidence": "client-data",
@@ -198358,7 +199106,8 @@
      "yellow": 300,
      "grey": 320,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 280
      },
      "faction": "both",
      "confidence": "client-data",
@@ -198795,7 +199544,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -198835,7 +199585,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -198877,7 +199628,8 @@
      "yellow": 290,
      "grey": 320,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 275
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199109,7 +199861,8 @@
      "yellow": 300,
      "grey": 320,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 295
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199149,7 +199902,8 @@
      "yellow": 315,
      "grey": 335,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 295
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199190,7 +199944,8 @@
      "yellow": 305,
      "grey": 334,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199230,7 +199985,8 @@
      "yellow": 315,
      "grey": 335,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 295
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199270,7 +200026,8 @@
      "yellow": 305,
      "grey": 335,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199507,7 +200264,8 @@
      "yellow": 300,
      "grey": 320,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 280
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199548,7 +200306,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199589,7 +200348,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199629,7 +200389,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199670,7 +200431,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199711,7 +200473,8 @@
      "yellow": 300,
      "grey": 320,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 280
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199753,7 +200516,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199794,7 +200558,8 @@
      "yellow": 300,
      "grey": 320,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 280
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199835,7 +200600,8 @@
      "yellow": 300,
      "grey": 320,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 280
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199876,7 +200642,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199917,7 +200684,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199958,7 +200726,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -199999,7 +200768,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -200039,7 +200809,8 @@
      "yellow": 275,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -200080,7 +200851,8 @@
      "yellow": 275,
      "grey": 305,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 260
      },
      "faction": "both",
      "confidence": "client-data",
@@ -203662,7 +204434,8 @@
      "yellow": 295,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 295
      },
      "faction": "both",
      "confidence": "client-data",
@@ -204755,7 +205528,8 @@
      "yellow": 280,
      "grey": 310,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 265
      },
      "faction": "both",
      "confidence": "client-data",
@@ -204797,7 +205571,8 @@
      "yellow": 295,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 280
      },
      "faction": "both",
      "confidence": "client-data",
@@ -205379,7 +206154,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -205417,7 +206193,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -205457,7 +206234,8 @@
      "yellow": 305,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 285
      },
      "faction": "both",
      "confidence": "client-data",
@@ -205497,7 +206275,8 @@
      "yellow": 305,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 285
      },
      "faction": "both",
      "confidence": "client-data",
@@ -205762,7 +206541,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -205852,7 +206632,8 @@
      "yellow": 310,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 295
      },
      "faction": "both",
      "confidence": "client-data",
@@ -205892,7 +206673,8 @@
      "yellow": 295,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 280
      },
      "faction": "both",
      "confidence": "client-data",
@@ -205932,7 +206714,8 @@
      "yellow": 295,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 280
      },
      "faction": "both",
      "confidence": "client-data",
@@ -205974,7 +206757,8 @@
      "yellow": 295,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 280
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206014,7 +206798,8 @@
      "yellow": 295,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 280
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206089,7 +206874,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206128,7 +206914,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206166,7 +206953,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206206,7 +206994,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206248,7 +207037,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206289,7 +207079,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206713,7 +207504,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206751,7 +207543,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206789,7 +207582,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206831,7 +207625,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206873,7 +207668,8 @@
      "yellow": 305,
      "grey": 325,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 285
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206915,7 +207711,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -206954,7 +207751,8 @@
      "yellow": 310,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 290
      },
      "faction": "both",
      "confidence": "client-data",
@@ -217149,7 +217947,8 @@
      "yellow": 300,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 285
      },
      "faction": "both",
      "confidence": "client-data",
@@ -217189,7 +217988,8 @@
      "yellow": 300,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 285
      },
      "faction": "both",
      "confidence": "client-data",
@@ -217229,7 +218029,8 @@
      "yellow": 300,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 285
      },
      "faction": "both",
      "confidence": "client-data",
@@ -239021,7 +239822,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -239061,7 +239863,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -239101,7 +239904,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -239139,7 +239943,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -239178,7 +239983,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -239217,7 +240023,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -239256,7 +240063,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -239296,7 +240104,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -239336,7 +240145,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -239376,7 +240186,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -248691,7 +249502,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -251434,7 +252246,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -251475,7 +252288,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -251514,7 +252328,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -251554,7 +252369,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -252111,7 +252927,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -252151,7 +252968,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -252189,7 +253007,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -252278,7 +253097,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -252318,7 +253138,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -252358,7 +253179,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -252396,7 +253218,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -252434,7 +253257,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -252472,7 +253296,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -254133,7 +254958,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -254597,7 +255423,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "unknown"
+      "type": "unknown",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -255811,7 +256638,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -255851,7 +256679,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -257217,7 +258046,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -257763,7 +258593,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -257804,7 +258635,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -257845,7 +258677,8 @@
      "yellow": 315,
      "grey": 345,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -257886,7 +258719,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -257927,7 +258761,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -257968,7 +258803,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -258009,7 +258845,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -258050,7 +258887,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -258091,7 +258929,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -258130,7 +258969,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -258171,7 +259011,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -258459,7 +259300,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -258499,7 +259341,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "reputation"
+      "type": "reputation",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -260508,7 +261351,8 @@
      "grey": 360,
      "learn": {
       "type": "favor",
-      "favor": 240
+      "favor": 240,
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -263811,7 +264655,8 @@
      "yellow": 310,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -263853,7 +264698,8 @@
      "yellow": 310,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -263894,7 +264740,8 @@
      "yellow": 310,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -263936,7 +264783,8 @@
      "yellow": 310,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -263978,7 +264826,8 @@
      "yellow": 310,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -264018,7 +264867,8 @@
      "yellow": 310,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -264058,7 +264908,8 @@
      "yellow": 310,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -264101,7 +264952,8 @@
      "yellow": 310,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -264142,7 +264994,8 @@
      "yellow": 310,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -264183,7 +265036,8 @@
      "yellow": 310,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -264224,7 +265078,8 @@
      "yellow": 310,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -264265,7 +265120,8 @@
      "yellow": 310,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -264308,7 +265164,8 @@
      "yellow": 310,
      "grey": 325,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -264888,7 +265745,8 @@
      "yellow": 320,
      "grey": 350,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -266879,7 +267737,8 @@
      "yellow": 320,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -266915,7 +267774,8 @@
      "yellow": 320,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -266951,7 +267811,8 @@
      "yellow": 320,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -266987,7 +267848,8 @@
      "yellow": 320,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -267023,7 +267885,8 @@
      "yellow": 320,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -267059,7 +267922,8 @@
      "yellow": 320,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -267095,7 +267959,8 @@
      "yellow": 320,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -267131,7 +267996,8 @@
      "yellow": 320,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -267167,7 +268033,8 @@
      "yellow": 320,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -267203,7 +268070,8 @@
      "yellow": 320,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -267239,7 +268107,8 @@
      "yellow": 320,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -267275,7 +268144,8 @@
      "yellow": 320,
      "grey": 330,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -267844,7 +268714,8 @@
      "yellow": 320,
      "grey": 340,
      "learn": {
-      "type": "drop"
+      "type": "drop",
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",
@@ -267882,7 +268753,8 @@
      "grey": 340,
      "learn": {
       "type": "favor",
-      "favor": 360
+      "favor": 360,
+      "learnAt": 300
      },
      "faction": "both",
      "confidence": "client-data",

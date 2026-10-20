@@ -43,6 +43,8 @@ function open() {
     const seen = taught.get(profession.toLowerCase() + ':' + id);
     if (seen) return { type: 'trainer', text: 'Trainer, ' + coin(seen.cost) + ', learn at ' + seen.skill + ' (seen in game)', learnAt: seen.skill };
     const out = r ? learnOf(r.source) : learnOf(null);
+    // The skill it's learned at (orange), when the source text doesn't say it.
+    if (r && r.skill && r.skill[0] != null && out.learnAt == null) out.learnAt = r.skill[0];
     if (spell && unreleased[spell] && (out.type === 'unknown' || out.type === 'trainer')) return { type: 'unreleased', text: null, pattern: unreleased[spell] };
     return out;
   };

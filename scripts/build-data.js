@@ -227,7 +227,7 @@ if (fs.existsSync(path.join(root, 'data/gear.json'))) {
   const source = s => {
     const out = pick(s, SRC);
     if (out.faction === 'both') delete out.faction; // no faction = both
-    if (s.learn) out.learn = pick(s.learn, ['type', 'favor']);
+    if (s.learn) out.learn = pick(s.learn, ['type', 'favor', 'learnAt']);
     return out;
   };
   const totem = i => i.slot === 'Relic' && (i.equip || []).length && (i.req || 0) < 60;

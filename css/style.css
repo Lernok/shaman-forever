@@ -1402,6 +1402,10 @@ details[open] > .lw-head .lw-goals { display: none; }
 .lw-mat { font-size: 12px; line-height: 1.5; }
 .lw-mat .lw-chip { margin-right: 2px; }
 .lw-cost { font-size: 12px; color: var(--text-dim); }
+.gp-lw { display: block; font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+.gp-lw a { color: var(--spec-color); }
+.gp-lw .lw-cost { display: block; }
+.lw-early > span:first-child { flex-basis: 100%; }
 .lw-cheap { color: #6cc070; }
 .lw-mid { color: var(--warn); }
 .lw-dear { color: #e06c5a; }

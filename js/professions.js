@@ -201,7 +201,7 @@
     const GP = window.GearPath;
     const s = st.pick.source;
     return '<div class="gp-step"><span class="gp-lv">' + st.level + '</span><span class="gp-slot">' + GP.slotName(st.pick.slot) + '</span>' +
-      '<div class="gp-main">' + UI.itemLink(st.pick.item) + '<span class="wp-sub">' + s.profession + ' · ' + t('pr.plan.skill', { n: s.yellow }) +
+      '<div class="gp-main">' + UI.itemLink(st.pick.item) + '<span class="wp-sub">' + s.profession + ' · ' + t('pr.plan.skill', { n: (s.learn || {}).learnAt || s.yellow }) +
       (st.pick.access === 'favor' ? ' · ' + t('pr.plan.favorCost', { n: (s.learn || {}).favor || '?' }) : '') + '</span>' +
       '<span class="gp-why">' + GP.why(st) + '</span></div></div>';
   }
@@ -216,12 +216,11 @@
   const SKIN_LEVELS = ['few', 'normal', 'all'];
   // A stage of the plan covers at least this many levels.
   const STAGE_MIN = 3;
-  function renderLeveling() {
+  // What the Leatherworking plan knows about your pieces: when you make each
+  // one, what it needs and what it costs. Built for the plan below and for
+  // Equipo › Tu camino (each Leatherworking piece says how to make it).
+  function lwModel() {
     const mine = myProfs();
-    let html = '<p class="note-text" style="margin-top:16px">' + t('pr.lw.intro') + '</p>';
-    if (!mine.includes('Leatherworking')) {
-      return html + '<p class="note-text">' + t('pr.lw.noLw') + '</p><button class="btn" data-open-setup>' + t('home.plan.pickProfs') + '</button>';
-    }
     const SK = window.SKINNING_DATA;
     const skinning = mine.includes('Skinning');
     const intensity = SKIN_LEVELS.includes(UI.store.get('lwSkin', 'normal')) ? UI.store.get('lwSkin', 'normal') : 'normal';
@@ -296,7 +295,7 @@
     const PR = SK.prices;
     const coin = c => (c >= 10000 ? Math.floor(c / 10000) + 'g ' : '') + (c % 10000 >= 100 ? Math.floor(c % 10000 / 100) + 's' : (c < 100 ? c + 'c' : ''));
     const buyCost = (own, lvl) => {
-      if (farm || !PR || !own.length) return '';
+      if (!PR || !own.length) return '';
       let total = 0;
       let missing = 0;
       own.forEach(([m, n]) => { if (PR.p[m]) total += PR.p[m] * n; else missing++; });
@@ -313,20 +312,56 @@
       const lvl = (pieceOf.get(id) || {}).alone || st.level;
       return '<span class="lw-piece">' + UI.itemLink(st.pick.item) + '<span class="dim"> ' + window.GearPath.slotName(st.pick.slot) +
         (r && r.how === 'f' ? ' · ' + t('pr.plan.favorCost', { n: r.favor || 30 }) : '') + '</span>' +
-        (own.length ? '<span class="lw-mats">' + own.map(([m, n]) => whereMat(m, n, lvl)).join('') + buyCost(own, lvl) + '</span>' : '') + '</span>';
+        (own.length ? '<span class="lw-mats">' + own.map(([m, n]) => whereMat(m, n, lvl)).join('') + (farm ? '' : buyCost(own, lvl)) + '</span>' : '') + '</span>';
     };
     // Having a piece at the level your gear path suggests it, when skinning alone is
     // later: offered for the pieces that matter (blue, Favor, or from level 12), not
     // the first handstitched ones.
     const EARLY_FROM = 12;
+    const skillAt = lvl => (base.rows[Math.min(base.rows.length, Math.max(1, lvl)) - 1] || {}).skill || 1;
     const early = id => {
       const p = pieceOf.get(id);
       const st = stepOf.get(id);
       const r = recipe.get(id);
-      if (!p || !Object.keys(p.extra).length || (skinning && p.alone && p.alone - p.level < 2)) return '';
-      if (skinning && p.level < EARLY_FROM && st.pick.item.quality < 3 && !(r && r.how === 'f')) return '';
-      return '<div class="lw-early">' + t(skinning ? 'pr.lw.earlier' : 'pr.lw.onTimeBuy', { n: p.level }) + ' ' + chips(p.extra) + '</div>';
+      if (!p || !r || !Object.keys(p.extra).length || (skinning && p.alone && p.alone - p.level < 2)) return '';
+      if (skinning && p.alone && p.level < EARLY_FROM && st.pick.item.quality < 3 && r.how !== 'f') return '';
+      const vars = { skill: r.skill[0], alone: p.alone, n: p.level, cap: BETA_CAP, has: skillAt(BETA_CAP) };
+      const key = !skinning ? 'pr.lw.buyNoSkin' : p.alone ? 'pr.lw.buyEarly' : 'pr.lw.buyLate';
+      return '<div class="lw-early"><span>' + t(key, vars) + '</span> ' + chips(p.extra) + buyCost(Object.entries(p.extra).map(([m, n]) => [Number(m), n]), p.level) + '</div>';
     };
+    return { SK, mine, skinning, intensity, race, farm, steps, stepOf, base, pieces, pieceOf, recipe, name, chip, chips, row, extraMats, whereMat, buyCost, piece, early, skillAt };
+  }
+
+  // A Leatherworking piece of your gear path, for its row in Equipo › Tu
+  // camino: the skill it asks and when you have it, its rare materials and
+  // what buying them costs, and a link to the plan.
+  // Built again when what it depends on changes (your Shaman, the settings).
+  let lwCache = null;
+  let lwKey = '';
+  function lwHow(st) {
+    if (!window.SKINNING_DATA || (st.pick.source || {}).profession !== 'Leatherworking' || !myProfs().includes('Leatherworking')) return '';
+    const key = JSON.stringify([Site.spec, Site.faction, Site.race, myProfs(), UI.store.get('lwSkin', 'normal'), window.GearPath.farm(), UI.store.get('gpDrops', false)]);
+    if (!lwCache || key !== lwKey) { lwCache = lwModel(); lwKey = key; }
+    const M = lwCache;
+    const id = st.pick.item.id;
+    const r = M.recipe.get(id);
+    if (!r) return '';
+    const p = M.pieceOf.get(id) || {};
+    const own = M.extraMats(r);
+    const when = !M.skinning ? '' : p.alone ? t('pr.lw.how.when', { n: p.alone }) : t('pr.lw.how.never', { cap: BETA_CAP });
+    const mats = own.length ? t('pr.lw.how.mats', { list: own.map(([m, n]) => n + ' ' + M.name(m)).join(', ') }) : '';
+    const cost = !M.farm && own.length ? M.buyCost(own, p.alone || st.level) : '';
+    // The source line above already says the skill: this one, when and what else.
+    return '<span class="gp-lw">' + [when, mats, '<a href="#Profesiones/plan">' + t('pr.lw.how.plan') + '</a>'].filter(Boolean).join(' · ') + cost + '</span>';
+  }
+
+  function renderLeveling() {
+    let html = '<p class="note-text" style="margin-top:16px">' + t('pr.lw.intro') + '</p>';
+    if (!myProfs().includes('Leatherworking')) {
+      return html + '<p class="note-text">' + t('pr.lw.noLw') + '</p><button class="btn" data-open-setup>' + t('home.plan.pickProfs') + '</button>';
+    }
+    const M = lwModel();
+    const { SK, skinning, intensity, farm, base, pieces, name, chips, row, piece, early } = M;
 
     html += '<div class="wp-controls" style="margin-top:12px">' + (skinning
       ? '<span class="ctl-label">' + t('pr.lw.skinLabel') + '</span><div class="seg">' + SKIN_LEVELS.map(k =>
@@ -521,6 +556,7 @@
   }
 
   window.Professions = {
+    lwHow,
     render(target, uiHelpers) {
       container = target;
       ui = uiHelpers;

@@ -39,7 +39,7 @@
       case 'route': return t('gp.src.route', { quest: s.quest, zone: s.zone || '?' });
       case 'quest': return t('gp.src.quest', { quest: s.quest, zone: s.zone || '?' });
       case 'dquest': return t('gp.src.dquest', { quest: s.quest, zone: s.dungeonZone || s.zone || '?' });
-      case 'crafted': return t((s.learn || {}).type === 'unreleased' ? 'gp.src.unreleased' : 'gp.src.crafted', { prof: s.profession, skill: s.yellow });
+      case 'crafted': return t((s.learn || {}).type === 'unreleased' ? 'gp.src.unreleased' : 'gp.src.crafted', { prof: s.profession, skill: (s.learn || {}).learnAt || s.yellow });
       case 'favor': return t('gp.src.favor', { prof: s.profession, n: (s.learn || {}).favor || '?' });
       case 'vendor': return t('gp.src.vendor', { npc: s.npc, zone: s.zone || '?' });
       case 'boss': return t('gp.src.boss', { npc: s.npc, zone: s.zone || '?' });
@@ -99,6 +99,7 @@
       '<span class="gp-slot">' + (star ? '<span class="gp-star" title="' + t('gp.starTitle') + '">★</span>' : '') + slotName(st.pick.slot) + '</span>' +
       '<div class="gp-main">' + UI.itemLink(i) + '<span class="wp-sub">' + sourceText(st.pick) +
       (st.pick.access === 'quest' ? ' · <span class="gp-off-tag">' + t('gp.offRoute') + '</span>' : '') + '</span>' +
+      (st.pick.access === 'crafted' || st.pick.access === 'favor' ? (window.Professions && window.Professions.lwHow ? window.Professions.lwHow(st) : '') : '') +
       (st.alt || state.detail ? '<span class="gp-why">' + why(st) + '</span>' : '') + reportLink(st) + '</div></div>';
   }
 
