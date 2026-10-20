@@ -1833,6 +1833,125 @@ local function noteRewardXp()
   pcall(noteXp, id, xp)
 end
 
+-- Recipe scanner: what profession trainers and vendors offer here, and the
+-- color of each recipe at your skill. Saved account-wide in
+-- ShamanForeverDB.scan for scripts/import-scan.js (the site's recipe
+-- sources come from web data that misses Forever's own vendors).
+--   trainers/vendors[npc id] = { n, z, x, y, f (faction), t (time), list }
+--   trainer list[service name] = { item, skill, prof, level, cost, kind }
+--   vendor list[item id] = { name, price, cost = { {n, what} }, stock }
+--   colors[profession][item id][kind] = { lowest skill, highest skill }
+local function npcHere()
+  local guid = readable(UnitGUID and UnitGUID("npc"))
+  local id = guid and tonumber((select(6, strsplit("-", guid))))
+  if not id then return end
+  local x, y
+  local map = C_Map and C_Map.GetBestMapForUnit and readable(C_Map.GetBestMapForUnit("player"))
+  local ok, pos = pcall(function() return map and C_Map.GetPlayerMapPosition(map, "player") end)
+  if ok and pos then
+    local px, py = pos:GetXY()
+    px, py = readable(px), readable(py)
+    if px and py then x, y = math.floor(px * 1000 + 0.5) / 10, math.floor(py * 1000 + 0.5) / 10 end
+  end
+  return id, { n = readable(UnitName("npc")), z = here(), x = x, y = y, f = myFaction(), t = time() }
+end
+local function itemIdOf(link) return tonumber(tostring(link or ""):match("item:(%d+)")) end
+local function scanStore(kind, id, info, list)
+  db.scan = db.scan or {}
+  db.scan[kind] = db.scan[kind] or {}
+  local old = db.scan[kind][id]
+  info.list = list
+  db.scan[kind][id] = info
+  local n = 0
+  for _ in pairs(list) do n = n + 1 end
+  log("scan", kind .. " " .. tostring(info.n) .. " " .. id .. ": " .. n)
+  if n > 0 and not old then say(string.format(L().scanSaved, n, tostring(info.n))) end
+end
+
+-- Every service of a profession trainer, the ones you can't learn yet too
+-- (the filters are opened for the scan and put back).
+local function scanTrainer()
+  if not (IsTradeskillTrainer and IsTradeskillTrainer() and GetNumTrainerServices) then return end
+  local id, info = npcHere()
+  if not id then return end
+  local filters = {}
+  if GetTrainerServiceTypeFilter and SetTrainerServiceTypeFilter then
+    for _, f in ipairs({ "available", "unavailable", "used" }) do
+      filters[f] = GetTrainerServiceTypeFilter(f)
+      if not filters[f] then SetTrainerServiceTypeFilter(f, 1) end
+    end
+  end
+  local list = {}
+  for i = 1, (readable(GetNumTrainerServices()) or 0) do
+    local name, sub, kind = GetTrainerServiceInfo(i)
+    if name and kind ~= "header" then
+      local e = { kind = kind, sub = sub ~= "" and sub or nil }
+      e.item = GetTrainerServiceItemLink and itemIdOf(GetTrainerServiceItemLink(i))
+      if GetTrainerServiceSkillReq then e.prof, e.skill = GetTrainerServiceSkillReq(i) end
+      e.level = GetTrainerServiceLevelReq and readable(GetTrainerServiceLevelReq(i))
+      e.cost = GetTrainerServiceCost and readable(GetTrainerServiceCost(i))
+      list[name .. (e.sub and " (" .. e.sub .. ")" or "")] = e
+    end
+  end
+  for f, on in pairs(filters) do
+    if not on then SetTrainerServiceTypeFilter(f, 0) end
+  end
+  scanStore("trainers", id, info, list)
+end
+
+-- A vendor's recipes (patterns, plans, formulas...), with their price in
+-- money and in anything else (Merchant's Favor, reputation tokens).
+local function scanVendor()
+  if not (GetMerchantNumItems and GetMerchantItemLink and GetItemInfoInstant) then return end
+  local id, info = npcHere()
+  if not id then return end
+  local list = {}
+  for i = 1, (readable(GetMerchantNumItems()) or 0) do
+    local item = itemIdOf(GetMerchantItemLink(i))
+    local classID = item and select(6, GetItemInfoInstant(item))
+    if classID == 9 then
+      local name, price, stock
+      if C_MerchantFrame and C_MerchantFrame.GetItemInfo then
+        local m = C_MerchantFrame.GetItemInfo(i) or {}
+        name, price, stock = m.name, m.price, m.numAvailable
+      else
+        local _
+        name, _, price, _, stock = GetMerchantItemInfo(i)
+      end
+      local e = { name = name, price = readable(price), stock = stock and stock >= 0 and stock or nil }
+      for j = 1, (GetMerchantItemCostInfo and GetMerchantItemCostInfo(i) or 0) do
+        local _, n, link, currency = GetMerchantItemCostItem(i, j)
+        e.cost = e.cost or {}
+        e.cost[#e.cost + 1] = { n, currency or itemIdOf(link) or tostring(link) }
+      end
+      list[item] = e
+    end
+  end
+  if next(list) then scanStore("vendors", id, info, list) end
+end
+
+-- Your recipes' colors at your skill: where each one turns yellow, green, grey.
+local function scanColors()
+  if not (GetTradeSkillLine and GetNumTradeSkills) then return end
+  local prof, rank = GetTradeSkillLine()
+  rank = readable(rank)
+  if not (prof and rank and prof ~= "UNKNOWN") then return end
+  db.scan = db.scan or {}
+  db.scan.colors = db.scan.colors or {}
+  local c = db.scan.colors[prof] or {}
+  db.scan.colors[prof] = c
+  for i = 1, (readable(GetNumTradeSkills()) or 0) do
+    local _, kind = GetTradeSkillInfo(i)
+    local item = kind and kind ~= "header" and kind ~= "subheader" and GetTradeSkillItemLink and itemIdOf(GetTradeSkillItemLink(i))
+    if item then
+      c[item] = c[item] or {}
+      local r = c[item][kind] or { rank, rank }
+      r[1], r[2] = math.min(r[1], rank), math.max(r[2], rank)
+      c[item][kind] = r
+    end
+  end
+end
+
 -- The trainer panel (further down).
 local trainerPanel, paintTrainer, showTrainerPanel
 -- The profession window's panel (further down).
@@ -1875,12 +1994,14 @@ onEvent = function(self, event, ...)
     pcall(self.RegisterEvent, self, "TRADE_SKILL_UPDATE")
     pcall(self.RegisterEvent, self, "TRADE_SKILL_CLOSE")
     pcall(self.RegisterEvent, self, "LEARNED_SPELL_IN_TAB")
+    pcall(self.RegisterEvent, self, "MERCHANT_SHOW")
   elseif event == "CHARACTER_POINTS_CHANGED" or event == "LEARNED_SPELL_IN_TAB" then
     if frame and frame.live then refresh() end
   elseif event == "TRAINER_SHOW" then
     cdb.trainedAt = UnitLevel("player")
     -- The trainer's window lays out a moment after the event.
     C_Timer.After(0.1, function() guarded("trainer", showTrainerPanel) end)
+    C_Timer.After(0.3, function() guarded("scan", scanTrainer) end)
     if frame and frame.live then refresh() end
   elseif event == "TRAINER_UPDATE" then
     if trainerPanel and trainerPanel:IsShown() then pcall(paintTrainer) end
@@ -1889,8 +2010,11 @@ onEvent = function(self, event, ...)
     if frame and frame.live then refresh() end
   elseif event == "TRADE_SKILL_SHOW" then
     C_Timer.After(0.1, function() guarded("crafts", showCraftPanel) end)
+    C_Timer.After(0.3, function() guarded("scan", scanColors) end)
   elseif event == "TRADE_SKILL_UPDATE" then
     if craftPanel and craftPanel:IsShown() then guarded("crafts", paintCrafts) end
+  elseif event == "MERCHANT_SHOW" then
+    C_Timer.After(0.3, function() guarded("scan", scanVendor) end)
   elseif event == "TRADE_SKILL_CLOSE" then
     if craftPanel then craftPanel:Hide() end
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then

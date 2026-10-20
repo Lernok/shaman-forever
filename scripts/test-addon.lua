@@ -200,6 +200,50 @@ if os.getenv("TRADE") then
   show("SÍ", yes) show("PRONTO", soon) show("NO VALE", short) print("  no mejoran: " .. no)
   ev:fire("TRADE_SKILL_SHOW")
 end
+-- The recipe scanner (SCAN=1): a Leatherworking trainer with a recipe you
+-- can't learn yet hidden by its filter, a vendor selling two patterns and a
+-- reagent, and the profession window's colors.
+if os.getenv("SCAN") then
+  function strsplit(sep, s) local out = {} for p in (s .. sep):gmatch("(.-)%" .. sep) do out[#out + 1] = p end return unpack(out) end
+  function UnitGUID() return "Creature-0-1-1-1-3365-00001" end
+  function UnitName() return "Karolek" end
+  C_Map.GetBestMapForUnit = function() return 1411 end
+  C_Map.GetPlayerMapPosition = function() return { GetXY = function() return 0.4123, 0.5678 end } end
+  local services = { { "Leatherworking", "", "header" }, { "Light Leather", "", "used", 2318, 1, 0 },
+    { "Murloc Scale Shoes", "", "available", 252426, 35, 500 }, { "Medium Leather", "", "unavailable", 2319, 75, 1000 } }
+  local filter = { available = true, unavailable = false, used = false }
+  local function visible() local out = {} for _, s in ipairs(services) do if s[3] == "header" or filter[s[3]] then out[#out + 1] = s end end return out end
+  function IsTradeskillTrainer() return true end
+  function GetTrainerServiceTypeFilter(f) return filter[f] end
+  function SetTrainerServiceTypeFilter(f, on) filter[f] = on == 1 end
+  function GetNumTrainerServices() return #visible() end
+  function GetTrainerServiceInfo(i) local s = visible()[i] return s[1], s[2], s[3] end
+  function GetTrainerServiceItemLink(i) return "|Hitem:" .. visible()[i][4] .. ":0|h[x]|h" end
+  function GetTrainerServiceSkillReq(i) return "Leatherworking", visible()[i][5], true end
+  function GetTrainerServiceLevelReq() return 10 end
+  function GetTrainerServiceCost(i) return visible()[i][6] end
+  ev:fire("TRAINER_SHOW")
+  print("filtros después:", filter.available, filter.unavailable, filter.used)
+  local wares = { { 252425, 9, "Pattern: Dark Leather Boots", 500 }, { 249500, 9, "Pattern: Something", 0, { 30, "Merchant's Favor" } }, { 2320, 7, "Coarse Thread", 10 } }
+  function GetMerchantNumItems() return #wares end
+  function GetMerchantItemLink(i) return "|Hitem:" .. wares[i][1] .. ":0|h[x]|h" end
+  function GetItemInfoInstant(id) for _, w in ipairs(wares) do if w[1] == id then return id, "", "", "", 0, w[2], 0 end end end
+  function GetMerchantItemInfo(i) return wares[i][3], 0, wares[i][4], 1, -1 end
+  function GetMerchantItemCostInfo(i) return wares[i][5] and 1 or 0 end
+  function GetMerchantItemCostItem(i) return 0, wares[i][5][1], nil, wares[i][5][2] end
+  ev:fire("MERCHANT_SHOW")
+  function GetTradeSkillLine() return "Leatherworking", 40, 75 end
+  ev:fire("TRADE_SKILL_SHOW")
+  local function show(t, pad)
+    local keys = {}
+    for k in pairs(t) do keys[#keys + 1] = k end
+    table.sort(keys, function(a, b) return tostring(a) < tostring(b) end)
+    for _, k in ipairs(keys) do
+      if type(t[k]) == "table" then print(pad .. tostring(k) .. ":") show(t[k], pad .. "  ") else print(pad .. tostring(k) .. " = " .. tostring(t[k])) end
+    end
+  end
+  show(ShamanForeverDB.scan or {}, "SCAN ")
+end
 -- Quest XP the game pays, kept for the route planner (turn-in event).
 ev:fire("QUEST_TURNED_IN", 96659, 410, 0)
 print("qxp 96659:", ShamanForeverDB.qxp and ShamanForeverDB.qxp[96659] and table.concat(ShamanForeverDB.qxp[96659], " @ nivel "))
@@ -207,3 +251,4 @@ SlashCmdList.SHAMANFOREVER("ayuda")
 SlashCmdList.SHAMANFOREVER("dondeestoy")
 SlashCmdList.SHAMANFOREVER("registro")
 print("log:", #ShamanForeverCharDB.log, ShamanForeverCharDB.log[1])
+if os.getenv("SCAN") then for _, l in ipairs(ShamanForeverCharDB.log) do if l:find("|scan|") or l:find("|error|") then print("LOG", l) end end end
