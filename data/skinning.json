@@ -2966,6 +2966,23 @@
    "how": "t"
   },
   {
+   "id": 279978,
+   "name": "Camp Tent",
+   "skill": [
+    20,
+    20,
+    22,
+    25
+   ],
+   "mats": [
+    [
+     2318,
+     5
+    ]
+   ],
+   "how": "t"
+  },
+  {
    "id": 4237,
    "name": "Handstitched Leather Belt",
    "skill": [
@@ -3050,6 +3067,56 @@
    "how": "t"
   },
   {
+   "id": 252424,
+   "name": "Black Whelp Slippers",
+   "skill": [
+    35,
+    40,
+    40,
+    40
+   ],
+   "mats": [
+    [
+     2318,
+     12
+    ],
+    [
+     4231,
+     2
+    ],
+    [
+     7286,
+     2
+    ]
+   ],
+   "how": "t"
+  },
+  {
+   "id": 252425,
+   "name": "Dark Leather Boots",
+   "skill": [
+    35,
+    40,
+    40,
+    40
+   ],
+   "mats": [
+    [
+     2318,
+     24
+    ],
+    [
+     4231,
+     2
+    ],
+    [
+     4340,
+     1
+    ]
+   ],
+   "how": "t"
+  },
+  {
    "id": 2300,
    "name": "Embossed Leather Vest",
    "skill": [
@@ -3065,6 +3132,56 @@
     ],
     [
      2320,
+     4
+    ]
+   ],
+   "how": "t"
+  },
+  {
+   "id": 252427,
+   "name": "Moonglow Boots",
+   "skill": [
+    35,
+    40,
+    40,
+    40
+   ],
+   "mats": [
+    [
+     2318,
+     12
+    ],
+    [
+     4231,
+     2
+    ],
+    [
+     5498,
+     1
+    ]
+   ],
+   "how": "t"
+  },
+  {
+   "id": 252426,
+   "name": "Murloc Scale Shoes",
+   "skill": [
+    35,
+    40,
+    40,
+    40
+   ],
+   "mats": [
+    [
+     2318,
+     12
+    ],
+    [
+     4231,
+     2
+    ],
+    [
+     5784,
      4
     ]
    ],
@@ -5038,6 +5155,181 @@
     [
      2321,
      2
+    ]
+   ],
+   "how": "t"
+  },
+  {
+   "id": 252523,
+   "name": "Mender's Leather Belt",
+   "skill": [
+    150,
+    155,
+    155,
+    155
+   ],
+   "mats": [
+    [
+     4234,
+     8
+    ],
+    [
+     4233,
+     2
+    ],
+    [
+     5500,
+     1
+    ]
+   ],
+   "how": "t"
+  },
+  {
+   "id": 252459,
+   "name": "Prowler's Leather Belt",
+   "skill": [
+    150,
+    155,
+    155,
+    155
+   ],
+   "mats": [
+    [
+     4234,
+     8
+    ],
+    [
+     4233,
+     2
+    ],
+    [
+     1529,
+     1
+    ]
+   ],
+   "how": "t"
+  },
+  {
+   "id": 252461,
+   "name": "Skirmisher's Leather Belt",
+   "skill": [
+    150,
+    155,
+    155,
+    155
+   ],
+   "mats": [
+    [
+     4234,
+     8
+    ],
+    [
+     4233,
+     2
+    ],
+    [
+     3864,
+     1
+    ]
+   ],
+   "how": "t"
+  },
+  {
+   "id": 252520,
+   "name": "Skulker's Leather Belt",
+   "skill": [
+    150,
+    155,
+    155,
+    155
+   ],
+   "mats": [
+    [
+     4234,
+     8
+    ],
+    [
+     4233,
+     2
+    ],
+    [
+     3182,
+     1
+    ]
+   ],
+   "how": "t"
+  },
+  {
+   "id": 252522,
+   "name": "Skycaller's Leather Belt",
+   "skill": [
+    150,
+    155,
+    155,
+    155
+   ],
+   "mats": [
+    [
+     4234,
+     8
+    ],
+    [
+     4233,
+     2
+    ],
+    [
+     7070,
+     1
+    ]
+   ],
+   "how": "t"
+  },
+  {
+   "id": 252521,
+   "name": "Stalker's Leather Belt",
+   "skill": [
+    150,
+    155,
+    155,
+    155
+   ],
+   "mats": [
+    [
+     4234,
+     8
+    ],
+    [
+     4233,
+     2
+    ],
+    [
+     7069,
+     1
+    ]
+   ],
+   "how": "t"
+  },
+  {
+   "id": 252460,
+   "name": "Warden's Leather Belt",
+   "skill": [
+    150,
+    155,
+    155,
+    155
+   ],
+   "mats": [
+    [
+     4234,
+     8
+    ],
+    [
+     4233,
+     2
+    ],
+    [
+     7067,
+     1
     ]
    ],
    "how": "t"
@@ -7560,6 +7852,7 @@
   "5498": "Small Lustrous Pearl",
   "5500": "Iridescent Pearl",
   "5739": "Barbaric Harness",
+  "5784": "Slimy Murloc Scale",
   "5957": "Handstitched Leather Vest",
   "5961": "Dark Leather Pants",
   "5962": "Guardian Pants",
@@ -7580,6 +7873,7 @@
   "7281": "Light Leather Bracers",
   "7282": "Light Leather Pants",
   "7285": "Nimble Leather Gloves",
+  "7286": "Black Whelp Scale",
   "7348": "Fletcher's Gloves",
   "7371": "Heavy Quiver",
   "7372": "Heavy Leather Ammo Pouch",
@@ -7635,6 +7929,10 @@
   "249427": "Pristine Leather",
   "249428": "Pristine Hide",
   "249429": "Pristine Scale",
+  "252424": "Black Whelp Slippers",
+  "252425": "Dark Leather Boots",
+  "252426": "Murloc Scale Shoes",
+  "252427": "Moonglow Boots",
   "252428": "Brawler's Leather Belt",
   "252429": "Trapper's Leather Belt",
   "252430": "Defender's Leather Belt",
@@ -7653,6 +7951,9 @@
   "252451": "Totemic Leather Tunic",
   "252457": "Defender's Leather Kilt",
   "252458": "Totemic Leather Leggings",
+  "252459": "Prowler's Leather Belt",
+  "252460": "Warden's Leather Belt",
+  "252461": "Skirmisher's Leather Belt",
   "252463": "Forceful Thick Armor Kit",
   "252468": "Prowler's Leather Boots",
   "252469": "Skulker's Leather Boots",
@@ -7683,6 +7984,10 @@
   "252517": "Trapper's Leather Legguards",
   "252518": "Stormrider's Leather Kilt",
   "252519": "Wisdom's Leather Leggings",
+  "252520": "Skulker's Leather Belt",
+  "252521": "Stalker's Leather Belt",
+  "252522": "Skycaller's Leather Belt",
+  "252523": "Mender's Leather Belt",
   "252524": "Prowler's Leather Gloves",
   "252525": "Skulker's Leather Gloves",
   "252526": "Stalker's Leather Gloves",
@@ -7715,7 +8020,8 @@
   "252588": "Stalker's Mail Belt",
   "252589": "Skycaller's Mail Belt",
   "252590": "Skirmisher's Mail Belt",
-  "252591": "Mender's Mail Belt"
+  "252591": "Mender's Mail Belt",
+  "279978": "Camp Tent"
  },
  "icons": {
   "783": "inv_misc_pelt_wolf_ruin_02",
@@ -7849,6 +8155,10 @@
   "249427": "item_pristinehide",
   "249428": "inv_leatherworking_90_leatherhide",
   "249429": "inv_misc_monsterscales_09",
+  "252424": "inv_boots_leather_05red",
+  "252425": "inv_boots_05",
+  "252426": "inv_boots_cloth_14",
+  "252427": "inv_boots_cloth_03",
   "252428": "inv_belt_04",
   "252429": "inv_belt_05",
   "252430": "inv_belt_24",
@@ -7867,6 +8177,9 @@
   "252451": "inv_chest_leather_02",
   "252457": "inv_kilt_cloth_04v4",
   "252458": "inv_pants_01",
+  "252459": "inv_belt_43",
+  "252460": "inv_belt_06",
+  "252461": "inv_belt_37a",
   "252463": "inv_misc_armorkit_07",
   "252468": "inv_boots_chain_06",
   "252469": "inv_boots_cloth_25purple",
@@ -7897,6 +8210,10 @@
   "252517": "inv_pants_05",
   "252518": "inv_kilt_cloth_01",
   "252519": "inv_pants_02",
+  "252520": "inv_belt_37b",
+  "252521": "inv_belt_25",
+  "252522": "inv_belt_39a",
+  "252523": "inv_belt_26",
   "252524": "inv_gauntlets_18",
   "252525": "inv_gauntlets_22",
   "252526": "inv_gauntlets_51",
@@ -7929,6 +8246,7 @@
   "252588": "inv_belt_17",
   "252589": "inv_belt_22",
   "252590": "inv_belt_39c",
-  "252591": "inv_belt_37c"
+  "252591": "inv_belt_37c",
+  "279978": "inv_misc_leatherscrap_01"
  }
 }

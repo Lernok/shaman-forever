@@ -57,6 +57,7 @@
       .replace(/^Schematic\b/, 'Esquema').replace(/^Recipe\b/, 'Receta')
       .replace(/ for (\d+) Merchant.s Favor/, ' por $1 de Merchant\'s Favor')
       .replace(/^Trainer, (.*), learn at (≈?\d+)/, 'Entrenador, $1, se aprende con $2')
+      .replace(/ \(seen in game\)/,' (visto en el juego)')
       .replace(/^Known from the start/, 'Se conoce desde el principio')
       .replace(/[Ss]ource not found yet/, 'fuente todavía desconocida')
       .replace(/, binds on pickup/, ', se liga al recogerlo')

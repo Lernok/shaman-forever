@@ -217,7 +217,7 @@ if os.getenv("SCAN") then
   function GetTrainerServiceTypeFilter(f) return filter[f] end
   function SetTrainerServiceTypeFilter(f, on) assert(type(on) == "boolean", "Missing on/off parameter") filter[f] = on end
   function GetNumTrainerServices() return #visible() end
-  function GetTrainerServiceInfo(i) local s = visible()[i] return s[1], s[2], s[3] end
+  function GetTrainerServiceInfo(i) local s = visible()[i] return s[1], s[3], 132539 end
   function GetTrainerServiceItemLink(i) return "|Hitem:" .. visible()[i][4] .. ":0|h[x]|h" end
   function GetTrainerServiceSkillReq(i) return "Leatherworking", visible()[i][5], true end
   function GetTrainerServiceLevelReq() return 10 end

@@ -22,7 +22,7 @@ const fs = require('fs');
 const path = require('path');
 const { parseCSV } = require('./lib/csv');
 const { parseLua } = require('./lib/questie');
-const { learnOf } = require('./lib/recipes');
+const RECIPES = require('./lib/recipes');
 const { readJSON, writeJSON } = require('./lib/files');
 const http = require('./lib/http');
 
@@ -125,9 +125,11 @@ function skinnedFrom(html) {
 
   // Leatherworking recipes: trainer ('t'), known at the start ('t'), Merchant's Favor ('f').
   const recipes = readJSON('data/recipes.json').professions.leatherworking;
+  // The same classifier as the gear pages (it reads the addon's in-game scan too).
+  const R = RECIPES.open();
   const outRecipes = [];
   Object.values(recipes).forEach(r => {
-    const L = learnOf(r.source);
+    const L = r.itemId ? R.learn('Leatherworking', r.itemId, r.name) : RECIPES.learnOf(r.source);
     const how = L.type === 'trainer' ? 't' : L.type === 'favor' ? 'f' : null;
     if (!how || !r.itemId || !r.mats || !r.mats.length || r.skill.some(s => s == null) || r.skill[0] > 300) return;
     outRecipes.push({ id: r.itemId, name: r.name, skill: r.skill, mats: r.mats, how, favor: L.favor });

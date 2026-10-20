@@ -48,6 +48,14 @@ for (const f of files) {
   const scan = JSON.parse(execFileSync(lua, [tmp, f], { encoding: 'utf8', maxBuffer: 64 << 20 }));
   for (const kind of ['trainers', 'vendors']) {
     for (const [id, v] of Object.entries(scan[kind] || {})) {
+      // 0.24.1 read Forever's trainer columns (name, kind, icon) as (name, rank, kind).
+      if (kind === 'trainers') {
+        const list = {};
+        for (const [name, e] of Object.entries(v.list || {})) {
+          if (typeof e.kind === 'number' && e.sub) { e.kind = e.sub; delete e.sub; list[name.replace(/ \((available|unavailable|used)\)$/, '')] = e; } else list[name] = e;
+        }
+        v.list = list;
+      }
       if (kind === 'vendors') Object.values(v.list || {}).forEach(e => { if (e.cost) e.cost = arr(e.cost).map(arr); });
       if (!merged[kind][id] || (merged[kind][id].t || 0) <= (v.t || 0)) merged[kind][id] = v;
     }
@@ -89,7 +97,7 @@ for (const [id, v] of Object.entries(merged.trainers)) {
       if (!/^Trainer|Known from the start/.test(w.source)) notes.push('la web dice: ' + w.source);
       if (e.skill != null && w.skill && w.skill[0] !== e.skill) notes.push('web: habilidad ' + w.skill[0]);
     }
-    console.log('  ' + String(e.skill ?? '?').padStart(3) + '  ' + name + ' · ' + coin(e.cost || 0) + ' · ' + e.kind + (notes.length ? '   <-- ' + notes.join('; ') : ''));
+    console.log('  ' + String(e.skill ?? '?').padStart(3) + '  ' + name + ' · ' + coin(e.cost || 0) + ' · ' + ({ used: 'aprendida', available: 'disponible', unavailable: 'te falta habilidad' }[e.kind] || e.kind) + (notes.length ? '   <-- ' + notes.join('; ') : ''));
   }
 }
 for (const [id, v] of Object.entries(merged.vendors)) {

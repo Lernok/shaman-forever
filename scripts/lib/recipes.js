@@ -18,10 +18,21 @@ function learnOf(source) {
   return out;
 }
 
+const coin = c => ((c >= 10000 ? Math.floor(c / 10000) + 'g ' : '') + (c % 10000 >= 100 ? Math.floor(c % 10000 / 100) + 's ' : '') + (c % 100 ? c % 100 + 'c' : '')).trim() || '0c';
+
 function open() {
   const recipes = readJSON('data/recipes.json', { professions: {} });
   // New recipes whose pattern isn't handed out yet (scripts/recipe-patterns.js).
   const unreleased = readJSON('data/recipe-patterns.json', { unreleased: {} }).unreleased;
+  // What profession trainers teach in the game (the addon's scan,
+  // scripts/import-scan.js): it beats the web data, which gives some of
+  // Forever's trainer recipes as a vendor pattern of the other faction.
+  const taught = new Map();
+  for (const t of Object.values(readJSON('data/ingame-scan.json', { trainers: {} }).trainers)) {
+    for (const e of Object.values(t.list || {})) {
+      if (e.item && e.prof) taught.set(e.prof.toLowerCase() + ':' + e.item, { cost: e.cost || 0, skill: e.skill || 0 });
+    }
+  }
   // By the crafted item's id: names repeat between Classic and new Forever recipes.
   const recipe = (profession, id, name) => {
     const list = recipes.professions[profession.toLowerCase()] || {};
@@ -29,6 +40,8 @@ function open() {
   };
   const learn = (profession, id, name, spell) => {
     const r = recipe(profession, id, name);
+    const seen = taught.get(profession.toLowerCase() + ':' + id);
+    if (seen) return { type: 'trainer', text: 'Trainer, ' + coin(seen.cost) + ', learn at ' + seen.skill + ' (seen in game)', learnAt: seen.skill };
     const out = r ? learnOf(r.source) : learnOf(null);
     if (spell && unreleased[spell] && (out.type === 'unknown' || out.type === 'trainer')) return { type: 'unreleased', text: null, pattern: unreleased[spell] };
     return out;

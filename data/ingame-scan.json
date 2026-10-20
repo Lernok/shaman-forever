@@ -1,0 +1,541 @@
+{
+ "trainers": {
+  "3365": {
+   "y": 44.5,
+   "x": 62.8,
+   "z": "Orgrimmar",
+   "n": "Karolek",
+   "t": 1792513332,
+   "list": {
+    "Hillman's Leather Gloves": {
+     "item": 4247,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 120,
+     "level": 0
+    },
+    "Warden's Leather Belt": {
+     "item": 252460,
+     "cost": 1800,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 150,
+     "level": 0
+    },
+    "Stalker's Leather Belt": {
+     "item": 252521,
+     "cost": 1800,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 150,
+     "level": 0
+    },
+    "Fine Leather Tunic": {
+     "item": 4243,
+     "cost": 315,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 60,
+     "level": 0
+    },
+    "Small Leather Ammo Pouch": {
+     "item": 7279,
+     "cost": 90,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 25,
+     "level": 0
+    },
+    "Skirmisher's Leather Belt": {
+     "item": 252461,
+     "cost": 1800,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 150,
+     "level": 0
+    },
+    "Heavy Leather Ammo Pouch": {
+     "item": 7372,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 125,
+     "level": 0
+    },
+    "Handstitched Leather Belt": {
+     "item": 4237,
+     "cost": 67,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 25,
+     "level": 0
+    },
+    "Cured Heavy Hide": {
+     "item": 4236,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 125,
+     "level": 0
+    },
+    "Fine Leather Cloak": {
+     "item": 2308,
+     "cost": 225,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 50,
+     "level": 0
+    },
+    "Embossed Leather Vest": {
+     "item": 2300,
+     "cost": 90,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 35,
+     "level": 0
+    },
+    "Moonglow Boots": {
+     "item": 252427,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 35,
+     "level": 0
+    },
+    "Dark Leather Belt": {
+     "item": 4249,
+     "cost": 360,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 100,
+     "level": 0
+    },
+    "Camp Tent": {
+     "item": 279978,
+     "cost": 90,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 20,
+     "level": 0
+    },
+    "Apprentice Leatherworking": {
+     "cost": 9,
+     "level": 1,
+     "skill": 0,
+     "kind": "used"
+    },
+    "Handstitched Leather Pants": {
+     "item": 2303,
+     "cost": 45,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 15,
+     "level": 0
+    },
+    "Dark Leather Boots": {
+     "item": 252425,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 35,
+     "level": 0
+    },
+    "Embossed Leather Gloves": {
+     "item": 4239,
+     "cost": 135,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 40,
+     "level": 0
+    },
+    "Murloc Scale Shoes": {
+     "item": 252426,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 35,
+     "level": 0
+    },
+    "Skulker's Leather Belt": {
+     "item": 252520,
+     "cost": 1800,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 150,
+     "level": 0
+    },
+    "Fine Leather Belt": {
+     "item": 4246,
+     "cost": 270,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 55,
+     "level": 0
+    },
+    "Skycaller's Leather Belt": {
+     "item": 252522,
+     "cost": 1800,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 150,
+     "level": 0
+    },
+    "Nimble Leather Gloves": {
+     "item": 7285,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 95,
+     "level": 0
+    },
+    "Gray Leather Boots": {
+     "item": 2315,
+     "cost": 315,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 75,
+     "level": 0
+    },
+    "Light Leather Bracers": {
+     "item": 7281,
+     "cost": 135,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 45,
+     "level": 0
+    },
+    "Journeyman Leatherworking": {
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 50,
+     "level": 10
+    },
+    "Dark Leather Pants": {
+     "item": 5961,
+     "cost": 360,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 90,
+     "level": 0
+    },
+    "Heavy Armor Kit": {
+     "item": 4265,
+     "cost": 675,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 125,
+     "level": 0
+    },
+    "Embossed Leather Cloak": {
+     "item": 2310,
+     "cost": 90,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 40,
+     "level": 0
+    },
+    "Cured Medium Hide": {
+     "item": 4233,
+     "cost": 180,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 75,
+     "level": 0
+    },
+    "Prowler's Leather Belt": {
+     "item": 252459,
+     "cost": 1800,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 150,
+     "level": 0
+    },
+    "Light Leather Quiver": {
+     "item": 7278,
+     "cost": 90,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 25,
+     "level": 0
+    },
+    "Toughened Leather Gloves": {
+     "item": 4253,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 110,
+     "level": 0
+    },
+    "Heavy Quiver": {
+     "item": 7371,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 125,
+     "level": 0
+    },
+    "Hillman's Cloak": {
+     "item": 3719,
+     "cost": 540,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 125,
+     "level": 0
+    },
+    "Dark Leather Cloak": {
+     "item": 2316,
+     "cost": 315,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 85,
+     "level": 0
+    },
+    "Medium Leather": {
+     "item": 2319,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 75,
+     "level": 0
+    },
+    "Toughened Leather Armor": {
+     "item": 2314,
+     "cost": 405,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 95,
+     "level": 0
+    },
+    "Light Leather Pants": {
+     "item": 7282,
+     "cost": 360,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 70,
+     "level": 0
+    },
+    "Embossed Leather Boots": {
+     "item": 2309,
+     "cost": 90,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 50,
+     "level": 0
+    },
+    "Fletcher's Gloves": {
+     "item": 7348,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 100,
+     "level": 0
+    },
+    "Hillman's Shoulders": {
+     "item": 4251,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 105,
+     "level": 0
+    },
+    "Medium Armor Kit": {
+     "item": 2313,
+     "cost": 225,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 75,
+     "level": 0
+    },
+    "Cured Light Hide": {
+     "item": 4231,
+     "cost": 45,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 30,
+     "level": 0
+    },
+    "Embossed Leather Pants": {
+     "item": 4242,
+     "cost": 180,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 50,
+     "level": 0
+    },
+    "Heavy Leather": {
+     "item": 4234,
+     "cost": 900,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 125,
+     "level": 0
+    },
+    "Mender's Leather Belt": {
+     "item": 252523,
+     "cost": 1800,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 150,
+     "level": 0
+    },
+    "Black Whelp Slippers": {
+     "item": 252424,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 35,
+     "level": 0
+    }
+   },
+   "f": "horde"
+  },
+  "5811": {
+   "y": 44.6,
+   "x": 63,
+   "z": "Orgrimmar",
+   "n": "Kamari",
+   "t": 1792513346,
+   "list": {
+    "Dark Leather Boots": {
+     "item": 252425,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 35,
+     "level": 0
+    },
+    "Embossed Leather Gloves": {
+     "item": 4239,
+     "cost": 135,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 40,
+     "level": 0
+    },
+    "Murloc Scale Shoes": {
+     "item": 252426,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 35,
+     "level": 0
+    },
+    "Small Leather Ammo Pouch": {
+     "item": 7279,
+     "cost": 90,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 25,
+     "level": 0
+    },
+    "Embossed Leather Cloak": {
+     "item": 2310,
+     "cost": 90,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 40,
+     "level": 0
+    },
+    "Handstitched Leather Belt": {
+     "item": 4237,
+     "cost": 67,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 25,
+     "level": 0
+    },
+    "Light Leather Quiver": {
+     "item": 7278,
+     "cost": 90,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 25,
+     "level": 0
+    },
+    "Embossed Leather Vest": {
+     "item": 2300,
+     "cost": 90,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 35,
+     "level": 0
+    },
+    "Moonglow Boots": {
+     "item": 252427,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 35,
+     "level": 0
+    },
+    "Embossed Leather Boots": {
+     "item": 2309,
+     "cost": 90,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 50,
+     "level": 0
+    },
+    "Cured Light Hide": {
+     "item": 4231,
+     "cost": 45,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 30,
+     "level": 0
+    },
+    "Apprentice Leatherworking": {
+     "cost": 9,
+     "level": 1,
+     "skill": 0,
+     "kind": "used"
+    },
+    "Camp Tent": {
+     "item": 279978,
+     "cost": 90,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 20,
+     "level": 0
+    },
+    "Embossed Leather Pants": {
+     "item": 4242,
+     "cost": 180,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 50,
+     "level": 0
+    },
+    "Handstitched Leather Pants": {
+     "item": 2303,
+     "cost": 45,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 15,
+     "level": 0
+    },
+    "Light Leather Bracers": {
+     "item": 7281,
+     "cost": 135,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 45,
+     "level": 0
+    },
+    "Black Whelp Slippers": {
+     "item": 252424,
+     "cost": 450,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 35,
+     "level": 0
+    }
+   },
+   "f": "horde"
+  }
+ },
+ "vendors": {},
+ "colors": {}
+}

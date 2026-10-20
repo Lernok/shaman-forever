@@ -1870,6 +1870,7 @@ end
 
 -- Every service of a profession trainer, the ones you can't learn yet too
 -- (the filters are opened for the scan and put back).
+local TRAINER_KINDS = { available = true, unavailable = true, used = true, header = true }
 local function scanTrainer()
   if not (IsTradeskillTrainer and IsTradeskillTrainer() and GetNumTrainerServices) then return end
   local id, info = npcHere()
@@ -1890,6 +1891,8 @@ local function scanTrainer()
   local list = {}
   for i = 1, (readable(GetNumTrainerServices()) or 0) do
     local name, sub, kind = GetTrainerServiceInfo(i)
+    -- Forever's client has no rank column: name, kind, icon.
+    if TRAINER_KINDS[sub] then sub, kind = nil, sub end
     if name and kind ~= "header" then
       local e = { kind = kind, sub = sub ~= "" and sub or nil }
       e.item = GetTrainerServiceItemLink and itemIdOf(GetTrainerServiceItemLink(i))
