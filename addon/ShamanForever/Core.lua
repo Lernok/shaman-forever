@@ -1891,7 +1891,7 @@ local function noteRewardXp()
 end
 
 -- The profession window's panel (further down).
-local craftPanel, paintCrafts, showCraftPanel
+local craftPanel, paintCrafts, showCraftPanel, hideCraftPanel
 -- Recipe scanner: what profession trainers and vendors offer here, and the
 -- color of each recipe at your skill. Saved account-wide in
 -- ShamanForeverDB.scan for scripts/import-scan.js (the site's recipe
@@ -2199,13 +2199,13 @@ onEvent = function(self, event, ...)
     if trainerPanel and trainerPanel:IsShown() then pcall(paintTrainer) end
   elseif event == "TRAINER_CLOSED" then
     if trainerPanel then trainerPanel:Hide() end
-    if craftPanel and craftPanel.offer then craftPanel:Hide() end
+    if craftPanel and craftPanel.offer then hideCraftPanel() end
     if frame and frame.live then refresh() end
   elseif event == "TRADE_SKILL_SHOW" then
     C_Timer.After(0.1, function() guarded("crafts", showCraftPanel) end)
     C_Timer.After(0.3, function() guarded("scan", scanColors) end)
   elseif event == "TRADE_SKILL_UPDATE" or event == "TRADE_SKILL_LIST_UPDATE" then
-    if craftPanel and craftPanel:IsShown() and not craftPanel.offer then guarded("crafts", paintCrafts) end
+    if craftPanel and craftPanel.live and not craftPanel.offer then guarded("crafts", paintCrafts) end
     -- The list can fill after the window opens.
     if not scanPending then
       scanPending = true
@@ -2219,7 +2219,7 @@ onEvent = function(self, event, ...)
   elseif event == "LOOT_OPENED" then
     guarded("scan", scanLoot)
   elseif event == "TRADE_SKILL_CLOSE" then
-    if craftPanel then craftPanel:Hide() end
+    if craftPanel then hideCraftPanel() end
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
     -- The zone's name settles a moment after a loading screen.
     C_Timer.After(2, function() guarded("zone", onZone) end)
@@ -2791,8 +2791,15 @@ function paintCrafts()
   if #yes + #soon + #short == 0 then lines[#lines + 1] = f.offer and L().offerNone or L().craftNone end
   f.text:SetText(table.concat(lines, "\n"))
   -- The note goes under the list, never over it.
+  f.label = string.format(f.offer and L().offerToggle or L().craftToggle, #yes + #soon)
+  if rawget(f, "toggle") then f.toggle:SetText(f.label) end
   f:SetHeight(math.max(90, (f.text:GetStringHeight() or 60) + (f.note:GetStringHeight() or 24) + 52))
   return yes, soon, short, no
+end
+function hideCraftPanel()
+  craftPanel.live = false
+  craftPanel:Hide()
+  if rawget(craftPanel, "toggle") then craftPanel.toggle:Hide() end
 end
 -- offer: a trainer's recipes you don't know (nil: the profession window's).
 function showCraftPanel(offer)
@@ -2800,7 +2807,7 @@ function showCraftPanel(offer)
   -- Only professions that make gear: the rest have nothing to say here.
   local any = false
   for _, r in ipairs(offer or recipes()) do if D.items[r.id] then any = true break end end
-  if not any then if craftPanel then craftPanel:Hide() end return end
+  if not any then if craftPanel then hideCraftPanel() end return end
   if not craftPanel then
     local f = CreateFrame("Frame", "ShamanForeverCrafts", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
     craftPanel = f
@@ -2827,16 +2834,35 @@ function showCraftPanel(offer)
   end
   local f = craftPanel
   f.offer = offer or false
+  if not rawget(f, "toggle") then
+    local b = CreateFrame("Button", "ShamanForeverCraftsToggle", UIParent, "UIPanelButtonTemplate")
+    b:SetSize(230, 22)
+    b:SetFrameStrata("HIGH")
+    b:SetScript("OnClick", function()
+      cdb.craftOpen = not cdb.craftOpen
+      f:SetShown(cdb.craftOpen)
+      b:SetText(f.label)
+    end)
+    f.toggle = b
+  end
+  local host = offer and ClassTrainerFrame or ProfessionsFrame or TradeSkillFrame
+  if not (host and host:IsShown()) then host = nil end
   f:ClearAllPoints()
-  if offer and ClassTrainerFrame and ClassTrainerFrame:IsShown() then f:SetPoint("TOPLEFT", ClassTrainerFrame, "TOPRIGHT", 4, -12)
-  elseif offer then f:SetPoint("LEFT", UIParent, "CENTER", 120, 0)
-  elseif ProfessionsFrame and ProfessionsFrame:IsShown() then f:SetPoint("TOPLEFT", ProfessionsFrame, "TOPRIGHT", 4, -12)
-  elseif TradeSkillFrame and TradeSkillFrame:IsShown() then f:SetPoint("TOPLEFT", TradeSkillFrame, "TOPRIGHT", -30, -12)
-  else f:SetPoint("LEFT", UIParent, "CENTER", 120, 0) end
+  f.toggle:ClearAllPoints()
+  if host then
+    f.toggle:SetPoint("BOTTOMRIGHT", host, "TOPRIGHT", 0, 2)
+    -- Clear of the tabs on the window's right edge.
+    f:SetPoint("TOPLEFT", host, "TOPRIGHT", 36, 0)
+  else
+    f.toggle:SetPoint("BOTTOM", UIParent, "CENTER", 120, 160)
+    f:SetPoint("TOPLEFT", f.toggle, "BOTTOMLEFT", 0, -4)
+  end
   f.title:SetText(string.format(offer and L().offerTitle or L().craftTitle, specName()))
   f.note:SetText(offer and L().offerNote or L().craftNote)
+  f.live = true
   local yes, soon, short, no = paintCrafts()
-  f:Show()
+  f:SetShown(cdb.craftOpen and true or false)
+  f.toggle:Show()
   local names = function(list) local t = {} for _, e in ipairs(list) do t[#t + 1] = e.name or "?" end return table.concat(t, ", ") end
   log(offer and "offer" or "crafts", "yes: " .. names(yes) .. " · soon: " .. names(soon) .. " · short: " .. names(short) .. " · no " .. no)
 end

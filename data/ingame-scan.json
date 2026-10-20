@@ -191,20 +191,20 @@
      "skill": 105,
      "level": 0
     },
-    "Small Leather Ammo Pouch": {
-     "item": 7279,
-     "cost": 100,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 25,
-     "level": 0
-    },
     "Embossed Leather Gloves": {
      "item": 4239,
      "cost": 150,
      "prof": "Leatherworking",
      "kind": "used",
      "skill": 40,
+     "level": 0
+    },
+    "Small Leather Ammo Pouch": {
+     "item": 7279,
+     "cost": 100,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 25,
      "level": 0
     },
     "Camp Tent": {
@@ -215,16 +215,16 @@
      "skill": 20,
      "level": 0
     },
-    "Heavy Leather Ammo Pouch": {
-     "item": 7372,
+    "Heavy Quiver": {
+     "item": 7371,
      "cost": 500,
      "prof": "Leatherworking",
      "kind": "unavailable",
      "skill": 125,
      "level": 0
     },
-    "Heavy Quiver": {
-     "item": 7371,
+    "Heavy Leather Ammo Pouch": {
+     "item": 7372,
      "cost": 500,
      "prof": "Leatherworking",
      "kind": "unavailable",
@@ -247,12 +247,12 @@
      "skill": 75,
      "level": 0
     },
-    "Handstitched Leather Belt": {
-     "item": 4237,
-     "cost": 75,
+    "Murloc Scale Shoes": {
+     "item": 252426,
+     "cost": 500,
      "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 25,
+     "kind": "available",
+     "skill": 35,
      "level": 0
     },
     "Fletcher's Gloves": {
@@ -271,12 +271,12 @@
      "skill": 50,
      "level": 0
     },
-    "Murloc Scale Shoes": {
-     "item": 252426,
-     "cost": 500,
+    "Handstitched Leather Belt": {
+     "item": 4237,
+     "cost": 75,
      "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 35,
+     "kind": "used",
+     "skill": 25,
      "level": 0
     },
     "Medium Leather": {
@@ -537,12 +537,922 @@
   }
  },
  "vendors": {
-  "248201": {
+  "248196": {
+   "y": 29.6,
+   "x": 49.9,
+   "z": "The Barrens",
+   "f": "horde",
+   "t": 1792516974,
+   "list": {
+    "250364": {
+     "price": 0,
+     "name": "Recipe: Elixir of Cunning",
+     "cost": [
+      [
+       180,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250365": {
+     "price": 0,
+     "name": "Recipe: Elixir of the Phalanx",
+     "cost": [
+      [
+       180,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250367": {
+     "price": 0,
+     "name": "Recipe: Lesser Cleric's Elixir",
+     "cost": [
+      [
+       45,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250369": {
+     "price": 0,
+     "name": "Recipe: Greater Cleric's Elixir",
+     "cost": [
+      [
+       120,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250371": {
+     "price": 0,
+     "name": "Recipe: Elixir of Greater Fortitude",
+     "cost": [
+      [
+       120,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250372": {
+     "price": 0,
+     "name": "Recipe: Elixir of Wicked Regeneration",
+     "cost": [
+      [
+       180,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250373": {
+     "price": 0,
+     "name": "Recipe: Elixir of the Owl",
+     "cost": [
+      [
+       180,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250374": {
+     "price": 0,
+     "name": "Recipe: Elixir of Sages",
+     "cost": [
+      [
+       180,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250376": {
+     "price": 0,
+     "name": "Recipe: Lesser Mageblood Elixir",
+     "cost": [
+      [
+       45,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250377": {
+     "price": 0,
+     "name": "Recipe: Greater Mageblood Elixir",
+     "cost": [
+      [
+       120,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250378": {
+     "price": 0,
+     "name": "Recipe: Lesser Arcane Elixir",
+     "cost": [
+      [
+       45,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250379": {
+     "price": 0,
+     "name": "Recipe: Elixir of Nature Power",
+     "cost": [
+      [
+       180,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250381": {
+     "price": 0,
+     "name": "Recipe: Elixir of Lesser Spirit",
+     "cost": [
+      [
+       45,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250383": {
+     "price": 0,
+     "name": "Recipe: Elixir of Greater Spirit",
+     "cost": [
+      [
+       120,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250384": {
+     "price": 0,
+     "name": "Recipe: Elixir of the Whale",
+     "cost": [
+      [
+       180,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250386": {
+     "price": 0,
+     "name": "Recipe: Elixir of Ferocity",
+     "cost": [
+      [
+       180,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250387": {
+     "price": 0,
+     "name": "Recipe: Elixir of the Grizzly",
+     "cost": [
+      [
+       240,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250388": {
+     "price": 0,
+     "name": "Recipe: Elixir of Lesser Intellect",
+     "cost": [
+      [
+       45,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250978": {
+     "price": 0,
+     "name": "Recipe: Spellblasting Potion",
+     "cost": [
+      [
+       45,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250981": {
+     "price": 0,
+     "name": "Recipe: Major Spellblasting Potion",
+     "cost": [
+      [
+       180,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250984": {
+     "price": 0,
+     "name": "Recipe: Frenzy Potion",
+     "cost": [
+      [
+       45,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250987": {
+     "price": 0,
+     "name": "Recipe: Major Frenzy Potion",
+     "cost": [
+      [
+       240,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250990": {
+     "price": 0,
+     "name": "Recipe: Mender's Potion",
+     "cost": [
+      [
+       45,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250993": {
+     "price": 0,
+     "name": "Recipe: Major Mender's Potion",
+     "cost": [
+      [
+       180,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250994": {
+     "price": 0,
+     "name": "Recipe: Potion of Venomous Blood",
+     "cost": [
+      [
+       180,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250995": {
+     "price": 0,
+     "name": "Recipe: Caustic Smog Potion",
+     "cost": [
+      [
+       180,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250997": {
+     "price": 0,
+     "name": "Recipe: Dragonfire Potion",
+     "cost": [
+      [
+       120,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "250998": {
+     "price": 0,
+     "name": "Recipe: Potion of Elemental Purging",
+     "cost": [
+      [
+       180,
+       "Merchant's Favor"
+      ]
+     ]
+    }
+   },
+   "n": "Apothecary Durelle"
+  },
+  "248197": {
    "y": 29.7,
+   "x": 49.8,
+   "z": "The Barrens",
+   "f": "horde",
+   "t": 1792516968,
+   "list": {
+    "251355": {
+     "price": 0,
+     "name": "Plans: Veteran's Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251356": {
+     "price": 0,
+     "name": "Plans: Guard's Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251357": {
+     "price": 0,
+     "name": "Plans: Protector's Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251358": {
+     "price": 0,
+     "name": "Plans: Acolyte's Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251359": {
+     "price": 0,
+     "name": "Plans: Crusader's Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251360": {
+     "price": 0,
+     "name": "Plans: Veteran's Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251361": {
+     "price": 0,
+     "name": "Plans: Guard's Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251362": {
+     "price": 0,
+     "name": "Plans: Protector's Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251363": {
+     "price": 0,
+     "name": "Plans: Acolyte's Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251364": {
+     "price": 0,
+     "name": "Plans: Crusader's Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251365": {
+     "price": 0,
+     "name": "Plans: Veteran's Chain Belt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251366": {
+     "price": 0,
+     "name": "Plans: Guard's Chain Belt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251367": {
+     "price": 0,
+     "name": "Plans: Protector's Chain Belt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251368": {
+     "price": 0,
+     "name": "Plans: Acolyte's Chain Belt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251369": {
+     "price": 0,
+     "name": "Plans: Crusader's Chain Belt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251370": {
+     "price": 0,
+     "name": "Plans: Veteran's Silvered Chain Shirt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251371": {
+     "price": 0,
+     "name": "Plans: Guard's Silvered Chain Shirt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251372": {
+     "price": 0,
+     "name": "Plans: Protector's Silvered Chain Shirt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251373": {
+     "price": 0,
+     "name": "Plans: Acolyte's Silvered Chain Shirt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251374": {
+     "price": 0,
+     "name": "Plans: Crusader's Silvered Chain Shirt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251375": {
+     "price": 0,
+     "name": "Plans: Veteran's Silvered Chain Leggings",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251376": {
+     "price": 0,
+     "name": "Plans: Guard's Silvered Chain Leggings",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251377": {
+     "price": 0,
+     "name": "Plans: Protector's Silvered Chain Leggings",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251378": {
+     "price": 0,
+     "name": "Plans: Acolyte's Silvered Chain Leggings",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251379": {
+     "price": 0,
+     "name": "Plans: Crusader's Silvered Chain Leggings",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251380": {
+     "price": 0,
+     "name": "Plans: Veteran's Silvered Chain Helm",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251381": {
+     "price": 0,
+     "name": "Plans: Guard's Silvered Chain Helm",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251382": {
+     "price": 0,
+     "name": "Plans: Protector's Silvered Chain Helm",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251383": {
+     "price": 0,
+     "name": "Plans: Acolyte's Silvered Chain Helm",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251384": {
+     "price": 0,
+     "name": "Plans: Crusader's Silvered Chain Helm",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251413": {
+     "price": 0,
+     "name": "Plans: Officer's Sabatons",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251414": {
+     "price": 0,
+     "name": "Plans: Sentinel's Sabatons",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251415": {
+     "price": 0,
+     "name": "Plans: Warder's Sabatons",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251416": {
+     "price": 0,
+     "name": "Plans: Prefect's Sabatons",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251417": {
+     "price": 0,
+     "name": "Plans: Justicar's Sabatons",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251418": {
+     "price": 0,
+     "name": "Plans: Officer's Gauntlet",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251419": {
+     "price": 0,
+     "name": "Plans: Sentinel's Gauntlet",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251420": {
+     "price": 0,
+     "name": "Plans: Warder's Gauntlet",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251421": {
+     "price": 0,
+     "name": "Plans: Prefect's Gauntlet",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251422": {
+     "price": 0,
+     "name": "Plans: Justicar's Gauntlet",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251423": {
+     "price": 0,
+     "name": "Plans: Officer's Waistguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251424": {
+     "price": 0,
+     "name": "Plans: Sentinel's Waistguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251425": {
+     "price": 0,
+     "name": "Plans: Warder's Waistguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251426": {
+     "price": 0,
+     "name": "Plans: Prefect's Waistguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251427": {
+     "price": 0,
+     "name": "Plans: Justicar's Waistguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251428": {
+     "price": 0,
+     "name": "Plans: Officer's Pauldrons",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251429": {
+     "price": 0,
+     "name": "Plans: Sentinel's Pauldrons",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251430": {
+     "price": 0,
+     "name": "Plans: Warder's Pauldrons",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251431": {
+     "price": 0,
+     "name": "Plans: Prefect's Pauldrons",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251432": {
+     "price": 0,
+     "name": "Plans: Justicar's Pauldrons",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251433": {
+     "price": 0,
+     "name": "Plans: Officer's Wristguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251434": {
+     "price": 0,
+     "name": "Plans: Sentinel's Wristguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251435": {
+     "price": 0,
+     "name": "Plans: Warder's Wristguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251436": {
+     "price": 0,
+     "name": "Plans: Prefect's Wristguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251437": {
+     "price": 0,
+     "name": "Plans: Justicar's Wristguards",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251447": {
+     "price": 0,
+     "name": "Plans: Enriched Thorium Breastplate",
+     "cost": [
+      [
+       120,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251448": {
+     "price": 0,
+     "name": "Plans: Enriched Thorium Leggings",
+     "cost": [
+      [
+       120,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251449": {
+     "price": 0,
+     "name": "Plans: Enriched Thorium Helm",
+     "cost": [
+      [
+       120,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251465": {
+     "price": 0,
+     "name": "Plans: Thorium Greatmace",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251466": {
+     "price": 0,
+     "name": "Plans: Thorium Cestus",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "251471": {
+     "price": 0,
+     "name": "Plans: Legionite Glaive",
+     "cost": [
+      [
+       120,
+       "Merchant's Favor"
+      ]
+     ]
+    }
+   },
+   "n": "Gor'mak"
+  },
+  "248201": {
+   "y": 29.6,
    "x": 49.6,
    "z": "The Barrens",
    "n": "Pawani",
-   "t": 1792516423,
+   "t": 1792517504,
    "list": {
     "252765": {
      "price": 0,
@@ -1356,6 +2266,686 @@
     }
    },
    "f": "horde"
+  },
+  "248202": {
+   "y": 29.5,
+   "x": 49.6,
+   "z": "The Barrens",
+   "f": "horde",
+   "t": 1792517018,
+   "list": {
+    "253890": {
+     "price": 0,
+     "name": "Pattern: Pristine Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253892": {
+     "price": 0,
+     "name": "Pattern: Silky Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253894": {
+     "price": 0,
+     "name": "Pattern: Flame Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253896": {
+     "price": 0,
+     "name": "Pattern: Shadow Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253898": {
+     "price": 0,
+     "name": "Pattern: Pearly Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253900": {
+     "price": 0,
+     "name": "Pattern: Shining Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253914": {
+     "price": 0,
+     "name": "Pattern: Pristine Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253916": {
+     "price": 0,
+     "name": "Pattern: Silky Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253918": {
+     "price": 0,
+     "name": "Pattern: Flame Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253920": {
+     "price": 0,
+     "name": "Pattern: Shadow Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253922": {
+     "price": 0,
+     "name": "Pattern: Pearly Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253924": {
+     "price": 0,
+     "name": "Pattern: Shining Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253926": {
+     "price": 0,
+     "name": "Pattern: Pristine Sash",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253928": {
+     "price": 0,
+     "name": "Pattern: Silky Sash",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253930": {
+     "price": 0,
+     "name": "Pattern: Flame Sash",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253932": {
+     "price": 0,
+     "name": "Pattern: Shadow Sash",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253934": {
+     "price": 0,
+     "name": "Pattern: Pearly Sash",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253936": {
+     "price": 0,
+     "name": "Pattern: Shining Sash",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253950": {
+     "price": 0,
+     "name": "Pattern: Pristine Circlet",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253952": {
+     "price": 0,
+     "name": "Pattern: Silky Circlet",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253954": {
+     "price": 0,
+     "name": "Pattern: Flame Circlet",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253956": {
+     "price": 0,
+     "name": "Pattern: Shadow Circlet",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253958": {
+     "price": 0,
+     "name": "Pattern: Pearly Circlet",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253960": {
+     "price": 0,
+     "name": "Pattern: Shining Circlet",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253962": {
+     "price": 0,
+     "name": "Pattern: Pristine Gown",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253964": {
+     "price": 0,
+     "name": "Pattern: Silky Gown",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253966": {
+     "price": 0,
+     "name": "Pattern: Flame Gown",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253968": {
+     "price": 0,
+     "name": "Pattern: Shadow Gown",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253970": {
+     "price": 0,
+     "name": "Pattern: Pearly Gown",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253972": {
+     "price": 0,
+     "name": "Pattern: Shining Gown",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253988": {
+     "price": 0,
+     "name": "Pattern: Pristine Leggings",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253990": {
+     "price": 0,
+     "name": "Pattern: Silky Leggings",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253992": {
+     "price": 0,
+     "name": "Pattern: Flame Leggings",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253994": {
+     "price": 0,
+     "name": "Pattern: Shadow Leggings",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253996": {
+     "price": 0,
+     "name": "Pattern: Pearly Leggings",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "253998": {
+     "price": 0,
+     "name": "Pattern: Shining Leggings",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254024": {
+     "price": 0,
+     "name": "Pattern: Frothing Handwraps",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254026": {
+     "price": 0,
+     "name": "Pattern: Fiery Handwraps",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254028": {
+     "price": 0,
+     "name": "Pattern: Black Handwraps",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254030": {
+     "price": 0,
+     "name": "Pattern: Golden Handwraps",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254032": {
+     "price": 0,
+     "name": "Pattern: Radiant Handwraps",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254036": {
+     "price": 0,
+     "name": "Pattern: Mageweave Reagent Bag",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254050": {
+     "price": 0,
+     "name": "Pattern: Nethergeld Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254052": {
+     "price": 0,
+     "name": "Pattern: Netherfroth Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254054": {
+     "price": 0,
+     "name": "Pattern: Netherflame Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254056": {
+     "price": 0,
+     "name": "Pattern: Netherpearl Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254058": {
+     "price": 0,
+     "name": "Pattern: Nethershine Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254060": {
+     "price": 0,
+     "name": "Pattern: Netherlight Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254062": {
+     "price": 0,
+     "name": "Pattern: Nethergeld Cuffs",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254064": {
+     "price": 0,
+     "name": "Pattern: Netherfroth Cuffs",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254066": {
+     "price": 0,
+     "name": "Pattern: Netherflame Cuffs",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254068": {
+     "price": 0,
+     "name": "Pattern: Netherpearl Cuffs",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254070": {
+     "price": 0,
+     "name": "Pattern: Nethershine Cuffs",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254072": {
+     "price": 0,
+     "name": "Pattern: Netherlight Cuffs",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254080": {
+     "price": 0,
+     "name": "Pattern: Runecloth Reagent Bag",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254082": {
+     "price": 0,
+     "name": "Pattern: Gilded Waistcord",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254084": {
+     "price": 0,
+     "name": "Pattern: Frothing Waistcord",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254086": {
+     "price": 0,
+     "name": "Pattern: Fiery Waistcord",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254088": {
+     "price": 0,
+     "name": "Pattern: Black Waistcord",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254090": {
+     "price": 0,
+     "name": "Pattern: Golden Waistcord",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254092": {
+     "price": 0,
+     "name": "Pattern: Radiant Waistcord",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254108": {
+     "price": 0,
+     "name": "Pattern: Gilded Sandals",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254110": {
+     "price": 0,
+     "name": "Pattern: Frothing Sandals",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254112": {
+     "price": 0,
+     "name": "Pattern: Fiery Sandals",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254114": {
+     "price": 0,
+     "name": "Pattern: Black Sandals",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254116": {
+     "price": 0,
+     "name": "Pattern: Golden Sandals",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "254118": {
+     "price": 0,
+     "name": "Pattern: Radiant Sandals",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    }
+   },
+   "n": "Jim'bek"
   }
  },
  "colors": {
@@ -1585,8 +3175,7 @@
    "2303": {
     "rid": 2153,
     "grey": 75,
-    "name": "Handstitched Leather Pants",
-    "learned": true
+    "name": "Handstitched Leather Pants"
    },
    "2304": {
     "rid": 2152,
@@ -1658,7 +3247,8 @@
    "2319": {
     "rid": 20648,
     "grey": 85,
-    "name": "Medium Leather"
+    "name": "Medium Leather",
+    "learned": true
    },
    "3719": {
     "rid": 3760,
@@ -1674,7 +3264,8 @@
    "4233": {
     "rid": 3817,
     "grey": 105,
-    "name": "Cured Medium Hide"
+    "name": "Cured Medium Hide",
+    "learned": true
    },
    "4234": {
     "rid": 20649,
@@ -1689,8 +3280,7 @@
    "4237": {
     "rid": 3753,
     "grey": 85,
-    "name": "Handstitched Leather Belt",
-    "learned": true
+    "name": "Handstitched Leather Belt"
    },
    "4239": {
     "rid": 3756,
@@ -1716,7 +3306,8 @@
    "4246": {
     "rid": 3763,
     "grey": 115,
-    "name": "Fine Leather Belt"
+    "name": "Fine Leather Belt",
+    "learned": true
    },
    "4247": {
     "rid": 3764,
@@ -1821,7 +3412,8 @@
    "5081": {
     "rid": 5244,
     "grey": 95,
-    "name": "Kodo Hide Bag"
+    "name": "Kodo Hide Bag",
+    "learned": true
    },
    "5739": {
     "rid": 6661,
@@ -1831,7 +3423,8 @@
    "5780": {
     "rid": 6702,
     "grey": 125,
-    "name": "Murloc Scale Belt"
+    "name": "Murloc Scale Belt",
+    "learned": true
    },
    "5781": {
     "rid": 6703,
@@ -3194,7 +4787,8 @@
    "252424": {
     "rid": 1255146,
     "grey": 40,
-    "name": "Black Whelp Slippers"
+    "name": "Black Whelp Slippers",
+    "learned": true
    },
    "252425": {
     "rid": 1255145,
@@ -3204,7 +4798,8 @@
    "252426": {
     "rid": 1255144,
     "grey": 40,
-    "name": "Murloc Scale Shoes"
+    "name": "Murloc Scale Shoes",
+    "learned": true
    },
    "252427": {
     "rid": 1255143,
@@ -3229,7 +4824,8 @@
    "252431": {
     "rid": 1255139,
     "grey": 120,
-    "name": "Totemic Leather Belt"
+    "name": "Totemic Leather Belt",
+    "learned": true
    },
    "252432": {
     "rid": 1255138,
@@ -4489,7 +6085,8 @@
    "277715": {
     "rid": 1302604,
     "grey": 50,
-    "name": "Light Leather Reagent Bag"
+    "name": "Light Leather Reagent Bag",
+    "learned": true
    },
    "279252": {
     "rid": 1306526,
