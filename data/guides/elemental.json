@@ -149,27 +149,31 @@
         "en": "Keep casting Lightning Bolt on a single target; Fire Nova for packs."
       }
     ],
-    "confidence": "classic-assumed",
+    "confidence": "client-data",
     "level60": [
       {
-        "es": "Flame Shock primero y renovalo antes de que se caiga: Lava Burst hace 20% más con él puesto.",
-        "en": "Flame Shock first, and refresh it before it drops: Lava Burst deals 20% more with it up."
+        "es": "Flame Shock primero y renovalo antes de que se caiga (en hasta 3 enemigos): Lava Burst hace 20% más con él puesto.",
+        "en": "Flame Shock first and renew it before it drops (on up to 3 enemies): Lava Burst deals 20% more with it on."
       },
       {
         "es": "Lava Burst cada vez que salga de CD.",
-        "en": "Lava Burst whenever it comes off cooldown."
+        "en": "Lava Burst whenever it's off cooldown."
       },
       {
-        "es": "Lightning Bolt de relleno entre Flame Shock y Lava Burst (Lightning Overload puede lanzar uno extra gratis).",
-        "en": "Lightning Bolt as filler between Flame Shock and Lava Burst (Lightning Overload can fire a free extra one)."
+        "es": "Elemental Mastery cada vez que esté disponible: 15 s de Lightning Bolt y Lava Burst más rápidos y Chain Lightning sin CD.",
+        "en": "Elemental Mastery whenever it's available: 15 s of faster Lightning Bolt and Lava Burst and Chain Lightning without cooldown."
       },
       {
-        "es": "Elemental Mastery en peleas largas o con varios enemigos: 15 s de Lightning Bolt y Lava Burst más rápidos y Chain Lightning sin CD.",
-        "en": "Elemental Mastery on long fights or several enemies: 15 sec of faster Lightning Bolt and Lava Burst and Chain Lightning with no cooldown."
+        "es": "Lightning Bolt de relleno (Lightning Overload puede lanzar uno extra gratis); contra varios, Chain Lightning, Fire Nova y Magma Totem.",
+        "en": "Lightning Bolt as filler (Lightning Overload may cast an extra one for free); against several, Chain Lightning, Fire Nova and Magma Totem."
+      },
+      {
+        "es": "Con el maná por debajo de la mitad, Mana Tide Totem.",
+        "en": "Below half mana, Mana Tide Totem."
       }
     ],
-    "level60Confidence": "community-untested",
-    "source": "https://classicwowforever.com/class-guides/shaman/elemental/"
+    "level60Confidence": "client-data",
+    "source": "https://github.com/wowsims/forever/tree/master/ui/specs/shaman/elemental"
   },
   "gearingNotes": [
     {
@@ -220,11 +224,12 @@
     "https://www.icy-veins.com/wow/elemental-shaman-pve-dps-stat-priority",
     "https://classicwowforever.com/class-guides/shaman/elemental/",
     "https://talentsforever.com (CC BY 4.0) — data/shaman.json",
-    "https://talentsforever.com/shaman/changes"
+    "https://talentsforever.com/shaman/changes",
+    "https://github.com/wowsims/forever/tree/master/ui/specs/shaman"
   ],
   "caveat": {
-    "es": "Beta de Forever, cap en nivel 30 (oct 2026). El orden de stats es el de los pesos que WoWSims midió para Forever, ajustados para levear: el mismo con el que Equipo › Tu camino elige tus piezas. La rotación viene de classicwowforever.com, que la etiqueta 'asumida de Classic': nada en el cliente beta la contradice, pero no está confirmada. Tomala como punto de partida.",
-    "en": "Forever beta, level 30 cap (Oct 2026). The stat order follows the weights WoWSims measured for Forever, adjusted for leveling: the same Equipo › Your path picks your pieces with. The rotation comes from classicwowforever.com, which labels it 'assumed from Classic': nothing in the beta client contradicts it, but it isn't confirmed. Treat it as a starting point."
+    "es": "Beta de Forever, cap en nivel 30 (oct 2026). El orden de stats y la rotación siguen a WoWSims para Forever (pesos y lista de prioridades al 60), ajustados para levear: lo mismo con lo que Equipo › Tu camino elige tus piezas. La simulación es de una pelea contra un jefe: leveando, adaptala al bicho que tengas enfrente.",
+    "en": "Forever beta, level 30 cap (Oct 2026). The stat order and the rotation follow WoWSims for Forever (weights and priority list at 60), adjusted for leveling: what Equipo › Your path picks your pieces with. The sim is a boss fight: leveling, adapt it to whatever you're fighting."
   },
   "gearTargets": [
     {

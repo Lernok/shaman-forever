@@ -120,29 +120,52 @@
   "rotation": {
     "level30": [
       {
-        "es": "Poné el imbue que convenga para el pull y mantené Lightning Shield. La amenaza extra de Rockbiter importa si hay un tanque sosteniendo al objetivo.",
-        "en": "Use the imbue that suits the pull and keep Lightning Shield up. Rockbiter's extra threat matters when a tank is holding the target."
+        "es": "Mantené Lightning Shield y tu imbue, y Strength of Earth y Searing Totem puestos (renovalos cuando se terminen). La amenaza extra de Rockbiter importa si hay un tanque sosteniendo al objetivo.",
+        "en": "Keep Lightning Shield and your imbue up, and Strength of Earth and Searing Totem down (renew them when they run out). Rockbiter's extra threat matters if a tank is holding the target."
       },
       {
-        "es": "Desde el 25, Stormstrike y después un hechizo de Naturaleza que lo aproveche. Guardá Earth Shock para interrumpir en vez de gastarlo solo por daño.",
-        "en": "From 25, Stormstrike and then a Nature spell that benefits from it. Save Earth Shock for interrupts instead of spending it only on damage."
+        "es": "Desde el 25, Stormstrike cada vez que salga: potencia tu próximo hechizo de Naturaleza.",
+        "en": "From 25, Stormstrike whenever it's up: it empowers your next Nature spell."
       },
       {
-        "es": "Flame Shock y Searing Totem en objetivos que aguanten varios ticks.",
-        "en": "Flame Shock and Searing Totem on targets that survive several ticks."
+        "es": "Flame Shock siempre activo en un objetivo que aguante sus ticks, y Earth Shock como golpe de daño entre medio (así lo usa la simulación). Si el enemigo lanza algo peligroso, guardate uno para cortarlo.",
+        "en": "Flame Shock always up on a target that lives through its ticks, and Earth Shock as a damage hit in between (that's how the sim uses it). If the enemy casts something dangerous, keep one to interrupt it."
+      },
+      {
+        "es": "Con maná de sobra, Fire Nova de relleno: también contra grupos.",
+        "en": "With mana to spare, Fire Nova as filler: against packs too."
       },
       {
         "es": "Al 30, compará Windfury Weapon contra el imbue que ya venías usando. Ojo: Windfury Weapon en la mano principal anula para vos el Windfury Totem.",
-        "en": "At 30, compare Windfury Weapon against the imbue you were already using. Note: Windfury Weapon on your main hand cancels Windfury Totem for you."
+        "en": "At 30, compare Windfury Weapon against the imbue you were using. Careful: Windfury Weapon on your main hand cancels Windfury Totem for you."
       }
     ],
-    "confidence": "classic-assumed",
+    "confidence": "client-data",
     "totems": [
       "Strength of Earth Totem",
       "Searing Totem",
       "Mana Spring Totem"
     ],
-    "source": "https://classicwowforever.com/class-guides/shaman/enhancement/"
+    "source": "https://github.com/wowsims/forever/tree/master/ui/specs/shaman/enhancement",
+    "level60": [
+      {
+        "es": "Totems siempre arriba: Grace of Air, Strength of Earth y Searing Totem; Lightning Shield activo.",
+        "en": "Totems always up: Grace of Air, Strength of Earth and Searing Totem; Lightning Shield active."
+      },
+      {
+        "es": "Stormstrike cada vez que salga.",
+        "en": "Stormstrike whenever it's up."
+      },
+      {
+        "es": "Con Maelstrom Weapon en 5 cargas, Lightning Bolt (sale instantáneo y barato).",
+        "en": "With Maelstrom Weapon at 5 stacks, Lightning Bolt (instant and cheap)."
+      },
+      {
+        "es": "Flame Shock siempre activo; Earth Shock de relleno; Fire Nova con Clearcasting o con maná de sobra.",
+        "en": "Flame Shock always up; Earth Shock as filler; Fire Nova on Clearcasting or with mana to spare."
+      }
+    ],
+    "level60Confidence": "client-data"
   },
   "gearingNotes": [
     {
@@ -180,11 +203,12 @@
     "https://wowforevertalents.com/shaman/builds/enhancement-11-33-0-0c2de0/",
     "https://talentsforever.com (CC BY 4.0) — data/shaman.json",
     "https://talentsforever.com/shaman/changes",
-    "https://talentsforever.com/shaman/builds"
+    "https://talentsforever.com/shaman/builds",
+    "https://github.com/wowsims/forever/tree/master/ui/specs/shaman"
   ],
   "caveat": {
-    "es": "Beta de Forever, cap en nivel 30 (oct 2026). El orden de stats es el de los pesos que WoWSims midió para Forever, ajustados para levear: el mismo con el que Equipo › Tu camino elige tus piezas. La rotación viene de classicwowforever.com, que la etiqueta 'asumida de Classic': nada en el cliente beta la contradice, pero no está confirmada. Tomala como punto de partida.",
-    "en": "Forever beta, level 30 cap (Oct 2026). The stat order follows the weights WoWSims measured for Forever, adjusted for leveling: the same Equipo › Your path picks your pieces with. The rotation comes from classicwowforever.com, which labels it 'assumed from Classic': nothing in the beta client contradicts it, but it isn't confirmed. Treat it as a starting point."
+    "es": "Beta de Forever, cap en nivel 30 (oct 2026). El orden de stats y la rotación siguen a WoWSims para Forever (pesos y lista de prioridades al 60), ajustados para levear: lo mismo con lo que Equipo › Tu camino elige tus piezas. La simulación es de una pelea contra un jefe: leveando, adaptala al bicho que tengas enfrente.",
+    "en": "Forever beta, level 30 cap (Oct 2026). The stat order and the rotation follow WoWSims for Forever (weights and priority list at 60), adjusted for leveling: what Equipo › Your path picks your pieces with. The sim is a boss fight: leveling, adapt it to whatever you're fighting."
   },
   "keyTalents": [
     {
