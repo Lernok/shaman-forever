@@ -1890,6 +1890,8 @@ local function noteRewardXp()
   pcall(noteXp, id, xp)
 end
 
+-- The profession window's panel (further down).
+local craftPanel, paintCrafts, showCraftPanel
 -- Recipe scanner: what profession trainers and vendors offer here, and the
 -- color of each recipe at your skill. Saved account-wide in
 -- ShamanForeverDB.scan for scripts/import-scan.js (the site's recipe
@@ -1963,6 +1965,15 @@ local function scanTrainer()
     if not on then setFilter(f, false) end
   end
   scanStore("trainers", id, info, list)
+  -- What it teaches that you don't know, for the panel beside it.
+  local mine, offer = myProfessions(), {}
+  for name, e in pairs(list) do
+    if e.item and e.kind ~= "used" then
+      local p = mine[PROF_NAMES[e.prof or ""] or e.prof or ""]
+      offer[#offer + 1] = { id = e.item, name = name, need = e.skill, have = p and p.skill, price = e.cost }
+    end
+  end
+  showCraftPanel(offer)
 end
 
 -- A vendor's recipes (patterns, plans, formulas...), with their price in
@@ -2010,21 +2021,33 @@ end
 
 -- Recipes in your bags (looted, bought, from a quest): which and since when.
 -- And the ones you loot: from which creature (or object) and where.
+local bagsLogged
 local function scanBags()
   local num = (C_Container and C_Container.GetContainerNumSlots) or GetContainerNumSlots
   local itemAt = (C_Container and C_Container.GetContainerItemID) or GetContainerItemID
   if not (num and itemAt) then return end
   db.scan = db.scan or {}
   db.scan.bags = db.scan.bags or {}
-  for bag = 0, 4 do
+  local seen, odd = 0, {}
+  for bag = 0, 5 do
     for i = 1, (readable(num(bag)) or 0) do
       local item = readable(itemAt(bag, i))
+      if item then seen = seen + 1 end
+      -- Named like a recipe but another item class: for the log.
+      local nm = item and GetItemInfo and GetItemInfo(item)
+      if nm and not isRecipe(item) and isRecipe(nil, nm) and #odd < 5 then
+        odd[#odd + 1] = item .. " " .. nm .. " class " .. tostring(select(6, GetItemInfoInstant(item)))
+      end
       if item and not db.scan.bags[item] and isRecipe(item) then
         local name = GetItemInfo and GetItemInfo(item)
         db.scan.bags[item] = { name = name, z = here(), l = UnitLevel("player"), t = time() }
         log("scan", "bag recipe " .. tostring(name) .. " " .. item)
       end
     end
+  end
+  if not bagsLogged then
+    bagsLogged = true
+    log("scan", "bags " .. seen .. " items" .. (#odd > 0 and (", recipe names of another class: " .. table.concat(odd, "; ")) or ""))
   end
 end
 local function scanLoot()
@@ -2123,8 +2146,6 @@ end
 
 -- The trainer panel (further down).
 local trainerPanel, paintTrainer, showTrainerPanel
--- The profession window's panel (further down).
-local craftPanel, paintCrafts, showCraftPanel
 local ev = CreateFrame("Frame")
 ev:RegisterEvent("ADDON_LOADED")
 local onEvent
@@ -2178,12 +2199,13 @@ onEvent = function(self, event, ...)
     if trainerPanel and trainerPanel:IsShown() then pcall(paintTrainer) end
   elseif event == "TRAINER_CLOSED" then
     if trainerPanel then trainerPanel:Hide() end
+    if craftPanel and craftPanel.offer then craftPanel:Hide() end
     if frame and frame.live then refresh() end
   elseif event == "TRADE_SKILL_SHOW" then
     C_Timer.After(0.1, function() guarded("crafts", showCraftPanel) end)
     C_Timer.After(0.3, function() guarded("scan", scanColors) end)
   elseif event == "TRADE_SKILL_UPDATE" or event == "TRADE_SKILL_LIST_UPDATE" then
-    if craftPanel and craftPanel:IsShown() then guarded("crafts", paintCrafts) end
+    if craftPanel and craftPanel:IsShown() and not craftPanel.offer then guarded("crafts", paintCrafts) end
     -- The list can fill after the window opens.
     if not scanPending then
       scanPending = true
@@ -2610,7 +2632,11 @@ local function buyRecommended()
   log("buy", tostring(n))
   say(string.format(L().trainBought, n))
 end
-local function money(c) return GetCoinTextureString and GetCoinTextureString(c) or (math.floor(c / 10000) .. "g") end
+local function money(c)
+  if GetCoinTextureString then return GetCoinTextureString(c) end
+  local g, sv, cu = math.floor(c / 10000), math.floor(c % 10000 / 100), c % 100
+  return ((g > 0 and g .. "g " or "") .. (sv > 0 and sv .. "s " or "") .. (cu > 0 and cu .. "c" or "")):gsub(" $", "")
+end
 function paintTrainer()
   local f = trainerPanel
   local buy, skip, cost, saved = {}, {}, 0, 0
@@ -2695,12 +2721,15 @@ local SKILL_UP = { optimal = true, medium = true, easy = true }
 -- One piece per slot in each group: the best you can make now, one in a few
 -- levels only if it beats that, and the most valuable of those not worth it.
 local SHORT_MAX = 6
-local function craftReview()
+-- list: { id, kind, name } from the profession window, or a trainer's offer
+-- { id, name, need (skill it asks), have (your skill), price }.
+local function craftReview(list)
   local yes, soon, short, no = {}, {}, {}, 0
-  for _, r in ipairs(recipes()) do
+  for _, r in ipairs(list or recipes()) do
     local verdict, last = craftVerdict(r.id)
     local it, v = D.items[r.id], value(r.id)
-    local e = it and { id = r.id, slot = it.s, v = v, last = last, up = SKILL_UP[r.kind], name = Api.itemName(r.id) or r.name or "?" }
+    local e = it and { id = r.id, slot = it.s, v = v, last = last, up = SKILL_UP[r.kind], name = Api.itemName(r.id) or r.name or "?",
+      need = r.need, have = r.have, price = r.price }
     local group = verdict == "yes" and yes or verdict == "soon" and soon or verdict == "short" and short
     if group then
       local cur = group[e.slot]
@@ -2719,16 +2748,23 @@ local function craftReview()
     return out
   end
   local function untilText(e) return e.last and string.format(L().craftUntil, e.last.l, Api.itemName(e.last.i) or "?") or L().craftUntilLong end
-  local Y = list(yes, function(e) local g = gain(e.id) return (g and gainText(g) .. " · " or "") .. untilText(e) .. (e.up and (" · " .. L().craftSkillUp) or "") end,
+  -- At a trainer: the skill it asks when you don't have it yet, and its price.
+  local function offerText(e)
+    local t = ""
+    if e.need and e.have and e.need > e.have then t = t .. " · |cffff7f3f" .. string.format(L().offerSkill, e.need, e.have) .. "|r" end
+    if e.price and e.price > 0 then t = t .. " · " .. money(e.price) end
+    return t
+  end
+  local Y = list(yes, function(e) local g = gain(e.id) return (g and gainText(g) .. " · " or "") .. untilText(e) .. (e.up and (" · " .. L().craftSkillUp) or "") .. offerText(e) end,
     function(e) return -e.v end)
-  local S = list(soon, function(e) return string.format(L().craftFrom, D.items[e.id].r) .. " · " .. untilText(e) end, function(e) return D.items[e.id].r end)
-  local N = list(short, function(e) return string.format(L().craftShortWhy, e.last.l, Api.itemName(e.last.i) or "?") end, function(e) return e.last.l end)
+  local S = list(soon, function(e) return string.format(L().craftFrom, D.items[e.id].r) .. " · " .. untilText(e) .. offerText(e) end, function(e) return D.items[e.id].r end)
+  local N = list(short, function(e) return string.format(L().craftShortWhy, e.last.l, Api.itemName(e.last.i) or "?") .. offerText(e) end, function(e) return e.last.l end)
   while #N > SHORT_MAX do table.remove(N); no = no + 1 end
   return Y, S, N, no
 end
 function paintCrafts()
   local f = craftPanel
-  local yes, soon, short, no = craftReview()
+  local yes, soon, short, no = craftReview(f.offer or nil)
   local lines = {}
   local function group(head, list)
     if #list == 0 then return end
@@ -2739,16 +2775,17 @@ function paintCrafts()
   group(L().craftSoon, soon)
   group(L().craftShort, short)
   if no > 0 then lines[#lines + 1] = "|cff999999" .. string.format(L().craftNo, no) .. "|r" end
-  if #yes + #soon + #short == 0 then lines[#lines + 1] = L().craftNone end
+  if #yes + #soon + #short == 0 then lines[#lines + 1] = f.offer and L().offerNone or L().craftNone end
   f.text:SetText(table.concat(lines, "\n"))
   f:SetHeight(math.max(90, (f.text:GetStringHeight() or 60) + 64))
   return yes, soon, short, no
 end
-function showCraftPanel()
+-- offer: a trainer's recipes you don't know (nil: the profession window's).
+function showCraftPanel(offer)
   if not (UnitClass and select(2, UnitClass("player")) == "SHAMAN") then return end
   -- Only professions that make gear: the rest have nothing to say here.
   local any = false
-  for _, r in ipairs(recipes()) do if D.items[r.id] then any = true break end end
+  for _, r in ipairs(offer or recipes()) do if D.items[r.id] then any = true break end end
   if not any then if craftPanel then craftPanel:Hide() end return end
   if not craftPanel then
     local f = CreateFrame("Frame", "ShamanForeverCrafts", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
@@ -2771,16 +2808,19 @@ function showCraftPanel()
     f.note:SetJustifyH("LEFT")
   end
   local f = craftPanel
+  f.offer = offer or false
   f:ClearAllPoints()
-  if ProfessionsFrame and ProfessionsFrame:IsShown() then f:SetPoint("TOPLEFT", ProfessionsFrame, "TOPRIGHT", 4, -12)
+  if offer and ClassTrainerFrame and ClassTrainerFrame:IsShown() then f:SetPoint("TOPLEFT", ClassTrainerFrame, "TOPRIGHT", 4, -12)
+  elseif offer then f:SetPoint("LEFT", UIParent, "CENTER", 120, 0)
+  elseif ProfessionsFrame and ProfessionsFrame:IsShown() then f:SetPoint("TOPLEFT", ProfessionsFrame, "TOPRIGHT", 4, -12)
   elseif TradeSkillFrame and TradeSkillFrame:IsShown() then f:SetPoint("TOPLEFT", TradeSkillFrame, "TOPRIGHT", -30, -12)
   else f:SetPoint("LEFT", UIParent, "CENTER", 120, 0) end
-  f.title:SetText(string.format(L().craftTitle, specName()))
-  f.note:SetText(L().craftNote)
+  f.title:SetText(string.format(offer and L().offerTitle or L().craftTitle, specName()))
+  f.note:SetText(offer and L().offerNote or L().craftNote)
   local yes, soon, short, no = paintCrafts()
   f:Show()
   local names = function(list) local t = {} for _, e in ipairs(list) do t[#t + 1] = (e.text:match("^(.-) —") or e.text) end return table.concat(t, ", ") end
-  log("crafts", "yes: " .. names(yes) .. " · soon: " .. names(soon) .. " · short: " .. names(short) .. " · no " .. no)
+  log(offer and "offer" or "crafts", "yes: " .. names(yes) .. " · soon: " .. names(soon) .. " · short: " .. names(short) .. " · no " .. no)
 end
 
 -- Slash commands -----------------------------------------------------------------
@@ -2946,4 +2986,4 @@ SF.test = { pathTips = pathTips, pickupTips = pickupTips, dungeonTips = dungeonT
   npcLines = function(id) return npcLines(id) end, craftTips = function() return craftTips() end,
   currentView = function() return currentView() end, trainerOffer = trainerOffer, buyRecommended = buyRecommended,
   classQuestTips = classQuestTips, trainList = trainList, craftVerdict = craftVerdict, lastsUntil = lastsUntil,
-  craftReview = function() return craftReview() end }
+  craftReview = function(list) return craftReview(list) end }

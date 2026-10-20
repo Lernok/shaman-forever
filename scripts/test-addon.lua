@@ -271,6 +271,16 @@ if os.getenv("SCAN") then
   end
   show(ShamanForeverDB.scan or {}, "SCAN ")
 end
+-- At a profession trainer (OFFER=<lua file with OFFER_LIST, SKILL=<your
+-- skill>): what the panel beside it says.
+if os.getenv("OFFER") then
+  SKILL = tonumber(os.getenv("SKILL") or "1")
+  assert(loadfile(os.getenv("OFFER")))()
+  local yes, soon, short, no = SF.test.craftReview(OFFER_LIST)
+  local function show(head, l) print("  " .. head .. " " .. #l) for _, e in ipairs(l) do print("    " .. e.text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")) end end
+  print("-- entrenador de profesión (" .. #OFFER_LIST .. " recetas):")
+  show("SÍ", yes) show("PRONTO", soon) show("NO VALE", short) print("  no mejoran: " .. no)
+end
 -- Quest XP the game pays, kept for the route planner (turn-in event).
 ev:fire("QUEST_TURNED_IN", 96659, 410, 0)
 print("qxp 96659:", ShamanForeverDB.qxp and ShamanForeverDB.qxp[96659] and table.concat(ShamanForeverDB.qxp[96659], " @ nivel "))
@@ -278,4 +288,4 @@ SlashCmdList.SHAMANFOREVER("ayuda")
 SlashCmdList.SHAMANFOREVER("dondeestoy")
 SlashCmdList.SHAMANFOREVER("registro")
 print("log:", #ShamanForeverCharDB.log, ShamanForeverCharDB.log[1])
-if os.getenv("SCAN") then for _, l in ipairs(ShamanForeverCharDB.log) do if l:find("|scan|") or l:find("|error|") then print("LOG", l) end end end
+if os.getenv("SCAN") then for _, l in ipairs(ShamanForeverCharDB.log) do if l:find("|scan|") or l:find("|error|") or l:find("|offer|") or l:find("|crafts|") then print("LOG", l) end end end

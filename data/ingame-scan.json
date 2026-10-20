@@ -191,20 +191,20 @@
      "skill": 105,
      "level": 0
     },
-    "Embossed Leather Gloves": {
-     "item": 4239,
-     "cost": 150,
-     "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 40,
-     "level": 0
-    },
     "Small Leather Ammo Pouch": {
      "item": 7279,
      "cost": 100,
      "prof": "Leatherworking",
      "kind": "available",
      "skill": 25,
+     "level": 0
+    },
+    "Embossed Leather Gloves": {
+     "item": 4239,
+     "cost": 150,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 40,
      "level": 0
     },
     "Camp Tent": {
@@ -215,16 +215,16 @@
      "skill": 20,
      "level": 0
     },
-    "Heavy Quiver": {
-     "item": 7371,
+    "Heavy Leather Ammo Pouch": {
+     "item": 7372,
      "cost": 500,
      "prof": "Leatherworking",
      "kind": "unavailable",
      "skill": 125,
      "level": 0
     },
-    "Heavy Leather Ammo Pouch": {
-     "item": 7372,
+    "Heavy Quiver": {
+     "item": 7371,
      "cost": 500,
      "prof": "Leatherworking",
      "kind": "unavailable",
@@ -247,12 +247,12 @@
      "skill": 75,
      "level": 0
     },
-    "Murloc Scale Shoes": {
-     "item": 252426,
-     "cost": 500,
+    "Handstitched Leather Belt": {
+     "item": 4237,
+     "cost": 75,
      "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 35,
+     "kind": "used",
+     "skill": 25,
      "level": 0
     },
     "Fletcher's Gloves": {
@@ -271,12 +271,12 @@
      "skill": 50,
      "level": 0
     },
-    "Handstitched Leather Belt": {
-     "item": 4237,
-     "cost": 75,
+    "Murloc Scale Shoes": {
+     "item": 252426,
+     "cost": 500,
      "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 25,
+     "kind": "available",
+     "skill": 35,
      "level": 0
     },
     "Medium Leather": {
@@ -536,7 +536,828 @@
    "f": "horde"
   }
  },
- "vendors": {},
+ "vendors": {
+  "248201": {
+   "y": 29.7,
+   "x": 49.6,
+   "z": "The Barrens",
+   "n": "Pawani",
+   "t": 1792516423,
+   "list": {
+    "252765": {
+     "price": 0,
+     "name": "Pattern: Brawler's Leather Belt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252766": {
+     "price": 0,
+     "name": "Pattern: Trapper's Leather Belt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252767": {
+     "price": 0,
+     "name": "Pattern: Defender's Leather Belt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252768": {
+     "price": 0,
+     "name": "Pattern: Totemic Leather Belt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252769": {
+     "price": 0,
+     "name": "Pattern: Stormrider's Leather Belt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252770": {
+     "price": 0,
+     "name": "Pattern: Wisdom's Leather Belt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252777": {
+     "price": 0,
+     "name": "Pattern: Brawler's Leather Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252778": {
+     "price": 0,
+     "name": "Pattern: Trapper's Leather Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252779": {
+     "price": 0,
+     "name": "Pattern: Defender's Leather Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252780": {
+     "price": 0,
+     "name": "Pattern: Totemic Leather Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252781": {
+     "price": 0,
+     "name": "Pattern: Stormrider's Leather Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252782": {
+     "price": 0,
+     "name": "Pattern: Wisdom's Leather Gloves",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252786": {
+     "price": 0,
+     "name": "Pattern: Brawler's Leather Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252787": {
+     "price": 0,
+     "name": "Pattern: Trapper's Leather Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252788": {
+     "price": 0,
+     "name": "Pattern: Defender's Leather Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252789": {
+     "price": 0,
+     "name": "Pattern: Totemic Leather Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252790": {
+     "price": 0,
+     "name": "Pattern: Stormrider's Leather Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252791": {
+     "price": 0,
+     "name": "Pattern: Wisdom's Leather Boots",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252798": {
+     "price": 0,
+     "name": "Pattern: Brawler's Leather Hood",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252799": {
+     "price": 0,
+     "name": "Pattern: Trapper's Leather Hood",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252800": {
+     "price": 0,
+     "name": "Pattern: Defender's Leather Hood",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252801": {
+     "price": 0,
+     "name": "Pattern: Totemic Leather Hood",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252802": {
+     "price": 0,
+     "name": "Pattern: Stormrider's Leather Hood",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252803": {
+     "price": 0,
+     "name": "Pattern: Wisdom's Leather Hood",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252805": {
+     "price": 0,
+     "name": "Pattern: Brawler's Leather Tunic",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252806": {
+     "price": 0,
+     "name": "Pattern: Trapper's Leather Tunic",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252807": {
+     "price": 0,
+     "name": "Pattern: Defender's Leather Tunic",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252808": {
+     "price": 0,
+     "name": "Pattern: Totemic Leather Tunic",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252809": {
+     "price": 0,
+     "name": "Pattern: Stormrider's Leather Tunic",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252810": {
+     "price": 0,
+     "name": "Pattern: Wisdom's Leather Tunic",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252820": {
+     "price": 0,
+     "name": "Pattern: Brawler's Leather Legguards",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252821": {
+     "price": 0,
+     "name": "Pattern: Trapper's Leather Legguards",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252822": {
+     "price": 0,
+     "name": "Pattern: Defender's Leather Kilt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252823": {
+     "price": 0,
+     "name": "Pattern: Totemic Leather Leggings",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252824": {
+     "price": 0,
+     "name": "Pattern: Stormrider's Leather Kilt",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252825": {
+     "price": 0,
+     "name": "Pattern: Wisdom's Leather Leggings",
+     "cost": [
+      [
+       30,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252834": {
+     "price": 0,
+     "name": "Pattern: Forceful Thick Armor Kit",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252836": {
+     "price": 0,
+     "name": "Pattern: Prowler's Leather Gloves",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252837": {
+     "price": 0,
+     "name": "Pattern: Skulker's Leather Gloves",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252838": {
+     "price": 0,
+     "name": "Pattern: Stalker's Leather Gloves",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252839": {
+     "price": 0,
+     "name": "Pattern: Warden's Leather Gloves",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252840": {
+     "price": 0,
+     "name": "Pattern: Skirmisher's Leather Gloves",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252841": {
+     "price": 0,
+     "name": "Pattern: Skycaller's Leather Gloves",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252842": {
+     "price": 0,
+     "name": "Pattern: Mender's Leather Gloves",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252848": {
+     "price": 0,
+     "name": "Pattern: Prowler's Leather Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252849": {
+     "price": 0,
+     "name": "Pattern: Skulker's Leather Shoulder",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252850": {
+     "price": 0,
+     "name": "Pattern: Warden's Leather Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252851": {
+     "price": 0,
+     "name": "Pattern: Skycaller's Leather Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252852": {
+     "price": 0,
+     "name": "Pattern: Mender's Leather Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252853": {
+     "price": 0,
+     "name": "Pattern: Prowler's Leather Bracers",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252854": {
+     "price": 0,
+     "name": "Pattern: Skulker's Leather Bracers",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252855": {
+     "price": 0,
+     "name": "Pattern: Warden's Leather Bracers",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252856": {
+     "price": 0,
+     "name": "Pattern: Skycaller's Leather Bracers",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252857": {
+     "price": 0,
+     "name": "Pattern: Mender's Leather Bracers",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252860": {
+     "price": 0,
+     "name": "Pattern: Prowler's Leather Boots",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252861": {
+     "price": 0,
+     "name": "Pattern: Skulker's Leather Boots",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252862": {
+     "price": 0,
+     "name": "Pattern: Warden's Leather Boots",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252863": {
+     "price": 0,
+     "name": "Pattern: Skycaller's Leather Boots",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252864": {
+     "price": 0,
+     "name": "Pattern: Mender's Leather Boots",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252872": {
+     "price": 0,
+     "name": "Pattern: Prowler's Leather Waistguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252873": {
+     "price": 0,
+     "name": "Pattern: Skulker's Leather Waistguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252874": {
+     "price": 0,
+     "name": "Pattern: Warden's Leather Waistguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252875": {
+     "price": 0,
+     "name": "Pattern: Skycaller's Leather Waistguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252876": {
+     "price": 0,
+     "name": "Pattern: Mender's Leather Waistguard",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252900": {
+     "price": 0,
+     "name": "Pattern: Stalker's Mail Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252901": {
+     "price": 0,
+     "name": "Pattern: Skycaller's Mail Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252902": {
+     "price": 0,
+     "name": "Pattern: Skirmisher's Mail Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252903": {
+     "price": 0,
+     "name": "Pattern: Mender's Mail Shoulders",
+     "cost": [
+      [
+       60,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252904": {
+     "price": 0,
+     "name": "Pattern: Stalker's Mail Bracers",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252905": {
+     "price": 0,
+     "name": "Pattern: Skycaller's Mail Bracers",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252906": {
+     "price": 0,
+     "name": "Pattern: Skirmisher's Mail Bracers",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252907": {
+     "price": 0,
+     "name": "Pattern: Mender's Mail Bracers",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252910": {
+     "price": 0,
+     "name": "Pattern: Stalker's Mail Sabatons",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252911": {
+     "price": 0,
+     "name": "Pattern: Skycaller's Mail Sabatons",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252912": {
+     "price": 0,
+     "name": "Pattern: Skirmisher's Mail Sabatons",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252913": {
+     "price": 0,
+     "name": "Pattern: Mender's Mail Sabatons",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252922": {
+     "price": 0,
+     "name": "Pattern: Stalker's Mail Belt",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252923": {
+     "price": 0,
+     "name": "Pattern: Skycaller's Mail Belt",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252924": {
+     "price": 0,
+     "name": "Pattern: Skirmisher's Mail Belt",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252925": {
+     "price": 0,
+     "name": "Pattern: Mender's Mail Belt",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    },
+    "252941": {
+     "price": 0,
+     "name": "Pattern: Mystic Rugged Armor Kit",
+     "cost": [
+      [
+       90,
+       "Merchant's Favor"
+      ]
+     ]
+    }
+   },
+   "f": "horde"
+  }
+ },
  "colors": {
   "Leatherworking": {
    "2302": {
