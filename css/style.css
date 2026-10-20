@@ -1122,11 +1122,6 @@ details.more summary { cursor: pointer; font-size: 12.5px; color: var(--accent);
 .plan-list { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
 .plan-bracket { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px; }
 .plan-bracket.post-cap { opacity: .7; }
-.lw-stage .br-title { justify-content: space-between; flex-wrap: wrap; }
-.lw-goal { margin: 6px 0 4px; }
-.lw-piece { margin: 2px 0 6px; }
-.lw-piece .gp-why { margin-top: 2px; }
-.lw-lines li { padding: 3px 0; font-size: 13px; line-height: 1.45; }
 .br-title { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
 .br-title b { color: var(--spec-color); font-size: 15px; }
 .br-title .dim { font-size: 11.5px; }
@@ -1372,4 +1367,43 @@ details.wp-all[open] > summary { margin-bottom: 10px; }
   .home-more, .plan-more, .sum-more { display: inline-block; padding-top: 10px; padding-bottom: 10px; }
   .chk input[type=checkbox] { width: 18px; height: 18px; }
   a.src { display: inline-block; padding: 6px 2px; }
+}
+
+/* Leatherworking while leveling: summary tiles, shopping line, one card per stage. */
+.lw-sum { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 12px 0; }
+.lw-tile { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; display: flex; flex-direction: column; }
+.lw-tile span { font-size: 11.5px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .05em; }
+.lw-tile b { font-size: 22px; color: var(--spec-color); line-height: 1.2; }
+.lw-tile small { font-size: 11.5px; color: var(--text-dim); }
+.lw-shop { background: color-mix(in srgb, var(--warn) 10%, var(--bg-panel)); border: 1px solid color-mix(in srgb, var(--warn) 40%, var(--border)); border-radius: 10px; padding: 8px 12px; font-size: 13px; line-height: 1.7; }
+.lw-steps { display: flex; flex-direction: column; gap: 10px; }
+.lw-step { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px; }
+.lw-head { display: flex; align-items: center; gap: 4px 10px; flex-wrap: wrap; cursor: pointer; list-style: none; }
+.lw-head::-webkit-details-marker { display: none; }
+.lw-head::before { content: '▸'; color: var(--text-dim); font-size: 12px; transition: transform .15s; }
+details[open] > .lw-head::before { transform: rotate(90deg); }
+details[open] > .lw-head { margin-bottom: 4px; }
+.lw-goals { flex-basis: 100%; font-size: 12.5px; color: var(--text); padding-left: 16px; }
+details[open] > .lw-head .lw-goals { display: none; }
+.lw-head b { color: var(--spec-color); font-size: 15px; }
+.lw-skill { font-size: 12px; color: var(--text-dim); }
+.lw-bar { flex: 1; min-width: 80px; height: 4px; background: rgba(255,255,255,.08); border-radius: 2px; overflow: hidden; }
+.lw-bar i { display: block; height: 100%; background: var(--spec-color); }
+.lw-row { display: grid; grid-template-columns: 104px 1fr; gap: 10px; padding: 5px 0; border-top: 1px solid rgba(255,255,255,.04); font-size: 13px; }
+.lw-k { font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--text-dim); padding-top: 3px; }
+.lw-goal .lw-k { color: var(--spec-color); }
+.lw-v { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; min-width: 0; }
+.lw-v > div { flex-basis: 100%; }
+.lw-piece { display: block; flex-basis: 100%; }
+.lw-chip { display: inline-flex; align-items: center; gap: 4px; background: rgba(255,255,255,.04); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px 1px 2px; font-size: 12.5px; white-space: nowrap; }
+.lw-chip img { width: 18px; height: 18px; border-radius: 4px; border: 1px solid #000; }
+.lw-beasts { font-size: 12px; }
+.lw-early { flex-basis: 100%; font-size: 12px; color: var(--text-dim); display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; margin: 2px 0 4px; }
+.lw-buyrow .lw-k { color: var(--warn); }
+.lw-more { margin-top: 18px; }
+.lw-more summary { cursor: pointer; color: var(--text-dim); font-size: 13px; }
+@media (max-width: 640px) {
+  .lw-sum { grid-template-columns: repeat(2, 1fr); }
+  .lw-row { grid-template-columns: 1fr; gap: 2px; }
+  .lw-chip { white-space: normal; }
 }

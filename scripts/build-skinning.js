@@ -136,22 +136,26 @@ function skinnedFrom(html) {
 
   // Names of what the recipes and skins use (raw materials aren't items we list elsewhere).
   const names = {};
+  const icons = {};
   const sparse = await http.get('https://wago.tools/db2/ItemSparse/csv?build=' + build, { cache: 'wago/' + build + '/ItemSparse.csv', valid: t => /^ID,|,ID,/.test(t.slice(0, 2000)) });
   const nameOf = new Map(parseCSV(sparse).map(r => [Number(r.ID), r.Display_lang]));
   const wanted = new Set(SKIN.concat(...outRecipes.map(r => r.mats.map(m => m[0])), outRecipes.map(r => r.id)));
   for (const id of wanted) {
-    let name = nameOf.get(id) || (Object.values(recipes).find(r => r.itemId === id) || {}).name;
-    if (!name) {
+    const made = Object.values(recipes).find(r => r.itemId === id) || {};
+    let name = nameOf.get(id) || made.name;
+    let icon = made.icon || null;
+    if (!name || !icon) {
       const tip = await require('./lib/wowhead').item('forever', id);
-      try { name = JSON.parse(tip).name; } catch (e) { /* stays unnamed */ }
+      try { const j = JSON.parse(tip); name = name || j.name; icon = icon || j.icon || null; } catch (e) { /* stays as is */ }
     }
     if (name) names[id] = name;
+    if (icon) icons[id] = icon;
   }
 
   writeJSON('data/skinning.json', {
     _readme: 'Written by scripts/build-skinning.js. yields[level-1]: items per skin of a beast of that level. zones: skinnable beasts (share of the hostile spawns). recipes: Leatherworking, trainer (t) or Merchant\'s Favor (f).',
     sources: { yields: 'https://www.wowhead.com/classic/item=783/light-hide#skinned-from', beasts: 'https://github.com/Questie/QuestieDB', recipes: 'https://classicwowforever.com/professions/leatherworking/recipes/' },
-    skin: SKIN, yields, zones: outZones, recipes: outRecipes, names
+    skin: SKIN, yields, zones: outZones, recipes: outRecipes, names, icons
   });
   console.log('Despellejar: ' + beasts.size + ' bestias con datos, ' + Object.keys(outZones).length + ' zonas, ' + outRecipes.length + ' recetas de Peletería');
 })().catch(e => { console.error(e.message); process.exit(1); });

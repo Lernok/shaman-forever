@@ -5,7 +5,7 @@
 //
 //   node scripts/fetch-recipes.js          (pages cached in .cache/cwf/, 1 req/s)
 //
-// Writes data/recipes.json: { profession: { 'item:<id>' (or the recipe's name): { name, itemId, slot, ilvl, skill:[orange,yellow,green,grey], source, isNew, mats } } }
+// Writes data/recipes.json: { profession: { 'item:<id>' (or the recipe's name): { name, itemId, icon, slot, ilvl, skill:[orange,yellow,green,grey], source, isNew, mats } } }
 const { readJSON, writeJSON } = require('./lib/files');
 const http = require('./lib/http');
 const PROFESSIONS = ['leatherworking', 'blacksmithing', 'tailoring', 'enchanting', 'engineering', 'alchemy'];
@@ -23,7 +23,7 @@ function parsePage(html) {
     let r;
     try { r = JSON.parse(m[0]); } catch (e) { continue; }
     const ilvl = /ilvl (\d+)/.exec(r.item || '');
-    out.push({ name: r.name, itemId: r.itemId || null, slot: r.slot || null, ilvl: ilvl ? Number(ilvl[1]) : null,
+    out.push({ name: r.name, itemId: r.itemId || null, icon: r.icon || null, slot: r.slot || null, ilvl: ilvl ? Number(ilvl[1]) : null,
       skill: [r.learn, r.yellow, r.green, r.grey].map(n => (n == null ? null : Number(n))), source: r.how || '', isNew: !!r.isNew,
       // Reagents as [item, count] (for the leveling plan: what a skill-up costs).
       mats: Array.isArray(r.mats) ? r.mats.map(([id, n]) => [Number(id), Number(n)]) : [] });
