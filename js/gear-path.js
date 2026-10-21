@@ -14,6 +14,23 @@
   const gear = () => ((window.GEAR_DATA && window.GEAR_DATA.gear) || []).concat((window.WEAPON_DATA && window.WEAPON_DATA.weapons) || []);
   const race = () => (Site.race === 'any' ? null : Site.race);
 
+  // Copper per point of Merchant's Favor at a level: the cheapest Waylaid
+  // Crate of Textiles you can fill then, crate and bundle at auction prices
+  // (data/favor.json, scripts/import-prices.js). Null without prices.
+  function favorCost(level) {
+    const C = window.CRAFT_DATA;
+    const P = C && C.prices && C.prices.p;
+    if (!P || !C.favor) return null;
+    let best = null;
+    C.favor.crates.filter(k => k.from <= level && P[k.crate]).forEach(k => {
+      const fills = k.fills.map(f => f.every(([m]) => P[m]) ? f.reduce((a, [m, n]) => a + P[m] * n, 0) : null).filter(x => x != null);
+      if (!fills.length) return;
+      const per = (P[k.crate] + Math.min(...fills)) / k.favor;
+      if (best == null || per < best) best = per;
+    });
+    return best;
+  }
+
   function compute() {
     // Your professions (shared with the Professions page, gathering ones too):
     // crafts count only from your crafting ones; none picked = no crafts.
@@ -27,7 +44,10 @@
       // Crafts wait for your first trainer of that profession.
       profAt: prof => window.Route.profFrom(prof, Site.faction, race()).level,
       // No auction house: crafts wait until you can gather their reagents.
-      matsAt: state.farm && window.LwPlan ? (item => window.LwPlan.matsAt(item.id, { faction: Site.faction, race: race(), profs: picked })) : null
+      matsAt: state.farm && window.LwPlan ? (item => window.LwPlan.matsAt(item.id, { faction: Site.faction, race: race(), profs: picked })) : null,
+      // Favor recipes: as many as half the bracket's quest gold buys.
+      favorCost,
+      goldAt: l => ((window.CRAFT_DATA || {}).gold || [])[Math.min(60, Math.max(1, l)) - 1] || 0
     };
     return { plan: window.GearPlan.plan(gear(), opts), profs, picked };
   }
@@ -42,7 +62,11 @@
       case 'quest': return t('gp.src.quest', { quest: s.quest, zone: s.zone || '?' });
       case 'dquest': return t('gp.src.dquest', { quest: s.quest, zone: s.dungeonZone || s.zone || '?' });
       case 'crafted': return t((s.learn || {}).type === 'unreleased' ? 'gp.src.unreleased' : 'gp.src.crafted', { prof: s.profession, skill: (s.learn || {}).learnAt || s.yellow });
-      case 'favor': return t('gp.src.favor', { prof: s.profession, n: (s.learn || {}).favor || '?' });
+      case 'favor': {
+        const n = (s.learn || {}).favor || 30;
+        const per = favorCost(c.at || 1);
+        return t('gp.src.favor', { prof: s.profession, n: (s.learn || {}).favor || '?' }) + (per ? ' ' + t('gp.src.favorGold', { cost: coin(Math.round(per * n)) }) : '');
+      }
       case 'vendor': return t('gp.src.vendor', { npc: s.npc, zone: s.zone || '?' });
       case 'boss': return t('gp.src.boss', { npc: s.npc, zone: s.zone || '?' });
       case 'unknown': case 'unrecorded': return t('gp.src.unknown');

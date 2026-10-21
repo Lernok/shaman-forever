@@ -12,8 +12,10 @@
 //   a piece full of stats you don't use is worth little. Enhancement's
 //   two-hander is judged by its DPS.
 // - Access, best first: a quest in a zone of your route > a dungeon quest >
-//   a trainer recipe of your profession > a Merchant's Favor recipe (at most
-//   FAVOR_PER_BRACKET per 10 levels: crates to fill are rare) > a boss drop
+//   a trainer recipe of your profession > a Merchant's Favor recipe (the ones
+//   that help most, as long as their Favor, in filled crates at auction
+//   prices, costs at most FAVOR_GOLD_SHARE of the quest gold of those 10
+//   levels; without prices, FAVOR_PER_BRACKET per 10 levels) > a boss drop
 //   (only if you ask for drops: it may not drop).
 // - Duration: how long it lasts before something you can get beats it,
 //   weighted by leveling time (a level in the 30s takes far longer than one
@@ -89,6 +91,9 @@
   const MIN_FIT = 0.5; // at least half of a piece's stats (Stamina aside) must be ones your spec uses
   const MIN_LEVELS = { class: 0, route: 0, dquest: 3, quest: 5, crafted: 2, favor: 6, vendor: 4, boss: 3 };
   const FAVOR_PER_BRACKET = 2;
+  // Share of a bracket's quest gold worth spending on Favor recipes (the
+  // rest goes to training, mount savings, repairs).
+  const FAVOR_GOLD_SHARE = 0.5;
   const TIER = { class: 1, route: 1, dquest: 2, quest: 3, crafted: 4, favor: 5, vendor: 6, boss: 7 };
   // Quest "zones" that aren't places: class quests, and ones you can't plan
   // a leveling path around (events, raids, PvP, other professions).
@@ -290,6 +295,12 @@
     return { steps, skipped };
   }
 
+  // What a Favor recipe costs in gold at the level you'd buy it (null: no prices).
+  function favorGold(c, opts) {
+    const per = opts.favorCost && opts.favorCost(c.at);
+    return per ? per * (((c.source || {}).learn || {}).favor || 30) : null;
+  }
+
   function plan(gear, opts) {
     const all = candidates(gear, opts);
     const bySlot = {};
@@ -308,12 +319,24 @@
       if (until - c.at < MIN_LEVELS.favor) return;
       scored.push({ c, score: (cur ? c.value / cur - 1 : 1) * weighted(c.at, until) });
     }));
+    // opts.favorCost(level): copper per point of Favor then (null: no prices);
+    // opts.goldAt(level): quest gold of that level, in copper.
     const favor = new Set();
     const perBracket = {};
+    const spent = {};
+    const priced = opts.favorCost && opts.goldAt;
     scored.sort((a, b) => b.score - a.score).forEach(({ c }) => {
       const br = Math.floor((c.at - 1) / 10);
-      if ((perBracket[br] || 0) >= FAVOR_PER_BRACKET) return;
-      perBracket[br] = (perBracket[br] || 0) + 1;
+      const cost = priced ? favorGold(c, opts) : null;
+      if (cost != null) {
+        let budget = 0;
+        for (let l = br * 10 + 1; l <= br * 10 + 10; l++) budget += opts.goldAt(l) || 0;
+        if ((spent[br] || 0) + cost > budget * FAVOR_GOLD_SHARE) return;
+        spent[br] = (spent[br] || 0) + cost;
+      } else {
+        if ((perBracket[br] || 0) >= FAVOR_PER_BRACKET) return;
+        perBracket[br] = (perBracket[br] || 0) + 1;
+      }
       favor.add(c.item.id);
     });
     const slots = {};
@@ -343,5 +366,5 @@
     return { slots, dontMiss, favor: [...favor], candidates: all.length };
   }
 
-  root.GearPlan = { plan, value, fit, points, candidates, access, SLOTS, WEIGHTS, COST, MIN_LEVELS, FAVOR_PER_BRACKET, UPGRADE };
+  root.GearPlan = { plan, value, fit, points, candidates, access, favorGold, SLOTS, WEIGHTS, COST, MIN_LEVELS, FAVOR_PER_BRACKET, FAVOR_GOLD_SHARE, UPGRADE };
 })(typeof window !== 'undefined' ? window : globalThis);

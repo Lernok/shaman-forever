@@ -75,6 +75,8 @@ const wanted = new Set(SK.skin);
 SK.recipes.forEach(r => { wanted.add(r.id); r.mats.forEach(([m]) => wanted.add(m)); });
 // And every other crafted piece's reagents (data/crafts.json, scripts/build-reagents.js).
 Object.keys(readJSON('data/crafts.json', { items: {} }).items).forEach(id => wanted.add(Number(id)));
+// And the Waylaid Crates that give Merchant's Favor, with what fills them (data/favor.json).
+readJSON('data/favor.json').crates.forEach(c => { wanted.add(c.crate); c.fills.forEach(f => f.forEach(([m]) => wanted.add(m))); });
 
 const db = all[realm];
 const prices = {};

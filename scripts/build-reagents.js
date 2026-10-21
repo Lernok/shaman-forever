@@ -206,7 +206,9 @@ let scarceItems = {};
   writeJSON('data/crafts.json', {
     _readme: 'Written by scripts/build-reagents.js: reagents of crafted gear (mats[item] = [[reagent, n]]), where each comes from, auction prices and quest gold per level.',
     sources: { drops: SK.sources.reagents, gold: SK.sources.gold, scarce: scarce.sources, market: scarce.vendor },
-    mats: Object.fromEntries(crafted), items: all, gold: SK.gold, prices: SK.prices || null
+    mats: Object.fromEntries(crafted), items: all, gold: SK.gold, prices: SK.prices || null,
+    // What Merchant's Favor costs: crates and what fills them (data/favor.json).
+    favor: readJSON('data/favor.json')
   });
   const n = Object.values(items);
   console.log('Reactivos: ' + n.length + ' (' + fetched + ' con página de Wowhead' + (kept ? ', ' + kept + ' como estaban' : '') + '): ' + n.filter(e => e.drops).length + ' caen de bichos, ' +

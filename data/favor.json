@@ -1,0 +1,9 @@
+{
+  "_readme": "Hand-kept. Merchant's Favor from Waylaid Crates of Textiles: a crate (world drop or Auction House) is filled with ONE bundle of its row and handed in for Favor. Ids: crates and fills from the client's item table; ranks, fills and Favor from the source. Used with Auctionator prices (data/prices.json) to say what a Favor recipe costs in gold.",
+  "source": "https://www.wow-professions.com/forever/merchants-favor-durotar-supply-azeroth-commerce",
+  "crates": [
+    { "rank": "Apprentice", "from": 10, "crate": 248684, "favor": 5, "fills": [[[2318, 20]], [[2589, 40]]] },
+    { "rank": "Journeyman", "from": 10, "crate": 248688, "favor": 10, "fills": [[[2319, 20]], [[2592, 40]], [[4306, 40]]] },
+    { "rank": "Expert", "from": 20, "crate": 248693, "favor": 15, "fills": [[[4234, 20]], [[4338, 40]]] }
+  ]
+}
