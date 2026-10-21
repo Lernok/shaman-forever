@@ -83,9 +83,11 @@ for (const f of files) {
     if (!m || (e.n || 0) >= (m.n || 0)) merged.kills[lvl] = { n: e.n, items: e.items };
   }
   // Skill-ups per craft: by profession, item and the skill you had (running totals: the biggest wins).
-  merged.ups = merged.ups || {};
-  for (const [prof, items] of Object.entries(scan.ups || {})) {
-    const mp = merged.ups[prof] = merged.ups[prof] || {};
+  // (0.31.0-0.31.2 saved scan.ups, misread when crafting many in a row: dropped.)
+  delete merged.ups;
+  merged.crafts = merged.crafts || {};
+  for (const [prof, items] of Object.entries(scan.crafts || {})) {
+    const mp = merged.crafts[prof] = merged.crafts[prof] || {};
     for (const [item, ranks] of Object.entries(items)) {
       const mi = mp[item] = mp[item] || {};
       for (const [rank, r] of Object.entries(ranks)) if (!mi[rank] || (r.n || 0) >= (mi[rank].n || 0)) mi[rank] = r;
@@ -210,7 +212,7 @@ if (Object.keys(merged.skins).length) {
 }
 // Skill-ups: how often each color raised the skill, against the site's
 // model (orange always; yellow and green fall off toward grey).
-const ups = merged.ups || {};
+const ups = merged.crafts || {};
 if (Object.keys(ups).length) {
   const SKR = new Map(JSON.parse(fs.readFileSync(path.join(root, 'data', 'skinning.json'), 'utf8')).recipes.map(r => [String(r.id), r]));
   console.log('\nSUBIDAS DE HABILIDAD (crafteos que subieron / hechos, por color; entre paréntesis, lo que supone el sitio)');

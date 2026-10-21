@@ -336,12 +336,14 @@ if os.getenv("MEASURE") then
     GetRecipeOutputItemData = function() return { itemID = 2318 } end,
     GetChildProfessionInfo = function() return { professionName = "Leatherworking", skillLevel = skill } end,
   }
+  -- Two in a row: the first raises the skill (the chat says so), the window
+  -- still reads 20 when the second starts, and the second doesn't.
   ev:fire("UNIT_SPELLCAST_START", "player", "c1", 2881)
-  skill = 21
+  ev:fire("CHAT_MSG_SKILL", "Your skill in Leatherworking has increased to 21.")
   ev:fire("UNIT_SPELLCAST_SUCCEEDED", "player", "c1", 2881)
   ev:fire("UNIT_SPELLCAST_START", "player", "c2", 2881)
   ev:fire("UNIT_SPELLCAST_SUCCEEDED", "player", "c2", 2881)
-  local ups = (((ShamanForeverDB.scan or {}).ups or {}).Leatherworking or {})[2318] or {}
+  local ups = (((ShamanForeverDB.scan or {}).crafts or {}).Leatherworking or {})[2318] or {}
   for _, r in ipairs({ 20, 21 }) do local e = ups[r] print("crafteo con " .. r .. ":", e and e.n, e and e.up, e and e.kind) end
   local xp = 100
   function UnitXP() return xp end

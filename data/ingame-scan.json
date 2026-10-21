@@ -1,5 +1,92 @@
 {
  "trainers": {
+  "3191": {
+   "y": 42.6,
+   "x": 51.1,
+   "z": "Durotar",
+   "n": "Cook Torka",
+   "t": 1792559435,
+   "list": {
+    "Apprentice Cook": {
+     "level": 0,
+     "kind": "used",
+     "skill": 0,
+     "cost": 100
+    },
+    "Spider Sausage": {
+     "item": 17222,
+     "cost": 4000,
+     "prof": "Cooking",
+     "kind": "unavailable",
+     "skill": 200,
+     "level": 0
+    },
+    "Coyote Steak": {
+     "item": 2684,
+     "cost": 100,
+     "prof": "Cooking",
+     "kind": "unavailable",
+     "skill": 50,
+     "level": 0
+    },
+    "Boiled Clams": {
+     "item": 5525,
+     "cost": 100,
+     "prof": "Cooking",
+     "kind": "unavailable",
+     "skill": 50,
+     "level": 0
+    },
+    "Journeyman Cook": {
+     "cost": 500,
+     "prof": "Cooking",
+     "level": 0,
+     "skill": 50,
+     "kind": "unavailable"
+    },
+    "Goblin Deviled Clams": {
+     "item": 5527,
+     "cost": 300,
+     "prof": "Cooking",
+     "kind": "unavailable",
+     "skill": 125,
+     "level": 0
+    },
+    "Dry Pork Ribs": {
+     "item": 2687,
+     "cost": 150,
+     "prof": "Cooking",
+     "kind": "unavailable",
+     "skill": 80,
+     "level": 0
+    },
+    "Crab Cake": {
+     "item": 2683,
+     "cost": 200,
+     "prof": "Cooking",
+     "kind": "unavailable",
+     "skill": 75,
+     "level": 0
+    },
+    "Basic Campfire Kit": {
+     "item": 279981,
+     "cost": 100,
+     "prof": "Cooking",
+     "kind": "used",
+     "skill": 20,
+     "level": 0
+    },
+    "Spiced Wolf Meat": {
+     "item": 2680,
+     "cost": 50,
+     "prof": "Cooking",
+     "kind": "unavailable",
+     "skill": 10,
+     "level": 0
+    }
+   },
+   "f": "horde"
+  },
   "3365": {
    "y": 44.5,
    "x": 62.8,
@@ -392,23 +479,23 @@
    "f": "horde"
   },
   "5811": {
-   "y": 44.9,
-   "x": 63,
+   "y": 45,
+   "x": 63.2,
    "z": "Orgrimmar",
-   "n": "Kamari",
-   "t": 1792515719,
+   "f": "horde",
+   "t": 1792560009,
    "list": {
     "Black Whelp Slippers": {
      "item": 252424,
      "cost": 500,
      "prof": "Leatherworking",
-     "kind": "available",
+     "kind": "unavailable",
      "skill": 35,
      "level": 0
     },
     "Apprentice Leatherworking": {
-     "level": 1,
      "kind": "used",
+     "level": 1,
      "skill": 0,
      "cost": 10
     },
@@ -416,7 +503,7 @@
      "item": 252427,
      "cost": 500,
      "prof": "Leatherworking",
-     "kind": "available",
+     "kind": "unavailable",
      "skill": 35,
      "level": 0
     },
@@ -424,7 +511,7 @@
      "item": 252425,
      "cost": 500,
      "prof": "Leatherworking",
-     "kind": "available",
+     "kind": "unavailable",
      "skill": 35,
      "level": 0
     },
@@ -440,7 +527,7 @@
      "item": 2310,
      "cost": 100,
      "prof": "Leatherworking",
-     "kind": "available",
+     "kind": "unavailable",
      "skill": 40,
      "level": 0
     },
@@ -464,7 +551,7 @@
      "item": 252426,
      "cost": 500,
      "prof": "Leatherworking",
-     "kind": "available",
+     "kind": "unavailable",
      "skill": 35,
      "level": 0
     },
@@ -472,7 +559,7 @@
      "item": 279978,
      "cost": 100,
      "prof": "Leatherworking",
-     "kind": "used",
+     "kind": "available",
      "skill": 20,
      "level": 0
     },
@@ -480,40 +567,16 @@
      "item": 4231,
      "cost": 50,
      "prof": "Leatherworking",
-     "kind": "used",
+     "kind": "unavailable",
      "skill": 30,
      "level": 0
     },
-    "Handstitched Leather Belt": {
-     "item": 4237,
-     "cost": 75,
-     "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 25,
-     "level": 0
-    },
-    "Handstitched Leather Pants": {
-     "item": 2303,
-     "cost": 50,
-     "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 15,
-     "level": 0
-    },
-    "Small Leather Ammo Pouch": {
-     "item": 7279,
+    "Embossed Leather Vest": {
+     "item": 2300,
      "cost": 100,
      "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 25,
-     "level": 0
-    },
-    "Embossed Leather Gloves": {
-     "item": 4239,
-     "cost": 150,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 40,
+     "kind": "unavailable",
+     "skill": 35,
      "level": 0
     },
     "Embossed Leather Boots": {
@@ -524,19 +587,127 @@
      "skill": 50,
      "level": 0
     },
-    "Embossed Leather Vest": {
-     "item": 2300,
+    "Embossed Leather Gloves": {
+     "item": 4239,
+     "cost": 150,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 40,
+     "level": 0
+    },
+    "Small Leather Ammo Pouch": {
+     "item": 7279,
      "cost": 100,
      "prof": "Leatherworking",
      "kind": "available",
-     "skill": 35,
+     "skill": 25,
+     "level": 0
+    },
+    "Handstitched Leather Pants": {
+     "item": 2303,
+     "cost": 50,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 15,
+     "level": 0
+    },
+    "Handstitched Leather Belt": {
+     "item": 4237,
+     "cost": 75,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 25,
      "level": 0
     }
    },
-   "f": "horde"
+   "n": "Kamari"
   }
  },
  "vendors": {
+  "3366": {
+   "y": 45.2,
+   "x": 63.1,
+   "z": "Orgrimmar",
+   "f": "horde",
+   "t": 1792560050,
+   "list": {
+    "2320": {
+     "price": 10,
+     "name": "Coarse Thread"
+    },
+    "2321": {
+     "price": 100,
+     "name": "Fine Thread"
+    },
+    "2325": {
+     "price": 1000,
+     "name": "Black Dye"
+    },
+    "2604": {
+     "price": 50,
+     "name": "Red Dye"
+    },
+    "2605": {
+     "price": 100,
+     "name": "Green Dye"
+    },
+    "4289": {
+     "price": 50,
+     "name": "Salt"
+    },
+    "4291": {
+     "price": 500,
+     "name": "Silken Thread"
+    },
+    "4340": {
+     "price": 350,
+     "name": "Gray Dye"
+    },
+    "4341": {
+     "price": 500,
+     "name": "Yellow Dye"
+    },
+    "4342": {
+     "price": 2500,
+     "name": "Purple Dye"
+    },
+    "6260": {
+     "price": 50,
+     "name": "Blue Dye"
+    },
+    "6261": {
+     "price": 1000,
+     "name": "Orange Dye"
+    },
+    "8343": {
+     "price": 2000,
+     "name": "Heavy Silken Thread"
+    },
+    "10290": {
+     "price": 2500,
+     "name": "Pink Dye"
+    },
+    "14341": {
+     "price": 5000,
+     "name": "Rune Thread"
+    }
+   },
+   "n": "Tamar"
+  },
+  "3881": {
+   "y": 42.6,
+   "x": 51.2,
+   "z": "Durotar",
+   "n": "Grimtak",
+   "t": 1792559454,
+   "list": {
+    "5483": {
+     "price": 140,
+     "name": "Recipe: Scorpid Surprise"
+    }
+   },
+   "f": "horde"
+  },
   "248196": {
    "y": 29.6,
    "x": 49.9,
@@ -2956,7 +3127,7 @@
      83
     ],
     "optimal": [
-     34,
+     1,
      39
     ],
     "medium": [
@@ -2966,7 +3137,7 @@
    },
    "2303": {
     "optimal": [
-     34,
+     25,
      44
     ],
     "medium": [
@@ -2986,6 +3157,10 @@
     "easy": [
      45,
      50
+    ],
+    "optimal": [
+     1,
+     26
     ]
    },
    "2318": {
@@ -2996,6 +3171,14 @@
     "easy": [
      34,
      39
+    ],
+    "optimal": [
+     1,
+     19
+    ],
+    "medium": [
+     20,
+     26
     ]
    },
    "2319": {
@@ -3026,7 +3209,7 @@
    },
    "4237": {
     "optimal": [
-     34,
+     25,
      50
     ]
    },
@@ -3064,7 +3247,7 @@
      83
     ],
     "optimal": [
-     34,
+     1,
      39
     ],
     "medium": [
@@ -3078,7 +3261,7 @@
      83
     ],
     "optimal": [
-     34,
+     1,
      39
     ],
     "medium": [
@@ -3092,7 +3275,7 @@
      83
     ],
     "optimal": [
-     34,
+     1,
      39
     ],
     "medium": [
@@ -3126,7 +3309,7 @@
    },
    "279978": {
     "trivial": [
-     34,
+     25,
      83
     ]
    }
@@ -3182,6 +3365,32 @@
      107
     ]
    }
+  },
+  "Cooking": {
+   "2679": {
+    "optimal": [
+     1,
+     1
+    ]
+   },
+   "2681": {
+    "optimal": [
+     1,
+     1
+    ]
+   },
+   "6888": {
+    "optimal": [
+     1,
+     1
+    ]
+   },
+   "279981": {
+    "medium": [
+     1,
+     1
+    ]
+   }
   }
  },
  "sources": {},
@@ -3220,7 +3429,8 @@
    "2303": {
     "rid": 2153,
     "grey": 75,
-    "name": "Handstitched Leather Pants"
+    "name": "Handstitched Leather Pants",
+    "learned": true
    },
    "2304": {
     "rid": 2152,
@@ -3292,8 +3502,7 @@
    "2319": {
     "rid": 20648,
     "grey": 85,
-    "name": "Medium Leather",
-    "learned": true
+    "name": "Medium Leather"
    },
    "3719": {
     "rid": 3760,
@@ -3303,14 +3512,12 @@
    "4231": {
     "rid": 3816,
     "grey": 70,
-    "name": "Cured Light Hide",
-    "learned": true
+    "name": "Cured Light Hide"
    },
    "4233": {
     "rid": 3817,
     "grey": 105,
-    "name": "Cured Medium Hide",
-    "learned": true
+    "name": "Cured Medium Hide"
    },
    "4234": {
     "rid": 20649,
@@ -3325,13 +3532,13 @@
    "4237": {
     "rid": 3753,
     "grey": 85,
-    "name": "Handstitched Leather Belt"
+    "name": "Handstitched Leather Belt",
+    "learned": true
    },
    "4239": {
     "rid": 3756,
     "grey": 100,
-    "name": "Embossed Leather Gloves",
-    "learned": true
+    "name": "Embossed Leather Gloves"
    },
    "4242": {
     "rid": 3759,
@@ -3351,8 +3558,7 @@
    "4246": {
     "rid": 3763,
     "grey": 115,
-    "name": "Fine Leather Belt",
-    "learned": true
+    "name": "Fine Leather Belt"
    },
    "4247": {
     "rid": 3764,
@@ -3457,8 +3663,7 @@
    "5081": {
     "rid": 5244,
     "grey": 95,
-    "name": "Kodo Hide Bag",
-    "learned": true
+    "name": "Kodo Hide Bag"
    },
    "5739": {
     "rid": 6661,
@@ -3468,8 +3673,7 @@
    "5780": {
     "rid": 6702,
     "grey": 125,
-    "name": "Murloc Scale Belt",
-    "learned": true
+    "name": "Murloc Scale Belt"
    },
    "5781": {
     "rid": 6703,
@@ -4832,8 +5036,7 @@
    "252424": {
     "rid": 1255146,
     "grey": 40,
-    "name": "Black Whelp Slippers",
-    "learned": true
+    "name": "Black Whelp Slippers"
    },
    "252425": {
     "rid": 1255145,
@@ -4843,8 +5046,7 @@
    "252426": {
     "rid": 1255144,
     "grey": 40,
-    "name": "Murloc Scale Shoes",
-    "learned": true
+    "name": "Murloc Scale Shoes"
    },
    "252427": {
     "rid": 1255143,
@@ -4869,8 +5071,7 @@
    "252431": {
     "rid": 1255139,
     "grey": 120,
-    "name": "Totemic Leather Belt",
-    "learned": true
+    "name": "Totemic Leather Belt"
    },
    "252432": {
     "rid": 1255138,
@@ -6130,8 +6331,7 @@
    "277715": {
     "rid": 1302604,
     "grey": 50,
-    "name": "Light Leather Reagent Bag",
-    "learned": true
+    "name": "Light Leather Reagent Bag"
    },
    "279252": {
     "rid": 1306526,
@@ -6352,6 +6552,672 @@
     "name": "First Aid Kit",
     "learned": true
    }
+  },
+  "Cooking": {
+   "724": {
+    "rid": 2542,
+    "grey": 130,
+    "name": "Goretusk Liver Pie"
+   },
+   "733": {
+    "rid": 2543,
+    "grey": 155,
+    "name": "Westfall Stew"
+   },
+   "787": {
+    "rid": 7752,
+    "grey": 85,
+    "name": "Slitherskin Mackerel"
+   },
+   "1017": {
+    "rid": 2549,
+    "grey": 180,
+    "name": "Seasoned Wolf Kabob"
+   },
+   "1082": {
+    "rid": 2547,
+    "grey": 175,
+    "name": "Redridge Goulash"
+   },
+   "2679": {
+    "rid": 2538,
+    "grey": 85,
+    "name": "Charred Wolf Meat",
+    "learned": true
+   },
+   "2680": {
+    "rid": 2539,
+    "grey": 90,
+    "name": "Spiced Wolf Meat"
+   },
+   "2681": {
+    "rid": 2540,
+    "grey": 85,
+    "name": "Roasted Boar Meat",
+    "learned": true
+   },
+   "2682": {
+    "rid": 2545,
+    "grey": 165,
+    "name": "Cooked Crab Claw"
+   },
+   "2683": {
+    "rid": 2544,
+    "grey": 155,
+    "name": "Crab Cake"
+   },
+   "2684": {
+    "rid": 2541,
+    "grey": 130,
+    "name": "Coyote Steak"
+   },
+   "2685": {
+    "rid": 2548,
+    "grey": 170,
+    "name": "Succulent Pork Ribs"
+   },
+   "2687": {
+    "rid": 2546,
+    "grey": 160,
+    "name": "Dry Pork Ribs"
+   },
+   "2888": {
+    "rid": 2795,
+    "grey": 100,
+    "name": "Beer Basted Boar Ribs"
+   },
+   "3220": {
+    "rid": 3371,
+    "grey": 140,
+    "name": "Blood Sausage"
+   },
+   "3662": {
+    "rid": 3370,
+    "grey": 160,
+    "name": "Crocolisk Steak"
+   },
+   "3663": {
+    "rid": 3372,
+    "grey": 170,
+    "name": "Murloc Fin Soup"
+   },
+   "3664": {
+    "rid": 3373,
+    "grey": 200,
+    "name": "Crocolisk Gumbo"
+   },
+   "3665": {
+    "rid": 3376,
+    "grey": 210,
+    "name": "Curiously Tasty Omelet"
+   },
+   "3666": {
+    "rid": 3377,
+    "grey": 190,
+    "name": "Gooey Spider Cake"
+   },
+   "3726": {
+    "rid": 3397,
+    "grey": 190,
+    "name": "Big Bear Steak"
+   },
+   "3727": {
+    "rid": 3398,
+    "grey": 215,
+    "name": "Hot Lion Chops"
+   },
+   "3728": {
+    "rid": 3399,
+    "grey": 230,
+    "name": "Tasty Lion Steak"
+   },
+   "3729": {
+    "rid": 3400,
+    "grey": 255,
+    "name": "Soothing Turtle Bisque"
+   },
+   "4457": {
+    "rid": 4094,
+    "grey": 255,
+    "name": "Barbecued Buzzard Wing"
+   },
+   "4592": {
+    "rid": 7753,
+    "grey": 130,
+    "name": "Longjaw Mud Snapper"
+   },
+   "4593": {
+    "rid": 7755,
+    "grey": 180,
+    "name": "Bristle Whisker Catfish"
+   },
+   "4594": {
+    "rid": 7828,
+    "grey": 230,
+    "name": "Rockscale Cod"
+   },
+   "5095": {
+    "rid": 7827,
+    "grey": 130,
+    "name": "Rainbow Fin Albacore"
+   },
+   "5472": {
+    "rid": 6412,
+    "grey": 90,
+    "name": "Kaldorei Spider Kabob"
+   },
+   "5473": {
+    "rid": 6413,
+    "grey": 100,
+    "name": "Scorpid Surprise"
+   },
+   "5474": {
+    "rid": 6414,
+    "grey": 115,
+    "name": "Roasted Kodo Meat"
+   },
+   "5476": {
+    "rid": 6415,
+    "grey": 130,
+    "name": "Fillet of Frenzy"
+   },
+   "5477": {
+    "rid": 6416,
+    "grey": 130,
+    "name": "Strider Stew"
+   },
+   "5478": {
+    "rid": 6417,
+    "grey": 170,
+    "name": "Dig Rat Stew"
+   },
+   "5479": {
+    "rid": 6418,
+    "grey": 180,
+    "name": "Crispy Lizard Tail"
+   },
+   "5480": {
+    "rid": 6419,
+    "grey": 190,
+    "name": "Lean Venison"
+   },
+   "5525": {
+    "rid": 6499,
+    "grey": 130,
+    "name": "Boiled Clams"
+   },
+   "5526": {
+    "rid": 6501,
+    "grey": 170,
+    "name": "Clam Chowder"
+   },
+   "5527": {
+    "rid": 6500,
+    "grey": 205,
+    "name": "Goblin Deviled Clams"
+   },
+   "6038": {
+    "rid": 7213,
+    "grey": 255,
+    "name": "Giant Clam Scorcho"
+   },
+   "6290": {
+    "rid": 7751,
+    "grey": 85,
+    "name": "Brilliant Smallfish"
+   },
+   "6316": {
+    "rid": 7754,
+    "grey": 130,
+    "name": "Loch Frenzy Delight"
+   },
+   "6657": {
+    "rid": 8238,
+    "grey": 165,
+    "name": "Savory Deviate Delight"
+   },
+   "6887": {
+    "rid": 18238,
+    "grey": 305,
+    "name": "Spotted Yellowtail"
+   },
+   "6888": {
+    "rid": 8604,
+    "grey": 85,
+    "name": "Herb Baked Egg",
+    "learned": true
+   },
+   "6890": {
+    "rid": 8607,
+    "grey": 120,
+    "name": "Smoked Bear Meat"
+   },
+   "7676": {
+    "rid": 9513,
+    "grey": 140,
+    "name": "Thistle Tea"
+   },
+   "8364": {
+    "rid": 20916,
+    "grey": 255,
+    "name": "Mithril Headed Trout"
+   },
+   "8957": {
+    "rid": 1247741,
+    "grey": 220,
+    "name": "Spinefin Halibut"
+   },
+   "10841": {
+    "rid": 13028,
+    "grey": 255,
+    "name": "Goldthorn Tea"
+   },
+   "12209": {
+    "rid": 15853,
+    "grey": 205,
+    "name": "Lean Wolf Steak"
+   },
+   "12210": {
+    "rid": 15855,
+    "grey": 255,
+    "name": "Roast Raptor"
+   },
+   "12212": {
+    "rid": 15861,
+    "grey": 255,
+    "name": "Jungle Stew"
+   },
+   "12213": {
+    "rid": 15863,
+    "grey": 255,
+    "name": "Carrion Surprise"
+   },
+   "12214": {
+    "rid": 15865,
+    "grey": 255,
+    "name": "Mystery Stew"
+   },
+   "12215": {
+    "rid": 15910,
+    "grey": 280,
+    "name": "Heavy Kodo Stew"
+   },
+   "12216": {
+    "rid": 15915,
+    "grey": 305,
+    "name": "Spiced Chili Crab"
+   },
+   "12217": {
+    "rid": 15906,
+    "grey": 280,
+    "name": "Dragonbreath Chili"
+   },
+   "12218": {
+    "rid": 15933,
+    "grey": 305,
+    "name": "Monster Omelet"
+   },
+   "12224": {
+    "rid": 15935,
+    "grey": 85,
+    "name": "Crispy Bat Wing"
+   },
+   "13851": {
+    "rid": 15856,
+    "grey": 255,
+    "name": "Hot Wolf Ribs"
+   },
+   "13927": {
+    "rid": 18239,
+    "grey": 305,
+    "name": "Cooked Glossy Mightfish"
+   },
+   "13928": {
+    "rid": 18240,
+    "grey": 320,
+    "name": "Grilled Squid"
+   },
+   "13929": {
+    "rid": 18242,
+    "grey": 320,
+    "name": "Hot Smoked Bass"
+   },
+   "13930": {
+    "rid": 18241,
+    "grey": 305,
+    "name": "Filet of Redgill"
+   },
+   "13931": {
+    "rid": 18243,
+    "grey": 330,
+    "name": "Nightfin Soup"
+   },
+   "13932": {
+    "rid": 18244,
+    "grey": 330,
+    "name": "Poached Sunscale Salmon"
+   },
+   "13933": {
+    "rid": 18245,
+    "grey": 355,
+    "name": "Lobster Stew"
+   },
+   "13934": {
+    "rid": 18246,
+    "grey": 355,
+    "name": "Mightfish Steak"
+   },
+   "13935": {
+    "rid": 18247,
+    "grey": 355,
+    "name": "Baked Salmon"
+   },
+   "16766": {
+    "rid": 20626,
+    "grey": 305,
+    "name": "Undermine Clam Chowder"
+   },
+   "17197": {
+    "rid": 21143,
+    "grey": 85,
+    "name": "Gingerbread Cookie"
+   },
+   "17198": {
+    "rid": 21144,
+    "grey": 115,
+    "name": "Egg Nog"
+   },
+   "17222": {
+    "rid": 21175,
+    "grey": 280,
+    "name": "Spider Sausage"
+   },
+   "18045": {
+    "rid": 22480,
+    "grey": 305,
+    "name": "Tender Wolf Steak"
+   },
+   "18254": {
+    "rid": 22761,
+    "grey": 355,
+    "name": "Runn Tum Tuber Surprise"
+   },
+   "20074": {
+    "rid": 24418,
+    "grey": 200,
+    "name": "Heavy Crocolisk Stew"
+   },
+   "20452": {
+    "rid": 24801,
+    "grey": 365,
+    "name": "Smoked Desert Dumplings"
+   },
+   "21023": {
+    "rid": 25659,
+    "grey": 365,
+    "name": "Dirge's Kickin' Chimaerok Chops"
+   },
+   "21072": {
+    "rid": 25704,
+    "grey": 160,
+    "name": "Smoked Sagefish"
+   },
+   "21217": {
+    "rid": 25954,
+    "grey": 255,
+    "name": "Sagefish Delight"
+   },
+   "232436": {
+    "rid": 470359,
+    "grey": 365,
+    "name": "Darkclaw Bisque"
+   },
+   "232438": {
+    "rid": 470370,
+    "grey": 365,
+    "name": "Smoked Redgill"
+   },
+   "238637": {
+    "rid": 1225758,
+    "grey": 280,
+    "name": "Prowler Steak"
+   },
+   "238638": {
+    "rid": 1225759,
+    "grey": 280,
+    "name": "Filet o' Flank"
+   },
+   "238639": {
+    "rid": 1225760,
+    "grey": 280,
+    "name": "Sunrise Omelette"
+   },
+   "238641": {
+    "rid": 1225762,
+    "grey": 310,
+    "name": "Specklefin Feast"
+   },
+   "238642": {
+    "rid": 1225763,
+    "grey": 310,
+    "name": "Grand Lobster Banquet"
+   },
+   "249865": {
+    "rid": 1249957,
+    "grey": 45,
+    "name": "Peace Tea"
+   },
+   "249866": {
+    "rid": 1249958,
+    "grey": 125,
+    "name": "Royal Tea"
+   },
+   "249867": {
+    "rid": 1249959,
+    "grey": 185,
+    "name": "Root Tea"
+   },
+   "249868": {
+    "rid": 1249960,
+    "grey": 235,
+    "name": "Triage Tea"
+   },
+   "249869": {
+    "rid": 1249961,
+    "grey": 250,
+    "name": "Sunny Tea"
+   },
+   "249870": {
+    "rid": 1249962,
+    "grey": 290,
+    "name": "Sage's Tea"
+   },
+   "249871": {
+    "rid": 1249963,
+    "grey": 45,
+    "name": "Venomous Smoothie"
+   },
+   "249872": {
+    "rid": 1249964,
+    "grey": 120,
+    "name": "Slimy Smoothie"
+   },
+   "249873": {
+    "rid": 1249965,
+    "grey": 145,
+    "name": "Mrrggl Smrrthle"
+   },
+   "249874": {
+    "rid": 1249966,
+    "grey": 195,
+    "name": "Calcified Smoothie"
+   },
+   "249875": {
+    "rid": 1249967,
+    "grey": 225,
+    "name": "Spicy Smoothie"
+   },
+   "249876": {
+    "rid": 1249968,
+    "grey": 270,
+    "name": "Wicked Smoothie"
+   },
+   "250065": {
+    "rid": 1250142,
+    "grey": 245,
+    "name": "Savory Stag Sliders"
+   },
+   "250066": {
+    "rid": 1250143,
+    "grey": 310,
+    "name": "Soaring Pamplona"
+   },
+   "250067": {
+    "rid": 1250144,
+    "grey": 310,
+    "name": "Bat Hachee"
+   },
+   "250068": {
+    "rid": 1250145,
+    "grey": 310,
+    "name": "Savory Turtle Stew"
+   },
+   "250069": {
+    "rid": 1250146,
+    "grey": 315,
+    "name": "Flank au Poivre"
+   },
+   "250070": {
+    "rid": 1250147,
+    "grey": 310,
+    "name": "Bear Bruscitti"
+   },
+   "250071": {
+    "rid": 1250148,
+    "grey": 310,
+    "name": "Steaming Stag Steak"
+   },
+   "250072": {
+    "rid": 1250149,
+    "grey": 310,
+    "name": "Swiftstrike Steak"
+   },
+   "250073": {
+    "rid": 1250150,
+    "grey": 310,
+    "name": "Raging Raptor Ribs"
+   },
+   "250074": {
+    "rid": 1250151,
+    "grey": 220,
+    "name": "Bear Brisket"
+   },
+   "250075": {
+    "rid": 1250152,
+    "grey": 310,
+    "name": "Prehistoric Pulled Raptor"
+   },
+   "250076": {
+    "rid": 1250153,
+    "grey": 245,
+    "name": "Raptor Rouladen"
+   },
+   "250077": {
+    "rid": 1250154,
+    "grey": 150,
+    "name": "Twice-Spiced Raptor Slice"
+   },
+   "250078": {
+    "rid": 1250155,
+    "grey": 220,
+    "name": "Giant Scrambled Eggs"
+   },
+   "250079": {
+    "rid": 1250156,
+    "grey": 75,
+    "name": "Tasty Raptor Bites"
+   },
+   "250080": {
+    "rid": 1250157,
+    "grey": 95,
+    "name": "Breakfast Omelette"
+   },
+   "250081": {
+    "rid": 1250158,
+    "grey": 310,
+    "name": "Clam Linguine"
+   },
+   "251525": {
+    "rid": 1252566,
+    "grey": 165,
+    "name": "Savory Whimsyfin Delight"
+   },
+   "252683": {
+    "rid": 1255241,
+    "grey": 0,
+    "name": "Cleansing Stew"
+   },
+   "263507": {
+    "rid": 1270632,
+    "grey": 85,
+    "name": "Critter Cookie"
+   },
+   "263509": {
+    "rid": 1270633,
+    "grey": 45,
+    "name": "Skywall Souffle"
+   },
+   "263512": {
+    "rid": 1270635,
+    "grey": 55,
+    "name": "Pincer Bites"
+   },
+   "267341": {
+    "rid": 1294014,
+    "grey": 285,
+    "name": "Sweetpaw Jam"
+   },
+   "274971": {
+    "rid": 1295805,
+    "grey": 240,
+    "name": "Briny Seafood Stew"
+   },
+   "274976": {
+    "rid": 1295834,
+    "grey": 230,
+    "name": "Plain Ol' Paletusk"
+   },
+   "279957": {
+    "rid": 1262978,
+    "grey": 150,
+    "name": "Cookie's Feast"
+   },
+   "279961": {
+    "rid": 1283400,
+    "grey": 105,
+    "name": "Journeyman Campfire"
+   },
+   "279974": {
+    "rid": 1291341,
+    "grey": 220,
+    "name": "Expert Campfire"
+   },
+   "279981": {
+    "rid": 1229737,
+    "grey": 5,
+    "name": "Basic Campfire",
+    "learned": true
+   },
+   "279982": {
+    "rid": 1263067,
+    "grey": 300,
+    "name": "Iron Oven"
+   },
+   "286152": {
+    "rid": 1319313,
+    "grey": 255,
+    "name": "Plated Armorfish"
+   }
   }
  },
  "fields": "alwaysUsesLowestQuality=true canCreateMultiple=true canSkillUp=true categoryID=2574 craftable=true disabled=false favorite=false firstCraft=false hasSingleItemOutput=false hyperlink=|cnIQ1:|Hitem:279945::::::::10:1489:::1:3524::::::|h[Sewing Machine]|h|r icon=3622223 isDummyRecipe=false isEnchantingRecipe=false isGatheringRecipe=false isRecraft=false isSalvageRecipe=false itemLevel=60 learned=false maxTrivialLevel=300 name=Sewing Machine numSkillUps=1 recipeID=1263079 relativeDifficulty=0 skillLineAbilityID=57039 supportsCraftingStats=false supportsQualities=false",
@@ -6371,6 +7237,76 @@
  },
  "drops": {},
  "goods": {
+  "3366": {
+   "y": 45.2,
+   "x": 63.1,
+   "z": "Orgrimmar",
+   "f": "horde",
+   "t": 1792560050,
+   "list": {
+    "2320": {
+     "price": 10,
+     "name": "Coarse Thread"
+    },
+    "2321": {
+     "price": 100,
+     "name": "Fine Thread"
+    },
+    "2325": {
+     "price": 1000,
+     "name": "Black Dye"
+    },
+    "2604": {
+     "price": 50,
+     "name": "Red Dye"
+    },
+    "2605": {
+     "price": 100,
+     "name": "Green Dye"
+    },
+    "4289": {
+     "price": 50,
+     "name": "Salt"
+    },
+    "4291": {
+     "price": 500,
+     "name": "Silken Thread"
+    },
+    "4340": {
+     "price": 350,
+     "name": "Gray Dye"
+    },
+    "4341": {
+     "price": 500,
+     "name": "Yellow Dye"
+    },
+    "4342": {
+     "price": 2500,
+     "name": "Purple Dye"
+    },
+    "6260": {
+     "price": 50,
+     "name": "Blue Dye"
+    },
+    "6261": {
+     "price": 1000,
+     "name": "Orange Dye"
+    },
+    "8343": {
+     "price": 2000,
+     "name": "Heavy Silken Thread"
+    },
+    "10290": {
+     "price": 2500,
+     "name": "Pink Dye"
+    },
+    "14341": {
+     "price": 5000,
+     "name": "Rune Thread"
+    }
+   },
+   "n": "Tamar"
+  },
   "267327": {
    "y": 67.9,
    "x": 40.8,
@@ -6416,19 +7352,20 @@
    }
   },
   "5": {
-   "n": 5,
+   "n": 7,
    "items": {
     "2318": 2,
-    "2934": 3
+    "2934": 5
    }
   },
   "6": {
-   "n": 1,
+   "n": 4,
    "items": {
-    "2934": 1
+    "2318": 1,
+    "2934": 3
    }
   }
  },
- "ups": {},
- "kills": {}
+ "kills": {},
+ "crafts": {}
 }

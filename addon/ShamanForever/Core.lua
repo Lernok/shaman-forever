@@ -2258,18 +2258,32 @@ local Scan = (function()
     cdb.income[l] = e
   end
   -- Whether each craft raised the skill, by the skill you had and the
-  -- recipe's color: db.scan.ups[profession][item][skill] = { n, up, kind }.
-  -- The skill is read when a craft starts; the next start (or a moment after
-  -- it ends) says whether it went up.
-  local casting, done
-  local function settle()
-    if not done then return end
-    local _, rank = Api.tradeLine()
-    if rank and rank > done.rank then done.r.up = done.r.up + 1 end
-    done = nil
+  -- recipe's color: db.scan.crafts[profession][item][skill] = { n, up, kind }.
+  -- The game's "Your skill in X has increased to N." says it: the skill read
+  -- from the window lags when you craft many in a row. A craft with no such
+  -- message within a moment didn't raise it.
+  local casting, lastSkill, skillMsg = nil, {}, nil
+  local function saveCraft(c, rank, up)
+    db.scan = db.scan or {}
+    db.scan.crafts = db.scan.crafts or {}
+    local p = db.scan.crafts[c.prof] or {}
+    db.scan.crafts[c.prof] = p
+    local e = p[c.item] or {}
+    p[c.item] = e
+    local r = e[rank] or { n = 0, up = 0, kind = c.kind }
+    r.n = r.n + 1
+    if up then r.up = r.up + 1 end
+    e[rank] = r
+  end
+  local pendingCraft
+  local function credit(n)
+    local c = pendingCraft
+    pendingCraft = nil
+    c.saved = true
+    lastSkill[c.prof] = n
+    saveCraft(c, n - 1, true)
   end
   local function castStart(spell)
-    settle()
     casting = nil
     skinning = isSkinning(readable(spell))
     local T = C_TradeSkillUI
@@ -2290,17 +2304,35 @@ local Scan = (function()
     local c = casting
     casting = nil
     if not c then return end
-    db.scan = db.scan or {}
-    db.scan.ups = db.scan.ups or {}
-    local p = db.scan.ups[c.prof] or {}
-    db.scan.ups[c.prof] = p
-    local e = p[c.item] or {}
-    p[c.item] = e
-    local r = e[c.rank] or { n = 0, up = 0, kind = c.kind }
-    r.n = r.n + 1
-    e[c.rank] = r
-    done = { r = r, rank = c.rank }
-    C_Timer.After(1.5, function() pcall(settle) end)
+    -- An earlier craft still waiting: no message came for it.
+    if pendingCraft and not pendingCraft.saved then
+      local o = pendingCraft
+      o.saved = true
+      saveCraft(o, math.max(o.rank, lastSkill[o.prof] or 0), false)
+    end
+    c.t = GetTime()
+    pendingCraft = c
+    -- The message may come just before the cast's end.
+    if skillMsg and GetTime() - skillMsg.t < 1 and skillMsg.text:find(c.prof, 1, true) then
+      local n = skillMsg.n
+      skillMsg = nil
+      return credit(n)
+    end
+    C_Timer.After(2, function()
+      if pendingCraft == c and not c.saved then
+        pendingCraft = nil
+        c.saved = true
+        saveCraft(c, math.max(c.rank, lastSkill[c.prof] or 0), false)
+      end
+    end)
+  end
+  local function skillUp(text)
+    text = tostring(readable(text) or "")
+    local n = tonumber(text:match("(%d+)%D*$"))
+    if not n then return end
+    local c = pendingCraft
+    if c and not c.saved and GetTime() - c.t < 2 and text:find(c.prof, 1, true) then return credit(n) end
+    skillMsg = { text = text, n = n, t = GetTime() }
   end
 
   -- Experience per level: cdb.xp[level] = { q = from quests, all = everything }.
@@ -2331,6 +2363,7 @@ local Scan = (function()
   return {
     trainer = scanTrainer, vendor = scanVendor, bags = scanBags, loot = scanLoot, colors = scanColors,
     matsCost = matsCost, income = noteIncome, unit = noteUnit, castStart = castStart, castDone = castDone,
+    skillUp = skillUp,
     lootClosed = function()
       lootDone = false
       local p = pendingSkin
@@ -2361,7 +2394,7 @@ local Scan = (function()
       for l, e in pairs(scan.skins or {}) do skins = skins + (e.n or 0); if l > 0 then lv[#lv + 1] = l end end
       table.sort(lv)
       local n, up = 0, 0
-      for _, items in pairs(scan.ups or {}) do for _, ranks in pairs(items) do for _, r in pairs(ranks) do n, up = n + r.n, up + r.up end end end
+      for _, items in pairs(scan.crafts or {}) do for _, ranks in pairs(items) do for _, r in pairs(ranks) do n, up = n + r.n, up + r.up end end end
       local x = (cdb.xp or {})[UnitLevel("player")] or {}
       return string.format(L().measures, skins, #lv > 0 and (lv[1] .. "-" .. lv[#lv]) or "-", n, up, UnitLevel("player"), x.q or 0, x.all or 0)
     end,
@@ -2428,7 +2461,7 @@ onEvent = function(self, event, ...)
     pcall(self.RegisterEvent, self, "LOOT_READY")
     pcall(self.RegisterEvent, self, "LOOT_CLOSED")
     -- What the scanner measures: beasts' levels, skill-ups per craft, experience.
-    for _, e in ipairs({ "PLAYER_XP_UPDATE", "PLAYER_TARGET_CHANGED", "UPDATE_MOUSEOVER_UNIT", "NAME_PLATE_UNIT_ADDED" }) do pcall(self.RegisterEvent, self, e) end
+    for _, e in ipairs({ "PLAYER_XP_UPDATE", "PLAYER_TARGET_CHANGED", "UPDATE_MOUSEOVER_UNIT", "NAME_PLATE_UNIT_ADDED", "CHAT_MSG_SKILL" }) do pcall(self.RegisterEvent, self, e) end
     if self.RegisterUnitEvent then
       pcall(self.RegisterUnitEvent, self, "UNIT_SPELLCAST_START", "player")
       pcall(self.RegisterUnitEvent, self, "UNIT_SPELLCAST_SUCCEEDED", "player")
@@ -2494,6 +2527,8 @@ onEvent = function(self, event, ...)
     if frame and frame.live then refresh() else C_Timer.After(0.5, repaint) end
   elseif event == "PLAYER_MONEY" then
     Scan.money()
+  elseif event == "CHAT_MSG_SKILL" then
+    pcall(Scan.skillUp, (...))
   elseif event == "PLAYER_XP_UPDATE" then
     pcall(Scan.xp)
   elseif event == "PLAYER_TARGET_CHANGED" then
