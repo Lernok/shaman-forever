@@ -1898,6 +1898,17 @@ local Scan = (function()
   -- Levels of the hostile units you see (target, mouseover, nameplates): a
   -- skinned corpse's level is known even when it isn't your target.
   local unitLevel = {}
+  -- When you last skinned: a loot window right after it is a skin; leather in
+  -- any other is what the beast dropped when it died.
+  local skinnedAt, skinning, lootDone = nil, false, false
+  local SKINNING = { [8613] = true, [8617] = true, [8618] = true, [10768] = true }
+  local function isSkinning(spell)
+    if SKINNING[spell] then return true end
+    local name = GetSpellInfo and GetSpellInfo(spell)
+    if not name and C_Spell and C_Spell.GetSpellInfo then local i = C_Spell.GetSpellInfo(spell) name = i and i.name end
+    name = readable(name)
+    return name == "Skinning" or name == "Desuello" or name == "Desollar"
+  end
   local function noteUnit(unit)
     local guid = UnitGUID and readable(UnitGUID(unit))
     local lvl = readable(UnitLevel(unit))
@@ -2110,11 +2121,15 @@ local Scan = (function()
   end
   local function scanLoot()
     if not (GetNumLootItems and GetLootSlotLink) then return end
+    -- LOOT_READY comes first (before auto loot empties the window), then LOOT_OPENED: once.
+    if lootDone then return end
+    lootDone = true
     -- Leathers, hides and scraps: a loot window with them is a skin.
     local SKIN_ITEMS = { [2934] = true, [2318] = true, [783] = true, [2319] = true, [4232] = true, [4234] = true, [4235] = true,
       [4304] = true, [8169] = true, [8171] = true, [249427] = true, [249428] = true, [249429] = true }
     local function scanSkin()
       local got, guid = {}, nil
+      local skin = skinnedAt and GetTime() - skinnedAt < 5
       for slot = 1, (readable(GetNumLootItems()) or 0) do
         local item = itemIdOf(GetLootSlotLink(slot))
         if item and SKIN_ITEMS[item] then
@@ -2124,15 +2139,19 @@ local Scan = (function()
         end
       end
       if not next(got) then return end
-      -- The beast's level: the corpse you have targeted, when it's the source.
+      -- The beast's level: the corpse you have targeted, when it's the source,
+      -- or one you saw; 0 when not known (so the lost ones show).
       local lvl = guid and (UnitGUID and readable(UnitGUID("target")) == guid and readable(UnitLevel("target")) or unitLevel[guid])
-      if not lvl or lvl < 1 then return end
+      if not lvl or lvl < 1 then lvl = 0 end
+      -- Skins in scan.skins; leather a beast dropped when killed, in scan.kills.
+      local kind = skin and "skins" or "kills"
       db.scan = db.scan or {}
-      db.scan.skins = db.scan.skins or {}
-      local e = db.scan.skins[lvl] or { n = 0, items = {} }
+      db.scan[kind] = db.scan[kind] or {}
+      local e = db.scan[kind][lvl] or { n = 0, items = {} }
       e.n = e.n + 1
       for item, n in pairs(got) do e.items[item] = (e.items[item] or 0) + n end
-      db.scan.skins[lvl] = e
+      db.scan[kind][lvl] = e
+      if skin then skinnedAt = nil end
     end
     pcall(scanSkin)
     for slot = 1, (readable(GetNumLootItems()) or 0) do
@@ -2252,6 +2271,7 @@ local Scan = (function()
   local function castStart(spell)
     settle()
     casting = nil
+    skinning = isSkinning(readable(spell))
     local T = C_TradeSkillUI
     spell = readable(spell)
     local info = T and T.GetRecipeInfo and spell and T.GetRecipeInfo(spell)
@@ -2266,6 +2286,7 @@ local Scan = (function()
     casting = { prof = prof, rank = rank, item = item or -spell, kind = info.difficulty or DIFFICULTY[info.relativeDifficulty] or "?" }
   end
   local function castDone()
+    if skinning then skinnedAt, skinning = GetTime(), false end
     local c = casting
     casting = nil
     if not c then return end
@@ -2310,12 +2331,13 @@ local Scan = (function()
   return {
     trainer = scanTrainer, vendor = scanVendor, bags = scanBags, loot = scanLoot, colors = scanColors,
     matsCost = matsCost, income = noteIncome, unit = noteUnit, castStart = castStart, castDone = castDone,
+    lootClosed = function() lootDone = false end,
     xp = noteXpGain, questXp = noteQuestXp,
     -- "/sf medidas": what's been measured so far, to see it's working.
     summary = function()
       local scan = db.scan or {}
       local skins, lv = 0, {}
-      for l, e in pairs(scan.skins or {}) do skins = skins + (e.n or 0); lv[#lv + 1] = l end
+      for l, e in pairs(scan.skins or {}) do skins = skins + (e.n or 0); if l > 0 then lv[#lv + 1] = l end end
       table.sort(lv)
       local n, up = 0, 0
       for _, items in pairs(scan.ups or {}) do for _, ranks in pairs(items) do for _, r in pairs(ranks) do n, up = n + r.n, up + r.up end end end
@@ -2382,6 +2404,8 @@ onEvent = function(self, event, ...)
     pcall(self.RegisterEvent, self, "LEARNED_SPELL_IN_TAB")
     pcall(self.RegisterEvent, self, "MERCHANT_SHOW")
     pcall(self.RegisterEvent, self, "LOOT_OPENED")
+    pcall(self.RegisterEvent, self, "LOOT_READY")
+    pcall(self.RegisterEvent, self, "LOOT_CLOSED")
     -- What the scanner measures: beasts' levels, skill-ups per craft, experience.
     for _, e in ipairs({ "PLAYER_XP_UPDATE", "PLAYER_TARGET_CHANGED", "UPDATE_MOUSEOVER_UNIT", "NAME_PLATE_UNIT_ADDED" }) do pcall(self.RegisterEvent, self, e) end
     if self.RegisterUnitEvent then
@@ -2414,8 +2438,10 @@ onEvent = function(self, event, ...)
     C_Timer.After(0.3, function()
       guarded("scan", function() if (Scan.vendor() or 0) > 0 then C_Timer.After(1.5, function() guarded("scan", Scan.vendor) end) end end)
     end)
-  elseif event == "LOOT_OPENED" then
+  elseif event == "LOOT_READY" or event == "LOOT_OPENED" then
     guarded("scan", Scan.loot)
+  elseif event == "LOOT_CLOSED" then
+    Scan.lootClosed()
   elseif event == "TRADE_SKILL_CLOSE" then
     if craftPanel then hideCraftPanel() end
   elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then

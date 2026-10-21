@@ -48,6 +48,7 @@ merged.bags = merged.bags || {};
 merged.drops = merged.drops || {};
 merged.goods = merged.goods || {};
 merged.skins = merged.skins || {};
+merged.kills = merged.kills || {};
 // Lua arrays come as {"1": a, "2": b}.
 const arr = o => (o && typeof o === 'object' ? Object.keys(o).sort((a, b) => a - b).map(k => o[k]) : o);
 for (const f of files) {
@@ -75,6 +76,11 @@ for (const f of files) {
   for (const [lvl, e] of Object.entries(scan.skins || {})) {
     const m = merged.skins[lvl];
     if (!m || (e.n || 0) >= (m.n || 0)) merged.skins[lvl] = { n: e.n, items: e.items };
+  }
+  // Leather beasts dropped when killed (not skinned), the same way.
+  for (const [lvl, e] of Object.entries(scan.kills || {})) {
+    const m = merged.kills[lvl];
+    if (!m || (e.n || 0) >= (m.n || 0)) merged.kills[lvl] = { n: e.n, items: e.items };
   }
   // Skill-ups per craft: by profession, item and the skill you had (running totals: the biggest wins).
   merged.ups = merged.ups || {};
@@ -194,8 +200,13 @@ if (Object.keys(merged.skins).length) {
   Object.entries(merged.skins).sort((a, b) => a[0] - b[0]).forEach(([lvl, e]) => {
     const site = SKD.yields[Number(lvl) - 1] || {};
     const ids = [...new Set(Object.keys(e.items).concat(Object.keys(site)))];
-    console.log('  nv ' + String(lvl).padStart(2) + ' · ' + e.n + ' pieles: ' + ids.map(id => nm(id) + ' ' + ((e.items[id] || 0) / e.n).toFixed(2) + ' (' + (site[id] || 0).toFixed(2) + ')').join(', '));
+    console.log('  nv ' + (lvl === '0' ? ' ?' : String(lvl).padStart(2)) + ' · ' + e.n + ' pieles: ' + ids.map(id => nm(id) + ' ' + ((e.items[id] || 0) / e.n).toFixed(2) + ' (' + (site[id] || 0).toFixed(2) + ')').join(', '));
   });
+  if (Object.keys(merged.kills).length) {
+    console.log('\nCUERO EN EL BOTÍN AL MATAR (sin despellejar; ventanas de botín con cuero, por nivel del bicho)');
+    Object.entries(merged.kills).sort((a, b) => a[0] - b[0]).forEach(([lvl, e]) => console.log('  nv ' + (lvl === '0' ? ' ?' : String(lvl).padStart(2)) + ' · ' + e.n + ' veces: ' +
+      Object.entries(e.items).map(([id, n]) => n + ' ' + nm(id)).join(', ')));
+  }
 }
 // Skill-ups: how often each color raised the skill, against the site's
 // model (orange always; yellow and green fall off toward grey).

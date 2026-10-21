@@ -124,6 +124,7 @@ for name, sp in pairs(SF.DATA.train.spells) do
 end
 table.sort(offer, function(a, b) return a[1] .. a[2] < b[1] .. b[2] end)
 function IsPlayerSpell(id) return knownIds[id] or false end
+function GetTime() return os.clock() end
 function GetSpellInfo(id) for name, sp in pairs(SF.DATA.train.spells) do for _, x in ipairs(sp.id) do if x == id then return name end end end end
 function UnitClass() return "Shaman", "SHAMAN" end
 function GetNumTrainerServices() return #offer end
@@ -258,13 +259,14 @@ if os.getenv("SCAN") then
   function GetLootSourceInfo() return "Creature-0-1-1-1-3110-0001", 1 end
   UnitGUID = function(u) return u == "target" and "Creature-0-1-1-1-3110-0001" or "Creature-0-1-1-1-3365-00001" end
   UnitName = function(u) return u == "target" and "Dreadmaw Crocolisk" or "Karolek" end
-  ev:fire("LOOT_OPENED")
+  ev:fire("LOOT_OPENED"); ev:fire("LOOT_CLOSED")
   -- Skinning a level-5 boar: 2 Ruined Leather Scraps.
   function GetNumLootItems() return 1 end
   function GetLootSlotLink() return "|Hitem:2934::::|h[Ruined Leather Scraps]|h" end
   function GetLootSlotInfo() return 0, "Ruined Leather Scraps", 2 end
   function UnitLevel(u) return u == "target" and 5 or level end
-  ev:fire("LOOT_OPENED")
+  ev:fire("UNIT_SPELLCAST_START", "player", "s1", 8613); ev:fire("UNIT_SPELLCAST_SUCCEEDED", "player", "s1", 8613)
+  ev:fire("LOOT_OPENED"); ev:fire("LOOT_CLOSED")
   local sk = (ShamanForeverDB.scan.skins or {})[5]
   print("pieles nv 5:", sk and sk.n, sk and sk.items[2934])
   GetTradeSkillLine = nil -- Forever: the skill comes from GetProfessionInfo
@@ -316,7 +318,12 @@ if os.getenv("MEASURE") then
   function GetLootSlotLink() return "|Hitem:2934::::|h[Ruined Leather Scraps]|h" end
   function GetLootSlotInfo() return 0, "Ruined Leather Scraps", 1 end
   function GetLootSourceInfo() return BOAR, 1 end
-  ev:fire("LOOT_OPENED")
+  ev:fire("UNIT_SPELLCAST_START", "player", "s2", 8613); ev:fire("UNIT_SPELLCAST_SUCCEEDED", "player", "s2", 8613)
+  ev:fire("LOOT_READY"); ev:fire("LOOT_OPENED"); ev:fire("LOOT_CLOSED")
+  -- The same scraps dropped by a kill (no skinning before): kept apart.
+  ev:fire("LOOT_READY"); ev:fire("LOOT_CLOSED")
+  local kl = ((ShamanForeverDB.scan or {}).kills or {})[7]
+  print("scraps de botín al matar nv 7:", kl and kl.n)
   local sk = ((ShamanForeverDB.scan or {}).skins or {})[7]
   print("piel de bicho nv 7 sin seleccionarlo:", sk and sk.n, sk and sk.items[2934])
   local skill = 20
