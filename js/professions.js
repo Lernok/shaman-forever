@@ -460,7 +460,11 @@
         const r = M.recipe.get(Number(id));
         const uses = r && r.mats.length ? r.mats.map(([m, n]) => Math.round(n * all[id]) + ' ' + name(m)).join(', ') : '';
         const wear = sg.rows.some(x => x.made.includes(Number(id)));
-        return '<li><span class="lo-do">' + t('pr.lw.step.make', { n: Math.round(all[id]) }) + ' ' + chip(id) + '</span>' +
+        // The ones made later as a material for another step, said apart.
+        const asMat = sg.rows.reduce((a, x) => a + ((x.forMats || {})[id] || 0), 0);
+        const own = Math.round(all[id] - asMat);
+        return '<li><span class="lo-do">' + t('pr.lw.step.make', { n: own > 0 ? own : Math.round(all[id]) }) + ' ' + chip(id) + '</span>' +
+          (asMat && own > 0 ? ' <span class="dim">' + t('pr.lw.step.asMat', { n: Math.round(asMat) }) + '</span>' : '') +
           (wear ? ' <span class="gpc-tag">' + t(Math.round(all[id]) > 1 ? 'pr.lw.step.wearOne' : 'pr.lw.step.wear') + '</span>' : '') +
           (uses ? ' <span class="dim">' + t('pr.lw.step.uses', { list: uses }) + '</span>' : '') +
           '<span class="lo-up">' + t(a < b ? 'pr.lw.step.up' : 'pr.lw.step.upLittle', { a, b }) + '</span></li>';

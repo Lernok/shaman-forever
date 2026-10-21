@@ -86,7 +86,10 @@
     // gains[id]: the skill those crafts gave (to say the steps one after another).
     let ranges = {};
     let gains = {};
-    function craft(r, crafts) {
+    // forMats[id]: of those crafts, the ones made as a material for another.
+    let forMats = {};
+    function craft(r, crafts, asMat) {
+      if (asMat) forMats[r.id] = (forMats[r.id] || 0) + 1;
       const p = chance(r, skill);
       const from = Math.floor(skill);
       r.mats.forEach(([id, n]) => {
@@ -114,7 +117,7 @@
         if (!r || skill < r.skill[0]) return false;
         const ok = r.mats.every(([m, k]) => isVendor(m) || fromAH(m) || have(m) >= k || ensure(m, k, crafts, false, buyLog));
         if (!ok) return false;
-        craft(r, crafts);
+        craft(r, crafts, true);
       }
       return true;
     }
@@ -175,6 +178,7 @@
       const made = [];
       ranges = {};
       gains = {};
+      forMats = {};
       // No trainer yet: nothing to craft.
       for (let guard = L >= (opts.lwFrom || 1) ? 0 : 600; guard < 600; guard++) {
         // 1) A piece of your path, due now, that your skill allows.
@@ -226,7 +230,7 @@
       }
       stall = waited ? stall + 1 : 0;
       Object.entries(buyLog).forEach(([id, n]) => { bought[id] = (bought[id] || 0) + n; });
-      rows.push({ level: L, zone, skins, skill: Math.floor(skill), crafts, ranges, gains, made, bought: buyLog,
+      rows.push({ level: L, zone, skins, skill: Math.floor(skill), crafts, ranges, gains, forMats, made, bought: buyLog,
         keep: Object.fromEntries(Object.entries(keep).filter(([id]) => have(Number(id)) >= 1).map(([id, n]) => [id, Math.min(n, Math.floor(have(Number(id))))])) });
     }
     return { rows, made: madeAt, bought, bridge };
