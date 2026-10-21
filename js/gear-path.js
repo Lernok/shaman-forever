@@ -14,39 +14,6 @@
   const gear = () => ((window.GEAR_DATA && window.GEAR_DATA.gear) || []).concat((window.WEAPON_DATA && window.WEAPON_DATA.weapons) || []);
   const race = () => (Site.race === 'any' ? null : Site.race);
 
-  // Copper per point of Merchant's Favor at a level: the cheapest Waylaid
-  // Crate of Textiles you can fill then, crate and bundle at auction prices
-  // (data/favor.json, scripts/import-prices.js). Null without prices.
-  function favorCost(level) {
-    const C = window.CRAFT_DATA;
-    const P = C && C.prices && C.prices.p;
-    if (!P || !C.favor) return null;
-    let best = null;
-    C.favor.crates.filter(k => k.from <= level && P[k.crate]).forEach(k => {
-      const fills = k.fills.map(f => f.every(([m]) => P[m]) ? f.reduce((a, [m, n]) => a + P[m] * n, 0) : null).filter(x => x != null);
-      if (!fills.length) return;
-      const per = (P[k.crate] + Math.min(...fills)) / k.favor;
-      if (best == null || per < best) best = per;
-    });
-    return best;
-  }
-
-  // Your first crate: its Favor plus the one-time quest's, for the crate alone.
-  function favorFirst(level) {
-    const C = window.CRAFT_DATA;
-    const per = favorCost(level);
-    if (!per || !C.favor.firstBonus) return null;
-    const B = C.favor.firstBonus;
-    const k = C.favor.crates.filter(x => x.from <= level && C.prices.p[x.crate])
-      .sort((a, b) => cratePrice(a) / (B + a.favor) - cratePrice(b) / (B + b.favor))[0];
-    return k ? { favor: C.favor.firstBonus + k.favor, cost: cratePrice(k) } : null;
-  }
-  // A crate filled with its cheapest bundle, at auction prices.
-  function cratePrice(k) {
-    const P = window.CRAFT_DATA.prices.p;
-    const fills = k.fills.filter(f => f.every(([m]) => P[m])).map(f => f.reduce((a, [m, n]) => a + P[m] * n, 0));
-    return fills.length ? P[k.crate] + Math.min(...fills) : Infinity;
-  }
   // What the last path paid for each Favor recipe (the first ones ride on the bonus).
   let favorPaid = {};
 
@@ -70,68 +37,18 @@
       // No auction house: crafts wait until you can gather their reagents.
       matsAt: state.farm && window.LwPlan ? (item => window.LwPlan.matsAt(item.id, { faction: Site.faction, race: race(), profs: picked })) : null,
       // Favor recipes: as many as half the bracket's quest gold buys.
-      favorCost,
-      favorFirst,
-      goldAt: l => ((window.CRAFT_DATA || {}).gold || [])[Math.min(60, Math.max(1, l)) - 1] || 0
+      favorCost: window.GearPlan.favorCost,
+      favorFirst: window.GearPlan.favorFirst,
+      goldAt: window.GearPlan.goldAt
     };
-    const first = window.GearPlan.plan(gear(), opts);
     // Leatherworking pieces wait for the level the Leatherworking plan makes
-    // them (js/lw-plan.js, the one Profesiones shows): your skill by then,
-    // and, farming everything, the hides you skin. Planned again with those
-    // levels, so the path takes something else meanwhile.
-    // Farming, other pieces change which hides you keep: again until the
-    // path's Leatherworking pieces stay put (two or three rounds). A piece's
-    // wait only grows from round to round, so it settles.
-    let plan = first;
-    const wait = new Map();
-    for (let round = 0; round < 5 && profs.includes('Leatherworking'); round++) {
-      const lwAt = lwLevels(plan, picked);
-      if (!lwAt) break;
-      const at = item => { const n = Math.max(wait.get(item.id) || 0, lwAt(item)); wait.set(item.id, n); return n; };
-      const next = window.GearPlan.plan(gear(), Object.assign({}, opts, {
-        matsAt: (item, s) => Math.max(opts.matsAt ? opts.matsAt(item, s) : 0, s.profession === 'Leatherworking' ? at(item) : 0)
-      }));
-      const same = lwKey(next) === lwKey(plan);
-      plan = next;
-      if (same) break;
-    }
+    // them (the one Profesiones shows): js/lw-plan.js settle.
+    const plan = window.LwPlan && window.SKINNING_DATA
+      ? window.LwPlan.settle(gear(), opts, { picked, farm: state.farm, intensity: UI.store.get('lwSkin', 'normal') })
+      : window.GearPlan.plan(gear(), opts);
     favorPaid = plan.favorPaid || {};
     last = { key, favorPaid, out: { plan, profs, picked } };
     return last.out;
-  }
-
-  // The level you make each Leatherworking piece, from the Leatherworking plan
-  // run on a path's pieces: with the auction house, as soon as your skill
-  // gets there (it buys the leather and hides); farming everything, with what
-  // you skin. The plan goes to the beta's cap: a piece it doesn't reach by
-  // then waits until after it. null without its data.
-  const LW_CAP = 30;
-  const lwKey = plan => Object.values(plan.slots).map(p => p.steps.filter(st => (st.pick.source || {}).profession === 'Leatherworking')
-    .map(st => st.pick.item.id + '@' + st.level).join(',')).join('|');
-  function lwLevels(plan, picked) {
-    const SK = window.SKINNING_DATA;
-    if (!SK || !window.LwPlan) return null;
-    const steps = [];
-    Object.values(plan.slots).forEach(p => p.steps.forEach(st => { if ((st.pick.source || {}).profession === 'Leatherworking' && st.level <= LW_CAP) steps.push(st); }));
-    const skin = UI.store.get('lwSkin', 'normal');
-    const skinning = picked.includes('Skinning');
-    const res = window.LwPlan.run({
-      faction: Site.faction, race: race(), targets: steps.map(st => ({ id: st.pick.item.id, level: st.level })).sort((a, b) => a.level - b.level),
-      intensity: ['few', 'normal', 'all'].includes(skin) ? skin : 'normal', skinning, to: LW_CAP, buy: !state.farm,
-      lwFrom: window.Route.profFrom('Leatherworking', Site.faction, race()).level,
-      skinFrom: skinning ? window.Route.profFrom('Skinning', Site.faction, race()).level : 61
-    });
-    const recipe = new Map(SK.recipes.map(r => [r.id, r]));
-    const wanted = new Set(steps.map(st => st.pick.item.id));
-    return item => {
-      if (res.made[item.id]) return res.made[item.id];
-      if (wanted.has(item.id)) return LW_CAP + 1;
-      const r = recipe.get(item.id);
-      if (!r) return 0;
-      // Not one of the path's pieces: the level your skill reaches its recipe.
-      const row = res.rows.find(x => x.skill >= r.skill[0]);
-      return row ? row.level : LW_CAP + 1;
-    };
   }
 
   // Where it comes from, in one line.
@@ -146,7 +63,7 @@
       case 'crafted': return t((s.learn || {}).type === 'unreleased' ? 'gp.src.unreleased' : 'gp.src.crafted', { prof: s.profession, skill: (s.learn || {}).learnAt || s.yellow });
       case 'favor': {
         const n = (s.learn || {}).favor || 30;
-        const per = favorCost(c.at || 1);
+        const per = window.GearPlan.favorCost(c.at || 1);
         const id = (c.item || {}).id;
         const cost = favorPaid[id] != null ? favorPaid[id] : per ? Math.round(per * n) : null;
         return t('gp.src.favor', { prof: s.profession, n: (s.learn || {}).favor || '?' }) + (cost != null ? ' ' + t('gp.src.favorGold', { cost: coin(cost) }) : '');

@@ -28,7 +28,7 @@ Lo que escribió el jugador (las líneas con `>` del cuerpo y los comentarios) e
    Si no hay ninguno abierto, decirlo en una línea y pasar a las visitas (sección de GoatCounter, más abajo) y al resumen. En la rutina el resumen se deja siempre, aunque sea una línea de visitas.
 3. **Leer cada issue:** el texto del jugador; el Shaman (raza, spec, facción, nivel, profesiones); la página; y, si es una pieza, el ítem con su id. Saltear las que ya tengan una etiqueta `estado:` y ningún comentario nuevo de un jugador desde el último análisis.
 4. **Verificar según el tipo** (etiqueta `tipo:`):
-   - **pieza:** con el Shaman del reporte, `node scripts/plan.js item <id> --race <Raza> --spec <Spec> --faction <horde|alliance> --profs <A,B>`. Agregar `--drops` si hace falta, y `node scripts/plan.js slot <Slot> --lo N --hi M ...` para ver qué compite en ese slot. Decidir si:
+   - **pieza:** con el Shaman del reporte, `node scripts/plan.js item <id> --race <Raza> --spec <Spec> --faction <horde|alliance> --profs <A,B>`. Agregar `--drops` si hace falta y `--farm` si la persona eligió "Farmeo todo" (da el mismo camino que la página, con las piezas de Peletería en el nivel en que las hacés), y `node scripts/plan.js slot <Slot> --lo N --hi M ...` para ver qué compite en ese slot. Decidir si:
      - la fuente es incorrecta (zona, nivel, facción, la quest no existe): mirar `data/item-sources.json`, `data/levels.json` y Wowhead o foreverchanges.pro;
      - los pesos o umbrales eligen mal (`js/gear-plan.js`: WEIGHTS, UPGRADE, MIN_FIT, MIN_LEVELS), y entonces el cambio afecta a todos los caminos: comparar antes y después en varios Shamans;
      - o la pieza está bien y el jugador esperaba otra cosa: explicar por qué.

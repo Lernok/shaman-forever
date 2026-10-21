@@ -12,6 +12,7 @@
 //   --race Orc   --faction horde|alliance      (default Orc, horde; race "any" = no race)
 //   --profs Leatherworking,Skinning            (default none)
 //   --drops                                    count boss drops (the page's checkbox)
+//   --farm                                     "Farmeo todo" (no auction house): crafts wait for their reagents
 //   --lo 1 --hi 60                             level range (path, slot)
 const fs = require('fs');
 const path = require('path');
@@ -25,6 +26,7 @@ window.SKINNING_DATA = JSON.parse(fs.readFileSync(path.join(root, 'data/skinning
 require('../js/lw-plan.js');
 const R = window.Route, GP = window.GearPlan;
 // What the page plans with (data/*.js: only plannable sources), not the full sync output.
+window.CRAFT_DATA = load('data/crafts.js').CRAFT_DATA;
 const gear = load('data/gear.js').GEAR_DATA.gear.concat(load('data/weapons.js').WEAPON_DATA.weapons);
 
 const args = process.argv.slice(2);
@@ -35,15 +37,22 @@ const faction = opt('faction', 'horde').toLowerCase();
 const race = opt('race', 'Orc');
 const profs = opt('profs', '').split(/[,+]/).filter(p => p && p !== '-');
 const lo = +opt('lo', 1), hi = +opt('hi', 60);
+const farm = args.includes('--farm');
+// As Equipo plans it (js/gear-path.js compute): crafts wait for your trainer,
+// farming for their reagents, Leatherworking pieces for the level the
+// Leatherworking plan makes them (LwPlan.settle). Merchant's Favor recipes as
+// many as the quest gold buys (data/crafts.js).
 const opts = { spec, faction, race, profs, drops: args.includes('--drops'),
-  route: (z, l) => R.onRoute(z, l, faction, race), away: z => R.otherStart(z, faction, race), reach: z => R.reachable(z, faction) };
+  route: (z, l) => R.onRoute(z, l, faction, race), away: z => R.otherStart(z, faction, race), reach: z => R.reachable(z, faction),
+  profAt: p => R.profFrom(p, faction, race).level, favorCost: GP.favorCost, favorFirst: GP.favorFirst, goldAt: GP.goldAt,
+  matsAt: farm ? (item => window.LwPlan.matsAt(item.id, { faction, race, profs })) : null };
 
 const short = o => Object.entries(o || {}).map(([k, v]) => v + k.replace(/^(\w{3})\w*/, '$1')).join(' ');
 const where = s => [s.quest || s.npc || s.profession, (typeof s.dungeon === 'string' && s.dungeon) || s.dungeonZone || s.zone].filter(Boolean).join(' @ ');
 const steps = p => Object.values(p.slots).flatMap(x => x.steps).sort((a, b) => a.level - b.level);
 
-console.log('# ' + race + ' ' + spec + ' (' + faction + '), ' + (profs.join(' + ') || 'sin profesiones') + (opts.drops ? ', con drops' : ''));
-const plan = GP.plan(gear, opts);
+console.log('# ' + race + ' ' + spec + ' (' + faction + '), ' + (profs.join(' + ') || 'sin profesiones') + (opts.drops ? ', con drops' : '') + (farm ? ', farmeo todo' : ''));
+const plan = window.LwPlan.settle(gear, opts, { picked: profs, farm, intensity: opt('skin', 'normal') });
 
 if (cmd === 'path') {
   steps(plan).filter(st => st.level >= lo && st.level <= hi).forEach(st => {

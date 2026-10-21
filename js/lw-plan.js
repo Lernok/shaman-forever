@@ -307,5 +307,58 @@
     return at;
   }
 
-  window.LwPlan = { run, pieces, beasts, matsAt, KILL_SHARE, PRISTINE };
+  // A gear path (js/gear-plan.js) whose Leatherworking pieces wait for the
+  // level this plan makes them: with the auction house, as soon as your skill
+  // gets there (it buys the leather and hides); farming everything, with what
+  // you skin. Planned again with those levels, so the path takes something
+  // else meanwhile; farming, other pieces change which hides you keep, so
+  // again until the pieces stay put. A piece's wait only grows from round to
+  // round, so it settles (two or three rounds). Equipo, Profesiones and
+  // scripts/plan.js, audit-path.js all plan through here.
+  //   ctx: { picked: your professions (Skinning too), farm, intensity }
+  const PATH_CAP = 30;
+  const lwSteps = plan => Object.values(plan.slots).flatMap(p => p.steps).filter(st => (st.pick.source || {}).profession === 'Leatherworking');
+  const lwKey = plan => lwSteps(plan).map(st => st.pick.item.id + '@' + st.level).sort().join(',');
+  function settle(gear, opts, ctx) {
+    let plan = window.GearPlan.plan(gear, opts);
+    if (!(opts.profs || []).includes('Leatherworking') || !window.SKINNING_DATA) return plan;
+    const wait = new Map();
+    for (let round = 0; round < 5; round++) {
+      const lwAt = waits(plan, opts, ctx);
+      const at = item => { const n = Math.max(wait.get(item.id) || 0, lwAt(item)); wait.set(item.id, n); return n; };
+      const next = window.GearPlan.plan(gear, Object.assign({}, opts, {
+        matsAt: (item, s) => Math.max(opts.matsAt ? opts.matsAt(item, s) : 0, s.profession === 'Leatherworking' ? at(item) : 0)
+      }));
+      const same = lwKey(next) === lwKey(plan);
+      plan = next;
+      if (same) break;
+    }
+    return plan;
+  }
+  // The level you make each piece, from this plan run on a path's pieces up
+  // to the beta's cap: one it doesn't reach by then waits until after it.
+  function waits(plan, opts, ctx) {
+    const SK = window.SKINNING_DATA;
+    const steps = lwSteps(plan).filter(st => st.level <= PATH_CAP);
+    const skinning = (ctx.picked || []).includes('Skinning');
+    const from = p => window.Route.profFrom(p, opts.faction, opts.race).level;
+    const res = run({
+      faction: opts.faction, race: opts.race, targets: steps.map(st => ({ id: st.pick.item.id, level: st.level })).sort((a, b) => a.level - b.level),
+      intensity: INTENSITY[ctx.intensity] ? ctx.intensity : 'normal', skinning, to: PATH_CAP, buy: !ctx.farm,
+      lwFrom: from('Leatherworking'), skinFrom: skinning ? from('Skinning') : 61
+    });
+    const recipe = new Map(SK.recipes.map(r => [r.id, r]));
+    const wanted = new Set(steps.map(st => st.pick.item.id));
+    return item => {
+      if (res.made[item.id]) return res.made[item.id];
+      if (wanted.has(item.id)) return PATH_CAP + 1;
+      const r = recipe.get(item.id);
+      if (!r) return 0;
+      // Not one of the path's pieces: the level your skill reaches its recipe.
+      const row = res.rows.find(x => x.skill >= r.skill[0]);
+      return row ? row.level : PATH_CAP + 1;
+    };
+  }
+
+  window.LwPlan = { run, pieces, beasts, matsAt, settle, KILL_SHARE, PRISTINE };
 })();

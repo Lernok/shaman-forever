@@ -19,6 +19,7 @@ require('../js/gear-plan.js');
 window.SKINNING_DATA = JSON.parse(fs.readFileSync(path.join(root, 'data/skinning.json'), 'utf8'));
 require('../js/lw-plan.js');
 const R = window.Route, GP = window.GearPlan;
+window.CRAFT_DATA = load('data/crafts.js').CRAFT_DATA;
 const gear = load('data/gear.js').GEAR_DATA.gear.concat(load('data/weapons.js').WEAPON_DATA.weapons);
 const farm = process.argv.includes('--farm');
 const drops = process.argv.includes('--drops');
@@ -41,8 +42,10 @@ for (const [faction, races] of Object.entries(RACES)) {
         runs++;
         const opts = { spec, faction, race, profs, drops,
           route: (z, l) => R.onRoute(z, l, faction, race), away: z => R.otherStart(z, faction, race), reach: z => R.reachable(z, faction),
+          profAt: p => R.profFrom(p, faction, race).level, favorCost: GP.favorCost, favorFirst: GP.favorFirst, goldAt: GP.goldAt,
           matsAt: farm ? (item => window.LwPlan.matsAt(item.id, { faction, race, profs })) : null };
-        const plan = GP.plan(gear, opts);
+        // As Equipo plans it: Leatherworking pieces wait for the Leatherworking plan.
+        const plan = window.LwPlan.settle(gear, opts, { picked: profs, farm });
         const who = race + ' ' + spec.slice(0, 3) + (profs.length ? ' ' + profs.map(p => p.slice(0, 2)).join('+') : '');
         const seen = new Map();
         for (const [slot, sp] of Object.entries(plan.slots)) {

@@ -392,5 +392,41 @@
     return { slots, dontMiss, favor: [...favor], favorPaid: paid, candidates: all.length };
   }
 
-  root.GearPlan = { plan, value, fit, points, candidates, access, favorGold, SLOTS, WEIGHTS, COST, MIN_LEVELS, FAVOR_PER_BRACKET, FAVOR_GOLD_SHARE, UPGRADE };
+  // Copper per point of Merchant's Favor at a level: the cheapest Waylaid
+  // Crate of Textiles you can fill then, crate and bundle at auction prices
+  // (data/favor.json, scripts/import-prices.js). Null without prices.
+  function favorCost(level) {
+    const C = root.CRAFT_DATA;
+    const P = C && C.prices && C.prices.p;
+    if (!P || !C.favor) return null;
+    let best = null;
+    C.favor.crates.filter(k => k.from <= level && P[k.crate]).forEach(k => {
+      const fills = k.fills.map(f => f.every(([m]) => P[m]) ? f.reduce((a, [m, n]) => a + P[m] * n, 0) : null).filter(x => x != null);
+      if (!fills.length) return;
+      const per = (P[k.crate] + Math.min(...fills)) / k.favor;
+      if (best == null || per < best) best = per;
+    });
+    return best;
+  }
+
+  // Your first crate: its Favor plus the one-time quest's, for the crate alone.
+  function favorFirst(level) {
+    const C = root.CRAFT_DATA;
+    const per = favorCost(level);
+    if (!per || !C.favor.firstBonus) return null;
+    const B = C.favor.firstBonus;
+    const k = C.favor.crates.filter(x => x.from <= level && C.prices.p[x.crate])
+      .sort((a, b) => cratePrice(a) / (B + a.favor) - cratePrice(b) / (B + b.favor))[0];
+    return k ? { favor: C.favor.firstBonus + k.favor, cost: cratePrice(k) } : null;
+  }
+  // A crate filled with its cheapest bundle, at auction prices.
+  function cratePrice(k) {
+    const P = root.CRAFT_DATA.prices.p;
+    const fills = k.fills.filter(f => f.every(([m]) => P[m])).map(f => f.reduce((a, [m, n]) => a + P[m] * n, 0));
+    return fills.length ? P[k.crate] + Math.min(...fills) : Infinity;
+  }
+  // Quest gold of a level (data/crafts.js, from Classic's quest rewards).
+  const goldAt = l => ((root.CRAFT_DATA || {}).gold || [])[Math.min(60, Math.max(1, l)) - 1] || 0;
+
+  root.GearPlan = { plan, value, fit, points, candidates, access, favorGold, favorCost, favorFirst, goldAt, SLOTS, WEIGHTS, COST, MIN_LEVELS, FAVOR_PER_BRACKET, FAVOR_GOLD_SHARE, UPGRADE };
 })(typeof window !== 'undefined' ? window : globalThis);
