@@ -15,7 +15,19 @@ const NAMES = /^_(forever[a-z_]*|classic_beta)_?$/;
 function folders() {
   if (process.env.WOW_GAME) return [process.env.WOW_GAME];
   if (!fs.existsSync(ROOT)) return [];
-  const played = dir => { try { return fs.statSync(path.join(dir, 'WTF')).mtimeMs; } catch (e) { return 0; } };
+  // Played = when an addon last saved there (WTF/Account/*/SavedVariables), not
+  // when WTF changed: opening a new client once writes WTF with nothing in it.
+  const played = dir => {
+    let last = 0;
+    try {
+      const acc = path.join(dir, 'WTF', 'Account');
+      fs.readdirSync(acc).forEach(a => {
+        const sv = path.join(acc, a, 'SavedVariables');
+        if (fs.existsSync(sv)) fs.readdirSync(sv).forEach(f => { last = Math.max(last, fs.statSync(path.join(sv, f)).mtimeMs); });
+      });
+    } catch (e) { /* no WTF yet */ }
+    return last;
+  };
   return fs.readdirSync(ROOT).filter(n => NAMES.test(n)).map(n => path.join(ROOT, n))
     .filter(d => fs.statSync(d).isDirectory())
     .sort((a, b) => played(b) - played(a));
