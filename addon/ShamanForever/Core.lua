@@ -1901,6 +1901,9 @@ local Scan = (function()
   -- When you last skinned: a loot window right after it is a skin; leather in
   -- any other is what the beast dropped when it died.
   local skinnedAt, skinning, lootDone = nil, false, false
+  -- A skin waiting for the loot to reach your bags: what's counted is what
+  -- came in (the loot window's quantity isn't always right).
+  local pendingSkin
   local SKINNING = { [8613] = true, [8617] = true, [8618] = true, [10768] = true }
   local function isSkinning(spell)
     if SKINNING[spell] then return true end
@@ -2144,13 +2147,10 @@ local Scan = (function()
       local lvl = guid and (UnitGUID and readable(UnitGUID("target")) == guid and readable(UnitLevel("target")) or unitLevel[guid])
       if not lvl or lvl < 1 then lvl = 0 end
       -- Skins in scan.skins; leather a beast dropped when killed, in scan.kills.
-      local kind = skin and "skins" or "kills"
-      db.scan = db.scan or {}
-      db.scan[kind] = db.scan[kind] or {}
-      local e = db.scan[kind][lvl] or { n = 0, items = {} }
-      e.n = e.n + 1
-      for item, n in pairs(got) do e.items[item] = (e.items[item] or 0) + n end
-      db.scan[kind][lvl] = e
+      -- Saved when the window closes, with what reached the bags.
+      local before = {}
+      for item in pairs(got) do before[item] = Api.count(item) end
+      pendingSkin = { kind = skin and "skins" or "kills", lvl = lvl, got = got, before = before }
       if skin then skinnedAt = nil end
     end
     pcall(scanSkin)
@@ -2331,7 +2331,28 @@ local Scan = (function()
   return {
     trainer = scanTrainer, vendor = scanVendor, bags = scanBags, loot = scanLoot, colors = scanColors,
     matsCost = matsCost, income = noteIncome, unit = noteUnit, castStart = castStart, castDone = castDone,
-    lootClosed = function() lootDone = false end,
+    lootClosed = function()
+      lootDone = false
+      local p = pendingSkin
+      pendingSkin = nil
+      if not p then return end
+      -- A moment for the bags to update.
+      C_Timer.After(0.5, function()
+        local items, said = {}, {}
+        for item, n in pairs(p.got) do
+          local came = Api.count(item) - (p.before[item] or 0)
+          items[item] = came > 0 and came or n
+          said[#said + 1] = item .. " ventana " .. n .. " bolsa " .. came
+        end
+        db.scan = db.scan or {}
+        db.scan[p.kind] = db.scan[p.kind] or {}
+        local e = db.scan[p.kind][p.lvl] or { n = 0, items = {} }
+        e.n = e.n + 1
+        for item, n in pairs(items) do e.items[item] = (e.items[item] or 0) + n end
+        db.scan[p.kind][p.lvl] = e
+        log("scan", p.kind .. " nv " .. p.lvl .. ": " .. table.concat(said, ", "))
+      end)
+    end,
     xp = noteXpGain, questXp = noteQuestXp,
     -- "/sf medidas": what's been measured so far, to see it's working.
     summary = function()

@@ -319,7 +319,11 @@ if os.getenv("MEASURE") then
   function GetLootSlotInfo() return 0, "Ruined Leather Scraps", 1 end
   function GetLootSourceInfo() return BOAR, 1 end
   ev:fire("UNIT_SPELLCAST_START", "player", "s2", 8613); ev:fire("UNIT_SPELLCAST_SUCCEEDED", "player", "s2", 8613)
-  ev:fire("LOOT_READY"); ev:fire("LOOT_OPENED"); ev:fire("LOOT_CLOSED")
+  -- The window says 1 scrap; 2 reach the bags (what's counted).
+  local bag = 10
+  C_Item = C_Item or {}
+  C_Item.GetItemCount = function() return bag end
+  ev:fire("LOOT_READY"); ev:fire("LOOT_OPENED"); bag = 12; ev:fire("LOOT_CLOSED")
   -- The same scraps dropped by a kill (no skinning before): kept apart.
   ev:fire("LOOT_READY"); ev:fire("LOOT_CLOSED")
   local kl = ((ShamanForeverDB.scan or {}).kills or {})[7]
