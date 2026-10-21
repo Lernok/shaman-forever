@@ -30,10 +30,12 @@ const OFFLINE = http.OFFLINE;
 async function latestBuilds() {
   const all = await http.get('https://wago.tools/api/builds', { cache: 'wago/_builds.json', maxAgeDays: 1 / 24, json: true });
   if (!all) { console.log('wago.tools no respondió: sigo con los builds de data/meta.json.'); return null; }
-  const pick = (product, prefix) => (all[product] || [])
+  // Forever: the beta's builds and the final client's (wowf, the _forever_
+  // folder since the stress test of 2026-10-22), whichever is newest.
+  const pick = (products, prefix) => [].concat(...products.map(p => all[p] || []))
     .filter(b => b.version.startsWith(prefix))
     .sort((a, b) => b.created_at.localeCompare(a.created_at))[0];
-  return { forever: pick('wow_classic_beta', '1.60.'), era: pick('wow_classic_era', '1.15.') };
+  return { forever: pick(['wow_classic_beta', 'wowf'], '1.60.'), era: pick(['wow_classic_era'], '1.15.') };
 }
 
 // A client table of one build (never changes, so it's kept for good). When
