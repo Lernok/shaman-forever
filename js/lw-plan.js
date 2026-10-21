@@ -140,8 +140,8 @@
     const affordable = (r, keep) => r.mats.every(([id, n]) => isVendor(id) || fromAH(id) || have(id) - (keep[id] || 0) >= n);
 
     // Like the guides: a craft that raises the skill is kept until it turns
-    // green ("1-30: Light Leather"), waiting a level or two for its materials
-    // rather than switching back and forth.
+    // green ("1-30: Light Leather"), waiting for its materials rather than
+    // switching back and forth.
     let current = null;
     let stall = 0;
     for (let L = 1; L <= opts.to; L++) {
@@ -190,7 +190,10 @@
         const can = r => affordable(r, keep) || (CONVERT.includes(r.id) && affordable(r, {}));
         if (current && skill < current.skill[2] && skill < capNow) {
           if (can(current)) { craft(current, crafts); continue; }
-          if (stall < 2) { waited = true; break; }
+          // Wait while the beasts of your level still give its material
+          // (Ruined Leather Scraps up to level 10); a level or two otherwise.
+          const comes = current.mats.every(([id]) => isVendor(id) || fromAH(id) || [L, L + 1].some(l => (S.yields[l - 1] || {})[CURE[id] || id]));
+          if (comes || stall < 2) { waited = true; break; }
         }
         let best = null;
         usable.forEach(r => {
