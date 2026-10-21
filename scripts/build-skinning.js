@@ -98,6 +98,16 @@ function skinnedFrom(html) {
     const y = yields[l - 1];
     if (!y[2318]) y[2318] = Math.round((0.15 + (l - 5) * 0.075) * 1000) / 1000;
   }
+  // The addon's measured skins win where there are enough of them (on the
+  // 10-21 stress test every skin of a level 1-4 beast gave one Ruined Leather
+  // Scrap, against Wowhead's 0.6).
+  const MEASURED = 10;
+  Object.entries(readJSON('data/ingame-scan.json', {}).skins || {}).forEach(([lvl, e]) => {
+    if (!(lvl >= 1 && lvl <= 60) || (e.n || 0) < MEASURED) return;
+    const y = {};
+    Object.entries(e.items).forEach(([id, n]) => { const r = Math.round(n / e.n * 1000) / 1000; if (r >= 0.005) y[id] = r; });
+    yields[lvl - 1] = y;
+  });
 
   // Forever's NPCs (QuestieDB): name, levels, spawns per zone, friendly to whom.
   const zoneName = {};

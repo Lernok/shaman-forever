@@ -1,15 +1,15 @@
 {
  "trainers": {
   "3191": {
-   "y": 42.6,
+   "y": 42.5,
    "x": 51.1,
    "z": "Durotar",
    "n": "Cook Torka",
-   "t": 1792559435,
+   "t": 1792621760,
    "list": {
     "Apprentice Cook": {
      "level": 0,
-     "kind": "used",
+     "kind": "available",
      "skill": 0,
      "cost": 100
     },
@@ -72,7 +72,7 @@
      "item": 279981,
      "cost": 100,
      "prof": "Cooking",
-     "kind": "used",
+     "kind": "unavailable",
      "skill": 20,
      "level": 0
     },
@@ -479,23 +479,23 @@
    "f": "horde"
   },
   "5811": {
-   "y": 45,
-   "x": 63.2,
+   "y": 44.8,
+   "x": 63.1,
    "z": "Orgrimmar",
-   "f": "horde",
-   "t": 1792560009,
+   "n": "Kamari",
+   "t": 1792622735,
    "list": {
     "Black Whelp Slippers": {
      "item": 252424,
      "cost": 500,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 35,
      "level": 0
     },
     "Apprentice Leatherworking": {
-     "kind": "used",
      "level": 1,
+     "kind": "used",
      "skill": 0,
      "cost": 10
     },
@@ -503,7 +503,7 @@
      "item": 252427,
      "cost": 500,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 35,
      "level": 0
     },
@@ -511,7 +511,7 @@
      "item": 252425,
      "cost": 500,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 35,
      "level": 0
     },
@@ -527,7 +527,7 @@
      "item": 2310,
      "cost": 100,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "used",
      "skill": 40,
      "level": 0
     },
@@ -543,15 +543,15 @@
      "item": 7281,
      "cost": 150,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 45,
      "level": 0
     },
-    "Murloc Scale Shoes": {
-     "item": 252426,
-     "cost": 500,
+    "Embossed Leather Vest": {
+     "item": 2300,
+     "cost": 100,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 35,
      "level": 0
     },
@@ -567,32 +567,24 @@
      "item": 4231,
      "cost": 50,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 30,
      "level": 0
     },
-    "Embossed Leather Vest": {
-     "item": 2300,
-     "cost": 100,
+    "Murloc Scale Shoes": {
+     "item": 252426,
+     "cost": 500,
      "prof": "Leatherworking",
-     "kind": "unavailable",
+     "kind": "available",
      "skill": 35,
      "level": 0
     },
-    "Embossed Leather Boots": {
-     "item": 2309,
-     "cost": 100,
+    "Handstitched Leather Pants": {
+     "item": 2303,
+     "cost": 50,
      "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 50,
-     "level": 0
-    },
-    "Embossed Leather Gloves": {
-     "item": 4239,
-     "cost": 150,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 40,
+     "kind": "used",
+     "skill": 15,
      "level": 0
     },
     "Small Leather Ammo Pouch": {
@@ -603,33 +595,86 @@
      "skill": 25,
      "level": 0
     },
-    "Handstitched Leather Pants": {
-     "item": 2303,
-     "cost": 50,
+    "Embossed Leather Gloves": {
+     "item": 4239,
+     "cost": 150,
      "prof": "Leatherworking",
      "kind": "available",
-     "skill": 15,
+     "skill": 40,
+     "level": 0
+    },
+    "Embossed Leather Boots": {
+     "item": 2309,
+     "cost": 100,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 50,
      "level": 0
     },
     "Handstitched Leather Belt": {
      "item": 4237,
      "cost": 75,
      "prof": "Leatherworking",
-     "kind": "available",
+     "kind": "used",
      "skill": 25,
      "level": 0
     }
    },
-   "n": "Kamari"
+   "f": "horde"
+  },
+  "7088": {
+   "y": 45.2,
+   "x": 63.2,
+   "z": "Orgrimmar",
+   "n": "Thuwd",
+   "t": 1792622221,
+   "list": {
+    "Camp Chair": {
+     "item": 279979,
+     "cost": 100,
+     "prof": "Skinning",
+     "kind": "used",
+     "skill": 20,
+     "level": 0
+    },
+    "Expert Skinning": {
+     "cost": 5000,
+     "prof": "Skinning",
+     "level": 0,
+     "skill": 125,
+     "kind": "unavailable"
+    },
+    "Artisan Skinning": {
+     "cost": 50000,
+     "prof": "Skinning",
+     "level": 0,
+     "skill": 200,
+     "kind": "unavailable"
+    },
+    "Apprentice Skinning": {
+     "level": 0,
+     "kind": "used",
+     "skill": 0,
+     "cost": 10
+    },
+    "Journeyman Skinning": {
+     "cost": 500,
+     "prof": "Skinning",
+     "level": 0,
+     "skill": 50,
+     "kind": "available"
+    }
+   },
+   "f": "horde"
   }
  },
  "vendors": {
   "3366": {
    "y": 45.2,
-   "x": 63.1,
+   "x": 63,
    "z": "Orgrimmar",
-   "f": "horde",
-   "t": 1792560050,
+   "n": "Tamar",
+   "t": 1792622775,
    "list": {
     "2320": {
      "price": 10,
@@ -692,14 +737,14 @@
      "name": "Rune Thread"
     }
    },
-   "n": "Tamar"
+   "f": "horde"
   },
   "3881": {
-   "y": 42.6,
-   "x": 51.2,
+   "y": 42.5,
+   "x": 51.1,
    "z": "Durotar",
    "n": "Grimtak",
-   "t": 1792559454,
+   "t": 1792621773,
    "list": {
     "5483": {
      "price": 140,
@@ -3137,7 +3182,7 @@
    },
    "2303": {
     "optimal": [
-     25,
+     21,
      44
     ],
     "medium": [
@@ -3151,7 +3196,7 @@
      83
     ],
     "medium": [
-     34,
+     30,
      44
     ],
     "easy": [
@@ -3160,7 +3205,13 @@
     ],
     "optimal": [
      1,
-     26
+     29
+    ]
+   },
+   "2310": {
+    "optimal": [
+     45,
+     47
     ]
    },
    "2318": {
@@ -3169,7 +3220,7 @@
      83
     ],
     "easy": [
-     34,
+     30,
      39
     ],
     "optimal": [
@@ -3178,7 +3229,7 @@
     ],
     "medium": [
      20,
-     26
+     29
     ]
    },
    "2319": {
@@ -3370,25 +3421,25 @@
    "2679": {
     "optimal": [
      1,
-     1
+     2
     ]
    },
    "2681": {
     "optimal": [
      1,
-     1
+     2
     ]
    },
    "6888": {
     "optimal": [
      1,
-     1
+     2
     ]
    },
    "279981": {
     "medium": [
      1,
-     1
+     2
     ]
    }
   }
@@ -3404,8 +3455,7 @@
    "279969": {
     "rid": 1262985,
     "grey": 145,
-    "name": "Field Guide",
-    "learned": true
+    "name": "Field Guide"
    },
    "279979": {
     "rid": 1229517,
@@ -3456,7 +3506,8 @@
    "2310": {
     "rid": 2162,
     "grey": 100,
-    "name": "Embossed Leather Cloak"
+    "name": "Embossed Leather Cloak",
+    "learned": true
    },
    "2311": {
     "rid": 2163,
@@ -3538,7 +3589,8 @@
    "4239": {
     "rid": 3756,
     "grey": 100,
-    "name": "Embossed Leather Gloves"
+    "name": "Embossed Leather Gloves",
+    "learned": true
    },
    "4242": {
     "rid": 3759,
@@ -6381,8 +6433,7 @@
    "279978": {
     "rid": 1229432,
     "grey": 25,
-    "name": "Camp Tent",
-    "learned": true
+    "name": "Camp Tent"
    }
   },
   "First Aid": {
@@ -7220,7 +7271,7 @@
    }
   }
  },
- "fields": "alwaysUsesLowestQuality=true canCreateMultiple=true canSkillUp=true categoryID=2574 craftable=true disabled=false favorite=false firstCraft=false hasSingleItemOutput=false hyperlink=|cnIQ1:|Hitem:279945::::::::10:1489:::1:3524::::::|h[Sewing Machine]|h|r icon=3622223 isDummyRecipe=false isEnchantingRecipe=false isGatheringRecipe=false isRecraft=false isSalvageRecipe=false itemLevel=60 learned=false maxTrivialLevel=300 name=Sewing Machine numSkillUps=1 recipeID=1263079 relativeDifficulty=0 skillLineAbilityID=57039 supportsCraftingStats=false supportsQualities=false",
+ "fields": "alwaysUsesLowestQuality=true canCreateMultiple=true canSkillUp=true categoryID=2714 craftable=true disabled=false favorite=false firstCraft=false hasSingleItemOutput=false hyperlink=|cnIQ1:|Hitem:279982::::::::7:1489:::1:3524::::::|h[Iron Oven]|h|r icon=629055 isDummyRecipe=false isEnchantingRecipe=false isGatheringRecipe=false isRecraft=false isSalvageRecipe=false itemLevel=60 learned=false maxTrivialLevel=300 name=Iron Oven numSkillUps=1 recipeID=1263067 relativeDifficulty=0 skillLineAbilityID=57033 supportsCraftingStats=false supportsQualities=false",
  "bags": {
   "2409": {
    "t": 1792519692,
@@ -7239,10 +7290,10 @@
  "goods": {
   "3366": {
    "y": 45.2,
-   "x": 63.1,
+   "x": 63,
    "z": "Orgrimmar",
-   "f": "horde",
-   "t": 1792560050,
+   "n": "Tamar",
+   "t": 1792622775,
    "list": {
     "2320": {
      "price": 10,
@@ -7305,14 +7356,14 @@
      "name": "Rune Thread"
     }
    },
-   "n": "Tamar"
+   "f": "horde"
   },
   "267327": {
    "y": 67.9,
    "x": 40.8,
    "z": "Durotar",
-   "n": "Kagil",
-   "t": 1792553529,
+   "f": "horde",
+   "t": 1792617566,
    "list": {
     "2320": {
      "price": 10,
@@ -7323,32 +7374,32 @@
      "name": "Salt"
     }
    },
-   "f": "horde"
+   "n": "Kagil"
   }
  },
  "skins": {
   "1": {
-   "n": 3,
+   "n": 47,
    "items": {
-    "2934": 3
+    "2934": 47
    }
   },
   "2": {
-   "n": 2,
+   "n": 49,
    "items": {
-    "2934": 2
+    "2934": 49
    }
   },
   "3": {
-   "n": 7,
+   "n": 38,
    "items": {
-    "2934": 7
+    "2934": 38
    }
   },
   "4": {
-   "n": 2,
+   "n": 10,
    "items": {
-    "2934": 2
+    "2934": 10
    }
   },
   "5": {
@@ -7364,8 +7415,651 @@
     "2318": 1,
     "2934": 3
    }
+  },
+  "7": {
+   "n": 1,
+   "items": {
+    "2934": 1
+   }
   }
  },
- "kills": {},
- "crafts": {}
+ "kills": {
+  "1": {
+   "n": 2,
+   "items": {
+    "2934": 3
+   }
+  }
+ },
+ "crafts": {
+  "Cooking": {
+   "2681": {
+    "1": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    }
+   }
+  },
+  "Leatherworking": {
+   "2303": {
+    "21": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    }
+   },
+   "2304": {
+    "35": {
+     "kind": "medium",
+     "n": 1,
+     "up": 1
+    },
+    "36": {
+     "kind": "medium",
+     "n": 1,
+     "up": 1
+    },
+    "37": {
+     "kind": "medium",
+     "n": 1,
+     "up": 1
+    },
+    "38": {
+     "kind": "medium",
+     "n": 2,
+     "up": 1
+    },
+    "39": {
+     "kind": "medium",
+     "n": 1,
+     "up": 1
+    },
+    "40": {
+     "kind": "medium",
+     "n": 3,
+     "up": 1
+    },
+    "41": {
+     "kind": "medium",
+     "n": 1,
+     "up": 1
+    },
+    "42": {
+     "kind": "medium",
+     "n": 1,
+     "up": 1
+    },
+    "43": {
+     "kind": "medium",
+     "n": 2,
+     "up": 1
+    },
+    "44": {
+     "kind": "medium",
+     "n": 1,
+     "up": 1
+    }
+   },
+   "2310": {
+    "45": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    }
+   },
+   "2318": {
+    "1": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "2": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "3": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "4": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "5": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "6": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "7": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "8": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "9": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "10": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "11": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "12": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "13": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "14": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "15": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "16": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "17": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "18": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "19": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    },
+    "22": {
+     "kind": "medium",
+     "n": 1,
+     "up": 1
+    },
+    "23": {
+     "kind": "medium",
+     "n": 1,
+     "up": 1
+    },
+    "24": {
+     "kind": "medium",
+     "n": 1,
+     "up": 1
+    },
+    "25": {
+     "kind": "medium",
+     "n": 1,
+     "up": 0
+    },
+    "26": {
+     "kind": "medium",
+     "n": 1,
+     "up": 1
+    },
+    "27": {
+     "kind": "medium",
+     "n": 3,
+     "up": 1
+    },
+    "28": {
+     "kind": "medium",
+     "n": 3,
+     "up": 1
+    },
+    "29": {
+     "kind": "medium",
+     "n": 2,
+     "up": 1
+    },
+    "30": {
+     "kind": "medium",
+     "n": 2,
+     "up": 1
+    },
+    "31": {
+     "kind": "easy",
+     "n": 2,
+     "up": 1
+    },
+    "32": {
+     "kind": "easy",
+     "n": 1,
+     "up": 1
+    },
+    "33": {
+     "kind": "easy",
+     "n": 8,
+     "up": 1
+    },
+    "34": {
+     "kind": "easy",
+     "n": 2,
+     "up": 1
+    },
+    "35": {
+     "kind": "easy",
+     "n": 3,
+     "up": 0
+    }
+   },
+   "4237": {
+    "25": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    }
+   },
+   "4239": {
+    "46": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    }
+   },
+   "5957": {
+    "20": {
+     "kind": "optimal",
+     "n": 1,
+     "up": 1
+    }
+   }
+  }
+ },
+ "spells": {
+  "3157": {
+   "y": 68.9,
+   "x": 42.4,
+   "z": "Durotar",
+   "n": "Shikrik",
+   "t": 1792619125,
+   "list": {
+    "Earth Shock": {
+     "level": 4,
+     "kind": "available",
+     "skill": 0,
+     "cost": 100
+    },
+    "Rockbiter Weapon": {
+     "level": 0,
+     "kind": "used",
+     "skill": 0,
+     "cost": 10
+    },
+    "Earthbind Totem": {
+     "level": 6,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 100
+    },
+    "Healing Wave": {
+     "level": 6,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 100
+    }
+   },
+   "f": "horde"
+  },
+  "3173": {
+   "y": 42.5,
+   "x": 54.4,
+   "z": "Durotar",
+   "n": "Swart",
+   "t": 1792621821,
+   "list": {
+    "Cure Disease": {
+     "level": 22,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 3000
+    },
+    "Healing Wave": {
+     "level": 56,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 30000
+    },
+    "Windfury Totem": {
+     "level": 52,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 27000
+    },
+    "Ghost Wolf": {
+     "level": 20,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 2200
+    },
+    "Poison Cleansing Totem": {
+     "level": 22,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 3000
+    },
+    "Lesser Healing Wave": {
+     "level": 60,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 34000
+    },
+    "Frost Resistance Totem": {
+     "level": 54,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 29000
+    },
+    "Call of the Elements": {
+     "level": 20,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 2200
+    },
+    "Windwall Totem": {
+     "level": 56,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 30000
+    },
+    "Searing Totem": {
+     "level": 60,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 34000
+    },
+    "Frost Shock": {
+     "level": 58,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 32000
+    },
+    "Astral Recall": {
+     "level": 30,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 7000
+    },
+    "Strength of Earth Totem": {
+     "level": 52,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 27000
+    },
+    "Magma Totem": {
+     "level": 56,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 30000
+    },
+    "Lightning Shield": {
+     "level": 56,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 30000
+    },
+    "Earthbind Totem": {
+     "level": 6,
+     "kind": "available",
+     "skill": 0,
+     "cost": 100
+    },
+    "Grace of Air Totem": {
+     "level": 56,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 30000
+    },
+    "Mail": {
+     "level": 40,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 12000
+    },
+    "Ancestral Spirit": {
+     "level": 60,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 34000
+    },
+    "Chain Lightning": {
+     "level": 56,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 30000
+    },
+    "Earth Shock": {
+     "level": 60,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 34000
+    },
+    "Fire Nova": {
+     "level": 52,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 27000
+    },
+    "Lava Burst": {
+     "level": 60,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 34000
+    },
+    "Stoneclaw Totem": {
+     "level": 58,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 32000
+    },
+    "Cure Poison": {
+     "level": 16,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 1800
+    },
+    "Windfury Weapon": {
+     "level": 60,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 34000
+    },
+    "Disease Cleansing Totem": {
+     "level": 38,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 11000
+    },
+    "Flametongue Weapon": {
+     "level": 56,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 30000
+    },
+    "Flame Shock": {
+     "level": 52,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 27000
+    },
+    "Lightning Bolt": {
+     "level": 56,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 30000
+    },
+    "Totemic Projection": {
+     "level": 22,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 3000
+    },
+    "Stoneskin Totem": {
+     "level": 54,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 29000
+    },
+    "Frostbrand Weapon": {
+     "level": 58,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 32000
+    },
+    "Purge": {
+     "level": 32,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 8000
+    },
+    "Sentry Totem": {
+     "level": 34,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 9000
+    },
+    "Fire Resistance Totem": {
+     "level": 58,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 32000
+    },
+    "Far Sight": {
+     "level": 26,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 4000
+    },
+    "Flametongue Totem": {
+     "level": 58,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 32000
+    },
+    "Water Walking": {
+     "level": 28,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 6000
+    },
+    "Call of the Ancestors": {
+     "level": 30,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 7000
+    },
+    "Grounding Totem": {
+     "level": 30,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 7000
+    },
+    "Healing Stream Totem": {
+     "level": 60,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 34000
+    },
+    "Totemic Recall": {
+     "level": 20,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 2200
+    },
+    "Mana Spring Totem": {
+     "level": 56,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 30000
+    },
+    "Reincarnation": {
+     "level": 30,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 7000
+    },
+    "Riptide": {
+     "level": 60,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 1600
+    },
+    "Rockbiter Weapon": {
+     "level": 54,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 29000
+    },
+    "Water Breathing": {
+     "level": 22,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 3000
+    },
+    "Tremor Totem": {
+     "level": 18,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 2000
+    },
+    "Nature Resistance Totem": {
+     "level": 60,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 34000
+    },
+    "Call of the Spirits": {
+     "level": 40,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 12000
+    },
+    "Mana Tide Totem": {
+     "level": 58,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 2000
+    },
+    "Chain Heal": {
+     "level": 54,
+     "kind": "unavailable",
+     "skill": 0,
+     "cost": 29000
+    }
+   },
+   "f": "horde"
+  }
+ }
 }
