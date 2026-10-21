@@ -1577,8 +1577,10 @@ header.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 
 @media (max-width: 760px) { .gp-card .gpc-link, .gp-slot-tile .gst-item a { min-height: 44px; display: inline-flex; align-items: center; } }
 @media (max-width: 760px) { .btn-link, .home-next .hn-item .item-link { min-height: 44px; display: inline-flex; align-items: center; } }
 @media (max-width: 760px) { .gp-card .gp-report { min-height: 44px; } }
-/* The settings menu opens over the tabs below the head. */
-.gp-head { position: relative; z-index: 40; }
+/* The head scrolls under the sticky menus (30 and 40); its settings menu,
+   open, goes over what's below it. */
+.gp-head { position: relative; z-index: 20; }
+.gp-head:has(.gp-settings[open]) { z-index: 35; }
 .gp-settings[open] > div { z-index: 50; }
 .gp-learn { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: color-mix(in srgb, var(--good) 8%, var(--bg-panel)); border: 1px solid color-mix(in srgb, var(--good) 35%, var(--border)); border-radius: 12px; padding: 10px 14px; margin: 0 0 14px; font-size: 14px; }
 .gp-learn .btn { border-color: color-mix(in srgb, var(--good) 55%, var(--border)); color: var(--good); }
