@@ -60,7 +60,7 @@
   function renderBuildPicker() {
     const active = matchingBuild();
     // The chosen spec's builds; the trees stay all three (hybrids exist).
-    let html = '<div class="panel"><h3>' + t('calc.examples') + '</h3>' +
+    let html = '<details class="panel calc-examples"><summary><h3>' + t('calc.examples') + '</h3></summary>' +
       '<p class="note-text">' + t('calc.examplesIntro') + '</p>' +
       '<div class="build-grid" style="--spec-color:' + ui.specColors[window.Site.spec] + '">';
     const COLORS = { Elemental: ui.specColors.Elemental, Enhancement: ui.specColors.Enhancement, Restoration: ui.specColors.Restoration };
@@ -80,7 +80,7 @@
     // Alternatives and caveats for this spec's builds (from its guide).
     const guide = window.I18N.localize(window.GUIDE_DATA[window.Site.spec] || {});
     if (guide.recommendedBuild && guide.recommendedBuild.note) html += '<p class="note-text dim">' + guide.recommendedBuild.note + '</p>';
-    html += '</div>';
+    html += '</details>';
     return html;
   }
 
@@ -196,13 +196,40 @@
     return html;
   }
 
+  // Your leveling build (the spec's with an order), at a level.
+  function levelingBuild() {
+    return builds().filter(b => b.spec === window.Site.spec && b.order).sort((a, b) => b.level - a.level)[0] || null;
+  }
+  function linkAt(b, level) {
+    return '#Talentos/' + level + '/' + R.encode(R.ranksAtLevel(b.order, level), trees());
+  }
+
+  // Now, at your level: the point that's due and the next one, and your build there.
+  function renderNow() {
+    const lvl = Math.min(R.MAX_LEVEL, window.UI.levelNow());
+    const tal = window.Home.talentNow(lvl);
+    const b = levelingBuild();
+    if (!tal || !b) return '';
+    const row = (k, x) => '<div class="pn-row"><span class="pn-k">' + k + '</span><div class="pn-v"><img class="cn-ic" src="' + ui.iconUrl(x.icon) + '" alt=""><b>' + x.talent + '</b> <span class="dim">' +
+      t('calc.now.rank', { rank: x.rank, max: x.max, n: x.from === x.to ? x.from : x.from + '–' + x.to }) + '</span></div></div>';
+    let html = '<section class="pr-now calc-now"><span class="hn-kicker">' + t('guide.now.kicker', { n: lvl }) + '</span>' +
+      '<h2>' + (tal.now ? t('calc.now.title', { talent: tal.now.talent }) : t('calc.now.first', { n: tal.next ? tal.next.from : 10 })) + '</h2>';
+    if (tal.now) html += row(t('calc.now.now'), tal.now);
+    if (tal.next) html += row(t('calc.now.next'), tal.next);
+    html += '<div class="pn-row"><span class="pn-k">' + t('calc.now.build') + '</span><div class="pn-v">' + b.name +
+      ' <a class="btn" href="' + linkAt(b, lvl) + '">' + t('calc.now.open', { n: lvl }) + '</a></div></div>';
+    return html + '</section>';
+  }
+
   function renderAll() {
     let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Calculadora + '">' +
       '<div class="role">' + t('calc.role') + '</div><h2>' + t('calc.title') + '</h2>' +
       '<p><span class="mouse-only">' + t('calc.intro') + '</span><span class="touch-only">' + t('calc.introTouch') + '</span></p></div>';
-    html += renderBuildPicker();
+    html += '<div class="gp-head"><h2>' + t('calc.mine') + '</h2>' + window.UI.levelStepper() + '</div>';
+    html += renderNow();
     html += '<div class="panel calc-panel">' + renderToolbar() +
       '<div class="calc-trees">' + trees().map(renderTree).join('') + '</div></div>';
+    html += renderBuildPicker();
     html += ui.renderSources(['https://talentsforever.com (CC BY 4.0) — ' + t('calc.srcTf')], t('calc.rules'));
     container.innerHTML = html;
     bind();
@@ -256,6 +283,12 @@
   }
 
   function bind() {
+    // Your level: the build you follow, at the new level.
+    window.UI.bindLevel(container, () => {
+      const b = levelingBuild();
+      if (!b) return renderAll();
+      location.hash = linkAt(b, Math.min(R.MAX_LEVEL, window.UI.levelNow()));
+    });
     container.querySelectorAll('.build-card').forEach(btn => {
       btn.addEventListener('click', () => {
         const b = builds().find(x => x.id === btn.dataset.build);
@@ -336,6 +369,14 @@
       ui = uiHelpers;
       const parsed = parseRoute(parts);
       state = { level: parsed.level, talented: parsed.talented, ranks: parsed.ranks, buildId: null, orderBuild: null };
+      // No build in the link: your leveling build, at your level.
+      const lb = !parts[0] && levelingBuild();
+      if (lb) {
+        state.level = Math.max(R.MIN_LEVEL - R.MAX_TALENTED, Math.min(R.MAX_LEVEL, window.UI.levelNow()));
+        state.ranks = R.ranksAtLevel(lb.order, state.level);
+        state.buildId = lb.id;
+        state.orderBuild = lb.id;
+      }
       const b = matchingBuild();
       if (b) { state.buildId = b.id; state.orderBuild = b.order ? b.id : null; }
       window.Calculator.lastHash = routeHash();

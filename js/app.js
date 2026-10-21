@@ -17,10 +17,12 @@
   // "#Talentos/<level>/<build code>".
   function hashParts() { return location.hash.slice(1).split('/'); }
   // Links from before the pages were regrouped (one tab per spec, etc.).
-  const LEGACY = { Overview: 'Clase', Calculadora: 'Talentos', Armas: 'Equipo', Spellbook: 'Hechizos' };
+  // Hechizos (and Spellbook before it) is now the Class page's first sections.
+  const LEGACY = { Overview: 'Clase', Calculadora: 'Talentos', Armas: 'Equipo' };
   function upgradeHash() {
     const parts = hashParts();
     if (Site.SPECS.includes(parts[0])) { Site.set('spec', parts[0]); parts.splice(0, 1, 'Guia'); }
+    else if (parts[0] === 'Hechizos' || parts[0] === 'Spellbook') parts.splice(0, 2, 'Clase', parts[1] === 'macros' ? 'macros' : Site.SPECS.includes(parts[1]) ? 'lista' : 'nivel');
     else if (LEGACY[parts[0]]) parts[0] = LEGACY[parts[0]];
     else return;
     history.replaceState(null, '', '#' + parts.join('/'));
@@ -141,11 +143,10 @@
 
     if (page === 'Profesiones') return window.Professions.render(app, helpers);
     if (page === 'Equipo') return window.Weapons.render(app, helpers);
-    if (page === 'Hechizos') return window.Spellbook.render(app, helpers);
     if (page === 'Talentos') return window.Calculator.render(app, hashParts().slice(1), helpers);
     if (page === 'Novedades') return window.News.render(app);
     if (page === 'Inicio') return window.Home.render(app);
-    if (page === 'Clase') return window.ClassPage.render(app);
+    if (page === 'Clase') return window.ClassPage.render(app, helpers);
     window.Guide.render(app, spec);
   }
 

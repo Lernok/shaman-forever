@@ -13,7 +13,7 @@ const { chromium } = require('playwright');
 
 const root = path.join(__dirname, '..');
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.jpg': 'image/jpeg', '.png': 'image/png' };
-const PAGES = ['Inicio', 'Guia', 'Talentos', 'Equipo', 'Profesiones', 'Hechizos', 'Clase', 'Novedades'];
+const PAGES = ['Inicio', 'Guia', 'Talentos', 'Equipo', 'Profesiones', 'Clase', 'Novedades'];
 const PROFILES = [
   { spec: 'Enhancement', faction: 'horde', race: 'Orc', profs: ['Blacksmithing', 'Mining'], level: 24, lang: 'es' },
   { spec: 'Restoration', faction: 'alliance', race: 'Dwarf', profs: ['Herbalism', 'Alchemy'], level: 33, lang: 'en' },

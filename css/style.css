@@ -1613,3 +1613,25 @@ header.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 
 .lw-order .lo-up { display: block; color: var(--good); font-size: 13px; }
 .lo-rest { font-size: 12.5px; margin-top: 4px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; flex-basis: 100%; }
 
+
+/* Guía: now, at your level. */
+.guide-now .steps { margin: 4px 0 0; }
+.guide-now .gn-later { margin: 2px 0 4px; }
+.guide-now .gn-later > summary { cursor: pointer; color: var(--text-dim); font-size: 13.5px; }
+.guide-now .gn-later .steps li { opacity: .75; }
+.guide-now .gn-ic { width: 22px; height: 22px; border-radius: 4px; vertical-align: middle; }
+.guide-now .gn-spell { background: var(--bg-panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 2px 8px; font-size: 13px; }
+
+/* Talentos: now, at your level; example builds folded under the trees. */
+.calc-now .cn-ic { width: 24px; height: 24px; border-radius: 4px; }
+.calc-examples > summary { cursor: pointer; list-style: none; }
+.calc-examples > summary::-webkit-details-marker { display: none; }
+.calc-examples > summary h3 { display: inline-flex; align-items: center; gap: 8px; margin: 0; }
+.calc-examples > summary h3::after { content: "▸"; font-size: 12px; color: var(--text-dim); }
+.calc-examples[open] > summary h3::after { content: "▾"; }
+.calc-examples[open] > summary { margin-bottom: 10px; }
+
+/* Clase › Tus hechizos: what the trainer has for you now. */
+.sb-now .lv-spells { display: flex; flex-wrap: wrap; gap: 8px; }
+.sb-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 12px; }
+@media (max-width: 760px) { .guide-now .pn-v a { min-height: 44px; display: inline-flex; align-items: center; } }

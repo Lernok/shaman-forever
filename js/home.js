@@ -266,6 +266,7 @@
   }
 
   window.Home = {
+    talentNow,
     render(app) {
       app.innerHTML = renderHome();
       app.querySelectorAll('[data-go-spec]').forEach(a => a.addEventListener('click', () => Site.set('spec', a.dataset.goSpec)));

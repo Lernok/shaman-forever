@@ -102,5 +102,10 @@
     else if (refShown) { UI.tip.hide(); refShown = false; }
   });
 
-  window.Refs = { decorate, iconFor, firstRef };
+  // Every spell or talent named in a text, once each.
+  function allRefs(text) {
+    return [...new Set(String(text).match(refIndex().re) || [])];
+  }
+
+  window.Refs = { decorate, iconFor, firstRef, allRefs };
 })();

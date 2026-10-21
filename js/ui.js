@@ -185,6 +185,22 @@
     }).join('') + '</ul>' + (caveat ? '<p class="sources-caveat">' + caveat + '</p>' : '') + '</details>';
   }
 
+  // Your level (saved), and the − level + of a page's head: the pages that
+  // follow your level (Guía, Talentos, Clase) share it with Equipo and Profesiones.
+  const levelNow = () => Math.min(60, Math.max(1, Number(store.get('level', 1)) || 1));
+  function levelStepper() {
+    const lvl = levelNow();
+    return '<span class="gp-lvl"><button class="hn-step" data-lv-step="-1" aria-label="' + t('home.levelDown') + '"' + (lvl <= 1 ? ' disabled' : '') + '>−</button>' +
+      '<label>' + t('home.next.level') + ' <select data-lv-select>' + Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === lvl ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label>' +
+      '<button class="hn-step" data-lv-step="1" aria-label="' + t('home.levelUp') + '"' + (lvl >= 60 ? ' disabled' : '') + '>+</button></span>';
+  }
+  function bindLevel(root, redraw) {
+    const set = n => { store.set('level', Math.min(60, Math.max(1, n))); redraw(); };
+    root.querySelectorAll('[data-lv-step]').forEach(b => b.addEventListener('click', () => set(levelNow() + Number(b.dataset.lvStep))));
+    const sel = root.querySelector('[data-lv-select]');
+    if (sel) sel.addEventListener('change', e => set(Number(e.target.value)));
+  }
+
   window.UI = { icon, treeArt, tip, statsText, bindText, itemIcon, itemCard, itemLink, store,
-    badge, pageHead, renderSources, CONFIDENCE_KEYS: Object.keys(CONFIDENCE) };
+    badge, pageHead, renderSources, levelNow, levelStepper, bindLevel, CONFIDENCE_KEYS: Object.keys(CONFIDENCE) };
 })();

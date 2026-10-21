@@ -7,6 +7,8 @@
   let filter = 'all';
   let query = '';
   let newOnly = false; // By level: only first ranks
+  let shown = null; // Every spell: the spec tab shown (your spec's first)
+  let page = null; // { section, head(), redraw() } from the Class page
   const chosenRank = {}; // spell name -> rank label picked in its selector
   const opened = new Set(); // spells whose card is expanded
 
@@ -158,17 +160,37 @@
     return html;
   }
 
+  // Now, at your level: what the trainer has for you (this level and the one
+  // before: trainers teach every two levels) and what comes in the next four.
+  function renderNow(tabs) {
+    const lvl = window.UI.levelNow();
+    const at = (lo, hi) => {
+      const out = [];
+      tabs.forEach(tab => tab.spells.forEach(sp => sp.levels.forEach((lv, i) => {
+        if (lv >= lo && lv <= hi && !(sp.fromTalent && i > 0)) out.push({ sp, lv, rank: i + 1, total: sp.levels.length, tab: tab.name });
+      })));
+      return out.sort((a, b) => a.lv - b.lv || (a.rank === 1 ? 0 : 1) - (b.rank === 1 ? 0 : 1) || a.sp.name.localeCompare(b.sp.name));
+    };
+    const chip = e => '<span class="lv-spell' + (e.rank === 1 ? ' first' : '') + '" data-ref="' + e.sp.name + '" style="--tab-color:' + ui.specColors[e.tab] + '">' +
+      '<img src="' + ui.iconUrl(e.sp.icon) + '" alt="" loading="lazy"><span><b>' + e.sp.name + '</b><small>' +
+      (e.rank === 1 ? t('sb.newSpell') : t('sb.rankOf', { n: e.rank, total: e.total })) + ' · ' + t('common.level') + ' ' + e.lv + '</small></span></span>';
+    const now = at(Math.max(1, lvl - 1), lvl);
+    const soon = at(lvl + 1, lvl + 4);
+    const line = (k, list) => '<div class="pn-row"><span class="pn-k">' + k + '</span><div class="pn-v lv-spells">' + list.map(chip).join('') + '</div></div>';
+    return '<section class="pr-now sb-now"><span class="hn-kicker">' + t('guide.now.kicker', { n: lvl }) + '</span>' +
+      '<h2>' + (now.length ? t('sb.now.title', { n: now.length }) : t('sb.now.none')) + '</h2>' +
+      (now.length ? line(t('sb.now.train'), now) : '') + (soon.length ? line(t('sb.now.soon'), soon) : '') + '</section>';
+  }
+
   function renderAll() {
     const tabs = spells();
     const all = tabs.flatMap(t => t.spells);
     const count = k => all.filter(s => s.status === k).length;
-    let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Spellbook + '">' +
-      '<div class="role">Spellbook</div><h2>' + t('sb.title') + '</h2>' +
-      '<p>' + t('sb.intro') + '</p></div>';
-    // One spellbook tab at a time (the chosen spec's first); a search looks in all three.
+    let html = page.head();
+    const section = page.section;
     const names = tabs.map(x => x.name);
-    const ordered = [window.Site.spec].concat(names.filter(n => n !== window.Site.spec)).concat('nivel', 'macros');
-    const section = window.Site.section('Hechizos', ordered);
+    if (!names.includes(shown)) shown = names.includes(window.Site.spec) ? window.Site.spec : names[0];
+    if (section === 'nivel' && !query) html += renderNow(tabs);
     // Macros have no spells to filter.
     if (section !== 'macros' || query) html += '<div class="sb-toolbar">' +
       ['all', 'new', 'changed', 'same'].map(k =>
@@ -176,8 +198,11 @@
         (k === 'all' ? t('sb.all', { n: all.length }) : t(STATUS[k].plural, { n: count(k) })) + '</button>').join('') +
       '<input class="sb-search" type="search" placeholder="' + t('sb.search') + '" value="' + query.replace(/"/g, '&quot;') + '">' +
       '</div>';
-    html += window.Site.sectionTabs('Hechizos', ordered, section, n => n === 'nivel' ? t('sb.byLevel') : n === 'macros' ? t('mc.tab') :
-      n + ' <span class="n">' + tabs.find(x => x.name === n).spells.filter(matches).length + '</span>');
+    // Every spell: one spellbook tab at a time (your spec's first); a search looks in all three.
+    if (section === 'lista' && !query) {
+      html += '<div class="seg sb-tabs">' + [window.Site.spec].concat(names.filter(n => n !== window.Site.spec)).map(n =>
+        '<button class="btn' + (n === shown ? ' active' : '') + '" data-sb-tab="' + n + '">' + n + ' <span class="n">' + tabs.find(x => x.name === n).spells.filter(matches).length + '</span></button>').join('') + '</div>';
+    }
     if (section === 'macros' && !query) {
       container.innerHTML = html + '<div id="macros"></div>';
       window.Macros.render(container.querySelector('#macros'));
@@ -193,7 +218,7 @@
     }
     tabs.forEach(tab => {
       const list = tab.spells.filter(matches);
-      if (!list.length || (!query && tab.name !== section)) return;
+      if (!list.length || (!query && tab.name !== shown)) return;
       // The tab's name only when a search shows all three.
       if (query) html += '<h3 class="sb-tab" style="--spec-color:' + ui.specColors[tab.name] + '">' + tab.name + ' <span>' + list.length + '</span></h3>';
       html += '<div class="spell-grid">' + list.map(renderSpell).join('') + '</div>';
@@ -208,6 +233,8 @@
   }
 
   function bind() {
+    window.UI.bindLevel(container, () => page.redraw());
+    container.querySelectorAll('[data-sb-tab]').forEach(b => b.addEventListener('click', () => { shown = b.dataset.sbTab; renderAll(); }));
     container.querySelectorAll('.sb-filter').forEach(b => b.addEventListener('click', () => {
       filter = b.dataset.filter;
       renderAll();
@@ -243,9 +270,11 @@
       const range = text => (text && (text.match(/(\d[\d,]*)\s+to\s+(\d[\d,]*)/) || [])[0]) || null;
       return { now: range(d.d), then: range(d.cd), pct: pctChange(d), d };
     },
-    render(target, uiHelpers) {
+    // In the Class page: opts = { section: 'nivel' | 'lista' | 'macros', head(), redraw() }.
+    render(target, uiHelpers, opts) {
       container = target;
       ui = uiHelpers;
+      page = opts;
       renderAll();
     }
   };

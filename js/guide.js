@@ -162,9 +162,61 @@
     return html + '</div>';
   }
 
+  // When a spell or talent named in the guide is yours: a trainer spell's
+  // first rank, or the level your leveling build takes the talent (else the
+  // first level its row opens).
+  function learnLevel(name, order) {
+    const lv = window.Spellbook.levelsOf(name);
+    if (lv && lv.length) return lv[0];
+    const row = (order || []).find(r => r[3] === name);
+    if (row) return row[0];
+    for (const tr of window.SHAMAN_DATA.talents.trees) {
+      const tal = tr.talents.find(x => x.name === name);
+      if (tal) return window.TalentRules.levelForPoints(5 * (tal.row - 1) + 1);
+    }
+    return 1;
+  }
+
+  // Now, at your level: the rotation with what you have (the rest says from
+  // when), your next talent point and the weapon your path has you hold.
+  function renderNow(guide, spec) {
+    const lvl = UI.levelNow();
+    const rot = guide.rotation || {};
+    const key = lvl <= 20 && rot.level20 ? 'level20' : lvl <= 30 && rot.level30 ? 'level30' : rot.level60 ? 'level60' : 'priority';
+    const tal = window.Home.talentNow(lvl);
+    const order = tal && tal.build.order;
+    // A step counts from when you have its main spell (the first it names).
+    const steps = (rot[key] || []).map(s => ({ s, from: learnLevel(window.Refs.allRefs(s)[0], order) }));
+    const now = steps.filter(x => x.from <= lvl);
+    const later = steps.filter(x => x.from > lvl).sort((a, b) => a.from - b.from);
+    const step = (x, i) => '<li><span class="step-icon" style="background-image:url(' + iconUrl(firstRef(x.s) || SPEC_ICONS[spec]) + ')"></span><div>' + x.s + '</div></li>';
+    const line = (k, body) => '<div class="pn-row"><span class="pn-k">' + k + '</span><div class="pn-v">' + body + '</div></div>';
+    let html = '<section class="pr-now guide-now"><span class="hn-kicker">' + t('guide.now.kicker', { n: lvl }) + '</span>' +
+      '<h2>' + t('guide.now.title') + '</h2>' +
+      (now.length ? '<ol class="steps">' + now.map(step).join('') + '</ol>' : '<p class="dim">' + t('guide.now.none') + '</p>');
+    // The spells you already have (first ranks), newest first, your spec's
+    // tab before the others (Enhancement uses Elemental's shocks too); ten at most.
+    const tabs = window.SHAMAN_DATA.spellbook.tabs.slice().sort((a, b) => (b.name === spec) - (a.name === spec));
+    const mine = [...new Set(tabs.flatMap(x => x.spells.map(([n]) => n)))].map((n, i) => ({ n, i, lv: (window.Spellbook.levelsOf(n) || [])[0] }))
+      .filter(x => x.lv && x.lv <= lvl).sort((a, b) => b.lv - a.lv || a.i - b.i).slice(0, 10);
+    if (mine.length) html += line(t('guide.now.spells'), mine.map(x => '<span class="gn-spell">' + x.n + '</span>').join(''));
+    if (later.length) {
+      html += '<details class="gn-later"><summary>' + t('guide.now.later', { n: later.length }) + '</summary><ol class="steps">' +
+        later.map(x => '<li><span class="step-icon" style="background-image:url(' + iconUrl(firstRef(x.s) || SPEC_ICONS[spec]) + ')"></span><div><span class="gpc-tag">' + t('guide.now.from', { n: x.from }) + '</span> ' + x.s + '</div></li>').join('') + '</ol></details>';
+    }
+    const next = tal && (tal.now || tal.next);
+    if (next) html += line(t('guide.now.talent'), '<b>' + next.talent + '</b> <span class="dim">' +
+      (tal.now ? t('guide.now.talentNow', { rank: next.rank, max: next.max }) : t('guide.now.talentAt', { n: next.from })) + '</span> <a href="' + window.Calculator.linkFor(tal.build) + '">' + t('home.plan.talentsMore') + '</a>');
+    const w = weaponAt(lvl);
+    if (w) html += line(t('guide.now.weapon'), '<b class="q' + w.quality + '">' + w.name + '</b> <span class="dim">' + w.value + ' · ' + w.source + '</span> <a href="#Equipo/camino">' + t('guide.now.weaponMore') + '</a>');
+    return html + '</section>';
+  }
+
   function renderGuidePage(spec) {
     const guide = window.I18N.localize(window.GUIDE_DATA[spec]);
     let html = pageHead(guide.role, spec, guide.summary);
+    html += '<div class="gp-head"><h2>' + t('guide.mine') + '</h2>' + UI.levelStepper() + '</div>';
+    html += renderNow(guide, spec);
     html += renderTiles(guide, spec);
     html += renderChanges(guide.mechanicalChanges, spec);
     html += '<div class="guide-cols">';
@@ -242,12 +294,18 @@
     return html + '</div></div>';
   }
 
-  // Class page: what applies to every spec, one section at a time.
-  const CLASS_SECTIONS = ['notas', 'totems', 'dano', 'razas'];
+  // Class page: your spells by level first (Spellbook), every spell, macros,
+  // then what applies to every spec, one section at a time.
+  const CLASS_SECTIONS = ['nivel', 'lista', 'macros', 'notas', 'totems', 'dano', 'razas'];
+  const SPELL_SECTIONS = ['nivel', 'lista', 'macros'];
+  function classHead(section) {
+    return pageHead(t('ov.role'), t('ov.title'), t('ov.intro')) +
+      (section === 'nivel' ? '<div class="gp-head"><h2>' + t('cl.mine') + '</h2>' + UI.levelStepper() + '</div>' : '') +
+      Site.sectionTabs('Clase', CLASS_SECTIONS, section, k => t('cl.sec.' + k));
+  }
   function renderClass(guide) {
     const section = Site.section('Clase', CLASS_SECTIONS);
-    let html = pageHead(t('ov.role'), t('ov.title'), t('ov.intro'));
-    html += Site.sectionTabs('Clase', CLASS_SECTIONS, section, k => t('cl.sec.' + k));
+    let html = classHead(section);
     if (section === 'totems') html += renderTotems(guide.totems);
     else if (section === 'dano') html += renderDamage(guide.damage);
     else if (section === 'razas') html += renderRaces(guide.races);
@@ -256,9 +314,21 @@
   }
 
   window.Guide = {
-    render(app, spec) { app.innerHTML = renderGuidePage(spec); decorate(app); }
+    render(app, spec) {
+      app.innerHTML = renderGuidePage(spec);
+      decorate(app);
+      UI.bindLevel(app, () => window.Guide.render(app, spec));
+    }
   };
   window.ClassPage = {
-    render(app) { app.innerHTML = renderClass(I18N.localize(window.GUIDE_DATA.Overview)); decorate(app); }
+    render(app, helpers) {
+      const section = Site.section('Clase', CLASS_SECTIONS);
+      if (SPELL_SECTIONS.includes(section)) {
+        window.Spellbook.render(app, helpers, { section, head: () => classHead(section), redraw: () => window.ClassPage.render(app, helpers) });
+        return;
+      }
+      app.innerHTML = renderClass(I18N.localize(window.GUIDE_DATA.Overview));
+      decorate(app);
+    }
   };
 })();

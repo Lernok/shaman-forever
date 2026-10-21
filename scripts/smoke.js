@@ -13,7 +13,7 @@ const { chromium } = require('playwright');
 
 const root = path.join(__dirname, '..');
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.jpg': 'image/jpeg', '.png': 'image/png' };
-const PAGES = ['Inicio', 'Guia', 'Talentos', 'Equipo', 'Profesiones', 'Hechizos', 'Clase', 'Novedades'];
+const PAGES = ['Inicio', 'Guia', 'Talentos', 'Equipo', 'Profesiones', 'Clase', 'Novedades'];
 // Prefixes of the interface keys (js/i18n.js): text like "gp.slot.Head" on a
 // page means a key without a translation.
 const KEY_PREFIXES = ['site', 'tab', 'home', 'gp', 'wp', 'pr', 'cl', 'sb', 'fb', 'setup', 'race', 'conf', 'origin', 'classic', 'orig', 'calc', 'guide', 'news', 'mc'];
