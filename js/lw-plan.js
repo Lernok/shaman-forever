@@ -139,8 +139,14 @@
     }
     const affordable = (r, keep) => r.mats.every(([id, n]) => isVendor(id) || fromAH(id) || have(id) - (keep[id] || 0) >= n);
 
+    // Like the guides: a craft that raises the skill is kept until it turns
+    // green ("1-30: Light Leather"), waiting a level or two for its materials
+    // rather than switching back and forth.
+    let current = null;
+    let stall = 0;
     for (let L = 1; L <= opts.to; L++) {
       capNow = rank(L);
+      let waited = false;
       const zone = (window.Route.zonesAt(L, opts.faction, opts.race)[0] || {}).name || null;
       const z = (zone && S.zones[zone]) || null;
       // Starting zones are beasts and kill quests: more of your XP comes from
@@ -181,13 +187,18 @@
         }
         // 2) The most skill for the skins it spends, keeping what the next pieces need.
         const usable = trainer.filter(r => skill >= r.skill[0] && skill < capNow && chance(r, skill) >= 0.3 && !CURE[r.id]);
+        const can = r => affordable(r, keep) || (CONVERT.includes(r.id) && affordable(r, {}));
+        if (current && skill < current.skill[2] && skill < capNow) {
+          if (can(current)) { craft(current, crafts); continue; }
+          if (stall < 2) { waited = true; break; }
+        }
         let best = null;
         usable.forEach(r => {
-          if (!affordable(r, keep) && !(CONVERT.includes(r.id) && affordable(r, {}))) return;
+          if (!can(r)) return;
           const v = chance(r, skill) / cost(r);
           if (!best || v > best.v) best = { r, v };
         });
-        if (best) { craft(best.r, crafts); continue; }
+        if (best) { current = best.r; craft(best.r, crafts); continue; }
         // 3) Buying: short of skill for a piece that's due, buy the cheapest leather for skill-ups.
         const late = opts.targets.find(t => buys(t) && !madeAt[t.id] && t.level <= L && byId.has(t.id) && skill < byId.get(t.id).skill[0]);
         // The 70-75 wall: nothing there uses Medium Leather, which is what drops
@@ -210,6 +221,7 @@
         }
         break;
       }
+      stall = waited ? stall + 1 : 0;
       Object.entries(buyLog).forEach(([id, n]) => { bought[id] = (bought[id] || 0) + n; });
       rows.push({ level: L, zone, skins, skill: Math.floor(skill), crafts, ranges, gains, made, bought: buyLog,
         keep: Object.fromEntries(Object.entries(keep).filter(([id]) => have(Number(id)) >= 1).map(([id, n]) => [id, Math.min(n, Math.floor(have(Number(id))))])) });
