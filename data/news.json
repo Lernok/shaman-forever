@@ -2,6 +2,27 @@
   "_readme": "Site updates shown on the News page, newest first. Game data changes come from data/changelog.json (written by scripts/sync.js).",
   "site": [
     {
+      "day": "2026-10-21",
+      "title": {
+        "es": "Talentos del 30 al 60 corregidos, y un solo nivel por pieza de Peletería",
+        "en": "Talents from 30 to 60 fixed, and one level per Leatherworking piece"
+      },
+      "items": [
+        {
+          "es": "Gracias a un comentario en Reddit: el orden de talentos del 30 al 60 (una proyección, porque la beta llega al 30) retrasaba los talentos clave. Ahora Lava Burst va al 30, y Elemental Mastery, Rage of the Farseer y Riptide al 40, apenas se pueden tomar. En Elemental, Elemental Focus pasa del 26 al 20. El addon dice lo mismo al subir de nivel.",
+          "en": "Thanks to a Reddit comment: the talent order from 30 to 60 (a projection, since the beta stops at 30) delayed the key talents. Now Lava Burst comes at 30, and Elemental Mastery, Rage of the Farseer and Riptide at 40, as soon as they open. For Elemental, Elemental Focus moves from 26 to 20. The addon says the same when you level up."
+        },
+        {
+          "es": "Equipo y Profesiones dan el mismo nivel para cada pieza de Peletería: el camino espera a que tu habilidad llegue (y, si farmeás todo, a que juntes el cuero), y elige otra pieza mientras tanto.",
+          "en": "Equipo and Profesiones give the same level for each Leatherworking piece: the path waits for your skill (and, farming everything, for your leather) and picks another piece meanwhile."
+        },
+        {
+          "es": "Los nombres de las profesiones, en el idioma de la página.",
+          "en": "Profession names in the page's language."
+        }
+      ]
+    },
+    {
       "day": "2026-10-18",
       "title": {
         "es": "Ítems con los números del juego y los cambios de cada parche",
