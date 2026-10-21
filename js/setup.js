@@ -51,7 +51,7 @@
       '<button class="btn setup-pair' + (p.pair.split(' + ').every(x => draft.profs.includes(x)) ? ' active' : '') + '" data-pair="' + p.pair + '">' +
       p.pair.split(' + ').map(x => img(PROF_ICONS[x], 'pp-mini')).join('') + p.pair + ' <span class="dim">· ' + p.when + '</span></button>').join('') + '</div>' : '') +
       '<div class="setup-grid profs">' + PRIMARY.map(p => '<button class="setup-opt prof' + (draft.profs.includes(p) ? ' active' : '') + '" data-prof="' + p + '">' +
-        img(PROF_ICONS[p]) + '<b>' + p + '</b></button>').join('') +
+        img(PROF_ICONS[p]) + '<b>' + I18N.term(p) + '</b></button>').join('') +
       '<button class="setup-opt prof any' + (!draft.profs.length ? ' active' : '') + '" data-prof="none"><b>' + t('setup.noProfs') + '</b></button></div>';
   }
 
@@ -101,7 +101,7 @@
 
     if (!short) html += '<section class="setup-step"><h3><span class="setup-n">3</span>' + t('setup.profs') + ' <span class="dim">' + t('setup.profsHint') + '</span></h3>' +
       '<div class="setup-grid profs">' + PRIMARY.map(p => '<button class="setup-opt prof' + (draft.profs.includes(p) ? ' active' : '') + '" data-prof="' + p + '">' +
-        img(PROF_ICONS[p]) + '<b>' + p + '</b></button>').join('') +
+        img(PROF_ICONS[p]) + '<b>' + I18N.term(p) + '</b></button>').join('') +
       '<button class="setup-opt prof any' + (!draft.profs.length ? ' active' : '') + '" data-prof="none"><b>' + t('setup.noProfs') + '</b></button></div>' +
       (pairs.length ? '<div class="setup-pairs"><span class="dim">' + t('setup.pairs', { spec: draft.spec }) + '</span>' + pairs.map(p =>
         '<button class="btn setup-pair' + (p.pair.split(' + ').every(x => draft.profs.includes(x)) ? ' active' : '') + '" data-pair="' + p.pair + '">' +
@@ -191,7 +191,7 @@
     const profs = UI.store.get('profs', []).filter(p => PRIMARY.includes(p));
     return (r ? img(r.icon, 'pc-icon') : '') + img(Site.SPEC_ICONS[Site.spec], 'pc-icon') +
       '<span class="pc-text"><b>' + (r ? t('race.' + r.race) : t('wp.faction.' + Site.faction)) + ' · ' + Site.spec + '</b>' +
-      '<span class="pc-profs">' + (profs.length ? profs.join(' + ') : t('setup.noProfsShort')) + '</span></span>' +
+      '<span class="pc-profs">' + (profs.length ? I18N.profs(profs) : t('setup.noProfsShort')) + '</span></span>' +
       profs.map(p => img(PROF_ICONS[p], 'pc-prof')).join('') + '<span class="pc-edit" aria-hidden="true">✎</span>';
   }
 

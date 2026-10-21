@@ -50,11 +50,16 @@
   // What the last path paid for each Favor recipe (the first ones ride on the bonus).
   let favorPaid = {};
 
+  // The last path, kept while nothing it depends on changes (Inicio,
+  // Equipo and Profesiones all ask for it, and it takes a few plans).
+  let last = null;
   function compute() {
     // Your professions (shared with the Professions page, gathering ones too):
     // crafts count only from your crafting ones; none picked = no crafts.
     const picked = UI.store.get('profs', []);
     const profs = picked.filter(p => PROFS.includes(p));
+    const key = JSON.stringify([Site.spec, Site.faction, race(), picked, state.drops, state.farm, UI.store.get('learnedProfs', {}), UI.store.get('lwSkin', 'normal'), !!window.SKINNING_DATA, !!window.CRAFT_DATA, gear().length]);
+    if (last && last.key === key) { favorPaid = last.favorPaid; return last.out; }
     const opts = {
       spec: Site.spec, faction: Site.faction, race: race(), profs, drops: state.drops,
       route: (zone, lvl) => window.Route.onRoute(zone, lvl, Site.faction, race()),
@@ -69,9 +74,64 @@
       favorFirst,
       goldAt: l => ((window.CRAFT_DATA || {}).gold || [])[Math.min(60, Math.max(1, l)) - 1] || 0
     };
-    const plan = window.GearPlan.plan(gear(), opts);
+    const first = window.GearPlan.plan(gear(), opts);
+    // Leatherworking pieces wait for the level the Leatherworking plan makes
+    // them (js/lw-plan.js, the one Profesiones shows): your skill by then,
+    // and, farming everything, the hides you skin. Planned again with those
+    // levels, so the path takes something else meanwhile.
+    // Farming, other pieces change which hides you keep: again until the
+    // path's Leatherworking pieces stay put (two or three rounds). A piece's
+    // wait only grows from round to round, so it settles.
+    let plan = first;
+    const wait = new Map();
+    for (let round = 0; round < 5 && profs.includes('Leatherworking'); round++) {
+      const lwAt = lwLevels(plan, picked);
+      if (!lwAt) break;
+      const at = item => { const n = Math.max(wait.get(item.id) || 0, lwAt(item)); wait.set(item.id, n); return n; };
+      const next = window.GearPlan.plan(gear(), Object.assign({}, opts, {
+        matsAt: (item, s) => Math.max(opts.matsAt ? opts.matsAt(item, s) : 0, s.profession === 'Leatherworking' ? at(item) : 0)
+      }));
+      const same = lwKey(next) === lwKey(plan);
+      plan = next;
+      if (same) break;
+    }
     favorPaid = plan.favorPaid || {};
-    return { plan, profs, picked };
+    last = { key, favorPaid, out: { plan, profs, picked } };
+    return last.out;
+  }
+
+  // The level you make each Leatherworking piece, from the Leatherworking plan
+  // run on a path's pieces: with the auction house, as soon as your skill
+  // gets there (it buys the leather and hides); farming everything, with what
+  // you skin. The plan goes to the beta's cap: a piece it doesn't reach by
+  // then waits until after it. null without its data.
+  const LW_CAP = 30;
+  const lwKey = plan => Object.values(plan.slots).map(p => p.steps.filter(st => (st.pick.source || {}).profession === 'Leatherworking')
+    .map(st => st.pick.item.id + '@' + st.level).join(',')).join('|');
+  function lwLevels(plan, picked) {
+    const SK = window.SKINNING_DATA;
+    if (!SK || !window.LwPlan) return null;
+    const steps = [];
+    Object.values(plan.slots).forEach(p => p.steps.forEach(st => { if ((st.pick.source || {}).profession === 'Leatherworking' && st.level <= LW_CAP) steps.push(st); }));
+    const skin = UI.store.get('lwSkin', 'normal');
+    const skinning = picked.includes('Skinning');
+    const res = window.LwPlan.run({
+      faction: Site.faction, race: race(), targets: steps.map(st => ({ id: st.pick.item.id, level: st.level })).sort((a, b) => a.level - b.level),
+      intensity: ['few', 'normal', 'all'].includes(skin) ? skin : 'normal', skinning, to: LW_CAP, buy: !state.farm,
+      lwFrom: window.Route.profFrom('Leatherworking', Site.faction, race()).level,
+      skinFrom: skinning ? window.Route.profFrom('Skinning', Site.faction, race()).level : 61
+    });
+    const recipe = new Map(SK.recipes.map(r => [r.id, r]));
+    const wanted = new Set(steps.map(st => st.pick.item.id));
+    return item => {
+      if (res.made[item.id]) return res.made[item.id];
+      if (wanted.has(item.id)) return LW_CAP + 1;
+      const r = recipe.get(item.id);
+      if (!r) return 0;
+      // Not one of the path's pieces: the level your skill reaches its recipe.
+      const row = res.rows.find(x => x.skill >= r.skill[0]);
+      return row ? row.level : LW_CAP + 1;
+    };
   }
 
   // Where it comes from, in one line.
@@ -278,7 +338,7 @@
       '<span class="gp-lvl"><button class="hn-step" data-gp-step="-1" aria-label="' + t('home.levelDown') + '"' + (lvl <= 1 ? ' disabled' : '') + '>−</button>' +
       '<label>' + t('home.next.level') + ' <select id="gpLevel">' + Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === lvl ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label>' +
       '<button class="hn-step" data-gp-step="1" aria-label="' + t('home.levelUp') + '"' + (lvl >= 60 ? ' disabled' : '') + '>+</button></span>' +
-      '<span class="gp-who dim">' + raceLabel + ' · ' + Site.spec + ' · ' + (picked.length ? picked.join(' + ') : t('setup.noProfsShort')) + ' <button class="btn-link" data-open-setup>' + t('home.change') + '</button></span>' +
+      '<span class="gp-who dim">' + raceLabel + ' · ' + Site.spec + ' · ' + (picked.length ? I18N.profs(picked) : t('setup.noProfsShort')) + ' <button class="btn-link" data-open-setup>' + t('home.change') + '</button></span>' +
       '<details class="gp-settings"><summary>' + t('gp.settings') + '</summary><div>' +
       '<label class="chk" title="' + t('gp.dropsTitle') + '"><input type="checkbox" id="gpDrops"' + (state.drops ? ' checked' : '') + '> ' + t('gp.drops') + '</label>' +
       (profs.length ? '<label class="chk" title="' + t('gp.farmTitle') + '"><input type="checkbox" id="gpFarm"' + (state.farm ? ' checked' : '') + '> ' + t('gp.farm') + '</label>' : '') +
@@ -287,7 +347,7 @@
     const pend = picked
       .map(p => Object.assign({ prof: p }, window.Route.profFrom(p, Site.faction, race()))).filter(x => x.level > lvl);
     if (pend.length) {
-      html += '<div class="gp-learn"><span>' + t('gp.learn', { list: pend.map(x => x.prof + ' (' + (x.zone || '?') + ')').join(', '), n: Math.min(...pend.map(x => x.level)) }) + '</span>' +
+      html += '<div class="gp-learn"><span>' + t(pend.length > 1 ? 'gp.learn' : 'gp.learnOne', { list: pend.map(x => I18N.term(x.prof) + ' (' + (x.zone || '?') + ')').join(', '), n: Math.min(...pend.map(x => x.level)) }) + '</span>' +
         pend.map(x => '<button class="btn" data-learned="' + x.prof + '">' + t('home.learned', { prof: x.prof }) + '</button>').join('') + '</div>';
     }
     html += tabsHtml;

@@ -63,7 +63,7 @@
       });
       if (quiet) body += '<p class="note-text dim">' + t('news.p.quiet', { n: quiet }) + '</p>';
       const head = '<div class="news-date">' + (u.date ? niceDate(u.date) : '') + ' <span class="dim">· build ' + u.version + (u.hotfix ? ' · hotfix' : '') + '</span></div>' +
-        '<b class="news-title">' + t('news.p.count', { n: u.spells.length }) + '</b>';
+        '<b class="news-title">' + t(u.spells.length === 1 ? 'news.p.countOne' : 'news.p.count', { n: u.spells.length }) + '</b>';
       // The newest open; older ones folded.
       html += '<div class="news-entry">' + (i === 0 ? head + body : '<details class="more"><summary>' + head + '</summary>' + body + '</details>') + '</div>';
     });

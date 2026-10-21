@@ -285,6 +285,7 @@ ul.plain.ordered li::before {
 
 .site-footer {
   max-width: calc(var(--wide) - 32px);
+  width: calc(100% - 32px);
   margin: 0 auto 30px;
   color: #71737d;
   font-size: 11.5px;
@@ -1462,6 +1463,7 @@ details[open] > .lw-head .lw-goals { display: none; }
   .home-tiles { grid-template-columns: 1fr; gap: 10px; }
   .home-tile { padding: 14px 16px; }
   .home-tile .dim { display: none; }
+  .home-tile .dim.ht-keep { display: block; }
   .home-since a { margin-left: 0; }
 }
 

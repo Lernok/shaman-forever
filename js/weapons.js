@@ -250,7 +250,7 @@
       '<span class="ctl-label">' + t('wp.when.label') + '</span><div class="seg">' + ['rec', 'asap'].map(k =>
         '<button class="btn' + (state.when === k ? ' active' : '') + '" data-when="' + k + '" title="' + t('wp.when.' + k + 'Title') + '">' + t('wp.when.' + k) + '</button>').join('') + '</div>' +
       '<label class="chk chip-toggle" title="' + t('wp.profs.ahTitle') + '"><input type="checkbox" id="wpAH"' + (state.ah ? ' checked' : '') + '> ' + t('wp.profs.ah') + '</label>' +
-      '<span class="dim prof-hint">' + t('wp.profsFrom', { profs: state.profs.length ? state.profs.join(' + ') : t('setup.noProfsShort') }) + '</span>' +
+      '<span class="dim prof-hint">' + t('wp.profsFrom', { profs: state.profs.length ? I18N.profs(state.profs) : t('setup.noProfsShort') }) + '</span>' +
       '</div><details class="wp-more"' + (state.random || state.unknown || state.raids || state.pvp ? ' open' : '') + '><summary>' + t('wp.addSources') + '</summary><div class="wp-controls">' +
       '<label class="chk chip-toggle"><input type="checkbox" id="wpRandom"' + (state.random ? ' checked' : '') + '> ' + t('wp.showRandom') + '</label>' +
       '<label class="chk chip-toggle"><input type="checkbox" id="wpUnknown"' + (state.unknown ? ' checked' : '') + '> ' + t('wp.showUnknown') + '</label>' +

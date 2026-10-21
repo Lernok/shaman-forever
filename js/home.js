@@ -113,7 +113,7 @@
     const ahead = !st ? aheadStep(steps, lvl) : null;
     const tree = window.SHAMAN_DATA.talents.trees.find(tr => tr.name === Site.spec);
     const art = tree ? ' style="--spec-color:' + SPEC_COLORS[Site.spec] + ';--hn-art:url(' + UI.treeArt(tree.bg) + ')"' : '';
-    const head = '<span class="hn-kicker">' + t('home.next.kicker') + ' · <span class="hn-level"><button class="hn-step" data-level-step="-1" aria-label="' + t('home.levelDown') + '"' + (lvl <= 1 ? ' disabled' : '') + '>−</button>' +
+    const head = '<span class="hn-kicker">' + t('home.next.kicker') + ' <span class="hn-level"><button class="hn-step" data-level-step="-1" aria-label="' + t('home.levelDown') + '"' + (lvl <= 1 ? ' disabled' : '') + '>−</button>' +
       '<label>' + t('home.next.level') + ' <select data-plan-level>' + Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === lvl ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label>' +
       '<button class="hn-step" data-level-step="1" aria-label="' + t('home.levelUp') + '"' + (lvl >= 60 ? ' disabled' : '') + '>+</button></span></span>';
     if (st) {
@@ -179,19 +179,19 @@
     const makers = profs.filter(p => CRAFTING.includes(p));
     let prof;
     if (!profs.length) prof = '<button class="home-tile ht-prof" data-open-setup><span class="ht-head"><img src="' + smallIcon('trade_leatherworking') + '" alt=""><span class="ht-kind">' + t('home.tile.profs') + '</span></span><b>' + t('home.tile.profsPick') + '</b><span class="dim">' + t('home.tile.profsWhy') + '</span><span class="ht-more">' + t('home.plan.pickProfs') + ' →</span></button>';
-    else if (!makers.length) prof = tile(t('home.tile.profs'), t('home.tile.gatherOnly', { profs: profs.join(' + ') }), '', '#Profesiones', t('home.plan.profsMore'), window.Setup.PROF_ICONS[profs[0]], 'prof');
+    else if (!makers.length) prof = tile(t('home.tile.profs'), t('home.tile.gatherOnly', { profs: I18N.profs(profs) }), '', '#Profesiones', t('home.plan.profsMore'), window.Setup.PROF_ICONS[profs[0]], 'prof');
     else {
       // No trainer of it yet on your route: where and when you learn it.
       const race = Site.race === 'any' ? null : Site.race;
       const learn = makers.map(p => Object.assign({ prof: p }, window.Route.profFrom(p, Site.faction, race))).sort((a, b) => a.level - b.level)[0];
       const goal = leatherGoal(steps, lvl, learn);
       if (goal) {
-        return '<div class="home-tiles">' + gear + talents + '<div class="home-tile ht-prof"><span class="ht-head"><img src="' + smallIcon(window.Setup.PROF_ICONS.Skinning) + '" alt=""><span class="ht-kind">Skinning</span></span>' +
-          '<b>' + t('home.tile.gather') + '</b><span class="dim">' + t('home.tile.gatherFor', { list: goal.list, item: goal.item, zone: learn.zone || '?' }) + '</span>' +
+        return '<div class="home-tiles">' + gear + talents + '<div class="home-tile ht-prof"><span class="ht-head"><img src="' + smallIcon(window.Setup.PROF_ICONS.Skinning) + '" alt=""><span class="ht-kind">' + I18N.term('Skinning') + '</span></span>' +
+          '<b>' + t('home.tile.gather') + '</b><span class="dim ht-keep">' + t('home.tile.gatherFor', { list: goal.list, item: goal.item, zone: learn.zone || '?' }) + '</span>' +
           '<span class="ht-actions">' + learnedBtn('Leatherworking') + '</span></div></div>';
       }
       if (learn && learn.level > lvl) {
-        return '<div class="home-tiles">' + gear + talents + '<div class="home-tile ht-prof"><span class="ht-head"><img src="' + smallIcon(window.Setup.PROF_ICONS[learn.prof]) + '" alt=""><span class="ht-kind">' + learn.prof + '</span></span>' +
+        return '<div class="home-tiles">' + gear + talents + '<div class="home-tile ht-prof"><span class="ht-head"><img src="' + smallIcon(window.Setup.PROF_ICONS[learn.prof]) + '" alt=""><span class="ht-kind">' + I18N.term(learn.prof) + '</span></span>' +
           '<b>' + t('home.tile.learnAt', { prof: learn.prof, zone: learn.zone || '?', n: learn.level }) + '</b><span class="dim">' + t('home.tile.learnWhy', { n: learn.level }) + '</span>' +
           '<span class="ht-actions">' + learnedBtn(learn.prof) + '</span></div></div>';
       }
@@ -200,8 +200,8 @@
       const first = crafts[0];
       const skill = first && ((first.pick.source.learn || {}).learnAt || first.pick.source.yellow);
       prof = first
-        ? tile(first.pick.source.profession, skill > 1 ? t('home.tile.skillGoal', { prof: first.pick.source.profession, n: skill, lvl: first.level }) : t('home.tile.knownRecipe', { lvl: first.level }), t('home.tile.craftFirst', { item: first.pick.item.name }), '#Profesiones/plan', t('home.plan.profsMore'), window.Setup.PROF_ICONS[first.pick.source.profession], 'prof')
-        : tile(makers.join(' + '), t('home.tile.craftNone'), '', '#Profesiones/plan', t('home.plan.profsMore'), window.Setup.PROF_ICONS[makers[0]], 'prof');
+        ? tile(I18N.term(first.pick.source.profession), skill > 1 ? t('home.tile.skillGoal', { prof: first.pick.source.profession, n: skill, lvl: first.level }) : t('home.tile.knownRecipe', { lvl: first.level }), t('home.tile.craftFirst', { item: first.pick.item.name }), '#Profesiones/plan', t('home.plan.profsMore'), window.Setup.PROF_ICONS[first.pick.source.profession], 'prof')
+        : tile(I18N.profs(makers), t('home.tile.craftNone'), '', '#Profesiones/plan', t('home.plan.profsMore'), window.Setup.PROF_ICONS[makers[0]], 'prof');
     }
     return '<div class="home-tiles">' + gear + talents + prof + '</div>';
   }
@@ -221,8 +221,11 @@
   // The beta and the launch, said as of today.
   function launchLine() {
     const days = Math.ceil((LAUNCH - new Date()) / 86400000);
-    const key = new Date() < BETA_END ? 'home.status.beta' : days > 0 ? 'home.status.betaOver' : 'home.status.live';
-    return '<div class="home-status"><span class="hs-state">' + t(key + 'Tag') + '</span><span>' + t(key, { n: days }) + '</span>' +
+    const now = new Date();
+    const stress = now > new Date('2026-10-21T03:00:00Z') && now < STRESS[1];
+    const key = stress ? 'home.status.stress' : now < BETA_END ? 'home.status.beta' : days > 0 ? 'home.status.betaOver' : 'home.status.live';
+    const time = STRESS[0].toLocaleTimeString(I18N.lang === 'es' ? 'es-AR' : 'en-US', { hour: 'numeric', minute: '2-digit' });
+    return '<div class="home-status"><span class="hs-state">' + t(key + 'Tag') + '</span><span>' + t(key, { n: days, time }) + '</span>' +
       '<a href="#Guia">' + t('home.me.guide', { spec: Site.spec }) + ' →</a></div>';
   }
 
@@ -237,7 +240,10 @@
   }
 
   const LAUNCH = new Date('2026-11-04T23:00:00Z');
-  const BETA_END = new Date('2026-10-22T07:00:00Z');
+  // The beta's last day is Oct 22 (no hour given). The stress test: Oct 21
+  // from 14:00 PDT for a few hours, with the beta off.
+  const BETA_END = new Date('2026-10-23T07:00:00Z');
+  const STRESS = [new Date('2026-10-21T21:00:00Z'), new Date('2026-10-22T05:00:00Z')];
   function renderHome() {
     const setupDone = UI.store.get('setupDone', false);
     // With your Shaman picked: only what to do now (the pages are in the menu).

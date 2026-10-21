@@ -149,7 +149,7 @@
   function campCard(prof) {
     const c = ((window.CAMP_DATA || {}).objects || {})[prof];
     if (!c) return '';
-    return '<div class="camp-card"><img src="' + UI.icon(c.icon) + '" alt="" loading="lazy"><div><b>' + c.object + '</b> <span class="dim">· ' + prof + '</span>' +
+    return '<div class="camp-card"><img src="' + UI.icon(c.icon) + '" alt="" loading="lazy"><div><b>' + c.object + '</b> <span class="dim">· ' + I18N.term(prof) + '</span>' +
       '<span class="camp-effect">' + window.I18N.localize(c.effect) + '</span><span class="dim camp-up">' + c.upgrades + '</span></div></div>';
   }
 
@@ -163,14 +163,14 @@
       '<span class="gp-lvl"><button class="hn-step" data-pr-step="-1" aria-label="' + t('home.levelDown') + '"' + (lvlNow <= 1 ? ' disabled' : '') + '>−</button>' +
       '<label>' + t('home.next.level') + ' <select data-pr-level>' + Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === lvlNow ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label>' +
       '<button class="hn-step" data-pr-step="1" aria-label="' + t('home.levelUp') + '"' + (lvlNow >= 60 ? ' disabled' : '') + '>+</button></span>' +
-      '<span class="gp-who dim">' + (mine.length ? mine.join(' + ') : t('setup.noProfsShort')) + ' <button class="btn-link" data-open-setup>' + t('home.change') + '</button></span></div>';
+      '<span class="gp-who dim">' + (mine.length ? I18N.profs(mine) : t('setup.noProfsShort')) + ' <button class="btn-link" data-open-setup>' + t('home.change') + '</button></span></div>';
     if (mine.length < 2) {
       html += '<p class="note-text" style="margin-top:16px">' + t('pr.plan.none', { spec: Site.spec }) + '</p><div class="pr-pairs">' +
         g.pairs.filter(p => p.specs.includes(Site.spec)).map(p => pairCard(p, true)).join('') + '</div>';
       if (!mine.length) return html;
     }
     let extra = '<details class="pr-more"><summary>' + t('pr.more.camp') + '</summary><div class="camp-grid" style="margin-top:12px">' + mine.map(campCard).join('') + '</div>';
-    mine.filter(p => GATHERING.includes(p)).forEach(p => { extra += '<p class="note-text">' + profIcon(p, 'pk-icon') + ' ' + t('pr.prof.gather', { list: FEEDS[p].join(', ') }) + '</p>'; });
+    mine.filter(p => GATHERING.includes(p)).forEach(p => { extra += '<p class="note-text">' + profIcon(p, 'pk-icon') + ' ' + t('pr.prof.gather', { list: FEEDS[p].map(I18N.term).join(', ') }) + '</p>'; });
     extra += '</details><details class="pr-more"><summary>' + t('pr.prof.guides') + '</summary>' + guidesHtml(g) + '</details>';
     const makers = mine.filter(p => CRAFTING.includes(p));
     if (!makers.length) return html + '<p class="note-text">' + t('pr.plan.gatherOnly') + '</p>' + extra;
@@ -193,7 +193,7 @@
     const due = steps.filter(st => st.level <= lvl && st.until > lvl).pop();
     const next = steps.find(st => st.level > lvl);
     const nowSt = due || next;
-    html += '<div class="pr-sec-head"><h3>' + t('pr.plan.title2', { profs: others.join(' + ') }) + '</h3></div>';
+    html += '<div class="pr-sec-head"><h3>' + t('pr.plan.title2', { profs: I18N.profs(others) }) + '</h3></div>';
     if (nowSt) {
       const line = (k, body) => '<div class="pn-row"><span class="pn-k">' + k + '</span><div class="pn-v">' + body + '</div></div>';
       html += '<section class="pr-now"><span class="hn-kicker">' + t('pr.now.kicker1', { n: lvl }) + '</span>' +
@@ -205,7 +205,7 @@
     // Every piece, by the level it comes: one line each, the rest on tap.
     const byLevel = new Map();
     steps.forEach(st => { if (!byLevel.has(st.level)) byLevel.set(st.level, []); byLevel.get(st.level).push(st); });
-    html += '<section class="gp-coming"><div class="gp-coming-head"><h3>' + t('pr.pieces.title2', { profs: others.join(' + ') }) + '</h3><span class="dim">' + t('pr.plan.worth') + '</span></div>' +
+    html += '<section class="gp-coming"><div class="gp-coming-head"><h3>' + t('pr.pieces.title2', { profs: I18N.profs(others) }) + '</h3><span class="dim">' + t('pr.plan.worth') + '</span></div>' +
       (steps.length ? [...byLevel.entries()].map(([l, list]) => '<div class="gp-lvl-row' + (l > BETA_CAP ? ' post-cap' : '') + '"><b class="gp-lvl-n">' + t('home.tile.lv', { n: l }) + '</b><div class="gp-cards">' + list.map(pieceCard).join('') + '</div></div>').join('')
         : '<p class="dim">' + t('pr.plan.nothingWorth') + '</p>') + '</section>';
     html += '<p class="note-text dim">' + t('pr.plan.note2') + '</p>';
@@ -417,7 +417,7 @@
         pending.map(p => '<button class="btn" data-learned="' + p + '">' + t('home.learned', { prof: p }) + '</button>').join('') + '</div>';
     }
     const said = Object.keys(learned).filter(p => ['Leatherworking', 'Skinning'].includes(p));
-    if (said.length) html += '<p class="note-text dim">' + t('pr.lw.learnedSaid', { list: said.map(p => p + ' (' + t('common.level') + ' ' + learned[p] + ')').join(', ') }) +
+    if (said.length) html += '<p class="note-text dim">' + t('pr.lw.learnedSaid', { list: said.map(p => I18N.term(p) + ' (' + t('common.level') + ' ' + learned[p] + ')').join(', ') }) +
       ' <button class="btn-link" data-unlearn>' + t('pr.lw.learnedUndo') + '</button></p>';
 
     // Stages: from one goal to the next (pieces you make, the 70-75 wall).
@@ -508,22 +508,26 @@
         '</section>';
     }
 
+    // The level you make a piece, the one Equipo › Tu camino uses too: farming
+    // everything, with what you skin; with the auction house, the path's (it
+    // already waits for your skill, js/gear-path.js lwLevels).
+    const madeAt = p => (farm ? (skinning && p.alone && Math.max(p.alone, p.level)) || null : p.level <= BETA_CAP ? p.level : null);
     // At a glance: the skill at 10, 20 and 30, and the pieces you make.
     if (skinning) {
       const at = l => (base.rows[l - 1] || {}).skill;
       html += '<div class="lw-sum">' + [10, 20, BETA_CAP].map(l => '<div class="lw-tile"><span>' + t('pr.lw.atLevel', { n: l }) + '</span><b>' + at(l) + '</b><small>' + t('pr.lw.skillShort') + '</small></div>').join('') +
-        '<div class="lw-tile"><span>' + t('pr.lw.piecesMade') + '</span><b>' + pieces.filter(p => p.alone).length + '/' + pieces.length + '</b><small>' + t('pr.lw.piecesMadeSub', { n: BETA_CAP }) + '</small></div></div>';
+        '<div class="lw-tile"><span>' + t('pr.lw.piecesMade') + '</span><b>' + pieces.filter(madeAt).length + '/' + pieces.length + '</b><small>' + t('pr.lw.piecesMadeSub', { n: BETA_CAP }) + '</small></div></div>';
     }
 
     // Your pieces, by the level you make them: one line each, the rest on tap.
     const groups = new Map();
-    pieces.slice().sort((a, b) => (a.alone || 99) - (b.alone || 99) || a.level - b.level).forEach(p => {
-      const at = skinning && p.alone ? p.alone : null;
+    pieces.slice().sort((a, b) => (madeAt(a) || 99) - (madeAt(b) || 99) || a.level - b.level).forEach(p => {
+      const at = madeAt(p);
       const key = at ? t('home.tile.lv', { n: at }) : t('pr.pieces.later', { n: BETA_CAP });
       if (!groups.has(key)) groups.set(key, []);
       groups.get(key).push(p);
     });
-    html += '<section class="gp-coming"><div class="gp-coming-head"><h3>' + t('pr.pieces.title') + '</h3><span class="dim">' + t('pr.pieces.sub') + '</span></div>' +
+    html += '<section class="gp-coming"><div class="gp-coming-head"><h3>' + t('pr.pieces.title') + '</h3><span class="dim">' + t(farm ? 'pr.pieces.sub' : 'pr.pieces.subAH') + '</span></div>' +
       [...groups.entries()].map(([k, list]) => '<div class="gp-lvl-row"><b class="gp-lvl-n">' + k + '</b><div class="gp-cards">' + list.map(p => {
         const st = stepOf.get(p.id);
         const i = st.pick.item;
@@ -531,7 +535,7 @@
         const tag = r && r.how === 'f' ? t('pr.pieces.favor', { n: r.favor || 30 }) : t('pr.pieces.skill', { n: r ? r.skill[0] : '?' });
         return '<details class="gp-card gp-tag-craft"><summary>' + (i.icon ? '<img class="gst-icon q' + (i.quality || 1) + '" src="' + UI.icon(i.icon) + '" alt="">' : '') +
           '<span class="gpc-main"><b class="q' + i.quality + '">' + i.name + '</b><span class="gpc-sub">' + window.GearPath.slotName(st.pick.slot) + ' · <span class="gpc-tag">' + tag + '</span>' +
-          (p.level < (p.alone || 99) ? ' · <span class="dim">' + t('pr.pieces.path', { n: p.level }) + '</span>' : '') + '</span></span></summary>' +
+          (farm && p.level < (p.alone || 99) ? ' · <span class="dim">' + t('pr.pieces.path', { n: p.level }) + '</span>' : '') + '</span></span></summary>' +
           '<div class="gpc-body">' + piece(p.id) + early(p.id) + '</div></details>';
       }).join('') + '</div></div>').join('') + '</section>';
 

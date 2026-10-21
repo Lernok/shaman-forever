@@ -41,6 +41,7 @@
       'pr.lw.forMats': 'Además hacé estos, aunque ya no suben Peletería:',
       'pr.pieces.title': 'Tus piezas de Peletería',
       'pr.pieces.sub': 'por el nivel en que las hacés despellejando; tocá una para ver cómo',
+      'pr.pieces.subAH': 'por el nivel en que las hacés, comprando en la subasta lo que no despellejás (el mismo que en Equipo); tocá una para ver cómo',
       'pr.pieces.later': 'Después del {n}',
       'pr.pieces.skill': 'Peletería {n}',
       'pr.pieces.favor': '{n} de Favor',
@@ -48,6 +49,7 @@
       'pr.lw.stagesFull': 'Ver el plan nivel por nivel',
       'pr.more.camp': 'Objetos de campamento de tus profesiones',
       'gp.mine': 'Tu equipo',
+      'gp.learnOne': 'Todavía no la aprendiste: {list}. Sin nivel mínimo; tu ruta pasa cerca del nivel {n}. ¿Ya fuiste?',
       'gp.learn': 'Todavía no las aprendiste: {list}. Sin nivel mínimo; tu ruta pasa cerca del nivel {n}. ¿Ya fuiste?',
       'gp.settings': 'Ajustes',
       'gp.now.title': 'Lo que deberías tener puesto',
@@ -129,7 +131,9 @@
       'home.sinceAll': 'Ver novedades',
       'home.sinceClose': 'Cerrar aviso',
       'home.status.betaTag': 'Beta',
-      'home.status.beta': 'La beta termina el 21 de octubre; lanzamiento el 4 de noviembre, en {n} días.',
+      'home.status.beta': 'La beta termina el 22 de octubre; lanzamiento el 4 de noviembre, en {n} días.',
+      'home.status.stressTag': 'Stress test',
+      'home.status.stress': 'Hoy desde las {time}: stress test abierto a todos por unas horas, con la beta apagada; al final se borra todo y vuelve la beta hasta el 22. Lanzamiento el 4 de noviembre, en {n} días.',
       'home.status.betaOverTag': 'La beta terminó',
       'home.status.betaOver': 'Lanzamiento el 4 de noviembre, en {n} días. Los datos se actualizan solos cuando salga el juego.',
       'home.status.liveTag': 'Ya salió',
@@ -349,7 +353,7 @@
       'home.launchToday': 'Lanza hoy',
       'home.launched': 'Ya salió',
       'home.launchDate': '4 de noviembre de 2026',
-      'home.betaEnds': 'La beta termina el 21 oct · tope nivel 30',
+      'home.betaEnds': 'La beta termina el 22 oct · tope nivel 30',
       'home.pages': 'Qué hay en el sitio',
       'home.latest': 'Últimas novedades',
       'home.allNews': 'Ver todas →',
@@ -384,6 +388,7 @@
       'news.patchesIntro': 'Hechizo por hechizo, antes → ahora, leído del cliente del juego con los hotfixes. Se actualiza solo con cada build.',
       'news.patchesSource': 'Fuente: wowsims/gamedata (exporta los hechizos del cliente cada 3 horas). Los valores son los del cliente; algunos quedan en inglés.',
       'news.p.count': '{n} hechizos de Shaman cambiaron',
+      'news.p.countOne': '1 hechizo de Shaman cambió',
       'news.p.quiet': 'Y {n} con cambios internos, sin efecto visible en el tooltip.',
       'news.p.added': 'nuevo',
       'news.p.removed': 'quitado',
@@ -512,7 +517,7 @@
       'calc.modified': 'Modificado a partir de un build de ejemplo.',
       'calc.order': 'Orden de leveo ({n} pasos)',
       'calc.lv': 'Nv',
-      'calc.nextRow': 'próxima fila a los {n}',
+      'calc.nextRow': 'próxima fila con {n} puntos',
       'calc.allRows': 'todas las filas abiertas',
       'calc.removePoint': 'Quitar un punto de {talent}',
       'calc.current': 'Actual',
@@ -915,6 +920,7 @@
       'pr.lw.forMats': 'Also make these, though they no longer raise Leatherworking:',
       'pr.pieces.title': 'Your Leatherworking pieces',
       'pr.pieces.sub': 'by the level you make them skinning; tap one to see how',
+      'pr.pieces.subAH': 'by the level you make them, buying at the auction house what you do not skin (the same as in Equipo); tap one to see how',
       'pr.pieces.later': 'After {n}',
       'pr.pieces.skill': 'Leatherworking {n}',
       'pr.pieces.favor': '{n} Favor',
@@ -922,6 +928,7 @@
       'pr.lw.stagesFull': 'See the plan level by level',
       'pr.more.camp': 'Camp objects of your professions',
       'gp.mine': 'Your gear',
+      'gp.learnOne': 'Not learned yet: {list}. No level needed; your route passes there around level {n}. Been there already?',
       'gp.learn': 'Not learned yet: {list}. No level needed; your route passes there around level {n}. Been there already?',
       'gp.settings': 'Settings',
       'gp.now.title': 'What you should have on',
@@ -1003,7 +1010,9 @@
       'home.sinceAll': 'See news',
       'home.sinceClose': 'Close notice',
       'home.status.betaTag': 'Beta',
-      'home.status.beta': 'The beta ends on October 21; launch on November 4, in {n} days.',
+      'home.status.beta': 'The beta ends on October 22; launch on November 4, in {n} days.',
+      'home.status.stressTag': 'Stress test',
+      'home.status.stress': 'Today from {time}: a stress test open to everyone for a few hours, with the beta off; then everything is wiped and the beta is back until the 22nd. Launch on November 4, in {n} days.',
       'home.status.betaOverTag': 'The beta is over',
       'home.status.betaOver': 'Launch on November 4, in {n} days. The data updates by itself when the game comes out.',
       'home.status.liveTag': 'Out now',
@@ -1223,7 +1232,7 @@
       'home.launchToday': 'Launches today',
       'home.launched': 'Out now',
       'home.launchDate': 'November 4, 2026',
-      'home.betaEnds': 'Beta ends Oct 21 · level cap 30',
+      'home.betaEnds': 'Beta ends Oct 22 · level cap 30',
       'home.pages': 'What\'s on the site',
       'home.latest': 'Latest news',
       'home.allNews': 'See all →',
@@ -1258,6 +1267,7 @@
       'news.patchesIntro': 'Spell by spell, before → now, read from the game client with its hotfixes. Updates by itself with every build.',
       'news.patchesSource': 'Source: wowsims/gamedata (exports the client\'s spells every 3 hours). Values are the client\'s own.',
       'news.p.count': '{n} Shaman spells changed',
+      'news.p.countOne': '1 Shaman spell changed',
       'news.p.quiet': 'And {n} with internal changes, nothing visible in the tooltip.',
       'news.p.added': 'new',
       'news.p.removed': 'removed',
@@ -1386,7 +1396,7 @@
       'calc.modified': 'Modified from an example build.',
       'calc.order': 'Leveling order ({n} steps)',
       'calc.lv': 'Lv',
-      'calc.nextRow': 'next row at {n}',
+      'calc.nextRow': 'next row at {n} points',
       'calc.allRows': 'all rows open',
       'calc.removePoint': 'Remove a point from {talent}',
       'calc.current': 'Current',
@@ -1775,7 +1785,8 @@
     let s = STRINGS[lang][key];
     if (s == null) s = STRINGS.es[key];
     if (s == null) return key;
-    if (vars) s = s.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m));
+    // A {prof} is a profession's game name: said in the page's language.
+    if (vars) s = s.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? (k === 'prof' ? term(vars[k]) : vars[k]) : m));
     return s;
   }
 
@@ -1847,6 +1858,10 @@
 
   // Stat names in the priority lists are mechanics vocabulary, not proper nouns.
   const TERMS_ES = {
+    // Professions, as the Spanish (esMX) client names them.
+    'Leatherworking': 'Peletería', 'Skinning': 'Desuello', 'Blacksmithing': 'Herrería', 'Mining': 'Minería',
+    'Tailoring': 'Sastrería', 'Enchanting': 'Encantamiento', 'Engineering': 'Ingeniería', 'Herbalism': 'Herboristería',
+    'Alchemy': 'Alquimia', 'Cooking': 'Cocina', 'Fishing': 'Pesca', 'First Aid': 'Primeros auxilios',
     'Spell Power': 'Poder con hechizos',
     'Attack Power': 'Poder de ataque',
     'Healing Power': 'Poder de curación',
@@ -1869,6 +1884,8 @@
   function term(name) {
     return lang === 'es' && TERMS_ES[name] ? TERMS_ES[name] : name;
   }
+  // A list of professions (game names) as the page shows it: "Peletería + Desuello".
+  function profs(list) { return list.map(term).join(' + '); }
 
   // Collapsed block with the client's exact English text, shown under any
   // translated tooltip so the source is one click away. Empty in English.
@@ -1881,7 +1898,7 @@
 
   window.I18N = {
     get lang() { return lang; },
-    t, localize, setLang, apply, client, num, range, term, original,
+    t, localize, setLang, apply, client, num, range, term, profs, original,
     STRINGS, // for scripts/check-site.js
     onChange(fn) { listeners.push(fn); },
     toggle() { setLang(lang === 'es' ? 'en' : 'es'); }
