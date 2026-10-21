@@ -194,7 +194,10 @@ if (fs.existsSync(path.join(root, 'data/consumables.json'))) {
 }
 // Crafted gear's reagents, their sources and prices (scripts/build-reagents.js).
 if (fs.existsSync(path.join(root, 'data/crafts.json'))) {
-  write('data/crafts.js', 'CRAFT_DATA', read('data/crafts.json'));
+  // Merchant's Favor crates (data/favor.json, hand-kept): always the current file.
+  const crafts = read('data/crafts.json');
+  if (fs.existsSync(path.join(root, 'data/favor.json'))) crafts.favor = read('data/favor.json');
+  write('data/crafts.js', 'CRAFT_DATA', crafts);
   outputs.push('data/crafts.js');
 }
 // Skinning yields, beasts per zone and Leatherworking recipes (scripts/build-skinning.js).

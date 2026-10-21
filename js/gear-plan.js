@@ -321,23 +321,49 @@
     }));
     // opts.favorCost(level): copper per point of Favor then (null: no prices);
     // opts.goldAt(level): quest gold of that level, in copper.
+    // opts.favorFirst(level): { favor, cost } of your first crate, which comes
+    // with a one-time quest's bonus Favor: the first recipes cost only that crate.
     const favor = new Set();
     const perBracket = {};
     const spent = {};
+    const paid = {};
     const priced = opts.favorCost && opts.goldAt;
-    scored.sort((a, b) => b.score - a.score).forEach(({ c }) => {
+    // Takes a recipe if its bracket's budget allows (true when taken).
+    const take = (c, cost) => {
       const br = Math.floor((c.at - 1) / 10);
-      const cost = priced ? favorGold(c, opts) : null;
       if (cost != null) {
         let budget = 0;
         for (let l = br * 10 + 1; l <= br * 10 + 10; l++) budget += opts.goldAt(l) || 0;
-        if ((spent[br] || 0) + cost > budget * FAVOR_GOLD_SHARE) return;
+        if ((spent[br] || 0) + cost > budget * FAVOR_GOLD_SHARE) return false;
         spent[br] = (spent[br] || 0) + cost;
+        paid[c.item.id] = Math.round(cost);
       } else {
-        if ((perBracket[br] || 0) >= FAVOR_PER_BRACKET) return;
+        if ((perBracket[br] || 0) >= FAVOR_PER_BRACKET) return false;
         perBracket[br] = (perBracket[br] || 0) + 1;
       }
       favor.add(c.item.id);
+      return true;
+    };
+    const favorN = c => ((c.source || {}).learn || {}).favor || 30;
+    // The first crate's Favor goes to the first recipes you'd buy: by level,
+    // the best of each bracket first.
+    if (priced && opts.favorFirst) {
+      const byLevel = scored.slice().sort((a, b) => Math.floor((a.c.at - 1) / 10) - Math.floor((b.c.at - 1) / 10) || b.score - a.score);
+      let first = null;
+      const slotsTaken = new Set();
+      for (const { c } of byLevel) {
+        if (!first) first = Object.assign({ paid: false }, opts.favorFirst(c.at) || { favor: 0 });
+        if (first.favor <= 0) break;
+        // One recipe per slot (the belts of every set are alternatives).
+        if (slotsTaken.has(c.slot)) continue;
+        const per = opts.favorCost(c.at);
+        if (!per) continue;
+        const use = Math.min(first.favor, favorN(c));
+        if (take(c, (favorN(c) - use) * per + (first.paid ? 0 : first.cost))) { first.favor -= use; first.paid = true; slotsTaken.add(c.slot); }
+      }
+    }
+    scored.sort((a, b) => b.score - a.score).forEach(({ c }) => {
+      if (!favor.has(c.item.id)) take(c, priced ? favorGold(c, opts) : null);
     });
     const slots = {};
     SLOTS.forEach(s => { slots[s] = slotPath(bySlot[s], COUNT[s] || 1, favor); });
@@ -363,7 +389,7 @@
       }));
     }
     Object.values(dontMiss).forEach(l => l.sort((a, b) => a.level - b.level));
-    return { slots, dontMiss, favor: [...favor], candidates: all.length };
+    return { slots, dontMiss, favor: [...favor], favorPaid: paid, candidates: all.length };
   }
 
   root.GearPlan = { plan, value, fit, points, candidates, access, favorGold, SLOTS, WEIGHTS, COST, MIN_LEVELS, FAVOR_PER_BRACKET, FAVOR_GOLD_SHARE, UPGRADE };

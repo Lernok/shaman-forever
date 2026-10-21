@@ -31,6 +31,25 @@
     return best;
   }
 
+  // Your first crate: its Favor plus the one-time quest's, for the crate alone.
+  function favorFirst(level) {
+    const C = window.CRAFT_DATA;
+    const per = favorCost(level);
+    if (!per || !C.favor.firstBonus) return null;
+    const B = C.favor.firstBonus;
+    const k = C.favor.crates.filter(x => x.from <= level && C.prices.p[x.crate])
+      .sort((a, b) => cratePrice(a) / (B + a.favor) - cratePrice(b) / (B + b.favor))[0];
+    return k ? { favor: C.favor.firstBonus + k.favor, cost: cratePrice(k) } : null;
+  }
+  // A crate filled with its cheapest bundle, at auction prices.
+  function cratePrice(k) {
+    const P = window.CRAFT_DATA.prices.p;
+    const fills = k.fills.filter(f => f.every(([m]) => P[m])).map(f => f.reduce((a, [m, n]) => a + P[m] * n, 0));
+    return fills.length ? P[k.crate] + Math.min(...fills) : Infinity;
+  }
+  // What the last path paid for each Favor recipe (the first ones ride on the bonus).
+  let favorPaid = {};
+
   function compute() {
     // Your professions (shared with the Professions page, gathering ones too):
     // crafts count only from your crafting ones; none picked = no crafts.
@@ -47,9 +66,12 @@
       matsAt: state.farm && window.LwPlan ? (item => window.LwPlan.matsAt(item.id, { faction: Site.faction, race: race(), profs: picked })) : null,
       // Favor recipes: as many as half the bracket's quest gold buys.
       favorCost,
+      favorFirst,
       goldAt: l => ((window.CRAFT_DATA || {}).gold || [])[Math.min(60, Math.max(1, l)) - 1] || 0
     };
-    return { plan: window.GearPlan.plan(gear(), opts), profs, picked };
+    const plan = window.GearPlan.plan(gear(), opts);
+    favorPaid = plan.favorPaid || {};
+    return { plan, profs, picked };
   }
 
   // Where it comes from, in one line.
@@ -65,7 +87,8 @@
       case 'favor': {
         const n = (s.learn || {}).favor || 30;
         const per = favorCost(c.at || 1);
-        return t('gp.src.favor', { prof: s.profession, n: (s.learn || {}).favor || '?' }) + (per ? ' ' + t('gp.src.favorGold', { cost: coin(Math.round(per * n)) }) : '');
+        const cost = favorPaid[c.item.id] != null ? favorPaid[c.item.id] : per ? Math.round(per * n) : null;
+        return t('gp.src.favor', { prof: s.profession, n: (s.learn || {}).favor || '?' }) + (cost != null ? ' ' + t('gp.src.favorGold', { cost: coin(cost) }) : '');
       }
       case 'vendor': return t('gp.src.vendor', { npc: s.npc, zone: s.zone || '?' });
       case 'boss': return t('gp.src.boss', { npc: s.npc, zone: s.zone || '?' });
