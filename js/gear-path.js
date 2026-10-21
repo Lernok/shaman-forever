@@ -87,7 +87,8 @@
       case 'favor': {
         const n = (s.learn || {}).favor || 30;
         const per = favorCost(c.at || 1);
-        const cost = favorPaid[c.item.id] != null ? favorPaid[c.item.id] : per ? Math.round(per * n) : null;
+        const id = (c.item || {}).id;
+        const cost = favorPaid[id] != null ? favorPaid[id] : per ? Math.round(per * n) : null;
         return t('gp.src.favor', { prof: s.profession, n: (s.learn || {}).favor || '?' }) + (cost != null ? ' ' + t('gp.src.favorGold', { cost: coin(cost) }) : '');
       }
       case 'vendor': return t('gp.src.vendor', { npc: s.npc, zone: s.zone || '?' });
