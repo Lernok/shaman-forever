@@ -4,7 +4,7 @@
    "y": 44.5,
    "x": 62.8,
    "z": "Orgrimmar",
-   "n": "Karolek",
+   "f": "horde",
    "t": 1792515931,
    "list": {
     "Nimble Leather Gloves": {
@@ -175,12 +175,12 @@
      "skill": 150,
      "level": 0
     },
-    "Handstitched Leather Pants": {
-     "item": 2303,
-     "cost": 50,
+    "Embossed Leather Boots": {
+     "item": 2309,
+     "cost": 100,
      "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 15,
+     "kind": "available",
+     "skill": 50,
      "level": 0
     },
     "Hillman's Shoulders": {
@@ -191,6 +191,14 @@
      "skill": 105,
      "level": 0
     },
+    "Fine Leather Tunic": {
+     "item": 4243,
+     "cost": 350,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 60,
+     "level": 0
+    },
     "Embossed Leather Gloves": {
      "item": 4239,
      "cost": 150,
@@ -199,32 +207,24 @@
      "skill": 40,
      "level": 0
     },
-    "Small Leather Ammo Pouch": {
-     "item": 7279,
-     "cost": 100,
+    "Mender's Leather Belt": {
+     "item": 252523,
+     "cost": 2000,
      "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 25,
+     "kind": "unavailable",
+     "skill": 150,
      "level": 0
     },
-    "Camp Tent": {
-     "item": 279978,
-     "cost": 100,
-     "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 20,
-     "level": 0
-    },
-    "Heavy Quiver": {
-     "item": 7371,
-     "cost": 500,
+    "Heavy Leather": {
+     "item": 4234,
+     "cost": 1000,
      "prof": "Leatherworking",
      "kind": "unavailable",
      "skill": 125,
      "level": 0
     },
-    "Heavy Leather Ammo Pouch": {
-     "item": 7372,
+    "Heavy Quiver": {
+     "item": 7371,
      "cost": 500,
      "prof": "Leatherworking",
      "kind": "unavailable",
@@ -247,12 +247,12 @@
      "skill": 75,
      "level": 0
     },
-    "Murloc Scale Shoes": {
-     "item": 252426,
+    "Cured Heavy Hide": {
+     "item": 4236,
      "cost": 500,
      "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 35,
+     "kind": "unavailable",
+     "skill": 125,
      "level": 0
     },
     "Fletcher's Gloves": {
@@ -263,29 +263,27 @@
      "skill": 100,
      "level": 0
     },
-    "Fine Leather Cloak": {
-     "item": 2308,
-     "cost": 250,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 50,
-     "level": 0
-    },
-    "Handstitched Leather Belt": {
-     "item": 4237,
-     "cost": 75,
-     "prof": "Leatherworking",
-     "kind": "used",
-     "skill": 25,
-     "level": 0
-    },
-    "Medium Leather": {
-     "item": 2319,
-     "cost": 500,
+    "Toughened Leather Armor": {
+     "item": 2314,
+     "cost": 450,
      "prof": "Leatherworking",
      "kind": "unavailable",
-     "skill": 75,
+     "skill": 95,
      "level": 0
+    },
+    "Murloc Scale Shoes": {
+     "item": 252426,
+     "cost": 500,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 35,
+     "level": 0
+    },
+    "Apprentice Leatherworking": {
+     "kind": "used",
+     "level": 1,
+     "skill": 0,
+     "cost": 10
     },
     "Dark Leather Cloak": {
      "item": 2316,
@@ -318,26 +316,28 @@
      "skill": 35,
      "level": 0
     },
-    "Apprentice Leatherworking": {
-     "level": 1,
-     "kind": "used",
-     "skill": 0,
-     "cost": 10
-    },
-    "Toughened Leather Armor": {
-     "item": 2314,
-     "cost": 450,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 95,
-     "level": 0
-    },
-    "Cured Heavy Hide": {
-     "item": 4236,
+    "Medium Leather": {
+     "item": 2319,
      "cost": 500,
      "prof": "Leatherworking",
      "kind": "unavailable",
-     "skill": 125,
+     "skill": 75,
+     "level": 0
+    },
+    "Fine Leather Cloak": {
+     "item": 2308,
+     "cost": 250,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 50,
+     "level": 0
+    },
+    "Handstitched Leather Belt": {
+     "item": 4237,
+     "cost": 75,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 25,
      "level": 0
     },
     "Prowler's Leather Belt": {
@@ -348,36 +348,36 @@
      "skill": 150,
      "level": 0
     },
-    "Heavy Leather": {
-     "item": 4234,
-     "cost": 1000,
+    "Heavy Leather Ammo Pouch": {
+     "item": 7372,
+     "cost": 500,
      "prof": "Leatherworking",
      "kind": "unavailable",
      "skill": 125,
      "level": 0
     },
-    "Mender's Leather Belt": {
-     "item": 252523,
-     "cost": 2000,
+    "Camp Tent": {
+     "item": 279978,
+     "cost": 100,
      "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 150,
+     "kind": "used",
+     "skill": 20,
      "level": 0
     },
-    "Fine Leather Tunic": {
-     "item": 4243,
-     "cost": 350,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 60,
-     "level": 0
-    },
-    "Embossed Leather Boots": {
-     "item": 2309,
+    "Small Leather Ammo Pouch": {
+     "item": 7279,
      "cost": 100,
      "prof": "Leatherworking",
      "kind": "available",
-     "skill": 50,
+     "skill": 25,
+     "level": 0
+    },
+    "Handstitched Leather Pants": {
+     "item": 2303,
+     "cost": 50,
+     "prof": "Leatherworking",
+     "kind": "used",
+     "skill": 15,
      "level": 0
     },
     "Stalker's Leather Belt": {
@@ -389,13 +389,13 @@
      "level": 0
     }
    },
-   "f": "horde"
+   "n": "Karolek"
   },
   "5811": {
    "y": 44.9,
    "x": 63,
    "z": "Orgrimmar",
-   "n": "Kamari",
+   "f": "horde",
    "t": 1792515719,
    "list": {
     "Black Whelp Slippers": {
@@ -407,8 +407,8 @@
      "level": 0
     },
     "Apprentice Leatherworking": {
-     "level": 1,
      "kind": "used",
+     "level": 1,
      "skill": 0,
      "cost": 10
     },
@@ -484,11 +484,35 @@
      "skill": 30,
      "level": 0
     },
-    "Handstitched Leather Belt": {
-     "item": 4237,
-     "cost": 75,
+    "Embossed Leather Vest": {
+     "item": 2300,
+     "cost": 100,
      "prof": "Leatherworking",
-     "kind": "used",
+     "kind": "available",
+     "skill": 35,
+     "level": 0
+    },
+    "Embossed Leather Boots": {
+     "item": 2309,
+     "cost": 100,
+     "prof": "Leatherworking",
+     "kind": "unavailable",
+     "skill": 50,
+     "level": 0
+    },
+    "Embossed Leather Gloves": {
+     "item": 4239,
+     "cost": 150,
+     "prof": "Leatherworking",
+     "kind": "available",
+     "skill": 40,
+     "level": 0
+    },
+    "Small Leather Ammo Pouch": {
+     "item": 7279,
+     "cost": 100,
+     "prof": "Leatherworking",
+     "kind": "available",
      "skill": 25,
      "level": 0
     },
@@ -500,40 +524,16 @@
      "skill": 15,
      "level": 0
     },
-    "Small Leather Ammo Pouch": {
-     "item": 7279,
-     "cost": 100,
+    "Handstitched Leather Belt": {
+     "item": 4237,
+     "cost": 75,
      "prof": "Leatherworking",
-     "kind": "available",
+     "kind": "used",
      "skill": 25,
-     "level": 0
-    },
-    "Embossed Leather Gloves": {
-     "item": 4239,
-     "cost": 150,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 40,
-     "level": 0
-    },
-    "Embossed Leather Boots": {
-     "item": 2309,
-     "cost": 100,
-     "prof": "Leatherworking",
-     "kind": "unavailable",
-     "skill": 50,
-     "level": 0
-    },
-    "Embossed Leather Vest": {
-     "item": 2300,
-     "cost": 100,
-     "prof": "Leatherworking",
-     "kind": "available",
-     "skill": 35,
      "level": 0
     }
    },
-   "f": "horde"
+   "n": "Kamari"
   }
  },
  "vendors": {
@@ -541,7 +541,7 @@
    "y": 29.6,
    "x": 49.9,
    "z": "The Barrens",
-   "f": "horde",
+   "n": "Apothecary Durelle",
    "t": 1792516974,
    "list": {
     "250364": {
@@ -825,13 +825,13 @@
      ]
     }
    },
-   "n": "Apothecary Durelle"
+   "f": "horde"
   },
   "248197": {
    "y": 29.7,
    "x": 49.8,
    "z": "The Barrens",
-   "f": "horde",
+   "n": "Gor'mak",
    "t": 1792516968,
    "list": {
     "251355": {
@@ -1445,13 +1445,13 @@
      ]
     }
    },
-   "n": "Gor'mak"
+   "f": "horde"
   },
   "248201": {
    "y": 29.6,
    "x": 49.6,
    "z": "The Barrens",
-   "n": "Pawani",
+   "f": "horde",
    "t": 1792517504,
    "list": {
     "252765": {
@@ -2265,13 +2265,13 @@
      ]
     }
    },
-   "f": "horde"
+   "n": "Pawani"
   },
   "248202": {
    "y": 29.5,
    "x": 49.6,
    "z": "The Barrens",
-   "f": "horde",
+   "n": "Jim'bek",
    "t": 1792517018,
    "list": {
     "253890": {
@@ -2945,7 +2945,7 @@
      ]
     }
    },
-   "n": "Jim'bek"
+   "f": "horde"
   }
  },
  "colors": {
@@ -3132,10 +3132,54 @@
    }
   },
   "Skinning": {
+   "279969": {
+    "trivial": [
+     176,
+     176
+    ]
+   },
    "279979": {
     "trivial": [
      68,
-     68
+     176
+    ]
+   }
+  },
+  "First Aid": {
+   "118": {
+    "trivial": [
+     107,
+     107
+    ]
+   },
+   "858": {
+    "easy": [
+     107,
+     107
+    ]
+   },
+   "1251": {
+    "trivial": [
+     107,
+     107
+    ]
+   },
+   "2581": {
+    "trivial": [
+     107,
+     107
+    ]
+   },
+   "3530": {
+    "medium": [
+     107,
+     107
+    ]
+   },
+   "279968": {
+    "trivial": [
+     107,
+     107
     ]
    }
   }
@@ -3151,7 +3195,8 @@
    "279969": {
     "rid": 1262985,
     "grey": 145,
-    "name": "Field Guide"
+    "name": "Field Guide",
+    "learned": true
    },
    "279979": {
     "rid": 1229517,
@@ -6139,9 +6184,193 @@
     "name": "Camp Tent",
     "learned": true
    }
+  },
+  "First Aid": {
+   "118": {
+    "rid": 1244431,
+    "grey": 95,
+    "name": "Minor Healing Potion",
+    "learned": true
+   },
+   "858": {
+    "rid": 1244432,
+    "grey": 125,
+    "name": "Lesser Healing Potion",
+    "learned": true
+   },
+   "929": {
+    "rid": 1244433,
+    "grey": 175,
+    "name": "Healing Potion"
+   },
+   "1251": {
+    "rid": 3275,
+    "grey": 60,
+    "name": "Linen Bandage",
+    "learned": true
+   },
+   "1710": {
+    "rid": 1244434,
+    "grey": 215,
+    "name": "Greater Healing Potion"
+   },
+   "2581": {
+    "rid": 3276,
+    "grey": 100,
+    "name": "Heavy Linen Bandage",
+    "learned": true
+   },
+   "3530": {
+    "rid": 3277,
+    "grey": 150,
+    "name": "Wool Bandage",
+    "learned": true
+   },
+   "3531": {
+    "rid": 3278,
+    "grey": 185,
+    "name": "Heavy Wool Bandage"
+   },
+   "3928": {
+    "rid": 1244435,
+    "grey": 270,
+    "name": "Superior Healing Potion"
+   },
+   "6450": {
+    "rid": 7928,
+    "grey": 210,
+    "name": "Silk Bandage"
+   },
+   "6451": {
+    "rid": 7929,
+    "grey": 240,
+    "name": "Heavy Silk Bandage"
+   },
+   "6452": {
+    "rid": 7934,
+    "grey": 150,
+    "name": "Anti-Venom"
+   },
+   "6453": {
+    "rid": 7935,
+    "grey": 200,
+    "name": "Strong Anti-Venom"
+   },
+   "8544": {
+    "rid": 10840,
+    "grey": 270,
+    "name": "Mageweave Bandage"
+   },
+   "8545": {
+    "rid": 10841,
+    "grey": 300,
+    "name": "Heavy Mageweave Bandage"
+   },
+   "13446": {
+    "rid": 1244436,
+    "grey": 330,
+    "name": "Major Healing Potion"
+   },
+   "14529": {
+    "rid": 18629,
+    "grey": 320,
+    "name": "Runecloth Bandage"
+   },
+   "14530": {
+    "rid": 18630,
+    "grey": 350,
+    "name": "Heavy Runecloth Bandage"
+   },
+   "19440": {
+    "rid": 23787,
+    "grey": 360,
+    "name": "Powerful Anti-Venom"
+   },
+   "23684": {
+    "rid": 30021,
+    "grey": 360,
+    "name": "Crystal Infused Bandage"
+   },
+   "232433": {
+    "rid": 470349,
+    "grey": 340,
+    "name": "Dense Runecloth Bandage"
+   },
+   "255715": {
+    "rid": 1259341,
+    "grey": 290,
+    "name": "Potent Anti-Venom"
+   },
+   "255716": {
+    "rid": 1259342,
+    "grey": 160,
+    "name": "Simple Poultice"
+   },
+   "255717": {
+    "rid": 1259343,
+    "grey": 220,
+    "name": "Clever Poultice"
+   },
+   "255718": {
+    "rid": 1259344,
+    "grey": 285,
+    "name": "Superior Poultice"
+   },
+   "255719": {
+    "rid": 1259345,
+    "grey": 355,
+    "name": "Powerful Poultice"
+   },
+   "255720": {
+    "rid": 1259347,
+    "grey": 190,
+    "name": "Woolen Tourniquet"
+   },
+   "255721": {
+    "rid": 1259348,
+    "grey": 280,
+    "name": "Leather Tourniquet"
+   },
+   "255722": {
+    "rid": 1259349,
+    "grey": 340,
+    "name": "Surgical Tourniquet"
+   },
+   "279940": {
+    "rid": 1262996,
+    "grey": 145,
+    "name": "Toxin Study"
+   },
+   "279951": {
+    "rid": 1263001,
+    "grey": 300,
+    "name": "Plague Doctor's Laboratory"
+   },
+   "279968": {
+    "rid": 1230117,
+    "grey": 25,
+    "name": "First Aid Kit",
+    "learned": true
+   }
   }
  },
  "fields": "alwaysUsesLowestQuality=true canCreateMultiple=true canSkillUp=true categoryID=2574 craftable=true disabled=false favorite=false firstCraft=false hasSingleItemOutput=false hyperlink=|cnIQ1:|Hitem:279945::::::::10:1489:::1:3524::::::|h[Sewing Machine]|h|r icon=3622223 isDummyRecipe=false isEnchantingRecipe=false isGatheringRecipe=false isRecraft=false isSalvageRecipe=false itemLevel=60 learned=false maxTrivialLevel=300 name=Sewing Machine numSkillUps=1 recipeID=1263079 relativeDifficulty=0 skillLineAbilityID=57039 supportsCraftingStats=false supportsQualities=false",
- "bags": {},
- "drops": {}
+ "bags": {
+  "2409": {
+   "t": 1792519692,
+   "l": 24,
+   "name": "Pattern: Dark Leather Tunic",
+   "z": "The Barrens"
+  },
+  "6476": {
+   "t": 1792519692,
+   "l": 24,
+   "name": "Pattern: Deviate Scale Belt",
+   "z": "The Barrens"
+  }
+ },
+ "drops": {},
+ "goods": {},
+ "skins": {},
+ "ups": {}
 }

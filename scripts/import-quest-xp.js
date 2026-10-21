@@ -10,7 +10,7 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 
 const root = path.join(__dirname, '..');
-const game = process.argv[2] || 'D:/World of Warcraft/_classic_beta_';
+const game = require('./lib/game').folder(process.argv[2]);
 const lua = process.env.LUA || path.join(root, '.cache', 'lua51', 'lua5.1.exe');
 const polestar = process.env.POLESTAR || path.join(root, '.cache', 'tools', 'polestar-024');
 const out = path.join(root, 'planner', 'quest-xp.json');

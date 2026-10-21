@@ -1895,6 +1895,15 @@ local craftPanel, paintCrafts, showCraftPanel, hideCraftPanel
 -- The scanner and the gold log live in one table: the main chunk is at
 -- Lua 5.1's limit of 200 locals.
 local Scan = (function()
+  -- Levels of the hostile units you see (target, mouseover, nameplates): a
+  -- skinned corpse's level is known even when it isn't your target.
+  local unitLevel = {}
+  local function noteUnit(unit)
+    local guid = UnitGUID and readable(UnitGUID(unit))
+    local lvl = readable(UnitLevel(unit))
+    if guid and type(lvl) == "number" and lvl > 0 and UnitCanAttack and UnitCanAttack("player", unit) then unitLevel[guid] = lvl end
+  end
+
   -- Recipe scanner: what profession trainers and vendors offer here, and the
   -- color of each recipe at your skill. Saved account-wide in
   -- ShamanForeverDB.scan for scripts/import-scan.js (the site's recipe
@@ -2116,7 +2125,7 @@ local Scan = (function()
       end
       if not next(got) then return end
       -- The beast's level: the corpse you have targeted, when it's the source.
-      local lvl = guid and UnitGUID and readable(UnitGUID("target")) == guid and readable(UnitLevel("target"))
+      local lvl = guid and (UnitGUID and readable(UnitGUID("target")) == guid and readable(UnitLevel("target")) or unitLevel[guid])
       if not lvl or lvl < 1 then return end
       db.scan = db.scan or {}
       db.scan.skins = db.scan.skins or {}
@@ -2229,9 +2238,90 @@ local Scan = (function()
     e[kind] = (e[kind] or 0) + coin
     cdb.income[l] = e
   end
+  -- Whether each craft raised the skill, by the skill you had and the
+  -- recipe's color: db.scan.ups[profession][item][skill] = { n, up, kind }.
+  -- The skill is read when a craft starts; the next start (or a moment after
+  -- it ends) says whether it went up.
+  local casting, done
+  local function settle()
+    if not done then return end
+    local _, rank = Api.tradeLine()
+    if rank and rank > done.rank then done.r.up = done.r.up + 1 end
+    done = nil
+  end
+  local function castStart(spell)
+    settle()
+    casting = nil
+    local T = C_TradeSkillUI
+    spell = readable(spell)
+    local info = T and T.GetRecipeInfo and spell and T.GetRecipeInfo(spell)
+    if not info then return end
+    local prof, rank = Api.tradeLine()
+    if not (prof and rank) then return end
+    local item
+    if T.GetRecipeOutputItemData then
+      local ok, o = pcall(T.GetRecipeOutputItemData, spell)
+      item = ok and o and (o.itemID or tonumber(tostring(o.hyperlink or ""):match("item:(%d+)")))
+    end
+    casting = { prof = prof, rank = rank, item = item or -spell, kind = info.difficulty or DIFFICULTY[info.relativeDifficulty] or "?" }
+  end
+  local function castDone()
+    local c = casting
+    casting = nil
+    if not c then return end
+    db.scan = db.scan or {}
+    db.scan.ups = db.scan.ups or {}
+    local p = db.scan.ups[c.prof] or {}
+    db.scan.ups[c.prof] = p
+    local e = p[c.item] or {}
+    p[c.item] = e
+    local r = e[c.rank] or { n = 0, up = 0, kind = c.kind }
+    r.n = r.n + 1
+    e[c.rank] = r
+    done = { r = r, rank = c.rank }
+    C_Timer.After(1.5, function() pcall(settle) end)
+  end
+
+  -- Experience per level: cdb.xp[level] = { q = from quests, all = everything }.
+  local lastXp, lastMax, lastLvl
+  local function noteXpGain()
+    local xp, max, l = readable(UnitXP("player")), readable(UnitXPMax("player")), UnitLevel("player")
+    if lastXp and xp and lastLvl then
+      local d = l == lastLvl and xp - lastXp or (lastMax - lastXp) + xp
+      if d > 0 then
+        cdb.xp = cdb.xp or {}
+        local e = cdb.xp[lastLvl] or { q = 0, all = 0 }
+        e.all = e.all + d
+        cdb.xp[lastLvl] = e
+      end
+    end
+    lastXp, lastMax, lastLvl = xp, max, l
+  end
+  local function noteQuestXp(xp)
+    xp = readable(xp)
+    if type(xp) ~= "number" or xp <= 0 then return end
+    cdb.xp = cdb.xp or {}
+    local l = UnitLevel("player")
+    local e = cdb.xp[l] or { q = 0, all = 0 }
+    e.q = e.q + xp
+    cdb.xp[l] = e
+  end
+
   return {
     trainer = scanTrainer, vendor = scanVendor, bags = scanBags, loot = scanLoot, colors = scanColors,
-    matsCost = matsCost, income = noteIncome,
+    matsCost = matsCost, income = noteIncome, unit = noteUnit, castStart = castStart, castDone = castDone,
+    xp = noteXpGain, questXp = noteQuestXp,
+    -- "/sf medidas": what's been measured so far, to see it's working.
+    summary = function()
+      local scan = db.scan or {}
+      local skins, lv = 0, {}
+      for l, e in pairs(scan.skins or {}) do skins = skins + (e.n or 0); lv[#lv + 1] = l end
+      table.sort(lv)
+      local n, up = 0, 0
+      for _, items in pairs(scan.ups or {}) do for _, ranks in pairs(items) do for _, r in pairs(ranks) do n, up = n + r.n, up + r.up end end end
+      local x = (cdb.xp or {})[UnitLevel("player")] or {}
+      return string.format(L().measures, skins, #lv > 0 and (lv[1] .. "-" .. lv[#lv]) or "-", n, up, UnitLevel("player"), x.q or 0, x.all or 0)
+    end,
     -- The profession list can fill after the window opens: one more look.
     colorsSoon = function()
       if scanPending then return end
@@ -2292,6 +2382,12 @@ onEvent = function(self, event, ...)
     pcall(self.RegisterEvent, self, "LEARNED_SPELL_IN_TAB")
     pcall(self.RegisterEvent, self, "MERCHANT_SHOW")
     pcall(self.RegisterEvent, self, "LOOT_OPENED")
+    -- What the scanner measures: beasts' levels, skill-ups per craft, experience.
+    for _, e in ipairs({ "PLAYER_XP_UPDATE", "PLAYER_TARGET_CHANGED", "UPDATE_MOUSEOVER_UNIT", "NAME_PLATE_UNIT_ADDED" }) do pcall(self.RegisterEvent, self, e) end
+    if self.RegisterUnitEvent then
+      pcall(self.RegisterUnitEvent, self, "UNIT_SPELLCAST_START", "player")
+      pcall(self.RegisterUnitEvent, self, "UNIT_SPELLCAST_SUCCEEDED", "player")
+    end
   elseif event == "CHARACTER_POINTS_CHANGED" or event == "LEARNED_SPELL_IN_TAB" then
     if frame and frame.live then refresh() end
   elseif event == "TRAINER_SHOW" then
@@ -2327,6 +2423,7 @@ onEvent = function(self, event, ...)
     C_Timer.After(2, function() guarded("zone", onZone) end)
     C_Timer.After(3, function() guarded("scan", Scan.bags) end)
     Scan.moneyStart()
+    pcall(Scan.xp)
     followPolestar()
     if event == "PLAYER_ENTERING_WORLD" and not mmButton then
       makeMinimapButton()
@@ -2344,11 +2441,26 @@ onEvent = function(self, event, ...)
   elseif event == "QUEST_TURNED_IN" then
     local id, xp, coin = ...
     pcall(noteXp, id, xp)
+    pcall(Scan.questXp, xp)
     pcall(Scan.income, "q", readable(coin))
     log("quest", tostring(id))
     if frame and frame.live then refresh() else C_Timer.After(0.5, repaint) end
   elseif event == "PLAYER_MONEY" then
     Scan.money()
+  elseif event == "PLAYER_XP_UPDATE" then
+    pcall(Scan.xp)
+  elseif event == "PLAYER_TARGET_CHANGED" then
+    pcall(Scan.unit, "target")
+  elseif event == "UPDATE_MOUSEOVER_UNIT" then
+    pcall(Scan.unit, "mouseover")
+  elseif event == "NAME_PLATE_UNIT_ADDED" then
+    pcall(Scan.unit, (...))
+  elseif event == "UNIT_SPELLCAST_START" then
+    local unit, _, spell = ...
+    if unit == "player" then pcall(Scan.castStart, spell) end
+  elseif event == "UNIT_SPELLCAST_SUCCEEDED" then
+    local unit = ...
+    if unit == "player" then pcall(Scan.castDone) end
   elseif event == "BAG_UPDATE_DELAYED" then
     bagBest = nil
     guarded("scan", Scan.bags)
@@ -3101,6 +3213,7 @@ SlashCmdList.SHAMANFOREVER = function(msg)
     wipe(cdb.seen); wipe(cdb.done); wipe(cdb.gone)
     say(L().reset)
   elseif cmd == "registro" or cmd == "log" then showLog()
+  elseif cmd == "medidas" or cmd == "measures" then say(Scan.summary())
   elseif cmd == "setup" or cmd == "inicio" then SF.setup()
   elseif cmd == "config" or cmd == "opciones" or cmd == "options" then SF.options()
   elseif cmd == "flecha" or cmd == "arrow" then

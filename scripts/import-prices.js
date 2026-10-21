@@ -5,7 +5,7 @@
 // Prices change a lot (beta, launch week, a month later): the page says
 // from when they are and turns them into "how much of a level's quest gold".
 //
-//   node scripts/import-prices.js [realm] ["<WoW folder>/_classic_beta_"]
+//   node scripts/import-prices.js [realm] ["<game folder>"]   (default: the one played last, scripts/lib/game.js)
 // Without a realm: the one scanned last.
 const fs = require('fs');
 const path = require('path');
@@ -13,7 +13,7 @@ const { decode } = require('./lib/cbor');
 const { readJSON, writeJSON } = require('./lib/files');
 
 const args = process.argv.slice(2);
-const game = args.find(a => /[\\/]/.test(a)) || 'D:/World of Warcraft/_classic_beta_';
+const game = require('./lib/game').folder(args.find(a => /[\\/]/.test(a)));
 const realmWanted = args.find(a => !/[\\/]/.test(a));
 
 // The bytes of AUCTIONATOR_PRICE_DATABASE["<realm>"], a Lua string literal.

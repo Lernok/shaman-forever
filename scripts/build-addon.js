@@ -108,7 +108,7 @@ const { parseLua } = require('./lib/questie.js');
 const cache = path.join(root, '.cache');
 const qdir = path.join(cache, 'questiedb');
 // The QuestieDB addon installed next to the game (QUESTIEDB: its support folder).
-const support = process.env.QUESTIEDB || 'D:/World of Warcraft/_classic_beta_/Interface/AddOns/QuestieDB/support';
+const support = process.env.QUESTIEDB || path.join(require('./lib/game').addon('QuestieDB'), 'support');
 const givers = {};
 const dquests = {};
 const iq = {}, qpre = {}, qalt = {}, qnames = {}, enders = {}, qr = {}, npcq = {}, qxp = {}, qrace = {}, qreq = {}, qbag = {}, cont = {}, dcont = {}, camp = {}, outdoors = [], qtimer = {};

@@ -302,6 +302,46 @@ ev:fire("QUEST_TURNED_IN", 96659, 410, 75)
 money = 1075; ev:fire("PLAYER_MONEY")
 money = 1000; ev:fire("PLAYER_MONEY")
 money = 1030; ev:fire("PLAYER_MONEY")
+-- What the scanner measures (MEASURE=1): a level-7 boar seen under the mouse
+-- and skinned without targeting it, two crafts (the first raises the skill),
+-- and experience from a kill and a quest.
+if os.getenv("MEASURE") then
+  function strsplit(sep, s) local out = {} for p in (s .. sep):gmatch("(.-)%" .. sep) do out[#out + 1] = p end return unpack(out) end
+  local BOAR = "Creature-0-1-1-1-3099-0002"
+  function UnitGUID(u) return u == "mouseover" and BOAR or u == "target" and "Creature-0-1-1-1-1-9" or "Player-1" end
+  function UnitLevel(u) return u == "mouseover" and 7 or u == "target" and 3 or level end
+  function UnitCanAttack() return true end
+  ev:fire("UPDATE_MOUSEOVER_UNIT")
+  function GetNumLootItems() return 1 end
+  function GetLootSlotLink() return "|Hitem:2934::::|h[Ruined Leather Scraps]|h" end
+  function GetLootSlotInfo() return 0, "Ruined Leather Scraps", 1 end
+  function GetLootSourceInfo() return BOAR, 1 end
+  ev:fire("LOOT_OPENED")
+  local sk = ((ShamanForeverDB.scan or {}).skins or {})[7]
+  print("piel de bicho nv 7 sin seleccionarlo:", sk and sk.n, sk and sk.items[2934])
+  local skill = 20
+  C_TradeSkillUI = {
+    GetRecipeInfo = function(rid) return rid == 2881 and { name = "Light Leather", relativeDifficulty = 1 } or nil end,
+    GetRecipeOutputItemData = function() return { itemID = 2318 } end,
+    GetChildProfessionInfo = function() return { professionName = "Leatherworking", skillLevel = skill } end,
+  }
+  ev:fire("UNIT_SPELLCAST_START", "player", "c1", 2881)
+  skill = 21
+  ev:fire("UNIT_SPELLCAST_SUCCEEDED", "player", "c1", 2881)
+  ev:fire("UNIT_SPELLCAST_START", "player", "c2", 2881)
+  ev:fire("UNIT_SPELLCAST_SUCCEEDED", "player", "c2", 2881)
+  local ups = (((ShamanForeverDB.scan or {}).ups or {}).Leatherworking or {})[2318] or {}
+  for _, r in ipairs({ 20, 21 }) do local e = ups[r] print("crafteo con " .. r .. ":", e and e.n, e and e.up, e and e.kind) end
+  local xp = 100
+  function UnitXP() return xp end
+  function UnitXPMax() return 1000 end
+  ev:fire("PLAYER_XP_UPDATE")
+  xp = 160; ev:fire("PLAYER_XP_UPDATE")
+  ev:fire("QUEST_TURNED_IN", 1, 300, 0)
+  xp = 460; ev:fire("PLAYER_XP_UPDATE")
+  local e = (ShamanForeverCharDB.xp or {})[level] or {}
+  print("experiencia del nivel: misiones " .. tostring(e.q) .. ", todo " .. tostring(e.all))
+end
 local inc = (ShamanForeverCharDB.income or {})[UnitLevel("player")] or {}
 print("ingresos del nivel: misiones " .. tostring(inc.q) .. ", todo " .. tostring(inc.all))
 print("qxp 96659:", ShamanForeverDB.qxp and ShamanForeverDB.qxp[96659] and table.concat(ShamanForeverDB.qxp[96659], " @ nivel "))
@@ -310,3 +350,4 @@ SlashCmdList.SHAMANFOREVER("dondeestoy")
 SlashCmdList.SHAMANFOREVER("registro")
 print("log:", #ShamanForeverCharDB.log, ShamanForeverCharDB.log[1])
 if os.getenv("SCAN") then for _, l in ipairs(ShamanForeverCharDB.log) do if l:find("|scan|") or l:find("|error|") or l:find("|offer|") or l:find("|crafts|") then print("LOG", l) end end end
+if os.getenv("MEASURE") then SlashCmdList.SHAMANFOREVER("medidas") end

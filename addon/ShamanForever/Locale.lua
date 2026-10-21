@@ -198,6 +198,7 @@ SF.L = {
     markTurnIn = "Entregá: %s",
     markDone = "%s: ya hiciste la misión que lo da.",
     markNoWhere = "No sé dónde está \"%s\": buscala con Questie.",
+    measures = "Medidas: %d pieles (bichos de nivel %s) · %d crafteos, %d subieron la habilidad · nivel %d: %d de experiencia de misiones de %d en total.",
     help = {
       "/sf  abre o cierra la ventana",
       "/sf spec mejora | elemental | resto  tu especialización",
@@ -210,6 +211,7 @@ SF.L = {
       "/sf flecha  usar la flecha de TomTom en vez de la marca del mapa",
       "/sf config  opciones (también: clic derecho en el botón del minimapa)",
       "/sf dondeestoy  zona y dungeon según el juego (para reportar)",
+      "/sf medidas  lo que el addon midió: pieles, crafteos, experiencia",
       "/sf idioma es | en",
       "Shift+clic en un ítem: marca en el mapa la misión que lo da",
     },
@@ -421,6 +423,7 @@ SF.L = {
     markTurnIn = "Turn in: %s",
     markDone = "%s: you already did the quest that gives it.",
     markNoWhere = "I don't know where \"%s\" is: look it up with Questie.",
+    measures = "Measured: %d skins (beasts of level %s) · %d crafts, %d raised the skill · level %d: %d experience from quests out of %d.",
     help = {
       "/sf  opens or closes the window",
       "/sf spec enh | ele | resto  your specialization",
@@ -433,6 +436,7 @@ SF.L = {
       "/sf arrow  use the TomTom arrow instead of the map pin",
       "/sf config  options (also: right-click the minimap button)",
       "/sf whereami  zone and dungeon as the game names them (for reports)",
+      "/sf measures  what the addon measured: skins, crafts, experience",
       "/sf lang es | en",
       "Shift+click on an item: marks on the map the quest that gives it",
     },

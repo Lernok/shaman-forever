@@ -20,7 +20,7 @@ if (fs.existsSync(qfile)) fs.readFileSync(qfile, 'utf8').split('\n').forEach(lin
   const m = /^\[(\d+)\] = (\{.*\}),?\s*$/.exec(line);
   if (m) lua.set(+m[1], m[2]);
 });
-const baked = require('./lib/questiedb-baked.js').load(process.env.QUESTIEDB || 'D:/World of Warcraft/_classic_beta_/Interface/AddOns/QuestieDB');
+const baked = require('./lib/questiedb-baked.js').load(process.env.QUESTIEDB || require('./lib/game').addon('QuestieDB'));
 const mask = id => {
   if (lua.has(id)) return parseLua(lua.get(id))[5];
   const q = baked && baked.quest(id);

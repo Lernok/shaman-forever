@@ -13,7 +13,7 @@ const opt = (name, def) => { const i = args.indexOf('--' + name); return i < 0 ?
 const all = args.includes('--all') && args.splice(args.indexOf('--all'), 1);
 const hours = Number(opt('hours', 48));
 const who = (opt('char', '') || '').toLowerCase();
-const WTF = args[0] || 'D:/World of Warcraft/_classic_beta_/WTF';
+const WTF = args[0] || path.join(require('./lib/game').folder(), 'WTF');
 
 // Every ShamanForever.lua under WTF/Account/<account>/<realm>/<character>/SavedVariables.
 function files(dir, out = []) {

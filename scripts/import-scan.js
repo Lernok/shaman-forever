@@ -5,14 +5,14 @@
 // trainer teaches that the web says come from elsewhere, other skill levels,
 // patterns a vendor sells.
 //
-//   node scripts/import-scan.js ["<WoW folder>/_classic_beta_"]
+//   node scripts/import-scan.js ["<game folder>"]   (default: the one played last, scripts/lib/game.js)
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const { execFileSync } = require('child_process');
 
 const root = path.join(__dirname, '..');
-const game = process.argv[2] || 'D:/World of Warcraft/_classic_beta_';
+const game = require('./lib/game').folder(process.argv[2]);
 const lua = process.env.LUA || path.join(root, '.cache', 'lua51', 'lua5.1.exe');
 const out = path.join(root, 'data', 'ingame-scan.json');
 
@@ -75,6 +75,15 @@ for (const f of files) {
   for (const [lvl, e] of Object.entries(scan.skins || {})) {
     const m = merged.skins[lvl];
     if (!m || (e.n || 0) >= (m.n || 0)) merged.skins[lvl] = { n: e.n, items: e.items };
+  }
+  // Skill-ups per craft: by profession, item and the skill you had (running totals: the biggest wins).
+  merged.ups = merged.ups || {};
+  for (const [prof, items] of Object.entries(scan.ups || {})) {
+    const mp = merged.ups[prof] = merged.ups[prof] || {};
+    for (const [item, ranks] of Object.entries(items)) {
+      const mi = mp[item] = mp[item] || {};
+      for (const [rank, r] of Object.entries(ranks)) if (!mi[rank] || (r.n || 0) >= (mi[rank].n || 0)) mi[rank] = r;
+    }
   }
   // Crafting materials vendors sell (the newest visit to each NPC wins).
   for (const [id, v] of Object.entries(scan.goods || {})) if (!merged.goods[id] || (merged.goods[id].t || 0) <= (v.t || 0)) merged.goods[id] = v;
@@ -187,6 +196,55 @@ if (Object.keys(merged.skins).length) {
     const ids = [...new Set(Object.keys(e.items).concat(Object.keys(site)))];
     console.log('  nv ' + String(lvl).padStart(2) + ' · ' + e.n + ' pieles: ' + ids.map(id => nm(id) + ' ' + ((e.items[id] || 0) / e.n).toFixed(2) + ' (' + (site[id] || 0).toFixed(2) + ')').join(', '));
   });
+}
+// Skill-ups: how often each color raised the skill, against the site's
+// model (orange always; yellow and green fall off toward grey).
+const ups = merged.ups || {};
+if (Object.keys(ups).length) {
+  const SKR = new Map(JSON.parse(fs.readFileSync(path.join(root, 'data', 'skinning.json'), 'utf8')).recipes.map(r => [String(r.id), r]));
+  console.log('\nSUBIDAS DE HABILIDAD (crafteos que subieron / hechos, por color; entre paréntesis, lo que supone el sitio)');
+  for (const [prof, items] of Object.entries(ups)) {
+    const byKind = {};
+    for (const [item, ranks] of Object.entries(items)) {
+      const r = SKR.get(item);
+      for (const [rank, e] of Object.entries(ranks)) {
+        const k = byKind[e.kind] = byKind[e.kind] || { n: 0, up: 0, model: 0 };
+        k.n += e.n; k.up += e.up;
+        // The site's chance at that skill (js/lw-plan.js chance()).
+        const s = Number(rank);
+        const p = !r ? null : s < r.skill[0] ? 0 : s < r.skill[1] ? 1 : s >= r.skill[3] ? 0 : (r.skill[3] - s) / (r.skill[3] - r.skill[1]);
+        k.model += p == null ? NaN : p * e.n;
+      }
+    }
+    console.log('  ' + prof + ': ' + Object.entries(byKind).map(([kind, k]) => kind + ' ' + k.up + '/' + k.n +
+      ' = ' + Math.round(k.up / k.n * 100) + '%' + (isNaN(k.model) ? '' : ' (' + Math.round(k.model / k.n * 100) + '%)')).join(' · '));
+  }
+}
+// Per character: experience and gold per level, quests against everything.
+const chars = [];
+for (const a of fs.existsSync(accounts) ? fs.readdirSync(accounts) : []) {
+  const dir = path.join(accounts, a);
+  for (const realm of fs.readdirSync(dir).filter(n => fs.statSync(path.join(dir, n)).isDirectory() && n !== 'SavedVariables')) {
+    for (const ch of fs.readdirSync(path.join(dir, realm))) {
+      const f = path.join(dir, realm, ch, 'SavedVariables', 'ShamanForever.lua');
+      if (fs.existsSync(f)) chars.push({ who: ch + ' (' + realm + ')', f });
+    }
+  }
+}
+const charDump = dump.replace('io.write(enc((ShamanForeverDB or {}).scan or {}))', 'io.write(enc({ xp = (ShamanForeverCharDB or {}).xp, income = (ShamanForeverCharDB or {}).income }))');
+const charTmp = path.join(os.tmpdir(), 'sf-char.lua');
+fs.writeFileSync(charTmp, charDump);
+for (const c of chars) {
+  let d;
+  try { d = JSON.parse(execFileSync(lua, [charTmp, c.f], { encoding: 'utf8', maxBuffer: 64 << 20 })); } catch (e) { continue; }
+  const levels = [...new Set(Object.keys(d.xp || {}).concat(Object.keys(d.income || {})))].map(Number).sort((a, b) => a - b);
+  if (!levels.length) continue;
+  console.log('\nNIVELES DE ' + c.who + ' (experiencia: de misiones / total · oro: de misiones / todo lo que entró)');
+  for (const l of levels) {
+    const x = (d.xp || {})[l] || {}, g = (d.income || {})[l] || {};
+    console.log('  nv ' + String(l).padStart(2) + ' · xp ' + (x.q || 0) + ' / ' + (x.all || 0) + (x.all ? ' (' + Math.round((x.q || 0) / x.all * 100) + '% misiones)' : '') +
+      ' · oro ' + coin(g.q || 0) + ' / ' + coin(g.all || 0));
+  }
 }
 if (merged.fields) console.log('\nCampos de una receta: ' + merged.fields);
 const colorN = Object.values(merged.colors).reduce((n, m) => n + Object.keys(m).length, 0);
