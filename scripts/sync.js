@@ -313,6 +313,10 @@ function diffItems(prev, next) {
       { cache: 'questiedb/' + f + '.lua', maxAgeDays: 0.5, valid: t => t.includes('QuestieDB') });
     if (text == null) throw new Error('sin QuestieDB ' + f);
   }
+  // Those files stopped at 2026-09-21: Forever's new NPCs and quests (Zephras
+  // Isle...) come from the addon's daily "preview" package (lib/questiedb-fresh.js,
+  // read by build-zones and build-trainers).
+  if (!OFFLINE) require('./lib/questiedb-fresh.js').download();
   await table('AreaTable', build);
   const questieLevels = new Map();
   const { parseLua } = require('./lib/questie');

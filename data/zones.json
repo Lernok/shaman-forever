@@ -15,7 +15,7 @@
     1,
     10
    ],
-   "quests": 45,
+   "quests": 66,
    "from": "questie",
    "start": true
   },
@@ -24,7 +24,7 @@
    "continent": "Eastern Kingdoms",
    "horde": [
     37,
-    44
+    43
    ],
    "alliance": [
     37,
@@ -55,10 +55,10 @@
     45
    ],
    "alliance": [
-    35,
-    42
+    34,
+    40
    ],
-   "quests": 18,
+   "quests": 23,
    "from": "questie"
   },
   "Duskwood": {
@@ -66,10 +66,10 @@
    "continent": "Eastern Kingdoms",
    "horde": null,
    "alliance": [
-    24,
+    23,
     30
    ],
-   "quests": 72,
+   "quests": 75,
    "from": "questie"
   },
   "Wetlands": {
@@ -77,10 +77,10 @@
    "continent": "Eastern Kingdoms",
    "horde": null,
    "alliance": [
-    21,
-    30
+    24,
+    33
    ],
-   "quests": 40,
+   "quests": 63,
    "from": "questie"
   },
   "Elwynn Forest": {
@@ -91,7 +91,7 @@
     4,
     10
    ],
-   "quests": 49,
+   "quests": 75,
    "from": "questie",
    "start": true
   },
@@ -99,11 +99,11 @@
    "id": 14,
    "continent": "Kalimdor",
    "horde": [
-    4,
+    5,
     12
    ],
    "alliance": null,
-   "quests": 44,
+   "quests": 62,
    "from": "questie",
    "start": true
   },
@@ -140,10 +140,10 @@
    "continent": "Kalimdor",
    "horde": [
     10,
-    20
+    22
    ],
    "alliance": null,
-   "quests": 97,
+   "quests": 115,
    "from": "questie"
   },
   "Western Plaguelands": {
@@ -157,21 +157,21 @@
     55,
     60
    ],
-   "quests": 61,
+   "quests": 64,
    "from": "questie"
   },
   "Stranglethorn Vale": {
    "id": 33,
    "continent": "Eastern Kingdoms",
    "horde": [
-    31,
+    32,
     46
    ],
    "alliance": [
     31,
     45
    ],
-   "quests": 92,
+   "quests": 99,
    "from": "questie"
   },
   "Alterac Mountains": {
@@ -179,10 +179,10 @@
    "continent": "Eastern Kingdoms",
    "horde": null,
    "alliance": [
-    34,
+    33,
     40
    ],
-   "quests": 15,
+   "quests": 17,
    "from": "questie"
   },
   "Loch Modan": {
@@ -193,7 +193,7 @@
     10,
     18
    ],
-   "quests": 40,
+   "quests": 47,
    "from": "questie"
   },
   "Westfall": {
@@ -204,21 +204,8 @@
     10,
     18
    ],
-   "quests": 35,
+   "quests": 53,
    "from": "questie"
-  },
-  "Deadwind Pass": {
-   "id": 41,
-   "continent": "Eastern Kingdoms",
-   "alliance": [
-    50,
-    60
-   ],
-   "horde": [
-    50,
-    60
-   ],
-   "from": "area-table"
   },
   "Redridge Mountains": {
    "id": 44,
@@ -226,9 +213,9 @@
    "horde": null,
    "alliance": [
     14,
-    23
+    24
    ],
-   "quests": 36,
+   "quests": 42,
    "from": "questie"
   },
   "Arathi Highlands": {
@@ -239,10 +226,10 @@
     40
    ],
    "alliance": [
-    35,
+    36,
     40
    ],
-   "quests": 37,
+   "quests": 42,
    "from": "questie"
   },
   "Burning Steppes": {
@@ -292,10 +279,10 @@
    "continent": "Eastern Kingdoms",
    "horde": [
     4,
-    11
+    12
    ],
    "alliance": null,
-   "quests": 48,
+   "quests": 66,
    "from": "questie",
    "start": true
   },
@@ -304,10 +291,10 @@
    "continent": "Eastern Kingdoms",
    "horde": [
     10,
-    17
+    18
    ],
    "alliance": null,
-   "quests": 42,
+   "quests": 50,
    "from": "questie"
   },
   "Eastern Plaguelands": {
@@ -329,10 +316,10 @@
    "continent": "Kalimdor",
    "horde": null,
    "alliance": [
-    3,
-    11
+    5,
+    12
    ],
-   "quests": 52,
+   "quests": 66,
    "from": "questie",
    "start": true
   },
@@ -341,21 +328,21 @@
    "continent": "Kalimdor",
    "horde": null,
    "alliance": [
-    13,
+    12,
     20
    ],
-   "quests": 72,
+   "quests": 79,
    "from": "questie"
   },
   "Mulgore": {
    "id": 215,
    "continent": "Kalimdor",
    "horde": [
-    3,
+    2,
     10
    ],
    "alliance": null,
-   "quests": 37,
+   "quests": 60,
    "from": "questie",
    "start": true
   },
@@ -374,14 +361,14 @@
    "id": 331,
    "continent": "Kalimdor",
    "horde": [
-    21,
+    24,
     30
    ],
    "alliance": [
-    20,
+    21,
     30
    ],
-   "quests": 47,
+   "quests": 48,
    "from": "questie"
   },
   "Feralas": {
@@ -420,24 +407,24 @@
     37
    ],
    "alliance": [
-    35,
-    44
+    30,
+    41
    ],
-   "quests": 60,
+   "quests": 62,
    "from": "questie"
   },
   "Desolace": {
    "id": 405,
    "continent": "Kalimdor",
    "horde": [
-    33,
-    39
+    32,
+    40
    ],
    "alliance": [
     33,
-    39
+    40
    ],
-   "quests": 38,
+   "quests": 54,
    "from": "questie"
   },
   "Stonetalon Mountains": {
@@ -451,33 +438,33 @@
     21,
     27
    ],
-   "quests": 29,
+   "quests": 33,
    "from": "questie"
   },
   "Tanaris": {
    "id": 440,
    "continent": "Kalimdor",
    "horde": [
-    48,
+    47,
     60
    ],
    "alliance": [
     48,
     60
    ],
-   "quests": 86,
+   "quests": 87,
    "from": "questie"
   },
   "Un'Goro Crater": {
    "id": 490,
    "continent": "Kalimdor",
    "horde": [
-    52,
-    55
+    51,
+    54
    ],
    "alliance": [
-    52,
-    55
+    51,
+    54
    ],
    "quests": 48,
    "from": "questie"
@@ -507,7 +494,7 @@
     56,
     60
    ],
-   "quests": 51,
+   "quests": 49,
    "from": "questie"
   },
   "Silithus": {
@@ -540,17 +527,31 @@
   "Zephras Isle": {
    "id": 16593,
    "continent": null,
-   "alliance": [
-    4,
-    9
-   ],
    "horde": [
-    4,
-    9
+    6,
+    13
    ],
-   "quests": 147,
-   "from": "att",
+   "alliance": [
+    7,
+    13
+   ],
+   "quests": 91,
+   "from": "questie",
    "start": true
+  },
+  "Shen'dralas": {
+   "id": 16651,
+   "continent": "Kalimdor",
+   "horde": [
+    40,
+    43
+   ],
+   "alliance": [
+    40,
+    43
+   ],
+   "quests": 19,
+   "from": "questie"
   }
  },
  "dungeons": {
@@ -793,7 +794,21 @@
     "The Barrens",
     "Thunder Bluff",
     "Tirisfal Glades",
-    "Undercity"
+    "Undercity",
+    "Zephras Isle"
+   ],
+   "Herbalism": [
+    "Durotar",
+    "Feralas",
+    "Hillsbrad Foothills",
+    "Moonglade",
+    "Mulgore",
+    "Orgrimmar",
+    "Stranglethorn Vale",
+    "Thunder Bluff",
+    "Tirisfal Glades",
+    "Undercity",
+    "Zephras Isle"
    ],
    "Blacksmithing": [
     "Durotar",
@@ -802,7 +817,9 @@
     "Stranglethorn Vale",
     "The Barrens",
     "Thunder Bluff",
-    "Undercity"
+    "Tirisfal Glades",
+    "Undercity",
+    "Zephras Isle"
    ],
    "Alchemy": [
     "Durotar",
@@ -812,7 +829,8 @@
     "Swamp of Sorrows",
     "Thunder Bluff",
     "Tirisfal Glades",
-    "Undercity"
+    "Undercity",
+    "Zephras Isle"
    ],
    "Tailoring": [
     "Hillsbrad Foothills",
@@ -821,7 +839,8 @@
     "The Barrens",
     "Thunder Bluff",
     "Tirisfal Glades",
-    "Undercity"
+    "Undercity",
+    "Zephras Isle"
    ],
    "Engineering": [
     "Durotar",
@@ -832,60 +851,81 @@
     "Undercity"
    ],
    "Mining": [
+    "Durotar",
+    "Mulgore",
     "Orgrimmar",
+    "Silverpine Forest",
+    "Tanaris",
     "Thunder Bluff",
-    "Undercity"
+    "Tirisfal Glades",
+    "Undercity",
+    "Zephras Isle"
    ],
    "Enchanting": [
+    "Durotar",
     "Orgrimmar",
     "Stonetalon Mountains",
     "Thunder Bluff",
     "Tirisfal Glades",
     "Uldaman",
-    "Undercity"
-   ],
-   "Herbalism": [
-    "Feralas",
-    "Orgrimmar",
-    "Thunder Bluff",
-    "Undercity"
+    "Undercity",
+    "Zephras Isle"
    ],
    "Skinning": [
     "Desolace",
+    "Durotar",
     "Feralas",
+    "Mulgore",
     "Orgrimmar",
+    "The Barrens",
     "Thunder Bluff",
-    "Undercity"
+    "Tirisfal Glades",
+    "Undercity",
+    "Zephras Isle"
    ]
   },
   "alliance": {
    "Blacksmithing": [
+    "Alterac Mountains",
     "Darkshore",
     "Dun Morogh",
     "Duskwood",
     "Elwynn Forest",
     "Ironforge",
+    "Riverglades",
     "Stormwind City",
-    "Stranglethorn Vale"
+    "Stranglethorn Vale",
+    "Zephras Isle"
    ],
    "Herbalism": [
+    "Alterac Mountains",
+    "Ashenvale",
     "Darnassus",
+    "Dustwallow Marsh",
     "Elwynn Forest",
     "Ironforge",
+    "Loch Modan",
+    "Moonglade",
     "Redridge Mountains",
     "Stormwind City",
-    "Wetlands"
+    "Stranglethorn Vale",
+    "Teldrassil",
+    "Wetlands",
+    "Zephras Isle"
    ],
    "Tailoring": [
+    "Alterac Mountains",
     "Darkshore",
     "Darnassus",
     "Dustwallow Marsh",
     "Elwynn Forest",
     "Ironforge",
     "Stormwind City",
-    "Stranglethorn Vale"
+    "Stranglethorn Vale",
+    "Zephras Isle"
    ],
    "Alchemy": [
+    "Alterac Mountains",
     "Ashenvale",
     "Darnassus",
     "Dustwallow Marsh",
@@ -895,22 +935,29 @@
     "Loch Modan",
     "Stormwind City",
     "Stranglethorn Vale",
-    "Teldrassil"
+    "Teldrassil",
+    "Zephras Isle"
    ],
    "Skinning": [
+    "Ashenvale",
     "Darnassus",
+    "Elwynn Forest",
     "Ironforge",
     "Redridge Mountains",
-    "Stormwind City"
+    "Stormwind City",
+    "Teldrassil",
+    "Zephras Isle"
    ],
    "Enchanting": [
+    "Alterac Mountains",
     "Darnassus",
     "Elwynn Forest",
     "Feralas",
     "Ironforge",
     "Stormwind City",
     "Teldrassil",
-    "Uldaman"
+    "Uldaman",
+    "Zephras Isle"
    ],
    "Leatherworking": [
     "Ashenvale",
@@ -920,7 +967,8 @@
     "Stormwind City",
     "Teldrassil",
     "The Barrens",
-    "The Hinterlands"
+    "The Hinterlands",
+    "Zephras Isle"
    ],
    "Engineering": [
     "Darkshore",
@@ -937,9 +985,14 @@
     "Darkshore",
     "Dun Morogh",
     "Duskwood",
+    "Elwynn Forest",
     "Ironforge",
     "Loch Modan",
-    "Stormwind City"
+    "Riverglades",
+    "Stormwind City",
+    "Tanaris",
+    "Teldrassil",
+    "Zephras Isle"
    ]
   }
  }

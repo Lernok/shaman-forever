@@ -71,12 +71,16 @@ const factionOf = mask => {
   return a && !h ? 'alliance' : h && !a ? 'horde' : 'both';
 };
 
-// 1. QuestieDB: quest levels per top-level zone and faction.
+// 1. QuestieDB: quest levels per top-level zone and faction. The newest
+// package (lib/questiedb-fresh.js: Zephras Isle's quests) when there is one,
+// else the repo's file (stopped at 2026-09-21).
 const quests = {};
-for (const line of fs.readFileSync(path.join(cacheDir, 'questiedb', 'foreverQuestDB.lua'), 'utf8').split('\n')) {
-  const m = /^\[(\d+)\] = (\{.*\}),?\s*$/.exec(line);
-  if (!m) continue;
-  const q = parseLua(m[2]);
+const fresh = require('./lib/questiedb-fresh.js').load();
+const questRows = fresh
+  ? fresh.questIds().map(id => fresh.quest(id)).filter(Boolean)
+  : fs.readFileSync(path.join(cacheDir, 'questiedb', 'foreverQuestDB.lua'), 'utf8').split('\n')
+    .map(line => /^\[(\d+)\] = (\{.*\}),?\s*$/.exec(line)).filter(Boolean).map(m => parseLua(m[2]));
+for (const q of questRows) {
   const z = q[16] > 0 && top(q[16]); // questKeys: questLevel = 5, requiredRaces = 6, zoneOrSort = 17
   if (!z || !q[4]) continue;
   const f = factionOf(q[5]);
@@ -101,18 +105,22 @@ tree.filter(x => /^\.contrib\/\.db\/forever\/zones\/.*\.lua$/.test(x.path)).forE
 });
 
 const MIN_QUESTS = 6;
+const ENOUGH = 20;
 const zones = {};
 const dungeons = {};
 Object.values(area).forEach(a => {
   if (a.ParentAreaID !== '0' || !OPEN_WORLD(a.ID)) return;
   const name = a.AreaName_lang;
   if (CITIES.test(name) || INSTANCE.test(name) || RAID.test(name) && name !== 'Silithus') return;
+  // Not a place: the profession quests' area.
+  if (name === 'Crafting') return;
   const q = quests[name];
   const out = { id: Number(a.ID), continent: { 0: 'Eastern Kingdoms', 1: 'Kalimdor' }[a.ContinentID] || null };
   if (q && (q.horde.length >= MIN_QUESTS || q.alliance.length >= MIN_QUESTS)) {
     // A faction with only a handful of (neutral) quests there doesn't level
-    // there: it needs MIN_QUESTS and at least half as many as the other one.
-    const levels = (mine, other) => (mine.length >= MIN_QUESTS && mine.length >= other.length / 2 ? band(mine) : null);
+    // there: it needs MIN_QUESTS and at least half as many as the other one,
+    // or ENOUGH of its own and a third (the Horde's 23 in Ashenvale against 48).
+    const levels = (mine, other) => (mine.length >= MIN_QUESTS && (mine.length >= other.length / 2 || (mine.length >= ENOUGH && mine.length >= other.length / 3)) ? band(mine) : null);
     out.horde = levels(q.horde, q.alliance);
     out.alliance = levels(q.alliance, q.horde);
     out.quests = Math.max(q.horde.length, q.alliance.length);

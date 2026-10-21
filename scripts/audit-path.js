@@ -24,7 +24,7 @@ const gear = load('data/gear.js').GEAR_DATA.gear.concat(load('data/weapons.js').
 const farm = process.argv.includes('--farm');
 const drops = process.argv.includes('--drops');
 
-const RACES = { horde: ['Orc', 'Troll', 'Tauren', 'Skyborne'], alliance: ['Dwarf', 'Skyborne'] };
+const RACES = { horde: ['Orc', 'Troll', 'Tauren', 'Skyborne (Windshaper)'], alliance: ['Dwarf', 'Skyborne (Windshaper)'] };
 const SPECS = ['Enhancement', 'Elemental', 'Restoration'];
 const PROFS = [[], ['Leatherworking', 'Skinning'], ['Blacksmithing', 'Mining'], ['Tailoring', 'Enchanting']];
 // Empty for this many levels or more, up to 30, is worth a look (rings, trinkets
