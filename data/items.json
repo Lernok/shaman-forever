@@ -4261,7 +4261,7 @@
    "armor": 1937,
    "block": 34,
    "stats": {
-    "strength": 10,
+    "strength": 11,
     "stamina": 15
    },
    "equip": [
@@ -4270,7 +4270,7 @@
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shield_02"
   },
   "1980": {
@@ -100689,7 +100689,7 @@
    "dmgMin": 46,
    "dmgMax": 86,
    "speed": 1.9,
-   "dps": 34.7,
+   "dps": 34.74,
    "stats": {
     "stamina": 6,
     "intellect": 6,

@@ -5558,10 +5558,10 @@
      },
      "ref": "https://foreverchanges.pro/quest/827",
      "basis": {
-      "name": null,
-      "level": 30,
+      "name": "Sharptalon",
+      "level": 31,
       "rank": "normal",
-      "from": "step-level",
+      "from": "wowhead",
       "group": false,
       "step": 2,
       "steps": 9
@@ -5613,79 +5613,16 @@
      },
      "ref": "https://foreverchanges.pro/quest/827",
      "basis": {
-      "name": null,
-      "level": 30,
+      "name": "Sharptalon",
+      "level": 31,
       "rank": "normal",
-      "from": "step-level",
+      "from": "wowhead",
       "group": false,
       "step": 2,
       "steps": 9
      },
      "asap": 12,
      "rec": 12
-    }
-   ]
-  },
-  {
-   "id": 15444,
-   "name": "Staff of Orgrimmar",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 13,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 16.1,
-   "speed": 3.3,
-   "dmgMin": 42,
-   "dmgMax": 64,
-   "stats": {
-    "agility": 6,
-    "intellect": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_goldfeathered_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hidden Enemies",
-     "questId": 5730,
-     "level": 16,
-     "requiredLevel": 9,
-     "zone": "Orgrimmar",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 9,
-      "orange": 12,
-      "yellow": 14,
-      "green": 19,
-      "grey": 23
-     },
-     "ref": "https://foreverchanges.pro/quest/5730",
-     "dungeonZone": "Ragefire Chasm",
-     "dungeonLevels": [
-      13,
-      18
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Jergosh the Invoker",
-      "level": 16,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "step": 5728,
-      "steps": 5
-     },
-     "asap": 13,
-     "rec": 13
     }
    ]
   },
@@ -5715,132 +5652,6 @@
      "type": "unknown",
      "faction": "both",
      "confidence": "community-untested",
-     "asap": 13,
-     "rec": 13
-    }
-   ]
-  },
-  {
-   "id": 15424,
-   "name": "Axe of Orgrimmar",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 0,
-   "obtain": 13,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 16.06,
-   "speed": 3.3,
-   "dmgMin": 42,
-   "dmgMax": 64,
-   "stats": {
-    "stamina": 6,
-    "spirit": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_axe_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hidden Enemies",
-     "questId": 5730,
-     "level": 16,
-     "requiredLevel": 9,
-     "zone": "Orgrimmar",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 9,
-      "orange": 12,
-      "yellow": 14,
-      "green": 19,
-      "grey": 23
-     },
-     "ref": "https://foreverchanges.pro/quest/5730",
-     "dungeonZone": "Ragefire Chasm",
-     "dungeonLevels": [
-      13,
-      18
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Jergosh the Invoker",
-      "level": 16,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "step": 5728,
-      "steps": 5
-     },
-     "asap": 13,
-     "rec": 13
-    }
-   ]
-  },
-  {
-   "id": 15445,
-   "name": "Hammer of Orgrimmar",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 0,
-   "obtain": 13,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 12.41,
-   "speed": 2.9,
-   "dmgMin": 25,
-   "dmgMax": 47,
-   "stats": {
-    "strength": 3,
-    "spirit": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_hammer_23",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hidden Enemies",
-     "questId": 5730,
-     "level": 16,
-     "requiredLevel": 9,
-     "zone": "Orgrimmar",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 9,
-      "orange": 12,
-      "yellow": 14,
-      "green": 19,
-      "grey": 23
-     },
-     "ref": "https://foreverchanges.pro/quest/5730",
-     "dungeonZone": "Ragefire Chasm",
-     "dungeonLevels": [
-      13,
-      18
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Jergosh the Invoker",
-      "level": 16,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "step": 5728,
-      "steps": 5
-     },
      "asap": 13,
      "rec": 13
     }
@@ -6060,68 +5871,6 @@
       "from": "wowhead",
       "group": true
      }
-    }
-   ]
-  },
-  {
-   "id": 15443,
-   "name": "Kris of Orgrimmar",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 0,
-   "obtain": 13,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 12,
-   "speed": 1.5,
-   "dmgMin": 12,
-   "dmgMax": 24,
-   "stats": {
-    "stamina": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hidden Enemies",
-     "questId": 5730,
-     "level": 16,
-     "requiredLevel": 9,
-     "zone": "Orgrimmar",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 9,
-      "orange": 12,
-      "yellow": 14,
-      "green": 19,
-      "grey": 23
-     },
-     "ref": "https://foreverchanges.pro/quest/5730",
-     "dungeonZone": "Ragefire Chasm",
-     "dungeonLevels": [
-      13,
-      18
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Jergosh the Invoker",
-      "level": 16,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "step": 5728,
-      "steps": 5
-     },
-     "asap": 13,
-     "rec": 13
     }
    ]
   },
@@ -7729,6 +7478,132 @@
    ]
   },
   {
+   "id": 15444,
+   "name": "Staff of Orgrimmar",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 16,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 16.1,
+   "speed": 3.3,
+   "dmgMin": 42,
+   "dmgMax": 64,
+   "stats": {
+    "agility": 6,
+    "intellect": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_staff_goldfeathered_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hidden Enemies",
+     "questId": 5730,
+     "level": 16,
+     "requiredLevel": 9,
+     "zone": "Orgrimmar",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 9,
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
+     "ref": "https://foreverchanges.pro/quest/5730",
+     "dungeonZone": "Ragefire Chasm",
+     "dungeonLevels": [
+      13,
+      18
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "basis": {
+      "name": "Neeru Fireblade",
+      "level": 37,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": true,
+      "step": 5727,
+      "steps": 5
+     },
+     "asap": 16,
+     "rec": 16
+    }
+   ]
+  },
+  {
+   "id": 15424,
+   "name": "Axe of Orgrimmar",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 0,
+   "obtain": 16,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 16.06,
+   "speed": 3.3,
+   "dmgMin": 42,
+   "dmgMax": 64,
+   "stats": {
+    "stamina": 6,
+    "spirit": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_axe_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hidden Enemies",
+     "questId": 5730,
+     "level": 16,
+     "requiredLevel": 9,
+     "zone": "Orgrimmar",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 9,
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
+     "ref": "https://foreverchanges.pro/quest/5730",
+     "dungeonZone": "Ragefire Chasm",
+     "dungeonLevels": [
+      13,
+      18
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "basis": {
+      "name": "Neeru Fireblade",
+      "level": 37,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": true,
+      "step": 5727,
+      "steps": 5
+     },
+     "asap": 16,
+     "rec": 16
+    }
+   ]
+  },
+  {
    "id": 1483,
    "name": "Face Smasher",
    "kind": "1H Mace",
@@ -7932,6 +7807,69 @@
    ]
   },
   {
+   "id": 15445,
+   "name": "Hammer of Orgrimmar",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 0,
+   "obtain": 16,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 12.41,
+   "speed": 2.9,
+   "dmgMin": 25,
+   "dmgMax": 47,
+   "stats": {
+    "strength": 3,
+    "spirit": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_hammer_23",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hidden Enemies",
+     "questId": 5730,
+     "level": 16,
+     "requiredLevel": 9,
+     "zone": "Orgrimmar",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 9,
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
+     "ref": "https://foreverchanges.pro/quest/5730",
+     "dungeonZone": "Ragefire Chasm",
+     "dungeonLevels": [
+      13,
+      18
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "basis": {
+      "name": "Neeru Fireblade",
+      "level": 37,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": true,
+      "step": 5727,
+      "steps": 5
+     },
+     "asap": 16,
+     "rec": 16
+    }
+   ]
+  },
+  {
    "id": 279874,
    "name": "The Stitcher",
    "kind": "1H Mace",
@@ -8031,6 +7969,68 @@
       "from": "wowhead",
       "group": true
      }
+    }
+   ]
+  },
+  {
+   "id": 15443,
+   "name": "Kris of Orgrimmar",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 0,
+   "obtain": 16,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 12,
+   "speed": 1.5,
+   "dmgMin": 12,
+   "dmgMax": 24,
+   "stats": {
+    "stamina": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hidden Enemies",
+     "questId": 5730,
+     "level": 16,
+     "requiredLevel": 9,
+     "zone": "Orgrimmar",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 9,
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
+     "ref": "https://foreverchanges.pro/quest/5730",
+     "dungeonZone": "Ragefire Chasm",
+     "dungeonLevels": [
+      13,
+      18
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "basis": {
+      "name": "Neeru Fireblade",
+      "level": 37,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": true,
+      "step": 5727,
+      "steps": 5
+     },
+     "asap": 16,
+     "rec": 16
     }
    ]
   },
@@ -21055,7 +21055,7 @@
       "green": 45,
       "grey": 53
      },
-     "faction": "both",
+     "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93128",
      "basis": {
@@ -21064,7 +21064,7 @@
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 1
+      "steps": 4
      },
      "asap": 35,
      "rec": 36
@@ -21213,7 +21213,7 @@
       "green": 45,
       "grey": 53
      },
-     "faction": "both",
+     "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93128",
      "basis": {
@@ -21222,7 +21222,7 @@
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 1
+      "steps": 4
      },
      "asap": 35,
      "rec": 36
@@ -21426,6 +21426,100 @@
      "faction": "both",
      "confidence": "community-untested",
      "asap": 37,
+     "rec": 37
+    }
+   ]
+  },
+  {
+   "id": 280604,
+   "name": "Rage of the Storm",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 1,
+   "obtain": 37,
+   "ilvl": 40,
+   "bind": "pickup",
+   "dps": 35.6,
+   "speed": 3.2,
+   "dmgMin": 91,
+   "dmgMax": 137,
+   "stats": {
+    "stamina": 15,
+    "intellect": 12
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increases the damage dealt by your Stormstrike ability by 10%."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_42",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Tempest's Weapons",
+     "questId": 79442,
+     "level": 40,
+     "requiredLevel": 30,
+     "faction": "horde",
+     "chain": [
+      94789,
+      96264,
+      79358,
+      96135
+     ],
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=79442",
+     "basis": {
+      "name": "Ravaging Tempest",
+      "level": 40,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 96135,
+      "steps": 5
+     },
+     "asap": 35,
+     "rec": 37
+    },
+    {
+     "type": "quest",
+     "quest": "The Tempest's Weapons",
+     "questId": 96016,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Shaman",
+     "classes": [
+      "Shaman"
+     ],
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96016",
+     "chain": [
+      94789,
+      96264,
+      79358,
+      96135
+     ],
+     "basis": {
+      "name": "Ravaging Tempest",
+      "level": 40,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 96135,
+      "steps": 5
+     },
+     "asap": 35,
      "rec": 37
     }
    ]
@@ -21803,6 +21897,122 @@
    ]
   },
   {
+   "id": 280605,
+   "name": "Tidebringer's Claw",
+   "kind": "Fist",
+   "quality": 3,
+   "req": 1,
+   "obtain": 37,
+   "ilvl": 40,
+   "bind": "pickup",
+   "dps": 27.5,
+   "speed": 2.4,
+   "dmgMin": 46,
+   "dmgMax": 86,
+   "stats": {
+    "stamina": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_hand_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Tempest's Weapons",
+     "questId": 96016,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Shaman",
+     "classes": [
+      "Shaman"
+     ],
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96016",
+     "basis": {
+      "name": "Ravaging Tempest",
+      "level": 40,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 96135,
+      "steps": 5
+     },
+     "asap": 35,
+     "rec": 37
+    }
+   ]
+  },
+  {
+   "id": 280607,
+   "name": "Lightning's Grasp",
+   "kind": "Fist",
+   "quality": 3,
+   "req": 1,
+   "obtain": 37,
+   "ilvl": 40,
+   "bind": "pickup",
+   "dps": 27.5,
+   "speed": 2.2,
+   "dmgMin": 42,
+   "dmgMax": 79,
+   "stats": {
+    "intellect": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_hand_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Tempest's Weapons",
+     "questId": 96016,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Shaman",
+     "classes": [
+      "Shaman"
+     ],
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96016",
+     "basis": {
+      "name": "Ravaging Tempest",
+      "level": 40,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 96135,
+      "steps": 5
+     },
+     "asap": 35,
+     "rec": 37
+    }
+   ]
+  },
+  {
    "id": 1602,
    "name": "Sickle Axe",
    "kind": "1H Axe",
@@ -22115,56 +22325,6 @@
       "from": "wowhead",
       "group": true,
       "steps": 4
-     },
-     "asap": 35,
-     "rec": 37
-    }
-   ]
-  },
-  {
-   "id": 271799,
-   "name": "Desert Crawler's Claw",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 35,
-   "obtain": 37,
-   "ilvl": 38,
-   "bind": "pickup",
-   "dps": 20.3,
-   "speed": 1.8,
-   "dmgMin": 25,
-   "dmgMax": 48,
-   "stats": {
-    "stamina": 2,
-    "intellect": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Test Your Theory",
-     "questId": 93045,
-     "level": 38,
-     "requiredLevel": 35,
-     "zone": "Desolace",
-     "bands": {
-      "orange": 35,
-      "yellow": 36,
-      "green": 41,
-      "grey": 48
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/93045",
-     "basis": {
-      "from": "quest-level",
-      "group": false
      },
      "asap": 35,
      "rec": 37
@@ -22804,6 +22964,61 @@
    ]
   },
   {
+   "id": 271799,
+   "name": "Desert Crawler's Claw",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 35,
+   "obtain": 38,
+   "ilvl": 38,
+   "bind": "pickup",
+   "dps": 20.3,
+   "speed": 1.8,
+   "dmgMin": 25,
+   "dmgMax": 48,
+   "stats": {
+    "stamina": 2,
+    "intellect": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Test Your Theory",
+     "questId": 93045,
+     "level": 38,
+     "requiredLevel": 35,
+     "zone": "Desolace",
+     "bands": {
+      "orange": 35,
+      "yellow": 36,
+      "green": 41,
+      "grey": 48
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93045",
+     "basis": {
+      "name": "Outcast Necromancer",
+      "level": 40,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 93037,
+      "steps": 8
+     },
+     "asap": 37,
+     "rec": 38
+    }
+   ]
+  },
+  {
    "id": 274430,
    "name": "Rock Sentinel Slicer",
    "kind": "2H Axe",
@@ -22961,7 +23176,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 3
+      "steps": 4
      },
      "asap": 37,
      "rec": 39
@@ -23014,100 +23229,6 @@
       "from": "wowhead",
       "group": true
      }
-    }
-   ]
-  },
-  {
-   "id": 280604,
-   "name": "Rage of the Storm",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 1,
-   "obtain": 39,
-   "ilvl": 40,
-   "bind": "pickup",
-   "dps": 35.6,
-   "speed": 3.2,
-   "dmgMin": 91,
-   "dmgMax": 137,
-   "stats": {
-    "stamina": 15,
-    "intellect": 12
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increases the damage dealt by your Stormstrike ability by 10%."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_42",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Tempest's Weapons",
-     "questId": 79442,
-     "level": 40,
-     "requiredLevel": 30,
-     "faction": "horde",
-     "chain": [
-      94789,
-      96264,
-      79358,
-      96135
-     ],
-     "confidence": "community-untested",
-     "ref": "https://www.wowhead.com/forever/quest=79442",
-     "basis": {
-      "name": null,
-      "level": 40,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 96135,
-      "steps": 5
-     },
-     "asap": 37,
-     "rec": 39
-    },
-    {
-     "type": "quest",
-     "quest": "The Tempest's Weapons",
-     "questId": 96016,
-     "level": 40,
-     "requiredLevel": 30,
-     "zone": "Shaman",
-     "classes": [
-      "Shaman"
-     ],
-     "bands": {
-      "red": 30,
-      "orange": 36,
-      "yellow": 38,
-      "green": 43,
-      "grey": 51
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96016",
-     "chain": [
-      94789,
-      96264,
-      79358,
-      96135
-     ],
-     "basis": {
-      "name": null,
-      "level": 40,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 96135,
-      "steps": 5
-     },
-     "asap": 37,
-     "rec": 39
     }
    ]
   },
@@ -23309,7 +23430,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 3
+      "steps": 4
      },
      "asap": 37,
      "rec": 39
@@ -23317,115 +23438,55 @@
    ]
   },
   {
-   "id": 280605,
-   "name": "Tidebringer's Claw",
-   "kind": "Fist",
-   "quality": 3,
-   "req": 1,
+   "id": 271797,
+   "name": "Staff of Revelations",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 35,
    "obtain": 39,
-   "ilvl": 40,
+   "ilvl": 38,
    "bind": "pickup",
-   "dps": 27.5,
-   "speed": 2.4,
-   "dmgMin": 46,
-   "dmgMax": 86,
+   "dps": 26.7,
+   "speed": 3,
+   "dmgMin": 64,
+   "dmgMax": 96,
    "stats": {
-    "stamina": 5
+    "intellect": 8,
+    "spirit": 11
    },
    "bonus": {},
    "equip": [],
    "chance": [],
    "era": "new",
    "numbers": "client",
-   "icon": "inv_weapon_hand_15",
+   "icon": "inv_staff_08",
    "raceMask": -1,
    "sources": [
     {
      "type": "quest",
-     "quest": "The Tempest's Weapons",
-     "questId": 96016,
-     "level": 40,
-     "requiredLevel": 30,
-     "zone": "Shaman",
-     "classes": [
-      "Shaman"
-     ],
+     "quest": "Proof of Concept",
+     "questId": 92873,
+     "level": 41,
+     "requiredLevel": 35,
+     "zone": "Shen'dralas",
      "bands": {
-      "red": 30,
-      "orange": 36,
-      "yellow": 38,
-      "green": 43,
-      "grey": 51
+      "red": 35,
+      "orange": 37,
+      "yellow": 39,
+      "green": 44,
+      "grey": 52
      },
-     "faction": "alliance",
+     "faction": "both",
      "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96016",
+     "ref": "https://foreverchanges.pro/quest/92873",
      "basis": {
-      "name": null,
+      "name": "Outcast Necromancer",
       "level": 40,
       "rank": "normal",
-      "from": "step-level",
+      "from": "wowhead",
       "group": false,
-      "step": 96135,
-      "steps": 5
-     },
-     "asap": 37,
-     "rec": 39
-    }
-   ]
-  },
-  {
-   "id": 280607,
-   "name": "Lightning's Grasp",
-   "kind": "Fist",
-   "quality": 3,
-   "req": 1,
-   "obtain": 39,
-   "ilvl": 40,
-   "bind": "pickup",
-   "dps": 27.5,
-   "speed": 2.2,
-   "dmgMin": 42,
-   "dmgMax": 79,
-   "stats": {
-    "intellect": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_hand_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Tempest's Weapons",
-     "questId": 96016,
-     "level": 40,
-     "requiredLevel": 30,
-     "zone": "Shaman",
-     "classes": [
-      "Shaman"
-     ],
-     "bands": {
-      "red": 30,
-      "orange": 36,
-      "yellow": 38,
-      "green": 43,
-      "grey": 51
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96016",
-     "basis": {
-      "name": null,
-      "level": 40,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 96135,
-      "steps": 5
+      "step": 92846,
+      "steps": 9
      },
      "asap": 37,
      "rec": 39
@@ -23991,57 +24052,6 @@
    ]
   },
   {
-   "id": 271797,
-   "name": "Staff of Revelations",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 35,
-   "obtain": 40,
-   "ilvl": 38,
-   "bind": "pickup",
-   "dps": 26.7,
-   "speed": 3,
-   "dmgMin": 64,
-   "dmgMax": 96,
-   "stats": {
-    "intellect": 8,
-    "spirit": 11
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Proof of Concept",
-     "questId": 92873,
-     "level": 41,
-     "requiredLevel": 35,
-     "zone": "Shen'dralas",
-     "bands": {
-      "red": 35,
-      "orange": 37,
-      "yellow": 39,
-      "green": 44,
-      "grey": 52
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92873",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 35,
-     "rec": 40
-    }
-   ]
-  },
-  {
    "id": 19808,
    "name": "Rockhide Strongfish",
    "kind": "1H Mace",
@@ -24147,58 +24157,6 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 41,
-     "rec": 41
-    }
-   ]
-  },
-  {
-   "id": 271803,
-   "name": "Greatstaff of the Necrokhans",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 35,
-   "obtain": 41,
-   "ilvl": 42,
-   "bind": "pickup",
-   "dps": 37.2,
-   "speed": 3,
-   "dmgMin": 89,
-   "dmgMax": 134,
-   "stats": {
-    "stamina": 16,
-    "intellect": 12,
-    "spirit": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Khan Jehn",
-     "questId": 93196,
-     "level": 42,
-     "requiredLevel": 35,
-     "zone": "Desolace",
-     "bands": {
-      "red": 35,
-      "orange": 38,
-      "yellow": 40,
-      "green": 45,
-      "grey": 53
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/93196",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 35,
      "rec": 41
     }
    ]
@@ -24496,58 +24454,6 @@
    ]
   },
   {
-   "id": 271804,
-   "name": "Soulsplatter Mace",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 35,
-   "obtain": 41,
-   "ilvl": 42,
-   "bind": "pickup",
-   "dps": 28.6,
-   "speed": 1.8,
-   "dmgMin": 41,
-   "dmgMax": 62,
-   "stats": {
-    "stamina": 3,
-    "intellect": 6,
-    "spirit": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Khan Jehn",
-     "questId": 93196,
-     "level": 42,
-     "requiredLevel": 35,
-     "zone": "Desolace",
-     "bands": {
-      "red": 35,
-      "orange": 38,
-      "yellow": 40,
-      "green": 45,
-      "grey": 53
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/93196",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 35,
-     "rec": 41
-    }
-   ]
-  },
-  {
    "id": 7945,
    "name": "Big Black Mace",
    "kind": "1H Mace",
@@ -24693,6 +24599,63 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 42,
+     "rec": 42
+    }
+   ]
+  },
+  {
+   "id": 271803,
+   "name": "Greatstaff of the Necrokhans",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 35,
+   "obtain": 42,
+   "ilvl": 42,
+   "bind": "pickup",
+   "dps": 37.2,
+   "speed": 3,
+   "dmgMin": 89,
+   "dmgMax": 134,
+   "stats": {
+    "stamina": 16,
+    "intellect": 12,
+    "spirit": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Khan Jehn",
+     "questId": 93196,
+     "level": 42,
+     "requiredLevel": 35,
+     "zone": "Desolace",
+     "bands": {
+      "red": 35,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93196",
+     "basis": {
+      "name": "Bristleback Nomad",
+      "level": 43,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 93066,
+      "steps": 9
+     },
+     "asap": 40,
      "rec": 42
     }
    ]
@@ -24884,6 +24847,63 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 42,
+     "rec": 42
+    }
+   ]
+  },
+  {
+   "id": 271804,
+   "name": "Soulsplatter Mace",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 35,
+   "obtain": 42,
+   "ilvl": 42,
+   "bind": "pickup",
+   "dps": 28.6,
+   "speed": 1.8,
+   "dmgMin": 41,
+   "dmgMax": 62,
+   "stats": {
+    "stamina": 3,
+    "intellect": 6,
+    "spirit": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Khan Jehn",
+     "questId": 93196,
+     "level": 42,
+     "requiredLevel": 35,
+     "zone": "Desolace",
+     "bands": {
+      "red": 35,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93196",
+     "basis": {
+      "name": "Bristleback Nomad",
+      "level": 43,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 93066,
+      "steps": 9
+     },
+     "asap": 40,
      "rec": 42
     }
    ]
@@ -25494,7 +25514,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 1
+      "steps": 2
      },
      "asap": 41,
      "rec": 43
@@ -26560,63 +26580,6 @@
    ]
   },
   {
-   "id": 9651,
-   "name": "Gryphon Rider's Stormhammer",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 45,
-   "ilvl": 53,
-   "bind": "pickup",
-   "dps": 31.48,
-   "speed": 2.7,
-   "dmgMin": 59,
-   "dmgMax": 111,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [
-    "Chance on hit: Blasts a target for 77 to 105 Nature damage."
-   ],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_hammer_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Saving Sharpbeak",
-     "questId": 2994,
-     "level": 51,
-     "requiredLevel": 40,
-     "zone": "The Hinterlands",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 40,
-      "orange": 47,
-      "yellow": 49,
-      "green": 54,
-      "grey": 60
-     },
-     "ref": "https://foreverchanges.pro/quest/2994",
-     "dungeonZone": "Zul'Farrak",
-     "basis": {
-      "name": null,
-      "level": 48,
-      "rank": "normal",
-      "from": "step-level",
-      "group": true,
-      "step": 2989,
-      "steps": 7
-     },
-     "asap": 43,
-     "rec": 45
-    }
-   ]
-  },
-  {
    "id": 15245,
    "name": "Vorpal Dagger",
    "kind": "Dagger",
@@ -26996,7 +26959,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "step": 3128,
+      "step": 3127,
       "steps": 8
      },
      "asap": 45,
@@ -27052,7 +27015,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "step": 3128,
+      "step": 3127,
       "steps": 8
      },
      "asap": 45,
@@ -27155,12 +27118,11 @@
      },
      "ref": "https://foreverchanges.pro/quest/3528",
      "basis": {
-      "name": null,
+      "name": "Avatar of Hakkar",
       "level": 50,
-      "rank": "normal",
-      "from": "step-level",
+      "rank": "elite",
+      "from": "questie",
       "group": true,
-      "step": 4787,
       "steps": 4
      },
      "asap": 45,
@@ -27177,7 +27139,7 @@
    "obtain": 47,
    "ilvl": 52,
    "bind": "equip",
-   "dps": 34.7,
+   "dps": 34.74,
    "speed": 1.9,
    "dmgMin": 46,
    "dmgMax": 86,
@@ -27399,7 +27361,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "step": 3128,
+      "step": 3127,
       "steps": 8
      },
      "asap": 45,
@@ -27454,7 +27416,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "step": 3128,
+      "step": 3127,
       "steps": 8
      },
      "asap": 45,
@@ -28238,6 +28200,62 @@
      "faction": "both",
      "confidence": "community-untested",
      "asap": 48,
+     "rec": 48
+    }
+   ]
+  },
+  {
+   "id": 9651,
+   "name": "Gryphon Rider's Stormhammer",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 48,
+   "ilvl": 53,
+   "bind": "pickup",
+   "dps": 31.48,
+   "speed": 2.7,
+   "dmgMin": 59,
+   "dmgMax": 111,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "chance": [
+    "Chance on hit: Blasts a target for 77 to 105 Nature damage."
+   ],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_hammer_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Saving Sharpbeak",
+     "questId": 2994,
+     "level": 51,
+     "requiredLevel": 40,
+     "zone": "The Hinterlands",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 47,
+      "yellow": 49,
+      "green": 54,
+      "grey": 60
+     },
+     "ref": "https://foreverchanges.pro/quest/2994",
+     "dungeonZone": "Zul'Farrak",
+     "basis": {
+      "name": "Vile Priestess Hexx",
+      "level": 51,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 7
+     },
+     "asap": 46,
      "rec": 48
     }
    ]
@@ -32402,61 +32420,6 @@
    ]
   },
   {
-   "id": 15706,
-   "name": "Hunt Tracker Blade",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 55,
-   "ilvl": 57,
-   "bind": "pickup",
-   "dps": 33.67,
-   "speed": 1.5,
-   "dmgMin": 35,
-   "dmgMax": 66,
-   "stats": {
-    "agility": 8,
-    "spirit": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Remains of Trey Lightforge",
-     "questId": 5385,
-     "level": 57,
-     "requiredLevel": 49,
-     "zone": "Felwood",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 49,
-      "orange": 53,
-      "yellow": 55,
-      "green": 60
-     },
-     "ref": "https://foreverchanges.pro/quest/5385",
-     "basis": {
-      "name": "Rakaiah",
-      "level": 56,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 5204,
-      "steps": 4
-     },
-     "asap": 53,
-     "rec": 55
-    }
-   ]
-  },
-  {
    "id": 944,
    "name": "Elemental Mage Staff",
    "kind": "Staff",
@@ -33895,7 +33858,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 7
+      "steps": 8
      },
      "asap": 57,
      "rec": 57
@@ -34468,7 +34431,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 7
+      "steps": 8
      },
      "asap": 57,
      "rec": 57
@@ -34650,6 +34613,61 @@
       "steps": 3
      },
      "asap": 55,
+     "rec": 57
+    }
+   ]
+  },
+  {
+   "id": 15706,
+   "name": "Hunt Tracker Blade",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 57,
+   "ilvl": 57,
+   "bind": "pickup",
+   "dps": 33.67,
+   "speed": 1.5,
+   "dmgMin": 35,
+   "dmgMax": 66,
+   "stats": {
+    "agility": 8,
+    "spirit": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Remains of Trey Lightforge",
+     "questId": 5385,
+     "level": 57,
+     "requiredLevel": 49,
+     "zone": "Felwood",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 49,
+      "orange": 53,
+      "yellow": 55,
+      "green": 60
+     },
+     "ref": "https://foreverchanges.pro/quest/5385",
+     "basis": {
+      "name": "Jaedenar Legionnaire",
+      "level": 60,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 5202,
+      "steps": 4
+     },
+     "asap": 57,
      "rec": 57
     }
    ]
@@ -35499,7 +35517,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 1
+      "steps": 2
      },
      "asap": 56,
      "rec": 58
@@ -36379,6 +36397,57 @@
    ]
   },
   {
+   "id": 20723,
+   "name": "Brann's Trusty Pick",
+   "kind": "1H Axe",
+   "quality": 2,
+   "req": 0,
+   "obtain": 58,
+   "ilvl": 62,
+   "bind": "pickup",
+   "dps": 37.04,
+   "speed": 2.7,
+   "dmgMin": 70,
+   "dmgMax": 130,
+   "stats": {
+    "strength": 11
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_pick_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Brann Bronzebeard's Lost Letter",
+     "questId": 8308,
+     "level": 60,
+     "requiredLevel": 58,
+     "zone": "Silithus",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "bands": {
+      "yellow": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/8308",
+     "raid": true,
+     "basis": {
+      "name": "Hive'Regal Ambusher",
+      "level": 60,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 58,
+     "rec": 58
+    }
+   ]
+  },
+  {
    "id": 17002,
    "name": "Ichor Spitter",
    "kind": "1H Axe",
@@ -36422,7 +36491,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 1
+      "steps": 2
      },
      "asap": 56,
      "rec": 58
@@ -36475,7 +36544,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 1
+      "steps": 2
      },
      "asap": 56,
      "rec": 58
@@ -37500,53 +37569,6 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 59,
-     "rec": 59
-    }
-   ]
-  },
-  {
-   "id": 20723,
-   "name": "Brann's Trusty Pick",
-   "kind": "1H Axe",
-   "quality": 2,
-   "req": 0,
-   "obtain": 59,
-   "ilvl": 62,
-   "bind": "pickup",
-   "dps": 37.04,
-   "speed": 2.7,
-   "dmgMin": 70,
-   "dmgMax": 130,
-   "stats": {
-    "strength": 11
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_pick_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Brann Bronzebeard's Lost Letter",
-     "questId": 8308,
-     "level": 60,
-     "requiredLevel": 58,
-     "zone": "Silithus",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "bands": {
-      "yellow": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/8308",
-     "raid": true,
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 58,
      "rec": 59
     }
    ]
@@ -39655,8 +39677,13 @@
      "ref": "https://foreverchanges.pro/quest/8573",
      "raid": true,
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 60,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 8800,
+      "steps": 2
      },
      "asap": 60,
      "rec": 60
@@ -41363,13 +41390,13 @@
      "ref": "https://foreverchanges.pro/quest/8745",
      "raid": true,
      "basis": {
-      "name": "Nefarian",
+      "name": "Ragnaros",
       "level": 63,
       "rank": "boss",
       "from": "questie",
       "group": true,
-      "step": 8730,
-      "steps": 17
+      "step": 8578,
+      "steps": 23
      },
      "asap": 60,
      "rec": 60
@@ -41454,13 +41481,13 @@
      "ref": "https://foreverchanges.pro/quest/8745",
      "raid": true,
      "basis": {
-      "name": "Nefarian",
+      "name": "Ragnaros",
       "level": 63,
       "rank": "boss",
       "from": "questie",
       "group": true,
-      "step": 8730,
-      "steps": 17
+      "step": 8578,
+      "steps": 23
      },
      "asap": 60,
      "rec": 60

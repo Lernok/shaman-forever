@@ -207,6 +207,19 @@
    "quests": 35,
    "from": "questie"
   },
+  "Deadwind Pass": {
+   "id": 41,
+   "continent": "Eastern Kingdoms",
+   "alliance": [
+    50,
+    60
+   ],
+   "horde": [
+    50,
+    60
+   ],
+   "from": "area-table"
+  },
   "Redridge Mountains": {
    "id": 44,
    "continent": "Eastern Kingdoms",
@@ -535,7 +548,7 @@
     4,
     9
    ],
-   "quests": 146,
+   "quests": 147,
    "from": "att",
    "start": true
   }

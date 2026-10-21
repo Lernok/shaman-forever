@@ -66,7 +66,7 @@
   },
   "55": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 20,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -76,7 +76,7 @@
     "rank": "elite",
     "from": "wowhead"
    },
-   "steps": 7
+   "steps": 8
   },
   "89": {
    "classes": null,
@@ -94,7 +94,7 @@
   },
   "98": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 22,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -108,7 +108,7 @@
   },
   "99": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 9,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -122,7 +122,7 @@
   },
   "101": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 18,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -287,7 +287,7 @@
   },
   "181": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 20,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -450,7 +450,7 @@
   },
   "223": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 23,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -465,7 +465,7 @@
   },
   "231": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 28,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -480,7 +480,7 @@
   },
   "245": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 17,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -494,18 +494,18 @@
   },
   "247": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 20,
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": null,
-    "name": null,
-    "level": 30,
+    "id": 12676,
+    "name": "Sharptalon",
+    "level": 31,
     "rank": "normal",
-    "from": "step-level",
+    "from": "wowhead",
     "step": 2
    },
-   "steps": 8
+   "steps": 9
   },
   "249": {
    "classes": null,
@@ -523,7 +523,7 @@
   },
   "253": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 20,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -815,7 +815,7 @@
   },
   "408": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 7,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -843,7 +843,7 @@
   },
   "442": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 10,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -853,11 +853,11 @@
     "rank": "elite",
     "from": "wowhead"
    },
-   "steps": 7
+   "steps": 8
   },
   "451": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 9,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -871,7 +871,7 @@
   },
   "452": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 12,
    "faction": "horde",
    "instance": null,
    "hardest": null,
@@ -922,7 +922,7 @@
   },
   "480": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 10,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -965,7 +965,7 @@
   },
   "491": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 12,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -980,15 +980,21 @@
   },
   "498": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 17,
    "faction": "horde",
    "instance": null,
-   "hardest": null,
+   "hardest": {
+    "id": 2427,
+    "name": "Jailor Eston",
+    "level": 24,
+    "rank": "normal",
+    "from": "wowhead"
+   },
    "steps": 1
   },
   "501": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 21,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -998,7 +1004,7 @@
     "rank": "normal",
     "from": "wowhead"
    },
-   "steps": 1
+   "steps": 3
   },
   "504": {
    "classes": null,
@@ -1045,17 +1051,18 @@
   },
   "515": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 24,
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": 2371,
-    "name": "Daggerspine Siren",
-    "level": 32,
+    "id": 2407,
+    "name": "Hulking Mountain Lion",
+    "level": 34,
     "rank": "normal",
-    "from": "wowhead"
+    "from": "wowhead",
+    "step": 501
    },
-   "steps": 3
+   "steps": 7
   },
   "521": {
    "classes": null,
@@ -1074,7 +1081,7 @@
   },
   "530": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 10,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -1088,7 +1095,7 @@
   },
   "546": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 20,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -1103,7 +1110,7 @@
   },
   "547": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 26,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -1117,7 +1124,7 @@
   },
   "549": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 17,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -1131,7 +1138,7 @@
   },
   "550": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 19,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -1146,7 +1153,7 @@
   },
   "562": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 25,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -1161,7 +1168,7 @@
   },
   "564": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -1175,7 +1182,7 @@
   },
   "565": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 29,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -1203,7 +1210,7 @@
   },
   "567": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 19,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -1502,7 +1509,7 @@
   },
   "648": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 43,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -1909,18 +1916,18 @@
   },
   "824": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 23,
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": null,
-    "name": null,
+    "id": 12759,
+    "name": "Tideress",
     "level": 27,
     "rank": "normal",
-    "from": "step-level",
+    "from": "wowhead",
     "step": 1918
    },
-   "steps": 2
+   "steps": 3
   },
   "827": {
    "classes": null,
@@ -1928,18 +1935,18 @@
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": null,
-    "name": null,
-    "level": 30,
+    "id": 12676,
+    "name": "Sharptalon",
+    "level": 31,
     "rank": "normal",
-    "from": "step-level",
+    "from": "wowhead",
     "step": 2
    },
    "steps": 9
   },
   "836": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 43,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -2041,18 +2048,18 @@
   },
   "864": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 38,
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": null,
-    "name": null,
-    "level": 46,
+    "id": 5421,
+    "name": "Glasshide Petrifier",
+    "level": 49,
     "rank": "normal",
-    "from": "step-level",
+    "from": "wowhead",
     "step": 654
    },
-   "steps": 6
+   "steps": 8
   },
   "865": {
    "classes": null,
@@ -2377,7 +2384,7 @@
   },
   "973": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 13,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -2391,7 +2398,7 @@
   },
   "976": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 19,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -2459,7 +2466,7 @@
   },
   "1009": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 20,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -2473,7 +2480,7 @@
   },
   "1012": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 24,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -2509,7 +2516,7 @@
   },
   "1031": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 26,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -2524,7 +2531,7 @@
   },
   "1035": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 20,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -2538,7 +2545,7 @@
   },
   "1046": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 18,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -2553,7 +2560,7 @@
   },
   "1048": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 33,
    "faction": "horde",
    "instance": "Scarlet Monastery",
    "hardest": {
@@ -2567,7 +2574,7 @@
   },
   "1049": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 28,
    "faction": "horde",
    "instance": "Scarlet Monastery",
    "hardest": null,
@@ -2575,7 +2582,7 @@
   },
   "1050": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 28,
    "faction": "alliance",
    "instance": "Scarlet Monastery",
    "hardest": null,
@@ -2583,7 +2590,7 @@
   },
   "1051": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 25,
    "faction": "horde",
    "instance": "Scarlet Monastery",
    "hardest": {
@@ -2597,7 +2604,7 @@
   },
   "1053": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 34,
    "faction": "alliance",
    "instance": "Scarlet Monastery",
    "hardest": {
@@ -2607,11 +2614,11 @@
     "rank": "elite",
     "from": "wowhead"
    },
-   "steps": 3
+   "steps": 4
   },
   "1058": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 20,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -2625,7 +2632,7 @@
   },
   "1059": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 20,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -2636,26 +2643,26 @@
     "from": "wowhead",
     "step": 1057
    },
-   "steps": 2
+   "steps": 3
   },
   "1081": {
    "classes": null,
-   "minLevel": null,
-   "faction": "alliance",
+   "minLevel": 17,
+   "faction": "conflict",
    "instance": null,
    "hardest": {
-    "id": 4030,
-    "name": "Vengeful Ancient",
-    "level": 30,
-    "rank": "rare",
+    "id": 12676,
+    "name": "Sharptalon",
+    "level": 31,
+    "rank": "normal",
     "from": "wowhead",
-    "step": 1084
+    "step": 2
    },
-   "steps": 11
+   "steps": 13
   },
   "1089": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 20,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -2670,7 +2677,7 @@
   },
   "1092": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 17,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -2685,7 +2692,7 @@
   },
   "1096": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 16,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -2696,7 +2703,7 @@
     "from": "step-level",
     "step": 1095
    },
-   "steps": 4
+   "steps": 5
   },
   "1098": {
    "classes": null,
@@ -2737,7 +2744,7 @@
   },
   "1135": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 25,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -2751,7 +2758,7 @@
   },
   "1136": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 26,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -2776,7 +2783,7 @@
     "from": "wowhead",
     "step": 1108
    },
-   "steps": 3
+   "steps": 5
   },
   "1138": {
    "classes": null,
@@ -2794,9 +2801,9 @@
   },
   "1139": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 35,
    "faction": "alliance",
-   "instance": null,
+   "instance": "Uldaman",
    "hardest": {
     "id": 2745,
     "name": "Ambassador Infernus",
@@ -2831,7 +2838,7 @@
   },
   "1164": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 27,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -2845,7 +2852,7 @@
   },
   "1166": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 38,
    "faction": "horde",
    "instance": null,
    "hardest": null,
@@ -2853,7 +2860,7 @@
   },
   "1168": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 37,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -2867,7 +2874,7 @@
   },
   "1169": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 38,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -2881,7 +2888,7 @@
   },
   "1172": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 38,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -2896,7 +2903,7 @@
   },
   "1173": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 38,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -2911,7 +2918,7 @@
   },
   "1177": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 32,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -2925,7 +2932,7 @@
   },
   "1184": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 28,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -2940,7 +2947,7 @@
   },
   "1189": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 29,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -2955,7 +2962,7 @@
   },
   "1197": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 20,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -2998,7 +3005,7 @@
   },
   "1203": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -3013,7 +3020,7 @@
   },
   "1258": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 33,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -3027,7 +3034,7 @@
   },
   "1267": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 28,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -3064,7 +3071,7 @@
   },
   "1358": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 10,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -3093,7 +3100,7 @@
   },
   "1366": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -3108,7 +3115,7 @@
   },
   "1380": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": "conflict",
    "instance": null,
    "hardest": {
@@ -3122,7 +3129,7 @@
   },
   "1381": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": "conflict",
    "instance": null,
    "hardest": {
@@ -3136,7 +3143,7 @@
   },
   "1383": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 37,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -3151,7 +3158,7 @@
   },
   "1387": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -3165,7 +3172,7 @@
   },
   "1393": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -3173,7 +3180,7 @@
   },
   "1394": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 25,
    "faction": "horde",
    "instance": "Scarlet Monastery",
    "hardest": {
@@ -3188,7 +3195,7 @@
   },
   "1427": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 35,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -3203,7 +3210,7 @@
   },
   "1430": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 35,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -3217,7 +3224,7 @@
   },
   "1436": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -3226,13 +3233,13 @@
     "level": 33,
     "rank": "normal",
     "from": "step-level",
-    "step": 1435
+    "step": 1433
    },
-   "steps": 5
+   "steps": 6
   },
   "1440": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -3247,9 +3254,9 @@
   },
   "1445": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 38,
    "faction": "horde",
-   "instance": null,
+   "instance": "The Temple of Atal'hakkar",
    "hardest": {
     "id": 5259,
     "name": "Atal'ai Witch Doctor",
@@ -3261,9 +3268,9 @@
   },
   "1446": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 38,
    "faction": null,
-   "instance": null,
+   "instance": "The Temple of Atal'hakkar",
    "hardest": {
     "id": 5710,
     "name": "Jammal'an the Prophet",
@@ -3275,7 +3282,7 @@
   },
   "1457": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -3290,7 +3297,7 @@
   },
   "1467": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -3305,9 +3312,9 @@
   },
   "1475": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 38,
    "faction": "alliance",
-   "instance": null,
+   "instance": "The Temple of Atal'hakkar",
    "hardest": {
     "id": 5262,
     "name": "Groddoc Thunderer",
@@ -3348,7 +3355,7 @@
   },
   "1488": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 25,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -3379,10 +3386,16 @@
   },
   "1560": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": null,
    "instance": null,
-   "hardest": null,
+   "hardest": {
+    "id": 6015,
+    "name": "Torta",
+    "level": 45,
+    "rank": "normal",
+    "from": "wowhead"
+   },
    "steps": 1
   },
   "2038": {
@@ -3430,9 +3443,9 @@
   },
   "2240": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 35,
    "faction": "alliance",
-   "instance": null,
+   "instance": "Uldaman",
    "hardest": {
     "id": null,
     "name": null,
@@ -3445,9 +3458,9 @@
   },
   "2341": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 37,
    "faction": "horde",
-   "instance": null,
+   "instance": "Uldaman",
    "hardest": {
     "id": 2748,
     "name": "Archaedas",
@@ -3460,9 +3473,9 @@
   },
   "2361": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 37,
    "faction": "alliance",
-   "instance": null,
+   "instance": "Uldaman",
    "hardest": {
     "id": 2748,
     "name": "Archaedas",
@@ -3503,22 +3516,22 @@
   },
   "2701": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 45,
    "faction": "conflict",
    "instance": null,
    "hardest": {
-    "id": null,
-    "name": null,
-    "level": 57,
+    "id": 7572,
+    "name": "Fallen Hero of the Horde",
+    "level": 60,
     "rank": "normal",
-    "from": "step-level",
-    "step": 2702
+    "from": "wowhead",
+    "step": 2801
    },
    "steps": 8
   },
   "2767": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -3533,9 +3546,9 @@
   },
   "2768": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": null,
-   "instance": null,
+   "instance": "Zul'Farrak",
    "hardest": {
     "id": 7604,
     "name": "Sergeant Bly",
@@ -3547,9 +3560,9 @@
   },
   "2770": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
-   "instance": null,
+   "minLevel": 40,
+   "faction": "alliance",
+   "instance": "Zul'Farrak",
    "hardest": {
     "id": 7273,
     "name": "Gahz'rilla",
@@ -3557,11 +3570,11 @@
     "rank": "elite",
     "from": "wowhead"
    },
-   "steps": 1
+   "steps": 2
   },
   "2821": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -3575,7 +3588,7 @@
   },
   "2822": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -3603,7 +3616,7 @@
   },
   "2845": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 44,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -3618,9 +3631,9 @@
   },
   "2846": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": null,
-   "instance": null,
+   "instance": "Zul'Farrak",
    "hardest": {
     "id": 7795,
     "name": "Hydromancer Velratha",
@@ -3628,11 +3641,11 @@
     "rank": "elite",
     "from": "wowhead"
    },
-   "steps": 1
+   "steps": 2
   },
   "2871": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -3647,7 +3660,7 @@
   },
   "2874": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -3662,7 +3675,7 @@
   },
   "2903": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 39,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -3728,9 +3741,9 @@
   },
   "2938": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": "horde",
-   "instance": null,
+   "instance": "Zul'Farrak",
    "hardest": {
     "id": 2707,
     "name": "Shadra",
@@ -3743,7 +3756,7 @@
   },
   "2942": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 42,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -3786,7 +3799,7 @@
   },
   "2972": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 38,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -3801,7 +3814,7 @@
   },
   "2976": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 37,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -3816,7 +3829,7 @@
   },
   "2987": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 38,
    "faction": "horde",
    "instance": null,
    "hardest": null,
@@ -3824,22 +3837,21 @@
   },
   "2994": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": "alliance",
-   "instance": null,
+   "instance": "Zul'Farrak",
    "hardest": {
-    "id": null,
-    "name": null,
-    "level": 48,
-    "rank": "normal",
-    "from": "step-level",
-    "step": 2989
+    "id": 7995,
+    "name": "Vile Priestess Hexx",
+    "level": 51,
+    "rank": "elite",
+    "from": "wowhead"
    },
    "steps": 7
   },
   "3062": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 45,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -3853,7 +3865,7 @@
   },
   "3129": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -3862,13 +3874,13 @@
     "level": 50,
     "rank": "elite",
     "from": "wowhead",
-    "step": 3128
+    "step": 3127
    },
    "steps": 8
   },
   "3161": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 43,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -3906,7 +3918,7 @@
   },
   "3321": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": "conflict",
    "instance": null,
    "hardest": {
@@ -3917,11 +3929,11 @@
     "from": "step-level",
     "step": 2771
    },
-   "steps": 9
+   "steps": 13
   },
   "3341": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 37,
    "faction": "horde",
    "instance": "Razorfen Downs",
    "hardest": {
@@ -3965,15 +3977,15 @@
   },
   "3373": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 48,
    "faction": null,
-   "instance": null,
+   "instance": "The Temple of Atal'hakkar",
    "hardest": null,
    "steps": 1
   },
   "3378": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -3987,7 +3999,7 @@
   },
   "3379": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4001,7 +4013,7 @@
   },
   "3385": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4031,7 +4043,7 @@
   },
   "3463": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4046,7 +4058,7 @@
   },
   "3507": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 44,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -4075,7 +4087,7 @@
   },
   "3525": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 32,
    "faction": null,
    "instance": "Razorfen Downs",
    "hardest": {
@@ -4090,22 +4102,21 @@
   },
   "3528": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": null,
-   "instance": null,
+   "instance": "The Temple of Atal'hakkar",
    "hardest": {
-    "id": null,
-    "name": null,
+    "id": 8443,
+    "name": "Avatar of Hakkar",
     "level": 50,
-    "rank": "normal",
-    "from": "step-level",
-    "step": 4787
+    "rank": "elite",
+    "from": "questie"
    },
    "steps": 4
   },
   "3566": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -4134,7 +4145,7 @@
   },
   "3628": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 45,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4148,7 +4159,7 @@
   },
   "3636": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 39,
    "faction": "alliance",
    "instance": "Razorfen Downs",
    "hardest": {
@@ -4162,7 +4173,7 @@
   },
   "3701": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 50,
    "faction": "alliance",
    "instance": "Blackrock Depths",
    "hardest": {
@@ -4177,15 +4188,22 @@
   },
   "3791": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 47,
    "faction": "alliance",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 6499,
+    "name": "Ironhide Devilsaur",
+    "level": 56,
+    "rank": "elite",
+    "from": "wowhead",
+    "step": 3764
+   },
+   "steps": 9
   },
   "3822": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 48,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -4199,7 +4217,7 @@
   },
   "3825": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 48,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -4214,7 +4232,7 @@
   },
   "3882": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 49,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4228,7 +4246,7 @@
   },
   "3907": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 48,
    "faction": "horde",
    "instance": "Blackrock Depths",
    "hardest": {
@@ -4256,7 +4274,7 @@
   },
   "3962": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 47,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4270,7 +4288,7 @@
   },
   "4004": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 48,
    "faction": "horde",
    "instance": "Blackrock Depths",
    "hardest": {
@@ -4286,21 +4304,20 @@
   "4024": {
    "classes": null,
    "minLevel": null,
-   "faction": null,
+   "faction": "horde",
    "instance": "Blackrock Depths",
    "hardest": {
-    "id": 9461,
-    "name": "Frenzied Black Drake",
+    "id": 9016,
+    "name": "Bael'Gar",
     "level": 54,
     "rank": "elite",
-    "from": "wowhead",
-    "step": 4022
+    "from": "wowhead"
    },
-   "steps": 8
+   "steps": 14
   },
   "4063": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 52,
    "faction": "horde",
    "instance": "Blackrock Depths",
    "hardest": {
@@ -4314,7 +4331,7 @@
   },
   "4126": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 50,
    "faction": "alliance",
    "instance": "Blackrock Depths",
    "hardest": {
@@ -4328,7 +4345,7 @@
   },
   "4132": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 52,
    "faction": "horde",
    "instance": "Blackrock Depths",
    "hardest": {
@@ -4343,7 +4360,7 @@
   },
   "4134": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 50,
    "faction": "horde",
    "instance": "Blackrock Depths",
    "hardest": {
@@ -4357,7 +4374,7 @@
   },
   "4136": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 48,
    "faction": null,
    "instance": "Blackrock Depths",
    "hardest": {
@@ -4371,7 +4388,7 @@
   },
   "4201": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 50,
    "faction": null,
    "instance": "Blackrock Depths",
    "hardest": {
@@ -4389,33 +4406,33 @@
    "faction": "alliance",
    "instance": "Blackrock Depths",
    "hardest": {
-    "id": null,
-    "name": null,
-    "level": 54,
+    "id": 1749,
+    "name": "Lady Katrana Prestor",
+    "level": 62,
     "rank": "normal",
-    "from": "step-level",
-    "step": 4241
+    "from": "wowhead",
+    "step": 4185
    },
    "steps": 7
   },
   "4261": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 49,
    "faction": "alliance",
    "instance": null,
    "hardest": {
-    "id": null,
-    "name": null,
-    "level": 54,
+    "id": 10648,
+    "name": "Xavaric",
+    "level": 55,
     "rank": "normal",
-    "from": "step-level",
-    "step": 4442
+    "from": "wowhead",
+    "step": 4906
    },
-   "steps": 4
+   "steps": 6
   },
   "4263": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 48,
    "faction": "alliance",
    "instance": "Blackrock Depths",
    "hardest": {
@@ -4429,7 +4446,7 @@
   },
   "4266": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -4444,7 +4461,7 @@
   },
   "4292": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 48,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4458,7 +4475,7 @@
   },
   "4300": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 48,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -4472,7 +4489,7 @@
   },
   "4301": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 50,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4486,7 +4503,7 @@
   },
   "4322": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 50,
    "faction": "alliance",
    "instance": "Blackrock Depths",
    "hardest": {
@@ -4501,7 +4518,7 @@
   },
   "4363": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 50,
    "faction": "alliance",
    "instance": "Blackrock Depths",
    "hardest": {
@@ -4512,11 +4529,11 @@
     "from": "wowhead",
     "step": 4362
    },
-   "steps": 6
+   "steps": 7
   },
   "4450": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 43,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4530,7 +4547,7 @@
   },
   "4491": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 50,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4545,7 +4562,7 @@
   },
   "4501": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 49,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4559,7 +4576,7 @@
   },
   "4503": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 49,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4574,7 +4591,7 @@
   "4510": {
    "classes": null,
    "minLevel": 50,
-   "faction": "alliance",
+   "faction": "conflict",
    "instance": null,
    "hardest": {
     "id": 6499,
@@ -4584,12 +4601,12 @@
     "from": "wowhead",
     "step": 4496
    },
-   "steps": 4
+   "steps": 9
   },
   "4511": {
    "classes": null,
-   "minLevel": null,
-   "faction": "horde",
+   "minLevel": 50,
+   "faction": "conflict",
    "instance": null,
    "hardest": {
     "id": 6499,
@@ -4599,7 +4616,7 @@
     "from": "wowhead",
     "step": 4496
    },
-   "steps": 4
+   "steps": 9
   },
   "4513": {
    "classes": null,
@@ -4617,7 +4634,7 @@
   },
   "4642": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 48,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -4647,7 +4664,7 @@
   },
   "4701": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": "alliance",
    "instance": "Blackrock Spire",
    "hardest": {
@@ -4661,7 +4678,7 @@
   },
   "4724": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": "horde",
    "instance": "Blackrock Spire",
    "hardest": {
@@ -4689,16 +4706,15 @@
   },
   "4743": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 57,
    "faction": null,
    "instance": "Blackrock Spire",
    "hardest": {
-    "id": 9568,
-    "name": "Overlord Wyrmthalak",
-    "level": 60,
+    "id": 10321,
+    "name": "Emberstrife",
+    "level": 61,
     "rank": "elite",
-    "from": "wowhead",
-    "step": 4742
+    "from": "wowhead"
    },
    "steps": 2
   },
@@ -4718,7 +4734,7 @@
   },
   "4765": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 57,
    "faction": "alliance",
    "instance": "Blackrock Spire",
    "hardest": {
@@ -4733,7 +4749,7 @@
   },
   "4768": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 57,
    "faction": "horde",
    "instance": "Blackrock Spire",
    "hardest": {
@@ -4748,7 +4764,7 @@
   },
   "4771": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 57,
    "faction": null,
    "instance": "Scholomance",
    "hardest": {
@@ -4758,11 +4774,11 @@
     "rank": "elite",
     "from": "wowhead"
    },
-   "steps": 7
+   "steps": 8
   },
   "4810": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 50,
    "faction": null,
    "instance": "Blackrock Spire",
    "hardest": {
@@ -4792,7 +4808,7 @@
   },
   "4842": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 51,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4807,15 +4823,21 @@
   },
   "4866": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
    "instance": "Blackrock Spire",
-   "hardest": null,
+   "hardest": {
+    "id": 10596,
+    "name": "Mother Smolderweb",
+    "level": 59,
+    "rank": "elite",
+    "from": "wowhead"
+   },
    "steps": 1
   },
   "4867": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
    "instance": "Blackrock Spire",
    "hardest": {
@@ -4829,7 +4851,7 @@
   },
   "4883": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 52,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -4840,7 +4862,7 @@
     "from": "step-level",
     "step": 4882
    },
-   "steps": 2
+   "steps": 4
   },
   "4902": {
    "classes": null,
@@ -4859,7 +4881,7 @@
   },
   "4903": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": "horde",
    "instance": "Blackrock Spire",
    "hardest": {
@@ -4873,7 +4895,7 @@
   },
   "4904": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 25,
    "faction": "horde",
    "instance": null,
    "hardest": null,
@@ -4881,7 +4903,7 @@
   },
   "4906": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 49,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -4895,22 +4917,22 @@
   },
   "4966": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 23,
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": null,
-    "name": null,
-    "level": 28,
+    "id": 10617,
+    "name": "Galak Messenger",
+    "level": 26,
     "rank": "normal",
-    "from": "step-level",
+    "from": "wowhead",
     "step": 4881
    },
    "steps": 2
   },
   "4971": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 53,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -4924,7 +4946,7 @@
   },
   "4974": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": "horde",
    "instance": "Blackrock Spire",
    "hardest": {
@@ -4938,7 +4960,7 @@
   },
   "4983": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": "horde",
    "instance": "Blackrock Spire",
    "hardest": {
@@ -4983,7 +5005,7 @@
   },
   "5051": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 50,
    "faction": "conflict",
    "instance": null,
    "hardest": {
@@ -4998,7 +5020,7 @@
   },
   "5056": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 53,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5012,7 +5034,7 @@
   },
   "5057": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 53,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5027,7 +5049,7 @@
   },
   "5060": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 52,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -5041,21 +5063,22 @@
   },
   "5063": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 57,
    "faction": null,
    "instance": "Blackrock Spire",
    "hardest": {
-    "id": 10417,
-    "name": "Venom Belcher",
-    "level": 61,
-    "rank": "elite",
-    "from": "wowhead"
+    "id": 10430,
+    "name": "The Beast",
+    "level": 62,
+    "rank": "boss",
+    "from": "questie",
+    "step": 5047
    },
    "steps": 2
   },
   "5064": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 24,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5070,35 +5093,37 @@
   },
   "5067": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 57,
    "faction": null,
    "instance": "Blackrock Spire",
    "hardest": {
-    "id": 10417,
-    "name": "Venom Belcher",
-    "level": 61,
-    "rank": "elite",
-    "from": "wowhead"
+    "id": 10430,
+    "name": "The Beast",
+    "level": 62,
+    "rank": "boss",
+    "from": "questie",
+    "step": 5047
    },
    "steps": 2
   },
   "5068": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 57,
    "faction": null,
    "instance": "Blackrock Spire",
    "hardest": {
-    "id": 10417,
-    "name": "Venom Belcher",
-    "level": 61,
-    "rank": "elite",
-    "from": "wowhead"
+    "id": 10430,
+    "name": "The Beast",
+    "level": 62,
+    "rank": "boss",
+    "from": "questie",
+    "step": 5047
    },
    "steps": 2
   },
   "5081": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": "alliance",
    "instance": "Blackrock Spire",
    "hardest": {
@@ -5112,7 +5137,7 @@
   },
   "5088": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 24,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5126,7 +5151,7 @@
   },
   "5102": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": "alliance",
    "instance": "Blackrock Spire",
    "hardest": {
@@ -5140,7 +5165,7 @@
   },
   "5121": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 52,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -5156,7 +5181,7 @@
    "classes": null,
    "minLevel": null,
    "faction": null,
-   "instance": null,
+   "instance": "Stratholme",
    "hardest": {
     "id": null,
     "name": null,
@@ -5169,7 +5194,7 @@
   },
   "5147": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 25,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5183,7 +5208,7 @@
   },
   "5151": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 24,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5197,7 +5222,7 @@
   },
   "5167": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 57,
    "faction": null,
    "instance": "Blackrock Spire",
    "hardest": {
@@ -5211,9 +5236,9 @@
   },
   "5213": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
-   "instance": null,
+   "instance": "Stratholme",
    "hardest": {
     "id": 10406,
     "name": "Ghoul Ravener",
@@ -5226,9 +5251,9 @@
   },
   "5214": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
-   "instance": null,
+   "instance": "Stratholme",
    "hardest": {
     "id": 11058,
     "name": "Ezra Grimm",
@@ -5241,7 +5266,7 @@
   "5237": {
    "classes": null,
    "minLevel": null,
-   "faction": "horde",
+   "faction": "conflict",
    "instance": null,
    "hardest": {
     "id": null,
@@ -5251,12 +5276,12 @@
     "from": "step-level",
     "step": 5236
    },
-   "steps": 7
+   "steps": 13
   },
   "5238": {
    "classes": null,
    "minLevel": null,
-   "faction": "alliance",
+   "faction": "conflict",
    "instance": null,
    "hardest": {
     "id": null,
@@ -5266,11 +5291,11 @@
     "from": "step-level",
     "step": 5226
    },
-   "steps": 7
+   "steps": 13
   },
   "5242": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 48,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -5284,15 +5309,15 @@
   },
   "5243": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
-   "instance": null,
+   "instance": "Stratholme",
    "hardest": null,
    "steps": 1
   },
   "5253": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 53,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -5307,9 +5332,9 @@
   },
   "5265": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
-   "instance": null,
+   "instance": "Stratholme",
    "hardest": {
     "id": 10440,
     "name": "Baron Rivendare",
@@ -5322,9 +5347,9 @@
   },
   "5282": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
-   "instance": null,
+   "instance": "Stratholme",
    "hardest": {
     "id": null,
     "name": null,
@@ -5351,7 +5376,7 @@
   },
   "5342": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 52,
    "faction": "horde",
    "instance": "Scholomance",
    "hardest": {
@@ -5365,7 +5390,7 @@
   },
   "5344": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 52,
    "faction": "alliance",
    "instance": "Scholomance",
    "hardest": {
@@ -5379,7 +5404,7 @@
   },
   "5384": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
    "instance": "Scholomance",
    "hardest": {
@@ -5394,22 +5419,22 @@
   },
   "5385": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 49,
    "faction": null,
    "instance": null,
    "hardest": {
-    "id": 9518,
-    "name": "Rakaiah",
-    "level": 56,
+    "id": 9862,
+    "name": "Jaedenar Legionnaire",
+    "level": 60,
     "rank": "normal",
     "from": "wowhead",
-    "step": 5204
+    "step": 5202
    },
    "steps": 4
   },
   "5466": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 57,
    "faction": null,
    "instance": "Scholomance",
    "hardest": {
@@ -5423,7 +5448,7 @@
   },
   "5501": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 33,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -5446,7 +5471,7 @@
   },
   "5561": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -5460,7 +5485,7 @@
   },
   "5581": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 32,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5507,18 +5532,18 @@
    "faction": "horde",
    "instance": "Ragefire Chasm",
    "hardest": {
-    "id": 11518,
-    "name": "Jergosh the Invoker",
-    "level": 16,
-    "rank": "elite",
+    "id": 3216,
+    "name": "Neeru Fireblade",
+    "level": 37,
+    "rank": "normal",
     "from": "wowhead",
-    "step": 5728
+    "step": 5727
    },
    "steps": 5
   },
   "5821": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -5526,7 +5551,7 @@
   },
   "5863": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 44,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -5540,7 +5565,7 @@
   },
   "5942": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 50,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -5555,7 +5580,7 @@
   },
   "5943": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 32,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -5563,9 +5588,9 @@
   },
   "5944": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 52,
    "faction": null,
-   "instance": null,
+   "instance": "Stratholme",
    "hardest": {
     "id": null,
     "name": null,
@@ -5578,7 +5603,7 @@
   },
   "6024": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 54,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -5592,7 +5617,7 @@
   },
   "6027": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -5606,7 +5631,7 @@
   },
   "6031": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -5620,7 +5645,7 @@
   },
   "6041": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 54,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -5635,7 +5660,7 @@
   },
   "6134": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 34,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -5649,7 +5674,7 @@
   },
   "6135": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 56,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5659,11 +5684,11 @@
     "rank": "elite",
     "from": "wowhead"
    },
-   "steps": 2
+   "steps": 4
   },
   "6136": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 56,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5673,11 +5698,11 @@
     "rank": "elite",
     "from": "wowhead"
    },
-   "steps": 1
+   "steps": 2
   },
   "6142": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 31,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5691,21 +5716,22 @@
   },
   "6148": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 56,
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": 12339,
-    "name": "Demetria",
+    "id": 11896,
+    "name": "Borelgore",
     "level": 61,
     "rank": "elite",
-    "from": "wowhead"
+    "from": "wowhead",
+    "step": 6136
    },
-   "steps": 5
+   "steps": 10
   },
   "6161": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -5719,9 +5745,9 @@
   },
   "6163": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": "horde",
-   "instance": null,
+   "instance": "Stratholme",
    "hardest": {
     "id": 10439,
     "name": "Ramstein the Gorger",
@@ -5729,7 +5755,7 @@
     "rank": "elite",
     "from": "wowhead"
    },
-   "steps": 3
+   "steps": 5
   },
   "6187": {
    "classes": null,
@@ -5747,7 +5773,7 @@
   },
   "6283": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 18,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5761,7 +5787,7 @@
   },
   "6284": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 15,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5775,7 +5801,7 @@
   },
   "6381": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 17,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5790,7 +5816,7 @@
   },
   "6481": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 14,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5804,7 +5830,7 @@
   },
   "6502": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 50,
    "faction": "alliance",
    "instance": "Blackrock Spire",
    "hardest": {
@@ -5818,7 +5844,7 @@
   },
   "6504": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 23,
    "faction": "horde",
    "instance": null,
    "hardest": null,
@@ -5826,7 +5852,7 @@
   },
   "6521": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 28,
    "faction": "horde",
    "instance": "Razorfen Downs",
    "hardest": {
@@ -5840,7 +5866,7 @@
   },
   "6544": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 20,
    "faction": "horde",
    "instance": null,
    "hardest": null,
@@ -5876,7 +5902,7 @@
   },
   "6571": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 22,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5890,7 +5916,7 @@
   },
   "6602": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": "horde",
    "instance": "Blackrock Spire",
    "hardest": {
@@ -5904,7 +5930,7 @@
   },
   "6621": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 21,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5918,7 +5944,7 @@
   },
   "6641": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 20,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -5932,7 +5958,7 @@
   },
   "6845": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 54,
    "faction": "conflict",
    "instance": null,
    "hardest": {
@@ -5943,7 +5969,7 @@
     "from": "step-level",
     "step": 6844
    },
-   "steps": 8
+   "steps": 11
   },
   "6922": {
    "classes": null,
@@ -5955,7 +5981,7 @@
   },
   "7028": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 41,
    "faction": null,
    "instance": "Maraudon",
    "hardest": {
@@ -6025,10 +6051,16 @@
   },
   "7067": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 39,
    "faction": null,
    "instance": "Maraudon",
-   "hardest": null,
+   "hardest": {
+    "id": 12242,
+    "name": "Spirit of Maraudos",
+    "level": 46,
+    "rank": "elite",
+    "from": "wowhead"
+   },
    "steps": 1
   },
   "7068": {
@@ -6241,7 +6273,7 @@
   },
   "7201": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 50,
    "faction": "horde",
    "instance": "Blackrock Depths",
    "hardest": {
@@ -6251,7 +6283,7 @@
     "rank": "elite",
     "from": "wowhead"
    },
-   "steps": 1
+   "steps": 2
   },
   "7441": {
    "classes": null,
@@ -6284,7 +6316,7 @@
   },
   "7486": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
    "instance": "Molten Core",
    "hardest": {
@@ -6367,7 +6399,7 @@
   },
   "7541": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -6382,7 +6414,7 @@
   },
   "7701": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 45,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -6418,7 +6450,7 @@
   },
   "7721": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 45,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -6432,7 +6464,7 @@
   },
   "7724": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 45,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -6446,7 +6478,7 @@
   },
   "7727": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 45,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -6460,7 +6492,7 @@
   },
   "7728": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 45,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -6474,7 +6506,7 @@
   },
   "7732": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 39,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -6489,7 +6521,7 @@
   },
   "7733": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": "alliance",
    "instance": null,
    "hardest": {
@@ -6503,7 +6535,7 @@
   },
   "7734": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -6519,13 +6551,13 @@
    "classes": null,
    "minLevel": null,
    "faction": "alliance",
-   "instance": null,
+   "instance": "Blackwing Lair",
    "hardest": {
-    "id": null,
-    "name": null,
-    "level": 60,
-    "rank": "normal",
-    "from": "step-level",
+    "id": 10162,
+    "name": "Lord Victor Nefarius",
+    "level": 63,
+    "rank": "boss",
+    "from": "questie",
     "step": 7781
    },
    "steps": 2
@@ -6534,13 +6566,13 @@
    "classes": null,
    "minLevel": null,
    "faction": "horde",
-   "instance": null,
+   "instance": "Blackwing Lair",
    "hardest": {
-    "id": null,
-    "name": null,
-    "level": 60,
-    "rank": "normal",
-    "from": "step-level",
+    "id": 10162,
+    "name": "Lord Victor Nefarius",
+    "level": 63,
+    "rank": "boss",
+    "from": "questie",
     "step": 7783
    },
    "steps": 2
@@ -6562,7 +6594,7 @@
   },
   "7843": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 44,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -6577,7 +6609,7 @@
   },
   "7847": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 46,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -6592,7 +6624,7 @@
   },
   "7849": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 46,
    "faction": "horde",
    "instance": null,
    "hardest": null,
@@ -6600,7 +6632,7 @@
   },
   "7861": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 46,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -6614,7 +6646,7 @@
   },
   "7862": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 46,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -6693,7 +6725,7 @@
    "classes": null,
    "minLevel": null,
    "faction": null,
-   "instance": null,
+   "instance": "Zul'Gurub",
    "hardest": {
     "id": 11380,
     "name": "Jin'do the Hexxer",
@@ -6707,7 +6739,7 @@
    "classes": null,
    "minLevel": null,
    "faction": null,
-   "instance": null,
+   "instance": "Zul'Gurub",
    "hardest": {
     "id": 11380,
     "name": "Jin'do the Hexxer",
@@ -6721,7 +6753,7 @@
    "classes": null,
    "minLevel": null,
    "faction": null,
-   "instance": null,
+   "instance": "Zul'Gurub",
    "hardest": {
     "id": 11380,
     "name": "Jin'do the Hexxer",
@@ -6735,7 +6767,7 @@
    "classes": null,
    "minLevel": null,
    "faction": "horde",
-   "instance": null,
+   "instance": "Zul'Gurub",
    "hardest": null,
    "steps": 1
   },
@@ -6743,7 +6775,7 @@
    "classes": null,
    "minLevel": null,
    "faction": "horde",
-   "instance": null,
+   "instance": "Zul'Gurub",
    "hardest": {
     "id": null,
     "name": null,
@@ -6758,7 +6790,7 @@
    "classes": null,
    "minLevel": null,
    "faction": "horde",
-   "instance": null,
+   "instance": "Zul'Gurub",
    "hardest": {
     "id": null,
     "name": null,
@@ -6773,7 +6805,7 @@
    "classes": null,
    "minLevel": null,
    "faction": "horde",
-   "instance": null,
+   "instance": "Zul'Gurub",
    "hardest": {
     "id": null,
     "name": null,
@@ -6786,7 +6818,7 @@
   },
   "8181": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": null,
    "instance": "Blackrock Spire",
    "hardest": {
@@ -6801,9 +6833,9 @@
   },
   "8183": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 58,
    "faction": null,
-   "instance": null,
+   "instance": "Zul'Gurub",
    "hardest": null,
    "steps": 1
   },
@@ -6817,9 +6849,9 @@
   },
   "8201": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 58,
    "faction": null,
-   "instance": null,
+   "instance": "Zul'Gurub",
    "hardest": null,
    "steps": 1
   },
@@ -6840,8 +6872,10 @@
    "steps": 1
   },
   "8258": {
-   "classes": null,
-   "minLevel": null,
+   "classes": [
+    "SHAMAN"
+   ],
+   "minLevel": 55,
    "faction": "horde",
    "instance": "Scholomance",
    "hardest": {
@@ -6886,7 +6920,7 @@
   },
   "8273": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 42,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -6901,7 +6935,7 @@
   },
   "8283": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 54,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -6915,7 +6949,7 @@
   },
   "8306": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 58,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -6929,15 +6963,21 @@
   },
   "8308": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 58,
    "faction": null,
    "instance": null,
-   "hardest": null,
+   "hardest": {
+    "id": 11730,
+    "name": "Hive'Regal Ambusher",
+    "level": 60,
+    "rank": "elite",
+    "from": "wowhead"
+   },
    "steps": 1
   },
   "8321": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -6951,7 +6991,7 @@
   },
   "8366": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 40,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -6964,8 +7004,10 @@
    "steps": 1
   },
   "8380": {
-   "classes": null,
-   "minLevel": null,
+   "classes": [
+    "SHAMAN"
+   ],
+   "minLevel": 58,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -6979,10 +7021,12 @@
    "steps": 6
   },
   "8413": {
-   "classes": null,
-   "minLevel": null,
+   "classes": [
+    "SHAMAN"
+   ],
+   "minLevel": 50,
    "faction": "horde",
-   "instance": null,
+   "instance": "The Temple of Atal'hakkar",
    "hardest": {
     "id": 1816,
     "name": "Diseased Grizzly",
@@ -6995,7 +7039,7 @@
   },
   "8447": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -7010,7 +7054,7 @@
   },
   "8460": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 45,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -7024,7 +7068,7 @@
   },
   "8461": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 45,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -7038,7 +7082,7 @@
   },
   "8464": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 45,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -7052,19 +7096,32 @@
   },
   "8481": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 45,
    "faction": null,
    "instance": null,
-   "hardest": null,
+   "hardest": {
+    "id": 15623,
+    "name": "Xandivious",
+    "level": 62,
+    "rank": "elite",
+    "from": "wowhead"
+   },
    "steps": 1
   },
   "8548": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 54,
    "faction": null,
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 60,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 8800
+   },
+   "steps": 2
   },
   "8551": {
    "classes": null,
@@ -7096,23 +7153,37 @@
   },
   "8572": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 54,
    "faction": null,
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 60,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 8800
+   },
+   "steps": 2
   },
   "8573": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 54,
    "faction": null,
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 60,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 8800
+   },
+   "steps": 2
   },
   "8574": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 54,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -7129,7 +7200,7 @@
    "classes": null,
    "minLevel": null,
    "faction": "horde",
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": 15263,
     "name": "The Prophet Skeram",
@@ -7142,7 +7213,7 @@
   },
   "8620": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -7153,13 +7224,13 @@
     "from": "wowhead",
     "step": 8606
    },
-   "steps": 6
+   "steps": 8
   },
   "8621": {
    "classes": null,
    "minLevel": null,
    "faction": "horde",
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": 15263,
     "name": "The Prophet Skeram",
@@ -7174,7 +7245,7 @@
    "classes": null,
    "minLevel": null,
    "faction": "horde",
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": 15263,
     "name": "The Prophet Skeram",
@@ -7189,7 +7260,7 @@
    "classes": null,
    "minLevel": null,
    "faction": "horde",
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": 15263,
     "name": "The Prophet Skeram",
@@ -7204,7 +7275,7 @@
    "classes": null,
    "minLevel": null,
    "faction": "horde",
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": 15263,
     "name": "The Prophet Skeram",
@@ -7216,10 +7287,12 @@
    "steps": 2
   },
   "8690": {
-   "classes": null,
+   "classes": [
+    "SHAMAN"
+   ],
    "minLevel": null,
    "faction": "horde",
-   "instance": null,
+   "instance": "Ruins of Ahn'Qiraj",
    "hardest": {
     "id": 15341,
     "name": "General Rajaxx",
@@ -7230,10 +7303,12 @@
    "steps": 1
   },
   "8698": {
-   "classes": null,
+   "classes": [
+    "SHAMAN"
+   ],
    "minLevel": null,
    "faction": "horde",
-   "instance": null,
+   "instance": "Ruins of Ahn'Qiraj",
    "hardest": {
     "id": 15339,
     "name": "Ossirian the Unscarred",
@@ -7244,10 +7319,12 @@
    "steps": 1
   },
   "8706": {
-   "classes": null,
+   "classes": [
+    "SHAMAN"
+   ],
    "minLevel": null,
    "faction": "horde",
-   "instance": null,
+   "instance": "Ruins of Ahn'Qiraj",
    "hardest": {
     "id": 15339,
     "name": "Ossirian the Unscarred",
@@ -7259,21 +7336,22 @@
   },
   "8729": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
    "instance": null,
    "hardest": {
-    "id": 15571,
-    "name": "Maws",
+    "id": 11502,
+    "name": "Ragnaros",
     "level": 63,
     "rank": "boss",
-    "from": "questie"
+    "from": "questie",
+    "step": 8578
    },
-   "steps": 7
+   "steps": 14
   },
   "8730": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -7287,7 +7365,7 @@
   },
   "8736": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -7298,36 +7376,36 @@
     "from": "questie",
     "step": 8735
    },
-   "steps": 4
+   "steps": 7
   },
   "8745": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
    "instance": null,
    "hardest": {
-    "id": 11583,
-    "name": "Nefarian",
+    "id": 11502,
+    "name": "Ragnaros",
     "level": 63,
     "rank": "boss",
     "from": "questie",
-    "step": 8730
+    "step": 8578
    },
-   "steps": 17
+   "steps": 23
   },
   "8747": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": null,
    "steps": 1
   },
   "8748": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": null,
     "name": null,
@@ -7340,9 +7418,9 @@
   },
   "8749": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": null,
     "name": null,
@@ -7355,9 +7433,9 @@
   },
   "8750": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": null,
     "name": null,
@@ -7370,9 +7448,9 @@
   },
   "8751": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": null,
     "name": null,
@@ -7385,17 +7463,17 @@
   },
   "8752": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": null,
    "steps": 1
   },
   "8753": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": null,
     "name": null,
@@ -7408,9 +7486,9 @@
   },
   "8754": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": null,
     "name": null,
@@ -7423,9 +7501,9 @@
   },
   "8755": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": null,
     "name": null,
@@ -7438,9 +7516,9 @@
   },
   "8756": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": null,
     "name": null,
@@ -7453,17 +7531,17 @@
   },
   "8757": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": null,
    "steps": 1
   },
   "8758": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": null,
     "name": null,
@@ -7476,9 +7554,9 @@
   },
   "8759": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": null,
     "name": null,
@@ -7491,9 +7569,9 @@
   },
   "8760": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": null,
     "name": null,
@@ -7506,9 +7584,9 @@
   },
   "8761": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": null,
     "name": null,
@@ -7521,9 +7599,9 @@
   },
   "8764": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": 15235,
     "name": "Vekniss Stinger",
@@ -7531,13 +7609,13 @@
     "rank": "elite",
     "from": "wowhead"
    },
-   "steps": 1
+   "steps": 6
   },
   "8765": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": 15235,
     "name": "Vekniss Stinger",
@@ -7545,13 +7623,13 @@
     "rank": "elite",
     "from": "wowhead"
    },
-   "steps": 1
+   "steps": 6
   },
   "8766": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": 15235,
     "name": "Vekniss Stinger",
@@ -7559,13 +7637,13 @@
     "rank": "elite",
     "from": "wowhead"
    },
-   "steps": 1
+   "steps": 6
   },
   "8789": {
    "classes": null,
    "minLevel": null,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": 13996,
     "name": "Blackwing Technician",
@@ -7579,7 +7657,7 @@
    "classes": null,
    "minLevel": null,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
     "id": 13996,
     "name": "Blackwing Technician",
@@ -7591,23 +7669,29 @@
   },
   "8791": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
-   "hardest": null,
+   "instance": "Ruins of Ahn'Qiraj",
+   "hardest": {
+    "id": 15339,
+    "name": "Ossirian the Unscarred",
+    "level": 63,
+    "rank": "boss",
+    "from": "questie"
+   },
    "steps": 1
   },
   "8802": {
    "classes": null,
    "minLevel": null,
    "faction": null,
-   "instance": null,
+   "instance": "Temple of Ahn'Qiraj",
    "hardest": {
-    "id": null,
-    "name": null,
-    "level": 60,
-    "rank": "normal",
-    "from": "step-level",
+    "id": 15727,
+    "name": "C'Thun",
+    "level": 63,
+    "rank": "boss",
+    "from": "questie",
     "step": 8801
    },
    "steps": 2
@@ -7653,7 +7737,7 @@
     "from": "wowhead",
     "step": 8932
    },
-   "steps": 41
+   "steps": 25
   },
   "8957": {
    "classes": null,
@@ -7686,7 +7770,7 @@
   },
   "9023": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -7700,9 +7784,9 @@
   },
   "9068": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Naxxramas",
    "hardest": {
     "id": 16021,
     "name": "Living Monstrosity",
@@ -7715,9 +7799,9 @@
   },
   "9069": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Naxxramas",
    "hardest": {
     "id": 16021,
     "name": "Living Monstrosity",
@@ -7730,9 +7814,9 @@
   },
   "9070": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Naxxramas",
    "hardest": {
     "id": 16021,
     "name": "Living Monstrosity",
@@ -7745,9 +7829,9 @@
   },
   "9071": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Naxxramas",
    "hardest": {
     "id": 15931,
     "name": "Grobbulus",
@@ -7759,9 +7843,9 @@
   },
   "9072": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Naxxramas",
    "hardest": {
     "id": 15932,
     "name": "Gluth",
@@ -7773,9 +7857,9 @@
   },
   "9073": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Naxxramas",
    "hardest": {
     "id": 16021,
     "name": "Living Monstrosity",
@@ -7788,9 +7872,9 @@
   },
   "9074": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Naxxramas",
    "hardest": {
     "id": 15932,
     "name": "Gluth",
@@ -7802,9 +7886,9 @@
   },
   "9075": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Naxxramas",
    "hardest": {
     "id": 15932,
     "name": "Gluth",
@@ -7830,15 +7914,15 @@
   },
   "9120": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Naxxramas",
    "hardest": null,
    "steps": 1
   },
   "9221": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -7846,7 +7930,7 @@
   },
   "9222": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -7854,7 +7938,7 @@
   },
   "9223": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -7862,7 +7946,7 @@
   },
   "9224": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -7870,7 +7954,7 @@
   },
   "9225": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -7878,7 +7962,7 @@
   },
   "9226": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -7886,7 +7970,7 @@
   },
   "9227": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -7894,7 +7978,7 @@
   },
   "9228": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 55,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -7902,36 +7986,37 @@
   },
   "9230": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Naxxramas",
    "hardest": {
-    "id": 15974,
-    "name": "Dread Creeper",
-    "level": 61,
+    "id": 16021,
+    "name": "Living Monstrosity",
+    "level": 62,
     "rank": "elite",
     "from": "wowhead",
-    "step": 9229
+    "step": 9033
    },
-   "steps": 2
+   "steps": 6
   },
   "9232": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 60,
    "faction": null,
-   "instance": null,
+   "instance": "Naxxramas",
    "hardest": {
-    "id": 1883,
-    "name": "Scarlet Worker",
-    "level": 57,
-    "rank": "normal",
-    "from": "wowhead"
+    "id": 16021,
+    "name": "Living Monstrosity",
+    "level": 62,
+    "rank": "elite",
+    "from": "wowhead",
+    "step": 9033
    },
-   "steps": 1
+   "steps": 5
   },
   "9248": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 58,
    "faction": null,
    "instance": null,
    "hardest": {
@@ -7981,11 +8066,11 @@
    "faction": null,
    "instance": null,
    "hardest": {
-    "id": null,
-    "name": null,
+    "id": 216474,
+    "name": "Ravaging Tempest",
     "level": 40,
-    "rank": "normal",
-    "from": "step-level",
+    "rank": "elite",
+    "from": "wowhead",
     "step": 96135
    },
    "steps": 5
@@ -8008,10 +8093,16 @@
   },
   "86576": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 18,
+   "faction": "horde",
    "instance": null,
-   "hardest": null,
+   "hardest": {
+    "id": 4023,
+    "name": "Bloodfury Roguefeather",
+    "level": 26,
+    "rank": "normal",
+    "from": "wowhead"
+   },
    "steps": 1
   },
   "86585": {
@@ -8052,11 +8143,18 @@
   },
   "88758": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 28,
+   "faction": "alliance",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 33,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 88757
+   },
+   "steps": 3
   },
   "91285": {
    "classes": [
@@ -8284,11 +8382,18 @@
   },
   "92873": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 35,
+   "faction": "conflict",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 11559,
+    "name": "Outcast Necromancer",
+    "level": 40,
+    "rank": "normal",
+    "from": "wowhead",
+    "step": 92846
+   },
+   "steps": 9
   },
   "92880": {
    "classes": null,
@@ -8307,16 +8412,23 @@
   },
   "93045": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 35,
+   "faction": "horde",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 11559,
+    "name": "Outcast Necromancer",
+    "level": 40,
+    "rank": "normal",
+    "from": "wowhead",
+    "step": 93037
+   },
+   "steps": 8
   },
   "93128": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 35,
+   "faction": "horde",
    "instance": null,
    "hardest": {
     "id": 5601,
@@ -8325,7 +8437,7 @@
     "rank": "normal",
     "from": "wowhead"
    },
-   "steps": 1
+   "steps": 4
   },
   "93165": {
    "classes": null,
@@ -8345,11 +8457,18 @@
   },
   "93196": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 35,
+   "faction": "alliance",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 253524,
+    "name": "Bristleback Nomad",
+    "level": 43,
+    "rank": "normal",
+    "from": "wowhead",
+    "step": 93066
+   },
+   "steps": 9
   },
   "93318": {
    "classes": null,
@@ -8455,10 +8574,10 @@
     "SHAMAN"
    ],
    "minLevel": 10,
-   "faction": "alliance",
+   "faction": null,
    "instance": null,
    "hardest": null,
-   "steps": 4
+   "steps": 5
   },
   "95161": {
    "classes": null,
@@ -8513,15 +8632,15 @@
   },
   "95508": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 14,
+   "faction": "horde",
    "instance": null,
    "hardest": null,
    "steps": 1
   },
   "95534": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 25,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -8602,17 +8721,18 @@
   },
   "95885": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 20,
+   "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": 212753,
-    "name": "Tortured Soul",
-    "level": 20,
-    "rank": "elite",
-    "from": "wowhead"
+    "id": 1973,
+    "name": "Ravenclaw Guardian",
+    "level": 21,
+    "rank": "normal",
+    "from": "wowhead",
+    "step": 95883
    },
-   "steps": 1
+   "steps": 3
   },
   "95981": {
    "classes": null,
@@ -8643,16 +8763,18 @@
    "steps": 1
   },
   "96016": {
-   "classes": null,
-   "minLevel": null,
+   "classes": [
+    "SHAMAN"
+   ],
+   "minLevel": 30,
    "faction": null,
    "instance": null,
    "hardest": {
-    "id": null,
-    "name": null,
+    "id": 216474,
+    "name": "Ravaging Tempest",
     "level": 40,
-    "rank": "normal",
-    "from": "step-level",
+    "rank": "elite",
+    "from": "wowhead",
     "step": 96135
    },
    "steps": 5
@@ -8737,8 +8859,8 @@
   },
   "96800": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 30,
+   "faction": "alliance",
    "instance": null,
    "hardest": null,
    "steps": 1
@@ -8824,7 +8946,7 @@
   },
   "97048": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -8877,8 +8999,8 @@
   },
   "97265": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 28,
+   "faction": "horde",
    "instance": null,
    "hardest": {
     "id": 4674,
@@ -8921,8 +9043,8 @@
   },
   "97326": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 5,
+   "faction": "horde",
    "instance": null,
    "hardest": null,
    "steps": 1
@@ -8957,8 +9079,8 @@
   },
   "98027": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 22,
+   "faction": "alliance",
    "instance": null,
    "hardest": null,
    "steps": 1
@@ -8973,27 +9095,34 @@
   },
   "98071": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 23,
+   "faction": "alliance",
    "instance": null,
    "hardest": null,
    "steps": 1
   },
   "98095": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 19,
+   "faction": "horde",
    "instance": null,
    "hardest": null,
    "steps": 1
   },
   "98156": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 27,
+   "faction": "alliance",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 4249,
+    "name": "Pesterhide Snarler",
+    "level": 29,
+    "rank": "normal",
+    "from": "wowhead",
+    "step": 98155
+   },
+   "steps": 2
   },
   "98191": {
    "classes": null,
@@ -9042,11 +9171,17 @@
   },
   "98283": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 22,
+   "faction": "alliance",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 271336,
+    "name": "Carnage",
+    "level": 30,
+    "rank": "elite",
+    "from": "wowhead"
+   },
+   "steps": 5
   },
   "98297": {
    "classes": null,
@@ -9067,8 +9202,15 @@
    "minLevel": 9,
    "faction": "horde",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 1893,
+    "name": "Moonrage Sentry",
+    "level": 15,
+    "rank": "elite",
+    "from": "wowhead",
+    "step": 99
+   },
+   "steps": 6
   },
   "98310": {
    "classes": null,
@@ -9227,6 +9369,12 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "115": {
+   "name": "Harvest Reaper",
+   "level": 18,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "117": {
    "name": "Riverpaw Gnoll",
    "level": 12,
@@ -9278,6 +9426,12 @@
   "210": {
    "name": "Bone Chewer",
    "level": 27,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "212": {
+   "name": "Splinter Fist Warrior",
+   "level": 30,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -10631,6 +10785,12 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "1749": {
+   "name": "Lady Katrana Prestor",
+   "level": 62,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "1754": {
    "name": "Lord Gregor Lescovar",
    "level": 31,
@@ -10943,6 +11103,18 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "1973": {
+   "name": "Ravenclaw Guardian",
+   "level": 21,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "1974": {
+   "name": "Ravenclaw Drudger",
+   "level": 20,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "1983": {
    "name": "Nightlash",
    "level": 14,
@@ -11165,6 +11337,12 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "2258": {
+   "name": "Stone Fury",
+   "level": 37,
+   "rank": "rare",
+   "from": "wowhead"
+  },
   "2260": {
    "name": "Syndicate Rogue",
    "level": 22,
@@ -11270,6 +11448,42 @@
   "2347": {
    "name": "Wild Gryphon",
    "level": 40,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "2348": {
+   "name": "Elder Moss Creeper",
+   "level": 27,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "2349": {
+   "name": "Giant Moss Creeper",
+   "level": 25,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "2350": {
+   "name": "Forest Moss Creeper",
+   "level": 21,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "2351": {
+   "name": "Gray Bear",
+   "level": 22,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "2354": {
+   "name": "Vicious Gray Bear",
+   "level": 23,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "2356": {
+   "name": "Elder Gray Bear",
+   "level": 26,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -11432,6 +11646,18 @@
   "2423": {
    "name": "Lord Aliden Perenolde",
    "level": 41,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "2427": {
+   "name": "Jailor Eston",
+   "level": 24,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "2428": {
+   "name": "Jailor Marlgen",
+   "level": 24,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -12065,6 +12291,12 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "3144": {
+   "name": "Eitrigg",
+   "level": 20,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "3183": {
    "name": "Yarrog Baneshadow",
    "level": 5,
@@ -12104,6 +12336,12 @@
   "3203": {
    "name": "Fizzle Darkstorm",
    "level": 12,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "3216": {
+   "name": "Neeru Fireblade",
+   "level": 37,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -12701,6 +12939,12 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "3917": {
+   "name": "Befouled Water Elemental",
+   "level": 25,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "3924": {
    "name": "Thistlefur Shaman",
    "level": 24,
@@ -12717,6 +12961,12 @@
    "name": "Wolf Master Nandos",
    "level": 25,
    "rank": "elite",
+   "from": "wowhead"
+  },
+  "3928": {
+   "name": "Rotting Slime",
+   "level": 22,
+   "rank": "normal",
    "from": "wowhead"
   },
   "3931": {
@@ -12917,6 +13167,12 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "4054": {
+   "name": "Laughing Sister",
+   "level": 25,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "4057": {
    "name": "Son of Cenarius",
    "level": 25,
@@ -12995,9 +13251,45 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "4139": {
+   "name": "Scorpid Terror",
+   "level": 34,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4140": {
+   "name": "Scorpid Reaver",
+   "level": 32,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4142": {
+   "name": "Sparkleshell Tortoise",
+   "level": 31,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4143": {
+   "name": "Sparkleshell Snapper",
+   "level": 35,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4144": {
+   "name": "Sparkleshell Borer",
+   "level": 33,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "4202": {
    "name": "Gerenzo Wrenchwhistle",
    "level": 27,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4249": {
+   "name": "Pesterhide Snarler",
+   "level": 29,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -13295,6 +13587,60 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "4649": {
+   "name": "Gelkis Windchaser",
+   "level": 34,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4651": {
+   "name": "Gelkis Earthcaller",
+   "level": 35,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4661": {
+   "name": "Gelkis Rumbler",
+   "level": 30,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4663": {
+   "name": "Burning Blade Augur",
+   "level": 31,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4664": {
+   "name": "Burning Blade Reaver",
+   "level": 31,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4665": {
+   "name": "Burning Blade Adept",
+   "level": 32,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4666": {
+   "name": "Burning Blade Felsworn",
+   "level": 32,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4667": {
+   "name": "Burning Blade Shadowmage",
+   "level": 33,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4668": {
+   "name": "Burning Blade Summoner",
+   "level": 39,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "4670": {
    "name": "Hatefury Rogue",
    "level": 32,
@@ -13409,6 +13755,12 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "4705": {
+   "name": "Burning Blade Invoker",
+   "level": 40,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "4711": {
    "name": "Slitherblade Naga",
    "level": 33,
@@ -13448,6 +13800,12 @@
   "4719": {
    "name": "Slitherblade Sea Witch",
    "level": 36,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4723": {
+   "name": "Foreman Cozzle",
+   "level": 38,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -13751,6 +14109,30 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "5300": {
+   "name": "Frayfeather Hippogryph",
+   "level": 44,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "5304": {
+   "name": "Frayfeather Stagwing",
+   "level": 45,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "5305": {
+   "name": "Frayfeather Skystormer",
+   "level": 46,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "5306": {
+   "name": "Frayfeather Patriarch",
+   "level": 47,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "5317": {
    "name": "Jademir Oracle",
    "level": 61,
@@ -13799,6 +14181,12 @@
    "rank": "rare",
    "from": "wowhead"
   },
+  "5347": {
+   "name": "Antilus the Soarer",
+   "level": 48,
+   "rank": "rare",
+   "from": "wowhead"
+  },
   "5357": {
    "name": "Land Walker",
    "level": 49,
@@ -13815,6 +14203,42 @@
    "name": "Khan Hratha",
    "level": 42,
    "rank": "elite",
+   "from": "wowhead"
+  },
+  "5419": {
+   "name": "Glasshide Basilisk",
+   "level": 43,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "5420": {
+   "name": "Glasshide Gazer",
+   "level": 46,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "5421": {
+   "name": "Glasshide Petrifier",
+   "level": 49,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "5425": {
+   "name": "Starving Blisterpaw",
+   "level": 42,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "5426": {
+   "name": "Blisterpaw Hyena",
+   "level": 45,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "5427": {
+   "name": "Rabid Blisterpaw",
+   "level": 48,
+   "rank": "normal",
    "from": "wowhead"
   },
   "5428": {
@@ -14129,6 +14553,18 @@
    "rank": "rare-elite",
    "from": "wowhead"
   },
+  "5937": {
+   "name": "Vile Sting",
+   "level": 35,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "6015": {
+   "name": "Torta",
+   "level": 45,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "6140": {
    "name": "Hetaera",
    "level": 55,
@@ -14435,6 +14871,24 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "7047": {
+   "name": "Black Broodling",
+   "level": 52,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "7048": {
+   "name": "Scalding Broodling",
+   "level": 54,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "7049": {
+   "name": "Flamescale Broodling",
+   "level": 56,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "7071": {
    "name": "Cursed Paladin",
    "level": 58,
@@ -14525,9 +14979,27 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "7114": {
+   "name": "Jaedenar Enforcer",
+   "level": 59,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "7115": {
    "name": "Jaedenar Adept",
    "level": 52,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "7118": {
+   "name": "Jaedenar Darkweaver",
+   "level": 59,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "7120": {
+   "name": "Jaedenar Warlock",
+   "level": 59,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -14735,6 +15207,24 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "7450": {
+   "name": "Ragged Owlbeast",
+   "level": 55,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "7451": {
+   "name": "Raging Owlbeast",
+   "level": 56,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "7453": {
+   "name": "Moontouched Owlbeast",
+   "level": 58,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "7523": {
    "name": "Suffering Highborne",
    "level": 55,
@@ -14744,6 +15234,12 @@
   "7524": {
    "name": "Anguished Highborne",
    "level": 56,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "7572": {
+   "name": "Fallen Hero of the Horde",
+   "level": 60,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -14825,6 +15321,12 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "7765": {
+   "name": "Rockbiter",
+   "level": 45,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "7791": {
    "name": "Theka the Martyr Shapeshift",
    "level": 1,
@@ -14858,6 +15360,12 @@
   "7802": {
    "name": "Galvan the Ancient",
    "level": 60,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "7803": {
+   "name": "Scorpid Duneburrower",
+   "level": 47,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -14897,6 +15405,12 @@
    "rank": "boss",
    "from": "questie"
   },
+  "7977": {
+   "name": "Gammerita",
+   "level": 48,
+   "rank": "elite",
+   "from": "wowhead"
+  },
   "7995": {
    "name": "Vile Priestess Hexx",
    "level": 51,
@@ -14914,6 +15428,12 @@
    "level": 63,
    "rank": "boss",
    "from": "questie"
+  },
+  "8023": {
+   "name": "Sharpbeak",
+   "level": 5,
+   "rank": "normal",
+   "from": "wowhead"
   },
   "8075": {
    "name": "Edana Hatetalon",
@@ -14937,6 +15457,12 @@
    "name": "Chronalis",
    "level": 61,
    "rank": "elite",
+   "from": "wowhead"
+  },
+  "8208": {
+   "name": "Murderous Blisterpaw",
+   "level": 43,
+   "rank": "rare",
    "from": "wowhead"
   },
   "8217": {
@@ -14975,6 +15501,12 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "8443": {
+   "name": "Avatar of Hakkar",
+   "level": 50,
+   "rank": "elite",
+   "from": "questie"
+  },
   "8444": {
    "name": "Trade Master Kovic",
    "level": 50,
@@ -15011,6 +15543,30 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "8525": {
+   "name": "Scourge Warder",
+   "level": 56,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "8526": {
+   "name": "Dark Caster",
+   "level": 57,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "8529": {
+   "name": "Scourge Champion",
+   "level": 60,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "8531": {
+   "name": "Gibbering Ghoul",
+   "level": 57,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "8538": {
    "name": "Unseen Servant",
    "level": 56,
@@ -15032,6 +15588,12 @@
   "8541": {
    "name": "Hate Shrieker",
    "level": 57,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "8543": {
+   "name": "Stitched Horror",
+   "level": 58,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -15075,6 +15637,18 @@
    "name": "Atal'alarion",
    "level": 50,
    "rank": "elite",
+   "from": "wowhead"
+  },
+  "8601": {
+   "name": "Noxious Plaguebat",
+   "level": 56,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "8602": {
+   "name": "Monstrous Plaguebat",
+   "level": 58,
+   "rank": "normal",
    "from": "wowhead"
   },
   "8612": {
@@ -15206,6 +15780,12 @@
   "9019": {
    "name": "Emperor Dagran Thaurissan",
    "level": 59,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "9021": {
+   "name": "Kharan Mighthammer",
+   "level": 52,
    "rank": "elite",
    "from": "wowhead"
   },
@@ -15407,6 +15987,12 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "9201": {
+   "name": "Spirestone Ogre Magus",
+   "level": 55,
+   "rank": "elite",
+   "from": "wowhead"
+  },
   "9217": {
    "name": "Spirestone Lord Magus",
    "level": 58,
@@ -15539,6 +16125,12 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "9453": {
+   "name": "Aquementas",
+   "level": 54,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "9454": {
    "name": "Xavathras",
    "level": 54,
@@ -15602,6 +16194,12 @@
   "9545": {
    "name": "Grim Patron",
    "level": 52,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "9563": {
+   "name": "Ragged John",
+   "level": 57,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -15677,6 +16275,12 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "9862": {
+   "name": "Jaedenar Legionnaire",
+   "level": 60,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "9916": {
    "name": "Jarquia",
    "level": 46,
@@ -15725,6 +16329,12 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "10162": {
+   "name": "Lord Victor Nefarius",
+   "level": 63,
+   "rank": "boss",
+   "from": "questie"
+  },
   "10184": {
    "name": "Onyxia",
    "level": 63,
@@ -15758,6 +16368,12 @@
   "10268": {
    "name": "Gizrul the Slavener",
    "level": 60,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "10321": {
+   "name": "Emberstrife",
+   "level": 61,
    "rank": "elite",
    "from": "wowhead"
   },
@@ -16085,6 +16701,12 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "10617": {
+   "name": "Galak Messenger",
+   "level": 26,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "10647": {
    "name": "Prince Raze",
    "level": 32,
@@ -16154,6 +16776,12 @@
   "10811": {
    "name": "Archivist Galford",
    "level": 60,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "10812": {
+   "name": "Grand Crusader Dathrohan",
+   "level": 62,
    "rank": "elite",
    "from": "wowhead"
   },
@@ -16451,6 +17079,12 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "11559": {
+   "name": "Outcast Necromancer",
+   "level": 40,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "11560": {
    "name": "Centaur Spectre",
    "level": 39,
@@ -16495,6 +17129,12 @@
   },
   "11658": {
    "name": "Molten Giant",
+   "level": 62,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "11661": {
+   "name": "Flamewaker",
    "level": 62,
    "rank": "elite",
    "from": "wowhead"
@@ -16550,6 +17190,12 @@
   "11723": {
    "name": "Hive'Ashi Sandstalker",
    "level": 59,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "11724": {
+   "name": "Hive'Ashi Swarmer",
+   "level": 58,
    "rank": "elite",
    "from": "wowhead"
   },
@@ -16757,6 +17403,18 @@
    "rank": "boss",
    "from": "questie"
   },
+  "11982": {
+   "name": "Magmadar",
+   "level": 63,
+   "rank": "boss",
+   "from": "questie"
+  },
+  "11988": {
+   "name": "Golemagg the Incinerator",
+   "level": 63,
+   "rank": "boss",
+   "from": "questie"
+  },
   "12017": {
    "name": "Broodlord Lashlayer",
    "level": 63,
@@ -16829,6 +17487,30 @@
    "rank": "rare-elite",
    "from": "wowhead"
   },
+  "12239": {
+   "name": "Spirit of Gelk",
+   "level": 42,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "12240": {
+   "name": "Spirit of Kolk",
+   "level": 43,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "12241": {
+   "name": "Spirit of Magra",
+   "level": 43,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "12242": {
+   "name": "Spirit of Maraudos",
+   "level": 46,
+   "rank": "elite",
+   "from": "wowhead"
+  },
   "12247": {
    "name": "Scourge Structure",
    "level": 1,
@@ -16852,6 +17534,12 @@
    "level": 63,
    "rank": "boss",
    "from": "questie"
+  },
+  "12262": {
+   "name": "Ziggurat Protector",
+   "level": 58,
+   "rank": "elite",
+   "from": "wowhead"
   },
   "12264": {
    "name": "Shazzrah",
@@ -16949,6 +17637,54 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "12676": {
+   "name": "Sharptalon",
+   "level": 31,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "12677": {
+   "name": "Shadumbra",
+   "level": 28,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "12678": {
+   "name": "Ursangous",
+   "level": 25,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "12759": {
+   "name": "Tideress",
+   "level": 27,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "12800": {
+   "name": "Chimaerok",
+   "level": 61,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "12801": {
+   "name": "Arcane Chimaerok",
+   "level": 62,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "12802": {
+   "name": "Chimaerok Devourer",
+   "level": 62,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "12803": {
+   "name": "Lord Lakmaeran",
+   "level": 62,
+   "rank": "elite",
+   "from": "wowhead"
+  },
   "12865": {
    "name": "Ambassador Malcin",
    "level": 36,
@@ -17000,6 +17736,12 @@
   "13036": {
    "name": "Gordok Mastiff",
    "level": 59,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "13136": {
+   "name": "Hive'Ashi Drone",
+   "level": 58,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -17075,6 +17817,30 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "13718": {
+   "name": "The Nameless Prophet",
+   "level": 41,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "13740": {
+   "name": "Magra",
+   "level": 43,
+   "rank": "elite",
+   "from": "questie"
+  },
+  "13741": {
+   "name": "Gelk",
+   "level": 42,
+   "rank": "elite",
+   "from": "questie"
+  },
+  "13742": {
+   "name": "Kolk",
+   "level": 43,
+   "rank": "elite",
+   "from": "questie"
+  },
   "13996": {
    "name": "Blackwing Technician",
    "level": 60,
@@ -17103,6 +17869,18 @@
    "name": "Tamra Stormpike",
    "level": 28,
    "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "14279": {
+   "name": "Creepthess",
+   "level": 24,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "14280": {
+   "name": "Big Samras",
+   "level": 27,
+   "rank": "rare",
    "from": "wowhead"
   },
   "14303": {
@@ -17218,6 +17996,18 @@
    "level": 63,
    "rank": "boss",
    "from": "questie"
+  },
+  "14522": {
+   "name": "Ur'dan",
+   "level": 54,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "14523": {
+   "name": "Ulathek",
+   "level": 57,
+   "rank": "normal",
+   "from": "wowhead"
   },
   "14621": {
    "name": "Overseer Maltorius",
@@ -17555,6 +18345,12 @@
    "rank": "boss",
    "from": "questie"
   },
+  "15623": {
+   "name": "Xandivious",
+   "level": 62,
+   "rank": "elite",
+   "from": "wowhead"
+  },
   "15625": {
    "name": "Twilight Corrupter",
    "level": 63,
@@ -17795,6 +18591,12 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "216474": {
+   "name": "Ravaging Tempest",
+   "level": 40,
+   "rank": "elite",
+   "from": "wowhead"
+  },
   "246016": {
    "name": "Arcanic Enigma",
    "level": null,
@@ -17981,9 +18783,57 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "253360": {
+   "name": "Nascent Undead Ravager",
+   "level": null,
+   "rank": "normal",
+   "from": null
+  },
+  "253431": {
+   "name": "Gelkis Captive",
+   "level": null,
+   "rank": "normal",
+   "from": null
+  },
+  "253446": {
+   "name": "Haggard Bones",
+   "level": null,
+   "rank": "normal",
+   "from": null
+  },
   "253511": {
    "name": "Al'Aketh Pillager",
    "level": 9,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "253524": {
+   "name": "Bristleback Nomad",
+   "level": 43,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "253525": {
+   "name": "Bristleback Thornweaver",
+   "level": null,
+   "rank": "normal",
+   "from": null
+  },
+  "253526": {
+   "name": "Bristleback Skullcrusher",
+   "level": 43,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "254283": {
+   "name": "Outcast Scout",
+   "level": 42,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "254284": {
+   "name": "Outcast Marauder",
+   "level": 43,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -17998,6 +18848,12 @@
    "level": 10,
    "rank": "normal",
    "from": "wowhead"
+  },
+  "254825": {
+   "name": "Gelkis Captive",
+   "level": null,
+   "rank": "normal",
+   "from": null
   },
   "260325": {
    "name": "Shadetooth",
@@ -18122,6 +18978,18 @@
   "270892": {
    "name": "Goaz Warder",
    "level": 32,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "271334": {
+   "name": "Maddened Rotclaw",
+   "level": 26,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "271336": {
+   "name": "Carnage",
+   "level": 30,
    "rank": "elite",
    "from": "wowhead"
   },

@@ -26490,6 +26490,60 @@
    ]
   },
   {
+   "id": 281315,
+   "name": "Foulfur Gloves",
+   "kind": "Cloth",
+   "slot": "Hands",
+   "quality": 2,
+   "req": 0,
+   "obtain": 12,
+   "ilvl": 16,
+   "bind": "pickup",
+   "armor": 18,
+   "stats": {
+    "intellect": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_gauntlets_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Arugal's Folly",
+     "questId": 98298,
+     "level": 16,
+     "requiredLevel": 9,
+     "zone": "Silverpine Forest",
+     "bands": {
+      "red": 9,
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98298",
+     "basis": {
+      "name": "Moonrage Sentry",
+      "level": 15,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 99,
+      "steps": 6
+     },
+     "asap": 10,
+     "rec": 12
+    }
+   ]
+  },
+  {
    "id": 286426,
    "name": "Honorbound Cloak",
    "kind": "Cloth",
@@ -36200,55 +36254,6 @@
       "steps": 1
      },
      "asap": 13,
-     "rec": 15
-    }
-   ]
-  },
-  {
-   "id": 281315,
-   "name": "Foulfur Gloves",
-   "kind": "Cloth",
-   "slot": "Hands",
-   "quality": 2,
-   "req": 0,
-   "obtain": 15,
-   "ilvl": 16,
-   "bind": "pickup",
-   "armor": 18,
-   "stats": {
-    "intellect": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_gauntlets_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Arugal's Folly",
-     "questId": 98298,
-     "level": 16,
-     "requiredLevel": 9,
-     "zone": "Silverpine Forest",
-     "bands": {
-      "red": 9,
-      "orange": 12,
-      "yellow": 14,
-      "green": 19,
-      "grey": 23
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98298",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 9,
      "rec": 15
     }
    ]
@@ -52187,12 +52192,13 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/95885",
      "basis": {
-      "name": "Tortured Soul",
-      "level": 20,
-      "rank": "elite",
+      "name": "Ravenclaw Guardian",
+      "level": 21,
+      "rank": "normal",
       "from": "wowhead",
-      "group": true,
-      "steps": 1
+      "group": false,
+      "step": 95883,
+      "steps": 3
      },
      "asap": 20,
      "rec": 20
@@ -59087,7 +59093,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 7
+      "steps": 8
      },
      "asap": 19,
      "rec": 21
@@ -59193,7 +59199,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 7
+      "steps": 8
      },
      "asap": 19,
      "rec": 21
@@ -59247,7 +59253,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 7
+      "steps": 8
      },
      "asap": 19,
      "rec": 21
@@ -59303,56 +59309,6 @@
       "steps": 2
      },
      "asap": 19,
-     "rec": 21
-    }
-   ]
-  },
-  {
-   "id": 3733,
-   "name": "Orcish War Chain",
-   "kind": "Mail",
-   "slot": "Chest",
-   "quality": 2,
-   "req": 0,
-   "obtain": 21,
-   "ilvl": 23,
-   "bind": "pickup",
-   "armor": 177,
-   "stats": {
-    "strength": 6,
-    "stamina": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_chest_chain",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Rescue",
-     "questId": 498,
-     "level": 22,
-     "requiredLevel": 17,
-     "zone": "Hillsbrad Foothills",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 17,
-      "orange": 18,
-      "yellow": 20,
-      "green": 25,
-      "grey": 29
-     },
-     "ref": "https://foreverchanges.pro/quest/498",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 17,
      "rec": 21
     }
    ]
@@ -59459,56 +59415,6 @@
       "steps": 6
      },
      "asap": 19,
-     "rec": 21
-    }
-   ]
-  },
-  {
-   "id": 3752,
-   "name": "Grunt Vest",
-   "kind": "Cloth",
-   "slot": "Chest",
-   "quality": 2,
-   "req": 0,
-   "obtain": 21,
-   "ilvl": 22,
-   "bind": "pickup",
-   "armor": 36,
-   "stats": {
-    "strength": 5,
-    "spirit": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_shirt_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Rescue",
-     "questId": 498,
-     "level": 22,
-     "requiredLevel": 17,
-     "zone": "Hillsbrad Foothills",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 17,
-      "orange": 18,
-      "yellow": 20,
-      "green": 25,
-      "grey": 29
-     },
-     "ref": "https://foreverchanges.pro/quest/498",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 17,
      "rec": 21
     }
    ]
@@ -62968,6 +62874,114 @@
       "from": "wowhead",
       "group": true
      }
+    }
+   ]
+  },
+  {
+   "id": 3733,
+   "name": "Orcish War Chain",
+   "kind": "Mail",
+   "slot": "Chest",
+   "quality": 2,
+   "req": 0,
+   "obtain": 22,
+   "ilvl": 23,
+   "bind": "pickup",
+   "armor": 177,
+   "stats": {
+    "strength": 6,
+    "stamina": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_chest_chain",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Rescue",
+     "questId": 498,
+     "level": 22,
+     "requiredLevel": 17,
+     "zone": "Hillsbrad Foothills",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 17,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
+     "ref": "https://foreverchanges.pro/quest/498",
+     "basis": {
+      "name": "Jailor Eston",
+      "level": 24,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 1
+     },
+     "asap": 21,
+     "rec": 22
+    }
+   ]
+  },
+  {
+   "id": 3752,
+   "name": "Grunt Vest",
+   "kind": "Cloth",
+   "slot": "Chest",
+   "quality": 2,
+   "req": 0,
+   "obtain": 22,
+   "ilvl": 22,
+   "bind": "pickup",
+   "armor": 36,
+   "stats": {
+    "strength": 5,
+    "spirit": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_shirt_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Rescue",
+     "questId": 498,
+     "level": 22,
+     "requiredLevel": 17,
+     "zone": "Hillsbrad Foothills",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 17,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
+     "ref": "https://foreverchanges.pro/quest/498",
+     "basis": {
+      "name": "Jailor Eston",
+      "level": 24,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 1
+     },
+     "asap": 21,
+     "rec": 22
     }
    ]
   },
@@ -70191,7 +70205,7 @@
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 1
+      "steps": 3
      },
      "asap": 24,
      "rec": 24
@@ -70244,7 +70258,7 @@
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 1
+      "steps": 3
      },
      "asap": 24,
      "rec": 24
@@ -70299,7 +70313,7 @@
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 1
+      "steps": 3
      },
      "asap": 24,
      "rec": 24
@@ -70352,7 +70366,7 @@
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 1
+      "steps": 3
      },
      "asap": 24,
      "rec": 24
@@ -75134,7 +75148,7 @@
       "from": "wowhead",
       "group": false,
       "step": 1057,
-      "steps": 2
+      "steps": 3
      },
      "asap": 23,
      "rec": 25
@@ -75190,7 +75204,7 @@
       "from": "wowhead",
       "group": false,
       "step": 1057,
-      "steps": 2
+      "steps": 3
      },
      "asap": 23,
      "rec": 25
@@ -75466,7 +75480,7 @@
       "from": "wowhead",
       "group": false,
       "step": 1057,
-      "steps": 2
+      "steps": 3
      },
      "asap": 23,
      "rec": 25
@@ -75621,10 +75635,14 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/86576",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Bloodfury Roguefeather",
+      "level": 26,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 1
      },
-     "asap": 18,
+     "asap": 23,
      "rec": 25
     }
    ]
@@ -75729,6 +75747,170 @@
       "group": false,
       "step": 846,
       "steps": 3
+     },
+     "asap": 23,
+     "rec": 25
+    }
+   ]
+  },
+  {
+   "id": 15461,
+   "name": "Lightheel Boots",
+   "kind": "Cloth",
+   "slot": "Feet",
+   "quality": 2,
+   "req": 0,
+   "obtain": 25,
+   "ilvl": 25,
+   "bind": "pickup",
+   "armor": 27,
+   "stats": {
+    "intellect": 4,
+    "spirit": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_boots_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Protect Kanati Greycloud",
+     "questId": 4966,
+     "level": 28,
+     "requiredLevel": 23,
+     "zone": "Thousand Needles",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 23,
+      "orange": 24,
+      "yellow": 26,
+      "green": 31,
+      "grey": 36
+     },
+     "ref": "https://foreverchanges.pro/quest/4966",
+     "basis": {
+      "name": "Galak Messenger",
+      "level": 26,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 4881,
+      "steps": 2
+     },
+     "asap": 23,
+     "rec": 25
+    }
+   ]
+  },
+  {
+   "id": 15462,
+   "name": "Loamflake Bracers",
+   "kind": "Leather",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 25,
+   "ilvl": 25,
+   "bind": "pickup",
+   "armor": 37,
+   "stats": {
+    "agility": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_bracer_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Protect Kanati Greycloud",
+     "questId": 4966,
+     "level": 28,
+     "requiredLevel": 23,
+     "zone": "Thousand Needles",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 23,
+      "orange": 24,
+      "yellow": 26,
+      "green": 31,
+      "grey": 36
+     },
+     "ref": "https://foreverchanges.pro/quest/4966",
+     "basis": {
+      "name": "Galak Messenger",
+      "level": 26,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 4881,
+      "steps": 2
+     },
+     "asap": 23,
+     "rec": 25
+    }
+   ]
+  },
+  {
+   "id": 15463,
+   "name": "Palestrider Gloves",
+   "kind": "Mail",
+   "slot": "Hands",
+   "quality": 2,
+   "req": 0,
+   "obtain": 25,
+   "ilvl": 25,
+   "bind": "pickup",
+   "armor": 114,
+   "stats": {
+    "strength": 5,
+    "stamina": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_gauntlets_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Protect Kanati Greycloud",
+     "questId": 4966,
+     "level": 28,
+     "requiredLevel": 23,
+     "zone": "Thousand Needles",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 23,
+      "orange": 24,
+      "yellow": 26,
+      "green": 31,
+      "grey": 36
+     },
+     "ref": "https://foreverchanges.pro/quest/4966",
+     "basis": {
+      "name": "Galak Messenger",
+      "level": 26,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 4881,
+      "steps": 2
      },
      "asap": 23,
      "rec": 25
@@ -78606,7 +78788,7 @@
       "from": "step-level",
       "group": false,
       "step": 1095,
-      "steps": 4
+      "steps": 5
      },
      "asap": 24,
      "rec": 26
@@ -78661,7 +78843,7 @@
       "from": "step-level",
       "group": false,
       "step": 1095,
-      "steps": 4
+      "steps": 5
      },
      "asap": 24,
      "rec": 26
@@ -78711,13 +78893,13 @@
      },
      "ref": "https://foreverchanges.pro/quest/824",
      "basis": {
-      "name": null,
+      "name": "Tideress",
       "level": 27,
       "rank": "normal",
-      "from": "step-level",
+      "from": "wowhead",
       "group": false,
       "step": 1918,
-      "steps": 2
+      "steps": 3
      },
      "asap": 24,
      "rec": 26
@@ -78767,13 +78949,13 @@
      },
      "ref": "https://foreverchanges.pro/quest/824",
      "basis": {
-      "name": null,
+      "name": "Tideress",
       "level": 27,
       "rank": "normal",
-      "from": "step-level",
+      "from": "wowhead",
       "group": false,
       "step": 1918,
-      "steps": 2
+      "steps": 3
      },
      "asap": 24,
      "rec": 26
@@ -78820,13 +79002,13 @@
      },
      "ref": "https://foreverchanges.pro/quest/824",
      "basis": {
-      "name": null,
+      "name": "Tideress",
       "level": 27,
       "rank": "normal",
-      "from": "step-level",
+      "from": "wowhead",
       "group": false,
       "step": 1918,
-      "steps": 2
+      "steps": 3
      },
      "asap": 24,
      "rec": 26
@@ -81898,6 +82080,114 @@
    ]
   },
   {
+   "id": 281309,
+   "name": "Razormaw Shorts",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 27,
+   "ilvl": 30,
+   "bind": "pickup",
+   "armor": 82,
+   "stats": {
+    "agility": 8,
+    "stamina": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Carnage",
+     "questId": 98283,
+     "level": 30,
+     "requiredLevel": 22,
+     "zone": "Wetlands",
+     "bands": {
+      "red": 22,
+      "orange": 26,
+      "yellow": 28,
+      "green": 33,
+      "grey": 38
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98283",
+     "basis": {
+      "name": "Carnage",
+      "level": 30,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 5
+     },
+     "asap": 25,
+     "rec": 27
+    }
+   ]
+  },
+  {
+   "id": 281310,
+   "name": "Carnage Trousers",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 27,
+   "ilvl": 30,
+   "bind": "pickup",
+   "armor": 82,
+   "stats": {
+    "stamina": 6,
+    "intellect": 8
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Carnage",
+     "questId": 98283,
+     "level": 30,
+     "requiredLevel": 22,
+     "zone": "Wetlands",
+     "bands": {
+      "red": 22,
+      "orange": 26,
+      "yellow": 28,
+      "green": 33,
+      "grey": 38
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98283",
+     "basis": {
+      "name": "Carnage",
+      "level": 30,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 5
+     },
+     "asap": 25,
+     "rec": 27
+    }
+   ]
+  },
+  {
    "id": 3562,
    "name": "Belt of Vindication",
    "kind": "Leather",
@@ -82118,170 +82408,6 @@
       "from": "wowhead",
       "group": false
      }
-    }
-   ]
-  },
-  {
-   "id": 15461,
-   "name": "Lightheel Boots",
-   "kind": "Cloth",
-   "slot": "Feet",
-   "quality": 2,
-   "req": 0,
-   "obtain": 27,
-   "ilvl": 25,
-   "bind": "pickup",
-   "armor": 27,
-   "stats": {
-    "intellect": 4,
-    "spirit": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_boots_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Protect Kanati Greycloud",
-     "questId": 4966,
-     "level": 28,
-     "requiredLevel": 23,
-     "zone": "Thousand Needles",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 23,
-      "orange": 24,
-      "yellow": 26,
-      "green": 31,
-      "grey": 36
-     },
-     "ref": "https://foreverchanges.pro/quest/4966",
-     "basis": {
-      "name": null,
-      "level": 28,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 4881,
-      "steps": 2
-     },
-     "asap": 25,
-     "rec": 27
-    }
-   ]
-  },
-  {
-   "id": 15462,
-   "name": "Loamflake Bracers",
-   "kind": "Leather",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 27,
-   "ilvl": 25,
-   "bind": "pickup",
-   "armor": 37,
-   "stats": {
-    "agility": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_bracer_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Protect Kanati Greycloud",
-     "questId": 4966,
-     "level": 28,
-     "requiredLevel": 23,
-     "zone": "Thousand Needles",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 23,
-      "orange": 24,
-      "yellow": 26,
-      "green": 31,
-      "grey": 36
-     },
-     "ref": "https://foreverchanges.pro/quest/4966",
-     "basis": {
-      "name": null,
-      "level": 28,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 4881,
-      "steps": 2
-     },
-     "asap": 25,
-     "rec": 27
-    }
-   ]
-  },
-  {
-   "id": 15463,
-   "name": "Palestrider Gloves",
-   "kind": "Mail",
-   "slot": "Hands",
-   "quality": 2,
-   "req": 0,
-   "obtain": 27,
-   "ilvl": 25,
-   "bind": "pickup",
-   "armor": 114,
-   "stats": {
-    "strength": 5,
-    "stamina": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_gauntlets_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Protect Kanati Greycloud",
-     "questId": 4966,
-     "level": 28,
-     "requiredLevel": 23,
-     "zone": "Thousand Needles",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 23,
-      "orange": 24,
-      "yellow": 26,
-      "green": 31,
-      "grey": 36
-     },
-     "ref": "https://foreverchanges.pro/quest/4966",
-     "basis": {
-      "name": null,
-      "level": 28,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 4881,
-      "steps": 2
-     },
-     "asap": 25,
-     "rec": 27
     }
    ]
   },
@@ -87445,6 +87571,60 @@
    ]
   },
   {
+   "id": 281295,
+   "name": "Pelt Pants",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 28,
+   "ilvl": 29,
+   "bind": "pickup",
+   "armor": 83,
+   "stats": {
+    "strength": 8,
+    "agility": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Packaged Pristine Pelts",
+     "questId": 98156,
+     "level": 31,
+     "requiredLevel": 27,
+     "zone": "Thousand Needles",
+     "bands": {
+      "orange": 27,
+      "yellow": 29,
+      "green": 34,
+      "grey": 39
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98156",
+     "basis": {
+      "name": "Pesterhide Snarler",
+      "level": 29,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 98155,
+      "steps": 2
+     },
+     "asap": 27,
+     "rec": 28
+    }
+   ]
+  },
+  {
    "id": 281318,
    "name": "Bouquet of Auberdine Flowers",
    "kind": "Off-hand",
@@ -87589,15 +87769,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/1081",
      "basis": {
-      "name": "Vengeful Ancient",
-      "level": 30,
-      "rank": "rare",
+      "name": "Sharptalon",
+      "level": 31,
+      "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "step": 1084,
-      "steps": 11
+      "step": 2,
+      "steps": 13
      },
-     "asap": 27,
+     "asap": 28,
      "rec": 28
     }
    ]
@@ -87644,15 +87824,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/1081",
      "basis": {
-      "name": "Vengeful Ancient",
-      "level": 30,
-      "rank": "rare",
+      "name": "Sharptalon",
+      "level": 31,
+      "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "step": 1084,
-      "steps": 11
+      "step": 2,
+      "steps": 13
      },
-     "asap": 27,
+     "asap": 28,
      "rec": 28
     }
    ]
@@ -87698,15 +87878,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/1081",
      "basis": {
-      "name": "Vengeful Ancient",
-      "level": 30,
-      "rank": "rare",
+      "name": "Sharptalon",
+      "level": 31,
+      "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "step": 1084,
-      "steps": 11
+      "step": 2,
+      "steps": 13
      },
-     "asap": 27,
+     "asap": 28,
      "rec": 28
     }
    ]
@@ -87965,15 +88145,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/1081",
      "basis": {
-      "name": "Vengeful Ancient",
-      "level": 30,
-      "rank": "rare",
+      "name": "Sharptalon",
+      "level": 31,
+      "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "step": 1084,
-      "steps": 11
+      "step": 2,
+      "steps": 13
      },
-     "asap": 27,
+     "asap": 28,
      "rec": 28
     }
    ]
@@ -91616,7 +91796,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 7
+      "steps": 8
      },
      "asap": 27,
      "rec": 29
@@ -91669,7 +91849,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 7
+      "steps": 8
      },
      "asap": 27,
      "rec": 29
@@ -91723,7 +91903,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 7
+      "steps": 8
      },
      "asap": 27,
      "rec": 29
@@ -91885,7 +92065,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 7
+      "steps": 8
      },
      "asap": 27,
      "rec": 29
@@ -92118,64 +92298,6 @@
       "steps": 2
      },
      "asap": 29,
-     "rec": 29
-    }
-   ]
-  },
-  {
-   "id": 16658,
-   "name": "Wildhunter Cloak",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 0,
-   "obtain": 29,
-   "ilvl": 32,
-   "bind": "pickup",
-   "armor": 22,
-   "stats": {
-    "stamina": 2
-   },
-   "bonus": {
-    "attackPower": 10
-   },
-   "equip": [
-    "Equip: +9 Attack Power against Beasts."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "changed",
-   "numbers": "client",
-   "icon": "inv_misc_cape_10",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Hunt Completed",
-     "questId": 247,
-     "level": 30,
-     "requiredLevel": 20,
-     "zone": "Ashenvale",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 20,
-      "orange": 26,
-      "yellow": 28,
-      "green": 33,
-      "grey": 38
-     },
-     "ref": "https://foreverchanges.pro/quest/247",
-     "basis": {
-      "name": null,
-      "level": 30,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 2,
-      "steps": 8
-     },
-     "asap": 27,
      "rec": 29
     }
    ]
@@ -92974,106 +93096,6 @@
       "steps": 5
      },
      "asap": 27,
-     "rec": 29
-    }
-   ]
-  },
-  {
-   "id": 281309,
-   "name": "Razormaw Shorts",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 29,
-   "ilvl": 30,
-   "bind": "pickup",
-   "armor": 82,
-   "stats": {
-    "agility": 8,
-    "stamina": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Carnage",
-     "questId": 98283,
-     "level": 30,
-     "requiredLevel": 22,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 22,
-      "orange": 26,
-      "yellow": 28,
-      "green": 33,
-      "grey": 38
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98283",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 22,
-     "rec": 29
-    }
-   ]
-  },
-  {
-   "id": 281310,
-   "name": "Carnage Trousers",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 29,
-   "ilvl": 30,
-   "bind": "pickup",
-   "armor": 82,
-   "stats": {
-    "stamina": 6,
-    "intellect": 8
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Carnage",
-     "questId": 98283,
-     "level": 30,
-     "requiredLevel": 22,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 22,
-      "orange": 26,
-      "yellow": 28,
-      "green": 33,
-      "grey": 38
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98283",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 22,
      "rec": 29
     }
    ]
@@ -98653,6 +98675,64 @@
    ]
   },
   {
+   "id": 16658,
+   "name": "Wildhunter Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 0,
+   "obtain": 30,
+   "ilvl": 32,
+   "bind": "pickup",
+   "armor": 22,
+   "stats": {
+    "stamina": 2
+   },
+   "bonus": {
+    "attackPower": 10
+   },
+   "equip": [
+    "Equip: +9 Attack Power against Beasts."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_misc_cape_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Hunt Completed",
+     "questId": 247,
+     "level": 30,
+     "requiredLevel": 20,
+     "zone": "Ashenvale",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 20,
+      "orange": 26,
+      "yellow": 28,
+      "green": 33,
+      "grey": 38
+     },
+     "ref": "https://foreverchanges.pro/quest/247",
+     "basis": {
+      "name": "Sharptalon",
+      "level": 31,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 2,
+      "steps": 9
+     },
+     "asap": 28,
+     "rec": 30
+    }
+   ]
+  },
+  {
    "id": 270042,
    "name": "Technician's Bracers",
    "kind": "Leather",
@@ -99356,14 +99436,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/515",
      "basis": {
-      "name": "Daggerspine Siren",
-      "level": 32,
+      "name": "Hulking Mountain Lion",
+      "level": 34,
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 3
+      "step": 501,
+      "steps": 7
      },
-     "asap": 29,
+     "asap": 30,
      "rec": 30
     }
    ]
@@ -99410,14 +99491,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/515",
      "basis": {
-      "name": "Daggerspine Siren",
-      "level": 32,
+      "name": "Hulking Mountain Lion",
+      "level": 34,
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 3
+      "step": 501,
+      "steps": 7
      },
-     "asap": 29,
+     "asap": 30,
      "rec": 30
     }
    ]
@@ -99464,63 +99546,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/515",
      "basis": {
-      "name": "Daggerspine Siren",
-      "level": 32,
+      "name": "Hulking Mountain Lion",
+      "level": 34,
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 3
+      "step": 501,
+      "steps": 7
      },
-     "asap": 29,
-     "rec": 30
-    }
-   ]
-  },
-  {
-   "id": 281295,
-   "name": "Pelt Pants",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 30,
-   "ilvl": 29,
-   "bind": "pickup",
-   "armor": 83,
-   "stats": {
-    "strength": 8,
-    "agility": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Packaged Pristine Pelts",
-     "questId": 98156,
-     "level": 31,
-     "requiredLevel": 27,
-     "zone": "Thousand Needles",
-     "bands": {
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98156",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 27,
+     "asap": 30,
      "rec": 30
     }
    ]
@@ -105534,8 +105568,8 @@
       "rank": "normal",
       "from": "step-level",
       "group": false,
-      "step": 1435,
-      "steps": 5
+      "step": 1433,
+      "steps": 6
      },
      "asap": 30,
      "rec": 32
@@ -105588,8 +105622,8 @@
       "rank": "normal",
       "from": "step-level",
       "group": false,
-      "step": 1435,
-      "steps": 5
+      "step": 1433,
+      "steps": 6
      },
      "asap": 30,
      "rec": 32
@@ -105690,10 +105724,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/88758",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 33,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 88757,
+      "steps": 3
      },
-     "asap": 28,
+     "asap": 30,
      "rec": 32
     }
    ]
@@ -115825,7 +115864,7 @@
       "green": 45,
       "grey": 53
      },
-     "faction": "both",
+     "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93128",
      "basis": {
@@ -115834,7 +115873,7 @@
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 1
+      "steps": 4
      },
      "asap": 35,
      "rec": 36
@@ -123116,6 +123155,100 @@
    ]
   },
   {
+   "id": 280696,
+   "name": "Elementalist's Guard",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 3,
+   "req": 1,
+   "obtain": 37,
+   "ilvl": 40,
+   "bind": "pickup",
+   "armor": 1078,
+   "block": 20,
+   "stats": {
+    "stamina": 9,
+    "intellect": 6
+   },
+   "bonus": {
+    "mp5": 2
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_shield_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Tempest's Weapons",
+     "questId": 79442,
+     "level": 40,
+     "requiredLevel": 30,
+     "faction": "horde",
+     "chain": [
+      94789,
+      96264,
+      79358,
+      96135
+     ],
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=79442",
+     "basis": {
+      "name": "Ravaging Tempest",
+      "level": 40,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 96135,
+      "steps": 5
+     },
+     "asap": 35,
+     "rec": 37
+    },
+    {
+     "type": "quest",
+     "quest": "The Tempest's Weapons",
+     "questId": 96016,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Shaman",
+     "classes": [
+      "Shaman"
+     ],
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96016",
+     "chain": [
+      94789,
+      96264,
+      79358,
+      96135
+     ],
+     "basis": {
+      "name": "Ravaging Tempest",
+      "level": 40,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 96135,
+      "steps": 5
+     },
+     "asap": 35,
+     "rec": 37
+    }
+   ]
+  },
+  {
    "id": 4744,
    "name": "Arcane Runed Bracers",
    "kind": "Cloth",
@@ -127722,7 +127855,7 @@
       "from": "wowhead",
       "group": false,
       "step": 1108,
-      "steps": 3
+      "steps": 5
      },
      "asap": 38,
      "rec": 38
@@ -129372,7 +129505,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 3
+      "steps": 4
      },
      "asap": 37,
      "rec": 39
@@ -131091,93 +131224,55 @@
    ]
   },
   {
-   "id": 280696,
-   "name": "Elementalist's Guard",
+   "id": 271798,
+   "name": "Desperate Barrier",
    "kind": "Shield",
    "slot": "Shield",
-   "quality": 3,
-   "req": 1,
+   "quality": 2,
+   "req": 35,
    "obtain": 39,
-   "ilvl": 40,
+   "ilvl": 38,
    "bind": "pickup",
-   "armor": 1078,
-   "block": 20,
+   "armor": 1257,
+   "block": 15,
    "stats": {
-    "stamina": 9,
-    "intellect": 6
+    "strength": 4,
+    "stamina": 6
    },
-   "bonus": {
-    "mp5": 2
-   },
+   "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
    "numbers": "client",
-   "icon": "inv_shield_09",
+   "icon": "inv_shield_05",
    "raceMask": -1,
    "sources": [
     {
      "type": "quest",
-     "quest": "The Tempest's Weapons",
-     "questId": 79442,
-     "level": 40,
-     "requiredLevel": 30,
-     "faction": "horde",
-     "chain": [
-      94789,
-      96264,
-      79358,
-      96135
-     ],
-     "confidence": "community-untested",
-     "ref": "https://www.wowhead.com/forever/quest=79442",
-     "basis": {
-      "name": null,
-      "level": 40,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 96135,
-      "steps": 5
-     },
-     "asap": 37,
-     "rec": 39
-    },
-    {
-     "type": "quest",
-     "quest": "The Tempest's Weapons",
-     "questId": 96016,
-     "level": 40,
-     "requiredLevel": 30,
-     "zone": "Shaman",
-     "classes": [
-      "Shaman"
-     ],
+     "quest": "Proof of Concept",
+     "questId": 92873,
+     "level": 41,
+     "requiredLevel": 35,
+     "zone": "Shen'dralas",
      "bands": {
-      "red": 30,
-      "orange": 36,
-      "yellow": 38,
-      "green": 43,
-      "grey": 51
+      "red": 35,
+      "orange": 37,
+      "yellow": 39,
+      "green": 44,
+      "grey": 52
      },
-     "faction": "alliance",
+     "faction": "both",
      "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96016",
-     "chain": [
-      94789,
-      96264,
-      79358,
-      96135
-     ],
+     "ref": "https://foreverchanges.pro/quest/92873",
      "basis": {
-      "name": null,
+      "name": "Outcast Necromancer",
       "level": 40,
       "rank": "normal",
-      "from": "step-level",
+      "from": "wowhead",
       "group": false,
-      "step": 96135,
-      "steps": 5
+      "step": 92846,
+      "steps": 9
      },
      "asap": 37,
      "rec": 39
@@ -136066,57 +136161,6 @@
       "steps": 3
      },
      "asap": 40,
-     "rec": 40
-    }
-   ]
-  },
-  {
-   "id": 271798,
-   "name": "Desperate Barrier",
-   "kind": "Shield",
-   "slot": "Shield",
-   "quality": 2,
-   "req": 35,
-   "obtain": 40,
-   "ilvl": 38,
-   "bind": "pickup",
-   "armor": 1257,
-   "block": 15,
-   "stats": {
-    "strength": 4,
-    "stamina": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_shield_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Proof of Concept",
-     "questId": 92873,
-     "level": 41,
-     "requiredLevel": 35,
-     "zone": "Shen'dralas",
-     "bands": {
-      "red": 35,
-      "orange": 37,
-      "yellow": 39,
-      "green": 44,
-      "grey": 52
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92873",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 35,
      "rec": 40
     }
    ]
@@ -142910,7 +142954,7 @@
      "level": 50,
      "requiredLevel": 40,
      "zone": "Zul'Farrak",
-     "faction": "both",
+     "faction": "alliance",
      "confidence": "classic-assumed",
      "dungeon": true,
      "bands": {
@@ -142927,7 +142971,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 1
+      "steps": 2
      },
      "asap": 41,
      "rec": 43
@@ -144829,6 +144873,59 @@
    ]
   },
   {
+   "id": 17774,
+   "name": "Mark of the Chosen",
+   "kind": "Trinket",
+   "slot": "Trinket",
+   "quality": 2,
+   "req": 0,
+   "obtain": 43,
+   "ilvl": 48,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {},
+   "equip": [
+    "Equip: Has a 2% chance when struck in combat of increasing all stats by 21 for 1 min. (Proc chance: 2%, 2m cooldown)"
+   ],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_jewelry_talisman_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Pariah's Instructions",
+     "questId": 7067,
+     "level": 48,
+     "requiredLevel": 39,
+     "zone": "Maraudon",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 39,
+      "orange": 44,
+      "yellow": 46,
+      "green": 51,
+      "grey": 60
+     },
+     "ref": "https://foreverchanges.pro/quest/7067",
+     "basis": {
+      "name": "Spirit of Maraudos",
+      "level": 46,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 41,
+     "rec": 43
+    }
+   ]
+  },
+  {
    "id": 274642,
    "name": "Blood Ritual Ring",
    "kind": "Ring",
@@ -145640,6 +145737,112 @@
    ]
   },
   {
+   "id": 9638,
+   "name": "Chelonian Cuffs",
+   "kind": "Mail",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 44,
+   "ilvl": 50,
+   "bind": "pickup",
+   "armor": 119,
+   "stats": {
+    "stamina": 4,
+    "intellect": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_bracer_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Tooga's Quest",
+     "questId": 1560,
+     "level": 50,
+     "requiredLevel": 40,
+     "zone": "Tanaris",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 40,
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
+     "ref": "https://foreverchanges.pro/quest/1560",
+     "basis": {
+      "name": "Torta",
+      "level": 45,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 1
+     },
+     "asap": 42,
+     "rec": 44
+    }
+   ]
+  },
+  {
+   "id": 9642,
+   "name": "Band of the Great Tortoise",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 44,
+   "ilvl": 50,
+   "bind": "pickup",
+   "stats": {
+    "armor": 120
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Tooga's Quest",
+     "questId": 1560,
+     "level": 50,
+     "requiredLevel": 40,
+     "zone": "Tanaris",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 40,
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
+     "ref": "https://foreverchanges.pro/quest/1560",
+     "basis": {
+      "name": "Torta",
+      "level": 45,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 1
+     },
+     "asap": 42,
+     "rec": 44
+    }
+   ]
+  },
+  {
    "id": 10418,
    "name": "Glimmering Mithril Insignia",
    "kind": "Mail",
@@ -145687,7 +145890,7 @@
       "from": "step-level",
       "group": false,
       "step": 2771,
-      "steps": 9
+      "steps": 13
      },
      "asap": 42,
      "rec": 44
@@ -148319,63 +148522,6 @@
    ]
   },
   {
-   "id": 9652,
-   "name": "Gryphon Rider's Leggings",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 45,
-   "ilvl": 53,
-   "bind": "pickup",
-   "armor": 122,
-   "stats": {
-    "strength": 15,
-    "agility": 15
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_pants_13",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Saving Sharpbeak",
-     "questId": 2994,
-     "level": 51,
-     "requiredLevel": 40,
-     "zone": "The Hinterlands",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 40,
-      "orange": 47,
-      "yellow": 49,
-      "green": 54,
-      "grey": 60
-     },
-     "ref": "https://foreverchanges.pro/quest/2994",
-     "dungeonZone": "Zul'Farrak",
-     "basis": {
-      "name": null,
-      "level": 48,
-      "rank": "normal",
-      "from": "step-level",
-      "group": true,
-      "step": 2989,
-      "steps": 7
-     },
-     "asap": 43,
-     "rec": 45
-    }
-   ]
-  },
-  {
    "id": 8106,
    "name": "Hibernal Armor",
    "kind": "Cloth",
@@ -148454,7 +148600,7 @@
    "armor": 1937,
    "block": 34,
    "stats": {
-    "strength": 10,
+    "strength": 11,
     "stamina": 15
    },
    "bonus": {},
@@ -148464,7 +148610,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shield_02",
    "raceMask": -1,
    "sources": [
@@ -151697,117 +151843,6 @@
    ]
   },
   {
-   "id": 9634,
-   "name": "Skilled Handling Gloves",
-   "kind": "Cloth",
-   "slot": "Hands",
-   "quality": 2,
-   "req": 0,
-   "obtain": 45,
-   "ilvl": 46,
-   "bind": "pickup",
-   "armor": 38,
-   "stats": {
-    "agility": 6,
-    "stamina": 6,
-    "intellect": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_gauntlets_22",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Return to Apothecary Zinge",
-     "questId": 864,
-     "level": 46,
-     "requiredLevel": 38,
-     "zone": "Undercity",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 38,
-      "orange": 42,
-      "yellow": 44,
-      "green": 49,
-      "grey": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/864",
-     "basis": {
-      "name": null,
-      "level": 46,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 654,
-      "steps": 6
-     },
-     "asap": 43,
-     "rec": 45
-    }
-   ]
-  },
-  {
-   "id": 11502,
-   "name": "Loreskin Shoulders",
-   "kind": "Leather",
-   "slot": "Shoulder",
-   "quality": 2,
-   "req": 0,
-   "obtain": 45,
-   "ilvl": 46,
-   "bind": "pickup",
-   "armor": 93,
-   "stats": {
-    "strength": 10,
-    "spirit": 9
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_shoulder_24",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Return to Apothecary Zinge",
-     "questId": 864,
-     "level": 46,
-     "requiredLevel": 38,
-     "zone": "Undercity",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 38,
-      "orange": 42,
-      "yellow": 44,
-      "green": 49,
-      "grey": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/864",
-     "basis": {
-      "name": null,
-      "level": 46,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 654,
-      "steps": 6
-     },
-     "asap": 43,
-     "rec": 45
-    }
-   ]
-  },
-  {
    "id": 11861,
    "name": "Girdle of Reprisal",
    "kind": "Mail",
@@ -151911,61 +151946,6 @@
       "steps": 5
      },
      "asap": 45,
-     "rec": 45
-    }
-   ]
-  },
-  {
-   "id": 9635,
-   "name": "Master Apothecary Cape",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 0,
-   "obtain": 45,
-   "ilvl": 45,
-   "bind": "pickup",
-   "armor": 30,
-   "stats": {
-    "intellect": 1,
-    "spirit": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_misc_cape_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Return to Apothecary Zinge",
-     "questId": 864,
-     "level": 46,
-     "requiredLevel": 38,
-     "zone": "Undercity",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 38,
-      "orange": 42,
-      "yellow": 44,
-      "green": 49,
-      "grey": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/864",
-     "basis": {
-      "name": null,
-      "level": 46,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 654,
-      "steps": 6
-     },
-     "asap": 43,
      "rec": 45
     }
    ]
@@ -154785,6 +154765,117 @@
    ]
   },
   {
+   "id": 9634,
+   "name": "Skilled Handling Gloves",
+   "kind": "Cloth",
+   "slot": "Hands",
+   "quality": 2,
+   "req": 0,
+   "obtain": 46,
+   "ilvl": 46,
+   "bind": "pickup",
+   "armor": 38,
+   "stats": {
+    "agility": 6,
+    "stamina": 6,
+    "intellect": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_gauntlets_22",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Return to Apothecary Zinge",
+     "questId": 864,
+     "level": 46,
+     "requiredLevel": 38,
+     "zone": "Undercity",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 38,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/864",
+     "basis": {
+      "name": "Glasshide Petrifier",
+      "level": 49,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 654,
+      "steps": 8
+     },
+     "asap": 46,
+     "rec": 46
+    }
+   ]
+  },
+  {
+   "id": 11502,
+   "name": "Loreskin Shoulders",
+   "kind": "Leather",
+   "slot": "Shoulder",
+   "quality": 2,
+   "req": 0,
+   "obtain": 46,
+   "ilvl": 46,
+   "bind": "pickup",
+   "armor": 93,
+   "stats": {
+    "strength": 10,
+    "spirit": 9
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_shoulder_24",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Return to Apothecary Zinge",
+     "questId": 864,
+     "level": 46,
+     "requiredLevel": 38,
+     "zone": "Undercity",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 38,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/864",
+     "basis": {
+      "name": "Glasshide Petrifier",
+      "level": 49,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 654,
+      "steps": 8
+     },
+     "asap": 46,
+     "rec": 46
+    }
+   ]
+  },
+  {
    "id": 9630,
    "name": "Pratt's Handcrafted Boots",
    "kind": "Leather",
@@ -154996,6 +155087,61 @@
       "steps": 1
      },
      "asap": 45,
+     "rec": 46
+    }
+   ]
+  },
+  {
+   "id": 9635,
+   "name": "Master Apothecary Cape",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 0,
+   "obtain": 46,
+   "ilvl": 45,
+   "bind": "pickup",
+   "armor": 30,
+   "stats": {
+    "intellect": 1,
+    "spirit": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_misc_cape_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Return to Apothecary Zinge",
+     "questId": 864,
+     "level": 46,
+     "requiredLevel": 38,
+     "zone": "Undercity",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 38,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/864",
+     "basis": {
+      "name": "Glasshide Petrifier",
+      "level": 49,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 654,
+      "steps": 8
+     },
+     "asap": 46,
      "rec": 46
     }
    ]
@@ -155297,12 +155443,11 @@
      },
      "ref": "https://foreverchanges.pro/quest/3528",
      "basis": {
-      "name": null,
+      "name": "Avatar of Hakkar",
       "level": 50,
-      "rank": "normal",
-      "from": "step-level",
+      "rank": "elite",
+      "from": "questie",
       "group": true,
-      "step": 4787,
       "steps": 4
      },
      "asap": 45,
@@ -158727,55 +158872,6 @@
    ]
   },
   {
-   "id": 17774,
-   "name": "Mark of the Chosen",
-   "kind": "Trinket",
-   "slot": "Trinket",
-   "quality": 2,
-   "req": 0,
-   "obtain": 47,
-   "ilvl": 48,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {},
-   "equip": [
-    "Equip: Has a 2% chance when struck in combat of increasing all stats by 21 for 1 min. (Proc chance: 2%, 2m cooldown)"
-   ],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_jewelry_talisman_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Pariah's Instructions",
-     "questId": 7067,
-     "level": 48,
-     "requiredLevel": 39,
-     "zone": "Maraudon",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 39,
-      "orange": 44,
-      "yellow": 46,
-      "green": 51,
-      "grey": 60
-     },
-     "ref": "https://foreverchanges.pro/quest/7067",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 39,
-     "rec": 47
-    }
-   ]
-  },
-  {
    "id": 19123,
    "name": "Everwarm Handwraps",
    "kind": "Cloth",
@@ -158971,6 +159067,62 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 48,
+     "rec": 48
+    }
+   ]
+  },
+  {
+   "id": 9652,
+   "name": "Gryphon Rider's Leggings",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 48,
+   "ilvl": 53,
+   "bind": "pickup",
+   "armor": 122,
+   "stats": {
+    "strength": 15,
+    "agility": 15
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_pants_13",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Saving Sharpbeak",
+     "questId": 2994,
+     "level": 51,
+     "requiredLevel": 40,
+     "zone": "The Hinterlands",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 47,
+      "yellow": 49,
+      "green": 54,
+      "grey": 60
+     },
+     "ref": "https://foreverchanges.pro/quest/2994",
+     "dungeonZone": "Zul'Farrak",
+     "basis": {
+      "name": "Vile Priestess Hexx",
+      "level": 51,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 7
+     },
+     "asap": 46,
      "rec": 48
     }
    ]
@@ -166466,104 +166618,6 @@
    ]
   },
   {
-   "id": 9638,
-   "name": "Chelonian Cuffs",
-   "kind": "Mail",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 49,
-   "ilvl": 50,
-   "bind": "pickup",
-   "armor": 119,
-   "stats": {
-    "stamina": 4,
-    "intellect": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_bracer_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Tooga's Quest",
-     "questId": 1560,
-     "level": 50,
-     "requiredLevel": 40,
-     "zone": "Tanaris",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 40,
-      "orange": 46,
-      "yellow": 48,
-      "green": 53,
-      "grey": 60
-     },
-     "ref": "https://foreverchanges.pro/quest/1560",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 40,
-     "rec": 49
-    }
-   ]
-  },
-  {
-   "id": 9642,
-   "name": "Band of the Great Tortoise",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 49,
-   "ilvl": 50,
-   "bind": "pickup",
-   "stats": {
-    "armor": 120
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "changed",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_10",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Tooga's Quest",
-     "questId": 1560,
-     "level": 50,
-     "requiredLevel": 40,
-     "zone": "Tanaris",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 40,
-      "orange": 46,
-      "yellow": 48,
-      "green": 53,
-      "grey": 60
-     },
-     "ref": "https://foreverchanges.pro/quest/1560",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 40,
-     "rec": 49
-    }
-   ]
-  },
-  {
    "id": 9655,
    "name": "Seedtime Hoop",
    "kind": "Ring",
@@ -166611,55 +166665,6 @@
       "group": false,
       "step": 2879,
       "steps": 7
-     },
-     "asap": 47,
-     "rec": 49
-    }
-   ]
-  },
-  {
-   "id": 11888,
-   "name": "Quintis' Research Gloves",
-   "kind": "Cloth",
-   "slot": "Hands",
-   "quality": 2,
-   "req": 0,
-   "obtain": 49,
-   "ilvl": 50,
-   "bind": "pickup",
-   "armor": 41,
-   "stats": {
-    "intellect": 11,
-    "spirit": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_gauntlets_25",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Mystery of Morrowgrain",
-     "questId": 3791,
-     "level": 50,
-     "requiredLevel": 47,
-     "zone": "Feralas",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "bands": {
-      "orange": 47,
-      "yellow": 48,
-      "green": 53,
-      "grey": 60
-     },
-     "ref": "https://foreverchanges.pro/quest/3791",
-     "basis": {
-      "from": "quest-level",
-      "group": false
      },
      "asap": 47,
      "rec": 49
@@ -171831,6 +171836,60 @@
    ]
   },
   {
+   "id": 11888,
+   "name": "Quintis' Research Gloves",
+   "kind": "Cloth",
+   "slot": "Hands",
+   "quality": 2,
+   "req": 0,
+   "obtain": 50,
+   "ilvl": 50,
+   "bind": "pickup",
+   "armor": 41,
+   "stats": {
+    "intellect": 11,
+    "spirit": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_gauntlets_25",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Mystery of Morrowgrain",
+     "questId": 3791,
+     "level": 50,
+     "requiredLevel": 47,
+     "zone": "Feralas",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "bands": {
+      "orange": 47,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
+     "ref": "https://foreverchanges.pro/quest/3791",
+     "basis": {
+      "name": "Ironhide Devilsaur",
+      "level": 56,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 3764,
+      "steps": 9
+     },
+     "asap": 50,
+     "rec": 50
+    }
+   ]
+  },
+  {
    "id": 219345,
    "name": "Infernal Lasso",
    "kind": "Trinket",
@@ -175453,117 +175512,6 @@
    ]
   },
   {
-   "id": 12018,
-   "name": "Conservator Helm",
-   "kind": "Mail",
-   "slot": "Head",
-   "quality": 3,
-   "req": 0,
-   "obtain": 51,
-   "ilvl": 54,
-   "bind": "pickup",
-   "armor": 262,
-   "stats": {
-    "stamina": 22,
-    "spirit": 20
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "changed",
-   "numbers": "client",
-   "icon": "inv_helmet_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Abandoned Hope",
-     "questId": 4242,
-     "level": 54,
-     "requiredLevel": 48,
-     "zone": "Blackrock Depths",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 48,
-      "orange": 50,
-      "yellow": 52,
-      "green": 57
-     },
-     "ref": "https://foreverchanges.pro/quest/4242",
-     "basis": {
-      "name": null,
-      "level": 54,
-      "rank": "normal",
-      "from": "step-level",
-      "group": true,
-      "step": 4241,
-      "steps": 7
-     },
-     "asap": 49,
-     "rec": 51
-    }
-   ]
-  },
-  {
-   "id": 12041,
-   "name": "Windshear Leggings",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 3,
-   "req": 0,
-   "obtain": 51,
-   "ilvl": 54,
-   "bind": "pickup",
-   "armor": 136,
-   "stats": {
-    "agility": 19,
-    "stamina": 5,
-    "spirit": 22
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "changed",
-   "numbers": "client",
-   "icon": "inv_pants_13",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Abandoned Hope",
-     "questId": 4242,
-     "level": 54,
-     "requiredLevel": 48,
-     "zone": "Blackrock Depths",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 48,
-      "orange": 50,
-      "yellow": 52,
-      "green": 57
-     },
-     "ref": "https://foreverchanges.pro/quest/4242",
-     "basis": {
-      "name": null,
-      "level": 54,
-      "rank": "normal",
-      "from": "step-level",
-      "group": true,
-      "step": 4241,
-      "steps": 7
-     },
-     "asap": 49,
-     "rec": 51
-    }
-   ]
-  },
-  {
    "id": 12050,
    "name": "Hazecover Boots",
    "kind": "Cloth",
@@ -175803,7 +175751,7 @@
      "level": 58,
      "requiredLevel": 52,
      "zone": "Blackrock Depths",
-     "faction": "both",
+     "faction": "horde",
      "confidence": "classic-assumed",
      "dungeon": true,
      "bands": {
@@ -175813,13 +175761,12 @@
      },
      "ref": "https://foreverchanges.pro/quest/4024",
      "basis": {
-      "name": "Frenzied Black Drake",
+      "name": "Bael'Gar",
       "level": 54,
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "step": 4022,
-      "steps": 8
+      "steps": 14
      },
      "asap": 52,
      "rec": 52
@@ -175858,7 +175805,7 @@
      "level": 58,
      "requiredLevel": 52,
      "zone": "Blackrock Depths",
-     "faction": "both",
+     "faction": "horde",
      "confidence": "classic-assumed",
      "dungeon": true,
      "bands": {
@@ -175868,13 +175815,12 @@
      },
      "ref": "https://foreverchanges.pro/quest/4024",
      "basis": {
-      "name": "Frenzied Black Drake",
+      "name": "Bael'Gar",
       "level": 54,
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "step": 4022,
-      "steps": 8
+      "steps": 14
      },
      "asap": 52,
      "rec": 52
@@ -175912,7 +175858,7 @@
      "level": 58,
      "requiredLevel": 52,
      "zone": "Blackrock Depths",
-     "faction": "both",
+     "faction": "horde",
      "confidence": "classic-assumed",
      "dungeon": true,
      "bands": {
@@ -175922,13 +175868,12 @@
      },
      "ref": "https://foreverchanges.pro/quest/4024",
      "basis": {
-      "name": "Frenzied Black Drake",
+      "name": "Bael'Gar",
       "level": 54,
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "step": 4022,
-      "steps": 8
+      "steps": 14
      },
      "asap": 52,
      "rec": 52
@@ -183873,114 +183818,6 @@
    ]
   },
   {
-   "id": 11873,
-   "name": "Ethereal Mist Cape",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 0,
-   "obtain": 53,
-   "ilvl": 56,
-   "bind": "pickup",
-   "armor": 36,
-   "stats": {
-    "intellect": 3,
-    "spirit": 12
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_misc_cape_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Ancient Spirit",
-     "questId": 4261,
-     "level": 56,
-     "requiredLevel": 49,
-     "zone": "Felwood",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 49,
-      "orange": 52,
-      "yellow": 54,
-      "green": 59
-     },
-     "ref": "https://foreverchanges.pro/quest/4261",
-     "basis": {
-      "name": null,
-      "level": 54,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 4442,
-      "steps": 4
-     },
-     "asap": 51,
-     "rec": 53
-    }
-   ]
-  },
-  {
-   "id": 11874,
-   "name": "Clouddrift Mantle",
-   "kind": "Leather",
-   "slot": "Shoulder",
-   "quality": 2,
-   "req": 0,
-   "obtain": 53,
-   "ilvl": 56,
-   "bind": "pickup",
-   "armor": 109,
-   "stats": {
-    "strength": 12,
-    "agility": 12
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_shoulder_30",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Ancient Spirit",
-     "questId": 4261,
-     "level": 56,
-     "requiredLevel": 49,
-     "zone": "Felwood",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 49,
-      "orange": 52,
-      "yellow": 54,
-      "green": 59
-     },
-     "ref": "https://foreverchanges.pro/quest/4261",
-     "basis": {
-      "name": null,
-      "level": 54,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 4442,
-      "steps": 4
-     },
-     "asap": 51,
-     "rec": 53
-    }
-   ]
-  },
-  {
    "id": 11904,
    "name": "Spirit of Aquementas",
    "kind": "Off-hand",
@@ -184180,7 +184017,7 @@
       "from": "wowhead",
       "group": true,
       "step": 4496,
-      "steps": 4
+      "steps": 9
      },
      "asap": 51,
      "rec": 53
@@ -184207,7 +184044,7 @@
       "from": "wowhead",
       "group": true,
       "step": 4496,
-      "steps": 4
+      "steps": 9
      },
      "asap": 51,
      "rec": 53
@@ -184260,7 +184097,7 @@
       "from": "wowhead",
       "group": true,
       "step": 4496,
-      "steps": 4
+      "steps": 9
      },
      "asap": 51,
      "rec": 53
@@ -184287,7 +184124,7 @@
       "from": "wowhead",
       "group": true,
       "step": 4496,
-      "steps": 4
+      "steps": 9
      },
      "asap": 51,
      "rec": 53
@@ -184341,7 +184178,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 1
+      "steps": 2
      },
      "asap": 51,
      "rec": 53
@@ -188791,6 +188628,114 @@
    ]
   },
   {
+   "id": 11873,
+   "name": "Ethereal Mist Cape",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 0,
+   "obtain": 54,
+   "ilvl": 56,
+   "bind": "pickup",
+   "armor": 36,
+   "stats": {
+    "intellect": 3,
+    "spirit": 12
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_misc_cape_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Ancient Spirit",
+     "questId": 4261,
+     "level": 56,
+     "requiredLevel": 49,
+     "zone": "Felwood",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 49,
+      "orange": 52,
+      "yellow": 54,
+      "green": 59
+     },
+     "ref": "https://foreverchanges.pro/quest/4261",
+     "basis": {
+      "name": "Xavaric",
+      "level": 55,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 4906,
+      "steps": 6
+     },
+     "asap": 52,
+     "rec": 54
+    }
+   ]
+  },
+  {
+   "id": 11874,
+   "name": "Clouddrift Mantle",
+   "kind": "Leather",
+   "slot": "Shoulder",
+   "quality": 2,
+   "req": 0,
+   "obtain": 54,
+   "ilvl": 56,
+   "bind": "pickup",
+   "armor": 109,
+   "stats": {
+    "strength": 12,
+    "agility": 12
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_shoulder_30",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Ancient Spirit",
+     "questId": 4261,
+     "level": 56,
+     "requiredLevel": 49,
+     "zone": "Felwood",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 49,
+      "orange": 52,
+      "yellow": 54,
+      "green": 59
+     },
+     "ref": "https://foreverchanges.pro/quest/4261",
+     "basis": {
+      "name": "Xavaric",
+      "level": 55,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 4906,
+      "steps": 6
+     },
+     "asap": 52,
+     "rec": 54
+    }
+   ]
+  },
+  {
    "id": 15789,
    "name": "Deep River Cloak",
    "kind": "Cloth",
@@ -189323,6 +189268,117 @@
       "steps": 2
      },
      "asap": 52,
+     "rec": 54
+    }
+   ]
+  },
+  {
+   "id": 12018,
+   "name": "Conservator Helm",
+   "kind": "Mail",
+   "slot": "Head",
+   "quality": 3,
+   "req": 0,
+   "obtain": 54,
+   "ilvl": 54,
+   "bind": "pickup",
+   "armor": 262,
+   "stats": {
+    "stamina": 22,
+    "spirit": 20
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_helmet_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Abandoned Hope",
+     "questId": 4242,
+     "level": 54,
+     "requiredLevel": 48,
+     "zone": "Blackrock Depths",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
+     "ref": "https://foreverchanges.pro/quest/4242",
+     "basis": {
+      "name": "Lady Katrana Prestor",
+      "level": 62,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": true,
+      "step": 4185,
+      "steps": 7
+     },
+     "asap": 54,
+     "rec": 54
+    }
+   ]
+  },
+  {
+   "id": 12041,
+   "name": "Windshear Leggings",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 3,
+   "req": 0,
+   "obtain": 54,
+   "ilvl": 54,
+   "bind": "pickup",
+   "armor": 136,
+   "stats": {
+    "agility": 19,
+    "stamina": 5,
+    "spirit": 22
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_pants_13",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Abandoned Hope",
+     "questId": 4242,
+     "level": 54,
+     "requiredLevel": 48,
+     "zone": "Blackrock Depths",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
+     "ref": "https://foreverchanges.pro/quest/4242",
+     "basis": {
+      "name": "Lady Katrana Prestor",
+      "level": 62,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": true,
+      "step": 4185,
+      "steps": 7
+     },
+     "asap": 54,
      "rec": 54
     }
    ]
@@ -201212,7 +201268,7 @@
       "from": "wowhead",
       "group": true,
       "step": 4362,
-      "steps": 6
+      "steps": 7
      },
      "asap": 54,
      "rec": 56
@@ -201380,7 +201436,7 @@
       "from": "wowhead",
       "group": true,
       "step": 4362,
-      "steps": 6
+      "steps": 7
      },
      "asap": 54,
      "rec": 56
@@ -202259,6 +202315,57 @@
       "from": "wowhead",
       "group": true
      }
+    }
+   ]
+  },
+  {
+   "id": 15873,
+   "name": "Ragged John's Neverending Cup",
+   "kind": "Trinket",
+   "slot": "Trinket",
+   "quality": 3,
+   "req": 0,
+   "obtain": 56,
+   "ilvl": 60,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "use": [
+    "Use: Increases Stamina by 10 and reduces physical damage taken by 5 for 10 min. However, lowers Strength and Agility by 5 and increases magical damage taken by up to 20. (30 Min Cooldown)"
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "classic",
+   "icon": "inv_drink_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Mother's Milk",
+     "questId": 4866,
+     "level": 60,
+     "requiredLevel": 55,
+     "zone": "Blackrock Spire",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/4866",
+     "basis": {
+      "name": "Mother Smolderweb",
+      "level": 59,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 55,
+     "rec": 56
     }
    ]
   },
@@ -204118,60 +204225,6 @@
    ]
   },
   {
-   "id": 10659,
-   "name": "Shard of the Splithooves",
-   "kind": "Trinket",
-   "slot": "Trinket",
-   "quality": 2,
-   "req": 0,
-   "obtain": 56,
-   "ilvl": 57,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {
-    "mp5": 6
-   },
-   "equip": [
-    "Equip: +21 Attack Power against Demons."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "changed",
-   "numbers": "client",
-   "icon": "inv_misc_gem_diamond_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Heroes of Old",
-     "questId": 2701,
-     "level": 57,
-     "requiredLevel": 45,
-     "zone": "Blasted Lands",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 45,
-      "orange": 53,
-      "yellow": 55,
-      "green": 60
-     },
-     "ref": "https://foreverchanges.pro/quest/2701",
-     "basis": {
-      "name": null,
-      "level": 57,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 2702,
-      "steps": 8
-     },
-     "asap": 54,
-     "rec": 56
-    }
-   ]
-  },
-  {
    "id": 18400,
    "name": "Ring of Living Stone",
    "kind": "Ring",
@@ -204218,7 +204271,7 @@
       "from": "step-level",
       "group": false,
       "step": 6844,
-      "steps": 8
+      "steps": 11
      },
      "asap": 54,
      "rec": 56
@@ -204272,7 +204325,7 @@
       "from": "step-level",
       "group": false,
       "step": 6844,
-      "steps": 8
+      "steps": 11
      },
      "asap": 54,
      "rec": 56
@@ -208526,55 +208579,6 @@
    ]
   },
   {
-   "id": 12344,
-   "name": "Seal of Ascension",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 3,
-   "req": 0,
-   "obtain": 57,
-   "ilvl": 61,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_jewelry_ring_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Seal of Ascension",
-     "questId": 4743,
-     "level": 60,
-     "requiredLevel": 57,
-     "zone": "Blackrock Spire",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "orange": 57,
-      "yellow": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/4743",
-     "basis": {
-      "name": "Overlord Wyrmthalak",
-      "level": 60,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "step": 4742,
-      "steps": 2
-     },
-     "asap": 57,
-     "rec": 57
-    }
-   ]
-  },
-  {
    "id": 12589,
    "name": "Dustfeather Sash",
    "kind": "Cloth",
@@ -212583,7 +212587,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 2
+      "steps": 4
      },
      "asap": 56,
      "rec": 57
@@ -212634,7 +212638,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 2
+      "steps": 4
      },
      "asap": 56,
      "rec": 57
@@ -213528,7 +213532,7 @@
       "from": "step-level",
       "group": false,
       "step": 5236,
-      "steps": 7
+      "steps": 13
      },
      "asap": 55,
      "rec": 57
@@ -213555,7 +213559,7 @@
       "from": "step-level",
       "group": false,
       "step": 5226,
-      "steps": 7
+      "steps": 13
      },
      "asap": 55,
      "rec": 57
@@ -213764,6 +213768,60 @@
       "steps": 1
      },
      "asap": 55,
+     "rec": 57
+    }
+   ]
+  },
+  {
+   "id": 10659,
+   "name": "Shard of the Splithooves",
+   "kind": "Trinket",
+   "slot": "Trinket",
+   "quality": 2,
+   "req": 0,
+   "obtain": 57,
+   "ilvl": 57,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {
+    "mp5": 6
+   },
+   "equip": [
+    "Equip: +21 Attack Power against Demons."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_misc_gem_diamond_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Heroes of Old",
+     "questId": 2701,
+     "level": 57,
+     "requiredLevel": 45,
+     "zone": "Blasted Lands",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 45,
+      "orange": 53,
+      "yellow": 55,
+      "green": 60
+     },
+     "ref": "https://foreverchanges.pro/quest/2701",
+     "basis": {
+      "name": "Fallen Hero of the Horde",
+      "level": 60,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 2801,
+      "steps": 8
+     },
+     "asap": 57,
      "rec": 57
     }
    ]
@@ -218237,7 +218295,7 @@
       "from": "wowhead",
       "group": true,
       "step": 8932,
-      "steps": 41
+      "steps": 25
      },
      "asap": 58,
      "rec": 58
@@ -218290,7 +218348,7 @@
       "from": "wowhead",
       "group": true,
       "step": 8932,
-      "steps": 41
+      "steps": 25
      },
      "asap": 58,
      "rec": 58
@@ -219121,179 +219179,6 @@
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 12752,
-   "name": "Cap of the Scarlet Savant",
-   "kind": "Cloth",
-   "slot": "Head",
-   "quality": 4,
-   "req": 0,
-   "obtain": 58,
-   "ilvl": 62,
-   "bind": "pickup",
-   "armor": 78,
-   "stats": {
-    "stamina": 17,
-    "intellect": 20
-   },
-   "bonus": {
-    "spellCrit": 2
-   },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike with spells by 2%."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_helmet_59",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Cap of the Scarlet Savant",
-     "questId": 5063,
-     "level": 60,
-     "requiredLevel": 57,
-     "zone": "Winterspring",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "orange": 57,
-      "yellow": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/5063",
-     "dungeonZone": "Blackrock Spire",
-     "basis": {
-      "name": "Venom Belcher",
-      "level": 61,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 57,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 12756,
-   "name": "Leggings of Arcana",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 4,
-   "req": 0,
-   "obtain": 58,
-   "ilvl": 62,
-   "bind": "pickup",
-   "armor": 166,
-   "stats": {
-    "intellect": 20,
-    "spirit": 30
-   },
-   "bonus": {
-    "spellPower": 18
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_pants_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Leggings of Arcana",
-     "questId": 5067,
-     "level": 60,
-     "requiredLevel": 57,
-     "zone": "Winterspring",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "orange": 57,
-      "yellow": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/5067",
-     "dungeonZone": "Blackrock Spire",
-     "basis": {
-      "name": "Venom Belcher",
-      "level": 61,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 57,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 12757,
-   "name": "Breastplate of Bloodthirst",
-   "kind": "Leather",
-   "slot": "Chest",
-   "quality": 4,
-   "req": 0,
-   "obtain": 58,
-   "ilvl": 62,
-   "bind": "pickup",
-   "armor": 190,
-   "stats": {
-    "strength": 13,
-    "stamina": 20
-   },
-   "bonus": {
-    "crit": 2,
-    "dodge": 1
-   },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 2%.",
-    "Equip: Increases your chance to dodge an attack by 1%."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_chest_chain_13",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Breastplate of Bloodthirst",
-     "questId": 5068,
-     "level": 60,
-     "requiredLevel": 57,
-     "zone": "Winterspring",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "orange": 57,
-      "yellow": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/5068",
-     "dungeonZone": "Blackrock Spire",
-     "basis": {
-      "name": "Venom Belcher",
-      "level": 61,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 57,
      "rec": 58
     }
    ]
@@ -220269,12 +220154,13 @@
      },
      "ref": "https://foreverchanges.pro/quest/6148",
      "basis": {
-      "name": "Demetria",
+      "name": "Borelgore",
       "level": 61,
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 5
+      "step": 6136,
+      "steps": 10
      },
      "asap": 56,
      "rec": 58
@@ -220347,7 +220233,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 3
+      "steps": 5
      },
      "asap": 56,
      "rec": 58
@@ -220399,7 +220285,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 3
+      "steps": 5
      },
      "asap": 56,
      "rec": 58
@@ -221459,6 +221345,54 @@
    ]
   },
   {
+   "id": 12344,
+   "name": "Seal of Ascension",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 3,
+   "req": 0,
+   "obtain": 58,
+   "ilvl": 61,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "classic",
+   "icon": "inv_jewelry_ring_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Seal of Ascension",
+     "questId": 4743,
+     "level": 60,
+     "requiredLevel": 57,
+     "zone": "Blackrock Spire",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "orange": 57,
+      "yellow": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/4743",
+     "basis": {
+      "name": "Emberstrife",
+      "level": 61,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 57,
+     "rec": 58
+    }
+   ]
+  },
+  {
    "id": 13171,
    "name": "Smokey's Lighter",
    "kind": "Trinket",
@@ -222131,7 +222065,7 @@
       "from": "step-level",
       "group": false,
       "step": 4882,
-      "steps": 2
+      "steps": 4
      },
      "asap": 56,
      "rec": 58
@@ -226698,6 +226632,182 @@
    ]
   },
   {
+   "id": 12752,
+   "name": "Cap of the Scarlet Savant",
+   "kind": "Cloth",
+   "slot": "Head",
+   "quality": 4,
+   "req": 0,
+   "obtain": 59,
+   "ilvl": 62,
+   "bind": "pickup",
+   "armor": 78,
+   "stats": {
+    "stamina": 17,
+    "intellect": 20
+   },
+   "bonus": {
+    "spellCrit": 2
+   },
+   "equip": [
+    "Equip: Improves your chance to get a critical strike with spells by 2%."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "classic",
+   "icon": "inv_helmet_59",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Cap of the Scarlet Savant",
+     "questId": 5063,
+     "level": 60,
+     "requiredLevel": 57,
+     "zone": "Winterspring",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "orange": 57,
+      "yellow": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/5063",
+     "dungeonZone": "Blackrock Spire",
+     "basis": {
+      "name": "The Beast",
+      "level": 62,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
+      "step": 5047,
+      "steps": 2
+     },
+     "asap": 57,
+     "rec": 59
+    }
+   ]
+  },
+  {
+   "id": 12756,
+   "name": "Leggings of Arcana",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 4,
+   "req": 0,
+   "obtain": 59,
+   "ilvl": 62,
+   "bind": "pickup",
+   "armor": 166,
+   "stats": {
+    "intellect": 20,
+    "spirit": 30
+   },
+   "bonus": {
+    "spellPower": 18
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "classic",
+   "icon": "inv_pants_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Leggings of Arcana",
+     "questId": 5067,
+     "level": 60,
+     "requiredLevel": 57,
+     "zone": "Winterspring",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "orange": 57,
+      "yellow": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/5067",
+     "dungeonZone": "Blackrock Spire",
+     "basis": {
+      "name": "The Beast",
+      "level": 62,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
+      "step": 5047,
+      "steps": 2
+     },
+     "asap": 57,
+     "rec": 59
+    }
+   ]
+  },
+  {
+   "id": 12757,
+   "name": "Breastplate of Bloodthirst",
+   "kind": "Leather",
+   "slot": "Chest",
+   "quality": 4,
+   "req": 0,
+   "obtain": 59,
+   "ilvl": 62,
+   "bind": "pickup",
+   "armor": 190,
+   "stats": {
+    "strength": 13,
+    "stamina": 20
+   },
+   "bonus": {
+    "crit": 2,
+    "dodge": 1
+   },
+   "equip": [
+    "Equip: Improves your chance to get a critical strike by 2%.",
+    "Equip: Increases your chance to dodge an attack by 1%."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "classic",
+   "icon": "inv_chest_chain_13",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Breastplate of Bloodthirst",
+     "questId": 5068,
+     "level": 60,
+     "requiredLevel": 57,
+     "zone": "Winterspring",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "orange": 57,
+      "yellow": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/5068",
+     "dungeonZone": "Blackrock Spire",
+     "basis": {
+      "name": "The Beast",
+      "level": 62,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
+      "step": 5047,
+      "steps": 2
+     },
+     "asap": 57,
+     "rec": 59
+    }
+   ]
+  },
+  {
    "id": 12903,
    "name": "Legguards of the Chromatic Defier",
    "kind": "Mail",
@@ -227287,10 +227397,14 @@
      },
      "ref": "https://foreverchanges.pro/quest/8481",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Xandivious",
+      "level": 62,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
      },
-     "asap": 45,
+     "asap": 57,
      "rec": 59
     }
    ]
@@ -228052,53 +228166,6 @@
       "steps": 8
      },
      "asap": 57,
-     "rec": 59
-    }
-   ]
-  },
-  {
-   "id": 15873,
-   "name": "Ragged John's Neverending Cup",
-   "kind": "Trinket",
-   "slot": "Trinket",
-   "quality": 3,
-   "req": 0,
-   "obtain": 59,
-   "ilvl": 60,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [
-    "Use: Increases Stamina by 10 and reduces physical damage taken by 5 for 10 min. However, lowers Strength and Agility by 5 and increases magical damage taken by up to 20. (30 Min Cooldown)"
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_drink_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Mother's Milk",
-     "questId": 4866,
-     "level": 60,
-     "requiredLevel": 55,
-     "zone": "Blackrock Spire",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 55,
-      "orange": 56,
-      "yellow": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/4866",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 55,
      "rec": 59
     }
    ]
@@ -232742,11 +232809,11 @@
      "ref": "https://foreverchanges.pro/quest/8802",
      "raid": true,
      "basis": {
-      "name": null,
-      "level": 60,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
+      "name": "C'Thun",
+      "level": 63,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
       "step": 8801,
       "steps": 2
      },
@@ -232795,11 +232862,11 @@
      "ref": "https://foreverchanges.pro/quest/8802",
      "raid": true,
      "basis": {
-      "name": null,
-      "level": 60,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
+      "name": "C'Thun",
+      "level": 63,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
       "step": 8801,
       "steps": 2
      },
@@ -232848,11 +232915,11 @@
      "ref": "https://foreverchanges.pro/quest/8802",
      "raid": true,
      "basis": {
-      "name": null,
-      "level": 60,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
+      "name": "C'Thun",
+      "level": 63,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
       "step": 8801,
       "steps": 2
      },
@@ -236409,11 +236476,11 @@
      },
      "ref": "https://foreverchanges.pro/quest/7782",
      "basis": {
-      "name": null,
-      "level": 60,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
+      "name": "Lord Victor Nefarius",
+      "level": 63,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
       "step": 7781,
       "steps": 2
      },
@@ -236434,11 +236501,11 @@
      },
      "ref": "https://foreverchanges.pro/quest/7784",
      "basis": {
-      "name": null,
-      "level": 60,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
+      "name": "Lord Victor Nefarius",
+      "level": 63,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
       "step": 7783,
       "steps": 2
      },
@@ -236773,11 +236840,11 @@
      },
      "ref": "https://foreverchanges.pro/quest/7782",
      "basis": {
-      "name": null,
-      "level": 60,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
+      "name": "Lord Victor Nefarius",
+      "level": 63,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
       "step": 7781,
       "steps": 2
      },
@@ -236798,11 +236865,11 @@
      },
      "ref": "https://foreverchanges.pro/quest/7784",
      "basis": {
-      "name": null,
-      "level": 60,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
+      "name": "Lord Victor Nefarius",
+      "level": 63,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
       "step": 7783,
       "steps": 2
      },
@@ -236850,11 +236917,11 @@
      },
      "ref": "https://foreverchanges.pro/quest/7782",
      "basis": {
-      "name": null,
-      "level": 60,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
+      "name": "Lord Victor Nefarius",
+      "level": 63,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
       "step": 7781,
       "steps": 2
      },
@@ -236875,11 +236942,11 @@
      },
      "ref": "https://foreverchanges.pro/quest/7784",
      "basis": {
-      "name": null,
-      "level": 60,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
+      "name": "Lord Victor Nefarius",
+      "level": 63,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
       "step": 7783,
       "steps": 2
      },
@@ -239627,7 +239694,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 1
+      "steps": 6
      },
      "asap": 60,
      "rec": 60
@@ -239651,7 +239718,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 1
+      "steps": 6
      },
      "asap": 60,
      "rec": 60
@@ -239727,7 +239794,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 1
+      "steps": 6
      },
      "asap": 60,
      "rec": 60
@@ -239751,7 +239818,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 1
+      "steps": 6
      },
      "asap": 60,
      "rec": 60
@@ -239828,7 +239895,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 1
+      "steps": 6
      },
      "asap": 60,
      "rec": 60
@@ -239852,7 +239919,7 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 1
+      "steps": 6
      },
      "asap": 60,
      "rec": 60
@@ -240304,12 +240371,13 @@
      "ref": "https://foreverchanges.pro/quest/9232",
      "raid": true,
      "basis": {
-      "name": "Scarlet Worker",
-      "level": 57,
-      "rank": "normal",
+      "name": "Living Monstrosity",
+      "level": 62,
+      "rank": "elite",
       "from": "wowhead",
-      "group": false,
-      "steps": 1
+      "group": true,
+      "step": 9033,
+      "steps": 5
      },
      "asap": 60,
      "rec": 60
@@ -240355,12 +240423,13 @@
      "ref": "https://foreverchanges.pro/quest/9232",
      "raid": true,
      "basis": {
-      "name": "Scarlet Worker",
-      "level": 57,
-      "rank": "normal",
+      "name": "Living Monstrosity",
+      "level": 62,
+      "rank": "elite",
       "from": "wowhead",
-      "group": false,
-      "steps": 1
+      "group": true,
+      "step": 9033,
+      "steps": 5
      },
      "asap": 60,
      "rec": 60
@@ -240406,12 +240475,13 @@
      "ref": "https://foreverchanges.pro/quest/9232",
      "raid": true,
      "basis": {
-      "name": "Scarlet Worker",
-      "level": 57,
-      "rank": "normal",
+      "name": "Living Monstrosity",
+      "level": 62,
+      "rank": "elite",
       "from": "wowhead",
-      "group": false,
-      "steps": 1
+      "group": true,
+      "step": 9033,
+      "steps": 5
      },
      "asap": 60,
      "rec": 60
@@ -240455,13 +240525,13 @@
      "ref": "https://foreverchanges.pro/quest/9230",
      "raid": true,
      "basis": {
-      "name": "Dread Creeper",
-      "level": 61,
+      "name": "Living Monstrosity",
+      "level": 62,
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "step": 9229,
-      "steps": 2
+      "step": 9033,
+      "steps": 6
      },
      "asap": 60,
      "rec": 60
@@ -243346,12 +243416,13 @@
      },
      "ref": "https://foreverchanges.pro/quest/8729",
      "basis": {
-      "name": "Maws",
+      "name": "Ragnaros",
       "level": 63,
       "rank": "boss",
       "from": "questie",
       "group": true,
-      "steps": 7
+      "step": 8578,
+      "steps": 14
      },
      "asap": 60,
      "rec": 60
@@ -243398,12 +243469,13 @@
      },
      "ref": "https://foreverchanges.pro/quest/8729",
      "basis": {
-      "name": "Maws",
+      "name": "Ragnaros",
       "level": 63,
       "rank": "boss",
       "from": "questie",
       "group": true,
-      "steps": 7
+      "step": 8578,
+      "steps": 14
      },
      "asap": 60,
      "rec": 60
@@ -243559,7 +243631,7 @@
       "from": "questie",
       "group": true,
       "step": 8735,
-      "steps": 4
+      "steps": 7
      },
      "asap": 60,
      "rec": 60
@@ -243613,7 +243685,7 @@
       "from": "questie",
       "group": true,
       "step": 8735,
-      "steps": 4
+      "steps": 7
      },
      "asap": 60,
      "rec": 60
@@ -245746,7 +245818,7 @@
       "from": "wowhead",
       "group": true,
       "step": 8606,
-      "steps": 6
+      "steps": 8
      },
      "asap": 60,
      "rec": 60
@@ -252814,8 +252886,12 @@
      "ref": "https://foreverchanges.pro/quest/8791",
      "raid": true,
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Ossirian the Unscarred",
+      "level": 63,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60
@@ -252861,8 +252937,12 @@
      "ref": "https://foreverchanges.pro/quest/8791",
      "raid": true,
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Ossirian the Unscarred",
+      "level": 63,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60
@@ -252909,8 +252989,12 @@
      "ref": "https://foreverchanges.pro/quest/8791",
      "raid": true,
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Ossirian the Unscarred",
+      "level": 63,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60
@@ -252955,8 +253039,12 @@
      "ref": "https://foreverchanges.pro/quest/8791",
      "raid": true,
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Ossirian the Unscarred",
+      "level": 63,
+      "rank": "boss",
+      "from": "questie",
+      "group": true,
+      "steps": 1
      },
      "asap": 60,
      "rec": 60
@@ -257057,8 +257145,13 @@
      "ref": "https://foreverchanges.pro/quest/8573",
      "raid": true,
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 60,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 8800,
+      "steps": 2
      },
      "asap": 60,
      "rec": 60
@@ -257102,8 +257195,13 @@
      "ref": "https://foreverchanges.pro/quest/8572",
      "raid": true,
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 60,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 8800,
+      "steps": 2
      },
      "asap": 60,
      "rec": 60
@@ -257150,8 +257248,13 @@
      "ref": "https://foreverchanges.pro/quest/8572",
      "raid": true,
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 60,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 8800,
+      "steps": 2
      },
      "asap": 60,
      "rec": 60
@@ -257199,8 +257302,13 @@
      "ref": "https://foreverchanges.pro/quest/8572",
      "raid": true,
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 60,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 8800,
+      "steps": 2
      },
      "asap": 60,
      "rec": 60
@@ -257244,8 +257352,13 @@
      "ref": "https://foreverchanges.pro/quest/8573",
      "raid": true,
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 60,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 8800,
+      "steps": 2
      },
      "asap": 60,
      "rec": 60
@@ -267396,8 +267509,13 @@
      "ref": "https://foreverchanges.pro/quest/8548",
      "raid": true,
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 60,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 8800,
+      "steps": 2
      },
      "asap": 60,
      "rec": 60
@@ -267444,8 +267562,13 @@
      "ref": "https://foreverchanges.pro/quest/8548",
      "raid": true,
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 60,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 8800,
+      "steps": 2
      },
      "asap": 60,
      "rec": 60
@@ -267600,8 +267723,13 @@
      "ref": "https://foreverchanges.pro/quest/8548",
      "raid": true,
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 60,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 8800,
+      "steps": 2
      },
      "asap": 60,
      "rec": 60
