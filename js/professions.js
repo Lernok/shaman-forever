@@ -188,27 +188,40 @@
       if (['crafted', 'favor'].includes(st.pick.access) && !(lw && st.pick.source.profession === 'Leatherworking')) steps.push(st);
     }));
     steps.sort((x, y) => x.level - y.level);
-    html += '<h3 class="block-title" style="margin-top:22px">' + t('pr.plan.title', { spec: Site.spec, profs: others.join(' + ') }) + '</h3>' +
-      '<p class="note-text dim">' + t('pr.plan.worth') + '</p><div class="plan-list">';
-    BRACKETS.forEach(([lo, hi]) => {
-      const here = steps.filter(st => st.level >= lo && st.level <= hi);
-      const favor = here.filter(st => st.pick.access === 'favor');
-      let rows = here.filter(st => st.pick.access === 'crafted').map(st => craftRow(st)).join('');
-      if (favor.length) rows += '<div class="plan-favor"><b>' + t('pr.plan.favor', { n: favor.length }) + '</b>' + favor.map(st => craftRow(st)).join('') + '</div>';
-      html += '<div class="plan-bracket' + (lo > BETA_CAP ? ' post-cap' : '') + '">' + bracketHead([lo, hi]) +
-        (rows || '<p class="dim">' + t('pr.plan.nothingWorth') + '</p>') + '</div>';
-    });
-    html += '</div><p class="note-text dim">' + t('pr.plan.note2') + '</p>';
+    // Now: the piece you should be wearing from your craft (or the next one).
+    const lvl = UI.levelNow();
+    const due = steps.filter(st => st.level <= lvl && st.until > lvl).pop();
+    const next = steps.find(st => st.level > lvl);
+    const nowSt = due || next;
+    html += '<div class="pr-sec-head"><h3>' + t('pr.plan.title2', { profs: others.join(' + ') }) + '</h3></div>';
+    if (nowSt) {
+      const line = (k, body) => '<div class="pn-row"><span class="pn-k">' + k + '</span><div class="pn-v">' + body + '</div></div>';
+      html += '<section class="pr-now"><span class="hn-kicker">' + t('pr.now.kicker1', { n: lvl }) + '</span>' +
+        '<h2>' + t(due ? 'pr.plan.nowWear' : 'pr.plan.nowNext', { item: nowSt.pick.item.name, n: nowSt.level }) + '</h2>' +
+        line(t('pr.plan.kPiece'), UI.itemLink(nowSt.pick.item) + ' <span class="dim">' + window.GearPath.slotName(nowSt.pick.slot) + ' · ' + window.GearPath.sourceText(nowSt.pick) + '</span>') +
+        line(t('pr.plan.kWhy'), '<span>' + window.GearPath.why(nowSt) + '</span>') +
+        (window.GearPath.craftMats(nowSt) ? line(t('pr.plan.kMats'), window.GearPath.craftMats(nowSt)) : '') + '</section>';
+    }
+    // Every piece, by the level it comes: one line each, the rest on tap.
+    const byLevel = new Map();
+    steps.forEach(st => { if (!byLevel.has(st.level)) byLevel.set(st.level, []); byLevel.get(st.level).push(st); });
+    html += '<section class="gp-coming"><div class="gp-coming-head"><h3>' + t('pr.pieces.title2', { profs: others.join(' + ') }) + '</h3><span class="dim">' + t('pr.plan.worth') + '</span></div>' +
+      (steps.length ? [...byLevel.entries()].map(([l, list]) => '<div class="gp-lvl-row' + (l > BETA_CAP ? ' post-cap' : '') + '"><b class="gp-lvl-n">' + t('home.tile.lv', { n: l }) + '</b><div class="gp-cards">' + list.map(pieceCard).join('') + '</div></div>').join('')
+        : '<p class="dim">' + t('pr.plan.nothingWorth') + '</p>') + '</section>';
+    html += '<p class="note-text dim">' + t('pr.plan.note2') + '</p>';
     return html + extra;
   }
 
-  function craftRow(st) {
+  // A crafted piece of your path as a card: the line, and how on tap.
+  function pieceCard(st) {
     const GP = window.GearPath;
     const s = st.pick.source;
-    return '<div class="gp-step"><span class="gp-lv">' + st.level + '</span><span class="gp-slot">' + GP.slotName(st.pick.slot) + '</span>' +
-      '<div class="gp-main">' + UI.itemLink(st.pick.item) + '<span class="wp-sub">' + s.profession + ' · ' + t('pr.plan.skill', { n: (s.learn || {}).learnAt || s.yellow }) +
-      (st.pick.access === 'favor' ? ' · ' + t('pr.plan.favorCost', { n: (s.learn || {}).favor || '?' }) : '') + '</span>' +
-      '<span class="gp-why">' + GP.why(st) + '</span>' + GP.craftMats(st) + '</div></div>';
+    const i = st.pick.item;
+    const tag = st.pick.access === 'favor' ? t('pr.plan.favorCost', { n: (s.learn || {}).favor || '?' }) : t('pr.plan.skill', { n: (s.learn || {}).learnAt || s.yellow });
+    return '<details class="gp-card gp-tag-craft"><summary>' + (i.icon ? '<img class="gst-icon q' + (i.quality || 1) + '" src="' + UI.icon(i.icon) + '" alt="">' : '') +
+      '<span class="gpc-main"><b class="q' + i.quality + '">' + i.name + '</b><span class="gpc-sub">' + GP.slotName(st.pick.slot) + ' · <span class="gpc-tag">' + tag + '</span>' +
+      (st.level > BETA_CAP ? ' · <span class="dim">' + t('pr.plan.postCap') + '</span>' : '') + '</span></span></summary>' +
+      '<div class="gpc-body"><span class="dim">' + GP.sourceText(st.pick) + '</span><span class="gp-why">' + GP.why(st) + '</span>' + GP.craftMats(st) + '</div></details>';
   }
 
   function guidesHtml(g) {
