@@ -32,7 +32,7 @@ function logOf(text) {
 }
 
 const WORDS = { load: 'carga', zone: 'zona', level: 'nivel', quest: 'entrega', accept: 'acepta', in: 'entra a', out: 'sale de',
-  pop: 'AVISO', chat: 'chat', click: 'clic', done: 'listo', restore: 'restaura', trainer: 'entrenador', buy: 'compra', error: 'ERROR' };
+  pop: 'AVISO', chat: 'chat', click: 'clic', done: 'listo', restore: 'restaura', trainer: 'entrenador', buy: 'compra', spend: 'gasto', learn: 'aprende', error: 'ERROR' };
 const since = all ? 0 : Date.now() / 1000 - hours * 3600;
 const totals = {};
 for (const f of files(path.join(WTF, 'Account'))) {

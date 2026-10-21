@@ -49,6 +49,8 @@ merged.drops = merged.drops || {};
 merged.goods = merged.goods || {};
 merged.skins = merged.skins || {};
 merged.kills = merged.kills || {};
+// Class trainers: what each spell rank costs and its level (addon 0.32).
+merged.spells = merged.spells || {};
 // Lua arrays come as {"1": a, "2": b}.
 const arr = o => (o && typeof o === 'object' ? Object.keys(o).sort((a, b) => a - b).map(k => o[k]) : o);
 for (const f of files) {
@@ -67,6 +69,7 @@ for (const f of files) {
       if (!merged[kind][id] || (merged[kind][id].t || 0) <= (v.t || 0)) merged[kind][id] = v;
     }
   }
+  for (const [id, v] of Object.entries(scan.spells || {})) if (!merged.spells[id] || (merged.spells[id].t || 0) <= (v.t || 0)) merged.spells[id] = v;
   // Every recipe the profession window lists (learned or not).
   for (const [prof, items] of Object.entries(scan.recipes || {})) merged.recipes[prof] = Object.assign(merged.recipes[prof] || {}, items);
   if (scan.fields) merged.fields = scan.fields;
@@ -244,20 +247,33 @@ for (const a of fs.existsSync(accounts) ? fs.readdirSync(accounts) : []) {
     }
   }
 }
-const charDump = dump.replace('io.write(enc((ShamanForeverDB or {}).scan or {}))', 'io.write(enc({ xp = (ShamanForeverCharDB or {}).xp, income = (ShamanForeverCharDB or {}).income }))');
+const charDump = dump.replace('io.write(enc((ShamanForeverDB or {}).scan or {}))', 'io.write(enc({ xp = (ShamanForeverCharDB or {}).xp, income = (ShamanForeverCharDB or {}).income, spend = (ShamanForeverCharDB or {}).spend }))');
 const charTmp = path.join(os.tmpdir(), 'sf-char.lua');
 fs.writeFileSync(charTmp, charDump);
 for (const c of chars) {
   let d;
   try { d = JSON.parse(execFileSync(lua, [charTmp, c.f], { encoding: 'utf8', maxBuffer: 64 << 20 })); } catch (e) { continue; }
-  const levels = [...new Set(Object.keys(d.xp || {}).concat(Object.keys(d.income || {})))].map(Number).sort((a, b) => a - b);
+  const levels = [...new Set(Object.keys(d.xp || {}).concat(Object.keys(d.income || {}), Object.keys(d.spend || {})))].map(Number).sort((a, b) => a - b);
   if (!levels.length) continue;
-  console.log('\nNIVELES DE ' + c.who + ' (experiencia: de misiones / total · oro: de misiones / todo lo que entró)');
+  console.log('\nNIVELES DE ' + c.who + ' (experiencia: de misiones / total · oro: de misiones / todo lo que entró · gastos por destino)');
+  const SPEND = { class: 'hechizos', prof: 'entrenador de profesión', vendor: 'vendedores', ah: 'subasta', flight: 'vuelos', mail: 'correo', other: 'otros' };
+  const tot = {};
   for (const l of levels) {
-    const x = (d.xp || {})[l] || {}, g = (d.income || {})[l] || {};
+    const x = (d.xp || {})[l] || {}, g = (d.income || {})[l] || {}, sp = (d.spend || {})[l] || {};
     console.log('  nv ' + String(l).padStart(2) + ' · xp ' + (x.q || 0) + ' / ' + (x.all || 0) + (x.all ? ' (' + Math.round((x.q || 0) / x.all * 100) + '% misiones)' : '') +
-      ' · oro ' + coin(g.q || 0) + ' / ' + coin(g.all || 0));
+      ' · oro ' + coin(g.q || 0) + ' / ' + coin(g.all || 0) +
+      (Object.keys(sp).length ? ' · gastos ' + Object.entries(sp).map(([k, v]) => { tot[k] = (tot[k] || 0) + v; return (SPEND[k] || k) + ' ' + coin(v); }).join(', ') : ''));
   }
+  if (Object.keys(tot).length) console.log('  total gastado: ' + Object.entries(tot).map(([k, v]) => (SPEND[k] || k) + ' ' + coin(v)).join(', '));
+}
+// What learning costs: every spell rank seen at a class trainer, by level.
+const spellCost = new Map();
+for (const v of Object.values(merged.spells)) for (const [name, e] of Object.entries(v.list || {})) if (e.cost != null) spellCost.set(name, e);
+if (spellCost.size) {
+  const byLvl = {};
+  for (const [name, e] of spellCost) (byLvl[e.level || 0] = byLvl[e.level || 0] || []).push(name + ' ' + coin(e.cost));
+  console.log('\nHECHIZOS EN EL ENTRENADOR DE CLASE (nivel: hechizo y costo; ' + spellCost.size + ' vistos)');
+  Object.keys(byLvl).map(Number).sort((a, b) => a - b).forEach(l => console.log('  nv ' + String(l).padStart(2) + ': ' + byLvl[l].join(', ')));
 }
 if (merged.fields) console.log('\nCampos de una receta: ' + merged.fields);
 const colorN = Object.values(merged.colors).reduce((n, m) => n + Object.keys(m).length, 0);

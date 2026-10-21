@@ -59,7 +59,12 @@ function IsQuestFlaggedCompleted(id) return completed[id] or false end
 -- Shift+click on an item (MARK=<item id>): the hook the addon adds.
 local clickHooks = {}
 function HandleModifiedItemClick(link) for _, fn in ipairs(clickHooks) do fn(link) end end
-function hooksecurefunc(name, fn) if name == "HandleModifiedItemClick" then table.insert(clickHooks, fn) end end
+function hooksecurefunc(name, fn)
+  if name == "HandleModifiedItemClick" then table.insert(clickHooks, fn) return end
+  -- Any other global: runs fn after it (BuyTrainerService...), set when it exists later too.
+  hooks = hooks or {}
+  hooks[name] = fn
+end
 function IsShiftKeyDown() return true end
 function IsControlKeyDown() return false end
 function IsAltKeyDown() return false end
@@ -304,6 +309,25 @@ ev:fire("QUEST_TURNED_IN", 96659, 410, 75)
 money = 1075; ev:fire("PLAYER_MONEY")
 money = 1000; ev:fire("PLAYER_MONEY")
 money = 1030; ev:fire("PLAYER_MONEY")
+-- Spending (cdb.spend): a spell at the class trainer, a recipe at a
+-- profession trainer, thread at a vendor, something with nothing open.
+local function buyAt(prof, cost)
+  function IsTradeskillTrainer() return prof end
+  UnitGUID = UnitGUID or function() return "Creature-0-1-1-1-3344-00001" end
+  ev:fire("TRAINER_SHOW")
+  if hooks and hooks.BuyTrainerService then hooks.BuyTrainerService(1) end
+  money = money - cost; ev:fire("PLAYER_MONEY")
+  ev:fire("TRAINER_CLOSED")
+end
+buyAt(false, 100) buyAt(true, 50)
+ev:fire("MERCHANT_SHOW"); money = money - 20; ev:fire("PLAYER_MONEY"); ev:fire("MERCHANT_CLOSED")
+money = money - 5; ev:fire("PLAYER_MONEY")
+local sp = (ShamanForeverCharDB.spend or {})[UnitLevel("player")] or {}
+print("gastos del nivel: hechizos " .. tostring(sp.class) .. ", profesión " .. tostring(sp.prof) .. ", vendedores " .. tostring(sp.vendor) .. ", otros " .. tostring(sp.other))
+for _, l in ipairs(ShamanForeverCharDB.log) do if l:find("|spend|") or l:find("|learn|") then print("LOG", l) end end
+local ns = 0
+for _, v in pairs((ShamanForeverDB.scan or {}).spells or {}) do for _ in pairs(v.list or {}) do ns = ns + 1 end end
+print("hechizos vistos en el entrenador de clase: " .. ns)
 -- What the scanner measures (MEASURE=1): a level-7 boar seen under the mouse
 -- and skinned without targeting it, two crafts (the first raises the skill),
 -- and experience from a kill and a quest.

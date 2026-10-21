@@ -14,7 +14,7 @@ local D = SF.DATA
 -- the log).
 local db, cdb
 local DEFAULTS = { spec = "Enhancement", lead = 0, quiet = false, talents = true }
-local LOG_MAX = 3000
+local LOG_MAX = 6000
 -- Path pieces this many levels behind you aren't worth going back for.
 local STALE = 6
 local QUEST_ICON = "Interface\\GossipFrame\\AvailableQuestIcon"
@@ -1926,6 +1926,8 @@ local Scan = (function()
   --   trainer list[service name] = { item, skill, prof, level, cost, kind }
   --   vendor list[item id] = { name, price, cost = { {n, what} }, stock }
   --   colors[profession][item id][kind] = { lowest skill, highest skill }
+  --   spells[npc id] = a class trainer: list[spell (rank)] = { level, cost, kind },
+  --     what learning costs in Forever (nobody lists it)
   local function npcHere()
     local guid = readable(UnitGUID and UnitGUID("npc"))
     local id = guid and tonumber((select(6, strsplit("-", guid))))
@@ -1950,14 +1952,15 @@ local Scan = (function()
     local n = 0
     for _ in pairs(list) do n = n + 1 end
     log("scan", kind .. " " .. tostring(info.n) .. " " .. id .. ": " .. n)
-    if n > 0 and not old then say(string.format(L().scanSaved, n, tostring(info.n))) end
+    if n > 0 and not old and kind ~= "spells" then say(string.format(L().scanSaved, n, tostring(info.n))) end
   end
 
   -- Every service of a profession trainer, the ones you can't learn yet too
   -- (the filters are opened for the scan and put back).
   local TRAINER_KINDS = { available = true, unavailable = true, used = true, header = true }
   local function scanTrainer()
-    if not (IsTradeskillTrainer and IsTradeskillTrainer() and GetNumTrainerServices) then return end
+    if not GetNumTrainerServices then return end
+    local classTrainer = not (IsTradeskillTrainer and IsTradeskillTrainer())
     local id, info = npcHere()
     if not id then return end
     -- Forever's client takes true/false; older ones 1/0. If neither works,
@@ -1990,6 +1993,7 @@ local Scan = (function()
     for f, on in pairs(filters) do
       if not on then setFilter(f, false) end
     end
+    if classTrainer then scanStore("spells", id, info, list) return end
     scanStore("trainers", id, info, list)
     -- What it teaches that you don't know, for the panel beside it.
     local mine, offer = myProfessions(), {}
@@ -2179,6 +2183,7 @@ local Scan = (function()
   -- The window's profession and skill: GetTradeSkillLine where the client has
   -- it, otherwise the crafting profession whose recipes these are.
   local scanPending, colorsSaid
+  local lastColors
   local function scanColors()
     local list = {}
     local all = Api.tradeList()
@@ -2224,8 +2229,12 @@ local Scan = (function()
       end
     end
     local T = C_TradeSkillUI
-    log("scan", "colors " .. tostring(prof) .. " " .. tostring(rank) .. ": " .. #list .. " of " .. #all ..
-      (T and (" ids " .. #(T.GetAllRecipeIDs and T.GetAllRecipeIDs() or {}) .. (T.GetRecipeSourceText and " src" or " nosrc")) or ""))
+    -- In the log once per skill and recipe count (it scans on every craft).
+    local said = tostring(prof) .. " " .. tostring(rank) .. ": " .. #list .. " of " .. #all
+    if said ~= lastColors then
+      lastColors = said
+      log("scan", "colors " .. said .. (T and (" ids " .. #(T.GetAllRecipeIDs and T.GetAllRecipeIDs() or {}) .. (T.GetRecipeSourceText and " src" or " nosrc")) or ""))
+    end
     if not (prof and rank and #list > 0) then return end
     db.scan = db.scan or {}
     db.scan.colors = db.scan.colors or {}
@@ -2248,7 +2257,26 @@ local Scan = (function()
 
   -- Gold you earn per level, for the site's "share of a level's quest gold":
   -- cdb.income[level] = { q = from quests, all = everything you gained }.
+  -- And what you spend, by where the money went (the window open then):
+  -- cdb.spend[level] = { class = spells, prof = profession trainer, vendor,
+  -- ah = auction house, flight, mail, other }.
   local lastMoney
+  local open = {}
+  local function spentOn()
+    if open.trainer then return (IsTradeskillTrainer and IsTradeskillTrainer()) and "prof" or "class" end
+    for _, k in ipairs({ "vendor", "ah", "flight", "mail" }) do if open[k] then return k end end
+    return "other"
+  end
+  local function noteSpend(coin)
+    if not coin or coin <= 0 then return end
+    cdb.spend = cdb.spend or {}
+    local l = UnitLevel("player")
+    local e = cdb.spend[l] or {}
+    local k = spentOn()
+    e[k] = (e[k] or 0) + coin
+    cdb.spend[l] = e
+    log("spend", k .. " " .. coin)
+  end
   local function noteIncome(kind, coin)
     if not coin or coin <= 0 then return end
     cdb.income = cdb.income or {}
@@ -2405,12 +2433,15 @@ local Scan = (function()
       C_Timer.After(0.5, function() scanPending = false guarded("scan", scanColors) end)
     end,
     moneyStart = function() if GetMoney then lastMoney = readable(GetMoney()) end end,
-    -- Money you gain (loot, sales, quests); spending doesn't count.
+    -- Money you gain (loot, sales, quests) and what you spend.
     money = function()
       local now = readable(GetMoney())
       if now and lastMoney and now > lastMoney then pcall(noteIncome, "all", now - lastMoney) end
+      if now and lastMoney and now < lastMoney then pcall(noteSpend, lastMoney - now) end
       lastMoney = now
-    end
+    end,
+    -- A window where money goes opens or closes (trainer, vendor, ah, flight, mail).
+    place = function(k, on) open[k] = on or nil end
   }
 end)()
 
@@ -2457,6 +2488,8 @@ onEvent = function(self, event, ...)
     pcall(self.RegisterEvent, self, "TRADE_SKILL_CLOSE")
     pcall(self.RegisterEvent, self, "LEARNED_SPELL_IN_TAB")
     pcall(self.RegisterEvent, self, "MERCHANT_SHOW")
+    -- Where the money you spend goes.
+    for _, e in ipairs({ "MERCHANT_CLOSED", "AUCTION_HOUSE_SHOW", "AUCTION_HOUSE_CLOSED", "TAXIMAP_OPENED", "TAXIMAP_CLOSED", "MAIL_SHOW", "MAIL_CLOSED" }) do pcall(self.RegisterEvent, self, e) end
     pcall(self.RegisterEvent, self, "LOOT_OPENED")
     pcall(self.RegisterEvent, self, "LOOT_READY")
     pcall(self.RegisterEvent, self, "LOOT_CLOSED")
@@ -2469,6 +2502,7 @@ onEvent = function(self, event, ...)
   elseif event == "CHARACTER_POINTS_CHANGED" or event == "LEARNED_SPELL_IN_TAB" then
     if frame and frame.live then refresh() end
   elseif event == "TRAINER_SHOW" then
+    Scan.place("trainer", true)
     cdb.trainedAt = UnitLevel("player")
     -- The trainer's window lays out a moment after the event.
     C_Timer.After(0.1, function() guarded("trainer", showTrainerPanel) end)
@@ -2477,6 +2511,7 @@ onEvent = function(self, event, ...)
   elseif event == "TRAINER_UPDATE" then
     if trainerPanel and trainerPanel:IsShown() then pcall(paintTrainer) end
   elseif event == "TRAINER_CLOSED" then
+    Scan.place("trainer", false)
     if trainerPanel then trainerPanel:Hide() end
     if craftPanel and craftPanel.offer then hideCraftPanel() end
     if frame and frame.live then refresh() end
@@ -2487,7 +2522,12 @@ onEvent = function(self, event, ...)
     if craftPanel and craftPanel.live and not craftPanel.offer then guarded("crafts", paintCrafts) end
     -- The list can fill after the window opens.
     Scan.colorsSoon()
+  elseif event == "MERCHANT_CLOSED" or event == "AUCTION_HOUSE_SHOW" or event == "AUCTION_HOUSE_CLOSED" or event == "TAXIMAP_OPENED"
+    or event == "TAXIMAP_CLOSED" or event == "MAIL_SHOW" or event == "MAIL_CLOSED" then
+    local k = event:find("MERCHANT") and "vendor" or event:find("AUCTION") and "ah" or event:find("TAXI") and "flight" or "mail"
+    Scan.place(k, event:find("SHOW") or event:find("OPENED"))
   elseif event == "MERCHANT_SHOW" then
+    Scan.place("vendor", true)
     -- Items not loaded yet come a moment later: one more look.
     C_Timer.After(0.3, function()
       guarded("scan", function() if (Scan.vendor() or 0) > 0 then C_Timer.After(1.5, function() guarded("scan", Scan.vendor) end) end end)
@@ -2677,6 +2717,18 @@ end
 -- Shift+click anywhere items are (bags, chat links, loot lists, quest
 -- rewards) goes through HandleModifiedItemClick; with the chat box open it's
 -- linking the item, so it's left alone.
+-- Each thing bought at a trainer, with its price: what learning costs.
+if hooksecurefunc then
+  pcall(hooksecurefunc, "BuyTrainerService", function(i)
+    pcall(function()
+      local name = GetTrainerServiceInfo(i)
+      local cost = GetTrainerServiceCost and GetTrainerServiceCost(i)
+      local prof = IsTradeskillTrainer and IsTradeskillTrainer()
+      log("learn", (prof and "prof " or "class ") .. tostring(name) .. " " .. tostring(cost or "?"))
+    end)
+  end)
+end
+
 if hooksecurefunc and HandleModifiedItemClick then
   hooksecurefunc("HandleModifiedItemClick", function(link)
     if not cdb or not IsShiftKeyDown() or IsControlKeyDown() or IsAltKeyDown() then return end
