@@ -148,6 +148,11 @@
     if (b.hasAttribute('data-skip')) { count('explorar'); UI.store.set('setupDone', true); close(); Site.setMany({}); return; }
     if (b.hasAttribute('data-done')) {
       count('listo: ' + draft.spec);
+      // What people pick, to know where to polish first (aggregate counts only).
+      const race = draft.race === 'any' ? 'cualquiera' : draft.race;
+      count('raza: ' + race + ' (' + draft.faction + ')');
+      count('raza y spec: ' + race + ' ' + draft.spec);
+      count('profesiones: ' + (draft.profs.length ? draft.profs.slice().sort().join(' + ') : 'ninguna'));
       const before = JSON.stringify([Site.race, Site.faction, UI.store.get('profs', [])]);
       if (before !== JSON.stringify([draft.race, draft.faction, draft.profs])) UI.store.set('learnedProfs', {});
       UI.store.set('profs', draft.profs);

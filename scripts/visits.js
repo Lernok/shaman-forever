@@ -46,13 +46,22 @@ async function main() {
   console.log('# Visitas de los últimos ' + days + ' días: ' + total.total + ' vistas de página' + (total.total_events ? ', ' + total.total_events + ' eventos' : ''));
   (total.stats || []).filter(s => s.daily).forEach(s => console.log('  ' + s.day + '  ' + String(s.daily).padStart(5)));
 
-  const hits = (await api('/stats/hits?' + range + '&limit=100')).hits || [];
+  const hits = (await api('/stats/hits?' + range + '&limit=200')).hits || [];
   list('Páginas', hits.filter(h => !h.event).map(h => ({ name: h.path, count: h.count })));
   const errors = hits.filter(h => h.event && /^\/?error\//.test(h.path));
   list('Errores de visitantes (eventos error/…)', errors.map(h => ({ name: h.path.replace(/^\/?error\//, ''), count: h.count })), 50);
   // First visit: how many finish "Armá tu Shaman" (listo: spec), skip it or close it.
-  const setup = hits.filter(h => h.event && /^\/?setup\//.test(h.path));
-  list('Armá tu Shaman, primera visita (eventos setup/…)', setup.map(h => ({ name: h.path.replace(/^\/?setup\//, ''), count: h.count })));
+  const setup = hits.filter(h => h.event && /^\/?setup\//.test(h.path)).map(h => ({ name: h.path.replace(/^\/?setup\//, ''), count: h.count }));
+  const kind = k => setup.filter(r => r.name.startsWith(k + ': ')).map(r => ({ name: r.name.slice(k.length + 2), count: r.count }));
+  list('Armá tu Shaman, primera visita (eventos setup/…)', setup.filter(r => !/^(raza|raza y spec|profesiones): /.test(r.name)));
+  // What they pick (since 2026-10-21): race, race + spec, professions.
+  list('Raza elegida', kind('raza'));
+  list('Raza y spec', kind('raza y spec'), 20);
+  const pairs = kind('profesiones');
+  list('Profesiones (el par elegido)', pairs, 20);
+  const each = {};
+  pairs.forEach(r => r.name.split(' + ').forEach(p => { each[p] = (each[p] || 0) + r.count; }));
+  list('Profesiones (cada una)', Object.entries(each).sort((a, b) => b[1] - a[1]).map(([name, count]) => ({ name, count })), 20);
 
   for (const [page, title] of [['toprefs', 'De dónde llegan'], ['locations', 'Países'], ['sizes', 'Pantallas'], ['languages', 'Idiomas'], ['browsers', 'Navegadores']]) {
     try {
