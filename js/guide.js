@@ -177,6 +177,13 @@
     return 1;
   }
 
+  // Trainer spells by their name without " Totem" or " Weapon": [short, full].
+  let shorts = null;
+  function shortNames() {
+    if (!shorts) shorts = Object.keys(window.SHAMAN_DATA.spellbook.icons).filter(n => / (Totem|Weapon)$/.test(n)).map(n => [n.replace(/ (Totem|Weapon)$/, ''), n]);
+    return shorts;
+  }
+
   // Now, at your level: the rotation with what you have (the rest says from
   // when), your next talent point and the weapon your path has you hold.
   function renderNow(guide, spec) {
@@ -185,8 +192,10 @@
     const key = lvl <= 20 && rot.level20 ? 'level20' : lvl <= 30 && rot.level30 ? 'level30' : rot.level60 ? 'level60' : 'priority';
     const tal = window.Home.talentNow(lvl);
     const order = tal && tal.build.order;
-    // A step counts from when you have its main spell (the first it names).
-    const steps = (rot[key] || []).map(s => ({ s, from: learnLevel(window.Refs.allRefs(s)[0], order) }));
+    // A step counts from when you have every spell it names (short names too:
+    // "Healing Stream" for Healing Stream Totem).
+    const named = s => window.Refs.allRefs(s).concat(shortNames().filter(([short]) => new RegExp('\\b' + short + '\\b').test(s)).map(([, full]) => full));
+    const steps = (rot[key] || []).map(s => ({ s, from: Math.max(1, ...named(s).map(n => learnLevel(n, order))) }));
     const now = steps.filter(x => x.from <= lvl);
     const later = steps.filter(x => x.from > lvl).sort((a, b) => a.from - b.from);
     const step = (x, i) => '<li><span class="step-icon" style="background-image:url(' + iconUrl(firstRef(x.s) || SPEC_ICONS[spec]) + ')"></span><div>' + x.s + '</div></li>';

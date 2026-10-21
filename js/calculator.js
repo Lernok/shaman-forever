@@ -216,8 +216,10 @@
       '<h2>' + (tal.now ? t('calc.now.title', { talent: tal.now.talent }) : t('calc.now.first', { n: tal.next ? tal.next.from : 10 })) + '</h2>';
     if (tal.now) html += row(t('calc.now.now'), tal.now);
     if (tal.next) html += row(t('calc.now.next'), tal.next);
+    // Before your first point, the build where it starts.
+    const see = Math.max(lvl, b.order[0][0]);
     html += '<div class="pn-row"><span class="pn-k">' + t('calc.now.build') + '</span><div class="pn-v">' + b.name +
-      ' <a class="btn" href="' + linkAt(b, lvl) + '">' + t('calc.now.open', { n: lvl }) + '</a></div></div>';
+      ' <a class="btn" href="' + linkAt(b, see) + '">' + t('calc.now.open', { n: see }) + '</a></div></div>';
     return html + '</section>';
   }
 
