@@ -152,8 +152,11 @@ function skinnedFrom(html) {
   // skins is measured by the addon at launch.
   const fresh = require('./lib/questiedb-fresh.js').load();
   const zoneData = readJSON('data/zones.json', { zones: {} }).zones;
+  // Without the package or Wowhead (the sync's servers may be refused), the last list stays.
+  const lastZones = readJSON('data/skinning.json', { zones: {} }).zones || {};
   for (const [zone, zd] of Object.entries(zoneData)) {
-    if (!fresh || !zd.start || outZones[zone]) continue;
+    if (!zd.start || outZones[zone]) continue;
+    if (!fresh) { if (lastZones[zone]) outZones[zone] = lastZones[zone]; continue; }
     const found = [];
     // Level 1-2 beasts there are mostly mounts and pets on display: only the ones a quest has you kill.
     const targets = new Set();
@@ -169,7 +172,7 @@ function skinnedFrom(html) {
       if (wh.type !== 'Beast' || wh.family === 'Crab' || n[4] >= 60 || n[4] <= 2 && !targets.has(id)) continue;
       found.push({ id, name: n[0], level: [n[3] || n[4], n[4]], spawns: 0, rare: wh.rank !== 'normal' || undefined, family: wh.family || undefined });
     }
-    if (found.length < 3) continue;
+    if (found.length < 3) { if (lastZones[zone]) outZones[zone] = lastZones[zone]; continue; }
     // Same name, several ids (Skyhopper): one row.
     const rows = [...new Map(found.map(b => [b.name, b])).values()].sort((a, b) => !a.family - !b.family || !!a.rare - !!b.rare || a.level[0] - b.level[0] || a.name.localeCompare(b.name));
     outZones[zone] = { share: Math.round(rows.length / Math.max(rows.length, hostile) * 100) / 100, beasts: rows, from: 'wowhead-forever' };
