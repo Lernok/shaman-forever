@@ -124,7 +124,7 @@
   };
   Site.NEEDS = {
     get Inicio() { return gearNeeds(); }, get Guia() { return gearNeeds(); }, get Equipo() { return gearNeeds(); },
-    Profesiones: ['gear', 'weapons', 'professions', 'consumables', 'camp', 'skinning', 'crafts'] };
+    Profesiones: ['gear', 'weapons', 'professions', 'consumables', 'camp', 'skinning', 'crafts', 'profplan'] };
   const opening = location.hash.slice(1).split('/')[0];
   // Site.first: settled once they're in (or failed).
   Site.first = Site.need(Site.NEEDS[Site.SPECS.includes(opening) ? 'Guia' : opening || 'Inicio'] || []).catch(() => {});

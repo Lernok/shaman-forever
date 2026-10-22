@@ -205,6 +205,11 @@ if (fs.existsSync(path.join(root, 'data/skinning.json'))) {
   write('data/skinning.js', 'SKINNING_DATA', read('data/skinning.json'));
   outputs.push('data/skinning.js');
 }
+// How to level the other crafting professions (scripts/build-prof-plan.js).
+if (fs.existsSync(path.join(root, 'data/prof-plan.json'))) {
+  write('data/prof-plan.js', 'PROF_PLAN_DATA', read('data/prof-plan.json'));
+  outputs.push('data/prof-plan.js');
+}
 if (fs.existsSync(path.join(root, 'data/professions.json'))) {
   write('data/professions.js', 'PROFESSION_DATA', read('data/professions.json'));
   outputs.push('data/professions.js');

@@ -396,6 +396,7 @@ function diffItems(prev, next) {
   step('recipe-patterns.js');
   step('build-skinning.js');
   step('build-reagents.js');
+  step('build-prof-plan.js');
   step('build-professions.js');
   step('build-consumables.js');
   step('patch-news.js');

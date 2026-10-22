@@ -4,7 +4,8 @@
 //   plan        your two professions (shared with the Gear page), their camp
 //               objects and, every 10 levels, only what's worth crafting: the
 //               crafted pieces of your gear path (js/gear-plan.js), your 1-2
-//               Merchant's Favor recipes with their cost
+//               Merchant's Favor recipes with their cost; how to level the other
+//               crafting professions (data/prof-plan.js)
 //   cocina      the best food for your spec in each level bracket; leveling
 //               Cooking and Fishing is left to wow-professions.com's guides
 //   auxilios    first aid: a bandage per level bracket, potions, cures
@@ -181,6 +182,9 @@
     const others = makers.filter(p => p !== 'Leatherworking');
     if (!others.length) return html + extra;
 
+    // How to level each of them, simply (data/prof-plan.js).
+    html += others.map(p => profLevelHtml(p, mine)).join('');
+
     const GP = window.GearPath;
     const { plan } = GP.compute();
     const steps = [];
@@ -210,6 +214,54 @@
         : '<p class="dim">' + t('pr.plan.nothingWorth') + '</p>') + '</section>';
     html += '<p class="note-text dim">' + t('pr.plan.note2') + '</p>';
     return html + extra;
+  }
+
+  // ---------- the other crafting professions, simply (scripts/build-prof-plan.js) ----------
+  // By trainer rank: each step a recipe, how many times, what it takes in
+  // all and from about what level; your current rank open. Where the
+  // materials come from: your gathering profession, cloth from humanoids,
+  // disenchanting, a vendor or the auction house.
+  const RANK_CAPS = [75, 150, 225, 300];
+  function profLevelHtml(prof, mine) {
+    const P = window.PROF_PLAN_DATA;
+    const steps = P && P.professions[prof.toLowerCase()];
+    if (!steps || !steps.length) return '';
+    const items = P.items;
+    const lvl = UI.levelNow();
+    // Your pieces of this profession on your path: "you wear it".
+    const yours = new Set();
+    Object.values(window.GearPath.compute().plan.slots).forEach(p => p.steps.forEach(st => { if ((st.pick.source || {}).profession === prof) yours.add(st.pick.item.id); }));
+    const GATHER = { m: 'Mining', h: 'Herbalism', s: 'Skinning' };
+    const whence = id => {
+      const w = (items[id] || {}).w;
+      if (GATHER[w]) return mine.includes(GATHER[w]) ? t('pr.up.from.mine', { prof: I18N.term(GATHER[w]) }) : t('pr.up.from.ah', { prof: I18N.term(GATHER[w]) });
+      return t('pr.up.from.' + (w || 'o'));
+    };
+    const mat = ([id, n]) => '<span class="lw-chip"><b>' + Math.ceil(n) + '</b> ' + ((items[id] || {}).n || '#' + id) + '</span>';
+    const stepHtml = st => '<li><span class="lo-do">' + t('pr.lw.step.make', { n: st.crafts }) + ' <span class="lw-chip">' +
+      (st.icon ? '<img src="' + UI.icon(st.icon) + '" alt="" loading="lazy">' : '') + st.name + '</span></span>' +
+      (st.id && yours.has(st.id) ? ' <span class="gpc-tag">' + t('pr.up.yours') + '</span>' : '') +
+      ' <span class="dim">' + t('pr.lw.step.uses', { list: st.mats.map(mat).join(' ') }) + '</span>' +
+      '<span class="lo-up">' + t('pr.up.skill', { prof: I18N.term(prof), a: st.from, b: st.to, n: st.level }) + '</span></li>';
+    const groups = RANK_CAPS.map((cap, i) => ({ i, lo: i ? RANK_CAPS[i - 1] : 1, cap, steps: steps.filter(st => st.from < cap && st.from >= (i ? RANK_CAPS[i - 1] : 0)) })).filter(g => g.steps.length);
+    // Your rank now: the first one with a step past your level.
+    const open = (groups.find(g => g.steps.some(st => st.level > lvl)) || groups[groups.length - 1]).i;
+    let html = '<div class="pr-sec-head"><h3>' + profIcon(prof, 'pk-icon') + ' ' + t('pr.up.title', { prof: I18N.term(prof) }) + '</h3></div>';
+    html += groups.map(g => {
+      // What the whole rank takes, by where it comes from.
+      const sum = {};
+      g.steps.forEach(st => st.mats.forEach(([id, n]) => { sum[id] = (sum[id] || 0) + n; }));
+      const byWhere = {};
+      Object.entries(sum).sort((a, b) => b[1] - a[1]).forEach(([id, n]) => { const w = whence(id); (byWhere[w] = byWhere[w] || []).push(mat([id, n])); });
+      const from = g.steps[0].level;
+      return '<details class="pr-more pr-up"' + (g.i === open ? ' open' : '') + '><summary><b>' + t('pr.up.rank' + g.i) + '</b> · ' + t('pr.up.range', { a: g.lo, b: g.steps[g.steps.length - 1].to }) +
+        ' <span class="dim">· ' + t('pr.up.from', { n: from }) + (from > BETA_CAP ? ' · ' + t('pr.plan.postCap') : '') + '</span></summary>' +
+        '<ol class="lw-order">' + g.steps.map(stepHtml).join('') + '</ol>' +
+        '<div class="lo-rest">' + Object.entries(byWhere).map(([w, list]) => '<div class="lw-mat"><span class="dim">' + w + ':</span> ' + list.join('') + '</div>').join('') + '</div></details>';
+    }).join('');
+    const end = steps[steps.length - 1].to;
+    html += '<p class="note-text dim">' + t('pr.up.note') + (end < 300 ? ' ' + t('pr.up.stops', { n: end, prof: I18N.term(prof) }) : '') + '</p>';
+    return html;
   }
 
   // A crafted piece of your path as a card: the line, and how on tap.
