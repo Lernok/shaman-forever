@@ -187,4 +187,4 @@ function open(cacheDir, zoneNames) {
   return { sources, chainZones, quest, npcLevel };
 }
 
-module.exports = { open, parseLua };
+module.exports = { open, parseLua, factionOfRaces };

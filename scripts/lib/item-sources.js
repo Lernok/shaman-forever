@@ -17,6 +17,7 @@ const { parseCSV } = require('./csv');
 const questie = require('./questie');
 const { readJSON } = require('./files');
 const recipes = require('./recipes');
+const fresh = require('./questiedb-fresh');
 
 const WEAPON_KINDS = ['2H Axe', '2H Mace', 'Staff', '1H Axe', '1H Mace', 'Dagger', 'Fist'];
 const isWeapon = i => WEAPON_KINDS.includes(i.kind) && i.dps;
@@ -35,6 +36,8 @@ const BATTLEGROUND = /^(Alterac Valley|Warsong Gulch|Arathi Basin)$/;
 // Battleground reputation quartermasters (Arathi Basin, Warsong Gulch, Alterac
 // Valley) and honor-rank officers: their wares cost PvP reputation or rank.
 const PVP_VENDOR = /^(Samuel Hawke|Rutherford Twing|Illiyana Moonblaze|Kelm Hargunth|Grunnda Wolfheart|Jekyll Flandring|Gaelden Hammersmith|Thanthaldis Snowgleam|Sergeant Ba'sha|Officer Areyn)$/;
+// Darkmoon Faire vendors: QuestieDB puts them in one of the Faire's towns (Mulgore), but it comes and goes like an event.
+const DARKMOON = /^(Lhara|Yebb Neblegear|Zorbin Fandazzle|Vendor-Tron 1000|Chronos|Kerri Hicks|Sayge|Burth|Flik|Stamp Thunderhorn|Jubjub)$/;
 const PVP_NAME = /^(Premier )?(High Warlord|Grand Marshal|Premier|Warlord|Marshal|General|Champion|Blood Guard|Knight-Lieutenant|Legionnaire|Stone Guard|Lieutenant Commander)'s /;
 
 function open(cacheDir, build) {
@@ -42,6 +45,7 @@ function open(cacheDir, build) {
   const areaFile = path.join(cacheDir, 'wago', build, 'AreaTable.csv');
   if (fs.existsSync(areaFile)) parseCSV(fs.readFileSync(areaFile, 'utf8')).forEach(r => { zones[r.ID] = r.AreaName_lang; });
   const Q = questie.open(cacheDir, zones);
+  const F = fresh.load();
   const manual = readJSON('data/item-sources.json', { items: {} }).items;
   const fc = readJSON('data/item-sources-fc.json', {});
   const fcItems = fc.items || {};
@@ -74,7 +78,7 @@ function open(cacheDir, build) {
       type: 'quest', quest: q.name || ('#' + q.id), questId: q.id, level: q.level, requiredLevel: q.requiredLevel, zone: q.zone, faction: q.faction || 'both', confidence: 'classic-assumed' }));
     // PvP rank rewards: sold in the rank halls, or named after a PvP rank.
     const pvp = PVP_NAME.test(item.name);
-    src.filter(s => s.type === 'vendor').forEach(v => out.push({ type: 'vendor', npc: v.name, zone: v.zone, faction: v.faction,
+    src.filter(s => s.type === 'vendor').forEach(v => out.push({ type: 'vendor', npc: v.name, zone: DARKMOON.test(v.name || '') ? 'Darkmoon Faire' : v.zone, faction: v.faction,
       pvp: pvp || PVP_VENDOR.test(v.name || '') || /Champions' Hall|Hall of Legends/.test(v.zone || ''), confidence: 'classic-assumed' }));
     return out;
   }
@@ -117,6 +121,9 @@ function open(cacheDir, build) {
     // handed in at Orgrimmar, Bazzalan and Jergosh are in Ragefire Chasm).
     all.forEach(s => {
       if (s.type !== 'quest') return;
+      // Forever's new quests are only in the fresh QuestieDB package: its races say the faction.
+      const fq = (!s.faction || s.faction === 'both') && s.questId && F && F.quest(s.questId);
+      if (fq) s.faction = questie.factionOfRaces(fq[5]);
       const zonesOf = [s.zone || ''].concat(s.questId ? Q.chainZones(s.questId) : []);
       const raid = zonesOf.find(z => RAID.test(z));
       if (raid) { s.raid = true; s.dungeon = undefined; if (raid !== s.zone) s.dungeonZone = raid; return; }

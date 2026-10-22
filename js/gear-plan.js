@@ -229,7 +229,7 @@
       return learn.type === 'trainer' ? 'crafted' : null;
     }
     // Vendors deep in the other faction's land don't count.
-    if (s.type === 'vendor') return opts.reach && !opts.reach(s.zone) ? null : 'vendor';
+    if (s.type === 'vendor') return UNPLANNED.test(s.zone || '') || (opts.reach && !opts.reach(s.zone)) ? null : 'vendor';
     if ((s.type === 'boss' || s.type === 'drop') && opts.drops) return opts.reach && !opts.reach(s.zone) ? null : 'boss';
     return null;
   }
