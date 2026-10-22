@@ -8061,9 +8061,11 @@
    "steps": 1
   },
   "79442": {
-   "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "classes": [
+    "SHAMAN"
+   ],
+   "minLevel": 30,
+   "faction": "horde",
    "instance": null,
    "hardest": {
     "id": 216474,
@@ -8071,9 +8073,9 @@
     "level": 40,
     "rank": "elite",
     "from": "wowhead",
-    "step": 96135
+    "step": 79366
    },
-   "steps": 5
+   "steps": 12
   },
   "79536": {
    "classes": null,
@@ -10002,6 +10004,30 @@
   "751": {
    "name": "Marsh Flesheater",
    "level": 44,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "755": {
+   "name": "Lost One Mudlurker",
+   "level": 35,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "757": {
+   "name": "Lost One Fisherman",
+   "level": 36,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "759": {
+   "name": "Lost One Hunter",
+   "level": 37,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "760": {
+   "name": "Lost One Muckdweller",
+   "level": 37,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -12204,6 +12230,12 @@
   "2894": {
    "name": "Stonevault Shaman",
    "level": 41,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "2906": {
+   "name": "Dustbelcher Warrior",
+   "level": 37,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -18857,12 +18889,6 @@
   },
   "260325": {
    "name": "Shadetooth",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "260326": {
-   "name": "Relic Guardian",
    "level": null,
    "rank": "elite",
    "from": null

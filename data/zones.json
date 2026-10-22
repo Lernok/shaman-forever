@@ -3,7 +3,7 @@
  "sources": [
   "https://github.com/Questie/QuestieDB",
   "https://github.com/ATTWoWAddon/AllTheThings (MIT)",
-  "wago.tools AreaTable 1.60.1.70450",
+  "wago.tools AreaTable 1.60.1.70532",
   "https://foreverchanges.pro/dungeon-quests"
  ],
  "zones": {
@@ -206,6 +206,19 @@
    ],
    "quests": 53,
    "from": "questie"
+  },
+  "Deadwind Pass": {
+   "id": 41,
+   "continent": "Eastern Kingdoms",
+   "alliance": [
+    50,
+    60
+   ],
+   "horde": [
+    50,
+    60
+   ],
+   "from": "area-table"
   },
   "Redridge Mountains": {
    "id": 44,
