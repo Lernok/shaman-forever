@@ -971,6 +971,7 @@ details.more summary { cursor: pointer; font-size: 12.5px; color: var(--accent);
 .bc-tags { display: flex; flex-wrap: wrap; gap: 4px; }
 .bc-tag { font-size: 10.5px; padding: 1px 7px; border-radius: 9px; background: rgba(255,255,255,.06); color: var(--text-dim); }
 .bc-tag.order { color: var(--good); background: rgba(91,194,122,.12); }
+.bc-tag.rec { color: var(--spec-color, var(--good)); background: rgba(255,255,255,.1); font-weight: 600; }
 .bc-split { display: flex; height: 5px; border-radius: 3px; overflow: hidden; gap: 2px; background: rgba(255,255,255,.05); }
 .bc-split span { display: block; height: 100%; }
 .build-grid .bc-meta { margin: 0; font-size: 11px; font-variant-numeric: tabular-nums; }

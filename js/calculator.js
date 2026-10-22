@@ -64,13 +64,14 @@
       '<p class="note-text">' + t('calc.examplesIntro') + '</p>' +
       '<div class="build-grid" style="--spec-color:' + ui.specColors[window.Site.spec] + '">';
     const COLORS = { Elemental: ui.specColors.Elemental, Enhancement: ui.specColors.Enhancement, Restoration: ui.specColors.Restoration };
-    builds().filter(b => b.spec === window.Site.spec).forEach(b => {
+    // Our level-60 pick first, then the rest as they come.
+    builds().filter(b => b.spec === window.Site.spec).sort((a, b) => (b.recommended ? 1 : 0) - (a.recommended ? 1 : 0)).forEach(b => {
       const pts = trees().map(tr => R.treePoints(b.points, tr));
       const total = pts.reduce((a, c) => a + c, 0) || 1;
       html += '<button class="build-card' + (active && active.id === b.id ? ' active' : '') + '" data-build="' + b.id + '">' +
         '<img class="bc-icon" src="' + ui.iconUrl(deepest(b.points)) + '" alt="" loading="lazy">' +
         '<span class="bc-body"><span class="bc-name">' + b.name + '</span>' +
-        '<span class="bc-tags"><span class="bc-tag">' + b.case + '</span><span class="bc-tag">' + t('common.level') + ' ' + b.level + '</span>' +
+        '<span class="bc-tags"><span class="bc-tag' + (b.recommended ? ' rec' : '') + '">' + b.case + '</span><span class="bc-tag">' + t('common.level') + ' ' + b.level + '</span>' +
           (b.order ? '<span class="bc-tag order">' + t('calc.withOrder') + '</span>' : '') + '</span>' +
         '<span class="bc-split">' + trees().map((tr, i) => pts[i] ? '<span style="flex:' + pts[i] + ';background:' + COLORS[tr.name] + '" title="' + tr.name + ' ' + pts[i] + '"></span>' : '').join('') + '</span>' +
         '<span class="bc-meta">' + pts.join(' / ') + '</span></span>' +

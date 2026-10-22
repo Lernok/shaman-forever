@@ -1065,12 +1065,12 @@
       "id": "tf-pop-enh-1",
       "spec": "Enhancement",
       "name": {
-        "es": "Más popular #1: 18/33/0",
-        "en": "Most popular #1: 18/33/0"
+        "es": "Alternativa: 18/33/0 (la más popular)",
+        "en": "Alternative: 18/33/0 (most popular)"
       },
       "case": {
-        "es": "Popular",
-        "en": "Popular"
+        "es": "Alternativa",
+        "en": "Alternative"
       },
       "level": 60,
       "origin": "talentsforever",
@@ -1086,85 +1086,67 @@
       "id": "tf-pop-ele-2",
       "spec": "Elemental",
       "name": {
-        "es": "Más popular #2: 33/7/11",
-        "en": "Most popular #2: 33/7/11"
+        "es": "Nivel 60: 33/7/11",
+        "en": "Level 60: 33/7/11"
       },
       "case": {
-        "es": "Popular",
-        "en": "Popular"
+        "es": "Recomendado",
+        "en": "Recommended"
       },
       "level": 60,
       "origin": "talentsforever",
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
       "note": {
-        "es": "#2 de Shaman y el primero de Elemental (137 aperturas, 31 guardados). Elemental completo hasta Elemental Mastery con Earthbound, Thundering Strikes e Improved Ghost Wolf en Enhancement, y Tidal Focus, Mindfulness, Natural Grace y Water Shield en Resto. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
-        "en": "#2 Shaman build and the top Elemental one (137 opens, 31 saves). Full Elemental down to Elemental Mastery with Earthbound, Thundering Strikes and Improved Ghost Wolf in Enhancement, and Tidal Focus, Mindfulness, Natural Grace and Water Shield in Resto. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
+        "es": "Nuestra recomendación a 60: el build de Elemental más armado. Desde el final del leveo 10→60 son 11 puntos a mover (un respec al llegar). #2 de Shaman y el primero de Elemental (137 aperturas, 31 guardados). Elemental completo hasta Elemental Mastery con Earthbound, Thundering Strikes e Improved Ghost Wolf en Enhancement, y Tidal Focus, Mindfulness, Natural Grace y Water Shield en Resto. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
+        "en": "Our level-60 pick: the most built Elemental build. From where the 10→60 leveling order ends it is 11 points to move (one respec on arrival). #2 Shaman build and the top Elemental one (137 opens, 31 saves). Full Elemental down to Elemental Mastery with Earthbound, Thundering Strikes and Improved Ghost Wolf in Enhancement, and Tidal Focus, Mindfulness, Natural Grace and Water Shield in Resto. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
       },
-      "code": "3500331023121351-050002-053200001"
+      "code": "3500331023121351-050002-053200001",
+      "recommended": true
     },
     {
       "id": "tf-pop-resto-3",
       "spec": "Restoration",
       "name": {
-        "es": "Más popular #3: 0/10/41",
-        "en": "Most popular #3: 0/10/41"
+        "es": "Nivel 60: 0/10/41",
+        "en": "Level 60: 0/10/41"
       },
       "case": {
-        "es": "Popular",
-        "en": "Popular"
+        "es": "Recomendado",
+        "en": "Recommended"
       },
       "level": 60,
       "origin": "talentsforever",
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
       "note": {
-        "es": "#3 de Shaman y el primero de Resto (1.580 aperturas, 264 guardados). Restoration hasta Riptide y Purification, más Thundering Strikes y Ancestral Knowledge en Enhancement. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
-        "en": "#3 Shaman build and the top Resto one (1,580 opens, 264 saves). Restoration down to Riptide and Purification, plus Thundering Strikes and Ancestral Knowledge in Enhancement. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
+        "es": "Nuestra recomendación a 60: el build de Resto más armado, y es justo donde termina el leveo 10→60: no hay que rearmar nada. #3 de Shaman y el primero de Resto (1.580 aperturas, 264 guardados). Restoration hasta Riptide y Purification, más Thundering Strikes y Ancestral Knowledge en Enhancement. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
+        "en": "Our level-60 pick: the most built Resto build, and exactly where the 10→60 leveling order ends: nothing to respec. #3 Shaman build and the top Resto one (1,580 opens, 264 saves). Restoration down to Riptide and Purification, plus Thundering Strikes and Ancestral Knowledge in Enhancement. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
       },
-      "code": "-055-5530003315513151"
+      "code": "-055-5530003315513151",
+      "recommended": true
     },
     {
       "id": "tf-pop-enh-4",
       "spec": "Enhancement",
       "name": {
-        "es": "Más popular #4: 12/34/5",
-        "en": "Most popular #4: 12/34/5"
+        "es": "Nivel 60: 12/34/5",
+        "en": "Level 60: 12/34/5"
       },
       "case": {
-        "es": "Popular",
-        "en": "Popular"
+        "es": "Recomendado",
+        "en": "Recommended"
       },
       "level": 60,
       "origin": "talentsforever",
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
       "note": {
-        "es": "#4 (38 aperturas, 26 guardados). Enhancement con Ancestral Knowledge 5/5, Concussion, Elemental Devastation, Call of Flame y Elemental Focus en Elemental, y Tidal Focus en Resto (índice de golpe). Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
-        "en": "#4 (38 opens, 26 saves). Enhancement with Ancestral Knowledge 5/5, Concussion, Elemental Devastation, Call of Flame and Elemental Focus in Elemental, and Tidal Focus in Resto (hit). Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
+        "es": "Nuestra recomendación a 60: de los builds populares, es el más cercano al final del leveo 10→60 (a 4 puntos), así que no hay que rearmar todo al llegar. #4 (38 aperturas, 26 guardados). Enhancement con Ancestral Knowledge 5/5, Concussion, Elemental Devastation, Call of Flame y Elemental Focus en Elemental, y Tidal Focus en Resto (índice de golpe). Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
+        "en": "Our level-60 pick: of the popular builds, the closest to where the 10→60 leveling order ends (4 points apart), so there is no full respec on arrival. #4 (38 opens, 26 saves). Enhancement with Ancestral Knowledge 5/5, Concussion, Elemental Devastation, Call of Flame and Elemental Focus in Elemental, and Tidal Focus in Resto (hit). Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
       },
-      "code": "0530031-055030031005112251-05"
-    },
-    {
-      "id": "tf-pop-enh-5",
-      "spec": "Enhancement",
-      "name": {
-        "es": "Más popular #5: 0/32/17 (tanque)",
-        "en": "Most popular #5: 0/32/17 (tank)"
-      },
-      "case": {
-        "es": "Popular",
-        "en": "Popular"
-      },
-      "level": 60,
-      "origin": "talentsforever",
-      "confidence": "community-untested",
-      "source": "https://talentsforever.com/shaman/builds",
-      "note": {
-        "es": "#5 (168 aperturas, 3 guardados). Enhancement defensivo (Anticipation, Toughness) sin Maelstrom Weapon, con Resto hasta Mana Tide Totem. 49 puntos: es como lo guardaron. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
-        "en": "#5 (168 opens, 3 saves). Defensive Enhancement (Anticipation, Toughness) without Maelstrom Weapon, with Resto down to Mana Tide Totem. 49 points: that's how it was saved. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
-      },
-      "code": "-050032011355112201-053022031001"
+      "code": "0530031-055030031005112251-05",
+      "recommended": true
     }
   ]
 }
