@@ -1,5 +1,5 @@
 {
- "_readme": "Written by scripts/build-reagents.js: reagents of crafted gear (mats[item] = [[reagent, n]]), where each comes from, auction prices and quest gold per level.",
+ "_readme": "Written by scripts/build-reagents.js: reagents of crafted gear (mats[item] = [[reagent, n]]), where each comes from, auction prices and the gold you earn per level (quests, coins and gray items).",
  "sources": {
   "drops": "https://www.wowhead.com/classic/item=5784/slimy-murloc-scale#dropped-by",
   "gold": "https://github.com/cmangos/classic-db",

@@ -27,7 +27,9 @@ async function npc(id) {
   const lv = text.match(/Level (\d+)(?:\s*-\s*(\d+))?/);
   const rank = /\(Boss\)/.test(text) || /Level \?\?/.test(text) ? 'boss' : /\(Rare Elite\)/.test(text) ? 'rare-elite'
     : /\(Elite\)/.test(text) ? 'elite' : /\(Rare\)/.test(text) ? 'rare' : 'normal';
-  return { name: j.name, level: lv ? Number(lv[2] || lv[1]) : null, rank };
+  // "Level 5 - 6 Beast (Normal) Cat": the creature type, and the family after the rank.
+  const kind = text.match(/(?:Level [\d?\s-]+)?\s*([A-Z][a-z]+(?: [A-Z][a-z]+)?)\s*\((?:Normal|Elite|Rare|Rare Elite|Boss)\)\s*([A-Z][\w ]*)?/);
+  return { name: j.name, level: lv ? Number(lv[2] || lv[1]) : null, rank, type: kind ? kind[1] : null, family: kind && kind[2] ? kind[2].trim() : null };
 }
 
 // An NPC's id by its exact name.

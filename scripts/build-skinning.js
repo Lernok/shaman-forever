@@ -143,6 +143,38 @@ function skinnedFrom(html) {
     };
   });
 
+  // Forever's new starting zone (Zephras Isle): its beasts aren't on Wowhead
+  // Classic and QuestieDB has no spawns for most of them. Its NPCs (the
+  // newest QuestieDB package places them in the zone) whose Wowhead Forever
+  // tooltip says Beast, not a crab (crabs don't skin in Classic): the
+  // families that skin in Classic first (Bear, Cat, Tallstrider...), then
+  // by level. share: of its hostile NPCs, the beasts. Whether each one
+  // skins is measured by the addon at launch.
+  const fresh = require('./lib/questiedb-fresh.js').load();
+  const zoneData = readJSON('data/zones.json', { zones: {} }).zones;
+  for (const [zone, zd] of Object.entries(zoneData)) {
+    if (!fresh || !zd.start || outZones[zone]) continue;
+    const found = [];
+    // Level 1-2 beasts there are mostly mounts and pets on display: only the ones a quest has you kill.
+    const targets = new Set();
+    fresh.questIds().forEach(q => { const r = fresh.quest(q); if (r && r[16] === zd.id) ((r[9] || [])[0] || []).forEach(o => targets.add(o[0])); });
+    let hostile = 0;
+    for (const id of fresh.npcIds()) {
+      const n = fresh.npc(id);
+      // npcKeys: name 1, levels 4-5, rank 6, zoneID 9, subName 14, npcFlags 15
+      if (!n || n[8] !== zd.id || n[13] || n[14] || !n[4] || n[4] > zd.horde[1] + 2 || n[5] === 3) continue;
+      const wh = await require('./lib/wowhead').npc(id);
+      if (!wh || !wh.type || ['Critter', 'Battle Pet'].includes(wh.type) || n[12] && wh.type !== 'Beast') continue; // townsfolk
+      hostile++;
+      if (wh.type !== 'Beast' || wh.family === 'Crab' || n[4] >= 60 || n[4] <= 2 && !targets.has(id)) continue;
+      found.push({ id, name: n[0], level: [n[3] || n[4], n[4]], spawns: 0, rare: wh.rank !== 'normal' || undefined, family: wh.family || undefined });
+    }
+    if (found.length < 3) continue;
+    // Same name, several ids (Skyhopper): one row.
+    const rows = [...new Map(found.map(b => [b.name, b])).values()].sort((a, b) => !a.family - !b.family || !!a.rare - !!b.rare || a.level[0] - b.level[0] || a.name.localeCompare(b.name));
+    outZones[zone] = { share: Math.round(rows.length / Math.max(rows.length, hostile) * 100) / 100, beasts: rows, from: 'wowhead-forever' };
+  }
+
   // Leatherworking recipes: trainer ('t'), known at the start ('t'), Merchant's Favor ('f').
   const recipes = readJSON('data/recipes.json').professions.leatherworking;
   // The same classifier as the gear pages (it reads the addon's in-game scan too).

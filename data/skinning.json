@@ -6,8 +6,8 @@
   "beasts": "https://github.com/Questie/QuestieDB",
   "recipes": "https://classicwowforever.com/professions/leatherworking/recipes/",
   "gold": "https://github.com/cmangos/classic-db",
-  "reagents": "https://www.wowhead.com/classic/item=5784/slimy-murloc-scale#dropped-by",
-  "train": "ShamanForever addon: class trainer costs read in game (stress test, 2026-10-21)"
+  "train": "ShamanForever addon: class trainer costs read in game (stress test, 2026-10-21)",
+  "reagents": "https://www.wowhead.com/classic/item=5784/slimy-murloc-scale#dropped-by"
  },
  "skin": [
   2934,
@@ -2833,6 +2833,271 @@
      "spawns": 34
     }
    ]
+  },
+  "Zephras Isle": {
+   "share": 0.52,
+   "beasts": [
+    {
+     "id": 250926,
+     "name": "Scrawny Ursera",
+     "level": [
+      3,
+      4
+     ],
+     "spawns": 0,
+     "family": "Bear"
+    },
+    {
+     "id": 250937,
+     "name": "Ursera Scavenger",
+     "level": [
+      4,
+      4
+     ],
+     "spawns": 0,
+     "family": "Bear"
+    },
+    {
+     "id": 251661,
+     "name": "Galestrider",
+     "level": [
+      5,
+      6
+     ],
+     "spawns": 0,
+     "family": "Tallstrider"
+    },
+    {
+     "id": 251245,
+     "name": "Prideclaw",
+     "level": [
+      5,
+      6
+     ],
+     "spawns": 0,
+     "family": "Cat"
+    },
+    {
+     "id": 250928,
+     "name": "Highlands Ursera",
+     "level": [
+      7,
+      8
+     ],
+     "spawns": 0,
+     "family": "Bear"
+    },
+    {
+     "id": 251707,
+     "name": "Ornery Galestrider",
+     "level": [
+      8,
+      9
+     ],
+     "spawns": 0,
+     "family": "Tallstrider"
+    },
+    {
+     "id": 253282,
+     "name": "Shriekling Fledgling",
+     "level": [
+      8,
+      9
+     ],
+     "spawns": 0,
+     "family": "Raptor"
+    },
+    {
+     "id": 253283,
+     "name": "Shriekling Matriarch",
+     "level": [
+      9,
+      9
+     ],
+     "spawns": 0,
+     "family": "Raptor"
+    },
+    {
+     "id": 256092,
+     "name": "Shadowgale Shriekling",
+     "level": [
+      10,
+      11
+     ],
+     "spawns": 0,
+     "family": "Bird of Prey"
+    },
+    {
+     "id": 250927,
+     "name": "Shadowgale Ursera",
+     "level": [
+      10,
+      11
+     ],
+     "spawns": 0,
+     "family": "Bear"
+    },
+    {
+     "id": 254589,
+     "name": "Vulgara the Insatiable",
+     "level": [
+      8,
+      8
+     ],
+     "spawns": 0,
+     "rare": true,
+     "family": "Wolf"
+    },
+    {
+     "id": 256492,
+     "name": "Fernfeather",
+     "level": [
+      10,
+      10
+     ],
+     "spawns": 0,
+     "rare": true,
+     "family": "Tallstrider"
+    },
+    {
+     "id": 259388,
+     "name": "Mystmane",
+     "level": [
+      13,
+      13
+     ],
+     "spawns": 0,
+     "rare": true,
+     "family": "Bear"
+    },
+    {
+     "id": 250873,
+     "name": "Juvenile Vuldren",
+     "level": [
+      1,
+      1
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 251169,
+     "name": "Pesky Cirrusfly",
+     "level": [
+      1,
+      1
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 251404,
+     "name": "Cirrusfly Queen",
+     "level": [
+      3,
+      3
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 271712,
+     "name": "Cloudrunner",
+     "level": [
+      6,
+      6
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 251284,
+     "name": "Hippogryph Protector",
+     "level": [
+      6,
+      7
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 251291,
+     "name": "Hippogryph Youth",
+     "level": [
+      6,
+      6
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 250868,
+     "name": "Vuldren",
+     "level": [
+      6,
+      6
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 251261,
+     "name": "Hippogryph Matriarch",
+     "level": [
+      7,
+      7
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 251727,
+     "name": "Skyhopper",
+     "level": [
+      7,
+      8
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 251622,
+     "name": "Flutterfly",
+     "level": [
+      8,
+      9
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 271707,
+     "name": "Juvenile Cloudrunner",
+     "level": [
+      8,
+      8
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 271710,
+     "name": "Cloudrunner Matriarch",
+     "level": [
+      9,
+      9
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 256108,
+     "name": "Shadowgale Shrieker",
+     "level": [
+      10,
+      10
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 250874,
+     "name": "Vuldren Alpha",
+     "level": [
+      10,
+      10
+     ],
+     "spawns": 0
+    }
+   ],
+   "from": "wowhead-forever"
   }
  },
  "recipes": [
@@ -15779,6 +16044,67 @@
   189190,
   195786
  ],
+ "train": [
+  30,
+  0,
+  0,
+  200,
+  0,
+  100,
+  0,
+  500,
+  0,
+  2100,
+  0,
+  3800,
+  0,
+  4125,
+  0,
+  3600,
+  0,
+  8000,
+  0,
+  13200,
+  0,
+  3000,
+  0,
+  28000,
+  3750,
+  16000,
+  0,
+  36000,
+  0,
+  35000,
+  0,
+  56000,
+  0,
+  27000,
+  0,
+  70000,
+  0,
+  77000,
+  0,
+  120000,
+  0,
+  58000,
+  0,
+  85000,
+  0,
+  117000,
+  0,
+  198000,
+  0,
+  147000,
+  0,
+  135000,
+  0,
+  116000,
+  0,
+  270000,
+  0,
+  192000,
+  0
+ ],
  "prices": {
   "realm": "PvP",
   "date": "2026-10-20",
@@ -15973,66 +16299,5 @@
    "249432": 899,
    "279978": 99
   }
- },
- "train": [
-  30,
-  0,
-  0,
-  200,
-  0,
-  100,
-  0,
-  500,
-  0,
-  2100,
-  0,
-  3800,
-  0,
-  4125,
-  0,
-  3600,
-  0,
-  8000,
-  0,
-  13200,
-  0,
-  3000,
-  0,
-  28000,
-  3750,
-  16000,
-  0,
-  36000,
-  0,
-  35000,
-  0,
-  56000,
-  0,
-  27000,
-  0,
-  70000,
-  0,
-  77000,
-  0,
-  120000,
-  0,
-  58000,
-  0,
-  85000,
-  0,
-  117000,
-  0,
-  198000,
-  0,
-  147000,
-  0,
-  135000,
-  0,
-  116000,
-  0,
-  270000,
-  0,
-  192000,
-  0
- ]
+ }
 }
