@@ -2,6 +2,19 @@
   "_readme": "Site updates shown on the News page, newest first. Game data changes come from data/changelog.json (written by scripts/sync.js).",
   "site": [
     {
+      "day": "2026-10-22",
+      "title": {
+        "es": "El oro que juntás ahora cuenta los grises y las monedas de los bichos",
+        "en": "The gold you make now counts the grays and coins monsters leave"
+      },
+      "items": [
+        {
+          "es": "Gracias a lo que midió el addon en el stress test: el sitio suponía que todo el oro salía de las misiones, y del 1 al 9 suponía 48s cuando se juntan unos 30s, la mayoría vendiendo grises. Ahora el oro de cada nivel suma misiones, monedas y grises, con los promedios de Classic de la base de datos abierta CMaNGOS, que dan lo mismo que lo medido. Afecta a cuánto Merchant's Favor te conviene juntar, a los Barato / Caro de Peletería y a si vale la pena comprar cuero.",
+          "en": "Thanks to what the addon measured on the stress test: the site assumed all your gold came from quests, and from 1 to 9 it assumed 48s when you make about 30s, mostly selling grays. Now the gold of each level adds quests, coins and grays, with Classic averages from the open CMaNGOS database, which match what was measured. It changes how much Merchant's Favor is worth gathering, the Cheap / Dear tags of Leatherworking and whether buying leather is worth it."
+        }
+      ]
+    },
+    {
       "day": "2026-10-21",
       "title": {
         "es": "Talentos del 30 al 60 corregidos, y un solo nivel por pieza de Peletería",

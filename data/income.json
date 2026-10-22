@@ -1,0 +1,306 @@
+{
+ "_readme": "Written by scripts/build-income.js. Copper, by level (index level-1): quest = money per quest of that level; coin and gray = per kill of a normal monster of that level (coins, and gray items at the vendor). Classic 1.12, smoothed over 5 levels.",
+ "source": "https://github.com/cmangos/classic-db",
+ "levels": [
+  {
+   "quest": 4.5,
+   "coin": 1.1,
+   "gray": 5.6
+  },
+  {
+   "quest": 4.4,
+   "coin": 1.5,
+   "gray": 5.1
+  },
+  {
+   "quest": 5.6,
+   "coin": 1.6,
+   "gray": 5.6
+  },
+  {
+   "quest": 18.7,
+   "coin": 2.1,
+   "gray": 5.7
+  },
+  {
+   "quest": 35.8,
+   "coin": 2.6,
+   "gray": 6.3
+  },
+  {
+   "quest": 51.3,
+   "coin": 3.1,
+   "gray": 7
+  },
+  {
+   "quest": 80.2,
+   "coin": 3.7,
+   "gray": 8
+  },
+  {
+   "quest": 68.2,
+   "coin": 4.7,
+   "gray": 8.4
+  },
+  {
+   "quest": 68.4,
+   "coin": 5.5,
+   "gray": 10.2
+  },
+  {
+   "quest": 77.7,
+   "coin": 6.5,
+   "gray": 11.9
+  },
+  {
+   "quest": 74.5,
+   "coin": 7.4,
+   "gray": 14.4
+  },
+  {
+   "quest": 79.3,
+   "coin": 8.1,
+   "gray": 16.8
+  },
+  {
+   "quest": 154.1,
+   "coin": 8.9,
+   "gray": 20.8
+  },
+  {
+   "quest": 168.4,
+   "coin": 10,
+   "gray": 25.4
+  },
+  {
+   "quest": 202.3,
+   "coin": 11.3,
+   "gray": 28.7
+  },
+  {
+   "quest": 250.3,
+   "coin": 12.8,
+   "gray": 33
+  },
+  {
+   "quest": 309,
+   "coin": 14,
+   "gray": 38.9
+  },
+  {
+   "quest": 284.1,
+   "coin": 14.6,
+   "gray": 47.3
+  },
+  {
+   "quest": 308.2,
+   "coin": 14.8,
+   "gray": 56.5
+  },
+  {
+   "quest": 290.5,
+   "coin": 14.5,
+   "gray": 70.3
+  },
+  {
+   "quest": 315.8,
+   "coin": 15.1,
+   "gray": 80.6
+  },
+  {
+   "quest": 373.5,
+   "coin": 16.4,
+   "gray": 87.3
+  },
+  {
+   "quest": 596.3,
+   "coin": 18,
+   "gray": 91.5
+  },
+  {
+   "quest": 780.2,
+   "coin": 20.6,
+   "gray": 95.9
+  },
+  {
+   "quest": 943.5,
+   "coin": 23.6,
+   "gray": 95.9
+  },
+  {
+   "quest": 850.7,
+   "coin": 26.6,
+   "gray": 97.2
+  },
+  {
+   "quest": 842.9,
+   "coin": 30,
+   "gray": 100.9
+  },
+  {
+   "quest": 673.1,
+   "coin": 30.9,
+   "gray": 114.1
+  },
+  {
+   "quest": 540.5,
+   "coin": 30.5,
+   "gray": 133.6
+  },
+  {
+   "quest": 487.6,
+   "coin": 30.9,
+   "gray": 149.7
+  },
+  {
+   "quest": 472.6,
+   "coin": 30,
+   "gray": 165.2
+  },
+  {
+   "quest": 441,
+   "coin": 29.7,
+   "gray": 179.5
+  },
+  {
+   "quest": 762,
+   "coin": 32.3,
+   "gray": 184.5
+  },
+  {
+   "quest": 1052.6,
+   "coin": 34.3,
+   "gray": 184
+  },
+  {
+   "quest": 954.1,
+   "coin": 35.2,
+   "gray": 186.1
+  },
+  {
+   "quest": 1124.8,
+   "coin": 35,
+   "gray": 192.9
+  },
+  {
+   "quest": 1275.9,
+   "coin": 33.4,
+   "gray": 205.1
+  },
+  {
+   "quest": 1103.9,
+   "coin": 30.8,
+   "gray": 229
+  },
+  {
+   "quest": 925.3,
+   "coin": 30.3,
+   "gray": 254.1
+  },
+  {
+   "quest": 1047.8,
+   "coin": 34,
+   "gray": 278.7
+  },
+  {
+   "quest": 1057.1,
+   "coin": 39.3,
+   "gray": 299.6
+  },
+  {
+   "quest": 1304,
+   "coin": 44,
+   "gray": 316.7
+  },
+  {
+   "quest": 2450.8,
+   "coin": 46.9,
+   "gray": 323.2
+  },
+  {
+   "quest": 2592.6,
+   "coin": 48.3,
+   "gray": 334.4
+  },
+  {
+   "quest": 2707.7,
+   "coin": 47.4,
+   "gray": 339.4
+  },
+  {
+   "quest": 3640.6,
+   "coin": 44,
+   "gray": 350.2
+  },
+  {
+   "quest": 3782,
+   "coin": 39.6,
+   "gray": 371.3
+  },
+  {
+   "quest": 2882.6,
+   "coin": 41.5,
+   "gray": 390
+  },
+  {
+   "quest": 3071,
+   "coin": 48.6,
+   "gray": 394
+  },
+  {
+   "quest": 3458.5,
+   "coin": 59.8,
+   "gray": 397.9
+  },
+  {
+   "quest": 3251.2,
+   "coin": 77,
+   "gray": 401.5
+  },
+  {
+   "quest": 3239.2,
+   "coin": 91.2,
+   "gray": 416.9
+  },
+  {
+   "quest": 3172.2,
+   "coin": 112.2,
+   "gray": 409.2
+  },
+  {
+   "quest": 3069.3,
+   "coin": 110.8,
+   "gray": 420.7
+  },
+  {
+   "quest": 2830.7,
+   "coin": 112.2,
+   "gray": 429.6
+  },
+  {
+   "quest": 3255.9,
+   "coin": 104.4,
+   "gray": 450.8
+  },
+  {
+   "quest": 3547.8,
+   "coin": 107.3,
+   "gray": 463.6
+  },
+  {
+   "quest": 2439.6,
+   "coin": 103.8,
+   "gray": 481.7
+  },
+  {
+   "quest": 2432.3,
+   "coin": 112.5,
+   "gray": 486.9
+  },
+  {
+   "quest": 2428.7,
+   "coin": 112.8,
+   "gray": 514
+  }
+ ]
+}

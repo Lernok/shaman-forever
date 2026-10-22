@@ -14,10 +14,10 @@
 // - Forever's scarce materials (a bonus from gathering nodes) and the Black
 //   Market vendor's fixed prices: hand-kept in data/scarce.json.
 //
-// - Quest gold per level, to weigh a price: the experience to level up
-//   (Classic's table) times the share that comes from quests (QUEST_SHARE),
-//   at the money a quest of that level pays per point of experience (the
-//   client's QuestMoneyReward and QuestXP, same difficulty column).
+// - Gold you earn per level, to weigh a price: quest money and what the
+//   monsters you kill leave (coins, gray items), from the experience to level
+//   up (Classic's table) split between quests (QUEST_SHARE) and kills; the
+//   averages per quest and per kill come from data/income.json.
 // - Auction prices, when data/prices.json exists (scripts/import-prices.js,
 //   from Auctionator scans): realm, day and the lowest price per unit.
 //
@@ -185,15 +185,27 @@ let scarceItems = {};
   const page = {};
   forLw.forEach(id => { if (items[id]) page[id] = compact(items[id]); });
   SK.reagents = page;
-  // Quest gold per level (copper), gold[level - 1].
+  // Gold you earn per level (copper), gold[level - 1].
   const table = async name => {
     const csv = await http.get('https://wago.tools/db2/' + name + '/csv?build=' + build, { cache: 'wago/' + build + '/' + name + '.csv', valid: t => /^ID,/.test(t) });
     return new Map(parseCSV(csv).map(r => [Number(r.ID), Number(r[DIFFICULTY])]));
   };
-  const money = await table('QuestMoneyReward');
+  // Quests: how many a level's quest experience is (the client's QuestXP per
+  // quest) times the money a quest of that level pays; kills: the rest of
+  // the experience at Classic's 45 + 5 x level a kill of your level, times
+  // the coins and gray items a monster leaves (data/income.json,
+  // scripts/build-income.js). Without that file, QuestMoneyReward alone.
   const qxp = await table('QuestXP');
-  SK.gold = XP.map((xp, i) => Math.round(xp * QUEST_SHARE * (money.get(i + 1) || 0) / (qxp.get(i + 1) || 1)));
-  SK.sources.gold = 'https://wago.tools/db2/QuestMoneyReward';
+  const income = readJSON('data/income.json', null);
+  const money = income ? null : await table('QuestMoneyReward');
+  SK.gold = XP.map((xp, i) => {
+    const l = i + 1;
+    const quests = xp * QUEST_SHARE / (qxp.get(l) || 1);
+    if (!income) return Math.round(quests * (money.get(l) || 0));
+    const e = income.levels[i];
+    return Math.round(quests * e.quest + xp * (1 - QUEST_SHARE) / (45 + 5 * l) * (e.coin + e.gray));
+  });
+  SK.sources.gold = income ? income.source : 'https://wago.tools/db2/QuestMoneyReward';
   // Class training per level (copper), train[level - 1]: the spell ranks
   // learned at that level (data/shaman.json) times what a rank of that level
   // costs. Costs read at the class trainer by the addon (stress test, 10-21:
@@ -227,7 +239,7 @@ let scarceItems = {};
   // The ten drops most likely per reagent: enough to say where.
   Object.entries(items).forEach(([id, e]) => { all[id] = compact(Object.assign({}, e, e.drops ? { drops: e.drops.slice(0, 10) } : {}), true); });
   writeJSON('data/crafts.json', {
-    _readme: 'Written by scripts/build-reagents.js: reagents of crafted gear (mats[item] = [[reagent, n]]), where each comes from, auction prices and quest gold per level.',
+    _readme: 'Written by scripts/build-reagents.js: reagents of crafted gear (mats[item] = [[reagent, n]]), where each comes from, auction prices and the gold you earn per level (quests, coins and gray items).',
     sources: { drops: SK.sources.reagents, gold: SK.sources.gold, scarce: scarce.sources, market: scarce.vendor },
     mats: Object.fromEntries(crafted), items: all, gold: SK.gold, prices: SK.prices || null,
     // What Merchant's Favor costs: crates and what fills them (data/favor.json).

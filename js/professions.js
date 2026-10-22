@@ -588,7 +588,8 @@
       ['hide', 'gap', 'ranks', 'pristine', 'zones', 'guide'].map(k => '<li>' + t('pr.lw.key.' + k) + '</li>').join('') + '</ul>' +
       '<p class="note-text dim">' + t('pr.lw.how', { kills: Math.round(window.LwPlan.KILL_SHARE * 100), pristine: Math.round(window.LwPlan.PRISTINE * 100) }) +
       ' <a class="src" href="' + SK.sources.yields + '" target="_blank" rel="noopener">Wowhead</a> · <a class="src" href="' + SK.sources.beasts + '" target="_blank" rel="noopener">QuestieDB</a> · <a class="src" href="' + SK.sources.recipes + '" target="_blank" rel="noopener">classicwowforever</a>' +
-      (SK.sources.reagents ? ' · <a class="src" href="' + SK.sources.reagents + '" target="_blank" rel="noopener">' + t('pr.lw.matSource') + '</a>' : '') + '</p></details>';
+      (SK.sources.reagents ? ' · <a class="src" href="' + SK.sources.reagents + '" target="_blank" rel="noopener">' + t('pr.lw.matSource') + '</a>' : '') +
+      (SK.sources.gold ? ' · <a class="src" href="' + SK.sources.gold + '" target="_blank" rel="noopener">' + t('pr.lw.goldSource') + '</a>' : '') + '</p></details>';
     return html;
   }
 

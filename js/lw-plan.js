@@ -373,8 +373,9 @@
   //   lasts: levels you wear it before you'd make it anyway or something
   //          better comes;
   //   cost: the leather bought for it beyond the rest (last auction scan),
-  //         against the gold you have free in those levels: quest gold minus
-  //         class training (data/skinning.js gold, train).
+  //         against the gold you have free in those levels: what you make
+  //         (quests, coins, grays) minus class training (data/skinning.js
+  //         gold, train).
   // Worth it: at least WORTH_GAIN better, for at most WORTH_GOLD of that gold
   // (the same share Merchant's Favor gets).
   const WORTH_GAIN = 0.25;
