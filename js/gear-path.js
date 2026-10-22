@@ -25,7 +25,7 @@
     // crafts count only from your crafting ones; none picked = no crafts.
     const picked = UI.store.get('profs', []);
     const profs = picked.filter(p => PROFS.includes(p));
-    const key = JSON.stringify([Site.spec, Site.faction, race(), picked, state.drops, state.farm, UI.store.get('learnedProfs', {}), UI.store.get('lwSkin', 'normal'), !!window.SKINNING_DATA, !!window.CRAFT_DATA, gear().length]);
+    const key = JSON.stringify([Site.spec, Site.faction, race(), picked, state.drops, state.farm, UI.store.get('learnedProfs', {}), UI.store.get('lwSkin', 'normal'), UI.store.get('lwSkillBuy', 'worth'), !!window.SKINNING_DATA, !!window.CRAFT_DATA, gear().length]);
     if (last && last.key === key) { favorPaid = last.favorPaid; return last.out; }
     const opts = {
       spec: Site.spec, faction: Site.faction, race: race(), profs, drops: state.drops,
@@ -44,7 +44,7 @@
     // Leatherworking pieces wait for the level the Leatherworking plan makes
     // them (the one Profesiones shows): js/lw-plan.js settle.
     const plan = window.LwPlan && window.SKINNING_DATA
-      ? window.LwPlan.settle(gear(), opts, { picked, farm: state.farm, intensity: UI.store.get('lwSkin', 'normal') })
+      ? window.LwPlan.settle(gear(), opts, { picked, farm: state.farm, intensity: UI.store.get('lwSkin', 'normal'), skillBuy: UI.store.get('lwSkillBuy', 'worth') })
       : window.GearPlan.plan(gear(), opts);
     favorPaid = plan.favorPaid || {};
     last = { key, favorPaid, out: { plan, profs, picked } };

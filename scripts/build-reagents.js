@@ -194,6 +194,29 @@ let scarceItems = {};
   const qxp = await table('QuestXP');
   SK.gold = XP.map((xp, i) => Math.round(xp * QUEST_SHARE * (money.get(i + 1) || 0) / (qxp.get(i + 1) || 1)));
   SK.sources.gold = 'https://wago.tools/db2/QuestMoneyReward';
+  // Class training per level (copper), train[level - 1]: the spell ranks
+  // learned at that level (data/shaman.json) times what a rank of that level
+  // costs. Costs read at the class trainer by the addon (stress test, 10-21:
+  // ShamanForeverDB.scan.spells, data/ingame-scan.json) and the purchases
+  // logged at 2, 4, 6 and 8; levels in between, interpolated.
+  const scan = readJSON('data/ingame-scan.json', {}).spells || {};
+  const per = { 2: 10, 4: 100, 6: 100, 8: 100 };
+  Object.values(scan).forEach(t => Object.values(t.list || {}).forEach(x => { if (x.level > 0 && x.cost > 0) per[x.level] = Math.max(per[x.level] || 0, x.cost); }));
+  const known = Object.keys(per).map(Number).sort((a, b) => a - b);
+  const rankCost = l => {
+    if (per[l]) return per[l];
+    const lo = known.filter(k => k < l).pop();
+    const hi = known.find(k => k > l);
+    if (lo == null || hi == null) return per[lo != null ? lo : hi] || 0;
+    return Math.round(per[lo] + (per[hi] - per[lo]) * (l - lo) / (hi - lo));
+  };
+  const ranks = {};
+  Object.entries(readJSON('data/shaman.json').spell_desc || {}).forEach(([k, v]) => {
+    const m = /level (\d+)/.exec(v.lv || '');
+    if (m && /\|Rank \d+$/.test(k)) ranks[m[1]] = (ranks[m[1]] || 0) + 1;
+  });
+  SK.train = XP.map((x, i) => (ranks[i + 1] || 0) * rankCost(i + 1));
+  SK.sources.train = 'ShamanForever addon: class trainer costs read in game (stress test, 2026-10-21)';
   const prices = readJSON('data/prices.json', null);
   if (prices) SK.prices = { realm: prices.realm, date: prices.date, p: prices.prices };
   SK.sources.reagents = 'https://www.wowhead.com/classic/item=5784/slimy-murloc-scale#dropped-by';

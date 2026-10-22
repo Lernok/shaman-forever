@@ -71,6 +71,9 @@
     const mult = INTENSITY[opts.intensity] || 1;
     // Pieces you buy for, to have them on time.
     const buys = tg => opts.buy === true || !!(opts.buyFor && opts.buyFor.has(tg.id));
+    // Pieces you also buy leather for to raise the skill they ask (all the
+    // ones you buy for, unless skillFor names them: settle's "worth it").
+    const skillBuys = tg => buys(tg) && (!opts.skillFor || opts.skillFor.has(tg.id));
 
     const isVendor = id => VENDOR.has(id);
     const skinned = id => SKINS[id] != null || CURE[id] != null || CONVERT.includes(id);
@@ -192,7 +195,9 @@
         // 2) The most skill for the skins it spends, keeping what the next pieces need.
         const usable = trainer.filter(r => skill >= r.skill[0] && skill < capNow && chance(r, skill) >= 0.3 && !CURE[r.id]);
         const can = r => affordable(r, keep) || (CONVERT.includes(r.id) && affordable(r, {}));
-        if (current && skill < current.skill[2] && skill < capNow) {
+        // Short of skill for a piece that's due and you buy for: buy (3) rather than wait.
+        const late = opts.targets.find(t => skillBuys(t) && !madeAt[t.id] && t.level <= L && byId.has(t.id) && skill < byId.get(t.id).skill[0]);
+        if (current && skill < current.skill[2] && skill < capNow && !(late && !can(current))) {
           if (can(current)) { craft(current, crafts); continue; }
           // Wait while the beasts of your level still give its material
           // (Ruined Leather Scraps up to level 10); a level or two otherwise.
@@ -207,7 +212,6 @@
         });
         if (best) { current = best.r; craft(best.r, crafts); continue; }
         // 3) Buying: short of skill for a piece that's due, buy the cheapest leather for skill-ups.
-        const late = opts.targets.find(t => buys(t) && !madeAt[t.id] && t.level <= L && byId.has(t.id) && skill < byId.get(t.id).skill[0]);
         // The 70-75 wall: nothing there uses Medium Leather, which is what drops
         // once Light Leather stops; a little Light Leather bought gets you over.
         const wall = opts.bridge !== false && skill >= BRIDGE[0] && skill < BRIDGE[1] && L >= 21;
@@ -315,38 +319,110 @@
   // again until the pieces stay put. A piece's wait only grows from round to
   // round, so it settles (two or three rounds). Equipo, Profesiones and
   // scripts/plan.js, audit-path.js all plan through here.
-  //   ctx: { picked: your professions (Skinning too), farm, intensity }
+  //   ctx: { picked: your professions (Skinning too), farm, intensity,
+  //          skillBuy: 'worth' (default) | 'always' | 'never' }
+  // The plan carries lwWorth: Map(item id -> verdict, see worth()).
   const PATH_CAP = 30;
   const lwSteps = plan => Object.values(plan.slots).flatMap(p => p.steps).filter(st => (st.pick.source || {}).profession === 'Leatherworking');
   const lwKey = plan => lwSteps(plan).map(st => st.pick.item.id + '@' + st.level).sort().join(',');
   function settle(gear, opts, ctx) {
-    let plan = window.GearPlan.plan(gear, opts);
-    if (!(opts.profs || []).includes('Leatherworking') || !window.SKINNING_DATA) return plan;
-    const wait = new Map();
-    for (let round = 0; round < 5; round++) {
-      const lwAt = waits(plan, opts, ctx);
-      const at = item => { const n = Math.max(wait.get(item.id) || 0, lwAt(item)); wait.set(item.id, n); return n; };
-      const next = window.GearPlan.plan(gear, Object.assign({}, opts, {
-        matsAt: (item, s) => Math.max(opts.matsAt ? opts.matsAt(item, s) : 0, s.profession === 'Leatherworking' ? at(item) : 0)
-      }));
-      const same = lwKey(next) === lwKey(plan);
-      plan = next;
-      if (same) break;
-    }
-    return plan;
+    const wanted = window.GearPlan.plan(gear, opts);
+    if (!(opts.profs || []).includes('Leatherworking') || !window.SKINNING_DATA) return wanted;
+    // skillFor: the pieces you buy leather for to raise the skill (null: all).
+    const fit = skillFor => {
+      let plan = wanted;
+      const wait = new Map();
+      for (let round = 0; round < 5; round++) {
+        const lwAt = waits(plan, opts, ctx, skillFor);
+        const at = item => { const n = Math.max(wait.get(item.id) || 0, lwAt(item)); wait.set(item.id, n); return n; };
+        const next = window.GearPlan.plan(gear, Object.assign({}, opts, {
+          matsAt: (item, s) => Math.max(opts.matsAt ? opts.matsAt(item, s) : 0, s.profession === 'Leatherworking' ? at(item) : 0)
+        }));
+        const same = lwKey(next) === lwKey(plan);
+        plan = next;
+        if (same) break;
+      }
+      return plan;
+    };
+    // Farming everything there's no auction house to buy from.
+    if (ctx.farm || ctx.skillBuy === 'always') return fit(null);
+    const never = fit(new Set());
+    const verdicts = worth(wanted, never, opts, ctx);
+    if (ctx.skillBuy === 'never') return Object.assign(never, { lwWorth: verdicts });
+    const yes = new Set([...verdicts.values()].filter(v => v.worth).map(v => v.id));
+    return Object.assign(yes.size ? fit(yes) : never, { lwWorth: verdicts });
   }
-  // The level you make each piece, from this plan run on a path's pieces up
-  // to the beta's cap: one it doesn't reach by then waits until after it.
-  function waits(plan, opts, ctx) {
-    const SK = window.SKINNING_DATA;
-    const steps = lwSteps(plan).filter(st => st.level <= PATH_CAP);
+
+  // The Leatherworking plan on a path's pieces up to the beta's cap.
+  function runFor(steps, opts, ctx, skillFor) {
     const skinning = (ctx.picked || []).includes('Skinning');
     const from = p => window.Route.profFrom(p, opts.faction, opts.race).level;
-    const res = run({
+    return run({
       faction: opts.faction, race: opts.race, targets: steps.map(st => ({ id: st.pick.item.id, level: st.level })).sort((a, b) => a.level - b.level),
-      intensity: INTENSITY[ctx.intensity] ? ctx.intensity : 'normal', skinning, to: PATH_CAP, buy: !ctx.farm,
+      intensity: INTENSITY[ctx.intensity] ? ctx.intensity : 'normal', skinning, to: PATH_CAP, buy: !ctx.farm, skillFor,
       lwFrom: from('Leatherworking'), skinFrom: skinning ? from('Skinning') : 61
     });
+  }
+
+  // Is buying leather to raise the skill worth it for a piece? For each piece
+  // the path wants before your skill gets there (wanted: the path with no
+  // wait; never: the one where pieces wait for your skill), with the auction
+  // house's leather:
+  //   earlier: the level you have it buying (made) instead of without (late);
+  //   gain: how much better than what you'd wear in that slot meanwhile;
+  //   lasts: levels you wear it before you'd make it anyway or something
+  //          better comes;
+  //   cost: the leather bought for it beyond the rest (last auction scan),
+  //         against the gold you have free in those levels: quest gold minus
+  //         class training (data/skinning.js gold, train).
+  // Worth it: at least WORTH_GAIN better, for at most WORTH_GOLD of that gold
+  // (the same share Merchant's Favor gets).
+  const WORTH_GAIN = 0.25;
+  const WORTH_GOLD = 0.5;
+  function worth(wanted, never, opts, ctx) {
+    const SK = window.SKINNING_DATA;
+    const prices = (SK.prices || {}).p || null;
+    const steps = lwSteps(wanted).filter(st => st.level <= PATH_CAP);
+    const lateAt = new Map(lwSteps(never).map(st => [st.pick.item.id, st.level]));
+    const base = runFor(steps, opts, ctx, new Set());
+    const out = new Map();
+    steps.forEach(st => {
+      const id = st.pick.item.id;
+      const late = lateAt.get(id) || PATH_CAP + 1;
+      if (late <= st.level) return;
+      const res = runFor(steps, opts, ctx, new Set([id]));
+      const made = res.made[id] || null;
+      const v = { id, want: st.level, late, made, extra: {}, cost: 0, worth: false };
+      out.set(id, v);
+      Object.entries(res.bought).forEach(([m, n]) => { const d = Math.round(n - (base.bought[m] || 0)); if (d > 0 && SKINS[m] != null) v.extra[m] = d; });
+      if (!made || made >= late) { v.why = 'cant'; return; }
+      if (!Object.keys(v.extra).length) { v.why = 'free'; v.worth = true; return; }
+      if (!prices) { v.why = 'noPrices'; return; }
+      let missing = false;
+      Object.entries(v.extra).forEach(([m, n]) => { if (prices[m]) v.cost += prices[m] * n; else missing = true; });
+      if (missing) { v.why = 'noPrices'; return; }
+      // What you'd wear in that slot at that level without it.
+      const before = ((never.slots[st.pick.slot] || {}).steps || []).filter(s => s.level <= made && s.pick.item.id !== id).pop();
+      const old = before ? before.pick.value : 0;
+      v.gain = old > 0 ? st.pick.value / old - 1 : null;
+      v.until = Math.min(late, st.until || 61);
+      v.lasts = v.until - made;
+      let free = 0;
+      for (let l = made; l < v.until; l++) free += Math.max(0, (SK.gold[l - 1] || 0) - ((SK.train || [])[l - 1] || 0));
+      v.free = free;
+      v.share = free ? v.cost / free : Infinity;
+      v.worth = v.lasts >= 1 && (v.gain == null || v.gain >= WORTH_GAIN) && v.share <= WORTH_GOLD;
+      v.why = v.worth ? 'worth' : v.lasts < 1 ? 'short' : v.gain != null && v.gain < WORTH_GAIN ? 'gain' : 'dear';
+    });
+    return out;
+  }
+
+  // The level you make each piece, from this plan run on a path's pieces up
+  // to the beta's cap: one it doesn't reach by then waits until after it.
+  function waits(plan, opts, ctx, skillFor) {
+    const SK = window.SKINNING_DATA;
+    const steps = lwSteps(plan).filter(st => st.level <= PATH_CAP);
+    const res = runFor(steps, opts, ctx, skillFor);
     const recipe = new Map(SK.recipes.map(r => [r.id, r]));
     const wanted = new Set(steps.map(st => st.pick.item.id));
     return item => {
@@ -360,5 +436,5 @@
     };
   }
 
-  window.LwPlan = { run, pieces, beasts, matsAt, settle, KILL_SHARE, PRISTINE };
+  window.LwPlan = { run, pieces, beasts, matsAt, settle, KILL_SHARE, PRISTINE, WORTH_GAIN, WORTH_GOLD };
 })();

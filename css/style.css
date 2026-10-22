@@ -1412,6 +1412,11 @@ details[open] > .lw-head .lw-goals { display: none; }
 .lw-mid { color: var(--warn); }
 .lw-dear { color: #e06c5a; }
 .lw-early { flex-basis: 100%; font-size: 12px; color: var(--text-dim); display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; margin: 2px 0 4px; }
+.lw-worth { font-size: 12px; color: var(--text-dim); display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; margin: 4px 0; }
+.lw-worth > span:first-child { flex-basis: 100%; }
+.lw-worth.lw-cheap, .lw-worth.lw-dear { color: var(--text-dim); }
+.lw-worth.lw-cheap b { color: #6cc070; }
+.lw-worth.lw-dear b { color: #e06c5a; }
 .lw-buyrow .lw-k { color: var(--warn); }
 .lw-more { margin-top: 18px; }
 .lw-more summary { cursor: pointer; color: var(--text-dim); font-size: 13px; }

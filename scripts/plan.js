@@ -13,7 +13,9 @@
 //   --profs Leatherworking,Skinning            (default none)
 //   --drops                                    count boss drops (the page's checkbox)
 //   --farm                                     "Farmeo todo" (no auction house): crafts wait for their reagents
+//   --skill-buy worth|always|never             with the auction house: buy leather to raise the skill (default worth)
 //   --lo 1 --hi 60                             level range (path, slot)
+//   node scripts/plan.js worth [options]          each piece: is buying leather to raise the skill worth it
 const fs = require('fs');
 const path = require('path');
 
@@ -52,9 +54,17 @@ const where = s => [s.quest || s.npc || s.profession, (typeof s.dungeon === 'str
 const steps = p => Object.values(p.slots).flatMap(x => x.steps).sort((a, b) => a.level - b.level);
 
 console.log('# ' + race + ' ' + spec + ' (' + faction + '), ' + (profs.join(' + ') || 'sin profesiones') + (opts.drops ? ', con drops' : '') + (farm ? ', farmeo todo' : ''));
-const plan = window.LwPlan.settle(gear, opts, { picked: profs, farm, intensity: opt('skin', 'normal') });
+const plan = window.LwPlan.settle(gear, opts, { picked: profs, farm, intensity: opt('skin', 'normal'), skillBuy: opt('skill-buy', 'worth') });
 
-if (cmd === 'path') {
+if (cmd === 'worth') {
+  const SK = window.SKINNING_DATA;
+  const coin = c => (c / 10000).toFixed(2) + 'g';
+  [...(plan.lwWorth || new Map()).values()].forEach(v => console.log((SK.names[v.id] || '#' + v.id).padEnd(32), 'quiere ' + v.want, 'sin comprar ' + v.late, 'comprando ' + (v.made || '-'),
+    '| ' + Object.entries(v.extra).map(([m, n]) => n + ' ' + (SK.names[m] || m)).join(', '), v.cost ? coin(v.cost) : '',
+    v.gain != null ? 'mejora ' + Math.round(v.gain * 100) + '%' : v.free != null ? 'slot vacío' : '', v.lasts != null ? 'dura ' + v.lasts : '',
+    v.free != null ? 'libre ' + coin(v.free) + ' (' + Math.round(v.share * 100) + '%)' : '', '=>', v.worth ? 'VALE' : 'no', v.why));
+  if (!plan.lwWorth) console.log('(sin veredictos: farmeo todo, --skill-buy always, o sin Peletería)');
+} else if (cmd === 'path') {
   steps(plan).filter(st => st.level >= lo && st.level <= hi).forEach(st => {
     const i = st.pick.item;
     console.log(String(st.level).padStart(2), st.pick.slot.padEnd(9), (i.name + ' #' + i.id).padEnd(42), ('v' + st.pick.value.toFixed(1)).padStart(6), st.pick.access.padEnd(8), '+' + st.lasts + ' niv |', short(i.stats), short(i.bonus), '|', where(st.pick.source || {}));

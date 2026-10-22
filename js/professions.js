@@ -232,6 +232,8 @@
   // ---------- Leatherworking while leveling (js/lw-plan.js) ----------
 
   const SKIN_LEVELS = ['few', 'normal', 'all'];
+  // With the auction house: buy leather to raise the skill a piece asks (js/lw-plan.js settle).
+  const SKILL_BUY = ['worth', 'always', 'never'];
   // A stage of the plan covers at least this many levels.
   const STAGE_MIN = 3;
   // What the Leatherworking plan knows about your pieces: when you make each
@@ -339,7 +341,8 @@
       const st = stepOf.get(id);
       const r = recipe.get(id);
       const own = extraMats(r);
-      const lvl = (pieceOf.get(id) || {}).alone || st.level;
+      // Farming, the level you make it with what you skin; with the auction house, the path's.
+      const lvl = (farm && (pieceOf.get(id) || {}).alone) || st.level;
       return '<span class="lw-piece">' + UI.itemLink(st.pick.item) + '<span class="dim"> ' + window.GearPath.slotName(st.pick.slot) +
         (r && r.how === 'f' ? ' · ' + t('pr.plan.favorCost', { n: r.favor || 30 }) : '') + '</span>' +
         (own.length ? '<span class="lw-mats">' + own.map(([m, n]) => whereMat(m, n, lvl)).join('') + (farm ? '' : buyCost(own, lvl)) + '</span>' : '') + '</span>';
@@ -364,7 +367,25 @@
       const key = !skinning ? 'pr.lw.buyNoSkin' : p.alone ? (vars.mats ? 'pr.lw.buyMats' : 'pr.lw.buyEarly') : 'pr.lw.buyLate';
       return '<div class="lw-early"><span>' + t(key, vars) + '</span> ' + chips(p.extra) + buyCost(Object.entries(p.extra).map(([m, n]) => [Number(m), n]), p.level) + '</div>';
     };
-    return { SK, mine, skinning, intensity, race, farm, steps, stepOf, base, pieces, pieceOf, recipe, name, chip, chips, row, extraMats, whereMat, buyCost, piece, early, skillAt, lwAt, skinAt };
+    // With the auction house: is buying leather to raise the skill worth it
+    // for this piece (js/lw-plan.js worth)? What it costs, how much earlier,
+    // how much better and for how long, against the gold you have free.
+    const verdicts = plan.lwWorth || new Map();
+    const worthLine = id => {
+      const v = verdicts.get(id);
+      if (farm || !v || v.why === 'cant') return '';
+      if (v.why === 'free') return '<div class="lw-worth lw-cheap">' + t('pr.lw.worth.free', { n: v.made, late: lateText(v.late) }) + '</div>';
+      if (v.why === 'noPrices') return '<div class="lw-worth">' + t('pr.lw.worth.noPrices', { n: v.want }) + ' ' + chips(v.extra) + '</div>';
+      const vars = { cost: coin(v.cost).trim(), n: v.made, late: lateText(v.late), lasts: v.lasts, pct: Math.round(Math.min(v.share, 9.99) * 100),
+        gain: v.gain == null ? t('pr.lw.worth.empty') : v.gain < 1 ? t('pr.lw.worth.betterPct', { p: Math.round(v.gain * 100) }) : t('pr.lw.worth.better', { x: Math.round(1 + v.gain) }) };
+      // Your setting can say otherwise: then the path does what it says.
+      const skillBuy = UI.store.get('lwSkillBuy', 'worth');
+      const note = v.worth && skillBuy === 'never' ? 'pr.lw.worth.waits' : !v.worth && skillBuy === 'always' ? 'pr.lw.worth.buysAnyway' : null;
+      const verdict = t(v.worth ? 'pr.lw.worth.yes' : 'pr.lw.worth.no.' + v.why) + (note ? ' ' + t(note) : '');
+      return '<div class="lw-worth lw-' + (v.worth ? 'cheap' : 'dear') + '"><span>' + t('pr.lw.worth.line', vars) + ' <b>' + verdict + '</b></span> ' + chips(v.extra) + '</div>';
+    };
+    const lateText = n => (n > BETA_CAP ? t('pr.lw.worth.after', { n: BETA_CAP }) : t('pr.lw.worth.at', { n }));
+    return { SK, mine, skinning, intensity, race, farm, steps, stepOf, base, pieces, pieceOf, recipe, name, chip, chips, row, extraMats, whereMat, buyCost, piece, early, skillAt, lwAt, skinAt, worthLine };
   }
 
   // A Leatherworking piece of your gear path, for its row in Equipo › Tu
@@ -375,7 +396,7 @@
   let lwKey = '';
   function lwHow(st) {
     if (!window.SKINNING_DATA || (st.pick.source || {}).profession !== 'Leatherworking' || !myProfs().includes('Leatherworking')) return '';
-    const key = JSON.stringify([Site.spec, Site.faction, Site.race, myProfs(), UI.store.get('lwSkin', 'normal'), window.GearPath.farm(), UI.store.get('gpDrops', false), UI.store.get('learnedProfs', {})]);
+    const key = JSON.stringify([Site.spec, Site.faction, Site.race, myProfs(), UI.store.get('lwSkin', 'normal'), UI.store.get('lwSkillBuy', 'worth'), window.GearPath.farm(), UI.store.get('gpDrops', false), UI.store.get('learnedProfs', {})]);
     if (!lwCache || key !== lwKey) { lwCache = lwModel(); lwKey = key; }
     const M = lwCache;
     const id = st.pick.item.id;
@@ -385,9 +406,9 @@
     const own = M.extraMats(r);
     const when = !M.skinning ? '' : p.alone ? t('pr.lw.how.when', { n: p.alone }) : t('pr.lw.how.never', { cap: BETA_CAP });
     const mats = own.length ? t('pr.lw.how.mats', { list: own.map(([m, n]) => n + ' ' + M.name(m)).join(', ') }) : '';
-    const cost = !M.farm && own.length ? M.buyCost(own, p.alone || st.level) : '';
+    const cost = !M.farm && own.length ? M.buyCost(own, st.level) : '';
     // The source line above already says the skill: this one, when and what else.
-    return '<span class="gp-lw">' + [when, mats, '<a href="#Profesiones/plan">' + t('pr.lw.how.plan') + '</a>'].filter(Boolean).join(' · ') + cost + '</span>';
+    return '<span class="gp-lw">' + [when, mats, '<a href="#Profesiones/plan">' + t('pr.lw.how.plan') + '</a>'].filter(Boolean).join(' · ') + cost + M.worthLine(id) + '</span>';
   }
 
   function renderLeveling() {
@@ -397,6 +418,7 @@
     const M = lwModel();
     const { SK, skinning, intensity, farm, base, pieces, name, chip, chips, row, piece, early, lwAt, skinAt, stepOf } = M;
     const lvl = Math.min(BETA_CAP, Math.max(1, Number(UI.store.get('level', 1)) || 1));
+    const skillBuy = SKILL_BUY.includes(UI.store.get('lwSkillBuy', 'worth')) ? UI.store.get('lwSkillBuy', 'worth') : 'worth';
 
     // The settings, folded: how much you skin, auction house or farming.
     let html = '<div class="pr-sec-head"><h3>' + t('pr.sec.subir') + '</h3><details class="gp-settings"><summary>' + t('gp.settings') + '</summary><div>' +
@@ -405,6 +427,8 @@
         : '<span class="dim">' + t('pr.lw.noSkinning') + '</span>') +
       '<span class="ctl-label">' + t('pr.lw.matsLabel') + '</span><div class="seg">' + ['ah', 'farm'].map(k =>
         '<button class="btn' + ((k === 'farm') === farm ? ' active' : '') + '" data-lw-farm="' + k + '" title="' + t('pr.lw.mats.' + k + 'Title') + '">' + t('pr.lw.mats.' + k) + '</button>').join('') + '</div>' +
+      (farm ? '' : '<span class="ctl-label">' + t('pr.lw.skillBuyLabel') + '</span><div class="seg">' + SKILL_BUY.map(k =>
+        '<button class="btn' + (skillBuy === k ? ' active' : '') + '" data-lw-skill-buy="' + k + '" title="' + t('pr.lw.skillBuy.' + k + 'Title') + '">' + t('pr.lw.skillBuy.' + k) + '</button>').join('') + '</div>') +
       '<span class="dim">' + (farm ? t('pr.lw.farmNote') : SK.prices ? t('pr.lw.pricesNote', { date: SK.prices.date.split('-').reverse().slice(0, 2).join('/') }) : '') + '</span>' +
       '</div></details></div>';
 
@@ -536,7 +560,7 @@
         return '<details class="gp-card gp-tag-craft"><summary>' + (i.icon ? '<img class="gst-icon q' + (i.quality || 1) + '" src="' + UI.icon(i.icon) + '" alt="">' : '') +
           '<span class="gpc-main"><b class="q' + i.quality + '">' + i.name + '</b><span class="gpc-sub">' + window.GearPath.slotName(st.pick.slot) + ' · <span class="gpc-tag">' + tag + '</span>' +
           (farm && p.level < (p.alone || 99) ? ' · <span class="dim">' + t('pr.pieces.path', { n: p.level }) + '</span>' : '') + '</span></span></summary>' +
-          '<div class="gpc-body">' + piece(p.id) + early(p.id) + '</div></details>';
+          '<div class="gpc-body">' + piece(p.id) + (M.worthLine(p.id) || early(p.id)) + '</div></details>';
       }).join('') + '</div></div>').join('') + '</section>';
 
     // The plan level by level, for whoever wants it.
@@ -675,6 +699,7 @@
     container.querySelectorAll('[data-use-pair]').forEach(b => b.addEventListener('click', () => { UI.store.set('profs', b.dataset.usePair.split(' + ')); Site.setMany({}); }));
     container.querySelectorAll('[data-open-setup]').forEach(b => b.addEventListener('click', () => window.Setup.open()));
     container.querySelectorAll('[data-lw-skin]').forEach(b => b.addEventListener('click', () => { UI.store.set('lwSkin', b.dataset.lwSkin); renderAll(); }));
+    container.querySelectorAll('[data-lw-skill-buy]').forEach(b => b.addEventListener('click', () => { UI.store.set('lwSkillBuy', b.dataset.lwSkillBuy); renderAll(); }));
     container.querySelectorAll('[data-lw-farm]').forEach(b => b.addEventListener('click', () => { window.GearPath.setFarm(b.dataset.lwFarm === 'farm'); renderAll(); }));
     const setLvl = n => { UI.store.set('level', Math.min(60, Math.max(1, n))); renderAll(); };
     container.querySelectorAll('[data-pr-step]').forEach(b => b.addEventListener('click', () => setLvl((Number(UI.store.get('level', 1)) || 1) + Number(b.dataset.prStep))));
