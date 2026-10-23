@@ -120955,7 +120955,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_belt_11",
    "raceMask": -1,
    "sources": [
@@ -125333,12 +125333,14 @@
     "stamina": 9,
     "intellect": 9
    },
-   "bonus": {},
+   "bonus": {
+    "mp5": 4
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_gauntlets_09",
    "raceMask": -1,
    "sources": [
@@ -130494,13 +130496,11 @@
     "healing": 20,
     "spellDamage": 7
    },
-   "equip": [
-    "Equip: Increases healing done by up to 20 and damage done by up to 7 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_plate12",
    "raceMask": -1,
    "sources": [

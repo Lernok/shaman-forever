@@ -20661,7 +20661,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_axe_14",
    "raceMask": -1,
    "sources": [
@@ -22753,7 +22753,7 @@
     "Chance on hit: Launches a bolt of frost at the enemy causing 34 to 50 Frost damage and slowing movement speed by 50% for 5 sec."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_sword_34",
    "raceMask": -1,
    "sources": [
@@ -25746,14 +25746,12 @@
     "strength": 5
    },
    "bonus": {
-    "crit": 2
+    "critRating": 28
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 2%."
-   ],
+   "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_hammer_12",
    "raceMask": -1,
    "sources": [

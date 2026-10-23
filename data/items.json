@@ -40800,7 +40800,7 @@
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_axe_14"
   },
   "9384": {
@@ -41274,15 +41274,13 @@
    "stats": {
     "strength": 5
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 2%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "crit": 2
+    "critRating": 28
    },
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_hammer_12"
   },
   "9414": {
@@ -55446,7 +55444,7 @@
     "Chance on hit: Launches a bolt of frost at the enemy causing 34 to 50 Frost damage and slowing movement speed by 50% for 5 sec."
    ],
    "bonus": {},
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_sword_34"
   },
   "10762": {
@@ -55491,16 +55489,14 @@
     "intellect": 9,
     "spirit": 15
    },
-   "equip": [
-    "Equip: Increases healing done by up to 20 and damage done by up to 7 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
     "healing": 20,
     "spellDamage": 7
    },
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_plate12"
   },
   "10765": {
@@ -55522,8 +55518,10 @@
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
-   "numbers": "forever",
+   "bonus": {
+    "mp5": 4
+   },
+   "numbers": "client",
    "icon": "inv_gauntlets_09"
   },
   "10767": {
@@ -55570,7 +55568,7 @@
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_belt_11"
   },
   "10769": {
