@@ -121,6 +121,20 @@
     return parts.join(', ');
   }
 
+  // Wowhead's plain equip lines for the bonuses statsText already states (the item's bonus keys they need).
+  const BONUS_LINES = [
+    [/^Equip: Increases damage and healing done by magical spells and effects by up to \d+\.$/, ['spellPower']],
+    [/^Equip: Increases healing done by spells and effects by up to \d+\.$/, ['healing']],
+    [/^Equip: Increases healing done by up to \d+ and damage done by up to \d+ for all magical spells and effects\.$/, ['healing']],
+    [/^Equip: \+\d+ Attack Power\.$/, ['attackPower']],
+    [/^Equip: Restores \d+ mana per 5 sec\.$/, ['mp5']],
+    [/^Equip: Improves your chance to hit with all spells and attacks by \d+%\.$/, ['hit', 'spellHit']],
+    [/^Equip: Improves your chance to hit by \d+%\.$/, ['hit']],
+    [/^Equip: Improves your chance to hit with spells by \d+%\.$/, ['spellHit']],
+    [/^Equip: Improves your chance to get a critical strike with all spells and attacks by \d+%\.$/, ['crit', 'spellCrit']],
+    [/^Equip: Improves your chance to get a critical strike by \d+%\.$/, ['crit']],
+    [/^Equip: Improves your chance to get a critical strike with spells by \d+%\.$/, ['spellCrit']]
+  ];
   const bindText = b => (b === 'pickup' ? ' · BoP' : b === 'equip' ? ' · BoE' : '');
   const itemIcon = (i, cls) => '<img class="' + (cls || 'item-icon') + ' qb' + i.quality + '" src="' + icon(i.icon) + '" alt="" loading="lazy">';
 
@@ -134,10 +148,10 @@
         '<div class="t-cost">' + t('wp.ilvl') + ' ' + i.ilvl + bindText(i.bind) + '</div></div></div>' +
       '<div class="it-row"><span>' + i.kind + '</span><span>' + right + '</span></div>' +
       (i.dmgMin ? '<div class="it-row"><span>' + I.range(i.dmgMin + ' to ' + i.dmgMax) + '</span><span>' + I.num(i.dps.toFixed(1)) + ' DPS</span></div>' : '') +
-      // The client's numbers state every stat; Wowhead's leave some in equip lines.
-      (i.numbers === 'client' ? (statsText(i) ? '<div class="it-stats">' + statsText(i) + '</div>' : '')
-        : Object.keys(i.stats || {}).length ? '<div class="it-stats">' + statsText(i, true) + '</div>' : '') +
-      (i.equip || []).map(e => '<div class="it-equip">' + I.client(e) + '</div>').join('') +
+      // Every stat and bonus on one line; an equip line that only says one of those bonuses goes.
+      (statsText(i) ? '<div class="it-stats">' + statsText(i) + '</div>' : '') +
+      (i.equip || []).filter(e => !BONUS_LINES.some(([re, keys]) => re.test(e) && keys.every(k => (i.bonus || {})[k])))
+        .map(e => '<div class="it-equip">' + I.client(e) + '</div>').join('') +
       (foot && foot.length ? '<hr class="t-sep">' + foot.map(f => '<div class="t-rank">' + f + '</div>').join('') : '');
   }
 
