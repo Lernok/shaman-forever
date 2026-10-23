@@ -1,4 +1,4 @@
-// What the addon saw at profession trainers and vendors (ShamanForeverDB.scan
+// What the addon saw at profession trainers and vendors (ShamanForeverGuideDB.scan
 // in the SavedVariables, addon 0.24.0+) into data/ingame-scan.json, merged
 // with what was there (the newest visit to each NPC wins), and a report of
 // where it disagrees with the web recipe data (data/recipes.json): recipes a
@@ -19,10 +19,10 @@ const out = path.join(root, 'data', 'ingame-scan.json');
 const files = [];
 const accounts = path.join(game, 'WTF', 'Account');
 for (const a of fs.existsSync(accounts) ? fs.readdirSync(accounts) : []) {
-  const f = path.join(accounts, a, 'SavedVariables', 'ShamanForever.lua');
+  const f = path.join(accounts, a, 'SavedVariables', 'ShamanForeverGuide.lua');
   if (fs.existsSync(f)) files.push(f);
 }
-if (!files.length) { console.error('no ShamanForever.lua under ' + accounts); process.exit(1); }
+if (!files.length) { console.error('no ShamanForeverGuide.lua under ' + accounts); process.exit(1); }
 
 // Lua writes the scan table as JSON.
 const dump = `local f = assert(loadfile(arg[1])); f()
@@ -37,7 +37,7 @@ local function enc(v)
   elseif t == "boolean" then return tostring(v) end
   return "null"
 end
-io.write(enc((ShamanForeverDB or {}).scan or {}))`;
+io.write(enc((ShamanForeverGuideDB or {}).scan or {}))`;
 const tmp = path.join(os.tmpdir(), 'sf-scan.lua');
 fs.writeFileSync(tmp, dump);
 
@@ -242,12 +242,12 @@ for (const a of fs.existsSync(accounts) ? fs.readdirSync(accounts) : []) {
   const dir = path.join(accounts, a);
   for (const realm of fs.readdirSync(dir).filter(n => fs.statSync(path.join(dir, n)).isDirectory() && n !== 'SavedVariables')) {
     for (const ch of fs.readdirSync(path.join(dir, realm))) {
-      const f = path.join(dir, realm, ch, 'SavedVariables', 'ShamanForever.lua');
+      const f = path.join(dir, realm, ch, 'SavedVariables', 'ShamanForeverGuide.lua');
       if (fs.existsSync(f)) chars.push({ who: ch + ' (' + realm + ')', f });
     }
   }
 }
-const charDump = dump.replace('io.write(enc((ShamanForeverDB or {}).scan or {}))', 'io.write(enc({ xp = (ShamanForeverCharDB or {}).xp, income = (ShamanForeverCharDB or {}).income, spend = (ShamanForeverCharDB or {}).spend }))');
+const charDump = dump.replace('io.write(enc((ShamanForeverGuideDB or {}).scan or {}))', 'io.write(enc({ xp = (ShamanForeverGuideCharDB or {}).xp, income = (ShamanForeverGuideCharDB or {}).income, spend = (ShamanForeverGuideCharDB or {}).spend }))');
 const charTmp = path.join(os.tmpdir(), 'sf-char.lua');
 fs.writeFileSync(charTmp, charDump);
 for (const c of chars) {

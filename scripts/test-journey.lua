@@ -4,7 +4,7 @@
 -- to spot moments that dump too much at once. Run with Lua 5.1:
 --   lua5.1 scripts/test-journey.lua [race] [spec]        (TO=40 to go further)
 local race, spec = arg[1] or "Tauren", arg[2] or "Enhancement"
-local dir = "addon/ShamanForever/"
+local dir = "addon/ShamanForeverGuide/"
 local level, zone = 1, nil
 
 local function stub()
@@ -78,10 +78,10 @@ local CITY = { Tauren = "Thunder Bluff", Orc = "Orgrimmar", Troll = "Orgrimmar",
 local function zoneAt(l) local z for _, r in ipairs(route) do if l >= r[1] then z = r[2] end end return z end
 
 local SF = {}
-for _, f in ipairs({ "Data.lua", "Locale.lua", "Core.lua" }) do assert(loadfile(dir .. f))("ShamanForever", SF) end
+for _, f in ipairs({ "Data.lua", "Locale.lua", "Core.lua" }) do assert(loadfile(dir .. f))("ShamanForeverGuide", SF) end
 local ev = frames[1]
-ShamanForeverCharDB = { spec = spec, setupDone = true }
-ev:fire("ADDON_LOADED", "ShamanForever")
+ShamanForeverGuideCharDB = { spec = spec, setupDone = true }
+ev:fire("ADDON_LOADED", "ShamanForeverGuide")
 
 local TO = tonumber(os.getenv("TO") or "30")
 local worst, total = 0, 0

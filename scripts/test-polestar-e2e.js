@@ -24,7 +24,7 @@ const r = runAddon({
     GetItemInfo = GetItemInfo or function(id) return "Item " .. tostring(id) end`,
   addons: ['Polestar', { name: 'PolestarPack_ShamanForeverOrcoYTrollMejora', dir: A + '/PolestarPack_ShamanForeverOrcoYTrollMejora' },
     { name: 'PolestarPack_ShamanForeverOrcoYTrollElementalYResto', dir: A + '/PolestarPack_ShamanForeverOrcoYTrollElementalYResto' },
-    { name: 'ShamanForever', dir: path.join(__dirname, '..', 'addon', 'ShamanForever') }],
+    { name: 'ShamanForeverGuide', dir: path.join(__dirname, '..', 'addon', 'ShamanForeverGuide') }],
   script: `
     local W = stub.world
     stub.login()
@@ -35,14 +35,14 @@ const r = runAddon({
     stub.advance(1)
     local g = E.GetGuide()
     print("guide:", g and g.id, "next:", g and g.next, "step:", E.GetStepIndex(), "/", E.GetStepCount())
-    ShamanForever_Toggle()
+    ShamanForeverGuide_Toggle()
     stub.advance(1)
     for i = 1, 6 do E.Next(); stub.advance(0.6) end
     print("after next:", E.GetGuide() and E.GetGuide().id, E.GetStepIndex())
-    local f = ShamanForeverFrame or _G.ShamanForeverFrame
+    local f = ShamanForeverGuideFrame or _G.ShamanForeverGuideFrame
     print("frame shown:", f and f:IsShown())
     local function view(label)
-      local fr = ShamanForeverFrame
+      local fr = ShamanForeverGuideFrame
       print("== " .. label .. ": " .. tostring(fr and fr.lastTitle))
       for i, t in ipairs(fr and fr.lastTips or {}) do
         if i > 5 then break end
@@ -50,7 +50,7 @@ const r = runAddon({
       end
     end
     view("after steps")
-    ShamanForever_MarkFirst()
+    ShamanForeverGuide_MarkFirst()
     stub.advance(1)
     -- The guide with Ruins of Lordaeron's dungeon step: go to it.
     E.SetGuide("sf-orc-enh/06-tirisfal-glades")
@@ -76,7 +76,7 @@ const r = runAddon({
     view("after skipping")
     -- The first-run setup: Elemental, window yes, open my route.
     SlashCmdList.SHAMANFOREVER("setup")
-    local S = ShamanForeverSetup
+    local S = ShamanForeverGuideSetup
     print("setup shown:", S and S:IsShown())
     S.buttons[2]:Click()
     S.buttons[1]:Click()

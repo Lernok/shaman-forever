@@ -15,7 +15,7 @@
 // Both smoothed over 5 levels (a level with few quests swings).
 //
 // Checked against the addon's measures on the 10-21 stress test
-// (ShamanForeverCharDB.income), with build-reagents.js's quests and kills
+// (ShamanForeverGuideCharDB.income), with build-reagents.js's quests and kills
 // per level: to level 9, quests paid 12s (these say 14s) and kills 8-22s
 // (these say 16s); the old estimate (QuestMoneyReward alone) said 48s in all.
 //

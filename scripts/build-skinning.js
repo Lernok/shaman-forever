@@ -93,7 +93,7 @@ function skinnedFrom(html) {
   // the site owner skinned it from level 6-7 beasts. Wowhead's per-beast
   // list starts at 10, so below that it's an estimate (rising from 0.15 a
   // skin at 5 to the 0.6 of level 11), until the addon's measured skins
-  // (ShamanForeverDB.scan.skins, scripts/import-scan.js) replace it.
+  // (ShamanForeverGuideDB.scan.skins, scripts/import-scan.js) replace it.
   for (let l = 5; l <= 10; l++) {
     const y = yields[l - 1];
     if (!y[2318]) y[2318] = Math.round((0.15 + (l - 5) * 0.075) * 1000) / 1000;

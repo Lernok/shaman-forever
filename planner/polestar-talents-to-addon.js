@@ -4,7 +4,7 @@
 // frame marks and reminders work for Shamans too. Without Polestar it does
 // nothing.
 //
-//   node planner/polestar-talents-to-addon.js <Builds.lua> addon/ShamanForever/PolestarTalents.lua
+//   node planner/polestar-talents-to-addon.js <Builds.lua> addon/ShamanForeverGuide/PolestarTalents.lua
 const fs = require('fs');
 const [src, dst] = process.argv.slice(2);
 if (!src || !dst) { console.error('usage: node planner/polestar-talents-to-addon.js <Builds.lua> <out.lua>'); process.exit(1); }

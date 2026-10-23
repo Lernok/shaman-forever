@@ -1,4 +1,4 @@
--- Shaman: Forever, the in-game side of https://lernok.github.io/shaman-forever/
+-- Shaman Forever Guide, the in-game side of https://lernok.github.io/shaman-forever/
 -- It warns, it never leads, and only of what you can do now: when you walk
 -- into a zone where it's done (an upgrade of the site's gear path, Data.lua; a
 -- dungeon quest to carry, above all one whose reward is on that path; your
@@ -24,7 +24,7 @@ local function lang() return L() == SF.L.es and "es" or "en" end
 -- Set once the log exists (further down): chat lines go to the log too.
 local logChat
 local function say(msg)
-  DEFAULT_CHAT_FRAME:AddMessage("|cff0070ddShaman: Forever|r " .. msg)
+  DEFAULT_CHAT_FRAME:AddMessage("|cff0070ddShaman Forever Guide|r " .. msg)
   if logChat then pcall(logChat, msg) end
 end
 local function num(x)
@@ -338,7 +338,7 @@ local function waypoint(g, title)
   if not g or not g.x or not (g.z or g.map) then return end
   local map = g.map or D.uiMaps[g.z]
   if map and cdb.tomtom and TomTom and TomTom.AddWaypoint then
-    TomTom:AddWaypoint(map, g.x / 100, g.y / 100, { title = title, from = "Shaman: Forever" })
+    TomTom:AddWaypoint(map, g.x / 100, g.y / 100, { title = title, from = "Shaman Forever Guide" })
     say(string.format(L().arrowSet, title))
     return
   end
@@ -1313,7 +1313,7 @@ local function makeRow(i)
 end
 
 local function makeFrame()
-  frame = CreateFrame("Frame", "ShamanForeverFrame", UIParent)
+  frame = CreateFrame("Frame", "ShamanForeverGuideFrame", UIParent)
   frame:SetSize(cdb.size and cdb.size[1] or W, 100)
   frame:SetResizable(true)
   if frame.SetResizeBounds then frame:SetResizeBounds(MIN_W, MIN_H, MAX_W, MAX_H)
@@ -1748,7 +1748,7 @@ local function placeMinimapButton()
 end
 local function makeMinimapButton()
   if mmButton or not Minimap then return end
-  local b = CreateFrame("Button", "ShamanForeverMinimapButton", Minimap)
+  local b = CreateFrame("Button", "ShamanForeverGuideMinimapButton", Minimap)
   mmButton = b
   b:SetSize(31, 31)
   b:SetFrameStrata("MEDIUM")
@@ -1781,7 +1781,7 @@ local function makeMinimapButton()
   b:SetScript("OnDragStop", function(self) self:SetScript("OnUpdate", nil) end)
   b:SetScript("OnEnter", function(self)
     GameTooltip:SetOwner(self, "ANCHOR_LEFT")
-    GameTooltip:SetText("Shaman: Forever", 1, 0.82, 0)
+    GameTooltip:SetText("Shaman Forever Guide", 1, 0.82, 0)
     GameTooltip:AddLine(L().mmTip, 1, 1, 1, true)
     GameTooltip:Show()
   end)
@@ -1791,8 +1791,8 @@ local function makeMinimapButton()
 end
 -- The minimap's addon list (Addon Compartment), named in the .toc, and the
 -- key bindings (Bindings.xml; Esc > Options > Keybindings > AddOns).
-function ShamanForever_Toggle() SF.open() end
-function ShamanForever_MarkFirst()
+function ShamanForeverGuide_Toggle() SF.open() end
+function ShamanForeverGuide_MarkFirst()
   if not frame or not frame.lastTips then SF.open(true) end
   for _, t in ipairs(frame and frame.lastTips or {}) do
     if not off(t.key) and not (t.q and carrying(t.q)) and not t.pinned then
@@ -1804,7 +1804,7 @@ function ShamanForever_MarkFirst()
   end
   say(L().nothing)
 end
-BINDING_HEADER_SHAMANFOREVER = "Shaman: Forever"
+BINDING_HEADER_SHAMANFOREVER = "Shaman Forever Guide"
 BINDING_NAME_SHAMANFOREVER_TOGGLE = (GetLocale() or ""):sub(1, 2) == "es" and "Mostrar u ocultar la ventana" or "Show or hide the window"
 BINDING_NAME_SHAMANFOREVER_MARK = (GetLocale() or ""):sub(1, 2) == "es" and "Marcar en el mapa el primer aviso" or "Mark the first tip on the map"
 
@@ -1920,7 +1920,7 @@ local Scan = (function()
 
   -- Recipe scanner: what profession trainers and vendors offer here, and the
   -- color of each recipe at your skill. Saved account-wide in
-  -- ShamanForeverDB.scan for scripts/import-scan.js (the site's recipe
+  -- ShamanForeverGuideDB.scan for scripts/import-scan.js (the site's recipe
   -- sources come from web data that misses Forever's own vendors).
   --   trainers/vendors[npc id] = { n, z, x, y, f (faction), t (time), list }
   --   trainer list[service name] = { item, skill, prof, level, cost, kind }
@@ -2016,9 +2016,9 @@ local Scan = (function()
   local function auctionPrice(item)
     local api = Auctionator and Auctionator.API and Auctionator.API.v1
     if not api then return nil end
-    local ok, p = pcall(api.GetAuctionPriceByItemID, "Shaman: Forever", item)
+    local ok, p = pcall(api.GetAuctionPriceByItemID, "Shaman Forever Guide", item)
     if ok and p then return p end
-    ok, p = pcall(api.GetVendorPriceByItemID, "Shaman: Forever", item)
+    ok, p = pcall(api.GetVendorPriceByItemID, "Shaman Forever Guide", item)
     return ok and p or nil
   end
   local function matsCost(id)
@@ -2454,9 +2454,9 @@ ev:SetScript("OnEvent", function(self, event, ...) guarded(event, onEvent, self,
 onEvent = function(self, event, ...)
   if event == "ADDON_LOADED" then
     if ... ~= ADDON then return end
-    ShamanForeverDB = ShamanForeverDB or {}
-    ShamanForeverCharDB = ShamanForeverCharDB or {}
-    db, cdb = ShamanForeverDB, ShamanForeverCharDB
+    ShamanForeverGuideDB = ShamanForeverGuideDB or {}
+    ShamanForeverGuideCharDB = ShamanForeverGuideCharDB or {}
+    db, cdb = ShamanForeverGuideDB, ShamanForeverGuideCharDB
     for k, v in pairs(DEFAULTS) do if cdb[k] == nil then cdb[k] = v end end
     if not cdb.nowFirst then cdb.lead, cdb.nowFirst = 0, true end
     cdb.seen, cdb.done, cdb.gone, cdb.log = cdb.seen or {}, cdb.done or {}, cdb.gone or {}, cdb.log or {}
@@ -2624,7 +2624,7 @@ local function onTooltip(tt, id)
   if cur <= 0 then text, r, g, b = string.format(L().tipEmpty, specName()), 0.4, 1, 0.4
   elseif v >= cur then text, r, g, b = pctText(v, cur, L().tipBetter):gsub("^%l", string.upper) .. " (" .. specName() .. ")", 0.4, 1, 0.4
   else text, r, g, b = string.format(L().tipWorse, math.floor((1 - v / cur) * 100 + 0.5), specName()), 0.6, 0.6, 0.6 end
-  tt:AddLine("Shaman: Forever: " .. text, r, g, b)
+  tt:AddLine("Shaman Forever Guide: " .. text, r, g, b)
   if D.iq and D.iq[id] then tt:AddLine(L().markHint, 0.5, 0.75, 1) end
   for prof, p in pairs(myProfessions()) do
     for _, c in ipairs(D.crafts and D.crafts[prof] or {}) do
@@ -2762,7 +2762,7 @@ local function onUnitTooltip(tt, guid)
   local list = npcLines(tonumber(id))
   if #list == 0 then return end
   tt:AddLine(" ")
-  tt:AddLine("Shaman: Forever", 0, 0.44, 0.87)
+  tt:AddLine("Shaman Forever Guide", 0, 0.44, 0.87)
   for i, q in ipairs(list) do
     if i > 3 then break end
     tt:AddLine(q[1], 1, 0.82, 0)
@@ -2784,7 +2784,7 @@ end
 -- The log, in a box to copy from.
 local function showLog()
   if not logFrame then
-    logFrame = CreateFrame("Frame", "ShamanForeverLog", UIParent)
+    logFrame = CreateFrame("Frame", "ShamanForeverGuideLog", UIParent)
     logFrame:SetSize(520, 320)
     logFrame:SetPoint("CENTER")
     logFrame:SetFrameStrata("DIALOG")
@@ -2807,7 +2807,7 @@ local function showLog()
     box:SetScript("OnEscapePressed", function() logFrame:Hide() end)
     scroll:SetScrollChild(box)
     logFrame.box = box
-    tinsert(UISpecialFrames, "ShamanForeverLog")
+    tinsert(UISpecialFrames, "ShamanForeverGuideLog")
   end
   logFrame.title:SetText(L().logTitle)
   local _, race = UnitRace("player")
@@ -2822,8 +2822,8 @@ end
 local panel
 local function makeOptions()
   if panel then return end
-  panel = CreateFrame("Frame", "ShamanForeverOptions")
-  panel.name = "Shaman: Forever"
+  panel = CreateFrame("Frame", "ShamanForeverGuideOptions")
+  panel.name = "Shaman Forever Guide"
   local y = -16
   local function text(str, font, x)
     local fs = panel:CreateFontString(nil, "ARTWORK", font or "GameFontHighlight")
@@ -2832,7 +2832,7 @@ local function makeOptions()
     fs:SetText(str)
     return fs
   end
-  local title = text("Shaman: Forever " .. Api.version(), "GameFontNormalLarge")
+  local title = text("Shaman Forever Guide " .. Api.version(), "GameFontNormalLarge")
   y = y - 26
   local sub = text("", "GameFontHighlightSmall")
   sub:SetWidth(560)
@@ -2911,7 +2911,7 @@ local function makeOptions()
   y = y + 30
   action("reset", function() wipe(cdb.seen); wipe(cdb.done); wipe(cdb.gone); say(L().reset); if frame and frame:IsShown() then render() end end, 368)
   panel.refresh = function()
-    title:SetText("Shaman: Forever " .. Api.version())
+    title:SetText("Shaman Forever Guide " .. Api.version())
     sub:SetText(L().opt.intro)
     panel.specLabel:SetText(L().opt.spec)
     for spec, b in pairs(panel.specButtons) do
@@ -3019,7 +3019,7 @@ function showTrainerPanel()
   if not (UnitClass and select(2, UnitClass("player")) == "SHAMAN") then return end
   if IsTradeskillTrainer and IsTradeskillTrainer() then return end
   if not trainerPanel then
-    local f = CreateFrame("Frame", "ShamanForeverTrainer", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
+    local f = CreateFrame("Frame", "ShamanForeverGuideTrainer", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
     trainerPanel = f
     f:SetWidth(300)
     f:SetFrameStrata("HIGH")
@@ -3164,7 +3164,7 @@ function showCraftPanel(offer)
   for _, r in ipairs(offer or recipes()) do if D.items[r.id] then any = true break end end
   if not any then if craftPanel then hideCraftPanel() end return end
   if not craftPanel then
-    local f = CreateFrame("Frame", "ShamanForeverCrafts", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
+    local f = CreateFrame("Frame", "ShamanForeverGuideCrafts", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
     craftPanel = f
     f:SetWidth(340)
     f:SetFrameStrata("HIGH")
@@ -3190,7 +3190,7 @@ function showCraftPanel(offer)
   local f = craftPanel
   f.offer = offer or false
   if not rawget(f, "toggle") then
-    local b = CreateFrame("Button", "ShamanForeverCraftsToggle", UIParent, "UIPanelButtonTemplate")
+    local b = CreateFrame("Button", "ShamanForeverGuideCraftsToggle", UIParent, "UIPanelButtonTemplate")
     b:SetSize(230, 22)
     b:SetFrameStrata("HIGH")
     b:SetScript("OnClick", function()
@@ -3247,7 +3247,7 @@ local setupFrame
 function SF.setup()
   if InCombatLockdown() then return end
   if not setupFrame then
-    local f = CreateFrame("Frame", "ShamanForeverSetup", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
+    local f = CreateFrame("Frame", "ShamanForeverGuideSetup", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
     setupFrame = f
     f:SetSize(380, 230)
     f:SetPoint("CENTER", 0, 80)
@@ -3267,7 +3267,7 @@ function SF.setup()
     f.icon:SetTexture("Interface\\Icons\\Spell_Nature_LightningShield")
     f.title = f:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
     f.title:SetPoint("LEFT", f.icon, "RIGHT", 10, 0)
-    f.title:SetText("Shaman: Forever")
+    f.title:SetText("Shaman Forever Guide")
     f.step = f:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
     f.step:SetPoint("TOPRIGHT", -22, -24)
     f.text = f:CreateFontString(nil, "OVERLAY", "GameFontHighlight")

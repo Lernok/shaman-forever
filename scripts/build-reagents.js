@@ -209,7 +209,7 @@ let scarceItems = {};
   // Class training per level (copper), train[level - 1]: the spell ranks
   // learned at that level (data/shaman.json) times what a rank of that level
   // costs. Costs read at the class trainer by the addon (stress test, 10-21:
-  // ShamanForeverDB.scan.spells, data/ingame-scan.json) and the purchases
+  // ShamanForeverGuideDB.scan.spells, data/ingame-scan.json) and the purchases
   // logged at 2, 4, 6 and 8; levels in between, interpolated.
   const scan = readJSON('data/ingame-scan.json', {}).spells || {};
   const per = { 2: 10, 4: 100, 6: 100, 8: 100 };
@@ -228,7 +228,7 @@ let scarceItems = {};
     if (m && /\|Rank \d+$/.test(k)) ranks[m[1]] = (ranks[m[1]] || 0) + 1;
   });
   SK.train = XP.map((x, i) => (ranks[i + 1] || 0) * rankCost(i + 1));
-  SK.sources.train = 'ShamanForever addon: class trainer costs read in game (stress test, 2026-10-21)';
+  SK.sources.train = 'ShamanForeverGuide addon: class trainer costs read in game (stress test, 2026-10-21)';
   const prices = readJSON('data/prices.json', null);
   if (prices) SK.prices = { realm: prices.realm, date: prices.date, p: prices.prices };
   SK.sources.reagents = 'https://www.wowhead.com/classic/item=5784/slimy-murloc-scale#dropped-by';

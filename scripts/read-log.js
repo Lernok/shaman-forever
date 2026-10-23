@@ -15,12 +15,12 @@ const hours = Number(opt('hours', 48));
 const who = (opt('char', '') || '').toLowerCase();
 const WTF = args[0] || path.join(require('./lib/game').folder(), 'WTF');
 
-// Every ShamanForever.lua under WTF/Account/<account>/<realm>/<character>/SavedVariables.
+// Every ShamanForeverGuide.lua under WTF/Account/<account>/<realm>/<character>/SavedVariables.
 function files(dir, out = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, e.name);
     if (e.isDirectory()) files(p, out);
-    else if (e.name === 'ShamanForever.lua' && path.basename(dir) === 'SavedVariables' && path.basename(path.dirname(path.dirname(dir))) !== 'Account') out.push(p);
+    else if (e.name === 'ShamanForeverGuide.lua' && path.basename(dir) === 'SavedVariables' && path.basename(path.dirname(path.dirname(dir))) !== 'Account') out.push(p);
   }
   return out;
 }

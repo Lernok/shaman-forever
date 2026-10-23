@@ -1,4 +1,4 @@
-// Quest XP the addon saw in the game (ShamanForeverDB.qxp in the
+// Quest XP the addon saw in the game (ShamanForeverGuideDB.qxp in the
 // SavedVariables: { [quest id] = { xp, player level } }) into
 // planner/quest-xp.json, the full reward per quest (a reward seen more than 5
 // levels above the quest is scaled back up). The route planner reads it
@@ -18,14 +18,14 @@ const out = path.join(root, 'planner', 'quest-xp.json');
 const files = [];
 const accounts = path.join(game, 'WTF', 'Account');
 for (const a of fs.existsSync(accounts) ? fs.readdirSync(accounts) : []) {
-  const f = path.join(accounts, a, 'SavedVariables', 'ShamanForever.lua');
+  const f = path.join(accounts, a, 'SavedVariables', 'ShamanForeverGuide.lua');
   if (fs.existsSync(f)) files.push(f);
 }
-if (!files.length) { console.error('no ShamanForever.lua under ' + accounts); process.exit(1); }
+if (!files.length) { console.error('no ShamanForeverGuide.lua under ' + accounts); process.exit(1); }
 
 // Lua prints "id xp level" lines.
 const dump = `local f = assert(loadfile(arg[1])); f()
-for id, v in pairs((ShamanForeverDB or {}).qxp or {}) do print(id, v[1], v[2]) end`;
+for id, v in pairs((ShamanForeverGuideDB or {}).qxp or {}) do print(id, v[1], v[2]) end`;
 const tmp = path.join(require('os').tmpdir(), 'sf-qxp.lua');
 fs.writeFileSync(tmp, dump);
 const seen = {};

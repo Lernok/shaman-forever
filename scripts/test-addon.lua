@@ -2,7 +2,7 @@
 -- and prints what it would show. Run with Lua 5.1:
 --   lua5.1 scripts/test-addon.lua [race] [spec] [level] [zone] [instanceId]
 local race, spec, level, zone, inst = arg[1] or "Orc", arg[2] or "Enhancement", tonumber(arg[3] or 20), arg[4] or "The Barrens", tonumber(arg[5])
-local dir = "addon/ShamanForever/"
+local dir = "addon/ShamanForeverGuide/"
 
 -- Anything: every method call returns a stub, so UI code runs.
 local function stub()
@@ -115,7 +115,7 @@ if os.getenv("PPACK") then
     On = function(msg) print("POLESTAR ON", msg) end }
 end
 local SF = {}
-for _, f in ipairs({ "Data.lua", "Locale.lua", "Core.lua" }) do assert(loadfile(dir .. f))("ShamanForever", SF) end
+for _, f in ipairs({ "Data.lua", "Locale.lua", "Core.lua" }) do assert(loadfile(dir .. f))("ShamanForeverGuide", SF) end
 -- Spells you know: every rank up to level KNOWN (default: your level - 2).
 -- The trainer (TRAINER=1) offers the ranks you don't know up to your level,
 -- 1 silver each.
@@ -137,8 +137,8 @@ function GetTrainerServiceInfo(i) return offer[i][1], offer[i][2], "available" e
 function GetTrainerServiceCost(i) return offer[i][3] end
 function BuyTrainerService(i) print("BUY", offer[i][1], offer[i][2]) end
 local ev = frames[1]
-ShamanForeverCharDB = { spec = spec }
-ev:fire("ADDON_LOADED", "ShamanForever")
+ShamanForeverGuideCharDB = { spec = spec }
+ev:fire("ADDON_LOADED", "ShamanForeverGuide")
 
 local function dump(title, tips)
   print("== " .. title .. " (" .. #tips .. ")")
@@ -272,7 +272,7 @@ if os.getenv("SCAN") then
   function UnitLevel(u) return u == "target" and 5 or level end
   ev:fire("UNIT_SPELLCAST_START", "player", "s1", 8613); ev:fire("UNIT_SPELLCAST_SUCCEEDED", "player", "s1", 8613)
   ev:fire("LOOT_OPENED"); ev:fire("LOOT_CLOSED")
-  local sk = (ShamanForeverDB.scan.skins or {})[5]
+  local sk = (ShamanForeverGuideDB.scan.skins or {})[5]
   print("pieles nv 5:", sk and sk.n, sk and sk.items[2934])
   GetTradeSkillLine = nil -- Forever: the skill comes from GetProfessionInfo
   ev:fire("TRADE_SKILL_SHOW")
@@ -284,7 +284,7 @@ if os.getenv("SCAN") then
       if type(t[k]) == "table" then print(pad .. tostring(k) .. ":") show(t[k], pad .. "  ") else print(pad .. tostring(k) .. " = " .. tostring(t[k])) end
     end
   end
-  show(ShamanForeverDB.scan or {}, "SCAN ")
+  show(ShamanForeverGuideDB.scan or {}, "SCAN ")
 end
 -- At a profession trainer (OFFER=<lua file with OFFER_LIST, SKILL=<your
 -- skill>): what the panel beside it says.
@@ -322,11 +322,11 @@ end
 buyAt(false, 100) buyAt(true, 50)
 ev:fire("MERCHANT_SHOW"); money = money - 20; ev:fire("PLAYER_MONEY"); ev:fire("MERCHANT_CLOSED")
 money = money - 5; ev:fire("PLAYER_MONEY")
-local sp = (ShamanForeverCharDB.spend or {})[UnitLevel("player")] or {}
+local sp = (ShamanForeverGuideCharDB.spend or {})[UnitLevel("player")] or {}
 print("gastos del nivel: hechizos " .. tostring(sp.class) .. ", profesión " .. tostring(sp.prof) .. ", vendedores " .. tostring(sp.vendor) .. ", otros " .. tostring(sp.other))
-for _, l in ipairs(ShamanForeverCharDB.log) do if l:find("|spend|") or l:find("|learn|") then print("LOG", l) end end
+for _, l in ipairs(ShamanForeverGuideCharDB.log) do if l:find("|spend|") or l:find("|learn|") then print("LOG", l) end end
 local ns = 0
-for _, v in pairs((ShamanForeverDB.scan or {}).spells or {}) do for _ in pairs(v.list or {}) do ns = ns + 1 end end
+for _, v in pairs((ShamanForeverGuideDB.scan or {}).spells or {}) do for _ in pairs(v.list or {}) do ns = ns + 1 end end
 print("hechizos vistos en el entrenador de clase: " .. ns)
 -- What the scanner measures (MEASURE=1): a level-7 boar seen under the mouse
 -- and skinned without targeting it, two crafts (the first raises the skill),
@@ -350,9 +350,9 @@ if os.getenv("MEASURE") then
   ev:fire("LOOT_READY"); ev:fire("LOOT_OPENED"); bag = 12; ev:fire("LOOT_CLOSED")
   -- The same scraps dropped by a kill (no skinning before): kept apart.
   ev:fire("LOOT_READY"); ev:fire("LOOT_CLOSED")
-  local kl = ((ShamanForeverDB.scan or {}).kills or {})[7]
+  local kl = ((ShamanForeverGuideDB.scan or {}).kills or {})[7]
   print("scraps de botín al matar nv 7:", kl and kl.n)
-  local sk = ((ShamanForeverDB.scan or {}).skins or {})[7]
+  local sk = ((ShamanForeverGuideDB.scan or {}).skins or {})[7]
   print("piel de bicho nv 7 sin seleccionarlo:", sk and sk.n, sk and sk.items[2934])
   local skill = 20
   C_TradeSkillUI = {
@@ -367,7 +367,7 @@ if os.getenv("MEASURE") then
   ev:fire("UNIT_SPELLCAST_SUCCEEDED", "player", "c1", 2881)
   ev:fire("UNIT_SPELLCAST_START", "player", "c2", 2881)
   ev:fire("UNIT_SPELLCAST_SUCCEEDED", "player", "c2", 2881)
-  local ups = (((ShamanForeverDB.scan or {}).crafts or {}).Leatherworking or {})[2318] or {}
+  local ups = (((ShamanForeverGuideDB.scan or {}).crafts or {}).Leatherworking or {})[2318] or {}
   for _, r in ipairs({ 20, 21 }) do local e = ups[r] print("crafteo con " .. r .. ":", e and e.n, e and e.up, e and e.kind) end
   local xp = 100
   function UnitXP() return xp end
@@ -376,15 +376,15 @@ if os.getenv("MEASURE") then
   xp = 160; ev:fire("PLAYER_XP_UPDATE")
   ev:fire("QUEST_TURNED_IN", 1, 300, 0)
   xp = 460; ev:fire("PLAYER_XP_UPDATE")
-  local e = (ShamanForeverCharDB.xp or {})[level] or {}
+  local e = (ShamanForeverGuideCharDB.xp or {})[level] or {}
   print("experiencia del nivel: misiones " .. tostring(e.q) .. ", todo " .. tostring(e.all))
 end
-local inc = (ShamanForeverCharDB.income or {})[UnitLevel("player")] or {}
+local inc = (ShamanForeverGuideCharDB.income or {})[UnitLevel("player")] or {}
 print("ingresos del nivel: misiones " .. tostring(inc.q) .. ", todo " .. tostring(inc.all))
-print("qxp 96659:", ShamanForeverDB.qxp and ShamanForeverDB.qxp[96659] and table.concat(ShamanForeverDB.qxp[96659], " @ nivel "))
+print("qxp 96659:", ShamanForeverGuideDB.qxp and ShamanForeverGuideDB.qxp[96659] and table.concat(ShamanForeverGuideDB.qxp[96659], " @ nivel "))
 SlashCmdList.SHAMANFOREVER("ayuda")
 SlashCmdList.SHAMANFOREVER("dondeestoy")
 SlashCmdList.SHAMANFOREVER("registro")
-print("log:", #ShamanForeverCharDB.log, ShamanForeverCharDB.log[1])
-if os.getenv("SCAN") then for _, l in ipairs(ShamanForeverCharDB.log) do if l:find("|scan|") or l:find("|error|") or l:find("|offer|") or l:find("|crafts|") then print("LOG", l) end end end
+print("log:", #ShamanForeverGuideCharDB.log, ShamanForeverGuideCharDB.log[1])
+if os.getenv("SCAN") then for _, l in ipairs(ShamanForeverGuideCharDB.log) do if l:find("|scan|") or l:find("|error|") or l:find("|offer|") or l:find("|crafts|") then print("LOG", l) end end end
 if os.getenv("MEASURE") then SlashCmdList.SHAMANFOREVER("medidas") end

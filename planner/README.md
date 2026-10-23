@@ -118,7 +118,7 @@ leveo del sitio:
 node planner/talents-for-polestar.js <checkout>        # talents/forever/shaman.json
 # en el checkout: SHAMAN (línea 373) en CLASSES de tools/lib/talents/build.js
 node tools/polestar.js talents build --plans <carpeta con shaman.json> --out <salida>
-node planner/polestar-talents-to-addon.js <salida>/Builds.lua addon/ShamanForever/PolestarTalents.lua
+node planner/polestar-talents-to-addon.js <salida>/Builds.lua addon/ShamanForeverGuide/PolestarTalents.lua
 ```
 
 El `talents build` repite cada punto con las reglas del cliente: pasarle

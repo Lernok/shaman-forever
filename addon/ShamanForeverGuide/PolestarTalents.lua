@@ -7,7 +7,7 @@ local T = type(P) == "table" and P.Talents
 if not (type(T) == "table" and T.Register and not (T.Data and T.Data("SHAMAN"))) then return end
 pcall(T.Register, {
 	class = "SHAMAN", tree = 1082, prereq = "full",
-	source = "Shaman: Forever", url = "https://lernok.github.io/shaman-forever/#Talentos",
+	source = "Shaman Forever Guide", url = "https://lernok.github.io/shaman-forever/#Talentos",
 	summary = "Level as Enhancement (two-hander, Stormstrike, self-healing) or Elemental (ranged nukes); Restoration levels slower but heals dungeons.",
 	specs = { "Elemental", "Enhancement", "Restoration" },
 	-- node = { entry, max ranks, spell, spec column, row, column, name }
