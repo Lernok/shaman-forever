@@ -274,21 +274,17 @@
 
     // What you'd have on now.
     const worn = wornAt(steps, lvl);
-    // The game's character sheet: armor down both sides, weapons below,
-    // your spec's art in the middle.
+    // The game's character sheet, in its order: armor, then weapons below.
     const sheet = slots => slots.map(([slot, k]) => {
       const held = worn.filter(st => st.pick.slot === slot);
       const next = steps.filter(st => st.pick.slot === slot && st.level > lvl && st.level <= lvl + 10).sort((a, b) => a.level - b.level)[k ? 1 : 0];
       return slotTile(slot, held[k || 0], next, lvl);
     }).join('');
-    const LEFT = [['Head'], ['Neck'], ['Shoulder'], ['Back'], ['Chest'], ['Wrist']];
-    const RIGHT = [['Hands'], ['Waist'], ['Legs'], ['Feet'], ['Finger'], ['Finger', 1], ['Trinket'], ['Trinket', 1]];
+    const ARMOR = [['Head'], ['Neck'], ['Shoulder'], ['Back'], ['Chest'], ['Wrist'],
+      ['Hands'], ['Waist'], ['Legs'], ['Feet'], ['Finger'], ['Finger', 1], ['Trinket'], ['Trinket', 1]];
     const LOW = [['Weapon']].concat(Site.spec === 'Enhancement' ? [] : [['Off Hand']], [['Relic']]);
-    const tree = window.SHAMAN_DATA.talents.trees.find(tr => tr.name === Site.spec);
     html += '<section class="gp-now"><h3>' + t('gp.now.title') + ' <span class="dim">' + t('gp.now.at', { n: lvl }) + '</span></h3>' +
-      '<div class="gp-sheet"><div class="gps-col">' + sheet(LEFT) + '</div>' +
-      '<div class="gps-art"' + (tree ? ' style="background-image:url(' + UI.treeArt(tree.bg) + ')"' : '') + '><span>' + t('common.level') + ' <b>' + lvl + '</b></span></div>' +
-      '<div class="gps-col gps-right">' + sheet(RIGHT) + '</div>' +
+      '<div class="gp-sheet"><div class="gps-armor">' + sheet(ARMOR) + '</div>' +
       '<div class="gps-low">' + sheet(LOW) + '</div></div></section>';
 
     // What comes: by level, a window that grows.
