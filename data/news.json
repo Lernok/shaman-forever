@@ -2,6 +2,27 @@
   "_readme": "Site updates shown on the News page, newest first. Game data changes come from data/changelog.json (written by scripts/sync.js).",
   "site": [
     {
+      "day": "2026-10-29",
+      "title": {
+        "es": "Sitio renovado: tu equipo como la ventana de personaje del juego",
+        "en": "A refreshed site: your gear as the game's character sheet"
+      },
+      "items": [
+        {
+          "es": "Equipo › Tu camino muestra lo que deberías tener puesto como la ventana de personaje del juego: la armadura a los costados, las armas abajo, el arte de tu spec en el medio, y los casilleros vacíos con lo primero que viene para cada uno.",
+          "en": "Gear › Your path shows what you should have on like the game's character sheet: armor down both sides, weapons below, your spec's art in the middle, and empty slots with the first piece that comes for each."
+        },
+        {
+          "es": "Las fichas de ítems tienen el marco del tooltip del juego, y el Inicio muestra así la pieza que te conviene ahora.",
+          "en": "Item cards have the game's tooltip frame, and Home shows the piece that pays off now that way."
+        },
+        {
+          "es": "Letra nueva, textos más directos y menos adornos en todas las páginas.",
+          "en": "A new typeface, plainer texts and fewer frills on every page."
+        }
+      ]
+    },
+    {
       "day": "2026-10-28",
       "title": {
         "es": "Raciales del último parche y fichas de ítems completas",

@@ -1753,3 +1753,4 @@ h1, h2, h3, .block-title, .spec-summary h2, .home-hero h2, .setup-head h2, .gp-h
 .panel h3 { font-size: 20px; }
 .tile-label, .sub-label, .sc-level span, .sc-value span, .wp-controls .ctl-label { font-size: 13px; letter-spacing: 0; }
 @media (pointer: coarse) { .gp-sheet .item-link { min-height: 40px; display: inline-flex; align-items: center; } }
+.site-footer .maker { color: var(--text); font-size: 14px; margin: 0 0 10px; }
