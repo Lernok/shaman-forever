@@ -70,7 +70,7 @@
     html += '</section><div class="setup-foot">' +
       '<button class="btn setup-skip" data-skip>' + t('setup.skip') + '</button>' +
       '<span class="setup-foot-go">' + (step > 1 ? '<button class="btn" data-back>← ' + t('setup.back') + '</button>' : '') +
-      (step === 3 ? '<button class="btn setup-done" data-done>' + t('setup.start') + '</button>' : '<button class="btn setup-done" data-next>' + t('setup.next') + ' →</button>') +
+      (step === 3 ? '<button class="btn setup-done" data-done>' + t('setup.start') + '</button>' : '<button class="btn setup-done" data-next>' + t('setup.next') + '</button>') +
       '</span></div></div>';
     el.innerHTML = html;
   }

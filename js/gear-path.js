@@ -206,19 +206,22 @@
   function wornAt(steps, lvl) {
     return steps.filter(st => st.level <= lvl && st.until > lvl);
   }
-  function slotTile(slot, held, next, lvl) {
-    if (held.length) {
-      return held.map(st => {
-        const i = st.pick.item;
-        const ends = st.until > 60 ? t('gp.now.lastsLong') : t('gp.now.until', { n: st.until });
-        return '<div class="gp-slot-tile"><span class="gst-slot">' + slotName(slot) + '</span>' +
-          '<span class="gst-item">' + (i.icon ? '<img class="gst-icon q' + (i.quality || 1) + '" src="' + UI.icon(i.icon) + '" alt="">' : '') +
-          '<a class="item-link q' + i.quality + '" data-item="' + i.id + '" href="https://www.wowhead.com/forever/item=' + i.id + '" target="_blank" rel="noopener">' + i.name + '</a></span>' +
-          '<span class="gst-until' + (st.until - lvl <= 2 ? ' soon' : '') + '">' + ends + '</span></div>';
-      }).join('');
+  // The game's empty-slot pictures.
+  const SOCKET = { Head: 'head', Neck: 'neck', Shoulder: 'shoulder', Back: 'chest', Chest: 'chest', Wrist: 'wrists', Hands: 'hands', Waist: 'waist',
+    Legs: 'legs', Feet: 'feet', Finger: 'finger', Trinket: 'trinket', Weapon: 'mainhand', 'Off Hand': 'offhand', Relic: 'relic' };
+  // One slot of the character sheet: the piece you'd wear, or an empty
+  // socket with the first piece that comes for it.
+  function slotTile(slot, st, next, lvl) {
+    const name = '<span class="gst-slot">' + slotName(slot) + '</span>';
+    if (st) {
+      const i = st.pick.item;
+      const ends = st.until > 60 ? t('gp.now.lastsLong') : t('gp.now.until', { n: st.until });
+      return '<div class="gp-slot-tile">' + (i.icon ? '<img class="gst-icon q' + (i.quality || 1) + '" src="' + UI.icon(i.icon) + '" alt="">' : '<span class="gst-icon"></span>') +
+        '<span class="gst-text">' + name + '<a class="item-link q' + i.quality + '" data-item="' + i.id + '" href="https://www.wowhead.com/forever/item=' + i.id + '" target="_blank" rel="noopener">' + i.name + '</a>' +
+        '<span class="gst-until' + (st.until - lvl <= 2 ? ' soon' : '') + '">' + ends + '</span></span></div>';
     }
-    return '<div class="gp-slot-tile empty"><span class="gst-slot">' + slotName(slot) + '</span><span class="dim">' + t('gp.now.nothing') + '</span>' +
-      '<span class="gst-next">' + t('gp.now.next', { n: next.level, item: next.pick.item.name }) + '</span></div>';
+    return '<div class="gp-slot-tile empty"><img class="gst-icon gst-socket" src="' + UI.icon('inventoryslot_' + (SOCKET[slot] || 'chest'), 'medium') + '" alt=""><span class="gst-text">' + name +
+      (next ? '<span class="gst-next">' + t('gp.now.next', { n: next.level, item: next.pick.item.name }) + '</span>' : '<span class="dim">' + t('gp.now.nothing') + '</span>') + '</span></div>';
   }
   function comingCard(st) {
     const i = st.pick.item;
@@ -271,18 +274,22 @@
 
     // What you'd have on now.
     const worn = wornAt(steps, lvl);
-    const tiles = [];
-    const bare = [];
-    window.GearPlan.SLOTS.forEach(slot => {
-      if (slot === 'Off Hand' && Site.spec === 'Enhancement') return;
+    // The game's character sheet: armor down both sides, weapons below,
+    // your spec's art in the middle.
+    const sheet = slots => slots.map(([slot, k]) => {
       const held = worn.filter(st => st.pick.slot === slot);
-      const next = steps.filter(st => st.pick.slot === slot && st.level > lvl && st.level <= lvl + 10).sort((a, b) => a.level - b.level)[0];
-      if (held.length || next) tiles.push(slotTile(slot, held, next, lvl));
-      else bare.push(slotName(slot).toLowerCase());
-    });
-    html += '<section class="gp-now"><h3>' + t('gp.now.title') + ' <span class="dim">· ' + t('gp.now.at', { n: lvl }) + '</span></h3>' +
-      '<div class="gp-slots">' + tiles.join('') + '</div>' +
-      (bare.length ? '<p class="dim gp-bare">' + t('gp.now.bare', { list: bare.join(', ') }) + '</p>' : '') + '</section>';
+      const next = steps.filter(st => st.pick.slot === slot && st.level > lvl && st.level <= lvl + 10).sort((a, b) => a.level - b.level)[k ? 1 : 0];
+      return slotTile(slot, held[k || 0], next, lvl);
+    }).join('');
+    const LEFT = [['Head'], ['Neck'], ['Shoulder'], ['Back'], ['Chest'], ['Wrist']];
+    const RIGHT = [['Hands'], ['Waist'], ['Legs'], ['Feet'], ['Finger'], ['Finger', 1], ['Trinket'], ['Trinket', 1]];
+    const LOW = [['Weapon']].concat(Site.spec === 'Enhancement' ? [] : [['Off Hand']], [['Relic']]);
+    const tree = window.SHAMAN_DATA.talents.trees.find(tr => tr.name === Site.spec);
+    html += '<section class="gp-now"><h3>' + t('gp.now.title') + ' <span class="dim">' + t('gp.now.at', { n: lvl }) + '</span></h3>' +
+      '<div class="gp-sheet"><div class="gps-col">' + sheet(LEFT) + '</div>' +
+      '<div class="gps-art"' + (tree ? ' style="background-image:url(' + UI.treeArt(tree.bg) + ')"' : '') + '><span>' + t('common.level') + ' <b>' + lvl + '</b></span></div>' +
+      '<div class="gps-col gps-right">' + sheet(RIGHT) + '</div>' +
+      '<div class="gps-low">' + sheet(LOW) + '</div></div></section>';
 
     // What comes: by level, a window that grows.
     const ahead = state.ahead || SOON;
@@ -294,7 +301,7 @@
       '<span class="gp-legend">' + ['dungeon', 'quest', 'craft', 'vendor'].map(k => '<span class="gp-tag-' + k + '"><span class="gpc-tag">' + t('gp.tag.' + k) + '</span></span>').join('') + '</span></div>' +
       (byLevel.size ? [...byLevel.entries()].map(([l, list]) => '<div class="gp-lvl-row"><b class="gp-lvl-n">' + t('home.tile.lv', { n: l }) + '</b><div class="gp-cards">' + list.map(comingCard).join('') + '</div></div>').join('')
         : '<p class="dim">' + t('gp.coming.none') + '</p>') +
-      '<div class="gp-coming-foot">' + (lvl + ahead < 60 ? '<button class="btn" data-more>' + t('gp.coming.more', { n: Math.min(60, lvl + ahead + 1) }) + ' →</button>' : '') +
+      '<div class="gp-coming-foot">' + (lvl + ahead < 60 ? '<button class="btn" data-more>' + t('gp.coming.more', { n: Math.min(60, lvl + ahead + 1) }) + '</button>' : '') +
       '<button class="btn-link" data-full>' + t(state.full ? 'gp.full.hide' : 'gp.full.show') + '</button></div></section>';
 
     // The full list by brackets (as before), on demand.

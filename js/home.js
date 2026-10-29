@@ -124,16 +124,14 @@
       // Far ahead (beyond the next two levels): said as what comes, not as an order.
       const verb = st.level > lvl + 2 ? 'home.next.later' : ['crafted', 'favor'].includes(st.pick.access) ? 'home.next.make' : 'home.next.get';
       const slot = window.GearPath.slotName(st.pick.slot).toLowerCase();
-      const forWhat = [t(st.level > lvl ? 'home.next.forSoon' : 'home.next.forNow', { slot, n: st.level }), st.replaces ? gain : t('home.next.nothingThere'), lasts].join(' · ');
+      const forWhat = [t(st.level > lvl ? 'home.next.forSoon' : 'home.next.forNow', { slot, n: st.level }), st.replaces ? gain : t('home.next.nothingThere')].join(', ') + '. ' + lasts.charAt(0).toUpperCase() + lasts.slice(1) + '.';
       return '<section class="home-next"' + art + ' aria-labelledby="hnTitle"><div class="hn-text">' + head +
         '<h2 id="hnTitle">' + t(verb, { item: i.name, n: st.level }) + '</h2>' +
         '<p class="hn-how"><b>' + t('home.next.howLabel') + '</b> ' + window.GearPath.sourceText(st.pick) + '</p>' +
         '<p class="dim">' + forWhat + '</p>' +
         '<div class="hn-actions"><a class="btn hn-go" href="#Equipo/camino">' + t('home.next.how') + '</a>' +
         '<button class="btn" data-got="' + i.id + '">' + t('home.next.have') + '</button></div></div>' +
-        '<div class="hn-item">' + (i.icon ? '<img class="hn-icon q' + (i.quality || 1) + '" src="' + UI.icon(i.icon, 'large') + '" alt="">' : '') +
-        '<div class="hn-item-text">' + UI.itemLink(i) + '<span class="dim">' + window.GearPath.slotName(st.pick.slot) + (i.req ? ' · ' + t('common.level') + ' ' + i.req : '') + '</span>' +
-        (UI.statsText(i) ? '<span class="hn-stats">' + UI.statsText(i) + '</span>' : '') + '</div></div></section>';
+        '<div class="hn-card tooltip">' + UI.itemCard(i) + '</div></section>';
     }
     // No gear ahead: the talent that's due.
     if (tal && tal.now) {
@@ -155,7 +153,7 @@
   function tile(kind, title, line, href, more, icon, tone) {
     return '<a class="home-tile ht-' + tone + '" href="' + href + '"><span class="ht-head">' + (icon ? '<img src="' + smallIcon(icon) + '" alt="">' : '') +
       '<span class="ht-kind">' + kind + '</span></span><b>' + title + '</b>' +
-      (line ? '<span class="dim">' + line + '</span>' : '') + '<span class="ht-more">' + more + ' →</span></a>';
+      (line ? '<span class="dim">' + line + '</span>' : '') + '<span class="ht-more">' + more + '</span></a>';
   }
 
   function tiles(plan, steps, lvl, tal) {
@@ -178,7 +176,7 @@
     const profs = UI.store.get('profs', []);
     const makers = profs.filter(p => CRAFTING.includes(p));
     let prof;
-    if (!profs.length) prof = '<button class="home-tile ht-prof" data-open-setup><span class="ht-head"><img src="' + smallIcon('trade_leatherworking') + '" alt=""><span class="ht-kind">' + t('home.tile.profs') + '</span></span><b>' + t('home.tile.profsPick') + '</b><span class="dim">' + t('home.tile.profsWhy') + '</span><span class="ht-more">' + t('home.plan.pickProfs') + ' →</span></button>';
+    if (!profs.length) prof = '<button class="home-tile ht-prof" data-open-setup><span class="ht-head"><img src="' + smallIcon('trade_leatherworking') + '" alt=""><span class="ht-kind">' + t('home.tile.profs') + '</span></span><b>' + t('home.tile.profsPick') + '</b><span class="dim">' + t('home.tile.profsWhy') + '</span><span class="ht-more">' + t('home.plan.pickProfs') + '</span></button>';
     else if (!makers.length) prof = tile(t('home.tile.profs'), t('home.tile.gatherOnly', { profs: I18N.profs(profs) }), '', '#Profesiones', t('home.plan.profsMore'), window.Setup.PROF_ICONS[profs[0]], 'prof');
     else {
       // No trainer of it yet on your route: where and when you learn it.
@@ -226,7 +224,7 @@
     const key = stress ? 'home.status.stress' : now < BETA_END ? 'home.status.beta' : days > 0 ? 'home.status.betaOver' : 'home.status.live';
     const time = (stress ? STRESS[0] : LAUNCH).toLocaleTimeString(I18N.lang === 'es' ? 'es-AR' : 'en-US', { hour: 'numeric', minute: '2-digit' });
     return '<div class="home-status"><span class="hs-state">' + t(key + 'Tag') + '</span><span>' + t(key, { n: days, time }) + '</span>' +
-      '<a href="#Guia">' + t('home.me.guide', { spec: Site.spec }) + ' →</a></div>';
+      '<a href="#Guia">' + t('home.me.guide', { spec: Site.spec }) + '</a></div>';
   }
 
   function planCard() {
