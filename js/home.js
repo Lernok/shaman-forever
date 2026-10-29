@@ -224,7 +224,7 @@
     const now = new Date();
     const stress = now > new Date('2026-10-21T03:00:00Z') && now < STRESS[1];
     const key = stress ? 'home.status.stress' : now < BETA_END ? 'home.status.beta' : days > 0 ? 'home.status.betaOver' : 'home.status.live';
-    const time = STRESS[0].toLocaleTimeString(I18N.lang === 'es' ? 'es-AR' : 'en-US', { hour: 'numeric', minute: '2-digit' });
+    const time = (stress ? STRESS[0] : LAUNCH).toLocaleTimeString(I18N.lang === 'es' ? 'es-AR' : 'en-US', { hour: 'numeric', minute: '2-digit' });
     return '<div class="home-status"><span class="hs-state">' + t(key + 'Tag') + '</span><span>' + t(key, { n: days, time }) + '</span>' +
       '<a href="#Guia">' + t('home.me.guide', { spec: Site.spec }) + ' →</a></div>';
   }

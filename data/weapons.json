@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70532",
+ "build": "1.60.1.70685",
  "weapons": [
   {
    "id": 275648,
@@ -1825,39 +1825,6 @@
    ]
   },
   {
-   "id": 285238,
-   "name": "Chipped Spellstaff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 3,
-   "obtain": 3,
-   "ilvl": 8,
-   "bind": "pickup",
-   "dps": 5.5,
-   "speed": 2.8,
-   "dmgMin": 12,
-   "dmgMax": 19,
-   "stats": {
-    "stamina": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 3,
-     "rec": 3
-    }
-   ]
-  },
-  {
    "id": 285236,
    "name": "Worn Ranger's Dagger",
    "kind": "Dagger",
@@ -1875,8 +1842,45 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 3,
+     "rec": 3
+    }
+   ]
+  },
+  {
+   "id": 285238,
+   "name": "Chipped Spellstaff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 3,
+   "obtain": 3,
+   "ilvl": 8,
+   "bind": "pickup",
+   "dps": 4.11,
+   "speed": 2.8,
+   "dmgMin": 9,
+   "dmgMax": 14,
+   "stats": {
+    "stamina": 1
+   },
+   "bonus": {
+    "spellPower": 2
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 2."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_08",
    "raceMask": -1,
    "sources": [
     {
@@ -1906,7 +1910,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_throwingaxe_02",
    "raceMask": -1,
    "sources": [
@@ -2062,7 +2066,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_01",
    "raceMask": -1,
    "sources": [
@@ -2230,7 +2234,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_04",
    "raceMask": -1,
    "sources": [
@@ -2293,6 +2297,39 @@
       "steps": 7
      },
      "asap": 5,
+     "rec": 7
+    }
+   ]
+  },
+  {
+   "id": 286754,
+   "name": "Ukta's Conduit",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 7,
+   "obtain": 7,
+   "ilvl": 12,
+   "bind": "equip",
+   "dps": 8.33,
+   "speed": 3.3,
+   "dmgMin": 19,
+   "dmgMax": 36,
+   "stats": {
+    "stamina": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 7,
      "rec": 7
     }
    ]
@@ -2404,7 +2441,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_15",
    "raceMask": -1,
    "sources": [
@@ -2437,7 +2474,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_04",
    "raceMask": -1,
    "sources": [
@@ -2468,7 +2505,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_06",
    "raceMask": -1,
    "sources": [
@@ -2621,7 +2658,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_14",
    "raceMask": -1,
    "sources": [
@@ -2694,7 +2731,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_08",
    "raceMask": -1,
    "sources": [
@@ -2758,7 +2795,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_04",
    "raceMask": -1,
    "sources": [
@@ -2822,39 +2859,6 @@
       "steps": 4
      },
      "asap": 6,
-     "rec": 8
-    }
-   ]
-  },
-  {
-   "id": 284287,
-   "name": "Felweaver's Staff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 8,
-   "obtain": 8,
-   "ilvl": 13,
-   "bind": "pickup",
-   "dps": 8.8,
-   "speed": 2.6,
-   "dmgMin": 18,
-   "dmgMax": 28,
-   "stats": {
-    "intellect": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_10",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 8,
      "rec": 8
     }
    ]
@@ -2934,7 +2938,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_08",
    "raceMask": -1,
    "sources": [
@@ -2967,7 +2971,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_19",
    "raceMask": -1,
    "sources": [
@@ -3000,7 +3004,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_07",
    "raceMask": -1,
    "sources": [
@@ -3014,35 +3018,39 @@
    ]
   },
   {
-   "id": 286754,
-   "name": "Ukta's Conduit",
+   "id": 284287,
+   "name": "Felweaver's Staff",
    "kind": "Staff",
    "quality": 2,
-   "req": 9,
-   "obtain": 9,
-   "ilvl": 14,
-   "bind": "equip",
-   "dps": 9.5,
-   "speed": 3.3,
-   "dmgMin": 22,
-   "dmgMax": 41,
+   "req": 8,
+   "obtain": 8,
+   "ilvl": 13,
+   "bind": "pickup",
+   "dps": 6.54,
+   "speed": 2.6,
+   "dmgMin": 13,
+   "dmgMax": 21,
    "stats": {
-    "stamina": 3
+    "intellect": 3
    },
-   "bonus": {},
-   "equip": [],
+   "bonus": {
+    "spellPower": 6
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 6."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_07",
+   "numbers": "forever",
+   "icon": "inv_staff_10",
    "raceMask": -1,
    "sources": [
     {
      "type": "unknown",
      "faction": "both",
      "confidence": "community-untested",
-     "asap": 9,
-     "rec": 9
+     "asap": 8,
+     "rec": 8
     }
    ]
   },
@@ -3178,7 +3186,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_17",
    "raceMask": -1,
    "sources": [
@@ -3577,37 +3585,6 @@
    ]
   },
   {
-   "id": 1933,
-   "name": "Staff of Conjuring",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 10,
-   "obtain": 10,
-   "ilvl": 15,
-   "bind": "equip",
-   "dps": 10.2,
-   "speed": 3,
-   "dmgMin": 24,
-   "dmgMax": 37,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_13",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 10,
-     "rec": 10
-    }
-   ]
-  },
-  {
    "id": 263935,
    "name": "Elunar Longstaff",
    "kind": "Staff",
@@ -3628,42 +3605,8 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 10,
-     "rec": 10
-    }
-   ]
-  },
-  {
-   "id": 263937,
-   "name": "Skyseeker's Greatstaff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 10,
-   "obtain": 10,
-   "ilvl": 15,
-   "bind": "equip",
-   "dps": 10,
-   "speed": 2,
-   "dmgMin": 16,
-   "dmgMax": 24,
-   "stats": {
-    "intellect": 3,
-    "spirit": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_2h_skybornec60_b_01",
    "raceMask": -1,
    "sources": [
     {
@@ -3695,7 +3638,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_throwingaxe_02",
    "raceMask": -1,
    "sources": [
@@ -3749,7 +3692,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_11",
    "raceMask": -1,
    "sources": [
@@ -3782,7 +3725,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_01",
    "raceMask": -1,
    "sources": [
@@ -3815,7 +3758,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_06",
    "raceMask": -1,
    "sources": [
@@ -3845,10 +3788,12 @@
    "bonus": {
     "attackPower": 2
    },
-   "equip": [],
+   "equip": [
+    "Equip: +2 Attack Power."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_knife_1h_skybornec60_b_01",
    "raceMask": -1,
    "sources": [
@@ -3881,7 +3826,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_10",
    "raceMask": -1,
    "sources": [
@@ -3914,7 +3859,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_15",
    "raceMask": -1,
    "sources": [
@@ -3947,8 +3892,43 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_monsterfang_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 10,
+     "rec": 10
+    }
+   ]
+  },
+  {
+   "id": 1933,
+   "name": "Staff of Conjuring",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 10,
+   "obtain": 10,
+   "ilvl": 15,
+   "bind": "equip",
+   "dps": 7.5,
+   "speed": 3,
+   "dmgMin": 18,
+   "dmgMax": 27,
+   "stats": {},
+   "bonus": {
+    "spellPower": 8
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_13",
    "raceMask": -1,
    "sources": [
     {
@@ -3978,7 +3958,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_04",
    "raceMask": -1,
    "sources": [
@@ -4011,7 +3991,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_bone_06",
    "raceMask": -1,
    "sources": [
@@ -4044,7 +4024,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_12",
    "raceMask": -1,
    "sources": [
@@ -4052,6 +4032,45 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
+     "asap": 10,
+     "rec": 10
+    }
+   ]
+  },
+  {
+   "id": 263937,
+   "name": "Skyseeker's Greatstaff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 10,
+   "obtain": 10,
+   "ilvl": 15,
+   "bind": "equip",
+   "dps": 7.5,
+   "speed": 2,
+   "dmgMin": 12,
+   "dmgMax": 18,
+   "stats": {
+    "intellect": 3,
+    "spirit": 3
+   },
+   "bonus": {
+    "healing": 15,
+    "spellDamage": 5
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_2h_skybornec60_b_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
      "asap": 10,
      "rec": 10
     }
@@ -4183,7 +4202,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_14",
    "raceMask": -1,
    "sources": [
@@ -4397,39 +4416,6 @@
    ]
   },
   {
-   "id": 284173,
-   "name": "Impcaster's Staff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 11,
-   "obtain": 11,
-   "ilvl": 16,
-   "bind": "equip",
-   "dps": 10.6,
-   "speed": 2.5,
-   "dmgMin": 21,
-   "dmgMax": 32,
-   "stats": {
-    "spirit": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 11,
-     "rec": 11
-    }
-   ]
-  },
-  {
    "id": 4964,
    "name": "Goblin Smasher",
    "kind": "2H Mace",
@@ -4479,6 +4465,43 @@
       "steps": 3
      },
      "asap": 9,
+     "rec": 11
+    }
+   ]
+  },
+  {
+   "id": 284173,
+   "name": "Impcaster's Staff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 11,
+   "obtain": 11,
+   "ilvl": 16,
+   "bind": "equip",
+   "dps": 8,
+   "speed": 2.5,
+   "dmgMin": 16,
+   "dmgMax": 24,
+   "stats": {
+    "spirit": 4
+   },
+   "bonus": {
+    "spellPower": 8
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 11,
      "rec": 11
     }
    ]
@@ -4769,7 +4792,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_01",
    "raceMask": -1,
    "sources": [
@@ -4816,7 +4839,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_19",
    "raceMask": -1,
    "sources": [
@@ -4884,7 +4907,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_06",
    "raceMask": -1,
    "sources": [
@@ -4918,7 +4941,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_pick_01",
    "raceMask": -1,
    "sources": [
@@ -4951,7 +4974,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_shovel_01",
    "raceMask": -1,
    "sources": [
@@ -5147,7 +5170,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_bone_01",
    "raceMask": -1,
    "sources": [
@@ -5180,7 +5203,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_01",
    "raceMask": -1,
    "sources": [
@@ -5213,7 +5236,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_01",
    "raceMask": -1,
    "sources": [
@@ -5285,7 +5308,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_11",
    "raceMask": -1,
    "sources": [
@@ -5318,7 +5341,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_02",
    "raceMask": -1,
    "sources": [
@@ -5627,70 +5650,6 @@
    ]
   },
   {
-   "id": 270228,
-   "name": "Golemheart Stave",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 13,
-   "obtain": 13,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 16.1,
-   "speed": 3.2,
-   "dmgMin": 41,
-   "dmgMax": 62,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_18",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 13,
-     "rec": 13
-    }
-   ]
-  },
-  {
-   "id": 272996,
-   "name": "Trogg Scepter",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 13,
-   "obtain": 13,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 12.3,
-   "speed": 2.4,
-   "dmgMin": 20,
-   "dmgMax": 39,
-   "stats": {
-    "spirit": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_bone_10",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 13,
-     "rec": 13
-    }
-   ]
-  },
-  {
    "id": 270256,
    "name": "Durgen's Crescent Axe",
    "kind": "1H Axe",
@@ -5710,7 +5669,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_18",
    "raceMask": -1,
    "sources": [
@@ -5741,80 +5700,13 @@
     "attackPower": 6
    },
    "equip": [
+    "Equip: +6 Attack Power.",
     "Equip: +6 Attack Power against Beasts."
    ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "ability_whirlwind",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 13,
-     "rec": 13
-    }
-   ]
-  },
-  {
-   "id": 273003,
-   "name": "Searing Dagger",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 13,
-   "obtain": 13,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 12.2,
-   "speed": 1.6,
-   "dmgMin": 13,
-   "dmgMax": 26,
-   "stats": {
-    "spirit": 4
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Harmful spell casts sear the target for 7 Fire damage. (10ms cooldown)"
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 13,
-     "rec": 13
-    }
-   ]
-  },
-  {
-   "id": 271095,
-   "name": "Fang of Magmatus",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 13,
-   "obtain": 13,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 12.1,
-   "speed": 1.7,
-   "dmgMin": 14,
-   "dmgMax": 27,
-   "stats": {
-    "intellect": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_bone_06",
    "raceMask": -1,
    "sources": [
     {
@@ -5847,7 +5739,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_25",
    "raceMask": -1,
    "sources": [
@@ -5892,7 +5784,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_10",
    "raceMask": -1,
    "sources": [
@@ -5900,6 +5792,41 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
+     "asap": 13,
+     "rec": 13
+    }
+   ]
+  },
+  {
+   "id": 270228,
+   "name": "Golemheart Stave",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 13,
+   "obtain": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 11.88,
+   "speed": 3.2,
+   "dmgMin": 30,
+   "dmgMax": 46,
+   "stats": {},
+   "bonus": {
+    "spellPower": 18
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
      "asap": 13,
      "rec": 13
     }
@@ -5926,7 +5853,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_wand_11",
    "raceMask": -1,
    "sources": [
@@ -6089,7 +6016,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_11",
    "raceMask": -1,
    "sources": [
@@ -6122,7 +6049,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_16",
    "raceMask": -1,
    "sources": [
@@ -6130,6 +6057,116 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
+     "asap": 13,
+     "rec": 13
+    }
+   ]
+  },
+  {
+   "id": 272996,
+   "name": "Trogg Scepter",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 13,
+   "obtain": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 8.13,
+   "speed": 2.4,
+   "dmgMin": 13,
+   "dmgMax": 26,
+   "stats": {
+    "spirit": 4
+   },
+   "bonus": {
+    "healing": 33,
+    "spellDamage": 11
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_misc_bone_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 13,
+     "rec": 13
+    }
+   ]
+  },
+  {
+   "id": 273003,
+   "name": "Searing Dagger",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 13,
+   "obtain": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 8.13,
+   "speed": 1.6,
+   "dmgMin": 9,
+   "dmgMax": 17,
+   "stats": {
+    "spirit": 4
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Harmful spell casts sear the target for 7 Fire damage. (10ms cooldown)"
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 13,
+     "rec": 13
+    }
+   ]
+  },
+  {
+   "id": 271095,
+   "name": "Fang of Magmatus",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 13,
+   "obtain": 13,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 7.94,
+   "speed": 1.7,
+   "dmgMin": 9,
+   "dmgMax": 18,
+   "stats": {
+    "intellect": 4
+   },
+   "bonus": {
+    "spellPower": 18
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_misc_bone_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
      "asap": 13,
      "rec": 13
     }
@@ -6193,7 +6230,7 @@
    "name": "Ironforge Greathammer",
    "kind": "2H Mace",
    "quality": 3,
-   "req": 1,
+   "req": 0,
    "obtain": 14,
    "ilvl": 18,
    "bind": "pickup",
@@ -6208,7 +6245,7 @@
     "Chance on hit: Blasts a target for 42 Fire damage."
    ],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_21",
    "raceMask": -1,
    "sources": [
@@ -6236,12 +6273,8 @@
      ],
      "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
      "basis": {
-      "name": "Durgen Dirgehammer",
-      "level": 17,
-      "rank": "elite",
       "from": "dungeon-range",
-      "group": true,
-      "steps": 2
+      "group": true
      },
      "asap": 13,
      "rec": 14
@@ -6299,7 +6332,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_08",
    "raceMask": -1,
    "sources": [
@@ -6332,7 +6365,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_06",
    "raceMask": -1,
    "sources": [
@@ -6432,53 +6465,6 @@
    ]
   },
   {
-   "id": 1928,
-   "name": "Defias Mage Staff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 11,
-   "obtain": 14,
-   "ilvl": 16,
-   "bind": "equip",
-   "dps": 10.7,
-   "speed": 2.8,
-   "dmgMin": 24,
-   "dmgMax": 36,
-   "stats": {
-    "intellect": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_18",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "drop",
-     "npc": "Defias Magician",
-     "npcId": 1726,
-     "level": "16-17",
-     "rank": "elite",
-     "zone": "Westfall",
-     "zoneId": 40,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 12,
-     "rec": 14,
-     "basis": {
-      "name": "Defias Magician",
-      "level": 17,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
    "id": 5340,
    "name": "Cauldron Stirrer",
    "kind": "Staff",
@@ -6553,7 +6539,7 @@
     "Chance on hit: Poisons target for 3 Nature damage every 3 sec for 15 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_monsterfang_01",
    "raceMask": -1,
    "sources": [
@@ -6587,7 +6573,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_11",
    "raceMask": -1,
    "sources": [
@@ -6620,7 +6606,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_09",
    "raceMask": -1,
    "sources": [
@@ -6772,6 +6758,57 @@
    ]
   },
   {
+   "id": 1928,
+   "name": "Defias Mage Staff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 11,
+   "obtain": 14,
+   "ilvl": 16,
+   "bind": "equip",
+   "dps": 7.86,
+   "speed": 2.8,
+   "dmgMin": 17,
+   "dmgMax": 27,
+   "stats": {
+    "intellect": 4
+   },
+   "bonus": {
+    "spellPower": 8
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Defias Magician",
+     "npcId": 1726,
+     "level": "16-17",
+     "rank": "elite",
+     "zone": "Westfall",
+     "zoneId": 40,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 12,
+     "rec": 14,
+     "basis": {
+      "name": "Defias Magician",
+      "level": 17,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 5344,
    "name": "Pointed Axe",
    "kind": "1H Axe",
@@ -6846,7 +6883,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_03",
    "raceMask": -1,
    "sources": [
@@ -6880,7 +6917,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_09",
    "raceMask": -1,
    "sources": [
@@ -6913,7 +6950,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_monsterfang_01",
    "raceMask": -1,
    "sources": [
@@ -6921,40 +6958,6 @@
      "type": "unknown",
      "faction": "both",
      "confidence": "community-untested",
-     "asap": 15,
-     "rec": 15
-    }
-   ]
-  },
-  {
-   "id": 3902,
-   "name": "Staff of Nobles",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 15,
-   "obtain": 15,
-   "ilvl": 20,
-   "bind": "equip",
-   "dps": 13.1,
-   "speed": 3.2,
-   "dmgMin": 33,
-   "dmgMax": 51,
-   "stats": {
-    "stamina": 2,
-    "spirit": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_wand_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
      "asap": 15,
      "rec": 15
     }
@@ -6980,7 +6983,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_wand_07",
    "raceMask": -1,
    "sources": [
@@ -7013,7 +7016,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_14",
    "raceMask": -1,
    "sources": [
@@ -7046,7 +7049,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_23",
    "raceMask": -1,
    "sources": [
@@ -7145,6 +7148,45 @@
    ]
   },
   {
+   "id": 3902,
+   "name": "Staff of Nobles",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 15,
+   "obtain": 15,
+   "ilvl": 20,
+   "bind": "equip",
+   "dps": 9.84,
+   "speed": 3.2,
+   "dmgMin": 25,
+   "dmgMax": 38,
+   "stats": {
+    "stamina": 2,
+    "spirit": 5
+   },
+   "bonus": {
+    "healing": 22,
+    "spellDamage": 7
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_wand_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 15,
+     "rec": 15
+    }
+   ]
+  },
+  {
    "id": 5324,
    "name": "Engineer's Hammer",
    "kind": "1H Mace",
@@ -7222,7 +7264,7 @@
    ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_18",
    "raceMask": -1,
    "sources": [
@@ -7250,74 +7292,8 @@
      ],
      "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
      "basis": {
-      "name": "Rath'mael",
-      "level": 19,
-      "rank": "elite",
       "from": "dungeon-range",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 15,
-     "rec": 16
-    }
-   ]
-  },
-  {
-   "id": 251534,
-   "name": "Gnarled Necromancer's Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 16,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 20.4,
-   "speed": 2.8,
-   "dmgMin": 45,
-   "dmgMax": 69,
-   "stats": {
-    "spirit": 10
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Wrath of Rath'mael",
-     "questId": 92422,
-     "level": 22,
-     "requiredLevel": 15,
-     "zone": "Ruins of Lordaeron",
-     "dungeon": true,
-     "bands": {
-      "red": 15,
-      "orange": 18,
-      "yellow": 20,
-      "green": 25,
-      "grey": 29
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92422",
-     "dungeonLevels": [
-      15,
-      20
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Rath'mael",
-      "level": 19,
-      "rank": "elite",
-      "from": "dungeon-range",
-      "group": true,
-      "steps": 1
+      "group": true
      },
      "asap": 15,
      "rec": 16
@@ -7343,10 +7319,12 @@
    "bonus": {
     "spellPower": 8
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_09",
    "raceMask": -1,
    "sources": [
@@ -7393,7 +7371,7 @@
     "Chance on hit: Sends a shadowy bolt at the enemy causing 55 to 85 Shadow damage."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_01",
    "raceMask": -1,
    "sources": [
@@ -7433,7 +7411,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_09",
    "raceMask": -1,
    "sources": [
@@ -7464,7 +7442,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_21",
    "raceMask": -1,
    "sources": [
@@ -7472,69 +7450,6 @@
      "type": "unknown",
      "faction": "both",
      "confidence": "community-untested",
-     "asap": 16,
-     "rec": 16
-    }
-   ]
-  },
-  {
-   "id": 15444,
-   "name": "Staff of Orgrimmar",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 16,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 16.1,
-   "speed": 3.3,
-   "dmgMin": 42,
-   "dmgMax": 64,
-   "stats": {
-    "agility": 6,
-    "intellect": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_goldfeathered_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hidden Enemies",
-     "questId": 5730,
-     "level": 16,
-     "requiredLevel": 9,
-     "zone": "Orgrimmar",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 9,
-      "orange": 12,
-      "yellow": 14,
-      "green": 19,
-      "grey": 23
-     },
-     "ref": "https://foreverchanges.pro/quest/5730",
-     "dungeonZone": "Ragefire Chasm",
-     "dungeonLevels": [
-      13,
-      18
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Neeru Fireblade",
-      "level": 37,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": true,
-      "step": 5727,
-      "steps": 5
-     },
      "asap": 16,
      "rec": 16
     }
@@ -7561,7 +7476,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_04",
    "raceMask": -1,
    "sources": [
@@ -7604,6 +7519,67 @@
    ]
   },
   {
+   "id": 251534,
+   "name": "Gnarled Necromancer's Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 16,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 15.18,
+   "speed": 2.8,
+   "dmgMin": 34,
+   "dmgMax": 51,
+   "stats": {
+    "spirit": 10
+   },
+   "bonus": {
+    "spellPower": 26
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 26.",
+    "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Wrath of Rath'mael",
+     "questId": 92422,
+     "level": 22,
+     "requiredLevel": 15,
+     "zone": "Ruins of Lordaeron",
+     "dungeon": true,
+     "bands": {
+      "red": 15,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92422",
+     "dungeonLevels": [
+      15,
+      20
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "basis": {
+      "from": "dungeon-range",
+      "group": true
+     },
+     "asap": 15,
+     "rec": 16
+    }
+   ]
+  },
+  {
    "id": 1483,
    "name": "Face Smasher",
    "kind": "1H Mace",
@@ -7624,7 +7600,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_08",
    "raceMask": -1,
    "sources": [
@@ -7663,7 +7639,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_halberd_08",
    "raceMask": -1,
    "sources": [
@@ -7696,7 +7672,7 @@
     "Chance on hit: Poisons target for 9 Nature damage every 3 sec for 15 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_23",
    "raceMask": -1,
    "sources": [
@@ -7727,7 +7703,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_15",
    "raceMask": -1,
    "sources": [
@@ -7760,7 +7736,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_14",
    "raceMask": -1,
    "sources": [
@@ -7793,7 +7769,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_17",
    "raceMask": -1,
    "sources": [
@@ -7827,7 +7803,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_23",
    "raceMask": -1,
    "sources": [
@@ -7870,62 +7846,6 @@
    ]
   },
   {
-   "id": 279874,
-   "name": "The Stitcher",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 1,
-   "obtain": 16,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 12.3,
-   "speed": 2.4,
-   "dmgMin": 20,
-   "dmgMax": 39,
-   "stats": {
-    "stamina": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Light's Justice",
-     "questId": 92421,
-     "level": 22,
-     "requiredLevel": 15,
-     "zone": "Ruins of Lordaeron",
-     "dungeon": true,
-     "bands": {
-      "red": 15,
-      "orange": 18,
-      "yellow": 20,
-      "green": 25,
-      "grey": 29
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92421",
-     "dungeonLevels": [
-      15,
-      20
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "from": "dungeon-range",
-      "group": true
-     },
-     "asap": 15,
-     "rec": 16
-    }
-   ]
-  },
-  {
    "id": 1936,
    "name": "Goblin Screwdriver",
    "kind": "Dagger",
@@ -7945,7 +7865,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_05",
    "raceMask": -1,
    "sources": [
@@ -7973,27 +7893,32 @@
    ]
   },
   {
-   "id": 15443,
-   "name": "Kris of Orgrimmar",
-   "kind": "Dagger",
+   "id": 15444,
+   "name": "Staff of Orgrimmar",
+   "kind": "Staff",
    "quality": 3,
    "req": 0,
    "obtain": 16,
    "ilvl": 18,
    "bind": "pickup",
-   "dps": 12,
-   "speed": 1.5,
-   "dmgMin": 12,
-   "dmgMax": 24,
+   "dps": 11.82,
+   "speed": 3.3,
+   "dmgMin": 31,
+   "dmgMax": 47,
    "stats": {
-    "stamina": 4
+    "agility": 6,
+    "intellect": 6
    },
-   "bonus": {},
-   "equip": [],
+   "bonus": {
+    "spellPower": 18
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_05",
+   "numbers": "forever",
+   "icon": "inv_staff_goldfeathered_01",
    "raceMask": -1,
    "sources": [
     {
@@ -8154,7 +8079,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_06",
    "raceMask": -1,
    "sources": [
@@ -8187,7 +8112,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_20",
    "raceMask": -1,
    "sources": [
@@ -8262,7 +8187,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_15",
    "raceMask": -1,
    "sources": [
@@ -8351,7 +8276,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_15",
    "raceMask": -1,
    "sources": [
@@ -8455,90 +8380,130 @@
    ]
   },
   {
-   "id": 1484,
-   "name": "Witching Stave",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 17,
-   "obtain": 17,
-   "ilvl": 22,
-   "bind": "equip",
-   "dps": 19.2,
-   "speed": 3.6,
-   "dmgMin": 55,
-   "dmgMax": 83,
+   "id": 279874,
+   "name": "The Stitcher",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 16,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 8.13,
+   "speed": 2.4,
+   "dmgMin": 13,
+   "dmgMax": 26,
    "stats": {
-    "stamina": 6,
-    "intellect": 5
+    "stamina": 3
    },
    "bonus": {
-    "otherDamage": 27
+    "healing": 30,
+    "spellDamage": 10
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases healing done by up to 30 and damage done by up to 10 for all magical spells and effects."
+   ],
    "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_wand_04",
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_mace_08",
    "raceMask": -1,
    "sources": [
     {
-     "type": "trash",
-     "count": 17,
-     "zones": [
-      "Silverpine Forest",
-      "Shadowfang Keep"
+     "type": "quest",
+     "quest": "Light's Justice",
+     "questId": 92421,
+     "level": 22,
+     "requiredLevel": 15,
+     "zone": "Ruins of Lordaeron",
+     "dungeon": true,
+     "bands": {
+      "red": 15,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92421",
+     "dungeonLevels": [
+      15,
+      20
      ],
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 17,
-     "rec": 17
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "basis": {
+      "from": "dungeon-range",
+      "group": true
+     },
+     "asap": 15,
+     "rec": 16
     }
    ]
   },
   {
-   "id": 5201,
-   "name": "Emberstone Staff",
-   "kind": "Staff",
+   "id": 15443,
+   "name": "Kris of Orgrimmar",
+   "kind": "Dagger",
    "quality": 3,
-   "req": 17,
-   "obtain": 17,
-   "ilvl": 22,
+   "req": 0,
+   "obtain": 16,
+   "ilvl": 18,
    "bind": "pickup",
-   "dps": 19,
-   "speed": 3,
-   "dmgMin": 45,
-   "dmgMax": 69,
+   "dps": 8,
+   "speed": 1.5,
+   "dmgMin": 8,
+   "dmgMax": 16,
    "stats": {
-    "stamina": 8
+    "stamina": 4
    },
-   "bonus": {},
-   "equip": [],
+   "bonus": {
+    "healing": 33,
+    "spellDamage": 11
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_13",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_05",
    "raceMask": -1,
    "sources": [
     {
-     "type": "boss",
-     "npc": "Captain Greenskin",
-     "npcId": 647,
-     "level": 20,
-     "rank": "elite",
-     "zone": "The Deadmines",
-     "zoneId": 1581,
-     "raid": false,
-     "faction": "both",
+     "type": "quest",
+     "quest": "Hidden Enemies",
+     "questId": 5730,
+     "level": 16,
+     "requiredLevel": 9,
+     "zone": "Orgrimmar",
+     "faction": "horde",
      "confidence": "classic-assumed",
-     "asap": 17,
-     "rec": 17,
+     "dungeon": true,
+     "bands": {
+      "red": 9,
+      "orange": 12,
+      "yellow": 14,
+      "green": 19,
+      "grey": 23
+     },
+     "ref": "https://foreverchanges.pro/quest/5730",
+     "dungeonZone": "Ragefire Chasm",
+     "dungeonLevels": [
+      13,
+      18
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
      "basis": {
-      "name": "Captain Greenskin",
-      "level": 20,
-      "rank": "elite",
+      "name": "Neeru Fireblade",
+      "level": 37,
+      "rank": "normal",
       "from": "wowhead",
-      "group": true
-     }
+      "group": true,
+      "step": 5727,
+      "steps": 5
+     },
+     "asap": 16,
+     "rec": 16
     }
    ]
   },
@@ -8563,7 +8528,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_17",
    "raceMask": -1,
    "sources": [
@@ -8660,37 +8625,6 @@
    ]
   },
   {
-   "id": 271216,
-   "name": "Scepter of the Abandoned",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 17,
-   "obtain": 17,
-   "ilvl": 22,
-   "bind": "pickup",
-   "dps": 14.6,
-   "speed": 2.6,
-   "dmgMin": 26,
-   "dmgMax": 50,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_bone_dwarfskull_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 17,
-     "rec": 17
-    }
-   ]
-  },
-  {
    "id": 273456,
    "name": "Cell Keeper's Claws",
    "kind": "Fist",
@@ -8710,11 +8644,12 @@
     "attackPower": 6
    },
    "equip": [
+    "Equip: +6 Attack Power.",
     "Equip: +6 Attack Power against Humanoids."
    ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_monsterclaw_04",
    "raceMask": -1,
    "sources": [
@@ -8745,7 +8680,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_throwingaxe_06",
    "raceMask": -1,
    "sources": [
@@ -8759,33 +8694,37 @@
    ]
   },
   {
-   "id": 2169,
-   "name": "Buzzer Blade",
-   "kind": "Dagger",
+   "id": 5201,
+   "name": "Emberstone Staff",
+   "kind": "Staff",
    "quality": 3,
-   "req": 16,
+   "req": 17,
    "obtain": 17,
-   "ilvl": 21,
+   "ilvl": 22,
    "bind": "pickup",
-   "dps": 14,
-   "speed": 1.5,
-   "dmgMin": 14,
-   "dmgMax": 28,
-   "stats": {},
-   "bonus": {},
+   "dps": 14.17,
+   "speed": 3,
+   "dmgMin": 34,
+   "dmgMax": 51,
+   "stats": {
+    "stamina": 8
+   },
+   "bonus": {
+    "spellPower": 24
+   },
    "equip": [
-    "Equip: Increases damage done to Elementals by magical spells and effects by up to 9."
+    "Equip: Increases damage and healing done by magical spells and effects by up to 24."
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_05",
+   "numbers": "forever",
+   "icon": "inv_staff_13",
    "raceMask": -1,
    "sources": [
     {
      "type": "boss",
-     "npc": "Sneed's Shredder",
-     "npcId": 642,
+     "npc": "Captain Greenskin",
+     "npcId": 647,
      "level": 20,
      "rank": "elite",
      "zone": "The Deadmines",
@@ -8793,15 +8732,58 @@
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 16,
+     "asap": 17,
      "rec": 17,
      "basis": {
-      "name": "Sneed's Shredder",
+      "name": "Captain Greenskin",
       "level": 20,
       "rank": "elite",
       "from": "wowhead",
       "group": true
      }
+    }
+   ]
+  },
+  {
+   "id": 1484,
+   "name": "Witching Stave",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 17,
+   "obtain": 17,
+   "ilvl": 22,
+   "bind": "equip",
+   "dps": 14.03,
+   "speed": 3.6,
+   "dmgMin": 40,
+   "dmgMax": 61,
+   "stats": {
+    "stamina": 6,
+    "intellect": 5
+   },
+   "bonus": {
+    "otherDamage": 27
+   },
+   "equip": [
+    "Equip: Increases damage done by Shadow spells and effects by up to 27."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_wand_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "trash",
+     "count": 17,
+     "zones": [
+      "Silverpine Forest",
+      "Shadowfang Keep"
+     ],
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 17,
+     "rec": 17
     }
    ]
   },
@@ -8826,7 +8808,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_22",
    "raceMask": -1,
    "sources": [
@@ -8875,7 +8857,7 @@
     "Chance on hit: Tenderize the target, increasing physical damage taken by 1 for 1 min."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_fabric_silk_02",
    "raceMask": -1,
    "sources": [
@@ -9038,7 +9020,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_throwingaxe_01",
    "raceMask": -1,
    "sources": [
@@ -9220,7 +9202,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_01",
    "raceMask": -1,
    "sources": [
@@ -9251,7 +9233,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_08",
    "raceMask": -1,
    "sources": [
@@ -9338,7 +9320,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_01",
    "raceMask": -1,
    "sources": [
@@ -9378,110 +9360,35 @@
    ]
   },
   {
-   "id": 269716,
-   "name": "Keen Skinning Knife",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
+   "id": 271216,
+   "name": "Scepter of the Abandoned",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 17,
    "obtain": 17,
-   "ilvl": 19,
+   "ilvl": 22,
    "bind": "pickup",
-   "dps": 9.7,
-   "speed": 1.5,
-   "dmgMin": 10,
-   "dmgMax": 19,
-   "stats": {
-    "intellect": 2
+   "dps": 9.62,
+   "speed": 2.6,
+   "dmgMin": 17,
+   "dmgMax": 33,
+   "stats": {},
+   "bonus": {
+    "spellPower": 24
    },
-   "bonus": {},
    "equip": [
-    "Equip: Increased Skinning +3."
+    "Equip: Increases damage and healing done by magical spells and effects by up to 24."
    ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_05",
+   "numbers": "forever",
+   "icon": "inv_misc_bone_dwarfskull_01",
    "raceMask": -1,
    "sources": [
     {
-     "type": "quest",
-     "quest": "Unwelcome Guests",
-     "questId": 95508,
-     "level": 18,
-     "requiredLevel": 14,
-     "zone": "The Barrens",
-     "bands": {
-      "orange": 14,
-      "yellow": 16,
-      "green": 21,
-      "grey": 25
-     },
-     "faction": "horde",
+     "type": "unknown",
+     "faction": "both",
      "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/95508",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 14,
-     "rec": 17
-    }
-   ]
-  },
-  {
-   "id": 270005,
-   "name": "Monastic Hammer",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 17,
-   "ilvl": 19,
-   "bind": "pickup",
-   "dps": 9.5,
-   "speed": 2.1,
-   "dmgMin": 14,
-   "dmgMax": 26,
-   "stats": {
-    "intellect": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Red Silk Bandanas",
-     "questId": 214,
-     "level": 17,
-     "requiredLevel": 14,
-     "zone": "The Deadmines",
-     "dungeon": true,
-     "bands": {
-      "orange": 14,
-      "yellow": 15,
-      "green": 20,
-      "grey": 24
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/214",
-     "dungeonLevels": [
-      17,
-      26
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Defias Overseer",
-      "level": 18,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 8
-     },
      "asap": 17,
      "rec": 17
     }
@@ -9544,6 +9451,107 @@
    ]
   },
   {
+   "id": 2169,
+   "name": "Buzzer Blade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 16,
+   "obtain": 17,
+   "ilvl": 21,
+   "bind": "pickup",
+   "dps": 9,
+   "speed": 1.5,
+   "dmgMin": 9,
+   "dmgMax": 18,
+   "stats": {},
+   "bonus": {
+    "spellPower": 22
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 22.",
+    "Equip: Increases damage done to Elementals by magical spells and effects by up to 9."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Sneed's Shredder",
+     "npcId": 642,
+     "level": 20,
+     "rank": "elite",
+     "zone": "The Deadmines",
+     "zoneId": 1581,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 16,
+     "rec": 17,
+     "basis": {
+      "name": "Sneed's Shredder",
+      "level": 20,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 269716,
+   "name": "Keen Skinning Knife",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 17,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 9,
+   "speed": 1.5,
+   "dmgMin": 9,
+   "dmgMax": 18,
+   "stats": {
+    "intellect": 2
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increased Skinning +3."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Unwelcome Guests",
+     "questId": 95508,
+     "level": 18,
+     "requiredLevel": 14,
+     "zone": "The Barrens",
+     "bands": {
+      "orange": 14,
+      "yellow": 16,
+      "green": 21,
+      "grey": 25
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95508",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 14,
+     "rec": 17
+    }
+   ]
+  },
+  {
    "id": 1480,
    "name": "Fist of the People's Militia",
    "kind": "1H Mace",
@@ -9598,65 +9606,65 @@
    ]
   },
   {
-   "id": 2042,
-   "name": "Staff of Westfall",
-   "kind": "Staff",
-   "quality": 3,
+   "id": 270005,
+   "name": "Monastic Hammer",
+   "kind": "1H Mace",
+   "quality": 2,
    "req": 0,
-   "obtain": 18,
-   "ilvl": 24,
+   "obtain": 17,
+   "ilvl": 19,
    "bind": "pickup",
-   "dps": 20.5,
-   "speed": 3,
-   "dmgMin": 49,
-   "dmgMax": 74,
+   "dps": 6.43,
+   "speed": 2.1,
+   "dmgMin": 9,
+   "dmgMax": 18,
    "stats": {
-    "intellect": 5,
-    "spirit": 6
+    "intellect": 2
    },
-   "bonus": {},
+   "bonus": {
+    "spellPower": 12
+   },
    "equip": [
-    "Equip: Movement speed increased by 2% in Elwynn Forest, Westfall, Redridge Mountains, and the Deadmines."
+    "Equip: Increases damage and healing done by magical spells and effects by up to 12."
    ],
    "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_10",
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_hammer_11",
    "raceMask": -1,
    "sources": [
     {
      "type": "quest",
-     "quest": "The Defias Brotherhood",
-     "questId": 166,
-     "level": 22,
+     "quest": "Red Silk Bandanas",
+     "questId": 214,
+     "level": 17,
      "requiredLevel": 14,
      "zone": "The Deadmines",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
      "dungeon": true,
      "bands": {
-      "red": 14,
-      "orange": 18,
-      "yellow": 20,
-      "green": 25,
-      "grey": 29
+      "orange": 14,
+      "yellow": 15,
+      "green": 20,
+      "grey": 24
      },
-     "ref": "https://foreverchanges.pro/quest/166",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/214",
      "dungeonLevels": [
       17,
       26
      ],
      "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
      "basis": {
-      "name": "Edwin VanCleef",
-      "level": 21,
+      "name": "Defias Overseer",
+      "level": 18,
       "rank": "elite",
       "from": "wowhead",
       "group": true,
-      "steps": 7
+      "steps": 8
      },
      "asap": 17,
-     "rec": 18
+     "rec": 17
     }
    ]
   },
@@ -9681,7 +9689,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_15",
    "raceMask": -1,
    "sources": [
@@ -9722,68 +9730,6 @@
    ]
   },
   {
-   "id": 6505,
-   "name": "Crescent Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 18,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 20.3,
-   "speed": 2.9,
-   "dmgMin": 47,
-   "dmgMax": 71,
-   "stats": {
-    "agility": 7,
-    "stamina": 7,
-    "intellect": 7
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Leaders of the Fang",
-     "questId": 914,
-     "level": 22,
-     "requiredLevel": 10,
-     "zone": "Wailing Caverns",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 10,
-      "orange": 18,
-      "yellow": 20,
-      "green": 25,
-      "grey": 29
-     },
-     "ref": "https://foreverchanges.pro/quest/914",
-     "dungeonLevels": [
-      17,
-      24
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Lord Pythas",
-      "level": 21,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 7
-     },
-     "asap": 17,
-     "rec": 18
-    }
-   ]
-  },
-  {
    "id": 7230,
    "name": "Smite's Mighty Hammer",
    "kind": "2H Mace",
@@ -9804,7 +9750,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_09",
    "raceMask": -1,
    "sources": [
@@ -9851,7 +9797,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_throwingaxe_01",
    "raceMask": -1,
    "sources": [
@@ -9898,7 +9844,7 @@
     "Chance on hit: Sends a shadowy bolt at the enemy causing 67 to 101 Shadow damage."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_throwingaxe_06",
    "raceMask": -1,
    "sources": [
@@ -9913,54 +9859,6 @@
      "confidence": "classic-assumed",
      "asap": 18,
      "rec": 18
-    }
-   ]
-  },
-  {
-   "id": 6631,
-   "name": "Living Root",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 18,
-   "obtain": 18,
-   "ilvl": 23,
-   "bind": "pickup",
-   "dps": 19.7,
-   "speed": 2.9,
-   "dmgMin": 45,
-   "dmgMax": 69,
-   "stats": {
-    "stamina": 2,
-    "spirit": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_25",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Verdan the Everliving",
-     "npcId": 5775,
-     "level": 21,
-     "rank": "elite",
-     "zone": "Wailing Caverns",
-     "zoneId": 718,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 18,
-     "rec": 18,
-     "basis": {
-      "name": "Verdan the Everliving",
-      "level": 21,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },
@@ -10043,54 +9941,6 @@
    ]
   },
   {
-   "id": 5194,
-   "name": "Taskmaster Axe",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 18,
-   "obtain": 18,
-   "ilvl": 23,
-   "bind": "pickup",
-   "dps": 19.6,
-   "speed": 2.7,
-   "dmgMin": 42,
-   "dmgMax": 64,
-   "stats": {
-    "stamina": 8,
-    "spirit": 8
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_throwingaxe_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Sneed",
-     "npcId": 643,
-     "level": 20,
-     "rank": "elite",
-     "zone": "The Deadmines",
-     "zoneId": 0,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 18,
-     "rec": 18,
-     "basis": {
-      "name": "Sneed",
-      "level": 20,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
    "id": 2175,
    "name": "Shadowhide Battle Axe",
    "kind": "2H Axe",
@@ -10111,7 +9961,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_throwingaxe_06",
    "raceMask": -1,
    "sources": [
@@ -10219,7 +10069,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_07",
    "raceMask": -1,
    "sources": [
@@ -10287,7 +10137,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_16",
    "raceMask": -1,
    "sources": [
@@ -10296,6 +10146,139 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 18,
+     "rec": 18
+    }
+   ]
+  },
+  {
+   "id": 2042,
+   "name": "Staff of Westfall",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 18,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 15.17,
+   "speed": 3,
+   "dmgMin": 36,
+   "dmgMax": 55,
+   "stats": {
+    "intellect": 5,
+    "spirit": 6
+   },
+   "bonus": {
+    "healing": 48,
+    "spellDamage": 16
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 48 and damage done by up to 16 for all magical spells and effects.",
+    "Equip: Movement speed increased by 2% in Elwynn Forest, Westfall, Redridge Mountains, and the Deadmines."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Defias Brotherhood",
+     "questId": 166,
+     "level": 22,
+     "requiredLevel": 14,
+     "zone": "The Deadmines",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 14,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
+     "ref": "https://foreverchanges.pro/quest/166",
+     "dungeonLevels": [
+      17,
+      26
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "basis": {
+      "name": "Edwin VanCleef",
+      "level": 21,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 7
+     },
+     "asap": 17,
+     "rec": 18
+    }
+   ]
+  },
+  {
+   "id": 6505,
+   "name": "Crescent Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 18,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 15.17,
+   "speed": 2.9,
+   "dmgMin": 35,
+   "dmgMax": 53,
+   "stats": {
+    "agility": 7,
+    "stamina": 7,
+    "intellect": 7
+   },
+   "bonus": {
+    "spellPower": 26
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 26."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Leaders of the Fang",
+     "questId": 914,
+     "level": 22,
+     "requiredLevel": 10,
+     "zone": "Wailing Caverns",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 10,
+      "orange": 18,
+      "yellow": 20,
+      "green": 25,
+      "grey": 29
+     },
+     "ref": "https://foreverchanges.pro/quest/914",
+     "dungeonLevels": [
+      17,
+      24
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "basis": {
+      "name": "Lord Pythas",
+      "level": 21,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 7
+     },
+     "asap": 17,
      "rec": 18
     }
    ]
@@ -10318,7 +10301,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_16",
    "raceMask": -1,
    "sources": [
@@ -10351,7 +10334,7 @@
     "Chance on hit: Damage caused by the target is reduced by 5 for 2 min."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_25",
    "raceMask": -1,
    "sources": [
@@ -10384,7 +10367,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_14",
    "raceMask": -1,
    "sources": [
@@ -10417,7 +10400,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_15",
    "raceMask": -1,
    "sources": [
@@ -10451,7 +10434,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_24",
    "raceMask": -1,
    "sources": [
@@ -10466,6 +10449,112 @@
      "confidence": "classic-assumed",
      "asap": 18,
      "rec": 18
+    }
+   ]
+  },
+  {
+   "id": 6631,
+   "name": "Living Root",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 18,
+   "obtain": 18,
+   "ilvl": 23,
+   "bind": "pickup",
+   "dps": 14.66,
+   "speed": 2.9,
+   "dmgMin": 34,
+   "dmgMax": 51,
+   "stats": {
+    "stamina": 2,
+    "spirit": 5
+   },
+   "bonus": {
+    "healing": 45,
+    "spellDamage": 15
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 45 and damage done by up to 15 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_25",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Verdan the Everliving",
+     "npcId": 5775,
+     "level": 21,
+     "rank": "elite",
+     "zone": "Wailing Caverns",
+     "zoneId": 718,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 18,
+     "rec": 18,
+     "basis": {
+      "name": "Verdan the Everliving",
+      "level": 21,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 5194,
+   "name": "Taskmaster Axe",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 18,
+   "obtain": 18,
+   "ilvl": 23,
+   "bind": "pickup",
+   "dps": 14.63,
+   "speed": 2.7,
+   "dmgMin": 31,
+   "dmgMax": 48,
+   "stats": {
+    "stamina": 8,
+    "spirit": 8
+   },
+   "bonus": {
+    "healing": 45,
+    "spellDamage": 15
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 45 and damage done by up to 15 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_throwingaxe_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Sneed",
+     "npcId": 643,
+     "level": 20,
+     "rank": "elite",
+     "zone": "The Deadmines",
+     "zoneId": 0,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 18,
+     "rec": 18,
+     "basis": {
+      "name": "Sneed",
+      "level": 20,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -10490,7 +10579,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_10",
    "raceMask": -1,
    "sources": [
@@ -10759,7 +10848,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_04",
    "raceMask": -1,
    "sources": [
@@ -10767,39 +10856,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 19,
-     "rec": 19
-    }
-   ]
-  },
-  {
-   "id": 271215,
-   "name": "Coldspire Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 19,
-   "obtain": 19,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 20.3,
-   "speed": 3.6,
-   "dmgMin": 58,
-   "dmgMax": 88,
-   "stats": {},
-   "bonus": {
-    "frostDamage": 32
-   },
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 19,
      "rec": 19
     }
@@ -10825,7 +10881,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_halbard_01",
    "raceMask": -1,
    "sources": [
@@ -10856,7 +10912,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_21",
    "raceMask": -1,
    "sources": [
@@ -10888,10 +10944,12 @@
    "bonus": {
     "frostDamage": 7
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases damage done by Frost spells and effects by up to 7."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_08",
    "raceMask": -1,
    "sources": [
@@ -10924,7 +10982,7 @@
     "Chance on hit: Sear your target's flesh, dealing 67 to 101 Fire damage."
    ],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_24",
    "raceMask": -1,
    "sources": [
@@ -10957,7 +11015,7 @@
     "Chance on hit: Sends a shadowy bolt at the enemy causing 30 Shadow damage."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_bone_elfskull_01",
    "raceMask": -1,
    "sources": [
@@ -10990,7 +11048,7 @@
     "Chance on hit: Poisons target for 7 Nature damage every 3 sec for 12 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_wand_10",
    "raceMask": -1,
    "sources": [
@@ -11038,7 +11096,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_24",
    "raceMask": -1,
    "sources": [
@@ -11051,6 +11109,41 @@
      ],
      "faction": "both",
      "confidence": "classic-assumed",
+     "asap": 19,
+     "rec": 19
+    }
+   ]
+  },
+  {
+   "id": 271215,
+   "name": "Coldspire Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 19,
+   "obtain": 19,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 15.14,
+   "speed": 3.6,
+   "dmgMin": 43,
+   "dmgMax": 66,
+   "stats": {},
+   "bonus": {
+    "frostDamage": 32
+   },
+   "equip": [
+    "Equip: Increases damage done by Frost spells and effects by up to 32."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
      "asap": 19,
      "rec": 19
     }
@@ -11130,7 +11223,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_throwingaxe_03",
    "raceMask": -1,
    "sources": [
@@ -11164,7 +11257,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_14",
    "raceMask": -1,
    "sources": [
@@ -11195,7 +11288,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_08",
    "raceMask": -1,
    "sources": [
@@ -11229,7 +11322,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_10",
    "raceMask": -1,
    "sources": [
@@ -11262,7 +11355,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_15",
    "raceMask": -1,
    "sources": [
@@ -11296,7 +11389,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_10",
    "raceMask": -1,
    "sources": [
@@ -11327,7 +11420,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_15",
    "raceMask": -1,
    "sources": [
@@ -11409,101 +11502,6 @@
    ]
   },
   {
-   "id": 2271,
-   "name": "Staff of the Blessed Seer",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 20,
-   "obtain": 20,
-   "ilvl": 25,
-   "bind": "equip",
-   "dps": 21,
-   "speed": 3,
-   "dmgMin": 50,
-   "dmgMax": 76,
-   "stats": {
-    "stamina": 9,
-    "spirit": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_31",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "trash",
-     "count": 26,
-     "zones": [
-      "Ashenvale",
-      "Darkshore",
-      "Blackfathom Deeps"
-     ],
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 20,
-     "rec": 20
-    }
-   ]
-  },
-  {
-   "id": 277286,
-   "name": "Encroacher's Claim",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 1,
-   "obtain": 20,
-   "ilvl": 23,
-   "bind": "pickup",
-   "dps": 19.7,
-   "speed": 3.3,
-   "dmgMin": 52,
-   "dmgMax": 78,
-   "stats": {
-    "strength": 6,
-    "spirit": 9
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_axe_17",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Wrongly Blamed, Justly Corrected",
-     "questId": 97250,
-     "level": 23,
-     "requiredLevel": 18,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 18,
-      "orange": 19,
-      "yellow": 21,
-      "green": 26,
-      "grey": 31
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97250",
-     "basis": {
-      "name": "Outraged Pillager",
-      "level": 23,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 18,
-     "rec": 20
-    }
-   ]
-  },
-  {
    "id": 1461,
    "name": "Slayer's Battle Axe",
    "kind": "2H Axe",
@@ -11524,7 +11522,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_throwingaxe_06",
    "raceMask": -1,
    "sources": [
@@ -11630,7 +11628,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_06",
    "raceMask": -1,
    "sources": [
@@ -11664,39 +11662,8 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 20,
-     "rec": 20
-    }
-   ]
-  },
-  {
-   "id": 3227,
-   "name": "Nightbane Staff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 20,
-   "obtain": 20,
-   "ilvl": 25,
-   "bind": "equip",
-   "dps": 16.7,
-   "speed": 2.7,
-   "dmgMin": 36,
-   "dmgMax": 54,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_12",
    "raceMask": -1,
    "sources": [
     {
@@ -11776,45 +11743,6 @@
    ]
   },
   {
-   "id": 2567,
-   "name": "Evocator's Blade",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 20,
-   "obtain": 20,
-   "ilvl": 25,
-   "bind": "equip",
-   "dps": 16.2,
-   "speed": 1.6,
-   "dmgMin": 18,
-   "dmgMax": 34,
-   "stats": {
-    "intellect": 2,
-    "spirit": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "trash",
-     "count": 24,
-     "zones": [
-      "Darkshore",
-      "Blackfathom Deeps"
-     ],
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 20,
-     "rec": 20
-    }
-   ]
-  },
-  {
    "id": 1292,
    "name": "Butcher's Cleaver",
    "kind": "1H Axe",
@@ -11835,7 +11763,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_23",
    "raceMask": -1,
    "sources": [
@@ -11897,28 +11825,72 @@
    ]
   },
   {
-   "id": 277288,
-   "name": "Pathfinder's Clearway",
-   "kind": "1H Axe",
+   "id": 2271,
+   "name": "Staff of the Blessed Seer",
+   "kind": "Staff",
    "quality": 3,
+   "req": 20,
+   "obtain": 20,
+   "ilvl": 25,
+   "bind": "equip",
+   "dps": 15.67,
+   "speed": 3,
+   "dmgMin": 37,
+   "dmgMax": 57,
+   "stats": {
+    "stamina": 9,
+    "spirit": 10
+   },
+   "bonus": {
+    "spellPower": 28
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 28."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_31",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "trash",
+     "count": 26,
+     "zones": [
+      "Ashenvale",
+      "Darkshore",
+      "Blackfathom Deeps"
+     ],
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 20,
+     "rec": 20
+    }
+   ]
+  },
+  {
+   "id": 277286,
+   "name": "Encroacher's Claim",
+   "kind": "2H Axe",
+   "quality": 2,
    "req": 1,
    "obtain": 20,
    "ilvl": 23,
    "bind": "pickup",
    "dps": 15.2,
-   "speed": 2.3,
-   "dmgMin": 24,
-   "dmgMax": 46,
+   "speed": 3.3,
+   "dmgMin": 40,
+   "dmgMax": 60,
    "stats": {
-    "stamina": 3,
-    "intellect": 4
+    "spirit": 6,
+    "strength": 4
    },
    "bonus": {},
    "equip": [],
    "chance": [],
    "era": "new",
    "numbers": "client",
-   "icon": "inv_axe_01",
+   "icon": "inv_axe_17",
    "raceMask": -1,
    "sources": [
     {
@@ -12066,7 +12038,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_16",
    "raceMask": -1,
    "sources": [
@@ -12099,7 +12071,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_11",
    "raceMask": -1,
    "sources": [
@@ -12234,12 +12206,145 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_21",
    "raceMask": -1,
    "sources": [
     {
      "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 20,
+     "rec": 20
+    }
+   ]
+  },
+  {
+   "id": 3227,
+   "name": "Nightbane Staff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 20,
+   "obtain": 20,
+   "ilvl": 25,
+   "bind": "equip",
+   "dps": 12.59,
+   "speed": 2.7,
+   "dmgMin": 27,
+   "dmgMax": 41,
+   "stats": {},
+   "bonus": {
+    "spellPower": 18
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_12",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 20,
+     "rec": 20
+    }
+   ]
+  },
+  {
+   "id": 277288,
+   "name": "Pathfinder's Clearway",
+   "kind": "1H Axe",
+   "quality": 2,
+   "req": 1,
+   "obtain": 20,
+   "ilvl": 23,
+   "bind": "pickup",
+   "dps": 11.5,
+   "speed": 2.3,
+   "dmgMin": 18,
+   "dmgMax": 35,
+   "stats": {
+    "intellect": 2,
+    "stamina": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_axe_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Wrongly Blamed, Justly Corrected",
+     "questId": 97250,
+     "level": 23,
+     "requiredLevel": 18,
+     "zone": "The Barrens",
+     "bands": {
+      "red": 18,
+      "orange": 19,
+      "yellow": 21,
+      "green": 26,
+      "grey": 31
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97250",
+     "basis": {
+      "name": "Outraged Pillager",
+      "level": 23,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 18,
+     "rec": 20
+    }
+   ]
+  },
+  {
+   "id": 2567,
+   "name": "Evocator's Blade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 20,
+   "obtain": 20,
+   "ilvl": 25,
+   "bind": "equip",
+   "dps": 10.94,
+   "speed": 1.6,
+   "dmgMin": 12,
+   "dmgMax": 23,
+   "stats": {
+    "intellect": 2,
+    "spirit": 5
+   },
+   "bonus": {
+    "spellPower": 28
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 28."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "trash",
+     "count": 24,
+     "zones": [
+      "Darkshore",
+      "Blackfathom Deeps"
+     ],
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 20,
@@ -12267,7 +12372,7 @@
     "Chance on hit: Wounds the target causing them to bleed for 100 damage over 30 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_10",
    "raceMask": -1,
    "sources": [
@@ -12277,95 +12382,6 @@
      "confidence": "classic-assumed",
      "asap": 21,
      "rec": 21
-    }
-   ]
-  },
-  {
-   "id": 3415,
-   "name": "Staff of the Friar",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 21,
-   "obtain": 21,
-   "ilvl": 26,
-   "bind": "equip",
-   "dps": 21.7,
-   "speed": 2.6,
-   "dmgMin": 45,
-   "dmgMax": 68,
-   "stats": {
-    "stamina": 4,
-    "intellect": 3,
-    "spirit": 12
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_32",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "trash",
-     "count": 25,
-     "zones": [
-      "Ashenvale",
-      "Darkshore",
-      "Blackfathom Deeps"
-     ],
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 21,
-     "rec": 21
-    }
-   ]
-  },
-  {
-   "id": 6318,
-   "name": "Odo's Ley Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 21,
-   "obtain": 21,
-   "ilvl": 26,
-   "bind": "pickup",
-   "dps": 21.7,
-   "speed": 2.9,
-   "dmgMin": 50,
-   "dmgMax": 76,
-   "stats": {
-    "stamina": 5,
-    "spirit": 12
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_27",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Odo the Blindwatcher",
-     "npcId": 4279,
-     "level": 24,
-     "rank": "elite",
-     "zone": "Shadowfang Keep",
-     "zoneId": 209,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 21,
-     "rec": 21,
-     "basis": {
-      "name": "Odo the Blindwatcher",
-      "level": 24,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },
@@ -12390,7 +12406,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_06",
    "raceMask": -1,
    "sources": [
@@ -12418,40 +12434,6 @@
    ]
   },
   {
-   "id": 285350,
-   "name": "Alliance Outrunner Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 21,
-   "obtain": 21,
-   "ilvl": 26,
-   "bind": "pickup",
-   "dps": 21.6,
-   "speed": 2.5,
-   "dmgMin": 43,
-   "dmgMax": 65,
-   "stats": {
-    "stamina": 9,
-    "spirit": 9
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 21,
-     "rec": 21
-    }
-   ]
-  },
-  {
    "id": 2013,
    "name": "Cryptbone Staff",
    "kind": "Staff",
@@ -12473,7 +12455,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_26",
    "raceMask": -1,
    "sources": [
@@ -12509,7 +12491,7 @@
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_02",
    "raceMask": -1,
    "sources": [
@@ -12533,6 +12515,143 @@
       "from": "wowhead",
       "group": true
      }
+    }
+   ]
+  },
+  {
+   "id": 285350,
+   "name": "Alliance Outrunner Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 21,
+   "obtain": 21,
+   "ilvl": 26,
+   "bind": "pickup",
+   "dps": 16.2,
+   "speed": 2.5,
+   "dmgMin": 32,
+   "dmgMax": 49,
+   "stats": {
+    "stamina": 9,
+    "spirit": 9
+   },
+   "bonus": {
+    "spellPower": 28
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 28."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 21,
+     "rec": 21
+    }
+   ]
+  },
+  {
+   "id": 6318,
+   "name": "Odo's Ley Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 21,
+   "obtain": 21,
+   "ilvl": 26,
+   "bind": "pickup",
+   "dps": 16.03,
+   "speed": 2.9,
+   "dmgMin": 37,
+   "dmgMax": 56,
+   "stats": {
+    "stamina": 5,
+    "spirit": 12
+   },
+   "bonus": {
+    "healing": 52,
+    "spellDamage": 17
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 52 and damage done by up to 17 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_27",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Odo the Blindwatcher",
+     "npcId": 4279,
+     "level": 24,
+     "rank": "elite",
+     "zone": "Shadowfang Keep",
+     "zoneId": 209,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 21,
+     "rec": 21,
+     "basis": {
+      "name": "Odo the Blindwatcher",
+      "level": 24,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 3415,
+   "name": "Staff of the Friar",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 21,
+   "obtain": 21,
+   "ilvl": 26,
+   "bind": "equip",
+   "dps": 15.96,
+   "speed": 2.6,
+   "dmgMin": 33,
+   "dmgMax": 50,
+   "stats": {
+    "stamina": 4,
+    "intellect": 3,
+    "spirit": 12
+   },
+   "bonus": {
+    "healing": 52,
+    "spellDamage": 17
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 52 and damage done by up to 17 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_32",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "trash",
+     "count": 25,
+     "zones": [
+      "Ashenvale",
+      "Darkshore",
+      "Blackfathom Deeps"
+     ],
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 21,
+     "rec": 21
     }
    ]
   },
@@ -12608,7 +12727,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_01",
    "raceMask": -1,
    "sources": [
@@ -12643,7 +12762,7 @@
    ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_monsterclaw_10",
    "raceMask": -1,
    "sources": [
@@ -12676,7 +12795,7 @@
     "Chance on hit: Thunderstomp nearby enemies, inflicting 23 Nature damage."
    ],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_12",
    "raceMask": -1,
    "sources": [
@@ -12808,45 +12927,6 @@
    ]
   },
   {
-   "id": 2549,
-   "name": "Staff of the Shade",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 22,
-   "obtain": 22,
-   "ilvl": 27,
-   "bind": "equip",
-   "dps": 22.3,
-   "speed": 2.6,
-   "dmgMin": 46,
-   "dmgMax": 70,
-   "stats": {
-    "stamina": 15
-   },
-   "bonus": {
-    "otherDamage": 37
-   },
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_25",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "trash",
-     "count": 26,
-     "zones": [
-      "Razorfen Kraul"
-     ],
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 22,
-     "rec": 22
-    }
-   ]
-  },
-  {
    "id": 23171,
    "name": "The Axe of Severing",
    "kind": "2H Axe",
@@ -12911,7 +12991,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_04",
    "raceMask": -1,
    "sources": [
@@ -12985,7 +13065,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_halbard_01",
    "raceMask": -1,
    "sources": [
@@ -13015,10 +13095,12 @@
    "bonus": {
     "attackPower": 20
    },
-   "equip": [],
+   "equip": [
+    "Equip: +20 Attack Power."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_01",
    "raceMask": -1,
    "sources": [
@@ -13051,7 +13133,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_wand_06",
    "raceMask": -1,
    "sources": [
@@ -13085,7 +13167,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_sword_29",
    "raceMask": -1,
    "sources": [
@@ -13123,7 +13205,7 @@
     "Chance on hit: Sends a shadowy bolt at the enemy causing 42 Shadow damage."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_13",
    "raceMask": -1,
    "sources": [
@@ -13133,6 +13215,47 @@
      "zones": [
       "Darkshore",
       "Blackfathom Deeps"
+     ],
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 22,
+     "rec": 22
+    }
+   ]
+  },
+  {
+   "id": 2549,
+   "name": "Staff of the Shade",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 22,
+   "obtain": 22,
+   "ilvl": 27,
+   "bind": "equip",
+   "dps": 16.54,
+   "speed": 2.6,
+   "dmgMin": 34,
+   "dmgMax": 52,
+   "stats": {
+    "stamina": 15
+   },
+   "bonus": {
+    "otherDamage": 37
+   },
+   "equip": [
+    "Equip: Increases damage done by Shadow spells and effects by up to 37."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_25",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "trash",
+     "count": 26,
+     "zones": [
+      "Razorfen Kraul"
      ],
      "faction": "both",
      "confidence": "classic-assumed",
@@ -13161,7 +13284,7 @@
     "Chance on hit: Poisons target for 6 Nature damage every 3 sec for 15 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_16",
    "raceMask": -1,
    "sources": [
@@ -13260,7 +13383,7 @@
     "Chance on hit: Blasts a target for 93 to 117 Nature damage."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_21",
    "raceMask": -1,
    "sources": [
@@ -13294,13 +13417,15 @@
    "stats": {
     "stamina": 10
    },
-   "bonus": {},
+   "bonus": {
+    "attackPower": 12
+   },
    "equip": [
     "Equip: +12 Attack Power, doubled against Undead targets."
    ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_shovel_01",
    "raceMask": -1,
    "sources": [
@@ -13335,7 +13460,7 @@
    ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_04",
    "raceMask": -1,
    "sources": [
@@ -13369,7 +13494,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_13",
    "raceMask": -1,
    "sources": [
@@ -13399,12 +13524,14 @@
    "bonus": {
     "spellPower": 12
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+   ],
    "chance": [
     "Chance on hit: Blasts a target for 70 Nature damage."
    ],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_09",
    "raceMask": -1,
    "sources": [
@@ -13437,10 +13564,12 @@
     "healing": 24,
     "spellDamage": 8
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases healing done by up to 24 and damage done by up to 8 for all magical spells and effects."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_halberd_06",
    "raceMask": -1,
    "sources": [
@@ -13485,7 +13614,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_17",
    "raceMask": -1,
    "sources": [
@@ -13518,7 +13647,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_17",
    "raceMask": -1,
    "sources": [
@@ -13585,7 +13714,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_18",
    "raceMask": -1,
    "sources": [
@@ -13634,7 +13763,7 @@
     "Chance on hit: Poisons target for 5 Nature damage every 3 sec for 15 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_02",
    "raceMask": -1,
    "sources": [
@@ -13667,7 +13796,7 @@
     "Chance on hit: Blasts a target for 42 Fire damage."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_25",
    "raceMask": -1,
    "sources": [
@@ -13714,7 +13843,7 @@
     "Chance on hit: Poisons target for 14 Nature damage every 3 sec for 9 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_monsterfang_01",
    "raceMask": -1,
    "sources": [
@@ -13761,7 +13890,7 @@
     "Chance on hit: Pummel the target for 25 damage and interrupt the spell being cast for 5 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_gauntlets_04",
    "raceMask": -1,
    "sources": [
@@ -13809,7 +13938,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_16",
    "raceMask": -1,
    "sources": [
@@ -13843,7 +13972,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_08",
    "raceMask": -1,
    "sources": [
@@ -14038,105 +14167,6 @@
    ]
   },
   {
-   "id": 1155,
-   "name": "Rod of the Sleepwalker",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 24,
-   "obtain": 24,
-   "ilvl": 29,
-   "bind": "pickup",
-   "dps": 23.8,
-   "speed": 2.8,
-   "dmgMin": 53,
-   "dmgMax": 80,
-   "stats": {
-    "spirit": 11
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Reduces the hit chance of Sleep effects against you by 5%."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Twilight Lord Kelris",
-     "npcId": 4832,
-     "level": 27,
-     "rank": "elite",
-     "zone": "Blackfathom Deeps",
-     "zoneId": 719,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 24,
-     "rec": 24,
-     "basis": {
-      "name": "Twilight Lord Kelris",
-      "level": 27,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
-   "id": 2280,
-   "name": "Kam's Walking Stick",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 24,
-   "obtain": 24,
-   "ilvl": 29,
-   "bind": "pickup",
-   "dps": 23.8,
-   "speed": 2.8,
-   "dmgMin": 53,
-   "dmgMax": 80,
-   "stats": {
-    "agility": 10,
-    "intellect": 3
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Reduces the duration of all movement impairing effects on you by 10%."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Kam Deepfury",
-     "npcId": 1666,
-     "level": 27,
-     "rank": "elite",
-     "zone": "The Stockade",
-     "zoneId": 717,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 24,
-     "rec": 24,
-     "basis": {
-      "name": "Kam Deepfury",
-      "level": 27,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
    "id": 1976,
    "name": "Slaghammer",
    "kind": "2H Mace",
@@ -14157,7 +14187,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_16",
    "raceMask": -1,
    "sources": [
@@ -14195,7 +14225,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_pick_02",
    "raceMask": -1,
    "sources": [
@@ -14229,7 +14259,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_16",
    "raceMask": -1,
    "sources": [
@@ -14260,7 +14290,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_wand_06",
    "raceMask": -1,
    "sources": [
@@ -14295,7 +14325,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_16",
    "raceMask": -1,
    "sources": [
@@ -14355,110 +14385,12 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_04",
    "raceMask": -1,
    "sources": [
     {
      "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 24,
-     "rec": 24
-    }
-   ]
-  },
-  {
-   "id": 1317,
-   "name": "Hardened Root Staff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 0,
-   "obtain": 24,
-   "ilvl": 27,
-   "bind": "pickup",
-   "dps": 18.3,
-   "speed": 3.3,
-   "dmgMin": 48,
-   "dmgMax": 73,
-   "stats": {
-    "strength": 1,
-    "spirit": 9
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "What Comes Around...",
-     "questId": 386,
-     "level": 25,
-     "requiredLevel": 22,
-     "zone": "The Stockade",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "orange": 22,
-      "yellow": 23,
-      "green": 28,
-      "grey": 33
-     },
-     "ref": "https://foreverchanges.pro/quest/386",
-     "dungeonLevels": [
-      24,
-      32
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Targorr the Dread",
-      "level": 24,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 24,
-     "rec": 24
-    }
-   ]
-  },
-  {
-   "id": 3414,
-   "name": "Crested Scepter",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 24,
-   "obtain": 24,
-   "ilvl": 29,
-   "bind": "equip",
-   "dps": 18.3,
-   "speed": 2.6,
-   "dmgMin": 33,
-   "dmgMax": 62,
-   "stats": {
-    "stamina": 6,
-    "intellect": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_mace_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "trash",
-     "count": 16,
-     "zones": [
-      "Blackfathom Deeps"
-     ],
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 24,
@@ -14487,7 +14419,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_21",
    "raceMask": -1,
    "sources": [
@@ -14557,6 +14489,111 @@
      },
      "asap": 22,
      "rec": 24
+    }
+   ]
+  },
+  {
+   "id": 1155,
+   "name": "Rod of the Sleepwalker",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 24,
+   "obtain": 24,
+   "ilvl": 29,
+   "bind": "pickup",
+   "dps": 17.68,
+   "speed": 2.8,
+   "dmgMin": 39,
+   "dmgMax": 60,
+   "stats": {
+    "spirit": 11
+   },
+   "bonus": {
+    "spellPower": 32
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 32.",
+    "Equip: Reduces the hit chance of Sleep effects against you by 5%."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Twilight Lord Kelris",
+     "npcId": 4832,
+     "level": 27,
+     "rank": "elite",
+     "zone": "Blackfathom Deeps",
+     "zoneId": 719,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 24,
+     "rec": 24,
+     "basis": {
+      "name": "Twilight Lord Kelris",
+      "level": 27,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 2280,
+   "name": "Kam's Walking Stick",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 24,
+   "obtain": 24,
+   "ilvl": 29,
+   "bind": "pickup",
+   "dps": 17.68,
+   "speed": 2.8,
+   "dmgMin": 39,
+   "dmgMax": 60,
+   "stats": {
+    "agility": 10,
+    "intellect": 3
+   },
+   "bonus": {
+    "spellPower": 32
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 32.",
+    "Equip: Reduces the duration of all movement impairing effects on you by 10%."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Kam Deepfury",
+     "npcId": 1666,
+     "level": 27,
+     "rank": "elite",
+     "zone": "The Stockade",
+     "zoneId": 717,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 24,
+     "rec": 24,
+     "basis": {
+      "name": "Kam Deepfury",
+      "level": 27,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -14691,7 +14728,7 @@
     "Chance on hit: Poisons target for 6 Nature damage every 3 sec for 15 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_monsterfang_01",
    "raceMask": -1,
    "sources": [
@@ -14724,7 +14761,7 @@
     "Chance on hit: Wounds the target causing them to bleed for 30 damage over 30 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_10",
    "raceMask": -1,
    "sources": [
@@ -14756,10 +14793,12 @@
    "bonus": {
     "spellPower": 4
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 4."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_12",
    "raceMask": -1,
    "sources": [
@@ -14833,6 +14872,70 @@
      "faction": "alliance",
      "pvp": false,
      "confidence": "classic-assumed",
+     "asap": 24,
+     "rec": 24
+    }
+   ]
+  },
+  {
+   "id": 1317,
+   "name": "Hardened Root Staff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 0,
+   "obtain": 24,
+   "ilvl": 27,
+   "bind": "pickup",
+   "dps": 13.64,
+   "speed": 3.3,
+   "dmgMin": 36,
+   "dmgMax": 54,
+   "stats": {
+    "strength": 1,
+    "spirit": 9
+   },
+   "bonus": {
+    "spellPower": 20
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 20."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "What Comes Around...",
+     "questId": 386,
+     "level": 25,
+     "requiredLevel": 22,
+     "zone": "The Stockade",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "orange": 22,
+      "yellow": 23,
+      "green": 28,
+      "grey": 33
+     },
+     "ref": "https://foreverchanges.pro/quest/386",
+     "dungeonLevels": [
+      24,
+      32
+     ],
+     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
+     "basis": {
+      "name": "Targorr the Dread",
+      "level": 24,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
      "asap": 24,
      "rec": 24
     }
@@ -14944,6 +15047,48 @@
       "steps": 7
      },
      "asap": 22,
+     "rec": 24
+    }
+   ]
+  },
+  {
+   "id": 3414,
+   "name": "Crested Scepter",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 24,
+   "obtain": 24,
+   "ilvl": 29,
+   "bind": "equip",
+   "dps": 12.12,
+   "speed": 2.6,
+   "dmgMin": 22,
+   "dmgMax": 41,
+   "stats": {
+    "stamina": 6,
+    "intellect": 2
+   },
+   "bonus": {
+    "spellPower": 32
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 32."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_mace_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "trash",
+     "count": 16,
+     "zones": [
+      "Blackfathom Deeps"
+     ],
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 24,
      "rec": 24
     }
    ]
@@ -15133,13 +15278,11 @@
    "stats": {
     "strength": 7
    },
-   "bonus": {
-    "mp5": 3
-   },
+   "bonus": {},
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_goldfeathered_01",
    "raceMask": -1,
    "sources": [
@@ -15227,7 +15370,7 @@
     "Chance on hit: Punctures target's armor, lowering it by 100."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_14",
    "raceMask": -1,
    "sources": [
@@ -15266,7 +15409,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_14",
    "raceMask": -1,
    "sources": [
@@ -15300,7 +15443,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_14",
    "raceMask": -1,
    "sources": [
@@ -15338,11 +15481,12 @@
     "attackPower": 8
    },
    "equip": [
+    "Equip: +8 Attack Power.",
     "Equip: +9 Attack Power against Humanoids."
    ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_01",
    "raceMask": -1,
    "sources": [
@@ -15447,7 +15591,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_02",
    "raceMask": -1,
    "sources": [
@@ -15481,43 +15625,8 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 26,
-     "rec": 26
-    }
-   ]
-  },
-  {
-   "id": 274158,
-   "name": "Death Prophet Spine",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 26,
-   "obtain": 26,
-   "ilvl": 31,
-   "bind": "pickup",
-   "dps": 25.5,
-   "speed": 2.8,
-   "dmgMin": 57,
-   "dmgMax": 86,
-   "stats": {
-    "stamina": 11
-   },
-   "bonus": {
-    "mp5": 5
-   },
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_17",
    "raceMask": -1,
    "sources": [
     {
@@ -15726,7 +15835,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_04",
    "raceMask": -1,
    "sources": [
@@ -15759,7 +15868,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_02",
    "raceMask": -1,
    "sources": [
@@ -15771,6 +15880,43 @@
      ],
      "faction": "both",
      "confidence": "classic-assumed",
+     "asap": 26,
+     "rec": 26
+    }
+   ]
+  },
+  {
+   "id": 274158,
+   "name": "Death Prophet Spine",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 26,
+   "obtain": 26,
+   "ilvl": 31,
+   "bind": "pickup",
+   "dps": 18.93,
+   "speed": 2.8,
+   "dmgMin": 42,
+   "dmgMax": 64,
+   "stats": {
+    "stamina": 11
+   },
+   "bonus": {
+    "spellPower": 34
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 34."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_17",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
      "asap": 26,
      "rec": 26
     }
@@ -15894,7 +16040,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_14",
    "raceMask": -1,
    "sources": [
@@ -15958,7 +16104,7 @@
     "Chance on hit: Wounds the target causing them to bleed for 250 damage over 10 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_10",
    "raceMask": -1,
    "sources": [
@@ -15973,53 +16119,6 @@
      "confidence": "classic-assumed",
      "asap": 27,
      "rec": 27
-    }
-   ]
-  },
-  {
-   "id": 9452,
-   "name": "Hydrocane",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 27,
-   "obtain": 27,
-   "ilvl": 32,
-   "bind": "pickup",
-   "dps": 26.6,
-   "speed": 2.8,
-   "dmgMin": 59,
-   "dmgMax": 90,
-   "stats": {},
-   "bonus": {},
-   "equip": [
-    "Equip: Underwater Breath lasts 50% longer than normal."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Viscous Fallout",
-     "npcId": 7079,
-     "level": 30,
-     "rank": "elite",
-     "zone": "Gnomeregan",
-     "zoneId": 721,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 27,
-     "rec": 27,
-     "basis": {
-      "name": "Viscous Fallout",
-      "level": 30,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },
@@ -16045,7 +16144,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_07",
    "raceMask": -1,
    "sources": [
@@ -16106,7 +16205,7 @@
     "Chance on hit: Hurl spikes at the target, dealing 45 Physical damage and jumping to 1 additional nearby enemy. Each jump reduces the damage by 50%."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_10",
    "raceMask": -1,
    "sources": [
@@ -16155,7 +16254,7 @@
     "Chance on hit: Sends a shadowy bolt at the enemy causing 35 Shadow damage."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_16",
    "raceMask": -1,
    "sources": [
@@ -16188,8 +16287,58 @@
     "Chance on hit: Deals 14 Nature damage every 3 sec to any enemy in an 8 yard radius around the caster for 12 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Viscous Fallout",
+     "npcId": 7079,
+     "level": 30,
+     "rank": "elite",
+     "zone": "Gnomeregan",
+     "zoneId": 721,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 27,
+     "rec": 27,
+     "basis": {
+      "name": "Viscous Fallout",
+      "level": 30,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 9452,
+   "name": "Hydrocane",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 27,
+   "obtain": 27,
+   "ilvl": 32,
+   "bind": "pickup",
+   "dps": 19.82,
+   "speed": 2.8,
+   "dmgMin": 44,
+   "dmgMax": 67,
+   "stats": {},
+   "bonus": {
+    "spellPower": 36
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 36.",
+    "Equip: Underwater Breath lasts 50% longer than normal."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_15",
    "raceMask": -1,
    "sources": [
     {
@@ -16220,7 +16369,7 @@
    "name": "Serrated Raptor Claw",
    "kind": "Dagger",
    "quality": 2,
-   "req": 1,
+   "req": 0,
    "obtain": 27,
    "ilvl": 33,
    "bind": "pickup",
@@ -16234,10 +16383,12 @@
    "bonus": {
     "attackPower": 6
    },
-   "equip": [],
+   "equip": [
+    "Equip: +6 Attack Power."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_16",
    "raceMask": -1,
    "sources": [
@@ -16265,12 +16416,8 @@
      ],
      "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
      "basis": {
-      "name": "Shadetooth",
-      "level": 30,
-      "rank": "elite",
       "from": "dungeon-range",
-      "group": true,
-      "steps": 1
+      "group": true
      },
      "asap": 26,
      "rec": 27
@@ -16354,7 +16501,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_18",
    "raceMask": -1,
    "sources": [
@@ -16388,7 +16535,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_18",
    "raceMask": -1,
    "sources": [
@@ -16421,41 +16568,8 @@
    ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_throwingaxe_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 28,
-     "rec": 28
-    }
-   ]
-  },
-  {
-   "id": 273040,
-   "name": "Spine of the Devourer",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 28,
-   "obtain": 28,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 27.8,
-   "speed": 3.6,
-   "dmgMin": 80,
-   "dmgMax": 120,
-   "stats": {
-    "stamina": 14
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_07",
    "raceMask": -1,
    "sources": [
     {
@@ -16486,10 +16600,12 @@
    "bonus": {
     "spellPower": 14
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 14."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_halbard_01",
    "raceMask": -1,
    "sources": [
@@ -16600,7 +16716,7 @@
     "Chance on hit: Hurls a fiery ball that causes 86 to 110 Fire damage and an additional 18 damage over 6 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_02",
    "raceMask": -1,
    "sources": [
@@ -16826,10 +16942,12 @@
    "bonus": {
     "natureDamage": 19
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases damage done by Nature spells and effects by up to 19."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_18",
    "raceMask": -1,
    "sources": [
@@ -16837,39 +16955,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 28,
-     "rec": 28
-    }
-   ]
-  },
-  {
-   "id": 273053,
-   "name": "Tendonscraper Dagger",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 28,
-   "obtain": 28,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 21.6,
-   "speed": 1.6,
-   "dmgMin": 24,
-   "dmgMax": 45,
-   "stats": {
-    "stamina": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_bone_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 28,
      "rec": 28
     }
@@ -16896,7 +16981,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_17",
    "raceMask": -1,
    "sources": [
@@ -16933,10 +17018,12 @@
    "bonus": {
     "attackPower": 6
    },
-   "equip": [],
+   "equip": [
+    "Equip: +6 Attack Power."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_05",
    "raceMask": -1,
    "sources": [
@@ -16968,129 +17055,13 @@
    "bonus": {
     "attackPower": 6
    },
-   "equip": [],
+   "equip": [
+    "Equip: +6 Attack Power."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 28,
-     "rec": 28
-    }
-   ]
-  },
-  {
-   "id": 2816,
-   "name": "Death Speaker Scepter",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 28,
-   "obtain": 28,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 21.4,
-   "speed": 2.8,
-   "dmgMin": 42,
-   "dmgMax": 78,
-   "stats": {},
-   "bonus": {
-    "healing": 68,
-    "otherDamage": 28
-   },
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_mace_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Death Speaker Jargba",
-     "npcId": 4428,
-     "level": 30,
-     "rank": "elite",
-     "zone": "Razorfen Kraul",
-     "zoneId": 491,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 28,
-     "rec": 28,
-     "basis": {
-      "name": "Death Speaker Jargba",
-      "level": 30,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
-   "id": 271931,
-   "name": "Clever Expeditionary's Spellblade",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 28,
-   "obtain": 28,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 21.4,
-   "speed": 1.4,
-   "dmgMin": 21,
-   "dmgMax": 39,
-   "stats": {
-    "stamina": 4,
-    "intellect": 6,
-    "spirit": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_18",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 28,
-     "rec": 28
-    }
-   ]
-  },
-  {
-   "id": 272086,
-   "name": "Darkspear Insurgent's Spellblade",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 28,
-   "obtain": 28,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 21.4,
-   "speed": 1.4,
-   "dmgMin": 21,
-   "dmgMax": 39,
-   "stats": {
-    "stamina": 4,
-    "intellect": 6,
-    "spirit": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_18",
    "raceMask": -1,
    "sources": [
     {
@@ -17177,6 +17148,43 @@
    ]
   },
   {
+   "id": 273040,
+   "name": "Spine of the Devourer",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 28,
+   "obtain": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 20.69,
+   "speed": 3.6,
+   "dmgMin": 59,
+   "dmgMax": 90,
+   "stats": {
+    "stamina": 14
+   },
+   "bonus": {
+    "spellPower": 36
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 36."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 28,
+     "rec": 28
+    }
+   ]
+  },
+  {
    "id": 15232,
    "name": "Hacking Cleaver",
    "kind": "1H Axe",
@@ -17225,7 +17233,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_08",
    "raceMask": -1,
    "sources": [
@@ -17239,11 +17247,177 @@
    ]
   },
   {
+   "id": 273053,
+   "name": "Tendonscraper Dagger",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 28,
+   "obtain": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 14.38,
+   "speed": 1.6,
+   "dmgMin": 16,
+   "dmgMax": 30,
+   "stats": {
+    "stamina": 5
+   },
+   "bonus": {
+    "spellPower": 36
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 36."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_misc_bone_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 28,
+     "rec": 28
+    }
+   ]
+  },
+  {
+   "id": 2816,
+   "name": "Death Speaker Scepter",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 28,
+   "obtain": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 14.29,
+   "speed": 2.8,
+   "dmgMin": 28,
+   "dmgMax": 52,
+   "stats": {},
+   "bonus": {
+    "healing": 68,
+    "otherDamage": 28
+   },
+   "equip": [
+    "Equip: Increases healing done by magical spells and effects by up to 68.",
+    "Equip: Increases damage done by Shadow spells and effects by up to 28."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_mace_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Death Speaker Jargba",
+     "npcId": 4428,
+     "level": 30,
+     "rank": "elite",
+     "zone": "Razorfen Kraul",
+     "zoneId": 491,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 28,
+     "rec": 28,
+     "basis": {
+      "name": "Death Speaker Jargba",
+      "level": 30,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 271931,
+   "name": "Clever Expeditionary's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 28,
+   "obtain": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 14.29,
+   "speed": 1.4,
+   "dmgMin": 14,
+   "dmgMax": 26,
+   "stats": {
+    "stamina": 4,
+    "intellect": 6,
+    "spirit": 3
+   },
+   "bonus": {
+    "spellPower": 36
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 36."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 28,
+     "rec": 28
+    }
+   ]
+  },
+  {
+   "id": 272086,
+   "name": "Darkspear Insurgent's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 28,
+   "obtain": 28,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 14.29,
+   "speed": 1.4,
+   "dmgMin": 14,
+   "dmgMax": 26,
+   "stats": {
+    "stamina": 4,
+    "intellect": 6,
+    "spirit": 3
+   },
+   "bonus": {
+    "spellPower": 36
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 36."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 28,
+     "rec": 28
+    }
+   ]
+  },
+  {
    "id": 279841,
    "name": "Defender of Dalaran",
    "kind": "2H Mace",
    "quality": 3,
-   "req": 1,
+   "req": 0,
    "obtain": 29,
    "ilvl": 36,
    "bind": "pickup",
@@ -17260,7 +17434,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_04",
    "raceMask": -1,
    "sources": [
@@ -17288,12 +17462,8 @@
      ],
      "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
      "basis": {
-      "name": "Shade of the Archmage",
-      "level": 32,
-      "rank": "elite",
       "from": "dungeon-range",
-      "group": true,
-      "steps": 2
+      "group": true
      },
      "asap": 28,
      "rec": 29
@@ -17369,7 +17539,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_halbard_01",
    "raceMask": -1,
    "sources": [
@@ -17416,7 +17586,7 @@
     "Chance on hit: Blasts a target for 127 to 139 Frost damage."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_04",
    "raceMask": -1,
    "sources": [
@@ -17431,54 +17601,6 @@
      "confidence": "classic-assumed",
      "asap": 29,
      "rec": 29
-    }
-   ]
-  },
-  {
-   "id": 6689,
-   "name": "Wind Spirit Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 29,
-   "obtain": 29,
-   "ilvl": 34,
-   "bind": "pickup",
-   "dps": 28.9,
-   "speed": 3.3,
-   "dmgMin": 76,
-   "dmgMax": 115,
-   "stats": {
-    "stamina": 6,
-    "spirit": 16
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Earthcaller Halmgar",
-     "npcId": 4842,
-     "level": 32,
-     "rank": "rare-elite",
-     "zone": "Razorfen Kraul",
-     "zoneId": 491,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 29,
-     "rec": 29,
-     "basis": {
-      "name": "Earthcaller Halmgar",
-      "level": 32,
-      "rank": "rare-elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },
@@ -17576,7 +17698,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_10",
    "raceMask": -1,
    "sources": [
@@ -17610,7 +17732,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_shovel_02",
    "raceMask": -1,
    "sources": [
@@ -17683,11 +17805,12 @@
     "attackPower": 12
    },
    "equip": [
+    "Equip: +12 Attack Power.",
     "Equip: +15 Attack Power against Humanoids."
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_gauntlets_11",
    "raceMask": -1,
    "sources": [
@@ -17734,7 +17857,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_04",
    "raceMask": -1,
    "sources": [
@@ -17772,6 +17895,59 @@
      },
      "asap": 29,
      "rec": 29
+    }
+   ]
+  },
+  {
+   "id": 6689,
+   "name": "Wind Spirit Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 29,
+   "obtain": 29,
+   "ilvl": 34,
+   "bind": "pickup",
+   "dps": 21.36,
+   "speed": 3.3,
+   "dmgMin": 56,
+   "dmgMax": 85,
+   "stats": {
+    "stamina": 6,
+    "spirit": 16
+   },
+   "bonus": {
+    "healing": 71,
+    "spellDamage": 23
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 71 and damage done by up to 23 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Earthcaller Halmgar",
+     "npcId": 4842,
+     "level": 32,
+     "rank": "rare-elite",
+     "zone": "Razorfen Kraul",
+     "zoneId": 491,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 29,
+     "rec": 29,
+     "basis": {
+      "name": "Earthcaller Halmgar",
+      "level": 32,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -17850,7 +18026,7 @@
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_spear_01",
    "raceMask": -1,
    "sources": [
@@ -17895,7 +18071,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_11",
    "raceMask": -1,
    "sources": [
@@ -18104,10 +18280,12 @@
    "bonus": {
     "attackPower": 34
    },
-   "equip": [],
+   "equip": [
+    "Equip: +34 Attack Power."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_13",
    "raceMask": -1,
    "sources": [
@@ -18117,54 +18295,6 @@
      "confidence": "classic-assumed",
      "asap": 30,
      "rec": 30
-    }
-   ]
-  },
-  {
-   "id": 6691,
-   "name": "Swinetusk Shank",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 30,
-   "obtain": 30,
-   "ilvl": 35,
-   "bind": "pickup",
-   "dps": 23,
-   "speed": 1.5,
-   "dmgMin": 24,
-   "dmgMax": 45,
-   "stats": {
-    "stamina": 6,
-    "spirit": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_misc_bone_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Agathelos the Raging",
-     "npcId": 4422,
-     "level": 33,
-     "rank": "elite",
-     "zone": "Razorfen Kraul",
-     "zoneId": 491,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 30,
-     "rec": 30,
-     "basis": {
-      "name": "Agathelos the Raging",
-      "level": 33,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },
@@ -18189,7 +18319,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_18",
    "raceMask": -1,
    "sources": [
@@ -18236,7 +18366,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_19",
    "raceMask": -1,
    "sources": [
@@ -18282,10 +18412,12 @@
    "bonus": {
     "attackPower": 9
    },
-   "equip": [],
+   "equip": [
+    "Equip: +9 Attack Power."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_14",
    "raceMask": -1,
    "sources": [
@@ -18320,7 +18452,7 @@
     "Chance on hit: Disarm target's weapon for 5 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_wrench_01",
    "raceMask": -1,
    "sources": [
@@ -18361,6 +18493,58 @@
    ]
   },
   {
+   "id": 6691,
+   "name": "Swinetusk Shank",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 30,
+   "obtain": 30,
+   "ilvl": 35,
+   "bind": "pickup",
+   "dps": 15.33,
+   "speed": 1.5,
+   "dmgMin": 16,
+   "dmgMax": 30,
+   "stats": {
+    "stamina": 6,
+    "spirit": 4
+   },
+   "bonus": {
+    "spellPower": 40
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 40."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_misc_bone_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Agathelos the Raging",
+     "npcId": 4422,
+     "level": 33,
+     "rank": "elite",
+     "zone": "Razorfen Kraul",
+     "zoneId": 491,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 30,
+     "rec": 30,
+     "basis": {
+      "name": "Agathelos the Raging",
+      "level": 33,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 9459,
    "name": "Thermaplugg's Left Arm",
    "kind": "2H Axe",
@@ -18382,7 +18566,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_03",
    "raceMask": -1,
    "sources": [
@@ -18426,12 +18610,14 @@
    "bonus": {
     "attackPower": 28
    },
-   "equip": [],
+   "equip": [
+    "Equip: +28 Attack Power."
+   ],
    "chance": [
     "Chance on hit: Discipline the target, dealing 91 Physical damage. Canines and Hyenas are Stunned and sit for 3 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_18",
    "raceMask": -1,
    "sources": [
@@ -18533,7 +18719,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_14",
    "raceMask": -1,
    "sources": [
@@ -18567,7 +18753,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_01",
    "raceMask": -1,
    "sources": [
@@ -18598,7 +18784,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_06",
    "raceMask": -1,
    "sources": [
@@ -18631,7 +18817,7 @@
     "Chance on hit: Hurls a fiery ball that causes 51 Fire damage and an additional 12 damage over 6 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_torch_lit",
    "raceMask": -1,
    "sources": [
@@ -18670,7 +18856,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_18",
    "raceMask": -1,
    "sources": [
@@ -19083,50 +19269,11 @@
    ]
   },
   {
-   "id": 7757,
-   "name": "Windweaver Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 32,
-   "obtain": 32,
-   "ilvl": 37,
-   "bind": "equip",
-   "dps": 32.4,
-   "speed": 3.1,
-   "dmgMin": 80,
-   "dmgMax": 121,
-   "stats": {
-    "stamina": 17
-   },
-   "bonus": {
-    "otherDamage": 51
-   },
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_wand_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "trash",
-     "count": 19,
-     "zones": [
-      "Scarlet Monastery"
-     ],
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 32,
-     "rec": 32
-    }
-   ]
-  },
-  {
    "id": 279844,
    "name": "Striking Staff",
    "kind": "Staff",
    "quality": 3,
-   "req": 1,
+   "req": 0,
    "obtain": 32,
    "ilvl": 36,
    "bind": "pickup",
@@ -19143,7 +19290,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_28",
    "raceMask": -1,
    "sources": [
@@ -19301,7 +19448,7 @@
     "Chance on hit: Blasts a target for 63 Frost damage."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_24",
    "raceMask": -1,
    "sources": [
@@ -19338,7 +19485,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_bone_10",
    "raceMask": -1,
    "sources": [
@@ -19377,7 +19524,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_16",
    "raceMask": -1,
    "sources": [
@@ -19410,12 +19557,53 @@
     "Chance on hit: Lowers the Attack Power of the target by 40 for 1 min."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_14",
    "raceMask": -1,
    "sources": [
     {
      "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 32,
+     "rec": 32
+    }
+   ]
+  },
+  {
+   "id": 7757,
+   "name": "Windweaver Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 32,
+   "obtain": 32,
+   "ilvl": 37,
+   "bind": "equip",
+   "dps": 24.19,
+   "speed": 3.1,
+   "dmgMin": 60,
+   "dmgMax": 90,
+   "stats": {
+    "stamina": 17
+   },
+   "bonus": {
+    "otherDamage": 51
+   },
+   "equip": [
+    "Equip: Increases damage done by Arcane spells and effects by up to 51."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_wand_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "trash",
+     "count": 19,
+     "zones": [
+      "Scarlet Monastery"
+     ],
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 32,
@@ -19505,7 +19693,7 @@
     "Chance on hit: Puncture the target, inflicting 21 Physical damage."
    ],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_monsterfang_01",
    "raceMask": -1,
    "sources": [
@@ -19536,7 +19724,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_08",
    "raceMask": -1,
    "sources": [
@@ -19544,40 +19732,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 32,
-     "rec": 32
-    }
-   ]
-  },
-  {
-   "id": 281750,
-   "name": "Murloc Oracle's Dagger",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 32,
-   "obtain": 32,
-   "ilvl": 37,
-   "bind": "equip",
-   "dps": 19.4,
-   "speed": 1.8,
-   "dmgMin": 24,
-   "dmgMax": 46,
-   "stats": {
-    "stamina": 3,
-    "spirit": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 32,
      "rec": 32
     }
@@ -19639,6 +19793,45 @@
    ]
   },
   {
+   "id": 281750,
+   "name": "Murloc Oracle's Dagger",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 32,
+   "obtain": 32,
+   "ilvl": 37,
+   "bind": "equip",
+   "dps": 13.06,
+   "speed": 1.8,
+   "dmgMin": 16,
+   "dmgMax": 31,
+   "stats": {
+    "stamina": 3,
+    "spirit": 5
+   },
+   "bonus": {
+    "healing": 56,
+    "spellDamage": 18
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 56 and damage done by up to 18 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 32,
+     "rec": 32
+    }
+   ]
+  },
+  {
    "id": 937,
    "name": "Black Duskwood Staff",
    "kind": "Staff",
@@ -19658,7 +19851,7 @@
     "Chance on hit: Sends a shadowy bolt at the enemy causing 110 to 140 Shadow damage."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_13",
    "raceMask": -1,
    "sources": [
@@ -19724,7 +19917,7 @@
     "Chance on hit: Reduces target's attack power by 30 for 30 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_15",
    "raceMask": -1,
    "sources": [
@@ -19758,7 +19951,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_06",
    "raceMask": -1,
    "sources": [
@@ -19793,7 +19986,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_bone_elfskull_01",
    "raceMask": -1,
    "sources": [
@@ -19908,11 +20101,12 @@
     "attackPower": 10
    },
    "equip": [
+    "Equip: +10 Attack Power.",
     "Equip: +9 Attack Power against Beasts."
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_15",
    "raceMask": -1,
    "sources": [
@@ -19946,7 +20140,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_16",
    "raceMask": -1,
    "sources": [
@@ -19980,7 +20174,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_05",
    "raceMask": -1,
    "sources": [
@@ -20037,7 +20231,7 @@
     "Chance on hit: Smash the target for 85 damage."
    ],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_gauntlets_11",
    "raceMask": -1,
    "sources": [
@@ -20059,19 +20253,23 @@
    "obtain": 33,
    "ilvl": 38,
    "bind": "pickup",
-   "dps": 20.4,
+   "dps": 13.75,
    "speed": 2.4,
-   "dmgMin": 34,
-   "dmgMax": 64,
+   "dmgMin": 23,
+   "dmgMax": 43,
    "stats": {
     "stamina": 3,
     "intellect": 5
    },
-   "bonus": {},
-   "equip": [],
+   "bonus": {
+    "spellPower": 30
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 30."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_bone_dwarfskull_01",
    "raceMask": -1,
    "sources": [
@@ -20103,57 +20301,6 @@
      },
      "asap": 31,
      "rec": 33
-    }
-   ]
-  },
-  {
-   "id": 7713,
-   "name": "Illusionary Rod",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 34,
-   "obtain": 34,
-   "ilvl": 39,
-   "bind": "pickup",
-   "dps": 34.7,
-   "speed": 3.4,
-   "dmgMin": 94,
-   "dmgMax": 142,
-   "stats": {
-    "stamina": 10,
-    "intellect": 6,
-    "spirit": 7
-   },
-   "bonus": {
-    "critRating": 14
-   },
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_wand_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Arcanist Doan",
-     "npcId": 6487,
-     "level": 37,
-     "rank": "elite",
-     "zone": "Scarlet Monastery",
-     "zoneId": 796,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 34,
-     "rec": 34,
-     "basis": {
-      "name": "Arcanist Doan",
-      "level": 37,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },
@@ -20235,54 +20382,6 @@
    ]
   },
   {
-   "id": 7714,
-   "name": "Hypnotic Blade",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 34,
-   "obtain": 34,
-   "ilvl": 39,
-   "bind": "pickup",
-   "dps": 26.8,
-   "speed": 1.4,
-   "dmgMin": 26,
-   "dmgMax": 49,
-   "stats": {
-    "intellect": 8,
-    "spirit": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Arcanist Doan",
-     "npcId": 6487,
-     "level": 37,
-     "rank": "elite",
-     "zone": "Scarlet Monastery",
-     "zoneId": 796,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 34,
-     "rec": 34,
-     "basis": {
-      "name": "Arcanist Doan",
-      "level": 37,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
    "id": 7736,
    "name": "Fight Club",
    "kind": "1H Mace",
@@ -20305,7 +20404,7 @@
     "Chance on hit: Silences an enemy, preventing it from casting spells for 6 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_11",
    "raceMask": -1,
    "sources": [
@@ -20342,7 +20441,7 @@
     "Chance on hit: Blasts a target for 10 to 20 Nature damage."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_25",
    "raceMask": -1,
    "sources": [
@@ -20352,6 +20451,61 @@
      "confidence": "classic-assumed",
      "asap": 34,
      "rec": 34
+    }
+   ]
+  },
+  {
+   "id": 7713,
+   "name": "Illusionary Rod",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 34,
+   "obtain": 34,
+   "ilvl": 39,
+   "bind": "pickup",
+   "dps": 25.74,
+   "speed": 3.4,
+   "dmgMin": 70,
+   "dmgMax": 105,
+   "stats": {
+    "stamina": 10,
+    "intellect": 6,
+    "spirit": 7
+   },
+   "bonus": {
+    "spellPower": 44,
+    "crit": 1
+   },
+   "equip": [
+    "Equip: Improves your chance to get a critical strike by 1.0%.",
+    "Equip: Increases damage and healing done by magical spells and effects by up to 44."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_wand_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Arcanist Doan",
+     "npcId": 6487,
+     "level": 37,
+     "rank": "elite",
+     "zone": "Scarlet Monastery",
+     "zoneId": 796,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 34,
+     "rec": 34,
+     "basis": {
+      "name": "Arcanist Doan",
+      "level": 37,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -20373,7 +20527,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_15",
    "raceMask": -1,
    "sources": [
@@ -20404,7 +20558,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_08",
    "raceMask": -1,
    "sources": [
@@ -20569,6 +20723,58 @@
    ]
   },
   {
+   "id": 7714,
+   "name": "Hypnotic Blade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 34,
+   "obtain": 34,
+   "ilvl": 39,
+   "bind": "pickup",
+   "dps": 17.5,
+   "speed": 1.4,
+   "dmgMin": 17,
+   "dmgMax": 32,
+   "stats": {
+    "intellect": 8,
+    "spirit": 3
+   },
+   "bonus": {
+    "spellPower": 44
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 44."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Arcanist Doan",
+     "npcId": 6487,
+     "level": 37,
+     "rank": "elite",
+     "zone": "Scarlet Monastery",
+     "zoneId": 796,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 34,
+     "rec": 34,
+     "basis": {
+      "name": "Arcanist Doan",
+      "level": 37,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 870,
    "name": "Fiery War Axe",
    "kind": "2H Axe",
@@ -20577,57 +20783,19 @@
    "obtain": 35,
    "ilvl": 40,
    "bind": "equip",
-   "dps": 40.4,
-   "speed": 3.6,
-   "dmgMin": 116,
-   "dmgMax": 175,
-   "stats": {
-    "strength": 15
-   },
+   "dps": 40.34,
+   "speed": 2.9,
+   "dmgMin": 93,
+   "dmgMax": 141,
+   "stats": {},
    "bonus": {},
    "equip": [],
    "chance": [
     "Chance on hit: Hurls a fiery ball that causes 155 to 197 Fire damage and an additional 24 damage over 6 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 35,
-     "rec": 35
-    }
-   ]
-  },
-  {
-   "id": 873,
-   "name": "Staff of Jordan",
-   "kind": "Staff",
-   "quality": 4,
-   "req": 35,
-   "obtain": 35,
-   "ilvl": 40,
-   "bind": "equip",
-   "dps": 40.4,
-   "speed": 3.7,
-   "dmgMin": 119,
-   "dmgMax": 180,
-   "stats": {
-    "intellect": 20,
-    "spirit": 10
-   },
-   "bonus": {
-    "hitRating": 15
-   },
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_13",
    "raceMask": -1,
    "sources": [
     {
@@ -20661,7 +20829,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "classic",
    "icon": "inv_axe_14",
    "raceMask": -1,
    "sources": [
@@ -20697,12 +20865,51 @@
     "attackPower": 34
    },
    "equip": [
+    "Equip: +34 Attack Power.",
     "Equip: +33 Attack Power against Undead."
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_24",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 35,
+     "rec": 35
+    }
+   ]
+  },
+  {
+   "id": 873,
+   "name": "Staff of Jordan",
+   "kind": "Staff",
+   "quality": 4,
+   "req": 35,
+   "obtain": 35,
+   "ilvl": 40,
+   "bind": "equip",
+   "dps": 29.86,
+   "speed": 3.7,
+   "dmgMin": 88,
+   "dmgMax": 133,
+   "stats": {
+    "intellect": 11,
+    "spirit": 11
+   },
+   "bonus": {
+    "spellPower": 60
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 60."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_13",
    "raceMask": -1,
    "sources": [
     {
@@ -20732,7 +20939,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_16",
    "raceMask": -1,
    "sources": [
@@ -20806,10 +21013,12 @@
    "bonus": {
     "attackPower": 11
    },
-   "equip": [],
+   "equip": [
+    "Equip: +11 Attack Power."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_pick_02",
    "raceMask": -1,
    "sources": [
@@ -21092,7 +21301,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_09",
    "raceMask": -1,
    "sources": [
@@ -21160,7 +21369,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_09",
    "raceMask": -1,
    "sources": [
@@ -21289,7 +21498,7 @@
     "Chance on hit: Attack all nearby enemies, dealing weapon damage plus 5 every 3 sec for 9 sec, and reducing your own movement speed by 80%."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_halberd_05",
    "raceMask": -1,
    "sources": [
@@ -21337,7 +21546,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_28",
    "raceMask": -1,
    "sources": [
@@ -21384,7 +21593,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_04",
    "raceMask": -1,
    "sources": [
@@ -21417,7 +21626,7 @@
     "Chance on hit: Wounds the target for 140 to 196 damage."
    ],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_01",
    "raceMask": -1,
    "sources": [
@@ -21542,7 +21751,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_08",
    "raceMask": -1,
    "sources": [
@@ -21831,7 +22040,7 @@
     "Chance on hit: Wounds the target causing them to bleed for 70 damage over 7 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_23",
    "raceMask": -1,
    "sources": [
@@ -22034,7 +22243,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_06",
    "raceMask": -1,
    "sources": [
@@ -22120,12 +22329,14 @@
    "bonus": {
     "attackPower": 8
    },
-   "equip": [],
+   "equip": [
+    "Equip: +8 Attack Power."
+   ],
    "chance": [
     "Chance on hit: Your attacks have a high chance to poison the target for 8 Nature damage every 3 sec for 9 sec."
    ],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_monsterfang_01",
    "raceMask": -1,
    "sources": [
@@ -22156,7 +22367,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_01",
    "raceMask": -1,
    "sources": [
@@ -22430,7 +22641,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_18",
    "raceMask": -1,
    "sources": [
@@ -22464,44 +22675,8 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_18",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 38,
-     "rec": 38
-    }
-   ]
-  },
-  {
-   "id": 274381,
-   "name": "Coldbringer Spine",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 38,
-   "obtain": 38,
-   "ilvl": 43,
-   "bind": "pickup",
-   "dps": 38,
-   "speed": 2.8,
-   "dmgMin": 85,
-   "dmgMax": 128,
-   "stats": {
-    "spirit": 20
-   },
-   "bonus": {
-    "hitRating": 10,
-    "frostDamage": 59
-   },
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_skeletonspinepet_bone",
    "raceMask": -1,
    "sources": [
     {
@@ -22532,10 +22707,12 @@
    "bonus": {
     "defense": 5
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increased Defense +5."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_13",
    "raceMask": -1,
    "sources": [
@@ -22608,10 +22785,12 @@
    "bonus": {
     "attackPower": 7
    },
-   "equip": [],
+   "equip": [
+    "Equip: +7 Attack Power."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_05",
    "raceMask": -1,
    "sources": [
@@ -22643,10 +22822,12 @@
    "bonus": {
     "attackPower": 7
    },
-   "equip": [],
+   "equip": [
+    "Equip: +7 Attack Power."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_16",
    "raceMask": -1,
    "sources": [
@@ -22753,7 +22934,7 @@
     "Chance on hit: Launches a bolt of frost at the enemy causing 34 to 50 Frost damage and slowing movement speed by 50% for 5 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_sword_34",
    "raceMask": -1,
    "sources": [
@@ -22781,64 +22962,33 @@
    ]
   },
   {
-   "id": 271930,
-   "name": "Clever Expeditionary's Spellblade",
-   "kind": "Dagger",
+   "id": 274381,
+   "name": "Coldbringer Spine",
+   "kind": "Staff",
    "quality": 3,
    "req": 38,
    "obtain": 38,
    "ilvl": 43,
    "bind": "pickup",
-   "dps": 28.9,
-   "speed": 1.4,
-   "dmgMin": 28,
-   "dmgMax": 53,
+   "dps": 28.21,
+   "speed": 2.8,
+   "dmgMin": 63,
+   "dmgMax": 95,
    "stats": {
-    "stamina": 5,
-    "intellect": 8,
-    "spirit": 3
+    "spirit": 20
    },
-   "bonus": {},
-   "equip": [],
+   "bonus": {
+    "frostDamage": 59,
+    "hit": 1
+   },
+   "equip": [
+    "Equip: Improves your chance to hit by 1.0%.",
+    "Equip: Increases damage done by Frost spells and effects by up to 59."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_18",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 38,
-     "rec": 38
-    }
-   ]
-  },
-  {
-   "id": 272085,
-   "name": "Darkspear Insurgent's Spellblade",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 38,
-   "obtain": 38,
-   "ilvl": 43,
-   "bind": "pickup",
-   "dps": 28.9,
-   "speed": 1.4,
-   "dmgMin": 28,
-   "dmgMax": 53,
-   "stats": {
-    "stamina": 5,
-    "intellect": 8,
-    "spirit": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_18",
+   "numbers": "forever",
+   "icon": "inv_skeletonspinepet_bone",
    "raceMask": -1,
    "sources": [
     {
@@ -22868,7 +23018,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_06",
    "raceMask": -1,
    "sources": [
@@ -22902,7 +23052,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_wrench_01",
    "raceMask": -1,
    "sources": [
@@ -22912,54 +23062,6 @@
      "confidence": "community-untested",
      "asap": 38,
      "rec": 38
-    }
-   ]
-  },
-  {
-   "id": 9457,
-   "name": "Royal Diplomatic Scepter",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 30,
-   "obtain": 38,
-   "ilvl": 35,
-   "bind": "pickup",
-   "dps": 23,
-   "speed": 2.3,
-   "dmgMin": 37,
-   "dmgMax": 69,
-   "stats": {
-    "stamina": 3,
-    "spirit": 7
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_mace_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Dark Iron Ambassador",
-     "npcId": 6228,
-     "level": 33,
-     "rank": "rare-elite",
-     "zone": "Gnomeregan",
-     "zoneId": 721,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 36,
-     "rec": 38,
-     "basis": {
-      "name": "Dark Iron Ambassador",
-      "level": 41,
-      "rank": "rare-elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },
@@ -23019,37 +23121,133 @@
    ]
   },
   {
-   "id": 274430,
-   "name": "Rock Sentinel Slicer",
-   "kind": "2H Axe",
+   "id": 271930,
+   "name": "Clever Expeditionary's Spellblade",
+   "kind": "Dagger",
    "quality": 3,
-   "req": 39,
-   "obtain": 39,
-   "ilvl": 44,
+   "req": 38,
+   "obtain": 38,
+   "ilvl": 43,
    "bind": "pickup",
-   "dps": 38.9,
-   "speed": 2.8,
-   "dmgMin": 87,
-   "dmgMax": 131,
+   "dps": 19.64,
+   "speed": 1.4,
+   "dmgMin": 19,
+   "dmgMax": 36,
    "stats": {
-    "intellect": 12
+    "stamina": 5,
+    "intellect": 8,
+    "spirit": 3
    },
-   "bonus": {},
+   "bonus": {
+    "spellPower": 48
+   },
    "equip": [
-    "Equip: While in combat, your healing spells have a chance to grant an ally 300 armor for 10 sec."
+    "Equip: Increases damage and healing done by magical spells and effects by up to 48."
    ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
-   "icon": "inv_axe_04",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_18",
    "raceMask": -1,
    "sources": [
     {
      "type": "unknown",
      "faction": "both",
      "confidence": "community-untested",
-     "asap": 39,
-     "rec": 39
+     "asap": 38,
+     "rec": 38
+    }
+   ]
+  },
+  {
+   "id": 272085,
+   "name": "Darkspear Insurgent's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 38,
+   "obtain": 38,
+   "ilvl": 43,
+   "bind": "pickup",
+   "dps": 19.64,
+   "speed": 1.4,
+   "dmgMin": 19,
+   "dmgMax": 36,
+   "stats": {
+    "stamina": 5,
+    "intellect": 8,
+    "spirit": 3
+   },
+   "bonus": {
+    "spellPower": 48
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 48."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 38,
+     "rec": 38
+    }
+   ]
+  },
+  {
+   "id": 9457,
+   "name": "Royal Diplomatic Scepter",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 30,
+   "obtain": 38,
+   "ilvl": 35,
+   "bind": "pickup",
+   "dps": 15.22,
+   "speed": 2.3,
+   "dmgMin": 24,
+   "dmgMax": 46,
+   "stats": {
+    "stamina": 3,
+    "spirit": 7
+   },
+   "bonus": {
+    "healing": 75,
+    "spellDamage": 25
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 75 and damage done by up to 25 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_mace_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Dark Iron Ambassador",
+     "npcId": 6228,
+     "level": 33,
+     "rank": "rare-elite",
+     "zone": "Gnomeregan",
+     "zoneId": 721,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 36,
+     "rec": 38,
+     "basis": {
+      "name": "Dark Iron Ambassador",
+      "level": 41,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -23075,7 +23273,7 @@
     "Chance on hit: Delivers a fatal wound for 259 to 363 Physical damage. Deals 50% increased damage to targets below 25% health."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_halberd_08",
    "raceMask": -1,
    "sources": [
@@ -23107,14 +23305,15 @@
    "dmgMax": 140,
    "stats": {},
    "bonus": {
-    "dodgeRating": 12
+    "dodge": 1
    },
    "equip": [
+    "Equip: Increases your chance to Dodge an attack by 1.0%.",
     "Equip: Increases your chance to Parry an attack by 1.0%."
    ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_01",
    "raceMask": -1,
    "sources": [
@@ -23335,54 +23534,6 @@
    ]
   },
   {
-   "id": 7721,
-   "name": "Hand of Righteousness",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 39,
-   "obtain": 39,
-   "ilvl": 44,
-   "bind": "pickup",
-   "dps": 29.8,
-   "speed": 2.7,
-   "dmgMin": 56,
-   "dmgMax": 105,
-   "stats": {
-    "stamina": 7,
-    "spirit": 8
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_hammer_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "High Inquisitor Whitemane",
-     "npcId": 3977,
-     "level": 42,
-     "rank": "elite",
-     "zone": "Scarlet Monastery",
-     "zoneId": 796,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 39,
-     "rec": 39,
-     "basis": {
-      "name": "High Inquisitor Whitemane",
-      "level": 42,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
    "id": 6831,
    "name": "Black Menace",
    "kind": "Dagger",
@@ -23433,6 +23584,45 @@
       "steps": 4
      },
      "asap": 37,
+     "rec": 39
+    }
+   ]
+  },
+  {
+   "id": 274430,
+   "name": "Rock Sentinel Slicer",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 39,
+   "obtain": 39,
+   "ilvl": 44,
+   "bind": "pickup",
+   "dps": 28.75,
+   "speed": 2.8,
+   "dmgMin": 64,
+   "dmgMax": 97,
+   "stats": {
+    "intellect": 12
+   },
+   "bonus": {
+    "healing": 94,
+    "spellDamage": 31
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 94 and damage done by up to 31 for all magical spells and effects.",
+    "Equip: While in combat, your healing spells have a chance to grant an ally 300 armor for 10 sec."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_axe_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 39,
      "rec": 39
     }
    ]
@@ -23565,6 +23755,59 @@
    ]
   },
   {
+   "id": 7721,
+   "name": "Hand of Righteousness",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 39,
+   "obtain": 39,
+   "ilvl": 44,
+   "bind": "pickup",
+   "dps": 19.81,
+   "speed": 2.7,
+   "dmgMin": 37,
+   "dmgMax": 70,
+   "stats": {
+    "stamina": 7,
+    "spirit": 8
+   },
+   "bonus": {
+    "healing": 94,
+    "spellDamage": 31
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 94 and damage done by up to 31 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_hammer_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "High Inquisitor Whitemane",
+     "npcId": 3977,
+     "level": 42,
+     "rank": "elite",
+     "zone": "Scarlet Monastery",
+     "zoneId": 796,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 39,
+     "rec": 39,
+     "basis": {
+      "name": "High Inquisitor Whitemane",
+      "level": 42,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 9423,
    "name": "The Jackhammer",
    "kind": "2H Mace",
@@ -23688,10 +23931,12 @@
    "bonus": {
     "spellPower": 15
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 15."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_04",
    "raceMask": -1,
    "sources": [
@@ -23724,7 +23969,7 @@
     "Chance on hit: Wounds the target for 95 to 121 damage."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_sword_13",
    "raceMask": -1,
    "sources": [
@@ -23758,7 +24003,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_flute_01",
    "raceMask": -1,
    "sources": [
@@ -23897,7 +24142,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_04",
    "raceMask": -1,
    "sources": [
@@ -24004,7 +24249,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_23",
    "raceMask": -1,
    "sources": [
@@ -24071,7 +24316,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_fish_27",
    "raceMask": -1,
    "sources": [
@@ -24145,10 +24390,12 @@
    "bonus": {
     "natureDamage": 14
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases damage done by Nature spells and effects by up to 14."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_25",
    "raceMask": -1,
    "sources": [
@@ -24234,7 +24481,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_19",
    "raceMask": -1,
    "sources": [
@@ -24265,7 +24512,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_17",
    "raceMask": -1,
    "sources": [
@@ -24352,7 +24599,7 @@
     "Chance on hit: Slows the target's movement by 50% for 10 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_drink_03",
    "raceMask": -1,
    "sources": [
@@ -24385,7 +24632,7 @@
     "Chance on hit: Blast the target with the fires of a forge, inflicting 51 Fire damage."
    ],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_20",
    "raceMask": -1,
    "sources": [
@@ -24511,7 +24758,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_16",
    "raceMask": -1,
    "sources": [
@@ -24680,7 +24927,7 @@
     "Chance on hit: Grants 1 extra attack on your next swing."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_17",
    "raceMask": -1,
    "sources": [
@@ -24734,53 +24981,6 @@
    ]
   },
   {
-   "id": 9419,
-   "name": "Galgann's Firehammer",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 42,
-   "obtain": 42,
-   "ilvl": 47,
-   "bind": "pickup",
-   "dps": 31.6,
-   "speed": 2.2,
-   "dmgMin": 48,
-   "dmgMax": 91,
-   "stats": {},
-   "bonus": {},
-   "equip": [
-    "Equip: Chance on harmful spell cast to blast a target for 64 to 90 Fire damage. (100ms cooldown)"
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_hammer_17",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Galgann Firehammer",
-     "npcId": 7291,
-     "level": 45,
-     "rank": "elite",
-     "zone": "Uldaman",
-     "zoneId": 1337,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 42,
-     "rec": 42,
-     "basis": {
-      "name": "Galgann Firehammer",
-      "level": 45,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
    "id": 4091,
    "name": "Widowmaker",
    "kind": "Dagger",
@@ -24801,7 +25001,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_03",
    "raceMask": -1,
    "sources": [
@@ -24998,10 +25198,12 @@
    "bonus": {
     "attackPower": 9
    },
-   "equip": [],
+   "equip": [
+    "Equip: +9 Attack Power."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_monsterfang_01",
    "raceMask": -1,
    "sources": [
@@ -25119,6 +25321,56 @@
    ]
   },
   {
+   "id": 9419,
+   "name": "Galgann's Firehammer",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 42,
+   "obtain": 42,
+   "ilvl": 47,
+   "bind": "pickup",
+   "dps": 20.91,
+   "speed": 2.2,
+   "dmgMin": 32,
+   "dmgMax": 60,
+   "stats": {},
+   "bonus": {
+    "spellPower": 54
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 54.",
+    "Equip: Chance on harmful spell cast to blast a target for 64 to 90 Fire damage. (100ms cooldown)"
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_hammer_17",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Galgann Firehammer",
+     "npcId": 7291,
+     "level": 45,
+     "rank": "elite",
+     "zone": "Uldaman",
+     "zoneId": 1337,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 42,
+     "rec": 42,
+     "basis": {
+      "name": "Galgann Firehammer",
+      "level": 45,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 943,
    "name": "Warden Staff",
    "kind": "Staff",
@@ -25172,12 +25424,14 @@
     "strength": 23
    },
    "bonus": {
-    "hitRating": 10
+    "hit": 1
    },
-   "equip": [],
+   "equip": [
+    "Equip: Improves your chance to hit by 1.0%."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_24",
    "raceMask": -1,
    "sources": [
@@ -25592,7 +25846,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_16",
    "raceMask": -1,
    "sources": [
@@ -25713,10 +25967,12 @@
    "bonus": {
     "spellDamage": 21
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases damage done by magical spells and effects by up to 21."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_16",
    "raceMask": -1,
    "sources": [
@@ -25746,12 +26002,14 @@
     "strength": 5
    },
    "bonus": {
-    "critRating": 28
+    "crit": 2
    },
-   "equip": [],
+   "equip": [
+    "Equip: Improves your chance to get a critical strike by 2%."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "classic",
    "icon": "inv_hammer_12",
    "raceMask": -1,
    "sources": [
@@ -25775,74 +26033,6 @@
       "from": "wowhead",
       "group": true
      }
-    }
-   ]
-  },
-  {
-   "id": 274432,
-   "name": "Stone Keeper Spire",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 44,
-   "obtain": 44,
-   "ilvl": 49,
-   "bind": "pickup",
-   "dps": 42.7,
-   "speed": 3.2,
-   "dmgMin": 109,
-   "dmgMax": 164,
-   "stats": {
-    "stamina": 19,
-    "armor": 180
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 44,
-     "rec": 44
-    }
-   ]
-  },
-  {
-   "id": 282007,
-   "name": "Emerald Watcher's Dreamstaff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 44,
-   "obtain": 44,
-   "ilvl": 49,
-   "bind": "pickup",
-   "dps": 42.7,
-   "speed": 3,
-   "dmgMin": 102,
-   "dmgMax": 154,
-   "stats": {
-    "intellect": 19,
-    "spirit": 19
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_17",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 44,
-     "rec": 44
     }
    ]
   },
@@ -26014,6 +26204,83 @@
      ],
      "faction": "both",
      "confidence": "classic-assumed",
+     "asap": 44,
+     "rec": 44
+    }
+   ]
+  },
+  {
+   "id": 274432,
+   "name": "Stone Keeper Spire",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 44,
+   "obtain": 44,
+   "ilvl": 49,
+   "bind": "pickup",
+   "dps": 31.72,
+   "speed": 3.2,
+   "dmgMin": 81,
+   "dmgMax": 122,
+   "stats": {
+    "stamina": 19,
+    "armor": 180
+   },
+   "bonus": {
+    "healing": 105,
+    "spellDamage": 35
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 105 and damage done by up to 35 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 44,
+     "rec": 44
+    }
+   ]
+  },
+  {
+   "id": 282007,
+   "name": "Emerald Watcher's Dreamstaff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 44,
+   "obtain": 44,
+   "ilvl": 49,
+   "bind": "pickup",
+   "dps": 31.67,
+   "speed": 3,
+   "dmgMin": 76,
+   "dmgMax": 114,
+   "stats": {
+    "intellect": 19,
+    "spirit": 19
+   },
+   "bonus": {
+    "spellPower": 56
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 56."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_17",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
      "asap": 44,
      "rec": 44
     }
@@ -26215,7 +26482,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_04",
    "raceMask": -1,
    "sources": [
@@ -26896,7 +27163,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_26",
    "raceMask": -1,
    "sources": [
@@ -27142,15 +27409,15 @@
    "dmgMin": 46,
    "dmgMax": 86,
    "stats": {
-    "stamina": 6,
-    "intellect": 6,
+    "stamina": 7,
+    "intellect": 7,
     "spirit": 5
    },
    "bonus": {},
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_17",
    "raceMask": -1,
    "sources": [
@@ -27231,7 +27498,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_misc_bone_06",
    "raceMask": -1,
    "sources": [
@@ -27521,7 +27788,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_18",
    "raceMask": -1,
    "sources": [
@@ -27555,7 +27822,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_18",
    "raceMask": -1,
    "sources": [
@@ -27564,90 +27831,6 @@
      "faction": "both",
      "confidence": "community-untested",
      "asap": 48,
-     "rec": 48
-    }
-   ]
-  },
-  {
-   "id": 17743,
-   "name": "Resurgence Rod",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 48,
-   "ilvl": 53,
-   "bind": "pickup",
-   "dps": 45.8,
-   "speed": 3.8,
-   "dmgMin": 139,
-   "dmgMax": 209,
-   "stats": {},
-   "bonus": {
-    "mp5": 11
-   },
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "client",
-   "icon": "inv_staff_goldfeathered_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Corruption of Earth and Seed",
-     "questId": 7064,
-     "level": 51,
-     "requiredLevel": 45,
-     "zone": "Maraudon",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 45,
-      "orange": 47,
-      "yellow": 49,
-      "green": 54,
-      "grey": 60
-     },
-     "ref": "https://foreverchanges.pro/quest/7064",
-     "basis": {
-      "name": "Princess Theradras",
-      "level": 51,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 46,
-     "rec": 48
-    },
-    {
-     "type": "quest",
-     "quest": "Corruption of Earth and Seed",
-     "questId": 7065,
-     "level": 51,
-     "requiredLevel": 45,
-     "zone": "Maraudon",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 45,
-      "orange": 47,
-      "yellow": 49,
-      "green": 54,
-      "grey": 60
-     },
-     "ref": "https://foreverchanges.pro/quest/7065",
-     "basis": {
-      "name": "Princess Theradras",
-      "level": 51,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 46,
      "rec": 48
     }
    ]
@@ -27877,7 +28060,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_20",
    "raceMask": -1,
    "sources": [
@@ -27909,10 +28092,12 @@
    "bonus": {
     "attackPower": 9
    },
-   "equip": [],
+   "equip": [
+    "Equip: +9 Attack Power."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_05",
    "raceMask": -1,
    "sources": [
@@ -27944,10 +28129,12 @@
    "bonus": {
     "attackPower": 9
    },
-   "equip": [],
+   "equip": [
+    "Equip: +9 Attack Power."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_16",
    "raceMask": -1,
    "sources": [
@@ -27981,7 +28168,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_21",
    "raceMask": -1,
    "sources": [
@@ -28069,71 +28256,88 @@
    ]
   },
   {
-   "id": 271929,
-   "name": "Clever Expeditionary's Spellblade",
-   "kind": "Dagger",
+   "id": 17743,
+   "name": "Resurgence Rod",
+   "kind": "Staff",
    "quality": 3,
-   "req": 48,
+   "req": 0,
    "obtain": 48,
    "ilvl": 53,
    "bind": "pickup",
-   "dps": 35,
-   "speed": 1.4,
-   "dmgMin": 34,
-   "dmgMax": 64,
-   "stats": {
-    "stamina": 7,
-    "intellect": 10,
-    "spirit": 4
+   "dps": 34.08,
+   "speed": 3.8,
+   "dmgMin": 103,
+   "dmgMax": 156,
+   "stats": {},
+   "bonus": {
+    "healing": 112,
+    "spellDamage": 37
    },
-   "bonus": {},
-   "equip": [],
+   "equip": [
+    "Equip: Increases healing done by up to 112 and damage done by up to 37 for all magical spells and effects."
+   ],
    "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_18",
+   "era": "classic",
+   "numbers": "forever",
+   "icon": "inv_staff_goldfeathered_01",
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 48,
+     "type": "quest",
+     "quest": "Corruption of Earth and Seed",
+     "questId": 7064,
+     "level": 51,
+     "requiredLevel": 45,
+     "zone": "Maraudon",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 45,
+      "orange": 47,
+      "yellow": 49,
+      "green": 54,
+      "grey": 60
+     },
+     "ref": "https://foreverchanges.pro/quest/7064",
+     "basis": {
+      "name": "Princess Theradras",
+      "level": 51,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 46,
      "rec": 48
-    }
-   ]
-  },
-  {
-   "id": 272084,
-   "name": "Darkspear Insurgent's Spellblade",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 48,
-   "obtain": 48,
-   "ilvl": 53,
-   "bind": "pickup",
-   "dps": 35,
-   "speed": 1.4,
-   "dmgMin": 34,
-   "dmgMax": 64,
-   "stats": {
-    "stamina": 7,
-    "intellect": 10,
-    "spirit": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_18",
-   "raceMask": -1,
-   "sources": [
+    },
     {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 48,
+     "type": "quest",
+     "quest": "Corruption of Earth and Seed",
+     "questId": 7065,
+     "level": 51,
+     "requiredLevel": 45,
+     "zone": "Maraudon",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 45,
+      "orange": 47,
+      "yellow": 49,
+      "green": 54,
+      "grey": 60
+     },
+     "ref": "https://foreverchanges.pro/quest/7065",
+     "basis": {
+      "name": "Princess Theradras",
+      "level": 51,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 46,
      "rec": 48
     }
    ]
@@ -28189,7 +28393,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_gauntlets_07",
    "raceMask": -1,
    "sources": [
@@ -28313,6 +28517,84 @@
    ]
   },
   {
+   "id": 271929,
+   "name": "Clever Expeditionary's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 48,
+   "obtain": 48,
+   "ilvl": 53,
+   "bind": "pickup",
+   "dps": 23.57,
+   "speed": 1.4,
+   "dmgMin": 23,
+   "dmgMax": 43,
+   "stats": {
+    "stamina": 7,
+    "intellect": 10,
+    "spirit": 4
+   },
+   "bonus": {
+    "spellPower": 60
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 60."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 48,
+     "rec": 48
+    }
+   ]
+  },
+  {
+   "id": 272084,
+   "name": "Darkspear Insurgent's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 48,
+   "obtain": 48,
+   "ilvl": 53,
+   "bind": "pickup",
+   "dps": 23.57,
+   "speed": 1.4,
+   "dmgMin": 23,
+   "dmgMax": 43,
+   "stats": {
+    "stamina": 7,
+    "intellect": 10,
+    "spirit": 4
+   },
+   "bonus": {
+    "spellPower": 60
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 60."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 48,
+     "rec": 48
+    }
+   ]
+  },
+  {
    "id": 812,
    "name": "Glowing Brightwood Staff",
    "kind": "Staff",
@@ -28334,7 +28616,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_29",
    "raceMask": -1,
    "sources": [
@@ -28368,7 +28650,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "spell_shadow_haunting",
    "raceMask": -1,
    "sources": [
@@ -28513,7 +28795,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_03",
    "raceMask": -1,
    "sources": [
@@ -28580,7 +28862,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_09",
    "raceMask": -1,
    "sources": [
@@ -28899,7 +29181,7 @@
     "Chance on hit: Heals wielder of 78 damage over 12 sec."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_07",
    "raceMask": -1,
    "sources": [
@@ -29144,7 +29426,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_02",
    "raceMask": -1,
    "sources": [
@@ -29178,7 +29460,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_27",
    "raceMask": -1,
    "sources": [
@@ -29515,7 +29797,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_halberd_02",
    "raceMask": -1,
    "sources": [
@@ -29586,7 +29868,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_12",
    "raceMask": -1,
    "sources": [
@@ -29617,7 +29899,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_16",
    "raceMask": -1,
    "sources": [
@@ -30370,10 +30652,12 @@
    "bonus": {
     "attackPower": 18
    },
-   "equip": [],
+   "equip": [
+    "Equip: +18 Attack Power."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_18",
    "raceMask": -1,
    "sources": [
@@ -30671,7 +30955,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_13",
    "raceMask": -1,
    "sources": [
@@ -30736,7 +31020,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_14",
    "raceMask": -1,
    "sources": [
@@ -30889,7 +31173,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_16",
    "raceMask": -1,
    "sources": [
@@ -30922,10 +31206,12 @@
    "bonus": {
     "spellPower": 13
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 13."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_69",
    "raceMask": -1,
    "sources": [
@@ -31161,7 +31447,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_17",
    "raceMask": -1,
    "sources": [
@@ -32211,7 +32497,7 @@
     "Chance on hit: Blasts a target for 90 Fire damage."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_08",
    "raceMask": -1,
    "sources": [
@@ -32430,17 +32716,18 @@
    "speed": 3.2,
    "dmgMin": 147,
    "dmgMax": 221,
-   "stats": {
-    "intellect": 26
-   },
+   "stats": {},
    "bonus": {
-    "fireDamage": 100,
-    "frostDamage": 100
+    "fireDamage": 36,
+    "frostDamage": 36
    },
-   "equip": [],
+   "equip": [
+    "Equip: Increases damage done by Fire spells and effects by up to 36.",
+    "Equip: Increases damage done by Frost spells and effects by up to 36."
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_07",
    "raceMask": -1,
    "sources": [
@@ -32658,7 +32945,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_21",
    "raceMask": -1,
    "sources": [
@@ -32739,7 +33026,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_19",
    "raceMask": -1,
    "sources": [
@@ -32807,7 +33094,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_08",
    "raceMask": -1,
    "sources": [
@@ -33503,7 +33790,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_staff_23",
    "raceMask": -1,
    "sources": [
@@ -33937,7 +34224,7 @@
     "Chance on hit: Next spell cast within 4 sec will cast instantly."
    ],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_mace_14",
    "raceMask": -1,
    "sources": [
@@ -34042,7 +34329,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_17",
    "raceMask": -1,
    "sources": [
@@ -34939,7 +35226,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_18",
    "raceMask": -1,
    "sources": [
@@ -34973,7 +35260,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_18",
    "raceMask": -1,
    "sources": [
@@ -35391,7 +35678,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_10",
    "raceMask": -1,
    "sources": [
@@ -35782,12 +36069,14 @@
     "stamina": 13
    },
    "bonus": {
-    "attackPower": 10
+    "attackPower": 11
    },
-   "equip": [],
+   "equip": [
+    "Equip: +11 Attack Power."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_05",
    "raceMask": -1,
    "sources": [
@@ -35819,81 +36108,13 @@
    "bonus": {
     "attackPower": 11
    },
-   "equip": [],
+   "equip": [
+    "Equip: +11 Attack Power."
+   ],
    "chance": [],
    "era": "new",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_hammer_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 271928,
-   "name": "Clever Expeditionary's Spellblade",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": "pickup",
-   "dps": 41.4,
-   "speed": 1.4,
-   "dmgMin": 40,
-   "dmgMax": 76,
-   "stats": {
-    "stamina": 8,
-    "intellect": 11,
-    "spirit": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_18",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 58,
-     "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 272083,
-   "name": "Darkspear Insurgent's Spellblade",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": "pickup",
-   "dps": 41.4,
-   "speed": 1.4,
-   "dmgMin": 40,
-   "dmgMax": 76,
-   "stats": {
-    "stamina": 8,
-    "intellect": 11,
-    "spirit": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_18",
    "raceMask": -1,
    "sources": [
     {
@@ -35926,7 +36147,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_03",
    "raceMask": -1,
    "sources": [
@@ -36599,6 +36820,84 @@
       "steps": 7
      },
      "asap": 57,
+     "rec": 58
+    }
+   ]
+  },
+  {
+   "id": 271928,
+   "name": "Clever Expeditionary's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 58,
+   "obtain": 58,
+   "ilvl": 63,
+   "bind": "pickup",
+   "dps": 27.5,
+   "speed": 1.4,
+   "dmgMin": 27,
+   "dmgMax": 50,
+   "stats": {
+    "stamina": 8,
+    "intellect": 11,
+    "spirit": 5
+   },
+   "bonus": {
+    "spellPower": 72
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 72."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 58,
+     "rec": 58
+    }
+   ]
+  },
+  {
+   "id": 272083,
+   "name": "Darkspear Insurgent's Spellblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 58,
+   "obtain": 58,
+   "ilvl": 63,
+   "bind": "pickup",
+   "dps": 27.5,
+   "speed": 1.4,
+   "dmgMin": 27,
+   "dmgMax": 50,
+   "stats": {
+    "stamina": 8,
+    "intellect": 11,
+    "spirit": 5
+   },
+   "bonus": {
+    "spellPower": 72
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 72."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 58,
      "rec": 58
     }
    ]
@@ -37527,7 +37826,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "client",
+   "numbers": "forever",
    "icon": "inv_axe_16",
    "raceMask": -1,
    "sources": [

@@ -14,6 +14,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
   pages: write
 
 concurrency:
@@ -46,7 +47,8 @@ jobs:
 
       - name: Sync
         timeout-minutes: 150
-        run: node scripts/sync.js
+        shell: bash
+        run: node scripts/sync.js 2>&1 | tee sync.log
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -72,8 +74,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # A sync that works again closes the issue its failures opened.
+          closeErrors() {
+            for n in $(gh issue list --label sync-error --state open --json number -q '.[].number'); do
+              gh issue close "$n" --comment "El sync volvió a andar el $(date -u +%F)." || true
+            done
+          }
           if [ -z "$(git status --porcelain -- . ':!data/meta.json' ':!data/meta.js' ':!reports' ':!index.html')" ]; then
             echo "Sin cambios en los datos."
+            closeErrors
             exit 0
           fi
           report=$(ls -t reports/changes-*.md | head -1)
@@ -84,6 +93,7 @@ jobs:
           git commit -q -m "Sync de datos $(date -u +%F)" -m "$(head -40 "$report")"
           if git pull -q --rebase origin main && git push -q origin HEAD:main; then
             echo "Publicado en main."
+            closeErrors
             # A push by this workflow's token doesn't start a Pages build: ask for one.
             gh api -X POST "repos/${{ github.repository }}/pages/builds" >/dev/null || echo "No se pudo pedir el build de Pages."
             # An older sync pull request is now moot.
@@ -108,4 +118,25 @@ jobs:
             gh pr edit sync/auto --title "Sync de datos $(date -u +%F)" --body-file pr-body.md
           else
             gh pr create --head sync/auto --base main --title "Sync de datos $(date -u +%F)" --body-file pr-body.md
+          fi
+
+      # Days of failed syncs went unnoticed: say why in one issue, a comment per day.
+      - name: Report the failure in an issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            echo "El sync del $(date -u +%F) falló: [ver la corrida](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})."
+            echo
+            echo '```'
+            if [ -f sync.log ]; then grep -E "falta plantilla|sin uso|Error|rror:|failed|falló" sync.log | sort -u | tail -40; else echo "Falló antes de terminar el sync (chequeos o publicación)."; fi
+            echo '```'
+          } > fail.md
+          n=$(gh issue list --label sync-error --state open --json number -q '.[0].number')
+          if [ -n "$n" ]; then
+            gh issue comment "$n" --body-file fail.md
+          else
+            gh label create sync-error --color B60205 --description "El sync diario falla" 2>/dev/null || true
+            gh issue create --title "El sync de datos está fallando" --label sync-error --body-file fail.md
           fi

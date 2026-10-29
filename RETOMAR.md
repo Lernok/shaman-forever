@@ -2,6 +2,12 @@
 
 Leer esta primera parte antes de seguir. Debajo está la historia del proyecto (plan de fases y sesiones).
 
+## 2026-10-28: el sync falló 23→28-oct (parche de raciales)
+
+- **Causa:** builds 70658/70685 (talentsforever export 70630) cambiaron textos: Eye of the Storm y Healing Focus pasan a "% chance to not lose casting time"; raciales rehechas por Blizzard el 26-oct (post #7/#8 del hilo oficial us.forums.blizzard.com/en/wow/t/2360696): Orc Command (vuelve) y Blood Fury 2 min, sin Savage; Dwarf Artisan's Precision 1% golpe, sin Earth Fury; Tauren Endurance solo 5% salud, Plainsrunning 2%/pila hasta 60% y no montado; Troll Berserking 15 s; Skyborne Wind-Blessed 2%, Read Leyline 50% (Attuned 100%), Skysight 15% (Charged 30%). Lava Burst r3: bonus con Flame Shock 20% (era 53%). 415 ítems cambiados.
+- **Arreglo:** plantillas nuevas en `data/i18n/client-es.json` (las viejas reemplazadas), sync corrido a mano. `sync.yml` ahora abre una issue `sync-error` con las líneas de error cuando falla (un comentario por día) y la cierra sola cuando vuelve a andar.
+- Lanzamiento 4-nov 15:00 PST (23:00 UTC = 20 hs AR); creación de personajes y reserva de nombres abiertas desde el 27-oct. Inicio lo dice. Issue #12 (fichas sin bonus) resuelta por 190114d.
+
 ## 2026-10-17: foco en el sitio y el addon (las guías de ruta, en pausa)
 
 - **Addon renombrado (23-oct, 0.33.0): "Shaman Forever Guide"**, carpeta `addon/ShamanForeverGuide`, variables `ShamanForeverGuideDB`/`ShamanForeverGuideCharDB`, frames `ShamanForeverGuide*` (otro addon se llama ShamanForever). Los atajos (`SHAMANFOREVER_TOGGLE/MARK`) y `/sf` quedan igual. `install-addon.js` borra nuestra carpeta vieja (solo si el toc es de Lernok) y copia una vez `ShamanForever.lua` → `ShamanForeverGuide.lua` en cada SavedVariables. Las menciones de `ShamanForever` más abajo son historia.

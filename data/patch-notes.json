@@ -44,10 +44,49 @@
   "1.60.1.70450/patch",
   "1.60.1.70532/hotfix-112709+2",
   "1.60.1.70532/hotfix-112952+28",
+  "1.60.1.70532/hotfix-113175+1",
   "1.60.1.70532/hotfix-16786599+3",
-  "1.60.1.70532/patch"
+  "1.60.1.70532/patch",
+  "1.60.1.70630/patch",
+  "1.60.1.70634/patch",
+  "1.60.1.70658/hotfix-112617+95",
+  "1.60.1.70658/hotfix-112635+3",
+  "1.60.1.70658/patch"
  ],
  "updates": [
+  {
+   "id": "1.60.1.70658/hotfix-112635+3",
+   "version": "1.60.1.70658",
+   "hotfix": true,
+   "date": "2026-10-28",
+   "spells": [
+    {
+     "name": "Ancestral Spirit",
+     "spec": "restoration",
+     "status": "added",
+     "lines": [
+      {
+       "k": "cast",
+       "from": null,
+       "to": "10 s"
+      },
+      {
+       "k": "cost",
+       "from": null,
+       "to": "90% of base mana"
+      },
+      {
+       "k": "range",
+       "from": null,
+       "to": "30 yd"
+      }
+     ],
+     "ranks": [
+      5
+     ]
+    }
+   ]
+  },
   {
    "id": "1.60.1.70450/hotfix-112713+24",
    "version": "1.60.1.70450",
