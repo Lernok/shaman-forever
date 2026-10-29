@@ -341,20 +341,6 @@
    },
    "steps": 5
   },
-  "202": {
-   "classes": null,
-   "minLevel": 30,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 813,
-    "name": "Colonel Kurzen",
-    "level": 40,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 4
-  },
   "204": {
    "classes": null,
    "minLevel": 30,
@@ -462,21 +448,6 @@
     "step": 222
    },
    "steps": 4
-  },
-  "231": {
-   "classes": null,
-   "minLevel": 28,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 522,
-    "name": "Mor'Ladim",
-    "level": 35,
-    "rank": "elite",
-    "from": "wowhead",
-    "step": 228
-   },
-   "steps": 5
   },
   "245": {
    "classes": null,
@@ -1118,20 +1089,6 @@
     "name": "Dun Garok Rifleman",
     "level": 30,
     "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "549": {
-   "classes": null,
-   "minLevel": 17,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 2260,
-    "name": "Syndicate Rogue",
-    "level": 22,
-    "rank": "normal",
     "from": "wowhead"
    },
    "steps": 1
@@ -2278,21 +2235,6 @@
    },
    "steps": 7
   },
-  "940": {
-   "classes": null,
-   "minLevel": 6,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 272046,
-    "name": "Witchmother Arysa",
-    "level": 12,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 98392
-   },
-   "steps": 4
-  },
   "943": {
    "classes": null,
    "minLevel": 15,
@@ -2477,20 +2419,6 @@
     "from": "wowhead"
    },
    "steps": 2
-  },
-  "1012": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 3940,
-    "name": "Taneel Darkwood",
-    "level": 32,
-    "rank": "normal",
-    "from": "wowhead"
-   },
-   "steps": 3
   },
   "1013": {
    "classes": null,
@@ -3366,23 +3294,6 @@
     "from": "wowhead"
    },
    "steps": 5
-  },
-  "1527": {
-   "classes": [
-    "SHAMAN"
-   ],
-   "minLevel": 10,
-   "faction": "conflict",
-   "instance": null,
-   "hardest": {
-    "id": null,
-    "name": null,
-    "level": 20,
-    "rank": "normal",
-    "from": "step-level",
-    "step": 5
-   },
-   "steps": 11
   },
   "1560": {
    "classes": null,
@@ -8042,24 +7953,6 @@
    },
    "steps": 2
   },
-  "76240": {
-   "classes": [
-    "SHAMAN"
-   ],
-   "minLevel": 4,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 3
-  },
-  "78150": {
-   "classes": null,
-   "minLevel": null,
-   "faction": null,
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
   "79442": {
    "classes": [
     "SHAMAN"
@@ -8085,64 +7978,6 @@
    "hardest": null,
    "steps": 1
   },
-  "86574": {
-   "classes": null,
-   "minLevel": 20,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "86576": {
-   "classes": null,
-   "minLevel": 18,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 4023,
-    "name": "Bloodfury Roguefeather",
-    "level": 26,
-    "rank": "normal",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "86585": {
-   "classes": null,
-   "minLevel": 10,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 269185,
-    "name": "Headsplitter",
-    "level": 17,
-    "rank": "normal",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "86614": {
-   "classes": null,
-   "minLevel": 13,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "86758": {
-   "classes": null,
-   "minLevel": 12,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 270693,
-    "name": "Daggerfang",
-    "level": 15,
-    "rank": "normal",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
   "88758": {
    "classes": null,
    "minLevel": 28,
@@ -8158,361 +7993,12 @@
    },
    "steps": 3
   },
-  "91285": {
-   "classes": [
-    "PALADIN"
-   ],
-   "minLevel": 7,
-   "faction": null,
-   "instance": null,
-   "hardest": {
-    "id": 250283,
-    "name": "Vile Fin Attacker",
-    "level": 11,
-    "rank": "normal",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "91316": {
-   "classes": [
-    "PALADIN"
-   ],
-   "minLevel": 8,
-   "faction": null,
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "91777": {
-   "classes": null,
-   "minLevel": null,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 471,
-    "name": "Mother Fang",
-    "level": 10,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 7
-  },
-  "92401": {
-   "classes": null,
-   "minLevel": 15,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "92421": {
-   "classes": null,
-   "minLevel": 15,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "92422": {
-   "classes": null,
-   "minLevel": 15,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "92456": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "92457": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 2
-  },
-  "92458": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 2
-  },
-  "92489": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "92640": {
-   "classes": null,
-   "minLevel": 6,
-   "faction": null,
-   "instance": null,
-   "hardest": {
-    "id": 252666,
-    "name": "Commander Belguilos",
-    "level": 10,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 92645
-   },
-   "steps": 8
-  },
-  "92644": {
-   "classes": null,
-   "minLevel": 6,
-   "faction": "conflict",
-   "instance": null,
-   "hardest": {
-    "id": 252666,
-    "name": "Commander Belguilos",
-    "level": 10,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 92645
-   },
-   "steps": 9
-  },
-  "92645": {
-   "classes": null,
-   "minLevel": 6,
-   "faction": "conflict",
-   "instance": null,
-   "hardest": {
-    "id": 252666,
-    "name": "Commander Belguilos",
-    "level": 10,
-    "rank": "normal",
-    "from": "wowhead"
-   },
-   "steps": 12
-  },
-  "92646": {
-   "classes": null,
-   "minLevel": 7,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 252762,
-    "name": "Al'Aketh Guardian",
-    "level": 11,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 92947
-   },
-   "steps": 7
-  },
-  "92683": {
-   "classes": null,
-   "minLevel": 5,
-   "faction": null,
-   "instance": null,
-   "hardest": {
-    "id": 252448,
-    "name": "Alvarion Windfield",
-    "level": 10,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 92679
-   },
-   "steps": 2
-  },
-  "92703": {
-   "classes": null,
-   "minLevel": 5,
-   "faction": null,
-   "instance": null,
-   "hardest": {
-    "id": 252448,
-    "name": "Alvarion Windfield",
-    "level": 10,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 92679
-   },
-   "steps": 7
-  },
-  "92834": {
-   "classes": null,
-   "minLevel": 6,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 253284,
-    "name": "Fillion Flamebreeze",
-    "level": 10,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 92849
-   },
-   "steps": 7
-  },
-  "92873": {
-   "classes": null,
-   "minLevel": 35,
-   "faction": "conflict",
-   "instance": null,
-   "hardest": {
-    "id": 11559,
-    "name": "Outcast Necromancer",
-    "level": 40,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 92846
-   },
-   "steps": 9
-  },
-  "92880": {
-   "classes": null,
-   "minLevel": 6,
-   "faction": "conflict",
-   "instance": null,
-   "hardest": {
-    "id": 252666,
-    "name": "Commander Belguilos",
-    "level": 10,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 92645
-   },
-   "steps": 12
-  },
-  "93045": {
-   "classes": null,
-   "minLevel": 35,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 11559,
-    "name": "Outcast Necromancer",
-    "level": 40,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 93037
-   },
-   "steps": 8
-  },
-  "93128": {
-   "classes": null,
-   "minLevel": 35,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 5601,
-    "name": "Khan Jehn",
-    "level": 37,
-    "rank": "normal",
-    "from": "wowhead"
-   },
-   "steps": 4
-  },
-  "93165": {
-   "classes": null,
-   "minLevel": 8,
-   "faction": null,
-   "instance": null,
-   "hardest": null,
-   "steps": 2
-  },
-  "93172": {
-   "classes": null,
-   "minLevel": 8,
-   "faction": null,
-   "instance": null,
-   "hardest": null,
-   "steps": 2
-  },
-  "93196": {
-   "classes": null,
-   "minLevel": 35,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 253524,
-    "name": "Bristleback Nomad",
-    "level": 43,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 93066
-   },
-   "steps": 9
-  },
-  "93318": {
-   "classes": null,
-   "minLevel": 4,
-   "faction": "conflict",
-   "instance": null,
-   "hardest": {
-    "id": 254589,
-    "name": "Vulgara the Insatiable",
-    "level": 8,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 3
-  },
-  "93320": {
-   "classes": null,
-   "minLevel": 6,
-   "faction": "conflict",
-   "instance": null,
-   "hardest": {
-    "id": 253284,
-    "name": "Fillion Flamebreeze",
-    "level": 10,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 92849
-   },
-   "steps": 13
-  },
   "93739": {
    "classes": null,
    "minLevel": 7,
    "faction": "horde",
    "instance": null,
    "hardest": null,
-   "steps": 7
-  },
-  "93746": {
-   "classes": null,
-   "minLevel": 4,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 251662,
-    "name": "Living Lightning",
-    "level": 8,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 92550
-   },
-   "steps": 8
-  },
-  "93835": {
-   "classes": null,
-   "minLevel": 7,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 252762,
-    "name": "Al'Aketh Guardian",
-    "level": 11,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 92947
-   },
    "steps": 7
   },
   "93963": {
@@ -8528,156 +8014,6 @@
     "from": "questie"
    },
    "steps": 7
-  },
-  "94003": {
-   "classes": [
-    "WARRIOR"
-   ],
-   "minLevel": 10,
-   "faction": null,
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "94411": {
-   "classes": null,
-   "minLevel": 4,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 2
-  },
-  "94468": {
-   "classes": [
-    "SHAMAN"
-   ],
-   "minLevel": 10,
-   "faction": null,
-   "instance": null,
-   "hardest": null,
-   "steps": 5
-  },
-  "95161": {
-   "classes": null,
-   "minLevel": 15,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": null,
-    "name": null,
-    "level": 22,
-    "rank": "normal",
-    "from": "step-level",
-    "step": 92415
-   },
-   "steps": 2
-  },
-  "95195": {
-   "classes": null,
-   "minLevel": 16,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "95216": {
-   "classes": null,
-   "minLevel": 16,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "95250": {
-   "classes": null,
-   "minLevel": 16,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "95508": {
-   "classes": null,
-   "minLevel": 14,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "95534": {
-   "classes": null,
-   "minLevel": 25,
-   "faction": null,
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "95646": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 260808,
-    "name": "Highland Horror",
-    "level": 28,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "95682": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": null,
-    "name": null,
-    "level": 31,
-    "rank": "normal",
-    "from": "step-level",
-    "step": 95663
-   },
-   "steps": 2
-  },
-  "95697": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "95795": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": null,
-    "name": null,
-    "level": 31,
-    "rank": "normal",
-    "from": "step-level",
-    "step": 95772
-   },
-   "steps": 2
-  },
-  "95809": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": null,
-    "name": null,
-    "level": 31,
-    "rank": "normal",
-    "from": "step-level",
-    "step": 95647
-   },
-   "steps": 2
   },
   "95885": {
    "classes": null,
@@ -8708,20 +8044,6 @@
    },
    "steps": 1
   },
-  "95999": {
-   "classes": null,
-   "minLevel": 16,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 214519,
-    "name": "Incinerator Gar'im",
-    "level": 23,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
   "96016": {
    "classes": [
     "SHAMAN"
@@ -8739,149 +8061,6 @@
    },
    "steps": 5
   },
-  "96260": {
-   "classes": null,
-   "minLevel": 23,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 264081,
-    "name": "Gloomrise Spinner",
-    "level": 28,
-    "rank": "normal",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "96261": {
-   "classes": null,
-   "minLevel": 23,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 264082,
-    "name": "Broodmother Valraxx",
-    "level": 30,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "96393": {
-   "classes": null,
-   "minLevel": 9,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 2
-  },
-  "96394": {
-   "classes": null,
-   "minLevel": 10,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "96395": {
-   "classes": null,
-   "minLevel": 10,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "96403": {
-   "classes": null,
-   "minLevel": 10,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "96800": {
-   "classes": null,
-   "minLevel": 30,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "96984": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 2358,
-    "name": "Dalaran Summoner",
-    "level": 35,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 545
-   },
-   "steps": 5
-  },
-  "96986": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "96987": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "96988": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "97003": {
-   "classes": null,
-   "minLevel": 15,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 267307,
-    "name": "Chol'aruk",
-    "level": 20,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "97005": {
-   "classes": null,
-   "minLevel": 15,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 267307,
-    "name": "Chol'aruk",
-    "level": 20,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "97048": {
-   "classes": null,
-   "minLevel": 30,
-   "faction": null,
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
   "97223": {
    "classes": null,
    "minLevel": 5,
@@ -8895,81 +8074,6 @@
     "from": "wowhead"
    },
    "steps": 1
-  },
-  "97250": {
-   "classes": null,
-   "minLevel": 18,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 268623,
-    "name": "Outraged Pillager",
-    "level": 23,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "97257": {
-   "classes": [
-    "SHAMAN"
-   ],
-   "minLevel": 10,
-   "faction": null,
-   "instance": null,
-   "hardest": {
-    "id": 268602,
-    "name": "Skypriest Faladiel",
-    "level": 10,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 97244
-   },
-   "steps": 4
-  },
-  "97265": {
-   "classes": null,
-   "minLevel": 28,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 4674,
-    "name": "Hatefury Shadowstalker",
-    "level": 33,
-    "rank": "normal",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "97282": {
-   "classes": null,
-   "minLevel": 7,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 276194,
-    "name": "Dustwind Eggtender",
-    "level": 12,
-    "rank": "rare",
-    "from": "wowhead",
-    "step": 97281
-   },
-   "steps": 2
-  },
-  "97290": {
-   "classes": null,
-   "minLevel": 16,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": null,
-    "name": null,
-    "level": 21,
-    "rank": "normal",
-    "from": "step-level",
-    "step": 97288
-   },
-   "steps": 3
   },
   "97326": {
    "classes": null,
@@ -9023,14 +8127,6 @@
    "hardest": null,
    "steps": 1
   },
-  "98071": {
-   "classes": null,
-   "minLevel": 23,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
   "98095": {
    "classes": null,
    "minLevel": 19,
@@ -9053,21 +8149,6 @@
     "step": 98155
    },
    "steps": 2
-  },
-  "98191": {
-   "classes": null,
-   "minLevel": 20,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": null,
-    "name": null,
-    "level": 25,
-    "rank": "normal",
-    "from": "step-level",
-    "step": 286
-   },
-   "steps": 7
   },
   "98208": {
    "classes": null,
@@ -9113,20 +8194,6 @@
    },
    "steps": 5
   },
-  "98297": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 271373,
-    "name": "Subdued Dragonspawn",
-    "level": 34,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 2
-  },
   "98298": {
    "classes": null,
    "minLevel": 9,
@@ -9156,58 +8223,6 @@
     "step": 98216
    },
    "steps": 3
-  },
-  "98403": {
-   "classes": null,
-   "minLevel": 4,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 272116,
-    "name": "Xethorr the Wicked",
-    "level": 12,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 2
-  },
-  "98545": {
-   "classes": null,
-   "minLevel": 10,
-   "faction": null,
-   "instance": null,
-   "hardest": null,
-   "steps": 3
-  },
-  "98823": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": null,
-    "name": null,
-    "level": 31,
-    "rank": "normal",
-    "from": "step-level",
-    "step": 95664
-   },
-   "steps": 2
-  },
-  "98824": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": null,
-    "name": null,
-    "level": 31,
-    "rank": "normal",
-    "from": "step-level",
-    "step": 95810
-   },
-   "steps": 2
   },
   "99052": {
    "classes": null,
@@ -9254,12 +8269,6 @@
   "36": {
    "name": "Harvest Golem",
    "level": 12,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "40": {
-   "name": "Kobold Miner",
-   "level": 7,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -9377,12 +8386,6 @@
    "rank": "normal",
    "from": "wowhead"
   },
-  "257": {
-   "name": "Kobold Worker",
-   "level": 3,
-   "rank": "normal",
-   "from": "wowhead"
-  },
   "299": {
    "name": "Young Wolf",
    "level": 1,
@@ -9497,18 +8500,6 @@
    "rank": "elite",
    "from": "wowhead"
   },
-  "471": {
-   "name": "Mother Fang",
-   "level": 10,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "475": {
-   "name": "Kobold Tunneler",
-   "level": 6,
-   "rank": "normal",
-   "from": "wowhead"
-  },
   "486": {
    "name": "Tharil'zun",
    "level": 24,
@@ -9531,12 +8522,6 @@
    "name": "Yowler",
    "level": 25,
    "rank": "normal",
-   "from": "wowhead"
-  },
-  "522": {
-   "name": "Mor'Ladim",
-   "level": 35,
-   "rank": "elite",
    "from": "wowhead"
   },
   "533": {
@@ -11081,36 +10066,6 @@
    "rank": "normal",
    "from": "wowhead"
   },
-  "2015": {
-   "name": "Bloodfeather Harpy",
-   "level": 9,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "2017": {
-   "name": "Bloodfeather Rogue",
-   "level": 9,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "2018": {
-   "name": "Bloodfeather Sorceress",
-   "level": 9,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "2019": {
-   "name": "Bloodfeather Fury",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "2038": {
-   "name": "Lord Melenas",
-   "level": 8,
-   "rank": "normal",
-   "from": "wowhead"
-  },
   "2039": {
    "name": "Ursal the Mauler",
    "level": 12,
@@ -11441,12 +10396,6 @@
    "rank": "normal",
    "from": "wowhead"
   },
-  "2358": {
-   "name": "Dalaran Summoner",
-   "level": 35,
-   "rank": "normal",
-   "from": "wowhead"
-  },
   "2359": {
    "name": "Elemental Slave",
    "level": 34,
@@ -11546,30 +10495,6 @@
   "2407": {
    "name": "Hulking Mountain Lion",
    "level": 34,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "2411": {
-   "name": "Ricter",
-   "level": 33,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "2412": {
-   "name": "Alina",
-   "level": 33,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "2413": {
-   "name": "Dermot",
-   "level": 34,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "2414": {
-   "name": "Kegan Darkmar",
-   "level": 35,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -12233,24 +11158,6 @@
    "rank": "normal",
    "from": "wowhead"
   },
-  "3118": {
-   "name": "Dustwind Storm Witch",
-   "level": 11,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "3130": {
-   "name": "Thunder Lizard",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "3131": {
-   "name": "Lightning Hide",
-   "level": 11,
-   "rank": "normal",
-   "from": "wowhead"
-  },
   "3144": {
    "name": "Eitrigg",
    "level": 20,
@@ -12283,12 +11190,6 @@
   },
   "3198": {
    "name": "Burning Blade Apprentice",
-   "level": 11,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "3199": {
-   "name": "Burning Blade Cultist",
    "level": 11,
    "rank": "normal",
    "from": "wowhead"
@@ -12435,12 +11336,6 @@
    "name": "Elder Mystic Razorsnout",
    "level": 15,
    "rank": "rare-elite",
-   "from": "wowhead"
-  },
-  "3271": {
-   "name": "Razormane Mystic",
-   "level": 14,
-   "rank": "normal",
    "from": "wowhead"
   },
   "3272": {
@@ -12938,24 +11833,6 @@
   "3932": {
    "name": "Bloodtooth Guard",
    "level": 28,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "3940": {
-   "name": "Taneel Darkwood",
-   "level": 32,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "3941": {
-   "name": "Uthil Mooncall",
-   "level": 32,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "3942": {
-   "name": "Mavoris Cloudsbreak",
-   "level": 32,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -14492,12 +13369,6 @@
   "5881": {
    "name": "Cursed Sycamore",
    "level": 45,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "5893": {
-   "name": "Minor Manifestation of Fire",
-   "level": 12,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -17039,12 +15910,6 @@
    "rank": "elite",
    "from": "wowhead"
   },
-  "11559": {
-   "name": "Outcast Necromancer",
-   "level": 40,
-   "rank": "normal",
-   "from": "wowhead"
-  },
   "11560": {
    "name": "Centaur Spectre",
    "level": 39,
@@ -18545,339 +17410,9 @@
    "rank": "elite",
    "from": "wowhead"
   },
-  "214519": {
-   "name": "Incinerator Gar'im",
-   "level": 23,
-   "rank": "elite",
-   "from": "wowhead"
-  },
   "216474": {
    "name": "Ravaging Tempest",
    "level": 40,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "246016": {
-   "name": "Arcanic Enigma",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "246020": {
-   "name": "Shade of the Archmage",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "246600": {
-   "name": "Mana Echo",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "246664": {
-   "name": "Fragmented Sentry",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "247001": {
-   "name": "Saturated Remnant",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "247003": {
-   "name": "Seeking Remnant",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "247126": {
-   "name": "Atrexis the Grave Knight",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "248362": {
-   "name": "Shinyfinder Narf",
-   "level": 3,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "248464": {
-   "name": "Nimsy",
-   "level": 6,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "248474": {
-   "name": "Geosculptor Yip",
-   "level": 7,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "250282": {
-   "name": "Vile Fin Seer",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "250283": {
-   "name": "Vile Fin Attacker",
-   "level": 11,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "250483": {
-   "name": "Witherfang",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "250657": {
-   "name": "Rath'mael",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "250660": {
-   "name": "The Baron",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "251622": {
-   "name": "Flutterfly",
-   "level": 9,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "251662": {
-   "name": "Living Lightning",
-   "level": 8,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "251707": {
-   "name": "Ornery Galestrider",
-   "level": 9,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "252068": {
-   "name": "Al'Aketh Stormcaller",
-   "level": 8,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "252448": {
-   "name": "Alvarion Windfield",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "252666": {
-   "name": "Commander Belguilos",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "252762": {
-   "name": "Al'Aketh Guardian",
-   "level": 11,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "252763": {
-   "name": "Al'Aketh Spiritcaller",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "252765": {
-   "name": "Al'Aketh Blademaster",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "252800": {
-   "name": "Aamelia Windfield",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "252802": {
-   "name": "Hungry Bandit",
-   "level": 9,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "252820": {
-   "name": "Bandit Highwayman",
-   "level": 9,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "253195": {
-   "name": "Al'Aketh Preacher",
-   "level": 9,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "253283": {
-   "name": "Shriekling Matriarch",
-   "level": 9,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "253284": {
-   "name": "Fillion Flamebreeze",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "253360": {
-   "name": "Nascent Undead Ravager",
-   "level": null,
-   "rank": "normal",
-   "from": null
-  },
-  "253431": {
-   "name": "Gelkis Captive",
-   "level": null,
-   "rank": "normal",
-   "from": null
-  },
-  "253446": {
-   "name": "Haggard Bones",
-   "level": null,
-   "rank": "normal",
-   "from": null
-  },
-  "253511": {
-   "name": "Al'Aketh Pillager",
-   "level": 9,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "253524": {
-   "name": "Bristleback Nomad",
-   "level": 43,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "253525": {
-   "name": "Bristleback Thornweaver",
-   "level": null,
-   "rank": "normal",
-   "from": null
-  },
-  "253526": {
-   "name": "Bristleback Skullcrusher",
-   "level": 43,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "254283": {
-   "name": "Outcast Scout",
-   "level": 42,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "254284": {
-   "name": "Outcast Marauder",
-   "level": 43,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "254589": {
-   "name": "Vulgara the Insatiable",
-   "level": 8,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "254596": {
-   "name": "Al'Aketh Healer",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "254825": {
-   "name": "Gelkis Captive",
-   "level": null,
-   "rank": "normal",
-   "from": null
-  },
-  "256966": {
-   "name": "Skypriest Aanders",
-   "level": 8,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "260325": {
-   "name": "Shadetooth",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "260800": {
-   "name": "Thicket Lurker",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "260801": {
-   "name": "Thicket Hunter",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "260808": {
-   "name": "Highland Horror",
-   "level": 28,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "261306": {
-   "name": "Faldrim Anvilmar",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "261319": {
-   "name": "Durgen Dirgehammer",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "263389": {
-   "name": "Enraged Apparition",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "263390": {
-   "name": "Tormented Soul",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "264081": {
-   "name": "Gloomrise Spinner",
-   "level": 28,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "264082": {
-   "name": "Broodmother Valraxx",
-   "level": 30,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "267307": {
-   "name": "Chol'aruk",
-   "level": 20,
    "rank": "elite",
    "from": "wowhead"
   },
@@ -18887,45 +17422,9 @@
    "rank": "normal",
    "from": "wowhead"
   },
-  "268602": {
-   "name": "Skypriest Faladiel",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "268622": {
-   "name": "Encroaching Soldier",
-   "level": 23,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "268623": {
-   "name": "Outraged Pillager",
-   "level": 23,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "269185": {
-   "name": "Headsplitter",
-   "level": 17,
-   "rank": "normal",
-   "from": "wowhead"
-  },
   "270196": {
    "name": "Jai'vhanel",
    "level": 12,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "270201": {
-   "name": "Al'Aketh Brawler",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "270693": {
-   "name": "Daggerfang",
-   "level": 15,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -18953,30 +17452,6 @@
    "rank": "elite",
    "from": "wowhead"
   },
-  "271346": {
-   "name": "Dragonmaw Infiltrator",
-   "level": 30,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "271348": {
-   "name": "Dragonmaw Soulbinder",
-   "level": 30,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "271351": {
-   "name": "Dragonmaw Reclaimer",
-   "level": 30,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "271373": {
-   "name": "Subdued Dragonspawn",
-   "level": 34,
-   "rank": "elite",
-   "from": "wowhead"
-  },
   "271458": {
    "name": "Neru",
    "level": 32,
@@ -18994,60 +17469,6 @@
    "level": 32,
    "rank": "elite",
    "from": "wowhead"
-  },
-  "271732": {
-   "name": "Thicket Stalker",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "272034": {
-   "name": "Hatescreech",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "272044": {
-   "name": "Windmistress Gaedress",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "272046": {
-   "name": "Witchmother Arysa",
-   "level": 12,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "272096": {
-   "name": "Befouled Webwood",
-   "level": 11,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "272116": {
-   "name": "Xethorr the Wicked",
-   "level": 12,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "275044": {
-   "name": "Dragonmaw Warder",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "275045": {
-   "name": "Dragonmaw Saboteur",
-   "level": null,
-   "rank": "elite",
-   "from": null
-  },
-  "275046": {
-   "name": "Dragonmaw Thaumaturgist",
-   "level": null,
-   "rank": "elite",
-   "from": null
   },
   "275491": {
    "name": "Randal Emerson",
@@ -19077,12 +17498,6 @@
    "name": "Riptear",
    "level": 13,
    "rank": "elite",
-   "from": "wowhead"
-  },
-  "276194": {
-   "name": "Dustwind Eggtender",
-   "level": 12,
-   "rank": "rare",
    "from": "wowhead"
   }
  }

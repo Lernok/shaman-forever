@@ -974,6 +974,76 @@
    ]
   },
   {
+   "id": 279844,
+   "name": "Striking Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 36,
+   "bind": "pickup",
+   "dps": 31.29,
+   "speed": 3.1,
+   "dmgMin": 77,
+   "dmgMax": 117,
+   "stats": {
+    "strength": 9,
+    "stamina": 6,
+    "intellect": 14
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_28",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 279841,
+   "name": "Defender of Dalaran",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 36,
+   "bind": "pickup",
+   "dps": 31.21,
+   "speed": 3.3,
+   "dmgMin": 82,
+   "dmgMax": 124,
+   "stats": {
+    "strength": 9,
+    "stamina": 13,
+    "intellect": 9
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_hammer_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 260172,
    "name": "Assassin's Dagger",
    "kind": "Dagger",
@@ -1076,6 +1146,75 @@
    ]
   },
   {
+   "id": 270071,
+   "name": "Dark Hearted Hammer",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 40,
+   "bind": "pickup",
+   "dps": 28.95,
+   "speed": 3.8,
+   "dmgMin": 88,
+   "dmgMax": 132,
+   "stats": {
+    "strength": 12,
+    "stamina": 8
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 271766,
+   "name": "Heavehammer",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 27.73,
+   "speed": 3.3,
+   "dmgMin": 73,
+   "dmgMax": 110,
+   "stats": {
+    "armor": 60
+   },
+   "bonus": {
+    "attackPower": 32
+   },
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 274929,
    "name": "Hurley's Felling Axe",
    "kind": "2H Axe",
@@ -1111,6 +1250,41 @@
    ]
   },
   {
+   "id": 271767,
+   "name": "Healer's Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 27.7,
+   "speed": 2.6,
+   "dmgMin": 57,
+   "dmgMax": 87,
+   "stats": {
+    "stamina": 12
+   },
+   "bonus": {
+    "mp5": 5
+   },
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 270088,
    "name": "Thane's Hammer",
    "kind": "1H Mace",
@@ -1132,6 +1306,40 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_hammer_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281312,
+   "name": "Fallen Dragon's Scepter",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 32,
+   "bind": "pickup",
+   "dps": 26.6,
+   "speed": 3.4,
+   "dmgMin": 72,
+   "dmgMax": 109,
+   "stats": {
+    "intellect": 11,
+    "spirit": 13
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_08",
    "raceMask": -1,
    "sources": [
     {
@@ -1244,6 +1452,72 @@
    ]
   },
   {
+   "id": 270069,
+   "name": "Mindslicer",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 41,
+   "bind": "pickup",
+   "dps": 22.9,
+   "speed": 1.9,
+   "dmgMin": 30,
+   "dmgMax": 57,
+   "stats": {
+    "intellect": 7
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 271667,
+   "name": "Ironwood Destroyer",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 22.21,
+   "speed": 3.4,
+   "dmgMin": 60,
+   "dmgMax": 91,
+   "stats": {},
+   "bonus": {
+    "natureDamage": 19
+   },
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 213105,
    "name": "Shawarmageddon",
    "kind": "1H Mace",
@@ -1275,6 +1549,73 @@
    ]
   },
   {
+   "id": 270070,
+   "name": "Madman's Blade",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 40,
+   "bind": "pickup",
+   "dps": 22.1,
+   "speed": 1.9,
+   "dmgMin": 29,
+   "dmgMax": 55,
+   "stats": {
+    "spirit": 7
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 270049,
+   "name": "Mavoris's Warstaff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 32,
+   "bind": "pickup",
+   "dps": 21.59,
+   "speed": 2.2,
+   "dmgMin": 38,
+   "dmgMax": 57,
+   "stats": {
+    "strength": 11,
+    "stamina": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 274928,
    "name": "Curly's Chopper",
    "kind": "1H Axe",
@@ -1298,6 +1639,215 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_axe_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281314,
+   "name": "Subdued Dragon's Fang",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 32,
+   "bind": "pickup",
+   "dps": 20.59,
+   "speed": 1.7,
+   "dmgMin": 24,
+   "dmgMax": 46,
+   "stats": {
+    "agility": 7,
+    "stamina": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 251533,
+   "name": "Forsaken Greataxe",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 20.5,
+   "speed": 3,
+   "dmgMin": 49,
+   "dmgMax": 74,
+   "stats": {
+    "strength": 8,
+    "stamina": 4
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_axe_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 270018,
+   "name": "Hammerbone",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 20.44,
+   "speed": 3.4,
+   "dmgMin": 55,
+   "dmgMax": 84,
+   "stats": {
+    "strength": 7,
+    "spirit": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_hammer_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 270027,
+   "name": "Ursine Hammer",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 27,
+   "bind": "pickup",
+   "dps": 18.44,
+   "speed": 3.2,
+   "dmgMin": 47,
+   "dmgMax": 71,
+   "stats": {
+    "agility": 5,
+    "intellect": 5,
+    "spirit": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_hammer_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 280805,
+   "name": "Serrated Raptor Claw",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 17.19,
+   "speed": 1.6,
+   "dmgMin": 19,
+   "dmgMax": 36,
+   "stats": {
+    "agility": 3
+   },
+   "bonus": {
+    "attackPower": 6
+   },
+   "equip": [
+    "Equip: +6 Attack Power."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 271664,
+   "name": "Hornbeam Heft",
+   "kind": "1H Axe",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 17.1,
+   "speed": 2.4,
+   "dmgMin": 28,
+   "dmgMax": 54,
+   "stats": {
+    "strength": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_axe_01",
    "raceMask": -1,
    "sources": [
     {
@@ -1344,6 +1894,281 @@
    ]
   },
   {
+   "id": 270048,
+   "name": "Uthil's Cudgel",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 32,
+   "bind": "pickup",
+   "dps": 16.55,
+   "speed": 2.9,
+   "dmgMin": 33,
+   "dmgMax": 63,
+   "stats": {
+    "stamina": 3,
+    "spirit": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 279895,
+   "name": "Ironforge Greathammer",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 15.97,
+   "speed": 3.1,
+   "dmgMin": 39,
+   "dmgMax": 60,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "chance": [
+    "Chance on hit: Blasts a target for 42 Fire damage."
+   ],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_hammer_21",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 251534,
+   "name": "Gnarled Necromancer's Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 15.18,
+   "speed": 2.8,
+   "dmgMin": 34,
+   "dmgMax": 51,
+   "stats": {
+    "spirit": 10
+   },
+   "bonus": {
+    "spellPower": 26
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 26.",
+    "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281297,
+   "name": "Royal Dagger",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 25,
+   "bind": "pickup",
+   "dps": 12.9,
+   "speed": 1.7,
+   "dmgMin": 15,
+   "dmgMax": 29,
+   "stats": {
+    "intellect": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 251485,
+   "name": "Edward's Knife",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 12.19,
+   "speed": 1.6,
+   "dmgMin": 13,
+   "dmgMax": 26,
+   "stats": {
+    "agility": 2,
+    "stamina": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281253,
+   "name": "Mountaineer's Greataxe",
+   "kind": "2H Axe",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 17,
+   "bind": "pickup",
+   "dps": 11.21,
+   "speed": 3.3,
+   "dmgMin": 29,
+   "dmgMax": 45,
+   "stats": {
+    "strength": 3,
+    "stamina": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_axe_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 257345,
+   "name": "Honed Greathammer",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 13,
+   "bind": "pickup",
+   "dps": 9.06,
+   "speed": 3.2,
+   "dmgMin": 23,
+   "dmgMax": 35,
+   "stats": {
+    "strength": 2,
+    "spirit": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_2h_skybornec60_b_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 269716,
+   "name": "Keen Skinning Knife",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 18,
+   "bind": "pickup",
+   "dps": 9,
+   "speed": 1.5,
+   "dmgMin": 9,
+   "dmgMax": 18,
+   "stats": {
+    "intellect": 2
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increased Skinning +3."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 246165,
    "name": "Driftwood Smasher",
    "kind": "2H Mace",
@@ -1365,6 +2190,277 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_hammer_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 286742,
+   "name": "Riptear's Cleaver",
+   "kind": "2H Axe",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 13,
+   "bind": "pickup",
+   "dps": 8.94,
+   "speed": 3.3,
+   "dmgMin": 23,
+   "dmgMax": 36,
+   "stats": {
+    "strength": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_throwingaxe_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 257343,
+   "name": "Balanced Quarterstaff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 13,
+   "bind": "pickup",
+   "dps": 8.86,
+   "speed": 2.2,
+   "dmgMin": 15,
+   "dmgMax": 24,
+   "stats": {
+    "stamina": 2,
+    "spirit": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_2h_skybornec60_b_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281254,
+   "name": "Invader's Mace",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 17,
+   "bind": "pickup",
+   "dps": 8.54,
+   "speed": 2.4,
+   "dmgMin": 14,
+   "dmgMax": 27,
+   "stats": {
+    "strength": 2,
+    "spirit": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 248005,
+   "name": "Northshire Hammer",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 12,
+   "bind": "pickup",
+   "dps": 8.33,
+   "speed": 2.7,
+   "dmgMin": 18,
+   "dmgMax": 27,
+   "stats": {
+    "strength": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 248008,
+   "name": "Apprentice's Spellstaff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 12,
+   "bind": "pickup",
+   "dps": 8.2,
+   "speed": 2.2,
+   "dmgMin": 14,
+   "dmgMax": 22,
+   "stats": {
+    "intellect": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 279874,
+   "name": "The Stitcher",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 8.13,
+   "speed": 2.4,
+   "dmgMin": 13,
+   "dmgMax": 26,
+   "stats": {
+    "stamina": 3
+   },
+   "bonus": {
+    "healing": 30,
+    "spellDamage": 10
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 30 and damage done by up to 10 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_mace_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281257,
+   "name": "Daggerfang's Daggerfang",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 16,
+   "bind": "pickup",
+   "dps": 7.94,
+   "speed": 1.7,
+   "dmgMin": 9,
+   "dmgMax": 18,
+   "stats": {
+    "agility": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281274,
+   "name": "Makeshift Stormcaller",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 11,
+   "bind": "pickup",
+   "dps": 7.7,
+   "speed": 3.3,
+   "dmgMin": 20,
+   "dmgMax": 31,
+   "stats": {
+    "intellect": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_14",
    "raceMask": -1,
    "sources": [
     {
@@ -1441,6 +2537,342 @@
    ]
   },
   {
+   "id": 263312,
+   "name": "Planting Shovel",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 10,
+   "bind": "pickup",
+   "dps": 7,
+   "speed": 2.5,
+   "dmgMin": 14,
+   "dmgMax": 21,
+   "stats": {
+    "strength": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_shovel_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 257346,
+   "name": "Quickblade's Dagger",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 13,
+   "bind": "pickup",
+   "dps": 6.76,
+   "speed": 1.7,
+   "dmgMin": 8,
+   "dmgMax": 15,
+   "stats": {
+    "agility": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_knife_1h_skybornec60_b_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 248007,
+   "name": "Militia Shortblade",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 12,
+   "bind": "pickup",
+   "dps": 6.5,
+   "speed": 2,
+   "dmgMin": 9,
+   "dmgMax": 17,
+   "stats": {
+    "agility": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 270005,
+   "name": "Monastic Hammer",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 19,
+   "bind": "pickup",
+   "dps": 6.43,
+   "speed": 2.1,
+   "dmgMin": 9,
+   "dmgMax": 18,
+   "stats": {
+    "intellect": 2
+   },
+   "bonus": {
+    "spellPower": 12
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_hammer_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 277247,
+   "name": "Mug of Muddled Memories",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 12,
+   "bind": "pickup",
+   "dps": 6.4,
+   "speed": 2.8,
+   "dmgMin": 12,
+   "dmgMax": 24,
+   "stats": {
+    "intellect": 1,
+    "spirit": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_drink_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 286730,
+   "name": "Pristine Orcish Dagger",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 12,
+   "bind": "pickup",
+   "dps": 6.25,
+   "speed": 2.4,
+   "dmgMin": 10,
+   "dmgMax": 20,
+   "stats": {
+    "agility": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 282064,
+   "name": "Tim's Lost Rib",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 12,
+   "bind": "pickup",
+   "dps": 6.18,
+   "speed": 1.7,
+   "dmgMin": 7,
+   "dmgMax": 14,
+   "stats": {
+    "agility": 1,
+    "stamina": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 278002,
+   "name": "Valley Cosh",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 11,
+   "bind": "pickup",
+   "dps": 6.05,
+   "speed": 1.9,
+   "dmgMin": 8,
+   "dmgMax": 15,
+   "stats": {
+    "stamina": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 277988,
+   "name": "Hoof-Holstered Blade",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 11,
+   "bind": "pickup",
+   "dps": 5.71,
+   "speed": 1.4,
+   "dmgMin": 5,
+   "dmgMax": 11,
+   "stats": {
+    "strength": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 263314,
+   "name": "Roofing Hammer",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 10,
+   "bind": "pickup",
+   "dps": 5.42,
+   "speed": 2.4,
+   "dmgMin": 9,
+   "dmgMax": 17,
+   "stats": {
+    "spirit": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_20",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 263432,
    "name": "Skulker's Shiv",
    "kind": "Dagger",
@@ -1462,6 +2894,70 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_weapon_shortblade_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 263313,
+   "name": "Trusty Wrench",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 10,
+   "bind": "pickup",
+   "dps": 5.28,
+   "speed": 1.8,
+   "dmgMin": 6,
+   "dmgMax": 13,
+   "stats": {
+    "agility": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_wrench_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 263329,
+   "name": "Flutterfly Swatter",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 9,
+   "bind": "pickup",
+   "dps": 4.75,
+   "speed": 2,
+   "dmgMin": 6,
+   "dmgMax": 13,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_1h_skybornec60_b_01",
    "raceMask": -1,
    "sources": [
     {
@@ -1574,6 +3070,72 @@
    ]
   },
   {
+   "id": 280605,
+   "name": "Tidebringer's Claw",
+   "kind": "Fist",
+   "quality": 3,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 40,
+   "bind": "pickup",
+   "dps": 27.5,
+   "speed": 2.4,
+   "dmgMin": 46,
+   "dmgMax": 86,
+   "stats": {
+    "stamina": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_hand_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 280607,
+   "name": "Lightning's Grasp",
+   "kind": "Fist",
+   "quality": 3,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 40,
+   "bind": "pickup",
+   "dps": 27.5,
+   "speed": 2.2,
+   "dmgMin": 42,
+   "dmgMax": 79,
+   "stats": {
+    "intellect": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_hand_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
    "id": 277979,
    "name": "Mauler's Mutton",
    "kind": "1H Mace",
@@ -1608,6 +3170,176 @@
    ]
   },
   {
+   "id": 277515,
+   "name": "Dagger of Deals",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 33,
+   "bind": "pickup",
+   "dps": 16.94,
+   "speed": 1.8,
+   "dmgMin": 21,
+   "dmgMax": 40,
+   "stats": {
+    "agility": 4,
+    "stamina": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 276887,
+   "name": "Big Bad Basher",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 15.97,
+   "speed": 3.1,
+   "dmgMin": 39,
+   "dmgMax": 60,
+   "stats": {
+    "strength": 4,
+    "stamina": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 277286,
+   "name": "Encroacher's Claim",
+   "kind": "2H Axe",
+   "quality": 2,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 23,
+   "bind": "pickup",
+   "dps": 15.2,
+   "speed": 3.3,
+   "dmgMin": 40,
+   "dmgMax": 60,
+   "stats": {
+    "spirit": 6,
+    "strength": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_axe_17",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 276888,
+   "name": "Quilboar Toothpick",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 24,
+   "bind": "pickup",
+   "dps": 12.2,
+   "speed": 1.8,
+   "dmgMin": 15,
+   "dmgMax": 29,
+   "stats": {
+    "intellect": 2,
+    "spirit": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 277288,
+   "name": "Pathfinder's Clearway",
+   "kind": "1H Axe",
+   "quality": 2,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 23,
+   "bind": "pickup",
+   "dps": 11.5,
+   "speed": 2.3,
+   "dmgMin": 18,
+   "dmgMax": 35,
+   "stats": {
+    "intellect": 2,
+    "stamina": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_axe_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
    "id": 280304,
    "name": "Invisible Dagger",
    "kind": "Dagger",
@@ -1627,6 +3359,39 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_sword_50",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 282284,
+   "name": "Webwood Slicer",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 10,
+   "bind": "pickup",
+   "dps": 5.29,
+   "speed": 1.7,
+   "dmgMin": 6,
+   "dmgMax": 12,
+   "stats": {
+    "agility": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_sword_12",
    "raceMask": -1,
    "sources": [
     {
@@ -2248,60 +4013,6 @@
    ]
   },
   {
-   "id": 248005,
-   "name": "Northshire Hammer",
-   "kind": "2H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 7,
-   "ilvl": 12,
-   "bind": "pickup",
-   "dps": 8.33,
-   "speed": 2.7,
-   "dmgMin": 18,
-   "dmgMax": 27,
-   "stats": {
-    "strength": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Rare Books",
-     "questId": 91777,
-     "level": 7,
-     "requiredLevel": 1,
-     "zone": "Elwynn Forest",
-     "bands": {
-      "red": 1,
-      "orange": 3,
-      "yellow": 5,
-      "green": 10,
-      "grey": 13
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/91777",
-     "basis": {
-      "name": "Mother Fang",
-      "level": 10,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 7
-     },
-     "asap": 5,
-     "rec": 7
-    }
-   ]
-  },
-  {
    "id": 286754,
    "name": "Ukta's Conduit",
    "kind": "Staff",
@@ -2330,60 +4041,6 @@
      "faction": "both",
      "confidence": "community-untested",
      "asap": 7,
-     "rec": 7
-    }
-   ]
-  },
-  {
-   "id": 248008,
-   "name": "Apprentice's Spellstaff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 0,
-   "obtain": 7,
-   "ilvl": 12,
-   "bind": "pickup",
-   "dps": 8.2,
-   "speed": 2.2,
-   "dmgMin": 14,
-   "dmgMax": 22,
-   "stats": {
-    "intellect": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_18",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Rare Books",
-     "questId": 91777,
-     "level": 7,
-     "requiredLevel": 1,
-     "zone": "Elwynn Forest",
-     "bands": {
-      "red": 1,
-      "orange": 3,
-      "yellow": 5,
-      "green": 10,
-      "grey": 13
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/91777",
-     "basis": {
-      "name": "Mother Fang",
-      "level": 10,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 7
-     },
-     "asap": 5,
      "rec": 7
     }
    ]
@@ -2514,60 +4171,6 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 7,
-     "rec": 7
-    }
-   ]
-  },
-  {
-   "id": 248007,
-   "name": "Militia Shortblade",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 7,
-   "ilvl": 12,
-   "bind": "pickup",
-   "dps": 6.5,
-   "speed": 2,
-   "dmgMin": 9,
-   "dmgMax": 17,
-   "stats": {
-    "agility": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Rare Books",
-     "questId": 91777,
-     "level": 7,
-     "requiredLevel": 1,
-     "zone": "Elwynn Forest",
-     "bands": {
-      "red": 1,
-      "orange": 3,
-      "yellow": 5,
-      "green": 10,
-      "grey": 13
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/91777",
-     "basis": {
-      "name": "Mother Fang",
-      "level": 10,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 7
-     },
-     "asap": 5,
      "rec": 7
     }
    ]
@@ -3055,118 +4658,6 @@
    ]
   },
   {
-   "id": 257345,
-   "name": "Honed Greathammer",
-   "kind": "2H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 9,
-   "ilvl": 13,
-   "bind": "pickup",
-   "dps": 9.06,
-   "speed": 3.2,
-   "dmgMin": 23,
-   "dmgMax": 35,
-   "stats": {
-    "strength": 2,
-    "spirit": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_2h_skybornec60_b_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Return to Valanaar",
-     "questId": 92880,
-     "level": 11,
-     "requiredLevel": 6,
-     "zone": "Zephras Isle",
-     "bands": {
-      "red": 6,
-      "orange": 7,
-      "yellow": 9,
-      "green": 14,
-      "grey": 17
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92880",
-     "basis": {
-      "name": "Commander Belguilos",
-      "level": 10,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 92645,
-      "steps": 12
-     },
-     "asap": 7,
-     "rec": 9
-    }
-   ]
-  },
-  {
-   "id": 257343,
-   "name": "Balanced Quarterstaff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 0,
-   "obtain": 9,
-   "ilvl": 13,
-   "bind": "pickup",
-   "dps": 8.86,
-   "speed": 2.2,
-   "dmgMin": 15,
-   "dmgMax": 24,
-   "stats": {
-    "stamina": 2,
-    "spirit": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_2h_skybornec60_b_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Return to Valanaar",
-     "questId": 92880,
-     "level": 11,
-     "requiredLevel": 6,
-     "zone": "Zephras Isle",
-     "bands": {
-      "red": 6,
-      "orange": 7,
-      "yellow": 9,
-      "green": 14,
-      "grey": 17
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92880",
-     "basis": {
-      "name": "Commander Belguilos",
-      "level": 10,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 92645,
-      "steps": 12
-     },
-     "asap": 7,
-     "rec": 9
-    }
-   ]
-  },
-  {
    "id": 4303,
    "name": "Cranial Thumper",
    "kind": "1H Mace",
@@ -3262,329 +4753,6 @@
    ]
   },
   {
-   "id": 263312,
-   "name": "Planting Shovel",
-   "kind": "2H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 9,
-   "ilvl": 10,
-   "bind": "pickup",
-   "dps": 7,
-   "speed": 2.5,
-   "dmgMin": 14,
-   "dmgMax": 21,
-   "stats": {
-    "strength": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_shovel_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Deliver the News",
-     "questId": 92703,
-     "level": 9,
-     "requiredLevel": 5,
-     "zone": "Zephras Isle",
-     "bands": {
-      "orange": 5,
-      "yellow": 7,
-      "green": 12,
-      "grey": 15
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92703",
-     "basis": {
-      "name": "Alvarion Windfield",
-      "level": 10,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 92679,
-      "steps": 7
-     },
-     "asap": 7,
-     "rec": 9
-    }
-   ]
-  },
-  {
-   "id": 257346,
-   "name": "Quickblade's Dagger",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 9,
-   "ilvl": 13,
-   "bind": "pickup",
-   "dps": 6.76,
-   "speed": 1.7,
-   "dmgMin": 8,
-   "dmgMax": 15,
-   "stats": {
-    "agility": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_knife_1h_skybornec60_b_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Return to Valanaar",
-     "questId": 92880,
-     "level": 11,
-     "requiredLevel": 6,
-     "zone": "Zephras Isle",
-     "bands": {
-      "red": 6,
-      "orange": 7,
-      "yellow": 9,
-      "green": 14,
-      "grey": 17
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92880",
-     "basis": {
-      "name": "Commander Belguilos",
-      "level": 10,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 92645,
-      "steps": 12
-     },
-     "asap": 7,
-     "rec": 9
-    }
-   ]
-  },
-  {
-   "id": 263314,
-   "name": "Roofing Hammer",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 9,
-   "ilvl": 10,
-   "bind": "pickup",
-   "dps": 5.42,
-   "speed": 2.4,
-   "dmgMin": 9,
-   "dmgMax": 17,
-   "stats": {
-    "spirit": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_20",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Deliver the News",
-     "questId": 92703,
-     "level": 9,
-     "requiredLevel": 5,
-     "zone": "Zephras Isle",
-     "bands": {
-      "orange": 5,
-      "yellow": 7,
-      "green": 12,
-      "grey": 15
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92703",
-     "basis": {
-      "name": "Alvarion Windfield",
-      "level": 10,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 92679,
-      "steps": 7
-     },
-     "asap": 7,
-     "rec": 9
-    }
-   ]
-  },
-  {
-   "id": 282284,
-   "name": "Webwood Slicer",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 1,
-   "obtain": 9,
-   "ilvl": 10,
-   "bind": "pickup",
-   "dps": 5.29,
-   "speed": 1.7,
-   "dmgMin": 6,
-   "dmgMax": 12,
-   "stats": {
-    "agility": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_sword_12",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Twisted Hatred",
-     "questId": 98403,
-     "level": 12,
-     "requiredLevel": 4,
-     "zone": "Teldrassil",
-     "bands": {
-      "red": 4,
-      "orange": 8,
-      "yellow": 10,
-      "green": 15,
-      "grey": 18
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98403",
-     "basis": {
-      "name": "Xethorr the Wicked",
-      "level": 12,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 7,
-     "rec": 9
-    }
-   ]
-  },
-  {
-   "id": 263313,
-   "name": "Trusty Wrench",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 9,
-   "ilvl": 10,
-   "bind": "pickup",
-   "dps": 5.28,
-   "speed": 1.8,
-   "dmgMin": 6,
-   "dmgMax": 13,
-   "stats": {
-    "agility": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_wrench_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Deliver the News",
-     "questId": 92703,
-     "level": 9,
-     "requiredLevel": 5,
-     "zone": "Zephras Isle",
-     "bands": {
-      "orange": 5,
-      "yellow": 7,
-      "green": 12,
-      "grey": 15
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92703",
-     "basis": {
-      "name": "Alvarion Windfield",
-      "level": 10,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 92679,
-      "steps": 7
-     },
-     "asap": 7,
-     "rec": 9
-    }
-   ]
-  },
-  {
-   "id": 263329,
-   "name": "Flutterfly Swatter",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 9,
-   "ilvl": 9,
-   "bind": "pickup",
-   "dps": 4.75,
-   "speed": 2,
-   "dmgMin": 6,
-   "dmgMax": 13,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_1h_skybornec60_b_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Flutterfly Dust",
-     "questId": 92683,
-     "level": 9,
-     "requiredLevel": 5,
-     "zone": "Zephras Isle",
-     "bands": {
-      "orange": 5,
-      "yellow": 7,
-      "green": 12,
-      "grey": 15
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92683",
-     "basis": {
-      "name": "Alvarion Windfield",
-      "level": 10,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 92679,
-      "steps": 2
-     },
-     "asap": 7,
-     "rec": 9
-    }
-   ]
-  },
-  {
    "id": 263935,
    "name": "Elunar Longstaff",
    "kind": "Staff",
@@ -3614,60 +4782,6 @@
      "faction": "both",
      "confidence": "community-untested",
      "asap": 10,
-     "rec": 10
-    }
-   ]
-  },
-  {
-   "id": 286742,
-   "name": "Riptear's Cleaver",
-   "kind": "2H Axe",
-   "quality": 2,
-   "req": 0,
-   "obtain": 10,
-   "ilvl": 13,
-   "bind": "pickup",
-   "dps": 8.94,
-   "speed": 3.3,
-   "dmgMin": 23,
-   "dmgMax": 36,
-   "stats": {
-    "strength": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_throwingaxe_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Rear Guard Patrol",
-     "questId": 99156,
-     "level": 13,
-     "requiredLevel": 6,
-     "zone": "Tirisfal Glades",
-     "bands": {
-      "red": 6,
-      "orange": 9,
-      "yellow": 11,
-      "green": 16,
-      "grey": 19
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/99156",
-     "basis": {
-      "name": "Riptear",
-      "level": 13,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 8,
      "rec": 10
     }
    ]
@@ -4183,168 +5297,6 @@
    ]
   },
   {
-   "id": 286730,
-   "name": "Pristine Orcish Dagger",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 10,
-   "ilvl": 12,
-   "bind": "pickup",
-   "dps": 6.25,
-   "speed": 2.4,
-   "dmgMin": 10,
-   "dmgMax": 20,
-   "stats": {
-    "agility": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_weapon_shortblade_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Threat from Below",
-     "questId": 99052,
-     "level": 12,
-     "requiredLevel": 10,
-     "zone": "Durotar",
-     "bands": {
-      "yellow": 10,
-      "green": 15,
-      "grey": 18
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/99052",
-     "basis": {
-      "name": "Aggor the Young",
-      "level": 11,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 4
-     },
-     "asap": 10,
-     "rec": 10
-    }
-   ]
-  },
-  {
-   "id": 278002,
-   "name": "Valley Cosh",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 10,
-   "ilvl": 11,
-   "bind": "pickup",
-   "dps": 6.05,
-   "speed": 1.9,
-   "dmgMin": 8,
-   "dmgMax": 15,
-   "stats": {
-    "stamina": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_10",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Stalk With The Earthmother (Hunter, Shaman, Druid)",
-     "questId": 76240,
-     "level": 11,
-     "requiredLevel": 4,
-     "zone": "Mulgore",
-     "classes": [
-      "Hunter",
-      "Shaman",
-      "Druid"
-     ],
-     "bands": {
-      "red": 4,
-      "orange": 7,
-      "yellow": 9,
-      "green": 14,
-      "grey": 17
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/76240",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 4,
-     "rec": 10
-    }
-   ]
-  },
-  {
-   "id": 277988,
-   "name": "Hoof-Holstered Blade",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 10,
-   "ilvl": 11,
-   "bind": "pickup",
-   "dps": 5.71,
-   "speed": 1.4,
-   "dmgMin": 5,
-   "dmgMax": 11,
-   "stats": {
-    "strength": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_18",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Stalk With The Earthmother (Hunter, Shaman, Druid)",
-     "questId": 76240,
-     "level": 11,
-     "requiredLevel": 4,
-     "zone": "Mulgore",
-     "classes": [
-      "Hunter",
-      "Shaman",
-      "Druid"
-     ],
-     "bands": {
-      "red": 4,
-      "orange": 7,
-      "yellow": 9,
-      "green": 14,
-      "grey": 17
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/76240",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 4,
-     "rec": 10
-    }
-   ]
-  },
-  {
    "id": 6214,
    "name": "Heavy Copper Maul",
    "kind": "2H Mace",
@@ -4502,60 +5454,6 @@
      "faction": "both",
      "confidence": "community-untested",
      "asap": 11,
-     "rec": 11
-    }
-   ]
-  },
-  {
-   "id": 281274,
-   "name": "Makeshift Stormcaller",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 0,
-   "obtain": 11,
-   "ilvl": 11,
-   "bind": "pickup",
-   "dps": 7.7,
-   "speed": 3.3,
-   "dmgMin": 20,
-   "dmgMax": 31,
-   "stats": {
-    "intellect": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Stormy Potential",
-     "questId": 97282,
-     "level": 11,
-     "requiredLevel": 7,
-     "zone": "Durotar",
-     "bands": {
-      "orange": 7,
-      "yellow": 9,
-      "green": 14,
-      "grey": 17
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97282",
-     "basis": {
-      "name": "Dustwind Eggtender",
-      "level": 12,
-      "rank": "rare",
-      "from": "wowhead",
-      "group": false,
-      "step": 97281,
-      "steps": 2
-     },
-     "asap": 9,
      "rec": 11
     }
    ]
@@ -5440,106 +6338,6 @@
    ]
   },
   {
-   "id": 277247,
-   "name": "Mug of Muddled Memories",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 12,
-   "ilvl": 12,
-   "bind": "pickup",
-   "dps": 6.4,
-   "speed": 2.8,
-   "dmgMin": 12,
-   "dmgMax": 24,
-   "stats": {
-    "intellect": 1,
-    "spirit": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_drink_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Leonid's Letter",
-     "questId": 98545,
-     "level": 13,
-     "requiredLevel": 10,
-     "zone": "Tirisfal Glades",
-     "bands": {
-      "orange": 10,
-      "yellow": 11,
-      "green": 16,
-      "grey": 19
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98545",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 10,
-     "rec": 12
-    }
-   ]
-  },
-  {
-   "id": 282064,
-   "name": "Tim's Lost Rib",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 12,
-   "ilvl": 12,
-   "bind": "pickup",
-   "dps": 6.18,
-   "speed": 1.7,
-   "dmgMin": 7,
-   "dmgMax": 14,
-   "stats": {
-    "agility": 1,
-    "stamina": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Leonid's Letter",
-     "questId": 98545,
-     "level": 13,
-     "requiredLevel": 10,
-     "zone": "Tirisfal Glades",
-     "bands": {
-      "orange": 10,
-      "yellow": 11,
-      "green": 16,
-      "grey": 19
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98545",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 10,
-     "rec": 12
-    }
-   ]
-  },
-  {
    "id": 4947,
    "name": "Jagged Dagger",
    "kind": "Dagger",
@@ -6226,62 +7024,6 @@
    ]
   },
   {
-   "id": 279895,
-   "name": "Ironforge Greathammer",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 0,
-   "obtain": 14,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 15.97,
-   "speed": 3.1,
-   "dmgMin": 39,
-   "dmgMax": 60,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [
-    "Chance on hit: Blasts a target for 42 Fire damage."
-   ],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_hammer_21",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Old Ironforge Incursion",
-     "questId": 96393,
-     "level": 16,
-     "requiredLevel": 9,
-     "zone": "The Hall of Thanes",
-     "dungeon": true,
-     "bands": {
-      "red": 9,
-      "orange": 12,
-      "yellow": 14,
-      "green": 19,
-      "grey": 23
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96393",
-     "dungeonLevels": [
-      13,
-      18
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "from": "dungeon-range",
-      "group": true
-     },
-     "asap": 13,
-     "rec": 14
-    }
-   ]
-  },
-  {
    "id": 4575,
    "name": "Medicine Staff",
    "kind": "Staff",
@@ -6700,59 +7442,6 @@
       "steps": 1
      },
      "asap": 13,
-     "rec": 14
-    }
-   ]
-  },
-  {
-   "id": 281257,
-   "name": "Daggerfang's Daggerfang",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 14,
-   "ilvl": 16,
-   "bind": "pickup",
-   "dps": 7.94,
-   "speed": 1.7,
-   "dmgMin": 9,
-   "dmgMax": 18,
-   "stats": {
-    "agility": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Twisting the Knife",
-     "questId": 86758,
-     "level": 16,
-     "requiredLevel": 12,
-     "zone": "Loch Modan",
-     "bands": {
-      "orange": 12,
-      "yellow": 14,
-      "green": 19,
-      "grey": 23
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/86758",
-     "basis": {
-      "name": "Daggerfang",
-      "level": 15,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 1
-     },
-     "asap": 12,
      "rec": 14
     }
    ]
@@ -7242,65 +7931,6 @@
    ]
   },
   {
-   "id": 251533,
-   "name": "Forsaken Greataxe",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 0,
-   "obtain": 16,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 20.5,
-   "speed": 3,
-   "dmgMin": 49,
-   "dmgMax": 74,
-   "stats": {
-    "strength": 8,
-    "stamina": 4
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_axe_18",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Wrath of Rath'mael",
-     "questId": 92422,
-     "level": 22,
-     "requiredLevel": 15,
-     "zone": "Ruins of Lordaeron",
-     "dungeon": true,
-     "bands": {
-      "red": 15,
-      "orange": 18,
-      "yellow": 20,
-      "green": 25,
-      "grey": 29
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92422",
-     "dungeonLevels": [
-      15,
-      20
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "from": "dungeon-range",
-      "group": true
-     },
-     "asap": 15,
-     "rec": 16
-    }
-   ]
-  },
-  {
    "id": 5187,
    "name": "Rhahk'Zor's Hammer",
    "kind": "2H Mace",
@@ -7514,67 +8144,6 @@
       "steps": 5
      },
      "asap": 16,
-     "rec": 16
-    }
-   ]
-  },
-  {
-   "id": 251534,
-   "name": "Gnarled Necromancer's Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 16,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 15.18,
-   "speed": 2.8,
-   "dmgMin": 34,
-   "dmgMax": 51,
-   "stats": {
-    "spirit": 10
-   },
-   "bonus": {
-    "spellPower": 26
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 26.",
-    "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_staff_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Wrath of Rath'mael",
-     "questId": 92422,
-     "level": 22,
-     "requiredLevel": 15,
-     "zone": "Ruins of Lordaeron",
-     "dungeon": true,
-     "bands": {
-      "red": 15,
-      "orange": 18,
-      "yellow": 20,
-      "green": 25,
-      "grey": 29
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92422",
-     "dungeonLevels": [
-      15,
-      20
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "from": "dungeon-range",
-      "group": true
-     },
-     "asap": 15,
      "rec": 16
     }
    ]
@@ -7960,61 +8529,6 @@
    ]
   },
   {
-   "id": 281253,
-   "name": "Mountaineer's Greataxe",
-   "kind": "2H Axe",
-   "quality": 2,
-   "req": 0,
-   "obtain": 16,
-   "ilvl": 17,
-   "bind": "pickup",
-   "dps": 11.21,
-   "speed": 3.3,
-   "dmgMin": 29,
-   "dmgMax": 45,
-   "stats": {
-    "strength": 3,
-    "stamina": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_axe_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Banner of the Fallen",
-     "questId": 86585,
-     "level": 17,
-     "requiredLevel": 10,
-     "zone": "Loch Modan",
-     "bands": {
-      "red": 10,
-      "orange": 13,
-      "yellow": 15,
-      "green": 20,
-      "grey": 24
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/86585",
-     "basis": {
-      "name": "Headsplitter",
-      "level": 17,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 1
-     },
-     "asap": 14,
-     "rec": 16
-    }
-   ]
-  },
-  {
    "id": 4568,
    "name": "Grunt Axe",
    "kind": "1H Axe",
@@ -8325,122 +8839,6 @@
    ]
   },
   {
-   "id": 281254,
-   "name": "Invader's Mace",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 16,
-   "ilvl": 17,
-   "bind": "pickup",
-   "dps": 8.54,
-   "speed": 2.4,
-   "dmgMin": 14,
-   "dmgMax": 27,
-   "stats": {
-    "strength": 2,
-    "spirit": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Banner of the Fallen",
-     "questId": 86585,
-     "level": 17,
-     "requiredLevel": 10,
-     "zone": "Loch Modan",
-     "bands": {
-      "red": 10,
-      "orange": 13,
-      "yellow": 15,
-      "green": 20,
-      "grey": 24
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/86585",
-     "basis": {
-      "name": "Headsplitter",
-      "level": 17,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 1
-     },
-     "asap": 14,
-     "rec": 16
-    }
-   ]
-  },
-  {
-   "id": 279874,
-   "name": "The Stitcher",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 16,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 8.13,
-   "speed": 2.4,
-   "dmgMin": 13,
-   "dmgMax": 26,
-   "stats": {
-    "stamina": 3
-   },
-   "bonus": {
-    "healing": 30,
-    "spellDamage": 10
-   },
-   "equip": [
-    "Equip: Increases healing done by up to 30 and damage done by up to 10 for all magical spells and effects."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_mace_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Light's Justice",
-     "questId": 92421,
-     "level": 22,
-     "requiredLevel": 15,
-     "zone": "Ruins of Lordaeron",
-     "dungeon": true,
-     "bands": {
-      "red": 15,
-      "orange": 18,
-      "yellow": 20,
-      "green": 25,
-      "grey": 29
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92421",
-     "dungeonLevels": [
-      15,
-      20
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "from": "dungeon-range",
-      "group": true
-     },
-     "asap": 15,
-     "rec": 16
-    }
-   ]
-  },
-  {
    "id": 15443,
    "name": "Kris of Orgrimmar",
    "kind": "Dagger",
@@ -8537,89 +8935,6 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 17,
-     "rec": 17
-    }
-   ]
-  },
-  {
-   "id": 276887,
-   "name": "Big Bad Basher",
-   "kind": "2H Mace",
-   "quality": 2,
-   "req": 1,
-   "obtain": 17,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 15.97,
-   "speed": 3.1,
-   "dmgMin": 39,
-   "dmgMax": 60,
-   "stats": {
-    "strength": 4,
-    "stamina": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Chol'aruk the Ravener (Horde)",
-     "questId": 97003,
-     "level": 21,
-     "requiredLevel": 15,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 15,
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97003",
-     "basis": {
-      "name": "Chol'aruk",
-      "level": 20,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 15,
-     "rec": 17
-    },
-    {
-     "type": "quest",
-     "quest": "Chol'aruk the Ravener (Alliance)",
-     "questId": 97005,
-     "level": 21,
-     "requiredLevel": 15,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 15,
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97005",
-     "basis": {
-      "name": "Chol'aruk",
-      "level": 20,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 15,
      "rec": 17
     }
    ]
@@ -9060,89 +9375,6 @@
    ]
   },
   {
-   "id": 276888,
-   "name": "Quilboar Toothpick",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 1,
-   "obtain": 17,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 12.2,
-   "speed": 1.8,
-   "dmgMin": 15,
-   "dmgMax": 29,
-   "stats": {
-    "intellect": 2,
-    "spirit": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Chol'aruk the Ravener (Horde)",
-     "questId": 97003,
-     "level": 21,
-     "requiredLevel": 15,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 15,
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97003",
-     "basis": {
-      "name": "Chol'aruk",
-      "level": 20,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 15,
-     "rec": 17
-    },
-    {
-     "type": "quest",
-     "quest": "Chol'aruk the Ravener (Alliance)",
-     "questId": 97005,
-     "level": 21,
-     "requiredLevel": 15,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 15,
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97005",
-     "basis": {
-      "name": "Chol'aruk",
-      "level": 20,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 15,
-     "rec": 17
-    }
-   ]
-  },
-  {
    "id": 2848,
    "name": "Bronze Mace",
    "kind": "1H Mace",
@@ -9501,57 +9733,6 @@
    ]
   },
   {
-   "id": 269716,
-   "name": "Keen Skinning Knife",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 17,
-   "ilvl": 18,
-   "bind": "pickup",
-   "dps": 9,
-   "speed": 1.5,
-   "dmgMin": 9,
-   "dmgMax": 18,
-   "stats": {
-    "intellect": 2
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increased Skinning +3."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Unwelcome Guests",
-     "questId": 95508,
-     "level": 18,
-     "requiredLevel": 14,
-     "zone": "The Barrens",
-     "bands": {
-      "orange": 14,
-      "yellow": 16,
-      "green": 21,
-      "grey": 25
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/95508",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 14,
-     "rec": 17
-    }
-   ]
-  },
-  {
    "id": 1480,
    "name": "Fist of the People's Militia",
    "kind": "1H Mace",
@@ -9602,130 +9783,6 @@
      },
      "asap": 15,
      "rec": 17
-    }
-   ]
-  },
-  {
-   "id": 270005,
-   "name": "Monastic Hammer",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 17,
-   "ilvl": 19,
-   "bind": "pickup",
-   "dps": 6.43,
-   "speed": 2.1,
-   "dmgMin": 9,
-   "dmgMax": 18,
-   "stats": {
-    "intellect": 2
-   },
-   "bonus": {
-    "spellPower": 12
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 12."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_hammer_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Red Silk Bandanas",
-     "questId": 214,
-     "level": 17,
-     "requiredLevel": 14,
-     "zone": "The Deadmines",
-     "dungeon": true,
-     "bands": {
-      "orange": 14,
-      "yellow": 15,
-      "green": 20,
-      "grey": 24
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/214",
-     "dungeonLevels": [
-      17,
-      26
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Defias Overseer",
-      "level": 18,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 8
-     },
-     "asap": 17,
-     "rec": 17
-    }
-   ]
-  },
-  {
-   "id": 270018,
-   "name": "Hammerbone",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 0,
-   "obtain": 18,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 20.44,
-   "speed": 3.4,
-   "dmgMin": 55,
-   "dmgMax": 84,
-   "stats": {
-    "strength": 7,
-    "spirit": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_hammer_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Leaders of the Fang",
-     "questId": 914,
-     "level": 22,
-     "requiredLevel": 10,
-     "zone": "Wailing Caverns",
-     "dungeon": true,
-     "bands": {
-      "red": 10,
-      "orange": 18,
-      "yellow": 20,
-      "green": 25,
-      "grey": 29
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/914",
-     "dungeonLevels": [
-      17,
-      24
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Lord Pythas",
-      "level": 21,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 7
-     },
-     "asap": 17,
-     "rec": 18
     }
    ]
   },
@@ -11869,61 +11926,6 @@
    ]
   },
   {
-   "id": 277286,
-   "name": "Encroacher's Claim",
-   "kind": "2H Axe",
-   "quality": 2,
-   "req": 1,
-   "obtain": 20,
-   "ilvl": 23,
-   "bind": "pickup",
-   "dps": 15.2,
-   "speed": 3.3,
-   "dmgMin": 40,
-   "dmgMax": 60,
-   "stats": {
-    "spirit": 6,
-    "strength": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_axe_17",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Wrongly Blamed, Justly Corrected",
-     "questId": 97250,
-     "level": 23,
-     "requiredLevel": 18,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 18,
-      "orange": 19,
-      "yellow": 21,
-      "green": 26,
-      "grey": 31
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97250",
-     "basis": {
-      "name": "Outraged Pillager",
-      "level": 23,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 18,
-     "rec": 20
-    }
-   ]
-  },
-  {
    "id": 5306,
    "name": "Wind Rider Staff",
    "kind": "Staff",
@@ -12250,61 +12252,6 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 20,
-     "rec": 20
-    }
-   ]
-  },
-  {
-   "id": 277288,
-   "name": "Pathfinder's Clearway",
-   "kind": "1H Axe",
-   "quality": 2,
-   "req": 1,
-   "obtain": 20,
-   "ilvl": 23,
-   "bind": "pickup",
-   "dps": 11.5,
-   "speed": 2.3,
-   "dmgMin": 18,
-   "dmgMax": 35,
-   "stats": {
-    "intellect": 2,
-    "stamina": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Wrongly Blamed, Justly Corrected",
-     "questId": 97250,
-     "level": 23,
-     "requiredLevel": 18,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 18,
-      "orange": 19,
-      "yellow": 21,
-      "green": 26,
-      "grey": 31
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97250",
-     "basis": {
-      "name": "Outraged Pillager",
-      "level": 23,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 18,
      "rec": 20
     }
    ]
@@ -12870,58 +12817,6 @@
      "pvp": false,
      "confidence": "classic-assumed",
      "asap": 21,
-     "rec": 21
-    }
-   ]
-  },
-  {
-   "id": 251485,
-   "name": "Edward's Knife",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 21,
-   "ilvl": 24,
-   "bind": "pickup",
-   "dps": 12.19,
-   "speed": 1.6,
-   "dmgMin": 13,
-   "dmgMax": 26,
-   "stats": {
-    "agility": 2,
-    "stamina": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "A Frightened Request",
-     "questId": 92401,
-     "level": 22,
-     "requiredLevel": 15,
-     "zone": "Undercity",
-     "dungeon": true,
-     "bands": {
-      "red": 15,
-      "orange": 18,
-      "yellow": 20,
-      "green": 25,
-      "grey": 29
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92401",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 15,
      "rec": 21
     }
    ]
@@ -14304,67 +14199,6 @@
    ]
   },
   {
-   "id": 270027,
-   "name": "Ursine Hammer",
-   "kind": "2H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 24,
-   "ilvl": 27,
-   "bind": "pickup",
-   "dps": 18.44,
-   "speed": 3.2,
-   "dmgMin": 47,
-   "dmgMax": 71,
-   "stats": {
-    "agility": 5,
-    "intellect": 5,
-    "spirit": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_hammer_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "What Comes Around...",
-     "questId": 386,
-     "level": 25,
-     "requiredLevel": 22,
-     "zone": "The Stockade",
-     "dungeon": true,
-     "bands": {
-      "orange": 22,
-      "yellow": 23,
-      "green": 28,
-      "grey": 33
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/386",
-     "dungeonLevels": [
-      24,
-      32
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Targorr the Dread",
-      "level": 24,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 24,
-     "rec": 24
-    }
-   ]
-  },
-  {
    "id": 13024,
    "name": "Beazel's Basher",
    "kind": "1H Mace",
@@ -14997,61 +14831,6 @@
    ]
   },
   {
-   "id": 281297,
-   "name": "Royal Dagger",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 24,
-   "ilvl": 25,
-   "bind": "pickup",
-   "dps": 12.9,
-   "speed": 1.7,
-   "dmgMin": 15,
-   "dmgMax": 29,
-   "stats": {
-    "intellect": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "A Friend of the Family (part 2)",
-     "questId": 98191,
-     "level": 25,
-     "requiredLevel": 20,
-     "zone": "Stormwind City",
-     "bands": {
-      "red": 20,
-      "orange": 21,
-      "yellow": 23,
-      "green": 28,
-      "grey": 33
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98191",
-     "basis": {
-      "name": null,
-      "level": 25,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 286,
-      "steps": 7
-     },
-     "asap": 22,
-     "rec": 24
-    }
-   ]
-  },
-  {
    "id": 3414,
    "name": "Crested Scepter",
    "kind": "1H Mace",
@@ -15639,66 +15418,6 @@
    ]
   },
   {
-   "id": 271667,
-   "name": "Ironwood Destroyer",
-   "kind": "2H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 26,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 22.21,
-   "speed": 3.4,
-   "dmgMin": 60,
-   "dmgMax": 91,
-   "stats": {},
-   "bonus": {
-    "natureDamage": 19
-   },
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Horrors in the Highland",
-     "questId": 95646,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "bands": {
-      "red": 24,
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/95646",
-     "dungeonLevels": [
-      26,
-      31
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Highland Horror",
-      "level": 28,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 26,
-     "rec": 26
-    }
-   ]
-  },
-  {
    "id": 3851,
    "name": "Solid Iron Maul",
    "kind": "2H Mace",
@@ -15917,66 +15636,6 @@
      "type": "unknown",
      "faction": "both",
      "confidence": "community-untested",
-     "asap": 26,
-     "rec": 26
-    }
-   ]
-  },
-  {
-   "id": 271664,
-   "name": "Hornbeam Heft",
-   "kind": "1H Axe",
-   "quality": 2,
-   "req": 0,
-   "obtain": 26,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 17.1,
-   "speed": 2.4,
-   "dmgMin": 28,
-   "dmgMax": 54,
-   "stats": {
-    "strength": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Horrors in the Highland",
-     "questId": 95646,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "bands": {
-      "red": 24,
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/95646",
-     "dungeonLevels": [
-      26,
-      31
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Highland Horror",
-      "level": 28,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
      "asap": 26,
      "rec": 26
     }
@@ -16365,66 +16024,6 @@
    ]
   },
   {
-   "id": 280805,
-   "name": "Serrated Raptor Claw",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 27,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 17.19,
-   "speed": 1.6,
-   "dmgMin": 19,
-   "dmgMax": 36,
-   "stats": {
-    "agility": 3
-   },
-   "bonus": {
-    "attackPower": 6
-   },
-   "equip": [
-    "Equip: +6 Attack Power."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_weapon_shortblade_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Changing Tastes",
-     "questId": 95697,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "bands": {
-      "red": 24,
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/95697",
-     "dungeonLevels": [
-      26,
-      31
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "from": "dungeon-range",
-      "group": true
-     },
-     "asap": 26,
-     "rec": 27
-    }
-   ]
-  },
-  {
    "id": 12247,
    "name": "Broad Bladed Knife",
    "kind": "Dagger",
@@ -16725,202 +16324,6 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 28,
-     "rec": 28
-    }
-   ]
-  },
-  {
-   "id": 271766,
-   "name": "Heavehammer",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 0,
-   "obtain": 28,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 27.73,
-   "speed": 3.3,
-   "dmgMin": 73,
-   "dmgMax": 110,
-   "stats": {
-    "armor": 60
-   },
-   "bonus": {
-    "attackPower": 32
-   },
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Earthen Echo",
-     "questId": 98823,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "bands": {
-      "red": 24,
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98823",
-     "dungeonLevels": [
-      26,
-      31
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": null,
-      "level": 31,
-      "rank": "normal",
-      "from": "step-level",
-      "group": true,
-      "step": 95664,
-      "steps": 2
-     },
-     "asap": 26,
-     "rec": 28
-    },
-    {
-     "type": "quest",
-     "quest": "Prehistoric Prism",
-     "questId": 98824,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "bands": {
-      "red": 24,
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98824",
-     "dungeonLevels": [
-      26,
-      31
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": null,
-      "level": 31,
-      "rank": "normal",
-      "from": "step-level",
-      "group": true,
-      "step": 95810,
-      "steps": 2
-     },
-     "asap": 26,
-     "rec": 28
-    }
-   ]
-  },
-  {
-   "id": 271767,
-   "name": "Healer's Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 28,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 27.7,
-   "speed": 2.6,
-   "dmgMin": 57,
-   "dmgMax": 87,
-   "stats": {
-    "stamina": 12
-   },
-   "bonus": {
-    "mp5": 5
-   },
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_10",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Earthen Echo",
-     "questId": 98823,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "bands": {
-      "red": 24,
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98823",
-     "dungeonLevels": [
-      26,
-      31
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": null,
-      "level": 31,
-      "rank": "normal",
-      "from": "step-level",
-      "group": true,
-      "step": 95664,
-      "steps": 2
-     },
-     "asap": 26,
-     "rec": 28
-    },
-    {
-     "type": "quest",
-     "quest": "Prehistoric Prism",
-     "questId": 98824,
-     "level": 31,
-     "requiredLevel": 24,
-     "zone": "Excavation Site: Wetlands",
-     "dungeon": true,
-     "bands": {
-      "red": 24,
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98824",
-     "dungeonLevels": [
-      26,
-      31
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": null,
-      "level": 31,
-      "rank": "normal",
-      "from": "step-level",
-      "group": true,
-      "step": 95810,
-      "steps": 2
-     },
-     "asap": 26,
      "rec": 28
     }
    ]
@@ -17409,64 +16812,6 @@
      "confidence": "community-untested",
      "asap": 28,
      "rec": 28
-    }
-   ]
-  },
-  {
-   "id": 279841,
-   "name": "Defender of Dalaran",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 0,
-   "obtain": 29,
-   "ilvl": 36,
-   "bind": "pickup",
-   "dps": 31.21,
-   "speed": 3.3,
-   "dmgMin": 82,
-   "dmgMax": 124,
-   "stats": {
-    "strength": 9,
-    "stamina": 13,
-    "intellect": 9
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_hammer_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Heart of Disruption (Alliance)",
-     "questId": 92458,
-     "level": 33,
-     "requiredLevel": 24,
-     "zone": "City of Dalaran",
-     "dungeon": true,
-     "bands": {
-      "red": 24,
-      "orange": 29,
-      "yellow": 31,
-      "green": 36,
-      "grey": 42
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92458",
-     "dungeonLevels": [
-      28,
-      33
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "from": "dungeon-range",
-      "group": true
-     },
-     "asap": 28,
-     "rec": 29
     }
    ]
   },
@@ -18645,61 +17990,6 @@
    ]
   },
   {
-   "id": 281312,
-   "name": "Fallen Dragon's Scepter",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 31,
-   "ilvl": 32,
-   "bind": "pickup",
-   "dps": 26.6,
-   "speed": 3.4,
-   "dmgMin": 72,
-   "dmgMax": 109,
-   "stats": {
-    "intellect": 11,
-    "spirit": 13
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Stopping the Cycle",
-     "questId": 98297,
-     "level": 34,
-     "requiredLevel": 24,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 24,
-      "orange": 30,
-      "yellow": 32,
-      "green": 37,
-      "grey": 43
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98297",
-     "basis": {
-      "name": "Subdued Dragonspawn",
-      "level": 34,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 29,
-     "rec": 31
-    }
-   ]
-  },
-  {
    "id": 1523,
    "name": "Huge Stone Club",
    "kind": "2H Mace",
@@ -18924,116 +18214,6 @@
    ]
   },
   {
-   "id": 270049,
-   "name": "Mavoris's Warstaff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 0,
-   "obtain": 31,
-   "ilvl": 32,
-   "bind": "pickup",
-   "dps": 21.59,
-   "speed": 2.2,
-   "dmgMin": 38,
-   "dmgMax": 57,
-   "stats": {
-    "strength": 11,
-    "stamina": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_10",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Insane Druids",
-     "questId": 1012,
-     "level": 32,
-     "requiredLevel": 24,
-     "zone": "Ashenvale",
-     "bands": {
-      "red": 24,
-      "orange": 28,
-      "yellow": 30,
-      "green": 35,
-      "grey": 41
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/1012",
-     "basis": {
-      "name": "Taneel Darkwood",
-      "level": 32,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 3
-     },
-     "asap": 29,
-     "rec": 31
-    }
-   ]
-  },
-  {
-   "id": 281314,
-   "name": "Subdued Dragon's Fang",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 0,
-   "obtain": 31,
-   "ilvl": 32,
-   "bind": "pickup",
-   "dps": 20.59,
-   "speed": 1.7,
-   "dmgMin": 24,
-   "dmgMax": 46,
-   "stats": {
-    "agility": 7,
-    "stamina": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Stopping the Cycle",
-     "questId": 98297,
-     "level": 34,
-     "requiredLevel": 24,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 24,
-      "orange": 30,
-      "yellow": 32,
-      "green": 37,
-      "grey": 43
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98297",
-     "basis": {
-      "name": "Subdued Dragonspawn",
-      "level": 34,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 29,
-     "rec": 31
-    }
-   ]
-  },
-  {
    "id": 15243,
    "name": "Deadly Kris",
    "kind": "Dagger",
@@ -19210,124 +18390,6 @@
      },
      "asap": 29,
      "rec": 31
-    }
-   ]
-  },
-  {
-   "id": 270048,
-   "name": "Uthil's Cudgel",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 31,
-   "ilvl": 32,
-   "bind": "pickup",
-   "dps": 16.55,
-   "speed": 2.9,
-   "dmgMin": 33,
-   "dmgMax": 63,
-   "stats": {
-    "stamina": 3,
-    "spirit": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Insane Druids",
-     "questId": 1012,
-     "level": 32,
-     "requiredLevel": 24,
-     "zone": "Ashenvale",
-     "bands": {
-      "red": 24,
-      "orange": 28,
-      "yellow": 30,
-      "green": 35,
-      "grey": 41
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/1012",
-     "basis": {
-      "name": "Taneel Darkwood",
-      "level": 32,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 3
-     },
-     "asap": 29,
-     "rec": 31
-    }
-   ]
-  },
-  {
-   "id": 279844,
-   "name": "Striking Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 32,
-   "ilvl": 36,
-   "bind": "pickup",
-   "dps": 31.29,
-   "speed": 3.1,
-   "dmgMin": 77,
-   "dmgMax": 117,
-   "stats": {
-    "strength": 9,
-    "stamina": 6,
-    "intellect": 14
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_staff_28",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Heart of Disruption (Horde)",
-     "questId": 96984,
-     "level": 33,
-     "requiredLevel": 24,
-     "zone": "City of Dalaran",
-     "dungeon": true,
-     "bands": {
-      "red": 24,
-      "orange": 29,
-      "yellow": 31,
-      "green": 36,
-      "grey": 42
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96984",
-     "dungeonLevels": [
-      28,
-      33
-     ],
-     "dungeonRef": "https://foreverchanges.pro/dungeon-quests",
-     "basis": {
-      "name": "Dalaran Summoner",
-      "level": 35,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": true,
-      "step": 545,
-      "steps": 5
-     },
-     "asap": 30,
-     "rec": 32
     }
    ]
   },
@@ -19733,61 +18795,6 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 32,
-     "rec": 32
-    }
-   ]
-  },
-  {
-   "id": 277515,
-   "name": "Dagger of Deals",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 1,
-   "obtain": 32,
-   "ilvl": 33,
-   "bind": "pickup",
-   "dps": 16.94,
-   "speed": 1.8,
-   "dmgMin": 21,
-   "dmgMax": 40,
-   "stats": {
-    "agility": 4,
-    "stamina": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hate the Hatefury",
-     "questId": 97265,
-     "level": 33,
-     "requiredLevel": 28,
-     "zone": "Desolace",
-     "bands": {
-      "red": 28,
-      "orange": 29,
-      "yellow": 31,
-      "green": 36,
-      "grey": 42
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97265",
-     "basis": {
-      "name": "Hatefury Shadowstalker",
-      "level": 33,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 1
-     },
-     "asap": 30,
      "rec": 32
     }
    ]
@@ -20808,6 +19815,76 @@
    ]
   },
   {
+   "id": 271803,
+   "name": "Greatstaff of the Necrokhans",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 35,
+   "obtain": 35,
+   "ilvl": 42,
+   "bind": "pickup",
+   "dps": 37.2,
+   "speed": 3,
+   "dmgMin": 89,
+   "dmgMax": 134,
+   "stats": {
+    "stamina": 16,
+    "intellect": 12,
+    "spirit": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 35,
+     "rec": 35
+    }
+   ]
+  },
+  {
+   "id": 271801,
+   "name": "Abandoned Ferocity",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 35,
+   "obtain": 35,
+   "ilvl": 42,
+   "bind": "pickup",
+   "dps": 37.19,
+   "speed": 3.2,
+   "dmgMin": 95,
+   "dmgMax": 143,
+   "stats": {
+    "strength": 10,
+    "agility": 4,
+    "stamina": 12
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_axe_17",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 35,
+     "rec": 35
+    }
+   ]
+  },
+  {
    "id": 9383,
    "name": "Obsidian Cleaver",
    "kind": "2H Axe",
@@ -20995,6 +20072,76 @@
    ]
   },
   {
+   "id": 271802,
+   "name": "Bludgeon of Betrayed Virtues",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 35,
+   "obtain": 35,
+   "ilvl": 42,
+   "bind": "pickup",
+   "dps": 28.64,
+   "speed": 2.2,
+   "dmgMin": 44,
+   "dmgMax": 82,
+   "stats": {
+    "strength": 3,
+    "agility": 2,
+    "stamina": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 35,
+     "rec": 35
+    }
+   ]
+  },
+  {
+   "id": 271804,
+   "name": "Soulsplatter Mace",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 35,
+   "obtain": 35,
+   "ilvl": 42,
+   "bind": "pickup",
+   "dps": 28.6,
+   "speed": 1.8,
+   "dmgMin": 41,
+   "dmgMax": 62,
+   "stats": {
+    "stamina": 3,
+    "intellect": 6,
+    "spirit": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 35,
+     "rec": 35
+    }
+   ]
+  },
+  {
    "id": 9378,
    "name": "Shovelphlange's Mining Axe",
    "kind": "1H Axe",
@@ -21026,6 +20173,40 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
+     "asap": 35,
+     "rec": 35
+    }
+   ]
+  },
+  {
+   "id": 271797,
+   "name": "Staff of Revelations",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 35,
+   "obtain": 35,
+   "ilvl": 38,
+   "bind": "pickup",
+   "dps": 26.7,
+   "speed": 3,
+   "dmgMin": 64,
+   "dmgMax": 96,
+   "stats": {
+    "intellect": 8,
+    "spirit": 11
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
      "asap": 35,
      "rec": 35
     }
@@ -21112,6 +20293,40 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
+     "asap": 35,
+     "rec": 35
+    }
+   ]
+  },
+  {
+   "id": 271799,
+   "name": "Desert Crawler's Claw",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 35,
+   "obtain": 35,
+   "ilvl": 38,
+   "bind": "pickup",
+   "dps": 20.3,
+   "speed": 1.8,
+   "dmgMin": 25,
+   "dmgMax": 48,
+   "stats": {
+    "stamina": 2,
+    "intellect": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
      "asap": 35,
      "rec": 35
     }
@@ -21225,62 +20440,6 @@
    ]
   },
   {
-   "id": 271801,
-   "name": "Abandoned Ferocity",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 35,
-   "obtain": 36,
-   "ilvl": 42,
-   "bind": "pickup",
-   "dps": 37.19,
-   "speed": 3.2,
-   "dmgMin": 95,
-   "dmgMax": 143,
-   "stats": {
-    "strength": 10,
-    "agility": 4,
-    "stamina": 12
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_axe_17",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Khan Jehn",
-     "questId": 93128,
-     "level": 42,
-     "requiredLevel": 35,
-     "zone": "Desolace",
-     "bands": {
-      "red": 35,
-      "orange": 38,
-      "yellow": 40,
-      "green": 45,
-      "grey": 53
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/93128",
-     "basis": {
-      "name": "Khan Jehn",
-      "level": 37,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 4
-     },
-     "asap": 35,
-     "rec": 36
-    }
-   ]
-  },
-  {
    "id": 6327,
    "name": "The Pacifier",
    "kind": "2H Mace",
@@ -21378,62 +20537,6 @@
      "faction": "both",
      "confidence": "community-untested",
      "asap": 36,
-     "rec": 36
-    }
-   ]
-  },
-  {
-   "id": 271802,
-   "name": "Bludgeon of Betrayed Virtues",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 35,
-   "obtain": 36,
-   "ilvl": 42,
-   "bind": "pickup",
-   "dps": 28.64,
-   "speed": 2.2,
-   "dmgMin": 44,
-   "dmgMax": 82,
-   "stats": {
-    "strength": 3,
-    "agility": 2,
-    "stamina": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Khan Jehn",
-     "questId": 93128,
-     "level": 42,
-     "requiredLevel": 35,
-     "zone": "Desolace",
-     "bands": {
-      "red": 35,
-      "orange": 38,
-      "yellow": 40,
-      "green": 45,
-      "grey": 53
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/93128",
-     "basis": {
-      "name": "Khan Jehn",
-      "level": 37,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 4
-     },
-     "asap": 35,
      "rec": 36
     }
    ]
@@ -21699,26 +20802,15 @@
      "questId": 96016,
      "level": 40,
      "requiredLevel": 30,
-     "zone": "Shaman",
-     "classes": [
-      "Shaman"
-     ],
-     "bands": {
-      "red": 30,
-      "orange": 36,
-      "yellow": 38,
-      "green": 43,
-      "grey": 51
-     },
      "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96016",
      "chain": [
       94789,
       96264,
       79358,
       96135
      ],
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=96016",
      "basis": {
       "name": "Ravaging Tempest",
       "level": 40,
@@ -21966,61 +21058,6 @@
    ]
   },
   {
-   "id": 270071,
-   "name": "Dark Hearted Hammer",
-   "kind": "2H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 37,
-   "ilvl": 40,
-   "bind": "pickup",
-   "dps": 28.95,
-   "speed": 3.8,
-   "dmgMin": 88,
-   "dmgMax": 132,
-   "stats": {
-    "strength": 12,
-    "stamina": 8
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Colonel Kurzen",
-     "questId": 202,
-     "level": 40,
-     "requiredLevel": 30,
-     "zone": "Stranglethorn Vale",
-     "bands": {
-      "red": 30,
-      "orange": 36,
-      "yellow": 38,
-      "green": 43,
-      "grey": 51
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/202",
-     "basis": {
-      "name": "Colonel Kurzen",
-      "level": 40,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 4
-     },
-     "asap": 35,
-     "rec": 37
-    }
-   ]
-  },
-  {
    "id": 10772,
    "name": "Glutton's Cleaver",
    "kind": "1H Axe",
@@ -22101,122 +21138,6 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 37,
-     "rec": 37
-    }
-   ]
-  },
-  {
-   "id": 280605,
-   "name": "Tidebringer's Claw",
-   "kind": "Fist",
-   "quality": 3,
-   "req": 1,
-   "obtain": 37,
-   "ilvl": 40,
-   "bind": "pickup",
-   "dps": 27.5,
-   "speed": 2.4,
-   "dmgMin": 46,
-   "dmgMax": 86,
-   "stats": {
-    "stamina": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_hand_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Tempest's Weapons",
-     "questId": 96016,
-     "level": 40,
-     "requiredLevel": 30,
-     "zone": "Shaman",
-     "classes": [
-      "Shaman"
-     ],
-     "bands": {
-      "red": 30,
-      "orange": 36,
-      "yellow": 38,
-      "green": 43,
-      "grey": 51
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96016",
-     "basis": {
-      "name": "Ravaging Tempest",
-      "level": 40,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "step": 96135,
-      "steps": 5
-     },
-     "asap": 35,
-     "rec": 37
-    }
-   ]
-  },
-  {
-   "id": 280607,
-   "name": "Lightning's Grasp",
-   "kind": "Fist",
-   "quality": 3,
-   "req": 1,
-   "obtain": 37,
-   "ilvl": 40,
-   "bind": "pickup",
-   "dps": 27.5,
-   "speed": 2.2,
-   "dmgMin": 42,
-   "dmgMax": 79,
-   "stats": {
-    "intellect": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_hand_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Tempest's Weapons",
-     "questId": 96016,
-     "level": 40,
-     "requiredLevel": 30,
-     "zone": "Shaman",
-     "classes": [
-      "Shaman"
-     ],
-     "bands": {
-      "red": 30,
-      "orange": 36,
-      "yellow": 38,
-      "green": 43,
-      "grey": 51
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96016",
-     "basis": {
-      "name": "Ravaging Tempest",
-      "level": 40,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "step": 96135,
-      "steps": 5
-     },
-     "asap": 35,
      "rec": 37
     }
    ]
@@ -22423,114 +21344,6 @@
      "ref": "https://foreverchanges.pro/quest/679",
      "basis": {
       "name": "Boulderfist Lord",
-      "level": 40,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 4
-     },
-     "asap": 35,
-     "rec": 37
-    }
-   ]
-  },
-  {
-   "id": 270069,
-   "name": "Mindslicer",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 37,
-   "ilvl": 41,
-   "bind": "pickup",
-   "dps": 22.9,
-   "speed": 1.9,
-   "dmgMin": 30,
-   "dmgMax": 57,
-   "stats": {
-    "intellect": 7
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Call to Arms",
-     "questId": 679,
-     "level": 40,
-     "requiredLevel": 30,
-     "zone": "Arathi Highlands",
-     "bands": {
-      "red": 30,
-      "orange": 36,
-      "yellow": 38,
-      "green": 43,
-      "grey": 51
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/679",
-     "basis": {
-      "name": "Boulderfist Lord",
-      "level": 40,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 4
-     },
-     "asap": 35,
-     "rec": 37
-    }
-   ]
-  },
-  {
-   "id": 270070,
-   "name": "Madman's Blade",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 37,
-   "ilvl": 40,
-   "bind": "pickup",
-   "dps": 22.1,
-   "speed": 1.9,
-   "dmgMin": 29,
-   "dmgMax": 55,
-   "stats": {
-    "spirit": 7
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Colonel Kurzen",
-     "questId": 202,
-     "level": 40,
-     "requiredLevel": 30,
-     "zone": "Stranglethorn Vale",
-     "bands": {
-      "red": 30,
-      "orange": 36,
-      "yellow": 38,
-      "green": 43,
-      "grey": 51
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/202",
-     "basis": {
-      "name": "Colonel Kurzen",
       "level": 40,
       "rank": "elite",
       "from": "wowhead",
@@ -23066,61 +21879,6 @@
    ]
   },
   {
-   "id": 271799,
-   "name": "Desert Crawler's Claw",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 35,
-   "obtain": 38,
-   "ilvl": 38,
-   "bind": "pickup",
-   "dps": 20.3,
-   "speed": 1.8,
-   "dmgMin": 25,
-   "dmgMax": 48,
-   "stats": {
-    "stamina": 2,
-    "intellect": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Test Your Theory",
-     "questId": 93045,
-     "level": 38,
-     "requiredLevel": 35,
-     "zone": "Desolace",
-     "bands": {
-      "orange": 35,
-      "yellow": 36,
-      "green": 41,
-      "grey": 48
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/93045",
-     "basis": {
-      "name": "Outcast Necromancer",
-      "level": 40,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 93037,
-      "steps": 8
-     },
-     "asap": 37,
-     "rec": 38
-    }
-   ]
-  },
-  {
    "id": 271930,
    "name": "Clever Expeditionary's Spellblade",
    "kind": "Dagger",
@@ -23623,62 +22381,6 @@
      "faction": "both",
      "confidence": "community-untested",
      "asap": 39,
-     "rec": 39
-    }
-   ]
-  },
-  {
-   "id": 271797,
-   "name": "Staff of Revelations",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 35,
-   "obtain": 39,
-   "ilvl": 38,
-   "bind": "pickup",
-   "dps": 26.7,
-   "speed": 3,
-   "dmgMin": 64,
-   "dmgMax": 96,
-   "stats": {
-    "intellect": 8,
-    "spirit": 11
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Proof of Concept",
-     "questId": 92873,
-     "level": 41,
-     "requiredLevel": 35,
-     "zone": "Shen'dralas",
-     "bands": {
-      "red": 35,
-      "orange": 37,
-      "yellow": 39,
-      "green": 44,
-      "grey": 52
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92873",
-     "basis": {
-      "name": "Outcast Necromancer",
-      "level": 40,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 92846,
-      "steps": 9
-     },
-     "asap": 37,
      "rec": 39
     }
    ]
@@ -24851,63 +23553,6 @@
    ]
   },
   {
-   "id": 271803,
-   "name": "Greatstaff of the Necrokhans",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 35,
-   "obtain": 42,
-   "ilvl": 42,
-   "bind": "pickup",
-   "dps": 37.2,
-   "speed": 3,
-   "dmgMin": 89,
-   "dmgMax": 134,
-   "stats": {
-    "stamina": 16,
-    "intellect": 12,
-    "spirit": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Khan Jehn",
-     "questId": 93196,
-     "level": 42,
-     "requiredLevel": 35,
-     "zone": "Desolace",
-     "bands": {
-      "red": 35,
-      "orange": 38,
-      "yellow": 40,
-      "green": 45,
-      "grey": 53
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/93196",
-     "basis": {
-      "name": "Bristleback Nomad",
-      "level": 43,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 93066,
-      "steps": 9
-     },
-     "asap": 40,
-     "rec": 42
-    }
-   ]
-  },
-  {
    "id": 871,
    "name": "Flurry Axe",
    "kind": "1H Axe",
@@ -25047,63 +23692,6 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 42,
-     "rec": 42
-    }
-   ]
-  },
-  {
-   "id": 271804,
-   "name": "Soulsplatter Mace",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 35,
-   "obtain": 42,
-   "ilvl": 42,
-   "bind": "pickup",
-   "dps": 28.6,
-   "speed": 1.8,
-   "dmgMin": 41,
-   "dmgMax": 62,
-   "stats": {
-    "stamina": 3,
-    "intellect": 6,
-    "spirit": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Khan Jehn",
-     "questId": 93196,
-     "level": 42,
-     "requiredLevel": 35,
-     "zone": "Desolace",
-     "bands": {
-      "red": 35,
-      "orange": 38,
-      "yellow": 40,
-      "green": 45,
-      "grey": 53
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/93196",
-     "basis": {
-      "name": "Bristleback Nomad",
-      "level": 43,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 93066,
-      "steps": 9
-     },
-     "asap": 40,
      "rec": 42
     }
    ]
