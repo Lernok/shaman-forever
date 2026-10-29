@@ -2,11 +2,11 @@
 # Rebuild the four race packs (main route + variants) from the routes already
 # simulated (exports in .cache/tools), after a change to make-pack.js; lint,
 # playtest, install.
-T="/c/Users/el-lo/Desktop/Wow Enh/.cache/tools"
-R="/c/Users/el-lo/Desktop/Wow Enh"
+T="/d/Wow Enh/.cache/tools"
+R="/d/Wow Enh"
 P="$T/polestar-024"
 NODE="$T/node24/node-v24.22.0-win-x64/node.exe"
-export LUA="C:/Users/el-lo/Desktop/Wow Enh/.cache/lua51/lua5.1.exe"
+export LUA="D:/Wow Enh/.cache/lua51/lua5.1.exe"
 pack() { # export dir, pack dir, id, title, races
   rm -rf "$2/guides"; mkdir -p "$2/guides"
   cd "$R"; RACES="$5" POLESTAR="$P" node planner/make-pack.js "$1" "$2" $3 "$4" 2>&1 | tail -1

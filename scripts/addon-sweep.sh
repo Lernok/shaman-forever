@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # The addon against every guide of every Shaman: Forever pack (first, middle and last step).
 # The packs are on standby (out of the game since 2026-10-17): PACKS=<folder> to point elsewhere.
-cd "/c/Users/el-lo/Desktop/Wow Enh"
+cd "/d/Wow Enh"
 L=.cache/lua51/lua5.1.exe
 A="${PACKS:-.cache/tools/backup-packs-installed}"
 fails=0 runs=0

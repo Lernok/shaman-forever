@@ -3,11 +3,11 @@
 # pack next to its main route; then lint, playtest and install. Run after
 # routes-final.sh. Polestar 0.2.4 + our patch, early dungeon entry.
 
-T="/c/Users/el-lo/Desktop/Wow Enh/.cache/tools"
-R="/c/Users/el-lo/Desktop/Wow Enh"
+T="/d/Wow Enh/.cache/tools"
+R="/d/Wow Enh"
 P="$T/polestar-024"
 NODE="$T/node24/node-v24.22.0-win-x64/node.exe"
-export LUA="C:/Users/el-lo/Desktop/Wow Enh/.cache/lua51/lua5.1.exe"
+export LUA="D:/Wow Enh/.cache/lua51/lua5.1.exe"
 export SF_CAP=35 SF_BOSS_GAP=3
 export SF_DUNGEON_LEVELS="Ragefire Chasm:13-14,Ruins of Lordaeron:17-18,Wailing Caverns:19-20,Shadowfang Keep:22-23,Excavation Site: Wetlands:28-29,City of Dalaran:30-31,Hall of Thanes:13-14,The Deadmines:18-19,The Stockade:26-28,Scarlet Monastery: Graveyard:31-33"
 W="$R/planner/weapons-enhancement.json"

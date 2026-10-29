@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Dungeon set experiments (sim only, early entry SF_BOSS_GAP=3), Polestar 0.2.4 + our patch.
-T="/c/Users/el-lo/Desktop/Wow Enh/.cache/tools"
+T="/d/Wow Enh/.cache/tools"
 P="$T/polestar-024"
 NODE="$T/node24/node-v24.22.0-win-x64/node.exe"
-export LUA="C:/Users/el-lo/Desktop/Wow Enh/.cache/lua51/lua5.1.exe"
+export LUA="D:/Wow Enh/.cache/lua51/lua5.1.exe"
 export SF_CAP=35 SF_BOSS_GAP=3
-W="C:/Users/el-lo/Desktop/Wow Enh/planner/weapons-enhancement.json"
-WA="C:/Users/el-lo/Desktop/Wow Enh/planner/weapons-enhancement-alliance.json"
+W="D:/Wow Enh/planner/weapons-enhancement.json"
+WA="D:/Wow Enh/planner/weapons-enhancement-alliance.json"
 WIN="Ragefire Chasm:13-14,Ruins of Lordaeron:17-18,Wailing Caverns:19-20,Shadowfang Keep:22-23,Excavation Site: Wetlands:28-29,City of Dalaran:30-31,Hall of Thanes:13-14,The Deadmines:18-19,The Stockade:26-28,Razorfen Kraul:30-32,Scarlet Monastery: Graveyard:31-33,Gnomeregan:31-33,Blackfathom Deeps:25-27"
 mkdir -p "$T/exp"
 cd "$P"

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Caster routes (Elemental and Restoration): no Enhancement weapon model (they fight with spells), same dungeons, early entry; packs reordered and installed on Polestar 0.2.4 + our patch, packs linted and playtested.
 set -e
-T="/c/Users/el-lo/Desktop/Wow Enh/.cache/tools"
+T="/d/Wow Enh/.cache/tools"
 P="$T/polestar-024"
 NODE="$T/node24/node-v24.22.0-win-x64/node.exe"
-export LUA="C:/Users/el-lo/Desktop/Wow Enh/.cache/lua51/lua5.1.exe"
+export LUA="D:/Wow Enh/.cache/lua51/lua5.1.exe"
 export SF_CAP=35
-R_="C:/Users/el-lo/Desktop/Wow Enh"
+R_="D:/Wow Enh"
 HD="Ragefire Chasm,Ruins of Lordaeron,Wailing Caverns,Shadowfang Keep,Excavation Site: Wetlands,City of Dalaran"
 HN="Ragefire Chasm:13-16,Ruins of Lordaeron:16-19,Wailing Caverns:19-23,Shadowfang Keep:22-27,Excavation Site: Wetlands:28-32,City of Dalaran:30-34"
 HE="Ragefire Chasm:13-14,Ruins of Lordaeron:17-18,Wailing Caverns:19-20,Shadowfang Keep:22-23,Excavation Site: Wetlands:28-29,City of Dalaran:30-31"
@@ -25,7 +25,7 @@ one() { # tag faction race gap dungeons windows weapons packid title [races]
   rm -rf "$T/export-$tag" "$T/packs/$tag"
   "$NODE" tools/polestar.js sim export --result "$T/early/$tag.json" --out "$T/export-$tag" >/dev/null 2>&1
   cd "$T/packs"; "$NODE" "$P/tools/polestar.js" new $tag --id $id --title "$title" --author Lernok --license CC-BY-4.0 --yes >/dev/null 2>&1; rm -f $tag/guides/example.guide
-  cd "/c/Users/el-lo/Desktop/Wow Enh"; RACES="$races" POLESTAR="$P" node planner/make-pack.js "$T/export-$tag" "$T/packs/$tag" $id "$title" 2>&1 | tail -1
+  cd "/d/Wow Enh"; RACES="$races" POLESTAR="$P" node planner/make-pack.js "$T/export-$tag" "$T/packs/$tag" $id "$title" 2>&1 | tail -1
   POLESTAR="$P" "$NODE" "$R_/planner/reorder.js" "$T/packs/$tag" 2>&1 | tail -1
   cd "$T/packs/$tag"; "$NODE" "$P/tools/polestar.js" lint 2>&1 | grep -E "error:|lint " || true; "$NODE" "$P/tools/polestar.js" playtest 2>&1 | grep -E "^fail|playtest" || true
   "$NODE" "$P/tools/polestar.js" install --dest "D:/World of Warcraft/_classic_beta_/Interface/AddOns" 2>&1 | grep -E "built|replaced"
