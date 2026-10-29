@@ -1630,7 +1630,6 @@ header.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 
 .guide-now .gn-spell { background: var(--bg-panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 2px 8px; font-size: 13px; }
 
 /* Talentos: now, at your level; example builds folded under the trees. */
-.calc-now .cn-ic { width: 24px; height: 24px; border-radius: 4px; }
 .calc-examples > summary { cursor: pointer; list-style: none; }
 .calc-examples > summary::-webkit-details-marker { display: none; }
 .calc-examples > summary h3 { display: inline-flex; align-items: center; gap: 8px; margin: 0; }
@@ -1745,3 +1744,42 @@ h1, h2, h3, .block-title, .spec-summary h2, .home-hero h2, .setup-head h2, .gp-h
 .tile-label, .sub-label, .sc-level span, .sc-value span, .wp-controls .ctl-label { font-size: 13px; letter-spacing: 0; }
 @media (pointer: coarse) { .gp-sheet .item-link { min-height: 40px; display: inline-flex; align-items: center; } }
 .site-footer .maker { color: var(--text); font-size: 14px; margin: 0 0 10px; }
+
+/* Page heads: a plain title and a line of text, no banner. */
+.spec-summary { background: none; border: 0; border-radius: 0; padding: 0; min-height: 0; margin: 8px 0 18px; overflow: visible; }
+.spec-summary::before { display: none; }
+.spec-summary .role { display: none; }
+.spec-summary h2 { font-size: 28px; }
+.spec-summary p { margin-top: 4px; }
+@media (max-width: 600px) { .spec-summary { padding: 0; } .spec-summary h2 { font-size: 24px; } }
+
+/* Talentos like the game's window: the three trees in one frame, the points
+   left and the controls along the bottom; your point due now glows. */
+.calc-now { margin: 0 0 14px; font-size: 15px; line-height: 1.9; color: var(--text-dim); }
+.calc-now .cn-tal { color: var(--text); white-space: nowrap; }
+.calc-now .cn-ic { width: 22px; height: 22px; border-radius: 4px; border: 1px solid #000; vertical-align: -6px; margin-right: 5px; }
+.calc-window { background: #09090b; border: 1px solid #000; border-radius: 6px; padding: 6px; box-shadow: 0 0 0 1px #4a3f28, 0 10px 28px rgba(0,0,0,.5); }
+.calc-window .calc-trees { margin: 0; gap: 6px; }
+.calc-window .calc-tree { border: 1px solid #000; border-radius: 3px; }
+.calc-window .calc-tree-head { background: linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.55)); }
+.calc-window .calc-toolbar { margin-top: 6px; padding: 8px 12px; background: #141519; border: 1px solid #000; border-radius: 3px; }
+.calc-left { color: var(--gold); font-family: var(--display); font-size: 17px; }
+.calc-left b { color: var(--text); margin-left: 4px; }
+.calc-left b.bad { color: #e06c5b; }
+.ctal.due { border-color: #ffd100; animation: ctal-due 1.6s ease-in-out infinite; }
+@keyframes ctal-due { 50% { box-shadow: 0 0 0 3px rgba(255,209,0,.5), 0 0 16px rgba(255,209,0,.55); } }
+@media (prefers-reduced-motion: reduce) { .ctal.due { animation: none; box-shadow: 0 0 0 3px rgba(255,209,0,.5); } }
+.calc-hint { font-size: 13px; color: var(--text-dim); margin: 8px 0 22px; }
+.build-note { background: none; border: 0; padding: 0; margin: 0 0 6px; font-size: 14px; }
+.build-note h3 { display: inline; font-size: 20px; margin: 0 6px 0 0; }
+.build-note p { font-size: 14px; max-width: 900px; margin-top: 6px; }
+.calc-window ~ .order-panel { margin-bottom: 18px; }
+.calc-tabs { display: none; }
+@media (max-width: 900px) {
+  .calc-window .calc-tree:not(.shown) { display: none; }
+  .calc-tabs { display: flex; gap: 4px; margin-top: 6px; }
+  .calc-tabs button { flex: 1; padding: 9px 4px; background: #141519; border: 1px solid #000; border-radius: 0 0 6px 6px; color: var(--text-dim); font: inherit; font-size: 13px; cursor: pointer; }
+  .calc-tabs button b { color: var(--text-dim); margin-left: 2px; }
+  .calc-tabs button.active { background: #24262c; color: var(--gold); }
+  .calc-tabs button.active b { color: var(--text); }
+}

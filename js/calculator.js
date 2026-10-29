@@ -13,6 +13,7 @@
   let state = null; // { level, talented, ranks, buildId, orderBuild }
   let ui = null;
   let container = null;
+  let tab = null; // phones: the tree on show (yours until you pick another)
 
   function trees() { return window.SHAMAN_DATA.talents.trees; }
   function builds() { return window.I18N.localize(window.BUILD_DATA || []); }
@@ -85,7 +86,8 @@
     return html;
   }
 
-  function renderToolbar() {
+  // The bottom of the window, as in the game: points left to spend, then the controls.
+  function renderBar() {
     const used = R.totalPoints(state.ranks, trees());
     const budget = R.pointsForLevel(state.level, state.talented);
     const errors = R.validate(state.ranks, trees(), state.level, state.talented);
@@ -98,12 +100,11 @@
       talentedOptions += '<option value="' + r + '"' + (r === state.talented ? ' selected' : '') + '>' + r + '/' + R.MAX_TALENTED + '</option>';
     }
     let html = '<div class="calc-toolbar">' +
+      '<div class="calc-left">' + t('calc.unspent') + ' <b' + (budget - used < 0 ? ' class="bad"' : '') + '>' + (budget - used) + '</b></div>' +
       '<label class="calc-level">' + t('calc.level') + ' <select id="calcLevel">' + options + '</select></label>' +
       '<label class="calc-level" title="' + t('calc.talentedTitle') + '">' +
-        'Legacy: Talented <select id="calcTalented">' + talentedOptions + '</select></label>' +
-      '<div class="calc-stat"><b>' + used + '</b> / ' + budget + ' ' + t('calc.points') + '</div>' +
+        'Talented <select id="calcTalented">' + talentedOptions + '</select></label>' +
       '<div class="calc-stat">' + t('calc.split') + ' <b>' + split(state.ranks) + '</b></div>' +
-      '<div class="calc-stat">' + t('calc.levelNeeded') + ' <b>' + (used ? R.levelForPoints(used, state.talented) : '—') + '</b></div>' +
       '<div class="calc-actions">' +
         '<button class="btn" id="calcCopy">' + t('calc.copy') + '</button>' +
         '<button class="btn" id="calcReset">' + t('calc.reset') + '</button>' +
@@ -111,11 +112,17 @@
     if (errors.length) {
       html += '<div class="caveat calc-errors">' + errors.join('<br>') + '</div>';
     }
+    return html;
+  }
+
+  // The build on the trees: where it comes from, its note and its leveling order.
+  function renderBuild() {
+    let html = '';
     const following = orderBuild();
     const active = matchingBuild() || following;
     if (active) {
       html += '<div class="build-note" style="--spec-color:' + ui.specColors[active.spec] + '">' +
-        '<b>' + active.spec + ' — ' + active.name + '</b> ' + ui.badge(active.confidence) +
+        '<h3>' + active.name + '</h3> ' + ui.badge(active.confidence) +
         ' <span class="origin">' + (active.source
           ? '<a href="' + active.source + '" target="_blank" rel="noopener">' + t('origin.' + active.origin) + '</a>'
           : t('origin.' + active.origin)) + '</span>' +
@@ -144,7 +151,7 @@
     return html + '</ol></details>';
   }
 
-  function renderTree(tree) {
+  function renderTree(tree, due) {
     const rows = Math.max(...tree.talents.map(t => t.row));
     const pts = R.treePoints(state.ranks, tree);
     // First row whose gate isn't met yet, judged by points in the rows above it.
@@ -155,7 +162,7 @@
         break;
       }
     }
-    let html = '<div class="calc-tree" style="--spec-color:' + ui.specColors[tree.name] + ';background-image:' + ui.treeBg(tree) + '">' +
+    let html = '<div class="calc-tree' + (tree.name === (tab || window.Site.spec) ? ' shown' : '') + '" style=""--spec-color:' + ui.specColors[tree.name] + ';background-image:' + ui.treeBg(tree) + '">' +
       '<div class="calc-tree-head">' +
         '<img class="tree-icon" src="' + ui.iconUrl(tree.icon) + '" alt="">' +
         '<div class="th-text"><span>' + tree.name + '</span>' +
@@ -186,7 +193,7 @@
       const rank = R.rankOf(state.ranks, tree, tal.name);
       const locked = rank === 0 && R.lockReason(state.ranks, tree, tal) !== null;
       const cls = rank >= tal.max ? 'maxed' : rank > 0 ? 'learning' : locked ? 'locked' : 'open';
-      html += '<div class="ctal ' + cls + '" data-tree="' + tree.name + '" data-talent="' + tal.name + '" ' +
+      html += '<div class="ctal ' + cls + (due === tal.name ? ' due' : '') + '" data-tree="' + tree.name + '" data-talent="' + tal.name + '" ' +
         'style="left:' + ((tal.col - 1) * (CELL + GAP)) + 'px;top:' + ((tal.row - 1) * (CELL + GAP)) + 'px;' +
         'background-image:url(' + ui.iconUrl(tal.icon) + ')">' +
         '<span class="ctal-rank">' + rank + '/' + tal.max + '</span>' +
@@ -211,27 +218,40 @@
     const tal = window.Home.talentNow(lvl);
     const b = levelingBuild();
     if (!tal || !b) return '';
-    const row = (k, x) => '<div class="pn-row"><span class="pn-k">' + k + '</span><div class="pn-v"><img class="cn-ic" src="' + ui.iconUrl(x.icon) + '" alt=""><b>' + x.talent + '</b> <span class="dim">' +
-      t('calc.now.rank', { rank: x.rank, max: x.max, n: x.from === x.to ? x.from : x.from + '–' + x.to }) + '</span></div></div>';
-    let html = '<section class="pr-now calc-now"><span class="hn-kicker">' + t('guide.now.kicker', { n: lvl }) + '</span>' +
-      '<h2>' + (tal.now ? t('calc.now.title', { talent: tal.now.talent }) : t('calc.now.first', { n: tal.next ? tal.next.from : 10 })) + '</h2>';
-    if (tal.now) html += row(t('calc.now.now'), tal.now);
-    if (tal.next) html += row(t('calc.now.next'), tal.next);
-    // Before your first point, the build where it starts.
+    const name = x => '<b class="cn-tal"><img class="cn-ic" src="' + ui.iconUrl(x.icon) + '" alt="">' + x.talent + '</b>';
+    let html = '<p class="calc-now">';
+    if (tal.now) {
+      html += t('calc.now.line', { n: lvl, talent: name(tal.now), rank: tal.now.rank, max: tal.now.max, end: tal.now.to });
+      if (tal.next) html += ' ' + t('calc.now.then', { talent: name(tal.next), n: tal.next.from });
+    } else if (tal.next) {
+      html += t('calc.now.firstLine', { talent: name(tal.next), n: tal.next.from });
+    }
+    // The trees show something else: a way back to your build (before your
+    // first point, where it starts).
     const see = Math.max(lvl, b.order[0][0]);
-    html += '<div class="pn-row"><span class="pn-k">' + t('calc.now.build') + '</span><div class="pn-v">' + b.name +
-      ' <a class="btn" href="' + linkAt(b, see) + '">' + t('calc.now.open', { n: see }) + '</a></div></div>';
-    return html + '</section>';
+    if (!(state.orderBuild === b.id && state.level === see)) html += ' <a href="' + linkAt(b, see) + '">' + t('calc.now.open', { n: see }) + '</a>';
+    return html + '</p>';
+  }
+
+  // Your talent due now, lit in the tree while it shows your build at your level.
+  function dueTalent() {
+    const b = levelingBuild();
+    const lvl = Math.min(R.MAX_LEVEL, window.UI.levelNow());
+    if (!b || state.orderBuild !== b.id || state.level !== lvl) return null;
+    const tal = window.Home.talentNow(lvl);
+    return tal && tal.now ? tal.now.talent : null;
   }
 
   function renderAll() {
-    let html = '<div class="spec-summary" style="--spec-color:' + ui.specColors.Calculadora + '">' +
-      '<div class="role">' + t('calc.role') + '</div><h2>' + t('calc.title') + '</h2>' +
-      '<p><span class="mouse-only">' + t('calc.intro') + '</span><span class="touch-only">' + t('calc.introTouch') + '</span></p></div>';
-    html += '<div class="gp-head"><h2>' + t('calc.mine') + '</h2>' + window.UI.levelStepper() + '</div>';
+    const due = dueTalent();
+    let html = '<div class="gp-head"><h2>' + t('calc.role') + '</h2>' + window.UI.levelStepper() + '</div>';
     html += renderNow();
-    html += '<div class="panel calc-panel">' + renderToolbar() +
-      '<div class="calc-trees">' + trees().map(renderTree).join('') + '</div></div>';
+    // Phones: one tree at a time, with the game's tabs under it.
+    const tabs = '<div class="calc-tabs">' + trees().map(tr => '<button data-tab="' + tr.name + '"' + (tr.name === (tab || window.Site.spec) ? ' class="active"' : '') + '>' +
+      tr.name + ' <b>' + R.treePoints(state.ranks, tr) + '</b></button>').join('') + '</div>';
+    html += '<div class="calc-window"><div class="calc-trees">' + trees().map(tr => renderTree(tr, due)).join('') + '</div>' + tabs + renderBar() + '</div>';
+    html += '<p class="calc-hint"><span class="mouse-only">' + t('calc.intro') + '</span><span class="touch-only">' + t('calc.introTouch') + '</span></p>';
+    html += renderBuild();
     html += renderBuildPicker();
     html += ui.renderSources(['https://talentsforever.com (CC BY 4.0) — ' + t('calc.srcTf')], t('calc.rules'));
     container.innerHTML = html;
@@ -292,6 +312,7 @@
       if (!b) return renderAll();
       location.hash = linkAt(b, Math.min(R.MAX_LEVEL, window.UI.levelNow()));
     });
+    container.querySelectorAll('[data-tab]').forEach(btn => btn.addEventListener('click', () => { tab = btn.dataset.tab; renderAll(); }));
     container.querySelectorAll('.build-card').forEach(btn => {
       btn.addEventListener('click', () => {
         const b = builds().find(x => x.id === btn.dataset.build);
