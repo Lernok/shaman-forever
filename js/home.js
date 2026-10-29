@@ -239,7 +239,7 @@
     return sinceStrip() + nextCard(steps, lvl, tal) + tiles(plan, steps, lvl, tal) + launchLine();
   }
 
-  const LAUNCH = new Date('2026-11-04T23:00:00Z');
+  const LAUNCH = Site.LAUNCH;
   // The beta's last day is Oct 22 (no hour given). The stress test: Oct 21
   // from 14:00 PDT for a few hours, with the beta off.
   const BETA_END = new Date('2026-10-23T07:00:00Z');
@@ -252,7 +252,7 @@
     const launch = days > 0 ? t('home.launchIn', { n: days }) : days === 0 ? t('home.launchToday') : t('home.launched');
     let html = '<section class="home-hero"><div class="home-hero-text"><div class="role">' + t('home.kicker') + '</div>' +
       '<h2>' + t('home.title') + '</h2><p>' + t('home.tagline') + '</p></div>' +
-      '<div class="countdown"><b>' + launch + '</b><span>' + t('home.launchDate') + '</span>' + (new Date() < BETA_END ? '<span class="dim">' + t('home.betaEnds') + '</span>' : '<span class="dim">' + t('home.betaOver') + '</span>') + '</div></section>';
+      '<div class="countdown"><b>' + launch + '</b><span>' + t('home.launchDate') + '</span>' + (new Date() < BETA_END ? '<span class="dim">' + t('home.betaEnds') + '</span>' : days > 0 ? '<span class="dim">' + t('home.betaOver') + '</span>' : '') + '</div></section>';
     html += specCards();
 
     html += '<div class="home-cols"><div><h3 class="block-title">' + t('home.pages') + '</h3><div class="page-cards">';

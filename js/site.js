@@ -94,12 +94,18 @@
   if (tpl) tpl.content.querySelectorAll('script[data-lazy]').forEach(l => { lazy[l.dataset.lazy] = { href: l.getAttribute('src') }; });
   Site.LAZY = Object.keys(lazy);
   Site.has = names => names.every(n => !lazy[n] || lazy[n].done);
+  // Auction prices scanned before launch are the beta's: once the game is
+  // out, plan as without prices until a scan of the live game arrives.
+  Site.LAUNCH = new Date('2026-11-04T23:00:00Z');
+  const betaPrices = d => {
+    if (d && d.prices && new Date(d.prices.date + 'T00:00:00Z') < Site.LAUNCH && new Date() >= Site.LAUNCH) d.prices = null;
+  };
   Site.need = names => Promise.all(names.filter(n => lazy[n]).map(n => {
     const d = lazy[n];
     if (!d.promise) d.promise = new Promise((ok, fail) => {
       const sc = document.createElement('script');
       sc.src = d.href;
-      sc.onload = () => { d.done = true; ok(); };
+      sc.onload = () => { betaPrices(window.SKINNING_DATA); betaPrices(window.CRAFT_DATA); d.done = true; ok(); };
       sc.onerror = () => { d.promise = null; fail(new Error('no se pudo cargar ' + d.href)); };
       document.body.appendChild(sc);
     });

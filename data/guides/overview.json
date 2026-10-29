@@ -2,8 +2,8 @@
   "classNotes": [
     {
       "fact": {
-        "es": "La beta tiene tope en nivel 30 (21 puntos de talento) desde la build 70170 del 1 oct 2026. Los árboles cuentan hasta el 60 (51 puntos).",
-        "en": "The beta has been capped at level 30 (21 talent points) since build 70170 on Oct 1, 2026. The trees count up to level 60 (51 points)."
+        "es": "Los árboles cuentan hasta el 60 (51 puntos). La beta llegaba solo al 30 (21 puntos), así que lo que pasa del 30 todavía no lo probó nadie: el orden de talentos de ahí en adelante es una proyección.",
+        "en": "The trees count up to level 60 (51 points). The beta only went up to 30 (21 points), so nobody has tested past 30 yet: the talent order from there on is a projection."
       },
       "confidence": "official"
     },
@@ -44,8 +44,8 @@
     },
     {
       "fact": {
-        "es": "Dual wield: ningún hechizo, talento ni entrenador lo enseña en el cliente beta, y nadie reportó haberlo probado. No está descartado, solo sin confirmar.",
-        "en": "Dual wield: no spell, talent or trainer in the beta client teaches it, and nobody has reported trying it. Not ruled out, just unconfirmed."
+        "es": "Dual wield: ningún hechizo, talento ni entrenador lo enseña en el cliente de Forever, y nadie reportó haberlo probado. No está descartado, solo sin confirmar.",
+        "en": "Dual wield: no spell, talent or trainer in the Forever client teaches it, and nobody has reported trying it. Not ruled out, just unconfirmed."
       },
       "confidence": "client-data"
     },
@@ -58,8 +58,8 @@
     },
     {
       "fact": {
-        "es": "Dual spec se desbloquea al nivel 40 (inalcanzable en la beta). El respec se hace en el entrenador de clase de una ciudad grande, e incluye los talentos de Legacy.",
-        "en": "Dual spec unlocks at level 40 (out of reach in the beta). Respec happens at the class trainer in a major city, and includes Legacy talents."
+        "es": "Dual spec se desbloquea al nivel 40 (en la beta no se llegaba). El respec se hace en el entrenador de clase de una ciudad grande, e incluye los talentos de Legacy.",
+        "en": "Dual spec unlocks at level 40 (out of reach in the beta, which stopped at 30). Respec happens at the class trainer in a major city, and includes Legacy talents."
       },
       "confidence": "official"
     },
@@ -91,8 +91,8 @@
     "https://talentsforever.com (CC BY 4.0) — data/shaman.json"
   ],
   "caveat": {
-    "es": "classicwowforever.com distingue explícitamente entre dato probado en juego, dato del cliente beta, comportamiento asumido de Classic Era, y reporte de comunidad sin confirmar. Todo lo de esta página está etiquetado con ese mismo criterio (campo confidence) — beta, puede cambiar.",
-    "en": "classicwowforever.com explicitly separates in-game tested facts, beta client data, behavior assumed from Classic Era, and unconfirmed community reports. Everything on this page is labeled with that same scheme (the confidence field) — it's a beta, it can change."
+    "es": "classicwowforever.com distingue explícitamente entre dato probado en juego, dato del cliente, comportamiento asumido de Classic Era, y reporte de comunidad sin confirmar. Todo lo de esta página está etiquetado con ese mismo criterio (campo confidence) — puede cambiar con cada parche.",
+    "en": "classicwowforever.com explicitly separates in-game tested facts, client data, behavior assumed from Classic Era, and unconfirmed community reports. Everything on this page is labeled with that same scheme (the confidence field) — it can change with any patch."
   },
   "timeline": [
     {
@@ -152,12 +152,34 @@
     },
     {
       "date": {
-        "es": "21 oct 2026",
-        "en": "Oct 21, 2026"
+        "es": "22 oct 2026",
+        "en": "Oct 22, 2026"
       },
       "event": {
-        "es": "Termina la beta.",
-        "en": "The beta ends."
+        "es": "Termina la beta (antes, el 21, un stress test abierto a todos).",
+        "en": "The beta ends (on the 21st, a stress test open to everyone)."
+      },
+      "confidence": "official"
+    },
+    {
+      "date": {
+        "es": "26 oct 2026",
+        "en": "Oct 26, 2026"
+      },
+      "event": {
+        "es": "Blizzard rehace las raciales para el lanzamiento: Orc pierde Savage (1% de crítico) y recupera Command, Dwarf cambia Earth Fury por Artisan's Precision (1% de golpe), Tauren pierde el crítico de Endurance, Troll con Berserking de 15 s, Skyborne baja a 2% de celeridad.",
+        "en": "Blizzard redoes the racials for launch: Orc loses Savage (1% crit) and gets Command back, Dwarf swaps Earth Fury for Artisan's Precision (1% hit), Tauren loses Endurance's crit, Troll gets a 15 s Berserking, Skyborne drops to 2% haste."
+      },
+      "confidence": "official"
+    },
+    {
+      "date": {
+        "es": "27 oct 2026",
+        "en": "Oct 27, 2026"
+      },
+      "event": {
+        "es": "Se abren la reserva de nombres y la creación de personajes.",
+        "en": "Name reservation and character creation open."
       },
       "confidence": "official"
     },
@@ -169,6 +191,17 @@
       "event": {
         "es": "Lanzamiento global de WoW: Forever, 15:00 PST (23:00 UTC).",
         "en": "Global launch of WoW: Forever, 3:00 p.m. PST (23:00 UTC)."
+      },
+      "confidence": "official"
+    },
+    {
+      "date": {
+        "es": "9 dic 2026",
+        "en": "Dec 9, 2026"
+      },
+      "event": {
+        "es": "Abren las primeras raids: Barrow Deeps (10), Hyjal Summit (20) y Onyxia's Lair (40).",
+        "en": "The first raids open: Barrow Deeps (10), Hyjal Summit (20) and Onyxia's Lair (40)."
       },
       "confidence": "official"
     }

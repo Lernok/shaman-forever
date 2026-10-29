@@ -481,7 +481,7 @@
         '<button class="btn' + ((k === 'farm') === farm ? ' active' : '') + '" data-lw-farm="' + k + '" title="' + t('pr.lw.mats.' + k + 'Title') + '">' + t('pr.lw.mats.' + k) + '</button>').join('') + '</div>' +
       (farm ? '' : '<span class="ctl-label">' + t('pr.lw.skillBuyLabel') + '</span><div class="seg">' + SKILL_BUY.map(k =>
         '<button class="btn' + (skillBuy === k ? ' active' : '') + '" data-lw-skill-buy="' + k + '" title="' + t('pr.lw.skillBuy.' + k + 'Title') + '">' + t('pr.lw.skillBuy.' + k) + '</button>').join('') + '</div>') +
-      '<span class="dim">' + (farm ? t('pr.lw.farmNote') : SK.prices ? t('pr.lw.pricesNote', { date: SK.prices.date.split('-').reverse().slice(0, 2).join('/') }) : '') + '</span>' +
+      '<span class="dim">' + (farm ? t('pr.lw.farmNote') : SK.prices ? t('pr.lw.pricesNote', { date: SK.prices.date.split('-').reverse().slice(0, 2).join('/') }) : new Date() >= Site.LAUNCH ? t('pr.lw.noPricesYet') : '') + '</span>' +
       '</div></details></div>';
 
     // Not learned yet: where, at any level, and "I learned it".

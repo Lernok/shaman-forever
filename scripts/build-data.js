@@ -262,6 +262,17 @@ if (fs.existsSync(path.join(root, 'data/zones.json'))) {
 if (fs.existsSync(path.join(root, 'data/meta.json'))) {
   write('data/meta.js', 'SITE_META', read('data/meta.json'));
   outputs.push('data/meta.js');
+  // The addon's Interface follows the game's build (1.60.1 → 16001): with an
+  // older number the game lists it as out of date and doesn't load it.
+  const build = (read('data/meta.json').items || {}).build;
+  const toc = path.join(root, 'addon/ShamanForeverGuide/ShamanForeverGuide.toc');
+  const v = /^(\d+)\.(\d+)\.(\d+)\./.exec(build || '');
+  if (v && fs.existsSync(toc)) {
+    const iface = String(+v[1] * 10000 + +v[2] * 100 + +v[3]);
+    const text = fs.readFileSync(toc, 'utf8');
+    const now = text.replace(/^## Interface:.*$/m, '## Interface: ' + iface);
+    if (now !== text) { fs.writeFileSync(toc, now); console.log('Addon: Interface ' + iface + ' (build ' + build + ').'); }
+  }
 }
 // index.html asks for each script and stylesheet with a version made from its
 // contents: after a deploy, browsers (and GitHub Pages' 10-minute cache)
