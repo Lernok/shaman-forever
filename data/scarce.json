@@ -4,14 +4,15 @@
   "sources": [
     "https://www.foreverwisp.com/guides/wow-forever-scarce-materials-pyrite-frilled-lichen-pristine-leather",
     "https://wowforever.be/news/every-gathering-node-can-drop-a-scarce-material/",
-    "https://www.raidmuster.com/guides/wow-forever-black-market-vendor"
+    "https://www.raidmuster.com/guides/wow-forever-black-market-vendor",
+    "https://mmonster.co/wow-forever/guides/farming/scarce-materials"
   ],
   "items": {
     "249391": { "name": "Pyrite", "gather": "Mining", "price": null },
     "249399": { "name": "Frilled Lichen", "gather": "Herbalism", "price": null },
     "249427": { "name": "Pristine Leather", "gather": "Skinning", "price": 50000 },
-    "249428": { "name": "Pristine Hide", "gather": "Skinning", "price": null },
-    "249429": { "name": "Pristine Scale", "gather": "Skinning", "price": null },
+    "249428": { "name": "Pristine Hide", "gather": "Skinning", "price": 200000 },
+    "249429": { "name": "Pristine Scale", "gather": "Skinning", "price": 500000 },
     "13468": { "name": "Black Lotus", "price": 500000 },
     "12363": { "name": "Arcane Crystal", "price": 500000 },
     "248819": { "name": "Fel Crystal", "price": null },
