@@ -2,6 +2,20 @@
  "_readme": "Game data changes found by scripts/sync.js, newest first (one entry per sync day that found changes).",
  "entries": [
   {
+   "date": "2026-10-30",
+   "talents": [],
+   "items": [
+    "- Ítem nuevo: **Earthshaker** (2H Mace, nivel 1) #288900",
+    "- Ítem nuevo: **Choker of the Fire Lord** (Neck, nivel 1) #288926",
+    "- Ítem nuevo: **Quick Strike Ring** (Ring, nivel 1) #288927",
+    "- Ítem nuevo: **Heavy Dark Iron Ring** (Ring, nivel 1) #288928",
+    "- Ítem nuevo: **Band of Sulfuras** (Ring, nivel 1) #288929",
+    "- Ítem nuevo: **Cauterizing Band** (Ring, nivel 1) #288930",
+    "- Ítem nuevo: **Ring of Spell Power** (Ring, nivel 1) #288931"
+   ],
+   "build": "1.60.1.70707"
+  },
+  {
    "date": "2026-10-28",
    "talents": [
     "- **Elemental / Eye of the Storm**: texto: \"Reduces the pushback suffered from damaging attacks while casting Lightning Bolt, Chain Lightning, and Lava Burst by 70%.\" → \"Gives your Lightning Bolt, Chain Lightning, and Lava Burst spells a 70% chance to not lose casting time when you take damage.\"",

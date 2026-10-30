@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70685",
+ "build": "1.60.1.70707",
  "gear": [
   {
    "id": 208424,
@@ -17149,6 +17149,208 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 288926,
+   "name": "Choker of the Fire Lord",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 4,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 10,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 1,
+    "intellect": 1
+   },
+   "bonus": {
+    "spellPower": 6
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_amulet_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 288927,
+   "name": "Quick Strike Ring",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 4,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 10,
+   "bind": "pickup",
+   "stats": {
+    "strength": 1,
+    "stamina": 1
+   },
+   "bonus": {
+    "critRating": 2,
+    "attackPower": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 288928,
+   "name": "Heavy Dark Iron Ring",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 4,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 10,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 4,
+    "armor": 20
+   },
+   "bonus": {
+    "defense": 1
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 288929,
+   "name": "Band of Sulfuras",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 4,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 10,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 2,
+    "intellect": 4,
+    "spirit": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_36",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 288930,
+   "name": "Cauterizing Band",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 4,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 10,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 2,
+    "intellect": 2
+   },
+   "bonus": {
+    "healing": 8,
+    "spellDamage": 3
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_39",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 288931,
+   "name": "Ring of Spell Power",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 4,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 10,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {
+    "spellPower": 6
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_38",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
      "asap": 1,
      "rec": 1
     }
@@ -252575,7 +252777,7 @@
   },
   {
    "id": 275972,
-   "name": "Ferocious Watcher's Signet",
+   "name": "Tracker's Signet of Ferocity",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 3,
@@ -252609,7 +252811,7 @@
   },
   {
    "id": 275973,
-   "name": "Brilliant Watcher's Signet",
+   "name": "Tracker's Signet of Brilliance",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 3,
@@ -252643,7 +252845,7 @@
   },
   {
    "id": 275974,
-   "name": "Vigilant Watcher's Signet",
+   "name": "Tracker's Signet of Resolve",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 3,
@@ -252678,7 +252880,7 @@
   },
   {
    "id": 275975,
-   "name": "Stalwart Watcher's Signet",
+   "name": "Tracker's Signet of Vigilance",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 3,
@@ -261235,7 +261437,7 @@
   },
   {
    "id": 275981,
-   "name": "Ferocious Watcher's Signet",
+   "name": "Warden's Signet of Ferocity",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 4,
@@ -261269,7 +261471,7 @@
   },
   {
    "id": 275982,
-   "name": "Brilliant Watcher's Signet",
+   "name": "Warden's Signet of Brilliance",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 4,
@@ -261303,7 +261505,7 @@
   },
   {
    "id": 275983,
-   "name": "Vigilant Watcher's Signet",
+   "name": "Warden's Signet of Resolve",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 4,
@@ -261338,7 +261540,7 @@
   },
   {
    "id": 275984,
-   "name": "Stalwart Watcher's Signet",
+   "name": "Warden's Signet of Vigilance",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 4,
@@ -263981,7 +264183,7 @@
   },
   {
    "id": 275968,
-   "name": "Ferocious Watcher's Signet",
+   "name": "Initiate's Signet of Ferocity",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 3,
@@ -264015,7 +264217,7 @@
   },
   {
    "id": 275969,
-   "name": "Brilliant Watcher's Signet",
+   "name": "Initiate's Signet of Brilliance",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 3,
@@ -264049,7 +264251,7 @@
   },
   {
    "id": 275970,
-   "name": "Vigilant Watcher's Signet",
+   "name": "Initiate's Signet of Resolve",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 3,
@@ -264084,7 +264286,7 @@
   },
   {
    "id": 275971,
-   "name": "Stalwart Watcher's Signet",
+   "name": "Initiate's Signet of Vigilance",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 3,
@@ -265777,7 +265979,7 @@
   },
   {
    "id": 275976,
-   "name": "Ferocious Watcher's Signet",
+   "name": "Watcher's Signet of Ferocity",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 4,
@@ -265811,7 +266013,7 @@
   },
   {
    "id": 275977,
-   "name": "Brilliant Watcher's Signet",
+   "name": "Watcher's Signet of Brilliance",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 4,
@@ -265845,7 +266047,7 @@
   },
   {
    "id": 275979,
-   "name": "Vigilant Watcher's Signet",
+   "name": "Watcher's Signet of Resolve",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 4,
@@ -265880,7 +266082,7 @@
   },
   {
    "id": 275980,
-   "name": "Stalwart Watcher's Signet",
+   "name": "Watcher's Signet of Vigilance",
    "kind": "Ring",
    "slot": "Finger",
    "quality": 4,
