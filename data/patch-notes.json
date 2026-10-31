@@ -54,9 +54,2215 @@
   "1.60.1.70658/patch",
   "1.60.1.70685/hotfix-112709+4",
   "1.60.1.70685/hotfix-112758+3",
-  "1.60.1.70685/patch"
+  "1.60.1.70685/patch",
+  "1.60.1.70707/hotfix-112709+4",
+  "1.60.1.70707/hotfix-112709+97",
+  "1.60.1.70707/patch"
  ],
  "updates": [
+  {
+   "id": "1.60.1.70707/hotfix-112709+4",
+   "version": "1.60.1.70707",
+   "hotfix": true,
+   "date": "2026-10-30",
+   "spells": [
+    {
+     "name": "Ancestral Guidance",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Call of Flame",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Call of Thunder",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Call of the Ancestors",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Call of the Elements",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Call of the Spirits",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Chain Lightning",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Clearcasting",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Concussion",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Convection",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Earth Shock",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    {
+     "name": "Earthbind Totem",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Elemental Alacrity",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Elemental Devastation",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Elemental Focus",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Elemental Fury",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Elemental Mastery",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Elemental Reach",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Eye of the Storm",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Fire Nova",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Flame Shock",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "name": "Frost Shock",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Lava Burst",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Lightning Bolt",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ]
+    },
+    {
+     "name": "Lightning Mastery",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Lightning Overload",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Magma Totem",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Molten Blast",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Purge",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2
+     ]
+    },
+    {
+     "name": "Reverberation",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Searing Totem",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "name": "Stoneclaw Totem",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "name": "Totemic Recall",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Trial by Fire",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Decoy Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Earth's Grasp",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Elemental Weapons",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "Enhancing Totems",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2
+     ]
+    },
+    {
+     "name": "Fire Resistance Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Flametongue Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Frost Resistance Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Ghost Wolf",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Grace of Air Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Grounding Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "Guardian Totems",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Improved Ghost Wolf",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Improved Lightning Shield",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Improved Stormstrike",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Improved Weapon Totems",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2
+     ]
+    },
+    {
+     "name": "Lava Lash",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Lightning Shield",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    {
+     "name": "Maelstrom Weapon",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Mental Dexterity",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Mental Quickness",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Nature Resistance Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Rage of the Farseer",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Sentry Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Shamanistic Focus",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Spirit Weapons",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Spirit of the Alpha",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Stoneskin Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "name": "Stormstrike",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "Strength of Earth Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Totemic Projection",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Windfury Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Windfury Weapon",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Windwall Totem",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "1.60.0 - Item - Tier 1 - Shaman - Elemental 2P Bonus - Hit",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "1.60.0 - Item - Tier 1 - Shaman - Elemental 3P Bonus - Earthbind Totem",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "1.60.0 - Item - Tier 1 - Shaman - Elemental 4P Bonus - SP vs. Elementals",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "1.60.0 - Item - Tier 1 - Shaman - Elemental 5P Bonus - Lava Burst",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "1.60.0 - Item - Tier 1 - Shaman - Enhancement 2P Bonus - Haste",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "1.60.0 - Item - Tier 1 - Shaman - Enhancement 3P Bonus - Earth and Wind Totems",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "1.60.0 - Item - Tier 1 - Shaman - Enhancement 4P Bonus - AP vs. Elementals",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "1.60.0 - Item - Tier 1 - Shaman - Enhancement 5P Bonus - Stormstrike",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "1.60.0 - Item - Tier 1 - Shaman - Restoration 2P Bonus - Spirit",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "1.60.0 - Item - Tier 1 - Shaman - Restoration 3P Bonus - Fire and Water Totems",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "1.60.0 - Item - Tier 1 - Shaman - Restoration 4P Bonus - Healing/Damage",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "1.60.0 - Item - Tier 1 - Shaman - Restoration 5P Bonus - Riptide",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Ancestral Awakening",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Bulwark Icon",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Burn",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Chain Heal Bonus (-0.1 sec cast time)",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Chain Heal Cost Reduced",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Chain Healing Wave",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Clastic Icon",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Cobra Reflexes",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "Coherence",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Copy of Improved Mana/Health Totems",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Corrupted Fire Nova Totem",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Corrupted Healing Stream Totem",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      5
+     ]
+    },
+    {
+     "name": "Corrupted Mind",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Corrupted Stoneskin Totem",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Corrupted Windfury Totem",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Decreased Decoy Totem",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Devour Magic",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Dual Wield Specialization",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Dyadic Icon",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Earthbind",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Earthbound",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Earthfury Stat Totem",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Earthgrab",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Earthliving",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Elemental Shield",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Elemental Shields",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Emerald Rains",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Enchanted Totem",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Energized Shield",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Feral Spirit",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Fiery Strength",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Fire Nova Totem",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      5
+     ]
+    },
+    {
+     "name": "Fire Resistance",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Flame Charged",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Flame Shock Cost Reduced",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Flurry",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Focused Mind",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Frost Resistance",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Frostbrand Attack",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Galvanic Icon",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Ghost Wolf Speed",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "Gift of the Gathering Storm Chain Lightning Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Grace of Air",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Greater Ghost Wolf",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Greatly Improved Weapon Enhancements [DOES NOT WORK]",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Healing Stream",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Improved Chain Heal",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "Improved Flame Shock/Molten Blast",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Improved Frost Shock",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Improved Lightning Bolt",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Improved Lightning Bolt/Lava Burst",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Improved Riptide/Chain Heal/Earth Shield",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Improved Stormstrike/Windfury Weapon",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Increased Flame Shock Duration",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Increased Lesser Healing Wave",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Increased Lightning Damage",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Increased Shock Damage",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Increased Totem Radius",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Increased Water Shield Charges",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Infusion of Souls",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Kajaric Icon",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Lesser Healing Wave Crit Chance",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Lightning Bolt Can Activate Maelstrom Weapon",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Lithic Icon",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Loyal Beta",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Mana Spring",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Mana Surge",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Mana Tide",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Mercy by Fire",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Natural Guidance",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Nature Resistance",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Nature's Blessing",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Noxious Breath",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Overcharged",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Overload",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Pack Leader",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Power Surge",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Rage of Earth",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Reduced Healing Wave Cost",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Reduced Riptide Cost",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Revelation",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Rockbiter Weapon Proc",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    {
+     "name": "Rolling Thunder",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Naxxramas - Shaman - Elemental 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Naxxramas - Shaman - Elemental 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Naxxramas - Shaman - Elemental 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Naxxramas - Shaman - Enhancement 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Naxxramas - Shaman - Enhancement 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Naxxramas - Shaman - Enhancement 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Naxxramas - Shaman - Restoration 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Naxxramas - Shaman - Restoration 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Naxxramas - Shaman - Restoration 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Naxxramas - Shaman - Tank 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Naxxramas - Shaman - Tank 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Naxxramas - Shaman - Tank 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Naxxramas - Warlock - Tank 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - RAQ - Shaman - Elemental 3P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Elemental 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Elemental 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Elemental 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Enhancement 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Enhancement 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Enhancement 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Restoration 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Restoration 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Restoration 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Tank 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Tank 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - Scarlet Enclave - Shaman - Tank 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T1 - Shaman - Elemental 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T1 - Shaman - Elemental 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T1 - Shaman - Elemental/Enhancement/Restoration 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T1 - Shaman - Enhancement 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T1 - Shaman - Restoration 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T1 - Shaman - Restoration 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T1 - Shaman - Tank 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T2 - Shaman - Elemental 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T2 - Shaman - Elemental 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T2 - Shaman - Elemental 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T2 - Shaman - Enhancement 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T2 - Shaman - Enhancement 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T2 - Shaman - Enhancement 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T2 - Shaman - Restoration 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T2 - Shaman - Restoration 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T2 - Shaman - Restoration 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T2 - Shaman - Tank 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T2 - Shaman - Tank 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - T2 - Shaman - Tank 6P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - TAQ - Shaman - Elemental 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - TAQ - Shaman - Elemental 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - TAQ - Shaman - Enhancement 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - TAQ - Shaman - Enhancement 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - TAQ - Shaman - Restoration 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - TAQ - Shaman - Restoration 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - TAQ - Shaman - Tank 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - TAQ - Shaman - Tank 4P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - ZG - Shaman - Tank 2P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - ZG - Shaman - Tank 3P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "S03 - Item - ZG - Shaman - Tank 5P Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Scarlet Smashbringer",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Shaman Shock Crit Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "Shamanistic Rage",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Shield Block",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Shield Mastery",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Spirit Hunt",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Spirit Leap",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Spirit Walk",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Static Shock",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Stoneclaw Totem TEST",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Stoneskin",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "name": "Storm Mastery",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "Storm's Grasp",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Storm, Earth, and Fire",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Stormbraced",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Stormbringer Lightning Bolt Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Stormcaller Chain Heal Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Stormcaller Spelldamage Bonus",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Stormfury",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Strength of Earth",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Strong Current",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Sulfurous Icon",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Swiftearth",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Tempest Icon",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Terrestris",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Testing Totem",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "The Quick and the Dead",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Thunder and Lava",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Tidal Waves",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Tidebringer's Claw",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem Affinity",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of Ancestral Protection",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of Astral Flow",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of Conductive Currents",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of Earthen Vitality",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of Elders",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of Fiery Precision",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of Life",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of Raging Fire",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of Raging Storms",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of Storm and Fire",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of The Undergrove",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of Thunder",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of Tormented Ancestry",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of the Elements",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totem of the Plains",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totemic Energy",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totemic Power",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Tranquil Air",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "Twisting Nether",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Two-Handed Mastery",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Unleashed Storm",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Voltaic  Icon",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Water Mastery",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Way of Earth",
+     "spec": "other",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Windwall",
+     "spec": "other",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Ancestral Healing",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Ancestral Spirit",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Chain Heal",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Cure Disease",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Cure Poison",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Disease Cleansing Totem",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Earth Shield",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "Healing Focus",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Healing Grace",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Healing Rain",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Healing Stream Totem",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "name": "Healing Wave",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ]
+    },
+    {
+     "name": "Healing Way",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1
+     ]
+    },
+    {
+     "name": "Improved Healing Wave",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Improved Reincarnation",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Lesser Healing Wave",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "name": "Mana Spring Totem",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Mana Tide Totem",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Natural Grace",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Nature's Guidance",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Nature's Swiftness",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Poison Cleansing Totem",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Purification",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Reincarnation (Passive)",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Restorative Totems",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Riptide",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "name": "Tidal Focus",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Tidal Mastery",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totemic Focus",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Totemic Mastery",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Tremor Totem",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Water Shield",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": []
+    }
+   ]
+  },
   {
    "id": "1.60.1.70658/hotfix-112635+3",
    "version": "1.60.1.70658",

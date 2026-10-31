@@ -11719,6 +11719,71 @@
    ]
   },
   {
+   "id": 281634,
+   "name": "Field Researcher's Loop",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 35,
+   "bind": "pickup",
+   "stats": {
+    "agility": 7,
+    "stamina": 7
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281635,
+   "name": "Philanthropist's Ring",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 35,
+   "bind": "pickup",
+   "stats": {
+    "intellect": 5
+   },
+   "bonus": {
+    "spellPower": 10
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 270050,
    "name": "Fury Ring",
    "kind": "Ring",
@@ -11990,6 +12055,37 @@
    ]
   },
   {
+   "id": 281258,
+   "name": "Essene's Hope",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 33,
+   "bind": "pickup",
+   "stats": {
+    "spirit": 7
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_necklace_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 270042,
    "name": "Technician's Bracers",
    "kind": "Leather",
@@ -12159,6 +12255,101 @@
    ]
   },
   {
+   "id": 281319,
+   "name": "Golem War Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 32,
+   "bind": "pickup",
+   "armor": 24,
+   "stats": {
+    "strength": 6,
+    "armor": 72
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_cape_20",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281320,
+   "name": "Rune-Etched Ring",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 32,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281321,
+   "name": "Giantstone Medallion",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 32,
+   "bind": "pickup",
+   "stats": {
+    "spirit": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_necklace_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 9362,
    "name": "Brilliant Gold Ring",
    "kind": "Ring",
@@ -12185,6 +12376,137 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281304,
+   "name": "Prospector's Signet",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 31,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 4,
+    "intellect": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281305,
+   "name": "Excavation Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 31,
+   "bind": "pickup",
+   "armor": 22,
+   "stats": {
+    "strength": 4,
+    "stamina": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_cape_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281306,
+   "name": "Flamescarred Spellbook",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 31,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 2,
+    "spirit": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_book_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281307,
+   "name": "Dragonmaw Buckler",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 31,
+   "bind": "pickup",
+   "armor": 595,
+   "block": 12,
+   "stats": {
+    "strength": 3,
+    "stamina": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_shield_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
      "asap": 0,
      "rec": 0
     }
@@ -12384,6 +12706,72 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_helmet_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281309,
+   "name": "Razormaw Shorts",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 30,
+   "bind": "pickup",
+   "armor": 82,
+   "stats": {
+    "agility": 8,
+    "stamina": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281310,
+   "name": "Carnage Trousers",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 30,
+   "bind": "pickup",
+   "armor": 82,
+   "stats": {
+    "stamina": 6,
+    "intellect": 8
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_06",
    "raceMask": -1,
    "sources": [
     {
@@ -12637,6 +13025,71 @@
    ]
   },
   {
+   "id": 281295,
+   "name": "Pelt Pants",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 29,
+   "bind": "pickup",
+   "armor": 83,
+   "stats": {
+    "strength": 8,
+    "agility": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281318,
+   "name": "Bouquet of Auberdine Flowers",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 29,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 4,
+    "intellect": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_flower_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 4381,
    "name": "Minor Recombobulator",
    "kind": "Trinket",
@@ -12868,6 +13321,38 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_boots_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281673,
+   "name": "Loop of Sacrifice",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 28,
+   "bind": "pickup",
+   "stats": {
+    "strength": 3,
+    "intellect": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_26",
    "raceMask": -1,
    "sources": [
     {
@@ -13212,6 +13697,38 @@
    ]
   },
   {
+   "id": 281290,
+   "name": "Replica Crescent Necklace",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 26,
+   "bind": "pickup",
+   "stats": {
+    "spirit": 3,
+    "agility": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_necklace_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 7506,
    "name": "Gnomish Universal Remote",
    "kind": "Trinket",
@@ -13273,6 +13790,38 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_bracer_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281294,
+   "name": "Expended Apothecary Vial",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 25,
+   "bind": "pickup",
+   "stats": {
+    "intellect": 3,
+    "spirit": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_potion_12",
    "raceMask": -1,
    "sources": [
     {
@@ -14056,6 +14605,70 @@
    ]
   },
   {
+   "id": 281291,
+   "name": "Mathystra Channeling Orb",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 21,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 3,
+    "intellect": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_orb_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281292,
+   "name": "Onu's Patience",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 21,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 3,
+    "spirit": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_talisman_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 4368,
    "name": "Flying Tiger Goggles",
    "kind": "Cloth",
@@ -14381,6 +14994,37 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_bracer_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281265,
+   "name": "Roadwatcher's Confidence",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 20,
+   "bind": "pickup",
+   "stats": {
+    "spirit": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_necklace_01",
    "raceMask": -1,
    "sources": [
     {
@@ -14763,6 +15407,38 @@
    ]
   },
   {
+   "id": 281315,
+   "name": "Foulfur Gloves",
+   "kind": "Cloth",
+   "slot": "Hands",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 16,
+   "bind": "pickup",
+   "armor": 18,
+   "stats": {
+    "intellect": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_gauntlets_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 263405,
    "name": "Belt of Blades",
    "kind": "Leather",
@@ -14882,6 +15558,76 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_boot_leather_skybornec60_b_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 286426,
+   "name": "Honorbound Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 15,
+   "bind": "pickup",
+   "armor": 14,
+   "stats": {
+    "stamina": 1
+   },
+   "bonus": {
+    "spellDamage": 1,
+    "attackPower": 1
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_cape_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 286427,
+   "name": "Cloak of the Honored Guest",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 15,
+   "bind": "pickup",
+   "armor": 14,
+   "stats": {
+    "stamina": 1
+   },
+   "bonus": {
+    "spellDamage": 1,
+    "attackPower": 1
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_cape_16",
    "raceMask": -1,
    "sources": [
     {
@@ -15412,6 +16158,102 @@
    ]
   },
   {
+   "id": 281289,
+   "name": "Swordfeather Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 13,
+   "bind": "pickup",
+   "armor": 12,
+   "stats": {
+    "strength": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_cape_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 286744,
+   "name": "Thrice-Stitched Flesh",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 13,
+   "bind": "pickup",
+   "armor": 12,
+   "stats": {
+    "agility": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_misc_cape_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 286731,
+   "name": "Aggor's Refitted Belt",
+   "kind": "Mail",
+   "slot": "Waist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 12,
+   "bind": "pickup",
+   "armor": 69,
+   "stats": {
+    "stamina": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_belt_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 263306,
    "name": "Nightclaw Gloves",
    "kind": "Leather",
@@ -15732,6 +16574,102 @@
    ]
   },
   {
+   "id": 281283,
+   "name": "Patchwing Pants",
+   "kind": "Cloth",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 11,
+   "bind": "pickup",
+   "armor": 18,
+   "stats": {
+    "intellect": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281284,
+   "name": "Howlhide Vest",
+   "kind": "Leather",
+   "slot": "Chest",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 11,
+   "bind": "pickup",
+   "armor": 58,
+   "stats": {
+    "agility": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_chest_wolf",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281285,
+   "name": "Finscale Soles",
+   "kind": "Mail",
+   "slot": "Feet",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 11,
+   "bind": "pickup",
+   "armor": 79,
+   "stats": {
+    "strength": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_boots_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 263305,
    "name": "Windshaped Shield",
    "kind": "Shield",
@@ -15860,6 +16798,166 @@
    ]
   },
   {
+   "id": 281269,
+   "name": "Mogra's Friendship Bracelet",
+   "kind": "Cloth",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 10,
+   "bind": "pickup",
+   "armor": 8,
+   "stats": {
+    "spirit": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281270,
+   "name": "Thra's Friendship Bracelet",
+   "kind": "Leather",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 10,
+   "bind": "pickup",
+   "armor": 24,
+   "stats": {
+    "intellect": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281271,
+   "name": "Puk's Friendship Bracelet",
+   "kind": "Leather",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 10,
+   "bind": "pickup",
+   "armor": 24,
+   "stats": {
+    "agility": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281272,
+   "name": "Brog's Friendship Bracelet",
+   "kind": "Mail",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 10,
+   "bind": "pickup",
+   "armor": 47,
+   "stats": {
+    "strength": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281273,
+   "name": "Migi's Friendship Bracelet",
+   "kind": "Mail",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 10,
+   "bind": "pickup",
+   "armor": 47,
+   "stats": {
+    "stamina": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 257255,
    "name": "Highlands Defender's Shield",
    "kind": "Shield",
@@ -15913,6 +17011,38 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_cape_leather_skybornec60_b_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 281267,
+   "name": "Raptorscale Pants",
+   "kind": "Mail",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 8,
+   "bind": "pickup",
+   "armor": 81,
+   "stats": {
+    "agility": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_03",
    "raceMask": -1,
    "sources": [
     {
@@ -25198,58 +26328,6 @@
    ]
   },
   {
-   "id": 281267,
-   "name": "Raptorscale Pants",
-   "kind": "Mail",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 8,
-   "ilvl": 8,
-   "bind": "pickup",
-   "armor": 81,
-   "stats": {
-    "agility": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Bloodtalon Matriarch",
-     "questId": 97223,
-     "level": 8,
-     "requiredLevel": 5,
-     "zone": "Durotar",
-     "bands": {
-      "orange": 5,
-      "yellow": 6,
-      "green": 11,
-      "grey": 14
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97223",
-     "basis": {
-      "name": "Bloodtalon Matriarch",
-      "level": 9,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 1
-     },
-     "asap": 6,
-     "rec": 8
-    }
-   ]
-  },
-  {
    "id": 2069,
    "name": "Black Bear Hide Vest",
    "kind": "Leather",
@@ -25698,165 +26776,6 @@
      "faction": "both",
      "confidence": "community-untested",
      "asap": 9,
-     "rec": 9
-    }
-   ]
-  },
-  {
-   "id": 281283,
-   "name": "Patchwing Pants",
-   "kind": "Cloth",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 9,
-   "ilvl": 11,
-   "bind": "pickup",
-   "armor": 18,
-   "stats": {
-    "intellect": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hides for the Forsaken",
-     "questId": 97558,
-     "level": 11,
-     "requiredLevel": 6,
-     "zone": "Tirisfal Glades",
-     "bands": {
-      "red": 6,
-      "orange": 7,
-      "yellow": 9,
-      "green": 14,
-      "grey": 17
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97558",
-     "basis": {
-      "name": "Vile Fin Muckdweller",
-      "level": 10,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 1
-     },
-     "asap": 7,
-     "rec": 9
-    }
-   ]
-  },
-  {
-   "id": 281284,
-   "name": "Howlhide Vest",
-   "kind": "Leather",
-   "slot": "Chest",
-   "quality": 2,
-   "req": 0,
-   "obtain": 9,
-   "ilvl": 11,
-   "bind": "pickup",
-   "armor": 58,
-   "stats": {
-    "agility": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_chest_wolf",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hides for the Forsaken",
-     "questId": 97558,
-     "level": 11,
-     "requiredLevel": 6,
-     "zone": "Tirisfal Glades",
-     "bands": {
-      "red": 6,
-      "orange": 7,
-      "yellow": 9,
-      "green": 14,
-      "grey": 17
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97558",
-     "basis": {
-      "name": "Vile Fin Muckdweller",
-      "level": 10,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 1
-     },
-     "asap": 7,
-     "rec": 9
-    }
-   ]
-  },
-  {
-   "id": 281285,
-   "name": "Finscale Soles",
-   "kind": "Mail",
-   "slot": "Feet",
-   "quality": 2,
-   "req": 0,
-   "obtain": 9,
-   "ilvl": 11,
-   "bind": "pickup",
-   "armor": 79,
-   "stats": {
-    "strength": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_boots_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hides for the Forsaken",
-     "questId": 97558,
-     "level": 11,
-     "requiredLevel": 6,
-     "zone": "Tirisfal Glades",
-     "bands": {
-      "red": 6,
-      "orange": 7,
-      "yellow": 9,
-      "green": 14,
-      "grey": 17
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97558",
-     "basis": {
-      "name": "Vile Fin Muckdweller",
-      "level": 10,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 1
-     },
-     "asap": 7,
      "rec": 9
     }
    ]
@@ -27359,110 +28278,6 @@
    ]
   },
   {
-   "id": 286744,
-   "name": "Thrice-Stitched Flesh",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 0,
-   "obtain": 10,
-   "ilvl": 13,
-   "bind": "pickup",
-   "armor": 12,
-   "stats": {
-    "agility": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_misc_cape_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Rear Guard Patrol",
-     "questId": 99156,
-     "level": 13,
-     "requiredLevel": 6,
-     "zone": "Tirisfal Glades",
-     "bands": {
-      "red": 6,
-      "orange": 9,
-      "yellow": 11,
-      "green": 16,
-      "grey": 19
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/99156",
-     "basis": {
-      "name": "Riptear",
-      "level": 13,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 8,
-     "rec": 10
-    }
-   ]
-  },
-  {
-   "id": 286731,
-   "name": "Aggor's Refitted Belt",
-   "kind": "Mail",
-   "slot": "Waist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 10,
-   "ilvl": 12,
-   "bind": "pickup",
-   "armor": 69,
-   "stats": {
-    "stamina": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_belt_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Threat from Below",
-     "questId": 99052,
-     "level": 12,
-     "requiredLevel": 10,
-     "zone": "Durotar",
-     "bands": {
-      "yellow": 10,
-      "green": 15,
-      "grey": 18
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/99052",
-     "basis": {
-      "name": "Aggor the Young",
-      "level": 11,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 4
-     },
-     "asap": 10,
-     "rec": 10
-    }
-   ]
-  },
-  {
    "id": 2584,
    "name": "Woolen Cape",
    "kind": "Cloth",
@@ -28278,58 +29093,6 @@
      "faction": "both",
      "confidence": "community-untested",
      "asap": 11,
-     "rec": 11
-    }
-   ]
-  },
-  {
-   "id": 281289,
-   "name": "Swordfeather Cloak",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 0,
-   "obtain": 11,
-   "ilvl": 13,
-   "bind": "pickup",
-   "armor": 12,
-   "stats": {
-    "strength": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_cape_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "WANTED: Jai'vhanel",
-     "questId": 98025,
-     "level": 13,
-     "requiredLevel": 10,
-     "zone": "Darkshore",
-     "bands": {
-      "orange": 10,
-      "yellow": 11,
-      "green": 16,
-      "grey": 19
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98025",
-     "basis": {
-      "name": "Jai'vhanel",
-      "level": 12,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 1
-     },
-     "asap": 10,
      "rec": 11
     }
    ]
@@ -30275,112 +31038,6 @@
      "faction": "both",
      "confidence": "client-data",
      "asap": 12,
-     "rec": 12
-    }
-   ]
-  },
-  {
-   "id": 281315,
-   "name": "Foulfur Gloves",
-   "kind": "Cloth",
-   "slot": "Hands",
-   "quality": 2,
-   "req": 0,
-   "obtain": 12,
-   "ilvl": 16,
-   "bind": "pickup",
-   "armor": 18,
-   "stats": {
-    "intellect": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_gauntlets_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Arugal's Folly",
-     "questId": 98298,
-     "level": 16,
-     "requiredLevel": 9,
-     "zone": "Silverpine Forest",
-     "bands": {
-      "red": 9,
-      "orange": 12,
-      "yellow": 14,
-      "green": 19,
-      "grey": 23
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98298",
-     "basis": {
-      "name": "Moonrage Sentry",
-      "level": 15,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "step": 99,
-      "steps": 6
-     },
-     "asap": 10,
-     "rec": 12
-    }
-   ]
-  },
-  {
-   "id": 286426,
-   "name": "Honorbound Cloak",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 0,
-   "obtain": 12,
-   "ilvl": 15,
-   "bind": "pickup",
-   "armor": 14,
-   "stats": {
-    "stamina": 1
-   },
-   "bonus": {
-    "spellDamage": 1,
-    "attackPower": 1
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_cape_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Exploring the Horde",
-     "questId": 93739,
-     "level": 13,
-     "requiredLevel": 7,
-     "zone": "Orgrimmar",
-     "bands": {
-      "red": 7,
-      "orange": 9,
-      "yellow": 11,
-      "green": 16,
-      "grey": 19
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/93739",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 7,
      "rec": 12
     }
    ]
@@ -32931,62 +33588,6 @@
    ]
   },
   {
-   "id": 286427,
-   "name": "Cloak of the Honored Guest",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 0,
-   "obtain": 13,
-   "ilvl": 15,
-   "bind": "pickup",
-   "armor": 14,
-   "stats": {
-    "stamina": 1
-   },
-   "bonus": {
-    "spellDamage": 1,
-    "attackPower": 1
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_cape_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Exploring the Alliance",
-     "questId": 93963,
-     "level": 13,
-     "requiredLevel": 7,
-     "zone": "Stormwind City",
-     "bands": {
-      "red": 7,
-      "orange": 9,
-      "yellow": 11,
-      "green": 16,
-      "grey": 19
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/93963",
-     "basis": {
-      "name": "King Magni Bronzebeard",
-      "level": 63,
-      "rank": "boss",
-      "from": "questie",
-      "group": true,
-      "steps": 7
-     },
-     "asap": 13,
-     "rec": 13
-    }
-   ]
-  },
-  {
    "id": 1446,
    "name": "Blackrock Boots",
    "kind": "Mail",
@@ -35101,251 +35702,6 @@
       "steps": 2
      },
      "asap": 12,
-     "rec": 14
-    }
-   ]
-  },
-  {
-   "id": 281269,
-   "name": "Mogra's Friendship Bracelet",
-   "kind": "Cloth",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 14,
-   "ilvl": 10,
-   "bind": "pickup",
-   "armor": 8,
-   "stats": {
-    "spirit": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_bracer_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Rocks to Rests",
-     "questId": 97326,
-     "level": 15,
-     "requiredLevel": 5,
-     "zone": "Orgrimmar",
-     "bands": {
-      "red": 5,
-      "orange": 11,
-      "yellow": 13,
-      "green": 18,
-      "grey": 22
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97326",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 5,
-     "rec": 14
-    }
-   ]
-  },
-  {
-   "id": 281270,
-   "name": "Thra's Friendship Bracelet",
-   "kind": "Leather",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 14,
-   "ilvl": 10,
-   "bind": "pickup",
-   "armor": 24,
-   "stats": {
-    "intellect": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_bracer_10",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Rocks to Rests",
-     "questId": 97326,
-     "level": 15,
-     "requiredLevel": 5,
-     "zone": "Orgrimmar",
-     "bands": {
-      "red": 5,
-      "orange": 11,
-      "yellow": 13,
-      "green": 18,
-      "grey": 22
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97326",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 5,
-     "rec": 14
-    }
-   ]
-  },
-  {
-   "id": 281271,
-   "name": "Puk's Friendship Bracelet",
-   "kind": "Leather",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 14,
-   "ilvl": 10,
-   "bind": "pickup",
-   "armor": 24,
-   "stats": {
-    "agility": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_bracer_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Rocks to Rests",
-     "questId": 97326,
-     "level": 15,
-     "requiredLevel": 5,
-     "zone": "Orgrimmar",
-     "bands": {
-      "red": 5,
-      "orange": 11,
-      "yellow": 13,
-      "green": 18,
-      "grey": 22
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97326",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 5,
-     "rec": 14
-    }
-   ]
-  },
-  {
-   "id": 281272,
-   "name": "Brog's Friendship Bracelet",
-   "kind": "Mail",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 14,
-   "ilvl": 10,
-   "bind": "pickup",
-   "armor": 47,
-   "stats": {
-    "strength": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_bracer_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Rocks to Rests",
-     "questId": 97326,
-     "level": 15,
-     "requiredLevel": 5,
-     "zone": "Orgrimmar",
-     "bands": {
-      "red": 5,
-      "orange": 11,
-      "yellow": 13,
-      "green": 18,
-      "grey": 22
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97326",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 5,
-     "rec": 14
-    }
-   ]
-  },
-  {
-   "id": 281273,
-   "name": "Migi's Friendship Bracelet",
-   "kind": "Mail",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 14,
-   "ilvl": 10,
-   "bind": "pickup",
-   "armor": 47,
-   "stats": {
-    "stamina": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_bracer_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Rocks to Rests",
-     "questId": 97326,
-     "level": 15,
-     "requiredLevel": 5,
-     "zone": "Orgrimmar",
-     "bands": {
-      "red": 5,
-      "orange": 11,
-      "yellow": 13,
-      "green": 18,
-      "grey": 22
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97326",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 5,
      "rec": 14
     }
    ]
@@ -52333,58 +52689,6 @@
    ]
   },
   {
-   "id": 281265,
-   "name": "Roadwatcher's Confidence",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 2,
-   "req": 0,
-   "obtain": 19,
-   "ilvl": 20,
-   "bind": "pickup",
-   "stats": {
-    "spirit": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_necklace_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Watching the Roads",
-     "questId": 95981,
-     "level": 20,
-     "requiredLevel": 10,
-     "zone": "Silverpine Forest",
-     "bands": {
-      "red": 10,
-      "orange": 16,
-      "yellow": 18,
-      "green": 23,
-      "grey": 27
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/95981",
-     "basis": {
-      "name": "Dalaran Wizard",
-      "level": 20,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "steps": 1
-     },
-     "asap": 17,
-     "rec": 19
-    }
-   ]
-  },
-  {
    "id": 6546,
    "name": "Soldier's Leggings",
    "kind": "Mail",
@@ -53701,59 +54005,6 @@
       "from": "wowhead",
       "group": false
      }
-    }
-   ]
-  },
-  {
-   "id": 281673,
-   "name": "Loop of Sacrifice",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 20,
-   "ilvl": 28,
-   "bind": "pickup",
-   "stats": {
-    "strength": 3,
-    "intellect": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_26",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "The Offering of Blood",
-     "questId": 95885,
-     "level": 23,
-     "requiredLevel": 20,
-     "zone": "Silverpine Forest",
-     "bands": {
-      "orange": 20,
-      "yellow": 21,
-      "green": 26,
-      "grey": 31
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/95885",
-     "basis": {
-      "name": "Ravenclaw Guardian",
-      "level": 21,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 95883,
-      "steps": 3
-     },
-     "asap": 20,
-     "rec": 20
     }
    ]
   },
@@ -57659,102 +57910,6 @@
      "faction": "both",
      "confidence": "community-untested",
      "asap": 20,
-     "rec": 20
-    }
-   ]
-  },
-  {
-   "id": 281291,
-   "name": "Mathystra Channeling Orb",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 3,
-   "req": 0,
-   "obtain": 20,
-   "ilvl": 21,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 3,
-    "intellect": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_orb_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Baron Marinous",
-     "questId": 98028,
-     "level": 21,
-     "requiredLevel": 17,
-     "zone": "Darkshore",
-     "bands": {
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98028",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 17,
-     "rec": 20
-    }
-   ]
-  },
-  {
-   "id": 281292,
-   "name": "Onu's Patience",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 3,
-   "req": 0,
-   "obtain": 20,
-   "ilvl": 21,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 3,
-    "spirit": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_talisman_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Baron Marinous",
-     "questId": 98028,
-     "level": 21,
-     "requiredLevel": 17,
-     "zone": "Darkshore",
-     "bands": {
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98028",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 17,
      "rec": 20
     }
    ]
@@ -70826,55 +70981,6 @@
    ]
   },
   {
-   "id": 281294,
-   "name": "Expended Apothecary Vial",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 2,
-   "req": 0,
-   "obtain": 24,
-   "ilvl": 25,
-   "bind": "pickup",
-   "stats": {
-    "intellect": 3,
-    "spirit": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_potion_12",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Valuable Vantages",
-     "questId": 98095,
-     "level": 25,
-     "requiredLevel": 19,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 19,
-      "orange": 21,
-      "yellow": 23,
-      "green": 28,
-      "grey": 33
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98095",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 19,
-     "rec": 24
-    }
-   ]
-  },
-  {
    "id": 2230,
    "name": "Gloves of Brawn",
    "kind": "Mail",
@@ -82049,114 +82155,6 @@
    ]
   },
   {
-   "id": 281309,
-   "name": "Razormaw Shorts",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 27,
-   "ilvl": 30,
-   "bind": "pickup",
-   "armor": 82,
-   "stats": {
-    "agility": 8,
-    "stamina": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Carnage",
-     "questId": 98283,
-     "level": 30,
-     "requiredLevel": 22,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 22,
-      "orange": 26,
-      "yellow": 28,
-      "green": 33,
-      "grey": 38
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98283",
-     "basis": {
-      "name": "Carnage",
-      "level": 30,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 5
-     },
-     "asap": 25,
-     "rec": 27
-    }
-   ]
-  },
-  {
-   "id": 281310,
-   "name": "Carnage Trousers",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 27,
-   "ilvl": 30,
-   "bind": "pickup",
-   "armor": 82,
-   "stats": {
-    "stamina": 6,
-    "intellect": 8
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Carnage",
-     "questId": 98283,
-     "level": 30,
-     "requiredLevel": 22,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 22,
-      "orange": 26,
-      "yellow": 28,
-      "green": 33,
-      "grey": 38
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98283",
-     "basis": {
-      "name": "Carnage",
-      "level": 30,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 5
-     },
-     "asap": 25,
-     "rec": 27
-    }
-   ]
-  },
-  {
    "id": 3562,
    "name": "Belt of Vindication",
    "kind": "Leather",
@@ -86962,109 +86960,6 @@
    ]
   },
   {
-   "id": 281295,
-   "name": "Pelt Pants",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 28,
-   "ilvl": 29,
-   "bind": "pickup",
-   "armor": 83,
-   "stats": {
-    "strength": 8,
-    "agility": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Packaged Pristine Pelts",
-     "questId": 98156,
-     "level": 31,
-     "requiredLevel": 27,
-     "zone": "Thousand Needles",
-     "bands": {
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98156",
-     "basis": {
-      "name": "Pesterhide Snarler",
-      "level": 29,
-      "rank": "normal",
-      "from": "wowhead",
-      "group": false,
-      "step": 98155,
-      "steps": 2
-     },
-     "asap": 27,
-     "rec": 28
-    }
-   ]
-  },
-  {
-   "id": 281318,
-   "name": "Bouquet of Auberdine Flowers",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 2,
-   "req": 0,
-   "obtain": 28,
-   "ilvl": 29,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 4,
-    "intellect": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_flower_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Bloom of the Heavens (part 1)",
-     "questId": 98208,
-     "level": 29,
-     "requiredLevel": 22,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 22,
-      "orange": 25,
-      "yellow": 27,
-      "green": 32,
-      "grey": 37
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98208",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 22,
-     "rec": 28
-    }
-   ]
-  },
-  {
    "id": 3743,
    "name": "Sentry Buckler",
    "kind": "Shield",
@@ -87387,54 +87282,6 @@
       "steps": 3
      },
      "asap": 26,
-     "rec": 28
-    }
-   ]
-  },
-  {
-   "id": 281290,
-   "name": "Replica Crescent Necklace",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 2,
-   "req": 0,
-   "obtain": 28,
-   "ilvl": 26,
-   "bind": "pickup",
-   "stats": {
-    "spirit": 3,
-    "agility": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_necklace_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Gleaming Crescent Necklace",
-     "questId": 98027,
-     "level": 29,
-     "requiredLevel": 25,
-     "zone": "Ashenvale",
-     "bands": {
-      "orange": 25,
-      "yellow": 27,
-      "green": 32,
-      "grey": 37
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98027",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 25,
      "rec": 28
     }
    ]
@@ -90996,167 +90843,6 @@
    ]
   },
   {
-   "id": 281319,
-   "name": "Golem War Cloak",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 3,
-   "req": 0,
-   "obtain": 29,
-   "ilvl": 32,
-   "bind": "pickup",
-   "armor": 24,
-   "stats": {
-    "strength": 6,
-    "armor": 72
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_cape_20",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Gleaning Our Future",
-     "questId": 98310,
-     "level": 32,
-     "requiredLevel": 24,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 24,
-      "orange": 28,
-      "yellow": 30,
-      "green": 35,
-      "grey": 41
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98310",
-     "basis": {
-      "name": "Goaz Warder",
-      "level": 32,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "step": 98216,
-      "steps": 3
-     },
-     "asap": 27,
-     "rec": 29
-    }
-   ]
-  },
-  {
-   "id": 281320,
-   "name": "Rune-Etched Ring",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 3,
-   "req": 0,
-   "obtain": 29,
-   "ilvl": 32,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Gleaning Our Future",
-     "questId": 98310,
-     "level": 32,
-     "requiredLevel": 24,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 24,
-      "orange": 28,
-      "yellow": 30,
-      "green": 35,
-      "grey": 41
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98310",
-     "basis": {
-      "name": "Goaz Warder",
-      "level": 32,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "step": 98216,
-      "steps": 3
-     },
-     "asap": 27,
-     "rec": 29
-    }
-   ]
-  },
-  {
-   "id": 281321,
-   "name": "Giantstone Medallion",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 3,
-   "req": 0,
-   "obtain": 29,
-   "ilvl": 32,
-   "bind": "pickup",
-   "stats": {
-    "spirit": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_necklace_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Gleaning Our Future",
-     "questId": 98310,
-     "level": 32,
-     "requiredLevel": 24,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 24,
-      "orange": 28,
-      "yellow": 30,
-      "green": 35,
-      "grey": 41
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98310",
-     "basis": {
-      "name": "Goaz Warder",
-      "level": 32,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "step": 98216,
-      "steps": 3
-     },
-     "asap": 27,
-     "rec": 29
-    }
-   ]
-  },
-  {
    "id": 1116,
    "name": "Ring of Pure Silver",
    "kind": "Ring",
@@ -91363,113 +91049,6 @@
       "group": false
      },
      "asap": 23,
-     "rec": 29
-    }
-   ]
-  },
-  {
-   "id": 281304,
-   "name": "Prospector's Signet",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 29,
-   "ilvl": 31,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 4,
-    "intellect": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Understanding Our Present",
-     "questId": 98216,
-     "level": 31,
-     "requiredLevel": 23,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 23,
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98216",
-     "basis": {
-      "name": "Goaz Warder",
-      "level": 32,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 27,
-     "rec": 29
-    }
-   ]
-  },
-  {
-   "id": 281305,
-   "name": "Excavation Cloak",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 0,
-   "obtain": 29,
-   "ilvl": 31,
-   "bind": "pickup",
-   "armor": 22,
-   "stats": {
-    "strength": 4,
-    "stamina": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_cape_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Understanding Our Present",
-     "questId": 98216,
-     "level": 31,
-     "requiredLevel": 23,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 23,
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98216",
-     "basis": {
-      "name": "Goaz Warder",
-      "level": 32,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 27,
      "rec": 29
     }
    ]
@@ -97570,106 +97149,6 @@
    ]
   },
   {
-   "id": 281306,
-   "name": "Flamescarred Spellbook",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 2,
-   "req": 0,
-   "obtain": 30,
-   "ilvl": 31,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 2,
-    "spirit": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_book_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Old Habits",
-     "questId": 98223,
-     "level": 31,
-     "requiredLevel": 23,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 23,
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98223",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 23,
-     "rec": 30
-    }
-   ]
-  },
-  {
-   "id": 281307,
-   "name": "Dragonmaw Buckler",
-   "kind": "Shield",
-   "slot": "Shield",
-   "quality": 2,
-   "req": 0,
-   "obtain": 30,
-   "ilvl": 31,
-   "bind": "pickup",
-   "armor": 595,
-   "block": 12,
-   "stats": {
-    "strength": 3,
-    "stamina": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_shield_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Old Habits",
-     "questId": 98223,
-     "level": 31,
-     "requiredLevel": 23,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 23,
-      "orange": 27,
-      "yellow": 29,
-      "green": 34,
-      "grey": 39
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/98223",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 23,
-     "rec": 30
-    }
-   ]
-  },
-  {
    "id": 1547,
    "name": "Shield of the Faith",
    "kind": "Shield",
@@ -103690,59 +103169,6 @@
    ]
   },
   {
-   "id": 281258,
-   "name": "Essene's Hope",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 2,
-   "req": 0,
-   "obtain": 32,
-   "ilvl": 33,
-   "bind": "pickup",
-   "stats": {
-    "spirit": 7
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_necklace_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Sentiments of the Lost",
-     "questId": 88758,
-     "level": 33,
-     "requiredLevel": 28,
-     "zone": "Wetlands",
-     "bands": {
-      "red": 28,
-      "orange": 29,
-      "yellow": 31,
-      "green": 36,
-      "grey": 42
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/88758",
-     "basis": {
-      "name": null,
-      "level": 33,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 88757,
-      "steps": 3
-     },
-     "asap": 30,
-     "rec": 32
-    }
-   ]
-  },
-  {
    "id": 1280,
    "name": "Cloaked Hood",
    "kind": "Leather",
@@ -109318,105 +108744,6 @@
       "group": false
      },
      "asap": 30,
-     "rec": 34
-    }
-   ]
-  },
-  {
-   "id": 281634,
-   "name": "Field Researcher's Loop",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 3,
-   "req": 0,
-   "obtain": 34,
-   "ilvl": 35,
-   "bind": "pickup",
-   "stats": {
-    "agility": 7,
-    "stamina": 7
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Greater Friend of the Library",
-     "questId": 79536,
-     "level": 35,
-     "requiredLevel": 20,
-     "zone": "Special",
-     "bands": {
-      "red": 20,
-      "orange": 31,
-      "yellow": 33,
-      "green": 38,
-      "grey": 44
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/79536",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 20,
-     "rec": 34
-    }
-   ]
-  },
-  {
-   "id": 281635,
-   "name": "Philanthropist's Ring",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 3,
-   "req": 0,
-   "obtain": 34,
-   "ilvl": 35,
-   "bind": "pickup",
-   "stats": {
-    "intellect": 5
-   },
-   "bonus": {
-    "spellPower": 10
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Greater Friend of the Library",
-     "questId": 79536,
-     "level": 35,
-     "requiredLevel": 20,
-     "zone": "Special",
-     "bands": {
-      "red": 20,
-      "orange": 31,
-      "yellow": 33,
-      "green": 38,
-      "grey": 44
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/79536",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 20,
      "rec": 34
     }
    ]

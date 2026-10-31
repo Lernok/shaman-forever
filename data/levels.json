@@ -7970,80 +7970,6 @@
    },
    "steps": 12
   },
-  "79536": {
-   "classes": null,
-   "minLevel": 20,
-   "faction": null,
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "88758": {
-   "classes": null,
-   "minLevel": 28,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": null,
-    "name": null,
-    "level": 33,
-    "rank": "normal",
-    "from": "step-level",
-    "step": 88757
-   },
-   "steps": 3
-  },
-  "93739": {
-   "classes": null,
-   "minLevel": 7,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 7
-  },
-  "93963": {
-   "classes": null,
-   "minLevel": 7,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 2784,
-    "name": "King Magni Bronzebeard",
-    "level": 63,
-    "rank": "boss",
-    "from": "questie"
-   },
-   "steps": 7
-  },
-  "95885": {
-   "classes": null,
-   "minLevel": 20,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 1973,
-    "name": "Ravenclaw Guardian",
-    "level": 21,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 95883
-   },
-   "steps": 3
-  },
-  "95981": {
-   "classes": null,
-   "minLevel": 10,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 1889,
-    "name": "Dalaran Wizard",
-    "level": 20,
-    "rank": "normal",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
   "96016": {
    "classes": [
     "SHAMAN"
@@ -8060,197 +7986,6 @@
     "step": 96135
    },
    "steps": 5
-  },
-  "97223": {
-   "classes": null,
-   "minLevel": 5,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 268530,
-    "name": "Bloodtalon Matriarch",
-    "level": 9,
-    "rank": "normal",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "97326": {
-   "classes": null,
-   "minLevel": 5,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "97558": {
-   "classes": null,
-   "minLevel": 6,
-   "faction": null,
-   "instance": null,
-   "hardest": {
-    "id": 1545,
-    "name": "Vile Fin Muckdweller",
-    "level": 10,
-    "rank": "normal",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "98025": {
-   "classes": null,
-   "minLevel": 15,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 270196,
-    "name": "Jai'vhanel",
-    "level": 12,
-    "rank": "normal",
-    "from": "wowhead"
-   },
-   "steps": 1
-  },
-  "98027": {
-   "classes": null,
-   "minLevel": 22,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "98028": {
-   "classes": null,
-   "minLevel": 17,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "98095": {
-   "classes": null,
-   "minLevel": 19,
-   "faction": "horde",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "98156": {
-   "classes": null,
-   "minLevel": 27,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 4249,
-    "name": "Pesterhide Snarler",
-    "level": 29,
-    "rank": "normal",
-    "from": "wowhead",
-    "step": 98155
-   },
-   "steps": 2
-  },
-  "98208": {
-   "classes": null,
-   "minLevel": 22,
-   "faction": null,
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "98216": {
-   "classes": null,
-   "minLevel": 23,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 270892,
-    "name": "Goaz Warder",
-    "level": 32,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 2
-  },
-  "98223": {
-   "classes": null,
-   "minLevel": 23,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": null,
-   "steps": 1
-  },
-  "98283": {
-   "classes": null,
-   "minLevel": 22,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 271336,
-    "name": "Carnage",
-    "level": 30,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 5
-  },
-  "98298": {
-   "classes": null,
-   "minLevel": 9,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 1893,
-    "name": "Moonrage Sentry",
-    "level": 15,
-    "rank": "elite",
-    "from": "wowhead",
-    "step": 99
-   },
-   "steps": 6
-  },
-  "98310": {
-   "classes": null,
-   "minLevel": 24,
-   "faction": "alliance",
-   "instance": null,
-   "hardest": {
-    "id": 270892,
-    "name": "Goaz Warder",
-    "level": 32,
-    "rank": "elite",
-    "from": "wowhead",
-    "step": 98216
-   },
-   "steps": 3
-  },
-  "99052": {
-   "classes": null,
-   "minLevel": 10,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 275666,
-    "name": "Aggor the Young",
-    "level": 11,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 4
-  },
-  "99156": {
-   "classes": null,
-   "minLevel": 6,
-   "faction": "horde",
-   "instance": null,
-   "hardest": {
-    "id": 276020,
-    "name": "Riptear",
-    "level": 13,
-    "rank": "elite",
-    "from": "wowhead"
-   },
-   "steps": 2
   }
  },
  "npcs": {
@@ -9544,20 +9279,8 @@
    "rank": "normal",
    "from": "wowhead"
   },
-  "1529": {
-   "name": "Bleeding Horror",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
   "1530": {
    "name": "Rotting Ancestor",
-   "level": 11,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "1532": {
-   "name": "Wandering Spirit",
    "level": 11,
    "rank": "normal",
    "from": "wowhead"
@@ -9565,30 +9288,6 @@
   "1534": {
    "name": "Wailing Ancestor",
    "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "1544": {
-   "name": "Vile Fin Minor Oracle",
-   "level": 9,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "1545": {
-   "name": "Vile Fin Muckdweller",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "1547": {
-   "name": "Decrepit Darkhound",
-   "level": 6,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "1548": {
-   "name": "Cursed Darkhound",
-   "level": 8,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -9601,18 +9300,6 @@
   "1551": {
    "name": "Ironjaw Basilisk",
    "level": 44,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "1553": {
-   "name": "Greater Duskbat",
-   "level": 7,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "1554": {
-   "name": "Vampiric Duskbat",
-   "level": 9,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -9898,18 +9585,6 @@
    "rank": "normal",
    "from": "wowhead"
   },
-  "1888": {
-   "name": "Dalaran Watcher",
-   "level": 19,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "1889": {
-   "name": "Dalaran Wizard",
-   "level": 20,
-   "rank": "normal",
-   "from": "wowhead"
-  },
   "1891": {
    "name": "Pyrewood Watcher",
    "level": 14,
@@ -10039,18 +9714,6 @@
   "1972": {
    "name": "Grimson the Pale",
    "level": 15,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "1973": {
-   "name": "Ravenclaw Guardian",
-   "level": 21,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "1974": {
-   "name": "Ravenclaw Drudger",
-   "level": 20,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -11043,12 +10706,6 @@
    "level": 40,
    "rank": "elite",
    "from": "wowhead"
-  },
-  "2784": {
-   "name": "King Magni Bronzebeard",
-   "level": 63,
-   "rank": "boss",
-   "from": "questie"
   },
   "2791": {
    "name": "Enraged Rock Elemental",
@@ -12121,12 +11778,6 @@
   "4202": {
    "name": "Gerenzo Wrenchwhistle",
    "level": 27,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "4249": {
-   "name": "Pesterhide Snarler",
-   "level": 29,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -14230,12 +13881,6 @@
    "rank": "normal",
    "from": "wowhead"
   },
-  "7937": {
-   "name": "High Tinker Mekkatorque",
-   "level": 63,
-   "rank": "boss",
-   "from": "questie"
-  },
   "7977": {
    "name": "Gammerita",
    "level": 48,
@@ -14253,12 +13898,6 @@
    "level": 43,
    "rank": "normal",
    "from": "wowhead"
-  },
-  "7999": {
-   "name": "Tyrande Whisperwind",
-   "level": 63,
-   "rank": "boss",
-   "from": "questie"
   },
   "8023": {
    "name": "Sharpbeak",
@@ -17404,99 +17043,9 @@
    "rank": "rare",
    "from": "wowhead"
   },
-  "212753": {
-   "name": "Tortured Soul",
-   "level": 20,
-   "rank": "elite",
-   "from": "wowhead"
-  },
   "216474": {
    "name": "Ravaging Tempest",
    "level": 40,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "268530": {
-   "name": "Bloodtalon Matriarch",
-   "level": 9,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "270196": {
-   "name": "Jai'vhanel",
-   "level": 12,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "270892": {
-   "name": "Goaz Warder",
-   "level": 32,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "271334": {
-   "name": "Maddened Rotclaw",
-   "level": 26,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "271336": {
-   "name": "Carnage",
-   "level": 30,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "271338": {
-   "name": "Ados",
-   "level": 32,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "271458": {
-   "name": "Neru",
-   "level": 32,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "271460": {
-   "name": "Modr",
-   "level": 32,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "271462": {
-   "name": "Golm",
-   "level": 32,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "275491": {
-   "name": "Randal Emerson",
-   "level": 40,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "275662": {
-   "name": "Spitelash Scout",
-   "level": 10,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "275663": {
-   "name": "Spitelash Attendant",
-   "level": 11,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "275666": {
-   "name": "Aggor the Young",
-   "level": 11,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "276020": {
-   "name": "Riptear",
-   "level": 13,
    "rank": "elite",
    "from": "wowhead"
   }
