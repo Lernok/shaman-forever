@@ -222,8 +222,8 @@
     const now = new Date();
     const stress = now > new Date('2026-10-21T03:00:00Z') && now < STRESS[1];
     const key = stress ? 'home.status.stress' : now < BETA_END ? 'home.status.beta' : days > 0 ? 'home.status.betaOver' : 'home.status.live';
-    const time = (stress ? STRESS[0] : LAUNCH).toLocaleTimeString(I18N.lang === 'es' ? 'es-AR' : 'en-US', { hour: 'numeric', minute: '2-digit' });
-    return '<div class="home-status"><span class="hs-state">' + t(key + 'Tag') + '</span><span>' + t(key, { n: days, time }) + '</span>' +
+    const time = (stress ? STRESS[0] : LAUNCH).toLocaleTimeString(locale(), { hour: 'numeric', minute: '2-digit' });
+    return '<div class="home-status"><span class="hs-state">' + t(key + 'Tag') + '</span><span>' + t(key, { n: days, time, date: launchDay(), left: untilLaunch() }) + '</span>' +
       '<a href="#Guia">' + t('home.me.guide', { spec: Site.spec }) + '</a></div>';
   }
 
@@ -239,6 +239,15 @@
 
   // A site.js cached from before the launch date was moved there can lack it.
   const LAUNCH = Site.LAUNCH || new Date('2026-11-04T23:00:00Z');
+  const locale = () => I18N.lang === 'es' ? 'es-AR' : 'en-US';
+  // In your time zone: 23:00 UTC is already Nov 5 in Europe.
+  const launchDay = year => LAUNCH.toLocaleDateString(locale(), year ? { day: 'numeric', month: 'long', year: 'numeric' } : { day: 'numeric', month: 'long' });
+  // "in 3 days", and on the last day the hours, so it never says "in 1 days".
+  function untilLaunch() {
+    const hours = Math.ceil((LAUNCH - new Date()) / 3600000);
+    if (hours <= 1) return t('home.leftSoon');
+    return hours < 48 ? t('home.leftHours', { n: hours }) : t('home.leftDays', { n: Math.ceil(hours / 24) });
+  }
   // The beta's last day is Oct 22 (no hour given). The stress test: Oct 21
   // from 14:00 PDT for a few hours, with the beta off.
   const BETA_END = new Date('2026-10-23T07:00:00Z');
@@ -248,10 +257,10 @@
     // With your Shaman picked: only what to do now (the pages are in the menu).
     if (setupDone) return planCard();
     const days = Math.ceil((LAUNCH - new Date()) / 86400000);
-    const launch = days > 0 ? t('home.launchIn', { n: days }) : days === 0 ? t('home.launchToday') : t('home.launched');
+    const launch = LAUNCH > new Date() ? t('home.launchIn', { left: untilLaunch() }) : t('home.launched');
     let html = '<section class="home-hero"><div class="home-hero-text"><div class="role">' + t('home.kicker') + '</div>' +
       '<h2>' + t('home.title') + '</h2><p>' + t('home.tagline') + '</p></div>' +
-      '<div class="countdown"><b>' + launch + '</b><span>' + t('home.launchDate') + '</span>' + (new Date() < BETA_END ? '<span class="dim">' + t('home.betaEnds') + '</span>' : days > 0 ? '<span class="dim">' + t('home.betaOver') + '</span>' : '') + '</div></section>';
+      '<div class="countdown"><b>' + launch + '</b><span>' + launchDay(true) + '</span>' + (new Date() < BETA_END ? '<span class="dim">' + t('home.betaEnds') + '</span>' : days > 0 ? '<span class="dim">' + t('home.betaOver') + '</span>' : '') + '</div></section>';
     html += specCards();
 
     html += '<div class="home-cols"><div><h3 class="block-title">' + t('home.pages') + '</h3><div class="page-cards">';
