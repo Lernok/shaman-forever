@@ -2,6 +2,12 @@
 
 Leer esta primera parte antes de seguir. Debajo está la historia del proyecto (plan de fases y sesiones).
 
+## 2026-10-31: vuelta de la mudanza
+
+- **Misiones del equipo nuevo perdidas 29→31-oct:** foreverchanges.pro pasó a enlaces con nombre (`/quest/91285/murlocs-at-the-gates`, 308 desde `/item/ID`); `fetch-item-sources.js` no los leía y `item-sources-fc.json` quedó en 252 → 35 → 0 ítems sin que el sync fallara. Arreglado (3aab1dd) y ahora el script corta el sync si encuentra menos de la mitad que antes. Sync corrido a mano después.
+- Talentos como la ventana del juego (94f3118) subido, con las comillas del `style` de cada árbol arregladas. #13 (Inicio sin `Site.LAUNCH`): fecha de respaldo en home.js; falta cerrar la issue.
+- Playwright reinstalado en D: (`npm i --no-save --no-package-lock playwright@1.48.2` + `npx playwright install chromium`). `build-zones` local pide `.cache/wago/<build>/AreaTable.csv`: para rearmar datos completos, mejor Actions › Sync de datos.
+
 ## 2026-10-28: el sync falló 23→28-oct (parche de raciales)
 
 - **Causa:** builds 70658/70685 (talentsforever export 70630) cambiaron textos: Eye of the Storm y Healing Focus pasan a "% chance to not lose casting time"; raciales rehechas por Blizzard el 26-oct (post #7/#8 del hilo oficial us.forums.blizzard.com/en/wow/t/2360696): Orc Command (vuelve) y Blood Fury 2 min, sin Savage; Dwarf Artisan's Precision 1% golpe, sin Earth Fury; Tauren Endurance solo 5% salud, Plainsrunning 2%/pila hasta 60% y no montado; Troll Berserking 15 s; Skyborne Wind-Blessed 2%, Read Leyline 50% (Attuned 100%), Skysight 15% (Charged 30%). Lava Burst r3: bonus con Flame Shock 20% (era 53%). 415 ítems cambiados.
