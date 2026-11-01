@@ -75,7 +75,8 @@ function dungeonLevels(html) {
   let found = 0;
   for (const w of targets) {
     const html = await page('item', w.id);
-    const questIds = [...new Set([...html.matchAll(/href="\/quest\/(\d+)"/g)].map(m => Number(m[1])))];
+    // Links carry the quest's name since late Oct: /quest/91285/murlocs-at-the-gates
+    const questIds = [...new Set([...html.matchAll(/href="\/quest\/(\d+)(?:\/[^"]*)?"/g)].map(m => Number(m[1])))];
     const sources = [];
     for (const q of questIds) {
       const s = parseQuest(q, await page('quest', q));
@@ -100,6 +101,10 @@ function dungeonLevels(html) {
   // The date only moves when the data does, so a daily sync with nothing new
   // leaves the file untouched.
   const prev = readJSON('data/item-sources-fc.json', {});
+  // A site change that breaks the reading empties the file quietly (Oct 29-31:
+  // 252 items with a quest → 35 → 0): stop instead, so the sync opens its issue.
+  const had = Object.keys(prev.items || {}).length;
+  if (had >= 20 && found < had / 2) throw new Error('foreverchanges.pro: misión encontrada para ' + found + ' ítems nuevos (antes ' + had + '); ¿cambió el formato de la página?');
   const same = JSON.stringify([prev.items, prev.quests, prev.dungeons]) === JSON.stringify([out, quests, dungeons]);
   writeJSON('data/item-sources-fc.json', {
     _readme: 'Fuentes de misión del equipo nuevo de Forever (items) y datos de Forever de las misiones de Classic que dan equipo (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json.',

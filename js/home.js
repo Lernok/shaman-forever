@@ -237,7 +237,8 @@
     return sinceStrip() + nextCard(steps, lvl, tal) + tiles(plan, steps, lvl, tal) + launchLine();
   }
 
-  const LAUNCH = Site.LAUNCH;
+  // A site.js cached from before the launch date was moved there can lack it.
+  const LAUNCH = Site.LAUNCH || new Date('2026-11-04T23:00:00Z');
   // The beta's last day is Oct 22 (no hour given). The stress test: Oct 21
   // from 14:00 PDT for a few hours, with the beta off.
   const BETA_END = new Date('2026-10-23T07:00:00Z');

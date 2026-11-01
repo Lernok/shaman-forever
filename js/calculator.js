@@ -162,7 +162,7 @@
         break;
       }
     }
-    let html = '<div class="calc-tree' + (tree.name === (tab || window.Site.spec) ? ' shown' : '') + '" style=""--spec-color:' + ui.specColors[tree.name] + ';background-image:' + ui.treeBg(tree) + '">' +
+    let html = '<div class="calc-tree' + (tree.name === (tab || window.Site.spec) ? ' shown' : '') + '" style="--spec-color:' + ui.specColors[tree.name] + ';background-image:' + ui.treeBg(tree) + '">' +
       '<div class="calc-tree-head">' +
         '<img class="tree-icon" src="' + ui.iconUrl(tree.icon) + '" alt="">' +
         '<div class="th-text"><span>' + tree.name + '</span>' +
