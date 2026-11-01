@@ -119,7 +119,9 @@
     if (st) {
       planSteps.set(String(st.pick.item.id), st);
       const i = st.pick.item;
-      const gain = st.replaces ? t('home.next.better', { pct: Math.round((st.pick.value / st.replaces.value - 1) * 100) }) : t('home.next.empty');
+      // Over a weak starter piece the % runs to "+609%": past double, say it plainly.
+      const pct = st.replaces ? Math.round((st.pick.value / st.replaces.value - 1) * 100) : 0;
+      const gain = !st.replaces ? t('home.next.empty') : pct >= 100 ? t('home.next.muchBetter') : t('home.next.better', { pct });
       const lasts = st.until > 60 ? t('home.next.lastsLong') : t('home.next.lasts', { n: st.until });
       // Far ahead (beyond the next two levels): said as what comes, not as an order.
       const verb = st.level > lvl + 2 ? 'home.next.later' : ['crafted', 'favor'].includes(st.pick.access) ? 'home.next.make' : 'home.next.get';
