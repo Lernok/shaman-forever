@@ -2,6 +2,12 @@
 
 Leer esta primera parte antes de seguir. Debajo está la historia del proyecto (plan de fases y sesiones).
 
+## 2026-11-01: listo para el lanzamiento
+
+- Servicios revisados: Feedback, Visitas, Sync, Chequeos, Pages y la rutina en la nube, todo OK; GoatCounter, formulario, zamimg y fuentes responden. 30-oct con 0 visitas en GoatCounter (real según la API; mirar si se repite).
+- Inicio cuenta en horas las últimas 48 h ("en 10 horas", no "en 1 días") y dice la fecha en tu zona (en Europa sale el 5). Textos del tope 30 de la beta en pasado. Simulado 2, 4 y 5-nov: OK.
+- Post de Reddit del martes 3-nov: comparaciones antes (606f89e, 21-oct) / ahora en `reddit/` (excluida de git). Las reglas del sub piden que el texto lo escriba el usuario: le damos datos y traducimos.
+
 ## 2026-10-31: vuelta de la mudanza
 
 - **Misiones del equipo nuevo perdidas 29→31-oct:** foreverchanges.pro pasó a enlaces con nombre (`/quest/91285/murlocs-at-the-gates`, 308 desde `/item/ID`); `fetch-item-sources.js` no los leía y `item-sources-fc.json` quedó en 252 → 35 → 0 ítems sin que el sync fallara. Arreglado (3aab1dd) y ahora el script corta el sync si encuentra menos de la mitad que antes. Sync corrido a mano después.
