@@ -2610,9 +2610,50 @@ onEvent = function(self, event, ...)
   end
 end
 
+-- A piece the site doesn't know (a random "of the Monkey" green, something on
+-- the auction house): its slot from where it's worn, nil if a Shaman can't use
+-- it. Armor: cloth, leather, mail (from 40), shields; weapons: axes, maces,
+-- staves, fists and daggers (one-handers in the off hand only with Dual Wield).
+local EQUIP = {
+  INVTYPE_HEAD = "Head", INVTYPE_NECK = "Neck", INVTYPE_SHOULDER = "Shoulder", INVTYPE_CLOAK = "Back", INVTYPE_CHEST = "Chest",
+  INVTYPE_ROBE = "Chest", INVTYPE_WRIST = "Wrist", INVTYPE_HAND = "Hands", INVTYPE_WAIST = "Waist", INVTYPE_LEGS = "Legs",
+  INVTYPE_FEET = "Feet", INVTYPE_FINGER = "Finger", INVTYPE_TRINKET = "Trinket", INVTYPE_WEAPON = "Weapon",
+  INVTYPE_2HWEAPON = "Weapon", INVTYPE_WEAPONMAINHAND = "Weapon", INVTYPE_SHIELD = "Off Hand", INVTYPE_HOLDABLE = "Off Hand",
+  INVTYPE_RELIC = "Relic",
+}
+local ARMOR_OK = { [0] = true, [1] = true, [2] = true, [3] = true, [6] = true, [9] = true, [11] = true }
+local WEAPON_OK = { [0] = true, [1] = true, [4] = true, [5] = true, [10] = true, [13] = true, [15] = true }
+local function unknownSlot(link)
+  local f = (C_Item and C_Item.GetItemInfoInstant) or GetItemInfoInstant
+  if not f then return nil end
+  local _, _, _, loc, _, class, sub = f(link)
+  local slot = EQUIP[readable(loc) or ""]
+  if not slot then return nil end
+  if class == 4 and not ARMOR_OK[sub] then return nil end
+  if class == 2 and not WEAPON_OK[sub] then return nil end
+  if slot == "Off Hand" and cdb.spec == "Enhancement" then return nil end
+  return slot, class == 4 and sub == 3
+end
+
 -- Item tooltips: better or worse than what you wear, for your spec.
-local function onTooltip(tt, id)
-  if not cdb or not id or not D.items[id] then return end
+local function onTooltip(tt, id, link)
+  if not cdb or not id then return end
+  if not D.items[id] then
+    -- Not in the site's data: read its real stats (its exact roll) instead.
+    local slot, mail
+    if link then slot, mail = unknownSlot(link) end
+    if not slot or (polestarGear() and not cdb.tipAlways) then return end
+    local v = estimate(link, slot)
+    if v <= 0 then return end
+    local cur = wornValue(slot)
+    local text, r, g, b
+    if cur <= 0 then text, r, g, b = string.format(L().tipEmpty, specName()), 0.4, 1, 0.4
+    elseif v >= cur then text, r, g, b = pctText(v, cur, L().tipBetter):gsub("^%l", string.upper) .. " (" .. specName() .. ")", 0.4, 1, 0.4
+    else text, r, g, b = string.format(L().tipWorse, math.floor((1 - v / cur) * 100 + 0.5), specName()), 0.6, 0.6, 0.6 end
+    if mail and UnitLevel("player") < 40 then text, r, g, b = text .. " · " .. L().tipMail40, 0.6, 0.6, 0.6 end
+    tt:AddLine("Shaman Forever Guide: " .. text, r, g, b)
+    return
+  end
   if polestarGear() and not cdb.tipAlways then
     if D.iq and D.iq[id] then tt:AddLine(L().markHint, 0.5, 0.75, 1) end
     return
@@ -2738,19 +2779,23 @@ if hooksecurefunc and HandleModifiedItemClick then
     if id then pcall(SF.markItem, id, link:match("|h%[(.-)%]|h")) end
   end)
 end
-local function safeTooltip(tt, id)
+-- The link carries the random suffix, so an unknown green reads its own roll.
+local function safeTooltip(tt, id, link)
   id = readable(id)
-  if id then pcall(onTooltip, tt, id) end
+  if id then pcall(onTooltip, tt, id, link) end
+end
+local function tipLink(tt)
+  local ok, _, link = pcall(tt.GetItem, tt)
+  return ok and readable(link) or nil
 end
 if TooltipDataProcessor and TooltipDataProcessor.AddTooltipPostCall and Enum and Enum.TooltipDataType then
   TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tt, data)
-    if tt == GameTooltip or tt == ItemRefTooltip then safeTooltip(tt, data and data.id) end
+    if tt == GameTooltip or tt == ItemRefTooltip then safeTooltip(tt, data and data.id, tipLink(tt)) end
   end)
 else
   GameTooltip:HookScript("OnTooltipSetItem", function(tt)
-    local _, link = tt:GetItem()
-    link = readable(link)
-    safeTooltip(tt, link and tonumber(link:match("item:(%d+)")))
+    local link = tipLink(tt)
+    safeTooltip(tt, link and tonumber(link:match("item:(%d+)")), link)
   end)
 end
 

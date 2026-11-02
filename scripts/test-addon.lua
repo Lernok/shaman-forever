@@ -114,6 +114,12 @@ if os.getenv("PPACK") then
       end },
     On = function(msg) print("POLESTAR ON", msg) end }
 end
+-- TIP=1: item tooltips of pieces the site doesn't know (random-suffix greens).
+local tipFn
+if os.getenv("TIP") then
+  Enum = { TooltipDataType = { Item = 0, Unit = 1 } }
+  TooltipDataProcessor = { AddTooltipPostCall = function(kind, fn) if kind == 0 then tipFn = fn end end }
+end
 local SF = {}
 for _, f in ipairs({ "Data.lua", "Locale.lua", "Core.lua" }) do assert(loadfile(dir .. f))("ShamanForeverGuide", SF) end
 -- Spells you know: every rank up to level KNOWN (default: your level - 2).
@@ -388,3 +394,28 @@ SlashCmdList.SHAMANFOREVER("registro")
 print("log:", #ShamanForeverGuideCharDB.log, ShamanForeverGuideCharDB.log[1])
 if os.getenv("SCAN") then for _, l in ipairs(ShamanForeverGuideCharDB.log) do if l:find("|scan|") or l:find("|error|") or l:find("|offer|") or l:find("|crafts|") then print("LOG", l) end end end
 if os.getenv("MEASURE") then SlashCmdList.SHAMANFOREVER("medidas") end
+if tipFn then
+  -- id, equip slot, class, subclass, stats (GetItemStats keys), what it is.
+  local pieces = {
+    { 990001, "INVTYPE_HAND", 4, 2, { ITEM_MOD_STRENGTH_SHORT = 5, ITEM_MOD_AGILITY_SHORT = 4 }, "guantes de cuero of the Monkey" },
+    { 990002, "INVTYPE_HAND", 4, 3, { ITEM_MOD_STRENGTH_SHORT = 6, ITEM_MOD_STAMINA_SHORT = 5 }, "guantes de malla" },
+    { 990003, "INVTYPE_CHEST", 4, 4, { ITEM_MOD_STRENGTH_SHORT = 12 }, "pechera de placas" },
+    { 990004, "INVTYPE_2HWEAPON", 2, 8, { ITEM_MOD_DAMAGE_PER_SECOND_SHORT = 30 }, "espada a dos manos" },
+    { 990005, "INVTYPE_2HWEAPON", 2, 1, { ITEM_MOD_DAMAGE_PER_SECOND_SHORT = 30 }, "hacha a dos manos" },
+    { 990006, "INVTYPE_FINGER", 4, 0, { ITEM_MOD_INTELLECT_SHORT = 6, ITEM_MOD_SPIRIT_SHORT = 4 }, "anillo of the Owl" },
+  }
+  local byId = {}
+  for _, p in ipairs(pieces) do byId[p[1]] = p end
+  local linkOf = function(id) return "|cff1eff00|Hitem:" .. id .. "::::::1234::20:::::|h[x]|h|r" end
+  C_Item = C_Item or {}
+  C_Item.GetItemInfoInstant = function(l) local id = tonumber(tostring(l):match("item:(%d+)")) local p = byId[id] if p then return id, "", "", p[2], 0, p[3], p[4] end end
+  C_Item.GetItemStats = function(l) local id = tonumber(tostring(l):match("item:(%d+)")) return byId[id] and byId[id][5] end
+  for _, p in ipairs(pieces) do
+    local lines = {}
+    -- Only the game's own tooltips get the line: the test speaks through GameTooltip.
+    rawset(GameTooltip, "GetItem", function() return "x", linkOf(p[1]) end)
+    rawset(GameTooltip, "AddLine", function(_, t) lines[#lines + 1] = t end)
+    tipFn(GameTooltip, { id = p[1] })
+    print("TIP " .. p[6] .. ": " .. (lines[1] or "(nada)"))
+  end
+end
