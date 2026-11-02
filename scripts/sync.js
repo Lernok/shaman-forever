@@ -387,6 +387,7 @@ function diffItems(prev, next) {
   const env = Object.assign({}, process.env, OFFLINE ? { SYNC_OFFLINE: '1' } : {});
   const step = name => execFileSync(process.execPath, [path.join(__dirname, name)], { stdio: 'inherit', env });
   step('fetch-item-sources.js');
+  step('fetch-att-items.js');
   step('fetch-levels.js');
   step('build-weapons.js');
   step('build-gear.js');

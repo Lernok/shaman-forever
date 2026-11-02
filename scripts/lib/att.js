@@ -111,4 +111,99 @@ function fishing(fileList) {
   return out;
 }
 
-module.exports = { files, parse, fishing };
+// Where each item comes from, by what it sits under in the tree:
+// { itemId: [{ type: 'quest', questId, quest, minLevel, faction, zone }
+//            | { type: 'boss', npcId, npc, zone } | { type: 'vendor', npcId, npc, zone, faction }
+//            | { type: 'drop', npcId, npc, zone, rare }] }
+// A quest's reward is an i() in its groups; a boss's loot, in its e() (or a
+// creature n() inside a dungeon); a vendor's stock, in an n() under VENDORS.
+// Zone drops, treasures and achievements are left out: no one to go to.
+const CALL = /\b(q|n|e|inst|m|maproot|instanceroot|o|i|ach|prof|header|objective|filter|cl|r|faction|currency|pvprank)\(([A-Z_.]+|\d+)(\s*,\s*\{|\))/y;
+function items(fileList) {
+  const out = {};
+  const add = (id, s) => {
+    const list = out[id] || (out[id] = []);
+    if (!list.some(x => JSON.stringify(x) === JSON.stringify(s))) list.push(s);
+  };
+  for (const f of fileList) {
+    const text = f.text;
+    const stack = [];
+    for (let j = 0; j < text.length; j++) {
+      const c = text[j];
+      if (c === '-' && text[j + 1] === '-') {
+        const end = text.startsWith('[[', j + 2) ? text.indexOf(']]', j + 4) + 1 : text.indexOf('\n', j);
+        if (end <= 0) break;
+        j = end;
+        continue;
+      }
+      if (c === '"') { j = text.indexOf('"', j + 1); if (j < 0) break; continue; }
+      if (c === '{') { stack.push(null); continue; }
+      if (c === '}') { stack.pop(); continue; }
+      if (!/[a-z]/.test(c) || /\w/.test(text[j - 1] || '')) continue;
+      CALL.lastIndex = j;
+      const m = CALL.exec(text);
+      if (!m) continue;
+      const line = text.slice(j, text.indexOf('\n', j));
+      const node = { fn: m[1], arg: m[2], at: j, name: ((line.match(/--\s*(.+)/) || [])[1] || '').trim() };
+      if (m[1] === 'i' && /^\d+$/.test(m[2])) {
+        const s = itemSource(text, stack.filter(Boolean), j);
+        // Bought with tokens, a currency or reputation: not a plain purchase.
+        const own = m[3].includes('{') ? block(text, CALL.lastIndex - 1) : '';
+        const paid = /\bcost = \{\s*\{\s*"[ic]"/.test(own) || /\bminReputation\b/.test(own);
+        if (s && !(s.type === 'vendor' && (paid || s.rep))) { delete s.rep; add(m[2], s); }
+      }
+      if (m[3].includes('{')) { stack.push(node); j = CALL.lastIndex - 1; } else j = CALL.lastIndex - 1;
+    }
+  }
+  return out;
+}
+
+// "Lady Anacondra <Fanglord>", "Andrew Hilbert <Trade Supplies> [CATA+] / …": the name alone.
+const NPC_NAME = s => (s || '').split(/\s*[<[]/)[0].trim() || null;
+const ZONE_OF = anc => {
+  for (let k = anc.length - 1; k >= 0; k--) {
+    const a = anc[k];
+    if (['inst', 'instanceroot'].includes(a.fn) && a.name) return a.name;
+    if (['m', 'maproot'].includes(a.fn) && a.arg.startsWith('MAP.')) return MAP_NAME(a.arg.slice(4));
+    if (['m', 'maproot'].includes(a.fn) && a.name) return a.name;
+  }
+  return null;
+};
+// A node's own fields: the text from its start to its first child.
+const own = (text, a, upTo) => text.slice(a.at, upTo).replace(/\bgroups = \{[\s\S]*$/, '');
+
+function itemSource(text, anc, at) {
+  if (anc.some(a => ['ach', 'prof', 'pvprank', 'currency'].includes(a.fn) || (a.fn === 'n' && /^(ACHIEVEMENTS|TREASURES|ZONE_DROPS|PROFESSIONS|COMMON_VENDOR_ITEMS|FACTIONS|REWARDS)$/.test(a.arg)))) return null;
+  const coordZone = body => { const z = body.match(/\bcoords? = \{[^}]*?MAP\.(\w+)/); return z ? MAP_NAME(z[1]) : null; };
+  const zone = ZONE_OF(anc);
+  const inInstance = anc.some(a => ['inst', 'instanceroot'].includes(a.fn));
+  for (let k = anc.length - 1; k >= 0; k--) {
+    const a = anc[k];
+    const body = own(text, a, at);
+    if (/REMOVED_/.test(body)) return null;
+    if (a.fn === 'q') {
+      const lvl = body.match(/\blvl = (\d+)/);
+      return { type: 'quest', questId: Number(a.arg), quest: a.name || null, minLevel: lvl ? Number(lvl[1]) : null,
+        faction: /\braces = HORDE_ONLY/.test(body) ? 'horde' : /\braces = ALLIANCE_ONLY/.test(body) ? 'alliance' : 'both', zone: zone || coordZone(body) };
+    }
+    if (a.fn === 'e') {
+      const cid = body.match(/\bcreatureID = (\d+)/);
+      return { type: 'boss', npcId: cid ? Number(cid[1]) : null, npc: NPC_NAME(a.name), zone: zone || coordZone(body) };
+    }
+    if (a.fn === 'n' && /^\d+$/.test(a.arg)) {
+      const under = anc.slice(0, k).map(x => x.arg);
+      const faction = /\braces = HORDE_ONLY/.test(body) ? 'horde' : /\braces = ALLIANCE_ONLY/.test(body) ? 'alliance' : 'both';
+      const where = zone || coordZone(body);
+      // A quartermaster sells by reputation (on each item, or for the whole
+      // stock through bubbleDown/bubbleDownClassicRep): not a plain purchase.
+      if (a.rep == null) a.rep = /Quartermaster/.test(a.name) || /\bminReputation\b|\bbubbleDown(ClassicRep)?\(/.test(block(text, text.indexOf('{', a.at)));
+      if (under.includes('VENDORS')) return { type: 'vendor', npcId: Number(a.arg), npc: NPC_NAME(a.name), zone: where, faction, rep: a.rep || undefined };
+      if (under.includes('QUESTS')) return null;
+      return { type: inInstance ? 'boss' : 'drop', npcId: Number(a.arg), npc: NPC_NAME(a.name), zone: where, rare: under.includes('RARES') || undefined };
+    }
+    if (a.fn === 'o' || a.fn === 'objective') return null;
+  }
+  return null;
+}
+
+module.exports = { files, parse, fishing, items };

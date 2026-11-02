@@ -8052,12 +8052,59 @@
    "hardest": null,
    "steps": 3
   },
+  "78093": {
+   "classes": [
+    "PALADIN"
+   ],
+   "minLevel": 22,
+   "faction": null,
+   "instance": null,
+   "hardest": {
+    "id": 6071,
+    "name": "Legion Hound",
+    "level": 30,
+    "rank": "normal",
+    "from": "wowhead",
+    "step": 78092
+   },
+   "steps": 6
+  },
   "78150": {
    "classes": null,
    "minLevel": null,
    "faction": null,
    "instance": null,
    "hardest": null,
+   "steps": 1
+  },
+  "78830": {
+   "classes": [
+    "HUNTER"
+   ],
+   "minLevel": 26,
+   "faction": null,
+   "instance": null,
+   "hardest": {
+    "id": 213795,
+    "name": "Gharrik",
+    "level": 40,
+    "rank": "normal",
+    "from": "wowhead"
+   },
+   "steps": 1
+  },
+  "79242": {
+   "classes": null,
+   "minLevel": 30,
+   "faction": null,
+   "instance": null,
+   "hardest": {
+    "id": 215655,
+    "name": "Illari Duskfeather",
+    "level": 40,
+    "rank": "normal",
+    "from": "wowhead"
+   },
    "steps": 1
   },
   "79442": {
@@ -8080,6 +8127,14 @@
   "79536": {
    "classes": null,
    "minLevel": 20,
+   "faction": null,
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "82208": {
+   "classes": null,
+   "minLevel": 30,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -8357,6 +8412,20 @@
     "step": 92849
    },
    "steps": 7
+  },
+  "92867": {
+   "classes": null,
+   "minLevel": 32,
+   "faction": null,
+   "instance": null,
+   "hardest": {
+    "id": 2569,
+    "name": "Boulderfist Mauler",
+    "level": 38,
+    "rank": "elite",
+    "from": "wowhead"
+   },
+   "steps": 1
   },
   "92873": {
    "classes": null,
@@ -8636,6 +8705,14 @@
   "95697": {
    "classes": null,
    "minLevel": 24,
+   "faction": "horde",
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "95776": {
+   "classes": null,
+   "minLevel": null,
    "faction": "horde",
    "instance": null,
    "hardest": null,
@@ -9285,6 +9362,12 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "100": {
+   "name": "Gruff Swiftbite",
+   "level": 12,
+   "rank": "rare",
+   "from": "wowhead"
+  },
   "114": {
    "name": "Harvest Watcher",
    "level": 15,
@@ -9630,6 +9713,12 @@
   "604": {
    "name": "Plague Spreader",
    "level": 28,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "615": {
+   "name": "Blackrock Tracker",
+   "level": 24,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -10707,6 +10796,18 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "1716": {
+   "name": "Bazil Thredd",
+   "level": 29,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "1717": {
+   "name": "Hamhock",
+   "level": 28,
+   "rank": "elite",
+   "from": "wowhead"
+  },
   "1720": {
    "name": "Bruegal Ironknuckle",
    "level": 26,
@@ -11179,6 +11280,12 @@
    "name": "Wild Grell",
    "level": 12,
    "rank": "normal",
+   "from": "wowhead"
+  },
+  "2191": {
+   "name": "Licillin",
+   "level": 14,
+   "rank": "rare",
    "from": "wowhead"
   },
   "2192": {
@@ -11727,6 +11834,12 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "2558": {
+   "name": "Witherbark Berserker",
+   "level": 37,
+   "rank": "elite",
+   "from": "wowhead"
+  },
   "2562": {
    "name": "Boulderfist Ogre",
    "level": 33,
@@ -11749,6 +11862,12 @@
    "name": "Boulderfist Magus",
    "level": 37,
    "rank": "normal",
+   "from": "wowhead"
+  },
+  "2569": {
+   "name": "Boulderfist Mauler",
+   "level": 38,
+   "rank": "elite",
    "from": "wowhead"
   },
   "2570": {
@@ -12345,6 +12464,12 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "3253": {
+   "name": "Silithid Harvester",
+   "level": 24,
+   "rank": "rare",
+   "from": "wowhead"
+  },
   "3254": {
    "name": "Sunscale Lashtail",
    "level": 13,
@@ -12493,6 +12618,12 @@
    "name": "Venture Co. Overseer",
    "level": 18,
    "rank": "normal",
+   "from": "wowhead"
+  },
+  "3295": {
+   "name": "Sludge Beast",
+   "level": 19,
+   "rank": "rare",
    "from": "wowhead"
   },
   "3374": {
@@ -12703,6 +12834,12 @@
    "name": "Silithid Protector",
    "level": 19,
    "rank": "normal",
+   "from": "wowhead"
+  },
+  "3535": {
+   "name": "Blackmoss the Fetid",
+   "level": 13,
+   "rank": "rare",
    "from": "wowhead"
   },
   "3586": {
@@ -13461,6 +13598,12 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "4463": {
+   "name": "Blackrock Summoner",
+   "level": 23,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "4479": {
    "name": "Fardel Dabyrie",
    "level": 33,
@@ -14139,6 +14282,12 @@
    "rank": "rare",
    "from": "wowhead"
   },
+  "5356": {
+   "name": "Snarler",
+   "level": 42,
+   "rank": "rare",
+   "from": "wowhead"
+  },
   "5357": {
    "name": "Land Walker",
    "level": 49,
@@ -14379,6 +14528,102 @@
    "rank": "rare-elite",
    "from": "wowhead"
   },
+  "5787": {
+   "name": "Enforcer Emilgund",
+   "level": 11,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "5799": {
+   "name": "Hannah Bladeleaf",
+   "level": 24,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "5800": {
+   "name": "Marcus Bel",
+   "level": 24,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "5808": {
+   "name": "Warlord Kolkanis",
+   "level": 9,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "5809": {
+   "name": "Watch Commander Zalaphil",
+   "level": 9,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "5822": {
+   "name": "Felweaver Scornn",
+   "level": 11,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "5823": {
+   "name": "Death Flayer",
+   "level": 11,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "5824": {
+   "name": "Captain Flat Tusk",
+   "level": 11,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "5826": {
+   "name": "Geolord Mottle",
+   "level": 9,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "5827": {
+   "name": "Brontus",
+   "level": 27,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "5828": {
+   "name": "Humar the Pridelord",
+   "level": 23,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "5829": {
+   "name": "Snort the Heckler",
+   "level": 17,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "5830": {
+   "name": "Sister Rathtalon",
+   "level": 19,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "5831": {
+   "name": "Swiftmane",
+   "level": 21,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "5832": {
+   "name": "Thunderstomp",
+   "level": 24,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "5835": {
+   "name": "Foreman Grills",
+   "level": 19,
+   "rank": "rare",
+   "from": "wowhead"
+  },
   "5839": {
    "name": "Dark Iron Geologist",
    "level": 44,
@@ -14389,6 +14634,12 @@
    "name": "Dark Iron Steamsmith",
    "level": 47,
    "rank": "normal",
+   "from": "wowhead"
+  },
+  "5841": {
+   "name": "Rocklance",
+   "level": 17,
+   "rank": "rare-elite",
    "from": "wowhead"
   },
   "5842": {
@@ -14463,6 +14714,12 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "5859": {
+   "name": "Hagg Taurenbane",
+   "level": 26,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
   "5860": {
    "name": "Twilight Dark Shaman",
    "level": 48,
@@ -14479,6 +14736,12 @@
    "name": "Twilight Geomancer",
    "level": 50,
    "rank": "elite",
+   "from": "wowhead"
+  },
+  "5865": {
+   "name": "Dishu",
+   "level": 13,
+   "rank": "rare",
    "from": "wowhead"
   },
   "5881": {
@@ -14499,6 +14762,18 @@
    "rank": "rare-elite",
    "from": "wowhead"
   },
+  "5931": {
+   "name": "Foreman Rigger",
+   "level": 24,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "5932": {
+   "name": "Taskmaster Whipfang",
+   "level": 22,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
   "5934": {
    "name": "Heartrazor",
    "level": 32,
@@ -14514,6 +14789,24 @@
   "6015": {
    "name": "Torta",
    "level": 45,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "6071": {
+   "name": "Legion Hound",
+   "level": 30,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "6073": {
+   "name": "Searing Infernal",
+   "level": 30,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "6115": {
+   "name": "Felguard",
+   "level": 30,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -14538,6 +14831,12 @@
   "6148": {
    "name": "Cliff Walker",
    "level": 62,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "6168": {
+   "name": "Roogug",
+   "level": 28,
    "rank": "elite",
    "from": "wowhead"
   },
@@ -14785,6 +15084,12 @@
    "name": "Revelosh",
    "level": 40,
    "rank": "elite",
+   "from": "wowhead"
+  },
+  "7015": {
+   "name": "Flagglemurk the Cruel",
+   "level": 16,
+   "rank": "rare",
    "from": "wowhead"
   },
   "7017": {
@@ -15349,6 +15654,12 @@
    "name": "Southsea Swashbuckler",
    "level": 45,
    "rank": "normal",
+   "from": "wowhead"
+  },
+  "7895": {
+   "name": "Ambassador Bloodrage",
+   "level": 36,
+   "rank": "rare-elite",
    "from": "wowhead"
   },
   "7937": {
@@ -16341,6 +16652,30 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "10356": {
+   "name": "Bayne",
+   "level": 10,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "10357": {
+   "name": "Ressan the Needler",
+   "level": 12,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "10358": {
+   "name": "Fellicent's Shade",
+   "level": 12,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "10359": {
+   "name": "Sri'skulk",
+   "level": 13,
+   "rank": "rare",
+   "from": "wowhead"
+  },
   "10363": {
    "name": "General Drakkisath",
    "level": 62,
@@ -17013,6 +17348,12 @@
    "rank": "boss",
    "from": "questie"
   },
+  "11517": {
+   "name": "Oggleflint",
+   "level": 16,
+   "rank": "elite",
+   "from": "wowhead"
+  },
   "11518": {
    "name": "Jergosh the Invoker",
    "level": 16,
@@ -17119,6 +17460,12 @@
    "name": "Cursed Centaur",
    "level": 43,
    "rank": "rare",
+   "from": "wowhead"
+  },
+  "11697": {
+   "name": "Mannoroc Lasher",
+   "level": 30,
+   "rank": "normal",
    "from": "wowhead"
   },
   "11698": {
@@ -17517,6 +17864,12 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "12431": {
+   "name": "Gorefang",
+   "level": 13,
+   "rank": "rare",
+   "from": "wowhead"
+  },
   "12432": {
    "name": "Old Vicejaw",
    "level": 14,
@@ -17799,6 +18152,12 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "14222": {
+   "name": "Araga",
+   "level": 35,
+   "rank": "rare",
+   "from": "wowhead"
+  },
   "14266": {
    "name": "Shanda the Spinner",
    "level": 19,
@@ -17821,6 +18180,24 @@
    "name": "Tamra Stormpike",
    "level": 28,
    "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "14276": {
+   "name": "Scargil",
+   "level": 30,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "14277": {
+   "name": "Lady Zephris",
+   "level": 33,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "14278": {
+   "name": "Ro'Bark",
+   "level": 28,
+   "rank": "rare",
    "from": "wowhead"
   },
   "14279": {
@@ -17880,6 +18257,30 @@
   "14424": {
    "name": "Mirelow",
    "level": 25,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "14425": {
+   "name": "Gnawbone",
+   "level": 24,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "14426": {
+   "name": "Harb Foulmountain",
+   "level": 27,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "14429": {
+   "name": "Grimmaw",
+   "level": 11,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "14430": {
+   "name": "Duskstalker",
+   "level": 9,
    "rank": "rare",
    "from": "wowhead"
   },
@@ -18537,10 +18938,28 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "213795": {
+   "name": "Gharrik",
+   "level": 40,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "214456": {
+   "name": "Dro'zem the Blasphemous",
+   "level": 23,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
   "214519": {
    "name": "Incinerator Gar'im",
    "level": 23,
    "rank": "elite",
+   "from": "wowhead"
+  },
+  "215655": {
+   "name": "Illari Duskfeather",
+   "level": 40,
+   "rank": "normal",
    "from": "wowhead"
   },
   "216474": {
@@ -18549,8 +18968,32 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "245999": {
+   "name": "Arcane Anomaly",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "246003": {
+   "name": "Fel Ancient",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "246008": {
+   "name": "Mana Devourer",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
   "246016": {
    "name": "Arcanic Enigma",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "246017": {
+   "name": "Unstable Sentinel",
    "level": null,
    "rank": "elite",
    "from": null
@@ -18583,6 +19026,12 @@
    "name": "Seeking Remnant",
    "level": null,
    "rank": "elite",
+   "from": null
+  },
+  "247032": {
+   "name": "Lyn the Ignored",
+   "level": null,
+   "rank": "rare-elite",
    "from": null
   },
   "247126": {
@@ -18627,6 +19076,12 @@
    "rank": "elite",
    "from": null
   },
+  "250631": {
+   "name": "The Abandoned",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
   "250657": {
    "name": "Rath'mael",
    "level": null,
@@ -18638,6 +19093,12 @@
    "level": null,
    "rank": "elite",
    "from": null
+  },
+  "250936": {
+   "name": "Den'dralass",
+   "level": 13,
+   "rank": "rare",
+   "from": "wowhead"
   },
   "251622": {
    "name": "Flutterfly",
@@ -18660,12 +19121,6 @@
   "252068": {
    "name": "Al'Aketh Stormcaller",
    "level": 8,
-   "rank": "normal",
-   "from": "wowhead"
-  },
-  "252077": {
-   "name": "Skypriest Aanders",
-   "level": 6,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -18807,8 +19262,86 @@
    "rank": "normal",
    "from": null
   },
+  "255887": {
+   "name": "Slydris",
+   "level": 6,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "256028": {
+   "name": "The Lost One",
+   "level": 6,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "256035": {
+   "name": "Viktor the Vile",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "256097": {
+   "name": "Bjork",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "256492": {
+   "name": "Fernfeather",
+   "level": 10,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "256966": {
+   "name": "Skypriest Aanders",
+   "level": 8,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "258924": {
+   "name": null,
+   "level": null,
+   "rank": "normal",
+   "from": null
+  },
+  "259385": {
+   "name": "Tel'daeor the Stormspeaker",
+   "level": 13,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "259388": {
+   "name": "Mystmane",
+   "level": 13,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "259394": {
+   "name": "Snapbeak the Quick",
+   "level": null,
+   "rank": "rare-elite",
+   "from": null
+  },
+  "259398": {
+   "name": "Galemender Delanea",
+   "level": 11,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "260322": {
+   "name": "Saltspine",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
   "260325": {
    "name": "Shadetooth",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "260326": {
+   "name": "Relic Guardian",
    "level": null,
    "rank": "elite",
    "from": null
@@ -18833,6 +19366,18 @@
   },
   "261306": {
    "name": "Faldrim Anvilmar",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "261311": {
+   "name": "Plunder",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "261316": {
+   "name": "Magmatus",
    "level": null,
    "rank": "elite",
    "from": null
@@ -18925,6 +19470,12 @@
    "name": "Goaz Warder",
    "level": 32,
    "rank": "elite",
+   "from": "wowhead"
+  },
+  "271080": {
+   "name": "Blightsculler",
+   "level": 10,
+   "rank": "rare",
    "from": "wowhead"
   },
   "271334": {
@@ -19069,6 +19620,24 @@
    "name": "Riptear",
    "level": 13,
    "rank": "elite",
+   "from": "wowhead"
+  },
+  "276105": {
+   "name": "Stormherald Ukta",
+   "level": 12,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "276108": {
+   "name": "Thornstarter Igleg",
+   "level": 12,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "276111": {
+   "name": "Ghostfang",
+   "level": 10,
+   "rank": "rare",
    "from": "wowhead"
   },
   "276194": {

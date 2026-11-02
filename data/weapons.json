@@ -1919,11 +1919,22 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "drop",
+     "npc": "Slydris",
+     "npcId": 255887,
+     "zone": "Zephras Isle",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 3,
-     "rec": 3
+     "rec": 3,
+     "basis": {
+      "name": "Slydris",
+      "level": 6,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -2078,39 +2089,6 @@
      "confidence": "classic-assumed",
      "asap": 5,
      "rec": 5
-    }
-   ]
-  },
-  {
-   "id": 284321,
-   "name": "Centaur Raider's Axe",
-   "kind": "1H Axe",
-   "quality": 2,
-   "req": 6,
-   "obtain": 6,
-   "ilvl": 11,
-   "bind": "equip",
-   "dps": 6.04,
-   "speed": 2.4,
-   "dmgMin": 10,
-   "dmgMax": 19,
-   "stats": {
-    "agility": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_axe_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 6,
-     "rec": 6
     }
    ]
   },
@@ -2337,39 +2315,6 @@
    ]
   },
   {
-   "id": 286754,
-   "name": "Ukta's Conduit",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 7,
-   "obtain": 7,
-   "ilvl": 12,
-   "bind": "equip",
-   "dps": 8.33,
-   "speed": 3.3,
-   "dmgMin": 19,
-   "dmgMax": 36,
-   "stats": {
-    "stamina": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_staff_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 7,
-     "rec": 7
-    }
-   ]
-  },
-  {
    "id": 248008,
    "name": "Apprentice's Spellstaff",
    "kind": "Staff",
@@ -2484,39 +2429,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 7,
-     "rec": 7
-    }
-   ]
-  },
-  {
-   "id": 283462,
-   "name": "Bayne's Bite",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 7,
-   "obtain": 7,
-   "ilvl": 12,
-   "bind": "equip",
-   "dps": 6.56,
-   "speed": 1.6,
-   "dmgMin": 7,
-   "dmgMax": 14,
-   "stats": {
-    "strength": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_weapon_shortblade_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 7,
      "rec": 7
     }
@@ -2747,39 +2659,6 @@
    ]
   },
   {
-   "id": 284166,
-   "name": "Gnarlpine War Staff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 8,
-   "obtain": 8,
-   "ilvl": 13,
-   "bind": "equip",
-   "dps": 8.94,
-   "speed": 3.3,
-   "dmgMin": 23,
-   "dmgMax": 36,
-   "stats": {
-    "strength": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_staff_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 8,
-     "rec": 8
-    }
-   ]
-  },
-  {
    "id": 4566,
    "name": "Sturdy Quarterstaff",
    "kind": "Staff",
@@ -2835,11 +2714,22 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "drop",
+     "npc": "Captain Flat Tusk",
+     "npcId": 5824,
+     "zone": "Durotar",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 8,
-     "rec": 8
+     "rec": 8,
+     "basis": {
+      "name": "Captain Flat Tusk",
+      "level": 11,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -3081,11 +2971,66 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "drop",
+     "npc": "Felweaver Scornn",
+     "npcId": 5822,
+     "zone": "Durotar",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 8,
-     "rec": 8
+     "rec": 8,
+     "basis": {
+      "name": "Felweaver Scornn",
+      "level": 11,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 284321,
+   "name": "Centaur Raider's Axe",
+   "kind": "1H Axe",
+   "quality": 2,
+   "req": 6,
+   "obtain": 8,
+   "ilvl": 11,
+   "bind": "equip",
+   "dps": 6.04,
+   "speed": 2.4,
+   "dmgMin": 10,
+   "dmgMax": 19,
+   "stats": {
+    "agility": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_axe_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Warlord Kolkanis",
+     "npcId": 5808,
+     "zone": "Durotar",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 6,
+     "rec": 8,
+     "basis": {
+      "name": "Warlord Kolkanis",
+      "level": 9,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
     }
    ]
   },
@@ -3406,6 +3351,50 @@
    ]
   },
   {
+   "id": 283462,
+   "name": "Bayne's Bite",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 7,
+   "obtain": 9,
+   "ilvl": 12,
+   "bind": "equip",
+   "dps": 6.56,
+   "speed": 1.6,
+   "dmgMin": 7,
+   "dmgMax": 14,
+   "stats": {
+    "strength": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Bayne",
+     "npcId": 10356,
+     "zone": "Tirisfal Glades",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 7,
+     "rec": 9,
+     "basis": {
+      "name": "Bayne",
+      "level": 10,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
    "id": 263314,
    "name": "Roofing Hammer",
    "kind": "1H Mace",
@@ -3620,21 +3609,20 @@
    ]
   },
   {
-   "id": 263935,
-   "name": "Elunar Longstaff",
+   "id": 284166,
+   "name": "Gnarlpine War Staff",
    "kind": "Staff",
    "quality": 2,
-   "req": 10,
+   "req": 8,
    "obtain": 10,
-   "ilvl": 15,
+   "ilvl": 13,
    "bind": "equip",
-   "dps": 10.16,
-   "speed": 3.1,
-   "dmgMin": 25,
-   "dmgMax": 38,
+   "dps": 8.94,
+   "speed": 3.3,
+   "dmgMin": 23,
+   "dmgMax": 36,
    "stats": {
-    "strength": 3,
-    "agility": 3
+    "strength": 3
    },
    "bonus": {},
    "equip": [],
@@ -3645,11 +3633,22 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "drop",
+     "npc": "Grimmaw",
+     "npcId": 14429,
+     "zone": "Teldrassil",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
-     "asap": 10,
-     "rec": 10
+     "asap": 8,
+     "rec": 10,
+     "basis": {
+      "name": "Grimmaw",
+      "level": 11,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
     }
    ]
   },
@@ -3807,41 +3806,6 @@
    ]
   },
   {
-   "id": 263936,
-   "name": "Windforged Shortblade",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 10,
-   "obtain": 10,
-   "ilvl": 15,
-   "bind": "equip",
-   "dps": 7.73,
-   "speed": 2.2,
-   "dmgMin": 12,
-   "dmgMax": 22,
-   "stats": {},
-   "bonus": {
-    "attackPower": 2
-   },
-   "equip": [
-    "Equip: +2 Attack Power."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_knife_1h_skybornec60_b_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 10,
-     "rec": 10
-    }
-   ]
-  },
-  {
    "id": 1394,
    "name": "Driftwood Club",
    "kind": "1H Mace",
@@ -3869,39 +3833,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 10,
-     "rec": 10
-    }
-   ]
-  },
-  {
-   "id": 284174,
-   "name": "Serrated Shadowclaw",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 10,
-   "obtain": 10,
-   "ilvl": 15,
-   "bind": "equip",
-   "dps": 7.65,
-   "speed": 1.7,
-   "dmgMin": 9,
-   "dmgMax": 17,
-   "stats": {
-    "agility": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_weapon_shortblade_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 10,
      "rec": 10
     }
@@ -4067,45 +3998,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 10,
-     "rec": 10
-    }
-   ]
-  },
-  {
-   "id": 263937,
-   "name": "Skyseeker's Greatstaff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 10,
-   "obtain": 10,
-   "ilvl": 15,
-   "bind": "equip",
-   "dps": 7.5,
-   "speed": 2,
-   "dmgMin": 12,
-   "dmgMax": 18,
-   "stats": {
-    "intellect": 3,
-    "spirit": 3
-   },
-   "bonus": {
-    "healing": 15,
-    "spellDamage": 5
-   },
-   "equip": [
-    "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_staff_2h_skybornec60_b_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 10,
      "rec": 10
     }
@@ -4451,6 +4343,50 @@
    ]
   },
   {
+   "id": 286754,
+   "name": "Ukta's Conduit",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 7,
+   "obtain": 11,
+   "ilvl": 12,
+   "bind": "equip",
+   "dps": 8.33,
+   "speed": 3.3,
+   "dmgMin": 19,
+   "dmgMax": 36,
+   "stats": {
+    "stamina": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Stormherald Ukta",
+     "npcId": 276105,
+     "zone": "Mulgore",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 9,
+     "rec": 11,
+     "basis": {
+      "name": "Stormherald Ukta",
+      "level": 12,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
    "id": 4964,
    "name": "Goblin Smasher",
    "kind": "2H Mace",
@@ -4500,43 +4436,6 @@
       "steps": 3
      },
      "asap": 9,
-     "rec": 11
-    }
-   ]
-  },
-  {
-   "id": 284173,
-   "name": "Impcaster's Staff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 11,
-   "obtain": 11,
-   "ilvl": 16,
-   "bind": "equip",
-   "dps": 8,
-   "speed": 2.5,
-   "dmgMin": 16,
-   "dmgMax": 24,
-   "stats": {
-    "spirit": 4
-   },
-   "bonus": {
-    "spellPower": 8
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_staff_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 11,
      "rec": 11
     }
    ]
@@ -5078,6 +4977,51 @@
    ]
   },
   {
+   "id": 263935,
+   "name": "Elunar Longstaff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 10,
+   "obtain": 12,
+   "ilvl": 15,
+   "bind": "equip",
+   "dps": 10.16,
+   "speed": 3.1,
+   "dmgMin": 25,
+   "dmgMax": 38,
+   "stats": {
+    "strength": 3,
+    "agility": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Den'dralass",
+     "npcId": 250936,
+     "zone": "Zephras Isle",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 10,
+     "rec": 12,
+     "basis": {
+      "name": "Den'dralass",
+      "level": 13,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
    "id": 3446,
    "name": "Darkwood Staff",
    "kind": "Staff",
@@ -5475,6 +5419,146 @@
    ]
   },
   {
+   "id": 263936,
+   "name": "Windforged Shortblade",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 10,
+   "obtain": 12,
+   "ilvl": 15,
+   "bind": "equip",
+   "dps": 7.73,
+   "speed": 2.2,
+   "dmgMin": 12,
+   "dmgMax": 22,
+   "stats": {},
+   "bonus": {
+    "attackPower": 2
+   },
+   "equip": [
+    "Equip: +2 Attack Power."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_knife_1h_skybornec60_b_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Den'dralass",
+     "npcId": 250936,
+     "zone": "Zephras Isle",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 10,
+     "rec": 12,
+     "basis": {
+      "name": "Den'dralass",
+      "level": 13,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
+   "id": 284174,
+   "name": "Serrated Shadowclaw",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 10,
+   "obtain": 12,
+   "ilvl": 15,
+   "bind": "equip",
+   "dps": 7.65,
+   "speed": 1.7,
+   "dmgMin": 9,
+   "dmgMax": 17,
+   "stats": {
+    "agility": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_weapon_shortblade_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Shadowclaw",
+     "npcId": 2175,
+     "zone": "Darkshore",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 10,
+     "rec": 12,
+     "basis": {
+      "name": "Shadowclaw",
+      "level": 13,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
+   "id": 263937,
+   "name": "Skyseeker's Greatstaff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 10,
+   "obtain": 12,
+   "ilvl": 15,
+   "bind": "equip",
+   "dps": 7.5,
+   "speed": 2,
+   "dmgMin": 12,
+   "dmgMax": 18,
+   "stats": {
+    "intellect": 3,
+    "spirit": 3
+   },
+   "bonus": {
+    "healing": 15,
+    "spellDamage": 5
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_2h_skybornec60_b_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Den'dralass",
+     "npcId": 250936,
+     "zone": "Zephras Isle",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 10,
+     "rec": 12,
+     "basis": {
+      "name": "Den'dralass",
+      "level": 13,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
    "id": 277247,
    "name": "Mug of Muddled Memories",
    "kind": "1H Mace",
@@ -5709,7 +5793,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Durgen Dirgehammer",
+     "npcId": 261319,
+     "zone": "Hall of Thanes",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 13,
@@ -5745,11 +5832,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Oggleflint",
+     "npcId": 11517,
+     "zone": "Ragefire Chasm",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 13,
-     "rec": 13
+     "rec": 13,
+     "basis": {
+      "name": "Oggleflint",
+      "level": 16,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -5859,7 +5956,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Plunder",
+     "npcId": 261311,
+     "zone": "Hall of Thanes",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 13,
@@ -6032,39 +6132,6 @@
    ]
   },
   {
-   "id": 284177,
-   "name": "Sinslayer's Smasher",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 13,
-   "obtain": 13,
-   "ilvl": 18,
-   "bind": "equip",
-   "dps": 9.04,
-   "speed": 2.6,
-   "dmgMin": 16,
-   "dmgMax": 31,
-   "stats": {
-    "strength": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_mace_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 13,
-     "rec": 13
-    }
-   ]
-  },
-  {
    "id": 2020,
    "name": "Hollowfang Blade",
    "kind": "Dagger",
@@ -6127,11 +6194,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Oggleflint",
+     "npcId": 11517,
+     "zone": "Ragefire Chasm",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 13,
-     "rec": 13
+     "rec": 13,
+     "basis": {
+      "name": "Oggleflint",
+      "level": 16,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -6162,11 +6239,69 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Bazzalan",
+     "npcId": 11519,
+     "zone": "Ragefire Chasm",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 13,
-     "rec": 13
+     "rec": 13,
+     "basis": {
+      "name": "Bazzalan",
+      "level": 16,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 284173,
+   "name": "Impcaster's Staff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 11,
+   "obtain": 13,
+   "ilvl": 16,
+   "bind": "equip",
+   "dps": 8,
+   "speed": 2.5,
+   "dmgMin": 16,
+   "dmgMax": 24,
+   "stats": {
+    "spirit": 4
+   },
+   "bonus": {
+    "spellPower": 8
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Licillin",
+     "npcId": 2191,
+     "zone": "Darkshore",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 11,
+     "rec": 13,
+     "basis": {
+      "name": "Licillin",
+      "level": 14,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
     }
    ]
   },
@@ -6199,7 +6334,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Magmatus",
+     "npcId": 261316,
+     "zone": "Hall of Thanes",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 13,
@@ -6957,7 +7095,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Witherfang",
+     "npcId": 250483,
+     "zone": "Ruins of Lordaeron",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 15,
@@ -6990,7 +7131,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "The Baron",
+     "npcId": 250660,
+     "zone": "Ruins of Lordaeron",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 15,
@@ -7218,6 +7362,50 @@
      "confidence": "classic-assumed",
      "asap": 15,
      "rec": 15
+    }
+   ]
+  },
+  {
+   "id": 284177,
+   "name": "Sinslayer's Smasher",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 13,
+   "obtain": 15,
+   "ilvl": 18,
+   "bind": "equip",
+   "dps": 9.04,
+   "speed": 2.6,
+   "dmgMin": 16,
+   "dmgMax": 31,
+   "stats": {
+    "strength": 2
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_mace_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Lord Sinslayer",
+     "npcId": 7017,
+     "zone": "Darkshore",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 13,
+     "rec": 15,
+     "basis": {
+      "name": "Lord Sinslayer",
+      "level": 16,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
     }
    ]
   },
@@ -7482,7 +7670,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Bjork",
+     "npcId": 256097,
+     "zone": "Ruins of Lordaeron",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 16,
@@ -7679,11 +7870,22 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "drop",
+     "npc": "Emogg the Crusher",
+     "npcId": 14267,
+     "zone": "Loch Modan",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 16,
-     "rec": 16
+     "rec": 16,
+     "basis": {
+      "name": "Emogg the Crusher",
+      "level": 19,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -8689,11 +8891,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Rethilgore",
+     "npcId": 3914,
+     "zone": "Shadowfang Keep",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 17,
-     "rec": 17
+     "rec": 17,
+     "basis": {
+      "name": "Rethilgore",
+      "level": 20,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -9421,7 +9633,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "The Abandoned",
+     "npcId": 250631,
+     "zone": "Ruins of Lordaeron",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 17,
@@ -10109,11 +10324,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Gilnid",
+     "npcId": 1763,
+     "zone": "Deadmines",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 18,
-     "rec": 18
+     "rec": 18,
+     "basis": {
+      "name": "Gilnid",
+      "level": 20,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -11022,11 +11247,22 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "drop",
+     "npc": "Taskmaster Whipfang",
+     "npcId": 5932,
+     "zone": "Stonetalon Mountains",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 19,
-     "rec": 19
+     "rec": 19,
+     "basis": {
+      "name": "Taskmaster Whipfang",
+      "level": 22,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -11176,7 +11412,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Rath'mael",
+     "npcId": 250657,
+     "zone": "Ruins of Lordaeron",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 19,
@@ -12583,11 +12822,22 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "drop",
+     "npc": "Marcus Bel",
+     "npcId": 5800,
+     "zone": null,
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 21,
-     "rec": 21
+     "rec": 21,
+     "basis": {
+      "name": "Marcus Bel",
+      "level": 24,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -12770,74 +13020,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 21,
-     "rec": 21
-    }
-   ]
-  },
-  {
-   "id": 286534,
-   "name": "Silithid Piercer",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 21,
-   "obtain": 21,
-   "ilvl": 26,
-   "bind": "equip",
-   "dps": 13.44,
-   "speed": 1.6,
-   "dmgMin": 15,
-   "dmgMax": 28,
-   "stats": {
-    "agility": 3
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: +5 Attack Power against Beasts."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_misc_monsterclaw_10",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 21,
-     "rec": 21
-    }
-   ]
-  },
-  {
-   "id": 286537,
-   "name": "Thunderstomp's Horn",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 21,
-   "obtain": 21,
-   "ilvl": 26,
-   "bind": "equip",
-   "dps": 13.33,
-   "speed": 2.1,
-   "dmgMin": 19,
-   "dmgMax": 37,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [
-    "Chance on hit: Thunderstomp nearby enemies, inflicting 23 Nature damage."
-   ],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_hammer_12",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 21,
      "rec": 21
     }
@@ -13465,11 +13647,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Dextren Ward",
+     "npcId": 1663,
+     "zone": "The Stockade",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 23,
-     "rec": 23
+     "rec": 23,
+     "basis": {
+      "name": "Dextren Ward",
+      "level": 26,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -13500,11 +13692,22 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "drop",
+     "npc": "Hagg Taurenbane",
+     "npcId": 5859,
+     "zone": "The Barrens",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 23,
-     "rec": 23
+     "rec": 23,
+     "basis": {
+      "name": "Hagg Taurenbane",
+      "level": 26,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -13571,11 +13774,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Lorgus Jett",
+     "npcId": 12902,
+     "zone": "Blackfathom Deeps",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 23,
-     "rec": 23
+     "rec": 23,
+     "basis": {
+      "name": "Lorgus Jett",
+      "level": 26,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -14202,6 +14415,96 @@
    ]
   },
   {
+   "id": 286534,
+   "name": "Silithid Piercer",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 21,
+   "obtain": 23,
+   "ilvl": 26,
+   "bind": "equip",
+   "dps": 13.44,
+   "speed": 1.6,
+   "dmgMin": 15,
+   "dmgMax": 28,
+   "stats": {
+    "agility": 3
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: +5 Attack Power against Beasts."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_misc_monsterclaw_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Silithid Harvester",
+     "npcId": 3253,
+     "zone": "The Barrens",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 21,
+     "rec": 23,
+     "basis": {
+      "name": "Silithid Harvester",
+      "level": 24,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
+   "id": 286537,
+   "name": "Thunderstomp's Horn",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 21,
+   "obtain": 23,
+   "ilvl": 26,
+   "bind": "equip",
+   "dps": 13.33,
+   "speed": 2.1,
+   "dmgMin": 19,
+   "dmgMax": 37,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "chance": [
+    "Chance on hit: Thunderstomp nearby enemies, inflicting 23 Nature damage."
+   ],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_hammer_12",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Thunderstomp",
+     "npcId": 5832,
+     "zone": "The Barrens",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 21,
+     "rec": 23,
+     "basis": {
+      "name": "Thunderstomp",
+      "level": 24,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
    "id": 1976,
    "name": "Slaghammer",
    "kind": "2H Mace",
@@ -14810,43 +15113,6 @@
    ]
   },
   {
-   "id": 285212,
-   "name": "Foulmountain Family Hammer",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 24,
-   "obtain": 24,
-   "ilvl": 29,
-   "bind": "equip",
-   "dps": 15.23,
-   "speed": 2.2,
-   "dmgMin": 23,
-   "dmgMax": 44,
-   "stats": {
-    "stamina": 2
-   },
-   "bonus": {
-    "spellPower": 4
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 4."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_hammer_12",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 24,
-     "rec": 24
-    }
-   ]
-  },
-  {
    "id": 4825,
    "name": "Callous Axe",
    "kind": "1H Axe",
@@ -15298,39 +15564,6 @@
    ]
   },
   {
-   "id": 282721,
-   "name": "Gnoll Shaman's Staff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 25,
-   "obtain": 25,
-   "ilvl": 30,
-   "bind": "equip",
-   "dps": 20.28,
-   "speed": 3.6,
-   "dmgMin": 58,
-   "dmgMax": 88,
-   "stats": {
-    "strength": 7
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_staff_goldfeathered_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 25,
-     "rec": 25
-    }
-   ]
-  },
-  {
    "id": 15464,
    "name": "Brute Hammer",
    "kind": "2H Mace",
@@ -15526,11 +15759,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Hamhock",
+     "npcId": 1717,
+     "zone": "The Stockade",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 25,
-     "rec": 25
+     "rec": 25,
+     "basis": {
+      "name": "Hamhock",
+      "level": 28,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -15921,43 +16164,6 @@
    ]
   },
   {
-   "id": 274158,
-   "name": "Death Prophet Spine",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 26,
-   "obtain": 26,
-   "ilvl": 31,
-   "bind": "pickup",
-   "dps": 18.93,
-   "speed": 2.8,
-   "dmgMin": 42,
-   "dmgMax": 64,
-   "stats": {
-    "stamina": 11
-   },
-   "bonus": {
-    "spellPower": 34
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 34."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_staff_17",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 26,
-     "rec": 26
-    }
-   ]
-  },
-  {
    "id": 271664,
    "name": "Hornbeam Heft",
    "kind": "1H Axe",
@@ -16116,6 +16322,54 @@
      "confidence": "classic-assumed",
      "asap": 26,
      "rec": 26
+    }
+   ]
+  },
+  {
+   "id": 285212,
+   "name": "Foulmountain Family Hammer",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 24,
+   "obtain": 26,
+   "ilvl": 29,
+   "bind": "equip",
+   "dps": 15.23,
+   "speed": 2.2,
+   "dmgMin": 23,
+   "dmgMax": 44,
+   "stats": {
+    "stamina": 2
+   },
+   "bonus": {
+    "spellPower": 4
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 4."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_hammer_12",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Harb Foulmountain",
+     "npcId": 14426,
+     "zone": "Thousand Needles",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 24,
+     "rec": 26,
+     "basis": {
+      "name": "Harb Foulmountain",
+      "level": 27,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
     }
    ]
   },
@@ -16350,6 +16604,50 @@
    ]
   },
   {
+   "id": 282721,
+   "name": "Gnoll Shaman's Staff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 25,
+   "obtain": 27,
+   "ilvl": 30,
+   "bind": "equip",
+   "dps": 20.28,
+   "speed": 3.6,
+   "dmgMin": 58,
+   "dmgMax": 88,
+   "stats": {
+    "strength": 7
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_goldfeathered_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Ro'Bark",
+     "npcId": 14278,
+     "zone": "Hillsbrad Foothills",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 25,
+     "rec": 27,
+     "basis": {
+      "name": "Ro'Bark",
+      "level": 28,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
    "id": 9452,
    "name": "Hydrocane",
    "kind": "Staff",
@@ -16391,6 +16689,53 @@
      "rec": 27,
      "basis": {
       "name": "Viscous Fallout",
+      "level": 30,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 274158,
+   "name": "Death Prophet Spine",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 26,
+   "obtain": 27,
+   "ilvl": 31,
+   "bind": "pickup",
+   "dps": 18.93,
+   "speed": 2.8,
+   "dmgMin": 42,
+   "dmgMax": 64,
+   "stats": {
+    "stamina": 11
+   },
+   "bonus": {
+    "spellPower": 34
+   },
+   "equip": [
+    "Equip: Increases damage and healing done by magical spells and effects by up to 34."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_17",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Aggem Thorncurse",
+     "npcId": 4424,
+     "zone": "Razorfen Kraul",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 26,
+     "rec": 27,
+     "basis": {
+      "name": "Aggem Thorncurse",
       "level": 30,
       "rank": "elite",
       "from": "wowhead",
@@ -16608,7 +16953,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Unstable Sentinel",
+     "npcId": 246017,
+     "zone": "City of Dalaran",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 28,
@@ -17211,7 +17559,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Mana Devourer",
+     "npcId": 246008,
+     "zone": "City of Dalaran",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 28,
@@ -17310,7 +17661,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Lyn the Ignored TODO: Source the steps to unlock the attunement https://www.wowhead.com/forever/es/news/how-to-find-the-secret-boss-in-the-city-of-dalaran-dungeon-in-wow-forever-383366",
+     "npcId": 247032,
+     "zone": "City of Dalaran",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 28,
@@ -25243,11 +25597,22 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "drop",
+     "npc": "Snarler",
+     "npcId": 5356,
+     "zone": "Feralas",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 42,
-     "rec": 42
+     "rec": 42,
+     "basis": {
+      "name": "Snarler",
+      "level": 42,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
     }
    ]
   },

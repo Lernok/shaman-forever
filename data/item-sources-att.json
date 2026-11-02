@@ -1,0 +1,5630 @@
+{
+ "_readme": "De dónde sale el equipo nuevo de Forever según AllTheThings (misión, jefe o bicho, vendedor por oro). Generado por scripts/fetch-att-items.js; no editar a mano: las correcciones van en data/item-sources.json.",
+ "source": "https://github.com/ATTWoWAddon/AllTheThings (MIT)",
+ "items": {
+  "246164": {
+   "name": "Skullthumper",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 91285,
+     "quest": "Murlocs at the Gates",
+     "minLevel": 7,
+     "faction": "both",
+     "zone": "Tirisfal Glades"
+    }
+   ]
+  },
+  "246165": {
+   "name": "Driftwood Smasher",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 91285,
+     "quest": "Murlocs at the Gates",
+     "minLevel": 7,
+     "faction": "both",
+     "zone": "Tirisfal Glades"
+    }
+   ]
+  },
+  "246265": {
+   "name": "Salvaged Wooden Tower Shield",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 91316,
+     "quest": "Making Repairs",
+     "minLevel": 8,
+     "faction": "both",
+     "zone": "Tirisfal Glades"
+    }
+   ]
+  },
+  "248005": {
+   "name": "Northshire Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 91777,
+     "quest": "Rare Books",
+     "minLevel": null,
+     "faction": "alliance",
+     "zone": "Elwynn Forest"
+    }
+   ]
+  },
+  "248007": {
+   "name": "Militia Shortblade",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 91777,
+     "quest": "Rare Books",
+     "minLevel": null,
+     "faction": "alliance",
+     "zone": "Elwynn Forest"
+    }
+   ]
+  },
+  "248008": {
+   "name": "Apprentice's Spellstaff",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 91777,
+     "quest": "Rare Books",
+     "minLevel": null,
+     "faction": "alliance",
+     "zone": "Elwynn Forest"
+    }
+   ]
+  },
+  "251485": {
+   "name": "Edward's Knife",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92401,
+     "quest": "A Frightened Request",
+     "minLevel": 15,
+     "faction": "horde",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "251486": {
+   "name": "Tabitha's Cuffs",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92401,
+     "quest": "A Frightened Request",
+     "minLevel": 15,
+     "faction": "horde",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "251533": {
+   "name": "Forsaken Greataxe",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92422,
+     "quest": "The Wrath of Rath'mael",
+     "minLevel": 15,
+     "faction": "horde",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "251534": {
+   "name": "Gnarled Necromancer's Staff",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92422,
+     "quest": "The Wrath of Rath'mael",
+     "minLevel": 15,
+     "faction": "horde",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "251962": {
+   "name": "Violet Sash",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92489,
+     "quest": "Power Overwhelming",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "251963": {
+   "name": "Gravewalker Boots",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96986,
+     "quest": "The Grave Knight",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "251965": {
+   "name": "Undead Knight's Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96986,
+     "quest": "The Grave Knight",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "257255": {
+   "name": "Highlands Defender's Shield",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93318,
+     "quest": "WANTED: Vulgara the Insatiable",
+     "minLevel": 4,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "257342": {
+   "name": "Elite Peacekeeper's Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92640,
+     "quest": "Desperate Times",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "257343": {
+   "name": "Balanced Quarterstaff",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92880,
+     "quest": "Return to Valanaar",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "257344": {
+   "name": "Skywatcher's Vestments",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92640,
+     "quest": "Desperate Times",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "257345": {
+   "name": "Honed Greathammer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92880,
+     "quest": "Return to Valanaar",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "257346": {
+   "name": "Quickblade's Dagger",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92880,
+     "quest": "Return to Valanaar",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "257943": {
+   "name": "Hunter's Simple Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93318,
+     "quest": "WANTED: Vulgara the Insatiable",
+     "minLevel": 4,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263006": {
+   "name": "Scout Ranger's Tunic",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 256028,
+     "npc": "The Lost One",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "263015": {
+   "name": "Skyseer's Pants",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 259385,
+     "npc": "Tel'daeor the Stormspeaker",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "263016": {
+   "name": "Scout Ranger's Leggings",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 259385,
+     "npc": "Tel'daeor the Stormspeaker",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "263017": {
+   "name": "Thendal Watcher's Leggings",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 259385,
+     "npc": "Tel'daeor the Stormspeaker",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "263305": {
+   "name": "Windshaped Shield",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93746,
+     "quest": "A Firm Response",
+     "minLevel": 4,
+     "faction": "horde",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263306": {
+   "name": "Nightclaw Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93165,
+     "quest": "Mercy Falls on Deaf Ears",
+     "minLevel": 8,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263307": {
+   "name": "Shadowgale Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93165,
+     "quest": "Mercy Falls on Deaf Ears",
+     "minLevel": 8,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263308": {
+   "name": "Cult Hunter's Boots",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93165,
+     "quest": "Mercy Falls on Deaf Ears",
+     "minLevel": 8,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263309": {
+   "name": "Freedom Walkers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93172,
+     "quest": "Free the Hollows",
+     "minLevel": 8,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263310": {
+   "name": "Sorrowsong Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93172,
+     "quest": "Free the Hollows",
+     "minLevel": 8,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263311": {
+   "name": "Scuffed Cuffs",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93172,
+     "quest": "Free the Hollows",
+     "minLevel": 8,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263312": {
+   "name": "Planting Shovel",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92703,
+     "quest": "Deliver the News",
+     "minLevel": 5,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263313": {
+   "name": "Trusty Wrench",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92703,
+     "quest": "Deliver the News",
+     "minLevel": 5,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263314": {
+   "name": "Roofing Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92703,
+     "quest": "Deliver the News",
+     "minLevel": 5,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263329": {
+   "name": "Flutterfly Swatter",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92683,
+     "quest": "Flutterfly Dust",
+     "minLevel": 5,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263330": {
+   "name": "Tracker's Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92644,
+     "quest": "Unfortunate News",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263332": {
+   "name": "Elder's Tunic",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92644,
+     "quest": "Unfortunate News",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263333": {
+   "name": "Peacekeeper's Mail",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92644,
+     "quest": "Unfortunate News",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263335": {
+   "name": "Hunter's Cord",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92645,
+     "quest": "Breaking the Breaker",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263336": {
+   "name": "Windsong Bangles",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92645,
+     "quest": "Breaking the Breaker",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263337": {
+   "name": "Breaker's Gauntlets",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92645,
+     "quest": "Breaking the Breaker",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263338": {
+   "name": "Defender's Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93320,
+     "quest": "Tower Defense",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263339": {
+   "name": "Windswept Slippers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93320,
+     "quest": "Tower Defense",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263340": {
+   "name": "Peacekeeper's Legguards",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93320,
+     "quest": "Tower Defense",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263401": {
+   "name": "Martyr's Armor",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92834,
+     "quest": "Avenged Tenfold",
+     "minLevel": 6,
+     "faction": "alliance",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263402": {
+   "name": "Sash of Sorrow",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92834,
+     "quest": "Avenged Tenfold",
+     "minLevel": 6,
+     "faction": "alliance",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263403": {
+   "name": "Cilice of Regret",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92834,
+     "quest": "Avenged Tenfold",
+     "minLevel": 6,
+     "faction": "alliance",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263405": {
+   "name": "Belt of Blades",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92646,
+     "quest": "Confront Lorthuna",
+     "minLevel": 7,
+     "faction": "horde",
+     "zone": "Zephras Isle"
+    },
+    {
+     "type": "quest",
+     "questId": 93835,
+     "quest": "Confront Lorthuna",
+     "minLevel": 7,
+     "faction": "alliance",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263406": {
+   "name": "Empyrean Shoes",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92646,
+     "quest": "Confront Lorthuna",
+     "minLevel": 7,
+     "faction": "horde",
+     "zone": "Zephras Isle"
+    },
+    {
+     "type": "quest",
+     "questId": 93835,
+     "quest": "Confront Lorthuna",
+     "minLevel": 7,
+     "faction": "alliance",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263412": {
+   "name": "Totem of Charged Flames",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 94411,
+     "quest": "Meddlesome Mages",
+     "minLevel": 4,
+     "faction": "horde",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "263935": {
+   "name": "Elunar Longstaff",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 250936,
+     "npc": "Den'dralass",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "263936": {
+   "name": "Windforged Shortblade",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 250936,
+     "npc": "Den'dralass",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "263937": {
+   "name": "Skyseeker's Greatstaff",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 250936,
+     "npc": "Den'dralass",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "269716": {
+   "name": "Keen Skinning Knife",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95508,
+     "quest": "Unwelcome Guests",
+     "minLevel": 14,
+     "faction": "horde",
+     "zone": "The Barrens"
+    }
+   ]
+  },
+  "270000": {
+   "name": "Apprentice Wizard's Gown",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 176,
+     "quest": "Wanted: \"Hogger\"",
+     "minLevel": 5,
+     "faction": "alliance",
+     "zone": "Elwynn Forest"
+    }
+   ]
+  },
+  "270002": {
+   "name": "Midshipman's Worn Boots",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 140,
+     "quest": "Captain Sanders' Hidden Treasure (4/4)",
+     "minLevel": 10,
+     "faction": "both",
+     "zone": "Westfall"
+    }
+   ]
+  },
+  "270003": {
+   "name": "Garrison Cuffs",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 5724,
+     "quest": "Returning the Lost Satchel",
+     "minLevel": 9,
+     "faction": "horde",
+     "zone": "Ragefire Chasm"
+    }
+   ]
+  },
+  "270004": {
+   "name": "Murloc-hide Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 982,
+     "quest": "Deep Ocean, Vast Sea",
+     "minLevel": 13,
+     "faction": "alliance",
+     "zone": "Darkshore"
+    }
+   ]
+  },
+  "270005": {
+   "name": "Monastic Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 214,
+     "quest": "Red Silk Bandanas",
+     "minLevel": 14,
+     "faction": "alliance",
+     "zone": "Deadmines"
+    }
+   ]
+  },
+  "270006": {
+   "name": "Boots of the People's Militia",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 14,
+     "quest": "The People's Militia (3/3)",
+     "minLevel": 9,
+     "faction": "alliance",
+     "zone": "Westfall"
+    }
+   ]
+  },
+  "270007": {
+   "name": "Worn Miner's Waistcord",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 168,
+     "quest": "Collecting Memories",
+     "minLevel": 14,
+     "faction": "alliance",
+     "zone": "Deadmines"
+    }
+   ]
+  },
+  "270008": {
+   "name": "Heat Resistant Mitts",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 962,
+     "quest": "Serpentbloom",
+     "minLevel": 14,
+     "faction": "horde",
+     "zone": "Wailing Caverns"
+    }
+   ]
+  },
+  "270009": {
+   "name": "Safety Boots",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 962,
+     "quest": "Serpentbloom",
+     "minLevel": 14,
+     "faction": "horde",
+     "zone": "Wailing Caverns"
+    }
+   ]
+  },
+  "270010": {
+   "name": "Raptorcrest Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 6481,
+     "quest": "Earthen Arise",
+     "minLevel": 14,
+     "faction": "horde",
+     "zone": "Stonetalon Mountains"
+    }
+   ]
+  },
+  "270011": {
+   "name": "Embroidered Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 898,
+     "quest": "Free From the Hold",
+     "minLevel": 13,
+     "faction": "horde",
+     "zone": "The Barrens"
+    }
+   ]
+  },
+  "270012": {
+   "name": "Miner's Workgloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 167,
+     "quest": "Oh Brother. . .",
+     "minLevel": 15,
+     "faction": "alliance",
+     "zone": "Deadmines"
+    }
+   ]
+  },
+  "270013": {
+   "name": "Miner's Workboots",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 167,
+     "quest": "Oh Brother. . .",
+     "minLevel": 15,
+     "faction": "alliance",
+     "zone": "Deadmines"
+    }
+   ]
+  },
+  "270014": {
+   "name": "Deerhide Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 5321,
+     "quest": "The Sleeper Has Awakened",
+     "minLevel": 17,
+     "faction": "alliance",
+     "zone": "Darkshore"
+    }
+   ]
+  },
+  "270015": {
+   "name": "Bravo's Armbands",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 2040,
+     "quest": "Underground Assault",
+     "minLevel": 15,
+     "faction": "alliance",
+     "zone": "Deadmines"
+    }
+   ]
+  },
+  "270016": {
+   "name": "Dreamer's Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 2040,
+     "quest": "Underground Assault",
+     "minLevel": 15,
+     "faction": "alliance",
+     "zone": "Deadmines"
+    }
+   ]
+  },
+  "270018": {
+   "name": "Hammerbone",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 914,
+     "quest": "Leaders of the Fang",
+     "minLevel": 10,
+     "faction": "horde",
+     "zone": "Wailing Caverns"
+    }
+   ]
+  },
+  "270019": {
+   "name": "Loch Walkers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 256,
+     "quest": "WANTED: Chok'sul",
+     "minLevel": 17,
+     "faction": "alliance",
+     "zone": "Loch Modan"
+    }
+   ]
+  },
+  "270020": {
+   "name": "Gnollhide Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 442,
+     "quest": "Assault on Fenris Isle",
+     "minLevel": 10,
+     "faction": "horde",
+     "zone": "Silverpine Forest"
+    }
+   ]
+  },
+  "270021": {
+   "name": "Staghide Armguards",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1275,
+     "quest": "Researching the Corruption",
+     "minLevel": 18,
+     "faction": "alliance",
+     "zone": "Blackfathom Deeps"
+    }
+   ]
+  },
+  "270022": {
+   "name": "Archaeologist's Gown",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 943,
+     "quest": "The Absent Minded Prospector (5/5)",
+     "minLevel": 15,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "270023": {
+   "name": "Tanned Shoulderpads",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1098,
+     "quest": "Deathstalkers in Shadowfang",
+     "minLevel": 18,
+     "faction": "horde",
+     "zone": "Shadowfang Keep"
+    }
+   ]
+  },
+  "270024": {
+   "name": "Bronzed Shoulderguards",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1098,
+     "quest": "Deathstalkers in Shadowfang",
+     "minLevel": 18,
+     "faction": "horde",
+     "zone": "Shadowfang Keep"
+    }
+   ]
+  },
+  "270025": {
+   "name": "Silvered Gauntlets",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1199,
+     "quest": "Twilight Falls",
+     "minLevel": 20,
+     "faction": "alliance",
+     "zone": "Blackfathom Deeps"
+    }
+   ]
+  },
+  "270027": {
+   "name": "Ursine Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 386,
+     "quest": "What Comes Around...",
+     "minLevel": 22,
+     "faction": "alliance",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "270028": {
+   "name": "Harpy Bangles",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 6283,
+     "quest": "Bloodfury Bloodline",
+     "minLevel": 18,
+     "faction": "horde",
+     "zone": "Stonetalon Mountains"
+    }
+   ]
+  },
+  "270029": {
+   "name": "Town Clerk's Mittens",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 377,
+     "quest": "Crime and Punishment",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "270030": {
+   "name": "Tattered Mittens",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1013,
+     "quest": "The Book of Ur",
+     "minLevel": 16,
+     "faction": "horde",
+     "zone": "Shadowfang Keep"
+    }
+   ]
+  },
+  "270031": {
+   "name": "Dark Ritual Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1200,
+     "quest": "Blackfathom Villainy (A)",
+     "minLevel": 18,
+     "faction": "alliance",
+     "zone": "Blackfathom Deeps"
+    },
+    {
+     "type": "quest",
+     "questId": 6561,
+     "quest": "Blackfathom Villainy (H)",
+     "minLevel": 18,
+     "faction": "horde",
+     "zone": "Blackfathom Deeps"
+    }
+   ]
+  },
+  "270032": {
+   "name": "Cultist's Armguards",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1200,
+     "quest": "Blackfathom Villainy (A)",
+     "minLevel": 18,
+     "faction": "alliance",
+     "zone": "Blackfathom Deeps"
+    },
+    {
+     "type": "quest",
+     "questId": 6561,
+     "quest": "Blackfathom Villainy (H)",
+     "minLevel": 18,
+     "faction": "horde",
+     "zone": "Blackfathom Deeps"
+    }
+   ]
+  },
+  "270033": {
+   "name": "Demonhide Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 249,
+     "quest": "Morganth",
+     "minLevel": 20,
+     "faction": "alliance",
+     "zone": "Redridge Mountains"
+    }
+   ]
+  },
+  "270034": {
+   "name": "Shadow Gauntlets",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 249,
+     "quest": "Morganth",
+     "minLevel": 20,
+     "faction": "alliance",
+     "zone": "Redridge Mountains"
+    }
+   ]
+  },
+  "270035": {
+   "name": "Reclaimer's Robes",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1059,
+     "quest": "Reclaiming the Charred Vale (2/2)",
+     "minLevel": 20,
+     "faction": "alliance",
+     "zone": "Stonetalon Mountains"
+    }
+   ]
+  },
+  "270036": {
+   "name": "Magistrate's Pantaloons",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 378,
+     "quest": "The Fury Runs Deep",
+     "minLevel": 25,
+     "faction": "alliance",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "270037": {
+   "name": "Smouldering Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 5088,
+     "quest": "Arikara",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "Thunder Bluff"
+    }
+   ]
+  },
+  "270038": {
+   "name": "Runed Gauntlets",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 3514,
+     "quest": "Horde Presence",
+     "minLevel": 15,
+     "faction": "horde",
+     "zone": "The Barrens"
+    }
+   ]
+  },
+  "270039": {
+   "name": "Raptorclaw Shoulders",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 296,
+     "quest": "Ormer's Revenge (3/3)",
+     "minLevel": 22,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "270042": {
+   "name": "Technician's Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 2904,
+     "quest": "A Fine Mess",
+     "minLevel": 20,
+     "faction": "both",
+     "zone": "Gnomeregan"
+    }
+   ]
+  },
+  "270043": {
+   "name": "Dreamer's Chestguard",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 6922,
+     "quest": "Baron Aquanis",
+     "minLevel": 21,
+     "faction": "horde",
+     "zone": "Blackfathom Deeps"
+    }
+   ]
+  },
+  "270044": {
+   "name": "Darkshire Shoulderguards",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 253,
+     "quest": "Bride of the Embalmer",
+     "minLevel": 20,
+     "faction": "alliance",
+     "zone": "Duskwood"
+    }
+   ]
+  },
+  "270045": {
+   "name": "Operator's Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 2928,
+     "quest": "Gyrodrillmatic Excavationators",
+     "minLevel": 20,
+     "faction": "alliance",
+     "zone": "Gnomeregan"
+    }
+   ]
+  },
+  "270046": {
+   "name": "Ethereal Mantle",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 547,
+     "quest": "Humbert's Sword",
+     "minLevel": 26,
+     "faction": "horde",
+     "zone": "Hillsbrad Foothills"
+    }
+   ]
+  },
+  "270047": {
+   "name": "Sentinel's Boots",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1142,
+     "quest": "Mortality Wanes",
+     "minLevel": 25,
+     "faction": "alliance",
+     "zone": "Razorfen Kraul"
+    }
+   ]
+  },
+  "270048": {
+   "name": "Uthil's Cudgel",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1012,
+     "quest": "Insane Druids",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Ashenvale"
+    }
+   ]
+  },
+  "270049": {
+   "name": "Mavoris's Warstaff",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1012,
+     "quest": "Insane Druids",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Ashenvale"
+    }
+   ]
+  },
+  "270050": {
+   "name": "Fury Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 304,
+     "quest": "A Grim Task",
+     "minLevel": 26,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "270051": {
+   "name": "Ladimore Heirloom Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 231,
+     "quest": "A Daughter's Love",
+     "minLevel": 28,
+     "faction": "alliance",
+     "zone": "Duskwood"
+    }
+   ]
+  },
+  "270052": {
+   "name": "Swamp Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1203,
+     "quest": "Jarl Needs a Blade",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Dustwallow Marsh"
+    }
+   ]
+  },
+  "270053": {
+   "name": "Ring of Ruin",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98,
+     "quest": "The Legend of Stalvan (13/13)",
+     "minLevel": 22,
+     "faction": "alliance",
+     "zone": "Duskwood"
+    }
+   ]
+  },
+  "270054": {
+   "name": "Cultist's Chestguard",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 6521,
+     "quest": "An Unholy Alliance (2/2)",
+     "minLevel": 28,
+     "faction": "horde",
+     "zone": "Razorfen Downs"
+    }
+   ]
+  },
+  "270055": {
+   "name": "Charged Leather Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 2418,
+     "quest": "Power Stones",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Badlands"
+    }
+   ]
+  },
+  "270056": {
+   "name": "Stromgarde Librarian Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 682,
+     "quest": "Stromgarde Badges",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Arathi Highlands"
+    }
+   ]
+  },
+  "270057": {
+   "name": "Stromgarde Operative Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 682,
+     "quest": "Stromgarde Badges",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Arathi Highlands"
+    }
+   ]
+  },
+  "270059": {
+   "name": "Restorer's Fine Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 704,
+     "quest": "Agmond's Fate",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Loch Modan"
+    }
+   ]
+  },
+  "270060": {
+   "name": "Excavator Gauntlets",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 704,
+     "quest": "Agmond's Fate",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Loch Modan"
+    }
+   ]
+  },
+  "270065": {
+   "name": "Farseer's Forgotten Shield",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 5943,
+     "quest": "Gizelton Caravan",
+     "minLevel": 32,
+     "faction": "both",
+     "zone": "Desolace"
+    }
+   ]
+  },
+  "270067": {
+   "name": "Wild Headdress",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 684,
+     "quest": "Wanted! Marez Cowl",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Arathi Highlands"
+    }
+   ]
+  },
+  "270068": {
+   "name": "Stromgarde Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 684,
+     "quest": "Wanted! Marez Cowl",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Arathi Highlands"
+    }
+   ]
+  },
+  "270069": {
+   "name": "Mindslicer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 679,
+     "quest": "Call to Arms (3/3)",
+     "minLevel": 30,
+     "faction": "horde",
+     "zone": "Arathi Highlands"
+    }
+   ]
+  },
+  "270070": {
+   "name": "Madman's Blade",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 202,
+     "quest": "Colonel Kurzen",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "270071": {
+   "name": "Dark Hearted Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 202,
+     "quest": "Colonel Kurzen",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "270072": {
+   "name": "Alterac Assassin's Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 504,
+     "quest": "Crushridge Warmongers",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Hillsbrad Foothills"
+    }
+   ]
+  },
+  "270074": {
+   "name": "Doomcaller's Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 709,
+     "quest": "Solution to Doom",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Badlands"
+    }
+   ]
+  },
+  "270075": {
+   "name": "Fists of Impending Doom",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 709,
+     "quest": "Solution to Doom",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Badlands"
+    }
+   ]
+  },
+  "270079": {
+   "name": "Witchdoctor's Dress",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 680,
+     "quest": "The Real Threat",
+     "minLevel": 30,
+     "faction": "horde",
+     "zone": "Arathi Highlands"
+    }
+   ]
+  },
+  "270080": {
+   "name": "Arathi Armbands",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 685,
+     "quest": "Wanted! Otto and Falconcrest",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Arathi Highlands"
+    }
+   ]
+  },
+  "270090": {
+   "name": "Beggar's Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 613,
+     "quest": "Cracking Maury's Foot",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "270091": {
+   "name": "Seadog's Battered Cuffs",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 613,
+     "quest": "Cracking Maury's Foot",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "270227": {
+   "name": "Ephemeral Choker",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261306,
+     "npc": "Faldrim Anvilmar",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "270228": {
+   "name": "Golemheart Stave",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261311,
+     "npc": "Plunder",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "270229": {
+   "name": "Treads of the Protector Golem",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261311,
+     "npc": "Plunder",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "270230": {
+   "name": "Kindlegem Girdle",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261316,
+     "npc": "Magmatus",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "270231": {
+   "name": "Flamefist Grips",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261316,
+     "npc": "Magmatus",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "270256": {
+   "name": "Durgen's Crescent Axe",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261319,
+     "npc": "Durgen Dirgehammer",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "270260": {
+   "name": "Direhammer Leggings",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261319,
+     "npc": "Durgen Dirgehammer",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "270261": {
+   "name": "Robes of the Disgraced Thane",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261319,
+     "npc": "Durgen Dirgehammer",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "271095": {
+   "name": "Fang of Magmatus",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261316,
+     "npc": "Magmatus",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "271096": {
+   "name": "Aetherwisp Bracers",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261306,
+     "npc": "Faldrim Anvilmar",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "271097": {
+   "name": "Spiritwraith Drape",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261306,
+     "npc": "Faldrim Anvilmar",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "271098": {
+   "name": "Golemguard Chest",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261311,
+     "npc": "Plunder",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "271201": {
+   "name": "Atrophic Girdle",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 250483,
+     "npc": "Witherfang",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271202": {
+   "name": "Witherbite Bracers",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 250483,
+     "npc": "Witherfang",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271203": {
+   "name": "Segmented Spider Leg",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 250483,
+     "npc": "Witherfang",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271204": {
+   "name": "Meathook Slicer",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 250660,
+     "npc": "The Baron",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271205": {
+   "name": "Abomination Bones",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 250660,
+     "npc": "The Baron",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271206": {
+   "name": "Leftover Abomination Skin",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 250660,
+     "npc": "The Baron",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271207": {
+   "name": "Rotmender's Leggings",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 250631,
+     "npc": "The Abandoned",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271208": {
+   "name": "Grip of Fear",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 250631,
+     "npc": "The Abandoned",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271209": {
+   "name": "Bonerust Leggings",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 256097,
+     "npc": "Bjork",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271210": {
+   "name": "Tuskwrap Belt",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 256097,
+     "npc": "Bjork",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271211": {
+   "name": "Vilewalkers",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 256035,
+     "npc": "Viktor the Vile",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271212": {
+   "name": "Bloodied Chestwraps",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 256035,
+     "npc": "Viktor the Vile",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271213": {
+   "name": "Mirror of Rath'mael",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 250657,
+     "npc": "Rath'mael",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271214": {
+   "name": "Rotmender's Treads",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 250657,
+     "npc": "Rath'mael",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271215": {
+   "name": "Coldspire Staff",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 250657,
+     "npc": "Rath'mael",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271216": {
+   "name": "Scepter of the Abandoned",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 250631,
+     "npc": "The Abandoned",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271217": {
+   "name": "Corpse Chopper",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 256097,
+     "npc": "Bjork",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "271664": {
+   "name": "Hornbeam Heft",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95646,
+     "quest": "Horrors in the Highland",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "271667": {
+   "name": "Ironwood Destroyer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95646,
+     "quest": "Horrors in the Highland",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "271670": {
+   "name": "Curl of Life",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95646,
+     "quest": "Horrors in the Highland",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "271716": {
+   "name": "Explorer's League Dustcover",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98824,
+     "quest": "Prehistoric Prism",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "271719": {
+   "name": "Furs of the Earthen Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98823,
+     "quest": "Earthen Echo",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "271732": {
+   "name": "Dirt-Heavy Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95682,
+     "quest": "Open the Maw",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "271740": {
+   "name": "Knife-Polishing Rag",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95682,
+     "quest": "Open the Maw",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "271766": {
+   "name": "Heavehammer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98823,
+     "quest": "Earthen Echo",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "Excavation Site: Wetlands"
+    },
+    {
+     "type": "quest",
+     "questId": 98824,
+     "quest": "Prehistoric Prism",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "271767": {
+   "name": "Healer's Staff",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98823,
+     "quest": "Earthen Echo",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "Excavation Site: Wetlands"
+    },
+    {
+     "type": "quest",
+     "questId": 98824,
+     "quest": "Prehistoric Prism",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "271768": {
+   "name": "Songblade Stabilizer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95795,
+     "quest": "Fallen in the Fen",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "271769": {
+   "name": "Daewyn's Girdle",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95795,
+     "quest": "Fallen in the Fen",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "271797": {
+   "name": "Staff of Revelations",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92873,
+     "quest": "Proof of Concept",
+     "minLevel": 35,
+     "faction": "alliance",
+     "zone": "Shendralas"
+    }
+   ]
+  },
+  "271798": {
+   "name": "Desperate Barrier",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92873,
+     "quest": "Proof of Concept",
+     "minLevel": 35,
+     "faction": "alliance",
+     "zone": "Shendralas"
+    }
+   ]
+  },
+  "271799": {
+   "name": "Desert Crawler's Claw",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93045,
+     "quest": "Test Your Theory",
+     "minLevel": 35,
+     "faction": "horde",
+     "zone": null
+    }
+   ]
+  },
+  "271801": {
+   "name": "Abandoned Ferocity",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93128,
+     "quest": "Khan Jehn (Gelkis)",
+     "minLevel": 35,
+     "faction": "horde",
+     "zone": "Desolace"
+    }
+   ]
+  },
+  "271802": {
+   "name": "Bludgeon of Betrayed Virtues",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93128,
+     "quest": "Khan Jehn (Gelkis)",
+     "minLevel": 35,
+     "faction": "horde",
+     "zone": "Desolace"
+    }
+   ]
+  },
+  "271803": {
+   "name": "Greatstaff of the Necrokhans",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93196,
+     "quest": "Khan Jehn (Magram)",
+     "minLevel": 35,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "271804": {
+   "name": "Soulsplatter Mace",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93196,
+     "quest": "Khan Jehn (Magram)",
+     "minLevel": 35,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "271805": {
+   "name": "Thrice-Damned Effigy",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93128,
+     "quest": "Khan Jehn (Gelkis)",
+     "minLevel": 35,
+     "faction": "horde",
+     "zone": "Desolace"
+    }
+   ]
+  },
+  "272996": {
+   "name": "Trogg Scepter",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11517,
+     "npc": "Oggleflint",
+     "zone": "Ragefire Chasm"
+    }
+   ]
+  },
+  "272998": {
+   "name": "Bone Knuckles",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11517,
+     "npc": "Oggleflint",
+     "zone": "Ragefire Chasm"
+    }
+   ]
+  },
+  "273003": {
+   "name": "Searing Dagger",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11519,
+     "npc": "Bazzalan",
+     "zone": "Ragefire Chasm"
+    }
+   ]
+  },
+  "273005": {
+   "name": "Satyrskin Cloak",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11519,
+     "npc": "Bazzalan",
+     "zone": "Ragefire Chasm"
+    }
+   ]
+  },
+  "273007": {
+   "name": "Chasm Walkers",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11519,
+     "npc": "Bazzalan",
+     "zone": "Ragefire Chasm"
+    }
+   ]
+  },
+  "273022": {
+   "name": "Supple Bellyskin Leggings",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 260322,
+     "npc": "Saltspine",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "273023": {
+   "name": "Saltscale Girdle",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 260322,
+     "npc": "Saltspine",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "273024": {
+   "name": "Glinteye Slippers",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 260322,
+     "npc": "Saltspine",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "273025": {
+   "name": "Raptorclaw Greaves",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 260325,
+     "npc": "Shadetooth",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "273026": {
+   "name": "Garb of Florid Feathers",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 260325,
+     "npc": "Shadetooth",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "273027": {
+   "name": "Raptor's Gaze",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 260325,
+     "npc": "Shadetooth",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "273028": {
+   "name": "Reliquary Mantle",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 260326,
+     "npc": "Relic Guardian",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "273030": {
+   "name": "Ring of Power Regulation",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 260326,
+     "npc": "Relic Guardian",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "273031": {
+   "name": "Runemender's Seal",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 245999,
+     "npc": "Arcane Anomaly",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273032": {
+   "name": "Bonebinder's Signet",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247126,
+     "npc": "Atrexis the Grave Knight",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273034": {
+   "name": "Ephemeral Grips",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 245999,
+     "npc": "Arcane Anomaly",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273035": {
+   "name": "Mana-Warped Chain Shirt",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 245999,
+     "npc": "Arcane Anomaly",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273036": {
+   "name": "Graveweave Bindings",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247126,
+     "npc": "Atrexis the Grave Knight",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273038": {
+   "name": "Garb of Fallen Felbark",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 246003,
+     "npc": "Fel Ancient",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273039": {
+   "name": "Blightleaf Rope",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 246003,
+     "npc": "Fel Ancient",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273040": {
+   "name": "Spine of the Devourer",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 246008,
+     "npc": "Mana Devourer",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273041": {
+   "name": "Slitherwrap Girdle",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 246008,
+     "npc": "Mana Devourer",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273042": {
+   "name": "Manascale Treads",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 246008,
+     "npc": "Mana Devourer",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273044": {
+   "name": "Violet Sorcerer's Robes",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 246016,
+     "npc": "Arcanic Enigma",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273045": {
+   "name": "Drape of Shifting Energy",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 246016,
+     "npc": "Arcanic Enigma",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273046": {
+   "name": "Guardian's Dualblade",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 246017,
+     "npc": "Unstable Sentinel",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273047": {
+   "name": "Unstable Crystalline Shoulderpads",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 246017,
+     "npc": "Unstable Sentinel",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273048": {
+   "name": "Refractory Scaleguards",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 246017,
+     "npc": "Unstable Sentinel",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273049": {
+   "name": "Archmagister's Faceted Pendant",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 246020,
+     "npc": "Shade of the Archmage",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273051": {
+   "name": "Violet Sorcerer's Mantle",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 246020,
+     "npc": "Shade of the Archmage",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273052": {
+   "name": "Ponderous Orb",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 246020,
+     "npc": "Shade of the Archmage",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273053": {
+   "name": "Tendonscraper Dagger",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247032,
+     "npc": "Lyn the Ignored TODO: Source the steps to unlock the attunement https://www.wowhead.com/forever/es/news/how-to-find-the-secret-boss-in-the-city-of-dalaran-dungeon-in-wow-forever-383366",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273054": {
+   "name": "Cartilage Shapers",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247032,
+     "npc": "Lyn the Ignored TODO: Source the steps to unlock the attunement https://www.wowhead.com/forever/es/news/how-to-find-the-secret-boss-in-the-city-of-dalaran-dungeon-in-wow-forever-383366",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273055": {
+   "name": "Bonepile Gaze",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247032,
+     "npc": "Lyn the Ignored TODO: Source the steps to unlock the attunement https://www.wowhead.com/forever/es/news/how-to-find-the-secret-boss-in-the-city-of-dalaran-dungeon-in-wow-forever-383366",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "273084": {
+   "name": "Cloak of Hermitic Bliss",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 3653,
+     "npc": "Kresh",
+     "zone": "Wailing Caverns"
+    }
+   ]
+  },
+  "273088": {
+   "name": "Snake Eye Kaleidoscope",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 3671,
+     "npc": "Lady Anacondra",
+     "zone": "Wailing Caverns"
+    }
+   ]
+  },
+  "273089": {
+   "name": "Slither Cord",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 3670,
+     "npc": "Lord Pythas",
+     "zone": "Wailing Caverns"
+    }
+   ]
+  },
+  "273137": {
+   "name": "Skum's Bucket",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 3674,
+     "npc": "Skum",
+     "zone": "Wailing Caverns"
+    }
+   ]
+  },
+  "273289": {
+   "name": "Ogre Loincloth",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 644,
+     "npc": "Rhahk'Zor",
+     "zone": "Deadmines"
+    }
+   ]
+  },
+  "273293": {
+   "name": "Bandsaw Wristbands",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 643,
+     "npc": "Sneed",
+     "zone": "Deadmines"
+    }
+   ]
+  },
+  "273297": {
+   "name": "Goblin Hammer",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 1763,
+     "npc": "Gilnid",
+     "zone": "Deadmines"
+    }
+   ]
+  },
+  "273298": {
+   "name": "Lookie's Spyglass",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 645,
+     "npc": "Cookie",
+     "zone": "Deadmines"
+    }
+   ]
+  },
+  "273456": {
+   "name": "Cell Keeper's Claws",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 3914,
+     "npc": "Rethilgore",
+     "zone": "Shadowfang Keep"
+    }
+   ]
+  },
+  "273457": {
+   "name": "Sorcerer Collar",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 3914,
+     "npc": "Rethilgore",
+     "zone": "Shadowfang Keep"
+    }
+   ]
+  },
+  "273643": {
+   "name": "Worgenbane Talisman",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 4278,
+     "npc": "Commander Springvale",
+     "zone": "Shadowfang Keep"
+    }
+   ]
+  },
+  "273645": {
+   "name": "Blindwatcher's Sight",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 4279,
+     "npc": "Odo the Blindwatcher",
+     "zone": "Shadowfang Keep"
+    }
+   ]
+  },
+  "273646": {
+   "name": "Half-Eaten Boots",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 4274,
+     "npc": "Fenrus the Devourer",
+     "zone": "Shadowfang Keep"
+    }
+   ]
+  },
+  "273647": {
+   "name": "Worgpelt Leggings",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 3927,
+     "npc": "Wolf Master Nandos",
+     "zone": "Shadowfang Keep"
+    }
+   ]
+  },
+  "273654": {
+   "name": "Crystal Thread Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96260,
+     "quest": "Stronger than Steel",
+     "minLevel": 23,
+     "faction": "horde",
+     "zone": "Mulgore"
+    }
+   ]
+  },
+  "273804": {
+   "name": "Executioner Mantle",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 1696,
+     "npc": "Targorr the Dread",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "273805": {
+   "name": "Blackrock Harness",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 1696,
+     "npc": "Targorr the Dread",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "273806": {
+   "name": "Dark Horde Band",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 1696,
+     "npc": "Targorr the Dread",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "273807": {
+   "name": "Demolition Girdle",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 1666,
+     "npc": "Kam Deepfury",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "273808": {
+   "name": "Bridgebreaker Bindings",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 1666,
+     "npc": "Kam Deepfury",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "273809": {
+   "name": "Hamhock's Cleaver",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 1717,
+     "npc": "Hamhock",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "273810": {
+   "name": "Ogre Grips",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 1717,
+     "npc": "Hamhock",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "273811": {
+   "name": "Repurposed Rack",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 1717,
+     "npc": "Hamhock",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "273817": {
+   "name": "Graverobber's Shovel",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 1663,
+     "npc": "Dextren Ward",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "273820": {
+   "name": "Nightskulker Ring",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 1663,
+     "npc": "Dextren Ward",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "273824": {
+   "name": "Defias Jailbreakers",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 1716,
+     "npc": "Bazil Thredd",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "273825": {
+   "name": "Red Wool Cloak",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 1716,
+     "npc": "Bazil Thredd",
+     "zone": "The Stockade"
+    }
+   ]
+  },
+  "273839": {
+   "name": "Spiked Shell Band",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 4887,
+     "npc": "Ghamoo-ra",
+     "zone": "Blackfathom Deeps"
+    }
+   ]
+  },
+  "273840": {
+   "name": "Cursed Murloc Eye",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 6243,
+     "npc": "Gelihast",
+     "zone": "Blackfathom Deeps"
+    }
+   ]
+  },
+  "273841": {
+   "name": "Twilight Maul",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 12902,
+     "npc": "Lorgus Jett",
+     "zone": "Blackfathom Deeps"
+    }
+   ]
+  },
+  "273842": {
+   "name": "Treacherous Treads",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 12902,
+     "npc": "Lorgus Jett",
+     "zone": "Blackfathom Deeps"
+    }
+   ]
+  },
+  "273846": {
+   "name": "Twilight Lord Girdle",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 4832,
+     "npc": "Twilight Lord Kelris",
+     "zone": "Blackfathom Deeps"
+    }
+   ]
+  },
+  "273875": {
+   "name": "Empyrean Treads",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92646,
+     "quest": "Confront Lorthuna",
+     "minLevel": 7,
+     "faction": "horde",
+     "zone": "Zephras Isle"
+    },
+    {
+     "type": "quest",
+     "questId": 93835,
+     "quest": "Confront Lorthuna",
+     "minLevel": 7,
+     "faction": "alliance",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "273876": {
+   "name": "Broken Cultist Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92640,
+     "quest": "Desperate Times",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "274042": {
+   "name": "Skullduggery Belt",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7361,
+     "npc": "Grubbis",
+     "zone": "Gnomeregan"
+    }
+   ]
+  },
+  "274043": {
+   "name": "Irradiated Shield",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7361,
+     "npc": "Grubbis",
+     "zone": "Gnomeregan"
+    }
+   ]
+  },
+  "274068": {
+   "name": "Thermaplugg Medal of Honor",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 6229,
+     "npc": "Crowd Pummeler 9-60",
+     "zone": "Gnomeregan"
+    }
+   ]
+  },
+  "274078": {
+   "name": "Boar Signet",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1144,
+     "quest": "Willix the Importer",
+     "minLevel": 22,
+     "faction": "both",
+     "zone": "Razorfen Kraul"
+    }
+   ]
+  },
+  "274149": {
+   "name": "Thornweaver Drape",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 6168,
+     "npc": "Roogug",
+     "zone": "Razorfen Kraul"
+    }
+   ]
+  },
+  "274152": {
+   "name": "Roogug's Severed Head",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 6168,
+     "npc": "Roogug",
+     "zone": "Razorfen Kraul"
+    }
+   ]
+  },
+  "274155": {
+   "name": "Geomancer Headdress",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 6168,
+     "npc": "Roogug",
+     "zone": "Razorfen Kraul"
+    }
+   ]
+  },
+  "274158": {
+   "name": "Death Prophet Spine",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 4424,
+     "npc": "Aggem Thorncurse",
+     "zone": "Razorfen Kraul"
+    }
+   ]
+  },
+  "274159": {
+   "name": "Thorncursed Grips",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 4424,
+     "npc": "Aggem Thorncurse",
+     "zone": "Razorfen Kraul"
+    }
+   ]
+  },
+  "274161": {
+   "name": "Quillord Mail Leggings",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 4420,
+     "npc": "Overlord Ramtusk",
+     "zone": "Razorfen Kraul"
+    }
+   ]
+  },
+  "274290": {
+   "name": "Painwalker Buckler",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 3983,
+     "npc": "Interrogator Vishas",
+     "zone": "Scarlet Monastery"
+    }
+   ]
+  },
+  "274291": {
+   "name": "Polished Skullcap",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 4543,
+     "npc": "Bloodmage Thalnos",
+     "zone": "Scarlet Monastery"
+    }
+   ]
+  },
+  "274294": {
+   "name": "Library Walkers",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 6487,
+     "npc": "Arcanist Doan",
+     "zone": "Scarlet Monastery"
+    }
+   ]
+  },
+  "275290": {
+   "name": "Stormforged Protector",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 94003,
+     "quest": "The Skybreaker Bulwark",
+     "minLevel": 10,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "276720": {
+   "name": "Criminal's Pauldrons",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 549,
+     "quest": "WANTED: Syndicate Personnel",
+     "minLevel": 17,
+     "faction": "horde",
+     "zone": "Hillsbrad Foothills"
+    }
+   ]
+  },
+  "276722": {
+   "name": "Gnoll Shackles",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 442,
+     "quest": "Assault on Fenris Isle",
+     "minLevel": 10,
+     "faction": "horde",
+     "zone": "Silverpine Forest"
+    }
+   ]
+  },
+  "276723": {
+   "name": "Wise Gauntlets",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 451,
+     "quest": "A Recipe For Death (3/3)",
+     "minLevel": 9,
+     "faction": "horde",
+     "zone": "Silverpine Forest"
+    }
+   ]
+  },
+  "276724": {
+   "name": "Trophy Belt",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 501,
+     "quest": "Elixir of Pain (1/2)",
+     "minLevel": 21,
+     "faction": "horde",
+     "zone": "Hillsbrad Foothills"
+    }
+   ]
+  },
+  "276727": {
+   "name": "Glistening Stompers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 515,
+     "quest": "Elixir of Agony (3/5)",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "Undercity"
+    }
+   ]
+  },
+  "276887": {
+   "name": "Big Bad Basher",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97005,
+     "quest": "Chol'aruk the Ravener (A)",
+     "minLevel": 15,
+     "faction": "alliance",
+     "zone": "The Barrens"
+    },
+    {
+     "type": "quest",
+     "questId": 97003,
+     "quest": "Chol'aruk the Ravener (H)",
+     "minLevel": 15,
+     "faction": "horde",
+     "zone": "The Barrens"
+    }
+   ]
+  },
+  "276888": {
+   "name": "Quilboar Toothpick",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97005,
+     "quest": "Chol'aruk the Ravener (A)",
+     "minLevel": 15,
+     "faction": "alliance",
+     "zone": "The Barrens"
+    },
+    {
+     "type": "quest",
+     "questId": 97003,
+     "quest": "Chol'aruk the Ravener (H)",
+     "minLevel": 15,
+     "faction": "horde",
+     "zone": "The Barrens"
+    }
+   ]
+  },
+  "276889": {
+   "name": "Thornwoven Shield",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97005,
+     "quest": "Chol'aruk the Ravener (A)",
+     "minLevel": 15,
+     "faction": "alliance",
+     "zone": "The Barrens"
+    },
+    {
+     "type": "quest",
+     "questId": 97003,
+     "quest": "Chol'aruk the Ravener (H)",
+     "minLevel": 15,
+     "faction": "horde",
+     "zone": "The Barrens"
+    }
+   ]
+  },
+  "276895": {
+   "name": "Transformative Cocoon",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96261,
+     "quest": "The Broodmother",
+     "minLevel": 23,
+     "faction": "horde",
+     "zone": "Mulgore"
+    }
+   ]
+  },
+  "276898": {
+   "name": "Salve and Salvation",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96800,
+     "quest": "Past Due",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Alterac Mountains"
+    }
+   ]
+  },
+  "276899": {
+   "name": "Knucklebound Thimble",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96800,
+     "quest": "Past Due",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Alterac Mountains"
+    }
+   ]
+  },
+  "277203": {
+   "name": "Scholarly Pendant",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 78150,
+     "quest": "Friend of the Library",
+     "minLevel": null,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "277204": {
+   "name": "Erudite's Amulet",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 78150,
+     "quest": "Friend of the Library",
+     "minLevel": null,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "277205": {
+   "name": "Cloak of the Divine Storm",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 78093,
+     "quest": "Return to Delgren",
+     "minLevel": 22,
+     "faction": "both",
+     "zone": "Ashenvale"
+    }
+   ]
+  },
+  "277206": {
+   "name": "Brilliant Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95534,
+     "quest": "Strahnbrad Mystery",
+     "minLevel": 25,
+     "faction": "both",
+     "zone": "Alterac Mountains"
+    }
+   ]
+  },
+  "277207": {
+   "name": "Well-Weathered Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 78830,
+     "quest": "Terror of the Desert Skies",
+     "minLevel": 26,
+     "faction": "both",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "277208": {
+   "name": "Determined Band",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 79242,
+     "quest": "No Honor Among Thieves",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "277209": {
+   "name": "Ponderous Loop",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 78830,
+     "quest": "Terror of the Desert Skies",
+     "minLevel": 26,
+     "faction": "both",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "277213": {
+   "name": "Dro'zem's Tunic",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 214456,
+     "npc": "Dro'zem the Blasphemous",
+     "zone": "Redridge Mountains",
+     "rare": true
+    }
+   ]
+  },
+  "277214": {
+   "name": "Crusty Cuffs",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97048,
+     "quest": "Returning to Port",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "277218": {
+   "name": "Incinerator's Boots",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95999,
+     "quest": "Wanted: Insinerator Gar'im",
+     "minLevel": 16,
+     "faction": "alliance",
+     "zone": "Redridge Mountains"
+    }
+   ]
+  },
+  "277223": {
+   "name": "Traveled Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 79242,
+     "quest": "No Honor Among Thieves",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "277224": {
+   "name": "Kurzen Headshrinker's Cinch",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97048,
+     "quest": "Returning to Port",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "277226": {
+   "name": "Disjointed Shoes",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95999,
+     "quest": "Wanted: Insinerator Gar'im",
+     "minLevel": 16,
+     "faction": "alliance",
+     "zone": "Redridge Mountains"
+    }
+   ]
+  },
+  "277232": {
+   "name": "Jailer's Discarded Chain",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97048,
+     "quest": "Returning to Port",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "277234": {
+   "name": "Alacritous Treads",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95999,
+     "quest": "Wanted: Insinerator Gar'im",
+     "minLevel": 16,
+     "faction": "alliance",
+     "zone": "Redridge Mountains"
+    }
+   ]
+  },
+  "277247": {
+   "name": "Mug of Muddled Memories",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98545,
+     "quest": "Leonid's Letter",
+     "minLevel": 10,
+     "faction": "both",
+     "zone": "Tirisfal Glades"
+    }
+   ]
+  },
+  "277258": {
+   "name": "Crest of Elucidation",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 82208,
+     "quest": "Greater Friend of the Library (2/2)",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "277260": {
+   "name": "Researcher's Night Light",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 82208,
+     "quest": "Greater Friend of the Library (2/2)",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "277286": {
+   "name": "Encroacher's Claim",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97250,
+     "quest": "Wrongly Blamed, Justly Corrected",
+     "minLevel": 18,
+     "faction": "horde",
+     "zone": "The Barrens"
+    }
+   ]
+  },
+  "277288": {
+   "name": "Pathfinder's Clearway",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97250,
+     "quest": "Wrongly Blamed, Justly Corrected",
+     "minLevel": 18,
+     "faction": "horde",
+     "zone": "The Barrens"
+    }
+   ]
+  },
+  "277289": {
+   "name": "Traveler's Shawl",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97250,
+     "quest": "Wrongly Blamed, Justly Corrected",
+     "minLevel": 18,
+     "faction": "horde",
+     "zone": "The Barrens"
+    }
+   ]
+  },
+  "277514": {
+   "name": "Aka'rai's Tattered Vestments",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97265,
+     "quest": "Hate the Hatefury",
+     "minLevel": 28,
+     "faction": "horde",
+     "zone": "Desolace"
+    }
+   ]
+  },
+  "277515": {
+   "name": "Dagger of Deals",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97265,
+     "quest": "Hate the Hatefury",
+     "minLevel": 28,
+     "faction": "horde",
+     "zone": "Desolace"
+    }
+   ]
+  },
+  "277988": {
+   "name": "Hoof-Holstered Blade",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 76240,
+     "quest": "Stalk With The Earthmother",
+     "minLevel": 4,
+     "faction": "horde",
+     "zone": "Thunder Bluff"
+    }
+   ]
+  },
+  "278002": {
+   "name": "Valley Cosh",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 76240,
+     "quest": "Stalk With The Earthmother",
+     "minLevel": 4,
+     "faction": "horde",
+     "zone": "Thunder Bluff"
+    }
+   ]
+  },
+  "278567": {
+   "name": "Stromgarde Hood",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92867,
+     "quest": "Ground to Keep",
+     "minLevel": 32,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "279388": {
+   "name": "Brewer's Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98071,
+     "quest": "Brewer's Trade",
+     "minLevel": 23,
+     "faction": "alliance",
+     "zone": "Hillsbrad Foothills"
+    }
+   ]
+  },
+  "279835": {
+   "name": "Vine Pruner's Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92456,
+     "quest": "A Green Sample",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279836": {
+   "name": "Thorn Protecting Girdle",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92456,
+     "quest": "A Green Sample",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279837": {
+   "name": "Fallen Guard's Pendant",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92457,
+     "quest": "Starving Arcane",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279838": {
+   "name": "Arcane Infused Rod",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92457,
+     "quest": "Starving Arcane",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279839": {
+   "name": "Spellguard Pauldrons",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92458,
+     "quest": "Heart of Disruption [Alliance]",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279840": {
+   "name": "Renewing Footpads",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92458,
+     "quest": "Heart of Disruption [Alliance]",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279841": {
+   "name": "Defender of Dalaran",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92458,
+     "quest": "Heart of Disruption [Alliance]",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279842": {
+   "name": "Battle Spaulders",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96984,
+     "quest": "Heart of Disruption [Horde]",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279843": {
+   "name": "Enchanted Sandals",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96984,
+     "quest": "Heart of Disruption [Horde]",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279844": {
+   "name": "Striking Staff",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96984,
+     "quest": "Heart of Disruption [Horde]",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279845": {
+   "name": "Solid Gold Band",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96987,
+     "quest": "Opportunistic Education",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279846": {
+   "name": "Larcenist's Belt",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96987,
+     "quest": "Opportunistic Education",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279848": {
+   "name": "Construct Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96988,
+     "quest": "Source of Power",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279849": {
+   "name": "Runebound Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92489,
+     "quest": "Power Overwhelming",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "City of Dalaran"
+    }
+   ]
+  },
+  "279865": {
+   "name": "Grave Shroud",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95250,
+     "quest": "Abominable Creatures",
+     "minLevel": 16,
+     "faction": "alliance",
+     "zone": "Ruins of Lordaeron"
+    },
+    {
+     "type": "quest",
+     "questId": 97290,
+     "quest": "Unending Torment (3/5)",
+     "minLevel": 16,
+     "faction": "horde",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "279867": {
+   "name": "Slain Baron's Signet",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95250,
+     "quest": "Abominable Creatures",
+     "minLevel": 16,
+     "faction": "alliance",
+     "zone": "Ruins of Lordaeron"
+    },
+    {
+     "type": "quest",
+     "questId": 97290,
+     "quest": "Unending Torment (3/5)",
+     "minLevel": 16,
+     "faction": "horde",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "279868": {
+   "name": "Duty Bound Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95195,
+     "quest": "Bloodied Insignia",
+     "minLevel": 16,
+     "faction": "alliance",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "279869": {
+   "name": "Remembrance Armor",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95195,
+     "quest": "Bloodied Insignia",
+     "minLevel": 16,
+     "faction": "alliance",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "279870": {
+   "name": "Tarnished Locket",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95161,
+     "quest": "Remember That I Love You (2/2)",
+     "minLevel": 15,
+     "faction": "alliance",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "279874": {
+   "name": "The Stitcher",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92421,
+     "quest": "Light's Justice",
+     "minLevel": 15,
+     "faction": "horde",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "279875": {
+   "name": "Spare Part Bindings",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92421,
+     "quest": "Light's Justice",
+     "minLevel": 15,
+     "faction": "horde",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "279877": {
+   "name": "Blight Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95216,
+     "quest": "The New Plague",
+     "minLevel": 16,
+     "faction": "horde",
+     "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "279888": {
+   "name": "Tidesoaked Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95776,
+     "quest": "The Only Good Brinescale...",
+     "minLevel": null,
+     "faction": "horde",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "279889": {
+   "name": "Naga Priestess's Mantle",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95776,
+     "quest": "The Only Good Brinescale...",
+     "minLevel": null,
+     "faction": "horde",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "279895": {
+   "name": "Ironforge Greathammer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96393,
+     "quest": "Old Ironforge Incursion",
+     "minLevel": 9,
+     "faction": "alliance",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "279897": {
+   "name": "Dusty Belt",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96394,
+     "quest": "The Restless Dead",
+     "minLevel": 10,
+     "faction": "alliance",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "279898": {
+   "name": "Dwarven Tome",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96403,
+     "quest": "Important Heirlooms",
+     "minLevel": 10,
+     "faction": "alliance",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "279899": {
+   "name": "Catacomb Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96395,
+     "quest": "An Ancient Grudge",
+     "minLevel": 10,
+     "faction": "alliance",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "279900": {
+   "name": "Deepgrave Trousers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96395,
+     "quest": "An Ancient Grudge",
+     "minLevel": 10,
+     "faction": "alliance",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "280095": {
+   "name": "Cryptwalker Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96394,
+     "quest": "The Restless Dead",
+     "minLevel": 10,
+     "faction": "alliance",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "280096": {
+   "name": "Tomb Robber's Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96403,
+     "quest": "Important Heirlooms",
+     "minLevel": 10,
+     "faction": "alliance",
+     "zone": "Hall of Thanes"
+    }
+   ]
+  },
+  "280505": {
+   "name": "Old Leather Jacket",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92867,
+     "quest": "Ground to Keep",
+     "minLevel": 32,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "280604": {
+   "name": "Rage of the Storm",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96016,
+     "quest": "The Tempest's Weapons",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Arathi Highlands"
+    },
+    {
+     "type": "quest",
+     "questId": 79442,
+     "quest": "The Tempest's Weapons",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Thousand Needles"
+    }
+   ]
+  },
+  "280605": {
+   "name": "Tidebringer's Claw",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96016,
+     "quest": "The Tempest's Weapons",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Arathi Highlands"
+    },
+    {
+     "type": "quest",
+     "questId": 79442,
+     "quest": "The Tempest's Weapons",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Thousand Needles"
+    }
+   ]
+  },
+  "280607": {
+   "name": "Lightning's Grasp",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96016,
+     "quest": "The Tempest's Weapons",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Arathi Highlands"
+    },
+    {
+     "type": "quest",
+     "questId": 79442,
+     "quest": "The Tempest's Weapons",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Thousand Needles"
+    }
+   ]
+  },
+  "280696": {
+   "name": "Elementalist's Guard",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96016,
+     "quest": "The Tempest's Weapons",
+     "minLevel": 30,
+     "faction": "both",
+     "zone": "Arathi Highlands"
+    }
+   ]
+  },
+  "280766": {
+   "name": "Satchel of Potions",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95697,
+     "quest": "Changing Tastes",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "Excavation Site: Wetlands"
+    },
+    {
+     "type": "quest",
+     "questId": 95809,
+     "quest": "Heartwoven",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "280805": {
+   "name": "Serrated Raptor Claw",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95697,
+     "quest": "Changing Tastes",
+     "minLevel": 24,
+     "faction": "horde",
+     "zone": "Excavation Site: Wetlands"
+    }
+   ]
+  },
+  "281250": {
+   "name": "Forest Oracle's Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 940,
+     "quest": "Teldrassil",
+     "minLevel": 6,
+     "faction": "alliance",
+     "zone": "Teldrassil"
+    }
+   ]
+  },
+  "281251": {
+   "name": "Courier's Wristguards",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 86574,
+     "quest": "Stonetalon Supply Run",
+     "minLevel": 20,
+     "faction": "alliance",
+     "zone": "Stonetalon Mountains"
+    }
+   ]
+  },
+  "281252": {
+   "name": "Harpy Claw Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 86576,
+     "quest": "Bloodfury Trinkets",
+     "minLevel": 18,
+     "faction": "horde",
+     "zone": "Stonetalon Mountains"
+    }
+   ]
+  },
+  "281253": {
+   "name": "Mountaineer's Greataxe",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 86585,
+     "quest": "Banner of the Fallen",
+     "minLevel": 10,
+     "faction": "alliance",
+     "zone": "Loch Modan"
+    }
+   ]
+  },
+  "281254": {
+   "name": "Invader's Mace",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 86585,
+     "quest": "Banner of the Fallen",
+     "minLevel": 10,
+     "faction": "alliance",
+     "zone": "Loch Modan"
+    }
+   ]
+  },
+  "281256": {
+   "name": "Repurposed Hair Band",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 86614,
+     "quest": "Silver of the Waves",
+     "minLevel": 13,
+     "faction": "alliance",
+     "zone": "Loch Modan"
+    }
+   ]
+  },
+  "281257": {
+   "name": "Daggerfang's Daggerfang",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 86758,
+     "quest": "Twisting the Knife",
+     "minLevel": 12,
+     "faction": "alliance",
+     "zone": "Loch Modan"
+    }
+   ]
+  },
+  "281258": {
+   "name": "Essene's Hope",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 88758,
+     "quest": "Sentiments of the Lost",
+     "minLevel": 28,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "281265": {
+   "name": "Roadwatcher's Confidence",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95981,
+     "quest": "Watching the Roads",
+     "minLevel": 10,
+     "faction": "horde",
+     "zone": "Silverpine Forest"
+    }
+   ]
+  },
+  "281267": {
+   "name": "Raptorscale Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97223,
+     "quest": "Bloodtalon Matriarch",
+     "minLevel": 5,
+     "faction": "horde",
+     "zone": "Durotar"
+    }
+   ]
+  },
+  "281269": {
+   "name": "Mogra's Friendship Bracelet",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97326,
+     "quest": "Rocks to Rests",
+     "minLevel": 5,
+     "faction": "horde",
+     "zone": "Orgrimmar"
+    }
+   ]
+  },
+  "281270": {
+   "name": "Thra's Friendship Bracelet",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97326,
+     "quest": "Rocks to Rests",
+     "minLevel": 5,
+     "faction": "horde",
+     "zone": "Orgrimmar"
+    }
+   ]
+  },
+  "281271": {
+   "name": "Puk's Friendship Bracelet",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97326,
+     "quest": "Rocks to Rests",
+     "minLevel": 5,
+     "faction": "horde",
+     "zone": "Orgrimmar"
+    }
+   ]
+  },
+  "281272": {
+   "name": "Brog's Friendship Bracelet",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97326,
+     "quest": "Rocks to Rests",
+     "minLevel": 5,
+     "faction": "horde",
+     "zone": "Orgrimmar"
+    }
+   ]
+  },
+  "281273": {
+   "name": "Migi's Friendship Bracelet",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97326,
+     "quest": "Rocks to Rests",
+     "minLevel": 5,
+     "faction": "horde",
+     "zone": "Orgrimmar"
+    }
+   ]
+  },
+  "281274": {
+   "name": "Makeshift Stormcaller",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97282,
+     "quest": "Stormy Potential",
+     "minLevel": 7,
+     "faction": "horde",
+     "zone": "Durotar"
+    }
+   ]
+  },
+  "281283": {
+   "name": "Patchwing Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97558,
+     "quest": "Hides for the Forsaken",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Tirisfal Glades"
+    }
+   ]
+  },
+  "281284": {
+   "name": "Howlhide Vest",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97558,
+     "quest": "Hides for the Forsaken",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Tirisfal Glades"
+    }
+   ]
+  },
+  "281285": {
+   "name": "Finscale Soles",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97558,
+     "quest": "Hides for the Forsaken",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Tirisfal Glades"
+    }
+   ]
+  },
+  "281289": {
+   "name": "Swordfeather Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98025,
+     "quest": "WANTED: Jai'vhanel",
+     "minLevel": 15,
+     "faction": "alliance",
+     "zone": "Darkshore"
+    }
+   ]
+  },
+  "281290": {
+   "name": "Replica Crescent Necklace",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98027,
+     "quest": "Gleaming Crescent Necklace",
+     "minLevel": 22,
+     "faction": "alliance",
+     "zone": "Ashenvale"
+    }
+   ]
+  },
+  "281291": {
+   "name": "Mathystra Channeling Orb",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98028,
+     "quest": "Baron Marinous",
+     "minLevel": 17,
+     "faction": "alliance",
+     "zone": "Darkshore"
+    }
+   ]
+  },
+  "281292": {
+   "name": "Onu's Patience",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98028,
+     "quest": "Baron Marinous",
+     "minLevel": 17,
+     "faction": "alliance",
+     "zone": "Darkshore"
+    }
+   ]
+  },
+  "281294": {
+   "name": "Expended Apothecary Vial",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98095,
+     "quest": "Valuable Vantages",
+     "minLevel": 19,
+     "faction": "horde",
+     "zone": "Hillsbrad Foothills"
+    }
+   ]
+  },
+  "281295": {
+   "name": "Pelt Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98156,
+     "quest": "Packaged Pristine Pelts",
+     "minLevel": 27,
+     "faction": "alliance",
+     "zone": "Feralas"
+    }
+   ]
+  },
+  "281297": {
+   "name": "Royal Dagger",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98191,
+     "quest": "A Friend of the Family (2/2)",
+     "minLevel": 20,
+     "faction": "alliance",
+     "zone": "Stormwind City"
+    }
+   ]
+  },
+  "281304": {
+   "name": "Prospector's Signet",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98216,
+     "quest": "Understanding Our Present",
+     "minLevel": 23,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "281305": {
+   "name": "Excavation Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98216,
+     "quest": "Understanding Our Present",
+     "minLevel": 23,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "281306": {
+   "name": "Flamescarred Spellbook",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98223,
+     "quest": "Old Habits",
+     "minLevel": 23,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "281307": {
+   "name": "Dragonmaw Buckler",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98223,
+     "quest": "Old Habits",
+     "minLevel": 23,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "281309": {
+   "name": "Razormaw Shorts",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98283,
+     "quest": "Carnage",
+     "minLevel": 22,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "281310": {
+   "name": "Carnage Trousers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98283,
+     "quest": "Carnage",
+     "minLevel": 22,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "281312": {
+   "name": "Fallen Dragon's Scepter",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98297,
+     "quest": "Stopping the Cycle",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "281314": {
+   "name": "Subdued Dragon's Fang",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98297,
+     "quest": "Stopping the Cycle",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "281315": {
+   "name": "Foulfur Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98298,
+     "quest": "Arugal's Folly",
+     "minLevel": 9,
+     "faction": "horde",
+     "zone": "Silverpine Forest"
+    }
+   ]
+  },
+  "281318": {
+   "name": "Bouquet of Auberdine Flowers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98208,
+     "quest": "Bloom of the Heavens (1/2)",
+     "minLevel": 22,
+     "faction": "both",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "281319": {
+   "name": "Golem War Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98310,
+     "quest": "Gleaning Our Future",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "281320": {
+   "name": "Rune-Etched Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98310,
+     "quest": "Gleaning Our Future",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "281321": {
+   "name": "Giantstone Medallion",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98310,
+     "quest": "Gleaning Our Future",
+     "minLevel": 24,
+     "faction": "alliance",
+     "zone": "Wetlands"
+    }
+   ]
+  },
+  "281634": {
+   "name": "Field Researcher's Loop",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 79536,
+     "quest": "Greater Friend of the Library (1/2)",
+     "minLevel": 20,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "281635": {
+   "name": "Philanthropist's Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 79536,
+     "quest": "Greater Friend of the Library (1/2)",
+     "minLevel": 20,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "281673": {
+   "name": "Loop of Sacrifice",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95885,
+     "quest": "The Offering of Blood",
+     "minLevel": 20,
+     "faction": "horde",
+     "zone": "Silverpine Forest"
+    }
+   ]
+  },
+  "281993": {
+   "name": "Gnoll Hide Boots",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 100,
+     "npc": "Gruff Swiftbite",
+     "zone": "Elwynn Forest",
+     "rare": true
+    }
+   ]
+  },
+  "282064": {
+   "name": "Tim's Lost Rib",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98545,
+     "quest": "Leonid's Letter",
+     "minLevel": 10,
+     "faction": "both",
+     "zone": "Tirisfal Glades"
+    }
+   ]
+  },
+  "282284": {
+   "name": "Webwood Slicer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 98403,
+     "quest": "Twisted Hatred (2/2)",
+     "minLevel": 4,
+     "faction": "alliance",
+     "zone": "Teldrassil"
+    }
+   ]
+  },
+  "282636": {
+   "name": "Silkspun Gloves",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14266,
+     "npc": "Shanda the Spinner",
+     "zone": "Loch Modan",
+     "rare": true
+    }
+   ]
+  },
+  "282639": {
+   "name": "Emogg's \"Crusher\"",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14267,
+     "npc": "Emogg the Crusher",
+     "zone": "Loch Modan",
+     "rare": true
+    }
+   ]
+  },
+  "282654": {
+   "name": "Gnawed Bone",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14425,
+     "npc": "Gnawbone",
+     "zone": "Wetlands",
+     "rare": true
+    }
+   ]
+  },
+  "282711": {
+   "name": "Naga Maiden's Gown",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14277,
+     "npc": "Lady Zephris",
+     "zone": "Hillsbrad Foothills",
+     "rare": true
+    }
+   ]
+  },
+  "282716": {
+   "name": "Imbued Scaled Cuffs",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14276,
+     "npc": "Scargil",
+     "zone": "Hillsbrad Foothills",
+     "rare": true
+    }
+   ]
+  },
+  "282721": {
+   "name": "Gnoll Shaman's Staff",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14278,
+     "npc": "Ro'Bark",
+     "zone": "Hillsbrad Foothills",
+     "rare": true
+    }
+   ]
+  },
+  "283253": {
+   "name": "Denmother's Hide",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14222,
+     "npc": "Araga",
+     "zone": "Alterac Mountains",
+     "rare": true
+    }
+   ]
+  },
+  "283254": {
+   "name": "Heart of Alterac",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 2258,
+     "npc": "Stone Fury",
+     "zone": "Alterac Mountains",
+     "rare": true
+    }
+   ]
+  },
+  "283259": {
+   "name": "Bearhide Vicegrips",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 12432,
+     "npc": "Old Vicejaw",
+     "zone": "Silverpine Forest",
+     "rare": true
+    }
+   ]
+  },
+  "283361": {
+   "name": "Gorefang's Runners",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 12431,
+     "npc": "Gorefang",
+     "zone": "Silverpine Forest",
+     "rare": true
+    }
+   ]
+  },
+  "283460": {
+   "name": "Decaying Flesh Belt",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 271080,
+     "npc": "Blightsculler",
+     "zone": "Tirisfal Glades",
+     "rare": true
+    }
+   ]
+  },
+  "283462": {
+   "name": "Bayne's Bite",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 10356,
+     "npc": "Bayne",
+     "zone": "Tirisfal Glades",
+     "rare": true
+    }
+   ]
+  },
+  "283471": {
+   "name": "Fellicent's Bindings",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 10358,
+     "npc": "Fellicent's Shade",
+     "zone": "Tirisfal Glades",
+     "rare": true
+    }
+   ]
+  },
+  "283473": {
+   "name": "Batwing Bindings",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 10357,
+     "npc": "Ressan the Needler",
+     "zone": "Tirisfal Glades",
+     "rare": true
+    }
+   ]
+  },
+  "283480": {
+   "name": "Cracked Carapace Hauberk",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 10359,
+     "npc": "Sri'skulk",
+     "zone": "Tirisfal Glades",
+     "rare": true
+    }
+   ]
+  },
+  "284165": {
+   "name": "Duskstalker's Hide",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14430,
+     "npc": "Duskstalker",
+     "zone": "Teldrassil",
+     "rare": true
+    }
+   ]
+  },
+  "284166": {
+   "name": "Gnarlpine War Staff",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14429,
+     "npc": "Grimmaw",
+     "zone": "Teldrassil",
+     "rare": true
+    }
+   ]
+  },
+  "284167": {
+   "name": "Blackmoss Robes",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 3535,
+     "npc": "Blackmoss the Fetid",
+     "zone": "Teldrassil",
+     "rare": true
+    }
+   ]
+  },
+  "284173": {
+   "name": "Impcaster's Staff",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 2191,
+     "npc": "Licillin",
+     "zone": "Darkshore",
+     "rare": true
+    }
+   ]
+  },
+  "284174": {
+   "name": "Serrated Shadowclaw",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 2175,
+     "npc": "Shadowclaw",
+     "zone": "Darkshore",
+     "rare": true
+    }
+   ]
+  },
+  "284177": {
+   "name": "Sinslayer's Smasher",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 7017,
+     "npc": "Lord Sinslayer",
+     "zone": "Darkshore",
+     "rare": true
+    }
+   ]
+  },
+  "284185": {
+   "name": "Greymist Gauntlets",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 7015,
+     "npc": "Flagglemurk the Cruel",
+     "zone": "Darkshore",
+     "rare": true
+    }
+   ]
+  },
+  "284286": {
+   "name": "Battleguard Captain's Sticker",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5824,
+     "npc": "Captain Flat Tusk",
+     "zone": "Durotar",
+     "rare": true
+    }
+   ]
+  },
+  "284287": {
+   "name": "Felweaver's Staff",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5822,
+     "npc": "Felweaver Scornn",
+     "zone": "Durotar",
+     "rare": true
+    }
+   ]
+  },
+  "284320": {
+   "name": "Flayed Scorpid Bands",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5823,
+     "npc": "Death Flayer",
+     "zone": "Durotar",
+     "rare": true
+    }
+   ]
+  },
+  "284321": {
+   "name": "Centaur Raider's Axe",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5808,
+     "npc": "Warlord Kolkanis",
+     "zone": "Durotar",
+     "rare": true
+    }
+   ]
+  },
+  "284322": {
+   "name": "Invading Marine's Shield",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5809,
+     "npc": "Watch Commander Zalaphil",
+     "zone": "Durotar",
+     "rare": true
+    }
+   ]
+  },
+  "284323": {
+   "name": "Geolord's Mitts",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5826,
+     "npc": "Geolord Mottle",
+     "zone": "Durotar",
+     "rare": true
+    }
+   ]
+  },
+  "284361": {
+   "name": "Venture Company Legguards",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5787,
+     "npc": "Enforcer Emilgund",
+     "zone": "Mulgore",
+     "rare": true
+    }
+   ]
+  },
+  "284382": {
+   "name": "Budding Leaf Belt",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 4030,
+     "npc": "Vengeful Ancient",
+     "zone": "Stonetalon Mountains",
+     "rare": true
+    }
+   ]
+  },
+  "284383": {
+   "name": "Faerie Dragon's Skin",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 4066,
+     "npc": "Nal'taszar",
+     "zone": "Stonetalon Mountains",
+     "rare": true
+    }
+   ]
+  },
+  "284386": {
+   "name": "Whipfang's Skinsearer",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5932,
+     "npc": "Taskmaster Whipfang",
+     "zone": "Stonetalon Mountains",
+     "rare": true
+    }
+   ]
+  },
+  "284400": {
+   "name": "Foreman's Helm",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5931,
+     "npc": "Foreman Rigger",
+     "zone": "Stonetalon Mountains",
+     "rare": true
+    }
+   ]
+  },
+  "284715": {
+   "name": "First Mate Band",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 646,
+     "npc": "Mr. Smite",
+     "zone": "Deadmines"
+    }
+   ]
+  },
+  "285043": {
+   "name": "Snarling Fang",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5356,
+     "npc": "Snarler",
+     "zone": "Feralas",
+     "rare": true
+    }
+   ]
+  },
+  "285190": {
+   "name": "Wyvern Heart Band",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5934,
+     "npc": "Heartrazor",
+     "zone": "Thousand Needles",
+     "rare": true
+    }
+   ]
+  },
+  "285212": {
+   "name": "Foulmountain Family Hammer",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14426,
+     "npc": "Harb Foulmountain",
+     "zone": "Thousand Needles",
+     "rare": true
+    }
+   ]
+  },
+  "285228": {
+   "name": "Mystmane's Pelt",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 259388,
+     "npc": "Mystmane",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "285238": {
+   "name": "Chipped Spellstaff",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 255887,
+     "npc": "Slydris",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "285254": {
+   "name": "Scout Ranger's Gloves",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 259398,
+     "npc": "Galemender Delanea",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "285255": {
+   "name": "Thendal Watcher's Gloves",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 259398,
+     "npc": "Galemender Delanea",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "285264": {
+   "name": "Skyseer's Slippers",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 259394,
+     "npc": "Snapbeak the Quick",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "285269": {
+   "name": "Thendal Watcher's Boots",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 259394,
+     "npc": "Snapbeak the Quick",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "285272": {
+   "name": "Skyseer's Belt",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 256492,
+     "npc": "Fernfeather",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "285273": {
+   "name": "Scout Ranger's Belt",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 256492,
+     "npc": "Fernfeather",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "285274": {
+   "name": "Thendal Watcher's Belt",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 256492,
+     "npc": "Fernfeather",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "285328": {
+   "name": "Taurenbane's Family Cleaver",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5859,
+     "npc": "Hagg Taurenbane",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "285329": {
+   "name": "Raptor Hide Cloak",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5842,
+     "npc": "Takk the Leaper",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "285330": {
+   "name": "Signet of the Zhevra",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5831,
+     "npc": "Swiftmane",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "285331": {
+   "name": "Mark of the Pack Leader",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5828,
+     "npc": "Humar the Pridelord",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "285338": {
+   "name": "Kodohide Legguards",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5827,
+     "npc": "Brontus",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "285339": {
+   "name": "Centaur War Chain",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5841,
+     "npc": "Rocklance",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "285345": {
+   "name": "Feather Padded Treads",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5830,
+     "npc": "Sister Rathtalon",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "285348": {
+   "name": "Alliance Outrunner Healing Rod",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5799,
+     "npc": "Hannah Bladeleaf",
+     "zone": null,
+     "rare": true
+    }
+   ]
+  },
+  "285350": {
+   "name": "Alliance Outrunner Staff",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5800,
+     "npc": "Marcus Bel",
+     "zone": null,
+     "rare": true
+    }
+   ]
+  },
+  "285351": {
+   "name": "Foreman's Enforcers",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5835,
+     "npc": "Foreman Grills",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "286426": {
+   "name": "Honorbound Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93739,
+     "quest": "Exploring the Horde",
+     "minLevel": 7,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "286427": {
+   "name": "Cloak of the Honored Guest",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93963,
+     "quest": "Exploring the Alliance",
+     "minLevel": 7,
+     "faction": "both",
+     "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "286533": {
+   "name": "Cheetah Hide Grips",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5865,
+     "npc": "Dishu",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "286534": {
+   "name": "Silithid Piercer",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 3253,
+     "npc": "Silithid Harvester",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "286535": {
+   "name": "Sludge-Stained Band",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 3295,
+     "npc": "Sludge Beast",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "286536": {
+   "name": "Heckler's Hide",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5829,
+     "npc": "Snort the Heckler",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "286537": {
+   "name": "Thunderstomp's Horn",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5832,
+     "npc": "Thunderstomp",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "286639": {
+   "name": "Ambassador's Bloodrobes",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7895,
+     "npc": "Ambassador Bloodrage",
+     "zone": "Razorfen Downs"
+    }
+   ]
+  },
+  "286730": {
+   "name": "Pristine Orcish Dagger",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 99052,
+     "quest": "Threat from Below",
+     "minLevel": 10,
+     "faction": "horde",
+     "zone": "Durotar"
+    }
+   ]
+  },
+  "286731": {
+   "name": "Aggor's Refitted Belt",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 99052,
+     "quest": "Threat from Below",
+     "minLevel": 10,
+     "faction": "horde",
+     "zone": "Durotar"
+    }
+   ]
+  },
+  "286742": {
+   "name": "Riptear's Cleaver",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 99156,
+     "quest": "Rear Guard Patrol (2/2)",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Tirisfal Glades"
+    }
+   ]
+  },
+  "286744": {
+   "name": "Thrice-Stitched Flesh",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 99156,
+     "quest": "Rear Guard Patrol (2/2)",
+     "minLevel": 6,
+     "faction": "both",
+     "zone": "Tirisfal Glades"
+    }
+   ]
+  },
+  "286745": {
+   "name": "Furlfeather Ring",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 276194,
+     "npc": "Dustwind Eggtender",
+     "zone": "Durotar",
+     "rare": true
+    }
+   ]
+  },
+  "286751": {
+   "name": "Ghostfang's Steps",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 276111,
+     "npc": "Ghostfang",
+     "zone": "Dun Morogh",
+     "rare": true
+    }
+   ]
+  },
+  "286752": {
+   "name": "Igleggings",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 276108,
+     "npc": "Thornstarter Igleg",
+     "zone": "Mulgore",
+     "rare": true
+    }
+   ]
+  },
+  "286754": {
+   "name": "Ukta's Conduit",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 276105,
+     "npc": "Stormherald Ukta",
+     "zone": "Mulgore",
+     "rare": true
+    }
+   ]
+  }
+ }
+}

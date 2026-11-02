@@ -5,6 +5,7 @@
 //                        learned from data/recipes.json (lib/recipes.js)
 //   drop / boss / quest / vendor   QuestieDB (Classic sources, "classic-assumed")
 //   quest (new items)    foreverchanges.pro (data/item-sources-fc.json)
+//   new items nothing else knows   AllTheThings (data/item-sources-att.json)
 //   hand-reported        data/item-sources.json
 //
 // Facts about a quest (level, minimum level, faction, zone, dungeon) come from
@@ -50,6 +51,7 @@ function open(cacheDir, build) {
   const fc = readJSON('data/item-sources-fc.json', {});
   const fcItems = fc.items || {};
   const fcQuests = fc.quests || {};
+  const attItems = readJSON('data/item-sources-att.json', {}).items || {};
   const bare = z => (z || '').replace(/^The /, '').toLowerCase();
   const dungeonRange = {};
   Object.entries(fc.dungeons || {}).forEach(([z, r]) => { dungeonRange[bare(z)] = r; });
@@ -107,6 +109,14 @@ function open(cacheDir, build) {
     return out;
   }
 
+  // AllTheThings' source in the shape the others have.
+  function attSource(a) {
+    const zone = a.zone || null;
+    if (a.type === 'quest') return fcFacts({ type: 'quest', quest: a.quest || ('#' + a.questId), questId: a.questId, requiredLevel: a.minLevel || undefined, zone, faction: a.faction, confidence: 'community-untested', ref: 'https://www.wowhead.com/forever/quest=' + a.questId });
+    if (a.type === 'vendor') return { type: 'vendor', npc: a.npc, zone: zone && DARKMOON.test(a.npc || '') ? 'Darkmoon Faire' : zone, faction: a.faction, pvp: PVP_VENDOR.test(a.npc || '') || undefined, confidence: 'community-untested' };
+    return { type: a.type, npc: a.npc, npcId: a.npcId || undefined, zone, rank: a.rare ? 'rare' : undefined, raid: RAID.test(zone || '') || undefined, faction: 'both', confidence: 'community-untested' };
+  }
+
   function sourcesOf(item) {
     const auto = classify(item).map(fcFacts);
     const recorded = ((fcItems[item.id] || {}).sources || []).map(s => fcFacts(Object.assign({}, s)));
@@ -117,6 +127,8 @@ function open(cacheDir, build) {
       if (i >= 0) all[i] = mergeManual(item, man, all[i]);
       else all.unshift(mergeManual(item, man, fq ? Object.assign({}, man, fq) : null));
     });
+    // A new piece nothing else knows: AllTheThings' quests, bosses and vendors.
+    if (!all.length && attItems[item.id]) attItems[item.id].sources.forEach(a => all.push(attSource(a)));
     // Dungeon quests (also chains with a step in a dungeon: Hidden Enemies is
     // handed in at Orgrimmar, Bazzalan and Jergosh are in Ragefire Chasm).
     all.forEach(s => {
