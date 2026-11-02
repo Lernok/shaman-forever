@@ -2,6 +2,31 @@
   "_readme": "Site updates shown on the News page, newest first. Game data changes come from data/changelog.json (written by scripts/sync.js).",
   "site": [
     {
+      "day": "2026-11-02",
+      "title": {
+        "es": "Talentos como la ventana del juego y más piezas con su origen",
+        "en": "Talents like the game's window and more pieces with their source"
+      },
+      "items": [
+        {
+          "es": "Talentos se ve como la ventana de talentos del juego: los tres árboles juntos, los puntos y los controles abajo, y en el celular una pestaña por árbol.",
+          "en": "Talents looks like the game's talent window: the three trees together, points and controls along the bottom, and one tab per tree on phones."
+        },
+        {
+          "es": "190 piezas nuevas de Forever ahora dicen de dónde salen (misión, jefe o bicho), según AllTheThings, y volvieron las misiones de las piezas nuevas que se habían perdido entre el 29 y el 31 de octubre.",
+          "en": "190 new Forever pieces now say where they come from (quest, boss or creature), from AllTheThings, and the quests of new pieces lost between October 29 and 31 are back."
+        },
+        {
+          "es": "El addon (0.34) opina de cualquier pieza al pasar el mouse, también los verdes con sufijo al azar y lo que ves en la subasta: lee sus stats reales y te dice cuánto mejora lo que tenés puesto.",
+          "en": "The addon (0.34) gives a verdict on any piece you hover, random-suffix greens and auction house items included: it reads their real stats and tells you how much they beat what you wear."
+        },
+        {
+          "es": "La cuenta regresiva del lanzamiento usa tu fecha y tu hora (en Europa sale el 5), y en el celular los botones de los talentos y las etiquetas chicas se tocan y se leen mejor.",
+          "en": "The launch countdown uses your own date and time (in Europe it's out on the 5th), and on phones the talent buttons and small tags are easier to tap and read."
+        }
+      ]
+    },
+    {
       "day": "2026-10-29",
       "title": {
         "es": "Sitio renovado: tu equipo como la ventana de personaje del juego",
