@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70707",
+ "build": "1.60.1.70755",
  "gear": [
   {
    "id": 208424,
@@ -48355,6 +48355,46 @@
    ]
   },
   {
+   "id": 2314,
+   "name": "Toughened Leather Armor",
+   "kind": "Leather",
+   "slot": "Chest",
+   "quality": 2,
+   "req": 19,
+   "obtain": 19,
+   "ilvl": 24,
+   "bind": "equip",
+   "armor": 84,
+   "stats": {
+    "stamina": 2,
+    "spirit": 7
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_chest_leather_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Leatherworking",
+     "yellow": 120,
+     "grey": 145,
+     "learn": {
+      "type": "trainer",
+      "learnAt": 95
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 19,
+     "rec": 19
+    }
+   ]
+  },
+  {
    "id": 3057,
    "name": "Forest Leather Boots",
    "kind": "Leather",
@@ -68314,7 +68354,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shoulder_18",
    "raceMask": -1,
    "sources": [
@@ -153962,7 +154002,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shield_02",
    "raceMask": -1,
    "sources": [

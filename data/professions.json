@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70707",
+ "build": "1.60.1.70755",
  "recipesSource": "https://classicwowforever.com/professions/",
  "recipesFetched": "2026-10-20",
  "professions": {
@@ -3014,6 +3014,41 @@
     "learn": {
      "type": "drop",
      "text": "Pattern: drops from Dragonmaw Scout in Wetlands",
+     "learnAt": 95
+    },
+    "isNew": false
+   },
+   {
+    "id": 2314,
+    "name": "Toughened Leather Armor",
+    "kind": "Leather",
+    "quality": 2,
+    "req": 19,
+    "ilvl": 24,
+    "bind": "equip",
+    "stats": {
+     "stamina": 2,
+     "spirit": 7
+    },
+    "bonus": {},
+    "armor": 84,
+    "dps": null,
+    "speed": null,
+    "era": "changed",
+    "numbers": "client",
+    "icon": "inv_chest_leather_10",
+    "equip": [],
+    "role": "caster",
+    "mailFrom40": false,
+    "skill": [
+     95,
+     120,
+     132,
+     145
+    ],
+    "learn": {
+     "type": "trainer",
+     "text": "Trainer, 4s 50c, learn at 95 (seen in game)",
      "learnAt": 95
     },
     "isNew": false

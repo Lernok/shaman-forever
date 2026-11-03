@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70707",
+ "build": "1.60.1.70755",
  "eraBuild": "1.15.9.70576",
  "items": {
   "720": {
@@ -6558,6 +6558,35 @@
    },
    "numbers": "client",
    "icon": "inv_gauntlets_05"
+  },
+  "2314": {
+   "id": 2314,
+   "name": "Toughened Leather Armor",
+   "kind": "Leather",
+   "slot": "Chest",
+   "quality": 2,
+   "req": 19,
+   "ilvl": 24,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "changed",
+   "crafted": {
+    "profession": "Leatherworking",
+    "spell": 2166,
+    "yellow": 120,
+    "grey": 145
+   },
+   "armor": 84,
+   "stats": {
+    "stamina": 2,
+    "spirit": 7
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {},
+   "numbers": "client",
+   "icon": "inv_chest_leather_10"
   },
   "2315": {
    "id": 2315,
@@ -38349,7 +38378,7 @@
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shield_02"
   },
   "8135": {
@@ -67546,7 +67575,7 @@
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shoulder_18"
   },
   "13132": {
