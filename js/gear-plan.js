@@ -44,18 +44,22 @@
     // Enhancement, in attack power (AP): WoWSims has 1 Strength = 2.2 AP
     // (1.1), 1 Agility = 1.32 AP (0.66), 1 crit rating = 2.4 AP (1.2); haste
     // and expertise only come at 60. Hit: 5.2 AP a point against a raid
-    // boss, about 3 against your level (1.5). Intellect: 2 AP at 60, but
-    // Mental Dexterity (Intellect as AP) is full only from about level 17
-    // and a caster piece trades away the armor a melee needs: 1.5 AP (0.75).
+    // boss, about 3 against your level (1.5). Intellect: 2 AP at 60 with
+    // Mental Dexterity at 100%; Blizzard's notes of Nov 2 raise it to 150%
+    // (about 2.5 AP), but it is full only from about level 17, a caster
+    // piece trades away the armor a melee needs, and WoWSims hasn't measured
+    // it yet: 1.7 AP (0.85; at 0.95 cloth robes start winning).
     // Spell damage: 1.3 AP at 60 with raid buffs, a bit less leveling (0.6).
     Enhancement: { strength: 1.1, agility: 0.66, attackPower: 1, crit: 1.2, critRating: 1.2, hit: 1.5, hitRating: 1.5, hasteRating: 1.4, expertiseRating: 1.2,
-      intellect: 0.75, stamina: 0.25, spellPower: 0.45, spellDamage: 0.6, natureDamage: 0.4, fireDamage: 0.25 },
-    // Elemental, in spell power: WoWSims has Nature damage at 0.69 and Fire
-    // at 0.31 (Lightning Bolt over Flame Shock and Lava Burst), 1 crit rating
+      intellect: 0.85, stamina: 0.25, spellPower: 0.45, spellDamage: 0.6, natureDamage: 0.4, fireDamage: 0.25 },
+    // Elemental, in spell power: WoWSims had Nature damage at 0.69 and Fire
+    // at 0.31 with Lava Burst; Blizzard's notes of Nov 2 take Lava Burst out
+    // and leave Fire to Flame Shock and the totems (Nature 0.85, Fire 0.15
+    // until WoWSims measures it again), 1 crit rating
     // = 0.61 (0.73), 1 hit rating = 1.18 against a raid boss (0.9 against
     // your level), Intellect 0.19 and MP5 0.04 (in a three-minute fight mana
     // never runs out; leveling it does: 0.45 and 0.4).
-    Elemental: { spellPower: 1, spellDamage: 1, natureDamage: 0.7, fireDamage: 0.35, frostDamage: 0.15, intellect: 0.45, spellCrit: 0.75, critRating: 0.73,
+    Elemental: { spellPower: 1, spellDamage: 1, natureDamage: 0.85, fireDamage: 0.15, frostDamage: 0.15, intellect: 0.45, spellCrit: 0.75, critRating: 0.73,
       spellHit: 0.9, hitRating: 0.9, hasteRating: 1.4, mp5: 0.4, stamina: 0.25, spirit: 0.2 },
     // Restoration: WoWSims has no weights for it yet; Classic's usual ones.
     Restoration: { healing: 1, spellPower: 1, intellect: 0.75, mp5: 1, spirit: 0.5, spellCrit: 0.4, critRating: 0.4, hasteRating: 0.6, stamina: 0.25 }

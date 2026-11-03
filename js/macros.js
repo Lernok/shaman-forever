@@ -92,12 +92,8 @@
       text: o => "#showtooltip Healing Wave\n/cast Nature's Swiftness\n" + pair(o, null, 'Healing Wave') },
     { id: 'storm', spells: ['Stormstrike'],
       text: () => '#showtooltip\n/startattack [harm,nodead]\n/cast Stormstrike' },
-    { id: 'mastery', spells: ['Elemental Mastery', 'Lava Burst'], test: true,
-      text: () => '#showtooltip Lava Burst\n/cast Elemental Mastery\n/cast Lava Burst' },
     { id: 'wolf', spells: ['Ghost Wolf'],
       text: () => '#showtooltip\n/cast !Ghost Wolf' },
-    { id: 'project', spells: ['Totemic Projection'], test: true,
-      text: () => '#showtooltip\n/cast [@cursor] Totemic Projection' },
     { id: 'water', spells: ['Water Walking'],
       text: o => '#showtooltip\n' + pair(o, null, 'Water Walking') },
     // With Shift/Ctrl, only if the person asks for them.

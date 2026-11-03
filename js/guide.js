@@ -221,9 +221,20 @@
     return html + '</section>';
   }
 
+  // Blizzard's notes of Nov 2, ahead of the client that brings them: what
+  // changes for this spec, then for every Shaman (spec null: the class page).
+  function renderLaunch(spec) {
+    const notes = window.I18N.localize(window.GUIDE_DATA.Overview.launchNotes);
+    if (!notes) return '';
+    const list = (spec && notes[spec] || []).concat(notes.all);
+    return '<section class="block"><h3 class="block-title">' + t('guide.launch.title') + ' ' + badge('official') + '</h3>' +
+      '<div class="note-card plain-note"><div><ul class="launch-notes">' + list.map(x => '<li>' + x + '</li>').join('') + '</ul>' +
+      '<p class="note-text dim">' + t('guide.launch.pending') + ' <a class="src" href="' + notes.source + '" target="_blank" rel="noopener">' + t('common.source') + '</a></p></div></div></section>';
+  }
+
   function renderGuidePage(spec) {
     const guide = window.I18N.localize(window.GUIDE_DATA[spec]);
-    let html = pageHead(guide.role, spec, guide.summary);
+    let html = pageHead(guide.role, spec, guide.summary) + renderLaunch(spec);
     html += '<div class="gp-head"><h2>' + t('guide.mine') + '</h2>' + UI.levelStepper() + '</div>';
     html += renderNow(guide, spec);
     html += renderTiles(guide, spec);
@@ -318,7 +329,7 @@
     if (section === 'totems') html += renderTotems(guide.totems);
     else if (section === 'dano') html += renderDamage(guide.damage);
     else if (section === 'razas') html += renderRaces(guide.races);
-    else html += renderNoteCards(guide.classNotes);
+    else html += (section === 'notas' ? renderLaunch(null) : '') + renderNoteCards(guide.classNotes);
     return html + renderSources(guide.sources, guide.caveat);
   }
 

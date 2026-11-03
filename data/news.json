@@ -2,6 +2,31 @@
   "_readme": "Site updates shown on the News page, newest first. Game data changes come from data/changelog.json (written by scripts/sync.js).",
   "site": [
     {
+      "day": "2026-11-03",
+      "title": {
+        "es": "Las notas de Blizzard del 2 de noviembre",
+        "en": "Blizzard's notes of November 2"
+      },
+      "items": [
+        {
+          "es": "Las guías de cada spec y Clase › Notas dicen qué cambia en el lanzamiento: Lava Burst sale, Stormstrike y Maelstrom Weapon suben mucho, Riptide ya no cura de entrada, Improved Ghost Wolf baja a la fila 4 de Enhancement, y más.",
+          "en": "Each spec's guide and Clase › Notes say what changes at launch: Lava Burst is removed, Stormstrike and Maelstrom Weapon go up a lot, Riptide no longer heals up front, Improved Ghost Wolf moves to row 4 of Enhancement, and more."
+        },
+        {
+          "es": "Equipo ya cuenta el Intelecto como vale ahora para Enhancement (Mental Dexterity al 150%) y el daño de fuego como vale para Elemental sin Lava Burst.",
+          "en": "Equipo already counts Intellect as it's worth now to Enhancement (Mental Dexterity at 150%) and Fire damage as it's worth to Elemental without Lava Burst."
+        },
+        {
+          "es": "Salen las macros de Elemental Mastery + Lava Burst y de Totemic Projection al cursor: con estos cambios ya no sirven.",
+          "en": "The Elemental Mastery + Lava Burst and the Totemic Projection at the cursor macros are gone: with these changes they no longer work."
+        },
+        {
+          "es": "El juego todavía no trae estos cambios. Los árboles de talentos y los órdenes se actualizan cuando salga el cliente del lanzamiento.",
+          "en": "The game doesn't have these changes yet. The talent trees and the orders update when the launch client is out."
+        }
+      ]
+    },
+    {
       "day": "2026-11-02",
       "title": {
         "es": "Talentos como la ventana del juego y más piezas con su origen",

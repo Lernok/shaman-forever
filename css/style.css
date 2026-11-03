@@ -893,6 +893,7 @@ details.more summary { cursor: pointer; font-size: 12.5px; color: var(--accent);
   .spec-tab[data-spec="Novedades"] { margin-left: 0; }
 }
 .note-card.plain-note { border-left: 3px solid color-mix(in srgb, var(--spec-color) 55%, var(--border)); }
+.launch-notes { margin: 0 0 6px; padding-left: 18px; display: grid; gap: 4px; }
 
 /* ---------- Gear: item icons, tooltips, progression cards ---------- */
 .item-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; }
