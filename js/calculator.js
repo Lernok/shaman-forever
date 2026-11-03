@@ -199,6 +199,8 @@
         '<span class="ctal-rank">' + rank + '/' + tal.max + '</span>' +
         (rank > 0 ? '<button class="ctal-minus" aria-label="' + t('calc.removePoint', { talent: tal.name }) + '">−</button>' : '') +
         '</div>';
+      // Beside the icon, not in it: a locked talent's grey filter would hide it.
+      if (tal.patch) html += '<span class="ctal-patch" aria-hidden="true" style="left:' + ((tal.col - 1) * (CELL + GAP) + 39) + 'px;top:' + ((tal.row - 1) * (CELL + GAP) + 3) + 'px"></span>';
     });
     html += '</div></div>';
     return html;
@@ -251,6 +253,9 @@
       tr.name + ' <b>' + R.treePoints(state.ranks, tr) + '</b></button>').join('') + '</div>';
     html += '<div class="calc-window"><div class="calc-trees">' + trees().map(tr => renderTree(tr, due)).join('') + '</div>' + tabs + renderBar() + '</div>';
     html += '<p class="calc-hint"><span class="mouse-only">' + t('calc.intro') + '</span><span class="touch-only">' + t('calc.introTouch') + '</span></p>';
+    // Blizzard's notes of Nov 2, applied by hand until the game brings them.
+    if (window.SHAMAN_DATA.talents.patched) html += '<p class="calc-hint"><span class="ctal-patch inline"></span> ' + t('calc.patched') +
+      ' <a class="src" href="' + window.SHAMAN_DATA.talents.patched + '" target="_blank" rel="noopener">' + t('common.source') + '</a></p>';
     html += renderBuild();
     html += renderBuildPicker();
     html += ui.renderSources(['https://talentsforever.com (CC BY 4.0) — ' + t('calc.srcTf')], t('calc.rules'));
@@ -271,6 +276,7 @@
     if (tal.cost) html += '<div class="t-cost">' + tal.cost.split(' | ').map(I.client).join(' · ') + '</div>';
     const why = R.lockReason(state.ranks, tree, tal);
     if (why && rank < tal.max) html += '<div class="t-lock">' + why + '</div>';
+    if (tal.patch) html += '<div class="t-patch">' + t('calc.patchedTip') + ' ' + tal.patch[I.lang === 'es' ? 'es' : 'en'] + '</div>';
     if (tal.classic && tal.classic.status) {
       html += '<div class="t-classic">' + t('classic.label') + ': <b>' + t('classic.' + tal.classic.status) + '</b></div>';
     }

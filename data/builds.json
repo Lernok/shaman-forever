@@ -78,20 +78,20 @@
       "origin": "guia",
       "confidence": "community-untested",
       "note": {
-        "es": "El build de leveling de la guía tal cual (21 puntos). Improved Ghost Wolf ayuda a moverse entre quests.",
-        "en": "The guide's leveling build as is (21 points). Improved Ghost Wolf helps getting around between quests."
+        "es": "El build de leveling de la guía (21 puntos), movido al árbol de las notas del 2-nov: Improved Ghost Wolf pasa a la fila 4, así que se toma después de Stormstrike, y 2 puntos de Ancestral Knowledge (más Intelecto, que ahora vale más) reemplazan a Improved Stormstrike y un punto de Flurry.",
+        "en": "The guide's leveling build (21 points), moved to the tree of the notes of Nov 2: Improved Ghost Wolf is now on row 4, so it comes after Stormstrike, and 2 points of Ancestral Knowledge (more Intellect, now worth more) replace Improved Stormstrike and a point of Flurry."
       },
       "points": {
         "Enhancement": {
           "Thundering Strikes": 5,
           "Mental Dexterity": 3,
-          "Improved Ghost Wolf": 2,
           "Improved Lightning Shield": 1,
+          "Ancestral Knowledge": 2,
           "Elemental Weapons": 3,
           "Shamanistic Focus": 1,
-          "Flurry": 4,
           "Stormstrike": 1,
-          "Improved Stormstrike": 1
+          "Improved Ghost Wolf": 2,
+          "Flurry": 3
         }
       }
     },
@@ -149,7 +149,7 @@
           "Call of Flame": 3,
           "Elemental Alacrity": 3,
           "Eye of the Storm": 3,
-          "Lava Burst": 1
+          "Call of Thunder": 1
         }
       },
       "spec": "Elemental",
@@ -203,7 +203,7 @@
           30,
           30,
           "Elemental",
-          "Lava Burst",
+          "Call of Thunder",
           1
         ],
         [
@@ -231,7 +231,7 @@
           40,
           40,
           "Elemental",
-          "Elemental Mastery",
+          "Lightning Mastery",
           1
         ],
         [
@@ -294,11 +294,11 @@
           "Call of Flame": 3,
           "Elemental Alacrity": 3,
           "Eye of the Storm": 3,
-          "Lava Burst": 1,
+          "Call of Thunder": 1,
           "Lightning Overload": 3,
           "Elemental Reach": 2,
           "Elemental Fury": 5,
-          "Elemental Mastery": 1
+          "Lightning Mastery": 1
         },
         "Enhancement": {
           "Thundering Strikes": 5,
@@ -360,7 +360,7 @@
           30,
           30,
           "Elemental",
-          "Lava Burst",
+          "Call of Thunder",
           1
         ],
         [
@@ -388,7 +388,7 @@
           40,
           40,
           "Elemental",
-          "Elemental Mastery",
+          "Lightning Mastery",
           1
         ],
         [
@@ -440,19 +440,19 @@
       },
       "level": 30,
       "note": {
-        "es": "Los primeros 21 puntos del orden más común entre 55.884 builds de leveo Enhancement planeados en talentsforever.com (18 sep – 6 oct 2026). En cada tramo coincide entre el 10% y el 43% de los builds que llegan ahí: hay mucha variación después del 30. Es lo que la gente planea, no algo probado en juego.",
-        "en": "The first 21 points of the most common order among 55,884 Enhancement leveling builds planned on talentsforever.com (Sep 18 – Oct 6, 2026). In each bracket, 10% to 43% of the builds that get there agree: there's a lot of variation past 30. It's what people plan, not something tested in game."
+        "es": "Los primeros 21 puntos del orden más común entre 55.884 builds de leveo Enhancement planeados en talentsforever.com (18 sep – 6 oct 2026). En cada tramo coincide entre el 10% y el 43% de los builds que llegan ahí: hay mucha variación después del 30. Es lo que la gente planea, no algo probado en juego. Con las notas del 2-nov, Improved Ghost Wolf baja a la fila 4: lo tomamos al 26 y 27, después de Stormstrike, y Ancestral Knowledge adelanta 2 puntos para llegar a la fila 3.",
+        "en": "The first 21 points of the most common order among 55,884 Enhancement leveling builds planned on talentsforever.com (Sep 18 – Oct 6, 2026). In each bracket, 10% to 43% of the builds that get there agree: there's a lot of variation past 30. It's what people plan, not something tested in game. With the notes of Nov 2, Improved Ghost Wolf moves to row 4: we take it at 26 and 27, after Stormstrike, and Ancestral Knowledge moves 2 points earlier to reach row 3."
       },
       "points": {
         "Enhancement": {
           "Thundering Strikes": 5,
           "Mental Dexterity": 3,
-          "Improved Ghost Wolf": 2,
+          "Ancestral Knowledge": 3,
           "Shamanistic Focus": 1,
           "Elemental Weapons": 3,
-          "Ancestral Knowledge": 1,
           "Stormstrike": 1,
-          "Flurry": 5
+          "Improved Ghost Wolf": 2,
+          "Flurry": 3
         }
       },
       "spec": "Enhancement",
@@ -478,7 +478,7 @@
           18,
           19,
           "Enhancement",
-          "Improved Ghost Wolf",
+          "Ancestral Knowledge",
           2
         ],
         [
@@ -500,7 +500,7 @@
           24,
           "Enhancement",
           "Ancestral Knowledge",
-          1
+          3
         ],
         [
           25,
@@ -511,87 +511,17 @@
         ],
         [
           26,
-          29,
+          27,
           "Enhancement",
-          "Flurry",
-          4
-        ],
-        [
-          30,
-          30,
-          "Enhancement",
-          "Flurry",
-          5
-        ],
-        [
-          31,
-          32,
-          "Enhancement",
-          "Improved Stormstrike",
+          "Improved Ghost Wolf",
           2
         ],
         [
-          33,
-          34,
+          28,
+          30,
           "Enhancement",
-          "Mental Quickness",
-          2
-        ],
-        [
-          35,
-          39,
-          "Enhancement",
-          "Maelstrom Weapon",
-          5
-        ],
-        [
-          40,
-          40,
-          "Enhancement",
-          "Rage of the Farseer",
-          1
-        ],
-        [
-          41,
-          41,
-          "Enhancement",
-          "Spirit Weapons",
-          1
-        ],
-        [
-          42,
-          45,
-          "Enhancement",
-          "Ancestral Knowledge",
-          5
-        ],
-        [
-          46,
-          50,
-          "Restoration",
-          "Tidal Focus",
-          5
-        ],
-        [
-          51,
-          55,
-          "Elemental",
-          "Concussion",
-          5
-        ],
-        [
-          56,
-          58,
-          "Elemental",
-          "Elemental Devastation",
+          "Flurry",
           3
-        ],
-        [
-          59,
-          60,
-          "Restoration",
-          "Totemic Focus",
-          2
         ]
       ]
     },
@@ -607,18 +537,18 @@
       },
       "level": 60,
       "note": {
-        "es": "Del 10 al 29, el orden más común en talentsforever.com. Del 30 al 60 (la beta llegaba hasta el 30, así que es nuestra proyección): Rage of the Farseer apenas se puede, al 40; después Ancestral Knowledge (más Intelecto = más poder de ataque con Mental Dexterity), Tidal Focus (5% de golpe), Concussion y Elemental Devastation. Cambiá el nivel para ver el build en cada punto.",
-        "en": "Levels 10 to 29: the most common order on talentsforever.com. 30 to 60 (the beta only went up to 30, so this is our projection): Rage of the Farseer as soon as it opens, at 40; then Ancestral Knowledge (more Intellect = more attack power through Mental Dexterity), Tidal Focus (5% hit), Concussion and Elemental Devastation. Change the level to see the build at each point."
+        "es": "Del 10 al 29, el orden más común en talentsforever.com. Del 30 al 60 (la beta llegaba hasta el 30, así que es nuestra proyección): Rage of the Farseer apenas se puede, al 40; después Ancestral Knowledge (más Intelecto = más poder de ataque con Mental Dexterity), Tidal Focus (5% de golpe), Concussion y Elemental Devastation. Cambiá el nivel para ver el build en cada punto. Con las notas del 2-nov, Improved Ghost Wolf baja a la fila 4: lo tomamos al 26 y 27, después de Stormstrike, y Ancestral Knowledge adelanta 2 puntos para llegar a la fila 3.",
+        "en": "Levels 10 to 29: the most common order on talentsforever.com. 30 to 60 (the beta only went up to 30, so this is our projection): Rage of the Farseer as soon as it opens, at 40; then Ancestral Knowledge (more Intellect = more attack power through Mental Dexterity), Tidal Focus (5% hit), Concussion and Elemental Devastation. Change the level to see the build at each point. With the notes of Nov 2, Improved Ghost Wolf moves to row 4: we take it at 26 and 27, after Stormstrike, and Ancestral Knowledge moves 2 points earlier to reach row 3."
       },
       "points": {
         "Enhancement": {
           "Thundering Strikes": 5,
           "Mental Dexterity": 3,
-          "Improved Ghost Wolf": 2,
+          "Ancestral Knowledge": 5,
           "Shamanistic Focus": 1,
           "Elemental Weapons": 3,
-          "Ancestral Knowledge": 5,
           "Stormstrike": 1,
+          "Improved Ghost Wolf": 2,
           "Flurry": 5,
           "Improved Stormstrike": 2,
           "Mental Quickness": 2,
@@ -658,7 +588,7 @@
           18,
           19,
           "Enhancement",
-          "Improved Ghost Wolf",
+          "Ancestral Knowledge",
           2
         ],
         [
@@ -680,7 +610,7 @@
           24,
           "Enhancement",
           "Ancestral Knowledge",
-          1
+          3
         ],
         [
           25,
@@ -691,38 +621,38 @@
         ],
         [
           26,
-          29,
+          27,
           "Enhancement",
-          "Flurry",
-          4
+          "Improved Ghost Wolf",
+          2
         ],
         [
-          30,
-          30,
+          28,
+          32,
           "Enhancement",
           "Flurry",
           5
-        ],
-        [
-          31,
-          32,
-          "Enhancement",
-          "Improved Stormstrike",
-          2
         ],
         [
           33,
           34,
           "Enhancement",
-          "Mental Quickness",
+          "Improved Stormstrike",
           2
         ],
         [
           35,
+          36,
+          "Enhancement",
+          "Mental Quickness",
+          2
+        ],
+        [
+          37,
           39,
           "Enhancement",
           "Maelstrom Weapon",
-          5
+          3
         ],
         [
           40,
@@ -733,13 +663,20 @@
         ],
         [
           41,
-          41,
+          42,
+          "Enhancement",
+          "Maelstrom Weapon",
+          5
+        ],
+        [
+          43,
+          43,
           "Enhancement",
           "Spirit Weapons",
           1
         ],
         [
-          42,
+          44,
           45,
           "Enhancement",
           "Ancestral Knowledge",
@@ -1077,10 +1014,10 @@
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
       "note": {
-        "es": "#1 de Shaman en talentsforever.com (1.597 aperturas, 187 guardados). Los 18 de Elemental van a Concussion, Elemental Devastation, Reverberation, Call of Flame y Trial by Fire: Earth Shock y shocks más seguidos. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
-        "en": "#1 Shaman build on talentsforever.com (1,597 opens, 187 saves). The 18 Elemental points go to Concussion, Elemental Devastation, Reverberation, Call of Flame and Trial by Fire: Earth Shock and more frequent shocks. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
+        "es": "#1 de Shaman en talentsforever.com (1.597 aperturas, 187 guardados). Los 18 de Elemental van a Concussion, Elemental Devastation, Reverberation, Call of Flame y Trial by Fire: Earth Shock y shocks más seguidos. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado. Con las notas del 2-nov, Improved Ghost Wolf pasa a la fila 4 y ya no cuenta para abrir Stormstrike: un punto de Reverberation pasa a Ancestral Knowledge.",
+        "en": "#1 Shaman build on talentsforever.com (1,597 opens, 187 saves). The 18 Elemental points go to Concussion, Elemental Devastation, Reverberation, Call of Flame and Trial by Fire: Earth Shock and more frequent shocks. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested. With the notes of Nov 2, Improved Ghost Wolf moves to row 4 and no longer counts toward opening Stormstrike: one point of Reverberation goes to Ancestral Knowledge."
       },
-      "code": "053503002-052032031005112251-"
+      "code": "053403002-053030310051212251-"
     },
     {
       "id": "tf-pop-ele-2",
@@ -1098,10 +1035,10 @@
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
       "note": {
-        "es": "Nuestra recomendación a 60: el build de Elemental más armado. Desde el final del leveo 10→60 son 11 puntos a mover (un respec al llegar). #2 de Shaman y el primero de Elemental (137 aperturas, 31 guardados). Elemental completo hasta Elemental Mastery con Earthbound, Thundering Strikes e Improved Ghost Wolf en Enhancement, y Tidal Focus, Mindfulness, Natural Grace y Water Shield en Resto. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
-        "en": "Our level-60 pick: the most built Elemental build. From where the 10→60 leveling order ends it is 11 points to move (one respec on arrival). #2 Shaman build and the top Elemental one (137 opens, 31 saves). Full Elemental down to Elemental Mastery with Earthbound, Thundering Strikes and Improved Ghost Wolf in Enhancement, and Tidal Focus, Mindfulness, Natural Grace and Water Shield in Resto. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
+        "es": "Nuestra recomendación a 60: el build de Elemental más armado. Desde el final del leveo 10→60 son 11 puntos a mover (un respec al llegar). #2 de Shaman y el primero de Elemental (137 aperturas, 31 guardados). Elemental completo hasta Elemental Mastery con Earthbound, Thundering Strikes e Improved Ghost Wolf en Enhancement, y Tidal Focus, Mindfulness, Natural Grace y Water Shield en Resto. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado. Con las notas del 2-nov, Improved Ghost Wolf pasa a la fila 4 de Enhancement: sus 2 puntos van a Ancestral Knowledge.",
+        "en": "Our level-60 pick: the most built Elemental build. From where the 10→60 leveling order ends it is 11 points to move (one respec on arrival). #2 Shaman build and the top Elemental one (137 opens, 31 saves). Full Elemental down to Elemental Mastery with Earthbound, Thundering Strikes and Improved Ghost Wolf in Enhancement, and Tidal Focus, Mindfulness, Natural Grace and Water Shield in Resto. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested. With the notes of Nov 2, Improved Ghost Wolf moves to row 4 of Enhancement: its 2 points go to Ancestral Knowledge."
       },
-      "code": "3500331023121351-050002-053200001",
+      "code": "3500331023121351-052-053200001",
       "recommended": true
     },
     {
@@ -1145,7 +1082,7 @@
         "es": "Nuestra recomendación a 60: de los builds populares, es el más cercano al final del leveo 10→60 (a 4 puntos), así que no hay que rearmar todo al llegar. #4 (38 aperturas, 26 guardados). Enhancement con Ancestral Knowledge 5/5, Concussion, Elemental Devastation, Call of Flame y Elemental Focus en Elemental, y Tidal Focus en Resto (índice de golpe). Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado.",
         "en": "Our level-60 pick: of the popular builds, the closest to where the 10→60 leveling order ends (4 points apart), so there is no full respec on arrival. #4 (38 opens, 26 saves). Enhancement with Ancestral Knowledge 5/5, Concussion, Elemental Devastation, Call of Flame and Elemental Focus in Elemental, and Tidal Focus in Resto (hit). Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested."
       },
-      "code": "0530031-055030031005112251-05",
+      "code": "0530031-055030310051012251-05",
       "recommended": true
     }
   ]

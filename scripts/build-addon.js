@@ -475,7 +475,7 @@ Object.entries(Z.dungeons).forEach(([n, d]) => { if (d.levels) dlevels[n] = d.le
 // Talent at each level: the leveling order to 60 of each spec (the site's
 // talentsforever.com orders, Talentos > Calculadora), one point per level.
 const rules = require('../js/talent-rules.js');
-const shaman = read('data/shaman.json');
+const shaman = require('./lib/talent-patch')(read('data/shaman.json'));
 const maxRank = {};
 shaman.talents.trees.forEach(t => t.talents.forEach(x => { maxRank[t.name + '/' + x.name] = x.max; }));
 const talents = {};

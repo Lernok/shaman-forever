@@ -52,7 +52,8 @@ function checkLang(v, where, key) {
   for (const k in v) checkLang(v[k], where + '.' + k, k);
 }
 
-const shaman = read('data/shaman.json');
+// Blizzard's notes of Nov 2 on top of talentsforever's export, until it has them.
+const shaman = require('./lib/talent-patch')(read('data/shaman.json'));
 // Icons talentsforever names that the icon CDN (wow.zamimg.com) doesn't have.
 const ICON_FIX = { race_skyborne: 'race_skyborne_male' };
 Object.values(shaman.racials).flat().forEach(r => { if (ICON_FIX[r.icon]) r.icon = ICON_FIX[r.icon]; });

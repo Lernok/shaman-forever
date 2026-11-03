@@ -5,7 +5,7 @@
 //   node scripts/test-rules.js          (RUNS=400 node ... for a longer random pass)
 const assert = require('assert');
 const R = require('../js/talent-rules.js');
-const trees = require('../data/shaman.json').talents.trees;
+const trees = require('./lib/talent-patch')(require('../data/shaman.json')).talents.trees;
 
 const T = name => trees.find(t => t.name === name);
 const talent = (treeName, name) => {
@@ -63,25 +63,25 @@ check('prereq maxed: open', canAdd('Elemental', 'Lightning Overload'), true);
 set('Elemental', 'Lightning Overload', 1);
 check('prereq point cannot come out while dependent has points', canRemove('Elemental', 'Elemental Alacrity'), false);
 
-// Elemental Mastery: row 7 (30 points in rows 1-6) AND Lava Burst.
+// Lightning Mastery: row 7 (30 points in rows 1-6) AND Call of Thunder.
 ranks = {};
 set('Elemental', 'Convection', 5); set('Elemental', 'Concussion', 5);
 set('Elemental', 'Reverberation', 5); set('Elemental', 'Call of Flame', 3); set('Elemental', 'Elemental Warding', 2);
 set('Elemental', 'Elemental Focus', 1); set('Elemental', 'Elemental Alacrity', 3);
 set('Elemental', 'Eye of the Storm', 3); set('Elemental', 'Lightning Overload', 3);
-check('no Lava Burst, 30 above row 7: Elemental Mastery closed (prereq)', canAdd('Elemental', 'Elemental Mastery'), false);
-set('Elemental', 'Lava Burst', 1);
-check('Lava Burst + 31 above: Elemental Mastery open', canAdd('Elemental', 'Elemental Mastery'), true);
-set('Elemental', 'Elemental Mastery', 1);
-check('Lava Burst cannot come out under Elemental Mastery', canRemove('Elemental', 'Lava Burst'), false);
+check('no Call of Thunder, 30 above row 7: Lightning Mastery closed (prereq)', canAdd('Elemental', 'Lightning Mastery'), false);
+set('Elemental', 'Call of Thunder', 1);
+check('Call of Thunder + 31 above: Lightning Mastery open', canAdd('Elemental', 'Lightning Mastery'), true);
+set('Elemental', 'Lightning Mastery', 1);
+check('Call of Thunder cannot come out under Lightning Mastery', canRemove('Elemental', 'Call of Thunder'), false);
 check('row-1 point removable while rows above row 7 keep 30', canRemove('Elemental', 'Convection'), true);
 set('Elemental', 'Elemental Warding', 1);
 check('...but not once rows 1-6 are at exactly 30', canRemove('Elemental', 'Convection'), false);
 
 // Validate: a hand-made (link) build that skips a gate is reported, not silently accepted.
-check('skipped gate is an error', R.validate({ Elemental: { 'Lava Burst': 1 } }, trees, 60).length > 0, true);
+check('skipped gate is an error', R.validate({ Elemental: { 'Call of Thunder': 1 } }, trees, 60).length > 0, true);
 check('missing prereq is an error',
-  R.validate({ Enhancement: { 'Thundering Strikes': 5, 'Mental Dexterity': 2, 'Improved Ghost Wolf': 2, 'Ancestral Knowledge': 5, 'Elemental Weapons': 1, Flurry: 1 } }, trees, 60)
+  R.validate({ Enhancement: { 'Thundering Strikes': 5, 'Mental Dexterity': 2, 'Improved Lightning Shield': 2, 'Ancestral Knowledge': 5, 'Elemental Weapons': 1, Flurry: 1 } }, trees, 60)
     .some(e => /Mental Dexterity/.test(e)), true);
 check('rank over max is an error', R.validate({ Elemental: { Convection: 6 } }, trees, 60).length > 0, true);
 
