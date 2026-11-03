@@ -28,6 +28,7 @@ SF.DATA = {
    ["Flame Shock"]={l={10,18,28,40,52,60},id={8050,8052,8053,10447,10448,29228}},
    ["Frost Shock"]={l={20,34,46,58},id={8056,8058,10472,10473}},
    ["Lightning Bolt"]={l={1,8,14,20,26,32,38,44,50,56},id={403,529,548,915,943,6041,10391,10392,15207,15208}},
+   ["Lightning Mastery"]={l={40},id={16166}},
    ["Magma Totem"]={l={26,36,46,56},id={8190,10585,10586,10587}},
    Purge={l={12,32},id={370,8012}},
    ["Searing Totem"]={l={10,20,30,40,50,60},id={3599,6363,6364,6365,10437,10438}},
@@ -51,6 +52,7 @@ SF.DATA = {
    ["Stoneskin Totem"]={l={4,14,24,34,44,54},id={8071,8154,8155,10406,10407,10408}},
    Stormstrike={l={25},id={17364}},
    ["Strength of Earth Totem"]={l={10,24,38,52,60},id={8075,8160,8161,10442,25361}},
+   ["Totemic Call"]={l={22},id={437009}},
    ["Water Breathing"]={l={22},id={131}},
    ["Water Walking"]={l={28},id={546}},
    ["Windfury Totem"]={l={32,42,52},id={8512,10613,10614}},
@@ -71,9 +73,7 @@ SF.DATA = {
    Reincarnation={l={30},id={20608}},
    Riptide={l={40,50,60},id={408521,1239242,1239243}},
    ["Tremor Totem"]={l={18},id={8143}},
-   ["Water Shield"]={l={20},id={408510}},
-   ["Lightning Mastery"]={l={40},id={16166}},
-   ["Totemic Call"]={l={22},id={437009}}
+   ["Water Shield"]={l={20},id={408510}}
   },
   rules={
    {s="Frost Shock",from=2,specs="Enhancement,Elemental,Restoration",es="el rango 1 ya frena; los demás solo suben el daño, y para pegar tenés Earth Shock",en="rank 1 already slows; the rest only add damage, and Earth Shock does the hitting"},

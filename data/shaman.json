@@ -1,6 +1,6 @@
 {
  "_readme": "talentsforever.com data export for the Shaman. Fan-made WoW Forever talent calculator; talents, racials, Legacy perks and the class spellbooks come from the WoW Forever beta client's own data files (the site began as frame-by-frame reads of the BlizzCon 2026 demo), so numbers can lag live tuning. A class can carry the server's hotfixes over the build it was read from, where the client's files do not have them: that class's talents.source line says so and names the days, and a spell rank a hotfix changed names it in its src. talents: per class, trees with talents (row/col are 1-based grid positions, max is the rank cap, desc lists the tooltip text of each rank, rank 1 first, as the client's files give it at level 60, or in the game's own words where a rank was read in game; confirmed lists the ranks whose text is real and not an estimate, which is every rank for trees from the beta client; classic compares the talent with Classic Era: status same, moved, changed or new, Classic's tree, row, col, rank count and rank 1 text, and renamed, note or replaces where they apply). spellbooks: per class, every trainer spell to level 60 with every rank (levels = the level each rank is learned at; checked = that class's city trainer was read in game, the rest are from the files only; the General tab is kept by hand from the demo and in-game reads). spell_desc: tooltip text keyed class|spell|rank, s=beta means the beta client's text at level 60 with no gear, s=demo means read off the BlizzCon demo footage, or read in game where src begins Read in game, s=classic means Wowhead Classic fallback, nt=1, 2, 3 or 4 means the class trainer does not sell that rank (1 portal trainer, 2 tome, quest or drop, 3 comes with the talent: taking the talent puts it in the book, 4 not sold by the class trainer, checked in game, and where it is learned is not known yet), ns=quest means a class quest teaches it (Wowhead Forever and Blizzard's notes), not a trainer read. racials and legacy: racial abilities and the Legacy perk trees. License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). You may copy, adapt and republish this data, including commercially, as long as you credit talentsforever.com with a link. Game names, icons and tooltip text belong to Blizzard Entertainment.",
- "generated": "2026-10-27",
+ "generated": "2026-11-03",
  "class": "Shaman",
  "talents": {
   "icon": "class_shaman",
@@ -18,11 +18,11 @@
       "passive": true,
       "icon": "spell_nature_wispsplode",
       "desc": [
-       "Reduces the mana cost of your Shock, Lightning Bolt, Lava Burst, and Chain Lightning spells by 2%.",
-       "Reduces the mana cost of your Shock, Lightning Bolt, Lava Burst, and Chain Lightning spells by 4%.",
-       "Reduces the mana cost of your Shock, Lightning Bolt, Lava Burst, and Chain Lightning spells by 6%.",
-       "Reduces the mana cost of your Shock, Lightning Bolt, Lava Burst, and Chain Lightning spells by 8%.",
-       "Reduces the mana cost of your Shock, Lightning Bolt, Lava Burst, and Chain Lightning spells by 10%."
+       "Reduces the mana cost of your Shock, Lightning Bolt, and Chain Lightning spells by 2%.",
+       "Reduces the mana cost of your Shock, Lightning Bolt, and Chain Lightning spells by 4%.",
+       "Reduces the mana cost of your Shock, Lightning Bolt, and Chain Lightning spells by 6%.",
+       "Reduces the mana cost of your Shock, Lightning Bolt, and Chain Lightning spells by 8%.",
+       "Reduces the mana cost of your Shock, Lightning Bolt, and Chain Lightning spells by 10%."
       ],
       "complete": true,
       "confirmed": [
@@ -33,8 +33,9 @@
        5
       ],
       "src": "beta",
+      "hotfix": "2026-11-02",
       "classic": {
-       "status": "changed",
+       "status": "same",
        "tree": "Elemental",
        "row": 1,
        "col": 2,
@@ -144,9 +145,9 @@
       "passive": true,
       "icon": "spell_lightning_lightningbolt01",
       "desc": [
-       "Reduces the cast time of your Lightning Bolt, Chain Lightning, and Lava Burst spells by 0.17 sec.",
-       "Reduces the cast time of your Lightning Bolt, Chain Lightning, and Lava Burst spells by 0.33 sec.",
-       "Reduces the cast time of your Lightning Bolt, Chain Lightning, and Lava Burst spells by 0.50 sec."
+       "Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 0.17 sec.",
+       "Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 0.33 sec.",
+       "Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 0.50 sec."
       ],
       "complete": true,
       "confirmed": [
@@ -155,6 +156,7 @@
        3
       ],
       "src": "beta",
+      "hotfix": "2026-11-02",
       "classic": {
        "status": "changed",
        "tree": "Elemental",
@@ -175,9 +177,9 @@
       "passive": true,
       "icon": "spell_fire_immolation",
       "desc": [
-       "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by 5%, as well as increases the duration of your Flame Shock spell by 3 sec.",
-       "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by 10%, as well as increases the duration of your Flame Shock spell by 6 sec.",
-       "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by 15%, as well as increases the duration of your Flame Shock spell by 9 sec."
+       "Increases the damage done by your Fire Totems and by your Flame Shock and Fire Nova spells by 5%, as well as increases the duration of your Flame Shock spell by 3 sec.",
+       "Increases the damage done by your Fire Totems and by your Flame Shock and Fire Nova spells by 10%, as well as increases the duration of your Flame Shock spell by 6 sec.",
+       "Increases the damage done by your Fire Totems and by your Flame Shock and Fire Nova spells by 15%, as well as increases the duration of your Flame Shock spell by 9 sec."
       ],
       "complete": true,
       "confirmed": [
@@ -186,6 +188,7 @@
        3
       ],
       "src": "beta",
+      "hotfix": "2026-11-02",
       "classic": {
        "status": "changed",
        "tree": "Elemental",
@@ -284,9 +287,9 @@
       "passive": true,
       "icon": "spell_nature_eyeofthestorm",
       "desc": [
-       "Gives your Lightning Bolt, Chain Lightning, and Lava Burst spells a 23% chance to not lose casting time when you take damage.",
-       "Gives your Lightning Bolt, Chain Lightning, and Lava Burst spells a 47% chance to not lose casting time when you take damage.",
-       "Gives your Lightning Bolt, Chain Lightning, and Lava Burst spells a 70% chance to not lose casting time when you take damage."
+       "Gives your Lightning Bolt and Chain Lightning spells a 23% chance to not lose casting time when you take damage.",
+       "Gives your Lightning Bolt and Chain Lightning spells a 47% chance to not lose casting time when you take damage.",
+       "Gives your Lightning Bolt and Chain Lightning spells a 70% chance to not lose casting time when you take damage."
       ],
       "complete": true,
       "confirmed": [
@@ -295,6 +298,7 @@
        3
       ],
       "src": "beta",
+      "hotfix": "2026-11-02",
       "classic": {
        "status": "changed",
        "tree": "Elemental",
@@ -331,8 +335,8 @@
       "passive": true,
       "icon": "spell_nature_stormreach",
       "desc": [
-       "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by 3 yards and reduces the cooldown of Totemic Projection by 10 sec.",
-       "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by 6 yards and reduces the cooldown of Totemic Projection by 20 sec."
+       "Increases the range of your Lightning Bolt, Chain Lightning, and Fire Nova spells by 3 yards.",
+       "Increases the range of your Lightning Bolt, Chain Lightning, and Fire Nova spells by 6 yards."
       ],
       "complete": true,
       "confirmed": [
@@ -340,6 +344,7 @@
        2
       ],
       "src": "beta",
+      "hotfix": "2026-11-02",
       "classic": {
        "status": "changed",
        "tree": "Elemental",
@@ -351,23 +356,29 @@
       }
      },
      {
-      "name": "Lava Burst",
+      "name": "Call of Thunder",
       "max": 1,
       "row": 5,
       "col": 2,
-      "passive": false,
-      "icon": "spell_shaman_lavaburst",
+      "passive": true,
+      "icon": "spell_nature_callstorm",
       "desc": [
-       "You hurl molten lava at the target, dealing 113 to 145 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage."
+       "Increases critical strike chance of Lightning Bolt and Chain Lightning by 5%."
       ],
       "complete": true,
       "confirmed": [
        1
       ],
       "src": "beta",
-      "cost": "135 Mana | 30 yd range | 2.5 sec cast | 10 sec cooldown",
+      "hotfix": "2026-11-02",
       "classic": {
-       "status": "new"
+       "status": "changed",
+       "tree": "Elemental",
+       "row": 3,
+       "col": 3,
+       "max": 5,
+       "text": "Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by an additional 1%.",
+       "moved": true
       }
      },
      {
@@ -378,9 +389,9 @@
       "passive": true,
       "icon": "spell_nature_lightningoverload",
       "desc": [
-       "Gives your Lightning Bolt and Chain Lightning spells a 3% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
-       "Gives your Lightning Bolt and Chain Lightning spells a 7% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
-       "Gives your Lightning Bolt and Chain Lightning spells a 10% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat."
+       "Gives your Lightning Bolt and Chain Lightning spells a 10% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
+       "Gives your Lightning Bolt and Chain Lightning spells a 20% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
+       "Gives your Lightning Bolt and Chain Lightning spells a 30% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat."
       ],
       "complete": true,
       "confirmed": [
@@ -389,6 +400,7 @@
        3
       ],
       "src": "beta",
+      "hotfix": "2026-11-02",
       "req": "Elemental Alacrity",
       "classic": {
        "status": "new"
@@ -430,21 +442,22 @@
       }
      },
      {
-      "name": "Elemental Mastery",
+      "name": "Lightning Mastery",
       "max": 1,
       "row": 7,
       "col": 2,
       "passive": false,
       "icon": "spell_nature_wispheal",
       "desc": [
-       "Gain mastery over Fire and Lightning, reducing the cast time of Lightning Bolt and Lava Burst by 0.5 sec, and removing the cooldown from Chain Lightning. Lasts 15 sec."
+       "Gain mastery over Fire and Lightning, reducing the cast time of Lightning Bolt by 0.5 sec, and removing the cooldown from Chain Lightning. Lasts 15 sec."
       ],
       "complete": true,
       "confirmed": [
        1
       ],
       "src": "beta",
-      "req": "Lava Burst",
+      "hotfix": "2026-11-02",
+      "req": "Call of Thunder",
       "cost": "Instant | 3 min cooldown",
       "classic": {
        "status": "changed",
@@ -453,18 +466,12 @@
        "col": 2,
        "max": 1,
        "text": "When activated, this spell gives your next Fire, Frost, or Nature damage spell a 100% critical strike chance and reduces the mana cost by 100%.",
-       "note": "now requires Lava Burst, not Elemental Fury"
+       "renamed": "Elemental Mastery",
+       "note": "now requires Call of Thunder, not Elemental Fury"
       }
      }
     ],
-    "removed": [
-     {
-      "name": "Call of Thunder",
-      "max": 5,
-      "text": "Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by an additional 1%.",
-      "row": 3
-     }
-    ]
+    "removed": []
    },
    {
     "name": "Enhancement",
@@ -598,9 +605,9 @@
       "passive": true,
       "icon": "spell_nature_mentalquickness",
       "desc": [
-       "Increases your Attack Power by an amount equal to 33% of your Intellect.",
-       "Increases your Attack Power by an amount equal to 67% of your Intellect.",
-       "Increases your Attack Power by an amount equal to 100% of your Intellect."
+       "Increases your Attack Power by an amount equal to 50% of your Intellect.",
+       "Increases your Attack Power by an amount equal to 100% of your Intellect.",
+       "Increases your Attack Power by an amount equal to 150% of your Intellect."
       ],
       "complete": true,
       "confirmed": [
@@ -609,34 +616,9 @@
        3
       ],
       "src": "beta",
+      "hotfix": "2026-11-02",
       "classic": {
        "status": "new"
-      }
-     },
-     {
-      "name": "Improved Ghost Wolf",
-      "max": 2,
-      "row": 2,
-      "col": 3,
-      "passive": true,
-      "icon": "spell_nature_spiritwolf",
-      "desc": [
-       "Reduces the cast time of your Ghost Wolf spell by 1.0 sec, and Ghost Wolf may be used indoors.",
-       "Reduces the cast time of your Ghost Wolf spell by 3.0 sec, and Ghost Wolf may be used indoors."
-      ],
-      "complete": true,
-      "confirmed": [
-       1,
-       2
-      ],
-      "src": "beta",
-      "classic": {
-       "status": "changed",
-       "tree": "Enhancement",
-       "row": 2,
-       "col": 3,
-       "max": 2,
-       "text": "Reduces the cast time of your Ghost Wolf spell by 1 sec."
       }
      },
      {
@@ -785,11 +767,11 @@
       "passive": true,
       "icon": "ability_ghoulfrenzy",
       "desc": [
-       "Increases your attack speed by 5% for your next 3 swings after dealing a melee critical strike.",
-       "Increases your attack speed by 10% for your next 3 swings after dealing a melee critical strike.",
-       "Increases your attack speed by 15% for your next 3 swings after dealing a melee critical strike.",
-       "Increases your attack speed by 20% for your next 3 swings after dealing a melee critical strike.",
-       "Increases your attack speed by 25% for your next 3 swings after dealing a melee critical strike."
+       "Increases your attack speed by 6% for your next 3 swings after dealing a melee critical strike.",
+       "Increases your attack speed by 12% for your next 3 swings after dealing a melee critical strike.",
+       "Increases your attack speed by 18% for your next 3 swings after dealing a melee critical strike.",
+       "Increases your attack speed by 24% for your next 3 swings after dealing a melee critical strike.",
+       "Increases your attack speed by 30% for your next 3 swings after dealing a melee critical strike."
       ],
       "complete": true,
       "confirmed": [
@@ -800,6 +782,7 @@
        5
       ],
       "src": "beta",
+      "hotfix": "2026-11-02",
       "req": "Mental Dexterity",
       "classic": {
        "status": "changed",
@@ -819,14 +802,15 @@
       "passive": false,
       "icon": "ability_shaman_stormstrike",
       "desc": [
-       "Instantly strike for normal weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec."
+       "Instantly strike for 150% normalized weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec."
       ],
       "complete": true,
       "confirmed": [
        1
       ],
       "src": "beta",
-      "cost": "8% of base mana | Melee Range | Instant | 8 sec cooldown",
+      "hotfix": "2026-11-02",
+      "cost": "8% of base mana | Melee Range | Instant | 6 sec cooldown",
       "classic": {
        "status": "changed",
        "tree": "Enhancement",
@@ -836,6 +820,34 @@
        "text": "Gives you an extra attack. In addition, the next 2 sources of Nature damage dealt to the target are increased by 20%. Lasts 12 sec.",
        "moved": true,
        "note": "no longer requires Elemental Weapons"
+      }
+     },
+     {
+      "name": "Improved Ghost Wolf",
+      "max": 2,
+      "row": 4,
+      "col": 4,
+      "passive": true,
+      "icon": "spell_nature_spiritwolf",
+      "desc": [
+       "Reduces the cast time of your Ghost Wolf spell by 1.0 sec, and Ghost Wolf may be used indoors.",
+       "Reduces the cast time of your Ghost Wolf spell by 3.0 sec, and Ghost Wolf may be used indoors."
+      ],
+      "complete": true,
+      "confirmed": [
+       1,
+       2
+      ],
+      "src": "beta",
+      "hotfix": "2026-11-02",
+      "classic": {
+       "status": "changed",
+       "tree": "Enhancement",
+       "row": 2,
+       "col": 3,
+       "max": 2,
+       "text": "Reduces the cast time of your Ghost Wolf spell by 1 sec.",
+       "moved": true
       }
      },
      {
@@ -1434,15 +1446,16 @@
       "passive": false,
       "icon": "spell_nature_riptide",
       "desc": [
-       "Heals a friendly target for 485 to 533, an additional 445 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%."
+       "Heals a friendly target for 445 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%."
       ],
       "complete": true,
       "confirmed": [
        1
       ],
       "src": "beta",
+      "hotfix": "2026-11-02",
       "req": "Healing Way",
-      "cost": "245 Mana | 40 yd range | Instant | 6 sec cooldown",
+      "cost": "245 Mana | 40 yd range | Instant | 12 sec cooldown",
       "classic": {
        "status": "new"
       }
@@ -1464,7 +1477,7 @@
     ]
    }
   ],
-  "source": "Talent trees and every rank's text from the WoW Forever beta client, build 1.60.1.70630.",
+  "source": "Talent trees and every rank's text from the WoW Forever beta client, build 1.60.1.70753. Some Shaman numbers follow Blizzard's development notes of 2 Nov 2026, ahead of any game data.",
   "classic_total": 46
  },
  "spellbook": {
@@ -1559,10 +1572,6 @@
       ""
      ],
      [
-      "Elemental Mastery",
-      ""
-     ],
-     [
       "Fire Nova",
       "Rank 1"
      ],
@@ -1620,22 +1629,6 @@
      ],
      [
       "Frost Shock",
-      "Rank 4"
-     ],
-     [
-      "Lava Burst",
-      "Rank 1"
-     ],
-     [
-      "Lava Burst",
-      "Rank 2"
-     ],
-     [
-      "Lava Burst",
-      "Rank 3"
-     ],
-     [
-      "Lava Burst",
       "Rank 4"
      ],
      [
@@ -1677,6 +1670,10 @@
      [
       "Lightning Bolt",
       "Rank 10"
+     ],
+     [
+      "Lightning Mastery",
+      ""
      ],
      [
       "Magma Totem",
@@ -1996,7 +1993,7 @@
       "Rank 5"
      ],
      [
-      "Totemic Projection",
+      "Totemic Call",
       ""
      ],
      [
@@ -2249,7 +2246,7 @@
   ],
   "notes": [],
   "source": "beta",
-  "build": "1.60.1.70630",
+  "build": "1.60.1.70753",
   "levels": {
    "Stoneclaw Totem": [
     8,
@@ -2469,12 +2466,6 @@
    "Reincarnation": [
     30
    ],
-   "Lava Burst": [
-    30,
-    40,
-    50,
-    60
-   ],
    "Riptide": [
     40,
     50,
@@ -2482,8 +2473,7 @@
    ]
   },
   "talents": [
-   "Elemental Mastery",
-   "Lava Burst",
+   "Lightning Mastery",
    "Mana Tide Totem",
    "Nature's Swiftness",
    "Rage of the Farseer",
@@ -2534,21 +2524,20 @@
    "Frostbrand Weapon": "spell_frost_frostbrand",
    "Fire Resistance Totem": "spell_fireresistancetotem_01",
    "Water Breathing": "spell_shadow_demonbreath",
-   "Elemental Mastery": "spell_nature_wispheal",
    "Mana Tide Totem": "spell_frost_summonwaterelemental",
    "Nature's Swiftness": "spell_nature_ravenform",
    "Water Walking": "spell_frost_windwalkon",
    "Stormstrike": "ability_shaman_stormstrike",
    "Reincarnation": "spell_nature_reincarnation",
-   "Lava Burst": "spell_shaman_lavaburst",
    "Rage of the Farseer": "spell_nature_bloodlust",
    "Riptide": "spell_nature_riptide",
    "Water Shield": "ability_shaman_watershield",
-   "Totemic Projection": "ability_shaman_totemrelocation",
    "Call of the Elements": "spell_shaman_dropall_01",
    "Call of the Ancestors": "spell_shaman_dropall_02",
    "Call of the Spirits": "spell_shaman_dropall_03",
-   "Totemic Recall": "spell_shaman_totemrecall"
+   "Totemic Recall": "spell_shaman_totemrecall",
+   "Lightning Mastery": "spell_nature_wispheal",
+   "Totemic Call": "ability_shaman_totemrelocation"
   },
   "gone": [
    "Fire Nova Totem"
@@ -2631,7 +2620,7 @@
    ],
    "d": "Simultaneously places up to 4 totems specified in the Totem Bar. Can call different totems than Call of the Elements.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 30",
    "id": 66843,
@@ -2648,7 +2637,7 @@
    ],
    "d": "Simultaneously places up to 4 totems specified in the Totem Bar.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 20",
    "id": 66842,
@@ -2665,7 +2654,7 @@
    ],
    "d": "Simultaneously places up to 4 totems specified in the Totem Bar. Can call different totems than Call of the Elements or Call of the Ancestors.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 40",
    "id": 66844,
@@ -2679,13 +2668,13 @@
      "30 yd range"
     ],
     [
-     "2 sec cast",
+     "2.5 sec cast",
      "6 sec cooldown"
     ]
    ],
    "d": "Hurls a lightning bolt at the enemy, dealing 85 to 97 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 32",
    "id": 421,
@@ -2717,13 +2706,13 @@
      "30 yd range"
     ],
     [
-     "2 sec cast",
+     "2.5 sec cast",
      "6 sec cooldown"
     ]
    ],
    "d": "Hurls a lightning bolt at the enemy, dealing 97 to 109 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 40",
    "id": 930,
@@ -2755,13 +2744,13 @@
      "30 yd range"
     ],
     [
-     "2 sec cast",
+     "2.5 sec cast",
      "6 sec cooldown"
     ]
    ],
    "d": "Hurls a lightning bolt at the enemy, dealing 109 to 121 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 48",
    "id": 2860,
@@ -2793,13 +2782,13 @@
      "30 yd range"
     ],
     [
-     "2 sec cast",
+     "2.5 sec cast",
      "6 sec cooldown"
     ]
    ],
    "d": "Hurls a lightning bolt at the enemy, dealing 119 to 133 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 56",
    "id": 10605,
@@ -2835,9 +2824,9 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly shocks the target with concussive force, causing 19 to 21 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
+   "d": "Instantly shocks the target with concussive force, causing 19 to 22 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 4",
    "id": 8042,
@@ -2845,6 +2834,7 @@
    "sc": "Nature",
    "cs": "changed",
    "ck": "n",
+   "cd": "Instantly shocks the target with concussive force, causing 19 to 21 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
    "cc": "15.4% of spell power (direct)",
    "cl": [
     [
@@ -2864,9 +2854,9 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly shocks the target with concussive force, causing 35 to 37 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
+   "d": "Instantly shocks the target with concussive force, causing 35 to 38 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 8",
    "id": 8044,
@@ -2874,6 +2864,7 @@
    "sc": "Nature",
    "cs": "changed",
    "ck": "n",
+   "cd": "Instantly shocks the target with concussive force, causing 35 to 37 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
    "cc": "21.2% of spell power (direct)",
    "cl": [
     [
@@ -2893,9 +2884,9 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly shocks the target with concussive force, causing 51 to 55 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
+   "d": "Instantly shocks the target with concussive force, causing 65 to 69 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 14",
    "id": 8045,
@@ -2903,7 +2894,6 @@
    "sc": "Nature",
    "cs": "changed",
    "ck": "n",
-   "cd": "Instantly shocks the target with concussive force, causing 65 to 69 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
    "cc": "29.9% of spell power (direct)",
    "cl": [
     [
@@ -2923,17 +2913,15 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly shocks the target with concussive force, causing 83 to 89 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
+   "d": "Instantly shocks the target with concussive force, causing 126 to 134 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 24",
    "id": 8046,
    "co": "38.6% of spell power (direct)",
    "sc": "Nature",
-   "cs": "changed",
-   "ck": "n",
-   "cd": "Instantly shocks the target with concussive force, causing 126 to 134 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat."
+   "cs": "same"
   },
   "Shaman|Earth Shock|Rank 5": {
    "l": [
@@ -2946,17 +2934,15 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly shocks the target with concussive force, causing 134 to 142 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
+   "d": "Instantly shocks the target with concussive force, causing 235 to 249 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 36",
    "id": 10412,
    "co": "38.6% of spell power (direct)",
    "sc": "Nature",
-   "cs": "changed",
-   "ck": "n",
-   "cd": "Instantly shocks the target with concussive force, causing 235 to 249 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat."
+   "cs": "same"
   },
   "Shaman|Earth Shock|Rank 6": {
    "l": [
@@ -2969,17 +2955,15 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly shocks the target with concussive force, causing 207 to 219 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
+   "d": "Instantly shocks the target with concussive force, causing 372 to 394 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 48",
    "id": 10413,
    "co": "38.6% of spell power (direct)",
    "sc": "Nature",
-   "cs": "changed",
-   "ck": "n",
-   "cd": "Instantly shocks the target with concussive force, causing 372 to 394 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat."
+   "cs": "same"
   },
   "Shaman|Earth Shock|Rank 7": {
    "l": [
@@ -2992,17 +2976,15 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly shocks the target with concussive force, causing 293 to 309 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
+   "d": "Instantly shocks the target with concussive force, causing 517 to 545 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 60",
    "id": 10414,
    "co": "38.6% of spell power (direct)",
    "sc": "Nature",
-   "cs": "changed",
-   "ck": "n",
-   "cd": "Instantly shocks the target with concussive force, causing 517 to 545 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat."
+   "cs": "same"
   },
   "Shaman|Earthbind Totem|": {
    "l": [
@@ -3021,31 +3003,12 @@
    ],
    "d": "Summons an Earthbind Totem with 5 health at the feet of the caster for 45 sec that slows the movement speed of enemies within 10 yards.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 6",
    "id": 2484,
    "sc": "Nature",
    "cs": "same"
-  },
-  "Shaman|Elemental Mastery|": {
-   "l": [
-    [
-     "Instant",
-     "3 min cooldown"
-    ]
-   ],
-   "d": "Gain mastery over Fire and Lightning, reducing the cast time of Lightning Bolt and Lava Burst by 0.5 sec, and removing the cooldown from Chain Lightning. Lasts 15 sec.",
-   "s": "beta",
-   "src": "beta client 1.60.1.70630",
-   "r": "",
-   "lv": "Learned at level 40",
-   "id": 16166,
-   "sc": "Nature",
-   "nt": 3,
-   "cs": "changed",
-   "ck": "r",
-   "cd": "When activated, this spell gives your next Fire, Frost, or Nature damage spell a 100% critical strike chance and reduces the mana cost by 100%."
   },
   "Shaman|Fire Nova|Rank 1": {
    "l": [
@@ -3060,7 +3023,7 @@
    ],
    "d": "Instantly inflicts 32 to 38 fire damage to enemies within 10 yd of your active Fire totem.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 12",
    "id": 408341,
@@ -3081,7 +3044,7 @@
    ],
    "d": "Instantly inflicts 54 to 62 fire damage to enemies within 10 yd of your active Fire totem.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 22",
    "id": 408342,
@@ -3102,7 +3065,7 @@
    ],
    "d": "Instantly inflicts 126 to 142 fire damage to enemies within 10 yd of your active Fire totem.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 32",
    "id": 408343,
@@ -3123,7 +3086,7 @@
    ],
    "d": "Instantly inflicts 173 to 195 fire damage to enemies within 10 yd of your active Fire totem.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 42",
    "id": 408344,
@@ -3144,7 +3107,7 @@
    ],
    "d": "Instantly inflicts 232 to 258 fire damage to enemies within 10 yd of your active Fire totem.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 52",
    "id": 408345,
@@ -3163,9 +3126,9 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly sears the target with fire, causing 24 Fire damage immediately and 28 Fire damage over 12 sec.",
+   "d": "Instantly sears the target with fire, causing 25 Fire damage immediately and 28 Fire damage over 12 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 10",
    "id": 8050,
@@ -3173,7 +3136,6 @@
    "sc": "Fire",
    "cs": "changed",
    "ck": "n",
-   "cd": "Instantly sears the target with fire, causing 25 Fire damage immediately and 28 Fire damage over 12 sec.",
    "cc": "13.4% of spell power (direct), 6.3% of spell power (per tick)",
    "cl": [
     [
@@ -3193,9 +3155,9 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly sears the target with fire, causing 38 Fire damage immediately and 32 Fire damage over 12 sec.",
+   "d": "Instantly sears the target with fire, causing 51 Fire damage immediately and 48 Fire damage over 12 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 18",
    "id": 8052,
@@ -3203,7 +3165,6 @@
    "sc": "Fire",
    "cs": "changed",
    "ck": "n",
-   "cd": "Instantly sears the target with fire, causing 51 Fire damage immediately and 48 Fire damage over 12 sec.",
    "cc": "19.8% of spell power (direct), 9.3% of spell power (per tick)",
    "cl": [
     [
@@ -3223,9 +3184,9 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly sears the target with fire, causing 49 Fire damage immediately and 56 Fire damage over 12 sec.",
+   "d": "Instantly sears the target with fire, causing 95 Fire damage immediately and 96 Fire damage over 12 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 28",
    "id": 8053,
@@ -3246,9 +3207,9 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly sears the target with fire, causing 89 Fire damage immediately and 84 Fire damage over 12 sec.",
+   "d": "Instantly sears the target with fire, causing 164 Fire damage immediately and 168 Fire damage over 12 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 40",
    "id": 10447,
@@ -3269,9 +3230,9 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly sears the target with fire, causing 136 Fire damage immediately and 136 Fire damage over 12 sec.",
+   "d": "Instantly sears the target with fire, causing 245 Fire damage immediately and 256 Fire damage over 12 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 52",
    "id": 10448,
@@ -3292,17 +3253,15 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly sears the target with fire, causing 166 Fire damage immediately and 176 Fire damage over 12 sec.",
+   "d": "Instantly sears the target with fire, causing 292 Fire damage immediately and 320 Fire damage over 12 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 60",
    "id": 29228,
    "co": "21.4% of spell power (direct), 10% of spell power (per tick)",
    "sc": "Fire",
-   "cs": "changed",
-   "ck": "n",
-   "cd": "Instantly sears the target with fire, causing 292 Fire damage immediately and 320 Fire damage over 12 sec."
+   "cs": "same"
   },
   "Shaman|Frost Shock|Rank 1": {
    "l": [
@@ -3315,17 +3274,15 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly shocks the target with frost, causing 68 to 72 Frost damage and slowing movement speed by 50%. Lasts 8 sec.",
+   "d": "Instantly shocks the target with frost, causing 95 to 101 Frost damage and slowing movement speed by 50%. Lasts 8 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 20",
    "id": 8056,
    "co": "38.6% of spell power (direct)",
    "sc": "Frost",
-   "cs": "changed",
-   "ck": "n",
-   "cd": "Instantly shocks the target with frost, causing 95 to 101 Frost damage and slowing movement speed by 50%. Lasts 8 sec."
+   "cs": "same"
   },
   "Shaman|Frost Shock|Rank 2": {
    "l": [
@@ -3338,9 +3295,9 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly shocks the target with frost, causing 126 to 134 Frost damage and slowing movement speed by 50%. Lasts 8 sec.",
+   "d": "Instantly shocks the target with frost, causing 215 to 230 Frost damage and slowing movement speed by 50%. Lasts 8 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 34",
    "id": 8058,
@@ -3361,9 +3318,9 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly shocks the target with frost, causing 190 to 200 Frost damage and slowing movement speed by 50%. Lasts 8 sec.",
+   "d": "Instantly shocks the target with frost, causing 345 to 366 Frost damage and slowing movement speed by 50%. Lasts 8 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 46",
    "id": 10472,
@@ -3384,102 +3341,15 @@
      "6 sec cooldown"
     ]
    ],
-   "d": "Instantly shocks the target with frost, causing 278 to 294 Frost damage and slowing movement speed by 50%. Lasts 8 sec.",
+   "d": "Instantly shocks the target with frost, causing 492 to 520 Frost damage and slowing movement speed by 50%. Lasts 8 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 58",
    "id": 10473,
    "co": "38.6% of spell power (direct)",
    "sc": "Frost",
-   "cs": "changed",
-   "ck": "n",
-   "cd": "Instantly shocks the target with frost, causing 492 to 520 Frost damage and slowing movement speed by 50%. Lasts 8 sec."
-  },
-  "Shaman|Lava Burst|Rank 1": {
-   "l": [
-    [
-     "135 Mana",
-     "30 yd range"
-    ],
-    [
-     "2.5 sec cast",
-     "10 sec cooldown"
-    ]
-   ],
-   "d": "You hurl molten lava at the target, dealing 113 to 145 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage.",
-   "s": "beta",
-   "src": "beta client 1.60.1.70630",
-   "r": "",
-   "lv": "Learned at level 30",
-   "id": 408490,
-   "co": "71.4% of spell power (direct)",
-   "sc": "Fire",
-   "nt": 3,
-   "cs": "new"
-  },
-  "Shaman|Lava Burst|Rank 2": {
-   "l": [
-    [
-     "165 Mana",
-     "30 yd range"
-    ],
-    [
-     "2.5 sec cast",
-     "10 sec cooldown"
-    ]
-   ],
-   "d": "You hurl molten lava at the target, dealing 150 to 192 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage.",
-   "s": "beta",
-   "src": "beta client 1.60.1.70630",
-   "r": "",
-   "lv": "Learned at level 40",
-   "id": 1238299,
-   "co": "71.4% of spell power (direct)",
-   "sc": "Fire",
-   "cs": "new"
-  },
-  "Shaman|Lava Burst|Rank 3": {
-   "l": [
-    [
-     "230 Mana",
-     "30 yd range"
-    ],
-    [
-     "2.5 sec cast",
-     "10 sec cooldown"
-    ]
-   ],
-   "d": "You hurl molten lava at the target, dealing 179 to 229 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage.",
-   "s": "beta",
-   "src": "beta client 1.60.1.70630",
-   "r": "",
-   "lv": "Learned at level 50",
-   "id": 1238300,
-   "co": "71.4% of spell power (direct)",
-   "sc": "Fire",
-   "cs": "new"
-  },
-  "Shaman|Lava Burst|Rank 4": {
-   "l": [
-    [
-     "265 Mana",
-     "30 yd range"
-    ],
-    [
-     "2.5 sec cast",
-     "10 sec cooldown"
-    ]
-   ],
-   "d": "You hurl molten lava at the target, dealing 192 to 248 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage.",
-   "s": "beta",
-   "src": "beta client 1.60.1.70630",
-   "r": "",
-   "lv": "Learned at level 60",
-   "id": 1326047,
-   "co": "71.4% of spell power (direct)",
-   "sc": "Fire",
-   "cs": "new"
+   "cs": "same"
   },
   "Shaman|Lightning Bolt|Rank 1": {
    "l": [
@@ -3494,7 +3364,7 @@
    ],
    "d": "Casts a bolt of lightning at the target for 14 to 16 Nature damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 1",
    "id": 403,
@@ -3524,7 +3394,7 @@
    ],
    "d": "Casts a bolt of lightning at the target for 25 to 29 Nature damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 8",
    "id": 529,
@@ -3554,7 +3424,7 @@
    ],
    "d": "Casts a bolt of lightning at the target for 42 to 50 Nature damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 14",
    "id": 548,
@@ -3584,7 +3454,7 @@
    ],
    "d": "Casts a bolt of lightning at the target for 59 to 67 Nature damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 20",
    "id": 915,
@@ -3622,7 +3492,7 @@
    ],
    "d": "Casts a bolt of lightning at the target for 78 to 90 Nature damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 26",
    "id": 943,
@@ -3660,7 +3530,7 @@
    ],
    "d": "Casts a bolt of lightning at the target for 108 to 122 Nature damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 32",
    "id": 6041,
@@ -3698,7 +3568,7 @@
    ],
    "d": "Casts a bolt of lightning at the target for 142 to 160 Nature damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 38",
    "id": 10391,
@@ -3736,7 +3606,7 @@
    ],
    "d": "Casts a bolt of lightning at the target for 158 to 176 Nature damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 44",
    "id": 10392,
@@ -3774,7 +3644,7 @@
    ],
    "d": "Casts a bolt of lightning at the target for 173 to 193 Nature damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 50",
    "id": 15207,
@@ -3812,7 +3682,7 @@
    ],
    "d": "Casts a bolt of lightning at the target for 189 to 211 Nature damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 56",
    "id": 15208,
@@ -3837,6 +3707,26 @@
    ],
    "cc": "85.7% of spell power (direct)"
   },
+  "Shaman|Lightning Mastery|": {
+   "l": [
+    [
+     "Instant",
+     "3 min cooldown"
+    ]
+   ],
+   "d": "Gain mastery over Fire and Lightning, reducing the cast time of Lightning Bolt by 0.5 sec, and removing the cooldown from Chain Lightning. Lasts 15 sec.",
+   "s": "beta",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
+   "r": "",
+   "lv": "Learned at level 40",
+   "id": 16166,
+   "sc": "Nature",
+   "nt": 3,
+   "was": "Elemental Mastery",
+   "cs": "changed",
+   "ck": "r",
+   "cd": "When activated, this spell gives your next Fire, Frost, or Nature damage spell a 100% critical strike chance and reduces the mana cost by 100%."
+  },
   "Shaman|Magma Totem|Rank 1": {
    "l": [
     [
@@ -3854,7 +3744,7 @@
    ],
    "d": "Summons a Magma Totem with 5 health at the feet of the caster for 20 sec that causes 20 Fire damage to creatures within 8 yards every 2 seconds.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 26",
    "id": 8190,
@@ -3881,7 +3771,7 @@
    ],
    "d": "Summons a Magma Totem with 5 health at the feet of the caster for 20 sec that causes 35 Fire damage to creatures within 8 yards every 2 seconds.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 36",
    "id": 10585,
@@ -3908,7 +3798,7 @@
    ],
    "d": "Summons a Magma Totem with 5 health at the feet of the caster for 20 sec that causes 52 Fire damage to creatures within 8 yards every 2 seconds.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 46",
    "id": 10586,
@@ -3935,7 +3825,7 @@
    ],
    "d": "Summons a Magma Totem with 5 health at the feet of the caster for 20 sec that causes 73 Fire damage to creatures within 8 yards every 2 seconds.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 56",
    "id": 10587,
@@ -3958,7 +3848,7 @@
    ],
    "d": "Purges the enemy target, removing 1 magic effect.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 12",
    "id": 370,
@@ -3978,7 +3868,7 @@
    ],
    "d": "Purges the enemy target, removing 2 beneficial magic effects.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 32",
    "id": 8012,
@@ -4002,7 +3892,7 @@
    ],
    "d": "Summons a Searing Totem with 5 health at your feet for 30 sec that repeatedly attacks an enemy within 20 yards for 9 to 11 Fire damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 10",
    "id": 3599,
@@ -4035,7 +3925,7 @@
    ],
    "d": "Summons a Searing Totem with 5 health at your feet for 35 sec that repeatedly attacks an enemy within 20 yards for 13 to 17 Fire damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 20",
    "id": 6363,
@@ -4068,7 +3958,7 @@
    ],
    "d": "Summons a Searing Totem with 5 health at your feet for 40 sec that repeatedly attacks an enemy within 20 yards for 19 to 25 Fire damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 30",
    "id": 6364,
@@ -4101,7 +3991,7 @@
    ],
    "d": "Summons a Searing Totem with 5 health at your feet for 45 sec that repeatedly attacks an enemy within 20 yards for 26 to 34 Fire damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 40",
    "id": 6365,
@@ -4134,7 +4024,7 @@
    ],
    "d": "Summons a Searing Totem with 5 health at your feet for 50 sec that repeatedly attacks an enemy within 20 yards for 33 to 45 Fire damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 50",
    "id": 10437,
@@ -4167,7 +4057,7 @@
    ],
    "d": "Summons a Searing Totem with 5 health at your feet for 55 sec that repeatedly attacks an enemy within 20 yards for 40 to 54 Fire damage.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 60",
    "id": 10438,
@@ -4200,7 +4090,7 @@
    ],
    "d": "Summons a Stoneclaw Totem with 206 health at the feet of the caster for 15 sec that taunts creatures within 8 yards to attack it.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 8",
    "id": 5730,
@@ -4224,7 +4114,7 @@
    ],
    "d": "Summons a Stoneclaw Totem with 276 health at the feet of the caster for 15 sec that taunts creatures within 8 yards to attack it.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 18",
    "id": 6390,
@@ -4248,7 +4138,7 @@
    ],
    "d": "Summons a Stoneclaw Totem with 316 health at the feet of the caster for 15 sec that taunts creatures within 8 yards to attack it.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 28",
    "id": 6391,
@@ -4272,7 +4162,7 @@
    ],
    "d": "Summons a Stoneclaw Totem with 346 health at the feet of the caster for 15 sec that taunts creatures within 8 yards to attack it.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 38",
    "id": 6392,
@@ -4296,7 +4186,7 @@
    ],
    "d": "Summons a Stoneclaw Totem with 426 health at the feet of the caster for 15 sec that taunts creatures within 8 yards to attack it.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 48",
    "id": 10427,
@@ -4320,7 +4210,7 @@
    ],
    "d": "Summons a Stoneclaw Totem with 486 health at the feet of the caster for 15 sec that taunts creatures within 8 yards to attack it.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 58",
    "id": 10428,
@@ -4336,7 +4226,7 @@
    ],
    "d": "Returns your totems to the earth, giving you 25% of the mana required to cast each totem destroyed by Totemic Recall.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 20",
    "id": 36936,
@@ -4357,7 +4247,7 @@
    ],
    "d": "Yanks the caster through the twisting nether back to home. Speak to an Innkeeper in a different place to change your home location.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 30",
    "id": 556,
@@ -4377,7 +4267,7 @@
    ],
    "d": "Changes the caster's viewpoint to the targeted location. Lasts 1 min. Only useable outdoors.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 26",
    "id": 6196,
@@ -4401,7 +4291,7 @@
    ],
    "d": "Summons a Fire Resistance Totem with 5 health at the feet of the caster for 5 min that increases the fire resistance of party or raid members within 30 yards by 30.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 28",
    "id": 8184,
@@ -4427,7 +4317,7 @@
    ],
    "d": "Summons a Fire Resistance Totem with 5 health at the feet of the caster for 5 min that increases the fire resistance of party or raid members within 30 yards by 45.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 42",
    "id": 10537,
@@ -4453,7 +4343,7 @@
    ],
    "d": "Summons a Fire Resistance Totem with 5 health at the feet of the caster for 5 min that increases the fire resistance of party or raid members within 30 yards by 60.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 58",
    "id": 10538,
@@ -4479,7 +4369,7 @@
    ],
    "d": "Summons a Flametongue Totem with 5 health at the feet of the caster. The totem enchants all party or raid members' main-hand weapons with fire if they are within 30 yards. Each hit causes 6 to 22 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 28",
    "id": 8227,
@@ -4505,7 +4395,7 @@
    ],
    "d": "Summons a Flametongue Totem with 5 health at the feet of the caster. The totem enhances the melee attacks of all party or raid members within 30 yards. Each main hand hit causes 9 to 31 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 38",
    "id": 8249,
@@ -4531,7 +4421,7 @@
    ],
    "d": "Summons a Flametongue Totem with 5 health at the feet of the caster. The totem enhances the melee attacks of all party or raid members within 30 yards. Each main hand hit causes 13 to 42 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 48",
    "id": 10526,
@@ -4557,7 +4447,7 @@
    ],
    "d": "Summons a Flametongue Totem with 5 health at the feet of the caster. The totem enhances the melee attacks of all party or raid members within 30 yards. Each main hand hit causes 17 to 55 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 58",
    "id": 16387,
@@ -4579,7 +4469,7 @@
    ],
    "d": "Imbue the Shaman's weapon with fire. Each hit causes 5 to 18 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. When applied to main hand, disables any benefit you personally receive from Flametongue Totem. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 10",
    "id": 8024,
@@ -4602,7 +4492,7 @@
    ],
    "d": "Imbue the Shaman's weapon with fire. Each hit causes 7 to 26 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. When applied to main hand, disables any benefit you personally receive from Flametongue Totem. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 18",
    "id": 8027,
@@ -4625,7 +4515,7 @@
    ],
    "d": "Imbue the Shaman's weapon with fire. Each hit causes 13 to 42 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. When applied to main hand, disables any benefit you personally receive from Flametongue Totem. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 26",
    "id": 8030,
@@ -4648,7 +4538,7 @@
    ],
    "d": "Imbue the Shaman's weapon with fire. Each hit causes 21 to 69 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. When applied to main hand, disables any benefit you personally receive from Flametongue Totem. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 36",
    "id": 16339,
@@ -4671,7 +4561,7 @@
    ],
    "d": "Imbue the Shaman's weapon with fire. Each hit causes 30 to 95 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. When applied to main hand, disables any benefit you personally receive from Flametongue Totem. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 46",
    "id": 16341,
@@ -4694,7 +4584,7 @@
    ],
    "d": "Imbue the Shaman's weapon with fire. Each hit causes 35 to 112 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. When applied to main hand, disables any benefit you personally receive from Flametongue Totem. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 56",
    "id": 16342,
@@ -4721,7 +4611,7 @@
    ],
    "d": "Summons a Frost Resistance Totem with 5 health at the feet of the caster for 5 min. The totem increases party and raid members' frost resistance by 30, if within 30 yards.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 24",
    "id": 8181,
@@ -4747,7 +4637,7 @@
    ],
    "d": "Summons a Frost Resistance Totem with 5 health at the feet of the caster for 5 min. The totem increases party and raid members' frost resistance by 45, if within 30 yards.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 38",
    "id": 10478,
@@ -4773,7 +4663,7 @@
    ],
    "d": "Summons a Frost Resistance Totem with 5 health at the feet of the caster for 5 min. The totem increases party and raid members' frost resistance by 60, if within 30 yards.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 54",
    "id": 10479,
@@ -4795,7 +4685,7 @@
    ],
    "d": "Imbue the Shaman's weapon with frost. Each hit has a chance of causing 44 additional Frost damage and slowing the target's movement speed by 25% for 8 sec. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 20",
    "id": 8033,
@@ -4818,7 +4708,7 @@
    ],
    "d": "Imbue the Shaman's weapon with frost. Each hit has a chance of causing 72 additional Frost damage and slowing the target's movement speed by 25% for 8 sec. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 28",
    "id": 8038,
@@ -4841,7 +4731,7 @@
    ],
    "d": "Imbue the Shaman's weapon with frost. Each hit has a chance of causing 117 additional Frost damage and slowing the target's movement speed by 25% for 8 sec. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 38",
    "id": 10456,
@@ -4864,7 +4754,7 @@
    ],
    "d": "Imbue the Shaman's weapon with frost. Each hit has a chance of causing 159 additional Frost damage and slowing the target's movement speed by 25% for 8 sec. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 48",
    "id": 16355,
@@ -4887,7 +4777,7 @@
    ],
    "d": "Imbue the Shaman's weapon with frost. Each hit has a chance of causing 169 additional Frost damage and slowing the target's movement speed by 25% for 8 sec. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 58",
    "id": 16356,
@@ -4910,7 +4800,7 @@
    ],
    "d": "Turns the Shaman into a Ghost Wolf, increasing speed by 40%. Only useable outdoors.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 20",
    "id": 2645,
@@ -4934,7 +4824,7 @@
    ],
    "d": "Summons a Grace of Air Totem with 5 health at the feet of the caster. The totem increases the agility of party or raid members within 30 yards by 49. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 42",
    "id": 8835,
@@ -4960,7 +4850,7 @@
    ],
    "d": "Summons a Grace of Air Totem with 5 health at the feet of the caster. The totem increases the agility of party or raid members within 30 yards by 77. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 56",
    "id": 10627,
@@ -4986,7 +4876,7 @@
    ],
    "d": "Summons a Grace of Air Totem with 5 health at the feet of the caster. The totem increases the agility of party or raid members within 30 yards by 89. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 60",
    "id": 25359,
@@ -5012,7 +4902,7 @@
    ],
    "d": "Summons a Grounding Totem with 5 health at the feet of the caster that will redirect one harmful spell cast on a nearby party member to itself every 10 seconds. Will not redirect area of effect spells. Lasts 45 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 30",
    "id": 8177,
@@ -5032,7 +4922,7 @@
    ],
    "d": "The caster is surrounded by 3 balls of lightning. When a spell, melee or ranged attack hits the caster, the attacker will be struck for 13 Nature damage. This expends one lightning ball. Only one ball will fire every few seconds. Lasts 10 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 8",
    "id": 324,
@@ -5061,7 +4951,7 @@
    ],
    "d": "The caster is surrounded by 3 balls of lightning. When a spell, melee or ranged attack hits the caster, the attacker will be struck for 24 Nature damage. This expends one lightning ball. Only one ball will fire every few seconds. Lasts 10 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 16",
    "id": 325,
@@ -5091,7 +4981,7 @@
    ],
    "d": "The caster is surrounded by 3 balls of lightning. When a spell, melee or ranged attack hits the caster, the attacker will be struck for 40 Nature damage. This expends one lightning ball. Only one ball will fire every few seconds. Lasts 10 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 24",
    "id": 905,
@@ -5114,7 +5004,7 @@
    ],
    "d": "The caster is surrounded by 3 balls of lightning. When a spell, melee or ranged attack hits the caster, the attacker will be struck for 64 Nature damage. This expends one lightning ball. Only one ball will fire every few seconds. Lasts 10 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 32",
    "id": 945,
@@ -5137,7 +5027,7 @@
    ],
    "d": "The caster is surrounded by 3 balls of lightning. When a spell, melee or ranged attack hits the caster, the attacker will be struck for 96 Nature damage. This expends one lightning ball. Only one ball will fire every few seconds. Lasts 10 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 40",
    "id": 8134,
@@ -5160,7 +5050,7 @@
    ],
    "d": "The caster is surrounded by 3 balls of lightning. When a spell, melee or ranged attack hits the caster, the attacker will be struck for 134 Nature damage. This expends one lightning ball. Only one ball will fire every few seconds. Lasts 10 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 48",
    "id": 10431,
@@ -5183,7 +5073,7 @@
    ],
    "d": "The caster is surrounded by 3 balls of lightning. When a spell, melee or ranged attack hits the caster, the attacker will be struck for 178 Nature damage. This expends one lightning ball. Only one ball will fire every few seconds. Lasts 10 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 56",
    "id": 10432,
@@ -5210,7 +5100,7 @@
    ],
    "d": "Summons a Nature Resistance Totem with 5 health at the feet of the caster for 5 min that increases the nature resistance of party and raid members within 30 yards by 30.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 30",
    "id": 10595,
@@ -5236,7 +5126,7 @@
    ],
    "d": "Summons a Nature Resistance Totem with 5 health at the feet of the caster for 5 min that increases the nature resistance of party and raid members within 30 yards by 45.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 44",
    "id": 10600,
@@ -5262,7 +5152,7 @@
    ],
    "d": "Summons a Nature Resistance Totem with 5 health at the feet of the caster for 5 min that increases the nature resistance of party and raid members within 30 yards by 60.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 60",
    "id": 10601,
@@ -5280,7 +5170,7 @@
    ],
    "d": "Increases your attack speed by 30% for 25 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 40",
    "id": 425336,
@@ -5301,7 +5191,7 @@
    ],
    "d": "Imbue the Shaman's weapon, increasing melee attack power by 49 and allowing melee attacks to cause additional threat when using that weapon. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 1",
    "id": 8017,
@@ -5323,7 +5213,7 @@
    ],
    "d": "Imbue the Shaman's weapon, increasing melee attack power by 79 and allowing melee attacks to cause additional threat when using that weapon. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 8",
    "id": 8018,
@@ -5345,7 +5235,7 @@
    ],
    "d": "Imbue the Shaman's weapon, increasing melee attack power by 118 and allowing melee attacks to cause additional threat when using that weapon. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 16",
    "id": 8019,
@@ -5367,7 +5257,7 @@
    ],
    "d": "Imbue the Shaman's weapon, increasing melee attack power by 193 and allowing melee attacks to cause additional threat when using that weapon. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 24",
    "id": 10399,
@@ -5389,7 +5279,7 @@
    ],
    "d": "Imbue the Shaman's weapon, increasing melee attack power by 355 and allowing melee attacks to cause additional threat when using that weapon. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 34",
    "id": 16314,
@@ -5411,7 +5301,7 @@
    ],
    "d": "Imbue the Shaman's weapon, increasing melee attack power by 521 and allowing melee attacks to cause additional threat when using that weapon. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 44",
    "id": 16315,
@@ -5433,7 +5323,7 @@
    ],
    "d": "Imbue the Shaman's weapon, increasing melee attack power by 653 and allowing melee attacks to cause additional threat when using that weapon. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 54",
    "id": 16316,
@@ -5459,7 +5349,7 @@
    ],
    "d": "Summons an immobile Sentry Totem with 100 health at your feet for 5 min that allows vision of nearby area and warns of enemies that attack it. Right-Click on buff to switch back and forth between totem sight and Shaman sight.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 34",
    "id": 6495,
@@ -5483,7 +5373,7 @@
    ],
    "d": "Summons a Stoneskin Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing Physical damage taken by 4. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 4",
    "id": 8071,
@@ -5509,7 +5399,7 @@
    ],
    "d": "Summons a Stoneskin Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing Physical damage taken by 7. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 14",
    "id": 8154,
@@ -5535,7 +5425,7 @@
    ],
    "d": "Summons a Stoneskin Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing Physical damage taken by 11. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 24",
    "id": 8155,
@@ -5561,7 +5451,7 @@
    ],
    "d": "Summons a Stoneskin Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing Physical damage taken by 16. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 34",
    "id": 10406,
@@ -5587,7 +5477,7 @@
    ],
    "d": "Summons a Stoneskin Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing Physical damage taken by 22. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 44",
    "id": 10407,
@@ -5613,7 +5503,7 @@
    ],
    "d": "Summons a Stoneskin Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing Physical damage taken by 30. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 54",
    "id": 10408,
@@ -5630,12 +5520,12 @@
     ],
     [
      "Instant",
-     "8 sec cooldown"
+     "6 sec cooldown"
     ]
    ],
-   "d": "Instantly strike for normal weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec.",
+   "d": "Instantly strike for 150% normalized weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 25",
    "id": 17364,
@@ -5673,7 +5563,7 @@
    ],
    "d": "Summons a Strength of Earth Totem with 5 health at the feet of the caster. The totem increases the strength of party or raid members within 30 yards by 7. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 10",
    "id": 8075,
@@ -5699,7 +5589,7 @@
    ],
    "d": "Summons a Strength of Earth Totem with 5 health at the feet of the caster. The totem increases the strength of party or raid members within 30 yards by 14. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 24",
    "id": 8160,
@@ -5725,7 +5615,7 @@
    ],
    "d": "Summons a Strength of Earth Totem with 5 health at the feet of the caster. The totem increases the strength of party or raid members within 30 yards by 25. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 38",
    "id": 8161,
@@ -5751,7 +5641,7 @@
    ],
    "d": "Summons a Strength of Earth Totem with 5 health at the feet of the caster. The totem increases the strength of party or raid members within 30 yards by 42. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 52",
    "id": 10442,
@@ -5777,7 +5667,7 @@
    ],
    "d": "Summons a Strength of Earth Totem with 5 health at the feet of the caster. The totem increases the strength of party or raid members within 30 yards by 53. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 60",
    "id": 25361,
@@ -5786,20 +5676,20 @@
    "ck": "r",
    "cd": "Summons a Strength of Earth Totem with 5 health at the feet of the caster. The totem increases the strength of party members within 20 yards by 77. Lasts 2 min."
   },
-  "Shaman|Totemic Projection|": {
+  "Shaman|Totemic Call|": {
    "l": [
     [
      "25% of base mana",
-     "30 yd range"
+     ""
     ],
     [
      "Instant",
-     "1 min cooldown"
+     "30 sec cooldown"
     ]
    ],
-   "d": "Relocates your active totems to the specified location.",
+   "d": "Teleports the Shaman's totems to the Shaman's own location.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 22",
    "id": 437009,
@@ -5823,7 +5713,7 @@
    ],
    "d": "Allows the target to breathe underwater for 10 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 22",
    "id": 131,
@@ -5847,7 +5737,7 @@
    ],
    "d": "Allows the friendly target to walk across water for 10 min. Any damage will cancel the effect.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 28",
    "id": 546,
@@ -5871,7 +5761,7 @@
    ],
    "d": "Summons a Windfury Totem with 5 health at the feet of the caster. The totem enhances the melee attacks of all party or raid members within 30 yards. Each main hand hit has a 20% chance of granting the attacker 1 extra attack with 95 extra melee attack power. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 32",
    "id": 8512,
@@ -5897,7 +5787,7 @@
    ],
    "d": "Summons a Windfury Totem with 5 health at the feet of the caster. The totem enhances the melee attacks of all party or raid members within 30 yards. Each main hand hit has a 20% chance of granting the attacker 1 extra attack with 179 extra melee attack power. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 42",
    "id": 10613,
@@ -5923,7 +5813,7 @@
    ],
    "d": "Summons a Windfury Totem with 5 health at the feet of the caster. The totem enhances the melee attacks of all party or raid members within 30 yards. Each main hand hit has a 20% chance of granting the attacker 1 extra attack with 246 extra melee attack power. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 52",
    "id": 10614,
@@ -5945,7 +5835,7 @@
    ],
    "d": "Imbue the Shaman's weapon with wind. Each hit has a 20% chance of granting you 2 extra attacks with 103 extra melee attack power. When applied to main hand, disables any benefit you personally receive from Windfury Totem. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 30",
    "id": 8232,
@@ -5967,7 +5857,7 @@
    ],
    "d": "Imbue the Shaman's weapon with wind. Each hit has a 20% chance of granting you 2 extra attacks with 221 extra melee attack power. When appied to main hand, disables any benefit you personally receive from Windfury Totem. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 40",
    "id": 8235,
@@ -5989,7 +5879,7 @@
    ],
    "d": "Imbue the Shaman's weapon with wind. Each hit has a 20% chance of granting you 2 extra attacks with 315 extra melee attack power. When applied to main hand, disables any benefit you personally receive from Windfury Totem. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 50",
    "id": 10486,
@@ -6011,7 +5901,7 @@
    ],
    "d": "Imbue the Shaman's weapon with wind. Each hit has a 20% chance of granting you 2 extra attacks with 333 extra melee attack power. When applied to main hand, disables any benefit you personally receive from Windfury Totem. Lasts for 60 minutes.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 60",
    "id": 16362,
@@ -6037,7 +5927,7 @@
    ],
    "d": "Summons a Windwall Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing ranged damage taken by 32. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 36",
    "id": 15107,
@@ -6063,7 +5953,7 @@
    ],
    "d": "Summons a Windwall Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing ranged damage taken by 50. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 46",
    "id": 15111,
@@ -6089,7 +5979,7 @@
    ],
    "d": "Summons a Windwall Totem with 5 health at the feet of the caster. The totem protects party members within 30 yards, reducing ranged damage taken by 64. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 56",
    "id": 15112,
@@ -6111,7 +6001,7 @@
    ],
    "d": "Returns the spirit to the body, restoring a dead target to life with 65 health and 120 mana. Cannot be cast when in combat.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 12",
    "id": 2008,
@@ -6131,7 +6021,7 @@
    ],
    "d": "Returns the spirit to the body, restoring a dead target to life with 150 health and 260 mana. Cannot be cast when in combat.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 24",
    "id": 20609,
@@ -6151,7 +6041,7 @@
    ],
    "d": "Returns the spirit to the body, restoring a dead target to life with 250 health and 420 mana. Cannot be cast when in combat.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 36",
    "id": 20610,
@@ -6171,7 +6061,7 @@
    ],
    "d": "Returns the spirit to the body, restoring a dead target to life with 400 health and 600 mana. Cannot be cast when in combat.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 48",
    "id": 20776,
@@ -6191,7 +6081,7 @@
    ],
    "d": "Returns the spirit to the body, restoring a dead target to life with 600 health and 800 mana. Cannot be cast when in combat.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 60",
    "id": 20777,
@@ -6211,7 +6101,7 @@
    ],
    "d": "Heals the friendly target for 245 to 281, then jumps to heal additional nearby targets. If cast on a party member, the heal will only jump to other party members. Each jump is 50% as effective as the previous target. Heals 3 total targets.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 40",
    "id": 1064,
@@ -6234,7 +6124,7 @@
    ],
    "d": "Heals the friendly target for 326 to 372, then jumps to heal additional nearby targets. If cast on a party member, the heal will only jump to other party members. Each jump is 50% as effective as the previous target. Heals 3 total targets.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 46",
    "id": 10622,
@@ -6257,7 +6147,7 @@
    ],
    "d": "Heals the friendly target for 474 to 538, then jumps to heal additional nearby targets. If cast on a party member, the heal will only jump to other party members. Each jump is 50% as effective as the previous target. Heals 3 total targets.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 54",
    "id": 10623,
@@ -6280,7 +6170,7 @@
    ],
    "d": "Cures 1 disease on the target.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 22",
    "id": 2870,
@@ -6300,7 +6190,7 @@
    ],
    "d": "Cures 1 poison effect on the target.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 16",
    "id": 526,
@@ -6324,7 +6214,7 @@
    ],
    "d": "Summons a Disease Cleansing Totem with 5 health at the feet of the caster that attempts to remove 1 disease effect from party members within 30 yards every 5 seconds. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 38",
    "id": 8170,
@@ -6350,7 +6240,7 @@
    ],
    "d": "Summons a Healing Stream Totem with 5 health at the feet of the caster for 5 min that heals group members within 30 yards for 5 every 2 seconds.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 20",
    "id": 5394,
@@ -6376,7 +6266,7 @@
    ],
    "d": "Summons a Healing Stream Totem with 5 health at the feet of the caster for 5 min that heals group members within 30 yards for 6 every 2 seconds.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 30",
    "id": 6375,
@@ -6402,7 +6292,7 @@
    ],
    "d": "Summons a Healing Stream Totem with 5 health at the feet of the caster for 5 min that heals group members within 30 yards for 7 every 2 seconds.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 40",
    "id": 6377,
@@ -6428,7 +6318,7 @@
    ],
    "d": "Summons a Healing Stream Totem with 5 health at the feet of the caster for 5 min that heals group members within 30 yards for 9 every 2 seconds.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 50",
    "id": 10462,
@@ -6454,7 +6344,7 @@
    ],
    "d": "Summons a Healing Stream Totem with 5 health at the feet of the caster for 5 min that heals group members within 30 yards for 11 every 2 seconds.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 60",
    "id": 10463,
@@ -6476,7 +6366,7 @@
    ],
    "d": "Heals a friendly target for 36 to 46.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 1",
    "id": 331,
@@ -6505,7 +6395,7 @@
    ],
    "d": "Heals a friendly target for 69 to 83.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 6",
    "id": 332,
@@ -6534,7 +6424,7 @@
    ],
    "d": "Heals a friendly target for 126 to 150.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 12",
    "id": 547,
@@ -6564,7 +6454,7 @@
    ],
    "d": "Heals a friendly target for 246 to 288.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 18",
    "id": 913,
@@ -6594,7 +6484,7 @@
    ],
    "d": "Heals a friendly target for 328 to 382.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 24",
    "id": 939,
@@ -6617,7 +6507,7 @@
    ],
    "d": "Heals a friendly target for 464 to 536.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 32",
    "id": 959,
@@ -6640,7 +6530,7 @@
    ],
    "d": "Heals a friendly target for 655 to 753.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 40",
    "id": 8005,
@@ -6663,7 +6553,7 @@
    ],
    "d": "Heals a friendly target for 928 to 1,062.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 48",
    "id": 10395,
@@ -6686,7 +6576,7 @@
    ],
    "d": "Heals a friendly target for 1,277 to 1,455.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 56",
    "id": 10396,
@@ -6709,7 +6599,7 @@
    ],
    "d": "Heals a friendly target for 1,508 to 1,722.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 60",
    "id": 25357,
@@ -6732,7 +6622,7 @@
    ],
    "d": "Heals a friendly target for 150 to 172.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 20",
    "id": 8004,
@@ -6755,7 +6645,7 @@
    ],
    "d": "Heals a friendly target for 220 to 248.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 28",
    "id": 8008,
@@ -6778,7 +6668,7 @@
    ],
    "d": "Heals a friendly target for 297 to 335.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 36",
    "id": 8010,
@@ -6801,7 +6691,7 @@
    ],
    "d": "Heals a friendly target for 416 to 466.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 44",
    "id": 10466,
@@ -6824,7 +6714,7 @@
    ],
    "d": "Heals a friendly target for 592 to 660.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 52",
    "id": 10467,
@@ -6847,7 +6737,7 @@
    ],
    "d": "Heals a friendly target for 775 to 865.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 60",
    "id": 10468,
@@ -6874,7 +6764,7 @@
    ],
    "d": "Summons a Mana Spring Totem with 5 health at the feet of the caster for 5 min that restores 4 mana every 2 seconds to group members within 30 yards.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 26",
    "id": 5675,
@@ -6900,7 +6790,7 @@
    ],
    "d": "Summons a Mana Spring Totem with 5 health at the feet of the caster for 5 min that restores 6 mana every 2 seconds to group members within 30 yards.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 36",
    "id": 10495,
@@ -6926,7 +6816,7 @@
    ],
    "d": "Summons a Mana Spring Totem with 5 health at the feet of the caster for 5 min that restores 8 mana every 2 seconds to group members within 30 yards.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 46",
    "id": 10496,
@@ -6952,7 +6842,7 @@
    ],
    "d": "Summons a Mana Spring Totem with 5 health at the feet of the caster for 5 min that restores 10 mana every 2 seconds to group members within 30 yards.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 56",
    "id": 10497,
@@ -6978,7 +6868,7 @@
    ],
    "d": "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 88 mana every 3 seconds to group members within 30 yards.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 25",
    "id": 16190,
@@ -7019,7 +6909,7 @@
    ],
    "d": "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 133 mana every 3 seconds to group members within 30 yards.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 38",
    "id": 17354,
@@ -7059,7 +6949,7 @@
    ],
    "d": "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 197 mana every 3 seconds to group members within 30 yards.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 48",
    "id": 17359,
@@ -7099,7 +6989,7 @@
    ],
    "d": "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 290 mana every 3 seconds to group members within 30 yards.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 58",
    "id": 1325256,
@@ -7116,7 +7006,7 @@
    ],
    "d": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an instant cast spell.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 30",
    "id": 16188,
@@ -7141,7 +7031,7 @@
    ],
    "d": "Summons a Poison Cleansing Totem with 5 health at the feet of the caster that attempts to remove 1 poison effect from party members within 30 yards every 5 seconds. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 22",
    "id": 8166,
@@ -7163,7 +7053,7 @@
    ],
    "d": "Allows you to resurrect yourself upon death with 20% health and mana.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 30",
    "id": 20608,
@@ -7178,12 +7068,12 @@
     ],
     [
      "Instant",
-     "6 sec cooldown"
+     "12 sec cooldown"
     ]
    ],
-   "d": "Heals a friendly target for 485 to 533, an additional 445 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
+   "d": "Heals a friendly target for 445 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 40",
    "id": 408521,
@@ -7200,12 +7090,12 @@
     ],
     [
      "Instant",
-     "6 sec cooldown"
+     "12 sec cooldown"
     ]
    ],
-   "d": "Heals a friendly target for 614 to 676, an additional 575 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
+   "d": "Heals a friendly target for 575 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 50",
    "id": 1239242,
@@ -7221,12 +7111,12 @@
     ],
     [
      "Instant",
-     "6 sec cooldown"
+     "12 sec cooldown"
     ]
    ],
-   "d": "Heals a friendly target for 799 to 883, an additional 805 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
+   "d": "Heals a friendly target for 805 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753, Blizzard's notes 2026-11-02",
    "r": "",
    "lv": "Learned at level 60",
    "id": 1239243,
@@ -7251,7 +7141,7 @@
    ],
    "d": "Summons a Tremor Totem with 5 health at the feet of the caster that shakes the ground around it, removing Fear, Charm and Sleep effects from party members within 30 yards. Lasts 5 min.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 18",
    "id": 8143,
@@ -7269,7 +7159,7 @@
    ],
    "d": "The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds. Lasts 10 min.\n\nOnly one Elemental Shield can be active on the Shaman at any one time.",
    "s": "beta",
-   "src": "beta client 1.60.1.70630",
+   "src": "beta client 1.60.1.70753",
    "r": "",
    "lv": "Learned at level 20",
    "id": 408510,
@@ -7441,7 +7331,7 @@
     "abilities": [
      [
       "Find Treasure",
-      "Instant. Allows the dwarf to sense nearby treasure, making it appear on the minimap.  Lasts until canceled.",
+      "Instant. Allows the dwarf to sense nearby treasure, making it appear on the minimap and sometimes increase treasure found. Lasts until canceled.",
       "racial_dwarf_findtreasure"
      ],
      [
@@ -7472,12 +7362,12 @@
   ],
   [
    "Chain Lightning",
-   "Also half a second faster: rank 1 is a 2 sec cast, 6 sec cooldown, 3 targets, each jump 30% weaker. Max Elemental Alacrity brings Lightning Bolt to the same 2 sec.",
+   "A 2.5 sec cast again, as in Classic, since Blizzard's 2 Nov notes (it was 2 sec on the beta before): 6 sec cooldown, 3 targets, each jump 30% weaker, and its first hit about 145% of the same rank Lightning Bolt's base damage. Max Elemental Alacrity takes both down to 2 sec.",
    "spell_nature_chainlightning"
   ],
   [
-   "Totemic Projection",
-   "New: pick a spot up to 30 yd away and your totems move there. Seen on Guzu's stream. Totemic Recall is in too.",
+   "Totemic Call",
+   "New: your totems teleport to where you stand, on a 30 sec cooldown. Called Totemic Projection until Blizzard's 2 Nov notes, when it moved them to a spot you picked up to 30 yd away. Totemic Recall is in too.",
    "ability_shaman_totemrelocation"
   ],
   [

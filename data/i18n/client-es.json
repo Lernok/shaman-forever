@@ -1,6 +1,7 @@
 {
  "_readme": "Plantillas en español de los textos del cliente (talentos, hechizos, racials, líneas de costo). Clave = texto en inglés con # en lugar de cada número; valor = español con {0}, {1}… (cada índice exactamente una vez). Ver GLOSARIO.md. Nombres propios en inglés.",
  "templates": {
+  "Reduces the mana cost of your Shock, Lightning Bolt, and Chain Lightning spells by #%.": "Reduce un {0}% el costo de maná de tus hechizos Shock, Lightning Bolt y Chain Lightning.",
   "Reduces the mana cost of your Shock, Lightning Bolt and Chain Lightning spells by #%.": "Reduce un {0}% el costo de maná de tus hechizos Shock, Lightning Bolt y Chain Lightning.",
   "Increases the damage done by your Lightning Bolt, Chain Lightning, and Earth Shock spells by #%.": "Aumenta un {0}% el daño de tus hechizos Lightning Bolt, Chain Lightning y Earth Shock.",
   "Increases the damage done by your Lightning Bolt, Chain Lightning and Shock spells by #%.": "Aumenta un {0}% el daño de tus hechizos Lightning Bolt, Chain Lightning y Shock.",
@@ -158,7 +159,7 @@
   "# sec cast, # min cooldown. Increases your movement speed by #% for # sec. Used at an elemental convergence it also grants Charged for # hour, which raises the bonus to #%. Charged persists through death and ends when you enter a raid.": "Lanzamiento de {0} s, reutilización de {1} min. Aumenta un {2}% tu velocidad de movimiento durante {3} s. Si lo usás en una convergencia elemental, además te da Charged durante {4} h, que sube la bonificación al {5}%. Charged se mantiene al morir y se va al entrar a una banda.",
   "Damage dealt versus Elementals increased by #%.": "Aumenta un {0}% el daño contra elementales.",
   "Increases your spellcasting, melee, and ranged Haste by #%.": "Aumenta un {0}% tu celeridad con hechizos, cuerpo a cuerpo y a distancia.",
-  "Instant. Allows the dwarf to sense nearby treasure, making it appear on the minimap.  Lasts until canceled.": "Instantáneo. Permite al enano detectar tesoros cercanos y mostrarlos en el minimapa. Dura hasta que lo canceles.",
+  "Instant. Allows the dwarf to sense nearby treasure, making it appear on the minimap and sometimes increase treasure found. Lasts until canceled.": "Instantáneo. Permite al enano detectar tesoros cercanos y mostrarlos en el minimapa, y a veces encontrar más tesoro. Dura hasta que lo canceles.",
   "Instant, # min cooldown. Instantly removes and grants immunity to all Bleed, Poison, and Disease effects, and reduces all Physical damage taken by #% for # sec.": "Instantáneo, reutilización de {0} min. Quita al instante todos los sangrados, venenos y enfermedades, da inmunidad a ellos y reduce un {1}% todo el daño físico recibido durante {2} s.",
   "Your Critical Strikes with direct damage spells increase your chance to get a Critical Strike with melee attacks by #% for # sec.": "Tus golpes críticos con hechizos de daño directo aumentan un {0}% tu probabilidad de golpe crítico cuerpo a cuerpo durante {1} s.",
   "Increases the damage done by your Fire Nova spell by #% and reduces its cooldown by # sec, and increases the duration of your Magma Totem by # sec.": "Aumenta un {0}% el daño de tu hechizo Fire Nova, reduce {1} s su tiempo de reutilización y alarga {2} s la duración de tu Magma Totem.",
@@ -174,11 +175,12 @@
   "Gives your healing spells a #% chance to not lose casting time when you take damage.": "Tus hechizos de curación tienen un {0}% de probabilidad de no perder tiempo de lanzamiento cuando recibís daño.",
   "Increases the damage done by your Fire Totems and by your Flame Shock and Fire Nova spells by #%, as well as increases the duration of your Flame Shock spell by # sec.": "Aumenta un {0}% el daño de tus totems de fuego y de tus hechizos Flame Shock y Fire Nova, y alarga {1} s la duración de tu hechizo Flame Shock.",
   "Gives your Lightning Bolt and Chain Lightning spells a #% chance to not lose casting time when you take damage.": "Tus hechizos Lightning Bolt y Chain Lightning tienen un {0}% de probabilidad de no perder tiempo de lanzamiento cuando recibís daño.",
-  "Increases the range of your Lightning Bolt, Chain Lightning and Fire Nova spells by # yards.": "Aumenta {0} m el alcance de tus hechizos Lightning Bolt, Chain Lightning y Fire Nova.",
+  "Increases the range of your Lightning Bolt, Chain Lightning, and Fire Nova spells by # yards.": "Aumenta {0} m el alcance de tus hechizos Lightning Bolt, Chain Lightning y Fire Nova.",
+  "Increases critical strike chance of Lightning Bolt and Chain Lightning by #%.": "Aumenta un {0}% la probabilidad de golpe crítico de Lightning Bolt y Chain Lightning.",
   "Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by an additional #%.": "Aumenta un {0}% adicional la probabilidad de golpe crítico de tus hechizos Lightning Bolt y Chain Lightning.",
-  "Gain mastery over Lightning, reducing the cast time of Lightning Bolt by # sec, and removing the cooldown from Chain Lightning. Lasts # sec.": "Dominás el Rayo: reduce {0} s el tiempo de lanzamiento de Lightning Bolt y quita el tiempo de reutilización de Chain Lightning. Dura {1} s.",
+  "Gain mastery over Fire and Lightning, reducing the cast time of Lightning Bolt by # sec, and removing the cooldown from Chain Lightning. Lasts # sec.": "Dominás el Fuego y el Rayo: reduce {0} s el tiempo de lanzamiento de Lightning Bolt y quita el tiempo de reutilización de Chain Lightning. Dura {1} s.",
   "Instantly strike for #% normalized weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by #% for # sec.": "Golpeás al instante con un {0}% del daño normalizado del arma y aumentás un {1}% el daño que le hace al objetivo tu próximo Lightning Bolt, Chain Lightning o Earth Shock, durante {2} s.",
   "Heals a friendly target for # over # sec, and increases the effectiveness of your Chain Heal casts directly on that target by #%.": "Cura a un objetivo amistoso {0} durante {1} s, y aumenta un {2}% la efectividad de tus Chain Heal lanzados directamente sobre ese objetivo.",
-  "Teleports your active totems to your location.": "Trae tus totems activos a donde estás vos."
+  "Teleports the Shaman's totems to the Shaman's own location.": "Trae tus totems a donde estás vos."
  }
 }
