@@ -30,7 +30,7 @@ module.exports = function patch(shaman) {
     name: 'Call of Thunder', max: 1, row: 5, col: 2, passive: true, icon: 'spell_nature_callstorm',
     desc: ['Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by an additional 5%.'],
     complete: true, confirmed: [], src: 'notes', classic: { status: 'changed' },
-    patch: note('Reemplaza a Lava Burst, que sale del juego.', 'Replaces Lava Burst, which is removed.')
+    patch: note('Reemplaza a Lava Burst, que sale del juego (el lugar es estimado).', 'Replaces Lava Burst, which is removed (the spot is a guess).')
   });
   const em = talent('Elemental', 'Elemental Mastery');
   Object.assign(em, {
