@@ -248,6 +248,9 @@
   // Every piece you could use, with its value and best way to get it.
   function candidates(gear, opts) {
     const out = [];
+    // Group quests count as on the way unless you level alone (opts.groups false).
+    const easy = a => a === 'group' && opts.groups !== false ? 'route' : a;
+    const tier = a => TIER[easy(a)];
     gear.forEach(item => {
       const slot = slotOf(item);
       if (!slot || (slot === 'Off Hand' && opts.spec === 'Enhancement')) return;
@@ -267,11 +270,11 @@
         // Farming everything yourself: a craft waits for its reagents (or never).
         if ((a === 'crafted' || a === 'favor') && opts.matsAt) at = Math.max(at, opts.matsAt(item, s));
         if (!isFinite(at)) return;
-        if (!best || TIER[a] < TIER[best.access] || (TIER[a] === TIER[best.access] && at < best.at)) best = { access: a, at, source: s };
+        if (!best || tier(a) < tier(best.access) || (tier(a) === tier(best.access) && at < best.at)) best = { access: a, at, source: s };
       });
       // Scarce Merchant's Favor isn't spent on a totem that isn't for your spec.
       if (best && best.access === 'favor' && slot === 'Relic' && effectFit(item, opts.spec) < 0.8) return;
-      if (best && best.at <= 60) out.push(Object.assign({ item, slot, value: v }, best));
+      if (best && best.at <= 60) out.push(Object.assign({ item, slot, value: v, min: MIN_LEVELS[easy(best.access)] }, best));
     });
     return out;
   }
@@ -298,7 +301,7 @@
         // A craft of your own for a slot that's empty is worth it however soon
         // it's replaced: you make such pieces anyway to raise the skill.
         const empty = !weakest && c.access === 'crafted';
-        if (lasts < MIN_LEVELS[c.access] && !empty) { skipped.push({ c, lasts, until }); return; }
+        if (lasts < c.min && !empty) { skipped.push({ c, lasts, until }); return; }
         if (weakest) held.splice(held.indexOf(weakest), 1);
         held.push(c);
         steps.push({ level: lvl, pick: c, replaces: weakest, lasts, until, weight: weighted(lvl, until) });
@@ -408,7 +411,8 @@
     SLOTS.forEach(s => { slots[s] = slotPath(bySlot[s], COUNT[s] || 1, favor); });
     // "Don't miss" per zone: route quests whose reward made it into the path.
     const dontMiss = {};
-    SLOTS.forEach(s => slots[s].steps.filter(st => st.pick.access === 'route').forEach(st => {
+    const onWay = a => a === 'route' || (a === 'group' && opts.groups !== false);
+    SLOTS.forEach(s => slots[s].steps.filter(st => onWay(st.pick.access)).forEach(st => {
       const z = st.pick.source.zone || '?';
       (dontMiss[z] = dontMiss[z] || []).push(st);
     }));
@@ -417,7 +421,7 @@
     // may not drop, and the quest is free.
     if (!opts.noAlt && (!opts.profs || opts.profs.length || opts.drops)) {
       const plain = plan(gear, Object.assign({}, opts, { profs: [], drops: false, noAlt: true, banned: null }));
-      SLOTS.forEach(s => plain.slots[s].steps.filter(st => st.pick.access === 'route').forEach(st => {
+      SLOTS.forEach(s => plain.slots[s].steps.filter(st => onWay(st.pick.access)).forEach(st => {
         const mine = slots[s].steps;
         if (mine.some(m => m.pick.item.id === st.pick.item.id)) return;
         const held = mine.filter(m => m.level <= st.level).slice(-(COUNT[s] || 1));

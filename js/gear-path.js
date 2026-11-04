@@ -8,7 +8,7 @@
   const Site = window.Site;
   const PROFS = ['Blacksmithing', 'Leatherworking', 'Tailoring', 'Engineering', 'Enchanting', 'Alchemy'];
   const level = Math.min(60, Math.max(1, Number(UI.store.get('level', 1)) || 1));
-  const state = { drops: UI.store.get('gpDrops', false), farm: UI.store.get('gpFarm', false), detail: UI.store.get('gpDetail', false), level, bracket: Math.min(5, Math.floor((level - 1) / 10)) };
+  const state = { drops: UI.store.get('gpDrops', false), groups: UI.store.get('gpGroups', true), farm: UI.store.get('gpFarm', false), detail: UI.store.get('gpDetail', false), level, bracket: Math.min(5, Math.floor((level - 1) / 10)) };
 
   // Armor and weapons: the weapon is one more slot of the plan.
   const gear = () => ((window.GEAR_DATA && window.GEAR_DATA.gear) || []).concat((window.WEAPON_DATA && window.WEAPON_DATA.weapons) || []);
@@ -25,10 +25,10 @@
     // crafts count only from your crafting ones; none picked = no crafts.
     const picked = UI.store.get('profs', []);
     const profs = picked.filter(p => PROFS.includes(p));
-    const key = JSON.stringify([Site.spec, Site.faction, race(), picked, state.drops, state.farm, UI.store.get('learnedProfs', {}), UI.store.get('lwSkin', 'normal'), UI.store.get('lwSkillBuy', 'worth'), !!window.SKINNING_DATA, !!window.CRAFT_DATA, gear().length]);
+    const key = JSON.stringify([Site.spec, Site.faction, race(), picked, state.drops, state.groups, state.farm, UI.store.get('learnedProfs', {}), UI.store.get('lwSkin', 'normal'), UI.store.get('lwSkillBuy', 'worth'), !!window.SKINNING_DATA, !!window.CRAFT_DATA, gear().length]);
     if (last && last.key === key) { favorPaid = last.favorPaid; return last.out; }
     const opts = {
-      spec: Site.spec, faction: Site.faction, race: race(), profs, drops: state.drops,
+      spec: Site.spec, faction: Site.faction, race: race(), profs, drops: state.drops, groups: state.groups,
       route: (zone, lvl) => window.Route.onRoute(zone, lvl, Site.faction, race()),
       away: zone => window.Route.otherStart(zone, Site.faction, race()),
       reach: zone => window.Route.reachable(zone, Site.faction),
@@ -262,6 +262,7 @@
       '<span class="gp-who dim">' + raceLabel + ' · ' + Site.spec + ' · ' + (picked.length ? I18N.profs(picked) : t('setup.noProfsShort')) + ' <button class="btn-link" data-open-setup>' + t('home.change') + '</button></span>' +
       '<details class="gp-settings"><summary>' + t('gp.settings') + '</summary><div>' +
       '<label class="chk" title="' + t('gp.dropsTitle') + '"><input type="checkbox" id="gpDrops"' + (state.drops ? ' checked' : '') + '> ' + t('gp.drops') + '</label>' +
+      '<label class="chk" title="' + t('gp.groupsTitle') + '"><input type="checkbox" id="gpGroups"' + (state.groups ? ' checked' : '') + '> ' + t('gp.groups') + '</label>' +
       (profs.length ? '<label class="chk" title="' + t('gp.farmTitle') + '"><input type="checkbox" id="gpFarm"' + (state.farm ? ' checked' : '') + '> ' + t('gp.farm') + '</label>' : '') +
       '</div></details></div>';
     // Picked professions not learned yet: say so here too, without going home.
@@ -343,6 +344,8 @@
     }));
     const drops = container.querySelector('#gpDrops');
     if (drops) drops.addEventListener('change', e => { state.drops = e.target.checked; UI.store.set('gpDrops', state.drops); onChange(); });
+    const groups = container.querySelector('#gpGroups');
+    if (groups) groups.addEventListener('change', e => { state.groups = e.target.checked; UI.store.set('gpGroups', state.groups); onChange(); });
     const farm = container.querySelector('#gpFarm');
     if (farm) farm.addEventListener('change', e => { setFarm(e.target.checked); onChange(); });
     container.querySelector('#gpLevel').addEventListener('change', e => setLevel(Number(e.target.value)));
