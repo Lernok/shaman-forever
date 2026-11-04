@@ -42,11 +42,12 @@
       // Skinning from your starting zone (players skin from the first
       // levels: an Orc reaches Razor Hill with 40 to 60 Ruined Leather
       // Scraps, the site owner's own count, 2026-10-21).
+      // Dun Morogh has none: a Dwarf learns it in Ironforge, next door.
+      const where = ((Z.trainers || {})[faction] || {})[prof];
       if (FROM_START.includes(prof)) {
         const start = race && Z.starts[race] ? Z.starts[race].zone : null;
-        return { level: 1, zone: start };
+        return { level: 1, zone: start && where && !where.includes(start) && CAPITAL[race] ? CAPITAL[race] : start };
       }
-      const where = ((Z.trainers || {})[faction] || {})[prof];
       if (!where) return { level: 1, zone: null };
       const cap = CAPITAL[race] || (faction === 'alliance' ? 'Ironforge' : 'Orgrimmar');
       let best = where.includes(cap) ? { level: CAPITAL_AT, zone: cap } : { level: 61, zone: null };

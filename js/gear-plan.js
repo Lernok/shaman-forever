@@ -99,6 +99,10 @@
   // rest goes to training, mount savings, repairs).
   const FAVOR_GOLD_SHARE = 0.5;
   const TIER = { class: 1, route: 1, dquest: 2, quest: 3, crafted: 4, favor: 5, vendor: 6, boss: 7 };
+  // A quest's rewards are a choice: you get one of them. The Argent Dawn's
+  // Armaments of Battle are turned in again and again, one piece each time.
+  const REPEATABLE = /Armaments of Battle/;
+  const rewardOf = s => (s.quest && !REPEATABLE.test(s.quest) ? [s.quest, s.faction === 'both' ? '' : s.faction || '', s.zone || s.dungeon || ''].join('|') : null);
   // Quest "zones" that aren't places: class quests, and ones you can't plan
   // a leveling path around (events, raids, PvP, other professions).
   const CLASS_ZONE = 'Shaman';
@@ -250,6 +254,7 @@
       if (!v) return;
       let best = null;
       item.sources.forEach(s => {
+        if (opts.banned && opts.banned.has(rewardOf(s) + '#' + item.id)) return;
         const a = access(item, s, opts);
         if (!a) return;
         let at = Math.max(s.rec, item.req || 0);
@@ -305,7 +310,34 @@
     return per ? per * (((c.source || {}).learn || {}).favor || 30) : null;
   }
 
+  // The path, taking one reward per quest: when two slots want rewards of the
+  // same quest, the one that helps most (gain over what it replaces, times
+  // how long it lasts) stays and the others find another piece.
   function plan(gear, opts) {
+    const banned = new Set(opts.banned || []);
+    let p;
+    for (let i = 0; i < 12; i++) {
+      p = planOnce(gear, Object.assign({}, opts, { banned }));
+      const byQuest = {};
+      SLOTS.forEach(s => p.slots[s].steps.forEach(st => {
+        const k = rewardOf(st.pick.source || {});
+        if (!k) return;
+        const gain = (st.pick.value - (st.replaces ? st.replaces.value : 0)) * st.weight;
+        const q = byQuest[k] = byQuest[k] || {};
+        q[st.pick.item.id] = Math.max(q[st.pick.item.id] || 0, gain);
+      }));
+      const losers = [];
+      Object.entries(byQuest).forEach(([k, q]) => {
+        const ids = Object.keys(q).sort((a, b) => q[b] - q[a]);
+        ids.slice(1).forEach(id => losers.push(k + '#' + id));
+      });
+      if (!losers.length) break;
+      losers.forEach(l => banned.add(l));
+    }
+    return p;
+  }
+
+  function planOnce(gear, opts) {
     const all = candidates(gear, opts);
     const bySlot = {};
     SLOTS.forEach(s => { bySlot[s] = all.filter(c => c.slot === s); });
@@ -381,7 +413,7 @@
     // alternative: your skill or materials may not be there in time, the drop
     // may not drop, and the quest is free.
     if (!opts.noAlt && (!opts.profs || opts.profs.length || opts.drops)) {
-      const plain = plan(gear, Object.assign({}, opts, { profs: [], drops: false, noAlt: true }));
+      const plain = plan(gear, Object.assign({}, opts, { profs: [], drops: false, noAlt: true, banned: null }));
       SLOTS.forEach(s => plain.slots[s].steps.filter(st => st.pick.access === 'route').forEach(st => {
         const mine = slots[s].steps;
         if (mine.some(m => m.pick.item.id === st.pick.item.id)) return;
