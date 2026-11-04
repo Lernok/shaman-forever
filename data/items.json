@@ -7979,17 +7979,14 @@
    "raceMask": -1,
    "era": "classic",
    "stats": {},
-   "equip": [
-    "Equip: Increases damage done by Fire spells and effects by up to 6.",
-    "Equip: Increases damage done by Frost spells and effects by up to 6."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
     "fireDamage": 6,
     "frostDamage": 6
    },
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_wand_04"
   },
   "2899": {
@@ -14460,7 +14457,7 @@
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_plate16"
   },
   "4072": {
@@ -60752,7 +60749,7 @@
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_08"
   },
   "11990": {
@@ -192418,14 +192415,14 @@
    "slot": "Two-Hand",
    "quality": 4,
    "req": 1,
-   "ilvl": 10,
+   "ilvl": 30,
    "bind": "pickup",
    "raceMask": -1,
    "era": "new",
-   "dmgMin": 40,
-   "dmgMax": 61,
+   "dmgMin": 87,
+   "dmgMax": 132,
    "speed": 3.5,
-   "dps": 14.43,
+   "dps": 31.3,
    "stats": {},
    "equip": [],
    "use": [],
@@ -192433,7 +192430,7 @@
     "Chance on hit: Knocks down all nearby enemies for 3 sec."
    ],
    "bonus": {
-    "attackPower": 4
+    "attackPower": 11
    },
    "numbers": "client",
    "icon": "inv_hammer_04"
@@ -192445,19 +192442,19 @@
    "slot": "Neck",
    "quality": 4,
    "req": 1,
-   "ilvl": 10,
+   "ilvl": 30,
    "bind": "pickup",
    "raceMask": -1,
    "era": "new",
    "stats": {
-    "stamina": 1,
-    "intellect": 1
+    "intellect": 3,
+    "stamina": 3
    },
    "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "spellPower": 6
+    "spellPower": 15
    },
    "numbers": "client",
    "icon": "inv_jewelry_amulet_05"
@@ -192469,20 +192466,20 @@
    "slot": "Finger",
    "quality": 4,
    "req": 1,
-   "ilvl": 10,
+   "ilvl": 30,
    "bind": "pickup",
    "raceMask": -1,
    "era": "new",
    "stats": {
-    "strength": 1,
-    "stamina": 1
+    "stamina": 4,
+    "strength": 2
    },
    "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "critRating": 2,
-    "attackPower": 5
+    "critRating": 6,
+    "attackPower": 14
    },
    "numbers": "client",
    "icon": "inv_jewelry_ring_07"
@@ -192494,19 +192491,19 @@
    "slot": "Finger",
    "quality": 4,
    "req": 1,
-   "ilvl": 10,
+   "ilvl": 30,
    "bind": "pickup",
    "raceMask": -1,
    "era": "new",
    "stats": {
-    "stamina": 4,
-    "armor": 20
+    "stamina": 10,
+    "armor": 53
    },
    "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "defense": 1
+    "defense": 2
    },
    "numbers": "client",
    "icon": "inv_jewelry_ring_14"
@@ -192518,14 +192515,14 @@
    "slot": "Finger",
    "quality": 4,
    "req": 1,
-   "ilvl": 10,
+   "ilvl": 30,
    "bind": "pickup",
    "raceMask": -1,
    "era": "new",
    "stats": {
-    "stamina": 2,
-    "intellect": 4,
-    "spirit": 2
+    "intellect": 10,
+    "spirit": 4,
+    "stamina": 6
    },
    "equip": [],
    "use": [],
@@ -192541,20 +192538,20 @@
    "slot": "Finger",
    "quality": 4,
    "req": 1,
-   "ilvl": 10,
+   "ilvl": 30,
    "bind": "pickup",
    "raceMask": -1,
    "era": "new",
    "stats": {
-    "stamina": 2,
-    "intellect": 2
+    "intellect": 5,
+    "stamina": 4
    },
    "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "healing": 8,
-    "spellDamage": 3
+    "healing": 21,
+    "spellDamage": 7
    },
    "numbers": "client",
    "icon": "inv_jewelry_ring_39"
@@ -192566,7 +192563,7 @@
    "slot": "Finger",
    "quality": 4,
    "req": 1,
-   "ilvl": 10,
+   "ilvl": 30,
    "bind": "pickup",
    "raceMask": -1,
    "era": "new",
@@ -192575,7 +192572,7 @@
    "use": [],
    "chance": [],
    "bonus": {
-    "spellPower": 6
+    "spellPower": 16
    },
    "numbers": "client",
    "icon": "inv_jewelry_ring_38"

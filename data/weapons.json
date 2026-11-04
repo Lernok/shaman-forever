@@ -1540,6 +1540,41 @@
    ]
   },
   {
+   "id": 288900,
+   "name": "Earthshaker",
+   "kind": "2H Mace",
+   "quality": 4,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 30,
+   "bind": "pickup",
+   "dps": 31.3,
+   "speed": 3.5,
+   "dmgMin": 87,
+   "dmgMax": 132,
+   "stats": {},
+   "bonus": {
+    "attackPower": 11
+   },
+   "equip": [],
+   "chance": [
+    "Chance on hit: Knocks down all nearby enemies for 3 sec."
+   ],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
    "id": 276903,
    "name": "Shimmerwine Shanker",
    "kind": "Dagger",
@@ -1596,41 +1631,6 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_misc_food_18",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 1,
-     "rec": 1
-    }
-   ]
-  },
-  {
-   "id": 288900,
-   "name": "Earthshaker",
-   "kind": "2H Mace",
-   "quality": 4,
-   "req": 1,
-   "obtain": 1,
-   "ilvl": 10,
-   "bind": "pickup",
-   "dps": 14.43,
-   "speed": 3.5,
-   "dmgMin": 40,
-   "dmgMax": 61,
-   "stats": {},
-   "bonus": {
-    "attackPower": 4
-   },
-   "equip": [],
-   "chance": [
-    "Chance on hit: Knocks down all nearby enemies for 3 sec."
-   ],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_04",
    "raceMask": -1,
    "sources": [
     {

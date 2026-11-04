@@ -60,9 +60,242 @@
   "1.60.1.70707/hotfix-113007+42",
   "1.60.1.70707/hotfix-113202+2",
   "1.60.1.70707/patch",
+  "1.60.1.70755/hotfix-112694+45",
+  "1.60.1.70755/hotfix-112720+18",
+  "1.60.1.70755/hotfix-112720+5",
+  "1.60.1.70755/hotfix-113020+11",
   "1.60.1.70755/patch"
  ],
  "updates": [
+  {
+   "id": "1.60.1.70755/hotfix-112694+45",
+   "version": "1.60.1.70755",
+   "hotfix": true,
+   "date": "2026-11-03",
+   "spells": [
+    {
+     "name": "Call of Flame",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Call of Thunder",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": "crit chance +3%",
+       "to": "crit chance +5%"
+      }
+     ]
+    },
+    {
+     "name": "Chain Lightning",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cost",
+       "from": "315 mana",
+       "to": "495 mana"
+      },
+      {
+       "k": "effect 1",
+       "from": "119–134 nature damage to the enemy (at level 60, +0.571 spell power)",
+       "to": "495–552 nature damage to the enemy (at level 60, +0.714 spell power)"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Convection",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Earth Shock",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": "293–309 nature damage to the enemy (at level 60, +0.386 spell power)",
+       "to": "517–545 nature damage to the enemy (at level 60, +0.386 spell power)"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    {
+     "name": "Elemental Alacrity",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Elemental Reach",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 3",
+       "from": "cooldown -20 s",
+       "to": null
+      }
+     ]
+    },
+    {
+     "name": "Eye of the Storm",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Flame Shock",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": "166 fire damage to the enemy (at level 60, +0.214 spell power)",
+       "to": "292 fire damage to the enemy (at level 60, +0.214 spell power)"
+      },
+      {
+       "k": "effect 2",
+       "from": "44 fire damage every 3 s to the enemy (4 ticks, +0.1 spell power)",
+       "to": "80 fire damage every 3 s to the enemy (4 ticks, +0.1 spell power)"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "name": "Frost Shock",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 2",
+       "from": "278–295 frost damage to the enemy (at level 60, +0.386 spell power)",
+       "to": "495–524 frost damage to the enemy (at level 60, +0.386 spell power)"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "Lightning Bolt",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "effect 1",
+       "from": "189–212 nature damage to the enemy (at level 60, +0.714 spell power)",
+       "to": "342–381 nature damage to the enemy (at level 60, +0.714 spell power)"
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ]
+    },
+    {
+     "name": "Lightning Mastery",
+     "spec": "elemental",
+     "status": "changed",
+     "lines": []
+    },
+    {
+     "name": "Stormstrike",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cooldown",
+       "from": "8 s",
+       "to": "6 s"
+      },
+      {
+       "k": "effect 3",
+       "from": null,
+       "to": "150% weapon damage to the enemy"
+      }
+     ]
+    },
+    {
+     "name": "Totemic Call",
+     "spec": "enhancement",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cooldown",
+       "from": "60 s",
+       "to": "30 s"
+      }
+     ]
+    },
+    {
+     "name": "Riptide",
+     "spec": "restoration",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "cooldown",
+       "from": "6 s (category)",
+       "to": "12 s (category)"
+      },
+      {
+       "k": "cost",
+       "from": "385 mana",
+       "to": "230 mana"
+      },
+      {
+       "k": "effect 1",
+       "from": "799–883 healing to the friendly target (at level 60, +0.214 spell power)",
+       "to": null
+      }
+     ],
+     "ranks": [
+      1,
+      2,
+      3
+     ]
+    }
+   ]
+  },
   {
    "id": "1.60.1.70707/hotfix-112709+4",
    "version": "1.60.1.70707",

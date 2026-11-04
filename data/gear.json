@@ -11863,6 +11863,208 @@
    ]
   },
   {
+   "id": 288926,
+   "name": "Choker of the Fire Lord",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 4,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 30,
+   "bind": "pickup",
+   "stats": {
+    "intellect": 3,
+    "stamina": 3
+   },
+   "bonus": {
+    "spellPower": 15
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_amulet_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 288927,
+   "name": "Quick Strike Ring",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 4,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 30,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 4,
+    "strength": 2
+   },
+   "bonus": {
+    "critRating": 6,
+    "attackPower": 14
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 288928,
+   "name": "Heavy Dark Iron Ring",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 4,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 30,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 10,
+    "armor": 53
+   },
+   "bonus": {
+    "defense": 2
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 288929,
+   "name": "Band of Sulfuras",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 4,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 30,
+   "bind": "pickup",
+   "stats": {
+    "intellect": 10,
+    "spirit": 4,
+    "stamina": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_36",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 288930,
+   "name": "Cauterizing Band",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 4,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 30,
+   "bind": "pickup",
+   "stats": {
+    "intellect": 5,
+    "stamina": 4
+   },
+   "bonus": {
+    "healing": 21,
+    "spellDamage": 7
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_39",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 288931,
+   "name": "Ring of Spell Power",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 4,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 30,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {
+    "spellPower": 16
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_38",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
    "id": 206387,
    "name": "Kajaric Icon",
    "kind": "Totem",
@@ -11949,208 +12151,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 1,
-     "rec": 1
-    }
-   ]
-  },
-  {
-   "id": 288926,
-   "name": "Choker of the Fire Lord",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 4,
-   "req": 1,
-   "obtain": 1,
-   "ilvl": 10,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 1,
-    "intellect": 1
-   },
-   "bonus": {
-    "spellPower": 6
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_amulet_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 1,
-     "rec": 1
-    }
-   ]
-  },
-  {
-   "id": 288927,
-   "name": "Quick Strike Ring",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 4,
-   "req": 1,
-   "obtain": 1,
-   "ilvl": 10,
-   "bind": "pickup",
-   "stats": {
-    "strength": 1,
-    "stamina": 1
-   },
-   "bonus": {
-    "critRating": 2,
-    "attackPower": 5
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 1,
-     "rec": 1
-    }
-   ]
-  },
-  {
-   "id": 288928,
-   "name": "Heavy Dark Iron Ring",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 4,
-   "req": 1,
-   "obtain": 1,
-   "ilvl": 10,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 4,
-    "armor": 20
-   },
-   "bonus": {
-    "defense": 1
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 1,
-     "rec": 1
-    }
-   ]
-  },
-  {
-   "id": 288929,
-   "name": "Band of Sulfuras",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 4,
-   "req": 1,
-   "obtain": 1,
-   "ilvl": 10,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 2,
-    "intellect": 4,
-    "spirit": 2
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_36",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 1,
-     "rec": 1
-    }
-   ]
-  },
-  {
-   "id": 288930,
-   "name": "Cauterizing Band",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 4,
-   "req": 1,
-   "obtain": 1,
-   "ilvl": 10,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 2,
-    "intellect": 2
-   },
-   "bonus": {
-    "healing": 8,
-    "spellDamage": 3
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_39",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 1,
-     "rec": 1
-    }
-   ]
-  },
-  {
-   "id": 288931,
-   "name": "Ring of Spell Power",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 4,
-   "req": 1,
-   "obtain": 1,
-   "ilvl": 10,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {
-    "spellPower": 6
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_38",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 1,
      "rec": 1
     }
@@ -39922,14 +39922,11 @@
     "fireDamage": 6,
     "frostDamage": 6
    },
-   "equip": [
-    "Equip: Increases damage done by Fire spells and effects by up to 6.",
-    "Equip: Increases damage done by Frost spells and effects by up to 6."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_wand_04",
    "raceMask": -1,
    "sources": [
@@ -77384,7 +77381,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_plate16",
    "raceMask": -1,
    "sources": [
@@ -116480,11 +116477,19 @@
      "type": "quest",
      "quest": "Ground to Keep",
      "questId": 92867,
+     "level": 39,
      "requiredLevel": 32,
-     "zone": null,
+     "zone": "Arathi Highlands",
+     "bands": {
+      "red": 32,
+      "orange": 35,
+      "yellow": 37,
+      "green": 42,
+      "grey": 49
+     },
      "faction": "both",
      "confidence": "community-untested",
-     "ref": "https://www.wowhead.com/forever/quest=92867",
+     "ref": "https://foreverchanges.pro/quest/92867",
      "basis": {
       "name": "Boulderfist Mauler",
       "level": 38,
@@ -116527,11 +116532,19 @@
      "type": "quest",
      "quest": "Ground to Keep",
      "questId": 92867,
+     "level": 39,
      "requiredLevel": 32,
-     "zone": null,
+     "zone": "Arathi Highlands",
+     "bands": {
+      "red": 32,
+      "orange": 35,
+      "yellow": 37,
+      "green": 42,
+      "grey": 49
+     },
      "faction": "both",
      "confidence": "community-untested",
-     "ref": "https://www.wowhead.com/forever/quest=92867",
+     "ref": "https://foreverchanges.pro/quest/92867",
      "basis": {
       "name": "Boulderfist Mauler",
       "level": 38,
@@ -154573,7 +154586,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_08",
    "raceMask": -1,
    "sources": [
