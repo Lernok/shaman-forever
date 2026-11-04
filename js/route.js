@@ -1,7 +1,9 @@
 // Your leveling route: the zones a Shaman of your race and faction usually
 // quests in at each level, from each zone's level band (data/zones.json, built
 // from its quests' levels) and your race's starting zone. With no race picked
-// ("any"), every starting zone of your faction counts.
+// ("any"), every starting zone of your faction counts. Zones of both
+// continents count: Horde goes to Silverpine and Hillsbrad, Alliance to
+// Darkshore, as the common leveling guides do.
 (function () {
   const Z = window.ZONE_DATA || { zones: {}, dungeons: {}, starts: {} };
   // Shaman starting zones; other races' (Elwynn, Tirisfal...) are skipped too.
@@ -15,12 +17,6 @@
   const CAPITAL_AT = 10;
   const FROM_START = ['Skinning'];
   const START_TOWN = 5;
-  // The continent each race starts on (Skyborne leave Zephras Isle for
-  // Orgrimmar). The zones that follow the starting ones (bands from 12 down)
-  // count only on your own continent: an Orc levels in the Barrens, not in
-  // Silverpine Forest, the Forsaken's next zone.
-  const HOME = { Orc: 'Kalimdor', Troll: 'Kalimdor', Tauren: 'Kalimdor', 'Skyborne (Windshaper)': 'Kalimdor', Dwarf: 'Eastern Kingdoms' };
-  const FOLLOW_UP = 12;
   // Dungeons deep in one faction's land: the other faction doesn't go there.
   const DUNGEON_SIDE = { 'Ragefire Chasm': 'horde', 'The Deadmines': 'alliance', 'The Stockade': 'alliance', 'The Hall of Thanes': 'alliance', 'Hall of Thanes': 'alliance' };
 
@@ -68,7 +64,6 @@
         const b = z[faction];
         if (!b) return false;
         if (isStart(name)) return mine.includes(name) && lvl <= Math.max(b[1], START_TOP);
-        if (race && HOME[race] && z.continent && z.continent !== HOME[race] && b[0] <= FOLLOW_UP) return false;
         return lvl >= b[0] && lvl <= b[1];
       }).map(([name, z]) => ({ name, levels: z[faction], from: z.from }))
         .sort((a, b) => Math.abs((a.levels[0] + a.levels[1]) / 2 - lvl) - Math.abs((b.levels[0] + b.levels[1]) / 2 - lvl));

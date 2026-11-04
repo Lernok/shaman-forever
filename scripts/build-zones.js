@@ -105,7 +105,7 @@ tree.filter(x => /^\.contrib\/\.db\/forever\/zones\/.*\.lua$/.test(x.path)).forE
 });
 
 const MIN_QUESTS = 6;
-const ENOUGH = 20;
+const ENOUGH = 15;
 const zones = {};
 const dungeons = {};
 Object.values(area).forEach(a => {
@@ -119,7 +119,8 @@ Object.values(area).forEach(a => {
   if (q && (q.horde.length >= MIN_QUESTS || q.alliance.length >= MIN_QUESTS)) {
     // A faction with only a handful of (neutral) quests there doesn't level
     // there: it needs MIN_QUESTS and at least half as many as the other one,
-    // or ENOUGH of its own and a third (the Horde's 23 in Ashenvale against 48).
+    // or ENOUGH of its own and a third (the Horde's 23 in Ashenvale against 48,
+    // the Alliance's 16 in Hillsbrad, Southshore's, against 39).
     const levels = (mine, other) => (mine.length >= MIN_QUESTS && (mine.length >= other.length / 2 || (mine.length >= ENOUGH && mine.length >= other.length / 3)) ? band(mine) : null);
     out.horde = levels(q.horde, q.alliance);
     out.alliance = levels(q.alliance, q.horde);
