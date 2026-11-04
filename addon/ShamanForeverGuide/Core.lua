@@ -593,6 +593,7 @@ local function pathTips(filter)
         if st.a == "vendor" then src = string.format(L().vendor, st.k or "?") .. " · " .. zoneName(st.z)
         elseif st.a == "class" then src = string.format(L().classQuest, st.qn or "?")
         elseif st.a == "dquest" then src = string.format(L().dquest, st.z, st.qn or "?")
+        elseif st.a == "group" then src = string.format(L().groupQuest, st.qn or "?") .. " · " .. zoneName(st.z)
         else src = string.format(L().quest, st.qn or "?") .. " · " .. zoneName(st.z) end
         local giver = st.q and D.givers[st.q]
         local where = st.a == "dquest" and D.dcont[st.z] or (D.zones[st.z] and D.cont[D.zones[st.z]]) or (giver and giver.z and D.cont[giver.z])

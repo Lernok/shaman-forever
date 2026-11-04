@@ -59,6 +59,7 @@
       case 'class': return t('gp.src.class', { quest: s.quest });
       case 'route': return t('gp.src.route', { quest: s.quest, zone: s.zone || '?' });
       case 'quest': return t('gp.src.quest', { quest: s.quest, zone: s.zone || '?' });
+      case 'group': return t('gp.src.group', { quest: s.quest, zone: s.zone || '?' });
       case 'dquest': return t('gp.src.dquest', { quest: s.quest, zone: s.dungeonZone || s.zone || '?' });
       case 'crafted': return t((s.learn || {}).type === 'unreleased' ? 'gp.src.unreleased' : 'gp.src.crafted', { prof: s.profession, skill: (s.learn || {}).learnAt || s.yellow });
       case 'favor': {
@@ -201,7 +202,7 @@
   // What you'd have on at your level, slot by slot, then the coming pieces
   // grouped by level, one line each (tap to open the details); the full list
   // by brackets stays one button away.
-  const TAGS = { dquest: 'dungeon', route: 'quest', quest: 'quest', class: 'quest', crafted: 'craft', favor: 'craft', vendor: 'vendor', boss: 'boss' };
+  const TAGS = { dquest: 'dungeon', group: 'quest', route: 'quest', quest: 'quest', class: 'quest', crafted: 'craft', favor: 'craft', vendor: 'vendor', boss: 'boss' };
   const SOON = 5;
   function wornAt(steps, lvl) {
     return steps.filter(st => st.level <= lvl && st.until > lvl);

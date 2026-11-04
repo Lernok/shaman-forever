@@ -11,7 +11,8 @@
 //   Forever at 60, adjusted for leveling). A blue with more stats beats a green of the same item level, and
 //   a piece full of stats you don't use is worth little. Enhancement's
 //   two-hander is judged by its DPS.
-// - Access, best first: a quest in a zone of your route > a dungeon quest >
+// - Access, best first: a quest in a zone of your route > a group quest
+//   there (an elite to kill) or a dungeon quest >
 //   a trainer recipe of your profession > a Merchant's Favor recipe (the ones
 //   that help most, as long as their Favor, in filled crates at auction
 //   prices, costs at most FAVOR_GOLD_SHARE of the quest gold of those 10
@@ -93,12 +94,12 @@
   const MAIL_AT = 40; // Shamans learn Mail at 40
   const UPGRADE = 1.05; // a piece must be 5% better to count as an upgrade
   const MIN_FIT = 0.5; // at least half of a piece's stats (Stamina aside) must be ones your spec uses
-  const MIN_LEVELS = { class: 0, route: 0, dquest: 3, quest: 5, crafted: 2, favor: 6, vendor: 4, boss: 3 };
+  const MIN_LEVELS = { class: 0, route: 0, group: 3, dquest: 3, quest: 5, crafted: 2, favor: 6, vendor: 4, boss: 3 };
   const FAVOR_PER_BRACKET = 2;
   // Share of a bracket's quest gold worth spending on Favor recipes (the
   // rest goes to training, mount savings, repairs).
   const FAVOR_GOLD_SHARE = 0.5;
-  const TIER = { class: 1, route: 1, dquest: 2, quest: 3, crafted: 4, favor: 5, vendor: 6, boss: 7 };
+  const TIER = { class: 1, route: 1, group: 2, dquest: 2, quest: 3, crafted: 4, favor: 5, vendor: 6, boss: 7 };
   // A quest's rewards are a choice: you get one of them. The Argent Dawn's
   // Armaments of Battle are turned in again and again, one piece each time.
   const REPEATABLE = /Armaments of Battle/;
@@ -228,7 +229,9 @@
       if (PROF_ZONES.includes(s.zone) && !(opts.profs || []).includes(s.zone)) return null;
       if (opts.away && opts.away(s.zone)) return null;
       if (s.dungeon) return 'dquest';
-      return opts.route(s.zone, s.rec) ? 'route' : 'quest';
+      if (!opts.route(s.zone, s.rec)) return 'quest';
+      // An elite to kill on your route: you need a group, like a dungeon quest.
+      return s.group || (s.basis || {}).group ? 'group' : 'route';
     }
     if (s.type === 'crafted') {
       if (opts.profs && !opts.profs.includes(s.profession)) return null;

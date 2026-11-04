@@ -242,6 +242,8 @@ if (fs.existsSync(path.join(root, 'data/gear.json'))) {
     const out = pick(s, SRC);
     if (out.faction === 'both') delete out.faction; // no faction = both
     if (s.learn) out.learn = pick(s.learn, ['type', 'favor', 'learnAt']);
+    // An elite to kill: a group quest (GearPlan.access).
+    if (s.type === 'quest' && !s.dungeon && (s.basis || {}).group) out.group = true;
     return out;
   };
   const totem = i => i.slot === 'Relic' && (i.equip || []).length && (i.req || 0) < 60;

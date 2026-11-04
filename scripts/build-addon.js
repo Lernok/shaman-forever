@@ -27,7 +27,7 @@ const SPECS = ['Enhancement', 'Elemental', 'Restoration'];
 const RACES = { Orc: 'horde', Troll: 'horde', Tauren: 'horde', 'Skyborne (Windshaper)': 'horde', Dwarf: 'alliance' };
 // Ways of getting a piece the addon warns about: no crafts (it doesn't know
 // your professions yet), no drops (those show when you enter the dungeon).
-const WARN = new Set(['route', 'quest', 'dquest', 'class', 'vendor']);
+const WARN = new Set(['route', 'group', 'quest', 'dquest', 'class', 'vendor']);
 // Dungeons by the instance id the game gives (GetInstanceInfo's 8th value);
 // the Forever ones as ForeverDungeonJournal maps them. Unknown ids fall back
 // to the dungeon's English name.
