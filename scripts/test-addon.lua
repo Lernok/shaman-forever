@@ -130,7 +130,7 @@ local knownIds, offer = {}, {}
 for name, sp in pairs(SF.DATA.train.spells) do
   for rank, l in ipairs(sp.l) do
     if l > 0 and l <= knownLv then knownIds[sp.id[rank]] = true
-    elseif l > 0 and l <= level then offer[#offer + 1] = { name, #sp.l > 1 and ("Rank " .. rank) or "", 100 } end
+    elseif l > 0 and l <= level then offer[#offer + 1] = { name, #sp.l > 1 and ("Rank " .. rank) or "", 100, l } end
   end
 end
 table.sort(offer, function(a, b) return a[1] .. a[2] < b[1] .. b[2] end)
@@ -139,7 +139,12 @@ function GetTime() return os.clock() end
 function GetSpellInfo(id) for name, sp in pairs(SF.DATA.train.spells) do for _, x in ipairs(sp.id) do if x == id then return name end end end end
 function UnitClass() return "Shaman", "SHAMAN" end
 function GetNumTrainerServices() return #offer end
-function GetTrainerServiceInfo(i) return offer[i][1], offer[i][2], "available" end
+-- Forever's client: name, kind, icon (no rank column); OLDCLIENT=1 for name, rank, kind.
+function GetTrainerServiceInfo(i)
+  if os.getenv("OLDCLIENT") then return offer[i][1], offer[i][2], "available" end
+  return offer[i][1], "available", 136048
+end
+function GetTrainerServiceLevelReq(i) return offer[i][4] end
 function GetTrainerServiceCost(i) return offer[i][3] end
 function BuyTrainerService(i) print("BUY", offer[i][1], offer[i][2]) end
 local ev = frames[1]

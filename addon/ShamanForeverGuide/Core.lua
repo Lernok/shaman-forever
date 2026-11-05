@@ -3005,14 +3005,28 @@ local function englishName(name)
   return localName[name] or name
 end
 -- The trainer's spells you can learn now: { i, name (English), rank, cost, skip rule }.
+local SERVICE_KINDS = { available = true, unavailable = true, used = true, header = true }
+-- Forever's client has no rank column (name, kind, icon): the rank is the
+-- one learned at the level the trainer asks for.
+local function serviceRank(en, i, sub)
+  local r = tonumber(tostring(sub or ""):match("%d+"))
+  if r then return r end
+  local s = D.train and D.train.spells and D.train.spells[en]
+  local need = GetTrainerServiceLevelReq and readable(GetTrainerServiceLevelReq(i))
+  if s and need then
+    for rank = #s.l, 1, -1 do if s.l[rank] > 0 and s.l[rank] <= need then return rank end end
+  end
+  return 1
+end
 local function trainerOffer()
   local list = {}
   local n = readable(GetNumTrainerServices and GetNumTrainerServices()) or 0
   for i = 1, n do
     local name, sub, kind = GetTrainerServiceInfo(i)
+    if SERVICE_KINDS[sub] then sub, kind = nil, sub end
     if kind == "available" and name then
-      local rank = tonumber(tostring(sub or ""):match("%d+")) or 1
       local en = englishName(name)
+      local rank = serviceRank(en, i, sub)
       local cost = GetTrainerServiceCost and readable(GetTrainerServiceCost(i)) or 0
       list[#list + 1] = { i = i, name = en, shown = name, rank = rank, cost = cost, rule = skipRule(en, rank) }
     end
