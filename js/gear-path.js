@@ -8,7 +8,7 @@
   const Site = window.Site;
   const PROFS = ['Blacksmithing', 'Leatherworking', 'Tailoring', 'Engineering', 'Enchanting', 'Alchemy'];
   const level = Math.min(60, Math.max(1, Number(UI.store.get('level', 1)) || 1));
-  const state = { drops: UI.store.get('gpDrops', false), favor: UI.store.get('gpFavor', true), groups: UI.store.get('gpGroups', true), farm: UI.store.get('gpFarm', false), detail: UI.store.get('gpDetail', false), level, bracket: Math.min(5, Math.floor((level - 1) / 10)) };
+  const state = { drops: UI.store.get('gpDrops', false), favor: UI.store.get('gpFavor', false), groups: UI.store.get('gpGroups', true), farm: UI.store.get('gpFarm', false), detail: UI.store.get('gpDetail', false), level, bracket: Math.min(5, Math.floor((level - 1) / 10)) };
 
   // Armor and weapons: the weapon is one more slot of the plan.
   const gear = () => ((window.GEAR_DATA && window.GEAR_DATA.gear) || []).concat((window.WEAPON_DATA && window.WEAPON_DATA.weapons) || []);

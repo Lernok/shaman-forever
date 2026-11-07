@@ -1,7 +1,7 @@
 // Audit of the gear path for every race, spec and a few profession pairs,
 // with the page's engine (js/gear-plan.js): what shouldn't happen.
 //
-//   node scripts/audit-path.js [--farm] [--drops]
+//   node scripts/audit-path.js [--farm] [--drops] [--favor]
 //
 // Errors: a piece before its required level, mail before 40, a quest of the
 // other faction or of another race only, a craft whose recipe can't be
@@ -23,6 +23,7 @@ window.CRAFT_DATA = load('data/crafts.js').CRAFT_DATA;
 const gear = load('data/gear.js').GEAR_DATA.gear.concat(load('data/weapons.js').WEAPON_DATA.weapons);
 const farm = process.argv.includes('--farm');
 const drops = process.argv.includes('--drops');
+const favor = process.argv.includes('--favor');
 
 const RACES = { horde: ['Orc', 'Troll', 'Tauren', 'Skyborne (Windshaper)'], alliance: ['Dwarf', 'Skyborne (Windshaper)'] };
 const SPECS = ['Enhancement', 'Elemental', 'Restoration'];
@@ -40,7 +41,7 @@ for (const [faction, races] of Object.entries(RACES)) {
     for (const spec of SPECS) {
       for (const profs of PROFS) {
         runs++;
-        const opts = { spec, faction, race, profs, drops,
+        const opts = { spec, faction, race, profs, drops, favor,
           route: (z, l) => R.onRoute(z, l, faction, race), away: z => R.otherStart(z, faction, race), reach: z => R.reachable(z, faction),
           profAt: p => R.profFrom(p, faction, race).level, favorCost: GP.favorCost, favorFirst: GP.favorFirst,
           matsAt: farm ? (item => window.LwPlan.matsAt(item.id, { faction, race, profs })) : null };

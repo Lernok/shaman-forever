@@ -12,7 +12,7 @@
 //   --race Orc   --faction horde|alliance      (default Orc, horde; race "any" = no race)
 //   --profs Leatherworking,Skinning            (default none)
 //   --drops                                    count dungeon boss drops (the page's checkbox)
-//   --no-favor                                 no Merchant's Favor recipes (the page's checkbox off)
+//   --favor                                    count Merchant's Favor recipes (the page's checkbox)
 //   --solo                                     no group quests on the way (the page's "group quests" checkbox off)
 //   --farm                                     "Farmeo todo" (no auction house): crafts wait for their reagents
 //   --skill-buy worth|always|never             with the auction house: buy leather to raise the skill (default worth)
@@ -45,7 +45,7 @@ const farm = args.includes('--farm');
 // As Equipo plans it (js/gear-path.js compute): crafts wait for your trainer,
 // farming for their reagents, Leatherworking pieces for the level the
 // Leatherworking plan makes them (LwPlan.settle).
-const opts = { spec, faction, race, profs, drops: args.includes('--drops'), favor: !args.includes('--no-favor'), groups: !args.includes('--solo'),
+const opts = { spec, faction, race, profs, drops: args.includes('--drops'), favor: args.includes('--favor'), groups: !args.includes('--solo'),
   route: (z, l) => R.onRoute(z, l, faction, race), away: z => R.otherStart(z, faction, race), reach: z => R.reachable(z, faction),
   profAt: p => R.profFrom(p, faction, race).level, favorCost: GP.favorCost, favorFirst: GP.favorFirst,
   matsAt: farm ? (item => window.LwPlan.matsAt(item.id, { faction, race, profs })) : null };

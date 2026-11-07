@@ -14,7 +14,7 @@
 // - Access, best first: a quest in a zone of your route > a group quest
 //   there (an elite to kill) or a dungeon quest >
 //   a trainer recipe of your profession > a Merchant's Favor recipe (the
-//   patterns Pawani sells and the like; on unless you turn them off, and then
+//   patterns Pawani sells and the like; only if you ask for them, and then
 //   all of them count, to see how long each lasts) > a dungeon boss drop
 //   (only if you ask for drops: it may not drop). Drops out in the world
 //   (BoEs, rare creatures) don't count: too unlikely or too dear to plan on.
@@ -208,7 +208,7 @@
 
   // How you'd get a piece, as the best access you have; null if you can't.
   // opts: { spec, faction, race, profs (crafting professions; null = any),
-  //   drops, favor (false: no Merchant's Favor recipes), route(zone, level), away(zone): zones you never go to,
+  //   drops, favor (count Merchant's Favor recipes), route(zone, level), away(zone): zones you never go to,
   //   reach(zone): false for zones only the other faction quests in and
   //   dungeons in its land }
   function access(item, s, opts) {
@@ -232,7 +232,7 @@
     if (s.type === 'crafted') {
       if (opts.profs && !opts.profs.includes(s.profession)) return null;
       const learn = s.learn || {};
-      if (learn.type === 'favor') return opts.favor === false ? null : 'favor';
+      if (learn.type === 'favor') return opts.favor ? 'favor' : null;
       return learn.type === 'trainer' ? 'crafted' : null;
     }
     // Vendors deep in the other faction's land don't count.
