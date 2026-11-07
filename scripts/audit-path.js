@@ -42,7 +42,7 @@ for (const [faction, races] of Object.entries(RACES)) {
         runs++;
         const opts = { spec, faction, race, profs, drops,
           route: (z, l) => R.onRoute(z, l, faction, race), away: z => R.otherStart(z, faction, race), reach: z => R.reachable(z, faction),
-          profAt: p => R.profFrom(p, faction, race).level, favorCost: GP.favorCost, favorFirst: GP.favorFirst, goldAt: GP.goldAt,
+          profAt: p => R.profFrom(p, faction, race).level, favorCost: GP.favorCost, favorFirst: GP.favorFirst,
           matsAt: farm ? (item => window.LwPlan.matsAt(item.id, { faction, race, profs })) : null };
         // As Equipo plans it: Leatherworking pieces wait for the Leatherworking plan.
         const plan = window.LwPlan.settle(gear, opts, { picked: profs, farm });

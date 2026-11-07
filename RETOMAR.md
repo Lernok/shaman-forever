@@ -2,6 +2,14 @@
 
 Leer esta primera parte antes de seguir. Debajo está la historia del proyecto (plan de fases y sesiones).
 
+## 2026-11-07: camino sin BoEs, patterns de Favor aparte
+
+- **Pedido del usuario** (excepción a congelar el motor desde el 4-nov): `GearPlan.access` ya no cuenta `type: 'drop'` (mundo, vino de AllTheThings el 2-nov) ni jefes con `bind: 'equip'` (la tabla de trash del dungeon). "Sumar drops" = solo jefes de dungeon.
+- **Ajuste nuevo `gpFavor` (prendido por defecto, se ve con profesión de crafteo):** cuentan todas las recetas de Favor, sin presupuesto por tramo (se fueron FAVOR_PER_BRACKET y FAVOR_GOLD_SHARE); `MIN_LEVELS.favor` 6 → 2. `plan.js --no-favor`.
+- **Pawani (npc 248201):** 82 ventas; 79 piezas coinciden con Wowhead en habilidad y nivel, 2 armor kits y la certificación no son equipo. Hasta nivel 30 la pieza espera a la habilidad simulada (`LwPlan`, PATH_CAP); de 31 en adelante se asume que la habilidad acompaña (5 por nivel).
+- **Sync:** Totemic Call cambió de texto (plantilla y data/shaman.json); QuestieDB renombró el paquete con la versión, ahora se busca en la release por `-Forever.zip`.
+- plan.js difiere de la página en lo que usa precios: desde `Site.LAUNCH` la página no usa los de la beta. Para números de duración, medir en la página.
+
 ## 2026-11-01: listo para el lanzamiento
 
 - Servicios revisados: Feedback, Visitas, Sync, Chequeos, Pages y la rutina en la nube, todo OK; GoatCounter, formulario, zamimg y fuentes responden. 30-oct con 0 visitas en GoatCounter (real según la API; mirar si se repite).

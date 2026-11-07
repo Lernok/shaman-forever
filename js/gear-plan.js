@@ -13,11 +13,11 @@
 //   two-hander is judged by its DPS.
 // - Access, best first: a quest in a zone of your route > a group quest
 //   there (an elite to kill) or a dungeon quest >
-//   a trainer recipe of your profession > a Merchant's Favor recipe (the ones
-//   that help most, as long as their Favor, in filled crates at auction
-//   prices, costs at most FAVOR_GOLD_SHARE of the quest gold of those 10
-//   levels; without prices, FAVOR_PER_BRACKET per 10 levels) > a boss drop
-//   (only if you ask for drops: it may not drop).
+//   a trainer recipe of your profession > a Merchant's Favor recipe (the
+//   patterns Pawani sells and the like; on unless you turn them off, and then
+//   all of them count, to see how long each lasts) > a dungeon boss drop
+//   (only if you ask for drops: it may not drop). Drops out in the world
+//   (BoEs, rare creatures) don't count: too unlikely or too dear to plan on.
 // - Duration: how long it lasts before something you can get beats it,
 //   weighted by leveling time (a level in the 30s takes far longer than one
 //   in the 10s). Quests on your route are taken anyway; anything else has to
@@ -94,11 +94,7 @@
   const MAIL_AT = 40; // Shamans learn Mail at 40
   const UPGRADE = 1.05; // a piece must be 5% better to count as an upgrade
   const MIN_FIT = 0.5; // at least half of a piece's stats (Stamina aside) must be ones your spec uses
-  const MIN_LEVELS = { class: 0, route: 0, group: 3, dquest: 3, quest: 5, crafted: 2, favor: 6, vendor: 4, boss: 3 };
-  const FAVOR_PER_BRACKET = 2;
-  // Share of a bracket's quest gold worth spending on Favor recipes (the
-  // rest goes to training, mount savings, repairs).
-  const FAVOR_GOLD_SHARE = 0.5;
+  const MIN_LEVELS = { class: 0, route: 0, group: 3, dquest: 3, quest: 5, crafted: 2, favor: 2, vendor: 4, boss: 3 };
   const TIER = { class: 1, route: 1, group: 2, dquest: 2, quest: 3, crafted: 4, favor: 5, vendor: 6, boss: 7 };
   // A quest's rewards are a choice: you get one of them. The Argent Dawn's
   // Armaments of Battle are turned in again and again, one piece each time.
@@ -212,7 +208,7 @@
 
   // How you'd get a piece, as the best access you have; null if you can't.
   // opts: { spec, faction, race, profs (crafting professions; null = any),
-  //   drops, route(zone, level), away(zone): zones you never go to,
+  //   drops, favor (false: no Merchant's Favor recipes), route(zone, level), away(zone): zones you never go to,
   //   reach(zone): false for zones only the other faction quests in and
   //   dungeons in its land }
   function access(item, s, opts) {
@@ -236,12 +232,13 @@
     if (s.type === 'crafted') {
       if (opts.profs && !opts.profs.includes(s.profession)) return null;
       const learn = s.learn || {};
-      if (learn.type === 'favor') return 'favor';
+      if (learn.type === 'favor') return opts.favor === false ? null : 'favor';
       return learn.type === 'trainer' ? 'crafted' : null;
     }
     // Vendors deep in the other faction's land don't count.
     if (s.type === 'vendor') return UNPLANNED.test(s.zone || '') || (opts.reach && !opts.reach(s.zone)) ? null : 'vendor';
-    if ((s.type === 'boss' || s.type === 'drop') && opts.drops) return opts.reach && !opts.reach(s.zone) ? null : 'boss';
+    // Dungeon bosses only: a BoE here is the dungeon's trash table, as unlikely as a world drop.
+    if (s.type === 'boss' && item.bind !== 'equip' && opts.drops) return opts.reach && !opts.reach(s.zone) ? null : 'boss';
     return null;
   }
 
@@ -280,8 +277,8 @@
   }
 
   // The path of one slot: the pieces you hold from each level on.
-  function slotPath(list, count, allowFavor) {
-    const pool = list.filter(c => c.access !== 'favor' || allowFavor.has(c.item.id)).sort((a, b) => a.at - b.at || b.value - a.value);
+  function slotPath(list, count) {
+    const pool = list.slice().sort((a, b) => a.at - b.at || b.value - a.value);
     const held = [];
     const steps = [];
     const skipped = [];
@@ -308,12 +305,6 @@
       });
     }
     return { steps, skipped };
-  }
-
-  // What a Favor recipe costs in gold at the level you'd buy it (null: no prices).
-  function favorGold(c, opts) {
-    const per = opts.favorCost && opts.favorCost(c.at);
-    return per ? per * (((c.source || {}).learn || {}).favor || 30) : null;
   }
 
   // The path, taking one reward per quest: when two slots want rewards of the
@@ -347,68 +338,23 @@
     const all = candidates(gear, opts);
     const bySlot = {};
     SLOTS.forEach(s => { bySlot[s] = all.filter(c => c.slot === s); });
-    // Merchant's Favor: the recipes that would help most (gain over what you'd
-    // wear otherwise, times how long it lasts), FAVOR_PER_BRACKET per 10 levels.
-    const none = new Set();
-    const base = {};
-    SLOTS.forEach(s => { base[s] = slotPath(bySlot[s], COUNT[s] || 1, none); });
-    const scored = [];
-    SLOTS.forEach(s => bySlot[s].filter(c => c.access === 'favor').forEach(c => {
-      const wearing = base[s].steps.filter(st => st.level <= c.at).map(st => st.pick.value);
-      const cur = wearing.length ? Math.min(...wearing.slice(-(COUNT[s] || 1))) : 0;
-      if (c.value < cur * UPGRADE) return;
-      const until = (base[s].steps.find(st => st.level > c.at && st.pick.value >= c.value * UPGRADE) || { level: 61 }).level;
-      if (until - c.at < MIN_LEVELS.favor) return;
-      scored.push({ c, score: (cur ? c.value / cur - 1 : 1) * weighted(c.at, until) });
-    }));
-    // opts.favorCost(level): copper per point of Favor then (null: no prices);
-    // opts.goldAt(level): quest gold of that level, in copper.
-    // opts.favorFirst(level): { favor, cost } of your first crate, which comes
-    // with a one-time quest's bonus Favor: the first recipes cost only that crate.
-    const favor = new Set();
-    const perBracket = {};
-    const spent = {};
-    const paid = {};
-    const priced = opts.favorCost && opts.goldAt;
-    // Takes a recipe if its bracket's budget allows (true when taken).
-    const take = (c, cost) => {
-      const br = Math.floor((c.at - 1) / 10);
-      if (cost != null) {
-        let budget = 0;
-        for (let l = br * 10 + 1; l <= br * 10 + 10; l++) budget += opts.goldAt(l) || 0;
-        if ((spent[br] || 0) + cost > budget * FAVOR_GOLD_SHARE) return false;
-        spent[br] = (spent[br] || 0) + cost;
-        paid[c.item.id] = Math.round(cost);
-      } else {
-        if ((perBracket[br] || 0) >= FAVOR_PER_BRACKET) return false;
-        perBracket[br] = (perBracket[br] || 0) + 1;
-      }
-      favor.add(c.item.id);
-      return true;
-    };
-    const favorN = c => ((c.source || {}).learn || {}).favor || 30;
-    // The first crate's Favor goes to the first recipes you'd buy: by level,
-    // the best of each bracket first.
-    if (priced && opts.favorFirst) {
-      const byLevel = scored.slice().sort((a, b) => Math.floor((a.c.at - 1) / 10) - Math.floor((b.c.at - 1) / 10) || b.score - a.score);
-      let first = null;
-      const slotsTaken = new Set();
-      for (const { c } of byLevel) {
-        if (!first) first = Object.assign({ paid: false }, opts.favorFirst(c.at) || { favor: 0 });
-        if (first.favor <= 0) break;
-        // One recipe per slot (the belts of every set are alternatives).
-        if (slotsTaken.has(c.slot)) continue;
-        const per = opts.favorCost(c.at);
-        if (!per) continue;
-        const use = Math.min(first.favor, favorN(c));
-        if (take(c, (favorN(c) - use) * per + (first.paid ? 0 : first.cost))) { first.favor -= use; first.paid = true; slotsTaken.add(c.slot); }
-      }
-    }
-    scored.sort((a, b) => b.score - a.score).forEach(({ c }) => {
-      if (!favor.has(c.item.id)) take(c, priced ? favorGold(c, opts) : null);
-    });
     const slots = {};
-    SLOTS.forEach(s => { slots[s] = slotPath(bySlot[s], COUNT[s] || 1, favor); });
+    SLOTS.forEach(s => { slots[s] = slotPath(bySlot[s], COUNT[s] || 1); });
+    // What each Favor recipe of the path costs in gold (filled crates at
+    // auction prices; none without prices). The first crate comes with a
+    // one-time quest's bonus Favor: the first recipes cost only that crate.
+    const paid = {};
+    const favorSteps = SLOTS.flatMap(s => slots[s].steps).filter(st => st.pick.access === 'favor').sort((a, b) => a.level - b.level);
+    let first = null;
+    favorSteps.forEach(({ pick: c }) => {
+      const per = opts.favorCost && opts.favorCost(c.at);
+      if (!per) return;
+      const n = ((c.source || {}).learn || {}).favor || 30;
+      if (!first) first = Object.assign({ paid: false }, (opts.favorFirst && opts.favorFirst(c.at)) || { favor: 0 });
+      const use = Math.min(first.favor, n);
+      paid[c.item.id] = Math.round((n - use) * per + (use && !first.paid ? first.cost : 0));
+      if (use) { first.favor -= use; first.paid = true; }
+    });
     // "Don't miss" per zone: route quests whose reward made it into the path.
     const dontMiss = {};
     const onWay = a => a === 'route' || (a === 'group' && opts.groups !== false);
@@ -432,7 +378,7 @@
       }));
     }
     Object.values(dontMiss).forEach(l => l.sort((a, b) => a.level - b.level));
-    return { slots, dontMiss, favor: [...favor], favorPaid: paid, candidates: all.length };
+    return { slots, dontMiss, favor: favorSteps.map(st => st.pick.item.id), favorPaid: paid, candidates: all.length };
   }
 
   // Copper per point of Merchant's Favor at a level: the cheapest Waylaid
@@ -469,7 +415,6 @@
     return fills.length ? P[k.crate] + Math.min(...fills) : Infinity;
   }
   // Quest gold of a level (data/crafts.js, from Classic's quest rewards).
-  const goldAt = l => ((root.CRAFT_DATA || {}).gold || [])[Math.min(60, Math.max(1, l)) - 1] || 0;
 
-  root.GearPlan = { plan, value, fit, points, candidates, access, favorGold, favorCost, favorFirst, goldAt, SLOTS, WEIGHTS, COST, MIN_LEVELS, FAVOR_PER_BRACKET, FAVOR_GOLD_SHARE, UPGRADE };
+  root.GearPlan = { plan, value, fit, points, candidates, access, favorCost, favorFirst, SLOTS, WEIGHTS, COST, MIN_LEVELS, UPGRADE };
 })(typeof window !== 'undefined' ? window : globalThis);

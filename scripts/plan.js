@@ -11,7 +11,8 @@
 //   --spec Enhancement|Elemental|Restoration   (default Enhancement)
 //   --race Orc   --faction horde|alliance      (default Orc, horde; race "any" = no race)
 //   --profs Leatherworking,Skinning            (default none)
-//   --drops                                    count boss drops (the page's checkbox)
+//   --drops                                    count dungeon boss drops (the page's checkbox)
+//   --no-favor                                 no Merchant's Favor recipes (the page's checkbox off)
 //   --solo                                     no group quests on the way (the page's "group quests" checkbox off)
 //   --farm                                     "Farmeo todo" (no auction house): crafts wait for their reagents
 //   --skill-buy worth|always|never             with the auction house: buy leather to raise the skill (default worth)
@@ -43,11 +44,10 @@ const lo = +opt('lo', 1), hi = +opt('hi', 60);
 const farm = args.includes('--farm');
 // As Equipo plans it (js/gear-path.js compute): crafts wait for your trainer,
 // farming for their reagents, Leatherworking pieces for the level the
-// Leatherworking plan makes them (LwPlan.settle). Merchant's Favor recipes as
-// many as the quest gold buys (data/crafts.js).
-const opts = { spec, faction, race, profs, drops: args.includes('--drops'), groups: !args.includes('--solo'),
+// Leatherworking plan makes them (LwPlan.settle).
+const opts = { spec, faction, race, profs, drops: args.includes('--drops'), favor: !args.includes('--no-favor'), groups: !args.includes('--solo'),
   route: (z, l) => R.onRoute(z, l, faction, race), away: z => R.otherStart(z, faction, race), reach: z => R.reachable(z, faction),
-  profAt: p => R.profFrom(p, faction, race).level, favorCost: GP.favorCost, favorFirst: GP.favorFirst, goldAt: GP.goldAt,
+  profAt: p => R.profFrom(p, faction, race).level, favorCost: GP.favorCost, favorFirst: GP.favorFirst,
   matsAt: farm ? (item => window.LwPlan.matsAt(item.id, { faction, race, profs })) : null };
 
 const short = o => Object.entries(o || {}).map(([k, v]) => v + k.replace(/^(\w{3})\w*/, '$1')).join(' ');

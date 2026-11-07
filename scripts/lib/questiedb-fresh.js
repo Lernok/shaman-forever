@@ -16,7 +16,14 @@ const baked = require('./questiedb-baked.js');
 
 const root = path.join(__dirname, '..', '..');
 const CACHED = path.join(root, '.cache', 'questiedb-forever');
-const URL = 'https://github.com/Questie/QuestieDB/releases/download/preview/QuestieDB-Forever.zip';
+// The package's name carries its version (QuestieDB-1.0.11-dev.21be340-Forever.zip): the release says it.
+const RELEASE = 'https://api.github.com/repos/Questie/QuestieDB/releases/tags/preview';
+const packageUrl = () => {
+  const json = execFileSync('curl', ['-sSfL', '-H', 'User-Agent: shaman-forever-sync', RELEASE], { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
+  const asset = JSON.parse(json).assets.find(a => /-Forever.zip$/.test(a.name));
+  if (!asset) throw new Error('la release preview no trae un paquete -Forever.zip');
+  return asset.browser_download_url;
+};
 
 function dirs() {
   return [process.env.QUESTIEDB, path.join(CACHED, 'QuestieDB'), require('./game').addon('QuestieDB')].filter(Boolean);
@@ -40,7 +47,7 @@ function download(maxAgeDays = 0.5) {
   fs.mkdirSync(CACHED, { recursive: true });
   const zip = path.join(CACHED, 'QuestieDB-Forever.zip');
   try {
-    execFileSync('curl', ['-sSfL', '-o', zip, URL], { stdio: 'inherit' });
+    execFileSync('curl', ['-sSfL', '-o', zip, packageUrl()], { stdio: 'inherit' });
     execFileSync('unzip', ['-oq', zip, '-d', CACHED], { stdio: 'inherit' });
     fs.utimesSync(toc, new Date(), new Date());
     return true;
@@ -50,4 +57,4 @@ function download(maxAgeDays = 0.5) {
   }
 }
 
-module.exports = { load, download, URL };
+module.exports = { load, download };

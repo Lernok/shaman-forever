@@ -8,7 +8,7 @@
   const Site = window.Site;
   const PROFS = ['Blacksmithing', 'Leatherworking', 'Tailoring', 'Engineering', 'Enchanting', 'Alchemy'];
   const level = Math.min(60, Math.max(1, Number(UI.store.get('level', 1)) || 1));
-  const state = { drops: UI.store.get('gpDrops', false), groups: UI.store.get('gpGroups', true), farm: UI.store.get('gpFarm', false), detail: UI.store.get('gpDetail', false), level, bracket: Math.min(5, Math.floor((level - 1) / 10)) };
+  const state = { drops: UI.store.get('gpDrops', false), favor: UI.store.get('gpFavor', true), groups: UI.store.get('gpGroups', true), farm: UI.store.get('gpFarm', false), detail: UI.store.get('gpDetail', false), level, bracket: Math.min(5, Math.floor((level - 1) / 10)) };
 
   // Armor and weapons: the weapon is one more slot of the plan.
   const gear = () => ((window.GEAR_DATA && window.GEAR_DATA.gear) || []).concat((window.WEAPON_DATA && window.WEAPON_DATA.weapons) || []);
@@ -25,10 +25,10 @@
     // crafts count only from your crafting ones; none picked = no crafts.
     const picked = UI.store.get('profs', []);
     const profs = picked.filter(p => PROFS.includes(p));
-    const key = JSON.stringify([Site.spec, Site.faction, race(), picked, state.drops, state.groups, state.farm, UI.store.get('learnedProfs', {}), UI.store.get('lwSkin', 'normal'), UI.store.get('lwSkillBuy', 'worth'), !!window.SKINNING_DATA, !!window.CRAFT_DATA, gear().length]);
+    const key = JSON.stringify([Site.spec, Site.faction, race(), picked, state.drops, state.favor, state.groups, state.farm, UI.store.get('learnedProfs', {}), UI.store.get('lwSkin', 'normal'), UI.store.get('lwSkillBuy', 'worth'), !!window.SKINNING_DATA, !!window.CRAFT_DATA, gear().length]);
     if (last && last.key === key) { favorPaid = last.favorPaid; return last.out; }
     const opts = {
-      spec: Site.spec, faction: Site.faction, race: race(), profs, drops: state.drops, groups: state.groups,
+      spec: Site.spec, faction: Site.faction, race: race(), profs, drops: state.drops, favor: state.favor, groups: state.groups,
       route: (zone, lvl) => window.Route.onRoute(zone, lvl, Site.faction, race()),
       away: zone => window.Route.otherStart(zone, Site.faction, race()),
       reach: zone => window.Route.reachable(zone, Site.faction),
@@ -36,10 +36,9 @@
       profAt: prof => window.Route.profFrom(prof, Site.faction, race()).level,
       // No auction house: crafts wait until you can gather their reagents.
       matsAt: state.farm && window.LwPlan ? (item => window.LwPlan.matsAt(item.id, { faction: Site.faction, race: race(), profs: picked })) : null,
-      // Favor recipes: as many as half the bracket's quest gold buys.
+      // What Favor recipes cost in gold, to say so.
       favorCost: window.GearPlan.favorCost,
-      favorFirst: window.GearPlan.favorFirst,
-      goldAt: window.GearPlan.goldAt
+      favorFirst: window.GearPlan.favorFirst
     };
     // Leatherworking pieces wait for the level the Leatherworking plan makes
     // them (the one Profesiones shows): js/lw-plan.js settle.
@@ -260,8 +259,9 @@
       '<label>' + t('home.next.level') + ' <select id="gpLevel">' + Array.from({ length: 60 }, (_, k) => '<option' + (k + 1 === lvl ? ' selected' : '') + '>' + (k + 1) + '</option>').join('') + '</select></label>' +
       '<button class="hn-step" data-gp-step="1" aria-label="' + t('home.levelUp') + '"' + (lvl >= 60 ? ' disabled' : '') + '>+</button></span>' +
       '<span class="gp-who dim">' + raceLabel + ' · ' + Site.spec + ' · ' + (picked.length ? I18N.profs(picked) : t('setup.noProfsShort')) + ' <button class="btn-link" data-open-setup>' + t('home.change') + '</button></span>' +
-      '<details class="gp-settings"><summary>' + t('gp.settings') + '</summary><div>' +
+      '<details class="gp-settings"' + (state.settingsOpen ? ' open' : '') + '><summary>' + t('gp.settings') + '</summary><div>' +
       '<label class="chk" title="' + t('gp.dropsTitle') + '"><input type="checkbox" id="gpDrops"' + (state.drops ? ' checked' : '') + '> ' + t('gp.drops') + '</label>' +
+      (profs.length ? '<label class="chk" title="' + t('gp.favorTitle') + '"><input type="checkbox" id="gpFavor"' + (state.favor ? ' checked' : '') + '> ' + t('gp.favor') + '</label>' : '') +
       '<label class="chk" title="' + t('gp.groupsTitle') + '"><input type="checkbox" id="gpGroups"' + (state.groups ? ' checked' : '') + '> ' + t('gp.groups') + '</label>' +
       (profs.length ? '<label class="chk" title="' + t('gp.farmTitle') + '"><input type="checkbox" id="gpFarm"' + (state.farm ? ' checked' : '') + '> ' + t('gp.farm') + '</label>' : '') +
       '</div></details></div>';
@@ -325,7 +325,7 @@
       'https://www.wowhead.com/forever — ' + t('wp.srcWowhead'),
       'https://foreverchanges.pro — ' + t('wp.srcFc'),
       'https://www.classicwowforever.com — ' + t('gp.srcRecipes')
-    ], t('gp.how', { upgrade: Math.round((window.GearPlan.UPGRADE - 1) * 100), favor: window.GearPlan.FAVOR_PER_BRACKET }));
+    ], t('gp.how', { upgrade: Math.round((window.GearPlan.UPGRADE - 1) * 100) }));
     container.innerHTML = html;
 
     const setLevel = n => {
@@ -342,6 +342,11 @@
       UI.store.set('learnedProfs', all);
       onChange();
     }));
+    // Stays open while you tick things, to compare paths.
+    const settings = container.querySelector('.gp-settings');
+    if (settings) settings.addEventListener('toggle', () => { state.settingsOpen = settings.open; });
+    const favorBox = container.querySelector('#gpFavor');
+    if (favorBox) favorBox.addEventListener('change', e => { state.favor = e.target.checked; UI.store.set('gpFavor', state.favor); onChange(); });
     const drops = container.querySelector('#gpDrops');
     if (drops) drops.addEventListener('change', e => { state.drops = e.target.checked; UI.store.set('gpDrops', state.drops); onChange(); });
     const groups = container.querySelector('#gpGroups');
