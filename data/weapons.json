@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70840",
+ "build": "1.60.1.70862",
  "weapons": [
   {
    "id": 275648,
@@ -11380,41 +11380,6 @@
    ]
   },
   {
-   "id": 284704,
-   "name": "Frostbitten Staff",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 19,
-   "obtain": 19,
-   "ilvl": 24,
-   "bind": "equip",
-   "dps": 15.83,
-   "speed": 2.4,
-   "dmgMin": 30,
-   "dmgMax": 46,
-   "stats": {
-    "spirit": 6
-   },
-   "bonus": {
-    "frostDamage": 7
-   },
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 19,
-     "rec": 19
-    }
-   ]
-  },
-  {
    "id": 284386,
    "name": "Whipfang's Skinsearer",
    "kind": "Dagger",
@@ -13064,6 +13029,52 @@
       "rank": "elite",
       "from": "wowhead",
       "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 284704,
+   "name": "Frostbitten Staff",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 19,
+   "obtain": 21,
+   "ilvl": 24,
+   "bind": "equip",
+   "dps": 15.83,
+   "speed": 2.4,
+   "dmgMin": 30,
+   "dmgMax": 46,
+   "stats": {
+    "spirit": 6
+   },
+   "bonus": {
+    "frostDamage": 7
+   },
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Lady Vespia",
+     "npcId": 10559,
+     "zone": "Ashenvale",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 19,
+     "rec": 21,
+     "basis": {
+      "name": "Lady Vespia",
+      "level": 22,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
      }
     }
    ]
@@ -16494,7 +16505,7 @@
     "Chance on hit: Wounds the target causing them to bleed for 250 damage over 10 sec."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_axe_10",
    "raceMask": -1,
    "sources": [
@@ -18056,7 +18067,7 @@
     "Chance on hit: Blasts a target for 127 to 139 Frost damage."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_hammer_04",
    "raceMask": -1,
    "sources": [
@@ -19978,7 +19989,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_bone_10",
    "raceMask": -1,
    "sources": [
@@ -20682,7 +20693,7 @@
     "Chance on hit: Smash the target for 85 damage."
    ],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_gauntlets_11",
    "raceMask": -1,
    "sources": [
@@ -20984,7 +20995,7 @@
     "Chance on hit: Silences an enemy, preventing it from casting spells for 6 sec."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_mace_11",
    "raceMask": -1,
    "sources": [
@@ -21248,6 +21259,41 @@
    ]
   },
   {
+   "id": 870,
+   "name": "Fiery War Axe",
+   "kind": "2H Axe",
+   "quality": 4,
+   "req": 35,
+   "obtain": 35,
+   "ilvl": 40,
+   "bind": "equip",
+   "dps": 40.4,
+   "speed": 3.6,
+   "dmgMin": 116,
+   "dmgMax": 175,
+   "stats": {
+    "strength": 15
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [
+    "Chance on hit: Hurls a fiery ball that causes 155 to 197 Fire damage and an additional 24 damage over 6 sec."
+   ],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_axe_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 35,
+     "rec": 35
+    }
+   ]
+  },
+  {
    "id": 873,
    "name": "Staff of Jordan",
    "kind": "Staff",
@@ -21272,39 +21318,6 @@
    "era": "classic",
    "numbers": "client",
    "icon": "inv_staff_13",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 35,
-     "rec": 35
-    }
-   ]
-  },
-  {
-   "id": 870,
-   "name": "Fiery War Axe",
-   "kind": "2H Axe",
-   "quality": 4,
-   "req": 35,
-   "obtain": 35,
-   "ilvl": 40,
-   "bind": "equip",
-   "dps": 40.34,
-   "speed": 2.9,
-   "dmgMin": 93,
-   "dmgMax": 141,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [
-    "Chance on hit: Hurls a fiery ball that causes 155 to 197 Fire damage and an additional 24 damage over 6 sec."
-   ],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_axe_02",
    "raceMask": -1,
    "sources": [
     {
@@ -21590,12 +21603,11 @@
     "spellDamage": 4
    },
    "equip": [
-    "Equip: Increases damage done by magical spells and effects by up to 4.",
     "Equip: Increases damage done to Humanoids by magical spells and effects by up to 7."
    ],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_axe_22",
    "raceMask": -1,
    "sources": [
@@ -21892,7 +21904,7 @@
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_staff_28",
    "raceMask": -1,
    "sources": [
@@ -21925,7 +21937,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_hammer_09",
    "raceMask": -1,
    "sources": [
@@ -23613,7 +23625,7 @@
    "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_wrench_01",
    "raceMask": -1,
    "sources": [
@@ -23726,6 +23738,41 @@
      },
      "asap": 37,
      "rec": 38
+    }
+   ]
+  },
+  {
+   "id": 274430,
+   "name": "Rock Sentinel Slicer",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 39,
+   "obtain": 39,
+   "ilvl": 44,
+   "bind": "pickup",
+   "dps": 38.9,
+   "speed": 2.8,
+   "dmgMin": 87,
+   "dmgMax": 131,
+   "stats": {
+    "intellect": 12
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: While in combat, your healing spells have a chance to grant an ally 300 armor for 10 sec."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_axe_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 39,
+     "rec": 39
     }
    ]
   },
@@ -24012,6 +24059,40 @@
    ]
   },
   {
+   "id": 274995,
+   "name": "Slavecrusher Scepter",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 39,
+   "obtain": 39,
+   "ilvl": 44,
+   "bind": "pickup",
+   "dps": 29.81,
+   "speed": 2.6,
+   "dmgMin": 54,
+   "dmgMax": 101,
+   "stats": {
+    "strength": 6,
+    "stamina": 9
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_12",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 39,
+     "rec": 39
+    }
+   ]
+  },
+  {
    "id": 7721,
    "name": "Hand of Righteousness",
    "kind": "1H Mace",
@@ -24110,45 +24191,6 @@
       "steps": 4
      },
      "asap": 37,
-     "rec": 39
-    }
-   ]
-  },
-  {
-   "id": 274430,
-   "name": "Rock Sentinel Slicer",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 39,
-   "obtain": 39,
-   "ilvl": 44,
-   "bind": "pickup",
-   "dps": 28.75,
-   "speed": 2.8,
-   "dmgMin": 64,
-   "dmgMax": 97,
-   "stats": {
-    "intellect": 12
-   },
-   "bonus": {
-    "healing": 94,
-    "spellDamage": 31
-   },
-   "equip": [
-    "Equip: Increases healing done by up to 94 and damage done by up to 31 for all magical spells and effects.",
-    "Equip: While in combat, your healing spells have a chance to grant an ally 300 armor for 10 sec."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_axe_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 39,
      "rec": 39
     }
    ]
@@ -24405,12 +24447,10 @@
    "bonus": {
     "spellPower": 15
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 15."
-   ],
+   "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_axe_04",
    "raceMask": -1,
    "sources": [
@@ -25023,6 +25063,42 @@
      "confidence": "client-data",
      "asap": 40,
      "rec": 40
+    }
+   ]
+  },
+  {
+   "id": 274431,
+   "name": "Sandstorm Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 41,
+   "obtain": 41,
+   "ilvl": 46,
+   "bind": "pickup",
+   "dps": 40.5,
+   "speed": 3,
+   "dmgMin": 97,
+   "dmgMax": 146,
+   "stats": {
+    "stamina": 13
+   },
+   "bonus": {
+    "natureDamage": 64,
+    "mp5": 8
+   },
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 41,
+     "rec": 41
     }
    ]
   },
@@ -25753,6 +25829,78 @@
    ]
   },
   {
+   "id": 275007,
+   "name": "Mugg's Jabber",
+   "kind": "Fist",
+   "quality": 3,
+   "req": 42,
+   "obtain": 42,
+   "ilvl": 47,
+   "bind": "pickup",
+   "dps": 31.54,
+   "speed": 2.6,
+   "dmgMin": 57,
+   "dmgMax": 107,
+   "stats": {
+    "agility": 5,
+    "stamina": 6
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: +18 Attack Power against Humanoids."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_hand_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 42,
+     "rec": 42
+    }
+   ]
+  },
+  {
+   "id": 275008,
+   "name": "Mugg's Crosser",
+   "kind": "Fist",
+   "quality": 3,
+   "req": 42,
+   "obtain": 42,
+   "ilvl": 47,
+   "bind": "pickup",
+   "dps": 31.54,
+   "speed": 2.6,
+   "dmgMin": 57,
+   "dmgMax": 107,
+   "stats": {
+    "strength": 5,
+    "stamina": 6
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: +18 Attack Power against Beasts."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_hand_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 42,
+     "rec": 42
+    }
+   ]
+  },
+  {
    "id": 271804,
    "name": "Soulsplatter Mace",
    "kind": "1H Mace",
@@ -25933,12 +26081,10 @@
    "bonus": {
     "attackPower": 9
    },
-   "equip": [
-    "Equip: +9 Attack Power."
-   ],
+   "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_monsterfang_01",
    "raceMask": -1,
    "sources": [
@@ -26688,12 +26834,10 @@
    "bonus": {
     "spellDamage": 21
    },
-   "equip": [
-    "Equip: Increases damage done by magical spells and effects by up to 21."
-   ],
+   "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_hammer_16",
    "raceMask": -1,
    "sources": [
@@ -26778,6 +26922,40 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_staff_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 44,
+     "rec": 44
+    }
+   ]
+  },
+  {
+   "id": 282007,
+   "name": "Emerald Watcher's Dreamstaff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 44,
+   "obtain": 44,
+   "ilvl": 49,
+   "bind": "pickup",
+   "dps": 42.7,
+   "speed": 3,
+   "dmgMin": 102,
+   "dmgMax": 154,
+   "stats": {
+    "intellect": 19,
+    "spirit": 19
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_17",
    "raceMask": -1,
    "sources": [
     {
@@ -26957,44 +27135,6 @@
      ],
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 44,
-     "rec": 44
-    }
-   ]
-  },
-  {
-   "id": 282007,
-   "name": "Emerald Watcher's Dreamstaff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 44,
-   "obtain": 44,
-   "ilvl": 49,
-   "bind": "pickup",
-   "dps": 31.67,
-   "speed": 3,
-   "dmgMin": 76,
-   "dmgMax": 114,
-   "stats": {
-    "intellect": 19,
-    "spirit": 19
-   },
-   "bonus": {
-    "spellPower": 56
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 56."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_staff_17",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 44,
      "rec": 44
     }
@@ -27196,7 +27336,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_hammer_04",
    "raceMask": -1,
    "sources": [
@@ -27431,13 +27571,17 @@
    "dmgMin": 63,
    "dmgMax": 117,
    "stats": {},
-   "bonus": {},
-   "equip": [],
+   "bonus": {
+    "attackPower": 10
+   },
+   "equip": [
+    "Equip: +10 Attack Power."
+   ],
    "chance": [
-    "Chance on hit: Wounds the target for 75 damage."
+    "Chance on hit: Wounds the target for 70 Physical damage."
    ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_axe_07",
    "raceMask": -1,
    "sources": [
@@ -27484,7 +27628,7 @@
     "Chance on hit: Blasts nearby enemies with thunder increasing the time between their attacks by 11% for 10 sec and doing 42 Nature damage to them.  Will affect up to 4 targets."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_mace_11",
    "raceMask": -1,
    "sources": [
@@ -30669,10 +30813,10 @@
    "bonus": {},
    "equip": [],
    "chance": [
-    "Chance on hit: Steals 45 life from target enemy."
+    "Chance on hit: Steals 49 life from target enemy. Deals 2 times as much damage to Undead."
    ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_axe_13",
    "raceMask": -1,
    "sources": [
@@ -30939,91 +31083,6 @@
    ]
   },
   {
-   "id": 12000,
-   "name": "Limb Cleaver",
-   "kind": "2H Axe",
-   "quality": 3,
-   "req": 0,
-   "obtain": 52,
-   "ilvl": 55,
-   "bind": "pickup",
-   "dps": 47.5,
-   "speed": 2.4,
-   "dmgMin": 91,
-   "dmgMax": 137,
-   "stats": {
-    "strength": 27,
-    "stamina": 8
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: +12 Attack Power against Humanoids."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_axe_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hurley Blackbreath",
-     "questId": 4126,
-     "level": 55,
-     "requiredLevel": 50,
-     "zone": "Blackrock Depths",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 50,
-      "orange": 51,
-      "yellow": 53,
-      "green": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/4126",
-     "basis": {
-      "name": "Hurley Blackbreath",
-      "level": 55,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 50,
-     "rec": 52
-    },
-    {
-     "type": "quest",
-     "quest": "Lost Thunderbrew Recipe",
-     "questId": 4134,
-     "level": 55,
-     "requiredLevel": 50,
-     "zone": "Blackrock Depths",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 50,
-      "orange": 51,
-      "yellow": 53,
-      "green": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/4134",
-     "basis": {
-      "name": "Hurley Blackbreath",
-      "level": 55,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 50,
-     "rec": 52
-    }
-   ]
-  },
-  {
    "id": 20556,
    "name": "Wildstaff",
    "kind": "Staff",
@@ -31083,6 +31142,91 @@
       "steps": 3
      },
      "asap": 51,
+     "rec": 52
+    }
+   ]
+  },
+  {
+   "id": 12000,
+   "name": "Limb Cleaver",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 0,
+   "obtain": 52,
+   "ilvl": 55,
+   "bind": "pickup",
+   "dps": 42.7,
+   "speed": 2.4,
+   "dmgMin": 82,
+   "dmgMax": 123,
+   "stats": {
+    "strength": 21,
+    "stamina": 6
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: +12 Attack Power against Humanoids."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_axe_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hurley Blackbreath",
+     "questId": 4126,
+     "level": 55,
+     "requiredLevel": 50,
+     "zone": "Blackrock Depths",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/4126",
+     "basis": {
+      "name": "Hurley Blackbreath",
+      "level": 55,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 50,
+     "rec": 52
+    },
+    {
+     "type": "quest",
+     "quest": "Lost Thunderbrew Recipe",
+     "questId": 4134,
+     "level": 55,
+     "requiredLevel": 50,
+     "zone": "Blackrock Depths",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/4134",
+     "basis": {
+      "name": "Hurley Blackbreath",
+      "level": 55,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 50,
      "rec": 52
     }
    ]
@@ -31158,46 +31302,6 @@
    ]
   },
   {
-   "id": 12781,
-   "name": "Serenity",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 52,
-   "obtain": 52,
-   "ilvl": 57,
-   "bind": "equip",
-   "dps": 37.6,
-   "speed": 2.5,
-   "dmgMin": 65,
-   "dmgMax": 123,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [
-    "Chance on hit: Dispels a magic effect on the current foe."
-   ],
-   "era": "changed",
-   "numbers": "client",
-   "icon": "inv_mace_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Blacksmithing",
-     "yellow": 285,
-     "grey": 310,
-     "learn": {
-      "type": "drop",
-      "learnAt": 260
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 52,
-     "rec": 52
-    }
-   ]
-  },
-  {
    "id": 11923,
    "name": "The Hammer of Grace",
    "kind": "1H Mace",
@@ -31206,20 +31310,18 @@
    "obtain": 52,
    "ilvl": 57,
    "bind": "pickup",
-   "dps": 37.59,
+   "dps": 37.6,
    "speed": 2.7,
    "dmgMin": 71,
    "dmgMax": 132,
    "stats": {},
-   "bonus": {
-    "healing": 31
-   },
+   "bonus": {},
    "equip": [
-    "Equip: Increases healing done by spells and effects by up to 31."
+    "Equip: Dying heals all party members within 40 yds for 1082 to 1270."
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_hammer_07",
    "raceMask": -1,
    "sources": [
@@ -31285,6 +31387,46 @@
       "from": "wowhead",
       "group": true
      }
+    }
+   ]
+  },
+  {
+   "id": 12781,
+   "name": "Serenity",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 52,
+   "obtain": 52,
+   "ilvl": 57,
+   "bind": "equip",
+   "dps": 37.6,
+   "speed": 2.5,
+   "dmgMin": 65,
+   "dmgMax": 123,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "chance": [
+    "Chance on hit: Dispels a magic effect on the current foe."
+   ],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_mace_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Blacksmithing",
+     "yellow": 285,
+     "grey": 310,
+     "learn": {
+      "type": "drop",
+      "learnAt": 260
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 52,
+     "rec": 52
     }
    ]
   },
@@ -31468,92 +31610,6 @@
    ]
   },
   {
-   "id": 11964,
-   "name": "Swiftstrike Cudgel",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 0,
-   "obtain": 52,
-   "ilvl": 55,
-   "bind": "pickup",
-   "dps": 36.25,
-   "speed": 1.6,
-   "dmgMin": 40,
-   "dmgMax": 76,
-   "stats": {
-    "agility": 7
-   },
-   "bonus": {
-    "hit": 1
-   },
-   "equip": [
-    "Equip: Improves your chance to hit by 1.0%."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_mace_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Hurley Blackbreath",
-     "questId": 4126,
-     "level": 55,
-     "requiredLevel": 50,
-     "zone": "Blackrock Depths",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 50,
-      "orange": 51,
-      "yellow": 53,
-      "green": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/4126",
-     "basis": {
-      "name": "Hurley Blackbreath",
-      "level": 55,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 50,
-     "rec": 52
-    },
-    {
-     "type": "quest",
-     "quest": "Lost Thunderbrew Recipe",
-     "questId": 4134,
-     "level": 55,
-     "requiredLevel": 50,
-     "zone": "Blackrock Depths",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 50,
-      "orange": 51,
-      "yellow": 53,
-      "green": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/4134",
-     "basis": {
-      "name": "Hurley Blackbreath",
-      "level": 55,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 2
-     },
-     "asap": 50,
-     "rec": 52
-    }
-   ]
-  },
-  {
    "id": 12779,
    "name": "Rune Edge",
    "kind": "1H Axe",
@@ -31632,6 +31688,90 @@
      "faction": "both",
      "confidence": "client-data",
      "asap": 52,
+     "rec": 52
+    }
+   ]
+  },
+  {
+   "id": 11964,
+   "name": "Swiftstrike Cudgel",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 0,
+   "obtain": 52,
+   "ilvl": 55,
+   "bind": "pickup",
+   "dps": 32.5,
+   "speed": 1.6,
+   "dmgMin": 36,
+   "dmgMax": 68,
+   "stats": {
+    "agility": 5
+   },
+   "bonus": {
+    "hitRating": 8
+   },
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_mace_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Hurley Blackbreath",
+     "questId": 4126,
+     "level": 55,
+     "requiredLevel": 50,
+     "zone": "Blackrock Depths",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/4126",
+     "basis": {
+      "name": "Hurley Blackbreath",
+      "level": 55,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 50,
+     "rec": 52
+    },
+    {
+     "type": "quest",
+     "quest": "Lost Thunderbrew Recipe",
+     "questId": 4134,
+     "level": 55,
+     "requiredLevel": 50,
+     "zone": "Blackrock Depths",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/4134",
+     "basis": {
+      "name": "Hurley Blackbreath",
+      "level": 55,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 50,
      "rec": 52
     }
    ]
@@ -31941,19 +32081,17 @@
    "dmgMin": 135,
    "dmgMax": 203,
    "stats": {
-    "strength": 10,
+    "strength": 13,
     "stamina": 14,
     "intellect": 12
    },
    "bonus": {
     "spellPower": 20
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 20."
-   ],
+   "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_hammer_10",
    "raceMask": -1,
    "sources": [
@@ -32821,6 +32959,42 @@
    ]
   },
   {
+   "id": 276397,
+   "name": "Hand of the Zealous",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "pickup",
+   "dps": 51.4,
+   "speed": 3.7,
+   "dmgMin": 152,
+   "dmgMax": 228,
+   "stats": {
+    "stamina": 22,
+    "intellect": 16
+   },
+   "bonus": {
+    "critRating": 14
+   },
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
    "id": 227880,
    "name": "Finely-Enchanted Battlehammer",
    "kind": "2H Mace",
@@ -33261,62 +33435,6 @@
    ]
   },
   {
-   "id": 12062,
-   "name": "Skilled Fighting Blade",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 0,
-   "obtain": 55,
-   "ilvl": 60,
-   "bind": "pickup",
-   "dps": 39.29,
-   "speed": 1.4,
-   "dmgMin": 38,
-   "dmgMax": 72,
-   "stats": {
-    "stamina": 7
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increased Daggers +1."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_sword_21",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Jail Break!",
-     "questId": 4322,
-     "level": 58,
-     "requiredLevel": 50,
-     "zone": "Blackrock Depths",
-     "faction": "alliance",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 50,
-      "orange": 54,
-      "yellow": 56
-     },
-     "ref": "https://foreverchanges.pro/quest/4322",
-     "basis": {
-      "name": null,
-      "level": 58,
-      "rank": "normal",
-      "from": "step-level",
-      "group": true,
-      "step": 4264,
-      "steps": 7
-     },
-     "asap": 53,
-     "rec": 55
-    }
-   ]
-  },
-  {
    "id": 12795,
    "name": "Blood Talon",
    "kind": "Fist",
@@ -33403,6 +33521,60 @@
       "from": "wowhead",
       "group": true
      }
+    }
+   ]
+  },
+  {
+   "id": 12062,
+   "name": "Skilled Fighting Blade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 0,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "pickup",
+   "dps": 35.7,
+   "speed": 1.4,
+   "dmgMin": 35,
+   "dmgMax": 65,
+   "stats": {},
+   "bonus": {},
+   "equip": [
+    "Equip: Increased Daggers +1."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_sword_21",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Jail Break!",
+     "questId": 4322,
+     "level": 58,
+     "requiredLevel": 50,
+     "zone": "Blackrock Depths",
+     "faction": "alliance",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 50,
+      "orange": 54,
+      "yellow": 56
+     },
+     "ref": "https://foreverchanges.pro/quest/4322",
+     "basis": {
+      "name": null,
+      "level": 58,
+      "rank": "normal",
+      "from": "step-level",
+      "group": true,
+      "step": 4264,
+      "steps": 7
+     },
+     "asap": 53,
+     "rec": 55
     }
    ]
   },

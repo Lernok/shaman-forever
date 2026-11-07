@@ -262,8 +262,32 @@
     }
    ]
   },
+  "263005": {
+   "name": "Thendal Watcher's Vest",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 256028,
+     "npc": "The Lost One",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
   "263006": {
    "name": "Scout Ranger's Tunic",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 256028,
+     "npc": "The Lost One",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "263007": {
+   "name": "Skyseer's Vest",
    "sources": [
     {
      "type": "drop",
@@ -5150,6 +5174,30 @@
      "npcId": 5931,
      "npc": "Foreman Rigger",
      "zone": "Stonetalon Mountains",
+     "rare": true
+    }
+   ]
+  },
+  "284668": {
+   "name": "Apothecary's Concoction",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 3735,
+     "npc": "Apothecary Falthis",
+     "zone": "Ashenvale",
+     "rare": true
+    }
+   ]
+  },
+  "284704": {
+   "name": "Frostbitten Staff",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 10559,
+     "npc": "Lady Vespia",
+     "zone": "Ashenvale",
      "rare": true
     }
    ]

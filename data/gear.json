@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70840",
+ "build": "1.60.1.70862",
  "gear": [
   {
    "id": 208424,
@@ -4726,43 +4726,6 @@
    ]
   },
   {
-   "id": 10780,
-   "name": "Mark of Hakkar",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 55,
-   "bind": "pickup",
-   "stats": {
-    "strength": 7,
-    "stamina": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_jewelry_ring_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "trash",
-     "count": 12,
-     "zones": [
-      "The Temple of Atal'Hakkar",
-      "Felwood"
-     ],
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 18637,
    "name": "Major Recombobulator",
    "kind": "Trinket",
@@ -5284,6 +5247,40 @@
    ]
   },
   {
+   "id": 270120,
+   "name": "Boots of Requite",
+   "kind": "Mail",
+   "slot": "Feet",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 55,
+   "bind": "pickup",
+   "armor": 225,
+   "stats": {
+    "agility": 14,
+    "intellect": 12,
+    "spirit": 11
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_boots_plate_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 270122,
    "name": "Yesterday's Pants",
    "kind": "Leather",
@@ -5329,20 +5326,17 @@
    "bind": "pickup",
    "armor": 128,
    "stats": {
-    "stamina": 16
+    "stamina": 11
    },
    "bonus": {
-    "spellPower": 26,
-    "hit": 0.5
+    "spellPower": 20,
+    "hitRating": 5
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 0.5%.",
-    "Equip: Increases damage and healing done by magical spells and effects by up to 26."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_helmet_46",
    "raceMask": -1,
    "sources": [
@@ -6643,6 +6637,43 @@
    ]
   },
   {
+   "id": 10780,
+   "name": "Mark of Hakkar",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 51,
+   "bind": "pickup",
+   "stats": {
+    "strength": 6,
+    "stamina": 9
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "trash",
+     "count": 12,
+     "zones": [
+      "The Temple of Atal'Hakkar",
+      "Felwood"
+     ],
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 10781,
    "name": "Hakkari Breastplate",
    "kind": "Leather",
@@ -6654,19 +6685,17 @@
    "bind": "pickup",
    "armor": 148,
    "stats": {
-    "agility": 5,
-    "stamina": 22
+    "stamina": 17,
+    "agility": 4
    },
    "bonus": {
-    "defense": 9
+    "defense": 7
    },
-   "equip": [
-    "Equip: Increased Defense +9."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_leather_02",
    "raceMask": -1,
    "sources": [
@@ -6697,18 +6726,16 @@
    "bind": "pickup",
    "armor": 59,
    "stats": {
-    "stamina": 19
+    "stamina": 15
    },
    "bonus": {
-    "spellPower": 23
+    "spellPower": 17
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 23."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_helmet_38",
    "raceMask": -1,
    "sources": [
@@ -8190,79 +8217,6 @@
    ]
   },
   {
-   "id": 279859,
-   "name": "Indoctrinated Choker",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 46,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 5,
-    "spirit": 6
-   },
-   "bonus": {
-    "attackPower": 8
-   },
-   "equip": [
-    "Equip: +8 Attack Power."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_jewelry_necklace_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 279860,
-   "name": "Convert's Bindings",
-   "kind": "Cloth",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 46,
-   "bind": "pickup",
-   "armor": 26,
-   "stats": {
-    "stamina": 5,
-    "spirit": 7
-   },
-   "bonus": {
-    "spellPower": 5
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 5."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_bracer_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 7189,
    "name": "Goblin Rocket Boots",
    "kind": "Cloth",
@@ -8569,13 +8523,11 @@
     "healing": 13,
     "spellDamage": 5
    },
-   "equip": [
-    "Equip: Increases healing done by up to 13 and damage done by up to 5 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_belt_04",
    "raceMask": -1,
    "sources": [
@@ -8814,7 +8766,7 @@
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_ear_human_01",
    "raceMask": -1,
    "sources": [
@@ -11331,6 +11283,75 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_misc_cape_19",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 279859,
+   "name": "Indoctrinated Choker",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 2,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 46,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 5,
+    "spirit": 6
+   },
+   "bonus": {
+    "attackPower": 8
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_necklace_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 1,
+     "rec": 1
+    }
+   ]
+  },
+  {
+   "id": 279860,
+   "name": "Convert's Bindings",
+   "kind": "Cloth",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 1,
+   "obtain": 1,
+   "ilvl": 46,
+   "bind": "pickup",
+   "armor": 26,
+   "stats": {
+    "stamina": 5,
+    "spirit": 7
+   },
+   "bonus": {
+    "spellPower": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_07",
    "raceMask": -1,
    "sources": [
     {
@@ -13945,11 +13966,22 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "drop",
+     "npc": "The Lost One",
+     "npcId": 256028,
+     "zone": "Zephras Isle",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 3,
-     "rec": 3
+     "rec": 3,
+     "basis": {
+      "name": "The Lost One",
+      "level": 6,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -17792,11 +17824,22 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "drop",
+     "npc": "The Lost One",
+     "npcId": 256028,
+     "zone": "Zephras Isle",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 6,
-     "rec": 6
+     "rec": 6,
+     "basis": {
+      "name": "The Lost One",
+      "level": 6,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -40701,7 +40744,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_pants_02",
    "raceMask": -1,
    "sources": [
@@ -50551,37 +50594,6 @@
      "npc": "Rath'mael",
      "npcId": 250657,
      "zone": "Ruins of Lordaeron",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 19,
-     "rec": 19
-    }
-   ]
-  },
-  {
-   "id": 284668,
-   "name": "Apothecary's Concoction",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 2,
-   "req": 19,
-   "obtain": 19,
-   "ilvl": 24,
-   "bind": "equip",
-   "stats": {},
-   "bonus": {
-    "mp5": 2
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_potion_80",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 19,
@@ -60458,6 +60470,48 @@
    ]
   },
   {
+   "id": 284668,
+   "name": "Apothecary's Concoction",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 2,
+   "req": 19,
+   "obtain": 21,
+   "ilvl": 24,
+   "bind": "equip",
+   "stats": {},
+   "bonus": {
+    "mp5": 2
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_potion_80",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Apothecary Falthis",
+     "npcId": 3735,
+     "zone": "Ashenvale",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 19,
+     "rec": 21,
+     "basis": {
+      "name": "Apothecary Falthis",
+      "level": 22,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
    "id": 17692,
    "name": "Horn Ring",
    "kind": "Ring",
@@ -69614,13 +69668,11 @@
    "bonus": {
     "attackPower": 16
    },
-   "equip": [
-    "Equip: +16 Attack Power."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_boots_chain_08",
    "raceMask": -1,
    "sources": [
@@ -84263,13 +84315,11 @@
     "healing": 22,
     "spellDamage": 8
    },
-   "equip": [
-    "Equip: Increases healing done by up to 22 and damage done by up to 8 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_helmet_03",
    "raceMask": -1,
    "sources": [
@@ -88263,7 +88313,7 @@
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_gauntlets_18",
    "raceMask": -1,
    "sources": [
@@ -101443,7 +101493,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_helmet_30",
    "raceMask": -1,
    "sources": [
@@ -107392,7 +107442,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_helmet_24",
    "raceMask": -1,
    "sources": [
@@ -108163,7 +108213,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shoulder_13",
    "raceMask": -1,
    "sources": [
@@ -109905,7 +109955,7 @@
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_cloth_18",
    "raceMask": -1,
    "sources": [
@@ -111225,13 +111275,11 @@
     "healing": 24,
     "spellDamage": 8
    },
-   "equip": [
-    "Equip: Increases healing done by up to 24 and damage done by up to 8 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_pants_06",
    "raceMask": -1,
    "sources": [
@@ -111309,7 +111357,7 @@
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_18",
    "raceMask": -1,
    "sources": [
@@ -112688,7 +112736,7 @@
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_leather_01",
    "raceMask": -1,
    "sources": [
@@ -112718,13 +112766,11 @@
    "bonus": {
     "spellPower": 10
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 10."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_belt_26",
    "raceMask": -1,
    "sources": [
@@ -112759,6 +112805,43 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_jewelry_ring_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 34,
+     "rec": 34
+    }
+   ]
+  },
+  {
+   "id": 286998,
+   "name": "Deep Flora Bindings",
+   "kind": "Cloth",
+   "slot": "Wrist",
+   "quality": 3,
+   "req": 34,
+   "obtain": 34,
+   "ilvl": 39,
+   "bind": "equip",
+   "armor": 25,
+   "stats": {
+    "stamina": 4
+   },
+   "bonus": {
+    "healing": 20,
+    "spellDamage": 7
+   },
+   "equip": [
+    "Equip: Underwater Breath lasts 25% longer than normal."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_06",
    "raceMask": -1,
    "sources": [
     {
@@ -112822,15 +112905,13 @@
     "stamina": 5
    },
    "bonus": {
-    "crit": 1
+    "critRating": 14
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1.0%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_gauntlets_11",
    "raceMask": -1,
    "sources": [
@@ -113460,7 +113541,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_gauntlets_04",
    "raceMask": -1,
    "sources": [
@@ -118218,7 +118299,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_crown_01",
    "raceMask": -1,
    "sources": [
@@ -120646,15 +120727,13 @@
     "intellect": 12
    },
    "bonus": {
-    "hit": 1
+    "hitRating": 10
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 1.0%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shoulder_05",
    "raceMask": -1,
    "sources": [
@@ -121872,18 +121951,16 @@
    "armor": 86,
    "stats": {},
    "bonus": {
-    "attackPower": 20,
-    "crit": 1
+    "critRating": 14,
+    "attackPower": 10
    },
    "equip": [
-    "Equip: Improves your chance to get a critical strike by 1.0%.",
-    "Equip: +20 Attack Power.",
     "Equip: +30 Attack Power against Undead."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_gauntlets_06",
    "raceMask": -1,
    "sources": [
@@ -121915,7 +121992,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_helmet_04",
    "raceMask": -1,
    "sources": [
@@ -122747,7 +122824,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_boots_02",
    "raceMask": -1,
    "sources": [
@@ -122793,13 +122870,11 @@
     "healing": 13,
     "spellDamage": 5
    },
-   "equip": [
-    "Equip: Increases healing done by up to 13 and damage done by up to 5 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shield_07",
    "raceMask": -1,
    "sources": [
@@ -122848,7 +122923,7 @@
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shield_02",
    "raceMask": -1,
    "sources": [
@@ -123363,7 +123438,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shield_17",
    "raceMask": -1,
    "sources": [
@@ -124698,13 +124773,11 @@
    "bonus": {
     "defense": 4
    },
-   "equip": [
-    "Equip: Increased Defense +4."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_pelt_bear_02",
    "raceMask": -1,
    "sources": [
@@ -124771,13 +124844,12 @@
     "attackPower": 8
    },
    "equip": [
-    "Equip: +8 Attack Power.",
     "Equip: +12 Attack Power against Demons."
    ],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_necklace_05",
    "raceMask": -1,
    "sources": [
@@ -126742,7 +126814,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_helmet_03",
    "raceMask": -1,
    "sources": [
@@ -133371,13 +133443,11 @@
    "bonus": {
     "spellDamage": 8
    },
-   "equip": [
-    "Equip: Increases damage done by magical spells and effects by up to 8."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_food_18",
    "raceMask": -1,
    "sources": [
@@ -133411,8 +133481,43 @@
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_boots_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 39,
+     "rec": 39
+    }
+   ]
+  },
+  {
+   "id": 287010,
+   "name": "Outrider's Gloves",
+   "kind": "Leather",
+   "slot": "Hands",
+   "quality": 3,
+   "req": 39,
+   "obtain": 39,
+   "ilvl": 44,
+   "bind": "equip",
+   "armor": 82,
+   "stats": {
+    "strength": 9,
+    "agility": 13
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increases movement speed while mounted by 5%. This effect does not stack with similar effects."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_gauntlets_19",
    "raceMask": -1,
    "sources": [
     {
@@ -134722,15 +134827,13 @@
    "obtain": 40,
    "ilvl": 45,
    "bind": "pickup",
-   "stats": {
-    "stamina": 13
-   },
+   "stats": {},
    "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_misc_organ_01",
    "raceMask": -1,
    "sources": [
@@ -137386,15 +137489,13 @@
     "stamina": 9
    },
    "bonus": {
-    "hit": 0.5
+    "hitRating": 5
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 0.5%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_17",
    "raceMask": -1,
    "sources": [
@@ -137428,7 +137529,7 @@
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_helmet_117",
    "raceMask": -1,
    "sources": [
@@ -138100,8 +138201,44 @@
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shoulder_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 40,
+     "rec": 40
+    }
+   ]
+  },
+  {
+   "id": 284843,
+   "name": "Sturdy Bearhide Legguards",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 40,
+   "obtain": 40,
+   "ilvl": 45,
+   "bind": "equip",
+   "armor": 106,
+   "stats": {
+    "stamina": 15
+   },
+   "bonus": {
+    "expertiseRating": 5
+   },
+   "equip": [
+    "Equip: Reduces chance to be Dodged or Parried by 0.5%."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_12",
    "raceMask": -1,
    "sources": [
     {
@@ -138239,6 +138376,39 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_jewelry_necklace_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 40,
+     "rec": 40
+    }
+   ]
+  },
+  {
+   "id": 287016,
+   "name": "Shadow-Seer Orb",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 3,
+   "req": 40,
+   "obtain": 40,
+   "ilvl": 45,
+   "bind": "equip",
+   "stats": {
+    "stamina": 9
+   },
+   "bonus": {
+    "otherDamage": 13
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_orb_04",
    "raceMask": -1,
    "sources": [
     {
@@ -141619,6 +141789,40 @@
    ]
   },
   {
+   "id": 281666,
+   "name": "Robes of the Blind Cultist",
+   "kind": "Cloth",
+   "slot": "Chest",
+   "quality": 2,
+   "req": 41,
+   "obtain": 41,
+   "ilvl": 46,
+   "bind": "equip",
+   "armor": 60,
+   "stats": {
+    "spirit": 11
+   },
+   "bonus": {
+    "spellDamage": 16
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_chest_cloth_17",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 41,
+     "rec": 41
+    }
+   ]
+  },
+  {
    "id": 281891,
    "name": "Fishscale Hauberk",
    "kind": "Mail",
@@ -141702,13 +141906,11 @@
    "bonus": {
     "spellPower": 15
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 15."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_helmet_17",
    "raceMask": -1,
    "sources": [
@@ -142423,7 +142625,7 @@
     "Chance on hit: Smite your target with the power of the holy spring, inflicting 56 Holy damage."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_wand_10",
    "raceMask": -1,
    "sources": [
@@ -143250,13 +143452,11 @@
     "healing": 29,
     "spellDamage": 10
    },
-   "equip": [
-    "Equip: Increases healing done by up to 29 and damage done by up to 10 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shirt_05",
    "raceMask": -1,
    "sources": [
@@ -143501,13 +143701,11 @@
    "bonus": {
     "fireDamage": 14
    },
-   "equip": [
-    "Equip: Increases damage done by Fire spells and effects by up to 14."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shoulder_05",
    "raceMask": -1,
    "sources": [
@@ -145265,6 +145463,40 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_misc_coin_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 42,
+     "rec": 42
+    }
+   ]
+  },
+  {
+   "id": 275010,
+   "name": "Strongly Scented Hood",
+   "kind": "Cloth",
+   "slot": "Head",
+   "quality": 3,
+   "req": 42,
+   "obtain": 42,
+   "ilvl": 47,
+   "bind": "pickup",
+   "armor": 55,
+   "stats": {
+    "spirit": 21
+   },
+   "bonus": {
+    "spellPower": 15
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_helmet_62",
    "raceMask": -1,
    "sources": [
     {
@@ -148179,6 +148411,57 @@
    ]
   },
   {
+   "id": 18083,
+   "name": "Jumanza Grips",
+   "kind": "Cloth",
+   "slot": "Hands",
+   "quality": 3,
+   "req": 43,
+   "obtain": 43,
+   "ilvl": 48,
+   "bind": "pickup",
+   "armor": 43,
+   "stats": {
+    "stamina": 10,
+    "intellect": 7
+   },
+   "bonus": {
+    "mp5": 4,
+    "healing": 18,
+    "spellDamage": 6
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_gauntlets_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Witch Doctor Zum'rah",
+     "npcId": 7271,
+     "level": 46,
+     "rank": "elite",
+     "zone": "Zul'Farrak",
+     "zoneId": 1176,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 43,
+     "rec": 43,
+     "basis": {
+      "name": "Witch Doctor Zum'rah",
+      "level": 46,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 274642,
    "name": "Blood Ritual Ring",
    "kind": "Ring",
@@ -148267,7 +148550,7 @@
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_07",
    "raceMask": -1,
    "sources": [
@@ -148334,13 +148617,11 @@
     "healing": 16,
     "spellDamage": 6
    },
-   "equip": [
-    "Equip: Increases healing done by up to 16 and damage done by up to 6 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_belt_15",
    "raceMask": -1,
    "sources": [
@@ -148419,54 +148700,6 @@
      "confidence": "community-untested",
      "asap": 43,
      "rec": 43
-    }
-   ]
-  },
-  {
-   "id": 18083,
-   "name": "Jumanza Grips",
-   "kind": "Cloth",
-   "slot": "Hands",
-   "quality": 3,
-   "req": 42,
-   "obtain": 43,
-   "ilvl": 47,
-   "bind": "pickup",
-   "armor": 42,
-   "stats": {
-    "stamina": 10,
-    "intellect": 11,
-    "spirit": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_gauntlets_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Witch Doctor Zum'rah",
-     "npcId": 7271,
-     "level": 46,
-     "rank": "elite",
-     "zone": "Zul'Farrak",
-     "zoneId": 1176,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 42,
-     "rec": 43,
-     "basis": {
-      "name": "Witch Doctor Zum'rah",
-      "level": 46,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },
@@ -149452,13 +149685,11 @@
     "healing": 24,
     "spellDamage": 8
    },
-   "equip": [
-    "Equip: Increases healing done by up to 24 and damage done by up to 8 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_pants_05",
    "raceMask": -1,
    "sources": [
@@ -150223,7 +150454,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_20",
    "raceMask": -1,
    "sources": [
@@ -151117,62 +151348,6 @@
    ]
   },
   {
-   "id": 7888,
-   "name": "Jarkal's Enhancing Necklace",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 3,
-   "req": 0,
-   "obtain": 44,
-   "ilvl": 47,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 10,
-    "intellect": 1,
-    "spirit": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_jewelry_necklace_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Necklace Recovery, Take 3",
-     "questId": 2341,
-     "level": 44,
-     "requiredLevel": 37,
-     "zone": "Uldaman",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "red": 37,
-      "orange": 40,
-      "yellow": 42,
-      "green": 47,
-      "grey": 56
-     },
-     "ref": "https://foreverchanges.pro/quest/2341",
-     "basis": {
-      "name": "Archaedas",
-      "level": 47,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "step": 2339,
-      "steps": 7
-     },
-     "asap": 42,
-     "rec": 44
-    }
-   ]
-  },
-  {
    "id": 11118,
    "name": "Archaedic Stone",
    "kind": "Ring",
@@ -151405,6 +151580,63 @@
       "group": true,
       "step": 2204,
       "steps": 6
+     },
+     "asap": 42,
+     "rec": 44
+    }
+   ]
+  },
+  {
+   "id": 7888,
+   "name": "Jarkal's Enhancing Necklace",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 3,
+   "req": 0,
+   "obtain": 44,
+   "ilvl": 46,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 10,
+    "intellect": 1
+   },
+   "bonus": {
+    "spellPower": 12
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_jewelry_necklace_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Necklace Recovery, Take 3",
+     "questId": 2341,
+     "level": 44,
+     "requiredLevel": 37,
+     "zone": "Uldaman",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "red": 37,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "ref": "https://foreverchanges.pro/quest/2341",
+     "basis": {
+      "name": "Archaedas",
+      "level": 47,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 2339,
+      "steps": 7
      },
      "asap": 42,
      "rec": 44
@@ -152390,58 +152622,6 @@
      "confidence": "client-data",
      "asap": 45,
      "rec": 45
-    }
-   ]
-  },
-  {
-   "id": 9479,
-   "name": "Embrace of the Lycan",
-   "kind": "Leather",
-   "slot": "Head",
-   "quality": 3,
-   "req": 45,
-   "obtain": 45,
-   "ilvl": 50,
-   "bind": "pickup",
-   "armor": 118,
-   "stats": {
-    "strength": 8,
-    "stamina": 16,
-    "spirit": 5
-   },
-   "bonus": {
-    "attackPower": 32
-   },
-   "equip": [
-    "Equip: +32 Attack Power."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "ability_mount_whitedirewolf",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Chief Ukorz Sandscalp",
-     "npcId": 7267,
-     "level": 48,
-     "rank": "elite",
-     "zone": "Zul'Farrak",
-     "zoneId": 1176,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 45,
-     "rec": 45,
-     "basis": {
-      "name": "Chief Ukorz Sandscalp",
-      "level": 48,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },
@@ -154956,6 +155136,124 @@
      "confidence": "community-untested",
      "asap": 45,
      "rec": 45
+    }
+   ]
+  },
+  {
+   "id": 284847,
+   "name": "Hippogryph Down Leggings",
+   "kind": "Cloth",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 45,
+   "obtain": 45,
+   "ilvl": 50,
+   "bind": "equip",
+   "armor": 57,
+   "stats": {
+    "intellect": 16
+   },
+   "bonus": {
+    "healing": 23,
+    "spellDamage": 7
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_13",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 45,
+     "rec": 45
+    }
+   ]
+  },
+  {
+   "id": 285047,
+   "name": "Yeti Hide Stompers",
+   "kind": "Leather",
+   "slot": "Feet",
+   "quality": 2,
+   "req": 45,
+   "obtain": 45,
+   "ilvl": 50,
+   "bind": "equip",
+   "armor": 91,
+   "stats": {
+    "strength": 15,
+    "stamina": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_boots_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 45,
+     "rec": 45
+    }
+   ]
+  },
+  {
+   "id": 9479,
+   "name": "Embrace of the Lycan",
+   "kind": "Leather",
+   "slot": "Head",
+   "quality": 3,
+   "req": 44,
+   "obtain": 45,
+   "ilvl": 49,
+   "bind": "pickup",
+   "armor": 117,
+   "stats": {
+    "strength": 8,
+    "stamina": 16,
+    "spirit": 5
+   },
+   "bonus": {
+    "attackPower": 32
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "ability_mount_whitedirewolf",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Chief Ukorz Sandscalp",
+     "npcId": 7267,
+     "level": 48,
+     "rank": "elite",
+     "zone": "Zul'Farrak",
+     "zoneId": 1176,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 44,
+     "rec": 45,
+     "basis": {
+      "name": "Chief Ukorz Sandscalp",
+      "level": 48,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -161551,13 +161849,11 @@
     "healing": 16,
     "spellDamage": 5
    },
-   "equip": [
-    "Equip: Increases healing done by up to 16 and damage done by up to 5 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_orb_05",
    "raceMask": -1,
    "sources": [
@@ -165277,16 +165573,14 @@
    },
    "bonus": {
     "healing": 26,
-    "mp5": 3
+    "mp5": 4,
+    "spellDamage": 9
    },
-   "equip": [
-    "Equip: Increases healing done by spells and effects by up to 26.",
-    "Equip: Restores 3 mana per 5 sec."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shoulder_09",
    "raceMask": -1,
    "sources": [
@@ -165995,13 +166289,11 @@
    "bonus": {
     "defense": 4
    },
-   "equip": [
-    "Equip: Increased Defense +4."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_17",
    "raceMask": -1,
    "sources": [
@@ -166139,13 +166431,11 @@
    "bonus": {
     "defense": 7
    },
-   "equip": [
-    "Equip: Increased Defense +7."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_boots_07",
    "raceMask": -1,
    "sources": [
@@ -167881,15 +168171,17 @@
    "armor": 39,
    "stats": {
     "stamina": 4,
-    "intellect": 4,
     "spirit": 15
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 9,
+    "spellDamage": 3
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_cape_05",
    "raceMask": -1,
    "sources": [
@@ -169151,15 +169443,19 @@
    "bind": "pickup",
    "stats": {
     "stamina": 10,
-    "intellect": 10,
-    "spirit": 6
+    "intellect": 9
    },
-   "bonus": {},
-   "equip": [],
+   "bonus": {
+    "healing": 15,
+    "spellDamage": 5
+   },
+   "equip": [
+    "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
+   ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_stone_01",
    "raceMask": -1,
    "sources": [
@@ -169224,13 +169520,11 @@
    "bonus": {
     "attackPower": 28
    },
-   "equip": [
-    "Equip: +28 Attack Power."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_bracer_14",
    "raceMask": -1,
    "sources": [
@@ -169551,16 +169845,19 @@
    "ilvl": 53,
    "bind": "pickup",
    "stats": {
-    "stamina": 3,
-    "intellect": 14,
-    "spirit": 5
+    "intellect": 9,
+    "spirit": 3
    },
-   "bonus": {},
+   "bonus": {
+    "spellPower": 6
+   },
    "equip": [],
-   "use": [],
+   "use": [
+    "Use: Charm a targeted Dark Iron Dwarf for 20 sec. (15 Min Cooldown)"
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_orb_03",
    "raceMask": -1,
    "sources": [
@@ -169756,7 +170053,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_pants_03",
    "raceMask": -1,
    "sources": [
@@ -175119,16 +175416,16 @@
    "bind": "pickup",
    "armor": 52,
    "stats": {
-    "agility": 12,
-    "stamina": 13,
-    "intellect": 11
+    "agility": 9,
+    "intellect": 8,
+    "stamina": 10
    },
    "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_boots_02",
    "raceMask": -1,
    "sources": [
@@ -175174,16 +175471,16 @@
    "bind": "pickup",
    "armor": 115,
    "stats": {
-    "agility": 11,
-    "stamina": 11,
-    "spirit": 12
+    "stamina": 8,
+    "agility": 8,
+    "spirit": 9
    },
    "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shoulder_25",
    "raceMask": -1,
    "sources": [
@@ -175229,16 +175526,16 @@
    "bind": "pickup",
    "armor": 317,
    "stats": {
-    "strength": 12,
-    "stamina": 18,
-    "spirit": 16
+    "strength": 9,
+    "stamina": 14,
+    "spirit": 12
    },
    "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_chain_16",
    "raceMask": -1,
    "sources": [
@@ -177930,6 +178227,41 @@
    ]
   },
   {
+   "id": 276884,
+   "name": "Verek's Loyal Wraps",
+   "kind": "Cloth",
+   "slot": "Wrist",
+   "quality": 3,
+   "req": 51,
+   "obtain": 51,
+   "ilvl": 56,
+   "bind": "pickup",
+   "armor": 35,
+   "stats": {
+    "spirit": 14
+   },
+   "bonus": {
+    "healing": 20,
+    "spellDamage": 7
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 51,
+     "rec": 51
+    }
+   ]
+  },
+  {
    "id": 282019,
    "name": "Braided Seer Stones",
    "kind": "Neck",
@@ -179235,7 +179567,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_cape_02",
    "raceMask": -1,
    "sources": [
@@ -179281,15 +179613,14 @@
    "armor": 113,
    "stats": {},
    "bonus": {
-    "hit": 2
+    "hitRating": 15,
+    "attackPower": 12
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 2%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shoulder_16",
    "raceMask": -1,
    "sources": [
@@ -179334,15 +179665,16 @@
    "bind": "pickup",
    "armor": 42,
    "stats": {
-    "stamina": 4,
-    "intellect": 17
+    "stamina": 6
    },
-   "bonus": {},
+   "bonus": {
+    "spellPower": 17
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_belt_11",
    "raceMask": -1,
    "sources": [
@@ -180369,14 +180701,16 @@
    "armor": 71,
    "stats": {
     "intellect": 12,
-    "spirit": 28
+    "spirit": 26
    },
-   "bonus": {},
+   "bonus": {
+    "otherDamage": 11
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_pants_11",
    "raceMask": -1,
    "sources": [
@@ -182047,7 +182381,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_04",
    "raceMask": -1,
    "sources": [
@@ -182114,13 +182448,11 @@
    "bonus": {
     "spellPower": 16
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 16."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_gauntlets_17",
    "raceMask": -1,
    "sources": [
@@ -182184,15 +182516,14 @@
     "intellect": 18
    },
    "bonus": {
-    "healing": 20
+    "healing": 20,
+    "spellDamage": 7
    },
-   "equip": [
-    "Equip: Increases healing done by spells and effects by up to 20."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_boots_08",
    "raceMask": -1,
    "sources": [
@@ -182719,14 +183050,15 @@
    "bind": "pickup",
    "armor": 132,
    "stats": {
-    "agility": 14
+    "agility": 11,
+    "intellect": 7
    },
    "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_bracer_17",
    "raceMask": -1,
    "sources": [
@@ -182803,15 +183135,14 @@
     "spirit": 5
    },
    "bonus": {
-    "fireDamage": 17
+    "fireDamage": 13,
+    "mp5": 3
    },
-   "equip": [
-    "Equip: Increases damage done by Fire spells and effects by up to 17."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_cape_08",
    "raceMask": -1,
    "sources": [
@@ -182885,15 +183216,16 @@
    "bind": "pickup",
    "armor": 91,
    "stats": {
-    "strength": 12,
-    "agility": 12
+    "strength": 9,
+    "agility": 9,
+    "intellect": 9
    },
    "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_gauntlets_17",
    "raceMask": -1,
    "sources": [
@@ -184193,13 +184525,11 @@
    "bonus": {
     "fireDamage": 14
    },
-   "equip": [
-    "Equip: Increases damage done by Fire spells and effects by up to 14."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_belt_11",
    "raceMask": -1,
    "sources": [
@@ -186959,12 +187289,14 @@
     "stamina": 24,
     "intellect": 7
    },
-   "bonus": {},
+   "bonus": {
+    "mp5": 6
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_helmet_28",
    "raceMask": -1,
    "sources": [
@@ -188684,17 +189016,16 @@
    "bind": "pickup",
    "stats": {},
    "bonus": {
-    "healing": 22
+    "healing": 15,
+    "spellDamage": 5
    },
-   "equip": [
-    "Equip: Increases healing done by spells and effects by up to 22."
-   ],
+   "equip": [],
    "use": [
-    "Use: Restores 30 mana every 1 sec for 10 sec. (15 Min Cooldown)"
+    "Use: Restores 63 Mana every 1 sec for 10 sec. This effect is doubled in Mountainous areas. (15 Min Cooldown)"
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_talisman_06",
    "raceMask": -1,
    "sources": [
@@ -190741,6 +191072,42 @@
    ]
   },
   {
+   "id": 276395,
+   "name": "Grimm's Packing Gloves",
+   "kind": "Cloth",
+   "slot": "Hands",
+   "quality": 3,
+   "req": 54,
+   "obtain": 54,
+   "ilvl": 59,
+   "bind": "pickup",
+   "armor": 52,
+   "stats": {
+    "stamina": 20
+   },
+   "bonus": {
+    "hitRating": 10
+   },
+   "equip": [
+    "Equip: Increased Herbalism +4."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_gauntlets_23",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 54,
+     "rec": 54
+    }
+   ]
+  },
+  {
    "id": 282048,
    "name": "Ragged Dark Iron Cuffs",
    "kind": "Leather",
@@ -191047,17 +191414,14 @@
     "stamina": 22
    },
    "bonus": {
-    "defense": 7,
-    "dodge": 1
+    "dodgeRating": 12,
+    "defense": 7
    },
-   "equip": [
-    "Equip: Increased Defense +7.",
-    "Equip: Increases your chance to Dodge an attack by 1.0%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_pants_09",
    "raceMask": -1,
    "sources": [
@@ -192408,15 +192772,16 @@
    "armor": 89,
    "stats": {
     "strength": 8,
-    "stamina": 14,
-    "spirit": 13
+    "stamina": 14
    },
-   "bonus": {},
+   "bonus": {
+    "defense": 9
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_belt_11",
    "raceMask": -1,
    "sources": [
@@ -192570,15 +192935,16 @@
    "bind": "pickup",
    "armor": 34,
    "stats": {
-    "stamina": 6,
     "intellect": 15
    },
-   "bonus": {},
+   "bonus": {
+    "spellPower": 7
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_bracer_13",
    "raceMask": -1,
    "sources": [
@@ -192933,13 +193299,11 @@
    "bonus": {
     "spellPower": 18
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_12",
    "raceMask": -1,
    "sources": [
@@ -193640,7 +194004,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_talisman_02",
    "raceMask": -1,
    "sources": [
@@ -193737,6 +194101,55 @@
      "confidence": "classic-assumed",
      "asap": 55,
      "rec": 55
+    }
+   ]
+  },
+  {
+   "id": 13395,
+   "name": "Skul's Fingerbone Claws",
+   "kind": "Leather",
+   "slot": "Hands",
+   "quality": 3,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "pickup",
+   "armor": 106,
+   "stats": {
+    "stamina": 10,
+    "intellect": 5
+   },
+   "bonus": {
+    "attackPower": 42
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_gauntlets_27",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Skul",
+     "npcId": 10393,
+     "level": 58,
+     "rank": "rare-elite",
+     "zone": "Stratholme",
+     "zoneId": 2017,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55,
+     "basis": {
+      "name": "Skul",
+      "level": 58,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -199470,56 +199883,6 @@
    ]
   },
   {
-   "id": 13395,
-   "name": "Skul's Fingerbone Claws",
-   "kind": "Leather",
-   "slot": "Hands",
-   "quality": 3,
-   "req": 54,
-   "obtain": 55,
-   "ilvl": 59,
-   "bind": "pickup",
-   "armor": 105,
-   "stats": {
-    "stamina": 10
-   },
-   "bonus": {
-    "attackPower": 40
-   },
-   "equip": [
-    "Equip: +40 Attack Power."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_gauntlets_27",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Skul",
-     "npcId": 10393,
-     "level": 58,
-     "rank": "rare-elite",
-     "zone": "Stratholme",
-     "zoneId": 2017,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 54,
-     "rec": 55,
-     "basis": {
-      "name": "Skul",
-      "level": 58,
-      "rank": "rare-elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
    "id": 13402,
    "name": "Timmy's Galoshes",
    "kind": "Mail",
@@ -200122,19 +200485,17 @@
    "armor": 68,
    "stats": {
     "stamina": 8,
-    "intellect": 8,
-    "spirit": 8
+    "intellect": 10,
+    "spirit": 10
    },
    "bonus": {
     "spellPower": 30
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 30."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_helmet_51",
    "raceMask": -1,
    "sources": [
@@ -201501,16 +201862,14 @@
    "ilvl": 61,
    "bind": "pickup",
    "stats": {},
-   "bonus": {
-    "attackPower": 81
-   },
+   "bonus": {},
    "equip": [
-    "Equip: +81 Attack Power when fighting Undead.  It also allows the acquisition of Scourgestones on behalf of the Argent Dawn."
+    "Equip: +78 Attack Power against Undead."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_armorkit_18",
    "raceMask": -1,
    "sources": [
@@ -202210,15 +202569,13 @@
     "spirit": 12
    },
    "bonus": {
-    "spellPower": 8
+    "spellPower": 15
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 8."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_chest_cloth_43",
    "raceMask": -1,
    "sources": [
@@ -202244,15 +202601,17 @@
    "armor": 38,
    "stats": {
     "stamina": 12,
-    "intellect": 11,
-    "spirit": 7
+    "spirit": 4,
+    "intellect": 11
    },
-   "bonus": {},
+   "bonus": {
+    "spellPower": 6
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_bracer_07",
    "raceMask": -1,
    "sources": [
@@ -202282,15 +202641,13 @@
     "spirit": 9
    },
    "bonus": {
-    "spellPower": 11
+    "spellPower": 13
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 11."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_boots_05",
    "raceMask": -1,
    "sources": [
@@ -202319,12 +202676,14 @@
     "intellect": 18,
     "spirit": 12
    },
-   "bonus": {},
+   "bonus": {
+    "spellPower": 8
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_pants_08",
    "raceMask": -1,
    "sources": [
@@ -202353,12 +202712,14 @@
     "intellect": 11,
     "spirit": 9
    },
-   "bonus": {},
+   "bonus": {
+    "spellPower": 9
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shoulder_02",
    "raceMask": -1,
    "sources": [
@@ -203677,12 +204038,12 @@
    "stats": {},
    "bonus": {},
    "equip": [
-    "Equip: Increases damage done to Undead by magical spells and effects by up to 48.  It also allows the acquisition of Scourgestones on behalf of the Argent Dawn."
+    "Equip: Increases damage done to Undead by magical spells and effects by up to 46."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_rune_06",
    "raceMask": -1,
    "sources": [
@@ -204540,13 +204901,11 @@
    "bonus": {
     "spellPower": 18
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_chest_cloth_16",
    "raceMask": -1,
    "sources": [
@@ -204731,19 +205090,16 @@
    "ilvl": 60,
    "bind": "pickup",
    "stats": {
-    "intellect": 7,
-    "spirit": 4
+    "intellect": 7
    },
    "bonus": {
     "spellPower": 18
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_05",
    "raceMask": -1,
    "sources": [
@@ -204899,19 +205255,17 @@
    "ilvl": 60,
    "bind": "pickup",
    "stats": {
-    "strength": 6,
-    "stamina": 7
+    "strength": 7,
+    "stamina": 8
    },
    "bonus": {
-    "crit": 1
+    "critRating": 14
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_05",
    "raceMask": -1,
    "sources": [
@@ -205010,13 +205364,11 @@
    "bonus": {
     "attackPower": 44
    },
-   "equip": [
-    "Equip: +44 Attack Power."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_belt_13",
    "raceMask": -1,
    "sources": [
@@ -205505,14 +205857,16 @@
    "ilvl": 60,
    "bind": "pickup",
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "hitRating": 10
+   },
    "equip": [],
    "use": [
-    "Use: Poisons target for 20 Nature damage every 2 sec for 20 sec. (2 Min Cooldown)"
+    "Use: Remove 1 Disarm effect from target ally. (8 Min Cooldown)"
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_gem_pearl_01",
    "raceMask": -1,
    "sources": [
@@ -205834,11 +206188,11 @@
    "bonus": {},
    "equip": [],
    "use": [
-    "Use: Increases Stamina by 10 and reduces physical damage taken by 5 for 10 min. However, lowers Strength and Agility by 5 and increases magical damage taken by up to 20. (30 Min Cooldown)"
+    "Use: Increases Stamina by 40 and reduces physical damage taken by 20 for 2.1 min. However, lowers Strength and Agility by 10 and increases magical damage taken by up to 80. (10 Min Cooldown)"
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_drink_03",
    "raceMask": -1,
    "sources": [
@@ -206813,16 +207167,17 @@
    "bind": "pickup",
    "armor": 76,
    "stats": {
-    "strength": 5,
     "intellect": 20,
     "spirit": 10
    },
-   "bonus": {},
+   "bonus": {
+    "spellPower": 10
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_chest_cloth_07",
    "raceMask": -1,
    "sources": [
@@ -206892,15 +207247,16 @@
    "bind": "pickup",
    "armor": 152,
    "stats": {
-    "strength": 5,
-    "agility": 24
+    "strength": 4,
+    "agility": 18,
+    "spirit": 15
    },
    "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_chest_plate06",
    "raceMask": -1,
    "sources": [
@@ -206970,15 +207326,17 @@
    "bind": "pickup",
    "armor": 317,
    "stats": {
-    "stamina": 23,
-    "spirit": 7
+    "stamina": 23
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 15,
+    "spellDamage": 5
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_chest_chain_04",
    "raceMask": -1,
    "sources": [
@@ -207584,16 +207942,15 @@
    "bind": "pickup",
    "stats": {},
    "bonus": {
-    "attackPower": 20
+    "attackPower": 12
    },
    "equip": [
-    "Equip: 2% chance on melee hit to gain 1 extra attack. (Proc chance: 2%, 2s cooldown)",
-    "Equip: +20 Attack Power."
+    "Equip: 1% chance on Melee hit to gain 1 extra attack. Attacks against Dwarves are 3 times as likely to activate this effect. (Proc chance: 3%, 2s cooldown)"
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_talisman_01",
    "raceMask": -1,
    "sources": [
@@ -209086,7 +209443,7 @@
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_bell_01",
    "raceMask": -1,
    "sources": [
@@ -212000,13 +212357,11 @@
    "bonus": {
     "attackPower": 27
    },
-   "equip": [
-    "Equip: +27 Attack Power."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_20",
    "raceMask": -1,
    "sources": [
@@ -212034,15 +212389,13 @@
     "spirit": 9
    },
    "bonus": {
-    "hit": 0.5
+    "hitRating": 5
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 0.5%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_17",
    "raceMask": -1,
    "sources": [
@@ -212539,15 +212892,14 @@
     "spirit": 11
    },
    "bonus": {
-    "healing": 20
+    "healing": 20,
+    "spellDamage": 7
    },
-   "equip": [
-    "Equip: Increases healing done by spells and effects by up to 20."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_gauntlets_13",
    "raceMask": -1,
    "sources": [
@@ -212686,19 +213038,18 @@
    "bind": "pickup",
    "armor": 76,
    "stats": {
-    "stamina": 5,
+    "stamina": 10,
     "spirit": 25
    },
    "bonus": {
-    "healing": 26
+    "healing": 26,
+    "spellDamage": 9
    },
-   "equip": [
-    "Equip: Increases healing done by spells and effects by up to 26."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_pants_06",
    "raceMask": -1,
    "sources": [
@@ -212831,16 +213182,19 @@
    "ilvl": 61,
    "bind": "pickup",
    "stats": {
-    "spirit": 10
+    "spirit": 5
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 16,
+    "spellDamage": 6
+   },
    "equip": [],
    "use": [
-    "Use: Restores 500 health. Can only be used at 10% health. (30 Min Cooldown)"
+    "Use: Restores 554 to 678 health. Can only be used at 15% health. (6 Min Cooldown)"
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_book_06",
    "raceMask": -1,
    "sources": [
@@ -212933,15 +213287,16 @@
     "strength": 8,
     "agility": 8,
     "stamina": 8,
-    "intellect": 8,
-    "spirit": 8
+    "intellect": 8
    },
    "bonus": {},
-   "equip": [],
+   "equip": [
+    "Equip: Increases your effective stealth level by 1."
+   ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_book_05",
    "raceMask": -1,
    "sources": [
@@ -213653,19 +214008,16 @@
    "armor": 107,
    "stats": {
     "strength": 10,
-    "agility": 5,
     "stamina": 12
    },
    "bonus": {
-    "crit": 1
+    "critRating": 14
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_gauntlets_09",
    "raceMask": -1,
    "sources": [
@@ -215352,15 +215704,17 @@
    "bind": "pickup",
    "armor": 37,
    "stats": {
-    "intellect": 9,
     "spirit": 15
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 20,
+    "spellDamage": 7
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_bracer_04",
    "raceMask": -1,
    "sources": [
@@ -215432,15 +215786,16 @@
    "bind": "pickup",
    "armor": 127,
    "stats": {
-    "intellect": 22,
-    "spirit": 5
+    "intellect": 19
    },
-   "bonus": {},
+   "bonus": {
+    "spellPower": 15
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shoulder_24",
    "raceMask": -1,
    "sources": [
@@ -215512,21 +215867,18 @@
    "bind": "pickup",
    "armor": 95,
    "stats": {
-    "strength": 9,
     "stamina": 6
    },
    "bonus": {
-    "crit": 1,
-    "dodge": 1
+    "defense": 6,
+    "critRating": 14,
+    "dodgeRating": 12
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1%.",
-    "Equip: Increases your chance to dodge an attack by 1%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_belt_15",
    "raceMask": -1,
    "sources": [
@@ -215599,18 +215951,16 @@
    "armor": 221,
    "stats": {
     "agility": 9,
-    "stamina": 6
+    "stamina": 15
    },
    "bonus": {
-    "hit": 2
+    "hitRating": 15
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 2%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_gauntlets_15",
    "raceMask": -1,
    "sources": [
@@ -222984,16 +223334,18 @@
    "armor": 2121,
    "block": 39,
    "stats": {
-    "stamina": 7,
     "intellect": 12,
-    "spirit": 7
+    "stamina": 7
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 15,
+    "spellDamage": 5
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shield_02",
    "raceMask": -1,
    "sources": [
@@ -224920,7 +225272,7 @@
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "spell_fire_searingtotem",
    "raceMask": -1,
    "sources": [
@@ -224964,16 +225316,18 @@
    "ilvl": 61,
    "bind": "pickup",
    "stats": {
-    "stamina": 10,
     "intellect": 11,
-    "spirit": 11
+    "spirit": 10
    },
-   "bonus": {},
+   "bonus": {
+    "healing": 22,
+    "spellDamage": 7
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_flower_04",
    "raceMask": -1,
    "sources": [
@@ -225209,7 +225563,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_orb_05",
    "raceMask": -1,
    "sources": [
@@ -228385,7 +228739,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shoulder_24",
    "raceMask": -1,
    "sources": [
@@ -228424,20 +228778,17 @@
    "bind": "pickup",
    "armor": 301,
    "stats": {
-    "stamina": 20
+    "stamina": 25
    },
    "bonus": {
     "attackPower": 40,
-    "crit": 1
+    "critRating": 14
    },
-   "equip": [
-    "Equip: +40 Attack Power.",
-    "Equip: Improves your chance to get a critical strike by 1%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_helmet_03",
    "raceMask": -1,
    "sources": [
@@ -228525,16 +228876,16 @@
    "ilvl": 63,
    "bind": "pickup",
    "stats": {},
-   "bonus": {
-    "crit": 2
-   },
+   "bonus": {},
    "equip": [
-    "Equip: Improves your chance to get a critical strike by 2%."
+    "Equip: Improves your chance to get a Critical Strike with Melee and Ranged attacks by 1.0%."
    ],
-   "use": [],
+   "use": [
+    "Use: Marks your target, increasing your Critical Strike chance against them by 5% for 20 sec. This effect is doubled against Orcs and Ogres. (5 Min Cooldown)"
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_armorkit_09",
    "raceMask": -1,
    "sources": [
@@ -228604,18 +228955,17 @@
    "obtain": 59,
    "ilvl": 63,
    "bind": "pickup",
-   "armor": 180,
    "stats": {},
    "bonus": {
-    "dodge": 1
+    "dodgeRating": 12
    },
-   "equip": [
-    "Equip: Increases your chance to dodge an attack by 1%."
+   "equip": [],
+   "use": [
+    "Use: Increases maximum health by 620 for 15 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown)"
    ],
-   "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_talisman_09",
    "raceMask": -1,
    "sources": [
@@ -228686,16 +229036,16 @@
    "ilvl": 63,
    "bind": "pickup",
    "stats": {},
-   "bonus": {
-    "spellCrit": 2
-   },
+   "bonus": {},
    "equip": [
-    "Equip: Improves your chance to get a critical strike with spells by 2%."
+    "Equip: Improves your chance to get a Critical Strike with Spells by 1.0%."
    ],
-   "use": [],
+   "use": [
+    "Use: Increases your Spell Hit chance by 7% for 20 sec. (5 Min Cooldown)"
+   ],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_talisman_08",
    "raceMask": -1,
    "sources": [
@@ -230931,19 +231281,18 @@
    "bind": "pickup",
    "armor": 70,
    "stats": {
-    "intellect": 26
+    "intellect": 20
    },
    "bonus": {
-    "healing": 13,
-    "spellDamage": 4
+    "healing": 10,
+    "spellDamage": 3,
+    "mp5": 6
    },
-   "equip": [
-    "Equip: Increases healing done by up to 13 and damage done by up to 4 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_helmet_06",
    "raceMask": -1,
    "sources": [
@@ -230982,19 +231331,15 @@
    "obtain": 59,
    "ilvl": 61,
    "bind": "pickup",
-   "stats": {
-    "stamina": 10
-   },
+   "stats": {},
    "bonus": {
-    "crit": 1
+    "critRating": 14
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1.0%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_30",
    "raceMask": -1,
    "sources": [
