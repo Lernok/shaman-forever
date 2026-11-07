@@ -1,0 +1,440 @@
+# Cambios: 1.60.1.70755 → 1.60.1.70840
+
+Sincronizado el 2026-11-07. Talentos de talentsforever.com (build 1.60.1.70755, export 2026-11-04); ítems del cliente 1.60.1.70840.
+
+## Talentos y hechizos (35)
+- **Elemental / Call of Thunder**: texto: "Increases critical strike chance of Lightning Bolt and Chain Lightning by 5%." → "Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by 5%."
+- **Elemental / Lightning Mastery**: texto: "Gain mastery over Fire and Lightning, reducing the cast time of Lightning Bolt by 0.5 sec, and removing the cooldown from Chain Lightning. Lasts 15 sec." → "Gain mastery over Lightning, reducing the cast time of your Lightning Bolt spell by 0.5 sec, and removing the cooldown from your Chain Lightning spell. Lasts 15 sec."
+- **Enhancement / Improved Lightning Shield**: posición 2.4 → 2.3
+- **Enhancement / Stormstrike**: texto: "Instantly strike for 150% normalized weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec." → "Instantly strike for 150% weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec."
+- **Chain Lightning Rank 1**: "Hurls a lightning bolt at the enemy, dealing 85 to 97 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets." → "Hurls a lightning bolt at the enemy, dealing 208 to 236 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets."
+- **Chain Lightning Rank 2**: "Hurls a lightning bolt at the enemy, dealing 97 to 109 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets." → "Hurls a lightning bolt at the enemy, dealing 339 to 379 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets."
+- **Chain Lightning Rank 3**: "Hurls a lightning bolt at the enemy, dealing 109 to 121 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets." → "Hurls a lightning bolt at the enemy, dealing 416 to 466 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets."
+- **Chain Lightning Rank 4**: "Hurls a lightning bolt at the enemy, dealing 119 to 133 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets." → "Hurls a lightning bolt at the enemy, dealing 495 to 551 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets."
+- **Earth Shock Rank 1**: "Instantly shocks the target with concussive force, causing 19 to 22 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat." → "Instantly shocks the target with concussive force, causing 21 to 23 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat."
+- **Earth Shock Rank 2**: "Instantly shocks the target with concussive force, causing 35 to 38 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat." → "Instantly shocks the target with concussive force, causing 38 to 40 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat."
+- **Earth Shock Rank 3**: "Instantly shocks the target with concussive force, causing 65 to 69 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat." → "Instantly shocks the target with concussive force, causing 69 to 73 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat."
+- **Earth Shock Rank 4**: "Instantly shocks the target with concussive force, causing 126 to 134 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat." → "Instantly shocks the target with concussive force, causing 131 to 139 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat."
+- **Earth Shock Rank 5**: "Instantly shocks the target with concussive force, causing 235 to 249 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat." → "Instantly shocks the target with concussive force, causing 241 to 255 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat."
+- **Earth Shock Rank 6**: "Instantly shocks the target with concussive force, causing 372 to 394 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat." → "Instantly shocks the target with concussive force, causing 380 to 402 Nature damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 2 sec. Causes a high amount of threat."
+- **Flame Shock Rank 1**: "Instantly sears the target with fire, causing 25 Fire damage immediately and 28 Fire damage over 12 sec." → "Instantly sears the target with fire, causing 29 Fire damage immediately and 28 Fire damage over 12 sec."
+- **Flame Shock Rank 2**: "Instantly sears the target with fire, causing 51 Fire damage immediately and 48 Fire damage over 12 sec." → "Instantly sears the target with fire, causing 56 Fire damage immediately and 48 Fire damage over 12 sec."
+- **Flame Shock Rank 3**: "Instantly sears the target with fire, causing 95 Fire damage immediately and 96 Fire damage over 12 sec." → "Instantly sears the target with fire, causing 101 Fire damage immediately and 96 Fire damage over 12 sec."
+- **Flame Shock Rank 4**: "Instantly sears the target with fire, causing 164 Fire damage immediately and 168 Fire damage over 12 sec." → "Instantly sears the target with fire, causing 171 Fire damage immediately and 168 Fire damage over 12 sec."
+- **Flame Shock Rank 5**: "Instantly sears the target with fire, causing 245 Fire damage immediately and 256 Fire damage over 12 sec." → "Instantly sears the target with fire, causing 253 Fire damage immediately and 256 Fire damage over 12 sec."
+- **Frost Shock Rank 1**: "Instantly shocks the target with frost, causing 95 to 101 Frost damage and slowing movement speed by 50%. Lasts 8 sec." → "Instantly shocks the target with frost, causing 99 to 105 Frost damage and slowing movement speed by 50%. Lasts 8 sec."
+- **Frost Shock Rank 2**: "Instantly shocks the target with frost, causing 215 to 230 Frost damage and slowing movement speed by 50%. Lasts 8 sec." → "Instantly shocks the target with frost, causing 221 to 235 Frost damage and slowing movement speed by 50%. Lasts 8 sec."
+- **Frost Shock Rank 3**: "Instantly shocks the target with frost, causing 345 to 366 Frost damage and slowing movement speed by 50%. Lasts 8 sec." → "Instantly shocks the target with frost, causing 352 to 372 Frost damage and slowing movement speed by 50%. Lasts 8 sec."
+- **Frost Shock Rank 4**: "Instantly shocks the target with frost, causing 492 to 520 Frost damage and slowing movement speed by 50%. Lasts 8 sec." → "Instantly shocks the target with frost, causing 495 to 523 Frost damage and slowing movement speed by 50%. Lasts 8 sec."
+- **Lightning Bolt Rank 1**: "Casts a bolt of lightning at the target for 14 to 16 Nature damage." → "Casts a bolt of lightning at the target for 15 to 17 Nature damage."
+- **Lightning Bolt Rank 2**: "Casts a bolt of lightning at the target for 25 to 29 Nature damage." → "Casts a bolt of lightning at the target for 28 to 32 Nature damage."
+- **Lightning Bolt Rank 3**: "Casts a bolt of lightning at the target for 42 to 50 Nature damage." → "Casts a bolt of lightning at the target for 49 to 57 Nature damage."
+- **Lightning Bolt Rank 4**: "Casts a bolt of lightning at the target for 59 to 67 Nature damage." → "Casts a bolt of lightning at the target for 70 to 80 Nature damage."
+- **Lightning Bolt Rank 5**: "Casts a bolt of lightning at the target for 78 to 90 Nature damage." → "Casts a bolt of lightning at the target for 105 to 119 Nature damage."
+- **Lightning Bolt Rank 6**: "Casts a bolt of lightning at the target for 108 to 122 Nature damage." → "Casts a bolt of lightning at the target for 144 to 162 Nature damage."
+- **Lightning Bolt Rank 7**: "Casts a bolt of lightning at the target for 142 to 160 Nature damage." → "Casts a bolt of lightning at the target for 188 to 210 Nature damage."
+- **Lightning Bolt Rank 8**: "Casts a bolt of lightning at the target for 158 to 176 Nature damage." → "Casts a bolt of lightning at the target for 233 to 261 Nature damage."
+- **Lightning Bolt Rank 9**: "Casts a bolt of lightning at the target for 173 to 193 Nature damage." → "Casts a bolt of lightning at the target for 286 to 320 Nature damage."
+- **Lightning Bolt Rank 10**: "Casts a bolt of lightning at the target for 189 to 211 Nature damage." → "Casts a bolt of lightning at the target for 342 to 380 Nature damage."
+- **Lightning Mastery **: "Gain mastery over Fire and Lightning, reducing the cast time of Lightning Bolt by 0.5 sec, and removing the cooldown from Chain Lightning. Lasts 15 sec." → "Gain mastery over Lightning, reducing the cast time of your Lightning Bolt spell by 0.5 sec, and removing the cooldown from your Chain Lightning spell. Lasts 15 sec."
+- **Stormstrike **: "Instantly strike for 150% normalized weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec." → "Instantly strike for 150% weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec."
+
+## Ítems (398)
+- 76 ítems nuevos en los datos (Neck, Leather, Mail, 1H Axe, Staff, Shield, Cloth, Ring, Trinket, Dagger, 2H Mace, 1H Mace, Off-hand)
+- **Staff of Jordan** #873: dmgMin 88 → 119; dmgMax 133 → 180; stats {"intellect":11,"spirit":11} → {"intellect":20,"spirit":10}; efectos cambiados
+- **Naga Battle Gloves** #888: efectos cambiados
+- **Gnoll Casting Gloves** #892: efectos cambiados
+- **Rod of the Sleepwalker** #1155: dmgMin 39 → 53; dmgMax 60 → 80; efectos cambiados
+- **Blackskull Shield** #1169: armor 1895 → 1795; stats {"stamina":5,"spirit":10} → {"stamina":5,"armor":100}; efectos cambiados
+- **The Green Tower** #1204: stats {"stamina":13,"spirit":7} → {"strength":7,"stamina":7}
+- **Hardened Root Staff** #1317: dmgMin 36 → 48; dmgMax 54 → 73; efectos cambiados
+- **Tigerbane** #1465: efectos cambiados
+- **Witching Stave** #1484: dmgMin 40 → 55; dmgMax 61 → 83; efectos cambiados
+- **Tree Bark Jacket** #1486: efectos cambiados
+- **Robe of the Magi** #1716: efectos cambiados
+- **Double Link Tunic** #1717: efectos cambiados
+- **Tanglewood Staff** #1720: efectos cambiados
+- **Defias Mage Staff** #1928: dmgMin 17 → 24; dmgMax 27 → 36; efectos cambiados
+- **Silk-threaded Trousers** #1929: efectos cambiados
+- **Staff of Conjuring** #1933: dmgMin 18 → 24; dmgMax 27 → 37; efectos cambiados
+- **Icemail Jerkin** #1981: stats {"agility":5,"stamina":15,"spirit":24} → {"agility":24,"stamina":15}
+- **Bloodscalp Channeling Staff** #1998: efectos cambiados
+- **Scholarly Robes** #2034: efectos cambiados
+- **Staff of Westfall** #2042: dmgMin 36 → 49; dmgMax 55 → 74; efectos cambiados
+- **Buzzer Blade** #2169: dmgMin 9 → 14; dmgMax 18 → 28; efectos cambiados
+- **Mark of Kern** #2262: efectos cambiados
+- **Staff of the Blessed Seer** #2271: dmgMin 37 → 50; dmgMax 57 → 76; efectos cambiados
+- **Necromancer Leggings** #2277: efectos cambiados
+- **Kam's Walking Stick** #2280: dmgMin 39 → 53; dmgMax 60 → 80; efectos cambiados
+- **Necrology Robes** #2292: efectos cambiados
+- **Staff of the Shade** #2549: dmgMin 34 → 46; dmgMax 52 → 70; efectos cambiados
+- **Elven Spirit Claws** #2564: efectos cambiados
+- **Rod of Molten Fire** #2565: efectos cambiados
+- **Evocator's Blade** #2567: dmgMin 12 → 18; dmgMax 23 → 34; efectos cambiados
+- **Augural Shroud** #2620: efectos cambiados
+- **Holy Shroud** #2721: efectos cambiados
+- **Death Speaker Scepter** #2816: dmgMin 28 → 42; dmgMax 52 → 78; efectos cambiados
+- **Taran Icebreaker** #2915: dmgMin 91 → 151; dmgMax 137 → 227; speed 2.3 → 3.8; stats {} → {"stamina":14}; efectos cambiados
+- **Hide of Lupos** #3018: stats {"agility":4,"stamina":3} → {"stamina":2,"agility":4}
+- **Smoldering Pants** #3073: efectos cambiados
+- **Nightbane Staff** #3227: dmgMin 27 → 36; dmgMax 41 → 54; efectos cambiados
+- **Black Wolf Bracers** #3230: efectos cambiados
+- **Ghostly Mantle** #3324: efectos cambiados
+- **Gauntlets of Ogre Strength** #3341: efectos cambiados
+- **Crested Scepter** #3414: dmgMin 22 → 33; dmgMax 41 → 62; efectos cambiados
+- **Staff of the Friar** #3415: dmgMin 33 → 45; dmgMax 50 → 68; efectos cambiados
+- **Vicar's Robe** #3569: efectos cambiados
+- **Feline Mantle** #3748: efectos cambiados
+- **Staff of Nobles** #3902: dmgMin 25 → 33; dmgMax 38 → 51; efectos cambiados
+- **Berylline Pads** #4197: efectos cambiados
+- **Walking Boots** #4660: stats {"agility":3,"intellect":4} → {"intellect":4,"agility":2}
+- **Doomsayer's Robe** #4746: efectos cambiados
+- **Prospector Gloves** #4980: efectos cambiados
+- **Pulsating Hydra Heart** #5183: efectos cambiados
+- **Rhahk'Zor's Hammer** #5187: efectos cambiados
+- **Taskmaster Axe** #5194: dmgMin 31 → 42; dmgMax 48 → 64; efectos cambiados
+- **Emberstone Staff** #5201: dmgMin 34 → 45; dmgMax 51 → 69; efectos cambiados
+- **Corsair's Overshirt** #5202: efectos cambiados
+- **Miner's Cape** #5444: efectos cambiados
+- **Living Cowl** #5608: efectos cambiados
+- **Rift Bracers** #5943: efectos cambiados
+- **Girdle of Nobility** #5967: stats {"stamina":3,"intellect":4} → {"intellect":4,"stamina":2}
+- **Serpent Gloves** #5970: efectos cambiados
+- **Wax-polished Armor** #6195: stats {"strength":3,"stamina":4} → {"strength":2,"stamina":4}
+- **Tribal Worg Helm** #6204: stats {"agility":8,"intellect":7,"spirit":7} → {"agility":8,"intellect":6,"spirit":6}
+- **Bloody Apron** #6226: efectos cambiados
+- **Wolfmaster Cape** #6314: efectos cambiados
+- **Odo's Ley Staff** #6318: dmgMin 37 → 50; dmgMax 56 → 76; efectos cambiados
+- **Girdle of the Blindwatcher** #6319: efectos cambiados
+- **Robes of Arugal** #6324: efectos cambiados
+- **Belt of Arugal** #6392: efectos cambiados
+- **Seal of Sylvanas** #6414: efectos cambiados
+- **Robe of the Moccasin** #6465: efectos cambiados
+- **Crescent Staff** #6505: dmgMin 35 → 47; dmgMax 53 → 71; efectos cambiados
+- **Seedcloud Buckler** #6630: efectos cambiados
+- **Living Root** #6631: dmgMin 34 → 45; dmgMax 51 → 69; efectos cambiados
+- **Feyscale Cloak** #6632: efectos cambiados
+- **Death Speaker Robes** #6682: efectos cambiados
+- **Death Speaker Mantle** #6685: efectos cambiados
+- **Whisperwind Headdress** #6688: efectos cambiados
+- **Wind Spirit Staff** #6689: dmgMin 56 → 76; dmgMax 85 → 115; efectos cambiados
+- **Ferine Leggings** #6690: efectos cambiados
+- **Swinetusk Shank** #6691: dmgMin 16 → 24; dmgMax 30 → 45; efectos cambiados
+- **Heart of Agamaggan** #6694: efectos cambiados
+- **Stygian Bone Amulet** #6695: efectos cambiados
+- **Batwing Mantle** #6697: efectos cambiados
+- **Snake Hoop** #6750: efectos cambiados
+- **Prophetic Cane** #6803: stats {"stamina":5,"intellect":12} → {"stamina":5,"intellect":8}
+- **Glowing Thresher Cape** #6901: efectos cambiados
+- **Gaze Dreamer Pants** #6903: efectos cambiados
+- **Reef Axe** #6905: efectos cambiados
+- **Ghamoo-ra's Bind** #6908: efectos cambiados
+- **Leech Pants** #6910: efectos cambiados
+- **Moss Cinch** #6911: efectos cambiados
+- **Nimbus Boots** #6998: efectos cambiados
+- **Heartwood Girdle** #7000: efectos cambiados
+- **Beetle Clasps** #7003: efectos cambiados
+- **Prelacy Cape** #7004: efectos cambiados
+- **Talvash's Enhancing Necklace** #7673: ilvl 47 → 46; stats {"stamina":10,"intellect":1,"spirit":10} → {"stamina":10,"intellect":1}
+- **Bloody Brass Knuckles** #7683: efectos cambiados
+- **Bloodmage Mantle** #7684: efectos cambiados
+- **Orb of the Forgotten Seer** #7685: efectos cambiados
+- **Embalmed Shroud** #7691: efectos cambiados
+- **Blighted Leggings** #7709: efectos cambiados
+- **Loksey's Training Stick** #7710: efectos cambiados
+- **Robe of Doan** #7711: efectos cambiados
+- **Mantle of Doan** #7712: efectos cambiados
+- **Illusionary Rod** #7713: dmgMin 70 → 94; dmgMax 105 → 142; efectos cambiados
+- **Hypnotic Blade** #7714: dmgMin 17 → 26; dmgMax 32 → 49; efectos cambiados
+- **Herod's Shoulder** #7718: efectos cambiados
+- **Raging Berserker's Helm** #7719: efectos cambiados
+- **Whitemane's Chapeau** #7720: efectos cambiados
+- **Hand of Righteousness** #7721: dmgMin 37 → 56; dmgMax 70 → 105; efectos cambiados
+- **Triune Amulet** #7722: efectos cambiados
+- **Gauntlets of Divinity** #7724: efectos cambiados
+- **Beguiler Robes** #7728: efectos cambiados
+- **Ghostshard Talisman** #7731: efectos cambiados
+- **Omega Orb** #7749: efectos cambiados
+- **Mantle of Woe** #7750: efectos cambiados
+- **Vorrel's Boots** #7751: stats {"agility":7,"stamina":3,"spirit":7} → {"stamina":2,"agility":7,"spirit":7}
+- **Dog Training Gloves** #7756: efectos cambiados
+- **Windweaver Staff** #7757: dmgMin 60 → 80; dmgMax 90 → 121; efectos cambiados
+- **Girdle of Golem Strength** #9405: efectos cambiados
+- **Rockshard Pauldrons** #9411: efectos cambiados
+- **The Rockpounder** #9413: efectos cambiados
+- **Galgann's Firehammer** #9419: dmgMin 32 → 48; dmgMax 60 → 91; efectos cambiados
+- **Unearthed Bands** #9428: efectos cambiados
+- **Elemental Raiment** #9434: efectos cambiados
+- **Electrocutioner Lagnut** #9447: efectos cambiados
+- **Spidertank Oilrag** #9448: efectos cambiados
+- **Gnomebot Operating Boots** #9450: efectos cambiados
+- **Hydrocane** #9452: dmgMin 44 → 59; dmgMax 67 → 90; efectos cambiados
+- **Acidic Walkers** #9454: efectos cambiados
+- **Royal Diplomatic Scepter** #9457: dmgMin 24 → 37; dmgMax 46 → 69; efectos cambiados
+- **Bad Mojo Mask** #9470: efectos cambiados
+- **Electromagnetic Gigaflux Reactivator** #9492: efectos cambiados
+- **Mechbuilder's Overalls** #9508: efectos cambiados
+- **Energized Stone Circle** #9522: efectos cambiados
+- **Spellshifter Rod** #9527: dmgMin 67 → 80; dmgMax 101 → 121; stats {"stamina":9,"intellect":23} → {"stamina":6,"intellect":17}; efectos cambiados
+- **Engineer's Guild Headpiece** #9534: efectos cambiados
+- **Fairywing Mantle** #9536: efectos cambiados
+- **Talvash's Gold Ring** #9538: efectos cambiados
+- **Nogg's Gold Ring** #9588: efectos cambiados
+- **Repairman's Cape** #9605: efectos cambiados
+- **Shilly Mitts** #9609: efectos cambiados
+- **Civinad Robes** #9623: efectos cambiados
+- **Dual Reinforced Leggings** #9625: efectos cambiados
+- **Explorer's League Lodestar** #9627: stats {"stamina":7,"spirit":6} → {"stamina":7}
+- **Everlast Boots** #10359: efectos cambiados
+- **Blackened Defias Belt** #10403: efectos cambiados
+- **Death's Head Vestment** #10581: stats {"stamina":12,"intellect":8,"spirit":13} → {"stamina":8,"intellect":8,"spirit":13}; efectos cambiados
+- **Dragonclaw Ring** #10710: ilvl 38 → 39; quality 3 → 2; stats {"stamina":10,"spirit":4} → {"stamina":7}
+- **Dragon's Blood Necklace** #10711: stats {"stamina":12,"spirit":5} → {"stamina":12}
+- **Gemburst Circlet** #10751: efectos cambiados
+- **Swine Fists** #10760: req 34 → 37; ilvl 39 → 42; quality 2 → 3; armor 68 → 79; efectos cambiados
+- **Robes of the Lich** #10762: efectos cambiados
+- **Deathchill Armor** #10764: efectos cambiados
+- **Glowing Eye of Mordresh** #10769: efectos cambiados
+- **Mordresh's Lifeless Skull** #10770: efectos cambiados
+- **Deathmage Sash** #10771: efectos cambiados
+- **Apothecary Gloves** #10919: efectos cambiados
+- **Rainstrider Leggings** #11123: stats {"agility":8,"stamina":7,"spirit":27} → {"stamina":7,"spirit":26}
+- **Helm of Exile** #11124: stats {"agility":11,"intellect":18,"spirit":18} → {"agility":11,"intellect":18,"spirit":17}
+- **Orb of Lorica** #11262: efectos cambiados
+- **Uther's Strength** #11302: efectos cambiados
+- **Magician's Mantle** #12998: efectos cambiados
+- **Elder Wizard's Mantle** #13013: efectos cambiados
+- **Hellslayer Battle Axe** #13017: efectos cambiados
+- **Executioner's Cleaver** #13018: efectos cambiados
+- **Umbral Crystal** #13029: efectos cambiados
+- **Orb of Mistmantle** #13031: efectos cambiados
+- **Viscous Hammer** #13045: efectos cambiados
+- **Assault Band** #13095: efectos cambiados
+- **Cassandra's Grace** #13102: efectos cambiados
+- **Kresh's Back** #13245: efectos cambiados
+- **Kris of Orgrimmar** #15443: dmgMin 8 → 12; dmgMax 16 → 24; efectos cambiados
+- **Staff of Orgrimmar** #15444: dmgMin 31 → 42; dmgMax 47 → 64; efectos cambiados
+- **Skullbreaker** #17039: dmgMin 23 → 34; dmgMax 43 → 64; efectos cambiados
+- **Zealot's Robe** #17043: efectos cambiados
+- **Forcestone Buckler** #17508: efectos cambiados
+- **Chestnut Mantle** #17695: efectos cambiados
+- **Blackstone Ring** #17713: efectos cambiados
+- **Resurgence Rod** #17743: dmgMin 103 → 139; dmgMax 156 → 209; efectos cambiados
+- **Heart of Noxxion** #17744: efectos cambiados
+- **Chloromesh Girdle** #17750: quality 2 → 3; armor 37 → 41; stats {} → {"stamina":6}
+- **Satyrmane Sash** #17755: efectos cambiados
+- **Woodseed Hoop** #17768: ilvl 47 → 49; stats {"stamina":5,"intellect":9} → {"intellect":10}
+- **Zealous Shadowshard Pendant** #17772: ilvl 42 → 44; efectos cambiados
+- **Prodigious Shadowshard Pendant** #17773: ilvl 42 → 44; stats {"intellect":10} → {}
+- **Acumen Robes** #17775: stats {"intellect":20} → {"intellect":15}; efectos cambiados
+- **Sprightring Helm** #17776: stats {"agility":15,"stamina":21} → {"agility":11,"stamina":16}
+- **Relentless Chain** #17777: stats {"stamina":14,"intellect":14} → {"intellect":10,"stamina":10}; efectos cambiados
+- **Sagebrush Girdle** #17778: stats {"agility":15,"intellect":12} → {"agility":11,"intellect":9}
+- **Zum'rah's Vexing Cane** #18082: dmgMin 67 → 90; dmgMax 101 → 136; efectos cambiados
+- **Arena Wristguards** #18709: efectos cambiados
+- **Arena Bands** #18711: efectos cambiados
+- **Inquisitor's Shawl** #19507: efectos cambiados
+- **Branded Leather Bracers** #19508: efectos cambiados
+- **Gnarled Necromancer's Staff** #251534: dmgMin 34 → 45; dmgMax 51 → 69; efectos cambiados
+- **Violet Sash** #251962: efectos cambiados
+- **Windforged Shortblade** #263936: efectos cambiados
+- **Skyseeker's Greatstaff** #263937: dmgMin 12 → 16; dmgMax 18 → 24; efectos cambiados
+- **Garrison Cuffs** #270003: efectos cambiados
+- **Monastic Hammer** #270005: dmgMin 9 → 14; dmgMax 18 → 26; efectos cambiados
+- **Dreamer's Leggings** #270016: efectos cambiados
+- **Silvered Gauntlets** #270025: efectos cambiados
+- **Town Clerk's Mittens** #270029: efectos cambiados
+- **Tattered Mittens** #270030: efectos cambiados
+- **Dark Ritual Leggings** #270031: efectos cambiados
+- **Cultist's Armguards** #270032: efectos cambiados
+- **Magistrate's Pantaloons** #270036: efectos cambiados
+- **Restorer's Fine Gloves** #270059: efectos cambiados
+- **Fists of Impending Doom** #270075: efectos cambiados
+- **Guardian Staff** #270078: dmgMin 71 → 60; dmgMax 108 → 90; stats {"agility":16,"stamina":16} → {"agility":11,"stamina":11}
+- **Purified Ring** #270081: efectos cambiados
+- **Dank Shoulderpads** #270098: stats {"agility":6,"stamina":18} → {"agility":4,"stamina":13}
+- **Magister Cowl** #270099: efectos cambiados
+- **Shapeshifter's Helm** #270117: efectos cambiados
+- **Golemheart Stave** #270228: dmgMin 30 → 41; dmgMax 46 → 62; efectos cambiados
+- **Robes of the Disgraced Thane** #270261: efectos cambiados
+- **Fang of Magmatus** #271095: dmgMin 9 → 14; dmgMax 18 → 27; efectos cambiados
+- **Aetherwisp Bracers** #271096: efectos cambiados
+- **Witherbite Bracers** #271202: efectos cambiados
+- **Leftover Abomination Skin** #271206: efectos cambiados
+- **Tuskwrap Belt** #271210: efectos cambiados
+- **Rotmender's Treads** #271214: efectos cambiados
+- **Coldspire Staff** #271215: dmgMin 43 → 58; dmgMax 66 → 88; efectos cambiados
+- **Scepter of the Abandoned** #271216: dmgMin 17 → 26; dmgMax 33 → 50; efectos cambiados
+- **Songblade Stabilizer** #271768: efectos cambiados
+- **Clever Expeditionary's Spellblade** #271928: dmgMin 27 → 40; dmgMax 50 → 76; efectos cambiados
+- **Clever Expeditionary's Spellblade** #271929: dmgMin 23 → 34; dmgMax 43 → 64; efectos cambiados
+- **Clever Expeditionary's Spellblade** #271930: dmgMin 19 → 28; dmgMax 36 → 53; efectos cambiados
+- **Insurgent's Manifesto** #271932: efectos cambiados
+- **Insurgent's Manifesto** #271933: efectos cambiados
+- **Insurgent's Manifesto** #271934: efectos cambiados
+- **Guerrilla's Jagged Mace** #271936: efectos cambiados
+- **Guerrilla's Jagged Mace** #271937: efectos cambiados
+- **Guerrilla's Jagged Mace** #271938: efectos cambiados
+- **Theramore Gloves** #271949: stats {"strength":10,"agility":23,"stamina":12} → {"agility":22,"strength":10,"stamina":12}
+- **Theramore Handguards** #271950: efectos cambiados
+- **Theramore Handguards** #271951: efectos cambiados
+- **Theramore Shoulderpads** #271953: efectos cambiados
+- **Theramore Shoulders** #271954: efectos cambiados
+- **Theramore Epaulets** #271956: efectos cambiados
+- **Darkspear Insurgent's Spellblade** #272083: dmgMin 27 → 40; dmgMax 50 → 76; efectos cambiados
+- **Darkspear Insurgent's Spellblade** #272084: dmgMin 23 → 34; dmgMax 43 → 64; efectos cambiados
+- **Darkspear Insurgent's Spellblade** #272085: dmgMin 19 → 28; dmgMax 36 → 53; efectos cambiados
+- **Tome of the Darkspear Prophecy** #272087: efectos cambiados
+- **Tome of the Darkspear Prophecy** #272088: efectos cambiados
+- **Tome of the Darkspear Prophecy** #272089: efectos cambiados
+- **Darkspear Skirmisher's Bludgeon** #272091: efectos cambiados
+- **Darkspear Skirmisher's Bludgeon** #272092: efectos cambiados
+- **Darkspear Skirmisher's Bludgeon** #272093: efectos cambiados
+- **Raider Gloves** #272100: stats {"strength":10,"agility":23,"stamina":12} → {"agility":22,"strength":10,"stamina":12}
+- **Raider Handguards** #272101: efectos cambiados
+- **Raider Handguards** #272102: efectos cambiados
+- **Darkspear Shoulderpads** #272103: efectos cambiados
+- **Darkspear Shoulders** #272104: efectos cambiados
+- **Darkspear Epaulets** #272106: efectos cambiados
+- **Arcanoweave Cloak** #272411: efectos cambiados
+- **Howler's Furs** #272414: efectos cambiados
+- **Stalwart Cloak** #272415: efectos cambiados
+- **Theramore Shoulderguards** #272957: efectos cambiados
+- **Darkspear Shoulderguards** #272958: efectos cambiados
+- **Trogg Scepter** #272996: dmgMin 13 → 20; dmgMax 26 → 39; efectos cambiados
+- **Bone Knuckles** #272998: efectos cambiados
+- **Searing Dagger** #273003: dmgMin 9 → 13; dmgMax 17 → 26
+- **Chasm Walkers** #273007: efectos cambiados
+- **Glinteye Slippers** #273024: efectos cambiados
+- **Raptor's Gaze** #273027: efectos cambiados
+- **Reliquary Mantle** #273028: efectos cambiados
+- **Ring of Power Regulation** #273030: efectos cambiados
+- **Runemender's Seal** #273031: stats {"stamina":4,"spirit":7} → {"intellect":6,"spirit":6}; efectos cambiados
+- **Ephemeral Grips** #273034: efectos cambiados
+- **Graveweave Bindings** #273036: efectos cambiados
+- **Blightleaf Rope** #273039: efectos cambiados
+- **Spine of the Devourer** #273040: dmgMin 59 → 80; dmgMax 90 → 120; efectos cambiados
+- **Manascale Treads** #273042: efectos cambiados
+- **Violet Sorcerer's Robes** #273044: efectos cambiados
+- **Drape of Shifting Energy** #273045: efectos cambiados
+- **Archmagister's Faceted Pendant** #273049: efectos cambiados
+- **Ponderous Orb** #273052: efectos cambiados
+- **Tendonscraper Dagger** #273053: dmgMin 16 → 24; dmgMax 30 → 45; efectos cambiados
+- **Skum's Bucket** #273137: efectos cambiados
+- **Ogre Loincloth** #273289: efectos cambiados
+- **Cell Keeper's Claws** #273456: efectos cambiados
+- **Executioner Mantle** #273804: efectos cambiados
+- **Blackrock Harness** #273805: efectos cambiados
+- **Dark Horde Band** #273806: efectos cambiados
+- **Demolition Girdle** #273807: efectos cambiados
+- **Bridgebreaker Bindings** #273808: efectos cambiados
+- **Hamhock's Cleaver** #273809: efectos cambiados
+- **Repurposed Rack** #273811: efectos cambiados
+- **Red Wool Cloak** #273825: efectos cambiados
+- **Twilight Maul** #273841: efectos cambiados
+- **Skullduggery Belt** #274042: efectos cambiados
+- **Irradiated Shield** #274043: efectos cambiados
+- **Thermaplugg Medal of Honor** #274068: efectos cambiados
+- **Thornweaver Drape** #274149: efectos cambiados
+- **Geomancer Headdress** #274155: efectos cambiados
+- **Death Prophet Spine** #274158: dmgMin 42 → 57; dmgMax 64 → 86; efectos cambiados
+- **Thorncursed Grips** #274159: efectos cambiados
+- **Painwalker Buckler** #274290: efectos cambiados
+- **Library Walkers** #274294: efectos cambiados
+- **Band of Crimson Light** #274295: efectos cambiados
+- **Coldbringer Spine** #274381: dmgMin 63 → 85; dmgMax 95 → 128; efectos cambiados
+- **Abomination Chain** #274385: efectos cambiados
+- **Stone Keeper Spire** #274432: dmgMin 81 → 109; dmgMax 122 → 164; efectos cambiados
+- **Briny Sash** #274605: efectos cambiados
+- **Sandfury Pauldrons** #274638: efectos cambiados
+- **Undying Headdress** #274644: efectos cambiados
+- **Hydra Leather Legs** #274657: efectos cambiados
+- **Fur-Lined Bracers** #274931: ilvl 41 → 38; stats {"agility":6,"spirit":6} → {"agility":5,"spirit":5}
+- **Coyote Hide Wraps** #274932: ilvl 41 → 38; stats {"stamina":6} → {"stamina":5}; efectos cambiados
+- **Jom-jom's Gabbar** #274952: ilvl 43 → 42; dmgMin 33 → 32; dmgMax 62 → 60
+- **Farholde Horns** #274959: ilvl 40 → 39; efectos cambiados
+- **Prisoner Handwraps** #275021: efectos cambiados
+- **Bolder'ok Loincloth** #275023: efectos cambiados
+- **Dro'zem's Tunic** #277213: efectos cambiados
+- **Stromgarde Hood** #278567: efectos cambiados
+- **Vine Pruner's Cloak** #279835: req 0 → 1; efectos cambiados
+- **Thorn Protecting Girdle** #279836: req 0 → 1; efectos cambiados
+- **Fallen Guard's Pendant** #279837: req 0 → 1
+- **Arcane Infused Rod** #279838: req 0 → 1; efectos cambiados
+- **Spellguard Pauldrons** #279839: req 0 → 1
+- **Renewing Footpads** #279840: req 0 → 1; efectos cambiados
+- **Defender of Dalaran** #279841: req 0 → 1
+- **Battle Spaulders** #279842: req 0 → 1
+- **Enchanted Sandals** #279843: req 0 → 1; efectos cambiados
+- **Striking Staff** #279844: req 0 → 1
+- **Solid Gold Band** #279845: req 0 → 1; efectos cambiados
+- **Larcenist's Belt** #279846: req 0 → 1
+- **Construct Cloak** #279848: req 0 → 1
+- **Runebound Gloves** #279849: req 0 → 1; efectos cambiados
+- **Twilight Initiate's Belt** #279854: req 0 → 1; stats {"agility":15,"stamina":6,"spirit":7} → {"agility":11,"spirit":7}
+- **Torn Cultist Cloak** #279855: req 0 → 1; stats {"stamina":6,"intellect":9} → {"intellect":7}
+- **Grave Shroud** #279865: req 0 → 1
+- **Slain Baron's Signet** #279867: req 0 → 1; efectos cambiados
+- **Duty Bound Leggings** #279868: req 0 → 1
+- **Remembrance Armor** #279869: req 0 → 1
+- **Tarnished Locket** #279870: req 0 → 1
+- **The Stitcher** #279874: req 0 → 1; dmgMin 13 → 20; dmgMax 26 → 39; efectos cambiados
+- **Spare Part Bindings** #279875: req 0 → 1
+- **Blight Gloves** #279877: req 0 → 1; efectos cambiados
+- **Rusted Troll War Belt** #279882: req 0 → 1; stats {"stamina":6,"intellect":12} → {"stamina":4,"intellect":9}; efectos cambiados
+- **Mutinous Cuffs** #279883: req 0 → 1; stats {"stamina":9,"intellect":8} → {"stamina":7}
+- **South Seas Shroud** #279884: req 0 → 1; stats {"stamina":9,"spirit":3} → {"stamina":7,"spirit":3}; efectos cambiados
+- **Tidesoaked Leggings** #279888: req 0 → 1
+- **Naga Priestess's Mantle** #279889: req 0 → 1; efectos cambiados
+- **Ironforge Greathammer** #279895: req 0 → 1
+- **Dusty Belt** #279897: req 0 → 1
+- **Dwarven Tome** #279898: req 0 → 1; efectos cambiados
+- **Catacomb Cloak** #279899: req 0 → 1; efectos cambiados
+- **Deepgrave Trousers** #279900: req 0 → 1
+- **Saltseer's Helm** #279930: req 0 → 1; stats {"intellect":18,"spirit":7} → {"spirit":5,"intellect":12}; efectos cambiados
+- **Serrated Raptor Claw** #280805: req 0 → 1; efectos cambiados
+- **Surveyor's Gloves** #281896: efectos cambiados
+- **Bound Bracers** #281926: efectos cambiados
+- **Earth-Infused Rockguards** #282560: efectos cambiados
+- **Silkspun Gloves** #282636: efectos cambiados
+- **Feather-Stitched Moccasins** #282642: efectos cambiados
+- **Imbued Scaled Cuffs** #282716: efectos cambiados
+- **Impcaster's Staff** #284173: dmgMin 16 → 21; dmgMax 24 → 32; efectos cambiados
+- **Crazed Firecaller's Cloak** #284187: efectos cambiados
+- **Felweaver's Staff** #284287: dmgMin 13 → 18; dmgMax 21 → 28; efectos cambiados
+- **Budding Leaf Belt** #284382: efectos cambiados
+- **Faerie Dragon's Skin** #284383: efectos cambiados
+- **Seared Grove Shoulderpads** #284399: efectos cambiados
+- **Sorrow's Shroud** #284401: efectos cambiados
+- **Arcane Charged Robes** #284697: efectos cambiados
+- **Den Guardian's Crusher** #284700: efectos cambiados
+- **Frostbitten Staff** #284704: efectos cambiados
+- **Royal Satyr Slicer** #284717: efectos cambiados
+- **Darkmist Dirk** #285102: efectos cambiados
+- **Nature's Sting Legguards** #285177: efectos cambiados
+- **Wyvern Heart Band** #285190: efectos cambiados
+- **Kobold Firestarter** #285192: efectos cambiados
+- **Foulmountain Family Hammer** #285212: efectos cambiados
+- **Chipped Spellstaff** #285238: dmgMin 9 → 12; dmgMax 14 → 19; efectos cambiados
+- **Kodohide Legguards** #285338: efectos cambiados
+- **Guard Captain's Barrier** #285344: efectos cambiados
+- **Feather Padded Treads** #285345: efectos cambiados
+- **Alliance Outrunner Healing Rod** #285348: efectos cambiados
+- **Alliance Outrunner Staff** #285350: dmgMin 32 → 43; dmgMax 49 → 65; efectos cambiados
+- **Foreman's Enforcers** #285351: efectos cambiados
+- **Sludge-Stained Band** #286535: efectos cambiados
+- **Firebird Leggings** #286569: efectos cambiados
+- **Furlfeather Ring** #286745: req 7 → 9; ilvl 12 → 14; efectos cambiados
+- **Ghostfang's Steps** #286751: req 5 → 7; ilvl 10 → 12; stats {"spirit":1} → {"spirit":2}
+- **Igleggings** #286752: req 7 → 9; ilvl 12 → 14; stats {"intellect":2} → {"intellect":3}
+- **Ukta's Conduit** #286754: req 7 → 9; ilvl 12 → 14; dmgMin 19 → 22; dmgMax 36 → 41; stats {"stamina":2} → {"stamina":3}
+- **Rotmender's Garb** #286978: efectos cambiados
+- **Ancient Cleaver** #286983: efectos cambiados
+- **Thicket Bindings** #286985: efectos cambiados
+- **Violet Sorcerer's Leggings** #286988: efectos cambiados
+- **Violet Sorcerer's Wraps** #286989: efectos cambiados
+- **Arcane Remnant Leggings** #286990: efectos cambiados
+- **Roused Nature Footwraps** #286991: efectos cambiados
+- **Suffused Bindings** #286993: efectos cambiados
+- **Tattered Kirin Tor Cloak** #286994: efectos cambiados
+- **Guardian's Emblem** #286995: efectos cambiados

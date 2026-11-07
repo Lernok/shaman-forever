@@ -2835,7 +2835,7 @@
    ]
   },
   "Zephras Isle": {
-   "share": 0.52,
+   "share": 0.58,
    "beasts": [
     {
      "id": 250926,
@@ -3095,6 +3095,26 @@
       10
      ],
      "spawns": 0
+    },
+    {
+     "id": 255887,
+     "name": "Slydris",
+     "level": [
+      6,
+      6
+     ],
+     "spawns": 0,
+     "rare": true
+    },
+    {
+     "id": 259394,
+     "name": "Snapbeak the Quick",
+     "level": [
+      9,
+      9
+     ],
+     "spawns": 0,
+     "rare": true
     }
    ],
    "from": "wowhead-forever"

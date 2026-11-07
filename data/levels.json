@@ -8274,8 +8274,15 @@
    "minLevel": 15,
    "faction": "horde",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 276020,
+    "name": "Riptear",
+    "level": 13,
+    "rank": "elite",
+    "from": "wowhead",
+    "step": 99156
+   },
+   "steps": 3
   },
   "92456": {
    "classes": null,
@@ -8433,12 +8440,11 @@
    "faction": "conflict",
    "instance": null,
    "hardest": {
-    "id": 11559,
-    "name": "Outcast Necromancer",
-    "level": 40,
+    "id": 253360,
+    "name": "Nascent Undead Ravager",
+    "level": 41,
     "rank": "normal",
-    "from": "wowhead",
-    "step": 92846
+    "from": "wowhead"
    },
    "steps": 9
   },
@@ -8478,11 +8484,12 @@
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": 5601,
-    "name": "Khan Jehn",
-    "level": 37,
+    "id": 253446,
+    "name": "Haggard Bones",
+    "level": 41,
     "rank": "normal",
-    "from": "wowhead"
+    "from": "wowhead",
+    "step": 93062
    },
    "steps": 4
   },
@@ -8646,8 +8653,15 @@
    "minLevel": 16,
    "faction": "horde",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 1908,
+    "name": "Vile Fin Oracle",
+    "level": 20,
+    "rank": "normal",
+    "from": "wowhead",
+    "step": 451
+   },
+   "steps": 4
   },
   "95250": {
    "classes": null,
@@ -9202,12 +9216,11 @@
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": 1893,
-    "name": "Moonrage Sentry",
-    "level": 15,
-    "rank": "elite",
-    "from": "wowhead",
-    "step": 99
+    "id": 1924,
+    "name": "Moonrage Bloodhowler",
+    "level": 16,
+    "rank": "normal",
+    "from": "wowhead"
    },
    "steps": 6
   },
@@ -9504,7 +9517,7 @@
    "name": "Felhunter",
    "level": 60,
    "rank": "normal",
-   "from": "questie"
+   "from": "wowhead"
   },
   "426": {
    "name": "Redridge Brute",
@@ -11081,6 +11094,12 @@
   "1915": {
    "name": "Dalaran Conjuror",
    "level": 18,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "1924": {
+   "name": "Moonrage Bloodhowler",
+   "level": 16,
    "rank": "normal",
    "from": "wowhead"
   },
@@ -19198,21 +19217,21 @@
   },
   "253360": {
    "name": "Nascent Undead Ravager",
-   "level": null,
+   "level": 41,
    "rank": "normal",
-   "from": null
+   "from": "wowhead"
   },
   "253431": {
    "name": "Gelkis Captive",
-   "level": null,
+   "level": 42,
    "rank": "normal",
-   "from": null
+   "from": "wowhead"
   },
   "253446": {
    "name": "Haggard Bones",
-   "level": null,
+   "level": 41,
    "rank": "normal",
-   "from": null
+   "from": "wowhead"
   },
   "253511": {
    "name": "Al'Aketh Pillager",
@@ -19228,9 +19247,9 @@
   },
   "253525": {
    "name": "Bristleback Thornweaver",
-   "level": null,
+   "level": 43,
    "rank": "normal",
-   "from": null
+   "from": "wowhead"
   },
   "253526": {
    "name": "Bristleback Skullcrusher",
@@ -19299,9 +19318,9 @@
    "from": "wowhead"
   },
   "258924": {
-   "name": null,
+   "name": "Var'Taka",
    "level": null,
-   "rank": "normal",
+   "rank": "elite",
    "from": null
   },
   "259385": {
