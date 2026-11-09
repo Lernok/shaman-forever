@@ -139,11 +139,11 @@
    "id": 17,
    "continent": "Kalimdor",
    "horde": [
-    10,
-    22
+    14,
+    25
    ],
    "alliance": null,
-   "quests": 115,
+   "quests": 116,
    "from": "questie"
   },
   "Western Plaguelands": {
@@ -235,14 +235,14 @@
    "id": 45,
    "continent": "Eastern Kingdoms",
    "horde": [
-    34,
+    33,
     40
    ],
    "alliance": [
-    36,
+    35,
     40
    ],
-   "quests": 42,
+   "quests": 43,
    "from": "questie"
   },
   "Burning Steppes": {
@@ -531,14 +531,15 @@
    "id": 16591,
    "continent": "Eastern Kingdoms",
    "alliance": [
-    36,
-    44
+    38,
+    38
    ],
    "horde": [
-    36,
-    44
+    38,
+    38
    ],
-   "from": "area-table"
+   "quests": 174,
+   "from": "att"
   },
   "Zephras Isle": {
    "id": 16593,

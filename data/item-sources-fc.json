@@ -1,7 +1,7 @@
 {
  "_readme": "Fuentes de misión del equipo nuevo de Forever (items) y datos de Forever de las misiones de Classic que dan equipo (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json.",
  "source": "https://foreverchanges.pro",
- "fetched": "2026-11-04",
+ "fetched": "2026-11-09",
  "items": {
   "246164": {
    "name": "Skullthumper",
@@ -5626,7 +5626,7 @@
    "sources": [
     {
      "type": "quest",
-     "quest": "A Friend of the Family (part 2)",
+     "quest": "A Friend of the Family (given by Highlord Bolvar Fordragon)",
      "questId": 98191,
      "level": 25,
      "requiredLevel": 20,
@@ -12824,21 +12824,6 @@
    },
    "ref": "https://foreverchanges.pro/quest/8225"
   },
-  "8232": {
-   "quest": "The Green Drake",
-   "level": 52,
-   "requiredLevel": 50,
-   "zone": "Hunter",
-   "dungeon": true,
-   "classes": [
-    "Hunter"
-   ],
-   "bands": {
-    "yellow": 50,
-    "green": 55
-   },
-   "ref": "https://foreverchanges.pro/quest/8232"
-  },
   "8236": {
    "quest": "The Azure Key",
    "level": 52,
@@ -13114,21 +13099,6 @@
     "green": 55
    },
    "ref": "https://foreverchanges.pro/quest/8422"
-  },
-  "8425": {
-   "quest": "Voodoo Feathers",
-   "level": 52,
-   "requiredLevel": 50,
-   "zone": "Warrior",
-   "dungeon": true,
-   "classes": [
-    "Warrior"
-   ],
-   "bands": {
-    "yellow": 50,
-    "green": 55
-   },
-   "ref": "https://foreverchanges.pro/quest/8425"
   },
   "8447": {
    "quest": "Waking Legends",

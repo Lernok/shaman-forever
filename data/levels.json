@@ -3951,11 +3951,11 @@
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": 3654,
-    "name": "Mutanus the Devourer",
-    "level": 22,
-    "rank": "elite",
-    "from": "wowhead",
+    "id": null,
+    "name": null,
+    "level": 26,
+    "rank": "normal",
+    "from": "step-level",
     "step": 6981
    },
    "steps": 2
@@ -3966,11 +3966,11 @@
    "faction": "alliance",
    "instance": null,
    "hardest": {
-    "id": 3654,
-    "name": "Mutanus the Devourer",
-    "level": 22,
-    "rank": "elite",
-    "from": "wowhead",
+    "id": null,
+    "name": null,
+    "level": 26,
+    "rank": "normal",
+    "from": "step-level",
     "step": 6981
    },
    "steps": 2
@@ -6553,11 +6553,11 @@
    "faction": "alliance",
    "instance": "Blackwing Lair",
    "hardest": {
-    "id": 10162,
-    "name": "Lord Victor Nefarius",
-    "level": 63,
-    "rank": "boss",
-    "from": "questie",
+    "id": null,
+    "name": null,
+    "level": 60,
+    "rank": "normal",
+    "from": "step-level",
     "step": 7781
    },
    "steps": 2
@@ -6568,11 +6568,11 @@
    "faction": "horde",
    "instance": "Blackwing Lair",
    "hardest": {
-    "id": 10162,
-    "name": "Lord Victor Nefarius",
-    "level": 63,
-    "rank": "boss",
-    "from": "questie",
+    "id": null,
+    "name": null,
+    "level": 60,
+    "rank": "normal",
+    "from": "step-level",
     "step": 7783
    },
    "steps": 2
@@ -7672,13 +7672,7 @@
    "minLevel": 60,
    "faction": null,
    "instance": "Ruins of Ahn'Qiraj",
-   "hardest": {
-    "id": 15339,
-    "name": "Ossirian the Unscarred",
-    "level": 63,
-    "rank": "boss",
-    "from": "questie"
-   },
+   "hardest": null,
    "steps": 1
   },
   "8802": {
@@ -7687,11 +7681,11 @@
    "faction": null,
    "instance": "Temple of Ahn'Qiraj",
    "hardest": {
-    "id": 15727,
-    "name": "C'Thun",
-    "level": 63,
-    "rank": "boss",
-    "from": "questie",
+    "id": null,
+    "name": null,
+    "level": 60,
+    "rank": "normal",
+    "from": "step-level",
     "step": 8801
    },
    "steps": 2
@@ -8154,10 +8148,10 @@
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": 4023,
-    "name": "Bloodfury Roguefeather",
-    "level": 26,
-    "rank": "normal",
+    "id": 5930,
+    "name": "Sister Riven",
+    "level": 28,
+    "rank": "rare-elite",
     "from": "wowhead"
    },
    "steps": 1
@@ -8421,7 +8415,9 @@
    "steps": 7
   },
   "92867": {
-   "classes": null,
+   "classes": [
+    "ROGUE"
+   ],
    "minLevel": 32,
    "faction": null,
    "instance": null,
@@ -8605,6 +8601,14 @@
    },
    "steps": 7
   },
+  "93971": {
+   "classes": null,
+   "minLevel": 36,
+   "faction": "horde",
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
   "94003": {
    "classes": [
     "WARRIOR"
@@ -8624,6 +8628,98 @@
    "instance": null,
    "hardest": null,
    "steps": 5
+  },
+  "94533": {
+   "classes": null,
+   "minLevel": 36,
+   "faction": "horde",
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "94556": {
+   "classes": null,
+   "minLevel": 36,
+   "faction": "horde",
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "94679": {
+   "classes": null,
+   "minLevel": 36,
+   "faction": "alliance",
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "94768": {
+   "classes": null,
+   "minLevel": 38,
+   "faction": "horde",
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "94861": {
+   "classes": null,
+   "minLevel": 36,
+   "faction": "alliance",
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "94890": {
+   "classes": null,
+   "minLevel": 38,
+   "faction": "alliance",
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "94927": {
+   "classes": null,
+   "minLevel": 38,
+   "faction": "alliance",
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "94984": {
+   "classes": null,
+   "minLevel": 39,
+   "faction": "alliance",
+   "instance": null,
+   "hardest": null,
+   "steps": 2
+  },
+  "95063": {
+   "classes": null,
+   "minLevel": 36,
+   "faction": "horde",
+   "instance": null,
+   "hardest": {
+    "id": 257059,
+    "name": "Chub'chob",
+    "level": 45,
+    "rank": "elite",
+    "from": "wowhead"
+   },
+   "steps": 7
+  },
+  "95064": {
+   "classes": null,
+   "minLevel": 36,
+   "faction": "alliance",
+   "instance": null,
+   "hardest": {
+    "id": 256749,
+    "name": "Rog'mar Trainee",
+    "level": 39,
+    "rank": "normal",
+    "from": "wowhead"
+   },
+   "steps": 1
   },
   "95161": {
    "classes": null,
@@ -8671,6 +8767,22 @@
    "hardest": null,
    "steps": 1
   },
+  "95267": {
+   "classes": null,
+   "minLevel": 38,
+   "faction": null,
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "95433": {
+   "classes": null,
+   "minLevel": 36,
+   "faction": "horde",
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
   "95508": {
    "classes": null,
    "minLevel": 14,
@@ -8683,6 +8795,14 @@
    "classes": null,
    "minLevel": 25,
    "faction": null,
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "95615": {
+   "classes": null,
+   "minLevel": 36,
+   "faction": "alliance",
    "instance": null,
    "hardest": null,
    "steps": 1
@@ -8732,6 +8852,22 @@
    "hardest": null,
    "steps": 1
   },
+  "95789": {
+   "classes": null,
+   "minLevel": 34,
+   "faction": null,
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "95791": {
+   "classes": null,
+   "minLevel": 34,
+   "faction": null,
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
   "95795": {
    "classes": null,
    "minLevel": 24,
@@ -8762,6 +8898,20 @@
    },
    "steps": 2
   },
+  "95882": {
+   "classes": null,
+   "minLevel": 38,
+   "faction": "horde",
+   "instance": null,
+   "hardest": {
+    "id": 260211,
+    "name": "Scoutmaster Vargas",
+    "level": 42,
+    "rank": "elite",
+    "from": "wowhead"
+   },
+   "steps": 1
+  },
   "95885": {
    "classes": null,
    "minLevel": 20,
@@ -8777,6 +8927,20 @@
    },
    "steps": 3
   },
+  "95913": {
+   "classes": null,
+   "minLevel": 36,
+   "faction": "alliance",
+   "instance": null,
+   "hardest": {
+    "id": 259267,
+    "name": "Plains Coyote",
+    "level": 37,
+    "rank": "normal",
+    "from": "wowhead"
+   },
+   "steps": 2
+  },
   "95981": {
    "classes": null,
    "minLevel": 10,
@@ -8787,6 +8951,34 @@
     "name": "Dalaran Wizard",
     "level": 20,
     "rank": "normal",
+    "from": "wowhead"
+   },
+   "steps": 1
+  },
+  "95991": {
+   "classes": null,
+   "minLevel": 38,
+   "faction": "alliance",
+   "instance": null,
+   "hardest": {
+    "id": 263380,
+    "name": "Ghostmaw",
+    "level": 42,
+    "rank": "elite",
+    "from": "wowhead"
+   },
+   "steps": 1
+  },
+  "95992": {
+   "classes": null,
+   "minLevel": 38,
+   "faction": "horde",
+   "instance": null,
+   "hardest": {
+    "id": 263380,
+    "name": "Ghostmaw",
+    "level": 42,
+    "rank": "elite",
     "from": "wowhead"
    },
    "steps": 1
@@ -8803,6 +8995,22 @@
     "rank": "elite",
     "from": "wowhead"
    },
+   "steps": 1
+  },
+  "96009": {
+   "classes": null,
+   "minLevel": 36,
+   "faction": "alliance",
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "96015": {
+   "classes": null,
+   "minLevel": 38,
+   "faction": "alliance",
+   "instance": null,
+   "hardest": null,
    "steps": 1
   },
   "96016": {
@@ -8825,7 +9033,7 @@
   "96260": {
    "classes": null,
    "minLevel": 23,
-   "faction": "horde",
+   "faction": null,
    "instance": null,
    "hardest": {
     "id": 264081,
@@ -13227,6 +13435,18 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "4026": {
+   "name": "Bloodfury Windcaller",
+   "level": 25,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "4027": {
+   "name": "Bloodfury Storm Witch",
+   "level": 27,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "4028": {
    "name": "Charred Ancient",
    "level": 26,
@@ -14784,6 +15004,12 @@
   "5912": {
    "name": "Deviate Faerie Dragon",
    "level": 20,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "5930": {
+   "name": "Sister Riven",
+   "level": 28,
    "rank": "rare-elite",
    "from": "wowhead"
   },
@@ -16617,12 +16843,6 @@
    "rank": "elite",
    "from": "wowhead"
   },
-  "10162": {
-   "name": "Lord Victor Nefarius",
-   "level": 63,
-   "rank": "boss",
-   "from": "questie"
-  },
   "10184": {
    "name": "Onyxia",
    "level": 63,
@@ -17088,12 +17308,6 @@
   "10811": {
    "name": "Archivist Galford",
    "level": 60,
-   "rank": "elite",
-   "from": "wowhead"
-  },
-  "10812": {
-   "name": "Grand Crusader Dathrohan",
-   "level": 62,
    "rank": "elite",
    "from": "wowhead"
   },
@@ -19299,6 +19513,12 @@
    "rank": "rare-elite",
    "from": "wowhead"
   },
+  "255892": {
+   "name": "Bonegnaw",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
   "256028": {
    "name": "The Lost One",
    "level": 6,
@@ -19323,11 +19543,59 @@
    "rank": "rare",
    "from": "wowhead"
   },
+  "256749": {
+   "name": "Rog'mar Trainee",
+   "level": 39,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "256881": {
+   "name": "Overlord Kilgar",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "257059": {
+   "name": "Chub'chob",
+   "level": 45,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "258595": {
+   "name": "Snufflesnout",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "258626": {
+   "name": "Mog'thar",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "258652": {
+   "name": "Twilight Thrall",
+   "level": null,
+   "rank": "normal",
+   "from": null
+  },
   "258924": {
    "name": "Var'Taka",
    "level": null,
    "rank": "elite",
    "from": null
+  },
+  "258964": {
+   "name": "Nar'gurk",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "259267": {
+   "name": "Plains Coyote",
+   "level": 37,
+   "rank": "normal",
+   "from": "wowhead"
   },
   "259385": {
    "name": "Tel'daeor the Stormspeaker",
@@ -19343,14 +19611,26 @@
   },
   "259394": {
    "name": "Snapbeak the Quick",
-   "level": null,
+   "level": 9,
    "rank": "rare-elite",
-   "from": null
+   "from": "wowhead"
   },
   "259398": {
    "name": "Galemender Delanea",
    "level": 11,
    "rank": "rare",
+   "from": "wowhead"
+  },
+  "260042": {
+   "name": "Captain Dreadrise",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "260211": {
+   "name": "Scoutmaster Vargas",
+   "level": 42,
+   "rank": "elite",
    "from": "wowhead"
   },
   "260322": {
@@ -19367,6 +19647,12 @@
   },
   "260326": {
    "name": "Relic Guardian",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "260353": {
+   "name": "Saltseer Coroner",
    "level": null,
    "rank": "elite",
    "from": null
@@ -19388,6 +19674,18 @@
    "level": 28,
    "rank": "elite",
    "from": "wowhead"
+  },
+  "260995": {
+   "name": "Ogre Miner",
+   "level": null,
+   "rank": "normal",
+   "from": null
+  },
+  "260996": {
+   "name": "Twilight Subjugator",
+   "level": null,
+   "rank": "normal",
+   "from": null
   },
   "261306": {
    "name": "Faldrim Anvilmar",
@@ -19412,6 +19710,12 @@
    "level": null,
    "rank": "elite",
    "from": null
+  },
+  "263380": {
+   "name": "Ghostmaw",
+   "level": 42,
+   "rank": "elite",
+   "from": "wowhead"
   },
   "263389": {
    "name": "Enraged Apparition",
