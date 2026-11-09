@@ -270,7 +270,8 @@ function diffItems(prev, next) {
   Object.values(next).forEach(x => {
     const o = prev[x.id];
     if (!o) { if (added.length <= 10) lines.push('- Ítem nuevo: **' + x.name + '** (' + x.kind + ', nivel ' + x.req + ') #' + x.id); return; }
-    const what = NUMS.filter(f => o[f] !== x[f]).map(f => f + ' ' + o[f] + ' → ' + x[f]);
+    const val = v => v == null ? '—' : v;
+    const what = NUMS.filter(f => o[f] !== x[f]).map(f => f + ' ' + val(o[f]) + ' → ' + val(x[f]));
     if (JSON.stringify(o.stats || {}) !== JSON.stringify(x.stats || {})) what.push('stats ' + JSON.stringify(o.stats || {}) + ' → ' + JSON.stringify(x.stats || {}));
     if (JSON.stringify(o.equip || []) !== JSON.stringify(x.equip || [])) what.push('efectos cambiados');
     if (what.length) lines.push('- **' + x.name + '** #' + x.id + ': ' + what.join('; '));

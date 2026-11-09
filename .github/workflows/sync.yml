@@ -61,11 +61,12 @@ jobs:
       # The new data must not break any page: a pull request made by this
       # workflow doesn't trigger check.yml, so the same checks run here.
       - name: Check the site with the new data
+        shell: bash
         run: |
-          node scripts/check-site.js
+          node scripts/check-site.js 2>&1 | tee -a sync.log
           npm i --no-save --no-package-lock playwright@1.48.2
           npx playwright install --with-deps chromium
-          node scripts/smoke.js
+          node scripts/smoke.js 2>&1 | tee -a sync.log
 
       # meta.json, the report and index.html (meta.js's version stamp) change
       # on every run (sync date); only publish when the data itself changed.
@@ -130,7 +131,7 @@ jobs:
             echo "El sync del $(date -u +%F) falló: [ver la corrida](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})."
             echo
             echo '```'
-            if [ -f sync.log ]; then grep -E "falta plantilla|sin uso|Error|rror:|failed|falló" sync.log | sort -u | tail -40; else echo "Falló antes de terminar el sync (chequeos o publicación)."; fi
+            if [ -f sync.log ]; then grep -E "falta plantilla|sin uso|Error|rror:|failed|falló|problemas en|muestra \"" sync.log | sort -u | tail -40; else echo "Falló antes de terminar el sync (chequeos o publicación)."; fi
             echo '```'
           } > fail.md
           n=$(gh issue list --label sync-error --state open --json number -q '.[0].number')
