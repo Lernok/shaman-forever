@@ -28,7 +28,7 @@ const SHAMAN_CLASS = 64;
 const QUEST_FACTS = ['level', 'requiredLevel', 'faction', 'zone', 'dungeon'];
 
 // Dungeons and raids get their own tag so drops read as "boss in X".
-const INSTANCE = /Ruins of Lordaeron|Deadmines|Wailing Caverns|Shadowfang Keep|Blackfathom|Stockade|Gnomeregan|Razorfen|Scarlet Monastery|Uldaman|Zul'Farrak|Maraudon|Sunken Temple|Temple of Atal|Blackrock Depths|Blackrock Spire|Dire Maul|Scholomance|Stratholme|Ragefire|Molten Core|Onyxia|Blackwing|Zul'Gurub|Ahn'Qiraj|Naxxramas|Barrow Deeps|Hyjal|Hall of Thanes|City of Dalaran|Excavation Site/i;
+const INSTANCE = /Ruins of Lordaeron|Deadmines|Wailing Caverns|Shadowfang Keep|Blackfathom|Stockade|Gnomeregan|Razorfen|Scarlet Monastery|Uldaman|Zul'Farrak|Maraudon|Sunken Temple|Temple of Atal|Blackrock Depths|Blackrock Spire|Dire Maul|Scholomance|Stratholme|Ragefire|Molten Core|Onyxia|Blackwing|Zul'Gurub|Ahn'Qiraj|Naxxramas|Barrow Deeps|Hyjal|Hall of Thanes|City of Dalaran|Excavation Site|Drowned City|Krol.dok|Alcaz Prison|Blackmaw Hold|Shaper.s Terrace/i;
 // Raids (and raid-like summons). Forever has its own raid lineup (Barrow Deeps,
 // Hyjal Summit, Onyxia...), so Classic raid sources are the least certain.
 const RAID = /Molten Core|Onyxia|Blackwing|Zul'Gurub|Ahn'Qiraj|Naxxramas|Barrow Deeps|Hyjal|Silithus/i;

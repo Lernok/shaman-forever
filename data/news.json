@@ -2,6 +2,31 @@
   "_readme": "Site updates shown on the News page, newest first. Game data changes come from data/changelog.json (written by scripts/sync.js).",
   "site": [
     {
+      "day": "2026-11-10",
+      "title": {
+        "es": "Guías y equipo para el 30-60",
+        "en": "Guides and gear for 30-60"
+      },
+      "items": [
+        {
+          "es": "Guías al día con el juego en vivo: Call of Thunder y Lightning Mastery en Elemental (Lava Burst ya no existe), Stormstrike cada 6 s y Mental Dexterity al 150% en Enhancement, Riptide solo como curación en el tiempo en Restoration. Órdenes de talentos del 30 al 60 para las tres specs.",
+          "en": "Guides match the live game: Call of Thunder and Lightning Mastery for Elemental (Lava Burst is gone), Stormstrike every 6 sec and Mental Dexterity at 150% for Enhancement, Riptide as a heal over time only for Restoration. Talent orders from 30 to 60 for all three specs."
+        },
+        {
+          "es": "Enhancement: Blizzard anunció cambios para el 10 de noviembre para que la Fuerza sea su mejor stat, y pide juntar equipo de Fuerza y poder de ataque desde ya. Tu camino ya le da un poco menos de valor al Intelecto y al poder con hechizos; cuando salgan los números lo ajustamos.",
+          "en": "Enhancement: Blizzard announced changes for November 10 so Strength is its best stat, and asks you to collect Strength and attack power gear from now on. Your path already values Intellect and spell power a bit less; we will tune it when the numbers are out."
+        },
+        {
+          "es": "Drops de jefes nuevos en el camino (con \"Sumar drops de jefes\"): Krol'dok Stronghold y The Drowned City, vistos en Wowhead y confirmados en otra fuente. También las recompensas de Eye of Mugg (Bigger Rock on Bigger Stick y compañía), Tome of Twilight, The Web of Magic y Crystalline Elements. La cadena de Rage of the Storm de la Horda ahora usa sus propias misiones.",
+          "en": "New boss drops in the path (with \"Include dungeon boss drops\"): Krol'dok Stronghold and The Drowned City, seen on Wowhead and confirmed by a second source. Also the rewards of Eye of Mugg (Bigger Rock on Bigger Stick and friends), Tome of Twilight, The Web of Magic and Crystalline Elements. The Horde chain for Rage of the Storm now uses its own quests."
+        },
+        {
+          "es": "Hotfixes en el calendario: XP de dungeons +50% (8-nov) y el arreglo del daño de Lightning Overload (9-nov).",
+          "en": "Hotfixes on the calendar: dungeon XP +50% (Nov 8) and the Lightning Overload damage fix (Nov 9)."
+        }
+      ]
+    },
+    {
       "day": "2026-11-07",
       "title": {
         "es": "Equipo: patterns de Favor aparte, sin BoEs",

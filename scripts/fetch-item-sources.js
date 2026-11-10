@@ -21,9 +21,12 @@ const today = new Date().toISOString().slice(0, 10);
 
 // Pages are asked again after a week: an item with no known quest yet, or a
 // quest the site later corrects, gets picked up (lib/http.js keeps the dates).
-const page = (kind, id) => http.get(BASE + '/' + kind + (id ? '/' + id : ''), {
-  cache: 'foreverchanges/' + kind + (id ? '-' + id : '') + '.html', maxAgeDays: 7, valid: t => /<html/i.test(t)
+// An item page with no quest yet is asked again after 2 days: since the
+// launch the site fills in new quests every day.
+const page = (kind, id, maxAgeDays = 7) => http.get(BASE + '/' + kind + (id ? '/' + id : ''), {
+  cache: 'foreverchanges/' + kind + (id ? '-' + id : '') + '.html', maxAgeDays, valid: t => /<html/i.test(t)
 }).then(t => t || '');
+const QUEST_LINK = /href="\/quest\/\d+/;
 
 const decode = s => s.replace(/&#x27;|&#39;/g, "'").replace(/&amp;/g, '&').replace(/&quot;/g, '"');
 const meta = html => decode((html.match(/<meta name="description" content="([^"]*)/) || [])[1] || '');
@@ -74,7 +77,8 @@ function dungeonLevels(html) {
   const out = {};
   let found = 0;
   for (const w of targets) {
-    const html = await page('item', w.id);
+    let html = await page('item', w.id);
+    if (!QUEST_LINK.test(html)) html = await page('item', w.id, 2);
     // Links carry the quest's name since late Oct: /quest/91285/murlocs-at-the-gates
     const questIds = [...new Set([...html.matchAll(/href="\/quest\/(\d+)(?:\/[^"]*)?"/g)].map(m => Number(m[1])))];
     const sources = [];

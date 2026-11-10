@@ -49,9 +49,10 @@ const STARTS = {
 };
 // Every race's starting zone (Shaman or not): a route only goes through yours.
 const STARTER_ZONES = ['Durotar', 'Mulgore', 'Tirisfal Glades', 'Dun Morogh', 'Elwynn Forest', 'Teldrassil', 'Zephras Isle'];
-// Forever's new dungeons past what foreverchanges lists, as announced.
+// Forever's new dungeons past what foreverchanges lists, as announced
+// (Krol'dok: its quests are level 44-45 from 39-40, foreverchanges.pro).
 const NEW_DUNGEONS = {
-  'The Drowned City': [35, 40], "Krol'dok": [40, 55], 'Alcaz Prison': [48, 53], 'Blackmaw Hold': [55, 60], "Shaper's Terrace": [58, 60]
+  'The Drowned City': [35, 40], "Krol'dok Stronghold": [40, 45], 'Alcaz Prison': [48, 53], 'Blackmaw Hold': [55, 60], "Shaper's Terrace": [58, 60]
 };
 const NEW_DUNGEONS_REF = 'https://wowforeverbuilds.com/leveling/route/horde';
 

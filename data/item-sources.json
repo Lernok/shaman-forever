@@ -1,6 +1,315 @@
 {
-  "_readme": "Fuentes de ítems que no están en QuestieDB (sobre todo ítems nuevos de Forever), cargadas a mano a partir de reportes. Cada fuente lleva confidence y ref (de dónde sale el dato). obtainLevel = nivel desde el que se puede conseguir, cuando es mayor que el nivel requerido del ítem. scripts/build-weapons.js las suma a las fuentes automáticas. chain = quests before it (ids), when no database records the chain yet; scripts/fetch-levels.js looks at what each step sends you to kill.",
+  "_readme": "Fuentes de ítems que no están en QuestieDB (sobre todo ítems nuevos de Forever), cargadas a mano a partir de reportes. Cada fuente lleva confidence y ref (de dónde sale el dato). obtainLevel = nivel desde el que se puede conseguir, cuando es mayor que el nivel requerido del ítem. scripts/build-weapons.js las suma a las fuentes automáticas. type boss = drop de jefe de dungeon visto en Wowhead Forever (pestaña Dropped by) y confirmado en una segunda fuente. chain = quests before it (ids), when no database records the chain yet; scripts/fetch-levels.js looks at what each step sends you to kill.",
   "items": {
+    "274599": {
+      "name": "Oathbound Bracers",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "Zul'Alai",
+          "npcId": 258905,
+          "zone": "The Drowned City",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=274599",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
+        }
+      ]
+    },
+    "274995": {
+      "name": "Slavecrusher Scepter",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "Slavecrusher Grox",
+          "npcId": 258966,
+          "zone": "Krol'dok Stronghold",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=274995",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
+        }
+      ]
+    },
+    "274996": {
+      "name": "Resistance Breaker Spaulder",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "Slavecrusher Grox",
+          "npcId": 258966,
+          "zone": "Krol'dok Stronghold",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=274996",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
+        }
+      ]
+    },
+    "274997": {
+      "name": "Chain of Binding",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "Slavecrusher Grox",
+          "npcId": 258966,
+          "zone": "Krol'dok Stronghold",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=274997",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
+        }
+      ]
+    },
+    "274998": {
+      "name": "Shadowlight Athame",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "Twilight Commander Zarmok",
+          "npcId": 258972,
+          "zone": "Krol'dok Stronghold",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=274998",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
+        }
+      ]
+    },
+    "275000": {
+      "name": "Zarmok's Plated Signet",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "Twilight Commander Zarmok",
+          "npcId": 258972,
+          "zone": "Krol'dok Stronghold",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=275000",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
+        }
+      ]
+    },
+    "275002": {
+      "name": "War Handler's Gaze",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "War Handler Ashka",
+          "npcId": 259281,
+          "zone": "Krol'dok Stronghold",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=275002",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
+        }
+      ]
+    },
+    "275004": {
+      "name": "Chain of the Corruptor",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "Nar'gurk",
+          "npcId": 258964,
+          "zone": "Krol'dok Stronghold",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=275004",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
+        }
+      ]
+    },
+    "275007": {
+      "name": "Mugg's Jabber",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "Overlord Mugg",
+          "npcId": 258968,
+          "zone": "Krol'dok Stronghold",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=275007",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
+        }
+      ]
+    },
+    "275008": {
+      "name": "Mugg's Crosser",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "Overlord Mugg",
+          "npcId": 258968,
+          "zone": "Krol'dok Stronghold",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=275008",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
+        }
+      ]
+    },
+    "275009": {
+      "name": "Emblem of Slamming",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "Overlord Mugg",
+          "npcId": 258968,
+          "zone": "Krol'dok Stronghold",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=275009",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
+        }
+      ]
+    },
+    "275010": {
+      "name": "Strongly Scented Hood",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "Overlord Mugg",
+          "npcId": 258968,
+          "zone": "Krol'dok Stronghold",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=275010",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
+        }
+      ]
+    },
+    "279480": {
+      "name": "Bigger Rock on Bigger Stick",
+      "sources": [
+        {
+          "type": "quest",
+          "questId": 94968,
+          "quest": "Eye of Mugg",
+          "level": 45,
+          "requiredLevel": 40,
+          "faction": "horde",
+          "zone": "Krol'dok Stronghold",
+          "confidence": "community-untested",
+          "ref": "https://foreverchanges.pro/quest/94968"
+        },
+        {
+          "type": "quest",
+          "questId": 94982,
+          "quest": "Eye of Mugg",
+          "level": 45,
+          "requiredLevel": 40,
+          "faction": "alliance",
+          "zone": "Krol'dok Stronghold",
+          "confidence": "community-untested",
+          "ref": "https://foreverchanges.pro/quest/94982"
+        }
+      ]
+    },
+    "279852": {
+      "name": "Rock on Stick",
+      "sources": [
+        {
+          "type": "quest",
+          "questId": 94968,
+          "quest": "Eye of Mugg",
+          "level": 45,
+          "requiredLevel": 40,
+          "faction": "horde",
+          "zone": "Krol'dok Stronghold",
+          "confidence": "community-untested",
+          "ref": "https://foreverchanges.pro/quest/94968"
+        },
+        {
+          "type": "quest",
+          "questId": 94982,
+          "quest": "Eye of Mugg",
+          "level": 45,
+          "requiredLevel": 40,
+          "faction": "alliance",
+          "zone": "Krol'dok Stronghold",
+          "confidence": "community-untested",
+          "ref": "https://foreverchanges.pro/quest/94982"
+        }
+      ]
+    },
+    "279853": {
+      "name": "Stick No Rock",
+      "sources": [
+        {
+          "type": "quest",
+          "questId": 94968,
+          "quest": "Eye of Mugg",
+          "level": 45,
+          "requiredLevel": 40,
+          "faction": "horde",
+          "zone": "Krol'dok Stronghold",
+          "confidence": "community-untested",
+          "ref": "https://foreverchanges.pro/quest/94968"
+        },
+        {
+          "type": "quest",
+          "questId": 94982,
+          "quest": "Eye of Mugg",
+          "level": 45,
+          "requiredLevel": 40,
+          "faction": "alliance",
+          "zone": "Krol'dok Stronghold",
+          "confidence": "community-untested",
+          "ref": "https://foreverchanges.pro/quest/94982"
+        }
+      ]
+    },
+    "279859": {
+      "name": "Indoctrinated Choker",
+      "sources": [
+        {
+          "type": "quest",
+          "questId": 94972,
+          "quest": "Tome of Twilight",
+          "level": 44,
+          "requiredLevel": 39,
+          "faction": "horde",
+          "zone": "Krol'dok Stronghold",
+          "confidence": "community-untested",
+          "ref": "https://foreverchanges.pro/quest/94972"
+        }
+      ]
+    },
+    "279879": {
+      "name": "Rune-Etched Epaulets",
+      "sources": [
+        {
+          "type": "quest",
+          "questId": 95798,
+          "quest": "The Web of Magic",
+          "level": 40,
+          "requiredLevel": 30,
+          "faction": "alliance",
+          "zone": "Alterac Mountains",
+          "confidence": "community-untested",
+          "ref": "https://foreverchanges.pro/quest/95798"
+        }
+      ]
+    },
+    "279904": {
+      "name": "Crystalline Pauldrons",
+      "sources": [
+        {
+          "type": "quest",
+          "questId": 95928,
+          "quest": "Crystalline Elements",
+          "level": 60,
+          "requiredLevel": 55,
+          "faction": "horde",
+          "zone": "The Shaper's Terrace",
+          "confidence": "community-untested",
+          "ref": "https://foreverchanges.pro/quest/95928"
+        }
+      ]
+    },
     "280604": {
       "name": "Rage of the Storm",
       "sources": [
@@ -28,10 +337,10 @@
           "requiredLevel": 30,
           "faction": "horde",
           "chain": [
-            94789,
-            96264,
-            79358,
-            96135
+            79360,
+            79364,
+            79361,
+            79366
           ],
           "confidence": "community-untested",
           "ref": "https://www.wowhead.com/forever/quest=79442"
@@ -72,6 +381,38 @@
           ],
           "confidence": "community-untested",
           "ref": "https://www.wowhead.com/forever/quest=79442"
+        }
+      ]
+    },
+    "286646": {
+      "name": "Gill's Gills",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "Gill",
+          "npcId": 264177,
+          "zone": "The Drowned City",
+          "rank": "rare",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=286646",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
+        }
+      ]
+    },
+    "286649": {
+      "name": "Tidebound Dagger",
+      "sources": [
+        {
+          "type": "boss",
+          "npc": "Gill",
+          "npcId": 264177,
+          "zone": "The Drowned City",
+          "rank": "rare",
+          "faction": "both",
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=286649",
+          "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro."
         }
       ]
     }

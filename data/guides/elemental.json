@@ -5,21 +5,21 @@
     "en": "Ranged DPS / caster"
   },
   "summary": {
-    "es": "Rayos y lava desde lejos: Lava Burst pega 20% más fuerte sobre tu Flame Shock, y Lightning Overload te regala Lightning Bolts extra gratis. En Forever, Elemental Alacrity le saca 0,5 s a tus hechizos principales ya desde la fila 2, así que el ritmo es rápido desde temprano. Ojo: el daño base de los hechizos bajó mucho frente a Classic (Lightning Bolt −56% en su rango máximo) porque el poder con hechizos ahora viene del equipo desde el nivel 10, así que el equipo pesa más que nunca.",
-    "en": "Lightning and lava from range: Lava Burst hits 20% harder on your Flame Shock, and Lightning Overload throws in free extra Lightning Bolts. In Forever, Elemental Alacrity cuts 0.5 sec off your main spells as early as row 2, so the pace is fast from the start. Note: spells' base damage dropped a lot compared to Classic (Lightning Bolt −56% at its top rank) because spell power now comes from gear from level 10, so gear matters more than ever."
+    "es": "Rayos desde lejos: Lightning Bolt y Chain Lightning son tu daño, Call of Thunder les suma 5% de crítico y Lightning Overload te regala copias gratis. En Forever, Elemental Alacrity le saca 0,5 s a tus hechizos principales ya desde la fila 2, y Lightning Mastery (fila 7, nivel 40) los acelera todavía más. Desde las notas del 2-nov ya no hay Lava Burst: el fuego queda para Flame Shock y los totems. Ojo: el daño base bajó frente a Classic porque el poder con hechizos viene del equipo desde el nivel 10, así que el equipo pesa más que nunca.",
+    "en": "Lightning from range: Lightning Bolt and Chain Lightning are your damage, Call of Thunder adds 5% crit to them and Lightning Overload throws in free copies. In Forever, Elemental Alacrity cuts 0.5 sec off your main spells as early as row 2, and Lightning Mastery (row 7, level 40) speeds them up even more. Since the notes of Nov 2 there is no Lava Burst: fire is left to Flame Shock and the totems. Note: base damage dropped compared to Classic because spell power comes from gear from level 10, so gear matters more than ever."
   },
   "mechanicalChanges": [
     {
       "change": {
-        "es": "Lava Burst en la fila 5, y vuelve Elemental Mastery",
-        "en": "Lava Burst on row 5, and Elemental Mastery is back"
+        "es": "Sin Lava Burst: Call of Thunder y Lightning Mastery",
+        "en": "No Lava Burst: Call of Thunder and Lightning Mastery"
       },
       "detail": {
-        "es": "Desde el parche del 17-oct (build 70450), Lava Burst está en la fila 5 (nivel 30) y ya no pide Lightning Overload: bolt de fuego de 2,5 s y 10 s de CD que hace 20% más con tu Flame Shock puesto; rangos 2, 3 y 4 en el entrenador a los 40, 50 y 60. Elemental Mastery vuelve como talento final (fila 7, nivel 40, pide Lava Burst), distinto al de Classic: durante 15 s le saca 0,5 s a Lightning Bolt y Lava Burst y quita el CD de Chain Lightning.",
-        "en": "Since the Oct 17 patch (build 70450), Lava Burst is on row 5 (level 30) and no longer needs Lightning Overload: a 2.5 sec Fire bolt on a 10 sec cooldown that deals 20% more with your Flame Shock up; ranks 2, 3 and 4 at the trainer at 40, 50 and 60. Elemental Mastery is back as the final talent (row 7, level 40, needs Lava Burst), unlike Classic's: for 15 sec it takes 0.5 sec off Lightning Bolt and Lava Burst and removes Chain Lightning's cooldown."
+        "es": "Con las notas del 2-nov (en el juego desde el hotfix del 3-nov, antes del lanzamiento) Lava Burst sale del juego. En su lugar, en la fila 5, vuelve Call of Thunder: +5% de crítico a Lightning Bolt y Chain Lightning (1 punto, nivel 30). El talento final (fila 7, nivel 40, pide Call of Thunder) es Lightning Mastery: durante 15 s le saca 0,5 s a Lightning Bolt y quita el CD de Chain Lightning. Lightning Bolt pega más en todos los rangos (el último, un 80% más) y Chain Lightning tarda 2,5 s y pega 145% de un Lightning Bolt del mismo rango.",
+        "en": "With the notes of Nov 2 (in game since the Nov 3 hotfix, before launch) Lava Burst leaves the game. In its place, on row 5, Call of Thunder is back: +5% crit to Lightning Bolt and Chain Lightning (1 point, level 30). The final talent (row 7, level 40, needs Call of Thunder) is Lightning Mastery: for 15 sec it takes 0.5 sec off Lightning Bolt and removes Chain Lightning's cooldown. Lightning Bolt hits harder on every rank (the top one, 80% more) and Chain Lightning takes 2.5 sec and hits for 145% of a same-rank Lightning Bolt."
       },
-      "confidence": "client-data",
-      "source": "https://talentsforever.com/shaman/changes"
+      "confidence": "official",
+      "source": "https://us.forums.blizzard.com/en/wow/t/2360696/9"
     },
     {
       "change": {
@@ -27,8 +27,8 @@
         "en": "Lightning Bolt and Chain Lightning cast faster"
       },
       "detail": {
-        "es": "Lightning Bolt rangos 4–10 se lanza en 2,5 s (Classic: 3 s); los rangos 1–3 no cambiaron. Chain Lightning rango 1 es de 2 s con 6 s de CD.",
-        "en": "Lightning Bolt ranks 4–10 cast in 2.5 sec (Classic: 3 sec); ranks 1–3 are unchanged. Chain Lightning rank 1 is a 2 sec cast with a 6 sec cooldown."
+        "es": "Lightning Bolt rangos 4–10 se lanza en 2,5 s (Classic: 3 s); los rangos 1–3 no cambiaron. Chain Lightning: 2,5 s según las notas del 2-nov y el tooltip, aunque WoWSims lee 2 s en los archivos; fijate en el juego.",
+        "en": "Lightning Bolt ranks 4–10 cast in 2.5 sec (Classic: 3 sec); ranks 1–3 are unchanged. Chain Lightning: 2.5 sec according to the notes of Nov 2 and the tooltip, although WoWSims reads 2 sec in the files; check in game."
       },
       "confidence": "client-data",
       "source": "data/shaman.json: class_abilities"
@@ -39,8 +39,8 @@
         "en": "Elemental Alacrity (formerly Lightning Mastery) moves up to row 2"
       },
       "detail": {
-        "es": "A 3/3 saca 0,5 s a Lightning Bolt, Chain Lightning y Lava Burst: un Lightning Bolt de 2 s ya cerca del nivel 20. En Classic estaba en la fila 6 (nivel 35).",
-        "en": "At 3/3 it takes 0.5 sec off Lightning Bolt, Chain Lightning and Lava Burst: a 2 sec Lightning Bolt already around level 20. In Classic it was on row 6 (level 35)."
+        "es": "A 3/3 saca 0,5 s a Lightning Bolt y Chain Lightning: un Lightning Bolt de 2 s ya cerca del nivel 20. En Classic estaba en la fila 6 (nivel 35). El nombre Lightning Mastery ahora es del talento final.",
+        "en": "At 3/3 it takes 0.5 sec off Lightning Bolt and Chain Lightning: a 2 sec Lightning Bolt already around level 20. In Classic it was on row 6 (level 35). The name Lightning Mastery now belongs to the final talent."
       },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
@@ -51,11 +51,11 @@
         "en": "Lightning Overload is new (row 5)"
       },
       "detail": {
-        "es": "Pide Elemental Alacrity 3/3. Chance de que Lightning Bolt o Chain Lightning lancen una copia gratis a la mitad de daño y sin amenaza. El tooltip y el hechizo no coinciden en la chance, y no se sabe si Lava Burst también puede activarlo.",
-        "en": "Needs Elemental Alacrity 3/3. A chance for Lightning Bolt or Chain Lightning to cast a free copy at half damage and no threat. The tooltip and the spell disagree on the chance, and it's unknown whether Lava Burst can overload."
+        "es": "Pide Elemental Alacrity 3/3. 10/20/30% de chance (era 3/7/10%) de que Lightning Bolt o Chain Lightning lancen una copia gratis a la mitad de daño y sin amenaza. El hotfix del 9-nov arregló el daño de la copia de Lightning Bolt, que no había subido con los rangos nuevos.",
+        "en": "Needs Elemental Alacrity 3/3. A 10/20/30% chance (was 3/7/10%) for Lightning Bolt or Chain Lightning to cast a free copy at half damage and no threat. The Nov 9 hotfix fixed the damage of the Lightning Bolt copy, which hadn't risen with the new ranks."
       },
-      "confidence": "client-data",
-      "source": "https://talentsforever.com/shaman/changes"
+      "confidence": "official",
+      "source": "https://us.forums.blizzard.com/en/wow/t/2403040"
     },
     {
       "change": {
@@ -63,8 +63,8 @@
         "en": "Earthbound: Earthbind roots"
       },
       "detail": {
-        "es": "Talento nuevo de 1 punto (fila 4): Earthbind Totem inmoviliza 5 s a lo que tenga cerca al caer. La inmovilización se aplica del lado del servidor y nadie lo probó todavía.",
-        "en": "New 1-point talent (row 4): Earthbind Totem immobilizes nearby targets for 5 sec when it drops. The root is applied server-side and nobody has tested it yet."
+        "es": "Talento nuevo de 1 punto (fila 4): Earthbind Totem inmoviliza 5 s a lo que tenga cerca al caer.",
+        "en": "New 1-point talent (row 4): Earthbind Totem immobilizes nearby targets for 5 sec when it drops."
       },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
@@ -75,8 +75,8 @@
         "en": "Changes across the rest of the tree"
       },
       "detail": {
-        "es": "Call of Thunder e Improved Fire Nova ya no existen (build 70450). Trial by Fire (fila 4, 2 puntos) es nuevo: +20% de daño a Fire Nova, 4 s menos de CD y 20 s más de Magma Totem. Elemental Fury: 5 puntos en la fila 6 (antes 1 en la 5), mismo 100%, ahora pide Lightning Overload. Concussion ya solo afecta Earth Shock de los shocks. Call of Flame suma 15% a totems de fuego, Flame Shock, Fire Nova y Lava Burst, y 9 s más de Flame Shock. Elemental Devastation sube a la fila 2 y ahora se activa con críticos de hechizos de daño directo.",
-        "en": "Call of Thunder and Improved Fire Nova are gone (build 70450). Trial by Fire (row 4, 2 points) is new: +20% Fire Nova damage, 4 sec off its cooldown and 20 sec more Magma Totem. Elemental Fury: 5 points on row 6 (was 1 on row 5), same 100%, now needs Lightning Overload. Concussion now only affects Earth Shock among the shocks. Call of Flame adds 15% to Fire totems, Flame Shock, Fire Nova and Lava Burst, and 9 sec more Flame Shock. Elemental Devastation moves up to row 2 and now triggers on direct damage spell crits."
+        "es": "Improved Fire Nova ya no existe. Trial by Fire (fila 4, 2 puntos) es nuevo: +20% de daño a Fire Nova, 4 s menos de CD y 20 s más de Magma Totem. Elemental Fury: 5 puntos en la fila 6 (antes 1 en la 5), mismo 100%, pide Lightning Overload. Concussion ya solo afecta Earth Shock de los shocks. Call of Flame suma 15% a totems de fuego, Flame Shock y Fire Nova, y 9 s más de Flame Shock. Elemental Devastation sube a la fila 2 y se activa con críticos de hechizos de daño directo. Elemental Reach ya no baja el CD de Totemic Call.",
+        "en": "Improved Fire Nova is gone. Trial by Fire (row 4, 2 points) is new: +20% Fire Nova damage, 4 sec off its cooldown and 20 sec more Magma Totem. Elemental Fury: 5 points on row 6 (was 1 on row 5), same 100%, needs Lightning Overload. Concussion now only affects Earth Shock among the shocks. Call of Flame adds 15% to Fire totems, Flame Shock and Fire Nova, and 9 sec more Flame Shock. Elemental Devastation moves up to row 2 and triggers on direct damage spell crits. Elemental Reach no longer lowers Totemic Call's cooldown."
       },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
@@ -118,8 +118,8 @@
       ],
       "confidence": "community-untested",
       "note": {
-        "es": "Fuentes estilo Icy Veins le dan más peso al índice de golpe y la celeridad para contenido de banda. Tomalo como variante de nivel alto, cuando el gear y el cap de índice de golpe importen más que al 30.",
-        "en": "Icy Veins-style sources weight Hit/Haste higher for raid content. Treat it as a high-level variant, for when gear and the hit cap matter more than at 30."
+        "es": "Icy Veins pone el crítico antes del golpe (daño de hechizos, crítico, golpe, Intelecto); WoWSims, al 60 y contra un jefe, le da más peso al golpe y la celeridad. Tomalo como variante de nivel alto, cuando el equipo y el cap de golpe pesen más.",
+        "en": "Icy Veins puts crit ahead of hit (spell damage, crit, hit, Intellect); WoWSims, at 60 against a boss, weights hit and haste higher. Treat it as a high-level variant, for when gear and the hit cap matter more."
       }
     },
     "forever": {
@@ -152,24 +152,24 @@
     "confidence": "client-data",
     "level60": [
       {
-        "es": "Flame Shock primero y renovalo antes de que se caiga (en hasta 3 enemigos): Lava Burst hace 20% más con él puesto.",
-        "en": "Flame Shock first and renew it before it drops (on up to 3 enemies): Lava Burst deals 20% more with it on."
+        "es": "Flame Shock primero y renovalo antes de que se caiga, en objetivos que vivan sus ticks.",
+        "en": "Flame Shock first and renew it before it drops, on targets that live through its ticks."
       },
       {
-        "es": "Lava Burst cada vez que salga de CD.",
-        "en": "Lava Burst whenever it's off cooldown."
+        "es": "Lightning Mastery cada vez que esté disponible: 15 s de Lightning Bolt más rápido y Chain Lightning sin CD (en esos 15 s, Chain Lightning también contra uno solo si te sobra maná).",
+        "en": "Lightning Mastery whenever it's available: 15 sec of faster Lightning Bolt and Chain Lightning without cooldown (during those 15 sec, Chain Lightning even on one target if you have mana to spare)."
       },
       {
-        "es": "Elemental Mastery cada vez que esté disponible: 15 s de Lightning Bolt y Lava Burst más rápidos y Chain Lightning sin CD.",
-        "en": "Elemental Mastery whenever it's available: 15 s of faster Lightning Bolt and Lava Burst and Chain Lightning without cooldown."
+        "es": "Chain Lightning cuando salga de CD si hay más de un enemigo; si no, Lightning Bolt de rango máximo de relleno (Lightning Overload puede lanzar uno extra gratis).",
+        "en": "Chain Lightning off cooldown when there is more than one enemy; otherwise top-rank Lightning Bolt as filler (Lightning Overload may cast an extra one for free)."
       },
       {
-        "es": "Lightning Bolt de relleno (Lightning Overload puede lanzar uno extra gratis); contra varios, Chain Lightning, Fire Nova y Magma Totem.",
-        "en": "Lightning Bolt as filler (Lightning Overload may cast an extra one for free); against several, Chain Lightning, Fire Nova and Magma Totem."
+        "es": "Contra grupos: Chain Lightning, Fire Nova y Magma Totem.",
+        "en": "Against packs: Chain Lightning, Fire Nova and Magma Totem."
       },
       {
-        "es": "Con el maná por debajo de la mitad, Mana Tide Totem.",
-        "en": "Below half mana, Mana Tide Totem."
+        "es": "Con el maná por debajo de la mitad, Mana Tide Totem si lo tenés; si no, bajá de rango o descansá entre grupos.",
+        "en": "Below half mana, Mana Tide Totem if you have it; otherwise drop a rank or rest between pulls."
       }
     ],
     "level60Confidence": "client-data",
@@ -193,34 +193,35 @@
   ],
   "keyTalents": [
     {
-      "es": "Lava Burst (fila 5) — 20% más de daño con tu Flame Shock en el objetivo",
-      "en": "Lava Burst (row 5) — 20% more damage with your Flame Shock on the target"
+      "es": "Call of Thunder (fila 5, nivel 30) — +5% de crítico a Lightning Bolt y Chain Lightning",
+      "en": "Call of Thunder (row 5, level 30) — +5% crit to Lightning Bolt and Chain Lightning"
     },
     {
-      "es": "Lightning Overload — chance de un Lightning Bolt/Chain Lightning extra gratis, a la mitad de daño",
-      "en": "Lightning Overload — chance for a free extra Lightning Bolt/Chain Lightning at half damage"
+      "es": "Lightning Overload — 30% de chance de un Lightning Bolt/Chain Lightning extra gratis, a la mitad de daño",
+      "en": "Lightning Overload — 30% chance for a free extra Lightning Bolt/Chain Lightning at half damage"
     },
     {
-      "es": "Elemental Alacrity — −0,5 s a Lightning Bolt, Chain Lightning y Lava Burst, ya en la fila 2",
-      "en": "Elemental Alacrity — −0.5 sec on Lightning Bolt, Chain Lightning and Lava Burst, already on row 2"
+      "es": "Lightning Mastery (fila 7, nivel 40) — 15 s de Lightning Bolt 0,5 s más rápido y Chain Lightning sin CD",
+      "en": "Lightning Mastery (row 7, level 40) — 15 sec of Lightning Bolt 0.5 sec faster and Chain Lightning without cooldown"
     },
     {
-      "es": "Call of Flame — +15% a totems de fuego, Flame Shock, Fire Nova y Lava Burst",
-      "en": "Call of Flame — +15% to Fire totems, Flame Shock, Fire Nova and Lava Burst"
+      "es": "Elemental Alacrity — −0,5 s a Lightning Bolt y Chain Lightning, ya en la fila 2",
+      "en": "Elemental Alacrity — −0.5 sec on Lightning Bolt and Chain Lightning, already on row 2"
     },
     {
-      "es": "Elemental Devastation — tus críticos de hechizo dan +9% de crítico cuerpo a cuerpo por 10 s (más útil para Enhancement)",
-      "en": "Elemental Devastation — your spell crits give +9% melee crit for 10 sec (more useful for Enhancement)"
+      "es": "Elemental Fury — tus críticos de hechizo hacen 100% más de daño (5 puntos, fila 6)",
+      "en": "Elemental Fury — your spell crits deal 100% more damage (5 points, row 6)"
     }
   ],
   "recommendedBuild": {
     "note": {
-      "es": "Alternativa al 30: Earthbound en vez del primer punto de Lightning Overload, para tener una inmovilización instantánea al subir de nivel solo. Se reporta que bajar a Restoration por Mindfulness + Mana Tide Totem rinde en peleas largas, pero Mana Tide está en la fila 4 (15 puntos en Resto): al 30 te deja solo 5–10 puntos en Elemental, así que en la práctica es para más nivel.",
-      "en": "Alternative at 30: Earthbound instead of Lightning Overload's first point, for an instant root while leveling solo. Dipping into Restoration for Mindfulness + Mana Tide Totem is reported to pay off in long fights, but Mana Tide sits on row 4 (15 points in Resto): at 30 it leaves only 5–10 points for Elemental, so in practice it's a higher-level option."
+      "es": "Al 30, Call of Thunder (como Icy Veins y WoWSims); la variante \"control\" cambia ese punto por Earthbound, para tener una inmovilización instantánea al subir de nivel solo. Del 30 al 60 seguimos la guía de leveo de Icy Veins: Lightning Overload, Elemental Fury, Lightning Mastery al 40 y después Tidal Focus (golpe) y Mindfulness en Restoration. Bajar a Restoration por Mana Tide Totem (fila 4, 15 puntos) rinde en peleas largas: WoWSims lo tiene como alternativa al 60.",
+      "en": "At 30, Call of Thunder (as Icy Veins and WoWSims do); the \"control\" variant swaps that point for Earthbound, for an instant root while leveling solo. From 30 to 60 we follow Icy Veins' leveling guide: Lightning Overload, Elemental Fury, Lightning Mastery at 40, then Tidal Focus (hit) and Mindfulness in Restoration. Dipping into Restoration for Mana Tide Totem (row 4, 15 points) pays off in long fights: WoWSims lists it as a level-60 alternative."
     }
   },
   "sources": [
-    "https://www.wowhead.com/forever/guide/classes/shaman/elemental/level-30-dps-overview",
+    "https://www.icy-veins.com/wow-forever/elemental-shaman-leveling",
+    "https://us.forums.blizzard.com/en/wow/t/2360696/9",
     "https://www.icy-veins.com/wow/elemental-shaman-pve-dps-stat-priority",
     "https://classicwowforever.com/class-guides/shaman/elemental/",
     "https://talentsforever.com (CC BY 4.0) — data/shaman.json",
@@ -228,8 +229,8 @@
     "https://github.com/wowsims/forever/tree/master/ui/specs/shaman"
   ],
   "caveat": {
-    "es": "WoW: Forever, datos del cliente de lanzamiento (oct 2026). El orden de stats y la rotación siguen a WoWSims para Forever (pesos y lista de prioridades al 60), ajustados para levear: lo mismo con lo que Equipo › Tu camino elige tus piezas. La simulación es de una pelea contra un jefe: leveando, adaptala al bicho que tengas enfrente.",
-    "en": "WoW: Forever, launch client data (Oct 2026). The stat order and the rotation follow WoWSims for Forever (weights and priority list at 60), adjusted for leveling: what Equipo › Your path picks your pieces with. The sim is a boss fight: leveling, adapt it to whatever you're fighting."
+    "es": "WoW: Forever en vivo (lanzamiento 4-nov-2026, tope 60), con las notas del 2-nov y los hotfixes hasta el 9-nov. El orden de stats y la rotación siguen a WoWSims para Forever (pesos y lista de prioridades al 60), ajustados para levear: lo mismo con lo que Equipo › Tu camino elige tus piezas. La simulación es de una pelea contra un jefe: leveando, adaptala al bicho que tengas enfrente.",
+    "en": "WoW: Forever live (launched Nov 4, 2026, level cap 60), with the notes of Nov 2 and the hotfixes up to Nov 9. The stat order and the rotation follow WoWSims for Forever (weights and priority list at 60), adjusted for leveling: what Equipo › Your path picks your pieces with. The sim is a boss fight: leveling, adapt it to whatever you're fighting."
   },
   "gearTargets": [
     {

@@ -2,15 +2,15 @@
   "classNotes": [
     {
       "fact": {
-        "es": "Los árboles cuentan hasta el 60 (51 puntos). La beta llegaba solo al 30 (21 puntos), así que lo que pasa del 30 todavía no lo probó nadie: el orden de talentos de ahí en adelante es una proyección.",
-        "en": "The trees count up to level 60 (51 points). The beta only went up to 30 (21 points), so nobody has tested past 30 yet: the talent order from there on is a projection."
+        "es": "Tope de nivel 60 (51 puntos de talento) desde el lanzamiento del 4-nov. La beta llegaba al 30: lo de más arriba sale de los datos del cliente y de las guías (Icy Veins, WoWSims), y se va confirmando con lo que ven los jugadores.",
+        "en": "Level cap 60 (51 talent points) since the Nov 4 launch. The beta went up to 30: what is above comes from client data and guides (Icy Veins, WoWSims), and gets confirmed as players see it."
       },
       "confidence": "official"
     },
     {
       "fact": {
-        "es": "Progresión de armadura: Cuero hasta nivel 40, luego Malla.",
-        "en": "Armor progression: Leather until level 40, then Mail."
+        "es": "Progresión de armadura: Cuero hasta nivel 40, luego Malla (como en Classic; el entrenador la enseña al 40).",
+        "en": "Armor progression: Leather until level 40, then Mail (as in Classic; the trainer teaches it at 40)."
       },
       "confidence": "client-data"
     },
@@ -44,8 +44,8 @@
     },
     {
       "fact": {
-        "es": "Dual wield: ningún hechizo, talento ni entrenador lo enseña en el cliente de Forever, y nadie reportó haberlo probado. No está descartado, solo sin confirmar.",
-        "en": "Dual wield: no spell, talent or trainer in the Forever client teaches it, and nobody has reported trying it. Not ruled out, just unconfirmed."
+        "es": "Dual wield: ningún hechizo, talento ni entrenador lo enseña en el cliente de Forever, y Blizzard pensó Enhancement para un arma a dos manos.",
+        "en": "Dual wield: no spell, talent or trainer teaches it in the Forever client, and Blizzard designed Enhancement around a two-handed weapon."
       },
       "confidence": "client-data"
     },
@@ -58,17 +58,17 @@
     },
     {
       "fact": {
-        "es": "Dual spec se desbloquea al nivel 40 (en la beta no se llegaba). El respec se hace en el entrenador de clase de una ciudad grande, e incluye los talentos de Legacy.",
-        "en": "Dual spec unlocks at level 40 (out of reach in the beta, which stopped at 30). Respec happens at the class trainer in a major city, and includes Legacy talents."
+        "es": "Dual spec se desbloquea al nivel 40. El respec se hace en el entrenador de clase de una ciudad grande, e incluye los talentos de Legacy.",
+        "en": "Dual spec unlocks at level 40. Respecs happen at a major city's class trainer, and include the Legacy talents."
       },
       "confidence": "official"
     },
     {
       "fact": {
-        "es": "Costo de entrenador hasta nivel 60 ronda los 194g (precio heredado de Classic).",
-        "en": "Trainer costs up to level 60 are around 194g (price carried over from Classic)."
+        "es": "Entrenar todo del 1 al 60 cuesta unos 206 de oro (notas del 2-nov), y los hechizos nuevos ya no se ponen solos en tus barras.",
+        "en": "Training everything from 1 to 60 costs about 206 gold (notes of Nov 2), and new spells no longer go on your bars by themselves."
       },
-      "confidence": "classic-assumed"
+      "confidence": "official"
     }
   ],
   "races": {
@@ -185,12 +185,56 @@
     },
     {
       "date": {
+        "es": "2–3 nov 2026",
+        "en": "Nov 2–3, 2026"
+      },
+      "event": {
+        "es": "Notas de Blizzard para Shaman, en el juego por hotfix el 3-nov: sale Lava Burst y vuelve Call of Thunder, Elemental Mastery pasa a Lightning Mastery, Stormstrike 150% cada 6 s, Maelstrom Weapon el doble de seguido, Flurry 30%, Mental Dexterity 150%, Riptide solo cura en el tiempo, Totemic Projection pasa a Totemic Call, Improved Ghost Wolf a la fila 4; Lightning Bolt, Chain Lightning y los shocks pegan más.",
+        "en": "Blizzard's Shaman notes, in game by hotfix on Nov 3: Lava Burst out and Call of Thunder back, Elemental Mastery becomes Lightning Mastery, Stormstrike 150% every 6 sec, Maelstrom Weapon twice as often, Flurry 30%, Mental Dexterity 150%, Riptide heals over time only, Totemic Projection becomes Totemic Call, Improved Ghost Wolf to row 4; Lightning Bolt, Chain Lightning and the shocks hit harder."
+      },
+      "confidence": "official"
+    },
+    {
+      "date": {
         "es": "4 nov 2026",
         "en": "Nov 4, 2026"
       },
       "event": {
         "es": "Lanzamiento global de WoW: Forever, 15:00 PST (23:00 UTC).",
         "en": "Global launch of WoW: Forever, 3:00 p.m. PST (23:00 UTC)."
+      },
+      "confidence": "official"
+    },
+    {
+      "date": {
+        "es": "6 nov 2026",
+        "en": "Nov 6, 2026"
+      },
+      "event": {
+        "es": "Hotfix: en Teldrassil los bichos dejan de ser inmunes a Naturaleza, los drops de misión de Riverglades se comparten en grupo, la Tanning Rack pide Leatherworking 125. Blizzard anuncia cambios a Enhancement para el 10-nov: la Fuerza va a ser su mejor stat.",
+        "en": "Hotfix: Teldrassil mobs are no longer immune to Nature, Riverglades quest drops are shared in a group, the Tanning Rack needs Leatherworking 125. Blizzard announces Enhancement changes for Nov 10: Strength will be its best stat."
+      },
+      "confidence": "official"
+    },
+    {
+      "date": {
+        "es": "8–9 nov 2026",
+        "en": "Nov 8–9, 2026"
+      },
+      "event": {
+        "es": "Matar bichos en dungeons da 50% más de XP. Hotfix del 9: Lightning Overload hace el daño correcto con Lightning Bolt; Zarla Ober (Alcaz Prison) y Vitrix, Snowtalon y Cinder (Shaper's Terrace) ya tiran loot; The Drowned City pega 30% menos.",
+        "en": "Killing dungeon mobs gives 50% more XP. Nov 9 hotfix: Lightning Overload deals the right damage with Lightning Bolt; Zarla Ober (Alcaz Prison) and Vitrix, Snowtalon and Cinder (Shaper's Terrace) now drop loot; The Drowned City hits 30% less."
+      },
+      "confidence": "official"
+    },
+    {
+      "date": {
+        "es": "10 nov 2026",
+        "en": "Nov 10, 2026"
+      },
+      "event": {
+        "es": "Cambios de clase anunciados: Enhancement (la Fuerza pasa a ser su mejor stat), mascotas de Cazador y Voidwalker, Affliction.",
+        "en": "Announced class changes: Enhancement (Strength becomes its best stat), Hunter pets and Voidwalkers, Affliction."
       },
       "confidence": "official"
     },
@@ -238,8 +282,8 @@
       },
       {
         "fact": {
-          "es": "Totemic Recall (20) levanta tus totems y te devuelve 25% del maná de cada uno. Totemic Projection (22) los mueve hasta 30 m.",
-          "en": "Totemic Recall (20) picks your totems back up and returns 25% of each one's mana. Totemic Projection (22) moves them up to 30 yards."
+          "es": "Totemic Recall (20) levanta tus totems y te devuelve 25% del maná de cada uno. Totemic Call (22) los trae a donde estás vos, cada 30 s.",
+          "en": "Totemic Recall (20) picks your totems back up and returns 25% of each one's mana. Totemic Call (22) brings them to where you are, every 30 sec."
         },
         "confidence": "client-data"
       },
@@ -412,92 +456,5 @@
       }
     ],
     "source": "https://talentsforever.com/shaman/changes"
-  },
-  "launchNotes": {
-    "source": "https://us.forums.blizzard.com/en/wow/t/2360696",
-    "all": [
-      {
-        "es": "Lightning Bolt pega más en todos los rangos, sobre todo en los altos: el último, un 80% más.",
-        "en": "Lightning Bolt hits harder on every rank, most on the high ones: the top rank, 80% more."
-      },
-      {
-        "es": "Chain Lightning tarda 2,5 s y pega un 145% de un Lightning Bolt del mismo rango, por un 225% de su maná.",
-        "en": "Chain Lightning takes 2.5 sec and hits for 145% of a same-rank Lightning Bolt, for 225% of its mana."
-      },
-      {
-        "es": "Los shocks vuelven al daño del Classic original, más alto que en la beta.",
-        "en": "Shocks go back to Classic Era damage, higher than in the beta."
-      },
-      {
-        "es": "Totemic Projection pasa a llamarse Totemic Call: ya no tira tus totems donde apuntás, los trae a donde estás vos, cada 30 s.",
-        "en": "Totemic Projection is now Totemic Call: it no longer throws your totems where you aim, it brings them to where you stand, every 30 sec."
-      },
-      {
-        "es": "Improved Ghost Wolf (el lobo instantáneo) baja de la fila 2 a la 4 de Enhancement: Enhancement lo tiene cerca del 25, y Elemental y Restoration en la práctica lo pierden.",
-        "en": "Improved Ghost Wolf (the instant wolf) moves from row 2 to row 4 of Enhancement: Enhancement gets it around level 25, and Elemental and Restoration in practice lose it."
-      },
-      {
-        "es": "Windfury Weapon y Windfury Totem: ahora se ve el golpe extra (una animación más). El daño y la chance no cambian.",
-        "en": "Windfury Weapon and Windfury Totem: the extra hit now shows (one more swing animation). Damage and chance don't change."
-      },
-      {
-        "es": "Entrenar todo del 1 al 60 cuesta unos 206 de oro, y los hechizos nuevos ya no se ponen solos en tus barras.",
-        "en": "Training everything from 1 to 60 costs about 206 gold, and new spells no longer go onto your bars by themselves."
-      }
-    ],
-    "Elemental": [
-      {
-        "es": "Lava Burst sale del juego. En su lugar entra Call of Thunder: +5% de crítico a Lightning Bolt y Chain Lightning.",
-        "en": "Lava Burst is removed. Call of Thunder takes its place: +5% critical strike chance to Lightning Bolt and Chain Lightning."
-      },
-      {
-        "es": "Elemental Mastery pasa a llamarse Lightning Mastery.",
-        "en": "Elemental Mastery is renamed Lightning Mastery."
-      },
-      {
-        "es": "Lightning Overload: 10/20/30% de chance de repetir el hechizo (era 3/7/10%).",
-        "en": "Lightning Overload: 10/20/30% chance to repeat the spell (was 3/7/10%)."
-      },
-      {
-        "es": "Elemental Reach ya no baja el tiempo de reutilización de Totemic Projection.",
-        "en": "Elemental Reach no longer lowers Totemic Projection's cooldown."
-      },
-      {
-        "es": "Queda una spec de rayos: Lightning Bolt de rango alto y Chain Lightning cuando conviene; el fuego, para Flame Shock y los totems.",
-        "en": "It becomes a lightning spec: high-rank Lightning Bolt and Chain Lightning when it pays; Fire is left to Flame Shock and the totems."
-      }
-    ],
-    "Enhancement": [
-      {
-        "es": "Stormstrike: 150% del daño del arma (normalizado) cada 6 s (era 100% cada 8 s).",
-        "en": "Stormstrike: 150% normalized weapon damage every 6 sec (was 100% every 8 sec)."
-      },
-      {
-        "es": "Maelstrom Weapon salta el doble de seguido: con un arma lenta de dos manos, casi en cada golpe.",
-        "en": "Maelstrom Weapon procs twice as often: with a slow two-hander, almost every hit."
-      },
-      {
-        "es": "Flurry: hasta 30% de velocidad de ataque (era 25%).",
-        "en": "Flurry: up to 30% attack speed (was 25%)."
-      },
-      {
-        "es": "Mental Dexterity: hasta 150% del Intelecto como poder de ataque (era 100%). El Intelecto vale más, y Equipo ya lo cuenta.",
-        "en": "Mental Dexterity: up to 150% of Intellect as attack power (was 100%). Intellect is worth more, and Equipo already counts it."
-      },
-      {
-        "es": "En las simulaciones de la comunidad, Enhancement es la spec que más sube: un 32%.",
-        "en": "In the community's sims, Enhancement goes up the most of any spec: 32%."
-      }
-    ],
-    "Restoration": [
-      {
-        "es": "Riptide ya no cura de entrada: solo cura con el tiempo, cada 12 s (era 6 s) y por un 40% menos de maná. Deja de ser la cura de emergencia: ponelo antes del golpe, en quien lo va a recibir.",
-        "en": "Riptide no longer heals up front: only over time, every 12 sec (was 6 sec), for 40% less mana. It stops being the emergency heal: put it on whoever is about to take the hit."
-      },
-      {
-        "es": "Sin lobo instantáneo: Improved Ghost Wolf queda en la fila 4 de Enhancement.",
-        "en": "No instant wolf: Improved Ghost Wolf is now on row 4 of Enhancement."
-      }
-    ]
   }
 }

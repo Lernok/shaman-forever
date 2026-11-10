@@ -51,8 +51,12 @@
     // piece trades away the armor a melee needs, and WoWSims hasn't measured
     // it yet: 1.7 AP (0.85; at 0.95 cloth robes start winning).
     // Spell damage: 1.3 AP at 60 with raid buffs, a bit less leveling (0.6).
+    // Blizzard, Nov 6 (forum t/2404092): Enhancement is changed on Nov 10 so
+    // Strength is always its best stat, and leveling Enhancement should pick
+    // Strength and attack power gear from now on: Intellect 0.85 -> 0.7 and
+    // spell damage 0.6 -> 0.45 until the new numbers are out.
     Enhancement: { strength: 1.1, agility: 0.66, attackPower: 1, crit: 1.2, critRating: 1.2, hit: 1.5, hitRating: 1.5, hasteRating: 1.4, expertiseRating: 1.2,
-      intellect: 0.85, stamina: 0.25, spellPower: 0.45, spellDamage: 0.6, natureDamage: 0.4, fireDamage: 0.25 },
+      intellect: 0.7, stamina: 0.25, spellPower: 0.35, spellDamage: 0.45, natureDamage: 0.3, fireDamage: 0.2 },
     // Elemental, in spell power: WoWSims had Nature damage at 0.69 and Fire
     // at 0.31 with Lava Burst; Blizzard's notes of Nov 2 take Lava Burst out
     // and leave Fire to Flame Shock and the totems (Nature 0.85, Fire 0.15

@@ -5,8 +5,8 @@
     "en": "Healer"
   },
   "summary": {
-    "es": "Sostenés al grupo con Chain Heal, Riptide y totems, y sos el spec de Shaman al que menos tocó el recorte de Forever. Las curas casi no bajaron frente a Classic (Healing Wave −7%), mientras el daño de los hechizos cayó fuerte. Riptide (fila 7, nivel 40) es cura directa más HoT y deja tu próximo Chain Heal sobre ese objetivo 25% más fuerte, y Mana Tide Totem ahora está en la fila 4.",
-    "en": "You keep the group alive with Chain Heal, Riptide and totems, and you're the Shaman spec Forever's cuts touched least. Heals barely dropped compared to Classic (Healing Wave −7%), while spell damage fell hard. Riptide (row 7, level 40) is a direct heal plus HoT and makes your next Chain Heal on that target 25% stronger, and Mana Tide Totem now sits on row 4."
+    "es": "Sostenés al grupo con Chain Heal, Riptide y totems, y sos el spec de Shaman al que menos tocó el recorte de Forever. Las curas casi no bajaron frente a Classic (Healing Wave −7%), mientras el daño de los hechizos cayó fuerte. Riptide (fila 7, nivel 40) es una cura en el tiempo (15 s, sin cura de entrada, 12 s de CD) que deja tu próximo Chain Heal sobre ese objetivo 25% más fuerte, y Mana Tide Totem está en la fila 4.",
+    "en": "You keep the group up with Chain Heal, Riptide and totems, and you're the Shaman spec Forever's cut touched least. Heals barely dropped compared to Classic (Healing Wave −7%), while spell damage fell hard. Riptide (row 7, level 40) is a heal over time (15 sec, no upfront heal, 12 sec cooldown) that makes your next Chain Heal on that target 25% stronger, and Mana Tide Totem sits on row 4."
   },
   "mechanicalChanges": [
     {
@@ -15,11 +15,11 @@
         "en": "Riptide is the new bottom of the tree"
       },
       "detail": {
-        "es": "Instantáneo, 6 s de CD: cura, agrega un HoT de 15 s y sube 25% los Chain Heal que lances directo sobre ese objetivo. Según las notas de Blizzard puede ser crítico. Fila 7 (nivel 40), rangos 2 y 3 a los 50 y 60.",
-        "en": "Instant, 6 sec cooldown: heals, adds a 15 sec HoT and raises the Chain Heals you cast directly on that target by 25%. Per Blizzard's notes it can crit. Row 7 (level 40), ranks 2 and 3 at 50 and 60."
+        "es": "Desde las notas del 2-nov (en el juego desde el 3-nov) Riptide ya no cura de entrada: cura 445 (rango 1) a lo largo de 15 s, con 12 s de CD (era 6 s) y un 40% menos de maná, y tu próximo Chain Heal directo sobre ese objetivo cura 25% más. Deja de ser la cura de emergencia: ponelo antes del golpe, en quien lo va a recibir. Rangos 2 y 3 a los 50 y 60.",
+        "en": "Since the notes of Nov 2 (in game since Nov 3) Riptide no longer heals upfront: it heals 445 (rank 1) over 15 sec, on a 12 sec cooldown (was 6 sec) and for 40% less mana, and your next Chain Heal directly on that target heals 25% more. It is no longer the emergency heal: put it on before the hit, on whoever is about to take it. Ranks 2 and 3 at 50 and 60."
       },
-      "confidence": "client-data",
-      "source": "https://talentsforever.com/shaman/changes"
+      "confidence": "official",
+      "source": "https://us.forums.blizzard.com/en/wow/t/2360696/9"
     },
     {
       "change": {
@@ -111,8 +111,8 @@
         "en": "From 25, Mana Tide where the group can stay in range. At 30, save Nature's Swiftness for an urgent heal or for healing on the move."
       },
       {
-        "es": "Al 40, Riptide al tanque y después Chain Heal directo sobre él.",
-        "en": "At 40, Riptide the tank and then Chain Heal directly on them."
+        "es": "Al 40, Riptide al tanque antes del pull y cada 12 s; Chain Heal directo sobre él (25% más). Para emergencias, Nature's Swiftness + Healing Wave: Riptide ya no cura de golpe.",
+        "en": "At 40, Riptide on the tank before the pull and every 12 sec; Chain Heal directly on them (25% more). For emergencies, Nature's Swiftness + Healing Wave: Riptide no longer heals at once."
       }
     ],
     "confidence": "classic-assumed",
@@ -136,8 +136,8 @@
   ],
   "keyTalents": [
     {
-      "es": "Riptide (fila 7) — cura + HoT, y Chain Heal 25% más fuerte sobre ese objetivo",
-      "en": "Riptide (row 7) — heal + HoT, and a 25% stronger Chain Heal on that target"
+      "es": "Riptide (fila 7) — cura en el tiempo de 15 s, y Chain Heal 25% más fuerte sobre ese objetivo",
+      "en": "Riptide (row 7) — 15 sec heal over time, and Chain Heal 25% stronger on that target"
     },
     {
       "es": "Nature's Swiftness — tu próximo hechizo de Naturaleza de menos de 10 s sale instantáneo",
@@ -163,15 +163,16 @@
     }
   },
   "sources": [
-    "https://www.wowhead.com/forever/guide/classes/shaman/restoration/level-30-healer-overview",
+    "https://www.icy-veins.com/wow-forever/restoration-shaman-leveling",
+    "https://us.forums.blizzard.com/en/wow/t/2360696/9",
     "https://www.icy-veins.com/wow-forever/restoration-shaman-healer-pve-guide",
     "https://classicwowforever.com/class-guides/shaman/restoration/",
     "https://talentsforever.com (CC BY 4.0) — data/shaman.json",
     "https://talentsforever.com/shaman/changes"
   ],
   "caveat": {
-    "es": "WoW: Forever, datos del cliente de lanzamiento (oct 2026). WoWSims todavía no tiene pesos para Restauración en Forever: el orden de stats es el habitual de Classic, el mismo con el que Equipo › Tu camino elige tus piezas. La rotación viene de classicwowforever.com, que la etiqueta 'asumida de Classic': nada en el cliente la contradice, pero no está confirmada. Tomala como punto de partida.",
-    "en": "WoW: Forever, launch client data (Oct 2026). WoWSims has no Restoration weights for Forever yet: the stat order is Classic's usual one, the same Equipo › Your path picks your pieces with. The rotation comes from classicwowforever.com, which labels it 'assumed from Classic': nothing in the client contradicts it, but it isn't confirmed. Treat it as a starting point."
+    "es": "WoW: Forever en vivo (lanzamiento 4-nov-2026, tope 60), con las notas del 2-nov y los hotfixes hasta el 9-nov. Todo lo de esta guía lleva su nivel de confianza.",
+    "en": "WoW: Forever live (launched Nov 4, 2026, level cap 60), with the notes of Nov 2 and the hotfixes up to Nov 9. Everything in this guide carries its confidence level."
   },
   "gearTargets": [
     {
