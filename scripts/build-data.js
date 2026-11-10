@@ -236,7 +236,7 @@ if (fs.existsSync(path.join(root, 'data/gear.json'))) {
   const GP = globalThis.GearPlan;
   const SPECS = Object.keys(GP.WEIGHTS);
   const SRC = ['type', 'quest', 'zone', 'dungeon', 'dungeonZone', 'faction', 'races', 'rec', 'profession', 'yellow', 'npc'];
-  const plannable = s => ['quest', 'crafted', 'vendor', 'boss', 'drop'].includes(s.type) && !s.raid && !s.pvp;
+  const plannable = s => ['quest', 'crafted', 'vendor', 'boss', 'drop'].includes(s.type) && !s.raid && !s.pvp && !s.needsDrop;
   const pick = (o, keys) => { const out = {}; keys.forEach(k => { if (o[k] != null) out[k] = o[k]; }); return out; };
   const source = s => {
     const out = pick(s, SRC);

@@ -221199,7 +221199,8 @@
       "steps": 1
      },
      "asap": 58,
-     "rec": 58
+     "rec": 58,
+     "needsDrop": true
     }
    ]
   },
@@ -221257,7 +221258,8 @@
       "steps": 8
      },
      "asap": 58,
-     "rec": 58
+     "rec": 58,
+     "needsDrop": true
     }
    ]
   },
@@ -229962,7 +229964,8 @@
       "steps": 8
      },
      "asap": 58,
-     "rec": 58
+     "rec": 58,
+     "needsDrop": true
     }
    ]
   },
@@ -247485,7 +247488,9 @@
       "steps": 5
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     },
     {
      "type": "quest",
@@ -247509,7 +247514,9 @@
       "steps": 6
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     },
     {
      "type": "quest",
@@ -247533,7 +247540,9 @@
       "steps": 6
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -247585,7 +247594,9 @@
       "steps": 5
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     },
     {
      "type": "quest",
@@ -247609,7 +247620,9 @@
       "steps": 6
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     },
     {
      "type": "quest",
@@ -247633,7 +247646,9 @@
       "steps": 6
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -247686,7 +247701,9 @@
       "steps": 5
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     },
     {
      "type": "quest",
@@ -247710,7 +247727,9 @@
       "steps": 6
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     },
     {
      "type": "quest",
@@ -247734,7 +247753,9 @@
       "steps": 6
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -253473,7 +253494,9 @@
       "steps": 4
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -253525,7 +253548,9 @@
       "steps": 4
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -253578,7 +253603,9 @@
       "steps": 4
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -260549,7 +260576,9 @@
       "steps": 3
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -260601,7 +260630,9 @@
       "steps": 3
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -260654,7 +260685,9 @@
       "steps": 3
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -268343,7 +268376,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -268395,7 +268430,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -268448,7 +268485,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -276461,7 +276500,9 @@
       "group": false
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -276508,7 +276549,9 @@
       "group": false
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
@@ -276556,7 +276599,9 @@
       "group": false
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "dungeonZone": "Ahn'Qiraj"
     }
    ]
   },
