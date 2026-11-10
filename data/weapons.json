@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70862",
+ "build": "1.60.1.70888",
  "weapons": [
   {
    "id": 260214,
@@ -24888,7 +24888,7 @@
     "Chance on hit: Punctures target's armor, lowering it by 100."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_pick_01",
    "raceMask": -1,
    "sources": [
@@ -25001,7 +25001,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Bossman Toof",
+     "npcId": 264773,
+     "zone": "Krol'dok Stronghold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 40,
@@ -28807,15 +28810,15 @@
    "dmgMin": 46,
    "dmgMax": 86,
    "stats": {
-    "stamina": 7,
-    "intellect": 7,
+    "stamina": 6,
+    "intellect": 6,
     "spirit": 5
    },
    "bonus": {},
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_hammer_17",
    "raceMask": -1,
    "sources": [
@@ -30546,12 +30549,11 @@
     "spellPower": 62
    },
    "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 62.",
     "Equip: Chance on landing a damaging spell to deal 112 Shadow damage and restore 104 mana to you. (100ms cooldown)"
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_sword_09",
    "raceMask": -1,
    "sources": [
@@ -31888,7 +31890,7 @@
     "Chance on hit: Blasts a target for 90 to 126 Nature damage."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_axe_07",
    "raceMask": -1,
    "sources": [
@@ -32792,12 +32794,10 @@
    "bonus": {
     "spellPower": 13
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 13."
-   ],
+   "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_axe_69",
    "raceMask": -1,
    "sources": [
@@ -32904,6 +32904,57 @@
      "rec": 54,
      "basis": {
       "name": "Hydrospawn",
+      "level": 57,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 18311,
+   "name": "Quel'dorai Channeling Rod",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 53,
+   "obtain": 54,
+   "ilvl": 58,
+   "bind": "pickup",
+   "dps": 49.6,
+   "speed": 2.8,
+   "dmgMin": 111,
+   "dmgMax": 167,
+   "stats": {
+    "stamina": 8,
+    "intellect": 18,
+    "spirit": 8
+   },
+   "bonus": {
+    "mp5": 8
+   },
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_staff_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Lethtendris",
+     "npcId": 14327,
+     "level": 57,
+     "rank": "elite",
+     "zone": "Dire Maul",
+     "zoneId": 2557,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 53,
+     "rec": 54,
+     "basis": {
+      "name": "Lethtendris",
       "level": 57,
       "rank": "elite",
       "from": "wowhead",
@@ -33218,60 +33269,6 @@
      "rec": 54,
      "basis": {
       "name": "The Unforgiven",
-      "level": 57,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
-   "id": 18311,
-   "name": "Quel'dorai Channeling Rod",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 53,
-   "obtain": 54,
-   "ilvl": 58,
-   "bind": "pickup",
-   "dps": 36.79,
-   "speed": 2.8,
-   "dmgMin": 82,
-   "dmgMax": 124,
-   "stats": {
-    "stamina": 8,
-    "intellect": 18,
-    "spirit": 8
-   },
-   "bonus": {
-    "healing": 124,
-    "spellDamage": 41
-   },
-   "equip": [
-    "Equip: Increases healing done by up to 124 and damage done by up to 41 for all magical spells and effects."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_staff_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Lethtendris",
-     "npcId": 14327,
-     "level": 57,
-     "rank": "elite",
-     "zone": "Dire Maul",
-     "zoneId": 2557,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 53,
-     "rec": 54,
-     "basis": {
-      "name": "Lethtendris",
       "level": 57,
       "rank": "elite",
       "from": "wowhead",
@@ -34235,6 +34232,40 @@
    ]
   },
   {
+   "id": 276404,
+   "name": "Masterwork Crimson Hammer",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "pickup",
+   "dps": 39.4,
+   "speed": 2.4,
+   "dmgMin": 66,
+   "dmgMax": 123,
+   "stats": {
+    "stamina": 10,
+    "spirit": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
    "id": 287034,
    "name": "Grove Subjugator's Blade",
    "kind": "Dagger",
@@ -34289,7 +34320,7 @@
     "Chance on hit: Smites a target for 105 Holy damage. Deals 2 times as much damage to Undead."
    ],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_hammer_23",
    "raceMask": -1,
    "sources": [
@@ -34477,45 +34508,6 @@
       "steps": 7
      },
      "asap": 53,
-     "rec": 55
-    }
-   ]
-  },
-  {
-   "id": 276404,
-   "name": "Masterwork Crimson Hammer",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 55,
-   "obtain": 55,
-   "ilvl": 60,
-   "bind": "pickup",
-   "dps": 26.25,
-   "speed": 2.4,
-   "dmgMin": 44,
-   "dmgMax": 82,
-   "stats": {
-    "stamina": 10,
-    "spirit": 10
-   },
-   "bonus": {
-    "healing": 127,
-    "spellDamage": 42
-   },
-   "equip": [
-    "Equip: Increases healing done by up to 127 and damage done by up to 42 for all magical spells and effects."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_hammer_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 55,
      "rec": 55
     }
    ]
@@ -34874,7 +34866,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_hammer_13",
    "raceMask": -1,
    "sources": [
@@ -35545,7 +35537,7 @@
     "Chance on hit: Diseases target enemy for 42 Nature damage every 3 sec for 12 sec."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_weapon_halberd_09",
    "raceMask": -1,
    "sources": [
@@ -35709,10 +35701,10 @@
    "bonus": {},
    "equip": [],
    "chance": [
-    "Chance on hit: Knocks target silly for 2 sec and increases Strength by 50 for 30 sec."
+    "Chance on hit: Knocks target silly for 2 sec and increases Strength by 53 for 20 sec."
    ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_mace_01",
    "raceMask": -1,
    "sources": [
@@ -36373,6 +36365,54 @@
    ]
   },
   {
+   "id": 18347,
+   "name": "Well Balanced Axe",
+   "kind": "1H Axe",
+   "quality": 3,
+   "req": 56,
+   "obtain": 57,
+   "ilvl": 61,
+   "bind": "pickup",
+   "dps": 40,
+   "speed": 1.9,
+   "dmgMin": 53,
+   "dmgMax": 99,
+   "stats": {
+    "agility": 11,
+    "stamina": 9
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_axe_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Illyanna Ravenoak",
+     "npcId": 11488,
+     "level": 60,
+     "rank": "elite",
+     "zone": "Dire Maul",
+     "zoneId": 2557,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 56,
+     "rec": 57,
+     "basis": {
+      "name": "Illyanna Ravenoak",
+      "level": 60,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 22315,
    "name": "Hammer of Revitalization",
    "kind": "1H Mace",
@@ -36606,53 +36646,6 @@
      "confidence": "classic-assumed",
      "asap": 57,
      "rec": 57
-    }
-   ]
-  },
-  {
-   "id": 18347,
-   "name": "Well Balanced Axe",
-   "kind": "1H Axe",
-   "quality": 2,
-   "req": 56,
-   "obtain": 57,
-   "ilvl": 61,
-   "bind": "pickup",
-   "dps": 36.32,
-   "speed": 1.9,
-   "dmgMin": 48,
-   "dmgMax": 90,
-   "stats": {
-    "agility": 11
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_axe_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Illyanna Ravenoak",
-     "npcId": 11488,
-     "level": 60,
-     "rank": "elite",
-     "zone": "Dire Maul",
-     "zoneId": 2557,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 56,
-     "rec": 57,
-     "basis": {
-      "name": "Illyanna Ravenoak",
-      "level": 60,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },
@@ -36947,6 +36940,43 @@
      "type": "unknown",
      "faction": "both",
      "confidence": "community-untested",
+     "asap": 58,
+     "rec": 58
+    }
+   ]
+  },
+  {
+   "id": 18534,
+   "name": "Rod of the Ogre Magi",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 58,
+   "obtain": 58,
+   "ilvl": 63,
+   "bind": "pickup",
+   "dps": 53.9,
+   "speed": 2.7,
+   "dmgMin": 116,
+   "dmgMax": 175,
+   "stats": {
+    "stamina": 14,
+    "intellect": 20,
+    "spirit": 11
+   },
+   "bonus": {
+    "critRating": 14
+   },
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_staff_32",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
      "asap": 58,
      "rec": 58
     }
@@ -37373,7 +37403,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_staff_08",
    "raceMask": -1,
    "sources": [
@@ -38260,6 +38290,45 @@
    ]
   },
   {
+   "id": 280029,
+   "name": "Cinderedge Crescent",
+   "kind": "1H Axe",
+   "quality": 3,
+   "req": 58,
+   "obtain": 58,
+   "ilvl": 63,
+   "bind": "pickup",
+   "dps": 41.25,
+   "speed": 2.4,
+   "dmgMin": 69,
+   "dmgMax": 129,
+   "stats": {
+    "stamina": 10
+   },
+   "bonus": {
+    "attackPower": 14,
+    "crit": 0.5
+   },
+   "equip": [
+    "Equip: Improves your chance to get a critical strike by 0.5%.",
+    "Equip: +14 Attack Power."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_axe_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 58,
+     "rec": 58
+    }
+   ]
+  },
+  {
    "id": 18392,
    "name": "Distracting Dagger",
    "kind": "Dagger",
@@ -38275,14 +38344,16 @@
    "stats": {
     "agility": 3
    },
-   "bonus": {},
+   "bonus": {
+    "expertiseRating": 5
+   },
    "equip": [
     "Equip: Reduces chance to be Dodged or Parried by 0.5%.",
     "Equip: Increased Daggers +1."
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_weapon_shortblade_05",
    "raceMask": -1,
    "sources": [
@@ -38301,6 +38372,55 @@
      "rec": 58,
      "basis": {
       "name": "Prince Tortheldrin",
+      "level": 61,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 18372,
+   "name": "Blade of the New Moon",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 57,
+   "obtain": 58,
+   "ilvl": 62,
+   "bind": "pickup",
+   "dps": 40.7,
+   "speed": 1.4,
+   "dmgMin": 40,
+   "dmgMax": 74,
+   "stats": {
+    "stamina": 15
+   },
+   "bonus": {
+    "otherDamage": 88
+   },
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Immol'thar",
+     "npcId": 11496,
+     "level": 61,
+     "rank": "elite",
+     "zone": "Dire Maul",
+     "zoneId": 2557,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 57,
+     "rec": 58,
+     "basis": {
+      "name": "Immol'thar",
       "level": 61,
       "rank": "elite",
       "from": "wowhead",
@@ -38380,7 +38500,7 @@
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_axe_11",
    "raceMask": -1,
    "sources": [
@@ -38404,47 +38524,6 @@
       "from": "wowhead",
       "group": true
      }
-    }
-   ]
-  },
-  {
-   "id": 18534,
-   "name": "Rod of the Ogre Magi",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 58,
-   "obtain": 58,
-   "ilvl": 63,
-   "bind": "pickup",
-   "dps": 40,
-   "speed": 2.7,
-   "dmgMin": 86,
-   "dmgMax": 130,
-   "stats": {
-    "stamina": 14,
-    "intellect": 20,
-    "spirit": 11
-   },
-   "bonus": {
-    "spellPower": 72,
-    "crit": 1
-   },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1.0%.",
-    "Equip: Increases damage and healing done by magical spells and effects by up to 72."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_staff_32",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 58
     }
    ]
   },
@@ -38794,51 +38873,49 @@
    ]
   },
   {
-   "id": 18372,
-   "name": "Blade of the New Moon",
-   "kind": "Dagger",
+   "id": 18717,
+   "name": "Hammer of the Grand Crusader",
+   "kind": "2H Mace",
    "quality": 3,
-   "req": 57,
-   "obtain": 58,
-   "ilvl": 62,
+   "req": 58,
+   "obtain": 59,
+   "ilvl": 63,
    "bind": "pickup",
-   "dps": 27.14,
-   "speed": 1.4,
-   "dmgMin": 26,
-   "dmgMax": 50,
+   "dps": 53.9,
+   "speed": 2.7,
+   "dmgMin": 116,
+   "dmgMax": 175,
    "stats": {
-    "stamina": 15
+    "stamina": 10,
+    "intellect": 26,
+    "spirit": 17
    },
-   "bonus": {
-    "otherDamage": 88
-   },
-   "equip": [
-    "Equip: Increases damage done by Shadow spells and effects by up to 88."
-   ],
+   "bonus": {},
+   "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_weapon_shortblade_18",
+   "numbers": "client",
+   "icon": "inv_hammer_06",
    "raceMask": -1,
    "sources": [
     {
      "type": "boss",
-     "npc": "Immol'thar",
-     "npcId": 11496,
-     "level": 61,
+     "npc": "Balnazzar",
+     "npcId": 10813,
+     "level": 62,
      "rank": "elite",
-     "zone": "Dire Maul",
-     "zoneId": 2557,
+     "zone": "Stratholme",
+     "zoneId": 0,
      "raid": false,
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 57,
-     "rec": 58,
+     "asap": 58,
+     "rec": 59,
      "basis": {
-      "name": "Immol'thar",
-      "level": 61,
+      "name": "Balnazzar",
+      "level": 62,
       "rank": "elite",
-      "from": "wowhead",
+      "from": "questie",
       "group": true
      }
     }
@@ -39643,60 +39720,6 @@
       "level": 62,
       "rank": "elite",
       "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
-   "id": 18717,
-   "name": "Hammer of the Grand Crusader",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 58,
-   "obtain": 59,
-   "ilvl": 63,
-   "bind": "pickup",
-   "dps": 40,
-   "speed": 2.7,
-   "dmgMin": 86,
-   "dmgMax": 130,
-   "stats": {
-    "stamina": 10,
-    "intellect": 26,
-    "spirit": 17
-   },
-   "bonus": {
-    "healing": 135,
-    "spellDamage": 45
-   },
-   "equip": [
-    "Equip: Increases healing done by up to 135 and damage done by up to 45 for all magical spells and effects."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_hammer_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Balnazzar",
-     "npcId": 10813,
-     "level": 62,
-     "rank": "elite",
-     "zone": "Stratholme",
-     "zoneId": 0,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 59,
-     "basis": {
-      "name": "Balnazzar",
-      "level": 62,
-      "rank": "elite",
-      "from": "questie",
       "group": true
      }
     }

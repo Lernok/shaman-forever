@@ -724,6 +724,19 @@
     }
    ]
   },
+  "267090": {
+   "name": "Semblance of Twilight",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 94975,
+     "quest": "A Token of Vengeance",
+     "minLevel": 38,
+     "faction": "horde",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
   "269716": {
    "name": "Keen Skinning Knife",
    "sources": [
@@ -3480,6 +3493,138 @@
     }
    ]
   },
+  "274995": {
+   "name": "Slavecrusher Scepter",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258966,
+     "npc": "Slavecrusher Grox",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "274996": {
+   "name": "Resistance Breaker Spaulder",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258966,
+     "npc": "Slavecrusher Grox",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "274997": {
+   "name": "Chain of Binding",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258966,
+     "npc": "Slavecrusher Grox",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "274998": {
+   "name": "Shadowlight Athame",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258972,
+     "npc": "Twilight Commander Zarmok",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "274999": {
+   "name": "Shadecaster's Leggings",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258972,
+     "npc": "Twilight Commander Zarmok",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "275000": {
+   "name": "Zarmok's Plated Signet",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258972,
+     "npc": "Twilight Commander Zarmok",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "275002": {
+   "name": "War Handler's Gaze",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 259281,
+     "npc": "Handler Ashka",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "275004": {
+   "name": "Chain of the Corruptor",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258964,
+     "npc": "Nar'gurk",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "275007": {
+   "name": "Mugg's Jabber",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258968,
+     "npc": "Overseer Mugg",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "275008": {
+   "name": "Mugg's Crosser",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258968,
+     "npc": "Overseer Mugg",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "275009": {
+   "name": "Emblem of Slamming",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258968,
+     "npc": "Overseer Mugg",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "275010": {
+   "name": "Strongly Scented Hood",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258968,
+     "npc": "Overseer Mugg",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
   "275011": {
    "name": "Thud Hammer",
    "sources": [
@@ -3606,7 +3751,7 @@
      "quest": "Bring Me His Head [A]",
      "minLevel": 38,
      "faction": "alliance",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3619,7 +3764,7 @@
      "quest": "Bring Me His Head [A]",
      "minLevel": 38,
      "faction": "alliance",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -4166,6 +4311,45 @@
     }
    ]
   },
+  "278017": {
+   "name": "Refunded Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97332,
+     "quest": "Twice Misplaced Trust",
+     "minLevel": 36,
+     "faction": "both",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "278018": {
+   "name": "Renegotiated Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97332,
+     "quest": "Twice Misplaced Trust",
+     "minLevel": 36,
+     "faction": "both",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "278019": {
+   "name": "Apology Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97332,
+     "quest": "Twice Misplaced Trust",
+     "minLevel": 36,
+     "faction": "both",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
   "278567": {
    "name": "Stromgarde Hood",
    "sources": [
@@ -4174,7 +4358,7 @@
      "questId": 92867,
      "quest": "Ground to Keep",
      "minLevel": 32,
-     "faction": "both",
+     "faction": "alliance",
      "zone": "Arathi Highlands"
     }
    ]
@@ -4189,6 +4373,27 @@
      "minLevel": 23,
      "faction": "alliance",
      "zone": "Hillsbrad Foothills"
+    }
+   ]
+  },
+  "279480": {
+   "name": "Bigger Rock on Bigger Stick",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 94982,
+     "quest": "Eye of Mugg [A]",
+     "minLevel": 40,
+     "faction": "alliance",
+     "zone": "Krol'dok Stronghold"
+    },
+    {
+     "type": "quest",
+     "questId": 94968,
+     "quest": "Eye of Mugg [H]",
+     "minLevel": 40,
+     "faction": "horde",
+     "zone": "Krol'dok Stronghold"
     }
    ]
   },
@@ -4374,13 +4579,68 @@
     }
    ]
   },
+  "279850": {
+   "name": "Curio-Adorned Necklace",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 94998,
+     "quest": "Curios of Curiosity",
+     "minLevel": 38,
+     "faction": "alliance",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "279852": {
+   "name": "Rock on Stick",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 94982,
+     "quest": "Eye of Mugg [A]",
+     "minLevel": 40,
+     "faction": "alliance",
+     "zone": "Krol'dok Stronghold"
+    },
+    {
+     "type": "quest",
+     "questId": 94968,
+     "quest": "Eye of Mugg [H]",
+     "minLevel": 40,
+     "faction": "horde",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "279853": {
+   "name": "Stick No Rock",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 94982,
+     "quest": "Eye of Mugg [A]",
+     "minLevel": 40,
+     "faction": "alliance",
+     "zone": "Krol'dok Stronghold"
+    },
+    {
+     "type": "quest",
+     "questId": 94968,
+     "quest": "Eye of Mugg [H]",
+     "minLevel": 40,
+     "faction": "horde",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
   "279854": {
    "name": "Twilight Initiate's Belt",
    "sources": [
     {
      "type": "quest",
      "questId": 94984,
-     "quest": "Tome of Twilight",
+     "quest": "Tome of Twilight [A]",
      "minLevel": 39,
      "faction": "alliance",
      "zone": "Krol'dok Stronghold"
@@ -4393,9 +4653,35 @@
     {
      "type": "quest",
      "questId": 94984,
-     "quest": "Tome of Twilight",
+     "quest": "Tome of Twilight [A]",
      "minLevel": 39,
      "faction": "alliance",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "279859": {
+   "name": "Indoctrinated Choker",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 94972,
+     "quest": "Tome of Twilight [H]",
+     "minLevel": 39,
+     "faction": "horde",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "279860": {
+   "name": "Convert's Bindings",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 94972,
+     "quest": "Tome of Twilight [H]",
+     "minLevel": 39,
+     "faction": "horde",
      "zone": "Krol'dok Stronghold"
     }
    ]
@@ -4618,7 +4904,7 @@
      "type": "quest",
      "questId": 95776,
      "quest": "The Only Good Brinescale...",
-     "minLevel": null,
+     "minLevel": 30,
      "faction": "horde",
      "zone": "The Drowned City"
     }
@@ -4631,7 +4917,7 @@
      "type": "quest",
      "questId": 95776,
      "quest": "The Only Good Brinescale...",
-     "minLevel": null,
+     "minLevel": 30,
      "faction": "horde",
      "zone": "The Drowned City"
     }
@@ -4749,7 +5035,7 @@
      "questId": 92867,
      "quest": "Ground to Keep",
      "minLevel": 32,
-     "faction": "both",
+     "faction": "alliance",
      "zone": "Arathi Highlands"
     }
    ]
@@ -6178,6 +6464,39 @@
      "minLevel": 7,
      "faction": "both",
      "zone": "Zephras Isle"
+    }
+   ]
+  },
+  "286428": {
+   "name": "Band of Bossman",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 264773,
+     "npc": "Bossman Toof",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "286429": {
+   "name": "Big-Belly Belt",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 264773,
+     "npc": "Bossman Toof",
+     "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "286430": {
+   "name": "Toofbreaker",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 264773,
+     "npc": "Bossman Toof",
+     "zone": "Krol'dok Stronghold"
     }
    ]
   },

@@ -3,7 +3,7 @@
  "sources": [
   "https://github.com/Questie/QuestieDB",
   "https://github.com/ATTWoWAddon/AllTheThings (MIT)",
-  "wago.tools AreaTable 1.60.1.70862",
+  "wago.tools AreaTable 1.60.1.70888",
   "https://foreverchanges.pro/dungeon-quests"
  ],
  "zones": {
@@ -15,7 +15,7 @@
     1,
     10
    ],
-   "quests": 66,
+   "quests": 72,
    "from": "questie",
    "start": true
   },
@@ -24,13 +24,13 @@
    "continent": "Eastern Kingdoms",
    "horde": [
     37,
-    43
+    44
    ],
    "alliance": [
     37,
     43
    ],
-   "quests": 32,
+   "quests": 36,
    "from": "questie"
   },
   "Blasted Lands": {
@@ -44,7 +44,7 @@
     50,
     57
    ],
-   "quests": 25,
+   "quests": 30,
    "from": "questie"
   },
   "Swamp of Sorrows": {
@@ -66,10 +66,10 @@
    "continent": "Eastern Kingdoms",
    "horde": null,
    "alliance": [
-    23,
+    24,
     30
    ],
-   "quests": 75,
+   "quests": 93,
    "from": "questie"
   },
   "Wetlands": {
@@ -77,10 +77,10 @@
    "continent": "Eastern Kingdoms",
    "horde": null,
    "alliance": [
-    24,
-    33
+    21,
+    31
    ],
-   "quests": 63,
+   "quests": 65,
    "from": "questie"
   },
   "Elwynn Forest": {
@@ -88,10 +88,10 @@
    "continent": "Eastern Kingdoms",
    "horde": null,
    "alliance": [
-    4,
+    3,
     10
    ],
-   "quests": 75,
+   "quests": 77,
    "from": "questie",
    "start": true
   },
@@ -99,11 +99,11 @@
    "id": 14,
    "continent": "Kalimdor",
    "horde": [
-    5,
+    4,
     12
    ],
    "alliance": null,
-   "quests": 62,
+   "quests": 63,
    "from": "questie",
    "start": true
   },
@@ -116,34 +116,34 @@
    ],
    "alliance": [
     35,
-    38
+    40
    ],
-   "quests": 36,
+   "quests": 41,
    "from": "questie"
   },
   "Azshara": {
    "id": 16,
    "continent": "Kalimdor",
    "horde": [
+    51,
+    58
+   ],
+   "alliance": [
     52,
     60
    ],
-   "alliance": [
-    55,
-    60
-   ],
-   "quests": 32,
+   "quests": 48,
    "from": "questie"
   },
   "The Barrens": {
    "id": 17,
    "continent": "Kalimdor",
    "horde": [
-    14,
-    25
+    10,
+    21
    ],
    "alliance": null,
-   "quests": 116,
+   "quests": 114,
    "from": "questie"
   },
   "Western Plaguelands": {
@@ -157,7 +157,7 @@
     55,
     60
    ],
-   "quests": 64,
+   "quests": 65,
    "from": "questie"
   },
   "Stranglethorn Vale": {
@@ -168,10 +168,10 @@
     46
    ],
    "alliance": [
-    31,
+    32,
     45
    ],
-   "quests": 99,
+   "quests": 105,
    "from": "questie"
   },
   "Alterac Mountains": {
@@ -182,7 +182,7 @@
     33,
     40
    ],
-   "quests": 17,
+   "quests": 20,
    "from": "questie"
   },
   "Loch Modan": {
@@ -235,14 +235,14 @@
    "id": 45,
    "continent": "Eastern Kingdoms",
    "horde": [
-    33,
+    34,
     40
    ],
    "alliance": [
-    35,
+    36,
     40
    ],
-   "quests": 43,
+   "quests": 46,
    "from": "questie"
   },
   "Burning Steppes": {
@@ -270,7 +270,7 @@
     43,
     48
    ],
-   "quests": 32,
+   "quests": 33,
    "from": "questie"
   },
   "Searing Gorge": {
@@ -291,11 +291,11 @@
    "id": 85,
    "continent": "Eastern Kingdoms",
    "horde": [
-    5,
+    4,
     12
    ],
    "alliance": null,
-   "quests": 66,
+   "quests": 70,
    "from": "questie",
    "start": true
   },
@@ -321,7 +321,7 @@
     58,
     60
    ],
-   "quests": 102,
+   "quests": 103,
    "from": "questie"
   },
   "Teldrassil": {
@@ -352,10 +352,10 @@
    "continent": "Kalimdor",
    "horde": [
     3,
-    11
+    12
    ],
    "alliance": null,
-   "quests": 60,
+   "quests": 64,
    "from": "questie",
    "start": true
   },
@@ -364,27 +364,27 @@
    "continent": "Eastern Kingdoms",
    "horde": [
     22,
-    36
+    35
    ],
    "alliance": [
-    32,
+    31,
     37
    ],
-   "quests": 39,
+   "quests": 41,
    "from": "questie"
   },
   "Ashenvale": {
    "id": 331,
    "continent": "Kalimdor",
    "horde": [
-    24,
-    30
+    20,
+    27
    ],
    "alliance": [
     21,
     30
    ],
-   "quests": 48,
+   "quests": 49,
    "from": "questie"
   },
   "Feralas": {
@@ -398,7 +398,7 @@
     43,
     48
    ],
-   "quests": 50,
+   "quests": 51,
    "from": "questie"
   },
   "Felwood": {
@@ -412,7 +412,7 @@
     54,
     55
    ],
-   "quests": 72,
+   "quests": 73,
    "from": "questie"
   },
   "Thousand Needles": {
@@ -426,35 +426,35 @@
     30,
     41
    ],
-   "quests": 62,
+   "quests": 63,
    "from": "questie"
   },
   "Desolace": {
    "id": 405,
    "continent": "Kalimdor",
    "horde": [
-    32,
+    33,
     40
    ],
    "alliance": [
     33,
     40
    ],
-   "quests": 54,
+   "quests": 60,
    "from": "questie"
   },
   "Stonetalon Mountains": {
    "id": 406,
    "continent": "Kalimdor",
    "horde": [
-    18,
+    17,
     26
    ],
    "alliance": [
     21,
     27
    ],
-   "quests": 33,
+   "quests": 35,
    "from": "questie"
   },
   "Tanaris": {
@@ -465,24 +465,24 @@
     60
    ],
    "alliance": [
-    48,
+    47,
     60
    ],
-   "quests": 87,
+   "quests": 89,
    "from": "questie"
   },
   "Un'Goro Crater": {
    "id": 490,
    "continent": "Kalimdor",
    "horde": [
-    51,
-    54
+    52,
+    55
    ],
    "alliance": [
-    51,
-    54
+    52,
+    55
    ],
-   "quests": 48,
+   "quests": 50,
    "from": "questie"
   },
   "Moonglade": {
@@ -530,16 +530,16 @@
   "Riverglades": {
    "id": 16591,
    "continent": "Eastern Kingdoms",
-   "alliance": [
-    38,
-    38
-   ],
    "horde": [
     38,
-    38
+    43
    ],
-   "quests": 174,
-   "from": "att"
+   "alliance": [
+    37,
+    42
+   ],
+   "quests": 88,
+   "from": "questie"
   },
   "Zephras Isle": {
    "id": 16593,
@@ -549,10 +549,10 @@
     13
    ],
    "alliance": [
-    7,
+    6,
     13
    ],
-   "quests": 91,
+   "quests": 98,
    "from": "questie",
    "start": true
   },
@@ -567,7 +567,7 @@
     40,
     43
    ],
-   "quests": 19,
+   "quests": 18,
    "from": "questie"
   }
  },
@@ -699,7 +699,7 @@
   "Razorfen Downs": {
    "levels": [
     35,
-    37
+    41
    ],
    "from": "questie"
   },
@@ -712,7 +712,7 @@
   },
   "Blackrock Spire": {
    "levels": [
-    59,
+    60,
     60
    ],
    "from": "questie"

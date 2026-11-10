@@ -8415,11 +8415,9 @@
    "steps": 7
   },
   "92867": {
-   "classes": [
-    "ROGUE"
-   ],
+   "classes": null,
    "minLevel": 32,
-   "faction": null,
+   "faction": "alliance",
    "instance": null,
    "hardest": {
     "id": 2569,
@@ -8687,24 +8685,32 @@
   },
   "94968": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 40,
+   "faction": "horde",
    "instance": null,
    "hardest": null,
    "steps": 1
   },
   "94972": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 39,
+   "faction": "horde",
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "94975": {
+   "classes": null,
+   "minLevel": 38,
+   "faction": "horde",
    "instance": null,
    "hardest": null,
    "steps": 1
   },
   "94982": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 40,
+   "faction": "alliance",
    "instance": null,
    "hardest": null,
    "steps": 1
@@ -8716,6 +8722,14 @@
    "instance": null,
    "hardest": null,
    "steps": 2
+  },
+  "94998": {
+   "classes": null,
+   "minLevel": 38,
+   "faction": "alliance",
+   "instance": null,
+   "hardest": null,
+   "steps": 3
   },
   "95063": {
    "classes": null,
@@ -8870,7 +8884,7 @@
   },
   "95776": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 30,
    "faction": "horde",
    "instance": null,
    "hardest": null,
@@ -9314,6 +9328,14 @@
    "classes": null,
    "minLevel": 5,
    "faction": "horde",
+   "instance": null,
+   "hardest": null,
+   "steps": 1
+  },
+  "97332": {
+   "classes": null,
+   "minLevel": 36,
+   "faction": null,
    "instance": null,
    "hardest": null,
    "steps": 1
@@ -19609,6 +19631,30 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "258042": {
+   "name": "Twilight Grunt",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "258100": {
+   "name": "Twilight Warlock",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "258102": {
+   "name": "Twilight Outrider",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "258104": {
+   "name": "Twilight Lieutenant",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
   "258595": {
    "name": "Snufflesnout",
    "level": null,
@@ -19825,11 +19871,23 @@
    "rank": "rare-elite",
    "from": null
   },
+  "264773": {
+   "name": "Bossman Toof",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
   "267307": {
    "name": "Chol'aruk",
    "level": 20,
    "rank": "elite",
    "from": "wowhead"
+  },
+  "268423": {
+   "name": "Zalfan Moonshadow",
+   "level": null,
+   "rank": "elite",
+   "from": null
   },
   "268530": {
    "name": "Bloodtalon Matriarch",
