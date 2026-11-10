@@ -1439,75 +1439,6 @@
    ]
   },
   {
-   "id": 279480,
-   "name": "Bigger Rock on Bigger Stick",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 1,
-   "obtain": 1,
-   "ilvl": 47,
-   "bind": "pickup",
-   "dps": 41.18,
-   "speed": 3.4,
-   "dmgMin": 112,
-   "dmgMax": 168,
-   "stats": {
-    "strength": 14
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [
-    "Chance on hit: Bash the target in the face, causing 14 Physical damage every 2 sec for 20 sec."
-   ],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 1,
-     "rec": 1
-    }
-   ]
-  },
-  {
-   "id": 279853,
-   "name": "Stick No Rock",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 1,
-   "obtain": 1,
-   "ilvl": 47,
-   "bind": "pickup",
-   "dps": 41.1,
-   "speed": 3.3,
-   "dmgMin": 108,
-   "dmgMax": 163,
-   "stats": {
-    "strength": 10,
-    "spirit": 18
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_22",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 1,
-     "rec": 1
-    }
-   ]
-  },
-  {
    "id": 279908,
    "name": "Crystal-Infused Cleaver",
    "kind": "1H Axe",
@@ -1638,41 +1569,6 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_sword_13",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 1,
-     "rec": 1
-    }
-   ]
-  },
-  {
-   "id": 279852,
-   "name": "Rock on Stick",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 1,
-   "obtain": 1,
-   "ilvl": 47,
-   "bind": "pickup",
-   "dps": 31.54,
-   "speed": 2.6,
-   "dmgMin": 57,
-   "dmgMax": 107,
-   "stats": {
-    "strength": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [
-    "Chance on hit: Bash the target in the face, causing 7 Physical damage every 2 sec for 20 sec."
-   ],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_09",
    "raceMask": -1,
    "sources": [
     {
@@ -20925,7 +20821,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Zul'Alai",
+     "npcId": 258905,
+     "zone": "The Drowned City",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 34,
@@ -21499,9 +21398,15 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Gill",
+     "npcId": 264177,
+     "zone": "The Drowned City",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/item=286649",
+     "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro.",
      "asap": 35,
      "rec": 35
     }
@@ -22316,10 +22221,10 @@
      "requiredLevel": 30,
      "faction": "horde",
      "chain": [
-      94789,
-      96264,
-      79358,
-      96135
+      79360,
+      79364,
+      79361,
+      79366
      ],
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=79442",
@@ -24294,9 +24199,14 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Slavecrusher Grox",
+     "npcId": 258966,
+     "zone": "Krol'dok Stronghold",
      "faction": "both",
      "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/item=274995",
+     "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro.",
      "asap": 39,
      "rec": 39
     }
@@ -24907,9 +24817,14 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Twilight Commander Zarmok",
+     "npcId": 258972,
+     "zone": "Krol'dok Stronghold",
      "faction": "both",
      "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/item=274998",
+     "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro.",
      "asap": 40,
      "rec": 40
     }
@@ -26209,9 +26124,14 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Overlord Mugg",
+     "npcId": 258968,
+     "zone": "Krol'dok Stronghold",
      "faction": "both",
      "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/item=275007",
+     "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro.",
      "asap": 42,
      "rec": 42
     }
@@ -26245,9 +26165,14 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Overlord Mugg",
+     "npcId": 258968,
+     "zone": "Krol'dok Stronghold",
      "faction": "both",
      "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/item=275008",
+     "note": "Drop registrado en Wowhead Forever (Dropped by); el jefe y el dungeon, también en ForeverDungeonJournal y foreverchanges.pro.",
      "asap": 42,
      "rec": 42
     }
@@ -26988,10 +26913,10 @@
    "bonus": {},
    "equip": [],
    "chance": [
-    "Chance on hit: Launches a bolt of frost at the enemy causing 20 to 30 Frost damage and slowing movement speed by 50% for 5 sec."
+    "Chance on hit: Launches a bolt of frost at the enemy causing 40 to 60 Frost damage and slowing movement speed by 50% for 5 sec."
    ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_axe_07",
    "raceMask": -1,
    "sources": [
@@ -27331,6 +27256,133 @@
    ]
   },
   {
+   "id": 279480,
+   "name": "Bigger Rock on Bigger Stick",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 1,
+   "obtain": 44,
+   "ilvl": 47,
+   "bind": "pickup",
+   "dps": 41.18,
+   "speed": 3.4,
+   "dmgMin": 112,
+   "dmgMax": 168,
+   "stats": {
+    "strength": 14
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [
+    "Chance on hit: Bash the target in the face, causing 14 Physical damage every 2 sec for 20 sec."
+   ],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 94982,
+     "quest": "Eye of Mugg",
+     "level": 45,
+     "requiredLevel": 40,
+     "faction": "alliance",
+     "zone": "Krol'dok Stronghold",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94982",
+     "dungeon": true,
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 40,
+     "rec": 44
+    },
+    {
+     "type": "quest",
+     "questId": 94968,
+     "quest": "Eye of Mugg",
+     "level": 45,
+     "requiredLevel": 40,
+     "faction": "horde",
+     "zone": "Krol'dok Stronghold",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94968",
+     "dungeon": true,
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 40,
+     "rec": 44
+    }
+   ]
+  },
+  {
+   "id": 279853,
+   "name": "Stick No Rock",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 1,
+   "obtain": 44,
+   "ilvl": 47,
+   "bind": "pickup",
+   "dps": 41.1,
+   "speed": 3.3,
+   "dmgMin": 108,
+   "dmgMax": 163,
+   "stats": {
+    "strength": 10,
+    "spirit": 18
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_22",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 94982,
+     "quest": "Eye of Mugg",
+     "level": 45,
+     "requiredLevel": 40,
+     "faction": "alliance",
+     "zone": "Krol'dok Stronghold",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94982",
+     "dungeon": true,
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 40,
+     "rec": 44
+    },
+    {
+     "type": "quest",
+     "questId": 94968,
+     "quest": "Eye of Mugg",
+     "level": 45,
+     "requiredLevel": 40,
+     "faction": "horde",
+     "zone": "Krol'dok Stronghold",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94968",
+     "dungeon": true,
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 40,
+     "rec": 44
+    }
+   ]
+  },
+  {
    "id": 1639,
    "name": "Grinning Axe",
    "kind": "2H Axe",
@@ -27450,6 +27502,70 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 44,
+     "rec": 44
+    }
+   ]
+  },
+  {
+   "id": 279852,
+   "name": "Rock on Stick",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 1,
+   "obtain": 44,
+   "ilvl": 47,
+   "bind": "pickup",
+   "dps": 31.54,
+   "speed": 2.6,
+   "dmgMin": 57,
+   "dmgMax": 107,
+   "stats": {
+    "strength": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [
+    "Chance on hit: Bash the target in the face, causing 7 Physical damage every 2 sec for 20 sec."
+   ],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 94982,
+     "quest": "Eye of Mugg",
+     "level": 45,
+     "requiredLevel": 40,
+     "faction": "alliance",
+     "zone": "Krol'dok Stronghold",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94982",
+     "dungeon": true,
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 40,
+     "rec": 44
+    },
+    {
+     "type": "quest",
+     "questId": 94968,
+     "quest": "Eye of Mugg",
+     "level": 45,
+     "requiredLevel": 40,
+     "faction": "horde",
+     "zone": "Krol'dok Stronghold",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94968",
+     "dungeon": true,
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 40,
      "rec": 44
     }
    ]
@@ -28257,10 +28373,10 @@
    "bonus": {},
    "equip": [],
    "chance": [
-    "Chance on hit: Blasts a target for 60 Fire damage and increases damage done to target by Fire damage by 10 for 30 sec."
+    "Chance on hit: Blasts a target for 56 Fire damage and increases Fire damage done to target by 10 for 30 sec."
    ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_weapon_shortblade_03",
    "raceMask": -1,
    "sources": [
@@ -33643,12 +33759,11 @@
     "attackPower": 22
    },
    "equip": [
-    "Equip: +22 Attack Power.",
     "Equip: +21 Attack Power against Undead."
    ],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_mace_13",
    "raceMask": -1,
    "sources": [
@@ -34264,6 +34379,55 @@
    ]
   },
   {
+   "id": 18321,
+   "name": "Energetic Rod",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 54,
+   "obtain": 55,
+   "ilvl": 59,
+   "bind": "pickup",
+   "dps": 38.7,
+   "speed": 2.3,
+   "dmgMin": 62,
+   "dmgMax": 116,
+   "stats": {
+    "intellect": 5
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Chance on landing a damaging spell to restore 48 mana to you."
+   ],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_mace_13",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Alzzin the Wildshaper",
+     "npcId": 11492,
+     "level": 58,
+     "rank": "elite",
+     "zone": "Dire Maul",
+     "zoneId": 2557,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 54,
+     "rec": 55,
+     "basis": {
+      "name": "Alzzin the Wildshaper",
+      "level": 58,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 12062,
    "name": "Skilled Fighting Blade",
    "kind": "Dagger",
@@ -34318,54 +34482,41 @@
    ]
   },
   {
-   "id": 18321,
-   "name": "Energetic Rod",
+   "id": 276404,
+   "name": "Masterwork Crimson Hammer",
    "kind": "1H Mace",
    "quality": 3,
-   "req": 54,
+   "req": 55,
    "obtain": 55,
-   "ilvl": 59,
+   "ilvl": 60,
    "bind": "pickup",
-   "dps": 25.87,
-   "speed": 2.3,
-   "dmgMin": 41,
-   "dmgMax": 78,
+   "dps": 26.25,
+   "speed": 2.4,
+   "dmgMin": 44,
+   "dmgMax": 82,
    "stats": {
-    "intellect": 5
+    "stamina": 10,
+    "spirit": 10
    },
    "bonus": {
-    "spellPower": 68
+    "healing": 127,
+    "spellDamage": 42
    },
    "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 68.",
-    "Equip: Chance on landing a damaging spell to restore 48 mana to you."
+    "Equip: Increases healing done by up to 127 and damage done by up to 42 for all magical spells and effects."
    ],
    "chance": [],
-   "era": "classic",
+   "era": "new",
    "numbers": "forever",
-   "icon": "inv_mace_13",
+   "icon": "inv_hammer_02",
    "raceMask": -1,
    "sources": [
     {
-     "type": "boss",
-     "npc": "Alzzin the Wildshaper",
-     "npcId": 11492,
-     "level": 58,
-     "rank": "elite",
-     "zone": "Dire Maul",
-     "zoneId": 2557,
-     "raid": false,
+     "type": "unknown",
      "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 54,
-     "rec": 55,
-     "basis": {
-      "name": "Alzzin the Wildshaper",
-      "level": 58,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
+     "confidence": "community-untested",
+     "asap": 55,
+     "rec": 55
     }
    ]
   },
@@ -34636,12 +34787,12 @@
    "dmgMax": 136,
    "stats": {},
    "bonus": {},
-   "equip": [],
-   "chance": [
-    "Chance on hit: Grants 2 extra attacks on your next swing."
+   "equip": [
+    "Equip: Attacks have a chance to grant 2 extra attacks on your next swing. Attacks against Orcs are 2 times as likely to activate this effect. (Proc chance: 6%, 100ms cooldown)"
    ],
+   "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "spell_frost_frostbrand",
    "raceMask": -1,
    "sources": [
@@ -34689,7 +34840,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_hammer_19",
    "raceMask": -1,
    "sources": [
@@ -35103,10 +35254,10 @@
    "bonus": {},
    "equip": [],
    "chance": [
-    "Chance on hit: Transfers 10 health every 5 seconds from the target to the caster for 25 sec."
+    "Chance on hit: Transfers 10 health every 1 seconds from the target to the caster for 5 sec."
    ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_weapon_halberd_11",
    "raceMask": -1,
    "sources": [
@@ -35185,7 +35336,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_gauntlets_13",
    "raceMask": -1,
    "sources": [
@@ -35975,7 +36126,7 @@
     "Chance on hit: Blasts a target for 105 Frost damage."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_hammer_13",
    "raceMask": -1,
    "sources": [
@@ -36783,14 +36934,12 @@
     "stamina": 17
    },
    "bonus": {
-    "crit": 1
+    "critRating": 14
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1.0%."
-   ],
+   "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_mace_02",
    "raceMask": -1,
    "sources": [
@@ -39166,10 +39315,10 @@
    "bonus": {},
    "equip": [],
    "chance": [
-    "Chance on hit: Blasts a target for 90 Frost damage."
+    "Chance on hit: Blasts a target for 105 Frost damage."
    ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_weapon_shortblade_21",
    "raceMask": -1,
    "sources": [
@@ -39198,6 +39347,55 @@
      },
      "asap": 57,
      "rec": 59
+    }
+   ]
+  },
+  {
+   "id": 13360,
+   "name": "Gift of the Elven Magi",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 58,
+   "obtain": 59,
+   "ilvl": 63,
+   "bind": "pickup",
+   "dps": 41.3,
+   "speed": 1.5,
+   "dmgMin": 43,
+   "dmgMax": 81,
+   "stats": {
+    "stamina": 6,
+    "intellect": 10,
+    "spirit": 7
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Balnazzar",
+     "npcId": 10813,
+     "level": 62,
+     "rank": "elite",
+     "zone": "Stratholme",
+     "zoneId": 0,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 58,
+     "rec": 59,
+     "basis": {
+      "name": "Balnazzar",
+      "level": 62,
+      "rank": "elite",
+      "from": "questie",
+      "group": true
+     }
     }
    ]
   },
@@ -39563,60 +39761,6 @@
      "confidence": "classic-assumed",
      "asap": 59,
      "rec": 59
-    }
-   ]
-  },
-  {
-   "id": 13360,
-   "name": "Gift of the Elven Magi",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 58,
-   "obtain": 59,
-   "ilvl": 63,
-   "bind": "pickup",
-   "dps": 27.67,
-   "speed": 1.5,
-   "dmgMin": 29,
-   "dmgMax": 54,
-   "stats": {
-    "stamina": 6,
-    "intellect": 10,
-    "spirit": 7
-   },
-   "bonus": {
-    "healing": 135,
-    "spellDamage": 45
-   },
-   "equip": [
-    "Equip: Increases healing done by up to 135 and damage done by up to 45 for all magical spells and effects."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_weapon_shortblade_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Balnazzar",
-     "npcId": 10813,
-     "level": 62,
-     "rank": "elite",
-     "zone": "Stratholme",
-     "zoneId": 0,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 59,
-     "basis": {
-      "name": "Balnazzar",
-      "level": 62,
-      "rank": "elite",
-      "from": "questie",
-      "group": true
-     }
     }
    ]
   },

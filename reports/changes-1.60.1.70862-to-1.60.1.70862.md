@@ -1,407 +1,57 @@
 # Cambios: 1.60.1.70862 → 1.60.1.70862
 
-Sincronizado el 2026-11-09. Talentos de talentsforever.com (build 1.60.1.70755, export 2026-11-04); ítems del cliente 1.60.1.70862.
+Sincronizado el 2026-11-10. Talentos de talentsforever.com (build 1.60.1.70755, export 2026-11-04); ítems del cliente 1.60.1.70862.
 
 ## Talentos y hechizos (0)
 Sin cambios.
 
-## Ítems (399)
-- 133 ítems nuevos en los datos (Mail, Fist, Staff, 2H Mace, Ring, Leather, Cloth, 2H Axe, 1H Mace, Dagger, Trinket, Shield, Neck, 1H Axe, Off-hand)
-- **Lifestone** #833: efectos cambiados
-- **Ardent Custodian** #868: efectos cambiados
-- **Robes of Insight** #940: stats {"intellect":25,"spirit":15} → {"intellect":24}
-- **Freezing Band** #942: efectos cambiados
-- **Warden Staff** #943: armor 260 → —; stats {"stamina":11} → {"stamina":11,"armor":260}; efectos cambiados
-- **Elemental Mage Staff** #944: stats {} → {"intellect":26}; efectos cambiados
-- **Skullflame Shield** #1168: efectos cambiados
-- **Jeweled Amulet of Cainwyn** #1443: stats {"stamina":8,"intellect":18,"spirit":10} → {"intellect":18,"spirit":10}; efectos cambiados
-- **Ring of Saviors** #1447: stats {"stamina":14,"spirit":8} → {"stamina":15}
-- **Spellforce Rod** #1664: efectos cambiados
-- **Headchopper** #1680: req 39 → 41; ilvl 44 → 46; dmgMin 78 → 97; dmgMax 117 → 146; speed 2.9 → 3.4; stats {"strength":9} → {"strength":10}; efectos cambiados
-- **Underworld Band** #1980: stats {"stamina":10,"spirit":6} → {"stamina":12,"intellect":5}; efectos cambiados
-- **Swampchill Fetish** #1992: efectos cambiados
-- **Troll Protector** #2040: efectos cambiados
-- **Shadowblade** #2163: dmgMin 38 → 49; dmgMax 71 → 91; speed 1.4 → 1.8; stats {} → {"agility":5}
-- **Myrmidon's Signet** #2246: stats {"strength":10,"agility":7,"stamina":17} → {"strength":11,"agility":7,"stamina":17}
-- **Eye of Flame** #3075: efectos cambiados
-- **Brainlash** #6440: stats {"intellect":15,"spirit":5} → {"intellect":10,"spirit":5}
-- **Archon Chestpiece** #7759: efectos cambiados
-- **Shriveled Heart** #9243: stats {} → {"stamina":13}
-- **Shovelphlange's Mining Axe** #9378: efectos cambiados
-- **Beacon of Hope** #9393: efectos cambiados
-- **Stoneweaver Leggings** #9407: efectos cambiados
-- **The Jackhammer** #9423: efectos cambiados
-- **Miner's Hat of the Deep** #9429: stats {"agility":4,"stamina":7,"intellect":17,"spirit":10} → {"stamina":7,"intellect":17,"armor":40}
-- **Spaulders of a Lost Age** #9430: stats {"stamina":16,"spirit":7} → {"stamina":10}
-- **Papal Fez** #9431: efectos cambiados
-- **Digmaster 5000** #9465: efectos cambiados
-- **Gahz'rilla Scale Armor** #9469: efectos cambiados
-- **Ripsaw** #9478: efectos cambiados
-- **The Minotaur** #9481: stats {"strength":8,"stamina":24,"spirit":5} → {"strength":8,"stamina":24,"armor":50}
-- **Witch Doctor's Cane** #9482: stats {"spirit":9} → {"spirit":18}; efectos cambiados
-- **Lifeblood Amulet** #9641: req 43 → 45; ilvl 48 → 50; stats {"stamina":13,"spirit":5} → {"stamina":14}
-- **Manslayer** #10570: efectos cambiados
-- **Corpseshroud** #10574: stats {"agility":5,"intellect":19,"spirit":6} → {"agility":5,"intellect":19}
-- **Thoughtcast Boots** #10578: efectos cambiados
-- **Death's Head Vestment** #10581: efectos cambiados
-- **Stealthblade** #10625: efectos cambiados
-- **Mistwalker Boots** #10629: stats {"intellect":8,"spirit":18} → {"spirit":18}
-- **Murkwater Gauntlets** #10631: stats {"strength":13,"stamina":12,"intellect":4} → {"strength":13,"stamina":12,"intellect":5}
-- **Slimescale Bracers** #10632: stats {"stamina":4,"intellect":4,"spirit":13} → {"intellect":4,"spirit":13}; efectos cambiados
-- **Mindseye Circle** #10634: stats {"stamina":5,"intellect":12} → {"stamina":4,"intellect":12}; efectos cambiados
-- **Atal'ai Spaulders** #10783: armor 193 → 113; stats {} → {"armor":80}
-- **Atal'ai Breastplate** #10784: efectos cambiados
-- **Atal'ai Gloves** #10787: efectos cambiados
-- **Drakeclaw Band** #10795: efectos cambiados
-- **Drakestone** #10796: efectos cambiados
-- **Wingveil Cloak** #10802: efectos cambiados
-- **Fist of the Damned** #10804: efectos cambiados
-- **Eater of the Dead** #10805: quality 2 → 3; dmgMin 49 → 55; dmgMax 92 → 103; efectos cambiados
-- **Vestments of the Atal'ai Prophet** #10806: stats {"intellect":11,"spirit":27} → {"spirit":22}
-- **Kilt of the Atal'ai Prophet** #10807: efectos cambiados
-- **Gloves of the Atal'ai Prophet** #10808: stats {"strength":5,"stamina":6,"spirit":20} → {"stamina":6,"spirit":20}
-- **Dragon's Eye** #10829: stats {"stamina":6,"spirit":15} → {"spirit":15}
-- **Horns of Eranikus** #10833: efectos cambiados
-- **Crest of Supremacy** #10835: stats {"strength":6,"agility":6,"stamina":7,"intellect":7,"spirit":7} → {"strength":6,"agility":6,"stamina":7,"intellect":7}
-- **Tooth of Eranikus** #10837: efectos cambiados
-- **Might of Hakkar** #10838: efectos cambiados
-- **Windscale Sarong** #10842: stats {"agility":7,"stamina":10,"intellect":10,"spirit":20} → {"stamina":10,"spirit":20}
-- **Spire of Hakkar** #10844: dmgMin 94 → 126; dmgMax 142 → 190; efectos cambiados
-- **Bloodshot Greaves** #10846: stats {"strength":5,"agility":6,"stamina":20} → {"strength":5,"agility":6,"stamina":14,"intellect":13}
-- **Spritecaster Cape** #11623: efectos cambiados
-- **Kentic Amice** #11624: stats {"stamina":5,"intellect":13,"spirit":6} → {"stamina":6,"intellect":13,"spirit":6}; efectos cambiados
-- **Blackveil Cape** #11626: stats {"strength":6,"agility":14} → {"strength":6,"agility":14,"spirit":4}
-- **Silkweb Gloves** #11634: efectos cambiados
-- **Ban'thok Sash** #11662: stats {"stamina":10,"intellect":11} → {"stamina":10,"intellect":10}; efectos cambiados
-- **Ogreseer Fists** #11665: stats {"stamina":10,"intellect":10,"spirit":8} → {"stamina":9,"intellect":10,"spirit":10}; efectos cambiados
-- **Naglering** #11669: armor 50 → —; stats {"stamina":10} → {"stamina":10,"armor":60}; efectos cambiados
-- **Graverot Cape** #11677: stats {"stamina":15,"spirit":6} → {"stamina":15,"spirit":5,"armor":40}
-- **Rubicund Armguards** #11679: stats {"agility":8,"stamina":14} → {"agility":8,"stamina":14,"intellect":3}
-- **Splinthide Shoulders** #11685: efectos cambiados
-- **Girdle of Beastial Fury** #11686: efectos cambiados
-- **Grizzle's Skinner** #11702: stats {"strength":8,"agility":6,"stamina":5} → {"strength":8,"agility":6,"stamina":6}
-- **Dregmetal Spaulders** #11722: stats {"strength":6,"stamina":5,"intellect":15,"spirit":10} → {"strength":8,"stamina":6,"intellect":17,"spirit":9}
-- **Savage Gladiator Chain** #11726: efectos cambiados
-- **Ragefury Eyepatch** #11735: efectos cambiados
-- **Bloodfist** #11744: stats {} → {"stamina":6}
-- **Flamestrider Robes** #11747: efectos cambiados
-- **Kindling Stave** #11750: dmgMin 79 → 106; dmgMax 119 → 160; efectos cambiados
-- **Verek's Collar** #11755: efectos cambiados
-- **Boreal Mantle** #11782: efectos cambiados
-- **Chillsteel Girdle** #11783: stats {"intellect":20,"spirit":7} → {"intellect":16,"spirit":7}
-- **Rubidium Hammer** #11805: armor 120 → —; stats {"strength":5} → {"strength":5,"armor":120}
-- **Force of Will** #11810: efectos cambiados
-- **Angerforge's Battle Axe** #11816: stats {"strength":27,"stamina":11} → {"strength":22,"stamina":11}
-- **Royal Decorated Armor** #11820: stats {"strength":8,"agility":12,"stamina":26} → {"strength":9,"agility":12,"stamina":26}
-- **Omnicast Boots** #11822: efectos cambiados
-- **Luminary Kilt** #11823: efectos cambiados
-- **Burst of Knowledge** #11832: efectos cambiados
-- **Chief Architect's Monocle** #11839: stats {"stamina":10,"intellect":27,"spirit":3} → {"stamina":10,"intellect":24,"spirit":3}
-- **Senior Designer's Pantaloons** #11841: efectos cambiados
-- **Lead Surveyor's Mantle** #11842: stats {"intellect":14,"spirit":8} → {"intellect":14,"spirit":9}; efectos cambiados
-- **Spirit of Aquementas** #11904: efectos cambiados
-- **Impervious Giant** #11921: armor 30 → —; stats {} → {"stamina":18,"armor":30}; efectos cambiados
-- **Blood-Etched Blade** #11922: efectos cambiados
-- **Ghostshroud** #11925: stats {"strength":12,"agility":19,"stamina":18} → {"strength":10,"agility":19,"stamina":18}
-- **Deathdealer Breastplate** #11926: stats {"strength":8,"stamina":8} → {"strength":8,"stamina":11}; efectos cambiados
-- **Thaurissan's Royal Scepter** #11928: stats {"stamina":5,"intellect":5,"spirit":10} → {"stamina":7,"intellect":6,"spirit":10}; efectos cambiados
-- **The Emperor's New Cape** #11930: stats {"agility":7,"stamina":16} → {"agility":8,"stamina":16}
-- **Dreadforge Retaliator** #11931: stats {} → {"stamina":8}; efectos cambiados
-- **Guiding Stave of Wisdom** #11932: efectos cambiados
-- **Imperial Jewel** #11933: stats {"stamina":7} → {"stamina":8}; efectos cambiados
-- **Magmus Stone** #11935: stats {"stamina":7,"spirit":4} → {"stamina":7}
-- **Lagrave's Seal** #12038: stats {"stamina":7,"intellect":7,"spirit":7} → {"intellect":7,"spirit":7}
-- **Star of Mystaria** #12103: stats {"stamina":9,"intellect":9,"spirit":8} → {"stamina":7,"intellect":7,"spirit":7}; efectos cambiados
-- **Basaltscale Armor** #12108: stats {"stamina":10,"spirit":21} → {"strength":8,"stamina":10,"spirit":12}
-- **Azure Moon Amice** #12109: stats {"stamina":8,"intellect":15} → {"intellect":15}
-- **Raincaster Drape** #12110: stats {"spirit":9} → {"spirit":7}; efectos cambiados
-- **Bloodfire Talons** #12464: efectos cambiados
-- **Nightfall Drape** #12465: efectos cambiados
-- **Dawnspire Cord** #12466: efectos cambiados
-- **Desertwalker Cane** #12471: stats {"stamina":5,"intellect":4,"spirit":13} → {"stamina":8,"intellect":7}
-- **Funeral Pyre Vestment** #12542: stats {"stamina":13,"intellect":13,"spirit":13} → {"stamina":13,"intellect":13}; efectos cambiados
-- **Thrall's Resolve** #12544: armor 150 → —; stats {"strength":4,"stamina":7} → {"strength":6,"stamina":7,"armor":150}
-- **Eye of Orgrimmar** #12545: stats {"intellect":7,"spirit":4} → {"intellect":7}; efectos cambiados
-- **Braincage** #12549: stats {"stamina":5,"intellect":25,"spirit":9} → {"stamina":5,"intellect":20,"spirit":9}
-- **Swiftwalker Boots** #12553: stats {"strength":4,"agility":21,"stamina":7} → {"strength":5,"agility":21,"stamina":8}
-- **Hands of the Exalted Herald** #12554: efectos cambiados
-- **High Priestess Boots** #12556: stats {"stamina":20,"spirit":7} → {"stamina":10,"spirit":7}; efectos cambiados
-- **Butcher's Apron** #12608: stats {"stamina":7,"spirit":16} → {"stamina":7,"spirit":15}
-- **Funeral Cuffs** #12626: stats {"intellect":14,"spirit":5} → {"intellect":14}
-- **Mixologist's Tunic** #12793: stats {"strength":18,"agility":11,"stamina":18} → {"strength":18,"agility":10,"stamina":18}
-- **Mageflame Cloak** #13007: efectos cambiados
-- **Medallion of Grand Marshal Morris** #13091: efectos cambiados
-- **Wolfrunner Shoes** #13101: efectos cambiados
-- **Trindlehaven Staff** #13161: efectos cambiados
-- **Tressermane Leggings** #13169: stats {"stamina":12,"intellect":14,"spirit":15} → {"stamina":13,"intellect":14,"spirit":15}; efectos cambiados
-- **Skyshroud Leggings** #13170: stats {"stamina":8,"intellect":8} → {"stamina":11,"intellect":12}; efectos cambiados
-- **Talisman of Evasion** #13177: stats {"agility":13} → {"agility":8}; efectos cambiados
-- **Rosewine Circle** #13178: efectos cambiados
-- **Brazecore Armguards** #13179: stats {"stamina":10,"intellect":11} → {"stamina":10,"intellect":8}; efectos cambiados
-- **Sunderseer Mantle** #13185: efectos cambiados
-- **Rhombeard Protector** #13205: stats {"intellect":15,"spirit":10} → {"intellect":14,"spirit":7}
-- **Bleak Howler Armguards** #13208: stats {"intellect":8,"spirit":14} → {"intellect":9,"spirit":14}; efectos cambiados
-- **Pads of the Dread Wolf** #13210: efectos cambiados
-- **Slashclaw Bracers** #13211: stats {"agility":7,"stamina":7,"spirit":6} → {"agility":7,"stamina":7,"spirit":9}; efectos cambiados
-- **Halycon's Spiked Collar** #13212: efectos cambiados
-- **Argent Defender** #13243: stats {} → {"stamina":11}; efectos cambiados
-- **Gilded Gauntlets** #13244: stats {"stamina":14,"intellect":15} → {"stamina":14,"intellect":10}; efectos cambiados
-- **Argent Crusader** #13249: efectos cambiados
-- **Trueaim Gauntlets** #13255: efectos cambiados
-- **Slaghide Gauntlets** #13258: armor 207 → 107; stats {} → {"armor":100}
-- **Globe of D'sak** #13261: stats {"stamina":5,"intellect":16} → {"stamina":5,"intellect":11}; efectos cambiados
-- **Ogreseer Tower Boots** #13282: stats {"stamina":13,"intellect":13,"spirit":13} → {"intellect":13,"spirit":13}
+## Ítems (49)
+- **Soulcatcher Halo** #10630: stats {"intellect":25,"spirit":10} → {"intellect":25}
+- **Ironfoe** #11684: efectos cambiados
+- **Cyclopean Band** #11824: efectos cambiados
+- **Aristocratic Cuffs** #12546: stats {"intellect":15,"spirit":6} → {"intellect":15}; efectos cambiados
+- **Eye of Rend** #12587: stats {"strength":13,"stamina":7} → {"strength":15,"stamina":17}; efectos cambiados
+- **Nightbrace Tunic** #12603: stats {"agility":5,"stamina":10} → {"agility":6,"stamina":10}
+- **Crystallized Girdle** #12606: efectos cambiados
+- **Truestrike Shoulders** #12927: stats {} → {"stamina":10}; efectos cambiados
+- **Briarwood Reed** #12930: efectos cambiados
+- **Tristam Legguards** #12964: stats {"stamina":13} → {"stamina":18}; efectos cambiados
+- **Blackmist Armguards** #12966: efectos cambiados
+- **Bloodmoon Cloak** #12967: stats {"stamina":17,"spirit":5} → {"stamina":17}; efectos cambiados
+- **Frostweaver Cape** #12968: stats {"intellect":12,"spirit":12} → {"intellect":13}; efectos cambiados
+- **Armswake Cloak** #13203: efectos cambiados
+- **Cloudrunner Girdle** #13252: stats {"strength":14,"agility":15} → {"agility":14,"strength":13,"armor":120}
+- **Hands of Power** #13253: stats {"intellect":6,"spirit":6} → {"intellect":9,"spirit":8}; efectos cambiados
 - **Magus Ring** #13283: efectos cambiados
-- **Swiftdart Battleboots** #13284: stats {"agility":17,"stamina":9,"intellect":10} → {"agility":17,"stamina":11,"intellect":10}
-- **Alanna's Embrace** #13314: stats {"stamina":20,"intellect":20,"spirit":20} → {"stamina":20,"intellect":20}; efectos cambiados
-- **Cape of the Black Baron** #13340: efectos cambiados
-- **Dracorian Gauntlets** #13344: efectos cambiados
-- **Seal of Rivendare** #13345: stats {"intellect":17,"spirit":7} → {"intellect":17}
-- **Robes of the Exalted** #13346: stats {"intellect":5,"spirit":11} → {"intellect":8,"spirit":25}; efectos cambiados
-- **Scepter of the Unholy** #13349: dmgMin 69 → 46; dmgMax 129 → 86; efectos cambiados
-- **Gift of the Elven Magi** #13360: dmgMin 43 → 29; dmgMax 81 → 54; stats {"stamina":5,"intellect":10,"spirit":6} → {"stamina":6,"intellect":10,"spirit":7}; efectos cambiados
-- **Band of Flesh** #13373: stats {"strength":6,"agility":3,"stamina":16} → {"strength":6,"agility":3,"stamina":16,"armor":40}
-- **Soulstealer Mantle** #13374: stats {"intellect":22,"spirit":9} → {"intellect":22}; efectos cambiados
-- **Royal Tribunal Cloak** #13376: stats {"stamina":7,"intellect":16} → {"stamina":5,"intellect":16}
-- **Songbird Blouse** #13378: stats {"strength":13,"agility":13,"stamina":13,"intellect":13,"spirit":13} → {"strength":14,"agility":10,"stamina":22}
-- **Woollies of the Prancing Minstrel** #13383: efectos cambiados
-- **Archivist Cape** #13386: efectos cambiados
-- **The Postmaster's Tunic** #13388: efectos cambiados
-- **The Postmaster's Trousers** #13389: stats {"stamina":12,"intellect":20,"spirit":20} → {"stamina":12,"intellect":20,"spirit":15}; efectos cambiados
-- **The Postmaster's Band** #13390: efectos cambiados
-- **The Postmaster's Treads** #13391: efectos cambiados
-- **The Postmaster's Seal** #13392: stats {"stamina":6,"intellect":3,"spirit":17} → {"stamina":6,"intellect":3,"spirit":12}; efectos cambiados
-- **Boots of the Shrieker** #13398: stats {"stamina":10,"intellect":10,"spirit":10} → {"stamina":10,"intellect":10}
-- **Gargoyle Shredder Talons** #13399: req 54 → 57; ilvl 59 → 62; dmgMin 49 → 51; dmgMax 91 → 96
-- **The Cruel Hand of Timmy** #13401: req 56 → 55; ilvl 61 → 60; dmgMin 50 → 49; dmgMax 94 → 93
-- **Grimgore Noose** #13403: req 54 → 55; ilvl 59 → 60; armor 47 → 48; stats {"stamina":9,"intellect":17,"spirit":10} → {"stamina":9,"intellect":18,"spirit":10}
-- **Darkbind Fingers** #13525: quality 2 → 3; armor 50 → 55; stats {} → {"intellect":12}; efectos cambiados
-- **Flamescarred Girdle** #13526: quality 2 → 3; armor 89 → 98; stats {} → {"stamina":12}; efectos cambiados
-- **Twilight Void Bracers** #13528: quality 2 → 3; armor 145 → 160; stats {} → {"intellect":7}
-- **Fangdrip Runners** #13530: quality 2 → 3; armor 54 → 60; efectos cambiados
-- **Crypt Stalker Leggings** #13531: quality 2 → 3; armor 136 → 150; stats {} → {"stamina":14}
-- **Chillhide Bracers** #13537: quality 2 → 3; armor 67 → 74; stats {} → {"stamina":7}; efectos cambiados
-- **Headmaster's Charge** #13937: dmgMin 135 → 100; dmgMax 204 → 151; efectos cambiados
-- **Tombstone Breastplate** #13944: stats {"strength":10,"stamina":10} → {"strength":12,"stamina":12}; efectos cambiados
-- **Iceblade Hacker** #13952: dmgMin 57 → 16; dmgMax 106 → 65; efectos cambiados
-- **Verdant Footpads** #13954: req 56 → 57; ilvl 61 → 62; armor 118 → 120; efectos cambiados
-- **Clutch of Andros** #13956: stats {"stamina":9,"intellect":19} → {"stamina":10,"intellect":19}; efectos cambiados
-- **Gargoyle Slashers** #13957: efectos cambiados
-- **Heart of the Fiend** #13960: stats {"stamina":5,"intellect":5,"spirit":15} → {"stamina":10,"spirit":10}; efectos cambiados
-- **Witchblade** #13964: dmgMin 45 → 30; dmgMax 85 → 57; efectos cambiados
-- **Windreaver Greaves** #13967: stats {"agility":20} → {"agility":20,"intellect":4}; efectos cambiados
-- **Loomguard Armbraces** #13969: efectos cambiados
-- **Freezing Lich Robes** #14340: stats {"stamina":15} → {"stamina":19}; efectos cambiados
-- **Frostbite Girdle** #14502: stats {"strength":5,"agility":15,"stamina":15} → {"strength":3,"agility":15,"stamina":15}
-- **Death's Clutch** #14503: stats {"strength":10,"agility":10,"stamina":10,"intellect":10,"spirit":10} → {"strength":10,"agility":10,"stamina":10,"intellect":10}
-- **Maelstrom Leggings** #14522: efectos cambiados
-- **Rattlecage Buckler** #14528: stats {"intellect":12,"stamina":7} → {"stamina":7,"intellect":12}
-- **Deadwalker Mantle** #14538: stats {"stamina":19,"intellect":9} → {"stamina":19,"intellect":11}; efectos cambiados
-- **Bone Ring Helm** #14539: stats {"strength":6,"agility":5,"stamina":30,"intellect":6,"spirit":6} → {"strength":6,"agility":5,"stamina":30,"intellect":6}
-- **Ghostloom Leggings** #14545: stats {"stamina":10,"intellect":18,"spirit":13} → {"stamina":10,"intellect":18}; efectos cambiados
-- **Royal Cap Spaulders** #14548: stats {"stamina":8,"intellect":9,"spirit":13} → {"stamina":15,"spirit":13}; efectos cambiados
-- **Edgemaster's Handguards** #14551: efectos cambiados
-- **Lady Maye's Pendant** #14558: stats {"stamina":10,"intellect":19,"spirit":10} → {"stamina":10,"intellect":19}
-- **Bloodmail Hauberk** #14611: stats {"strength":10,"stamina":15,"intellect":15,"spirit":10} → {"strength":11,"stamina":15,"intellect":15}; efectos cambiados
-- **Bloodmail Gauntlets** #14615: stats {"strength":9,"stamina":10,"intellect":10} → {"strength":11,"stamina":10,"intellect":10}; efectos cambiados
-- **Bloodmail Boots** #14616: stats {"strength":9,"agility":9,"stamina":10,"intellect":10} → {"strength":9,"agility":8,"stamina":10,"intellect":10}; efectos cambiados
-- **Necropile Cuffs** #14629: stats {"stamina":12,"spirit":4,"intellect":11} → {"stamina":12,"intellect":11,"spirit":4}
-- **Cadaverous Belt** #14636: efectos cambiados
-- **Cadaverous Armor** #14637: stats {"strength":8,"agility":8} → {"stamina":10}; efectos cambiados
-- **Cadaverous Leggings** #14638: efectos cambiados
-- **Cadaverous Gloves** #14640: stats {"stamina":9} → {"stamina":9,"armor":30}; efectos cambiados
-- **Cadaverous Walkers** #14641: stats {"stamina":20} → {"stamina":20,"armor":40}; efectos cambiados
-- **Mark of Fordring** #15411: efectos cambiados
-- **Shimmering Platinum Warhammer** #15418: dmgMin 142 → 133; dmgMax 192 → 201
-- **Shroud of the Exile** #15421: stats {"stamina":7,"intellect":15,"spirit":7} → {"stamina":7,"intellect":10,"spirit":7}; efectos cambiados
-- **Freewind Gloves** #15858: stats {"spirit":19} → {"spirit":14}
-- **Seapost Girdle** #15859: stats {"stamina":8,"intellect":8,"spirit":13} → {"stamina":8,"spirit":13}
-- **Swiftfoot Treads** #15861: stats {"strength":5,"agility":18} → {"strength":4,"agility":14,"stamina":12}
-- **Fordring's Seal** #16058: stats {"stamina":4,"intellect":5} → {"stamina":5,"intellect":6}; efectos cambiados
-- **Elemental Circle** #17001: quality 2 → 3
-- **Stonerender Gauntlets** #17007: efectos cambiados
-- **Will of the Martyr** #17044: efectos cambiados
-- **Blood of the Martyr** #17045: stats {"stamina":15,"intellect":10} → {"stamina":10,"intellect":10}
-- **Gemshard Heart** #17707: efectos cambiados
-- **Charstone Dirk** #17710: dmgMin 26 → 40; dmgMax 50 → 75; efectos cambiados
-- **Eye of Theradras** #17715: efectos cambiados
-- **Gizlock's Hypertech Buckler** #17718: stats {"stamina":5,"intellect":10} → {"intellect":10}; efectos cambiados
-- **Rotgrip Mantle** #17732: efectos cambiados
-- **Rockgrip Gauntlets** #17736: stats {"stamina":10,"intellect":10} → {"stamina":10,"intellect":11}; efectos cambiados
-- **Cloud Stone** #17737: stats {"intellect":10,"spirit":10} → {"intellect":8}
-- **Soothsayer's Headdress** #17740: efectos cambiados
-- **Nature's Embrace** #17741: efectos cambiados
-- **Vinerot Sandals** #17748: efectos cambiados
-- **Phytoskin Spaulders** #17749: stats {"agility":16,"stamina":10} → {"agility":15,"stamina":9}
-- **Brusslehide Leggings** #17751: quality 2 → 3; armor 118 → 130; stats {"stamina":11,"intellect":15} → {"stamina":12,"intellect":7}
-- **Satyr's Lash** #17752: stats {} → {"agility":5}
-- **Infernal Trickster Leggings** #17754: stats {"agility":20,"intellect":9} → {"agility":20,"intellect":8,"spirit":10}; efectos cambiados
-- **Bloomsprout Headpiece** #17767: stats {"stamina":18} → {"stamina":15}; efectos cambiados
-- **Blade of Eternal Darkness** #17780: dmgMin 34 → 21; dmgMax 70 → 57; efectos cambiados
-- **Royal Seal of Alexis** #18022: stats {"stamina":10,"intellect":10,"spirit":8} → {"stamina":10,"spirit":8}
-- **Hurley's Tankard** #18044: stats {"agility":5,"stamina":12} → {"agility":5,"stamina":12,"spirit":3}
+- **Gift of the Elven Magi** #13360: dmgMin 29 → 43; dmgMax 54 → 81; efectos cambiados
+- **Fire Striders** #13369: efectos cambiados
+- **Tombstone Breastplate** #13944: efectos cambiados
+- **Crown of Caer Darrow** #13986: stats {"stamina":8,"intellect":20,"spirit":20} → {"stamina":8,"intellect":15,"spirit":20}; efectos cambiados
+- **Darrowshire Strongguard** #14002: stats {"stamina":8,"spirit":8} → {"stamina":8}; efectos cambiados
 - **Barbed Thorn Necklace** #18289: efectos cambiados
-- **Band of Vigor** #18302: quality 2 → 3; stats {"strength":8,"agility":7,"stamina":7} → {"strength":8,"agility":7,"stamina":7,"spirit":10}
-- **Gloves of Shadowy Mist** #18306: quality 2 → 3; armor 47 → 52; stats {"stamina":12} → {"stamina":16}; efectos cambiados
-- **Riptide Shoes** #18307: quality 2 → 3; armor 52 → 57; stats {"intellect":12} → {"intellect":9}; efectos cambiados
-- **Clever Hat** #18308: quality 2 → 3; armor 122 → 134; stats {"stamina":10,"intellect":11} → {"stamina":6,"intellect":15}; efectos cambiados
-- **Gloves of Restoration** #18309: stats {"stamina":10,"intellect":9} → {"stamina":13,"intellect":12}; efectos cambiados
-- **Quel'dorai Channeling Rod** #18311: dmgMin 111 → 82; dmgMax 167 → 124; efectos cambiados
+- **Riptide Shoes** #18307: efectos cambiados
 - **Ring of Demonic Guile** #18314: efectos cambiados
-- **Ring of Demonic Potency** #18315: efectos cambiados
-- **Tempest Talisman** #18317: stats {"intellect":7,"spirit":6} → {"intellect":6,"spirit":6}; efectos cambiados
-- **Merciful Greaves** #18318: efectos cambiados
-- **Fervent Helm** #18319: efectos cambiados
-- **Energetic Rod** #18321: dmgMin 71 → 41; dmgMax 107 → 78; efectos cambiados
-- **Waterspout Boots** #18322: stats {"intellect":6,"spirit":6} → {"intellect":8,"spirit":9}; efectos cambiados
-- **Waveslicer** #18324: stats {"strength":26} → {"strength":23}; efectos cambiados
-- **Shadewood Cloak** #18328: stats {"strength":13,"stamina":7} → {"strength":13,"stamina":8}
-- **Gauntlets of Accuracy** #18349: quality 2 → 3; armor 204 → 225; stats {"agility":15} → {"agility":15,"spirit":13}; efectos cambiados
-- **Amplifying Cloak** #18350: quality 2 → 3; armor 39 → 43; stats {} → {"spirit":14}; efectos cambiados
-- **Petrified Bark Shield** #18352: quality 2 → 3; armor 1861 → 2089; efectos cambiados
-- **Stoneflower Staff** #18353: quality 2 → 3; dmgMin 113 → 125; dmgMax 171 → 188; stats {"intellect":24} → {"intellect":24,"armor":110}; efectos cambiados
-- **Gordok's Gauntlets** #18367: stats {"stamina":10,"intellect":10,"spirit":9} → {"stamina":10,"intellect":10}; efectos cambiados
-- **Gordok's Gloves** #18368: stats {"stamina":10,"intellect":10,"spirit":9} → {"agility":9,"stamina":10,"intellect":10}; efectos cambiados
-- **Gordok's Handwraps** #18369: stats {"stamina":10,"intellect":10,"spirit":9} → {"stamina":10,"spirit":10}; efectos cambiados
-- **Mindtap Talisman** #18371: efectos cambiados
-- **Blade of the New Moon** #18372: dmgMin 40 → 26; dmgMax 74 → 50; stats {"stamina":5} → {"stamina":15}; efectos cambiados
-- **Flamescarred Shoulders** #18374: stats {"strength":12,"agility":12,"stamina":11} → {"strength":11,"agility":12,"stamina":10}
-- **Odious Greaves** #18379: efectos cambiados
-- **Fluctuating Cloak** #18382: efectos cambiados
+- **Energetic Rod** #18321: dmgMin 41 → 62; dmgMax 78 → 116; efectos cambiados
+- **Amplifying Cloak** #18350: efectos cambiados
+- **Vigilance Charm** #18370: stats {} → {"strength":10}; efectos cambiados
+- **Quickdraw Gloves** #18377: stats {"strength":7,"agility":8,"stamina":7} → {"strength":7,"agility":8,"stamina":10,"intellect":9}; efectos cambiados
 - **Padre's Trousers** #18386: efectos cambiados
-- **Brightspark Gloves** #18387: stats {"stamina":9,"intellect":15} → {"stamina":9,"intellect":16}; efectos cambiados
-- **Cloak of the Cosmos** #18389: stats {"stamina":7,"intellect":11} → {"stamina":7,"intellect":14}; efectos cambiados
-- **Tanglemoss Leggings** #18390: stats {"stamina":12,"intellect":20,"spirit":13} → {"stamina":12,"spirit":19}; efectos cambiados
-- **Eyestalk Cord** #18391: stats {"stamina":9,"intellect":15} → {"stamina":9,"intellect":18}; efectos cambiados
-- **Distracting Dagger** #18392: dmgMin 42 → 37; dmgMax 64 → 69; stats {} → {"agility":3}; efectos cambiados
-- **Warpwood Binding** #18393: stats {"agility":14,"stamina":6,"intellect":9} → {"agility":13,"stamina":9,"intellect":6}; efectos cambiados
-- **Demon Howl Wristguards** #18394: efectos cambiados
-- **Emerald Flame Ring** #18395: efectos cambiados
-- **Elder Magus Pendant** #18397: stats {"stamina":6,"intellect":10,"spirit":7} → {"intellect":10,"spirit":7}; efectos cambiados
-- **Spry Boots** #18411: stats {"agility":12} → {"agility":8}; efectos cambiados
-- **Bonecrusher** #18420: stats {"strength":30} → {"strength":26}; efectos cambiados
-- **Backwood Helm** #18421: stats {"agility":21,"stamina":13,"intellect":9,"spirit":9} → {"agility":19,"stamina":13,"intellect":10,"spirit":10}; efectos cambiados
-- **Hyena Hide Belt** #18451: stats {"stamina":13} → {"stamina":13,"armor":70}; efectos cambiados
-- **Jagged Bone Fist** #18462: dmgMin 51 → 45; dmgMax 78 → 84
-- **Gordok Nose Ring** #18464: stats {"strength":5,"stamina":9} → {"strength":8,"stamina":12}
-- **Royal Seal of Eldre'Thalas** #18471: efectos cambiados
-- **Oddly Magical Belt** #18475: efectos cambiados
-- **Mud Stained Boots** #18476: stats {"strength":10,"stamina":15} → {"strength":7,"stamina":15}
-- **Shaggy Leggings** #18477: efectos cambiados
-- **Hyena Hide Jerkin** #18478: stats {"agility":20,"stamina":13} → {"agility":15,"stamina":13}
-- **Carrion Scorpid Helm** #18479: stats {"stamina":10} → {"stamina":14}; efectos cambiados
-- **Skullcracking Mace** #18481: stats {"strength":22,"agility":10} → {"strength":22,"agility":7}; efectos cambiados
-- **Observer's Shield** #18485: stats {"stamina":9,"intellect":14,"spirit":5} → {"stamina":7,"intellect":14}
-- **Lorespinner** #18491: dmgMin 45 → 39; dmgMax 68 → 74; efectos cambiados
-- **Redoubt Cloak** #18495: efectos cambiados
-- **Hedgecutter** #18498: dmgMin 60 → 52; dmgMax 90 → 98; stats {"strength":5,"stamina":12} → {"strength":5,"stamina":11}
-- **Barrier Shield** #18499: efectos cambiados
-- **Tarnished Elven Ring** #18500: stats {"agility":15} → {"agility":10}; efectos cambiados
-- **Mugger's Belt** #18505: stats {"stamina":16} → {"stamina":15}; efectos cambiados
-- **Boots of the Full Moon** #18507: stats {"stamina":12,"intellect":12,"spirit":9} → {"stamina":12,"intellect":12,"spirit":11}; efectos cambiados
-- **Brightly Glowing Stone** #18523: stats {"stamina":7} → {"stamina":14}; efectos cambiados
-- **Leggings of Destruction** #18524: stats {"agility":14,"stamina":20,"intellect":13} → {"agility":14,"stamina":21,"intellect":13}; efectos cambiados
-- **Bracers of Prosperity** #18525: efectos cambiados
-- **Crown of the Ogre King** #18526: stats {"stamina":16,"intellect":18,"spirit":11} → {"stamina":12,"intellect":16,"spirit":11}; efectos cambiados
-- **Harmonious Gauntlets** #18527: stats {"stamina":5,"intellect":5,"spirit":5} → {"stamina":10,"intellect":10,"spirit":10}; efectos cambiados
-- **Cyclone Spaulders** #18528: efectos cambiados
-- **Ogre Forged Hauberk** #18530: efectos cambiados
-- **Unyielding Maul** #18531: armor 250 → —; stats {"stamina":12} → {"stamina":15,"armor":240}; efectos cambiados
-- **Mindsurge Robe** #18532: efectos cambiados
-- **Rod of the Ogre Magi** #18534: dmgMin 116 → 86; dmgMax 175 → 130; stats {"stamina":11,"intellect":14,"spirit":7} → {"stamina":14,"intellect":20,"spirit":11}; efectos cambiados
-- **Milli's Shield** #18535: armor 2106 → 2026; stats {"stamina":7,"spirit":7} → {"stamina":7,"armor":90}; efectos cambiados
-- **Milli's Lexicon** #18536: stats {"stamina":6,"intellect":7} → {}; efectos cambiados
-- **Counterattack Lodestone** #18537: efectos cambiados
-- **Elemental Ember** #18672: req 54 → 55; ilvl 59 → 60; stats {"stamina":10} → {"stamina":11}; efectos cambiados
-- **Ghoul Skin Leggings** #18682: stats {"stamina":20,"intellect":8,"spirit":8} → {"stamina":20,"intellect":8,"spirit":9}; efectos cambiados
-- **Hammer of the Vesper** #18683: stats {"strength":7,"stamina":12} → {"strength":8,"stamina":12}
-- **Bone Golem Shoulders** #18686: stats {"agility":19,"stamina":9,"intellect":9} → {"agility":19,"stamina":9,"intellect":12}
-- **Phantasmal Cloak** #18689: armor 114 → 44; stats {"strength":12,"stamina":11} → {"strength":12,"stamina":11,"armor":70}
-- **Shivery Handwraps** #18693: efectos cambiados
-- **Shadowy Mail Greaves** #18694: stats {"stamina":22} → {"stamina":20}; efectos cambiados
-- **Spellbound Tome** #18695: stats {"stamina":6,"intellect":17,"spirit":3} → {"stamina":6,"intellect":16}
-- **Malefic Bracers** #18700: stats {"agility":7,"stamina":16} → {"agility":6,"stamina":16}
-- **Ash Covered Boots** #18716: efectos cambiados
-- **Hammer of the Grand Crusader** #18717: dmgMin 116 → 86; dmgMax 175 → 130; stats {"stamina":10,"intellect":26,"spirit":9} → {"stamina":10,"intellect":26,"spirit":17}; efectos cambiados
-- **Barrage Girdle** #18721: stats {"stamina":6,"intellect":6,"spirit":6} → {"stamina":8,"intellect":8,"spirit":6}
-- **Animated Chain Necklace** #18723: stats {"stamina":7,"spirit":6} → {"stamina":8,"spirit":7}; efectos cambiados
-- **Magistrate's Cuffs** #18726: efectos cambiados
-- **Anastari Heirloom** #18728: efectos cambiados
-- **Shadowy Laced Handwraps** #18730: efectos cambiados
-- **Pale Moon Cloak** #18734: stats {"strength":8,"stamina":12} → {"strength":9,"stamina":12}; efectos cambiados
-- **Maleki's Footwraps** #18735: stats {"stamina":9,"intellect":9} → {"stamina":19,"intellect":11}; efectos cambiados
-- **Bone Slicing Hatchet** #18737: efectos cambiados
-- **Thuzadin Sash** #18740: efectos cambiados
-- **Ebon Mask** #19984: stats {"stamina":11} → {"stamina":14}; efectos cambiados
-- **Circle of Hope** #20006: efectos cambiados
-- **Arcane Crystal Pendant** #20037: efectos cambiados
-- **Skyfury Helm** #20134: stats {"strength":13,"stamina":14,"spirit":12} → {"strength":18,"stamina":18,"intellect":12,"spirit":12}; efectos cambiados
-- **Whisperwalk Boots** #20255: stats {"agility":18,"stamina":4} → {"agility":17,"stamina":4}
-- **Azurite Fists** #20369: efectos cambiados
-- **Chivalrous Signet** #20505: efectos cambiados
-- **Robes of Servitude** #20530: efectos cambiados
-- **Soul Harvester** #20536: dmgMin 88 → 118; dmgMax 133 → 178; efectos cambiados
-- **Wildstaff** #20556: stats {"strength":10,"stamina":10,"intellect":9} → {"strength":10,"stamina":10,"intellect":10}; efectos cambiados
-- **Sash of the Grand Hunt** #22207: efectos cambiados
-- **Golem Fitted Pauldrons** #22212: stats {"agility":13,"stamina":17} → {"agility":13,"stamina":17,"intellect":6}
-- **Kayser's Boots of Precision** #22231: efectos cambiados
-- **Marksman's Girdle** #22232: efectos cambiados
-- **Greaves of Withering Despair** #22240: efectos cambiados
-- **Verek's Leash** #22242: efectos cambiados
-- **Soot Encrusted Footwear** #22245: efectos cambiados
-- **Bloodclot Band** #22257: stats {"stamina":8,"intellect":8,"spirit":7} → {"stamina":8,"intellect":8,"spirit":6}; efectos cambiados
-- **Flarethorn** #22266: efectos cambiados
-- **Leggings of Frenzied Magic** #22271: efectos cambiados
-- **Forest's Embrace** #22272: stats {"intellect":8,"spirit":7} → {"intellect":9,"spirit":8}; efectos cambiados
-- **Grizzled Pelt** #22274: stats {"strength":17,"agility":16,"stamina":11} → {"strength":17,"agility":16,"stamina":13}
-- **Heart of Wyrmthalak** #22321: efectos cambiados
-- **Staff of Metanoia** #22394: stats {"stamina":15,"intellect":15,"spirit":13} → {"stamina":15,"intellect":15,"spirit":22}; efectos cambiados
-- **Totem of Rage** #22395: efectos cambiados
-- **Nacreous Shell Necklace** #22403: stats {"stamina":8,"intellect":8} → {"stamina":7,"intellect":8}; efectos cambiados
-- **Willey's Back Scratcher** #22404: efectos cambiados
-- **Mantle of the Scarlet Crusade** #22405: stats {"stamina":11,"intellect":11,"spirit":12} → {"stamina":11,"intellect":12,"spirit":12}; efectos cambiados
-- **Redemption** #22406: dmgMin 87 → 65; dmgMax 132 → 98; efectos cambiados
-- **Helm of the New Moon** #22407: stats {"stamina":14,"intellect":13,"spirit":12} → {"stamina":14,"intellect":14,"spirit":12}
-- **Gauntlets of Deftness** #22410: armor 311 → 231; stats {"agility":23,"stamina":10} → {"agility":20,"stamina":10,"intellect":6,"armor":60}
-- **Thuzadin Mantle** #22412: efectos cambiados
-- **Don Mauricio's Band of Domination** #22433: stats {"stamina":5} → {"stamina":10}; efectos cambiados
-- **Moonshadow Stave** #22458: efectos cambiados
-- **Totem of Sustaining** #23200: efectos cambiados
-- **The Shadowfoot Stabber** #24222: efectos cambiados
-- **Engraved Band** #260219: efectos cambiados
-- **Hyjal Postal Clasp** #260308: ilvl 59 → 58
-- **Brush Cutter** #274265: ilvl 58 → 57; dmgMin 67 → 66; dmgMax 126 → 124
-- **Weed Whacker** #274270: ilvl 58 → 57; dmgMin 111 → 109; dmgMax 168 → 165
-- **Deadhead Blade** #274271: ilvl 58 → 57; dmgMin 43 → 42; dmgMax 81 → 80
-- **Axe of Lingering Dread** #274485: efectos cambiados
-- **Sacrificial Chain Vest** #274639: efectos cambiados
-- **Blood Ritual Ring** #274642: efectos cambiados
-- **Farraki Kris** #274647: dmgMin 23 → 35; dmgMax 44 → 66; efectos cambiados
-- **Wall of Water** #274652: efectos cambiados
-- **Dune Hacker** #274658: dmgMin 34 → 51; dmgMax 63 → 95; efectos cambiados
-- **Rocketeer Leggings** #275721: ilvl 58 → 57; efectos cambiados
-- **Putridus Wall** #275864: efectos cambiados
-- **Savage Gladiator Shoulders** #277117: efectos cambiados
-- **Guidance of Ursoc** #279891: req 0 → 1; stats {"strength":13,"stamina":5} → {"strength":10,"stamina":4}
-- **Wisdom of Ursol** #279892: req 0 → 1; stats {"intellect":13} → {"intellect":10}; efectos cambiados
-- **Crystalline Pauldrons** #279904: req 0 → 1; efectos cambiados
-- **Potent Treads** #279906: req 0 → 1; efectos cambiados
-- **Murloc Oracle's Dagger** #281750: dmgMin 16 → 24; dmgMax 31 → 46; efectos cambiados
-- **Corsepickers** #282012: efectos cambiados
-- **Braided Seer Stones** #282019: efectos cambiados
-- **Ogre Sorcerer Belt** #282074: efectos cambiados
-- **Shadowforge Shield** #282555: efectos cambiados
-- **Crown of Maldazzar** #284065: efectos cambiados
-- **Rusted Family Memento** #284067: efectos cambiados
-- **Vial of Vile Liquid** #284228: efectos cambiados
-- **Eternally Frozen Band** #284253: efectos cambiados
-- **Feardred's Gauntlets** #284285: efectos cambiados
-- **Windserpent Scaled Cloak** #284866: efectos cambiados
-- **Winds of Tanaris** #286556: efectos cambiados
-- **Ogre Casting Cloak** #286572: efectos cambiados
-- Ítem eliminado: **Blessed Prayer Beads** #19990
-- Ítem eliminado: **Devilsaur Eye** #19991
-- Ítem eliminado: **Devilsaur Tooth** #19992
-- Ítem eliminado: **Fire Ruby** #20036
-- Ítem eliminado: **Diamond Flask** #20130
-- Ítem eliminado: **Sanctified Orb** #20512
+- **Tanglemoss Leggings** #18390: efectos cambiados
+- **Robe of Combustion** #18450: efectos cambiados
+- **Hyena Hide Belt** #18451: efectos cambiados
+- **Modest Armguards** #18458: efectos cambiados
+- **Insightful Hood** #18490: efectos cambiados
+- **Harmonious Gauntlets** #18527: efectos cambiados
+- **Tattered Leather Hood** #18698: stats {"agility":10,"stamina":23} → {"agility":10,"stamina":25}; efectos cambiados
+- **Maleki's Footwraps** #18735: efectos cambiados
+- **Tome of the Lost** #22253: stats {"stamina":6,"intellect":7} → {"stamina":8,"intellect":7}
+- **Bloodclot Band** #22257: efectos cambiados
+- **Draconic Infused Emblem** #22268: efectos cambiados
+- **Shadow Prowler's Cloak** #22269: stats {"agility":17,"stamina":7} → {"agility":16,"stamina":9}
+- **Nacreous Shell Necklace** #22403: efectos cambiados
+- **Scarlet Bonebreaker** #276403: efectos cambiados
+- Ítem nuevo: **Masterwork Crimson Hammer** (1H Mace, nivel 55) #276404
+- **Hammer of Thundering Hooves** #280018: efectos cambiados
+- Ítem nuevo: **Apprentice's Protective Treads** (Leather, nivel 52) #280078
+- Ítem nuevo: **Furbolg Rib Protector** (Mail, nivel 52) #280084
+- **Blackmaw Bindings** #287030: efectos cambiados

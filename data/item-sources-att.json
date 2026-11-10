@@ -3126,6 +3126,105 @@
     }
    ]
   },
+  "274598": {
+   "name": "Bloodslash Axe",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258905,
+     "npc": "Zul'Alai",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "274599": {
+   "name": "Oathbound Bracers",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258905,
+     "npc": "Zul'Alai",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "274600": {
+   "name": "Berserker Shackles",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258905,
+     "npc": "Zul'Alai",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "274602": {
+   "name": "Brinebelly Leggings",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258924,
+     "npc": "Var'Taka",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "274605": {
+   "name": "Briny Sash",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 260042,
+     "npc": "Captain Dreadrise",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "274608": {
+   "name": "Maw of Min'loth",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": null,
+     "npc": "Min'loth the Serpent",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "274609": {
+   "name": "Serpentbane Crown",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": null,
+     "npc": "Min'loth the Serpent",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "274610": {
+   "name": "Ritual-Binder's Gloves",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": null,
+     "npc": "Min'loth the Serpent",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "274611": {
+   "name": "Robe of the Drowned",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 273738,
+     "npc": "Primeval Elemental",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
   "274915": {
    "name": "Sacristan Band",
    "sources": [
@@ -4418,6 +4517,58 @@
      "minLevel": 16,
      "faction": "horde",
      "zone": "Ruins of Lordaeron"
+    }
+   ]
+  },
+  "279878": {
+   "name": "Apprentice Sorcerer's Slacks",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95798,
+     "quest": "The Web of Magic",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "279879": {
+   "name": "Rune-Etched Epaulets",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95798,
+     "quest": "The Web of Magic",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "279880": {
+   "name": "Ancient Voodoo Pouch",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95799,
+     "quest": "Findings for the Explorer's League",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "279881": {
+   "name": "Intrepid Explorer's Chainmail",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95799,
+     "quest": "Findings for the Explorer's League",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "The Drowned City"
     }
    ]
   },
