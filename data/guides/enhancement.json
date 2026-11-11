@@ -110,8 +110,8 @@
     "list": [
       "Weapon Damage",
       "Hit",
-      "Strength",
       "Critical Strike",
+      "Strength",
       "Intellect",
       "Agility"
     ],
@@ -123,8 +123,8 @@
     "source": "https://github.com/wowsims/forever",
     "forever": {
       "note": {
-        "es": "Específico de Forever: con Mental Dexterity 3/3 cada punto de Intelecto da 1 de poder de ataque (era 1,5 hasta el 10-nov), Ancestral Knowledge lo sube 10% y Mental Quickness convierte 30% en poder con hechizos, y el Intelecto además es tu maná. Por eso todavía rinde casi como la Fuerza, sobre todo jugando solo. Pero una pieza de tela te saca armadura, y la simulación no lo cuenta: a igual daño, quedate con la malla o el cuero.",
-        "en": "Forever-specific: with Mental Dexterity 3/3 each point of Intellect gives 1 attack power (1.5 until Nov 10), Ancestral Knowledge raises it 10% and Mental Quickness turns 30% into spell power, and Intellect is also your mana. That's why it still pays almost like Strength, especially solo. But a cloth piece costs you armor, which the sim doesn't count: at equal damage, keep the mail or leather."
+        "es": "Específico de Forever: con Mental Dexterity 3/3 cada punto de Intelecto da 1 de poder de ataque (era 1,5 hasta el 10-nov), Ancestral Knowledge lo sube 10%, Mental Quickness convierte 30% en poder con hechizos y el Intelecto además es tu maná. Como la mitad de tu daño sale de hechizos (Earth Shock, Flame Shock, Lightning Bolt, Fire Nova, Magma Totem), el Intelecto todavía vale más que la Agilidad. Pero la Fuerza vale más que los dos, y el golpe y el crítico todavía más: una pieza de Fuerza le gana a una de tela de caster del mismo nivel. La simulación no cuenta la armadura: a igual daño, quedate con la malla o el cuero.",
+        "en": "Forever-specific: with Mental Dexterity 3/3 each point of Intellect gives 1 attack power (1.5 until Nov 10), Ancestral Knowledge raises it 10%, Mental Quickness turns 30% into spell power and Intellect is also your mana. Since half your damage comes from spells (Earth Shock, Flame Shock, Lightning Bolt, Fire Nova, Magma Totem), Intellect is still worth more than Agility. But Strength is worth more than both, and hit and crit more still: a Strength piece beats a cloth caster piece of the same level. The sim doesn't count armor: at equal damage, keep the mail or leather."
       },
       "confidence": "client-data"
     }
