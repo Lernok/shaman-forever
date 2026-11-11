@@ -1663,6 +1663,19 @@
     }
    ]
   },
+  "270098": {
+   "name": "Dank Shoulderpads",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 2846,
+     "quest": "Tiara of the Deep",
+     "minLevel": 40,
+     "faction": "both",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
   "270100": {
    "name": "Freebooter's Armband",
    "sources": [
@@ -4019,6 +4032,32 @@
      "questId": 96800,
      "quest": "Past Due",
      "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Alterac Mountains"
+    }
+   ]
+  },
+  "276903": {
+   "name": "Shimmerwine Shanker",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96609,
+     "quest": "A Taste of Home",
+     "minLevel": 44,
+     "faction": "alliance",
+     "zone": "Alterac Mountains"
+    }
+   ]
+  },
+  "276904": {
+   "name": "Shimmerwine Spirits",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96609,
+     "quest": "A Taste of Home",
+     "minLevel": 44,
      "faction": "alliance",
      "zone": "Alterac Mountains"
     }
