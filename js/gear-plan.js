@@ -219,7 +219,7 @@
     if (s.faction && s.faction !== 'both' && s.faction !== opts.faction) return null;
     // Quests for some races only (Call of Fire has a Skyborne one).
     if (s.races && opts.race && opts.race !== 'any' && !s.races.includes(opts.race)) return null;
-    if (s.raid || s.pvp || BATTLEGROUND.test(s.zone || '')) return null;
+    if (s.raid || s.pvp || s.endgame || BATTLEGROUND.test(s.zone || '')) return null;
     if (s.type === 'quest') {
       // Holiday and event quests (no level, no zone) can't be planned.
       if (!s.level && !s.zone) return null;

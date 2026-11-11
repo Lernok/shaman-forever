@@ -2,6 +2,23 @@
   "_readme": "Site updates shown on the News page, newest first. Game data changes come from data/changelog.json (written by scripts/sync.js).",
   "site": [
     {
+      "day": "2026-11-11",
+      "title": {
+        "es": "Elegí otra pieza en tu camino",
+        "en": "Pick another piece in your path"
+      },
+      "items": [
+        {
+          "es": "Cada pieza de Tu camino tiene un botón \"Otra opción\": si no te cae o no te gusta, la sacás y el camino trae la siguiente mejor para ese casillero, con los ajustes que tengas tildados. Las piezas que sacaste quedan listadas abajo y las volvés a poner con un toque.",
+          "en": "Every piece in Your path has an \"Other option\" button: if it won't drop or you don't like it, take it out and the path brings the next best one for that slot, with whatever settings you have ticked. The pieces you took out are listed below and come back with a tap."
+        },
+        {
+          "es": "Del 58 al 60 el camino ya no sugiere equipo de fin de juego que no se consigue subiendo de nivel: el anillo de Ahn'Qiraj, las mejoras Five Thunders del set de dungeon, las Armaments of Battle del Argent Dawn ni el Gnomish Turban.",
+          "en": "From 58 to 60 the path no longer suggests endgame gear you don't get while leveling: the Ahn'Qiraj ring, the Five Thunders dungeon set upgrades, the Argent Dawn's Armaments of Battle or the Gnomish Turban."
+        }
+      ]
+    },
+    {
       "day": "2026-11-10",
       "title": {
         "es": "Guías y equipo para el 30-60",

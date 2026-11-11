@@ -13,6 +13,10 @@
   // Armor and weapons: the weapon is one more slot of the plan.
   const gear = () => ((window.GEAR_DATA && window.GEAR_DATA.gear) || []).concat((window.WEAPON_DATA && window.WEAPON_DATA.weapons) || []);
   const race = () => (Site.race === 'any' ? null : Site.race);
+  // Pieces you set aside ("Otra opción": it doesn't drop for you, you don't
+  // like it): the path is planned without them, so the next best one comes in.
+  const skipped = () => UI.store.get('gpSkip', []);
+  const pool = () => { const out = new Set(skipped()); return gear().filter(i => !out.has(i.id)); };
 
   // What the last path paid for each Favor recipe (the first ones ride on the bonus).
   let favorPaid = {};
@@ -25,7 +29,7 @@
     // crafts count only from your crafting ones; none picked = no crafts.
     const picked = UI.store.get('profs', []);
     const profs = picked.filter(p => PROFS.includes(p));
-    const key = JSON.stringify([Site.spec, Site.faction, race(), picked, state.drops, state.favor, state.groups, state.farm, UI.store.get('learnedProfs', {}), UI.store.get('lwSkin', 'normal'), UI.store.get('lwSkillBuy', 'worth'), !!window.SKINNING_DATA, !!window.CRAFT_DATA, gear().length]);
+    const key = JSON.stringify([Site.spec, Site.faction, race(), picked, state.drops, state.favor, state.groups, state.farm, UI.store.get('learnedProfs', {}), UI.store.get('lwSkin', 'normal'), UI.store.get('lwSkillBuy', 'worth'), skipped(), !!window.SKINNING_DATA, !!window.CRAFT_DATA, gear().length]);
     if (last && last.key === key) { favorPaid = last.favorPaid; return last.out; }
     const opts = {
       spec: Site.spec, faction: Site.faction, race: race(), profs, drops: state.drops, favor: state.favor, groups: state.groups,
@@ -43,8 +47,8 @@
     // Leatherworking pieces wait for the level the Leatherworking plan makes
     // them (the one Profesiones shows): js/lw-plan.js settle.
     const plan = window.LwPlan && window.SKINNING_DATA
-      ? window.LwPlan.settle(gear(), opts, { picked, farm: state.farm, intensity: UI.store.get('lwSkin', 'normal'), skillBuy: UI.store.get('lwSkillBuy', 'worth') })
-      : window.GearPlan.plan(gear(), opts);
+      ? window.LwPlan.settle(pool(), opts, { picked, farm: state.farm, intensity: UI.store.get('lwSkin', 'normal'), skillBuy: UI.store.get('lwSkillBuy', 'worth') })
+      : window.GearPlan.plan(pool(), opts);
     favorPaid = plan.favorPaid || {};
     last = { key, favorPaid, out: { plan, profs, picked } };
     return last.out;
@@ -127,7 +131,7 @@
       '<div class="gp-main">' + UI.itemLink(i) + '<span class="wp-sub">' + sourceText(st.pick) +
       (st.pick.access === 'quest' ? ' · <span class="gp-off-tag">' + t('gp.offRoute') + '</span>' : '') + '</span>' +
       (st.pick.access === 'crafted' || st.pick.access === 'favor' ? (window.Professions && window.Professions.lwHow ? window.Professions.lwHow(st) : '') + craftMats(st) : '') +
-      (st.alt || state.detail ? '<span class="gp-why">' + why(st) + '</span>' : '') + reportLink(st) + '</div></div>';
+      (st.alt || state.detail ? '<span class="gp-why">' + why(st) + '</span>' : '') + reportLink(st) + (st.alt ? '' : skipButton(st)) + '</div></div>';
   }
 
   // A crafted piece of another profession than Leatherworking (that one has
@@ -218,7 +222,7 @@
       const ends = st.until > 60 ? t('gp.now.lastsLong') : t('gp.now.until', { n: st.until });
       return '<div class="gp-slot-tile">' + (i.icon ? '<img class="gst-icon q' + (i.quality || 1) + '" src="' + UI.icon(i.icon) + '" alt="">' : '<span class="gst-icon"></span>') +
         '<span class="gst-text">' + name + '<a class="item-link q' + i.quality + '" data-item="' + i.id + '" href="https://www.wowhead.com/forever/item=' + i.id + '" target="_blank" rel="noopener">' + i.name + '</a>' +
-        '<span class="gst-until' + (st.until - lvl <= 2 ? ' soon' : '') + '">' + ends + '</span></span></div>';
+        '<span class="gst-until' + (st.until - lvl <= 2 ? ' soon' : '') + '">' + ends + '</span>' + skipButton(st, 'gst-alt') + '</span></div>';
     }
     return '<div class="gp-slot-tile empty"><img class="gst-icon gst-socket" src="' + UI.icon('inventoryslot_' + (SOCKET[slot] || 'chest'), 'medium') + '" alt=""><span class="gst-text">' + name +
       (next ? '<span class="gst-next">' + t('gp.now.next', { n: next.level, item: next.pick.item.name }) + '</span>' : '<span class="dim">' + t('gp.now.nothing') + '</span>') + '</span></div>';
@@ -235,10 +239,24 @@
       '<span class="dim">' + ends + '</span>' + (st.alt ? '<span class="dim">' + why(st) + '</span>' : '') +
       (['crafted', 'favor'].includes(st.pick.access) ? (window.Professions && window.Professions.lwHow ? window.Professions.lwHow(st) : '') + craftMats(st) : '') +
       '<a class="item-link gpc-link" data-item="' + i.id + '" href="https://www.wowhead.com/forever/item=' + i.id + '" target="_blank" rel="noopener">Wowhead ↗</a>' +
-      reportLinkAlways(st) + '</div></details>';
+      skipButton(st) + reportLinkAlways(st) + '</div></details>';
+  }
+  // "Otra opción": set this piece aside and plan without it.
+  function skipButton(st, cls) {
+    return '<button class="btn-link gp-skip' + (cls ? ' ' + cls : '') + '" data-skip="' + st.pick.item.id + '" title="' + t('gp.skipTitle') + '">' + t('gp.skip') + '</button>';
   }
   function reportLinkAlways(st) {
     return window.Feedback ? window.Feedback.button(t('fb.wrongPiece'), 'piece', st.level + ' ' + st.pick.slot + ' ' + st.pick.item.name + ' #' + st.pick.item.id + ' (' + st.pick.access + ')', 'gp-report', st.pick.item.name) : '';
+  }
+
+  // The pieces you set aside, each one back with a tap.
+  function skippedLine() {
+    const ids = skipped();
+    if (!ids.length) return '';
+    const byId = new Map(gear().map(i => [i.id, i]));
+    return '<div class="gp-skipped"><span class="dim">' + t('gp.skipped') + '</span> ' +
+      ids.map(id => { const i = byId.get(id); return '<button class="gp-unskip" data-unskip="' + id + '" title="' + t('gp.unskipTitle') + '"><span class="q' + ((i && i.quality) || 1) + '">' + (i ? i.name : '#' + id) + '</span> ✕</button>'; }).join('') +
+      (ids.length > 1 ? '<button class="btn-link" data-unskip="all">' + t('gp.unskipAll') + '</button>' : '') + '</div>';
   }
 
   function render(container, ui, tabsHtml, onChange) {
@@ -287,7 +305,7 @@
     const LOW = [['Weapon']].concat(Site.spec === 'Enhancement' ? [] : [['Off Hand']], [['Relic']]);
     html += '<section class="gp-now"><h3>' + t('gp.now.title') + ' <span class="dim">' + t('gp.now.at', { n: lvl }) + '</span></h3>' +
       '<div class="gp-sheet"><div class="gps-armor">' + sheet(ARMOR) + '</div>' +
-      '<div class="gps-low">' + sheet(LOW) + '</div></div></section>';
+      '<div class="gps-low">' + sheet(LOW) + '</div></div>' + skippedLine() + '</section>';
 
     // What comes: by level, a window that grows.
     const ahead = state.ahead || SOON;
@@ -361,6 +379,17 @@
     container.querySelectorAll('[data-bracket]').forEach(b => b.addEventListener('click', () => { state.bracket = Number(b.dataset.bracket); onChange(); }));
     const detail = container.querySelector('[data-detail]');
     if (detail) detail.addEventListener('click', () => { state.detail = !state.detail; UI.store.set('gpDetail', state.detail); onChange(); });
+    container.querySelectorAll('[data-skip]').forEach(b => b.addEventListener('click', e => {
+      e.preventDefault();
+      const id = Number(b.dataset.skip);
+      UI.store.set('gpSkip', skipped().filter(x => x !== id).concat(id));
+      onChange();
+    }));
+    container.querySelectorAll('[data-unskip]').forEach(b => b.addEventListener('click', () => {
+      const id = b.dataset.unskip;
+      UI.store.set('gpSkip', id === 'all' ? [] : skipped().filter(x => x !== Number(id)));
+      onChange();
+    }));
     const byId = new Map(steps.concat(alts).map(st => [String(st.pick.item.id), st]));
     const totemById = new Map(totems().map(i => [String(i.id), i]));
     UI.tip.bind(container, '[data-item]', a => {

@@ -42,9 +42,13 @@ const DARKMOON = /^(Lhara|Yebb Neblegear|Zorbin Fandazzle|Vendor-Tron 1000|Chron
 // Quests handed in out in the world that need a raid's drops: Ahn'Qiraj's
 // signet ring chain at the Caverns of Time (Qiraji Lord's Insignia).
 const RAID_TURN_IN = { "Ahn'Qiraj": [8747, 8748, 8749, 8750, 8751, 8752, 8753, 8754, 8755, 8756, 8757, 8758, 8759, 8760, 8761, 8764, 8765, 8766] };
-// Dungeon set 2 (T0.5) upgrades: you hand in the dungeon set piece, a 55-60
-// boss drop the path never plans (Bindings and Cord of The Five Thunders).
-const NEEDS_SET_PIECE = new Set([8918, 8942]);
+// Endgame turn-ins, not leveling rewards: Dungeon set 2 (T0.5) upgrades hand
+// in the dungeon set piece, a 55-60 boss drop the path never plans (Bindings
+// and Cord of The Five Thunders); the Argent Dawn's Armaments of Battle cost
+// reputation and Valor Tokens farmed at 60; The Only Prescription (Narain
+// Soothfancy, Gnomish Turban) needs pages from raid bosses.
+const ENDGAME_QUESTS = new Set([8918, 8942, 8620]);
+const ENDGAME_QUEST_NAME = /Armaments of Battle/;
 const PVP_NAME = /^(Premier )?(High Warlord|Grand Marshal|Premier|Warlord|Marshal|General|Champion|Blood Guard|Knight-Lieutenant|Legionnaire|Stone Guard|Lieutenant Commander)'s /;
 
 function open(cacheDir, build) {
@@ -142,7 +146,7 @@ function open(cacheDir, build) {
       // Forever's new quests are only in the fresh QuestieDB package: its races say the faction.
       const fq = (!s.faction || s.faction === 'both') && s.questId && F && F.quest(s.questId);
       if (fq) s.faction = questie.factionOfRaces(fq[5]);
-      if (NEEDS_SET_PIECE.has(s.questId)) s.needsDrop = true;
+      if (ENDGAME_QUESTS.has(s.questId) || ENDGAME_QUEST_NAME.test(s.quest || '')) s.endgame = true;
       const raidTurnIn = Object.keys(RAID_TURN_IN).find(r => RAID_TURN_IN[r].includes(s.questId));
       const zonesOf = [s.zone || ''].concat(raidTurnIn || [], s.questId ? Q.chainZones(s.questId) : []);
       const raid = zonesOf.find(z => RAID.test(z));
