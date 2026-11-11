@@ -4,6 +4,7 @@ Leer esta primera parte antes de seguir. Debajo está la historia del proyecto (
 
 ## 2026-11-11: hotfix de Enhancement del 10-nov, simulado
 
+- **Builds de nivel 30 fuera** (pedido del usuario, e2ddb5e): quedan solo las de 60; el cuadro de la guía muestra la recomendada (o la de nivel más alto).
 - **Simulador local:** WoWSims Forever en `.cache/tools/wowsims-forever` (Go 1.27 portable en `.cache/tools/go`, protoc en `.cache/tools/protoc-npm`; compilar con `go build -tags with_db -o wowsimcli.exe ./cmd/wowsimcli`, GOMAXPROCS=3). El hotfix (que WoWSims no tiene) está cargado a mano en `sim/shaman/zz_nov10.go` + stormstrike.go, talents_enhancement.go, weapon_imbues.go, activable por partes con `NOV10=ss,md,mw,wf` o `all`. Scripts en `.cache/tools/enhsim`: `run.js` (escenario: LVL, HIT, SOLO, DUR, AIR, BONUS), `variants/multi/search.js` (talentos, búsqueda de a un punto con las reglas del sitio), `ep.js` (pesos), `talents.js` (códigos ↔ talentos).
 - **Resultados (nivel 60):** nerf ~15,5% sin cambiar nada; ~12% con Windfury Weapon + Windfury Totem (el doble Windfury recupera 20-25%). Por parte: Stormstrike −8,7%, Maelstrom −4,7%, Mental Dexterity −3,2%. Windfury Totem +8% sobre Grace of Air solo. Maelstrom: 1er punto ~6%, los otros ~0,9% c/u (3x un punto de AK). Trial by Fire ~4% (Fire Nova, que en Forever es de la rotación; no existe Lava Lash). Tidal Focus ~1,3%/punto sin golpe; llevarlo a 5 cuesta TbF o Call of Flame (peor).
 - **Escenario solo de 3 min = sin maná 126 s de 180** (infla Int y talentos de maná): leveo se simula con peleas de 45 s (DUR=45).
