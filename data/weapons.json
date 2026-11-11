@@ -972,40 +972,6 @@
    ]
   },
   {
-   "id": 277253,
-   "name": "Staff of Brutal Cunning",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 43,
-   "bind": "pickup",
-   "dps": 32.42,
-   "speed": 3.3,
-   "dmgMin": 85,
-   "dmgMax": 129,
-   "stats": {
-    "intellect": 6,
-    "spirit": 15
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_11",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 270078,
    "name": "Guardian Staff",
    "kind": "Staff",
@@ -21776,7 +21742,7 @@
      "quest": "Death to the Executioner",
      "questId": 95433,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=95433",
@@ -21886,7 +21852,7 @@
      "quest": "Helping Hands",
      "questId": 94861,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=94861",
@@ -22012,7 +21978,7 @@
      "quest": "Helping Hands",
      "questId": 94861,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=94861",
@@ -22196,12 +22162,12 @@
    "ilvl": 40,
    "bind": "pickup",
    "dps": 35.6,
-   "speed": 3.2,
-   "dmgMin": 91,
-   "dmgMax": 137,
+   "speed": 3.6,
+   "dmgMin": 102,
+   "dmgMax": 154,
    "stats": {
-    "stamina": 15,
-    "intellect": 12
+    "strength": 16,
+    "stamina": 15
    },
    "bonus": {},
    "equip": [
@@ -23778,7 +23744,7 @@
      "quest": "The Monster Surfaces",
      "questId": 95267,
      "requiredLevel": 38,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=95267",
@@ -24619,6 +24585,53 @@
    ]
   },
   {
+   "id": 277253,
+   "name": "Staff of Brutal Cunning",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 0,
+   "obtain": 40,
+   "ilvl": 43,
+   "bind": "pickup",
+   "dps": 32.42,
+   "speed": 3.3,
+   "dmgMin": 85,
+   "dmgMax": 129,
+   "stats": {
+    "intellect": 6,
+    "spirit": 15
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "WANTED: Ohk'zi",
+     "questId": 92858,
+     "requiredLevel": 39,
+     "zone": "Feralas",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=92858",
+     "basis": {
+      "name": "Ohk'zi",
+      "level": 43,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 39,
+     "rec": 40
+    }
+   ]
+  },
+  {
    "id": 9359,
    "name": "Southsea Lamp",
    "kind": "1H Mace",
@@ -25342,14 +25355,12 @@
     "strength": 10
    },
    "bonus": {
-    "crit": 1.1
+    "critRating": 15
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1.1%."
-   ],
+   "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_axe_17",
    "raceMask": -1,
    "sources": [
@@ -26568,11 +26579,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Ruuzlu",
+     "npcId": 7797,
+     "zone": "Zul'Farrak",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 43,
-     "rec": 43
+     "rec": 43,
+     "basis": {
+      "name": "Ruuzlu",
+      "level": 46,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -27492,7 +27513,7 @@
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_sword_41",
    "raceMask": -1,
    "sources": [
@@ -27802,7 +27823,7 @@
     "Chance on hit: Increases Attack Power by 102 and melee attack speed by 6% for 15 sec."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_hammer_06",
    "raceMask": -1,
    "sources": [
@@ -29540,12 +29561,10 @@
    "bonus": {
     "attackPower": 10
    },
-   "equip": [
-    "Equip: +10 Attack Power."
-   ],
+   "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_axe_13",
    "raceMask": -1,
    "sources": [
@@ -32320,6 +32339,46 @@
    ]
   },
   {
+   "id": 280082,
+   "name": "Staff of Sorrow",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 52,
+   "obtain": 52,
+   "ilvl": 57,
+   "bind": "pickup",
+   "dps": 36.25,
+   "speed": 3.6,
+   "dmgMin": 104,
+   "dmgMax": 157,
+   "stats": {
+    "intellect": 15,
+    "spirit": 21
+   },
+   "bonus": {
+    "spellPower": 66,
+    "hit": 1.5
+   },
+   "equip": [
+    "Equip: Improves your chance to hit by 1.5%.",
+    "Equip: Increases damage and healing done by magical spells and effects by up to 66."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_staff_29",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 52,
+     "rec": 52
+    }
+   ]
+  },
+  {
    "id": 12779,
    "name": "Rune Edge",
    "kind": "1H Axe",
@@ -33502,18 +33561,24 @@
    "obtain": 55,
    "ilvl": 60,
    "bind": "equip",
-   "dps": 56.67,
-   "speed": 2.1,
-   "dmgMin": 95,
-   "dmgMax": 143,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
+   "dps": 56.57,
+   "speed": 3.5,
+   "dmgMin": 158,
+   "dmgMax": 238,
+   "stats": {
+    "stamina": 16
+   },
+   "bonus": {
+    "crit": 1
+   },
+   "equip": [
+    "Equip: Improves your chance to get a critical strike by 1.0%."
+   ],
    "chance": [
-    "Chance on hit: Wounds the target for 200 to 300 damage and lowers Intellect of target by 25 for 30 sec."
+    "Chance on hit: Wounds the target's head, dealing 200 to 300 Physical damage, and increasing the casting time of all spells by 30% for 30 sec."
    ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_weapon_halberd_10",
    "raceMask": -1,
    "sources": [
@@ -34784,7 +34849,7 @@
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "spell_frost_frostbrand",
    "raceMask": -1,
    "sources": [
@@ -34916,6 +34981,40 @@
    ]
   },
   {
+   "id": 287045,
+   "name": "Ancient Mattock",
+   "kind": "1H Axe",
+   "quality": 3,
+   "req": 56,
+   "obtain": 56,
+   "ilvl": 61,
+   "bind": "equip",
+   "dps": 40.19,
+   "speed": 2.6,
+   "dmgMin": 73,
+   "dmgMax": 136,
+   "stats": {
+    "stamina": 8,
+    "spirit": 8
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_axe_1h_raidbarrowc60_d_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 56,
+     "rec": 56
+    }
+   ]
+  },
+  {
    "id": 13015,
    "name": "Serathil",
    "kind": "1H Axe",
@@ -34936,7 +35035,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_axe_08",
    "raceMask": -1,
    "sources": [
@@ -35153,7 +35252,7 @@
     "Chance on hit: Knocks target silly for 1 sec. Orcs and Ogres are stunned for 2 times as long."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_gauntlets_11",
    "raceMask": -1,
    "sources": [
@@ -35249,7 +35348,7 @@
     "Chance on hit: Transfers 10 health every 1 seconds from the target to the caster for 5 sec."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_weapon_halberd_11",
    "raceMask": -1,
    "sources": [
@@ -35430,7 +35529,7 @@
     "Chance on hit: Blasts a target for 211 to 293 Nature damage."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_hammer_07",
    "raceMask": -1,
    "sources": [
@@ -35782,6 +35881,55 @@
    ]
   },
   {
+   "id": 22406,
+   "name": "Redemption",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 56,
+   "obtain": 57,
+   "ilvl": 61,
+   "bind": "pickup",
+   "dps": 52.1,
+   "speed": 2.1,
+   "dmgMin": 87,
+   "dmgMax": 132,
+   "stats": {
+    "spirit": 12
+   },
+   "bonus": {
+    "mp5": 12
+   },
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_staff_23",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Cannon Master Willey",
+     "npcId": 10997,
+     "level": 60,
+     "rank": "elite",
+     "zone": "Stratholme",
+     "zoneId": 2017,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 56,
+     "rec": 57,
+     "basis": {
+      "name": "Cannon Master Willey",
+      "level": 60,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 23124,
    "name": "Staff of Balzaphon",
    "kind": "Staff",
@@ -36038,7 +36186,7 @@
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_hammer_17",
    "raceMask": -1,
    "sources": [
@@ -36283,12 +36431,10 @@
    "bonus": {
     "attackPower": 16
    },
-   "equip": [
-    "Equip: +16 Attack Power."
-   ],
+   "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_weapon_shortblade_16",
    "raceMask": -1,
    "sources": [
@@ -36567,58 +36713,6 @@
    ]
   },
   {
-   "id": 22406,
-   "name": "Redemption",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 56,
-   "obtain": 57,
-   "ilvl": 61,
-   "bind": "pickup",
-   "dps": 38.81,
-   "speed": 2.1,
-   "dmgMin": 65,
-   "dmgMax": 98,
-   "stats": {
-    "spirit": 12
-   },
-   "bonus": {
-    "healing": 131,
-    "spellDamage": 43
-   },
-   "equip": [
-    "Equip: Increases healing done by up to 131 and damage done by up to 43 for all magical spells and effects."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_staff_23",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Cannon Master Willey",
-     "npcId": 10997,
-     "level": 60,
-     "rank": "elite",
-     "zone": "Stratholme",
-     "zoneId": 2017,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 56,
-     "rec": 57,
-     "basis": {
-      "name": "Cannon Master Willey",
-      "level": 60,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
    "id": 15246,
    "name": "Demon Blade",
    "kind": "Dagger",
@@ -36780,7 +36874,7 @@
     "Chance on hit: Deal an additional 74 to 137 Frost damage and slow movement speed by 50% for 5 sec."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_axe_03",
    "raceMask": -1,
    "sources": [
@@ -36807,18 +36901,20 @@
    "dmgMin": 128,
    "dmgMax": 193,
    "stats": {
-    "strength": 25,
-    "stamina": 15
+    "strength": 10,
+    "stamina": 9
    },
    "bonus": {
     "crit": 2
    },
    "equip": [
-    "Equip: Improves your chance to get a critical strike by 2%."
+    "Equip: Improves your chance to get a critical strike by 2.0%."
    ],
-   "chance": [],
+   "chance": [
+    "Chance on hit: Deal 138 to 212 Fire damage. Deals 3 times as much damage to Plants."
+   ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_axe_10",
    "raceMask": -1,
    "sources": [
@@ -36828,6 +36924,54 @@
      "confidence": "classic-assumed",
      "asap": 58,
      "rec": 58
+    }
+   ]
+  },
+  {
+   "id": 13937,
+   "name": "Headmaster's Charge",
+   "kind": "Staff",
+   "quality": 4,
+   "req": 57,
+   "obtain": 58,
+   "ilvl": 62,
+   "bind": "pickup",
+   "dps": 58.4,
+   "speed": 2.9,
+   "dmgMin": 135,
+   "dmgMax": 204,
+   "stats": {
+    "stamina": 30,
+    "spirit": 20
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_jewelry_talisman_12",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Darkmaster Gandling",
+     "npcId": 1853,
+     "level": 61,
+     "rank": "elite",
+     "zone": "Scholomance",
+     "zoneId": 0,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 57,
+     "rec": 58,
+     "basis": {
+      "name": "Darkmaster Gandling",
+      "level": 61,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -37450,7 +37594,7 @@
     "Chance on hit: Deals 15 Shadow damage every 2 sec for 14 sec and lowers their attack power by 92 for 14 sec."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_hammer_13",
    "raceMask": -1,
    "sources": [
@@ -37785,58 +37929,6 @@
      "confidence": "classic-assumed",
      "asap": 58,
      "rec": 58
-    }
-   ]
-  },
-  {
-   "id": 13937,
-   "name": "Headmaster's Charge",
-   "kind": "Staff",
-   "quality": 4,
-   "req": 57,
-   "obtain": 58,
-   "ilvl": 62,
-   "bind": "pickup",
-   "dps": 43.28,
-   "speed": 2.9,
-   "dmgMin": 100,
-   "dmgMax": 151,
-   "stats": {
-    "stamina": 30,
-    "spirit": 20
-   },
-   "bonus": {
-    "spellPower": 90
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 90."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_jewelry_talisman_12",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Darkmaster Gandling",
-     "npcId": 1853,
-     "level": 61,
-     "rank": "elite",
-     "zone": "Scholomance",
-     "zoneId": 0,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 57,
-     "rec": 58,
-     "basis": {
-      "name": "Darkmaster Gandling",
-      "level": 61,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },
@@ -38307,15 +38399,12 @@
    },
    "bonus": {
     "attackPower": 14,
-    "crit": 0.5
+    "critRating": 7
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 0.5%.",
-    "Equip: +14 Attack Power."
-   ],
+   "equip": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_axe_09",
    "raceMask": -1,
    "sources": [
@@ -38444,13 +38533,14 @@
    "dmgMax": 117,
    "stats": {
     "strength": 7,
-    "stamina": 11
+    "stamina": 11,
+    "armor": 50
    },
    "bonus": {},
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_mace_07",
    "raceMask": -1,
    "sources": [
@@ -38469,6 +38559,53 @@
      "rec": 58,
      "basis": {
       "name": "Prince Tortheldrin",
+      "level": 61,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 13964,
+   "name": "Witchblade",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 57,
+   "obtain": 58,
+   "ilvl": 62,
+   "bind": "pickup",
+   "dps": 40.6,
+   "speed": 1.6,
+   "dmgMin": 45,
+   "dmgMax": 85,
+   "stats": {
+    "intellect": 8
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_25",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Darkmaster Gandling",
+     "npcId": 1853,
+     "level": 61,
+     "rank": "elite",
+     "zone": "Scholomance",
+     "zoneId": 0,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 57,
+     "rec": 58,
+     "basis": {
+      "name": "Darkmaster Gandling",
       "level": 61,
       "rank": "elite",
       "from": "wowhead",
@@ -38536,22 +38673,20 @@
    "obtain": 58,
    "ilvl": 60,
    "bind": "pickup",
-   "dps": 39.38,
+   "dps": 39.4,
    "speed": 2.4,
    "dmgMin": 66,
    "dmgMax": 123,
    "stats": {
-    "intellect": 5
+    "stamina": 10
    },
    "bonus": {
-    "spellPower": 14
+    "hitRating": 10
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 14."
-   ],
+   "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_hammer_06",
    "raceMask": -1,
    "sources": [
@@ -38822,57 +38957,6 @@
    ]
   },
   {
-   "id": 13964,
-   "name": "Witchblade",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 57,
-   "obtain": 58,
-   "ilvl": 62,
-   "bind": "pickup",
-   "dps": 27.19,
-   "speed": 1.6,
-   "dmgMin": 30,
-   "dmgMax": 57,
-   "stats": {
-    "intellect": 8
-   },
-   "bonus": {
-    "spellPower": 72
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 72."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_weapon_shortblade_25",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Darkmaster Gandling",
-     "npcId": 1853,
-     "level": 61,
-     "rank": "elite",
-     "zone": "Scholomance",
-     "zoneId": 0,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 57,
-     "rec": 58,
-     "basis": {
-      "name": "Darkmaster Gandling",
-      "level": 61,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
    "id": 18717,
    "name": "Hammer of the Grand Crusader",
    "kind": "2H Mace",
@@ -38938,10 +39022,10 @@
    "bonus": {},
    "equip": [],
    "chance": [
-    "Chance on hit: Lowers all stats by 20 and deals 20 Nature damage every 3 sec to all enemies within an 8 yard radius of the caster for 30 sec."
+    "Chance on hit: Deals 51 Nature damage every 2 sec to all enemies within an 8 yard radius of the caster for 10 sec."
    ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_hammer_17",
    "raceMask": -1,
    "sources": [
@@ -39150,7 +39234,7 @@
     "Chance on hit: All attacks are guaranteed to land and will be critical strikes for the next 3 sec."
    ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_weapon_shortblade_25",
    "raceMask": -1,
    "sources": [
@@ -39217,13 +39301,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9221",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -39240,13 +39324,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9223",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -39263,13 +39347,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9226",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -39286,13 +39370,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9227",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     }
    ]
   },
@@ -39481,6 +39565,55 @@
    ]
   },
   {
+   "id": 13349,
+   "name": "Scepter of the Unholy",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 58,
+   "obtain": 59,
+   "ilvl": 63,
+   "bind": "pickup",
+   "dps": 41.2,
+   "speed": 2.4,
+   "dmgMin": 69,
+   "dmgMax": 129,
+   "stats": {
+    "stamina": 5
+   },
+   "bonus": {
+    "otherDamage": 88
+   },
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_mace_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Baron Rivendare",
+     "npcId": 10440,
+     "level": 62,
+     "rank": "elite",
+     "zone": "Stratholme",
+     "zoneId": 2017,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 58,
+     "rec": 59,
+     "basis": {
+      "name": "Baron Rivendare",
+      "level": 62,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 12709,
    "name": "Pip's Skinner",
    "kind": "Dagger",
@@ -39495,15 +39628,15 @@
    "dmgMax": 70,
    "stats": {},
    "bonus": {
-    "attackPower": 45
+    "attackPower": 20
    },
    "equip": [
-    "Equip: Skinning +10.",
-    "Equip: +45 Attack Power when fighting Beasts."
+    "Equip: Increased Skinning +10.",
+    "Equip: +30 Attack Power against Beasts."
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_sword_33",
    "raceMask": -1,
    "sources": [
@@ -39697,12 +39830,10 @@
    "bonus": {
     "attackPower": 30
    },
-   "equip": [
-    "Equip: +30 Attack Power."
-   ],
+   "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_weapon_shortblade_12",
    "raceMask": -1,
    "sources": [
@@ -39788,57 +39919,6 @@
      "confidence": "classic-assumed",
      "asap": 59,
      "rec": 59
-    }
-   ]
-  },
-  {
-   "id": 13349,
-   "name": "Scepter of the Unholy",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 58,
-   "obtain": 59,
-   "ilvl": 63,
-   "bind": "pickup",
-   "dps": 27.5,
-   "speed": 2.4,
-   "dmgMin": 46,
-   "dmgMax": 86,
-   "stats": {
-    "stamina": 5
-   },
-   "bonus": {
-    "otherDamage": 88
-   },
-   "equip": [
-    "Equip: Increases damage done by Shadow spells and effects by up to 88."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_mace_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Baron Rivendare",
-     "npcId": 10440,
-     "level": 62,
-     "rank": "elite",
-     "zone": "Stratholme",
-     "zoneId": 2017,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 58,
-     "rec": 59,
-     "basis": {
-      "name": "Baron Rivendare",
-      "level": 62,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
     }
    ]
   },

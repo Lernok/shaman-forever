@@ -1,6 +1,6 @@
 {
  "_readme": "talentsforever.com data export for the Shaman. Fan-made WoW Forever talent calculator; talents, racials, Legacy perks and the class spellbooks come from the WoW Forever beta client's own data files (the site began as frame-by-frame reads of the BlizzCon 2026 demo), so numbers can lag live tuning. A class can carry the server's hotfixes over the build it was read from, where the client's files do not have them: that class's talents.source line says so and names the days, and a spell rank a hotfix changed names it in its src. talents: per class, trees with talents (row/col are 1-based grid positions, max is the rank cap, desc lists the tooltip text of each rank, rank 1 first, as the client's files give it at level 60, or in the game's own words where a rank was read in game; confirmed lists the ranks whose text is real and not an estimate, which is every rank for trees from the beta client; classic compares the talent with Classic Era: status same, moved, changed or new, Classic's tree, row, col, rank count and rank 1 text, and renamed, note or replaces where they apply). spellbooks: per class, every trainer spell to level 60 with every rank (levels = the level each rank is learned at; checked = that class's city trainer was read in game, the rest are from the files only; the General tab is kept by hand from the demo and in-game reads). spell_desc: tooltip text keyed class|spell|rank, s=beta means the beta client's text at level 60 with no gear, s=demo means read off the BlizzCon demo footage, or read in game where src begins Read in game, s=classic means Wowhead Classic fallback, nt=1, 2, 3 or 4 means the class trainer does not sell that rank (1 portal trainer, 2 tome, quest or drop, 3 comes with the talent: taking the talent puts it in the book, 4 not sold by the class trainer, checked in game, and where it is learned is not known yet), ns=quest means a class quest teaches it (Wowhead Forever and Blizzard's notes), not a trainer read. racials and legacy: racial abilities and the Legacy perk trees. License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). You may copy, adapt and republish this data, including commercially, as long as you credit talentsforever.com with a link. Game names, icons and tooltip text belong to Blizzard Entertainment.",
- "generated": "2026-11-04",
+ "generated": "2026-11-10",
  "class": "Shaman",
  "talents": {
   "icon": "class_shaman",
@@ -605,9 +605,9 @@
       "passive": true,
       "icon": "spell_nature_mentalquickness",
       "desc": [
-       "Increases your Attack Power by an amount equal to 50% of your Intellect.",
-       "Increases your Attack Power by an amount equal to 100% of your Intellect.",
-       "Increases your Attack Power by an amount equal to 150% of your Intellect."
+       "Increases your Attack Power by an amount equal to 33% of your Intellect.",
+       "Increases your Attack Power by an amount equal to 66% of your Intellect.",
+       "Increases your Attack Power by an amount equal to 100% of your Intellect."
       ],
       "complete": true,
       "confirmed": [
@@ -616,7 +616,7 @@
        3
       ],
       "src": "beta",
-      "hotfix": "2026-11-03",
+      "hotfix": "2026-11-10",
       "classic": {
        "status": "new"
       }
@@ -804,15 +804,15 @@
       "passive": false,
       "icon": "ability_shaman_stormstrike",
       "desc": [
-       "Instantly strike for 150% weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec."
+       "Instantly strike for 100% weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec."
       ],
       "complete": true,
       "confirmed": [
        1
       ],
       "src": "beta",
-      "hotfix": "2026-11-03",
-      "cost": "8% of base mana | Melee Range | Instant | 6 sec cooldown",
+      "hotfix": "2026-11-10",
+      "cost": "8% of base mana | Melee Range | Instant | 8 sec cooldown",
       "classic": {
        "status": "changed",
        "tree": "Enhancement",
@@ -929,11 +929,11 @@
       "passive": true,
       "icon": "spell_shaman_maelstromweapon",
       "desc": [
-       "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 4%. Stacks up to 5 times. Lasts 30 sec.",
-       "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 8%. Stacks up to 5 times. Lasts 30 sec.",
-       "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 12%. Stacks up to 5 times. Lasts 30 sec.",
-       "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 16%. Stacks up to 5 times. Lasts 30 sec.",
-       "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20%. Stacks up to 5 times. Lasts 30 sec."
+       "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20%. Stacks up to 5 times. Lasts 30 sec. Activates about 6 times per minute.",
+       "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20%. Stacks up to 5 times. Lasts 30 sec. Activates about 7 times per minute.",
+       "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20%. Stacks up to 5 times. Lasts 30 sec. Activates about 8 times per minute.",
+       "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20%. Stacks up to 5 times. Lasts 30 sec. Activates about 9 times per minute.",
+       "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20%. Stacks up to 5 times. Lasts 30 sec. Activates about 10 times per minute."
       ],
       "complete": true,
       "confirmed": [
@@ -944,6 +944,7 @@
        5
       ],
       "src": "beta",
+      "hotfix": "2026-11-10",
       "classic": {
        "status": "new"
       }
@@ -1479,7 +1480,7 @@
     ]
    }
   ],
-  "source": "Talent trees and every rank's text from the WoW Forever beta client, build 1.60.1.70755. Some Shaman numbers follow Blizzard's development notes of 2 Nov 2026, ahead of any game data. The Shaman trees carry the server's hotfixes of 3 Nov 2026 over that build, read from the beta's hotfix cache and cross-checked with Blizzard's notes or Wowhead's tooltips; those are not in the client's files.",
+  "source": "Talent trees and every rank's text from the WoW Forever beta client, build 1.60.1.70755. Some Shaman numbers follow Blizzard's development notes of 2 Nov 2026, ahead of any game data. The Shaman trees carry the server's hotfixes of 3 Nov 2026 over that build, read from the beta's hotfix cache and cross-checked with Blizzard's notes or Wowhead's tooltips; those are not in the client's files. The Shaman trees carry the server's hotfixes of 10 Nov 2026 over that build, read from the beta's hotfix cache and cross-checked with Blizzard's notes or Wowhead's tooltips; those are not in the client's files.",
   "classic_total": 46
  },
  "spellbook": {
@@ -5513,12 +5514,12 @@
     ],
     [
      "Instant",
-     "6 sec cooldown"
+     "8 sec cooldown"
     ]
    ],
-   "d": "Instantly strike for 150% weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec.",
+   "d": "Instantly strike for 100% weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec.",
    "s": "beta",
-   "src": "beta client 1.60.1.70755, server hotfix 2026-11-03",
+   "src": "beta client 1.60.1.70755, server hotfix 2026-11-10",
    "r": "",
    "lv": "Learned at level 25",
    "id": 17364,

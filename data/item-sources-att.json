@@ -1494,6 +1494,19 @@
     }
    ]
   },
+  "270066": {
+   "name": "Tower Boots",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 697,
+     "quest": "Malin's Request (2/2)",
+     "minLevel": 30,
+     "faction": "alliance",
+     "zone": "Arathi Highlands"
+    }
+   ]
+  },
   "270067": {
    "name": "Wild Headdress",
    "sources": [
@@ -1645,6 +1658,19 @@
      "questId": 613,
      "quest": "Cracking Maury's Foot",
      "minLevel": 30,
+     "faction": "both",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "270100": {
+   "name": "Freebooter's Armband",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 8551,
+     "quest": "The Captain's Chest",
+     "minLevel": 35,
      "faction": "both",
      "zone": "Stranglethorn Vale"
     }
@@ -2163,7 +2189,7 @@
      "quest": "Test Your Theory",
      "minLevel": 35,
      "faction": "horde",
-     "zone": null
+     "zone": "Desolace"
     }
    ]
   },
@@ -3238,6 +3264,17 @@
     }
    ]
   },
+  "274654": {
+   "name": "Sandfury Guillotine",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7797,
+     "npc": "Ruuzlu",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
   "274915": {
    "name": "Sacristan Band",
    "sources": [
@@ -3273,7 +3310,7 @@
      "quest": "Helping Hands",
      "minLevel": 36,
      "faction": "alliance",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3286,7 +3323,7 @@
      "quest": "Helping Hands",
      "minLevel": 36,
      "faction": "alliance",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3325,7 +3362,7 @@
      "quest": "Snargl's Snout [A]",
      "minLevel": 36,
      "faction": "alliance",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3338,7 +3375,7 @@
      "quest": "Snargl's Snout [A]",
      "minLevel": 36,
      "faction": "alliance",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3351,7 +3388,7 @@
      "quest": "Snargl's Snout [A]",
      "minLevel": 36,
      "faction": "alliance",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3364,7 +3401,7 @@
      "quest": "Snargl's Snout [H]",
      "minLevel": 36,
      "faction": "horde",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3377,7 +3414,7 @@
      "quest": "Snargl's Snout [H]",
      "minLevel": 36,
      "faction": "horde",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3390,7 +3427,7 @@
      "quest": "Snargl's Snout [H]",
      "minLevel": 36,
      "faction": "horde",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3403,7 +3440,7 @@
      "quest": "The Monster Surfaces",
      "minLevel": 38,
      "faction": "both",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3455,7 +3492,7 @@
      "quest": "Preventative Measures",
      "minLevel": 36,
      "faction": "alliance",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3468,7 +3505,7 @@
      "quest": "Preventative Measures",
      "minLevel": 36,
      "faction": "alliance",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3481,7 +3518,7 @@
      "quest": "WANTED: Ghostmaw [A]",
      "minLevel": 38,
      "faction": "alliance",
-     "zone": null
+     "zone": "Riverglades"
     },
     {
      "type": "quest",
@@ -3634,7 +3671,7 @@
      "quest": "Death to the Executioner",
      "minLevel": 36,
      "faction": "horde",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3686,7 +3723,7 @@
      "quest": "A Miner Problem",
      "minLevel": 38,
      "faction": "alliance",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3712,7 +3749,7 @@
      "quest": "Bloodmaster's Ring (7/7)",
      "minLevel": 36,
      "faction": "horde",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3725,7 +3762,7 @@
      "quest": "Bloodmaster's Ring (7/7)",
      "minLevel": 36,
      "faction": "horde",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3738,7 +3775,7 @@
      "quest": "Bloodmaster's Ring (7/7)",
      "minLevel": 36,
      "faction": "horde",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3777,7 +3814,7 @@
      "quest": "Bring Me His Head [H]",
      "minLevel": 38,
      "faction": "horde",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -3790,7 +3827,7 @@
      "quest": "Bring Me His Head [H]",
      "minLevel": 38,
      "faction": "horde",
-     "zone": null
+     "zone": "Riverglades"
     }
    ]
   },
@@ -4099,7 +4136,7 @@
      "quest": "Returning to Port",
      "minLevel": 30,
      "faction": "both",
-     "zone": null
+     "zone": "Stranglethorn Vale"
     }
    ]
   },
@@ -4138,7 +4175,7 @@
      "quest": "Returning to Port",
      "minLevel": 30,
      "faction": "both",
-     "zone": null
+     "zone": "Stranglethorn Vale"
     }
    ]
   },
@@ -4164,7 +4201,7 @@
      "quest": "Returning to Port",
      "minLevel": 30,
      "faction": "both",
-     "zone": null
+     "zone": "Stranglethorn Vale"
     }
    ]
   },
@@ -4191,6 +4228,19 @@
      "minLevel": 10,
      "faction": "both",
      "zone": "Tirisfal Glades"
+    }
+   ]
+  },
+  "277253": {
+   "name": "Staff of Brutal Cunning",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 92858,
+     "quest": "WANTED: Ohk'zi",
+     "minLevel": 39,
+     "faction": "alliance",
+     "zone": "Feralas"
     }
    ]
   },
@@ -5696,6 +5746,18 @@
     }
    ]
   },
+  "281676": {
+   "name": "Rog'mar Trainee Shoulderpads",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 259801,
+     "npc": "Mosh'gra",
+     "zone": "Riverglades",
+     "rare": true
+    }
+   ]
+  },
   "281993": {
    "name": "Gnoll Hide Boots",
    "sources": [
@@ -6220,6 +6282,18 @@
      "type": "drop",
      "npcId": 255887,
      "npc": "Slydris",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
+  "285253": {
+   "name": "Skyseer's Gloves",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 259398,
+     "npc": "Galemender Delanea",
      "zone": "Zephras Isle",
      "rare": true
     }
