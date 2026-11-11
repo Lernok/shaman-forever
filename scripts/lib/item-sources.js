@@ -150,6 +150,10 @@ function open(cacheDir, build) {
       const raidTurnIn = Object.keys(RAID_TURN_IN).find(r => RAID_TURN_IN[r].includes(s.questId));
       const zonesOf = [s.zone || ''].concat(raidTurnIn || [], s.questId ? Q.chainZones(s.questId) : []);
       const raid = zonesOf.find(z => RAID.test(z));
+      // A step that needs a raid's drops or boss (Head of Onyxia, Molten Core
+      // hands): not a leveling reward either. Silithus isn't a raid here.
+      const need = !raid && s.questId && Q.raidNeed(s.questId, z => RAID.test(z) && !/Silithus/i.test(z));
+      if (need) { s.raid = true; s.dungeon = undefined; s.raidNeed = need; return; }
       if (raid) { s.raid = true; s.dungeon = undefined; if (raid !== s.zone) s.dungeonZone = raid; return; }
       if (s.dungeon || INSTANCE.test(s.zone || '')) s.dungeon = true;
       else {

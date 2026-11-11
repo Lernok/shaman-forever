@@ -184,7 +184,49 @@ function open(cacheDir, zoneNames) {
     return { name: n[0], maxLevel: n[4] || null, rank: { 1: 'elite', 2: 'rare-elite', 3: 'boss', 4: 'rare' }[n[5]] || 'normal' };
   }
 
-  return { sources, chainZones, quest, npcLevel };
+  // The raid a quest needs, anywhere in its chain: a step started by an item
+  // (questKeys startedBy = 2, its third list) or asking for items (objectives
+  // = 10, third list) that drop only in a raid, or a raid NPC to kill (first
+  // list). Head of Onyxia, the Molten Core lieutenants' hands for Duke
+  // Hydraxis, Qiraji insignias: the giver stands out in the world, so the
+  // chain's zones alone don't show it. isRaid(zone) says what a raid is; a
+  // level 63 boss (Onyxia, Nefarian, Lucifron: QuestieDB has no zone for
+  // them) is a raid or world boss too.
+  function raidNeed(questId, isRaid) {
+    const seen = new Set();
+    const raidNpc = id => {
+      const n = npc(id);
+      if (n.zone && isRaid(n.zone)) return n.zone;
+      const l = npcLevel(id);
+      return l && l.rank === 'boss' && l.maxLevel >= 63 ? l.name : null;
+    };
+    // Raid only if every NPC that drops it (or the one to kill) is.
+    const onlyRaid = ids => {
+      if (!ids.length) return null;
+      const r = ids.map(raidNpc);
+      return r.every(Boolean) ? r[0] : null;
+    };
+    const itemRaid = itemId => {
+      const it = get(items, itemId);
+      return onlyRaid((it && it[1]) || []);
+    };
+    let found = null;
+    const walk = id => {
+      if (found || seen.has(id)) return;
+      seen.add(id);
+      const q = get(quests, id);
+      if (!q) return;
+      const ob = q[9] || [];
+      found = (((q[1] || [])[2]) || []).map(itemRaid).find(Boolean) ||
+        (ob[2] || []).map(o => itemRaid(o[0])).find(Boolean) ||
+        (ob[0] || []).map(o => onlyRaid([o[0]])).find(Boolean) || null;
+      if (!found) (q[11] || []).concat(q[12] || []).forEach(walk);
+    };
+    walk(questId);
+    return found;
+  }
+
+  return { sources, chainZones, quest, npcLevel, raidNeed };
 }
 
 module.exports = { open, parseLua, factionOfRaces };

@@ -286,10 +286,18 @@
     const held = [];
     const steps = [];
     const skipped = [];
-    // First level something at least `v * UPGRADE` is available, from `from` on.
+    // When a piece of worth `v` taken at `from` would be pushed out: once
+    // `count` better ones (at least `v * UPGRADE`, different pieces) came,
+    // since with two ring or trinket slots a better one replaces the weaker
+    // of the two, not necessarily this one.
     const nextBetter = (v, from, except) => {
-      const n = pool.find(c => c.at > from && c.value >= v * UPGRADE && c !== except);
-      return n ? n.at : 61;
+      const names = new Set();
+      for (const c of pool) {
+        if (c.at <= from || c === except || c.value < v * UPGRADE || names.has(c.item.name)) continue;
+        names.add(c.item.name);
+        if (names.size >= count) return c.at;
+      }
+      return 61;
     };
     for (let lvl = 1; lvl <= 60; lvl++) {
       pool.filter(c => c.at === lvl).sort((a, b) => b.value - a.value).forEach(c => {
@@ -302,12 +310,20 @@
         // A craft of your own for a slot that's empty is worth it however soon
         // it's replaced: you make such pieces anyway to raise the skill.
         const empty = !weakest && c.access === 'crafted';
-        if (lasts < c.min && !empty) { skipped.push({ c, lasts, until }); return; }
-        if (weakest) held.splice(held.indexOf(weakest), 1);
+        // Nothing replaces it before 60: you keep it at the level cap, however late it comes.
+        if (lasts < c.min && until <= 60 && !empty) { skipped.push({ c, lasts, until }); return; }
+        if (weakest) {
+          held.splice(held.indexOf(weakest), 1);
+          // What it replaces lasted until now, whatever the estimate said.
+          const old = steps.find(st => st.pick === weakest);
+          Object.assign(old, { until: lvl, lasts: lvl - old.level, weight: weighted(old.level, lvl) });
+        }
         held.push(c);
         steps.push({ level: lvl, pick: c, replaces: weakest, lasts, until, weight: weighted(lvl, until) });
       });
     }
+    // Still worn at 60: it lasts the whole way.
+    steps.forEach(st => { if (held.includes(st.pick)) Object.assign(st, { until: 61, lasts: 61 - st.level, weight: weighted(st.level, 61) }); });
     return { steps, skipped };
   }
 

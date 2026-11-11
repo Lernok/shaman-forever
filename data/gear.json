@@ -244538,7 +244538,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Nefarian"
     },
     {
      "type": "quest",
@@ -244563,7 +244565,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Nefarian"
     }
    ]
   },
@@ -244902,7 +244906,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Nefarian"
     },
     {
      "type": "quest",
@@ -244927,7 +244933,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Nefarian"
     }
    ]
   },
@@ -244979,7 +244987,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Nefarian"
     },
     {
      "type": "quest",
@@ -245004,7 +245014,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Nefarian"
     }
    ]
   },
@@ -251496,7 +251508,9 @@
       "steps": 14
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Maws"
     }
    ]
   },
@@ -251549,7 +251563,9 @@
       "steps": 14
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Maws"
     }
    ]
   },
@@ -251689,7 +251705,6 @@
      "zone": "Moonglade",
      "faction": "both",
      "confidence": "classic-assumed",
-     "dungeon": true,
      "bands": {
       "yellow": 60
      },
@@ -251705,7 +251720,9 @@
       "steps": 7
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Twilight Corrupter"
     }
    ]
   },
@@ -251743,7 +251760,6 @@
      "zone": "Moonglade",
      "faction": "both",
      "confidence": "classic-assumed",
-     "dungeon": true,
      "bands": {
       "yellow": 60
      },
@@ -251759,7 +251775,9 @@
       "steps": 7
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Twilight Corrupter"
     }
    ]
   },
@@ -257075,7 +257093,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Ysondre"
     }
    ]
   },
@@ -266352,7 +266372,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Onyxia"
     },
     {
      "type": "quest",
@@ -266377,7 +266399,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Onyxia"
     }
    ]
   },
@@ -266430,7 +266454,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Onyxia"
     },
     {
      "type": "quest",
@@ -266455,7 +266481,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Onyxia"
     }
    ]
   },
@@ -266504,7 +266532,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Onyxia"
     },
     {
      "type": "quest",
@@ -266529,7 +266559,9 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Onyxia"
     }
    ]
   },
@@ -274092,7 +274124,9 @@
       "steps": 7
      },
      "asap": 58,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Shazzrah"
     }
    ]
   },
@@ -274145,7 +274179,9 @@
       "steps": 7
      },
      "asap": 58,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Shazzrah"
     }
    ]
   },
@@ -276881,7 +276917,6 @@
      "zone": "Orgrimmar",
      "faction": "horde",
      "confidence": "classic-assumed",
-     "dungeon": true,
      "classes": [
       "Shaman"
      ],
@@ -276899,7 +276934,9 @@
       "steps": 13
      },
      "asap": 58,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Lord Valthalak"
     }
    ]
   },
@@ -276941,7 +276978,6 @@
      "zone": "Orgrimmar",
      "faction": "horde",
      "confidence": "classic-assumed",
-     "dungeon": true,
      "classes": [
       "Shaman"
      ],
@@ -276959,7 +276995,9 @@
       "steps": 13
      },
      "asap": 58,
-     "rec": 60
+     "rec": 60,
+     "raid": true,
+     "raidNeed": "Lord Valthalak"
     }
    ]
   },
