@@ -2,6 +2,23 @@
 
 Leer esta primera parte antes de seguir. Debajo está la historia del proyecto (plan de fases y sesiones).
 
+## 2026-11-11: hotfix de Enhancement del 10-nov, simulado
+
+- **Simulador local:** WoWSims Forever en `.cache/tools/wowsims-forever` (Go 1.27 portable en `.cache/tools/go`, protoc en `.cache/tools/protoc-npm`; compilar con `go build -tags with_db -o wowsimcli.exe ./cmd/wowsimcli`, GOMAXPROCS=3). El hotfix (que WoWSims no tiene) está cargado a mano en `sim/shaman/zz_nov10.go` + stormstrike.go, talents_enhancement.go, weapon_imbues.go, activable por partes con `NOV10=ss,md,mw,wf` o `all`. Scripts en `.cache/tools/enhsim`: `run.js` (escenario: LVL, HIT, SOLO, DUR, AIR, BONUS), `variants/multi/search.js` (talentos, búsqueda de a un punto con las reglas del sitio), `ep.js` (pesos), `talents.js` (códigos ↔ talentos).
+- **Resultados (nivel 60):** nerf ~15,5% sin cambiar nada; ~12% con Windfury Weapon + Windfury Totem (el doble Windfury recupera 20-25%). Por parte: Stormstrike −8,7%, Maelstrom −4,7%, Mental Dexterity −3,2%. Windfury Totem +8% sobre Grace of Air solo. Maelstrom: 1er punto ~6%, los otros ~0,9% c/u (3x un punto de AK). Trial by Fire ~4% (Fire Nova, que en Forever es de la rotación; no existe Lava Lash). Tidal Focus ~1,3%/punto sin golpe; llevarlo a 5 cuesta TbF o Call of Flame (peor).
+- **Escenario solo de 3 min = sin maná 126 s de 180** (infla Int y talentos de maná): leveo se simula con peleas de 45 s (DUR=45).
+- **Builds** (data/builds.json): leveo 10→60 17/31/3 con IGW (id tf-enh-leveling-60, origin `simulacion`), raid `sim-enh-raid-60` 053403002-053030310051002251-03 (recomendado), PvP `enh-pvp-60` 16/32/3 (sin simular). Populares quedan como alternativa (−3,5/−5%).
+- **Pesos Enh** en gear-plan.js medidos (Str 1.1, Int 0.95, crit 1.38, hit 2.2, spellDamage 0.88). Entran más piezas de tela con Int/SP: la simulación no cuenta armadura (decisión pendiente del usuario).
+- talent-patch.js: textos del hotfix (MD 33/66/100, SS 100%/8 s, MW 20% por carga). Rage of the Storm: 16 Fuerza, 3.6 (wowsims/gamedata ya lo tiene; lo toma el sync).
+
+## 2026-11-10: guías y equipo 30-60 (deep research)
+
+- **Sync caído 8→9-nov:** Warden Staff perdió `armor` y Novedades mostraba "260 → undefined" (smoke frenaba). `diffItems` muestra "—"; la issue `sync-error` ahora incluye la salida de check-site y smoke (antes llegaba vacía).
+- **Investigación:** `reports/Shaman post 30 en Forever.md` + `research_notes/` (excluidos de git por .git/info/exclude). Tope 60, raids 9-dic; hotfixes 6/8/9-nov (Overload arreglado el 9). Enhancement: Blizzard cambia el 10-nov para que Fuerza sea el mejor stat (t/2404092): pesos Enh bajados a Int 0,7 / spellDamage 0,45 hasta los números. **Pendiente: leer las notas del 10-nov y ajustar WEIGHTS, guía y orden de talentos de Enh.**
+- **Guías** reescritas al juego en vivo (Call of Thunder, Lightning Mastery, Stormstrike 150%/6 s, MD 150%, Riptide HoT), `launchNotes` fuera, órdenes 30-60 de Icy Veins en builds.json.
+- **Drops de dungeons nuevos:** criterio del usuario: ForeverDungeonJournal (ARR) solo como referencia, confirmar en otra fuente y citar esa. Wowhead Forever item pages (pestaña Dropped by, por Chrome, de a una página: con fetch en serie pide "Human Verification", no resolverla) + foreverchanges. Cargados en `data/item-sources.json` (type boss): 11 de Krol'dok, 3 de Drowned City; 6 recompensas de misión. Sin confirmar todavía: Bossman Toof, The Questioner, Braxton/Umbra (raros élite sin ubicación), Shaper's Terrace y Alcaz (Wowhead sin datos al 10-nov), Herod/Amnennar/Glutton (no llegué). AtlasLoot Forever (GPL) es otra referencia usable.
+- fetch-item-sources: páginas sin misión se piden cada 2 días. Krol'dok Stronghold 40-45 en build-zones.
+
 ## 2026-11-07: camino sin BoEs, patterns de Favor aparte
 
 - **Pedido del usuario** (excepción a congelar el motor desde el 4-nov): `GearPlan.access` ya no cuenta `type: 'drop'` (mundo, vino de AllTheThings el 2-nov) ni jefes con `bind: 'equip'` (la tabla de trash del dungeon). "Sumar drops" = solo jefes de dungeon.

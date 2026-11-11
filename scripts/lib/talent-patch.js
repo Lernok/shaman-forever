@@ -12,6 +12,10 @@
 const NOTES = 'https://us.forums.blizzard.com/en/wow/t/2360696';
 
 const note = (es, en) => ({ es, en, source: NOTES });
+// The Enhancement hotfix of Nov 10, 2026 (us.forums.blizzard.com/en/wow/t/2403040):
+// live on the servers, not in talentsforever's export yet.
+const HOTFIX = 'https://us.forums.blizzard.com/en/wow/t/2403040';
+const hotfix = (es, en) => ({ es, en, source: HOTFIX });
 
 const MARKS = {
   Elemental: {
@@ -23,10 +27,10 @@ const MARKS = {
   Enhancement: {
     'Improved Ghost Wolf': note('Baja de la fila 2 a la 4.', 'Moves from row 2 to row 4.'),
     'Improved Lightning Shield': note('Pasa a la columna 3, donde estaba Improved Ghost Wolf.', 'Moves to column 3, where Improved Ghost Wolf was.'),
-    'Mental Dexterity': note('50/100/150% del Intelecto (era 33/67/100%).', '50/100/150% of Intellect (was 33/67/100%).'),
+    'Mental Dexterity': hotfix('33/66/100% del Intelecto: el hotfix del 10-nov deshizo el 50/100/150% de las notas del 2-nov.', '33/66/100% of Intellect: the Nov 10 hotfix undid the 50/100/150% of the Nov 2 notes.'),
     'Flurry': note('6/12/18/24/30% (era 5/10/15/20/25%).', '6/12/18/24/30% (was 5/10/15/20/25%).'),
-    'Stormstrike': note('150% del daño del arma (era 100%), cada 6 s (era 8 s).', '150% weapon damage (was 100%), every 6 sec (was 8 sec).'),
-    'Maelstrom Weapon': note('Salta el doble de seguido.', 'Procs twice as often.')
+    'Stormstrike': hotfix('100% del daño del arma cada 8 s: el hotfix del 10-nov deshizo el 150% cada 6 s de las notas del 2-nov.', '100% weapon damage every 8 sec: the Nov 10 hotfix undid the 150% every 6 sec of the Nov 2 notes.'),
+    'Maelstrom Weapon': hotfix('Hotfix del 10-nov: 20% por carga con cualquier cantidad de puntos; los puntos suben la frecuencia, 6/7/8/9/10 veces por minuto (era 20 por minuto con 4/8/12/16/20% por carga).', 'Nov 10 hotfix: 20% per stack at any rank; points raise the rate, 6/7/8/9/10 times per minute (was 20 per minute with 4/8/12/16/20% per stack).')
   },
   Restoration: {
     'Riptide': note('Ya no cura de entrada, solo con el tiempo; cada 12 s (era 6 s) y con menos maná.', 'No longer heals up front, only over time; every 12 sec (was 6 sec), less mana.')
@@ -43,7 +47,11 @@ const LIVE = {
   },
   Enhancement: {
     'Improved Lightning Shield': { col: 3 },
-    'Stormstrike': { desc: d => d.map(x => x.replace('150% normalized weapon damage', '150% weapon damage')) }
+    // Nov 10 hotfix.
+    'Mental Dexterity': { desc: [33, 66, 100].map(n => 'Increases your Attack Power by an amount equal to ' + n + '% of your Intellect.') },
+    'Stormstrike': { desc: ['Instantly strike for 100% weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec.'] },
+    // The rate per rank (6-10 a minute) is in its mark: the game's wording doesn't state it.
+    'Maelstrom Weapon': { desc: [1, 2, 3, 4, 5].map(() => 'When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20%. Stacks up to 5 times. Lasts 30 sec.') }
   }
 };
 
@@ -63,7 +71,11 @@ module.exports = function patch(shaman) {
   const lm = sd['Shaman|Lightning Mastery|'];
   if (lm) lm.d = LIVE.Elemental['Lightning Mastery'].desc[0];
   const ss = sd['Shaman|Stormstrike|'];
-  if (ss) ss.d = ss.d.replace('150% normalized weapon damage', '150% weapon damage');
+  if (ss) {
+    ss.d = LIVE.Enhancement.Stormstrike.desc[0];
+    ss.l = ss.l.map(row => row.map(x => x === '6 sec cooldown' ? '8 sec cooldown' : x));
+    ss.src = (ss.src || '') + ', server hotfix 2026-11-10';
+  }
   talents.trees.forEach(tree => {
     const marks = MARKS[tree.name] || {};
     tree.talents.forEach(t => { if (marks[t.name]) t.patch = marks[t.name]; });

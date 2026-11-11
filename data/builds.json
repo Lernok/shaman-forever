@@ -75,25 +75,26 @@
         "en": "Leveling"
       },
       "level": 30,
-      "origin": "guia",
+      "origin": "simulacion",
       "confidence": "community-untested",
       "note": {
-        "es": "El build de leveling de la guía (21 puntos), movido al árbol de las notas del 2-nov: Improved Ghost Wolf pasa a la fila 4, así que se toma después de Stormstrike, y 2 puntos de Ancestral Knowledge (más Intelecto, que ahora vale más) reemplazan a Improved Stormstrike y un punto de Flurry.",
-        "en": "The guide's leveling build (21 points), moved to the tree of the notes of Nov 2: Improved Ghost Wolf is now on row 4, so it comes after Stormstrike, and 2 points of Ancestral Knowledge (more Intellect, now worth more) replace Improved Stormstrike and a point of Flurry."
+        "es": "El orden de leveo simulado a nivel 30 (21 puntos): Thundering Strikes, Mental Dexterity, Ancestral Knowledge 3, Shamanistic Focus, Elemental Weapons, Stormstrike al 25, Improved Ghost Wolf para moverte y los primeros puntos de Flurry.",
+        "en": "The simulated leveling order at level 30 (21 points): Thundering Strikes, Mental Dexterity, Ancestral Knowledge 3, Shamanistic Focus, Elemental Weapons, Stormstrike at 25, Improved Ghost Wolf to get around and the first points of Flurry."
       },
       "points": {
         "Enhancement": {
           "Thundering Strikes": 5,
           "Mental Dexterity": 3,
-          "Improved Lightning Shield": 1,
-          "Ancestral Knowledge": 2,
-          "Elemental Weapons": 3,
+          "Ancestral Knowledge": 3,
           "Shamanistic Focus": 1,
+          "Elemental Weapons": 3,
           "Stormstrike": 1,
           "Improved Ghost Wolf": 2,
-          "Flurry": 3
+          "Flurry": 2,
+          "Improved Stormstrike": 1
         }
-      }
+      },
+      "source": "https://github.com/wowsims/forever"
     },
     {
       "id": "resto-30",
@@ -557,18 +558,22 @@
     },
     {
       "id": "tf-enh-leveling-60",
+      "spec": "Enhancement",
       "name": {
-        "es": "Leveling 10→60 (comunidad)",
-        "en": "Leveling 10→60 (community)"
+        "es": "Leveling 10→60 (simulado)",
+        "en": "Leveling 10→60 (simulated)"
       },
       "case": {
         "es": "Leveling",
         "en": "Leveling"
       },
       "level": 60,
+      "origin": "simulacion",
+      "confidence": "community-untested",
+      "source": "https://github.com/wowsims/forever",
       "note": {
-        "es": "Del 10 al 27, el orden más común en talentsforever.com. Del 28 al 60, la guía de leveo de Icy Veins (actualizada el 4-nov con el árbol vivo): Improved Stormstrike al 30 (maná mientras peleás y Stormstrike que se reinicia al esquivar o parar), Mental Quickness, Spirit Weapons, Tidal Focus y Mindfulness por maná, Flurry, Maelstrom Weapon y Rage of the Farseer al 51. Provisorio: Blizzard cambia Enhancement el 10-nov para que la Fuerza sea su mejor stat, y eso puede mover Mental Quickness y Ancestral Knowledge. Cambiá el nivel para ver el build en cada punto.",
-        "en": "Levels 10 to 27: the most common order on talentsforever.com. 28 to 60: Icy Veins' leveling guide (updated Nov 4 on the live tree): Improved Stormstrike at 30 (mana while you fight, and Stormstrike resets on dodge or parry), Mental Quickness, Spirit Weapons, Tidal Focus and Mindfulness for mana, Flurry, Maelstrom Weapon and Rage of the Farseer at 51. Provisional: Blizzard changes Enhancement on Nov 10 so Strength is its best stat, which may move Mental Quickness and Ancestral Knowledge. Change the level to see the build at each point."
+        "es": "Simulado después del hotfix del 10-nov: en WoWSims (con el hotfix cargado por nosotros) peleamos solos, sin buffs y sin golpe en el equipo, contra un bicho 2 niveles arriba en peleas de 45 s, y movimos cada punto a cualquier otro talento hasta que ningún cambio mejoró. Sale 17/31/3: Maelstrom Weapon al 35 (el primer punto vale ~6% de tu daño), Rage of the Farseer al 40, Tidal Focus por el golpe (cada punto ~1,3%), y en Elemental Concussion, Call of Flame, Elemental Focus (el maná gratis de Clearcasting vale mucho jugando solo), Reverberation, Elemental Devastation y Trial by Fire (Fire Nova). Improved Ghost Wolf (Ghost Wolf casi instantáneo) cuesta ~2% de daño, pero hasta tener montura ahorra mucho tiempo: cuando la tengas, pasá esos 2 puntos a Maelstrom Weapon. Improved Stormstrike te da maná y reinicia Stormstrike cuando esquivás; la simulación no modela que el bicho te pegue, así que vale más de lo que dice. Cambiá el nivel para ver el build en cada punto.",
+        "en": "Simulated after the Nov 10 hotfix: in WoWSims (with the hotfix loaded by us) we fought solo, without buffs and with no hit on gear, against a mob 2 levels above in 45-second fights, and moved each point to any other talent until no change helped. It comes out 17/31/3: Maelstrom Weapon at 35 (the first point is worth ~6% of your damage), Rage of the Farseer at 40, Tidal Focus for hit (each point ~1.3%), and in Elemental Concussion, Call of Flame, Elemental Focus (Clearcasting's free mana is worth a lot solo), Reverberation, Elemental Devastation and Trial by Fire (Fire Nova). Improved Ghost Wolf (near-instant Ghost Wolf) costs ~2% damage, but until you have a mount it saves a lot of time: once you do, move those 2 points to Maelstrom Weapon. Improved Stormstrike gives you mana and resets Stormstrike when you dodge; the sim doesn't model the mob hitting you, so it's worth more than it says. Change the level to see the build at each point."
       },
       "points": {
         "Enhancement": {
@@ -582,24 +587,21 @@
           "Flurry": 5,
           "Improved Stormstrike": 2,
           "Mental Quickness": 2,
-          "Spirit Weapons": 1,
-          "Maelstrom Weapon": 5,
+          "Maelstrom Weapon": 3,
           "Rage of the Farseer": 1
         },
         "Restoration": {
-          "Tidal Focus": 5,
-          "Mindfulness": 3
+          "Tidal Focus": 3
         },
         "Elemental": {
           "Concussion": 5,
+          "Call of Flame": 3,
+          "Reverberation": 3,
+          "Elemental Focus": 1,
           "Elemental Devastation": 3,
-          "Call of Flame": 1
+          "Trial by Fire": 2
         }
       },
-      "spec": "Enhancement",
-      "origin": "talentsforever",
-      "confidence": "community-untested",
-      "source": "https://www.icy-veins.com/wow-forever/enhancement-shaman-leveling",
       "order": [
         [
           10,
@@ -682,66 +684,136 @@
           34,
           34,
           "Enhancement",
-          "Spirit Weapons",
-          1
-        ],
-        [
-          35,
-          39,
-          "Restoration",
-          "Tidal Focus",
-          5
-        ],
-        [
-          40,
-          42,
-          "Restoration",
-          "Mindfulness",
+          "Flurry",
           3
         ],
         [
-          43,
-          45,
+          35,
+          35,
+          "Enhancement",
+          "Maelstrom Weapon",
+          1
+        ],
+        [
+          36,
+          37,
           "Enhancement",
           "Flurry",
           5
         ],
         [
-          46,
-          50,
+          38,
+          39,
           "Enhancement",
           "Maelstrom Weapon",
-          5
+          3
         ],
         [
-          51,
-          51,
+          40,
+          40,
           "Enhancement",
           "Rage of the Farseer",
           1
         ],
         [
-          52,
-          56,
+          41,
+          43,
+          "Restoration",
+          "Tidal Focus",
+          3
+        ],
+        [
+          44,
+          48,
           "Elemental",
           "Concussion",
           5
         ],
         [
-          57,
-          59,
+          49,
+          51,
+          "Elemental",
+          "Call of Flame",
+          3
+        ],
+        [
+          52,
+          53,
+          "Elemental",
+          "Reverberation",
+          2
+        ],
+        [
+          54,
+          54,
+          "Elemental",
+          "Elemental Focus",
+          1
+        ],
+        [
+          55,
+          55,
+          "Elemental",
+          "Reverberation",
+          3
+        ],
+        [
+          56,
+          58,
           "Elemental",
           "Elemental Devastation",
           3
         ],
         [
-          60,
+          59,
           60,
           "Elemental",
-          "Call of Flame",
-          1
+          "Trial by Fire",
+          2
         ]
       ]
+    },
+    {
+      "id": "sim-enh-raid-60",
+      "spec": "Enhancement",
+      "name": {
+        "es": "Raid a 60: 17/31/3",
+        "en": "Raid at 60: 17/31/3"
+      },
+      "case": {
+        "es": "Raid",
+        "en": "Raid"
+      },
+      "level": 60,
+      "origin": "simulacion",
+      "confidence": "community-untested",
+      "source": "https://github.com/wowsims/forever",
+      "note": {
+        "es": "El mejor build que encontramos para raid después del hotfix del 10-nov: simulamos en WoWSims (con el hotfix cargado por nosotros) un jefe 3 niveles arriba con buffs de raid, y probamos mover cada punto a cualquier otro talento hasta que ningún cambio mejoró. Maelstrom Weapon 5/5 (el primer punto vale ~6% de tu daño y cada uno de los otros ~0,9%, el triple que un punto de Ancestral Knowledge), Trial by Fire 2/2 (Fire Nova: ~4%), Tidal Focus 3/5 (+3% de golpe) y Reverberation 4/5 (shocks más seguidos). Llevar Tidal Focus a 5 obliga a sacar Trial by Fire o Call of Flame y sale 3-7% peor. Con 6% de golpe o menos en el equipo, el golpe sigue siendo lo que más rinde por punto: buscalo en las piezas.",
+        "en": "The best raid build we found after the Nov 10 hotfix: we simmed in WoWSims (with the hotfix loaded by us) a boss 3 levels above with raid buffs, and tried moving each point to any other talent until no change helped. Maelstrom Weapon 5/5 (the first point is worth ~6% of your damage and each of the others ~0.9%, three times a point of Ancestral Knowledge), Trial by Fire 2/2 (Fire Nova: ~4%), Tidal Focus 3/5 (+3% hit) and Reverberation 4/5 (more frequent shocks). Taking Tidal Focus to 5 means dropping Trial by Fire or Call of Flame and comes out 3-7% worse. With 6% hit or less on your gear, hit is still what pays most per point: look for it on your pieces."
+      },
+      "code": "053403002-053030310051002251-03",
+      "recommended": true
+    },
+    {
+      "id": "enh-pvp-60",
+      "spec": "Enhancement",
+      "name": {
+        "es": "PvP a 60: 16/32/3",
+        "en": "PvP at 60: 16/32/3"
+      },
+      "case": {
+        "es": "PvP",
+        "en": "PvP"
+      },
+      "level": 60,
+      "origin": "ejemplo",
+      "confidence": "community-untested",
+      "note": {
+        "es": "Armado acá con criterio, sin simular: WoWSims no simula peleas contra jugadores. El daño del build de raid (Stormstrike, Flurry, Maelstrom Weapon 3/5, Rage of the Farseer para la ráfaga) más lo que sirve contra jugadores: Improved Ghost Wolf (Ghost Wolf casi instantáneo), Earthbound (tu Earthbind Totem inmoviliza 5 s), Guardian Totems (Grounding Totem 2 s antes, contra casters), Elemental Warding (−10% de daño de fuego, escarcha y naturaleza), Reverberation (shocks más seguidos para cortar y frenar) y Spirit Weapons (chance de parar). Tidal Focus por el golpe.",
+        "en": "Made here by judgment, not simmed: WoWSims doesn't sim player fights. The raid build's damage (Stormstrike, Flurry, Maelstrom Weapon 3/5, Rage of the Farseer for burst) plus what helps against players: Improved Ghost Wolf (near-instant Ghost Wolf), Earthbound (your Earthbind Totem roots for 5 sec), Guardian Totems (Grounding Totem 2 sec sooner, against casters), Elemental Warding (−10% fire, frost and nature damage), Reverberation (more frequent shocks to interrupt and slow) and Spirit Weapons (a chance to parry). Tidal Focus for hit."
+      },
+      "code": "05330013001-051230310051212231-03"
     },
     {
       "id": "tf-resto-leveling-30",
@@ -1045,8 +1117,8 @@
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
       "note": {
-        "es": "#1 de Shaman en talentsforever.com (1.597 aperturas, 187 guardados). Los 18 de Elemental van a Concussion, Elemental Devastation, Reverberation, Call of Flame y Trial by Fire: Earth Shock y shocks más seguidos. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado. Con las notas del 2-nov, Improved Ghost Wolf pasa a la fila 4 y ya no cuenta para abrir Stormstrike: un punto de Reverberation pasa a Ancestral Knowledge. Provisorio hasta los cambios de Enhancement del 10-nov.",
-        "en": "#1 Shaman build on talentsforever.com (1,597 opens, 187 saves). The 18 Elemental points go to Concussion, Elemental Devastation, Reverberation, Call of Flame and Trial by Fire: Earth Shock and more frequent shocks. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested. With the notes of Nov 2, Improved Ghost Wolf moves to row 4 and no longer counts toward opening Stormstrike: one point of Reverberation goes to Ancestral Knowledge. Provisional until the Enhancement changes of Nov 10."
+        "es": "#1 de Shaman en talentsforever.com (1.597 aperturas, 187 guardados). Los 18 de Elemental van a Concussion, Elemental Devastation, Reverberation, Call of Flame y Trial by Fire: Earth Shock y shocks más seguidos. Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado. Con las notas del 2-nov, Improved Ghost Wolf pasa a la fila 4 y ya no cuenta para abrir Stormstrike: un punto de Reverberation pasa a Ancestral Knowledge. Después del hotfix del 10-nov simula 3,5% por debajo del build de raid (jefe de raid, nivel 63).",
+        "en": "#1 Shaman build on talentsforever.com (1,597 opens, 187 saves). The 18 Elemental points go to Concussion, Elemental Devastation, Reverberation, Call of Flame and Trial by Fire: Earth Shock and more frequent shocks. Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested. With the notes of Nov 2, Improved Ghost Wolf moves to row 4 and no longer counts toward opening Stormstrike: one point of Reverberation goes to Ancestral Knowledge. After the Nov 10 hotfix it sims 3.5% below the raid build (raid boss, level 63)."
       },
       "code": "053403002-053030310051212251-"
     },
@@ -1102,19 +1174,18 @@
         "en": "Level 60: 12/34/5"
       },
       "case": {
-        "es": "Recomendado",
-        "en": "Recommended"
+        "es": "Alternativa",
+        "en": "Alternative"
       },
       "level": 60,
       "origin": "talentsforever",
       "confidence": "community-untested",
       "source": "https://talentsforever.com/shaman/builds",
       "note": {
-        "es": "Nuestra recomendación a 60: de los builds populares, es el más cercano al final del leveo 10→60 (a 4 puntos), así que no hay que rearmar todo al llegar. #4 (38 aperturas, 26 guardados). Enhancement con Ancestral Knowledge 5/5, Concussion, Elemental Devastation, Call of Flame y Elemental Focus en Elemental, y Tidal Focus en Resto (índice de golpe). Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado. Provisorio hasta los cambios de Enhancement del 10-nov.",
-        "en": "Our level-60 pick: of the popular builds, the closest to where the 10→60 leveling order ends (4 points apart), so there is no full respec on arrival. #4 (38 opens, 26 saves). Enhancement with Ancestral Knowledge 5/5, Concussion, Elemental Devastation, Call of Flame and Elemental Focus in Elemental, and Tidal Focus in Resto (hit). Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested. Provisional until the Enhancement changes of Nov 10."
+        "es": "#4 (38 aperturas, 26 guardados). Enhancement con Ancestral Knowledge 5/5, Concussion, Elemental Devastation, Call of Flame y Elemental Focus en Elemental, y Tidal Focus en Resto (índice de golpe). Ranking de builds de 41+ puntos desde el parche del 15 oct (build 70425), contado el 17 oct; es lo que la gente arma, no algo probado. Después del hotfix del 10-nov simula 5% por debajo del build de raid (jefe de raid, nivel 63).",
+        "en": "#4 (38 opens, 26 saves). Enhancement with Ancestral Knowledge 5/5, Concussion, Elemental Devastation, Call of Flame and Elemental Focus in Elemental, and Tidal Focus in Resto (hit). Ranking of 41+ point builds since the Oct 15 patch (build 70425), counted Oct 17; it's what people build, not something tested. After the Nov 10 hotfix it sims 5% below the raid build (raid boss, level 63)."
       },
-      "code": "0530031-055030310051012251-05",
-      "recommended": true
+      "code": "0530031-055030310051012251-05"
     }
   ]
 }

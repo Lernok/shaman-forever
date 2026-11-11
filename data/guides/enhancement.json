@@ -5,8 +5,8 @@
     "en": "Melee DPS"
   },
   "summary": {
-    "es": "Arma a dos manos, rayos y totems: peleás cuerpo a cuerpo mientras Stormstrike (150% del daño del arma cada 6 s) potencia tus Lightning Bolts, y Maelstrom Weapon los hace más rápidos y baratos. Es el spec de Shaman que más rinde en Forever. Ojo con el Intelecto: hoy se vuelve poder de ataque por talentos, pero Blizzard anunció cambios para el 10-nov para que la Fuerza sea siempre tu mejor stat, y pide que desde ya juntes equipo con Fuerza y poder de ataque.",
-    "en": "Two-handed weapon, lightning and totems: you fight in melee while Stormstrike (150% weapon damage every 6 sec) empowers your Lightning Bolts, and Maelstrom Weapon makes them faster and cheaper. It's Forever's strongest Shaman spec. Careful with Intellect: today talents turn it into attack power, but Blizzard announced changes for Nov 10 so Strength is always your best stat, and asks you to collect Strength and attack power gear from now on."
+    "es": "Arma a dos manos, rayos y totems: peleás cuerpo a cuerpo con Windfury, Stormstrike (100% del daño del arma cada 8 s) potencia tu próximo hechizo de Naturaleza, y Maelstrom Weapon te da Lightning Bolts instantáneos. Desde el hotfix del 10-nov la Fuerza y el poder de ataque son tu daño, y Windfury Weapon y Windfury Totem funcionan a la vez.",
+    "en": "Two-handed weapon, lightning and totems: you fight in melee with Windfury, Stormstrike (100% weapon damage every 8 sec) empowers your next Nature spell, and Maelstrom Weapon gives you instant Lightning Bolts. Since the Nov 10 hotfix Strength and attack power are your damage, and Windfury Weapon and Windfury Totem work at the same time."
   },
   "mechanicalChanges": [
     {
@@ -23,51 +23,51 @@
     },
     {
       "change": {
-        "es": "10-nov: la Fuerza pasa a ser tu mejor stat",
-        "en": "Nov 10: Strength becomes your best stat"
+        "es": "Hotfix del 10-nov: Enhancement vuelve al Windfury",
+        "en": "Nov 10 hotfix: Enhancement goes back to Windfury"
       },
       "detail": {
-        "es": "Blizzard (Kaivax, 6-nov): los Enhancement encontraron que el Intelecto y el poder con hechizos rinden más que la Fuerza y el poder de ataque; el martes 10-nov lo cambian para que la Fuerza sea siempre su mejor stat y Enhancement no quiera equipo de Mago o Brujo. Lo ideal: Fuerza o poder de ataque con algo de Intelecto o poder con hechizos. \"Los Enhancement que están subiendo de nivel van a querer juntar equipo con Fuerza y poder de ataque desde ahora.\" Los números todavía no salieron: esta guía y los órdenes de talentos se revisan cuando salgan.",
-        "en": "Blizzard (Kaivax, Nov 6): Enhancement Shamans found Intellect and spell power better than Strength and attack power; on Tuesday Nov 10 they change it so Strength is always their best stat and Enhancement doesn't want Mage or Warlock gear. Ideally: Strength or attack power with some Intellect or spell power. \"Enhancement Shaman players who are leveling up will want to collect Strength and Attack Power gear from now on.\" The numbers aren't out yet: this guide and the talent orders get revised when they are."
+        "es": "Blizzard deshizo varios cambios de la beta que llevaban a Enhancement a equiparse con Intelecto y poder con hechizos: Stormstrike baja a 100% del arma cada 8 s, Mental Dexterity a 33/66/100% del Intelecto, y Maelstrom Weapon salta menos. A cambio, los encantamientos de arma y los totems de arma ahora funcionan a la vez: Windfury Weapon y Windfury Totem tiran su chance por separado en cada golpe. Lo hicieron antes de que abran los raids para que nadie gane piezas que después pierdan valor. En nuestra simulación (WoWSims con el hotfix cargado, nivel 60) Enhancement pierde ~12% de daño si pasa a Windfury Weapon + Windfury Totem, y ~15% si no cambia nada.",
+        "en": "Blizzard undid several beta changes that pushed Enhancement into Intellect and spell power gear: Stormstrike drops to 100% weapon damage every 8 sec, Mental Dexterity to 33/66/100% of Intellect, and Maelstrom Weapon procs less. In exchange, weapon imbues and weapon totems now work at the same time: Windfury Weapon and Windfury Totem each roll their chance on every hit. They did it before raids open so nobody wins pieces that lose value later. In our sim (WoWSims with the hotfix loaded, level 60) Enhancement loses ~12% damage if it moves to Windfury Weapon + Windfury Totem, and ~15% if it changes nothing."
       },
       "confidence": "official",
-      "source": "https://us.forums.blizzard.com/en/wow/t/2404092"
+      "source": "https://us.forums.blizzard.com/en/wow/t/2403040"
     },
     {
       "change": {
-        "es": "Stormstrike: 150% del arma cada 6 s",
-        "en": "Stormstrike: 150% weapon damage every 6 sec"
+        "es": "Stormstrike: 100% del arma cada 8 s",
+        "en": "Stormstrike: 100% weapon damage every 8 sec"
       },
       "detail": {
-        "es": "Golpe instantáneo de 150% del daño del arma (normalizado; era 100%) que sube 20% el daño de tu próximo Lightning Bolt, Chain Lightning o Earth Shock contra ese objetivo por 12 s. 6 s de CD (era 8 s; en Classic, 20 s). Fila 4 (nivel 25). Improved Stormstrike (fila 5) suma 50% de regeneración de maná al lanzar por 15 s y reinicia el CD cuando esquivás o parás.",
-        "en": "An instant strike for 150% weapon damage (normalized; was 100%) that raises the damage of your next Lightning Bolt, Chain Lightning or Earth Shock against that target by 20% for 12 sec. 6 sec cooldown (was 8 sec; in Classic, 20 sec). Row 4 (level 25). Improved Stormstrike (row 5) adds 50% mana regen while casting for 15 sec and resets the cooldown when you dodge or parry."
+        "es": "Golpe instantáneo de 100% del daño del arma (normalizado) que sube 20% el daño de tu próximo Lightning Bolt, Chain Lightning o Earth Shock contra ese objetivo por 12 s. 8 s de CD. Era 150% cada 6 s desde las notas del 2-nov; el hotfix del 10-nov lo bajó, y es la parte más grande del nerf (~9% de tu daño en la simulación). Fila 4 (nivel 25). Improved Stormstrike (fila 5) suma 50% de regeneración de maná al lanzar por 15 s y reinicia el CD cuando esquivás o parás.",
+        "en": "An instant strike for 100% weapon damage (normalized) that raises the damage of your next Lightning Bolt, Chain Lightning or Earth Shock against that target by 20% for 12 sec. 8 sec cooldown. It was 150% every 6 sec since the Nov 2 notes; the Nov 10 hotfix lowered it, and it is the largest part of the nerf (~9% of your damage in the sim). Row 4 (level 25). Improved Stormstrike (row 5) adds 50% mana regen while casting for 15 sec and resets the cooldown when you dodge or parry."
       },
       "confidence": "official",
-      "source": "https://us.forums.blizzard.com/en/wow/t/2360696/9"
+      "source": "https://us.forums.blizzard.com/en/wow/t/2403040"
     },
     {
       "change": {
-        "es": "El Intelecto se vuelve poder",
-        "en": "Intellect becomes power"
+        "es": "El Intelecto rinde menos",
+        "en": "Intellect pays less"
       },
       "detail": {
-        "es": "Mental Dexterity (3/3) da poder de ataque igual al 150% de tu Intelecto (era 100%) y abre Flurry. Mental Quickness (2/2) da poder con hechizos y curación hasta 30% de tu Intelecto. Ancestral Knowledge es +10% de Intelecto (en Classic era maná). O sea, hoy 1 de Intelecto ≈ 1,5 de poder de ataque + 0,3 de poder con hechizos: por eso Blizzard lo cambia el 10-nov (ver arriba).",
-        "en": "Mental Dexterity (3/3) gives attack power equal to 150% of your Intellect (was 100%) and opens Flurry. Mental Quickness (2/2) gives spell damage and healing up to 30% of your Intellect. Ancestral Knowledge is +10% Intellect (in Classic it was mana). So today 1 Intellect ≈ 1.5 attack power + 0.3 spell power: that's why Blizzard changes it on Nov 10 (see above)."
+        "es": "Mental Dexterity (3/3) da poder de ataque igual al 100% de tu Intelecto (33/66/100% por punto; era 150% hasta el hotfix del 10-nov) y abre Flurry. Mental Quickness (2/2) da poder con hechizos y curación hasta 30% de tu Intelecto. Ancestral Knowledge es +10% de Intelecto. Ahora 1 de Intelecto ≈ 1 de poder de ataque, menos que 1 de Fuerza: juntá Fuerza.",
+        "en": "Mental Dexterity (3/3) gives attack power equal to 100% of your Intellect (33/66/100% per point; 150% until the Nov 10 hotfix) and opens Flurry. Mental Quickness (2/2) gives spell damage and healing up to 30% of your Intellect. Ancestral Knowledge is +10% Intellect. Now 1 Intellect ≈ 1 attack power, less than 1 Strength: collect Strength."
       },
-      "confidence": "client-data",
-      "source": "https://talentsforever.com/shaman/changes"
+      "confidence": "official",
+      "source": "https://us.forums.blizzard.com/en/wow/t/2403040"
     },
     {
       "change": {
-        "es": "Maelstrom Weapon (fila 6)",
-        "en": "Maelstrom Weapon (row 6)"
+        "es": "Maelstrom Weapon: cada punto, más seguido",
+        "en": "Maelstrom Weapon: each point, more often"
       },
       "detail": {
-        "es": "Tus golpes cuerpo a cuerpo acumulan hasta 5 cargas; cada carga baja 20% el tiempo de lanzamiento y el maná de tu próximo Lightning Bolt (5 cargas = instantáneo y gratis). Desde el 2-nov salta el doble de seguido: con un arma lenta, casi en cada golpe. Solo Lightning Bolt, duran 30 s.",
-        "en": "Your melee hits build up to 5 stacks; each stack cuts 20% off the cast time and mana of your next Lightning Bolt (5 stacks = instant and free). Since Nov 2 it procs twice as often: with a slow weapon, almost every swing. Lightning Bolt only, stacks last 30 sec."
+        "es": "Tus golpes cuerpo a cuerpo acumulan hasta 5 cargas; cada carga baja 20% el tiempo de lanzamiento y el maná de tu próximo Lightning Bolt, con cualquier cantidad de puntos (5 cargas = instantáneo y gratis). Desde el hotfix del 10-nov los puntos cambian la frecuencia: 6/7/8/9/10 veces por minuto (antes 20 por minuto siempre, y los puntos cambiaban el % por carga). La chance por golpe sube con la velocidad del arma: con 5/5 y un arma de 3.6, 60% por golpe. En la simulación el primer punto vale ~6% de tu daño y cada uno de los otros ~0,9%: más que cualquier otro lugar donde ponerlos.",
+        "en": "Your melee hits build up to 5 stacks; each stack cuts 20% off the cast time and mana of your next Lightning Bolt, at any number of points (5 stacks = instant and free). Since the Nov 10 hotfix the points set the rate: 6/7/8/9/10 times per minute (before, 20 per minute always, and the points set the % per stack). The chance per hit rises with weapon speed: at 5/5 with a 3.6 weapon, 60% per hit. In the sim the first point is worth ~6% of your damage and each of the others ~0.9%: more than anywhere else you could put them."
       },
-      "confidence": "client-data",
-      "source": "https://talentsforever.com/shaman/changes"
+      "confidence": "official",
+      "source": "https://us.forums.blizzard.com/en/wow/t/2403040"
     },
     {
       "change": {
@@ -75,8 +75,8 @@
         "en": "Flurry, Rage of the Farseer and Spirit Weapons"
       },
       "detail": {
-        "es": "Flurry da 30% de velocidad de ataque por 3 golpes tras un crítico (en la beta era 25%). Rage of the Farseer (fila 7): +30% de velocidad de ataque por 25 s, 3 min de CD, y ya no afecta hechizos. Spirit Weapons: chance de parar y control de amenaza (−30% sin Rockbiter, más amenaza con Rockbiter). Windfury Weapon y Windfury Totem: desde el 2-nov se ve el golpe extra; el daño y la chance no cambian.",
-        "en": "Flurry gives 30% attack speed for 3 swings after a crit (25% in the beta). Rage of the Farseer (row 7): +30% attack speed for 25 sec, 3 min cooldown, and it no longer affects spells. Spirit Weapons: a chance to parry and a threat switch (−30% without Rockbiter, more threat with Rockbiter). Windfury Weapon and Windfury Totem: since Nov 2 the extra swing shows; damage and chance are unchanged."
+        "es": "Flurry da 30% de velocidad de ataque por 3 golpes tras un crítico (en la beta era 25%). Rage of the Farseer (fila 7): +30% de velocidad de ataque por 25 s, 3 min de CD, y ya no afecta hechizos. Spirit Weapons: chance de parar y control de amenaza (−30% sin Rockbiter, más amenaza con Rockbiter). Windfury Weapon y Windfury Totem: desde el hotfix del 10-nov funcionan a la vez (ver arriba).",
+        "en": "Flurry gives 30% attack speed for 3 swings after a crit (25% in the beta). Rage of the Farseer (row 7): +30% attack speed for 25 sec, 3 min cooldown, and it no longer affects spells. Spirit Weapons: a chance to parry and a threat switch (−30% without Rockbiter, more threat with Rockbiter). Windfury Weapon and Windfury Totem: since the Nov 10 hotfix they work at the same time (see above)."
       },
       "confidence": "client-data",
       "source": "https://talentsforever.com/shaman/changes"
@@ -95,38 +95,38 @@
     },
     {
       "change": {
-        "es": "Totem de aire: Grace of Air antes que Windfury Totem",
-        "en": "Air totem: Grace of Air over Windfury Totem"
+        "es": "Totem de aire: Windfury Totem",
+        "en": "Air totem: Windfury Totem"
       },
       "detail": {
-        "es": "Para vos, Windfury Totem no hace nada: tu Windfury Weapon lo anula. Grace of Air (desde el nivel 42) sí te da Agilidad, o sea crítico, que es lo que más rinde con un arma lenta a dos manos y mantiene Flurry activo. Y como en Forever los totems de aire no se apilan entre sí, ni de dos Shamans distintos, tenés que elegir uno. En el foro oficial la comunidad sostiene que Grace of Air rinde más también para el resto del grupo cuerpo a cuerpo. Es un cálculo de jugadores, todavía sin pruebas en juego: hasta el 42, Windfury Totem (desde el 32) es tu única opción de aire para el grupo.",
-        "en": "For you, Windfury Totem does nothing: your Windfury Weapon cancels it. Grace of Air (from level 42) does give you Agility, that is crit, which pays off most with a slow two-hander and keeps Flurry up. And since Forever's air totems don't stack with each other, not even from two different Shamans, you have to pick one. On the official forums the community argues Grace of Air is better for the rest of the melee group too. It's players' math, not yet tested in game: until 42, Windfury Totem (from 32) is your only air option for the group."
+        "es": "Desde el hotfix del 10-nov tu Windfury Weapon ya no anula el Windfury Totem: cada golpe tira la chance de los dos por separado. En nuestra simulación (solo, nivel 60 contra un bicho 2 niveles arriba) Windfury Totem te rinde 8% más que Grace of Air, y sumarlo al encantamiento es lo que más compensa el nerf del 10-nov. Windfury Totem sale al 32. En un grupo con otro Shaman, que uno ponga Grace of Air y el otro Windfury.",
+        "en": "Since the Nov 10 hotfix your Windfury Weapon no longer cancels Windfury Totem: every hit rolls both chances separately. In our sim (solo, level 60 against a mob 2 levels above) Windfury Totem gives you 8% more than Grace of Air, and stacking it with the imbue is what makes up most for the Nov 10 nerf. Windfury Totem comes at 32. In a group with another Shaman, one drops Grace of Air and the other Windfury."
       },
       "confidence": "community-untested",
-      "source": "https://us.forums.blizzard.com/en/wow/t/why-grace-of-air-outperforms-windfury-totem-for-melee-in-wow-forever/2382149"
+      "source": "https://github.com/wowsims/forever"
     }
   ],
   "statPriority": {
     "list": [
       "Weapon Damage",
-      "Strength",
-      "Attack Power",
       "Hit",
+      "Strength",
       "Critical Strike",
-      "Intellect"
+      "Intellect",
+      "Agility"
     ],
-    "confidence": "official",
+    "confidence": "client-data",
     "rationale": {
-      "es": "Primero el daño del arma (se compara por DPS). Después, Fuerza y poder de ataque: es lo que Blizzard pide juntar desde el 6-nov, antes de su cambio del 10-nov. Índice de golpe y crítico (mantiene Flurry activo) siguen pesando; el Intelecto queda como stat de maná y de hechizos, no como tu daño principal. La Agilidad rinde menos que la Fuerza. Equipo › Tu camino elige con los pesos de WoWSims ajustados para levear, que ya ponen la Fuerza por encima del Intelecto.",
-      "en": "First the weapon's damage (judged by DPS). Then Strength and attack power: it's what Blizzard asks you to collect since Nov 6, ahead of its Nov 10 change. Hit rating and crit (keeps Flurry up) still count; Intellect stays a mana and spell stat, not your main damage. Agility pays less than Strength. Equipo › Your path picks with WoWSims' weights adjusted for leveling, which already put Strength above Intellect."
+      "es": "Medido en WoWSims con el hotfix del 10-nov cargado, en poder de ataque por punto. Subiendo de nivel solo (bicho 2 niveles arriba, sin golpe en el equipo): índice de golpe 5,1 hasta no fallar más (6% contra +2), crítico 2,75, Fuerza 2,2, Intelecto 1,9 (2,9 si te quedás sin maná a mitad de pelea), poder con hechizos 1,5, Agilidad 1,35. En raid (jefe 3 niveles arriba): Fuerza 2,2, crítico 2,9, golpe 2,5 (los hechizos siguen fallando hasta 17%), Intelecto 2,0, poder con hechizos 1,5. Primero el daño del arma (se compara por DPS y conviene lenta). Equipo › Tu camino usa estos pesos.",
+      "en": "Measured in WoWSims with the Nov 10 hotfix loaded, in attack power per point. Leveling solo (mob 2 levels above, no hit on gear): hit rating 5.1 until you stop missing (6% against +2), crit 2.75, Strength 2.2, Intellect 1.9 (2.9 if you run out of mana mid-fight), spell power 1.5, Agility 1.35. In raid (boss 3 levels above): Strength 2.2, crit 2.9, hit 2.5 (spells keep missing up to 17%), Intellect 2.0, spell power 1.5. First the weapon's damage (judged by DPS, and slow is better). Equipo › Your path uses these weights."
     },
-    "source": "https://us.forums.blizzard.com/en/wow/t/2404092",
+    "source": "https://github.com/wowsims/forever",
     "forever": {
       "note": {
-        "es": "Específico de Forever: con Mental Dexterity 3/3 cada punto de Intelecto da 1,5 de poder de ataque, Ancestral Knowledge lo sube 10% y Mental Quickness convierte hasta 30% en poder con hechizos. Blizzard dijo que eso hacía al Intelecto mejor que la Fuerza y lo corrige el 10-nov; hasta ver los números, no cambies una pieza con Fuerza por una de tela con Intelecto.",
-        "en": "Forever-specific: with Mental Dexterity 3/3 each point of Intellect gives 1.5 attack power, Ancestral Knowledge raises it 10% and Mental Quickness turns up to 30% into spell power. Blizzard said this made Intellect better than Strength and fixes it on Nov 10; until the numbers are out, don't swap a Strength piece for a cloth Intellect one."
+        "es": "Específico de Forever: con Mental Dexterity 3/3 cada punto de Intelecto da 1 de poder de ataque (era 1,5 hasta el 10-nov), Ancestral Knowledge lo sube 10% y Mental Quickness convierte 30% en poder con hechizos, y el Intelecto además es tu maná. Por eso todavía rinde casi como la Fuerza, sobre todo jugando solo. Pero una pieza de tela te saca armadura, y la simulación no lo cuenta: a igual daño, quedate con la malla o el cuero.",
+        "en": "Forever-specific: with Mental Dexterity 3/3 each point of Intellect gives 1 attack power (1.5 until Nov 10), Ancestral Knowledge raises it 10% and Mental Quickness turns 30% into spell power, and Intellect is also your mana. That's why it still pays almost like Strength, especially solo. But a cloth piece costs you armor, which the sim doesn't count: at equal damage, keep the mail or leather."
       },
-      "confidence": "official"
+      "confidence": "client-data"
     }
   },
   "rotation": {
@@ -136,8 +136,8 @@
         "en": "Keep Lightning Shield and your imbue up, and Strength of Earth and Searing Totem down (renew them when they run out). Rockbiter's extra threat matters if a tank is holding the target."
       },
       {
-        "es": "Desde el 25, Stormstrike cada 6 s, cada vez que salga: pega fuerte y potencia tu próximo hechizo de Naturaleza.",
-        "en": "From 25, Stormstrike every 6 sec, whenever it's up: it hits hard and empowers your next Nature spell."
+        "es": "Desde el 25, Stormstrike cada 8 s, cada vez que salga: pega fuerte y potencia tu próximo hechizo de Naturaleza.",
+        "en": "From 25, Stormstrike every 8 sec, whenever it's up: it hits hard and empowers your next Nature spell."
       },
       {
         "es": "Flame Shock siempre activo en un objetivo que aguante sus ticks, y Earth Shock como golpe de daño entre medio (así lo usa la simulación). Si el enemigo lanza algo peligroso, guardate uno para cortarlo.",
@@ -148,8 +148,8 @@
         "en": "With mana to spare, Fire Nova as filler: against packs too."
       },
       {
-        "es": "Al 30, compará Windfury Weapon contra el imbue que ya venías usando. Ojo: Windfury Weapon en la mano principal anula para vos el Windfury Totem.",
-        "en": "At 30, compare Windfury Weapon against the imbue you were using. Careful: Windfury Weapon on your main hand cancels Windfury Totem for you."
+        "es": "Al 30, pasate a Windfury Weapon: desde el 10-nov funciona junto con el Windfury Totem (desde el 32), y en la simulación es tu mejor encantamiento.",
+        "en": "At 30, switch to Windfury Weapon: since Nov 10 it works together with Windfury Totem (from 32), and in the sim it is your best imbue."
       }
     ],
     "confidence": "client-data",
@@ -161,20 +161,24 @@
     "source": "https://github.com/wowsims/forever/tree/master/ui/specs/shaman/enhancement",
     "level60": [
       {
-        "es": "Totems siempre arriba: Grace of Air, Strength of Earth y Searing Totem; Lightning Shield activo.",
-        "en": "Totems always up: Grace of Air, Strength of Earth and Searing Totem; Lightning Shield active."
+        "es": "Windfury Weapon en el arma y totems siempre arriba: Windfury Totem, Strength of Earth, Mana Spring y Magma Totem pegado al objetivo (así lo usa la simulación). Water Shield activo.",
+        "en": "Windfury Weapon on your weapon and totems always up: Windfury Totem, Strength of Earth, Mana Spring and Magma Totem next to the target (the sim does it this way). Water Shield active."
       },
       {
-        "es": "Stormstrike cada vez que salga.",
-        "en": "Stormstrike whenever it's up."
+        "es": "Flame Shock siempre activo en el objetivo.",
+        "en": "Flame Shock always up on the target."
       },
       {
-        "es": "Con Maelstrom Weapon en 5 cargas, Lightning Bolt (sale instantáneo y gratis); con las cargas que saltan desde el 2-nov, pasa seguido.",
-        "en": "With Maelstrom Weapon at 5 stacks, Lightning Bolt (instant and free); with the proc rate since Nov 2, it happens often."
+        "es": "Stormstrike cada vez que salga (cada 8 s).",
+        "en": "Stormstrike whenever it's up (every 8 sec)."
       },
       {
-        "es": "Flame Shock siempre activo; Earth Shock de relleno; Fire Nova con Clearcasting o con maná de sobra.",
-        "en": "Flame Shock always up; Earth Shock as filler; Fire Nova on Clearcasting or with mana to spare."
+        "es": "Con Maelstrom Weapon en 5 cargas, Lightning Bolt (sale instantáneo y gratis).",
+        "en": "With Maelstrom Weapon at 5 stacks, Lightning Bolt (instant and free)."
+      },
+      {
+        "es": "Earth Shock de relleno y Fire Nova cuando esté lista: en Forever pega fuerte y Trial by Fire le baja el tiempo de reutilización.",
+        "en": "Earth Shock as filler and Fire Nova whenever it's ready: in Forever it hits hard and Trial by Fire lowers its cooldown."
       }
     ],
     "level60Confidence": "client-data"
@@ -189,10 +193,10 @@
     },
     {
       "note": {
-        "es": "Desde el 6-nov Blizzard pide juntar piezas con Fuerza y poder de ataque; las de Intelecto puro (tela de caster) bajan de valor con el cambio del 10-nov.",
-        "en": "Since Nov 6 Blizzard asks you to collect Strength and attack power pieces; pure Intellect ones (caster cloth) lose value with the Nov 10 change."
+        "es": "Después del hotfix del 10-nov la Fuerza es tu mejor stat principal, pero el Intelecto y el poder con hechizos siguen sumando daño (Earth Shock, Flame Shock, Fire Nova, Lightning Bolt): una pieza con Fuerza y algo de Intelecto es lo ideal, como pidió Blizzard.",
+        "en": "After the Nov 10 hotfix Strength is your best main stat, but Intellect and spell power still add damage (Earth Shock, Flame Shock, Fire Nova, Lightning Bolt): a piece with Strength and some Intellect is ideal, as Blizzard asked."
       },
-      "confidence": "official"
+      "confidence": "client-data"
     },
     {
       "note": {
@@ -204,11 +208,12 @@
   ],
   "recommendedBuild": {
     "note": {
-      "es": "El build \"Leveling solo\" al 30 sigue la mejor estimación de la comunidad. Del 30 al 60 seguimos la guía de leveo de Icy Veins (4-nov): Improved Stormstrike al 30, Mental Quickness, Spirit Weapons, Tidal Focus y Mindfulness por maná, Flurry, Maelstrom Weapon y Rage of the Farseer al 51. A 60 recomendamos 12/34/5; WoWSims arma 17/31/3. Todo provisorio hasta ver los cambios del 10-nov.",
-      "en": "The \"Solo leveling\" build at 30 follows the community's best guess. From 30 to 60 we follow Icy Veins' leveling guide (Nov 4): Improved Stormstrike at 30, Mental Quickness, Spirit Weapons, Tidal Focus and Mindfulness for mana, Flurry, Maelstrom Weapon and Rage of the Farseer at 51. At 60 we recommend 12/34/5; WoWSims builds 17/31/3. All provisional until the Nov 10 changes are out."
+      "es": "Builds simulados después del hotfix del 10-nov (WoWSims con el hotfix cargado por nosotros): Leveling 10→60 (17/31/3, con Improved Ghost Wolf hasta tener montura) y Raid a 60 (17/31/3, el recomendado). Comparados con los builds populares de la comunidad, rinden 3-5% más. El de PvP lo armamos con criterio, sin simular. Lo que más importa: Maelstrom Weapon 5/5 (el primer punto vale ~6% de tu daño), Trial by Fire (Fire Nova) y Tidal Focus para el golpe.",
+      "en": "Builds simulated after the Nov 10 hotfix (WoWSims with the hotfix loaded by us): Leveling 10→60 (17/31/3, with Improved Ghost Wolf until you have a mount) and Raid at 60 (17/31/3, the recommended one). Compared with the community's popular builds, they do 3-5% more. The PvP one we built by judgment, not simmed. What matters most: Maelstrom Weapon 5/5 (the first point is worth ~6% of your damage), Trial by Fire (Fire Nova) and Tidal Focus for hit."
     }
   },
   "sources": [
+    "https://us.forums.blizzard.com/en/wow/t/2403040",
     "https://us.forums.blizzard.com/en/wow/t/2404092",
     "https://us.forums.blizzard.com/en/wow/t/2360696/9",
     "https://www.icy-veins.com/wow-forever/enhancement-shaman-leveling",
@@ -218,24 +223,27 @@
     "https://talentsforever.com (CC BY 4.0) — data/shaman.json",
     "https://talentsforever.com/shaman/changes",
     "https://talentsforever.com/shaman/builds",
-    "https://github.com/wowsims/forever/tree/master/ui/specs/shaman"
+    "https://github.com/wowsims/forever/tree/master/ui/specs/shaman",
+    "https://github.com/wowsims/forever",
+    "https://conquestcapped.com/guides/wow-forever/wow-forever-hit-cap/",
+    "https://mmonster.co/wow-forever/guides/stats"
   ],
   "caveat": {
-    "es": "WoW: Forever en vivo (lanzamiento 4-nov-2026, tope 60), con las notas del 2-nov y los hotfixes hasta el 9-nov. Blizzard cambia Enhancement el 10-nov: el orden de stats ya sigue lo que pidió (Fuerza y poder de ataque), los números se revisan cuando salgan. La rotación sigue a WoWSims para Forever; la simulación es de una pelea contra un jefe: leveando, adaptala al bicho que tengas enfrente.",
-    "en": "WoW: Forever live (launched Nov 4, 2026, level cap 60), with the notes of Nov 2 and the hotfixes up to Nov 9. Blizzard changes Enhancement on Nov 10: the stat order already follows what it asked for (Strength and attack power), the numbers get revised when they're out. The rotation follows WoWSims for Forever; the sim is a boss fight: leveling, adapt it to whatever you're fighting."
+    "es": "WoW: Forever en vivo (lanzamiento 4-nov-2026, tope 60), con las notas del 2-nov y los hotfixes hasta el 10-nov. Los números de talentos y stats salen de WoWSims para Forever con el hotfix del 10-nov cargado por nosotros (WoWSims todavía no lo tiene), a nivel 60: una pelea de 3 minutos contra un objetivo 2 niveles arriba (leveo, solo) o 3 niveles arriba (jefe de raid, con buffs de raid). Leveando, adaptá la rotación al bicho que tengas enfrente.",
+    "en": "WoW: Forever live (launched Nov 4, 2026, level cap 60), with the notes of Nov 2 and the hotfixes up to Nov 10. Talent and stat numbers come from WoWSims for Forever with the Nov 10 hotfix loaded by us (WoWSims doesn't have it yet), at level 60: a 3-minute fight against a target 2 levels above (leveling, solo) or 3 levels above (raid boss, with raid buffs). Leveling, adapt the rotation to whatever you're fighting."
   },
   "keyTalents": [
     {
-      "es": "Stormstrike (fila 4, nivel 25) — 150% del daño del arma y +20% a tu próximo Lightning Bolt, Chain Lightning o Earth Shock, cada 6 s",
-      "en": "Stormstrike (row 4, level 25) — 150% weapon damage and +20% to your next Lightning Bolt, Chain Lightning or Earth Shock, every 6 sec"
+      "es": "Stormstrike (fila 4, nivel 25) — 100% del daño del arma y +20% a tu próximo Lightning Bolt, Chain Lightning o Earth Shock, cada 8 s",
+      "en": "Stormstrike (row 4, level 25) — 100% weapon damage and +20% to your next Lightning Bolt, Chain Lightning or Earth Shock, every 8 sec"
     },
     {
-      "es": "Mental Dexterity — 150% de tu Intelecto como poder de ataque; abre Flurry (cambia el 10-nov)",
-      "en": "Mental Dexterity — 150% of your Intellect as attack power; opens Flurry (changes on Nov 10)"
+      "es": "Mental Dexterity — 100% de tu Intelecto como poder de ataque; abre Flurry",
+      "en": "Mental Dexterity — 100% of your Intellect as attack power; opens Flurry"
     },
     {
-      "es": "Maelstrom Weapon — 20% menos tiempo de lanzamiento y maná por carga para Lightning Bolt; 5 cargas = instantáneo y gratis",
-      "en": "Maelstrom Weapon — 20% less cast time and mana per stack for Lightning Bolt; 5 stacks = instant and free"
+      "es": "Maelstrom Weapon — cada carga, 20% menos tiempo de lanzamiento y maná para Lightning Bolt; 5 cargas = instantáneo y gratis; cada punto la hace saltar más seguido",
+      "en": "Maelstrom Weapon — each stack, 20% less cast time and mana for Lightning Bolt; 5 stacks = instant and free; each point makes it proc more often"
     },
     {
       "es": "Improved Stormstrike — 50% de regeneración de maná al lanzar hechizos por 15 s tras Stormstrike, y Stormstrike se reinicia al esquivar o parar",
@@ -256,10 +264,10 @@
     },
     {
       "note": {
-        "es": "Después del arma: Fuerza (poder de ataque), índice de golpe y crítico (mantiene Flurry activo). La Agilidad rinde menos por punto que la Fuerza. Es lo que Blizzard pide juntar desde el 6-nov.",
-        "en": "After the weapon: Strength (attack power), hit rating and crit (keeps Flurry up). Agility pays less per point than Strength. It's what Blizzard asks you to collect since Nov 6."
+        "es": "Después del arma: índice de golpe hasta no fallar (6% contra bichos 2 niveles arriba; en raid, 8% para golpes y 17% para hechizos), Fuerza y crítico (mantiene Flurry activo). La Agilidad rinde menos por punto que la Fuerza.",
+        "en": "After the weapon: hit rating until you stop missing (6% against mobs 2 levels above; in raid, 8% for melee and 17% for spells), Strength and crit (keeps Flurry up). Agility pays less per point than Strength."
       },
-      "confidence": "official"
+      "confidence": "client-data"
     },
     {
       "note": {
@@ -270,8 +278,8 @@
     },
     {
       "note": {
-        "es": "No hay un cap de índice de golpe confirmado para levear. Los pesos de stats son los que WoWSims midió para Forever al 60, ajustados para levear: los mismos que usa Equipo › Tu camino.",
-        "en": "There is no confirmed hit cap for leveling. Stat weights are the ones WoWSims measured for Forever at 60, adjusted for leveling: the same Equipo › Your path uses."
+        "es": "Cómo funciona el golpe en Forever: un solo stat para golpes y hechizos (10 de índice = 1% al 60). Fallo base de golpes 5% contra tu nivel, 6% contra 2 niveles arriba y 8% contra un jefe calavera; de hechizos 4%, 6% y 17%, sin el mínimo de 1% de Classic. El golpe no quita la esquiva (~6%) ni los golpes de refilón (30% de tus golpes normales contra +2, 40% contra un jefe). Tidal Focus da 1% por punto. Así lo modela WoWSims y coinciden las guías de Forever; contra jefes de nivel 63 nadie lo probó todavía (los raids abren el 9-dic).",
+        "en": "How hit works in Forever: one stat for melee and spells (10 rating = 1% at 60). Base melee miss 5% against your level, 6% against 2 levels above and 8% against a skull boss; spells 4%, 6% and 17%, with no 1% floor as in Classic. Hit doesn't remove dodge (~6%) or glancing blows (30% of your white swings against +2, 40% against a boss). Tidal Focus gives 1% per point. That's how WoWSims models it and Forever guides agree; against level 63 bosses nobody has tested it yet (raids open Dec 9)."
       },
       "confidence": "client-data"
     }

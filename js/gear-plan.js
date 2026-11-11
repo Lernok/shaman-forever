@@ -42,21 +42,20 @@
   // three-minute sim) and monsters of your level are missed far less than a
   // raid boss (hit counts less).
   const WEIGHTS = {
-    // Enhancement, in attack power (AP): WoWSims has 1 Strength = 2.2 AP
-    // (1.1), 1 Agility = 1.32 AP (0.66), 1 crit rating = 2.4 AP (1.2); haste
-    // and expertise only come at 60. Hit: 5.2 AP a point against a raid
-    // boss, about 3 against your level (1.5). Intellect: 2 AP at 60 with
-    // Mental Dexterity at 100%; Blizzard's notes of Nov 2 raise it to 150%
-    // (about 2.5 AP), but it is full only from about level 17, a caster
-    // piece trades away the armor a melee needs, and WoWSims hasn't measured
-    // it yet: 1.7 AP (0.85; at 0.95 cloth robes start winning).
-    // Spell damage: 1.3 AP at 60 with raid buffs, a bit less leveling (0.6).
-    // Blizzard, Nov 6 (forum t/2404092): Enhancement is changed on Nov 10 so
-    // Strength is always its best stat, and leveling Enhancement should pick
-    // Strength and attack power gear from now on: Intellect 0.85 -> 0.7 and
-    // spell damage 0.6 -> 0.45 until the new numbers are out.
-    Enhancement: { strength: 1.1, agility: 0.66, attackPower: 1, crit: 1.2, critRating: 1.2, hit: 1.5, hitRating: 1.5, hasteRating: 1.4, expertiseRating: 1.2,
-      intellect: 0.7, stamina: 0.25, spellPower: 0.35, spellDamage: 0.45, natureDamage: 0.3, fireDamage: 0.2 },
+    // Enhancement, after Blizzard's hotfix of Nov 10 (forum t/2403040), from
+    // our own WoWSims runs with the hotfix loaded (WoWSims doesn't have it
+    // yet): solo, level 60 against a mob 2 levels above, no hit on gear,
+    // 30-45 s fights with full mana at the pull, Windfury Weapon + Windfury
+    // Totem, the leveling build. Per point, in AP: Strength 2.2 (1.1),
+    // Agility 1.35 (0.68), crit rating 2.75 (1.38), spell damage 1.49 (0.88;
+    // damage and healing 0.62), Nature 0.84 (0.6), Fire 0.65 (0.46). Hit
+    // rating 5.1 with none on gear, nothing for melee past 6% (60 rating)
+    // against a mob 2 levels above: 2.2. Intellect 1.9 when mana never runs
+    // out (30 s fights), 2.9 when it starts to (45 s): 0.95, the damage
+    // alone, so Strength stays ahead as Blizzard intends. Raid (level 63,
+    // raid buffs) measures about the same: Intellect 2.0, hit 2.5.
+    Enhancement: { strength: 1.1, agility: 0.68, attackPower: 1, crit: 1.38, critRating: 1.38, hit: 2.2, hitRating: 2.2, hasteRating: 1.4, expertiseRating: 1.2,
+      intellect: 0.95, stamina: 0.25, spellPower: 0.62, spellDamage: 0.88, natureDamage: 0.6, fireDamage: 0.46 },
     // Elemental, in spell power: WoWSims had Nature damage at 0.69 and Fire
     // at 0.31 with Lava Burst; Blizzard's notes of Nov 2 take Lava Burst out
     // and leave Fire to Flame Shock and the totems (Nature 0.85, Fire 0.15
