@@ -7696,40 +7696,6 @@
    ]
   },
   {
-   "id": 270100,
-   "name": "Freebooter's Armband",
-   "kind": "Leather",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 47,
-   "bind": "pickup",
-   "armor": 55,
-   "stats": {
-    "stamina": 10
-   },
-   "bonus": {
-    "attackPower": 6
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_bracer_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 10503,
    "name": "Rose Colored Goggles",
    "kind": "Cloth",
@@ -8920,39 +8886,6 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_jewelry_ring_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270066,
-   "name": "Tower Boots",
-   "kind": "Leather",
-   "slot": "Feet",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 39,
-   "bind": "pickup",
-   "armor": 75,
-   "stats": {
-    "strength": 9,
-    "stamina": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_boots_07",
    "raceMask": -1,
    "sources": [
     {
@@ -16447,38 +16380,6 @@
    ]
   },
   {
-   "id": 285253,
-   "name": "Skyseer's Gloves",
-   "kind": "Cloth",
-   "slot": "Hands",
-   "quality": 2,
-   "req": 6,
-   "obtain": 6,
-   "ilvl": 11,
-   "bind": "equip",
-   "armor": 13,
-   "stats": {
-    "intellect": 1
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_glove_cloth_skybornec60_b_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 6,
-     "rec": 6
-    }
-   ]
-  },
-  {
    "id": 285264,
    "name": "Skyseer's Slippers",
    "kind": "Cloth",
@@ -22503,6 +22404,49 @@
      },
      "asap": 10,
      "rec": 10
+    }
+   ]
+  },
+  {
+   "id": 285253,
+   "name": "Skyseer's Gloves",
+   "kind": "Cloth",
+   "slot": "Hands",
+   "quality": 2,
+   "req": 6,
+   "obtain": 10,
+   "ilvl": 11,
+   "bind": "equip",
+   "armor": 13,
+   "stats": {
+    "intellect": 1
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_glove_cloth_skybornec60_b_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Galemender Delanea",
+     "npcId": 259398,
+     "zone": "Zephras Isle",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 8,
+     "rec": 10,
+     "basis": {
+      "name": "Galemender Delanea",
+      "level": 11,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
     }
    ]
   },
@@ -102891,7 +102835,7 @@
     "spirit": 7
    },
    "bonus": {
-    "spellPower": 18,
+    "healing": 17,
     "spellDamage": 6
    },
    "equip": [],
@@ -119991,39 +119935,6 @@
    ]
   },
   {
-   "id": 281676,
-   "name": "Rog'mar Trainee Shoulderpads",
-   "kind": "Leather",
-   "slot": "Shoulder",
-   "quality": 2,
-   "req": 36,
-   "obtain": 36,
-   "ilvl": 41,
-   "bind": "equip",
-   "armor": 84,
-   "stats": {
-    "agility": 10,
-    "stamina": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_shoulder_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 36,
-     "rec": 36
-    }
-   ]
-  },
-  {
    "id": 282704,
    "name": "Shadow Council Apprentice's Mantle",
    "kind": "Cloth",
@@ -120242,7 +120153,7 @@
      "quest": "Snargl's Snout [A]",
      "questId": 94679,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=94679",
@@ -120284,7 +120195,7 @@
      "quest": "Snargl's Snout [A]",
      "questId": 94679,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=94679",
@@ -120327,7 +120238,7 @@
      "quest": "Snargl's Snout [A]",
      "questId": 94679,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=94679",
@@ -120369,7 +120280,7 @@
      "quest": "Snargl's Snout [H]",
      "questId": 94533,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=94533",
@@ -120411,7 +120322,7 @@
      "quest": "Snargl's Snout [H]",
      "questId": 94533,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=94533",
@@ -120454,7 +120365,7 @@
      "quest": "Snargl's Snout [H]",
      "questId": 94533,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=94533",
@@ -120566,6 +120477,61 @@
       "grey": 49
      },
      "ref": "https://foreverchanges.pro/quest/697",
+     "basis": {
+      "name": "Boulderfist Shaman",
+      "level": 39,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 694,
+      "steps": 7
+     },
+     "asap": 34,
+     "rec": 36
+    }
+   ]
+  },
+  {
+   "id": 270066,
+   "name": "Tower Boots",
+   "kind": "Leather",
+   "slot": "Feet",
+   "quality": 2,
+   "req": 0,
+   "obtain": 36,
+   "ilvl": 39,
+   "bind": "pickup",
+   "armor": 75,
+   "stats": {
+    "strength": 9,
+    "stamina": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_boots_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Malin's Request (2/2)",
+     "questId": 697,
+     "requiredLevel": 30,
+     "zone": "Arathi Highlands",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/697",
+     "level": 39,
+     "bands": {
+      "red": 30,
+      "orange": 35,
+      "yellow": 37,
+      "green": 42,
+      "grey": 49
+     },
      "basis": {
       "name": "Boulderfist Shaman",
       "level": 39,
@@ -126739,7 +126705,7 @@
      "quest": "Bring Me His Head [H]",
      "questId": 94768,
      "requiredLevel": 38,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=94768",
@@ -126782,7 +126748,7 @@
      "quest": "Bring Me His Head [H]",
      "questId": 94768,
      "requiredLevel": 38,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=94768",
@@ -126827,7 +126793,7 @@
      "quest": "A Miner Problem",
      "questId": 96015,
      "requiredLevel": 38,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=96015",
@@ -130832,7 +130798,7 @@
      "quest": "Preventative Measures",
      "questId": 95064,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=95064",
@@ -130876,7 +130842,7 @@
      "quest": "Preventative Measures",
      "questId": 95064,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=95064",
@@ -134698,7 +134664,7 @@
      "quest": "WANTED: Ghostmaw [A]",
      "questId": 95991,
      "requiredLevel": 38,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=95991",
@@ -140168,6 +140134,50 @@
    ]
   },
   {
+   "id": 281676,
+   "name": "Rog'mar Trainee Shoulderpads",
+   "kind": "Leather",
+   "slot": "Shoulder",
+   "quality": 2,
+   "req": 36,
+   "obtain": 40,
+   "ilvl": 41,
+   "bind": "equip",
+   "armor": 84,
+   "stats": {
+    "agility": 10,
+    "stamina": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_shoulder_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Mosh'gra",
+     "npcId": 259801,
+     "zone": "Riverglades",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 38,
+     "rec": 40,
+     "basis": {
+      "name": "Mosh'gra",
+      "level": 41,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
    "id": 3764,
    "name": "Mantis Boots",
    "kind": "Cloth",
@@ -141589,7 +141599,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_05",
    "raceMask": -1,
    "sources": [
@@ -146724,7 +146734,7 @@
      "quest": "Bloodmaster's Ring (7/7)",
      "questId": 95063,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=95063",
@@ -146770,7 +146780,7 @@
      "quest": "Bloodmaster's Ring (7/7)",
      "questId": 95063,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=95063",
@@ -146818,7 +146828,7 @@
      "quest": "Bloodmaster's Ring (7/7)",
      "questId": 95063,
      "requiredLevel": 36,
-     "zone": null,
+     "zone": "Riverglades",
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=95063",
@@ -152745,6 +152755,61 @@
    ]
   },
   {
+   "id": 270100,
+   "name": "Freebooter's Armband",
+   "kind": "Leather",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 44,
+   "ilvl": 47,
+   "bind": "pickup",
+   "armor": 55,
+   "stats": {
+    "stamina": 10
+   },
+   "bonus": {
+    "attackPower": 6
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Captain's Chest",
+     "questId": 8551,
+     "requiredLevel": 35,
+     "zone": "Stranglethorn Vale",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/8551",
+     "level": 47,
+     "bands": {
+      "red": 35,
+      "orange": 43,
+      "yellow": 45,
+      "green": 50,
+      "grey": 59
+     },
+     "basis": {
+      "name": "Gorlash",
+      "level": 47,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 42,
+     "rec": 44
+    }
+   ]
+  },
+  {
    "id": 4125,
    "name": "Tranquil Orb",
    "kind": "Off-hand",
@@ -153911,13 +153976,11 @@
    "bonus": {
     "spellPower": 23
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 23."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_pants_08",
    "raceMask": -1,
    "sources": [
@@ -170159,13 +170222,11 @@
     "healing": 11,
     "spellDamage": 4
    },
-   "equip": [
-    "Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_bracer_05",
    "raceMask": -1,
    "sources": [
@@ -173214,13 +173275,11 @@
     "healing": 33,
     "spellDamage": 11
    },
-   "equip": [
-    "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_cloth_42",
    "raceMask": -1,
    "sources": [
@@ -178629,16 +178688,17 @@
    "obtain": 51,
    "ilvl": 56,
    "bind": "equip",
-   "armor": 190,
+   "armor": 40,
    "stats": {
-    "stamina": 6
+    "stamina": 6,
+    "armor": 150
    },
    "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_cape_21",
    "raceMask": -1,
    "sources": [
@@ -179715,18 +179775,16 @@
    "armor": 146,
    "stats": {
     "agility": 12,
-    "stamina": 6
+    "stamina": 8
    },
    "bonus": {},
    "equip": [
-    "Equip: Increased Bows +2.",
-    "Equip: Increased Crossbows +2.",
-    "Equip: Increased Guns +2."
+    "Equip: Improves your chance to hit with ranged weapons by 1.0%."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_bracer_06",
    "raceMask": -1,
    "sources": [
@@ -179758,14 +179816,14 @@
     "strength": 11,
     "stamina": 18
    },
-   "bonus": {},
-   "equip": [
-    "Equip: Restores 7 health per 5 sec."
-   ],
+   "bonus": {
+    "defense": 9
+   },
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_pants_11",
    "raceMask": -1,
    "sources": [
@@ -184325,14 +184383,14 @@
    "armor": 122,
    "stats": {
     "agility": 11,
-    "stamina": 11
+    "stamina": 10
    },
    "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shoulder_27",
    "raceMask": -1,
    "sources": [
@@ -185016,6 +185074,43 @@
    ]
   },
   {
+   "id": 280081,
+   "name": "Sad-Sack Sandals",
+   "kind": "Cloth",
+   "slot": "Feet",
+   "quality": 3,
+   "req": 52,
+   "obtain": 52,
+   "ilvl": 57,
+   "bind": "pickup",
+   "armor": 56,
+   "stats": {
+    "stamina": 13
+   },
+   "bonus": {
+    "crit": 0.5
+   },
+   "equip": [
+    "Equip: Improves your chance to get a critical strike by 0.5%.",
+    "Equip: Reduces the hit chance of Fear effects against you by 8%."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_boots_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 52,
+     "rec": 52
+    }
+   ]
+  },
+  {
    "id": 280084,
    "name": "Furbolg Rib Protector",
    "kind": "Mail",
@@ -185070,7 +185165,7 @@
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_belt_12",
    "raceMask": -1,
    "sources": [
@@ -188235,12 +188330,16 @@
     "agility": 13,
     "stamina": 14
    },
-   "bonus": {},
-   "equip": [],
+   "bonus": {
+    "defense": 4
+   },
+   "equip": [
+    "Equip: Increased Defense +4."
+   ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_gauntlets_18",
    "raceMask": -1,
    "sources": [
@@ -189591,13 +189690,11 @@
    "bonus": {
     "spellPower": 12
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 12."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_bracer_07",
    "raceMask": -1,
    "sources": [
@@ -189621,8 +189718,13 @@
    "ilvl": 58,
    "bind": "pickup",
    "armor": 165,
-   "stats": {},
-   "bonus": {},
+   "stats": {
+    "intellect": 16,
+    "spirit": 18
+   },
+   "bonus": {
+    "spellPower": 20
+   },
    "equip": [],
    "use": [],
    "chance": [],
@@ -189658,13 +189760,11 @@
    "bonus": {
     "defense": 7
    },
-   "equip": [
-    "Equip: Increased Defense +7."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shield_21",
    "raceMask": -1,
    "sources": [
@@ -192928,7 +193028,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_21",
    "raceMask": -1,
    "sources": [
@@ -193063,15 +193163,15 @@
     "intellect": 7
    },
    "bonus": {
-    "mp5": 6
+    "mp5": 6,
+    "healing": 7,
+    "spellDamage": 3
    },
-   "equip": [
-    "Equip: Restores 6 mana per 5 sec."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_cape_18",
    "raceMask": -1,
    "sources": [
@@ -193725,7 +193825,7 @@
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_gauntlets_27",
    "raceMask": -1,
    "sources": [
@@ -193794,7 +193894,7 @@
    ],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_belt_15",
    "raceMask": -1,
    "sources": [
@@ -195056,19 +195156,15 @@
     "stamina": 13
    },
    "bonus": {
-    "crit": 1,
-    "hit": 2,
+    "critRating": 14,
+    "hitRating": 20,
     "defense": 6
    },
-   "equip": [
-    "Equip: Increased Defense +6.",
-    "Equip: Improves your chance to hit by 2.0%.",
-    "Equip: Improves your chance to get a critical strike by 1.0%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_bandana_01",
    "raceMask": -1,
    "sources": [
@@ -196079,13 +196175,11 @@
     "healing": 18,
     "spellDamage": 6
    },
-   "equip": [
-    "Equip: Increases healing done by up to 18 and damage done by up to 6 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_amulet_01",
    "raceMask": -1,
    "sources": [
@@ -198181,15 +198275,13 @@
     "intellect": 10
    },
    "bonus": {
-    "spellCrit": 1
+    "critRating": 14
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike with spells by 1%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_cape_02",
    "raceMask": -1,
    "sources": [
@@ -198221,13 +198313,11 @@
    "bonus": {
     "spellPower": 12
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 12."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_bracer_13",
    "raceMask": -1,
    "sources": [
@@ -198340,14 +198430,15 @@
    "armor": 266,
    "stats": {
     "agility": 22,
-    "stamina": 9
+    "stamina": 9,
+    "intellect": 6
    },
    "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_shoulder_14",
    "raceMask": -1,
    "sources": [
@@ -202666,6 +202757,40 @@
    ]
   },
   {
+   "id": 281599,
+   "name": "Ragged Colors",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 39,
+   "stats": {
+    "spirit": 5
+   },
+   "bonus": {
+    "attackPower": 25
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_cape_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
    "id": 284097,
    "name": "Everstaring Abomination Eye",
    "kind": "Neck",
@@ -202751,13 +202876,11 @@
     "healing": 19,
     "spellDamage": 6
    },
-   "equip": [
-    "Equip: Increases healing done by up to 19 and damage done by up to 6 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_28",
    "raceMask": -1,
    "sources": [
@@ -202797,6 +202920,112 @@
    "era": "new",
    "numbers": "forever",
    "icon": "inv_chest_cloth_51",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
+   "id": 287041,
+   "name": "Time-Forgotten Bindings",
+   "kind": "Mail",
+   "slot": "Wrist",
+   "quality": 3,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 155,
+   "stats": {
+    "stamina": 13,
+    "spirit": 5
+   },
+   "bonus": {
+    "hit": 1
+   },
+   "equip": [
+    "Equip: Improves your chance to hit by 1.0%."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_bracer_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
+   "id": 287043,
+   "name": "Predaceous Band",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 3,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "equip",
+   "stats": {
+    "stamina": 14
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: +18 Attack Power against Beasts.",
+    "Equip: Movement speed increased by 2% in Forest and Grassland areas."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 55,
+     "rec": 55
+    }
+   ]
+  },
+  {
+   "id": 287044,
+   "name": "Predator's Shroud",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 3,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 43,
+   "stats": {
+    "agility": 9,
+    "stamina": 14
+   },
+   "bonus": {
+    "attackPower": 11
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_cape_17",
    "raceMask": -1,
    "sources": [
     {
@@ -203115,13 +203344,11 @@
    "bonus": {
     "otherDamage": 14
    },
-   "equip": [
-    "Equip: Increases damage done by Shadow spells and effects by up to 14."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_wand_09",
    "raceMask": -1,
    "sources": [
@@ -203610,7 +203837,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_17",
    "raceMask": -1,
    "sources": [
@@ -205610,13 +205837,11 @@
     "healing": 53,
     "spellDamage": 18
    },
-   "equip": [
-    "Equip: Increases healing done by up to 53 and damage done by up to 18 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_belt_09",
    "raceMask": -1,
    "sources": [
@@ -206973,18 +207198,17 @@
    "bind": "pickup",
    "armor": 65,
    "stats": {
+    "stamina": 4,
     "intellect": 16
    },
    "bonus": {
     "spellPower": 20
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 20."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shoulder_05",
    "raceMask": -1,
    "sources": [
@@ -208404,6 +208628,40 @@
    ]
   },
   {
+   "id": 287040,
+   "name": "Dinosaur Hide Belt",
+   "kind": "Leather",
+   "slot": "Waist",
+   "quality": 3,
+   "req": 56,
+   "obtain": 56,
+   "ilvl": 61,
+   "bind": "equip",
+   "armor": 97,
+   "stats": {
+    "agility": 12,
+    "stamina": 18,
+    "armor": 100
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "forever",
+   "icon": "inv_belt_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 56,
+     "rec": 56
+    }
+   ]
+  },
+  {
    "id": 11924,
    "name": "Robes of the Royal Crown",
    "kind": "Cloth",
@@ -208826,15 +209084,17 @@
    "bind": "pickup",
    "armor": 69,
    "stats": {
-    "intellect": 28,
+    "intellect": 10,
     "spirit": 10
    },
-   "bonus": {},
+   "bonus": {
+    "otherDamage": 37
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_crown_02",
    "raceMask": -1,
    "sources": [
@@ -208921,17 +209181,14 @@
    "ilvl": 60,
    "bind": "pickup",
    "stats": {},
-   "bonus": {
-    "spellPower": 15
-   },
+   "bonus": {},
    "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 15. This effect is doubled in Marsh and Swamp areas.",
     "Equip: Unable to be tracked."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_root_02",
    "raceMask": -1,
    "sources": [
@@ -209512,13 +209769,11 @@
    "bonus": {
     "spellPower": 23
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 23."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_gauntlets_14",
    "raceMask": -1,
    "sources": [
@@ -209550,19 +209805,25 @@
    "name": "Coldtouch Phantom Wraps",
    "kind": "Cloth",
    "slot": "Chest",
-   "quality": 2,
+   "quality": 3,
    "req": 55,
    "obtain": 56,
    "ilvl": 60,
    "bind": "pickup",
-   "armor": 77,
+   "armor": 85,
    "stats": {},
-   "bonus": {},
-   "equip": [],
+   "bonus": {
+    "frostDamage": 20,
+    "hit": 1
+   },
+   "equip": [
+    "Equip: Improves your chance to hit by 1.0%.",
+    "Equip: Increases damage done by Frost spells and effects by up to 20."
+   ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_chest_cloth_47",
    "raceMask": -1,
    "sources": [
@@ -209642,19 +209903,23 @@
    "name": "Windshrieker Pauldrons",
    "kind": "Mail",
    "slot": "Shoulder",
-   "quality": 2,
+   "quality": 3,
    "req": 55,
    "obtain": 56,
    "ilvl": 60,
    "bind": "pickup",
-   "armor": 242,
-   "stats": {},
-   "bonus": {},
+   "armor": 266,
+   "stats": {
+    "intellect": 7
+   },
+   "bonus": {
+    "attackPower": 22
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shoulder_13",
    "raceMask": -1,
    "sources": [
@@ -209737,22 +210002,22 @@
    "name": "Murmuring Ring",
    "kind": "Ring",
    "slot": "Finger",
-   "quality": 2,
+   "quality": 3,
    "req": 55,
    "obtain": 56,
    "ilvl": 60,
    "bind": "pickup",
    "stats": {
-    "intellect": 10
+    "intellect": 13
    },
    "bonus": {},
    "equip": [
-    "Equip: Increases your resistance to silence by 5%."
+    "Equip: Reduces the hit chance of Silence effects against you by 7%."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_15",
    "raceMask": -1,
    "sources": [
@@ -209784,23 +210049,25 @@
    "name": "Threadbare Trousers",
    "kind": "Cloth",
    "slot": "Legs",
-   "quality": 2,
+   "quality": 3,
    "req": 55,
    "obtain": 56,
    "ilvl": 60,
    "bind": "pickup",
-   "armor": 68,
+   "armor": 75,
    "stats": {
-    "stamina": 13
+    "stamina": 18
    },
-   "bonus": {},
+   "bonus": {
+    "spellPower": 23
+   },
    "equip": [
-    "Equip: Increases damage done to Undead by magical spells and effects by up to 35."
+    "Equip: Increases damage done to Undead by magical spells and effects by up to 23."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_pants_09",
    "raceMask": -1,
    "sources": [
@@ -209883,21 +210150,23 @@
    "name": "Kreeg's Mug",
    "kind": "Off-hand",
    "slot": "Held In Off-hand",
-   "quality": 2,
+   "quality": 3,
    "req": 55,
    "obtain": 56,
    "ilvl": 60,
    "bind": "pickup",
    "stats": {
-    "stamina": 12,
-    "spirit": 15
+    "stamina": 10,
+    "spirit": 6
    },
    "bonus": {},
-   "equip": [],
+   "equip": [
+    "Equip: Reduces the hit chance of Fear effects against you by 10%."
+   ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_drink_05",
    "raceMask": -1,
    "sources": [
@@ -211349,7 +211618,7 @@
    "bind": "equip",
    "armor": 105,
    "stats": {
-    "agility": 10,
+    "agility": 14,
     "stamina": 10
    },
    "bonus": {},
@@ -211357,7 +211626,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_gauntlets_23",
    "raceMask": -1,
    "sources": [
@@ -211932,17 +212201,14 @@
    "bind": "pickup",
    "stats": {},
    "bonus": {
-    "attackPower": 26,
-    "crit": 1
+    "critRating": 14,
+    "attackPower": 26
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1.0%.",
-    "Equip: +26 Attack Power."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_talisman_07",
    "raceMask": -1,
    "sources": [
@@ -211996,13 +212262,11 @@
    "bonus": {
     "spellPower": 12
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 12."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_07",
    "raceMask": -1,
    "sources": [
@@ -212055,13 +212319,11 @@
     "healing": 37,
     "spellDamage": 12
    },
-   "equip": [
-    "Equip: Increases healing done by up to 37 and damage done by up to 12 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_19",
    "raceMask": -1,
    "sources": [
@@ -212806,6 +213068,55 @@
    ]
   },
   {
+   "id": 13397,
+   "name": "Stoneskin Gargoyle Cape",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 3,
+   "req": 57,
+   "obtain": 57,
+   "ilvl": 62,
+   "bind": "pickup",
+   "armor": 43,
+   "stats": {
+    "strength": 7,
+    "agility": 8,
+    "stamina": 14,
+    "armor": 50
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_misc_cape_19",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Stonespine",
+     "npcId": 10809,
+     "level": 60,
+     "rank": "rare-elite",
+     "zone": "Stratholme",
+     "zoneId": 2017,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 57,
+     "rec": 57,
+     "basis": {
+      "name": "Stonespine",
+      "level": 60,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 13936,
    "name": "Deprecated Dreadmaster's Shroud",
    "kind": "Cloth",
@@ -213329,7 +213640,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_belt_10",
    "raceMask": -1,
    "sources": [
@@ -214908,13 +215219,11 @@
    "bonus": {
     "spellPower": 6
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 6."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shield_02",
    "raceMask": -1,
    "sources": [
@@ -216107,18 +216416,18 @@
    "armor": 49,
    "stats": {
     "stamina": 10,
-    "intellect": 18
+    "intellect": 17
    },
    "bonus": {
     "spellPower": 9
    },
    "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 9."
+    "Equip: Your spells pierce 3 Magical Resistance."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_belt_11",
    "raceMask": -1,
    "sources": [
@@ -216163,13 +216472,11 @@
    "bonus": {
     "attackPower": 50
    },
-   "equip": [
-    "Equip: +50 Attack Power."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_plate06",
    "raceMask": -1,
    "sources": [
@@ -216215,13 +216522,11 @@
    "bonus": {
     "spellPower": 13
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 13."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_belt_10",
    "raceMask": -1,
    "sources": [
@@ -216259,13 +216564,16 @@
    "ilvl": 61,
    "bind": "pickup",
    "armor": 87,
-   "stats": {},
+   "stats": {
+    "stamina": 14,
+    "to": 20
+   },
    "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_chest_cloth_17",
    "raceMask": -1,
    "sources": [
@@ -216309,7 +216617,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_chest_cloth_16",
    "raceMask": -1,
    "sources": [
@@ -216350,13 +216658,11 @@
    "bonus": {
     "fireDamage": 24
    },
-   "equip": [
-    "Equip: Increases damage done by Fire spells and effects by up to 24."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "spell_holy_innerfire",
    "raceMask": -1,
    "sources": [
@@ -216398,17 +216704,14 @@
     "stamina": 10
    },
    "bonus": {
-    "attackPower": 24,
-    "hit": 1.5
+    "hitRating": 15,
+    "attackPower": 24
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 1.5%.",
-    "Equip: +24 Attack Power."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shoulder_10",
    "raceMask": -1,
    "sources": [
@@ -216446,19 +216749,20 @@
    "ilvl": 61,
    "bind": "pickup",
    "stats": {
-    "stamina": 8,
-    "spirit": 5
+    "stamina": 8
    },
    "bonus": {
+    "spellPower": 6,
     "crit": 1
    },
    "equip": [
-    "Equip: Improves your chance to get a critical strike by 1%."
+    "Equip: Improves your chance to get a critical strike by 1.0%.",
+    "Equip: Increases damage and healing done by magical spells and effects by up to 6."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_jewelry_necklace_05",
    "raceMask": -1,
    "sources": [
@@ -216993,12 +217297,14 @@
    "bind": "pickup",
    "armor": 43,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "mp5": 4
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_19",
    "raceMask": -1,
    "sources": [
@@ -217319,55 +217625,6 @@
    ]
   },
   {
-   "id": 13397,
-   "name": "Stoneskin Gargoyle Cape",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 3,
-   "req": 56,
-   "obtain": 57,
-   "ilvl": 61,
-   "bind": "pickup",
-   "armor": 43,
-   "stats": {
-    "strength": 7,
-    "agility": 8,
-    "stamina": 14,
-    "armor": 50
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_misc_cape_19",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "boss",
-     "npc": "Stonespine",
-     "npcId": 10809,
-     "level": 60,
-     "rank": "rare-elite",
-     "zone": "Stratholme",
-     "zoneId": 2017,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 56,
-     "rec": 57,
-     "basis": {
-      "name": "Stonespine",
-      "level": 60,
-      "rank": "rare-elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
    "id": 13529,
    "name": "Husk of Nerub'enkan",
    "kind": "Shield",
@@ -217431,13 +217688,11 @@
    "bonus": {
     "natureDamage": 13
    },
-   "equip": [
-    "Equip: Increases damage done by Nature spells and effects by up to 13."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_boots_05",
    "raceMask": -1,
    "sources": [
@@ -218324,13 +218579,11 @@
    "bonus": {
     "spellPower": 7
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 7."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_necklace_07",
    "raceMask": -1,
    "sources": [
@@ -218674,13 +218927,11 @@
    "bonus": {
     "spellPower": 23
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 23."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_belt_18",
    "raceMask": -1,
    "sources": [
@@ -221382,6 +221633,7 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/8918",
+     "endgame": true,
      "basis": {
       "name": "Crypt Beast",
       "level": 60,
@@ -221391,8 +221643,7 @@
       "steps": 1
      },
      "asap": 58,
-     "rec": 58,
-     "endgame": true
+     "rec": 58
     }
    ]
   },
@@ -221441,6 +221692,7 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/8942",
+     "endgame": true,
      "basis": {
       "name": "Pyroguard Emberseer",
       "level": 60,
@@ -221450,8 +221702,7 @@
       "steps": 8
      },
      "asap": 58,
-     "rec": 58,
-     "endgame": true
+     "rec": 58
     }
    ]
   },
@@ -226759,15 +227010,14 @@
    },
    "bonus": {
     "healing": 40,
+    "mp5": 8,
     "spellDamage": 13
    },
-   "equip": [
-    "Equip: Increases healing done by up to 40 and damage done by up to 13 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_chain_07",
    "raceMask": -1,
    "sources": [
@@ -227138,13 +227388,11 @@
    "bonus": {
     "spellPower": 12
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 12."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_boots_08",
    "raceMask": -1,
    "sources": [
@@ -227678,13 +227926,11 @@
     "healing": 26,
     "spellDamage": 9
    },
-   "equip": [
-    "Equip: Increases healing done by up to 26 and damage done by up to 9 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shoulder_11",
    "raceMask": -1,
    "sources": [
@@ -228510,13 +228756,11 @@
    "bonus": {
     "spellPower": 18
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_pants_03",
    "raceMask": -1,
    "sources": [
@@ -228702,13 +228946,11 @@
    "bonus": {
     "spellPower": 27
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 27."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_chest_cloth_51",
    "raceMask": -1,
    "sources": [
@@ -228804,13 +229046,11 @@
     "healing": 31,
     "spellDamage": 10
    },
-   "equip": [
-    "Equip: Increases healing done by up to 31 and damage done by up to 10 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_belt_26",
    "raceMask": -1,
    "sources": [
@@ -229201,15 +229441,13 @@
     "stamina": 12
    },
    "bonus": {
-    "hit": 0.3
+    "hitRating": 3
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 0.3%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_11",
    "raceMask": -1,
    "sources": [
@@ -229604,7 +229842,7 @@
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_gear_06",
    "raceMask": -1,
    "sources": [
@@ -230162,6 +230400,7 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/8942",
+     "endgame": true,
      "basis": {
       "name": "Pyroguard Emberseer",
       "level": 60,
@@ -230171,8 +230410,7 @@
       "steps": 8
      },
      "asap": 58,
-     "rec": 58,
-     "endgame": true
+     "rec": 58
     }
    ]
   },
@@ -230704,13 +230942,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9221",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -230727,13 +230965,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9223",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -230750,13 +230988,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9226",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -230773,13 +231011,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9227",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     }
    ]
   },
@@ -230825,13 +231063,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9221",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -230848,13 +231086,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9223",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -230871,13 +231109,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9226",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -230894,13 +231132,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9227",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     }
    ]
   },
@@ -230947,13 +231185,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9221",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -230970,13 +231208,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9223",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -230993,13 +231231,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9226",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -231016,13 +231254,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9227",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     }
    ]
   },
@@ -231068,13 +231306,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9221",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -231091,13 +231329,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9223",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -231114,13 +231352,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9226",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -231137,13 +231375,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9227",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     }
    ]
   },
@@ -232114,17 +232352,14 @@
     "stamina": 17
    },
    "bonus": {
-    "crit": 1.5,
-    "hit": 0.5
+    "critRating": 21,
+    "hitRating": 5
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 0.5%.",
-    "Equip: Improves your chance to get a critical strike by 1.5%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_helmet_46",
    "raceMask": -1,
    "sources": [
@@ -232169,13 +232404,11 @@
    "bonus": {
     "defense": 10
    },
-   "equip": [
-    "Equip: Increased Defense +10."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shield_20",
    "raceMask": -1,
    "sources": [
@@ -232213,23 +232446,18 @@
    "ilvl": 63,
    "bind": "pickup",
    "armor": 154,
-   "stats": {
-    "agility": 5
-   },
+   "stats": {},
    "bonus": {
-    "crit": 1,
-    "hit": 1,
-    "dodge": 2
+    "attackPower": 24,
+    "hitRating": 10,
+    "critRating": 14,
+    "dodgeRating": 24
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 1%.",
-    "Equip: Improves your chance to get a critical strike by 1%.",
-    "Equip: Increases your chance to dodge an attack by 2%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_pants_06",
    "raceMask": -1,
    "sources": [
@@ -232327,13 +232555,11 @@
    "bonus": {
     "spellPower": 19
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 19."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_pants_06",
    "raceMask": -1,
    "sources": [
@@ -232376,15 +232602,13 @@
     "stamina": 13
    },
    "bonus": {
-    "hit": 1
+    "hitRating": 10
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 1.0%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_bracer_07",
    "raceMask": -1,
    "sources": [
@@ -232428,13 +232652,11 @@
    "bonus": {
     "defense": 3
    },
-   "equip": [
-    "Equip: Increased Defense +3."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_05",
    "raceMask": -1,
    "sources": [
@@ -232478,13 +232700,11 @@
    "bonus": {
     "frostDamage": 13
    },
-   "equip": [
-    "Equip: Increases damage done by Frost spells and effects by up to 13."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_18",
    "raceMask": -1,
    "sources": [
@@ -232522,20 +232742,17 @@
    "ilvl": 63,
    "bind": "pickup",
    "stats": {
-    "stamina": 7
+    "stamina": 9
    },
    "bonus": {
-    "attackPower": 16,
-    "crit": 1
+    "critRating": 14,
+    "attackPower": 12
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1%.",
-    "Equip: +16 Attack Power."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_18",
    "raceMask": -1,
    "sources": [
@@ -232573,19 +232790,19 @@
    "ilvl": 63,
    "bind": "pickup",
    "stats": {
-    "stamina": 8,
-    "intellect": 14
+    "stamina": 7,
+    "intellect": 11
    },
    "bonus": {
-    "mp5": 3
+    "mp5": 3,
+    "healing": 15,
+    "spellDamage": 5
    },
-   "equip": [
-    "Equip: Restores 3 mana per 5 sec."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_necklace_09",
    "raceMask": -1,
    "sources": [
@@ -232822,14 +233039,18 @@
     "intellect": 15,
     "spirit": 10
    },
-   "bonus": {},
-   "equip": [],
+   "bonus": {
+    "otherDamage": 16
+   },
+   "equip": [
+    "Equip: Increases damage done by Shadow spells and effects by up to 16."
+   ],
    "use": [
     "Use: Summons a Skeleton that will protect you for 1 min. (15 Min Cooldown)"
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_misc_book_06",
    "raceMask": -1,
    "sources": [
@@ -233844,17 +234065,14 @@
    "bind": "pickup",
    "stats": {},
    "bonus": {
-    "spellCrit": 1,
-    "mp5": 5
+    "mp5": 5,
+    "critRating": 14
    },
-   "equip": [
-    "Equip: Restores 5 mana per 5 sec.",
-    "Equip: Improves your chance to get a critical strike with spells by 1%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_16",
    "raceMask": -1,
    "sources": [
@@ -233893,19 +234111,17 @@
    "bind": "pickup",
    "armor": 208,
    "stats": {
-    "stamina": 9,
-    "intellect": 10
+    "strength": 9,
+    "intellect": 11
    },
    "bonus": {
     "mp5": 8
    },
-   "equip": [
-    "Equip: Restores 8 mana per 5 sec."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_belt_03",
    "raceMask": -1,
    "sources": [
@@ -234244,17 +234460,14 @@
     "spirit": 8
    },
    "bonus": {
-    "spellPower": 7,
-    "crit": 1
+    "critRating": 14,
+    "spellPower": 7
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1.0%.",
-    "Equip: Increases damage and healing done by magical spells and effects by up to 7."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_shoulder_23",
    "raceMask": -1,
    "sources": [
@@ -234298,15 +234511,14 @@
     "spirit": 12
    },
    "bonus": {
-    "healing": 26
+    "healing": 24,
+    "spellDamage": 8
    },
-   "equip": [
-    "Equip: Increases healing done by spells and effects by up to 26."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_boots_cloth_03",
    "raceMask": -1,
    "sources": [
@@ -234350,13 +234562,11 @@
    "bonus": {
     "spellPower": 18
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_book_06",
    "raceMask": -1,
    "sources": [
@@ -234401,7 +234611,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_talisman_09",
    "raceMask": -1,
    "sources": [
@@ -234448,7 +234658,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_20",
    "raceMask": -1,
    "sources": [
@@ -235915,13 +236125,11 @@
    "bonus": {
     "attackPower": 38
    },
-   "equip": [
-    "Equip: +38 Attack Power."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_helmet_39",
    "raceMask": -1,
    "sources": [
@@ -235964,15 +236172,14 @@
     "intellect": 15
    },
    "bonus": {
-    "healing": 33
+    "healing": 33,
+    "spellDamage": 11
    },
-   "equip": [
-    "Equip: Increases healing done by spells and effects by up to 33."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_helmet_24",
    "raceMask": -1,
    "sources": [
@@ -237063,13 +237270,11 @@
    "bonus": {
     "spellPower": 18
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 18."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_helmet_27",
    "raceMask": -1,
    "sources": [
@@ -237136,13 +237341,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9222",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237159,13 +237364,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9224",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237182,13 +237387,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9225",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237205,13 +237410,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9228",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     }
    ]
   },
@@ -237255,13 +237460,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9222",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237278,13 +237483,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9224",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237301,13 +237506,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9225",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237324,13 +237529,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9228",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     }
    ]
   },
@@ -237377,13 +237582,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9222",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237400,13 +237605,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9224",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237423,13 +237628,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9225",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237446,13 +237651,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9228",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     }
    ]
   },
@@ -237496,13 +237701,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9222",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237519,13 +237724,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9224",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237542,13 +237747,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9225",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237565,13 +237770,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9228",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     }
    ]
   },
@@ -237612,13 +237817,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9222",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237635,13 +237840,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9224",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237658,13 +237863,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9225",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     },
     {
      "type": "quest",
@@ -237681,13 +237886,13 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9228",
+     "endgame": true,
      "basis": {
       "from": "quest-level",
       "group": false
      },
      "asap": 55,
-     "rec": 59,
-     "endgame": true
+     "rec": 59
     }
    ]
   },
@@ -244528,6 +244733,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/7782",
+     "raid": true,
+     "raidNeed": "Nefarian",
      "basis": {
       "name": null,
       "level": 60,
@@ -244538,9 +244745,7 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Nefarian"
+     "rec": 60
     },
     {
      "type": "quest",
@@ -244555,6 +244760,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/7784",
+     "raid": true,
+     "raidNeed": "Nefarian",
      "basis": {
       "name": null,
       "level": 60,
@@ -244565,9 +244772,7 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Nefarian"
+     "rec": 60
     }
    ]
   },
@@ -244896,6 +245101,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/7782",
+     "raid": true,
+     "raidNeed": "Nefarian",
      "basis": {
       "name": null,
       "level": 60,
@@ -244906,9 +245113,7 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Nefarian"
+     "rec": 60
     },
     {
      "type": "quest",
@@ -244923,6 +245128,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/7784",
+     "raid": true,
+     "raidNeed": "Nefarian",
      "basis": {
       "name": null,
       "level": 60,
@@ -244933,9 +245140,7 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Nefarian"
+     "rec": 60
     }
    ]
   },
@@ -244977,6 +245182,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/7782",
+     "raid": true,
+     "raidNeed": "Nefarian",
      "basis": {
       "name": null,
       "level": 60,
@@ -244987,9 +245194,7 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Nefarian"
+     "rec": 60
     },
     {
      "type": "quest",
@@ -245004,6 +245209,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/7784",
+     "raid": true,
+     "raidNeed": "Nefarian",
      "basis": {
       "name": null,
       "level": 60,
@@ -245014,9 +245221,7 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Nefarian"
+     "rec": 60
     }
    ]
   },
@@ -251498,6 +251703,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/8729",
+     "raid": true,
+     "raidNeed": "Maws",
      "basis": {
       "name": "Ragnaros",
       "level": 63,
@@ -251508,9 +251715,7 @@
       "steps": 14
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Maws"
+     "rec": 60
     }
    ]
   },
@@ -251553,6 +251758,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/8729",
+     "raid": true,
+     "raidNeed": "Maws",
      "basis": {
       "name": "Ragnaros",
       "level": 63,
@@ -251563,9 +251770,7 @@
       "steps": 14
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Maws"
+     "rec": 60
     }
    ]
   },
@@ -251709,7 +251914,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/8736",
-     "dungeonZone": "Sunken Temple",
+     "raid": true,
+     "raidNeed": "Twilight Corrupter",
      "basis": {
       "name": "Twilight Corrupter",
       "level": 63,
@@ -251720,9 +251926,7 @@
       "steps": 7
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Twilight Corrupter"
+     "rec": 60
     }
    ]
   },
@@ -251764,7 +251968,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/8736",
-     "dungeonZone": "Sunken Temple",
+     "raid": true,
+     "raidNeed": "Twilight Corrupter",
      "basis": {
       "name": "Twilight Corrupter",
       "level": 63,
@@ -251775,9 +251980,7 @@
       "steps": 7
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Twilight Corrupter"
+     "rec": 60
     }
    ]
   },
@@ -253906,6 +254109,7 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/8620",
+     "endgame": true,
      "basis": {
       "name": "Number Two",
       "level": 61,
@@ -253916,8 +254120,7 @@
       "steps": 8
      },
      "asap": 60,
-     "rec": 60,
-     "endgame": true
+     "rec": 60
     }
    ]
   },
@@ -257083,6 +257286,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/8447",
+     "raid": true,
+     "raidNeed": "Ysondre",
      "basis": {
       "name": null,
       "level": 60,
@@ -257093,9 +257298,7 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Ysondre"
+     "rec": 60
     }
    ]
   },
@@ -266362,6 +266565,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/7491",
+     "raid": true,
+     "raidNeed": "Onyxia's Lair",
      "basis": {
       "name": null,
       "level": 60,
@@ -266372,9 +266577,7 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Onyxia"
+     "rec": 60
     },
     {
      "type": "quest",
@@ -266389,6 +266592,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/7496",
+     "raid": true,
+     "raidNeed": "Onyxia's Lair",
      "basis": {
       "name": null,
       "level": 60,
@@ -266399,9 +266604,7 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Onyxia"
+     "rec": 60
     }
    ]
   },
@@ -266444,6 +266647,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/7491",
+     "raid": true,
+     "raidNeed": "Onyxia's Lair",
      "basis": {
       "name": null,
       "level": 60,
@@ -266454,9 +266659,7 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Onyxia"
+     "rec": 60
     },
     {
      "type": "quest",
@@ -266471,6 +266674,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/7496",
+     "raid": true,
+     "raidNeed": "Onyxia's Lair",
      "basis": {
       "name": null,
       "level": 60,
@@ -266481,9 +266686,7 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Onyxia"
+     "rec": 60
     }
    ]
   },
@@ -266522,6 +266725,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/7491",
+     "raid": true,
+     "raidNeed": "Onyxia's Lair",
      "basis": {
       "name": null,
       "level": 60,
@@ -266532,9 +266737,7 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Onyxia"
+     "rec": 60
     },
     {
      "type": "quest",
@@ -266549,6 +266752,8 @@
       "yellow": 60
      },
      "ref": "https://foreverchanges.pro/quest/7496",
+     "raid": true,
+     "raidNeed": "Onyxia's Lair",
      "basis": {
       "name": null,
       "level": 60,
@@ -266559,9 +266764,7 @@
       "steps": 2
      },
      "asap": 60,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Onyxia"
+     "rec": 60
     }
    ]
   },
@@ -274114,6 +274317,8 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/7486",
+     "raid": true,
+     "raidNeed": "Molten Core",
      "basis": {
       "name": "Sulfuron Harbinger",
       "level": 63,
@@ -274124,9 +274329,7 @@
       "steps": 7
      },
      "asap": 58,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Shazzrah"
+     "rec": 60
     }
    ]
   },
@@ -274169,6 +274372,8 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/7486",
+     "raid": true,
+     "raidNeed": "Molten Core",
      "basis": {
       "name": "Sulfuron Harbinger",
       "level": 63,
@@ -274179,9 +274384,7 @@
       "steps": 7
      },
      "asap": 58,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Shazzrah"
+     "rec": 60
     }
    ]
   },
@@ -274553,20 +274756,17 @@
    "bind": "pickup",
    "armor": 73,
    "stats": {
-    "intellect": 9
+    "spirit": 13
    },
    "bonus": {
-    "spellPower": 36,
-    "spellHit": 1
+    "spellPower": 33,
+    "hitRating": 10
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 36.",
-    "Equip: Improves your chance to hit with spells by 1%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_helmet_62",
    "raceMask": -1,
    "sources": [
@@ -276924,6 +277124,8 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9011",
+     "raid": true,
+     "raidNeed": "Lord Valthalak",
      "basis": {
       "name": "Lord Valthalak",
       "level": 63,
@@ -276934,9 +277136,7 @@
       "steps": 13
      },
      "asap": 58,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Lord Valthalak"
+     "rec": 60
     }
    ]
   },
@@ -276985,6 +277185,8 @@
       "yellow": 58
      },
      "ref": "https://foreverchanges.pro/quest/9011",
+     "raid": true,
+     "raidNeed": "Lord Valthalak",
      "basis": {
       "name": "Lord Valthalak",
       "level": 63,
@@ -276995,9 +277197,7 @@
       "steps": 13
      },
      "asap": 58,
-     "rec": 60,
-     "raid": true,
-     "raidNeed": "Lord Valthalak"
+     "rec": 60
     }
    ]
   },
