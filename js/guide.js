@@ -107,7 +107,8 @@
       html += tile(WEAPON_ICONS[best.kind], t('tile.weapon', { level: 30 }), '<span class="q' + best.quality + '">' + best.name + '</span>',
         best.value + ' · ' + best.source, '#Equipo/camino');
     }
-    const build = window.I18N.localize(window.BUILD_DATA || []).find(b => b.spec === spec);
+    const mine = window.I18N.localize(window.BUILD_DATA || []).filter(b => b.spec === spec);
+    const build = mine.find(b => b.recommended) || mine.sort((a, b) => b.level - a.level)[0];
     if (build) {
       const pts = window.SHAMAN_DATA.talents.trees.map(tr => window.TalentRules.treePoints(build.points, tr));
       const capstone = guide.keyTalents && iconFor(guide.keyTalents[0].split(' — ')[0].replace(/ (.*)$/, ''));
