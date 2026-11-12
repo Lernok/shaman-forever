@@ -1,28 +1,35 @@
 # Cambios: 1.60.1.70888 → 1.60.1.70888
 
-Sincronizado el 2026-11-11. Talentos de talentsforever.com (build 1.60.1.70755, export 2026-11-10); ítems del cliente 1.60.1.70888.
+Sincronizado el 2026-11-12. Talentos de talentsforever.com (build 1.60.1.70755, export 2026-11-10); ítems del cliente 1.60.1.70888.
 
 ## Talentos y hechizos (0)
 Sin cambios.
 
-## Ítems (20)
-- **Mar Alom's Grip** #12547: stats {"stamina":5,"intellect":10,"spirit":8} → {"stamina":12,"intellect":10,"spirit":8}; efectos cambiados
-- **Polychromatic Visionwrap** #12609: stats {"stamina":14,"to":20} → {"stamina":14}
-- **Legguards of the Chromatic Defier** #12903: stats {"strength":9,"agility":33,"stamina":15} → {"strength":9,"agility":31,"stamina":15,"intellect":7}
-- **Emberfury Talisman** #12929: efectos cambiados
-- **Legplates of the Chromatic Defier** #12945: stats {"stamina":16,"intellect":19,"spirit":26} → {"stamina":14,"intellect":16,"spirit":19}
-- **Wind Dancer Boots** #13260: stats {"intellect":9,"spirit":16} → {"agility":12,"spirit":16}; efectos cambiados
-- **Coldtouch Phantom Wraps** #13535: efectos cambiados
-- **Juno's Shadow** #17061: stats {"stamina":10,"intellect":5} → {"stamina":8,"intellect":5}
+## Ítems (27)
+- 28 ítems nuevos en los datos (2H Mace, Ring, Staff, Leather, 2H Axe, Dagger, 1H Mace, Shield, Off-hand, Neck, Cloth)
+- **Brain Hacker** #1263: efectos cambiados
+- **Tristam Legguards** #12964: efectos cambiados
+- **Demonskin Gloves** #13181: efectos cambiados
+- **Alanna's Embrace** #13314: efectos cambiados
+- **Book of the Dead** #13353: efectos cambiados
+- **Crown of Caer Darrow** #13986: efectos cambiados
+- **Darrowshire Strongguard** #14002: efectos cambiados
+- **Bonebrace Hauberk** #14536: stats {"intellect":13,"spirit":4} → {"intellect":15,"spirit":4}
+- **Skullsmoke Pants** #14577: stats {"stamina":20,"intellect":20} → {"stamina":20,"intellect":15}; efectos cambiados
+- **Dancing Sliver** #15854: dmgMin 98 → 73; dmgMax 148 → 110; efectos cambiados
 - **Flame Walkers** #18047: efectos cambiados
-- **Dragonrider Boots** #18102: efectos cambiados
-- **Warpwood Binding** #18393: efectos cambiados
-- **Boots of the Full Moon** #18507: efectos cambiados
-- **Plaguehound Leggings** #18736: stats {"agility":30,"stamina":6} → {"agility":30,"stamina":9}; efectos cambiados
-- **Plaguebat Fur Gloves** #18744: efectos cambiados
-- **Skyfury Gauntlets** #20133: efectos cambiados
-- **Skyfury Helm** #20134: efectos cambiados
-- Ítem nuevo: **Soulwoven Drape** (Cloth, nivel 56) #276072
-- **Mardenholde Armbands** #278570: efectos cambiados
-- Ítem nuevo: **Naturopathy Footpads** (Cloth, nivel 54) #287038
-- Ítem nuevo: **Tattered Explorer's Cuffs** (Leather, nivel 55) #287039
+- **Marksman Bands** #18296: efectos cambiados
+- **Denwatcher's Shoulders** #18494: efectos cambiados
+- **Frigid Ring** #18679: efectos cambiados
+- **Dark Advisor's Pendant** #18691: stats {"stamina":8,"intellect":7} → {"stamina":9,"intellect":8}
+- **Coldstone Slippers** #18697: efectos cambiados
+- **Tattered Leather Hood** #18698: efectos cambiados
+- **Plaguehound Leggings** #18736: efectos cambiados
+- **Sacred Cloth Leggings** #18745: efectos cambiados
+- **Specter's Blade** #18758: efectos cambiados
+- **Malicious Axe** #18759: efectos cambiados
+- **Sad-Sack Sandals** #280081: efectos cambiados
+- **Staff of Sorrow** #280082: dmgMin 104 → 141; dmgMax 157 → 212; efectos cambiados
+- **Nature Guardian's Legguards** #287029: efectos cambiados
+- **Naturopathy Footpads** #287038: efectos cambiados
+- **Time-Forgotten Bindings** #287041: efectos cambiados

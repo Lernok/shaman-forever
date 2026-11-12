@@ -1,7 +1,7 @@
 {
  "_readme": "Fuentes de misión del equipo nuevo de Forever (items) y datos de Forever de las misiones de Classic que dan equipo (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json.",
  "source": "https://foreverchanges.pro",
- "fetched": "2026-11-09",
+ "fetched": "2026-11-12",
  "items": {
   "246164": {
    "name": "Skullthumper",
@@ -473,6 +473,358 @@
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93318"
+    }
+   ]
+  },
+  "259890": {
+   "name": "Deep-Sea Waders",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Winter Frontier Fishery (Horde)",
+     "questId": 91610,
+     "level": 48,
+     "requiredLevel": 45,
+     "zone": "Azshara",
+     "bands": {
+      "orange": 45,
+      "yellow": 46,
+      "green": 51,
+      "grey": 60
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91610"
+    }
+   ]
+  },
+  "260172": {
+   "name": "Assassin's Dagger",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Ley of the Land",
+     "questId": 91685,
+     "level": 54,
+     "requiredLevel": 45,
+     "zone": "Azshara",
+     "bands": {
+      "red": 45,
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91685"
+    }
+   ]
+  },
+  "260179": {
+   "name": "Barkwoven Belt",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Ley of the Land",
+     "questId": 91685,
+     "level": 54,
+     "requiredLevel": 45,
+     "zone": "Azshara",
+     "bands": {
+      "red": 45,
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91685"
+    }
+   ]
+  },
+  "260180": {
+   "name": "Scout's Dagger",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Murloc Thieves",
+     "questId": 89037,
+     "level": 52,
+     "requiredLevel": 47,
+     "zone": "Azshara",
+     "bands": {
+      "red": 47,
+      "orange": 48,
+      "yellow": 50,
+      "green": 55
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/89037"
+    }
+   ]
+  },
+  "260182": {
+   "name": "Elunar Belt",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Murloc Thieves",
+     "questId": 89037,
+     "level": 52,
+     "requiredLevel": 47,
+     "zone": "Azshara",
+     "bands": {
+      "red": 47,
+      "orange": 48,
+      "yellow": 50,
+      "green": 55
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/89037"
+    }
+   ]
+  },
+  "260195": {
+   "name": "Headdress of the Damned",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Vek'zol",
+     "questId": 91548,
+     "level": 55,
+     "requiredLevel": 44,
+     "zone": "Blasted Lands",
+     "bands": {
+      "red": 44,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91548"
+    }
+   ]
+  },
+  "260196": {
+   "name": "Belt of Shadows",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Vek'zol",
+     "questId": 91548,
+     "level": 55,
+     "requiredLevel": 44,
+     "zone": "Blasted Lands",
+     "bands": {
+      "red": 44,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91548"
+    }
+   ]
+  },
+  "260201": {
+   "name": "Highborne Memory Crystal",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Your Final Reward",
+     "questId": 89053,
+     "level": 55,
+     "requiredLevel": 47,
+     "zone": "Azshara",
+     "bands": {
+      "red": 47,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/89053"
+    }
+   ]
+  },
+  "260205": {
+   "name": "Highborne Research Tablet",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Your Final Reward",
+     "questId": 89053,
+     "level": 55,
+     "requiredLevel": 47,
+     "zone": "Azshara",
+     "bands": {
+      "red": 47,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/89053"
+    }
+   ]
+  },
+  "260207": {
+   "name": "Staff of Archmage Selwyn",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Your Final Reward",
+     "questId": 89053,
+     "level": 55,
+     "requiredLevel": 47,
+     "zone": "Azshara",
+     "bands": {
+      "red": 47,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/89053"
+    }
+   ]
+  },
+  "260208": {
+   "name": "Prelate's Orb",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Head of the Serpent",
+     "questId": 88813,
+     "level": 55,
+     "requiredLevel": 47,
+     "zone": "Azshara",
+     "bands": {
+      "red": 47,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/88813"
+    }
+   ]
+  },
+  "260209": {
+   "name": "Truesong's Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Head of the Serpent",
+     "questId": 88813,
+     "level": 55,
+     "requiredLevel": 47,
+     "zone": "Azshara",
+     "bands": {
+      "red": 47,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/88813"
+    }
+   ]
+  },
+  "260210": {
+   "name": "A Bigger Shield",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Deadliest Catch",
+     "questId": 91611,
+     "level": 56,
+     "requiredLevel": 50,
+     "zone": "Azshara",
+     "bands": {
+      "red": 50,
+      "orange": 52,
+      "yellow": 54,
+      "green": 59
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91611"
+    }
+   ]
+  },
+  "260211": {
+   "name": "Panic Hands",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Deadliest Catch",
+     "questId": 91611,
+     "level": 56,
+     "requiredLevel": 50,
+     "zone": "Azshara",
+     "bands": {
+      "red": 50,
+      "orange": 52,
+      "yellow": 54,
+      "green": 59
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91611"
+    }
+   ]
+  },
+  "260212": {
+   "name": "Bad Hat",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Deadliest Catch",
+     "questId": 91611,
+     "level": 56,
+     "requiredLevel": 50,
+     "zone": "Azshara",
+     "bands": {
+      "red": 50,
+      "orange": 52,
+      "yellow": 54,
+      "green": 59
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91611"
+    }
+   ]
+  },
+  "260215": {
+   "name": "Wild Malleus",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Claws That Rend, Tusks that Gore",
+     "questId": 92069,
+     "level": 58,
+     "requiredLevel": 45,
+     "zone": "Blackmaw Hold",
+     "dungeon": true,
+     "bands": {
+      "red": 45,
+      "orange": 54,
+      "yellow": 56
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92069"
     }
    ]
   },
@@ -1141,6 +1493,29 @@
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97257"
+    }
+   ]
+  },
+  "267090": {
+   "name": "Semblance of Twilight",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Token of Vengeance",
+     "questId": 94975,
+     "level": 42,
+     "requiredLevel": 38,
+     "zone": "Krol'dok Stronghold",
+     "dungeon": true,
+     "bands": {
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94975"
     }
    ]
   },
@@ -2620,6 +2995,29 @@
     }
    ]
   },
+  "270073": {
+   "name": "Stromgarde Cuffs",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Foul Magics",
+     "questId": 673,
+     "level": 40,
+     "requiredLevel": 35,
+     "zone": "Arathi Highlands",
+     "bands": {
+      "red": 35,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/673"
+    }
+   ]
+  },
   "270074": {
    "name": "Doomcaller's Pants",
    "sources": [
@@ -2714,6 +3112,76 @@
     }
    ]
   },
+  "270081": {
+   "name": "Purified Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Bring the End",
+     "questId": 3341,
+     "level": 42,
+     "requiredLevel": 37,
+     "zone": "Razorfen Downs",
+     "dungeon": true,
+     "bands": {
+      "red": 37,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/3341"
+    }
+   ]
+  },
+  "270086": {
+   "name": "Oversized Ogre's Mittens",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Overlord Mok'Morokk's Concern",
+     "questId": 1166,
+     "level": 43,
+     "requiredLevel": 38,
+     "zone": "Dustwallow Marsh",
+     "bands": {
+      "red": 38,
+      "orange": 39,
+      "yellow": 41,
+      "green": 46,
+      "grey": 54
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/1166"
+    }
+   ]
+  },
+  "270087": {
+   "name": "Thick Ogre's Belt",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Overlord Mok'Morokk's Concern",
+     "questId": 1166,
+     "level": 43,
+     "requiredLevel": 38,
+     "zone": "Dustwallow Marsh",
+     "bands": {
+      "red": 38,
+      "orange": 39,
+      "yellow": 41,
+      "green": 46,
+      "grey": 54
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/1166"
+    }
+   ]
+  },
   "270090": {
    "name": "Beggar's Leggings",
    "sources": [
@@ -2757,6 +3225,443 @@
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/613"
+    }
+   ]
+  },
+  "270093": {
+   "name": "Blackwater Cap",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Bloodsail Buccaneers",
+     "questId": 608,
+     "level": 45,
+     "requiredLevel": 37,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 37,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/608"
+    }
+   ]
+  },
+  "270094": {
+   "name": "Black Whelp Boots",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Brood of Onyxia",
+     "questId": 1172,
+     "level": 45,
+     "requiredLevel": 38,
+     "zone": "Dustwallow Marsh",
+     "bands": {
+      "red": 38,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/1172"
+    }
+   ]
+  },
+  "270097": {
+   "name": "Archer's Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Mai'Zoth",
+     "questId": 206,
+     "level": 46,
+     "requiredLevel": 30,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 30,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/206"
+    }
+   ]
+  },
+  "270098": {
+   "name": "Dank Shoulderpads",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Tiara of the Deep",
+     "questId": 2846,
+     "level": 46,
+     "requiredLevel": 40,
+     "zone": "Zul'Farrak",
+     "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/2846"
+    }
+   ]
+  },
+  "270099": {
+   "name": "Magister Cowl",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Divino-matic Rod",
+     "questId": 2768,
+     "level": 47,
+     "requiredLevel": 40,
+     "zone": "Zul'Farrak",
+     "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 43,
+      "yellow": 45,
+      "green": 50,
+      "grey": 59
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/2768"
+    }
+   ]
+  },
+  "270100": {
+   "name": "Freebooter's Armband",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Captain's Chest",
+     "questId": 8551,
+     "level": 47,
+     "requiredLevel": 35,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 35,
+      "orange": 43,
+      "yellow": 45,
+      "green": 50,
+      "grey": 59
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/8551"
+    }
+   ]
+  },
+  "270102": {
+   "name": "Projectile Redirectors",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Rescue OOX-17/TN!",
+     "questId": 648,
+     "level": 48,
+     "requiredLevel": 43,
+     "zone": "Tanaris",
+     "bands": {
+      "red": 43,
+      "orange": 44,
+      "yellow": 46,
+      "green": 51,
+      "grey": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/648"
+    }
+   ]
+  },
+  "270103": {
+   "name": "Reloading Assist Armbands",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Rescue OOX-17/TN!",
+     "questId": 648,
+     "level": 48,
+     "requiredLevel": 43,
+     "zone": "Tanaris",
+     "bands": {
+      "red": 43,
+      "orange": 44,
+      "yellow": 46,
+      "green": 51,
+      "grey": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/648"
+    }
+   ]
+  },
+  "270104": {
+   "name": "Stonewalker's Slippers",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Dark Heart",
+     "questId": 3062,
+     "level": 50,
+     "requiredLevel": 45,
+     "zone": "Feralas",
+     "bands": {
+      "red": 45,
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/3062"
+    }
+   ]
+  },
+  "270108": {
+   "name": "Bloodied Longmace",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Dark Vessels",
+     "questId": 7850,
+     "level": 50,
+     "requiredLevel": 46,
+     "zone": "The Hinterlands",
+     "bands": {
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7850"
+    }
+   ]
+  },
+  "270109": {
+   "name": "Smotts' Pinky Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Facing Negolash (given by Sprogger)",
+     "questId": 8554,
+     "level": 50,
+     "requiredLevel": 35,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 35,
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/8554"
+    }
+   ]
+  },
+  "270110": {
+   "name": "First Mate's Armguards",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Facing Negolash (given by Sprogger)",
+     "questId": 8554,
+     "level": 50,
+     "requiredLevel": 35,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 35,
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/8554"
+    }
+   ]
+  },
+  "270111": {
+   "name": "Forest Troll Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Return to Primal Torntusk",
+     "questId": 7847,
+     "level": 51,
+     "requiredLevel": 46,
+     "zone": "The Hinterlands",
+     "bands": {
+      "red": 46,
+      "orange": 47,
+      "yellow": 49,
+      "green": 54,
+      "grey": 60
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7847"
+    }
+   ]
+  },
+  "270113": {
+   "name": "Singed Cloth Robe",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "WANTED: Overseer Maltorius",
+     "questId": 7701,
+     "level": 50,
+     "requiredLevel": null,
+     "zone": "Searing Gorge",
+     "bands": {
+      "red": 45,
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7701"
+    }
+   ]
+  },
+  "270114": {
+   "name": "Dragonscale Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Set Them Ablaze!",
+     "questId": 3463,
+     "level": 52,
+     "requiredLevel": 40,
+     "zone": "Searing Gorge",
+     "bands": {
+      "red": 40,
+      "orange": 48,
+      "yellow": 50,
+      "green": 55
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/3463"
+    }
+   ]
+  },
+  "270115": {
+   "name": "Leggings of Freedom and Sorrow",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Jammal'an the Prophet",
+     "questId": 1446,
+     "level": 53,
+     "requiredLevel": 38,
+     "zone": "Sunken Temple",
+     "dungeon": true,
+     "bands": {
+      "red": 38,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/1446"
+    }
+   ]
+  },
+  "270117": {
+   "name": "Shapeshifter's Helm",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The God Hakkar",
+     "questId": 3528,
+     "level": 53,
+     "requiredLevel": 40,
+     "zone": "Sunken Temple",
+     "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/3528"
+    }
+   ]
+  },
+  "270225": {
+   "name": "Jewel of the Guard Captain",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Job Opening: Guard Captain of Revantusk Village",
+     "questId": 7862,
+     "level": 51,
+     "requiredLevel": null,
+     "zone": "The Hinterlands",
+     "bands": {
+      "red": 46,
+      "orange": 47,
+      "yellow": 49,
+      "green": 54,
+      "grey": 60
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7862"
+    }
+   ]
+  },
+  "270226": {
+   "name": "Golden Banana",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Message in a Bottle",
+     "questId": 630,
+     "level": 51,
+     "requiredLevel": 45,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 45,
+      "orange": 47,
+      "yellow": 49,
+      "green": 54,
+      "grey": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/630"
     }
    ]
   },
@@ -3245,6 +4150,168 @@
     }
    ]
   },
+  "271810": {
+   "name": "Corpsefeeder's Shedding",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Corpsefeeder's Carapace",
+     "questId": 93574,
+     "level": 45,
+     "requiredLevel": 35,
+     "zone": "Shen'dralas",
+     "bands": {
+      "red": 35,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93574"
+    }
+   ]
+  },
+  "271811": {
+   "name": "Clacking Carapace Spaulders",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Corpsefeeder's Carapace",
+     "questId": 93574,
+     "level": 45,
+     "requiredLevel": 35,
+     "zone": "Shen'dralas",
+     "bands": {
+      "red": 35,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93574"
+    }
+   ]
+  },
+  "271812": {
+   "name": "Discarded Circlet",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Corpsefeeder's Carapace",
+     "questId": 93574,
+     "level": 45,
+     "requiredLevel": 35,
+     "zone": "Shen'dralas",
+     "bands": {
+      "red": 35,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93574"
+    }
+   ]
+  },
+  "272181": {
+   "name": "Phantasmal Shiv",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Tempered Expectations",
+     "questId": 96060,
+     "level": 42,
+     "requiredLevel": 35,
+     "zone": "Shen'dralas",
+     "bands": {
+      "red": 35,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96060"
+    }
+   ]
+  },
+  "272184": {
+   "name": "Amulet of Vengeance",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Forlorn Necklace",
+     "questId": 93609,
+     "level": 45,
+     "requiredLevel": 35,
+     "zone": "Shen'dralas",
+     "bands": {
+      "red": 35,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93609"
+    }
+   ]
+  },
+  "272185": {
+   "name": "Amulet of Forgiveness",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Forlorn Necklace",
+     "questId": 93609,
+     "level": 45,
+     "requiredLevel": 35,
+     "zone": "Shen'dralas",
+     "bands": {
+      "red": 35,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93609"
+    }
+   ]
+  },
+  "272186": {
+   "name": "Overgrown Cuffs",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Rot and Regret",
+     "questId": 93404,
+     "level": 49,
+     "requiredLevel": 35,
+     "zone": "Maraudon",
+     "dungeon": true,
+     "bands": {
+      "red": 35,
+      "orange": 45,
+      "yellow": 47,
+      "green": 52,
+      "grey": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93404"
+    }
+   ]
+  },
   "273654": {
    "name": "Crystal Thread Cloak",
    "sources": [
@@ -3265,6 +4332,26 @@
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/96260"
+    }
+   ]
+  },
+  "273800": {
+   "name": "Thomas's Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Belle's Ring",
+     "questId": 96077,
+     "level": 58,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 54,
+      "yellow": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96077"
     }
    ]
   },
@@ -3332,6 +4419,26 @@
     }
    ]
   },
+  "274035": {
+   "name": "Staghide Drape",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Rites of Respect",
+     "questId": 95611,
+     "level": 56,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "yellow": 54,
+      "green": 59
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95611"
+    }
+   ]
+  },
   "274078": {
    "name": "Boar Signet",
    "sources": [
@@ -3356,6 +4463,800 @@
     }
    ]
   },
+  "274265": {
+   "name": "Brush Cutter",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Celastrus the Bitter",
+     "questId": 91923,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91923"
+    }
+   ]
+  },
+  "274270": {
+   "name": "Weed Whacker",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Celastrus the Bitter",
+     "questId": 91923,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91923"
+    }
+   ]
+  },
+  "274271": {
+   "name": "Deadhead Blade",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Celastrus the Bitter",
+     "questId": 91923,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/91923"
+    }
+   ]
+  },
+  "274915": {
+   "name": "Sacristan Band",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "In Memoriam",
+     "questId": 95615,
+     "level": 38,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "yellow": 36,
+      "green": 41,
+      "grey": 48
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95615"
+    }
+   ]
+  },
+  "274916": {
+   "name": "Verger Greaves",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "In Memoriam",
+     "questId": 95615,
+     "level": 38,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "yellow": 36,
+      "green": 41,
+      "grey": 48
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95615"
+    }
+   ]
+  },
+  "274928": {
+   "name": "Curly's Chopper",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Helping Hands",
+     "questId": 94861,
+     "level": 39,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "orange": 36,
+      "yellow": 37,
+      "green": 42,
+      "grey": 49
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94861"
+    }
+   ]
+  },
+  "274929": {
+   "name": "Hurley's Felling Axe",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Helping Hands",
+     "questId": 94861,
+     "level": 39,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "orange": 36,
+      "yellow": 37,
+      "green": 42,
+      "grey": 49
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94861"
+    }
+   ]
+  },
+  "274931": {
+   "name": "Fur-Lined Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Fit for a Princess",
+     "questId": 95913,
+     "level": 38,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "yellow": 36,
+      "green": 41,
+      "grey": 48
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95913"
+    }
+   ]
+  },
+  "274932": {
+   "name": "Coyote Hide Wraps",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Fit for a Princess",
+     "questId": 95913,
+     "level": 38,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "yellow": 36,
+      "green": 41,
+      "grey": 48
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95913"
+    }
+   ]
+  },
+  "274938": {
+   "name": "Gnollhide Tunic",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Snargl's Snout (Alliance)",
+     "questId": 94679,
+     "level": 40,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94679"
+    }
+   ]
+  },
+  "274939": {
+   "name": "Southern Watch Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Snargl's Snout (Alliance)",
+     "questId": 94679,
+     "level": 40,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94679"
+    }
+   ]
+  },
+  "274941": {
+   "name": "Bristle Hills Mystic Robe",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Snargl's Snout (Alliance)",
+     "questId": 94679,
+     "level": 40,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94679"
+    }
+   ]
+  },
+  "274942": {
+   "name": "Bristlepelt Vest",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Snargl's Snout (Horde)",
+     "questId": 94533,
+     "level": 40,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94533"
+    }
+   ]
+  },
+  "274943": {
+   "name": "Gnoll Crusher Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Snargl's Snout (Horde)",
+     "questId": 94533,
+     "level": 40,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94533"
+    }
+   ]
+  },
+  "274946": {
+   "name": "Gnollblood Robe",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Snargl's Snout (Horde)",
+     "questId": 94533,
+     "level": 40,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94533"
+    }
+   ]
+  },
+  "274948": {
+   "name": "Bottle of Powderfuse Port",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Monster Surfaces",
+     "questId": 95267,
+     "level": 42,
+     "requiredLevel": 38,
+     "zone": "Riverglades",
+     "bands": {
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95267"
+    }
+   ]
+  },
+  "274952": {
+   "name": "Jom-jom's Gabbar",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Jom-jom's Escape",
+     "questId": 94556,
+     "level": 42,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 36,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94556"
+    }
+   ]
+  },
+  "274955": {
+   "name": "Clobrok's Block Rock",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Jom-jom's Escape",
+     "questId": 94556,
+     "level": 42,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 36,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94556"
+    }
+   ]
+  },
+  "274957": {
+   "name": "Lumber Luggers",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "High Stakes",
+     "questId": 96009,
+     "level": 38,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "yellow": 36,
+      "green": 41,
+      "grey": 48
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96009"
+    }
+   ]
+  },
+  "274959": {
+   "name": "Farholde Horns",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Preventative Measures",
+     "questId": 95064,
+     "level": 39,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "orange": 36,
+      "yellow": 37,
+      "green": 42,
+      "grey": 49
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95064"
+    }
+   ]
+  },
+  "274961": {
+   "name": "Brute Slayer Band",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Preventative Measures",
+     "questId": 95064,
+     "level": 39,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "orange": 36,
+      "yellow": 37,
+      "green": 42,
+      "grey": 49
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95064"
+    }
+   ]
+  },
+  "274962": {
+   "name": "Crocskin Waders",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "WANTED: Ghostmaw (Alliance)",
+     "questId": 95991,
+     "level": 42,
+     "requiredLevel": 38,
+     "zone": "Riverglades",
+     "bands": {
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95991"
+    },
+    {
+     "type": "quest",
+     "quest": "WANTED: Ghostmaw (Horde)",
+     "questId": 95992,
+     "level": 42,
+     "requiredLevel": 38,
+     "zone": "Riverglades",
+     "bands": {
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95992"
+    }
+   ]
+  },
+  "275011": {
+   "name": "Thud Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Death to the Executioner",
+     "questId": 95433,
+     "level": 46,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 36,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95433"
+    }
+   ]
+  },
+  "275021": {
+   "name": "Prisoner Handwraps",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Dunston Checks Out",
+     "questId": 94927,
+     "level": 44,
+     "requiredLevel": 38,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 38,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94927"
+    }
+   ]
+  },
+  "275023": {
+   "name": "Bolder'ok Loincloth",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Dunston Checks Out",
+     "questId": 94927,
+     "level": 44,
+     "requiredLevel": 38,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 38,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94927"
+    }
+   ]
+  },
+  "275025": {
+   "name": "Dunston's Ogre Duster",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Dunston Checks Out",
+     "questId": 94927,
+     "level": 44,
+     "requiredLevel": 38,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 38,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94927"
+    }
+   ]
+  },
+  "275028": {
+   "name": "Twilight Mine Light",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Miner Problem",
+     "questId": 96015,
+     "level": 43,
+     "requiredLevel": 38,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 38,
+      "orange": 39,
+      "yellow": 41,
+      "green": 46,
+      "grey": 54
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96015"
+    }
+   ]
+  },
+  "275041": {
+   "name": "Bloodied Sash",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Farholde Scouting Report",
+     "questId": 93971,
+     "level": 45,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 36,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93971"
+    }
+   ]
+  },
+  "275043": {
+   "name": "Bloodmaster's Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Bloodmaster's Ring",
+     "questId": 95063,
+     "level": 45,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 36,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95063"
+    }
+   ]
+  },
+  "275044": {
+   "name": "Bloodsport Band",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Bloodmaster's Ring",
+     "questId": 95063,
+     "level": 45,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 36,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95063"
+    }
+   ]
+  },
+  "275045": {
+   "name": "Ogre Horn Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Bloodmaster's Ring",
+     "questId": 95063,
+     "level": 45,
+     "requiredLevel": 36,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 36,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95063"
+    }
+   ]
+  },
+  "275046": {
+   "name": "Twilight Overlord Drape",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Bring Me His Head (Alliance)",
+     "questId": 94890,
+     "level": 46,
+     "requiredLevel": 38,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 38,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94890"
+    }
+   ]
+  },
+  "275049": {
+   "name": "Farholde Bastion",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Bring Me His Head (Alliance)",
+     "questId": 94890,
+     "level": 46,
+     "requiredLevel": 38,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 38,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94890"
+    }
+   ]
+  },
+  "275050": {
+   "name": "Cloak of the Cult",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Bring Me His Head (Horde)",
+     "questId": 94768,
+     "level": 46,
+     "requiredLevel": 38,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 38,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94768"
+    }
+   ]
+  },
+  "275051": {
+   "name": "Twilight Barrier",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Bring Me His Head (Horde)",
+     "questId": 94768,
+     "level": 46,
+     "requiredLevel": 38,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 38,
+      "orange": 42,
+      "yellow": 44,
+      "green": 49,
+      "grey": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94768"
+    }
+   ]
+  },
   "275290": {
    "name": "Stormforged Protector",
    "sources": [
@@ -3374,6 +5275,454 @@
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/94003"
+    }
+   ]
+  },
+  "275347": {
+   "name": "Lichbane",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Final Death (Alliance)",
+     "questId": 92591,
+     "level": 59,
+     "requiredLevel": 57,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "yellow": 57
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92591"
+    },
+    {
+     "type": "quest",
+     "quest": "Final Death (Horde)",
+     "questId": 92592,
+     "level": 59,
+     "requiredLevel": 57,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "yellow": 57
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92592"
+    }
+   ]
+  },
+  "275630": {
+   "name": "Depleted Eye of Influence",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Drawing Down the Malevolent",
+     "questId": 96003,
+     "level": 60,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "red": 54,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96003"
+    }
+   ]
+  },
+  "275647": {
+   "name": "Cleansed Ritual Kris",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Twisted Tools",
+     "questId": 92533,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92533"
+    }
+   ]
+  },
+  "275648": {
+   "name": "Purified Gnarlybark Staff",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Twisted Tools",
+     "questId": 92533,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92533"
+    }
+   ]
+  },
+  "275649": {
+   "name": "Bramblebark Barrier",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Thorny Solution",
+     "questId": 93547,
+     "level": 60,
+     "requiredLevel": 57,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 57,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93547"
+    }
+   ]
+  },
+  "275666": {
+   "name": "Whitemane's Plateau",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Summit Sentries",
+     "questId": 93127,
+     "level": 60,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "red": 54,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93127"
+    }
+   ]
+  },
+  "275668": {
+   "name": "Summit Drape",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Summit Sentries",
+     "questId": 93127,
+     "level": 60,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "red": 54,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93127"
+    }
+   ]
+  },
+  "275698": {
+   "name": "Yaely's Mending Tool",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Drum Up Trouble",
+     "questId": 92329,
+     "level": 60,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "red": 54,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92329"
+    }
+   ]
+  },
+  "275700": {
+   "name": "Glaive Thrower Muffler",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Drum Up Trouble",
+     "questId": 92329,
+     "level": 60,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "red": 54,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92329"
+    }
+   ]
+  },
+  "275701": {
+   "name": "Copper Plated Pipe",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Drum Up Trouble",
+     "questId": 92329,
+     "level": 60,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "red": 54,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92329"
+    }
+   ]
+  },
+  "275708": {
+   "name": "Ghansurok Hide Tunic",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Bait the Beast",
+     "questId": 93444,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93444"
+    }
+   ]
+  },
+  "275711": {
+   "name": "Chimaera Wing Cape",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Bait the Beast",
+     "questId": 93444,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93444"
+    }
+   ]
+  },
+  "275715": {
+   "name": "Rocket Pilot Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Contents Under Pressure",
+     "questId": 93383,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93383"
+    }
+   ]
+  },
+  "275721": {
+   "name": "Rocketeer Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Contents Under Pressure",
+     "questId": 93383,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93383"
+    }
+   ]
+  },
+  "275831": {
+   "name": "Highfeather Bangle",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Tarnished Treasures",
+     "questId": 96252,
+     "level": 58,
+     "requiredLevel": 55,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 55,
+      "yellow": 56
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96252"
+    }
+   ]
+  },
+  "275832": {
+   "name": "Crowfeather Tunic",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Experimental Method",
+     "questId": 95316,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95316"
+    }
+   ]
+  },
+  "275833": {
+   "name": "Bristlecone Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Experimental Method",
+     "questId": 95316,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95316"
+    }
+   ]
+  },
+  "275836": {
+   "name": "Acolyte Blade",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Taste of Ash",
+     "questId": 95318,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95318"
+    }
+   ]
+  },
+  "276105": {
+   "name": "Scoutmaster's Eyepatch",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "WANTED: Scoutmaster Vargas",
+     "questId": 95882,
+     "level": 43,
+     "requiredLevel": 38,
+     "zone": "Riverglades",
+     "bands": {
+      "red": 38,
+      "orange": 39,
+      "yellow": 41,
+      "green": 46,
+      "grey": 54
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95882"
+    }
+   ]
+  },
+  "276336": {
+   "name": "Yashiro's Spirit Bead",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Yashiro's Windwalk",
+     "questId": 96983,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96983"
+    }
+   ]
+  },
+  "276338": {
+   "name": "Claw of Shalla'kal",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Kits and Cats",
+     "questId": 93615,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/93615"
     }
    ]
   },
@@ -3488,6 +5837,26 @@
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/515"
+    }
+   ]
+  },
+  "276754": {
+   "name": "Sunderbark Vigil",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Dying Ancients",
+     "questId": 92959,
+     "level": 56,
+     "requiredLevel": 55,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "yellow": 55,
+      "green": 59
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92959"
     }
    ]
   },
@@ -3685,6 +6054,94 @@
     }
    ]
   },
+  "276900": {
+   "name": "Denric's Dog Tags",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Thicker Than Water",
+     "questId": 96812,
+     "level": 54,
+     "requiredLevel": 45,
+     "zone": "City of Dalaran",
+     "bands": {
+      "red": 45,
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96812"
+    }
+   ]
+  },
+  "276901": {
+   "name": "Uncle's Heroism",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Thicker Than Water",
+     "questId": 96812,
+     "level": 54,
+     "requiredLevel": 45,
+     "zone": "City of Dalaran",
+     "bands": {
+      "red": 45,
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96812"
+    }
+   ]
+  },
+  "276903": {
+   "name": "Shimmerwine Shanker",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Taste of Home",
+     "questId": 96609,
+     "level": 52,
+     "requiredLevel": 44,
+     "zone": "City of Dalaran",
+     "bands": {
+      "red": 44,
+      "orange": 48,
+      "yellow": 50,
+      "green": 55
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96609"
+    }
+   ]
+  },
+  "276904": {
+   "name": "Shimmerwine Spirits",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Taste of Home",
+     "questId": 96609,
+     "level": 52,
+     "requiredLevel": 44,
+     "zone": "City of Dalaran",
+     "bands": {
+      "red": 44,
+      "orange": 48,
+      "yellow": 50,
+      "green": 55
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96609"
+    }
+   ]
+  },
   "277203": {
    "name": "Scholarly Pendant",
    "sources": [
@@ -3754,6 +6211,29 @@
     }
    ]
   },
+  "277211": {
+   "name": "Dudd's Thinkin' Cap",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Torn Mystical Scroll",
+     "questId": 95385,
+     "level": 43,
+     "requiredLevel": 35,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 35,
+      "orange": 39,
+      "yellow": 41,
+      "green": 46,
+      "grey": 54
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95385"
+    }
+   ]
+  },
   "277214": {
    "name": "Crusty Cuffs",
    "sources": [
@@ -3777,6 +6257,49 @@
     }
    ]
   },
+  "277215": {
+   "name": "Plain Handwraps",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Wrap Return",
+     "questId": 96999,
+     "level": 58,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 54,
+      "yellow": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96999"
+    }
+   ]
+  },
+  "277216": {
+   "name": "Cross-Stitched Cord",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Lost for Words",
+     "questId": 92878,
+     "level": 43,
+     "requiredLevel": 36,
+     "zone": "Feralas",
+     "bands": {
+      "red": 36,
+      "orange": 39,
+      "yellow": 41,
+      "green": 46,
+      "grey": 54
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92878"
+    }
+   ]
+  },
   "277218": {
    "name": "Incinerator's Boots",
    "sources": [
@@ -3797,6 +6320,72 @@
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/95999"
+    }
+   ]
+  },
+  "277220": {
+   "name": "Shabby Spaulders",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Lost for Words",
+     "questId": 92878,
+     "level": 43,
+     "requiredLevel": 36,
+     "zone": "Feralas",
+     "bands": {
+      "red": 36,
+      "orange": 39,
+      "yellow": 41,
+      "green": 46,
+      "grey": 54
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92878"
+    }
+   ]
+  },
+  "277221": {
+   "name": "Grimtotem Naturalist's Tunic",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Lost for Words",
+     "questId": 92878,
+     "level": 43,
+     "requiredLevel": 36,
+     "zone": "Feralas",
+     "bands": {
+      "red": 36,
+      "orange": 39,
+      "yellow": 41,
+      "green": 46,
+      "grey": 54
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92878"
+    }
+   ]
+  },
+  "277222": {
+   "name": "War Painted Cuffs",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Wrap Return",
+     "questId": 96999,
+     "level": 58,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 54,
+      "yellow": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96999"
     }
    ]
   },
@@ -3911,6 +6500,28 @@
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98545"
+    }
+   ]
+  },
+  "277253": {
+   "name": "Staff of Brutal Cunning",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "WANTED: Ohk'zi",
+     "questId": 92858,
+     "level": 43,
+     "requiredLevel": 39,
+     "zone": "Feralas",
+     "bands": {
+      "orange": 39,
+      "yellow": 41,
+      "green": 46,
+      "grey": 54
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92858"
     }
    ]
   },
@@ -4029,6 +6640,173 @@
     }
    ]
   },
+  "277556": {
+   "name": "Razza's Heart",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Brawl at the Maul",
+     "questId": 97270,
+     "level": 60,
+     "requiredLevel": 55,
+     "zone": "Feralas",
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97270"
+    }
+   ]
+  },
+  "277844": {
+   "name": "Mirage Mirror",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Mirage Mirror",
+     "questId": 97821,
+     "level": 42,
+     "requiredLevel": 37,
+     "zone": "Badlands",
+     "bands": {
+      "red": 37,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97821"
+    }
+   ]
+  },
+  "277979": {
+   "name": "Mauler's Mutton",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Offense of Grom'gol",
+     "questId": 97386,
+     "level": 44,
+     "requiredLevel": 38,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 38,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97386"
+    },
+    {
+     "type": "quest",
+     "quest": "Noise Complaints",
+     "questId": 97405,
+     "level": 44,
+     "requiredLevel": 38,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 38,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97405"
+    }
+   ]
+  },
+  "277980": {
+   "name": "Ogre Bone",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Offense of Grom'gol",
+     "questId": 97386,
+     "level": 44,
+     "requiredLevel": 38,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 38,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97386"
+    },
+    {
+     "type": "quest",
+     "quest": "Noise Complaints",
+     "questId": 97405,
+     "level": 44,
+     "requiredLevel": 38,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 38,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97405"
+    }
+   ]
+  },
+  "277981": {
+   "name": "Souvenir Ogre Tooth",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Offense of Grom'gol",
+     "questId": 97386,
+     "level": 44,
+     "requiredLevel": 38,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 38,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97386"
+    },
+    {
+     "type": "quest",
+     "quest": "Noise Complaints",
+     "questId": 97405,
+     "level": 44,
+     "requiredLevel": 38,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 38,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97405"
+    }
+   ]
+  },
   "277988": {
    "name": "Hoof-Holstered Blade",
    "sources": [
@@ -4085,6 +6863,75 @@
     }
    ]
   },
+  "278017": {
+   "name": "Refunded Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Twice Misplaced Trust",
+     "questId": 97332,
+     "level": 41,
+     "requiredLevel": 36,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 36,
+      "orange": 37,
+      "yellow": 39,
+      "green": 44,
+      "grey": 52
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97332"
+    }
+   ]
+  },
+  "278018": {
+   "name": "Renegotiated Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Twice Misplaced Trust",
+     "questId": 97332,
+     "level": 41,
+     "requiredLevel": 36,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 36,
+      "orange": 37,
+      "yellow": 39,
+      "green": 44,
+      "grey": 52
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97332"
+    }
+   ]
+  },
+  "278019": {
+   "name": "Apology Ring",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Twice Misplaced Trust",
+     "questId": 97332,
+     "level": 41,
+     "requiredLevel": 36,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 36,
+      "orange": 37,
+      "yellow": 39,
+      "green": 44,
+      "grey": 52
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97332"
+    }
+   ]
+  },
   "278567": {
    "name": "Stromgarde Hood",
    "sources": [
@@ -4127,6 +6974,297 @@
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98071"
+    }
+   ]
+  },
+  "279448": {
+   "name": "Bloodsplattered Bandana",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Blood Red Bandanas",
+     "questId": 96334,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Alcaz Prison",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96334"
+    }
+   ]
+  },
+  "279473": {
+   "name": "Makeshift Belt",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Blood Red Bandanas",
+     "questId": 96334,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Alcaz Prison",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96334"
+    }
+   ]
+  },
+  "279474": {
+   "name": "Dustwallow Dirk",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Shaw Needs To Know",
+     "questId": 95264,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Stormwind City",
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95264"
+    },
+    {
+     "type": "quest",
+     "quest": "Thrall Needs to Know",
+     "questId": 95483,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Alcaz Prison",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95483"
+    }
+   ]
+  },
+  "279480": {
+   "name": "Bigger Rock on Bigger Stick",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Eye of Mugg (Horde)",
+     "questId": 94968,
+     "level": 45,
+     "requiredLevel": 40,
+     "zone": "Krol'dok Stronghold",
+     "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94968"
+    },
+    {
+     "type": "quest",
+     "quest": "Eye of Mugg (Alliance)",
+     "questId": 94982,
+     "level": 45,
+     "requiredLevel": 40,
+     "zone": "Krol'dok Stronghold",
+     "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94982"
+    }
+   ]
+  },
+  "279826": {
+   "name": "Marshdweller's Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Little Payback",
+     "questId": 96332,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Alcaz Prison",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96332"
+    },
+    {
+     "type": "quest",
+     "quest": "A Bit of Wet Work",
+     "questId": 96381,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Alcaz Prison",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96381"
+    }
+   ]
+  },
+  "279829": {
+   "name": "Naga Scale Spaulders",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Little Payback",
+     "questId": 96332,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Alcaz Prison",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96332"
+    },
+    {
+     "type": "quest",
+     "quest": "A Bit of Wet Work",
+     "questId": 96381,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Alcaz Prison",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96381"
+    }
+   ]
+  },
+  "279831": {
+   "name": "Fatebound Buckler",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Shaw Needs To Know",
+     "questId": 95264,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Stormwind City",
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95264"
+    },
+    {
+     "type": "quest",
+     "quest": "Thrall Needs to Know",
+     "questId": 95483,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Alcaz Prison",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95483"
+    }
+   ]
+  },
+  "279833": {
+   "name": "Courier's Clasp",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Shaw Needs To Know",
+     "questId": 95264,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Stormwind City",
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95264"
+    },
+    {
+     "type": "quest",
+     "quest": "Thrall Needs to Know",
+     "questId": 95483,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Alcaz Prison",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95483"
     }
    ]
   },
@@ -4466,6 +7604,210 @@
     }
    ]
   },
+  "279850": {
+   "name": "Curio-Adorned Necklace",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Curios of Curiosity",
+     "questId": 94998,
+     "level": 42,
+     "requiredLevel": 38,
+     "zone": "Krol'dok Stronghold",
+     "bands": {
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94998"
+    }
+   ]
+  },
+  "279852": {
+   "name": "Rock on Stick",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Eye of Mugg (Horde)",
+     "questId": 94968,
+     "level": 45,
+     "requiredLevel": 40,
+     "zone": "Krol'dok Stronghold",
+     "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94968"
+    },
+    {
+     "type": "quest",
+     "quest": "Eye of Mugg (Alliance)",
+     "questId": 94982,
+     "level": 45,
+     "requiredLevel": 40,
+     "zone": "Krol'dok Stronghold",
+     "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94982"
+    }
+   ]
+  },
+  "279853": {
+   "name": "Stick No Rock",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Eye of Mugg (Horde)",
+     "questId": 94968,
+     "level": 45,
+     "requiredLevel": 40,
+     "zone": "Krol'dok Stronghold",
+     "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94968"
+    },
+    {
+     "type": "quest",
+     "quest": "Eye of Mugg (Alliance)",
+     "questId": 94982,
+     "level": 45,
+     "requiredLevel": 40,
+     "zone": "Krol'dok Stronghold",
+     "dungeon": true,
+     "bands": {
+      "red": 40,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94982"
+    }
+   ]
+  },
+  "279854": {
+   "name": "Twilight Initiate's Belt",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Tome of Twilight (Alliance)",
+     "questId": 94984,
+     "level": 44,
+     "requiredLevel": 39,
+     "zone": "Krol'dok Stronghold",
+     "dungeon": true,
+     "bands": {
+      "red": 39,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94984"
+    }
+   ]
+  },
+  "279855": {
+   "name": "Torn Cultist Cloak",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Tome of Twilight (Alliance)",
+     "questId": 94984,
+     "level": 44,
+     "requiredLevel": 39,
+     "zone": "Krol'dok Stronghold",
+     "dungeon": true,
+     "bands": {
+      "red": 39,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94984"
+    }
+   ]
+  },
+  "279859": {
+   "name": "Indoctrinated Choker",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Tome of Twilight (Horde)",
+     "questId": 94972,
+     "level": 44,
+     "requiredLevel": 39,
+     "zone": "Krol'dok Stronghold",
+     "dungeon": true,
+     "bands": {
+      "red": 39,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94972"
+    }
+   ]
+  },
+  "279860": {
+   "name": "Convert's Bindings",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Tome of Twilight (Horde)",
+     "questId": 94972,
+     "level": 44,
+     "requiredLevel": 39,
+     "zone": "Krol'dok Stronghold",
+     "dungeon": true,
+     "bands": {
+      "red": 39,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/94972"
+    }
+   ]
+  },
   "279865": {
    "name": "Grave Shroud",
    "sources": [
@@ -4693,6 +8035,262 @@
     }
    ]
   },
+  "279878": {
+   "name": "Apprentice Sorcerer's Slacks",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Web of Magic",
+     "questId": 95798,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Alterac Mountains",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95798"
+    }
+   ]
+  },
+  "279879": {
+   "name": "Rune-Etched Epaulets",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Web of Magic",
+     "questId": 95798,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Alterac Mountains",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95798"
+    }
+   ]
+  },
+  "279880": {
+   "name": "Ancient Voodoo Pouch",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Findings for the Explorer's League",
+     "questId": 95799,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Ironforge",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95799"
+    }
+   ]
+  },
+  "279881": {
+   "name": "Intrepid Explorer's Chainmail",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Findings for the Explorer's League",
+     "questId": 95799,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Ironforge",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95799"
+    }
+   ]
+  },
+  "279882": {
+   "name": "Rusted Troll War Belt",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Shady Saltseers",
+     "questId": 95789,
+     "level": 40,
+     "requiredLevel": 34,
+     "zone": "The Drowned City",
+     "dungeon": true,
+     "bands": {
+      "red": 34,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95789"
+    }
+   ]
+  },
+  "279883": {
+   "name": "Mutinous Cuffs",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Saltseer Captain",
+     "questId": 95791,
+     "level": 40,
+     "requiredLevel": 34,
+     "zone": "The Drowned City",
+     "dungeon": true,
+     "bands": {
+      "red": 34,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95791"
+    }
+   ]
+  },
+  "279884": {
+   "name": "South Seas Shroud",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Saltseer Captain",
+     "questId": 95791,
+     "level": 40,
+     "requiredLevel": 34,
+     "zone": "The Drowned City",
+     "dungeon": true,
+     "bands": {
+      "red": 34,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95791"
+    }
+   ]
+  },
+  "279885": {
+   "name": "Ceremonial Mallet",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Tale Spun Around the Fire",
+     "questId": 96078,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96078"
+    }
+   ]
+  },
+  "279887": {
+   "name": "I'lalai Flayer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Tale Spun Around the Fire",
+     "questId": 96078,
+     "level": 40,
+     "requiredLevel": 30,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 30,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96078"
+    }
+   ]
+  },
+  "279891": {
+   "name": "Guidance of Ursoc",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Twin Bears",
+     "questId": 92066,
+     "level": 55,
+     "requiredLevel": 47,
+     "zone": "Blackmaw Hold",
+     "dungeon": true,
+     "bands": {
+      "red": 47,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92066"
+    }
+   ]
+  },
+  "279892": {
+   "name": "Wisdom of Ursol",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Twin Bears",
+     "questId": 92066,
+     "level": 55,
+     "requiredLevel": 47,
+     "zone": "Blackmaw Hold",
+     "dungeon": true,
+     "bands": {
+      "red": 47,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92066"
+    }
+   ]
+  },
   "279895": {
    "name": "Ironforge Greathammer",
    "sources": [
@@ -4810,6 +8408,218 @@
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/96395"
+    }
+   ]
+  },
+  "279903": {
+   "name": "Diemetradon Scale Spaulders",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Panic at the Digsite",
+     "questId": 95924,
+     "level": 60,
+     "requiredLevel": 55,
+     "zone": "The Shaper's Terrace",
+     "dungeon": true,
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95924"
+    }
+   ]
+  },
+  "279904": {
+   "name": "Crystalline Pauldrons",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Crystalline Elements",
+     "questId": 95928,
+     "level": 60,
+     "requiredLevel": 55,
+     "zone": "The Shaper's Terrace",
+     "dungeon": true,
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95928"
+    }
+   ]
+  },
+  "279905": {
+   "name": "Ravasaur Hide Footpads",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Panic at the Digsite",
+     "questId": 95924,
+     "level": 60,
+     "requiredLevel": 55,
+     "zone": "The Shaper's Terrace",
+     "dungeon": true,
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95924"
+    }
+   ]
+  },
+  "279906": {
+   "name": "Potent Treads",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Crystalline Elements",
+     "questId": 95928,
+     "level": 60,
+     "requiredLevel": 55,
+     "zone": "The Shaper's Terrace",
+     "dungeon": true,
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95928"
+    }
+   ]
+  },
+  "279908": {
+   "name": "Crystal-Infused Cleaver",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Mapping the Way Forward",
+     "questId": 95925,
+     "level": 60,
+     "requiredLevel": 55,
+     "zone": "The Shaper's Terrace",
+     "dungeon": true,
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95925"
+    },
+    {
+     "type": "quest",
+     "quest": "The Dark Crystal",
+     "questId": 95926,
+     "level": 60,
+     "requiredLevel": 55,
+     "zone": "The Shaper's Terrace",
+     "dungeon": true,
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95926"
+    }
+   ]
+  },
+  "279912": {
+   "name": "Faintly Glowing Orb",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Mapping the Way Forward",
+     "questId": 95925,
+     "level": 60,
+     "requiredLevel": 55,
+     "zone": "The Shaper's Terrace",
+     "dungeon": true,
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95925"
+    },
+    {
+     "type": "quest",
+     "quest": "The Dark Crystal",
+     "questId": 95926,
+     "level": 60,
+     "requiredLevel": 55,
+     "zone": "The Shaper's Terrace",
+     "dungeon": true,
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95926"
+    }
+   ]
+  },
+  "279930": {
+   "name": "Saltseer's Helm",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Shady Saltseers",
+     "questId": 95789,
+     "level": 40,
+     "requiredLevel": 34,
+     "zone": "The Drowned City",
+     "dungeon": true,
+     "bands": {
+      "red": 34,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95789"
+    }
+   ]
+  },
+  "279932": {
+   "name": "Slime-Resistant Shroud",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Essence of Seeping Slimes",
+     "questId": 97049,
+     "level": 60,
+     "requiredLevel": 55,
+     "zone": "The Shaper's Terrace",
+     "dungeon": true,
+     "bands": {
+      "red": 55,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97049"
     }
    ]
   },
@@ -5237,6 +9047,72 @@
     }
    ]
   },
+  "281260": {
+   "name": "Ancestral Waistcord",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Memories of Rockard",
+     "questId": 87451,
+     "level": 55,
+     "requiredLevel": 45,
+     "zone": "Blasted Lands",
+     "bands": {
+      "red": 45,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/87451"
+    }
+   ]
+  },
+  "281261": {
+   "name": "Crystal-flecked Cord",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Microcrystal Contamination",
+     "questId": 87494,
+     "level": 55,
+     "requiredLevel": 45,
+     "zone": "Un'Goro Crater",
+     "bands": {
+      "red": 45,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/87494"
+    }
+   ]
+  },
+  "281262": {
+   "name": "Crystal-flecked Waistguard",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Microcrystal Contamination",
+     "questId": 87494,
+     "level": 55,
+     "requiredLevel": 45,
+     "zone": "Un'Goro Crater",
+     "bands": {
+      "red": 45,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/87494"
+    }
+   ]
+  },
   "281265": {
    "name": "Roadwatcher's Confidence",
    "sources": [
@@ -5419,6 +9295,115 @@
     }
    ]
   },
+  "281275": {
+   "name": "Mantle of Scaleslaying",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Mirrorscale",
+     "questId": 97378,
+     "level": 50,
+     "requiredLevel": 45,
+     "zone": "Feralas",
+     "bands": {
+      "red": 45,
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97378"
+    }
+   ]
+  },
+  "281276": {
+   "name": "Pauldrons of Scaleslaying",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Mirrorscale",
+     "questId": 97378,
+     "level": 50,
+     "requiredLevel": 45,
+     "zone": "Feralas",
+     "bands": {
+      "red": 45,
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97378"
+    }
+   ]
+  },
+  "281277": {
+   "name": "Shoulders of Scaleslaying",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Mirrorscale",
+     "questId": 97378,
+     "level": 50,
+     "requiredLevel": 45,
+     "zone": "Feralas",
+     "bands": {
+      "red": 45,
+      "orange": 46,
+      "yellow": 48,
+      "green": 53,
+      "grey": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97378"
+    }
+   ]
+  },
+  "281280": {
+   "name": "Mountain Climbers",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Halt the Hail",
+     "questId": 97490,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97490"
+    }
+   ]
+  },
+  "281281": {
+   "name": "Frost's Whisper Pendant",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Halt the Hail",
+     "questId": 97490,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97490"
+    }
+   ]
+  },
   "281283": {
    "name": "Patchwing Pants",
    "sources": [
@@ -5485,6 +9470,48 @@
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97558"
+    }
+   ]
+  },
+  "281286": {
+   "name": "High Order Pendant",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Stormwind's High Order",
+     "questId": 97987,
+     "level": 57,
+     "requiredLevel": 53,
+     "zone": "Eastern Plaguelands",
+     "bands": {
+      "orange": 53,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97987"
+    }
+   ]
+  },
+  "281288": {
+   "name": "Shen'dorei Signet",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Stormwind's High Order",
+     "questId": 97987,
+     "level": 57,
+     "requiredLevel": 53,
+     "zone": "Eastern Plaguelands",
+     "bands": {
+      "orange": 53,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97987"
     }
    ]
   },
@@ -5641,6 +9668,96 @@
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98191"
+    }
+   ]
+  },
+  "281298": {
+   "name": "Ti'ik's Tattered Trousers",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Witch Doctor Ti'ik",
+     "questId": 98203,
+     "level": 49,
+     "requiredLevel": 45,
+     "zone": "The Hinterlands",
+     "bands": {
+      "orange": 45,
+      "yellow": 47,
+      "green": 52,
+      "grey": 60
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98203"
+    }
+   ]
+  },
+  "281299": {
+   "name": "Profane Ritual Robes",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Witch Doctor Ti'ik",
+     "questId": 98203,
+     "level": 49,
+     "requiredLevel": 45,
+     "zone": "The Hinterlands",
+     "bands": {
+      "orange": 45,
+      "yellow": 47,
+      "green": 52,
+      "grey": 60
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98203"
+    }
+   ]
+  },
+  "281302": {
+   "name": "Whelpscale Necklace",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Whelps are the Worst!",
+     "questId": 98205,
+     "level": 44,
+     "requiredLevel": 39,
+     "zone": "Dustwallow Marsh",
+     "bands": {
+      "red": 39,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98205"
+    }
+   ]
+  },
+  "281303": {
+   "name": "Bleached Scale Vest",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Whelps are the Worst!",
+     "questId": 98205,
+     "level": 44,
+     "requiredLevel": 39,
+     "zone": "Dustwallow Marsh",
+     "bands": {
+      "red": 39,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/98205"
     }
    ]
   },
@@ -5940,6 +10057,27 @@
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98310"
+    }
+   ]
+  },
+  "281586": {
+   "name": "Elderwild Construction Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Head Scratcher",
+     "questId": 92446,
+     "level": 60,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "red": 54,
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/92446"
     }
    ]
   },

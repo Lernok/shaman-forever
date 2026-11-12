@@ -1676,6 +1676,19 @@
     }
    ]
   },
+  "270099": {
+   "name": "Magister Cowl",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 2768,
+     "quest": "Divino-matic Rod",
+     "minLevel": 40,
+     "faction": "both",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
   "270100": {
    "name": "Freebooter's Armband",
    "sources": [
@@ -3935,6 +3948,116 @@
     }
    ]
   },
+  "276736": {
+   "name": "Seascale Bracers",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 255997,
+     "npc": "Tidemistress Ca'zass",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
+  "276737": {
+   "name": "Cloak of the Tidemistress",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 255997,
+     "npc": "Tidemistress Ca'zass",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
+  "276738": {
+   "name": "Katerina's Shanker",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 257016,
+     "npc": "Katerina the Cleaner",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
+  "276739": {
+   "name": "Cutthroat Chestguard",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 257016,
+     "npc": "Katerina the Cleaner",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
+  "276740": {
+   "name": "Sentimental Locket",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 257016,
+     "npc": "Katerina the Cleaner",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
+  "276741": {
+   "name": "Defias Enforcer's Shoulderpads",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 256236,
+     "npc": "The Questioner",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
+  "276743": {
+   "name": "Fingerbreaker Stamp",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 256236,
+     "npc": "The Questioner",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
+  "276744": {
+   "name": "Zarla's Snack Pouch",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 255702,
+     "npc": "Blazeroar",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
+  "276745": {
+   "name": "Beastbond Robe",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 255702,
+     "npc": "Blazeroar",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
+  "276746": {
+   "name": "Defias Enforcer's Legguards",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 255702,
+     "npc": "Blazeroar",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
   "276887": {
    "name": "Big Bad Basher",
    "sources": [
@@ -4121,7 +4244,7 @@
     {
      "type": "quest",
      "questId": 78830,
-     "quest": "Terror of the Desert Skies",
+     "quest": "Terror of the Desert Skies (Hunter)",
      "minLevel": 26,
      "faction": "both",
      "zone": "Stranglethorn Vale"
@@ -4147,7 +4270,7 @@
     {
      "type": "quest",
      "questId": 78830,
-     "quest": "Terror of the Desert Skies",
+     "quest": "Terror of the Desert Skies (Hunter)",
      "minLevel": 26,
      "faction": "both",
      "zone": "Stranglethorn Vale"
@@ -5895,6 +6018,18 @@
     }
    ]
   },
+  "282717": {
+   "name": "Durable Bearhide Pauldrons",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14280,
+     "npc": "Big Samras",
+     "zone": "Hillsbrad Foothills",
+     "rare": true
+    }
+   ]
+  },
   "282721": {
    "name": "Gnoll Shaman's Staff",
    "sources": [
@@ -6219,6 +6354,18 @@
     }
    ]
   },
+  "284399": {
+   "name": "Seared Grove Shoulderpads",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5930,
+     "npc": "Sister Riven",
+     "zone": "Stonetalon Mountains",
+     "rare": true
+    }
+   ]
+  },
   "284400": {
    "name": "Foreman's Helm",
    "sources": [
@@ -6231,6 +6378,30 @@
     }
    ]
   },
+  "284401": {
+   "name": "Sorrow's Shroud",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5928,
+     "npc": "Sorrow Wing",
+     "zone": "Stonetalon Mountains",
+     "rare": true
+    }
+   ]
+  },
+  "284459": {
+   "name": "Dendweller's Hammer",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5915,
+     "npc": "Brother Ravenoak",
+     "zone": "Stonetalon Mountains",
+     "rare": true
+    }
+   ]
+  },
   "284668": {
    "name": "Apothecary's Concoction",
    "sources": [
@@ -6238,6 +6409,18 @@
      "type": "drop",
      "npcId": 3735,
      "npc": "Apothecary Falthis",
+     "zone": "Ashenvale",
+     "rare": true
+    }
+   ]
+  },
+  "284697": {
+   "name": "Arcane Charged Robes",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 10647,
+     "npc": "Prince Raze",
      "zone": "Ashenvale",
      "rare": true
     }
@@ -6506,6 +6689,18 @@
     }
    ]
   },
+  "285344": {
+   "name": "Guard Captain's Barrier",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5851,
+     "npc": "Captain Gerogg Hammertoe",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
   "285345": {
    "name": "Feather Padded Treads",
    "sources": [
@@ -6668,6 +6863,18 @@
      "type": "drop",
      "npcId": 5832,
      "npc": "Thunderstomp",
+     "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "286541": {
+   "name": "Bael'dun Tankard",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 5848,
+     "npc": "Malgin Barleybrew",
      "zone": "The Barrens",
      "rare": true
     }

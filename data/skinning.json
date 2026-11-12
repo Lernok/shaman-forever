@@ -2835,7 +2835,7 @@
    ]
   },
   "Zephras Isle": {
-   "share": 0.62,
+   "share": 0.67,
    "beasts": [
     {
      "id": 250926,
@@ -2971,6 +2971,15 @@
      "family": "Bear"
     },
     {
+     "id": 267304,
+     "name": "Empyrean Galestrider",
+     "level": [
+      1,
+      1
+     ],
+     "spawns": 0
+    },
+    {
      "id": 250873,
      "name": "Juvenile Vuldren",
      "level": [
@@ -2982,6 +2991,24 @@
     {
      "id": 251169,
      "name": "Pesky Cirrusfly",
+     "level": [
+      1,
+      1
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 267305,
+     "name": "Stormy Galestrider",
+     "level": [
+      1,
+      1
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 267306,
+     "name": "Umber Galestrider",
      "level": [
       1,
       1
