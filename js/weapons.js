@@ -39,7 +39,6 @@
     questvendor: { color: '#199e70', shape: 'diamond' },
     other: { color: '#8b8d97', shape: 'circle' }
   };
-  const BETA_CAP = 30;
 
   function weapons() { return (window.WEAPON_DATA && window.WEAPON_DATA.weapons) || []; }
 
@@ -166,9 +165,6 @@
     });
     svg += '<text x="' + (W - m.r) + '" y="' + (H - 4) + '" class="axis-title" text-anchor="end">' + t('wp.axisLevel') + '</text>';
     svg += '<text x="' + 4 + '" y="' + 12 + '" class="axis-title">' + t('wp.axis.' + spec().metric) + '</text>';
-    // Beta cap.
-    svg += '<line x1="' + x(BETA_CAP) + '" x2="' + x(BETA_CAP) + '" y1="' + m.t + '" y2="' + (H - m.b) + '" class="cap"/>' +
-      '<text x="' + (x(BETA_CAP) + 4) + '" y="' + (m.t + 10) + '" class="cap-label">' + t('wp.betaCap') + '</text>';
     // Hover zone and crosshair sit under the markers, so dots keep their own tooltips.
     svg += '<rect class="hover-zone" x="' + m.l + '" y="' + m.t + '" width="' + (W - m.l - m.r) + '" height="' + (H - m.t - m.b) + '"/>' +
       '<line class="crosshair" y1="' + m.t + '" y2="' + (H - m.b) + '" x1="-10" x2="-10"/>';
@@ -279,8 +275,7 @@
       const hi = Math.min(lo + 4, 60);
       const pool = list.filter(w => w.obtain <= hi).sort((a, b) => valueOf(b) - valueOf(a)).slice(0, 4);
       if (!pool.length) continue;
-      html += '<div class="bracket' + (lo > BETA_CAP ? ' post-cap' : '') + '"><div class="br-head"><b>' + lo + '–' + hi + '</b>' +
-        (lo > BETA_CAP ? '<span class="dim">' + t('wp.br.postCap') + '</span>' : '') + '</div><div class="br-items">' +
+      html += '<div class="bracket"><div class="br-head"><b>' + lo + '–' + hi + '</b></div><div class="br-items">' +
         pool.map((w, i) => '<div class="br-item' + (i === 0 ? ' best' : '') + '">' + itemLink(w) +
           '<span class="br-val">' + fmt(valueOf(w)) + '</span>' +
           (w.obtain >= lo ? '<span class="br-new">' + t('wp.br.new', { level: w.obtain }) + '</span>' : '<span class="dim br-lv">' + t('common.level') + ' ' + w.obtain + '</span>') +

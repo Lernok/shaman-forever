@@ -30,9 +30,9 @@
     Mining: 'trade_mining', Herbalism: 'spell_nature_naturetouchgrow', Alchemy: 'trade_alchemy',
     Cooking: 'inv_misc_food_15', Fishing: 'trade_fishing', 'First Aid': 'spell_holy_sealofsacrifice'
   };
-  // Every 10 levels; the beta is capped at 30.
+  // Every 10 levels, 1 to 60.
   const BRACKETS = [[1, 9], [10, 19], [20, 29], [30, 39], [40, 49], [50, 60]];
-  const BETA_CAP = 30;
+  const LW_CAP = 60;
   // The new systems, in the order of data/guides/professions.json.
   const SYSTEM_ICONS = ['inv_misc_book_09', 'inv_misc_coin_02', 'inv_misc_bag_10', 'spell_holy_wordfortitude', 'inv_scroll_03'];
   // The bandage for each bracket follows the cloth its enemies drop.
@@ -43,7 +43,7 @@
   const myProfs = () => UI.store.get('profs', []).filter(p => PRIMARY.includes(p));
   const consumables = () => (window.CONSUMABLE_DATA || { items: [], fish: {} });
   const guide = () => window.I18N.localize(window.GUIDE_DATA.Professions);
-  const bracketHead = ([lo, hi]) => '<div class="br-title"><b>' + t('pr.levels', { lo, hi }) + '</b>' + (lo > BETA_CAP ? '<span class="dim">' + t('pr.postCap') + '</span>' : '') + '</div>';
+  const bracketHead = ([lo, hi]) => '<div class="br-title"><b>' + t('pr.levels', { lo, hi }) + '</b></div>';
 
   // ---------- text helpers ----------
 
@@ -210,7 +210,7 @@
     const byLevel = new Map();
     steps.forEach(st => { if (!byLevel.has(st.level)) byLevel.set(st.level, []); byLevel.get(st.level).push(st); });
     html += '<section class="gp-coming"><div class="gp-coming-head"><h3>' + t('pr.pieces.title2', { profs: I18N.profs(others) }) + '</h3><span class="dim">' + t('pr.plan.worth') + '</span></div>' +
-      (steps.length ? [...byLevel.entries()].map(([l, list]) => '<div class="gp-lvl-row' + (l > BETA_CAP ? ' post-cap' : '') + '"><b class="gp-lvl-n">' + t('home.tile.lv', { n: l }) + '</b><div class="gp-cards">' + list.map(pieceCard).join('') + '</div></div>').join('')
+      (steps.length ? [...byLevel.entries()].map(([l, list]) => '<div class="gp-lvl-row"><b class="gp-lvl-n">' + t('home.tile.lv', { n: l }) + '</b><div class="gp-cards">' + list.map(pieceCard).join('') + '</div></div>').join('')
         : '<p class="dim">' + t('pr.plan.nothingWorth') + '</p>') + '</section>';
     html += '<p class="note-text dim">' + t('pr.plan.note2') + '</p>';
     return html + extra;
@@ -255,7 +255,7 @@
       Object.entries(sum).sort((a, b) => b[1] - a[1]).forEach(([id, n]) => { const w = whence(id); (byWhere[w] = byWhere[w] || []).push(mat([id, n])); });
       const from = g.steps[0].level;
       return '<details class="pr-more pr-up"' + (g.i === open ? ' open' : '') + '><summary><b>' + t('pr.up.rank' + g.i) + '</b> · ' + t('pr.up.range', { a: g.lo, b: g.steps[g.steps.length - 1].to }) +
-        ' <span class="dim">· ' + t('pr.up.from', { n: from }) + (from > BETA_CAP ? ' · ' + t('pr.plan.postCap') : '') + '</span></summary>' +
+        ' <span class="dim">· ' + t('pr.up.from', { n: from }) + '</span></summary>' +
         '<ol class="lw-order">' + g.steps.map(stepHtml).join('') + '</ol>' +
         '<div class="lo-rest">' + Object.entries(byWhere).map(([w, list]) => '<div class="lw-mat"><span class="dim">' + w + ':</span> ' + list.join('') + '</div>').join('') + '</div></details>';
     }).join('');
@@ -272,7 +272,7 @@
     const tag = st.pick.access === 'favor' ? t('pr.plan.favorCost', { n: (s.learn || {}).favor || '?' }) : t('pr.plan.skill', { n: (s.learn || {}).learnAt || s.yellow });
     return '<details class="gp-card gp-tag-craft"><summary>' + (i.icon ? '<img class="gst-icon q' + (i.quality || 1) + '" src="' + UI.icon(i.icon) + '" alt="">' : '') +
       '<span class="gpc-main"><b class="q' + i.quality + '">' + i.name + '</b><span class="gpc-sub">' + GP.slotName(st.pick.slot) + ' · <span class="gpc-tag">' + tag + '</span>' +
-      (st.level > BETA_CAP ? ' · <span class="dim">' + t('pr.plan.postCap') + '</span>' : '') + '</span></span></summary>' +
+      '</span></span></summary>' +
       '<div class="gpc-body"><span class="dim">' + GP.sourceText(st.pick) + '</span><span class="gp-why">' + GP.why(st) + '</span>' + GP.craftMats(st) + '</div></details>';
   }
 
@@ -300,13 +300,13 @@
     const farm = window.GearPath.farm();
     const { plan } = window.GearPath.compute();
     const steps = [];
-    Object.values(plan.slots).forEach(p => p.steps.forEach(st => { if ((st.pick.source || {}).profession === 'Leatherworking' && st.level <= BETA_CAP) steps.push(st); }));
+    Object.values(plan.slots).forEach(p => p.steps.forEach(st => { if ((st.pick.source || {}).profession === 'Leatherworking' && st.level <= LW_CAP) steps.push(st); }));
     steps.sort((a, b) => a.level - b.level);
     const stepOf = new Map(steps.map(st => [st.pick.item.id, st]));
     // Where and when your route first reaches each trainer.
     const lwAt = window.Route.profFrom('Leatherworking', Site.faction, race);
     const skinAt = window.Route.profFrom('Skinning', Site.faction, race);
-    const opts = { faction: Site.faction, race, targets: steps.map(st => ({ id: st.pick.item.id, level: st.level })), intensity, skinning, to: BETA_CAP,
+    const opts = { faction: Site.faction, race, targets: steps.map(st => ({ id: st.pick.item.id, level: st.level })), intensity, skinning, to: LW_CAP,
       lwFrom: lwAt.level, skinFrom: skinning ? skinAt.level : 61 };
     const { base, pieces } = window.LwPlan.pieces(opts);
     const pieceOf = new Map(pieces.map(p => [p.id, p]));
@@ -316,6 +316,7 @@
     const chip = (id, n) => '<span class="lw-chip">' + (SK.icons[id] ? '<img src="' + UI.icon(SK.icons[id]) + '" alt="" loading="lazy">' : '') +
       (n != null ? '<b>' + Math.round(n) + '</b> ' : '') + name(id) + '</span>';
     const chips = o => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([id, n]) => chip(id, n)).join('');
+    const bridgeText = b => chips(b.items) + ' <span class="dim">' + t('pr.lw.bridgeWhy', { a: b.hi - 5, b: b.hi, low: I18N.term(name(b.low)), high: I18N.term(name(b.high)) }) + '</span>';
     const row = (label, body, cls) => '<div class="lw-row' + (cls ? ' ' + cls : '') + '"><span class="lw-k">' + label + '</span><div class="lw-v">' + body + '</div></div>';
     // Reagents a piece needs that you neither skin, nor make, nor buy from a
     // vendor: scales, feathers, gems, alchemy (data/skinning.json reagents,
@@ -351,7 +352,7 @@
       if (onWay) parts.push(say(onWay, 'pr.lw.mat.onWay'));
       else {
         let later = null;
-        for (let l = lvl + 1; l <= BETA_CAP + 10 && !later; l++) {
+        for (let l = lvl + 1; l <= LW_CAP + 10 && !later; l++) {
           const zs = zonesNear(l, l);
           const d = drops.filter(x => x[1] <= l + 2 && x[1] >= l - 6 && x[4].some(z => zs.has(z)) && !(x[5] & 1)).sort((a, b) => b[3] - a[3])[0];
           if (d) later = { d, l };
@@ -410,7 +411,7 @@
       const r = recipe.get(id);
       if (!p || !r || !Object.keys(p.extra).length || (skinning && p.alone && p.alone - p.level < 2)) return '';
       if (skinning && p.alone && p.level < EARLY_FROM && st.pick.item.quality < 3 && r.how !== 'f') return '';
-      const vars = { skill: r.skill[0], alone: p.alone, n: p.level, cap: BETA_CAP, has: skillAt(BETA_CAP) };
+      const vars = { skill: r.skill[0], alone: p.alone, n: p.level, cap: LW_CAP, has: skillAt(LW_CAP) };
       // When the skill comes before the piece, what holds it back is a skinned
       // material (Light Hide only drops from beasts of level 11 on): say so.
       const skillLvl = (base.rows.find(x => x.skill >= r.skill[0]) || {}).level;
@@ -436,8 +437,8 @@
       const verdict = t(v.worth ? 'pr.lw.worth.yes' : 'pr.lw.worth.no.' + v.why) + (note ? ' ' + t(note) : '');
       return '<div class="lw-worth lw-' + (v.worth ? 'cheap' : 'dear') + '"><span>' + t('pr.lw.worth.line', vars) + ' <b>' + verdict + '</b></span> ' + chips(v.extra) + '</div>';
     };
-    const lateText = n => (n > BETA_CAP ? t('pr.lw.worth.after', { n: BETA_CAP }) : t('pr.lw.worth.at', { n }));
-    return { SK, mine, skinning, intensity, race, farm, steps, stepOf, base, pieces, pieceOf, recipe, name, chip, chips, row, extraMats, whereMat, buyCost, piece, early, skillAt, lwAt, skinAt, worthLine };
+    const lateText = n => (n > LW_CAP ? t('pr.lw.worth.after', { n: LW_CAP }) : t('pr.lw.worth.at', { n }));
+    return { SK, mine, skinning, intensity, race, farm, steps, stepOf, base, pieces, pieceOf, recipe, name, chip, chips, bridgeText, row, extraMats, whereMat, buyCost, piece, early, skillAt, lwAt, skinAt, worthLine };
   }
 
   // A Leatherworking piece of your gear path, for its row in Equipo › Tu
@@ -456,7 +457,7 @@
     if (!r) return '';
     const p = M.pieceOf.get(id) || {};
     const own = M.extraMats(r);
-    const when = !M.skinning ? '' : p.alone ? t('pr.lw.how.when', { n: p.alone }) : t('pr.lw.how.never', { cap: BETA_CAP });
+    const when = !M.skinning ? '' : p.alone ? t('pr.lw.how.when', { n: p.alone }) : t('pr.lw.how.never', { cap: LW_CAP });
     const mats = own.length ? t('pr.lw.how.mats', { list: own.map(([m, n]) => n + ' ' + M.name(m)).join(', ') }) : '';
     const cost = !M.farm && own.length ? M.buyCost(own, st.level) : '';
     // The source line above already says the skill: this one, when and what else.
@@ -468,8 +469,8 @@
       return '<p class="note-text">' + t('pr.lw.noLw') + '</p><button class="btn" data-open-setup>' + t('home.plan.pickProfs') + '</button>';
     }
     const M = lwModel();
-    const { SK, skinning, intensity, farm, base, pieces, name, chip, chips, row, piece, early, lwAt, skinAt, stepOf } = M;
-    const lvl = Math.min(BETA_CAP, Math.max(1, Number(UI.store.get('level', 1)) || 1));
+    const { SK, skinning, intensity, farm, base, pieces, name, chip, chips, bridgeText, row, piece, early, lwAt, skinAt, stepOf } = M;
+    const lvl = Math.min(LW_CAP, Math.max(1, Number(UI.store.get('level', 1)) || 1));
     const skillBuy = SKILL_BUY.includes(UI.store.get('lwSkillBuy', 'worth')) ? UI.store.get('lwSkillBuy', 'worth') : 'worth';
 
     // The settings, folded: how much you skin, auction house or farming.
@@ -503,7 +504,7 @@
       if (!cur) cur = { from: r.level, rows: [] };
       cur.rows.push(r);
       const goal = r.made.length && r.level - cur.from + 1 >= STAGE_MIN;
-      if (goal || r.level === base.bridge.level || r.level === BETA_CAP) { stages.push(cur); cur = null; }
+      if (goal || base.bridges[r.level] || r.level === LW_CAP) { stages.push(cur); cur = null; }
     });
     if (cur) stages.push(cur);
     const zonesOf = sg => {
@@ -580,26 +581,26 @@
         (Object.keys(crafts).length ? line(t('pr.now.craft'), orderOf(now, mineAt)) : '') +
         (Object.keys(last.keep).length ? line(t('pr.lw.kKeep'), chips(last.keep)) : '') +
         (made.length ? line(t('pr.lw.kGoal'), made.map(id => '<span class="lw-chip">' + (stepOf.get(id) ? UI.itemLink(stepOf.get(id).pick.item) : name(id)) + '</span>').join('')) : '') +
-        (now.rows.some(r => r.level === base.bridge.level) ? line(t('pr.lw.kBuy'), chips(base.bridge.items) + ' <span class="dim">' + t('pr.lw.bridgeWhy') + '</span>') : '') +
+        now.rows.filter(r => base.bridges[r.level]).map(r => line(t('pr.lw.kBuy'), bridgeText(base.bridges[r.level]))).join('') +
         '</section>';
     }
 
     // The level you make a piece, the one Equipo › Tu camino uses too: farming
     // everything, with what you skin; with the auction house, the path's (it
     // already waits for your skill, js/gear-path.js lwLevels).
-    const madeAt = p => (farm ? (skinning && p.alone && Math.max(p.alone, p.level)) || null : p.level <= BETA_CAP ? p.level : null);
-    // At a glance: the skill at 10, 20 and 30, and the pieces you make.
+    const madeAt = p => (farm ? (skinning && p.alone && Math.max(p.alone, p.level)) || null : p.level <= LW_CAP ? p.level : null);
+    // At a glance: the skill at 20, 40 and 60, and the pieces you make.
     if (skinning) {
       const at = l => (base.rows[l - 1] || {}).skill;
-      html += '<div class="lw-sum">' + [10, 20, BETA_CAP].map(l => '<div class="lw-tile"><span>' + t('pr.lw.atLevel', { n: l }) + '</span><b>' + at(l) + '</b><small>' + t('pr.lw.skillShort') + '</small></div>').join('') +
-        '<div class="lw-tile"><span>' + t('pr.lw.piecesMade') + '</span><b>' + pieces.filter(madeAt).length + '/' + pieces.length + '</b><small>' + t('pr.lw.piecesMadeSub', { n: BETA_CAP }) + '</small></div></div>';
+      html += '<div class="lw-sum">' + [20, 40, LW_CAP].map(l => '<div class="lw-tile"><span>' + t('pr.lw.atLevel', { n: l }) + '</span><b>' + at(l) + '</b><small>' + t('pr.lw.skillShort') + '</small></div>').join('') +
+        '<div class="lw-tile"><span>' + t('pr.lw.piecesMade') + '</span><b>' + pieces.filter(madeAt).length + '/' + pieces.length + '</b><small>' + t('pr.lw.piecesMadeSub', { n: LW_CAP }) + '</small></div></div>';
     }
 
     // Your pieces, by the level you make them: one line each, the rest on tap.
     const groups = new Map();
     pieces.slice().sort((a, b) => (madeAt(a) || 99) - (madeAt(b) || 99) || a.level - b.level).forEach(p => {
       const at = madeAt(p);
-      const key = at ? t('home.tile.lv', { n: at }) : t('pr.pieces.later', { n: BETA_CAP });
+      const key = at ? t('home.tile.lv', { n: at }) : t('pr.pieces.later', { n: LW_CAP });
       if (!groups.has(key)) groups.set(key, []);
       groups.get(key).push(p);
     });
@@ -631,7 +632,7 @@
           (Object.keys(crafts).length ? row(t('pr.lw.kCraft'), orderOf(sg, i)) : '') +
           (where ? row(t('pr.lw.kSkin'), where) : '') +
           (Object.keys(last.keep).length ? row(t('pr.lw.kKeep'), chips(last.keep)) : '') +
-          (to === base.bridge.level ? row(t('pr.lw.kBuy'), chips(base.bridge.items) + '<span class="dim"> ' + t('pr.lw.bridgeWhy') + '</span>', 'lw-buyrow') : '') +
+          sg.rows.filter(r => base.bridges[r.level]).map(r => row(t('pr.lw.kBuy'), bridgeText(base.bridges[r.level]), 'lw-buyrow')).join('') +
           '</details>';
       });
       html += '</div></details>';
@@ -695,7 +696,7 @@
           '<span class="dim">' + ((f.reagents || []).map(r => r.name).join(', ')) + '</span>' +
           '<span class="dim">' + (fish.length ? fishWhere(fish[0]) : skillRange(f)) + '</span></div>';
       }).join('');
-      html += '<div class="plan-bracket' + (lo > BETA_CAP ? ' post-cap' : '') + '">' + bracketHead([lo, hi]) +
+      html += '<div class="plan-bracket">' + bracketHead([lo, hi]) +
         '<div class="cook-row cook-head"><span>' + t('pr.cook.colStat') + '</span><span>' + t('pr.cook.colFood') + '</span><span>' + t('pr.cook.needs') + '</span><span>' + t('pr.cook.colWhere') + '</span></div>' + rows + '</div>';
     });
     html += '</div><p class="note-text dim">' + t('pr.fc.xp') + '</p>';
@@ -710,7 +711,7 @@
     BRACKETS.forEach(([lo, hi], bi) => {
       const band = BANDAGES[bi].map(n => aid.find(f => f.name === n)).filter(Boolean);
       const pots = aid.filter(f => /Healing Potion/.test(f.name) && f.req <= hi).sort((a, b) => b.req - a.req).slice(0, 1);
-      html += '<div class="plan-bracket' + (lo > BETA_CAP ? ' post-cap' : '') + '">' + bracketHead([lo, hi]) +
+      html += '<div class="plan-bracket">' + bracketHead([lo, hi]) +
         band.concat(pots).map(f => '<div class="aid-row">' + foodLink(f) + '<span class="aid-val">' + t('pr.heals', { n: num(f.health) }) + '</span><span class="dim">' + skillRange(f) + '</span></div>').join('') + '</div>';
     });
     const cures = aid.filter(f => /Anti-Venom|Poultice|Tourniquet/.test(f.name)).sort((a, b) => (a.skill[1] || 0) - (b.skill[1] || 0));

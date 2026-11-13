@@ -27,7 +27,7 @@ const { readJSON, writeJSON } = require('./lib/files');
 const http = require('./lib/http');
 
 // Leathers and hides, low to high.
-const SKIN = [2934, 2318, 783, 2319, 4232, 4234, 4235, 4304, 8169];
+const SKIN = [2934, 2318, 783, 2319, 4232, 4234, 4235, 4304, 8169, 8170, 8171];
 // A beast's rate counts once it was skinned this often (small samples swing).
 const MIN_SKINS = 500;
 // Zone lists: beasts of up to this level, the most numerous first.

@@ -149,7 +149,7 @@
       const list = at[lv].sort((a, b) => (a.rank === 1 ? 0 : 1) - (b.rank === 1 ? 0 : 1) || a.sp.name.localeCompare(b.sp.name));
       // Your level (Equipo › Tu camino): what you already learned dims, the next ten levels stand out.
       const cls = lv <= mine ? ' lv-past' : lv <= mine + 10 ? ' lv-next' : '';
-      html += '<div class="lv-row' + (lv > 30 ? ' post-cap' : '') + cls + '"><div class="lv-num">' + lv + '</div><div class="lv-spells">' +
+      html += '<div class="lv-row' + cls + '"><div class="lv-num">' + lv + '</div><div class="lv-spells">' +
         list.map(e => '<span class="lv-spell' + (e.talent ? ' talent' : e.rank === 1 ? ' first' : '') + '" data-ref="' + e.sp.name + '" style="--tab-color:' + ui.specColors[e.tab] + '">' +
           '<img src="' + ui.iconUrl(e.sp.icon) + '" alt="" loading="lazy"><span><b>' + e.sp.name + '</b><small>' +
           (e.talent ? t('sb.talentSpell') : e.rank === 1 ? t('sb.newSpell') : t('sb.rankOf', { n: e.rank, total: e.total })) + '</small></span></span>').join('') +

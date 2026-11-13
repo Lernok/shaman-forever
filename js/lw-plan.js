@@ -25,15 +25,24 @@
   const VENDOR = new Set([2320, 2321, 4291, 8343, 14341, 4289, 4340, 2324, 2325, 2604, 2605, 6260, 6261, 7071]);
   // Raw leathers and hides (skinned) and what's made from them.
   const LIGHT = 2318, LIGHT_HIDE = 783, CURED_LIGHT = 4231, MEDIUM = 2319, MEDIUM_HIDE = 4232, CURED_MEDIUM = 4233, HEAVY = 4234, HEAVY_HIDE = 4235, CURED_HEAVY = 4236, SCRAPS = 2934;
+  const THICK = 4304, THICK_HIDE = 8169, CURED_THICK = 8172, RUGGED = 8170, RUGGED_HIDE = 8171, CURED_RUGGED = 15407;
   // Skins one unit takes (how scarce it is): picks the recipes that spend the least.
-  const SKINS = { [SCRAPS]: 1.7, [LIGHT]: 1.5, [LIGHT_HIDE]: 20, [MEDIUM]: 1.6, [MEDIUM_HIDE]: 25, [HEAVY]: 2, [HEAVY_HIDE]: 45, [PRISTINE_ID]: 50 };
+  const SKINS = { [SCRAPS]: 1.7, [LIGHT]: 1.5, [LIGHT_HIDE]: 20, [MEDIUM]: 1.6, [MEDIUM_HIDE]: 25, [HEAVY]: 2, [HEAVY_HIDE]: 45, [THICK]: 2.2, [THICK_HIDE]: 50, [RUGGED]: 2.5, [RUGGED_HIDE]: 55, [PRISTINE_ID]: 50 };
   // Hides cured before use: the cure recipe and the raw hide.
-  const CURE = { [CURED_LIGHT]: LIGHT_HIDE, [CURED_MEDIUM]: MEDIUM_HIDE, [CURED_HEAVY]: HEAVY_HIDE };
+  const CURE = { [CURED_LIGHT]: LIGHT_HIDE, [CURED_MEDIUM]: MEDIUM_HIDE, [CURED_HEAVY]: HEAVY_HIDE, [CURED_THICK]: THICK_HIDE, [CURED_RUGGED]: RUGGED_HIDE };
   // The leather made from the one below it (Light from 3 scraps, Medium from 4 Light...).
-  const CONVERT = [LIGHT, MEDIUM, HEAVY];
+  const CONVERT = [LIGHT, MEDIUM, HEAVY, THICK, RUGGED];
   const INTENSITY = { few: 0.6, normal: 1, all: 1.6 };
-  // Skill a recipe with Medium Leather needs, and from where Light Leather falls short.
-  const BRIDGE = [40, 75];
+  // Walls: skill ranges where the leather you still skin is no longer used
+  // and the next one isn't yet (70-75: no Medium Leather recipe; 121-125:
+  // Heavy Leather starts at 125...). Stuck there from level `at`, a little
+  // of the lower leather is bought to get over.
+  const WALLS = [
+    { lo: 40, hi: 75, at: 21, low: LIGHT, high: MEDIUM },
+    { lo: 100, hi: 125, at: 30, low: MEDIUM, high: HEAVY },
+    { lo: 150, hi: 175, at: 40, low: HEAVY, high: THICK },
+    { lo: 200, hi: 225, at: 48, low: THICK, high: RUGGED }
+  ];
   // Share of your kills by level difference with you.
   const AROUND = { '-2': 0.15, '-1': 0.25, 0: 0.35, 1: 0.25 };
   const rank = lvl => (lvl >= 35 ? 300 : lvl >= 20 ? 225 : lvl >= 10 ? 150 : 75);
@@ -67,7 +76,8 @@
     const have = id => inv[id] || 0;
     let skill = 1;
     const rows = [];
-    const bridge = { level: null, items: {} };
+    // bridges[level] = { items, lo, hi, low, high }: what's bought to get over a wall.
+    const bridges = {};
     const mult = INTENSITY[opts.intensity] || 1;
     // Pieces you buy for, to have them on time.
     const buys = tg => opts.buy === true || !!(opts.buyFor && opts.buyFor.has(tg.id));
@@ -173,7 +183,7 @@
       const keep = {};
       opts.targets.filter(t => !madeAt[t.id] && t.level <= L + 6).forEach(t => (byId.get(t.id) || { mats: [] }).mats.forEach(([id, n]) => {
         const raw = CURE[id] || id;
-        if ([LIGHT_HIDE, MEDIUM_HIDE, HEAVY_HIDE, PRISTINE_ID].includes(raw)) keep[raw] = (keep[raw] || 0) + n;
+        if ([LIGHT_HIDE, MEDIUM_HIDE, HEAVY_HIDE, THICK_HIDE, RUGGED_HIDE, PRISTINE_ID].includes(raw)) keep[raw] = (keep[raw] || 0) + n;
       }));
 
       const crafts = {};
@@ -214,9 +224,9 @@
         // 3) Buying: short of skill for a piece that's due, buy the cheapest leather for skill-ups.
         // The 70-75 wall: nothing there uses Medium Leather, which is what drops
         // once Light Leather stops; a little Light Leather bought gets you over.
-        const wall = opts.bridge !== false && skill >= BRIDGE[0] && skill < BRIDGE[1] && L >= 21;
+        const wall = opts.bridge !== false && WALLS.find(w => skill >= w.lo && skill < w.hi && L >= w.at);
         if ((late || wall) && skill < capNow) {
-          const pick = usable.filter(r => r.mats.every(([id]) => isVendor(id) || fromAH(id) || id === LIGHT || id === MEDIUM || id === HEAVY))
+          const pick = usable.filter(r => r.mats.every(([id]) => isVendor(id) || fromAH(id) || CONVERT.includes(id)))
             .map(r => ({ r, v: chance(r, skill) / cost(r) })).sort((a, b) => b.v - a.v)[0];
           if (pick) {
             pick.r.mats.forEach(([id, n]) => {
@@ -224,7 +234,7 @@
               const k = n - have(id);
               add(id, k);
               if (late) buyLog[id] = (buyLog[id] || 0) + k;
-              else { bridge.level = bridge.level || L; bridge.items[id] = (bridge.items[id] || 0) + k; }
+              else { const b = bridges[L] = bridges[L] || { items: {}, lo: wall.lo, hi: wall.hi, low: wall.low, high: wall.high }; b.items[id] = (b.items[id] || 0) + k; }
             });
             craft(pick.r, crafts);
             continue;
@@ -237,7 +247,7 @@
       rows.push({ level: L, zone, skins, skill: Math.floor(skill), crafts, ranges, gains, forMats, made, bought: buyLog,
         keep: Object.fromEntries(Object.entries(keep).filter(([id]) => have(Number(id)) >= 1).map(([id, n]) => [id, Math.min(n, Math.floor(have(Number(id))))])) });
     }
-    return { rows, made: madeAt, bought, bridge };
+    return { rows, made: madeAt, bought, bridges };
   }
 
   // The best beasts to skin in a zone around a level (most numerous first).
@@ -322,7 +332,7 @@
   //   ctx: { picked: your professions (Skinning too), farm, intensity,
   //          skillBuy: 'worth' (default) | 'always' | 'never' }
   // The plan carries lwWorth: Map(item id -> verdict, see worth()).
-  const PATH_CAP = 30;
+  const PATH_CAP = 60;
   const lwSteps = plan => Object.values(plan.slots).flatMap(p => p.steps).filter(st => (st.pick.source || {}).profession === 'Leatherworking');
   const lwKey = plan => lwSteps(plan).map(st => st.pick.item.id + '@' + st.level).sort().join(',');
   function settle(gear, opts, ctx) {
