@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70888",
+ "build": "1.60.1.70938",
  "gear": [
   {
    "id": 208424,
@@ -3333,6 +3333,41 @@
    ]
   },
   {
+   "id": 270126,
+   "name": "Conqueror's Pendant",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 58,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 7,
+    "intellect": 7,
+    "spirit": 5
+   },
+   "bonus": {
+    "spellPower": 13
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_necklace_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 274384,
    "name": "Illegible Dogtags",
    "kind": "Neck",
@@ -6518,74 +6553,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270076,
-   "name": "Tidal Bracers",
-   "kind": "Leather",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 40,
-   "bind": "pickup",
-   "armor": 48,
-   "stats": {
-    "strength": 5,
-    "agility": 5,
-    "stamina": 3
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_bracer_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270077,
-   "name": "Undertow Legguards",
-   "kind": "Mail",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 40,
-   "bind": "pickup",
-   "armor": 202,
-   "stats": {
-    "strength": 9,
-    "agility": 6,
-    "stamina": 8
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_10",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 0,
      "rec": 0
     }
@@ -26427,38 +26394,6 @@
    ]
   },
   {
-   "id": 284192,
-   "name": "Furbolg Loincloth",
-   "kind": "Cloth",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 13,
-   "obtain": 13,
-   "ilvl": 18,
-   "bind": "equip",
-   "armor": 28,
-   "stats": {
-    "stamina": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_wolf",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 13,
-     "rec": 13
-    }
-   ]
-  },
-  {
    "id": 5320,
    "name": "Padded Lamellar Boots",
    "kind": "Mail",
@@ -33289,6 +33224,49 @@
    ]
   },
   {
+   "id": 284192,
+   "name": "Furbolg Loincloth",
+   "kind": "Cloth",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 13,
+   "obtain": 15,
+   "ilvl": 18,
+   "bind": "equip",
+   "armor": 28,
+   "stats": {
+    "stamina": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_wolf",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Carnivous the Breaker",
+     "npcId": 2186,
+     "zone": "Darkshore",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 13,
+     "rec": 15,
+     "basis": {
+      "name": "Carnivous the Breaker",
+      "level": 16,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
    "id": 5325,
    "name": "Welding Shield",
    "kind": "Shield",
@@ -35617,40 +35595,6 @@
      "npc": "Bjork",
      "npcId": 256097,
      "zone": "Ruins of Lordaeron",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 16,
-     "rec": 16
-    }
-   ]
-  },
-  {
-   "id": 284187,
-   "name": "Crazed Firecaller's Cloak",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 16,
-   "obtain": 16,
-   "ilvl": 21,
-   "bind": "equip",
-   "armor": 17,
-   "stats": {
-    "intellect": 3
-   },
-   "bonus": {
-    "fireDamage": 4
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_cape_18",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 16,
@@ -43823,6 +43767,51 @@
      "rec": 18,
      "basis": {
       "name": "Shanda the Spinner",
+      "level": 19,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
+   "id": 284187,
+   "name": "Crazed Firecaller's Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 16,
+   "obtain": 18,
+   "ilvl": 21,
+   "bind": "equip",
+   "armor": 17,
+   "stats": {
+    "intellect": 3
+   },
+   "bonus": {
+    "fireDamage": 4
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_cape_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Firecaller Radison",
+     "npcId": 2192,
+     "zone": "Darkshore",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 16,
+     "rec": 18,
+     "basis": {
+      "name": "Firecaller Radison",
       "level": 19,
       "rank": "rare",
       "from": "wowhead",
@@ -67860,10 +67849,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98095",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Hillsbrad Peasant",
+      "level": 25,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 528,
+      "steps": 4
      },
-     "asap": 19,
+     "asap": 22,
      "rec": 24
     }
    ]
@@ -113292,7 +113286,6 @@
     {
      "type": "boss",
      "npc": "Primeval Elemental",
-     "npcId": 273738,
      "zone": "The Drowned City",
      "faction": "both",
      "confidence": "community-untested",
@@ -113328,7 +113321,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Primeval Elemental",
+     "zone": "The Drowned City",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 35,
@@ -122536,6 +122531,10 @@
      ],
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=79442",
+     "zone": "Shaman",
+     "classes": [
+      "Shaman"
+     ],
      "basis": {
       "name": "Ravaging Tempest",
       "level": 40,
@@ -122546,11 +122545,7 @@
       "steps": 12
      },
      "asap": 35,
-     "rec": 37,
-     "zone": "Shaman",
-     "classes": [
-      "Shaman"
-     ]
+     "rec": 37
     },
     {
      "type": "quest",
@@ -131784,6 +131779,116 @@
       "from": "wowhead",
       "group": false,
       "steps": 1
+     },
+     "asap": 37,
+     "rec": 39
+    }
+   ]
+  },
+  {
+   "id": 270076,
+   "name": "Tidal Bracers",
+   "kind": "Leather",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 39,
+   "ilvl": 40,
+   "bind": "pickup",
+   "armor": 48,
+   "stats": {
+    "strength": 5,
+    "agility": 5,
+    "stamina": 3
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Curse of the Tides",
+     "questId": 611,
+     "requiredLevel": 32,
+     "zone": "Stranglethorn Vale",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/611",
+     "level": 40,
+     "bands": {
+      "red": 32,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "basis": {
+      "name": "Gazban",
+      "level": 40,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 7
+     },
+     "asap": 37,
+     "rec": 39
+    }
+   ]
+  },
+  {
+   "id": 270077,
+   "name": "Undertow Legguards",
+   "kind": "Mail",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 39,
+   "ilvl": 40,
+   "bind": "pickup",
+   "armor": 202,
+   "stats": {
+    "strength": 9,
+    "agility": 6,
+    "stamina": 8
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Curse of the Tides",
+     "questId": 611,
+     "requiredLevel": 32,
+     "zone": "Stranglethorn Vale",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/611",
+     "level": 40,
+     "bands": {
+      "red": 32,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "basis": {
+      "name": "Gazban",
+      "level": 40,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 7
      },
      "asap": 37,
      "rec": 39
@@ -149284,7 +149389,7 @@
   {
    "id": 10418,
    "name": "Glimmering Mithril Insignia",
-   "kind": "Mail",
+   "kind": "Trinket",
    "slot": "Trinket",
    "quality": 2,
    "req": 0,
@@ -152570,13 +152675,11 @@
    "bonus": {
     "spellPower": 7
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 7."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_belt_34",
    "raceMask": -1,
    "sources": [
@@ -162712,39 +162815,6 @@
    ]
   },
   {
-   "id": 282094,
-   "name": "Blackheart's Vest",
-   "kind": "Leather",
-   "slot": "Chest",
-   "quality": 2,
-   "req": 47,
-   "obtain": 47,
-   "ilvl": 52,
-   "bind": "equip",
-   "armor": 137,
-   "stats": {
-    "strength": 16,
-    "agility": 15
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_chest_leather_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 47,
-     "rec": 47
-    }
-   ]
-  },
-  {
    "id": 284197,
    "name": "Hide of Mongress",
    "kind": "Cloth",
@@ -172150,6 +172220,50 @@
    ]
   },
   {
+   "id": 282094,
+   "name": "Blackheart's Vest",
+   "kind": "Leather",
+   "slot": "Chest",
+   "quality": 2,
+   "req": 47,
+   "obtain": 49,
+   "ilvl": 52,
+   "bind": "equip",
+   "armor": 137,
+   "stats": {
+    "strength": 16,
+    "agility": 15
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_chest_leather_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Slave Master Blackheart",
+     "npcId": 8283,
+     "zone": "Searing Gorge",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 47,
+     "rec": 49,
+     "basis": {
+      "name": "Slave Master Blackheart",
+      "level": 50,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
    "id": 4130,
    "name": "Smotts' Compass",
    "kind": "Trinket",
@@ -178965,13 +179079,11 @@
     "healing": 22,
     "spellDamage": 7
    },
-   "equip": [
-    "Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_gauntlets_23",
    "raceMask": -1,
    "sources": [
@@ -181737,6 +181849,113 @@
    ]
   },
   {
+   "id": 260201,
+   "name": "Highborne Memory Crystal",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 2,
+   "req": 0,
+   "obtain": 51,
+   "ilvl": 55,
+   "bind": "pickup",
+   "stats": {
+    "spirit": 9
+   },
+   "bonus": {
+    "healing": 19,
+    "spellDamage": 6
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_chaos_orb",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Your Final Reward",
+     "questId": 89053,
+     "level": 55,
+     "requiredLevel": 47,
+     "zone": "Azshara",
+     "bands": {
+      "red": 47,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/89053",
+     "basis": {
+      "name": "Lady Sesspira",
+      "level": 52,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 88917,
+      "steps": 6
+     },
+     "asap": 49,
+     "rec": 51
+    }
+   ]
+  },
+  {
+   "id": 260205,
+   "name": "Highborne Research Tablet",
+   "kind": "Trinket",
+   "slot": "Trinket",
+   "quality": 2,
+   "req": 0,
+   "obtain": 51,
+   "ilvl": 55,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {},
+   "equip": [
+    "Equip: Chance on hit to deal 69 to 81 Arcane damage. Deals 2 times as much damage to Naga and Satyrs."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_stonetablet_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Your Final Reward",
+     "questId": 89053,
+     "level": 55,
+     "requiredLevel": 47,
+     "zone": "Azshara",
+     "bands": {
+      "red": 47,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/89053",
+     "basis": {
+      "name": "Lady Sesspira",
+      "level": 52,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 88917,
+      "steps": 6
+     },
+     "asap": 49,
+     "rec": 51
+    }
+   ]
+  },
+  {
    "id": 270115,
    "name": "Leggings of Freedom and Sorrow",
    "kind": "Leather",
@@ -182043,10 +182262,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/89037",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Lady Sesspira",
+      "level": 52,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 88917,
+      "steps": 4
      },
-     "asap": 47,
+     "asap": 49,
      "rec": 51
     }
    ]
@@ -186785,10 +187009,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/95264",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 53,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 95263,
+      "steps": 6
      },
-     "asap": 48,
+     "asap": 50,
      "rec": 52
     },
     {
@@ -186861,10 +187090,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/95264",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 53,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 95263,
+      "steps": 6
      },
-     "asap": 48,
+     "asap": 50,
      "rec": 52
     },
     {
@@ -194775,7 +195009,7 @@
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_gauntlets_15",
    "raceMask": -1,
    "sources": [
@@ -197082,103 +197316,6 @@
    ]
   },
   {
-   "id": 260201,
-   "name": "Highborne Memory Crystal",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 2,
-   "req": 0,
-   "obtain": 54,
-   "ilvl": 55,
-   "bind": "pickup",
-   "stats": {
-    "spirit": 9
-   },
-   "bonus": {
-    "healing": 19,
-    "spellDamage": 6
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_chaos_orb",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Your Final Reward",
-     "questId": 89053,
-     "level": 55,
-     "requiredLevel": 47,
-     "zone": "Azshara",
-     "bands": {
-      "red": 47,
-      "orange": 51,
-      "yellow": 53,
-      "green": 58
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/89053",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 47,
-     "rec": 54
-    }
-   ]
-  },
-  {
-   "id": 260205,
-   "name": "Highborne Research Tablet",
-   "kind": "Trinket",
-   "slot": "Trinket",
-   "quality": 2,
-   "req": 0,
-   "obtain": 54,
-   "ilvl": 55,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {},
-   "equip": [
-    "Equip: Chance on hit to deal 69 to 81 Arcane damage. Deals 2 times as much damage to Naga and Satyrs."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_stonetablet_10",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Your Final Reward",
-     "questId": 89053,
-     "level": 55,
-     "requiredLevel": 47,
-     "zone": "Azshara",
-     "bands": {
-      "red": 47,
-      "orange": 51,
-      "yellow": 53,
-      "green": 58
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/89053",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 47,
-     "rec": 54
-    }
-   ]
-  },
-  {
    "id": 260208,
    "name": "Prelate's Orb",
    "kind": "Off-hand",
@@ -197217,10 +197354,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/88813",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Spitelash Enchantress",
+      "level": 55,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 88812,
+      "steps": 3
      },
-     "asap": 47,
+     "asap": 52,
      "rec": 54
     }
    ]
@@ -199937,13 +200079,11 @@
    "bonus": {
     "fireDamage": 14
    },
-   "equip": [
-    "Equip: Increases damage done by Fire spells and effects by up to 14."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_orb_05",
    "raceMask": -1,
    "sources": [
@@ -202020,8 +202160,8 @@
    "bind": "pickup",
    "armor": 244,
    "stats": {
-    "stamina": 19,
-    "intellect": 10
+    "stamina": 16,
+    "intellect": 7
    },
    "bonus": {
     "spellPower": 7,
@@ -202341,9 +202481,9 @@
    "bind": "pickup",
    "armor": 244,
    "stats": {
-    "strength": 8,
-    "stamina": 20,
-    "intellect": 5
+    "stamina": 17,
+    "intellect": 5,
+    "strength": 8
    },
    "bonus": {
     "spellPower": 7
@@ -202414,9 +202554,9 @@
    "bind": "pickup",
    "armor": 354,
    "stats": {
-    "strength": 11,
     "stamina": 25,
-    "intellect": 6
+    "intellect": 10,
+    "strength": 11
    },
    "bonus": {
     "critRating": 7
@@ -202450,7 +202590,7 @@
    "bind": "pickup",
    "armor": 310,
    "stats": {
-    "stamina": 25,
+    "stamina": 26,
     "intellect": 8
    },
    "bonus": {
@@ -202486,9 +202626,9 @@
    "bind": "pickup",
    "armor": 288,
    "stats": {
-    "strength": 11,
-    "stamina": 26,
-    "intellect": 6
+    "stamina": 25,
+    "intellect": 10,
+    "strength": 12
    },
    "bonus": {
     "critRating": 7
@@ -202695,12 +202835,12 @@
    "bind": "pickup",
    "armor": 244,
    "stats": {
-    "stamina": 19,
+    "stamina": 17,
     "intellect": 10
    },
    "bonus": {
-    "healing": 22,
-    "spellDamage": 7
+    "healing": 15,
+    "spellDamage": 5
    },
    "equip": [
     "Equip: Increases the speed of your Ghost Wolf ability by 15%."
@@ -203026,8 +203166,8 @@
    "bind": "pickup",
    "armor": 244,
    "stats": {
-    "stamina": 19,
-    "intellect": 10
+    "stamina": 16,
+    "intellect": 7
    },
    "bonus": {
     "spellPower": 7,
@@ -203136,7 +203276,7 @@
    "bind": "pickup",
    "armor": 354,
    "stats": {
-    "stamina": 24,
+    "stamina": 25,
     "intellect": 11
    },
    "bonus": {
@@ -203278,9 +203418,9 @@
    "bind": "pickup",
    "armor": 244,
    "stats": {
-    "strength": 8,
-    "stamina": 20,
-    "intellect": 5
+    "stamina": 17,
+    "intellect": 5,
+    "strength": 8
    },
    "bonus": {
     "spellPower": 7
@@ -203351,9 +203491,9 @@
    "bind": "pickup",
    "armor": 354,
    "stats": {
-    "strength": 11,
     "stamina": 25,
-    "intellect": 6
+    "intellect": 10,
+    "strength": 11
    },
    "bonus": {
     "critRating": 7
@@ -203387,7 +203527,7 @@
    "bind": "pickup",
    "armor": 310,
    "stats": {
-    "stamina": 25,
+    "stamina": 26,
     "intellect": 8
    },
    "bonus": {
@@ -203423,9 +203563,9 @@
    "bind": "pickup",
    "armor": 288,
    "stats": {
-    "strength": 11,
-    "stamina": 26,
-    "intellect": 6
+    "stamina": 25,
+    "intellect": 10,
+    "strength": 12
    },
    "bonus": {
     "critRating": 7
@@ -203563,12 +203703,12 @@
    "bind": "pickup",
    "armor": 244,
    "stats": {
-    "stamina": 19,
+    "stamina": 17,
     "intellect": 10
    },
    "bonus": {
-    "healing": 22,
-    "spellDamage": 7
+    "healing": 15,
+    "spellDamage": 5
    },
    "equip": [
     "Equip: Increases the speed of your Ghost Wolf ability by 15%."
@@ -204474,13 +204614,11 @@
     "healing": 15,
     "spellDamage": 5
    },
-   "equip": [
-    "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_bracer_16",
    "raceMask": -1,
    "sources": [
@@ -205583,16 +205721,16 @@
    "bind": "pickup",
    "stats": {
     "strength": 10,
-    "agility": 4,
+    "agility": 5,
     "stamina": 11,
-    "spirit": 5
+    "spirit": 6
    },
    "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_amulet_03",
    "raceMask": -1,
    "sources": [
@@ -207609,13 +207747,11 @@
    "bonus": {
     "attackPower": 56
    },
-   "equip": [
-    "Equip: +56 Attack Power."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_chain_14",
    "raceMask": -1,
    "sources": [
@@ -209424,18 +209560,16 @@
    "armor": 43,
    "stats": {
     "stamina": 10,
-    "intellect": 11
+    "intellect": 10
    },
-   "bonus": {
-    "spellHit": 1
-   },
+   "bonus": {},
    "equip": [
-    "Equip: Improves your chance to hit with spells by 1%."
+    "Equip: Your spells pierce 4 Magical Resistance."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_cape_16",
    "raceMask": -1,
    "sources": [
@@ -210023,7 +210157,7 @@
     "strength": 18
    },
    "bonus": {
-    "spellPower": 33,
+    "spellPower": 38,
     "critRating": 14
    },
    "equip": [],
@@ -211991,15 +212125,13 @@
     "intellect": 16
    },
    "bonus": {
-    "crit": 1
+    "critRating": 14
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1.0%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_gauntlets_16",
    "raceMask": -1,
    "sources": [
@@ -217193,6 +217325,100 @@
    ]
   },
   {
+   "id": 18676,
+   "name": "Sash of the Windreaver",
+   "kind": "Mail",
+   "slot": "Waist",
+   "quality": 3,
+   "req": 57,
+   "obtain": 57,
+   "ilvl": 62,
+   "bind": "equip",
+   "armor": 205,
+   "stats": {
+    "stamina": 6,
+    "intellect": 7,
+    "spirit": 7
+   },
+   "bonus": {
+    "natureDamage": 30
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_belt_31",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "The Windreaver",
+     "npcId": 14454,
+     "level": 60,
+     "rank": "elite",
+     "zone": "Silithus",
+     "zoneId": 1377,
+     "raid": true,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 57,
+     "rec": 57,
+     "basis": {
+      "name": "The Windreaver",
+      "level": 60,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 18677,
+   "name": "Zephyr Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 57,
+   "obtain": 57,
+   "ilvl": 62,
+   "bind": "equip",
+   "armor": 40,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_misc_cape_13",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "The Windreaver",
+     "npcId": 14454,
+     "level": 60,
+     "rank": "elite",
+     "zone": "Silithus",
+     "zoneId": 1377,
+     "raid": true,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 57,
+     "rec": 57,
+     "basis": {
+      "name": "The Windreaver",
+      "level": 60,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 18678,
    "name": "Tempestria's Frozen Necklace",
    "kind": "Neck",
@@ -217211,7 +217437,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_necklace_03",
    "raceMask": -1,
    "sources": [
@@ -217839,15 +218065,16 @@
     "spirit": 6
    },
    "bonus": {
-    "healing": 31
+    "healing": 31,
+    "spellDamage": 10
    },
    "equip": [
-    "Equip: Increases healing done by spells and effects by up to 31."
+    "Equip: Increases healing done by up to 31 and damage done by up to 10 for all magical spells and effects."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_jewelry_ring_05",
    "raceMask": -1,
    "sources": [
@@ -218430,6 +218657,42 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_helmet_55",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 57,
+     "rec": 57
+    }
+   ]
+  },
+  {
+   "id": 282027,
+   "name": "Scales of the Devourer",
+   "kind": "Mail",
+   "slot": "Chest",
+   "quality": 3,
+   "req": 57,
+   "obtain": 57,
+   "ilvl": 62,
+   "bind": "pickup",
+   "armor": 365,
+   "stats": {
+    "strength": 15,
+    "agility": 14,
+    "stamina": 18
+   },
+   "bonus": {
+    "spellPower": 16
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_chest_chain_06",
    "raceMask": -1,
    "sources": [
     {
@@ -220248,15 +220511,13 @@
     "intellect": 15
    },
    "bonus": {
-    "crit": 1
+    "critRating": 14
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1.0%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_pants_08",
    "raceMask": -1,
    "sources": [
@@ -220883,102 +221144,6 @@
    ]
   },
   {
-   "id": 18676,
-   "name": "Sash of the Windreaver",
-   "kind": "Mail",
-   "slot": "Waist",
-   "quality": 3,
-   "req": 56,
-   "obtain": 57,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 202,
-   "stats": {
-    "stamina": 6,
-    "intellect": 7,
-    "spirit": 7
-   },
-   "bonus": {
-    "natureDamage": 29
-   },
-   "equip": [
-    "Equip: Increases damage done by Nature spells and effects by up to 29."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_belt_31",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "drop",
-     "npc": "The Windreaver",
-     "npcId": 14454,
-     "level": 60,
-     "rank": "elite",
-     "zone": "Silithus",
-     "zoneId": 1377,
-     "raid": true,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 56,
-     "rec": 57,
-     "basis": {
-      "name": "The Windreaver",
-      "level": 60,
-      "rank": "rare-elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
-   "id": 18677,
-   "name": "Zephyr Cloak",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 56,
-   "obtain": 57,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 39,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_misc_cape_13",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "drop",
-     "npc": "The Windreaver",
-     "npcId": 14454,
-     "level": 60,
-     "rank": "elite",
-     "zone": "Silithus",
-     "zoneId": 1377,
-     "raid": true,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 56,
-     "rec": 57,
-     "basis": {
-      "name": "The Windreaver",
-      "level": 60,
-      "rank": "rare-elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
    "id": 18691,
    "name": "Dark Advisor's Pendant",
    "kind": "Neck",
@@ -220995,13 +221160,11 @@
    "bonus": {
     "otherDamage": 20
    },
-   "equip": [
-    "Equip: Increases damage done by Shadow spells and effects by up to 20."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_necklace_06",
    "raceMask": -1,
    "sources": [
@@ -225040,14 +225203,16 @@
    "ilvl": 63,
    "bind": "equip",
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "defense": 8
+   },
    "equip": [
-    "Equip: When struck in combat has a 1% chance of increasing all party member's armor by 250 for 30 sec. (Proc chance: 1%)"
+    "Equip: When struck in combat has a 5% chance of increasing all party member's armor by 725 for 30 sec. This chance is doubled in Strongholds and Cities. (Proc chance: 10%, 1m cooldown)"
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_horn_03",
    "raceMask": -1,
    "sources": [
@@ -228493,19 +228658,20 @@
    "bind": "pickup",
    "stats": {
     "stamina": 9,
-    "intellect": 9,
+    "intellect": 10,
     "spirit": 8
    },
    "bonus": {
-    "healing": 15
+    "healing": 15,
+    "spellDamage": 5
    },
    "equip": [
-    "Equip: Increases healing done by spells and effects by up to 15."
+    "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_jewelry_necklace_08",
    "raceMask": -1,
    "sources": [
@@ -237714,7 +237880,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shield_17",
    "raceMask": -1,
    "sources": [
@@ -273943,12 +274109,12 @@
    "bind": "pickup",
    "armor": 286,
    "stats": {
-    "strength": 12,
-    "stamina": 27,
-    "intellect": 7
+    "stamina": 21,
+    "intellect": 10,
+    "strength": 13
    },
    "bonus": {
-    "spellPower": 11
+    "spellPower": 12
    },
    "equip": [
     "Equip: Increases the speed of your Ghost Wolf ability by 15%."
@@ -274452,11 +274618,11 @@
    "bind": "pickup",
    "armor": 286,
    "stats": {
-    "stamina": 26,
+    "stamina": 21,
     "intellect": 10
    },
    "bonus": {
-    "spellPower": 11,
+    "spellPower": 10,
     "critRating": 14
    },
    "equip": [
@@ -274745,7 +274911,7 @@
    "bind": "pickup",
    "armor": 286,
    "stats": {
-    "stamina": 26,
+    "stamina": 21,
     "intellect": 14
    },
    "bonus": {
@@ -275048,12 +275214,12 @@
    "bind": "pickup",
    "armor": 286,
    "stats": {
-    "strength": 12,
-    "stamina": 27,
-    "intellect": 7
+    "stamina": 21,
+    "intellect": 10,
+    "strength": 13
    },
    "bonus": {
-    "spellPower": 11
+    "spellPower": 12
    },
    "equip": [
     "Equip: Increases the speed of your Ghost Wolf ability by 15%."
@@ -275337,11 +275503,11 @@
    "bind": "pickup",
    "armor": 286,
    "stats": {
-    "stamina": 26,
+    "stamina": 21,
     "intellect": 10
    },
    "bonus": {
-    "spellPower": 11,
+    "spellPower": 10,
     "critRating": 14
    },
    "equip": [
@@ -275626,7 +275792,7 @@
    "bind": "pickup",
    "armor": 286,
    "stats": {
-    "stamina": 26,
+    "stamina": 21,
     "intellect": 14
    },
    "bonus": {

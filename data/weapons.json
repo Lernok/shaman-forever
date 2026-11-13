@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70888",
+ "build": "1.60.1.70938",
  "weapons": [
   {
    "id": 260214,
@@ -21455,6 +21455,10 @@
      ],
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=79442",
+     "zone": "Shaman",
+     "classes": [
+      "Shaman"
+     ],
      "basis": {
       "name": "Ravaging Tempest",
       "level": 40,
@@ -21465,11 +21469,7 @@
       "steps": 12
      },
      "asap": 35,
-     "rec": 37,
-     "zone": "Shaman",
-     "classes": [
-      "Shaman"
-     ]
+     "rec": 37
     },
     {
      "type": "quest",
@@ -25160,57 +25160,6 @@
    ]
   },
   {
-   "id": 272181,
-   "name": "Phantasmal Shiv",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 41,
-   "ilvl": 43,
-   "bind": "pickup",
-   "dps": 25,
-   "speed": 1.8,
-   "dmgMin": 31,
-   "dmgMax": 59,
-   "stats": {
-    "stamina": 5,
-    "intellect": 4
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Tempered Expectations",
-     "questId": 96060,
-     "level": 42,
-     "requiredLevel": 35,
-     "zone": "Shen'dralas",
-     "bands": {
-      "red": 35,
-      "orange": 38,
-      "yellow": 40,
-      "green": 45,
-      "grey": 53
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96060",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 35,
-     "rec": 41
-    }
-   ]
-  },
-  {
    "id": 274952,
    "name": "Jom-jom's Gabbar",
    "kind": "Dagger",
@@ -26055,6 +26004,61 @@
      "faction": "both",
      "confidence": "classic-assumed",
      "asap": 42,
+     "rec": 42
+    }
+   ]
+  },
+  {
+   "id": 272181,
+   "name": "Phantasmal Shiv",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 42,
+   "ilvl": 43,
+   "bind": "pickup",
+   "dps": 25,
+   "speed": 1.8,
+   "dmgMin": 31,
+   "dmgMax": 59,
+   "stats": {
+    "stamina": 5,
+    "intellect": 4
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Tempered Expectations",
+     "questId": 96060,
+     "level": 42,
+     "requiredLevel": 35,
+     "zone": "Shen'dralas",
+     "bands": {
+      "red": 35,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96060",
+     "basis": {
+      "name": "Prowler",
+      "level": 43,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 3
+     },
+     "asap": 40,
      "rec": 42
     }
    ]
@@ -31304,6 +31308,61 @@
    ]
   },
   {
+   "id": 260207,
+   "name": "Staff of Archmage Selwyn",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 0,
+   "obtain": 51,
+   "ilvl": 55,
+   "bind": "pickup",
+   "dps": 42.6,
+   "speed": 2.5,
+   "dmgMin": 85,
+   "dmgMax": 128,
+   "stats": {
+    "stamina": 16,
+    "intellect": 16
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Your Final Reward",
+     "questId": 89053,
+     "level": 55,
+     "requiredLevel": 47,
+     "zone": "Azshara",
+     "bands": {
+      "red": 47,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/89053",
+     "basis": {
+      "name": "Lady Sesspira",
+      "level": 52,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 88917,
+      "steps": 6
+     },
+     "asap": 49,
+     "rec": 51
+    }
+   ]
+  },
+  {
    "id": 10837,
    "name": "Tooth of Eranikus",
    "kind": "1H Axe",
@@ -31578,10 +31637,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/89037",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Lady Sesspira",
+      "level": 52,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 88917,
+      "steps": 4
      },
-     "asap": 47,
+     "asap": 49,
      "rec": 51
     }
    ]
@@ -32350,10 +32414,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/95264",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 53,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 95263,
+      "steps": 6
      },
-     "asap": 48,
+     "asap": 50,
      "rec": 52
     },
     {
@@ -32924,6 +32993,41 @@
    ]
   },
   {
+   "id": 276069,
+   "name": "Gravetoll Gavel",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 54,
+   "obtain": 54,
+   "ilvl": 59,
+   "bind": "pickup",
+   "dps": 50.5,
+   "speed": 3.3,
+   "dmgMin": 133,
+   "dmgMax": 200,
+   "stats": {
+    "stamina": 16,
+    "intellect": 21,
+    "spirit": 13
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 54,
+     "rec": 54
+    }
+   ]
+  },
+  {
    "id": 22208,
    "name": "Lavastone Hammer",
    "kind": "2H Mace",
@@ -33158,56 +33262,6 @@
    ]
   },
   {
-   "id": 260207,
-   "name": "Staff of Archmage Selwyn",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 0,
-   "obtain": 54,
-   "ilvl": 55,
-   "bind": "pickup",
-   "dps": 42.6,
-   "speed": 2.5,
-   "dmgMin": 85,
-   "dmgMax": 128,
-   "stats": {
-    "stamina": 16,
-    "intellect": 16
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Your Final Reward",
-     "questId": 89053,
-     "level": 55,
-     "requiredLevel": 47,
-     "zone": "Azshara",
-     "bands": {
-      "red": 47,
-      "orange": 51,
-      "yellow": 53,
-      "green": 58
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/89053",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 47,
-     "rec": 54
-    }
-   ]
-  },
-  {
    "id": 11907,
    "name": "Beastslayer",
    "kind": "2H Axe",
@@ -33388,46 +33442,6 @@
       "group": true,
       "steps": 2
      },
-     "asap": 54,
-     "rec": 54
-    }
-   ]
-  },
-  {
-   "id": 276069,
-   "name": "Gravetoll Gavel",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 54,
-   "obtain": 54,
-   "ilvl": 59,
-   "bind": "pickup",
-   "dps": 37.58,
-   "speed": 3.3,
-   "dmgMin": 99,
-   "dmgMax": 149,
-   "stats": {
-    "stamina": 16,
-    "intellect": 21,
-    "spirit": 13
-   },
-   "bonus": {
-    "healing": 127,
-    "spellDamage": 42
-   },
-   "equip": [
-    "Equip: Increases healing done by up to 127 and damage done by up to 42 for all magical spells and effects."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "forever",
-   "icon": "inv_mace_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 54,
      "rec": 54
     }
@@ -33630,10 +33644,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/88813",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Spitelash Enchantress",
+      "level": 55,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "step": 88812,
+      "steps": 3
      },
-     "asap": 47,
+     "asap": 52,
      "rec": 54
     }
    ]
@@ -34460,7 +34479,7 @@
     "Chance on hit: Blasts a target for 90 Fire damage."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_mace_08",
    "raceMask": -1,
    "sources": [
@@ -35340,14 +35359,14 @@
    "dmgMin": 42,
    "dmgMax": 78,
    "stats": {
-    "strength": 5,
+    "strength": 8,
     "agility": 12
    },
    "bonus": {},
    "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_gauntlets_11",
    "raceMask": -1,
    "sources": [
@@ -36522,6 +36541,59 @@
    ]
   },
   {
+   "id": 15854,
+   "name": "Dancing Sliver",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 57,
+   "ilvl": 60,
+   "bind": "pickup",
+   "dps": 51.2,
+   "speed": 2.4,
+   "dmgMin": 98,
+   "dmgMax": 148,
+   "stats": {
+    "intellect": 12,
+    "spirit": 29
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_staff_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Dawn's Gambit",
+     "questId": 4771,
+     "level": 60,
+     "requiredLevel": 57,
+     "zone": "Scholomance",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "dungeon": true,
+     "bands": {
+      "orange": 57,
+      "yellow": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/4771",
+     "basis": {
+      "name": "Vectus",
+      "level": 60,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 8
+     },
+     "asap": 57,
+     "rec": 57
+    }
+   ]
+  },
+  {
    "id": 260215,
    "name": "Wild Malleus",
    "kind": "2H Mace",
@@ -36862,14 +36934,17 @@
    "dmgMax": 84,
    "stats": {},
    "bonus": {
+    "attackPower": 6,
     "crit": 1
    },
    "equip": [
-    "Equip: Improves your chance to get a critical strike by 1%."
+    "Equip: Improves your chance to get a critical strike by 1.0%.",
+    "Equip: +6 Attack Power.",
+    "Equip: +6 Attack Power against Humanoids."
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_mace_15",
    "raceMask": -1,
    "sources": [
@@ -37164,65 +37239,8 @@
     "Chance on hit: Inflicts 21 Nature damage every 2 sec for 10 sec."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_axe_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Dawn's Gambit",
-     "questId": 4771,
-     "level": 60,
-     "requiredLevel": 57,
-     "zone": "Scholomance",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "dungeon": true,
-     "bands": {
-      "orange": 57,
-      "yellow": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/4771",
-     "basis": {
-      "name": "Vectus",
-      "level": 60,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 8
-     },
-     "asap": 57,
-     "rec": 57
-    }
-   ]
-  },
-  {
-   "id": 15854,
-   "name": "Dancing Sliver",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 57,
-   "ilvl": 60,
-   "bind": "pickup",
-   "dps": 38.13,
-   "speed": 2.4,
-   "dmgMin": 73,
-   "dmgMax": 110,
-   "stats": {
-    "intellect": 12,
-    "spirit": 29
-   },
-   "bonus": {
-    "spellPower": 68
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 68."
-   ],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_staff_07",
    "raceMask": -1,
    "sources": [
     {
@@ -37446,16 +37464,14 @@
     "stamina": 9
    },
    "bonus": {
-    "crit": 2
+    "critRating": 28
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 2.0%."
-   ],
+   "equip": [],
    "chance": [
     "Chance on hit: Deal 138 to 212 Fire damage. Deals 3 times as much damage to Plants."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_axe_10",
    "raceMask": -1,
    "sources": [
@@ -38457,10 +38473,10 @@
    "bonus": {},
    "equip": [],
    "chance": [
-    "Chance on hit: Blasts a target for 75 to 105 Fire damage."
+    "Chance on hit: Blasts a target for 95 to 116 Fire damage."
    ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_sword_34",
    "raceMask": -1,
    "sources": [

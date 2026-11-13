@@ -262,6 +262,97 @@
     }
    ]
   },
+  "260180": {
+   "name": "Scout's Dagger",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 89037,
+     "quest": "Murloc Thieves",
+     "minLevel": 47,
+     "faction": "alliance",
+     "zone": "Azshara"
+    }
+   ]
+  },
+  "260182": {
+   "name": "Elunar Belt",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 89037,
+     "quest": "Murloc Thieves",
+     "minLevel": 47,
+     "faction": "alliance",
+     "zone": "Azshara"
+    }
+   ]
+  },
+  "260201": {
+   "name": "Highborne Memory Crystal",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 89053,
+     "quest": "Your Final Reward",
+     "minLevel": 47,
+     "faction": "alliance",
+     "zone": "Azshara"
+    }
+   ]
+  },
+  "260205": {
+   "name": "Highborne Research Tablet",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 89053,
+     "quest": "Your Final Reward",
+     "minLevel": 47,
+     "faction": "alliance",
+     "zone": "Azshara"
+    }
+   ]
+  },
+  "260207": {
+   "name": "Staff of Archmage Selwyn",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 89053,
+     "quest": "Your Final Reward",
+     "minLevel": 47,
+     "faction": "alliance",
+     "zone": "Azshara"
+    }
+   ]
+  },
+  "260208": {
+   "name": "Prelate's Orb",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 88813,
+     "quest": "The Head of the Serpent",
+     "minLevel": 47,
+     "faction": "alliance",
+     "zone": "Azshara"
+    }
+   ]
+  },
+  "260209": {
+   "name": "Truesong's Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 88813,
+     "quest": "The Head of the Serpent",
+     "minLevel": 47,
+     "faction": "alliance",
+     "zone": "Azshara"
+    }
+   ]
+  },
   "263005": {
    "name": "Thendal Watcher's Vest",
    "sources": [
@@ -1611,6 +1702,32 @@
     }
    ]
   },
+  "270076": {
+   "name": "Tidal Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 611,
+     "quest": "The Curse of the Tides",
+     "minLevel": 32,
+     "faction": "alliance",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "270077": {
+   "name": "Undertow Legguards",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 611,
+     "quest": "The Curse of the Tides",
+     "minLevel": 32,
+     "faction": "alliance",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
   "270079": {
    "name": "Witchdoctor's Dress",
    "sources": [
@@ -1658,6 +1775,19 @@
      "questId": 613,
      "quest": "Cracking Maury's Foot",
      "minLevel": 30,
+     "faction": "both",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "270093": {
+   "name": "Blackwater Cap",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 608,
+     "quest": "The Bloodsail Buccaneers (5/5)",
+     "minLevel": 37,
      "faction": "both",
      "zone": "Stranglethorn Vale"
     }
@@ -2214,7 +2344,7 @@
      "questId": 93045,
      "quest": "Test Your Theory",
      "minLevel": 35,
-     "faction": "horde",
+     "faction": "both",
      "zone": "Desolace"
     }
    ]
@@ -2227,7 +2357,7 @@
      "questId": 93128,
      "quest": "Khan Jehn (Gelkis)",
      "minLevel": 35,
-     "faction": "horde",
+     "faction": "both",
      "zone": "Desolace"
     }
    ]
@@ -2240,7 +2370,7 @@
      "questId": 93128,
      "quest": "Khan Jehn (Gelkis)",
      "minLevel": 35,
-     "faction": "horde",
+     "faction": "both",
      "zone": "Desolace"
     }
    ]
@@ -2279,8 +2409,99 @@
      "questId": 93128,
      "quest": "Khan Jehn (Gelkis)",
      "minLevel": 35,
-     "faction": "horde",
+     "faction": "both",
      "zone": "Desolace"
+    }
+   ]
+  },
+  "271810": {
+   "name": "Corpsefeeder's Shedding",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93574,
+     "quest": "Corpsefeeder's Carapace",
+     "minLevel": 35,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "271811": {
+   "name": "Clacking Carapace Spaulders",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93574,
+     "quest": "Corpsefeeder's Carapace",
+     "minLevel": 35,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "271812": {
+   "name": "Discarded Circlet",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93574,
+     "quest": "Corpsefeeder's Carapace",
+     "minLevel": 35,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "272181": {
+   "name": "Phantasmal Shiv",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96060,
+     "quest": "Tempered Expectations",
+     "minLevel": 35,
+     "faction": "both",
+     "zone": "Shendralas"
+    }
+   ]
+  },
+  "272184": {
+   "name": "Amulet of Vengeance",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93609,
+     "quest": "Forlorn Necklace",
+     "minLevel": 35,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "272185": {
+   "name": "Amulet of Forgiveness",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93609,
+     "quest": "Forlorn Necklace",
+     "minLevel": 35,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "272186": {
+   "name": "Overgrown Cuffs",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 93404,
+     "quest": "Rot and Regret",
+     "minLevel": 35,
+     "faction": "both",
+     "zone": "Maraudon"
     }
    ]
   },
@@ -3284,7 +3505,18 @@
    "sources": [
     {
      "type": "boss",
-     "npcId": 273738,
+     "npcId": null,
+     "npc": "Primeval Elemental",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "274612": {
+   "name": "Waterlogged Burial Shroud",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": null,
      "npc": "Primeval Elemental",
      "zone": "The Drowned City"
     }
@@ -4277,6 +4509,19 @@
     }
    ]
   },
+  "277211": {
+   "name": "Dudd's Thinkin' Cap",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95385,
+     "quest": "Torn Mystical Scroll",
+     "minLevel": 35,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
   "277213": {
    "name": "Dro'zem's Tunic",
    "sources": [
@@ -4588,6 +4833,19 @@
     }
    ]
   },
+  "279474": {
+   "name": "Dustwallow Dirk",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95264,
+     "quest": "Shaw Needs To Know",
+     "minLevel": 48,
+     "faction": "alliance",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
   "279480": {
    "name": "Bigger Rock on Bigger Stick",
    "sources": [
@@ -4606,6 +4864,58 @@
      "minLevel": 40,
      "faction": "horde",
      "zone": "Krol'dok Stronghold"
+    }
+   ]
+  },
+  "279826": {
+   "name": "Marshdweller's Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96381,
+     "quest": "A Bit of Wet Work",
+     "minLevel": 48,
+     "faction": "alliance",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
+  "279829": {
+   "name": "Naga Scale Spaulders",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96381,
+     "quest": "A Bit of Wet Work",
+     "minLevel": 48,
+     "faction": "alliance",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
+  "279831": {
+   "name": "Fatebound Buckler",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95264,
+     "quest": "Shaw Needs To Know",
+     "minLevel": 48,
+     "faction": "alliance",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
+  "279833": {
+   "name": "Courier's Clasp",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 95264,
+     "quest": "Shaw Needs To Know",
+     "minLevel": 48,
+     "faction": "alliance",
+     "zone": "Alcaz Prison"
     }
    ]
   },
@@ -5466,6 +5776,32 @@
     }
    ]
   },
+  "281261": {
+   "name": "Crystal-flecked Cord",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 87494,
+     "quest": "Microcrystal Contamination",
+     "minLevel": null,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "281262": {
+   "name": "Crystal-flecked Waistguard",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 87494,
+     "quest": "Microcrystal Contamination",
+     "minLevel": null,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
   "281265": {
    "name": "Roadwatcher's Confidence",
    "sources": [
@@ -5825,7 +6161,7 @@
      "questId": 98208,
      "quest": "Bloom of the Heavens (1/2)",
      "minLevel": 22,
-     "faction": "both",
+     "faction": "alliance",
      "zone": "Wetlands"
     }
    ]
@@ -5942,6 +6278,18 @@
      "minLevel": 10,
      "faction": "both",
      "zone": "Tirisfal Glades"
+    }
+   ]
+  },
+  "282094": {
+   "name": "Blackheart's Vest",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 8283,
+     "npc": "Slave Master Blackheart",
+     "zone": "Searing Gorge",
+     "rare": true
     }
    ]
   },
@@ -6229,6 +6577,30 @@
      "type": "drop",
      "npcId": 7015,
      "npc": "Flagglemurk the Cruel",
+     "zone": "Darkshore",
+     "rare": true
+    }
+   ]
+  },
+  "284187": {
+   "name": "Crazed Firecaller's Cloak",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 2192,
+     "npc": "Firecaller Radison",
+     "zone": "Darkshore",
+     "rare": true
+    }
+   ]
+  },
+  "284192": {
+   "name": "Furbolg Loincloth",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 2186,
+     "npc": "Carnivous the Breaker",
      "zone": "Darkshore",
      "rare": true
     }

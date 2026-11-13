@@ -8233,27 +8233,48 @@
   },
   "88813": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 47,
+   "faction": "alliance",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 7886,
+    "name": "Spitelash Enchantress",
+    "level": 55,
+    "rank": "normal",
+    "from": "wowhead",
+    "step": 88812
+   },
+   "steps": 3
   },
   "89037": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 47,
+   "faction": "alliance",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 239942,
+    "name": "Lady Sesspira",
+    "level": 52,
+    "rank": "normal",
+    "from": "wowhead",
+    "step": 88917
+   },
+   "steps": 4
   },
   "89053": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 47,
+   "faction": "alliance",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 239942,
+    "name": "Lady Sesspira",
+    "level": 52,
+    "rank": "normal",
+    "from": "wowhead",
+    "step": 88917
+   },
+   "steps": 6
   },
   "91285": {
    "classes": [
@@ -8634,7 +8655,7 @@
   "93045": {
    "classes": null,
    "minLevel": 35,
-   "faction": "horde",
+   "faction": null,
    "instance": null,
    "hardest": {
     "id": 11559,
@@ -8657,7 +8678,7 @@
   "93128": {
    "classes": null,
    "minLevel": 35,
-   "faction": "horde",
+   "faction": null,
    "instance": null,
    "hardest": {
     "id": 253446,
@@ -8739,11 +8760,11 @@
   },
   "93404": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 35,
    "faction": null,
    "instance": null,
    "hardest": null,
-   "steps": 1
+   "steps": 3
   },
   "93444": {
    "classes": null,
@@ -8763,7 +8784,7 @@
   },
   "93574": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 35,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -8771,7 +8792,7 @@
   },
   "93609": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 35,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -9064,11 +9085,18 @@
   },
   "95264": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 48,
+   "faction": "alliance",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 53,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 95263
+   },
+   "steps": 6
   },
   "95267": {
    "classes": null,
@@ -9102,7 +9130,7 @@
   },
   "95385": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 35,
    "faction": null,
    "instance": null,
    "hardest": null,
@@ -9449,11 +9477,17 @@
   },
   "96060": {
    "classes": null,
-   "minLevel": null,
+   "minLevel": 35,
    "faction": null,
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 255207,
+    "name": "Prowler",
+    "level": 43,
+    "rank": "normal",
+    "from": "wowhead"
+   },
+   "steps": 3
   },
   "96077": {
    "classes": null,
@@ -9525,11 +9559,11 @@
   },
   "96381": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 48,
+   "faction": "alliance",
    "instance": null,
    "hardest": null,
-   "steps": 1
+   "steps": 4
   },
   "96393": {
    "classes": null,
@@ -9922,8 +9956,15 @@
    "minLevel": 19,
    "faction": "horde",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 2267,
+    "name": "Hillsbrad Peasant",
+    "level": 25,
+    "rank": "normal",
+    "from": "wowhead",
+    "step": 528
+   },
+   "steps": 4
   },
   "98156": {
    "classes": null,
@@ -9980,7 +10021,7 @@
   "98208": {
    "classes": null,
    "minLevel": 22,
-   "faction": null,
+   "faction": "alliance",
    "instance": null,
    "hardest": null,
    "steps": 1
@@ -12117,6 +12158,12 @@
   "2175": {
    "name": "Shadowclaw",
    "level": 13,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "2186": {
+   "name": "Carnivous the Breaker",
+   "level": 16,
    "rank": "rare",
    "from": "wowhead"
   },
@@ -15732,6 +15779,24 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "6194": {
+   "name": "Spitelash Serpent Guard",
+   "level": 49,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "6195": {
+   "name": "Spitelash Siren",
+   "level": 52,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "6196": {
+   "name": "Spitelash Myrmidon",
+   "level": 51,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "6198": {
    "name": "Blood Elf Surveyor",
    "level": 52,
@@ -16554,6 +16619,18 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "7885": {
+   "name": "Spitelash Battlemaster",
+   "level": 54,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "7886": {
+   "name": "Spitelash Enchantress",
+   "level": 55,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "7895": {
    "name": "Ambassador Bloodrage",
    "level": 36,
@@ -16638,6 +16715,12 @@
    "rank": "rare",
    "from": "wowhead"
   },
+  "8283": {
+   "name": "Slave Master Blackheart",
+   "level": 50,
+   "rank": "rare",
+   "from": "wowhead"
+  },
   "8391": {
    "name": "Lathoric the Black",
    "level": 52,
@@ -16648,6 +16731,12 @@
    "name": "Obsidion",
    "level": 52,
    "rank": "elite",
+   "from": "wowhead"
+  },
+  "8408": {
+   "name": "Warlord Krellian",
+   "level": 55,
+   "rank": "normal",
    "from": "wowhead"
   },
   "8419": {
@@ -19866,6 +19955,24 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "239939": {
+   "name": "Lord Sarthiss",
+   "level": 52,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "239942": {
+   "name": "Lady Sesspira",
+   "level": 52,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "239971": {
+   "name": "Razorgill",
+   "level": null,
+   "rank": "normal",
+   "from": null
+  },
   "245999": {
    "name": "Arcane Anomaly",
    "level": null,
@@ -20189,6 +20296,18 @@
    "level": null,
    "rank": "normal",
    "from": null
+  },
+  "255174": {
+   "name": "Blind Screecher",
+   "level": 42,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "255207": {
+   "name": "Prowler",
+   "level": 43,
+   "rank": "normal",
+   "from": "wowhead"
   },
   "255373": {
    "name": "Strashaz Enchantress",
@@ -20526,6 +20645,12 @@
    "rank": "elite",
    "from": null
   },
+  "263681": {
+   "name": "Bear",
+   "level": 42,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "264081": {
    "name": "Gloomrise Spinner",
    "level": 28,
@@ -20723,12 +20848,6 @@
    "level": 12,
    "rank": "elite",
    "from": "wowhead"
-  },
-  "273738": {
-   "name": "Primeval Elemental",
-   "level": null,
-   "rank": "elite",
-   "from": null
   },
   "275044": {
    "name": "Dragonmaw Warder",
