@@ -2,6 +2,14 @@
 
 Leer esta primera parte antes de seguir. Debajo está la historia del proyecto (plan de fases y sesiones).
 
+## 2026-11-13: chequeo general, addon 0.35.0, Water Shield simulado
+
+- **Chequeo:** build, reglas, check-site, smoke (137 vistas) y celular OK; las fallas de Chequeos del 11-nov eran DNS del runner de GitHub (apt), no del sitio. Syncs del 11 y 12 crecieron (6938 piezas, 1118 armas). Sin reportes nuevos. Quedan textos de Profesiones que dicen "pasado el 30: datos del juego, sin confirmar" (BETA_CAP en professions.js; el plan de Peletería simula hasta 30): a decidir con el usuario.
+- **Addon 0.35.0** (b3ff740, instalado en _forever_ y _classic_beta_): datos regenerados; Sunken Temple unificado (el botín estaba bajo The Temple of Atal'Hakkar, instancia 109); `zoneName(nil)` ya no rompe la lista (fallaba al 41 con The Tempest's Weapons). Datos: la copia Horda de The Tempest's Weapons (ATT sin zona) toma la zona "Shaman" de su gemela: Rage of the Storm entra al camino Horda al 37 como misión de clase.
+- **Para rearmar gear.json local** hace falta `.cache/wago/<build>/AreaTable.csv` del build actual (si falta, todas las zonas salen null); igual el QuestieDB local difiere del del sync en 4 facciones: no commitear un build-gear local entero, solo el cambio buscado.
+- **Water Shield (pedido de la comunidad):** `enhsim/ws.js` + `wsgrid.sh`; run.js suma `PROC=<golpes recibidos por minuto>` y Lightning Shield (10432) para builds sin Water Shield. Variante: Ele 8 (Concussion 5 + ED 3, sin TbF), Resto 11 (TF 5, Mindfulness 3, Totemic Focus 2, WS), Enh 32. Resultados a 60: solo (61, HIT −59, 24 golpes/min) −15% en peleas de 30-45 s, +6% a 120 s y +17% a 300 s seguidos sin tomar agua; contando el agua entre pulls (140 maná/s) empate a 30-45 s (+1-2%) y +7% encadenando 2 min. Grupo/raid (2 golpes/min) −8 a −11%. Lightning Shield es ~9% del daño solo. Mindfulness 3 > Totemic Focus 5. Sin cambio en el sitio (a decidir por el usuario).
+- **Pendiente: Craftsman's Writs** (reputación Azeroth Commerce Authority, 75/125/200 por writ, se entregan a NPCs por el mundo): listar todos en Wowhead (Chrome, de a una página), precio con Auctionator del usuario (escaneado 13-nov), oro por punto de reputación y ruta de entrega.
+
 ## 2026-11-11: hotfix de Enhancement del 10-nov, simulado
 
 - **Builds de nivel 30 fuera** (pedido del usuario, e2ddb5e): quedan solo las de 60; el cuadro de la guía muestra la recomendada (o la de nivel más alto).
