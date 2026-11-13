@@ -165,6 +165,14 @@ function open(cacheDir, build) {
         if (r) { s.dungeonLevels = r; s.dungeonRef = fc.dungeonsRef; }
       }
     });
+    // The other faction's copy of a Shaman class quest (same name, one from
+    // foreverchanges with zone "Shaman", the other from AllTheThings without
+    // a zone, like The Tempest's Weapons): it's a class quest too.
+    all.forEach(s => {
+      if (s.type !== 'quest' || s.zone) return;
+      const twin = all.find(o => o !== s && o.type === 'quest' && o.zone === 'Shaman' && o.quest === s.quest);
+      if (twin) Object.assign(s, { zone: 'Shaman', classes: twin.classes });
+    });
     return all;
   }
 

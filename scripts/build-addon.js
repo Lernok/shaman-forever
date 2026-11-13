@@ -34,7 +34,7 @@ const WARN = new Set(['route', 'group', 'quest', 'dquest', 'class', 'vendor']);
 const INSTANCES = {
   389: 'Ragefire Chasm', 36: 'The Deadmines', 43: 'Wailing Caverns', 33: 'Shadowfang Keep', 34: 'The Stockade',
   48: 'Blackfathom Deeps', 90: 'Gnomeregan', 47: 'Razorfen Kraul', 189: 'Scarlet Monastery', 129: 'Razorfen Downs',
-  70: 'Uldaman', 209: "Zul'Farrak", 349: 'Maraudon', 109: "The Temple of Atal'Hakkar", 230: 'Blackrock Depths',
+  70: 'Uldaman', 209: "Zul'Farrak", 349: 'Maraudon', 109: 'Sunken Temple', 230: 'Blackrock Depths',
   229: 'Blackrock Spire', 429: 'Dire Maul', 289: 'Scholomance', 329: 'Stratholme',
   2999: 'Ruins of Lordaeron', 2959: 'City of Dalaran', 2998: 'Excavation Site: Wetlands', 3065: 'Hall of Thanes'
 };
@@ -82,15 +82,18 @@ Object.entries(RACES).forEach(([race, faction]) => {
 // Per dungeon: boss drops and dungeon quests (with the reward that's best for
 // each spec decided in the addon).
 const dungeons = {};
-const dg = name => (dungeons[name] = dungeons[name] || { lv: (Z.dungeons[name] || {}).levels, drops: [], quests: [] });
+// The same dungeon under two names in the sources (quests say Sunken Temple,
+// loot tables The Temple of Atal'Hakkar): one entry.
+const ALIAS = { "The Temple of Atal'Hakkar": 'Sunken Temple' };
+const dg = n => { const name = ALIAS[n] || n; return (dungeons[name] = dungeons[name] || { lv: (Z.dungeons[name] || {}).levels, drops: [], quests: [] }); };
 full.forEach(item => {
   if (!items[item.id]) return;
   item.sources.forEach(s => {
-    if ((s.type === 'boss' || s.type === 'drop') && s.zone && !RAID.test(s.zone) && (Z.dungeons[s.zone] || Object.values(INSTANCES).includes(s.zone))) {
+    if ((s.type === 'boss' || s.type === 'drop') && s.zone && !RAID.test(s.zone) && (Z.dungeons[s.zone] || ALIAS[s.zone] || Object.values(INSTANCES).includes(s.zone))) {
       dg(s.zone).drops.push({ i: item.id, b: s.npc });
       used.add(item.id);
     }
-    if (s.type === 'quest' && s.dungeon && s.zone && (Z.dungeons[s.zone] || Object.values(INSTANCES).includes(s.zone))) {
+    if (s.type === 'quest' && s.dungeon && s.zone && (Z.dungeons[s.zone] || ALIAS[s.zone] || Object.values(INSTANCES).includes(s.zone))) {
       dg(s.zone).quests.push({ q: s.questId, qn: s.quest.replace(/ \(given by [^)]*\)/, ''), i: item.id, f: s.faction === 'both' ? undefined : s.faction, l: s.level });
       used.add(item.id);
     }

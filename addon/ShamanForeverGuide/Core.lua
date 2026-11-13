@@ -285,7 +285,7 @@ local function zoneName(z)
     zoneNames = {}
     for name, id in pairs(D.zones) do zoneNames[name] = Api.areaName(id) or name end
   end
-  return zoneNames[z] or z
+  return z and (zoneNames[z] or z) or "?"
 end
 local function areaName(id)
   if not id then return nil end
