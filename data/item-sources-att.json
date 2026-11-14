@@ -3522,6 +3522,116 @@
     }
    ]
   },
+  "274638": {
+   "name": "Sandfury Pauldrons",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7272,
+     "npc": "Theka the Martyr",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
+  "274639": {
+   "name": "Sacrificial Chain Vest",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7272,
+     "npc": "Theka the Martyr",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
+  "274641": {
+   "name": "Theka's Last Breath",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7272,
+     "npc": "Theka the Martyr",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
+  "274642": {
+   "name": "Blood Ritual Ring",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7271,
+     "npc": "Witch Doctor Zum'rah",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
+  "274644": {
+   "name": "Undying Headdress",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7796,
+     "npc": "Nekrum Gutchewer",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
+  "274645": {
+   "name": "Desert Ziggurat Drape",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7796,
+     "npc": "Nekrum Gutchewer",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
+  "274647": {
+   "name": "Farraki Kris",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7604,
+     "npc": "Sergeant Bly",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
+  "274648": {
+   "name": "The Desert Rose",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7604,
+     "npc": "Sergeant Bly",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
+  "274652": {
+   "name": "Wall of Water",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7795,
+     "npc": "Hydromancer Velratha",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
+  "274653": {
+   "name": "Deep Ritual Girdle",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7795,
+     "npc": "Hydromancer Velratha",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
   "274654": {
    "name": "Sandfury Guillotine",
    "sources": [
@@ -3529,6 +3639,39 @@
      "type": "boss",
      "npcId": 7797,
      "npc": "Ruuzlu",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
+  "274657": {
+   "name": "Hydra Leather Legs",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 7273,
+     "npc": "Gahz'rilla",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
+  "274658": {
+   "name": "Dune Hacker",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 10082,
+     "npc": "Zerillis",
+     "zone": "Zul'Farrak"
+    }
+   ]
+  },
+  "274660": {
+   "name": "Sandarr's Shoulders",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 10080,
+     "npc": "Sandarr Dunereaver",
      "zone": "Zul'Farrak"
     }
    ]
@@ -5415,6 +5558,32 @@
      "quest": "The Saltseer Captain",
      "minLevel": 34,
      "faction": "both",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "279885": {
+   "name": "Ceremonial Mallet",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96078,
+     "quest": "A Tale Spun Around the Fire",
+     "minLevel": 30,
+     "faction": "horde",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "279887": {
+   "name": "I'lalai Flayer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96078,
+     "quest": "A Tale Spun Around the Fire",
+     "minLevel": 30,
+     "faction": "horde",
      "zone": "The Drowned City"
     }
    ]

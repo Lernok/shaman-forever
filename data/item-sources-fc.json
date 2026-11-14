@@ -1,7 +1,7 @@
 {
  "_readme": "Fuentes de misión del equipo nuevo de Forever (items) y datos de Forever de las misiones de Classic que dan equipo (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json.",
  "source": "https://foreverchanges.pro",
- "fetched": "2026-11-12",
+ "fetched": "2026-11-14",
  "items": {
   "246164": {
    "name": "Skullthumper",
@@ -3066,6 +3066,30 @@
     }
    ]
   },
+  "270078": {
+   "name": "Guardian Staff",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Hidden Chamber",
+     "questId": 2240,
+     "level": 40,
+     "requiredLevel": 35,
+     "zone": "Uldaman",
+     "dungeon": true,
+     "bands": {
+      "red": 35,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/2240"
+    }
+   ]
+  },
   "270079": {
    "name": "Witchdoctor's Dress",
    "sources": [
@@ -3182,6 +3206,52 @@
     }
    ]
   },
+  "270088": {
+   "name": "Thane's Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "An Ambassador of Evil",
+     "questId": 762,
+     "level": 44,
+     "requiredLevel": 35,
+     "zone": "Badlands",
+     "bands": {
+      "red": 35,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/762"
+    }
+   ]
+  },
+  "270089": {
+   "name": "Ironforge Agent's Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "An Ambassador of Evil",
+     "questId": 762,
+     "level": 44,
+     "requiredLevel": 35,
+     "zone": "Badlands",
+     "bands": {
+      "red": 35,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/762"
+    }
+   ]
+  },
   "270090": {
    "name": "Beggar's Leggings",
    "sources": [
@@ -3271,6 +3341,30 @@
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/1172"
+    }
+   ]
+  },
+  "270095": {
+   "name": "Medal of Valor",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Lost Tablets of Will",
+     "questId": 1139,
+     "level": 45,
+     "requiredLevel": 35,
+     "zone": "Uldaman",
+     "dungeon": true,
+     "bands": {
+      "red": 35,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/1139"
     }
    ]
   },
@@ -3365,6 +3459,29 @@
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/8551"
+    }
+   ]
+  },
+  "270101": {
+   "name": "Gnomish Floatation Device",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Rescue OOX-09/HL!",
+     "questId": 836,
+     "level": 48,
+     "requiredLevel": 43,
+     "zone": "The Hinterlands",
+     "bands": {
+      "red": 43,
+      "orange": 44,
+      "yellow": 46,
+      "green": 51,
+      "grey": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/836"
     }
    ]
   },
@@ -3616,6 +3733,73 @@
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/3528"
+    }
+   ]
+  },
+  "270120": {
+   "name": "Boots of Requite",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Love Potion",
+     "questId": 4201,
+     "level": 54,
+     "requiredLevel": 50,
+     "zone": "Blackrock Depths",
+     "dungeon": true,
+     "bands": {
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/4201"
+    }
+   ]
+  },
+  "270122": {
+   "name": "Yesterday's Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Little Help From My Friends",
+     "questId": 4491,
+     "level": 55,
+     "requiredLevel": 50,
+     "zone": "Un'Goro Crater",
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/4491"
+    }
+   ]
+  },
+  "270123": {
+   "name": "Ragnar's Favorite Hat",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Lost Thunderbrew Recipe",
+     "questId": 4134,
+     "level": 55,
+     "requiredLevel": 50,
+     "zone": "Blackrock Depths",
+     "dungeon": true,
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/4134"
     }
    ]
   },

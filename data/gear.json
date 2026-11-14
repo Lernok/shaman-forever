@@ -4261,109 +4261,6 @@
    ]
   },
   {
-   "id": 270120,
-   "name": "Boots of Requite",
-   "kind": "Mail",
-   "slot": "Feet",
-   "quality": 3,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 55,
-   "bind": "pickup",
-   "armor": 225,
-   "stats": {
-    "agility": 14,
-    "intellect": 12,
-    "spirit": 11
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_boots_plate_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270122,
-   "name": "Yesterday's Pants",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 55,
-   "bind": "pickup",
-   "armor": 126,
-   "stats": {
-    "strength": 14,
-    "stamina": 12,
-    "spirit": 9
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270123,
-   "name": "Ragnar's Favorite Hat",
-   "kind": "Leather",
-   "slot": "Head",
-   "quality": 3,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 55,
-   "bind": "pickup",
-   "armor": 128,
-   "stats": {
-    "stamina": 11
-   },
-   "bonus": {
-    "spellPower": 20,
-    "hitRating": 5
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_helmet_46",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 15999,
    "name": "Spellpower Goggles Xtreme Plus",
    "kind": "Cloth",
@@ -5670,39 +5567,6 @@
    ]
   },
   {
-   "id": 270101,
-   "name": "Gnomish Floatation Device",
-   "kind": "Leather",
-   "slot": "Feet",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 49,
-   "bind": "pickup",
-   "armor": 90,
-   "stats": {
-    "strength": 10,
-    "stamina": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_boots_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 259846,
    "name": "Wide-Brimmed Fishing Hat",
    "kind": "Cloth",
@@ -5846,40 +5710,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270095,
-   "name": "Medal of Valor",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 47,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {
-    "mp5": 2,
-    "attackPower": 12
-   },
-   "equip": [
-    "Equip: Reduces the hit chance of Fear effects against you by 2%."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_necklace_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 0,
      "rec": 0
     }
@@ -6145,39 +5975,6 @@
      },
      "faction": "both",
      "confidence": "client-data",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270089,
-   "name": "Ironforge Agent's Gloves",
-   "kind": "Leather",
-   "slot": "Hands",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 45,
-   "bind": "pickup",
-   "armor": 76,
-   "stats": {
-    "strength": 7,
-    "agility": 11
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_gauntlets_25",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 0,
      "rec": 0
     }
@@ -73311,7 +73108,7 @@
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 2
+      "steps": 3
      },
      "asap": 23,
      "rec": 25
@@ -73364,7 +73161,7 @@
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 2
+      "steps": 3
      },
      "asap": 23,
      "rec": 25
@@ -84266,7 +84063,7 @@
     "stamina": 8
    },
    "bonus": {
-    "mp5": 4
+    "mp5": 2
    },
    "equip": [],
    "use": [],
@@ -95397,7 +95194,7 @@
    "ilvl": 35,
    "bind": "pickup",
    "stats": {
-    "stamina": 13
+    "stamina": 10
    },
    "bonus": {},
    "equip": [],
@@ -126540,7 +126337,7 @@
     "stamina": 11
    },
    "bonus": {
-    "mp5": 2
+    "mp5": 3
    },
    "equip": [],
    "use": [],
@@ -126706,7 +126503,7 @@
     "stamina": 11
    },
    "bonus": {
-    "mp5": 6
+    "mp5": 3
    },
    "equip": [],
    "use": [],
@@ -127658,6 +127455,63 @@
    ]
   },
   {
+   "id": 270095,
+   "name": "Medal of Valor",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 2,
+   "req": 0,
+   "obtain": 39,
+   "ilvl": 47,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {
+    "mp5": 2,
+    "attackPower": 12
+   },
+   "equip": [
+    "Equip: Reduces the hit chance of Fear effects against you by 2%."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_necklace_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Lost Tablets of Will",
+     "questId": 1139,
+     "level": 45,
+     "requiredLevel": 35,
+     "zone": "Uldaman",
+     "dungeon": true,
+     "bands": {
+      "red": 35,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/1139",
+     "basis": {
+      "name": "Ambassador Infernus",
+      "level": 42,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 762,
+      "steps": 7
+     },
+     "asap": 37,
+     "rec": 39
+    }
+   ]
+  },
+  {
    "id": 4549,
    "name": "Seafire Band",
    "kind": "Ring",
@@ -127760,6 +127614,62 @@
       "group": false,
       "step": 670,
       "steps": 6
+     },
+     "asap": 37,
+     "rec": 39
+    }
+   ]
+  },
+  {
+   "id": 270089,
+   "name": "Ironforge Agent's Gloves",
+   "kind": "Leather",
+   "slot": "Hands",
+   "quality": 2,
+   "req": 0,
+   "obtain": 39,
+   "ilvl": 45,
+   "bind": "pickup",
+   "armor": 76,
+   "stats": {
+    "strength": 7,
+    "agility": 11
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_gauntlets_25",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "An Ambassador of Evil",
+     "questId": 762,
+     "level": 44,
+     "requiredLevel": 35,
+     "zone": "Badlands",
+     "bands": {
+      "red": 35,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/762",
+     "dungeon": true,
+     "dungeonZone": "Uldaman",
+     "basis": {
+      "name": "Ambassador Infernus",
+      "level": 42,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 7
      },
      "asap": 37,
      "rec": 39
@@ -144205,109 +144115,6 @@
    ]
   },
   {
-   "id": 274638,
-   "name": "Sandfury Pauldrons",
-   "kind": "Mail",
-   "slot": "Shoulder",
-   "quality": 3,
-   "req": 42,
-   "obtain": 42,
-   "ilvl": 47,
-   "bind": "pickup",
-   "armor": 213,
-   "stats": {
-    "intellect": 7,
-    "spirit": 11
-   },
-   "bonus": {
-    "spellPower": 15
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_shoulder_19",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 42,
-     "rec": 42
-    }
-   ]
-  },
-  {
-   "id": 274639,
-   "name": "Sacrificial Chain Vest",
-   "kind": "Mail",
-   "slot": "Chest",
-   "quality": 3,
-   "req": 42,
-   "obtain": 42,
-   "ilvl": 47,
-   "bind": "pickup",
-   "armor": 284,
-   "stats": {
-    "intellect": 6,
-    "spirit": 16
-   },
-   "bonus": {
-    "attackPower": 34
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_chest_plate12",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 42,
-     "rec": 42
-    }
-   ]
-  },
-  {
-   "id": 274641,
-   "name": "Theka's Last Breath",
-   "kind": "Trinket",
-   "slot": "Trinket",
-   "quality": 3,
-   "req": 42,
-   "obtain": 42,
-   "ilvl": 47,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {
-    "mp5": 6
-   },
-   "equip": [],
-   "use": [
-    "Use: Transform all enemies within 10 yds into scarabs, slowing movement speed by 45% for 10 sec. Qiraji and Silithid targets are stunned for 5 sec. (7 Min Cooldown)"
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_stonetablet_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 42,
-     "rec": 42
-    }
-   ]
-  },
-  {
    "id": 274648,
    "name": "The Desert Rose",
    "kind": "Trinket",
@@ -144330,11 +144137,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Sergeant Bly",
+     "npcId": 7604,
+     "zone": "Zul'Farrak",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 42,
-     "rec": 42
+     "rec": 42,
+     "basis": {
+      "name": "Sergeant Bly",
+      "level": 45,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -144364,11 +144181,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Sandarr Dunereaver",
+     "npcId": 10080,
+     "zone": "Zul'Farrak",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 42,
-     "rec": 42
+     "rec": 42,
+     "basis": {
+      "name": "Sandarr Dunereaver",
+      "level": 45,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -148168,11 +147995,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Witch Doctor Zum'rah",
+     "npcId": 7271,
+     "zone": "Zul'Farrak",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 43,
-     "rec": 43
+     "rec": 43,
+     "basis": {
+      "name": "Witch Doctor Zum'rah",
+      "level": 46,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -148203,11 +148040,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Nekrum Gutchewer",
+     "npcId": 7796,
+     "zone": "Zul'Farrak",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 43,
-     "rec": 43
+     "rec": 43,
+     "basis": {
+      "name": "Nekrum Gutchewer",
+      "level": 46,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -148235,11 +148082,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Nekrum Gutchewer",
+     "npcId": 7796,
+     "zone": "Zul'Farrak",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 43,
-     "rec": 43
+     "rec": 43,
+     "basis": {
+      "name": "Nekrum Gutchewer",
+      "level": 46,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -148269,11 +148126,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Hydromancer Velratha",
+     "npcId": 7795,
+     "zone": "Zul'Farrak",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 43,
-     "rec": 43
+     "rec": 43,
+     "basis": {
+      "name": "Hydromancer Velratha",
+      "level": 46,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -148305,11 +148172,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Hydromancer Velratha",
+     "npcId": 7795,
+     "zone": "Zul'Farrak",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 43,
-     "rec": 43
+     "rec": 43,
+     "basis": {
+      "name": "Hydromancer Velratha",
+      "level": 46,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -148340,11 +148217,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Gahz'rilla",
+     "npcId": 7273,
+     "zone": "Zul'Farrak",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 43,
-     "rec": 43
+     "rec": 43,
+     "basis": {
+      "name": "Gahz'rilla",
+      "level": 46,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -148415,6 +148302,139 @@
      "confidence": "community-untested",
      "asap": 43,
      "rec": 43
+    }
+   ]
+  },
+  {
+   "id": 274638,
+   "name": "Sandfury Pauldrons",
+   "kind": "Mail",
+   "slot": "Shoulder",
+   "quality": 3,
+   "req": 42,
+   "obtain": 43,
+   "ilvl": 47,
+   "bind": "pickup",
+   "armor": 213,
+   "stats": {
+    "intellect": 7,
+    "spirit": 11
+   },
+   "bonus": {
+    "spellPower": 15
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_shoulder_19",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Theka the Martyr",
+     "npcId": 7272,
+     "zone": "Zul'Farrak",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 42,
+     "rec": 43,
+     "basis": {
+      "name": "Theka the Martyr",
+      "level": 46,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 274639,
+   "name": "Sacrificial Chain Vest",
+   "kind": "Mail",
+   "slot": "Chest",
+   "quality": 3,
+   "req": 42,
+   "obtain": 43,
+   "ilvl": 47,
+   "bind": "pickup",
+   "armor": 284,
+   "stats": {
+    "intellect": 6,
+    "spirit": 16
+   },
+   "bonus": {
+    "attackPower": 34
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_chest_plate12",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Theka the Martyr",
+     "npcId": 7272,
+     "zone": "Zul'Farrak",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 42,
+     "rec": 43,
+     "basis": {
+      "name": "Theka the Martyr",
+      "level": 46,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 274641,
+   "name": "Theka's Last Breath",
+   "kind": "Trinket",
+   "slot": "Trinket",
+   "quality": 3,
+   "req": 42,
+   "obtain": 43,
+   "ilvl": 47,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {
+    "mp5": 6
+   },
+   "equip": [],
+   "use": [
+    "Use: Transform all enemies within 10 yds into scarabs, slowing movement speed by 45% for 10 sec. Qiraji and Silithid targets are stunned for 5 sec. (7 Min Cooldown)"
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_stonetablet_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Theka the Martyr",
+     "npcId": 7272,
+     "zone": "Zul'Farrak",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 42,
+     "rec": 43,
+     "basis": {
+      "name": "Theka the Martyr",
+      "level": 46,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -163743,6 +163763,61 @@
    ]
   },
   {
+   "id": 270101,
+   "name": "Gnomish Floatation Device",
+   "kind": "Leather",
+   "slot": "Feet",
+   "quality": 2,
+   "req": 0,
+   "obtain": 47,
+   "ilvl": 49,
+   "bind": "pickup",
+   "armor": 90,
+   "stats": {
+    "strength": 10,
+    "stamina": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_boots_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Rescue OOX-09/HL!",
+     "questId": 836,
+     "level": 48,
+     "requiredLevel": 43,
+     "zone": "The Hinterlands",
+     "bands": {
+      "red": 43,
+      "orange": 44,
+      "yellow": 46,
+      "green": 51,
+      "grey": 60
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/836",
+     "basis": {
+      "name": null,
+      "level": 48,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 485,
+      "steps": 2
+     },
+     "asap": 45,
+     "rec": 47
+    }
+   ]
+  },
+  {
    "id": 10827,
    "name": "Surveyor's Tunic",
    "kind": "Leather",
@@ -167512,7 +167587,7 @@
     "stamina": 14
    },
    "bonus": {
-    "mp5": 7
+    "mp5": 3
    },
    "equip": [],
    "use": [],
@@ -186711,6 +186786,62 @@
    ]
   },
   {
+   "id": 270123,
+   "name": "Ragnar's Favorite Hat",
+   "kind": "Leather",
+   "slot": "Head",
+   "quality": 3,
+   "req": 0,
+   "obtain": 52,
+   "ilvl": 55,
+   "bind": "pickup",
+   "armor": 128,
+   "stats": {
+    "stamina": 11
+   },
+   "bonus": {
+    "spellPower": 20,
+    "hitRating": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_helmet_46",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Lost Thunderbrew Recipe",
+     "questId": 4134,
+     "level": 55,
+     "requiredLevel": 50,
+     "zone": "Blackrock Depths",
+     "dungeon": true,
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/4134",
+     "basis": {
+      "name": "Hurley Blackbreath",
+      "level": 55,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 50,
+     "rec": 52
+    }
+   ]
+  },
+  {
    "id": 279448,
    "name": "Bloodsplattered Bandana",
    "kind": "Leather",
@@ -197368,6 +197499,115 @@
    ]
   },
   {
+   "id": 270120,
+   "name": "Boots of Requite",
+   "kind": "Mail",
+   "slot": "Feet",
+   "quality": 3,
+   "req": 0,
+   "obtain": 54,
+   "ilvl": 55,
+   "bind": "pickup",
+   "armor": 225,
+   "stats": {
+    "agility": 14,
+    "intellect": 12,
+    "spirit": 11
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_boots_plate_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Love Potion",
+     "questId": 4201,
+     "level": 54,
+     "requiredLevel": 50,
+     "zone": "Blackrock Depths",
+     "dungeon": true,
+     "bands": {
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/4201",
+     "basis": {
+      "name": "Cliff Breaker",
+      "level": 62,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 54,
+     "rec": 54
+    }
+   ]
+  },
+  {
+   "id": 270122,
+   "name": "Yesterday's Pants",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 54,
+   "ilvl": 55,
+   "bind": "pickup",
+   "armor": 126,
+   "stats": {
+    "strength": 14,
+    "stamina": 12,
+    "spirit": 9
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Little Help From My Friends",
+     "questId": 4491,
+     "level": 55,
+     "requiredLevel": 50,
+     "zone": "Un'Goro Crater",
+     "bands": {
+      "red": 50,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/4491",
+     "basis": {
+      "name": null,
+      "level": 55,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 4492,
+      "steps": 2
+     },
+     "asap": 52,
+     "rec": 54
+    }
+   ]
+  },
+  {
    "id": 281261,
    "name": "Crystal-flecked Cord",
    "kind": "Leather",
@@ -204576,13 +204816,12 @@
     "spellPower": 18
    },
    "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
     "Equip: Increases damage done to Beasts by magical spells and effects by up to 26."
    ],
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_cloth_51",
    "raceMask": -1,
    "sources": [
@@ -206170,8 +206409,7 @@
    },
    "bonus": {
     "healing": 37,
-    "spellDamage": 12,
-    "otherDamage": 23
+    "spellDamage": 12
    },
    "equip": [],
    "use": [],
@@ -229169,7 +229407,7 @@
     "stamina": 16
    },
    "bonus": {
-    "mp5": 3
+    "mp5": 4
    },
    "equip": [],
    "use": [],
@@ -229335,7 +229573,7 @@
     "stamina": 16
    },
    "bonus": {
-    "mp5": 9
+    "mp5": 4
    },
    "equip": [],
    "use": [],
@@ -237922,15 +238160,14 @@
     "stamina": 16
    },
    "bonus": {
-    "mp5": 8
+    "mp5": 5,
+    "fireDamage": 17
    },
-   "equip": [
-    "Equip: Restores 8 mana per 5 sec."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shoulder_25",
    "raceMask": -1,
    "sources": [
@@ -273601,11 +273838,11 @@
    "ilvl": 65,
    "bind": "pickup",
    "stats": {
-    "intellect": 14,
-    "spirit": 8
+    "intellect": 14
    },
    "bonus": {
-    "hitRating": 10
+    "hitRating": 10,
+    "spellPower": 9
    },
    "equip": [],
    "use": [],
@@ -273640,8 +273877,7 @@
    },
    "bonus": {
     "healing": 31,
-    "spellDamage": 10,
-    "hitRating": 10
+    "spellDamage": 10
    },
    "equip": [],
    "use": [],

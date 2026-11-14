@@ -2,6 +2,17 @@
  "_readme": "Game data changes found by scripts/sync.js, newest first (one entry per sync day that found changes).",
  "entries": [
   {
+   "date": "2026-11-14",
+   "talents": [],
+   "items": [
+    "- **Diabolic Mantle** #18757: efectos cambiados",
+    "- **Channeler's Ring** #272406: stats {\"intellect\":14,\"spirit\":8} → {\"intellect\":14}",
+    "- **Souvenir Sea Shell** #274749: stats {\"stamina\":13} → {\"stamina\":10}",
+    "- **Shaper's Robe** #287037: efectos cambiados"
+   ],
+   "build": "1.60.1.70938"
+  },
+  {
    "date": "2026-11-13",
    "talents": [],
    "items": [

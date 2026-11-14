@@ -904,7 +904,7 @@
     "rank": "normal",
     "from": "wowhead"
    },
-   "steps": 2
+   "steps": 3
   },
   "474": {
    "classes": null,
@@ -1847,6 +1847,20 @@
     "step": 731
    },
    "steps": 4
+  },
+  "762": {
+   "classes": null,
+   "minLevel": 35,
+   "faction": "alliance",
+   "instance": null,
+   "hardest": {
+    "id": 2745,
+    "name": "Ambassador Infernus",
+    "level": 42,
+    "rank": "elite",
+    "from": "wowhead"
+   },
+   "steps": 7
   },
   "765": {
    "classes": null,
@@ -9499,11 +9513,18 @@
   },
   "96078": {
    "classes": null,
-   "minLevel": null,
-   "faction": null,
+   "minLevel": 30,
+   "faction": "horde",
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": null,
+    "name": null,
+    "level": 40,
+    "rank": "normal",
+    "from": "step-level",
+    "step": 95775
+   },
+   "steps": 5
   },
   "96252": {
    "classes": null,
@@ -17565,6 +17586,12 @@
    "name": "Terrorspark",
    "level": 55,
    "rank": "rare",
+   "from": "wowhead"
+  },
+  "10080": {
+   "name": "Sandarr Dunereaver",
+   "level": 45,
+   "rank": "rare-elite",
    "from": "wowhead"
   },
   "10081": {

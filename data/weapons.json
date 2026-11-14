@@ -559,73 +559,6 @@
    ]
   },
   {
-   "id": 270078,
-   "name": "Guardian Staff",
-   "kind": "Staff",
-   "quality": 3,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 42,
-   "bind": "pickup",
-   "dps": 31.2,
-   "speed": 2.4,
-   "dmgMin": 60,
-   "dmgMax": 90,
-   "stats": {
-    "agility": 11,
-    "stamina": 11
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270088,
-   "name": "Thane's Hammer",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 45,
-   "bind": "pickup",
-   "dps": 26.6,
-   "speed": 2.2,
-   "dmgMin": 41,
-   "dmgMax": 76,
-   "stats": {
-    "intellect": 8
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 288907,
    "name": "Gutgore Ripper",
    "kind": "Dagger",
@@ -21631,6 +21564,63 @@
    ]
   },
   {
+   "id": 270078,
+   "name": "Guardian Staff",
+   "kind": "Staff",
+   "quality": 3,
+   "req": 0,
+   "obtain": 37,
+   "ilvl": 42,
+   "bind": "pickup",
+   "dps": 31.2,
+   "speed": 2.4,
+   "dmgMin": 60,
+   "dmgMax": 90,
+   "stats": {
+    "agility": 11,
+    "stamina": 11
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Hidden Chamber",
+     "questId": 2240,
+     "level": 40,
+     "requiredLevel": 35,
+     "zone": "Uldaman",
+     "dungeon": true,
+     "bands": {
+      "red": 35,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/2240",
+     "basis": {
+      "name": null,
+      "level": 40,
+      "rank": "normal",
+      "from": "step-level",
+      "group": true,
+      "step": 2398,
+      "steps": 2
+     },
+     "asap": 35,
+     "rec": 37
+    }
+   ]
+  },
+  {
    "id": 4548,
    "name": "Servomechanic Sledgehammer",
    "kind": "2H Mace",
@@ -23402,10 +23392,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/96078",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 40,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 95775,
+      "steps": 5
      },
-     "asap": 30,
+     "asap": 37,
      "rec": 39
     }
    ]
@@ -23661,10 +23656,71 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/96078",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": null,
+      "level": 40,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 95775,
+      "steps": 5
      },
-     "asap": 30,
+     "asap": 37,
+     "rec": 39
+    }
+   ]
+  },
+  {
+   "id": 270088,
+   "name": "Thane's Hammer",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 39,
+   "ilvl": 45,
+   "bind": "pickup",
+   "dps": 26.6,
+   "speed": 2.2,
+   "dmgMin": 41,
+   "dmgMax": 76,
+   "stats": {
+    "intellect": 8
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "An Ambassador of Evil",
+     "questId": 762,
+     "level": 44,
+     "requiredLevel": 35,
+     "zone": "Badlands",
+     "bands": {
+      "red": 35,
+      "orange": 40,
+      "yellow": 42,
+      "green": 47,
+      "grey": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/762",
+     "dungeon": true,
+     "dungeonZone": "Uldaman",
+     "basis": {
+      "name": "Ambassador Infernus",
+      "level": 42,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 7
+     },
+     "asap": 37,
      "rec": 39
     }
    ]
@@ -25488,11 +25544,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Zerillis",
+     "npcId": 10082,
+     "zone": "Zul'Farrak",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 42,
-     "rec": 42
+     "rec": 42,
+     "basis": {
+      "name": "Zerillis",
+      "level": 45,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -25608,11 +25674,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Sergeant Bly",
+     "npcId": 7604,
+     "zone": "Zul'Farrak",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 42,
-     "rec": 42
+     "rec": 42,
+     "basis": {
+      "name": "Sergeant Bly",
+      "level": 45,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -38476,7 +38552,7 @@
     "Chance on hit: Blasts a target for 95 to 116 Fire damage."
    ],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_sword_34",
    "raceMask": -1,
    "sources": [

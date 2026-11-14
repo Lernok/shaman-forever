@@ -78219,7 +78219,7 @@
     "Chance on hit: Blasts a target for 95 to 116 Fire damage."
    ],
    "bonus": {},
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_sword_34"
   },
   "14557": {
@@ -108210,15 +108210,14 @@
    "stats": {
     "stamina": 16
    },
-   "equip": [
-    "Equip: Restores 8 mana per 5 sec."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "mp5": 8
+    "mp5": 5,
+    "fireDamage": 17
    },
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shoulder_25"
   },
   "18758": {
@@ -160061,8 +160060,7 @@
    "chance": [],
    "bonus": {
     "healing": 37,
-    "spellDamage": 12,
-    "otherDamage": 23
+    "spellDamage": 12
    },
    "numbers": "client",
    "icon": "inv_helmet_50"
@@ -165746,7 +165744,7 @@
    "use": [],
    "chance": [],
    "bonus": {
-    "mp5": 3
+    "mp5": 4
    },
    "numbers": "client",
    "icon": "inv_jewelry_ring_28"
@@ -165792,7 +165790,7 @@
    "use": [],
    "chance": [],
    "bonus": {
-    "mp5": 2
+    "mp5": 3
    },
    "numbers": "client",
    "icon": "inv_jewelry_ring_28"
@@ -166882,7 +166880,7 @@
    "use": [],
    "chance": [],
    "bonus": {
-    "mp5": 9
+    "mp5": 4
    },
    "numbers": "client",
    "icon": "inv_jewelry_ring_28"
@@ -166905,7 +166903,7 @@
    "use": [],
    "chance": [],
    "bonus": {
-    "mp5": 7
+    "mp5": 3
    },
    "numbers": "client",
    "icon": "inv_jewelry_ring_28"
@@ -166928,7 +166926,7 @@
    "use": [],
    "chance": [],
    "bonus": {
-    "mp5": 6
+    "mp5": 3
    },
    "numbers": "client",
    "icon": "inv_jewelry_ring_28"
@@ -166951,7 +166949,7 @@
    "use": [],
    "chance": [],
    "bonus": {
-    "mp5": 4
+    "mp5": 2
    },
    "numbers": "client",
    "icon": "inv_jewelry_ring_28"
@@ -167952,14 +167950,14 @@
    "raceMask": -1,
    "era": "new",
    "stats": {
-    "intellect": 14,
-    "spirit": 8
+    "intellect": 14
    },
    "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "hitRating": 10
+    "hitRating": 10,
+    "spellPower": 9
    },
    "numbers": "client",
    "icon": "inv_jewelry_ring_24"
@@ -167984,8 +167982,7 @@
    "chance": [],
    "bonus": {
     "healing": 31,
-    "spellDamage": 10,
-    "hitRating": 10
+    "spellDamage": 10
    },
    "numbers": "client",
    "icon": "inv_jewelry_ring_60"
@@ -175475,7 +175472,7 @@
    "raceMask": -1,
    "era": "new",
    "stats": {
-    "stamina": 13
+    "stamina": 10
    },
    "equip": [],
    "use": [],
@@ -197155,7 +197152,6 @@
     "spirit": 15
    },
    "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
     "Equip: Increases damage done to Beasts by magical spells and effects by up to 26."
    ],
    "use": [],
@@ -197163,7 +197159,7 @@
    "bonus": {
     "spellPower": 18
    },
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_chest_cloth_51"
   },
   "287038": {
