@@ -345,14 +345,27 @@ local function stepDays(p)
   if R.err then p.summary:SetText(ERR[R.err] or R.err); p.list.set({}) return end
   local x = R.plan
   local lines, s = {}, {}
-  if not x and R.today then
-    s[#s + 1] = ("Entra en una sola tirada hoy: %s.  %sCon un límite de oro más bajo en \"2. Opciones\" lo reparto en días.|r"):format(coins(R.today.cost), GREY)
+  local pr = R.presets or {}
+  if pr.fast then
+    lines[#lines + 1] = { header = true, text = "Planes para comparar" }
+    local function row(label, op, key, days)
+      if not op then return end
+      local mine = (R.mode == key and (not days or R.plan == op)) and (GREEN .. "  < tu plan|r") or ""
+      lines[#lines + 1] = { text = ("%s%s|r   %d %s   %s~%s por día|r%s"):format(GOLD, label, op.days, op.days == 1 and "día" or "días", GREY, coins(op.total / op.days), mine), cost = coins(op.total),
+        btn = "Elegir", click = function() o().plan = key; if days then o().days = days end; stale = true; UI.update() end }
+    end
+    row("Lo más rápido", pr.fast, "fast")
+    row("Recomendado", pr.rec, "rec")
+    row(("Económico (hasta %d días)"):format(W.Planner.ECONOMY_DAYS), pr.cheap, "days", pr.cheap.days)
+  end
+  if x and x.days == 1 and R.today then
+    s[#s + 1] = ("Entra en una sola tirada hoy: %s, ~%d min de viaje."):format(coins(R.today.cost), mins(R.today.time))
   elseif x then
     local rest = x.days - 1
     s[#s + 1] = ("%s%d días|r   ·   ~%s en total (±1 g)%s"):format(WHITE, x.days, coins(x.total),
       R.overBudget and ("   " .. RED .. "no alcanza tu límite: es lo más barato que encontré|r") or "")
     if rest > 0 then s[#s + 1] = ("Hoy %s, después ~%s por día."):format(coins(x.costs[1]), coins((x.total - x.costs[1]) / rest)) end
-    if not R.budget then s[#s + 1] = GREY .. "Es lo más rápido. Con un límite de oro en \"2. Opciones\" lo reparto en más días, gastando menos.|r" end
+    if R.tooFew then s[#s + 1] = RED .. ("No entra en %d días: esto es lo más rápido que encontré.|r"):format(R.wantDays) end
     s[#s + 1] = GREY .. "Supone que cada día hay a la venta writs parecidos a precios parecidos.|r"
     lines[#lines + 1] = { header = true, text = "Día por día" }
     local k = 1
@@ -423,6 +436,19 @@ local function calcButton(p, y)
   button(p, "Calcular la ruta  >", 200, 14, y, function() stale = true; UI.go(3) end, 28)
 end
 
+local PLANS = {
+  { key = "rec", name = "Recomendado" },
+  { key = "fast", name = "Lo más rápido" },
+  { key = "days", name = "En X días" },
+  { key = "gold", name = "Con X de oro" },
+}
+local PLAN_HELP = {
+  rec = "Los menos días posibles (una semana como mucho) costando casi lo mismo que hacerlo en dos semanas.",
+  fast = "En los menos días posibles, aunque cueste más (rutas largas).",
+  days = "Lo más barato que entra en esa cantidad de días.",
+  gold = "Lo más rápido que entra en ese oro, repartido en días.",
+}
+
 local function buildGoal(p)
   heading(p, "¿A cuánta reputación querés llegar?", -8)
   p.faction = text(p, "GameFontNormal", 14, -42)
@@ -461,10 +487,32 @@ local function buildGoal(p)
     button(p, st.name, 100, x, -178, function() o().goal = tostring(st.value); stale = true; UI.update() end)
     x = x + 106
   end
-  p.need = text(p, "GameFontHighlight", 14, -214, 530)
+  p.need = text(p, "GameFontHighlight", 14, -210, 530)
 
-  calcButton(p, -250)
-  text(p, "GameFontHighlightSmall", 14, -290, 530):SetText(GREY .. "En \"2. Opciones\" podés poner un límite de oro, cuánto te estirás por una ruta más directa y cómo viajás.|r")
+  text(p, "GameFontNormal", 14, -240):SetText("¿Cómo querés llegar?")
+  local amount, unit, help
+  local function showAmount()
+    local m = o().plan
+    amount:SetShown(m == "days" or m == "gold")
+    unit:SetText(m == "days" and "días" or (m == "gold" and "de oro como máximo" or ""))
+    help:SetText(GREY .. (PLAN_HELP[m] or "") .. "|r")
+    amount.reload()
+  end
+  cycle(p, 150, 14, -258, PLANS, function() return o().plan end, function(v) o().plan = v; showAmount() end)
+  amount = edit(p, 44, 170, -259, function()
+    local m = o().plan
+    local v = m == "days" and o().days or (m == "gold" and o().budget or nil)
+    return v and tostring(v)
+  end, function(t)
+    local v = tonumber(t)
+    if o().plan == "days" then o().days = v and math.max(1, math.floor(v)) or 7 elseif o().plan == "gold" then o().budget = v end
+  end)
+  unit = text(p, "GameFontHighlight", 226, -262)
+  help = text(p, "GameFontHighlightSmall", 14, -286, 530)
+  showAmount()
+
+  calcButton(p, -312)
+  text(p, "GameFontHighlightSmall", 14, -348, 530):SetText(GREY .. "En \"2. Opciones\": cuánto te estirás por una ruta más directa, cómo viajás y qué zonas evitar.|r")
 end
 
 local AGES = { { key = 1, name = "De hasta 1 día" }, { key = 2, name = "De hasta 2 días" }, { key = 3, name = "De hasta 3 días" }, { key = 7, name = "De hasta 7 días" } }
@@ -476,12 +524,9 @@ local DANGERS = { { key = 0, name = "Hasta mi nivel" }, { key = 2, name = "Mi ni
 local function buildOptions(p)
   heading(p, "Opciones", -8)
   p.edits = {}
-  text(p, "GameFontNormal", 14, -44):SetText("Límite de oro (opcional)")
-  p.edits[1] = edit(p, 60, 14, -64, function() return o().budget and tostring(o().budget) end, function(t) o().budget = tonumber(t) end)
-  text(p, "GameFontHighlightSmall", 100, -68, 440):SetText(GREY .. "Vacío = la ruta más rápida. Con un límite reparto la reputación en días para gastar menos.|r")
-
+  text(p, "GameFontHighlightSmall", 14, -44, 530):SetText(GREY .. "En cuántos días o con cuánto oro se elige en \"1. Objetivo\". Acá, cómo se arma cada ruta.|r")
   text(p, "GameFontNormal", 14, -102):SetText("Me estiro hasta (oro) por una ruta más directa")
-  p.edits[2] = edit(p, 60, 14, -122, function() return tostring(o().tol) end, function(t) o().tol = tonumber(t) or 0 end)
+  p.edits[1] = edit(p, 60, 14, -122, function() return tostring(o().tol) end, function(t) o().tol = tonumber(t) or 0 end)
   text(p, "GameFontHighlightSmall", 100, -126, 440):SetText(GREY .. "0 = siempre lo más barato. 1 = pago hasta 1 g más si la ruta es más corta.|r")
 
   text(p, "GameFontNormal", 14, -162):SetText("Viaje")

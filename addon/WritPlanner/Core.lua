@@ -55,7 +55,9 @@ local function defaults()
   if o.mode == nil then o.mode = "fly" end
   if o.speed == nil then o.speed = "auto" end
   if o.maxAge == nil then o.maxAge = 2 end
-  if o.danger == nil then o.danger = 2 end -- turn-in spots with mobs up to your level + this
+  if o.danger == nil then o.danger = 2 end
+  if o.plan == nil then o.plan = "rec" end
+  if o.days == nil then o.days = 7 end -- turn-in spots with mobs up to your level + this
 end
 
 local function realm() return GetRealmName and GetRealmName() or "?" end
@@ -373,33 +375,36 @@ function W.compute()
   if #today == 0 and #later == 0 then R.err = "noprices" return R end
 
   local tol = (tonumber(o.tol) or 0) * 10000
-  local budget = tonumber(o.budget) and tonumber(o.budget) * 10000 or nil
+  local mode = o.plan or "rec"
+  local budget = mode == "gold" and tonumber(o.budget) and tonumber(o.budget) * 10000 or nil
   local travel = W.travelFn()
   local start = W.here()
   R.budget, R.tol = budget, tol
   local U = P.units(need)
   local perDay = tonumber(o.perDay)
 
-  -- One trip today?
-  local one = (not perDay or need <= perDay) and P.best(today, U, tol, start, travel) or nil
-  if one and (not budget or one.cost <= budget) then
-    R.today, R.days = one, 1
-  end
-
-  -- In days: the cheapest split for each number of days.
-  -- A day can take every writ there is, unless you set a most per day.
+  -- The cheapest split for each number of days (a day can take every writ
+  -- there is, unless you set a most per day), then the plan you asked for:
+  -- recommended, fastest, within N days, or within a gold limit.
   local cap = math.min(U, perDay and P.units(perDay) or U)
   local Tt, Tl = P.dayTable(today, cap), P.dayTable(later, cap)
-  local opts = P.days(Tt, Tl, U, tol, 60)
-  R.options = (budget or not R.today) and opts or nil
-  local fastest, cheapest = P.pickDays(opts, budget)
-  R.fastest, R.cheapest = fastest, cheapest
-  if not R.today then
-    local pickO = fastest or cheapest
-    if pickO then
-      R.days, R.plan = pickO.days, pickO
-      R.overBudget = budget and pickO.total > budget
-      R.today = P.best(today, pickO.goals[1], tol, start, travel)
+  local opts = P.days(Tt, Tl, U, tol, 30)
+  R.options, R.presets, R.mode = opts, P.presets(opts), mode
+  local chosen
+  if mode == "fast" then chosen = R.presets.fast
+  elseif mode == "days" then
+    R.wantDays = math.max(1, math.floor(tonumber(o.days) or 7))
+    chosen = P.within(opts, R.wantDays)
+    if not chosen then chosen = R.presets.fast; R.tooFew = true end
+  elseif mode == "gold" then
+    local fastest, cheapest = P.pickDays(opts, budget)
+    chosen = fastest or cheapest
+    R.overBudget = budget and chosen and chosen.total > budget
+  else chosen = R.presets.rec end
+  if chosen then
+    R.plan, R.days = chosen, chosen.days
+    if chosen.goals[1] and chosen.goals[1] > 0 then
+      R.today = P.best(today, chosen.days == 1 and U or chosen.goals[1], tol, start, travel)
     end
   end
   -- Deals: writs well under their usual price (worth buying for later days).

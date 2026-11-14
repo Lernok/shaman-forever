@@ -94,24 +94,33 @@ local function show(R)
       for _, c in ipairs(leg.stop.writs) do print(("        %s %s%s%s"):format(c.w.name, g(c.cost), c.haveItems and " (tiene el objeto)" or "", c.ratio and (" ratio " .. string.format("%.2f", c.ratio)) or "")) end
     end
   end
-  if R.plan then print(("  plan: %d días, %s"):format(R.plan.days, g(R.plan.total))) end
+  if R.plan then print(("  plan (%s): %d días, %s"):format(tostring(R.mode), R.plan.days, g(R.plan.total))) end
+  if R.presets and R.presets.fast then
+    for _, k in ipairs({ "fast", "rec", "cheap" }) do local op = R.presets[k] print(("    %-5s %2d días  %s  (~%s/día)"):format(k, op.days, g(op.total), g(op.total / op.days))) end
+  end
   if R.deals then print("  ofertas: " .. #R.deals) end
 end
 
 print("== Friendly, sin presupuesto, tolerancia 1 g")
 T0 = os.clock(); show(W.compute())
-print("== Honored sin límite (lo más rápido)")
+print("== Honored recomendado")
 WritPlannerCharDB.opts.goal = "9000"
+T0 = os.clock(); show(W.compute())
+print("== Honored en 4 días")
+WritPlannerCharDB.opts.plan = "days"; WritPlannerCharDB.opts.days = 4
+T0 = os.clock(); show(W.compute())
+print("== Honored lo más rápido")
+WritPlannerCharDB.opts.plan = "fast"
 T0 = os.clock(); show(W.compute())
 print("== Honored, máximo 2500 por día")
 WritPlannerCharDB.opts.perDay = 2500
 T0 = os.clock(); show(W.compute())
 WritPlannerCharDB.opts.perDay = nil
 print("== Honored con 30 g de presupuesto")
-WritPlannerCharDB.opts.goal = "9000"; WritPlannerCharDB.opts.budget = 30
+WritPlannerCharDB.opts.goal = "9000"; WritPlannerCharDB.opts.budget = 30; WritPlannerCharDB.opts.plan = "gold"
 T0 = os.clock(); show(W.compute())
 print("== +500, solo a pie, Shadow Oil ya entregado hoy, Kzixx sin stock de un writ")
-WritPlannerCharDB.opts.goal = "+500"; WritPlannerCharDB.opts.budget = nil; WritPlannerCharDB.opts.mode = "walk"
+WritPlannerCharDB.opts.goal = "+500"; WritPlannerCharDB.opts.budget = nil; WritPlannerCharDB.opts.plan = "rec"; WritPlannerCharDB.opts.mode = "walk"
 done[94264] = true
 W.markGone(94241)
 T0 = os.clock(); show(W.compute())

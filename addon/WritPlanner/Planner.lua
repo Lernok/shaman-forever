@@ -241,6 +241,31 @@ function P.days(todayT, laterT, need, tolerance, maxDays)
   return out
 end
 
+-- The cheapest plan that takes at most n days (nil: none can).
+function P.within(opts, n)
+  local best
+  for _, o in ipairs(opts) do if o.days <= n and (not best or o.total < best.total) then best = o end end
+  return best
+end
+
+-- Three plans to compare: the fastest; the cheapest within ECONOMY_DAYS;
+-- and the recommended one: the fewest days that cost at most
+-- RECOMMEND_MARGIN more than that cheapest (a week at most).
+P.ECONOMY_DAYS = 14
+P.RECOMMEND_MARGIN = 0.15
+function P.presets(opts)
+  if #opts == 0 then return {} end
+  local fast = opts[1]
+  local cheap = P.within(opts, P.ECONOMY_DAYS) or opts[#opts]
+  local rec
+  for d = fast.days, math.max(fast.days, 7) do
+    local o = P.within(opts, d)
+    if o and o.total <= cheap.total * (1 + P.RECOMMEND_MARGIN) then rec = o break end
+  end
+  rec = rec or P.within(opts, 7) or fast
+  return { fast = fast, rec = rec, cheap = cheap }
+end
+
 -- From the day options: the fastest that fits the budget (nil budget: the
 -- fastest of all), and the cheapest (the fewest days within 50 silver of it).
 function P.pickDays(opts, budget)
