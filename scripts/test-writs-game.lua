@@ -144,7 +144,7 @@ SlashCmdList.WRITPLANNER("")
 assert(W.UI.isOpen(), "el primer /writs tiene que abrir la ventana")
 assert(W.UI.mini and W.UI.mini:IsShown(), "falta el botón del minimapa")
 SlashCmdList.WRITPLANNER("icono"); assert(not W.UI.mini:IsShown())
-SlashCmdList.WRITPLANNER("icono"); assert(W.UI.mini:IsShown())
+W.UI.go(2); SlashCmdList.WRITPLANNER("icono"); assert(W.UI.mini:IsShown()); W.UI.go(1)
 print("  primer /writs abre, botón del minimapa ok")
 for i = 1, 4 do W.UI.go(i); local n = frames(); print("  pestaña " .. i .. " ok (" .. n .. " cuadros)") end
 -- Follow today's trip.

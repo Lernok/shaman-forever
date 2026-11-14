@@ -386,6 +386,7 @@ local function showOptions(p)
   p.flights:SetText(("Vuelos anotados: %s%d|r en los Reinos del Este y %s%d|r en Kalimdor.  %sSe anotan solos cuando abrís el mapa de vuelos.|r")
     :format(WHITE, W.flightCount(0), WHITE, W.flightCount(1), GREY))
   p.tol.reload()
+  p.mini:SetChecked(not (WritPlannerDB.minimap and WritPlannerDB.minimap.hide))
 end
 
 local function buildOptions(p)
@@ -407,6 +408,16 @@ local function buildOptions(p)
   y = field(p, -392, "Salgo desde", "Donde comprás los writs: la ruta (y dónde poner la piedra) se calcula desde ahí.")
   cycle(p, 140, 14, y, STARTS(), function() return o().from end, function(v) o().from = v end)
   p.flights = text(p, "GameFontHighlightSmall", 14, -446, WIDTH - 50)
+  -- Minimap button on or off (also "/writs icono"); /writs opens the window either way.
+  p.mini = CreateFrame("CheckButton", nil, p, "UICheckButtonTemplate")
+  p.mini:SetSize(24, 24)
+  p.mini:SetPoint("TOPLEFT", 10, -476)
+  local ml = text(p, "GameFontHighlightSmall", 38, -481, WIDTH - 80)
+  ml:SetText("Mostrar el icono en el minimapa  " .. GREY .. "(sin él, abrís el panel con /writs)|r")
+  p.mini:SetScript("OnClick", function(self)
+    local want = self:GetChecked() and true or false
+    if UI.toggleMinimap() ~= want then UI.toggleMinimap() end
+  end)
 
   local back = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
   back:SetSize(110, 28); back:SetPoint("BOTTOMLEFT", 14, 14); back:SetText("<  Volver")
@@ -730,5 +741,6 @@ function UI.toggleMinimap()
   db.minimap.hide = not db.minimap.hide
   UI.minimap()
   if UI.mini then UI.mini:SetShown(not db.minimap.hide) end
+  if frame and frame:IsShown() and current == 2 then UI.update() end
   return not db.minimap.hide
 end
