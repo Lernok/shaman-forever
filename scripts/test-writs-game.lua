@@ -108,6 +108,9 @@ W.markGone(94241)
 show(W.compute())
 print("== la ventana")
 SlashCmdList.WRITPLANNER("")
+for i = 1, 5 do W.UI.go(i) print("  paso " .. i .. " ok") end
+WritPlannerCharDB.opts.budget = 20; WritPlannerCharDB.opts.goal = "9000"; W.UI.refresh(); W.UI.go(4)
+WritPlannerCharDB.opts.budget = nil; WritPlannerCharDB.opts.goal = nil; W.UI.go(1); W.UI.go(3)
 W.search(W.compute().today)
 SlashCmdList.WRITPLANNER("vuelos")
 -- Turning in a writ without a known place records it.

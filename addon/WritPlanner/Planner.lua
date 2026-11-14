@@ -202,13 +202,14 @@ function P.days(todayT, laterT, need, tolerance, maxDays)
     end
     how[d], G = row, H
     if G[need] < INF and (#out == 0 or G[need] < out[#out].total) then
-      local goals, n = {}, need
+      local goals, costs, n = {}, {}, need
       for k = d, 1, -1 do
         local u = how[k][n]
         goals[k] = u
+        costs[k] = u > 0 and (k == 1 and f1 or f)[u] or 0
         n = n - u
       end
-      out[#out + 1] = { days = d, total = G[need], goals = goals }
+      out[#out + 1] = { days = d, total = G[need], goals = goals, costs = costs }
     end
   end
   return out
