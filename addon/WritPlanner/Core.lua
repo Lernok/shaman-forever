@@ -688,6 +688,7 @@ f:SetScript("OnEvent", function(_, event, a1)
       end)
     end
     if C_Timer then C_Timer.After(5, W.snapshot) else W.snapshot() end
+    if W.UI and W.UI.minimap then W.UI.minimap() end
   elseif event == "HEARTHSTONE_BOUND" then
     local here = W.here()
     if here then
@@ -742,6 +743,10 @@ SlashCmdList.WRITPLANNER = function(msg)
   if msg == "repu juego" then o.manualRep = nil; chat("leo la reputación del juego.") return end
   if msg == "vuelos" then
     chat(("tenés anotados %d vuelos (%d en los Reinos del Este, %d en Kalimdor)."):format(W.flightCount(), W.flightCount(0), W.flightCount(1)))
+    return
+  end
+  if msg == "icono" or msg == "minimapa" then
+    chat(W.UI.toggleMinimap() and "muestro el botón del minimapa." or "escondí el botón del minimapa (\"/writs icono\" para volver a verlo).")
     return
   end
   W.UI.toggle()

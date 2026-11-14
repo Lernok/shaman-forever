@@ -20,8 +20,11 @@ local function widget()
   end })
 end
 local events
-CreateFrame = function() local f = widget(); events = events or f; return f end
+CreateFrame = function() local f = widget(); f.shown = true; events = events or f; return f end
 UIParent, UISpecialFrames = widget(), {}
+Minimap, GameTooltip = widget(), widget()
+Minimap.GetWidth = function() return 140 end
+Minimap.GetCenter = function() return 100, 100 end
 tinsert = table.insert
 DEFAULT_CHAT_FRAME = { AddMessage = function(_, m) print("[chat] " .. m) end }
 GetRealmName = function() return "RPPvP" end
@@ -138,6 +141,11 @@ W.markGone(94241)
 T0 = os.clock(); show(W.compute())
 print("== la ventana")
 SlashCmdList.WRITPLANNER("")
+assert(W.UI.isOpen(), "el primer /writs tiene que abrir la ventana")
+assert(W.UI.mini and W.UI.mini:IsShown(), "falta el botón del minimapa")
+SlashCmdList.WRITPLANNER("icono"); assert(not W.UI.mini:IsShown())
+SlashCmdList.WRITPLANNER("icono"); assert(W.UI.mini:IsShown())
+print("  primer /writs abre, botón del minimapa ok")
 for i = 1, 4 do W.UI.go(i); local n = frames(); print("  pestaña " .. i .. " ok (" .. n .. " cuadros)") end
 -- Follow today's trip.
 local R = W.compute()

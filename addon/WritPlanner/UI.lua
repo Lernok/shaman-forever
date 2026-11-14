@@ -645,7 +645,11 @@ local function build()
     st.build(p)
   end
   frame:SetScript("OnShow", function() UI.update() end)
+  -- New frames start shown: hidden here, so the first /writs opens it instead of closing it.
+  frame:Hide()
 end
+
+function UI.isOpen() return frame ~= nil and frame:IsShown() end
 
 function UI.toggle()
   if not frame then build() end
@@ -662,4 +666,69 @@ end
 function UI.repChanged()
   stale = true
   if frame and frame:IsShown() and current == 1 then UI.update() end
+end
+
+-- Minimap button: click opens or closes the window; drag it around the minimap.
+-- "/writs icono" hides or shows it.
+function UI.minimap()
+  if not Minimap or UI.mini then return end
+  local db = WritPlannerDB
+  db.minimap = db.minimap or { angle = 200 }
+  local b = CreateFrame("Button", "WritPlannerMinimapButton", Minimap)
+  UI.mini = b
+  b:SetSize(31, 31)
+  b:SetFrameStrata("MEDIUM")
+  b:SetFrameLevel(8)
+  b:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+  b:RegisterForDrag("LeftButton")
+  b:SetHighlightTexture("Interface\Minimap\UI-Minimap-ZoomButton-Highlight")
+  local bg = b:CreateTexture(nil, "BACKGROUND")
+  bg:SetTexture("Interface\Minimap\UI-Minimap-Background")
+  bg:SetSize(20, 20)
+  bg:SetPoint("TOPLEFT", 7, -5)
+  local icon = b:CreateTexture(nil, "ARTWORK")
+  icon:SetTexture("Interface\Icons\INV_Scroll_03")
+  icon:SetSize(17, 17)
+  icon:SetPoint("TOPLEFT", 7, -6)
+  icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+  local border = b:CreateTexture(nil, "OVERLAY")
+  border:SetTexture("Interface\Minimap\MiniMap-TrackingBorder")
+  border:SetSize(53, 53)
+  border:SetPoint("TOPLEFT")
+  local function place()
+    local a = math.rad(db.minimap.angle)
+    local r = (Minimap:GetWidth() / 2) + 5
+    b:ClearAllPoints()
+    b:SetPoint("CENTER", Minimap, "CENTER", math.cos(a) * r, math.sin(a) * r)
+  end
+  local function drag()
+    local mx, my = Minimap:GetCenter()
+    local x, y = GetCursorPosition()
+    local s = Minimap:GetEffectiveScale()
+    local atan2 = math.atan2 or atan2
+    db.minimap.angle = math.deg(atan2(y / s - my, x / s - mx))
+    place()
+  end
+  b:SetScript("OnDragStart", function(self) self:SetScript("OnUpdate", drag) end)
+  b:SetScript("OnDragStop", function(self) self:SetScript("OnUpdate", nil) end)
+  b:SetScript("OnClick", function() UI.toggle() end)
+  b:SetScript("OnEnter", function(self)
+    GameTooltip:SetOwner(self, "ANCHOR_LEFT")
+    GameTooltip:AddLine("Writ Planner")
+    GameTooltip:AddLine("Clic: abrir o cerrar", 1, 1, 1)
+    GameTooltip:AddLine("Arrastrar: moverlo", 1, 1, 1)
+    GameTooltip:Show()
+  end)
+  b:SetScript("OnLeave", function() GameTooltip:Hide() end)
+  place()
+  b:SetShown(not db.minimap.hide)
+end
+
+function UI.toggleMinimap()
+  local db = WritPlannerDB
+  db.minimap = db.minimap or { angle = 200 }
+  db.minimap.hide = not db.minimap.hide
+  UI.minimap()
+  if UI.mini then UI.mini:SetShown(not db.minimap.hide) end
+  return not db.minimap.hide
 end
