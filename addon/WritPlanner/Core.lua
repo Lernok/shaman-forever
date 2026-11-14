@@ -50,7 +50,7 @@ local function defaults()
   c.gone = c.gone or {}         -- [questID] = daily reset key: "not on sale" for today
   c.opts = c.opts or {}
   local o = c.opts
-  if o.target == nil then o.target = "friendly" end
+  o.target, o.custom = nil, nil -- 0.1.0 settings
   if o.tol == nil then o.tol = 1 end
   if o.mode == nil then o.mode = "fly" end
   if o.speed == nil then o.speed = "auto" end
@@ -153,20 +153,49 @@ end
 
 -- Reputation --------------------------------------------------------------------
 
+-- Your reputation for the writs: Horde earns it with Durotar Supply and
+-- Logistics (2587), Alliance with the Azeroth Commerce Authority (2586).
+-- Returns value, faction name, read from the game (true) or typed by you.
+local function factionData(id)
+  if C_Reputation and C_Reputation.GetFactionDataByID then
+    local d = C_Reputation.GetFactionDataByID(id)
+    if d and d.name then return d.name, d.currentStanding end
+  end
+  if GetFactionInfoByID then
+    local n, _, _, _, _, v = GetFactionInfoByID(id)
+    if n then return n, v end
+  end
+end
+
+function W.gameRep()
+  local mine = UnitFactionGroup("player") == "Alliance" and 2586 or 2587
+  local name, value = factionData(mine)
+  if not value then
+    local other = mine == 2586 and 2587 or 2586
+    name, value = factionData(other)
+  end
+  return value, name
+end
+
 function W.rep()
   local o = WritPlannerCharDB.opts
-  for _, id in ipairs(W.FACTIONS) do
-    local name, value
-    if C_Reputation and C_Reputation.GetFactionDataByID then
-      local d = C_Reputation.GetFactionDataByID(id)
-      if d then name, value = d.name, d.currentStanding end
-    elseif GetFactionInfoByID then
-      local n, _, _, _, _, v = GetFactionInfoByID(id)
-      name, value = n, v
-    end
-    if name and value and (name:find("Commerce") or name:find("Comercio")) then return value, name end
+  local value, name = W.gameRep()
+  if o.manualRep then return o.manualRep, name, false end
+  if value then return value, name, true end
+end
+
+-- The goal as an absolute value: what you typed ("+500" adds to what you
+-- have), or else the next standing.
+function W.goal(cur)
+  local o = WritPlannerCharDB.opts
+  local t = o.goal and tostring(o.goal) or ""
+  local plus = tonumber(t:match("^%s*%+%s*(%d+)"))
+  if plus and cur then return cur + plus end
+  local abs = tonumber(t)
+  if abs then return abs end
+  if cur then
+    for _, s in ipairs(W.STANDINGS) do if s.value > cur then return s.value end end
   end
-  if o.manualRep then return o.manualRep, nil end
 end
 
 function W.level(value)
@@ -318,14 +347,11 @@ end
 function W.compute()
   local o = WritPlannerCharDB.opts
   local R = { }
-  local cur, fname = W.rep()
-  R.rep, R.faction = cur, fname
-  local need
-  if o.target == "custom" then
-    need = tonumber(o.custom) or 0
-  else
-    for _, s in ipairs(W.STANDINGS) do if s.key == o.target then R.goal = s; need = cur and (s.value - cur) or nil end end
-  end
+  local cur, fname, fromGame = W.rep()
+  R.rep, R.faction, R.fromGame = cur, fname, fromGame
+  local goal = W.goal(cur)
+  R.goal = goal
+  local need = cur and goal and (goal - cur) or nil
   R.need = need
   if not need then R.err = "norep" return R end
   if need <= 0 then R.err = "reached" return R end
@@ -354,7 +380,7 @@ function W.compute()
   local cap = math.min(U, 60)
   local Tt, Tl = P.table(today, cap), P.table(later, cap)
   local opts = P.days(Tt, Tl, U, tol, 60)
-  R.options = opts
+  R.options = (budget or not R.today) and opts or nil
   local fastest, cheapest = P.pickDays(opts, budget)
   R.fastest, R.cheapest = fastest, cheapest
   if not R.today then
@@ -423,6 +449,7 @@ f:RegisterEvent("PLAYER_LOGIN")
 f:RegisterEvent("TAXIMAP_OPENED")
 f:RegisterEvent("QUEST_TURNED_IN")
 f:RegisterEvent("QUEST_COMPLETE")
+f:RegisterEvent("UPDATE_FACTION")
 local lastNpc
 f:SetScript("OnEvent", function(_, event, a1)
   if event == "ADDON_LOADED" and a1 == "WritPlanner" then
@@ -440,6 +467,8 @@ f:SetScript("OnEvent", function(_, event, a1)
       end)
     end
     if C_Timer then C_Timer.After(5, W.snapshot) else W.snapshot() end
+  elseif event == "UPDATE_FACTION" then
+    if W.UI and W.UI.repChanged then W.UI.repChanged() end
   elseif event == "TAXIMAP_OPENED" then
     W.saveFlights()
   elseif event == "QUEST_COMPLETE" then
@@ -470,7 +499,8 @@ SlashCmdList.WRITPLANNER = function(msg)
   local n = tonumber(msg:match("^dias%s+(%d+)") or msg:match("^días%s+(%d+)"))
   if n then o.maxAge = n; chat(("uso precios de hasta %d días."):format(n)) return end
   local r = tonumber(msg:match("^repu%s+(%d+)"))
-  if r then o.manualRep = r; chat(("tomo %d de reputación si el juego no me la da."):format(r)) return end
+  if r then o.manualRep = r; chat(("tomo %d de reputación (\"/writs repu juego\" para volver a leerla del juego)."):format(r)) return end
+  if msg == "repu juego" then o.manualRep = nil; chat("leo la reputación del juego.") return end
   if msg == "vuelos" then
     chat(("tenés anotados %d vuelos (%d en los Reinos del Este, %d en Kalimdor)."):format(W.flightCount(), W.flightCount(0), W.flightCount(1)))
     return

@@ -34,7 +34,7 @@ UnitFactionGroup = function() return "Horde" end
 IsPlayerSpell = function() return false end
 SlashCmdList = {}
 C_Timer = { After = function(_, fn) fn() end }
-C_Reputation = { GetFactionDataByID = function(id) if id == 2586 then return { name = "Azeroth Commerce Authority", currentStanding = 2250 } end end }
+C_Reputation = { GetFactionDataByID = function(id) if id == 2587 then return { name = "Durotar Supply and Logistics", currentStanding = 2250 } end end }
 local done = { [94264] = false }
 C_QuestLog = { IsQuestFlaggedCompleted = function(q) return done[q] end, IsOnQuest = function() return false end }
 local bags = { [6048] = 1 } -- carries a Shadow Protection Potion
@@ -81,7 +81,7 @@ events.onevent(events, "TAXIMAP_OPENED")
 
 local function show(R)
   local g = W.money
-  print(("rep %s, faltan %s, días %s, err %s"):format(tostring(R.rep), tostring(R.need), tostring(R.days), tostring(R.err)))
+  print(("[%s] rep %s, meta %s, faltan %s, días %s, err %s"):format(tostring(R.faction), tostring(R.rep), tostring(R.goal), tostring(R.need), tostring(R.days), tostring(R.err)))
   if R.today then
     print(("  hoy: %d rep, %s, %d min"):format(R.today.rep, g(R.today.cost), R.today.time / 60))
     for _, leg in ipairs(R.today.route) do
@@ -95,11 +95,14 @@ end
 
 print("== Friendly, sin presupuesto, tolerancia 1 g")
 show(W.compute())
+print("== Honored sin límite (lo más rápido)")
+WritPlannerCharDB.opts.goal = "9000"
+show(W.compute())
 print("== Honored con 30 g de presupuesto")
-WritPlannerCharDB.opts.target = "honored"; WritPlannerCharDB.opts.budget = 30
+WritPlannerCharDB.opts.goal = "9000"; WritPlannerCharDB.opts.budget = 30
 show(W.compute())
 print("== +500, solo a pie, Shadow Oil ya entregado hoy, Kzixx sin stock de un writ")
-WritPlannerCharDB.opts.target = "custom"; WritPlannerCharDB.opts.custom = 500; WritPlannerCharDB.opts.budget = nil; WritPlannerCharDB.opts.mode = "walk"
+WritPlannerCharDB.opts.goal = "+500"; WritPlannerCharDB.opts.budget = nil; WritPlannerCharDB.opts.mode = "walk"
 done[94264] = true
 W.markGone(94241)
 show(W.compute())

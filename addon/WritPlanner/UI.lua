@@ -6,7 +6,7 @@ local P = W.Planner
 local UI = {}
 W.UI = UI
 
-local frame, rows, summary, repText, last
+local frame, rows, summary, repText, last, haveBox, goalBox, goalText
 local money = W.money
 
 local function o() return WritPlannerCharDB.opts end
@@ -56,9 +56,6 @@ local function cycle(parent, w, x, y, list, get, set)
   return b
 end
 
-local TARGETS = {}
-for _, s in ipairs(W.STANDINGS) do TARGETS[#TARGETS + 1] = { key = s.key, name = "Hasta " .. s.name } end
-TARGETS[#TARGETS + 1] = { key = "custom", name = "Cantidad (+)" }
 local MODES = { { key = "fly", name = "Con vuelos" }, { key = "walk", name = "Solo a pie" } }
 
 local function mins(s) return math.max(1, math.floor(s / 60 + 0.5)) end
@@ -116,7 +113,7 @@ end
 -- Refresh --------------------------------------------------------------------------
 
 local ERR = {
-  norep = "No pude leer tu reputación con la Azeroth Commerce Authority. Escribí /writs repu <número> con la que tenés.",
+  norep = "Escribí cuánta reputación tenés en \"Tengo\" y a cuánto querés llegar.",
   reached = "Ya llegaste a ese objetivo.",
   noauc = "Necesitás Auctionator instalado y un escaneo de la subasta.",
   noprices = "No hay precios de writs en tu Auctionator: hacé un escaneo completo en la subasta.",
@@ -127,13 +124,21 @@ function UI.refresh()
   local R = W.compute()
   last = R
   local lines = {}
-  -- Reputation line.
+  -- Reputation line and the boxes.
   if R.rep then
     local name, into, size = W.level(R.rep)
-    repText:SetText(("Reputación: |cffffffff%s %d / %d|r"):format(name, into, size) ..
-      (R.need and R.need > 0 and ("   Te faltan |cffffffff%d|r"):format(R.need) or ""))
+    local where = R.fromGame and "|cff33dd33leída del juego|r" or "|cffffcc00escrita por vos|r"
+    repText:SetText(("%s: |cffffffff%s %d / %d|r  (%s)"):format(R.faction or "Reputación", name, into, size, where))
   else
-    repText:SetText("Reputación: ?")
+    repText:SetText("|cffffcc00No pude leer tu reputación: escribila en \"Tengo\".|r")
+  end
+  if not haveBox:HasFocus() then haveBox:SetText(R.rep and tostring(R.rep) or "") end
+  if not goalBox:HasFocus() then goalBox:SetText(o().goal and tostring(o().goal) or (R.goal and tostring(R.goal) or "")) end
+  if R.goal then
+    local gname, ginto = W.level(R.goal)
+    goalText:SetText(("= %s %d%s"):format(gname, ginto, R.need and R.need > 0 and ("   |cffffffffte faltan %d|r"):format(R.need) or ""))
+  else
+    goalText:SetText("")
   end
   if R.err then
     summary:SetText(ERR[R.err] or R.err)
@@ -149,6 +154,7 @@ function UI.refresh()
     local x = R.plan
     s[#s + 1] = ("En |cffffffff%d días|r: ~%s en total (±1 g)%s."):format(x.days, money(x.total), R.overBudget and " |cffff5555(no alcanza tu presupuesto: es lo más barato)|r" or "")
     if plan then s[#s + 1] = ("Hoy: %d de reputación por ~%s, ~%d min de viaje."):format(plan.rep, money(plan.cost), mins(plan.time)) end
+    if not R.budget then s[#s + 1] = "|cffaaaaaaEs lo más rápido. Poné un límite de oro y lo reparto en más días, más barato.|r" end
   else
     s[#s + 1] = "No encontré una forma de llegar con los writs que tienen precio y lugar conocido."
   end
@@ -213,7 +219,7 @@ end
 
 local function build()
   frame = CreateFrame("Frame", "WritPlannerFrame", UIParent, "BasicFrameTemplateWithInset")
-  frame:SetSize(540, 560)
+  frame:SetSize(560, 580)
   frame:SetPoint("CENTER")
   frame:SetMovable(true)
   frame:EnableMouse(true)
@@ -227,42 +233,56 @@ local function build()
 
   repText = label(frame, "", 14, -32)
 
-  label(frame, "Objetivo:", 14, -58)
-  local amount
-  cycle(frame, 130, 90, -54, TARGETS, function() return o().target end, function(v)
-    o().target = v
-    if amount then amount:SetShown(v == "custom") end
+  label(frame, "Tengo:", 14, -58)
+  haveBox = edit(frame, 60, 70, -55, function() return o().manualRep and tostring(o().manualRep) end, function(t)
+    local v = tonumber(t)
+    local game = W.gameRep()
+    -- Typing what the game already says keeps reading it from the game.
+    if v and v ~= game then o().manualRep = v elseif not v or v == game then o().manualRep = nil end
   end)
-  amount = edit(frame, 60, 228, -55, function() return o().custom and tostring(o().custom) end, function(t) o().custom = tonumber(t) end)
-  amount:SetShown(o().target == "custom")
+  button(frame, "Del juego", 76, 136, -54, function() o().manualRep = nil; UI.refresh() end)
 
-  label(frame, "Presupuesto (oro):", 300, -58)
-  edit(frame, 50, 440, -55, function() return o().budget and tostring(o().budget) end, function(t) o().budget = tonumber(t) end)
+  label(frame, "Quiero llegar a:", 222, -58)
+  goalBox = edit(frame, 60, 330, -55, function() return o().goal and tostring(o().goal) end, function(t)
+    t = (t or ""):gsub("^%s+", ""):gsub("%s+$", "")
+    o().goal = (t ~= "" and (tonumber(t) or t:match("^%+%s*%d+$"))) and t or nil
+  end)
+  goalText = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+  goalText:SetPoint("TOPLEFT", 396, -58)
+  local x = 14
+  for _, st in ipairs(W.STANDINGS) do
+    local b = button(frame, st.name, 92, x, -78, function() o().goal = tostring(st.value); UI.refresh() end)
+    b:SetHeight(18)
+    x = x + 96
+  end
+  label(frame, "o \"+500\"", x + 2, -80)
 
-  label(frame, "Me estiro hasta (oro) por una ruta más directa:", 14, -84)
-  edit(frame, 40, 340, -81, function() return tostring(o().tol) end, function(t) o().tol = tonumber(t) or 0 end)
+  label(frame, "Límite de oro (opcional):", 14, -104)
+  edit(frame, 50, 180, -101, function() return o().budget and tostring(o().budget) end, function(t) o().budget = tonumber(t) end)
+  label(frame, "Me estiro hasta (oro) por una ruta más directa:", 240, -104)
+  edit(frame, 34, 494, -101, function() return tostring(o().tol) end, function(t) o().tol = tonumber(t) or 0 end)
 
-  label(frame, "Viaje:", 14, -110)
-  cycle(frame, 100, 60, -106, MODES, function() return o().mode end, function(v) o().mode = v end)
-  label(frame, "Velocidad:", 172, -110)
-  cycle(frame, 120, 250, -106, W.SPEEDS, function() return o().speed end, function(v) o().speed = v end)
+  label(frame, "Viaje:", 14, -128)
+  cycle(frame, 100, 60, -124, MODES, function() return o().mode end, function(v) o().mode = v end)
+  label(frame, "Velocidad:", 172, -128)
+  cycle(frame, 120, 250, -124, W.SPEEDS, function() return o().speed end, function(v) o().speed = v end)
 
-  button(frame, "Calcular", 90, 14, -134, function() UI.refresh() end)
-  button(frame, "Buscar en la subasta", 160, 110, -134, function() W.search(last and last.today) end)
-  button(frame, "Ver todo de nuevo", 130, 276, -134, function()
+  button(frame, "Calcular", 90, 14, -150, function() UI.refresh() end)
+  button(frame, "Buscar en la subasta", 160, 110, -150, function() W.search(last and last.today) end)
+  button(frame, "Ver todo de nuevo", 130, 276, -150, function()
     WritPlannerCharDB.gone = {}
     UI.refresh()
   end)
 
   summary = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-  summary:SetPoint("TOPLEFT", 14, -164)
+  summary:SetPoint("TOPLEFT", 14, -178)
   summary:SetWidth(510)
   summary:SetJustifyH("LEFT")
   summary:SetJustifyV("TOP")
   summary:SetHeight(90)
 
   local scroll = CreateFrame("ScrollFrame", nil, frame, "UIPanelScrollFrameTemplate")
-  scroll:SetPoint("TOPLEFT", 10, -258)
+  scroll:SetPoint("TOPLEFT", 10, -272)
   scroll:SetPoint("BOTTOMRIGHT", -30, 12)
   frame.list = CreateFrame("Frame", nil, scroll)
   frame.list:SetSize(500, 1)
@@ -274,4 +294,9 @@ end
 function UI.toggle()
   if not frame then build() end
   if frame:IsShown() then frame:Hide() else frame:Show() end
+end
+
+-- The reputation changed in game (or the reputation window was opened): redo the plan.
+function UI.repChanged()
+  if frame and frame:IsShown() then UI.refresh() end
 end
