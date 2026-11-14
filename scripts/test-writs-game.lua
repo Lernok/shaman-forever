@@ -126,7 +126,7 @@ W.markGone(94241)
 T0 = os.clock(); show(W.compute())
 print("== la ventana")
 SlashCmdList.WRITPLANNER("")
-for i = 1, 6 do W.UI.go(i); local n = frames(); print("  pestaña " .. i .. " ok (" .. n .. " cuadros)") end
+for i = 1, 4 do W.UI.go(i); local n = frames(); print("  pestaña " .. i .. " ok (" .. n .. " cuadros)") end
 -- Follow today's trip.
 local R = W.compute()
 print(("fuera por peligro: %d"):format(R.skipped.danger))
@@ -134,13 +134,13 @@ W.lock(R.today)
 local route, doneN, total = W.lockedRoute()
 print(("siguiendo: %d paradas, %d de %d entregados"):format(#route, doneN, total))
 for _, st in ipairs(W.steps(route)) do print("   " .. st.text) end
-W.UI.go(4)
+W.UI.go(4); frames()
 -- Turn in the first stop's writs: the arrow moves on.
 for _, c in ipairs(route[1].stop.writs) do done[c.w.q] = true; events.onevent(events, "QUEST_TURNED_IN", c.w.q) end
 route, doneN = W.lockedRoute()
 print(("después de entregar: %d paradas, %d entregados"):format(#route, doneN))
-WritPlannerCharDB.opts.budget = 20; WritPlannerCharDB.opts.goal = "9000"; W.UI.refresh(); W.UI.go(4)
-WritPlannerCharDB.opts.budget = nil; WritPlannerCharDB.opts.goal = nil; W.UI.go(1); W.UI.go(3)
+WritPlannerCharDB.opts.budget = 20; WritPlannerCharDB.opts.goal = "9000"; W.UI.refresh(); W.UI.go(3); frames()
+WritPlannerCharDB.opts.budget = nil; WritPlannerCharDB.opts.goal = nil; W.UI.go(1); W.UI.go(3); frames()
 W.search(W.compute().today)
 SlashCmdList.WRITPLANNER("vuelos")
 -- Turning in a writ without a known place records it.

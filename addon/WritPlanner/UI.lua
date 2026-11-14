@@ -1,7 +1,8 @@
--- Writ Planner window, in steps (tabs): 1 goal, 2 options, 3 today's trip,
--- 4 the plan in days, 5 deals. Opening it only reads your reputation; the
--- route is worked out when you press "Calcular" (or open a result tab after
--- changing something).
+-- Writ Planner window, four steps: 1 goal, 2 options (then "Calcular"),
+-- 3 the plan (how to get there, today's trip, the next days, deals), 4 step
+-- by step. Opening it only reads your reputation; the route is worked out in
+-- the background when you ask for it. Rows grow to fit their text: a line in
+-- white and the details under it in grey.
 local W = WritPlanner
 local D = WritPlanner_DATA
 local UI = {}
@@ -12,6 +13,7 @@ local current = 1
 local o = function() return WritPlannerCharDB.opts end
 
 local GREY, WHITE, GOLD, GREEN, RED, YELLOW = "|cffa0a0a0", "|cffffffff", "|cffffd100", "|cff40e040", "|cffff5555", "|cffffcc00"
+local WIDTH = 620
 
 -- Money with coin icons, rounded to the silver.
 local function coins(c)
@@ -23,6 +25,7 @@ end
 UI.coins = coins
 
 local function mins(s) return math.max(1, math.floor(s / 60 + 0.5)) end
+local function days(n) return n == 1 and "1 día" or (n .. " días") end
 
 -- Widgets ---------------------------------------------------------------------
 
@@ -85,60 +88,81 @@ local function heading(parent, label, y)
   return fs
 end
 
--- A scrolling list of rows: { text, cost, icon, btn, click, header }.
-local ROW_H = 20
+-- A label, a control under it, and a grey explanation beside the control.
+local function field(parent, y, title, helpText)
+  text(parent, "GameFontNormal", 14, y):SetText(title)
+  if helpText then text(parent, "GameFontHighlightSmall", 170, y - 22, 420):SetText(GREY .. helpText .. "|r") end
+  return y - 18
+end
+
+-- A scrolling list. Each line: { text, sub, cost, icon, btn, click, kind =
+-- "section" | "stop" | nil }. Rows are as tall as their text.
 local function list(parent, top, bottom)
   local scroll = CreateFrame("ScrollFrame", nil, parent, "UIPanelScrollFrameTemplate")
   scroll:SetPoint("TOPLEFT", 8, top)
   scroll:SetPoint("BOTTOMRIGHT", -30, bottom)
+  local inner = WIDTH - 60
   local child = CreateFrame("Frame", nil, scroll)
-  child:SetSize(520, 1)
+  child:SetSize(inner, 1)
   scroll:SetScrollChild(child)
   local rows = {}
   local L = {}
   function L.set(lines)
+    local y = 0
     for i, l in ipairs(lines) do
       local r = rows[i]
       if not r then
         r = CreateFrame("Frame", nil, child)
-        r:SetSize(520, ROW_H)
-        r:SetPoint("TOPLEFT", 0, -(i - 1) * ROW_H)
+        r:SetWidth(inner)
         r.bg = r:CreateTexture(nil, "BACKGROUND")
         r.bg:SetAllPoints()
         r.icon = r:CreateTexture(nil, "ARTWORK")
-        r.icon:SetSize(16, 16)
-        r.icon:SetPoint("LEFT", 22, 0)
-        r.text = r:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-        r.text:SetJustifyH("LEFT")
-        r.text:SetWordWrap(false)
-        r.cost = r:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-        r.cost:SetPoint("RIGHT", -92, 0)
+        r.icon:SetSize(18, 18)
+        r.main = r:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+        r.main:SetJustifyH("LEFT")
+        r.sub = r:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+        r.sub:SetJustifyH("LEFT")
+        r.cost = r:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
         r.cost:SetJustifyH("RIGHT")
         r.btn = CreateFrame("Button", nil, r, "UIPanelButtonTemplate")
-        r.btn:SetSize(84, 18)
-        r.btn:SetPoint("RIGHT", -4, 0)
+        r.btn:SetSize(74, 20)
+        r.btn:SetPoint("TOPRIGHT", -4, -3)
         rows[i] = r
       end
-      r.text:ClearAllPoints()
-      if l.header then
-        r.bg:SetColorTexture(1, 0.82, 0, 0.12)
-        r.icon:Hide()
-        r.text:SetPoint("LEFT", 6, 0)
-        r.text:SetFontObject("GameFontNormal")
+      local left = 8
+      if l.kind == "section" then
+        r.bg:SetColorTexture(1, 0.82, 0, 0.16)
+        r.main:SetFontObject("GameFontNormal")
+      elseif l.kind == "stop" then
+        r.bg:SetColorTexture(1, 1, 1, 0.07)
+        r.main:SetFontObject("GameFontNormal")
       else
-        r.bg:SetColorTexture(1, 1, 1, (i % 2 == 0) and 0.03 or 0)
-        r.text:SetFontObject("GameFontHighlightSmall")
-        if l.icon then
-          r.icon:SetTexture(l.icon)
-          r.icon:Show()
-          r.text:SetPoint("LEFT", 44, 0)
-        else
-          r.icon:Hide()
-          r.text:SetPoint("LEFT", 22, 0)
-        end
+        r.bg:SetColorTexture(0, 0, 0, 0)
+        r.main:SetFontObject("GameFontHighlight")
+        left = 22
       end
-      r.text:SetPoint("RIGHT", r.cost, "LEFT", -6, 0)
-      r.text:SetText(l.text or "")
+      if l.icon then
+        r.icon:SetTexture(l.icon)
+        r.icon:ClearAllPoints()
+        r.icon:SetPoint("TOPLEFT", left, -4)
+        r.icon:Show()
+        left = left + 24
+      else
+        r.icon:Hide()
+      end
+      local right = (l.btn and 82 or 6) + (l.cost and 86 or 0)
+      local w = inner - left - right
+      r.main:ClearAllPoints()
+      r.main:SetPoint("TOPLEFT", left, -5)
+      r.main:SetWidth(w)
+      r.main:SetText(l.text or "")
+      r.sub:ClearAllPoints()
+      r.sub:SetPoint("TOPLEFT", r.main, "BOTTOMLEFT", 0, -2)
+      r.sub:SetWidth(w)
+      r.sub:SetText(l.sub and (GREY .. l.sub .. "|r") or "")
+      r.cost:ClearAllPoints()
+      r.cost:SetPoint("TOPRIGHT", -(l.btn and 82 or 6), -6)
+      r.cost:SetWidth(84)
       r.cost:SetText(l.cost or "")
       if l.btn then
         r.btn:SetText(l.btn)
@@ -147,10 +171,17 @@ local function list(parent, top, bottom)
       else
         r.btn:Hide()
       end
+      local h = 10 + (r.main:GetStringHeight() or 14) + (l.sub and ((r.sub:GetStringHeight() or 12) + 2) or 0)
+      if l.btn and h < 26 then h = 26 end
+      if l.kind == "section" and i > 1 then y = y + 8 end
+      r:SetHeight(h)
+      r:ClearAllPoints()
+      r:SetPoint("TOPLEFT", 0, -y)
+      y = y + h + 1
       r:Show()
     end
     for i = #lines + 1, #rows do rows[i]:Hide() end
-    child:SetHeight(math.max(1, #lines * ROW_H))
+    child:SetHeight(math.max(1, y))
   end
   return L
 end
@@ -160,22 +191,33 @@ local function icon(id)
   return GetItemIcon and GetItemIcon(id)
 end
 
-local function tag(c)
-  if not c.ratio then return "" end
-  local pct = math.floor((c.ratio - 1) * 100 + 0.5)
-  if c.ratio <= 0.7 then return "  " .. GREEN .. pct .. "% vs. lo normal|r" end
-  if c.ratio >= 1.4 then return "  " .. RED .. "+" .. pct .. "% vs. lo normal|r" end
-  return ""
+-- The details of a writ in a few words.
+local function writSub(c)
+  local t = { c.w.rep .. " de reputación" }
+  local stock = W.stock(c.w.w)
+  if stock then t[#t + 1] = "hay " .. stock .. " a la venta" end
+  if c.haveWrit and c.haveItems then t[#t + 1] = GREEN .. "ya lo tenés todo" .. GREY
+  elseif c.haveWrit then t[#t + 1] = GREEN .. "writ ya comprado" .. GREY end
+  if c.ratio and c.ratio <= 0.7 then t[#t + 1] = GREEN .. math.floor((1 - c.ratio) * 100 + 0.5) .. "% más barato que lo normal" .. GREY
+  elseif c.ratio and c.ratio >= 1.4 then t[#t + 1] = RED .. math.floor((c.ratio - 1) * 100 + 0.5) .. "% más caro que lo normal" .. GREY end
+  return table.concat(t, "  ·  ")
 end
 
-local function dangerTag(d)
-  if not d or d == 0 then return "" end
+local function dangerText(d)
+  if not d or d == 0 then return nil end
   local lvl = UnitLevel("player") or 60
   local color = d > lvl + 1 and RED or (d >= lvl - 2 and YELLOW or GREY)
-  return "  " .. color .. "bichos ~" .. d .. "|r"
+  return color .. "zona con bichos nivel ~" .. d .. GREY
 end
 
--- Steps -------------------------------------------------------------------------
+local function legText(leg)
+  if leg.boat then return "barco o zeppelin"
+  elseif leg.flight then return ("vuelo de %s a %s"):format(D.nodes[leg.flight.from].name:match("^[^,]+"), D.nodes[leg.flight.to].name:match("^[^,]+"))
+  elseif leg.leg > 0 then return "a pie" end
+  return "primera parada"
+end
+
+-- Planning ----------------------------------------------------------------------
 
 -- Works the plan out in the background (a little each frame) and shows the
 -- open tab again when it's ready. Returns the plan, or nil while working.
@@ -188,15 +230,12 @@ local function compute()
     ticker = function()
       local ok, res = coroutine.resume(job)
       if not ok then
-        job = nil
-        stale = false
-        last = { err = "bug", msg = tostring(res) }
+        job, stale = nil, false
+        last = { err = "bug" }
         W.chat("error al calcular: " .. tostring(res))
         UI.update()
       elseif coroutine.status(job) == "dead" then
-        job = nil
-        stale = false
-        last = res
+        job, stale, last = nil, false, res
         UI.update()
       else
         C_Timer.After(0, ticker)
@@ -206,20 +245,35 @@ local function compute()
   end
   return nil
 end
-local function busy(p)
-  p.summary:SetText(GOLD .. "Calculando…|r")
-  p.list.set({})
-end
 
 local ERR = {
-  norep = "Escribí cuánta reputación tenés en el paso 1.",
-  reached = "Ya llegaste a ese objetivo: elegí otro en el paso 1.",
+  norep = "Escribí cuánta reputación tenés en \"1. Objetivo\".",
+  reached = "Ya llegaste a ese objetivo: elegí otro en \"1. Objetivo\".",
   noauc = "Necesitás Auctionator instalado y un escaneo de la subasta.",
   bug = "Algo falló al calcular (te dejé el error en el chat; pasáselo a quien te dio el addon).",
   noprices = "No hay precios de writs en tu Auctionator: hacé un escaneo completo en la subasta.",
 }
 
-local function stepGoal(p)
+local PLANS = {
+  { key = "rec", name = "Recomendado" },
+  { key = "fast", name = "Lo más rápido" },
+  { key = "days", name = "En X días" },
+  { key = "gold", name = "Con X de oro" },
+}
+local PLAN_HELP = {
+  rec = "Los menos días posibles (una semana como mucho) costando casi lo mismo que hacerlo en dos semanas.",
+  fast = "En los menos días posibles, aunque cueste más (rutas largas).",
+  days = "Lo más barato que entra en esa cantidad de días.",
+  gold = "Lo más rápido que entra en ese oro, repartido en días.",
+}
+local MODES = { { key = "fly", name = "Con vuelos" }, { key = "walk", name = "Solo a pie" } }
+local AGES = { { key = 1, name = "De hasta 1 día" }, { key = 2, name = "De hasta 2 días" }, { key = 3, name = "De hasta 3 días" }, { key = 7, name = "De hasta 7 días" } }
+local DANGERS = { { key = 0, name = "Hasta mi nivel" }, { key = 2, name = "Mi nivel +2" }, { key = 4, name = "Mi nivel +4" }, { key = 99, name = "Sin límite" } }
+local PERDAY = { { key = nil, name = "Sin máximo" }, { key = 750, name = "Hasta 750" }, { key = 1500, name = "Hasta 1500" }, { key = 2500, name = "Hasta 2500" }, { key = 4000, name = "Hasta 4000" } }
+
+-- Step 1: goal ----------------------------------------------------------------------
+
+local function showGoal(p)
   local cur, name, fromGame = W.rep()
   p.faction:SetText(name or "Reputación de los writs")
   if cur then
@@ -227,7 +281,7 @@ local function stepGoal(p)
     p.bar:SetMinMaxValues(0, size)
     p.bar:SetValue(into)
     p.barText:SetText(("%s  %d / %d"):format(lname, into, size))
-    p.source:SetText(fromGame and (GREEN .. "Leída del juego|r") or (YELLOW .. "La escribiste vos|r  " .. GREY .. "(\"Del juego\" para volver a leerla)|r"))
+    p.source:SetText(fromGame and (GREEN .. "Leída del juego|r") or (YELLOW .. "La escribiste vos|r  " .. GREY .. "(\"Del juego\" vuelve a leerla)|r"))
   else
     p.bar:SetMinMaxValues(0, 1)
     p.bar:SetValue(0)
@@ -240,80 +294,241 @@ local function stepGoal(p)
   if goal and cur then
     local gname, ginto = W.level(goal)
     local need = goal - cur
-    p.need:SetText(need > 0 and ("Objetivo: %s%s %d|r   ·   Te faltan %s%d|r de reputación."):format(WHITE, gname, ginto, WHITE, need) or (GREEN .. "Ya llegaste a ese objetivo.|r"))
+    p.need:SetText(need > 0 and ("Objetivo: %s%s %d|r   ·   te faltan %s%d|r"):format(WHITE, gname, ginto, WHITE, need) or (GREEN .. "Ya llegaste a ese objetivo.|r"))
   else
     p.need:SetText("")
   end
+  p.showAmount()
 end
 
-local function stepOptions(p)
-  p.flights:SetText(("Vuelos anotados: %s%d|r en los Reinos del Este, %s%d|r en Kalimdor.  %sSe anotan solos cuando abrís el mapa de vuelos.|r")
+local function buildGoal(p)
+  heading(p, "¿A dónde querés llegar?", -8)
+  p.faction = text(p, "GameFontNormal", 14, -42)
+  local bar = CreateFrame("StatusBar", nil, p)
+  bar:SetPoint("TOPLEFT", 14, -62)
+  bar:SetSize(WIDTH - 50, 18)
+  bar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
+  bar:SetStatusBarColor(0.1, 0.65, 0.2)
+  local bg = bar:CreateTexture(nil, "BACKGROUND")
+  bg:SetAllPoints()
+  bg:SetColorTexture(0, 0, 0, 0.5)
+  p.bar = bar
+  p.barText = bar:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+  p.barText:SetPoint("CENTER")
+  p.source = text(p, "GameFontHighlightSmall", 14, -86)
+
+  text(p, "GameFontNormal", 14, -122):SetText("Tengo")
+  p.have = edit(p, 70, 130, -118, function()
+    local v = W.rep()
+    return v and tostring(v)
+  end, function(t)
+    local v = tonumber(t)
+    local game = W.gameRep()
+    if v and v ~= game then o().manualRep = v else o().manualRep = nil end
+  end)
+  button(p, "Del juego", 90, 216, -117, function() o().manualRep = nil; stale = true; UI.update() end)
+
+  text(p, "GameFontNormal", 14, -154):SetText("Quiero llegar a")
+  p.goalBox = edit(p, 70, 130, -150, function() return o().goal end, function(t)
+    t = (t or ""):gsub("^%s+", ""):gsub("%s+$", "")
+    o().goal = (t ~= "" and (tonumber(t) or t:match("^%+%s*%d+$"))) and t or nil
+  end)
+  text(p, "GameFontHighlightSmall", 216, -154, 380):SetText(GREY .. "un número, o \"+500\" para sumar a lo que tenés|r")
+  local x = 14
+  for _, st in ipairs(W.STANDINGS) do
+    button(p, st.name, 100, x, -178, function() o().goal = tostring(st.value); stale = true; UI.update() end)
+    x = x + 106
+  end
+  p.need = text(p, "GameFontHighlight", 14, -210, WIDTH - 50)
+
+  heading(p, "¿En cuánto tiempo?", -244)
+  local amount, unit, help
+  p.showAmount = function()
+    local m = o().plan
+    amount:SetShown(m == "days" or m == "gold")
+    unit:SetText((m == "days" and "días") or (m == "gold" and "de oro como máximo") or "")
+    help:SetText(GREY .. (PLAN_HELP[m] or "") .. "|r")
+    amount.reload()
+  end
+  cycle(p, 150, 14, -278, PLANS, function() return o().plan end, function(v) o().plan = v; p.showAmount() end)
+  amount = edit(p, 44, 170, -279, function()
+    local m = o().plan
+    local v = (m == "days" and o().days) or (m == "gold" and o().budget) or nil
+    return v and tostring(v)
+  end, function(t)
+    local v = tonumber(t)
+    if o().plan == "days" then o().days = v and math.max(1, math.floor(v)) or 7 elseif o().plan == "gold" then o().budget = v end
+  end)
+  unit = text(p, "GameFontHighlight", 226, -282)
+  help = text(p, "GameFontHighlightSmall", 14, -308, WIDTH - 50)
+
+  local nxt = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
+  nxt:SetSize(160, 28); nxt:SetPoint("BOTTOMRIGHT", -14, 14); nxt:SetText("Siguiente  >")
+  nxt:SetScript("OnClick", function() UI.go(2) end)
+end
+
+-- Step 2: options -------------------------------------------------------------------
+
+local function showOptions(p)
+  p.flights:SetText(("Vuelos anotados: %s%d|r en los Reinos del Este y %s%d|r en Kalimdor.  %sSe anotan solos cuando abrís el mapa de vuelos.|r")
     :format(WHITE, W.flightCount(0), WHITE, W.flightCount(1), GREY))
-  for _, e in ipairs(p.edits) do e.reload() end
+  p.tol.reload()
 end
 
-local function stepToday(p)
+local function buildOptions(p)
+  heading(p, "¿Cómo armo las rutas?", -8)
+  local y = field(p, -42, "Me estiro hasta (oro)", "por una ruta más corta. 0 = siempre lo más barato; 1 = pago hasta 1 g más si me ahorra viaje.")
+  p.tol = edit(p, 60, 14, y, function() return tostring(o().tol) end, function(t) o().tol = tonumber(t) or 0 end)
+  y = field(p, -92, "Viaje", "Con vuelos usa los que tenés anotados; la velocidad automática mira si tenés montura o Ghost Wolf.")
+  cycle(p, 140, 14, y, MODES, function() return o().mode end, function(v) o().mode = v end)
+  y = field(p, -142, "Velocidad", nil)
+  cycle(p, 140, 14, y, W.SPEEDS, function() return o().speed end, function(v) o().speed = v end)
+  y = field(p, -192, "Zonas peligrosas", "Saca los writs que se entregan entre bichos de más nivel que esto.")
+  cycle(p, 140, 14, y, DANGERS, function() return o().danger end, function(v) o().danger = v end)
+  y = field(p, -242, "Reputación por día", "Sin máximo = lo más rápido (rutas largas). Con un máximo, días más cortos y más días.")
+  cycle(p, 140, 14, y, PERDAY, function() return o().perDay end, function(v) o().perDay = v end)
+  y = field(p, -292, "Precios", "Qué tan viejos pueden ser los precios de tu Auctionator.")
+  cycle(p, 140, 14, y, AGES, function() return o().maxAge end, function(v) o().maxAge = v end)
+  p.flights = text(p, "GameFontHighlightSmall", 14, -348, WIDTH - 50)
+
+  local back = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
+  back:SetSize(110, 28); back:SetPoint("BOTTOMLEFT", 14, 14); back:SetText("<  Volver")
+  back:SetScript("OnClick", function() UI.go(1) end)
+  local calc = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
+  calc:SetSize(180, 28); calc:SetPoint("BOTTOMRIGHT", -14, 14); calc:SetText("Calcular la ruta  >")
+  calc:SetScript("OnClick", function() stale = true; UI.go(3) end)
+end
+
+-- Step 3: the plan ----------------------------------------------------------------
+
+local function showPlan(p)
   local R = compute()
-  if not R then return busy(p) end
+  if not R then p.summary:SetText(GOLD .. "Calculando…|r"); p.list.set({}) return end
   if R.err then p.summary:SetText(ERR[R.err] or R.err); p.list.set({}) return end
-  local plan = R.today
+  local x, plan = R.plan, R.today
   local s = {}
-  if not plan then
-    s[#s + 1] = "No encontré una ruta con los writs que tienen precio y lugar conocido."
+  if x then
+    local gname = R.goal and W.level(R.goal) or "?"
+    local line = ("%sLlegás a %s en %s|r   ·   ~%s en total"):format(WHITE, gname, days(x.days), coins(x.days == 1 and plan and plan.cost or x.total))
+    if x.days > 1 then line = line .. ("   ·   hoy %s, después ~%s por día"):format(coins(x.costs[1]), coins((x.total - x.costs[1]) / (x.days - 1))) end
+    s[#s + 1] = line
+    if R.overBudget then s[#s + 1] = RED .. "No alcanza tu límite de oro: es lo más barato que encontré.|r" end
+    if R.tooFew then s[#s + 1] = RED .. ("No entra en %s: es lo más rápido que encontré.|r"):format(days(R.wantDays)) end
   else
-    s[#s + 1] = ("%sHoy:|r %s%d|r de reputación   ·   %s   ·   ~%d min   ·   %d paradas"):format(GOLD, WHITE, plan.rep, coins(plan.cost), mins(plan.time), #plan.route)
-    if R.days and R.days > 1 and R.plan then
-      local rest = R.plan.days - 1
-      local perDay = rest > 0 and (R.plan.total - plan.cost) / rest or 0
-      s[#s + 1] = ("Llegás en %s%d días|r: hoy %s y después ~%s por día (total ~%s, ±1 g).  %sDetalle en \"5. Por días\".|r")
-        :format(WHITE, R.plan.days, coins(plan.cost), coins(perDay), coins(R.plan.total), GREY)
-    end
-    if plan.cost > plan.cheapest then
-      s[#s + 1] = GREY .. ("La más barata costaba %s pero con un viaje más largo (te estirás hasta %s).|r"):format(coins(plan.cheapest), coins(R.tol))
-    end
+    s[#s + 1] = "No encontré un plan con los writs que tienen precio y lugar conocido."
   end
   local sk = R.skipped
   if sk and (sk.done + sk.gone + sk.old + sk.danger) > 0 then
-    s[#s + 1] = GREY .. ("Afuera hoy: %d ya entregados, %d sin stock, %d con precio viejo, %d en lugares muy peligrosos para tu nivel.|r"):format(sk.done, sk.gone, sk.old, sk.danger)
+    local t = {}
+    if sk.done > 0 then t[#t + 1] = sk.done .. " ya entregados hoy" end
+    if sk.danger > 0 then t[#t + 1] = sk.danger .. " en zonas peligrosas" end
+    if sk.gone > 0 then t[#t + 1] = sk.gone .. " sin stock" end
+    if sk.old > 0 then t[#t + 1] = sk.old .. " con precio viejo" end
+    s[#s + 1] = GREY .. "Dejé afuera: " .. table.concat(t, ", ") .. ".|r"
   end
-  s[#s + 1] = GREY .. "Aceptá cada writ recién al salir: según las guías tiene 9 horas de plazo.|r"
   p.summary:SetText(table.concat(s, "\n"))
 
   local lines = {}
+  -- How to get there.
+  local pr = R.presets or {}
+  if pr.fast then
+    lines[#lines + 1] = { kind = "section", text = "Cómo llegar" }
+    local function row(label, op, key, d)
+      if not op then return end
+      local mine = R.plan == op and R.mode == key
+      lines[#lines + 1] = {
+        text = (mine and GREEN or WHITE) .. label .. "|r",
+        sub = ("%s   ·   ~%s por día%s"):format(days(op.days), coins(op.total / op.days), mine and "   ·   tu plan" or ""),
+        cost = coins(op.total),
+        btn = not mine and "Elegir" or nil,
+        click = function() o().plan = key; if d then o().days = d end; stale = true; UI.update() end,
+      }
+    end
+    row("Lo más rápido", pr.fast, "fast")
+    row("Recomendado", pr.rec, "rec")
+    row(("Económico (hasta %d días)"):format(W.Planner.ECONOMY_DAYS), pr.cheap, "days", pr.cheap.days)
+  end
+  -- Today's trip.
   if plan then
+    lines[#lines + 1] = { kind = "section", text = ("Hoy: %d de reputación, ~%d min de viaje, %d paradas"):format(plan.rep, mins(plan.time), #plan.route), cost = coins(plan.cost) }
+    if plan.cost > plan.cheapest then
+      lines[#lines + 1] = { text = GREY .. ("La más barata costaba %s pero con un viaje más largo.|r"):format(coins(plan.cheapest)) }
+    end
     for i, leg in ipairs(plan.route) do
       local st = leg.stop
       local z = D.zones[st.zone]
-      local how
-      if leg.boat then how = "barco o zeppelin"
-      elseif leg.flight then how = ("vuelo %s > %s"):format(D.nodes[leg.flight.from].name:match("^[^,]+"), D.nodes[leg.flight.to].name:match("^[^,]+"))
-      elseif leg.leg > 0 then how = "a pie"
-      else how = "primera parada" end
+      local sub = { (leg.leg > 0 and ("+" .. mins(leg.leg) .. " min, ") or "") .. legText(leg) }
+      local d = dangerText(st.writs[1].danger)
+      if d then sub[#sub + 1] = d end
       lines[#lines + 1] = {
-        header = true,
-        text = ("%d. %s  %s%s (%.0f, %.0f)|r   %s%s|r"):format(i, z.name, WHITE, st.npc or "?", st.x, st.y, GREY, leg.leg > 0 and ("+" .. mins(leg.leg) .. " min, " .. how) or how) .. dangerTag(st.writs[1].danger),
+        kind = "stop",
+        text = ("%d. %s  ·  %s%s|r  (%.0f, %.0f)"):format(i, z.name, WHITE, st.npc or "?", st.x, st.y),
+        sub = table.concat(sub, "   ·   "),
         btn = "Mapa", click = function() W.pin(st) end,
       }
       for _, c in ipairs(st.writs) do
-        local have = (c.haveWrit and c.haveItems) and (GREEN .. "  ya lo tenés|r") or (c.haveWrit and (GREEN .. "  writ comprado|r") or "")
-        local stock = W.stock(c.w.w)
         lines[#lines + 1] = {
-          icon = icon(c.w.i),
-          text = ("%s  %s%d rep%s|r%s%s"):format(c.w.name, GREY, c.w.rep, stock and (" · hay " .. stock) or "", have, tag(c)),
-          cost = coins(c.cost),
+          icon = icon(c.w.i), text = c.w.name, sub = writSub(c), cost = coins(c.cost),
           btn = not (c.haveWrit and c.haveItems) and "No hay" or nil,
           click = function() W.markGone(c.w.q); stale = true; UI.update() end,
         }
       end
     end
   end
+  -- The next days.
+  if x and x.days > 1 then
+    lines[#lines + 1] = { kind = "section", text = "Los días siguientes" }
+    local k = 2
+    while k <= #x.goals do
+      local j = k
+      while j < #x.goals and x.goals[j + 1] == x.goals[k] do j = j + 1 end
+      if x.goals[k] > 0 then
+        lines[#lines + 1] = {
+          text = j > k and ("Días %d a %d"):format(k, j) or ("Día %d"):format(k),
+          sub = ("%d de reputación%s"):format(x.goals[k] * W.Planner.UNIT, j > k and " por día" or ""),
+          cost = coins(x.costs[k]) .. (j > k and "/día" or ""),
+        }
+      end
+      k = j + 1
+    end
+    lines[#lines + 1] = { text = GREY .. "Supone que cada día hay a la venta writs parecidos a precios parecidos. Mañana te armo la ruta del día con los precios de ese día.|r" }
+  end
+  -- Deals.
+  if R.deals and #R.deals > 0 then
+    lines[#lines + 1] = { kind = "section", text = "Muy baratos hoy (para comprar y entregar otro día)" }
+    for i = 1, math.min(5, #R.deals) do
+      local c = R.deals[i]
+      lines[#lines + 1] = { icon = icon(c.w.i), text = c.w.name, sub = D.zones[c.zone].name .. "  ·  " .. writSub(c), cost = coins(c.cost) }
+    end
+  end
   p.list.set(lines)
 end
 
-local function stepGuide(p)
+local function buildPlan(p)
+  p.summary = text(p, "GameFontHighlight", 14, -8, WIDTH - 40)
+  p.summary:SetJustifyV("TOP")
+  p.summary:SetHeight(56)
+  if p.summary.SetSpacing then p.summary:SetSpacing(3) end
+  p.list = list(p, -66, 46)
+  local b1 = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
+  b1:SetSize(170, 26); b1:SetPoint("BOTTOMLEFT", 10, 12); b1:SetText("Buscar en la subasta")
+  b1:SetScript("OnClick", function() W.search(last and last.today) end)
+  local b3 = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
+  b3:SetSize(150, 26); b3:SetPoint("LEFT", b1, "RIGHT", 6, 0); b3:SetText("Mostrar los \"No hay\"")
+  b3:SetScript("OnClick", function() WritPlannerCharDB.gone = {}; stale = true; UI.update() end)
+  local b2 = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
+  b2:SetSize(180, 26); b2:SetPoint("BOTTOMRIGHT", -14, 12); b2:SetText("Usar esta ruta  >")
+  b2:SetScript("OnClick", function()
+    if last and last.today then W.lock(last.today); UI.go(4) end
+  end)
+end
+
+-- Step 4: step by step ------------------------------------------------------------
+
+local function showGuide(p)
   local route, done, total = W.lockedRoute()
   if not route then
-    p.summary:SetText("Todavía no elegiste la ruta de hoy.\n" .. GREY .. "En \"3. Ruta de hoy\" tocá \"Usar esta ruta\": desde ahí te guío parada por parada, y la flecha pasa sola a la siguiente cuando entregás.|r")
+    p.summary:SetText("Todavía no elegiste la ruta de hoy.\n" .. GREY .. "En \"3. Plan\" tocá \"Usar esta ruta\": te guío parada por parada y la flecha pasa sola a la siguiente cuando entregás.|r")
     p.list.set({})
     return
   end
@@ -322,102 +537,52 @@ local function stepGuide(p)
     p.list.set({})
     return
   end
-  local s = { ("%sRuta de hoy:|r %d de %d writs entregados.   Próxima parada: %s%s|r (%s)"):format(GOLD, done, total, WHITE, route[1].stop.npc or "?", D.zones[route[1].stop.zone].name) }
-  s[#s + 1] = GREY .. "Se recalcula desde donde estás cada vez que abrís esta pestaña o entregás un writ.|r"
-  p.summary:SetText(table.concat(s, "\n"))
+  p.summary:SetText(("%sEntregaste %d de %d.|r   Próxima: %s%s|r en %s\n%sAceptá cada writ recién al salir (según las guías tiene 9 horas de plazo). Se recalcula desde donde estás.|r")
+    :format(WHITE, done, total, GOLD, route[1].stop.npc or "?", D.zones[route[1].stop.zone].name, GREY))
   local lines = {}
   local first = route[1].stop
-  for n, st in ipairs(W.steps(route)) do
+  local n = 0
+  local steps = W.steps(route)
+  for i, st in ipairs(steps) do
     local now = st.stop == first
-    local mark = now and (GOLD .. "> |r") or ""
     if st.kind == "go" then
-      lines[#lines + 1] = { header = true, text = mark .. n .. ". " .. st.text, btn = "Mapa", click = function() W.pin(st.stop) end }
-    else
-      lines[#lines + 1] = { text = mark .. (now and WHITE or "") .. n .. ". " .. st.text .. "|r" }
+      n = n + 1
+      local turn = steps[i + 1] and steps[i + 1].kind == "turnin" and steps[i + 1].text or nil
+      lines[#lines + 1] = {
+        kind = "stop",
+        text = (now and (GREEN .. "Ahora:  |r") or "") .. st.text,
+        sub = turn,
+        btn = "Mapa", click = function() W.pin(st.stop) end,
+      }
+    elseif st.kind ~= "turnin" then
+      lines[#lines + 1] = { text = st.text }
     end
   end
   p.list.set(lines)
 end
 
-local function stepDays(p)
-  local R = compute()
-  if not R then return busy(p) end
-  if R.err then p.summary:SetText(ERR[R.err] or R.err); p.list.set({}) return end
-  local x = R.plan
-  local lines, s = {}, {}
-  local pr = R.presets or {}
-  if pr.fast then
-    lines[#lines + 1] = { header = true, text = "Planes para comparar" }
-    local function row(label, op, key, days)
-      if not op then return end
-      local mine = (R.mode == key and (not days or R.plan == op)) and (GREEN .. "  < tu plan|r") or ""
-      lines[#lines + 1] = { text = ("%s%s|r   %d %s   %s~%s por día|r%s"):format(GOLD, label, op.days, op.days == 1 and "día" or "días", GREY, coins(op.total / op.days), mine), cost = coins(op.total),
-        btn = "Elegir", click = function() o().plan = key; if days then o().days = days end; stale = true; UI.update() end }
-    end
-    row("Lo más rápido", pr.fast, "fast")
-    row("Recomendado", pr.rec, "rec")
-    row(("Económico (hasta %d días)"):format(W.Planner.ECONOMY_DAYS), pr.cheap, "days", pr.cheap.days)
-  end
-  if x and x.days == 1 and R.today then
-    s[#s + 1] = ("Entra en una sola tirada hoy: %s, ~%d min de viaje."):format(coins(R.today.cost), mins(R.today.time))
-  elseif x then
-    local rest = x.days - 1
-    s[#s + 1] = ("%s%d días|r   ·   ~%s en total (±1 g)%s"):format(WHITE, x.days, coins(x.total),
-      R.overBudget and ("   " .. RED .. "no alcanza tu límite: es lo más barato que encontré|r") or "")
-    if rest > 0 then s[#s + 1] = ("Hoy %s, después ~%s por día."):format(coins(x.costs[1]), coins((x.total - x.costs[1]) / rest)) end
-    if R.tooFew then s[#s + 1] = RED .. ("No entra en %d días: esto es lo más rápido que encontré.|r"):format(R.wantDays) end
-    s[#s + 1] = GREY .. "Supone que cada día hay a la venta writs parecidos a precios parecidos.|r"
-    lines[#lines + 1] = { header = true, text = "Día por día" }
-    local k = 1
-    while k <= #x.goals do
-      local j = k
-      while k > 1 and j < #x.goals and x.goals[j + 1] == x.goals[k] do j = j + 1 end
-      local label = k == 1 and "Hoy" or (j > k and ("Días %d a %d"):format(k, j) or ("Día %d"):format(k))
-      if x.goals[k] > 0 then
-        lines[#lines + 1] = { text = ("%s%s|r   %d de reputación%s"):format(GOLD, label, x.goals[k] * W.Planner.UNIT, j > k and " por día" or ""), cost = coins(x.costs[k]) .. (j > k and " por día" or "") }
-      end
-      k = j + 1
-    end
-  else
-    s[#s + 1] = "No encontré un plan en días con estos precios."
-  end
-  if R.options and #R.options > 1 then
-    lines[#lines + 1] = { header = true, text = "Cuánto cuesta según los días" }
-    for _, op in ipairs(R.options) do
-      if #lines < 60 then
-        lines[#lines + 1] = { text = ("%d días   %s~%s por día|r"):format(op.days, GREY, coins(op.total / op.days)), cost = coins(op.total) }
-      end
-    end
-  end
-  p.summary:SetText(table.concat(s, "\n"))
-  p.list.set(lines)
+local function buildGuide(p)
+  p.summary = text(p, "GameFontHighlight", 14, -8, WIDTH - 40)
+  p.summary:SetJustifyV("TOP")
+  p.summary:SetHeight(56)
+  if p.summary.SetSpacing then p.summary:SetSpacing(3) end
+  p.list = list(p, -66, 46)
+  local g1 = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
+  g1:SetSize(200, 26); g1:SetPoint("BOTTOMLEFT", 10, 12); g1:SetText("Flecha a la próxima parada")
+  g1:SetScript("OnClick", function() local r = W.lockedRoute(); if r and r[1] then W.pin(r[1].stop) end end)
+  local g2 = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
+  g2:SetSize(150, 26); g2:SetPoint("BOTTOMRIGHT", -14, 12); g2:SetText("Dejar de seguirla")
+  g2:SetScript("OnClick", function() WritPlannerCharDB.locked = nil; UI.update() end)
 end
-
-local function stepDeals(p)
-  local R = compute()
-  if not R then return busy(p) end
-  if R.err then p.summary:SetText(ERR[R.err] or R.err); p.list.set({}) return end
-  p.summary:SetText("Writs mucho más baratos que lo normal en tu servidor, comparado con tus escaneos de los días anteriores.\n" ..
-    GREY .. "Sirven para comprar hoy y entregar otro día. Hacen falta al menos 3 días de escaneos para saber qué es lo normal.|r")
-  local lines = {}
-  for i = 1, math.min(30, #(R.deals or {})) do
-    local c = R.deals[i]
-    lines[#lines + 1] = { icon = icon(c.w.i), text = ("%s  %s%s · %d rep|r%s"):format(c.w.name, GREY, D.zones[c.zone].name, c.w.rep, tag(c)), cost = coins(c.cost) }
-  end
-  if #lines == 0 then lines[1] = { text = GREY .. "Nada fuera de lo normal todavía.|r" } end
-  p.list.set(lines)
-end
-
-local STEPS = {
-  { name = "1. Objetivo", show = stepGoal },
-  { name = "2. Opciones", show = stepOptions },
-  { name = "3. Ruta de hoy", show = stepToday },
-  { name = "4. Paso a paso", show = stepGuide },
-  { name = "5. Por días", show = stepDays },
-  { name = "Ofertas", show = stepDeals },
-}
 
 -- Window ---------------------------------------------------------------------------
+
+local STEPS = {
+  { name = "1. Objetivo", build = buildGoal, show = showGoal },
+  { name = "2. Opciones", build = buildOptions, show = showOptions },
+  { name = "3. Plan", build = buildPlan, show = showPlan },
+  { name = "4. Paso a paso", build = buildGuide, show = showGuide },
+}
 
 function UI.update()
   if not frame or not frame:IsShown() then return end
@@ -432,131 +597,9 @@ function UI.go(i)
   UI.update()
 end
 
-local function calcButton(p, y)
-  button(p, "Calcular la ruta  >", 200, 14, y, function() stale = true; UI.go(3) end, 28)
-end
-
-local PLANS = {
-  { key = "rec", name = "Recomendado" },
-  { key = "fast", name = "Lo más rápido" },
-  { key = "days", name = "En X días" },
-  { key = "gold", name = "Con X de oro" },
-}
-local PLAN_HELP = {
-  rec = "Los menos días posibles (una semana como mucho) costando casi lo mismo que hacerlo en dos semanas.",
-  fast = "En los menos días posibles, aunque cueste más (rutas largas).",
-  days = "Lo más barato que entra en esa cantidad de días.",
-  gold = "Lo más rápido que entra en ese oro, repartido en días.",
-}
-
-local function buildGoal(p)
-  heading(p, "¿A cuánta reputación querés llegar?", -8)
-  p.faction = text(p, "GameFontNormal", 14, -42)
-  local bar = CreateFrame("StatusBar", nil, p)
-  bar:SetPoint("TOPLEFT", 14, -62)
-  bar:SetSize(530, 18)
-  bar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
-  bar:SetStatusBarColor(0.1, 0.65, 0.2)
-  local bg = bar:CreateTexture(nil, "BACKGROUND")
-  bg:SetAllPoints()
-  bg:SetColorTexture(0, 0, 0, 0.5)
-  p.bar = bar
-  p.barText = bar:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-  p.barText:SetPoint("CENTER")
-  p.source = text(p, "GameFontHighlightSmall", 14, -86)
-
-  text(p, "GameFontNormal", 14, -122):SetText("Tengo:")
-  p.have = edit(p, 70, 130, -118, function()
-    local v = W.rep()
-    return v and tostring(v)
-  end, function(t)
-    local v = tonumber(t)
-    local game = W.gameRep()
-    if v and v ~= game then o().manualRep = v else o().manualRep = nil end
-  end)
-  button(p, "Del juego", 90, 216, -117, function() o().manualRep = nil; stale = true; UI.update() end)
-
-  text(p, "GameFontNormal", 14, -154):SetText("Quiero llegar a:")
-  p.goalBox = edit(p, 70, 130, -150, function() return o().goal end, function(t)
-    t = (t or ""):gsub("^%s+", ""):gsub("%s+$", "")
-    o().goal = (t ~= "" and (tonumber(t) or t:match("^%+%s*%d+$"))) and t or nil
-  end)
-  text(p, "GameFontHighlightSmall", 216, -154):SetText(GREY .. "un número, o \"+500\" para sumar a lo que tenés|r")
-  local x = 14
-  for _, st in ipairs(W.STANDINGS) do
-    button(p, st.name, 100, x, -178, function() o().goal = tostring(st.value); stale = true; UI.update() end)
-    x = x + 106
-  end
-  p.need = text(p, "GameFontHighlight", 14, -210, 530)
-
-  text(p, "GameFontNormal", 14, -240):SetText("¿Cómo querés llegar?")
-  local amount, unit, help
-  local function showAmount()
-    local m = o().plan
-    amount:SetShown(m == "days" or m == "gold")
-    unit:SetText(m == "days" and "días" or (m == "gold" and "de oro como máximo" or ""))
-    help:SetText(GREY .. (PLAN_HELP[m] or "") .. "|r")
-    amount.reload()
-  end
-  cycle(p, 150, 14, -258, PLANS, function() return o().plan end, function(v) o().plan = v; showAmount() end)
-  amount = edit(p, 44, 170, -259, function()
-    local m = o().plan
-    local v = m == "days" and o().days or (m == "gold" and o().budget or nil)
-    return v and tostring(v)
-  end, function(t)
-    local v = tonumber(t)
-    if o().plan == "days" then o().days = v and math.max(1, math.floor(v)) or 7 elseif o().plan == "gold" then o().budget = v end
-  end)
-  unit = text(p, "GameFontHighlight", 226, -262)
-  help = text(p, "GameFontHighlightSmall", 14, -286, 530)
-  showAmount()
-
-  calcButton(p, -312)
-  text(p, "GameFontHighlightSmall", 14, -348, 530):SetText(GREY .. "En \"2. Opciones\": cuánto te estirás por una ruta más directa, cómo viajás y qué zonas evitar.|r")
-end
-
-local AGES = { { key = 1, name = "De hasta 1 día" }, { key = 2, name = "De hasta 2 días" }, { key = 3, name = "De hasta 3 días" }, { key = 7, name = "De hasta 7 días" } }
-local MODES = { { key = "fly", name = "Con vuelos" }, { key = "walk", name = "Solo a pie" } }
-
-local PERDAY = { { key = nil, name = "Sin máximo" }, { key = 750, name = "Hasta 750" }, { key = 1500, name = "Hasta 1500" }, { key = 2500, name = "Hasta 2500" }, { key = 4000, name = "Hasta 4000" } }
-local DANGERS = { { key = 0, name = "Hasta mi nivel" }, { key = 2, name = "Mi nivel +2" }, { key = 4, name = "Mi nivel +4" }, { key = 99, name = "Sin límite" } }
-
-local function buildOptions(p)
-  heading(p, "Opciones", -8)
-  p.edits = {}
-  text(p, "GameFontHighlightSmall", 14, -44, 530):SetText(GREY .. "En cuántos días o con cuánto oro se elige en \"1. Objetivo\". Acá, cómo se arma cada ruta.|r")
-  text(p, "GameFontNormal", 14, -102):SetText("Me estiro hasta (oro) por una ruta más directa")
-  p.edits[1] = edit(p, 60, 14, -122, function() return tostring(o().tol) end, function(t) o().tol = tonumber(t) or 0 end)
-  text(p, "GameFontHighlightSmall", 100, -126, 440):SetText(GREY .. "0 = siempre lo más barato. 1 = pago hasta 1 g más si la ruta es más corta.|r")
-
-  text(p, "GameFontNormal", 14, -162):SetText("Viaje")
-  cycle(p, 120, 14, -180, MODES, function() return o().mode end, function(v) o().mode = v end)
-  text(p, "GameFontNormal", 150, -162):SetText("Velocidad")
-  cycle(p, 130, 150, -180, W.SPEEDS, function() return o().speed end, function(v) o().speed = v end)
-  text(p, "GameFontNormal", 296, -162):SetText("Precios")
-  cycle(p, 140, 296, -180, AGES, function() return o().maxAge end, function(v) o().maxAge = v end)
-  text(p, "GameFontNormal", 14, -214):SetText("Lugares de entrega con bichos de nivel")
-  cycle(p, 140, 14, -232, DANGERS, function() return o().danger end, function(v) o().danger = v end)
-  text(p, "GameFontHighlightSmall", 164, -236, 380):SetText(GREY .. "Saca los writs que se entregan entre bichos más altos que eso (lo que hay alrededor del NPC).|r")
-  text(p, "GameFontNormal", 14, -266):SetText("Reputación por día, como máximo")
-  cycle(p, 140, 14, -284, PERDAY, function() return o().perDay end, function(v) o().perDay = v end)
-  text(p, "GameFontHighlightSmall", 164, -288, 380):SetText(GREY .. "Sin máximo = lo más rápido posible (rutas largas). Con un máximo, cada día es más corto y tarda más días.|r")
-  p.flights = text(p, "GameFontHighlightSmall", 14, -318, 530)
-
-  calcButton(p, -346)
-end
-
-local function buildResult(p, bottom)
-  p.summary = text(p, "GameFontHighlight", 14, -8, 540)
-  p.summary:SetJustifyV("TOP")
-  p.summary:SetHeight(90)
-  if p.summary.SetSpacing then p.summary:SetSpacing(3) end
-  p.list = list(p, -104, bottom)
-end
-
 local function build()
   frame = CreateFrame("Frame", "WritPlannerFrame", UIParent, "BasicFrameTemplateWithInset")
-  frame:SetSize(590, 600)
+  frame:SetSize(WIDTH, 620)
   frame:SetPoint("CENTER")
   frame:SetMovable(true)
   frame:EnableMouse(true)
@@ -568,44 +611,18 @@ local function build()
   tinsert(UISpecialFrames, "WritPlannerFrame")
   if frame.TitleText then frame.TitleText:SetText("Writ Planner") end
 
-  local x = 10
+  local w = math.floor((WIDTH - 20 - 3 * 4) / #STEPS)
   for i, st in ipairs(STEPS) do
-    local w = i == 6 and 70 or 96
-    tabs[i] = button(frame, st.name, w, x, -28, function() UI.go(i) end, 24)
-    x = x + w + 4
+    tabs[i] = button(frame, st.name, w, 10 + (i - 1) * (w + 4), -28, function() UI.go(i) end, 26)
   end
-  for i = 1, #STEPS do
+  for i, st in ipairs(STEPS) do
     local p = CreateFrame("Frame", nil, frame)
-    p:SetPoint("TOPLEFT", 4, -58)
-    p:SetPoint("BOTTOMRIGHT", -4, 6)
+    p:SetPoint("TOPLEFT", 4, -62)
+    p:SetPoint("BOTTOMRIGHT", -4, 4)
     p:Hide()
     panels[i] = p
+    st.build(p)
   end
-  buildGoal(panels[1])
-  buildOptions(panels[2])
-  buildResult(panels[3], 42)
-  buildResult(panels[4], 42)
-  buildResult(panels[5], 8)
-  buildResult(panels[6], 8)
-  local p4 = panels[4]
-  local g1 = CreateFrame("Button", nil, p4, "UIPanelButtonTemplate")
-  g1:SetSize(190, 24); g1:SetPoint("BOTTOMLEFT", 10, 10); g1:SetText("Flecha a la próxima parada")
-  g1:SetScript("OnClick", function() local r = W.lockedRoute(); if r and r[1] then W.pin(r[1].stop) end end)
-  local g2 = CreateFrame("Button", nil, p4, "UIPanelButtonTemplate")
-  g2:SetSize(150, 24); g2:SetPoint("LEFT", g1, "RIGHT", 6, 0); g2:SetText("Dejar de seguirla")
-  g2:SetScript("OnClick", function() WritPlannerCharDB.locked = nil; UI.update() end)
-  local p3 = panels[3]
-  local b1 = CreateFrame("Button", nil, p3, "UIPanelButtonTemplate")
-  b1:SetSize(170, 24); b1:SetPoint("BOTTOMLEFT", 10, 10); b1:SetText("Buscar en la subasta")
-  b1:SetScript("OnClick", function() W.search(last and last.today) end)
-  local b2 = CreateFrame("Button", nil, p3, "UIPanelButtonTemplate")
-  b2:SetSize(150, 24); b2:SetPoint("LEFT", b1, "RIGHT", 6, 0); b2:SetText("Usar esta ruta  >")
-  b2:SetScript("OnClick", function()
-    if last and last.today then W.lock(last.today); UI.go(4) end
-  end)
-  local b3 = CreateFrame("Button", nil, p3, "UIPanelButtonTemplate")
-  b3:SetSize(190, 24); b3:SetPoint("LEFT", b2, "RIGHT", 6, 0); b3:SetText("Volver a mostrar los \"No hay\"")
-  b3:SetScript("OnClick", function() WritPlannerCharDB.gone = {}; stale = true; UI.update() end)
   frame:SetScript("OnShow", function() UI.update() end)
 end
 
