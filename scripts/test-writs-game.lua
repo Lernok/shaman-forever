@@ -170,3 +170,15 @@ events.onevent(events, "QUEST_COMPLETE")
 events.onevent(events, "QUEST_TURNED_IN", unknown.q)
 print("aprendido: " .. tostring(unknown.z) .. " " .. tostring(unknown.npc))
 print("OK")
+
+-- Texture paths need "\\" in Lua strings: a lone "\M" turns into "M" and the
+-- texture comes out blank (the minimap button was invisible in 0.8.1).
+for _, file in ipairs({ "addon/WritPlanner/UI.lua", "addon/WritPlanner/Core.lua" }) do
+  local n = 0
+  for line in io.lines(file) do
+    n = n + 1
+    local s = line:gsub("\\\\", ""):gsub("\\[ntr]", "")
+    assert(not s:find("\\%a"), file .. ":" .. n .. " tiene una barra sola: " .. line)
+  end
+end
+print("rutas de texturas ok")
