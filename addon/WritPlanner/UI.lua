@@ -97,9 +97,9 @@ end
 
 -- A scrolling list. Each line: { text, sub, cost, icon, btn, click, kind =
 -- "section" | "stop" | nil }. Rows are as tall as their text.
-local function list(parent, top, bottom)
+local function list(parent, top, bottom, under)
   local scroll = CreateFrame("ScrollFrame", nil, parent, "UIPanelScrollFrameTemplate")
-  scroll:SetPoint("TOPLEFT", 8, top)
+  if under then scroll:SetPoint("TOPLEFT", under, "BOTTOMLEFT", -6, -10) else scroll:SetPoint("TOPLEFT", 8, top) end
   scroll:SetPoint("BOTTOMRIGHT", -30, bottom)
   local inner = WIDTH - 60
   local child = CreateFrame("Frame", nil, scroll)
@@ -211,6 +211,10 @@ local function dangerText(d)
 end
 
 local function legText(leg)
+  if leg.hearth then
+    local after = leg.flight and (", después vuelo a " .. D.nodes[leg.flight.to].name:match("^[^,]+")) or (leg.boat and ", después barco o zeppelin" or "")
+    return "piedra de hogar a " .. (leg.hearthTo or "tu posada") .. after
+  end
   if leg.boat then return "barco o zeppelin"
   elseif leg.flight then return ("vuelo de %s a %s"):format(D.nodes[leg.flight.from].name:match("^[^,]+"), D.nodes[leg.flight.to].name:match("^[^,]+"))
   elseif leg.leg > 0 then return "a pie" end
@@ -269,6 +273,7 @@ local PLAN_HELP = {
 local MODES = { { key = "fly", name = "Con vuelos" }, { key = "walk", name = "Solo a pie" } }
 local AGES = { { key = 1, name = "De hasta 1 día" }, { key = 2, name = "De hasta 2 días" }, { key = 3, name = "De hasta 3 días" }, { key = 7, name = "De hasta 7 días" } }
 local DANGERS = { { key = 0, name = "Hasta mi nivel" }, { key = 2, name = "Mi nivel +2" }, { key = 4, name = "Mi nivel +4" }, { key = 99, name = "Sin límite" } }
+local HEARTH = { { key = true, name = "Usarla" }, { key = false, name = "No usarla" } }
 local PERDAY = { { key = nil, name = "Sin máximo" }, { key = 750, name = "Hasta 750" }, { key = 1500, name = "Hasta 1500" }, { key = 2500, name = "Hasta 2500" }, { key = 4000, name = "Hasta 4000" } }
 
 -- Step 1: goal ----------------------------------------------------------------------
@@ -389,7 +394,9 @@ local function buildOptions(p)
   cycle(p, 140, 14, y, PERDAY, function() return o().perDay end, function(v) o().perDay = v end)
   y = field(p, -292, "Precios", "Qué tan viejos pueden ser los precios de tu Auctionator.")
   cycle(p, 140, 14, y, AGES, function() return o().maxAge end, function(v) o().maxAge = v end)
-  p.flights = text(p, "GameFontHighlightSmall", 14, -348, WIDTH - 50)
+  y = field(p, -342, "Piedra de hogar", "La uso una vez en la ruta si ahorra tiempo, y te aviso si conviene ponerla en otro pueblo.")
+  cycle(p, 140, 14, y, HEARTH, function() return o().hearth end, function(v) o().hearth = v end)
+  p.flights = text(p, "GameFontHighlightSmall", 14, -398, WIDTH - 50)
 
   local back = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
   back:SetSize(110, 28); back:SetPoint("BOTTOMLEFT", 14, 14); back:SetText("<  Volver")
@@ -454,6 +461,12 @@ local function showPlan(p)
     if plan.cost > plan.cheapest then
       lines[#lines + 1] = { text = GREY .. ("La más barata costaba %s pero con un viaje más largo.|r"):format(coins(plan.cheapest)) }
     end
+    if plan.hearthSave and plan.hearthSave > 0 then
+      lines[#lines + 1] = { text = GREY .. ("Usa la piedra de hogar una vez: ahorra ~%d min.|r"):format(mins(plan.hearthSave)) }
+    end
+    if plan.hearthTip then
+      lines[#lines + 1] = { text = YELLOW .. ("Consejo: si ponés la piedra de hogar en %s (%s) antes de salir, te ahorrás ~%d min más.|r"):format(plan.hearthTip.town, plan.hearthTip.npc, mins(plan.hearthTip.save)) }
+    end
     for i, leg in ipairs(plan.route) do
       local st = leg.stop
       local z = D.zones[st.zone]
@@ -491,25 +504,20 @@ local function showPlan(p)
       end
       k = j + 1
     end
-    lines[#lines + 1] = { text = GREY .. "Supone que cada día hay a la venta writs parecidos a precios parecidos. Mañana te armo la ruta del día con los precios de ese día.|r" }
-  end
-  -- Deals.
-  if R.deals and #R.deals > 0 then
-    lines[#lines + 1] = { kind = "section", text = "Muy baratos hoy (para comprar y entregar otro día)" }
-    for i = 1, math.min(5, #R.deals) do
-      local c = R.deals[i]
-      lines[#lines + 1] = { icon = icon(c.w.i), text = c.w.name, sub = D.zones[c.zone].name .. "  ·  " .. writSub(c), cost = coins(c.cost) }
+    if R.buyNow and #R.buyNow > 0 then
+      local names = {}
+      for i = 1, math.min(6, #R.buyNow) do names[#names + 1] = R.buyNow[i].w.name end
+      lines[#lines + 1] = { text = GREEN .. "Comprá hoy para mañana|r", sub = table.concat(names, ", ") .. "  ·  hoy están más baratos que lo normal" }
     end
+    lines[#lines + 1] = { text = GREY .. "Para los días siguientes cuento con los precios normales de tu servidor (o los de hoy si están más baratos y los comprás hoy). Cada día te armo la ruta con los precios de ese día.|r" }
   end
   p.list.set(lines)
 end
 
 local function buildPlan(p)
   p.summary = text(p, "GameFontHighlight", 14, -8, WIDTH - 40)
-  p.summary:SetJustifyV("TOP")
-  p.summary:SetHeight(56)
   if p.summary.SetSpacing then p.summary:SetSpacing(3) end
-  p.list = list(p, -66, 46)
+  p.list = list(p, nil, 46, p.summary)
   local b1 = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
   b1:SetSize(170, 26); b1:SetPoint("BOTTOMLEFT", 10, 12); b1:SetText("Buscar en la subasta")
   b1:SetScript("OnClick", function() W.search(last and last.today) end)
@@ -563,10 +571,8 @@ end
 
 local function buildGuide(p)
   p.summary = text(p, "GameFontHighlight", 14, -8, WIDTH - 40)
-  p.summary:SetJustifyV("TOP")
-  p.summary:SetHeight(56)
   if p.summary.SetSpacing then p.summary:SetSpacing(3) end
-  p.list = list(p, -66, 46)
+  p.list = list(p, nil, 46, p.summary)
   local g1 = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
   g1:SetSize(200, 26); g1:SetPoint("BOTTOMLEFT", 10, 12); g1:SetText("Flecha a la próxima parada")
   g1:SetScript("OnClick", function() local r = W.lockedRoute(); if r and r[1] then W.pin(r[1].stop) end end)

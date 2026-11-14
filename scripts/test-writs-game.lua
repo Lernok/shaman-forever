@@ -33,6 +33,8 @@ UnitLevel = function() return 41 end
 UnitFactionGroup = function() return "Horde" end
 IsPlayerSpell = function() return false end
 SlashCmdList = {}
+GetBindLocation = function() return "Orgrimmar" end
+GetItemCooldown = function() return 0, 0 end
 local queue = {}
 C_Timer = { After = function(_, fn) queue[#queue + 1] = fn end }
 -- Runs what the addon left for the next frames (the background planning).
@@ -88,7 +90,10 @@ local function show(R)
   local g = W.money
   print(("[%s] rep %s, meta %s, faltan %s, días %s, err %s"):format(tostring(R.faction), tostring(R.rep), tostring(R.goal), tostring(R.need), tostring(R.days), tostring(R.err)))
   if R.today then
-    print(("  hoy: %d rep, %s, %d min"):format(R.today.rep, g(R.today.cost), R.today.time / 60))
+    print(("  hoy: %d rep, %s, %d min%s%s"):format(R.today.rep, g(R.today.cost), R.today.time / 60,
+      (R.today.hearthSave or 0) > 0 and (", piedra ahorra " .. math.floor(R.today.hearthSave / 60) .. " min") or "",
+      R.today.hearthTip and (", consejo: piedra en " .. R.today.hearthTip.town .. " (" .. math.floor(R.today.hearthTip.save / 60) .. " min)") or ""))
+    if R.buyNow then print("  comprá hoy: " .. #R.buyNow) end
     for _, leg in ipairs(R.today.route) do
       print(("    %s %s +%d min %s"):format(WritPlanner_DATA.zones[leg.stop.zone].name, leg.stop.npc, leg.leg / 60, leg.flight and "vuelo" or ""))
       for _, c in ipairs(leg.stop.writs) do print(("        %s %s%s%s"):format(c.w.name, g(c.cost), c.haveItems and " (tiene el objeto)" or "", c.ratio and (" ratio " .. string.format("%.2f", c.ratio)) or "")) end

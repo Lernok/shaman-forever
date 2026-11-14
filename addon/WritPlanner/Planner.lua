@@ -482,3 +482,35 @@ function P.best(cands, need, tolerance, start, travel)
   best.rep, best.cheapest = rep, cheapest
   return best
 end
+
+-- Hearthstone: once per trip it takes you to where it's set. HEARTH_TIME is
+-- the cast and the loading screen.
+P.HEARTH_TIME = 45
+
+-- Where in the trip the hearthstone saves the most time (from `bind`, a world
+-- position): returns the leg index and the seconds saved (nil: it doesn't help).
+function P.hearthBest(route, travel, bind)
+  if not bind or not route then return nil end
+  local bi, bs, bt, bf
+  for i, leg in ipairs(route) do
+    if leg.leg > 0 then
+      local t, f = travel(bind, leg.stop.pos)
+      local alt = P.HEARTH_TIME + t
+      local save = leg.leg - alt
+      if save > 180 and (not bs or save > bs) then bi, bs, bt, bf = i, save, alt, f end
+    end
+  end
+  return bi, bs, bt, bf
+end
+
+-- Uses the hearthstone on the leg where it saves the most. Returns the seconds saved.
+function P.useHearth(route, travel, bind, bindName)
+  local i, save, alt, f = P.hearthBest(route, travel, bind)
+  if not i then return 0 end
+  local leg = route[i]
+  leg.leg, leg.hearth, leg.hearthTo = alt, true, bindName
+  leg.flight, leg.boat = nil, nil
+  if f and f.boat then leg.boat = true elseif f then leg.flight = f end
+  leg.from = { x = bind.x, y = bind.y, cont = bind.cont }
+  return save
+end

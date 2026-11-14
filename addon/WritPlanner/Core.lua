@@ -57,6 +57,7 @@ local function defaults()
   if o.maxAge == nil then o.maxAge = 2 end
   if o.danger == nil then o.danger = 2 end
   if o.plan == nil then o.plan = "rec" end
+  if o.hearth == nil then o.hearth = true end
   if o.days == nil then o.days = 7 end -- turn-in spots with mobs up to your level + this
 end
 
@@ -271,6 +272,12 @@ function W.candidates(today)
           if uw and ui and wp and ip then
             c.usual = uw + ui * need
             c.ratio = (wp + ip * need) / c.usual
+            -- Another day: today's price only if you buy it today and it's a
+            -- deal; otherwise count on the usual price, not on today's luck.
+            if not today then
+              c.buyNow = c.ratio <= 0.85
+              c.cost = c.buyNow and (wp + ip * need) or c.usual
+            end
           end
           out[#out + 1] = c
         end
@@ -347,6 +354,49 @@ function W.speed()
   return 7
 end
 
+-- Where your hearthstone is set: saved when you set it (HEARTHSTONE_BOUND),
+-- or the flight master of the town it names. Returns pos, name.
+local function nodeOfTown(town)
+  if not town then return nil end
+  for id, n in pairs(D.nodes) do
+    if n.name:match("^[^,]+") == town then
+      local faction = UnitFactionGroup("player") == "Alliance" and "A" or "H"
+      if n.side:find(faction) then return { x = n.x, y = n.y, cont = n.cont } end
+    end
+  end
+end
+W.nodeOfTown = nodeOfTown
+function W.bind()
+  local town = GetBindLocation and GetBindLocation()
+  local h = WritPlannerCharDB.hearth
+  if h and h.town == town then return { x = h.x, y = h.y, cont = h.cont }, town end
+  return nodeOfTown(town), town
+end
+
+-- The hearthstone on today's trip (if the option is on), and whether setting
+-- it somewhere else would save a good while (5 minutes or more).
+function W.hearthPlan(plan, travel)
+  local o = WritPlannerCharDB.opts
+  if not plan or not plan.route or not o.hearth then return end
+  local bind, town = W.bind()
+  local _, saveNow = P.hearthBest(plan.route, travel, bind)
+  saveNow = saveNow or 0
+  -- Every inn of your side (and the neutral ones) as a place to set it.
+  local faction = UnitFactionGroup("player") == "Alliance" and "A" or "H"
+  local best, bestSave = nil, saveNow
+  for _, inn in ipairs(D.inns or {}) do
+    if inn.side:find(faction) then
+      local here = { x = inn.x, y = inn.y, cont = inn.cont }
+      local far = not bind or bind.cont ~= inn.cont or math.abs(bind.x - inn.x) + math.abs(bind.y - inn.y) > 300
+      local _, s = P.hearthBest(plan.route, travel, here)
+      if far and s and s > bestSave + 300 then best, bestSave = inn, s end
+    end
+  end
+  if best then plan.hearthTip = { town = best.zone, npc = best.npc, save = bestSave - saveNow } end
+  plan.hearthSave = P.useHearth(plan.route, travel, bind, town)
+  if plan.hearthSave > 0 then plan.time = plan.time - plan.hearthSave end
+end
+
 function W.travelFn()
   local o = WritPlannerCharDB.opts
   return P.travel({ speed = W.speed(), known = o.mode == "fly" and WritPlannerCharDB.flights or nil, nodes = D.nodes, paths = D.paths })
@@ -405,6 +455,14 @@ function W.compute()
     R.plan, R.days = chosen, chosen.days
     if chosen.goals[1] and chosen.goals[1] > 0 then
       R.today = P.best(today, chosen.days == 1 and U or chosen.goals[1], tol, start, travel)
+      W.hearthPlan(R.today, travel)
+    end
+    -- What the next days would use that is cheaper today than usual: buy it now.
+    if chosen.days > 1 and chosen.goals[2] and chosen.goals[2] > 0 then
+      local nextDay = P.choose(Tl, chosen.goals[2], 0)
+      local buy = {}
+      for _, c in ipairs(nextDay and nextDay.writs or {}) do if c.buyNow then buy[#buy + 1] = c end end
+      R.buyNow = buy
     end
   end
   -- Deals: writs well under their usual price (worth buying for later days).
@@ -446,7 +504,13 @@ function W.lockedRoute()
     end
   end
   if #left == 0 then return {}, done, #l.q end
-  local route = P.route(left, W.here(), W.travelFn())
+  local travel = W.travelFn()
+  local route = P.route(left, W.here(), travel)
+  if WritPlannerCharDB.opts.hearth then
+    local bind, town = W.bind()
+    local cd = GetItemCooldown and select(2, GetItemCooldown(6948)) or 0
+    if (cd or 0) == 0 then P.useHearth(route, travel, bind, town) end
+  end
   return route, done, #l.q
 end
 
@@ -473,6 +537,9 @@ function W.steps(route)
     local st = leg.stop
     local z = D.zones[st.zone]
     local from = leg.from
+    if leg.hearth then
+      add("hearth", ("Usá la piedra de hogar (te lleva a %s)."):format(leg.hearthTo or "donde la pusiste"))
+    end
     if leg.boat then
       local to = z.cont == 1 and "Kalimdor" or "los Reinos del Este"
       if horde then
@@ -551,6 +618,7 @@ f:RegisterEvent("TAXIMAP_OPENED")
 f:RegisterEvent("QUEST_TURNED_IN")
 f:RegisterEvent("QUEST_COMPLETE")
 f:RegisterEvent("UPDATE_FACTION")
+f:RegisterEvent("HEARTHSTONE_BOUND")
 local lastNpc
 f:SetScript("OnEvent", function(_, event, a1)
   if event == "ADDON_LOADED" and a1 == "WritPlanner" then
@@ -568,6 +636,12 @@ f:SetScript("OnEvent", function(_, event, a1)
       end)
     end
     if C_Timer then C_Timer.After(5, W.snapshot) else W.snapshot() end
+  elseif event == "HEARTHSTONE_BOUND" then
+    local here = W.here()
+    if here then
+      WritPlannerCharDB.hearth = { x = here.x, y = here.y, cont = here.cont, town = GetBindLocation and GetBindLocation() }
+      chat("anoté dónde pusiste la piedra de hogar.")
+    end
   elseif event == "UPDATE_FACTION" then
     if W.UI and W.UI.repChanged then W.UI.repChanged() end
   elseif event == "TAXIMAP_OPENED" then
