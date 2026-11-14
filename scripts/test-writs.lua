@@ -20,7 +20,7 @@ end
 local g = function(c) return string.format("%.2f g", c / 10000) end
 local t0 = os.clock()
 local U = P.units(need)
-local T = P.table(cands, U)
+local T = P.dayTable(cands, U)
 print(("tabla: %d candidatos, tope %d unidades, %.2f s"):format(#cands, U, os.clock() - t0))
 -- Horde flight paths a level-41 Horde would know in the Eastern Kingdoms and Kalimdor.
 local known = {}

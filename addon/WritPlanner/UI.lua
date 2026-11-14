@@ -168,20 +168,54 @@ local function tag(c)
   return ""
 end
 
+local function dangerTag(d)
+  if not d or d == 0 then return "" end
+  local lvl = UnitLevel("player") or 60
+  local color = d > lvl + 1 and RED or (d >= lvl - 2 and YELLOW or GREY)
+  return "  " .. color .. "bichos ~" .. d .. "|r"
+end
+
 -- Steps -------------------------------------------------------------------------
 
+-- Works the plan out in the background (a little each frame) and shows the
+-- open tab again when it's ready. Returns the plan, or nil while working.
+local job
 local function compute()
-  if stale or not last then
-    last = W.compute()
-    stale = false
+  if not stale and last then return last end
+  if not job then
+    job = coroutine.create(W.compute)
+    local ticker
+    ticker = function()
+      local ok, res = coroutine.resume(job)
+      if not ok then
+        job = nil
+        stale = false
+        last = { err = "bug", msg = tostring(res) }
+        W.chat("error al calcular: " .. tostring(res))
+        UI.update()
+      elseif coroutine.status(job) == "dead" then
+        job = nil
+        stale = false
+        last = res
+        UI.update()
+      else
+        C_Timer.After(0, ticker)
+      end
+    end
+    C_Timer.After(0, ticker)
   end
-  return last
+  return nil
+end
+local function busy(p)
+  p.summary:SetText(GOLD .. "Calculando…|r")
+  p.list.set({})
 end
 
 local ERR = {
   norep = "Escribí cuánta reputación tenés en el paso 1.",
   reached = "Ya llegaste a ese objetivo: elegí otro en el paso 1.",
   noauc = "Necesitás Auctionator instalado y un escaneo de la subasta.",
+  bug = "Algo falló al calcular (te dejé el error en el chat; pasáselo a quien te dio el addon).",
   noprices = "No hay precios de writs en tu Auctionator: hacé un escaneo completo en la subasta.",
 }
 
@@ -220,6 +254,7 @@ end
 
 local function stepToday(p)
   local R = compute()
+  if not R then return busy(p) end
   if R.err then p.summary:SetText(ERR[R.err] or R.err); p.list.set({}) return end
   local plan = R.today
   local s = {}
@@ -230,7 +265,7 @@ local function stepToday(p)
     if R.days and R.days > 1 and R.plan then
       local rest = R.plan.days - 1
       local perDay = rest > 0 and (R.plan.total - plan.cost) / rest or 0
-      s[#s + 1] = ("Llegás en %s%d días|r: hoy %s y después ~%s por día (total ~%s, ±1 g).  %sDetalle en \"4. Por días\".|r")
+      s[#s + 1] = ("Llegás en %s%d días|r: hoy %s y después ~%s por día (total ~%s, ±1 g).  %sDetalle en \"5. Por días\".|r")
         :format(WHITE, R.plan.days, coins(plan.cost), coins(perDay), coins(R.plan.total), GREY)
     end
     if plan.cost > plan.cheapest then
@@ -238,8 +273,8 @@ local function stepToday(p)
     end
   end
   local sk = R.skipped
-  if sk and (sk.done + sk.gone + sk.old) > 0 then
-    s[#s + 1] = GREY .. ("Afuera hoy: %d ya entregados, %d sin stock, %d con precio de hace más de %d días.|r"):format(sk.done, sk.gone, sk.old, o().maxAge)
+  if sk and (sk.done + sk.gone + sk.old + sk.danger) > 0 then
+    s[#s + 1] = GREY .. ("Afuera hoy: %d ya entregados, %d sin stock, %d con precio viejo, %d en lugares muy peligrosos para tu nivel.|r"):format(sk.done, sk.gone, sk.old, sk.danger)
   end
   s[#s + 1] = GREY .. "Aceptá cada writ recién al salir: según las guías tiene 9 horas de plazo.|r"
   p.summary:SetText(table.concat(s, "\n"))
@@ -256,7 +291,7 @@ local function stepToday(p)
       else how = "primera parada" end
       lines[#lines + 1] = {
         header = true,
-        text = ("%d. %s  %s%s (%.0f, %.0f)|r   %s%s|r"):format(i, z.name, WHITE, st.npc or "?", st.x, st.y, GREY, leg.leg > 0 and ("+" .. mins(leg.leg) .. " min, " .. how) or how),
+        text = ("%d. %s  %s%s (%.0f, %.0f)|r   %s%s|r"):format(i, z.name, WHITE, st.npc or "?", st.x, st.y, GREY, leg.leg > 0 and ("+" .. mins(leg.leg) .. " min, " .. how) or how) .. dangerTag(st.writs[1].danger),
         btn = "Mapa", click = function() W.pin(st) end,
       }
       for _, c in ipairs(st.writs) do
@@ -275,8 +310,38 @@ local function stepToday(p)
   p.list.set(lines)
 end
 
+local function stepGuide(p)
+  local route, done, total = W.lockedRoute()
+  if not route then
+    p.summary:SetText("Todavía no elegiste la ruta de hoy.\n" .. GREY .. "En \"3. Ruta de hoy\" tocá \"Usar esta ruta\": desde ahí te guío parada por parada, y la flecha pasa sola a la siguiente cuando entregás.|r")
+    p.list.set({})
+    return
+  end
+  if #route == 0 then
+    p.summary:SetText(GREEN .. ("¡Listo! Entregaste los %d writs de hoy.|r"):format(total))
+    p.list.set({})
+    return
+  end
+  local s = { ("%sRuta de hoy:|r %d de %d writs entregados.   Próxima parada: %s%s|r (%s)"):format(GOLD, done, total, WHITE, route[1].stop.npc or "?", D.zones[route[1].stop.zone].name) }
+  s[#s + 1] = GREY .. "Se recalcula desde donde estás cada vez que abrís esta pestaña o entregás un writ.|r"
+  p.summary:SetText(table.concat(s, "\n"))
+  local lines = {}
+  local first = route[1].stop
+  for n, st in ipairs(W.steps(route)) do
+    local now = st.stop == first
+    local mark = now and (GOLD .. "> |r") or ""
+    if st.kind == "go" then
+      lines[#lines + 1] = { header = true, text = mark .. n .. ". " .. st.text, btn = "Mapa", click = function() W.pin(st.stop) end }
+    else
+      lines[#lines + 1] = { text = mark .. (now and WHITE or "") .. n .. ". " .. st.text .. "|r" }
+    end
+  end
+  p.list.set(lines)
+end
+
 local function stepDays(p)
   local R = compute()
+  if not R then return busy(p) end
   if R.err then p.summary:SetText(ERR[R.err] or R.err); p.list.set({}) return end
   local x = R.plan
   local lines, s = {}, {}
@@ -317,6 +382,7 @@ end
 
 local function stepDeals(p)
   local R = compute()
+  if not R then return busy(p) end
   if R.err then p.summary:SetText(ERR[R.err] or R.err); p.list.set({}) return end
   p.summary:SetText("Writs mucho más baratos que lo normal en tu servidor, comparado con tus escaneos de los días anteriores.\n" ..
     GREY .. "Sirven para comprar hoy y entregar otro día. Hacen falta al menos 3 días de escaneos para saber qué es lo normal.|r")
@@ -333,7 +399,8 @@ local STEPS = {
   { name = "1. Objetivo", show = stepGoal },
   { name = "2. Opciones", show = stepOptions },
   { name = "3. Ruta de hoy", show = stepToday },
-  { name = "4. Por días", show = stepDays },
+  { name = "4. Paso a paso", show = stepGuide },
+  { name = "5. Por días", show = stepDays },
   { name = "Ofertas", show = stepDeals },
 }
 
@@ -403,6 +470,9 @@ end
 local AGES = { { key = 1, name = "De hasta 1 día" }, { key = 2, name = "De hasta 2 días" }, { key = 3, name = "De hasta 3 días" }, { key = 7, name = "De hasta 7 días" } }
 local MODES = { { key = "fly", name = "Con vuelos" }, { key = "walk", name = "Solo a pie" } }
 
+local PERDAY = { { key = nil, name = "Sin máximo" }, { key = 750, name = "Hasta 750" }, { key = 1500, name = "Hasta 1500" }, { key = 2500, name = "Hasta 2500" }, { key = 4000, name = "Hasta 4000" } }
+local DANGERS = { { key = 0, name = "Hasta mi nivel" }, { key = 2, name = "Mi nivel +2" }, { key = 4, name = "Mi nivel +4" }, { key = 99, name = "Sin límite" } }
+
 local function buildOptions(p)
   heading(p, "Opciones", -8)
   p.edits = {}
@@ -420,9 +490,15 @@ local function buildOptions(p)
   cycle(p, 130, 150, -180, W.SPEEDS, function() return o().speed end, function(v) o().speed = v end)
   text(p, "GameFontNormal", 296, -162):SetText("Precios")
   cycle(p, 140, 296, -180, AGES, function() return o().maxAge end, function(v) o().maxAge = v end)
-  p.flights = text(p, "GameFontHighlightSmall", 14, -216, 530)
+  text(p, "GameFontNormal", 14, -214):SetText("Lugares de entrega con bichos de nivel")
+  cycle(p, 140, 14, -232, DANGERS, function() return o().danger end, function(v) o().danger = v end)
+  text(p, "GameFontHighlightSmall", 164, -236, 380):SetText(GREY .. "Saca los writs que se entregan entre bichos más altos que eso (lo que hay alrededor del NPC).|r")
+  text(p, "GameFontNormal", 14, -266):SetText("Reputación por día, como máximo")
+  cycle(p, 140, 14, -284, PERDAY, function() return o().perDay end, function(v) o().perDay = v end)
+  text(p, "GameFontHighlightSmall", 164, -288, 380):SetText(GREY .. "Sin máximo = lo más rápido posible (rutas largas). Con un máximo, cada día es más corto y tarda más días.|r")
+  p.flights = text(p, "GameFontHighlightSmall", 14, -318, 530)
 
-  calcButton(p, -250)
+  calcButton(p, -346)
 end
 
 local function buildResult(p, bottom)
@@ -449,7 +525,7 @@ local function build()
 
   local x = 10
   for i, st in ipairs(STEPS) do
-    local w = i == 5 and 86 or 118
+    local w = i == 6 and 70 or 96
     tabs[i] = button(frame, st.name, w, x, -28, function() UI.go(i) end, 24)
     x = x + w + 4
   end
@@ -463,17 +539,27 @@ local function build()
   buildGoal(panels[1])
   buildOptions(panels[2])
   buildResult(panels[3], 42)
-  buildResult(panels[4], 8)
+  buildResult(panels[4], 42)
   buildResult(panels[5], 8)
+  buildResult(panels[6], 8)
+  local p4 = panels[4]
+  local g1 = CreateFrame("Button", nil, p4, "UIPanelButtonTemplate")
+  g1:SetSize(190, 24); g1:SetPoint("BOTTOMLEFT", 10, 10); g1:SetText("Flecha a la próxima parada")
+  g1:SetScript("OnClick", function() local r = W.lockedRoute(); if r and r[1] then W.pin(r[1].stop) end end)
+  local g2 = CreateFrame("Button", nil, p4, "UIPanelButtonTemplate")
+  g2:SetSize(150, 24); g2:SetPoint("LEFT", g1, "RIGHT", 6, 0); g2:SetText("Dejar de seguirla")
+  g2:SetScript("OnClick", function() WritPlannerCharDB.locked = nil; UI.update() end)
   local p3 = panels[3]
   local b1 = CreateFrame("Button", nil, p3, "UIPanelButtonTemplate")
   b1:SetSize(170, 24); b1:SetPoint("BOTTOMLEFT", 10, 10); b1:SetText("Buscar en la subasta")
   b1:SetScript("OnClick", function() W.search(last and last.today) end)
   local b2 = CreateFrame("Button", nil, p3, "UIPanelButtonTemplate")
-  b2:SetSize(120, 24); b2:SetPoint("LEFT", b1, "RIGHT", 6, 0); b2:SetText("Recalcular")
-  b2:SetScript("OnClick", function() stale = true; UI.update() end)
+  b2:SetSize(150, 24); b2:SetPoint("LEFT", b1, "RIGHT", 6, 0); b2:SetText("Usar esta ruta  >")
+  b2:SetScript("OnClick", function()
+    if last and last.today then W.lock(last.today); UI.go(4) end
+  end)
   local b3 = CreateFrame("Button", nil, p3, "UIPanelButtonTemplate")
-  b3:SetSize(200, 24); b3:SetPoint("LEFT", b2, "RIGHT", 6, 0); b3:SetText("Volver a mostrar los \"No hay\"")
+  b3:SetSize(190, 24); b3:SetPoint("LEFT", b2, "RIGHT", 6, 0); b3:SetText("Volver a mostrar los \"No hay\"")
   b3:SetScript("OnClick", function() WritPlannerCharDB.gone = {}; stale = true; UI.update() end)
   frame:SetScript("OnShow", function() UI.update() end)
 end

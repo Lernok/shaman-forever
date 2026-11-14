@@ -16,9 +16,22 @@ WritPlanner.Planner = P
 
 P.UNIT = 25
 P.MAX_ZONES = 4
+P.ZONES_PER_CONTINENT = 7
 local INF = math.huge
 
 local function units(rep) return math.ceil(rep / P.UNIT) end
+
+-- Long work run inside a coroutine (the game) gives the frame back every so
+-- often, so the game doesn't freeze; outside one (tests) it just runs.
+local work = 0
+function P.tick(n)
+  work = work + (n or 1)
+  if work >= 20000 then
+    work = 0
+    if coroutine.running() then coroutine.yield() end
+  end
+end
+local tick = P.tick
 P.units = units
 
 -- Groups candidates by continent and zone: { [cont] = { {zone=, list={...}}, ... } }.
@@ -162,12 +175,24 @@ function P.choose(T, need, tolerance)
   end
 end
 
+-- A table for the plan in days: the cheapest writs for each goal, wherever
+-- they are (each day's trip is worked out on the day).
+function P.dayTable(cands, cap)
+  local T = { cap = cap, byK = { [1] = {} } }
+  local all = { zone = 0, list = cands }
+  local best = knapsack(cands, cap)
+  for u = 1, cap do
+    if best[u] < INF then T.byK[1][u] = { cost = best[u], zones = { all }, cont = 0 } end
+  end
+  return T
+end
+
 -- The cost of a day for every goal 1..cap units (route tolerance applied).
 function P.dayCosts(T, tolerance)
   local f = {}
   for u = 1, T.cap do
-    local plan = P.choose(T, u, tolerance)
-    f[u] = plan and plan.cost or INF
+    local e = T.byK[1] and T.byK[1][u]
+    f[u] = e and e.cost or INF
   end
   -- Reaching more never needs to cost more than the cheapest plan that reaches more.
   for u = T.cap - 1, 1, -1 do if f[u + 1] < f[u] then f[u] = f[u + 1] end end
@@ -192,6 +217,7 @@ function P.days(todayT, laterT, need, tolerance, maxDays)
     local cap = d == 1 and todayT.cap or laterT.cap
     local H, row = {}, {}
     for n = 0, need do H[n] = G[n]; row[n] = 0 end
+    tick(need * cap)
     for n = 0, need - 1 do
       if G[n] < INF then
         for u = 1, math.min(cap, need - n) do
@@ -237,7 +263,7 @@ P.WALK_DETOUR = 1.3
 P.FLY_DETOUR = 1.2
 P.FLY_SPEED = 30      -- yards a second on a flight path
 P.FLY_OVERHEAD = 20   -- seconds to talk to the flight master, take off and land
-P.OTHER_CONTINENT = 600 -- seconds for a boat or zeppelin when the trip starts on the other continent
+P.OTHER_CONTINENT = 900 -- seconds to cross to the other continent (boat or zeppelin, and getting to it)
 
 local function dist(a, b)
   local dx, dy = a.x - b.x, a.y - b.y
@@ -285,7 +311,7 @@ function P.travel(opts)
   local function walk(a, b) return dist(a, b) * P.WALK_DETOUR / speed end
   local memo = {}
   return function(a, b)
-    if a.cont ~= b.cont then return INF end
+    if a.cont ~= b.cont then return P.OTHER_CONTINENT, { boat = true } end
     local key = a.x .. "," .. a.y .. ">" .. b.x .. "," .. b.y
     local m = memo[key]
     if m then return m[1], m[2] end
@@ -335,11 +361,9 @@ function P.route(writs, start, travel)
     local left, out, total, fly = {}, {}, 0, 0
     for i, s in ipairs(stops) do left[i] = s end
     local here = start
-    if not here or here.cont ~= stops[1].pos.cont then
+    if not here then
       here = table.remove(left, first).pos
-      local leg = start and P.OTHER_CONTINENT or 0
-      out[1] = { stop = stops[first], leg = leg, boat = start and true or nil }
-      total = leg
+      out[1] = { stop = stops[first], leg = 0 }
     end
     while #left > 0 do
       local bi, bt, bf = 1, INF, nil
@@ -348,14 +372,15 @@ function P.route(writs, start, travel)
         if t < bt then bi, bt, bf = i, t, f end
       end
       local s = table.remove(left, bi)
-      out[#out + 1] = { stop = s, leg = bt, flight = bf }
-      total = total + (bt < INF and bt or 0)
-      if bf then fly = fly + bf.cost end
+      local leg = { stop = s, leg = bt, from = here }
+      if bf and bf.boat then leg.boat = true elseif bf then leg.flight = bf; fly = fly + bf.cost end
+      out[#out + 1] = leg
+      total = total + bt
       here = s.pos
     end
     return out, total, fly
   end
-  if start and start.cont == stops[1].pos.cont then return run() end
+  if start then return run() end
   local best, bt, bf
   for i = 1, #stops do
     local r, t, f = run(i)
@@ -364,11 +389,26 @@ function P.route(writs, start, travel)
   return best, bt, bf
 end
 
--- Today's plan with travel: tries every group of up to MAX_ZONES zones on one
--- continent, keeps the plans that cost at most `tolerance` more than the
+-- Today's plan with travel: tries every group of up to MAX_ZONES zones (both
+-- continents), keeps the plans that cost at most `tolerance` more than the
 -- cheapest, and returns the quickest trip among them (ties: cheaper).
 function P.best(cands, need, tolerance, start, travel)
+  -- Every zone of both continents in one pool: a trip may cross (the travel
+  -- function charges the boat or zeppelin).
+  -- To stay quick, only the ZONES_PER_CONTINENT zones with the cheapest
+  -- reputation on each continent (by their cheapest writ per point).
   local conts = byZone(cands)
+  local pool = {}
+  for _, zs in pairs(conts) do
+    for _, z in ipairs(zs) do
+      z.score = INF
+      for _, c in ipairs(z.list) do z.score = math.min(z.score, c.cost / c.w.rep) end
+    end
+    table.sort(zs, function(a, b) return a.score < b.score end)
+    for i = 1, math.min(P.ZONES_PER_CONTINENT, #zs) do pool[#pool + 1] = zs[i] end
+  end
+  table.sort(pool, function(a, b) return a.zone < b.zone end)
+  conts = { all = pool }
   local found = {}
   local cheapest = INF
   for cont, zs in pairs(conts) do
@@ -376,6 +416,7 @@ function P.best(cands, need, tolerance, start, travel)
       combos(#zs, k, function(idx)
         local items = {}
         for j = 1, k do for _, c in ipairs(zs[idx[j]].list) do items[#items + 1] = c end end
+        tick(#items * need)
         local chosen, cost = pick(items, need)
         if chosen then
           -- Only plans that use every zone in the group (the smaller group covers the rest).
@@ -391,12 +432,22 @@ function P.best(cands, need, tolerance, start, travel)
       end)
     end
   end
+  -- The cheapest writs wherever they are (any number of zones) is a plan too:
+  -- the only one for a big goal, and the bar the tolerance is measured from.
+  local chosen, cost = pick(cands, need)
+  if chosen then
+    local z, n = {}, 0
+    for _, c in ipairs(chosen) do if not z[c.zone] then z[c.zone] = true; n = n + 1 end end
+    found[#found + 1] = { writs = chosen, cost = cost, zones = n }
+    if cost < cheapest then cheapest = cost end
+  end
   if cheapest == INF then return nil end
   table.sort(found, function(a, b) return a.cost < b.cost end)
   local best
   for i, p in ipairs(found) do
     if i > 400 then break end
     if p.cost <= cheapest + (tolerance or 0) then
+      tick(#p.writs * #p.writs * 20)
       p.route, p.time, p.flyCost = P.route(p.writs, start, travel)
       if not best or p.time < best.time - 1 or (math.abs(p.time - best.time) <= 1 and p.cost < best.cost) then best = p end
     end

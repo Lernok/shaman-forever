@@ -55,6 +55,7 @@ local function defaults()
   if o.mode == nil then o.mode = "fly" end
   if o.speed == nil then o.speed = "auto" end
   if o.maxAge == nil then o.maxAge = 2 end
+  if o.danger == nil then o.danger = 2 end -- turn-in spots with mobs up to your level + this
 end
 
 local function realm() return GetRealmName and GetRealmName() or "?" end
@@ -237,7 +238,9 @@ end
 function W.candidates(today)
   local o = WritPlannerCharDB.opts
   local key = resetKey()
-  local out, skipped = {}, { done = 0, noPrice = 0, gone = 0, old = 0 }
+  local out, skipped = {}, { done = 0, noPrice = 0, gone = 0, old = 0, danger = 0 }
+  local side = UnitFactionGroup("player") == "Alliance" and "dA" or "dH"
+  local maxDanger = o.danger and o.danger < 99 and ((UnitLevel("player") or 60) + o.danger) or nil
   for _, w in ipairs(D.writs) do
     local z = w.z and D.zones[w.z]
     if z then
@@ -245,6 +248,8 @@ function W.candidates(today)
       local ok = true
       if today and doneToday(w.q) then ok = false; skipped.done = skipped.done + 1 end
       if ok and today and WritPlannerCharDB.gone[w.q] == key then ok = false; skipped.gone = skipped.gone + 1 end
+      c.danger = w[side]
+      if ok and maxDanger and c.danger and c.danger > maxDanger then ok = false; skipped.danger = skipped.danger + 1 end
       if ok then
         local need = w.n or 1
         local haveWrit = today and (count(w.w) > 0 or onQuest(w.q))
@@ -340,6 +345,11 @@ function W.speed()
   return 7
 end
 
+function W.travelFn()
+  local o = WritPlannerCharDB.opts
+  return P.travel({ speed = W.speed(), known = o.mode == "fly" and WritPlannerCharDB.flights or nil, nodes = D.nodes, paths = D.paths })
+end
+
 -- The plan --------------------------------------------------------------------
 
 -- Works out today's trip and, when the goal or the budget asks for it, the
@@ -364,21 +374,22 @@ function W.compute()
 
   local tol = (tonumber(o.tol) or 0) * 10000
   local budget = tonumber(o.budget) and tonumber(o.budget) * 10000 or nil
-  local known = o.mode == "fly" and WritPlannerCharDB.flights or nil
-  local travel = P.travel({ speed = W.speed(), known = known, nodes = D.nodes, paths = D.paths })
+  local travel = W.travelFn()
   local start = W.here()
   R.budget, R.tol = budget, tol
   local U = P.units(need)
+  local perDay = tonumber(o.perDay)
 
   -- One trip today?
-  local one = P.best(today, U, tol, start, travel)
+  local one = (not perDay or need <= perDay) and P.best(today, U, tol, start, travel) or nil
   if one and (not budget or one.cost <= budget) then
     R.today, R.days = one, 1
   end
 
   -- In days: the cheapest split for each number of days.
-  local cap = math.min(U, 60)
-  local Tt, Tl = P.table(today, cap), P.table(later, cap)
+  -- A day can take every writ there is, unless you set a most per day.
+  local cap = math.min(U, perDay and P.units(perDay) or U)
+  local Tt, Tl = P.dayTable(today, cap), P.dayTable(later, cap)
   local opts = P.days(Tt, Tl, U, tol, 60)
   R.options = (budget or not R.today) and opts or nil
   local fastest, cheapest = P.pickDays(opts, budget)
@@ -397,6 +408,91 @@ function W.compute()
   table.sort(deals, function(a, b) return a.ratio < b.ratio end)
   R.deals = deals
   return R
+end
+
+-- Following a trip ----------------------------------------------------------------
+
+-- "Use this trip": the writs of a plan stay as today's trip, whatever new
+-- prices say, until the daily reset.
+function W.lock(plan)
+  local qs = {}
+  for _, c in ipairs(plan.writs) do qs[#qs + 1] = c.w.q end
+  WritPlannerCharDB.locked = { key = resetKey(), q = qs }
+end
+
+function W.locked()
+  local l = WritPlannerCharDB.locked
+  return l and l.key == resetKey() and l or nil
+end
+
+-- The locked trip from where you are now: the writs not turned in yet, in
+-- order. Returns route (P.route legs) and how many are already done.
+function W.lockedRoute()
+  local l = W.locked()
+  if not l then return nil end
+  local left, done = {}, 0
+  local byQ = {}
+  for _, w in ipairs(D.writs) do byQ[w.q] = w end
+  for _, q in ipairs(l.q) do
+    local w = byQ[q]
+    if w and doneToday(q) then done = done + 1
+    elseif w and w.z and D.zones[w.z] then
+      left[#left + 1] = { w = w, zone = w.z, cont = D.zones[w.z].cont, cost = 0, haveWrit = count(w.w) > 0 or onQuest(q), haveItems = count(w.i) >= (w.n or 1) }
+    end
+  end
+  if #left == 0 then return {}, done, #l.q end
+  local route = P.route(left, W.here(), W.travelFn())
+  return route, done, #l.q
+end
+
+local DIRS = { "norte", "noreste", "este", "sureste", "sur", "suroeste", "oeste", "noroeste" }
+-- Compass direction from a to b (world: +x north, +y west).
+function W.dir(a, b)
+  local n, e = b.x - a.x, -(b.y - a.y)
+  local ang = math.deg(math.atan2(e, n)) -- 0 = north, 90 = east
+  if ang < 0 then ang = ang + 360 end
+  return DIRS[math.floor((ang + 22.5) / 45) % 8 + 1]
+end
+
+local function yards(a, b)
+  local dx, dy = a.x - b.x, a.y - b.y
+  return math.sqrt(dx * dx + dy * dy)
+end
+
+-- Step-by-step directions for a route: { {kind, text, stop?} }.
+function W.steps(route)
+  local out = {}
+  local horde = UnitFactionGroup("player") ~= "Alliance"
+  local function add(kind, text, stop) out[#out + 1] = { kind = kind, text = text, stop = stop } end
+  for _, leg in ipairs(route) do
+    local st = leg.stop
+    local z = D.zones[st.zone]
+    local from = leg.from
+    if leg.boat then
+      local to = z.cont == 1 and "Kalimdor" or "los Reinos del Este"
+      if horde then
+        add("boat", ("Cruzá a %s: zeppelin %s."):format(to, z.cont == 1 and "de Grom'gol o Undercity a Orgrimmar" or "de Orgrimmar a Grom'gol (Stranglethorn) o a Undercity"))
+      else
+        add("boat", ("Cruzá a %s: barco %s."):format(to, z.cont == 1 and "de Menethil a Theramore, o de Booty Bay a Ratchet" or "de Theramore a Menethil, o de Ratchet a Booty Bay"))
+      end
+    elseif leg.flight then
+      local a, b = D.nodes[leg.flight.from], D.nodes[leg.flight.to]
+      if from then add("walk", ("Andá al maestro de vuelo de %s (al %s)."):format(a.name, W.dir(from, a))) end
+      add("fly", ("Volá a %s."):format(b.name))
+      from = { x = b.x, y = b.y }
+    end
+    local target = st.pos
+    local how = ""
+    if from and target and not leg.boat then
+      local d = yards(from, target)
+      how = d < 60 and " (está ahí nomás)" or (" (al %s, ~%d yardas)"):format(W.dir(from, target), math.floor(d / 10 + 0.5) * 10)
+    end
+    add("go", ("Andá a %s en %s, %.0f, %.0f%s."):format(st.npc or "?", z.name, st.x, st.y, how), st)
+    local names = {}
+    for _, c in ipairs(st.writs) do names[#names + 1] = c.w.name end
+    add("turnin", "Entregá: " .. table.concat(names, ", ") .. ".", st)
+  end
+  return out
 end
 
 -- Auction house search for today's trip (what you still need to buy).
@@ -488,6 +584,18 @@ f:SetScript("OnEvent", function(_, event, a1)
       end
     end
     if W.UI and W.UI.refresh then W.UI.refresh() end
+    -- Following a trip: the arrow moves to the next stop once a stop is done.
+    if writByQuest[a1] and W.locked() and WritPlannerCharDB.opts.autoPin ~= false then
+      local route = W.lockedRoute()
+      if route and route[1] then
+        local first = route[1].stop
+        local same = false
+        for _, c in ipairs(first.writs) do if c.w.npc == writByQuest[a1].npc then same = true end end
+        if not same then W.pin(first) end
+      elseif route then
+        chat("¡terminaste la ruta de hoy!")
+      end
+    end
   end
 end)
 

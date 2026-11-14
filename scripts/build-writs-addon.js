@@ -58,6 +58,68 @@ const uiMaps = {};
 });
 if (!Object.keys(uiMaps).length) { console.error('No encontré QuestieDB (QUESTIEDB=<carpeta support>).'); process.exit(1); }
 
+// How dangerous each turn-in spot is: the level of the mobs that attack you,
+// spawned within DANGER_R yards (QuestieDB: level, rank, spawns, faction
+// template; FactionTemplate says whom a template attacks: EnemyGroup 1 = every
+// player, 2 = Alliance, 4 = Horde). The 75th percentile of their levels, +3
+// for elites; per side, since Alliance guards attack a Horde player.
+const DANGER_R = 150;
+const qdb = require('./lib/questiedb-baked.js').load(path.dirname(support));
+// Holiday and invasion mobs (Winter Veil's Pat's Snowcloud Guy, the Scourge
+// invasion's Shadow of Doom) come and go: their templates don't count.
+const EVENT_TEMPLATES = new Set(['114', '1630']);
+// Thorium Point is a guarded camp on a cliff over the Dark Iron dig: on the
+// flat map the dig's mobs look close, but they don't reach the camp.
+const SAFE_CAMP = new Set(['Master Smith Burninate', 'Evonice Sootsmoker', 'Lookout Captain Lolo Longstriker']);
+const enemies = {};
+csv('FactionTemplate').forEach(t => { enemies[t.ID] = +t.EnemyGroup; });
+const mobs = [];
+if (qdb) {
+  qdb.npcIds().forEach(id => {
+    const r = qdb.npc(id);
+    // Service NPCs (flight masters, vendors: npcFlags) stand still and don't pull.
+    if (!r || !r[6] || !r[4] || r[4] <= 1 || r[4] > 63 || enemies[r[11]] == null || r[14] || EVENT_TEMPLATES.has(String(r[11]))) return;
+    const e = enemies[r[11]];
+    const H = (e & 5) !== 0, A = (e & 3) !== 0;
+    if (!H && !A) return;
+    const level = r[4] + (r[5] === 1 ? 3 : 0);
+    Object.entries(r[6]).forEach(([z, spots]) => {
+      const map = uiMaps[z];
+      if (!map || !Array.isArray(spots)) return;
+      spots.forEach(sp => {
+        if (!Array.isArray(sp)) return;
+        const wp = world(map, sp[0], sp[1]);
+        if (wp) mobs.push({ x: wp[0], y: wp[1], cont: wp[2], level, H, A });
+      });
+    });
+  });
+} else console.warn('Sin QuestieDB horneado: los writs van sin nivel de peligro.');
+function danger(wp, side) {
+  const levels = mobs.filter(m => m[side] && m.cont === wp[2] && Math.hypot(m.x - wp[0], m.y - wp[1]) <= DANGER_R).map(m => m.level).sort((a, b) => a - b);
+  // One lone mob (a holiday NPC, a wandering rare) doesn't make a place dangerous.
+  if (levels.length < 2) return 0;
+  return levels[Math.min(levels.length - 1, Math.floor(levels.length * 0.75))];
+}
+
+// NEAR="<NPC name>": list the mobs that make that spot dangerous, and stop.
+if (process.env.NEAR) {
+  const w = writs.find(x => x.npcName === process.env.NEAR);
+  const z = w.npcZone, sp = w.spawns[z][0], wp = world(uiMaps[z], sp[0], sp[1]);
+  const seen = new Set();
+  qdb.npcIds().forEach(id => {
+    const r = qdb.npc(id);
+    if (!r || !r[6] || seen.has(id) || !(enemies[r[11]] & 5) || r[14]) return;
+    Object.entries(r[6]).forEach(([zz, spots]) => (Array.isArray(spots) ? spots : []).forEach(p => {
+      const m = uiMaps[zz], q = m && Array.isArray(p) && world(m, p[0], p[1]);
+      if (q && q[2] === wp[2] && Math.hypot(q[0] - wp[0], q[1] - wp[1]) <= DANGER_R && !seen.has(id)) {
+        seen.add(id);
+        console.log(Math.round(Math.hypot(q[0] - wp[0], q[1] - wp[1])) + ' yd | ' + r[0] + ' | nivel ' + r[4] + (r[5] === 1 ? ' élite' : '') + ' | plantilla ' + r[11]);
+      }
+    }));
+  });
+  process.exit(0);
+}
+
 const q = s => '"' + String(s).replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"';
 const zones = {};
 const rows = writs.map(w => {
@@ -74,6 +136,7 @@ const rows = writs.map(w => {
     const wp = world(uiMaps[z], spot[0], spot[1]);
     if (!wp) throw new Error('Mapa sin posición en el mundo: ' + uiMaps[z]);
     f.push(`wx=${wp[0]}`, `wy=${wp[1]}`);
+    if (mobs.length) f.push(SAFE_CAMP.has(w.npcName) ? 'dH=0, dA=0' : `dH=${danger(wp, 'H')}`, ...(SAFE_CAMP.has(w.npcName) ? [] : [`dA=${danger(wp, 'A')}`]));
   }
   return '  {' + f.join(', ') + '},';
 });
