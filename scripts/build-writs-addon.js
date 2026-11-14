@@ -142,7 +142,7 @@ const rows = writs.map(w => {
 });
 const zl = Object.entries(zones).map(([id, z]) => `  [${id}]={name=${q(z.name)}, map=${z.map}, cont=${z.cont}},`);
 // Flight masters (no boats or zeppelins): side H (Horde), A (Alliance) or both.
-const nodes = csv('TaxiNodes').filter(n => +n.MountCreatureID_0 || +n.MountCreatureID_1);
+const nodes = csv('TaxiNodes').filter(n => (+n.MountCreatureID_0 || +n.MountCreatureID_1) && !/^Quest Path/.test(n.Name_lang));
 const nodeIds = new Set(nodes.map(n => n.ID));
 const nl = nodes.map(n => `  [${n.ID}]={name=${q(n.Name_lang)}, cont=${n.ContinentID}, x=${Math.round(+n.Pos_0)}, y=${Math.round(+n.Pos_1)}, side="${(+n.MountCreatureID_0 ? 'H' : '') + (+n.MountCreatureID_1 ? 'A' : '')}"},`);
 const el = csv('TaxiPath').filter(p => nodeIds.has(p.FromTaxiNode) && nodeIds.has(p.ToTaxiNode)).map(p => `{${p.FromTaxiNode},${p.ToTaxiNode},${p.Cost}}`);
@@ -155,7 +155,14 @@ if (qdb) {
     Object.entries(r[6]).forEach(([z, spots]) => {
       const map = uiMaps[z], sp = Array.isArray(spots) && spots[0];
       const wp = map && Array.isArray(sp) && world(map, sp[0], sp[1]);
-      if (wp && area[z]) inns.push(`  {npc=${q(r[0])}, zone=${q(area[z].name)}, cont=${wp[2]}, x=${wp[0]}, y=${wp[1]}, side="${r[12]}"},`);
+      if (!wp || !area[z]) return;
+      // The town: the flight master's town within 400 yards (Ratchet, not The Barrens).
+      let town = area[z].name, bestD = 400;
+      nodes.forEach(n => {
+        const d = +n.ContinentID === wp[2] ? Math.hypot(+n.Pos_0 - wp[0], +n.Pos_1 - wp[1]) : Infinity;
+        if (d < bestD) { bestD = d; town = n.Name_lang.split(',')[0]; }
+      });
+      inns.push(`  {npc=${q(r[0])}, town=${q(town)}, zone=${q(area[z].name)}, cont=${wp[2]}, x=${wp[0]}, y=${wp[1]}, side="${r[12]}"},`);
     });
   });
 }

@@ -92,7 +92,7 @@ local function show(R)
   if R.today then
     print(("  hoy: %d rep, %s, %d min%s%s"):format(R.today.rep, g(R.today.cost), R.today.time / 60,
       (R.today.hearthSave or 0) > 0 and (", piedra ahorra " .. math.floor(R.today.hearthSave / 60) .. " min") or "",
-      R.today.hearthTip and (", consejo: piedra en " .. R.today.hearthTip.town .. " (" .. math.floor(R.today.hearthTip.save / 60) .. " min)") or ""))
+      R.today.preBind and (", primero piedra en " .. R.today.preBind.town .. " (ahorra " .. math.floor(R.today.preBind.save / 60) .. " min)") or ""))
     if R.buyNow then print("  comprá hoy: " .. #R.buyNow) end
     for _, leg in ipairs(R.today.route) do
       print(("    %s %s +%d min %s"):format(WritPlanner_DATA.zones[leg.stop.zone].name, leg.stop.npc, leg.leg / 60, leg.flight and "vuelo" or ""))
@@ -114,6 +114,13 @@ T0 = os.clock(); show(W.compute())
 print("== Honored en 4 días")
 WritPlannerCharDB.opts.plan = "days"; WritPlannerCharDB.opts.days = 4
 T0 = os.clock(); show(W.compute())
+print("== Honored recomendado saliendo de Thunder Bluff")
+WritPlannerCharDB.opts.plan = "rec"; WritPlannerCharDB.opts.from = "Thunder Bluff"
+T0 = os.clock(); show(W.compute())
+W.lock(W.compute().today)
+for _, st in ipairs(W.steps((W.lockedRoute()))) do print("   " .. st.text) end
+WritPlannerCharDB.locked = nil
+WritPlannerCharDB.opts.from = "here"
 print("== Honored lo más rápido")
 WritPlannerCharDB.opts.plan = "fast"
 T0 = os.clock(); show(W.compute())

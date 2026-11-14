@@ -391,10 +391,15 @@ function P.route(writs, start, travel)
       out[1] = { stop = stops[first], leg = 0 }
     end
     while #left > 0 do
+      -- Finish the continent you're on before crossing (one boat, not three).
+      local stay = false
+      for _, s in ipairs(left) do if s.pos.cont == here.cont then stay = true break end end
       local bi, bt, bf = 1, INF, nil
       for i, s in ipairs(left) do
-        local t, f = travel(here, s.pos)
-        if t < bt then bi, bt, bf = i, t, f end
+        if not stay or s.pos.cont == here.cont then
+          local t, f = travel(here, s.pos)
+          if t < bt then bi, bt, bf = i, t, f end
+        end
       end
       local s = table.remove(left, bi)
       local leg = { stop = s, leg = bt, from = here }

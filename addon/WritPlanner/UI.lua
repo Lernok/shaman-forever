@@ -273,6 +273,14 @@ local PLAN_HELP = {
 local MODES = { { key = "fly", name = "Con vuelos" }, { key = "walk", name = "Solo a pie" } }
 local AGES = { { key = 1, name = "De hasta 1 día" }, { key = 2, name = "De hasta 2 días" }, { key = 3, name = "De hasta 3 días" }, { key = 7, name = "De hasta 7 días" } }
 local DANGERS = { { key = 0, name = "Hasta mi nivel" }, { key = 2, name = "Mi nivel +2" }, { key = 4, name = "Mi nivel +4" }, { key = 99, name = "Sin límite" } }
+-- Towns with an auction house to start from (your side's capitals and the goblin towns).
+local function STARTS()
+  local list = { { key = "here", name = "Donde estoy" } }
+  local towns = UnitFactionGroup("player") == "Alliance" and { "Stormwind", "Ironforge", "Darnassus" } or { "Orgrimmar", "Thunder Bluff", "Undercity" }
+  for _, t in ipairs({ "Booty Bay", "Gadgetzan", "Everlook" }) do towns[#towns + 1] = t end
+  for _, t in ipairs(towns) do if W.innOf(t) then list[#list + 1] = { key = t, name = t } end end
+  return list
+end
 local HEARTH = { { key = true, name = "Usarla" }, { key = false, name = "No usarla" } }
 local PERDAY = { { key = nil, name = "Sin máximo" }, { key = 750, name = "Hasta 750" }, { key = 1500, name = "Hasta 1500" }, { key = 2500, name = "Hasta 2500" }, { key = 4000, name = "Hasta 4000" } }
 
@@ -394,9 +402,11 @@ local function buildOptions(p)
   cycle(p, 140, 14, y, PERDAY, function() return o().perDay end, function(v) o().perDay = v end)
   y = field(p, -292, "Precios", "Qué tan viejos pueden ser los precios de tu Auctionator.")
   cycle(p, 140, 14, y, AGES, function() return o().maxAge end, function(v) o().maxAge = v end)
-  y = field(p, -342, "Piedra de hogar", "La uso una vez en la ruta si ahorra tiempo, y te aviso si conviene ponerla en otro pueblo.")
+  y = field(p, -342, "Piedra de hogar", "La uso una vez si ahorra tiempo, y si conviene ponerla en otra posada antes de salir, te lo digo.")
   cycle(p, 140, 14, y, HEARTH, function() return o().hearth end, function(v) o().hearth = v end)
-  p.flights = text(p, "GameFontHighlightSmall", 14, -398, WIDTH - 50)
+  y = field(p, -392, "Salgo desde", "Donde comprás los writs: la ruta (y dónde poner la piedra) se calcula desde ahí.")
+  cycle(p, 140, 14, y, STARTS(), function() return o().from end, function(v) o().from = v end)
+  p.flights = text(p, "GameFontHighlightSmall", 14, -446, WIDTH - 50)
 
   local back = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
   back:SetSize(110, 28); back:SetPoint("BOTTOMLEFT", 14, 14); back:SetText("<  Volver")
@@ -464,8 +474,13 @@ local function showPlan(p)
     if plan.hearthSave and plan.hearthSave > 0 then
       lines[#lines + 1] = { text = GREY .. ("Usa la piedra de hogar una vez: ahorra ~%d min.|r"):format(mins(plan.hearthSave)) }
     end
-    if plan.hearthTip then
-      lines[#lines + 1] = { text = YELLOW .. ("Consejo: si ponés la piedra de hogar en %s (%s) antes de salir, te ahorrás ~%d min más.|r"):format(plan.hearthTip.town, plan.hearthTip.npc, mins(plan.hearthTip.save)) }
+    if plan.preBind then
+      local pb = plan.preBind
+      lines[#lines + 1] = {
+        kind = "stop",
+        text = ("0. Antes de empezar: piedra de hogar en %s%s|r"):format(WHITE, pb.town),
+        sub = ("%s%s  ·  andá a la posada (%s) y ponela ahí: toda la ruta te sale ~%d min más corta"):format(R.fromTown and ("saliendo de " .. R.fromTown .. ", ") or "", "+" .. mins(pb.go) .. " min", pb.npc, mins(pb.save)),
+      }
     end
     for i, leg in ipairs(plan.route) do
       local st = leg.stop

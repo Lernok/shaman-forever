@@ -58,6 +58,7 @@ local function defaults()
   if o.danger == nil then o.danger = 2 end
   if o.plan == nil then o.plan = "rec" end
   if o.hearth == nil then o.hearth = true end
+  if o.from == nil then o.from = "here" end
   if o.days == nil then o.days = 7 end -- turn-in spots with mobs up to your level + this
 end
 
@@ -370,32 +371,62 @@ function W.bind()
   local town = GetBindLocation and GetBindLocation()
   local h = WritPlannerCharDB.hearth
   if h and h.town == town then return { x = h.x, y = h.y, cont = h.cont }, town end
+  local inn = W.innOf and W.innOf(town)
+  if inn then return { x = inn.x, y = inn.y, cont = inn.cont }, town end
   return nodeOfTown(town), town
 end
 
--- The hearthstone on today's trip (if the option is on), and whether setting
--- it somewhere else would save a good while (5 minutes or more).
-function W.hearthPlan(plan, travel)
+-- Where the trip starts: where you are, or a town you pick (its inn), since
+-- you usually buy the writs in a city first.
+local function innOf(town)
+  for _, inn in ipairs(D.inns or {}) do if inn.town == town then return inn end end
+end
+function W.startPos()
+  local from = WritPlannerCharDB.opts.from
+  if from and from ~= "here" then
+    local inn = innOf(from)
+    if inn then return { x = inn.x, y = inn.y, cont = inn.cont }, from end
+  end
+  return W.here(), nil
+end
+
+local function near(a, b) return a and b and a.cont == b.cont and math.abs(a.x - b.x) + math.abs(a.y - b.y) < 300 end
+
+-- The hearthstone on today's trip (if the option is on): used once where it
+-- saves the most from where it's set; and, if going first to another inn to
+-- set it there and starting from it makes the whole trip 5 minutes shorter
+-- or more, the plan does that (plan.preBind) with the route from that inn.
+function W.hearthPlan(plan, travel, start)
   local o = WritPlannerCharDB.opts
   if not plan or not plan.route or not o.hearth then return end
   local bind, town = W.bind()
-  local _, saveNow = P.hearthBest(plan.route, travel, bind)
-  saveNow = saveNow or 0
-  -- Every inn of your side (and the neutral ones) as a place to set it.
+  plan.hearthSave = P.useHearth(plan.route, travel, bind, town)
+  plan.time = plan.time - plan.hearthSave
+  if not start then return end
   local faction = UnitFactionGroup("player") == "Alliance" and "A" or "H"
-  local best, bestSave = nil, saveNow
+  local conts = {}
+  for _, c in ipairs(plan.writs) do conts[c.cont] = true end
+  local best, bestTime
   for _, inn in ipairs(D.inns or {}) do
-    if inn.side:find(faction) then
-      local here = { x = inn.x, y = inn.y, cont = inn.cont }
-      local far = not bind or bind.cont ~= inn.cont or math.abs(bind.x - inn.x) + math.abs(bind.y - inn.y) > 300
-      local _, s = P.hearthBest(plan.route, travel, here)
-      if far and s and s > bestSave + 300 then best, bestSave = inn, s end
+    local here = { x = inn.x, y = inn.y, cont = inn.cont }
+    if inn.side:find(faction) and conts[inn.cont] and not near(here, bind) then
+      P.tick(#plan.writs * #plan.writs * 30)
+      local go, how = travel(start, here)
+      local r, t = P.route(plan.writs, here, travel)
+      local _, save = P.hearthBest(r, travel, here)
+      local total = go + t - (save or 0)
+      if total + 300 < plan.time and (not bestTime or total < bestTime) then
+        best, bestTime = { inn = inn, go = go, how = how, route = r }, total
+      end
     end
   end
-  if best then plan.hearthTip = { town = best.zone, npc = best.npc, save = bestSave - saveNow } end
-  plan.hearthSave = P.useHearth(plan.route, travel, bind, town)
-  if plan.hearthSave > 0 then plan.time = plan.time - plan.hearthSave end
+  if best then
+    P.useHearth(best.route, travel, { x = best.inn.x, y = best.inn.y, cont = best.inn.cont }, best.inn.town)
+    plan.preBind = { town = best.inn.town, npc = best.inn.npc, x = best.inn.x, y = best.inn.y, cont = best.inn.cont, go = best.go, how = best.how, save = plan.time - bestTime }
+    plan.route, plan.time = best.route, bestTime
+  end
 end
+W.innOf = innOf
 
 function W.travelFn()
   local o = WritPlannerCharDB.opts
@@ -428,7 +459,8 @@ function W.compute()
   local mode = o.plan or "rec"
   local budget = mode == "gold" and tonumber(o.budget) and tonumber(o.budget) * 10000 or nil
   local travel = W.travelFn()
-  local start = W.here()
+  local start, fromTown = W.startPos()
+  R.fromTown = fromTown
   R.budget, R.tol = budget, tol
   local U = P.units(need)
   local perDay = tonumber(o.perDay)
@@ -455,7 +487,7 @@ function W.compute()
     R.plan, R.days = chosen, chosen.days
     if chosen.goals[1] and chosen.goals[1] > 0 then
       R.today = P.best(today, chosen.days == 1 and U or chosen.goals[1], tol, start, travel)
-      W.hearthPlan(R.today, travel)
+      W.hearthPlan(R.today, travel, start)
     end
     -- What the next days would use that is cheaper today than usual: buy it now.
     if chosen.days > 1 and chosen.goals[2] and chosen.goals[2] > 0 then
@@ -480,7 +512,7 @@ end
 function W.lock(plan)
   local qs = {}
   for _, c in ipairs(plan.writs) do qs[#qs + 1] = c.w.q end
-  WritPlannerCharDB.locked = { key = resetKey(), q = qs }
+  WritPlannerCharDB.locked = { key = resetKey(), q = qs, preBind = plan.preBind }
 end
 
 function W.locked()
@@ -505,11 +537,21 @@ function W.lockedRoute()
   end
   if #left == 0 then return {}, done, #l.q end
   local travel = W.travelFn()
-  local route = P.route(left, W.here(), travel)
+  local here = W.here()
+  local bind, town = W.bind()
+  local pre = l.preBind
+  if pre and near(bind, { x = pre.x, y = pre.y, cont = pre.cont }) then pre = nil end
+  -- Still to set the hearthstone at the planned inn: the trip starts there.
+  local from = pre and { x = pre.x, y = pre.y, cont = pre.cont } or here
+  local route = P.route(left, from, travel)
   if WritPlannerCharDB.opts.hearth then
-    local bind, town = W.bind()
     local cd = GetItemCooldown and select(2, GetItemCooldown(6948)) or 0
-    if (cd or 0) == 0 then P.useHearth(route, travel, bind, town) end
+    if pre then P.useHearth(route, travel, from, pre.town)
+    elseif (cd or 0) == 0 then P.useHearth(route, travel, bind, town) end
+  end
+  if pre and here then
+    local go, how = travel(here, from)
+    route.preBind = { town = pre.town, npc = pre.npc, pos = from, go = go, how = how, from = here }
   end
   return route, done, #l.q
 end
@@ -533,6 +575,16 @@ function W.steps(route)
   local out = {}
   local horde = UnitFactionGroup("player") ~= "Alliance"
   local function add(kind, text, stop) out[#out + 1] = { kind = kind, text = text, stop = stop } end
+  local pb = route.preBind
+  if pb then
+    if pb.how and pb.how.flight == nil and pb.how.from then
+      add("walk", ("Andá al maestro de vuelo de %s."):format(D.nodes[pb.how.from].name))
+      add("fly", ("Volá a %s."):format(D.nodes[pb.how.to].name))
+    elseif pb.how and pb.how.boat then
+      add("boat", "Cruzá de continente en barco o zeppelin.")
+    end
+    add("bind", ("Andá a la posada de %s y poné la piedra de hogar con %s."):format(pb.town, pb.npc or "el posadero"))
+  end
   for _, leg in ipairs(route) do
     local st = leg.stop
     local z = D.zones[st.zone]
