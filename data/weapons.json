@@ -2,41 +2,6 @@
  "build": "1.60.1.70938",
  "weapons": [
   {
-   "id": 260214,
-   "name": "Staff of Wild Beasts",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 60,
-   "bind": "pickup",
-   "dps": 46.6,
-   "speed": 2.5,
-   "dmgMin": 93,
-   "dmgMax": 140,
-   "stats": {
-    "spirit": 19
-   },
-   "bonus": {
-    "critRating": 14
-   },
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_51",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 221518,
    "name": "Whisper",
    "kind": "2H Mace",
@@ -212,110 +177,6 @@
    ]
   },
   {
-   "id": 275291,
-   "name": "Staff of the Deeproar",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "dps": 44.8,
-   "speed": 3.3,
-   "dmgMin": 118,
-   "dmgMax": 178,
-   "stats": {
-    "stamina": 13,
-    "intellect": 12,
-    "spirit": 14
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_30",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 260166,
-   "name": "Rageroar's Best Club",
-   "kind": "2H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 52,
-   "bind": "pickup",
-   "dps": 40.3,
-   "speed": 3.3,
-   "dmgMin": 106,
-   "dmgMax": 160,
-   "stats": {
-    "strength": 15,
-    "spirit": 15
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_2h_maul_a_01_hd",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 260213,
-   "name": "Great Bear Claw",
-   "kind": "Fist",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 60,
-   "bind": "pickup",
-   "dps": 35.83,
-   "speed": 2.4,
-   "dmgMin": 60,
-   "dmgMax": 112,
-   "stats": {
-    "strength": 8,
-    "agility": 4,
-    "stamina": 5
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_monsterclaw_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 274383,
    "name": "Kanai's Knife",
    "kind": "Dagger",
@@ -450,39 +311,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 275293,
-   "name": "Barkskin Scepter",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "dps": 34.5,
-   "speed": 2,
-   "dmgMin": 48,
-   "dmgMax": 90,
-   "stats": {
-    "intellect": 13
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 0,
      "rec": 0
     }
@@ -21338,11 +21166,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Ironaya",
+     "npcId": 7228,
+     "zone": "Uldaman",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 37,
-     "rec": 37
+     "rec": 37,
+     "basis": {
+      "name": "Ironaya",
+      "level": 40,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -22482,11 +22320,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Amnennar the Coldbringer",
+     "npcId": 7358,
+     "zone": "Razorfen Downs",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 38,
-     "rec": 38
+     "rec": 38,
+     "basis": {
+      "name": "Amnennar the Coldbringer",
+      "level": 41,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -23159,11 +23007,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Obsidian Sentinel",
+     "npcId": 7023,
+     "zone": "Uldaman",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 39,
-     "rec": 39
+     "rec": 39,
+     "basis": {
+      "name": "Obsidian Sentinel",
+      "level": 42,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -23233,11 +23091,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Obsidian Sentinel",
+     "npcId": 7023,
+     "zone": "Uldaman",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 39,
-     "rec": 39
+     "rec": 39,
+     "basis": {
+      "name": "Obsidian Sentinel",
+      "level": 42,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -24690,11 +24558,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Ancient Stone Keeper",
+     "npcId": 7206,
+     "zone": "Uldaman",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 41,
-     "rec": 41
+     "rec": 41,
+     "basis": {
+      "name": "Ancient Stone Keeper",
+      "level": 44,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -25457,7 +25335,7 @@
    "sources": [
     {
      "type": "quest",
-     "quest": "Khan Jehn",
+     "quest": "Khan Jehn (given by Orgrul)",
      "questId": 93196,
      "level": 42,
      "requiredLevel": 35,
@@ -25873,7 +25751,7 @@
    "sources": [
     {
      "type": "quest",
-     "quest": "Khan Jehn",
+     "quest": "Khan Jehn (given by Orgrul)",
      "questId": 93196,
      "level": 42,
      "requiredLevel": 35,
@@ -26838,41 +26716,6 @@
    ]
   },
   {
-   "id": 281648,
-   "name": "Gul'gash's Greathammer",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 44,
-   "obtain": 44,
-   "ilvl": 49,
-   "bind": "pickup",
-   "dps": 42.78,
-   "speed": 3.6,
-   "dmgMin": 123,
-   "dmgMax": 185,
-   "stats": {
-    "strength": 19
-   },
-   "bonus": {
-    "spellDamage": 21
-   },
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 44,
-     "rec": 44
-    }
-   ]
-  },
-  {
    "id": 9413,
    "name": "The Rockpounder",
    "kind": "2H Mace",
@@ -26947,11 +26790,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Archaedas",
+     "npcId": 2748,
+     "zone": "Uldaman",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 44,
-     "rec": 44
+     "rec": 44,
+     "basis": {
+      "name": "Archaedas",
+      "level": 47,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -27524,6 +27377,51 @@
    ]
   },
   {
+   "id": 260214,
+   "name": "Staff of Wild Beasts",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 0,
+   "obtain": 45,
+   "ilvl": 60,
+   "bind": "pickup",
+   "dps": 46.6,
+   "speed": 2.5,
+   "dmgMin": 93,
+   "dmgMax": 140,
+   "stats": {
+    "spirit": 19
+   },
+   "bonus": {
+    "critRating": 14
+   },
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_51",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Claws That Rend, Tusks that Gore",
+     "questId": 92069,
+     "requiredLevel": 45,
+     "zone": "Blackmaw Hold",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=92069",
+     "dungeon": true,
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 45,
+     "rec": 45
+    }
+   ]
+  },
+  {
    "id": 9477,
    "name": "The Chief's Enforcer",
    "kind": "Staff",
@@ -27786,6 +27684,51 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
+     "asap": 45,
+     "rec": 45
+    }
+   ]
+  },
+  {
+   "id": 260213,
+   "name": "Great Bear Claw",
+   "kind": "Fist",
+   "quality": 2,
+   "req": 0,
+   "obtain": 45,
+   "ilvl": 60,
+   "bind": "pickup",
+   "dps": 35.83,
+   "speed": 2.4,
+   "dmgMin": 60,
+   "dmgMax": 112,
+   "stats": {
+    "strength": 8,
+    "agility": 4,
+    "stamina": 5
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_monsterclaw_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Claws That Rend, Tusks that Gore",
+     "questId": 92069,
+     "requiredLevel": 45,
+     "zone": "Blackmaw Hold",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=92069",
+     "dungeon": true,
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
      "asap": 45,
      "rec": 45
     }
@@ -28127,6 +28070,52 @@
      },
      "asap": 43,
      "rec": 45
+    }
+   ]
+  },
+  {
+   "id": 281648,
+   "name": "Gul'gash's Greathammer",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 44,
+   "obtain": 46,
+   "ilvl": 49,
+   "bind": "pickup",
+   "dps": 42.78,
+   "speed": 3.6,
+   "dmgMin": 123,
+   "dmgMax": 185,
+   "stats": {
+    "strength": 19
+   },
+   "bonus": {
+    "spellDamage": 21
+   },
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Gul'gash",
+     "npcId": 259758,
+     "zone": "Riverglades",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 44,
+     "rec": 46,
+     "basis": {
+      "name": "Gul'gash",
+      "level": 49,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -30606,6 +30595,90 @@
    ]
   },
   {
+   "id": 279474,
+   "name": "Dustwallow Dirk",
+   "kind": "Dagger",
+   "quality": 3,
+   "req": 1,
+   "obtain": 50,
+   "ilvl": 55,
+   "bind": "pickup",
+   "dps": 36.47,
+   "speed": 1.7,
+   "dmgMin": 43,
+   "dmgMax": 81,
+   "stats": {
+    "agility": 6,
+    "stamina": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_sword_13",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Shaw Needs To Know",
+     "questId": 95264,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Stormwind City",
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95264",
+     "basis": {
+      "name": null,
+      "level": 53,
+      "rank": "normal",
+      "from": "step-level",
+      "group": false,
+      "step": 95263,
+      "steps": 6
+     },
+     "asap": 50,
+     "rec": 52
+    },
+    {
+     "type": "quest",
+     "quest": "Thrall Needs to Know",
+     "questId": 95483,
+     "level": 53,
+     "requiredLevel": 48,
+     "zone": "Alcaz Prison",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 49,
+      "yellow": 51,
+      "green": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/95483",
+     "basis": {
+      "name": null,
+      "level": 53,
+      "rank": "normal",
+      "from": "step-level",
+      "group": true,
+      "step": 96369,
+      "steps": 3
+     },
+     "asap": 48,
+     "rec": 50
+    }
+   ]
+  },
+  {
    "id": 250614,
    "name": "Thorium Cestus",
    "kind": "Fist",
@@ -31432,6 +31505,53 @@
       "group": false,
       "step": 88917,
       "steps": 6
+     },
+     "asap": 49,
+     "rec": 51
+    }
+   ]
+  },
+  {
+   "id": 260166,
+   "name": "Rageroar's Best Club",
+   "kind": "2H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 51,
+   "ilvl": 52,
+   "bind": "pickup",
+   "dps": 40.3,
+   "speed": 3.3,
+   "dmgMin": 106,
+   "dmgMax": 160,
+   "stats": {
+    "strength": 15,
+    "spirit": 15
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_2h_maul_a_01_hd",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Master Feardred",
+     "questId": 86777,
+     "requiredLevel": 47,
+     "zone": "Azshara",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=86777",
+     "basis": {
+      "name": "Master Feardred",
+      "level": 52,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false,
+      "steps": 1
      },
      "asap": 49,
      "rec": 51
@@ -32449,85 +32569,6 @@
    ]
   },
   {
-   "id": 279474,
-   "name": "Dustwallow Dirk",
-   "kind": "Dagger",
-   "quality": 3,
-   "req": 1,
-   "obtain": 52,
-   "ilvl": 55,
-   "bind": "pickup",
-   "dps": 36.47,
-   "speed": 1.7,
-   "dmgMin": 43,
-   "dmgMax": 81,
-   "stats": {
-    "agility": 6,
-    "stamina": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_sword_13",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Shaw Needs To Know",
-     "questId": 95264,
-     "level": 53,
-     "requiredLevel": 48,
-     "zone": "Stormwind City",
-     "bands": {
-      "red": 48,
-      "orange": 49,
-      "yellow": 51,
-      "green": 56
-     },
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/95264",
-     "basis": {
-      "name": null,
-      "level": 53,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 95263,
-      "steps": 6
-     },
-     "asap": 50,
-     "rec": 52
-    },
-    {
-     "type": "quest",
-     "quest": "Thrall Needs to Know",
-     "questId": 95483,
-     "level": 53,
-     "requiredLevel": 48,
-     "zone": "Alcaz Prison",
-     "dungeon": true,
-     "bands": {
-      "red": 48,
-      "orange": 49,
-      "yellow": 51,
-      "green": 56
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/95483",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 48,
-     "rec": 52
-    }
-   ]
-  },
-  {
    "id": 12779,
    "name": "Rune Edge",
    "kind": "1H Axe",
@@ -33338,6 +33379,50 @@
    ]
   },
   {
+   "id": 275291,
+   "name": "Staff of the Deeproar",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 0,
+   "obtain": 54,
+   "ilvl": 58,
+   "bind": "pickup",
+   "dps": 44.8,
+   "speed": 3.3,
+   "dmgMin": 118,
+   "dmgMax": 178,
+   "stats": {
+    "stamina": 13,
+    "intellect": 12,
+    "spirit": 14
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_30",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Deeproar Down",
+     "questId": 95107,
+     "requiredLevel": 54,
+     "zone": null,
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=95107",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 54,
+     "rec": 54
+    }
+   ]
+  },
+  {
    "id": 11907,
    "name": "Beastslayer",
    "kind": "2H Axe",
@@ -33567,6 +33652,48 @@
       "from": "wowhead",
       "group": true
      }
+    }
+   ]
+  },
+  {
+   "id": 275293,
+   "name": "Barkskin Scepter",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 54,
+   "ilvl": 58,
+   "bind": "pickup",
+   "dps": 34.5,
+   "speed": 2,
+   "dmgMin": 48,
+   "dmgMax": 90,
+   "stats": {
+    "intellect": 13
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Deeproar Down",
+     "questId": 95107,
+     "requiredLevel": 54,
+     "zone": null,
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=95107",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 54,
+     "rec": 54
     }
    ]
   },
@@ -36158,18 +36285,14 @@
    "dmgMin": 89,
    "dmgMax": 134,
    "stats": {
-    "stamina": 13,
-    "intellect": 15
+    "stamina": 21,
+    "intellect": 26
    },
-   "bonus": {
-    "spellPower": 27
-   },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 27."
-   ],
+   "bonus": {},
+   "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_hammer_04",
    "raceMask": -1,
    "sources": [
@@ -37010,17 +37133,15 @@
    "dmgMax": 84,
    "stats": {},
    "bonus": {
-    "attackPower": 6,
-    "crit": 1
+    "critRating": 14,
+    "attackPower": 6
    },
    "equip": [
-    "Equip: Improves your chance to get a critical strike by 1.0%.",
-    "Equip: +6 Attack Power.",
     "Equip: +6 Attack Power against Humanoids."
    ],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_mace_15",
    "raceMask": -1,
    "sources": [
@@ -45603,25 +45724,21 @@
    "obtain": 60,
    "ilvl": 63,
    "bind": "pickup",
-   "dps": 53.81,
+   "dps": 53.8,
    "speed": 2.1,
    "dmgMin": 90,
    "dmgMax": 136,
    "stats": {
-    "stamina": 11,
-    "intellect": 10
+    "stamina": 21,
+    "intellect": 21
    },
    "bonus": {
-    "spellPower": 30,
-    "spellHit": 1
+    "hitRating": 10
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 30.",
-    "Equip: Improves your chance to hit with spells by 1%."
-   ],
+   "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_staff_07",
    "raceMask": -1,
    "sources": [

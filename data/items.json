@@ -133537,20 +133537,18 @@
    "raceMask": -1,
    "era": "classic",
    "stats": {
-    "stamina": 4,
-    "intellect": 5
+    "stamina": 6,
+    "intellect": 6
    },
-   "equip": [
-    "Equip: Increases healing done by spells and effects by up to 26.",
-    "Equip: Restores 4 mana per 5 sec."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
     "healing": 26,
-    "mp5": 4
+    "mp5": 4,
+    "spellDamage": 9
    },
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_book_07"
   },
   "22321": {
@@ -133591,17 +133589,15 @@
    "dps": 40.31,
    "stats": {},
    "equip": [
-    "Equip: Improves your chance to get a critical strike by 1.0%.",
-    "Equip: +6 Attack Power.",
     "Equip: +6 Attack Power against Humanoids."
    ],
    "use": [],
    "chance": [],
    "bonus": {
-    "attackPower": 6,
-    "crit": 1
+    "critRating": 14,
+    "attackPower": 6
    },
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_mace_15"
   },
   "22325": {
@@ -133624,7 +133620,7 @@
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_belt_26"
   },
   "22326": {
@@ -133642,17 +133638,14 @@
     "stamina": 5,
     "intellect": 6
    },
-   "equip": [
-    "Equip: Improves your chance to get a critical strike by 1%.",
-    "Equip: Restores 3 mana per 5 sec."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "crit": 1,
+    "critRating": 14,
     "mp5": 3
    },
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_19"
   },
   "22327": {
@@ -133694,20 +133687,21 @@
    "bind": "pickup",
    "raceMask": -1,
    "era": "classic",
-   "stats": {},
+   "stats": {
+    "intellect": 8,
+    "spirit": 8
+   },
    "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
-    "Equip: Improves your chance to hit with spells by 1%.",
-    "Equip: Improves your chance to get a critical strike with spells by 1%."
+    "Equip: Improves your chance to hit by 0.5%.",
+    "Equip: Improves your chance to get a critical strike by 1.0%."
    ],
    "use": [],
    "chance": [],
    "bonus": {
-    "spellPower": 9,
-    "spellCrit": 1,
-    "spellHit": 1
+    "crit": 1,
+    "hit": 0.5
    },
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_wand_07"
   },
   "22330": {
@@ -133777,18 +133771,14 @@
    "speed": 2.1,
    "dps": 53.1,
    "stats": {
-    "stamina": 13,
-    "intellect": 15
+    "stamina": 21,
+    "intellect": 26
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 27."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {
-    "spellPower": 27
-   },
-   "numbers": "classic",
+   "bonus": {},
+   "numbers": "client",
    "icon": "inv_hammer_04"
   },
   "22334": {
@@ -133833,22 +133823,18 @@
    "dmgMin": 90,
    "dmgMax": 136,
    "speed": 2.1,
-   "dps": 53.81,
+   "dps": 53.8,
    "stats": {
-    "stamina": 11,
-    "intellect": 10
+    "stamina": 21,
+    "intellect": 21
    },
-   "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 30.",
-    "Equip: Improves your chance to hit with spells by 1%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "spellPower": 30,
-    "spellHit": 1
+    "hitRating": 10
    },
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_staff_07"
   },
   "22336": {
@@ -133916,16 +133902,16 @@
     "stamina": 7
    },
    "equip": [
-    "Equip: Improves your chance to hit with spells by 1%.",
-    "Equip: Increases damage and healing done by magical spells and effects by up to 16."
+    "Equip: Improves your chance to hit by 1.0%.",
+    "Equip: Increases damage and healing done by magical spells and effects by up to 13."
    ],
    "use": [],
    "chance": [],
    "bonus": {
-    "spellPower": 16,
-    "spellHit": 1
+    "spellPower": 13,
+    "hit": 1
    },
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_jewelry_ring_35"
   },
   "22340": {
@@ -133969,15 +133955,13 @@
     "stamina": 16,
     "intellect": 16
    },
-   "equip": [
-    "Equip: Increases damage done by Shadow spells and effects by up to 34."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
     "otherDamage": 34
    },
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_pants_09"
   },
   "22343": {
