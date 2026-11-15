@@ -198,6 +198,8 @@ local function writSub(c)
   if stock then t[#t + 1] = "hay " .. stock .. " a la venta" end
   if c.haveWrit and c.haveItems then t[#t + 1] = GREEN .. "ya lo tenés todo" .. GREY
   elseif c.haveWrit then t[#t + 1] = GREEN .. "writ ya comprado" .. GREY end
+  if c.writAt then t[#t + 1] = YELLOW .. "el writ está en el " .. c.writAt .. GREY end
+  if c.itemAt then t[#t + 1] = YELLOW .. "el objeto está en el " .. c.itemAt .. GREY end
   if c.ratio and c.ratio <= 0.7 then t[#t + 1] = GREEN .. math.floor((1 - c.ratio) * 100 + 0.5) .. "% más barato que lo normal" .. GREY
   elseif c.ratio and c.ratio >= 1.4 then t[#t + 1] = RED .. math.floor((c.ratio - 1) * 100 + 0.5) .. "% más caro que lo normal" .. GREY end
   return table.concat(t, "  ·  ")
@@ -387,6 +389,7 @@ local function showOptions(p)
     :format(WHITE, W.flightCount(0), WHITE, W.flightCount(1), GREY))
   p.tol.reload()
   p.mini:SetChecked(not (WritPlannerDB.minimap and WritPlannerDB.minimap.hide))
+  p.share:SetChecked(o().share)
 end
 
 local function buildOptions(p)
@@ -412,8 +415,15 @@ local function buildOptions(p)
   p.mini = CreateFrame("CheckButton", nil, p, "UICheckButtonTemplate")
   p.mini:SetSize(24, 24)
   p.mini:SetPoint("TOPLEFT", 10, -476)
-  local ml = text(p, "GameFontHighlightSmall", 38, -481, WIDTH - 80)
-  ml:SetText("Mostrar el icono en el minimapa  " .. GREY .. "(sin él, abrís el panel con /writs)|r")
+  local ml = text(p, "GameFontHighlightSmall", 38, -481, 250)
+  ml:SetText("Icono en el minimapa  " .. GREY .. "(sin él: /writs)|r")
+  -- Share where writs are turned in with the guild.
+  p.share = CreateFrame("CheckButton", nil, p, "UICheckButtonTemplate")
+  p.share:SetSize(24, 24)
+  p.share:SetPoint("TOPLEFT", 300, -476)
+  local sl = text(p, "GameFontHighlightSmall", 328, -481, WIDTH - 350)
+  sl:SetText("Compartir con la guild  " .. GREY .. "(dónde se entregan)|r")
+  p.share:SetScript("OnClick", function(self) o().share = self:GetChecked() and true or false end)
   p.mini:SetScript("OnClick", function(self)
     local want = self:GetChecked() and true or false
     if UI.toggleMinimap() ~= want then UI.toggleMinimap() end
@@ -545,8 +555,15 @@ local function buildPlan(p)
   if p.summary.SetSpacing then p.summary:SetSpacing(3) end
   p.list = list(p, nil, 46, p.summary)
   local b1 = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
-  b1:SetSize(170, 26); b1:SetPoint("BOTTOMLEFT", 10, 12); b1:SetText("Buscar en la subasta")
+  b1:SetSize(170, 26); b1:SetPoint("BOTTOMLEFT", 10, 12); b1:SetText("Lista de compras")
   b1:SetScript("OnClick", function() W.search(last and last.today) end)
+  b1:SetScript("OnEnter", function(self)
+    GameTooltip:SetOwner(self, "ANCHOR_TOP")
+    GameTooltip:AddLine("Lista de compras en Auctionator")
+    GameTooltip:AddLine("Arma la lista \"" .. W.LIST .. "\" con lo que te falta para hoy y cuántos de cada uno (lo que tenés en las bolsas, el banco o el correo no cuenta). En la subasta: pestaña Shopping.", 1, 1, 1, true)
+    GameTooltip:Show()
+  end)
+  b1:SetScript("OnLeave", function() GameTooltip:Hide() end)
   local b3 = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
   b3:SetSize(150, 26); b3:SetPoint("LEFT", b1, "RIGHT", 6, 0); b3:SetText("Mostrar los \"No hay\"")
   b3:SetScript("OnClick", function() WritPlannerCharDB.gone = {}; stale = true; UI.update() end)

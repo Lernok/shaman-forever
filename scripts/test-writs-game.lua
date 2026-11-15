@@ -60,6 +60,8 @@ Auctionator = {
     GetAuctionPriceByItemID = function(_, id) return prices[id] end,
     GetAuctionAgeByItemID = function(_, id) return prices[id] and 0 or nil end,
     RegisterForDBUpdate = function(_, fn) end,
+    ConvertToSearchString = function(_, t) return '"' .. t.searchString .. '";;;;;;;;;;;;;' .. (t.quantity or "") end,
+    CreateShoppingList = function(_, name, terms) lastList = { name = name, terms = terms } end,
     MultiSearchExact = function(_, terms) print("[subasta] busca " .. #terms .. " cosas: " .. table.concat(terms, ", "):sub(1, 120)) end,
   } },
   -- Five days of history: the price was 30% higher before today for half the items.
@@ -169,6 +171,62 @@ for _, w in ipairs(WritPlanner_DATA.writs) do if not w.z then unknown = w break 
 events.onevent(events, "QUEST_COMPLETE")
 events.onevent(events, "QUEST_TURNED_IN", unknown.q)
 print("aprendido: " .. tostring(unknown.z) .. " " .. tostring(unknown.npc))
+
+print("== correo, banco y lista de compras")
+local plan = W.compute().today
+local c1 = plan.writs[1]
+local buys = W.shopping(plan)
+assert(#buys > 0)
+-- The first writ waits at the mailbox (bought on the auction house), its item at the bank.
+GetInboxNumItems = function() return 1 end
+GetInboxHeaderInfo = function() return nil, nil, nil, nil, nil, 0 end
+GetInboxItem = function(i, a) if a == 1 then return "x", c1.w.w, nil, 1 end end
+events.onevent(events, "MAIL_INBOX_UPDATE")
+local bankN = c1.w.n or 1
+C_Item.GetItemCount = function(id, bank) return (bags[id] or 0) + (bank and id == c1.w.i and bankN or 0) end
+events.onevent(events, "BANKFRAME_OPENED")
+events.onevent(events, "BANKFRAME_CLOSED")
+assert(W.owned(c1.w.w) == 1 and W.pickup(c1.w.w, 1) == "correo", "el writ del correo")
+assert(W.pickup(c1.w.i, bankN) == "banco", "el objeto del banco")
+local R2 = W.compute()
+local found
+for _, c in ipairs(R2.today.writs) do if c.w.q == c1.w.q then found = c end end
+if found then
+  assert(found.haveWrit and found.writAt == "correo" and found.itemAt == "banco", "correo/banco en el plan")
+  local steps = W.steps(W.Planner.route(R2.today.writs, W.here(), W.travelFn()))
+  assert(steps[1].kind == "mail" and steps[2].kind == "bank", "primero el correo y el banco: " .. steps[1].text)
+  print("  " .. steps[1].text .. " / " .. steps[2].text)
+end
+-- The shopping list leaves out what's at the mailbox and the bank.
+W.search(R2.today)
+assert(lastList and lastList.name == W.LIST and #lastList.terms > 0, "lista de compras")
+for _, t in ipairs(lastList.terms) do assert(not t:find('"item' .. c1.w.w .. '"', 1, true), "compra el writ que ya tenés") end
+print(("  lista \"%s\": %d cosas, p. ej. %s"):format(lastList.name, #lastList.terms, lastList.terms[1]))
+GetInboxNumItems = nil
+
+print("== compartir con la guild")
+local sent = {}
+IsInGuild = function() return true end
+C_ChatInfo = { SendAddonMessage = function(pre, msg, ch) sent[#sent + 1] = { pre, msg, ch } end }
+local learnedQ = unknown.q
+W.share(learnedQ)
+assert(#sent == 1 and sent[1][1] == "WritPlanner" and sent[1][3] == "GUILD", "manda a la guild")
+print("  manda: " .. sent[1][2])
+-- A guildmate's addon receives it.
+local msg = sent[1][2]
+WritPlannerDB.learned[learnedQ] = nil
+for _, w in ipairs(WritPlanner_DATA.writs) do if w.q == learnedQ then w.z = nil end end
+events.onevent(events, "CHAT_MSG_ADDON", "WritPlanner", msg, "GUILD", "Grunk-RPPvP")
+assert(WritPlannerDB.learned[learnedQ] and WritPlannerDB.learned[learnedQ].from == "Grunk", "aprende lo de la guild")
+-- Bad or own messages are ignored.
+local other
+for _, w in ipairs(WritPlanner_DATA.writs) do if not w.z then other = w break end end
+events.onevent(events, "CHAT_MSG_ADDON", "WritPlanner", "L1;" .. other.q .. ";1434;500;1;1;1;0;x;y", "GUILD", "Grunk")
+events.onevent(events, "CHAT_MSG_ADDON", "WritPlanner", "L1;" .. other.q .. ";1434;50;50;1;1;0;x;y", "GUILD", "Kzixx")
+events.onevent(events, "CHAT_MSG_ADDON", "WritPlanner", "L1;" .. other.q .. ";1434;50;50;1;1;0;x;y", "WHISPER", "Grunk")
+assert(not WritPlannerDB.learned[other.q], "ignora mensajes malos, propios o fuera de la guild")
+WritPlannerCharDB.opts.share = false; sent = {}; W.share(learnedQ); assert(#sent == 0, "sin compartir no manda")
+print("  recibe, valida y respeta la opción")
 print("OK")
 
 -- Texture paths need "\\" in Lua strings: a lone "\M" turns into "M" and the

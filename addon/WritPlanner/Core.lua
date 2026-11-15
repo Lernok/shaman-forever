@@ -49,6 +49,9 @@ local function defaults()
   c.flights = c.flights or {}   -- [taxi node id] = true
   c.gone = c.gone or {}         -- [questID] = daily reset key: "not on sale" for today
   c.opts = c.opts or {}
+  c.stored = c.stored or {}     -- bank / mail = { [itemID] = count }, as last seen there
+  c.stored.bank = c.stored.bank or {}
+  c.stored.mail = c.stored.mail or {}
   local o = c.opts
   o.target, o.custom = nil, nil -- 0.1.0 settings
   if o.tol == nil then o.tol = 1 end
@@ -59,6 +62,7 @@ local function defaults()
   if o.plan == nil then o.plan = "rec" end
   if o.hearth == nil then o.hearth = true end
   if o.from == nil then o.from = "here" end
+  if o.share == nil then o.share = true end
   if o.days == nil then o.days = 7 end -- turn-in spots with mobs up to your level + this
 end
 
@@ -216,6 +220,50 @@ local function count(id)
   if C_Item and C_Item.GetItemCount then return C_Item.GetItemCount(id) or 0 end
   return GetItemCount and GetItemCount(id) or 0
 end
+-- What's waiting at the bank or the mailbox (as last seen there).
+local function stored(id)
+  local s = WritPlannerCharDB.stored
+  return (s.bank[id] or 0) + (s.mail[id] or 0)
+end
+local function owned(id) return count(id) + stored(id) end
+-- Where to pick it up when the bags don't have enough: "correo", "banco" or nil.
+local function pickup(id, need)
+  if count(id) >= need then return nil end
+  local s = WritPlannerCharDB.stored
+  if (s.mail[id] or 0) > 0 then return "correo" end
+  if (s.bank[id] or 0) > 0 then return "banco" end
+end
+W.owned, W.pickup = owned, pickup
+
+-- The bank: what it holds of each writ and item (counted while it's open).
+local bankOpen = false
+function W.scanBank()
+  if not bankOpen then return end
+  local bank = {}
+  for id in pairs(ALL) do
+    local all = (C_Item and C_Item.GetItemCount and C_Item.GetItemCount(id, true)) or (GetItemCount and GetItemCount(id, true)) or 0
+    local n = all - count(id)
+    if n > 0 then bank[id] = n end
+  end
+  WritPlannerCharDB.stored.bank = bank
+end
+
+-- The mailbox: attachments of every letter (auction purchases land here).
+function W.scanMail()
+  if not GetInboxNumItems then return end
+  local mail = {}
+  for i = 1, GetInboxNumItems() do
+    local cod = select(6, GetInboxHeaderInfo(i)) or 0
+    if cod == 0 then
+      for a = 1, ATTACHMENTS_MAX_RECEIVE or 16 do
+        local _, id, _, n = GetInboxItem(i, a)
+        if id and ALL[id] then mail[id] = (mail[id] or 0) + (n or 1) end
+      end
+    end
+  end
+  WritPlannerCharDB.stored.mail = mail
+end
+
 local function doneToday(q)
   if C_QuestLog and C_QuestLog.IsQuestFlaggedCompleted then return C_QuestLog.IsQuestFlaggedCompleted(q) end
   return IsQuestFlaggedCompleted and IsQuestFlaggedCompleted(q)
@@ -256,8 +304,8 @@ function W.candidates(today)
       if ok and maxDanger and c.danger and c.danger > maxDanger then ok = false; skipped.danger = skipped.danger + 1 end
       if ok then
         local need = w.n or 1
-        local haveWrit = today and (count(w.w) > 0 or onQuest(w.q))
-        local haveItems = today and math.min(count(w.i), need) or 0
+        local haveWrit = today and (owned(w.w) > 0 or onQuest(w.q))
+        local haveItems = today and math.min(owned(w.i), need) or 0
         local wp, ip = W.price(w.w), W.price(w.i)
         local fresh = function(id) local a = W.age(id); return a ~= nil and a <= o.maxAge end
         if not haveWrit and (not wp or not fresh(w.w)) then ok = false end
@@ -269,6 +317,10 @@ function W.candidates(today)
           c.itemCost = (need - haveItems) * (ip or 0)
           c.cost = c.writCost + c.itemCost
           c.haveWrit, c.haveItems = haveWrit, haveItems >= need
+          if today then
+            c.writAt = haveWrit and not onQuest(w.q) and pickup(w.w, 1) or nil
+            c.itemAt = haveItems > 0 and pickup(w.i, need) or nil
+          end
           local uw, ui = W.usual(w.w), W.usual(w.i)
           if uw and ui and wp and ip then
             c.usual = uw + ui * need
@@ -532,7 +584,8 @@ function W.lockedRoute()
     local w = byQ[q]
     if w and doneToday(q) then done = done + 1
     elseif w and w.z and D.zones[w.z] then
-      left[#left + 1] = { w = w, zone = w.z, cont = D.zones[w.z].cont, cost = 0, haveWrit = count(w.w) > 0 or onQuest(q), haveItems = count(w.i) >= (w.n or 1) }
+      left[#left + 1] = { w = w, zone = w.z, cont = D.zones[w.z].cont, cost = 0, haveWrit = owned(w.w) > 0 or onQuest(q), haveItems = owned(w.i) >= (w.n or 1),
+        writAt = not onQuest(q) and pickup(w.w, 1) or nil, itemAt = pickup(w.i, w.n or 1) }
     end
   end
   if #left == 0 then return {}, done, #l.q end
@@ -575,6 +628,21 @@ function W.steps(route)
   local out = {}
   local horde = UnitFactionGroup("player") ~= "Alliance"
   local function add(kind, text, stop) out[#out + 1] = { kind = kind, text = text, stop = stop } end
+  -- Writs and items waiting at the mailbox or the bank: pick them up first.
+  local at, seen = { correo = {}, banco = {} }, {}
+  for _, leg in ipairs(route) do
+    for _, c in ipairs(leg.stop.writs) do
+      for _, x in ipairs({ { c.w.w, c.writAt }, { c.w.i, c.itemAt } }) do
+        if x[2] and not seen[x[1]] then
+          seen[x[1]] = true
+          local name = (C_Item and C_Item.GetItemNameByID and C_Item.GetItemNameByID(x[1])) or (GetItemInfo and GetItemInfo(x[1])) or ("#" .. x[1])
+          table.insert(at[x[2]], name)
+        end
+      end
+    end
+  end
+  if #at.correo > 0 then add("mail", "Sacá del correo: " .. table.concat(at.correo, ", ") .. ".") end
+  if #at.banco > 0 then add("bank", "Sacá del banco: " .. table.concat(at.banco, ", ") .. ".") end
   local pb = route.preBind
   if pb then
     if pb.how and pb.how.flight == nil and pb.how.from then
@@ -619,25 +687,50 @@ function W.steps(route)
   return out
 end
 
--- Auction house search for today's trip (what you still need to buy).
+-- What today's trip still needs from the auction house: { {id, name, n} }.
+-- Each item once, with the total over every writ minus what you own
+-- (bags, bank and mail).
+local function itemName(id)
+  return (C_Item and C_Item.GetItemNameByID and C_Item.GetItemNameByID(id)) or (GetItemInfo and GetItemInfo(id))
+end
+function W.shopping(plan)
+  local out, items, order = {}, {}, {}
+  for _, c in ipairs(plan.writs) do
+    if not c.haveWrit then out[#out + 1] = { id = c.w.w, name = itemName(c.w.w), n = 1 } end
+    local id = c.w.i
+    if not items[id] then items[id] = 0; order[#order + 1] = id end
+    items[id] = items[id] + (c.w.n or 1)
+  end
+  for _, id in ipairs(order) do
+    local n = items[id] - owned(id)
+    if n > 0 then out[#out + 1] = { id = id, name = itemName(id), n = n } end
+  end
+  return out
+end
+
+W.LIST = "Writ Planner (hoy)"
+-- An Auctionator shopping list with today's buys and how many of each; at
+-- the auction house it starts searching right away.
 function W.search(plan)
   local api = auctionator()
   if not api then chat("necesitás Auctionator.") return end
   if not plan then chat("primero calculá un plan.") return end
-  local terms, seen = {}, {}
-  local function add(id)
-    if seen[id] then return end
-    seen[id] = true
-    local name = (C_Item and C_Item.GetItemNameByID and C_Item.GetItemNameByID(id)) or (GetItemInfo and GetItemInfo(id))
-    if name then terms[#terms + 1] = name end
+  local items = W.shopping(plan)
+  if #items == 0 then chat("ya tenés todo lo de hoy (contando el correo y el banco).") return end
+  local terms, missing = {}, 0
+  for _, it in ipairs(items) do
+    if not it.name then missing = missing + 1
+    elseif api.ConvertToSearchString then
+      local ok, t = pcall(api.ConvertToSearchString, CALLER, { searchString = it.name, isExact = true, quantity = it.n })
+      terms[#terms + 1] = ok and t or it.name
+    else terms[#terms + 1] = it.name end
   end
-  for _, c in ipairs(plan.writs) do
-    if not c.haveWrit then add(c.w.w) end
-    if not c.haveItems then add(c.w.i) end
+  if api.CreateShoppingList and pcall(api.CreateShoppingList, CALLER, W.LIST, terms) then
+    chat(("armé la lista de compras \"%s\" en Auctionator: %d cosas, con cuántas de cada una. En la subasta, pestaña Shopping."):format(W.LIST, #terms))
+  elseif not pcall(api.MultiSearchExact, CALLER, terms) then
+    chat("abrí la casa de subastas y probá de nuevo.")
   end
-  if #terms == 0 then chat("ya tenés todo lo de hoy.") return end
-  local ok, err = pcall(api.MultiSearchExact, CALLER, terms)
-  if not ok then chat("abrí la casa de subastas y probá de nuevo.") end
+  if missing > 0 then chat(missing .. " cosas todavía no tienen el nombre cargado: probá de nuevo en unos segundos.") end
 end
 
 -- Map pin (TomTom's arrow if you have it).
@@ -658,6 +751,64 @@ function W.markGone(q)
   WritPlannerCharDB.gone[q] = resetKey()
 end
 
+-- Guild sharing -----------------------------------------------------------------
+-- Where writs without a known place are turned in: whoever turns one in tells
+-- the guild, and the addons of everyone online learn it. At login each one
+-- tells what it knows (one message a second), so latecomers catch up.
+
+local PREFIX = "WritPlanner"
+if C_ChatInfo and C_ChatInfo.RegisterAddonMessagePrefix then C_ChatInfo.RegisterAddonMessagePrefix(PREFIX) end
+local unplaced = {} -- writs the data has no place for: the only ones that can be learned
+for _, w in ipairs(D.writs) do if not w.z then unplaced[w.q] = w end end
+
+local function clean(v) return (tostring(v or "?"):gsub("[;|]", ""):sub(1, 40)) end
+local function split(msg)
+  local t = {}
+  for part in (msg .. ";"):gmatch("([^;]*);") do t[#t + 1] = part end
+  return t
+end
+local function send(msg)
+  if not (WritPlannerCharDB.opts.share and IsInGuild and IsInGuild()) then return end
+  if C_ChatInfo and C_ChatInfo.SendAddonMessage then C_ChatInfo.SendAddonMessage(PREFIX, msg, "GUILD") end
+end
+
+function W.share(q)
+  local l = WritPlannerDB.learned[q]
+  if not l or not l.map then return end
+  local r = function(v) return math.floor((tonumber(v) or 0) + 0.5) end
+  send(("L1;%d;%d;%.1f;%.1f;%d;%d;%d;%s;%s"):format(q, l.map, l.x, l.y, r(l.wx), r(l.wy), l.cont or 0, clean(l.npc), clean(l.zone)))
+end
+
+function W.shareAll()
+  local qs = {}
+  for q in pairs(WritPlannerDB.learned) do qs[#qs + 1] = q end
+  local i = 0
+  local function nextOne()
+    i = i + 1
+    if qs[i] then W.share(qs[i]); C_Timer.After(1, nextOne) end
+  end
+  nextOne()
+end
+
+-- A guildmate's message: checked before it's kept (a writ we don't know the
+-- place of, a map, coordinates on it, a continent).
+function W.received(msg, sender)
+  local me = UnitName("player")
+  if not sender or sender == me or sender:match("^[^-]+") == me then return end
+  local t = split(msg)
+  if t[1] ~= "L1" then return end
+  local q, map, x, y, wx, wy, cont = tonumber(t[2]), tonumber(t[3]), tonumber(t[4]), tonumber(t[5]), tonumber(t[6]), tonumber(t[7]), tonumber(t[8])
+  local w = q and unplaced[q]
+  if not w or WritPlannerDB.learned[q] then return end
+  if not (map and map > 0 and x and y and x >= 0 and x <= 100 and y >= 0 and y <= 100 and wx and wy
+    and math.abs(wx) < 30000 and math.abs(wy) < 30000 and (cont == 0 or cont == 1)) then return end
+  local who = sender:match("^[^-]+")
+  WritPlannerDB.learned[q] = { npc = clean(t[9]), map = map, x = x, y = y, wx = wx, wy = wy, cont = cont, zone = clean(t[10]), from = who }
+  W.mergeLearned()
+  chat(("%s (de tu guild) te pasó dónde se entrega %s: %s, %s."):format(who, w.name, clean(t[9]), clean(t[10])))
+  if W.UI and W.UI.refresh then W.UI.refresh() end
+end
+
 -- Events ------------------------------------------------------------------------
 
 local writByQuest = {}
@@ -671,8 +822,15 @@ f:RegisterEvent("QUEST_TURNED_IN")
 f:RegisterEvent("QUEST_COMPLETE")
 f:RegisterEvent("UPDATE_FACTION")
 f:RegisterEvent("HEARTHSTONE_BOUND")
+f:RegisterEvent("BANKFRAME_OPENED")
+f:RegisterEvent("BANKFRAME_CLOSED")
+f:RegisterEvent("PLAYERBANKSLOTS_CHANGED")
+f:RegisterEvent("BAG_UPDATE_DELAYED")
+f:RegisterEvent("MAIL_SHOW")
+f:RegisterEvent("MAIL_INBOX_UPDATE")
+f:RegisterEvent("CHAT_MSG_ADDON")
 local lastNpc
-f:SetScript("OnEvent", function(_, event, a1)
+f:SetScript("OnEvent", function(_, event, a1, a2, a3, a4)
   if event == "ADDON_LOADED" and a1 == "WritPlanner" then
     defaults()
     W.mergeLearned()
@@ -689,6 +847,20 @@ f:SetScript("OnEvent", function(_, event, a1)
     end
     if C_Timer then C_Timer.After(5, W.snapshot) else W.snapshot() end
     if W.UI and W.UI.minimap then W.UI.minimap() end
+    if C_Timer then C_Timer.After(30, W.shareAll) end
+  elseif event == "CHAT_MSG_ADDON" then
+    if a1 == PREFIX and a3 == "GUILD" then W.received(a2, a4) end
+  elseif event == "BANKFRAME_OPENED" then
+    bankOpen = true
+    W.scanBank()
+    if W.UI and W.UI.refresh then W.UI.refresh() end
+  elseif event == "BANKFRAME_CLOSED" then
+    bankOpen = false
+  elseif event == "PLAYERBANKSLOTS_CHANGED" or event == "BAG_UPDATE_DELAYED" then
+    if bankOpen then W.scanBank() end
+  elseif event == "MAIL_SHOW" or event == "MAIL_INBOX_UPDATE" then
+    W.scanMail()
+    if W.UI and W.UI.refresh then W.UI.refresh() end
   elseif event == "HEARTHSTONE_BOUND" then
     local here = W.here()
     if here then
@@ -713,6 +885,7 @@ f:SetScript("OnEvent", function(_, event, a1)
         WritPlannerDB.learned[a1] = { npc = lastNpc or "?", map = map, x = pos.x * 100, y = pos.y * 100, wx = wx, wy = wy, cont = cont, zone = info and info.name or "?" }
         W.mergeLearned()
         chat(("anoté dónde se entrega %s (%s)."):format(w.name, info and info.name or "?"))
+        W.share(a1)
       end
     end
     if W.UI and W.UI.refresh then W.UI.refresh() end
