@@ -876,7 +876,7 @@ a.tile:hover { border-color: color-mix(in srgb, var(--spec-color) 70%, transpare
 .news-entry:first-of-type { border-top: 0; padding-top: 4px; }
 .news-date { font-size: 12px; font-weight: 700; color: var(--gold); }
 .news-title { display: block; margin: 4px 0 2px; font-size: 15px; }
-.change-lines li { font-size: 12.5px; }
+.change-lines li { font-size: 12.5px; overflow-wrap: anywhere; }
 .change-lines b { color: var(--text); }
 .patch-lines { margin: 2px 0 0 14px; }
 ul.plain.patch-lines li { color: var(--text-dim); overflow-wrap: anywhere; padding: 1px 0; border-bottom: none; font-size: 12.5px; }
