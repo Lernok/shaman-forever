@@ -11539,8 +11539,10 @@
    ],
    "use": [],
    "chance": [],
-   "bonus": {},
-   "numbers": "forever",
+   "bonus": {
+    "hitRating": 10
+   },
+   "numbers": "client",
    "icon": "inv_misc_cape_08"
   },
   "3480": {
@@ -107092,13 +107094,13 @@
    "kind": "Shield",
    "slot": "Shield",
    "quality": 3,
-   "req": 54,
-   "ilvl": 59,
+   "req": 55,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "classic",
-   "armor": 2026,
-   "block": 37,
+   "armor": 2057,
+   "block": 38,
    "stats": {
     "stamina": 16
    },
@@ -107108,7 +107110,7 @@
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shield_03"
   },
   "18674": {
@@ -133488,15 +133490,13 @@
    "stats": {
     "stamina": 5
    },
-   "equip": [
-    "Equip: Increases healing done by spells and effects by up to 26."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "healing": 26
+    "mp5": 5
    },
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_hammer_02"
   },
   "22317": {
@@ -133664,16 +133664,14 @@
     "intellect": 10,
     "spirit": 8
    },
-   "equip": [
-    "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
     "healing": 15,
     "spellDamage": 5
    },
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_necklace_08"
   },
   "22329": {
@@ -133691,17 +133689,14 @@
     "intellect": 8,
     "spirit": 8
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 0.5%.",
-    "Equip: Improves your chance to get a critical strike by 1.0%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "crit": 1,
-    "hit": 0.5
+    "hitRating": 5,
+    "critRating": 14
    },
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_wand_07"
   },
   "22330": {
@@ -133744,15 +133739,13 @@
     "strength": 7,
     "stamina": 12
    },
-   "equip": [
-    "Equip: Increased Defense +7."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
     "defense": 7
    },
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_33"
   },
   "22333": {
@@ -133797,16 +133790,14 @@
     "intellect": 7,
     "spirit": 6
    },
-   "equip": [
-    "Equip: Increases healing done by up to 31 and damage done by up to 10 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
     "healing": 31,
     "spellDamage": 10
    },
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_05"
   },
   "22335": {
@@ -133854,14 +133845,14 @@
     "stamina": 7
    },
    "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 20."
+    "Equip: Increases damage done to Dragonkin by magical spells and effects by up to 9."
    ],
    "use": [],
    "chance": [],
    "bonus": {
-    "spellPower": 20
+    "spellPower": 18
    },
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shield_02"
   },
   "22337": {
@@ -133878,13 +133869,13 @@
    "armor": 45,
    "stats": {
     "strength": 17,
-    "stamina": 7
+    "stamina": 8
    },
    "equip": [],
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_cape_19"
   },
   "22339": {
@@ -133926,17 +133917,18 @@
    "raceMask": -1,
    "era": "classic",
    "stats": {
-    "agility": 15
+    "agility": 10
    },
    "equip": [
-    "Equip: Improves your chance to hit by 1%."
+    "Equip: Improves your chance to hit by 1.0%.",
+    "Equip: Improves your chance to hit by 1.0%."
    ],
    "use": [],
    "chance": [],
    "bonus": {
     "hit": 1
    },
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_jewelry_necklace_04"
   },
   "22342": {
@@ -133977,23 +133969,21 @@
    "era": "classic",
    "armor": 231,
    "stats": {
-    "stamina": 10,
-    "intellect": 9
+    "stamina": 13,
+    "intellect": 10
    },
-   "equip": [
-    "Equip: +38 Attack Power."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "attackPower": 38
+    "attackPower": 36
    },
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_gauntlets_11"
   },
   "22345": {
    "id": 22345,
-   "name": "Totem of Rebirth",
+   "name": "Totem of Tides",
    "kind": "Totem",
    "slot": "Relic",
    "quality": 3,
@@ -134004,12 +133994,12 @@
    "era": "classic",
    "stats": {},
    "equip": [
-    "Equip: Reduces the cooldown of Reincarnation by 10 minutes."
+    "Equip: Reduces the Mana cost of Riptide by 5%."
    ],
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_relics_totemofrebirth"
   },
   "22348": {
@@ -191688,6 +191678,31 @@
    "numbers": "client",
    "icon": "inv_misc_cape_08"
   },
+  "282700": {
+   "id": 282700,
+   "name": "Shadow Scalper",
+   "kind": "1H Axe",
+   "slot": "One-Hand",
+   "quality": 2,
+   "req": 37,
+   "ilvl": 42,
+   "bind": "equip",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 43,
+   "dmgMax": 82,
+   "speed": 2.6,
+   "dps": 24.04,
+   "stats": {},
+   "equip": [],
+   "use": [],
+   "chance": [
+    "Chance on hit: Unleash a shadow bolt volley at all nearby targets, inflicting 33 damage to each enemy struck."
+   ],
+   "bonus": {},
+   "numbers": "client",
+   "icon": "inv_axe_01"
+  },
   "282702": {
    "id": 282702,
    "name": "Molok's Masher",
@@ -195610,6 +195625,36 @@
    "bonus": {},
    "numbers": "forever",
    "icon": "inv_pants_cloth_06"
+  },
+  "286641": {
+   "id": 286641,
+   "name": "Cannibal's Cleaver",
+   "kind": "2H Axe",
+   "slot": "Two-Hand",
+   "quality": 3,
+   "req": 45,
+   "ilvl": 50,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "new",
+   "dmgMin": 125,
+   "dmgMax": 188,
+   "speed": 3.6,
+   "dps": 43.47,
+   "stats": {
+    "stamina": 19
+   },
+   "equip": [
+    "Equip: Increased Axes +1.",
+    "Equip: +25 Attack Power against Humanoids."
+   ],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "attackPower": 17
+   },
+   "numbers": "client",
+   "icon": "inv_axe_04"
   },
   "286646": {
    "id": 286646,

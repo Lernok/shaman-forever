@@ -2859,72 +2859,6 @@
    ]
   },
   {
-   "id": 270124,
-   "name": "Warpwood Bracers",
-   "kind": "Leather",
-   "slot": "Wrist",
-   "quality": 3,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 57,
-   "bind": "pickup",
-   "armor": 71,
-   "stats": {
-    "strength": 10,
-    "agility": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_bracer_16",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270125,
-   "name": "Satyrhide Armbands",
-   "kind": "Mail",
-   "slot": "Wrist",
-   "quality": 3,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 57,
-   "bind": "pickup",
-   "armor": 148,
-   "stats": {
-    "agility": 14,
-    "intellect": 9
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_bracer_18",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 270127,
    "name": "Incanter's Pantaloons",
    "kind": "Cloth",
@@ -4823,73 +4757,6 @@
      },
      "faction": "both",
      "confidence": "client-data",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270082,
-   "name": "Ceremonial Gown",
-   "kind": "Cloth",
-   "slot": "Chest",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 42,
-   "bind": "pickup",
-   "armor": 55,
-   "stats": {
-    "intellect": 11
-   },
-   "bonus": {
-    "spellPower": 13
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_shirt_13",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270083,
-   "name": "Blooded Pants",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 42,
-   "bind": "pickup",
-   "armor": 101,
-   "stats": {
-    "agility": 13,
-    "stamina": 9
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 0,
      "rec": 0
     }
@@ -41697,40 +41564,6 @@
    ]
   },
   {
-   "id": 281926,
-   "name": "Bound Bracers",
-   "kind": "Cloth",
-   "slot": "Wrist",
-   "quality": 2,
-   "req": 18,
-   "obtain": 18,
-   "ilvl": 23,
-   "bind": "equip",
-   "armor": 16,
-   "stats": {
-    "intellect": 3
-   },
-   "bonus": {
-    "frostDamage": 4
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_bracer_12",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 18,
-     "rec": 18
-    }
-   ]
-  },
-  {
    "id": 285330,
    "name": "Signet of the Zhevra",
    "kind": "Ring",
@@ -51853,6 +51686,51 @@
      },
      "asap": 18,
      "rec": 20
+    }
+   ]
+  },
+  {
+   "id": 281926,
+   "name": "Bound Bracers",
+   "kind": "Cloth",
+   "slot": "Wrist",
+   "quality": 2,
+   "req": 18,
+   "obtain": 20,
+   "ilvl": 23,
+   "bind": "equip",
+   "armor": 16,
+   "stats": {
+    "intellect": 3
+   },
+   "bonus": {
+    "frostDamage": 4
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_12",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Seeker Aqualon",
+     "npcId": 14269,
+     "zone": "Redridge Mountains",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 18,
+     "rec": 20,
+     "basis": {
+      "name": "Seeker Aqualon",
+      "level": 21,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
     }
    ]
   },
@@ -98733,39 +98611,6 @@
    ]
   },
   {
-   "id": 284712,
-   "name": "Hyena Hide Helm",
-   "kind": "Leather",
-   "slot": "Head",
-   "quality": 2,
-   "req": 31,
-   "obtain": 31,
-   "ilvl": 36,
-   "bind": "equip",
-   "armor": 84,
-   "stats": {
-    "strength": 10,
-    "armor": 82
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_helmet_13",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 31,
-     "rec": 31
-    }
-   ]
-  },
-  {
    "id": 2043,
    "name": "Ring of Forlorn Spirits",
    "kind": "Ring",
@@ -101620,40 +101465,6 @@
      },
      "faction": "both",
      "confidence": "client-data",
-     "asap": 32,
-     "rec": 32
-    }
-   ]
-  },
-  {
-   "id": 284713,
-   "name": "Accursed Legguards",
-   "kind": "Mail",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 32,
-   "obtain": 32,
-   "ilvl": 37,
-   "bind": "equip",
-   "armor": 192,
-   "stats": {
-    "strength": 6,
-    "stamina": 11,
-    "spirit": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 32,
      "rec": 32
     }
@@ -104752,6 +104563,50 @@
    ]
   },
   {
+   "id": 284712,
+   "name": "Hyena Hide Helm",
+   "kind": "Leather",
+   "slot": "Head",
+   "quality": 2,
+   "req": 31,
+   "obtain": 33,
+   "ilvl": 36,
+   "bind": "equip",
+   "armor": 84,
+   "stats": {
+    "strength": 10,
+    "armor": 82
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_helmet_13",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Giggler",
+     "npcId": 14228,
+     "zone": "Desolace",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 31,
+     "rec": 33,
+     "basis": {
+      "name": "Giggler",
+      "level": 34,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
    "id": 3753,
    "name": "Shepherd's Girdle",
    "kind": "Leather",
@@ -107531,40 +107386,6 @@
    ]
   },
   {
-   "id": 284707,
-   "name": "Basilisk Sinew Belt",
-   "kind": "Leather",
-   "slot": "Waist",
-   "quality": 2,
-   "req": 34,
-   "obtain": 34,
-   "ilvl": 39,
-   "bind": "equip",
-   "armor": 61,
-   "stats": {
-    "stamina": 7
-   },
-   "bonus": {
-    "spellPower": 10
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_belt_26",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 34,
-     "rec": 34
-    }
-   ]
-  },
-  {
    "id": 285089,
    "name": "Swamp Roamer's Band",
    "kind": "Ring",
@@ -107741,6 +107562,51 @@
      "rec": 34,
      "basis": {
       "name": "Araga",
+      "level": 35,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
+   "id": 284713,
+   "name": "Accursed Legguards",
+   "kind": "Mail",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 32,
+   "obtain": 34,
+   "ilvl": 37,
+   "bind": "equip",
+   "armor": 192,
+   "stats": {
+    "strength": 6,
+    "stamina": 11,
+    "spirit": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Accursed Slitherblade",
+     "npcId": 14229,
+     "zone": "Desolace",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 32,
+     "rec": 34,
+     "basis": {
+      "name": "Accursed Slitherblade",
       "level": 35,
       "rank": "rare",
       "from": "wowhead",
@@ -111681,7 +111547,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Var'Taka",
+     "npcId": 258924,
+     "zone": "The Drowned City",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 35,
@@ -115414,7 +115283,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Deathless Marrow",
+     "npcId": 260202,
+     "zone": "The Drowned City",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 36,
@@ -115447,7 +115319,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Deathless Marrow",
+     "npcId": 260202,
+     "zone": "The Drowned City",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 36,
@@ -115881,6 +115756,51 @@
      "rec": 36,
      "basis": {
       "name": "Stone Fury",
+      "level": 37,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
+   "id": 284707,
+   "name": "Basilisk Sinew Belt",
+   "kind": "Leather",
+   "slot": "Waist",
+   "quality": 2,
+   "req": 34,
+   "obtain": 36,
+   "ilvl": 39,
+   "bind": "equip",
+   "armor": 61,
+   "stats": {
+    "stamina": 7
+   },
+   "bonus": {
+    "spellPower": 10
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_belt_26",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Hissperak",
+     "npcId": 14227,
+     "zone": "Desolace",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 34,
+     "rec": 36,
+     "basis": {
+      "name": "Hissperak",
       "level": 37,
       "rank": "rare",
       "from": "wowhead",
@@ -119774,41 +119694,6 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_shield_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 37,
-     "rec": 37
-    }
-   ]
-  },
-  {
-   "id": 284708,
-   "name": "Demonstrike Emblem",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 2,
-   "req": 37,
-   "obtain": 37,
-   "ilvl": 42,
-   "bind": "equip",
-   "stats": {
-    "agility": 6
-   },
-   "bonus": {
-    "attackPower": 8
-   },
-   "equip": [
-    "Equip: +12 Attack Power against Demons."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_necklace_05",
    "raceMask": -1,
    "sources": [
     {
@@ -130089,6 +129974,52 @@
    ]
   },
   {
+   "id": 284708,
+   "name": "Demonstrike Emblem",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 2,
+   "req": 37,
+   "obtain": 39,
+   "ilvl": 42,
+   "bind": "equip",
+   "stats": {
+    "agility": 6
+   },
+   "bonus": {
+    "attackPower": 8
+   },
+   "equip": [
+    "Equip: +12 Attack Power against Demons."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_necklace_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Kaskk",
+     "npcId": 14226,
+     "zone": "Desolace",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 37,
+     "rec": 39,
+     "basis": {
+      "name": "Kaskk",
+      "level": 40,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
+    }
+   ]
+  },
+  {
    "id": 279878,
    "name": "Apprentice Sorcerer's Slacks",
    "kind": "Cloth",
@@ -139366,6 +139297,117 @@
    ]
   },
   {
+   "id": 270082,
+   "name": "Ceremonial Gown",
+   "kind": "Cloth",
+   "slot": "Chest",
+   "quality": 2,
+   "req": 0,
+   "obtain": 41,
+   "ilvl": 42,
+   "bind": "pickup",
+   "armor": 55,
+   "stats": {
+    "intellect": 11
+   },
+   "bonus": {
+    "spellPower": 13
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_shirt_13",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Trol'kalar (2/2)",
+     "questId": 646,
+     "requiredLevel": 32,
+     "zone": "Arathi Highlands",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/646",
+     "level": 42,
+     "bands": {
+      "red": 32,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "basis": {
+      "name": "Prince Galen Trollbane",
+      "level": 44,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 644,
+      "steps": 7
+     },
+     "asap": 39,
+     "rec": 41
+    }
+   ]
+  },
+  {
+   "id": 270083,
+   "name": "Blooded Pants",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 41,
+   "ilvl": 42,
+   "bind": "pickup",
+   "armor": 101,
+   "stats": {
+    "agility": 13,
+    "stamina": 9
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Trol'kalar (2/2)",
+     "questId": 646,
+     "requiredLevel": 32,
+     "zone": "Arathi Highlands",
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/646",
+     "level": 42,
+     "bands": {
+      "red": 32,
+      "orange": 38,
+      "yellow": 40,
+      "green": 45,
+      "grey": 53
+     },
+     "basis": {
+      "name": "Prince Galen Trollbane",
+      "level": 44,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 644,
+      "steps": 7
+     },
+     "asap": 39,
+     "rec": 41
+    }
+   ]
+  },
+  {
    "id": 274955,
    "name": "Clobrok's Block Rock",
    "kind": "Neck",
@@ -143803,7 +143845,7 @@
       "green": 47,
       "grey": 56
      },
-     "faction": "horde",
+     "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98205",
      "basis": {
@@ -143857,7 +143899,7 @@
       "green": 47,
       "grey": 56
      },
-     "faction": "horde",
+     "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/98205",
      "basis": {
@@ -161558,7 +161600,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Overseer Wrex",
+     "npcId": 255391,
+     "zone": "Alcaz Prison",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 47,
@@ -166111,13 +166156,9 @@
      "type": "quest",
      "quest": "Saving Sharpbeak",
      "questId": 2994,
+     "level": 51,
      "requiredLevel": 40,
      "zone": "The Hinterlands",
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/2994",
-     "level": 51,
-     "dungeon": true,
      "bands": {
       "red": 40,
       "orange": 47,
@@ -166125,6 +166166,10 @@
       "green": 54,
       "grey": 60
      },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/2994",
+     "dungeon": true,
      "dungeonZone": "Zul'Farrak",
      "basis": {
       "name": "Vile Priestess Hexx",
@@ -167514,13 +167559,9 @@
      "type": "quest",
      "quest": "Saving Sharpbeak",
      "questId": 2994,
+     "level": 51,
      "requiredLevel": 40,
      "zone": "The Hinterlands",
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/2994",
-     "level": 51,
-     "dungeon": true,
      "bands": {
       "red": 40,
       "orange": 47,
@@ -167528,6 +167569,10 @@
       "green": 54,
       "grey": 60
      },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/2994",
+     "dungeon": true,
      "dungeonZone": "Zul'Farrak",
      "basis": {
       "name": "Vile Priestess Hexx",
@@ -167568,13 +167613,9 @@
      "type": "quest",
      "quest": "Saving Sharpbeak",
      "questId": 2994,
+     "level": 51,
      "requiredLevel": 40,
      "zone": "The Hinterlands",
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/2994",
-     "level": 51,
-     "dungeon": true,
      "bands": {
       "red": 40,
       "orange": 47,
@@ -167582,6 +167623,10 @@
       "green": 54,
       "grey": 60
      },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/2994",
+     "dungeon": true,
      "dungeonZone": "Zul'Farrak",
      "basis": {
       "name": "Vile Priestess Hexx",
@@ -196342,6 +196387,112 @@
    ]
   },
   {
+   "id": 270124,
+   "name": "Warpwood Bracers",
+   "kind": "Leather",
+   "slot": "Wrist",
+   "quality": 3,
+   "req": 0,
+   "obtain": 54,
+   "ilvl": 57,
+   "bind": "pickup",
+   "armor": 71,
+   "stats": {
+    "strength": 10,
+    "agility": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Lethtendris's Web (Horde)",
+     "questId": 7489,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Dire Maul",
+     "dungeon": true,
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7489",
+     "basis": {
+      "name": "Lethtendris",
+      "level": 57,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 54,
+     "rec": 54
+    }
+   ]
+  },
+  {
+   "id": 270125,
+   "name": "Satyrhide Armbands",
+   "kind": "Mail",
+   "slot": "Wrist",
+   "quality": 3,
+   "req": 0,
+   "obtain": 54,
+   "ilvl": 57,
+   "bind": "pickup",
+   "armor": 148,
+   "stats": {
+    "agility": 14,
+    "intellect": 9
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Lethtendris's Web (Horde)",
+     "questId": 7489,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Dire Maul",
+     "dungeon": true,
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7489",
+     "basis": {
+      "name": "Lethtendris",
+      "level": 57,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 54,
+     "rec": 54
+    }
+   ]
+  },
+  {
    "id": 274719,
    "name": "Forgotten Trompers",
    "kind": "Leather",
@@ -200234,6 +200385,55 @@
      "rec": 55,
      "basis": {
       "name": "Baron Charr",
+      "level": 58,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 18673,
+   "name": "Avalanchion's Stony Hide",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 3,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 2057,
+   "block": 38,
+   "stats": {
+    "stamina": 16
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increases the block value of your shield by 10."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_shield_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Avalanchion",
+     "npcId": 14464,
+     "level": 58,
+     "rank": "elite",
+     "zone": "Azshara",
+     "zoneId": 16,
+     "raid": false,
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55,
+     "basis": {
+      "name": "Avalanchion",
       "level": 58,
       "rank": "rare-elite",
       "from": "wowhead",
@@ -205687,55 +205887,6 @@
       "name": "Alzzin the Wildshaper",
       "level": 58,
       "rank": "elite",
-      "from": "wowhead",
-      "group": true
-     }
-    }
-   ]
-  },
-  {
-   "id": 18673,
-   "name": "Avalanchion's Stony Hide",
-   "kind": "Shield",
-   "slot": "Shield",
-   "quality": 3,
-   "req": 54,
-   "obtain": 55,
-   "ilvl": 59,
-   "bind": "equip",
-   "armor": 2026,
-   "block": 37,
-   "stats": {
-    "stamina": 16
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increases the block value of your shield by 10."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "classic",
-   "icon": "inv_shield_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "drop",
-     "npc": "Avalanchion",
-     "npcId": 14464,
-     "level": 58,
-     "rank": "elite",
-     "zone": "Azshara",
-     "zoneId": 16,
-     "raid": false,
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 54,
-     "rec": 55,
-     "basis": {
-      "name": "Avalanchion",
-      "level": 58,
-      "rank": "rare-elite",
       "from": "wowhead",
       "group": true
      }
@@ -218411,13 +218562,11 @@
    "bonus": {
     "defense": 7
    },
-   "equip": [
-    "Equip: Increased Defense +7."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_33",
    "raceMask": -1,
    "sources": [
@@ -218463,13 +218612,11 @@
     "healing": 31,
     "spellDamage": 10
    },
-   "equip": [
-    "Equip: Increases healing done by up to 31 and damage done by up to 10 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_05",
    "raceMask": -1,
    "sources": [
@@ -218484,7 +218631,7 @@
   },
   {
    "id": 22345,
-   "name": "Totem of Rebirth",
+   "name": "Totem of Tides",
    "kind": "Totem",
    "slot": "Relic",
    "quality": 3,
@@ -218495,12 +218642,12 @@
    "stats": {},
    "bonus": {},
    "equip": [
-    "Equip: Reduces the cooldown of Reincarnation by 10 minutes."
+    "Equip: Reduces the Mana cost of Riptide by 5%."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_relics_totemofrebirth",
    "raceMask": -1,
    "sources": [
@@ -229104,13 +229251,11 @@
     "healing": 15,
     "spellDamage": 5
    },
-   "equip": [
-    "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_necklace_08",
    "raceMask": -1,
    "sources": [
@@ -229138,17 +229283,14 @@
     "spirit": 8
    },
    "bonus": {
-    "crit": 1,
-    "hit": 0.5
+    "hitRating": 5,
+    "critRating": 14
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 0.5%.",
-    "Equip: Improves your chance to get a critical strike by 1.0%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_wand_07",
    "raceMask": -1,
    "sources": [
@@ -269886,14 +270028,16 @@
    "bind": "equip",
    "armor": 50,
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "hitRating": 10
+   },
    "equip": [
     "Equip: Deals 5 Fire damage to anyone who strikes you with a melee attack."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_misc_cape_08",
    "raceMask": -1,
    "sources": [
@@ -274405,7 +274549,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274440,7 +274586,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274474,7 +274622,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274508,7 +274658,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274543,7 +274695,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274579,7 +274733,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274614,7 +274770,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274649,7 +274807,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274680,7 +274840,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274711,7 +274873,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274742,7 +274906,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274777,7 +274943,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274810,7 +274978,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274844,7 +275014,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -274877,7 +275049,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -278846,15 +279020,15 @@
     "stamina": 7
    },
    "bonus": {
-    "spellPower": 20
+    "spellPower": 18
    },
    "equip": [
-    "Equip: Increases damage and healing done by magical spells and effects by up to 20."
+    "Equip: Increases damage done to Dragonkin by magical spells and effects by up to 9."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_shield_02",
    "raceMask": -1,
    "sources": [
@@ -278894,14 +279068,14 @@
    "armor": 45,
    "stats": {
     "strength": 17,
-    "stamina": 7
+    "stamina": 8
    },
    "bonus": {},
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_misc_cape_19",
    "raceMask": -1,
    "sources": [
@@ -278990,18 +279164,19 @@
    "ilvl": 63,
    "bind": "pickup",
    "stats": {
-    "agility": 15
+    "agility": 10
    },
    "bonus": {
     "hit": 1
    },
    "equip": [
-    "Equip: Improves your chance to hit by 1%."
+    "Equip: Improves your chance to hit by 1.0%.",
+    "Equip: Improves your chance to hit by 1.0%."
    ],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "inv_jewelry_necklace_04",
    "raceMask": -1,
    "sources": [
@@ -279089,19 +279264,17 @@
    "bind": "pickup",
    "armor": 231,
    "stats": {
-    "stamina": 10,
-    "intellect": 9
+    "stamina": 13,
+    "intellect": 10
    },
    "bonus": {
-    "attackPower": 38
+    "attackPower": 36
    },
-   "equip": [
-    "Equip: +38 Attack Power."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_gauntlets_11",
    "raceMask": -1,
    "sources": [
@@ -281369,7 +281542,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -281405,7 +281580,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,
@@ -281440,7 +281617,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "vendor",
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 60,

@@ -1,7 +1,7 @@
 {
  "_readme": "Fuentes de misión del equipo nuevo de Forever (items) y datos de Forever de las misiones de Classic que dan equipo (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json.",
  "source": "https://foreverchanges.pro",
- "fetched": "2026-11-15",
+ "fetched": "2026-11-16",
  "items": {
   "246164": {
    "name": "Skullthumper",
@@ -3645,6 +3645,29 @@
     }
    ]
   },
+  "270112": {
+   "name": "Gryphon Rider's Crop",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Saving Sharpbeak",
+     "questId": 2994,
+     "level": 51,
+     "requiredLevel": 40,
+     "zone": "The Hinterlands",
+     "bands": {
+      "red": 40,
+      "orange": 47,
+      "yellow": 49,
+      "green": 54,
+      "grey": 60
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/2994"
+    }
+   ]
+  },
   "270113": {
    "name": "Singed Cloth Robe",
    "sources": [
@@ -3803,6 +3826,50 @@
     }
    ]
   },
+  "270124": {
+   "name": "Warpwood Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Lethtendris's Web (Horde)",
+     "questId": 7489,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Dire Maul",
+     "dungeon": true,
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7489"
+    }
+   ]
+  },
+  "270125": {
+   "name": "Satyrhide Armbands",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Lethtendris's Web (Horde)",
+     "questId": 7489,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Dire Maul",
+     "dungeon": true,
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7489"
+    }
+   ]
+  },
   "270225": {
    "name": "Jewel of the Guard Captain",
    "sources": [
@@ -3846,6 +3913,52 @@
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/630"
+    }
+   ]
+  },
+  "270275": {
+   "name": "Cleansed Vilebranch Medallion",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Saving Sharpbeak",
+     "questId": 2994,
+     "level": 51,
+     "requiredLevel": 40,
+     "zone": "The Hinterlands",
+     "bands": {
+      "red": 40,
+      "orange": 47,
+      "yellow": 49,
+      "green": 54,
+      "grey": 60
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/2994"
+    }
+   ]
+  },
+  "270276": {
+   "name": "Cleansed Vilebranch Icon",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Saving Sharpbeak",
+     "questId": 2994,
+     "level": 51,
+     "requiredLevel": 40,
+     "zone": "The Hinterlands",
+     "bands": {
+      "red": 40,
+      "orange": 47,
+      "yellow": 49,
+      "green": 54,
+      "grey": 60
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/2994"
     }
    ]
   },

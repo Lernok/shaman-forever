@@ -2090,6 +2090,19 @@
     }
    ]
   },
+  "270078": {
+   "name": "Guardian Staff",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 2240,
+     "quest": "The Hidden Chamber",
+     "minLevel": 35,
+     "faction": "alliance",
+     "zone": "Uldaman"
+    }
+   ]
+  },
   "270079": {
    "name": "Witchdoctor's Dress",
    "sources": [
@@ -2134,6 +2147,32 @@
      "minLevel": 39,
      "faction": "alliance",
      "zone": "Razorfen Downs"
+    }
+   ]
+  },
+  "270082": {
+   "name": "Ceremonial Gown",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 646,
+     "quest": "Trol'kalar (2/2)",
+     "minLevel": 32,
+     "faction": "horde",
+     "zone": "Arathi Highlands"
+    }
+   ]
+  },
+  "270083": {
+   "name": "Blooded Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 646,
+     "quest": "Trol'kalar (2/2)",
+     "minLevel": 32,
+     "faction": "horde",
+     "zone": "Arathi Highlands"
     }
    ]
   },
@@ -2280,6 +2319,19 @@
     }
    ]
   },
+  "270114": {
+   "name": "Dragonscale Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 3463,
+     "quest": "Set Them Ablaze!",
+     "minLevel": 40,
+     "faction": "both",
+     "zone": "Searing Gorge"
+    }
+   ]
+  },
   "270115": {
    "name": "Leggings of Freedom and Sorrow",
    "sources": [
@@ -2303,6 +2355,19 @@
      "minLevel": 40,
      "faction": "both",
      "zone": "The Temple of Atal'hakkar"
+    }
+   ]
+  },
+  "270122": {
+   "name": "Yesterday's Pants",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 4491,
+     "quest": "A Little Help From My Friends",
+     "minLevel": 50,
+     "faction": "both",
+     "zone": "Ungoro Crater"
     }
    ]
   },
@@ -2884,7 +2949,7 @@
      "quest": "Khan Jehn (Magram)",
      "minLevel": 35,
      "faction": "both",
-     "zone": null
+     "zone": "Shendralas"
     }
    ]
   },
@@ -2897,7 +2962,7 @@
      "quest": "Khan Jehn (Magram)",
      "minLevel": 35,
      "faction": "both",
-     "zone": null
+     "zone": "Shendralas"
     }
    ]
   },
@@ -3002,6 +3067,222 @@
      "minLevel": 35,
      "faction": "both",
      "zone": "Maraudon"
+    }
+   ]
+  },
+  "272399": {
+   "name": "Stormseeker's Girdle",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272402": {
+   "name": "Prophet's Waistcord",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272406": {
+   "name": "Channeler's Ring",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272407": {
+   "name": "Blessed Band of Light",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272408": {
+   "name": "Cutthroat's Signet",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272409": {
+   "name": "Ring of Awareness",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272410": {
+   "name": "Windseeker's Belt",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272411": {
+   "name": "Arcanoweave Cloak",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272413": {
+   "name": "Drape of Recovery",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272414": {
+   "name": "Howler's Furs",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272415": {
+   "name": "Stalwart Cloak",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272431": {
+   "name": "Tidal Totem",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272432": {
+   "name": "Totem of the Storm",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272433": {
+   "name": "Burning Totem",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272437": {
+   "name": "Adaptive Combat Assistant",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272438": {
+   "name": "Weakness Analyzer",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272439": {
+   "name": "Serenity Field",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
+    }
+   ]
+  },
+  "272440": {
+   "name": "Defender's Grip Stabilizer",
+   "sources": [
+    {
+     "type": "vendor",
+     "npcId": 227853,
+     "npc": "Pix Xizzix",
+     "zone": "Stranglethorn Vale",
+     "faction": "both"
     }
    ]
   },
@@ -4120,6 +4401,28 @@
     }
    ]
   },
+  "274606": {
+   "name": "Bloodspine Staff",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 260202,
+     "npc": "Deathless Marrow",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "274607": {
+   "name": "Viscera Spaulders",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 260202,
+     "npc": "Deathless Marrow",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
   "274608": {
    "name": "Maw of Min'loth",
    "sources": [
@@ -4171,6 +4474,28 @@
      "type": "boss",
      "npcId": null,
      "npc": "Primeval Elemental",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "274613": {
+   "name": "Priestess Cloak",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 258924,
+     "npc": "Var'Taka",
+     "zone": "The Drowned City"
+    }
+   ]
+  },
+  "274614": {
+   "name": "Knucklebone Ring",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 260202,
+     "npc": "Deathless Marrow",
      "zone": "The Drowned City"
     }
    ]
@@ -5527,6 +5852,28 @@
      "minLevel": 24,
      "faction": "horde",
      "zone": "Undercity"
+    }
+   ]
+  },
+  "276732": {
+   "name": "Alcaz Willcrusher",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 255391,
+     "npc": "Overseer Wrex",
+     "zone": "Alcaz Prison"
+    }
+   ]
+  },
+  "276734": {
+   "name": "Wrex's Pinky Ring",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 255391,
+     "npc": "Overseer Wrex",
+     "zone": "Alcaz Prison"
     }
    ]
   },
@@ -7976,7 +8323,7 @@
      "questId": 98205,
      "quest": "Whelps are the Worst!",
      "minLevel": 39,
-     "faction": "horde",
+     "faction": "both",
      "zone": "Dustwallow Marsh"
     }
    ]
@@ -7989,7 +8336,7 @@
      "questId": 98205,
      "quest": "Whelps are the Worst!",
      "minLevel": 39,
-     "faction": "horde",
+     "faction": "both",
      "zone": "Dustwallow Marsh"
     }
    ]
@@ -8261,6 +8608,18 @@
      "npcId": 259801,
      "npc": "Mosh'gra",
      "zone": "Riverglades",
+     "rare": true
+    }
+   ]
+  },
+  "281926": {
+   "name": "Bound Bracers",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14269,
+     "npc": "Seeker Aqualon",
+     "zone": "Redridge Mountains",
      "rare": true
     }
    ]
@@ -8831,6 +9190,54 @@
     }
    ]
   },
+  "284707": {
+   "name": "Basilisk Sinew Belt",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14227,
+     "npc": "Hissperak",
+     "zone": "Desolace",
+     "rare": true
+    }
+   ]
+  },
+  "284708": {
+   "name": "Demonstrike Emblem",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14226,
+     "npc": "Kaskk",
+     "zone": "Desolace",
+     "rare": true
+    }
+   ]
+  },
+  "284712": {
+   "name": "Hyena Hide Helm",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14228,
+     "npc": "Giggler",
+     "zone": "Desolace",
+     "rare": true
+    }
+   ]
+  },
+  "284713": {
+   "name": "Accursed Legguards",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14229,
+     "npc": "Accursed Slitherblade",
+     "zone": "Desolace",
+     "rare": true
+    }
+   ]
+  },
   "284715": {
    "name": "First Mate Band",
    "sources": [
@@ -8839,6 +9246,18 @@
      "npcId": 646,
      "npc": "Mr. Smite",
      "zone": "Deadmines"
+    }
+   ]
+  },
+  "284717": {
+   "name": "Royal Satyr Slicer",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14225,
+     "npc": "Prince Kellen",
+     "zone": "Desolace",
+     "rare": true
     }
    ]
   },

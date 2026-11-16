@@ -3270,7 +3270,7 @@
    "classes": null,
    "minLevel": 38,
    "faction": "horde",
-   "instance": "The Temple of Atal'hakkar",
+   "instance": null,
    "hardest": {
     "id": 5259,
     "name": "Atal'ai Witch Doctor",
@@ -3284,7 +3284,7 @@
    "classes": null,
    "minLevel": 38,
    "faction": null,
-   "instance": "The Temple of Atal'hakkar",
+   "instance": null,
    "hardest": {
     "id": 5710,
     "name": "Jammal'an the Prophet",
@@ -3328,7 +3328,7 @@
    "classes": null,
    "minLevel": 38,
    "faction": "alliance",
-   "instance": "The Temple of Atal'hakkar",
+   "instance": null,
    "hardest": {
     "id": 5262,
     "name": "Groddoc Thunderer",
@@ -3993,7 +3993,7 @@
    "classes": null,
    "minLevel": 48,
    "faction": null,
-   "instance": "The Temple of Atal'hakkar",
+   "instance": null,
    "hardest": null,
    "steps": 1
   },
@@ -4118,7 +4118,7 @@
    "classes": null,
    "minLevel": 40,
    "faction": null,
-   "instance": "The Temple of Atal'hakkar",
+   "instance": null,
    "hardest": {
     "id": 8443,
     "name": "Avatar of Hakkar",
@@ -6842,7 +6842,7 @@
    "classes": null,
    "minLevel": 40,
    "faction": null,
-   "instance": "The Temple of Atal'hakkar",
+   "instance": null,
    "hardest": {
     "id": null,
     "name": null,
@@ -7048,7 +7048,7 @@
    ],
    "minLevel": 50,
    "faction": "horde",
-   "instance": "The Temple of Atal'hakkar",
+   "instance": null,
    "hardest": {
     "id": 1816,
     "name": "Diseased Grizzly",
@@ -10236,7 +10236,7 @@
   "98205": {
    "classes": null,
    "minLevel": 39,
-   "faction": "horde",
+   "faction": null,
    "instance": null,
    "hardest": {
     "id": 4324,
@@ -19394,6 +19394,36 @@
    "rank": "rare",
    "from": "wowhead"
   },
+  "14225": {
+   "name": "Prince Kellen",
+   "level": 33,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "14226": {
+   "name": "Kaskk",
+   "level": 40,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "14227": {
+   "name": "Hissperak",
+   "level": 37,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "14228": {
+   "name": "Giggler",
+   "level": 34,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "14229": {
+   "name": "Accursed Slitherblade",
+   "level": 35,
+   "rank": "rare",
+   "from": "wowhead"
+  },
   "14266": {
    "name": "Shanda the Spinner",
    "level": 19,
@@ -19404,6 +19434,12 @@
    "name": "Emogg the Crusher",
    "level": 19,
    "rank": "rare-elite",
+   "from": "wowhead"
+  },
+  "14269": {
+   "name": "Seeker Aqualon",
+   "level": 21,
+   "rank": "rare",
    "from": "wowhead"
   },
   "14272": {
@@ -20582,6 +20618,12 @@
    "rank": "elite",
    "from": null
   },
+  "255391": {
+   "name": "Overseer Wrex",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
   "255702": {
    "name": "Blazeroar",
    "level": null,
@@ -20812,6 +20854,12 @@
   },
   "260042": {
    "name": "Captain Dreadrise",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "260202": {
+   "name": "Deathless Marrow",
    "level": null,
    "rank": "elite",
    "from": null

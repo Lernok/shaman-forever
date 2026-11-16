@@ -17938,41 +17938,6 @@
    ]
   },
   {
-   "id": 284717,
-   "name": "Royal Satyr Slicer",
-   "kind": "1H Axe",
-   "quality": 2,
-   "req": 30,
-   "obtain": 30,
-   "ilvl": 35,
-   "bind": "equip",
-   "dps": 18.26,
-   "speed": 2.3,
-   "dmgMin": 29,
-   "dmgMax": 55,
-   "stats": {
-    "spirit": 3
-   },
-   "bonus": {
-    "attackPower": 9
-   },
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_axe_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 30,
-     "rec": 30
-    }
-   ]
-  },
-  {
    "id": 9608,
    "name": "Shoni's Disarming Tool",
    "kind": "1H Axe",
@@ -19254,6 +19219,52 @@
      "confidence": "community-untested",
      "asap": 32,
      "rec": 32
+    }
+   ]
+  },
+  {
+   "id": 284717,
+   "name": "Royal Satyr Slicer",
+   "kind": "1H Axe",
+   "quality": 2,
+   "req": 30,
+   "obtain": 32,
+   "ilvl": 35,
+   "bind": "equip",
+   "dps": 18.26,
+   "speed": 2.3,
+   "dmgMin": 29,
+   "dmgMax": 55,
+   "stats": {
+    "spirit": 3
+   },
+   "bonus": {
+    "attackPower": 9
+   },
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_axe_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Prince Kellen",
+     "npcId": 14225,
+     "zone": "Desolace",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 30,
+     "rec": 32,
+     "basis": {
+      "name": "Prince Kellen",
+      "level": 33,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
     }
    ]
   },
@@ -20899,7 +20910,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Deathless Marrow",
+     "npcId": 260202,
+     "zone": "The Drowned City",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 36,
@@ -21942,6 +21956,39 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_misc_monsterfang_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 37,
+     "rec": 37
+    }
+   ]
+  },
+  {
+   "id": 282700,
+   "name": "Shadow Scalper",
+   "kind": "1H Axe",
+   "quality": 2,
+   "req": 37,
+   "obtain": 37,
+   "ilvl": 42,
+   "bind": "equip",
+   "dps": 24.04,
+   "speed": 2.6,
+   "dmgMin": 43,
+   "dmgMax": 82,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "chance": [
+    "Chance on hit: Unleash a shadow bolt volley at all nearby targets, inflicting 33 damage to each enemy struck."
+   ],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_axe_01",
    "raceMask": -1,
    "sources": [
     {
@@ -27469,6 +27516,44 @@
    ]
   },
   {
+   "id": 286641,
+   "name": "Cannibal's Cleaver",
+   "kind": "2H Axe",
+   "quality": 3,
+   "req": 45,
+   "obtain": 45,
+   "ilvl": 50,
+   "bind": "pickup",
+   "dps": 43.47,
+   "speed": 3.6,
+   "dmgMin": 125,
+   "dmgMax": 188,
+   "stats": {
+    "stamina": 19
+   },
+   "bonus": {
+    "attackPower": 17
+   },
+   "equip": [
+    "Equip: Increased Axes +1.",
+    "Equip: +25 Attack Power against Humanoids."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_axe_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unknown",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 45,
+     "rec": 45
+    }
+   ]
+  },
+  {
    "id": 13046,
    "name": "Blanchard's Stout",
    "kind": "2H Mace",
@@ -28400,7 +28485,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Overseer Wrex",
+     "npcId": 255391,
+     "zone": "Alcaz Prison",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 47,
@@ -37331,14 +37419,12 @@
     "stamina": 5
    },
    "bonus": {
-    "healing": 26
+    "mp5": 5
    },
-   "equip": [
-    "Equip: Increases healing done by spells and effects by up to 26."
-   ],
+   "equip": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_hammer_02",
    "raceMask": -1,
    "sources": [
