@@ -94,6 +94,28 @@ function W.age(id)
   if ok then return a end
 end
 
+-- Auctionator keeps the last price it saw even after the item sold out. Its
+-- full scan (the "Scan" button, or the automatic one on opening the auction
+-- house) records when it ran: an item last seen on an earlier day than that
+-- scan wasn't on sale then, so it isn't planned for today.
+local function scanDay(t)
+  local d0 = Auctionator and Auctionator.Constants and Auctionator.Constants.SCAN_DAY_0
+  if not d0 or not t then return nil end
+  return math.floor((t - d0) / 86400)
+end
+function W.lastFullScan()
+  local st = Auctionator and Auctionator.SavedState
+  if type(st) ~= "table" then return nil end
+  local t = math.max(st.TimeOfLastBrowseScan or 0, st.TimeOfLastReplicateScan or 0, st.TimeOfLastGetAllScan or 0)
+  if t > 0 then return t end
+end
+function W.missing(id)
+  local full = scanDay(W.lastFullScan())
+  local age = W.age(id)
+  if not full or not age then return false end
+  return scanDay(time()) - age < full
+end
+
 -- Auctionator's per-day history for an item (internal, read with care):
 -- { {day=, low=, available=}, ... } newest first.
 local function aHistory(id)
@@ -290,7 +312,7 @@ end
 function W.candidates(today)
   local o = WritPlannerCharDB.opts
   local key = resetKey()
-  local out, skipped = {}, { done = 0, noPrice = 0, gone = 0, old = 0, danger = 0 }
+  local out, skipped = {}, { done = 0, noPrice = 0, gone = 0, old = 0, danger = 0, unseen = 0 }
   local side = UnitFactionGroup("player") == "Alliance" and "dA" or "dH"
   local maxDanger = o.danger and o.danger < 99 and ((UnitLevel("player") or 60) + o.danger) or nil
   for _, w in ipairs(D.writs) do
@@ -310,7 +332,10 @@ function W.candidates(today)
         local fresh = function(id) local a = W.age(id); return a ~= nil and a <= o.maxAge end
         if not haveWrit and (not wp or not fresh(w.w)) then ok = false end
         if haveItems < need and (not ip or not fresh(w.i)) then ok = false end
-        if not ok then
+        -- Today: not in your last full scan = not on sale (another day it may be back).
+        if ok and today and ((not haveWrit and W.missing(w.w)) or (haveItems < need and W.missing(w.i))) then
+          ok = false; skipped.unseen = skipped.unseen + 1
+        elseif not ok then
           if (wp and not fresh(w.w)) or (ip and not fresh(w.i)) then skipped.old = skipped.old + 1 else skipped.noPrice = skipped.noPrice + 1 end
         else
           c.writCost = haveWrit and 0 or wp

@@ -456,11 +456,12 @@ local function showPlan(p)
     s[#s + 1] = "No encontré un plan con los writs que tienen precio y lugar conocido."
   end
   local sk = R.skipped
-  if sk and (sk.done + sk.gone + sk.old + sk.danger) > 0 then
+  if sk and (sk.done + sk.gone + sk.old + sk.danger + (sk.unseen or 0)) > 0 then
     local t = {}
     if sk.done > 0 then t[#t + 1] = sk.done .. " ya entregados hoy" end
     if sk.danger > 0 then t[#t + 1] = sk.danger .. " en zonas peligrosas" end
     if sk.gone > 0 then t[#t + 1] = sk.gone .. " sin stock" end
+    if (sk.unseen or 0) > 0 then t[#t + 1] = sk.unseen .. " que no estaban en tu último escaneo" end
     if sk.old > 0 then t[#t + 1] = sk.old .. " con precio viejo" end
     s[#s + 1] = GREY .. "Dejé afuera: " .. table.concat(t, ", ") .. ".|r"
   end

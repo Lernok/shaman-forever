@@ -55,10 +55,11 @@ C_Map = {
   GetMapInfo = function() return { name = "Stranglethorn Vale" } end,
 }
 local scanDay = 2508
+local ages = {}
 Auctionator = {
   API = { v1 = {
     GetAuctionPriceByItemID = function(_, id) return prices[id] end,
-    GetAuctionAgeByItemID = function(_, id) return prices[id] and 0 or nil end,
+    GetAuctionAgeByItemID = function(_, id) return prices[id] and (ages[id] or 0) or nil end,
     RegisterForDBUpdate = function(_, fn) end,
     ConvertToSearchString = function(_, t) return '"' .. t.searchString .. '";;;;;;;;;;;;;' .. (t.quantity or "") end,
     CreateShoppingList = function(_, name, terms) lastList = { name = name, terms = terms } end,
@@ -227,6 +228,23 @@ events.onevent(events, "CHAT_MSG_ADDON", "WritPlanner", "L1;" .. other.q .. ";14
 assert(not WritPlannerDB.learned[other.q], "ignora mensajes malos, propios o fuera de la guild")
 WritPlannerCharDB.opts.share = false; sent = {}; W.share(learnedQ); assert(#sent == 0, "sin compartir no manda")
 print("  recibe, valida y respeta la opción")
+
+print("== lo que no estaba en el último escaneo")
+-- Today's full scan didn't see the first writ of the plan (last seen yesterday).
+WritPlannerCharDB.gone = {}
+local before = W.compute().today
+local gone = before.writs[1]
+Auctionator.Constants = { SCAN_DAY_0 = time() - 2508 * 86400 - 3600 }
+Auctionator.SavedState = { TimeOfLastBrowseScan = time() - 60 }
+ages[gone.w.w] = 1
+local after = W.compute()
+for _, c in ipairs(after.today.writs) do assert(c.w.q ~= gone.w.q, "recomienda un writ que no está en la subasta") end
+assert(after.skipped.unseen >= 1)
+-- Without a scan today (last one yesterday) yesterday's prices still count.
+Auctionator.SavedState = { TimeOfLastBrowseScan = time() - 86400 - 60 }
+assert(not W.missing(gone.w.w), "sin escaneo de hoy vale el precio de ayer")
+ages[gone.w.w] = nil; Auctionator.SavedState = nil
+print(("  fuera: %s (%d no estaban en el escaneo)"):format(gone.w.name, after.skipped.unseen))
 print("OK")
 
 -- Texture paths need "\\" in Lua strings: a lone "\M" turns into "M" and the
