@@ -11,7 +11,7 @@ local function widget()
     if k == "Show" then return function(self) self.shown = true; if self.onshow then self.onshow(self) end end end
     if k == "Hide" then return function(self) self.shown = false end end
     if k == "SetShown" then return function(self, v) self.shown = v end end
-    if k == "SetScript" then return function(self, n, fn) if n == "OnShow" then self.onshow = fn end; if n == "OnEvent" then self.onevent = fn end end end
+    if k == "SetScript" then return function(self, n, fn) if n == "OnShow" then self.onshow = fn end; if n == "OnEvent" then self.onevent = fn end; if n == "OnUpdate" then self.onupdate = fn end end end
     if k == "SetText" then return function(self, s) self.text = s end end
     if k == "GetText" then return function(self) return self.text end end
     if k == "TitleText" then local x = widget(); rawset(t, k, x); return x end
@@ -351,8 +351,15 @@ assert(hasNode, "el paso del maestro de vuelo tiene su botón de mapa")
 -- Landed at Thorium Point: the arrow moves to the writ.
 local th
 for id, n in pairs(D.nodes) do if known[id] and n.name:find("Thorium") then th = n end end
+-- On the flight, then on the ground: checked once a second.
+local flying = true
+UnitOnTaxi = function() return flying end
+events.onupdate(events, 1.1); frames()
+assert(not pins[#pins].title:find("Lolo"), "volando no cambia la flecha")
 W.here = function() return { x = th.x, y = th.y, cont = 0, z = "Searing Gorge" } end
-events.onevent(events, "PLAYER_CONTROL_GAINED"); frames()
+flying = false
+events.onupdate(events, 0.5); events.onupdate(events, 0.6); frames()
+UnitOnTaxi = nil
 assert(pins[#pins].title:find("Lolo"), "al aterrizar, la flecha va al writ: " .. pins[#pins].title)
 assert(removed >= 1, "saca la flecha anterior")
 print("  " .. pins[1].title .. "  ->  " .. pins[#pins].title)

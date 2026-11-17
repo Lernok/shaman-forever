@@ -1120,7 +1120,7 @@ for _, e in ipairs({ "AUCTION_HOUSE_SHOW", "AUCTION_HOUSE_CLOSED", "AUCTION_HOUS
   "AUCTION_HOUSE_BROWSE_RESULTS_ADDED", "COMMODITY_SEARCH_RESULTS_UPDATED", "COMMODITY_SEARCH_RESULTS_ADDED",
   "ITEM_SEARCH_RESULTS_UPDATED", "ITEM_SEARCH_RESULTS_ADDED", "COMMODITY_PRICE_UPDATED", "COMMODITY_PRICE_UNAVAILABLE",
   "COMMODITY_PURCHASE_SUCCEEDED", "COMMODITY_PURCHASE_FAILED", "AUCTION_HOUSE_PURCHASE_COMPLETED",
-  "AUCTION_HOUSE_THROTTLED_SYSTEM_READY", "PLAYER_MONEY", "CHAT_MSG_SYSTEM", "PLAYER_CONTROL_GAINED" }) do
+  "AUCTION_HOUSE_THROTTLED_SYSTEM_READY", "PLAYER_MONEY", "CHAT_MSG_SYSTEM" }) do
   pcall(f.RegisterEvent, f, e)
 end
 local lastNpc
@@ -1136,11 +1136,6 @@ f:SetScript("OnEvent", function(_, event, a1, a2, a3, a4)
   elseif event == "COMMODITY_PURCHASE_FAILED" then
     if pendingBuy and pendingBuy.commodity then pendingBuy = nil end
     if B then B.failed("compra rechazada") end
-  elseif event == "PLAYER_CONTROL_GAINED" then
-    -- Landed (a flight ends giving the controls back): point at what's next.
-    if W.locked() and WritPlannerCharDB.opts.autoPin ~= false and not (UnitOnTaxi and UnitOnTaxi("player")) then
-      if C_Timer then C_Timer.After(1, W.pinNext) else W.pinNext() end
-    end
   elseif event == "PLAYER_MONEY" then
     W.checkBuy()
     lastMoney = money()
@@ -1244,6 +1239,22 @@ f:SetScript("OnEvent", function(_, event, a1, a2, a3, a4)
       end
     end
   end
+end)
+
+-- Landing after a flight: once a second, see whether you're on a flight; when
+-- you were and aren't any more, the arrow moves on (from the flight master to
+-- the writ). Watched instead of an event: PLAYER_CONTROL_GAINED didn't come
+-- (or came while still on the flight) on Forever.
+local wasOnTaxi, sinceCheck = false, 0
+f:SetScript("OnUpdate", function(_, elapsed)
+  sinceCheck = sinceCheck + (elapsed or 0)
+  if sinceCheck < 1 then return end
+  sinceCheck = 0
+  local on = UnitOnTaxi and UnitOnTaxi("player") and true or false
+  if wasOnTaxi and not on and W.locked() and WritPlannerCharDB.opts.autoPin ~= false then
+    if C_Timer then C_Timer.After(1, W.pinNext) else W.pinNext() end
+  end
+  wasOnTaxi = on
 end)
 
 SLASH_WRITPLANNER1 = "/writs"
