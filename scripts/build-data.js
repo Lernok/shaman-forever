@@ -116,8 +116,10 @@ clientTexts.forEach((where, text) => {
   if (!ok) clientErrors.push(where + ': la plantilla usa {' + idx.join(',') + '} pero el texto tiene ' + n + ' números');
   if (/\d/.test(tpl.replace(/\{\d+\}/g, ''))) clientErrors.push(where + ': la plantilla tiene dígitos propios');
 });
+// A template no text uses any more only means the client changed or dropped a
+// text (its new wording is checked above): a warning, not a stop.
 Object.keys(clientTemplates).filter(k => !usedTemplates.has(k))
-  .forEach(k => clientErrors.push('plantilla sin uso (¿cambió el texto del cliente?): "' + k + '"'));
+  .forEach(k => console.warn('aviso: plantilla sin uso (¿cambió el texto del cliente?): "' + k + '"'));
 if (clientErrors.length) {
   console.error(clientErrors.join('\n') + '\n\nTextos del cliente sin plantilla válida: no se generó nada.');
   process.exit(1);

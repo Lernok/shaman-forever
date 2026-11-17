@@ -19,7 +19,10 @@ const CACHED = path.join(root, '.cache', 'questiedb-forever');
 // The package's name carries its version (QuestieDB-1.0.11-dev.21be340-Forever.zip): the release says it.
 const RELEASE = 'https://api.github.com/repos/Questie/QuestieDB/releases/tags/preview';
 const packageUrl = () => {
-  const json = execFileSync('curl', ['-sSfL', '-H', 'User-Agent: shaman-forever-sync', RELEASE], { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
+  // Signed in when the runner gives a token: anonymous calls share a small
+  // hourly limit per IP and GitHub's runners often hit it (403).
+  const auth = process.env.GITHUB_TOKEN ? ['-H', 'Authorization: Bearer ' + process.env.GITHUB_TOKEN] : [];
+  const json = execFileSync('curl', ['-sSfL', '-H', 'User-Agent: shaman-forever-sync', ...auth, RELEASE], { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
   const asset = JSON.parse(json).assets.find(a => /-Forever.zip$/.test(a.name));
   if (!asset) throw new Error('la release preview no trae un paquete -Forever.zip');
   return asset.browser_download_url;
