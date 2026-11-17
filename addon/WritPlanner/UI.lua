@@ -548,6 +548,8 @@ local function showSettings(p)
     :format(WHITE, W.flightCount(0), WHITE, W.flightCount(1), GREY))
   p.mini:SetChecked(not (WritPlannerDB.minimap and WritPlannerDB.minimap.hide))
   p.share:SetChecked(o().share)
+  local n = W.newer
+  p.version:SetText(("Versión %s"):format(W.myVersion() or "?") .. (n and (YELLOW .. ("   ·   hay una más nueva: %s (la tiene %s, pedísela)"):format(n.version, n.from) .. "|r") or ""))
 end
 
 local function buildSettings(p)
@@ -602,6 +604,7 @@ local function buildSettings(p)
   p.share:SetPoint("TOPLEFT", 300, -500)
   text(p, "GameFontHighlightSmall", 328, -505, WIDTH - 350):SetText("Compartir con la guild  " .. GREY .. "(dónde se entregan)|r")
   p.share:SetScript("OnClick", function(self) o().share = self:GetChecked() and true or false end)
+  p.version = text(p, "GameFontHighlightSmall", 14, -534, WIDTH - 50)
   p.mini:SetScript("OnClick", function(self)
     local want = self:GetChecked() and true or false
     if UI.toggleMinimap() ~= want then UI.toggleMinimap() end

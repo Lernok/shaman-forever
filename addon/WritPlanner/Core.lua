@@ -419,7 +419,8 @@ function W.here()
   local cont, world = C_Map.GetWorldPosFromMapPos(map, pos)
   if not cont or not world then return nil end
   local x, y = world:GetXY()
-  return { x = x, y = y, cont = cont }
+  local info = C_Map.GetMapInfo and C_Map.GetMapInfo(map)
+  return { x = x, y = y, cont = cont, z = info and info.name }
 end
 
 function W.speed()
@@ -464,7 +465,7 @@ function W.startPos()
   local from = WritPlannerCharDB.opts.from
   if from and from ~= "here" then
     local inn = innOf(from)
-    if inn then return { x = inn.x, y = inn.y, cont = inn.cont }, from end
+    if inn then return { x = inn.x, y = inn.y, cont = inn.cont, z = inn.zone }, from end
   end
   return W.here(), nil
 end
@@ -960,12 +961,57 @@ function W.shareAll()
   nextOne()
 end
 
+-- Versions: at login each addon tells the guild its version ("V1;0.12.0").
+-- Whoever has an older one is told once that there's a newer one and who has
+-- it; whoever has a newer one answers (at most once a minute), so the one who
+-- just logged in finds out too. Sent even with sharing off: it says nothing
+-- about you.
+local function myVersion()
+  local get = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata
+  return get and get("WritPlanner", "Version") or nil
+end
+W.myVersion = myVersion
+-- -1, 0, 1: a older, same, newer than b ("0.11.3" < "0.12.0" < "0.12.10").
+function W.compareVersions(a, b)
+  local function parts(v) local t = {} for n in tostring(v):gmatch("%d+") do t[#t + 1] = tonumber(n) end return t end
+  local x, y = parts(a), parts(b)
+  for i = 1, math.max(#x, #y) do
+    local p, q = x[i] or 0, y[i] or 0
+    if p ~= q then return p < q and -1 or 1 end
+  end
+  return 0
+end
+local lastVersionReply = -999
+function W.sendVersion()
+  local v = myVersion()
+  if v and IsInGuild and IsInGuild() and C_ChatInfo and C_ChatInfo.SendAddonMessage then
+    C_ChatInfo.SendAddonMessage(PREFIX, "V1;" .. clean(v), "GUILD")
+  end
+end
+local function versionHeard(v, who)
+  local mine = myVersion()
+  if not (mine and v and v:match("^%d+[%.%d]*$")) then return end
+  local c = W.compareVersions(v, mine)
+  if c > 0 then
+    local n = WritPlanner.newer
+    if not n or W.compareVersions(v, n.version) > 0 then
+      WritPlanner.newer = { version = v, from = who }
+      chat(("hay una versión más nueva del addon: %s (la tiene %s; vos tenés la %s). Pedísela."):format(v, who, mine))
+      if W.UI and W.UI.refresh then W.UI.refresh() end
+    end
+  elseif c < 0 then
+    local now = GetTime and GetTime() or 0
+    if now - lastVersionReply >= 60 then lastVersionReply = now; W.sendVersion() end
+  end
+end
+
 -- A guildmate's message: checked before it's kept (a writ we don't know the
 -- place of, a map, coordinates on it, a continent).
 function W.received(msg, sender)
   local me = UnitName("player")
   if not sender or sender == me or sender:match("^[^-]+") == me then return end
   local t = split(msg)
+  if t[1] == "V1" then versionHeard(t[2], sender:match("^[^-]+")) return end
   if t[1] ~= "L1" then return end
   local q, map, x, y, wx, wy, cont = tonumber(t[2]), tonumber(t[3]), tonumber(t[4]), tonumber(t[5]), tonumber(t[6]), tonumber(t[7]), tonumber(t[8])
   local w = q and unplaced[q]
@@ -1069,7 +1115,7 @@ f:SetScript("OnEvent", function(_, event, a1, a2, a3, a4)
     end
     if C_Timer then C_Timer.After(5, W.snapshot) else W.snapshot() end
     if W.UI and W.UI.minimap then W.UI.minimap() end
-    if C_Timer then C_Timer.After(30, W.shareAll) end
+    if C_Timer then C_Timer.After(30, W.shareAll); C_Timer.After(20, W.sendVersion) end
   elseif event == "CHAT_MSG_ADDON" then
     if a1 == PREFIX and a3 == "GUILD" then W.received(a2, a4) end
   elseif event == "BANKFRAME_OPENED" then

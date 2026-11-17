@@ -285,10 +285,91 @@ end
 -- Positions are world yards {x, y, cont} (Data.lua: wx/wy for the writs, x/y
 -- for the flight masters). Straight lines are stretched for roads and hills.
 P.WALK_DETOUR = 1.3
+-- Long walks rarely go straight (mountains, walls between zones, the way
+-- round through the next zone): past WALK_NEAR yards each yard counts
+-- WALK_FAR_DETOUR. Without it a straight line across the Wetlands to Searing
+-- Gorge came out quicker than flying, and the step by step walked everywhere.
+P.WALK_NEAR = 600
+P.WALK_FAR_DETOUR = 2.2
 P.FLY_DETOUR = 1.2
 P.FLY_SPEED = 30      -- yards a second on a flight path
 P.FLY_OVERHEAD = 20   -- seconds to talk to the flight master, take off and land
 P.OTHER_CONTINENT = 900 -- seconds to cross to the other continent (boat or zeppelin, and getting to it)
+
+-- Which zones you can walk between (they share a way through). A straight
+-- line between two zones that don't touch (the Wetlands and Searing Gorge, say)
+-- crosses mountains: the real way goes round through other zones. Zones are
+-- named by their first word ("searing", "swamp"; "The" left out). Zones not
+-- listed (new Forever zones) count as unknown: no extra cost.
+P.ZONE_LINKS = {
+  -- Eastern Kingdoms
+  tirisfal = { "silverpine", "western", "undercity" }, undercity = { "tirisfal" },
+  silverpine = { "tirisfal", "hillsbrad" },
+  hillsbrad = { "silverpine", "alterac", "arathi", "hinterlands" },
+  alterac = { "hillsbrad", "western" },
+  arathi = { "hillsbrad", "wetlands" },
+  hinterlands = { "hillsbrad", "western" },
+  western = { "tirisfal", "alterac", "hinterlands", "eastern" }, eastern = { "western" },
+  wetlands = { "arathi", "loch", "dun" },
+  dun = { "wetlands", "loch", "ironforge" }, ironforge = { "dun" },
+  loch = { "dun", "wetlands", "badlands" },
+  badlands = { "loch" },
+  searing = { "burning" },
+  burning = { "searing", "redridge" },
+  redridge = { "burning", "elwynn", "duskwood" },
+  elwynn = { "westfall", "redridge", "duskwood", "stormwind" }, stormwind = { "elwynn" },
+  westfall = { "elwynn", "duskwood" },
+  duskwood = { "elwynn", "westfall", "redridge", "deadwind", "stranglethorn" },
+  deadwind = { "duskwood", "swamp" },
+  swamp = { "deadwind", "blasted" }, blasted = { "swamp" },
+  stranglethorn = { "duskwood" },
+  -- Kalimdor
+  durotar = { "orgrimmar", "barrens" }, orgrimmar = { "durotar", "barrens" },
+  barrens = { "durotar", "orgrimmar", "ashenvale", "stonetalon", "mulgore", "dustwallow", "thousand" },
+  mulgore = { "barrens", "thunder" }, thunder = { "mulgore" },
+  ashenvale = { "barrens", "stonetalon", "felwood", "azshara", "darkshore" },
+  stonetalon = { "barrens", "ashenvale", "desolace" },
+  desolace = { "stonetalon", "feralas" },
+  feralas = { "desolace", "thousand" },
+  thousand = { "barrens", "feralas", "tanaris" },
+  tanaris = { "thousand", "un'goro", "silithus" },
+  ["un'goro"] = { "tanaris", "silithus" }, silithus = { "un'goro", "tanaris" },
+  dustwallow = { "barrens" },
+  felwood = { "ashenvale", "moonglade", "winterspring" },
+  moonglade = { "felwood", "winterspring" }, winterspring = { "felwood", "moonglade" },
+  darkshore = { "ashenvale" }, azshara = { "ashenvale" },
+}
+P.WALK_FAR_ZONES = 3 -- each yard of a walk between zones that don't touch
+function P.zoneKey(name)
+  if not name then return nil end
+  name = name:lower():gsub("^the ", "")
+  return name:match("^[^%s,]+")
+end
+local hopMemo = {}
+-- Zones crossed walking from one to the other (0 same, 1 next door, 99 no
+-- way through), nil if a zone isn't known.
+function P.hops(a, b)
+  a, b = P.zoneKey(a), P.zoneKey(b)
+  if not a or not b or not P.ZONE_LINKS[a] or not P.ZONE_LINKS[b] then return nil end
+  if a == b then return 0 end
+  local key = a .. ">" .. b
+  if hopMemo[key] then return hopMemo[key] end
+  local seen, frontier, n = { [a] = true }, { a }, 0
+  while #frontier > 0 do
+    n = n + 1
+    local nextF = {}
+    for _, z in ipairs(frontier) do
+      for _, y in ipairs(P.ZONE_LINKS[z] or {}) do
+        if y == b then hopMemo[key] = n return n end
+        if not seen[y] then seen[y] = true; nextF[#nextF + 1] = y end
+      end
+    end
+    frontier = nextF
+  end
+  -- Both known and no way through on foot (Searing Gorge from the north): very far.
+  hopMemo[key] = 99
+  return 99
+end
 
 local function dist(a, b)
   local dx, dy = a.x - b.x, a.y - b.y
@@ -305,6 +386,8 @@ function P.travel(opts)
     local adj = {}
     for id in pairs(opts.known) do
       local n = opts.nodes[id]
+      -- The flight master's zone, from its name ("Thorium Point, Searing Gorge").
+      if n and n.z == nil then n.z = n.name:match(",%s*(.+)$") or false end
       if n then
         byCont[n.cont] = byCont[n.cont] or {}
         table.insert(byCont[n.cont], id)
@@ -333,7 +416,13 @@ function P.travel(opts)
       F[src] = { t = T, cost = C }
     end
   end
-  local function walk(a, b) return dist(a, b) * P.WALK_DETOUR / speed end
+  local function walk(a, b)
+    local d = dist(a, b)
+    local h = P.hops(a.z, b.z)
+    if h and h >= 2 then return d * P.WALK_FAR_ZONES / speed end
+    local near = math.min(d, P.WALK_NEAR)
+    return (near * P.WALK_DETOUR + (d - near) * P.WALK_FAR_DETOUR) / speed
+  end
   local memo = {}
   return function(a, b)
     if a.cont ~= b.cont then return P.OTHER_CONTINENT, { boat = true } end
@@ -365,7 +454,11 @@ function P.travel(opts)
   end
 end
 
-local function wpos(c) return c.w.wx and { x = c.w.wx, y = c.w.wy, cont = c.cont } or nil end
+local function wpos(c)
+  if not c.w.wx then return nil end
+  local Z = WritPlanner_DATA and WritPlanner_DATA.zones[c.zone]
+  return { x = c.w.wx, y = c.w.wy, cont = c.cont, z = Z and Z.name }
+end
 P.wpos = wpos
 
 -- Puts the writs' stops in order with the travel function (nearest by time

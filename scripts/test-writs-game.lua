@@ -290,6 +290,41 @@ assert(not WritPlannerDB.learned[other.q], "ignora mensajes malos, propios o fue
 WritPlannerCharDB.opts.share = false; sent = {}; W.share(learnedQ); assert(#sent == 0, "sin compartir no manda")
 print("  recibe, valida y respeta la opción")
 
+print("== versión por guild")
+GetAddOnMetadata = function(_, f) if f == "Version" then return "0.12.0" end end
+GetTime = GetTime or os.clock
+WritPlannerCharDB.opts.share = false -- the version goes even with sharing off
+sent = {}
+assert(W.compareVersions("0.11.3", "0.12.0") < 0 and W.compareVersions("0.12.10", "0.12.9") > 0 and W.compareVersions("1.0", "1.0.0") == 0)
+W.sendVersion()
+assert(#sent == 1 and sent[1][2] == "V1;0.12.0", "manda su versión")
+events.onevent(events, "CHAT_MSG_ADDON", "WritPlanner", "V1;0.13.1", "GUILD", "Grunk-RPPvP")
+assert(W.newer and W.newer.version == "0.13.1" and W.newer.from == "Grunk", "se entera de la versión nueva")
+events.onevent(events, "CHAT_MSG_ADDON", "WritPlanner", "V1;0.13.0", "GUILD", "Zug")
+assert(W.newer.version == "0.13.1", "se queda con la más nueva")
+sent = {}
+events.onevent(events, "CHAT_MSG_ADDON", "WritPlanner", "V1;0.10.0", "GUILD", "Zug")
+assert(#sent == 1 and sent[1][2] == "V1;0.12.0", "le contesta al que tiene una vieja")
+events.onevent(events, "CHAT_MSG_ADDON", "WritPlanner", "V1;0.10.0", "GUILD", "Mog")
+assert(#sent == 1, "contesta como mucho una vez por minuto")
+events.onevent(events, "CHAT_MSG_ADDON", "WritPlanner", "V1;<script>", "GUILD", "Mog")
+W.UI.go(3); frames()
+print("  manda, se entera de la nueva (" .. W.newer.version .. " de " .. W.newer.from .. ") y contesta")
+WritPlannerCharDB.opts.share = true
+
+print("== caminar entre zonas sin paso")
+local P, D = W.Planner, WritPlanner_DATA
+assert(P.hops("Wetlands", "Searing Gorge") == 99 and P.hops("Arathi Highlands", "Wetlands") == 1 and P.hops("Riverglades", "Wetlands") == nil)
+-- With every Horde flight of the Eastern Kingdoms known, the Wetlands to
+-- Searing Gorge goes by Hammerfall and Thorium Point, not straight on foot.
+local known = {}
+for id, n in pairs(D.nodes) do if n.cont == 0 and n.side:find("H") then known[id] = true end end
+local fly = P.travel({ speed = 9.8, known = known, nodes = D.nodes, paths = D.paths })
+local function at(npc) for _, w in ipairs(D.writs) do if w.npc == npc and w.wx then return { x = w.wx, y = w.wy, cont = 0, z = D.zones[w.z].name } end end end
+local t, how = fly(at("Kixxle"), at("Lookout Captain Lolo Longstriker"))
+assert(how and how.to and D.nodes[how.to].name:find("Thorium"), "vuela a Thorium Point")
+print(("  Wetlands -> Searing Gorge: %s a %s, %d min"):format(D.nodes[how.from].name, D.nodes[how.to].name, t / 60))
+
 print("== lo que no estaba en el último escaneo")
 -- Today's full scan didn't see the first writ of the plan (last seen yesterday).
 WritPlannerCharDB.gone = {}
