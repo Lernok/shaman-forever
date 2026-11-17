@@ -105,7 +105,14 @@ step = function()
   local t = now()
   if state == "idle" or state == "wait" then search()
   elseif (state == "browse" or state == "search") and t - (sentAt or 0) > 8 then state = "idle"; search()
-  elseif (state == "buying" or state == "starting") and t - (buyAt or 0) > 8 then state = "idle"; search()
+  elseif state == "buying" and t - (buyAt or 0) <= 8 then
+    -- Confirmed by the gold? (W.bought then moves on.) If not yet, look again soon.
+    if not W.checkBuy() then later() end
+  elseif (state == "buying" or state == "starting") and t - (buyAt or 0) > 8 then
+    if state == "buying" then
+      note = YELLOW .. "No pude confirmar la compra. Si ya lo compraste (está en el correo), tocá \"Ya lo tengo\".|r"
+    end
+    state = "idle"; search()
   elseif state == "browse" or state == "search" or state == "buying" or state == "starting" then later() end
   show()
 end
@@ -196,7 +203,8 @@ fail = function(low)
   if r then
     local why = low and ("solo había a " .. coins(low) .. " c/u, planeado " .. coins(cur.unit)) or "no quedaba ninguno"
     note = r.to and (("%s: %s. Lo cambié por %s%s|r."):format(r.from.name, why, WHITE, r.to.name))
-      or (("%s: %s. Sin reemplazo dentro de tu margen: hoy lo salteo (%d de reputación menos)."):format(r.from.name, why, r.from.rep))
+      or (("%s: %s. Sin reemplazo dentro de tu margen: hoy lo salteo (%d de reputación menos)."):format(r.from.name, why, r.from.rep)
+        .. (r.kept and " Lo que ya compraste para ese writ guardalo: otro día te sale más barato." or ""))
   end
   cur, offer, state = nil, nil, "idle"
   step()
@@ -213,12 +221,14 @@ local function click()
       a.StartCommoditiesPurchase(cur.id, offer.n)
     else
       state = "buying"
+      W.expect({ id = cur.id, n = offer.n, paid = offer.total, auctionID = offer.auctionID })
       a.PlaceBid(offer.auctionID, offer.total)
     end
     show()
     later()
   elseif state == "confirm" and offer then
     state, buyAt = "buying", now()
+    W.expect({ id = cur.id, n = offer.n, paid = offer.total, commodity = true })
     a.ConfirmCommoditiesPurchase(cur.id, offer.n)
     show()
     later()
@@ -261,11 +271,26 @@ function B.failed(msg)
   step()
 end
 
+-- "Ya lo tengo, seguir": counts the thing in hand as yours (it went to the
+-- mailbox) and moves on. What it cost: the listing just bought, if any.
+function B.have()
+  if not cur then return end
+  local paid = (state == "buying" or state == "confirm") and offer and offer.total or 0
+  local mail = WritPlannerCharDB.stored.mail
+  mail[cur.id] = (mail[cur.id] or 0) + cur.n
+  local l = W.locked()
+  if l and paid > 0 then l.spent = (l.spent or 0) + paid end
+  note = GREEN .. ("Anotado: %d × %s.|r"):format(cur.n, itemName(cur.id) or "?")
+  cur, offer, state = nil, nil, "idle"
+  if W.UI and W.UI.refresh then W.UI.refresh() end
+  step()
+end
+
 -- The panel ---------------------------------------------------------------------
 
 local function build()
   panel = CreateFrame("Frame", "WritPlannerBuyFrame", UIParent, "BasicFrameTemplateWithInset")
-  panel:SetSize(320, 330)
+  panel:SetSize(320, 380)
   panel:SetFrameStrata("HIGH")
   panel:SetMovable(true)
   panel:EnableMouse(true)
@@ -296,11 +321,11 @@ local function build()
   panel.status = fs("GameFontHighlight", -90)
   panel.buy = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
   panel.buy:SetSize(292, 28)
-  panel.buy:SetPoint("TOPLEFT", 14, -126)
+  panel.buy:SetPoint("TOPLEFT", panel.status, "BOTTOMLEFT", 0, -10)
   panel.buy:SetScript("OnClick", click)
   panel.again = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
   panel.again:SetSize(140, 22)
-  panel.again:SetPoint("TOPLEFT", 14, -158)
+  panel.again:SetPoint("TOPLEFT", panel.buy, "BOTTOMLEFT", 0, -6)
   panel.again:SetText("Buscar de nuevo")
   panel.again:SetScript("OnClick", function()
     if state == "confirm" or state == "starting" then AH().CancelCommoditiesPurchase() end
@@ -308,8 +333,24 @@ local function build()
     if cur then cur.key, cur.commodity, misses = nil, nil, 0 end
     step()
   end)
+  panel.have = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
+  panel.have:SetSize(148, 22)
+  panel.have:SetPoint("LEFT", panel.again, "RIGHT", 4, 0)
+  panel.have:SetText("Ya lo tengo, seguir")
+  panel.have:SetScript("OnClick", B.have)
+  panel.have:SetScript("OnEnter", function(self)
+    GameTooltip:SetOwner(self, "ANCHOR_TOP")
+    GameTooltip:AddLine("Ya lo tengo, seguir")
+    GameTooltip:AddLine("Si lo compraste y el panel no se dio cuenta (o lo conseguiste por otro lado), lo cuento como tuyo y paso al siguiente.", 1, 1, 1, true)
+    GameTooltip:Show()
+  end)
+  panel.have:SetScript("OnLeave", function() GameTooltip:Hide() end)
   panel.note = fs("GameFontHighlightSmall", -188)
+  panel.note:ClearAllPoints()
+  panel.note:SetPoint("TOPLEFT", panel.again, "BOTTOMLEFT", 0, -10)
   panel.rest = fs("GameFontHighlightSmall", -236)
+  panel.rest:ClearAllPoints()
+  panel.rest:SetPoint("TOPLEFT", panel.note, "BOTTOMLEFT", 0, -10)
   panel:SetScript("OnHide", function()
     if (state == "confirm" or state == "starting") and AH() then AH().CancelCommoditiesPurchase() end
     offer = nil
@@ -323,6 +364,7 @@ show = function()
   local l = W.locked()
   local list = l and W.toBuy(l) or {}
   local room = W.headroom(l)
+  panel.buy:UnlockHighlight()
   panel.info:SetText(#list > 0 and (("%sFaltan %d cosas|r  ·  margen para pagar de más: %s"):format(WHITE, #list, coins(math.max(0, room)))) or "")
   panel.note:SetText(note or "")
   if state == "done" or not cur then
@@ -334,11 +376,13 @@ show = function()
     panel.buy:SetEnabled(true)
     panel.buy:SetScript("OnClick", function() if W.UI and W.UI.open then W.UI.open(2) end end)
     panel.again:Hide()
+    panel.have:Hide()
     panel.rest:SetText("")
     return
   end
   panel.buy:SetScript("OnClick", click)
   panel.again:Show()
+  panel.have:Show()
   panel.icon:SetTexture(itemIcon(cur.id))
   panel.icon:Show()
   panel.name:SetText((itemName(cur.id) or ("#" .. cur.id)) .. (cur.kind == "writ" and (GREY .. "  (el writ)|r") or ""))
@@ -348,17 +392,23 @@ show = function()
     local s = ("Lo más barato que entra: %s%d|r por %s (%s c/u)"):format(WHITE, offer.n, coins(offer.total), coins(unit))
     if offer.n > cur.n then s = s .. GREY .. ("  (te sobran %d)"):format(offer.n - cur.n) .. "|r" end
     if unit > cur.unit * 1.05 then s = s .. "\n" .. YELLOW .. "Subió desde que armaste la ruta, pero entra en tu margen.|r" end
-    panel.status:SetText(s)
+    -- Things that stack take two clicks (the game asks the exact price, then
+    -- you confirm): the second one must be impossible to miss.
+    panel.buy:UnlockHighlight()
     if state == "ready" then
-      panel.buy:SetText(offer.commodity and ("Comprar %d (te muestro el precio final)"):format(offer.n) or ("Comprar %d por %s"):format(offer.n, coins(offer.total)))
+      panel.buy:SetText(offer.commodity and ("Paso 1 de 2: pedir el precio de %d"):format(offer.n) or ("Comprar %d por %s"):format(offer.n, coins(offer.total)))
       panel.buy:SetEnabled(true)
+      if offer.commodity then s = s .. "\n" .. GREY .. "Se compra en dos clics: este pide el precio final y el segundo confirma.|r" end
     elseif state == "starting" then
       panel.buy:SetText("Pidiendo el precio…")
       panel.buy:SetEnabled(false)
     else
-      panel.buy:SetText(("Confirmar: %d por %s"):format(offer.n, coins(offer.total)))
+      panel.buy:SetText(("Paso 2 de 2: CONFIRMAR %d por %s"):format(offer.n, coins(offer.total)))
       panel.buy:SetEnabled(true)
+      panel.buy:LockHighlight()
+      s = s .. "\n" .. YELLOW .. "Todavía no lo compraste: tocá CONFIRMAR.|r"
     end
+    panel.status:SetText(s)
   elseif state == "buying" then
     panel.status:SetText(GREY .. "Comprando…|r")
     panel.buy:SetText("Comprando…")

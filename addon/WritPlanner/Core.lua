@@ -668,17 +668,48 @@ local function confirmBuy()
   if p then W.bought(p) end
 end
 W.seenAuction = seenAuction
+
+-- How a purchase is confirmed (any of these): the gold went down by what it
+-- cost (compared with the gold just before buying: W.moneyBefore, set by our
+-- panel, or the last amount seen), the chat says "You won an auction for X",
+-- or the game's purchase events. The gold may already be gone when the hook
+-- runs, so "before" is never read after the purchase.
+local lastMoney
+local function money() return GetMoney and GetMoney() or 0 end
+function W.checkBuy()
+  local p = pendingBuy
+  if p and p.money and p.paid and p.paid > 0 and p.money - money() >= p.paid * 0.99 then confirmBuy() return true end
+  return false
+end
+-- Our panel says what it's buying before it buys (so it doesn't depend on
+-- having seen the listing in a search).
+function W.expect(p)
+  p.money = money()
+  p.ours = true
+  pendingBuy = p
+end
+W.pendingBuy = function() return pendingBuy end
+local function before()
+  local m = W.moneyBefore or lastMoney or money()
+  W.moneyBefore = nil
+  return m
+end
 if hooksecurefunc and C_AuctionHouse then
   if C_AuctionHouse.ConfirmCommoditiesPurchase then
     hooksecurefunc(C_AuctionHouse, "ConfirmCommoditiesPurchase", function(id, n)
-      if ALL[id] and n and n > 0 then pendingBuy = { id = id, n = n, paid = commodityTotal or 0, commodity = true } end
+      if ALL[id] and n and n > 0 and not (pendingBuy and pendingBuy.ours and pendingBuy.id == id) then
+        pendingBuy = { id = id, n = n, paid = commodityTotal or 0, commodity = true, money = before() }
+        W.checkBuy()
+      end
     end)
   end
   if C_AuctionHouse.PlaceBid then
     hooksecurefunc(C_AuctionHouse, "PlaceBid", function(auctionID, bid)
       local a = seenAuction[auctionID]
-      if a and a.buyout and bid and bid >= a.buyout then
-        pendingBuy = { id = a.id, n = a.n, paid = bid, auctionID = auctionID, money = GetMoney and GetMoney() }
+      if pendingBuy and pendingBuy.ours and pendingBuy.auctionID == auctionID then W.checkBuy()
+      elseif a and a.buyout and bid and bid >= a.buyout then
+        pendingBuy = { id = a.id, n = a.n, paid = bid, auctionID = auctionID, money = before() }
+        W.checkBuy()
       end
     end)
   end
@@ -731,7 +762,7 @@ function W.replace(b)
     end
   end
   l.wp, l.ip = l.wp or {}, l.ip or {}
-  local r = { from = x, to = pick and pick.w or nil, extra = pick and (pick.cost - xLeft) or 0 }
+  local r = { from = x, to = pick and pick.w or nil, extra = pick and (pick.cost - xLeft) or 0, kept = owned(x.i) > 0 or owned(x.w) > 0 }
   if pick then
     l.wp[pick.w.w] = pick.haveWrit and l.wp[pick.w.w] or W.price(pick.w.w)
     l.ip[pick.w.i] = W.price(pick.w.i)
@@ -745,6 +776,7 @@ function W.replace(b)
     chat(("%s ya no estaba a ese precio: lo cambié por %s (%s)."):format(x.name, r.to.name, r.extra > 0 and ("+" .. W.money(r.extra)) or "mismo precio o menos"))
   else
     chat(("%s ya no estaba a un precio que entre en tu margen y no hay otro que lo reemplace: hoy lo salteo (%d de reputación menos)."):format(x.name, x.rep))
+    if r.kept then chat("lo que ya compraste para ese writ guardalo (bolsas o banco): otro día lo cuento como tuyo y ese writ te sale más barato.") end
   end
   if W.UI and W.UI.refresh then W.UI.refresh() end
   return r
@@ -977,7 +1009,7 @@ for _, e in ipairs({ "AUCTION_HOUSE_SHOW", "AUCTION_HOUSE_CLOSED", "AUCTION_HOUS
   "AUCTION_HOUSE_BROWSE_RESULTS_ADDED", "COMMODITY_SEARCH_RESULTS_UPDATED", "COMMODITY_SEARCH_RESULTS_ADDED",
   "ITEM_SEARCH_RESULTS_UPDATED", "ITEM_SEARCH_RESULTS_ADDED", "COMMODITY_PRICE_UPDATED", "COMMODITY_PRICE_UNAVAILABLE",
   "COMMODITY_PURCHASE_SUCCEEDED", "COMMODITY_PURCHASE_FAILED", "AUCTION_HOUSE_PURCHASE_COMPLETED",
-  "AUCTION_HOUSE_THROTTLED_SYSTEM_READY", "PLAYER_MONEY" }) do
+  "AUCTION_HOUSE_THROTTLED_SYSTEM_READY", "PLAYER_MONEY", "CHAT_MSG_SYSTEM" }) do
   pcall(f.RegisterEvent, f, e)
 end
 local lastNpc
@@ -994,9 +1026,14 @@ f:SetScript("OnEvent", function(_, event, a1, a2, a3, a4)
     if pendingBuy and pendingBuy.commodity then pendingBuy = nil end
     if B then B.failed("compra rechazada") end
   elseif event == "PLAYER_MONEY" then
-    -- A buyout takes the gold right away: that's the sign it went through.
+    W.checkBuy()
+    lastMoney = money()
+  elseif event == "CHAT_MSG_SYSTEM" then
     local p = pendingBuy
-    if p and p.money and GetMoney and p.money - GetMoney() >= p.paid then confirmBuy() end
+    if p and ERR_AUCTION_WON_S and type(a1) == "string" then
+      local name = (C_Item and C_Item.GetItemNameByID and C_Item.GetItemNameByID(p.id)) or (GetItemInfo and GetItemInfo(p.id))
+      if name and a1:find(name, 1, true) and a1 == ERR_AUCTION_WON_S:format(name) then confirmBuy() end
+    end
   elseif event == "AUCTION_HOUSE_PURCHASE_COMPLETED" then
     if pendingBuy and pendingBuy.auctionID == a1 then confirmBuy() end
   elseif event == "ITEM_SEARCH_RESULTS_UPDATED" or event == "ITEM_SEARCH_RESULTS_ADDED" then
@@ -1015,6 +1052,7 @@ f:SetScript("OnEvent", function(_, event, a1, a2, a3, a4)
   elseif event == "AUCTION_HOUSE_THROTTLED_SYSTEM_READY" then
     if B then B.poke() end
   elseif event == "AUCTION_HOUSE_SHOW" then
+    lastMoney = money()
     if B then B.open() end
   elseif event == "AUCTION_HOUSE_CLOSED" then
     pendingBuy = nil
