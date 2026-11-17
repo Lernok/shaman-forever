@@ -445,10 +445,13 @@ local function showPlan(p)
   if R.err then p.summary:SetText(ERR[R.err] or R.err); p.list.set({}) return end
   local x, plan = R.plan, R.today
   local s = {}
+  if W.locked() then
+    s[#s + 1] = YELLOW .. "Ya elegiste la ruta de hoy: la seguís en \"4. Paso a paso\".|r " .. GREY .. "Esto es un cálculo nuevo; \"Usar esta ruta\" la cambia por esta.|r"
+  end
   if x then
     local gname = R.goal and W.level(R.goal) or "?"
     local line = ("%sLlegás a %s en %s|r   ·   ~%s en total"):format(WHITE, gname, days(x.days), coins(x.days == 1 and plan and plan.cost or x.total))
-    if x.days > 1 then line = line .. ("   ·   hoy %s, después ~%s por día"):format(coins(x.costs[1]), coins((x.total - x.costs[1]) / (x.days - 1))) end
+    if x.days > 1 then line = line .. ("   ·   hoy %s, después ~%s por día"):format(coins(plan and plan.cost or x.costs[1]), coins((x.total - x.costs[1]) / (x.days - 1))) end
     s[#s + 1] = line
     if R.overBudget then s[#s + 1] = RED .. "No alcanza tu límite de oro: es lo más barato que encontré.|r" end
     if R.tooFew then s[#s + 1] = RED .. ("No entra en %s: es lo más rápido que encontré.|r"):format(days(R.wantDays)) end
@@ -490,6 +493,23 @@ local function showPlan(p)
   -- Today's trip.
   if plan then
     lines[#lines + 1] = { kind = "section", text = ("Hoy: %d de reputación, ~%d min de viaje, %d paradas"):format(plan.rep, mins(plan.time), #plan.route), cost = coins(plan.cost) }
+    -- Only what you already bought: takes out every writ that still costs something.
+    local paid = 0
+    for _, c in ipairs(plan.writs) do if c.cost > 0 then paid = paid + 1 end end
+    if paid > 0 and paid < #plan.writs then
+      lines[#lines + 1] = {
+        text = "Solo lo que ya tengo", sub = ("saca los %d writs que hay que comprar (%s) y deja los %d que ya tenés"):format(paid, coins(plan.cost), #plan.writs - paid),
+        btn = "Aplicar", click = function()
+          for _, c in ipairs(plan.writs) do if c.cost > 0 then W.skip(c.w.q, true) end end
+          stale = true; UI.update()
+        end,
+      }
+    end
+    if plan.out then
+      local rep = 0
+      for _, c in ipairs(plan.out) do rep = rep + c.w.rep end
+      lines[#lines + 1] = { text = YELLOW .. ("Sacaste %d writs de hoy|r"):format(#plan.out), sub = ("%d de reputación menos hoy; el plan en días no lo cuenta (mañana te faltará eso de más)"):format(rep) }
+    end
     if plan.cost > plan.cheapest then
       lines[#lines + 1] = { text = GREY .. ("La más barata costaba %s pero con un viaje más largo.|r"):format(coins(plan.cheapest)) }
     end
@@ -519,10 +539,20 @@ local function showPlan(p)
       for _, c in ipairs(st.writs) do
         lines[#lines + 1] = {
           icon = icon(c.w.i), text = c.w.name, sub = writSub(c), cost = coins(c.cost),
-          btn = not (c.haveWrit and c.haveItems) and "No hay" or nil,
-          click = function() W.markGone(c.w.q); stale = true; UI.update() end,
+          btn = "Sacar",
+          click = function() W.skip(c.w.q, true); stale = true; UI.update() end,
         }
       end
+    end
+  end
+  -- What you took out of today's trip.
+  if plan and plan.out then
+    lines[#lines + 1] = { kind = "section", text = "Sacaste de hoy", btn = "Todos", click = function() WritPlannerCharDB.skip = {}; stale = true; UI.update() end }
+    for _, c in ipairs(plan.out) do
+      lines[#lines + 1] = {
+        icon = icon(c.w.i), text = GREY .. c.w.name .. "|r", sub = writSub(c), cost = coins(c.cost),
+        btn = "Sumar", click = function() W.skip(c.w.q, false); stale = true; UI.update() end,
+      }
     end
   end
   -- The next days.
@@ -566,13 +596,24 @@ local function buildPlan(p)
   end)
   b1:SetScript("OnLeave", function() GameTooltip:Hide() end)
   local b3 = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
-  b3:SetSize(150, 26); b3:SetPoint("LEFT", b1, "RIGHT", 6, 0); b3:SetText("Mostrar los \"No hay\"")
-  b3:SetScript("OnClick", function() WritPlannerCharDB.gone = {}; stale = true; UI.update() end)
+  b3:SetSize(150, 26); b3:SetPoint("LEFT", b1, "RIGHT", 6, 0); b3:SetText("Volver a sumar todos")
+  b3:SetScript("OnClick", function() WritPlannerCharDB.gone = {}; WritPlannerCharDB.skip = {}; stale = true; UI.update() end)
   local b2 = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
   b2:SetSize(180, 26); b2:SetPoint("BOTTOMRIGHT", -14, 12); b2:SetText("Usar esta ruta  >")
   b2:SetScript("OnClick", function()
-    if last and last.today then W.lock(last.today); UI.go(4) end
+    if last and last.today then
+      W.lock(last.today)
+      UI.go(4)
+      if W.Buy then W.Buy.start() end
+    end
   end)
+  b2:SetScript("OnEnter", function(self)
+    GameTooltip:SetOwner(self, "ANCHOR_TOP")
+    GameTooltip:AddLine("Usar esta ruta")
+    GameTooltip:AddLine("La ruta queda guardada hasta el reinicio diario (aunque cierres la ventana o hagas /reload). En la subasta se abre un panel que te compra lo que falta de a una cosa, mirando el precio real del momento: si algo se fue o subió más que tu margen (\"Me estiro hasta\"), cambia ese writ por otro parecido o lo saltea.", 1, 1, 1, true)
+    GameTooltip:Show()
+  end)
+  b2:SetScript("OnLeave", function() GameTooltip:Hide() end)
 end
 
 -- Step 4: step by step ------------------------------------------------------------
@@ -592,6 +633,24 @@ local function showGuide(p)
   p.summary:SetText(("%sEntregaste %d de %d.|r   Próxima: %s%s|r en %s\n%sAceptá cada writ recién al salir (según las guías tiene 9 horas de plazo). Se recalcula desde donde estás.|r")
     :format(WHITE, done, total, GOLD, route[1].stop.npc or "?", D.zones[route[1].stop.zone].name, GREY))
   local lines = {}
+  -- What's still to buy, and what got swapped at the auction house.
+  local l = W.locked()
+  local buy = W.toBuy(l)
+  if #buy > 0 then
+    lines[#lines + 1] = { kind = "section", text = ("Falta comprar (%d)"):format(#buy), cost = coins(W.plannedLeft(l)) }
+    lines[#lines + 1] = { text = GREY .. ("En la subasta se abre un panel que te lo compra de a una cosa con el precio real del momento. Margen para pagar de más: %s.|r"):format(coins(math.max(0, W.headroom(l)))) }
+    for _, b in ipairs(buy) do
+      lines[#lines + 1] = { icon = icon(b.id), text = ("%d × %s"):format(b.n, (C_Item and C_Item.GetItemNameByID and C_Item.GetItemNameByID(b.id)) or ("#" .. b.id)), sub = "para " .. b.w.name, cost = coins(b.unit * b.n) }
+    end
+  end
+  if l and l.changes and #l.changes > 0 then
+    lines[#lines + 1] = { kind = "section", text = "Cambios en la subasta" }
+    for _, ch in ipairs(l.changes) do
+      lines[#lines + 1] = { text = ch.to and (("%s → %s"):format(ch.from, ch.to)) or (ch.from .. ": salteado"),
+        sub = ch.to and (ch.extra > 0 and ("+" .. coins(ch.extra)) or "mismo precio o menos") or (ch.rep .. " de reputación menos hoy") }
+    end
+  end
+  if #buy > 0 or (l and l.changes and #l.changes > 0) then lines[#lines + 1] = { kind = "section", text = "La ruta" } end
   local first = route[1].stop
   local n = 0
   local steps = W.steps(route)
@@ -680,9 +739,16 @@ end
 
 function UI.isOpen() return frame ~= nil and frame:IsShown() end
 
+-- Opening goes back to today's chosen trip if there is one (step 4), else to step 1.
 function UI.toggle()
   if not frame then build() end
-  if frame:IsShown() then frame:Hide() else current = 1; frame:Show() end
+  if frame:IsShown() then frame:Hide() else current = W.locked() and 4 or 1; frame:Show() end
+end
+
+function UI.open(i)
+  if not frame then build() end
+  current = i
+  if frame:IsShown() then UI.update() else frame:Show() end
 end
 
 -- New prices or a turned-in writ: results get worked out again (now, if one is open).

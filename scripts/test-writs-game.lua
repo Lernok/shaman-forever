@@ -41,7 +41,7 @@ GetItemCooldown = function() return 0, 0 end
 local queue = {}
 C_Timer = { After = function(_, fn) queue[#queue + 1] = fn end }
 -- Runs what the addon left for the next frames (the background planning).
-local function frames() local n = 0 while #queue > 0 do table.remove(queue, 1)(); n = n + 1 end return n end
+local function frames() local n = 0 while #queue > 0 do table.remove(queue, 1)(); n = n + 1; if n > 20000 then error("cuadros sin fin, estado de compras: " .. tostring(WritPlanner.Buy and WritPlanner.Buy.state()) .. " " .. WritPlanner.Buy.debug() .. " AH=" .. tostring(AH[tonumber((WritPlanner.Buy.debug()):match("^%d+") or 0)] and #AH[tonumber((WritPlanner.Buy.debug()):match("^%d+"))])) end end return n end
 C_Reputation = { GetFactionDataByID = function(id) if id == 2587 then return { name = "Durotar Supply and Logistics", currentStanding = 2250 } end end }
 local done = { [94264] = false }
 C_QuestLog = { IsQuestFlaggedCompleted = function(q) return done[q] end, IsOnQuest = function() return false end }
@@ -78,10 +78,81 @@ Auctionator = {
     return out
   end },
 }
+-- A fake modern auction house (Forever's): AH[itemID] = { {n, buyout}, ... }.
+-- Even item ids stack (bought by quantity), odd ones are single listings.
+AH = {}
+local clock, money = 0, 1000000
+GetTime = function() clock = clock + 0.01 return clock end
+GetMoney = function() return money end
+hooksecurefunc = function(t, name, fn)
+  if type(t) == "string" then t, name, fn = _G, t, name end
+  local orig = t[name]
+  t[name] = function(...) orig(...); fn(...) end
+end
+local function stacks(id) return id % 2 == 0 end
+local function fire(...) local args = { ... } C_Timer.After(0, function() events.onevent(events, unpack(args)) end) end
+local browse = {}
+Enum = { ItemCommodityStatus = { Unknown = 0, Item = 1, Commodity = 2 } }
+local function units(id)
+  local out = {}
+  for _, a in ipairs(AH[id] or {}) do out[#out + 1] = { n = a[1], total = a[2], unit = a[2] / a[1], ref = a } end
+  table.sort(out, function(x, y) return x.unit < y.unit end)
+  return out
+end
+C_AuctionHouse = {
+  IsThrottledMessageSystemReady = function() return true end,
+  SendBrowseQuery = function(q)
+    local id = tonumber(q.searchString:match("^item(%d+)$"))
+    browse = {}
+    if id and AH[id] and #AH[id] > 0 then browse[1] = { itemKey = { itemID = id } } end
+    fire("AUCTION_HOUSE_BROWSE_RESULTS_UPDATED")
+  end,
+  GetBrowseResults = function() return browse end,
+  HasFullBrowseResults = function() return true end,
+  GetItemCommodityStatus = function(id) return stacks(id) and 2 or 1 end,
+  SendSearchQuery = function(key)
+    if stacks(key.itemID) then fire("COMMODITY_SEARCH_RESULTS_UPDATED", key.itemID) else fire("ITEM_SEARCH_RESULTS_UPDATED", key) end
+  end,
+  GetNumCommoditySearchResults = function(id) return #units(id) end,
+  GetCommoditySearchResultInfo = function(id, i) local u = units(id)[i] return { itemID = id, quantity = u.n, unitPrice = math.ceil(u.unit) } end,
+  HasFullCommoditySearchResults = function() return true end,
+  GetNumItemSearchResults = function(key) return #units(key.itemID) end,
+  GetItemSearchResultInfo = function(key, i) local u = units(key.itemID)[i] return { auctionID = key.itemID * 100 + i, quantity = u.n, buyoutAmount = u.total, itemKey = key } end,
+  StartCommoditiesPurchase = function(id, n)
+    local left, total = n, 0
+    for _, u in ipairs(units(id)) do local t = math.min(u.n, left); total = total + t * math.ceil(u.unit); left = left - t; if left == 0 then break end end
+    fire("COMMODITY_PRICE_UPDATED", math.ceil(total / n), total)
+  end,
+  ConfirmCommoditiesPurchase = function(id, n)
+    C_Timer.After(0, function()
+      local left, total = n, 0
+      for _, u in ipairs(units(id)) do
+        local t = math.min(u.n, left)
+        total, left = total + t * math.ceil(u.unit), left - t
+        u.ref[1], u.ref[2] = u.ref[1] - t, math.ceil(u.unit) * (u.ref[1] - t)
+        if left == 0 then break end
+      end
+      for k = #AH[id], 1, -1 do if AH[id][k][1] == 0 then table.remove(AH[id], k) end end
+      money = money - total
+      events.onevent(events, "COMMODITY_PURCHASE_SUCCEEDED")
+    end)
+  end,
+  CancelCommoditiesPurchase = function() end,
+  PlaceBid = function(auctionID, bid)
+    local id, i = math.floor(auctionID / 100), auctionID % 100
+    C_Timer.After(0, function()
+      local u = units(id)[i]
+      for k, a in ipairs(AH[id]) do if a == u.ref then table.remove(AH[id], k) break end end
+      money = money - bid
+      events.onevent(events, "PLAYER_MONEY")
+    end)
+  end,
+}
 dofile("addon/WritPlanner/Data.lua")
 dofile("addon/WritPlanner/Planner.lua")
 dofile("addon/WritPlanner/Core.lua")
 dofile("addon/WritPlanner/UI.lua")
+dofile("addon/WritPlanner/Buy.lua")
 events.onevent(events, "ADDON_LOADED", "WritPlanner")
 events.onevent(events, "PLAYER_LOGIN")
 frames()
@@ -245,6 +316,91 @@ Auctionator.SavedState = { TimeOfLastBrowseScan = time() - 86400 - 60 }
 assert(not W.missing(gone.w.w), "sin escaneo de hoy vale el precio de ayer")
 ages[gone.w.w] = nil; Auctionator.SavedState = nil
 print(("  fuera: %s (%d no estaban en el escaneo)"):format(gone.w.name, after.skipped.unseen))
+
+print("== comprar en la subasta")
+WritPlannerCharDB.gone = {}
+WritPlannerCharDB.stored = { bank = {}, mail = {} }
+WritPlannerCharDB.opts.tol = 0.5
+local R3 = W.compute()
+W.lock(R3.today)
+local L = W.locked()
+local buy = W.toBuy()
+assert(#buy >= 3, "hace falta comprar varias cosas para la prueba")
+print(("  ruta elegida: %d writs, %d cosas para comprar, presupuesto %s (margen %s)"):format(#L.q, #buy, W.money(L.budget), W.money(W.headroom())))
+-- On sale: the first at the planned price, the second sold out, the third 3x dearer;
+-- the rest at the planned price (in stacks of what's needed).
+for i, b in ipairs(buy) do
+  if i == 2 then AH[b.id] = {}
+  elseif i == 3 then AH[b.id] = { { b.n, b.unit * b.n * 3 + 60000 } }
+  else AH[b.id] = { { b.n, b.unit * b.n } } end
+end
+-- Every other writ and item on sale at Auctionator's price (for the swaps).
+for _, w in ipairs(WritPlanner_DATA.writs) do
+  for _, id in ipairs({ w.w, w.i }) do
+    if not AH[id] and prices[id] then AH[id] = { { w.n and id == w.i and w.n or 1, prices[id] * ((id == w.i and w.n) or 1) } } end
+  end
+end
+local secondQ, thirdQ = buy[2].q, buy[3].q
+events.onevent(events, "AUCTION_HOUSE_SHOW")
+frames()
+assert(W.Buy.state() == "ready", "el primero está al precio planeado: " .. tostring(W.Buy.state()))
+local firstId, firstN = buy[1].id, buy[1].n
+W.Buy.click(); frames()
+if W.Buy.state() == "confirm" then W.Buy.click(); frames() end -- stacks: second click confirms the price
+assert((WritPlannerCharDB.stored.mail[firstId] or 0) == firstN, "lo comprado cuenta como tuyo (en el correo)")
+assert(L.spent == buy[1].unit * buy[1].n, "anota lo gastado")
+-- Buy everything else; the sold-out one and the dear one get swapped or skipped.
+local clicks = 0
+while (W.Buy.state() == "ready" or W.Buy.state() == "confirm") and clicks < 80 do W.Buy.click(); frames(); clicks = clicks + 1 end
+assert(W.Buy.state() == "done", "termina de comprar: " .. tostring(W.Buy.state()))
+assert(#W.toBuy() == 0, "no queda nada por comprar")
+local inTrip = {}
+for _, q in ipairs(L.q) do inTrip[q] = true end
+assert(not inTrip[secondQ] and not inTrip[thirdQ], "el agotado y el caro salen de la ruta")
+assert(#L.changes >= 2)
+for _, ch in ipairs(L.changes) do print("  cambio: " .. ch.from .. " -> " .. tostring(ch.to)) end
+assert(L.spent <= L.budget, "no se pasa del presupuesto")
+print(("  %d compras, gastado %s de %s"):format(clicks + 1, W.money(L.spent), W.money(L.budget)))
+-- Closing and opening the window goes back to the chosen trip, which kept what you bought.
+W.UI.toggle(); W.UI.toggle(); frames()
+local route = W.lockedRoute()
+for _, leg in ipairs(route) do for _, c in ipairs(leg.stop.writs) do assert(c.haveWrit and c.haveItems, "la ruta elegida tiene todo comprado: " .. c.w.name) end end
+local steps = W.steps(route)
+assert(steps[1].kind == "mail", "primero sacar lo comprado del correo")
+print("  " .. steps[1].text:sub(1, 100))
+-- A new plan prefers what you already have.
+local R4 = W.compute()
+local free = 0
+for _, c in ipairs(R4.today.writs) do if c.cost == 0 then free = free + 1 end end
+print(("  plan nuevo: %d de %d writs ya comprados"):format(free, #R4.today.writs))
+events.onevent(events, "AUCTION_HOUSE_CLOSED")
+
+print("== sacar writs del plan")
+-- You hold some writs with their items; the plan adds more that cost gold.
+WritPlannerCharDB.locked = nil
+WritPlannerCharDB.stored = { bank = {}, mail = {} }
+WritPlannerCharDB.opts.goal = "9000"
+local R5 = W.compute()
+local mine = {}
+for i = 1, 3 do local c = R5.today.writs[i]; mine[c.w.q] = true; WritPlannerCharDB.stored.mail[c.w.w] = 1; WritPlannerCharDB.stored.mail[c.w.i] = c.w.n or 1 end
+local R6 = W.compute()
+local owned6, paid6 = 0, 0
+for _, c in ipairs(R6.today.writs) do if c.cost == 0 then owned6 = owned6 + 1 else paid6 = paid6 + 1 end end
+assert(owned6 >= 3 and paid6 > 0, "el plan suma writs para comprar")
+-- "Solo lo que ya tengo": take out every writ that costs something.
+for _, c in ipairs(R6.today.writs) do if c.cost > 0 then W.skip(c.w.q, true) end end
+local R7 = W.compute()
+assert(R7.today.cost == 0 and #R7.today.writs == owned6, "queda solo lo que tenés")
+assert(#R7.today.out == paid6, "lo sacado se muestra aparte")
+for _, leg in ipairs(R7.today.route) do for _, c in ipairs(leg.stop.writs) do assert(c.cost == 0) end end
+W.lock(R7.today)
+assert(#W.toBuy() == 0, "sin nada que comprar")
+print(("  %d que tenés, %d sacados; hoy %d de reputación gratis"):format(#R7.today.writs, #R7.today.out, R7.today.rep))
+-- Putting one back.
+W.skip(R7.today.out[1].w.q, false)
+assert(#W.compute().today.out == paid6 - 1)
+W.UI.open(3); frames()
+WritPlannerCharDB.skip, WritPlannerCharDB.locked = {}, nil
 print("OK")
 
 -- Texture paths need "\\" in Lua strings: a lone "\M" turns into "M" and the
@@ -258,3 +414,12 @@ for _, file in ipairs({ "addon/WritPlanner/UI.lua", "addon/WritPlanner/Core.lua"
   end
 end
 print("rutas de texturas ok")
+
+-- Auction house events change between clients (Forever has the modern one):
+-- they're registered with pcall, never with a bare RegisterEvent, so an
+-- unknown one can't stop the addon from loading (0.10.0 broke that way).
+for line in io.lines("addon/WritPlanner/Core.lua") do
+  assert(not line:find('RegisterEvent%("[A-Z_]*AUCTION') and not line:find('RegisterEvent%("COMMODITY') and not line:find('RegisterEvent%("ITEM_SEARCH'),
+    "evento de subasta registrado sin pcall: " .. line)
+end
+print("eventos de subasta ok")

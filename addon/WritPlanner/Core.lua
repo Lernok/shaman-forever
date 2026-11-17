@@ -48,6 +48,7 @@ local function defaults()
   local c = WritPlannerCharDB
   c.flights = c.flights or {}   -- [taxi node id] = true
   c.gone = c.gone or {}         -- [questID] = daily reset key: "not on sale" for today
+  c.skip = c.skip or {}         -- [questID] = daily reset key: taken out of today's trip by you
   c.opts = c.opts or {}
   c.stored = c.stored or {}     -- bank / mail = { [itemID] = count }, as last seen there
   c.stored.bank = c.stored.bank or {}
@@ -323,7 +324,9 @@ function W.candidates(today)
       if today and doneToday(w.q) then ok = false; skipped.done = skipped.done + 1 end
       if ok and today and WritPlannerCharDB.gone[w.q] == key then ok = false; skipped.gone = skipped.gone + 1 end
       c.danger = w[side]
-      if ok and maxDanger and c.danger and c.danger > maxDanger then ok = false; skipped.danger = skipped.danger + 1 end
+      -- A writ you already bought or accepted stays, whatever the danger option says.
+      local carried = today and (owned(w.w) > 0 or onQuest(w.q))
+      if ok and not carried and maxDanger and c.danger and c.danger > maxDanger then ok = false; skipped.danger = skipped.danger + 1 end
       if ok then
         local need = w.n or 1
         local haveWrit = today and (owned(w.w) > 0 or onQuest(w.q))
@@ -564,6 +567,7 @@ function W.compute()
     R.plan, R.days = chosen, chosen.days
     if chosen.goals[1] and chosen.goals[1] > 0 then
       R.today = P.best(today, chosen.days == 1 and U or chosen.goals[1], tol, start, travel)
+      W.applySkips(R.today, start, travel)
       W.hearthPlan(R.today, travel, start)
     end
     -- What the next days would use that is cheaper today than usual: buy it now.
@@ -585,11 +589,161 @@ end
 -- Following a trip ----------------------------------------------------------------
 
 -- "Use this trip": the writs of a plan stay as today's trip, whatever new
--- prices say, until the daily reset.
+-- prices say, until the daily reset. It keeps what each thing was planned to
+-- cost and a budget (that plus your "Me estiro hasta" gold): at the auction
+-- house a listing is bought only while the whole trip stays within it.
 function W.lock(plan)
-  local qs = {}
-  for _, c in ipairs(plan.writs) do qs[#qs + 1] = c.w.q end
-  WritPlannerCharDB.locked = { key = resetKey(), q = qs, preBind = plan.preBind }
+  local qs, wp, ip = {}, {}, {}
+  for _, c in ipairs(plan.writs) do
+    qs[#qs + 1] = c.w.q
+    wp[c.w.w] = W.price(c.w.w)
+    ip[c.w.i] = W.price(c.w.i)
+  end
+  local l = { key = resetKey(), q = qs, preBind = plan.preBind, wp = wp, ip = ip, spent = 0, changes = {}, rep = plan.rep }
+  WritPlannerCharDB.locked = l
+  l.budget = W.plannedLeft(l) + (tonumber(WritPlannerCharDB.opts.tol) or 0) * 10000
+end
+
+local writByQ = {}
+for _, w in ipairs(D.writs) do writByQ[w.q] = w end
+
+-- What the chosen trip still needs from the auction house:
+-- { {id, n, unit = planned price each, kind = "writ" | "item", q, w} }.
+-- The items first and the writs last: if an item is gone, its writ wasn't
+-- bought for nothing.
+function W.toBuy(l)
+  l = l or W.locked()
+  local items, writs = {}, {}
+  if not l then return items end
+  for _, q in ipairs(l.q) do
+    local w = writByQ[q]
+    if w and not doneToday(q) then
+      local n = (w.n or 1) - owned(w.i)
+      if n > 0 then items[#items + 1] = { id = w.i, n = n, unit = (l.ip and l.ip[w.i]) or W.price(w.i) or 0, kind = "item", q = q, w = w } end
+      if owned(w.w) == 0 and not onQuest(q) then
+        writs[#writs + 1] = { id = w.w, n = 1, unit = (l.wp and l.wp[w.w]) or W.price(w.w) or 0, kind = "writ", q = q, w = w }
+      end
+    end
+  end
+  for _, b in ipairs(writs) do items[#items + 1] = b end
+  return items
+end
+
+-- What's still to buy at the planned prices, and the room left in the budget
+-- for paying more than planned (spent + still to buy at plan <= budget).
+function W.plannedLeft(l)
+  local t = 0
+  for _, b in ipairs(W.toBuy(l)) do t = t + b.unit * b.n end
+  return t
+end
+function W.headroom(l)
+  l = l or W.locked()
+  if not l or not l.budget then return 0 end
+  return l.budget - (l.spent or 0) - W.plannedLeft(l)
+end
+
+-- Purchases at the auction house (ours, Auctionator's or the game's: any
+-- buyout of a writ or its item). Forever has the modern auction house: things
+-- that stack are bought by quantity (StartCommoditiesPurchase, then
+-- ConfirmCommoditiesPurchase), the rest one listing at a time (PlaceBid).
+-- Bought things go to the mailbox, so they count as yours right away,
+-- without opening it.
+local pendingBuy, commodityTotal
+local seenAuction = {} -- [auctionID] = { id, n }: listings of writs and items seen in searches
+function W.bought(p)
+  local mail = WritPlannerCharDB.stored.mail
+  mail[p.id] = (mail[p.id] or 0) + p.n
+  local l = W.locked()
+  if l then l.spent = (l.spent or 0) + p.paid end
+  if W.Buy and W.Buy.bought then W.Buy.bought(p) end
+  if W.UI and W.UI.refresh then W.UI.refresh() end
+end
+local function confirmBuy()
+  local p = pendingBuy
+  pendingBuy = nil
+  if p then W.bought(p) end
+end
+W.seenAuction = seenAuction
+if hooksecurefunc and C_AuctionHouse then
+  if C_AuctionHouse.ConfirmCommoditiesPurchase then
+    hooksecurefunc(C_AuctionHouse, "ConfirmCommoditiesPurchase", function(id, n)
+      if ALL[id] and n and n > 0 then pendingBuy = { id = id, n = n, paid = commodityTotal or 0, commodity = true } end
+    end)
+  end
+  if C_AuctionHouse.PlaceBid then
+    hooksecurefunc(C_AuctionHouse, "PlaceBid", function(auctionID, bid)
+      local a = seenAuction[auctionID]
+      if a and a.buyout and bid and bid >= a.buyout then
+        pendingBuy = { id = a.id, n = a.n, paid = bid, auctionID = auctionID, money = GetMoney and GetMoney() }
+      end
+    end)
+  end
+end
+
+-- A thing of the chosen trip isn't on sale within the budget any more (gone,
+-- or only dearer): its writ is swapped for the cheapest other writ of today
+-- that gives at least as much reputation and keeps the trip within budget
+-- (if two cost about the same, the one that makes the trip shorter); with
+-- none, the writ is left out (today gives that much less reputation).
+-- Returns { from = writ, to = writ or nil, extra = copper over plan }.
+function W.replace(b)
+  local l = W.locked()
+  if not l or not b then return nil end
+  local x = b.w
+  local xLeft = 0
+  for _, e in ipairs(W.toBuy(l)) do if e.q == x.q then xLeft = xLeft + e.unit * e.n end end
+  local room = W.headroom(l) + xLeft
+  W.markGone(x.q)
+  local inTrip = {}
+  for _, q in ipairs(l.q) do inTrip[q] = true end
+  local opts = {}
+  for _, c in ipairs((W.candidates(true))) do
+    if not inTrip[c.w.q] and c.w.rep >= x.rep and c.cost <= room and c.w.w ~= b.id and c.w.i ~= b.id then opts[#opts + 1] = c end
+  end
+  table.sort(opts, function(a, c) return a.cost < c.cost end)
+  local pick
+  if #opts > 0 then
+    -- The trip with each of the cheapest few: within 5 silver of the cheapest, the quickest.
+    local keep = {}
+    for _, q in ipairs(l.q) do
+      local w = writByQ[q]
+      if q ~= x.q and w and w.z and D.zones[w.z] and not doneToday(q) then keep[#keep + 1] = { w = w, zone = w.z, cont = D.zones[w.z].cont } end
+    end
+    local travel, here = W.travelFn(), W.startPos()
+    local bestT
+    for i = 1, math.min(8, #opts) do
+      local c = opts[i]
+      if c.cost > opts[1].cost + 500 then break end
+      local trip = { c }
+      for _, k in ipairs(keep) do trip[#trip + 1] = k end
+      local _, t = P.route(trip, here, travel)
+      if not bestT or t < bestT then pick, bestT = c, t end
+    end
+  end
+  for i, q in ipairs(l.q) do
+    if q == x.q then
+      if pick then l.q[i] = pick.w.q else table.remove(l.q, i) end
+      break
+    end
+  end
+  l.wp, l.ip = l.wp or {}, l.ip or {}
+  local r = { from = x, to = pick and pick.w or nil, extra = pick and (pick.cost - xLeft) or 0 }
+  if pick then
+    l.wp[pick.w.w] = pick.haveWrit and l.wp[pick.w.w] or W.price(pick.w.w)
+    l.ip[pick.w.i] = W.price(pick.w.i)
+    l.rep = (l.rep or 0) - x.rep + pick.w.rep
+  else
+    l.rep = (l.rep or 0) - x.rep
+  end
+  l.changes = l.changes or {}
+  table.insert(l.changes, { from = x.name, to = r.to and r.to.name or nil, extra = r.extra, rep = x.rep })
+  if r.to then
+    chat(("%s ya no estaba a ese precio: lo cambié por %s (%s)."):format(x.name, r.to.name, r.extra > 0 and ("+" .. W.money(r.extra)) or "mismo precio o menos"))
+  else
+    chat(("%s ya no estaba a un precio que entre en tu margen y no hay otro que lo reemplace: hoy lo salteo (%d de reputación menos)."):format(x.name, x.rep))
+  end
+  if W.UI and W.UI.refresh then W.UI.refresh() end
+  return r
 end
 
 function W.locked()
@@ -772,6 +926,29 @@ function W.pin(stop)
   chat("marca puesta: " .. title .. string.format(" %.0f, %.0f", stop.x, stop.y))
 end
 
+-- Writs you took out of today's trip ("Sacar"): left out, not replaced by
+-- others (today gives that much less reputation and costs that much less).
+local function skipped(q) return WritPlannerCharDB.skip[q] == resetKey() end
+W.skipped = skipped
+function W.skip(q, on) WritPlannerCharDB.skip[q] = on and resetKey() or nil end
+function W.applySkips(plan, start, travel)
+  if not plan then return end
+  local keep, out = {}, {}
+  for _, c in ipairs(plan.writs) do
+    if skipped(c.w.q) then out[#out + 1] = c else keep[#keep + 1] = c end
+  end
+  if #out == 0 then return end
+  plan.writs, plan.out = keep, out
+  plan.cost, plan.rep = 0, 0
+  for _, c in ipairs(keep) do plan.cost, plan.rep = plan.cost + c.cost, plan.rep + c.w.rep end
+  plan.cheapest = plan.cost
+  if #keep > 0 then
+    plan.route, plan.time, plan.flyCost = P.route(keep, start, travel)
+  else
+    plan.route, plan.time, plan.flyCost = {}, 0, 0
+  end
+end
+
 function W.markGone(q)
   WritPlannerCharDB.gone[q] = resetKey()
 end
@@ -854,9 +1031,55 @@ f:RegisterEvent("BAG_UPDATE_DELAYED")
 f:RegisterEvent("MAIL_SHOW")
 f:RegisterEvent("MAIL_INBOX_UPDATE")
 f:RegisterEvent("CHAT_MSG_ADDON")
+-- Auction house events: registered one by one and only if this client knows
+-- them (an unknown event would stop the whole addon from loading).
+for _, e in ipairs({ "AUCTION_HOUSE_SHOW", "AUCTION_HOUSE_CLOSED", "AUCTION_HOUSE_BROWSE_RESULTS_UPDATED",
+  "AUCTION_HOUSE_BROWSE_RESULTS_ADDED", "COMMODITY_SEARCH_RESULTS_UPDATED", "COMMODITY_SEARCH_RESULTS_ADDED",
+  "ITEM_SEARCH_RESULTS_UPDATED", "ITEM_SEARCH_RESULTS_ADDED", "COMMODITY_PRICE_UPDATED", "COMMODITY_PRICE_UNAVAILABLE",
+  "COMMODITY_PURCHASE_SUCCEEDED", "COMMODITY_PURCHASE_FAILED", "AUCTION_HOUSE_PURCHASE_COMPLETED",
+  "AUCTION_HOUSE_THROTTLED_SYSTEM_READY", "PLAYER_MONEY" }) do
+  pcall(f.RegisterEvent, f, e)
+end
 local lastNpc
 f:SetScript("OnEvent", function(_, event, a1, a2, a3, a4)
-  if event == "ADDON_LOADED" and a1 == "WritPlanner" then
+  local B = W.Buy
+  if event == "COMMODITY_PRICE_UPDATED" then
+    commodityTotal = a2
+    if B then B.priceUpdated(a1, a2) end
+  elseif event == "COMMODITY_PRICE_UNAVAILABLE" then
+    if B then B.priceUnavailable() end
+  elseif event == "COMMODITY_PURCHASE_SUCCEEDED" then
+    if pendingBuy and pendingBuy.commodity then confirmBuy() end
+  elseif event == "COMMODITY_PURCHASE_FAILED" then
+    if pendingBuy and pendingBuy.commodity then pendingBuy = nil end
+    if B then B.failed("compra rechazada") end
+  elseif event == "PLAYER_MONEY" then
+    -- A buyout takes the gold right away: that's the sign it went through.
+    local p = pendingBuy
+    if p and p.money and GetMoney and p.money - GetMoney() >= p.paid then confirmBuy() end
+  elseif event == "AUCTION_HOUSE_PURCHASE_COMPLETED" then
+    if pendingBuy and pendingBuy.auctionID == a1 then confirmBuy() end
+  elseif event == "ITEM_SEARCH_RESULTS_UPDATED" or event == "ITEM_SEARCH_RESULTS_ADDED" then
+    local key = type(a1) == "table" and a1 or nil
+    if key and ALL[key.itemID] and C_AuctionHouse then
+      for i = 1, C_AuctionHouse.GetNumItemSearchResults(key) do
+        local r = C_AuctionHouse.GetItemSearchResultInfo(key, i)
+        if r and r.auctionID then seenAuction[r.auctionID] = { id = key.itemID, n = r.quantity or 1, buyout = r.buyoutAmount } end
+      end
+    end
+    if B and key then B.itemResults(key) end
+  elseif event == "COMMODITY_SEARCH_RESULTS_UPDATED" or event == "COMMODITY_SEARCH_RESULTS_ADDED" then
+    if B then B.commodityResults(a1) end
+  elseif event == "AUCTION_HOUSE_BROWSE_RESULTS_UPDATED" or event == "AUCTION_HOUSE_BROWSE_RESULTS_ADDED" then
+    if B then B.browseResults() end
+  elseif event == "AUCTION_HOUSE_THROTTLED_SYSTEM_READY" then
+    if B then B.poke() end
+  elseif event == "AUCTION_HOUSE_SHOW" then
+    if B then B.open() end
+  elseif event == "AUCTION_HOUSE_CLOSED" then
+    pendingBuy = nil
+    if B then B.close() end
+  elseif event == "ADDON_LOADED" and a1 == "WritPlanner" then
     defaults()
     W.mergeLearned()
   elseif event == "PLAYER_LOGIN" then
