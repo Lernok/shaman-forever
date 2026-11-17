@@ -109,7 +109,9 @@ C_AuctionHouse = {
   end,
   GetBrowseResults = function() return browse end,
   HasFullBrowseResults = function() return true end,
-  GetItemCommodityStatus = function(id) return stacks(id) and 2 or 1 end,
+  -- The real one takes a bag slot: called with an item id it errors (0.11.0 did).
+  GetItemCommodityStatus = function(loc) assert(type(loc) == "table", "GetItemCommodityStatus(item) quiere un ItemLocation") return 0 end,
+  GetItemKeyInfo = function(key) return { itemID = key.itemID, isCommodity = stacks(key.itemID) } end,
   SendSearchQuery = function(key)
     if stacks(key.itemID) then fire("COMMODITY_SEARCH_RESULTS_UPDATED", key.itemID) else fire("ITEM_SEARCH_RESULTS_UPDATED", key) end
   end,

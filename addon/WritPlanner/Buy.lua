@@ -44,16 +44,14 @@ local function ready()
   return not a.IsThrottledMessageSystemReady or a.IsThrottledMessageSystemReady()
 end
 
--- Stacks (bought by quantity) or not; nil while the game doesn't know yet.
+-- Stacks (bought by quantity) or not, from the item's key (as Auctionator
+-- does); nil while the game is still loading it (asked again in a moment).
+-- GetItemCommodityStatus takes a bag slot, not an item id: not used.
 local function isCommodity(id, key)
   local a = AH()
-  local E = Enum and Enum.ItemCommodityStatus
-  local st = a.GetItemCommodityStatus and a.GetItemCommodityStatus(id)
-  if st and E then
-    if st == E.Commodity then return true elseif st == E.Item then return false end
-  end
-  local info = key and a.GetItemKeyInfo and a.GetItemKeyInfo(key)
-  if info then return info.isCommodity and true or false end
+  if not (key and a.GetItemKeyInfo) then return nil end
+  local ok, info = pcall(a.GetItemKeyInfo, key)
+  if ok and info then return info.isCommodity and true or false end
   return nil
 end
 
@@ -150,8 +148,9 @@ function B.commodityResults(id)
       if need == 0 then break end
     end
   end
-  if need > 0 and a.HasFullCommoditySearchResults and not a.HasFullCommoditySearchResults(id) and a.RequestMoreCommoditySearchResults then
-    a.RequestMoreCommoditySearchResults(id)
+  -- Not enough in what came so far: ask for the rest of the listings (if that works, wait for them).
+  if need > 0 and a.HasFullCommoditySearchResults and not a.HasFullCommoditySearchResults(id)
+    and a.RequestMoreCommoditySearchResults and pcall(a.RequestMoreCommoditySearchResults, id) then
     return
   end
   local got = cur.n - need
