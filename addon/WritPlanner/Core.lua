@@ -527,7 +527,8 @@ function W.compute()
   R.goal = goal
   local need = cur and goal and (goal - cur) or nil
   R.need = need
-  if not need then R.err = "norep" return R end
+  -- With the reputation read but no goal left (Exalted): reached, not "unreadable".
+  if not need then R.err = cur and "reached" or "norep" return R end
   if need <= 0 then R.err = "reached" return R end
   if not W.hasAuctionator() then R.err = "noauc" return R end
 
@@ -535,6 +536,7 @@ function W.compute()
   local later = W.candidates(false)
   R.skipped = skipped
   if #today == 0 and #later == 0 then R.err = "noprices" return R end
+  if #today == 0 and skipped.done > 0 then R.err = "alldone" return R end
 
   local tol = (tonumber(o.tol) or 0) * 10000
   local travel = W.travelFn()
@@ -772,12 +774,6 @@ function W.replace(b)
   end
   l.changes = l.changes or {}
   table.insert(l.changes, { from = x.name, to = r.to and r.to.name or nil, extra = r.extra, rep = x.rep })
-  if r.to then
-    chat(("%s ya no estaba a ese precio: lo cambié por %s (%s)."):format(x.name, r.to.name, r.extra > 0 and ("+" .. W.money(r.extra)) or "mismo precio o menos"))
-  else
-    chat(("%s ya no estaba a un precio que entre en tu margen y no hay otro que lo reemplace: hoy lo salteo (%d de reputación menos)."):format(x.name, x.rep))
-    if r.kept then chat("lo que ya compraste para ese writ guardalo (bolsas o banco): otro día lo cuento como tuyo y ese writ te sale más barato.") end
-  end
   if W.UI and W.UI.refresh then W.UI.refresh() end
   return r
 end

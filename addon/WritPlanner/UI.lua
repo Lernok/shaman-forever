@@ -215,7 +215,7 @@ local function writSub(c)
   local t = { c.w.rep .. " de reputación" }
   local stock = W.stock(c.w.w)
   if stock then t[#t + 1] = "hay " .. stock .. " a la venta" end
-  if c.haveWrit and c.haveItems then t[#t + 1] = GREEN .. "ya lo tenés todo" .. GREY
+  if c.haveWrit and c.haveItems then -- the price column says "lo tenés"
   elseif c.haveWrit then t[#t + 1] = GREEN .. "writ ya comprado" .. GREY end
   if c.writAt then t[#t + 1] = YELLOW .. "el writ está en el " .. c.writAt .. GREY end
   if c.itemAt then t[#t + 1] = YELLOW .. "el objeto está en el " .. c.itemAt .. GREY end
@@ -277,6 +277,7 @@ local ERR = {
   noauc = "Necesitás Auctionator instalado y un escaneo de la subasta.",
   bug = "Algo falló al calcular (te dejé el error en el chat; pasáselo a quien te dio el addon).",
   noprices = "No hay precios de writs en tu Auctionator: hacé un escaneo completo en la subasta.",
+  alldone = "Hoy ya entregaste todos los writs que se pueden (o los que quedan no tienen precio de hoy). Mañana hay más.",
 }
 
 local MODES = { { key = "fly", name = "Con vuelos" }, { key = "walk", name = "Solo a pie" } }
@@ -359,23 +360,27 @@ local function showToday(p)
   -- The three choices, each with what it costs and gives today.
   lines[#lines + 1] = { kind = "section", text = "¿Qué hago hoy?" }
   local pr = R.presets or {}
+  local same = R.raw and R.raw.fast and R.raw.fast == R.raw.rec
+  if same and R.pick == "fast" then R.pick = "rec" end
   for _, ch in ipairs(CHOICES) do
     local raw = R.raw and R.raw[ch.key]
     local sub
+    if same and ch.key == "fast" then raw = nil end
     if ch.key == "mine" then
       sub = raw and (("%d writs que ya compraste  ·  %d de reputación  ·  sin gastar"):format(#raw.writs, raw.rep)) or "no tenés writs comprados con su objeto"
     elseif raw then
       local op = pr[ch.key]
-      sub = ("%d de reputación hoy  ·  llegás a la meta en %s (~%s en total)"):format(raw.rep, days(op.days), coins(op.total))
+      sub = ("hoy %d de reputación  ·  meta en %s, ~%s en total"):format(raw.rep, days(op.days), coins(op.total))
+      if same then sub = sub .. "  ·  también es lo más rápido" end
     else
       sub = "no encontré writs con precio para esto"
     end
-    lines[#lines + 1] = {
+    if not (same and ch.key == "fast") then lines[#lines + 1] = {
       radio = R.pick == ch.key, disabled = not raw,
       text = (R.pick == ch.key and GREEN or (raw and WHITE or GREY)) .. ch.name .. "|r", sub = sub,
       cost = raw and (raw.cost > 0 and coins(raw.cost) or (GREEN .. "gratis|r")) or nil,
       toggle = function() if raw then o().pick = ch.key; W.finishPick(R) end; UI.update() end,
-    }
+    } end
   end
   -- Today's trip: the writs with a tick; untick what you don't want (it isn't replaced).
   local plan = R.today
@@ -451,11 +456,6 @@ local function buildToday(p)
     GameTooltip:Show()
   end)
   p.start:SetScript("OnLeave", function() GameTooltip:Hide() end)
-  local hint = p:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-  hint:SetPoint("BOTTOMLEFT", 14, 20)
-  hint:SetWidth(340)
-  hint:SetJustifyH("LEFT")
-  hint:SetText(GREY .. "Lo que tildes es lo que se compra y se entrega hoy.|r")
 end
 
 -- En camino --------------------------------------------------------------------------
@@ -475,8 +475,8 @@ local function showGuide(p)
   local l = W.locked()
   local buy = W.toBuy(l)
   if #buy > 0 then
-    p.summary:SetText(("%s1. Comprá lo que falta|r (%d cosas): andá a la subasta y se abre un panel que te lo compra.\n%s2. Después, la ruta:|r %d paradas, %d de %d entregados.")
-      :format(GOLD, #buy, WHITE, #route, done, total))
+    p.summary:SetText(("%s1. Comprá lo que falta|r en la subasta: se abre un panel que te lo compra.\n%s2. Después, la ruta:|r %d paradas.")
+      :format(GOLD, WHITE, #route))
   else
     p.summary:SetText(("%sEntregaste %d de %d.|r   Próxima: %s%s|r en %s\n%sAceptá cada writ recién al salir (según las guías tiene 9 horas de plazo). Se recalcula desde donde estás.|r")
       :format(WHITE, done, total, GOLD, route[1].stop.npc or "?", D.zones[route[1].stop.zone].name, GREY))
@@ -484,7 +484,7 @@ local function showGuide(p)
   local lines = {}
   if #buy > 0 then
     lines[#lines + 1] = { kind = "section", text = ("Falta comprar (%d)"):format(#buy), cost = coins(W.plannedLeft(l)) }
-    lines[#lines + 1] = { text = GREY .. ("Te lo compro de a una cosa con el precio real del momento. Margen para pagar de más: %s.|r"):format(coins(math.max(0, W.headroom(l)))) }
+    lines[#lines + 1] = { text = GREY .. ("Con el precio real del momento; margen para pagar de más: %s.|r"):format(coins(math.max(0, W.headroom(l)))) }
     for _, b in ipairs(buy) do
       lines[#lines + 1] = { icon = icon(b.id), text = ("%d × %s"):format(b.n, (C_Item and C_Item.GetItemNameByID and C_Item.GetItemNameByID(b.id)) or ("#" .. b.id)), sub = "para " .. b.w.name, cost = coins(b.unit * b.n) }
     end
