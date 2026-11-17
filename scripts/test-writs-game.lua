@@ -324,6 +324,40 @@ local function at(npc) for _, w in ipairs(D.writs) do if w.npc == npc and w.wx t
 local t, how = fly(at("Kixxle"), at("Lookout Captain Lolo Longstriker"))
 assert(how and how.to and D.nodes[how.to].name:find("Thorium"), "vuela a Thorium Point")
 print(("  Wetlands -> Searing Gorge: %s a %s, %d min"):format(D.nodes[how.from].name, D.nodes[how.to].name, t / 60))
+assert(W.passTip("Arathi Highlands", "Wetlands"):find("Thandol"), "dice el puente")
+assert(W.passTip("Wetlands", "Searing Gorge"):find("no hay paso"), "avisa que no hay paso")
+assert(W.passTip("Duskwood", "Duskwood") == nil and W.passTip("Riverglades", "Wetlands") == nil)
+
+print("== la flecha al maestro de vuelo, y al aterrizar al writ")
+-- Fake map conversions and TomTom.
+CreateVector2D = function(x, y) return { x = x, y = y } end
+C_Map.GetMapPosFromWorldPos = function(cont, v, map) return map, { x = 0.5, y = 0.5 } end
+C_Map.GetMapInfoAtPosition = function() return { mapID = 1417 } end
+local pins, removed = {}, 0
+TomTom = { AddWaypoint = function(_, map, x, y, o) pins[#pins + 1] = { map = map, title = o.title }; return #pins end, RemoveWaypoint = function() removed = removed + 1 end }
+local oldFlights, oldHere, oldDone = WritPlannerCharDB.flights, W.here, done
+WritPlannerCharDB.flights = known
+WritPlannerCharDB.opts.mode = "fly"
+local function writOf(npc) for _, w in ipairs(D.writs) do if w.npc == npc and w.wx then return w end end end
+local kix, lolo = writOf("Kixxle"), writOf("Lookout Captain Lolo Longstriker")
+WritPlannerCharDB.locked = { key = W.resetKey(), q = { kix.q, lolo.q }, wp = {}, ip = {}, spent = 0, budget = 0, changes = {} }
+done[kix.q] = true -- Kixxle done, standing there
+W.here = function() return at("Kixxle") end
+assert(W.pinNext() and pins[#pins].title:find("maestro de vuelo de Hammerfall"), "la flecha va al maestro de vuelo: " .. tostring(pins[#pins] and pins[#pins].title))
+local steps = W.steps((W.lockedRoute()))
+local hasNode
+for _, st in ipairs(steps) do if st.node then hasNode = true end end
+assert(hasNode, "el paso del maestro de vuelo tiene su botón de mapa")
+-- Landed at Thorium Point: the arrow moves to the writ.
+local th
+for id, n in pairs(D.nodes) do if known[id] and n.name:find("Thorium") then th = n end end
+W.here = function() return { x = th.x, y = th.y, cont = 0, z = "Searing Gorge" } end
+events.onevent(events, "PLAYER_CONTROL_GAINED"); frames()
+assert(pins[#pins].title:find("Lolo"), "al aterrizar, la flecha va al writ: " .. pins[#pins].title)
+assert(removed >= 1, "saca la flecha anterior")
+print("  " .. pins[1].title .. "  ->  " .. pins[#pins].title)
+WritPlannerCharDB.flights, W.here, WritPlannerCharDB.locked, TomTom = oldFlights, oldHere, nil, nil
+done[kix.q] = nil
 
 print("== lo que no estaba en el último escaneo")
 -- Today's full scan didn't see the first writ of the plan (last seen yesterday).

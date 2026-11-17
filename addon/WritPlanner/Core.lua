@@ -821,6 +821,34 @@ function W.lockedRoute()
   return route, done, #l.q
 end
 
+-- Ways from one zone into the next that aren't obvious (classic geography;
+-- only the ones we're sure of). Keyed by the two zones' first words
+-- (P.zoneKey), either order.
+local PASSES = {
+  ["arathi|wetlands"] = "Entre Arathi y Wetlands se pasa por el puente de Thandol Span (al sur de Arathi, al norte de Wetlands).",
+  ["hillsbrad|arathi"] = "De Hillsbrad a Arathi: por el camino del este, cruzando el muro de Thoradin.",
+  ["wetlands|loch"] = "Entre Wetlands y Loch Modan: por el túnel de Dun Algaz (al sur de Wetlands).",
+  ["wetlands|dun"] = "Entre Wetlands y Dun Morogh no hay camino: se da la vuelta por Loch Modan (túnel de Dun Algaz).",
+  ["duskwood|stranglethorn"] = "De Duskwood a Stranglethorn: por el camino del sur de Duskwood (pasando el Rebel Camp).",
+  ["duskwood|deadwind"] = "De Duskwood a Deadwind Pass: por el camino del este de Duskwood.",
+  ["deadwind|swamp"] = "De Deadwind Pass a Swamp of Sorrows: siguiendo el camino hacia el este.",
+  ["barrens|thousand"] = "De The Barrens a Thousand Needles: bajando por el Great Lift (el ascensor al sur de The Barrens).",
+  ["thousand|tanaris"] = "De Thousand Needles a Tanaris: por el sureste, pasando el Mirage Raceway.",
+  ["ashenvale|stonetalon"] = "Entre Ashenvale y Stonetalon: por el túnel de Talondeep Path.",
+  ["felwood|moonglade"] = "De Felwood a Moonglade: por el túnel de Timbermaw Hold (los Timbermaw no tienen que ser hostiles con vos).",
+  ["barrens|ashenvale"] = "De The Barrens a Ashenvale: por el camino del norte, pasando Mor'shan.",
+}
+-- What to say when walking from zone a into zone b (nil: nothing special).
+function W.passTip(a, b)
+  local ka, kb = P.zoneKey(a), P.zoneKey(b)
+  if not ka or not kb or ka == kb then return nil end
+  local tip = PASSES[ka .. "|" .. kb] or PASSES[kb .. "|" .. ka]
+  if tip then return tip end
+  if P.hops(a, b) == 99 then
+    return ("De %s a %s no hay paso directo a pie (hay que dar toda la vuelta): si tenés vuelo, volá."):format(a, b)
+  end
+end
+
 local DIRS = { "norte", "noreste", "este", "sureste", "sur", "suroeste", "oeste", "noroeste" }
 -- Compass direction from a to b (world: +x north, +y west).
 function W.dir(a, b)
@@ -839,7 +867,12 @@ end
 function W.steps(route)
   local out = {}
   local horde = UnitFactionGroup("player") ~= "Alliance"
-  local function add(kind, text, stop) out[#out + 1] = { kind = kind, text = text, stop = stop } end
+  local function add(kind, text, stop, node) out[#out + 1] = { kind = kind, text = text, stop = stop, node = node } end
+  -- Walking from one zone into another by a way that isn't obvious: say where.
+  local function pass(a, b)
+    local tip = a and b and W.passTip(a.z, b.z)
+    if tip then add("pass", tip) end
+  end
   -- Writs and items waiting at the mailbox or the bank: pick them up first.
   local at, seen = { correo = {}, banco = {} }, {}
   for _, leg in ipairs(route) do
@@ -881,11 +914,15 @@ function W.steps(route)
       end
     elseif leg.flight then
       local a, b = D.nodes[leg.flight.from], D.nodes[leg.flight.to]
-      if from then add("walk", ("Andá al maestro de vuelo de %s (al %s)."):format(a.name, W.dir(from, a))) end
+      if from then
+        pass(from, { z = a.name:match(",%s*(.+)$") })
+        add("walk", ("Andá al maestro de vuelo de %s (al %s)."):format(a.name, W.dir(from, a)), nil, leg.flight.from)
+      end
       add("fly", ("Volá a %s."):format(b.name))
-      from = { x = b.x, y = b.y }
+      from = { x = b.x, y = b.y, z = b.name:match(",%s*(.+)$") }
     end
     local target = st.pos
+    if not leg.boat then pass(from, target) end
     local how = ""
     if from and target and not leg.boat then
       local d = yards(from, target)
@@ -899,18 +936,50 @@ function W.steps(route)
   return out
 end
 
--- Map pin (TomTom's arrow if you have it).
+-- Map pin (TomTom's arrow if you have it, else the game's own waypoint).
+-- One at a time: the previous TomTom arrow of ours goes away.
+local lastPin
+local function setPin(map, x, y, title)
+  if TomTom and TomTom.AddWaypoint then
+    if lastPin and TomTom.RemoveWaypoint then pcall(TomTom.RemoveWaypoint, TomTom, lastPin) end
+    lastPin = TomTom:AddWaypoint(map, x, y, { title = title, from = "Writ Planner" })
+  elseif C_Map and C_Map.SetUserWaypoint and UiMapPoint then
+    C_Map.SetUserWaypoint(UiMapPoint.CreateFromCoordinates(map, x, y))
+    if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then C_SuperTrack.SetSuperTrackedUserWaypoint(true) end
+  end
+  chat("flecha a " .. title .. string.format(" (%.0f, %.0f)", x * 100, y * 100))
+  return true
+end
 function W.pin(stop)
   local z = D.zones[stop.zone]
   if not z or not stop.x then return end
-  local title = (stop.npc or "?") .. " (" .. z.name .. ")"
-  if TomTom and TomTom.AddWaypoint then
-    TomTom:AddWaypoint(z.map, stop.x / 100, stop.y / 100, { title = title, from = "Writ Planner" })
-  elseif C_Map and C_Map.SetUserWaypoint and UiMapPoint then
-    C_Map.SetUserWaypoint(UiMapPoint.CreateFromCoordinates(z.map, stop.x / 100, stop.y / 100))
-    if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then C_SuperTrack.SetSuperTrackedUserWaypoint(true) end
+  return setPin(z.map, stop.x / 100, stop.y / 100, (stop.npc or "?") .. ", " .. z.name)
+end
+-- A flight master: its place is in world yards, turned into its zone's map
+-- (the continent's map if the zone can't be found).
+function W.pinNode(id)
+  local n = D.nodes[id]
+  if not (n and C_Map and C_Map.GetMapPosFromWorldPos and CreateVector2D) then return end
+  local contMap = n.cont == 1 and 1414 or 1415
+  local world = CreateVector2D(n.x, n.y)
+  local ok, map, pos = pcall(C_Map.GetMapPosFromWorldPos, n.cont, world, contMap)
+  if not ok or not pos then return end
+  local info = C_Map.GetMapInfoAtPosition and C_Map.GetMapInfoAtPosition(contMap, pos.x, pos.y)
+  if info and info.mapID then
+    local ok2, zmap, zpos = pcall(C_Map.GetMapPosFromWorldPos, n.cont, world, info.mapID)
+    if ok2 and zpos then map, pos = zmap or info.mapID, zpos end
   end
-  chat("marca puesta: " .. title .. string.format(" %.0f, %.0f", stop.x, stop.y))
+  return setPin(map or contMap, pos.x, pos.y, "maestro de vuelo de " .. n.name)
+end
+-- The arrow to what comes next from where you are: the flight master if the
+-- way there starts with a flight, else the stop. After landing it moves on to
+-- the stop by itself (PLAYER_CONTROL_GAINED).
+function W.pinNext()
+  local route = W.lockedRoute()
+  local leg = route and route[1]
+  if not leg then return false end
+  if leg.flight and not leg.hearth and leg.flight.from and W.pinNode(leg.flight.from) then return true end
+  return W.pin(leg.stop)
 end
 
 -- Writs you took out of today's trip ("Sacar"): left out, not replaced by
@@ -1051,7 +1120,7 @@ for _, e in ipairs({ "AUCTION_HOUSE_SHOW", "AUCTION_HOUSE_CLOSED", "AUCTION_HOUS
   "AUCTION_HOUSE_BROWSE_RESULTS_ADDED", "COMMODITY_SEARCH_RESULTS_UPDATED", "COMMODITY_SEARCH_RESULTS_ADDED",
   "ITEM_SEARCH_RESULTS_UPDATED", "ITEM_SEARCH_RESULTS_ADDED", "COMMODITY_PRICE_UPDATED", "COMMODITY_PRICE_UNAVAILABLE",
   "COMMODITY_PURCHASE_SUCCEEDED", "COMMODITY_PURCHASE_FAILED", "AUCTION_HOUSE_PURCHASE_COMPLETED",
-  "AUCTION_HOUSE_THROTTLED_SYSTEM_READY", "PLAYER_MONEY", "CHAT_MSG_SYSTEM" }) do
+  "AUCTION_HOUSE_THROTTLED_SYSTEM_READY", "PLAYER_MONEY", "CHAT_MSG_SYSTEM", "PLAYER_CONTROL_GAINED" }) do
   pcall(f.RegisterEvent, f, e)
 end
 local lastNpc
@@ -1067,6 +1136,11 @@ f:SetScript("OnEvent", function(_, event, a1, a2, a3, a4)
   elseif event == "COMMODITY_PURCHASE_FAILED" then
     if pendingBuy and pendingBuy.commodity then pendingBuy = nil end
     if B then B.failed("compra rechazada") end
+  elseif event == "PLAYER_CONTROL_GAINED" then
+    -- Landed (a flight ends giving the controls back): point at what's next.
+    if W.locked() and WritPlannerCharDB.opts.autoPin ~= false and not (UnitOnTaxi and UnitOnTaxi("player")) then
+      if C_Timer then C_Timer.After(1, W.pinNext) else W.pinNext() end
+    end
   elseif event == "PLAYER_MONEY" then
     W.checkBuy()
     lastMoney = money()
@@ -1164,7 +1238,7 @@ f:SetScript("OnEvent", function(_, event, a1, a2, a3, a4)
         local first = route[1].stop
         local same = false
         for _, c in ipairs(first.writs) do if c.w.npc == writByQuest[a1].npc then same = true end end
-        if not same then W.pin(first) end
+        if not same then W.pinNext() end
       elseif route then
         chat("¡terminaste la ruta de hoy!")
       end

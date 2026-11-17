@@ -508,8 +508,10 @@ local function showGuide(p)
         sub = turn,
         btn = "Mapa", click = function() W.pin(st.stop) end,
       }
+    elseif st.kind == "pass" then
+      lines[#lines + 1] = { text = YELLOW .. st.text .. "|r" }
     elseif st.kind ~= "turnin" then
-      lines[#lines + 1] = { text = st.text }
+      lines[#lines + 1] = { text = st.text, btn = st.node and "Mapa" or nil, click = st.node and function() W.pinNode(st.node) end or nil }
     end
   end
   p.list.set(lines)
@@ -521,7 +523,7 @@ local function buildGuide(p)
   p.list = list(p, nil, 46, p.summary)
   local g1 = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
   g1:SetSize(200, 26); g1:SetPoint("BOTTOMLEFT", 10, 12); g1:SetText("Flecha a la próxima parada")
-  g1:SetScript("OnClick", function() local r = W.lockedRoute(); if r and r[1] then W.pin(r[1].stop) end end)
+  g1:SetScript("OnClick", function() W.pinNext() end)
   local g2 = CreateFrame("Button", nil, p, "UIPanelButtonTemplate")
   g2:SetSize(150, 26); g2:SetPoint("BOTTOMRIGHT", -14, 12); g2:SetText("Dejar de seguirla")
   g2:SetScript("OnClick", function() WritPlannerCharDB.locked = nil; UI.update() end)
