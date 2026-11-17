@@ -165,22 +165,23 @@ events.onevent(events, "TAXIMAP_OPENED")
 local function show(R)
   print(("  [%.2f s]"):format(os.clock() - (T0 or 0)))
   local g = W.money
-  print(("[%s] rep %s, meta %s, faltan %s, días %s, err %s"):format(tostring(R.faction), tostring(R.rep), tostring(R.goal), tostring(R.need), tostring(R.days), tostring(R.err)))
+  print(("[%s] rep %s, meta %s, faltan %s, elegido %s, err %s"):format(tostring(R.faction), tostring(R.rep), tostring(R.goal), tostring(R.need), tostring(R.pick), tostring(R.err)))
+  for _, k in ipairs({ "mine", "rec", "fast" }) do
+    local r = R.raw and R.raw[k]
+    if r then print(("    %-4s hoy %d rep, %s"):format(k, r.rep, g(r.cost))) end
+  end
   if R.today then
     print(("  hoy: %d rep, %s, %d min%s%s"):format(R.today.rep, g(R.today.cost), R.today.time / 60,
       (R.today.hearthSave or 0) > 0 and (", piedra ahorra " .. math.floor(R.today.hearthSave / 60) .. " min") or "",
       R.today.preBind and (", primero piedra en " .. R.today.preBind.town .. " (ahorra " .. math.floor(R.today.preBind.save / 60) .. " min)") or ""))
-    if R.buyNow then print("  comprá hoy: " .. #R.buyNow) end
     for _, leg in ipairs(R.today.route) do
       print(("    %s %s +%d min %s"):format(WritPlanner_DATA.zones[leg.stop.zone].name, leg.stop.npc, leg.leg / 60, leg.flight and "vuelo" or ""))
       for _, c in ipairs(leg.stop.writs) do print(("        %s %s%s%s"):format(c.w.name, g(c.cost), c.haveItems and " (tiene el objeto)" or "", c.ratio and (" ratio " .. string.format("%.2f", c.ratio)) or "")) end
     end
   end
-  if R.plan then print(("  plan (%s): %d días, %s"):format(tostring(R.mode), R.plan.days, g(R.plan.total))) end
   if R.presets and R.presets.fast then
     for _, k in ipairs({ "fast", "rec", "cheap" }) do local op = R.presets[k] print(("    %-5s %2d días  %s  (~%s/día)"):format(k, op.days, g(op.total), g(op.total / op.days))) end
   end
-  if R.deals then print("  ofertas: " .. #R.deals) end
 end
 
 print("== Friendly, sin presupuesto, tolerancia 1 g")
@@ -188,28 +189,23 @@ T0 = os.clock(); show(W.compute())
 print("== Honored recomendado")
 WritPlannerCharDB.opts.goal = "9000"
 T0 = os.clock(); show(W.compute())
-print("== Honored en 4 días")
-WritPlannerCharDB.opts.plan = "days"; WritPlannerCharDB.opts.days = 4
-T0 = os.clock(); show(W.compute())
 print("== Honored recomendado saliendo de Thunder Bluff")
-WritPlannerCharDB.opts.plan = "rec"; WritPlannerCharDB.opts.from = "Thunder Bluff"
+WritPlannerCharDB.opts.pick = "rec"; WritPlannerCharDB.opts.from = "Thunder Bluff"
 T0 = os.clock(); show(W.compute())
 W.lock(W.compute().today)
 for _, st in ipairs(W.steps((W.lockedRoute()))) do print("   " .. st.text) end
 WritPlannerCharDB.locked = nil
 WritPlannerCharDB.opts.from = "here"
 print("== Honored lo más rápido")
-WritPlannerCharDB.opts.plan = "fast"
+WritPlannerCharDB.opts.pick = "fast"
 T0 = os.clock(); show(W.compute())
+WritPlannerCharDB.opts.pick = "rec"
 print("== Honored, máximo 2500 por día")
 WritPlannerCharDB.opts.perDay = 2500
 T0 = os.clock(); show(W.compute())
 WritPlannerCharDB.opts.perDay = nil
-print("== Honored con 30 g de presupuesto")
-WritPlannerCharDB.opts.goal = "9000"; WritPlannerCharDB.opts.budget = 30; WritPlannerCharDB.opts.plan = "gold"
-T0 = os.clock(); show(W.compute())
 print("== +500, solo a pie, Shadow Oil ya entregado hoy, Kzixx sin stock de un writ")
-WritPlannerCharDB.opts.goal = "+500"; WritPlannerCharDB.opts.budget = nil; WritPlannerCharDB.opts.plan = "rec"; WritPlannerCharDB.opts.mode = "walk"
+WritPlannerCharDB.opts.goal = "+500"; WritPlannerCharDB.opts.mode = "walk"
 done[94264] = true
 W.markGone(94241)
 T0 = os.clock(); show(W.compute())
@@ -218,9 +214,9 @@ SlashCmdList.WRITPLANNER("")
 assert(W.UI.isOpen(), "el primer /writs tiene que abrir la ventana")
 assert(W.UI.mini and W.UI.mini:IsShown(), "falta el botón del minimapa")
 SlashCmdList.WRITPLANNER("icono"); assert(not W.UI.mini:IsShown())
-W.UI.go(2); SlashCmdList.WRITPLANNER("icono"); assert(W.UI.mini:IsShown()); W.UI.go(1)
+W.UI.go(3); SlashCmdList.WRITPLANNER("icono"); assert(W.UI.mini:IsShown()); W.UI.go(1)
 print("  primer /writs abre, botón del minimapa ok")
-for i = 1, 4 do W.UI.go(i); local n = frames(); print("  pestaña " .. i .. " ok (" .. n .. " cuadros)") end
+for i = 1, 3 do W.UI.go(i); local n = frames(); print("  pestaña " .. i .. " ok (" .. n .. " cuadros)") end
 -- Follow today's trip.
 local R = W.compute()
 print(("fuera por peligro: %d"):format(R.skipped.danger))
@@ -228,14 +224,13 @@ W.lock(R.today)
 local route, doneN, total = W.lockedRoute()
 print(("siguiendo: %d paradas, %d de %d entregados"):format(#route, doneN, total))
 for _, st in ipairs(W.steps(route)) do print("   " .. st.text) end
-W.UI.go(4); frames()
+W.UI.go(2); frames()
 -- Turn in the first stop's writs: the arrow moves on.
 for _, c in ipairs(route[1].stop.writs) do done[c.w.q] = true; events.onevent(events, "QUEST_TURNED_IN", c.w.q) end
 route, doneN = W.lockedRoute()
 print(("después de entregar: %d paradas, %d entregados"):format(#route, doneN))
-WritPlannerCharDB.opts.budget = 20; WritPlannerCharDB.opts.goal = "9000"; W.UI.refresh(); W.UI.go(3); frames()
-WritPlannerCharDB.opts.budget = nil; WritPlannerCharDB.opts.goal = nil; W.UI.go(1); W.UI.go(3); frames()
-W.search(W.compute().today)
+WritPlannerCharDB.opts.goal = "9000"; W.UI.refresh(); W.UI.go(1); frames()
+WritPlannerCharDB.opts.goal = nil; W.UI.go(3); W.UI.go(1); frames()
 SlashCmdList.WRITPLANNER("vuelos")
 -- Turning in a writ without a known place records it.
 local unknown
@@ -247,8 +242,6 @@ print("aprendido: " .. tostring(unknown.z) .. " " .. tostring(unknown.npc))
 print("== correo, banco y lista de compras")
 local plan = W.compute().today
 local c1 = plan.writs[1]
-local buys = W.shopping(plan)
-assert(#buys > 0)
 -- The first writ waits at the mailbox (bought on the auction house), its item at the bank.
 GetInboxNumItems = function() return 1 end
 GetInboxHeaderInfo = function() return nil, nil, nil, nil, nil, 0 end
@@ -269,11 +262,6 @@ if found then
   assert(steps[1].kind == "mail" and steps[2].kind == "bank", "primero el correo y el banco: " .. steps[1].text)
   print("  " .. steps[1].text .. " / " .. steps[2].text)
 end
--- The shopping list leaves out what's at the mailbox and the bank.
-W.search(R2.today)
-assert(lastList and lastList.name == W.LIST and #lastList.terms > 0, "lista de compras")
-for _, t in ipairs(lastList.terms) do assert(not t:find('"item' .. c1.w.w .. '"', 1, true), "compra el writ que ya tenés") end
-print(("  lista \"%s\": %d cosas, p. ej. %s"):format(lastList.name, #lastList.terms, lastList.terms[1]))
 GetInboxNumItems = nil
 
 print("== compartir con la guild")
@@ -387,19 +375,27 @@ local R6 = W.compute()
 local owned6, paid6 = 0, 0
 for _, c in ipairs(R6.today.writs) do if c.cost == 0 then owned6 = owned6 + 1 else paid6 = paid6 + 1 end end
 assert(owned6 >= 3 and paid6 > 0, "el plan suma writs para comprar")
--- "Solo lo que ya tengo": take out every writ that costs something.
-for _, c in ipairs(R6.today.writs) do if c.cost > 0 then W.skip(c.w.q, true) end end
-local R7 = W.compute()
-assert(R7.today.cost == 0 and #R7.today.writs == owned6, "queda solo lo que tenés")
-assert(#R7.today.out == paid6, "lo sacado se muestra aparte")
-for _, leg in ipairs(R7.today.route) do for _, c in ipairs(leg.stop.writs) do assert(c.cost == 0) end end
-W.lock(R7.today)
+-- The choice "Solo lo que ya tengo": every writ you hold, nothing to buy.
+assert(R6.raw.mine and #R6.raw.mine.writs >= 3 and R6.raw.mine.cost == 0, "la opción solo lo que tengo")
+WritPlannerCharDB.opts.pick = "mine"
+W.finishPick(R6)
+assert(R6.pick == "mine" and R6.today.cost == 0, "elegir solo lo que tengo")
+W.lock(R6.today)
 assert(#W.toBuy() == 0, "sin nada que comprar")
-print(("  %d que tenés, %d sacados; hoy %d de reputación gratis"):format(#R7.today.writs, #R7.today.out, R7.today.rep))
--- Putting one back.
-W.skip(R7.today.out[1].w.q, false)
-assert(#W.compute().today.out == paid6 - 1)
-W.UI.open(3); frames()
+print(("  solo lo que tengo: %d writs, %d de reputación gratis"):format(#R6.today.writs, R6.today.rep))
+-- Back to recommended, untick every writ that costs something: same as above, by hand.
+WritPlannerCharDB.opts.pick = "rec"
+for _, c in ipairs(R6.raw.rec.writs) do if c.cost > 0 then W.skip(c.w.q, true) end end
+W.finishPick(R6)
+assert(R6.today.cost == 0 and #R6.today.out == paid6, "destildar saca sin reemplazar")
+for _, leg in ipairs(R6.today.route) do for _, c in ipairs(leg.stop.writs) do assert(c.cost == 0) end end
+-- Ticking one again.
+W.skip(R6.today.out[1].w.q, false)
+W.finishPick(R6)
+assert(#R6.today.out == paid6 - 1)
+print(("  destildados: %d, ruta %d writs"):format(#R6.today.out, #R6.today.writs))
+WritPlannerCharDB.locked = nil
+W.UI.open(1); frames()
 WritPlannerCharDB.skip, WritPlannerCharDB.locked = {}, nil
 print("OK")
 

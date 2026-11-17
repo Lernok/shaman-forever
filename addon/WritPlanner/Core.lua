@@ -57,14 +57,13 @@ local function defaults()
   o.target, o.custom = nil, nil -- 0.1.0 settings
   if o.tol == nil then o.tol = 1 end
   if o.mode == nil then o.mode = "fly" end
-  if o.speed == nil then o.speed = "auto" end
+  o.speed = "auto" -- 0.11: always automatic (riding, Ghost Wolf or on foot)
   if o.maxAge == nil then o.maxAge = 2 end
   if o.danger == nil then o.danger = 2 end
-  if o.plan == nil then o.plan = "rec" end
+  if o.pick == nil then o.pick = "rec" end -- today: "mine", "rec" or "fast"
   if o.hearth == nil then o.hearth = true end
   if o.from == nil then o.from = "here" end
   if o.share == nil then o.share = true end
-  if o.days == nil then o.days = 7 end -- turn-in spots with mobs up to your level + this
 end
 
 local function realm() return GetRealmName and GetRealmName() or "?" end
@@ -515,8 +514,10 @@ end
 
 -- The plan --------------------------------------------------------------------
 
--- Works out today's trip and, when the goal or the budget asks for it, the
--- plan in days. Returns a table UI.lua shows.
+-- Works out the three choices for today ("¿Qué hago hoy?"): only what you
+-- already have (free), recommended (the fewest days, a week at most, costing
+-- about what two weeks would) and the fastest; then the trip of the one you
+-- picked, without the writs you unticked. Returns a table UI.lua shows.
 function W.compute()
   local o = WritPlannerCharDB.opts
   local R = { }
@@ -536,54 +537,57 @@ function W.compute()
   if #today == 0 and #later == 0 then R.err = "noprices" return R end
 
   local tol = (tonumber(o.tol) or 0) * 10000
-  local mode = o.plan or "rec"
-  local budget = mode == "gold" and tonumber(o.budget) and tonumber(o.budget) * 10000 or nil
   local travel = W.travelFn()
   local start, fromTown = W.startPos()
-  R.fromTown = fromTown
-  R.budget, R.tol = budget, tol
+  R.fromTown, R.tol, R.start, R.travel = fromTown, tol, start, travel
   local U = P.units(need)
   local perDay = tonumber(o.perDay)
 
   -- The cheapest split for each number of days (a day can take every writ
-  -- there is, unless you set a most per day), then the plan you asked for:
-  -- recommended, fastest, within N days, or within a gold limit.
+  -- there is, unless you set a most per day).
   local cap = math.min(U, perDay and P.units(perDay) or U)
-  local Tt, Tl = P.dayTable(today, cap), P.dayTable(later, cap)
-  local opts = P.days(Tt, Tl, U, tol, 30)
-  R.options, R.presets, R.mode = opts, P.presets(opts), mode
-  local chosen
-  if mode == "fast" then chosen = R.presets.fast
-  elseif mode == "days" then
-    R.wantDays = math.max(1, math.floor(tonumber(o.days) or 7))
-    chosen = P.within(opts, R.wantDays)
-    if not chosen then chosen = R.presets.fast; R.tooFew = true end
-  elseif mode == "gold" then
-    local fastest, cheapest = P.pickDays(opts, budget)
-    chosen = fastest or cheapest
-    R.overBudget = budget and chosen and chosen.total > budget
-  else chosen = R.presets.rec end
-  if chosen then
-    R.plan, R.days = chosen, chosen.days
-    if chosen.goals[1] and chosen.goals[1] > 0 then
-      R.today = P.best(today, chosen.days == 1 and U or chosen.goals[1], tol, start, travel)
-      W.applySkips(R.today, start, travel)
-      W.hearthPlan(R.today, travel, start)
-    end
-    -- What the next days would use that is cheaper today than usual: buy it now.
-    if chosen.days > 1 and chosen.goals[2] and chosen.goals[2] > 0 then
-      local nextDay = P.choose(Tl, chosen.goals[2], 0)
-      local buy = {}
-      for _, c in ipairs(nextDay and nextDay.writs or {}) do if c.buyNow then buy[#buy + 1] = c end end
-      R.buyNow = buy
-    end
+  local opts = P.days(P.dayTable(today, cap), P.dayTable(later, cap), U, tol, 30)
+  local pr = P.presets(opts)
+  R.presets = pr
+  R.raw = {}
+  local function todayFor(op)
+    if not op or not op.goals[1] or op.goals[1] <= 0 then return nil end
+    return P.best(today, op.days == 1 and U or op.goals[1], tol, start, travel)
   end
-  -- Deals: writs well under their usual price (worth buying for later days).
-  local deals = {}
-  for _, c in ipairs(later) do if c.ratio and c.ratio <= 0.7 then deals[#deals + 1] = c end end
-  table.sort(deals, function(a, b) return a.ratio < b.ratio end)
-  R.deals = deals
+  R.raw.rec = todayFor(pr.rec)
+  R.raw.fast = pr.fast == pr.rec and R.raw.rec or todayFor(pr.fast)
+  -- What you already have: every writ you hold with its items (up to the goal).
+  local mine, rep = {}, 0
+  for _, c in ipairs(today) do if c.cost == 0 then mine[#mine + 1] = c; rep = rep + c.w.rep end end
+  if #mine > 0 then R.raw.mine = P.best(mine, math.min(U, P.units(rep)), 0, start, travel) end
+  W.finishPick(R)
   return R
+end
+
+-- The trip of the choice you picked (o.pick), without the writs you unticked
+-- (not replaced: today gives less), timed and with the hearthstone. Quick, so
+-- picking another choice or ticking a writ shows at once.
+function W.finishPick(R)
+  local o = WritPlannerCharDB.opts
+  local pick = o.pick or "rec"
+  if not (R.raw and R.raw[pick]) then pick = (R.raw and R.raw.rec and "rec") or (R.raw and R.raw.mine and "mine") or "fast" end
+  R.pick = pick
+  local raw = R.raw and R.raw[pick]
+  if not raw then R.today = nil return end
+  local plan = { writs = {}, cost = 0, rep = 0, cheapest = raw.cheapest }
+  local out = {}
+  for _, c in ipairs(raw.writs) do
+    if W.skipped(c.w.q) then out[#out + 1] = c
+    else plan.writs[#plan.writs + 1] = c; plan.cost, plan.rep = plan.cost + c.cost, plan.rep + c.w.rep end
+  end
+  if #out > 0 then plan.out, plan.cheapest = out, plan.cost end
+  if #plan.writs > 0 then
+    plan.route, plan.time, plan.flyCost = P.route(plan.writs, R.start, R.travel)
+    W.hearthPlan(plan, R.travel, R.start)
+  else
+    plan.route, plan.time, plan.flyCost = {}, 0, 0
+  end
+  R.today = plan
 end
 
 -- Following a trip ----------------------------------------------------------------
@@ -866,52 +870,6 @@ function W.steps(route)
   return out
 end
 
--- What today's trip still needs from the auction house: { {id, name, n} }.
--- Each item once, with the total over every writ minus what you own
--- (bags, bank and mail).
-local function itemName(id)
-  return (C_Item and C_Item.GetItemNameByID and C_Item.GetItemNameByID(id)) or (GetItemInfo and GetItemInfo(id))
-end
-function W.shopping(plan)
-  local out, items, order = {}, {}, {}
-  for _, c in ipairs(plan.writs) do
-    if not c.haveWrit then out[#out + 1] = { id = c.w.w, name = itemName(c.w.w), n = 1 } end
-    local id = c.w.i
-    if not items[id] then items[id] = 0; order[#order + 1] = id end
-    items[id] = items[id] + (c.w.n or 1)
-  end
-  for _, id in ipairs(order) do
-    local n = items[id] - owned(id)
-    if n > 0 then out[#out + 1] = { id = id, name = itemName(id), n = n } end
-  end
-  return out
-end
-
-W.LIST = "Writ Planner (hoy)"
--- An Auctionator shopping list with today's buys and how many of each; at
--- the auction house it starts searching right away.
-function W.search(plan)
-  local api = auctionator()
-  if not api then chat("necesitás Auctionator.") return end
-  if not plan then chat("primero calculá un plan.") return end
-  local items = W.shopping(plan)
-  if #items == 0 then chat("ya tenés todo lo de hoy (contando el correo y el banco).") return end
-  local terms, missing = {}, 0
-  for _, it in ipairs(items) do
-    if not it.name then missing = missing + 1
-    elseif api.ConvertToSearchString then
-      local ok, t = pcall(api.ConvertToSearchString, CALLER, { searchString = it.name, isExact = true, quantity = it.n })
-      terms[#terms + 1] = ok and t or it.name
-    else terms[#terms + 1] = it.name end
-  end
-  if api.CreateShoppingList and pcall(api.CreateShoppingList, CALLER, W.LIST, terms) then
-    chat(("armé la lista de compras \"%s\" en Auctionator: %d cosas, con cuántas de cada una. En la subasta, pestaña Shopping."):format(W.LIST, #terms))
-  elseif not pcall(api.MultiSearchExact, CALLER, terms) then
-    chat("abrí la casa de subastas y probá de nuevo.")
-  end
-  if missing > 0 then chat(missing .. " cosas todavía no tienen el nombre cargado: probá de nuevo en unos segundos.") end
-end
-
 -- Map pin (TomTom's arrow if you have it).
 function W.pin(stop)
   local z = D.zones[stop.zone]
@@ -931,24 +889,6 @@ end
 local function skipped(q) return WritPlannerCharDB.skip[q] == resetKey() end
 W.skipped = skipped
 function W.skip(q, on) WritPlannerCharDB.skip[q] = on and resetKey() or nil end
-function W.applySkips(plan, start, travel)
-  if not plan then return end
-  local keep, out = {}, {}
-  for _, c in ipairs(plan.writs) do
-    if skipped(c.w.q) then out[#out + 1] = c else keep[#keep + 1] = c end
-  end
-  if #out == 0 then return end
-  plan.writs, plan.out = keep, out
-  plan.cost, plan.rep = 0, 0
-  for _, c in ipairs(keep) do plan.cost, plan.rep = plan.cost + c.cost, plan.rep + c.w.rep end
-  plan.cheapest = plan.cost
-  if #keep > 0 then
-    plan.route, plan.time, plan.flyCost = P.route(keep, start, travel)
-  else
-    plan.route, plan.time, plan.flyCost = {}, 0, 0
-  end
-end
-
 function W.markGone(q)
   WritPlannerCharDB.gone[q] = resetKey()
 end

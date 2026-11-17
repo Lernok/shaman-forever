@@ -333,7 +333,7 @@ show = function()
     panel.status:SetText("")
     panel.buy:SetText("Ver el paso a paso")
     panel.buy:SetEnabled(true)
-    panel.buy:SetScript("OnClick", function() if W.UI and W.UI.open then W.UI.open(4) end end)
+    panel.buy:SetScript("OnClick", function() if W.UI and W.UI.open then W.UI.open(2) end end)
     panel.again:Hide()
     panel.rest:SetText("")
     return
