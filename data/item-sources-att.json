@@ -4345,6 +4345,32 @@
     }
    ]
   },
+  "274383": {
+   "name": "Kanai's Knife",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96558,
+     "quest": "Soldier's Solace",
+     "minLevel": 56,
+     "faction": "both",
+     "zone": "Mount Hyjal"
+    }
+   ]
+  },
+  "274384": {
+   "name": "Illegible Dogtags",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96558,
+     "quest": "Soldier's Solace",
+     "minLevel": 56,
+     "faction": "both",
+     "zone": "Mount Hyjal"
+    }
+   ]
+  },
   "274385": {
    "name": "Abomination Chain",
    "sources": [
@@ -4353,6 +4379,19 @@
      "npcId": 8567,
      "npc": "Glutton",
      "zone": "Razorfen Downs"
+    }
+   ]
+  },
+  "274386": {
+   "name": "Toy Soldier",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 96558,
+     "quest": "Soldier's Solace",
+     "minLevel": 56,
+     "faction": "both",
+     "zone": "Mount Hyjal"
     }
    ]
   },
@@ -8652,6 +8691,18 @@
     }
    ]
   },
+  "281650": {
+   "name": "Dragonscale Buckler",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 263141,
+     "npc": "Scaldaron",
+     "zone": "Riverglades",
+     "rare": true
+    }
+   ]
+  },
   "281673": {
    "name": "Loop of Sacrifice",
    "sources": [
@@ -8782,6 +8833,18 @@
      "type": "drop",
      "npcId": 14425,
      "npc": "Gnawbone",
+     "zone": "Wetlands",
+     "rare": true
+    }
+   ]
+  },
+  "282655": {
+   "name": "Bog Pickers",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14424,
+     "npc": "Mirelow",
      "zone": "Wetlands",
      "rare": true
     }
@@ -8939,6 +9002,18 @@
      "npcId": 10359,
      "npc": "Sri'skulk",
      "zone": "Tirisfal Glades",
+     "rare": true
+    }
+   ]
+  },
+  "284061": {
+   "name": "Berserker's Wraps",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 8216,
+     "npc": "Retherokk the Berserker",
+     "zone": "The Hinterlands",
      "rare": true
     }
    ]
@@ -9386,6 +9461,18 @@
     }
    ]
   },
+  "285236": {
+   "name": "Worn Ranger's Dagger",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 255887,
+     "npc": "Slydris",
+     "zone": "Zephras Isle",
+     "rare": true
+    }
+   ]
+  },
   "285238": {
    "name": "Chipped Spellstaff",
    "sources": [
@@ -9765,6 +9852,18 @@
      "npcId": 5848,
      "npc": "Malgin Barleybrew",
      "zone": "The Barrens",
+     "rare": true
+    }
+   ]
+  },
+  "286554": {
+   "name": "Warleader's Signet",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 8199,
+     "npc": "Warleader Krazzilak",
+     "zone": "Tanaris",
      "rare": true
     }
    ]

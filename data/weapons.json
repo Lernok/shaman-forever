@@ -177,41 +177,6 @@
    ]
   },
   {
-   "id": 274383,
-   "name": "Kanai's Knife",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "dps": 34.71,
-   "speed": 1.7,
-   "dmgMin": 41,
-   "dmgMax": 77,
-   "stats": {
-    "agility": 9
-   },
-   "bonus": {
-    "attackPower": 10
-   },
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_weapon_shortblade_15",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 20035,
    "name": "Glacial Spike",
    "kind": "Dagger",
@@ -1187,11 +1152,22 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "drop",
+     "npc": "Slydris",
+     "npcId": 255887,
+     "zone": "Zephras Isle",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 3,
-     "rec": 3
+     "rec": 3,
+     "basis": {
+      "name": "Slydris",
+      "level": 6,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -33478,50 +33454,6 @@
    ]
   },
   {
-   "id": 275291,
-   "name": "Staff of the Deeproar",
-   "kind": "Staff",
-   "quality": 2,
-   "req": 0,
-   "obtain": 54,
-   "ilvl": 58,
-   "bind": "pickup",
-   "dps": 44.8,
-   "speed": 3.3,
-   "dmgMin": 118,
-   "dmgMax": 178,
-   "stats": {
-    "stamina": 13,
-    "intellect": 12,
-    "spirit": 14
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_staff_30",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Deeproar Down",
-     "questId": 95107,
-     "requiredLevel": 54,
-     "zone": null,
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://www.wowhead.com/forever/quest=95107",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 54,
-     "rec": 54
-    }
-   ]
-  },
-  {
    "id": 11907,
    "name": "Beastslayer",
    "kind": "2H Axe",
@@ -33751,48 +33683,6 @@
       "from": "wowhead",
       "group": true
      }
-    }
-   ]
-  },
-  {
-   "id": 275293,
-   "name": "Barkskin Scepter",
-   "kind": "1H Mace",
-   "quality": 2,
-   "req": 0,
-   "obtain": 54,
-   "ilvl": 58,
-   "bind": "pickup",
-   "dps": 34.5,
-   "speed": 2,
-   "dmgMin": 48,
-   "dmgMax": 90,
-   "stats": {
-    "intellect": 13
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Deeproar Down",
-     "questId": 95107,
-     "requiredLevel": 54,
-     "zone": null,
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://www.wowhead.com/forever/quest=95107",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 54,
-     "rec": 54
     }
    ]
   },
@@ -36109,6 +35999,51 @@
    ]
   },
   {
+   "id": 274383,
+   "name": "Kanai's Knife",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 56,
+   "ilvl": 58,
+   "bind": "pickup",
+   "dps": 34.71,
+   "speed": 1.7,
+   "dmgMin": 41,
+   "dmgMax": 77,
+   "stats": {
+    "agility": 9
+   },
+   "bonus": {
+    "attackPower": 10
+   },
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_weapon_shortblade_15",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Soldier's Solace",
+     "questId": 96558,
+     "requiredLevel": 56,
+     "zone": "Mount Hyjal",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=96558",
+     "raid": true,
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 56,
+     "rec": 56
+    }
+   ]
+  },
+  {
    "id": 276338,
    "name": "Claw of Shalla'kal",
    "kind": "Fist",
@@ -36980,6 +36915,54 @@
    ]
   },
   {
+   "id": 275291,
+   "name": "Staff of the Deeproar",
+   "kind": "Staff",
+   "quality": 2,
+   "req": 0,
+   "obtain": 57,
+   "ilvl": 58,
+   "bind": "pickup",
+   "dps": 44.8,
+   "speed": 3.3,
+   "dmgMin": 118,
+   "dmgMax": 178,
+   "stats": {
+    "stamina": 13,
+    "intellect": 12,
+    "spirit": 14
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_staff_30",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Deeproar Down",
+     "questId": 95107,
+     "requiredLevel": 54,
+     "zone": null,
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=95107",
+     "basis": {
+      "name": "Chieftain Deeproar",
+      "level": 58,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 1
+     },
+     "asap": 55,
+     "rec": 57
+    }
+   ]
+  },
+  {
    "id": 12794,
    "name": "Masterwork Stormhammer",
    "kind": "1H Mace",
@@ -37644,6 +37627,52 @@
       "from": "wowhead",
       "group": true,
       "steps": 3
+     },
+     "asap": 55,
+     "rec": 57
+    }
+   ]
+  },
+  {
+   "id": 275293,
+   "name": "Barkskin Scepter",
+   "kind": "1H Mace",
+   "quality": 2,
+   "req": 0,
+   "obtain": 57,
+   "ilvl": 58,
+   "bind": "pickup",
+   "dps": 34.5,
+   "speed": 2,
+   "dmgMin": 48,
+   "dmgMax": 90,
+   "stats": {
+    "intellect": 13
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Deeproar Down",
+     "questId": 95107,
+     "requiredLevel": 54,
+     "zone": null,
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=95107",
+     "basis": {
+      "name": "Chieftain Deeproar",
+      "level": 58,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 1
      },
      "asap": 55,
      "rec": 57

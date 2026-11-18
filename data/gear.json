@@ -2692,71 +2692,6 @@
    ]
   },
   {
-   "id": 274384,
-   "name": "Illegible Dogtags",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 5,
-    "intellect": 4
-   },
-   "bonus": {
-    "spellPower": 13
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_necklace_21",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 274386,
-   "name": "Toy Soldier",
-   "kind": "Trinket",
-   "slot": "Trinket",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [
-    "Use: Increases your chance to Dodge by 3% for 20 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown)"
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_helmet_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 277202,
    "name": "Artifact Seeker's Pendant",
    "kind": "Neck",
@@ -3213,40 +3148,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270119,
-   "name": "Dark Iron Signet",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 54,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 5
-   },
-   "bonus": {
-    "attackPower": 14,
-    "critRating": 7
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 0,
      "rec": 0
     }
@@ -58261,40 +58162,6 @@
    ]
   },
   {
-   "id": 282655,
-   "name": "Bog Pickers",
-   "kind": "Cloth",
-   "slot": "Hands",
-   "quality": 2,
-   "req": 22,
-   "obtain": 22,
-   "ilvl": 27,
-   "bind": "equip",
-   "armor": 25,
-   "stats": {
-    "stamina": 5
-   },
-   "bonus": {},
-   "equip": [
-    "Equip: Increased Herbalism +5."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_gauntlets_21",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 22,
-     "rec": 22
-    }
-   ]
-  },
-  {
    "id": 273647,
    "name": "Worgpelt Leggings",
    "kind": "Leather",
@@ -65255,6 +65122,51 @@
      },
      "asap": 22,
      "rec": 24
+    }
+   ]
+  },
+  {
+   "id": 282655,
+   "name": "Bog Pickers",
+   "kind": "Cloth",
+   "slot": "Hands",
+   "quality": 2,
+   "req": 22,
+   "obtain": 24,
+   "ilvl": 27,
+   "bind": "equip",
+   "armor": 25,
+   "stats": {
+    "stamina": 5
+   },
+   "bonus": {},
+   "equip": [
+    "Equip: Increased Herbalism +5."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_gauntlets_21",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Mirelow",
+     "npcId": 14424,
+     "zone": "Wetlands",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 22,
+     "rec": 24,
+     "basis": {
+      "name": "Mirelow",
+      "level": 25,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
     }
    ]
   },
@@ -125166,41 +125078,6 @@
    ]
   },
   {
-   "id": 281650,
-   "name": "Dragonscale Buckler",
-   "kind": "Shield",
-   "slot": "Shield",
-   "quality": 3,
-   "req": 38,
-   "obtain": 38,
-   "ilvl": 43,
-   "bind": "pickup",
-   "armor": 1410,
-   "block": 23,
-   "stats": {
-    "stamina": 9
-   },
-   "bonus": {
-    "defense": 3
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "spell_shadow_grimward",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 38,
-     "rec": 38
-    }
-   ]
-  },
-  {
    "id": 285103,
    "name": "Marsh Serpent's Scales",
    "kind": "Mail",
@@ -135515,6 +135392,52 @@
    ]
   },
   {
+   "id": 281650,
+   "name": "Dragonscale Buckler",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 3,
+   "req": 38,
+   "obtain": 40,
+   "ilvl": 43,
+   "bind": "pickup",
+   "armor": 1410,
+   "block": 23,
+   "stats": {
+    "stamina": 9
+   },
+   "bonus": {
+    "defense": 3
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "spell_shadow_grimward",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Scaldaron",
+     "npcId": 263141,
+     "zone": "Riverglades",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 38,
+     "rec": 40,
+     "basis": {
+      "name": "Scaldaron",
+      "level": 43,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 7920,
    "name": "Mithril Plate Pants",
    "kind": "Mail",
@@ -142970,11 +142893,22 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "drop",
+     "npc": "Warleader Krazzilak",
+     "npcId": 8199,
+     "zone": "Tanaris",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 42,
-     "rec": 42
+     "rec": 42,
+     "basis": {
+      "name": "Warleader Krazzilak",
+      "level": 45,
+      "rank": "rare-elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -154559,40 +154493,6 @@
    ]
   },
   {
-   "id": 284061,
-   "name": "Berserker's Wraps",
-   "kind": "Leather",
-   "slot": "Chest",
-   "quality": 2,
-   "req": 45,
-   "obtain": 45,
-   "ilvl": 50,
-   "bind": "equip",
-   "armor": 132,
-   "stats": {
-    "strength": 16,
-    "agility": 5,
-    "stamina": 8
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_chest_leather_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 45,
-     "rec": 45
-    }
-   ]
-  },
-  {
    "id": 284272,
    "name": "Chimaera Hide Legs",
    "kind": "Leather",
@@ -162556,6 +162456,51 @@
      },
      "asap": 45,
      "rec": 47
+    }
+   ]
+  },
+  {
+   "id": 284061,
+   "name": "Berserker's Wraps",
+   "kind": "Leather",
+   "slot": "Chest",
+   "quality": 2,
+   "req": 45,
+   "obtain": 47,
+   "ilvl": 50,
+   "bind": "equip",
+   "armor": 132,
+   "stats": {
+    "strength": 16,
+    "agility": 5,
+    "stamina": 8
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_chest_leather_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Retherokk the Berserker",
+     "npcId": 8216,
+     "zone": "The Hinterlands",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 45,
+     "rec": 47,
+     "basis": {
+      "name": "Retherokk the Berserker",
+      "level": 48,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
     }
    ]
   },
@@ -191159,6 +191104,61 @@
    ]
   },
   {
+   "id": 270119,
+   "name": "Dark Iron Signet",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 53,
+   "ilvl": 54,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 5
+   },
+   "bonus": {
+    "attackPower": 14,
+    "critRating": 7
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Last Element (Horde)",
+     "questId": 7201,
+     "level": 54,
+     "requiredLevel": 48,
+     "zone": "Blackrock Depths",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7201",
+     "basis": {
+      "name": "Molten War Golem",
+      "level": 56,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 51,
+     "rec": 53
+    }
+   ]
+  },
+  {
    "id": 11867,
    "name": "Maddening Gauntlets",
    "kind": "Mail",
@@ -194861,7 +194861,7 @@
    "use": [],
    "chance": [],
    "era": "new",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_pants_cloth_06",
    "raceMask": -1,
    "sources": [
@@ -196057,48 +196057,6 @@
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=91696",
-     "raid": true,
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 54,
-     "rec": 54
-    }
-   ]
-  },
-  {
-   "id": 275838,
-   "name": "Dirtwalker Pendant",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 2,
-   "req": 0,
-   "obtain": 54,
-   "ilvl": 58,
-   "bind": "pickup",
-   "stats": {
-    "strength": 11,
-    "spirit": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_necklace_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "A Revenge Now Bitter",
-     "questId": 96322,
-     "requiredLevel": 54,
-     "zone": "Mount Hyjal",
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://www.wowhead.com/forever/quest=96322",
      "raid": true,
      "basis": {
       "from": "quest-level",
@@ -197972,12 +197930,9 @@
      "type": "quest",
      "quest": "Abandoned Hope",
      "questId": 4242,
+     "level": 54,
      "requiredLevel": 48,
      "zone": "Blackrock Depths",
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/4242",
-     "level": 54,
      "dungeon": true,
      "bands": {
       "red": 48,
@@ -197985,6 +197940,9 @@
       "yellow": 52,
       "green": 57
      },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/4242",
      "basis": {
       "name": "Lady Katrana Prestor",
       "level": 62,
@@ -206197,6 +206155,53 @@
       "from": "wowhead",
       "group": true
      }
+    }
+   ]
+  },
+  {
+   "id": 275838,
+   "name": "Dirtwalker Pendant",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 2,
+   "req": 0,
+   "obtain": 55,
+   "ilvl": 58,
+   "bind": "pickup",
+   "stats": {
+    "strength": 11,
+    "spirit": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_necklace_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "A Revenge Now Bitter",
+     "questId": 96322,
+     "requiredLevel": 54,
+     "zone": "Mount Hyjal",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=96322",
+     "raid": true,
+     "basis": {
+      "name": "Awakened Fel Ash Slime",
+      "level": 58,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 96255,
+      "steps": 3
+     },
+     "asap": 54,
+     "rec": 55
     }
    ]
   },
@@ -214420,6 +214425,91 @@
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=93269",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 56,
+     "rec": 56
+    }
+   ]
+  },
+  {
+   "id": 274384,
+   "name": "Illegible Dogtags",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 2,
+   "req": 0,
+   "obtain": 56,
+   "ilvl": 58,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 5,
+    "intellect": 4
+   },
+   "bonus": {
+    "spellPower": 13
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_necklace_21",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Soldier's Solace",
+     "questId": 96558,
+     "requiredLevel": 56,
+     "zone": "Mount Hyjal",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=96558",
+     "raid": true,
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 56,
+     "rec": 56
+    }
+   ]
+  },
+  {
+   "id": 274386,
+   "name": "Toy Soldier",
+   "kind": "Trinket",
+   "slot": "Trinket",
+   "quality": 2,
+   "req": 0,
+   "obtain": 56,
+   "ilvl": 58,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "use": [
+    "Use: Increases your chance to Dodge by 3% for 20 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown)"
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_helmet_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Soldier's Solace",
+     "questId": 96558,
+     "requiredLevel": 56,
+     "zone": "Mount Hyjal",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=96558",
+     "raid": true,
      "basis": {
       "from": "quest-level",
       "group": false
@@ -233582,6 +233672,59 @@
    ]
   },
   {
+   "id": 276336,
+   "name": "Yashiro's Spirit Bead",
+   "kind": "Off-hand",
+   "slot": "Held In Off-hand",
+   "quality": 2,
+   "req": 0,
+   "obtain": 58,
+   "ilvl": 60,
+   "bind": "pickup",
+   "stats": {
+    "spirit": 12
+   },
+   "bonus": {
+    "healing": 15,
+    "spellDamage": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_orb_05",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Yashiro's Windwalk",
+     "questId": 96983,
+     "level": 60,
+     "requiredLevel": 56,
+     "zone": "Mount Hyjal",
+     "bands": {
+      "orange": 56,
+      "yellow": 58
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/96983",
+     "raid": true,
+     "basis": {
+      "name": "Doomguard Xarkul",
+      "level": 61,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 56,
+     "rec": 58
+    }
+   ]
+  },
+  {
    "id": 15796,
    "name": "Seaspray Bracers",
    "kind": "Mail",
@@ -241710,55 +241853,6 @@
       "group": false
      },
      "asap": 55,
-     "rec": 59
-    }
-   ]
-  },
-  {
-   "id": 276336,
-   "name": "Yashiro's Spirit Bead",
-   "kind": "Off-hand",
-   "slot": "Held In Off-hand",
-   "quality": 2,
-   "req": 0,
-   "obtain": 59,
-   "ilvl": 60,
-   "bind": "pickup",
-   "stats": {
-    "spirit": 12
-   },
-   "bonus": {
-    "healing": 15,
-    "spellDamage": 5
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_orb_05",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Yashiro's Windwalk",
-     "questId": 96983,
-     "level": 60,
-     "requiredLevel": 56,
-     "zone": "Mount Hyjal",
-     "bands": {
-      "orange": 56,
-      "yellow": 58
-     },
-     "faction": "both",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/96983",
-     "raid": true,
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 56,
      "rec": 59
     }
    ]

@@ -9169,7 +9169,13 @@
    "minLevel": 54,
    "faction": null,
    "instance": null,
-   "hardest": null,
+   "hardest": {
+    "id": 259875,
+    "name": "Chieftain Deeproar",
+    "level": 58,
+    "rank": "normal",
+    "from": "wowhead"
+   },
    "steps": 1
   },
   "95161": {
@@ -9713,7 +9719,14 @@
    "minLevel": 54,
    "faction": null,
    "instance": null,
-   "hardest": null,
+   "hardest": {
+    "id": 264306,
+    "name": "Awakened Fel Ash Slime",
+    "level": 58,
+    "rank": "elite",
+    "from": "wowhead",
+    "step": 96255
+   },
    "steps": 3
   },
   "96332": {
@@ -9772,6 +9785,14 @@
    "hardest": null,
    "steps": 1
   },
+  "96558": {
+   "classes": null,
+   "minLevel": 56,
+   "faction": null,
+   "instance": null,
+   "hardest": null,
+   "steps": 3
+  },
   "96609": {
    "classes": null,
    "minLevel": 44,
@@ -9829,7 +9850,13 @@
    "minLevel": 56,
    "faction": null,
    "instance": null,
-   "hardest": null,
+   "hardest": {
+    "id": 267439,
+    "name": "Doomguard Xarkul",
+    "level": 61,
+    "rank": "elite",
+    "from": "wowhead"
+   },
    "steps": 2
   },
   "96984": {
@@ -16940,9 +16967,21 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "8199": {
+   "name": "Warleader Krazzilak",
+   "level": 45,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
   "8208": {
    "name": "Murderous Blisterpaw",
    "level": 43,
+   "rank": "rare",
+   "from": "wowhead"
+  },
+  "8216": {
+   "name": "Retherokk the Berserker",
+   "level": 48,
    "rank": "rare",
    "from": "wowhead"
   },
@@ -20260,9 +20299,9 @@
   },
   "235892": {
    "name": "Prince Halanox",
-   "level": null,
+   "level": 55,
    "rank": "elite",
-   "from": null
+   "from": "wowhead"
   },
   "239939": {
    "name": "Lord Sarthiss",
@@ -20854,9 +20893,9 @@
   },
   "259875": {
    "name": "Chieftain Deeproar",
-   "level": null,
+   "level": 58,
    "rank": "normal",
-   "from": null
+   "from": "wowhead"
   },
   "260042": {
    "name": "Captain Dreadrise",
@@ -20978,6 +21017,12 @@
    "rank": "elite",
    "from": null
   },
+  "263141": {
+   "name": "Scaldaron",
+   "level": 43,
+   "rank": "rare-elite",
+   "from": "wowhead"
+  },
   "263380": {
    "name": "Ghostmaw",
    "level": 42,
@@ -21028,9 +21073,9 @@
   },
   "264306": {
    "name": "Awakened Fel Ash Slime",
-   "level": null,
+   "level": 58,
    "rank": "elite",
-   "from": null
+   "from": "wowhead"
   },
   "264773": {
    "name": "Bossman Toof",
@@ -21052,9 +21097,9 @@
   },
   "267439": {
    "name": "Doomguard Xarkul",
-   "level": null,
+   "level": 61,
    "rank": "elite",
-   "from": null
+   "from": "wowhead"
   },
   "268423": {
    "name": "Zalfan Moonshadow",

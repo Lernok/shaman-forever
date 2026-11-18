@@ -1,7 +1,7 @@
 {
  "_readme": "Fuentes de misión del equipo nuevo de Forever (items) y datos de Forever de las misiones de Classic que dan equipo (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json.",
  "source": "https://foreverchanges.pro",
- "fetched": "2026-11-16",
+ "fetched": "2026-11-18",
  "items": {
   "246164": {
    "name": "Skullthumper",
@@ -3756,6 +3756,52 @@
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/3528"
+    }
+   ]
+  },
+  "270118": {
+   "name": "Cindercloth Gown",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Abandoned Hope",
+     "questId": 4242,
+     "level": 54,
+     "requiredLevel": 48,
+     "zone": "Blackrock Depths",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/4242"
+    }
+   ]
+  },
+  "270119": {
+   "name": "Dark Iron Signet",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Last Element (Horde)",
+     "questId": 7201,
+     "level": 54,
+     "requiredLevel": 48,
+     "zone": "Blackrock Depths",
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7201"
     }
    ]
   },
