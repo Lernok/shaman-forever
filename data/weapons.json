@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70938",
+ "build": "1.60.1.70959",
  "weapons": [
   {
    "id": 221518,
@@ -23876,41 +23876,6 @@
    ]
   },
   {
-   "id": 284063,
-   "name": "Witherbark Hatecleaver",
-   "kind": "2H Axe",
-   "quality": 2,
-   "req": 40,
-   "obtain": 40,
-   "ilvl": 45,
-   "bind": "equip",
-   "dps": 34.59,
-   "speed": 3.7,
-   "dmgMin": 102,
-   "dmgMax": 154,
-   "stats": {
-    "strength": 13
-   },
-   "bonus": {
-    "spellPower": 15
-   },
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_axe_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 40,
-     "rec": 40
-    }
-   ]
-  },
-  {
    "id": 2164,
    "name": "Gut Ripper",
    "kind": "Dagger",
@@ -25441,6 +25406,52 @@
      "confidence": "classic-assumed",
      "asap": 42,
      "rec": 42
+    }
+   ]
+  },
+  {
+   "id": 284063,
+   "name": "Witherbark Hatecleaver",
+   "kind": "2H Axe",
+   "quality": 2,
+   "req": 40,
+   "obtain": 42,
+   "ilvl": 45,
+   "bind": "equip",
+   "dps": 34.59,
+   "speed": 3.7,
+   "dmgMin": 102,
+   "dmgMax": 154,
+   "stats": {
+    "strength": 13
+   },
+   "bonus": {
+    "spellPower": 15
+   },
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_axe_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Zul'arek Hatefowler",
+     "npcId": 8219,
+     "zone": "The Hinterlands",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 40,
+     "rec": 42,
+     "basis": {
+      "name": "Zul'arek Hatefowler",
+      "level": 43,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
     }
    ]
   },
@@ -45502,8 +45513,8 @@
    "dmgMin": 138,
    "dmgMax": 207,
    "stats": {
-    "stamina": 25,
-    "intellect": 16
+    "intellect": 25,
+    "stamina": 25
    },
    "bonus": {},
    "equip": [],
@@ -45571,11 +45582,10 @@
    "dmgMin": 138,
    "dmgMax": 207,
    "stats": {
-    "intellect": 25
+    "intellect": 25,
+    "stamina": 25
    },
-   "bonus": {
-    "spellPower": 25
-   },
+   "bonus": {},
    "equip": [],
    "chance": [],
    "era": "changed",

@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70938",
+ "build": "1.60.1.70959",
  "eraBuild": "1.15.9.70576",
  "items": {
   "720": {
@@ -105039,7 +105039,9 @@
     "Use: Reduces your magic damage taken from Dragon Breath spells by 33% for 15 sec. (5 Min Cooldown)"
    ],
    "chance": [],
-   "bonus": {},
+   "bonus": {
+    "defense": 8
+   },
    "numbers": "client",
    "icon": "spell_shadow_lifedrain"
   },
@@ -110447,8 +110449,8 @@
    "speed": 3.1,
    "dps": 55.6,
    "stats": {
-    "stamina": 25,
-    "intellect": 16
+    "intellect": 25,
+    "stamina": 25
    },
    "equip": [],
    "use": [],
@@ -110473,14 +110475,13 @@
    "speed": 3.1,
    "dps": 55.6,
    "stats": {
-    "intellect": 25
+    "intellect": 25,
+    "stamina": 25
    },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {
-    "spellPower": 25
-   },
+   "bonus": {},
    "numbers": "client",
    "icon": "inv_staff_20"
   },
@@ -111562,7 +111563,7 @@
    "slot": "Trinket",
    "quality": 4,
    "req": 60,
-   "ilvl": 66,
+   "ilvl": 65,
    "bind": "pickup",
    "raceMask": -1,
    "era": "same",
@@ -111583,7 +111584,7 @@
    "slot": "Trinket",
    "quality": 4,
    "req": 60,
-   "ilvl": 66,
+   "ilvl": 65,
    "bind": "pickup",
    "raceMask": -1,
    "era": "same",
@@ -111604,7 +111605,7 @@
    "slot": "Trinket",
    "quality": 4,
    "req": 60,
-   "ilvl": 66,
+   "ilvl": 65,
    "bind": "pickup",
    "raceMask": -1,
    "era": "same",
@@ -111625,7 +111626,7 @@
    "slot": "Trinket",
    "quality": 4,
    "req": 60,
-   "ilvl": 66,
+   "ilvl": 65,
    "bind": "pickup",
    "raceMask": -1,
    "era": "same",
@@ -133620,7 +133621,7 @@
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_belt_26"
   },
   "22326": {
@@ -133892,17 +133893,14 @@
    "stats": {
     "stamina": 7
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 1.0%.",
-    "Equip: Increases damage and healing done by magical spells and effects by up to 13."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "spellPower": 13,
-    "hit": 1
+    "hitRating": 10,
+    "spellPower": 13
    },
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_35"
   },
   "22340": {
@@ -133919,16 +133917,13 @@
    "stats": {
     "agility": 10
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 1.0%.",
-    "Equip: Improves your chance to hit by 1.0%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "hit": 1
+    "hitRating": 10
    },
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_necklace_04"
   },
   "22342": {
@@ -133999,7 +133994,7 @@
    "use": [],
    "chance": [],
    "bonus": {},
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_relics_totemofrebirth"
   },
   "22348": {
@@ -134903,15 +134898,17 @@
    "era": "classic",
    "armor": 118,
    "stats": {
-    "strength": 13,
-    "agility": 13,
+    "strength": 12,
+    "agility": 9,
     "stamina": 13
    },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
-   "numbers": "classic",
+   "bonus": {
+    "defense": 6
+   },
+   "numbers": "client",
    "icon": "inv_boots_08"
   },
   "22483": {
@@ -192476,7 +192473,7 @@
    "era": "new",
    "stats": {
     "stamina": 13,
-    "spirit": 14
+    "spirit": 6
    },
    "equip": [],
    "use": [],

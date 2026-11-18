@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70938",
+ "build": "1.60.1.70959",
  "gear": [
   {
    "id": 208424,
@@ -3213,39 +3213,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270118,
-   "name": "Cindercloth Gown",
-   "kind": "Cloth",
-   "slot": "Chest",
-   "quality": 3,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 54,
-   "bind": "pickup",
-   "armor": 77,
-   "stats": {
-    "stamina": 16,
-    "intellect": 24
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_shirt_17",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 0,
      "rec": 0
     }
@@ -197978,6 +197945,61 @@
    ]
   },
   {
+   "id": 270118,
+   "name": "Cindercloth Gown",
+   "kind": "Cloth",
+   "slot": "Chest",
+   "quality": 3,
+   "req": 0,
+   "obtain": 54,
+   "ilvl": 54,
+   "bind": "pickup",
+   "armor": 77,
+   "stats": {
+    "stamina": 16,
+    "intellect": 24
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_shirt_17",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Abandoned Hope",
+     "questId": 4242,
+     "requiredLevel": 48,
+     "zone": "Blackrock Depths",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/4242",
+     "level": 54,
+     "dungeon": true,
+     "bands": {
+      "red": 48,
+      "orange": 50,
+      "yellow": 52,
+      "green": 57
+     },
+     "basis": {
+      "name": "Lady Katrana Prestor",
+      "level": 62,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": true,
+      "step": 4185,
+      "steps": 7
+     },
+     "asap": 54,
+     "rec": 54
+    }
+   ]
+  },
+  {
    "id": 281260,
    "name": "Ancestral Waistcord",
    "kind": "Cloth",
@@ -204798,7 +204820,7 @@
    "bind": "pickup",
    "stats": {
     "stamina": 13,
-    "spirit": 14
+    "spirit": 6
    },
    "bonus": {
     "hitRating": 10
@@ -218647,7 +218669,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_relics_totemofrebirth",
    "raceMask": -1,
    "sources": [
@@ -222047,7 +222069,7 @@
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_belt_26",
    "raceMask": -1,
    "sources": [
@@ -222236,16 +222258,18 @@
    "bind": "pickup",
    "armor": 118,
    "stats": {
-    "strength": 13,
-    "agility": 13,
+    "strength": 12,
+    "agility": 9,
     "stamina": 13
    },
-   "bonus": {},
+   "bonus": {
+    "defense": 6
+   },
    "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "client",
    "icon": "inv_boots_08",
    "raceMask": -1,
    "sources": [
@@ -269317,194 +269341,6 @@
    ]
   },
   {
-   "id": 19287,
-   "name": "Darkmoon Card: Heroism",
-   "kind": "Trinket",
-   "slot": "Trinket",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 66,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {},
-   "equip": [
-    "Equip: Sometimes heals bearer of 120 to 180 damage when damaging an enemy in melee."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_misc_ticket_tarot_heroism_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Darkmoon Warlords Deck",
-     "questId": 7928,
-     "level": 55,
-     "requiredLevel": 1,
-     "zone": "Darkmoon Faire",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 1,
-      "orange": 51,
-      "yellow": 53,
-      "green": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/7928",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 19288,
-   "name": "Darkmoon Card: Blue Dragon",
-   "kind": "Trinket",
-   "slot": "Trinket",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 66,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {},
-   "equip": [
-    "Equip: 2% chance on successful spellcast to increase your Spirit by 150 for 15 sec. (Proc chance: 2%)"
-   ],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_misc_ticket_tarot_bluedragon_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Darkmoon Beast Deck",
-     "questId": 7907,
-     "level": 55,
-     "requiredLevel": 1,
-     "zone": "Darkmoon Faire",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 1,
-      "orange": 51,
-      "yellow": 53,
-      "green": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/7907",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 19289,
-   "name": "Darkmoon Card: Maelstrom",
-   "kind": "Trinket",
-   "slot": "Trinket",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 66,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {},
-   "equip": [
-    "Equip: Chance to strike your melee target with lightning for 200 to 300 Nature damage."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_misc_ticket_tarot_maelstrom_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Darkmoon Elementals Deck",
-     "questId": 7929,
-     "level": 55,
-     "requiredLevel": 1,
-     "zone": "Darkmoon Faire",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 1,
-      "orange": 51,
-      "yellow": 53,
-      "green": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/7929",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 19290,
-   "name": "Darkmoon Card: Twisting Nether",
-   "kind": "Trinket",
-   "slot": "Trinket",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 66,
-   "bind": "pickup",
-   "stats": {},
-   "bonus": {},
-   "equip": [
-    "Equip: Gives the wearer a 10% chance of being able to resurrect with 20% health and mana."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_misc_ticket_tarot_twistingnether_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Darkmoon Portals Deck",
-     "questId": 7927,
-     "level": 55,
-     "requiredLevel": 1,
-     "zone": "Darkmoon Faire",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 1,
-      "orange": 51,
-      "yellow": 53,
-      "green": 58
-     },
-     "ref": "https://foreverchanges.pro/quest/7927",
-     "basis": {
-      "from": "quest-level",
-      "group": false
-     },
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
    "id": 19885,
    "name": "Jin'do's Evil Eye",
    "kind": "Neck",
@@ -270883,7 +270719,9 @@
    "ilvl": 65,
    "bind": "pickup",
    "stats": {},
-   "bonus": {},
+   "bonus": {
+    "defense": 8
+   },
    "equip": [],
    "use": [
     "Use: Reduces your magic damage taken from Dragon Breath spells by 33% for 15 sec. (5 Min Cooldown)"
@@ -270978,6 +270816,194 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 19287,
+   "name": "Darkmoon Card: Heroism",
+   "kind": "Trinket",
+   "slot": "Trinket",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 65,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {},
+   "equip": [
+    "Equip: Sometimes heals bearer of 120 to 180 damage when damaging an enemy in melee."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_misc_ticket_tarot_heroism_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Darkmoon Warlords Deck",
+     "questId": 7928,
+     "level": 55,
+     "requiredLevel": 1,
+     "zone": "Darkmoon Faire",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 1,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/7928",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 19288,
+   "name": "Darkmoon Card: Blue Dragon",
+   "kind": "Trinket",
+   "slot": "Trinket",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 65,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {},
+   "equip": [
+    "Equip: 2% chance on successful spellcast to increase your Spirit by 150 for 15 sec. (Proc chance: 2%)"
+   ],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_misc_ticket_tarot_bluedragon_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Darkmoon Beast Deck",
+     "questId": 7907,
+     "level": 55,
+     "requiredLevel": 1,
+     "zone": "Darkmoon Faire",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 1,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/7907",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 19289,
+   "name": "Darkmoon Card: Maelstrom",
+   "kind": "Trinket",
+   "slot": "Trinket",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 65,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {},
+   "equip": [
+    "Equip: Chance to strike your melee target with lightning for 200 to 300 Nature damage."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_misc_ticket_tarot_maelstrom_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Darkmoon Elementals Deck",
+     "questId": 7929,
+     "level": 55,
+     "requiredLevel": 1,
+     "zone": "Darkmoon Faire",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 1,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/7929",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 19290,
+   "name": "Darkmoon Card: Twisting Nether",
+   "kind": "Trinket",
+   "slot": "Trinket",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 65,
+   "bind": "pickup",
+   "stats": {},
+   "bonus": {},
+   "equip": [
+    "Equip: Gives the wearer a 10% chance of being able to resurrect with 20% health and mana."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_misc_ticket_tarot_twistingnether_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Darkmoon Portals Deck",
+     "questId": 7927,
+     "level": 55,
+     "requiredLevel": 1,
+     "zone": "Darkmoon Faire",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 1,
+      "orange": 51,
+      "yellow": 53,
+      "green": 58
+     },
+     "ref": "https://foreverchanges.pro/quest/7927",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
      "asap": 60,
      "rec": 60
     }
@@ -279116,17 +279142,14 @@
     "stamina": 7
    },
    "bonus": {
-    "spellPower": 13,
-    "hit": 1
+    "hitRating": 10,
+    "spellPower": 13
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 1.0%.",
-    "Equip: Increases damage and healing done by magical spells and effects by up to 13."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_35",
    "raceMask": -1,
    "sources": [
@@ -279167,16 +279190,13 @@
     "agility": 10
    },
    "bonus": {
-    "hit": 1
+    "hitRating": 10
    },
-   "equip": [
-    "Equip: Improves your chance to hit by 1.0%.",
-    "Equip: Improves your chance to hit by 1.0%."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "era": "classic",
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_necklace_04",
    "raceMask": -1,
    "sources": [

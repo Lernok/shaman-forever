@@ -2306,6 +2306,32 @@
     }
    ]
   },
+  "270110": {
+   "name": "First Mate's Armguards",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 8554,
+     "quest": "Facing Negolash",
+     "minLevel": 35,
+     "faction": "both",
+     "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "270111": {
+   "name": "Forest Troll Leggings",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 7847,
+     "quest": "Return to Primal Torntusk",
+     "minLevel": 46,
+     "faction": "horde",
+     "zone": "The Hinterlands"
+    }
+   ]
+  },
   "270112": {
    "name": "Gryphon Rider's Crop",
    "sources": [
@@ -2316,6 +2342,19 @@
      "minLevel": 40,
      "faction": "alliance",
      "zone": "The Hinterlands"
+    }
+   ]
+  },
+  "270113": {
+   "name": "Singed Cloth Robe",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 7701,
+     "quest": "WANTED: Overseer Maltorius",
+     "minLevel": 45,
+     "faction": "both",
+     "zone": "Searing Gorge"
     }
    ]
   },
@@ -2355,6 +2394,32 @@
      "minLevel": 40,
      "faction": "both",
      "zone": "The Temple of Atal'hakkar"
+    }
+   ]
+  },
+  "270118": {
+   "name": "Cindercloth Gown",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 4242,
+     "quest": "Abandoned Hope",
+     "minLevel": null,
+     "faction": "alliance",
+     "zone": "Blackrock Depths"
+    }
+   ]
+  },
+  "270120": {
+   "name": "Boots of Requite",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 4201,
+     "quest": "The Love Potion",
+     "minLevel": 50,
+     "faction": "both",
+     "zone": "Blackrock Depths"
     }
    ]
   },
@@ -6625,7 +6690,7 @@
     {
      "type": "quest",
      "questId": 76240,
-     "quest": "Stalk With The Earthmother",
+     "quest": "Stalk With The Earthmother 3/3",
      "minLevel": 4,
      "faction": "horde",
      "zone": "Thunder Bluff"
@@ -6638,7 +6703,7 @@
     {
      "type": "quest",
      "questId": 76240,
-     "quest": "Stalk With The Earthmother",
+     "quest": "Stalk With The Earthmother 3/3",
      "minLevel": 4,
      "faction": "horde",
      "zone": "Thunder Bluff"
@@ -8874,6 +8939,18 @@
      "npcId": 10359,
      "npc": "Sri'skulk",
      "zone": "Tirisfal Glades",
+     "rare": true
+    }
+   ]
+  },
+  "284063": {
+   "name": "Witherbark Hatecleaver",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 8219,
+     "npc": "Zul'arek Hatefowler",
+     "zone": "The Hinterlands",
      "rare": true
     }
    ]
