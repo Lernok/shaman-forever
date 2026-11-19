@@ -8589,34 +8589,6 @@
    "sources": [
     {
      "type": "quest",
-     "quest": "Chol'aruk the Ravener (Horde)",
-     "questId": 97003,
-     "level": 21,
-     "requiredLevel": 15,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 15,
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97003",
-     "basis": {
-      "name": "Chol'aruk",
-      "level": 20,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 15,
-     "rec": 17
-    },
-    {
-     "type": "quest",
      "quest": "Chol'aruk the Ravener (Alliance)",
      "questId": 97005,
      "level": 21,
@@ -8632,6 +8604,34 @@
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97005",
+     "basis": {
+      "name": "Chol'aruk",
+      "level": 20,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 15,
+     "rec": 17
+    },
+    {
+     "type": "quest",
+     "quest": "Chol'aruk the Ravener (Horde)",
+     "questId": 97003,
+     "level": 21,
+     "requiredLevel": 15,
+     "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97003",
      "basis": {
       "name": "Chol'aruk",
       "level": 20,
@@ -23801,7 +23801,7 @@
       "green": 45,
       "grey": 53
      },
-     "faction": "horde",
+     "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93128",
      "basis": {
@@ -24372,7 +24372,7 @@
       "green": 45,
       "grey": 53
      },
-     "faction": "horde",
+     "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93128",
      "basis": {
@@ -24428,7 +24428,7 @@
       "green": 44,
       "grey": 52
      },
-     "faction": "both",
+     "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92873",
      "basis": {
@@ -25335,7 +25335,7 @@
       "green": 45,
       "grey": 53
      },
-     "faction": "alliance",
+     "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93196",
      "basis": {
@@ -25797,7 +25797,7 @@
       "green": 45,
       "grey": 53
      },
-     "faction": "alliance",
+     "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93196",
      "basis": {

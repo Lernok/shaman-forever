@@ -2,6 +2,18 @@
  "_readme": "Game data changes found by scripts/sync.js, newest first (one entry per sync day that found changes).",
  "entries": [
   {
+   "date": "2026-11-19",
+   "talents": [],
+   "items": [
+    "- **Hardened Stone Band** #18674: req 54 → 55; ilvl 59 → 60; stats {\"strength\":8,\"stamina\":8} → {\"strength\":9,\"stamina\":9}; efectos cambiados",
+    "- **Spiritcaller Kilt** #276538: ilvl 61 → 60; stats {} → {\"stamina\":20,\"intellect\":19}",
+    "- **Spiritcaller Gloves** #276539: ilvl 61 → 60; stats {} → {\"stamina\":14,\"intellect\":12,\"spirit\":11}",
+    "- **Spiritcaller Mantle** #276540: ilvl 61 → 60; stats {} → {\"stamina\":15,\"intellect\":13}",
+    "- **Spiritcaller Boots** #276541: ilvl 61 → 60; stats {} → {\"stamina\":14,\"intellect\":11}"
+   ],
+   "build": "1.60.1.70959"
+  },
+  {
    "date": "2026-11-17",
    "talents": [
     "- **Flametongue Weapon Rank 1**: \"Imbue the Shaman's weapon with fire. Each hit causes 5 to 18 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. When applied to main hand, disables any benefit you personally receive from Flametongue Totem. Lasts for 60 minutes.\" → \"Imbue the Shaman's weapon with fire. Each hit causes 5 to 18 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. Lasts for 60 minutes.\"",

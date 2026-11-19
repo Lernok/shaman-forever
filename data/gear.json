@@ -2,36 +2,6 @@
  "build": "1.60.1.70959",
  "gear": [
   {
-   "id": 208424,
-   "name": "Sun Shades",
-   "kind": "Cloth",
-   "slot": "Head",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 100,
-   "bind": "pickup",
-   "armor": 101,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_helmet_47",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 20144,
    "name": "90 Epic Warrior Ring",
    "kind": "Ring",
@@ -34494,34 +34464,6 @@
    "sources": [
     {
      "type": "quest",
-     "quest": "Chol'aruk the Ravener (Horde)",
-     "questId": 97003,
-     "level": 21,
-     "requiredLevel": 15,
-     "zone": "The Barrens",
-     "bands": {
-      "red": 15,
-      "orange": 17,
-      "yellow": 19,
-      "green": 24,
-      "grey": 28
-     },
-     "faction": "horde",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/97003",
-     "basis": {
-      "name": "Chol'aruk",
-      "level": 20,
-      "rank": "elite",
-      "from": "wowhead",
-      "group": true,
-      "steps": 1
-     },
-     "asap": 15,
-     "rec": 17
-    },
-    {
-     "type": "quest",
      "quest": "Chol'aruk the Ravener (Alliance)",
      "questId": 97005,
      "level": 21,
@@ -34537,6 +34479,34 @@
      "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97005",
+     "basis": {
+      "name": "Chol'aruk",
+      "level": 20,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 15,
+     "rec": 17
+    },
+    {
+     "type": "quest",
+     "quest": "Chol'aruk the Ravener (Horde)",
+     "questId": 97003,
+     "level": 21,
+     "requiredLevel": 15,
+     "zone": "The Barrens",
+     "bands": {
+      "red": 15,
+      "orange": 17,
+      "yellow": 19,
+      "green": 24,
+      "grey": 28
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/97003",
      "basis": {
       "name": "Chol'aruk",
       "level": 20,
@@ -98458,38 +98428,6 @@
    ]
   },
   {
-   "id": 282713,
-   "name": "Bloodstained Pants",
-   "kind": "Leather",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 31,
-   "obtain": 31,
-   "ilvl": 36,
-   "bind": "equip",
-   "armor": 90,
-   "stats": {
-    "strength": 12
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_06",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 31,
-     "rec": 31
-    }
-   ]
-  },
-  {
    "id": 2043,
    "name": "Ring of Forlorn Spirits",
    "kind": "Ring",
@@ -104437,6 +104375,49 @@
       "rank": "rare-elite",
       "from": "wowhead",
       "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 282713,
+   "name": "Bloodstained Pants",
+   "kind": "Leather",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 31,
+   "obtain": 33,
+   "ilvl": 36,
+   "bind": "equip",
+   "armor": 90,
+   "stats": {
+    "strength": 12
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_06",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Jimmy the Bleeder",
+     "npcId": 14281,
+     "zone": "Alterac Mountains",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 31,
+     "rec": 33,
+     "basis": {
+      "name": "Jimmy the Bleeder",
+      "level": 34,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
      }
     }
    ]
@@ -111902,19 +111883,11 @@
      "type": "quest",
      "quest": "Ground to Keep",
      "questId": 92867,
-     "level": 39,
      "requiredLevel": 32,
      "zone": "Arathi Highlands",
-     "bands": {
-      "red": 32,
-      "orange": 35,
-      "yellow": 37,
-      "green": 42,
-      "grey": 49
-     },
      "faction": "alliance",
      "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/92867",
+     "ref": "https://www.wowhead.com/forever/quest=92867",
      "basis": {
       "name": "Boulderfist Mauler",
       "level": 38,
@@ -135555,7 +135528,7 @@
       "green": 45,
       "grey": 53
      },
-     "faction": "horde",
+     "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/93128",
      "basis": {
@@ -135988,7 +135961,7 @@
       "green": 44,
       "grey": 52
      },
-     "faction": "both",
+     "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/92873",
      "basis": {
@@ -193759,42 +193732,6 @@
    ]
   },
   {
-   "id": 18674,
-   "name": "Hardened Stone Band",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 2,
-   "req": 54,
-   "obtain": 54,
-   "ilvl": 59,
-   "bind": "equip",
-   "stats": {
-    "strength": 8,
-    "stamina": 8
-   },
-   "bonus": {
-    "defense": 3
-   },
-   "equip": [
-    "Equip: Increased Defense +3."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "classic",
-   "numbers": "forever",
-   "icon": "inv_jewelry_ring_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unrecorded",
-     "faction": "both",
-     "confidence": "classic-assumed",
-     "asap": 54,
-     "rec": 54
-    }
-   ]
-  },
-  {
    "id": 18701,
    "name": "Innervating Band",
    "kind": "Ring",
@@ -200419,6 +200356,40 @@
       "from": "wowhead",
       "group": true
      }
+    }
+   ]
+  },
+  {
+   "id": 18674,
+   "name": "Hardened Stone Band",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 2,
+   "req": 55,
+   "obtain": 55,
+   "ilvl": 60,
+   "bind": "equip",
+   "stats": {
+    "strength": 9,
+    "stamina": 9
+   },
+   "bonus": {
+    "defense": 3
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "classic",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 55,
+     "rec": 55
     }
    ]
   },
@@ -224816,6 +224787,49 @@
      },
      "asap": 55,
      "rec": 57
+    }
+   ]
+  },
+  {
+   "id": 208424,
+   "name": "Sun Shades",
+   "kind": "Cloth",
+   "slot": "Head",
+   "quality": 2,
+   "req": 0,
+   "obtain": 58,
+   "ilvl": 100,
+   "bind": "pickup",
+   "armor": 101,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_helmet_47",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Rift Away",
+     "questId": 84213,
+     "requiredLevel": 58,
+     "zone": "Kalimdor",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=84213",
+     "basis": {
+      "name": "Harvest Golem V000-A",
+      "level": 60,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 7
+     },
+     "asap": 58,
+     "rec": 58
     }
    ]
   },
@@ -280865,154 +280879,6 @@
    ]
   },
   {
-   "id": 276538,
-   "name": "Spiritcaller Kilt",
-   "kind": "Mail",
-   "slot": "Legs",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 344,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_desecrated_mailpants",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Leatherworking",
-     "yellow": 320,
-     "grey": 330,
-     "learn": {
-      "type": "drop",
-      "learnAt": 300
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 276539,
-   "name": "Spiritcaller Gloves",
-   "kind": "Mail",
-   "slot": "Hands",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 245,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_desecrated_mailglove",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Leatherworking",
-     "yellow": 320,
-     "grey": 330,
-     "learn": {
-      "type": "drop",
-      "learnAt": 300
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 276540,
-   "name": "Spiritcaller Mantle",
-   "kind": "Mail",
-   "slot": "Shoulder",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 294,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_desecrated_mailshoulder",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Leatherworking",
-     "yellow": 320,
-     "grey": 330,
-     "learn": {
-      "type": "drop",
-      "learnAt": 300
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 276541,
-   "name": "Spiritcaller Boots",
-   "kind": "Mail",
-   "slot": "Feet",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 270,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_desecrated_mailboots",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Leatherworking",
-     "yellow": 320,
-     "grey": 330,
-     "learn": {
-      "type": "drop",
-      "learnAt": 300
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
    "id": 19321,
    "name": "The Immovable Object",
    "kind": "Shield",
@@ -281875,6 +281741,177 @@
      "type": "unknown",
      "faction": "both",
      "confidence": "community-untested",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 276538,
+   "name": "Spiritcaller Kilt",
+   "kind": "Mail",
+   "slot": "Legs",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 344,
+   "stats": {
+    "stamina": 20,
+    "intellect": 19
+   },
+   "bonus": {
+    "spellPower": 27
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_desecrated_mailpants",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Leatherworking",
+     "yellow": 320,
+     "grey": 330,
+     "learn": {
+      "type": "drop",
+      "learnAt": 300
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 276539,
+   "name": "Spiritcaller Gloves",
+   "kind": "Mail",
+   "slot": "Hands",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 245,
+   "stats": {
+    "stamina": 14,
+    "intellect": 12,
+    "spirit": 11
+   },
+   "bonus": {
+    "spellPower": 13,
+    "hitRating": 9
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_desecrated_mailglove",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Leatherworking",
+     "yellow": 320,
+     "grey": 330,
+     "learn": {
+      "type": "drop",
+      "learnAt": 300
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 276540,
+   "name": "Spiritcaller Mantle",
+   "kind": "Mail",
+   "slot": "Shoulder",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 294,
+   "stats": {
+    "stamina": 15,
+    "intellect": 13
+   },
+   "bonus": {
+    "spellPower": 12,
+    "critRating": 14
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_desecrated_mailshoulder",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Leatherworking",
+     "yellow": 320,
+     "grey": 330,
+     "learn": {
+      "type": "drop",
+      "learnAt": 300
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 276541,
+   "name": "Spiritcaller Boots",
+   "kind": "Mail",
+   "slot": "Feet",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 270,
+   "stats": {
+    "stamina": 14,
+    "intellect": 11
+   },
+   "bonus": {
+    "spellPower": 25
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_desecrated_mailboots",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Leatherworking",
+     "yellow": 320,
+     "grey": 330,
+     "learn": {
+      "type": "drop",
+      "learnAt": 300
+     },
+     "faction": "both",
+     "confidence": "client-data",
      "asap": 60,
      "rec": 60
     }

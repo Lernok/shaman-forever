@@ -1,1 +1,1 @@
-window.SITE_META = {"talents":{"source":"talentsforever.com","generated":"2026-11-17","build":"1.60.1.70755"},"items":{"build":"1.60.1.70959","eraBuild":"1.15.9.70576","count":8060},"syncedAt":"2026-11-18"};
+window.SITE_META = {"talents":{"source":"talentsforever.com","generated":"2026-11-17","build":"1.60.1.70755"},"items":{"build":"1.60.1.70959","eraBuild":"1.15.9.70576","count":8060},"syncedAt":"2026-11-19"};

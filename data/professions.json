@@ -18402,10 +18402,15 @@
     "kind": "Mail",
     "quality": 4,
     "req": 60,
-    "ilvl": 61,
+    "ilvl": 60,
     "bind": "equip",
-    "stats": {},
-    "bonus": {},
+    "stats": {
+     "stamina": 14,
+     "intellect": 11
+    },
+    "bonus": {
+     "spellPower": 25
+    },
     "armor": 270,
     "dps": null,
     "speed": null,
@@ -18413,7 +18418,7 @@
     "numbers": "client",
     "icon": "inv_misc_desecrated_mailboots",
     "equip": [],
-    "role": "other",
+    "role": "caster",
     "mailFrom40": false,
     "skill": [
      300,
@@ -18498,10 +18503,17 @@
     "kind": "Mail",
     "quality": 4,
     "req": 60,
-    "ilvl": 61,
+    "ilvl": 60,
     "bind": "equip",
-    "stats": {},
-    "bonus": {},
+    "stats": {
+     "stamina": 14,
+     "intellect": 12,
+     "spirit": 11
+    },
+    "bonus": {
+     "spellPower": 13,
+     "hitRating": 9
+    },
     "armor": 245,
     "dps": null,
     "speed": null,
@@ -18509,7 +18521,7 @@
     "numbers": "client",
     "icon": "inv_misc_desecrated_mailglove",
     "equip": [],
-    "role": "other",
+    "role": "caster",
     "mailFrom40": false,
     "skill": [
      300,
@@ -18594,10 +18606,15 @@
     "kind": "Mail",
     "quality": 4,
     "req": 60,
-    "ilvl": 61,
+    "ilvl": 60,
     "bind": "equip",
-    "stats": {},
-    "bonus": {},
+    "stats": {
+     "stamina": 20,
+     "intellect": 19
+    },
+    "bonus": {
+     "spellPower": 27
+    },
     "armor": 344,
     "dps": null,
     "speed": null,
@@ -18605,7 +18622,7 @@
     "numbers": "client",
     "icon": "inv_misc_desecrated_mailpants",
     "equip": [],
-    "role": "other",
+    "role": "caster",
     "mailFrom40": false,
     "skill": [
      300,
@@ -18658,10 +18675,16 @@
     "kind": "Mail",
     "quality": 4,
     "req": 60,
-    "ilvl": 61,
+    "ilvl": 60,
     "bind": "equip",
-    "stats": {},
-    "bonus": {},
+    "stats": {
+     "stamina": 15,
+     "intellect": 13
+    },
+    "bonus": {
+     "spellPower": 12,
+     "critRating": 14
+    },
     "armor": 294,
     "dps": null,
     "speed": null,
@@ -18669,7 +18692,7 @@
     "numbers": "client",
     "icon": "inv_misc_desecrated_mailshoulder",
     "equip": [],
-    "role": "other",
+    "role": "caster",
     "mailFrom40": false,
     "skill": [
      300,

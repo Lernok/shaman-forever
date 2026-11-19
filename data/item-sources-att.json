@@ -2,6 +2,19 @@
  "_readme": "De dónde sale el equipo nuevo de Forever según AllTheThings (misión, jefe o bicho, vendedor por oro). Generado por scripts/fetch-att-items.js; no editar a mano: las correcciones van en data/item-sources.json.",
  "source": "https://github.com/ATTWoWAddon/AllTheThings (MIT)",
  "items": {
+  "208424": {
+   "name": "Sun Shades",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 84213,
+     "quest": "Rift Away",
+     "minLevel": 58,
+     "faction": "both",
+     "zone": "Kalimdor"
+    }
+   ]
+  },
   "246164": {
    "name": "Skullthumper",
    "sources": [
@@ -6731,7 +6744,7 @@
      "questId": 76240,
      "quest": "Stalk With The Earthmother 3/3",
      "minLevel": 4,
-     "faction": "horde",
+     "faction": "both",
      "zone": "Thunder Bluff"
     }
    ]
@@ -6744,7 +6757,7 @@
      "questId": 76240,
      "quest": "Stalk With The Earthmother 3/3",
      "minLevel": 4,
-     "faction": "horde",
+     "faction": "both",
      "zone": "Thunder Bluff"
     }
    ]
@@ -8858,6 +8871,18 @@
      "npcId": 14277,
      "npc": "Lady Zephris",
      "zone": "Hillsbrad Foothills",
+     "rare": true
+    }
+   ]
+  },
+  "282713": {
+   "name": "Bloodstained Pants",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 14281,
+     "npc": "Jimmy the Bleeder",
+     "zone": "Alterac Mountains",
      "rare": true
     }
    ]

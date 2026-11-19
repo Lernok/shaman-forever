@@ -8060,10 +8060,12 @@
   },
   "76240": {
    "classes": [
-    "SHAMAN"
+    "WARRIOR",
+    "SHAMAN",
+    "DRUID"
    ],
    "minLevel": 4,
-   "faction": "horde",
+   "faction": null,
    "instance": null,
    "hardest": null,
    "steps": 3
@@ -8155,6 +8157,20 @@
    "instance": null,
    "hardest": null,
    "steps": 1
+  },
+  "84213": {
+   "classes": null,
+   "minLevel": 58,
+   "faction": null,
+   "instance": null,
+   "hardest": {
+    "id": 212252,
+    "name": "Harvest Golem V000-A",
+    "level": 60,
+    "rank": "elite",
+    "from": "wowhead"
+   },
+   "steps": 7
   },
   "86574": {
    "classes": null,
@@ -19529,6 +19545,12 @@
    "rank": "rare",
    "from": "wowhead"
   },
+  "14281": {
+   "name": "Jimmy the Bleeder",
+   "level": 34,
+   "rank": "rare",
+   "from": "wowhead"
+  },
   "14303": {
    "name": "Petrified Guardian",
    "level": 59,
@@ -20255,6 +20277,12 @@
    "rank": "rare",
    "from": "wowhead"
   },
+  "212252": {
+   "name": "Harvest Golem V000-A",
+   "level": 60,
+   "rank": "elite",
+   "from": "wowhead"
+  },
   "212753": {
    "name": "Tortured Soul",
    "level": 20,
@@ -20297,6 +20325,18 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "228609": {
+   "name": "Sulfuron Smuggler",
+   "level": 59,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "228610": {
+   "name": "Blackrock Bootlegger",
+   "level": 59,
+   "rank": "normal",
+   "from": "wowhead"
+  },
   "235892": {
    "name": "Prince Halanox",
    "level": 55,
@@ -20317,9 +20357,9 @@
   },
   "239971": {
    "name": "Razorgill",
-   "level": null,
+   "level": 52,
    "rank": "normal",
-   "from": null
+   "from": "wowhead"
   },
   "245999": {
    "name": "Arcane Anomaly",

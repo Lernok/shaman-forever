@@ -107121,24 +107121,22 @@
    "kind": "Ring",
    "slot": "Finger",
    "quality": 2,
-   "req": 54,
-   "ilvl": 59,
+   "req": 55,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "classic",
    "stats": {
-    "strength": 8,
-    "stamina": 8
+    "strength": 9,
+    "stamina": 9
    },
-   "equip": [
-    "Equip: Increased Defense +3."
-   ],
+   "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
     "defense": 3
    },
-   "numbers": "forever",
+   "numbers": "client",
    "icon": "inv_jewelry_ring_14"
   },
   "18676": {
@@ -179311,7 +179309,7 @@
    "slot": "Legs",
    "quality": 4,
    "req": 60,
-   "ilvl": 61,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "new",
@@ -179322,11 +179320,16 @@
     "grey": 330
    },
    "armor": 344,
-   "stats": {},
+   "stats": {
+    "stamina": 20,
+    "intellect": 19
+   },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
+   "bonus": {
+    "spellPower": 27
+   },
    "numbers": "client",
    "icon": "inv_misc_desecrated_mailpants"
   },
@@ -179337,7 +179340,7 @@
    "slot": "Hands",
    "quality": 4,
    "req": 60,
-   "ilvl": 61,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "new",
@@ -179348,11 +179351,18 @@
     "grey": 330
    },
    "armor": 245,
-   "stats": {},
+   "stats": {
+    "stamina": 14,
+    "intellect": 12,
+    "spirit": 11
+   },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
+   "bonus": {
+    "spellPower": 13,
+    "hitRating": 9
+   },
    "numbers": "client",
    "icon": "inv_misc_desecrated_mailglove"
   },
@@ -179363,7 +179373,7 @@
    "slot": "Shoulder",
    "quality": 4,
    "req": 60,
-   "ilvl": 61,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "new",
@@ -179374,11 +179384,17 @@
     "grey": 330
    },
    "armor": 294,
-   "stats": {},
+   "stats": {
+    "stamina": 15,
+    "intellect": 13
+   },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
+   "bonus": {
+    "spellPower": 12,
+    "critRating": 14
+   },
    "numbers": "client",
    "icon": "inv_misc_desecrated_mailshoulder"
   },
@@ -179389,7 +179405,7 @@
    "slot": "Feet",
    "quality": 4,
    "req": 60,
-   "ilvl": 61,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "new",
@@ -179400,11 +179416,16 @@
     "grey": 330
    },
    "armor": 270,
-   "stats": {},
+   "stats": {
+    "stamina": 14,
+    "intellect": 11
+   },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
+   "bonus": {
+    "spellPower": 25
+   },
    "numbers": "client",
    "icon": "inv_misc_desecrated_mailboots"
   },
