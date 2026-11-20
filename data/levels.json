@@ -2921,12 +2921,11 @@
    "faction": "horde",
    "instance": null,
    "hardest": {
-    "id": null,
-    "name": null,
+    "id": 4500,
+    "name": "Overlord Mok'Morokk",
     "level": 45,
-    "rank": "normal",
-    "from": "step-level",
-    "step": 1172
+    "rank": "elite",
+    "from": "wowhead"
    },
    "steps": 5
   },
@@ -9669,7 +9668,7 @@
     "rank": "normal",
     "from": "wowhead"
    },
-   "steps": 3
+   "steps": 4
   },
   "96077": {
    "classes": null,
@@ -9981,6 +9980,22 @@
    "instance": null,
    "hardest": null,
    "steps": 1
+  },
+  "97169": {
+   "classes": [
+    "SHAMAN"
+   ],
+   "minLevel": 58,
+   "faction": null,
+   "instance": null,
+   "hardest": {
+    "id": 14516,
+    "name": "Death Knight Darkreaver",
+    "level": 62,
+    "rank": "elite",
+    "from": "wowhead"
+   },
+   "steps": 2
   },
   "97223": {
    "classes": null,
@@ -14815,6 +14830,12 @@
    "name": "Marcel Dabyrie",
    "level": 34,
    "rank": "normal",
+   "from": "wowhead"
+  },
+  "4500": {
+   "name": "Overlord Mok'Morokk",
+   "level": 45,
+   "rank": "elite",
    "from": "wowhead"
   },
   "4504": {
@@ -20411,15 +20432,15 @@
   },
   "246920": {
    "name": "Blood Elf Arcanist",
-   "level": null,
+   "level": 53,
    "rank": "normal",
-   "from": null
+   "from": "wowhead"
   },
   "246991": {
    "name": "Magister Hawkhelm",
-   "level": null,
+   "level": 53,
    "rank": "normal",
-   "from": null
+   "from": "wowhead"
   },
   "247001": {
    "name": "Saturated Remnant",
@@ -20435,15 +20456,15 @@
   },
   "247006": {
    "name": "Lieutenant Suncrest",
-   "level": null,
+   "level": 53,
    "rank": "normal",
-   "from": null
+   "from": "wowhead"
   },
   "247013": {
    "name": "Ranger Lydrea",
-   "level": null,
+   "level": 53,
    "rank": "normal",
-   "from": null
+   "from": "wowhead"
   },
   "247032": {
    "name": "Lyn the Ignored",

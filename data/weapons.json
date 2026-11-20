@@ -25460,6 +25460,7 @@
      "npc": "Zerillis",
      "npcId": 10082,
      "zone": "Zul'Farrak",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 42,
@@ -25997,6 +25998,60 @@
    ]
   },
   {
+   "id": 10703,
+   "name": "Fiendish Skiv",
+   "kind": "Dagger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 42,
+   "ilvl": 45,
+   "bind": "pickup",
+   "dps": 26.58,
+   "speed": 1.9,
+   "dmgMin": 35,
+   "dmgMax": 66,
+   "stats": {
+    "strength": 8
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "same",
+   "numbers": "client",
+   "icon": "inv_sword_21",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Challenge Overlord Mok'Morokk",
+     "questId": 1173,
+     "level": 45,
+     "requiredLevel": 38,
+     "zone": "Dustwallow Marsh",
+     "faction": "horde",
+     "confidence": "classic-assumed",
+     "bands": {
+      "red": 38,
+      "orange": 41,
+      "yellow": 43,
+      "green": 48,
+      "grey": 57
+     },
+     "ref": "https://foreverchanges.pro/quest/1173",
+     "basis": {
+      "name": "Overlord Mok'Morokk",
+      "level": 45,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 5
+     },
+     "asap": 40,
+     "rec": 42
+    }
+   ]
+  },
+  {
    "id": 272181,
    "name": "Phantasmal Shiv",
    "kind": "Dagger",
@@ -26044,7 +26099,7 @@
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 3
+      "steps": 4
      },
      "asap": 40,
      "rec": 42
@@ -27356,61 +27411,6 @@
    ]
   },
   {
-   "id": 10703,
-   "name": "Fiendish Skiv",
-   "kind": "Dagger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 44,
-   "ilvl": 45,
-   "bind": "pickup",
-   "dps": 26.58,
-   "speed": 1.9,
-   "dmgMin": 35,
-   "dmgMax": 66,
-   "stats": {
-    "strength": 8
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "same",
-   "numbers": "client",
-   "icon": "inv_sword_21",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "quest",
-     "quest": "Challenge Overlord Mok'Morokk",
-     "questId": 1173,
-     "level": 45,
-     "requiredLevel": 38,
-     "zone": "Dustwallow Marsh",
-     "faction": "horde",
-     "confidence": "classic-assumed",
-     "bands": {
-      "red": 38,
-      "orange": 41,
-      "yellow": 43,
-      "green": 48,
-      "grey": 57
-     },
-     "ref": "https://foreverchanges.pro/quest/1173",
-     "basis": {
-      "name": null,
-      "level": 45,
-      "rank": "normal",
-      "from": "step-level",
-      "group": false,
-      "step": 1172,
-      "steps": 5
-     },
-     "asap": 42,
-     "rec": 44
-    }
-   ]
-  },
-  {
    "id": 260214,
    "name": "Staff of Wild Beasts",
    "kind": "Staff",
@@ -28277,10 +28277,10 @@
    "bonus": {},
    "equip": [],
    "chance": [
-    "Chance on hit: Wounds the target for 75 damage."
+    "Chance on hit: Wounds the target for 225 damage."
    ],
    "era": "classic",
-   "numbers": "classic",
+   "numbers": "forever",
    "icon": "ability_whirlwind",
    "raceMask": -1,
    "sources": [

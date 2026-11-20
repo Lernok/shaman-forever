@@ -2,6 +2,19 @@
  "_readme": "De dónde sale el equipo nuevo de Forever según AllTheThings (misión, jefe o bicho, vendedor por oro). Generado por scripts/fetch-att-items.js; no editar a mano: las correcciones van en data/item-sources.json.",
  "source": "https://github.com/ATTWoWAddon/AllTheThings (MIT)",
  "items": {
+  "20133": {
+   "name": "Skyfury Gauntlets",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 97169,
+     "quest": "The Darkreaver Menace [A]",
+     "minLevel": 58,
+     "faction": "both",
+     "zone": "Scholomance"
+    }
+   ]
+  },
   "208424": {
    "name": "Sun Shades",
    "sources": [
@@ -2189,6 +2202,58 @@
     }
    ]
   },
+  "270086": {
+   "name": "Oversized Ogre's Mittens",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1166,
+     "quest": "Overlord Mok'Morokk's Concern",
+     "minLevel": 38,
+     "faction": "horde",
+     "zone": "Dustwallow Marsh"
+    }
+   ]
+  },
+  "270087": {
+   "name": "Thick Ogre's Belt",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1166,
+     "quest": "Overlord Mok'Morokk's Concern",
+     "minLevel": 38,
+     "faction": "horde",
+     "zone": "Dustwallow Marsh"
+    }
+   ]
+  },
+  "270088": {
+   "name": "Thane's Hammer",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 762,
+     "quest": "An Ambassador of Evil",
+     "minLevel": 35,
+     "faction": "alliance",
+     "zone": "Ironforge"
+    }
+   ]
+  },
+  "270089": {
+   "name": "Ironforge Agent's Gloves",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 762,
+     "quest": "An Ambassador of Evil",
+     "minLevel": 35,
+     "faction": "alliance",
+     "zone": "Ironforge"
+    }
+   ]
+  },
   "270090": {
    "name": "Beggar's Leggings",
    "sources": [
@@ -2225,6 +2290,19 @@
      "minLevel": 37,
      "faction": "both",
      "zone": "Stranglethorn Vale"
+    }
+   ]
+  },
+  "270094": {
+   "name": "Black Whelp Boots",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 1172,
+     "quest": "The Brood of Onyxia (3/3)",
+     "minLevel": 38,
+     "faction": "horde",
+     "zone": "Dustwallow Marsh"
     }
    ]
   },
@@ -2316,6 +2394,32 @@
      "minLevel": 43,
      "faction": "both",
      "zone": "Tanaris"
+    }
+   ]
+  },
+  "270104": {
+   "name": "Stonewalker's Slippers",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 3062,
+     "quest": "Dark Heart",
+     "minLevel": 45,
+     "faction": "horde",
+     "zone": "Feralas"
+    }
+   ]
+  },
+  "270108": {
+   "name": "Bloodied Longmace",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 7850,
+     "quest": "Dark Vessels",
+     "minLevel": 46,
+     "faction": "horde",
+     "zone": "The Hinterlands"
     }
    ]
   },
@@ -2446,6 +2550,53 @@
      "minLevel": 50,
      "faction": "both",
      "zone": "Ungoro Crater"
+    }
+   ]
+  },
+  "270123": {
+   "name": "Ragnar's Favorite Hat",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 4126,
+     "quest": "Hurley Blackbreath",
+     "minLevel": 50,
+     "faction": "alliance",
+     "zone": "Blackrock Depths"
+    },
+    {
+     "type": "quest",
+     "questId": 4134,
+     "quest": "Lost Thunderbrew Recipe",
+     "minLevel": 50,
+     "faction": "horde",
+     "zone": "Blackrock Depths"
+    }
+   ]
+  },
+  "270225": {
+   "name": "Jewel of the Guard Captain",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 7862,
+     "quest": "Job Opening: Guard Captain of Revantusk Village",
+     "minLevel": 46,
+     "faction": "horde",
+     "zone": "The Hinterlands"
+    }
+   ]
+  },
+  "270226": {
+   "name": "Golden Banana",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 630,
+     "quest": "Message in a Bottle (2/2)",
+     "minLevel": 42,
+     "faction": "both",
+     "zone": "Stranglethorn Vale"
     }
    ]
   },
@@ -4756,7 +4907,8 @@
      "type": "boss",
      "npcId": 10082,
      "npc": "Zerillis",
-     "zone": "Zul'Farrak"
+     "zone": "Zul'Farrak",
+     "rare": true
     }
    ]
   },
@@ -4767,7 +4919,8 @@
      "type": "boss",
      "npcId": 10080,
      "npc": "Sandarr Dunereaver",
-     "zone": "Zul'Farrak"
+     "zone": "Zul'Farrak",
+     "rare": true
     }
    ]
   },
@@ -6114,6 +6267,28 @@
      "minLevel": 55,
      "faction": "both",
      "zone": "Mount Hyjal"
+    }
+   ]
+  },
+  "276877": {
+   "name": "Brewmancer Nightcap",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 9499,
+     "npc": "Plugger Spazzring",
+     "zone": "Blackrock Depths"
+    }
+   ]
+  },
+  "276884": {
+   "name": "Verek's Loyal Wraps",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 9042,
+     "npc": "Verek",
+     "zone": "Blackrock Depths"
     }
    ]
   },

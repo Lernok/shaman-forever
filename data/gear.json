@@ -1402,42 +1402,6 @@
    ]
   },
   {
-   "id": 20133,
-   "name": "Skyfury Gauntlets",
-   "kind": "Mail",
-   "slot": "Hands",
-   "quality": 4,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 62,
-   "bind": "pickup",
-   "armor": 249,
-   "stats": {
-    "stamina": 12
-   },
-   "bonus": {
-    "spellPower": 14,
-    "critRating": 14,
-    "hitRating": 10
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_gauntlets_30",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 12104,
    "name": "Brindlethorn Tunic",
    "kind": "Leather",
@@ -142716,6 +142680,7 @@
      "npc": "Sandarr Dunereaver",
      "npcId": 10080,
      "zone": "Zul'Farrak",
+     "rank": "rare",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 42,
@@ -176522,43 +176487,6 @@
    ]
   },
   {
-   "id": 276877,
-   "name": "Brewmancer Nightcap",
-   "kind": "Cloth",
-   "slot": "Head",
-   "quality": 3,
-   "req": 50,
-   "obtain": 50,
-   "ilvl": 55,
-   "bind": "pickup",
-   "armor": 64,
-   "stats": {
-    "stamina": 12,
-    "intellect": 8
-   },
-   "bonus": {
-    "otherDamage": 29
-   },
-   "equip": [
-    "Equip: Increases your effective stealth detection level by 2."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_helmet_50",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 50,
-     "rec": 50
-    }
-   ]
-  },
-  {
    "id": 279831,
    "name": "Fatebound Buckler",
    "kind": "Shield",
@@ -179917,41 +179845,6 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_shield_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 51,
-     "rec": 51
-    }
-   ]
-  },
-  {
-   "id": 276884,
-   "name": "Verek's Loyal Wraps",
-   "kind": "Cloth",
-   "slot": "Wrist",
-   "quality": 3,
-   "req": 51,
-   "obtain": 51,
-   "ilvl": 56,
-   "bind": "pickup",
-   "armor": 35,
-   "stats": {
-    "spirit": 14
-   },
-   "bonus": {
-    "healing": 20,
-    "spellDamage": 7
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_bracer_07",
    "raceMask": -1,
    "sources": [
     {
@@ -185722,6 +185615,51 @@
    ]
   },
   {
+   "id": 276884,
+   "name": "Verek's Loyal Wraps",
+   "kind": "Cloth",
+   "slot": "Wrist",
+   "quality": 3,
+   "req": 51,
+   "obtain": 52,
+   "ilvl": 56,
+   "bind": "pickup",
+   "armor": 35,
+   "stats": {
+    "spirit": 14
+   },
+   "bonus": {
+    "healing": 20,
+    "spellDamage": 7
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_bracer_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Verek",
+     "npcId": 9042,
+     "zone": "Blackrock Depths",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 51,
+     "rec": 52,
+     "basis": {
+      "name": "Verek",
+      "level": 55,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 9649,
    "name": "Royal Highmark Vestments",
    "kind": "Cloth",
@@ -186040,6 +185978,53 @@
      },
      "asap": 50,
      "rec": 52
+    }
+   ]
+  },
+  {
+   "id": 276877,
+   "name": "Brewmancer Nightcap",
+   "kind": "Cloth",
+   "slot": "Head",
+   "quality": 3,
+   "req": 50,
+   "obtain": 52,
+   "ilvl": 55,
+   "bind": "pickup",
+   "armor": 64,
+   "stats": {
+    "stamina": 12,
+    "intellect": 8
+   },
+   "bonus": {
+    "otherDamage": 29
+   },
+   "equip": [
+    "Equip: Increases your effective stealth detection level by 2."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_helmet_50",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Plugger Spazzring",
+     "npcId": 9499,
+     "zone": "Blackrock Depths",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 50,
+     "rec": 52,
+     "basis": {
+      "name": "Plugger Spazzring",
+      "level": 55,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -239006,6 +238991,56 @@
       "from": "wowhead",
       "group": true
      }
+    }
+   ]
+  },
+  {
+   "id": 20133,
+   "name": "Skyfury Gauntlets",
+   "kind": "Mail",
+   "slot": "Hands",
+   "quality": 4,
+   "req": 0,
+   "obtain": 59,
+   "ilvl": 62,
+   "bind": "pickup",
+   "armor": 249,
+   "stats": {
+    "stamina": 12
+   },
+   "bonus": {
+    "spellPower": 14,
+    "critRating": 14,
+    "hitRating": 10
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_gauntlets_30",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Darkreaver Menace [A]",
+     "questId": 97169,
+     "requiredLevel": 58,
+     "zone": "Scholomance",
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=97169",
+     "dungeon": true,
+     "basis": {
+      "name": "Death Knight Darkreaver",
+      "level": 62,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 58,
+     "rec": 59
     }
    ]
   },
