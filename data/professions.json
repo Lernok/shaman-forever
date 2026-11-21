@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70959",
+ "build": "1.60.1.71037",
  "recipesSource": "https://classicwowforever.com/professions/",
  "recipesFetched": "2026-10-20",
  "professions": {
@@ -18439,10 +18439,17 @@
     "kind": "Mail",
     "quality": 4,
     "req": 60,
-    "ilvl": 61,
+    "ilvl": 60,
     "bind": "equip",
-    "stats": {},
-    "bonus": {},
+    "stats": {
+     "stamina": 15,
+     "intellect": 14,
+     "spirit": 12
+    },
+    "bonus": {
+     "healing": 24,
+     "spellDamage": 8
+    },
     "armor": 294,
     "dps": null,
     "speed": null,
@@ -18450,7 +18457,7 @@
     "numbers": "client",
     "icon": "inv_shoulder_mail_raidshamanhyjalc60_d_01",
     "equip": [],
-    "role": "other",
+    "role": "caster",
     "mailFrom40": false,
     "skill": [
      300,
@@ -18471,10 +18478,16 @@
     "kind": "Mail",
     "quality": 4,
     "req": 60,
-    "ilvl": 61,
+    "ilvl": 60,
     "bind": "equip",
-    "stats": {},
-    "bonus": {},
+    "stats": {
+     "stamina": 14,
+     "intellect": 21
+    },
+    "bonus": {
+     "healing": 24,
+     "spellDamage": 8
+    },
     "armor": 245,
     "dps": null,
     "speed": null,
@@ -18482,7 +18495,7 @@
     "numbers": "client",
     "icon": "inv_glove_mail_raidshamanhyjalc60_d_01",
     "equip": [],
-    "role": "other",
+    "role": "caster",
     "mailFrom40": false,
     "skill": [
      300,
@@ -18542,10 +18555,17 @@
     "kind": "Mail",
     "quality": 4,
     "req": 60,
-    "ilvl": 61,
+    "ilvl": 60,
     "bind": "equip",
-    "stats": {},
-    "bonus": {},
+    "stats": {
+     "stamina": 14,
+     "intellect": 12,
+     "spirit": 11
+    },
+    "bonus": {
+     "healing": 34,
+     "spellDamage": 11
+    },
     "armor": 270,
     "dps": null,
     "speed": null,
@@ -18553,7 +18573,7 @@
     "numbers": "client",
     "icon": "inv_boot_mail_raidshamanhyjalc60_d_01",
     "equip": [],
-    "role": "other",
+    "role": "caster",
     "mailFrom40": false,
     "skill": [
      300,
@@ -18574,10 +18594,16 @@
     "kind": "Mail",
     "quality": 4,
     "req": 60,
-    "ilvl": 61,
+    "ilvl": 60,
     "bind": "equip",
-    "stats": {},
-    "bonus": {},
+    "stats": {
+     "stamina": 15,
+     "strength": 13,
+     "intellect": 10
+    },
+    "bonus": {
+     "critRating": 14
+    },
     "armor": 245,
     "dps": null,
     "speed": null,
@@ -18585,7 +18611,7 @@
     "numbers": "client",
     "icon": "inv_glove_mail_raidshamanhyjalc60_d_01",
     "equip": [],
-    "role": "other",
+    "role": "hybrid",
     "mailFrom40": false,
     "skill": [
      300,
@@ -18643,10 +18669,17 @@
     "kind": "Mail",
     "quality": 4,
     "req": 60,
-    "ilvl": 61,
+    "ilvl": 60,
     "bind": "equip",
-    "stats": {},
-    "bonus": {},
+    "stats": {
+     "stamina": 19,
+     "strength": 16,
+     "intellect": 15,
+     "agility": 14
+    },
+    "bonus": {
+     "expertiseRating": 12
+    },
     "armor": 344,
     "dps": null,
     "speed": null,
@@ -18654,7 +18687,7 @@
     "numbers": "client",
     "icon": "inv_pant_mail_raidshamanhyjalc60_d_01",
     "equip": [],
-    "role": "other",
+    "role": "hybrid",
     "mailFrom40": false,
     "skill": [
      300,
@@ -18713,10 +18746,18 @@
     "kind": "Mail",
     "quality": 4,
     "req": 60,
-    "ilvl": 61,
+    "ilvl": 60,
     "bind": "equip",
-    "stats": {},
-    "bonus": {},
+    "stats": {
+     "stamina": 20,
+     "intellect": 19,
+     "spirit": 12
+    },
+    "bonus": {
+     "critRating": 14,
+     "healing": 22,
+     "spellDamage": 7
+    },
     "armor": 344,
     "dps": null,
     "speed": null,
@@ -18724,7 +18765,7 @@
     "numbers": "client",
     "icon": "inv_pant_mail_raidshamanhyjalc60_d_01",
     "equip": [],
-    "role": "other",
+    "role": "caster",
     "mailFrom40": false,
     "skill": [
      300,
@@ -18745,9 +18786,13 @@
     "kind": "Mail",
     "quality": 4,
     "req": 60,
-    "ilvl": 61,
+    "ilvl": 60,
     "bind": "equip",
-    "stats": {},
+    "stats": {
+     "stamina": 14,
+     "strength": 21,
+     "intellect": 11
+    },
     "bonus": {},
     "armor": 294,
     "dps": null,
@@ -18756,7 +18801,7 @@
     "numbers": "client",
     "icon": "inv_shoulder_mail_raidshamanhyjalc60_d_01",
     "equip": [],
-    "role": "other",
+    "role": "hybrid",
     "mailFrom40": false,
     "skill": [
      300,
@@ -18777,10 +18822,17 @@
     "kind": "Mail",
     "quality": 4,
     "req": 60,
-    "ilvl": 61,
+    "ilvl": 60,
     "bind": "equip",
-    "stats": {},
-    "bonus": {},
+    "stats": {
+     "stamina": 14,
+     "strength": 12,
+     "intellect": 11,
+     "agility": 11
+    },
+    "bonus": {
+     "hitRating": 9
+    },
     "armor": 270,
     "dps": null,
     "speed": null,
@@ -18788,7 +18840,7 @@
     "numbers": "client",
     "icon": "inv_boot_mail_raidshamanhyjalc60_d_01",
     "equip": [],
-    "role": "other",
+    "role": "hybrid",
     "mailFrom40": false,
     "skill": [
      300,
@@ -34410,7 +34462,7 @@
     "quality": 2,
     "req": 17,
     "ilvl": 22,
-    "bind": null,
+    "bind": "equip",
     "stats": {
      "stamina": 3
     },

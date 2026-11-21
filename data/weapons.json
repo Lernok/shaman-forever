@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70959",
+ "build": "1.60.1.71037",
  "weapons": [
   {
    "id": 221518,
@@ -8653,7 +8653,7 @@
    "req": 17,
    "obtain": 17,
    "ilvl": 22,
-   "bind": null,
+   "bind": "equip",
    "dps": 11.15,
    "speed": 2.6,
    "dmgMin": 20,
@@ -33140,7 +33140,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Impaan the Imprisoner",
+     "npcId": 247206,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 54,
@@ -33173,41 +33176,6 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_axe_69",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 54,
-     "rec": 54
-    }
-   ]
-  },
-  {
-   "id": 276069,
-   "name": "Gravetoll Gavel",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 54,
-   "obtain": 54,
-   "ilvl": 59,
-   "bind": "pickup",
-   "dps": 50.5,
-   "speed": 3.3,
-   "dmgMin": 133,
-   "dmgMax": 200,
-   "stats": {
-    "stamina": 16,
-    "intellect": 21,
-    "spirit": 13
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_14",
    "raceMask": -1,
    "sources": [
     {
@@ -34167,80 +34135,6 @@
    ]
   },
   {
-   "id": 276397,
-   "name": "Hand of the Zealous",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 55,
-   "obtain": 55,
-   "ilvl": 60,
-   "bind": "pickup",
-   "dps": 51.4,
-   "speed": 3.7,
-   "dmgMin": 152,
-   "dmgMax": 228,
-   "stats": {
-    "stamina": 22,
-    "intellect": 16
-   },
-   "bonus": {
-    "critRating": 14
-   },
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 55,
-     "rec": 55
-    }
-   ]
-  },
-  {
-   "id": 276403,
-   "name": "Scarlet Bonebreaker",
-   "kind": "2H Mace",
-   "quality": 3,
-   "req": 55,
-   "obtain": 55,
-   "ilvl": 60,
-   "bind": "pickup",
-   "dps": 51.39,
-   "speed": 3.6,
-   "dmgMin": 148,
-   "dmgMax": 222,
-   "stats": {
-    "stamina": 23,
-    "spirit": 15
-   },
-   "bonus": {
-    "attackPower": 22
-   },
-   "equip": [
-    "Equip: +21 Attack Power against Undead."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_mace_13",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 55,
-     "rec": 55
-    }
-   ]
-  },
-  {
    "id": 227880,
    "name": "Finely-Enchanted Battlehammer",
    "kind": "2H Mace",
@@ -34283,6 +34177,51 @@
      "confidence": "client-data",
      "asap": 55,
      "rec": 55
+    }
+   ]
+  },
+  {
+   "id": 276069,
+   "name": "Gravetoll Gavel",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 54,
+   "obtain": 55,
+   "ilvl": 59,
+   "bind": "pickup",
+   "dps": 50.5,
+   "speed": 3.3,
+   "dmgMin": 133,
+   "dmgMax": 200,
+   "stats": {
+    "stamina": 16,
+    "intellect": 21,
+    "spirit": 13
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Marduk Blackpool",
+     "npcId": 10433,
+     "zone": "Scholomance",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 54,
+     "rec": 55,
+     "basis": {
+      "name": "Marduk Blackpool",
+      "level": 58,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -34699,40 +34638,6 @@
    ]
   },
   {
-   "id": 276404,
-   "name": "Masterwork Crimson Hammer",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 55,
-   "obtain": 55,
-   "ilvl": 60,
-   "bind": "pickup",
-   "dps": 39.4,
-   "speed": 2.4,
-   "dmgMin": 66,
-   "dmgMax": 123,
-   "stats": {
-    "stamina": 10,
-    "spirit": 10
-   },
-   "bonus": {},
-   "equip": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 55,
-     "rec": 55
-    }
-   ]
-  },
-  {
    "id": 287034,
    "name": "Grove Subjugator's Blade",
    "kind": "Dagger",
@@ -34756,76 +34661,6 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_weapon_shortblade_25",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 55,
-     "rec": 55
-    }
-   ]
-  },
-  {
-   "id": 276419,
-   "name": "Lightcrest Hammer",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 55,
-   "obtain": 55,
-   "ilvl": 60,
-   "bind": "pickup",
-   "dps": 39.38,
-   "speed": 2.4,
-   "dmgMin": 66,
-   "dmgMax": 123,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "chance": [
-    "Chance on hit: Smites a target for 105 Holy damage. Deals 2 times as much damage to Undead."
-   ],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_23",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 55,
-     "rec": 55
-    }
-   ]
-  },
-  {
-   "id": 276398,
-   "name": "Scarlet Malice",
-   "kind": "1H Mace",
-   "quality": 3,
-   "req": 55,
-   "obtain": 55,
-   "ilvl": 60,
-   "bind": "pickup",
-   "dps": 39.35,
-   "speed": 2.3,
-   "dmgMin": 63,
-   "dmgMax": 118,
-   "stats": {
-    "stamina": 10
-   },
-   "bonus": {
-    "attackPower": 16
-   },
-   "equip": [
-    "Equip: +15 Attack Power against Undead."
-   ],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_hammer_11",
    "raceMask": -1,
    "sources": [
     {
@@ -35461,7 +35296,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Elder Shaman Bloodmane",
+     "npcId": 247209,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 56,
@@ -36722,6 +36560,100 @@
    ]
   },
   {
+   "id": 276397,
+   "name": "Hand of the Zealous",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 55,
+   "obtain": 57,
+   "ilvl": 60,
+   "bind": "pickup",
+   "dps": 51.4,
+   "speed": 3.7,
+   "dmgMin": 152,
+   "dmgMax": 228,
+   "stats": {
+    "stamina": 22,
+    "intellect": 16
+   },
+   "bonus": {
+    "critRating": 14
+   },
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Malor the Zealous",
+     "npcId": 11032,
+     "zone": "Stratholme",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 55,
+     "rec": 57,
+     "basis": {
+      "name": "Malor the Zealous",
+      "level": 60,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 276403,
+   "name": "Scarlet Bonebreaker",
+   "kind": "2H Mace",
+   "quality": 3,
+   "req": 55,
+   "obtain": 57,
+   "ilvl": 60,
+   "bind": "pickup",
+   "dps": 51.39,
+   "speed": 3.6,
+   "dmgMin": 148,
+   "dmgMax": 222,
+   "stats": {
+    "stamina": 23,
+    "spirit": 15
+   },
+   "bonus": {
+    "attackPower": 22
+   },
+   "equip": [
+    "Equip: +21 Attack Power against Undead."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_mace_13",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Crimson Hammersmith",
+     "npcId": 11120,
+     "zone": "Stratholme",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 55,
+     "rec": 57,
+     "basis": {
+      "name": "Crimson Hammersmith",
+      "level": 60,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 20654,
    "name": "Amethyst War Staff",
    "kind": "Staff",
@@ -36945,10 +36877,11 @@
      "quest": "Deeproar Down",
      "questId": 95107,
      "requiredLevel": 54,
-     "zone": null,
+     "zone": "Mount Hyjal",
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=95107",
+     "raid": true,
      "basis": {
       "name": "Chieftain Deeproar",
       "level": 58,
@@ -37497,6 +37430,93 @@
    ]
   },
   {
+   "id": 276404,
+   "name": "Masterwork Crimson Hammer",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 55,
+   "obtain": 57,
+   "ilvl": 60,
+   "bind": "pickup",
+   "dps": 39.4,
+   "speed": 2.4,
+   "dmgMin": 66,
+   "dmgMax": 123,
+   "stats": {
+    "stamina": 10,
+    "spirit": 10
+   },
+   "bonus": {},
+   "equip": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Crimson Hammersmith",
+     "npcId": 11120,
+     "zone": "Stratholme",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 55,
+     "rec": 57,
+     "basis": {
+      "name": "Crimson Hammersmith",
+      "level": 60,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 276419,
+   "name": "Lightcrest Hammer",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 55,
+   "obtain": 57,
+   "ilvl": 60,
+   "bind": "pickup",
+   "dps": 39.38,
+   "speed": 2.4,
+   "dmgMin": 66,
+   "dmgMax": 123,
+   "stats": {},
+   "bonus": {},
+   "equip": [],
+   "chance": [
+    "Chance on hit: Smites a target for 105 Holy damage. Deals 2 times as much damage to Undead."
+   ],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_23",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Crimson Hammersmith",
+     "npcId": 11120,
+     "zone": "Stratholme",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 55,
+     "rec": 57,
+     "basis": {
+      "name": "Crimson Hammersmith",
+      "level": 60,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 15853,
    "name": "Windreaper",
    "kind": "1H Axe",
@@ -37545,6 +37565,53 @@
      },
      "asap": 57,
      "rec": 57
+    }
+   ]
+  },
+  {
+   "id": 276398,
+   "name": "Scarlet Malice",
+   "kind": "1H Mace",
+   "quality": 3,
+   "req": 55,
+   "obtain": 57,
+   "ilvl": 60,
+   "bind": "pickup",
+   "dps": 39.35,
+   "speed": 2.3,
+   "dmgMin": 63,
+   "dmgMax": 118,
+   "stats": {
+    "stamina": 10
+   },
+   "bonus": {
+    "attackPower": 16
+   },
+   "equip": [
+    "Equip: +15 Attack Power against Undead."
+   ],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_hammer_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Malor the Zealous",
+     "npcId": 11032,
+     "zone": "Stratholme",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 55,
+     "rec": 57,
+     "basis": {
+      "name": "Malor the Zealous",
+      "level": 60,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -37662,10 +37729,11 @@
      "quest": "Deeproar Down",
      "questId": 95107,
      "requiredLevel": 54,
-     "zone": null,
+     "zone": "Mount Hyjal",
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=95107",
+     "raid": true,
      "basis": {
       "name": "Chieftain Deeproar",
       "level": 58,

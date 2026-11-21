@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70959",
+ "build": "1.60.1.71037",
  "eraBuild": "1.15.9.70576",
  "items": {
   "720": {
@@ -7497,7 +7497,7 @@
    "quality": 2,
    "req": 17,
    "ilvl": 22,
-   "bind": null,
+   "bind": "equip",
    "raceMask": -1,
    "era": "changed",
    "crafted": {
@@ -111564,7 +111564,7 @@
    "ilvl": 65,
    "bind": "pickup",
    "raceMask": -1,
-   "era": "same",
+   "era": "changed",
    "stats": {},
    "equip": [
     "Equip: Sometimes heals bearer of 120 to 180 damage when damaging an enemy in melee."
@@ -111585,7 +111585,7 @@
    "ilvl": 65,
    "bind": "pickup",
    "raceMask": -1,
-   "era": "same",
+   "era": "changed",
    "stats": {},
    "equip": [
     "Equip: 2% chance on successful spellcast to increase your Spirit by 150 for 15 sec. (Proc chance: 2%)"
@@ -111606,7 +111606,7 @@
    "ilvl": 65,
    "bind": "pickup",
    "raceMask": -1,
-   "era": "same",
+   "era": "changed",
    "stats": {},
    "equip": [
     "Equip: Chance to strike your melee target with lightning for 200 to 300 Nature damage."
@@ -111627,7 +111627,7 @@
    "ilvl": 65,
    "bind": "pickup",
    "raceMask": -1,
-   "era": "same",
+   "era": "changed",
    "stats": {},
    "equip": [
     "Equip: Gives the wearer a 10% chance of being able to resurrect with 20% health and mana."
@@ -142615,6 +142615,223 @@
    "numbers": "client",
    "icon": "inv_relics_totemoflife"
   },
+  "227033": {
+   "id": 227033,
+   "name": "Wrists of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Wrist",
+   "quality": 3,
+   "req": 0,
+   "ilvl": 65,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "changed",
+   "armor": 167,
+   "stats": {
+    "stamina": 10,
+    "intellect": 9,
+    "spirit": 9
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 8
+   },
+   "numbers": "client",
+   "icon": "inv_bracer_02"
+  },
+  "227034": {
+   "id": 227034,
+   "name": "Waist of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Waist",
+   "quality": 3,
+   "req": 0,
+   "ilvl": 65,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "changed",
+   "armor": 214,
+   "stats": {
+    "strength": 10,
+    "stamina": 11,
+    "intellect": 11
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 12,
+    "mp5": 4
+   },
+   "numbers": "client",
+   "icon": "inv_belt_16"
+  },
+  "227035": {
+   "id": 227035,
+   "name": "Shoulders of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Shoulder",
+   "quality": 3,
+   "req": 0,
+   "ilvl": 65,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "changed",
+   "armor": 286,
+   "stats": {
+    "strength": 10,
+    "stamina": 11,
+    "intellect": 11,
+    "spirit": 10
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 12
+   },
+   "numbers": "client",
+   "icon": "inv_shoulder_29"
+  },
+  "227036": {
+   "id": 227036,
+   "name": "Legs of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Legs",
+   "quality": 3,
+   "req": 0,
+   "ilvl": 66,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "changed",
+   "armor": 339,
+   "stats": {
+    "strength": 10,
+    "stamina": 17,
+    "intellect": 17,
+    "spirit": 16
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 11
+   },
+   "numbers": "client",
+   "icon": "inv_pants_03"
+  },
+  "227037": {
+   "id": 227037,
+   "name": "Helm of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Head",
+   "quality": 4,
+   "req": 0,
+   "ilvl": 60,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "changed",
+   "armor": 314,
+   "stats": {
+    "stamina": 22,
+    "intellect": 21,
+    "spirit": 12
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 14,
+    "critRating": 14
+   },
+   "numbers": "client",
+   "icon": "inv_helmet_04"
+  },
+  "227038": {
+   "id": 227038,
+   "name": "Gloves of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Hands",
+   "quality": 4,
+   "req": 0,
+   "ilvl": 55,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "changed",
+   "armor": 223,
+   "stats": {
+    "strength": 9,
+    "stamina": 12,
+    "intellect": 14
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "mp5": 4,
+    "spellPower": 12
+   },
+   "numbers": "client",
+   "icon": "inv_gauntlets_11"
+  },
+  "227039": {
+   "id": 227039,
+   "name": "Boots of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Feet",
+   "quality": 4,
+   "req": 0,
+   "ilvl": 60,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "changed",
+   "armor": 266,
+   "stats": {
+    "strength": 12,
+    "stamina": 13,
+    "intellect": 12,
+    "spirit": 10
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "spellPower": 12,
+    "mp5": 4
+   },
+   "numbers": "client",
+   "icon": "inv_boots_wolf"
+  },
+  "227040": {
+   "id": 227040,
+   "name": "Chest of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Chest",
+   "quality": 4,
+   "req": 0,
+   "ilvl": 60,
+   "bind": "pickup",
+   "raceMask": -1,
+   "era": "changed",
+   "armor": 387,
+   "stats": {
+    "strength": 12,
+    "stamina": 17,
+    "intellect": 17,
+    "spirit": 16
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "bonus": {
+    "critRating": 14,
+    "spellPower": 14
+   },
+   "numbers": "client",
+   "icon": "inv_chest_chain_11"
+  },
   "227684": {
    "id": 227684,
    "name": "Sulfuron Hammer",
@@ -172134,7 +172351,7 @@
    "slot": "Legs",
    "quality": 4,
    "req": 60,
-   "ilvl": 61,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "new",
@@ -172145,11 +172362,18 @@
     "grey": 330
    },
    "armor": 344,
-   "stats": {},
+   "stats": {
+    "stamina": 19,
+    "strength": 16,
+    "intellect": 15,
+    "agility": 14
+   },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
+   "bonus": {
+    "expertiseRating": 12
+   },
    "numbers": "client",
    "icon": "inv_pant_mail_raidshamanhyjalc60_d_01"
   },
@@ -172160,7 +172384,7 @@
    "slot": "Hands",
    "quality": 4,
    "req": 60,
-   "ilvl": 61,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "new",
@@ -172171,11 +172395,17 @@
     "grey": 330
    },
    "armor": 245,
-   "stats": {},
+   "stats": {
+    "stamina": 15,
+    "strength": 13,
+    "intellect": 10
+   },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
+   "bonus": {
+    "critRating": 14
+   },
    "numbers": "client",
    "icon": "inv_glove_mail_raidshamanhyjalc60_d_01"
   },
@@ -172186,7 +172416,7 @@
    "slot": "Shoulder",
    "quality": 4,
    "req": 60,
-   "ilvl": 61,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "new",
@@ -172197,7 +172427,11 @@
     "grey": 330
    },
    "armor": 294,
-   "stats": {},
+   "stats": {
+    "stamina": 14,
+    "strength": 21,
+    "intellect": 11
+   },
    "equip": [],
    "use": [],
    "chance": [],
@@ -172212,7 +172446,7 @@
    "slot": "Feet",
    "quality": 4,
    "req": 60,
-   "ilvl": 61,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "new",
@@ -172223,11 +172457,18 @@
     "grey": 330
    },
    "armor": 270,
-   "stats": {},
+   "stats": {
+    "stamina": 14,
+    "strength": 12,
+    "intellect": 11,
+    "agility": 11
+   },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
+   "bonus": {
+    "hitRating": 9
+   },
    "numbers": "client",
    "icon": "inv_boot_mail_raidshamanhyjalc60_d_01"
   },
@@ -172238,7 +172479,7 @@
    "slot": "Legs",
    "quality": 4,
    "req": 60,
-   "ilvl": 61,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "new",
@@ -172249,11 +172490,19 @@
     "grey": 330
    },
    "armor": 344,
-   "stats": {},
+   "stats": {
+    "stamina": 20,
+    "intellect": 19,
+    "spirit": 12
+   },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
+   "bonus": {
+    "critRating": 14,
+    "healing": 22,
+    "spellDamage": 7
+   },
    "numbers": "client",
    "icon": "inv_pant_mail_raidshamanhyjalc60_d_01"
   },
@@ -172264,7 +172513,7 @@
    "slot": "Hands",
    "quality": 4,
    "req": 60,
-   "ilvl": 61,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "new",
@@ -172275,11 +172524,17 @@
     "grey": 330
    },
    "armor": 245,
-   "stats": {},
+   "stats": {
+    "stamina": 14,
+    "intellect": 21
+   },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
+   "bonus": {
+    "healing": 24,
+    "spellDamage": 8
+   },
    "numbers": "client",
    "icon": "inv_glove_mail_raidshamanhyjalc60_d_01"
   },
@@ -172290,7 +172545,7 @@
    "slot": "Shoulder",
    "quality": 4,
    "req": 60,
-   "ilvl": 61,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "new",
@@ -172301,11 +172556,18 @@
     "grey": 330
    },
    "armor": 294,
-   "stats": {},
+   "stats": {
+    "stamina": 15,
+    "intellect": 14,
+    "spirit": 12
+   },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
+   "bonus": {
+    "healing": 24,
+    "spellDamage": 8
+   },
    "numbers": "client",
    "icon": "inv_shoulder_mail_raidshamanhyjalc60_d_01"
   },
@@ -172316,7 +172578,7 @@
    "slot": "Feet",
    "quality": 4,
    "req": 60,
-   "ilvl": 61,
+   "ilvl": 60,
    "bind": "equip",
    "raceMask": -1,
    "era": "new",
@@ -172327,11 +172589,18 @@
     "grey": 330
    },
    "armor": 270,
-   "stats": {},
+   "stats": {
+    "stamina": 14,
+    "intellect": 12,
+    "spirit": 11
+   },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
+   "bonus": {
+    "healing": 34,
+    "spellDamage": 11
+   },
    "numbers": "client",
    "icon": "inv_boot_mail_raidshamanhyjalc60_d_01"
   },

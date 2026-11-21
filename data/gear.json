@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.70959",
+ "build": "1.60.1.71037",
  "gear": [
   {
    "id": 20144,
@@ -270,6 +270,43 @@
    "era": "changed",
    "numbers": "client",
    "icon": "inv_pants_08",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 227036,
+   "name": "Legs of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Legs",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 66,
+   "bind": "pickup",
+   "armor": 339,
+   "stats": {
+    "strength": 10,
+    "stamina": 17,
+    "intellect": 17,
+    "spirit": 16
+   },
+   "bonus": {
+    "spellPower": 11
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_pants_03",
    "raceMask": -1,
    "sources": [
     {
@@ -943,6 +980,116 @@
    "era": "changed",
    "numbers": "client",
    "icon": "inv_shoulder_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 227033,
+   "name": "Wrists of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Wrist",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 65,
+   "bind": "pickup",
+   "armor": 167,
+   "stats": {
+    "stamina": 10,
+    "intellect": 9,
+    "spirit": 9
+   },
+   "bonus": {
+    "spellPower": 8
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_bracer_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 227034,
+   "name": "Waist of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Waist",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 65,
+   "bind": "pickup",
+   "armor": 214,
+   "stats": {
+    "strength": 10,
+    "stamina": 11,
+    "intellect": 11
+   },
+   "bonus": {
+    "spellPower": 12,
+    "mp5": 4
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_belt_16",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 227035,
+   "name": "Shoulders of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Shoulder",
+   "quality": 3,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 65,
+   "bind": "pickup",
+   "armor": 286,
+   "stats": {
+    "strength": 10,
+    "stamina": 11,
+    "intellect": 11,
+    "spirit": 10
+   },
+   "bonus": {
+    "spellPower": 12
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_shoulder_29",
    "raceMask": -1,
    "sources": [
     {
@@ -2383,6 +2530,119 @@
    ]
   },
   {
+   "id": 227037,
+   "name": "Helm of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Head",
+   "quality": 4,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 60,
+   "bind": "pickup",
+   "armor": 314,
+   "stats": {
+    "stamina": 22,
+    "intellect": 21,
+    "spirit": 12
+   },
+   "bonus": {
+    "spellPower": 14,
+    "critRating": 14
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_helmet_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 227039,
+   "name": "Boots of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Feet",
+   "quality": 4,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 60,
+   "bind": "pickup",
+   "armor": 266,
+   "stats": {
+    "strength": 12,
+    "stamina": 13,
+    "intellect": 12,
+    "spirit": 10
+   },
+   "bonus": {
+    "spellPower": 12,
+    "mp5": 4
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_boots_wolf",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 227040,
+   "name": "Chest of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Chest",
+   "quality": 4,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 60,
+   "bind": "pickup",
+   "armor": 387,
+   "stats": {
+    "strength": 12,
+    "stamina": 17,
+    "intellect": 17,
+    "spirit": 16
+   },
+   "bonus": {
+    "critRating": 14,
+    "spellPower": 14
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_chest_chain_11",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
    "id": 276340,
    "name": "Blademaster Hakama",
    "kind": "Leather",
@@ -2585,41 +2845,6 @@
      },
      "faction": "both",
      "confidence": "client-data",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 270126,
-   "name": "Conqueror's Pendant",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 3,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 7,
-    "intellect": 7,
-    "spirit": 5
-   },
-   "bonus": {
-    "spellPower": 13
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_necklace_03",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 0,
      "rec": 0
     }
@@ -3004,6 +3229,43 @@
    "era": "changed",
    "numbers": "client",
    "icon": "inv_gauntlets_17",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "unrecorded",
+     "faction": "both",
+     "confidence": "classic-assumed",
+     "asap": 0,
+     "rec": 0
+    }
+   ]
+  },
+  {
+   "id": 227038,
+   "name": "Gloves of The Five Thunders",
+   "kind": "Mail",
+   "slot": "Hands",
+   "quality": 4,
+   "req": 0,
+   "obtain": 0,
+   "ilvl": 55,
+   "bind": "pickup",
+   "armor": 223,
+   "stats": {
+    "strength": 9,
+    "stamina": 12,
+    "intellect": 14
+   },
+   "bonus": {
+    "mp5": 4,
+    "spellPower": 12
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "changed",
+   "numbers": "client",
+   "icon": "inv_gauntlets_11",
    "raceMask": -1,
    "sources": [
     {
@@ -4707,70 +4969,6 @@
      "type": "unrecorded",
      "faction": "both",
      "confidence": "classic-assumed",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 277207,
-   "name": "Well-Weathered Cloak",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 40,
-   "bind": "pickup",
-   "armor": 26,
-   "stats": {
-    "stamina": 6
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_cape_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 277209,
-   "name": "Ponderous Loop",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 40,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 4,
-    "intellect": 7
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_14",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 0,
      "rec": 0
     }
@@ -130473,6 +130671,96 @@
    ]
   },
   {
+   "id": 277207,
+   "name": "Well-Weathered Cloak",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 0,
+   "obtain": 39,
+   "ilvl": 40,
+   "bind": "pickup",
+   "armor": 26,
+   "stats": {
+    "stamina": 6
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_cape_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Terror of the Desert Skies (Hemet Nesingwary)",
+     "questId": 78830,
+     "requiredLevel": 26,
+     "zone": "Stranglethorn Vale",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=78830",
+     "basis": {
+      "name": "Gharrik",
+      "level": 40,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 2
+     },
+     "asap": 37,
+     "rec": 39
+    }
+   ]
+  },
+  {
+   "id": 277209,
+   "name": "Ponderous Loop",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 2,
+   "req": 0,
+   "obtain": 39,
+   "ilvl": 40,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 4,
+    "intellect": 7
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_14",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Terror of the Desert Skies (Hemet Nesingwary)",
+     "questId": 78830,
+     "requiredLevel": 26,
+     "zone": "Stranglethorn Vale",
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=78830",
+     "basis": {
+      "name": "Gharrik",
+      "level": 40,
+      "rank": "normal",
+      "from": "wowhead",
+      "group": false,
+      "steps": 2
+     },
+     "asap": 37,
+     "rec": 39
+    }
+   ]
+  },
+  {
    "id": 1713,
    "name": "Ankh of Life",
    "kind": "Trinket",
@@ -139425,7 +139713,7 @@
       "green": 45,
       "grey": 53
      },
-     "faction": "horde",
+     "faction": "both",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97821",
      "basis": {
@@ -144318,15 +144606,15 @@
      },
      "ref": "https://foreverchanges.pro/quest/716",
      "basis": {
-      "name": "Tar Creeper",
-      "level": 52,
+      "name": "Greater Rock Elemental",
+      "level": 44,
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "step": 713,
-      "steps": 7
+      "step": 712,
+      "steps": 4
      },
-     "asap": 42,
+     "asap": 41,
      "rec": 42
     }
    ]
@@ -154388,11 +154676,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Lord Vyletongue",
+     "npcId": 12236,
+     "zone": "Maraudon",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 45,
-     "rec": 45
+     "rec": 45,
+     "basis": {
+      "name": "Lord Vyletongue",
+      "level": 47,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -179820,43 +180118,6 @@
    ]
   },
   {
-   "id": 276879,
-   "name": "Backroom Bulwark",
-   "kind": "Shield",
-   "slot": "Shield",
-   "quality": 3,
-   "req": 51,
-   "obtain": 51,
-   "ilvl": 56,
-   "bind": "pickup",
-   "armor": 1930,
-   "block": 35,
-   "stats": {
-    "stamina": 12,
-    "spirit": 8
-   },
-   "bonus": {
-    "healing": 18,
-    "spellDamage": 6
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_shield_07",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 51,
-     "rec": 51
-    }
-   ]
-  },
-  {
    "id": 282019,
    "name": "Braided Seer Stones",
    "kind": "Neck",
@@ -184853,11 +185114,21 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Grizzle",
+     "npcId": 9028,
+     "zone": "Blackrock Depths",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 52,
-     "rec": 52
+     "rec": 52,
+     "basis": {
+      "name": "Grizzle",
+      "level": 54,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -185606,6 +185877,53 @@
      "rec": 52,
      "basis": {
       "name": "Verek",
+      "level": 55,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 276879,
+   "name": "Backroom Bulwark",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 3,
+   "req": 51,
+   "obtain": 52,
+   "ilvl": 56,
+   "bind": "pickup",
+   "armor": 1930,
+   "block": 35,
+   "stats": {
+    "stamina": 12,
+    "spirit": 8
+   },
+   "bonus": {
+    "healing": 18,
+    "spellDamage": 6
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_shield_07",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Phalanx",
+     "npcId": 9502,
+     "zone": "Blackrock Depths",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 51,
+     "rec": 52,
+     "basis": {
+      "name": "Phalanx",
       "level": 55,
       "rank": "elite",
       "from": "wowhead",
@@ -194197,10 +194515,11 @@
      "quest": "Water of Hyjal",
      "questId": 95273,
      "requiredLevel": 54,
-     "zone": null,
+     "zone": "Mount Hyjal",
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=95273",
+     "raid": true,
      "basis": {
       "from": "quest-level",
       "group": false
@@ -194241,10 +194560,11 @@
      "quest": "Water of Hyjal",
      "questId": 95273,
      "requiredLevel": 54,
-     "zone": null,
+     "zone": "Mount Hyjal",
      "faction": "both",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=95273",
+     "raid": true,
      "basis": {
       "from": "quest-level",
       "group": false
@@ -194386,111 +194706,6 @@
    ]
   },
   {
-   "id": 276394,
-   "name": "Luxurious Smoking Jacket",
-   "kind": "Cloth",
-   "slot": "Chest",
-   "quality": 3,
-   "req": 54,
-   "obtain": 54,
-   "ilvl": 59,
-   "bind": "pickup",
-   "armor": 84,
-   "stats": {
-    "intellect": 18
-   },
-   "bonus": {
-    "spellPower": 17
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_chest_cloth_47",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 54,
-     "rec": 54
-    }
-   ]
-  },
-  {
-   "id": 276395,
-   "name": "Grimm's Packing Gloves",
-   "kind": "Cloth",
-   "slot": "Hands",
-   "quality": 3,
-   "req": 54,
-   "obtain": 54,
-   "ilvl": 59,
-   "bind": "pickup",
-   "armor": 52,
-   "stats": {
-    "stamina": 20
-   },
-   "bonus": {
-    "hitRating": 10
-   },
-   "equip": [
-    "Equip: Increased Herbalism +4."
-   ],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_gauntlets_23",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 54,
-     "rec": 54
-    }
-   ]
-  },
-  {
-   "id": 276396,
-   "name": "Ezra's Seal of Authenticity",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 3,
-   "req": 54,
-   "obtain": 54,
-   "ilvl": 59,
-   "bind": "pickup",
-   "stats": {
-    "strength": 9,
-    "stamina": 12
-   },
-   "bonus": {
-    "dodgeRating": 6,
-    "defense": 3
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_21",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 54,
-     "rec": 54
-    }
-   ]
-  },
-  {
    "id": 280057,
    "name": "Robes of Dark Summons",
    "kind": "Cloth",
@@ -194517,7 +194732,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Impaan the Imprisoner",
+     "npcId": 247206,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 54,
@@ -194552,7 +194770,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Impaan the Imprisoner",
+     "npcId": 247206,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 54,
@@ -196456,10 +196677,11 @@
      "quest": "Threading a Solution",
      "questId": 95769,
      "requiredLevel": 54,
-     "zone": null,
+     "zone": "Mount Hyjal",
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=95769",
+     "raid": true,
      "basis": {
       "from": "quest-level",
       "group": false
@@ -196497,7 +196719,7 @@
      "quest": "Wood Remains",
      "questId": 97007,
      "requiredLevel": 54,
-     "zone": null,
+     "zone": "Undercity",
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=97007",
@@ -196541,7 +196763,7 @@
      "quest": "Wood Remains",
      "questId": 97007,
      "requiredLevel": 54,
-     "zone": null,
+     "zone": "Undercity",
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://www.wowhead.com/forever/quest=97007",
@@ -204355,109 +204577,6 @@
    ]
   },
   {
-   "id": 276434,
-   "name": "Black Guard Skullcap",
-   "kind": "Mail",
-   "slot": "Head",
-   "quality": 3,
-   "req": 55,
-   "obtain": 55,
-   "ilvl": 60,
-   "bind": "pickup",
-   "armor": 288,
-   "stats": {
-    "stamina": 19,
-    "spirit": 18
-   },
-   "bonus": {
-    "healing": 31,
-    "spellDamage": 10
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_helmet_18",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 55,
-     "rec": 55
-    }
-   ]
-  },
-  {
-   "id": 276455,
-   "name": "Swordsmith Mitts",
-   "kind": "Leather",
-   "slot": "Hands",
-   "quality": 3,
-   "req": 55,
-   "obtain": 55,
-   "ilvl": 60,
-   "bind": "pickup",
-   "armor": 106,
-   "stats": {
-    "intellect": 8
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_gauntlets_04",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 55,
-     "rec": 55
-    }
-   ]
-  },
-  {
-   "id": 276456,
-   "name": "Plague Defiled Buckler",
-   "kind": "Shield",
-   "slot": "Shield",
-   "quality": 3,
-   "req": 55,
-   "obtain": 55,
-   "ilvl": 60,
-   "bind": "pickup",
-   "armor": 2057,
-   "block": 38,
-   "stats": {
-    "stamina": 8
-   },
-   "bonus": {
-    "spellPower": 13
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_shield_09",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 55,
-     "rec": 55
-    }
-   ]
-  },
-  {
    "id": 277557,
    "name": "Skarr's Broken Gauntlet",
    "kind": "Trinket",
@@ -204574,7 +204693,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Bonesnout the Unbroken",
+     "npcId": 247198,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 55,
@@ -204610,7 +204732,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Withermaw",
+     "npcId": 247195,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 55,
@@ -204645,7 +204770,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Withermaw",
+     "npcId": 247195,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 55,
@@ -204680,7 +204808,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Withermaw",
+     "npcId": 247195,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 55,
@@ -206111,6 +206242,62 @@
       "from": "wowhead",
       "group": true
      }
+    }
+   ]
+  },
+  {
+   "id": 270126,
+   "name": "Conqueror's Pendant",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 3,
+   "req": 0,
+   "obtain": 55,
+   "ilvl": 58,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 7,
+    "intellect": 7,
+    "spirit": 5
+   },
+   "bonus": {
+    "spellPower": 13
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_necklace_03",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Operation: Death to Angerforge",
+     "questId": 4132,
+     "level": 58,
+     "requiredLevel": 52,
+     "zone": "Blackrock Depths",
+     "dungeon": true,
+     "bands": {
+      "red": 52,
+      "orange": 54,
+      "yellow": 56
+     },
+     "faction": "horde",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/4132",
+     "basis": {
+      "name": null,
+      "level": 58,
+      "rank": "normal",
+      "from": "step-level",
+      "group": true,
+      "step": 4121,
+      "steps": 3
+     },
+     "asap": 53,
+     "rec": 55
     }
    ]
   },
@@ -210714,76 +210901,6 @@
    ]
   },
   {
-   "id": 276072,
-   "name": "Soulwoven Drape",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 3,
-   "req": 56,
-   "obtain": 56,
-   "ilvl": 61,
-   "bind": "pickup",
-   "armor": 43,
-   "stats": {
-    "stamina": 8,
-    "spirit": 12
-   },
-   "bonus": {
-    "healing": 20,
-    "spellDamage": 7
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_cape_20",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 56,
-     "rec": 56
-    }
-   ]
-  },
-  {
-   "id": 276073,
-   "name": "Band of the Damned",
-   "kind": "Ring",
-   "slot": "Finger",
-   "quality": 3,
-   "req": 56,
-   "obtain": 56,
-   "ilvl": 61,
-   "bind": "pickup",
-   "stats": {
-    "intellect": 11,
-    "spirit": 6
-   },
-   "bonus": {
-    "spellPower": 15
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_jewelry_ring_17",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 56,
-     "rec": 56
-    }
-   ]
-  },
-  {
    "id": 280065,
    "name": "Behemoth Bones",
    "kind": "Trinket",
@@ -210808,7 +210925,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Blackmaw Behemoth",
+     "npcId": 247207,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 56,
@@ -210843,7 +210963,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Blackmaw Behemoth",
+     "npcId": 247207,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 56,
@@ -210878,7 +211001,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Blackmaw Behemoth",
+     "npcId": 247207,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 56,
@@ -210913,7 +211039,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Elder Shaman Bloodmane",
+     "npcId": 247209,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 56,
@@ -210949,7 +211078,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Elder Shaman Bloodmane",
+     "npcId": 247209,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 56,
@@ -210980,7 +211112,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Unbound Spirit",
+     "npcId": 247231,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 56,
@@ -211015,7 +211150,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Unbound Spirit",
+     "npcId": 247231,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 56,
@@ -219236,7 +219374,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Varrox Bleakhoof",
+     "npcId": 247234,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 57,
@@ -219270,7 +219411,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Varrox Bleakhoof",
+     "npcId": 247234,
+     "zone": "Blackmaw Hold",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 57,
@@ -222337,6 +222481,96 @@
       "level": 60,
       "rank": "boss",
       "from": "questie",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 276072,
+   "name": "Soulwoven Drape",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 3,
+   "req": 56,
+   "obtain": 57,
+   "ilvl": 61,
+   "bind": "pickup",
+   "armor": 43,
+   "stats": {
+    "stamina": 8,
+    "spirit": 12
+   },
+   "bonus": {
+    "healing": 20,
+    "spellDamage": 7
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_cape_20",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Vectus",
+     "npcId": 10432,
+     "zone": "Scholomance",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 56,
+     "rec": 57,
+     "basis": {
+      "name": "Vectus",
+      "level": 60,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 276073,
+   "name": "Band of the Damned",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 3,
+   "req": 56,
+   "obtain": 57,
+   "ilvl": 61,
+   "bind": "pickup",
+   "stats": {
+    "intellect": 11,
+    "spirit": 6
+   },
+   "bonus": {
+    "spellPower": 15
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_17",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Vectus",
+     "npcId": 10432,
+     "zone": "Scholomance",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 56,
+     "rec": 57,
+     "basis": {
+      "name": "Vectus",
+      "level": 60,
+      "rank": "elite",
+      "from": "wowhead",
       "group": true
      }
     }
@@ -233943,6 +234177,141 @@
    ]
   },
   {
+   "id": 276394,
+   "name": "Luxurious Smoking Jacket",
+   "kind": "Cloth",
+   "slot": "Chest",
+   "quality": 3,
+   "req": 54,
+   "obtain": 58,
+   "ilvl": 59,
+   "bind": "pickup",
+   "armor": 84,
+   "stats": {
+    "intellect": 18
+   },
+   "bonus": {
+    "spellPower": 17
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_chest_cloth_47",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Fras Siabi / Ezra Grimm",
+     "npcId": 11058,
+     "zone": "Stratholme",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 56,
+     "rec": 58,
+     "basis": {
+      "name": "Fras Siabi / Ezra Grimm",
+      "level": 61,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 276395,
+   "name": "Grimm's Packing Gloves",
+   "kind": "Cloth",
+   "slot": "Hands",
+   "quality": 3,
+   "req": 54,
+   "obtain": 58,
+   "ilvl": 59,
+   "bind": "pickup",
+   "armor": 52,
+   "stats": {
+    "stamina": 20
+   },
+   "bonus": {
+    "hitRating": 10
+   },
+   "equip": [
+    "Equip: Increased Herbalism +4."
+   ],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_gauntlets_23",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Fras Siabi / Ezra Grimm",
+     "npcId": 11058,
+     "zone": "Stratholme",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 56,
+     "rec": 58,
+     "basis": {
+      "name": "Fras Siabi / Ezra Grimm",
+      "level": 61,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 276396,
+   "name": "Ezra's Seal of Authenticity",
+   "kind": "Ring",
+   "slot": "Finger",
+   "quality": 3,
+   "req": 54,
+   "obtain": 58,
+   "ilvl": 59,
+   "bind": "pickup",
+   "stats": {
+    "strength": 9,
+    "stamina": 12
+   },
+   "bonus": {
+    "dodgeRating": 6,
+    "defense": 3
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_jewelry_ring_21",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Fras Siabi / Ezra Grimm",
+     "npcId": 11058,
+     "zone": "Stratholme",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 56,
+     "rec": 58,
+     "basis": {
+      "name": "Fras Siabi / Ezra Grimm",
+      "level": 61,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
    "id": 22099,
    "name": "Gauntlets of The Five Thunders",
    "kind": "Mail",
@@ -241903,6 +242272,139 @@
      },
      "asap": 55,
      "rec": 59
+    }
+   ]
+  },
+  {
+   "id": 276434,
+   "name": "Black Guard Skullcap",
+   "kind": "Mail",
+   "slot": "Head",
+   "quality": 3,
+   "req": 55,
+   "obtain": 59,
+   "ilvl": 60,
+   "bind": "pickup",
+   "armor": 288,
+   "stats": {
+    "stamina": 19,
+    "spirit": 18
+   },
+   "bonus": {
+    "healing": 31,
+    "spellDamage": 10
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_helmet_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Black Guard Swordsmith",
+     "npcId": 11121,
+     "zone": "Stratholme",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 57,
+     "rec": 59,
+     "basis": {
+      "name": "Black Guard Swordsmith",
+      "level": 62,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 276455,
+   "name": "Swordsmith Mitts",
+   "kind": "Leather",
+   "slot": "Hands",
+   "quality": 3,
+   "req": 55,
+   "obtain": 59,
+   "ilvl": 60,
+   "bind": "pickup",
+   "armor": 106,
+   "stats": {
+    "intellect": 8
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_gauntlets_04",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Black Guard Swordsmith",
+     "npcId": 11121,
+     "zone": "Stratholme",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 57,
+     "rec": 59,
+     "basis": {
+      "name": "Black Guard Swordsmith",
+      "level": 62,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
+    }
+   ]
+  },
+  {
+   "id": 276456,
+   "name": "Plague Defiled Buckler",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 3,
+   "req": 55,
+   "obtain": 59,
+   "ilvl": 60,
+   "bind": "pickup",
+   "armor": 2057,
+   "block": 38,
+   "stats": {
+    "stamina": 8
+   },
+   "bonus": {
+    "spellPower": 13
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_shield_09",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "boss",
+     "npc": "Black Guard Swordsmith",
+     "npcId": 11121,
+     "zone": "Stratholme",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 57,
+     "rec": 59,
+     "basis": {
+      "name": "Black Guard Swordsmith",
+      "level": 62,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true
+     }
     }
    ]
   },
@@ -270981,7 +271483,7 @@
    ],
    "use": [],
    "chance": [],
-   "era": "same",
+   "era": "changed",
    "numbers": "client",
    "icon": "inv_misc_ticket_tarot_heroism_01",
    "raceMask": -1,
@@ -271028,7 +271530,7 @@
    ],
    "use": [],
    "chance": [],
-   "era": "same",
+   "era": "changed",
    "numbers": "client",
    "icon": "inv_misc_ticket_tarot_bluedragon_01",
    "raceMask": -1,
@@ -271075,7 +271577,7 @@
    ],
    "use": [],
    "chance": [],
-   "era": "same",
+   "era": "changed",
    "numbers": "client",
    "icon": "inv_misc_ticket_tarot_maelstrom_01",
    "raceMask": -1,
@@ -271122,7 +271624,7 @@
    ],
    "use": [],
    "chance": [],
-   "era": "same",
+   "era": "changed",
    "numbers": "client",
    "icon": "inv_misc_ticket_tarot_twistingnether_01",
    "raceMask": -1,
@@ -280618,302 +281120,6 @@
    ]
   },
   {
-   "id": 273932,
-   "name": "Spiritcaller Leggings",
-   "kind": "Mail",
-   "slot": "Legs",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 344,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pant_mail_raidshamanhyjalc60_d_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Leatherworking",
-     "yellow": 320,
-     "grey": 330,
-     "learn": {
-      "type": "drop",
-      "learnAt": 300
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 273933,
-   "name": "Spiritcaller Grips",
-   "kind": "Mail",
-   "slot": "Hands",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 245,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_glove_mail_raidshamanhyjalc60_d_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Leatherworking",
-     "yellow": 320,
-     "grey": 330,
-     "learn": {
-      "type": "drop",
-      "learnAt": 300
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 273934,
-   "name": "Spiritcaller Spaulders",
-   "kind": "Mail",
-   "slot": "Shoulder",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 294,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_shoulder_mail_raidshamanhyjalc60_d_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Leatherworking",
-     "yellow": 320,
-     "grey": 330,
-     "learn": {
-      "type": "drop",
-      "learnAt": 300
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 273935,
-   "name": "Spiritcaller Treads",
-   "kind": "Mail",
-   "slot": "Feet",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 270,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_boot_mail_raidshamanhyjalc60_d_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Leatherworking",
-     "yellow": 320,
-     "grey": 330,
-     "learn": {
-      "type": "drop",
-      "learnAt": 300
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 273936,
-   "name": "Spiritcaller Pants",
-   "kind": "Mail",
-   "slot": "Legs",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 344,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pant_mail_raidshamanhyjalc60_d_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Leatherworking",
-     "yellow": 320,
-     "grey": 330,
-     "learn": {
-      "type": "drop",
-      "learnAt": 300
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 273937,
-   "name": "Spiritcaller Gauntlets",
-   "kind": "Mail",
-   "slot": "Hands",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 245,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_glove_mail_raidshamanhyjalc60_d_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Leatherworking",
-     "yellow": 320,
-     "grey": 330,
-     "learn": {
-      "type": "drop",
-      "learnAt": 300
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 273938,
-   "name": "Spiritcaller Epaulets",
-   "kind": "Mail",
-   "slot": "Shoulder",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 294,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_shoulder_mail_raidshamanhyjalc60_d_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Leatherworking",
-     "yellow": 320,
-     "grey": 330,
-     "learn": {
-      "type": "drop",
-      "learnAt": 300
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
-   "id": 273939,
-   "name": "Spiritcaller Greaves",
-   "kind": "Mail",
-   "slot": "Feet",
-   "quality": 4,
-   "req": 60,
-   "obtain": 60,
-   "ilvl": 61,
-   "bind": "equip",
-   "armor": 270,
-   "stats": {},
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_boot_mail_raidshamanhyjalc60_d_01",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "crafted",
-     "profession": "Leatherworking",
-     "yellow": 320,
-     "grey": 330,
-     "learn": {
-      "type": "drop",
-      "learnAt": 300
-     },
-     "faction": "both",
-     "confidence": "client-data",
-     "asap": 60,
-     "rec": 60
-    }
-   ]
-  },
-  {
    "id": 19321,
    "name": "The Immovable Object",
    "kind": "Shield",
@@ -281637,6 +281843,354 @@
      "zone": "Stranglethorn Vale",
      "faction": "both",
      "confidence": "community-untested",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 273932,
+   "name": "Spiritcaller Leggings",
+   "kind": "Mail",
+   "slot": "Legs",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 344,
+   "stats": {
+    "stamina": 19,
+    "strength": 16,
+    "intellect": 15,
+    "agility": 14
+   },
+   "bonus": {
+    "expertiseRating": 12
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pant_mail_raidshamanhyjalc60_d_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Leatherworking",
+     "yellow": 320,
+     "grey": 330,
+     "learn": {
+      "type": "drop",
+      "learnAt": 300
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 273933,
+   "name": "Spiritcaller Grips",
+   "kind": "Mail",
+   "slot": "Hands",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 245,
+   "stats": {
+    "stamina": 15,
+    "strength": 13,
+    "intellect": 10
+   },
+   "bonus": {
+    "critRating": 14
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_glove_mail_raidshamanhyjalc60_d_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Leatherworking",
+     "yellow": 320,
+     "grey": 330,
+     "learn": {
+      "type": "drop",
+      "learnAt": 300
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 273934,
+   "name": "Spiritcaller Spaulders",
+   "kind": "Mail",
+   "slot": "Shoulder",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 294,
+   "stats": {
+    "stamina": 14,
+    "strength": 21,
+    "intellect": 11
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_shoulder_mail_raidshamanhyjalc60_d_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Leatherworking",
+     "yellow": 320,
+     "grey": 330,
+     "learn": {
+      "type": "drop",
+      "learnAt": 300
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 273935,
+   "name": "Spiritcaller Treads",
+   "kind": "Mail",
+   "slot": "Feet",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 270,
+   "stats": {
+    "stamina": 14,
+    "strength": 12,
+    "intellect": 11,
+    "agility": 11
+   },
+   "bonus": {
+    "hitRating": 9
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_boot_mail_raidshamanhyjalc60_d_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Leatherworking",
+     "yellow": 320,
+     "grey": 330,
+     "learn": {
+      "type": "drop",
+      "learnAt": 300
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 273936,
+   "name": "Spiritcaller Pants",
+   "kind": "Mail",
+   "slot": "Legs",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 344,
+   "stats": {
+    "stamina": 20,
+    "intellect": 19,
+    "spirit": 12
+   },
+   "bonus": {
+    "critRating": 14,
+    "healing": 22,
+    "spellDamage": 7
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pant_mail_raidshamanhyjalc60_d_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Leatherworking",
+     "yellow": 320,
+     "grey": 330,
+     "learn": {
+      "type": "drop",
+      "learnAt": 300
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 273937,
+   "name": "Spiritcaller Gauntlets",
+   "kind": "Mail",
+   "slot": "Hands",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 245,
+   "stats": {
+    "stamina": 14,
+    "intellect": 21
+   },
+   "bonus": {
+    "healing": 24,
+    "spellDamage": 8
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_glove_mail_raidshamanhyjalc60_d_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Leatherworking",
+     "yellow": 320,
+     "grey": 330,
+     "learn": {
+      "type": "drop",
+      "learnAt": 300
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 273938,
+   "name": "Spiritcaller Epaulets",
+   "kind": "Mail",
+   "slot": "Shoulder",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 294,
+   "stats": {
+    "stamina": 15,
+    "intellect": 14,
+    "spirit": 12
+   },
+   "bonus": {
+    "healing": 24,
+    "spellDamage": 8
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_shoulder_mail_raidshamanhyjalc60_d_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Leatherworking",
+     "yellow": 320,
+     "grey": 330,
+     "learn": {
+      "type": "drop",
+      "learnAt": 300
+     },
+     "faction": "both",
+     "confidence": "client-data",
+     "asap": 60,
+     "rec": 60
+    }
+   ]
+  },
+  {
+   "id": 273939,
+   "name": "Spiritcaller Greaves",
+   "kind": "Mail",
+   "slot": "Feet",
+   "quality": 4,
+   "req": 60,
+   "obtain": 60,
+   "ilvl": 60,
+   "bind": "equip",
+   "armor": 270,
+   "stats": {
+    "stamina": 14,
+    "intellect": 12,
+    "spirit": 11
+   },
+   "bonus": {
+    "healing": 34,
+    "spellDamage": 11
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_boot_mail_raidshamanhyjalc60_d_01",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "crafted",
+     "profession": "Leatherworking",
+     "yellow": 320,
+     "grey": 330,
+     "learn": {
+      "type": "drop",
+      "learnAt": 300
+     },
+     "faction": "both",
+     "confidence": "client-data",
      "asap": 60,
      "rec": 60
     }

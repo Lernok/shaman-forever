@@ -1753,14 +1753,14 @@
    "faction": null,
    "instance": null,
    "hardest": {
-    "id": 6527,
-    "name": "Tar Creeper",
-    "level": 52,
+    "id": 2736,
+    "name": "Greater Rock Elemental",
+    "level": 44,
     "rank": "normal",
     "from": "wowhead",
-    "step": 713
+    "step": 712
    },
-   "steps": 7
+   "steps": 4
   },
   "717": {
    "classes": null,
@@ -7712,8 +7712,10 @@
    "steps": 2
   },
   "8918": {
-   "classes": null,
-   "minLevel": null,
+   "classes": [
+    "SHAMAN"
+   ],
+   "minLevel": 58,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -7726,8 +7728,10 @@
    "steps": 1
   },
   "8942": {
-   "classes": null,
-   "minLevel": null,
+   "classes": [
+    "SHAMAN"
+   ],
+   "minLevel": 58,
    "faction": "conflict",
    "instance": null,
    "hardest": {
@@ -7755,8 +7759,10 @@
    "steps": 25
   },
   "8957": {
-   "classes": null,
-   "minLevel": null,
+   "classes": [
+    "SHAMAN"
+   ],
+   "minLevel": 58,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -7769,8 +7775,10 @@
    "steps": 7
   },
   "9011": {
-   "classes": null,
-   "minLevel": null,
+   "classes": [
+    "SHAMAN"
+   ],
+   "minLevel": 58,
    "faction": "horde",
    "instance": null,
    "hardest": {
@@ -8095,9 +8103,7 @@
    "steps": 1
   },
   "78830": {
-   "classes": [
-    "HUNTER"
-   ],
+   "classes": null,
    "minLevel": 26,
    "faction": null,
    "instance": null,
@@ -8108,7 +8114,7 @@
     "rank": "normal",
     "from": "wowhead"
    },
-   "steps": 1
+   "steps": 2
   },
   "79242": {
    "classes": null,
@@ -10179,7 +10185,7 @@
   "97821": {
    "classes": null,
    "minLevel": 37,
-   "faction": "horde",
+   "faction": null,
    "instance": null,
    "hardest": null,
    "steps": 1
@@ -18156,6 +18162,12 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "10433": {
+   "name": "Marduk Blackpool",
+   "level": 58,
+   "rank": "elite",
+   "from": "wowhead"
+  },
   "10435": {
    "name": "Magistrate Barthilas",
    "level": 58,
@@ -18492,6 +18504,12 @@
    "rank": "elite",
    "from": "wowhead"
   },
+  "11032": {
+   "name": "Malor the Zealous",
+   "level": 60,
+   "rank": "elite",
+   "from": "wowhead"
+  },
   "11043": {
    "name": "Crimson Monk",
    "level": 60,
@@ -18520,6 +18538,18 @@
    "name": "Cauldron Lord Soulwrath",
    "level": 58,
    "rank": "normal",
+   "from": "wowhead"
+  },
+  "11120": {
+   "name": "Crimson Hammersmith",
+   "level": 60,
+   "rank": "elite",
+   "from": "wowhead"
+  },
+  "11121": {
+   "name": "Black Guard Swordsmith",
+   "level": 62,
+   "rank": "elite",
    "from": "wowhead"
   },
   "11122": {
@@ -20474,6 +20504,48 @@
   },
   "247126": {
    "name": "Atrexis the Grave Knight",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "247195": {
+   "name": "Withermaw",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "247198": {
+   "name": "Bonesnout the Unbroken",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "247206": {
+   "name": "Impaan the Imprisoner",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "247207": {
+   "name": "Blackmaw Behemoth",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "247209": {
+   "name": "Elder Shaman Bloodmane",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "247231": {
+   "name": "Unbound Spirit",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "247234": {
+   "name": "Varrox Bleakhoof",
    "level": null,
    "rank": "elite",
    "from": null

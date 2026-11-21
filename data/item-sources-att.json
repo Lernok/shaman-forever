@@ -1891,7 +1891,7 @@
      "quest": "Power Stones",
      "minLevel": 30,
      "faction": "both",
-     "zone": "Badlands"
+     "zone": "Uldaman"
     }
    ]
   },
@@ -2073,7 +2073,7 @@
      "quest": "Solution to Doom",
      "minLevel": 30,
      "faction": "both",
-     "zone": "Badlands"
+     "zone": "Uldaman"
     }
    ]
   },
@@ -2086,7 +2086,7 @@
      "quest": "Solution to Doom",
      "minLevel": 30,
      "faction": "both",
-     "zone": "Badlands"
+     "zone": "Uldaman"
     }
    ]
   },
@@ -4959,7 +4959,7 @@
      "quest": "Threading a Solution",
      "minLevel": 54,
      "faction": "horde",
-     "zone": null
+     "zone": "Mount Hyjal"
     }
    ]
   },
@@ -5541,7 +5541,7 @@
      "quest": "Deeproar Down",
      "minLevel": 54,
      "faction": "both",
-     "zone": null
+     "zone": "Mount Hyjal"
     }
    ]
   },
@@ -5554,7 +5554,7 @@
      "quest": "Deeproar Down",
      "minLevel": 54,
      "faction": "both",
-     "zone": null
+     "zone": "Mount Hyjal"
     }
    ]
   },
@@ -5588,7 +5588,7 @@
      "quest": "Water of Hyjal",
      "minLevel": 54,
      "faction": "both",
-     "zone": null
+     "zone": "Mount Hyjal"
     }
    ]
   },
@@ -5601,7 +5601,7 @@
      "quest": "Water of Hyjal",
      "minLevel": 54,
      "faction": "both",
-     "zone": null
+     "zone": "Mount Hyjal"
     }
    ]
   },
@@ -5969,6 +5969,50 @@
     }
    ]
   },
+  "275864": {
+   "name": "Putridus Wall",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 12236,
+     "npc": "Lord Vyletongue",
+     "zone": "Maraudon"
+    }
+   ]
+  },
+  "276069": {
+   "name": "Gravetoll Gavel",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 10433,
+     "npc": "Marduk Blackpool",
+     "zone": "Scholomance"
+    }
+   ]
+  },
+  "276072": {
+   "name": "Soulwoven Drape",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 10432,
+     "npc": "Vectus",
+     "zone": "Scholomance"
+    }
+   ]
+  },
+  "276073": {
+   "name": "Band of the Damned",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 10432,
+     "npc": "Vectus",
+     "zone": "Scholomance"
+    }
+   ]
+  },
   "276105": {
    "name": "Scoutmaster's Eyepatch",
    "sources": [
@@ -5991,7 +6035,7 @@
      "quest": "Wood Remains",
      "minLevel": 54,
      "faction": "horde",
-     "zone": null
+     "zone": "Undercity"
     }
    ]
   },
@@ -6004,7 +6048,7 @@
      "quest": "Wood Remains",
      "minLevel": 54,
      "faction": "horde",
-     "zone": null
+     "zone": "Undercity"
     }
    ]
   },
@@ -6057,6 +6101,127 @@
      "minLevel": 54,
      "faction": "both",
      "zone": "Mount Hyjal"
+    }
+   ]
+  },
+  "276394": {
+   "name": "Luxurious Smoking Jacket",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11058,
+     "npc": "Fras Siabi / Ezra Grimm",
+     "zone": "Stratholme"
+    }
+   ]
+  },
+  "276395": {
+   "name": "Grimm's Packing Gloves",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11058,
+     "npc": "Fras Siabi / Ezra Grimm",
+     "zone": "Stratholme"
+    }
+   ]
+  },
+  "276396": {
+   "name": "Ezra's Seal of Authenticity",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11058,
+     "npc": "Fras Siabi / Ezra Grimm",
+     "zone": "Stratholme"
+    }
+   ]
+  },
+  "276397": {
+   "name": "Hand of the Zealous",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11032,
+     "npc": "Malor the Zealous",
+     "zone": "Stratholme"
+    }
+   ]
+  },
+  "276398": {
+   "name": "Scarlet Malice",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11032,
+     "npc": "Malor the Zealous",
+     "zone": "Stratholme"
+    }
+   ]
+  },
+  "276403": {
+   "name": "Scarlet Bonebreaker",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11120,
+     "npc": "Crimson Hammersmith",
+     "zone": "Stratholme"
+    }
+   ]
+  },
+  "276404": {
+   "name": "Masterwork Crimson Hammer",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11120,
+     "npc": "Crimson Hammersmith",
+     "zone": "Stratholme"
+    }
+   ]
+  },
+  "276419": {
+   "name": "Lightcrest Hammer",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11120,
+     "npc": "Crimson Hammersmith",
+     "zone": "Stratholme"
+    }
+   ]
+  },
+  "276434": {
+   "name": "Black Guard Skullcap",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11121,
+     "npc": "Black Guard Swordsmith",
+     "zone": "Stratholme"
+    }
+   ]
+  },
+  "276455": {
+   "name": "Swordsmith Mitts",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11121,
+     "npc": "Black Guard Swordsmith",
+     "zone": "Stratholme"
+    }
+   ]
+  },
+  "276456": {
+   "name": "Plague Defiled Buckler",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 11121,
+     "npc": "Black Guard Swordsmith",
+     "zone": "Stratholme"
     }
    ]
   },
@@ -6281,6 +6446,17 @@
     }
    ]
   },
+  "276879": {
+   "name": "Backroom Bulwark",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 9502,
+     "npc": "Phalanx",
+     "zone": "Blackrock Depths"
+    }
+   ]
+  },
   "276884": {
    "name": "Verek's Loyal Wraps",
    "sources": [
@@ -6446,6 +6622,17 @@
     }
    ]
   },
+  "277117": {
+   "name": "Savage Gladiator Shoulders",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 9028,
+     "npc": "Grizzle",
+     "zone": "Blackrock Depths"
+    }
+   ]
+  },
   "277203": {
    "name": "Scholarly Pendant",
    "sources": [
@@ -6504,7 +6691,7 @@
     {
      "type": "quest",
      "questId": 78830,
-     "quest": "Terror of the Desert Skies (Hunter)",
+     "quest": "Terror of the Desert Skies (Hemet Nesingwary)",
      "minLevel": 26,
      "faction": "both",
      "zone": "Stranglethorn Vale"
@@ -6530,7 +6717,7 @@
     {
      "type": "quest",
      "questId": 78830,
-     "quest": "Terror of the Desert Skies (Hunter)",
+     "quest": "Terror of the Desert Skies (Hemet Nesingwary)",
      "minLevel": 26,
      "faction": "both",
      "zone": "Stranglethorn Vale"
@@ -6843,8 +7030,8 @@
      "questId": 97821,
      "quest": "Mirage Mirror",
      "minLevel": 37,
-     "faction": "horde",
-     "zone": null
+     "faction": "both",
+     "zone": "Badlands"
     }
    ]
   },
@@ -7940,6 +8127,193 @@
      "minLevel": 55,
      "faction": "horde",
      "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280056": {
+   "name": "Flameslash Crescent",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247206,
+     "npc": "Impaan the Imprisoner",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280057": {
+   "name": "Robes of Dark Summons",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247206,
+     "npc": "Impaan the Imprisoner",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280058": {
+   "name": "Impish Chain Hood",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247206,
+     "npc": "Impaan the Imprisoner",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280060": {
+   "name": "Lucky Shovelnose Tuft",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247198,
+     "npc": "Bonesnout the Unbroken",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280062": {
+   "name": "Cloak of the Fleshborer",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247195,
+     "npc": "Withermaw",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280063": {
+   "name": "Bloodfur Bulwark",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247195,
+     "npc": "Withermaw",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280064": {
+   "name": "Withering Grips",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247195,
+     "npc": "Withermaw",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280065": {
+   "name": "Behemoth Bones",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247207,
+     "npc": "Blackmaw Behemoth",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280066": {
+   "name": "Trousers of the Ebon Giant",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247207,
+     "npc": "Blackmaw Behemoth",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280067": {
+   "name": "Blackmaw Chain Belt",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247207,
+     "npc": "Blackmaw Behemoth",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280068": {
+   "name": "Bloody Claws of Attack",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247209,
+     "npc": "Elder Shaman Bloodmane",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280069": {
+   "name": "Shamanic Wristguards",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247209,
+     "npc": "Elder Shaman Bloodmane",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280070": {
+   "name": "Veilpiercer Girdle",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247209,
+     "npc": "Elder Shaman Bloodmane",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280071": {
+   "name": "Flamebreak Talisman",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247231,
+     "npc": "Unbound Spirit",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280072": {
+   "name": "Cowl of Dark Ambition",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247231,
+     "npc": "Unbound Spirit",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280074": {
+   "name": "Scalding Flamehoof",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247234,
+     "npc": "Varrox Bleakhoof",
+     "zone": "Blackmaw Hold"
+    }
+   ]
+  },
+  "280076": {
+   "name": "Horns of Varrox",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 247234,
+     "npc": "Varrox Bleakhoof",
+     "zone": "Blackmaw Hold"
     }
    ]
   },
