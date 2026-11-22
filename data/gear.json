@@ -2953,41 +2953,6 @@
    ]
   },
   {
-   "id": 270127,
-   "name": "Incanter's Pantaloons",
-   "kind": "Cloth",
-   "slot": "Legs",
-   "quality": 2,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 57,
-   "bind": "pickup",
-   "armor": 65,
-   "stats": {
-    "intellect": 13
-   },
-   "bonus": {
-    "spellPower": 14,
-    "mp5": 5
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_pants_10",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
    "id": 18637,
    "name": "Major Recombobulator",
    "kind": "Trinket",
@@ -130293,12 +130258,9 @@
      "type": "quest",
      "quest": "The Curse of the Tides",
      "questId": 611,
+     "level": 40,
      "requiredLevel": 32,
      "zone": "Stranglethorn Vale",
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/611",
-     "level": 40,
      "bands": {
       "red": 32,
       "orange": 36,
@@ -130306,6 +130268,9 @@
       "green": 43,
       "grey": 51
      },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/611",
      "basis": {
       "name": "Gazban",
       "level": 40,
@@ -130348,12 +130313,9 @@
      "type": "quest",
      "quest": "The Curse of the Tides",
      "questId": 611,
+     "level": 40,
      "requiredLevel": 32,
      "zone": "Stranglethorn Vale",
-     "faction": "alliance",
-     "confidence": "community-untested",
-     "ref": "https://foreverchanges.pro/quest/611",
-     "level": 40,
      "bands": {
       "red": 32,
       "orange": 36,
@@ -130361,6 +130323,9 @@
       "green": 43,
       "grey": 51
      },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/611",
      "basis": {
       "name": "Gazban",
       "level": 40,
@@ -234308,6 +234273,60 @@
       "from": "wowhead",
       "group": true
      }
+    }
+   ]
+  },
+  {
+   "id": 270127,
+   "name": "Incanter's Pantaloons",
+   "kind": "Cloth",
+   "slot": "Legs",
+   "quality": 2,
+   "req": 0,
+   "obtain": 58,
+   "ilvl": 57,
+   "bind": "pickup",
+   "armor": 65,
+   "stats": {
+    "intellect": 13
+   },
+   "bonus": {
+    "spellPower": 14,
+    "mp5": 5
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_pants_10",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Pusillin and the Elder Azj'Tordin",
+     "questId": 7441,
+     "level": 58,
+     "requiredLevel": null,
+     "zone": "Dire Maul",
+     "dungeon": true,
+     "bands": {
+      "orange": 54,
+      "yellow": 56
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7441",
+     "basis": {
+      "name": "Pusillin",
+      "level": 57,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 1
+     },
+     "asap": 58,
+     "rec": 58
     }
    ]
   },

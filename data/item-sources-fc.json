@@ -1,7 +1,7 @@
 {
  "_readme": "Fuentes de misión del equipo nuevo de Forever (items) y datos de Forever de las misiones de Classic que dan equipo (quests), leídos de foreverchanges.pro, un dato por ítem o misión, citado en ref. Generado por scripts/fetch-item-sources.js; no editar a mano: las correcciones van en data/item-sources.json.",
  "source": "https://foreverchanges.pro",
- "fetched": "2026-11-21",
+ "fetched": "2026-11-22",
  "items": {
   "246164": {
    "name": "Skullthumper",
@@ -3066,6 +3066,52 @@
     }
    ]
   },
+  "270076": {
+   "name": "Tidal Bracers",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Curse of the Tides",
+     "questId": 611,
+     "level": 40,
+     "requiredLevel": 32,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 32,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/611"
+    }
+   ]
+  },
+  "270077": {
+   "name": "Undertow Legguards",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "The Curse of the Tides",
+     "questId": 611,
+     "level": 40,
+     "requiredLevel": 32,
+     "zone": "Stranglethorn Vale",
+     "bands": {
+      "red": 32,
+      "orange": 36,
+      "yellow": 38,
+      "green": 43,
+      "grey": 51
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/611"
+    }
+   ]
+  },
   "270078": {
    "name": "Guardian Staff",
    "sources": [
@@ -3935,6 +3981,27 @@
      "faction": "horde",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/4132"
+    }
+   ]
+  },
+  "270127": {
+   "name": "Incanter's Pantaloons",
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Pusillin and the Elder Azj'Tordin",
+     "questId": 7441,
+     "level": 58,
+     "requiredLevel": null,
+     "zone": "Dire Maul",
+     "dungeon": true,
+     "bands": {
+      "orange": 54,
+      "yellow": 56
+     },
+     "faction": "both",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7441"
     }
    ]
   },
