@@ -121734,10 +121734,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97048",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Colonel Kurzen",
+      "level": 40,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 97047,
+      "steps": 2
      },
-     "asap": 30,
+     "asap": 35,
      "rec": 37
     }
    ]
@@ -121785,10 +121790,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97048",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Colonel Kurzen",
+      "level": 40,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 97047,
+      "steps": 2
      },
-     "asap": 30,
+     "asap": 35,
      "rec": 37
     }
    ]
@@ -121836,10 +121846,15 @@
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/97048",
      "basis": {
-      "from": "quest-level",
-      "group": false
+      "name": "Colonel Kurzen",
+      "level": 40,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "step": 97047,
+      "steps": 2
      },
-     "asap": 30,
+     "asap": 35,
      "rec": 37
     }
    ]
@@ -126203,7 +126218,7 @@
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 1
+      "steps": 4
      },
      "asap": 37,
      "rec": 39
@@ -126250,7 +126265,7 @@
       "rank": "normal",
       "from": "wowhead",
       "group": false,
-      "steps": 1
+      "steps": 4
      },
      "asap": 37,
      "rec": 39
@@ -196445,6 +196460,33 @@
    "sources": [
     {
      "type": "quest",
+     "quest": "Lethtendris's Web (Alliance)",
+     "questId": 7488,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Dire Maul",
+     "dungeon": true,
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7488",
+     "basis": {
+      "name": "Lethtendris",
+      "level": 57,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 54,
+     "rec": 54
+    },
+    {
+     "type": "quest",
      "quest": "Lethtendris's Web (Horde)",
      "questId": 7489,
      "level": 57,
@@ -196496,6 +196538,33 @@
    "icon": "inv_bracer_18",
    "raceMask": -1,
    "sources": [
+    {
+     "type": "quest",
+     "quest": "Lethtendris's Web (Alliance)",
+     "questId": 7488,
+     "level": 57,
+     "requiredLevel": 54,
+     "zone": "Dire Maul",
+     "dungeon": true,
+     "bands": {
+      "orange": 54,
+      "yellow": 55,
+      "green": 60
+     },
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://foreverchanges.pro/quest/7488",
+     "basis": {
+      "name": "Lethtendris",
+      "level": 57,
+      "rank": "elite",
+      "from": "wowhead",
+      "group": true,
+      "steps": 2
+     },
+     "asap": 54,
+     "rec": 54
+    },
     {
      "type": "quest",
      "quest": "Lethtendris's Web (Horde)",

@@ -8128,7 +8128,7 @@
     "rank": "normal",
     "from": "wowhead"
    },
-   "steps": 1
+   "steps": 4
   },
   "79442": {
    "classes": [
@@ -9976,8 +9976,15 @@
    "minLevel": 30,
    "faction": null,
    "instance": null,
-   "hardest": null,
-   "steps": 1
+   "hardest": {
+    "id": 813,
+    "name": "Colonel Kurzen",
+    "level": 40,
+    "rank": "elite",
+    "from": "wowhead",
+    "step": 97047
+   },
+   "steps": 2
   },
   "97049": {
    "classes": null,
@@ -13443,6 +13450,12 @@
   "2793": {
    "name": "Kor'gresh Coldrage",
    "level": 39,
+   "rank": "normal",
+   "from": "wowhead"
+  },
+  "2832": {
+   "name": "Nixxrax Fillamug",
+   "level": 38,
    "rank": "normal",
    "from": "wowhead"
   },
