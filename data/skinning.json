@@ -3266,13 +3266,23 @@
    ]
   },
   "Zephras Isle": {
-   "share": 0.65,
+   "share": 0.67,
    "beasts": [
     {
      "id": 250926,
      "name": "Scrawny Ursera",
      "level": [
       3,
+      4
+     ],
+     "spawns": 0,
+     "family": "Bear"
+    },
+    {
+     "id": 250937,
+     "name": "Ursera Scavenger",
+     "level": [
+      4,
       4
      ],
      "spawns": 0,
@@ -3421,6 +3431,15 @@
     {
      "id": 267305,
      "name": "Stormy Galestrider",
+     "level": [
+      1,
+      1
+     ],
+     "spawns": 0
+    },
+    {
+     "id": 267306,
+     "name": "Umber Galestrider",
      "level": [
       1,
       1

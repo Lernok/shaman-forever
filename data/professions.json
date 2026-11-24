@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.71037",
+ "build": "1.60.1.71091",
  "recipesSource": "https://classicwowforever.com/professions/",
  "recipesFetched": "2026-10-20",
  "professions": {
@@ -18598,11 +18598,11 @@
     "bind": "equip",
     "stats": {
      "stamina": 15,
-     "strength": 13,
-     "intellect": 10
+     "strength": 14,
+     "intellect": 13
     },
     "bonus": {
-     "critRating": 14
+     "spellPower": 12
     },
     "armor": 245,
     "dps": null,
@@ -18673,12 +18673,12 @@
     "bind": "equip",
     "stats": {
      "stamina": 19,
-     "strength": 16,
-     "intellect": 15,
-     "agility": 14
+     "strength": 18,
+     "intellect": 14,
+     "agility": 12
     },
     "bonus": {
-     "expertiseRating": 12
+     "spellPower": 11
     },
     "armor": 344,
     "dps": null,
@@ -18789,11 +18789,13 @@
     "ilvl": 60,
     "bind": "equip",
     "stats": {
-     "stamina": 14,
-     "strength": 21,
-     "intellect": 11
+     "stamina": 19,
+     "strength": 14,
+     "intellect": 10
     },
-    "bonus": {},
+    "bonus": {
+     "spellPower": 11
+    },
     "armor": 294,
     "dps": null,
     "speed": null,
@@ -18825,13 +18827,12 @@
     "ilvl": 60,
     "bind": "equip",
     "stats": {
-     "stamina": 14,
-     "strength": 12,
-     "intellect": 11,
-     "agility": 11
+     "stamina": 15,
+     "strength": 14,
+     "intellect": 12
     },
     "bonus": {
-     "hitRating": 9
+     "spellPower": 13
     },
     "armor": 270,
     "dps": null,

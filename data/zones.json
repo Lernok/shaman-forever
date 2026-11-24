@@ -3,7 +3,7 @@
  "sources": [
   "https://github.com/Questie/QuestieDB",
   "https://github.com/ATTWoWAddon/AllTheThings (MIT)",
-  "wago.tools AreaTable 1.60.1.71037",
+  "wago.tools AreaTable 1.60.1.71091",
   "https://foreverchanges.pro/dungeon-quests"
  ],
  "zones": {
@@ -560,14 +560,14 @@
    "id": 16651,
    "continent": "Kalimdor",
    "horde": [
-    41,
+    40,
     43
    ],
    "alliance": [
     40,
     43
    ],
-   "quests": 32,
+   "quests": 33,
    "from": "questie"
   }
  },
@@ -887,10 +887,12 @@
     "Thunder Bluff",
     "Tirisfal Glades",
     "Uldaman",
-    "Undercity"
+    "Undercity",
+    "Zephras Isle"
    ],
    "Skinning": [
     "Desolace",
+    "Durotar",
     "Feralas",
     "Mulgore",
     "Orgrimmar",
@@ -973,7 +975,8 @@
     "Ironforge",
     "Stormwind City",
     "Teldrassil",
-    "Uldaman"
+    "Uldaman",
+    "Zephras Isle"
    ],
    "Leatherworking": [
     "Ashenvale",

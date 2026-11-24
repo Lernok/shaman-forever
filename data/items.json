@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.71037",
+ "build": "1.60.1.71091",
  "eraBuild": "1.15.9.70576",
  "items": {
   "720": {
@@ -172364,15 +172364,15 @@
    "armor": 344,
    "stats": {
     "stamina": 19,
-    "strength": 16,
-    "intellect": 15,
-    "agility": 14
+    "strength": 18,
+    "intellect": 14,
+    "agility": 12
    },
    "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "expertiseRating": 12
+    "spellPower": 11
    },
    "numbers": "client",
    "icon": "inv_pant_mail_raidshamanhyjalc60_d_01"
@@ -172397,14 +172397,14 @@
    "armor": 245,
    "stats": {
     "stamina": 15,
-    "strength": 13,
-    "intellect": 10
+    "strength": 14,
+    "intellect": 13
    },
    "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "critRating": 14
+    "spellPower": 12
    },
    "numbers": "client",
    "icon": "inv_glove_mail_raidshamanhyjalc60_d_01"
@@ -172428,14 +172428,16 @@
    },
    "armor": 294,
    "stats": {
-    "stamina": 14,
-    "strength": 21,
-    "intellect": 11
+    "stamina": 19,
+    "strength": 14,
+    "intellect": 10
    },
    "equip": [],
    "use": [],
    "chance": [],
-   "bonus": {},
+   "bonus": {
+    "spellPower": 11
+   },
    "numbers": "client",
    "icon": "inv_shoulder_mail_raidshamanhyjalc60_d_01"
   },
@@ -172458,16 +172460,15 @@
    },
    "armor": 270,
    "stats": {
-    "stamina": 14,
-    "strength": 12,
-    "intellect": 11,
-    "agility": 11
+    "stamina": 15,
+    "strength": 14,
+    "intellect": 12
    },
    "equip": [],
    "use": [],
    "chance": [],
    "bonus": {
-    "hitRating": 9
+    "spellPower": 13
    },
    "numbers": "client",
    "icon": "inv_boot_mail_raidshamanhyjalc60_d_01"

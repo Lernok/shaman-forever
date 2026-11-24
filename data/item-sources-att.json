@@ -6688,6 +6688,19 @@
     }
    ]
   },
+  "277202": {
+   "name": "Artifact Seeker's Pendant",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 84394,
+     "quest": "Greater Friend of the Library (3/3)",
+     "minLevel": 50,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
   "277203": {
    "name": "Scholarly Pendant",
    "sources": [
@@ -6992,7 +7005,7 @@
     {
      "type": "quest",
      "questId": 82208,
-     "quest": "Greater Friend of the Library (2/2)",
+     "quest": "Greater Friend of the Library (2/3)",
      "minLevel": 30,
      "faction": "both",
      "zone": null
@@ -7005,7 +7018,7 @@
     {
      "type": "quest",
      "questId": 82208,
-     "quest": "Greater Friend of the Library (2/2)",
+     "quest": "Greater Friend of the Library (2/3)",
      "minLevel": 30,
      "faction": "both",
      "zone": null
@@ -9276,7 +9289,7 @@
     {
      "type": "quest",
      "questId": 79536,
-     "quest": "Greater Friend of the Library (1/2)",
+     "quest": "Greater Friend of the Library (1/3)",
      "minLevel": 20,
      "faction": "both",
      "zone": null
@@ -9289,8 +9302,34 @@
     {
      "type": "quest",
      "questId": 79536,
-     "quest": "Greater Friend of the Library (1/2)",
+     "quest": "Greater Friend of the Library (1/3)",
      "minLevel": 20,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "281636": {
+   "name": "Museum Keeper's Chain",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 84394,
+     "quest": "Greater Friend of the Library (3/3)",
+     "minLevel": 50,
+     "faction": "both",
+     "zone": null
+    }
+   ]
+  },
+  "281637": {
+   "name": "Antique Bulwark",
+   "sources": [
+    {
+     "type": "quest",
+     "questId": 84394,
+     "quest": "Greater Friend of the Library (3/3)",
+     "minLevel": 50,
      "faction": "both",
      "zone": null
     }

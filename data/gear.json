@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.71037",
+ "build": "1.60.1.71091",
  "gear": [
   {
    "id": 20144,
@@ -2845,108 +2845,6 @@
      },
      "faction": "both",
      "confidence": "client-data",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 277202,
-   "name": "Artifact Seeker's Pendant",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 3,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "stats": {
-    "strength": 9,
-    "agility": 8,
-    "stamina": 14
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "trade_archaeology_pendant-of-the-aqir",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 281636,
-   "name": "Museum Keeper's Chain",
-   "kind": "Neck",
-   "slot": "Neck",
-   "quality": 3,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "stats": {
-    "stamina": 10,
-    "intellect": 10
-   },
-   "bonus": {
-    "spellPower": 11
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "trade_archaeology_mithrilnecklace",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 0,
-     "rec": 0
-    }
-   ]
-  },
-  {
-   "id": 281637,
-   "name": "Antique Bulwark",
-   "kind": "Shield",
-   "slot": "Shield",
-   "quality": 3,
-   "req": 0,
-   "obtain": 0,
-   "ilvl": 58,
-   "bind": "pickup",
-   "armor": 1994,
-   "block": 36,
-   "stats": {
-    "stamina": 13
-   },
-   "bonus": {
-    "defense": 8
-   },
-   "equip": [],
-   "use": [],
-   "chance": [],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_shield_02",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
      "asap": 0,
      "rec": 0
     }
@@ -134579,7 +134477,7 @@
    "sources": [
     {
      "type": "quest",
-     "quest": "Greater Friend of the Library (2/2)",
+     "quest": "Greater Friend of the Library (2/3)",
      "questId": 82208,
      "requiredLevel": 30,
      "zone": null,
@@ -134653,7 +134551,7 @@
    "sources": [
     {
      "type": "quest",
-     "quest": "Greater Friend of the Library (2/2)",
+     "quest": "Greater Friend of the Library (2/3)",
      "questId": 82208,
      "requiredLevel": 30,
      "zone": null,
@@ -172165,6 +172063,135 @@
    ]
   },
   {
+   "id": 277202,
+   "name": "Artifact Seeker's Pendant",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 3,
+   "req": 0,
+   "obtain": 50,
+   "ilvl": 58,
+   "bind": "pickup",
+   "stats": {
+    "strength": 9,
+    "agility": 8,
+    "stamina": 14
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "trade_archaeology_pendant-of-the-aqir",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Greater Friend of the Library (3/3)",
+     "questId": 84394,
+     "requiredLevel": 50,
+     "zone": null,
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=84394",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 50,
+     "rec": 50
+    }
+   ]
+  },
+  {
+   "id": 281636,
+   "name": "Museum Keeper's Chain",
+   "kind": "Neck",
+   "slot": "Neck",
+   "quality": 3,
+   "req": 0,
+   "obtain": 50,
+   "ilvl": 58,
+   "bind": "pickup",
+   "stats": {
+    "stamina": 10,
+    "intellect": 10
+   },
+   "bonus": {
+    "spellPower": 11
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "trade_archaeology_mithrilnecklace",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Greater Friend of the Library (3/3)",
+     "questId": 84394,
+     "requiredLevel": 50,
+     "zone": null,
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=84394",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 50,
+     "rec": 50
+    }
+   ]
+  },
+  {
+   "id": 281637,
+   "name": "Antique Bulwark",
+   "kind": "Shield",
+   "slot": "Shield",
+   "quality": 3,
+   "req": 0,
+   "obtain": 50,
+   "ilvl": 58,
+   "bind": "pickup",
+   "armor": 1994,
+   "block": 36,
+   "stats": {
+    "stamina": 13
+   },
+   "bonus": {
+    "defense": 8
+   },
+   "equip": [],
+   "use": [],
+   "chance": [],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_shield_02",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "quest",
+     "quest": "Greater Friend of the Library (3/3)",
+     "questId": 84394,
+     "requiredLevel": 50,
+     "zone": null,
+     "faction": "alliance",
+     "confidence": "community-untested",
+     "ref": "https://www.wowhead.com/forever/quest=84394",
+     "basis": {
+      "from": "quest-level",
+      "group": false
+     },
+     "asap": 50,
+     "rec": 50
+    }
+   ]
+  },
+  {
    "id": 8269,
    "name": "Ebonhold Boots",
    "kind": "Mail",
@@ -206418,7 +206445,7 @@
       "yellow": 54,
       "green": 59
      },
-     "faction": "both",
+     "faction": "alliance",
      "confidence": "community-untested",
      "ref": "https://foreverchanges.pro/quest/95611",
      "raid": true,
@@ -281949,12 +281976,12 @@
    "armor": 344,
    "stats": {
     "stamina": 19,
-    "strength": 16,
-    "intellect": 15,
-    "agility": 14
+    "strength": 18,
+    "intellect": 14,
+    "agility": 12
    },
    "bonus": {
-    "expertiseRating": 12
+    "spellPower": 11
    },
    "equip": [],
    "use": [],
@@ -281993,11 +282020,11 @@
    "armor": 245,
    "stats": {
     "stamina": 15,
-    "strength": 13,
-    "intellect": 10
+    "strength": 14,
+    "intellect": 13
    },
    "bonus": {
-    "critRating": 14
+    "spellPower": 12
    },
    "equip": [],
    "use": [],
@@ -282035,11 +282062,13 @@
    "bind": "equip",
    "armor": 294,
    "stats": {
-    "stamina": 14,
-    "strength": 21,
-    "intellect": 11
+    "stamina": 19,
+    "strength": 14,
+    "intellect": 10
    },
-   "bonus": {},
+   "bonus": {
+    "spellPower": 11
+   },
    "equip": [],
    "use": [],
    "chance": [],
@@ -282076,13 +282105,12 @@
    "bind": "equip",
    "armor": 270,
    "stats": {
-    "stamina": 14,
-    "strength": 12,
-    "intellect": 11,
-    "agility": 11
+    "stamina": 15,
+    "strength": 14,
+    "intellect": 12
    },
    "bonus": {
-    "hitRating": 9
+    "spellPower": 13
    },
    "equip": [],
    "use": [],
