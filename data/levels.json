@@ -4042,7 +4042,7 @@
   "3461": {
    "classes": null,
    "minLevel": 45,
-   "faction": "conflict",
+   "faction": "alliance",
    "instance": null,
    "hardest": {
     "id": null,
@@ -4052,7 +4052,7 @@
     "from": "step-level",
     "step": 3449
    },
-   "steps": 11
+   "steps": 3
   },
   "3463": {
    "classes": null,
@@ -17955,6 +17955,12 @@
    "rank": "boss",
    "from": "questie"
   },
+  "10197": {
+   "name": "Mezzir the Howler",
+   "level": 55,
+   "rank": "rare",
+   "from": "wowhead"
+  },
   "10220": {
    "name": "Halycon",
    "level": 59,
@@ -20709,6 +20715,12 @@
    "rank": "normal",
    "from": "wowhead"
   },
+  "253201": {
+   "name": "Titanosaur",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
   "253215": {
    "name": "Ravasaur Matriarch",
    "level": null,
@@ -21165,8 +21177,50 @@
    "rank": "elite",
    "from": null
   },
+  "261809": {
+   "name": "Nanaya",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "261812": {
+   "name": "Thunderhoof",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
   "261813": {
    "name": "Venomridge",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "261974": {
+   "name": "Cinder",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "261993": {
+   "name": "King Op",
+   "level": null,
+   "rank": "rare-elite",
+   "from": null
+  },
+  "262081": {
+   "name": "Bolt",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "262127": {
+   "name": "Direhorn Matriarch",
+   "level": null,
+   "rank": "elite",
+   "from": null
+  },
+  "262297": {
+   "name": "Snowtalon",
    "level": null,
    "rank": "elite",
    "from": null
@@ -21416,6 +21470,12 @@
    "level": 12,
    "rank": "elite",
    "from": "wowhead"
+  },
+  "272561": {
+   "name": "Vitrix",
+   "level": null,
+   "rank": "elite",
+   "from": null
   },
   "275044": {
    "name": "Dragonmaw Warder",

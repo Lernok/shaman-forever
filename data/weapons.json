@@ -38029,7 +38029,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Thunderhoof",
+     "npcId": 261812,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -38101,7 +38104,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Nanaya",
+     "npcId": 261809,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -39022,7 +39028,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Direhorn Matriarch",
+     "npcId": 262127,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -39357,7 +39366,20 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Cinder",
+     "npcId": 261974,
+     "zone": "The Shaper's Terrace",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 58,
+     "rec": 58
+    },
+    {
+     "type": "boss",
+     "npc": "Vitrix",
+     "npcId": 272561,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,

@@ -181558,7 +181558,7 @@
       "from": "step-level",
       "group": false,
       "step": 3449,
-      "steps": 11
+      "steps": 3
      },
      "asap": 49,
      "rec": 51
@@ -185368,40 +185368,6 @@
    "era": "new",
    "numbers": "client",
    "icon": "inv_shoulder_08",
-   "raceMask": -1,
-   "sources": [
-    {
-     "type": "unknown",
-     "faction": "both",
-     "confidence": "community-untested",
-     "asap": 52,
-     "rec": 52
-    }
-   ]
-  },
-  {
-   "id": 284262,
-   "name": "Howling Hide",
-   "kind": "Cloth",
-   "slot": "Back",
-   "quality": 2,
-   "req": 52,
-   "obtain": 52,
-   "ilvl": 57,
-   "bind": "equip",
-   "armor": 37,
-   "stats": {
-    "strength": 12
-   },
-   "bonus": {},
-   "equip": [],
-   "use": [],
-   "chance": [
-    "Chance on hit: Reduces the target enemy's attack power by 60 for 30 sec."
-   ],
-   "era": "new",
-   "numbers": "client",
-   "icon": "inv_misc_cape_18",
    "raceMask": -1,
    "sources": [
     {
@@ -196940,6 +196906,51 @@
      },
      "asap": 47,
      "rec": 54
+    }
+   ]
+  },
+  {
+   "id": 284262,
+   "name": "Howling Hide",
+   "kind": "Cloth",
+   "slot": "Back",
+   "quality": 2,
+   "req": 52,
+   "obtain": 54,
+   "ilvl": 57,
+   "bind": "equip",
+   "armor": 37,
+   "stats": {
+    "strength": 12
+   },
+   "bonus": {},
+   "equip": [],
+   "use": [],
+   "chance": [
+    "Chance on hit: Reduces the target enemy's attack power by 60 for 30 sec."
+   ],
+   "era": "new",
+   "numbers": "client",
+   "icon": "inv_misc_cape_18",
+   "raceMask": -1,
+   "sources": [
+    {
+     "type": "drop",
+     "npc": "Mezzir the Howler",
+     "npcId": 10197,
+     "zone": "Winterspring",
+     "rank": "rare",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 52,
+     "rec": 54,
+     "basis": {
+      "name": "Mezzir the Howler",
+      "level": 55,
+      "rank": "rare",
+      "from": "wowhead",
+      "group": false
+     }
     }
    ]
   },
@@ -230469,7 +230480,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Titanosaur",
+     "npcId": 253201,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -230504,7 +230518,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Titanosaur",
+     "npcId": 253201,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -230540,7 +230557,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Ravasaur Hunters",
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -230575,7 +230594,9 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Ravasaur Hunters",
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -230609,7 +230630,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Venomridge",
+     "npcId": 261813,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -230644,7 +230668,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Venomridge",
+     "npcId": 261813,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -230678,7 +230705,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Venomridge",
+     "npcId": 261813,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -230713,7 +230743,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Thunderhoof",
+     "npcId": 261812,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -230748,7 +230781,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Nanaya",
+     "npcId": 261809,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -230783,7 +230819,30 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "King Op",
+     "npcId": 261993,
+     "zone": "The Shaper's Terrace",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 58,
+     "rec": 58
+    },
+    {
+     "type": "boss",
+     "npc": "Snowtalon",
+     "npcId": 262297,
+     "zone": "The Shaper's Terrace",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 58,
+     "rec": 58
+    },
+    {
+     "type": "boss",
+     "npc": "Vitrix",
+     "npcId": 272561,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -230814,7 +230873,20 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Bolt",
+     "npcId": 262081,
+     "zone": "The Shaper's Terrace",
+     "faction": "both",
+     "confidence": "community-untested",
+     "asap": 58,
+     "rec": 58
+    },
+    {
+     "type": "boss",
+     "npc": "Vitrix",
+     "npcId": 272561,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,
@@ -230849,7 +230921,10 @@
    "raceMask": -1,
    "sources": [
     {
-     "type": "unknown",
+     "type": "boss",
+     "npc": "Direhorn Matriarch",
+     "npcId": 262127,
+     "zone": "The Shaper's Terrace",
      "faction": "both",
      "confidence": "community-untested",
      "asap": 58,

@@ -8198,6 +8198,206 @@
     }
    ]
   },
+  "280009": {
+   "name": "Titanosaur Scale Pendant",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 253201,
+     "npc": "Titanosaur",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280011": {
+   "name": "Deeproar Cord",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 253201,
+     "npc": "Titanosaur",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280013": {
+   "name": "Frostfang Mail Vest",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": null,
+     "npc": "Ravasaur Hunters",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280014": {
+   "name": "Raptorscale Bulwark",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": null,
+     "npc": "Ravasaur Hunters",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280015": {
+   "name": "Venomvessel Ring",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261813,
+     "npc": "Venomridge",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280016": {
+   "name": "Spiderchitin Wrap",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261813,
+     "npc": "Venomridge",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280017": {
+   "name": "Octoclaw Chain Boots",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261813,
+     "npc": "Venomridge",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280018": {
+   "name": "Hammer of Thundering Hooves",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261812,
+     "npc": "Thunderhoof",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280019": {
+   "name": "Dinofrill Casque",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261812,
+     "npc": "Thunderhoof",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280021": {
+   "name": "Tooth of the Matriarch",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 262127,
+     "npc": "Direhorn Matriarch",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280023": {
+   "name": "Nanaya's Control Spire",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261809,
+     "npc": "Nanaya",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280025": {
+   "name": "Leggings of Curation",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261809,
+     "npc": "Nanaya",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280026": {
+   "name": "Albinofur Grips",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261993,
+     "npc": "King Op",
+     "zone": "The Shaper's Terrace"
+    },
+    {
+     "type": "boss",
+     "npcId": 262297,
+     "npc": "Snowtalon",
+     "zone": "The Shaper's Terrace"
+    },
+    {
+     "type": "boss",
+     "npcId": 272561,
+     "npc": "Vitrix",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280029": {
+   "name": "Cinderedge Crescent",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 261974,
+     "npc": "Cinder",
+     "zone": "The Shaper's Terrace"
+    },
+    {
+     "type": "boss",
+     "npcId": 272561,
+     "npc": "Vitrix",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280032": {
+   "name": "Bolt's Charged Eyeball",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 262081,
+     "npc": "Bolt",
+     "zone": "The Shaper's Terrace"
+    },
+    {
+     "type": "boss",
+     "npcId": 272561,
+     "npc": "Vitrix",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
+  "280045": {
+   "name": "Regal Direhorn Drape",
+   "sources": [
+    {
+     "type": "boss",
+     "npcId": 262127,
+     "npc": "Direhorn Matriarch",
+     "zone": "The Shaper's Terrace"
+    }
+   ]
+  },
   "280056": {
    "name": "Flameslash Crescent",
    "sources": [
@@ -9802,6 +10002,18 @@
      "npcId": 2186,
      "npc": "Carnivous the Breaker",
      "zone": "Darkshore",
+     "rare": true
+    }
+   ]
+  },
+  "284262": {
+   "name": "Howling Hide",
+   "sources": [
+    {
+     "type": "drop",
+     "npcId": 10197,
+     "npc": "Mezzir the Howler",
+     "zone": "Winterspring",
      "rare": true
     }
    ]
