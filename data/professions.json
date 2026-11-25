@@ -1,5 +1,5 @@
 {
- "build": "1.60.1.71091",
+ "build": "1.60.1.71139",
  "recipesSource": "https://classicwowforever.com/professions/",
  "recipesFetched": "2026-10-20",
  "professions": {
@@ -6386,6 +6386,40 @@
      "learnAt": 175
     },
     "isNew": false
+   },
+   {
+    "id": 274490,
+    "name": "Centaur Hoofwarmers",
+    "kind": "Leather",
+    "quality": 2,
+    "req": 35,
+    "ilvl": 40,
+    "bind": "equip",
+    "stats": {
+     "agility": 4,
+     "stamina": 10
+    },
+    "bonus": {},
+    "armor": 76,
+    "dps": null,
+    "speed": null,
+    "era": "new",
+    "numbers": "client",
+    "icon": "inv_boots_05",
+    "equip": [],
+    "role": "melee",
+    "mailFrom40": false,
+    "skill": [
+     170,
+     170,
+     null,
+     180
+    ],
+    "learn": {
+     "type": "unknown",
+     "text": null
+    },
+    "isNew": true
    },
    {
     "id": 8174,
@@ -43297,7 +43331,9 @@
      "stamina": 11,
      "intellect": 11
     },
-    "bonus": {},
+    "bonus": {
+     "spellPower": 34
+    },
     "armor": null,
     "dps": 24.5,
     "speed": 2.2,
@@ -43408,7 +43444,9 @@
      "stamina": 11,
      "spirit": 11
     },
-    "bonus": {},
+    "bonus": {
+     "spellPower": 34
+    },
     "armor": null,
     "dps": 24.4,
     "speed": 1.8,
@@ -43479,7 +43517,10 @@
      "stamina": 19,
      "spirit": 19
     },
-    "bonus": {},
+    "bonus": {
+     "spellDamage": 35,
+     "healing": 105
+    },
     "armor": null,
     "dps": 43.3,
     "speed": 2.4,
@@ -43515,7 +43556,9 @@
      "stamina": 19,
      "intellect": 19
     },
-    "bonus": {},
+    "bonus": {
+     "spellPower": 56
+    },
     "armor": null,
     "dps": 43.3,
     "speed": 2.4,

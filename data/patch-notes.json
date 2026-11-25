@@ -352,9 +352,30 @@
   "1.60.1.71091/hotfix-114319+9",
   "1.60.1.71091/hotfix-114406",
   "1.60.1.71091/hotfix-114408",
-  "1.60.1.71091/patch"
+  "1.60.1.71091/patch",
+  "1.60.1.71139/patch"
  ],
  "updates": [
+  {
+   "id": "1.60.1.71139/patch",
+   "version": "1.60.1.71139",
+   "hotfix": false,
+   "date": "2026-11-25",
+   "spells": [
+    {
+     "name": "Reagent Economy",
+     "spec": "other",
+     "status": "changed",
+     "lines": [
+      {
+       "k": "duration",
+       "from": "permanent",
+       "to": null
+      }
+     ]
+    }
+   ]
+  },
   {
    "id": "1.60.1.70938/hotfix-113188+6",
    "version": "1.60.1.70938",
