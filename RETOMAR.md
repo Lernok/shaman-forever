@@ -2,6 +2,15 @@
 
 Leer esta primera parte antes de seguir. Debajo está la historia del proyecto (plan de fases y sesiones).
 
+## 2026-11-25: pre-raid, Tier 0.5, pesos re-simulados, addon 0.36.0
+
+- **WoWSims upstream ya trae los hotfixes** (datos de hechizos del cliente hasta el 23-nov, arreglos de Windfury Totem 16-nov y Flurry 17-nov): worktree en `.cache/tools/wowsims-new`, scripts en `.cache/tools/enhsim2` (`ep2.js` pesos, `var.js` builds con maná por hechizo, `coef.js` coeficientes SP/AP y costo de maná). El parche local NOV10 quedó viejo.
+- **Pesos** (js/gear-plan.js WEIGHTS leveo = promedio de peleas de 30 y 45 s solo; WEIGHTS_RAID; DPS_WEIGHT 7,2 = 14,4 AP por DPS de arma; POWER para el addon). Enh leveo en AP: golpe 6,1, pericia 4,2, Int 2,8 (2,0 a 30 s, 3,6 a 45 s), crítico 2,7, Fuerza 2,2. El arma de Enh ahora vale DPS×7,2 + sus stats.
+- **Talentos** (simulado con Lightning Shield bien puesto y 24 golpes recibidos/min): Enh leveo pasa a 12/31/8 (Tidal Focus 5 + Mindfulness 3 del 41 al 48): +1,4% a 45 s, +7,6% encadenando 2 min, −2,2% a 30 s; Water Shield 9/31/11 solo gana sin parar (+14%) y pierde 5-11% en peleas sueltas. Raid Enh 17/31/3 sigue (con golpe cubierto; sin golpe TF5+Mind +1%). Ele recomendado 32/11/8 (default de WoWSims, +3,4% raid). Resto 0/10/41 = ConquestCapped.
+- **Datos:** sync suma ítems solo-Shaman que el servidor manda y WoWSims lista (Tier 0.5 The Five Thunders, 24 piezas con fuente a mano en item-sources.json: Mokvar/Deliana, desde 58, endgame), la fase de WoWSims (`phase`, 1 = ya salió) y el SP de armas de caster (scripts/lib/sim-weapon-power.js). gear.js lleva `pre` (todas las fuentes menos raid) para piezas fase 1 desde 50.
+- **Sitio:** Equipo › Pre-raid (js/prebis.js). Guías Enh/Ele/Resto y Novedades actualizadas.
+- **Addon 0.36.0:** verdes al azar con rating bien (antes crit/hit como %), ganancia como % de tu daño total (POWER), pestaña "Tu equipo" (`/sf equipo`). Sync local se traba en fetch-item-sources (foreverchanges): para datos completos usar Actions › Sync de datos.
+
 ## 2026-11-13: chequeo general, addon 0.35.0, Water Shield simulado
 
 - **Chequeo:** build, reglas, check-site, smoke (137 vistas) y celular OK; las fallas de Chequeos del 11-nov eran DNS del runner de GitHub (apt), no del sitio. Syncs del 11 y 12 crecieron (6938 piezas, 1118 armas). Sin reportes nuevos. Quedan textos de Profesiones que dicen "pasado el 30: datos del juego, sin confirmar" (BETA_CAP en professions.js; el plan de Peletería simula hasta 30): a decidir con el usuario.
