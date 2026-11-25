@@ -205,15 +205,18 @@ local STAT = {
   ITEM_MOD_INTELLECT_SHORT = "intellect", ITEM_MOD_SPIRIT_SHORT = "spirit", ITEM_MOD_ATTACK_POWER_SHORT = "attackPower",
   ITEM_MOD_SPELL_POWER_SHORT = "spellPower", ITEM_MOD_SPELL_DAMAGE_DONE_SHORT = "spellDamage",
   ITEM_MOD_SPELL_HEALING_DONE_SHORT = "healing", ITEM_MOD_MANA_REGENERATION_SHORT = "mp5", ITEM_MOD_POWER_REGEN0_SHORT = "mp5",
-  ITEM_MOD_CRIT_RATING_SHORT = "crit", ITEM_MOD_CRIT_MELEE_RATING_SHORT = "crit", ITEM_MOD_HIT_RATING_SHORT = "hit",
-  ITEM_MOD_HIT_MELEE_RATING_SHORT = "hit", ITEM_MOD_CRIT_SPELL_RATING_SHORT = "spellCrit", ITEM_MOD_HIT_SPELL_RATING_SHORT = "spellHit",
+  -- Forever's items carry ratings (14 crit rating = 1% at 60), one rating
+  -- for melee and spells alike: priced as ratings, not as percentages.
+  ITEM_MOD_CRIT_RATING_SHORT = "critRating", ITEM_MOD_CRIT_MELEE_RATING_SHORT = "critRating", ITEM_MOD_HIT_RATING_SHORT = "hitRating",
+  ITEM_MOD_HIT_MELEE_RATING_SHORT = "hitRating", ITEM_MOD_CRIT_SPELL_RATING_SHORT = "critRating", ITEM_MOD_HIT_SPELL_RATING_SHORT = "hitRating",
+  ITEM_MOD_HASTE_RATING_SHORT = "hasteRating", ITEM_MOD_EXPERTISE_RATING_SHORT = "expertiseRating",
 }
 local function estimate(link, slot)
   local st = link and Api.stats(link)
   if not st then return 0 end
   local spec = cdb.spec
-  if slot == "Weapon" and spec == "Enhancement" then return st.ITEM_MOD_DAMAGE_PER_SECOND_SHORT or 0 end
   local w, v = D.weights[spec], 0
+  if slot == "Weapon" and spec == "Enhancement" then v = (st.ITEM_MOD_DAMAGE_PER_SECOND_SHORT or 0) * D.dpsw end
   for k, n in pairs(st) do
     local s = STAT[k]
     if s and D.cost[s] then v = v + n * D.cost[s] * (w[s] or 0) end
@@ -374,11 +377,40 @@ local function pctText(v, cur, fmt)
   return string.format(fmt, math.floor(pct + 0.5))
 end
 local function slotName(slot) return (L().slots and L().slots[slot]) or slot or "?" end
+-- Your power now, roughly, in the unit the spec's damage (or healing) grows
+-- with: attack power for Enhancement, spell power for Elemental, healing for
+-- Restoration. Your stats as the game shows them, each at its simulated
+-- worth (D.power, js/gear-plan.js POWER), plus what your spells and weapon
+-- do without any stats (a base per level). A change of gear is then a share
+-- of it: "+3% damage", not "+60% over your ring".
+local function stat(f, ...) if not f then return 0 end local ok, v = pcall(f, ...) return ok and readable(v) or 0 end
+local function power()
+  local P = D.power[cdb.spec] or D.power.Enhancement
+  local p = P.base * UnitLevel("player")
+  if cdb.spec == "Enhancement" then
+    local ok, base, pos, neg = pcall(UnitAttackPower, "player")
+    if ok then p = p + (readable(base) or 0) + (readable(pos) or 0) + (readable(neg) or 0) end
+    local link = readable(GetInventoryItemLink("player", 16))
+    local st = link and Api.stats(link)
+    p = p + ((st and st.ITEM_MOD_DAMAGE_PER_SECOND_SHORT) or 0) * P.dps
+    p = p + stat(GetCritChance) * P.crit + stat(GetSpellBonusDamage, 4) * P.sp
+  else
+    p = p + (cdb.spec == "Restoration" and stat(GetSpellBonusHealing) or stat(GetSpellBonusDamage, 4))
+    local ok, _, int = pcall(UnitStat, "player", 4)
+    p = p + (ok and readable(int) or 0) * P.int + stat(GetSpellCritChance, 4) * P.crit
+  end
+  return math.max(p, 1)
+end
+-- Points of the item weights as a share of your power, in %.
+local function share(dv) return dv * (D.power[cdb.spec] or D.power.Enhancement).unit / power() * 100 end
+local function pctOf(dv)
+  local pct = share(dv)
+  return string.format(pct < 1 and L().gainUnder1 or L().gainShare[cdb.spec] or L().gainShare.Enhancement, math.floor(pct + 0.5))
+end
 local function gainText(g)
   local s = slotName(g.slot) .. ": "
-  if g.cur <= 0 then return s .. L().gainNew end
-  if g.slot == "Weapon" and cdb.spec == "Enhancement" then return s .. string.format(L().gainDps, num(g.v), num(g.cur)) end
-  return s .. pctText(g.v, g.cur, L().gainPct)
+  if g.cur <= 0 then return s .. L().gainNew .. " · " .. pctOf(g.v) end
+  return s .. pctOf(g.v - g.cur)
 end
 -- From which level: "for your level", or "from level 13 (1 to go)".
 local function whenText(l)
@@ -607,6 +639,88 @@ local function pathTips(filter)
   end
   return tips
 end
+
+-- "Tu equipo": how your gear compares with what the site's gear path (quests
+-- on your route, no drops, no professions) has for your level, slot by slot.
+-- Below 100% you're behind someone just doing the quests; a slot well behind
+-- gets the path's piece as its replacement, with what it'd add.
+local GEAR_ICON = "Interface\Icons\INV_Chest_Chain_11"
+local function wornValues(slot)
+  local out = {}
+  for _, inv in ipairs(INV[slot] or {}) do
+    local id = readable(GetInventoryItemID("player", inv))
+    out[#out + 1] = id and (D.items[id] and value(id) or estimate(readable(GetInventoryItemLink("player", inv)), slot)) or 0
+  end
+  table.sort(out, function(a, b) return a > b end)
+  return out
+end
+-- The path's pieces for a slot you'd have by `lvl`, best first.
+local function pathFor(slot, lvl)
+  local out = {}
+  for _, st in ipairs(myPath()) do
+    local it = D.items[st.i]
+    if it and it.s == slot and st.l <= lvl and not (it.m and lvl < 40) then out[#out + 1] = { st = st, v = value(st.i) } end
+  end
+  table.sort(out, function(a, b) return a.v > b.v end)
+  return out
+end
+local function gearReport()
+  local lvl = UnitLevel("player")
+  local rows, have, want = {}, 0, 0
+  for slot, invs in pairs(INV) do
+    local exp = pathFor(slot, lvl)
+    if #exp > 0 and not (slot == "Off Hand" and cdb.spec == "Enhancement") then
+      local worn = wornValues(slot)
+      local h, w = 0, 0
+      for i = 1, #invs do h = h + (worn[i] or 0); w = w + ((exp[i] or {}).v or 0) end
+      have, want = have + math.min(h, w * 1.5), want + w
+      -- The replacement: the path's best piece for now or within your lead
+      -- that beats your weakest one there.
+      local soon, best = pathFor(slot, lvl + cdb.lead), nil
+      for _, e in ipairs(soon) do
+        if e.v > (worn[#invs] or 0) * D.upgrade and not owned(e.st.i) then best = e; break end
+      end
+      rows[#rows + 1] = { slot = slot, ratio = w > 0 and h / w or 1, have = h, want = w, best = best, low = worn[#invs] or 0 }
+    end
+  end
+  table.sort(rows, function(a, b) return a.ratio < b.ratio end)
+  return rows, want > 0 and have / want or 1
+end
+local function verdict(r)
+  if r >= 1 then return L().gearGood, "|cff40ff40" end
+  if r >= 0.85 then return L().gearOnTrack, "|cffffd100" end
+  if r >= 0.7 then return L().gearBitBehind, "|cffff9020" end
+  return L().gearBehind, "|cffff4040"
+end
+local function gearTips()
+  local rows, total = gearReport()
+  local lvl = UnitLevel("player")
+  local text, color = verdict(total)
+  local tips = { { key = "gear:all", icon = GEAR_ICON, head = string.format(L().gearHead, math.floor(total * 100 + 0.5), lvl),
+    src = color .. text .. "|r", gain = L().gearHow, lines = { L().gearTip } } }
+  for _, r in ipairs(rows) do
+    if r.ratio < 0.85 then
+      local pct = math.floor(r.ratio * 100 + 0.5)
+      local tip = { key = "gear:" .. r.slot, icon = GEAR_ICON, head = string.format(L().gearSlot, slotName(r.slot), pct) }
+      if r.best then
+        local st = r.best.st
+        tip.item, tip.q, tip.giver, tip.title, tip.icon = st.i, st.q, st.q and D.givers[st.q], st.qn, nil
+        tip.head = string.format(L().gearSlot, slotName(r.slot), pct) .. ": " .. Api.itemName(st.i)
+        if st.a == "vendor" then tip.src = string.format(L().vendor, st.k or "?") .. " · " .. zoneName(st.z)
+        elseif st.a == "dquest" then tip.src = string.format(L().dquest, st.z, st.qn or "?")
+        else tip.src = string.format(L().quest, st.qn or "?") .. " · " .. zoneName(st.z) end
+        tip.gain = pctOf(r.best.v - r.low) .. " · " .. whenText(st.l)
+      else
+        tip.src = L().gearNoPath
+        tip.gain = ""
+      end
+      tips[#tips + 1] = tip
+    end
+  end
+  if #tips == 1 then tips[1].gain = L().gearAllOk end
+  return tips
+end
+SF.gearReport = gearReport
 
 -- Dungeon quests to pick up before a dungeon of your level: a few levels
 -- before its range up to its end. Quests you can't start yet (a chain) point
@@ -1407,7 +1521,7 @@ local function makeFrame()
   frame.tab = "next"
   frame.tabs = {}
   local x = 10
-  for _, kind in ipairs({ "next", "prog", "hidden" }) do
+  for _, kind in ipairs({ "next", "prog", "hidden", "gear" }) do
     local b = CreateFrame("Button", nil, frame)
     b:SetHeight(20)
     b:SetPoint("TOPLEFT", x, -32)
@@ -1457,13 +1571,15 @@ function render()
     end
   elseif tab == "prog" then
     tips = prog
+  elseif tab == "gear" then
+    tips = gearTips()
   else
     tips = archived()
   end
   local counts = { prog = #prog, hidden = #archived() }
   local labels = { prog = L().tabProg, hidden = L().tabHidden }
   for kind, b in pairs(frame.tabs) do
-    local label = kind == "next" and L().tabNext or string.format(labels[kind], counts[kind])
+    local label = kind == "next" and L().tabNext or kind == "gear" and L().tabGear or string.format(labels[kind], counts[kind])
     b.text:SetText(label)
     b:SetWidth(b.text:GetStringWidth() + 10)
     b.line:SetShown(kind == tab)
@@ -1471,6 +1587,7 @@ function render()
   end
   frame.tabs.prog:SetPoint("TOPLEFT", frame.tabs.next, "TOPRIGHT", 6, 0)
   frame.tabs.hidden:SetPoint("TOPLEFT", frame.tabs.prog, "TOPRIGHT", 6, 0)
+  frame.tabs.gear:SetPoint("TOPLEFT", frame.tabs.hidden, "TOPRIGHT", 6, 0)
   frame.title:SetText(frame.lastTitle or "")
   frame.spec.text:SetText(string.format(L().spec, specName()))
   local fit = cdb.size and math.max(1, math.min(ROWS, math.floor(((frame.sizing and frame:GetHeight() or cdb.size[2]) - TOP - 26) / ROW_H))) or AUTO
@@ -1484,7 +1601,8 @@ function render()
       local have = tip.q and carrying(tip.q)
       r.have:SetShown(have and true or false)
       r.gain:SetText(have and (L().haveQuest .. (tip.gain and (" · " .. tip.gain) or "")) or tip.gain or "")
-      r:SetAlpha((tab == "next" or tab == "prog") and 1 or 0.75)
+      r:SetAlpha((tab == "next" or tab == "prog" or tab == "gear") and 1 or 0.75)
+      r.dismiss:SetShown(tab ~= "gear")
       r:Show()
     else
       r:Hide()
@@ -1499,7 +1617,7 @@ function render()
   frame.hint:ClearAllPoints()
   frame.hint:SetPoint("TOPLEFT", 10, -TOP - 4 - n * ROW_H - extra)
   frame.hint:SetPoint("RIGHT", -40, 0)
-  frame.hint:SetText(n > 0 and (tab == "hidden" and L().hintHidden or L().hint) or "")
+  frame.hint:SetText(n > 0 and (tab == "hidden" and L().hintHidden or tab == "gear" and L().hintGear or L().hint) or "")
   if not frame.sizing then
     if cdb.size then frame:SetSize(cdb.size[1], cdb.size[2])
     else frame:SetHeight(#tips == 0 and (TOP + 34) or (TOP + 26 + n * ROW_H + extra)) end
@@ -3398,6 +3516,9 @@ SlashCmdList.SHAMANFOREVER = function(msg)
   elseif cmd == "silencio" or cmd == "quiet" then
     cdb.quiet = not cdb.quiet
     say(L().help[4]:format(onOff(cdb.quiet)))
+  elseif cmd == "equipo" or cmd == "gear" then
+    SF.open(true)
+    if frame then frame.tab = "gear"; render() end
   elseif cmd == "talentos" or cmd == "talents" then
     cdb.talents = not cdb.talents
     say(L().help[5]:format(onOff(cdb.talents)))

@@ -79,7 +79,7 @@ function kindOf(item) {
 // (only ~60% of items: the rest reach the client from the server). Items
 // without an ItemSparse row must exist in QuestieDB at level <= 60, and get
 // their name/quality/level from the Wowhead tooltip later (fillFromTooltip).
-async function itemTables(build, eraBuild, questieLevels) {
+async function itemTables(build, eraBuild, questieLevels, serverItems) {
   const [sparseRows, itemRows, sla, effects] = await Promise.all([
     table('ItemSparse', build), table('Item', build), table('SkillLineAbility', build), table('SpellEffect', build)
   ]);
@@ -98,7 +98,9 @@ async function itemTables(build, eraBuild, questieLevels) {
     // Without an ItemSparse row: keep Classic items QuestieDB lists for Forever,
     // and items new to Forever (not in Classic Era), e.g. new dungeon quest
     // rewards QuestieDB doesn't have yet. Wowhead decides later if they exist.
-    } else if (!(questieLevels.get(Number(id)) <= 60) && eraRow && !extra) return;
+    // Also Shaman-only items the server streams that WoWSims' database lists
+    // for Forever (the Tier 0.5 set, The Five Thunders, sold by Mokvar and Deliana).
+    } else if (!(questieLevels.get(Number(id)) <= 60) && eraRow && !extra && !serverItems.has(Number(id))) return;
     out[id] = Object.assign(out[id] || {
       id: Number(id),
       name: s ? s.Display_lang : null,
@@ -330,7 +332,13 @@ function diffItems(prev, next) {
 
   // Items from the client tables, then exact numbers from Wowhead.
   const prevItems = (readJSON('data/items.json', {}).items) || null;
-  const items = await itemTables(build, eraBuild, questieLevels);
+  // Shaman-only items WoWSims (MIT) has in its Forever database: the server
+  // streams them (no ItemSparse row) and QuestieDB's item file doesn't list them.
+  const simDb = await http.get('https://raw.githubusercontent.com/wowsims/forever/master/assets/database/db.json',
+    { cache: 'wowsims/db.json', maxAgeDays: 1, json: true, valid: t => t.length > 1000000 && t.includes('"items"') });
+  const serverItems = new Set(((simDb && simDb.items) || []).filter(i => (i.classAllowlist || []).length && i.classAllowlist.includes(7) && (i.sources || []).length).map(i => i.id));
+  console.log('Ítems solo de Shaman en la base de WoWSims: ' + serverItems.size + (simDb ? '' : ' (no respondió)'));
+  const items = await itemTables(build, eraBuild, questieLevels, serverItems);
   let ids = Object.keys(items).map(Number).sort((a, b) => a - b);
   console.log('Candidatos: ' + ids.length + ' (trayendo números de Wowhead, con caché)');
   const { result, raw } = await tooltips(ids);
@@ -343,6 +351,14 @@ function diffItems(prev, next) {
   const cards = await clientItems.load();
   if (cards) console.log('Números del cliente (wowsims/gamedata): ' + clientItems.apply(items, cards) + ' ítems difieren de Wowhead');
   else console.log('Sin números del cliente (wowsims/gamedata no respondió): quedan los de Wowhead.');
+  // WoWSims' phase of each item (1 = out now, 2 = with the raids): the
+  // pre-raid list (js/prebis.js) shows phase 1 only; null = not in WoWSims'
+  // Forever database (most are crafts not in the game yet).
+  if (simDb) {
+    const phase = new Map(simDb.items.map(i => [i.id, i.phase]));
+    Object.values(items).forEach(it => { it.phase = phase.get(it.id) || null; });
+    console.log('Poder con hechizos de armas desde WoWSims: ' + require('./lib/sim-weapon-power')(items, simDb) + ' armas');
+  }
   ids = Object.keys(items).map(Number).sort((a, b) => a - b);
   console.log('Ítems usables por Shaman (calidad verde o mejor, nivel ≤ 60): ' + ids.length);
   const itemLines = diffItems(prevItems, items);

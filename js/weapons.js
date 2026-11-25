@@ -13,7 +13,7 @@
   const Site = window.Site;
   // 'camino' (your whole gear path) is drawn by js/gear-path.js; 'armas' is
   // the weapon chart, the best weapons per bracket and the full list folded.
-  const SECTIONS = ['camino', 'armas'];
+  const SECTIONS = ['camino', 'prebis', 'armas'];
   // Older links to the weapon sections land on 'armas'.
   const OLD = ['progresion', 'tramos', 'dungeon', 'todas'];
 
@@ -127,6 +127,7 @@
     }
   }
 
+  window.WeaponSource = sourceText;
   const statsText = w => UI.statsText(w);
 
   // Main number of a weapon for the current spec, with the other one below.
@@ -232,6 +233,10 @@
     const section = Site.section('Equipo', SECTIONS);
     if (section === 'camino') {
       window.GearPath.render(container, ui, Site.sectionTabs('Equipo', SECTIONS, section, k => t('wp.sec.' + k)), renderAll);
+      return;
+    }
+    if (section === 'prebis') {
+      window.PreBis.render(container, Site.sectionTabs('Equipo', SECTIONS, section, k => t('wp.sec.' + k)), ui);
       return;
     }
     const list = candidates();

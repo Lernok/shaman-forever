@@ -21,7 +21,7 @@ const gear = Object.values(items).filter(itemSources.isGear).map(i => {
   return {
     id: i.id, name: i.name, kind: i.kind, slot: i.slot, quality: i.quality, req: i.req, obtain, ilvl: i.ilvl, bind: i.bind,
     armor: i.armor, block: i.block, stats: i.stats || {}, bonus: i.bonus || {}, equip: i.equip || [], use: i.use || [], chance: i.chance || [],
-    era: i.era, numbers: i.numbers || 'forever', icon: i.icon || null, raceMask: i.raceMask, sources
+    era: i.era, numbers: i.numbers || 'forever', icon: i.icon || null, raceMask: i.raceMask, phase: i.phase, sources
   };
 }).sort((a, b) => a.obtain - b.obtain || (b.ilvl || 0) - (a.ilvl || 0) || a.id - b.id);
 

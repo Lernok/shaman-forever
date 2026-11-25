@@ -2,6 +2,31 @@
   "_readme": "Site updates shown on the News page, newest first. Game data changes come from data/changelog.json (written by scripts/sync.js).",
   "site": [
     {
+      "day": "2026-11-25",
+      "title": {
+        "es": "Pre-raid, Tier 0.5 y pesos nuevos",
+        "en": "Pre-raid, Tier 0.5 and new weights"
+      },
+      "items": [
+        {
+          "es": "Equipo › Pre-raid: la mejor pieza por ranura que conseguís a 60 antes de las raids del 9-dic, por spec y facción, ordenada con pesos de raid simulados.",
+          "en": "Equipo › Pre-raid: the best piece per slot you can get at 60 before the raids of Dec 9, per spec and faction, ranked with simulated raid weights."
+        },
+        {
+          "es": "El Tier 0.5 (The Five Thunders) ya está en el sitio: Mokvar (Orgrimmar) o Deliana (Ironforge) lo cambian desde nivel 58 por el Dungeon Set 1, en versión Enhancement, Elemental o Restoration.",
+          "en": "The Tier 0.5 (The Five Thunders) is now on the site: Mokvar (Orgrimmar) or Deliana (Ironforge) exchange it from level 58 for Dungeon Set 1, in an Enhancement, Elemental or Restoration version."
+        },
+        {
+          "es": "Pesos de stats medidos de nuevo con WoWSims del 25-nov (con los arreglos de Windfury Totem y Flurry del 16 y 17-nov). Enhancement: el Intelecto vale 2,8 de poder de ataque leveando (te quedás sin maná), más que la Fuerza (2,2); el golpe hasta el tope y la pericia son lo mejor por punto.",
+          "en": "Stat weights measured again with WoWSims of Nov 25 (with the Windfury Totem and Flurry fixes of Nov 16-17). Enhancement: Intellect is worth 2.8 attack power while leveling (you run out of mana), more than Strength (2.2); hit up to the cap and expertise are the best per point."
+        },
+        {
+          "es": "Probamos lo que pidió la comunidad: Tidal Focus 5 + Mindfulness 3 rinde +6,3% encadenando 2 minutos, pero −1,4% en peleas sueltas. La guía de Enhancement también dice cuánto maná se lleva cada totem.",
+          "en": "We tested what the community asked: Tidal Focus 5 + Mindfulness 3 does +6.3% chaining 2 minutes, but −1.4% in single fights. The Enhancement guide also says how much mana each totem takes."
+        }
+      ]
+    },
+    {
       "day": "2026-11-11",
       "title": {
         "es": "Enhancement después del hotfix del 10-nov",

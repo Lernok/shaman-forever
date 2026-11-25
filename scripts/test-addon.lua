@@ -424,3 +424,14 @@ if tipFn then
     print("TIP " .. p[6] .. ": " .. (lines[1] or "(nada)"))
   end
 end
+-- Your gear against the path (GEAR=1): power, the share and the slots behind.
+if os.getenv("GEAR") then
+  function UnitAttackPower() return level * 12, 0, 0 end
+  function GetCritChance() return 5 + level / 10 end
+  function GetSpellBonusDamage() return 0 end
+  function UnitStat(_, i) return 0, level * 2 end
+  local rows, total = SF.gearReport()
+  print(string.format("GEAR total %d%%", math.floor(total * 100 + 0.5)))
+  for _, r in ipairs(rows) do print(string.format("GEAR %-8s %3d%% tengo %.1f esperado %.1f%s", r.slot, math.floor(r.ratio * 100 + 0.5), r.have, r.want, r.best and (" -> " .. r.best.st.i .. " (nivel " .. r.best.st.l .. ")") or "")) end
+  SlashCmdList.SHAMANFOREVER("equipo")
+end

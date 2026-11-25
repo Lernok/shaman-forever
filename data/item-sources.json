@@ -1,6 +1,702 @@
 {
   "_readme": "Fuentes de ítems que no están en QuestieDB (sobre todo ítems nuevos de Forever), cargadas a mano a partir de reportes. Cada fuente lleva confidence y ref (de dónde sale el dato). obtainLevel = nivel desde el que se puede conseguir, cuando es mayor que el nivel requerido del ítem. scripts/build-weapons.js las suma a las fuentes automáticas. type boss = drop de jefe de dungeon visto en Wowhead Forever (pestaña Dropped by) y confirmado en una segunda fuente. chain = quests before it (ids), when no database records the chain yet; scripts/fetch-levels.js looks at what each step sends you to kill.",
   "items": {
+    "227001": {
+      "name": "Bindings of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227001",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en An Earnest Proposition entregando la pieza del Dungeon Set 1 (bracers), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227001",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en An Earnest Proposition entregando la pieza del Dungeon Set 1 (bracers), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227002": {
+      "name": "Coif of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227002",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Saving the Best for Last entregando la pieza del Dungeon Set 1 (head), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227002",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Saving the Best for Last entregando la pieza del Dungeon Set 1 (head), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227003": {
+      "name": "Pauldrons of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227003",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (shoulders), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227003",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (shoulders), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227004": {
+      "name": "Vest of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227004",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Saving the Best for Last entregando la pieza del Dungeon Set 1 (chest), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227004",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Saving the Best for Last entregando la pieza del Dungeon Set 1 (chest), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227005": {
+      "name": "Kilt of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227005",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (legs), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227005",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (legs), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227006": {
+      "name": "Gauntlets of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227006",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Just Compensation entregando la pieza del Dungeon Set 1 (gloves), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227006",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Just Compensation entregando la pieza del Dungeon Set 1 (gloves), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227007": {
+      "name": "Slippers of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227007",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (boots), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227007",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (boots), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227008": {
+      "name": "Cord of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227008",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Just Compensation entregando la pieza del Dungeon Set 1 (belt), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227008",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Just Compensation entregando la pieza del Dungeon Set 1 (belt), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227009": {
+      "name": "Bracers of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227009",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en An Earnest Proposition entregando la pieza del Dungeon Set 1 (bracers), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227009",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en An Earnest Proposition entregando la pieza del Dungeon Set 1 (bracers), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227010": {
+      "name": "Sash of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227010",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Just Compensation entregando la pieza del Dungeon Set 1 (belt), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227010",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Just Compensation entregando la pieza del Dungeon Set 1 (belt), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227011": {
+      "name": "Mantle of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227011",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (shoulders), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227011",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (shoulders), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227012": {
+      "name": "Leggings of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227012",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (legs), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227012",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (legs), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227013": {
+      "name": "Crown of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227013",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Saving the Best for Last entregando la pieza del Dungeon Set 1 (head), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227013",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Saving the Best for Last entregando la pieza del Dungeon Set 1 (head), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227014": {
+      "name": "Grasp of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227014",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Just Compensation entregando la pieza del Dungeon Set 1 (gloves), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227014",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Just Compensation entregando la pieza del Dungeon Set 1 (gloves), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227015": {
+      "name": "Greaves of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227015",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (boots), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227015",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (boots), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227016": {
+      "name": "Tunic of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227016",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Saving the Best for Last entregando la pieza del Dungeon Set 1 (chest), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227016",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Saving the Best for Last entregando la pieza del Dungeon Set 1 (chest), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227017": {
+      "name": "Bands of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227017",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en An Earnest Proposition entregando la pieza del Dungeon Set 1 (bracers), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227017",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en An Earnest Proposition entregando la pieza del Dungeon Set 1 (bracers), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227018": {
+      "name": "Girdle of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227018",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Just Compensation entregando la pieza del Dungeon Set 1 (belt), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227018",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Just Compensation entregando la pieza del Dungeon Set 1 (belt), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227019": {
+      "name": "Spaulders of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227019",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (shoulders), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227019",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (shoulders), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227020": {
+      "name": "Legplates of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227020",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (legs), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227020",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (legs), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227021": {
+      "name": "Face of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227021",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Saving the Best for Last entregando la pieza del Dungeon Set 1 (head), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227021",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Saving the Best for Last entregando la pieza del Dungeon Set 1 (head), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227022": {
+      "name": "Fists of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227022",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Just Compensation entregando la pieza del Dungeon Set 1 (gloves), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227022",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Just Compensation entregando la pieza del Dungeon Set 1 (gloves), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227023": {
+      "name": "Treads of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227023",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (boots), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227023",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Anthion's Parting Words entregando la pieza del Dungeon Set 1 (boots), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
+    "227024": {
+      "name": "Chain of The Five Thunders",
+      "sources": [
+        {
+          "npc": "Mokvar",
+          "npcId": 230317,
+          "zone": "Orgrimmar",
+          "faction": "horde",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227024",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Saving the Best for Last entregando la pieza del Dungeon Set 1 (chest), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        },
+        {
+          "npc": "Deliana",
+          "npcId": 230319,
+          "zone": "Ironforge",
+          "faction": "alliance",
+          "type": "vendor",
+          "obtainLevel": 58,
+          "endgame": true,
+          "confidence": "community-untested",
+          "ref": "https://www.wowhead.com/forever/item=227024",
+          "note": "Tier 0.5 (Dungeon Set 2): se cambia en Saving the Best for Last entregando la pieza del Dungeon Set 1 (chest), desde nivel 58; cada paso deja elegir la caja de tu spec (Impact = Enhancement, Eruption = Elemental, Relief = Restoration). Cadena completa en forg.gg/en/forever/tips/dungeon-set-2-upgrade."
+        }
+      ]
+    },
     "274599": {
       "name": "Oathbound Bracers",
       "sources": [

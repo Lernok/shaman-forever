@@ -110,21 +110,21 @@
     "list": [
       "Weapon Damage",
       "Hit",
+      "Intellect",
       "Critical Strike",
       "Strength",
-      "Intellect",
       "Agility"
     ],
     "confidence": "client-data",
     "rationale": {
-      "es": "Medido en WoWSims con el hotfix del 10-nov cargado, en poder de ataque por punto. Subiendo de nivel solo (bicho 2 niveles arriba, sin golpe en el equipo): índice de golpe 5,1 hasta no fallar más (6% contra +2), crítico 2,75, Fuerza 2,2, Intelecto 1,9 (2,9 si te quedás sin maná a mitad de pelea), poder con hechizos 1,5, Agilidad 1,35. En raid (jefe 3 niveles arriba): Fuerza 2,2, crítico 2,9, golpe 2,5 (los hechizos siguen fallando hasta 17%), Intelecto 2,0, poder con hechizos 1,5. Primero el daño del arma (se compara por DPS y conviene lenta). Equipo › Tu camino usa estos pesos.",
-      "en": "Measured in WoWSims with the Nov 10 hotfix loaded, in attack power per point. Leveling solo (mob 2 levels above, no hit on gear): hit rating 5.1 until you stop missing (6% against +2), crit 2.75, Strength 2.2, Intellect 1.9 (2.9 if you run out of mana mid-fight), spell power 1.5, Agility 1.35. In raid (boss 3 levels above): Strength 2.2, crit 2.9, hit 2.5 (spells keep missing up to 17%), Intellect 2.0, spell power 1.5. First the weapon's damage (judged by DPS, and slow is better). Equipo › Your path uses these weights."
+      "es": "Medido en WoWSims Forever del 25-nov (con todos los hotfixes hasta el 23-nov, incluido el arreglo de Windfury Totem del 16-nov), en poder de ataque por punto, a nivel 60. Subiendo de nivel solo (bicho 2 niveles arriba, sin golpe en el equipo, promedio de peleas de 30 y 45 s): índice de golpe 6,1 hasta no fallar más, pericia 4,2, Intelecto 2,8 (2,0 en peleas de 30 s, 3,6 en las de 45 s: te quedás sin maná), crítico 2,7, Fuerza 2,2, celeridad 1,95, poder con hechizos 1,5, Agilidad 1,4. En raid (jefe 3 niveles arriba, 3 minutos): golpe 8,1 hasta el tope del 8%, pericia 5,5, crítico 2,9, Intelecto 2,9, celeridad 2,4, Fuerza 2,2, Agilidad 1,6, poder con hechizos 1,3. Un punto de DPS del arma vale 14,4. Equipo › Tu camino, Pre-raid y el addon usan estos pesos.",
+      "en": "Measured in WoWSims Forever of Nov 25 (every hotfix up to Nov 23, including the Windfury Totem fix of Nov 16), in attack power per point, at level 60. Leveling solo (mob 2 levels above, no hit on gear, mean of 30 and 45 s fights): hit rating 6.1 until you stop missing, expertise 4.2, Intellect 2.8 (2.0 in 30 s fights, 3.6 in 45 s ones: you run out of mana), crit 2.7, Strength 2.2, haste 1.95, spell power 1.5, Agility 1.4. In raid (boss 3 levels above, 3 minutes): hit 8.1 up to the 8% cap, expertise 5.5, crit 2.9, Intellect 2.9, haste 2.4, Strength 2.2, Agility 1.6, spell power 1.3. A point of weapon DPS is worth 14.4. Equipo › Your path, Pre-raid and the addon use these weights."
     },
     "source": "https://github.com/wowsims/forever",
     "forever": {
       "note": {
-        "es": "Específico de Forever: con Mental Dexterity 3/3 cada punto de Intelecto da 1 de poder de ataque (era 1,5 hasta el 10-nov), Ancestral Knowledge lo sube 10%, Mental Quickness convierte 30% en poder con hechizos y el Intelecto además es tu maná. Como la mitad de tu daño sale de hechizos (Earth Shock, Flame Shock, Lightning Bolt, Fire Nova, Magma Totem), el Intelecto todavía vale más que la Agilidad. Pero la Fuerza vale más que los dos, y el golpe y el crítico todavía más: una pieza de Fuerza le gana a una de tela de caster del mismo nivel. La simulación no cuenta la armadura: a igual daño, quedate con la malla o el cuero.",
-        "en": "Forever-specific: with Mental Dexterity 3/3 each point of Intellect gives 1 attack power (1.5 until Nov 10), Ancestral Knowledge raises it 10%, Mental Quickness turns 30% into spell power and Intellect is also your mana. Since half your damage comes from spells (Earth Shock, Flame Shock, Lightning Bolt, Fire Nova, Magma Totem), Intellect is still worth more than Agility. But Strength is worth more than both, and hit and crit more still: a Strength piece beats a cloth caster piece of the same level. The sim doesn't count armor: at equal damage, keep the mail or leather."
+        "es": "Específico de Forever: tu daño sale mitad de golpes (golpe normal 20%, Windfury Weapon 14%, Windfury Totem 7%, Stormstrike 6%: escalan con poder de ataque y Fuerza) y mitad de hechizos (Earth Shock 16%, Flame Shock 9%, Fire Nova 8%, Magma Totem 7,5%, Lightning Bolt 7%: escalan con poder con hechizos). Aun así la Fuerza vale más por punto que el poder con hechizos, porque los coeficientes de los hechizos son bajos (Earth Shock suma 0,386 de tu poder con hechizos sobre 531 de base; Magma Totem 0,033 por pulso). El Intelecto pesa por el maná: con Mental Dexterity 3/3 cada punto da 1 de poder de ataque, y el resto de su valor es no quedarte seco a mitad de pelea. Si nunca te quedás sin maná, la Fuerza le gana. La simulación no cuenta la armadura: a igual daño, quedate con la malla.",
+        "en": "Forever-specific: your damage is half swings (white hits 20%, Windfury Weapon 14%, Windfury Totem 7%, Stormstrike 6%: they grow with attack power and Strength) and half spells (Earth Shock 16%, Flame Shock 9%, Fire Nova 8%, Magma Totem 7.5%, Lightning Bolt 7%: they grow with spell power). Even so Strength is worth more per point than spell power, because the spells' coefficients are low (Earth Shock adds 0.386 of your spell power to 531 base; Magma Totem 0.033 per pulse). Intellect counts for the mana: with Mental Dexterity 3/3 each point gives 1 attack power, and the rest of its worth is not running dry mid-fight. If you never run out of mana, Strength beats it. The sim doesn't count armor: at equal damage, keep the mail."
       },
       "confidence": "client-data"
     }
@@ -179,6 +179,10 @@
       {
         "es": "Earth Shock de relleno y Fire Nova cuando esté lista: en Forever pega fuerte y Trial by Fire le baja el tiempo de reutilización.",
         "en": "Earth Shock as filler and Fire Nova whenever it's ready: in Forever it hits hard and Trial by Fire lowers its cooldown."
+      },
+      {
+        "es": "El maná de los totems cuenta: Magma Totem cuesta 650 y dura 20 s (con Fire Nova se llevan más de la mitad del maná de una pelea de 45 s). Windfury, Grace of Air y Strength of Earth (225-275) y Mana Spring (100) duran 5 minutos: no los muevas en cada pull si el próximo bicho está cerca.",
+        "en": "Totem mana counts: Magma Totem costs 650 and lasts 20 sec (with Fire Nova they take over half the mana of a 45 sec fight). Windfury, Grace of Air and Strength of Earth (225-275) and Mana Spring (100) last 5 minutes: don't move them every pull if the next mob is close."
       }
     ],
     "level60Confidence": "client-data"
@@ -193,8 +197,8 @@
     },
     {
       "note": {
-        "es": "Después del hotfix del 10-nov la Fuerza es tu mejor stat principal, pero el Intelecto y el poder con hechizos siguen sumando daño (Earth Shock, Flame Shock, Fire Nova, Lightning Bolt): una pieza con Fuerza y algo de Intelecto es lo ideal, como pidió Blizzard.",
-        "en": "After the Nov 10 hotfix Strength is your best main stat, but Intellect and spell power still add damage (Earth Shock, Flame Shock, Fire Nova, Lightning Bolt): a piece with Strength and some Intellect is ideal, as Blizzard asked."
+        "es": "Con los números del 25-nov el Intelecto vale tanto como la Fuerza o más si encadenás peleas (te quedás sin maná a los 30-40 s), y el golpe hasta el tope es lo mejor por punto. Una pieza de malla con Fuerza e Intelecto es lo ideal; una de caster con Intelecto y poder con hechizos ya no es mala elección.",
+        "en": "With the Nov 25 numbers Intellect is worth as much as Strength, or more if you chain fights (you run dry at 30-40 sec), and hit up to the cap is the best per point. A mail piece with Strength and Intellect is ideal; a caster piece with Intellect and spell power is no longer a bad pick."
       },
       "confidence": "client-data"
     },
@@ -208,8 +212,8 @@
   ],
   "recommendedBuild": {
     "note": {
-      "es": "Builds simulados después del hotfix del 10-nov (WoWSims con el hotfix cargado por nosotros): Leveling 10→60 (17/31/3, con Improved Ghost Wolf hasta tener montura) y Raid a 60 (17/31/3, el recomendado). Comparados con los builds populares de la comunidad, rinden 3-5% más. El de PvP lo armamos con criterio, sin simular. Lo que más importa: Maelstrom Weapon 5/5 (el primer punto vale ~6% de tu daño), Trial by Fire (Fire Nova) y Tidal Focus para el golpe.",
-      "en": "Builds simulated after the Nov 10 hotfix (WoWSims with the hotfix loaded by us): Leveling 10→60 (17/31/3, with Improved Ghost Wolf until you have a mount) and Raid at 60 (17/31/3, the recommended one). Compared with the community's popular builds, they do 3-5% more. The PvP one we built by judgment, not simmed. What matters most: Maelstrom Weapon 5/5 (the first point is worth ~6% of your damage), Trial by Fire (Fire Nova) and Tidal Focus for hit."
+      "es": "Builds simulados en WoWSims Forever del 25-nov (con todos los hotfixes hasta el 23-nov). Leveling 10→60: todo Enhancement hasta el 40, después Tidal Focus 5 + Mindfulness 3 (lo que pedía la comunidad: +1,4% en peleas de 45 s, +7,6% encadenando 2 minutos, −2,2% en peleas cortas de 30 s) y Elemental al final (12/31/8). Raid a 60: 17/31/3 sigue siendo el mejor con el golpe cubierto en el equipo; con poco golpe, Tidal Focus 5 + Mindfulness 3 rinde +1%. La variante con Water Shield (9/31/11) solo conviene si encadenás sin parar nunca (+14% en 2 minutos seguidos, −5 a −11% en peleas sueltas). El de PvP lo armamos con criterio, sin simular. Lo que más importa: Maelstrom Weapon 5/5 (el primer punto vale ~6% de tu daño) y llegar al tope de golpe.",
+      "en": "Builds simulated in WoWSims Forever of Nov 25 (every hotfix up to Nov 23). Leveling 10→60: all Enhancement up to 40, then Tidal Focus 5 + Mindfulness 3 (what the community asked for: +1.4% in 45 sec fights, +7.6% chaining 2 minutes, −2.2% in short 30 sec fights) and Elemental last (12/31/8). Raid at 60: 17/31/3 is still the best with hit covered by gear; with little hit, Tidal Focus 5 + Mindfulness 3 does +1%. The Water Shield variant (9/31/11) is only worth it if you chain and never stop (+14% over 2 minutes in a row, −5 to −11% in single fights). The PvP one we built by judgment, not simmed. What matters most: Maelstrom Weapon 5/5 (the first point is worth ~6% of your damage) and reaching the hit cap."
     }
   },
   "sources": [
@@ -229,8 +233,8 @@
     "https://mmonster.co/wow-forever/guides/stats"
   ],
   "caveat": {
-    "es": "WoW: Forever en vivo (lanzamiento 4-nov-2026, tope 60), con las notas del 2-nov y los hotfixes hasta el 10-nov. Los números de talentos y stats salen de WoWSims para Forever con el hotfix del 10-nov cargado por nosotros (WoWSims todavía no lo tiene), a nivel 60: una pelea de 3 minutos contra un objetivo 2 niveles arriba (leveo, solo) o 3 niveles arriba (jefe de raid, con buffs de raid). Leveando, adaptá la rotación al bicho que tengas enfrente.",
-    "en": "WoW: Forever live (launched Nov 4, 2026, level cap 60), with the notes of Nov 2 and the hotfixes up to Nov 10. Talent and stat numbers come from WoWSims for Forever with the Nov 10 hotfix loaded by us (WoWSims doesn't have it yet), at level 60: a 3-minute fight against a target 2 levels above (leveling, solo) or 3 levels above (raid boss, with raid buffs). Leveling, adapt the rotation to whatever you're fighting."
+    "es": "WoW: Forever en vivo (tope 60, raids el 9-dic), con los hotfixes hasta el 23-nov. Los números de talentos y stats salen de WoWSims para Forever (versión del 25-nov, que ya trae los cambios de Enhancement del 10-nov y los arreglos de Windfury y Flurry del 16 y 17-nov), corrida por nosotros a nivel 60: solo contra un bicho 2 niveles arriba (peleas de 30-45 s) o un jefe de raid 3 niveles arriba con buffs de raid. Leveando, adaptá la rotación al bicho que tengas enfrente.",
+    "en": "WoW: Forever live (level cap 60, raids on Dec 9), with the hotfixes up to Nov 23. Talent and stat numbers come from WoWSims for Forever (the Nov 25 version, which has the Nov 10 Enhancement changes and the Windfury and Flurry fixes of Nov 16-17), run by us at level 60: alone against a mob 2 levels above (30-45 sec fights) or a raid boss 3 levels above with raid buffs. Leveling, adapt the rotation to whatever you're fighting."
   },
   "keyTalents": [
     {

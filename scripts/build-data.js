@@ -255,8 +255,16 @@ if (fs.existsSync(path.join(root, 'data/gear.json'))) {
     ['stats', 'bonus'].forEach(k => { if (out[k] && !Object.keys(out[k]).length) delete out[k]; });
     ['equip', 'use'].forEach(k => { if (out[k] && !out[k].length) delete out[k]; });
     out.sources = (totem(i) ? i.sources : i.sources.filter(plannable)).map(source);
+    // Equipo › Pre-raid (js/prebis.js): pieces out now (WoWSims phase 1) from
+    // level 50 also carry every source but raids: the Tier 0.5 (endgame),
+    // PvP, trash drops, with the level they open at.
+    if (i.phase === 1 && Math.max(i.req || 0, i.obtain || 0, i.ilvl >= 55 ? 50 : 0, ...i.sources.map(s => s.obtainLevel || 0)) >= 50) {
+      const pre = i.sources.filter(s => !s.raid && ['quest', 'crafted', 'vendor', 'boss', 'drop', 'trash'].includes(s.type))
+        .map(s => Object.assign(source(s), pick(s, ['pvp', 'endgame', 'obtainLevel', 'zones', 'note', 'level', 'requiredLevel', 'dungeonLevels'])));
+      if (pre.length) { out.phase = 1; out.pre = pre; }
+    }
     return out;
-  }).filter(i => i.sources.length);
+  }).filter(i => i.sources.length || i.pre);
   write('data/gear.js', 'GEAR_DATA', { build: g.build, gear });
   outputs.push('data/gear.js');
 }

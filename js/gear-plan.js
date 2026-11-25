@@ -34,39 +34,63 @@
     // spells alike (WoWSims' constants), the same price as the percentages.
     critRating: 1, hitRating: 1, hasteRating: 1, expertiseRating: 1, dodgeRating: 1
   };
-  // How much each stat is worth to each spec (1 = all of it). From the
-  // weights WoWSims measured for Forever (wowsims/forever, ui/specs/shaman/*/
-  // presets.ts: level 60, raid buffs, a three-minute fight), turned into
-  // these units, and adjusted for leveling where a raid fight differs: mana
-  // runs out between pulls (Intellect, Spirit and MP5 count more than in a
-  // three-minute sim) and monsters of your level are missed far less than a
-  // raid boss (hit counts less).
+  // How much each stat is worth to each spec (1 = all of it), measured with
+  // WoWSims Forever (wowsims/forever master of 2026-11-25: the client's own
+  // spell data with every hotfix to Nov 23, Windfury Totem's armor and
+  // cooldown fix of Nov 16, Flurry's of Nov 17) in .cache/tools/enhsim2
+  // (ep2.js): the stat added to the sim's default gear and the DPS it gains.
+  // Leveling: alone, level 60 against a mob 2 levels above, no raid buffs or
+  // consumables, the mean of 30 s and 45 s fights with full mana at the pull.
+  // Raid (WEIGHTS_RAID, for Equipo › Pre-raid): a level 63 boss, raid buffs,
+  // three minutes.
   const WEIGHTS = {
-    // Enhancement, after Blizzard's hotfix of Nov 10 (forum t/2403040), from
-    // our own WoWSims runs with the hotfix loaded (WoWSims doesn't have it
-    // yet): solo, level 60 against a mob 2 levels above, no hit on gear,
-    // 30-45 s fights with full mana at the pull, Windfury Weapon + Windfury
-    // Totem, the leveling build. Per point, in AP: Strength 2.2 (1.1),
-    // Agility 1.35 (0.68), crit rating 2.75 (1.38), spell damage 1.49 (0.88;
-    // damage and healing 0.62), Nature 0.84 (0.6), Fire 0.65 (0.46). Hit
-    // rating 5.1 with none on gear, nothing for melee past 6% (60 rating)
-    // against a mob 2 levels above: 2.2. Intellect 1.9 when mana never runs
-    // out (30 s fights), 2.9 when it starts to (45 s): 0.95, the damage
-    // alone, so Strength stays ahead as Blizzard intends. Raid (level 63,
-    // raid buffs) measures about the same: Intellect 2.0, hit 2.5.
-    Enhancement: { strength: 1.1, agility: 0.68, attackPower: 1, crit: 1.38, critRating: 1.38, hit: 2.2, hitRating: 2.2, hasteRating: 1.4, expertiseRating: 1.2,
-      intellect: 0.95, stamina: 0.25, spellPower: 0.62, spellDamage: 0.88, natureDamage: 0.6, fireDamage: 0.46 },
-    // Elemental, in spell power: WoWSims had Nature damage at 0.69 and Fire
-    // at 0.31 with Lava Burst; Blizzard's notes of Nov 2 take Lava Burst out
-    // and leave Fire to Flame Shock and the totems (Nature 0.85, Fire 0.15
-    // until WoWSims measures it again), 1 crit rating
-    // = 0.61 (0.73), 1 hit rating = 1.18 against a raid boss (0.9 against
-    // your level), Intellect 0.19 and MP5 0.04 (in a three-minute fight mana
-    // never runs out; leveling it does: 0.45 and 0.4).
-    Elemental: { spellPower: 1, spellDamage: 1, natureDamage: 0.85, fireDamage: 0.15, frostDamage: 0.15, intellect: 0.45, spellCrit: 0.75, critRating: 0.73,
-      spellHit: 0.9, hitRating: 0.9, hasteRating: 1.4, mp5: 0.4, stamina: 0.25, spirit: 0.2 },
-    // Restoration: WoWSims has no weights for it yet; Classic's usual ones.
+    // Enhancement, in AP per point (these units are half that: 1 Strength =
+    // 2.2 AP = 1.1): Strength 2.2, Agility 1.37, Intellect 2.8 (1.98 in 30 s
+    // fights, 3.63 in 45 s: you run out of mana, and Mental Dexterity turns
+    // it into attack power), crit rating 2.68, hit rating 6.1 with none on
+    // gear (2.6 here: nothing past the cap), expertise rating 4.2, haste
+    // rating 1.95, spell damage 1.49, Nature 0.83, Fire 0.66. A point of
+    // weapon DPS is 14.4 AP (DPS_WEIGHT). Stamina adds no damage; it keeps a
+    // little for staying alive while leveling.
+    Enhancement: { strength: 1.1, agility: 0.68, attackPower: 1, crit: 1.34, critRating: 1.34, hit: 2.6, hitRating: 2.6, hasteRating: 0.97, expertiseRating: 2.1,
+      intellect: 1.4, stamina: 0.25, spellPower: 0.62, spellDamage: 0.88, natureDamage: 0.59, fireDamage: 0.47 },
+    // Elemental, in spell power per point (these units are 1.2 per spell
+    // power point, so each weight is that times 1.2 over the stat's price):
+    // Nature 0.89, Fire and Frost 0.11 (Flame Shock), crit rating 0.53,
+    // haste rating 0.81, Intellect 0.3 and MP5 0.15 (alone you don't run out
+    // in 30-45 s), hit 0.6 (half the raid's: mobs of your level).
+    Elemental: { spellPower: 1, spellDamage: 1, natureDamage: 0.89, fireDamage: 0.11, frostDamage: 0.11, intellect: 0.36, spellCrit: 0.64, critRating: 0.64,
+      spellHit: 0.72, hitRating: 0.72, hasteRating: 0.97, mp5: 0.07, stamina: 0.25, spirit: 0.06 },
+    // Restoration: WoWSims has no healing sim yet; Classic's usual weights.
     Restoration: { healing: 1, spellPower: 1, intellect: 0.75, mp5: 1, spirit: 0.5, spellCrit: 0.4, critRating: 0.4, hasteRating: 0.6, stamina: 0.25 }
+  };
+  const WEIGHTS_RAID = {
+    // Per point in AP: Strength 2.2, Agility 1.56, Intellect 2.87 (out of
+    // mana 27 s of 180 with raid buffs and no Mana Spring from others), crit
+    // rating 2.88, hit rating 8.1 below the 8% cap (6.4 here for the cap),
+    // expertise rating 5.45, haste rating 2.42, spell damage 1.31, Nature
+    // 0.67, Fire 0.64, weapon DPS 14.4.
+    Enhancement: { strength: 1.1, agility: 0.78, attackPower: 1, crit: 1.44, critRating: 1.44, hit: 3.2, hitRating: 3.2, hasteRating: 1.21, expertiseRating: 2.72,
+      intellect: 1.43, stamina: 0, spellPower: 0.55, spellDamage: 0.77, natureDamage: 0.48, fireDamage: 0.46 },
+    // In spell power: Nature 0.88, Fire 0.12, Intellect 0.61, Spirit 0.28,
+    // MP5 0.8, crit rating 0.65, hit rating 1.57 below the cap, haste 0.69.
+    Elemental: { spellPower: 1, spellDamage: 1, natureDamage: 0.88, fireDamage: 0.12, frostDamage: 0.12, intellect: 0.73, spellCrit: 0.78, critRating: 0.78,
+      spellHit: 1.88, hitRating: 1.88, hasteRating: 0.83, mp5: 0.38, stamina: 0, spirit: 0.34 },
+    Restoration: { healing: 1, spellPower: 1, intellect: 0.75, mp5: 1, spirit: 0.5, spellCrit: 0.4, critRating: 0.4, hasteRating: 0.6, stamina: 0 }
+  };
+  // Enhancement's two-hander: a point of weapon DPS in these units (14.4 AP).
+  const DPS_WEIGHT = 7.2;
+  // Your whole power, roughly, for the addon's "+3% damage" and its gear
+  // level: unit = attack power (Enhancement) or spell power / healing
+  // (casters) per point of these weights; base = what your spells and weapon
+  // do with no stats, per level (the sims' DPS over their DPS per AP or SP,
+  // minus the stats of their gear: ~4,500 AP-worth at 60 for Enhancement in
+  // a raid, ~1,300 SP for Elemental); dps, crit, sp, int: AP or SP per point
+  // of weapon DPS, 1% crit, spell damage, Intellect.
+  const POWER = {
+    Enhancement: { unit: 2, base: 13, dps: 14.4, crit: 38, sp: 1.5 },
+    Elemental: { unit: 1 / 1.2, base: 12, crit: 7.5, int: 0.3 },
+    Restoration: { unit: 1 / 1.2, base: 15, crit: 5.6, int: 0.6 }
   };
   // Stats that do the same for a spec are worth the same per point, priced
   // like the one they equal: to a healer "+healing" heals exactly like
@@ -122,8 +146,8 @@
   // Budget points of a piece: all of them and, without the neutral stats,
   // all and the ones your spec uses (for MIN_FIT); and its worth to the
   // spec (useful: each stat at its price for the spec, see SAME).
-  function points(item, spec) {
-    const w = WEIGHTS[spec];
+  function points(item, spec, weights) {
+    const w = weights || WEIGHTS[spec];
     const same = SAME[spec] || {};
     const worth = k => COST[same[k] || k] * (w[k] || 0);
     let total = 0;
@@ -158,8 +182,8 @@
   }
   // Share of a piece's budget your spec uses, Stamina aside (a Stamina-only
   // piece fits anyone).
-  function fit(item, spec) {
-    const p = points(item, spec);
+  function fit(item, spec, weights) {
+    const p = points(item, spec, weights);
     if (!p.total) return 0;
     return p.coreTotal ? p.coreUseful / p.coreTotal : 1;
   }
@@ -183,16 +207,19 @@
   }
 
   // Worth of a piece to a spec (0 = useless to it).
-  function value(item, spec) {
+  // weights: another set of WEIGHTS (WEIGHTS_RAID for the pre-raid list).
+  function value(item, spec, weights) {
     if (isWeapon(item)) {
       if (!WEAPON_KINDS[spec].includes(item.kind)) return 0;
-      if (spec === 'Enhancement') return item.dps || 0;
+      // Enhancement's two-hander: its DPS at what a point of weapon DPS is
+      // worth, plus its stats (Rage of the Storm's 16 Strength).
+      if (spec === 'Enhancement') return Math.round(((item.dps || 0) * DPS_WEIGHT + points(item, spec, weights).useful) * 10) / 10;
     }
-    const p = points(item, spec);
+    const p = points(item, spec, weights);
     let v;
     if (p.total) {
       // Mostly stats you don't use: not for you, whatever it adds up to.
-      if (fit(item, spec) < MIN_FIT) return 0;
+      if (fit(item, spec, weights) < MIN_FIT) return 0;
       v = p.useful;
     } else {
       const f = ['Relic', 'Trinket'].includes(item.slot) ? effectFit(item, spec) : 0;
@@ -435,5 +462,5 @@
   }
   // Quest gold of a level (data/crafts.js, from Classic's quest rewards).
 
-  root.GearPlan = { plan, value, fit, points, candidates, access, favorCost, favorFirst, SLOTS, WEIGHTS, COST, MIN_LEVELS, UPGRADE };
+  root.GearPlan = { plan, value, fit, points, candidates, access, favorCost, favorFirst, SLOTS, WEIGHTS, WEIGHTS_RAID, DPS_WEIGHT, POWER, COST, MIN_LEVELS, UPGRADE };
 })(typeof window !== 'undefined' ? window : globalThis);
